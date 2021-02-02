@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-01"
+lastupdated: "2021-02-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -995,7 +995,30 @@ Before you can start to mount your existing storage to an app, you must retrieve
     ```
     {: screen}
 
-7.  Note the `id`, `ip_addr`, `capacity_gb`, the `datacenter`, and `lunId` of the block storage device that you want to mount to your cluster. **Note:** To mount existing storage to a cluster, you must have a worker node in the same zone as your storage. To verify the zone of your worker node, run `ibmcloud oc worker ls --cluster <cluster_name_or_ID>`.
+7. Retrieve the volume details. Replace `<volume_ID>` with the ID of the Block storage volume that you retrieved in step 6.
+  ```sh
+  ibmcloud sl block volume-detail <volume_ID>
+  ```
+  {: pre}
+
+  Example output:
+  ```sh
+  Name                       Value   
+  ID                         111111111   
+  User name                  IBM02SEL1111111-111   
+  Type                       endurance_block_storage   
+  Capacity (GB)              20   
+  LUN Id                     1   
+  Endurance Tier             10_IOPS_PER_GB   
+  Endurance Tier Per IOPS    10   
+  Datacenter                 wdc06   
+  Target IP                  161.XX.XX.XX 
+  # of Active Transactions   0   
+  Replicant Count            0
+  ```
+  {: screen}
+
+8.  Note the `ID`, `Target IP`, `Capacity GB`, the `Datacenter`, `User Name`, and `LUN Id` of the block storage device that you want to mount to your cluster. **Note:** To mount existing storage to a cluster, you must have a worker node in the same zone as your storage. To verify the zone of your worker node, run `ibmcloud oc worker ls --cluster <cluster_name_or_ID>`.
 
 ### Step 2: Creating a persistent volume (PV) and a matching persistent volume claim (PVC)
 {: #existing-block-2}
@@ -1021,13 +1044,13 @@ Before you can start to mount your existing storage to an app, you must retrieve
        ```
        {: pre}
 
-2.  Create a configuration file for your PV. Include the block storage `id`, `ip_addr`, `capacity_gb`, the `datacenter`, and `lunIdID` that you retrieved earlier.
+2.  Create a configuration file for your PV. Include the block storage `id`, `ip_addr`, `capacity_gb`, the `datacenter`, `username`, and `lunIdID` that you retrieved earlier.
 
     ```yaml
     apiVersion: v1
     kind: PersistentVolume
     metadata:
-      name: mypv
+      name: "<volume_ID>" 
       labels:
          failure-domain.beta.kubernetes.io/region: <region>
          failure-domain.beta.kubernetes.io/zone: <zone>
@@ -1043,7 +1066,7 @@ Before you can start to mount your existing storage to an app, you must retrieve
           "Lun": "<lun_ID>"
           "TargetPortal": "<IP_address>"
           "VolumeID": "<volume_ID>"
-          "volumeName": "<volume_name>"
+          "volumeName": "<volume_username>"
     ```
     {: codeblock}
 
@@ -1079,11 +1102,11 @@ Before you can start to mount your existing storage to an app, you must retrieve
     </tr>
     <tr>
     <td><code>VolumeId</code></td>
-    <td>In the spec flex volume options section, enter the ID of your block storage that you retrieved earlier as <code>id</code>.</td>
+    <td>In the spec flex volume options section, enter the ID of your block storage that you retrieved earlier as <code>id</code>. Example: "11111111".</td>
     </tr>
     <tr>
     <td><code>volumeName</code></td>
-    <td>In the spec flex volume options section, enter a name for your volume.</td>
+    <td>In the spec flex volume options section, enter the <code>username</code> of your {{site.data.keyword.blockstorageshort}} volume. Example: "IBM02SEL1111111-111"</td>
     </tr>
     </tbody></table>
 
@@ -1131,20 +1154,22 @@ Before you can start to mount your existing storage to an app, you must retrieve
      Example output:
 
      ```
-     Name: mypvc
-     Namespace: default
-     StorageClass:	""
-     Status: Bound
-     Volume: pvc-0d787071-3a67-11e7-aafc-eef80dd2dea2
-     Labels: <none>
-     Capacity: 20Gi
-     Access Modes: RWO
-     Events:
-       FirstSeen LastSeen Count From        SubObjectPath Type Reason Message
-       --------- -------- ----- ----        ------------- -------- ------ -------
-       3m 3m 1 {ibm.io/ibmc-block 31898035-3011-11e7-a6a4-7a08779efd33 } Normal Provisioning External provisioner is provisioning volume  for claim "default/my-persistent-volume-claim"
-       3m 1m	 10 {persistentvolume-controller } Normal ExternalProvisioning cannot find provisioner "ibm.io/ibmc-block", expecting that  a volume for the claim is provisioned either manually or via external software
-       1m 1m 1 {ibm.io/ibmc-block 31898035-3011-11e7-a6a4-7a08779efd33 } Normal ProvisioningSucceeded	Successfully provisioned volume  pvc-0d787071-3a67-11e7-aafc-eef80dd2dea2
+      Name:          mypvc
+      Namespace:     default
+      StorageClass:  
+      Status:        Bound
+      Volume:        111111111
+      Labels:        <none>
+      Annotations:   kubectl.kubernetes.io/last-applied-configuration:
+                      {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"name":"classic-block","namespace":"default"},"spec":{"acce...
+                    pv.kubernetes.io/bind-completed: yes
+                    pv.kubernetes.io/bound-by-controller: yes
+      Finalizers:    [kubernetes.io/pvc-protection]
+      Capacity:      20Gi
+      Access Modes:  RWO
+      VolumeMode:    Filesystem
+      Mounted By:    <none>
+      Events:        <none>
      ```
      {: screen}
 
