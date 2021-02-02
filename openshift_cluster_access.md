@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-01"
+lastupdated: "2021-02-02"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -768,7 +768,8 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
 Admission controllers intercept authorized API requests from various Kubernetes resources before the requests reach the API server that runs in your {{site.data.keyword.openshiftlong_notm}} cluster master. Mutating admission webhooks might modify the request, and validating admission webhooks check the request. If either webhook rejects a request, the entire request fails. Advanced features, whether built-in or added on, often require admission controllers as a security precaution and to control what requests are sent to the API server. For more information, see [Using Admission Controllers](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/){: external} and [Dynamic Admission Control](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} in the Kubernetes documentation.
 
 
-**Can I create my own admission controllers?**<br>
+**Can I create my own admission controllers?**
+
 Yes, see the [Kubernetes](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} and [{{site.data.keyword.openshiftshort}}](https://docs.openshift.com/container-platform/4.5/architecture/admission-plug-ins.html){: external} documentation for more information.
 
 As noted in the Kubernetes documentation, you can use admission controllers for operations that are otherwise handled by the control plane. As such, take great caution when you configure a custom admission controller. You are responsible for any changes that happen in your cluster because of a custom admission controller.
@@ -786,11 +787,13 @@ Keep in mind the following considerations when you configure a webhook.
 
 <br>
 
-**What other types of apps use admission controllers?**<br>
+**What other types of apps use admission controllers?**
+
 Many cluster add-ons, plug-ins, and other third-party extensions create custom admission controllers. Some common ones include:
 *   [Portieris](https://github.com/IBM/portieris){: external}
 
 <br>
 
-**I need help with a broken webhook. What can I do?**<br>
+**I need help with a broken webhook. What can I do?**
+
 See [Cluster cannot update because of broken webhook](/docs/openshift?topic=openshift-cs_troubleshoot#webhooks_update).

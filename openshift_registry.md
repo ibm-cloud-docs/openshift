@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-02-02"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -73,6 +73,8 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -185,7 +187,8 @@ For clusters that run {{site.data.keyword.openshiftshort}} version 4.3 or 4.4, y
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> By default, your {{site.data.keyword.openshiftshort}} cluster's internal registry uses an [{{site.data.keyword.cloud_notm}} File Storage](/docs/openshift?topic=openshift-file_storage) volume to store the registry images. You can review the default size of the storage volume, or update the volume size.
 {: shortdesc}
 
-**Viewing volume details**<br>
+**Viewing volume details**
+
 To view volume details including the storage class and size, you can describe the persistent volume claim.
 
 *   **Version 4**:
@@ -655,40 +658,48 @@ However, by default, your cluster is set up to pull images from only your accoun
 Generally, your {{site.data.keyword.openshiftlong_notm}} cluster is set up to pull images from all {{site.data.keyword.registrylong_notm}} `icr.io` domains from the `default` {{site.data.keyword.openshiftshort}} project only. Review the following FAQs to learn more about how to pull images in other {{site.data.keyword.openshiftshort}} projects or accounts, restrict pull access, or why your cluster might not have the default image pull secrets.
 {: shortdesc}
 
-**How is my cluster set up to pull images from the `default` {{site.data.keyword.openshiftshort}} project?**<br>
+**How is my cluster set up to pull images from the `default` {{site.data.keyword.openshiftshort}} project?**
+
 When you create a cluster, the cluster has an {{site.data.keyword.cloud_notm}} IAM service ID that is given an IAM **Reader** service access role policy to {{site.data.keyword.registrylong_notm}}. The service ID credentials are impersonated in a non-expiring API key that is stored in image pull secrets in your cluster. The image pull secrets are added to the `default` Kubernetes namespace and the list of secrets in the `default` service account for this {{site.data.keyword.openshiftshort}} project. By using image pull secrets, your deployments can pull images (read-only access) from the [global and regional {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_overview#registry_regions) to deploy containers in the `default` {{site.data.keyword.openshiftshort}} project.
 
 * The global registry securely stores public images that are provided by IBM. You can refer to these public images across your deployments instead of having different references for images that are stored in each regional registry.
 * The regional registry securely stores your own private Docker images.
 
-**What if I don't have image pull secrets in the `default` {{site.data.keyword.openshiftshort}} project?**<br>
+**What if I don't have image pull secrets in the `default` {{site.data.keyword.openshiftshort}} project?**
+
 You can check the image pull secrets by [logging in to your cluster](/docs/openshift?topic=openshift-access_cluster) and running `oc get secrets -n default | grep "icr-io"`. If no `icr` secrets are listed, the person who created the cluster might not have had the required permissions to {{site.data.keyword.registrylong_notm}} in IAM. See [Updating existing clusters to use the API key image pull secret](#imagePullSecret_migrate_api_key).
 
-**Can I restrict pull access to a certain regional registry?**<br>
+**Can I restrict pull access to a certain regional registry?**
+
 Yes, you can [edit the existing IAM policy of the service ID](/docs/account?topic=account-serviceids#update_serviceid) that restricts the **Reader** service access role to that regional registry or a registry resource such as a namespace. Before you can customize registry IAM policies, you must [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-user#existing_users).
 
   Want to make your registry credentials even more secured? Ask your cluster admin to [enable a key management service provider](/docs/openshift?topic=openshift-encryption#keyprotect) in your cluster to encrypt Kubernetes secrets in your cluster, such as the image pull secret that stores your registry credentials.
   {: tip}
 
-**Can I pull images in a {{site.data.keyword.openshiftshort}} project other than `default`?**<br>
+**Can I pull images in a {{site.data.keyword.openshiftshort}} project other than `default`?**
+
 Not by default. By using the default cluster setup, you can deploy containers from any image that is stored in your {{site.data.keyword.registrylong_notm}} namespace into the `default` {{site.data.keyword.openshiftshort}} project of your cluster. To use these images in any other {{site.data.keyword.openshiftshort}} projects or other {{site.data.keyword.cloud_notm}} accounts, [you have the option to copy or create your own image pull secrets](#other).
 
-**Can I pull images from a different {{site.data.keyword.cloud_notm}} account?**<br>
+**Can I pull images from a different {{site.data.keyword.cloud_notm}} account?**
+
 Yes, create an API key in the {{site.data.keyword.cloud_notm}} account that you want to use. Then, in each project of each cluster that you want to pull images from the {{site.data.keyword.cloud_notm}} account, create a secret that holds the API key. For more information, [follow along with this example that uses an authorized service ID API key](#other_registry_accounts).
 
 To use a non-{{site.data.keyword.cloud_notm}} registry such as Docker, see [Accessing images that are stored in other private registries](#private_images).
 
-**Does the API key need to be for a service ID? What happens if I reach the limit of service IDs for my account?**<br>
+**Does the API key need to be for a service ID? What happens if I reach the limit of service IDs for my account?**
+
 The default cluster setup creates a service ID to store {{site.data.keyword.cloud_notm}} IAM API key credentials in the image pull secret. However, you can also create an API key for an individual user and store those credentials in an image pull secret. If you reach the [IAM limit for service IDs](/docs/account?topic=account-policy-limits), your cluster is created without the service ID and image pull secret and cannot pull images from the `icr.io` registry domains by default. You must [create your own image pull secret](#other_registry_accounts), but by using an API key for an individual user such as a functional ID, not an {{site.data.keyword.cloud_notm}} IAM service ID.
 
-**I see image pull secrets for the regional registry domains and all registry domains. Which one do I use?**<br>
+**I see image pull secrets for the regional registry domains and all registry domains. Which one do I use?**
+
 Previously, {{site.data.keyword.openshiftlong_notm}} created separate image pull secrets for each regional, public `icr.io` registry domain. Now, all the public and private `icr.io` registry domains for all regions are stored in a single `all-icr-io` image pull secret that is automatically created in the `default` Kubernetes project of your cluster.
 
 For workloads in other Kubernetes namespaces in the cluster to pull container images from a private registry, you can now copy only the `all-icr-io` image pull secret to that Kubernetes project. Then, specify the `all-icr-io` secret in your service account or deployment. You do not need to copy the image pull secret that matches the regional registry of your image anymore. Also, keep in mind that you do not need image pull secrets for public registries, which do not require authentication.
 
 
 
-**After I copy or create an image pull secret in another {{site.data.keyword.openshiftshort}} project, am I done?**<br>
+**After I copy or create an image pull secret in another {{site.data.keyword.openshiftshort}} project, am I done?**
+
 Not quite. Your containers must be authorized to pull images by using the secret that you created. You can add the image pull secret to the service account for the namespace, or refer to the secret in each deployment. For instructions, see [Using the image pull secret to deploy containers](#use_imagePullSecret).
 
 ### Private network connection to `icr.io` registries
@@ -697,13 +708,15 @@ Not quite. Your containers must be authorized to pull images by using the secret
 When you set up your {{site.data.keyword.cloud_notm}} account to use service endpoints, you can use a private network connection to push images to and to pull images from {{site.data.keyword.registrylong_notm}}. When you use the private network to pull images, your image pull traffic is not charged as [public bandwidth](/docs/openshift?topic=openshift-costs#bandwidth), because the traffic is on the private network. For more information, see the [{{site.data.keyword.registrylong_notm}} private network documentation](/docs/Registry?topic=Registry-registry_private).
 {: shortdesc}
 
-**What do I need to do to set up my cluster to use the private connection to `icr.io` registries?**<br>
+**What do I need to do to set up my cluster to use the private connection to `icr.io` registries?**
+
 1.  Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account so that you can use the {{site.data.keyword.registrylong_notm}} private service endpoint. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command.
 2.  [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint).
 
 Now, {{site.data.keyword.registrylong_notm}} automatically uses the private service endpoint. You do not need to enable the private service endpoint for your {{site.data.keyword.openshiftlong_notm}} clusters.
 
-**Do I have to use the private `icr.io` registry addresses for anything else?**<br>
+**Do I have to use the private `icr.io` registry addresses for anything else?**
+
 Yes, if you [sign your images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent), the signatures contain the registry domain name. If you want to use the private `icr.io` domain for your signed images, resign your images with the private `icr.io` domains.
 
 <br />

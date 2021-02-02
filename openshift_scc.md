@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-22"
+  years: 2014, 2021
+lastupdated: "2021-02-02"
 
 keywords: openshift, roks, rhoks, rhos, scc, security context constraint, psp
 
@@ -73,6 +73,8 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -99,18 +101,22 @@ subcollection: openshift
 With security context constraints (SCCs), you can control the actions and access that pods within your {{site.data.keyword.openshiftlong}} cluster can perform. For more information about SCCs, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.5/authentication/managing-security-context-constraints.html){: external}.
 {: shortdesc}
 
-**Why do I set security context constraints?**</br>
+**Why do I set security context constraints?**
+
 As a cluster admin, you want to control what happens in your cluster, especially actions that affect the cluster's security or readiness. Security context constraints can help you control what actions and access the pods in your container have, such as the usage of privileged containers, root namespaces, host networking and ports, volume types, host file systems, Linux permissions such as read-only or group IDs, and more.
 
-**Can I also add users or system groups to SCCs?**<br>
+**Can I also add users or system groups to SCCs?**
+
 For user access to your cluster resources, do not use SCCs. Instead, see [Assigning cluster access](/docs/openshift?topic=openshift-users) to set {{site.data.keyword.cloud_notm}} IAM and infrastructure permissions.
 
 For system groups such as `system:authenticated`, these groups already are assigned to SCCs. You can see which groups are assigned to an SCC by describing the SCC. If you change the SCC that a system group is assigned to, default components that belong to the system group might experience errors due to the change in permissions.
 
-**Are any SCCs set by default?**</br>
+**Are any SCCs set by default?**
+
 By default, {{site.data.keyword.openshiftlong_notm}} clusters include a standard set of [{{site.data.keyword.openshiftshort}} SCCs](#oc_sccs). Additionally, clusters have [IBM SCCs](#ibm_sccs) that closely resemble the [Kubernetes pod security policies of community Kubernetes clusters in {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-psp#ibm_psp). These IBM SCCs are included for improved portability with {{site.data.keyword.cloud_notm}} Private packages such as Cloud Paks.
 
-**What SCCs are applied to my resources by default?**<br>
+**What SCCs are applied to my resources by default?**
+
 If you do not specify a security context, the {{site.data.keyword.openshiftshort}} `restricted` security context constraint is applied by default. To check a pod's security context, describe the pod and look for the SCC annotation, such as in the following example.
 
 ```
@@ -128,7 +134,8 @@ Annotations:        openshift.io/...
 ```
 {: screen}
 
-**Can I use Kubernetes pod security policies instead?**</br>
+**Can I use Kubernetes pod security policies instead?**
+
 No. [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){: external} (PSPs) are originally based on {{site.data.keyword.openshiftshort}} SCCs. However, {{site.data.keyword.openshiftshort}} supports only SCCs, not PSPs.
 
 The default {{site.data.keyword.openshiftshort}} SCCs are stricter than the default PSPs in community Kubernetes clusters. As such, app deployments that run in community Kubernetes clusters might need to be modified to run in {{site.data.keyword.openshiftshort}}.

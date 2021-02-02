@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-01"
+lastupdated: "2021-02-02"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade, update
 
@@ -113,28 +113,34 @@ Periodically, {{site.data.keyword.openshiftshort}} releases [major, minor, or pa
 ### About updating the master
 {: #master-about}
 
-**How do I know when to update the master?**</br>
+**How do I know when to update the master?**
+
 You are notified in the {{site.data.keyword.cloud_notm}} console and CLI when updates are available, and can also check the [supported versions](/docs/openshift?topic=openshift-openshift_versions) page.
 
-**Can my worker nodes run a later version than the master?**</br>
+**Can my worker nodes run a later version than the master?**
+
 Your worker nodes cannot run a later `major.minor` Kubernetes version than the master. Additionally, your worker nodes can only be one version behind the master version (`n-1`). First, [update your master](#update_master) to the latest Kubernetes version. Then, [update the worker nodes](#worker_node) in your cluster.
 
 Worker nodes can run later patch versions than the master, such as patch versions that are specific to worker nodes for security updates.
 <br>
 
-**How are patch updates applied?**</br>
+**How are patch updates applied?**
+
 By default, patch updates for the master are applied automatically over the course of several days, so a master patch version might show up as available before it is applied to your master. The update automation also skips clusters that are in an unhealthy state or have operations currently in progress. Occasionally, IBM might disable automatic updates for a specific master fix pack, such as a patch that is only needed if a master is updated from one minor version to another. In any of these cases, you can [check the versions changelog](/docs/openshift?topic=openshift-openshift_changelog) for any potential impact and choose to safely use the `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) yourself without waiting for the update automation to apply.
 
 Unlike the master, you must update your workers for each patch version.
 
 
-**What happens during the master update?**</br>
+**What happens during the master update?**
+
 Your master is highly available with three replica master pods. The master pods have a rolling update, during which only one pod is unavailable at a time. Two instances are up and running so that you can access and change the cluster during the update. Your worker nodes, apps, and resources continue to run.
 
-**Can I roll back the update?**</br>
+**Can I roll back the update?**
+
 No, you cannot roll back a cluster to a previous version after the update process takes place. Be sure to use a test cluster and follow the instructions to address potential issues before you update your production master.
 
-**What process can I follow to update the master?**</br>
+**What process can I follow to update the master?**
+
 The following diagram shows the process that you can take to update your master.
 
 ![Master update process diagram](/images/update-tree.png){: caption="Figure 1. Updating Kubernetes master process diagram" caption-side="bottom"}
@@ -196,15 +202,18 @@ You notice that an update is available for your worker nodes in a [classic infra
 For more information, see [Update types](/docs/containers?topic=containers-cs_versions#update_types).
 {: shortdesc}
 
-**What happens to my apps during an update?**</br>
+**What happens to my apps during an update?**
+
 If you run apps as part of a deployment on worker nodes that you update, the apps are rescheduled onto other worker nodes in the cluster. These worker nodes might be in a different worker pool, or if you have stand-alone worker nodes, apps might be scheduled onto stand-alone worker nodes. To avoid downtime for your app, you must ensure that you have enough capacity in the cluster to carry the workload.
 
-**How can I control how many worker nodes go down at a time during an update or reload?**</br>
+**How can I control how many worker nodes go down at a time during an update or reload?**
+
 If you need all your worker nodes to be up and running, consider [resizing your worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [adding stand-alone worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_add) to add more worker nodes. You can remove the additional worker nodes after the update is completed.
 
 In addition, you can create a Kubernetes config map that specifies the maximum number of worker nodes that can be unavailable at a time, such as during an update or reload. Worker nodes are identified by the worker node labels. You can use IBM-provided labels or custom labels that you added to the worker node.
 
-**What if I choose not to define a config map?**</br>
+**What if I choose not to define a config map?**
+
 When the config map is not defined, the default is used. By default, a maximum of 20% of all of your worker nodes in each cluster can be unavailable during the update process.
 
 ### Prerequisites
@@ -409,16 +418,23 @@ You notice that an update is available for your worker nodes in a [VPC infrastru
 
 For more information, see [Update types](/docs/containers?topic=containers-cs_versions#update_types).
 
-**What happens to my apps during an update?**</br>
+**What happens to my apps during an update?**
+
 If you run apps as part of a deployment on worker nodes that you update, the apps are rescheduled onto other worker nodes in the cluster. These worker nodes might be in a different worker pool. To avoid downtime for your app, you must ensure that you have enough capacity in the cluster to carry the workload, such as by [resizing your worker pools](/docs/openshift?topic=openshift-add_workers#resize_pool).
 
-**What happens to my worker node during an update?**<br>
+**What happens to my worker node during an update?**
+
 You VPC worker node is replaced by removing the old worker node and provisioning a new worker node that runs at the updated patch or `major.minor` version. The replacement worker node is created in the same zone, same worker pool, and with the same flavor as the deleted worker node. However, the replacement worker node is assigned a new private IP address, and loses any custom labels or taints that you applied to the old worker node (worker pool labels and taints are still applied to the replacement worker node).
+**
 
-**What if I replace multiple worker nodes at the same time?**<br>
-If you replace multiple worker nodes at the same time, they are deleted and replaced concurrently, not one by one. Make sure that you have enough capacity in your cluster to reschedule your workloads before you replace worker nodes.
+**What if I replace multiple worker nodes at the same time?**
 
-**What if a replacement worker node is not created?**<br>
+If you replace multiple worker nodes at the same ti**
+ey are deleted and replaced concurrently, not one by one. Make sure that you have enough capacity in your cluster to reschedule your workloads before you replace worker nodes.
+**
+
+**What if a replacement worker node is not created?**
+
 A replacement worker node is not created if the worker pool does not have [automatic rebalancing enabled](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#auto-rebalance-off).
 
 ### Prerequisites
@@ -611,12 +627,13 @@ To update flavors:
 Your {{site.data.keyword.openshiftlong_notm}} cluster comes with components, such as Ingress, that are installed automatically when you provision the cluster. By default, these components are updated automatically by IBM. However, you can disable automatic updates for some components and manually update them separately from the master and worker nodes.
 {: shortdesc}
 
-**What default components can I update separately from the cluster?**</br>
+**What default components can I update separately from the cluster?**
+
 You can optionally disable automatic updates for the following components:
 * [Fluentd for logging](#logging-up)
 * [Ingress application load balancer (ALB)](#alb)
 
-**Are there components that I can't update separately from the cluster?**</br>
+**Are there components that I can't update separately from the cluster?**
 
 Yes. Your cluster is deployed with the following managed components and associated resources that cannot be changed, except to scale pods or edit configmaps for certain performance benefits. If you try to change one of these deployment components, their original settings are restored on a regular interval when they are updated with the cluster master. However, note that resources that you create that are associated with these components, such as Calico network policies that you create to be implemented by the Calico deployment components, are not updated.
 
@@ -632,7 +649,8 @@ Yes. Your cluster is deployed with the following managed components and associat
 * `olm-operator` and `catalog` components (1.16 and later)
 * `vpn`
 
-**Can I install other plug-ins or add-ons than the default components?**</br>
+**Can I install other plug-ins or add-ons than the default components?**
+
 Yes. {{site.data.keyword.openshiftlong_notm}} provides other plugin-ins and add-ons that you can choose from to add capabilities to your cluster. For example, you might want to [use Helm charts](/docs/openshift?topic=openshift-helm) to install  [strongSwan VPN](/docs/openshift?topic=openshift-vpn#vpn-setup). Or you might want to enable IBM-managed add-ons in your cluster, such as the Diagnostics and Debug Tool. You must update these Helm charts and add-ons separately by following the instructions in the Helm chart readme files or by following the steps to [update managed add-ons](/docs/openshift?topic=openshift-managed-addons#updating-managed-add-ons).
 
 ### Managing automatic updates for Fluentd

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-01"
+lastupdated: "2021-02-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -101,7 +101,8 @@ subcollection: openshift
 As you use {{site.data.keyword.openshiftlong_notm}}, consider these techniques for general troubleshooting and debugging your cluster and cluster master.
 {: shortdesc}
 
-**General ways to resolve issues**<br>
+**General ways to resolve issues**
+
 1. Keep your cluster environment up to date.
    * Check monthly for available security and operating system patches to [update your worker nodes](/docs/openshift?topic=openshift-update#worker_node).
    * [Update your cluster](/docs/openshift?topic=openshift-update#master) to the latest default version for [{{site.data.keyword.openshiftshort}}](/docs/containers?topic=containers-cs_versions).
@@ -110,7 +111,8 @@ As you use {{site.data.keyword.openshiftlong_notm}}, consider these techniques f
    * Make sure that [your `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `oc` client versions that are 2 or more versions apart from the server version (n +/- 2).
 <br>
 
-**Reviewing issues and status**<br>
+**Reviewing issues and status**
+
 1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
 2. Filter for the **Kubernetes Service** component.
 

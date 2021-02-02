@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-22"
+  years: 2014, 2021
+lastupdated: "2021-02-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -73,6 +73,8 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -475,7 +477,8 @@ For clusters that were created before **1 July 2019**, the cluster might have an
 <br>
 <br>
 
-**Troubleshooting image pull secrets that use API keys**</br>
+**Troubleshooting image pull secrets that use API keys**
+
 {: #ts_image_pull_apikey}
 
 If your pod configuration has an image pull secret that uses an API key, check that the API key credentials are set up correctly.
@@ -562,7 +565,8 @@ The following steps assume that the API key stores the credentials of a service 
 <br>
 <br>
 
-**Deprecated: Troubleshooting image pull secrets that use tokens**</br>
+**Deprecated: Troubleshooting image pull secrets that use tokens**
+
 {: #ts_image_pull_token}
 
 If your pod configuration has an image pull secret that uses a token, check that the token credentials are valid.

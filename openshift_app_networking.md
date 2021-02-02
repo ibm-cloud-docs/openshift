@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-22"
+  years: 2014, 2021
+lastupdated: "2021-02-02"
 
 keywords: openshift, roks, rhoks, rhos, networking
 
@@ -73,6 +73,8 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -137,7 +139,8 @@ To securely expose your apps to external traffic, you can use choose from the fo
 Now that you understand what [options](#external) you have to expose apps in your {{site.data.keyword.openshiftshort}} cluster, choose the best solution for your workload.
 {: shortdesc}
 
-**Do I use {{site.data.keyword.openshiftshort}} routes or Ingress?**<br>
+**Do I use {{site.data.keyword.openshiftshort}} routes or Ingress?**
+
 Because routes and Ingress offer similar capabilities, both load balancing solutions might be suitable to your workload. To help decide between routes and Ingress, consider the following broader concerns.
 * **Portability across clouds**: If you anticipate running the same app in {{site.data.keyword.openshiftshort}} clusters in a hybrid scenario across multiple cloud providers, use the {{site.data.keyword.openshiftshort}} router. Routes are configured and work the same way across cloud providers, whereas Ingress might vary with each provider.
 * **Annotations to extend routing capabilities**: With the Ingress ALB, you can customize Ingress routing rules with annotations. Some of these annotations help to integrate other {{site.data.keyword.cloud_notm}} services to your routes, such as {{site.data.keyword.appid_short}} to provide authentication for the Ingress URL that is assigned to your app. These annotations are not available for the {{site.data.keyword.openshiftshort}} router, which must use [route-specific `haproxy` annotations](https://docs.openshift.com/container-platform/4.5/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}.

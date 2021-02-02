@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-01"
+lastupdated: "2021-02-02"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -166,13 +166,16 @@ Kubernetes Version: v1.18.2
 The following table records {{site.data.keyword.openshiftlong_notm}} version release history. You can use this information for planning purposes, such as to estimate general time frames when a certain release might become unsupported.
 {: shortdesc}
 
-**How soon after an OCP release is the version available in {{site.data.keyword.cloud_notm}}?**<br>
+**How soon after an OCP release is the version available in {{site.data.keyword.cloud_notm}}?**
+
 After the Red Hat OpenShift Container Platform community releases a version update, the IBM team begins a process of hardening and testing the release for {{site.data.keyword.openshiftlong_notm}} environments. Availability and unsupported release dates depend on the results of these tests, community updates, security patches, and technology changes between versions. Plan to keep your cluster master and worker node version up-to-date.
 
-**Why is the deprecated version 3.11 supported longer than more recent versions like 4.3?**<br>
+**Why is the deprecated version 3.11 supported longer than more recent versions like 4.3?**
+
 In general, the last minor version of a major version is supported longer than other minor versions. Because you cannot update a cluster from one major version to another (such as version 3 to 4), this longer support period gives you time to create clusters at a more recent version. Minor versions of a more recent major version might become unsupported before the last minor version of a deprecated major version because the more recent major version has subsequent minor releases that are supported. For example, version 4.3 becomes unsupported before the deprecated version 3.11 because version 4 has future minor releases, but 3.11 is the last minor version of version 3.
 
-**What is different for deprecated versions?**<br>
+**What is different for deprecated versions?**
+
 Your apps still run, and you can log in to the cluster to manage your {{site.data.keyword.openshiftshort}} resources. You can still manage your cluster lifecycle, such as by adding and reloading worker nodes. However, security patch updates might not be provided. To continue receiving important security updates and the latest functionality, create a cluster at a supported version. You receive a notification in the console and CLI to update your cluster to a supported version about 45 days before the deprecated version becomes unsupported.
 
 Dates that are marked with a dagger (`†`) are tentative and subject to change.
@@ -325,15 +328,18 @@ You cannot update your {{site.data.keyword.openshiftlong_notm}} cluster from ver
 
 <p class="important">Keep in mind the following limitations to the migration operator.<ul><li>The {{site.data.keyword.openshiftshort}} Migration Operator is a community tool that you choose to use, and is not supported by IBM or Red Hat.</li><li>You must [complete the prerequisites](#ocp3to4-migrate-prereqs) to prepare the resources in your {{site.data.keyword.cloud_notm}} account.</li><li>The instructions are intended for version 1.0.1 of the migration operator and for 3.11 source and 4.3 destination clusters. The instructions might not work with other versions.</li><li>The migration operator console does not work with {{site.data.keyword.openshiftlong_notm}}. Instead, you can use the CLI to apply configuration files.</li><li>The migration operator is scoped to resources within a project or multiple projects. You cannot migrate resources that reside outside a project, such as cluster role bindings.</li><li>You cannot configure cross-origin resource sharing for 3.11 clusters.</li></ul></p>
 
-**How does the migration operator work?**<br>
+**How does the migration operator work?**
+
 The migration operator is a set of custom resources that use [Velero](https://velero.io/){: external} and [Restic](https://restic.net/){: external} open source projects to back up your cluster resources in a project to an {{site.data.keyword.cos_full_notm}} service instance. Then, the operator restores the project resources on the destination cluster. For more information, see the [{{site.data.keyword.openshiftshort}} tech topic](https://www.openshift.com/learn/topics/migration){: external} and a [conceptual overview of the architecture](https://github.com/konveyor/mig-operator/blob/master/docs/usage/2.md).
 
 For an architectural overview of the custom resource definitions that are applied in the clusters, see [CRD Architecture](https://github.com/konveyor/mig-operator/blob/master/docs/usage/5.md#51-crd-architecture){: external}.
 
-**Can I try out the migration with a sample app?**<br>
+**Can I try out the migration with a sample app?**
+
 Yes, the open source documentation includes two examples of [MSSQL](https://github.com/konveyor/mig-operator/blob/master/docs/usage/3.md){: external} and [Sock Shop](https://github.com/konveyor/mig-operator/blob/master/docs/usage/4.md){: external} apps. Keep in mind that the migration operator console is not supported in {{site.data.keyword.openshiftlong_notm}}, so you can use the CLI instead.
 
-**If the console does not work, where are instructions to apply the configuration files myself?**<br>
+**If the console does not work, where are instructions to apply the configuration files myself?**
+
 After you complete the [prerequisites](#ocp3to4-migrate-prereqs), you can use the following [steps](#ocp3to4-migrate-source) as an example to configure your source and destination clusters for the migration. Remember that the instructions are intended for version 1.0.1 of the migration operator and for 3.11 source and 4.3 destination clusters. The instructions might not work with other versions, and are not updated in sync with the [open source community project docs](https://github.com/konveyor/mig-operator/tree/master/docs/usage){: external}.
 
 ### Prerequisites
