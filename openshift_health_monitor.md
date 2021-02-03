@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-02"
+lastupdated: "2021-02-03"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -111,10 +111,10 @@ To help understand when to use the built-in {{site.data.keyword.openshiftshort}}
 
 <dt>{{site.data.keyword.mon_full_notm}}</dt>
 <dd><ul>
-<li>Customizable user interface for a unified look at your cluster metrics, contasecurity, resource usage, alerts, and custom events.</li>
+<li>Customizable user interface for a unified look at your cluster metrics, container security, resource usage, alerts, and custom events.</li>
 <li>Quick integration with the cluster via a script.</li>
-<li>Aggregated metrics and container monitoring across clusters and cloud providersconsistent operations enablement.</li>
-<li>Historical access to metrics that is based on the timeline and plan, and abilitcapture and download trace files.</li>
+<li>Aggregated metrics and container monitoring across clusters and cloud providers.</li>
+<li>Historical access to metrics that is based on the timeline and plan, and ability to capture and download trace files.</li>
 <li>Highly available, scalable, and compliant with industry security standards.</li>
 <li>Integrated with {{site.data.keyword.cloud_notm}} IAM for user access management.</li>
 <li>Free trial to try out the capabilities.</li></ul>
