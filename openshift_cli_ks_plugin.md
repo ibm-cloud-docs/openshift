@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-02"
+lastupdated: "2021-02-03"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -2359,6 +2359,92 @@ ibmcloud oc worker-pool get --worker-pool WORKER_POOL --cluster CLUSTER [--outpu
 **Example**:
 ```sh
 ibmcloud oc worker-pool get --worker-pool pool1 --cluster my_cluster
+```
+{: pre}
+
+</br>
+
+### `ibmcloud oc worker-pool label rm`
+{: #cs_worker_pool_label_rm}
+
+Remove all custom Kubernetes labels from all worker nodes in a worker pool.
+{: shortdesc}
+
+To remove an individual label from a worker pool, you can run the `ibmcloud oc worker-pool label set` command with only the custom labels that you want to keep.
+{: tip}
+
+```sh
+ibmcloud oc worker-pool label rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>Required: The name or ID of the cluster where the worker pool is located.</dd>
+
+<dt><code>-p, --worker-pool <em>WORKER_POOL</em></code></dt>
+<dd>Required: The name of the worker node pool that you want to view the details of. To list available worker pools, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`.</dd>
+
+<dt><code>-f</code></dt>
+<dd>Optional: Force the command to run with no user prompts.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example**:
+```sh
+ibmcloud oc worker-pool label rm --worker-pool pool1 --cluster my_cluster
+```
+{: pre}
+
+</br>
+
+### `ibmcloud oc worker-pool label set`
+{: #cs_worker_pool_label_set}
+
+Set custom Kubernetes labels in the format `key=value` for all the worker nodes in the worker pool. To keep any existing custom labels on the worker pool, you must include those labels in this command.
+{: shortdesc}
+
+```sh
+ibmcloud oc worker-pool label set --cluster CLUSTER --label LABEL [--label LABEL ...] --worker-pool POOL [-f] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>Required: The name or ID of the cluster where the worker pool is located.</dd>
+
+<dt><code>--label <em>LABEL</em></code></dt>
+<dd>Required: A custom label in the format `key=value` to set for all the worker nodes in the worker pool.  For multiple labels, repeat this flag. To keep any existing custom labels on the worker pool, include those labels with this flag.</dd>
+
+<dt><code>-p, --worker-pool <em>WORKER_POOL</em></code></dt>
+<dd>Required: The name of the worker node pool that you want to view the details of. To list available worker pools, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`.</dd>
+
+<dt><code>-f</code></dt>
+<dd>Optional: Force the command to run with no user prompts.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example**:
+```sh
+ibmcloud oc worker-pool label set --worker-pool pool1 --cluster my_cluster --label app=dev
 ```
 {: pre}
 
