@@ -634,9 +634,15 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     ```
     {: pre}
 
-2.  Label the worker pool with a `key=value` label. When you set a worker pool label, all the existing custom labels are replaced. To keep any existing custom labels on the worker pool, include those labels with this flag.
+2. List the existing custom labels on worker nodes in the worker pool that you want to label.
+    ```
+    ibmcloud oc worker-pool get -c <cluster_name_or_ID> --worker-pool <pool>
+    ```
+    {: pre}
 
-    You can also rename an existing label by assigning the same key a new value. However, do not modify the worker pool or worker node labels that are provided by default because these labels are required for worker pools to function properly. Modify only custom labels that you previously added. To list existing worker node labels, run `oc describe node <worker_node_private_IP>`.
+3. Label the worker pool with a `key=value` label. When you set a worker pool label, all the existing custom labels are replaced. To keep any existing custom labels on the worker pool, include those labels with this flag.
+
+    You can also rename an existing label by assigning the same key a new value. However, do not modify the worker pool or worker node labels that are provided by default because these labels are required for worker pools to function properly. Modify only custom labels that you previously added.
     {: important}
     ```
     ibmcloud oc worker-pool label set <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> --label <key=value>
@@ -646,23 +652,6 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     Example to set `<key>: <value>` as a new custom label in a worker pool with existing labels `team: DevOps` and `app: test`:
     ```
     ibmcloud oc worker-pool label set <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> --label <key=value> --label team=DevOps --label app=test
-    ```
-    {: pre}
-
-3.  **Optional**: To remove an individual label from a worker pool, you can run the `ibmcloud oc worker-pool label set` command with only the custom labels that you want to keep. To remove all custom labels from a worker pool, you can run the `ibmcloud oc worker-pool label rm` command.
-
-    Do not remove the worker pool and worker node labels that are provided by default because these labels are required for worker pools to function properly. Remove only custom labels that you previously added.
-    {: important}
-
-    Example to keep only the `team: DevOps` and `app: test` labels and remove all other custom labels from a worker pool:
-    ```
-    ibmcloud oc worker-pool label set <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> --label team=DevOps --label app=test
-    ```
-    {: pre}
-
-    Example to remove all custom label from a worker pool:
-    ```
-    ibmcloud oc worker-pool label rm <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID>
     ```
     {: pre}
 
@@ -697,8 +686,24 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
             Labels:   arch=amd64
                       ...
             ```
-            {: screen}
+            {: screen}            
 
+5.  **Optional**: To remove an individual label from a worker pool, you can run the `ibmcloud oc worker-pool label set` command with only the custom labels that you want to keep. To remove all custom labels from a worker pool, you can run the `ibmcloud oc worker-pool label rm` command.
+
+    Do not remove the worker pool and worker node labels that are provided by default because these labels are required for worker pools to function properly. Remove only custom labels that you previously added.
+    {: important}
+
+    Example to keep only the `team: DevOps` and `app: test` labels and remove all other custom labels from a worker pool:
+    ```
+    ibmcloud oc worker-pool label set <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> --label team=DevOps --label app=test
+    ```
+    {: pre}
+
+    Example to remove all custom label from a worker pool:
+    ```
+    ibmcloud oc worker-pool label rm <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID>
+    ```
+    {: pre}
 After you label your worker pool, you can use the [label in your app deployments](/docs/openshift?topic=openshift-openshift_apps#label) so that your workloads run on only these worker nodes, or [taints](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external} to prevent deployments from running on these worker nodes.
 
 
