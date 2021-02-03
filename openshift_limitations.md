@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-02"
+lastupdated: "2021-02-03"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
@@ -286,6 +286,7 @@ Review the following limitations for [{{site.data.keyword.openshiftlong_notm}} c
 | Category | Description |
 | -------- | ----------- |
 | Cluster autoscaler | The [cluster autoscaler](/docs/openshift?topic=openshift-ca) is not supported.|
+| Key management service (KMS) | Cluster integration with a key management service (KMS) provider like {{site.data.keyword.keymanagementserviceshort}} is not supported.|
 | Locations | You must create your own [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations) that is managed from [select {{site.data.keyword.cloud_notm}} multizone metros](/docs/satellite?topic=satellite-sat-regions). |
 | Network | <ul><li>The private service endpoint is not supported for {{site.data.keyword.satelliteshort}} clusters.</li><li>Your {{site.data.keyword.satelliteshort}} clusters cannot use Kubernetes load balancers.</li><li>The hosts that run the worker nodes for your cluster must meet the [host networking](/docs/satellite?topic=satellite-host-reqs#reqs-host-network) and [provider-specific](/docs/satellite?topic=satellite-providers) requirements. For example, depending on your provider, you might have to manually register the host IP addresses in the DNS for the location or cluster subdomains.</li></ul>|
 | Storage for worker node hosts | See [Host storage and attached devices](/docs/satellite?topic=satellite-host-reqs#reqs-host-storage). |
