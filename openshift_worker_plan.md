@@ -437,37 +437,10 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 </thead>
 <tbody>
 <tr>
-<td><strong>Virtual with SDS, c3s.16x64.2tb.san</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). Includes 2x2 TB Raw SAN local storage.</td>
-<td>16 / 64 GB</td>
-<td>25 GB / 100 GB</td>
-<td>2 disks, 2 TB Raw SAN</td>
-<td>10000 Mbps</td>
-</tr>
-<td><strong>Virtual with SDS, c3s.32x128.2x2tb.san</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). Includes 2x2 TB Raw SAN local storage.</td>
-<td>32 / 128 GB</td>
-<td>25 GB / 100 GB</td>
-<td>2 disks, 2 TB Raw SAN</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
 <td><strong>Data-intensive bare metal with SDS, me4c.4x32.1.9tb.ssd</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT.</td>
 <td>4 / 32 GB</td>
 <td>2 TB HDD / 960 GB SSD</td>
 <td>1.9 TB Raw SSD (device paths: `/dev/sdc`)</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
-<td><strong>GPU bare metal with SDS, mgs3c.16x128.3.8tb.ssd</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). This flavor has one Tesla K80 physical card that has two GPUs per card for a total of two GPUs.</td>
-<td>16 / 128 GB</td>
-<td>2 TB SATA / 1.9 TB SSD</td>
-<td>3.8 TB Raw SSD</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
-<td><strong>GPU bare metal with SDS, mgs3c.28x512.2x3.8tb.ssd</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). This flavor has one Tesla K80 physical card that has two GPUs per card for a total of two GPUs.</td>
-<td>28 / 512 GB</td>
-<td>2 TB SATA / 1.9 TB SSD</td>
-<td>2 disks, 3.8 TB Raw SSD</td>
 <td>10000 Mbps</td>
 </tr>
 <tr>
