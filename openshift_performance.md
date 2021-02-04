@@ -111,13 +111,16 @@ By default, your worker nodes have the operating system and compute hardware of 
 ### Customizing the operating system
 {: #worker-default-os}
 
-The following operating systems are available for worker nodes: **RHEL 7**. Your cluster cannot mix operating systems or use different operating systems. Also, changes to the operating system are not supported. 
+The following operating systems are available for worker nodes: **RHEL 7**. Your cluster cannot mix operating systems or use different operating systems. 
 {: shortdesc}
 
 To optimize your worker nodes, consider the following information.
 * **Image and version updates**: Worker node updates, such as security patches to the image or {{site.data.keyword.openshiftshort}} versions, are provided by IBM for you. However, you choose when to apply the updates to the worker nodes. For more information, see [Updating clusters, worker nodes, and cluster components](/docs/openshift?topic=openshift-update).
-* **Temporary modifications**: If you log in to a pod or use some other process to modify a worker node setting, the modifications are temporary. Worker node lifecycle operations, such as autorecovery, reloading, rebooting, updating, or replacing a worker node, change any modifications back to the default settings.
+* **Temporary modifications**: If you log in to a pod or use some other process to modify a worker node setting, the modifications are temporary. Worker node lifecycle operations, such as autorecovery, reloading, updating, or replacing a worker node, change any modifications back to the default settings.
 * **Persistent modifications**: For modifications to persist across worker node lifecycle operations, use a daemon set with an init container. For more information, see [Modifying default worker node settings to optimize performance](#worker).
+
+   Modifications to the operating system are not supported. If you modify the default settings, you are responsible for debugging and resolving the issues that might occur.
+   {: important}
 
 ### Hardware changes
 {: #worker-default-hw}
