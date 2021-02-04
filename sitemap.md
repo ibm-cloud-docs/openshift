@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-02-04"
 
 keywords: openshift
 subcollection: openshift
@@ -72,8 +72,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -547,6 +545,10 @@ subcollection: openshift
 * [Updating managed add-ons](/docs/openshift?topic=openshift-update#addons)
 
 [Tuning performance](/docs/openshift?topic=openshift-kernel)
+* [Default worker node settings](/docs/openshift?topic=openshift-kernel#worker-default)
+  * [Customizing the operating system](/docs/openshift?topic=openshift-kernel#worker-default-os)
+  * [Hardware changes](/docs/openshift?topic=openshift-kernel#worker-default-hw)
+* [Modifying default worker node settings to optimize performance](/docs/openshift?topic=openshift-kernel#worker)
 * [Changing the Calico maximum transmission unit (MTU)](/docs/openshift?topic=openshift-kernel#calico-mtu)
   * [Changing the Calico MTU for version 4 clusters](/docs/openshift?topic=openshift-kernel#calico-mtu-43)
   * [Changing the Calico MTU for 3.11 clusters](/docs/openshift?topic=openshift-kernel#calico-mtu-311)
