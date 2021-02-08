@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -476,7 +476,6 @@ For clusters that were created before **1 July 2019**, the cluster might have an
 <br>
 
 **Troubleshooting image pull secrets that use API keys**
-
 {: #ts_image_pull_apikey}
 
 If your pod configuration has an image pull secret that uses an API key, check that the API key credentials are set up correctly.

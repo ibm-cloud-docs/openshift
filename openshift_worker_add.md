@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-08"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -510,7 +510,7 @@ Your worker pool is created!
 * If {{site.data.keyword.satelliteshort}} hosts with matching labels are available, the hosts are assigned to the worker pool as worker nodes. Keep in mind that hosts might also have a zone label and are assigned only to that zone.
 * If no hosts are available, you can [manually assign hosts](/docs/satellite?topic=satellite-hosts#host-assign) to the worker pool. Keep in mind that if you manually assign hosts, host autoassignment is disabled for future actions until you rebalance the worker pool.
 
-When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host vCPU. [Learn more](/docs/satellite?topic=satellite-faqs#pricing).
+When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host vCPU.
 {: note} 
 
 ### Maintaining {{site.data.keyword.satelliteshort}} worker pools

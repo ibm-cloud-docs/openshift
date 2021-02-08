@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-08"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
@@ -286,6 +286,7 @@ Review the following limitations for [{{site.data.keyword.openshiftlong_notm}} c
 | Cluster autoscaler | The [cluster autoscaler](/docs/openshift?topic=openshift-ca) is not supported.|
 | Key management service (KMS) | Cluster integration with a key management service (KMS) provider like {{site.data.keyword.keymanagementserviceshort}} is not supported.|
 | Locations | You must create your own [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations) that is managed from [select {{site.data.keyword.cloud_notm}} multizone metros](/docs/satellite?topic=satellite-sat-regions). |
+| Logging and monitoring | You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable logging and monitoring for {{site.data.keyword.satelliteshort}} clusters. Instead, you can manually deploy [LogDNA agents](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-kube#kube) and [Sysdig agents](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-kubernetes_cluster#kubernetes_cluster) to your cluster to forward logs and metrics to {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}. |
 | Network | <ul><li>The private service endpoint is not supported for {{site.data.keyword.satelliteshort}} clusters.</li><li>Your {{site.data.keyword.satelliteshort}} clusters cannot use Kubernetes load balancers.</li><li>The hosts that run the worker nodes for your cluster must meet the [host networking](/docs/satellite?topic=satellite-host-reqs#reqs-host-network) and [provider-specific](/docs/satellite?topic=satellite-providers) requirements. For example, depending on your provider, you might have to manually register the host IP addresses in the DNS for the location or cluster subdomains.</li></ul>|
 | Storage for worker node hosts | See [Host storage and attached devices](/docs/satellite?topic=satellite-host-reqs#reqs-host-storage). |
 | Storage for apps | <ul><li>No location-wide storage solution is provided to store your application data.</li><li>No storage provider is installed in your {{site.data.keyword.satelliteshort}} clusters by default. Therefore, no pre-configured Kubernetes storage classes are set up by default in your clusters to store your application data in a Kubernetes persistent volume that is backed by storage device.</li><li>You can [install your own storage driver in your {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-storage) to store your application data in Kubernetes persistent volumes that are backed by a storage provider.</li></ul> |

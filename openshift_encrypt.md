@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-08"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -164,7 +164,6 @@ Review the following known limitations:
 * Customizing the IP addresses that are allowed to connect to your {{site.data.keyword.keymanagementserviceshort}} instance is not supported.
 
 **Do the features change depending on my cluster version?**
-
 {: #kms-keyprotect-features}
 
 Yes. Your cluster version impacts the functionality of the KMS provider. To see what {{site.data.keyword.keymanagementserviceshort}} features are available for different cluster versions of {{site.data.keyword.openshiftlong_notm}}, review the following table.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-08"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -247,10 +247,10 @@ If your classic cluster has deprecated `x1c` or older Ubuntu 16 `x2c` worker nod
 | **Virtual, c3c.16x32**: Use this flavor when you want a 1:2 ratio of CPU and memory resources from the worker node for light to mid-sized workloads. | 16 / 32 GB | 25 GB / 100 GB | 1000 Mbps |
 | **Virtual, c3c.32x32**: Use this flavor when you want an even balance of compute resources from the worker node for mid-sized workloads. | 32 / 32 GB | 25 GB / 100 GB | 1000 Mbps |
 | **Virtual, c3c.32x64**: Use this flavor when you want a 1:2 ratio of CPU and memory resources from the worker node for mid-sized workloads. | 32 / 64 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, m3c.4x32**: Use this flavor when you want a 1:8 ratio of CPU and memory resources for light workloads that require more memory, similar to databases such as {{site.data.keyword.Db2_on_Cloud_short}}. Available only in Dallas and as `--hardware shared` tenancy. | 4 / 32 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, m3c.8x64**: Use this flavor when you want a 1:8 ratio of CPU and memory resources for light to mid-sized workloads that require more memory, similar to databases such as {{site.data.keyword.Db2_on_Cloud_short}}. Available only in Dallas and as `--hardware shared` tenancy. | 8 / 64 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, m3c.16x128**: Use this flavor when you want a 1:8 ratio of CPU and memory resources for mid-sized workloads that require more memory, similar to databases such as {{site.data.keyword.Db2_on_Cloud_short}}. Available only in Dallas and as `--hardware shared` tenancy. | 16 / 128 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, m3c.30x240**: Use this flavor when you want a 1:8 ratio of CPU and memory resources for mid to large-sized workloads that require more memory, similar to databases such as {{site.data.keyword.Db2_on_Cloud_short}}. Available only in Dallas and as `--hardware shared` tenancy. | 30 / 240 GB | 25 GB / 100 GB | 1000 Mbps |
+| **Virtual, m3c.4x32**: Use this flavor when you want a 1:8 ratio of CPU and memory resources for light workloads that require more memory, similar to databases such as {{site.data.keyword.Db2_on_Cloud_short}}. Available as `--hardware shared` tenancy. | 4 / 32 GB | 25 GB / 100 GB | 1000 Mbps |
+| **Virtual, m3c.8x64**: Use this flavor when you want a 1:8 ratio of CPU and memory resources for light to mid-sized workloads that require more memory, similar to databases such as {{site.data.keyword.Db2_on_Cloud_short}}. Available as `--hardware shared` tenancy. | 8 / 64 GB | 25 GB / 100 GB | 1000 Mbps |
+| **Virtual, m3c.16x128**: Use this flavor when you want a 1:8 ratio of CPU and memory resources for mid-sized workloads that require more memory, similar to databases such as {{site.data.keyword.Db2_on_Cloud_short}}. Available as `--hardware shared` tenancy. | 16 / 128 GB | 25 GB / 100 GB | 1000 Mbps |
+| **Virtual, m3c.30x240**: Use this flavor when you want a 1:8 ratio of CPU and memory resources for mid to large-sized workloads that require more memory, similar to databases such as {{site.data.keyword.Db2_on_Cloud_short}}. Available as `--hardware shared` tenancy. | 30 / 240 GB | 25 GB / 100 GB | 1000 Mbps |
 | **Virtual, z1.2x4**: se this flavor when you want a worker node to be created on Hyper Protect Containers on IBM Z Systems. | 2 / 4 GB | 25 GB / 100 GB | 1000 Mbps |
 {: class="simple-tab-table"}
 {: caption="Available worker node flavors for classic clusters" caption-side="top"}
