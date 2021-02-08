@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-02-04"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -98,18 +98,21 @@ subcollection: openshift
 Quickly add extra capabilities and open-source technologies to your cluster with managed add-ons.
 {: shortdesc}
 
-**What are managed add-ons?** </br>
+**What are managed add-ons?**
+
 Managed {{site.data.keyword.openshiftlong_notm}} add-ons are an easy way to enhance your cluster with extra capabilities and open-source capabilities, such as the Diagnostics and Debug Tool, Kubernetes web terminal, {{site.data.keyword.block_storage_is_short}}, or the Cluster Autoscaler. The version of the driver, plug-in, or open-source tool that you add to your cluster is tested by IBM and approved to be used in {{site.data.keyword.openshiftlong_notm}}.
 
 The managed add-ons that you can install in your cluster depend on the type of cluster, the container platform, and the infrastructure provider that you choose.
 {: note}
 
-**How does the billing and support work for managed add-ons?** </br>
+**How does the billing and support work for managed add-ons?**
+
 Managed add-ons are fully integrated into the {{site.data.keyword.cloud_notm}} support organization. If you have a question or an issue with using the managed add-ons, you can use one of the {{site.data.keyword.openshiftlong_notm}} support channels. For more information, see [Getting help and support](/docs/openshift?topic=openshift-get-help).
 
 If the tool that you add to your cluster incurs costs, these costs are automatically integrated and listed as part of your {{site.data.keyword.openshiftlong_notm}} billing. The billing cycle is determined by {{site.data.keyword.cloud_notm}} depending on when you enabled the add-on in your cluster.
 
-**What limitations do I need to account for?** </br>
+**What limitations do I need to account for?**
+
 If you installed an admission controller that blocks unsigned images, such as [Portieris](https://github.com/IBM/portieris){: external}, you cannot enable managed add-ons in your cluster.
 
 ## Adding managed add-ons
@@ -130,7 +133,7 @@ For more information about the prerequisites for each add-on, see:
 The versions of each managed add-on are tested by {{site.data.keyword.cloud_notm}} and approved for use in {{site.data.keyword.openshiftlong_notm}}. To update the components of an add-on to the most recent version supported by {{site.data.keyword.openshiftlong_notm}}, use the following steps.
 {: shortdesc}
 
-1. Check for update instructions that are specific to your managed add-on. If you do not find update instructions, continue with the next step. 
+1. Check for update instructions that are specific to your managed add-on. If you do not find update instructions, continue with the next step.
 2. If your add-on does not have specific update instructions, select the cluster where you installed managed add-ons from your [cluster dashboard](https://cloud.ibm.com/kubernetes/clusters).
 3. Select the **Add-ons** tab.
 4. From the actions menu, select **Update** to start updating the managed add-on. When the update is installed, the latest version of the managed add-on is listed on the cluster add-on page.

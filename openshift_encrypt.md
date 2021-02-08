@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-01"
+lastupdated: "2021-02-08"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -73,8 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -142,26 +140,30 @@ You can protect the etcd component in your Kubernetes master and Kubernetes secr
 KMS provider integration is available only in version 3.11 or 4.4 clusters, not for version 4.3 clusters.
 {: important}
 
-**What KMS providers are available by default? Can I add other providers?**<br>
+**What KMS providers are available by default? Can I add other providers?**
+
 {{site.data.keyword.openshiftlong_notm}} version 3.11supports the following KMS providers:
 * {{site.data.keyword.keymanagementservicefull}} for [public cloud](/docs/key-protect?topic=key-protect-getting-started-tutorial) or [on-prem](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.2.0/apis/kms_apis.html#gen_key){: external} environments.
 * [{{site.data.keyword.hscrypto}}](https://cloud.ibm.com/catalog/services/hyper-protect-crypto-services){: external} for keep your own key (KYOK) crypto unit support.
 
 Because adding a different KMS provider requires updating the managed master default configuration, you cannot add other KMS providers to the cluster.
 
-**Can I change the KMS provider?**<br>
+**Can I change the KMS provider?**
+
 You can have one KMS provider enabled in the cluster. You can switch the KMS provider, but you cannot disable KMS provider encryption after it is enabled. For example, if you enabled {{site.data.keyword.keymanagementserviceshort}} in your cluster, but want to use {{site.data.keyword.hscrypto}} instead, you can [enable](#keyprotect) {{site.data.keyword.hscrypto}} as the KMS provider.
 
 <p class="important">You cannot disable KMS provider encryption. Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered.<br><br>Similarly, if you disable a root key, operations that rely on reading secrets fail. Unlike deleting a root key, however, you can reenable a disabled key to make your cluster usable again.</p>
 
-**With a KMS provider, do I control the encryption in my cluster?**<br>
+**With a KMS provider, do I control the encryption in my cluster?**
+
 Yes. When you enable a KMS provider in your cluster, your own KMS root key is used to encrypt data in etcd, including the LUKS secrets. Using your own encryption root key adds a layer of security to your etcd data and Kubernetes secrets and gives you more granular control of who can access sensitive cluster information. For more information, see the [overview](#encrypt_ov) and your KMS provider's documentation, such as [{{site.data.keyword.keymanagementserviceshort}} envelope encryption](/docs/key-protect?topic=key-protect-envelope-encryption).
 
-**Can I use all the features of the KMS provider with my cluster?**<br>
+**Can I use all the features of the KMS provider with my cluster?**
+
 Review the following known limitations:
 * Customizing the IP addresses that are allowed to connect to your {{site.data.keyword.keymanagementserviceshort}} instance is not supported.
 
-**Do the features change depending on my cluster version?**<br>
+**Do the features change depending on my cluster version?**
 {: #kms-keyprotect-features}
 
 Yes. Your cluster version impacts the functionality of the KMS provider. To see what {{site.data.keyword.keymanagementserviceshort}} features are available for different cluster versions of {{site.data.keyword.openshiftlong_notm}}, review the following table.

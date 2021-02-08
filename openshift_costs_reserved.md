@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-01"
+  years: 2014, 2021
+lastupdated: "2021-02-04"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -88,7 +88,7 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -127,29 +127,36 @@ Review the following diagram for an example scenario of how you might set up you
 ### Reservation usage and lifecycle
 {: #ri-usage-lifecycle}
 
-**How can I use my reservation?**<br>
+**How can I use my reservation?**
+
 You can use your reservation to create worker pools in new or existing clusters. Your reservation is account-wide, so you can use the reserved worker nodes in different clusters, worker pools, and even resource groups. However, because prices vary by zone, you cannot use reserved worker nodes across different metros or multizone regions. You also cannot used reserved instances from other {{site.data.keyword.cloud_notm}} infrastructure services, such as virtual server instances, for your worker nodes, but must use the {{site.data.keyword.openshiftlong_notm}} reservations.
 
-**Does a reservation guarantee computing capacity in a zone?**<br>
+**Does a reservation guarantee computing capacity in a zone?**
+
 Reserving worker nodes does not guarantee compute capacity whenever you want to create a worker pool. Instead, you reserve a certain number of worker nodes for a term so that you lock in the discounted price that is associated with the reservation.
 
-**How do I know how many reserved worker nodes I need?**<br>
+**How do I know how many reserved worker nodes I need?**
+
 See [Sizing your Kubernetes cluster to support your workload](/docs/openshift?topic=openshift-strategy#sizing).
 
-**What kind of workloads are best suited for reservations?**<br>
+**What kind of workloads are best suited for reservations?**
+
 The following workloads are good candidates to run on reserved worker nodes:
 *   Production workloads
 *   Mission-critical workloads that must run 24/7
 *   Predictable workloads that have continuous usage and steady states
 *   Workloads that you want to increase high availability for by creating replicas in different zones and regions
 
-**Can I convert existing on-demand worker nodes to reserved worker nodes to save money?**<br>
+**Can I convert existing on-demand worker nodes to reserved worker nodes to save money?**
+
 No. Instead, you can create reservations and contracts for the worker nodes in your clusters. Then, create worker pools in your existing clusters that use the reserved worker nodes. Consider using labels to reschedule your existing workloads to the new reserved worker pools. Then, delete your old, on-demand worker pools.
 
-**How do reservations impact quotas?**<br>
+**How do reservations impact quotas?**
+
 By default, {{site.data.keyword.openshiftlong_notm}} sets a certain quota limit on the number of worker nodes that you can have across all clusters in a region. Contracts that exceed the worker node quota are blocked from creating. You can try a different region or increase the quota. If you need more of the resource, [contact IBM Support](/docs/get-support?topic=get-support-using-avatar). In the support case, include the new quota limit for the region and infrastructure provider that you want. After the quota is increased, you can create a contract.
 
-**What happens when my contract ends? Are my worker nodes deleted?**<br>
+**What happens when my contract ends? Are my worker nodes deleted?**
+
 When a contract ends, your reservation is checked for extra capacity from other contracts. If you have more worker nodes than capacity, the worker nodes that exceed the reservation's total capacity are deleted.
 
 For example, you might have a reservation with one contract for 10 worker nodes and another contract for 5 worker nodes, for a total capacity of 15 worker nodes. You use 14 of the 15 worker nodes. When the 5-worker node contract expires, your reservation total capacity reduces to 10 worker nodes. Therefore, 4 of your 14 running worker nodes are deleted, to make the number of worker nodes equal to the total capacity of 10 reserved worker nodes.
@@ -160,19 +167,22 @@ To avoid an unexpected deletion, scale down your worker pools before the contrac
 ### Billing and discounts
 {: #ri-about-billing}
 
-**How much is the discount? Can I combine reservations with other discounts?**<br>
+**How much is the discount? Can I combine reservations with other discounts?**
+
 The discounts vary by the flavor, location, and term of the contract, but typically users realize a significant cost savings compared to on-demand worker nodes.
 *   33% or more for 1 year terms.
 *   Up to 50% for 3 year terms.
 
 These discounted reserved worker nodes are in addition to any current account-level discounts that you might have, such as discounts from an {{site.data.keyword.cloud_notm}} subscription account.
 
-**How am I billed? How are my discounts applied?**<br>
+**How am I billed? How are my discounts applied?**
+
 When you create a contract, a discounted monthly price for the total number of worker nodes is calculated. Then, this cost is applied for each month in the term. You are billed each month for the discounted cost, regardless of how many worker nodes that you use during the month. Keep in mind that the price of each new contract is fixed at the time that the contract is created for the lifetime of the contract.
 
 Consider the following example. You create a contract on 15 December 2020 for 12 worker nodes for a 1 year term, until 15 December 2021. The total discounted cost for all 12 worker nodes for the entire term is calculated at $12,000. For each full month, you are billed a flat rate of $1,000, regardless of how many worker nodes in the reservation are in use. For the first and last months, you are billed a pro-rated amount, according to the dates that the contract is active in the months.
 
-**If I don't need reserved worker nodes anymore, can I modify my contract?**<br>
+**If I don't need reserved worker nodes anymore, can I modify my contract?**
+
 No, you cannot modify the terms of the contract, such as the duration, number of worker nodes, or flavor. You can remove any unneeded worker nodes from your clusters, but you cannot get a refund for unused capacity in your reservation.
 
 <br />

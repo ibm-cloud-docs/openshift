@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-01"
+lastupdated: "2021-02-08"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -73,8 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -465,6 +463,106 @@ To add a zone with worker nodes to your worker pool:
 
 <br />
 
+## Managing {{site.data.keyword.satelliteshort}} worker pools
+{: #satcluster-worker-pools}
+
+{{site.data.keyword.satellitelong_notm}} is available as a closed beta and is subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
+{: beta}
+
+Review the following differences from classic {{site.data.keyword.openshiftlong_notm}} clusters when you manage the worker pool life cycle of clusters that are in a {{site.data.keyword.satelliteshort}} location.
+{: shortdesc}
+
+### Creating {{site.data.keyword.satelliteshort}} worker pools with host labels for autoassignment
+{: #sat-pool-create-labels}
+
+Create a worker pool in your {{site.data.keyword.satelliteshort}} cluster with host labels. Then, {{site.data.keyword.satelliteshort}} can automatically assign available hosts to the worker pool. For more information, see [Using host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-ov).
+{: shortdesc}
+
+**Before you begin**:
+*   Make sure that you have the **Operator** platform role to **Kubernetes Service** for the cluster in {{site.data.keyword.cloud_notm}} IAM.
+*   Optional: [Attach](/docs/satellite?topic=satellite-hosts#attach-hosts) or [list available](/docs/satellite?topic=satellite-satellite-cli-reference#host-ls) hosts to your {{site.data.keyword.satelliteshort}} location with host labels that match your worker pool. Then, after you create your worker pool, these available hosts can be automatically assigned to the worker pool.
+
+**To create a worker pool in a {{site.data.keyword.satelliteshort}} cluster**:
+1.  List the {{site.data.keyword.satelliteshort}} clusters in your account.
+    ```
+    ibmcloud oc cluster ls --provider satellite
+    ```
+    {: pre}
+2.  Get the details of the cluster that you want to create the worker pool in. Note the **Worker Zones**.
+    ```
+    ibmcloud oc cluster get -c <cluster_name_or_ID>
+    ```
+    {: pre}
+3.  Create the worker pool in your {{site.data.keyword.satelliteshort}} cluster, with the following parameters.
+
+    * `--cluster`: Enter the name or ID of your cluster.
+    * `--name`: Give a name for your worker pool.
+    * `--size-per-zone`: Specify the number of worker nodes that you want to have in each zone that the worker pool spans. You can change this value later by resizing the worker pool.
+    * `--zone`: Select the initial zone in your {{site.data.keyword.satelliteshort}} location to create the worker pool in, that you retrieved from your cluster details. You can add more zones later.
+    * `--host-label`: Add labels to match the requested capacity of the worker pool with the available hosts in the {{site.data.keyword.satelliteshort}} location. Include at least `cpu=number` and `memory=number` values. **Important**: You cannot update host labels on the worker pool later, so make sure to configure the labels properly. You can change the labels on {{site.data.keyword.satelliteshort}} hosts, if needed.
+
+    ```
+    ibmcloud oc worker-pool create satellite --cluster <cluster_name_or_ID> --name <pool_name> --size-per-zone <number> --zone <satellite_zone> --host-label <cpu=number> --host-label <memory=number> [--host-label <key=value>]
+    ```
+    {: pre}
+
+Your worker pool is created!
+* If {{site.data.keyword.satelliteshort}} hosts with matching labels are available, the hosts are assigned to the worker pool as worker nodes. Keep in mind that hosts might also have a zone label and are assigned only to that zone.
+* If no hosts are available, you can [manually assign hosts](/docs/satellite?topic=satellite-hosts#host-assign) to the worker pool. Keep in mind that if you manually assign hosts, host autoassignment is disabled for future actions until you rebalance the worker pool.
+
+When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host vCPU.
+{: note} 
+
+### Maintaining {{site.data.keyword.satelliteshort}} worker pools
+{: #sat-pool-maintenance}
+
+You can maintain your worker pools by using the same worker pool lifecycle operations as you use for {{site.data.keyword.openshiftlong_notm}} clusters. Review the {{site.data.keyword.satelliteshort}} considerations for common operations.
+{: shortdesc}
+
+#### Resizing a {{site.data.keyword.satelliteshort}} worker pool
+{: #sat-pool-maintenance-resize}
+
+Resize your worker pool to request more compute capacity in your cluster.
+{: shortdesc}
+
+* When host autoassignment is enabled, {{site.data.keyword.satelliteshort}} automatically assigns availabe hosts to the worker pool, as long as the host labels match the host labels of the worker pool. If no hosts are available, [attach more hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) with matching labels to the {{site.data.keyword.satelliteshort}} location.
+* If host autoassignment is disabled, resizing the worker pool enables autoassignment again.
+
+For more information, see [Adding worker nodes by resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool).
+
+#### Rebalancing a {{site.data.keyword.satelliteshort}} worker pool
+{: #sat-pool-maintenance-rebalance}
+
+When you rebalance a worker pool, the worker pool is sized up or down depending on the most recently requested number of worker nodes per zone. You can check the requested number in the worker pool details, or set the requested number by resizing the worker pool.
+{: shortdesc}
+
+In {{site.data.keyword.satelliteshort}} worker pool, rebalancing also re-enables [host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-ov). You can rebalance the worker pool from the {{site.data.keyword.cloud_notm}} console or the `ibmcloud oc worker-pool rebalance` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance).
+
+#### Updating worker nodes in a {{site.data.keyword.satelliteshort}} worker pool
+{: #sat-pool-maintenance-update}
+
+Follow the same process as [Updating classic worker nodes](/docs/openshift?topic=openshift-update#worker_node).
+{: shortdesc}
+
+#### Adding zones to a {{site.data.keyword.satelliteshort}} worker pool
+{: #sat-pool-maintenance-addzone}
+
+You can add zones to a worker pool. Available {{site.data.keyword.satelliteshort}} hosts with a zone label can be assigned only to that zone in the worker pool.
+{: shortdesc}
+
+* For more information about zones in {{site.data.keyword.satelliteshort}}, see [{{site.data.keyword.satelliteshort}} concepts](/docs/satellite?topic=satellite-about#location-concept).
+* To add a zone, see the [`ibmcloud oc zone add satellite` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_satellite).
+
+#### Removing a {{site.data.keyword.satelliteshort}} worker pool
+{: #sat-pool-maintenance-remove}
+
+When you remove a worker pool, all of the worker nodes in the cluster are removed. The hosts that the worker nodes ran on are unassigned from the cluster, and become unusable by but still attached to the {{site.data.keyword.satelliteshort}} location. For more information, see [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/satellite?topic=openshift-satellite-clusters#satcluster-rm).
+{: shortdesc}
+
+<br />
+
+
+
 ## Deprecated: Adding stand-alone worker nodes
 {: #standalone}
 
@@ -633,45 +731,27 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
-2.  To label the worker pool with a `key=value` label, use the [POST worker pool labels API](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/v2SetWorkerPoolLabels){: external}. When you set a worker pool label, all the existing custom labels are replaced. Format the body of the request as in the following JSON example. <p class="important">You can also rename an existing label by assigning the same key a new value. However, do not modify the worker pool or worker node labels that are provided by default because these labels are required for worker pools to function properly. Modify only custom labels that you previously added. To list existing worker node labels, run `oc describe node <worker_node_private_IP>`.</p>
 
-    Example to set `<key>: <value>` as the only custom label in the worker pool.
+2. List the existing custom labels on worker nodes in the worker pool that you want to label.
     ```
-    {
-      "labels": {"<key>":"<value>"},
-      "state": "labels"
-    }
+    ibmcloud oc worker-pool get -c <cluster_name_or_ID> --worker-pool <pool>
     ```
-    {: codeblock}
+    {: pre}
 
-    Example to set `<key>: <value>` as a new custom label in a worker pool with existing labels `team: DevOps` and `app: test`.
-    ```
-    {
-      "labels": {"<key>":"<value>","team":"DevOps","app":"test"},
-      "state": "labels"
-    }
-    ```
-    {: codeblock}
+3. Label the worker pool with a `key=value` label. When you set a worker pool label, all the existing custom labels are replaced. To keep any existing custom labels on the worker pool, include those labels with this flag.
 
-3.  **Optional**: To remove a label from a worker pool, use the [POST worker pool labels API](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/v2SetWorkerPoolLabels){: external} again with the label's key field included but the value field empty. Remember that when you set a label, all existing custom labels are replaced. If you want to keep existing custom labels, include these labels in the body.<p class="important">Do not remove the worker pool and worker node labels that are provided by default because these labels are required for worker pools to function properly. Remove only custom labels that you previously added.</p>
+    You can also rename an existing label by assigning the same key a new value. However, do not modify the worker pool or worker node labels that are provided by default because these labels are required for worker pools to function properly. Modify only custom labels that you previously added.
+    {: important}
+    ```
+    ibmcloud oc worker-pool label set <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> --label <key=value>
+    ```
+    {: pre}
 
-    Example to remove a label. All other custom labels are also removed.
+    Example to set `<key>: <value>` as a new custom label in a worker pool with existing labels `team: DevOps` and `app: test`:
     ```
-    {
-      "labels": {"<key>":""},
-      "state": "labels"
-    }
+    ibmcloud oc worker-pool label set <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> --label <key=value> --label team=DevOps --label app=test
     ```
-    {: codeblock}
-
-    Example to remove a `<key>` label but keep other custom labels `team: DevOps` and `app: test`.
-    ```
-    {
-      "labels": {"<key>":"","team":"DevOps","app":"test"},
-      "state": "labels"
-    }
-    ```
-    {: codeblock}
+    {: pre}
 
 4.  Verify that the worker pool and worker node have the `key=value` label that you assigned.
     *   To check worker pools:
@@ -704,8 +784,24 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
             Labels:   arch=amd64
                       ...
             ```
-            {: screen}
+            {: screen}            
 
+5.  **Optional**: To remove an individual label from a worker pool, you can run the `ibmcloud oc worker-pool label set` command with only the custom labels that you want to keep. To remove all custom labels from a worker pool, you can run the `ibmcloud oc worker-pool label rm` command.
+
+    Do not remove the worker pool and worker node labels that are provided by default because these labels are required for worker pools to function properly. Remove only custom labels that you previously added.
+    {: important}
+
+    Example to keep only the `team: DevOps` and `app: test` labels and remove all other custom labels from a worker pool:
+    ```
+    ibmcloud oc worker-pool label set <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> --label team=DevOps --label app=test
+    ```
+    {: pre}
+
+    Example to remove all custom label from a worker pool:
+    ```
+    ibmcloud oc worker-pool label rm <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID>
+    ```
+    {: pre}
 After you label your worker pool, you can use the [label in your app deployments](/docs/openshift?topic=openshift-openshift_apps#label) so that your workloads run on only these worker nodes, or [taints](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external} to prevent deployments from running on these worker nodes.
 
 

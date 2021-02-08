@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-01"
+lastupdated: "2021-02-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -73,8 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -159,11 +157,11 @@ Review the following default Calico host policies that are automatically applied
 To view, manage, and add Calico policies, install and configure the Calico CLI.
 {: shortdesc}
 
-1. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. The `--admin` option downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. The `--network` option downloads the Calico configuration file to run all Calico commands.
-  ```
-  ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
-  ```
-  {: pre}
+1. Set the context for your cluster to run Calico commands. Include the `--network` option to download the keys to access your infrastructure portfolio and run Calico commands on your worker nodes.
+    ```
+    ibmcloud oc cluster config --cluster <cluster_name_or_ID> --network
+    ```
+    {: pre}
 
 2. If corporate network policies use proxies or firewalls to prevent access from your local system to public endpoints, [allow TCP access for Calico commands](/docs/openshift?topic=openshift-firewall#firewall).
 
@@ -195,36 +193,37 @@ To view, manage, and add Calico policies, install and configure the Calico CLI.
           ```
           {: pre}
 
-      6. Verify that the Calico configuration is working correctly.
-          ```
-          calicoctl get nodes
-          ```
-          {: pre}
-
-          Example output:
-          ```
-          NAME
-          kube-btkc78sw0gqlletjgfp0-eventtest3-default-000001d6
-          ...
-          ```
-          {: screen}
     * **Windows**:
       1. [Download the Calico CLI](https://github.com/projectcalico/calicoctl/releases){: external}. Save the file as `calicoctl.exe` in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later.
 
-      2. Verify that the Calico configuration is working correctly. Use the `--config` flag to point to the network configuration file that you got in step 1. Include this flag each time you run a `calicoctl` command.
-          ```
-          calicoctl get nodes --config=<filepath>/calicoctl.cfg
-          ```
-          {: pre}
+      2. Set the `KUBECONFIG` environment variable to the appropriate configuration file.
+          * Kubernetes version 1.19 and later: Set the environment variable to the configuration file for your cluster.
+              ```
+              export KUBECONFIG=./.bluemix/plugins/container-service/clusters/mycluster-df253b6025d64944ab99ed63bb4567b6/kube-config.yaml
+              ```
+              {: pre}
+          * Kubernetes version 1.18 and earlier: Set the environment variable to the network configuration file that you got in step 1.
+              ```
+              export KUBECONFIG=./.bluemix/plugins/container-service/clusters/mycluster-df253b6025d64944ab99ed63bb4567b6/calicoctl.cfg
+              ```
+              {: pre}
 
-          Example output:
-          ```
-          NAME
-          kube-btkc78sw0gqlletjgfp0-eventtest3-default-000001d6
-          ...
-          ```
-          {: screen}
+4. Verify that the Calico configuration is working correctly.
+    ```
+    calicoctl get nodes
+    ```
+    {: pre}
 
+    Example output:
+    ```
+    NAME
+    10.176.48.106
+    10.176.48.107
+    10.184.58.23
+    10.184.58.42
+    ...
+    ```
+    {: screen}
 <br />
 
 ## Viewing network policies
@@ -580,7 +579,7 @@ Kubernetes policies protect pods from internal network traffic. You can create s
 
 By default, any pod has access to any other pod in the cluster. Additionally, any pod has access to any services that are exposed by the pod network, such as a metrics service, the cluster DNS, the API server, or any services that you manually create in your cluster.
 
-If most or all pods do not require access to specific pods or services, and you want to ensure that pods by default cannot access those pods or services, you can create a Kubernetes network policy to block ingress those pods or services.
+If most or all pods do not require access to specific pods or services, and you want to ensure that pods by default cannot access those pods or services, you can create a Kubernetes network policy to block ingress traffic to those pods or services.
 
 For more information about how Kubernetes network policies control pod-to-pod traffic and for more example policies, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/network-policies/){: external}.
 {: tip}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-16"
+  years: 2014, 2021
+lastupdated: "2021-02-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -584,7 +584,8 @@ Before you begin:
 Before you can start to mount your existing storage to an app, you must retrieve all necessary information for your PV and prepare the storage to be accessible in your cluster.  
 {: shortdesc}
 
-**For storage that was provisioned with a `retain` storage class:** </br>
+**For storage that was provisioned with a `retain` storage class:**
+
 If you provisioned storage with a `retain` storage class and you remove the PVC, the PV and the physical storage device are not automatically removed. To reuse the storage in your cluster, you must remove the remaining PV first.
 
 To use existing storage in a different cluster than the one where you provisioned it, follow the steps for [storage that was created outside of the cluster](#external_storage) to add the storage to the subnet of your worker node.
@@ -620,7 +621,8 @@ To use existing storage in a different cluster than the one where you provisione
 
 </br>
 
-**For persistent storage that was provisioned outside the cluster:** </br>
+**For persistent storage that was provisioned outside the cluster:**
+
 If you want to use existing storage that you provisioned earlier, but never used in your cluster before, you must make the storage available in the same subnet as your worker nodes.
 
 1.  {: #external_storage}From the [IBM Cloud infrastructure portal](https://cloud.ibm.com/classic){: external}, click **Storage**.
@@ -765,19 +767,23 @@ You successfully created a PV and bound it to a PVC. Cluster users can now [moun
 If you have a stateful app such as a database, you can create stateful sets that use {{site.data.keyword.filestorage_short}} to store your app's data. Alternatively, you can use an {{site.data.keyword.cloud_notm}} database-as-a-service and store your data in the cloud.
 {: shortdesc}
 
-**What do I need to be aware of when adding {{site.data.keyword.filestorage_short}} to a stateful set?** </br>
+**What do I need to be aware of when adding {{site.data.keyword.filestorage_short}} to a stateful set?**
+
 To add storage to a stateful set, you specify your storage configuration in the `volumeClaimTemplates` section of your stateful set YAML. The `volumeClaimTemplates` is the basis for your PVC and can include the storage class and the size or IOPS of your {{site.data.keyword.filestorage_short}} that you want to provision. However, if you want to include labels in your `volumeClaimTemplates`, Kubernetes does not include these labels when creating the PVC. Instead, you must add the labels directly to your stateful set.
 
 You cannot deploy two stateful sets at the same time. If you try to create a stateful set before a different one is fully deployed, then the deployment of your stateful set might lead to unexpected results.
 {: important}
 
-**How can I create my stateful set in a specific zone?** </br>
+**How can I create my stateful set in a specific zone?**
+
 In a multizone cluster, you can specify the zone and region where you want to create your stateful set in the `spec.selector.matchLabels` and `spec.template.metadata.labels` section of your stateful set YAML. Alternatively, you can add those labels to a [customized storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use this storage class in the `volumeClaimTemplates` section of your stateful set.
 
-**Can I delay binding of a PV to my stateful pod until the pod is ready?**<br>
+**Can I delay binding of a PV to my stateful pod until the pod is ready?**
+
 Yes, you can [create a custom storage class](#file-topology) for your PVC that includes the [`volumeBindingMode: WaitForFirstConsumer`](https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode){: external} field.
 
-**What options do I have to add {{site.data.keyword.filestorage_short}} to a stateful set?** </br>
+**What options do I have to add {{site.data.keyword.filestorage_short}} to a stateful set?**
+
 If you want to automatically create your PVC when you create the stateful set, use [dynamic provisioning](#file_dynamic_statefulset). You can also choose to [pre-provision your PVCs or use existing PVCs](#file_static_statefulset) with your stateful set.  
 
 ### Dynamic provisioning: Creating the PVC when you create a stateful set
@@ -1652,17 +1658,20 @@ When you set up persistent storage in your cluster, you have three main componen
 Removing persistent storage from your {{site.data.keyword.cloud_notm}} account varies depending on how you provisioned the storage and what components you already removed.
 {: shortdesc}
 
-**Is my persistent storage deleted when I delete my cluster?**</br>
+**Is my persistent storage deleted when I delete my cluster?**
+
 During cluster deletion, you have the option to remove your persistent storage. However, depending on how your storage was provisioned, the removal of your storage might not include all storage components.
 
 If you [dynamically provisioned](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning) storage with a storage class that sets `reclaimPolicy: Delete`, your PVC, PV, and the storage instance are automatically deleted when you delete the cluster. For storage that was [statically provisioned](/docs/openshift?topic=openshift-kube_concepts#static_provisioning), or storage that you provisioned with a storage class that sets `reclaimPolicy: Retain`, the PVC and the PV are removed when you delete the cluster, but your storage instance and your data remain. You are still charged for your storage instance. Also, if you deleted your cluster in an unhealthy state, the storage might still exist even if you chose to remove it.
 
-**How do I delete the storage when I want to keep my cluster?** </br>
+**How do I delete the storage when I want to keep my cluster?**
+
 When you dynamically provisioned the storage with a storage class that sets `reclaimPolicy: Delete`, you can remove the PVC to start the deletion process of your persistent storage. Your PVC, PV, and storage instance are automatically removed.
 
 For storage that was [statically provisioned](/docs/openshift?topic=openshift-kube_concepts#static_provisioning), or storage that you provisioned with a storage class that sets `reclaimPolicy: Retain`, you must manually remove the PVC, PV, and the storage instance to avoid further charges.
 
-**How does the billing stop after I delete my storage?**</br>
+**How does the billing stop after I delete my storage?**
+
 Depending on what storage components you delete and when, the billing cycle might not stop immediately. If you delete the PVC and PV, but not the storage instance in your {{site.data.keyword.cloud_notm}} account, that instance still exists and you are charged for it.
 
 If you delete the PVC, PV, and the storage instance, the billing cycle stops depending on the `billingType` that you chose when you provisioned your storage and how you chose to delete the storage.
@@ -1675,10 +1684,12 @@ If you delete the PVC, PV, and the storage instance, the billing cycle stops dep
 
 - When you dynamically provisioned the storage with a storage class that sets `reclaimPolicy: Delete` and you choose to remove the PVC, the PV and the storage instance are immediately removed. For hourly billed storage, billing stops immediately. For monthly billed storage, you are still charged for the remainder of the month. After your storage is removed and billing stops, you might still see your storage instance in the console or the CLI for up to 72 hours.
 
-**What do I need to be aware of before I delete persistent storage?** </br>
+**What do I need to be aware of before I delete persistent storage?**
+
 When you clean up persistent storage, you delete all the data that is stored in it. If you need a copy of the data, make a backup for [file storage](/docs/openshift?topic=openshift-file_storage#file_backup_restore) or [block storage](/docs/openshift?topic=openshift-block_storage#block_backup_restore).
 
-**I deleted my storage instance. Why can I still see my instance?** </br>
+**I deleted my storage instance. Why can I still see my instance?**
+
 After you remove persistent storage, it can take up to 72 hours for the removal to be fully processed and for the storage to disappear from your {{site.data.keyword.cloud_notm}} console or CLI.
 
 

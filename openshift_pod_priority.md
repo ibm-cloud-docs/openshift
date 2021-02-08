@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-14"
+lastupdated: "2021-02-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -99,7 +99,8 @@ subcollection: openshift
 With pod priority and preemption, you can configure priority classes to indicate the relative priority of the pods that make up your {{site.data.keyword.openshiftshort}} cluster's workload. The {{site.data.keyword.openshiftshort}} controller takes into consideration the priority of a pod and can even preempt (remove) pods with lower priority to make room on a worker node for higher priority pods. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.5/nodes/pods/nodes-pods-priority.html){: external}.
 {: shortdesc}
 
-**Why do I set pod priority?**</br>
+**Why do I set pod priority?**
+
 As a cluster administrator, you want to control which pods are more critical to your cluster workload. Priority classes can help you control the {{site.data.keyword.openshiftshort}} controller decisions to favor higher priority pods over lower priority pods. The {{site.data.keyword.openshiftshort}} controller can even preempt (remove) lower priority pods that are running so that pending higher priority pods can be scheduled.
 
 By setting pod priority, you can help prevent lower priority workloads from impacting critical workloads in your cluster, especially in cases where the cluster starts to reach its resource capacity.
@@ -109,7 +110,8 @@ Make sure that you have [set up proper user access](/docs/openshift?topic=opensh
 {: tip}
 
 {: #priority_scheduling}
-**How does priority scheduling and preemption work?**</br>
+**How does priority scheduling and preemption work?**
+
 In general, pending pods that have a higher priority are scheduled before lower prioritized pods. If you do not have enough resources left in your worker nodes, the {{site.data.keyword.openshiftshort}} controller can preempt (remove) pods to free up enough resources for the higher prioritized pods to be scheduled. Preemption is also affected by graceful termination periods, pod disruption budgets, and worker node affinity.
 
 If you do not specify a priority for your pod deployment, the default is set to the priority class that is set as the `globalDefault` . If you do not have a `globalDefault` priority class, the default priority for all pods is zero (`0`). By default, {{site.data.keyword.openshiftlong_notm}} does not set a `globalDefault`, so the pod default priority is zero.
@@ -125,7 +127,8 @@ _Figure: Pod priority scenarios_
 
 **For more information**: See the Kubernetes documentation on [pod priority and preemption](https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/){: external}.
 
-**Can I disable the pod priority admission controller?**</br>
+**Can I disable the pod priority admission controller?**
+
 No. If you don't want to use pod priority, don't set a `globalDefault` or include a priority class in your pod deployments. Every pod defaults to zero, except the cluster-critical pods that IBM deploys with the [default priority classes](#default_priority_class). Because pod priority is relative, this basic setup ensures that the cluster-critical pods are prioritized for resources, and schedules any other pods by following the existing scheduling policies that you have in place.
 
 <br />

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-01"
+lastupdated: "2021-02-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -73,8 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -995,7 +993,30 @@ Before you can start to mount your existing storage to an app, you must retrieve
     ```
     {: screen}
 
-7.  Note the `id`, `ip_addr`, `capacity_gb`, the `datacenter`, and `lunId` of the block storage device that you want to mount to your cluster. **Note:** To mount existing storage to a cluster, you must have a worker node in the same zone as your storage. To verify the zone of your worker node, run `ibmcloud oc worker ls --cluster <cluster_name_or_ID>`.
+7. Retrieve the volume details. Replace `<volume_ID>` with the ID of the Block storage volume that you retrieved in step 6.
+  ```sh
+  ibmcloud sl block volume-detail <volume_ID>
+  ```
+  {: pre}
+
+  Example output:
+  ```sh
+  Name                       Value   
+  ID                         111111111   
+  User name                  IBM02SEL1111111-111   
+  Type                       endurance_block_storage   
+  Capacity (GB)              20   
+  LUN Id                     1   
+  Endurance Tier             10_IOPS_PER_GB   
+  Endurance Tier Per IOPS    10   
+  Datacenter                 wdc06   
+  Target IP                  161.XX.XX.XX 
+  # of Active Transactions   0   
+  Replicant Count            0
+  ```
+  {: screen}
+
+8.  Note the `ID`, `Target IP`, `Capacity GB`, the `Datacenter`, `User Name`, and `LUN Id` of the block storage device that you want to mount to your cluster. **Note:** To mount existing storage to a cluster, you must have a worker node in the same zone as your storage. To verify the zone of your worker node, run `ibmcloud oc worker ls --cluster <cluster_name_or_ID>`.
 
 ### Step 2: Creating a persistent volume (PV) and a matching persistent volume claim (PVC)
 {: #existing-block-2}
@@ -1021,13 +1042,13 @@ Before you can start to mount your existing storage to an app, you must retrieve
        ```
        {: pre}
 
-2.  Create a configuration file for your PV. Include the block storage `id`, `ip_addr`, `capacity_gb`, the `datacenter`, and `lunIdID` that you retrieved earlier.
+2.  Create a configuration file for your PV. Include the block storage `id`, `ip_addr`, `capacity_gb`, the `datacenter`, `username`, and `lunIdID` that you retrieved earlier.
 
     ```yaml
     apiVersion: v1
     kind: PersistentVolume
     metadata:
-      name: mypv
+      name: "<volume_ID>" 
       labels:
          failure-domain.beta.kubernetes.io/region: <region>
          failure-domain.beta.kubernetes.io/zone: <zone>
@@ -1043,7 +1064,7 @@ Before you can start to mount your existing storage to an app, you must retrieve
           "Lun": "<lun_ID>"
           "TargetPortal": "<IP_address>"
           "VolumeID": "<volume_ID>"
-          "volumeName": "<volume_name>"
+          "volumeName": "<volume_username>"
     ```
     {: codeblock}
 
@@ -1079,11 +1100,11 @@ Before you can start to mount your existing storage to an app, you must retrieve
     </tr>
     <tr>
     <td><code>VolumeId</code></td>
-    <td>In the spec flex volume options section, enter the ID of your block storage that you retrieved earlier as <code>id</code>.</td>
+    <td>In the spec flex volume options section, enter the ID of your block storage that you retrieved earlier as <code>id</code>. Example: "11111111".</td>
     </tr>
     <tr>
     <td><code>volumeName</code></td>
-    <td>In the spec flex volume options section, enter a name for your volume.</td>
+    <td>In the spec flex volume options section, enter the <code>username</code> of your {{site.data.keyword.blockstorageshort}} volume. Example: "IBM02SEL1111111-111"</td>
     </tr>
     </tbody></table>
 
@@ -1131,20 +1152,22 @@ Before you can start to mount your existing storage to an app, you must retrieve
      Example output:
 
      ```
-     Name: mypvc
-     Namespace: default
-     StorageClass:	""
-     Status: Bound
-     Volume: pvc-0d787071-3a67-11e7-aafc-eef80dd2dea2
-     Labels: <none>
-     Capacity: 20Gi
-     Access Modes: RWO
-     Events:
-       FirstSeen LastSeen Count From        SubObjectPath Type Reason Message
-       --------- -------- ----- ----        ------------- -------- ------ -------
-       3m 3m 1 {ibm.io/ibmc-block 31898035-3011-11e7-a6a4-7a08779efd33 } Normal Provisioning External provisioner is provisioning volume  for claim "default/my-persistent-volume-claim"
-       3m 1m	 10 {persistentvolume-controller } Normal ExternalProvisioning cannot find provisioner "ibm.io/ibmc-block", expecting that  a volume for the claim is provisioned either manually or via external software
-       1m 1m 1 {ibm.io/ibmc-block 31898035-3011-11e7-a6a4-7a08779efd33 } Normal ProvisioningSucceeded	Successfully provisioned volume  pvc-0d787071-3a67-11e7-aafc-eef80dd2dea2
+      Name:          mypvc
+      Namespace:     default
+      StorageClass:  
+      Status:        Bound
+      Volume:        111111111
+      Labels:        <none>
+      Annotations:   kubectl.kubernetes.io/last-applied-configuration:
+                      {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"name":"classic-block","namespace":"default"},"spec":{"acce...
+                    pv.kubernetes.io/bind-completed: yes
+                    pv.kubernetes.io/bound-by-controller: yes
+      Finalizers:    [kubernetes.io/pvc-protection]
+      Capacity:      20Gi
+      Access Modes:  RWO
+      VolumeMode:    Filesystem
+      Mounted By:    <none>
+      Events:        <none>
      ```
      {: screen}
 
@@ -1159,19 +1182,23 @@ You successfully created a PV and bound it to a PVC. Cluster users can now [moun
 If you have a stateful app such as a database, you can create stateful sets that use block storage to store your app's data. Alternatively, you can use an {{site.data.keyword.cloud_notm}} database-as-a-service and store your data in the cloud.
 {: shortdesc}
 
-**What do I need to be aware of when adding block storage to a stateful set?** </br>
+**What do I need to be aware of when adding block storage to a stateful set?**
+
 To add storage to a stateful set, you specify your storage configuration in the `volumeClaimTemplates` section of your stateful set YAML. The `volumeClaimTemplates` is the basis for your PVC and can include the storage class and the size or IOPS of your block storage that you want to provision. However, if you want to include labels in your `volumeClaimTemplates`, Kubernetes does not include these labels when creating the PVC. Instead, you must add the labels directly to your stateful set.
 
 You cannot deploy two stateful sets at the same time. If you try to create a stateful set before a different one is fully deployed, then the deployment of your stateful set might lead to unexpected results.
 {: important}
 
-**How can I create my stateful set in a specific zone?** </br>
+**How can I create my stateful set in a specific zone?**
+
 In a multizone cluster, you can specify the zone and region where you want to create your stateful set in the `spec.selector.matchLabels` and `spec.template.metadata.labels` section of your stateful set YAML. Alternatively, you can add those labels to a [customized storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use this storage class in the `volumeClaimTemplates` section of your stateful set.
 
-**Can I delay binding of a PV to my stateful pod until the pod is ready?**<br>
+**Can I delay binding of a PV to my stateful pod until the pod is ready?**
+
 Yes, you can [create a custom storage class](#topology_yaml) for your PVC that includes the [`volumeBindingMode: WaitForFirstConsumer`](https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode){: external} field.
 
-**What options do I have to add block storage to a stateful set?** </br>
+**What options do I have to add block storage to a stateful set?**
+
 If you want to automatically create your PVC when you create the stateful set, use [dynamic provisioning](#block_dynamic_statefulset). You can also choose to [pre-provision your PVCs or use existing PVCs](#block_static_statefulset) with your stateful set.  
 
 ### Dynamic provisioning: Creating the PVC when you create a stateful set
@@ -1899,17 +1926,20 @@ When you set up persistent storage in your cluster, you have three main componen
 Removing persistent storage from your {{site.data.keyword.cloud_notm}} account varies depending on how you provisioned the storage and what components you already removed.
 {: shortdesc}
 
-**Is my persistent storage deleted when I delete my cluster?**</br>
+**Is my persistent storage deleted when I delete my cluster?**
+
 During cluster deletion, you have the option to remove your persistent storage. However, depending on how your storage was provisioned, the removal of your storage might not include all storage components.
 
 If you [dynamically provisioned](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning) storage with a storage class that sets `reclaimPolicy: Delete`, your PVC, PV, and the storage instance are automatically deleted when you delete the cluster. For storage that was [statically provisioned](/docs/openshift?topic=openshift-kube_concepts#static_provisioning), or storage that you provisioned with a storage class that sets `reclaimPolicy: Retain`, the PVC and the PV are removed when you delete the cluster, but your storage instance and your data remain. You are still charged for your storage instance. Also, if you deleted your cluster in an unhealthy state, the storage might still exist even if you chose to remove it.
 
-**How do I delete the storage when I want to keep my cluster?** </br>
+**How do I delete the storage when I want to keep my cluster?**
+
 When you dynamically provisioned the storage with a storage class that sets `reclaimPolicy: Delete`, you can remove the PVC to start the deletion process of your persistent storage. Your PVC, PV, and storage instance are automatically removed.
 
 For storage that was [statically provisioned](/docs/openshift?topic=openshift-kube_concepts#static_provisioning), or storage that you provisioned with a storage class that sets `reclaimPolicy: Retain`, you must manually remove the PVC, PV, and the storage instance to avoid further charges.
 
-**How does the billing stop after I delete my storage?**</br>
+**How does the billing stop after I delete my storage?**
+
 Depending on what storage components you delete and when, the billing cycle might not stop immediately. If you delete the PVC and PV, but not the storage instance in your {{site.data.keyword.cloud_notm}} account, that instance still exists and you are charged for it.
 
 If you delete the PVC, PV, and the storage instance, the billing cycle stops depending on the `billingType` that you chose when you provisioned your storage and how you chose to delete the storage.
@@ -1922,10 +1952,12 @@ If you delete the PVC, PV, and the storage instance, the billing cycle stops dep
 
 - When you dynamically provisioned the storage with a storage class that sets `reclaimPolicy: Delete` and you choose to remove the PVC, the PV and the storage instance are immediately removed. For hourly billed storage, billing stops immediately. For monthly billed storage, you are still charged for the remainder of the month. After your storage is removed and billing stops, you might still see your storage instance in the console or the CLI for up to 72 hours.
 
-**What do I need to be aware of before I delete persistent storage?** </br>
+**What do I need to be aware of before I delete persistent storage?**
+
 When you clean up persistent storage, you delete all the data that is stored in it. If you need a copy of the data, make a backup for [file storage](/docs/openshift?topic=openshift-file_storage#file_backup_restore) or [block storage](/docs/openshift?topic=openshift-block_storage#block_backup_restore).
 
-**I deleted my storage instance. Why can I still see my instance?** </br>
+**I deleted my storage instance. Why can I still see my instance?**
+
 After you remove persistent storage, it can take up to 72 hours for the removal to be fully processed and for the storage to disappear from your {{site.data.keyword.cloud_notm}} console or CLI.
 
 

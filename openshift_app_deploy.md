@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-01"
+lastupdated: "2021-02-04"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -73,8 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -134,7 +132,8 @@ oc new-app --name <app_name> https://github.com/<path_to_app_repo> [--context-di
 ```
 {: pre}
 
-**What does the `new-app` command do?**<br>
+**What does the `new-app` command do?**
+
 The `new-app` command creates a build configuration and app image from the source code, a deployment configuration to deploy the container to pods in your cluster, and a service to expose the app within the cluster. For more information about the build process and other sources besides Git, see the [{{site.data.keyword.openshiftshort}} documentation](http://docs.openshift.com/container-platform/4.5/applications/application_life_cycle_management/creating-applications-using-cli.html){: external}.
 
 <br />

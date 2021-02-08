@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-01"
+lastupdated: "2021-02-04"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -73,8 +73,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -783,7 +781,7 @@ Create an {{site.data.keyword.satellitelong_notm}} cluster on your own infrastru
 Before you begin, create a {{site.data.keyword.satelliteshort}} and assign at least 3 hosts to the location for control plane operations. After you create a {{site.data.keyword.satelliteshort}} cluster, assign hosts for the worker nodes. For more information, see [Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli).
 
 ```sh
-ibmcloud oc cluster create satellite --location LOCATION --name NAME --version VERSION [-q]
+ibmcloud oc cluster create satellite --location LOCATION --name NAME --version VERSION [--enable-admin-agent] [--host-label LABEL ...] [--pod-subnet SUBNET] [--pull-secret SECRET] [-q] [--service-subnet SUBNET] [--workers COUNT] [--zone ZONE]
 ```
 {: pre}
 
@@ -804,8 +802,40 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 <dt><code>--version <em>VERSION</em></code></dt>
 <dd>Required. Enter the {{site.data.keyword.openshiftlong_notm}} version that you want to run in your cluster. For a list of supported versions, run <code>ibmcloud oc versions</code>.</dd>
 
+<dt><code>--enable-admin-agent</code></dt>
+<dd>Optional. Grant the {{site.data.keyword.satelliteshort}} Config service accounts access to the cluster admin role to manage Kubernetes resources.</dd>
+
+<dt><code>--host-label, -hl <em>LABEL</em></code></dt>
+<dd>Optional. Enter existing labels that describe {{site.data.keyword.satelliteshort}} hosts, formatted as `-hl key=value` pairs, so hosts with matching labels can be automatically assigned as worker nodes for the cluster. To find available host labels, run <code>ibmcloud sat host get --host &lt;host_name_or_ID&gt; --location &lt;location_name_or_ID&gt;</code>.</dd>
+
+<dt><code>--pod-subnet <em>SUBNET</em></code></dt>
+<dd>Optional. All pods that are deployed to a worker node are assigned a private IP address in the 172.30.0.0/16 range by default. You can avoid subnet conflicts with the network that you use to connect to your location by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
+<p>When you choose a subnet size, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least <code>/23</code>, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use <code>/22</code> to have enough pod IP addresses for eight worker nodes, <code>/21</code> to have enough pod IP addresses for 16 worker nodes, and so on.</p>
+<p>The subnet that you choose must be within one of the following ranges:
+<ul><li><code>172.17.0.0 - 172.17.255.255</code></li>
+<li><code>172.21.0.0 - 172.31.255.255</code></li>
+<li><code>192.168.0.0 - 192.168.254.255</code></li>
+<li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap. The service subnet is in the 172.21.0.0/16 range by default.</p></dd>
+
+<dt><code>--pull-secret <em>SECRET</em></code></dt>
+<dd>Optional. Provide your [{{site.data.keyword.redhat_full}} account pull secret ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.redhat.com/openshift/install/pull-secret) so that the cluster can download {{site.data.keyword.openshiftshort}} images from your own {{site.data.keyword.redhat_notm}} account.</dd>
+
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
+
+<dt><code>--service-subnet <em>SUBNET</em></code></dt>
+<dd>Optional. All services that are deployed to the cluster are assigned a private IP address in the 172.21.0.0/16 range by default. You can avoid subnet conflicts with the network that you use to connect to your location by specifying a custom subnet CIDR that provides the private IP addresses for your services.
+<p>The subnet must be specified in CIDR format with a size of at least <code>/24</code>, which allows a maximum of 255 services in the cluster, or larger. The subnet that you choose must be within one of the following ranges:
+<ul><li><code>172.17.0.0 - 172.17.255.255</code></li>
+<li><code>172.21.0.0 - 172.31.255.255</code></li>
+<li><code>192.168.0.0 - 192.168.254.255</code></li>
+<li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap. The pod subnet is in the 172.30.0.0/16 range by default.</p></dd>
+
+<dt><code>--workers <em>COUNT</em></code></dt>
+<dd>Required when `--host-label` is specified. The number of worker nodes per zone in the default worker pool.</dd>
+
+<dt><code>--zone <em>ZONE</em></code></dt>
+<dd>Optional. The name of the zone to create the {{site.data.keyword.satelliteshort}} location control plane in. For high availability, you might want to use one of the 3 zones from the location control plane, and then add the two other zones to your cluster later. To see the zone names for your location, run `ibmcloud sat location get --location <location_name_or_ID>` and look for the `Host Zones` field.</dd>
 
 </dl>
 
@@ -2269,6 +2299,57 @@ ibmcloud oc worker-pool create classic --name my_pool --cluster my_cluster --fla
 
 </br>
 
+### Beta: `ibmcloud oc worker-pool create satellite`
+{: #cs_worker_pool_create_sat}
+
+Create a worker pool for your {{site.data.keyword.openshiftshort}} cluster in {{site.data.keyword.satellitelong_notm}}.
+{: shortdesc}
+
+{{site.data.keyword.satellitelong_notm}} is available as a closed beta and is subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
+{: beta}
+
+```sh
+ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [--host-label LABEL ...] --name NAME --size-per-zone WORKERS_PER_ZONE --zone ZONE [--label LABEL ...] [--output OUTPUT] [-q]
+```
+{: pre}
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Administrator** platform role for {{site.data.keyword.satelliteshort}}.
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>Required. The name or ID of the cluster.</dd>
+
+<dt><code>--host-label, -hl <em>LABEL</em></code></dt>
+<dd>Required. Enter at least one existing label that describes {{site.data.keyword.satelliteshort}} hosts, formatted as `-hl key=value` pairs, so hosts with matching labels can be automatically assigned to this worker pool. The labels that you specify must match the host labels exactly. For example, if you want a host that has 3 labels to be assigned to this worker pool, you must specify all 3 labels in 3 repeated flags. To find available host labels, run <code>ibmcloud sat host get --host &lt;host_name_or_ID&gt; --location &lt;location_name_or_ID&gt;</code>.</dd>
+
+<dt><code>--name <em>POOL_NAME</em></code></dt>
+<dd>Required. The name that you want to give your worker pool.</dd>
+
+<dt><code>--size-per-zone <em>WORKERS_PER_ZONE</em></code></dt>
+<dd>Required. The number of worker nodes to request in each zone. Ensure that you [attach enough hosts to your location](/docs/satellite?topic=satellite-hosts#attach-hosts) to be used as worker nodes. For example, if you enter `2` and then [add 2 more zones](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat) to this worker pool after you create it, ensure that at least 6 unassigned hosts are attached to your location so that they can be assigned as 2 worker nodes in each of the 3 zones in your worker pool.</dd>
+
+<dt><code>--zone <em>ZONE</em></code></dt>
+<dd>Required. The name of the zone where you want hosts to be assigned as worker nodes. To see the zone names for your location, run `ibmcloud sat location get --location <location_name_or_ID>` and look for the `Host Zones` field. Note that after you create this worker pool, you can [add more zones](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat) for high availability.</dd>
+
+<dt><code>-l, --label <em>KEY1=VALUE1</em></code></dt>
+<dd>Optional. Apply key-value labels to each worker node in the worker pool. Note that these worker node labels are used in the context of {{site.data.keyword.openshiftshort}} to, for example, manage workload deployment within your cluster, and are separate from the host labels that you previously applied to your {{site.data.keyword.satelliteshort}} hosts that are used for host assignment to your cluster. To specify multiple labels, use multiple flags, such as `-l key1=value1 -l key2=value2`.</ul></dd>
+
+<dt><code>--output json</code></dt>
+<dd>Optional: Prints the command output in JSON format.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example**:
+```sh
+ibmcloud oc worker-pool create satellite --cluster mycluster --host-label use=clusterworker --host-label cpu=4 --host-label memory=16260936 --name mypool --size-per-zone 2 --zone myzone1
+```
+{: pre}
+
+</br>
+
 ### `ibmcloud oc worker-pool create vpc-gen2`
 {: #cli_worker_pool_create_vpc_gen2}
 
@@ -2359,6 +2440,92 @@ ibmcloud oc worker-pool get --worker-pool WORKER_POOL --cluster CLUSTER [--outpu
 **Example**:
 ```sh
 ibmcloud oc worker-pool get --worker-pool pool1 --cluster my_cluster
+```
+{: pre}
+
+</br>
+
+### `ibmcloud oc worker-pool label rm`
+{: #cs_worker_pool_label_rm}
+
+Remove all custom Kubernetes labels from all worker nodes in a worker pool.
+{: shortdesc}
+
+To remove an individual label from a worker pool, you can run the `ibmcloud oc worker-pool label set` command with only the custom labels that you want to keep.
+{: tip}
+
+```sh
+ibmcloud oc worker-pool label rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>Required: The name or ID of the cluster where the worker pool is located.</dd>
+
+<dt><code>-p, --worker-pool <em>WORKER_POOL</em></code></dt>
+<dd>Required: The name of the worker node pool that you want to view the details of. To list available worker pools, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`.</dd>
+
+<dt><code>-f</code></dt>
+<dd>Optional: Force the command to run with no user prompts.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example**:
+```sh
+ibmcloud oc worker-pool label rm --worker-pool pool1 --cluster my_cluster
+```
+{: pre}
+
+</br>
+
+### `ibmcloud oc worker-pool label set`
+{: #cs_worker_pool_label_set}
+
+Set custom Kubernetes labels in the format `key=value` for all the worker nodes in the worker pool. To keep any existing custom labels on the worker pool, you must include those labels in this command.
+{: shortdesc}
+
+```sh
+ibmcloud oc worker-pool label set --cluster CLUSTER --label LABEL [--label LABEL ...] --worker-pool POOL [-f] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+
+**Minimum required permissions**: **Operator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>Required: The name or ID of the cluster where the worker pool is located.</dd>
+
+<dt><code>--label <em>LABEL</em></code></dt>
+<dd>Required: A custom label in the format `key=value` to set for all the worker nodes in the worker pool. For multiple labels, repeat this flag. To keep any existing custom labels on the worker pool, include those labels with this flag. You can list the existing custom labels on worker nodes in the worker pool by running `ibmcloud oc worker-pool get -c <cluster_name_or_ID> --worker-pool <pool>`.</dd>
+
+<dt><code>-p, --worker-pool <em>WORKER_POOL</em></code></dt>
+<dd>Required: The name of the worker node pool that you want to view the details of. To list available worker pools, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`.</dd>
+
+<dt><code>-f</code></dt>
+<dd>Optional: Force the command to run with no user prompts.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example**:
+```sh
+ibmcloud oc worker-pool label set --worker-pool pool1 --cluster my_cluster --label app=dev
 ```
 {: pre}
 
@@ -2701,6 +2868,48 @@ ibmcloud oc zone add classic --zone dal10 --cluster my_cluster -w pool1 -w pool2
 
 </br>
 
+### Beta: `ibmcloud oc zone add satellite`
+{: #cs_zone_add_sat}
+
+After you create a {{site.data.keyword.satellitelong_notm}} cluster or worker pool, you can add a zone. When you add a zone, worker nodes are added to the new zone to match the number of workers per zone that you specified for the worker pool. You can add more than one zone only if your cluster is in a multizone metro.
+{: shortdesc}
+
+{{site.data.keyword.satellitelong_notm}} is available as a closed beta and is subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
+{: beta}
+
+```sh
+ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER --worker-pool WORKER_POOL [--output json] [-q]
+```
+{: pre}
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Administrator** platform role for {{site.data.keyword.satelliteshort}}.
+
+**Command options**:
+<dl>
+<dt><code>--zone <em>ZONE</em></code></dt>
+<dd>Required. The name of the zone that you want to add. To see the zone names for your location, run `ibmcloud sat location get --location <location_name_or_ID>` and look for the `Host Zones` field.</dd>
+
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>Required: The name or ID of the cluster.</dd>
+
+<dt><code>-p, --worker-pool <em>WORKER_POOL</em></code></dt>
+<dd>The name of the worker pool to add the zone to. To specify multiple worker pools, use multiple flags, such as `-p pool1 -p pool2`.</dd>
+
+<dt><code>--output json</code></dt>
+<dd>Optional: Prints the command output in JSON format.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example**:
+```sh
+ibmcloud oc zone add satellite --zone myzone2 --cluster my_cluster -w pool1 -w pool2
+```
+{: pre}
+
+</br>
+
 
 
 ### `ibmcloud oc zone add vpc-gen2`
@@ -2759,7 +2968,7 @@ The `locations` alias for this command is deprecated.
 {: note}
 
 ```sh
-ibmcloud oc zone ls --provider (classic |  | vpc-gen2) [--location LOCATION] [--region-only] [--output json] [-q]
+ibmcloud oc zone ls --provider (classic | satellite | vpc-gen2) [--location LOCATION] [--region-only] [--output json] [-q]
 ```
 {: pre}
 
@@ -2767,7 +2976,7 @@ ibmcloud oc zone ls --provider (classic |  | vpc-gen2) [--location LOCATION] [--
 
 **Command options**:
 <dl>
-<dt><code>--provider <em>(classic |  | vpc-gen2)</em></code></dt>
+<dt><code>--provider <em>(classic | satellite | vpc-gen2)</em></code></dt>
 <dd>The infrastructure provider type to list zones for. This flag is required.</dd>
 
 <dt><code>-l, --location <em>LOCATION</em></code></dt>
@@ -5471,22 +5680,26 @@ The `ibmcloud oc infra-permissions` commands check only classic IBM Cloud infras
 Check whether the credentials that allow [access to the IBM Cloud infrastructure portfolio](/docs/openshift?topic=openshift-users#api_key) for the targeted resource group and region are missing suggested or required infrastructure permissions.
 {: shortdesc}
 
-**What do `required` and `suggested` infrastructure permissions mean?**<br>
+**What do `required` and `suggested` infrastructure permissions mean?**
+
 If the infrastructure credentials for the region and resource group are missing any permissions, the output of this command returns a list of `required` and `suggested` permissions.
 *   **Required**: These permissions are needed to successfully order and manage infrastructure resources such as worker nodes. If the infrastructure credentials are missing one of these permissions, common actions such as `worker reload` can fail for all clusters in the region and resource group.
 *   **Suggested**: These permissions are helpful to include in your infrastructure permissions, and might be necessary in certain use cases. For example, the `Add Compute with Public Network Port` infrastructure permission is suggested because if you want public networking, you need this permission. However, if your use case is a cluster on the private VLAN only, the permission is not needed so it is not considered `required`.
 
 For a list of common use cases by permission, see [Infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra).
 
-**What if I see an infrastructure permission that I can't find in the console or [Infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra) table?**<br>
+**What if I see an infrastructure permission that I can't find in the console or [Infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra) table?**
+
 `Support Case` permissions are managed in a different part of the console than infrastructure permissions. See step 8 of [Customizing infrastructure permissions](/docs/openshift?topic=openshift-users#infra_access).
 
-**Which infrastructure permissions do I assign?**<br>
+**Which infrastructure permissions do I assign?**
+
 If your company's policies for permissions are strict, you might need to limit the `suggested` permissions for your cluster's use case. Otherwise, make sure that your infrastructure credentials for the region and resource group include all the `required` and `suggested` permissions.
 
 For most use cases, [set up the API key](/docs/openshift?topic=openshift-users#api_key) for the region and resource group with the appropriate infrastructure permissions. If you need to use another infrastructure account that differs from your current account, [set up manual credentials](/docs/openshift?topic=openshift-users#credentials).
 
-**How do I control what actions the users can perform?**<br>
+**How do I control what actions the users can perform?**
+
 After infrastructure credentials are set up, you can control what actions your users can perform by assigning them [{{site.data.keyword.cloud_notm}} IAM platform roles](/docs/openshift?topic=openshift-access_reference#iam_platform).
 
 ```sh

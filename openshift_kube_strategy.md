@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-18"
+  years: 2014, 2021
+lastupdated: "2021-02-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -132,7 +132,8 @@ If you already have an app, you can [migrate it to {{site.data.keyword.openshift
 {{site.data.keyword.openshiftshort}} is designed to provide capabilities to two main personas, the cluster admin and the app developer. Each persona uses different technical skills to successfully run and deploy apps to a cluster.
 {: shortdesc}
 
-**What are a cluster admin's main tasks and technical knowledge?** </br>
+**What are a cluster admin's main tasks and technical knowledge?**
+
 As a cluster admin, you are responsible to set up, operate, secure, and manage the {{site.data.keyword.cloud_notm}} infrastructure of your cluster. Typical tasks include:
 - Size the cluster to provide enough capacity for your workloads.
 - Design a cluster to meet the high availability, disaster recovery, and compliance standards of your company.
@@ -142,12 +143,14 @@ As a cluster admin, you are responsible to set up, operate, secure, and manage t
 
 The cluster admin persona must have a broad knowledge that includes compute, network, storage, security, and compliance. In a typical company, this knowledge is spread across multiple specialists, such as System Engineers, System Administrators, Network Engineers, Network Architects, IT Managers, or Security and Compliance Specialists. Consider assigning the cluster admin role to multiple people in your company so that you have the required knowledge to successfully operate your cluster.
 
-**What are an app developer's main tasks and technical skills?** </br>
+**What are an app developer's main tasks and technical skills?**
+
 As a developer, you design, create, secure, deploy, test, run, and monitor cloud-native, containerized apps in an {{site.data.keyword.openshiftshort}} cluster. To create and run these apps, you must be familiar with the concept of microservices, the [12-factor app](/docs/openshift?topic=openshift-plan_deploy#12factor) guidelines, [Docker and containerization principles](https://www.docker.com/), and available [{{site.data.keyword.openshiftshort}} deployment options](/docs/openshift?topic=openshift-plan_deploy).
 
 {{site.data.keyword.openshiftshort}} and {{site.data.keyword.openshiftlong_notm}} provide multiple options for how to [expose an app and keep an app private](/docs/containers?topic=containers-cs_network_planning), [add persistent storage](/docs/openshift?topic=openshift-storage_planning), [integrate other services](/docs/openshift?topic=openshift-ibm-3rd-party-integrations), and how you can [secure your workloads and protect sensitive data](/docs/openshift?topic=openshift-security#container). Before you move your app to a cluster in {{site.data.keyword.openshiftlong_notm}}, verify that you can run your app as a containerized app on the supported RHEL 7 operating system and that {{site.data.keyword.openshiftshort}} and {{site.data.keyword.openshiftlong_notm}} provide the capabilities that your workload needs.
 
-**Do cluster administrators and developers interact with each other?** </br>
+**Do cluster administrators and developers interact with each other?**
+
 Yes. Cluster administrators and developers must interact frequently so that cluster administrators understand workload requirements to provide this capability in the cluster, and so that developers know about available limitations, integrations, and security principles that they must consider in their app development process.
 
 ## Sizing your {{site.data.keyword.openshiftshort}} cluster to support your workload
@@ -173,7 +176,7 @@ Now let's add some other features that you might use.
 
 1.  Keep in mind that the [worker nodes reserve certain amounts of CPU and memory resources](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node) to run required components, such as the operating system or container runtime.
 2.  Consider whether your app pulls large or many images, which can take up local storage on the worker node.
-3.  Decide whether you want to [integrate services](/docs/openshift?topic=openshift-supported_integrations#supported_integrations) into your cluster, such as [Helm](/docs/openshift?topic=openshift-helm) or [Prometheus](https://github.com/prometheus-operator/kube-prometheus){: external}. These integrated services and add-ons spin up pods that consume cluster resources.
+3.  Decide whether you want to [integrate services](/docs/containers?topic=containers-supported_integrations#supported_integrations) into your cluster, such as [Helm](/docs/openshift?topic=openshift-helm) or [Prometheus](https://github.com/prometheus-operator/kube-prometheus){: external}. These integrated services and add-ons spin up pods that consume cluster resources.
 
 ### What type of availability do I want my workload to have?
 {: #sizing_availability}

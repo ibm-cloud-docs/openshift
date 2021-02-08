@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-13"
+lastupdated: "2021-02-08"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -114,26 +114,32 @@ The worker node flavors and isolation levels that are available to you depend on
 
 <img src="images/cs_clusters_hardware.png" width="700" alt="Hardware options for worker nodes in a standard cluster" style="width:700px; border-style: none"/>
 
-**What flavors are available to me?** </br>
+**What flavors are available to me?**
+
 Classic standard clusters can be created on [virtual](#vm) and [bare metal](#bm) worker nodes. If you require additional local disks, you can also choose one of the bare metal flavors that are designed for [software-defined storage](#sds) solutions, such as Portworx. Depending on the level of hardware isolation that you need, virtual worker nodes can be set up as shared or dedicated nodes, whereas bare metal machines are always set up as dedicated nodes. If you create a free classic cluster, your cluster is provisioned with the smallest virtual worker node flavor on shared infrastructure.
 
 VPC clusters can be provisioned as standard clusters on shared [virtual](#vm) worker nodes only, and must be created in one of the supported [multizone-capable metro cities](/docs/openshift?topic=openshift-regions-and-zones#zones). Free VPC clusters are not supported.
 
-**Can I combine different flavors in a cluster?** </br>
+**Can I combine different flavors in a cluster?**
+
 Yes. To add different flavors to your cluster, you must [create another worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create). You cannot resize existing worker pools to have different compute resources such as CPU or memory.
 
-**How can I change worker node flavors?**</br>
+**How can I change worker node flavors?**
+
 See [updating flavors](/docs/openshift?topic=openshift-update#machine_type).
 
-**Are the worker nodes encrypted?**<br>
+**Are the worker nodes encrypted?**
+
 The secondary disk of the worker node is encrypted. For more information, see [Overview of cluster encryption](/docs/openshift?topic=openshift-encryption#encrypt_ov). After you create a worker pool, you might notice that the worker node flavor has `.encrypted` in the name, such as `b3c.4x16.encrypted`.
 
-**How do I manage my worker nodes?** </br>
+**How do I manage my worker nodes?**
+
 Worker nodes in classic clusters are provisioned into your {{site.data.keyword.cloud_notm}} account. You can manage your worker nodes by using {{site.data.keyword.openshiftlong_notm}}, but you can also use the [classic infrastructure dashboard](https://cloud.ibm.com/classic/) in the {{site.data.keyword.cloud_notm}} console to work with your worker node directly.  
 
 Unlike classic clusters, the worker nodes of your VPC cluster are not listed in the [VPC infrastructure dashboard](https://cloud.ibm.com/vpc/overview). Instead, you manage your worker nodes with {{site.data.keyword.openshiftlong_notm}} only. However, your worker nodes might be connected to other VPC infrastructure resources, such as VPC subnets or VPC Block Storage. These resources are included in the VPC infrastructure dashboard and can be managed separately from there.
 
-**What limitations do I need to be aware of?** </br>
+**What limitations do I need to be aware of?**
+
 Kubernetes limits the maximum number of worker nodes that you can have in a cluster. Review [worker node and pod quotas](https://kubernetes.io/docs/setup/best-practices/cluster-large/){: external} for more information.
 
 [Reserved capacity and reserved instances](/docs/virtual-servers?topic=virtual-servers-provisioning-reserved-capacity-and-instances) are not supported.
@@ -145,12 +151,14 @@ Want to be sure that you always have enough worker nodes to cover your workload?
 
 
 
-**Why do my worker nodes have the `master` role?**<br>
+**Why do my worker nodes have the `master` role?**
+
 When you run `oc get nodes` or `oc describe node <worker_node>`, you might see that the worker nodes have `master,worker` roles. In OpenShift Container Platform clusters, operators use the master role as a `nodeSelector` so that OCP can deploy default components that are controlled by operators, such as the internal registry, in your cluster. No master node processes, such as the API server or Kubernetes scheduler, run on your worker nodes. For more information about master and worker node components, see [{{site.data.keyword.openshiftshort}} architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-4).
 
 
 
-**How can I check the operating system that my worker nodes run?**<br>
+**How can I check the operating system that my worker nodes run?**
+
 When you create a worker pool, you choose the flavor, which describes the operating system along with the compute resources of the worker nodes. Supported operating systems are RHEL 7. 
 
 You can also log in to your cluster to check the operating system of the worker nodes.
@@ -195,7 +203,8 @@ With VMs, you get greater flexibility, quicker provisioning times, and more auto
 ### Planning considerations for VMs
 {: #vm-planning}
 
-**Do I want to use shared or dedicated hardware?**</br>
+**Do I want to use shared or dedicated hardware?**
+
 When you create a standard classic cluster, you must choose whether you want the underlying hardware to be shared by multiple {{site.data.keyword.IBM_notm}} customers (multi tenancy) or to be dedicated to you only (single tenancy). VPC standard clusters can be provisioned on shared infrastructure (multi tenancy) only.
 
 **Classic infrastructure only**: To achieve HIPAA and PCI compliance for your environment, make sure to use dedicated virtual or [bare metal](#bm) machines for your worker nodes, not shared virtual machines. With dedicated virtual or bare metal machines, all compute resources are dedicated exclusively to you, and you can control the isolation and resource consumption of your workloads.
@@ -209,7 +218,8 @@ Shared nodes are usually less costly than dedicated nodes because the costs for 
 Some classic worker node flavors are available for only one type of tenancy setup. For example, `m3c` VMs can be provisioned in a shared tenancy setup only. Additionally, VPC clusters are available as only shared virtual machines.
 {: note}
 
-**How does storage work for VMs?**</br>
+**How does storage work for VMs?**
+
 Every VM comes with an attached disk for storage of information that the VM needs to run, such as OS file system, container runtime, and the `kubelet`.  Local storage on the worker node is for short-term processing only, and the storage disks are wiped when you delete, reload, replace, or update the worker node. For persistent storage solutions for your apps, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning).
 
  Additionally, classic and VPC infrastructure differ in the disk setup.
@@ -237,10 +247,10 @@ If your classic cluster has deprecated `x1c` or older Ubuntu 16 `x2c` worker nod
 | **Virtual, c3c.16x32**: Use this flavor when you want a 1:2 ratio of CPU and memory resources from the worker node for light to mid-sized workloads. | 16 / 32 GB | 25 GB / 100 GB | 1000 Mbps |
 | **Virtual, c3c.32x32**: Use this flavor when you want an even balance of compute resources from the worker node for mid-sized workloads. | 32 / 32 GB | 25 GB / 100 GB | 1000 Mbps |
 | **Virtual, c3c.32x64**: Use this flavor when you want a 1:2 ratio of CPU and memory resources from the worker node for mid-sized workloads. | 32 / 64 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, m3c.4x32**: Use this flavor when you want a 1:8 ratio of CPU and memory resources for light workloads that require more memory, similar to databases such as {{site.data.keyword.Db2_on_Cloud_short}}. Available only in Dallas and as `--hardware shared` tenancy. | 4 / 32 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, m3c.8x64**: Use this flavor when you want a 1:8 ratio of CPU and memory resources for light to mid-sized workloads that require more memory, similar to databases such as {{site.data.keyword.Db2_on_Cloud_short}}. Available only in Dallas and as `--hardware shared` tenancy. | 8 / 64 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, m3c.16x128**: Use this flavor when you want a 1:8 ratio of CPU and memory resources for mid-sized workloads that require more memory, similar to databases such as {{site.data.keyword.Db2_on_Cloud_short}}. Available only in Dallas and as `--hardware shared` tenancy. | 16 / 128 GB | 25 GB / 100 GB | 1000 Mbps |
-| **Virtual, m3c.30x240**: Use this flavor when you want a 1:8 ratio of CPU and memory resources for mid to large-sized workloads that require more memory, similar to databases such as {{site.data.keyword.Db2_on_Cloud_short}}. Available only in Dallas and as `--hardware shared` tenancy. | 30 / 240 GB | 25 GB / 100 GB | 1000 Mbps |
+| **Virtual, m3c.4x32**: Use this flavor when you want a 1:8 ratio of CPU and memory resources for light workloads that require more memory, similar to databases such as {{site.data.keyword.Db2_on_Cloud_short}}. Available as `--hardware shared` tenancy. | 4 / 32 GB | 25 GB / 100 GB | 1000 Mbps |
+| **Virtual, m3c.8x64**: Use this flavor when you want a 1:8 ratio of CPU and memory resources for light to mid-sized workloads that require more memory, similar to databases such as {{site.data.keyword.Db2_on_Cloud_short}}. Available as `--hardware shared` tenancy. | 8 / 64 GB | 25 GB / 100 GB | 1000 Mbps |
+| **Virtual, m3c.16x128**: Use this flavor when you want a 1:8 ratio of CPU and memory resources for mid-sized workloads that require more memory, similar to databases such as {{site.data.keyword.Db2_on_Cloud_short}}. Available as `--hardware shared` tenancy. | 16 / 128 GB | 25 GB / 100 GB | 1000 Mbps |
+| **Virtual, m3c.30x240**: Use this flavor when you want a 1:8 ratio of CPU and memory resources for mid to large-sized workloads that require more memory, similar to databases such as {{site.data.keyword.Db2_on_Cloud_short}}. Available as `--hardware shared` tenancy. | 30 / 240 GB | 25 GB / 100 GB | 1000 Mbps |
 | **Virtual, z1.2x4**: se this flavor when you want a worker node to be created on Hyper Protect Containers on IBM Z Systems. | 2 / 4 GB | 25 GB / 100 GB | 1000 Mbps |
 {: class="simple-tab-table"}
 {: caption="Available worker node flavors for classic clusters" caption-side="top"}
@@ -287,18 +297,21 @@ You can provision your worker node as a single-tenant physical server, also refe
 ### Planning considerations for bare metal
 {: #bm-planning}
 
-**How is bare metal different than VMs?**</br>
+**How is bare metal different than VMs?**
+
 Bare metal gives you direct access to the physical resources on the machine, such as the memory or CPU. This setup eliminates the virtual machine hypervisor that allocates physical resources to virtual machines that run on the host. Instead, all of a bare metal machine's resources are dedicated exclusively to the worker, so you don't need to worry about "noisy neighbors" sharing resources or slowing down performance. Physical flavors have more local storage than virtual, and some have RAID to increase data availability. Local storage on the worker node is for short-term processing only, and the primary and secondary disks are wiped when you update or reload the worker node. For persistent storage solutions, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning).
 
 Because you have full control over the isolation and resource consumption for your workloads, you can use bare metal machines to achieve HIPAA and PCI compliance for your environment.
 {: important}
 
-**Besides better specs for performance, can I do something with bare metal that I can't with VMs?**</br>
+**Besides better specs for performance, can I do something with bare metal that I can't with VMs?**
+
 Yes, with bare metal worker nodes, you can use {{site.data.keyword.datashield_full}}. {{site.data.keyword.datashield_short}} is integrated with Intel® Software Guard Extensions (SGX) and Fortanix® technology so that your {{site.data.keyword.cloud_notm}} container workload code and data are protected in use. The app code and data run in CPU-hardened enclaves. CPU-hardened enclaves are trusted areas of memory on the worker node that protect critical aspects of the app, which helps to keep the code and data confidential and unmodified. If you or your company require data sensitivity due to internal policies, government regulations, or industry compliance requirements, this solution might help you to move to the cloud. Example use cases include financial and healthcare institutions, or countries with government policies that require on-premises cloud solutions.
 
 For supported flavors, see the [{{site.data.keyword.datashield_short}} documentation](/docs/data-shield?topic=data-shield-getting-started).
 
-**Bare metal sounds awesome! What's stopping me from ordering one right now?**</br>
+**Bare metal sounds awesome! What's stopping me from ordering one right now?**
+
 Bare metal servers are more expensive than virtual servers, and are best suited for high-performance apps that need more resources and host control. Bare metal worker nodes are also not available for VPC clusters.
 
 Bare metal servers are billed monthly. If you cancel a bare metal server before the end of the month, you are charged through the end of that month. After you order or cancel a bare metal server, the process is completed manually in your IBM Cloud infrastructure account. Therefore, it can take more than one business day to complete.
@@ -424,37 +437,10 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 </thead>
 <tbody>
 <tr>
-<td><strong>Virtual with SDS, c3s.16x64.2tb.san</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). Includes 2x2 TB Raw SAN local storage.</td>
-<td>16 / 64 GB</td>
-<td>25 GB / 100 GB</td>
-<td>2 disks, 2 TB Raw SAN</td>
-<td>10000 Mbps</td>
-</tr>
-<td><strong>Virtual with SDS, c3s.32x128.2x2tb.san</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). Includes 2x2 TB Raw SAN local storage.</td>
-<td>32 / 128 GB</td>
-<td>25 GB / 100 GB</td>
-<td>2 disks, 2 TB Raw SAN</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
 <td><strong>Data-intensive bare metal with SDS, me4c.4x32.1.9tb.ssd</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT.</td>
 <td>4 / 32 GB</td>
 <td>2 TB HDD / 960 GB SSD</td>
 <td>1.9 TB Raw SSD (device paths: `/dev/sdc`)</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
-<td><strong>GPU bare metal with SDS, mgs3c.16x128.3.8tb.ssd</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). This flavor has one Tesla K80 physical card that has two GPUs per card for a total of two GPUs.</td>
-<td>16 / 128 GB</td>
-<td>2 TB SATA / 1.9 TB SSD</td>
-<td>3.8 TB Raw SSD</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
-<td><strong>GPU bare metal with SDS, mgs3c.28x512.2x3.8tb.ssd</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). This flavor has one Tesla K80 physical card that has two GPUs per card for a total of two GPUs.</td>
-<td>28 / 512 GB</td>
-<td>2 TB SATA / 1.9 TB SSD</td>
-<td>2 disks, 3.8 TB Raw SSD</td>
 <td>10000 Mbps</td>
 </tr>
 <tr>
