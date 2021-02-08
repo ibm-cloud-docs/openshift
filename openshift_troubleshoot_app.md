@@ -563,7 +563,6 @@ The following steps assume that the API key stores the credentials of a service 
 <br>
 
 **Deprecated: Troubleshooting image pull secrets that use tokens**
-
 {: #ts_image_pull_token}
 
 If your pod configuration has an image pull secret that uses a token, check that the token credentials are valid.
@@ -895,5 +894,3 @@ To troubleshoot your Helm chart:
 Now, you can follow the instructions in the Helm chart `README` to install the Helm chart in your cluster.
 
 <br />
-
-

@@ -298,7 +298,7 @@ By default, the [image registry operator management state](https://docs.openshif
 <br />
 
 ## Managing {{site.data.keyword.satelliteshort}} worker pools
-{: #satcluster-worker pools}
+{: #satcluster-worker-pools}
 
 {{site.data.keyword.satellitelong_notm}} is available as a closed beta and is subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
 {: beta}
