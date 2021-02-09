@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-09"
 
 keywords: openshift, rhoks, roks, rhos, multi az, multi-az, szr, mzr
 
@@ -178,6 +178,8 @@ Your VPC cluster is created with both a public and a private service endpoint by
 
 You can secure access to your private service endpoint by creating a subnet allowlist. Only authorized requests to your cluster master that originate from subnets in the allowlist are permitted through the cluster's private service endpoint. For more information, see [Creating an allowlist for the private service endpoint](/docs/openshift?topic=openshift-access_cluster#private-se-allowlist).
 {: tip}
+
+
 
 </br>
 
