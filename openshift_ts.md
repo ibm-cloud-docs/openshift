@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-09"
+lastupdated: "2021-02-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -789,7 +789,7 @@ Consider the following example scenario to understand how clusters might become 
 ### Unable to create or delete worker nodes due to endpoints error
 {: #vpe-ts}
 
-**Infrastructure providers**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute, {{site.data.keyword.openshiftshort}} version 4.6 or later
+**Infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute, {{site.data.keyword.openshiftshort}} version 4.6 or later
 
 {: tsSymptoms}
 You cannot manage worker nodes for your cluster, and you receive an error message similar to one of the following.

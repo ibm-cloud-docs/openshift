@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-09"
+lastupdated: "2021-02-10"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -1598,7 +1598,7 @@ Detach a public or private portable classic subnet in an IBM Cloud infrastructur
 {: shortdesc}
 
 ```sh
-ibmcloud oc cluster subnet detach --cluster CLUSTER --subent-id SUBNET_ID [-f] [-q]
+ibmcloud oc cluster subnet detach --cluster CLUSTER --subnet-id SUBNET_ID [-f] [-q]
 ```
 {: pre}
 
@@ -3103,7 +3103,7 @@ ibmcloud oc ingress alb create classic --cluster CLUSTER --type (PUBLIC|PRIVATE)
 
 **Example**:
 ```sh
-ibmcloud oc ingress alb create classic --cluster mycluster --type public --vlan 2234945 --zone dal10 --ip 1.1.1.1 --version 2424
+ibmcloud oc ingress alb create classic --cluster mycluster --type public --vlan 2234945 --zone dal10 --ip 1.1.1.1 --version 2452
 ```
 {: pre}
 
@@ -3449,12 +3449,12 @@ ibmcloud oc ingress alb update --cluster CLUSTER [--alb ALB1_ID --alb ALB2_ID ..
 **Example commands:**
 * To update all ALB pods in the cluster:
   ```sh
-  ibmcloud oc ingress alb update -c mycluster --version 2424
+  ibmcloud oc ingress alb update -c mycluster --version 2452
   ```
   {: pre}
 * To update the ALB pods for one or more specific ALBs:
   ```sh
-  ibmcloud oc ingress alb update -c mycluster --version 2424 --alb public-crdf253b6025d64944ab99ed63bb4567b6-alb1
+  ibmcloud oc ingress alb update -c mycluster --version 2452 --alb public-crdf253b6025d64944ab99ed63bb4567b6-alb1
   ```
   {: pre}
 

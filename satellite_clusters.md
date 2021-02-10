@@ -142,20 +142,20 @@ Use the {{site.data.keyword.cloud_notm}} console to create your {{site.data.keyw
     ```
     {: pre}
   3. Create the following `IPPool` YAML file, which sets `ipipMode: Never` and `vxlanMode: Always`.
-    ```yaml
-    apiVersion: projectcalico.org/v3
-    kind: IPPool
-    metadata:
-      name: default-ipv4-ippool
-    spec:
-      blockSize: 26
-      cidr: 172.30.0.0/16
-      ipipMode: Never
-      natOutgoing: true
-      nodeSelector: all()
-      vxlanMode: Always
-    ```
-    {: codeblock}
+     ```yaml
+     apiVersion: projectcalico.org/v3
+     kind: IPPool
+     metadata:
+       name: default-ipv4-ippool
+     spec:
+       blockSize: 26
+       cidr: 172.30.0.0/16
+       ipipMode: Never
+       natOutgoing: true
+       nodeSelector: all()
+       vxlanMode: Always
+     ```
+     {: codeblock}
   4. Apply the `IPPool` to update the Calico plug-in.
     ```
     calicoctl apply -f /<filepath>/pool.yaml
