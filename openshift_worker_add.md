@@ -511,7 +511,7 @@ Your worker pool is created!
 * If no hosts are available, you can [manually assign hosts](/docs/satellite?topic=satellite-hosts#host-assign) to the worker pool. Keep in mind that if you manually assign hosts, host autoassignment is disabled for future actions until you rebalance the worker pool.
 
 When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host vCPU.
-{: note} 
+{: note}
 
 ### Maintaining {{site.data.keyword.satelliteshort}} worker pools
 {: #sat-pool-maintenance}
@@ -551,7 +551,7 @@ You can add zones to a worker pool. Available {{site.data.keyword.satelliteshort
 {: shortdesc}
 
 * For more information about zones in {{site.data.keyword.satelliteshort}}, see [{{site.data.keyword.satelliteshort}} concepts](/docs/satellite?topic=satellite-about#location-concept).
-* To add a zone, see the [`ibmcloud oc zone add satellite` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_satellite).
+* To add a zone, see the [`ibmcloud oc zone add satellite` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat).
 
 #### Removing a {{site.data.keyword.satelliteshort}} worker pool
 {: #sat-pool-maintenance-remove}
