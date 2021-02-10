@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-08"
+lastupdated: "2021-02-10"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -499,7 +499,7 @@ Create a worker pool in your {{site.data.keyword.satelliteshort}} cluster with h
     * `--name`: Give a name for your worker pool.
     * `--size-per-zone`: Specify the number of worker nodes that you want to have in each zone that the worker pool spans. You can change this value later by resizing the worker pool.
     * `--zone`: Select the initial zone in your {{site.data.keyword.satelliteshort}} location to create the worker pool in, that you retrieved from your cluster details. You can add more zones later.
-    * `--host-label`: Add labels to match the requested capacity of the worker pool with the available hosts in the {{site.data.keyword.satelliteshort}} location. Include at least `cpu=number` and `memory=number` values. **Important**: You cannot update host labels on the worker pool later, so make sure to configure the labels properly. You can change the labels on {{site.data.keyword.satelliteshort}} hosts, if needed.
+    * `--host-label`: Add labels to match the requested capacity of the worker pool with the available hosts in the {{site.data.keyword.satelliteshort}} location. You can use just the `cpu=number` host label because {{site.data.keyword.satelliteshort}} hosts automatically get this host label. You can also add a custom host label like `env=prod`. **Important**: You cannot update host labels on the worker pool later, so make sure to configure the labels properly. You can change the labels on {{site.data.keyword.satelliteshort}} hosts, if needed.
 
     ```
     ibmcloud oc worker-pool create satellite --cluster <cluster_name_or_ID> --name <pool_name> --size-per-zone <number> --zone <satellite_zone> --host-label <cpu=number> --host-label <memory=number> [--host-label <key=value>]
@@ -511,7 +511,7 @@ Your worker pool is created!
 * If no hosts are available, you can [manually assign hosts](/docs/satellite?topic=satellite-hosts#host-assign) to the worker pool. Keep in mind that if you manually assign hosts, host autoassignment is disabled for future actions until you rebalance the worker pool.
 
 When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host vCPU.
-{: note} 
+{: note}
 
 ### Maintaining {{site.data.keyword.satelliteshort}} worker pools
 {: #sat-pool-maintenance}
@@ -551,7 +551,7 @@ You can add zones to a worker pool. Available {{site.data.keyword.satelliteshort
 {: shortdesc}
 
 * For more information about zones in {{site.data.keyword.satelliteshort}}, see [{{site.data.keyword.satelliteshort}} concepts](/docs/satellite?topic=satellite-about#location-concept).
-* To add a zone, see the [`ibmcloud oc zone add satellite` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_satellite).
+* To add a zone, see the [`ibmcloud oc zone add satellite` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat).
 
 #### Removing a {{site.data.keyword.satelliteshort}} worker pool
 {: #sat-pool-maintenance-remove}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-02-08"
+lastupdated: "2021-02-10"
 
 keywords: openshift
 subcollection: openshift
@@ -1453,7 +1453,6 @@ subcollection: openshift
   * [`ibmcloud oc cluster ca status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_status)
   * [`ibmcloud oc cluster config`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config)
   * [`ibmcloud oc cluster create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create)
-  * [Beta: `ibmcloud oc cluster create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite)
   * [`ibmcloud oc cluster create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2)
   * [`ibmcloud oc cluster get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_get)
   * [`ibmcloud oc cluster ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_clusters)
@@ -1482,7 +1481,6 @@ subcollection: openshift
   * [`ibmcloud oc worker update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_update)
 * [`worker-pool` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool)
   * [`ibmcloud oc worker-pool create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create)
-  * [Beta: `ibmcloud oc worker-pool create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create_sat)
   * [`ibmcloud oc worker-pool create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2)
   * [`ibmcloud oc worker-pool get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_get)
   * [`ibmcloud oc worker-pool label rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_rm)
@@ -1495,7 +1493,6 @@ subcollection: openshift
   * [`ibmcloud oc worker-pool zones`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_zones)
 * [`zone` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#zone)
   * [`ibmcloud oc zone add classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add)
-  * [Beta: `ibmcloud oc zone add satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat)
   * [`ibmcloud oc zone add vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_zone-add-vpc-gen2)
   * [`ibmcloud oc zone ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_datacenters)
   * [`ibmcloud oc zone network-set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_network_set)
@@ -1591,6 +1588,10 @@ subcollection: openshift
   * [`ibmcloud oc storage attachment rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_rm)
   * [`ibmcloud oc storage volume get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_ls_c)
   * [`ibmcloud oc storage volume ls `](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_ls_2)
+* [Beta: {{site.data.keyword.satelliteshort}} commands](/docs/openshift?topic=openshift-kubernetes-service-cli#sat_commands)
+  * [Beta: `ibmcloud oc cluster create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite)
+  * [Beta: `ibmcloud oc worker-pool create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create_sat)
+  * [Beta: `ibmcloud oc zone add satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat)
 
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog)
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)

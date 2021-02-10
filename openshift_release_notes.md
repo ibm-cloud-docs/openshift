@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-08"
+lastupdated: "2021-02-10"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -109,6 +109,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 10 February 2021 | <ul><li>**Ingress ALB changelog**: Updated the [`nginx-ingress` build to 2452](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.</li><li>**Gateway firewalls and Calico policies**: For classic clusters in Dallas, Washington D.C., and Frankfurt, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound), [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.</li></ul> |
 | 08 February 2021 | **CLI changelog**: Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.223](/docs/openshift?topic=openshift-cs_cli_changelog#10). |
 | 04 February 2021 | **Worker node modifications**: Summarized the modifications that you can make to the [default worker node settings](/docs/openshift?topic=openshift-kernel#worker-default).|
 | 01 February 2021 | <ul><li>**Unsupported: Kubernetes version 1.16**: Clusters that run Kubernetes version 1.16 are unsupported as of 31 January 2021. To continue receiving important security updates and support, you must [update the cluster to a supported version](/docs/containers?topic=containers-cs_versions#prep-up) immediately.</li><li>**Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.5.28_1528_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4528_1528), [`4.4.31_1532_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4431_1532), [`4.3.40_1553_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1553), and [`3.11.374_1579_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311374_1579).</li></ul> |
