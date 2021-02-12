@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-11"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -513,11 +513,14 @@ Your authorized users can now continue with [Accessing {{site.data.keyword.opens
 After you [create a {{site.data.keyword.openshiftshort}} cluster in your {{site.data.keyword.satelliteshort}} location](/docs/openshift?topic=openshift-satellite-clusters), you can begin working with your cluster by accessing the cluster.
 {: shortdesc}
 
-### Accessing clusters from within the location network
+### Accessing clusters through the cluster service URL
 {: #access_cluster_sat_se}
 
-If you use on-premises hosts for your location and you are connected to the private on-premises network, such as through VPN access, you connect to your cluster directly through the cluster's service endpoint. This service endpoint is the location's Link connector hostname, which is formatted such as `https://p1iuql40jam23qiuxt833-q9err0fiffbsar61e78vv6e7ds8ne1tx-ce00.us-south.satellite.appdomain.cloud:30710`.
+Connect to your cluster through its service URL. This URL is one of your {{site.data.keyword.satelliteshort}} location subdomains and a node port, which is formatted such as `https://p1iuql40jam23qiuxt833-q9err0fiffbsar61e78vv6e7ds8ne1tx-ce00.us-east.satellite.appdomain.cloud:30710`.
 {: shortdesc}
+
+If you use hosts that have private network connectivity only for your location, you must be connected to your hosts' private network, such as through VPN access, to connect to your cluster and access the {{site.data.keyword.openshiftshort}} web console.
+{: note}
 
 You can quickly access your {{site.data.keyword.openshiftlong_notm}} cluster from the console.
 1.  In the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the cluster that you want to access.
@@ -536,10 +539,10 @@ If you cannot or do not want to open the {{site.data.keyword.openshiftshort}} co
         {: pre}
 *   **Log in with an API key**: See [Using an API key to log in to {{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-access_cluster#access_api_key).
 
-### Accessing clusters from outside the location network
+### Accessing clusters from within the {{site.data.keyword.cloud_notm}} private network
 {: #access_cluster_sat_link}
 
-If you do not use on-premises hosts for your location, you must connect to your cluster through the Link endpoint that is automatically created for your location control plane. This endpoint hostname is formatted such as `c-02.us-east.link.satellite.cloud.ibm.com:32847`, and allows you to connect through the secured Link tunnel to the cluster's service endpoint.
+If you are connected to the {{site.data.keyword.cloud_notm}} private network, you can use the {{site.data.keyword.satelliteshort}} Link endpoint that is automatically generated for your cluster. This endpoint allows you to connect through the secured Link tunnel server to the cluster's master in your location control plane. The endpoint consists of the Link tunnel server hostname and a node port, which is formatted such as `c-02.<region>.link.satellite.cloud.ibm.com:<port>`.
 {: shortdesc}
 
 1.  Make sure that you have the [**Administrator** IAM platform role for the cluster](/docs/openshift?topic=openshift-users#add_users).
@@ -548,7 +551,6 @@ If you do not use on-premises hosts for your location, you must connect to your 
     ibmcloud oc cluster config -c <cluster_name_or_ID> --endpoint link --admin
     ```
     {: pre}
-
 
 <br />
 

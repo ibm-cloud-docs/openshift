@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-10"
+lastupdated: "2021-02-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -348,24 +348,10 @@ If these components fail, review the following debug steps.
     2.  Review the output of the previous step to check the **Ingress Subdomain**.
         *  If your cluster does **not** have a subdomain, see [No Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain).
         *  If your cluster does have a subdomain, continue to the next step.
-    3.  Verify that your cluster runs the latest **Version**. If your cluster does not run the latest version, update the cluster and worker nodes.
-        1.  [Update the cluster master](/docs/openshift?topic=openshift-update#master) to the latest version.
-
-            **4.4**:
+    3.  Verify that your cluster runs the latest patch **Version**. If your cluster does not run the latest patch version, update the cluster and worker nodes.
+        1.  [Update the cluster master](/docs/openshift?topic=openshift-update#master) to the latest patch version for your cluster major and minor version.
             ```
-            ibmcloud oc cluster master update -c <cluster_name_or_ID> --version 4.4_openshift -f
-            ```
-            {: pre}
-
-            **4.3**:
-            ```
-            ibmcloud oc cluster master update -c <cluster_name_or_ID> --version 4.5_openshift -f
-            ```
-            {: pre}
-
-            **3.11**:
-            ```
-            ibmcloud oc cluster master update -c <cluster_name_or_ID> --version 3.11_openshift -f
+            ibmcloud oc cluster master update -c <cluster_name_or_ID> --version <major.minor>_openshift -f
             ```
             {: pre}
 

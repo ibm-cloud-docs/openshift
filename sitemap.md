@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-02-10"
+lastupdated: "2021-02-12"
 
 keywords: openshift
 subcollection: openshift
@@ -446,8 +446,8 @@ subcollection: openshift
   * [Accessing 3.11 clusters through the private service endpoint](/docs/openshift?topic=openshift-access_cluster#classic_private_se)
   * [Creating an allowlist for the private service endpoint](/docs/openshift?topic=openshift-access_cluster#private-se-allowlist)
 * [Accessing {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat)
-  * [Accessing clusters from within the location network](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_se)
-  * [Accessing clusters from outside the location network](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_link)
+  * [Accessing clusters through the cluster service URL](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_se)
+  * [Accessing clusters from within the {{site.data.keyword.cloud_notm}} private network](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_link)
 * [Accessing clusters from automation tools by using an API key](/docs/openshift?topic=openshift-access_cluster#access_automation)
   * [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key)
   * [Using a service ID to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_service_id)
