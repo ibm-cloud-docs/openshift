@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -328,6 +328,7 @@ If these components fail, review the following debug steps.
 1.  Check that your {{site.data.keyword.cloud_notm}} account is set up properly. Some common scenarios that can prevent the default components from running properly include the following:
     * If you have a firewall, make sure that [open the required ports and IP addresses in your firewall](/docs/openshift?topic=openshift-firewall) so that you do not block any ingress or egress traffic for the OperatorHub or other {{site.data.keyword.openshiftshort}} components.
     * If your cluster has multiple zones, or if you have a VPC cluster, make sure that you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-subnets#basics_segmentation). To check if VRF is already enabled, run `ibmcloud account show`. To check if VLAN spanning is enabled, run `ibmcloud oc vlan-spanning get`.
+    * If some users in the account use a multifactor authentication (MFA) like [TOTP](/docs/account?topic=account-totp), make sure that you [enable MFA](/docs/account?topic=account-enablemfa) for all users in the {{site.data.keyword.cloud_notm}} account.
 2. VPC clusters: Check that a public gateway is enabled on each VPC subnet that your cluster is attached to. Public gateway are required for default components such as the web console and OperatorHub to use a secure, public connection to complete actions such as pulling images from remote, private registries.
     1. Use the {{site.data.keyword.cloud_notm}} console or CLI to [ensure that a public gateway is enabled on each subnet](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet) that your cluster is attached to.
     2. Restart the components for the **Developer catalog** in the web console.

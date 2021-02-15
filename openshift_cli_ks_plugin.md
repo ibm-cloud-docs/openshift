@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-11"
+lastupdated: "2021-02-15"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -610,7 +610,7 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--endpoint ENDPOINT_TYPE
 <dd>Optional: Download the TLS certificates and permission files for the Super User role. You can use the certs to automate tasks in a cluster without having to reauthenticate. The files are downloaded to `<user_home_directory>/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>-admin`.</dd>
 
 <dt><code>--endpoint <em>ENDPOINT_TYPE</em></code></dt>
-<dd>Optional: Specify the type of endpoint to use to connect to the cluster. If you do not specify this flag, the default service endpoint for your cluster is used.<ul><li><code>private</code>: If the private service endpoint is enabled for your cluster, set to `private` to use the private service endpoint for your cluster context. Note you must be in your {{site.data.keyword.cloud_notm}} private network or connected to the private network through a [VPC VPN connection](/docs/vpc?topic=vpc-vpn-onprem-example), or for classic infrastructure, a [classic VPN connection](/docs/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl).</li><li><code>link</code>: To connect to {{site.data.keyword.satellitelong_notm}} clusters from within the {{site.data.keyword.cloud_notm}} private network, set to `link` to use your {{site.data.keyword.satelliteshort}} location's Link endpoint for the cluster context. If you specify this flag, you must also specify the `--admin` flag. If you are not connected to the {{site.data.keyword.cloud_notm}} private network, this flag is not required because the cluster service endpoint is used.</li></ul></dd>
+<dd>Optional: Specify the type of endpoint to use to connect to the cluster. If you do not specify this flag, the default service endpoint for your cluster is used.<ul><li><code>private</code>: If the private service endpoint is enabled for your cluster, set to `private` to use the private service endpoint for your cluster context. Note you must be in your {{site.data.keyword.cloud_notm}} private network or connected to the private network through a [VPC VPN connection](/docs/vpc?topic=vpc-vpn-onprem-example), or for classic infrastructure, a [classic VPN connection](/docs/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl).</li><li><code>link</code>: To connect to {{site.data.keyword.satellitelong_notm}} clusters from within the {{site.data.keyword.cloud_notm}} private network, set to `link` to use your {{site.data.keyword.satelliteshort}} location's Link endpoint for the cluster context. If you specify this flag, you must also specify the `--admin` flag. If you are not connected to the {{site.data.keyword.cloud_notm}} private network, this flag is not required because the cluster service URL is used.</li></ul></dd>
 
 <dt><code>--network</code></dt>
 <dd>Optional: Download the Calico configuration file, TLS certificates, and permission files that are required to run <code>calicoctl</code> commands in your cluster. **Note**: This option cannot be used with the <code>--yaml</code> option.</dd>
@@ -5355,7 +5355,7 @@ ibmcloud oc api-key reset --region REGION [-q]
 **Command options**:
 <dl>
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
+<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-osa`, `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -5395,7 +5395,7 @@ ibmcloud oc credential get --region REGION [-q] [--output json]
 **Command options**:
 <dl>
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
+<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-osa`, `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
@@ -5445,7 +5445,7 @@ ibmcloud oc credential set classic --infrastructure-api-key API_KEY --infrastruc
 <dd>Required: IBM Cloud infrastructure account API key. To view or generate an infrastructure API key, see [Managing classic infrastructure API keys](/docs/account?topic=account-classic_keys).</dd>
 
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
+<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-osa`, `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -5479,7 +5479,7 @@ ibmcloud oc credential unset --region REGION [-q]
 **Command options**:
 <dl>
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
+<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-osa`, `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -5542,7 +5542,7 @@ ibmcloud oc infra-permissions get --region REGION [--output json] [-q]
 **Command options**:
 <dl>
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Required: Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`. </dd>
+<dd>Required: Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-osa`, `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`. </dd>
 
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
@@ -5859,7 +5859,7 @@ ibmcloud oc vlan spanning get --region REGION [--output json] [-q]
 **Command options**:
 <dl>
 <dt><code>--region <em>REGION</em></code></dt>
-<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
+<dd>Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-osa`, `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.</dd>
 
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
@@ -6110,11 +6110,10 @@ If you need to list and work with resources from one region only, you can use th
 * Dallas (US South, us-south): `https://us-south.containers.cloud.ibm.com`
 * Frankfurt (EU Central, eu-de): `https://eu-de.containers.cloud.ibm.com`
 * London (UK South, eu-gb): `https://eu-gb.containers.cloud.ibm.com`
+* Osaka (jp-osa): `https://jp-osa.containers.cloud.ibm.com`
 * Sydney (AP South, au-syd): `https://au-syd.containers.cloud.ibm.com`
 * Tokyo (AP North, jp-tok): `https://jp-tok.containers.cloud.ibm.com`
 * Washington, D.C. (US East, us-east): `https://us-east.containers.cloud.ibm.com`
-
-
 
 To use the global functionality, you can use the `ibmcloud oc api` command again to target the global endpoint: `https://containers.cloud.ibm.com`
 
@@ -6179,11 +6178,10 @@ If you need to list and work with resources from one region only, you can use th
 * Dallas (US South, us-south): `https://us-south.containers.cloud.ibm.com`
 * Frankfurt (EU Central, eu-de): `https://eu-de.containers.cloud.ibm.com`
 * London (UK South, eu-gb): `https://eu-gb.containers.cloud.ibm.com`
+* Osaka (jp-osa): `https://jp-osa.containers.cloud.ibm.com`
 * Sydney (AP South, au-syd): `https://au-syd.containers.cloud.ibm.com`
 * Tokyo (AP North, jp-tok): `https://jp-tok.containers.cloud.ibm.com`
 * Washington, D.C. (US East, us-east): `https://us-east.containers.cloud.ibm.com`
-
-
 
 To use the global functionality, you can use the `ibmcloud oc init` command again to target the global endpoint: `https://containers.cloud.ibm.com`
 
@@ -6602,7 +6600,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 <li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap. The service subnet is in the 172.21.0.0/16 range by default.</p></dd>
 
 <dt><code>--pull-secret <em>SECRET</em></code></dt>
-<dd>Optional. Provide your [{{site.data.keyword.redhat_full}} account pull secret ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.redhat.com/openshift/install/pull-secret) so that the cluster can download {{site.data.keyword.openshiftshort}} images from your own {{site.data.keyword.redhat_notm}} account.</dd>
+<dd>Optional. To use an existing OCP entitlement for the worker nodes in this cluster, provide your [{{site.data.keyword.redhat_full}} account pull secret ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.redhat.com/openshift/install/pull-secret). The cluster also uses this pull secret to download {{site.data.keyword.openshiftshort}} images from your own {{site.data.keyword.redhat_notm}} account. If you do not include this flag, you are charged the [OCP license fee](/docs/satellite?topic=satellite-faqs#pricing) for the worker nodes, and use the default pull secret that is provided by IBM.<p class="note">**Internal IBM accounts only**: Do not use this flag.</p></dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -6619,7 +6617,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 <dd>Required when `--host-label` is specified. The number of worker nodes per zone in the default worker pool.</dd>
 
 <dt><code>--zone <em>ZONE</em></code></dt>
-<dd>Optional. The name of the zone to create the {{site.data.keyword.satelliteshort}} location control plane in. For high availability, you might want to use one of the 3 zones from the location control plane, and then add the two other zones to your cluster later. To see the zone names for your location, run `ibmcloud sat location get --location <location_name_or_ID>` and look for the `Host Zones` field.</dd>
+<dd>Optional. The name of the zone to create the default worker pool in. For high availability, you might want to use one of the 3 zones from the location control plane, and then add the two other zones to your cluster later. To see the zone names for your location, run `ibmcloud sat location get --location <location_name_or_ID>` and look for the `Host Zones` field.</dd>
 
 </dl>
 
