@@ -617,6 +617,9 @@ subcollection: openshift
 * [Creating a priority class](/docs/openshift?topic=openshift-pod_priority#create_priority_class)
 * [Assigning priority to your pods](/docs/openshift?topic=openshift-pod_priority#prioritize)
 
+[Setting Kubernetes API priority and fairness](/docs/openshift?topic=openshift-kubeapi-priority)
+* [Reviewing default flow schema and priority levels](/docs/openshift?topic=openshift-kubeapi-priority#kubeapi-default-priority)
+
 
 ## Securing the cluster network
 {: #sitemap_securing_the_cluster_network}
@@ -1625,21 +1628,18 @@ subcollection: openshift
 * [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types)
 * [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types)
 * [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history)
+* [{{site.data.keyword.openshiftshort}} 4.6](/docs/openshift?topic=openshift-openshift_versions#ocp46)
+  * [Update before master](/docs/openshift?topic=openshift-openshift_versions#46_before)
 * [{{site.data.keyword.openshiftshort}} 4.5](/docs/openshift?topic=openshift-openshift_versions#ocp45)
   * [Update before master](/docs/openshift?topic=openshift-openshift_versions#45_before)
   * [Update after master](/docs/openshift?topic=openshift-openshift_versions#45_after)
 * [{{site.data.keyword.openshiftshort}} 4.4](/docs/openshift?topic=openshift-openshift_versions#ocp44)
   * [Update before master](/docs/openshift?topic=openshift-openshift_versions#44_before)
 * [Deprecated: {{site.data.keyword.openshiftshort}} 4.3](/docs/openshift?topic=openshift-openshift_versions#ocp43)
-* [Migrating from version 3.11 to 4 clusters](/docs/openshift?topic=openshift-openshift_versions#ocp-3-to-4-migration)
-  * [Prerequisites](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-prereqs)
-  * [Step 1: Deploy the migration operator to the source cluster](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-source)
-  * [Step 2: Deploy the migration operator to the destination cluster](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-destination)
-  * [Step 3: Configure storage information in the destination cluster](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-storage-destination)
-  * [Step 4: Configure the destination cluster with information about the source cluster](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-configure-destination)
-  * [Step 5: Run the migration](/docs/openshift?topic=openshift-openshift_versions#ocp3to4-migrate-run)
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
+* [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
+  * [Changelog for 4.6.16_1530_openshift (master) and 4.6.16_1529_openshift (worker node), released 17 February 2020](/docs/openshift?topic=openshift-openshift_changelog#4616_1530)
 * [Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
   * [Changelog for worker node fix pack 4.5.31_1529_openshift, released 15 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4531_1529)
   * [Changelog for worker node fix pack 4.5.28_1528_openshift, released 1 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4528_1528)

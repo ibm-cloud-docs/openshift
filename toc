@@ -86,6 +86,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_encrypt.md
         openshift_scc.md
         openshift_pod_priority.md
+        openshift_kubeapi_priority.md
 
     {: .topicgroup}
     Securing the cluster network
