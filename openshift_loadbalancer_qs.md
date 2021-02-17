@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-14"
+  years: 2014, 2021
+lastupdated: "2021-02-17"
 
 keywords: openshift, roks, rhoks, rhos, nlb, lbaas
 
@@ -99,9 +99,8 @@ subcollection: openshift
 Quickly expose your app to the Internet by creating a layer 4 load balancer.
 {: shortdesc}
 
-First time setting up a load balancer? Check out [Classic: Setting up basic load balancing with an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer) or [VPC: Exposing apps with VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas) for prerequisite steps and more details. Come back to these quick start steps for a brief refresher the next time you set up a load balancer.
+First time setting up a load balancer? Check out [Classic: Setting up basic load balancing with an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer) or [VPC: Exposing apps with VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas) for prerequisite steps, limitations, and more details. Come back to these quick start steps for a brief refresher the next time you set up a load balancer.
 {: tip}
-
 
 ## Exposing an app by using an NLB in a classic cluster
 {: #lb_qs_classic}

@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2021
 lastupdated: "2021-02-17"
 
-keywords: openshift, roks, rhoks, rhos
+keywords: openshift, roks
 
 subcollection: openshift
 
@@ -92,55 +92,43 @@ subcollection: openshift
 {:video: .video}
 
 
+# Setting Kubernetes API priority and fairness
+{: #kubeapi-priority}
 
-# Default service settings for {{site.data.keyword.openshiftshort}} components
-{: #service-settings}
-
-Review the default settings for {{site.data.keyword.openshiftshort}} components in your {{site.data.keyword.openshiftlong}} clusters. 
+Your {{site.data.keyword.openshiftlong}} clusters have default settings in place to process simultaneous requests to the API server and prevent traffic overload. You can configure your own flow schema and priority levels for requests that are made to the API server of your clusters. For more information, see [API priority and fairness](https://kubernetes.io/docs/concepts/cluster-administration/flow-control/){: external} in the Kubernetes documentation.
 {: shortdesc}
 
+For example, you might have a user or namespace that runs your critical apps in prod. You can create a flow schema and priority so that your critical apps have a higher priority for the API server to fulfill their requests than other apps in the cluster.
 
+The Kubernetes API priority and feature gate is enabled in clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later.
+{: note}
 
-## Feature gates
-{: #feature-gates}
+## Reviewing default flow schema and priority levels
+{: #kubeapi-default-priority}
 
-Review the feature gates that are applied to all master and worker node components by default in {{site.data.keyword.openshiftlong_notm}} clusters. These feature gates differ from the ones that are set up in community distributions. The {{site.data.keyword.cloud_notm}} provider version enables {{site.data.keyword.openshiftshort}} APIs and features that are at beta. {{site.data.keyword.openshiftshort}} alpha features, which are subject to change, are disabled.
+{{site.data.keyword.openshiftlong_notm}} sets certain default flow schema and priority levels in addition to the default settings from Kubernetes.
 {: shortdesc}
 
-| {{site.data.keyword.openshiftshort}} version | Default feature gates |
-|---|---|
-| 4.6 | <ul><li><code>APIPriorityAndFairness=true</code></li><li><code>LegacyNodeRoleBehavior=false</code></li><li><code>SCTPSupport=false</code></li><li><code>ServiceAppProtocol=false</code></li></ul>|
-| 4.5 | <ul><li><code>ExperimentalCriticalPodAnnotation=true</code></li><li><code>LocalStorageCapacityIsolation=false</code></li></ul>|
-| 4.4 | <ul><li><code>ExperimentalCriticalPodAnnotation=true</code></li><li><code>LocalStorageCapacityIsolation=false</code></li></ul>|
-| 4.3 | <ul><li><code>ExperimentalCriticalPodAnnotation=true</code></li><li><code>LocalStorageCapacityIsolation=false</code></li></ul>||
-{: caption="Overview of feature gates" caption-side="top"}
-{: summary="The rows are read from left to right. The version is in the first column, with the default feature gates in the second column."}
+You can create your own flow schema and priorities, but do not modify the default settings. Unexpected results might occur in your cluster when you modify API request priorities.
+{: important}
 
+Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
+1.  List the flow schemas in your cluster.
+    ```
+    oc get flowschemas
+    ```
+    {: pre} 
 
-## Global settings
-{: #global-settings}
+2.  Review the details of a particular flow schema to understand the scope of the flow schema, including which resources can make prioritized API requests, what type of API requests can be made, and what objects the requests can modify.
+    ```
+    oc describe flowschema <flow-schema-name>
+    ```
+    {: pre}
 
-Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many OpenShift Container Platform global settings are set up for you. You can configure some of these global settings, but other global settings you can only review, and any changes are overwritten. For more information, see [Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP](/docs/openshift?topic=openshift-cs_ov#compare_ocp). You can also review the control plane components in the [{{site.data.keyword.openshiftlong_notm}} Toolkit](https://github.com/openshift/ibm-roks-toolkit){: external} project on GitHub.
-{: shortdesc}
+{{site.data.keyword.openshiftlong_notm}} sets the following flow schemas:
+* `apiserver-health`
+* `calico-system-service-accounts`
+* `ibm-system-service-accounts`
+* `tigera-operator-service-accounts`
 
-**Configurable global settings**:
-*   `Image.InternalRegistryHostname`
-*   `Image.AllowedRegistriesForImport` (for an example, see [Adding a private registry to the global pull secret](/docs/openshift?topic=openshift-registry#cluster_global_pull_secret))
-*   `Build.BuildControllerConfig`
-*   `Project.RequestMessage`
-*   `Project.RequestTemplateName`
-
-**Read-only custom resource definitions in the `config.openshift.io` resource group**:
-*   `APIServer`
-*   `Authentication`
-*   `ClusterVersion`
-*   `DNS`
-*   `FeatureGate`
-*   `Image`
-*   `Infrastructure`
-*   `Ingress`
-*   `Network`
-*   `OAuth`
-*   `Proxy`
-*   `Scheduler`

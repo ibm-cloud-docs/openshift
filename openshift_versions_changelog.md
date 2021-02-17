@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-15"
+lastupdated: "2021-02-17"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -105,6 +105,38 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
+
+## Version 4.6 changelog
+{: #version-46}
+
+Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.6 patch updates.
+{: shortdesc}
+
+### Changelog for 4.6.16_1530_openshift (master) and 4.6.16_1529_openshift (worker node), released 17 February 2020
+{: #4616_1530}
+
+The following table shows the changes that are included in the version updates for the `4.6.16_1530_openshift` master fix pack and `4.6.16_1529_openshift` worker node fix pack.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| Calico | v3.16.5 | v3.17.2 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. |
+| Calico Operator | v1.10.9 | v1.13.4 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.13.4){: external}. |
+| Cluster health image | v1.2.6 | v1.2.8 | Updated to use `Go` version 1.15.7. Updated image to implement additional IBM security controls. |
+| Gateway-enabled cluster controller | 1195 | 1232 | Updated to use `Go` version 1.15.7. |
+| IBM Calico extension | 567 | 618 | Updated to use `Go` version 1.15.7. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.18.15-3 | v1.19.7-13 | Updated to support the Kubernetes 1.19.7 release and to use `Go` version 1.15.5 and `calicoctl` version 3.16.7. Classic network load balancers (NLBs) now set the `NET_RAW` security context. Added support for VPC network load balancers. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 385 | 388 | Improved the retry logic for provisioning persistent volume claims (PVCs). |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | f859228 | 86de2b7 | Updated to use `Go` version 1.15.7. |
+| Key Management Service provider | v2.2.3 | v2.2.4 | Updated image to implement additional IBM security controls. |
+| {{site.data.keyword.openshiftshort}} configuration | N/A | N/A | Updated the [feature gate configuration](/docs/openshift?topic=openshift-service-settings#feature-gates). |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1078 | 1165 | Updated to run as a non-root user by default, with privileged escalation as needed. Updated to use `Go` version 1.15.7. |
+| {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.5.0-20210112 | v4.6.0-20210126 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/v4.6.0+20210126){: external}. |
+| {{site.data.keyword.openshiftshort}} | 4.5.24 (master), 4.5.31 (worker) | 4.6.16 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-16){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.5.0-20210112 | v4.6.0-20210126 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/v4.6.0+20210126){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} toolkit | 4.5.0+20210112 | 4.6.0+20210126 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20210126){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.5.24_1527_openshift (master) and 4.5.31_1529_openshift (worker node)" caption-side="top"}
 
 ## Version 4.5 changelog
 {: #version-45}
