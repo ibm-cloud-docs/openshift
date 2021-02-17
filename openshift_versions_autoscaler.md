@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-02-17"
 
 keywords: autoscaler, add-on, autoscaler changelog
 
@@ -122,7 +122,7 @@ ibmcloud oc addon-versions
 
 | Patch version | Image tags | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
 | --- | --- | --- | --- | --- |
-| `1.0.1_219` | <ul><li>`1.16.7-0`</li><li>`1.17.4-10`</li><li>`1.18.3-0`</li><li>`1.19.1-0`</li></ul> | 16 February 2021 | 4.3 - 4.6 | Updates the code base to synchronize with the community autoscaler. For more information, see the [Kubernetes autoscaler documentation](https://github.com/kubernetes/autoscaler/releases){: external}. |
+| `1.0.1_219` | <ul><li>`1.16.7-0`</li><li>`1.17.4-0`</li><li>`1.18.3-0`</li><li>`1.19.1-0`</li></ul> | 16 February 2021 | 4.3 - 4.6 | Updates the code base to synchronize with the community autoscaler. For more information, see the [Kubernetes autoscaler documentation](https://github.com/kubernetes/autoscaler/releases){: external}. |
 | `1.0.1_210` | <ul><li>`1.16.2-9`</li><li>`1.17.0-10`</li><li>`1.18.1-9`</li><li>`1.19.0-4`</li></ul> | 13 January 2021 | 4.3 - 4.6 | Update addresses [`DLA-2509-1`](https://security-tracker.debian.org/tracker/DLA-2509-1){: external}. |
 | `1.0.1_205` | <ul><li>`1.11.0-7`</li><li>`1.16.2-8`</li><li>`1.17.0-9`</li><li>`1.18.1-8`</li><li>`1.19.0-3`</li></ul> | 15 December 2020 | 4.3 - 4.6 | Updates the `initContainer` to use the universal base image (UBI). |
 | `1.0.1_195` | <ul><li>`1.11.0-7`</li><li>`1.16.2-8`</li><li>`1.17.0-9`</li><li>`1.18.1-8`</li><li>`1.19.0-3`</li></ul>  | 10 December 2020 | 4.3 - 4.6 | <ul><li>The cluster autoscaler images are now signed.</li><li>Resources that are deployed by the cluster autoscaler add-on are now linked with the corresponding source code and build URLs.</li><li>Updates the Go version to `1.15.5`.</li></ul> |
