@@ -1939,6 +1939,7 @@ subcollection: openshift
 * [Cluster create error about cloud object storage bucket](/docs/openshift?topic=openshift-cs_troubleshoot#ts_cos_bucket_cluster_create)
 * [Cluster create error cannot pull images from {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-cs_troubleshoot#ts_image_pull_create)
 * [Cluster cannot update because of broken webhook](/docs/openshift?topic=openshift-cs_troubleshoot#webhooks_update)
+* [Cluster image security enforcement (Portieris) install cancelled](/docs/openshift?topic=openshift-cs_troubleshoot#portieris_enable)
 * [Cluster remains in a pending State](/docs/openshift?topic=openshift-cs_troubleshoot#cs_cluster_pending)
 * [Unable to view or work with a cluster](/docs/openshift?topic=openshift-cs_troubleshoot#cs_cluster_access)
 * [No resources found](/docs/openshift?topic=openshift-cs_troubleshoot#rhoks_ts_not_found)
