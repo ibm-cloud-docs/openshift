@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-15"
+lastupdated: "2021-02-17"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -99,7 +99,7 @@ subcollection: openshift
 You can deploy {{site.data.keyword.openshiftlong}} clusters worldwide. When you create a cluster, its resources remain in the location that you deploy the cluster to. To work with your cluster, you can access the service via a global API endpoint.
 {: shortdesc}
 
-![{{site.data.keyword.openshiftlong_notm}} locations](images/locations.png){: caption="Figure 1. _{{site.data.keyword.openshiftlong_notm}} locations_" caption-side="bottom"}
+![{{site.data.keyword.openshiftlong_notm}} locations](images/locations.png){: caption="Figure 1. {{site.data.keyword.openshiftlong_notm}} locations" caption-side="bottom"}
 
 ## {{site.data.keyword.openshiftlong_notm}} locations
 {: #locations}

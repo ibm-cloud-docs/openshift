@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -263,13 +263,13 @@ Before you begin:
 
   To apply a taint to all existing and future worker nodes in a worker pool:
   ```
-  ibmcloud oc worker-pool taint set -c <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> --taint dedicated=edge:NoSchedule --taint dedicated=edge:NoExecute
+  ibmcloud oc worker-pool taint set -c <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> --taint dedicated=edge:NoExecute
   ```
   {: pre}
 
   To apply a taint to individual worker nodes:
   ```
-  oc adm taint node -l dedicated=edge dedicated=edge:NoSchedule dedicated=edge:NoExecute
+  oc adm taint node -l dedicated=edge dedicated=edge:NoExecute
   ```
   {: pre}
 

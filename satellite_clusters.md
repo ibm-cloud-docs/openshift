@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-15"
+lastupdated: "2021-02-17"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -122,9 +122,6 @@ Use the {{site.data.keyword.cloud_notm}} console to create your {{site.data.keyw
 1. [Complete the prerequisite steps](#satcluster-prereqs).
 2. From the [{{site.data.keyword.openshiftlong_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), click **Create**.
 3. In the **Infrastructure** section, select **{{site.data.keyword.satelliteshort}}**.
-4. In the **OCP entitlement** section, choose how you want to pay for the OpenShift Container Platform licensing for your worker nodes.
-    * **Manage with Red Hat OpenShift Cluster Manager (cloud.redhat.com)**: Use an existing OCP entitlement for the worker nodes in this cluster. Provide your [{{site.data.keyword.redhat_full}} account pull secret ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.redhat.com/openshift/install/pull-secret) as a file or in raw JSON format. The cluster also uses this pull secret to download {{site.data.keyword.openshiftshort}} images from your own {{site.data.keyword.redhat_notm}} account.
-    * **Purchase additional licenses for this cluster**: The default option, in which IBM includes OCP licenses for you, and includes this in the selected so that you are charged the [cost for your worker nodes](/docs/satellite?topic=satellite-faqs#pricing). To pull {{site.data.keyword.openshiftshort}}-related images, your cluster uses the default pull secret that is provided by IBM.<p class="note">Internal IBM accounts must select **Purchase additional licenses for this cluster**.</p>
 5. In the **Location** section, select the {{site.data.keyword.satelliteshort}} location where you want to create the cluster. Make sure that the location that you select is in a **Normal** state.
 6.  In the **Worker pools** section, configure the details for your default worker pool.
     1.  Select the **Satellite zones** that {{site.data.keyword.satelliteshort}} can use to evenly assign hosts across zones that represent zones in your underlying infrastructure provider. Generally, create your worker pool across 3 zones for high availability.

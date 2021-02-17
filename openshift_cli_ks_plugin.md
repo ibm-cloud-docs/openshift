@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-15"
+lastupdated: "2021-02-17"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -6600,7 +6600,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 <li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap. The service subnet is in the 172.21.0.0/16 range by default.</p></dd>
 
 <dt><code>--pull-secret <em>SECRET</em></code></dt>
-<dd>Optional. To use an existing OCP entitlement for the worker nodes in this cluster, provide your [{{site.data.keyword.redhat_full}} account pull secret ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.redhat.com/openshift/install/pull-secret). The cluster also uses this pull secret to download {{site.data.keyword.openshiftshort}} images from your own {{site.data.keyword.redhat_notm}} account. If you do not include this flag, you are charged the [OCP license fee](/docs/satellite?topic=satellite-faqs#pricing) for the worker nodes, and use the default pull secret that is provided by IBM.<p class="note">**Internal IBM accounts only**: Do not use this flag.</p></dd>
+<dd>Optional. To use an existing OCP entitlement for the worker nodes in this cluster, provide your [{{site.data.keyword.redhat_full}} account pull secret ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.redhat.com/openshift/install/pull-secret). The cluster also uses this pull secret to download {{site.data.keyword.openshiftshort}} images from your own {{site.data.keyword.redhat_notm}} account.</p></dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
