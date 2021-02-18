@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-02-17"
+lastupdated: "2021-02-18"
 
 keywords: openshift
 subcollection: openshift
@@ -1633,7 +1633,7 @@ subcollection: openshift
 * [{{site.data.keyword.openshiftshort}} 4.5](/docs/openshift?topic=openshift-openshift_versions#ocp45)
   * [Update before master](/docs/openshift?topic=openshift-openshift_versions#45_before)
   * [Update after master](/docs/openshift?topic=openshift-openshift_versions#45_after)
-* [{{site.data.keyword.openshiftshort}} 4.4](/docs/openshift?topic=openshift-openshift_versions#ocp44)
+* [Deprecated: {{site.data.keyword.openshiftshort}} 4.4](/docs/openshift?topic=openshift-openshift_versions#ocp44)
   * [Update before master](/docs/openshift?topic=openshift-openshift_versions#44_before)
 * [Deprecated: {{site.data.keyword.openshiftshort}} 4.3](/docs/openshift?topic=openshift-openshift_versions#ocp43)
 
@@ -1655,7 +1655,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518_worker)
   * [Changelog for master fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518)
   * [Changelog for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4513_1515)
-* [Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
+* [Deprecated: Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
   * [Changelog for worker node fix pack 4.4.33_1533_openshift, released 15 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4433_1533)
   * [Changelog for worker node fix pack 4.4.31_1532_openshift, released 1 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4431_1532)
   * [Changelog for master fix pack 4.4.31_1531_openshift, released 19 January 2021](/docs/openshift?topic=openshift-openshift_changelog#4431_1531)
