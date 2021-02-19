@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-18"
+lastupdated: "2021-02-19"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -199,7 +199,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
   <td><img src="images/checkmark-filled.png" align="left" width="32" style="width:32px;" alt="This version is supported."/></td>
   <td>4.6 / 1.19</td>
   <td>17 Feb 2021</td>
-  <td>Nov 2021 `†`</td>
+  <td>Apr 2022 `†`</td>
 </tr>
 <tr>
   <td><img src="images/checkmark-filled.png" align="left" width="32" style="width:32px;" alt="This version is supported."/></td>
