@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-17"
+lastupdated: "2021-02-22"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -6617,7 +6617,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 <dd>Required when `--host-label` is specified. The number of worker nodes per zone in the default worker pool.</dd>
 
 <dt><code>--zone <em>ZONE</em></code></dt>
-<dd>Optional. The name of the zone to create the default worker pool in. For high availability, you might want to use one of the 3 zones from the location control plane, and then add the two other zones to your cluster later. To see the zone names for your location, run `ibmcloud sat location get --location <location_name_or_ID>` and look for the `Host Zones` field.</dd>
+<dd>Optional. The name of the zone to create the default worker pool in. For high availability, you might want to use one of the 3 zones from the location control plane, and then add the two other zones to your cluster later. To see the zone names for your location, run `ibmcloud sat location get --location <location_name_or_ID>` and look for the `Host Zones` field. If you do not specify a zone name, the zone name that is alphabetically first is chosen.</dd>
 
 </dl>
 
