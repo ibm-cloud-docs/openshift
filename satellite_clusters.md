@@ -132,11 +132,8 @@ Use the {{site.data.keyword.cloud_notm}} console to create your {{site.data.keyw
 
     If you do not have any available and matching hosts in your {{site.data.keyword.satelliteshort}} location, the cluster is still created but enters a **Warning** state. [Attach hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) to your {{site.data.keyword.satelliteshort}} location so that hosts can be assigned as worker nodes to the worker pool. If the hosts are not automatically assigned, you can also manually [assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-hosts#host-assign).
     {: note}
-    
-10. **For Amazon Web Services, Google Cloud Platform, and Microsoft Azure hosts**: To run `kubectl` or `oc` commands against your cluster from your local machine and to use the {{site.data.keyword.openshiftshort}} web console, update your cluster's subdomain and location's DNS record to use the public IP addresses of your hosts. By default, the private IP addresses are automatically registered so that you can access your cluster only if you are connected to your cloud provider's private network. If you do not want to register the public IP addresses of your hosts, you must use a VPN connection or set up a load balancer with public network connectivity that you can use to access your cluster. For more information, see step 7 in [Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the CLI](#satcluster-create-cli).
-
-11. From the [{{site.data.keyword.openshiftlong_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), verify that your cluster reaches a **Normal** state.
-
+10. From the [{{site.data.keyword.openshiftlong_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), verify that your cluster reaches a **Normal** state.
+11. [Access your cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat) to access the {{site.data.keyword.openshiftshort}} web console or to run `oc` and `kubectl` commands from the CLI. Note that if your location hosts have private network connectivity only, or if you use Amazon Web Services, Google Cloud Platform, or Microsoft Azure hosts, you must be connected to your hosts' private network, such as through VPN access, to connect to your cluster and access the {{site.data.keyword.openshiftshort}} web console. Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's and location's DNS records to [use your hosts' public IP addresses](/docs/openshift?topic=openshift-access_cluster#public_access).
 12. Optional: [Set up the internal container image registry](#satcluster-internal-registry).
 
 <br />
@@ -211,33 +208,7 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
    ```
    {: screen}
 
-7. **For Amazon Web Services, Google Cloud Platform, and Microsoft Azure hosts**: To run `kubectl` or `oc` commands against your cluster from your local machine and to use the {{site.data.keyword.openshiftshort}} web console, update your cluster's subdomain and location's DNS record to use the public IP addresses of your hosts. By default, the private IP addresses are automatically registered so that you can access your cluster only if you are connected to your cloud provider's private network. If you do not want to register the public IP addresses of your hosts, you must use a VPN connection or set up a load balancer with public network connectivity that you can use to access your cluster.
-   1. List the **Hostname** for your cluster and note the private **IP(s)** that were automatically registered.
-      ```
-      ibmcloud oc nlb-dns ls --cluster <cluster_name_or_ID>
-      ```
-      {: pre}
-
-   2. Retrieve the matching public IP addresses of your hosts from your cloud provider.
-   3. Add the public IP addresses for your hosts to your cluster's subdomain. Repeat this command for all public IP addresses that you want to add.
-      ```
-      ibmcloud oc nlb-dns add --ip <public_IP> --cluster <cluster_name_or_ID> --nlb-host <hostname>
-      ```
-      {: pre}
-   
-   4. Remove the private IP addresses from your cluster's subdomain. Repeat this command for all private IP addresses that you retrieved earlier.
-      ```
-      ibmcloud oc nlb-dns rm classic --ip <private_IP> --cluster <cluster_name_or_ID> --nlb-host <hostname>
-      ```
-      {: pre}
-
-   5. Verify that the public IP addresses are registered with your cluster subdomain.
-      ```
-      ibmcloud oc nlb-dns ls --cluster <cluster_name_or_ID>
-      ```
-      {: pre}
-
-   6. Follow step 8 in [Setting up the control plane from the CLI](/docs/satellite?topic=satellite-locations#control-plane-cli) to add the public IP addresses of all the hosts that you assigned to the {[control_plane]} to your location's DNS record.
+7. [Access your cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat) to run `oc` and `kubectl` commands or access the {{site.data.keyword.openshiftshort}} web console. Note that if your location hosts have private network connectivity only, or if you use Amazon Web Services, Google Cloud Platform, or Microsoft Azure hosts, you must be connected to your hosts' private network, such as through VPN access, to connect to your cluster and access the {{site.data.keyword.openshiftshort}} web console. Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's and location's DNS records to [use your hosts' public IP addresses](/docs/openshift?topic=openshift-access_cluster#public_access).
 
 8. Optional: [Set up the internal container image registry](#satcluster-internal-registry).
 

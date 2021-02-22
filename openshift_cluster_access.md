@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-11"
+lastupdated: "2021-02-22"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -519,7 +519,7 @@ After you [create a {{site.data.keyword.openshiftshort}} cluster in your {{site.
 Connect to your cluster through its service URL. This URL is one of your {{site.data.keyword.satelliteshort}} location subdomains and a node port, which is formatted such as `https://p1iuql40jam23qiuxt833-q9err0fiffbsar61e78vv6e7ds8ne1tx-ce00.us-east.satellite.appdomain.cloud:30710`.
 {: shortdesc}
 
-If you use hosts that have private network connectivity only for your location, you must be connected to your hosts' private network, such as through VPN access, to connect to your cluster and access the {{site.data.keyword.openshiftshort}} web console.
+If your location hosts have private network connectivity only, or if you use Amazon Web Services, Google Cloud Platform, and Microsoft Azure hosts, you must be connected to your hosts' private network, such as through VPN access, to connect to your cluster and access the {{site.data.keyword.openshiftshort}} web console. Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's and location's DNS records to [use your hosts' public IP addresses](#public_access).
 {: note}
 
 You can quickly access your {{site.data.keyword.openshiftlong_notm}} cluster from the console.
@@ -528,7 +528,7 @@ You can quickly access your {{site.data.keyword.openshiftlong_notm}} cluster fro
 3.  Click your profile name, such as `IAM#name@email.com`, and then click **Copy Login Command**.
 4.  Click **Display Token**, and copy the `oc login` command.
 5.  Paste the command into your command line.
-
+</br>
 If you cannot or do not want to open the {{site.data.keyword.openshiftshort}} console, choose among the following options to log in to your {{site.data.keyword.openshiftlong_notm}} cluster by using the CLI.
 *   **Log in as admin**:
     1.  Make sure that you have the [**Administrator** IAM platform role for the cluster](/docs/openshift?topic=openshift-users#add_users).
@@ -551,6 +551,54 @@ If you are connected to the {{site.data.keyword.cloud_notm}} private network, yo
     ibmcloud oc cluster config -c <cluster_name_or_ID> --endpoint link --admin
     ```
     {: pre}
+
+### Accessing clusters from the public network
+{: #sat_public_access}
+
+If your hosts have public network connectivity, and you want to access your cluster from your local machine without being connected to your hosts' private network, you can optionally update your cluster's subdomain and location's DNS record to use the public IP addresses of your hosts.
+{: shortdesc}
+
+For most location setups, the private IP addresses of your hosts are registered for the location's DNS record so that you can access your cluster only if you are connected to your cloud provider's private network. For example, if you use Amazon Web Services, Google Cloud Platform, or Microsoft Azure hosts, or if your hosts' default network interface is private, your location's DNS record is accessible only on the private network. To run `kubectl` or `oc` commands against your cluster or access the {{site.data.keyword.openshiftshort}} web console, you must be connected to your hosts' private network, such as through VPN access. However, if you want to access your cluster from the public network, such as to test access to your cluster from your local machine, you can change the DNS records for your location and cluster subdomains to use your hosts' public IPs instead.
+
+Making your location and cluster subdomains available outside of your hosts' private network to your authorized cluster users is not recommended for production-level workloads.
+{: important}
+
+1. Review the location subdomains and check the **Records** for the private IP addresses of the hosts that are registered in the DNS for the subdomain.
+  ```
+  ibmcloud sat location dns ls --location <location_name_or_ID>
+  ```
+  {: pre}
+2. Retrieve the matching public IP addresses of your hosts from your cloud provider.
+3. Update the location subdomain DNS records with the public IP addresses of each host in the control plane.
+  ```
+  ibmcloud sat location dns register --location <location_name_or_ID> --ip <host_IP> --ip <host_IP> --ip <host_IP>
+  ```
+  {: pre}
+4. Verify that the public IP addresses are registered with your location DNS records.
+  ```
+  ibmcloud sat location dns ls --location <location_name_or_ID>
+  ```
+  {: pre}
+5. List the **Hostname** for your cluster and note the private **IP(s)** that were automatically registered.
+  ```
+  ibmcloud oc nlb-dns ls --cluster <cluster_name_or_ID>
+  ```
+  {: pre}
+6. Add the public IP addresses for your hosts to your cluster's subdomain. Repeat this command for all public IP addresses that you want to add.
+  ```
+  ibmcloud oc nlb-dns add --ip <public_IP> --cluster <cluster_name_or_ID> --nlb-host <hostname>
+  ```
+  {: pre}
+7. Remove the private IP addresses from your cluster's subdomain. Repeat this command for all private IP addresses that you retrieved earlier.
+  ```
+  ibmcloud oc nlb-dns rm classic --ip <private_IP> --cluster <cluster_name_or_ID> --nlb-host <hostname>
+  ```
+  {: pre}
+8. Verify that the public IP addresses are registered with your cluster subdomain.
+  ```
+  ibmcloud oc nlb-dns ls --cluster <cluster_name_or_ID>
+  ```
+  {: pre}
 
 <br />
 
