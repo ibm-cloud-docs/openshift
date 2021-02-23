@@ -1184,7 +1184,7 @@ Identify and remove the conflicting image admission controller.
         ```
         {: pre}
 2.  Uninstall the conflicting deployment.
-    *   For container image security enforcement, see the [{{site.data.keyword.registrylong_notm documentation](https://cloud.ibm.com/docs/Registry?topic=Registry-security_enforce#remove).
+    *   For container image security enforcement, see the [{{site.data.keyword.registrylong_notm documentation](/docs/Registry?topic=Registry-security_enforce#remove).
     *   For Portieris, see the [open source documentation](https://github.com/IBM/portieris#uninstalling-portieris){: external}.
 3.  Confirm that conflicting admission controllers are removed by checking that the cluster no longer has a mutating webhook configuration for an image admission controller.
     ```

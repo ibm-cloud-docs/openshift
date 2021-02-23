@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-02-23"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -519,7 +519,7 @@ After you [create a {{site.data.keyword.openshiftshort}} cluster in your {{site.
 Connect to your cluster through its service URL. This URL is one of your {{site.data.keyword.satelliteshort}} location subdomains and a node port, which is formatted such as `https://p1iuql40jam23qiuxt833-q9err0fiffbsar61e78vv6e7ds8ne1tx-ce00.us-east.satellite.appdomain.cloud:30710`.
 {: shortdesc}
 
-If your location hosts have private network connectivity only, or if you use Amazon Web Services, Google Cloud Platform, and Microsoft Azure hosts, you must be connected to your hosts' private network, such as through VPN access, to connect to your cluster and access the {{site.data.keyword.openshiftshort}} web console. Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's and location's DNS records to [use your hosts' public IP addresses](#public_access).
+If your location hosts have private network connectivity only, or if you use Amazon Web Services, Google Cloud Platform, and Microsoft Azure hosts, you must be connected to your hosts' private network, such as through VPN access, to connect to your cluster and access the {{site.data.keyword.openshiftshort}} web console. Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's and location's DNS records to [use your hosts' public IP addresses](#sat_public_access).
 {: note}
 
 You can quickly access your {{site.data.keyword.openshiftlong_notm}} cluster from the console.
