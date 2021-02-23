@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -123,7 +123,7 @@ Looking for instructions for how to update or remove the {{site.data.keyword.clo
 4. Install the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in. When you install the plug-in, pre-defined block storage classes are added to your cluster.
 
    ```
-   helm install block-attacher iks-charts/ibm-block-storage-attacher
+   helm install block-attacher iks-charts/ibm-block-storage-attacher --namespace kube-system
    ```
    {: pre}
 
@@ -609,7 +609,7 @@ Before you begin:
       </tr>
     </tbody>
   </table>
-  
+
   **Example response**
   ```sh
   {

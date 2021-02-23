@@ -968,7 +968,7 @@ Manually set up your cluster to back up the internal registry to an {{site.data.
     * To use an existing instance, make sure that you and the API key that is set for the region have permissions to the instance.
 4.  Create a cluster with your {{site.data.keyword.cos_full_notm}} instance ID. For more information, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2).
       ```
-      ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR --cos-instance COS_ID --workers 3
+      ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR --cos-instance COS_CRN --workers 3
       ```
       {: pre}
 5.  Verify that the internal registry images are backed up to {{site.data.keyword.cos_full_notm}}.
