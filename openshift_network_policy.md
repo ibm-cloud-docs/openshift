@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-17"
+lastupdated: "2021-02-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -197,10 +197,10 @@ To view, manage, and add Calico policies, install and configure the Calico CLI.
       1. [Download the Calico CLI](https://github.com/projectcalico/calicoctl/releases){: external}. Save the file as `calicoctl.exe` in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later.
 
       2. Set the `KUBECONFIG` environment variable to the network configuration file that you got in step 1.
-              ```
-              export KUBECONFIG=./.bluemix/plugins/container-service/clusters/mycluster-df253b6025d64944ab99ed63bb4567b6/calicoctl.cfg
-              ```
-              {: pre}
+            ```
+            export KUBECONFIG=./.bluemix/plugins/container-service/clusters/mycluster-df253b6025d64944ab99ed63bb4567b6/calicoctl.cfg
+            ```
+            {: pre}
 
 4. Verify that the Calico configuration is working correctly.
     ```

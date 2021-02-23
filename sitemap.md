@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-02-17"
+lastupdated: "2021-02-23"
 
 keywords: openshift
 subcollection: openshift
@@ -373,7 +373,7 @@ subcollection: openshift
 [Planning your cluster network setup](/docs/openshift?topic=openshift-plan_clusters)
 * [Understanding network basics of VPC clusters](/docs/openshift?topic=openshift-plan_clusters#plan_vpc_basics)
   * [Worker-to-worker communication: VPC subnets](/docs/openshift?topic=openshift-plan_clusters#vpc-worker-worker)
-  * [Worker-to-master and user-to-master communication: Service endpoints](/docs/openshift?topic=openshift-plan_clusters#vpc-workeruser-master)
+  * [Worker-to-master and user-to-master communication: Virtual private endpoints or cloud service endpoints](/docs/openshift?topic=openshift-plan_clusters#vpc-workeruser-master)
   * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_clusters#vpc-worker-services-onprem)
   * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_clusters#vpc-external-workers)
 * [Example scenarios for VPC cluster network setups](/docs/openshift?topic=openshift-plan_clusters#vpc-scenarios)
@@ -448,6 +448,7 @@ subcollection: openshift
 * [Accessing {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat)
   * [Accessing clusters through the cluster service URL](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_se)
   * [Accessing clusters from within the {{site.data.keyword.cloud_notm}} private network](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_link)
+  * [Accessing clusters from the public network](/docs/openshift?topic=openshift-access_cluster#sat_public_access)
 * [Accessing clusters from automation tools by using an API key](/docs/openshift?topic=openshift-access_cluster#access_automation)
   * [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key)
   * [Using a service ID to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_service_id)
@@ -757,6 +758,7 @@ subcollection: openshift
 * [Overview of VPC networking in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics)
   * [Subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets)
   * [Public gateways](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_pgw)
+  * [Virtual private endpoints (VPE)](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_vpe)
   * [Network segmentation](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_segmentation)
   * [VPC networking limitations](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_limitations)
 * [Creating a VPC subnet and attaching a public gateway](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet)
@@ -1633,14 +1635,16 @@ subcollection: openshift
 * [{{site.data.keyword.openshiftshort}} 4.5](/docs/openshift?topic=openshift-openshift_versions#ocp45)
   * [Update before master](/docs/openshift?topic=openshift-openshift_versions#45_before)
   * [Update after master](/docs/openshift?topic=openshift-openshift_versions#45_after)
-* [{{site.data.keyword.openshiftshort}} 4.4](/docs/openshift?topic=openshift-openshift_versions#ocp44)
+* [Deprecated: {{site.data.keyword.openshiftshort}} 4.4](/docs/openshift?topic=openshift-openshift_versions#ocp44)
   * [Update before master](/docs/openshift?topic=openshift-openshift_versions#44_before)
 * [Deprecated: {{site.data.keyword.openshiftshort}} 4.3](/docs/openshift?topic=openshift-openshift_versions#ocp43)
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
+  * [Changelog for master fix pack 4.6.16_1532_openshift, released 22 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4616_1532)
   * [Changelog for 4.6.16_1530_openshift (master) and 4.6.16_1529_openshift (worker node), released 17 February 2020](/docs/openshift?topic=openshift-openshift_changelog#4616_1530)
 * [Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
+  * [Changelog for master fix pack 4.5.31_1530_openshift, released 22 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4531_1530)
   * [Changelog for worker node fix pack 4.5.31_1529_openshift, released 15 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4531_1529)
   * [Changelog for worker node fix pack 4.5.28_1528_openshift, released 1 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4528_1528)
   * [Changelog for master fix pack 4.5.24_1527_openshift, released 19 January 2021](/docs/openshift?topic=openshift-openshift_changelog#4524_1527)
@@ -1655,7 +1659,8 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518_worker)
   * [Changelog for master fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518)
   * [Changelog for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4513_1515)
-* [Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
+* [Deprecated: Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
+  * [Changelog for master fix pack 4.4.33_1534_openshift, released 22 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4433_1534)
   * [Changelog for worker node fix pack 4.4.33_1533_openshift, released 15 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4433_1533)
   * [Changelog for worker node fix pack 4.4.31_1532_openshift, released 1 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4431_1532)
   * [Changelog for master fix pack 4.4.31_1531_openshift, released 19 January 2021](/docs/openshift?topic=openshift-openshift_changelog#4431_1531)
@@ -1681,7 +1686,8 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4414_1512)
   * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
 * [Deprecated: Version 4.3 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-43)
-  * [Changelog for worker node fix pack 4.3.40_1554_openshift, released 15 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4340_1544)
+  * [Changelog for master fix pack 4.3.40_1555_openshift, released 22 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4340_1555)
+  * [Changelog for worker node fix pack 4.3.40_1554_openshift, released 15 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4340_1554)
   * [Changelog for worker node fix pack 4.3.40_1553_openshift, released 1 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4340_1553)
   * [Changelog for master fix pack 4.3.40_1552_openshift, released 19 January 2021](/docs/openshift?topic=openshift-openshift_changelog#4340_1552)
   * [Changelog for worker node fix pack 4.3.40_1551_openshift, released 18 January 2021](/docs/openshift?topic=openshift-openshift_changelog#4340_1551)
@@ -1717,6 +1723,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4313_1521)
   * [Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for master fix pack 3.11.380_1581_openshift, released 22 February 2021](/docs/openshift?topic=openshift-openshift_changelog#311380_1581)
   * [Changelog for worker node fix pack 3.11.380_1580_openshift, released 15 February 2021](/docs/openshift?topic=openshift-openshift_changelog#311380_1580)
   * [Changelog for worker node fix pack 3.11.374_1579_openshift, released 1 February 2021](/docs/openshift?topic=openshift-openshift_changelog#311347_1579)
   * [Changelog for master fix pack 3.11.346_1578_openshift, released 19 January 2021](/docs/openshift?topic=openshift-openshift_changelog#311346_1578_master)
@@ -1934,6 +1941,7 @@ subcollection: openshift
 * [Unable to create or delete worker nodes or clusters](/docs/openshift?topic=openshift-cs_troubleshoot#infra_errors)
   * [Unable to create or delete worker nodes due to permission errors](/docs/openshift?topic=openshift-cs_troubleshoot#cs_credentials)
   * [Unable to create or delete worker nodes due to incorrect account error](/docs/openshift?topic=openshift-cs_troubleshoot#orphaned)
+  * [Unable to create or delete worker nodes due to endpoints error](/docs/openshift?topic=openshift-cs_troubleshoot#vpe-ts)
   * [Unable to create or delete worker nodes due to paid account or one time password error](/docs/openshift?topic=openshift-cs_troubleshoot#cs_totp)
 * [Unable to create a cluster in the console due to `No VPC is available` error](/docs/openshift?topic=openshift-cs_troubleshoot#ts_no_vpc)
 * [Cluster create error about cloud object storage bucket](/docs/openshift?topic=openshift-cs_troubleshoot#ts_cos_bucket_cluster_create)
@@ -1951,6 +1959,7 @@ subcollection: openshift
 * [Unable to create or delete worker nodes or clusters](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#infra_errors)
   * [Unable to create or delete worker nodes due to permission errors](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_credentials)
   * [Unable to create or delete worker nodes due to incorrect account error](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#orphaned)
+  * [Unable to create or delete worker nodes due to endpoints error](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#vpe-ts)
   * [Unable to create or delete worker nodes due to paid account or one time password error](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_totp)
 * [Cannot add worker nodes due to an invalid VLAN ID](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#suspended)
 * [Replacing a worker node does not create a worker node](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#auto-rebalance-off)

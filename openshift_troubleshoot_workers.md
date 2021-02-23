@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-10"
+lastupdated: "2021-02-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -494,6 +494,54 @@ Consider the following example scenario to understand how clusters might become 
     Tired of switching infrastructure accounts each time you need to perform a cluster or worker action? Consider re-creating all the clusters in the region and resource group in the same infrastructure account. Then, migrate your workloads and remove the old clusters from the different infrastructure account.
     {: note}
 
+### Unable to create or delete worker nodes due to endpoints error
+{: #vpe-ts}
+
+**Infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute, {{site.data.keyword.openshiftshort}} version 4.6 or later
+
+{: tsSymptoms}
+You cannot manage worker nodes for your cluster, and you receive an error message similar to one of the following.
+```
+Worker deploy failed due to network communications failing to master or registry endpoints. Please verify your network setup is allowing traffic from this subnet then attempt a worker replace on this worker
+```
+{: screen}
+```
+Pending endpoint gateway creation
+```
+{: screen}
+
+{: tsCauses}
+In clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later, worker nodes can communicate with the Kubernetes master through the cluster's virtual private endpoint (VPE). One VPE gateway resource is created per cluster in your VPC. If the VPE gateway for your cluster is not correctly created in your VPC, the VPE gateway is deleted from your VPC, or the IP address that is reserved for the VPE is deleted from your VPC subnet, worker nodes lose connectivity with the Kubernetes master.
+
+{: tsResolve}
+Re-establish the VPE connection between your worker nodes and Kubernetes master.
+
+1. Refresh the cluster master. If the VPE gateway did not exist in your VPC, it is created, and connectivity to the reserved IP addresses on the subnets that your worker nodes are connected to is re-established. After you refresh the cluster, wait a few minutes to allow the operation to complete.
+    ```
+    ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
+    ```
+    {: pre}
+
+2. If you still cannot manage worker nodes after the cluster master is refreshed, replace the worker nodes that you cannot access.
+    1. List all worker nodes in your cluster and note the **name** of the worker node that you want to replace.
+       ```sh
+       oc get nodes
+       ```
+       {: pre}
+
+       The **name** that is returned in this command is the private IP address that is assigned to your worker node. You can find more information about your worker node when you run the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and look for the worker node with the same **Private IP** address.
+
+    2. Replace the worker node. As part of the replace process, the pods that run on the worker node are drained and rescheduled onto remaining worker nodes in the cluster. The worker node is also cordoned, or marked as unavailable for future pod scheduling. Use the worker node ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command.
+       ```sh
+       ibmcloud oc worker replace --cluster <cluster_name_or_ID> --worker <worker_node_ID>
+       ```
+       {: pre}
+    3. Verify that the worker node is replaced.
+       ```sh
+       ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+       ```
+       {: pre}
+
 ### Unable to create or delete worker nodes due to paid account or one time password error
 {: #cs_totp}
 
@@ -793,8 +841,8 @@ Manually update the reference of the private IP address to point to the correct 
 
   ```
   ID                                                 Public IP       Private IP       Machine Type   State     Status   Zone   Version
-  kube-dal10-cr9b7371a7fcbe46d08e04f046d5e6d8b4-w1   169.xx.xxx.xxx  10.xxx.xx.xxx    b3c.4x16       normal    Ready    dal10      1.18.15
-  kube-dal10-cr9b7371a7fcbe46d08e04f046d5e6d8b4-w2   169.xx.xxx.xxx  10.xxx.xx.xxx    b3c.4x16       deleted    -       dal10      1.18.15
+  kube-dal10-cr9b7371a7fcbe46d08e04f046d5e6d8b4-w1   169.xx.xxx.xxx  10.xxx.xx.xxx    b3c.4x16       normal    Ready    dal10      1.18.16
+  kube-dal10-cr9b7371a7fcbe46d08e04f046d5e6d8b4-w2   169.xx.xxx.xxx  10.xxx.xx.xxx    b3c.4x16       deleted    -       dal10      1.18.16
   ```
   {: screen}
 

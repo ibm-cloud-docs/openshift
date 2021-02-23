@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-17"
+lastupdated: "2021-02-23"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -122,6 +122,7 @@ Use the {{site.data.keyword.cloud_notm}} console to create your {{site.data.keyw
 1. [Complete the prerequisite steps](#satcluster-prereqs).
 2. From the [{{site.data.keyword.openshiftlong_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), click **Create**.
 3. In the **Infrastructure** section, select **{{site.data.keyword.satelliteshort}}**.
+4. In the **OCP entitlement** section, specify an existing OCP entitlement for the worker nodes in this cluster by providing your [{{site.data.keyword.redhat_full}} account pull secret ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.redhat.com/openshift/install/pull-secret) as a file or in raw JSON format. The cluster also uses this pull secret to download {{site.data.keyword.openshiftshort}} images from your own {{site.data.keyword.redhat_notm}} account.<p class="note">Internal IBM accounts must select **Purchase additional licenses for this cluster**. IBM includes OCP licenses for you, and includes this in the selected so that you are charged the [cost for your worker nodes](/docs/satellite?topic=satellite-faqs#pricing). To pull {{site.data.keyword.openshiftshort}}-related images, your cluster uses the default pull secret that is provided by IBM.</p>
 5. In the **Location** section, select the {{site.data.keyword.satelliteshort}} location where you want to create the cluster. Make sure that the location that you select is in a **Normal** state.
 6.  In the **Worker pools** section, configure the details for your default worker pool.
     1.  Select the **Satellite zones** that {{site.data.keyword.satelliteshort}} can use to evenly assign hosts across zones that represent zones in your underlying infrastructure provider. Generally, create your worker pool across 3 zones for high availability.
@@ -133,33 +134,7 @@ Use the {{site.data.keyword.cloud_notm}} console to create your {{site.data.keyw
     If you do not have any available and matching hosts in your {{site.data.keyword.satelliteshort}} location, the cluster is still created but enters a **Warning** state. [Attach hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) to your {{site.data.keyword.satelliteshort}} location so that hosts can be assigned as worker nodes to the worker pool. If the hosts are not automatically assigned, you can also manually [assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-hosts#host-assign).
     {: note}
 10. From the [{{site.data.keyword.openshiftlong_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), verify that your cluster reaches a **Normal** state.
-11. **For Amazon Web Services, Google Cloud Platform, or {{site.data.keyword.vpc_short}} hosts**: Update the Calico network plug-in to use VXLAN encapsulation.
-  1. Follow [these steps](/docs/openshift?topic=openshift-network_policies#cli_install) to access your cluster form the CLI, download the keys to run Calico commands, and install the `calicoctl` CLI.
-  2. Set the `DATASTORE_TYPE` environment variable to `kubernetes`.
-    ```
-    export DATASTORE_TYPE=kubernetes
-    ```
-    {: pre}
-  3. Create the following `IPPool` YAML file, which sets `ipipMode: Never` and `vxlanMode: Always`.
-       ```yaml
-       apiVersion: projectcalico.org/v3
-       kind: IPPool
-       metadata:
-         name: default-ipv4-ippool
-       spec:
-         blockSize: 26
-         cidr: 172.30.0.0/16
-         ipipMode: Never
-         natOutgoing: true
-         nodeSelector: all()
-         vxlanMode: Always
-       ```
-       {: codeblock}
-  4. Apply the `IPPool` to update the Calico plug-in.
-    ```
-    calicoctl apply -f /<filepath>/default-ipv4-ippool.yaml
-    ```
-    {: pre}
+11. [Access your cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat) to access the {{site.data.keyword.openshiftshort}} web console or to run `oc` and `kubectl` commands from the CLI. Note that if your location hosts have private network connectivity only, or if you use Amazon Web Services, Google Cloud Platform, or Microsoft Azure hosts, you must be connected to your hosts' private network, such as through VPN access, to connect to your cluster and access the {{site.data.keyword.openshiftshort}} web console. Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's and location's DNS records to [use your hosts' public IP addresses](/docs/openshift?topic=openshift-access_cluster#public_access).
 12. Optional: [Set up the internal container image registry](#satcluster-internal-registry).
 
 <br />
@@ -190,7 +165,7 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
 
 3. Create an {{site.data.keyword.openshiftshort}} cluster in your {{site.data.keyword.satelliteshort}} location. When you create the cluster, the cluster master is automatically created in your {{site.data.keyword.satelliteshort}} control plane. To ensure that hosts are automatically assigned as worker nodes in the default worker pool of your cluster, specify those hosts' labels in `--host-label` flags, and specify the number of worker nodes per zone in the `--workers` flag. For more information about this command's options, see the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).
    ```
-   ibmcloud oc cluster create satellite --name <cluster_name> --location <location_name_or_ID> --version 4.5_openshift [--enable-admin-agent] [--host-label <label> ...] [--pull-secret <secret>] [--workers <workers_per_zone>] [--zone <zone_name>]
+   ibmcloud oc cluster create satellite --location <location_name_or_ID> --name <cluster_name> --pull-secret <secret> --version 4.5_openshift [--enable-admin-agent] [--host-label LABEL ...] [--pod-subnet SUBNET] [-q] [--service-subnet SUBNET] [--workers <workers_per_zone>] [--zone <zone_name>]
    ```
    {: pre}
 
@@ -234,33 +209,7 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
    ```
    {: screen}
 
-7. **For Amazon Web Services, Google Cloud Platform, or {{site.data.keyword.vpc_short}} hosts**: Update the Calico network plug-in to use VXLAN encapsulation.
-  1. Follow [these steps](/docs/openshift?topic=openshift-network_policies#cli_install) to access your cluster, download the keys to run Calico commands, and install the `calicoctl` CLI.
-  2. Set the `DATASTORE_TYPE` environment variable to `kubernetes`.
-    ```
-    export DATASTORE_TYPE=kubernetes
-    ```
-    {: pre}
-  3. Create the following `IPPool` YAML file, which sets `ipipMode: Never` and `vxlanMode: Always`.
-    ```yaml
-    apiVersion: projectcalico.org/v3
-    kind: IPPool
-    metadata:
-      name: default-ipv4-ippool
-    spec:
-      blockSize: 26
-      cidr: 172.30.0.0/16
-      ipipMode: Never
-      natOutgoing: true
-      nodeSelector: all()
-      vxlanMode: Always
-    ```
-    {: codeblock}
-  4. Apply the `IPPool` to update the Calico plug-in.
-    ```
-    calicoctl apply -f /<filepath>/default-ipv4-ippool.yaml
-    ```
-    {: pre}
+7. [Access your cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat) to run `oc` and `kubectl` commands or access the {{site.data.keyword.openshiftshort}} web console. Note that if your location hosts have private network connectivity only, or if you use Amazon Web Services, Google Cloud Platform, or Microsoft Azure hosts, you must be connected to your hosts' private network, such as through VPN access, to connect to your cluster and access the {{site.data.keyword.openshiftshort}} web console. Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's and location's DNS records to [use your hosts' public IP addresses](/docs/openshift?topic=openshift-access_cluster#public_access).
 
 8. Optional: [Set up the internal container image registry](#satcluster-internal-registry).
 
