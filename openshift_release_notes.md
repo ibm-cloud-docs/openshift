@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-18"
+lastupdated: "2021-02-23"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -109,6 +109,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 22 February 2021 | **Master versions**: Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.16_1532_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4616_1532), [`4.5.31_1530_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4531_1530), [`4.4.33_1534_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4433_1534), [`4.3.40_1555_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1555), and [`3.11.380_1581_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311380_1581). |
+| 20 February 2021 | **Certified Kubernetes**: The {{site.data.keyword.openshiftshort}} version [4.6 (Kubernetes 1.19)](/docs/openshift?topic=openshift-openshift_versions#ocp46) release is now certified. |
 | 17 February 2021 | <ul><li>**New! {{site.data.keyword.openshiftshort}} 4.6**: You can create or [update](/docs/openshift?topic=openshift-openshift_versions#ocp46) your cluster to {{site.data.keyword.openshiftshort}} version 4.6, which includes Kubernetes 1.19. With {{site.data.keyword.openshiftshort}} 4.6, you get the latest stable enhancements from the community, as well as beta access to features such as [API server priority](/docs/openshift?topic=openshift-kubeapi-priority). For more information, see the [blog announcement](https://www.ibm.com/cloud/blog/announcements/openshift-version-46-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.</li><li>**Deprecated {{site.data.keyword.openshiftshort}} 4.4**: With the release of {{site.data.keyword.openshiftshort}} 4.6, clusters that run version 4.4 are deprecated, with a tentative unsupported date of 31 May 2021. Update your cluster to at least [version 4.5](/docs/openshift?topic=openshift-openshift_versions#ocp45) as soon as possible.</li></ul> |
 | 15 February 2021 | <ul><li>**New! Osaka multizone region**: You can now create classic or VPC clusters in the Osaka, Japan (`jp-osa`) [location](/docs/openshift?topic=openshift-regions-and-zones).</li><li>**Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.5.31_1529_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4531_1529), [`4.4.33_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4433_1533), [`4.3.40_1554_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1554), and [`3.11.380_1580_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311380_1580).</li></ul> |
 | 12 February 2021 | **Gateway firewalls and Calico policies**: For classic clusters in Frankfurt, updated the required IP addresses and ports that you must open in a [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private) or [Calico private network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/private-network-isolation/calico-v3/eu-de){: external}.
