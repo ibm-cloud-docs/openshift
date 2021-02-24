@@ -7,6 +7,7 @@ lastupdated: "2021-02-24"
 keywords: openshift, roks, rhoks, rhos
 
 subcollection: openshift
+content-type: troubleshoot
 
 ---
 
@@ -877,5 +878,3 @@ Manually update the reference of the private IP address to point to the correct 
 
 
 The deleted node is no longer listed in Calico.
-
-

@@ -7,6 +7,7 @@ lastupdated: "2021-02-24"
 keywords: openshift, roks, rhoks, rhos
 
 subcollection: openshift
+content-type: troubleshoot
 
 ---
 
@@ -1396,6 +1397,4 @@ The infrastructure credentials that are associated with the resource group that 
 
 {: tsResolve}
 [Complete the troubleshooting guide](/docs/containers?topic=containers-cs_troubleshoot_clusters#cs_credentials) to check and update the infrastructure credentials that are used for the resource group.
-
-
 
