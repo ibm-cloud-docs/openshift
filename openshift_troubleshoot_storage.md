@@ -2,11 +2,12 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-02-24"
 
 keywords: openshift, roks, rhoks, rhos
 
 subcollection: openshift
+content-type: troubleshoot
 
 ---
 
@@ -228,8 +229,8 @@ Review the options to debug persistent storage and find the root causes for fail
 
       Example output:
       ```
-      Client Version: version.Info{Major:"1", Minor:"1.18", GitVersion:"v1.18.16", GitCommit:"641856db18352033a0d96dbc99153fa3b27298e5", GitTreeState:"clean", BuildDate:"2019-03-25T15:53:57Z", GoVersion:"go1.12.1", Compiler:"gc", Platform:"darwin/amd64"}
-      Server Version: version.Info{Major:"1", Minor:"1.18", GitVersion:"v1.18.16+IKS", GitCommit:"e15454c2216a73b59e9a059fd2def4e6712a7cf0", GitTreeState:"clean", BuildDate:"2019-04-01T10:08:07Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
+      Client Version: version.Info{Major:"1", Minor:"1.19", GitVersion:"v1.19.8", GitCommit:"641856db18352033a0d96dbc99153fa3b27298e5", GitTreeState:"clean", BuildDate:"2019-03-25T15:53:57Z", GoVersion:"go1.12.1", Compiler:"gc", Platform:"darwin/amd64"}
+      Server Version: version.Info{Major:"1", Minor:"1.19", GitVersion:"v1.19.8+IKS", GitCommit:"e15454c2216a73b59e9a059fd2def4e6712a7cf0", GitTreeState:"clean", BuildDate:"2019-04-01T10:08:07Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
       ```
       {: screen}
 
@@ -2118,7 +2119,5 @@ If you still experience issues with persistent storage in your cluster, review t
 
 - For issues with {{site.data.keyword.cloud_notm}} File, Block, or Object Storage, see [Getting help](/docs/openshift?topic=openshift-get-help) to find information about how to contact the IBM team on Slack or open an {{site.data.keyword.cloud_notm}} support case.
 - For issues with Portworx, open an issue in the [Portworx Service Portal](https://portworx.atlassian.net/servicedesk/customer/portal/2){: external}. You can also submit a request by sending an e-mail to `support@portworx.com`. If you do not have an account on the Portworx Service Portal, send an e-mail to `support@portworx.com`.
-
-
 
 

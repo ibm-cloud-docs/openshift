@@ -1,18 +1,20 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-10-21"
+  years: 2014, 2021
+lastupdated: "2021-02-24"
 
 keywords: openshift, roks, rhoks, rhos
 
 subcollection: openshift
+content-type: troubleshoot
 
 ---
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +23,7 @@ subcollection: openshift
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +41,6 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +74,6 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,10 +85,11 @@ subcollection: openshift
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -159,7 +161,6 @@ If the troubleshooting steps do not resolve the issue, see [Getting help](/docs/
 <br />
 
 
-
 ## Cannot establish VPN connectivity with the strongSwan Helm chart
 {: #cs_vpn_fails}
 
@@ -195,7 +196,6 @@ When you try to establish VPN connectivity with the strongSwan Helm chart, it is
         The tool outputs several pages of information as it runs various tests for common networking issues. Output lines that begin with `ERROR`, `WARNING`, `VERIFY`, or `CHECK` indicate possible errors with the VPN connectivity.
 
     <br />
-
 
 ## Cannot install a new strongSwan Helm chart release
 {: #cs_strongswan_release}
@@ -239,7 +239,6 @@ This error indicates that the previous release of the strongSwan chart was not c
     {: pre}
 
 <br />
-
 
 ## strongSwan VPN connectivity fails after you add or delete worker nodes
 {: #cs_vpn_fails_worker_add}
@@ -376,7 +375,6 @@ Update the Helm chart values to reflect the worker node changes:
 
 <br />
 
-
 ## Cannot retrieve Calico network policies
 {: #cs_calico_fails}
 
@@ -407,4 +405,3 @@ To ensure that all Calico factors align:
 1. [Install and configure a version 3.3 or later Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install).
 2. Ensure that any policies you create and want to apply to your cluster use [Calico v3 syntax](https://docs.projectcalico.org/reference/resources/networkpolicy){: external}. If you have an existing policy `.yaml` or `.json` file in Calico v2 syntax, you can convert it to Calico v3 syntax by using the [`calicoctl convert` command](https://docs.projectcalico.org/reference/calicoctl/convert){: external}.
 3. To [view policies](/docs/openshift?topic=openshift-network_policies#view_policies), ensure that you use `calicoctl get GlobalNetworkPolicy` for global policies and `calicoctl get NetworkPolicy --namespace <policy_project>` for policies that are scoped to specific projects.
-

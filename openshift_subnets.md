@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-02-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -265,7 +265,7 @@ Before you begin:
 
     ```
     Name         ID                                   State      Created          Workers    Zone      Version     Resource Group Name   Provider
-    mycluster    aaf97a8843a29941b49a598f516da72101   deployed   20170201162433   3          dal10     1.18.16      Default             classic
+    mycluster    aaf97a8843a29941b49a598f516da72101   deployed   20170201162433   3          dal10     1.19.8      Default             classic
     ```
     {: screen}
 
@@ -280,7 +280,7 @@ Before you begin:
 
     ```
     ID                                                  Public IP        Private IP     Machine Type   State      Status   Zone     Version
-    prod-dal10-pa8dfcc5223804439c87489886dbbc9c07-w1    169.xx.xxx.xxx   10.xxx.xx.xxx  free           normal     Ready    dal10      1.18.16
+    prod-dal10-pa8dfcc5223804439c87489886dbbc9c07-w1    169.xx.xxx.xxx   10.xxx.xx.xxx  free           normal     Ready    dal10      1.19.8
     ```
     {: screen}
 

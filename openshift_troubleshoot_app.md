@@ -2,11 +2,12 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-08"
+lastupdated: "2021-02-24"
 
 keywords: openshift, roks, rhoks, rhos
 
 subcollection: openshift
+content-type: troubleshoot
 
 ---
 
