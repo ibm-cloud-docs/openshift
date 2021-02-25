@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-22"
+  years: 2014, 2021
+lastupdated: "2021-02-25"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, ingress operator, router
 
@@ -184,7 +184,7 @@ If you want to customize routing rules for your app, you can use [route-specific
 
 3. Based on the resolved IP address, the client sends the request to the router service.
 
-4. The router checks the routing rules that are implemented by the Ingress controller for a routing rule for the `myapp` path. If a matching rule is found, the request is proxied according to the rules that you defined in the router and the Ingress resource to the pod where the app is deployed. The source IP address of the packet is changed to the IP address of the worker node where the app pod runs. If multiple app instances are deployed in the cluster, the router load balances the requests between the app pods.
+4. The router checks the routing rules that are implemented by the Ingress controller for a routing rule for the `myapp` path. If a matching rule is found, the request is proxied according to the rules that you defined in the router and the Ingress resource to the pod where the app is deployed. The source IP address of the packet is changed to the IP address of the worker node where the router pod runs. If multiple app instances are deployed in the cluster, the router load balances the requests between the app pods.
 
 5. When the app returns a response packet, it uses the IP address of the worker node where the router that forwarded the request exists. The router then sends the response packet to the client.
 
@@ -202,7 +202,7 @@ If you want to customize routing rules for your app, you can use [route-specific
 
 3. The client sends the request to the IP address of the service that exposes the router.
 
-4. The router checks the routing rules that are implemented by the Ingress controller for the `myapp` path. If a matching rule is found, the request is proxied according to the rules that you defined in the router and the Ingress resource to the pod where the app is deployed. The source IP address of the packet is changed to the IP address of the worker node where the app pod runs. If multiple app instances are deployed in the cluster, the router service sends the requests between the app pods across all zones.
+4. The router checks the routing rules that are implemented by the Ingress controller for the `myapp` path. If a matching rule is found, the request is proxied according to the rules that you defined in the router and the Ingress resource to the pod where the app is deployed. The source IP address of the packet is changed to the IP address of the worker node where the router pod runs. If multiple app instances are deployed in the cluster, the router service sends the requests between the app pods across all zones.
 
 5. When the app returns a response packet, it uses the IP address of the worker node where the router service that forwarded the request exists. The router then sends the response packet to the client.
 
@@ -225,7 +225,7 @@ If you want to customize routing rules for your app, you can use [route-specific
 
 4. Based on the resolved IP address, the VPC load balancer sends the request to a router.
 
-5. The router checks the routing rules that are implemented by the Ingress controller for the `myapp` path. If a matching rule is found, the request is proxied according to the rules that you defined in the router and the Ingress resource to the pod where the app is deployed. The source IP address of the packet is changed to the IP address of the worker node where the app pod runs. If multiple app instances are deployed in the cluster, the router load balances the requests between the app pods across all zones.
+5. The router checks the routing rules that are implemented by the Ingress controller for the `myapp` path. If a matching rule is found, the request is proxied according to the rules that you defined in the router and the Ingress resource to the pod where the app is deployed. The source IP address of the packet is changed to the IP address of the worker node where the router pod runs. If multiple app instances are deployed in the cluster, the router load balances the requests between the app pods across all zones.
 
 6. When the app returns a response packet, it uses the IP address of the worker node where the router service that forwarded the request exists. The VPC load balancer then sends the response packet to the client.
 
@@ -245,7 +245,7 @@ If you want to customize routing rules for your app, you can use [route-specific
 
 4. Based on the resolved IP address, the VPC load balancer sends the request to a router service.
 
-5. The router checks the routing rules that are implemented by the Ingress controller for the `myapp` path. If a matching rule is found, the request is proxied according to the rules that you defined in the router and the Ingress resource to the pod where the app is deployed. The source IP address of the packet is changed to the IP address of the worker node where the app pod runs. If multiple app instances are deployed in the cluster, the router load balances the requests between the app pods across all zones.
+5. The router checks the routing rules that are implemented by the Ingress controller for the `myapp` path. If a matching rule is found, the request is proxied according to the rules that you defined in the router and the Ingress resource to the pod where the app is deployed. The source IP address of the packet is changed to the IP address of the worker node where the router pod runs. If multiple app instances are deployed in the cluster, the router load balances the requests between the app pods across all zones.
 
 6. When the app returns a response packet, it uses the IP address of the worker node where the router that forwarded the client request exists. The router then sends the response packet through the VPC load balancer to the client.
 
