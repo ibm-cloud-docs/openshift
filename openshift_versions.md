@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-02-25"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -223,7 +223,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
   <td><img src="images/warning-filled.png" align="left" width="32" style="width:32px;" alt="This version is deprecated."/></td>
   <td>3.11 / 1.11</td>
   <td>01 Aug 2019</td>
-  <td>Jun 2022 `†`</td>
+  <td>6 Jun 2022 `†`</td>
 </tr>
 </tbody>
 </table>
