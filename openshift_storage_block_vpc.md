@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-25"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1175,10 +1175,11 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 
 | Characteristics | Setting|
 |:-----------------|:-----------------|
-| Name | <code>ibmc-vpc-block-10iops-tier</code></br><code>ibmc-vpc-block-retain-10iops-tier</code> |
+| Name | <code>ibmc-vpc-block-10iops-tier</code></br><code>ibmc-vpc-block-retain-10iops-tier</code></br><code>ibmc-vpc-block-metro-10iops-tier</code></br><code>ibmc-vpc-block-metro-retain-10iops-tier</code> |
 | File system | `ext4` |
 | Corresponding {{site.data.keyword.block_storage_is_short}} tier | [10 IOPS/GB](/docs/vpc?topic=vpc-block-storage-profiles#tiers) |
-| Reclaim policy | <code>ibmc-vpc-block-10iops-tier</code>: Delete</br><code>ibmc-vpc-block-retain-10iops-tier</code>: Retain |
+| Volume binding mode | <code>ibmc-vpc-block-10iops-tier</code>: Immediate</br><code>ibmc-vpc-block-retain-10iops-tier</code>: Immediate</br><code>ibmc-vpc-block-metro-10iops-tier</code>: WaitForFirstConsumer</br><code>ibmc-vpc-block-metro-retain-10iops-tier</code>: WaitForFirstConsumer |
+| Reclaim policy | <code>ibmc-vpc-block-10iops-tier</code>: Delete</br><code>ibmc-vpc-block-retain-10iops-tier</code>: Retain</br><code>ibmc-vpc-block-metro-10iops-tier</code>: Delete</br><code>ibmc-vpc-block-metro-retain-10iops-tier</code>: Retain |
 | Billing | Hourly |
 | Pricing | [Pricing information](https://www.ibm.com/cloud/vpc/pricing)|
 {: class="simple-tab-table"}
@@ -1192,7 +1193,8 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Name | <code>ibmc-vpc-block-5iops-tier</code></br><code>ibmc-vpc-block-retain-5iops-tier</code> |
 | File system | `ext4` |
 | Corresponding {{site.data.keyword.block_storage_is_short}} tier | [5 IOPS/GB](/docs/vpc?topic=vpc-block-storage-profiles#tiers) |
-| Reclaim policy | <code>ibmc-vpc-block-5iops-tier</code>: Delete</br><code>ibmc-vpc-block-retain-5iops-tier</code>: Retain |
+| Volume binding mode | <code>ibmc-vpc-block-5iops-tier</code>: Immediate</br><code>ibmc-vpc-block-retain-5iops-tier</code>: Immediate</br><code>ibmc-vpc-block-metro-5iops-tier</code>: WaitforFirstConsumer</br><code>ibmc-vpc-block-metro-retain-5iops-tier</code>: WaitForFirstConsumer |
+| Reclaim policy | <code>ibmc-vpc-block-5iops-tier</code>: Delete</br><code>ibmc-vpc-block-retain-5iops-tier</code>: Retain</br><code>ibmc-vpc-block-metro-5iops-tier</code>: Delete</br><code>ibmc-vpc-block-metro-retain-5iops-tier</code>: Retain |
 | Billing | Hourly |
 | Pricing | [Pricing information](https://www.ibm.com/cloud/vpc/pricing)|
 {: class="simple-tab-table"}
@@ -1206,7 +1208,8 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Name | <code>ibmc-vpc-block-custom</code></br><code>ibmc-vpc-block-retain-custom</code> |
 | File system | `ext4` |
 | Corresponding {{site.data.keyword.block_storage_is_short}} tier | [Custom](/docs/vpc?topic=vpc-block-storage-profiles#custom) |
-| Reclaim policy | <code>ibmc-vpc-block-custom</code>: Delete</br><code>ibmc-vpc-block-retain-custom</code>: Retain |
+| Volume binding mode | <code>ibmc-vpc-block-custom</code>: Immediate</br><code>ibmc-vpc-block-retain-custom</code>: Immediate</br><code>ibmc-vpc-block-metro-custom</code>: WaitforFirstConsumer</br><code>ibmc-vpc-block-metro-retain-custom</code>: WaitForFirstConsumer |
+| Reclaim policy | <code>ibmc-vpc-block-custom</code>: Delete</br><code>ibmc-vpc-block-retain-custom</code>: Retain</br><code>ibmc-vpc-block-metro-custom</code>: Delete</br><code>ibmc-vpc-block-metro-retain-custom</code>: Retain |
 | Billing | Hourly |
 | Pricing | [Pricing information](https://www.ibm.com/cloud/vpc/pricing)|
 {: class="simple-tab-table"}
@@ -1217,10 +1220,11 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 
 | Characteristics | Setting|
 |:-----------------|:-----------------|
-| Name | <code>ibmc-vpc-block-general-purpose</code></br><code>ibmc-vpc-block-retain-general-purpose</code> |
+| Name | <code>ibmc-vpc-block-general-purpose</code></br><code>ibmc-vpc-block-retain-general-purpose</code></br><code>ibmc-vpc-block-metro-general-purpose</code></br><code>ibmc-vpc-block-metro-retain-general-purpose</code> |
 | File system | `ext4` |
 | Corresponding {{site.data.keyword.block_storage_is_short}} tier | [3 IOPS/GB](/docs/vpc?topic=vpc-block-storage-profiles#tiers) |
-| Reclaim policy | <code>ibmc-vpc-block-general-purpose</code>: Delete</br><code>ibmc-vpc-block-retain-general-purpose</code>: Retain |
+| Volume binding mode | <code>ibmc-vpc-block-general-purpose</code>: Immediate</br><code>ibmc-vpc-block-retain-general-purpose</code>: Immediate</br><code>ibmc-vpc-block-metro-general-purpose</code>: WaitforFirstConsumer</br><code>ibmc-vpc-block-metro-retain-general-purpose</code>: WaitForFirstConsumer |
+| Reclaim policy | <code>ibmc-vpc-block-general-purpose</code>: Delete</br><code>ibmc-vpc-block-retain-general-purpose</code>: Retain</br><code>ibmc-vpc-block-metro-general-purpose</code>: Delete</br><code>ibmc-vpc-block-metro-retain-general-purpose</code>: Retain |
 | Billing | Hourly |
 | Pricing | [Pricing information](https://www.ibm.com/cloud/vpc/pricing)|
 {: class="simple-tab-table"}

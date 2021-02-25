@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-02-25"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -202,7 +202,7 @@ Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many of t
 Review the following characteristics to decide which {{site.data.keyword.openshiftlong_notm}} cluster version to create. In both {{site.data.keyword.openshiftlong_notm}} versions, you get the same overall [benefits](#benefits), such as the IBM-managed master, version and security patch updates, and IBM Support according to your [terms of service](/docs/overview/terms-of-use?topic=overview-terms#terms).
 {: shortdesc}
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported in June 2022 (date subject to change).
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported on 6 June 2022 (date subject to change).
 {: deprecated}
 
 You cannot update from an {{site.data.keyword.openshiftshort}} 3.11 to 4 cluster. Instead, [create a version 4 cluster](/docs/openshift?topic=openshift-clusters).
