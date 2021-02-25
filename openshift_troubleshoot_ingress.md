@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-02-25"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -423,7 +423,6 @@ For more information, see [Managing TLS certificates and secrets](/docs/containe
 
 **Infrastructure provider**:
 * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 1 compute
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
 {: tsSymptoms}
@@ -1084,16 +1083,7 @@ Start by checking for error messages in the Ingress resource deployment events a
         ibmcloud oc ingress alb enable classic --alb <ALB_ID> -c <cluster_name_or_ID>
         ```
         {: pre}
-      * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc-gen1.png" alt="VPC Generation 1 compute icon" width="30" style="width:30px; border-style: none"/> VPC Gen 1 clusters:
-        ```
-        ibmcloud oc ingress alb disable --alb <ALB_ID> -c <cluster_name_or_ID>
-        ```
-        {: pre}
-        ```
-        ibmcloud oc ingress alb enable vpc-classic --alb <ALB_ID> -c <cluster_name_or_ID>
-        ```
-        {: pre}
-      * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> VPC Gen 2 clusters:
+      * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2 clusters:
         ```
         ibmcloud oc ingress alb disable --alb <ALB_ID> -c <cluster_name_or_ID>
         ```

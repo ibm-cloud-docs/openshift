@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-02-25"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -149,7 +149,7 @@ You can use the version two (`v2`) API to manage both classic and VPC clusters. 
    <td>Supported infrastructure providers</td>
    <td>`classic`</td>
    <td>`vpc` and `classic`<ul>
-   <li>The `vpc` provider is designed to support multiple VPC subproviders. The supported VPC subprovider<containers vpc-gen2>s are `vpc-classic`, which corresponds to a VPC cluster for Generation 1 compute resources, and<containers vpc-gen2> is `vpc-gen2`, which corresponds to a VPC cluster for Generation 2 compute resources.</li>
+   <li>The `vpc` provider is designed to support multiple VPC subproviders. The supported VPC subprovider is `vpc-gen2`, which corresponds to a VPC cluster for Generation 2 compute resources.</li>
    <li>Provider-specific requests have a path parameter in the URL, such as `v2/vpc/createCluster`. Some APIs are only available to a particular provider, such as `GET vlan` for classic or `GET vpcs` for VPC.</li>
    <li>Provider-neutral requests can include a provider-specific body parameter that you specify, usually in JSON, such as `{"provider": "vpc"}`, if you want to return responses for only the specified provider.</li></ul></td>
  </tr>
@@ -412,7 +412,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
      </tr>
      <tr>
      <td>Path</td>
-     <td>`vpc-gen2`: Filter output for VPC Gen 2 clusters. To instead filter for VPC Gen 1 clusters (deprecated), specify `vpc-classic`.</td>
+     <td>`vpc-gen2`: Filter output for VPC Gen 2 clusters.</td>
      </tbody>
      </table>
 
@@ -533,7 +533,7 @@ The following instructions require public network access in your cluster to conn
    </tr>
    <tr>
    <td>Path</td>
-   <td>`<cluster_name_or_ID>`: The name or ID of your cluster that you retrieved with the `GET https://containers.cloud.ibm.com/global/v2/classic/getClusters` or `GET https://containers.cloud.ibm.com/global/v2/vpc/getClusters?provider=<vpc-gen2|vpc-classic>` API in [Automating cluster deployments with the API](#cs_api).</td>
+   <td>`<cluster_name_or_ID>`: The name or ID of your cluster that you retrieved with the `GET https://containers.cloud.ibm.com/global/v2/classic/getClusters` or `GET https://containers.cloud.ibm.com/global/v2/vpc/getClusters?provider=vpc-gen2` API in [Automating cluster deployments with the API](#cs_api).</td>
    </tr>
    </tbody>
    </table>

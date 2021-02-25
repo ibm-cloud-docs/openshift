@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-25"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -150,7 +150,7 @@ First time using {{site.data.keyword.blockstorageshort}} in your cluster? Come b
   metadata:
     name: my-deployment
     labels:
-      app: 
+      app:
   spec:
     selector:
       matchLabels:
@@ -336,7 +336,7 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
   1. Make sure that you are assigned the Editor platform access role and the Writer service access role for {{site.data.keyword.keymanagementserviceshort}} so that you can create your own root key that you use to encrypt your {{site.data.keyword.blockstorageshort}} instance. You can review your IAM access roles in the [IAM console](https://cloud.ibm.com/iam){: external}. For more information about IAM roles, see [IAM access](/docs/account?topic=account-userroles).
   2. If you do not have a {{site.data.keyword.keymanagementserviceshort}} instance, [provision one](/docs/key-protect?topic=key-protect-provision).
   3. [Create a root key](/docs/key-protect?topic=key-protect-create-root-keys). By default, the root key is created without an expiration date.
-  
+
   4. Create an IAM service ID. Replace `<service_ID_name>` with the name that you want to assign to your service ID. This service ID is used to access your {{site.data.keyword.keymanagementserviceshort}} instance from your {{site.data.keyword.blockstorageshort}} volume.
     ```
     ibmcloud iam service-id-create <service_ID_name>
@@ -347,7 +347,7 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
     ```
     OK
     Service ID test-id is created successfully
-                    
+
     ID            ServiceId-a1a11111-bb11-1111-a11b-1111111a11ba   
     Name          test-id   
     Description      
@@ -356,19 +356,19 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
     Locked        false
     ```
     {: screen}
-  
+
   5. Create an API key for your service ID. Replace `<api-key-name>` with a name for your API key and replace `<service_ID_name>` with the name of the service ID that you created. Be sure to save your API key as it cannot be retrieved later. This API key is stored in a Kubernetes secret in your cluster in a later step.
     ```
     ibmcloud iam service-api-key-create <api_key_name> <service_ID_name>
     ```
     {: pre}
 
-  6. Retrieve a list of IAM-enabled services in your account and note the name of the {{site.data.keyword.keymanagementserviceshort}} instance that you created. 
+  6. Retrieve a list of IAM-enabled services in your account and note the name of the {{site.data.keyword.keymanagementserviceshort}} instance that you created.
     ```
     ibmcloud resource service-instances
     ```
     {: pre}
-  
+
   7. Retrieve the GUID of your {{site.data.keyword.keymanagementserviceshort}} instance. The ID is used to create an IAM service policy for your service ID.
     ```
     ibmcloud resource service-instance "<instance_name>" | grep GUID
@@ -405,7 +405,7 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
     ibmcloud iam service-policy-create <service_ID_name> --roles Writer,Viewer --service-name containers-kubernetes --service-instance <cluster_ID>
     ```
     {: pre}
-    
+
     <table summary="The columns are read from left to right. The first column has the parameter of the command. The second column describes the parameter.">
     <caption>Understanding the <code>iam service-policy-create</code> command</caption>
     <col width="25%">
@@ -425,7 +425,7 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
     </tbody>
     </table>
 
-  11. If you already have the `ibmcloud-block-storage-plugin` Helm chart installed, you must remove the Helm chart and install a new version. 
+  11. If you already have the `ibmcloud-block-storage-plugin` Helm chart installed, you must remove the Helm chart and install a new version.
 
     If you installed the plug-in without using Helm, you must manually remove the block storage plug-in deployment and all associated resources before installing a new version.
     {: note}
@@ -433,7 +433,7 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
     helm uninstall <name> <namespace>
     ```
     {: pre}
-  
+
   12. Install the `ibmcloud-block-storage-plugin` Helm chart.
     ```
     helm install <name> iks-charts/ibmcloud-block-storage-plugin
@@ -445,29 +445,29 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
     oc create ns ibm-block-secrets
     ```
     {: pre}
-  
+
   13. Create a role binding in the `ibm-block-secrets` namespace for the block storage plug-in.
       ```
       oc create rolebinding ibmcloud-block-storage-plugin-byok --clusterrole=ibmcloud-block-storage-plugin-byok --serviceaccount=kube-system:ibmcloud-block-storage-plugin --group system:nodes --namespace=ibm-block-secrets
       ```
       {: pre}
-    
+
   14. Create a Kubernetes secret that is named `secret.yaml` and that includes the credentials to access your root key in your {{site.data.keyword.keymanagementserviceshort}} service instance.
       1.  Create a configuration file for the secret.
           ```yaml
           apiVersion: v1
           kind: Secret
-          metadata: 
-            labels: 
+          metadata:
+            labels:
               kmsConfig: kpc-secretLabel
             name: <secret_name> # Example: my_secret
             namespace: <namespace> # Example: default
-          stringData: 
+          stringData:
             config: |-
                 {
                   "api_key":"<service_id_api_key>", # Example: "AA1aAAaA1a21AAaA1aAAaAa-AA-1AAaaA1aA1aAaaaAA"
                   "iam_endpoint":"https://iam.cloud.ibm.com",
-                  "key_protect_endpoint":"https://<region>.kms.cloud.ibm.com", # Example: "https://us-east.kms.cloud.ibm.com" 
+                  "key_protect_endpoint":"https://<region>.kms.cloud.ibm.com", # Example: "https://us-east.kms.cloud.ibm.com"
                   "root_key_crn":"<rook_key_crn>", # Example: "crn:v1:bluemix:public:kms:<region>:a/1ab011ab2b11111aaa1a1111aa1aa111:11aa111a-1111-11a1-a111-a11a111aa111:key:11a11111-1a1a-111a-111a-11111a1a1aa1",
                   "version":""
                 }
@@ -519,7 +519,7 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
           {: pre}
 
 **Next steps**
-Choose between the following options to create a {{site.data.keyword.blockstorageshort}} instance that encrypts data with your root key: 
+Choose between the following options to create a {{site.data.keyword.blockstorageshort}} instance that encrypts data with your root key:
   * [Create a custom storage class that references your {{site.data.keyword.keymanagementserviceshort}} secret](#encrypt_custom_sc).
   * [Define the secret in a PVC and use one of the provided storage classes](#pvc_encrypt_label).
 
@@ -555,7 +555,7 @@ The following steps explain how to create a custom, encrypted storage class that
     allowVolumeExpansion: true
     ```
     {: codeblock}
-    
+
     <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
     <caption>Understanding the YAML file components</caption>
     <thead>
@@ -599,9 +599,9 @@ You can provision encrypted {{site.data.keyword.blockstorageshort}} by creating 
 {: shortdesc}
 
 The following steps show how you can reference your {{site.data.keyword.keymanagementserviceshort}} credentials in your PVC to create an encrypted {{site.data.keyword.blockstorageshort}} instance. To create multiple encrypted volumes without specifying the {{site.data.keyword.keymanagementserviceshort}} credentials in each PVC, you can [create a custom, encrypted storage class](#encrypt_custom_sc).
-  
+
   1. Review the provided [{{site.data.keyword.blockstorageshort}} storage classes](#block_storageclass_reference) to determine which storage class best meets your app requirements. If the provided storage classes do not meet your app requirements, you can create your own [customized storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass).
-  2. Create a PVC configuration file that is named `pvc.yaml` and that references the Kubernetes secret where you stored the {{site.data.keyword.keymanagementserviceshort}} service credentials. To create this secret, see [Setting up encryption for {{site.data.keyword.blockstorageshort}}](#block_encryption_setup). 
+  2. Create a PVC configuration file that is named `pvc.yaml` and that references the Kubernetes secret where you stored the {{site.data.keyword.keymanagementserviceshort}} service credentials. To create this secret, see [Setting up encryption for {{site.data.keyword.blockstorageshort}}](#block_encryption_setup).
     ```yaml
     kind: PersistentVolumeClaim
     apiVersion: v1
@@ -647,13 +647,13 @@ The following steps show how you can reference your {{site.data.keyword.keymanag
     </tr>
     </tbody>
     </table>
-  
+
   3. Create the PVC in your cluster.
     ```
     oc apply -f pvc.yaml
     ```
     {: pre}
-  
+
   4. Check the status of your PVC.
     ```
     oc get pvc
@@ -683,7 +683,7 @@ You can verify the encryption of your volumes by checking the volume mount path.
   ```
   {: pre}
 
-3. Review the file system path for your encrypted {{site.data.keyword.blockstorageshort}} volume. 
+3. Review the file system path for your encrypted {{site.data.keyword.blockstorageshort}} volume.
     * Encrypted volumes have a path structure of `/dev/mapper/<pvc-ID_encrypted>`. In this example, the encrypted volume is mounted to the `/test` file path in the pod.
       ```
       Filesystem                                            Size  Used Avail Use% Mounted on
@@ -1010,7 +1010,7 @@ Before you can start to mount your existing storage to an app, you must retrieve
   Endurance Tier             10_IOPS_PER_GB   
   Endurance Tier Per IOPS    10   
   Datacenter                 wdc06   
-  Target IP                  161.XX.XX.XX 
+  Target IP                  161.XX.XX.XX
   # of Active Transactions   0   
   Replicant Count            0
   ```
@@ -1048,7 +1048,7 @@ Before you can start to mount your existing storage to an app, you must retrieve
     apiVersion: v1
     kind: PersistentVolume
     metadata:
-      name: "<volume_ID>" 
+      name: "<volume_ID>"
       labels:
          failure-domain.beta.kubernetes.io/region: <region>
          failure-domain.beta.kubernetes.io/zone: <zone>
@@ -2090,7 +2090,6 @@ To clean up persistent data:
     ibmcloud sl block volume-list
     ```
     {: pre}
-
 
 
 

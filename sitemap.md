@@ -1264,7 +1264,7 @@ subcollection: openshift
   * [Understanding your storage removal options](/docs/openshift?topic=openshift-block_storage#storage_delete_options)
   * [Cleaning up persistent storage](/docs/openshift?topic=openshift-block_storage#storage_remove)
 
-[Storing data on {{site.data.keyword.block_storage_is_short}} (Gen 1 and Gen 2 compute)](/docs/openshift?topic=openshift-vpc-block)
+[Storing data on {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block)
 * [Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc_block_qs)
 * [Adding {{site.data.keyword.block_storage_is_short}} to your apps](/docs/openshift?topic=openshift-vpc-block#vpc-block-add)
 * [Using an existing {{site.data.keyword.block_storage_is_short}} instance](/docs/openshift?topic=openshift-vpc-block#vpc-block-static)
@@ -1447,8 +1447,6 @@ subcollection: openshift
 
 
 [{{site.data.keyword.openshiftlong_notm}} CLI](/docs/openshift?topic=openshift-kubernetes-service-cli)
-* [Comparison of Classic and VPC commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_classic_vpc_about)
-* [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#map)
 * [`cluster` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster)
   * [`ibmcloud oc cluster addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable)
   * [`ibmcloud oc cluster addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable)
@@ -1592,7 +1590,7 @@ subcollection: openshift
   * [`ibmcloud oc storage attachment ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_ls)
   * [`ibmcloud oc storage attachment rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_rm)
   * [`ibmcloud oc storage volume get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_ls_c)
-  * [`ibmcloud oc storage volume ls `](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_ls_2)
+  * [`ibmcloud oc storage volume ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_ls_2)
 * [Beta: {{site.data.keyword.satelliteshort}} commands](/docs/openshift?topic=openshift-kubernetes-service-cli#sat_commands)
   * [Beta: `ibmcloud oc cluster create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite)
   * [Beta: `ibmcloud oc worker-pool create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create_sat)
@@ -1978,7 +1976,6 @@ subcollection: openshift
 * [Cannot establish VPN connectivity with the strongSwan Helm chart](/docs/openshift?topic=openshift-cs_troubleshoot_network#cs_vpn_fails)
 * [Cannot install a new strongSwan Helm chart release](/docs/openshift?topic=openshift-cs_troubleshoot_network#cs_strongswan_release)
 * [strongSwan VPN connectivity fails after you add or delete worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_network#cs_vpn_fails_worker_add)
-* [Cannot retrieve Calico network policies](/docs/openshift?topic=openshift-cs_troubleshoot_network#cs_calico_fails)
 
 [Apps and services](/docs/openshift?topic=openshift-cs_troubleshoot_app)
 * [Debugging app deployments](/docs/openshift?topic=openshift-cs_troubleshoot_app#debug_apps)
