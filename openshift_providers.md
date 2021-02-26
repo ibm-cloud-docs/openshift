@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-25"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -98,7 +98,7 @@ subcollection: openshift
 
 With {{site.data.keyword.openshiftlong}}, you can create a cluster from the following infrastructure providers. All the worker nodes in a cluster must be from the same provider. Originally, {{site.data.keyword.openshiftlong_notm}} provisioned your worker nodes in a single provider, classic infrastructure.
 * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic**: Create your cluster on a classic compute, networking, and storage environment in IBM Cloud infrastructure.
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> **Generation 2 compute**: Create your cluster on the next generation of IBM Cloud infrastructure virtual servers, available as of 20 May 2020.
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Generation 2 compute**: Create your cluster on the next generation of IBM Cloud infrastructure virtual servers, available as of 20 May 2020.
 
 |Area|Classic|VPC|
 |----|----|----|

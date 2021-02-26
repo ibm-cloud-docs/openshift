@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-02-26"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -109,6 +109,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 26 February 2021 | **{{site.data.keyword.block_storage_is_short}} add-on**: Version `3.0.0` of the {{site.data.keyword.block_storage_is_short}} add-on is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog). |
 | 25 February 2021 | **CLI changelog**: Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.231](/docs/openshift?topic=openshift-cs_cli_changelog#10). |
 | 23 February 2021 | **VPE**: In VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later, worker node communication to the Kubernetes master is now established over the [VPC virtual private endpoint (VPE)](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_vpe). |
 | 22 February 2021 | **Master versions**: Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.16_1532_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4616_1532), [`4.5.31_1530_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4531_1530), [`4.4.33_1534_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4433_1534), [`4.3.40_1555_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1555), and [`3.11.380_1581_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311380_1581). |

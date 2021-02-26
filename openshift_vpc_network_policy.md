@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-25"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -152,16 +152,16 @@ Control inbound and outbound traffic to your worker nodes by modifying a VPC sec
 **Default behavior**: VPC security groups are applied to the network interface of a single virtual server to filter traffic at the hypervisor level. Security group rules are not applied in a particular order. However, requests to your worker nodes are only permitted if the request matches one of the rules that you specify. When you allow traffic in one direction by creating an inbound or outbound rule, responses are also permitted in the opposite direction. Security groups are additive, meaning that if your worker nodes are attached to more than one security group, all rules included in the security groups are applied to the worker nodes.
 
 The default rules of the security group for your cluster differs with your cluster's version.
-* <img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or later:
+* {{site.data.keyword.openshiftshort}} version 4.5 or later:
   * The default security group for the VPC is applied to your worker nodes. This security group allows incoming ICMP packets (pings) and incoming traffic from other worker nodes in your cluster.
   * Additionally, a unique security group that is named in the format `kube-<cluster_ID>` is automatically created and applied to the worker nodes for that cluster. This security group allows incoming traffic requests to the 30000 - 32767 port range on your worker nodes, and ensures that all inbound and outbound traffic to the pod subnet is permitted so that worker nodes can communicate with each other across subnets.
-* <img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier: The default security group for the VPC is applied to your worker nodes. This security group denies all incoming traffic requests to your worker nodes.
+* {{site.data.keyword.openshiftshort}} version 4.4 or earlier: The default security group for the VPC is applied to your worker nodes. This security group denies all incoming traffic requests to your worker nodes.
 
 **Use case**: Add inbound and outbound rules to a security group to manage the inbound and outbound traffic to your VPC cluster. The way that you modify the security group differs with your cluster version.
-* <img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or later:
+* {{site.data.keyword.openshiftshort}} version 4.5 or later:
   * Modify the default security group that is applied to the entire VPC (not unique to your cluster).
   * Do **not** modify or delete the unique `kube-<cluster_ID>` security group that is automatically created for the cluster.
-* <img src="images/icon-vpc-gen2.png" alt="VPC Generation 2 compute icon" width="30" style="width:30px; border-style: none"/> VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier: Modify the default security group that is applied to the entire VPC (not unique to your cluster). You **must** modify the default security group to allow inbound traffic to the `30000 - 32767` node port range to allow any incoming requests to apps that run on your worker nodes.
+* {{site.data.keyword.openshiftshort}} version 4.4 or earlier: Modify the default security group that is applied to the entire VPC (not unique to your cluster). You **must** modify the default security group to allow inbound traffic to the `30000 - 32767` node port range to allow any incoming requests to apps that run on your worker nodes.
 
 **Limitations**: Because the worker nodes of your VPC cluster exist in a service account and are not listed in the VPC infrastructure dashboard, you cannot create a security group and apply it to your worker node instances. You can only modify the existing security group that is created for you.
 
@@ -175,7 +175,7 @@ Use the {{site.data.keyword.cloud_notm}} console to add inbound and outbound rul
 
 1. From the [Virtual private cloud dashboard](https://cloud.ibm.com/vpc-ext/network/vpcs){: external}, click the name of the **Default Security Group** for the VPC that your cluster is in.
 2. Click the **Rules** tab.
-3. VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: Add a rule to allow incoming traffic requests through the `30000 - 32767` node port range on your worker nodes.
+3. {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: Add a rule to allow incoming traffic requests through the `30000 - 32767` node port range on your worker nodes.
   1. In the **Inbound rules** section, click **Create**.
   2. Choose the **TCP** protocol, enter `30000` for the **Port min** and `32767` for the **Port max**, and leave the **Any** source enter selected.
   3. Click **Save**.
@@ -204,13 +204,13 @@ Use the {{site.data.keyword.cloud_notm}} console to add inbound and outbound rul
     <td>Any</td>
     </tr>
     <tr>
-    <td>VPC Gen 2 clusters < 4.5: Allow incoming traffic requests to apps that run on your worker nodes.</td>
+    <td>{{site.data.keyword.openshiftshort}} version < 4.5: Allow incoming traffic requests to apps that run on your worker nodes.</td>
     <td>TCP</td>
     <td>`30000` - `32767`</td>
     <td>Any</td>
     </tr>
     <tr>
-    <td>VPC Gen 2 clusters < 4.5: If you require VPC VPN access or classic infrastructure access into this cluster, allow incoming traffic requests to apps that run on your worker nodes.</td>
+    <td>{{site.data.keyword.openshiftshort}} version < 4.5: If you require VPC VPN access or classic infrastructure access into this cluster, allow incoming traffic requests to apps that run on your worker nodes.</td>
     <td>UDP</td>
     <td>`30000` - `32767`</td>
     <td>Any</td>
@@ -314,7 +314,7 @@ To create rules in your default security group:
     ```
     {: pre}
 
-4. VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: Allow incoming traffic requests through the `30000 - 32767` node port range.
+4. VPC Gen 2 {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: Allow incoming traffic requests through the `30000 - 32767` node port range.
   1. Add a rule to allow inbound TCP traffic on ports 30000-32767.
     ```
     ibmcloud is security-group-rule-add $sg inbound tcp --port-min 30000 --port-max 32767
@@ -356,13 +356,13 @@ To create rules in your default security group:
     <td>Any</td>
     </tr>
     <tr>
-    <td>VPC Gen 2 clusters < 4.5: Allow incoming traffic requests to apps that run on your worker nodes.</td>
+    <td>{{site.data.keyword.openshiftshort}} version < 4.5: Allow incoming traffic requests to apps that run on your worker nodes.</td>
     <td>TCP</td>
     <td>`30000` - `32767`</td>
     <td>Any</td>
     </tr>
     <tr>
-    <td>VPC Gen 2 clusters < 4.5: If you require VPC VPN access or classic infrastructure access into this cluster, allow incoming traffic requests to apps that run on your worker nodes.</td>
+    <td>{{site.data.keyword.openshiftshort}} version < 4.5: If you require VPC VPN access or classic infrastructure access into this cluster, allow incoming traffic requests to apps that run on your worker nodes.</td>
     <td>UDP</td>
     <td>`30000` - `32767`</td>
     <td>Any</td>
@@ -532,46 +532,6 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>After 2</td>
    </tr>
    <tr>
-   <td>Gen 1 only: To expose apps by using load balancers or Ingress, allow traffic through VPC load balancers on port 56501.</td>
-   <td>Allow</td>
-   <td>TCP</td>
-   <td>Any</td>
-   <td>-</td>
-   <td>Any</td>
-   <td>56501</td>
-   <td>After 3</td>
-   </tr>
-   <tr>
-   <td>Gen 1 only: To expose apps by using load balancers or Ingress, allow traffic through VPC load balancers on port 443.</td>
-   <td>Allow</td>
-   <td>TCP</td>
-   <td>Any</td>
-   <td>443</td>
-   <td>Any</td>
-   <td>-</td>
-   <td>After 4</td>
-   </tr>
-   <tr>
-   <td>Gen 1 only: To expose apps by using load balancers or Ingress, allow traffic through VPC load balancers on port 8834.</td>
-   <td>Allow</td>
-   <td>TCP</td>
-   <td>Any</td>
-   <td>8834</td>
-   <td>Any</td>
-   <td>-</td>
-   <td>After 5</td>
-   </tr>
-   <tr>
-   <td>Gen 1 only: To expose apps by using load balancers or Ingress, allow traffic through VPC load balancers on port 10514.</td>
-   <td>Allow</td>
-   <td>TCP</td>
-   <td>Any</td>
-   <td>10514</td>
-   <td>Any</td>
-   <td>-</td>
-   <td>After 6</td>
-   </tr>
-   <tr>
    <td>Allow incoming traffic requests to apps that run on your worker nodes.</td>
    <td>Allow</td>
    <td>TCP</td>
@@ -579,7 +539,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>30000 - 32767</td>
    <td>Any</td>
    <td>-</td>
-   <td>After 7</td>
+   <td>After 3</td>
    </tr>
    <tr>
    <td>To access the {{site.data.keyword.openshiftshort}} web console, allow traffic to port 443. To further restrict access to this port, you can optionally specify the source IP addresses that you can connect to the web console in the **Source IP or CIDR** field.</td>
@@ -589,7 +549,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>-</td>
    <td>Any</td>
    <td>443</td>
-   <td>After 8</td>
+   <td>After 4</td>
    </tr>
    <tr>
    <td>**Optional**: To allow Ingress router services to be healthchecked, allow traffic on port 80. For more information, see the **Important** note at the end of these steps.</td>
@@ -599,7 +559,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>80</td>
    <td>Any</td>
    <td>-</td>
-   <td>After 9</td>
+   <td>After 5</td>
    </tr>
    <tr>
    <td>Deny all other traffic that does not match the previous rules.</td>
@@ -662,46 +622,6 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>After 2</td>
    </tr>
    <tr>
-   <td>Gen 1 only: To expose apps by using load balancers or Ingress, allow traffic through VPC load balancers on port 56501.</td>
-   <td>Allow</td>
-   <td>TCP</td>
-   <td>Any</td>
-   <td>56501</td>
-   <td>Any</td>
-   <td>-</td>
-   <td>After 3</td>
-   </tr>
-   <tr>
-   <td>Gen 1 only: To expose apps by using load balancers or Ingress, allow traffic through VPC load balancers on port 443.</td>
-   <td>Allow</td>
-   <td>TCP</td>
-   <td>Any</td>
-   <td>-</td>
-   <td>Any</td>
-   <td>443</td>
-   <td>After 4</td>
-   </tr>
-   <tr>
-   <td>Gen 1 only: To expose apps by using load balancers or Ingress, allow traffic through VPC load balancers on port 8834.</td>
-   <td>Allow</td>
-   <td>TCP</td>
-   <td>Any</td>
-   <td>-</td>
-   <td>Any</td>
-   <td>8834</td>
-   <td>After 5</td>
-   </tr>
-   <tr>
-   <td>Gen 1 only: To expose apps by using load balancers or Ingress, allow traffic through VPC load balancers on port 10514.</td>
-   <td>Allow</td>
-   <td>TCP</td>
-   <td>Any</td>
-   <td>-</td>
-   <td>Any</td>
-   <td>10514</td>
-   <td>After 6</td>
-   </tr>
-   <tr>
    <td>Allow incoming traffic requests to apps that run on your worker nodes.</td>
    <td>Allow</td>
    <td>TCP</td>
@@ -709,7 +629,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>30000 - 32767</td>
    <td>Any</td>
    <td>-</td>
-   <td>After 7</td>
+   <td>After 3</td>
    </tr>
    <tr>
    <td>To access the {{site.data.keyword.openshiftshort}} web console, allow traffic from port 443. To further restrict access to this port, you can optionally specify the IP addresses that you can connect to the web console in the **Destination IP or CIDR** field.</td>
@@ -719,7 +639,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>443</td>
    <td>Any</td>
    <td>-</td>
-   <td>After 8</td>
+   <td>After 4</td>
    </tr>
    <tr>
    <td>**Optional**: To allow Ingress router services to be healthchecked, allow traffic on port 80. For more information, see the **Important** note at the end of these steps.</td>
@@ -729,7 +649,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>80</td>
    <td>Any</td>
    <td>-</td>
-   <td>After 9</td>
+   <td>After 5</td>
    </tr>
    <tr>
    <td>Deny all other traffic that does not match the previous rules.</td>
@@ -862,28 +782,14 @@ To create an ACL for each subnet that your cluster is attached to:
   ```
   {: pre}
 
-7. <img src="images/icon-vpc-gen1.png" alt="VPC Generation 1 compute icon" width="30" style="width:30px; border-style: none"/> Gen 1 only: If you plan to expose apps by using load balancers or Ingress, create rules to allow inbound and outbound traffic through TCP ports `56501`, `443`, `8834`, and `10514`.
-
-  ```
-  ibmcloud is network-acl-rule-add $acl_id allow outbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-lb-outbound1 --source-port-min 56501 --source-port-max 56501
-  ibmcloud is network-acl-rule-add $acl_id allow outbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-lb-outbound2 --destination-port-min 443 --destination-port-max 443
-  ibmcloud is network-acl-rule-add $acl_id allow outbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-lb-outbound3 --destination-port-min 8834 --destination-port-max 8834
-  ibmcloud is network-acl-rule-add $acl_id allow outbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-lb-outbound4 --destination-port-min 10514 --destination-port-max 10514
-  ibmcloud is network-acl-rule-add $acl_id allow inbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-lb-inbound1 --destination-port-min 56501 --destination-port-max 56501
-  ibmcloud is network-acl-rule-add $acl_id allow inbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-lb-inbound2 --source-port-min 443 --source-port-max 443
-  ibmcloud is network-acl-rule-add $acl_id allow inbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-lb-inbound3 --source-port-min 8834 --source-port-max 8834
-  ibmcloud is network-acl-rule-add $acl_id allow inbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-lb-inbound4 --source-port-min 10514 --source-port-max 10514
-  ```
-  {: pre}
-
-8. Optional: To allow Ingress router services to be healthchecked, allow traffic on port 80. For more information, see the **Important** note at the end of these steps.
+7. Optional: To allow Ingress router services to be healthchecked, allow traffic on port 80. For more information, see the **Important** note at the end of these steps.
   ```
   ibmcloud is network-acl-rule-add $acl_id allow outbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-hc-outbound --destination-port-min 80 --destination-port-max 80
   ibmcloud is network-acl-rule-add $acl_id allow inbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-hc-inbound --destination-port-min 80 --destination-port-max 80
   ```
   {: pre}
 
-9. Optional: If you must allow other traffic to or from your worker nodes on this subnet, add rules for that traffic.
+8. Optional: If you must allow other traffic to or from your worker nodes on this subnet, add rules for that traffic.
 
   <p class="note">When you refer to the VPC subnet that your worker nodes are on, you must use `0.0.0.0/0`. For more tips on how to create your rule, see the [VPC CLI reference documentation](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#network-acl-rule-add).</p>
 
@@ -899,14 +805,14 @@ To create an ACL for each subnet that your cluster is attached to:
   ```
   {: screen}
 
-10. Create rules to deny all other egress from and ingress to worker nodes that is not permitted by the previous rules that you created. Because these rules are created last in the chain of rules, they deny an incoming or outgoing connection only if the connection does not match any other rule that is earlier in the rule chain.
+9. Create rules to deny all other egress from and ingress to worker nodes that is not permitted by the previous rules that you created. Because these rules are created last in the chain of rules, they deny an incoming or outgoing connection only if the connection does not match any other rule that is earlier in the rule chain.
   ```
   ibmcloud is network-acl-rule-add $acl_id deny outbound all 0.0.0.0/0 0.0.0.0/0 --name deny-all-outbound
   ibmcloud is network-acl-rule-add $acl_id deny inbound all 0.0.0.0/0 0.0.0.0/0 --name deny-all-inbound
   ```
   {: pre}
 
-11. Apply this ACL to the subnet. When you apply this ACL, the rules that you defined are immediately applied to the worker nodes on the subnet.
+10. Apply this ACL to the subnet. When you apply this ACL, the rules that you defined are immediately applied to the worker nodes on the subnet.
   ```
   ibmcloud is subnet-update <subnet_ID> --network-acl-id $acl_id
   ```
@@ -930,7 +836,7 @@ To create an ACL for each subnet that your cluster is attached to:
   ```
   {: screen}
 
-12. Repeat steps 2 - 10 for each subnet that you found in step 1.
+11. Repeat steps 2 - 10 for each subnet that you found in step 1.
 
 ACL rules are applied to traffic in a specific order. If you want to add a rule after you complete these steps, ensure that you add the rule before the `deny-all-inbound` or `deny-all-outbound` rule. If you add a rule after these rules, your rule is ignored, because the packet matches the `deny-all-inbound` and `deny-all-outbound` rules and is blocked and removed before it can reach your rule. Create your rule in the proper order by including the `--before-rule-name deny-all-(inbound|outbound)` flag.
 {: note}

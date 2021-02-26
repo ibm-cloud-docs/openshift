@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-26"
 
 keywords: vpc block, add-on, vpc block changelog
 
@@ -101,12 +101,36 @@ View information for patch updates to the {{site.data.keyword.block_storage_is_f
 * **Patch updates**: Patch updates are delivered automatically by IBM and do not contain any feature updates or changes in the supported add-on and cluster versions.
 * **Release updates**: Release updates contain new features for the {{site.data.keyword.block_storage_is_full}} or changes in the supported add-on or cluster versions. You must manually apply release updates to your {{site.data.keyword.block_storage_is_full}} add-on. To update your {{site.data.keyword.block_storage_is_full}} add-on, see [Updating the {{site.data.keyword.block_storage_is_full}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).
 
+Version `2.0.2` of {{site.data.keyword.block_storage_is_short}} add-on is unsupported. Version `2.0.3` is deprecated and no longer receives fixes or updates. If your cluster runs a deprecated or unsupported add-on version, update your cluster to the latest version. You can update the add-on by disabling and re-enabling it. Disable the add-on by running the `ibmcloud oc cluster addon disable vpc-block-csi-driver --cluster <cluster-name>` command. Then, re-enable by running the `ibmcloud oc cluster addon enable vpc-block-csi-driver --cluster <cluster-name>` command. Existing PVs and PVCs are not impacted. For more information, see [updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update)
+{: important}
+
 Refer to the following tables for a summary of changes for each version of the {{site.data.keyword.block_storage_is_full}} add-on.
 
 | {{site.data.keyword.block_storage_is_full}} add-on version | Supported? | {{site.data.keyword.openshiftlong_notm}} version support |
 | -------------------- | -----------|--------------------------- |
-| 2.0.3 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | 4.3 - 4.6 |
+| 3.0.0 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | 4.3 - 4.6 |
+| 2.0.3 | | 4.3 - 4.6 |
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.block_storage_is_full}} add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the {{site.data.keyword.block_storage_is_full}} version is supported for."}
+
+## Changelog for version 3.0.0
+{: #0203_is_block}
+
+The following table shows the changes that are included in version 3.0.0 {{site.data.keyword.block_storage_is_full}} add-on.
+{: shortdesc}
+
+To view a list of add-ons and the supported {{site.data.keyword.openshiftshort}} versions, run the following command.
+```
+ibmcloud oc addon-versions
+```
+{: pre}
+
+| Patch version | `vpc-block-csi-driver` image tag | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
+| --- | --- | --- | --- | --- |
+| N/A | `v.3.0.0` | 26 February 2021 | 4.3 - 4.6 | The `vpc-block-csi` driver is now available unmanaged clusters. This release contains no functional changes. |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Patch updates for version 3.0.0" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the patch version number of the component. The second column contains the image tag the component. The third column contains the release date of the patch. The fourth column contains the supported cluster versions. The fifth column contains a brief description of the change made to the component."}
 
 ## Changelog for version 2.0.3
 {: #0203_is_block}

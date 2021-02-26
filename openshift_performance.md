@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-25"
 
 keywords: openshift, rhoks, roks, rhos, kernel
 
@@ -111,7 +111,7 @@ By default, your worker nodes have the operating system and compute hardware of 
 ### Customizing the operating system
 {: #worker-default-os}
 
-The following operating systems are available for worker nodes: **RHEL 7**. Your cluster cannot mix operating systems or use different operating systems. 
+The following operating systems are available for worker nodes: **RHEL 7**. Your cluster cannot mix operating systems or use different operating systems.
 {: shortdesc}
 
 To optimize your worker nodes, consider the following information.
@@ -127,7 +127,7 @@ To optimize your worker nodes, consider the following information.
 
 To change the compute hardware, such as the CPU and memory per worker node, choose among the following options.
 * [Create a worker pool](/docs/openshift?topic=openshift-add_workers). The instructions vary depending on the type of infrastructure for the cluster, such as classic, VPC, {{site.data.keyword.satelliteshort}}, or gateway clusters.
-* [Update the flavor](/docs/openshift?topic=openshift-update#machine_type) in your cluster by creating a worker pool and removing the previous worker pool. 
+* [Update the flavor](/docs/openshift?topic=openshift-update#machine_type) in your cluster by creating a worker pool and removing the previous worker pool.
 
 ## Modifying default worker node settings to optimize performance
 {: #worker}
@@ -235,8 +235,8 @@ By default, the Calico network plug-in in your {{site.data.keyword.openshiftlong
 
 * If your cluster uses bare metal worker nodes, and you use jumbo frames on the bare metal worker nodes, the jumbo frames have an MTU value in the range of 1500 to 9000. To ensure that Calico can handle this throughput, you can increase the Calico MTU to match the MTU of the jumbo frames. Note that all worker nodes in the cluster must use the same Calico MTU, so to increase the Calico MTU, all worker nodes in the cluster must be bare metal and use jumbo frames.
 * If you have a VPN connection set up for your cluster, some VPN connections require a smaller Calico MTU than the default. Check with the VPN service to determine whether a smaller Calico MTU is required. 
-    
-To run your {{site.data.keyword.openshiftshort}} cluster, make sure that the MTU is equal to or greater than 1450 bytes. 
+
+To run your {{site.data.keyword.openshiftshort}} cluster, make sure that the MTU is equal to or greater than 1450 bytes.
 {: important} 
 
 You can change the MTU on the tunnel interface `tunl0`, which is used for pod to pod communication, and the MTU on the `caliXXXXXXXX` `veth` interface of each worker node.
@@ -275,8 +275,8 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
      variant: Calico
    ```
    {: screen}
-    
-   To run your {{site.data.keyword.openshiftshort}} cluster, make sure that the MTU is equal to or greater than 1450 bytes. 
+
+   To run your {{site.data.keyword.openshiftshort}} cluster, make sure that the MTU is equal to or greater than 1450 bytes.
    {: important}
 
 3. Save and close the file.
@@ -349,10 +349,10 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
     ...
     ```
     {: codeblock}
-    
+
     To run your {{site.data.keyword.openshiftshort}} cluster, make sure that the MTU is equal to or greater than 1450 bytes.
     {: important} 
-    
+
 3. Apply the MTU changes to your cluster master by refreshing the master API server. It might take several minutes for the master to refresh.
   ```
   ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
