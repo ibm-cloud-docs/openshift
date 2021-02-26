@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-02-26"
 
 keywords: openshift
 subcollection: openshift
@@ -432,9 +432,9 @@ subcollection: openshift
 * [Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/openshift?topic=openshift-satellite-clusters#satcluster-worker-pools)
   * [Creating {{site.data.keyword.satelliteshort}} worker pools with host labels for autoassignment](/docs/openshift?topic=openshift-satellite-clusters#sat-pool-create-labels)
   * [Maintaining {{site.data.keyword.satelliteshort}} worker pools](/docs/openshift?topic=openshift-satellite-clusters#sat-pool-maintenance)
-* [Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-limitations)
 * [Storing application data in persistent storage](/docs/openshift?topic=openshift-satellite-clusters#satcluster-storage)
 * [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-rm)
+* [Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-limitations)
 
 [Accessing {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-access_cluster)
 * [Prerequisites](/docs/openshift?topic=openshift-access_cluster#prereqs)

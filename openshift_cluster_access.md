@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-02-26"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -579,7 +579,7 @@ Making your location and cluster subdomains available outside of your hosts' pri
   ibmcloud sat location dns ls --location <location_name_or_ID>
   ```
   {: pre}
-5. List the **Hostname** for your cluster and note the private **IP(s)** that were automatically registered.
+5. Get the **Hostname** for your cluster in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.upi.containers.appdomain.cloud` and note the private **IP(s)** that were automatically registered.
   ```
   ibmcloud oc nlb-dns ls --cluster <cluster_name_or_ID>
   ```

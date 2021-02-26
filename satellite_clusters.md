@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-02-26"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -343,14 +343,6 @@ When you remove a worker pool, all of the worker nodes in the cluster are remove
 
 <br />
 
-## Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}
-{: #satcluster-limitations}
-
-See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits).
-{: shortdesc}
-
-<br />
-
 ## Storing application data in persistent storage
 {: #satcluster-storage}
 
@@ -397,3 +389,11 @@ When you remove {{site.data.keyword.openshiftshort}} clusters or worker nodes in
 4. For each worker node that you removed, decide what to do with the corresponding host in your {{site.data.keyword.satelliteshort}} location.
    *  Reload the host operating system so that you can re-attach and re-assign the host to other {{site.data.keyword.satelliteshort}} resources such as the location control plane or other clusters. For more information, see the update process in [Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-location).
    *  Delete the hosts from your underlying infrastructure provider. For more information, refer to the infrastructure provider documentation.
+
+<br />   
+
+## Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}
+{: #satcluster-limitations}
+
+See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits).
+{: shortdesc}
