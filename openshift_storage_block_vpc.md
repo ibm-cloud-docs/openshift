@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-02-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -103,6 +103,9 @@ You can choose between predefined storage tiers with GB sizes and IOPS that meet
 
 The {{site.data.keyword.block_storage_is_short}} add-on is installed and enabled by default on VPC clusters. Later, you can disable or reenable the add-on by using the [`addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable) or [`addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable) command in the CLI.
 {: note}
+
+Version `2.0.2` of {{site.data.keyword.block_storage_is_short}} add-on is unsupported. Version `2.0.3` is deprecated and no longer receives fixes or updates. If your cluster runs a deprecated or unsupported add-on version, update your clusters to use version `3.0.0`. You can update the add-on by disabling and re-enabling it. Disable the add-on by running the `ibmcloud oc cluster addon disable vpc-block-csi-driver --cluster <cluster-name>` command. Then, re-enable by running the `ibmcloud oc cluster addon enable vpc-block-csi-driver --cluster <cluster-name>` command. Existing PVs and PVCs are not impacted. For more information, see [updating the {{site.data.keyword.block_storage_is_short}} add-on](#vpc-addon-update)
+{: important}
 
 ## Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.block_storage_is_short}}
 {: #vpc_block_qs}

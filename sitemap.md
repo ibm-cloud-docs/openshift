@@ -1787,6 +1787,7 @@ subcollection: openshift
 * [Changelog for 1.0.1, released 15 August 2020](/docs/openshift?topic=openshift-ca_changelog#0101_ca_addon)
 
 [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog)
+* [Changelog for version 3.0.0](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 * [Changelog for version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [Object storage plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog)
