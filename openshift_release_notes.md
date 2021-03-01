@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-01"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -103,6 +103,15 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status){: external}.
 {: note}
+
+## March 2021
+{: #mar21}
+
+| Date | Description |
+| ---- | ----------- |
+| 01 March 2021 | <ul><li>**CLI changelog**: Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.23X](/docs/openshift?topic=openshift-cs_cli_changelog#10).</li><li>**New! General availability of {{site.data.keyword.satellitelong}}**: With {{site.data.keyword.satellitelong_notm}}, you can bring your own compute infrastructure that is in your on-premises data center, at other cloud providers, or in edge networks as a {{site.data.keyword.satelliteshort}} Location to {{site.data.keyword.cloud_notm}}. Then, you use the capabilities of {{site.data.keyword.satelliteshort}} to run {{site.data.keyword.cloud_notm}} services on this infrastructure, and consistently deploy, manage, and control your app workloads. To get started, [create a location](/docs/satellite?topic=satellite-getting-started). Then, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) on your own infrastructure, and assign your additional hosts as worker nodes in the cluster.</li><li>**Exposing apps in {{site.data.keyword.satelliteshort}} clusters**: Added an overview of the [options for exposing apps in Satellite clusters](/docs/openshift?topic=openshift-sat-expose-apps) and steps for setting up each option.</li></ul> |
+{: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
+{: caption="Documentation updates in March 2021"}
 
 ## February 2021
 {: #feb21}

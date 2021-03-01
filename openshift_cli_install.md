@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-03-01"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -157,8 +157,9 @@ To install the CLIs:
     Listing installed plug-ins...
 
     Plugin Name                            Version   Status
-    container-registry                     0.1.404
-    container-service/kubernetes-service   0.4.66
+    container-registry                     0.1.514
+    container-service/kubernetes-service   1.0.231
+    observe-service/ob                     1.0.61
     ```
     {: screen}
 
