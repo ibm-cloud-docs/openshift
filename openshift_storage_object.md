@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-03-01"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -1544,7 +1544,7 @@ To add a secret to a storage class:
 <tbody>
 <tr>
 <td>Name</td>
-<td><code>ibmc-s3fs-flex-cross-region</code></br><code>ibmc-s3fs-flex-perf-cross-region</code></br><code>ibmc-s3fs-flex-regional</code></br><code>ibmc-s3fs-flex-perf-regional</code></td>
+<td><code>ibmc-s3fs-cold-cross-region</code></br><code>ibmc-s3fs-cold-perf-cross-region</code></br><code>ibmc-s3fs-cold-regional</code></br><code>ibmc-s3fs-cold-perf-regional</code></td>
 </tr>
 <tr>
 <td>Default resiliency endpoint</td>
@@ -1581,7 +1581,7 @@ To add a secret to a storage class:
 <tbody>
 <tr>
 <td>Name</td>
-<td><code>ibmc-s3fs-cold-cross-region</code></br><code>ibmc-s3fs-flex-perf-cross-region</code></br><code>ibmc-s3fs-cold-regional</code></br><code>ibmc-s3fs-flex-perf-regional</code></td>
+<td><code>ibmc-s3fs-flex-cross-region</code></br><code>ibmc-s3fs-flex-perf-cross-region</code></br><code>ibmc-s3fs-flex-regional</code></br><code>ibmc-s3fs-flex-perf-regional</code></td>
 </tr>
 <tr>
 <td>Default resiliency endpoint</td>

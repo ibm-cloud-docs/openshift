@@ -172,6 +172,8 @@ Red Hat OpenShift on IBM Cloud
             openshift_ingress_user_managed.md
             openshift_troubleshoot_debug_ingress.md
 
+        satellite_expose_apps.md
+
     {: .topicgroup}
     Storing data on persistent storage
         openshift_storage_plan.md

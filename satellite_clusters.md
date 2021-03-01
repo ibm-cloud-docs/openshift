@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-01"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -94,9 +94,6 @@ subcollection: openshift
 
 # Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}
 {: #satellite-clusters}
-
-{{site.data.keyword.satellitelong}} is available as a closed beta and subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}. For more information, see the [{{site.data.keyword.satellitelong_notm}} documentation](/docs/satellite?topic=satellite-getting-started).
-{: beta}
 
 You can create {{site.data.keyword.openshiftlong}} clusters in an {{site.data.keyword.satellitelong}} location, and use the hosts of your own infrastructure that you added to your location as the worker nodes for the cluster.
 {: shortdesc}
@@ -248,9 +245,6 @@ By default, the [image registry operator management state](https://docs.openshif
 ## Managing {{site.data.keyword.satelliteshort}} worker pools
 {: #satcluster-worker-pools}
 
-{{site.data.keyword.satellitelong_notm}} is available as a closed beta and is subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
-{: beta}
-
 Review the following differences from classic {{site.data.keyword.openshiftlong_notm}} clusters when you manage the worker pool life cycle of clusters that are in a {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
@@ -342,6 +336,14 @@ When you remove a worker pool, all of the worker nodes in the cluster are remove
 {: shortdesc}
 
 <br />
+
+## Exposing apps
+{: #satcluster-expose-apps}
+
+Several options exist to securely expose apps to traffic requests from the public network, from resources that are connected to your hosts' private network, or from resources in {{site.data.keyword.cloud_notm}}.
+{: shortdesc}
+
+Although these options include services that are available in standard {{site.data.keyword.openshiftshort}} clusters, the implementation of these services is different in {{site.data.keyword.openshiftshort}} clusters that were created on {{site.data.keyword.satelliteshort}}-provided infrastructure. For example, no load balancer services are created for the {{site.data.keyword.openshiftshort}} router in your cluster. For a list of app exposure options and steps to configure them, see [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps).
 
 ## Storing application data in persistent storage
 {: #satcluster-storage}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-01"
 
 keywords: openshift
 subcollection: openshift
@@ -432,6 +432,7 @@ subcollection: openshift
 * [Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/openshift?topic=openshift-satellite-clusters#satcluster-worker-pools)
   * [Creating {{site.data.keyword.satelliteshort}} worker pools with host labels for autoassignment](/docs/openshift?topic=openshift-satellite-clusters#sat-pool-create-labels)
   * [Maintaining {{site.data.keyword.satelliteshort}} worker pools](/docs/openshift?topic=openshift-satellite-clusters#sat-pool-maintenance)
+* [Exposing apps](/docs/openshift?topic=openshift-satellite-clusters#satcluster-expose-apps)
 * [Storing application data in persistent storage](/docs/openshift?topic=openshift-satellite-clusters#satcluster-storage)
 * [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-rm)
 * [Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-limitations)
@@ -1196,6 +1197,21 @@ subcollection: openshift
 
 [Bringing your own Ingress controller](/docs/openshift?topic=openshift-ingress-user_managed)
 * [Exposing your Ingress controller by creating an NLB and a hostname](/docs/openshift?topic=openshift-ingress-user_managed#user_managed_nlb)
+
+
+## Exposing apps in {{site.data.keyword.satelliteshort}} clusters
+{: #sitemap_exposing_apps_in__clusters}
+
+
+[Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps)
+
+[Exposing apps with {{site.data.keyword.openshiftshort}} routes](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-routes)
+
+[Setting up a third-party load balancer in front of the {{site.data.keyword.openshiftshort}} router](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-byolb)
+
+[Exposing apps with NodePorts](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-np)
+
+[Exposing apps with routes and Link endpoints for traffic from {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-cloud)
 
 
 ## Storing data on persistent storage
@@ -2073,6 +2089,8 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
+
+[March 2021](/docs/openshift?topic=openshift-iks-release#mar21)
 
 [February 2021](/docs/openshift?topic=openshift-iks-release#feb21)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-03-01"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -6456,9 +6456,6 @@ ibmcloud oc storage volume ls --cluster aa1111aa11aaaaa11aa1
 
 Create and manage {{site.data.keyword.satellitelong_notm}} clusters.
 {: shortdesc}
-
-{{site.data.keyword.satellitelong_notm}} is available as a closed beta and is subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
-{: beta}
 
 ### Beta: `ibmcloud oc cluster create satellite`
 {: #cli_cluster-create-satellite}
