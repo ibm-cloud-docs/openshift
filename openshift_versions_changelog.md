@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-03-02"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -112,6 +112,21 @@ Master patch updates are applied automatically. Worker node patch updates can be
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.6 patch updates.
 {: shortdesc}
 
+### Changelog for worker node fix pack 4.6.18_1533_openshift, released 1 March 2021
+{: #4618_1533}
+
+The following table shows the changes that are included in the worker node fix pack `4.6.18_1533_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| {{site.data.keyword.registrylong_notm}} private endpoints | N/A | N/A | **VPC Gen 2 worker nodes**: Fixed a bug where traffic to the private endpoints of {{site.data.keyword.registrylong_notm}} might fail after rebooting the worker node. |
+| {{site.data.keyword.openshiftshort}} | 4.6.16 | 4.6.18 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-18){: external}.|
+| OpenShift Container Storage | N/A | N/A | Fixed the worker node configuration to resolve an error with deploying OCS. |
+| RHEL 7 Packages | N/A | N/A | Updated worker node with package updates. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.6.16_1529_openshift" caption-side="top"}
+
 ### Changelog for master fix pack 4.6.16_1532_openshift, released 22 February 2021
 {: #4616_1532}
 
@@ -157,6 +172,19 @@ The following table shows the changes that are included in the version updates f
 
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.5 patch updates.
 {: shortdesc}
+
+### Changelog for worker node fix pack 4.5.31_1531_openshift, released 1 March 2021
+{: #4531_1531}
+
+The following table shows the changes that are included in the worker node fix pack `4.5.31_1531_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| {{site.data.keyword.registrylong_notm}} private endpoints | N/A | N/A | **VPC Gen 2 worker nodes**: Fixed a bug where traffic to the private endpoints of {{site.data.keyword.registrylong_notm}} might fail after rebooting the worker node. |
+| RHEL 7 Packages | N/A | N/A | Updated worker node with package updates. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.5.31_1529_openshift" caption-side="top"}
 
 ### Changelog for master fix pack 4.5.31_1530_openshift, released 22 February 2021
 {: #4531_1530}
@@ -433,6 +461,20 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.4 p
 
 {{site.data.keyword.openshiftlong_notm}} version 4.4 is deprecated, with a tentative unsupported date of 31 May 2021. Update your cluster to at least [version 4.5](/docs/openshift?topic=openshift-openshift_versions#ocp45) as soon as possible.
 {: deprecated}
+
+
+### Changelog for worker node fix pack 4.4.33_1534_openshift, released 1 March 2021
+{: #4433_1534_worker}
+
+The following table shows the changes that are included in the worker node fix pack `4.4.33_1534_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| {{site.data.keyword.registrylong_notm}} private endpoints | N/A | N/A | **VPC Gen 2 worker nodes**: Fixed a bug where traffic to the private endpoints of {{site.data.keyword.registrylong_notm}} might fail after rebooting the worker node. |
+| RHEL 7 Packages | N/A | N/A | Updated worker node with package updates. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.4.33_1533_openshift" caption-side="top"}
 
 ### Changelog for master fix pack 4.4.33_1534_openshift, released 22 February 2021
 {: #4433_1534}
@@ -840,6 +882,19 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.3 p
 
 {{site.data.keyword.openshiftshort}} version 4.3 is deprecated, and becomes unsupported 7 March 2021 (date subject to change). [Update your clusters](/docs/openshift?topic=openshift-update) to at least {{site.data.keyword.openshiftshort}} version 4.4 as soon as possible.
 {: deprecated}
+
+### Changelog for worker node fix pack 4.3.40_1555_openshift, released 1 March 2021
+{: #4340_1555_worker}
+
+The following table shows the changes that are included in the worker node fix pack `4.3.40_1555_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| {{site.data.keyword.registrylong_notm}} private endpoints | N/A | N/A | **VPC Gen 2 worker nodes**: Fixed a bug where traffic to the private endpoints of {{site.data.keyword.registrylong_notm}} might fail after rebooting the worker node. |
+| RHEL 7 Packages | N/A | N/A | Updated worker node with package updates. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.3.40_1554_openshift" caption-side="top"}
 
 ### Changelog for master fix pack 4.3.40_1555_openshift, released 22 February 2021
 {: #4340_1555}
@@ -1411,6 +1466,18 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 3.11 
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported on 6 June 2022 (date subject to change).
 {: deprecated}
+
+### Changelog for worker node fix pack 3.11.380_1581_openshift, released 1 March 2021
+{: #311380_1581_worker}
+
+The following table shows the changes that are included in the worker node fix pack `3.11.380_1581_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| RHEL 7 Packages | N/A | N/A | Updated worker node with package updates. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.380_1580_openshift" caption-side="top"}
 
 ### Changelog for master fix pack 3.11.380_1581_openshift, released 22 February 2021
 {: #311380_1581}
