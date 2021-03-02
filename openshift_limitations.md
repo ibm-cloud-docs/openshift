@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-02"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
@@ -226,7 +226,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | Category | Description |
 | -------- | ----------- |
 | Encryption | The secondary disks of your worker nodes are encrypted at rest by default by the [underlying VPC infrastructure provider](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption). However, you cannot [bring your own encryption to the underlying virtual server instances](/docs/vpc?topic=vpc-creating-instances-byok).|
-| Location | VPC Gen 2 clusters are available only in [select multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc-gen2). |
+| Location | VPC Gen 2 clusters are available only in [select multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc). |
 | Operating system | You cannot create a cluster with worker nodes that run multiple operating systems, such as {{site.data.keyword.openshiftshort}} on Red Hat Enterprise Linux and community Kubernetes on Ubuntu. |
 | Versions | VPC Gen 2 clusters must run {{site.data.keyword.openshiftshort}} version 4.3 or later. |
 | Virtual Private Cloud | See [Known limitations](/docs/vpc-on-classic?topic=vpc-on-classic-known-limitations) and [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas). |

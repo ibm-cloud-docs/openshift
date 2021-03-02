@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-03-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -439,7 +439,7 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
 
 1. Allow the IBM Cloud infrastructure private IP ranges so that you can create worker nodes in your cluster.
   1. Allow the appropriate IBM Cloud infrastructure private IP ranges. See [Backend (private) Network](/docs/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#back-end-private-network).
-  2. Allow the IBM Cloud infrastructure private IP ranges for all of the [zones](/docs/openshift?topic=openshift-regions-and-zones#zones) that you are using. **Note**: You must add the `166.8.0.0/14` and `161.26.0.0/16` IP ranges, the IP ranges for the `dal01`, `dal10`, `wdc04` zones, and if your cluster is in the Europe geography, the `ams01` zone. See [Service Network (on backend/private network)](/docs/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#service-network-on-back-end-private-network-).
+  2. Allow the IBM Cloud infrastructure private IP ranges for all of the [zones](/docs/openshift?topic=openshift-regions-and-zones#locations) that you are using. **Note**: You must add the `166.8.0.0/14` and `161.26.0.0/16` IP ranges, the IP ranges for the `dal01`, `dal10`, `wdc04` zones, and if your cluster is in the Europe geography, the `ams01` zone. See [Service Network (on backend/private network)](/docs/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#service-network-on-back-end-private-network-).
 
 2. Note the private IP address for each worker node in the cluster.
     ```

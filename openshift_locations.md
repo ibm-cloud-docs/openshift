@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-17"
+lastupdated: "2021-03-02"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -99,7 +99,7 @@ subcollection: openshift
 You can deploy {{site.data.keyword.openshiftlong}} clusters worldwide. When you create a cluster, its resources remain in the location that you deploy the cluster to. To work with your cluster, you can access the service via a global API endpoint.
 {: shortdesc}
 
-![{{site.data.keyword.openshiftlong_notm}} locations](images/locations.png){: caption="Figure 1. {{site.data.keyword.openshiftlong_notm}} locations" caption-side="bottom"}
+<ff-toronto-mzr-old>![{{site.data.keyword.openshiftlong_notm}} locations](images/locations.png){: caption="Figure 1. {{site.data.keyword.openshiftlong_notm}} locations" caption-side="bottom"}</ff-toronto-mzr-old>
 
 ## {{site.data.keyword.openshiftlong_notm}} locations
 {: #locations}
@@ -129,18 +129,11 @@ The following image is used as an example to explain how {{site.data.keyword.ope
 {: caption="Organization of {{site.data.keyword.openshiftlong_notm}} locations."}
 {: summary="The table shows organization of {{site.data.keyword.openshiftlong_notm}} locations. Rows are to be read from the left to right, with the location type in column one, an example of the type in column two, and the description in column three."}
 
-### Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}
-{: #zones}
-
-The following tables list the available single and multizone locations in {{site.data.keyword.openshiftlong_notm}}.
-{: shortdesc}
-
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **[Classic multizone](#zones-mz)**: If you create a classic cluster in a multizone metro location, the replicas of your highly available Kubernetes master are automatically spread across zones. You have the option to spread your worker nodes across zones to protect your apps from a zone failure. To determine whether a zone is multizone-capable, your can run `ibmcloud oc locations` and look for the value in the `Multizone Metro` column.
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **[Classic single zone](#zones-sz)**: If you create a classic cluster in a single zone (data center) location, you can create multiple worker nodes but you cannot spread them across zones. The highly available master includes three replicas on separate hosts, but is not spread across zones.
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **[VPC regions and zones](#zones-vpc-gen2)**: VPC resources are provisioned in a region, which is a separate group of zones within a metro. The zones are mapped to separate data centers that can vary depending on your account, to ensure that resources are distributed evenly across zones in a multizone architecture. As such, the zones are noted with the region name in the API and CLI (`us-south-1`), and by the metro location in the console (`Dallas 1`).
-
-#### <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic multizone metro locations
+### Classic multizone metro locations
 {: #zones-mz}
+
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic multizone**: If you create a classic cluster in a multizone metro location, the replicas of your highly available Kubernetes master are automatically spread across zones. You have the option to spread your worker nodes across zones to protect your apps from a zone failure. To determine whether a zone is multizone-capable, your can run `ibmcloud oc locations` and look for the value in the `Multizone Metro` column.
+{: shortdesc}
 
 | Geography |  Country  | Metro | Data center |  Previous region  |
 |-----|-----|-----|-----|-----|
@@ -156,8 +149,11 @@ The following tables list the available single and multizone locations in {{site
 
 
 
-#### <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic single zone data center locations
+### Classic single zone data center locations
 {: #zones-sz}
+
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic single zone**: If you create a classic cluster in a single zone (data center) location, you can create multiple worker nodes but you cannot spread them across zones. The highly available master includes three replicas on separate hosts, but is not spread across zones.
+{: shortdesc}
 
 | Geography |  Country  | Metro | Data center |  Previous region  |
 |-----|-----|-----|-----|-----|
@@ -188,8 +184,11 @@ The following tables list the available single and multizone locations in {{site
 <p class="note">`*` hou02 supports free clusters that are created in US South, and is not available for standard, production clusters.</p>
 
 
-#### <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC multizone metro locations
-{: #zones-vpc-gen2}
+### VPC multizone metro locations
+{: #zones-vpc}
+
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC regions and zones**: VPC resources are provisioned in a region, which is a separate group of zones within a metro. The zones are mapped to separate data centers that can vary depending on your account, to ensure that resources are distributed evenly across zones in a multizone architecture. As such, the zones are noted with the region name in the API and CLI (`us-south-1`), and by the metro location in the console (`Dallas 1`).
+{: shortdesc}
 
 | Geography |  Country  | Metro | Region | Zone* | Location* |
 |-----|-----|-----|-----|-----|
@@ -205,7 +204,9 @@ The following tables list the available single and multizone locations in {{site
 `*` For the data center code that the VPC zone and location corresponds to, such as `us-south-1` and `DAL10`, see [Multizone regions](/docs/overview?topic=overview-locations#mzr-table).
 {: note}
 
-### Single zone clusters
+
+
+### Resources in a single zone cluster
 {: #regions_single_zone}
 
 In a single zone cluster, your cluster's resources remain in the zone in which the cluster is deployed. The following image highlights the relationship of single zone cluster components with an example of the Toronto, Canada `tor01` location.
@@ -221,7 +222,7 @@ _Understanding where your single zone cluster resources are._
 
 3.  When you initiate cluster management actions, such as using `ibmcloud oc` commands, basic information about the cluster (such as name, ID, user, the command) is routed through a regional endpoint via the global endpoint. Regional endpoints are located in the nearest multizone metro region. In this example, the metro region is Washington, D.C.
 
-### Multizone clusters
+### Resources in a multizone cluster
 {: #regions_multizone}
 
 In a multizone cluster, your cluster's resources are spread across multiple zones for higher availability.

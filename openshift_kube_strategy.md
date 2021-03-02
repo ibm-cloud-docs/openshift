@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-03-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -255,7 +255,7 @@ Your {{site.data.keyword.openshiftlong_notm}} is linked to one IBM Cloud infrast
 ### What type of cluster and flavors should I get?
 {: #env_flavors}
 
-**Types of clusters**: Decide whether you want a [single zone, multizone, or multiple cluster setup](/docs/openshift?topic=openshift-ha_clusters#ha_clusters). Multizone clusters are available in [all six worldwide {{site.data.keyword.cloud_notm}} metro regions](/docs/openshift?topic=openshift-regions-and-zones#zones). Also keep in mind that worker nodes vary by zone.
+**Types of clusters**: Decide whether you want a [single zone, multizone, or multiple cluster setup](/docs/openshift?topic=openshift-ha_clusters#ha_clusters). Multizone clusters are available in worldwide worldwide {{site.data.keyword.cloud_notm}} [multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-mz). Also keep in mind that worker nodes vary by zone.
 
 **Types of worker nodes**: In general, your intensive workloads are more suited to run on bare metal physical machines, whereas for cost-effective testing and development work, you might choose virtual machines on shared or dedicated hardware. With bare metal worker nodes, your cluster has a network speed of 10 Gbps and hyper-threaded cores that offer higher throughput. Virtual machines come with a network speed of 1 Gbps and regular cores that do not offer hyper-threading. [Check out the machine isolation and flavors that are available](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes).
 

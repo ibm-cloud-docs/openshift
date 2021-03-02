@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-02"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -269,7 +269,7 @@ Pricing for VPC generation 2 compute infrastructure varies based on regional loc
 
 **Regional uplift charges**
 
-When you create a cluster on VPC generation 2 compute infrastructure, the worker nodes might incur an uplift charge that varies by the [multizone metro](/docs/openshift?topic=openshift-regions-and-zones#zones) that you create the cluster in. The uplift charge is a percentage (`%`) of the hourly rate (`r`), and is added to the hourly rate of the worker node. The total hourly rate cost for a worker node can be calculated as `r + (r × %)`. In the [{{site.data.keyword.openshiftshort}} cluster creation console](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift){: external}, this uplift is reflected in the pricing calculator as you configure your cluster details. The following table describes the pricing uplift by region.
+When you create a cluster on VPC generation 2 compute infrastructure, the worker nodes might incur an uplift charge that varies by the [multizone location](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) that you create the cluster in. The uplift charge is a percentage (`%`) of the hourly rate (`r`), and is added to the hourly rate of the worker node. The total hourly rate cost for a worker node can be calculated as `r + (r × %)`. In the [{{site.data.keyword.openshiftshort}} cluster creation console](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift){: external}, this uplift is reflected in the pricing calculator as you configure your cluster details. The following table describes the pricing uplift by region.
 
 For a table that describes the pricing uplift by region, see [Regional pricing for VPC](https://www.ibm.com/cloud/vpc/pricing){: external}.
 

@@ -1866,9 +1866,11 @@ subcollection: openshift
 
 [{{site.data.keyword.openshiftlong_notm}} locations](/docs/openshift?topic=openshift-regions-and-zones#locations)
 * [How locations are organized](/docs/openshift?topic=openshift-regions-and-zones#example_locations_org)
-* [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones#zones)
-* [Single zone clusters](/docs/openshift?topic=openshift-regions-and-zones#regions_single_zone)
-* [Multizone clusters](/docs/openshift?topic=openshift-regions-and-zones#regions_multizone)
+* [Classic multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones-mz)
+* [Classic single zone data center locations](/docs/openshift?topic=openshift-regions-and-zones#zones-sz)
+* [VPC multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc)
+* [Resources in a single zone cluster](/docs/openshift?topic=openshift-regions-and-zones#regions_single_zone)
+* [Resources in a multizone cluster](/docs/openshift?topic=openshift-regions-and-zones#regions_multizone)
 
 [Accessing the global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint)
 * [Logging in to {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-regions-and-zones#login-ic)

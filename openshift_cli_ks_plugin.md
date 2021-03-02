@@ -575,7 +575,7 @@ ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FL
 <dt><code>--zone <em>ZONE</em></code></dt>
 <dd>The zone where you want to create the cluster. This value is required for standard clusters. Free clusters can be created in the region that you target with the <code>ibmcloud oc init</code> command, but you cannot specify the zone.
 
-<p>Review [available zones](/docs/openshift?topic=openshift-regions-and-zones#zones). To span your cluster across zones, you must create the cluster in a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones).</p>
+<p>Review available [classic](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) or [VPC](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) zones.</p>
 
 <p class="note">When you select a zone that is located outside your country, keep in mind that you might require legal authorization before data can be physically stored in a foreign country.</p>
 </dd>
@@ -2618,7 +2618,7 @@ ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER --worker-pool WORKER_
 **Command options**:
 <dl>
 <dt><code>--zone <em>ZONE</em></code></dt>
-<dd>Required: The zone that you want to add. It must be a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones) within the cluster's region.</dd>
+<dd>Required: The zone that you want to add. The zone must be a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) within the cluster's region.</dd>
 
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>Required: The name or ID of the cluster.</dd>
@@ -2758,7 +2758,7 @@ ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER --worker-pool WORKER_
 **Command options**:
 <dl>
 <dt><code>--zone <em>ZONE</em></code></dt>
-<dd>Required: The zone that you want to add. It must be a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones) within the cluster's region.</dd>
+<dd>Required: The zone that you want to add. The zone must be a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) within the cluster's region.</dd>
 
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>Required: The name or ID of the cluster.</dd>
