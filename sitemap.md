@@ -882,6 +882,7 @@ subcollection: openshift
 * [Referring to the image pull secret in your pod deployment](/docs/openshift?topic=openshift-images#pod_imagePullSecret)
 * [Pushing images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-images#push-images)
 * [Managing security of images in {{site.data.keyword.registrylong_notm}} with Vulnerability Advisor](/docs/openshift?topic=openshift-images#va-images)
+* [Setting up trusted content for container images](/docs/openshift?topic=openshift-images#trusted_images)
 
 [Developing apps to run on OpenShift](/docs/openshift?topic=openshift-openshift_apps)
 * [Specifying your app requirements in your YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml)

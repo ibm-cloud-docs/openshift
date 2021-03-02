@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-02"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -813,6 +813,8 @@ ibmcloud oc cluster get --cluster my_cluster --show-resources
 {: pre}
 
 </br>
+
+
 
 ### `ibmcloud oc cluster ls`
 {: #cs_clusters}
