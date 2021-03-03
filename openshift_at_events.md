@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-01-11"
+lastupdated: "2021-03-03"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -298,7 +298,7 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 | Oslo (osl01) | Frankfurt |
 | Paris (par01) | Frankfurt |
 | London (lon02, lon04, lon05, lon06) | London |
-| Sydney (syd01, syd04, syd05) | Sydney |
+| Sydney (syd01, syd04, syd05) | Tokyo |
 | Chennai (che01) | Tokyo |
 | Hong Kong SAR of the PRC (hkg02) | Tokyo |
 | Seoul (seo01) | Tokyo |
@@ -316,7 +316,7 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 | Washington, D.C. (us-east-1, us-east-2, us-east-3) | Dallas |
 | Frankfurt (eu-de-1, eu-de-2, eu-de-3) | Frankfurt |
 | London (eu-gb-1, eu-gb-2, eu-gb-3) | London |
-| Sydney (au-syd-1, au-syd-2, au-syd-3) | Sydney |
+| Sydney (au-syd-1, au-syd-2, au-syd-3) | Tokyo |
 | Tokyo (jp-tok-1, jp-tok-2, jp-tok-3) | Tokyo |
 {: class="simple-tab-table"}
 {: caption="Corresponding {{site.data.keyword.at_short}} instance and {{site.data.keyword.openshiftlong_notm}} cluster locations." caption-side="top"}
