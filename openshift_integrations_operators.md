@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-22"
+  years: 2014, 2021
+lastupdated: "2021-03-04"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -230,6 +230,10 @@ In {{site.data.keyword.openshiftshort}} clusters that run version 4, operators a
 2.  Review any custom steps to install an operator in your cluster.
     *   To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/4.5/logging/cluster-logging.html){: external}, see [installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator).
 3.  If the operator uses a template with a build component that must pull an image from a private registry, the build might fail with an authentication error. To resolve this error, see [Build error due to image pull authentication](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts_build_img_pull).
+
+<br />
+
+
 
 ## Using Operators in 3.11 clusters
 {: #operators_311}

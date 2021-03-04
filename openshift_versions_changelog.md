@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-03-04"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -127,6 +127,20 @@ The following table shows the changes that are included in the worker node fix p
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.16_1529_openshift" caption-side="top"}
 
+### Changelog for master fix pack 4.6.17_1533_openshift, released 27 February 2021
+{: #4617_1533}
+
+The following table shows the changes that are included in the master fix pack patch update `4.6.17_1533_openshift`. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.19.8-1 | v1.19.8-4 | Updated to use `calicoctl` version 3.16.8. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1165 | 1274 | Fixed a bug that might cause version 2.0 network load balancers (NLBs) to crash and restart on load balancer updates. |
+| {{site.data.keyword.openshiftshort}} | 4.6.16 | 4.6.17 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-17). |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.6.16_1532_openshift" caption-side="top"}
+
 ### Changelog for master fix pack 4.6.16_1532_openshift, released 22 February 2021
 {: #4616_1532}
 
@@ -185,6 +199,19 @@ The following table shows the changes that are included in the worker node fix p
 | RHEL 7 Packages | N/A | N/A | Updated worker node with package updates. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.5.31_1529_openshift" caption-side="top"}
+
+### Changelog for master fix pack 4.5.31_1531_openshift, released 27 February 2021
+{: #4531_1531_master}
+
+The following table shows the changes that are included in the master fix pack patch update `4.5.31_1531_openshift`. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1165 | 1274 | Fixed a bug that might cause version 2.0 network load balancers (NLBs) to crash and restart on load balancer updates. |
+| OpenVPN Operator image | v1.1.0 | v1.1.2 | Updated image to implement additional IBM security controls. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.5.31_1530_openshift" caption-side="top"}
 
 ### Changelog for master fix pack 4.5.31_1530_openshift, released 22 February 2021
 {: #4531_1530}
