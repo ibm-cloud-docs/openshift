@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-03-05"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -104,7 +104,7 @@ Review our partners and the benefits of each solution that they provide. To find
 ## LogDNA
 {: #logdna-partner}
 
-{{site.data.keyword.la_full_notm}} provides [LogDNA ![External link icon](../icons/launch-glyph.svg "External link icon")](https://logdna.com/) as a third-party service that you can use to add intelligent logging capabilities to your cluster and apps.
+{{site.data.keyword.la_full_notm}} provides [LogDNA ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.logdna.com/) as a third-party service that you can use to add intelligent logging capabilities to your cluster and apps.
 
 ### Benefits
 {: #logdna-benefits}

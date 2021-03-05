@@ -313,7 +313,7 @@ GET https://containers.cloud.ibm.com/global/v1/clusters
 
 </br>
 
-If you need to specify a region in an API call, remove the `/global` parameter from the path and pass the region name in the `X-Region` header. To list available regions, review the [Previous region](#zones) column in the {{site.data.keyword.openshiftlong_notm}} locations table.
+If you need to specify a region in an API call, remove the `/global` parameter from the path and pass the region name in the `X-Region` header. To list available regions, review the [Previous region](#zones-mz) column in the {{site.data.keyword.openshiftlong_notm}} locations table.
 
 <br />
 

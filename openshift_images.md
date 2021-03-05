@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-03-05"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -465,10 +465,9 @@ You can build containers from trusted images that are signed and stored in {{sit
 {: shortdesc}
 
 1.  [Sign images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent). After you set up trust for your images, you can manage trusted content and signers that can push images to your registry.
-2.  To enforce a policy so that only signed images can be used to build containers in your cluster, [install the open source Portieris project](#portieris-image-sec).
 3.  Cluster users can deploy apps that are built from trusted images.
     1. [Deploy to the `default` Kubernetes namespace](/docs/openshift?topic=openshift-images#namespace).
-    2. [Deploy to a different Kubernetes namespace, or from a different {{site.data.keyword.cloud_notm}} region or account](#other).
+    2. [Deploy to a different Kubernetes namespace, or from a different {{site.data.keyword.cloud_notm}} region or account](/docs/openshift?topic=openshift-registry#other).
 
 <br />
 
