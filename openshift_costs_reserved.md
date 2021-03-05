@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-03-05"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -193,7 +193,7 @@ No, you cannot modify the terms of the contract, such as the duration, number of
 Create a reservation that you can use to provision worker nodes at a reduced cost by committing to a 1 or 3 year term.
 {: shortdesc}
 
-Before you begin, make sure that you have the [**Administrator** platform role for the service in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#platform).
+Before you begin, make sure that you have the [**Administrator** platform access role for the service in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#platform).
 
 1.  Log in to the [{{site.data.keyword.openshiftlong_notm}} reservations console](https://cloud.ibm.com/kubernetes/reservations){: external}.
 2.  Click **Create reservation**.
@@ -229,7 +229,7 @@ If you do not have enough capacity in your reservation to complete a worker pool
 {: note}
 
 Before you begin:
-* In {{site.data.keyword.cloud_notm}} IAM, make sure that you have the **Operator** platform role for **Kubernetes Service** for the cluster to create worker pools.
+* In {{site.data.keyword.cloud_notm}} IAM, make sure that you have the **Operator** platform access role for **Kubernetes Service** for the cluster to create worker pools.
 * [Create](/docs/openshift?topic=openshift-clusters#clusters_standard) or have an existing a classic cluster in the **same metro** as the reservation that you want to use. If you want to use worker nodes only from a reservation, you can create a cluster with zero worker nodes, or remove existing, on-demand worker pools from a cluster.
 
 To use the reservation:
@@ -253,8 +253,8 @@ You can review your {{site.data.keyword.openshiftlong_notm}} reservation usage a
 {: shortdesc}
 
 Before you begin, make sure that you have the following roles in {{site.data.keyword.cloud_notm}} IAM.
-* **Viewer** platform role for **Kubernetes Service** to view reservation usage details.
-* **Viewer** platform role for **Account Management > Billing** service to view billing details.
+* **Viewer** platform access role for **Kubernetes Service** to view reservation usage details.
+* **Viewer** platform access role for **Account Management > Billing** service to view billing details.
 
 **Reservation usage**:
 1.  Log in to the [{{site.data.keyword.openshiftlong_notm}} reservations console](https://cloud.ibm.com/kubernetes/reservations){: external}.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-08"
+lastupdated: "2021-03-05"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -220,8 +220,8 @@ Before you enable a key management service (KMS) provider in your cluster, creat
     {: tip}
 
 3.  Make sure that you have the correct permissions to enable KMS in your cluster.
-    * Ensure that you have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the cluster.
-    * Make sure that the API key that is set for the region that your cluster is in is authorized to use the KMS provider. For example, to create an instance and root key, you need at least the **Editor** platform and **Writer** service roles for [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-manage-access). To check the API key owner whose credentials are stored for the region, run `ibmcloud oc api-key info -c <cluster_name_or_ID>`.
+    * Ensure that you have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#platform) for the cluster.
+    * Make sure that the API key that is set for the region that your cluster is in is authorized to use the KMS provider. For example, to create an instance and root key, you need at least the **Editor** platform and **Writer** service access roles for [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-manage-access). To check the API key owner whose credentials are stored for the region, run `ibmcloud oc api-key info -c <cluster_name_or_ID>`.
 
     **For clusters that run {{site.data.keyword.openshiftshort}} 4.4.16_1513_openshift or later**: An additional **Reader** [service-to-service authorization policy](/docs/account?topic=account-serviceauth) between {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.keymanagementserviceshort}} is automatically created for your cluster, if the policy does not already exist. Without this policy, your cluster cannot use all the [{{site.data.keyword.keymanagementserviceshort}} features](#kms-keyprotect-features).
     {: note}
@@ -344,7 +344,7 @@ After you enable a KMS provider in your {{site.data.keyword.openshiftlong_notm}}
 
 Before you begin:
 * Consider [updating your cluster](/docs/openshift?topic=openshift-update) to at least {{site.data.keyword.openshiftshort}} version `4.5`. If you do not update your cluster to this version, changes to the root key are not reported in the cluster health status and take longer to take effect in your cluster.
-* Make sure that you have the {{site.data.keyword.cloud_notm}} IAM **Administrator** platform and **Manager** service role for the cluster.
+* Make sure that you have the {{site.data.keyword.cloud_notm}} IAM **Administrator** platform and **Manager** service access role for the cluster.
 
 To verify secret encryption by disabling a root key:
 1.  [Enable KMS encryption in your cluster](#keyprotect). To check that KMS encryption is enabled, verify that the **Key Management Service** status is set to `enabled` in the output of the following command.

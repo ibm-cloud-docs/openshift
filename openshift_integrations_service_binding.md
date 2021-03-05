@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-03-05"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -144,7 +144,7 @@ Use {{site.data.keyword.cloud_notm}} service binding to automatically create ser
 Before you begin:
 - Ensure you have the following roles:
     - [**Editor** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#platform) for the cluster where you want to bind a service
-    - [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service role](/docs/openshift?topic=openshift-users#platform) for the {{site.data.keyword.openshiftshort}} project where you want to bind the service
+    - [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#platform) for the {{site.data.keyword.openshiftshort}} project where you want to bind the service
     - For Cloud Foundry services: [**Developer** Cloud Foundry role](/docs/account?topic=account-mngcf#mngcf) for the space where you want to provision the service
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -271,7 +271,7 @@ The credentials of a service instance are base64 encoded and stored inside your 
 - [Reference the secret in environment variables](#reference_secret)
 
 Before you begin:
--  Ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service role](/docs/openshift?topic=openshift-users#platform) for the `kube-system` project.
+-  Ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#platform) for the `kube-system` project.
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - [Add an {{site.data.keyword.cloud_notm}} service to your cluster](#bind-services).
 

@@ -986,6 +986,8 @@ subcollection: openshift
 
 [VPC: Exposing apps with load balancers for VPC](/docs/openshift?topic=openshift-vpc-lbaas)
 * [About VPC load balancing in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_about)
+  * [Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#nlb_vpc)
+  * [Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#lb_vpc)
 * [Setting up an Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb)
 * [Registering a VPC load balancer with a DNS subdomain and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
 * [Limitations](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_limitations)
@@ -1828,8 +1830,8 @@ subcollection: openshift
 
 [User access permissions](/docs/openshift?topic=openshift-access_reference)
 * [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions)
-* [{{site.data.keyword.cloud_notm}} IAM platform roles](/docs/openshift?topic=openshift-access_reference#iam_platform)
-* [{{site.data.keyword.cloud_notm}} IAM service roles](/docs/openshift?topic=openshift-access_reference#service)
+* [{{site.data.keyword.cloud_notm}} IAM platform access roles](/docs/openshift?topic=openshift-access_reference#iam_platform)
+* [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-access_reference#service)
 * [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-access_reference#rbac_ref)
 * [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-access_reference#iam_issuer_users)
 * [Cloud Foundry roles](/docs/openshift?topic=openshift-access_reference#cloud-foundry)

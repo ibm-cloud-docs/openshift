@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-03-05"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -206,7 +206,7 @@ Now that you have a good estimate of your app size and the worker nodes that you
 
 1.  [Create your cluster](/docs/openshift?topic=openshift-clusters) with the worker pool flavor and number of worker nodes that you [previously estimated](#sizing_workers).
 2.  Review what compute resources your cluster uses by default and calculate the remaining cluster capacity that you can use for your workloads.
-    1.  With the {{site.data.keyword.cloud_notm}} IAM **Manager** service role for the cluster in all namespaces: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+    1.  With the {{site.data.keyword.cloud_notm}} IAM **Manager** service access role for the cluster in all namespaces: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
     2.  Find the CPU and memory usage across all worker nodes. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, you can also click your cluster and review the **Cluster Insights** card.
         ```
         oc top nodes
@@ -226,7 +226,7 @@ Now that you have a good estimate of your app size and the worker nodes that you
 3.  [Deploy your apps](/docs/openshift?topic=openshift-deploy_app) to the cluster, and make sure to [set resource requests and limits](/docs/openshift?topic=openshift-openshift_apps#resourcereq) based on the [app size that you previously estimated](#sizing_resources) for your apps, to limit the amount of compute resources the apps can consume.
 4.  Deploy any add-ons, plug-ins, or other cloud services that you want to use.
 5.  Review what compute resources your workloads consume and calculate the remaining cluster capacity to deploy additional apps or scale existing apps.
-    1.  With at least the {{site.data.keyword.cloud_notm}} IAM **Reader** service role for the cluster in all namespaces: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+    1.  With at least the {{site.data.keyword.cloud_notm}} IAM **Reader** service access role for the cluster in all namespaces: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
     2.  List the pods that run in your cluster.
         ```
         oc get pods --all-namespaces

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-03-05"
 
 keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logdna commands, sysdig commands, logging config, monitoring config
 
@@ -121,8 +121,8 @@ ibmcloud ob logging agent discover --cluster CLUSTER [--instance LOGDNA_INSTANCE
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
 **Minimum required permissions**:
-- **Administrator** platform role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
-- **Viewer** platform role for {{site.data.keyword.la_full_notm}}
+- **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
+- **Viewer** platform access role for {{site.data.keyword.la_full_notm}}
 
 **Command options**:
 <dl>
@@ -156,8 +156,8 @@ ibmcloud ob logging config create --cluster CLUSTER --instance LOGDNA_INSTANCE [
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
 **Minimum required permissions**:
-- **Administrator** platform role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
-- **Editor** platform role and **Manager** server access role for {{site.data.keyword.la_full_notm}}
+- **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
+- **Editor** platform access role and **Manager** server access role for {{site.data.keyword.la_full_notm}}
 
 **Command options**:
 <dl>
@@ -205,8 +205,8 @@ ibmcloud ob logging config delete --cluster CLUSTER --instance LOGDNA_INSTANCE
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
 **Minimum required permissions**:
-- **Administrator** platform role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
-- **Viewer** platform role for {{site.data.keyword.la_full_notm}}
+- **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
+- **Viewer** platform access role for {{site.data.keyword.la_full_notm}}
 
 **Command options**:
 <dl>
@@ -244,8 +244,8 @@ ibmcloud ob logging config list --cluster CLUSTER
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
 **Minimum required permissions**: 
-- **Administrator** platform role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}. 
-- **Viewer** platform role for {{site.data.keyword.la_full_notm}}
+- **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}. 
+- **Viewer** platform access role for {{site.data.keyword.la_full_notm}}
 
 **Command options**:
 <dl>
@@ -275,8 +275,8 @@ ibmcloud ob logging config enable public-endpoint|private-endpoint --cluster CLU
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
 **Minimum required permissions**:
-- **Administrator** platform role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
-- **Editor** platform role and **Manager** server access role for {{site.data.keyword.la_full_notm}}
+- **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
+- **Editor** platform access role and **Manager** server access role for {{site.data.keyword.la_full_notm}}
 
 **Command options**:
 <dl>
@@ -315,8 +315,8 @@ ibmcloud ob logging config replace --cluster CLUSTER --instance LOGDNA_INSTANCE 
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
 **Minimum required permissions**:
-- **Administrator** platform role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
-- **Editor** platform role and **Manager** server access role for {{site.data.keyword.la_full_notm}}
+- **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
+- **Editor** platform access role and **Manager** server access role for {{site.data.keyword.la_full_notm}}
 
 **Command options**:
 <dl>
@@ -353,8 +353,8 @@ ibmcloud ob logging config show --cluster CLUSTER --instance LOGDNA_INSTANCE
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
 **Minimum required permissions**:
-- **Administrator** platform role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}. 
-- **Viewer** platform role for {{site.data.keyword.la_full_notm}}
+- **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}. 
+- **Viewer** platform access role for {{site.data.keyword.la_full_notm}}
 
 **Command options**:
 <dl>
@@ -385,8 +385,8 @@ ibmcloud ob monitoring agent discover --cluster CLUSTER [--instance SYSDIG_INSTA
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
 **Minimum required permissions**:
-- **Administrator** platform role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
-- **Viewer** platform role for {{site.data.keyword.mon_full_notm}}
+- **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
+- **Viewer** platform access role for {{site.data.keyword.mon_full_notm}}
 
 **Command options**:
 <dl>
@@ -417,8 +417,8 @@ ibmcloud ob monitoring config create --cluster CLUSTER --instance SYSDIG_INSTANC
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
 **Minimum required permissions**:
-- **Administrator** platform role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
-- **Editor** platform role and **Manager** server access role for {{site.data.keyword.mon_full_notm}}
+- **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
+- **Editor** platform access role and **Manager** server access role for {{site.data.keyword.mon_full_notm}}
 
 **Command options**:
 <dl>
@@ -466,8 +466,8 @@ ibmcloud ob monitoring config delete --cluster CLUSTER --instance SYSDIG_INSTANC
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
 **Minimum required permissions**:
-- **Administrator** platform role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
-- **Viewer** platform role for {{site.data.keyword.mon_full_notm}}
+- **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
+- **Viewer** platform access role for {{site.data.keyword.mon_full_notm}}
 
 **Command options**:
 <dl>
@@ -505,8 +505,8 @@ ibmcloud ob monitoring config list --cluster CLUSTER
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
 **Minimum required permissions**: 
-- **Administratorr** platform role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
-- **Viewer** platform role for {{site.data.keyword.mon_full_notm}}
+- **Administratorr** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
+- **Viewer** platform access role for {{site.data.keyword.mon_full_notm}}
 
 **Command options**:
 <dl>
@@ -535,8 +535,8 @@ ibmcloud ob monitoring config enable public-endpoint|private-endpoint --cluster 
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
 **Minimum required permissions**:
-- **Administrator** platform role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
-- **Editor** platform role and **Manager** server access role for {{site.data.keyword.mon_full_notm}}
+- **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
+- **Editor** platform access role and **Manager** server access role for {{site.data.keyword.mon_full_notm}}
 
 **Command options**:
 <dl>
@@ -575,8 +575,8 @@ ibmcloud ob logging config replace --cluster CLUSTER --instance SYSDIG_INSTANCE 
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
 **Minimum required permissions**:
-- **Administrator** platform role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
-- **Editor** platform role and **Manager** server access role for {{site.data.keyword.mon_full_notm}}
+- **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
+- **Editor** platform access role and **Manager** server access role for {{site.data.keyword.mon_full_notm}}
 
 **Command options**:
 <dl>
@@ -613,8 +613,8 @@ ibmcloud ob monitoring config show --cluster CLUSTER --instance SYSDIG_INSTANCE
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
 **Minimum required permissions**: 
-- **Administrator** platform role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
-- **Viewer** platform role for {{site.data.keyword.la_full_notm}}
+- **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
+- **Viewer** platform access role for {{site.data.keyword.la_full_notm}}
 
 **Command options**:
 <dl>

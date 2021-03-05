@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-03-05"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -104,6 +104,48 @@ Set up a Load Balancer for VPC to expose your app on the public or private netwo
 ## About VPC load balancing in {{site.data.keyword.openshiftlong_notm}}
 {: #lbaas_about}
 
+To expose an app in a VPC cluster, you can create a layer 7 Application Load Balancer for VPC. In VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later, you can optionally create a layer 4 Network Load Balancer for VPC.
+{: shortdesc}
+
+The following table describes the basic characteristics of each load balancing option.
+
+|Characteristic|Application Load Balancer for VPC|Network Load Balancer for VPC|
+|--------------|---------------------|-----------------------------|
+|Supported {{site.data.keyword.openshiftshort}} version|All versions|4.6 and later only|
+|Transport layer|Layer 7|Layer 4|
+|Supported protocols|TCP|TCP|
+|Application access|Hostname|Hostname and static IP address|
+|Source IP preservation|Configurable*|Yes|
+|Improved performance with direct server return|No|Yes|
+|Multizone routing|Yes|No|
+|Types of load balancers|Public and private|Public|
+{: caption="Load balancing options for VPC clusters"}
+
+`*` To preserve the source IP address for an Application Load Balancer for VPC, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"` annotation must be specified when the VPC application load balancer is initially created. This annotation is supported for VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or later only.
+
+### Network Load Balancer for VPC
+{: #nlb_vpc}
+
+In VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later, set up a layer-4 [Network Load Balancer for VPC](/docs/vpc?topic=vpc-network-load-balancers) in each zone of your cluster to serve as the external entry point for incoming requests to an app.
+{: shortdesc}
+
+VPC network load balancers provide several advantages, such as providing higher throughput and better performance by utilizing direct server return (DSR). With DSR, the worker node can send app response packets directly to the client IP address and skip the network load balancer, decreasing the amount of traffic that the network load balancer must handle. Additionally, the network load balancer supports source IP address preservation on all client requests by default.
+
+When you create a Kubernetes `LoadBalancer` service for an app in your cluster and include the `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "nlb"` annotation, a VPC network load balancer is created in your VPC outside of your cluster. The VPC network load balancer routes requests for your app through the private NodePorts that are automatically opened on your worker nodes.
+* If you create a **public** Kubernetes `LoadBalancer` service, you can access your app from the internet through the hostname that is assigned by the VPC network load balancer to the Kubernetes `LoadBalancer` service in the format `1234abcd-<region>.lb.appdomain.cloud`. Even though your worker nodes are connected to only a private VPC subnet, the VPC network load balancer can receive and route public requests to the service that exposes your app. Note that no public gateway is required on your VPC subnet to allow public requests to your VPC network load balancer. However, if your app must access a public URL, you must attach public gateways to the VPC subnets that your worker nodes are connected to.
+* **Private** VPC network load balancers are not supported.
+
+The following diagram illustrates how a user accesses an app from the internet through the VPC network load balancer.
+
+<img src="images/vpc_tutorial_lesson4_lb.png" alt="VPC load balancing for a cluster"/>
+
+1. A request to your app uses the hostname that is assigned to the Kubernetes `LoadBalancer` service by the VPC network load balancer, such as `1234abcd-<region>.lb.appdomain.cloud`.
+2. The request is automatically forwarded by the VPC network load balancer to one of the node ports on the worker node, and then to the private IP address of the app pod.
+3. If app instances are deployed to multiple worker nodes in the cluster, the network load balancer routes the requests between the app pods on various worker nodes within the same zone.
+
+### Application Load Balancer for VPC
+{: #lb_vpc}
+
 Set up a layer-7, multizone [Application Load Balancer for VPC](/docs/vpc?topic=vpc-load-balancers) to serve as the external entry point for incoming requests to an app in your cluster.
 {: shortdesc}
 
@@ -134,7 +176,7 @@ Do not confuse the Application Load Balancer for VPC with Ingress applications l
 {: note}
 
 **Before you begin**:
-* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service role](/docs/openshift?topic=openshift-users#platform) for the `default` namespace.
+* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#platform) for the `default` namespace.
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: [Allow traffic requests that are routed by the VPC application load balancer to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-network-policy#security_groups).
 * To view VPC application load balancers, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
@@ -183,7 +225,7 @@ Do not confuse the Application Load Balancer for VPC with Ingress applications l
   <tbody>
   <tr>
     <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"`</td>
-    <td>VPC Gen 2 and {{site.data.keyword.openshiftshort}} version 4.5 and later only: Annotation to enable the PROXY protocol. The load balancer passes client connection information, including the client IP address, the proxy server IP address, and both port numbers, in request headers to your back-end app. Note that your back-end app must be configured to accept the PROXY protocol. For example, you can configure an NGINX app to accept the PROXY protocol by following [these steps ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.nginx.com/nginx/admin-guide/load-balancer/using-proxy-protocol/).</td>
+    <td>VPC Gen 2 and {{site.data.keyword.openshiftshort}} version 4.5 or later: Annotation to enable the PROXY protocol. The load balancer passes client connection information, including the client IP address, the proxy server IP address, and both port numbers, in request headers to your back-end app. Note that your back-end app must be configured to accept the PROXY protocol. For example, you can configure an NGINX app to accept the PROXY protocol by following [these steps ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.nginx.com/nginx/admin-guide/load-balancer/using-proxy-protocol/).</td>
   </tr>
   <tr>
     <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type`</td>
@@ -191,7 +233,7 @@ Do not confuse the Application Load Balancer for VPC with Ingress applications l
   </tr>
   <tr>
     <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector`</td>
-    <td>{{site.data.keyword.openshiftshort}} version 4.5 only: Annotation to specify a worker node label selector. To identify the worker nodes that receive traffic, you can select one of the supported label selector keys. Note that you can include only one label selector in the annotation, and that the selector must be specified in the `"key=value"` format. If this annotation is not specified, all worker nodes in your cluster are configured to receive traffic from the VPC application load balancer. If specified, this annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation, and any `dedicated: edge` labels on worker nodes are ignored.<br><br>The following keys are permitted:
+    <td>{{site.data.keyword.openshiftshort}} version 4.5 or later: Annotation to specify a worker node label selector. To identify the worker nodes that receive traffic, you can select one of the supported label selector keys. Note that you can include only one label selector in the annotation, and that the selector must be specified in the `"key=value"` format. If this annotation is not specified, all worker nodes in your cluster are configured to receive traffic from the VPC application load balancer. If specified, this annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation, and any `dedicated: edge` labels on worker nodes are ignored.<br><br>The following keys are permitted:
       <ul><li>`ibm-cloud.kubernetes.io/internal-ip`</li>
       <li>`ibm-cloud.kubernetes.io/machine-type`</li>
       <li>`ibm-cloud.kubernetes.io/os`</li>
@@ -200,6 +242,9 @@ Do not confuse the Application Load Balancer for VPC with Ingress applications l
       <li>`ibm-cloud.kubernetes.io/worker-pool-id`</li>
       <li>`ibm-cloud.kubernetes.io/worker-pool-name`</li>
       <li>`ibm-cloud.kubernetes.io/zone`</li>
+      <li>4.6 or later only: `kubernetes.io/arch`</li>
+      <li>4.6 or later only: `kubernetes.io/hostname`</li>
+      <li>4.6 or later only: `kubernetes.io/os`</li>
       <li>`node.kubernetes.io/instance-type`</li>
       <li>`topology.kubernetes.io/region`</li>
       <li>`topology.kubernetes.io/zone`</li></ul>
@@ -207,7 +252,7 @@ Do not confuse the Application Load Balancer for VPC with Ingress applications l
   </tr>
   <tr>
     <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnet`</td>
-    <td>{{site.data.keyword.openshiftshort}} version 4.5 only: Annotation to specify one or more subnets that the VPC application load balancer service deploys to. If specified, this annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation. Note that you can specify a different subnet in the same VPC than the subnets that your cluster is attached to. In this case, even though the VPC application load balancer deploys to a different subnet in the same VPC, the VPC application load balancer can still route traffic to your worker nodes on the cluster subnets. To see subnets in all resource groups, run `ibmcloud oc subnets --provider vpc-gen2 --vpc-id <vpc> --zone <zone>`.</td>
+    <td>{{site.data.keyword.openshiftshort}} version 4.5 or later: Annotation to specify one or more subnets that the VPC application load balancer service deploys to. If specified, this annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation. Note that you can specify a different subnet in the same VPC than the subnets that your cluster is attached to. In this case, even though the VPC application load balancer deploys to a different subnet in the same VPC, the VPC application load balancer can still route traffic to your worker nodes on the cluster subnets. To see subnets in all resource groups, run `ibmcloud oc subnets --provider vpc-gen2 --vpc-id <vpc> --zone <zone>`.</td>
   </tr>
   <tr>
     <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-zone`</td>

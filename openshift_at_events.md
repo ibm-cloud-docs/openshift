@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-03-05"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -130,7 +130,7 @@ The following list of the cluster management events are sent to {{site.data.keyw
 | `containers-kubernetes.logging-autoupdate.changed` | The logging add-on auto updater is enabled or disabled. |
 | `containers-kubernetes.masterlog-retrieve` | A master log collection for the cluster is requested. |
 | `containers-kubernetes.masterlog-status` | The status for the most recent master log collection is requested. |
-| `containers-kubnertes.cluster.rbac.update` | The service is updating IAM information such as service roles for the cluster. This event is not triggered by a specific API method, but happens periodically in the background. |
+| `containers-kubnertes.cluster.rbac.update` | The service is updating IAM information such as service access roles for the cluster. This event is not triggered by a specific API method, but happens periodically in the background. |
 | `containers-kubernetes.service.create` | An {{site.data.keyword.cloud_notm}} service is bound to a cluster. |
 | `containers-kubernetes.service.delete` | An {{site.data.keyword.cloud_notm}} service is unbound from a cluster. |
 | `containers-kubernetes.subnet.add` | An existing IBM Cloud infrastructure subnet is added to a cluster. |

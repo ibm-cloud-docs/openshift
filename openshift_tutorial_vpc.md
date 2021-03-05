@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-05"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -130,11 +130,11 @@ This tutorial is for administrators who are creating a cluster in {{site.data.ke
 {: #vpc_rh_prereqs}
 
 Ensure that you have the following {{site.data.keyword.cloud_notm}} IAM access policies.
-* The [**Administrator** platform role for VPC Infrastructure](/docs/vpc?topic=vpc-managing-user-permissions-for-vpc-resources).
-* The [**Administrator** platform role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}}
-* The [**Writer** or **Manager** service role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}}
-* The [**Administrator** platform role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.registrylong_notm}}
-* If you want to use a resource group other than `default`, at least [**Viewer** platform role](/docs/openshift?topic=openshift-users#platform) for the resource group.
+* The [**Administrator** platform access role for VPC Infrastructure](/docs/vpc?topic=vpc-managing-user-permissions-for-vpc-resources).
+* The [**Administrator** platform access role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}}
+* The [**Writer** or **Manager** service access role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}}
+* The [**Administrator** platform access role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.registrylong_notm}}
+* If you want to use a resource group other than `default`, at least [**Viewer** platform access role](/docs/openshift?topic=openshift-users#platform) for the resource group.
 
 If this cluster is not the first cluster in the region and resource group, make sure that the API key for the region and resource group that you plan to create the cluster in is set up with the correct [infrastructure permissions](/docs/openshift?topic=openshift-users#api_key).
 

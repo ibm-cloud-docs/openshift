@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-17"
+  years: 2014, 2021
+lastupdated: "2021-03-05"
 
 keywords: openshift, roks, rhoks, logmet, logs, metrics, audit, events
 
@@ -130,8 +130,8 @@ For more information, see the following topics:
 **Before you begin**:
 
 * You must have the following permissions:
-  * [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform) for the {{site.data.keyword.openshiftlong_notm}} cluster.
-  * [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/account?topic=account-userroles) for {{site.data.keyword.la_full_notm}}.
+  * [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#platform) for the {{site.data.keyword.openshiftlong_notm}} cluster.
+  * [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/account?topic=account-userroles) for {{site.data.keyword.la_full_notm}}.
 * For the cluster that you want to collect API server audit logs from: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 * Keep in mind that only one audit webhook can be created in a cluster. You can set up an audit webhook to forward logs to {{site.data.keyword.la_full_notm}} or to forward logs to an external syslog server, but not both.
 

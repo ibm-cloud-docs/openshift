@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-09"
+  years: 2014, 2021
+lastupdated: "2021-03-05"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -88,7 +88,7 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -121,7 +121,7 @@ Quickly expose your app to the Internet by creating an Ingress resource.
 
 3. Using the Ingress subdomain, create an Ingress resource file. Replace `<app_path>` with the path that your app listens on. If your app does not listen on a specific path, define the root path as a slash (<code>/</code>) only.
   ```yaml
-  apiVersion: networking.k8s.io/v1beta1
+  apiVersion: networking.k8s.io/v1 # For {{site.data.keyword.openshiftshort}} 4.5 or earlier, use networking.k8s.io/v1beta1 instead
   kind: Ingress
   metadata:
     name: myingressresource

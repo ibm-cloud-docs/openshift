@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-03-05"
 
 keywords: openshift, roks, rhoks, rhos, cloud pak, cloud pack, cloudpak, cloudpack, icp, cloud paks, cloudpaks, cloud packs, cloudpacks, icd, icp4d, icpa, icp4a
 
@@ -180,9 +180,9 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 Before you begin:
 * Verify that your account administrator [set up your {{site.data.keyword.cloud_notm}} account with the Cloud Pak entitlement](#oc_cloud_paks_assign).
 * Make sure that you have the [required permissions to create a cluster](/docs/openshift?topic=openshift-clusters#cluster_prepare). These permissions include the following:
-  * The IAM **Administrator** platform role for {{site.data.keyword.containershort}}.
-  * The IAM **Administrator** platform role for {{site.data.keyword.registryshort}}.
-  * The IAM **Viewer** platform role for the resource group if you create the cluster in a resource group other than `default`.
+  * The IAM **Administrator** platform access role for {{site.data.keyword.containershort}}.
+  * The IAM **Administrator** platform access role for {{site.data.keyword.registryshort}}.
+  * The IAM **Viewer** platform access role for the resource group if you create the cluster in a resource group other than `default`.
   * The appropriate infrastructure permissions, such as an API key with the **Super User** role for classic infrastructure.
 
 To add a Cloud Pak from the {{site.data.keyword.cloud_notm}} catalog:
@@ -216,7 +216,7 @@ To deploy a Cloud Pak to your {{site.data.keyword.openshiftlong_notm}} cluster, 
     3.  Click **Access policies > Assign access +**.
     4.  Click **Account management**.
     5.  From the **What type of access do you want to assign?** drop-down menu, select **License and Entitlement**.
-    6.  Select at least the **Editor** platform role, then click **Add**.
+    6.  Select at least the **Editor** platform access role, then click **Add**.
 3.  [Assign the Cloud Pak entitlement to your {{site.data.keyword.cloud_notm}} account](/docs/account?topic=account-software-license).
 4.  Continue to [create the Cloud Pak instance](#oc_cloud_paks_add).
 
