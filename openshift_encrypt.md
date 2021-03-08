@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-08"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -120,13 +120,10 @@ _Figure: Overview of data encryption in a cluster_
 3.  **etcd data**: Etcd is the component of the master that stores the configuration files of your Kubernetes resources, such as deployments and secrets. Data in etcd is stored on the local disk of the Kubernetes master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. When you enable a KMS provider`*`, a wrapped data encryption key (DEK) is stored in etcd. The DEK encrypts the secrets in your cluster that store service credentials and the LUKS key. Because the root key is in your KMS instance, you control access to your encrypted secrets. To unwrap the DEK, the cluster uses the root key from your KMS instance. For more information about how key encryption works, see [Envelope encryption](/docs/key-protect/concepts?topic=key-protect-envelope-encryption#envelope-encryption).
 4.  **Worker node disks**: The primary disk contains the kernel images that are used to boot your worker node, and is unencrypted. The secondary disk hosts the container file system, stores locally pulled images, and is encrypted at rest in ways that vary by infrastructure provider.
     * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC only**: The secondary disk is AES-256 bit encrypted at rest by the [underlying VPC infrastructure provider](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption). You cannot manage the encryption on your own with a KMS provider.
-    * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic only**: The secondary disk is AES 256-bit encrypted with an IBM-managed LUKS encryption key that is unique to the worker node and stored as a secret in etcd. When you reload or update your worker nodes, the LUKS keys are rotated. If you enable a KMS provider, the etcd secret that holds the LUKS key is encrypted by the root key and DEK of your KMS provider`*`.
-5.  **Cluster secrets**: By default, [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/){: external} are base64 encoded. To manage encryption of the Kubernetes secrets in your cluster, you can enable a KMS provider`*`. The secrets are encrypted by KMS-provided encryption until their information is used. For example, if you update a Kubernetes pod that mounts a secret, the pod requests the secret values from the master API server. The master API server asks the KMS provider to use the root key to unwrap the DEK and encode its values to base64. Then, the master API server uses the KMS provider DEK that is stored in etcd to read the secret, and sends the secret to the pod by using TLS.
+    * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic only**: The secondary disk is AES 256-bit encrypted with an IBM-managed LUKS encryption key that is unique to the worker node and stored as a secret in etcd. When you reload or update your worker nodes, the LUKS keys are rotated. If you enable a KMS provider, the etcd secret that holds the LUKS key is encrypted by the root key and DEK of your KMS provider.
+5.  **Cluster secrets**: By default, [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/){: external} are base64 encoded. To manage encryption of the Kubernetes secrets in your cluster, you can enable a KMS provider. The secrets are encrypted by KMS-provided encryption until their information is used. For example, if you update a Kubernetes pod that mounts a secret, the pod requests the secret values from the master API server. The master API server asks the KMS provider to use the root key to unwrap the DEK and encode its values to base64. Then, the master API server uses the KMS provider DEK that is stored in etcd to read the secret, and sends the secret to the pod by using TLS.
 6.  **Persistent storage encryption**: You can choose to store data by [setting up file, block, object, or software-defined Portworx persistent storage](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview). If you store your data on file or block storage, your data is automatically encrypted at rest. If you use object storage, your data is also encrypted during transit. With Portworx, you can choose to [set up volume encryption](/docs/openshift?topic=openshift-portworx#encrypt_volumes) to protect your data during transit and at rest. The IBM Cloud infrastructure storage instances save the data on encrypted disks, so your data at rest is encrypted.
 7.  **Data-in-use encryption**: For select, SGX-enabled classic worker node flavors, you can use [{{site.data.keyword.datashield_short}}](#datashield) to encrypt data-in-use within the worker node.
-
-`*` **{{site.data.keyword.openshiftshort}} version 3.11 or version 4.4 clusters only**: You can encrypt secrets in your cluster by using a key management service (KMS) provider only in version 3.11 or 4.4 clusters. KMS is not available for version 4.3 clusters.
-{: note}
 
 
 <br />
@@ -137,12 +134,9 @@ _Figure: Overview of data encryption in a cluster_
 You can protect the etcd component in your Kubernetes master and Kubernetes secrets by using a Kubernetes [key management service (KMS) provider](https://kubernetes.io/docs/tasks/administer-cluster/kms-provider/){: external} that encrypts secrets with encryption keys that you control.
 {: shortdesc}
 
-KMS provider integration is available only in version 3.11 or 4.4 clusters, not for version 4.3 clusters.
-{: important}
-
 **What KMS providers are available by default? Can I add other providers?**
 
-{{site.data.keyword.openshiftlong_notm}} version 3.11supports the following KMS providers:
+{{site.data.keyword.openshiftlong_notm}} supports the following KMS providers:
 * {{site.data.keyword.keymanagementservicefull}} for [public cloud](/docs/key-protect?topic=key-protect-getting-started-tutorial) or [on-prem](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.2.0/apis/kms_apis.html#gen_key){: external} environments.
 * [{{site.data.keyword.hscrypto}}](https://cloud.ibm.com/catalog/services/hyper-protect-crypto-services){: external} for keep your own key (KYOK) crypto unit support.
 
@@ -200,9 +194,6 @@ To use the additional {{site.data.keyword.keymanagementserviceshort}} features:
 
 Enable a Kubernetes [key management service (KMS) provider](https://kubernetes.io/docs/tasks/administer-cluster/kms-provider/){: external} such as [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-getting-started-tutorial){: external} to encrypt the Kubernetes secrets and etcd component of your Kubernetes master.
 {: shortdesc}
-
-KMS provider integration is available only in version 3.11 or 4.4 clusters, not for version 4.3 clusters.
-{: important}
 
 **Clusters that run version 3.11**: To rotate your encryption key, repeat the [CLI](#kms_cli) or [console](#kms_ui) steps to enable KMS provider encryption with a new root key ID. The new root key is added to the cluster configuration along with the previous root key so that existing encrypted data is still protected. To encrypt your existing secrets with the new root key, you must rewrite the secrets.
 {: note}

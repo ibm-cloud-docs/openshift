@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -293,7 +293,7 @@ When you resize the volume in your IBM Cloud infrastructure account, the attache
 
 **Infrastructure provider and applicable versions**:
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
-  * {{site.data.keyword.openshiftshort}} version 4.3 or 4.4
+  * {{site.data.keyword.openshiftshort}} 4.4 or later
 
 {: tsSymptoms}
 When you try to push container images to the internal {{site.data.keyword.openshiftshort}} container image registry, the push fails with a message similar to the following. 

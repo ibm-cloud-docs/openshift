@@ -399,7 +399,7 @@ If less PIDs, CPU or memory is available than the worker node reserves, Kubernet
 
 The resources that are reserved on your worker node depend on the amount of PIDs, CPU and memory that your worker node comes with. {{site.data.keyword.openshiftlong_notm}} defines PIDs, CPU and memory tiers as shown in the following tables. If your worker node comes with compute resources in multiple tiers, a percentage of your PIDs, CPU and memory resources is reserved for each tier.
 
-<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 4.3 or later** : Clusters also have process ID (PID) reservations and limits, to prevent a pod from using too many PIDs or ensure that enough PIDs exist for the `kubelet` and other {{site.data.keyword.openshiftlong_notm}} system components. If the PID reservations or limits are reached, Kubernetes does not create or assign new PIDs until enough processes are removed to free up existing PIDs. The total amount of PIDs on a worker node approximately corresponds to 8,000 PIDs per GB of memory on the worker node. For example, a worker node with 16 GB of memory has approximately 128,000 PIDs (`16 × 8,000 = 128,000`).
+<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} version 4** : Clusters also have process ID (PID) reservations and limits, to prevent a pod from using too many PIDs or ensure that enough PIDs exist for the `kubelet` and other {{site.data.keyword.openshiftlong_notm}} system components. If the PID reservations or limits are reached, Kubernetes does not create or assign new PIDs until enough processes are removed to free up existing PIDs. The total amount of PIDs on a worker node approximately corresponds to 8,000 PIDs per GB of memory on the worker node. For example, a worker node with 16 GB of memory has approximately 128,000 PIDs (`16 × 8,000 = 128,000`).
 
 To review how much compute resources are currently used on your worker node, run [`oc top node`](https://kubernetes.io/docs/reference/kubectl/overview/#top){: external}.
 {: tip}
@@ -455,6 +455,6 @@ To review how much compute resources are currently used on your worker node, run
 {: tab-title="Worker node disk reserves"}
 {: tab-group="Worker Node"}
 
-<p class="note">Worker node PID reserves are for {{site.data.keyword.openshiftshort}} 4.3 or later only.</br></br>Sample worker node values are provided for example only. Your actual usage might vary slightly.</p>
+<p class="note">Worker node PID reserves are for {{site.data.keyword.openshiftshort}} version 4.</br></br>Sample worker node values are provided for example only. Your actual usage might vary slightly.</p>
 
 

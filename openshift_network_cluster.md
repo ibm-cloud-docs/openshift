@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-17"
+lastupdated: "2021-03-08"
 
 keywords: openshift, roks, rhos, rhoks, vlan
 
@@ -102,7 +102,7 @@ After you initially set up your network when you [create a cluster](/docs/opensh
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> The content on this page is specific to **classic clusters only**. For information about VPC clusters, see [Understanding network basics of VPC clusters](/docs/openshift?topic=openshift-vpc-subnets).
 {: note}
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> The content on this page is specific to **classic clusters that run {{site.data.keyword.openshiftshort}} 3.11 only**. In clusters that run {{site.data.keyword.openshiftshort}} 3.11, you must enable the public service endpoint during cluster creation, and you cannot disable it later. You can later enable the private service endpoint. Clusters that run {{site.data.keyword.openshiftshort}} 4.3 or later are created with the public service endpoint only, and you cannot later change the service endpoints.
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> The content on this page is specific to **classic clusters that run {{site.data.keyword.openshiftshort}} 3.11 only**. In clusters that run {{site.data.keyword.openshiftshort}} 3.11, you must enable the public service endpoint during cluster creation, and you cannot disable it later. You can later enable the private service endpoint. Clusters that run version 4 are created with the public service endpoint only, and you cannot later change the service endpoints.
 {: important}
 
 

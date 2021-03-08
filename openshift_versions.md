@@ -103,7 +103,6 @@ For more information about the {{site.data.keyword.openshiftshort}} and Kubernet
 * [{{site.data.keyword.openshiftshort}} 4.6 release notes overview](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html){: external}
 * [{{site.data.keyword.openshiftshort}} 4.5 release notes overview](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html){: external}
 * Deprecated: [{{site.data.keyword.openshiftshort}} 4.4 release notes overview](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html){: external}
-* Deprecated: [{{site.data.keyword.openshiftshort}} 4.3 release notes overview](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html){: external}
 * Deprecated: [{{site.data.keyword.openshiftshort}} 3.11 release notes overview](https://docs.openshift.com/container-platform/3.11/release_notes/index.html){: external}
 * [Kubernetes changelog](https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG){: external}
 
@@ -140,9 +139,13 @@ You must [update your cluster](/docs/openshift?topic=openshift-update) by using 
 
 {{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.openshiftshort}}. The worker node operating system is Red Hat Enterprise Linux 7.
 
-* **Latest**: 4.6 (Kubernetes 1.19)
-* **Default**: 4.5 (Kubernetes 1.18)
-* **Deprecated**: 3.11 (Kubernetes 1.11), 4.3 (Kubernetes 1.16), 4.4 (Kubernetes 1.17)
+**Supported versions**:
+* Latest: 4.6 (Kubernetes 1.19)
+* Default: 4.5 (Kubernetes 1.18)
+
+**Deprecated and unsupported versions**:
+* Deprecated: 3.11 (Kubernetes 1.11), 4.4 (Kubernetes 1.17)
+* Unsupported: 4.3 (Kubernetes 1.16)
 
 To check the Kubernetes server version of a cluster, log in to the cluster and run the following command.
 
@@ -214,10 +217,10 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
   <td>31 May 2021 `†`</td>
 </tr>
 <tr>
-  <td><img src="images/warning-filled.png" align="left" width="32" style="width:32px;" alt="This version is deprecated."/></td>
+  <td><img src="images/close-filled.png" align="left" width="32" style="width:32px;" alt="This version is unsupported."/></td>
   <td>4.3 / 1.16</td>
   <td>20 Apr 2020</td>
-  <td>7 Mar 2021 `†`</td>
+  <td>7 Mar 2021</td>
 </tr>
 <tr>
   <td><img src="images/warning-filled.png" align="left" width="32" style="width:32px;" alt="This version is deprecated."/></td>
@@ -328,25 +331,18 @@ The following table shows the actions that you must take before you [update the 
 {: caption="Changes to make before you update the master to {{site.data.keyword.openshiftshort}} 4.4" caption-side="top"}
 {: summary="The rows are read from left to right. The type of update action is in the first column, and a description of the update action type is in the second column."}
 
-## Deprecated: {{site.data.keyword.openshiftshort}} 4.3
-{: #ocp43}
+<br />
 
-<img src="images/certified_kubernetes_1x16.png" style="padding-right: 10px;" align="left" alt="This badge indicates Kubernetes version 1.16 certification for {{site.data.keyword.openshiftlong_notm}}."/> {{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.16 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
+## Archive
+{: #version-archive}
 
-{{site.data.keyword.openshiftshort}} version 4.3 is deprecated, and becomes unsupported 7 March 2021 (date subject to change). [Update your clusters](/docs/openshift?topic=openshift-update) to at least {{site.data.keyword.openshiftshort}} version 4.4 as soon as possible.
-{: deprecated}
-
-With the release of OpenShift Container Platform 4.3, you get a new experience and capabilities for managing your cluster and its workloads. For more information, see the [{{site.data.keyword.openshiftshort}} blog](https://www.openshift.com/blog/introducing-red-hat-openshift-4-3-to-enhance-kubernetes-security/){: external}.
+Review unsupported versions of {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}
 
-To create a 4.3 cluster, [try out the tutorial](/docs/openshift?topic=openshift-openshift_tutorial). You cannot update an existing version 3.11 cluster to a 4.3 cluster. Create a cluster and [copy your deployments](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) from the outdated cluster to the new cluster.
+### {{site.data.keyword.openshiftshort}} 4.3 (Unsupported)
+{: #ocp43}
 
-Review the following benefit highlights when you use version 4.3 clusters.
-*   Ability to use your own [Operators](/docs/openshift?topic=openshift-operators) or operators that are provided by the OperatorHub to package and deploy services for your cluster.
-*   New [{{site.data.keyword.openshiftshort}} web console experience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console) that reorganizes your cluster resources and workflows into two perspectives for the **Administrator** and **Developer**.
-*   Update of the underlying Kubernetes API to 1.16 so that you can use new capabilities such as extensibility for core Kubernetes APIs, an updated `kubectl` experience, cluster lifecycle stability enhancements, support for projects such as `kustomize`, persistent local volumes, and custom resource and operator support.
-*   [Ingress controllers are integrated into the Ingress Operator](/docs/openshift?topic=openshift-ingress-about-roks4) so that you can use routers to proxy app requests instead of application load balancers (ALBs).
+As of 7 March 2021, {{site.data.keyword.openshiftlong_notm}} clusters that run [version 4.3](/docs/openshift?topic=openshift-changelog_archive) are unsupported. Version 4.3 clusters cannot receive security updates or support unless they are updated to the next most recent version.
+{: shortdesc}
 
-For more information, check out the [comparison table between supported features of 3.11 and 4](/docs/openshift?topic=openshift-cs_ov#3.11_vs_4.3) or review the [service limitations](/docs/openshift?topic=openshift-openshift_limitations#ocp4_limitations).
-
-<br />
+[Review the potential impact](#ocp44) and then [update your cluster](/docs/openshift?topic=openshift-update) immediately to at least {{site.data.keyword.openshiftshort}} 4.4.

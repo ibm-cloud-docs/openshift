@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-08"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -177,7 +177,7 @@ However, if the bucket fails to create when you create your cluster, you must ma
 
 To manually create a bucket for your internal registry, see [Cluster create error about cloud object storage bucket](/docs/openshift?topic=openshift-cs_troubleshoot#ts_cos_bucket_cluster_create).
 
-For clusters that run {{site.data.keyword.openshiftshort}} version 4.3 or 4.4, you might need to [modify the default configuration](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts-app-ocr-vpc-push) so that external sources outside the VPC, such as a CI/CD process, can push images to the internal registry.
+For clusters that run {{site.data.keyword.openshiftshort}} version 4.4, you might need to [modify the default configuration](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts-app-ocr-vpc-push) so that external sources outside the VPC, such as a CI/CD process, can push images to the internal registry.
 
 ### Classic: Storing images in the internal registry
 {: #storage_internal_registry}

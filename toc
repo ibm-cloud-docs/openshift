@@ -220,6 +220,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_versions_vpc_block_addon.md
         openshift_versions_object.md
         openshift_versions_backup_restore.md
+        openshift_versions_archive.md
 
     {: .topicgroup}
     IAM and Activity Tracker events

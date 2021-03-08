@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-08"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -493,7 +493,7 @@ Your VPC cluster is created with both a public and a private service endpoint. W
 4. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Create cluster**.
 5. Configure your cluster environment.
    1. Select the **Standard** cluster plan.
-   2. From the {{site.data.keyword.openshiftshort}} drop-down list, select the version that you want to use in your cluster. You must choose **{{site.data.keyword.openshiftshort}} 4.3 or later**.
+   2. From the {{site.data.keyword.openshiftshort}} drop-down list, select the version that you want to use in your cluster. You must choose **{{site.data.keyword.openshiftshort}} 4.4 or later**.
    3. **Optional**: For the **OCP entitlement** section, you can select an entitlement for a worker pool, if you have one. In most cases, leave the value set to **Purchase additional licenses for this worker pool**. If you have an {{site.data.keyword.cloud_notm}} Pak with an {{site.data.keyword.openshiftshort}} entitlement that you want to use, you can select **Apply my Cloud Pak OCP entitlement to this worker pool**. Later, when you configure the worker pool, make sure to select only the flavor and number of worker nodes that your entitlement permits.
    3. Select **VPC** infrastructure.
    4. From the **Virtual private cloud** drop-down menu, select the **Gen 2** VPC that you created earlier.
