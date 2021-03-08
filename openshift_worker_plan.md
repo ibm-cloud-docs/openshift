@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-08"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -331,60 +331,15 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 * **Raw**: The storage device is unformatted and the full capacity is available for use.
 * **RAID**: A storage device with data distributed for redundancy and performance that varies depending on the RAID level. As such, the disk capacity that is available for use varies.
 
-<table summary="The columns are read from left to right. The first column has the name and use case for the flavor. The second column has the cores and memory of the worker nodes for the flavor. The third column has the size of the primary and secondary disk that are attached to the worker nodes for the flavor. The fourth column has the network speed for the worker nodes of the flavor.">
-<caption>Available bare metal flavors in {{site.data.keyword.openshiftlong_notm}}.</caption>
-<col width="25%">
-<thead>
-<th>Name and use case</th>
-<th>Cores / Memory</th>
-<th>Primary / Secondary disk</th>
-<th>Network speed</th>
-</thead>
-<tbody>
-<tr>
-<td><strong>RAM-intensive bare metal, mb4c.20x64</strong>: Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT.</td>
-<td>20 / 64 GB</td>
-<td>2 TB HDD / 960 GB SSD</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
-<td><strong>RAM-intensive bare metal, mb4c.20x192</strong>: Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT.</td>
-<td>20 / 192 GB</td>
-<td>2 TB HDD / 960 GB SSD</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
-<td><strong>RAM-intensive bare metal, mb4c.20x384</strong>: Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT.</td>
-<td>20 / 384 GB</td>
-<td>2 TB HDD / 960 GB SSD</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
-<td><strong>GPU bare metal, mg4c.32x384.2xp100</strong>: Choose this type for mathematically intensive workloads such as high-performance computing, machine learning, deep learning, or 3D applications. This flavor has two Tesla P100 physical cards that have two GPUs per card for a total of four GPUs. Note that this Pascal GPU flavor does not support the Data Center GPU Manager because of a known issue from NVIDIA.</td>
-<td>32 / 384 GB</td>
-<td>2 TB HDD / 960 GB SSD</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
-<td><strong>Data-intensive bare metal, md4c.16x64.4x4tb</strong>: Use this type for a significant amount of local disk storage, including RAID to increase data availability, for workloads such as distributed file systems, large databases, and big data analytics.</td>
-<td>16 / 64 GB</td>
-<td>2x2 TB RAID1 / 4x4 TB SATA RAID10</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
-<td><strong>Data-intensive bare metal, md4c.28x512.4x4tb</strong>: Use this type for a significant amount of local disk storage, including RAID to increase data availability, for workloads such as distributed file systems, large databases, and big data analytics.</td>
-<td>28 / 512 GB</td>
-<td>2x2 TB RAID1 / 4x4 TB SATA RAID10</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
-<td><strong>Balanced bare metal, me4c.4x32</strong>: Use for balanced workloads that require more compute resources than virtual machines offer. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT.</td>
-<td>4 / 32 GB</td>
-<td>2 TB HDD / 2 TB HDD</td>
-<td>10000 Mbps</td>
-</tr>
-</tbody>
-</table>
+| Name and use case | Cores / Memory | Primary / Secondary disk | Network speed |
+| --- | --- | --- | --- |
+| **RAM-intensive bare metal, mb4c.20x64**: Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT. | 20 / 64 GB | 2 TB HDD / 960 GB SSD | 10000 Mbps |
+| **RAM-intensive bare metal, mb4c.20x192**: Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT. | 20 / 192 GB | 2 TB HDD / 960 GB SSD | 10000 Mbps |
+| **RAM-intensive bare metal, mb4c.20x384**: Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT. | 20 / 384 GB | 2 TB HDD / 960 GB SSD | 10000 Mbps |
+| **GPU bare metal, mg4c.32x384.2xp100**: Choose this type for mathematically intensive workloads such as high-performance computing, machine learning, deep learning, or 3D applications. This flavor has two Tesla P100 physical cards that have two GPUs per card for a total of four GPUs. Note that this Pascal GPU flavor does not support the Data Center GPU Manager because of a known issue from NVIDIA. | 32 / 384 GB | 2 TB HDD / 960 GB SSD | 10000 Mbps |
+| **Balanced bare metal, me4c.4x32**: Use for balanced workloads that require more compute resources than virtual machines offer. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT. | 4 / 32 GB | 2 TB HDD / 2 TB HDD | 10000 Mbps |
+{: caption="Available bare metal flavors in {{site.data.keyword.openshiftlong_notm}}."}
+{: summary="The columns are read from left to right. The first column has the name and use case for the flavor. The second column has the cores and memory of the worker nodes for the flavor. The third column has the size of the primary and secondary disk that are attached to the worker nodes for the flavor. The fourth column has the network speed for the worker nodes of the flavor."}
 
 <br />
 
@@ -422,54 +377,15 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 * **Raw**: The storage device is unformatted and the full capacity is available for use.
 * **RAID**: A storage device with data distributed for redundancy and performance that varies depending on the RAID level. As such, the disk capacity that is available for use varies.
 
-<table summary="The columns are read from left to right. The first column has the name and use case for the flavor. The second column has the cores and memory of the worker nodes for the flavor. The third column has the size of the primary and secondary disk that are attached to the worker nodes for the flavor. The fourth column has the network speed for the worker nodes of the flavor.">
-<caption>Available SDS flavors in {{site.data.keyword.openshiftlong_notm}}.</caption>
-<col width="25%">
-<thead>
-<th>Name and use case</th>
-<th>Cores / Memory</th>
-<th>Primary / Secondary disk</th>
-<th>Additional raw disks</th>
-<th>Network speed</th>
-</thead>
-<tbody>
-<tr>
-<td><strong>Data-intensive bare metal with SDS, me4c.4x32.1.9tb.ssd</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT.</td>
-<td>4 / 32 GB</td>
-<td>2 TB HDD / 960 GB SSD</td>
-<td>1.9 TB Raw SSD (device paths: `/dev/sdc`)</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
-<td><strong>RAM-intensive bare metal with SDS, mb4c.20x64.2x1.9tb.ssd</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT.</td>
-<td>20 / 64 GB</td>
-<td>2 TB HDD / 960 GB SSD</td>
-<td>2 disks, 1.9 TB Raw SSD (device paths: `/dev/sdc`, `/dev/sdd`)</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
-<td><strong>RAM-intensive bare metal with SDS, mb4c.32x384.3.8tb.ssd</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT.</td>
-<td>32 / 384 GB</td>
-<td>2 TB HDD / 960 GB SSD</td>
-<td>3.8 TB Raw SSD (device paths: `/dev/sdc`)</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
-<td><strong>RAM-intensive bare metal with SDS, mb4c.32x384.6x3.8tb.ssd</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT.</td>
-<td>32 / 384 GB</td>
-<td>2 TB HDD / 960 GB SSD</td>
-<td>6 disks, 3.8 TB Raw SSD (device paths: `/dev/sdc`, `/dev/sdd`, `/dev/sde`, `/dev/sdf`, `/dev/sdg`, `/dev/sdh`)</td>
-<td>10000 Mbps</td>
-</tr>
-<tr>
-<td><strong>RAM-intensive bare metal with SDS, mb4c.32x768.3.8tb.ssd</strong>: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT.</td>
-<td>32 / 768 GB</td>
-<td>2 TB HDD / 960 GB SSD</td>
-<td>3.8 TB Raw SSD (device paths: `/dev/sdc`)</td>
-<td>10000 Mbps</td>
-</tr>
-</tbody>
-</table>
+| Name and use case | Cores / Memory | Primary / Secondary disk | Additional raw disks | Network speed |
+| --- | --- | --- | --- | --- |
+| **Data-intensive bare metal with SDS, me4c.4x32.1.9tb.ssd**: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT. | 4 / 32 GB | 2 TB HDD / 960 GB SSD | 1.9 TB Raw SSD (device paths: `/dev/sdc`) | 10000 Mbps |
+| **RAM-intensive bare metal with SDS, mb4c.20x64.2x1.9tb.ssd**: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT. | 20 / 64 GB | 2 TB HDD / 960 GB SSD | 2 disks, 1.9 TB Raw SSD (device paths: `/dev/sdc`, `/dev/sdd`) | 10000 Mbps |
+| **RAM-intensive bare metal with SDS, mb4c.32x384.3.8tb.ssd**: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT. | 32 / 384 GB | 2 TB HDD / 960 GB SSD | 3.8 TB Raw SSD (device paths: `/dev/sdc`) | 10000 Mbps |
+| **RAM-intensive bare metal with SDS, mb4c.32x384.6x3.8tb.ssd**: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT. | 32 / 384 GB | 2 TB HDD / 960 GB SSD | 6 disks, 3.8 TB Raw SSD (device paths: `/dev/sdc`, `/dev/sdd`, `/dev/sde`, `/dev/sdf`, `/dev/sdg`, `/dev/sdh`) | 10000 Mbps |
+| **RAM-intensive bare metal with SDS, mb4c.32x768.3.8tb.ssd**: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT. | 32 / 768 GB | 2 TB HDD / 960 GB SSD | 3.8 TB Raw SSD (device paths: `/dev/sdc`) | 10000 Mbps |
+{: caption="Available SDS flavors in {{site.data.keyword.openshiftlong_notm}}."}
+{: summary="The columns are read from left to right. The first column has the name and use case for the flavor. The second column has the cores and memory of the worker nodes for the flavor. The third column has the size of the primary and secondary disk that are attached to the worker nodes for the flavor. The fourth column has the information about additional SDS disks. The fifth column has the network speed for the worker nodes of the flavor."}
 
 <br />
 
