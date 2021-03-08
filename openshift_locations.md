@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-08"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -160,7 +160,7 @@ The following image is used as an example to explain how {{site.data.keyword.ope
 | Asia Pacific | Australia | Sydney | syd01, syd04, syd05 | AP South (`ap-south`, `au-syd`) |
 | Asia Pacific | China | Hong Kong<br>SAR of the PRC | hkg02 | AP North (`ap-north`, `jp-tok`) |
 | Asia Pacific | India | Chennai | che01 | AP North (`ap-north`, `jp-tok`) |
-| Asia Pacific | Japan | Osaka`‡` | osa21, osa22, osa23 | `jp-osa` |
+| Asia Pacific | Japan | Osaka | osa21, osa22, osa23 | `jp-osa` |
 | Asia Pacific | Japan | Tokyo | tok02, tok04, tok05 | AP North (`ap-north`, `jp-tok`) |
 | Asia Pacific | Korea | Seoul | seo01 | AP North (`ap-north`, `jp-tok`) |
 | Asia Pacific | Singapore | Singapore | sng01 | AP North (`ap-north`, `jp-tok`) |
@@ -174,14 +174,14 @@ The following image is used as an example to explain how {{site.data.keyword.ope
 | North America | Canada | Toronto | tor01 | US East (`us-east`) |
 | North America | Mexico | Mexico City | mex01 | US South (`us-south`) |
 | North America | United States | Dallas | dal10, dal12, dal13 | US South (`us-south`) |
-| North America | United States | Houston | hou02`*` | US South (`us-south`) |
+| North America | United States | Houston | hou02`†` | US South (`us-south`) |
 | North America | United States | San Jose | sjc03, sjc04 | US South (`us-south`) |
 | North America | United States | Washington, D.C. | wdc04, wdc06, wdc07 | US East (`us-east`) |
 | South America | Brazil | São Paulo | sao01 | US South (`us-south`) |
 {: caption="Available single zone data center locations for classic clusters in {{site.data.keyword.openshiftlong_notm}}." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the IBM Cloud geography of the location. The second column is where the country of the location. The third column is the metro that the location is in. The fourth column is the data center of the location. The fifth column is the name of the IBM Cloud region that the location is in."}
 
-<p class="note">`*` hou02 supports free clusters that are created in US South, and is not available for standard, production clusters.</p>
+<p class="note">`*` lon05 replaces lon02. New clusters must use lon05, which supports highly available masters that are spread across zones.</p>
 
 
 ### VPC multizone metro locations
@@ -190,7 +190,7 @@ The following image is used as an example to explain how {{site.data.keyword.ope
 <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC regions and zones**: VPC resources are provisioned in a region, which is a separate group of zones within a metro. The zones are mapped to separate data centers that can vary depending on your account, to ensure that resources are distributed evenly across zones in a multizone architecture. As such, the zones are noted with the region name in the API and CLI (`us-south-1`), and by the metro location in the console (`Dallas 1`).
 {: shortdesc}
 
-| Geography |  Country  | Metro | Region | Zone* | Location* |
+| Geography |  Country  | Metro | Region | Zone`*` | Location`*` |
 |-----|-----|-----|-----|-----|
 | Asia Pacific | Australia | Sydney | au-syd | au-syd-1<br>au-syd-2<br>au-syd-3 | Sydney 1<br>Sydney 2<br>Sydney 3|
 | Asia Pacific | Japan | Tokyo | jp-tok | jp-tok-1<br>jp-tok-2<br>jp-tok-3 | Tokyo 1<br>Tokyo 2<br>Tokyo 3|

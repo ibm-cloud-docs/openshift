@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -622,7 +622,7 @@ Verify that the Ingress operator and the Ingress controller's router are healthy
       oc describe svc router-default -n openshift-ingress
       ```
       {: pre}
-      * For example, in VPC clusters, you might see an error message such as `The VPC load balancer that routes requests to this Kubernetes `LoadBalancer` service is offline`. For more information, see [Cannot connect to an app via load balancer](/docs/openshift?topic=openshift-cs_troubleshoot_lb#vpc_ts_lb).
+      * For example, in VPC clusters, you might see an error message such as `The VPC load balancer that routes requests to this Kubernetes LoadBalancer service is offline`. For more information, see [Cannot connect to an app via load balancer](/docs/openshift?topic=openshift-cs_troubleshoot_lb#vpc_ts_lb).
 
 ### Step 4: Ping the Ingress subdomain and router public IP address
 {: #ping-43}

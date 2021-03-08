@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-08"
 
 keywords: vpc block, add-on, vpc block changelog
 
@@ -126,7 +126,7 @@ ibmcloud oc addon-versions
 
 | Patch version | `vpc-block-csi-driver` image tag | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
 | --- | --- | --- | --- | --- |
-| N/A | `v.3.0.0` | 26 February 2021 | 4.3 - 4.6 | The `vpc-block-csi` driver is now available unmanaged clusters. This release contains no functional changes. |
+| N/A | `v.3.0.0` | 26 February 2021 | 4.3 - 4.6 | The `vpc-block-csi` driver is now available for both managed clusters and unmanaged clusters. This release contains no functional changes. |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Patch updates for version 3.0.0" caption-side="top"}
