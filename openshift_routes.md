@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-03-08"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -246,7 +246,7 @@ If your cluster is created on <img src="images/icon-classic.png" alt="Classic in
   ```
   {: pre}
 
-2. Choose a domain for your app.
+2. Choose a domain for your app. **Version 4.6 and later**: Note that route URLs must be 130 characters or fewer.
   * **IBM-provided domain**: If you do not need to use a custom domain, a route hostname is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
   * **Custom domain**: To specify a custom domain, work with your DNS provider or [{{site.data.keyword.cis_full}}](https://cloud.ibm.com/catalog/services/internet-services).
     1. Get the public IP address for the public router service in each zone in the **EXTERNAL-IP** column. Note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in zones that you subsequently add to your cluster have names such as `router-dal12`.

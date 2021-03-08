@@ -988,6 +988,7 @@ subcollection: openshift
 * [About VPC load balancing in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_about)
   * [Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#nlb_vpc)
   * [Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#lb_vpc)
+* [Setting up a Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb)
 * [Setting up an Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb)
 * [Registering a VPC load balancer with a DNS subdomain and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
 * [Limitations](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_limitations)

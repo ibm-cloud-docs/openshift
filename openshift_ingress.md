@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-08"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -290,7 +290,7 @@ Ingress Secret:         mycluster-<hash>-0000
 {: screen}
 
 **Custom domain:** To use a custom domain instead, you can set up a CNAME record to map your custom domain to the IBM-provided domain.
-1.    Create a custom domain. To register your custom domain, work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). If you want to use different subdomains for your apps, register the custom domain as a wildcard domain, such as `*.custom_domain.net`. Note that domains are limited to 255 characters or fewer.
+1.    Create a custom domain. To register your custom domain, work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). If you want to use different subdomains for your apps, register the custom domain as a wildcard domain, such as `*.custom_domain.net`. Note that domains are limited to 255 characters or fewer in Kubernetes version 1.19 or earlier, and 130 characters or fewer in Kubernetes version 1.20 or later.
 2.  Define an alias for your custom domain by specifying the IBM-provided domain as a Canonical Name record (CNAME). To find the IBM-provided Ingress domain, run `ibmcloud oc cluster get --cluster <cluster_name>` and look for the **Ingress subdomain** field.
 
 ### Step 3: Select TLS termination
@@ -713,7 +713,7 @@ When you create a standard cluster, a private ALB is created in each zone that y
 When you configure the private ALBs, you must expose your apps by using a custom domain.
 {: shortdesc}
 
-1.    Create a custom domain. To register your custom domain, work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). If you want to use different subdomains for your apps, register the custom domain as a wildcard domain, such as `*.custom_domain.net`. Note that domains are limited to 255 characters or fewer.
+1.    Create a custom domain. To register your custom domain, work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). If you want to use different subdomains for your apps, register the custom domain as a wildcard domain, such as `*.custom_domain.net`. Note that domains are limited to 255 characters or fewer in Kubernetes version 1.19 or earlier, and 130 characters or fewer in Kubernetes version 1.20 or later.
 2.  Map your custom domain to the portable private IP addresses of the ALBs by adding the IP addresses as A records. To find the portable private IP addresses of the ALBs, run `ibmcloud oc ingress alb get --alb  <private_alb_ID>` for each ALB.
 </br>
 
