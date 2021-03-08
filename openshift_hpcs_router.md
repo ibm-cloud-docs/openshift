@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-08"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -208,7 +208,7 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to create a router
 1. Get the following values for your {{site.data.keyword.hscrypto}} instance:
   * [The service instance ID](/docs/hs-crypto?topic=hs-crypto-retrieve-instance-ID)
   * [The API key for the service instance ID](/docs/account?topic=account-serviceidapikeys#create_service_key)
-  * [The API endpoint URL and port that your service instance uses for key management operations](https://cloud.ibm.com/apidocs/hs-crypto#getinstance)
+  * [The `ep11` endpoint URL and port that your service instance uses for key management operations](https://cloud.ibm.com/apidocs/hs-crypto#getinstance)
 
 2. Create a Kubernetes secret named `hpcs-credentials` that contains the values that you retrieved. The HPCS router uses the environment variables in this secret to authenticate with your {{site.data.keyword.hscrypto}} instance.
   ```yaml
@@ -217,14 +217,30 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to create a router
   metadata:
     name: hpcs-credentials
     namespace: openshift-ingress
-  data:
-    LIBGREP11_CONNECTION_ADDRESS: <API_endpoint_URL>
-    LIBGREP11_CONNECTION_PORT: <API_endpoint_port>
+  stringData:
+    LIBGREP11_CONNECTION_ADDRESS: <ep11_endpoint_URL>
+    LIBGREP11_CONNECTION_PORT: "<ep11_endpoint_port>"
     LIBGREP11_IAMAUTH_APIKEY: <service_instance_ID_API_key>
     LIBGREP11_IAMAUTH_INSTANCEID: <service_instance_ID>
   type: Opaque
   ```
   {: codeblock}
+
+  Example:
+  ```yaml
+  kind: Secret
+  apiVersion: v1
+  metadata:
+    name: hpcs-credentials
+    namespace: openshift-ingress
+  stringData:
+    LIBGREP11_CONNECTION_ADDRESS: ep11.us-south.hs-crypto.cloud.ibm.com
+    LIBGREP11_CONNECTION_PORT: "9371"
+    LIBGREP11_IAMAUTH_APIKEY: AAaa11BBbb22CCcc33DDdd44EEee55FFff66GGgg77-0
+    LIBGREP11_IAMAUTH_INSTANCEID: 1234abcd-56ef-78gh-90ij-1234klmn5678
+  type: Opaque
+  ```
+  {: screen}
 
 3. Create the secret in the `openshift-ingress` project.
   ```
