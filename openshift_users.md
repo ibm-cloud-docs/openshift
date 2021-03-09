@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-08"
+lastupdated: "2021-03-09"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -616,9 +616,7 @@ Before you begin, verify that you're assigned the **Administrator** platform acc
     4.  Select **Viewer**.
     5.  Click **Add**.
 
-5.  In the side panel, review the **Access summary** of your changes, and click **Assign**.
-
-6.  For the user to be added, the RBAC permissions must be synced to the cluster. The user who is granted access must [launch the Kubernetes dashboard](/docs/containers?topic=containers-deploy_app#db_gui) to initiate the sync. RBAC permissions are cached, so the sync might not be instantaneous.
+5.  In the side panel, review the **Access summary** of your changes, and click **Assign**. If you assigned a service access role, the role might take a couple minutes to sync with your cluster's RBAC.
 
 ### Assigning {{site.data.keyword.cloud_notm}} IAM roles with the CLI
 {: #add_users_cli}

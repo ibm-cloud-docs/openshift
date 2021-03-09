@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-08"
+lastupdated: "2021-03-09"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -109,6 +109,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 09 March 2021 | **Cluster autoscaler add-on**: Version 1.0.2 of the cluster autoscaler add-on is released. For more formation, see the [cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog). |
 | 07 March 2021 | **Unsupported version**: {{site.data.keyword.openshiftshort}} version 4.3 is unsupported. Update your cluster to [version 4.4](/docs/openshift?topic=openshift-openshift_versions#ocp44), and then to a supported version such as [4.5](/docs/openshift?topic=openshift-openshift_versions#ocp45) as soon as possible.
 | 05 March 2021 | **Trusted images**: You can now [set up trusted content for container images](/docs/openshift?topic=openshift-images#trusted_images) that are signed and stored in {{site.data.keyword.registrylong_notm}}. |
 | 01 March 2021 | <ul><li>**CLI changelog**: Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.233](/docs/openshift?topic=openshift-cs_cli_changelog#10).</li><li>**New! General availability of {{site.data.keyword.satellitelong}}**: With {{site.data.keyword.satellitelong_notm}}, you can bring your own compute infrastructure that is in your on-premises data center, at other cloud providers, or in edge networks as a {{site.data.keyword.satelliteshort}} Location to {{site.data.keyword.cloud_notm}}. Then, you use the capabilities of {{site.data.keyword.satelliteshort}} to run {{site.data.keyword.cloud_notm}} services on this infrastructure, and consistently deploy, manage, and control your app workloads. To get started, [create a location](/docs/satellite?topic=satellite-getting-started). Then, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) on your own infrastructure, and assign your additional hosts as worker nodes in the cluster.</li><li>**Exposing apps in {{site.data.keyword.satelliteshort}} clusters**: Added an overview of the [options for exposing apps in Satellite clusters](/docs/openshift?topic=openshift-sat-expose-apps) and steps for setting up each option.</li><li>**Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.18_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4618_1533), [`4.5.31_1531_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4531_1531), [`4.4.33_1534_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4433_1534_worker), [`4.3.40_1555_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1555_worker), and [`3.11.380_1581_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311380_1581_worker).</li></ul> |
