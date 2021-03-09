@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-08"
+lastupdated: "2021-03-09"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
@@ -117,6 +117,7 @@ To view quota limits on cluster-related resources in your {{site.data.keyword.cl
 | API rate limits | 200 requests per 10 seconds to the {{site.data.keyword.openshiftlong_notm}} API from each unique source IP address. |
 | App deployment | The apps that you deploy to and services that you integrate with your cluster must be able to run on the operating system of the worker nodes. |
 | Container-native virtualization | The {{site.data.keyword.openshiftshort}} [container-native virtualization add-on](https://docs.openshift.com/container-platform/4.5/virt/about-virt.html){: external} to run VM workloads alongside container workloads is not supported by IBM. If you choose to install the add-on yourself, you must use bare metal machines, not virtual machines. You are responsible for resolving any issues and impact to your workloads from using container-native virtualization.|
+| Calico network plug-in | Changing the Calico plug-in, components, or default Calico settings is not supported. For example, do not deploy a new Calico plug-in version, or modify the daemon sets or deployments for the Calico components, default `IPPool` resources, or Calico nodes. Instead, you can follow the documentation to [create a Calico `NetworkPolicy` or `GlobalNetworkPolicy`](/docs/openshift?topic=openshift-network_policies), to [change the Calico MTU](/docs/openshift?topic=openshift-kernel#calico-mtu), or to [disable the port map plug-in for the Calico CNI](/docs/openshift?topic=openshift-kernel#calico-portmap). |
 | Cluster quota | You cannot exceed 100 clusters per region and per [infrastructure provider](/docs/openshift?topic=openshift-infrastructure_providers). If you need more of the resource, [contact IBM Support](/docs/get-support?topic=get-support-using-avatar). In the support case, include the new quota limit for the region and infrastructure provider that you want.|
 | Free clusters | You can create only standard clusters, not free clusters. Instead, you can create a free Kubernetes cluster, and then redeploy the apps that you try out in the Kubernetes cluster to your {{site.data.keyword.openshiftshort}} cluster. |
 | IAM access groups | You cannot scope {{site.data.keyword.cloud_notm}} IAM service access roles to an IAM access group because the roles are not synced to the RBAC roles within the cluster. If you want to scope RBAC roles to a group of users, you must [manually set up groups of users](https://docs.openshift.com/container-platform/4.5/authentication/understanding-authentication.html){: external} in your cluster instead of using IAM access groups. You can still manage individual users and service accounts with IAM service access roles. You can also still scope IAM platform access roles to IAM access groups to control actions like ordering worker nodes, because platform access roles are never synced to RBAC roles. |

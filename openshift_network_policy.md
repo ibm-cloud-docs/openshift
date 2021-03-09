@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-03-09"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -218,6 +218,10 @@ To view, manage, and add Calico policies, install and configure the Calico CLI.
     ...
     ```
     {: screen}
+
+Changing the Calico plug-in, components, or default Calico settings is not supported. For example, do not deploy a new Calico plug-in version, or modify the daemon sets or deployments for the Calico components, default `IPPool` resources, or Calico nodes. Instead, you can follow the documentation to [change the Calico MTU](/docs/openshift?topic=openshift-kernel#calico-mtu) or to [disable the port map plug-in for the Calico CNI](/docs/openshift?topic=openshift-kernel#calico-portmap) if necessary.
+{: important}
+
 <br />
 
 ## Viewing network policies
