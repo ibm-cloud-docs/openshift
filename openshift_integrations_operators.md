@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-04"
+lastupdated: "2021-03-09"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -233,7 +233,27 @@ In {{site.data.keyword.openshiftshort}} clusters that run version 4, operators a
 
 <br />
 
+## Disabling and mirroring OperatorHub catalog source images
+{: #mirror-operatorhub}
 
+You can disable and mirror the OperatorHub catalog source images by following the [Operator Lifecycle Manager (OLM) on restricted networks documentation from Red Hat](https://docs.openshift.com/container-platform/4.6/operators/admin/olm-restricted-networks.html){: external}. 
+{: shortdesc}
+
+To understand why you might disable and mirror the catalog, consider the following scenarios.
+* For private clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later: The Red Hat-provided OperatorHub source images require access to the `registry.redhat.io` and `quay.io` registries. If your cluster runs on a restricted network, such as in a VPC without a public gateway or classic worker nodes on only a private VLAN, these images are not accessible
+* You want to restrict the catalog content that is available to your cluster users in OperatorHub.
+
+Before you begin:
+* Make sure that you have the **Manager** service role to the cluster in all namespaces in {{site.data.keyword.cloud_notm}} IAM.
+* [Install the `opm` command-line interface](https://docs.openshift.com/container-platform/4.6/cli_reference/opm-cli.html#opm-cli){: external}, including its prerequisite tools such as `podman`.
+* Have a Red Hat account with credentials to pull images from the `registry.redhat.io` and `quay.io` registries, or use the [default global pull secret](/docs/openshift?topic=openshift-registry#cluster_global_pull_secret).
+
+To disable and mirror the OperatorHub source images:
+1. Disable the catalog sources as described in [Disabling the default OperatorHub sources](https://docs.openshift.com/container-platform/4.6/operators/admin/olm-restricted-networks.html#olm-restricted-networks-operatorhub_olm-restricted-networks){: external}.
+2.  **Optional**: Prune the catalog index to a select list of packages as described in [Pruning an index image](https://docs.openshift.com/container-platform/4.6/operators/admin/olm-restricted-networks.html#olm-pruning-index-image_olm-restricted-networks){: external}. You might prune the catalog to control what images your cluster users can install and to reduce the size of the images in your registry.
+3.  Mirror the catalog to your compatible registry, such as {{site.data.keyword.registrylong_notm}}, as described in [Mirroring an Operator catalog](https://docs.openshift.com/container-platform/4.6/operators/admin/olm-restricted-networks.html#olm-mirror-catalog_olm-restricted-networks){: external}.
+
+<br />
 
 ## Using Operators in 3.11 clusters
 {: #operators_311}

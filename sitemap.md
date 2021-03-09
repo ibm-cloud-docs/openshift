@@ -1412,6 +1412,7 @@ subcollection: openshift
 
 [Adding services by using Operators](/docs/openshift?topic=openshift-operators)
 * [Using Operators in version 4 clusters](/docs/openshift?topic=openshift-operators#operators_4)
+* [Disabling and mirroring OperatorHub catalog source images](/docs/openshift?topic=openshift-operators#mirror-operatorhub)
 * [Using Operators in 3.11 clusters](/docs/openshift?topic=openshift-operators#operators_311)
 * [Using the service catalog in 3.11 clusters](/docs/openshift?topic=openshift-operators#service_catalog)
 
