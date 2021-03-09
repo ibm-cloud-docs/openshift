@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-03-08"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -134,7 +134,7 @@ Have you created a cluster before and are just looking for quick example command
    ibmcloud oc cluster create classic --name cloud_pak_cluster --version 4.5_openshift --zone dal10 --flavor b3c.4x16 --hardware dedicated --workers 3 --entitlement cloud_pak --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
    ```
    {: pre}
-*  For a classic multizone cluster, after you created the cluster in a [multizone metro](/docs/openshift?topic=openshift-regions-and-zones#zones), [add zones](/docs/openshift?topic=openshift-add_workers#add_zone):
+*  For a classic multizone cluster, after you created the cluster in a [multizone metro](/docs/openshift?topic=openshift-regions-and-zones#zones-mz), [add zones](/docs/openshift?topic=openshift-add_workers#add_zone):
    ```
    ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
    ```
@@ -148,7 +148,7 @@ Have you created a cluster before and are just looking for quick example command
     ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.5_openshift --zone us-east-1 --vpc-id <VPC_ID> --subnet-id <VPC_SUBNET_ID> --cos-instance <COS_CRN>--flavor b2.4x16 --workers 3
     ```
     {: pre}
-*  For a VPC multizone cluster, after you created the cluster in a [multizone metro](/docs/openshift?topic=openshift-regions-and-zones#zones), [add zones](/docs/openshift?topic=openshift-add_workers#vpc_add_zone):
+*  For a VPC multizone cluster, after you created the cluster in a [multizone metro](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc), [add zones](/docs/openshift?topic=openshift-add_workers#vpc_add_zone):
    ```
    ibmcloud oc zone add vpc-gen2 --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --subnet-id <VPC_SUBNET_ID>
    ```
@@ -171,7 +171,7 @@ Prepare your {{site.data.keyword.cloud_notm}} account for {{site.data.keyword.co
   1. From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external} menu bar, click **Manage > Access (IAM)**.
   2. Click the **Users** page, and then from the table, select yourself.
   3. From the **Access policies** tab, confirm that you [have the required permissions to create clusters](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions).
-  <p class="tip">Make sure that your account administrator does not assign you the **Administrator** platform role at the same time as scoping the access policy to a namespace.</p>
+  <p class="tip">Make sure that your account administrator does not assign you the **Administrator** platform access role at the same time as scoping the access policy to a namespace.</p>
 
 4. If your account uses multiple resource groups, figure out your account's strategy for [managing resource groups](/docs/openshift?topic=openshift-users#resource_groups).
   * The cluster is created in the resource group that you target when you log in to {{site.data.keyword.cloud_notm}}. If you do not target a resource group, the default resource group is automatically targeted. Free clusters are created in the `default` resource group.
@@ -207,7 +207,7 @@ The following image walks you through choosing the setup that you want for your 
     <area target="" alt="Free and standard cluster comparison" title="Free and standard cluster comparison" href="/docs/containers?topic=containers-cs_ov#cluster_types" coords="43,9,361,106" shape="rect">
     <area target="" alt="OpenShift and Kubernetes comparison" title="OpenShift and Kubernetes comparison" href="/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes" coords="110,128,467,224" shape="rect">
     <area target="" alt="VPC and classic infrastructure comparison" title="VPC and classic infrastructure comparison" href="/docs/containers?topic=containers-infrastructure_providers" coords="60,252,398,352" shape="rect">
-    <area target="" alt="Locations" title="Locations" href="/docs/openshift?topic=openshift-regions-and-zones#zones" coords="101,377,564,456" shape="rect">
+    <area target="" alt="Locations" title="Locations" href="/docs/openshift?topic=openshift-regions-and-zones#zones-mz" coords="101,377,564,456" shape="rect">
     <area target="" alt="Virtual Machines" title="Virtual Machines" href="/docs/openshift?topic=openshift-planning_worker_nodes#vm" coords="105,488,564,538" shape="rect">
     <area target="" alt="Bare metal machines" title="Bare metal machines" href="/docs/openshift?topic=openshift-planning_worker_nodes#bm" coords="566,569,372,546" shape="rect">
     <area target="" alt="VPC scenarios" title="VPC scenarios" href="/docs/openshift?topic=openshift-plan_clusters#vpc-scenarios" coords="104,597,298,675" shape="rect">
@@ -300,7 +300,7 @@ The following image walks you through choosing the setup that you want for your 
       ```
       {: pre} 
 
-3. Review the zones where you can create your cluster. In the output of the following command, zones have a **Location Type** of `dc`. To span your cluster across zones, you must create the cluster in a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones). Multizone-capable zones have a metro value in the **Multizone Metro** column. If you want to create a multizone cluster, you can use the {{site.data.keyword.cloud_notm}} console, or [add more zones](/docs/openshift?topic=openshift-add_workers#add_zone) to your cluster after the cluster is created.
+3. Review the zones where you can create your cluster. In the output of the following command, zones have a **Location Type** of `dc`. To span your cluster across zones, you must create the cluster in a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones-mz). Multizone-capable zones have a metro value in the **Multizone Metro** column. If you want to create a multizone cluster, you can use the {{site.data.keyword.cloud_notm}} console, or [add more zones](/docs/openshift?topic=openshift-add_workers#add_zone) to your cluster after the cluster is created.
     ```
     ibmcloud oc locations
     ```
@@ -449,7 +449,7 @@ The following image walks you through choosing the setup that you want for your 
    Every worker node is assigned a unique worker node ID and domain name that must not be changed manually after the cluster is created. Changing the ID or domain name prevents the {{site.data.keyword.openshiftshort}} master from managing your cluster.
    {: important}
 
-9. **Optional**: If you created your cluster in a [multizone metro location](/docs/openshift?topic=openshift-regions-and-zones#zones), you can [spread the default worker pool across zones](/docs/openshift?topic=openshift-add_workers#add_zone) to increase the cluster's availability.
+9. **Optional**: If you created your cluster in a [multizone metro location](/docs/openshift?topic=openshift-regions-and-zones#zones-mz), you can [spread the default worker pool across zones](/docs/openshift?topic=openshift-add_workers#add_zone) to increase the cluster's availability.
 
 10. After your cluster is created, you can [begin working with your cluster by configuring your CLI session](/docs/openshift?topic=openshift-access_cluster).
 
@@ -493,7 +493,7 @@ Your VPC cluster is created with both a public and a private service endpoint. W
 4. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Create cluster**.
 5. Configure your cluster environment.
    1. Select the **Standard** cluster plan.
-   2. From the {{site.data.keyword.openshiftshort}} drop-down list, select the version that you want to use in your cluster. You must choose **{{site.data.keyword.openshiftshort}} 4.3 or later**.
+   2. From the {{site.data.keyword.openshiftshort}} drop-down list, select the version that you want to use in your cluster. You must choose **{{site.data.keyword.openshiftshort}} 4.4 or later**.
    3. **Optional**: For the **OCP entitlement** section, you can select an entitlement for a worker pool, if you have one. In most cases, leave the value set to **Purchase additional licenses for this worker pool**. If you have an {{site.data.keyword.cloud_notm}} Pak with an {{site.data.keyword.openshiftshort}} entitlement that you want to use, you can select **Apply my Cloud Pak OCP entitlement to this worker pool**. Later, when you configure the worker pool, make sure to select only the flavor and number of worker nodes that your entitlement permits.
    3. Select **VPC** infrastructure.
    4. From the **Virtual private cloud** drop-down menu, select the **Gen 2** VPC that you created earlier.
@@ -664,7 +664,7 @@ Your VPC cluster is created with both a public and a private service endpoint. W
    Every worker node is assigned a unique worker node ID and domain name that must not be changed manually after the cluster is created. Changing the ID or domain name prevents the {{site.data.keyword.openshiftshort}} master from managing your cluster.
    {: important}
 
-8. **Optional**: If you created your cluster in a [multizone metro location](/docs/openshift?topic=openshift-regions-and-zones#zones), you can [spread the default worker pool across zones](/docs/openshift?topic=openshift-add_workers#vpc_add_zone) to increase the cluster's availability.
+8. **Optional**: If you created your cluster in a [multizone metro location](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc), you can [spread the default worker pool across zones](/docs/openshift?topic=openshift-add_workers#vpc_add_zone) to increase the cluster's availability.
 
 9. After your cluster is created, you can [begin working with your cluster by configuring your CLI session](/docs/openshift?topic=openshift-access_cluster).
 

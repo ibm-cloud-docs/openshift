@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-05"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -144,7 +144,7 @@ In most cases, you can use the {{site.data.keyword.openshiftshort}} web console 
 
 Choose from the following options.
 *   **Log in as admin**:
-    1.  Make sure that you have the [**Administrator** platform role for the cluster](/docs/openshift?topic=openshift-users#add_users).
+    1.  Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
     2.  Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
         ```
         ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
@@ -272,7 +272,7 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
 
 5. To log in to your cluster, choose from the following options.
   * **Log in as admin**:
-      1.  Make sure that you have the [**Administrator** platform role for the cluster](/docs/openshift?topic=openshift-users#add_users).
+      1.  Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
       2.  Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
           ```
           ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --endpoint private
@@ -414,7 +414,7 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
 
 7. Log in to your cluster by choosing from one of the following options.
   * **Log in as admin**:
-      1.  Make sure that you have the [**Administrator** platform role for the cluster](/docs/openshift?topic=openshift-users#add_users).
+      1.  Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
       2.  Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
           ```
           ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --endpoint private
@@ -531,7 +531,7 @@ You can quickly access your {{site.data.keyword.openshiftlong_notm}} cluster fro
 </br>
 If you cannot or do not want to open the {{site.data.keyword.openshiftshort}} console, choose among the following options to log in to your {{site.data.keyword.openshiftlong_notm}} cluster by using the CLI.
 *   **Log in as admin**:
-    1.  Make sure that you have the [**Administrator** IAM platform role for the cluster](/docs/openshift?topic=openshift-users#add_users).
+    1.  Make sure that you have the [**Administrator** IAM platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
     2.  Set your command line context for the cluster and download the TLS certificates and permission files for the administrator. For more information, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config).
         ```
         ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
@@ -545,7 +545,7 @@ If you cannot or do not want to open the {{site.data.keyword.openshiftshort}} co
 If you are connected to the {{site.data.keyword.cloud_notm}} private network, you can use the {{site.data.keyword.satelliteshort}} Link endpoint that is automatically generated for your cluster. This endpoint allows you to connect through the secured Link tunnel server to the cluster's master in your location control plane. The endpoint consists of the Link tunnel server hostname and a node port, which is formatted such as `c-02.<region>.link.satellite.cloud.ibm.com:<port>`.
 {: shortdesc}
 
-1.  Make sure that you have the [**Administrator** IAM platform role for the cluster](/docs/openshift?topic=openshift-users#add_users).
+1.  Make sure that you have the [**Administrator** IAM platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
 2.  Set your command line context for the cluster by using the Link endpoint and download the TLS certificates and permission files for the administrator. For more information, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config).
     ```
     ibmcloud oc cluster config -c <cluster_name_or_ID> --endpoint link --admin
@@ -744,7 +744,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     </tr>
     <tr>
     <td><code>--roles <em>&lt;service_access_role&gt;</em></code></td>
-    <td>Required. Enter the access role that you want the service ID to have to your {{site.data.keyword.openshiftshort}} cluster. [Platform roles](/docs/openshift?topic=openshift-access_reference#iam_platform) permit cluster management activities such as creating worker nodes. [Service roles](/docs/openshift?topic=openshift-access_reference#service) correspond to RBAC roles that permit {{site.data.keyword.openshiftshort}} management activities within the cluster, such as for Kubernetes resources like pods and namespaces. For multiple roles, include a comma-separated list. Possible values are `Administrator`, `Operator`, `Editor`, and `Viewer` (platform roles); and `Reader`, `Writer`, and `Manager` (service roles).</td>
+    <td>Required. Enter the access role that you want the service ID to have to your {{site.data.keyword.openshiftshort}} cluster. [platform access roles](/docs/openshift?topic=openshift-access_reference#iam_platform) permit cluster management activities such as creating worker nodes. [service access roles](/docs/openshift?topic=openshift-access_reference#service) correspond to RBAC roles that permit {{site.data.keyword.openshiftshort}} management activities within the cluster, such as for Kubernetes resources like pods and namespaces. For multiple roles, include a comma-separated list. Possible values are `Administrator`, `Operator`, `Editor`, and `Viewer` (platform access roles); and `Reader`, `Writer`, and `Manager` (service access roles).</td>
     </tr>
     <tr>
       <td><code>--service-instance <em>&lt;cluster_ID&gt;</em></code></td>
@@ -788,13 +788,13 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     {: pre}
 6.  Verify that the service ID can perform the actions that you authorized.
 
-    Example: If you assigned a `Reader` service role, the service ID can list pods in your {{site.data.keyword.openshiftshort}} project.
+    Example: If you assigned a `Reader` service access role, the service ID can list pods in your {{site.data.keyword.openshiftshort}} project.
     ```
     oc get pods
     ```
     {: pre}
 
-    Example: If you assigned a `Manager` service role, the service ID can list the users in your {{site.data.keyword.openshiftshort}} cluster. The ID of your IAM service ID is in the **Identities** output. Other individual users might be identified by their email address and IBMid.
+    Example: If you assigned a `Manager` service access role, the service ID can list the users in your {{site.data.keyword.openshiftshort}} cluster. The ID of your IAM service ID is in the **Identities** output. Other individual users might be identified by their email address and IBMid.
     ```
     oc get users
     ```
@@ -837,7 +837,7 @@ Keep in mind the following considerations when you configure a webhook.
 
 **What other types of apps use admission controllers?**
 
-Many cluster add-ons, plug-ins, and other third-party extensions create custom admission controllers. Some common ones include:
+Many cluster add-ons, plug-ins, and other third-party extensions use admission controllers. Some common ones include:
 *   [Portieris](https://github.com/IBM/portieris){: external}
 
 <br>

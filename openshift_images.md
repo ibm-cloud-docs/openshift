@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-22"
+  years: 2014, 2021
+lastupdated: "2021-03-05"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -457,3 +457,18 @@ Vulnerability Advisor checks the security status of container images that are pr
 When you add an image to a namespace, the image is automatically scanned by Vulnerability Advisor to detect security issues and potential vulnerabilities. If security issues are found, instructions are provided to help fix the reported vulnerability. To get started, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).
 
 <br />
+
+## Setting up trusted content for container images
+{: #trusted_images}
+
+You can build containers from trusted images that are signed and stored in {{site.data.keyword.registrylong_notm}}, and prevent deployments from unsigned or vulnerable images.
+{: shortdesc}
+
+1.  [Sign images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent). After you set up trust for your images, you can manage trusted content and signers that can push images to your registry.
+3.  Cluster users can deploy apps that are built from trusted images.
+    1. [Deploy to the `default` Kubernetes namespace](/docs/openshift?topic=openshift-images#namespace).
+    2. [Deploy to a different Kubernetes namespace, or from a different {{site.data.keyword.cloud_notm}} region or account](/docs/openshift?topic=openshift-registry#other).
+
+<br />
+
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-17"
+lastupdated: "2021-03-09"
 
 keywords: autoscaler, add-on, autoscaler changelog
 
@@ -103,10 +103,35 @@ View information for patch updates to the cluster autoscaler add-on in your {{si
 
 Refer to the following tables for a summary of changes for each version of the [cluster autoscaler add-on](/docs/openshift?topic=openshift-ca).
 
+Version `1.0.1` of {{site.data.keyword.block_storage_is_short}} add-on is deprecated. If your cluster runs a deprecated or unsupported add-on version, update your cluster to the latest version. You can update the add-on by disabling and re-enabling it. Disable the add-on by running the `ibmcloud oc cluster addon disable cluster-autoscaler --cluster <cluster-name>` command. Then, re-enable by running the `ibmcloud oc cluster addon enable cluster-autoscaler --cluster <cluster-name>` command.
+{: important}
+
 | Cluster autoscaler add-on version | Supported? | {{site.data.keyword.openshiftshort}} version support |
 | -------------------- | -----------|--------------------------- |
-| 1.0.1 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6</li></ul> |
+| 1.0.2 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6</li></ul> |
+| 1.0.1 | | {{site.data.keyword.openshiftshort}} 4.3 - 4.6</li></ul> |
 {: summary="The rows are read from left to right. The first column is the cluster autoscaler add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the cluster autoscaler version is supported for."}
+
+## Changelog for 1.0.2, released 08 March 2021
+{: #0102_ca_addon}
+
+The following table shows the changes that are included in version 1.0.2 of the managed cluster autoscaler add-on.
+{: shortdesc}
+
+To view a list of add-ons and the supported {{site.data.keyword.openshiftshort}} versions, run the following command.
+```
+ibmcloud oc addon-versions
+```
+{: pre}
+
+| Patch version | Image tags | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
+| --- | --- | --- | --- | --- |
+| `1.0.2_224` | <ul><li>`1.16.7-0`</li><li>`1.17.4-0`</li><li>`1.18.3-0`</li><li>`1.19.1-0`</li><li>`1.20.0-0`</li></ul> | 09 March 2021 | 4.3 - 4.6</li></ul> | Adds support for Kubernetes version 1.20. |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Cluster autoscaler 1.0.2" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the patch version of the component. The second column lists the image tags of the component. The third column contains the release date of the component. The fourth column contains a brief description of the change made to the component."}
+
 
 ## Changelog for 1.0.1, released 15 August 2020
 {: #0101_ca_addon}

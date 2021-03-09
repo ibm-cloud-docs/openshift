@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-03-08"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -177,7 +177,7 @@ However, if the bucket fails to create when you create your cluster, you must ma
 
 To manually create a bucket for your internal registry, see [Cluster create error about cloud object storage bucket](/docs/openshift?topic=openshift-cs_troubleshoot#ts_cos_bucket_cluster_create).
 
-For clusters that run {{site.data.keyword.openshiftshort}} version 4.3 or 4.4, you might need to [modify the default configuration](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts-app-ocr-vpc-push) so that external sources outside the VPC, such as a CI/CD process, can push images to the internal registry.
+For clusters that run {{site.data.keyword.openshiftshort}} version 4.4, you might need to [modify the default configuration](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts-app-ocr-vpc-push) so that external sources outside the VPC, such as a CI/CD process, can push images to the internal registry.
 
 ### Classic: Storing images in the internal registry
 {: #storage_internal_registry}
@@ -304,7 +304,7 @@ By default, your {{site.data.keyword.openshiftshort}} cluster has an internal re
 {: shortdesc}
 
 Before you begin:
-*  Confirm that you have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service role](/docs/openshift?topic=openshift-access_reference#service) for the cluster.
+*  Confirm that you have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-access_reference#service) for the cluster.
 *  Make sure that your cluster has public network connectivity to expose the internal registry with a public route.
 *  Install Docker on your local machine.
 *  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -728,12 +728,12 @@ New {{site.data.keyword.openshiftlong_notm}} clusters store an API key in [image
 **Before you begin**:
 *   [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 *   Make sure that you have the following permissions:
-    *   {{site.data.keyword.cloud_notm}} IAM **Operator or Administrator** platform role for {{site.data.keyword.openshiftlong_notm}}. The account owner can give you the role by running:
+    *   {{site.data.keyword.cloud_notm}} IAM **Operator or Administrator** platform access role for {{site.data.keyword.openshiftlong_notm}}. The account owner can give you the role by running:
         ```
         ibmcloud iam user-policy-create <your_user_email> --service-name containers-kubernetes --roles <(Administrator|Operator)>
         ```
         {: pre}
-    *   {{site.data.keyword.cloud_notm}} IAM **Administrator** platform role for {{site.data.keyword.registrylong_notm}}, across all regions and resource groups. The policy cannot be scoped to a particular region or resource group. The account owner can give you the role by running:
+    *   {{site.data.keyword.cloud_notm}} IAM **Administrator** platform access role for {{site.data.keyword.registrylong_notm}}, across all regions and resource groups. The policy cannot be scoped to a particular region or resource group. The account owner can give you the role by running:
         ```
         ibmcloud iam user-policy-create <your_user_email> --service-name container-registry --roles Administrator
         ```
@@ -747,7 +747,7 @@ New {{site.data.keyword.openshiftlong_notm}} clusters store an API key in [image
     ibmcloud oc cluster ls
     ```
     {: pre}
-2.  Run the following command to create a service ID for the cluster and assign the service ID an IAM **Reader** service role for {{site.data.keyword.registrylong_notm}}. The command also creates an API key to impersonate the service ID credentials and stores the API key in a Kubernetes image pull secret in the cluster. The image pull secret is in the `default` {{site.data.keyword.openshiftshort}} project.
+2.  Run the following command to create a service ID for the cluster and assign the service ID an IAM **Reader** service access role for {{site.data.keyword.registrylong_notm}}. The command also creates an API key to impersonate the service ID credentials and stores the API key in a Kubernetes image pull secret in the cluster. The image pull secret is in the `default` {{site.data.keyword.openshiftshort}} project.
     ```
     ibmcloud oc cluster pull-secret apply --cluster <cluster_name_or_ID>
     ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-05"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -128,7 +128,7 @@ Use the {{site.data.keyword.cloud_notm}} console to create your {{site.data.keyw
 8.  Click **Create**. When you create the cluster, the cluster master is automatically created in your {{site.data.keyword.satelliteshort}} location control plane, and your worker pool is automatically assigned available hosts that match your worker node request.
 9. Wait for the cluster to reach a **Normal** state.
 
-    If you do not have any available and matching hosts in your {{site.data.keyword.satelliteshort}} location, the cluster is still created but enters a **Warning** state. [Attach hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) to your {{site.data.keyword.satelliteshort}} location so that hosts can be assigned as worker nodes to the worker pool. If the hosts are not automatically assigned, you can also manually [assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-hosts#host-assign).
+    If you do not have any available and matching hosts in your {{site.data.keyword.satelliteshort}} location, the cluster is still created but enters a **Warning** state. [Attach hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) to your {{site.data.keyword.satelliteshort}} location so that hosts can be assigned as worker nodes to the worker pool. If the hosts are not automatically assigned, you can also manually [assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-hosts#host-assign). Ensure that hosts are assigned as worker nodes in each zone of your default worker pool.
     {: note}
 10. From the [{{site.data.keyword.openshiftlong_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), verify that your cluster reaches a **Normal** state.
 11. [Access your cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat) to access the {{site.data.keyword.openshiftshort}} web console or to run `oc` and `kubectl` commands from the CLI. Note that if your location hosts have private network connectivity only, or if you use Amazon Web Services, Google Cloud Platform, or Microsoft Azure hosts, you must be connected to your hosts' private network, such as through VPN access, to connect to your cluster and access the {{site.data.keyword.openshiftshort}} web console. Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's and location's DNS records to [use your hosts' public IP addresses](/docs/openshift?topic=openshift-access_cluster#sat_public_access).
@@ -255,7 +255,7 @@ Create a worker pool in your {{site.data.keyword.satelliteshort}} cluster with h
 {: shortdesc}
 
 **Before you begin**:
-*   Make sure that you have the **Operator** platform role to **Kubernetes Service** for the cluster in {{site.data.keyword.cloud_notm}} IAM.
+*   Make sure that you have the **Operator** platform access role to **Kubernetes Service** for the cluster in {{site.data.keyword.cloud_notm}} IAM.
 *   Optional: [Attach](/docs/satellite?topic=satellite-hosts#attach-hosts) or [list available](/docs/satellite?topic=satellite-satellite-cli-reference#host-ls) hosts to your {{site.data.keyword.satelliteshort}} location with host labels that match your worker pool. Then, after you create your worker pool, these available hosts can be automatically assigned to the worker pool.
 
 **To create a worker pool in a {{site.data.keyword.satelliteshort}} cluster**:
@@ -326,7 +326,7 @@ Follow the same process as [Updating classic worker nodes](/docs/openshift?topic
 You can add zones to a worker pool. Available {{site.data.keyword.satelliteshort}} hosts with a zone label can be assigned only to that zone in the worker pool.
 {: shortdesc}
 
-* For more information about zones in {{site.data.keyword.satelliteshort}}, see [{{site.data.keyword.satelliteshort}} concepts](/docs/satellite?topic=satellite-about#location-concept).
+* For more information about zones in {{site.data.keyword.satelliteshort}}, see [{{site.data.keyword.satelliteshort}} concepts](/docs/satellite?topic=satellite-infrastructure-plan).
 * To add a zone, see the [`ibmcloud oc zone add satellite` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat).
 
 #### Removing a {{site.data.keyword.satelliteshort}} worker pool

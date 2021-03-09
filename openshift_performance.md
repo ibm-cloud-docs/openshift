@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-03-09"
 
 keywords: openshift, rhoks, roks, rhos, kernel
 
@@ -137,7 +137,7 @@ If you have specific performance optimization requirements, you can change the d
 
 Worker nodes are automatically provisioned with optimized kernel performance, but you can change the default settings by applying a custom [Kubernetes `DaemonSet`](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/){: external} with an [`initContainer`](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/){: external} to your cluster. The daemon set modifies the settings for all existing worker nodes and applies the settings to any new worker nodes that are provisioned in the cluster. The init container makes sure that these modifications occur before other pods are scheduled on the worker node. No pods are affected.
 
-You must have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service role](/docs/openshift?topic=openshift-users#platform) for all namespaces to run the sample privileged `initContainer`. After the containers for the deployments are initialized, the privileges are dropped.
+You must have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#platform) for all namespaces to run the sample privileged `initContainer`. After the containers for the deployments are initialized, the privileges are dropped.
 {: note}
 
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -233,13 +233,11 @@ Increase or decrease the Calico plug-in maximum transmission unit (MTU) to meet 
 
 By default, the Calico network plug-in in your {{site.data.keyword.openshiftlong_notm}} cluster has an MTU of 1480 bytes. For most cases, this default MTU value provides sufficient throughput for packets that are sent and received in your network workloads. Review the following cases in which you might need to modify the default Calico MTU:
 
-* If your cluster uses bare metal worker nodes, and you use jumbo frames on the bare metal worker nodes, the jumbo frames have an MTU value in the range of 1500 to 9000. To ensure that Calico can handle this throughput, you can increase the Calico MTU to match the MTU of the jumbo frames. Note that all worker nodes in the cluster must use the same Calico MTU, so to increase the Calico MTU, all worker nodes in the cluster must be bare metal and use jumbo frames.
+* If your cluster uses bare metal worker nodes, and you use jumbo frames on the bare metal worker nodes, the jumbo frames have an MTU value in the range of 1500 to 9000. To ensure that your cluster's pod network can use this higher MTU value, you can increase the Calico MTU to 20 bytes lower than the jumbo frame MTU. This 20 byte difference allows space for packet header on encapsulated packets. For example, if your worker nodes' jumbo frames are set to 9000, you can set the Calico MTU to 8980. Note that all worker nodes in the cluster must use the same Calico MTU, so to increase the Calico MTU, all worker nodes in the cluster must be bare metal and use jumbo frames.
 * If you have a VPN connection set up for your cluster, some VPN connections require a smaller Calico MTU than the default. Check with the VPN service to determine whether a smaller Calico MTU is required. 
 
 To run your {{site.data.keyword.openshiftshort}} cluster, make sure that the MTU is equal to or greater than 1450 bytes.
 {: important} 
-
-You can change the MTU on the tunnel interface `tunl0`, which is used for pod to pod communication, and the MTU on the `caliXXXXXXXX` `veth` interface of each worker node.
 
 
 
@@ -298,14 +296,14 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
 
 2. In the `data` section, add a `calico_mtu_override: "<new_MTU>"` field and specify the new MTU value for Calico. Note that the quotation marks (`"`) around the new MTU value are required.
 
-    Do not change the values of `mtu` or `veth_mtu`.
+    Do not change the values of `mtu` or `veth_mtu`. Changing any other settings besides the `calico_mtu_override` field for the Calico plug-in in this configmap is not supported.
     {: important}
 
     ```yaml
     apiVersion: v1
     data:
       calico_backend: bird
-      calico_mtu_override: "1600"
+      calico_mtu_override: "8980"
       cni_network_config: |-
         {
           "name": "k8s-pod-network",
@@ -381,7 +379,7 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
     etcd_endpoints: https://172.20.0.1:2041
     etcd_key: /calico-secrets/etcd-key
     typha_service_name: none
-    veth_mtu: "1600"
+    veth_mtu: "8980"
   kind: ConfigMap
   ...
   ```
@@ -401,6 +399,8 @@ When you have a large number of services in your cluster, such as more than 500 
 
 If you must use `hostPorts`, do not disable the port map plug-in.
 {: note}
+
+
 
 ### Disabling the port map plug-in for version 4 clusters
 {: #calico-portmap-43}
@@ -488,6 +488,9 @@ Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.da
     ...
   ```
   {: codeblock}
+
+  Changing any other settings for the Calico plug-in in this configmap is not supported.
+  {: important}
 
 3. Apply the change to your cluster by restarting all `calico-node` pods.
     1. Get the names of the `calico-node` pods in your cluster.

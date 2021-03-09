@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-01-11"
+lastupdated: "2021-03-05"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -130,7 +130,7 @@ The following list of the cluster management events are sent to {{site.data.keyw
 | `containers-kubernetes.logging-autoupdate.changed` | The logging add-on auto updater is enabled or disabled. |
 | `containers-kubernetes.masterlog-retrieve` | A master log collection for the cluster is requested. |
 | `containers-kubernetes.masterlog-status` | The status for the most recent master log collection is requested. |
-| `containers-kubnertes.cluster.rbac.update` | The service is updating IAM information such as service roles for the cluster. This event is not triggered by a specific API method, but happens periodically in the background. |
+| `containers-kubnertes.cluster.rbac.update` | The service is updating IAM information such as service access roles for the cluster. This event is not triggered by a specific API method, but happens periodically in the background. |
 | `containers-kubernetes.service.create` | An {{site.data.keyword.cloud_notm}} service is bound to a cluster. |
 | `containers-kubernetes.service.delete` | An {{site.data.keyword.cloud_notm}} service is unbound from a cluster. |
 | `containers-kubernetes.subnet.add` | An existing IBM Cloud infrastructure subnet is added to a cluster. |
@@ -298,7 +298,7 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 | Oslo (osl01) | Frankfurt |
 | Paris (par01) | Frankfurt |
 | London (lon02, lon04, lon05, lon06) | London |
-| Sydney (syd01, syd04, syd05) | Sydney |
+| Sydney (syd01, syd04, syd05) | Tokyo |
 | Chennai (che01) | Tokyo |
 | Hong Kong SAR of the PRC (hkg02) | Tokyo |
 | Seoul (seo01) | Tokyo |
@@ -316,7 +316,7 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 | Washington, D.C. (us-east-1, us-east-2, us-east-3) | Dallas |
 | Frankfurt (eu-de-1, eu-de-2, eu-de-3) | Frankfurt |
 | London (eu-gb-1, eu-gb-2, eu-gb-3) | London |
-| Sydney (au-syd-1, au-syd-2, au-syd-3) | Sydney |
+| Sydney (au-syd-1, au-syd-2, au-syd-3) | Tokyo |
 | Tokyo (jp-tok-1, jp-tok-2, jp-tok-3) | Tokyo |
 {: class="simple-tab-table"}
 {: caption="Corresponding {{site.data.keyword.at_short}} instance and {{site.data.keyword.openshiftlong_notm}} cluster locations." caption-side="top"}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-22"
+  years: 2014, 2021
+lastupdated: "2021-03-08"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -98,7 +98,7 @@ subcollection: openshift
 Deploy the {{site.data.keyword.cloud_notm}} HPCS Router to encrypt routes with a private key that is stored in an [{{site.data.keyword.cloud}} {{site.data.keyword.hscrypto}} instance](/docs/hs-crypto?topic=hs-crypto-get-started).
 {: shortdesc}
 
-<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.cloud_notm}} HPCS Router support is for clusters that run {{site.data.keyword.openshiftshort}} version 4.5 and later only. To set up routes for {{site.data.keyword.openshiftshort}} version 4.3 or 4.4, you must [use the default router to expose apps](/docs/openshift?topic=openshift-openshift_routes). To set up routes for {{site.data.keyword.openshiftshort}} version 3.11, see [Exposing apps with routes in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-routes-311).
+<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.cloud_notm}} HPCS Router support is for clusters that run {{site.data.keyword.openshiftshort}} version 4.5 and later only. To set up routes for {{site.data.keyword.openshiftshort}} version 4.4, you must [use the default router to expose apps](/docs/openshift?topic=openshift-openshift_routes). To set up routes for {{site.data.keyword.openshiftshort}} version 3.11, see [Exposing apps with routes in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-routes-311).
 {: important}
 
 {{site.data.keyword.hscrypto}} allows you to securely create, store, and manage encryption keys in {{site.data.keyword.cloud_notm}}. A private key that is stored in an {{site.data.keyword.hscrypto}} instance can be used by an {{site.data.keyword.openshiftshort}} router in [TLS session establishment](/docs/hs-crypto?topic=hs-crypto-use-cases#ssl-offloading) and in Certificate Signing Request (CSR) signing. To access {{site.data.keyword.hscrypto}}, an {{site.data.keyword.openshiftshort}} router must use the [OpenSSL Engine](https://github.com/openssl/openssl/blob/OpenSSL_1_1_1-stable/README.ENGINE){: external} `grep11` to make calls to the [Enterprise PKCS #11 over gRPC (GREP11) API](/docs/hs-crypto?topic=hs-crypto-introduce-cloud-hsm#access-cloud-hsm-grep11). However, the default router in {{site.data.keyword.openshiftlong_notm}} version 4 clusters cannot be configured to use an alternative OpenSSL Engine integration.
@@ -119,7 +119,7 @@ Before you begin, complete the following {{site.data.keyword.hscrypto}} and {{si
 {: shortdesc}
 
 1. [Provision an {{site.data.keyword.hscrypto}} instance](/docs/hs-crypto?topic=hs-crypto-get-started).
-2. Make sure that you have the {{site.data.keyword.cloud_notm}} IAM [**Administrator** platform role](/docs/containers?topic=containers-users#platform) for {{site.data.keyword.containershort_notm}} for the cluster and the [**Manager** service role](/docs/containers?topic=containers-users#platform) {{site.data.keyword.containershort_notm}} for the cluster in all namespaces (projects).
+2. Make sure that you have the {{site.data.keyword.cloud_notm}} IAM [**Administrator** platform access role](/docs/containers?topic=containers-users#platform) for {{site.data.keyword.containershort_notm}} for the cluster and the [**Manager** service access role](/docs/containers?topic=containers-users#platform) {{site.data.keyword.containershort_notm}} for the cluster in all namespaces (projects).
 3. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that the {{site.data.keyword.cloud_notm}} HPCS Router is supported only for {{site.data.keyword.openshiftshort}} version 4.5 and later.
 
 ## Step 1: Set up default router sharding
@@ -208,7 +208,7 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to create a router
 1. Get the following values for your {{site.data.keyword.hscrypto}} instance:
   * [The service instance ID](/docs/hs-crypto?topic=hs-crypto-retrieve-instance-ID)
   * [The API key for the service instance ID](/docs/account?topic=account-serviceidapikeys#create_service_key)
-  * [The API endpoint URL and port that your service instance uses for key management operations](https://cloud.ibm.com/apidocs/hs-crypto#getinstance)
+  * [The `ep11` endpoint URL and port that your service instance uses for key management operations](https://cloud.ibm.com/apidocs/hs-crypto#getinstance)
 
 2. Create a Kubernetes secret named `hpcs-credentials` that contains the values that you retrieved. The HPCS router uses the environment variables in this secret to authenticate with your {{site.data.keyword.hscrypto}} instance.
   ```yaml
@@ -217,14 +217,30 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to create a router
   metadata:
     name: hpcs-credentials
     namespace: openshift-ingress
-  data:
-    LIBGREP11_CONNECTION_ADDRESS: <API_endpoint_URL>
-    LIBGREP11_CONNECTION_PORT: <API_endpoint_port>
+  stringData:
+    LIBGREP11_CONNECTION_ADDRESS: <ep11_endpoint_URL>
+    LIBGREP11_CONNECTION_PORT: "<ep11_endpoint_port>"
     LIBGREP11_IAMAUTH_APIKEY: <service_instance_ID_API_key>
     LIBGREP11_IAMAUTH_INSTANCEID: <service_instance_ID>
   type: Opaque
   ```
   {: codeblock}
+
+  Example:
+  ```yaml
+  kind: Secret
+  apiVersion: v1
+  metadata:
+    name: hpcs-credentials
+    namespace: openshift-ingress
+  stringData:
+    LIBGREP11_CONNECTION_ADDRESS: ep11.us-south.hs-crypto.cloud.ibm.com
+    LIBGREP11_CONNECTION_PORT: "9371"
+    LIBGREP11_IAMAUTH_APIKEY: AAaa11BBbb22CCcc33DDdd44EEee55FFff66GGgg77-0
+    LIBGREP11_IAMAUTH_INSTANCEID: 1234abcd-56ef-78gh-90ij-1234klmn5678
+  type: Opaque
+  ```
+  {: screen}
 
 3. Create the secret in the `openshift-ingress` project.
   ```

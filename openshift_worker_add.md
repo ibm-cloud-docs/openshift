@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-05"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -117,7 +117,7 @@ For example, consider a cluster with one worker pool that has three worker nodes
 
 <p class="tip">For bare metal worker pools, keep in mind that billing is monthly. If you resize up or down, it impacts your costs for the month.</br></br>When you add worker nodes by resizing a worker pool, the new worker nodes run the same `major.minor` version as the cluster master, but the latest worker node patch of that `major.minor` version.</p>
 
-Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform).
+Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#platform).
 
 To resize the worker pool, change the number of worker nodes that the worker pool deploys in each zone:
 
@@ -164,9 +164,9 @@ To resize the worker pool, change the number of worker nodes that the worker poo
 <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> You can add worker nodes to your VPC cluster by creating a new worker pool.
 {: shortdesc}
 
-Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform).
+Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#platform).
 
-1. Retrieve the **VPC ID** and **Worker Zones** of your cluster and choose the zone where you want to deploy the worker nodes in your worker pool. You can choose any of the existing **Worker Zones** of your cluster, or add one of the [multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones) for the region that your cluster is in. You can list available zones by running `ibmcloud oc zone ls --provider vpc-gen2`.
+1. Retrieve the **VPC ID** and **Worker Zones** of your cluster and choose the zone where you want to deploy the worker nodes in your worker pool. You can choose any of the existing **Worker Zones** of your cluster, or add one of the [multizone locations](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) for the region that your cluster is in. You can list available zones by running `ibmcloud oc zone ls --provider vpc-gen2`.
    ```
    ibmcloud oc cluster get --cluster <cluster_name_or_ID>
    ```
@@ -235,7 +235,7 @@ When you add a zone to a worker pool, the worker nodes that are defined in your 
 
 If you have multiple worker pools in your cluster, add the zone to all of them so that worker nodes are spread evenly across your cluster. Note that when you add worker nodes to your cluster, the new worker nodes run the same `major.minor` version as the cluster master, but the latest worker node patch of that `major.minor` version.
 
-**Before you begin**: Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform).
+**Before you begin**: Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#platform).
 
 1. Get the **Location** of your cluster, and note the existing **Worker Zones** and **VPC ID**.
    ```
@@ -314,9 +314,9 @@ If you have multiple worker pools in your cluster, add the zone to all of them s
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> You can add worker nodes to your classic cluster by creating a new worker pool.
 {: shortdesc}
 
-Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform).
+Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#platform).
 
-1. Retrieve the **Worker Zones** of your cluster and choose the zone where you want to deploy the worker nodes in your worker pool. If you have a single zone cluster, you must use the zone that you see in the **Worker Zones** field. For multizone clusters, you can choose any of the existing **Worker Zones** of your cluster, or add one of the [multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones) for the region that your cluster is in. You can list available zones by running `ibmcloud oc zone ls`.
+1. Retrieve the **Worker Zones** of your cluster and choose the zone where you want to deploy the worker nodes in your worker pool. If you have a single zone cluster, you must use the zone that you see in the **Worker Zones** field. For multizone clusters, you can choose any of the existing **Worker Zones** of your cluster, or add one of the [multizone locations](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) for the region that your cluster is in. You can list available zones by running `ibmcloud oc zone ls`.
    ```
    ibmcloud oc cluster get --cluster <cluster_name_or_ID>
    ```
@@ -392,8 +392,8 @@ When you add a zone to a worker pool, the worker nodes that are defined in your 
 If you have multiple worker pools in your cluster, add the zone to all of them so that worker nodes are spread evenly across your cluster. Note that when you add worker nodes to your cluster, the new worker nodes run the same `major.minor` version as the cluster master, but the latest worker node patch of that `major.minor` version.
 
 Before you begin:
-*  To add a zone to your worker pool, your worker pool must be in a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones). If your worker pool is not in a multizone-capable zone, consider [creating a new worker pool](#add_pool).
-*  Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/openshift?topic=openshift-users#platform).
+*  To add a zone to your worker pool, your worker pool must be in a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones-mz). If your worker pool is not in a multizone-capable zone, consider [creating a new worker pool](#add_pool).
+*  Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#platform).
 *  In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).
 
 To add a zone with worker nodes to your worker pool:
@@ -475,7 +475,7 @@ Create a worker pool in your {{site.data.keyword.satelliteshort}} cluster with h
 {: shortdesc}
 
 **Before you begin**:
-*   Make sure that you have the **Operator** platform role to **Kubernetes Service** for the cluster in {{site.data.keyword.cloud_notm}} IAM.
+*   Make sure that you have the **Operator** platform access role to **Kubernetes Service** for the cluster in {{site.data.keyword.cloud_notm}} IAM.
 *   Optional: [Attach](/docs/satellite?topic=satellite-hosts#attach-hosts) or [list available](/docs/satellite?topic=satellite-satellite-cli-reference#host-ls) hosts to your {{site.data.keyword.satelliteshort}} location with host labels that match your worker pool. Then, after you create your worker pool, these available hosts can be automatically assigned to the worker pool.
 
 **To create a worker pool in a {{site.data.keyword.satelliteshort}} cluster**:
@@ -546,7 +546,7 @@ Follow the same process as [Updating classic worker nodes](/docs/openshift?topic
 You can add zones to a worker pool. Available {{site.data.keyword.satelliteshort}} hosts with a zone label can be assigned only to that zone in the worker pool.
 {: shortdesc}
 
-* For more information about zones in {{site.data.keyword.satelliteshort}}, see [{{site.data.keyword.satelliteshort}} concepts](/docs/satellite?topic=satellite-about#location-concept).
+* For more information about zones in {{site.data.keyword.satelliteshort}}, see [{{site.data.keyword.satelliteshort}} concepts](/docs/satellite?topic=satellite-infrastructure-plan).
 * To add a zone, see the [`ibmcloud oc zone add satellite` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat).
 
 #### Removing a {{site.data.keyword.satelliteshort}} worker pool

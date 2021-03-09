@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-08"
 
 keywords: vpc block, add-on, vpc block changelog
 
@@ -113,7 +113,7 @@ Refer to the following tables for a summary of changes for each version of the {
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.block_storage_is_full}} add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the {{site.data.keyword.block_storage_is_full}} version is supported for."}
 
 ## Changelog for version 3.0.0
-{: #0203_is_block}
+{: #0300_is_block}
 
 The following table shows the changes that are included in version 3.0.0 {{site.data.keyword.block_storage_is_full}} add-on.
 {: shortdesc}
@@ -126,7 +126,7 @@ ibmcloud oc addon-versions
 
 | Patch version | `vpc-block-csi-driver` image tag | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
 | --- | --- | --- | --- | --- |
-| N/A | `v.3.0.0` | 26 February 2021 | 4.3 - 4.6 | The `vpc-block-csi` driver is now available unmanaged clusters. This release contains no functional changes. |
+| N/A | `v.3.0.0` | 26 February 2021 | 4.3 - 4.6 | The `vpc-block-csi` driver is now available for both managed clusters and unmanaged clusters. This release contains no functional changes. |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Patch updates for version 3.0.0" caption-side="top"}

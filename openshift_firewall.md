@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-03-05"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -334,8 +334,8 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
         <tbody>
           <tr>
             <td>AP North</td>
-            <td>che01<br>hkg02<br>seo01<br>sng01<br><br>tok02, tok04, tok05</td>
-            <td><code>169.38.70.10, 169.38.79.170</code><br><code>161.202.56.10, 161.202.57.34, 169.56.132.234</code><br><code>169.56.69.242, 169.56.96.42</code><br><code>119.81.222.210, 161.202.186.226</code><br><br><code>128.168.71.117, 128.168.75.194, 128.168.85.154, 135.90.69.66, 135.90.69.82, 161.202.126.210, 165.192.69.69, 165.192.80.146, 165.192.95.90, 169.56.1.162, 169.56.48.114</code></td>
+            <td>che01<br>hkg02<br>osa21, osa22, osa23<br>seo01<br>sng01<br><br>tok02, tok04, tok05</td>
+            <td><code>169.38.70.10, 169.38.79.170</code><br><code>161.202.56.10, 161.202.57.34, 169.56.132.234</code><br><code>163.68.69.114, 163.68.69.122, 163.69.65.114, 163.69.65.122, 163.73.64.250, 163.73.65.194</code><br><code>169.56.69.242, 169.56.96.42</code><br><code>119.81.222.210, 161.202.186.226</code><br><br><code>128.168.71.117, 128.168.75.194, 128.168.85.154, 135.90.69.66, 135.90.69.82, 161.202.126.210, 165.192.69.69, 165.192.80.146, 165.192.95.90, 169.56.1.162, 169.56.48.114</code></td>
            </tr>
           <tr>
              <td>AP South</td>
@@ -439,7 +439,7 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
 
 1. Allow the IBM Cloud infrastructure private IP ranges so that you can create worker nodes in your cluster.
   1. Allow the appropriate IBM Cloud infrastructure private IP ranges. See [Backend (private) Network](/docs/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#back-end-private-network).
-  2. Allow the IBM Cloud infrastructure private IP ranges for all of the [zones](/docs/openshift?topic=openshift-regions-and-zones#zones) that you are using. **Note**: You must add the `166.8.0.0/14` and `161.26.0.0/16` IP ranges, the IP ranges for the `dal01`, `dal10`, `wdc04` zones, and if your cluster is in the Europe geography, the `ams01` zone. See [Service Network (on backend/private network)](/docs/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#service-network-on-back-end-private-network-).
+  2. Allow the IBM Cloud infrastructure private IP ranges for all of the [zones](/docs/openshift?topic=openshift-regions-and-zones#locations) that you are using. **Note**: You must add the `166.8.0.0/14` and `161.26.0.0/16` IP ranges, the IP ranges for the `dal01`, `dal10`, `wdc04` zones, and if your cluster is in the Europe geography, the `ams01` zone. See [Service Network (on backend/private network)](/docs/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#service-network-on-back-end-private-network-).
 
 2. Note the private IP address for each worker node in the cluster.
     ```
@@ -460,8 +460,8 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
         <tbody>
           <tr>
             <td>AP North</td>
-            <td>che01<br>hkg02<br>seo01<br>sng01<br><br>tok02, tok04, tok05</td>
-            <td><code>166.9.40.7, 166.9.60.2</code><br><code>166.9.40.36, 166.9.42.7, 166.9.44.3</code><br><code>166.9.44.5, 166.9.46.4</code><br><code>166.9.40.8, 166.9.42.28</code><br><br><code>166.9.40.21, 166.9.40.39, 166.9.40.6, 166.9.42.23, 166.9.42.55, 166.9.42.6, 166.9.44.15, 166.9.44.4, 166.9.44.47</code></td>
+            <td>che01<br>hkg02<br>osa21, osa22, osa23<br>seo01<br>sng01<br><br>tok02, tok04, tok05</td>
+            <td><code>166.9.40.7, 166.9.60.2</code><br><code>166.9.40.36, 166.9.42.7, 166.9.44.3</code><br><code>166.9.70.6, 166.9.70.8, 166.9.71.8, 166.9.71.10, 166.9.72.9, 166.9.72.10</code><br><code>166.9.44.5, 166.9.46.4</code><br><code>166.9.40.8, 166.9.42.28</code><br><br><code>166.9.40.21, 166.9.40.39, 166.9.40.6, 166.9.42.23, 166.9.42.55, 166.9.42.6, 166.9.44.15, 166.9.44.4, 166.9.44.47</code></td>
           </tr>
           <tr>
             <td>AP South</td>
@@ -642,7 +642,7 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
 By default, all IP addresses can be used to log in to the {{site.data.keyword.cloud_notm}} console and access your cluster. In the IBM Cloud Identity and Access Management (IAM) console, you can generate a firewall by [creating an allowlist by specifying which IP addresses have access](/docs/account?topic=account-ips), and all other IP addresses are restricted. If you use an IAM firewall, you must add the CIDRs of the {{site.data.keyword.openshiftlong_notm}} control plane for the zones in the region where your cluster is located to the allowlist. You must allow these CIDRs so that {{site.data.keyword.openshiftlong_notm}} can create Ingress ALBs and `LoadBalancers` in your cluster.
 {: shortdesc}
 
-**Before you begin**: The following steps require you to change the IAM allowlist for the user whose credentials are used for the cluster's region and resource group infrastructure permissions. If you are the credentials owner, you can change your own IAM allowlist settings. If you are not the credentials owner, but you are assigned the **Editor** or **Administrator** IBM Cloud IAM platform role for the [User Management service](/docs/account?topic=account-account-services), you can update the restricted IP addresses for the credentials owner.
+**Before you begin**: The following steps require you to change the IAM allowlist for the user whose credentials are used for the cluster's region and resource group infrastructure permissions. If you are the credentials owner, you can change your own IAM allowlist settings. If you are not the credentials owner, but you are assigned the **Editor** or **Administrator** IBM Cloud IAM platform access role for the [User Management service](/docs/account?topic=account-account-services), you can update the restricted IP addresses for the credentials owner.
 
 1. Identify what user credentials are used for the cluster's region and resource group infrastructure permissions.
     1.  Check the API key for a region and resource group of the cluster.

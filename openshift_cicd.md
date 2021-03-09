@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-22"
+  years: 2014, 2021
+lastupdated: "2021-03-05"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -138,9 +138,9 @@ Want a more detailed walkthrough? Check out the [Developing a Kubernetes app too
 {: tip}
 
 Before you begin, make sure that you have at least the following permissions in {{site.data.keyword.cloud_notm}} IAM:
-*  **Editor** platform role and **Writer** service role to the **Kubernetes Service** cluster. For more information, see [User access permissions](/docs/openshift?topic=openshift-access_reference).
-*  **Viewer** platform role to the resource group of the cluster where you want to create the toolchain.
-*  **Editor** platform role to the **Toolchain** service (note that this service is separate than **Continuous Delivery**).
+*  **Editor** platform access role and **Writer** service access role to the **Kubernetes Service** cluster. For more information, see [User access permissions](/docs/openshift?topic=openshift-access_reference).
+*  **Viewer** platform access role to the resource group of the cluster where you want to create the toolchain.
+*  **Editor** platform access role to the **Toolchain** service (note that this service is separate than **Continuous Delivery**).
 
 To add a continuous delivery pipeline to your cluster:
 

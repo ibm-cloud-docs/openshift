@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-04"
+lastupdated: "2021-03-08"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -109,8 +109,8 @@ Before you get started with Ingress, review the following prerequisites.
 {: shortdesc}
 
 - Setting up Ingress requires the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-users#platform):
-    - **Administrator** platform role for the cluster in {{site.data.keyword.containerlong_notm}}
-    - **Manager** service role in all {{site.data.keyword.containerlong_notm}} namespaces ({{site.data.keyword.openshiftshort}} projects)
+    - **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+    - **Manager** service access role in all {{site.data.keyword.containerlong_notm}} namespaces ({{site.data.keyword.openshiftshort}} projects)
 - If a zone fails, you might see intermittent failures in requests to apps that are exposed by the Ingress controller and router in that zone.
 - To ensure high availability, at least two worker nodes per zone are recommended.
 * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2 clusters: [Allow traffic requests that are routed by Ingress to node ports on your worker nodes](/docs/containers?topic=containers-vpc-network-policy#security_groups).
@@ -241,7 +241,7 @@ For more information about TLS certificates, see [Managing TLS certificates and 
 **To use a custom domain and TLS secret:**
 
 1.  Prepare your custom domain.
-    1. Work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started) to register your custom domain. If you want to use different subdomains for your apps, register the custom domain as a wildcard domain, such as `*.custom_domain.net`. Note that domains are limited to 255 characters or fewer.
+    1. Work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started) to register your custom domain. If you want to use different subdomains for your apps, register the custom domain as a wildcard domain, such as `*.custom_domain.net`. Note that domains are limited to 255 characters or fewer in {{site.data.keyword.openshiftshort}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.openshiftshort}} version 4.6 or later.
     2.  Define an alias for your custom domain by specifying the IBM-provided domain as a Canonical Name record (CNAME). To find the IBM-provided Ingress domain, run `ibmcloud oc cluster get --cluster <cluster_name>` and look for the **Ingress subdomain** field.
 
 2.  If you want to configure TLS termination, prepare your custom TLS secret.
@@ -280,7 +280,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
 1.  Define an Ingress resource configuration file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
     ```yaml
-    apiVersion: networking.k8s.io/v1beta1
+    apiVersion: networking.k8s.io/v1 # For {{site.data.keyword.openshiftshort}} 4.5 or earlier, use networking.k8s.io/v1beta1 instead
     kind: Ingress
     metadata:
       name: myingressresource
@@ -419,7 +419,7 @@ The Ingress controller load balances HTTP network traffic to the apps in your cl
 
 **Custom domain and TLS secret**:
 
-1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). Note that domains are limited to 255 characters or fewer. <p class="tip">If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.</p>
+1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). Note that domains are limited to 255 characters or fewer in {{site.data.keyword.openshiftshort}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.openshiftshort}} version 4.6 or later. <p class="tip">If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.</p>
 
 2.  If you want to configure TLS termination, prepare your custom TLS secret.
   * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}, create a secret for the certificate in the same project as your app.<p class="note">Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.</p>
@@ -533,7 +533,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
 1.  Define an Ingress resource configuration file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
     ```yaml
-    apiVersion: networking.k8s.io/v1beta1
+    apiVersion: networking.k8s.io/v1 # For {{site.data.keyword.openshiftshort}} 4.5 or earlier, use networking.k8s.io/v1beta1 instead
     kind: Ingress
     metadata:
       name: myingressresource
@@ -750,7 +750,7 @@ The Ingress controller load balances HTTP network traffic to the apps in your cl
 
 **Custom domain and TLS secret, classic or VPC clusters**:
 
-1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). Note that domains are limited to 255 characters or fewer. <p class="tip">If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.</p>
+1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). Note that domains are limited to 255 characters or fewer in {{site.data.keyword.openshiftshort}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.openshiftshort}} version 4.6 or later. <p class="tip">If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.</p>
 
 2.  If you want to configure TLS termination, prepare your custom TLS secret.
   * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}, create a secret for the certificate in the same project as your app.<p class="note">Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.</p>
@@ -871,7 +871,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
 1.  Define an Ingress resource configuration file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
     ```yaml
-    apiVersion: networking.k8s.io/v1beta1
+    apiVersion: networking.k8s.io/v1 # For {{site.data.keyword.openshiftshort}} 4.5 or earlier, use networking.k8s.io/v1beta1 instead
     kind: Ingress
     metadata:
       name: myingressresource
@@ -1043,7 +1043,7 @@ For more information about TLS certificates, see [Managing TLS certificates and 
 **To use a custom domain and TLS secret:**
 
 1.  Prepare your custom domain.
-    1. Work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started) to register your custom domain. If you want to use different subdomains for your apps, register the custom domain as a wildcard domain, such as `*.custom_domain.net`. Note that domains are limited to 255 characters or fewer.
+    1. Work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started) to register your custom domain. If you want to use different subdomains for your apps, register the custom domain as a wildcard domain, such as `*.custom_domain.net`. Note that domains are limited to 255 characters or fewer in {{site.data.keyword.openshiftshort}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.openshiftshort}} version 4.6 or later.
     2.  Define an alias for your custom domain by specifying the IBM-provided domain as a Canonical Name record (CNAME). To find the IBM-provided Ingress domain, run `ibmcloud oc cluster get --cluster <cluster_name>` and look for the **Ingress subdomain** field.
 
 2.  If you want to configure TLS termination, prepare your custom TLS secret.
@@ -1082,7 +1082,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
 1.  Define an Ingress resource configuration file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
     ```yaml
-    apiVersion: networking.k8s.io/v1beta1
+    apiVersion: networking.k8s.io/v1 # For {{site.data.keyword.openshiftshort}} 4.5 or earlier, use networking.k8s.io/v1beta1 instead
     kind: Ingress
     metadata:
       name: myingressresource
@@ -1194,9 +1194,9 @@ http://<subdomain2>.<domain>/<app1_path>
 As of 24 August 2020, an [{{site.data.keyword.cloudcerts_long}}](/docs/certificate-manager?topic=certificate-manager-about-certificate-manager) instance is automatically created for each cluster that you can use to manage the cluster's Ingress TLS certificates.
 {: shortdesc}
 
-For a {{site.data.keyword.cloudcerts_short}} instance to be created for your new or existing cluster, ensure that the API key for the region and resource group that the cluster is created in has the correct permissions.
+For a {{site.data.keyword.cloudcerts_short}} instance to be created for your new or existing cluster, ensure that the API key for the region and resource group that the cluster is created in has the correct permissions. You can check who set the API key for the cluster by running `ibmcloud oc api-key info -c <cluster_name_or_ID>`.
   * If the account owner set the API key, then your cluster is assigned a {{site.data.keyword.cloudcerts_short}} instance.
-  * If another user or a functional user set the API key, first [assign the user](/docs/containers?topic=containers-users#add_users) the **Administrator** or **Editor** platform role and the **Manager** service role for {{site.data.keyword.cloudcerts_short}} in **All resource groups**. Then, the user must [reset the API key for the region and resource group](/docs/containers?topic=containers-users#api_key_most_cases). After the cluster has access to the updated permissions in the API key, your cluster is automatically assigned a {{site.data.keyword.cloudcerts_short}} instance.
+  * If another user or a functional user set the API key, first [assign the user](/docs/containers?topic=containers-users#add_users) the **Administrator** or **Editor** platform access role and the **Manager** service access role for {{site.data.keyword.cloudcerts_short}} in **All resource groups**. Then, the user must [reset the API key for the region and resource group](/docs/containers?topic=containers-users#api_key_most_cases). After the cluster has access to the updated permissions in the API key, your cluster is automatically assigned a {{site.data.keyword.cloudcerts_short}} instance.
 
 The IBM-generated certificate for the default Ingress subdomain that exists in your cluster's {{site.data.keyword.cloudcerts_short}} instance. However, you have full control over your cluster's {{site.data.keyword.cloudcerts_short}} instance and can use {{site.data.keyword.cloudcerts_short}} to upload your own TLS certificates or order TLS certificates for your custom domains.
 

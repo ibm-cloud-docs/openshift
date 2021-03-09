@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-03-02"
 
 keywords: openshift, roks, rhoks, rhos, disaster recovery, dr, ha, hadr
 
@@ -167,7 +167,7 @@ Worker nodes in one zone are not guaranteed to be on separate physical compute h
 The cluster masters are highly available and include replicas for your Kubernetes API server, etcd, scheduler, and controller manager on separate hosts to protect against an outage such as during a master update.
 
 To protect your cluster master from a zone failure, you can:
-* Create a cluster in a [multizone metro location](/docs/openshift?topic=openshift-regions-and-zones#zones), which spreads the master across zones.
+* Create a cluster in a [classic](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) or [VPC](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) multizone location, which spreads the master across zones.
 * Set up a second cluster in another zone.
 
 See [Setting up highly available clusters](/docs/openshift?topic=openshift-ha_clusters#ha_clusters).

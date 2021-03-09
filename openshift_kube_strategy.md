@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-03-05"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -206,7 +206,7 @@ Now that you have a good estimate of your app size and the worker nodes that you
 
 1.  [Create your cluster](/docs/openshift?topic=openshift-clusters) with the worker pool flavor and number of worker nodes that you [previously estimated](#sizing_workers).
 2.  Review what compute resources your cluster uses by default and calculate the remaining cluster capacity that you can use for your workloads.
-    1.  With the {{site.data.keyword.cloud_notm}} IAM **Manager** service role for the cluster in all namespaces: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+    1.  With the {{site.data.keyword.cloud_notm}} IAM **Manager** service access role for the cluster in all namespaces: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
     2.  Find the CPU and memory usage across all worker nodes. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, you can also click your cluster and review the **Cluster Insights** card.
         ```
         oc top nodes
@@ -226,7 +226,7 @@ Now that you have a good estimate of your app size and the worker nodes that you
 3.  [Deploy your apps](/docs/openshift?topic=openshift-deploy_app) to the cluster, and make sure to [set resource requests and limits](/docs/openshift?topic=openshift-openshift_apps#resourcereq) based on the [app size that you previously estimated](#sizing_resources) for your apps, to limit the amount of compute resources the apps can consume.
 4.  Deploy any add-ons, plug-ins, or other cloud services that you want to use.
 5.  Review what compute resources your workloads consume and calculate the remaining cluster capacity to deploy additional apps or scale existing apps.
-    1.  With at least the {{site.data.keyword.cloud_notm}} IAM **Reader** service role for the cluster in all namespaces: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+    1.  With at least the {{site.data.keyword.cloud_notm}} IAM **Reader** service access role for the cluster in all namespaces: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
     2.  List the pods that run in your cluster.
         ```
         oc get pods --all-namespaces
@@ -255,7 +255,7 @@ Your {{site.data.keyword.openshiftlong_notm}} is linked to one IBM Cloud infrast
 ### What type of cluster and flavors should I get?
 {: #env_flavors}
 
-**Types of clusters**: Decide whether you want a [single zone, multizone, or multiple cluster setup](/docs/openshift?topic=openshift-ha_clusters#ha_clusters). Multizone clusters are available in [all six worldwide {{site.data.keyword.cloud_notm}} metro regions](/docs/openshift?topic=openshift-regions-and-zones#zones). Also keep in mind that worker nodes vary by zone.
+**Types of clusters**: Decide whether you want a [single zone, multizone, or multiple cluster setup](/docs/openshift?topic=openshift-ha_clusters#ha_clusters). Multizone clusters are available in worldwide worldwide {{site.data.keyword.cloud_notm}} [multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-mz). Also keep in mind that worker nodes vary by zone.
 
 **Types of worker nodes**: In general, your intensive workloads are more suited to run on bare metal physical machines, whereas for cost-effective testing and development work, you might choose virtual machines on shared or dedicated hardware. With bare metal worker nodes, your cluster has a network speed of 10 Gbps and hyper-threaded cores that offer higher throughput. Virtual machines come with a network speed of 1 Gbps and regular cores that do not offer hyper-threading. [Check out the machine isolation and flavors that are available](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes).
 

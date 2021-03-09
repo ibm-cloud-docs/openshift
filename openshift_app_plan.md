@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-17"
+lastupdated: "2021-03-02"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -428,7 +428,7 @@ Consider the following options to increase availability of your app.
       </dd>
     </dd>
 <dt>Distribute pods across multiple zones or regions</dt>
-  <dd><p>To protect your app from a zone failure, you can create multiple clusters in separate zones or add zones to a worker pool in a multizone cluster. Multizone clusters are available only in [certain metro areas](/docs/openshift?topic=openshift-regions-and-zones#zones), such as Dallas. If you create multiple clusters in separate zones, you must [set up a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple_clusters).</p>
+  <dd><p>To protect your app from a zone failure, you can create multiple clusters in separate zones or add zones to a worker pool in a multizone cluster. Multizone clusters are available only in certain [classic](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) or [VPC](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) multizones, such as Dallas. If you create multiple clusters in separate zones, you must [set up a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple_clusters).</p>
   <p>When you use a replica set and specify pod anti-affinity, Kubernetes spreads your app pods across the nodes. If your nodes are in multiple zones, the pods are spread across the zones, increasing the availability of your app. If you want to limit your apps to run only in one zone, you can configure pod affinity, or create and label a worker pool in one zone. For more information, see [High availability for multizone clusters](/docs/openshift?topic=openshift-ha_clusters#ha_clusters).</p>
   <p>**In a multizone cluster deployment, are my app pods distributed evenly across the nodes?**</p>
   <p>The pods are evenly distributed across zones, but not always across nodes. For example, if you have a cluster with one node in each of three zones and deploy a replica set of six pods, then each node gets two pods. However, if you have a cluster with two nodes in each of three zones and deploy a replica set of six pods, each zone schedules two pods, and might schedule one pod per node or might not. For more control over scheduling, you can [set pod affinity ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/).</p>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-05"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -756,8 +756,8 @@ You can authorize your VPC Gen 2 Cloud Service Endpoint source IP addresses to a
 {: shortdesc}
 
 **Minimum required permissions**:
- * **Manager** service role for the {{site.data.keyword.openshiftlong_notm}} service.
- * **Writer** service role for the {{site.data.keyword.cos_full_notm}} service.
+ * **Manager** service access role for the {{site.data.keyword.openshiftlong_notm}} service.
+ * **Writer** service access role for the {{site.data.keyword.cos_full_notm}} service.
 
 **Supported infrastructure provider**:
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
@@ -1390,8 +1390,8 @@ You can create a [Kubernetes secret with your {{site.data.keyword.cos_full_notm}
 
 Before you begin:
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-* Have the **Manager** service role for the cluster.
-* Have the **Writer** service role for the {{site.data.keyword.cos_full_notm}} service instance.
+* Have the **Manager** service access role for the cluster.
+* Have the **Writer** service access role for the {{site.data.keyword.cos_full_notm}} service instance.
 
 To add a secret to a storage class:
 
