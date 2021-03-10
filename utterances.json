@@ -1,15 +1,4 @@
 {
-    "cs_credentials": [
-      "unable to create a kubernetes cluster",
-      "can't create a cluster",
-      "i cant create my own cluster",
-      "How to manage kubernetes nodes",
-      "can not create a kubernetes cluster",
-      "not able to create a kubernetes cluster due to permission errors",
-      "Unable to connect to your kubernetes infrastructure account",
-      "kubernetes cluster could not be configured with the registry?",
-      "cant create a kubernetes cluster due to permission errors"
-    ],
     "faq_free": [
       "Can I have a free openshift cluster",
       "How many free red hat cluster can I have?",

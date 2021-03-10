@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-03-10"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -275,13 +275,7 @@ Before you begin:
   ```
   {: pre}
 
-3. Target the VPC generation for your cluster.
-  ```
-  ibmcloud is target --gen 2
-  ```
-  {: pre}
-
-4. Get your cluster's **ID**.
+3. Get your cluster's **ID**.
     ```
     ibmcloud oc cluster get -c <cluster_name>
     ```
@@ -542,7 +536,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>After 3</td>
    </tr>
    <tr>
-   <td>To access the {{site.data.keyword.openshiftshort}} web console, allow traffic to port 443. To further restrict access to this port, you can optionally specify the source IP addresses that you can connect to the web console in the **Source IP or CIDR** field.</td>
+   <td>To expose apps by using load balancers or Ingress, allow traffic through VPC load balancers.</td>
    <td>Allow</td>
    <td>TCP</td>
    <td>Any</td>
@@ -632,7 +626,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>After 3</td>
    </tr>
    <tr>
-   <td>To access the {{site.data.keyword.openshiftshort}} web console, allow traffic from port 443. To further restrict access to this port, you can optionally specify the IP addresses that you can connect to the web console in the **Destination IP or CIDR** field.</td>
+   <td>To expose apps by using load balancers or Ingress, allow traffic through VPC load balancers.</td>
    <td>Allow</td>
    <td>TCP</td>
    <td>Any</td>
@@ -691,12 +685,6 @@ Before you begin:
 2. Target the region that your VPC is in.
   ```
   ibmcloud target -r <region>
-  ```
-  {: pre}
-
-3. Target the VPC generation for your cluster.
-  ```
-  ibmcloud is target --gen 2
   ```
   {: pre}
 
@@ -782,14 +770,23 @@ To create an ACL for each subnet that your cluster is attached to:
   ```
   {: pre}
 
-7. Optional: To allow Ingress router services to be healthchecked, allow traffic on port 80. For more information, see the **Important** note at the end of these steps.
+7. To allow incoming traffic requests to apps that run on your worker nodes through router services or load balancers, allow traffic to the VPC load balancer on port `443` and to worker nodes on ports `30000 - 32767`.
+  ```
+  ibmcloud is network-acl-rule-add $acl_id allow outbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-lb-outbound --destination-port-min 443 --destination-port-max 443
+  ibmcloud is network-acl-rule-add $acl_id allow inbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-lb-inbound --destination-port-min 443 --destination-port-max 443
+  ibmcloud is network-acl-rule-add $acl_id allow outbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-ingress-outbound --destination-port-min 30000 --destination-port-max 32767
+  ibmcloud is network-acl-rule-add $acl_id allow inbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-ingress-inbound --destination-port-min 30000 --destination-port-max 32767  
+  ```
+  {: pre}
+
+8. Optional: To allow Ingress router services to be health checked, allow traffic on port 80. For more information, see the **Important** note at the end of these steps.
   ```
   ibmcloud is network-acl-rule-add $acl_id allow outbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-hc-outbound --destination-port-min 80 --destination-port-max 80
   ibmcloud is network-acl-rule-add $acl_id allow inbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-hc-inbound --destination-port-min 80 --destination-port-max 80
   ```
   {: pre}
 
-8. Optional: If you must allow other traffic to or from your worker nodes on this subnet, add rules for that traffic.
+9. Optional: If you must allow other traffic to or from your worker nodes on this subnet, add rules for that traffic.
 
   <p class="note">When you refer to the VPC subnet that your worker nodes are on, you must use `0.0.0.0/0`. For more tips on how to create your rule, see the [VPC CLI reference documentation](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#network-acl-rule-add).</p>
 
@@ -805,14 +802,14 @@ To create an ACL for each subnet that your cluster is attached to:
   ```
   {: screen}
 
-9. Create rules to deny all other egress from and ingress to worker nodes that is not permitted by the previous rules that you created. Because these rules are created last in the chain of rules, they deny an incoming or outgoing connection only if the connection does not match any other rule that is earlier in the rule chain.
+10. Create rules to deny all other egress from and ingress to worker nodes that is not permitted by the previous rules that you created. Because these rules are created last in the chain of rules, they deny an incoming or outgoing connection only if the connection does not match any other rule that is earlier in the rule chain.
   ```
   ibmcloud is network-acl-rule-add $acl_id deny outbound all 0.0.0.0/0 0.0.0.0/0 --name deny-all-outbound
   ibmcloud is network-acl-rule-add $acl_id deny inbound all 0.0.0.0/0 0.0.0.0/0 --name deny-all-inbound
   ```
   {: pre}
 
-10. Apply this ACL to the subnet. When you apply this ACL, the rules that you defined are immediately applied to the worker nodes on the subnet.
+11. Apply this ACL to the subnet. When you apply this ACL, the rules that you defined are immediately applied to the worker nodes on the subnet.
   ```
   ibmcloud is subnet-update <subnet_ID> --network-acl-id $acl_id
   ```
@@ -836,7 +833,7 @@ To create an ACL for each subnet that your cluster is attached to:
   ```
   {: screen}
 
-11. Repeat steps 2 - 10 for each subnet that you found in step 1.
+12. Repeat steps 2 - 11 for each subnet that you found in step 1.
 
 ACL rules are applied to traffic in a specific order. If you want to add a rule after you complete these steps, ensure that you add the rule before the `deny-all-inbound` or `deny-all-outbound` rule. If you add a rule after these rules, your rule is ignored, because the packet matches the `deny-all-inbound` and `deny-all-outbound` rules and is blocked and removed before it can reach your rule. Create your rule in the proper order by including the `--before-rule-name deny-all-(inbound|outbound)` flag.
 {: note}

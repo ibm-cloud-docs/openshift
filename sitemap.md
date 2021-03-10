@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-09"
+lastupdated: "2021-03-10"
 
 keywords: openshift
 subcollection: openshift
@@ -135,7 +135,7 @@ subcollection: openshift
 
 [Supported infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers)
 
-[Service architecture and dependencies](/docs/openshift?topic=openshift-service-arch)
+[Architecture and dependencies of the service](/docs/openshift?topic=openshift-service-arch)
 * [Classic cluster service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture)
   * [{{site.data.keyword.openshiftshort}} version 4 architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-4)
   * [{{site.data.keyword.openshiftshort}} version 3 architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-3)
@@ -1989,6 +1989,7 @@ subcollection: openshift
 [Worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters)
 * [Debugging worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#debug_worker_nodes)
 * [Common issues with worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#common_worker_nodes_issues)
+* [Using the Kubernetes API to debug worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#debug-kube-nodes)
 * [Unable to create or delete worker nodes or clusters](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#infra_errors)
   * [Unable to create or delete worker nodes due to permission errors](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_credentials)
   * [Unable to create or delete worker nodes due to incorrect account error](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#orphaned)

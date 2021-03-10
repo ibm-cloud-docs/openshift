@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-09"
+lastupdated: "2021-03-10"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -513,7 +513,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
       <li>[Choosing an image registry solution](/docs/openshift?topic=openshift-registry#openshift_registry_options)</li>
       <li>[Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress) like router or Ingress</li>
       <li>[Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options)</li></ul></li>
-    <li><strong>New! Single zone location for {{site.data.keyword.openshiftshort}} clusters</strong>: The following locations are now supported. For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones#zones).<ul>
+    <li><strong>New! Single zone location for {{site.data.keyword.openshiftshort}} clusters</strong>: The following locations are now supported. For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones).<ul>
       <li>Oslo, Norway</li>
       <li>San Jose, California, US</li></ul></li>
   </ul>
@@ -546,7 +546,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 </tr>
 <tr>
   <td>17 September 2019</td>
-  <td><strong>New! Single zone location for {{site.data.keyword.openshiftshort}} clusters</strong>: The following locations are now supported. For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones#zones).<ul>
+  <td><strong>New! Single zone location for {{site.data.keyword.openshiftshort}} clusters</strong>: The following locations are now supported. For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones).<ul>
     <li>Amsterdam, the Netherlands</li>
     <li>Hong Kong SAR of the PRC, China</li>
     <li>Mexico City, Mexico</li>
@@ -557,7 +557,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
   <td>16 September 2019</td>
   <td><ul><li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.23](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
   <li><strong>{{site.data.keyword.at_full_notm}} events</strong>: Added information about [which {{site.data.keyword.at_short}} location your events are sent to](/docs/openshift?topic=openshift-at_events#at-ui) based on the {{site.data.keyword.containerlong_notm}} location where the cluster is located.</li>
-  <li><strong>New! Melbourne, Australia `mel01` single zone location for {{site.data.keyword.openshiftshort}} clusters</strong>: For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones#zones).</li>
+  <li><strong>New! Melbourne, Australia `mel01` single zone location for {{site.data.keyword.openshiftshort}} clusters</strong>: For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones).</li>
   <li><strong>Version changelog</strong>: Master fix pack updates are available for {{site.data.keyword.openshiftshort}} [3.11.141_1524_openshift](/docs/openshift?topic=openshift-openshift_changelog#311141_1524).</li></ul>
   </td>
 </tr>
@@ -584,7 +584,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 </tr>
 <tr>
   <td>06 September 2019</td>
-  <td><strong>New! Chennai, India `che01` single zone location for {{site.data.keyword.openshiftshort}} clusters</strong>: For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones#zones).</td>
+  <td><strong>New! Chennai, India `che01` single zone location for {{site.data.keyword.openshiftshort}} clusters</strong>: For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones).</td>
 </tr>
 <tr>
   <td>05 September 2019</td>
@@ -594,7 +594,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
   <td>04 September 2019</td>
   <td><ul><li><strong>CLI changelog</strong>: Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.3](/docs/openshift?topic=openshift-cs_cli_changelog).</li>
   <li><strong>IAM allowlists</strong>: If you use an IAM allowlist, you must [allow the CIDRs of the {{site.data.keyword.containerlong_notm}} control plane](/docs/openshift?topic=openshift-firewall#iam_allowlist) for the zones in the region where your cluster is located so that {{site.data.keyword.containerlong_notm}} can create Ingress ALBs and `LoadBalancers` in your cluster.</li>
-  <li><strong>New! Montreal, Canada `mon01` single zone location for {{site.data.keyword.openshiftshort}} clusters</strong>: For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones#zones).</li></ul></td>
+  <li><strong>New! Montreal, Canada `mon01` single zone location for {{site.data.keyword.openshiftshort}} clusters</strong>: For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones).</li></ul></td>
 </tr>
 <tr>
   <td>03 September 2019</td>
@@ -617,7 +617,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 <tbody>
 <tr>
   <td>30 August 2019</td>
-  <td><strong>New! Paris, France `par01` single zone location for {{site.data.keyword.openshiftshort}} clusters</strong>: For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones#zones).</td>
+  <td><strong>New! Paris, France `par01` single zone location for {{site.data.keyword.openshiftshort}} clusters</strong>: For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones).</td>
 </tr>
 <tr>
   <td>29 August 2019</td>
@@ -635,12 +635,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
   <td><ul>
   <li><strong>Cluster autoscaler</strong>: With the latest version of the cluster autoscaler, you can [enable autoscaling for worker pools during the Helm chart installation](/docs/openshift?topic=openshift-ca#ca_helm) instead of modifying the config map after installation.</li>
   <li><strong>Ingress ALB changelog</strong>: Updated the ALB [`nginx-ingress` image to build 524 and `ingress-auth` image to build 337](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
-  <li><strong>New! Seoul, Korea `seo01` single zone location for {{site.data.keyword.openshiftshort}} clusters</strong>: For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones#zones).</li></ul></td>
+  <li><strong>New! Seoul, Korea `seo01` single zone location for {{site.data.keyword.openshiftshort}} clusters</strong>: For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones).</li></ul></td>
 </tr>
 <tr>
   <td>23 August 2019</td>
   <td>
-  <strong>New! Single zone locations for {{site.data.keyword.openshiftshort}} clusters</strong>: You can create {{site.data.keyword.openshiftshort}} clusters in Toronto, Canada `tor01` and Singapore `sng01` single zone locations. For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones#zones).</td>
+  <strong>New! Single zone locations for {{site.data.keyword.openshiftshort}} clusters</strong>: You can create {{site.data.keyword.openshiftshort}} clusters in Toronto, Canada `tor01` and Singapore `sng01` single zone locations. For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones).</td>
 </tr>
 <tr>
   <td>20 August 2019</td>
