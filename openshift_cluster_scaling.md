@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-03-11"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -731,19 +731,23 @@ The cluster autoscaler has two types of updates.
   ```
   {: pre}
 
-2. Update your cluster autoscaler add-on.
+2. Disable the cluster autoscaler add-on. You might see a warning that resources or data might be deleted. For the cluster autoscaler update, any autoscaling operations that are in process when you disable fail. When you re-enable the add-on, the autoscaling operation is restarted for you. Existing cluster autoscaler resources like the `iks-ca-configmap` are retained even after you disable the add-on. Your worker nodes are not deleted because of disabling the add-on.
   ```
-  ibmcloud oc cluster addon update cluster-autoscaler --version <version> --cluster <cluster_name>
+  ibmcloud oc cluster addon disable cluster-autoscaler --cluster <cluster_name>
   ```
   {: pre}
 
   **Example output**
   ```sh
-  During the update, potentially disruptive changes might occur. For more information, see 'http://ibm.biz/addon-update'. Continue? [y/N]> y
-  Updating add-on cluster-autoscaler to 1.0.1 for cluster ca-zone-bal1.17...
-  OK
+  Data and resources that you created for the add-on might be deleted when the add-on is disabled. Continue? [y/N]>
   ```
   {: screen}
+
+3. Enable the add-on to install the latest version.
+  ```sh
+  ibmcloud oc cluster addon enable cluster-autoscaler --cluster <cluster_name>
+  ```
+  {: pre}
 
 3. Verify the add-on is successfully updated and `Ready`.
   ```
