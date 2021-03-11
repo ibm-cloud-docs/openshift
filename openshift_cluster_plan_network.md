@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-03-11"
 
 keywords: openshift, rhoks, roks, rhos, multi az, multi-az, szr, mzr
 
@@ -301,9 +301,9 @@ Ready to get started with a cluster for this scenario? After you plan your [high
 
 **Worker-to-worker communication**
 
-To achieve this setup, you create VPC subnets in each zone where you want to deploy worker nodes. To run default {{site.data.keyword.openshiftshort}} components such as the web console or OperatorHub, public gateways are required for these subnets.. Then, you create a VPC cluster that uses these VPC subnets.
+To achieve this setup, you create VPC subnets in each zone where you want to deploy worker nodes. To run default {{site.data.keyword.openshiftshort}} components such as the web console or OperatorHub, public gateways are required for these subnets. Then, you create a VPC cluster that uses these VPC subnets.
 
-Note that you might have subnet conflicts between the default ranges for workers nodes, pods, and services, and the subnets in your on-premises networks. When you create your VPC subnets, you can choose [custom address prefixes](/docs/vpc?topic=vpc-configuring-address-prefixes) and the create your cluster by using these subnets. Additionally, you can specify a custom subnet CIDR for pods and services by using the `--pod-subnet` and `--service-subnet` flags in the `ibmcloud oc cluster create` command when you create your cluster.
+Note that you might have subnet conflicts between the default ranges for workers nodes, pods, and services, and the subnets in your on-premises networks. When you create your VPC subnets, you can choose [custom address prefixes](/docs/vpc?topic=vpc-configuring-address-prefixes) and then create your cluster by using these subnets. Additionally, you can specify a custom subnet CIDR for pods and services by using the `--pod-subnet` and `--service-subnet` flags in the `ibmcloud oc cluster create` command when you create your cluster.
 
 **Worker-to-master and user-to-master communication**
 
