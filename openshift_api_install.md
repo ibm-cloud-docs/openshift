@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-03-11"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -688,9 +688,14 @@ Use the following steps if you want to create an {{site.data.keyword.cloud_notm}
 ## Refreshing {{site.data.keyword.cloud_notm}} IAM access tokens and obtaining new refresh tokens with the CLI
 {: #cs_cli_refresh}
 
-When you start a new CLI session, or if 24 hours has expired in your current CLI session, you must set the context for your cluster by running `ibmcloud oc cluster config --cluster <cluster_name>`. When you set the context for your cluster with this command, the `kubeconfig` file for your {{site.data.keyword.openshiftshort}} cluster is downloaded. Additionally, an {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) ID token and a refresh token are issued to provide authentication.
+You can use the command line to [set the cluster context](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure), download the `kubeconfig` file for your {{site.data.keyword.openshiftshort}} cluster, and generate an {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) ID token and a refresh token to provide authentication.
 {: shortdesc}
 
-**ID token**: Every IAM ID token that is issued via the CLI expires after one hour. When the ID token expires, the refresh token is sent to the token provider to refresh the ID token. Your authentication is refreshed, and you can continue to run commands against your cluster.
+You can use [{{site.data.keyword.cloud_notm}} IAM](https://cloud.ibm.com/iam/overview){: external} to change the default expiration times for your tokens and sessions.
+{: tip}
 
-**Refresh token**: Refresh tokens expire every 30 days. If the refresh token is expired, the ID token cannot be refreshed, and you are not able to continue running commands in the CLI. You can get a new refresh token by running `ibmcloud oc cluster config --cluster <cluster_name>`. This command also refreshes your ID token.
+**Kubeconfig session**: When you start a new CLI session or after the session expires such as after the default of 24 hours, you must reset the cluster context.
+
+**ID token**: Every IAM ID token that is issued via the CLI expires after a set period of time, such as 20 minutes. When the ID token expires, the refresh token is sent to the token provider to refresh the ID token. Your authentication is refreshed, and you can continue to run commands against your cluster.
+
+**Refresh token**: Refresh tokens expire after a set period of time, such as 30 days, or if the administrator revokes the token. If the refresh token is expired, the ID token cannot be refreshed, and you are not able to continue running commands in the CLI. You can get a new refresh token by running `ibmcloud oc cluster config --cluster <cluster_name>`. This command also refreshes your ID token.
