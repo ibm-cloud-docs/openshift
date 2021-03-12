@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-10"
+lastupdated: "2021-03-12"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -109,6 +109,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 12 March 2021 | **New and deprecated events for {{site.data.keyword.at_short}}**: To align with event auditing standards across cloud, {{site.data.keyword.openshiftlong_notm}} introduces new and deprecates some existing event names or fields. Deprecated event names and fields become unsupported on 12 April 2021.<ul><li>**New events available now**: API actions that require Viewer permissions, such as `list` and `get`, now send events. For more information, see the [documentation](/docs/openshift?topic=openshift-at_events).</li><li>**Deprecated events**: Some events are [deprecated](/docs/openshift?topic=openshift-at_events#cluster-events-old) and are no longer sent on 12 April 2021. Instead, [new events](/docs/openshift?topic=openshift-at_events#events-new) that might include updated names and updated fields are sent.</li><li>**Deprecated fields across events**: [Some fields](/docs/openshift?topic=openshift-at_events#events-updated-fields) are deprecated and replaced by or updated with new values across events.</li></ul>|
 | 09 March 2021 | **Cluster autoscaler add-on**: Version 1.0.2 of the cluster autoscaler add-on is released. For more formation, see the [cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog). |
 | 07 March 2021 | **Unsupported version**: {{site.data.keyword.openshiftshort}} version 4.3 is unsupported. Update your cluster to [version 4.4](/docs/openshift?topic=openshift-openshift_versions#ocp44), and then to a supported version such as [4.5](/docs/openshift?topic=openshift-openshift_versions#ocp45) as soon as possible.
 | 05 March 2021 | **Trusted images**: You can now [set up trusted content for container images](/docs/openshift?topic=openshift-images#trusted_images) that are signed and stored in {{site.data.keyword.registrylong_notm}}. |

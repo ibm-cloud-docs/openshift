@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-12"
 
 keywords: openshift
 subcollection: openshift
@@ -1844,13 +1844,26 @@ subcollection: openshift
 * [Classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra)
 
 [{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events)
-* [Cluster management events](/docs/openshift?topic=openshift-at_events#cluster-events)
+* [Cluster events](/docs/openshift?topic=openshift-at_events#clusters-events)
+* [Cluster account events](/docs/openshift?topic=openshift-at_events#cluster-account-events)
+* [Cluster add-on events](/docs/openshift?topic=openshift-at_events#cluster-addons)
+* [Deprecated: Previous cluster management events](/docs/openshift?topic=openshift-at_events#cluster-events-old)
+* [Fluentd logging events](/docs/openshift?topic=openshift-at_events#at-fluentd)
 * [Ingress ALB events](/docs/openshift?topic=openshift-at_events#ingress-alb-events)
 * [Ingress secret events](/docs/openshift?topic=openshift-at_events#ingress-secret-events)
 * [Observability events for logging and monitoring](/docs/openshift?topic=openshift-at_events#at-lm)
 * [NLB DNS events](/docs/openshift?topic=openshift-at_events#ingress-nlb-dns-events)
 * [Private service endpoint allowlist events](/docs/openshift?topic=openshift-at_events#acl-events)
+* [{{site.data.keyword.satelliteshort}} events](/docs/openshift?topic=openshift-at_events#satellite-events)
 * [Storage events](/docs/openshift?topic=openshift-at_events#storage-events)
+* [Worker node and worker pool events](/docs/openshift?topic=openshift-at_events#worker-events)
+* [Preview: Events with updated names (tentative)](/docs/openshift?topic=openshift-at_events#events-new)
+  * [Updated cluster events](/docs/openshift?topic=openshift-at_events#events-new-cluster)
+  * [Updated cluster account events](/docs/openshift?topic=openshift-at_events#events-new-account)
+  * [Updated cluster add-on events](/docs/openshift?topic=openshift-at_events#events-new-addons)
+  * [Updated Fluentd logging events](/docs/openshift?topic=openshift-at_events#events-new-fluentd)
+  * [Updated worker pool and worker node events](/docs/openshift?topic=openshift-at_events#events-new-worker)
+  * [Updated field names across events](/docs/openshift?topic=openshift-at_events#events-updated-fields)
 * [Viewing your cluster events](/docs/openshift?topic=openshift-at_events#at-ui)
 
 [IAM and {{site.data.keyword.cloudaccesstrailshort}} action by API method](/docs/openshift?topic=openshift-api-at-iam)
