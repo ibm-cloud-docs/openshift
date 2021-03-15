@@ -901,7 +901,6 @@ subcollection: openshift
   * [Persistent volumes for container storage](/docs/openshift?topic=openshift-openshift_apps#pv)
 * [Complete example deployment YAML](/docs/openshift?topic=openshift-openshift_apps#yaml-example)
 * [Packaging apps in version 4 clusters for reuse in multiple environments with Kustomize](/docs/openshift?topic=openshift-openshift_apps#kustomize)
-* [Packaging apps in {{site.data.keyword.openshiftshort}} 3.11 clusters by using Helm charts](/docs/openshift?topic=openshift-openshift_apps#roks_helm)
 
 [Deploying apps in OpenShift clusters](/docs/openshift?topic=openshift-deploy_app)
 * [Moving your apps to {{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-deploy_app#openshift_move_apps)
