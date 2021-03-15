@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-15"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -1780,7 +1780,7 @@ During the reboot, the state of your worker node does not change. For example, y
 Rebooting a worker node can cause data corruption on the worker node. Use this command with caution and when you know that a reboot can help recover your worker node. In all other cases, [reload your worker node](#cs_worker_reload) instead.
 {: important}
 
-Before you reboot your worker node, make sure that pods are rescheduled on other worker nodes to help avoid downtime for your app or data corruption on your worker node.
+Before you reboot your worker node, make sure that you have enough capacity in other worker nodes to reschedule the pods on the worker node. Rescheduling pods helps to avoid downtime for your app or data corruption on your worker node.
 
 1. List all worker nodes in your cluster and note the **name** of the worker node that you want to remove.
    ```
@@ -1861,7 +1861,7 @@ A reload can be useful if your worker node experiences problems, such as slow pe
 Reloading a worker node applies patch version updates to your worker node, but not major or minor updates. To see the changes from one patch version to the next, review the [Version changelog](/docs/openshift?topic=openshift-openshift_changelog) documentation.
 {: tip}
 
-Before you reload your worker node, make sure that pods are rescheduled on other worker nodes to help avoid a downtime for your app or data corruption on your worker node.
+Before you reload your worker node, make sure that you have enough capacity in other worker nodes to reschedule the pods on the worker node. Rescheduling pods helps to avoid downtime for your app or data corruption on your worker node.
 
 1. List all worker nodes in your cluster and note the **name** of the worker node that you want to reload.
    ```sh
