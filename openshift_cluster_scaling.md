@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-15"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -320,7 +320,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
 {: shortdesc}
 
 1.  [Prepare your cluster for autoscaling](#ca_prepare_cluster).
-2.  [Follow the instructions](/docs/openshift?topic=openshift-openshift_apps#roks_helm) to install the **Helm version 3** client on your local machine.
+2.  [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the **Helm version 3** client on your local machine.
 3.  Add and update the Helm repo where the cluster autoscaler Helm chart is.
     ```
     helm repo add iks-charts https://icr.io/helm/iks-charts

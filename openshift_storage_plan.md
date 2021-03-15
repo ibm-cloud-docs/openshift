@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-11"
+  years: 2014, 2021
+lastupdated: "2021-03-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -184,7 +184,7 @@ The following image shows available non-persistent data storage options in {{sit
 <tr>
 <td style="text-align:left">Supported in VPC clusters</td>
 <td style="text-align:left">Yes</td>
-<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
 </tr>
 <tr>
 <td style="text-align:left">Supported OpenShift versions</td>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-03-15"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -898,79 +898,4 @@ To set up configuration files with Kustomize:
 
 <br />
 
-## Packaging apps in {{site.data.keyword.openshiftshort}} 3.11 clusters by using Helm charts
-{: #roks_helm}
 
-You can add complex {{site.data.keyword.openshiftshort}} apps to your cluster by using Helm charts.
-{: shortdesc}
-
-<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> In {{site.data.keyword.openshiftshort}} clusters that run version 4, instead of Helm charts, use [Operators](/docs/openshift?topic=openshift-operators) to package, deploy, and update apps or [Kustomize](#kustomize) to package apps for reuse. If you have custom Helm charts, you can create a [Helm-based Operator](https://docs.openshift.com/container-platform/4.5/operators/operator_sdk/osdk-helm.html){: external} instead.
-{: tip}
-
-[Helm](https://helm.sh){: external} is a Kubernetes package manager that uses Helm charts to define, install, and upgrade complex Kubernetes apps in your cluster. Helm charts package the specifications to generate YAML files for Kubernetes resources that build your app. These Kubernetes resources are automatically applied in your cluster and assigned a version by Helm. You can also use Helm to specify and package your own app and let Helm generate the YAML files for your Kubernetes resources.
-
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-
-To set up Helm v3 and the {{site.data.keyword.cloud_notm}} Helm repositories in your cluster:
-
-1. Install the latest release of the version 3 [Helm CLI](https://github.com/helm/helm/releases){: external} on your local machine.
-
-2. Add the {{site.data.keyword.cloud_notm}} Helm repositories to your Helm instance.
-   
-   If you enabled [VRF](/docs/account?topic=account-vrf-service-endpoint#vrf) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) in your {{site.data.keyword.cloud_notm}} account, you can use the private {{site.data.keyword.cloud_notm}} Helm repository to keep your image pull traffic on the private network. If you cannot enable VRF or service endpoints in your account, add the {{site.data.keyword.cloud_notm}} Helm repositories by using the public registry domain: `helm repo add iks-charts https://icr.io/helm/iks-charts`.
-   {: note}
-   
-   ```
-   helm repo add iks-charts https://private.icr.io/helm/iks-charts
-   ```
-   {: pre}
-   ```
-   helm repo add ibm-charts https://raw.githubusercontent.com/IBM/charts/master/repo/stable
-   ```
-   {: pre}
-   ```
-   helm repo add ibm-community https://raw.githubusercontent.com/IBM/charts/master/repo/community
-   ```
-   {: pre}
-   ```
-   helm repo add entitled https://raw.githubusercontent.com/IBM/charts/master/repo/entitled
-   ```
-   {: pre}
-
-   ```
-   helm repo add ibm-helm https://raw.githubusercontent.com/IBM/charts/master/repo/ibm-helm
-   ```
-   {: pre}
-
-3. Update the repos to retrieve the latest versions of all Helm charts.
-   ```
-   helm repo update
-   ```
-   {: pre}
-
-4. List the Helm charts that are currently available in the {{site.data.keyword.cloud_notm}} repositories.
-   ```
-   helm search repo iks-charts
-   ```
-   {: pre}
-   ```
-   helm search repo ibm-charts
-   ```
-   {: pre}
-   ```
-   helm search repo ibm-community
-   ```
-   {: pre}
-   ```
-   helm search repo entitled
-   ```
-   {: pre}
-
-   ```
-   helm search repo ibm-helm
-   ```
-   {: pre}
-
-5. Identify the Helm chart that you want to install and follow the instructions in the Helm chart `README` to install the Helm chart in your cluster.
-
-<br />

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-08"
+lastupdated: "2021-03-15"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -117,9 +117,9 @@ You must [update your cluster](/docs/openshift?topic=openshift-update) by using 
 
 |Update type|Examples of version labels|Updated by|Impact
 |-----|-----|-----|-----|
-|Major|3.x.x|You|Operation changes for clusters, including scripts or deployments.|
-|Minor|x.11.x|You|Operation changes for clusters, including scripts or deployments.|
-|Patch|x.x.104_1507|IBM and you|{{site.data.keyword.openshiftshort}} patches, as well as other {{site.data.keyword.cloud_notm}} Provider component updates such as security and operating system patches. IBM updates masters automatically, but you apply patches to worker nodes. See more about patches in the following section.|
+|Major|4.x.x|You|Operation changes for clusters, including scripts or deployments.|
+|Minor|x.6.x|You|Operation changes for clusters, including scripts or deployments.|
+|Patch|x.x.18_1533|IBM and you|{{site.data.keyword.openshiftshort}} patches, as well as other {{site.data.keyword.cloud_notm}} Provider component updates such as security and operating system patches. IBM updates masters automatically, but you apply patches to worker nodes. See more about patches in the following section.|
 {: caption="Impacts of {{site.data.keyword.openshiftshort}} updates" caption-side="top"}
 
 <dl>
