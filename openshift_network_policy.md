@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-09"
+lastupdated: "2021-03-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -474,6 +474,8 @@ If you use a Windows machine, you must include the `--config=<filepath>/calicoct
   ```
   {: pre}
 
+6. Optional: If you must allow traffic that is not specified by these policies, [create and apply Calico policies](#adding_network_policies) to allow this traffic. For example, if you use any in-cluster webhooks, you must add policies to ensure that the webhooks can make the required connections. You also must create policies for any non-local services that extend the Kubernetes API. You can find these services by running `oc get apiservices`. Note that `default/openshift-apiserver` is included as a local service and does not require a network policy.
+
 <br />
 
 ## Isolating clusters on the private network
@@ -520,7 +522,9 @@ If you use a Windows machine, you must include the `--config=<filepath>/calicoct
   ```
   {: pre}
 
-3. Apply the policies.
+3. Review each policy for any changes you might need to make. For example, if you specified a custom subnet when you created your cluster that provides the private IP addresses for your pods, you must specify that CIDR instead of the `172.30.0.0/16` CIDR in the `allow-all-workers-private.yaml` policy.
+
+4. Apply the policies.
   ```
   calicoctl apply -f allow-all-workers-private.yaml
   calicoctl apply -f allow-egress-pods-private.yaml
@@ -532,7 +536,7 @@ If you use a Windows machine, you must include the `--config=<filepath>/calicoct
   ```
   {: pre}
 
-4. **{{site.data.keyword.openshiftshort}} version 3.11 clusters only**: Set up private host endpoints for your worker nodes. When your worker nodes have private host endpoints, the policies that you apply can target the worker node private interface (eth0) and the pod network of a cluster.
+5. **{{site.data.keyword.openshiftshort}} version 3.11 clusters only**: Set up private host endpoints for your worker nodes. When your worker nodes have private host endpoints, the policies that you apply can target the worker node private interface (eth0) and the pod network of a cluster.
   1. Open the `generic-privatehostendpoint.yaml` policy.
   2. Replace `<worker_name>` with the name of a worker node.
     <p class="note">Some worker nodes must follow a different naming structure for Calico policies. You must use the name that is returned when you run `calicoctl get nodes --config=<filepath>/calicoctl.cfg`.</p>
@@ -546,14 +550,14 @@ If you use a Windows machine, you must include the `--config=<filepath>/calicoct
     ```
     {: pre}
 
-5. Optional: To allow your workers and pods to access {{site.data.keyword.registrylong_notm}} over the private network, apply the `allow-private-services.yaml` and `allow-private-services-pods.yaml` policies. To access other {{site.data.keyword.cloud_notm}} services that support private service endpoints, you must manually add the subnets for those services to this policy.
+6. Optional: To allow your workers and pods to access {{site.data.keyword.registrylong_notm}} over the private network, apply the `allow-private-services.yaml` and `allow-private-services-pods.yaml` policies. To access other {{site.data.keyword.cloud_notm}} services that support private service endpoints, you must manually add the subnets for those services to this policy.
   ```
   calicoctl apply -f allow-private-services.yaml
   calicoctl apply -f allow-private-services-pods.yaml
   ```
   {: pre}
 
-6. Optional: To expose your apps with private network load balancers (NLBs) or Ingress application load balancers (ALBs), you must open the VRRP protocol by applying the `allow-vrrp-private` policy.
+7. Optional: To expose your apps with private network load balancers (NLBs) or Ingress application load balancers (ALBs), you must open the VRRP protocol by applying the `allow-vrrp-private` policy.
   ```
   calicoctl apply -f allow-vrrp-private.yaml
   ```
@@ -561,11 +565,13 @@ If you use a Windows machine, you must include the `--config=<filepath>/calicoct
   You can further control access to networking services by creating [Calico pre-DNAT policies](/docs/openshift?topic=openshift-network_policies#block_ingress). In the pre-DNAT policy, ensure that you use `selector: ibm.role=='worker_private'` to apply the policy to the workers' private host endpoints.
   {: tip}
 
-7. Verify that the policies are applied.
+8. Verify that the policies are applied.
   ```
   calicoctl get GlobalNetworkPolicies -o yaml
   ```
   {: pre}
+
+9. Optional: If you must allow traffic that is not specified by these policies, [create and apply Calico policies](#adding_network_policies) to allow this traffic. For example, if you use any in-cluster webhooks, you must add policies to ensure that the webhooks can make the required connections. You also must create policies for any non-local services that extend the Kubernetes API. You can find these services by running `oc get apiservices`. Note that `default/openshift-apiserver` is included as a local service and does not require a network policy.
 
 <br />
 
