@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-15"
+lastupdated: "2021-03-16"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -865,7 +865,7 @@ The following table shows the changes that are included in the master fix pack p
 
 | Component | Previous | Current | Description |
 | --------- | -------- | ------- | ----------- |
-| Cluster master operations | N/A | N/A | Fixed a problem that might cause cluster master operations to fail for clusters with a private service endpoint enabled. |
+| Cluster master operations | N/A | N/A | Fixed a problem that might cause cluster master operations to fail for clusters with a private cloud service endpoint enabled. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.17.9-1 | v1.17.11-1 | Updated to support the Kubernetes 1.17.11 release and to use `Go` version 1.13.15. |
 | {{site.data.keyword.openshiftshort}} | 4.4.16 | 4.4.17 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-17){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-03-16"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, ingress operator, router
 
@@ -209,10 +209,10 @@ If you want to customize routing rules for your app, you can use [route-specific
 ## How does a request get to my app in a VPC cluster?
 {: #architecture-vpc}
 
-### VPC cluster with a public service endpoint
+### VPC cluster with a public cloud service endpoint
 {: #architecture-vpc_public}
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> When you create a multizone VPC cluster with the public service endpoint enabled, a public Ingress controller and router are created by default. The following diagram shows how Ingress directs communication from the internet to an app in a VPC multizone cluster.
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> When you create a multizone VPC cluster with the public cloud service endpoint enabled, a public Ingress controller and router are created by default. The following diagram shows how Ingress directs communication from the internet to an app in a VPC multizone cluster.
 {: shortdesc}
 
 <img src="images/roks_router_ingress_vpc.png" width="850" alt="Publicly expose an app in a multizone VPC cluster by using Ingress" style="width:830px; border-style: none"/>
@@ -229,10 +229,10 @@ If you want to customize routing rules for your app, you can use [route-specific
 
 6. When the app returns a response packet, it uses the IP address of the worker node where the router service that forwarded the request exists. The VPC load balancer then sends the response packet to the client.
 
-### VPC cluster with a private service endpoint only
+### VPC cluster with a private cloud service endpoint only
 {: #architecture-vpc_private}
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> When you create a multizone VPC cluster with the private service endpoint only, a private Ingress controller and router are created by default. Only clients that are connected to your private VPC network can access apps that are exposed by a private Ingress controller. The following diagram shows how Ingress directs communication from private networks to an app in a VPC multizone cluster.
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> When you create a multizone VPC cluster with the private cloud service endpoint only, a private Ingress controller and router are created by default. Only clients that are connected to your private VPC network can access apps that are exposed by a private Ingress controller. The following diagram shows how Ingress directs communication from private networks to an app in a VPC multizone cluster.
 {: shortdesc}
 
 <img src="images/roks_router_ingress_vpc_private.png" width="850" alt="Privately expose an app in a multizone VPC cluster by using Ingress" style="width:830px; border-style: none"/>

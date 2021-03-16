@@ -550,7 +550,7 @@ If you use a Windows machine, you must include the `--config=<filepath>/calicoct
     ```
     {: pre}
 
-6. Optional: To allow your workers and pods to access {{site.data.keyword.registrylong_notm}} over the private network, apply the `allow-private-services.yaml` and `allow-private-services-pods.yaml` policies. To access other {{site.data.keyword.cloud_notm}} services that support private service endpoints, you must manually add the subnets for those services to this policy.
+6. Optional: To allow your workers and pods to access {{site.data.keyword.registrylong_notm}} over the private network, apply the `allow-private-services.yaml` and `allow-private-services-pods.yaml` policies. To access other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, you must manually add the subnets for those services to this policy.
   ```
   calicoctl apply -f allow-private-services.yaml
   calicoctl apply -f allow-private-services-pods.yaml

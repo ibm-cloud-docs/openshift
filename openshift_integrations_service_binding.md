@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-16"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -107,7 +107,7 @@ To find a list of supported {{site.data.keyword.cloud_notm}} services, see the [
 
 **What is {{site.data.keyword.cloud_notm}} service binding?**
 
-Service binding is a quick way to create service credentials for an {{site.data.keyword.cloud_notm}} service by using its public service endpoint and storing these credentials in a Kubernetes secret in your cluster. To bind a service to your cluster, you must provision an instance of the service first. Then, you use the `ibmcloud oc cluster service bind` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_service_bind) to create the service credentials and the Kubernetes secret. The Kubernetes secret is automatically encrypted in etcd to protect your data.
+Service binding is a quick way to create service credentials for an {{site.data.keyword.cloud_notm}} service by using its public cloud service endpoint and storing these credentials in a Kubernetes secret in your cluster. To bind a service to your cluster, you must provision an instance of the service first. Then, you use the `ibmcloud oc cluster service bind` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_service_bind) to create the service credentials and the Kubernetes secret. The Kubernetes secret is automatically encrypted in etcd to protect your data.
 
 Want to make your secrets even more secured? Ask your cluster admin to [enable a key management service provider](/docs/openshift?topic=openshift-encryption#keyprotect) in your cluster to encrypt new and existing secrets, such as the secret that stores the credentials of your {{site.data.keyword.cloud_notm}} service instances.
 {: tip}
@@ -123,11 +123,11 @@ Yes, you can use services that meet naming requirements and reuse the service cr
   {: screen}
 * **Service credentials**: To use your existing service credentials, specify the `--key` flag in the `ibmcloud oc cluster service bind` command and provide the name of your service credentials. {{site.data.keyword.cloud_notm}} service binding automatically creates a Kubernetes secret with your existing service credentials.
 
-**What if I want to use service credentials that use the private service endpoint?**
+**What if I want to use service credentials that use the private cloud service endpoint?**
 
-By default, the `ibmcloud oc cluster service bind` command creates service credentials with the public service endpoint. To use the private service endpoint, you must manually create service credentials for your service that use the private service endpoint, and then use the `--key` option to specify the name of the existing service credentials.  
+By default, the `ibmcloud oc cluster service bind` command creates service credentials with the public cloud service endpoint. To use the private cloud service endpoint, you must manually create service credentials for your service that use the private cloud service endpoint, and then use the `--key` option to specify the name of the existing service credentials.  
 
-Your service might not yet support private service endpoints.
+Your service might not yet support private cloud service endpoints.
 
 **Can I use all {{site.data.keyword.cloud_notm}} services in my cluster?**
 
@@ -195,9 +195,9 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
    ```
    {: pre}
 
-4. Bind the service to your cluster to create service credentials for your service that use the public service endpoint and store the credentials in a Kubernetes secret. If you have existing service credentials, use the `--key` flag to specify the name of the credentials. For IAM-enabled services, the credentials are automatically created with the **Writer** service access role, but you can use the `--role` flag to specify a different service access role. If you use the `--key` flag, do not include the `--role` flag.
+4. Bind the service to your cluster to create service credentials for your service that use the public cloud service endpoint and store the credentials in a Kubernetes secret. If you have existing service credentials, use the `--key` flag to specify the name of the credentials. For IAM-enabled services, the credentials are automatically created with the **Writer** service access role, but you can use the `--role` flag to specify a different service access role. If you use the `--key` flag, do not include the `--role` flag.
 
-   If your service supports private service endpoints, you can manually create the service credentials with the private service endpoint, and then use the `--key` flag to specify the name of your credentials.
+   If your service supports private cloud service endpoints, you can manually create the service credentials with the private cloud service endpoint, and then use the `--key` flag to specify the name of your credentials.
    {: tip}
 
    ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-03-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -141,7 +141,7 @@ When the components fully provision, a public router subdomain is available for 
     * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC clusters**: To run default {{site.data.keyword.openshiftshort}} components such as the web console or OperatorHub, a public gateway must be attached to the VPC subnets that the worker nodes are deployed to. To check whether a public gateway exists for your VPC subnets in each zone, see steps 3 and 4 in [Creating a VPC subnet and attaching a public gateway](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet_cli).
     * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters**:
       * In the output of Step 2, check that your cluster has a **Public Service Endpoint URL** and does not have a **Private Service Endpoint URL**.
-         * If your cluster does not have a public service endpoint, [enable it](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se).
+         * If your cluster does not have a public cloud service endpoint, [enable it](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se).
       * Check that at least some of the worker nodes in your cluster have a **Public IP** address. If no worker node does, you must [set up public VLANs for at least one worker pool](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans).
           ```
           ibmcloud oc workers -c <cluster_name_or_ID>

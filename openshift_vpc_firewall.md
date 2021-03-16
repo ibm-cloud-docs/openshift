@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-10"
+lastupdated: "2021-03-16"
 
 keywords: openshift, roks, rhoks, rhos, firewall, ips
 
@@ -206,7 +206,7 @@ To allow access for a specific cluster:
 6. Allow access to the service endpoint URLs and ports that you got in the previous step. If your firewall is IP-based, you can see which IP addresses are opened when you allow access to the service endpoint URLs by reviewing [this table](/docs/openshift?topic=openshift-firewall#master_ips).
 
 7. Verify your connection.
-  * If the public service endpoint is enabled:
+  * If the public cloud service endpoint is enabled:
     ```
     curl --insecure <public_service_endpoint_URL>/version
     ```
@@ -233,7 +233,7 @@ To allow access for a specific cluster:
     }
     ```
     {: screen}
-  * If only the private service endpoint is enabled, you must be in your {{site.data.keyword.cloud_notm}} private network or connect to the private network through a VPN connection to verify your connection to the master. **Note**: You must [expose the master endpoint through a private load balancer](/docs/openshift?topic=openshift-access_cluster#access_private_se) so that users can access the master through a VPN or {{site.data.keyword.BluDirectLink}} connection.
+  * If only the private cloud service endpoint is enabled, you must be in your {{site.data.keyword.cloud_notm}} private network or connect to the private network through a VPN connection to verify your connection to the master. **Note**: You must [expose the master endpoint through a private load balancer](/docs/openshift?topic=openshift-access_cluster#access_private_se) so that users can access the master through a VPN or {{site.data.keyword.BluDirectLink}} connection.
     ```
     curl --insecure <private_service_endpoint_URL>/version
     ```

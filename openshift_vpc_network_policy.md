@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-10"
+lastupdated: "2021-03-16"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -236,7 +236,7 @@ Use the {{site.data.keyword.cloud_notm}} console to add inbound and outbound rul
     <td>CIDR block `161.26.0.0/16`</td>
     </tr>
     <tr>
-    <td>Allow worker nodes to communicate with the cluster master through the private service endpoint and with other {{site.data.keyword.cloud_notm}} services that support private service endpoints.</td>
+    <td>Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint.</td>
     <td>ALL</td>
     <td> - </td>
     <td>CIDR block `166.8.0.0/14`</td>
@@ -414,7 +414,7 @@ To create rules in your default security group:
     <td>CIDR block `161.26.0.0/16`</td>
     </tr>
     <tr>
-    <td>Allow worker nodes to communicate with the cluster master through the private service endpoint and with other {{site.data.keyword.cloud_notm}} services that support private service endpoints.</td>
+    <td>Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint.</td>
     <td>ALL</td>
     <td> - </td>
     <td>CIDR block `166.8.0.0/14`</td>
@@ -506,7 +506,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>Set to top</td>
    </tr>
    <tr>
-   <td>Allow worker nodes to communicate with the cluster master through the private service endpoint and with other {{site.data.keyword.cloud_notm}} services that support private service endpoints.</td>
+   <td>Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint.</td>
    <td>Allow</td>
    <td>ALL</td>
    <td>166.8.0.0/14</td>
@@ -596,7 +596,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>Set to top</td>
    </tr>
    <tr>
-   <td>Allow worker nodes to communicate with the cluster master through the private service endpoint and to communicate with other {{site.data.keyword.cloud_notm}} services that support private service endpoints, such as {{site.data.keyword.registrylong_notm}}.</td>
+   <td>Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint.</td>
    <td>Allow</td>
    <td>ALL</td>
    <td>Any</td>
@@ -758,9 +758,9 @@ To create an ACL for each subnet that your cluster is attached to:
   ```
   {: pre}
 
-6. Create rules to allow inbound traffic from and outbound traffic to the `161.26.0.0/16` and `166.8.0.0/14` {{site.data.keyword.cloud_notm}} private subnets. The `161.26.0.0/16` rules allow you to create worker nodes in your cluster. The `166.8.0.0/14` rules allow worker nodes to communicate with the cluster master through the private service endpoint and to communicate with other {{site.data.keyword.cloud_notm}} services that support private service endpoints, such as {{site.data.keyword.registrylong_notm}}.
+6. Create rules to allow inbound traffic from and outbound traffic to the `161.26.0.0/16` and `166.8.0.0/14` {{site.data.keyword.cloud_notm}} private subnets. The `161.26.0.0/16` rules allow you to create worker nodes in your cluster. The `166.8.0.0/14` rules allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint.
 
-  <p class="tip">Need to connect your worker nodes to {{site.data.keyword.cloud_notm}} services that support only public service endpoints? [Attach a public gateway to the subnet ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/clusters) so that worker nodes can connect to a public endpoint outside of your cluster. Then, create inbound and outbound rules to allow ingress from and egress to the services' public service endpoints.</p>
+  <p class="tip">Need to connect your worker nodes to {{site.data.keyword.cloud_notm}} services that support only public cloud service endpoints? [Attach a public gateway to the subnet ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/clusters) so that worker nodes can connect to a public endpoint outside of your cluster. Then, create inbound and outbound rules to allow ingress from and egress to the services' public cloud service endpoints.</p>
 
   ```
   ibmcloud is network-acl-rule-add $acl_id allow outbound all 0.0.0.0/0 161.26.0.0/16 --name allow-ibm-private-network-outbound1

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-16"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -429,7 +429,7 @@ When you use the API for automation, be sure to rely on the responses from the A
 You can use the [Kubernetes API](https://kubernetes.io/docs/reference/using-api/api-overview/){: external} to interact with your cluster in {{site.data.keyword.openshiftlong_notm}}. For authentication details, see [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-access_reference#iam_issuer_users).
 {: shortdesc}
 
-The following instructions require public network access in your cluster to connect to the public service endpoint of your Kubernetes master.
+The following instructions require public network access in your cluster to connect to the public cloud service endpoint of your Kubernetes master.
 {: note}
 
 1. Follow the steps in [Automating cluster deployments with the API](#cs_api) to retrieve your {{site.data.keyword.cloud_notm}} IAM access token, refresh token, the ID of the cluster where you want to run Kubernetes API requests, and the {{site.data.keyword.openshiftlong_notm}} region where your cluster is located.
@@ -513,15 +513,15 @@ The following instructions require public network access in your cluster to conn
 
 4. Retrieve the URL of the default service endpoint for your Kubernetes master by using the IAM access token and the name or ID of your cluster. You can find the URL in the **`masterURL`** of your API output.
 
-  If only the public service endpoint or only the private service endpoint is enabled for your cluster, that endpoint is listed for the `masterURL`. If both the public and private service endpoints are enabled for your cluster, the public service endpoint is listed by default for the `masterURL`. To use the private service endpoint instead, find the URL in the `privateServiceEndpointURL` field of the output.
+  If only the public cloud service endpoint or only the private cloud service endpoint is enabled for your cluster, that endpoint is listed for the `masterURL`. If both the public and private cloud service endpoints are enabled for your cluster, the public cloud service endpoint is listed by default for the `masterURL`. To use the private cloud service endpoint instead, find the URL in the `privateServiceEndpointURL` field of the output.
   {: note}
    ```
    GET https://containers.cloud.ibm.com/global/v2/getCluster?cluster=<cluster_name_or_ID>
    ```
    {: codeblock}
 
-   <table summary="Input parameters to get the public service endpoint for your Kubernetes master with the input parameter in column 1 and the value in column 2.">
-   <caption>Input parameters to get the public service endpoint for your Kubernetes master.</caption>
+   <table summary="Input parameters to get the public cloud service endpoint for your Kubernetes master with the input parameter in column 1 and the value in column 2.">
+   <caption>Input parameters to get the public cloud service endpoint for your Kubernetes master.</caption>
    <thead>
    <th>Input parameters</th>
    <th>Values</th>
@@ -538,7 +538,7 @@ The following instructions require public network access in your cluster to conn
    </tbody>
    </table>
 
-   Example output for a public service endpoint:
+   Example output for a public cloud service endpoint:
    ```
    ...
    "etcdPort": "31593",
@@ -548,7 +548,7 @@ The following instructions require public network access in your cluster to conn
    ```
    {: screen}
 
-   Example output for a private service endpoint:
+   Example output for a private cloud service endpoint:
    ```
    ...
    "etcdPort": "31593",
@@ -558,7 +558,7 @@ The following instructions require public network access in your cluster to conn
    ```
    {: screen}
 
-5. To use a private service endpoint, you must first [expose the private service endpoint with a load balancer IP that is routable from your VPN connection into the private network](/docs/openshift?topic=openshift-access_cluster#access_private_se).
+5. To use a private cloud service endpoint, you must first [expose the private cloud service endpoint with a load balancer IP that is routable from your VPN connection into the private network](/docs/openshift?topic=openshift-access_cluster#access_private_se).
 
 6. Run Kubernetes API requests against your cluster by using the IAM ID token that you retrieved earlier. For example, list the Kubernetes version that runs in your cluster.
 

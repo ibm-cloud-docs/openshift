@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-08"
+lastupdated: "2021-03-16"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -176,10 +176,10 @@ The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>.<globally_unique_
 
 <br />
 
-## Publicly exposing apps in classic clusters or in VPC clusters with a public service endpoint
+## Publicly exposing apps in classic clusters or in VPC clusters with a public cloud service endpoint
 {: #ingress-roks4-public}
 
-If your cluster is created on <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> classic infrastructure, or if your cluster is created on <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2 infrastructure and you enabled the public service endpoint during cluster creation, you can use the default public Ingress controller to expose apps in your cluster to receive requests that are from the public network.
+If your cluster is created on <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> classic infrastructure, or if your cluster is created on <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2 infrastructure and you enabled the public cloud service endpoint during cluster creation, you can use the default public Ingress controller to expose apps in your cluster to receive requests that are from the public network.
 {: shortdesc}
 
 **Before you begin**:
@@ -384,10 +384,10 @@ http://<subdomain2>.<domain>/<app1_path>
 
 <br />
 
-## Publicly exposing apps in VPC clusters with a private service endpoint only
+## Publicly exposing apps in VPC clusters with a private cloud service endpoint only
 {: #priv-se-pub-controller}
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> If your cluster is created on VPC Gen 2 infrastructure and you enabled only the private service endpoint during cluster creation, your cluster is created with only a private Ingress controller by default. To publicly expose your apps, you must first create a public Ingress controller. Then, you must register your Ingress controller with a subdomain and, optionally, import your own TLS certificate.
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> If your cluster is created on VPC Gen 2 infrastructure and you enabled only the private cloud service endpoint during cluster creation, your cluster is created with only a private Ingress controller by default. To publicly expose your apps, you must first create a public Ingress controller. Then, you must register your Ingress controller with a subdomain and, optionally, import your own TLS certificate.
 {: shortdesc}
 
 **Before you begin**:
@@ -711,14 +711,14 @@ To expose apps that are outside of your cluster to the public:
     ```
     {: pre}
 
-5. Continue with the second step in [Exposing apps to the public in classic clusters or in VPC clusters with a public service endpoint](#ingress-roks4-public-2) or [Exposing apps to the public in VPC clusters with a private service endpoint only](#priv-se-pub-controller-2).
+5. Continue with the second step in [Exposing apps to the public in classic clusters or in VPC clusters with a public cloud service endpoint](#ingress-roks4-public-2) or [Exposing apps to the public in VPC clusters with a private cloud service endpoint only](#priv-se-pub-controller-2).
 
 <br />
 
-## Privately exposing apps in classic clusters or in VPC clusters with a public service endpoint
+## Privately exposing apps in classic clusters or in VPC clusters with a public cloud service endpoint
 {: #ingress-roks4-private}
 
-If your cluster is created on <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> classic infrastructure, or if your cluster is created on <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2 infrastructure and you enabled the public service endpoint during cluster creation, your cluster is created with only a public Ingress controller by default. To privately expose your apps, you must first create a private Ingress controller. Then you must register your Ingress controller with a subdomain and, optionally, import your own TLS certificate.
+If your cluster is created on <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> classic infrastructure, or if your cluster is created on <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2 infrastructure and you enabled the public cloud service endpoint during cluster creation, your cluster is created with only a public Ingress controller by default. To privately expose your apps, you must first create a private Ingress controller. Then you must register your Ingress controller with a subdomain and, optionally, import your own TLS certificate.
 {: shortdesc}
 
 **Before you begin**:
@@ -978,10 +978,10 @@ http://<subdomain2>.<domain>/<app1_path>
 
 <br />
 
-## Privately exposing apps in VPC clusters with a private service endpoint only
+## Privately exposing apps in VPC clusters with a private cloud service endpoint only
 {: #priv-se-priv-controller}
 
-If your cluster is created on <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2 infrastructure and you enabled the private service endpoint only during cluster creation, you can use the default private Ingress controller to expose apps in your cluster to requests that are from the private network.
+If your cluster is created on <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2 infrastructure and you enabled the private cloud service endpoint only during cluster creation, you can use the default private Ingress controller to expose apps in your cluster to requests that are from the private network.
 {: shortdesc}
 
 **Before you begin**:

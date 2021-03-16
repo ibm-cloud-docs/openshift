@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-03-16"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -318,14 +318,14 @@ The following list of network load balancer (NLB) DNS events are sent to {{site.
 ## Private service endpoint allowlist events
 {: #acl-events}
 
-The following table lists the actions related to access control lists (ACLs) and the generation of events for clusters that use a private service endpoint allowlist.
+The following table lists the actions related to access control lists (ACLs) and the generation of events for clusters that use a private cloud service endpoint allowlist.
 {: shortdesc}
 
 | Action  | Description  |
 |---------|--------------|
-| `containers-kubernetes.network.acl.delete ` | The private service endpoint allowlist feature for a cluster is disabled. |
-| `containers-kubernetes.network.acl.get` | The subnet allowlist for the private service endpoint of a cluster is requested.  |
-| `containers-kubernetes.network.acl.update` | The private service endpoint allowlist feature for a cluster is enabled, subnets are added to the allowlist, or subnets are removed from the allowlist. |
+| `containers-kubernetes.network.acl.delete ` | The private cloud service endpoint allowlist feature for a cluster is disabled. |
+| `containers-kubernetes.network.acl.get` | The subnet allowlist for the private cloud service endpoint of a cluster is requested.  |
+| `containers-kubernetes.network.acl.update` | The private cloud service endpoint allowlist feature for a cluster is enabled, subnets are added to the allowlist, or subnets are removed from the allowlist. |
 {: caption="ACL events" caption-side="top"}
 {: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
 
@@ -401,10 +401,10 @@ Review tentatively renamed cluster events.
 | `containers-kubernetes.cluster-master.update` | A cluster master update is requested. |
 | `containers-kubernetes.cluster-masterlogs.retrieve` | The status for the most recent collection of master logs for the cluster is returned. |
 | `containers-kubernetes.cluster-masterlogs.status` | A collection of master logs for the cluster is requested. |
-| `containers-kubernetes.cluster-private-service-endpoint.disable` | The private service endpoint for a cluster is disabled. |
-| `containers-kubernetes.cluster-private-service-endpoint.enable` | The private service endpoint for a cluster is enabled. |
-| `containers-kubernetes.cluster-public-service-endpoint.disable` | The public service endpoint for a cluster is disabled. |
-| `containers-kubernetes.cluster-public-service-endpoint.enable` | The public service endpoint for a cluster is enabled. |
+| `containers-kubernetes.cluster-private-service-endpoint.disable` | The private cloud service endpoint for a cluster is disabled. |
+| `containers-kubernetes.cluster-private-service-endpoint.enable` | The private cloud service endpoint for a cluster is enabled. |
+| `containers-kubernetes.cluster-public-service-endpoint.disable` | The public cloud service endpoint for a cluster is disabled. |
+| `containers-kubernetes.cluster-public-service-endpoint.enable` | The public cloud service endpoint for a cluster is enabled. |
 | `containers-kubernetes.cluster-pull-secret.enable` | An image pull secret to {{site.data.keyword.registrylong_notm}} is created in the `default` project of the cluster. |
 | `containers-kubernetes.cluster-rbac.apply` | {{site.data.keyword.cloud_notm}} IAM service access roles are synchronized with Kubernetes RBAC roles in the cluster. This event commonly happens while retrieving the Kubernetes configuration file (`kubeconfig`) for a cluster (the `containers-kubernetes.cluster.config` event). |
 | `containers-kubernetes.cluster-rbac.update` | The {{site.data.keyword.cloud_notm}} IAM service access roles are synchronized with Kubernetes RBAC roles in the cluster. This event commonly happens after you update the service access role for a user in IAM. |
