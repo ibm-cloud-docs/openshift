@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-03-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -189,11 +189,11 @@ Review the following cluster API methods, their corresponding actions in {{site.
 |	POST​/v1​/clusters​/{idOrName}​/webhooks	|	Add a webhook to a cluster.	|	containers-kubernetes.cluster.update	|	containers-kubernetes.cluster.create	|
 |	POST​/v2​/applyRBACAndGetKubeconfig	|	Apply IAM roles to the cluster, then retrieve the cluster's kubeconfig file. Optionally include the network configuration file.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.cluster.update	|
 |	POST​/v2​/autoUpdateMaster	|	Set the autoupdate status of the cluster master.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.account.update 	|
-|	POST​/v2​/disablePrivateServiceEndpoint	|	Disable a private service endpoint for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.cluster.update	|
-|	POST​/v2​/disablePublicServiceEndpoint	|	Disable a public service endpoint for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.cluster.update	|
+|	POST​/v2​/disablePrivateServiceEndpoint	|	Disable a private cloud service endpoint for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.cluster.update	|
+|	POST​/v2​/disablePublicServiceEndpoint	|	Disable a public cloud service endpoint for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.cluster.update	|
 |	POST​/v2​/enableKMS	|	Enable a key management service (KMS) for a cluster	|	containers-kubernetes.cluster.create	|	containers-kubernetes.account.update	|
-|	POST​/v2​/enablePrivateServiceEndpoint	|	Enable the private service endpoint for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.cluster.update	|
-|	POST​/v2​/enablePublicServiceEndpoint	|	Enable the public service endpoint for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.cluster.update	|
+|	POST​/v2​/enablePrivateServiceEndpoint	|	Enable the private cloud service endpoint for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.cluster.update	|
+|	POST​/v2​/enablePublicServiceEndpoint	|	Enable the public cloud service endpoint for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.cluster.update	|
 |	POST​/v2​/enablePullSecret	|	Create image pull secret to {{site.data.keyword.registrylong_notm}} in the default Kubernetes namespace.	|	containers-kubernetes.cluster.operate	|	containers-kubernetes.cluster.update	|
 |	POST​/v2​/refreshMaster	|	Refresh the Kubernetes master.	|	containers-kubernetes.cluster.operate	|	containers-kubernetes.account.update	|
 |	POST​/v2​/updateMaster	|	Update the version of the Kubernetes cluster master node.	|	containers-kubernetes.cluster.operate	|	containers-kubernetes.account.update 	|
@@ -366,16 +366,16 @@ Review the following observability monitoring API methods, their corresponding a
 ## Private service endpoint allowlist
 {: #ks-acl}
 
-Review the following access control list (ACL) API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}} if you use a private service endpoint allowlist.
+Review the following access control list (ACL) API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}} if you use a private cloud service endpoint allowlist.
 {: shortdesc}
 
 |	API Method	|	Description	|	IAM action for the API	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
-|	DELETE​/v1​/acl​/{idOrName}	|	Disable the private service endpoint allowlist feature for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.network-acl.delete 	|
-|	GET​/v1​/acl​/{idOrName}	|	Get the subnets in the private service endpoint allowlist.	|	containers-kubernetes.cluster.read	|	containers-kubernetes.network-acl.get 	|
-|	PATCH​/v1​/acl​/{idOrName}​/add	|	Add subnets to a cluster's private service endpoint allowlist.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.network-acl.update 	|
-|	PATCH​/v1​/acl​/{idOrName}​/rm	|	Remove subnets from a cluster's private service endpoint allowlist.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.network-acl.update 	|
-|	POST​/v1​/acl​/{idOrName}​/enable	|	Enables the private service endpoint allowlist feature for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.network-acl.update	|
+|	DELETE​/v1​/acl​/{idOrName}	|	Disable the private cloud service endpoint allowlist feature for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.network-acl.delete 	|
+|	GET​/v1​/acl​/{idOrName}	|	Get the subnets in the private cloud service endpoint allowlist.	|	containers-kubernetes.cluster.read	|	containers-kubernetes.network-acl.get 	|
+|	PATCH​/v1​/acl​/{idOrName}​/add	|	Add subnets to a cluster's private cloud service endpoint allowlist.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.network-acl.update 	|
+|	PATCH​/v1​/acl​/{idOrName}​/rm	|	Remove subnets from a cluster's private cloud service endpoint allowlist.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.network-acl.update 	|
+|	POST​/v1​/acl​/{idOrName}​/enable	|	Enables the private cloud service endpoint allowlist feature for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.network-acl.update	|
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="ACL API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 

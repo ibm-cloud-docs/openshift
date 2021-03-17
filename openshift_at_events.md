@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-03-17"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -169,12 +169,11 @@ The following list of the cluster add-on events are sent to {{site.data.keyword.
 ## Deprecated: Previous cluster management events
 {: #cluster-events-old}
 
-The following events are deprecated and become unsupported 12 April 2021. If you have tooling that relies on these events, update the tooling to the [new events](#events-new) if applicable.
+The following events are deprecated and become unsupported 16 April 2021. If you have tooling that relies on these events, update the tooling to the [new events](#events-new) if applicable.
 {: deprecated}
 
 To align with event auditing standards across cloud, {{site.data.keyword.openshiftlong_notm}} introduces new and deprecates some existing event names or fields as follows.
-* **New events available now**: API actions that require Viewer permissions, such as `list` and `get`, now send events. You can find these events throughout this page.
-* **Deprecated events**: These deprecated events are no longer sent on 12 April 2021. Instead, [new events](#events-new) that might include updated names and updated fields are sent.
+* **Deprecated events**: These deprecated events are no longer sent on 16 April 2021. Instead, [ events with updatedd names or fields are sent](#events-new).
 * **Deprecated fields across events**: [Some fields](#events-updated-fields) are deprecated and replaced by or updated with new values across events.
 
 |Action|Description|
@@ -318,14 +317,14 @@ The following list of network load balancer (NLB) DNS events are sent to {{site.
 ## Private service endpoint allowlist events
 {: #acl-events}
 
-The following table lists the actions related to access control lists (ACLs) and the generation of events for clusters that use a private service endpoint allowlist.
+The following table lists the actions related to access control lists (ACLs) and the generation of events for clusters that use a private cloud service endpoint allowlist.
 {: shortdesc}
 
 | Action  | Description  |
 |---------|--------------|
-| `containers-kubernetes.network.acl.delete ` | The private service endpoint allowlist feature for a cluster is disabled. |
-| `containers-kubernetes.network.acl.get` | The subnet allowlist for the private service endpoint of a cluster is requested.  |
-| `containers-kubernetes.network.acl.update` | The private service endpoint allowlist feature for a cluster is enabled, subnets are added to the allowlist, or subnets are removed from the allowlist. |
+| `containers-kubernetes.network.acl.delete ` | The private cloud service endpoint allowlist feature for a cluster is disabled. |
+| `containers-kubernetes.network.acl.get` | The subnet allowlist for the private cloud service endpoint of a cluster is requested.  |
+| `containers-kubernetes.network.acl.update` | The private cloud service endpoint allowlist feature for a cluster is enabled, subnets are added to the allowlist, or subnets are removed from the allowlist. |
 {: caption="ACL events" caption-side="top"}
 {: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
 
@@ -372,13 +371,13 @@ The following list of worker node and worker pool events are sent to {{site.data
 {: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
 {: caption="Worker node and worker pool events" caption-side="top"}
 
-## Preview: Events with updated names (tentative)
+## Preview: Events with updated names
 {: #events-new}
 
 The following events are tentatively renamed, following the deprecation of previous cluster events.
 {: shortdesc}
 
-These event names are subject to change and provided for informational purposes only. The events are sent 12 April 2021, after the deprecation period of the existing events ends.
+These event names are subject to change and provided for informational purposes only. The events are sent 16 April 2021, after the deprecation period of the existing events ends.
 {: important}
 
 ### Updated cluster events
@@ -401,10 +400,10 @@ Review tentatively renamed cluster events.
 | `containers-kubernetes.cluster-master.update` | A cluster master update is requested. |
 | `containers-kubernetes.cluster-masterlogs.retrieve` | The status for the most recent collection of master logs for the cluster is returned. |
 | `containers-kubernetes.cluster-masterlogs.status` | A collection of master logs for the cluster is requested. |
-| `containers-kubernetes.cluster-private-service-endpoint.disable` | The private service endpoint for a cluster is disabled. |
-| `containers-kubernetes.cluster-private-service-endpoint.enable` | The private service endpoint for a cluster is enabled. |
-| `containers-kubernetes.cluster-public-service-endpoint.disable` | The public service endpoint for a cluster is disabled. |
-| `containers-kubernetes.cluster-public-service-endpoint.enable` | The public service endpoint for a cluster is enabled. |
+| `containers-kubernetes.cluster-private-service-endpoint.disable` | The private cloud service endpoint for a cluster is disabled. |
+| `containers-kubernetes.cluster-private-service-endpoint.enable` | The private cloud service endpoint for a cluster is enabled. |
+| `containers-kubernetes.cluster-public-service-endpoint.disable` | The public cloud service endpoint for a cluster is disabled. |
+| `containers-kubernetes.cluster-public-service-endpoint.enable` | The public cloud service endpoint for a cluster is enabled. |
 | `containers-kubernetes.cluster-pull-secret.enable` | An image pull secret to {{site.data.keyword.registrylong_notm}} is created in the `default` project of the cluster. |
 | `containers-kubernetes.cluster-rbac.apply` | {{site.data.keyword.cloud_notm}} IAM service access roles are synchronized with Kubernetes RBAC roles in the cluster. This event commonly happens while retrieving the Kubernetes configuration file (`kubeconfig`) for a cluster (the `containers-kubernetes.cluster.config` event). |
 | `containers-kubernetes.cluster-rbac.update` | The {{site.data.keyword.cloud_notm}} IAM service access roles are synchronized with Kubernetes RBAC roles in the cluster. This event commonly happens after you update the service access role for a user in IAM. |

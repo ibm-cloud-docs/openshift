@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-09"
+lastupdated: "2021-03-17"
 
 keywords: openshift, rhoks, roks, rhos, kernel
 
@@ -234,12 +234,71 @@ Increase or decrease the Calico plug-in maximum transmission unit (MTU) to meet 
 By default, the Calico network plug-in in your {{site.data.keyword.openshiftlong_notm}} cluster has an MTU of 1480 bytes. For most cases, this default MTU value provides sufficient throughput for packets that are sent and received in your network workloads. Review the following cases in which you might need to modify the default Calico MTU:
 
 * If your cluster uses bare metal worker nodes, and you use jumbo frames on the bare metal worker nodes, the jumbo frames have an MTU value in the range of 1500 to 9000. To ensure that your cluster's pod network can use this higher MTU value, you can increase the Calico MTU to 20 bytes lower than the jumbo frame MTU. This 20 byte difference allows space for packet header on encapsulated packets. For example, if your worker nodes' jumbo frames are set to 9000, you can set the Calico MTU to 8980. Note that all worker nodes in the cluster must use the same Calico MTU, so to increase the Calico MTU, all worker nodes in the cluster must be bare metal and use jumbo frames.
-* If you have a VPN connection set up for your cluster, some VPN connections require a smaller Calico MTU than the default. Check with the VPN service to determine whether a smaller Calico MTU is required. 
+* If you have a VPN connection set up for your cluster, some VPN connections require a smaller Calico MTU than the default. Check with the VPN service provider to determine whether a smaller Calico MTU is required.
+* If your cluster's worker nodes exist on different subnets, increasing the MTU value for the worker nodes and for the Calico MTU can allow pods to use the full bandwidth capability of the worker nodes.
+
+**Before you begin**: If your bare metal worker nodes still run the default MTU value, increase the MTU value for your worker nodes first before you increase the MTU value for the Calico plug-in. For example, you can apply the following daemon set to change the MTU for your worker nodes's jumbo frames to 9000 bytes.
+```
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: jumbo-apply
+  namespace: kube-system
+  labels:
+    tier: management
+    app: jumbo-apply
+spec:
+  selector:
+    matchLabels:
+      name: jumbo-apply
+  template:
+    metadata:
+      labels:
+        name: jumbo-apply
+    spec:
+      hostNetwork: true
+      hostPID: true
+      hostIPC: true
+      tolerations:
+      - operator: Exists
+      initContainers:
+        - command:
+            - sh
+            - -c
+            - ip link set dev bond0 mtu 9000;ip link set dev bond1 mtu 9000;
+          image: alpine:3.6
+          imagePullPolicy: IfNotPresent
+          name: iplink
+          resources: {}
+          securityContext:
+            privileged: true
+            capabilities:
+              add:
+                - NET_ADMIN
+          volumeMounts:
+            - name: modifysys
+              mountPath: /sys
+      containers:
+        - resources:
+            requests:
+              cpu: 0.01
+          image: alpine:3.6
+          name: sleepforever
+          command: ["/bin/sh", "-c"]
+          args:
+            - >
+              while true; do
+                sleep 100000;
+              done
+      volumes:
+        - name: modifysys
+          hostPath:
+             path: /sys
+```
+{: codeblock}
 
 To run your {{site.data.keyword.openshiftshort}} cluster, make sure that the MTU is equal to or greater than 1450 bytes.
-{: important} 
-
-
+{: important}
 
 ### Changing the Calico MTU for version 4 clusters
 {: #calico-mtu-43}
@@ -263,7 +322,7 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
          encapsulation: IPIPCrossSubnet
          natOutgoing: Enabled
          nodeSelector: all()
-       mtu: 1500
+       mtu: 8980
        nodeAddressAutodetectionV4:
          interface: (^bond0$|^eth0$|^ens6$|^ens3$)
      kubernetesProvider: OpenShift

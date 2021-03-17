@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-08"
+lastupdated: "2021-03-16"
 
 keywords: openshift, roks, rhos, rhoks, vlan
 
@@ -102,33 +102,33 @@ After you initially set up your network when you [create a cluster](/docs/opensh
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> The content on this page is specific to **classic clusters only**. For information about VPC clusters, see [Understanding network basics of VPC clusters](/docs/openshift?topic=openshift-vpc-subnets).
 {: note}
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> The content on this page is specific to **classic clusters that run {{site.data.keyword.openshiftshort}} 3.11 only**. In clusters that run {{site.data.keyword.openshiftshort}} 3.11, you must enable the public service endpoint during cluster creation, and you cannot disable it later. You can later enable the private service endpoint. Clusters that run version 4 are created with the public service endpoint only, and you cannot later change the service endpoints.
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> The content on this page is specific to **classic clusters that run {{site.data.keyword.openshiftshort}} 3.11 only**. In clusters that run {{site.data.keyword.openshiftshort}} 3.11, you must enable the public cloud service endpoint during cluster creation, and you cannot disable it later. You can later enable the private cloud service endpoint. Clusters that run version 4 are created with the public cloud service endpoint only, and you cannot later change the service endpoints.
 {: important}
 
 
-## Setting up the private service endpoint
+## Setting up the private cloud service endpoint
 {: #set-up-private-se}
 
-Enable the private service endpoint for your cluster.
+Enable the private cloud service endpoint for your cluster.
 {: shortdesc}
 
-The private service endpoint makes your Kubernetes master privately accessible. Your worker nodes and your authorized cluster users can communicate with the Kubernetes master over the private network. To determine whether you can enable the private service endpoint, see [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_clusters#workeruser-master). Note that you cannot disable the private service endpoint after you enable it.
+The private cloud service endpoint makes your Kubernetes master privately accessible. Your worker nodes and your authorized cluster users can communicate with the Kubernetes master over the private network. To determine whether you can enable the private cloud service endpoint, see [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_clusters#workeruser-master). Note that you cannot disable the private cloud service endpoint after you enable it.
 
 1. Enable [VRF](/docs/account?topic=account-vrf-service-endpoint#vrf) in your IBM Cloud infrastructure account. To check whether a VRF is already enabled, use the `ibmcloud account show` command.
 2. [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint).
-3. Enable the private service endpoint.
+3. Enable the private cloud service endpoint.
    ```
    ibmcloud oc cluster master private-service-endpoint enable --cluster <cluster_name_or_ID>
    ```
    {: pre}
-4. Refresh the Kubernetes master API server to use the private service endpoint. You can follow the prompt in the CLI, or manually run the following command. It might take several minutes for the master to refresh.
+4. Refresh the Kubernetes master API server to use the private cloud service endpoint. You can follow the prompt in the CLI, or manually run the following command. It might take several minutes for the master to refresh.
    ```
    ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
    ```
    {: pre}
 
 5. [Create a configmap](/docs/openshift?topic=openshift-update#worker-up-configmap) to control the maximum number of worker nodes that can be unavailable at a time in your cluster. When you update your worker nodes, the configmap helps prevent downtime for your apps as the apps are rescheduled orderly onto available worker nodes.
-6. Update all the worker nodes in your cluster to pick up the private service endpoint configuration.
+6. Update all the worker nodes in your cluster to pick up the private cloud service endpoint configuration.
 
    <p class="important">By issuing the update command, the worker nodes are reloaded to pick up the service endpoint configuration. If no worker update is available, you must [reload the worker nodes manually](/docs/openshift?topic=openshift-kubernetes-service-cli). If you reload, be sure to cordon, drain, and manage the order to control the maximum number of worker nodes that are unavailable at a time.</p>
    ```
@@ -137,36 +137,36 @@ The private service endpoint makes your Kubernetes master privately accessible. 
    {: pre}
 
 7. If the cluster is in an environment behind a firewall:
-  * [Allow your authorized cluster users to run `kubectl` commands to access the master through the private service endpoint.](/docs/openshift?topic=openshift-firewall#firewall_kubectl)
+  * [Allow your authorized cluster users to run `kubectl` commands to access the master through the private cloud service endpoint.](/docs/openshift?topic=openshift-firewall#firewall_kubectl)
   * [Allow outbound network traffic to the private IPs](/docs/openshift?topic=openshift-firewall#firewall_outbound) for infrastructure resources and for the {{site.data.keyword.cloud_notm}} services that you plan to use.
 <br />
 
-## Setting up the public service endpoint
+## Setting up the public cloud service endpoint
 {: #set-up-public-se}
 
-Enable the public service endpoint for your cluster.
+Enable the public cloud service endpoint for your cluster.
 {: shortdesc}
 
-Your cluster must have a public service endpoint on classic infrastructre. For a cluster with only a private service endpoint, create the cluster on VPC Gen 2 compute infrastructure instead.
+Your cluster must have a public cloud service endpoint on classic infrastructre. For a cluster with only a private cloud service endpoint, create the cluster on VPC Gen 2 compute infrastructure instead.
 {: important}
 
-The public service endpoint makes your Kubernetes master publicly accessible. Your worker nodes and your authorized cluster users can securely communicate with the Kubernetes master over the public network. For more information, see [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_clusters#internet-facing).
+The public cloud service endpoint makes your Kubernetes master publicly accessible. Your worker nodes and your authorized cluster users can securely communicate with the Kubernetes master over the public network. For more information, see [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_clusters#internet-facing).
 
 **Steps to enable**
 
 If you previously disabled the public endpoint, you can re-enable it.
-1. Enable the public service endpoint.
+1. Enable the public cloud service endpoint.
    ```
    ibmcloud oc cluster master public-service-endpoint enable --cluster <cluster_name_or_ID>
    ```
    {: pre}
-2. Refresh the Kubernetes master API server to use the public service endpoint. You can follow the prompt in the CLI, or manually run the following command. It might take several minutes for the master to refresh.
+2. Refresh the Kubernetes master API server to use the public cloud service endpoint. You can follow the prompt in the CLI, or manually run the following command. It might take several minutes for the master to refresh.
    ```
    ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
    ```
    {: pre}
 3. [Create a configmap](/docs/openshift?topic=openshift-update#worker-up-configmap) to control the maximum number of worker nodes that can be unavailable at a time in your cluster. When you update your worker nodes, the configmap helps prevent downtime for your apps as the apps are rescheduled orderly onto available worker nodes.
-4. Update all the worker nodes in your cluster to remove the public service endpoint configuration.<p class="important">By issuing the update command, the worker nodes are reloaded to pick up the service endpoint configuration. If no worker update is available, you must reload the worker nodes manually with the `ibmcloud oc worker reload` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload). If you reload, be sure to cordon, drain, and manage the order to control the maximum number of worker nodes that are unavailable at a time.</p>
+4. Update all the worker nodes in your cluster to remove the public cloud service endpoint configuration.<p class="important">By issuing the update command, the worker nodes are reloaded to pick up the service endpoint configuration. If no worker update is available, you must reload the worker nodes manually with the `ibmcloud oc worker reload` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload). If you reload, be sure to cordon, drain, and manage the order to control the maximum number of worker nodes that are unavailable at a time.</p>
    ```
    ibmcloud oc worker update --cluster <cluster_name_or_ID> --worker <worker1,worker2>
    ```

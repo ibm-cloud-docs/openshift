@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-16"
 
 keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logdna commands, sysdig commands, logging config, monitoring config
 
@@ -171,7 +171,7 @@ ibmcloud ob logging config create --cluster CLUSTER --instance LOGDNA_INSTANCE [
 <dd>The LogDNA ingestion key that you want to use for your configuration. This value is optional. If you do not specify this option, the latest ingestion key is automatically retrieved.   </dd>
 
 <dt><code>--private-endpoint</code><dt>
-<dd>When you add this option to your command, the private service endpoint is used to connect to {{site.data.keyword.la_full_notm}}. To use the private service endpoint, your cluster must be enabled for using private service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private service endpoints. You must use a cluster that runs version 3.11 to use this option. For more information, see worker communication to other services and networks in [clusters](/docs/openshift?topic=openshift-plan_clusters#worker-services-onprem). </dd>
+<dd>When you add this option to your command, the private cloud service endpoint is used to connect to {{site.data.keyword.la_full_notm}}. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option. For more information, see worker communication to other services and networks in [clusters](/docs/openshift?topic=openshift-plan_clusters#worker-services-onprem). </dd>
 
 </dl>
 
@@ -259,10 +259,10 @@ ibmcloud ob logging config list --cluster CLUSTER
 ### `ibmcloud ob logging config enable public-endpoint|private-endpoint`
 {: #logging_config_enable}
 
-Use the public or private service endpoint to send data from your cluster to your LogDNA service instance.
+Use the public or private cloud service endpoint to send data from your cluster to your LogDNA service instance.
 {: shortdesc}
 
-To use the private service endpoint, your cluster must be enabled for using private service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private service endpoints. You must use a cluster that runs version 3.11 to use this option.
+To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option.
 {: important}
 
 ```
@@ -282,13 +282,13 @@ ibmcloud ob logging config enable public-endpoint|private-endpoint --cluster CLU
 <dl>
 
 <dt><code>public-endpoint|private-endpoint</code></dt>
-<dd>Enter <code>public-endpoint</code> to use the public service endpoint of your {{site.data.keyword.la_full_notm}} service instance, or <code>private-endpoint</code> to use the private service endpoint to send logs from your cluster. This value is required. To use the private service endpoint, your cluster must be enabled for using private service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private service endpoints. You must use a cluster that runs version 3.11 to use this option.  </dd>
+<dd>Enter <code>public-endpoint</code> to use the public cloud service endpoint of your {{site.data.keyword.la_full_notm}} service instance, or <code>private-endpoint</code> to use the private cloud service endpoint to send logs from your cluster. This value is required. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option.  </dd>
 
 <dt><code>--cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster for which you want to enable the private or public service endpoint to connect to your LogDNA service instance. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.</dd>
+<dd>The name or ID of the cluster for which you want to enable the private or public cloud service endpoint to connect to your LogDNA service instance. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.</dd>
 
 <dt><code>--instance <em>LOGDNA_INSTANCE</em></code></dt>
-<dd>The ID or name of the {{site.data.keyword.la_full_notm}} service instance to which you want to connect by using the public or private service endpoint. To retrieve the name, run `ibmcloud resource service-instances`. This value is required.</dd>
+<dd>The ID or name of the {{site.data.keyword.la_full_notm}} service instance to which you want to connect by using the public or private cloud service endpoint. To retrieve the name, run `ibmcloud resource service-instances`. This value is required.</dd>
 
 </dl>
 
@@ -432,7 +432,7 @@ ibmcloud ob monitoring config create --cluster CLUSTER --instance SYSDIG_INSTANC
 <dd>The Sysdig access key that you want to use for your configuration. This value is optional. If you do not specify this option, the latest access key is used for your configuration. </dd>
 
 <dt><code>--private-endpoint</code><dt>
-<dd>When you add this option to your command, the private service endpoint is used to connect to {{site.data.keyword.mon_full_notm}}. To use the private service endpoint, your cluster must be enabled for using private service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private service endpoints. You must use a cluster that runs version 3.11 to use this option. </dd>
+<dd>When you add this option to your command, the private cloud service endpoint is used to connect to {{site.data.keyword.mon_full_notm}}. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option. </dd>
 
 </dl>
 
@@ -519,10 +519,10 @@ ibmcloud ob monitoring config list --cluster CLUSTER
 ### `ibmcloud ob monitoring config enable public-endpoint|private-endpoint`
 {: #monitoring_config_enable}
 
-Use the public or private service endpoint to send metrics from your cluster to your Sysdig service instance.
+Use the public or private cloud service endpoint to send metrics from your cluster to your Sysdig service instance.
 {: shortdesc}
 
-To use the private service endpoint, your cluster must be enabled for using private service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private service endpoints. You must use a cluster that runs version 3.11 to use this option.
+To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option.
 {: important}
 
 ```
@@ -542,13 +542,13 @@ ibmcloud ob monitoring config enable public-endpoint|private-endpoint --cluster 
 <dl>
 
 <dt><code>public-endpoint|private-endpoint</code></dt>
-<dd>Enter <code>public-endpoint</code> to use the public service endpoint of your {{site.data.keyword.mon_full_notm}} service instance, or <code>private-endpoint</code> to use the private service endpoint to send metrics from your cluster. This value is required. To use the private service endpoint, your cluster must be enabled for using private service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private service endpoints. You must use a cluster that runs version 3.11 to use this option.  </dd>
+<dd>Enter <code>public-endpoint</code> to use the public cloud service endpoint of your {{site.data.keyword.mon_full_notm}} service instance, or <code>private-endpoint</code> to use the private cloud service endpoint to send metrics from your cluster. This value is required. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option.  </dd>
 
 <dt><code>--cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster for which you want to enable the private or public service endpoint to connect to your Sysdig service instance. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.</dd>
+<dd>The name or ID of the cluster for which you want to enable the private or public cloud service endpoint to connect to your Sysdig service instance. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.</dd>
 
 <dt><code>--instance <em>SYSDIG_INSTANCE</em></code></dt>
-<dd>The ID or name of the {{site.data.keyword.mon_full_notm}} service instance to which you want to connect by using the public or private service endpoint. To retrieve the name, run `ibmcloud resource service-instances`. This value is required.</dd>
+<dd>The ID or name of the {{site.data.keyword.mon_full_notm}} service instance to which you want to connect by using the public or private cloud service endpoint. To retrieve the name, run `ibmcloud resource service-instances`. This value is required.</dd>
 
 </dl>
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-08"
+lastupdated: "2021-03-16"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -135,7 +135,7 @@ Your app's images must be stored in a container registry that your cluster can a
         <li>[Automatically scanning](/docs/Registry?topic=va-va_index) the vulnerability of images.</li>
         <li>Controlling access through [{{site.data.keyword.cloud_notm}} IAM policies](/docs/Registry?topic=Registry-user) and [separate regional registries](/docs/Registry?topic=Registry-registry_overview#registry_regions).</li>
         <li>[Retaining images](/docs/Registry?topic=Registry-registry_retention) without requiring storage space in your cluster or an attached storage device. You can also set policies to manage the quantity of images to prevent them from taking up too much space.</li>
-        <li>Version 4 clusters on VPC infrastructure: Using the private registry service endpoint so that clusters that use only a private service endpoint can still access the registry.</li>
+        <li>Version 4 clusters on VPC infrastructure: Using the private registry service endpoint so that clusters that use only a private cloud service endpoint can still access the registry.</li>
         <li>[Setting storage and image pull traffic quotas](/docs/Registry?topic=Registry-registry_quota) to better control image storage, usage, and billing.</li>
         <li>Pulling licensed IBM content from the [entitled registry](/docs/openshift?topic=openshift-registry#secret_entitled_software).</li></ul>
         <br>To get started, see the following topics:<ul>
@@ -708,10 +708,10 @@ When you set up your {{site.data.keyword.cloud_notm}} account to use service end
 
 **What do I need to do to set up my cluster to use the private connection to `icr.io` registries?**
 
-1.  Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account so that you can use the {{site.data.keyword.registrylong_notm}} private service endpoint. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command.
+1.  Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account so that you can use the {{site.data.keyword.registrylong_notm}} private cloud service endpoint. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command.
 2.  [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint).
 
-Now, {{site.data.keyword.registrylong_notm}} automatically uses the private service endpoint. You do not need to enable the private service endpoint for your {{site.data.keyword.openshiftlong_notm}} clusters.
+Now, {{site.data.keyword.registrylong_notm}} automatically uses the private cloud service endpoint. You do not need to enable the private cloud service endpoint for your {{site.data.keyword.openshiftlong_notm}} clusters.
 
 **Do I have to use the private `icr.io` registry addresses for anything else?**
 

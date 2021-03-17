@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-17"
+  years: 2014, 2021
+lastupdated: "2021-03-16"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, dev
 
@@ -312,7 +312,7 @@ Begin working with your cluster by setting up the CLI and accessing the cluster.
 
 1. **CLI setup**: [Set up the CLIs](/docs/openshift?topic=openshift-openshift-cli) that are necessary to create and work with clusters. As you work with your cluster, refer to the [command reference](/docs/openshift?topic=openshift-kubernetes-service-cli) and keep track of CLI version updates with the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog).
 2. **User permissions**: Ensure that your cluster administrator gives you the proper [{{site.data.keyword.cloud_notm}} IAM role](/docs/openshift?topic=openshift-learning-path-admin#admin_secure) to access the cluster.
-3. **Cluster access**: [Access your cluster through the public or private service endpoint](/docs/openshift?topic=openshift-access_cluster).
+3. **Cluster access**: [Access your cluster through the public or private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster).
 
 </br>Need help? Check out [Troubleshooting clusters and masters](/docs/openshift?topic=openshift-cs_troubleshoot) and [Troubleshooting worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters).
 
@@ -448,7 +448,7 @@ Enhance app capabilities by integrating various external services and catalog se
 {: shortdesc}
 
 1. **Review supported integrations**:
-  * [All supported integrations](/docs/openshift?topic=openshift-supported_integrations#supported_integrations)
+  * [All supported integrations](/docs/containers?topic=containers-supported_integrations#supported_integrations)
   * [{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-service-partners)
   * [{{site.data.keyword.cloud_notm}} services and third-party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations)
   * [Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks)

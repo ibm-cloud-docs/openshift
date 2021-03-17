@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-08"
+lastupdated: "2021-03-17"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -695,14 +695,14 @@ When you create a standard cluster, a private ALB is created in each zone that y
     The field **Status** for private ALBs is _disabled_.
     ```
     ALB ID                                            Enabled   Status     Type      ALB IP          Zone    Build                          ALB VLAN ID   NLB Version
-    private-crdf253b6025d64944ab99ed63bb4567b6-alb1   false     disabled   private   -               dal10   ingress:2452/ingress-auth:954   2234947       -
-    public-crdf253b6025d64944ab99ed63bb4567b6-alb1    true      enabled    public    169.xx.xxx.xxx  dal10   ingress:2452/ingress-auth:954   2234945       -
+    private-crdf253b6025d64944ab99ed63bb4567b6-alb1   false     disabled   private   -               dal10   ingress:2458/ingress-auth:954   2234947       -
+    public-crdf253b6025d64944ab99ed63bb4567b6-alb1    true      enabled    public    169.xx.xxx.xxx  dal10   ingress:2458/ingress-auth:954   2234945       -
     ```
     {: screen}
 
 2. Enable the private ALBs. Run this command for the ID of each private ALB that you want to enable. If you want to specify an IP address for the ALB, include the IP address in the `--ip` flag.
   ```
-  ibmcloud oc ingress alb enable classic --alb <private_ALB_ID> -c <cluster_name_or_ID> --version 2452
+  ibmcloud oc ingress alb enable classic --alb <private_ALB_ID> -c <cluster_name_or_ID> --version 2458
   ```
   {: pre}
   </br>
@@ -1052,9 +1052,9 @@ IBM Cloud Ingress: 'auth' version
 954
 
 IBM Cloud Ingress versions
-2452 (default)
+2458 (default)
+2452
 2424
-2410
 
 Kubernetes Ingress versions
 0.35.0_869_iks (default)
@@ -1181,12 +1181,12 @@ You can also use these steps to create more ALBs across zones in your cluster. W
   Example output for a cluster in which new public ALBs with IDs of `public-crdf253b6025d64944ab99ed63bb4567b6-alb3` and `public-crdf253b6025d64944ab99ed63bb4567b6-alb4` are created in `dal10` and `dal12`:
   ```
   ALB ID                                            Enabled   Status     Type      ALB IP          Zone    Build                          ALB VLAN ID   NLB Version
-  private-crdf253b6025d64944ab99ed63bb4567b6-alb1   false     disabled   private   -               dal12   ingress:2452/ingress-auth:954   2294021       -
-  private-crdf253b6025d64944ab99ed63bb4567b6-alb2   false     disabled   private   -               dal10   ingress:2452/ingress-auth:954   2234947       -
-  public-crdf253b6025d64944ab99ed63bb4567b6-alb1    true      enabled    public    169.48.228.78   dal12   ingress:2452/ingress-auth:954   2294019       -
-  public-crdf253b6025d64944ab99ed63bb4567b6-alb2    true      enabled    public    169.46.17.6     dal10   ingress:2452/ingress-auth:954   2234945       -
-  public-crdf253b6025d64944ab99ed63bb4567b6-alb3    true      enabled    public    169.49.28.09    dal12   ingress:2452/ingress-auth:954   2294019       -
-  public-crdf253b6025d64944ab99ed63bb4567b6-alb4    true      enabled    public    169.50.35.62    dal10   ingress:2452/ingress-auth:954   2234945       -
+  private-crdf253b6025d64944ab99ed63bb4567b6-alb1   false     disabled   private   -               dal12   ingress:2458/ingress-auth:954   2294021       -
+  private-crdf253b6025d64944ab99ed63bb4567b6-alb2   false     disabled   private   -               dal10   ingress:2458/ingress-auth:954   2234947       -
+  public-crdf253b6025d64944ab99ed63bb4567b6-alb1    true      enabled    public    169.48.228.78   dal12   ingress:2458/ingress-auth:954   2294019       -
+  public-crdf253b6025d64944ab99ed63bb4567b6-alb2    true      enabled    public    169.46.17.6     dal10   ingress:2458/ingress-auth:954   2234945       -
+  public-crdf253b6025d64944ab99ed63bb4567b6-alb3    true      enabled    public    169.49.28.09    dal12   ingress:2458/ingress-auth:954   2294019       -
+  public-crdf253b6025d64944ab99ed63bb4567b6-alb4    true      enabled    public    169.50.35.62    dal10   ingress:2458/ingress-auth:954   2234945       -
   ```
   {: screen}
 
@@ -1238,12 +1238,12 @@ Note that all public ALBs in your cluster share the same IBM-assigned Ingress su
     Example output for a cluster in which new public ALBs are created on VLAN `2294030` in `dal12` and `2234940` in `dal10`:
     ```
     ALB ID                                            Enabled   Status     Type      ALB IP          Zone    Build                          ALB VLAN ID   NLB Version
-    private-crdf253b6025d64944ab99ed63bb4567b6-alb1   false     disabled   private   -               dal12   ingress:2452/ingress-auth:954   2294021
-    private-crdf253b6025d64944ab99ed63bb4567b6-alb2   false     disabled   private   -               dal10   ingress:2452/ingress-auth:954   2234947
-    public-crdf253b6025d64944ab99ed63bb4567b6-alb1    true      enabled    public    169.48.228.78   dal12   ingress:2452/ingress-auth:954   2294019
-    public-crdf253b6025d64944ab99ed63bb4567b6-alb2    true      enabled    public    169.46.17.6     dal10   ingress:2452/ingress-auth:954   2234945
-    public-crdf253b6025d64944ab99ed63bb4567b6-alb3    true      enabled    public    169.49.28.09    dal12   ingress:2452/ingress-auth:954   2294030
-    public-crdf253b6025d64944ab99ed63bb4567b6-alb4    true      enabled    public    169.50.35.62    dal10   ingress:2452/ingress-auth:954   2234940
+    private-crdf253b6025d64944ab99ed63bb4567b6-alb1   false     disabled   private   -               dal12   ingress:2458/ingress-auth:954   2294021
+    private-crdf253b6025d64944ab99ed63bb4567b6-alb2   false     disabled   private   -               dal10   ingress:2458/ingress-auth:954   2234947
+    public-crdf253b6025d64944ab99ed63bb4567b6-alb1    true      enabled    public    169.48.228.78   dal12   ingress:2458/ingress-auth:954   2294019
+    public-crdf253b6025d64944ab99ed63bb4567b6-alb2    true      enabled    public    169.46.17.6     dal10   ingress:2458/ingress-auth:954   2234945
+    public-crdf253b6025d64944ab99ed63bb4567b6-alb3    true      enabled    public    169.49.28.09    dal12   ingress:2458/ingress-auth:954   2294030
+    public-crdf253b6025d64944ab99ed63bb4567b6-alb4    true      enabled    public    169.50.35.62    dal10   ingress:2458/ingress-auth:954   2234940
     ```
     {: screen}
 
@@ -1262,12 +1262,12 @@ Note that all public ALBs in your cluster share the same IBM-assigned Ingress su
     Example output for a cluster in which the default public ALBs on VLAN `2294019` in `dal12` and `2234945` in `dal10`: are disabled:
     ```
     ALB ID                                            Enabled   Status     Type      ALB IP          Zone    Build
-    private-crdf253b6025d64944ab99ed63bb4567b6-alb1   false     disabled   private   -               dal12   ingress:2452/ingress-auth:954   2294021
-    private-crdf253b6025d64944ab99ed63bb4567b6-alb2   false     disabled   private   -               dal10   ingress:2452/ingress-auth:954   2234947
-    public-crdf253b6025d64944ab99ed63bb4567b6-alb1    false     disabled   public    169.48.228.78   dal12   ingress:2452/ingress-auth:954   2294019
-    public-crdf253b6025d64944ab99ed63bb4567b6-alb2    false     disabled   public    169.46.17.6     dal10   ingress:2452/ingress-auth:954   2234945
-    public-crdf253b6025d64944ab99ed63bb4567b6-alb3    true      enabled    public    169.49.28.09    dal12   ingress:2452/ingress-auth:954   2294030
-    public-crdf253b6025d64944ab99ed63bb4567b6-alb4    true      enabled    public    169.50.35.62    dal10   ingress:2452/ingress-auth:954   2234940
+    private-crdf253b6025d64944ab99ed63bb4567b6-alb1   false     disabled   private   -               dal12   ingress:2458/ingress-auth:954   2294021
+    private-crdf253b6025d64944ab99ed63bb4567b6-alb2   false     disabled   private   -               dal10   ingress:2458/ingress-auth:954   2234947
+    public-crdf253b6025d64944ab99ed63bb4567b6-alb1    false     disabled   public    169.48.228.78   dal12   ingress:2458/ingress-auth:954   2294019
+    public-crdf253b6025d64944ab99ed63bb4567b6-alb2    false     disabled   public    169.46.17.6     dal10   ingress:2458/ingress-auth:954   2234945
+    public-crdf253b6025d64944ab99ed63bb4567b6-alb3    true      enabled    public    169.49.28.09    dal12   ingress:2458/ingress-auth:954   2294030
+    public-crdf253b6025d64944ab99ed63bb4567b6-alb4    true      enabled    public    169.50.35.62    dal10   ingress:2458/ingress-auth:954   2234940
     ```
     {: screen}
 

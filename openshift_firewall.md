@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -219,7 +219,7 @@ To allow access for a specific cluster:
 6. Allow access to the service endpoint URLs and ports that you got in the previous step. If your firewall is IP-based, you can see which IP addresses are opened when you allow access to the service endpoint URLs by reviewing [this table](#master_ips).
 
 7. Verify your connection.
-  * If the public service endpoint is enabled:
+  * If the public cloud service endpoint is enabled:
     ```
     curl --insecure <public_service_endpoint_URL>/version
     ```
@@ -247,7 +247,7 @@ To allow access for a specific cluster:
     ```
     {: screen}
 
-  * If the private service endpoint is enabled, you must be in your {{site.data.keyword.cloud_notm}} private network or connect to the private network through a VPN connection to verify your connection to the master. **Note**: You must [expose the master endpoint through a private load balancer](/docs/openshift?topic=openshift-access_cluster#access_private_se) so that users can access the master through a VPN or {{site.data.keyword.BluDirectLink}} connection.
+  * If the private cloud service endpoint is enabled, you must be in your {{site.data.keyword.cloud_notm}} private network or connect to the private network through a VPN connection to verify your connection to the master. **Note**: You must [expose the master endpoint through a private load balancer](/docs/openshift?topic=openshift-access_cluster#access_private_se) so that users can access the master through a VPN or {{site.data.keyword.BluDirectLink}} connection.
     ```
     curl --insecure <private_service_endpoint_URL>/version
     ```
@@ -320,7 +320,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
     ```
     {: pre}
 
-2. To allow worker nodes to communicate with the cluster master over the public service endpoint, allow outgoing network traffic from the source <em>&lt;each_worker_node_publicIP&gt;</em> to the destination TCP/UDP port range 20000-32767 and port 443, and the following IP addresses and network groups. Additionally, if you plan to use Ingress or routes to expose apps in your cluster, allow incoming network traffic through these ports to your worker node IP addresses as well so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers.
+2. To allow worker nodes to communicate with the cluster master over the public cloud service endpoint, allow outgoing network traffic from the source <em>&lt;each_worker_node_publicIP&gt;</em> to the destination TCP/UDP port range 20000-32767 and port 443, and the following IP addresses and network groups. Additionally, if you plan to use Ingress or routes to expose apps in your cluster, allow incoming network traffic through these ports to your worker node IP addresses as well so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers.
    - `TCP/UDP port range 20000-32767, port 443 FROM <each_worker_node_publicIP> TO <public_IPs>`
    -  Replace <em>&lt;public_IPs&gt;</em> with the public IP addresses of the zones in the region that your cluster is located.<p class="important">You must allow outgoing traffic to port 443 for **all of the zones within the region** to balance the load during the bootstrapping process.</p>
     {: #master_ips}
@@ -447,7 +447,7 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
     ```
     {: pre}
 
-3.  To allow worker nodes to communicate with the cluster master over the private service endpoint, allow outgoing network traffic from the source <em>&lt;each_worker_node_privateIP&gt;</em> to the destination TCP/UDP port range 20000-32767 and port 443, and the following IP addresses and network groups.
+3.  To allow worker nodes to communicate with the cluster master over the private cloud service endpoint, allow outgoing network traffic from the source <em>&lt;each_worker_node_privateIP&gt;</em> to the destination TCP/UDP port range 20000-32767 and port 443, and the following IP addresses and network groups.
     - `TCP/UDP port range 20000-32767, port 443 FROM <each_worker_node_privateIP> TO <private_IPs>`
     -  Replace <em>&lt;private_IPs&gt;</em> with the private IP addresses of the zones in the region where your cluster is located.<p class="important">You must allow outgoing traffic to port 443 for **all of the zones within the region** to balance the load during the bootstrapping process.</p>
     <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the region in column one, the zone in column two, and IP addresses to match in column three.">
@@ -626,7 +626,7 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
     4.  Retrieve the subnet address. In the output, find the number of **IPs**. Then, raise `2` to the power of `n` equal to the number of IPs. For example, if the number of IPs is `16`, then `2` is raised to the power of `4` (`n`) to equal `16`. Now get the subnet CIDR by subtracting the value of `n` from `32` bits. For example, when `n` equals `4`, then the CIDR is `28` (from the equation `32 - 4 = 28`). Combine the **identifier** mask with the CIDR value to get the full subnet address. In the previous output, the subnet addresses are:
         *   `169.xx.210.xxx/28`
         *   `169.xx.178.xxx/28`
-  * **Individual worker node IP addresses**: If you have a small number of worker nodes that run only one app and do not need to scale, or if you want to add only one worker node, list all the worker nodes in your cluster and note the **Public IP** addresses. If your worker nodes are connected to a private network only and you want to connect to {{site.data.keyword.cloud_notm}} services by using the private service endpoint, note the **Private IP** addresses instead. Only these worker nodes are added. If you delete the worker nodes or add worker nodes to the cluster, you must update your firewall accordingly.
+  * **Individual worker node IP addresses**: If you have a small number of worker nodes that run only one app and do not need to scale, or if you want to add only one worker node, list all the worker nodes in your cluster and note the **Public IP** addresses. If your worker nodes are connected to a private network only and you want to connect to {{site.data.keyword.cloud_notm}} services by using the private cloud service endpoint, note the **Private IP** addresses instead. Only these worker nodes are added. If you delete the worker nodes or add worker nodes to the cluster, you must update your firewall accordingly.
     ```
     ibmcloud oc worker ls --cluster <cluster_name_or_ID>
     ```
