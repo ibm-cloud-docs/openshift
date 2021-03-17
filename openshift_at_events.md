@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-16"
+lastupdated: "2021-03-17"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -169,12 +169,12 @@ The following list of the cluster add-on events are sent to {{site.data.keyword.
 ## Deprecated: Previous cluster management events
 {: #cluster-events-old}
 
-The following events are deprecated and become unsupported 12 April 2021. If you have tooling that relies on these events, update the tooling to the [new events](#events-new) if applicable.
+The following events are deprecated and become unsupported 15 April 2021. If you have tooling that relies on these events, update the tooling to the [new events](#events-new) if applicable.
 {: deprecated}
 
 To align with event auditing standards across cloud, {{site.data.keyword.openshiftlong_notm}} introduces new and deprecates some existing event names or fields as follows.
 * **New events available now**: API actions that require Viewer permissions, such as `list` and `get`, now send events. You can find these events throughout this page.
-* **Deprecated events**: These deprecated events are no longer sent on 12 April 2021. Instead, [new events](#events-new) that might include updated names and updated fields are sent.
+* **Deprecated events**: These deprecated events are no longer sent on 15 April 2021. Instead, [new events](#events-new) that might include updated names and updated fields are sent.
 * **Deprecated fields across events**: [Some fields](#events-updated-fields) are deprecated and replaced by or updated with new values across events.
 
 |Action|Description|
@@ -378,7 +378,7 @@ The following list of worker node and worker pool events are sent to {{site.data
 The following events are tentatively renamed, following the deprecation of previous cluster events.
 {: shortdesc}
 
-These event names are subject to change and provided for informational purposes only. The events are sent 12 April 2021, after the deprecation period of the existing events ends.
+These event names are subject to change and provided for informational purposes only. The events are sent 15 April 2021, after the deprecation period of the existing events ends.
 {: important}
 
 ### Updated cluster events
