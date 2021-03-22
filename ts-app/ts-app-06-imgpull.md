@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-22"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -90,7 +90,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
+ 
 
 # Why do images fail to pull from registry with `ImagePullBackOff` or authorization errors?
 {: #ts-app-image-pull}

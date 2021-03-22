@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-22"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -90,7 +90,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
+ 
 
 
 # Adding worker nodes and zones to clusters

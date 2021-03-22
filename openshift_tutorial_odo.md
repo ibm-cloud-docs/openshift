@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-03-22"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, odo
 
@@ -95,7 +95,7 @@ completion-time: 10m
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
+ 
 
 # Developing in clusters with the OpenShift Do CLI
 {: #odo-tutorial}

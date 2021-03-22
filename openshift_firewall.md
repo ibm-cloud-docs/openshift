@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-16"
+lastupdated: "2021-03-22"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -90,7 +90,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
+ 
 
 
 # Classic: Opening required ports and IP addresses in your firewall
@@ -584,7 +584,7 @@ Instead of setting up a gateway firewall device, you can choose to use [Calico n
 
 <br />
 
-## Allowing traffic to your cluster in other services' firewalls or in on-premises firewalls
+## Allowing traffic from your cluster in other services' firewalls or in on-premises firewalls
 {: #allowlist_workers}
 
 If you want to access services that run inside or outside {{site.data.keyword.cloud_notm}} or on-premises and that are protected by a firewall, you can add the IP addresses of your worker nodes in that firewall to allow outbound network traffic to your cluster. For example, you might want to read data from an {{site.data.keyword.cloud_notm}} database that is protected by a firewall, or specify your worker node subnets in an on-premises firewall to allow network traffic from your cluster.

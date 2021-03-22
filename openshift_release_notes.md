@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-17"
+lastupdated: "2021-03-22"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -90,7 +90,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
+ 
 
 
 # Release notes
@@ -109,6 +109,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 22 March 2021 | **Ingress ALB changelog**: Updated the [`nginx-ingress` build to 2466 and the `ingress-auth` build to 982](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image. |
 | 17 March 2021 | **Deprecated events to be replaced for {{site.data.keyword.at_short}}**: To align with event auditing standards across cloud, several cluster events and fields are deprecated and are replaced in 30 days on 16 April 2021 by new events and fields.<ul><li>**Deprecated events**: Some events are [deprecated](/docs/openshift?topic=openshift-at_events#cluster-events-old) and are no longer sent after the deprecation. Instead, [new events](/docs/openshift?topic=openshift-at_events#events-new) are sent.</li><li>**Deprecated fields across events**: [Some fields](/docs/openshift?topic=openshift-at_events#events-updated-fields) are deprecated and replaced by or updated with new values across events.</li></ul>
 | 16 March 2021 | **Ingress ALB changelog**: Updated the [`nginx-ingress` build to 2458](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image. |
 | 12 March 2021 | **Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.20_1534_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4620_1534), [`4.5.33_1532_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4533_1532), [`4.4.33_1535_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4433_1535), and [`3.11.394_1582_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311394_1582).|

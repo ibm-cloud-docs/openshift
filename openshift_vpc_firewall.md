@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-16"
+lastupdated: "2021-03-22"
 
 keywords: openshift, roks, rhoks, rhos, firewall, ips
 
@@ -90,7 +90,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
+ 
 
 
 # VPC: Opening required ports and IP addresses in other network firewalls
@@ -298,7 +298,7 @@ If you [set up a secure external route for the internal image registry](/docs/op
 
 <br />
 
-## Allowing traffic to your cluster in other services' firewalls or in on-premises firewalls
+## Allowing traffic from your cluster in other services' firewalls or in on-premises firewalls
 {: #vpc-allowlist_workers}
 
 Allow your worker nodes to communicate with services that are protected by firewalls.

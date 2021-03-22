@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-22"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -90,7 +90,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
+ 
 
 
 # Moving your environment to {{site.data.keyword.openshiftlong_notm}}
@@ -117,7 +117,7 @@ Not on slack yet? [Request an invite!](https://cloud.ibm.com/kubernetes/slack){:
 
 If you want to run your app in multiple clusters, public and private environments, or even multiple cloud providers, you might wonder how you can make your deployment strategy work across these environments.
 
-You can use the open source [Terraform](/docs/terraform?topic=terraform-getting-started#getting-started) tool to automate the provisioning of {{site.data.keyword.cloud_notm}} infrastructure, including Kubernetes clusters. Follow along with this tutorial to [plan, create, and update deployment environments](/docs/solution-tutorials?topic=solution-tutorials-plan-create-update-deployments#plan-create-update-deployments). After you create a cluster, you can also set up the [{{site.data.keyword.openshiftlong_notm}} cluster autoscaler](/docs/openshift?topic=openshift-ca) so that your worker pool scales up and down worker nodes in response to your workload's resource requests.</dd>
+You can use the open source [Terraform](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started#getting-started) tool to automate the provisioning of {{site.data.keyword.cloud_notm}} infrastructure, including Kubernetes clusters. Follow along with this tutorial to [plan, create, and update deployment environments](/docs/solution-tutorials?topic=solution-tutorials-plan-create-update-deployments#plan-create-update-deployments). After you create a cluster, you can also set up the [{{site.data.keyword.openshiftlong_notm}} cluster autoscaler](/docs/openshift?topic=openshift-ca) so that your worker pool scales up and down worker nodes in response to your workload's resource requests.</dd>
 
 ### What kind of apps can I run? Can I move existing apps, or do I need to develop new apps?
 {: #app_kinds}

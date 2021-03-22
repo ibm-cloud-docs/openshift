@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2020
-lastupdated: "2020-12-17"
+  years: 2014, 2021
+lastupdated: "2021-03-22"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -90,7 +90,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
+ 
 
 
 <style>
@@ -421,7 +421,7 @@ Enhance cluster capabilities by integrating various external services and catalo
 {: shortdesc}
 
 1. **Review supported integrations**:
-  * [All supported integrations](/docs/openshift?topic=openshift-supported_integrations)
+  * [All supported integrations](/docs/containers?topic=containers-supported_integrations)
   * [{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-service-partners)
   * [{{site.data.keyword.cloud_notm}} services and third-party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations)
 2. **Add services to your cluster**:
