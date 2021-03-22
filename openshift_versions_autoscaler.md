@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-09"
+lastupdated: "2021-03-22"
 
 keywords: autoscaler, add-on, autoscaler changelog
 
@@ -90,7 +90,7 @@ subcollection: openshift, cluster autoscaler, add-on, scale
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
+ 
 
 # Cluster autoscaler add-on changelog
 {: #ca_changelog}

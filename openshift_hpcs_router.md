@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-08"
+lastupdated: "2021-03-22"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -90,7 +90,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
+ 
 
 # Encrypting routes with keys stored in {{site.data.keyword.hscrypto}}
 {: #hpcs-router}
@@ -193,7 +193,7 @@ Enable the {{site.data.keyword.cloud_notm}} HPCS Router operator in OperatorHub 
 2. In the **Add-ons** pane, click **Install** on the **{{site.data.keyword.cloud_notm}} HPCS Router Operator** card, and **Install** again to confirm the installation.
 3. Click the **OpenShift web console** button.
 4. From the side navigation menu in the **Administrator** perspective, click **Operators > OperatorHub**.
-5. In the **Provider Type** filter, select the **Custom** checkbox. Note that this checkbox might take a few minutes to become available while the add-on finishes installation.
+5. In the **Provider Type** filter, select the **{{site.data.keyword.cloud_notm}} Router Operators** checkbox. Note that this checkbox might take a few minutes to become available while the add-on finishes installation.
 6. Select the **{{site.data.keyword.cloud_notm}} HPCS Router Operator** card, and click **Install**.
 7. Select **A specific namespace on the cluster**, select the `openshift-ingress-operator` project from the drop down list, and click **Subscribe**.
 8. From the side navigation menu in the **Administrator** perspective, click **Operators > Installed Operators**.
@@ -325,7 +325,7 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to generate and si
   metadata:
     # A name for the CSR to be generated
     name: <CSR_name>
-    # The project where you want to create the route
+    # The project where you want to create routes for your apps
     namespace: <project>
   spec:
     dnsNames:
