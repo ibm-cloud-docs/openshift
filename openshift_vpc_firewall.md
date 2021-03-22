@@ -298,7 +298,7 @@ If you [set up a secure external route for the internal image registry](/docs/op
 
 <br />
 
-## Allowing traffic to your cluster in other services' firewalls or in on-premises firewalls
+## Allowing traffic from your cluster in other services' firewalls or in on-premises firewalls
 {: #vpc-allowlist_workers}
 
 Allow your worker nodes to communicate with services that are protected by firewalls.
