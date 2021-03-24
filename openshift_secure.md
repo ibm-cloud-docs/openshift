@@ -588,8 +588,7 @@ When you use Kubernetes to interact with a container image, such as by creating 
 
 The following diagram presents an example request flow between the kubelet and CRI-O.
 
-![Example request flow between kubelet and CRI-O](images/crio-selinux.png){: caption="Example request flow between kubelet and CRI-O."}
-
+<img src="images/crio-selinux.png" width="500" alt="Example request flow between kubelet and CRI-O" style="width:400px; border-style: none"/>
 
 <br />
 
