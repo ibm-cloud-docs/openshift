@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-23"
+lastupdated: "2021-03-24"
 
 keywords: openshift
 subcollection: openshift
@@ -231,6 +231,7 @@ subcollection: openshift
   * [Securely expose apps with LoadBalancer and Ingress services](/docs/openshift?topic=openshift-security#network_lb_ingress)
 * [Persistent storage](/docs/openshift?topic=openshift-security#storage)
 * [Monitoring and logging](/docs/openshift?topic=openshift-security#monitoring_logging)
+* [Container runtime](/docs/openshift?topic=openshift-security#container-runtime)
 * [Image and registry](/docs/openshift?topic=openshift-security#images_registry)
 * [Container isolation and security](/docs/openshift?topic=openshift-security#container)
 * [Storing personal information](/docs/openshift?topic=openshift-security#pi)

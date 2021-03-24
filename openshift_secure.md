@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -566,6 +566,33 @@ By default, {{site.data.keyword.openshiftlong_notm}} provides many features for 
 5.  **{{site.data.keyword.cloudcerts_long_notm}}**: If you want to [expose your app by using a custom domain with TLS](/docs/openshift?topic=openshift-ingress#ingress_expose_public), you can store your TLS certificate in {{site.data.keyword.cloudcerts_short}}. Expired or about-to-expire certificates can also be reported in your {{site.data.keyword.security-advisor_short}} dashboard. For more information, see [Getting started with {{site.data.keyword.cloudcerts_short}}](/docs/certificate-manager?topic=certificate-manager-getting-started#getting-started).
 
 <br />
+
+
+
+## Container runtime
+{: #container-runtime}
+
+Your worker nodes are installed with [CRI-O](https://cri-o.io/){: external} as the container runtime interface, which is protected by the [Security-Enhanced Linux (SELinux)](https://www.redhat.com/en/topics/linux/what-is-selinux){: external} labeling system.
+{: shortdesc}
+
+When you use Kubernetes to interact with a container image, such as by creating a pod, the kubelet communicates with CRI-O through a Unix socket, `crio.sock`. The Unix socket uses the SELinux labels in the following table to enforce the appropriate system access policies. These labels prevent user containers from being able to access the container runtime socket.
+
+| Process | SELinux label |
+| --- | --- |
+| CRI-O | `system_u:system_r:container_runtime_t:s0` |
+| kubelet | `system_u:system_r:unconfined_service_t:s0` |
+| `crio.sock` | `system_u:object_r:container_var_run_t:s0` |
+| A container process, such as `c14` | `system_u:system_r:container_t:s0:c14` |
+{: summary="The rows are read from left to right. The first column is the worker node process. The second column is the SELinux label for the component."}
+{: caption="SELinux labels that are used to protect container runtime processes." caption-side="top"}
+
+The following diagram presents an example request flow between the kubelet and CRI-O.
+
+![Example request flow between kubelet and CRI-O](images/crio-selinux.png){: caption="Example request flow between kubelet and CRI-O."}
+
+
+<br />
+
 
 ## Image and registry
 {: #images_registry}
