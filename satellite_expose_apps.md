@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-24"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -90,7 +90,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
+
 
 # Exposing apps in {{site.data.keyword.satelliteshort}} clusters
 {: #sat-expose-apps}
@@ -180,13 +180,20 @@ For example, if you remove a host that was assigned to your cluster from your lo
 
 After you create a load balancer in front of your router, you can use the router to create routes for your app. When a request is sent to the route for your app, the request is first received by your load balancer before being forwarded to your router, which then forwards the request to your app.
 
-1. Get the IP addresses that are registered for your cluster's router in the **EXTERNAL-IP** column. These are the IP addresses of your cluster's worker nodes.
+1. List the details of the default router for your cluster. In the **EXTERNAL-IP** column of the output, get the worker node IP addresses that are registered for your cluster's router. In the **PORT(S)** column of the output, depending on whether you want to create a public or private load balancer, get the node port that the router service currently exposes for public or private network traffic.
     ```
     oc get svc router-external-default -n openshift-ingress
     ```
     {: pre}
 
-2. Using these IP addresses, create a layer 4 load balancer that is connected to your hosts' private network. For example, you might deploy a load balancer from your hosts' cloud provider, or deploy an F5 load balancer to your on-premises network. The load balancer must be able to forward TCP and UDP traffic for ports 30000 - 32767, and if you are creating public routes, the load balancer must have public network connectivity.
+    In the following example output, node port `30783` is exposed for public traffic (80).
+    ```
+    NAME                      TYPE           CLUSTER-IP      EXTERNAL-IP                            PORT(S)                      AGE
+    router-external-default   LoadBalancer   172.21.84.172   169.xx.xxx.xxx, 169.xx.xxx.xxx         80:30783/TCP,443:30413/TCP   24h
+    ```
+    {: screen}
+
+2. Using these IP addresses and the node port, create a layer 4 load balancer that is connected to your hosts' private network. For example, you might deploy a load balancer from your hosts' cloud provider, or deploy an F5 load balancer to your on-premises network. To create public routes, the load balancer must have public network connectivity and must be able to forward TCP and UDP traffic to the port for public traffic that you found in the previous step. To create private routes, the load balancer must be able to forward TCP and UDP traffic to the port for private traffic that you found in the previous step.
 
 3. Get the **Hostname** for your cluster. This subdomain in the format `<cluster_name>-<random_hash>-0000.upi.containers.appdomain.cloud` is registered with your cluster's router.
   ```

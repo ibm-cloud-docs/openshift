@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-24"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -90,7 +90,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
+
 
 # Accessing {{site.data.keyword.openshiftshort}} clusters
 {: #access_cluster}
@@ -528,7 +528,9 @@ You can quickly access your {{site.data.keyword.openshiftlong_notm}} cluster fro
 3.  Click your profile name, such as `IAM#name@email.com`, and then click **Copy Login Command**.
 4.  Click **Display Token**, and copy the `oc login` command.
 5.  Paste the command into your command line.
+
 </br>
+
 If you cannot or do not want to open the {{site.data.keyword.openshiftshort}} console, choose among the following options to log in to your {{site.data.keyword.openshiftlong_notm}} cluster by using the CLI.
 *   **Log in as admin**:
     1.  Make sure that you have the [**Administrator** IAM platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
