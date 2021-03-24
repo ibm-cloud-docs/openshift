@@ -1778,6 +1778,9 @@ subcollection: openshift
   * [Changelog for worker node patch 3.11.129_1518_openshift, released 5 August 2019](/docs/openshift?topic=openshift-openshift_changelog#311129_1518_worker)
   * [Changelog for 3.11.129_1517_openshift, released 2 August 2019](/docs/openshift?topic=openshift-openshift_changelog#311129_1517)
 
+[CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark)
+* [Running the worker node CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test)
+
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog)
 * [Changelog for 1.0.2, released 08 March 2021](/docs/openshift?topic=openshift-ca_changelog#0102_ca_addon)
 * [Changelog for 1.0.1, released 15 August 2020](/docs/openshift?topic=openshift-ca_changelog#0101_ca_addon)
