@@ -1117,6 +1117,9 @@ When you create a standard cluster, one public and one private ALB is created in
 By default, each ALB has 2 replicas. Scale up your ALB processing capabilities by increasing the number of ALB pods.
 {: shortdesc}
 
+By default, periodic Ingress version updates are automatically rolled out to your ALBs. If only one worker node exists in a zone in your cluster, and you set the number of ALB replicas to 1, this single ALB pod is deleted and a new pod is created whenever updates are applied. This process might cause traffic disruptions, even if you have worker nodes and ALB replicas in other zones. To prevent traffic disruptions, ensure that at least two worker nodes exist in each zone, and that two replicas exist for each ALB.
+{: warning}
+
 1. Get the IDs for your ALBs.
   ```
   ibmcloud oc ingress alb ls -c <cluster_name_or_ID>
@@ -1135,7 +1138,7 @@ By default, each ALB has 2 replicas. Scale up your ALB processing capabilities b
      <alb2-id>: '{"replicas":<number_of_replicas>}'
      ...
    ```
-   {: screen}
+   {: codeblock}
 
 3. Create the `ibm-ingress-deploy-config` configmap in your cluster.
   ```
