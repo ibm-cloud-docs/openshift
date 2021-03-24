@@ -1893,9 +1893,9 @@ subcollection: openshift
 
 [{{site.data.keyword.openshiftlong_notm}} locations](/docs/openshift?topic=openshift-regions-and-zones#locations)
 * [How locations are organized](/docs/openshift?topic=openshift-regions-and-zones#example_locations_org)
-* [Classic multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones-mz)
-* [Classic single zone data center locations](/docs/openshift?topic=openshift-regions-and-zones#zones-sz)
-* [VPC multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc)
+* [Classic multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-mz)
+* [Classic single zone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-sz)
+* [VPC multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc)
 * [Resources in a single zone cluster](/docs/openshift?topic=openshift-regions-and-zones#regions_single_zone)
 * [Resources in a multizone cluster](/docs/openshift?topic=openshift-regions-and-zones#regions_multizone)
 
