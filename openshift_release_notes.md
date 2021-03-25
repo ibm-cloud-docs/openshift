@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-03-25"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -109,6 +109,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 25 March 2021 | <ul><li>**CIS Kubernetes Benchmark**: Added information about {{site.data.keyword.openshiftlong_notm}} compliance with the [Center for Internet Security (CIS) Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark) for clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or later.</li><li>**CRI-O container runtime**: Added [information about the CRI-O container runtime interface](/docs/openshift?topic=openshift-security#container-runtime) for worker nodes.</li><li>**{{site.data.keyword.cloudcerts_short}} instances**: The default {{site.data.keyword.cloudcerts_short}} instance for your cluster is now named in the format `kube-crtmgr-<cluster_ID>`.</li></ul> |
 | 22 March 2021 | **Ingress ALB changelog**: Updated the [`nginx-ingress` build to 2466 and the `ingress-auth` build to 982](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image. |
 | 17 March 2021 | **Deprecated events to be replaced for {{site.data.keyword.at_short}}**: To align with event auditing standards across cloud, several cluster events and fields are deprecated and are replaced in 30 days on 16 April 2021 by new events and fields.<ul><li>**Deprecated events**: Some events are [deprecated](/docs/openshift?topic=openshift-at_events#cluster-events-old) and are no longer sent after the deprecation. Instead, [new events](/docs/openshift?topic=openshift-at_events#events-new) are sent.</li><li>**Deprecated fields across events**: [Some fields](/docs/openshift?topic=openshift-at_events#events-updated-fields) are deprecated and replaced by or updated with new values across events.</li></ul>
 | 16 March 2021 | **Ingress ALB changelog**: Updated the [`nginx-ingress` build to 2458](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image. |

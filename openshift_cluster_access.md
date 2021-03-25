@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-03-25"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -586,7 +586,7 @@ Making your location and cluster subdomains available outside of your hosts' pri
   ibmcloud oc nlb-dns ls --cluster <cluster_name_or_ID>
   ```
   {: pre}
-6. Add the public IP addresses for your hosts to your cluster's subdomain. Repeat this command for all public IP addresses that you want to add.
+6. Add the public IP addresses of the hosts that are assigned as worker nodes to this cluster to your cluster's subdomain. Repeat this command for each host's public IP address.
   ```
   ibmcloud oc nlb-dns add --ip <public_IP> --cluster <cluster_name_or_ID> --nlb-host <hostname>
   ```
