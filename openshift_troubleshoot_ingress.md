@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -413,7 +413,7 @@ Also, if you used the same cluster name repeatedly, you might have a rate limiti
 5. Verify that your cluster is automatically assigned a {{site.data.keyword.cloudcerts_short}} instance.
   1. In the {{site.data.keyword.cloud_notm}} console, navigate to your [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources){: external}.
   2. Expand the **Services** row.
-  3. Look for a {{site.data.keyword.cloudcerts_short}} instance that is named in the format `kube-<cluster_ID>`. To find your cluster's ID, run `ibmcloud oc cluster ls`.
+  3. Look for a {{site.data.keyword.cloudcerts_short}} instance that is named in the format `kube-crtmgr-<cluster_ID>`. To find your cluster's ID, run `ibmcloud oc cluster ls`.
   4. Click the instance's name. The **Your certificates** details page opens.
 6. Verify that the TLS secret for your cluster's Ingress subdomain is created and listed in your cluster.
   ```
@@ -736,7 +736,7 @@ Check the availability of the public IP addresses of the Ingress controller's ro
 * <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 4 clusters
 
 {: tsSymptoms}
-You create a multizone VPC Gen 2 cluster. However, when you run `ibmcloud is load-balancers` to find the VPC load balancer that exposes the router, the VPC subnet for only one zone in your cluster is listed instead of the subnets for all zones in your cluster. In the output, look for the VPC load balancer **Name** that starts with `kube-<cluster_ID>`.
+You create a multizone VPC Gen 2 cluster. However, when you run `ibmcloud is load-balancers` to find the VPC load balancer that exposes the router, the VPC subnet for only one zone in your cluster is listed instead of the subnets for all zones in your cluster. In the output, look for the VPC load balancer **Name** that starts with `kube-crtmgr-<cluster_ID>`.
 ```
 ID                                          Name                                                         Family        Subnets               Is public   Provision status   Operating status   Resource group
 r006-d044af9b-92bf-4047-8f77-a7b86efcb923   kube-bsaucubd07dhl66e4tgg-1f4f408ce6d2485499bcbdec0fa2d306   Application   mysubnet-us-south-3   true        active             online             default
@@ -775,7 +775,7 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
   ```
   {: pre}
 
-  In the output, look for the VPC load balancer **Name** that starts with `kube-<cluster_ID>`.
+  In the output, look for the VPC load balancer **Name** that starts with `kube-crtmgr-<cluster_ID>`.
   ```
   ID                                          Name                                                         Family        Subnets               Is public   Provision status   Operating status   Resource group
   r006-d044af9b-92bf-4047-8f77-a7b86efcb923   kube-bsaucubd07dhl66e4tgg-1f4f408ce6d2485499bcbdec0fa2d306   Application   mysubnet-us-south-1, mysubnet-us-south-2, mysubnet-us-south-3   true        active             online             default

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-24"
 
 keywords: openshift, roks, rhos, rhoks, clusters, delete, remove
 
@@ -102,7 +102,7 @@ Clusters that are created with a billable account must be removed manually when 
 <p class="important">
 No backups are created of your cluster or your data in your persistent storage. When you delete a cluster, you can choose to delete your persistent storage. Persistent storage that you provisioned by using a `delete` storage class is permanently deleted in IBM Cloud infrastructure if you choose to delete your persistent storage. If you provisioned your persistent storage by using a `retain` storage class and you choose to delete your storage, the cluster, the PV, and PVC are deleted, but the persistent storage instance in your IBM Cloud infrastructure account remains.</br>
 </br><img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters only**: When you remove a cluster, you also remove any subnets that were automatically provisioned when you created the cluster and that you created by using the `ibmcloud oc cluster subnet create` command. However, if you manually added existing subnets to your cluster by using the `ibmcloud oc cluster subnet add` command, these subnets are not removed from your IBM Cloud infrastructure account and you can reuse them in other clusters.</br>
-</br>When you delete your cluster, the default {{site.data.keyword.cloudcerts_short}} instance for your cluster, which is named in the format `kube-<cluster_ID>`, is also automatically deleted. Any certificates that are stored in the {{site.data.keyword.cloudcerts_short}} instance for your cluster are deleted when the {{site.data.keyword.cloudcerts_short}} instance is deleted.</p>
+</br>When you delete your cluster, the default {{site.data.keyword.cloudcerts_short}} instance for your cluster, which is named in the format `kube-crtmgr-<cluster_ID>`, is also automatically deleted. Any certificates that are stored in the {{site.data.keyword.cloudcerts_short}} instance for your cluster are deleted when the {{site.data.keyword.cloudcerts_short}} instance is deleted.</p>
 
 **Before you begin**:
 * Note your cluster ID. You might need the cluster ID to investigate and remove related IBM Cloud infrastructure resources that are not automatically deleted with your cluster.

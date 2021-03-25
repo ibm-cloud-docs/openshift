@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-25"
 
 keywords: openshift
 subcollection: openshift
@@ -231,6 +231,7 @@ subcollection: openshift
   * [Securely expose apps with LoadBalancer and Ingress services](/docs/openshift?topic=openshift-security#network_lb_ingress)
 * [Persistent storage](/docs/openshift?topic=openshift-security#storage)
 * [Monitoring and logging](/docs/openshift?topic=openshift-security#monitoring_logging)
+* [Container runtime](/docs/openshift?topic=openshift-security#container-runtime)
 * [Image and registry](/docs/openshift?topic=openshift-security#images_registry)
 * [Container isolation and security](/docs/openshift?topic=openshift-security#container)
 * [Storing personal information](/docs/openshift?topic=openshift-security#pi)
@@ -1777,6 +1778,9 @@ subcollection: openshift
   * [Changelog for worker node patch 3.11.129_1518_openshift, released 5 August 2019](/docs/openshift?topic=openshift-openshift_changelog#311129_1518_worker)
   * [Changelog for 3.11.129_1517_openshift, released 2 August 2019](/docs/openshift?topic=openshift-openshift_changelog#311129_1517)
 
+[CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark)
+* [Running the worker node CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test)
+
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog)
 * [Changelog for 1.0.2, released 08 March 2021](/docs/openshift?topic=openshift-ca_changelog#0102_ca_addon)
 * [Changelog for 1.0.1, released 15 August 2020](/docs/openshift?topic=openshift-ca_changelog#0101_ca_addon)
@@ -1892,9 +1896,9 @@ subcollection: openshift
 
 [{{site.data.keyword.openshiftlong_notm}} locations](/docs/openshift?topic=openshift-regions-and-zones#locations)
 * [How locations are organized](/docs/openshift?topic=openshift-regions-and-zones#example_locations_org)
-* [Classic multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones-mz)
-* [Classic single zone data center locations](/docs/openshift?topic=openshift-regions-and-zones#zones-sz)
-* [VPC multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc)
+* [Classic multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-mz)
+* [Classic single zone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-sz)
+* [VPC multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc)
 * [Resources in a single zone cluster](/docs/openshift?topic=openshift-regions-and-zones#regions_single_zone)
 * [Resources in a multizone cluster](/docs/openshift?topic=openshift-regions-and-zones#regions_multizone)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-25"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -90,7 +90,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
+
 
 # Accessing {{site.data.keyword.openshiftshort}} clusters
 {: #access_cluster}
@@ -528,7 +528,9 @@ You can quickly access your {{site.data.keyword.openshiftlong_notm}} cluster fro
 3.  Click your profile name, such as `IAM#name@email.com`, and then click **Copy Login Command**.
 4.  Click **Display Token**, and copy the `oc login` command.
 5.  Paste the command into your command line.
+
 </br>
+
 If you cannot or do not want to open the {{site.data.keyword.openshiftshort}} console, choose among the following options to log in to your {{site.data.keyword.openshiftlong_notm}} cluster by using the CLI.
 *   **Log in as admin**:
     1.  Make sure that you have the [**Administrator** IAM platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
@@ -584,7 +586,7 @@ Making your location and cluster subdomains available outside of your hosts' pri
   ibmcloud oc nlb-dns ls --cluster <cluster_name_or_ID>
   ```
   {: pre}
-6. Add the public IP addresses for your hosts to your cluster's subdomain. Repeat this command for all public IP addresses that you want to add.
+6. Add the public IP addresses of the hosts that are assigned as worker nodes to this cluster to your cluster's subdomain. Repeat this command for each host's public IP address.
   ```
   ibmcloud oc nlb-dns add --ip <public_IP> --cluster <cluster_name_or_ID> --nlb-host <hostname>
   ```
