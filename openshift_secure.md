@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-03-25"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -585,6 +585,8 @@ When you use Kubernetes to interact with a container image, such as by creating 
 | A container process, such as `c14` | `system_u:system_r:container_t:s0:c14` |
 {: summary="The rows are read from left to right. The first column is the worker node process. The second column is the SELinux label for the component."}
 {: caption="SELinux labels that are used to protect container runtime processes." caption-side="top"}
+
+**Example request flow**
 
 The following diagram presents an example request flow between the kubelet and CRI-O.
 
