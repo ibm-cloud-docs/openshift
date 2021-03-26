@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-03-26"
 
 keywords: openshift
 subcollection: openshift
@@ -1344,13 +1344,14 @@ subcollection: openshift
   * [Removing Portworx from your cluster](/docs/openshift?topic=openshift-portworx#remove_portworx)
 * [Creating a Portworx volume](/docs/openshift?topic=openshift-portworx#add_portworx_storage)
 * [Mounting the volume to your app](/docs/openshift?topic=openshift-portworx#mount_pvc)
-* [VPC: Updating worker nodes with Portworx volumes](/docs/openshift?topic=openshift-portworx#portworx_vpc_up)
 * [Setting up disaster recovery with Portworx](/docs/openshift?topic=openshift-portworx#px-dr)
 * [Exploring other Portworx features](/docs/openshift?topic=openshift-portworx#features)
 * [Cleaning up your Portworx volumes and cluster](/docs/openshift?topic=openshift-portworx#portworx_cleanup)
   * [Removing Portworx volumes from apps](/docs/openshift?topic=openshift-portworx#remove_pvc)
   * [Removing a worker node from your Portworx cluster or the entire Portworx cluster](/docs/openshift?topic=openshift-portworx#remove_storage_node_cluster)
+  * [Removing the Portworx daemon set](/docs/openshift?topic=openshift-portworx#remove_px_daemonset)
 * [Getting help and support](/docs/openshift?topic=openshift-portworx#portworx_help)
+  * [Gathering logs](/docs/openshift?topic=openshift-portworx#portworx_logs)
 * [Limitations](/docs/openshift?topic=openshift-portworx#portworx_limitations)
 
 [Backing up and restoring storage data](/docs/openshift?topic=openshift-storage_br)
@@ -1362,8 +1363,10 @@ subcollection: openshift
 * [Classic: Manually adding block storage to specific worker nodes](/docs/openshift?topic=openshift-utilities#manual_block)
 * [Classic: Attaching raw block storage to non-SDS worker nodes](/docs/openshift?topic=openshift-utilities#attach_block)
 * [VPC: Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_attach)
-  * [Detaching raw and unformatted {{site.data.keyword.blockstorageshort}} from a worker node in a VPC cluster](/docs/openshift?topic=openshift-utilities#vpc_api_detach)
-  * [Reviewing volume attachment details for a VPC worker node](/docs/openshift?topic=openshift-utilities#vpc_api_get_worker)
+  * [Detaching raw and unformatted {{site.data.keyword.blockstorageshort}} from a worker node in a VPC cluster by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_detach)
+  * [Reviewing volume attachment details for a VPC worker node by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_get_worker)
+* [VPC: Attaching raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes by using the CLI](/docs/openshift?topic=openshift-utilities#vpc_cli_attach)
+  * [Removing raw {{site.data.keyword.blockstorageshort}} from VPC worker nodes by using the CLI](/docs/openshift?topic=openshift-utilities#storage-util-rm-vpc-cli)
 * [Backing up and restoring PVC data for file and block storage](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore)
   * [Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-utilities#backup_restore_setup_object_storage)
   * [Using {{site.data.keyword.cos_full_notm}} to back up and restore PVC data](/docs/openshift?topic=openshift-utilities#backup-restore-pvc)

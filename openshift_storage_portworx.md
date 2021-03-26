@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1077,24 +1077,7 @@ To access the storage from your app, you must mount the PVC to your app.
 
       <br />
 
-## VPC: Updating worker nodes with Portworx volumes
-{: #portworx_vpc_up}
 
-When you update a worker node in a VPC cluster, the worker node is removed from your cluster and replaced with a new worker node. If Portworx volumes are attached to the worker node that is replaced, you must attach the volumes to the new worker node.
-{: shortdesc}
-
-Update only one worker node at a time. When the worker node update is complete, attach your {{site.data.keyword.block_storage_is_short}} and restart the Portworx pod.
-{: important}
-
-**Supported infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
-
-1. Follow the steps to update your [VPC worker node](/docs/openshift?topic=openshift-update#vpc_worker_node).
-
-2. [Attach raw {{site.data.keyword.block_storage_is_short}} to your worker node](/docs/openshift?topic=openshift-utilities#vpc_api_attach).
-
-3. Restart the Portworx pod on the new worker node.
-
-4. [Mount the volume to your app](/docs/openshift?topic=openshift-portworx#mount_pvc).
 
 ## Setting up disaster recovery with Portworx
 {: #px-dr}
@@ -1262,14 +1245,79 @@ Removing your Portworx cluster removes all the data from your Portworx cluster. 
 {: important}
 
 - **Remove a worker node from the Portworx cluster:** If you want to remove a worker node that runs Portworx and stores data in your Portworx cluster,  you must migrate existing pods to remaining worker nodes and then uninstall Portworx from the node. For more information, see [Decommission a Portworx node in Kubernetes](https://docs.portworx.com/portworx-install-with-kubernetes/operate-and-maintain-on-kubernetes/uninstall/decommission-a-node/){: external}.
-- **Remove the entire Portworx cluster:** When you remove a Portworx cluster, you can decide if you want to remove all your data at the same time. For more information, see [Uninstall from Kubernetes cluster](https://docs.portworx.com/portworx-install-with-kubernetes/operate-and-maintain-on-kubernetes/uninstall/uninstall/#delete-wipe-px-cluster-configuration){: external}.
+- **Remove the entire Portworx cluster:** When you remove a Portworx cluster, you can decide if you want to delete all your data at the same time. For more information, see [Uninstall from Kubernetes cluster](https://docs.portworx.com/portworx-install-with-kubernetes/operate-and-maintain-on-kubernetes/uninstall/uninstall/#delete-wipe-px-cluster-configuration){: external}.
+
+### Removing the Portworx daemon set
+{: #remove_px_daemonset}
+
+When you remove the Portworx daemon set, the Portworx containers are removed from your worker nodes. However, the Portworx configuration files remain on the worker nodes and the storage devices, and the data volumes are still intact. You can use the data volumes again if you restart the Portworx daemon set and containers by using the same configuration files. 
+{: shortdesc}
+
+Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+1. Clone the `ibmcloud-storage-utilities` repo.
+   ```sh
+   git clone https://github.com/IBM/ibmcloud-storage-utilities.git
+   ```
+   {: pre}
+
+2. Change directories to the `px-utils/px_cleanup` directory.
+   ```sh
+   cd ibmcloud-storage-utilities/px-utils/px_cleanup
+   ```
+   {: pre}
+
+3. Run the `px_cleanup.sh` script to remove the daemon set from your cluster.
+   ```sh
+   sh ./px_cleanup.sh
+   ```
+   {: pre}
 
 <br />
 
 ## Getting help and support
 {: #portworx_help}
 
-If you run into an issue with using Portworx, you can open an issue in the [Portworx Service Portal](https://portworx.atlassian.net/servicedesk/customer/portal/2){: external}. You can also submit a request by sending an e-mail to `support@portworx.com`. If you do not have an account on the Portworx Service Portal, send an e-mail to `support@portworx.com`.
+If you run into an issue with using Portworx, you can open an issue in the [Portworx Service Portal](https://portworx.atlassian.net/servicedesk/customer/portal/2){: external}. You can also submit a request by sending an e-mail to `support@portworx.com`. If you do not have an account on the Portworx Service Portal, send an e-mail to `support@portworx.com`. You can also [gather logging information](#portworx_logs) before opening a support ticket.
+
+### Gathering logs
+{: #portworx_logs}
+
+You can use the following script to collect log information from your Portworx cluster.
+{: shortdesc}
+
+The following script collects Portworx logs from your cluster and saves them on your local machine in the `/tmp/pxlogs` directory.
+
+Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+1. Clone the `ibmcloud-storage-utilities` repo.
+   ```sh
+   git clone https://github.com/IBM/ibmcloud-storage-utilities.git
+   ```
+   {: pre}
+
+2. Navigate to the `px_logcollector` directory.
+   ```sh
+   cd ibmcloud-storage-utilities/px_logcollector/
+   ```
+   {: pre}
+
+3. Run the `px_logcollect.sh` script. You can collect logs from all of your worker nodes, or you can specify the `--workers` flag and pass the private IP addresses of the worker nodes from where you want to collect logs. If you specify the `--workers` flag, the log files are saved in the `/tmp/pxlogs/<worker_node_IP>` directory with the private IP address of each worker node as the folder name. To get the private IP addresses of your worker nodes, run the `oc get nodes` command.
+
+   * **Collect the logs from all worker nodes in your cluster.**
+
+      ```sh
+      sudo ./px_logcollect.sh
+      ```
+      {: pre}
+
+   * **Collect the logs from only certain worker nodes in your cluster.**
+      ```sh
+      sudo ./px_logcollect.sh --workers <worker-IP> <worker-IP> <worker-IP>
+      ```
+      {: pre}
+
+4. Review the log files locally. If you cannot resolve your issue by reviewing the logs, [open a support ticket](#portworx_help) and provide the log information that you collected.
 
 
 ## Limitations
