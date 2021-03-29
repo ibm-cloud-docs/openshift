@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-29"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -131,20 +131,20 @@ The following list of account events that are related to managing your clusters 
 |------|-----------|
 | `containers-kubernetes.account-customer-root-key.list` | Root keys from key management service instances for the {{site.data.keyword.cloud_notm}} account are listed. |
 | `containers-kubernetes.account-datacenter-vlan.list` | VLANs in an {{site.data.keyword.cloud_notm}} account for a particular data center are listed.|
-| `containers-kubernetes.account-infra-credential.get` | Details on the classic infrastructure credentials that are set for managing clusters in the region and resource group are returned. | 
+| `containers-kubernetes.account-infra-credential.get` | Details on the classic infrastructure credentials that are set for managing clusters in the region and resource group are returned. |
 | `containers-kubernetes.account-infra-permission.get` | Details on the compute, networking, and storage classic infrastructure permissions that are set for managing clusters in the region and resource group are returned. |
-| `containers-kubernetes.account-key-management-service-instance.list` | Key management service instances in the {{site.data.keyword.cloud_notm}} account are listed. | 
-| `containers-kubernetes.account-quota.get` | The quota for resources such as clusters or worker nodes for the {{site.data.keyword.cloud_notm}} account is returned. | 
-| `containers-kubernetes.account-reservation-contract.add` | A contract for a specific term and number of worker nodes is added to a reservation. | 
+| `containers-kubernetes.account-key-management-service-instance.list` | Key management service instances in the {{site.data.keyword.cloud_notm}} account are listed. |
+| `containers-kubernetes.account-quota.get` | The quota for resources such as clusters or worker nodes for the {{site.data.keyword.cloud_notm}} account is returned. |
+| `containers-kubernetes.account-reservation-contract.add` | A contract for a specific term and number of worker nodes is added to a reservation. |
 | `containers-kubernetes.account-reservation-contract.list` | Contracts for a reservation are listed. |
-| `containers-kubernetes.account-subnet.list` | Subnets in the {{site.data.keyword.cloud_notm}} classic infrastructure account are listed. | 
+| `containers-kubernetes.account-subnet.list` | Subnets in the {{site.data.keyword.cloud_notm}} classic infrastructure account are listed. |
 | `containers-kubernetes.account-subnet-vlan-spanning.get` | Details on whether the {{site.data.keyword.cloud_notm}} account has VLAN spanning enabled are returned. |
 | `containers-kubernetes.account-user-config.get` | Details on whether a user can create free or standard clusters in a certain region and resource group are returned. |
-| `containers-kubernetes.account-vpc.get` | Details for a virtual private cloud (VPC) instance are returned. | 
-| `containers-kubernetes.account-vpc.list` | Virtual private cloud (VPC) instances in the {{site.data.keyword.cloud_notm}} account are listed.  | 
-| `containers-kubernetes.account-worker-reservation.create` | A reservation for worker nodes is created. | 
-| `containers-kubernetes.account-worker-reservation.get` | Details of a reservation are returned. | 
-| `containers-kubernetes.account-worker-reservation.list` | Reservations are listed.| 
+| `containers-kubernetes.account-vpc.get` | Details for a virtual private cloud (VPC) instance are returned. |
+| `containers-kubernetes.account-vpc.list` | Virtual private cloud (VPC) instances in the {{site.data.keyword.cloud_notm}} account are listed.  |
+| `containers-kubernetes.account-worker-reservation.create` | A reservation for worker nodes is created. |
+| `containers-kubernetes.account-worker-reservation.get` | Details of a reservation are returned. |
+| `containers-kubernetes.account-worker-reservation.list` | Reservations are listed.|
 {: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
 {: caption="Cluster account events" caption-side="top"}
 
@@ -278,16 +278,16 @@ The following list of the logging and monitoring configuration events are sent t
 
 |Action|Description|
 |------|-----------|
-| `containers-kubernetes.observe-logging.create` | A LogDNA logging configuration is created for the cluster. | 
-| `containers-kubernetes.observe-logging.get` | The details of a LogDNA logging configuration are returned. | 
-| `containers-kubernetes.observe-logging.list` | LogDNA logging configurations for a cluster are listed. | 
-| `containers-kubernetes.observe-logging.modify` | A LogDNA logging configuration is updated. | 
-| `containers-kubernetes.observe-logging.remove` | A LogDNA logging configuration is removed from the cluster.| 
-| `containers-kubernetes.observe-monitoring.create` | A Sysdig monitoring configuration is created for the cluster. | 
-| `containers-kubernetes.observe-monitoring.get` | The details of a Sysdig monitoring configuration are returned. | 
-| `containers-kubernetes.observe-monitoring.list` | Sysdig monitoring configurations for a cluster are listed. | 
-| `containers-kubernetes.observe-monitoring.modify` | A Sysdig monitoring configuration is updated. |
-| `containers-kubernetes.observe-monitoring.remove` | A Sysdig monitoring configuration is removed from the cluster. |
+| `containers-kubernetes.observe-logging.create` | A {{site.data.keyword.la_short}} configuration is created for the cluster. |
+| `containers-kubernetes.observe-logging.get` | The details of a {{site.data.keyword.la_short}} configuration are returned. |
+| `containers-kubernetes.observe-logging.list` | {{site.data.keyword.la_short}} configurations for a cluster are listed. |
+| `containers-kubernetes.observe-logging.modify` | A {{site.data.keyword.la_short}} configuration is updated. |
+| `containers-kubernetes.observe-logging.remove` | A {{site.data.keyword.la_short}} configuration is removed from the cluster.|
+| `containers-kubernetes.observe-monitoring.create` | A {{site.data.keyword.mon_short}} configuration is created for the cluster. |
+| `containers-kubernetes.observe-monitoring.get` | The details of a {{site.data.keyword.mon_short}} configuration are returned. |
+| `containers-kubernetes.observe-monitoring.list` | {{site.data.keyword.mon_short}} configurations for a cluster are listed. |
+| `containers-kubernetes.observe-monitoring.modify` | A {{site.data.keyword.mon_short}} configuration is updated. |
+| `containers-kubernetes.observe-monitoring.remove` | A {{site.data.keyword.mon_short}} configuration is removed from the cluster. |
 {: caption="Observability events for logging and monitoring" caption-side="top"}
 {: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
 
@@ -346,7 +346,7 @@ The following table lists the actions related to storage resources and the gener
 | `containers-kubernetes.storage-volume.list` | Volumes in the {{site.data.keyword.cloud_notm}} account or as filtered by provider are retrieved. |
 | `containers-kubernetes.storage-volume.read` | A volume is retrieved |
 | `containers-kubernetes.storage-volume.update` | A volume is updated. |
-| `containers-kubernetes.storage-attachment.create` | A volume attachment is created. | 
+| `containers-kubernetes.storage-attachment.create` | A volume attachment is created. |
 | `containers-kubernetes.storage-attachment.delete` | A volume attachment is deleted. |
 | `containers-kubernetes.storage-attachment.list` | Volume attachments are retrieved. |
 | `containers-kubernetes.storage-attachment.read` | A volume attachment is retrieved. |
@@ -363,7 +363,7 @@ The following list of worker node and worker pool events are sent to {{site.data
 |------|-----------|
 | `containers-kubernetes.cluster-worker.list` | The worker nodes for a cluster are listed. |
 | `containers-kubernetes.cluster-worker-pool.get` | The details of a worker pool in the cluster are returned. |
-| `containers-kubernetes.cluster-worker-pool.list` | The worker pools for a cluster are listed. | 
+| `containers-kubernetes.cluster-worker-pool.list` | The worker pools for a cluster are listed. |
 | `containers-kubernetes.cluster-worker-pool-zone.get` | The details of a zone that a worker pool spans in the cluster are returned as part of cluster autoscaler operations. |
 | `containers-kubernetes.cluster-worker-pool-zone.list` | The worker pools for a cluster in a particular zone are listed as part of cluster autoscaler operations. |
 | `containers-kubernetes.cluster-worker-pool-zone-worker.list` | The worker nodes within a zone that a the worker pool spans are listed as part of cluster autoscaler operations. |
@@ -410,7 +410,7 @@ Review tentatively renamed cluster events.
 | `containers-kubernetes.cluster-service.bind` | An {{site.data.keyword.cloud_notm}} service is bound to a project in the cluster.|
 | `containers-kubernetes.cluster-service.unbind` | An {{site.data.keyword.cloud_notm}} service is removed from a project in the cluster. |
 | `containers-kubernetes.cluster-subnet.add` | A public or private portable subnet is added to a cluster. |
-| `containers-kubernetes.cluster-subnet.create` | A subnet is created for the cluster. | 
+| `containers-kubernetes.cluster-subnet.create` | A subnet is created for the cluster. |
 | `containers-kubernetes.cluster-subnet.detach` | A public or private portable subnet is detached from a cluster.  |
 | `containers-kubernetes.cluster-user-subnet.add` | A user-managed subnet is added to the cluster. **Note**: User-added subnets are deprecated. |
 | `containers-kubernetes.cluster.user-subnet.detach` | A user-managed subnet is detached from the cluster. **Note**: User-added subnets are deprecated. |
@@ -440,8 +440,8 @@ Review tentatively renamed cluster add-on events.
 
 |Action|Description|
 |------|-----------|
-| `containers-kubernetes.cluster-addon.disable` | A cluster add-on is disabled. | 
-| `containers-kubernetes.cluster-addon.enable` | A cluster add-on is enabled.| 
+| `containers-kubernetes.cluster-addon.disable` | A cluster add-on is disabled. |
+| `containers-kubernetes.cluster-addon.enable` | A cluster add-on is enabled.|
 | `containers-kubernetes.cluster-addon.update` | A cluster add-on is updated. |
 {: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
 {: caption="Updated cluster add-on events" caption-side="top"}
@@ -454,7 +454,7 @@ Review tentatively renamed Fluentd logging events.
 
 |Action|Description|
 |------|-----------|
-| `containers-kubernetes.cluster-logging-autoupdate.changed` | The logging update policy for the cluster is updated. | 
+| `containers-kubernetes.cluster-logging-autoupdate.changed` | The logging update policy for the cluster is updated. |
 | `containers-kubernetes.cluster-logging-config.create` | A logging configuration for the cluster is created. |
 | `containers-kubernetes.cluster-logging-config.delete` | A logging configuration is deleted from the cluster.|
 | `containers-kubernetes.cluster-logging-config.refresh` | The logging configuration for a cluster is refreshed. |
@@ -475,17 +475,17 @@ Review tentatively renamed worker pool and worker node events.
 | `containers-kubernetes.cluster-worker.add` | A worker node is added to the cluster. **Note**: Adding stand-alone worker nodes is deprecated. |
 | `containers-kubernetes.cluster-worker-pool.create` | A worker pool is created in the cluster. |
 | `containers-kubernetes.cluster-worker-pool.delete` | A worker pool is deleted from a cluster. |  
-| `containers-kubernetes.cluster-worker-pool.rebalance` | A worker pool is rebalanced. | 
+| `containers-kubernetes.cluster-worker-pool.rebalance` | A worker pool is rebalanced. |
 | `containers-kubernetes.cluster-worker-pool.resize` | A worker pool is resized, to add or decrease the number of worker nodes in the pool. |
 | `containers-kubernetes.cluster-worker-pool-autoscale.disable` | Autoscaling the worker pool is disabled.|  
-| `containers-kubernetes.cluster-worker-pool-autoscale.enable` | Autoscaling the worker pool is enabled. | 
+| `containers-kubernetes.cluster-worker-pool-autoscale.enable` | Autoscaling the worker pool is enabled. |
 | `containers-kubernetes.cluster-worker-pool-label.set` | Kubernetes labels for a worker pool are set. Existing and future worker nodes in the worker pool inherit the label. |
 | `containers-kubernetes.cluster-worker-pool-taint.set` | Kubernetes taints for a worker pool are set. Existing and future worker nodes in the worker pool inherit the taint. |
 | `containers-kubernetes.cluster-worker-pool-zone.create` | A zone is added to a worker pool. |
-| `containers-kubernetes.cluster-worker-pool-zone.delete` | A zone is deleted from a worker pool. | 
+| `containers-kubernetes.cluster-worker-pool-zone.delete` | A zone is deleted from a worker pool. |
 | `containers-kubernetes.cluster-worker-pool-zone.resize` | A worker node is added to or removed from a zone that the worker pool spans.|
-| `containers-kubernetes.cluster-worker-pool-zone-network.add` | The networking data, such as public and private VLAN data, is added for a zone that the worker pool spans.| 
-| `containers-kubernetes.worker.delete` | A worker node is deleted from the cluster. | 
+| `containers-kubernetes.cluster-worker-pool-zone-network.add` | The networking data, such as public and private VLAN data, is added for a zone that the worker pool spans.|
+| `containers-kubernetes.worker.delete` | A worker node is deleted from the cluster. |
 | `containers-kubernetes.worker.reboot` | A worker node is rebooted. |
 | `containers-kubernetes.worker.reload` | A worker node is reloaded. |
 | `containers-kubernetes.worker.replace`| A worker node is removed and another worker node of the same flavor is created in the cluster. |

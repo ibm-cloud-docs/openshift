@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -333,12 +333,12 @@ Review the following observability logging API methods, their corresponding acti
 
 |	API Method	|	Description	|	IAM action for the API	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
-|	GET​/v2​/observe​/logging​/getConfig	|	Show the details of an existing LogDNA logging configuration.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v2​/observe​/logging​/getConfigs	|	List all LogDNA logging configurations for a cluster.	|	containers-kubernetes.cluster.read	|	-	|
-|	POST​/v2​/observe​/logging​/createConfig	|	Create a LogDNA logging configuration for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.observe.logging.create 	|
-|	POST​/v2​/observe​/logging​/discoverAgent	|	Discover a LogDNA agent previously deployed in the cluster.	|	containers-kubernetes.cluster.create	|	-	|
-|	POST​/v2​/observe​/logging​/modifyConfig	|	Update a LogDNA logging configuration in the cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.observe.logging.modify 	|
-|	POST​/v2​/observe​/logging​/removeConfig	|	Remove a LogDNA logging configuration from a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.observe.logging.remove 	|
+|	GET​/v2​/observe​/logging​/getConfig	|	Show the details of an existing {{site.data.keyword.la_short}} configuration.	|	containers-kubernetes.cluster.read	|	-	|
+|	GET​/v2​/observe​/logging​/getConfigs	|	List all {{site.data.keyword.la_short}} configurations for a cluster.	|	containers-kubernetes.cluster.read	|	-	|
+|	POST​/v2​/observe​/logging​/createConfig	|	Create a {{site.data.keyword.la_short}} configuration for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.observe.logging.create 	|
+|	POST​/v2​/observe​/logging​/discoverAgent	|	Discover a {{site.data.keyword.la_short}} agent previously deployed in the cluster.	|	containers-kubernetes.cluster.create	|	-	|
+|	POST​/v2​/observe​/logging​/modifyConfig	|	Update a {{site.data.keyword.la_short}} configuration in the cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.observe.logging.modify 	|
+|	POST​/v2​/observe​/logging​/removeConfig	|	Remove a {{site.data.keyword.la_short}} configuration from a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.observe.logging.remove 	|
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Observability logging API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
@@ -352,12 +352,12 @@ Review the following observability monitoring API methods, their corresponding a
 
 |	API Method	|	Description	|	IAM action for the API	|	{{site.data.keyword.cloudaccesstrailshort}} event	|
 |	---	|	---	|	---	|	---	|
-|	GET​/v2​/observe​/monitoring​/getConfig	|	Show the details of an existing Sysdig monitoring configuration.	|	containers-kubernetes.cluster.read	|	-	|
-|	GET​/v2​/observe​/monitoring​/getConfigs	|	List all Sysdig monitoring configurations for a cluster.	|	containers-kubernetes.cluster.read	|	-	|
-|	POST​/v2​/observe​/monitoring​/createConfig	|	Create a Sysdig monitoring configuration for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.observe.monitoring.create 	|
-|	POST​/v2​/observe​/monitoring​/discoverAgent	|	Discover a Sysdig agent previously deployed in the cluster.	|	containers-kubernetes.cluster.create	|	-	|
-|	POST​/v2​/observe​/monitoring​/modifyConfig	|	Update a Sysdig monitoring configuration in the cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.observe.monitoring.modify 	|
-|	POST​/v2​/observe​/monitoring​/removeConfig	|	Remove a Sysdig monitoring configuration from a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.observe.monitoring.remove 	|
+|	GET​/v2​/observe​/monitoring​/getConfig	|	Show the details of an existing {{site.data.keyword.mon_short}} configuration.	|	containers-kubernetes.cluster.read	|	-	|
+|	GET​/v2​/observe​/monitoring​/getConfigs	|	List all {{site.data.keyword.mon_short}} configurations for a cluster.	|	containers-kubernetes.cluster.read	|	-	|
+|	POST​/v2​/observe​/monitoring​/createConfig	|	Create a {{site.data.keyword.mon_short}} configuration for a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.observe.monitoring.create 	|
+|	POST​/v2​/observe​/monitoring​/discoverAgent	|	Discover a {{site.data.keyword.mon_short}} agent previously deployed in the cluster.	|	containers-kubernetes.cluster.create	|	-	|
+|	POST​/v2​/observe​/monitoring​/modifyConfig	|	Update a {{site.data.keyword.mon_short}} configuration in the cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.observe.monitoring.modify 	|
+|	POST​/v2​/observe​/monitoring​/removeConfig	|	Remove a {{site.data.keyword.mon_short}} configuration from a cluster.	|	containers-kubernetes.cluster.create	|	containers-kubernetes.observe.monitoring.remove 	|
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Observability monitoring API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 

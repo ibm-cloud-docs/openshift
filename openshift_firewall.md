@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -417,7 +417,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
     - `TCP port 443 FROM <each_worker_node_publicIP> TO https://iam.bluemix.net`
     - `TCP port 443 FROM <each_worker_node_publicIP> TO https://iam.cloud.ibm.com`
 
-5. Optional: Allow outgoing network traffic from the worker nodes to Sysdig and LogDNA services:
+5. Optional: Allow outgoing network traffic from the worker nodes to {{site.data.keyword.mon_short}} and {{site.data.keyword.la_short}} services:
     *   **{{site.data.keyword.mon_full_notm}}**:
         <pre class="screen">TCP port 443, port 6443 FROM &lt;each_worker_node_public_IP&gt; TO &lt;sysdig_public_IP&gt;</pre>
         Replace <em>&lt;sysdig_public_IP&gt;</em> with the [Sysdig IP addresses](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-endpoints#endpoints_sysdig).
