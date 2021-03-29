@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-29"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -90,7 +90,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
+
 
 # Supported IBM Cloud and third-party integrations
 {: #supported_integrations}
@@ -111,7 +111,7 @@ Learn more about the following {{site.data.keyword.IBM}}, {{site.data.keyword.cl
 | {{site.data.keyword.la_full_notm}} | Add log management capabilities to your cluster by deploying LogDNA as a third-party service to your worker nodes to manage logs from your pod containers. For more information, see the following docs.<ul><li>[About the LogDNA partnership](/docs/containers?topic=containers-service-partners#logdna-partner).</li><li>[Setting up LogDNA in an {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-health#openshift_logdna).</li><li>[Tutorial: Managing Kubernetes cluster logs with {{site.data.keyword.la_full_notm}}](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-kube#kube).</li></ul> |
 | Portworx | [Portworx](https://portworx.com/products/portworx-enterprise//){: external} is a highly available software-defined storage solution that you can use to manage persistent storage for your containerized databases and other stateful apps, or to share data between pods across multiple zones. You can [install Portworx with a Helm chart](/docs/containers?topic=containers-portworx#portworx) and provision storage for your apps by using Kubernetes persistent volumes. However, the default configuration requires that you modify the security context constraints, similar to [LogDNA](/docs/openshift?topic=openshift-health#openshift_logdna). |
 | Razee | [Razee](https://razee.io/){: external} is an open-source project that automates and manages the deployment of Kubernetes resources across clusters, environments, and cloud providers, and helps you to visualize deployment information for your resources so that you can monitor the rollout process and find deployment issues more quickly. For more information about Razee and how to set up Razee in your cluster to automate your deployment process, see the [Razee documentation](https://github.com/razee-io/Razee){: external}. |
-| {{site.data.keyword.mon_full_notm}} | Gain operational visibility into the performance and health of your apps by deploying Sysdig as a third-party service to your worker nodes to forward metrics to {{site.data.keyword.mon_full}}. For more information, see the following docs.<ul><li>[About the Sysdig partnership](/docs/containers?topic=containers-service-partners#sydig-partner).</li><li>[Setting up Sysdig in an {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-health-monitor#openshift_sysdig).</li><li>[Tutorial: Analyzing metrics for an app that is deployed in a Kubernetes cluster](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-kubernetes_cluster#kubernetes_cluster).</li></ul> |
+| {{site.data.keyword.mon_full_notm}} | Gain operational visibility into the performance and health of your apps by deploying Sysdig as a third-party service to your worker nodes to forward metrics to {{site.data.keyword.mon_full}}. For more information, see the following docs.<ul><li>[About the Sysdig partnership](/docs/containers?topic=containers-service-partners#sydig-partner).</li><li>[Setting up {{site.data.keyword.mon_full_notm}} in an {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-health-monitor#openshift_sysdig).</li><li>[Tutorial: Analyzing metrics for an app that is deployed in a Kubernetes cluster](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-kubernetes_cluster#kubernetes_cluster).</li></ul> |
 |{{site.data.keyword.blockchainfull_notm}} Platform v2|Deploy and manage your own {{site.data.keyword.blockchainfull_notm}} Platform on {{site.data.keyword.openshiftlong_notm}}. With {{site.data.keyword.blockchainfull_notm}} Platform v2, you can host {{site.data.keyword.blockchainfull_notm}} networks or create organizations that can join other {{site.data.keyword.blockchainfull_notm}} v2 networks. For more information about how to set up {{site.data.keyword.blockchainfull_notm}} in {{site.data.keyword.openshiftlong_notm}}, see [About {{site.data.keyword.blockchainfull_notm}} Platform](/docs/blockchain-sw-213?topic=blockchain-sw-213-get-started-console-ocp).|
 | Other third-party integrations | You can install many other integrations into your {{site.data.keyword.openshiftshort}} cluster, such as through the {{site.data.keyword.openshiftshort}} catalog, the [Red Hat Marketplace](https://marketplace.redhat.com/en-us/documentation/getting-started){: external}, Operators, Helm charts, or do-it-yourself open source software installations. Make sure that these apps are compatible with your {{site.data.keyword.openshiftshort}} cluster and Kubernetes version. For example, you might need to [update the app](/docs/openshift?topic=openshift-plan_deploy#openshift_move_apps_scenarios) for the installation to succeed. |
 {: summary="The rows are read from left to right. The first column is the service that you might integrate with your cluster. The second column is the description of the service."}

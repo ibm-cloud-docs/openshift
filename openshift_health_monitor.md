@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-29"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -138,11 +138,10 @@ Use the {{site.data.keyword.openshiftlong_notm}} observability plug-in to create
 
 With {{site.data.keyword.mon_full_notm}}, you can collects cluster and pod metrics, such as the CPU and memory usage of your worker nodes, incoming and outgoing HTTP traffic for your pods, and data about several infrastructure components. In addition, the agent can collect custom application metrics by using either a Prometheus-compatible scraper or a StatsD facade.
 
-You can have only one monitoring configuration for {{site.data.keyword.mon_full_notm}} in your cluster at a time. If you want to use a different {{site.data.keyword.mon_full_notm}} service instance to send metrics to, use the [`ibmcloud ob monitoring config replace`](/docs/containers?topic=containers-observability_cli#monitoring_config_replace) command.
-{: note}
-
-If you created a Sysdig monitoring configuration in your cluster without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you can use the [`ibmcloud ob monitoring agent discover`](/docs/containers?topic=containers-observability_cli#monitoring_agent_discover) command to make the configuration visible to the plug-in. Then, you can use the observability plug-in commands and functionality in the {{site.data.keyword.cloud_notm}} console to manage the configuration.
-{: tip}
+Considerations for using the {{site.data.keyword.openshiftlong_notm}} observability plug-in:
+* You can have only one monitoring configuration for {{site.data.keyword.mon_full_notm}} in your cluster at a time. If you want to use a different {{site.data.keyword.mon_full_notm}} service instance to send metrics to, use the [`ibmcloud ob monitoring config replace`](/docs/containers?topic=containers-observability_cli#monitoring_config_replace) command.
+* {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}} cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI to enable monitoring for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy monitoring agents to your cluster to forward metrics to {{site.data.keyword.mon_short}}.
+* If you created a {{site.data.keyword.mon_short}} configuration in your cluster without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you can use the [`ibmcloud ob monitoring agent discover`](/docs/containers?topic=containers-observability_cli#monitoring_agent_discover) command to make the configuration visible to the plug-in. Then, you can use the observability plug-in commands and functionality in the {{site.data.keyword.cloud_notm}} console to manage the configuration.
 
 Before you begin:
 - Verify that you are assigned the **Editor** platform access role and **Manager** server access role for {{site.data.keyword.mon_full_notm}}.
@@ -154,15 +153,15 @@ Before you begin:
 To set up a monitoring configuration for your cluster:
 
 1. Create an [{{site.data.keyword.mon_full_notm}} service instance](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-provision) and note the name of the instance. The service instance must belong to the same {{site.data.keyword.cloud_notm}} account where you created your cluster, but can be in a different resource group and {{site.data.keyword.cloud_notm}} region than your cluster.
-2. Set up a monitoring configuration for your cluster. When you create the monitoring configuration, an {{site.data.keyword.openshiftshort}} project `ibm-observe` is created and a Sysdig agent is deployed as a Kubernetes daemon set to all worker nodes in your cluster. This agent collects cluster and pod metrics, such as the worker node CPU and memory usage, or the amount incoming and outgoing network traffic to your pods.
+2. Set up a monitoring configuration for your cluster. When you create the monitoring configuration, an {{site.data.keyword.openshiftshort}} project `ibm-observe` is created and a {{site.data.keyword.mon_short}} agent is deployed as a Kubernetes daemon set to all worker nodes in your cluster. This agent collects cluster and pod metrics, such as the worker node CPU and memory usage, or the amount incoming and outgoing network traffic to your pods.
 
    - **From the console: **
-     1. From the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to create a Sysdig monitoring configuration.
+     1. From the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to create a {{site.data.keyword.mon_short}} configuration.
      2. On the cluster **Overview** page, click **Connect**.
      3. Select the region and the {{site.data.keyword.mon_full_notm}} service instance that you created earlier, and click **Connect**.
 
    - **From the CLI:**
-     1. Create the Sysdig monitoring configuration. When you create the Sysdig monitoring configuration, the access key that was last added is retrieved automatically. If you want to use a different access key, add the `--sysdig-access-key <access_key>` option to the command.
+     1. Create the {{site.data.keyword.mon_short}} configuration. When you create the {{site.data.keyword.mon_short}} configuration, the access key that was last added is retrieved automatically. If you want to use a different access key, add the `--sysdig-access-key <access_key>` option to the command.
 
         To use a different service access key after you created the monitoring configuration, use the [`ibmcloud ob monitoring config replace`](/docs/containers?topic=containers-observability_cli#monitoring_config_replace) command.
         {: tip}
@@ -190,14 +189,14 @@ To set up a monitoring configuration for your cluster:
         Listing configurations...
 
         OK
-        Instance Name                            Instance ID                            CRN   
-        IBM Cloud Monitornig with Sysdig-aaa     1a111a1a-1111-11a1-a1aa-aaa11111a11a   crn:v1:prod:public:sysdig:us-south:a/a11111a1aaaaa11a111aa11a1aa1111a:1a111a1a-1111-11a1-a1aa-aaa11111a11a::  
+        Instance Name                Instance ID                            CRN   
+        IBM Cloud Monitoring-aaa     1a111a1a-1111-11a1-a1aa-aaa11111a11a   crn:v1:prod:public:sysdig:us-south:a/a11111a1aaaaa11a111aa11a1aa1111a:1a111a1a-1111-11a1-a1aa-aaa11111a11a::  
         ```
         {: screen}
 
-3. Optional: Verify that the Sysdig agent was set up successfully.
-   1. If you used the console to create the Sysdig monitoring configuration, log in to your cluster. For more information, see [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-   2. Verify that the daemon set for the Sysdig agent was created and all instances are listed as `AVAILABLE`.
+3. Optional: Verify that the {{site.data.keyword.mon_short}} agent was set up successfully.
+   1. If you used the console to create the {{site.data.keyword.mon_short}} configuration, log in to your cluster. For more information, see [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+   2. Verify that the daemon set for the {{site.data.keyword.mon_short}} agent was created and all instances are listed as `AVAILABLE`.
       ```
       oc get daemon sets -n ibm-observe
       ```
@@ -212,7 +211,7 @@ To set up a monitoring configuration for your cluster:
 
       The number of daemon set instances that are deployed equals the number of worker nodes in your cluster.
 
-   3. Review the configmap that was created for your Sysdig agent.
+   3. Review the configmap that was created for your {{site.data.keyword.mon_short}} agent.
       ```
       oc describe configmap -n ibm-observe
       ```
@@ -221,7 +220,7 @@ To set up a monitoring configuration for your cluster:
 4. Access the metrics for your pods and cluster from the Sysdig dashboard.
    1. From the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster that you configured.
    2. On the cluster **Overview** page, click **Launch**. The Sysdig dashboard opens.
-   3. Review the pod and cluster metrics that the Sysdig agent collected from your cluster. It might take a few minutes for your first metrics to show.
+   3. Review the pod and cluster metrics that the {{site.data.keyword.mon_short}} agent collected from your cluster. It might take a few minutes for your first metrics to show.
 
 5. Review how you can work with the [Sysdig dashboard](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-panels) to further analyze your metrics.
 

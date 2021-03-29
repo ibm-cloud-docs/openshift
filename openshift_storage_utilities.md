@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -630,8 +630,7 @@ Before you begin:
 
 7. Verify the attachment by [reviewing existing volume attachments for a VPC worker node](#vpc_api_get_worker).
 
-
-### Detaching raw and unformatted {{site.data.keyword.blockstorageshort}} from a worker node in a VPC cluster
+### Detaching raw and unformatted {{site.data.keyword.blockstorageshort}} from a worker node in a VPC cluster by using the API
 {: #vpc_api_detach}
 
 You can use a `DELETE` request to detach storage from a VPC worker node.
@@ -740,7 +739,7 @@ Detaching storage from your VPC cluster does not remove your {{site.data.keyword
   </table>
 
 
-### Reviewing volume attachment details for a VPC worker node
+### Reviewing volume attachment details for a VPC worker node by using the API
 {: #vpc_api_get_worker}
 
 You can use a `GET` request to retrieve volume attachment details for a VPC worker node.
@@ -812,6 +811,93 @@ You can use a `GET` request to retrieve volume attachment details for a VPC work
 </table>
 
 <br />
+
+## VPC: Attaching raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes by using the CLI
+{: #vpc_cli_attach}
+
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> You can use the {{site.data.keyword.containershort_notm}} CLI to attach and detach raw, unformatted {{site.data.keyword.blockstorageshort}} to a worker node in your VPC cluster.
+{: shortdesc}
+
+You can attach a volume to one worker node only. Make sure that the volume is in the same zone as the worker node for the attachment to succeed.
+{: note}
+
+The instructions in this topic are available for VPC worker nodes only. If you want to attach raw, unformatted block storage to a classic worker node, you must install the [{{site.data.keyword.cloud_notm}} Block Storage attacher plug-in](#block_storage_attacher).
+{: note}
+
+Before you begin:
+
+[Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+1. List your storage volumes and note the ID of the volume that you want to attach.
+  ```sh
+  ibmcloud is vols
+  ```
+  {: pre}
+
+1. List the worker nodes in your cluster and note the ID of the worker node where you want to attach your volume.
+  ```sh
+  ibmcloud oc worker ls -c <cluster_name_or_ID>
+  ```
+  {: pre}
+
+1. Attach your {{site.data.keyword.blockstorageshort}} to your VPC worker node.
+  ```sh
+  ibmcloud oc storage attachment create --cluster <cluster_name_or_ID> --volume <volume> --worker <worker_ID>
+  ```
+  {: pre}
+
+### Removing raw {{site.data.keyword.blockstorageshort}} from VPC worker nodes by using the CLI
+{: #storage-util-rm-vpc-cli}
+You can remove storage from your worker node by using the `ibmcloud oc storage attachment rm` command.
+{: shortdesc}
+
+[Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+
+1. List your storage volumes and note the ID of the volume that you want to remove.
+  ```sh
+  ibmcloud is vols
+  ```
+  {: pre}
+
+1. Get the details of your volume such as the `worker-id` where the volume is attached. The `worker-id` is listed as the **Instance name** in the **Volume Attachment Intsance Reference** section of the command output.
+  ```sh
+  ibmcloud is vol <volume-ID>
+  ```
+  {: pre}
+
+  **Example output**:
+  ```sh                                      
+  Volume Attachment Instance Reference   Attachment type   Instance ID                                 Instance name                                        Auto delete   Attachment ID                               Attachment name      
+                                        data              0727_e18c10d7-7f18-48aa-b5ef-5ed163e54198   kube-bsaucubd07dhl66e4tgg-cluster-default-00000a19   false         0727-3bfe90b0-dc2d-498a-946b-8837a5dad7bc   volume-attachment
+  ```
+  {: screen}
+
+1. List the storage attachments on a worker node in your cluster and make a note of the attachment ID that your want to remove.
+  ```sh
+  ibmcloud oc storage attachment ls -c <cluster> --worker <worker-id>
+  ```
+  {: pre}
+
+  **Example output**:
+  ```sh
+  Listing volume attachments...
+  OK
+  ID                                          Name                Status     Type   Volume ID                                   Volume Name                          Worker ID   
+  0111-1a111aaa-1111-1111-111a-aaa1a1a11a11   volume-attachment   attached   boot   a001-f11ed1e1-1aa1-11dc-b11d-a0dc111b1111  dissuade-anointer-errand-handbrake   kube-aa1111aa11aaaaa11aa1-cluster-name-default-00000110
+  {: screen}
+
+1. Remove the storage attachment.
+  ```sh
+  ibmcloud oc storage attachment rm --attachment <attachment-ID> -c <cluster> --worker <worker-ID>
+  ```
+  {: pre}
+
+1. Verify that your storage was removed from the worker node.
+  ```sh
+  ibmcloud oc storage attachment ls -c <cluster-ID> --worker <worker-id>
+  ```
+  {: pre}
+
 
 ## Backing up and restoring PVC data for file and block storage
 {: #ibmcloud-backup-restore}

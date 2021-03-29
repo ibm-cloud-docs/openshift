@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-03-29"
 
 keywords: openshift
 subcollection: openshift
@@ -802,7 +802,7 @@ subcollection: openshift
 [Reviewing service, API server, and worker node logs](/docs/openshift?topic=openshift-health-audit)
 * [Kubernetes API server audit logs](/docs/openshift?topic=openshift-health-audit#audit-api-server)
   * [Understanding the Kubernetes API audit configuration](/docs/openshift?topic=openshift-health-audit#api-server-config)
-  * [Forwarding Kubernetes API audit logs to LogDNA](/docs/openshift?topic=openshift-health-audit#audit-api-server-logdna)
+  * [Forwarding Kubernetes API audit logs to {{site.data.keyword.la_short}}](/docs/openshift?topic=openshift-health-audit#audit-api-server-logdna)
   * [Managing API server log forwarding](/docs/openshift?topic=openshift-health-audit#audit-api-server-manage)
   * [Taking a snapshot of API server logs](/docs/openshift?topic=openshift-health-audit#audit-api-server-snapshot)
 * [Worker node audit logs](/docs/openshift?topic=openshift-health-audit#audit-worker)
@@ -1344,13 +1344,14 @@ subcollection: openshift
   * [Removing Portworx from your cluster](/docs/openshift?topic=openshift-portworx#remove_portworx)
 * [Creating a Portworx volume](/docs/openshift?topic=openshift-portworx#add_portworx_storage)
 * [Mounting the volume to your app](/docs/openshift?topic=openshift-portworx#mount_pvc)
-* [VPC: Updating worker nodes with Portworx volumes](/docs/openshift?topic=openshift-portworx#portworx_vpc_up)
 * [Setting up disaster recovery with Portworx](/docs/openshift?topic=openshift-portworx#px-dr)
 * [Exploring other Portworx features](/docs/openshift?topic=openshift-portworx#features)
 * [Cleaning up your Portworx volumes and cluster](/docs/openshift?topic=openshift-portworx#portworx_cleanup)
   * [Removing Portworx volumes from apps](/docs/openshift?topic=openshift-portworx#remove_pvc)
   * [Removing a worker node from your Portworx cluster or the entire Portworx cluster](/docs/openshift?topic=openshift-portworx#remove_storage_node_cluster)
+  * [Removing the Portworx daemon set](/docs/openshift?topic=openshift-portworx#remove_px_daemonset)
 * [Getting help and support](/docs/openshift?topic=openshift-portworx#portworx_help)
+  * [Gathering logs](/docs/openshift?topic=openshift-portworx#portworx_logs)
 * [Limitations](/docs/openshift?topic=openshift-portworx#portworx_limitations)
 
 [Backing up and restoring storage data](/docs/openshift?topic=openshift-storage_br)
@@ -1362,8 +1363,10 @@ subcollection: openshift
 * [Classic: Manually adding block storage to specific worker nodes](/docs/openshift?topic=openshift-utilities#manual_block)
 * [Classic: Attaching raw block storage to non-SDS worker nodes](/docs/openshift?topic=openshift-utilities#attach_block)
 * [VPC: Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_attach)
-  * [Detaching raw and unformatted {{site.data.keyword.blockstorageshort}} from a worker node in a VPC cluster](/docs/openshift?topic=openshift-utilities#vpc_api_detach)
-  * [Reviewing volume attachment details for a VPC worker node](/docs/openshift?topic=openshift-utilities#vpc_api_get_worker)
+  * [Detaching raw and unformatted {{site.data.keyword.blockstorageshort}} from a worker node in a VPC cluster by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_detach)
+  * [Reviewing volume attachment details for a VPC worker node by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_get_worker)
+* [VPC: Attaching raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes by using the CLI](/docs/openshift?topic=openshift-utilities#vpc_cli_attach)
+  * [Removing raw {{site.data.keyword.blockstorageshort}} from VPC worker nodes by using the CLI](/docs/openshift?topic=openshift-utilities#storage-util-rm-vpc-cli)
 * [Backing up and restoring PVC data for file and block storage](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore)
   * [Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-utilities#backup_restore_setup_object_storage)
   * [Using {{site.data.keyword.cos_full_notm}} to back up and restore PVC data](/docs/openshift?topic=openshift-utilities#backup-restore-pvc)
@@ -1661,12 +1664,14 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
+  * [Changelog for worker node fix pack 4.6.22_1536_openshift, released 29 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4622_1536)
   * [Changelog for worker node fix pack 4.6.20_1534_openshift, released 12 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4620_1534)
   * [Changelog for worker node fix pack 4.6.18_1533_openshift, released 1 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4618_1533)
   * [Changelog for master fix pack 4.6.17_1533_openshift, released 27 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4617_1533)
   * [Changelog for master fix pack 4.6.16_1532_openshift, released 22 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4616_1532)
   * [Changelog for 4.6.16_1530_openshift (master) and 4.6.16_1529_openshift (worker node), released 17 February 2020](/docs/openshift?topic=openshift-openshift_changelog#4616_1530)
 * [Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
+  * [Changelog for worker node fix pack 4.5.35_1534_openshift, released 29 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4535_1534)
   * [Changelog for worker node fix pack 4.5.33_1532_openshift, released 12 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4533_1532)
   * [Changelog for worker node fix pack 4.5.31_1531_openshift, released 1 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4531_1531)
   * [Changelog for master fix pack 4.5.31_1531_openshift, released 27 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4531_1531_master)
@@ -1686,6 +1691,7 @@ subcollection: openshift
   * [Changelog for master fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518)
   * [Changelog for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4513_1515)
 * [Deprecated: Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
+  * [Changelog for worker node fix pack 4.4.33_1537_openshift, released 29 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4433_1537)
   * [Changelog for worker node fix pack 4.4.33_1535_openshift, released 12 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4433_1535)
   * [Changelog for worker node fix pack 4.4.33_1534_openshift, released 1 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4433_1534_worker)
   * [Changelog for master fix pack 4.4.33_1534_openshift, released 22 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4433_1534)
@@ -1714,6 +1720,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4414_1512)
   * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for worker node fix pack 3.11.404_1584_openshift, released 29 March 2021](/docs/openshift?topic=openshift-openshift_changelog#311404_1584)
   * [Changelog for worker node fix pack 3.11.394_1582_openshift, released 12 March 2021](/docs/openshift?topic=openshift-openshift_changelog#311394_1582)
   * [Changelog for worker node fix pack 3.11.380_1581_openshift, released 1 March 2021](/docs/openshift?topic=openshift-openshift_changelog#311380_1581_worker)
   * [Changelog for master fix pack 3.11.380_1581_openshift, released 22 February 2021](/docs/openshift?topic=openshift-openshift_changelog#311380_1581)
