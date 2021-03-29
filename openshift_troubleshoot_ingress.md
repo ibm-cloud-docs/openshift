@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-03-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -402,7 +402,7 @@ Also, if you used the same cluster name repeatedly, you might have a rate limiti
 {: tsResolve}
 1. Check the ID of the user or functional user who sets the API key for this cluster.
   ```
-  ibmcloud oc api-key-info -c <cluster_name_or_ID>
+  ibmcloud oc api-key info -c <cluster_name_or_ID>
   ```
   {: pre}
 2. [Assign the following IAM permissions](/docs/openshift?topic=openshift-users#add_users) to the user or functional user who sets the API key.
