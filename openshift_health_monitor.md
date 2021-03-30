@@ -145,7 +145,7 @@ Considerations for using the {{site.data.keyword.openshiftlong_notm}} observabil
 
 Before you begin:
 - Verify that you are assigned the **Editor** platform access role and **Manager** server access role for {{site.data.keyword.mon_full_notm}}.
-- Verify that you are assigned the **Administrator** platform access role and the **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}} to create the monitoring configuration. To view a monitoring configuration or launch the Sysdig dashboard after the monitoring configuration is created, users must be assigned the **Administrator** platform access role and the **Manager** service access role for the `ibm-observe` Kubernetes namespace in {{site.data.keyword.containerlong_notm}}.
+- Verify that you are assigned the **Administrator** platform access role and the **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}} to create the monitoring configuration. To view a monitoring configuration or launch the {{site.data.keyword.mon_short}} dashboard after the monitoring configuration is created, users must be assigned the **Administrator** platform access role and the **Manager** service access role for the `ibm-observe` Kubernetes namespace in {{site.data.keyword.containerlong_notm}}.
 - If you want to use the CLI to set up the monitoring configuration:
   - [Install the {{site.data.keyword.openshiftlong_notm}} observability CLI plug-in (`ibmcloud ob`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
   - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -167,7 +167,7 @@ To set up a monitoring configuration for your cluster:
         {: tip}
 
         ```
-        ibmcloud ob monitoring config create --cluster <cluster_name_or_ID> --instance <Sysdig_instance_name_or_ID>
+        ibmcloud ob monitoring config create --cluster <cluster_name_or_ID> --instance <Monitoring_instance_name_or_ID>
         ```
         {: pre}
 
@@ -217,12 +217,12 @@ To set up a monitoring configuration for your cluster:
       ```
       {: pre}
 
-4. Access the metrics for your pods and cluster from the Sysdig dashboard.
+4. Access the metrics for your pods and cluster from the {{site.data.keyword.mon_short}} dashboard.
    1. From the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster that you configured.
-   2. On the cluster **Overview** page, click **Launch**. The Sysdig dashboard opens.
+   2. On the cluster **Overview** page, click **Launch**. The {{site.data.keyword.mon_short}} dashboard opens.
    3. Review the pod and cluster metrics that the {{site.data.keyword.mon_short}} agent collected from your cluster. It might take a few minutes for your first metrics to show.
 
-5. Review how you can work with the [Sysdig dashboard](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-panels) to further analyze your metrics.
+5. Review how you can work with the [{{site.data.keyword.mon_short}} dashboard](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-panels) to further analyze your metrics.
 
 ## Viewing cluster states
 {: #states}

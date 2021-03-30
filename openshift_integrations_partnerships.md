@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-30"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -100,77 +100,6 @@ IBM is dedicated to make {{site.data.keyword.openshiftlong}} the best {{site.dat
 {: shortdesc}
 
 Review our partners and the benefits of each solution that they provide. To find other proprietary {{site.data.keyword.cloud_notm}} and third-party open source services that you can use in your cluster, see [Understanding {{site.data.keyword.cloud_notm}} and 3rd party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations).
-
-## LogDNA
-{: #logdna-partner}
-
-{{site.data.keyword.la_full_notm}} provides [LogDNA ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.logdna.com/) as a third-party service that you can use to add intelligent logging capabilities to your cluster and apps.
-
-### Benefits
-{: #logdna-benefits}
-
-Review the following table to find a list of key benefits that you can get by using LogDNA.
-{: shortdesc}
-
-|Benefit|Description|
-|-------------|------------------------------|
-|Centralized log management and log analysis|When you configure your cluster as a log source, LogDNA automatically starts collecting logging information for your worker nodes, pods, apps, and network. Your logs are automatically parsed, indexed, tagged, and aggregated by LogDNA and visualized in the LogDNA dashboard so that you can easily dive into your cluster resources. You can use the built-in graphing tool to visualize most common error codes or log entries. |
-|Easy findability with Google-like search syntax|LogDNA uses Google-like search syntax that supports standard terms, `AND` and `OR` operations, and lets you exclude or combine search terms to help you find your logs more easily. With smart indexing of logs, you can jump to a specific log entry in any moment in time. |
-|Encryption in transit and at rest|LogDNA automatically encrypts your logs to secure your logs during transit and at rest. |
-|Custom alerts and log views|You can use the dashboard to find the logs that match your search criteria, save these logs in a view, and share this view with other users to simplify debugging across team members. You can also use this view to create an alert that you can send to downstream systems, like PagerDuty, Slack, or email.   |
-|Out-of-the-box and custom dashboards|You can choose between a variety of existing dashboards or create your own dashboard to visualize logs in the way you need it. |
-
-### Integration with {{site.data.keyword.openshiftlong_notm}}
-{: #logdna-integration}
-
-LogDNA is provided by {{site.data.keyword.la_full_notm}}, an {{site.data.keyword.cloud_notm}} platform service that you can use with your cluster. {{site.data.keyword.la_full_notm}} is operated by LogDNA in partnership with IBM.
-{: shortdesc}
-
-To use LogDNA in your classic or VPC cluster, you must provision an instance of {{site.data.keyword.la_full_notm}} in your {{site.data.keyword.cloud_notm}} account and configure your Kubernetes clusters as a log source. After the cluster is configured, logs are automatically collected and forwarded to your {{site.data.keyword.la_full_notm}} service instance. You can use the {{site.data.keyword.la_full_notm}} dashboard to access your logs.
-
-For more information, see [Managing Kubernetes cluster logs with {{site.data.keyword.la_full_notm}}](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-kube).
-
-### Billing and support
-{: #logdna-billing-support}
-
-{{site.data.keyword.la_full_notm}} is fully integrated into the {{site.data.keyword.cloud_notm}} support system. If you run into an issue with using {{site.data.keyword.la_full_notm}}, post a question in the `logdna-on-iks` channel in the [{{site.data.keyword.openshiftlong_notm}} Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-cloud-success.slack.com/), or open an [{{site.data.keyword.cloud_notm}} support case](/docs/get-support?topic=get-support-using-avatar). Log in to Slack by using your IBMid. If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/slack).
-
-## Sysdig
-{: #sydig-partner}
-
-{{site.data.keyword.mon_full_notm}} provides [Sysdig Monitor ![External link icon](../icons/launch-glyph.svg "External link icon")](https://sysdig.com/products/monitor/) as a third-party, cloud-native container analytics system that you can use to gain insight into the performance and health of your compute hosts, apps, containers, and networks.
-{: shortdesc}
-
-### Benefits
-{: #sydig-benefits}
-
-Review the following table to find a list of key benefits that you can get by using Sysdig.
-{: shortdesc}
-
-|Benefit|Description|
-|-------------|------------------------------|
-|Automatic access to cloud-native and Prometheus-custom metrics|Choose from a variety of pre-defined cloud-native and Prometheus-custom metrics to gain insight into the performance and health of your compute hosts, apps, containers, and networks.|
-|Troubleshoot with advanced filters|Sysdig Monitor creates network topologies that show how your worker nodes are connected and how your Kubernetes services communicate with each other. You can navigate from your worker nodes to containers and single system calls, and group and view important metrics for each resource along the way. For example, use these metrics to find services that receive most requests, or services with slow queries and response times. You can combine this data with Kubernetes events, custom CI/CD events, or code commits.
-|Automatic anomaly detection and custom alerts|Define rules and thresholds for when you want to get notified to detect anomalies in your cluster or group resources to let Sysdig notify you when one resource acts differently than the rest. You can send these alerts to downstream tools, such as ServiceNow, PagerDuty, Slack, VictorOps, or email.|
-|Out-of-the-box and custom dashboards|You can choose between a variety of existing dashboards or create your own dashboard to visualize metrics of your microservices in the way you need it. |
-{: caption="Benefits of using Sysdig Monitor" caption-side="top"}
-
-### Integration with {{site.data.keyword.openshiftlong_notm}}
-{: #sysdig-integration}
-
-Sysdig Monitor is provided by {{site.data.keyword.mon_full_notm}}, an {{site.data.keyword.cloud_notm}} platform service that you can use with your cluster. {{site.data.keyword.mon_full_notm}} is operated by Sysdig in partnership with IBM.
-{: shortdesc}
-
-To use Sysdig Monitor in your classic or VPC cluster, you must provision an instance of {{site.data.keyword.mon_full_notm}} in your {{site.data.keyword.cloud_notm}} account and configure your cluster as a metrics source. After the cluster is configured, metrics are automatically collected and forwarded to your {{site.data.keyword.mon_full_notm}} service instance. You can use the {{site.data.keyword.mon_full_notm}} dashboard to access your metrics.
-
-For more information, see [Analyze metrics for an app that is deployed in a Kubernetes cluster](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-kubernetes_cluster).
-
-### Billing and support
-{: #sysdig-billing-support}
-
-Because Sysdig Monitor is provided by {{site.data.keyword.mon_full_notm}}, your usage is included in the {{site.data.keyword.cloud_notm}} bill for platform services. For pricing information, review available plans in the [{{site.data.keyword.cloud_notm}} catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/observe/monitoring/create).
-
-{{site.data.keyword.mon_full_notm}} is fully integrated into the {{site.data.keyword.cloud_notm}} support system. If you run into an issue with using {{site.data.keyword.mon_full_notm}}, post a question in the `sysdig-monitoring` channel in the [{{site.data.keyword.openshiftlong_notm}} Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://ibm-cloud-success.slack.com/), or open an [{{site.data.keyword.cloud_notm}} support case](/docs/get-support?topic=get-support-using-avatar). Log in to Slack by using your IBMid. If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation to this Slack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/slack).
 
 ## Portworx
 {: #portworx-parter}

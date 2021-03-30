@@ -1379,14 +1379,6 @@ subcollection: openshift
 
 
 [{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-service-partners)
-* [LogDNA](/docs/openshift?topic=openshift-service-partners#logdna-partner)
-  * [Benefits](/docs/openshift?topic=openshift-service-partners#logdna-benefits)
-  * [Integration with {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-service-partners#logdna-integration)
-  * [Billing and support](/docs/openshift?topic=openshift-service-partners#logdna-billing-support)
-* [Sysdig](/docs/openshift?topic=openshift-service-partners#sydig-partner)
-  * [Benefits](/docs/openshift?topic=openshift-service-partners#sydig-benefits)
-  * [Integration with {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-service-partners#sysdig-integration)
-  * [Billing and support](/docs/openshift?topic=openshift-service-partners#sysdig-billing-support)
 * [Portworx](/docs/openshift?topic=openshift-service-partners#portworx-parter)
   * [Benefits](/docs/openshift?topic=openshift-service-partners#portworx-benefits)
   * [Integration with {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-service-partners#portworx-integration)

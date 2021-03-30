@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-03-30"
 
 keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logdna commands, sysdig commands, logging config, monitoring config
 
@@ -220,7 +220,7 @@ ibmcloud ob logging config delete --cluster CLUSTER --instance LOGGING_INSTANCE
 
 **Example**:
 ```
-ibmcloud ob logging config delete --cluster mycluster --instance mylogdna
+ibmcloud ob logging config delete --cluster mycluster --instance mylogginginstance
 ```
 {: pre}
 
@@ -438,7 +438,7 @@ ibmcloud ob monitoring config create --cluster CLUSTER --instance MONITORING_INS
 
 **Example**:
 ```
-ibmcloud ob monitoring config create --cluster mycluster --instance mysysdig
+ibmcloud ob monitoring config create --cluster mycluster --instance mymonitoringinstance
 ```
 {: pre}
 
@@ -481,7 +481,7 @@ ibmcloud ob monitoring config delete --cluster CLUSTER --instance MONITORING_INS
 
 **Example**:
 ```
-ibmcloud ob monitoring config delete --cluster mycluster --instance mysysdig
+ibmcloud ob monitoring config delete --cluster mycluster --instance mymonitoringinstance
 ```
 {: pre}
 
