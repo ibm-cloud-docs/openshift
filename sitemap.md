@@ -474,7 +474,7 @@ subcollection: openshift
   * [Example use cases and roles](/docs/openshift?topic=openshift-users#example-iam)
   * [Assigning {{site.data.keyword.cloud_notm}} IAM roles with the console](/docs/openshift?topic=openshift-users#add_users)
   * [Assigning {{site.data.keyword.cloud_notm}} IAM roles with the CLI](/docs/openshift?topic=openshift-users#add_users_cli)
-* [Assigning RBAC permissions](/docs/openshift?topic=openshift-users#role-binding)
+* [Assigning RBAC permissions](/docs/openshift?topic=openshift-users#role-binding-assign)
   * [Understanding RBAC permissions](/docs/openshift?topic=openshift-users#understand-rbac)
   * [Creating custom RBAC permissions for users, groups, or service accounts](/docs/openshift?topic=openshift-users#rbac)
   * [Extending existing permissions by aggregating cluster roles](/docs/openshift?topic=openshift-users#rbac_aggregate)
