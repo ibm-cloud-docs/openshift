@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-03-30"
 
 keywords: openshift
 subcollection: openshift
@@ -462,7 +462,7 @@ subcollection: openshift
   * [Pick the right access policy and role for your users](/docs/openshift?topic=openshift-users#access_roles)
   * [Assign access roles to individual or groups of users in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#iam_individuals_groups)
   * [Scope user access to cluster instances, namespaces, or resource groups](/docs/openshift?topic=openshift-users#resource_groups)
-* [Setting up the API key to enable access to the infrastructure portfolio and other services](/docs/openshift?topic=openshift-users#api_key)
+* [Setting up the API key to enable access to the infrastructure portfolio and other services](/docs/openshift?topic=openshift-users#api_key_setup)
   * [Setting up the API key in most cases](/docs/openshift?topic=openshift-users#api_key_most_cases)
   * [Understanding other options than the API key](/docs/openshift?topic=openshift-users#api_key_other)
   * [Understanding how the API key works](/docs/openshift?topic=openshift-users#api_key_about)
@@ -1379,14 +1379,6 @@ subcollection: openshift
 
 
 [{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-service-partners)
-* [LogDNA](/docs/openshift?topic=openshift-service-partners#logdna-partner)
-  * [Benefits](/docs/openshift?topic=openshift-service-partners#logdna-benefits)
-  * [Integration with {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-service-partners#logdna-integration)
-  * [Billing and support](/docs/openshift?topic=openshift-service-partners#logdna-billing-support)
-* [Sysdig](/docs/openshift?topic=openshift-service-partners#sydig-partner)
-  * [Benefits](/docs/openshift?topic=openshift-service-partners#sydig-benefits)
-  * [Integration with {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-service-partners#sysdig-integration)
-  * [Billing and support](/docs/openshift?topic=openshift-service-partners#sysdig-billing-support)
 * [Portworx](/docs/openshift?topic=openshift-service-partners#portworx-parter)
   * [Benefits](/docs/openshift?topic=openshift-service-partners#portworx-benefits)
   * [Integration with {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-service-partners#portworx-integration)
@@ -1664,6 +1656,7 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
+  * [Changelog for master fix pack 4.6.21_1535_openshift, released 30 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4621_1535)
   * [Changelog for worker node fix pack 4.6.22_1536_openshift, released 29 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4622_1536)
   * [Changelog for worker node fix pack 4.6.20_1534_openshift, released 12 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4620_1534)
   * [Changelog for worker node fix pack 4.6.18_1533_openshift, released 1 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4618_1533)
@@ -1671,6 +1664,7 @@ subcollection: openshift
   * [Changelog for master fix pack 4.6.16_1532_openshift, released 22 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4616_1532)
   * [Changelog for 4.6.16_1530_openshift (master) and 4.6.16_1529_openshift (worker node), released 17 February 2020](/docs/openshift?topic=openshift-openshift_changelog#4616_1530)
 * [Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
+  * [Changelog for master fix pack 4.5.35_1533_openshift, released 30 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4535_1533)
   * [Changelog for worker node fix pack 4.5.35_1534_openshift, released 29 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4535_1534)
   * [Changelog for worker node fix pack 4.5.33_1532_openshift, released 12 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4533_1532)
   * [Changelog for worker node fix pack 4.5.31_1531_openshift, released 1 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4531_1531)
@@ -1691,6 +1685,7 @@ subcollection: openshift
   * [Changelog for master fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518)
   * [Changelog for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4513_1515)
 * [Deprecated: Version 4.4 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-44)
+  * [Changelog for master fix pack 4.4.33_1536_openshift, released 30 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4433_1536)
   * [Changelog for worker node fix pack 4.4.33_1537_openshift, released 29 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4433_1537)
   * [Changelog for worker node fix pack 4.4.33_1535_openshift, released 12 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4433_1535)
   * [Changelog for worker node fix pack 4.4.33_1534_openshift, released 1 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4433_1534_worker)
@@ -1720,6 +1715,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4414_1512)
   * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for master fix pack 3.11.394_1583_openshift, released 30 March 2021](/docs/openshift?topic=openshift-openshift_changelog#311394_1583)
   * [Changelog for worker node fix pack 3.11.404_1584_openshift, released 29 March 2021](/docs/openshift?topic=openshift-openshift_changelog#311404_1584)
   * [Changelog for worker node fix pack 3.11.394_1582_openshift, released 12 March 2021](/docs/openshift?topic=openshift-openshift_changelog#311394_1582)
   * [Changelog for worker node fix pack 3.11.380_1581_openshift, released 1 March 2021](/docs/openshift?topic=openshift-openshift_changelog#311380_1581_worker)

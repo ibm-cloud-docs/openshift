@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-03-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -419,11 +419,11 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
 
 5. Optional: Allow outgoing network traffic from the worker nodes to {{site.data.keyword.mon_short}} and {{site.data.keyword.la_short}} services:
     *   **{{site.data.keyword.mon_full_notm}}**:
-        <pre class="screen">TCP port 443, port 6443 FROM &lt;each_worker_node_public_IP&gt; TO &lt;sysdig_public_IP&gt;</pre>
-        Replace <em>&lt;sysdig_public_IP&gt;</em> with the [Sysdig IP addresses](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-endpoints#endpoints_sysdig).
+        <pre class="screen">TCP port 443, port 6443 FROM &lt;each_worker_node_public_IP&gt; TO &lt;monitoring_public_IP&gt;</pre>
+        Replace <em>&lt;monitoring_public_IP&gt;</em> with the [{{site.data.keyword.mon_short}} IP addresses](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-endpoints#endpoints_sysdig).
     *   **{{site.data.keyword.la_full_notm}}**:
-        <pre class="screen">TCP port 443, port 80 FROM &lt;each_worker_node_public_IP&gt; TO &lt;logDNA_public_IP&gt;</pre>
-        Replace &lt;<em>logDNA_public_IP&gt;</em> with the [LogDNA IP addresses](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-service-connection#network_outgoing_traffic).
+        <pre class="screen">TCP port 443, port 80 FROM &lt;each_worker_node_public_IP&gt; TO &lt;logging_public_IP&gt;</pre>
+        Replace &lt;<em>logging_public_IP&gt;</em> with the [{{site.data.keyword.la_short}} IP addresses](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-service-connection#network_outgoing_traffic).
 
 7. If you use load balancer services, ensure that all traffic that uses the VRRP protocol is allowed between worker nodes on the public and private interfaces. {{site.data.keyword.openshiftlong_notm}} uses the VRRP protocol to manage IP addresses for public and private load balancers.
 
@@ -466,7 +466,7 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
           <tr>
             <td>AP South</td>
             <td>syd01, syd04, syd05</td>
-            <td><code>166.9.52.14, 166.9.52.15, 166.9.52.23, 166.9.52.30, 166.9.52.31, 166.9.54.11, 166.9.54.12, 166.9.54.13, 166.9.54.21, 166.9.54.32, 166.9.54.33, 166.9.56.16, 166.9.56.24, 166.9.56.36</code></td>
+            <td><code>166.9.52.14, 166.9.52.15, 166.9.52.23, 166.9.52.30, 166.9.52.31, 166.9.54.11, 166.9.54.12, 166.9.54.13, 166.9.54.21, 166.9.54.32, 166.9.54.33, 166.9.56.10, 166.9.56.16, 166.9.56.24, 166.9.56.36</code></td>
           </tr>
           <tr>
              <td>EU Central</td>
@@ -604,10 +604,10 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
     2. From the output of the previous step, note all the unique network IDs (first three octets) of the **Public IP** for the worker nodes in your cluster. In the following output, the unique network IDs are `169.xx.178` and `169.xx.210`.
         ```
         ID                                                  Public IP        Private IP     Machine Type        State    Status   Zone    Version   
-        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w31   169.xx.178.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.19.8   
-        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w34   169.xx.178.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.19.8  
-        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w32   169.xx.210.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.19.8   
-        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w33   169.xx.210.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.19.8  
+        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w31   169.xx.178.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.19.9   
+        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w34   169.xx.178.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.19.9  
+        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w32   169.xx.210.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.19.9   
+        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w33   169.xx.210.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.19.9  
         ```
         {: screen}
     3.  List the VLAN subnets for each unique network ID.

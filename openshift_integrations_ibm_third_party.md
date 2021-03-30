@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-30"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -154,7 +154,7 @@ To connect to a different VPC or to an on-prem data center, use the [VPN for VPC
 Because you own the standard clusters that you create in {{site.data.keyword.openshiftlong_notm}}, you can choose to install third-party solutions to add extra capabilities to your cluster.
 {: shortdesc}
 
-Some open source technologies, such as LogDNA, Sysdig, or Portworx are tested by IBM and provided as managed add-ons, Helm charts, or {{site.data.keyword.cloud_notm}} services that are operated by the service provider in partnership with IBM. These open source tools are fully integrated into the {{site.data.keyword.cloud_notm}} billing and support system.
+Some open source technologies, such as Portworx are tested by IBM and provided as managed add-ons, Helm charts, or {{site.data.keyword.cloud_notm}} services that are operated by the service provider in partnership with IBM. These open source tools are fully integrated into the {{site.data.keyword.cloud_notm}} billing and support system.
 
 You can install other open source tools in your cluster, but these tools might not be managed, supported, or verified to work in {{site.data.keyword.openshiftlong_notm}}.
 
