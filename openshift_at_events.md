@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-03-30"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -118,6 +118,7 @@ The following list of cluster events are sent to {{site.data.keyword.at_full_not
 | `containers-kubernetes.cluster-subnet.list` | The classic or VPC subnets for a cluster are listed. |
 | `containers-kubernetes.cluster-user-subnet.list` | User-added subnets for a cluster are listed. **Note**: User-added subnets are deprecated. |
 | `containers-kubernetes.cluster-webhook.list` | Webhooks for a cluster are listed. |
+| `containers-kubernetes.version.update` | A master patch update is initiated for the cluster. Master patch updates are typically applied automatically by IBM to your cluster. |
 {: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
 {: caption="Cluster events" caption-side="top"}
 
