@@ -462,7 +462,7 @@ subcollection: openshift
   * [Pick the right access policy and role for your users](/docs/openshift?topic=openshift-users#access_roles)
   * [Assign access roles to individual or groups of users in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#iam_individuals_groups)
   * [Scope user access to cluster instances, namespaces, or resource groups](/docs/openshift?topic=openshift-users#resource_groups)
-* [Setting up the API key to enable access to the infrastructure portfolio and other services](/docs/openshift?topic=openshift-users#api_key)
+* [Setting up the API key to enable access to the infrastructure portfolio and other services](/docs/openshift?topic=openshift-users#api_key_setup)
   * [Setting up the API key in most cases](/docs/openshift?topic=openshift-users#api_key_most_cases)
   * [Understanding other options than the API key](/docs/openshift?topic=openshift-users#api_key_other)
   * [Understanding how the API key works](/docs/openshift?topic=openshift-users#api_key_about)

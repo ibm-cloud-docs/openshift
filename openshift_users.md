@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-30"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -202,7 +202,7 @@ VPC clusters do not need classic infrastructure permissions. Instead, you assign
 {: note}
 
 #### Overview of Cloud Foundry
-{: #api_key}
+{: #cf_overview}
 
 Not all {{site.data.keyword.cloud_notm}} services can be managed with IAM. If you use one of these services, you can continue to use Cloud Foundry user roles to control access to those services.
 {: shortdesc}
@@ -263,7 +263,7 @@ When you create your {{site.data.keyword.cloud_notm}} account, the default resou
 <br />
 
 ## Setting up the API key to enable access to the infrastructure portfolio and other services
-{: #api_key}
+{: #api_key_setup}
 {: help}
 {: support}
 
