@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-03-31"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -338,7 +338,7 @@ The image does not include components that ensure secure end-to-end communicatio
     </tr>
     <tr>
       <td>CIS Kubernetes worker node benchmark</td>
-      <td>To configure {{site.data.keyword.openshiftlong_notm}}, IBM engineers follow relevant cybersecurity practices from the Kubernetes worker node benchmark that is published by the [Center of Internet Security (CIS) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cisecurity.org/benchmark/kubernetes/).</td>
+      <td>To configure {{site.data.keyword.openshiftlong_notm}}, IBM engineers follow relevant cybersecurity practices from the Kubernetes worker node benchmark that is published by the [Center of Internet Security (CIS) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cisecurity.org/benchmark/kubernetes/).<br><br>You can review the compliance of worker nodes against [CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test) standards.</td>
     </tr>
     <tr>
   <td>Compute isolation</td>
