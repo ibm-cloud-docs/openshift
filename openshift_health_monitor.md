@@ -116,7 +116,7 @@ To help understand when to use the built-in {{site.data.keyword.openshiftshort}}
 <li>Highly available, scalable, and compliant with industry security standards.</li>
 <li>Integrated with {{site.data.keyword.cloud_notm}} IAM for user access management.</li>
 <li>Free trial to try out the capabilities.</li></ul>
-<br>To get started, see [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](#openshift_sysdig).</dd>
+<br>To get started, see [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](#openshift_monitoring).</dd>
 
 <dt>Built-in {{site.data.keyword.openshiftshort}} monitoring tools</dt>
 <dd><ul>
@@ -131,7 +131,7 @@ To help understand when to use the built-in {{site.data.keyword.openshiftshort}}
 <br />
 
 ## Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}
-{: #openshift_sysdig}
+{: #openshift_monitoring}
 
 Use the {{site.data.keyword.openshiftlong_notm}} observability plug-in to create a monitoring configuration for {{site.data.keyword.mon_full_notm}} in your cluster, and use this monitoring configuration to automatically collect and forward metrics to {{site.data.keyword.mon_full_notm}}.
 {: shortdesc}

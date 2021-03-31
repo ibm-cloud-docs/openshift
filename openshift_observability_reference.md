@@ -129,7 +129,7 @@ ibmcloud ob logging agent discover --cluster CLUSTER [--instance LOGGING_INSTANC
 <dt><code>--cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster where you manually created a {{site.data.keyword.la_short}} configuration without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.</dd>
 
-<dt><code>--instance <em>LOGDNA_INSTANCE</em></code></dt>
+<dt><code>--instance <em>LOGGING_INSTANCE</em></code></dt>
 <dd>The ID or name of the {{site.data.keyword.la_full_notm}} service instance that you use in your logging configuration. This value is optional. If you do not provide this value, the {{site.data.keyword.la_full_notm}} service instance is automatically retrieved.</dd>
 
 </dl>
@@ -144,7 +144,7 @@ ibmcloud ob logging agent discover --cluster CLUSTER [--instance LOGGING_INSTANC
 Create a logging configuration for your cluster to automatically collect pod logs and send them to {{site.data.keyword.la_full_notm}}.
 {: shortdesc}
 
-This command deploys a {{site.data.keyword.la_short}} agent as a Kubernetes daemon set in your cluster. The agent collects logs with the extension `*.log` and extensionless files that are stored in the `/var/log` directory of your pod from all projects, including `kube-system`. For more information, see [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna). For more information about {{site.data.keyword.la_full_notm}}, see [Securing your data](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-mng-data).   
+This command deploys a {{site.data.keyword.la_short}} agent as a Kubernetes daemon set in your cluster. The agent collects logs with the extension `*.log` and extensionless files that are stored in the `/var/log` directory of your pod from all projects, including `kube-system`. For more information, see [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging). For more information about {{site.data.keyword.la_full_notm}}, see [Securing your data](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-mng-data).   
 
 ```
 ibmcloud ob logging config create --cluster CLUSTER --instance LOGGING_INSTANCE [--logdna-ingestion-key INGESTION_KEY] [--private-endpoint]  
@@ -164,7 +164,7 @@ ibmcloud ob logging config create --cluster CLUSTER --instance LOGGING_INSTANCE 
 <dt><code>--cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster for which you want to create a logging configuration for {{site.data.keyword.la_full_notm}}. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.</dd>
 
-<dt><code>--instance <em>LOGDNA_INSTANCE</em></code></dt>
+<dt><code>--instance <em>LOGGING_INSTANCE</em></code></dt>
 <dd>The ID or name of the {{site.data.keyword.la_full_notm}} service instance that you want to use to create the logging configuration. The service instance must be in the same {{site.data.keyword.cloud_notm}} account as your cluster, but can be in a different resource group or region than your cluster. To create a service instance, follow the steps in [Provision an instance](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-provision). This value is required.</dd>
 
 <dt><code>--logdna-ingestion-key <em>INGESTION_KEY</em></code></dt>
@@ -213,7 +213,7 @@ ibmcloud ob logging config delete --cluster CLUSTER --instance LOGGING_INSTANCE
 <dt><code>--cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster for which you want to delete an existing {{site.data.keyword.la_short}} configurations. To retrieve the cluster name or ID, run `ibmcloud oc clusters`. This value is required.</dd>
 
-<dt><code>--instance <em>LOGDNA_INSTANCE</em></code></dt>
+<dt><code>--instance <em>LOGGING_INSTANCE</em></code></dt>
 <dd>The ID or name of the {{site.data.keyword.la_full_notm}} service instance that you used in your logging configuration. To retrieve the service instance name, run `ibmcloud resource service-instances`. This value is required. </dd>
 
 </dl>
@@ -287,7 +287,7 @@ ibmcloud ob logging config enable public-endpoint|private-endpoint --cluster CLU
 <dt><code>--cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster for which you want to enable the private or public cloud service endpoint to connect to your {{site.data.keyword.la_short}} service instance. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.</dd>
 
-<dt><code>--instance <em>LOGDNA_INSTANCE</em></code></dt>
+<dt><code>--instance <em>LOGGING_INSTANCE</em></code></dt>
 <dd>The ID or name of the {{site.data.keyword.la_full_notm}} service instance to which you want to connect by using the public or private cloud service endpoint. To retrieve the name, run `ibmcloud resource service-instances`. This value is required.</dd>
 
 </dl>
@@ -323,10 +323,10 @@ ibmcloud ob logging config replace --cluster CLUSTER --instance LOGGING_INSTANCE
 <dt><code>--cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster for which you want to change the {{site.data.keyword.la_full_notm}} ingestion key or service instance that you use in your {{site.data.keyword.la_short}} configuration. This value is required.</dd>
 
-<dt><code>--instance <em>LOGDNA_INSTANCE</em></code></dt>
+<dt><code>--instance <em>LOGGING_INSTANCE</em></code></dt>
 <dd>The ID or name of the {{site.data.keyword.la_full_notm}} service instance for which you want to change the ingestion key, or the {{site.data.keyword.la_full_notm}} service instance that you want to replace. To retrieve the name, run `ibmcloud ob logging config list --cluster <cluster_name_or_ID>`. This value is required.</dd>
 
-<dt><code>--new-instance <em>LOGDNA_INSTANCE_NEW</em></code></dt>
+<dt><code>--new-instance <em>LOGGING_INSTANCE_NEW</em></code></dt>
 <dd>If you want to replace the {{site.data.keyword.la_full_notm}} service instance that you use in your {{site.data.keyword.la_short}} configuration, enter the ID or name of the new {{site.data.keyword.la_full_notm}} service instance that you want to use. This value is required if you want to replace the {{site.data.keyword.la_full_notm}} service instance. If you want to replace the ingestion key, do not include this command option.</dd>
 
 <dt><code>--logdna-ingestion-key <em>INGESTION_KEY</em></code></dt>
@@ -361,7 +361,7 @@ ibmcloud ob logging config show --cluster CLUSTER --instance LOGGING_INSTANCE
 <dt><code>--cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster for which you want to list existing {{site.data.keyword.la_short}} configurations. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.</dd>
 
-<dt><code>--instance <em>LOGDNA_INSTANCE</em></code></dt>
+<dt><code>--instance <em>LOGGING_INSTANCE</em></code></dt>
 <dd>The ID or name of the {{site.data.keyword.la_full_notm}} service instance for which you want to show the logging configuration. To retrieve the name, run `ibmcloud resource service-instances`. This value is required.</dd>
 
 </dl>
@@ -405,7 +405,7 @@ ibmcloud ob monitoring agent discover --cluster CLUSTER [--instance MONITORING_I
 Create a monitoring configuration for your cluster to automatically collect cluster and pod metrics, and send them to {{site.data.keyword.mon_full_notm}}.
 {: shortdesc}
 
-This command deploys a {{site.data.keyword.mon_short}} agent as a Kubernetes daemon set in your cluster. The agent collects cluster and pod metrics, such as the worker node CPU and memory usage, and the amount of incoming and outgoing network traffic for your pods. For more information, see [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor#openshift_sysdig).
+This command deploys a {{site.data.keyword.mon_short}} agent as a Kubernetes daemon set in your cluster. The agent collects cluster and pod metrics, such as the worker node CPU and memory usage, and the amount of incoming and outgoing network traffic for your pods. For more information, see [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor#openshift_monitoring).
 
 ```
 ibmcloud ob monitoring config create --cluster CLUSTER --instance MONITORING_INSTANCE [--sysdig-access-key ACCESS_KEY] [--private-endpoint]
@@ -621,7 +621,7 @@ ibmcloud ob monitoring config show --cluster CLUSTER --instance MONITORING_INSTA
 <dt><code>--cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster for which you want to list existing {{site.data.keyword.mon_short}} configurations. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.</dd>
 
-<dt><code>--instance <em>LOGDNA_INSTANCE</em></code></dt>
+<dt><code>--instance <em>LOGGING_INSTANCE</em></code></dt>
 <dd>The ID or name of the {{site.data.keyword.mon_full_notm}} service instance for which you want to show the monitoring configuration. To retrieve the name, run `ibmcloud resource service-instances`. This value is required.</dd>
 
 </dl>
