@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-03-31"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -612,11 +612,10 @@ ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FL
 <p>To find out whether you already have a public VLAN for a specific zone or to find the name of an existing public VLAN, run <code>ibmcloud oc vlan ls --zone <em>&lt;zone&gt;</em></code>.</p></dd>
 
 <dt><code>--private-service-endpoint</code></dt>
-
-<dd><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 3.11 clusters only in [accounts that are enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint)**: Enable the [private cloud service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master and the worker nodes communicate over the private VLAN. After you enable a private cloud service endpoint, you cannot later disable it.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
+<dd>**Standard clusters in [accounts that are enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint)**: Enable the [private cloud service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master and the worker nodes communicate over the private VLAN. If you specify this flag, you must also enable the public cloud service endpoint by using the `--public-service-endpoint` flag. Note that you cannot later change the cloud service endpoints.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
 
 <dt><code>--public-service-endpoint</code></dt>
-<dd>Enable the [public cloud service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master can be accessed over the public network, for example to run `oc` commands from your command line. For 3.11 clusters only, i you have an [account that is enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint) and also include the `--private-service-endpoint` flag, master-worker node communication goes over the private and the public network.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
+<dd>Enable the [public cloud service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) so that your Kubernetes master can be accessed over the public network, for example to run `oc` commands from your command line. If you have an [account that is enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint) and also include the `--private-service-endpoint` flag, master-worker node communication goes over the private and the public network.<br><br>After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.</dd>
 
 
 <dt><code>--workers WORKER</code></dt>
