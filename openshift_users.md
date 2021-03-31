@@ -883,7 +883,7 @@ You cannot scope {{site.data.keyword.cloud_notm}} IAM service access roles to an
 <br />
 
 ## Assigning RBAC permissions
-{: #role-binding}
+{: #role-binding-assign}
 
 Use RBAC roles to define the actions that a user can take to work with the Kubernetes resources in your cluster.
 {: shortdesc}

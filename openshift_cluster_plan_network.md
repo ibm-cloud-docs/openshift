@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-31"
 
 keywords: openshift, rhoks, roks, rhos, multi az, multi-az, szr, mzr
 
@@ -365,7 +365,7 @@ When VRF is enabled, any system that is connected to any of the private VLANs in
 ### Worker-to-master and user-to-master communication: Service endpoints
 {: #workeruser-master}
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> A communication channel must be set up so that worker nodes can establish a connection to the Kubernetes master. You must enable the public cloud service endpoint in your cluster. You can optionally enable the private cloud service endpoint for version 3.11 clusters, but not for version 4 clusters, which must be public only. Furthermore, you cannot have only the private cloud service endpoint for any cluster.
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> A communication channel must be set up so that worker nodes can establish a connection to the Kubernetes master. You must enable the public cloud service endpoint in your cluster, and you can optionally enable the private cloud service endpoint. You cannot have only the private cloud service endpoint, and after you create the cluster, you cannot change the cloud service endpoints.
 {: shortdesc}
 
 To secure communication over public and private cloud service endpoints, {{site.data.keyword.openshiftlong_notm}} automatically sets up an OpenVPN connection between the Kubernetes master and the worker node when the cluster is created. Workers securely talk to the master through TLS certificates, and the master talks to workers through the OpenVPN connection.
@@ -376,13 +376,11 @@ By default, your worker nodes can automatically connect to the Kubernetes master
 * Communication between worker nodes and master is established securely over the public network through the public cloud service endpoint.
 * The master is publicly accessible to authorized cluster users only through the public cloud service endpoint. Your cluster users can securely access your Kubernetes master over the internet to run `oc` commands, for example.
 
-**Version 3.11 clusters only: Public and private cloud service endpoints**
+**Public and private cloud service endpoints**
 
-To make your master publicly or privately accessible to cluster users, you can enable the public and private cloud service endpoints. You can enable the private cloud service endpoint only by using the CLI to create a cluster. Before you can create a version 3.11 cluster with public and private cloud service endpoints, VRF is required in your {{site.data.keyword.cloud_notm}} account, and you must enable your account to use service endpoints. To enable VRF and service endpoints, run `ibmcloud account update --service-endpoint-enable true`.
+To make your master publicly or privately accessible to cluster users, you can enable the public and private cloud service endpoints. VRF is required in your {{site.data.keyword.cloud_notm}} account, and you must enable your account to use service endpoints. To enable VRF and service endpoints, run `ibmcloud account update --service-endpoint-enable true`.
 * Communication between worker nodes and master is established over both the private network through the private cloud service endpoint and the public network through the public cloud service endpoint. By routing half of the worker-to-master traffic over the public endpoint and half over the private endpoint, your master-to-worker communication is protected from potential outages of the public or private network.
 * The master is publicly accessible to authorized cluster users through the public cloud service endpoint. The master is privately accessible through the private cloud service endpoint if authorized cluster users are in your {{site.data.keyword.cloud_notm}} private network or are connected to the private network through a VPN connection or {{site.data.keyword.dl_full_notm}}. Note that you must [expose the master endpoint through a private load balancer](/docs/openshift?topic=openshift-access_cluster#access_private_se) so that users can access the master through a VPN or {{site.data.keyword.dl_full_notm}} connection.
-* You can optionally secure access to your private cloud service endpoint by creating a subnet allowlist. Only authorized requests to your cluster master that originate from subnets in the allowlist are permitted through the cluster's private cloud service endpoint. For more information, see [Creating an allowlist for the private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#private-se-allowlist).
-* To create a cluster with the public and private cloud service endpoints enabled, use the `ibmcloud oc cluster create classic` [CLI command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) and include the `--public-service-endpoint` and `--private-service-endpoint` flags.
 * You can optionally secure access to your private cloud service endpoint by creating a subnet allowlist. Only authorized requests to your cluster master that originate from subnets in the allowlist are permitted through the cluster's private cloud service endpoint. For more information, see [Creating an allowlist for the private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#private-se-allowlist).
 
 </br>

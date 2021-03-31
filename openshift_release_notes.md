@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-03-31"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -109,7 +109,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
-| 30 March 2021 | <ul><li>**Cluster autoscaler add-on**: [Patch update `1.0.2_232`](/docs/openshift?topic=openshift-ca_changelog) of the cluster autoscaler add-on is available.</li><li>**Master versions**: Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.21_1535_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4621_1535), [`4.5.35_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4535_1533), [`4.4.33_1536_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4433_1536), and [`3.11.394_1583_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311394_1583).</li></ul>|
+| 31 March 2021 | **Compliance operator**: Review how you can use the compliance operator from Red Hat with a [tailored profile specific to {{site.data.keyword.openshiftlong_notm}} worker nodes](/docs/openshift?topic=openshift-compliance-operator).
+| 30 March 2021 | **Master versions**: Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.21_1535_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4621_1535), [`4.5.35_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4535_1533), [`4.4.33_1536_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4433_1536), and [`3.11.394_1583_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311394_1583).|
 | 29 March 2021 | **Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.22_1536_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4622_1536), [`4.5.35_1534_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4535_1534), [`4.4.33_1537_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4433_1537), and [`3.11.404_1584_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311404_1584). |
 | 25 March 2021 | <ul><li>**CIS Kubernetes Benchmark**: Added information about {{site.data.keyword.openshiftlong_notm}} compliance with the [Center for Internet Security (CIS) Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark) for clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or later.</li><li>**CRI-O container runtime**: Added [information about the CRI-O container runtime interface](/docs/openshift?topic=openshift-security#container-runtime) for worker nodes.</li><li>**{{site.data.keyword.cloudcerts_short}} instances**: The default {{site.data.keyword.cloudcerts_short}} instance for your cluster is now named in the format `kube-crtmgr-<cluster_ID>`.</li></ul> |
 | 22 March 2021 | **Ingress ALB changelog**: Updated the [`nginx-ingress` build to 2466 and the `ingress-auth` build to 982](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image. |

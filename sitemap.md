@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-03-31"
 
 keywords: openshift
 subcollection: openshift
@@ -474,7 +474,7 @@ subcollection: openshift
   * [Example use cases and roles](/docs/openshift?topic=openshift-users#example-iam)
   * [Assigning {{site.data.keyword.cloud_notm}} IAM roles with the console](/docs/openshift?topic=openshift-users#add_users)
   * [Assigning {{site.data.keyword.cloud_notm}} IAM roles with the CLI](/docs/openshift?topic=openshift-users#add_users_cli)
-* [Assigning RBAC permissions](/docs/openshift?topic=openshift-users#role-binding)
+* [Assigning RBAC permissions](/docs/openshift?topic=openshift-users#role-binding-assign)
   * [Understanding RBAC permissions](/docs/openshift?topic=openshift-users#understand-rbac)
   * [Creating custom RBAC permissions for users, groups, or service accounts](/docs/openshift?topic=openshift-users#rbac)
   * [Extending existing permissions by aggregating cluster roles](/docs/openshift?topic=openshift-users#rbac_aggregate)
@@ -1783,6 +1783,10 @@ subcollection: openshift
 
 [CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark)
 * [Running the worker node CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test)
+
+[Using the compliance operator](/docs/openshift?topic=openshift-compliance-operator)
+* [Installing the compliance operator with the tailored profile](/docs/openshift?topic=openshift-compliance-operator#comp-op-install)
+* [What's next?](/docs/openshift?topic=openshift-compliance-operator#comp-op-next)
 
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog)
 * [Changelog for 1.0.2, released 08 March 2021](/docs/openshift?topic=openshift-ca_changelog#0102_ca_addon)

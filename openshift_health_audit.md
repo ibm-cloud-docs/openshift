@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-03-31"
 
 keywords: openshift, roks, rhoks, logmet, logs, metrics, audit, events
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-03-31"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
