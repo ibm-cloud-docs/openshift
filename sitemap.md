@@ -1784,6 +1784,10 @@ subcollection: openshift
 [CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark)
 * [Running the worker node CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test)
 
+[Using the compliance operator](/docs/openshift?topic=openshift-compliance-operator)
+* [Installing the compliance operator with the tailored profile](/docs/openshift?topic=openshift-compliance-operator#comp-op-install)
+* [What's next?](/docs/openshift?topic=openshift-compliance-operator#comp-op-next)
+
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog)
 * [Changelog for 1.0.2, released 08 March 2021](/docs/openshift?topic=openshift-ca_changelog#0102_ca_addon)
 * [Changelog for 1.0.1, released 15 August 2020](/docs/openshift?topic=openshift-ca_changelog#0101_ca_addon)
