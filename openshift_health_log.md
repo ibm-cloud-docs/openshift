@@ -116,7 +116,7 @@ To help understand when to use the built-in {{site.data.keyword.openshiftshort}}
 <li>Highly available, scalable, and compliant with industry security standards.</li>
 <li>Integrated with {{site.data.keyword.cloud_notm}} IAM for user access management.</li>
 <li>Flexible plans, including a free `Lite` option.</li></ul>
-<br>To get started, see [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](#openshift_logdna).</dd>
+<br>To get started, see [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](#openshift_logging).</dd>
 
 <dt>Built-in {{site.data.keyword.openshiftshort}} logging tools</dt>
 <dd><ul>
@@ -148,7 +148,7 @@ To help understand when to use the built-in {{site.data.keyword.openshiftshort}}
 <br />
 
 ## Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}
-{: #openshift_logdna}
+{: #openshift_logging}
 
 Use the {{site.data.keyword.openshiftlong_notm}} observability plug-in to create a logging configuration for {{site.data.keyword.la_full_notm}} in your cluster, and use this logging configuration to automatically collect and forward pod logs to {{site.data.keyword.la_full_notm}}.
 {: shortdesc}

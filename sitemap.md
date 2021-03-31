@@ -787,12 +787,12 @@ subcollection: openshift
 
 [Logging for clusters](/docs/openshift?topic=openshift-health)
 * [Understanding options for logging](/docs/openshift?topic=openshift-health#oc_logmet_options)
-* [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna)
+* [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging)
 * [Using the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator)
 
 [Monitoring cluster health](/docs/openshift?topic=openshift-health-monitor)
 * [Understanding options for monitoring](/docs/openshift?topic=openshift-health-monitor#oc_logmet_options)
-* [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor#openshift_sysdig)
+* [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor#openshift_monitoring)
 * [Viewing cluster states](/docs/openshift?topic=openshift-health-monitor#states)
   * [Cluster states](/docs/openshift?topic=openshift-health-monitor#states_cluster)
   * [Master states](/docs/openshift?topic=openshift-health-monitor#states_master)
