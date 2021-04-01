@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-31"
+lastupdated: "2021-04-01"
 
-keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logdna commands, sysdig commands, logging config, monitoring config
+keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logging config, monitoring config
 
 subcollection: openshift
 
@@ -144,7 +144,7 @@ ibmcloud ob logging agent discover --cluster CLUSTER [--instance LOGGING_INSTANC
 Create a logging configuration for your cluster to automatically collect pod logs and send them to {{site.data.keyword.la_full_notm}}.
 {: shortdesc}
 
-This command deploys a {{site.data.keyword.la_short}} agent as a Kubernetes daemon set in your cluster. The agent collects logs with the extension `*.log` and extensionless files that are stored in the `/var/log` directory of your pod from all projects, including `kube-system`. For more information, see [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging). For more information about {{site.data.keyword.la_full_notm}}, see [Securing your data](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-mng-data).   
+This command deploys a {{site.data.keyword.la_short}} agent as a Kubernetes daemon set in your cluster. The agent collects logs with the extension `*.log` and extensionless files that are stored in the `/var/log` directory of your pod from all projects, including `kube-system`. For more information, see [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging). For more information about {{site.data.keyword.la_full_notm}}, see [Securing your data](/docs/log-analysis?topic=log-analysis-mng-data).   
 
 ```
 ibmcloud ob logging config create --cluster CLUSTER --instance LOGGING_INSTANCE [--logdna-ingestion-key INGESTION_KEY] [--private-endpoint]  
@@ -165,7 +165,7 @@ ibmcloud ob logging config create --cluster CLUSTER --instance LOGGING_INSTANCE 
 <dd>The name or ID of the cluster for which you want to create a logging configuration for {{site.data.keyword.la_full_notm}}. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.</dd>
 
 <dt><code>--instance <em>LOGGING_INSTANCE</em></code></dt>
-<dd>The ID or name of the {{site.data.keyword.la_full_notm}} service instance that you want to use to create the logging configuration. The service instance must be in the same {{site.data.keyword.cloud_notm}} account as your cluster, but can be in a different resource group or region than your cluster. To create a service instance, follow the steps in [Provision an instance](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-provision). This value is required.</dd>
+<dd>The ID or name of the {{site.data.keyword.la_full_notm}} service instance that you want to use to create the logging configuration. The service instance must be in the same {{site.data.keyword.cloud_notm}} account as your cluster, but can be in a different resource group or region than your cluster. To create a service instance, follow the steps in [Provision an instance](/docs/log-analysis?topic=log-analysis-provision). This value is required.</dd>
 
 <dt><code>--logdna-ingestion-key <em>INGESTION_KEY</em></code></dt>
 <dd>The {{site.data.keyword.la_short}} ingestion key that you want to use for your configuration. This value is optional. If you do not specify this option, the latest ingestion key is automatically retrieved.   </dd>
@@ -330,7 +330,7 @@ ibmcloud ob logging config replace --cluster CLUSTER --instance LOGGING_INSTANCE
 <dd>If you want to replace the {{site.data.keyword.la_full_notm}} service instance that you use in your {{site.data.keyword.la_short}} configuration, enter the ID or name of the new {{site.data.keyword.la_full_notm}} service instance that you want to use. This value is required if you want to replace the {{site.data.keyword.la_full_notm}} service instance. If you want to replace the ingestion key, do not include this command option.</dd>
 
 <dt><code>--logdna-ingestion-key <em>INGESTION_KEY</em></code></dt>
-<dd>The {{site.data.keyword.la_short}} ingestion key that you want to use for your configuration. For information about how to retrieve the ingestion key, see [Get the ingestion key through the {{site.data.keyword.cloud_notm}} UI](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-ingestion_key#ibm_cloud_ui). This value is required if you want to replace the ingestion key, and optional if you want to replace the {{site.data.keyword.la_full_notm}} service instance. If you do not provide the ingestion key when replacing the {{site.data.keyword.la_full_notm}} service instance, the ingestion key that was last added is retrieved automatically.</dd>
+<dd>The {{site.data.keyword.la_short}} ingestion key that you want to use for your configuration. For information about how to retrieve the ingestion key, see [Get the ingestion key through the {{site.data.keyword.cloud_notm}} UI](/docs/log-analysis?topic=log-analysis-ingestion_key#ibm_cloud_ui). This value is required if you want to replace the ingestion key, and optional if you want to replace the {{site.data.keyword.la_full_notm}} service instance. If you do not provide the ingestion key when replacing the {{site.data.keyword.la_full_notm}} service instance, the ingestion key that was last added is retrieved automatically.</dd>
 
 </dl>
 
@@ -426,7 +426,7 @@ ibmcloud ob monitoring config create --cluster CLUSTER --instance MONITORING_INS
 <dd>The name or ID of the cluster for which you want to create a monitoring configuration for {{site.data.keyword.mon_full_notm}}. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.</dd>
 
 <dt><code>--instance <em>MONITORING_INSTANCE</em></code></dt>
-<dd>The ID or name of the {{site.data.keyword.mon_full_notm}} service instance that you want to use to create the monitoring configuration. The service instance must be in the same {{site.data.keyword.cloud_notm}} account as your cluster, but can be in a different resource group or region than you cluster. To create a service instance, follow the steps in [Provision an instance](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-provision). This value is required.</dd>
+<dd>The ID or name of the {{site.data.keyword.mon_full_notm}} service instance that you want to use to create the monitoring configuration. The service instance must be in the same {{site.data.keyword.cloud_notm}} account as your cluster, but can be in a different resource group or region than you cluster. To create a service instance, follow the steps in [Provision an instance](/docs/monitoring?topic=monitoring-provision). This value is required.</dd>
 
 <dt><code>--sysdig-access-key <em>ACCESS_KEY</em></code></dt>
 <dd>The {{site.data.keyword.mon_short}} access key that you want to use for your configuration. This value is optional. If you do not specify this option, the latest access key is used for your configuration. </dd>
@@ -590,7 +590,7 @@ ibmcloud ob logging config replace --cluster CLUSTER --instance MONITORING_INSTA
 <dd>If you want to replace the {{site.data.keyword.mon_full_notm}} service instance that you use in your {{site.data.keyword.mon_short}} configuration, enter the ID or name of the new {{site.data.keyword.mon_full_notm}} service instance that you want to use. This value is required if you want to replace the {{site.data.keyword.mon_full_notm}} service instance. If you want to replace the service access key, do not include this command option.</dd>
 
 <dt><code>--sysdig-access-key <em>ACCESS_KEY</em></code></dt>
-<dd>The {{site.data.keyword.mon_short}} service access key that you want to use for your configuration. For information about how to retrieve the service access key, see [Getting the access key through the {{site.data.keyword.cloud_notm}} UI](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-access_key#access_key_ibm_cloud_ui). This value is required if you want to replace the service access key, and optional if you want to replace the {{site.data.keyword.mon_full_notm}} service instance. If you do not provide the service access key when replacing the {{site.data.keyword.mon_full_notm}} service instance, the service access key that was last added is retrieved automatically.</dd>
+<dd>The {{site.data.keyword.mon_short}} service access key that you want to use for your configuration. For information about how to retrieve the service access key, see [Getting the access key through the {{site.data.keyword.cloud_notm}} UI](/docs/monitoring?topic=monitoring-access_key#access_key_ibm_cloud_ui). This value is required if you want to replace the service access key, and optional if you want to replace the {{site.data.keyword.mon_full_notm}} service instance. If you do not provide the service access key when replacing the {{site.data.keyword.mon_full_notm}} service instance, the service access key that was last added is retrieved automatically.</dd>
 
 </dl>
 

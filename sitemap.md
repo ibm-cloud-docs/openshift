@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-31"
+lastupdated: "2021-04-01"
 
 keywords: openshift
 subcollection: openshift
@@ -802,7 +802,7 @@ subcollection: openshift
 [Reviewing service, API server, and worker node logs](/docs/openshift?topic=openshift-health-audit)
 * [Kubernetes API server audit logs](/docs/openshift?topic=openshift-health-audit#audit-api-server)
   * [Understanding the Kubernetes API audit configuration](/docs/openshift?topic=openshift-health-audit#api-server-config)
-  * [Forwarding Kubernetes API audit logs to {{site.data.keyword.la_short}}](/docs/openshift?topic=openshift-health-audit#audit-api-server-logdna)
+  * [Forwarding Kubernetes API audit logs to {{site.data.keyword.la_short}}](/docs/openshift?topic=openshift-health-audit#audit-api-server-la)
   * [Managing API server log forwarding](/docs/openshift?topic=openshift-health-audit#audit-api-server-manage)
   * [Taking a snapshot of API server logs](/docs/openshift?topic=openshift-health-audit#audit-api-server-snapshot)
 * [Worker node audit logs](/docs/openshift?topic=openshift-health-audit#audit-worker)
