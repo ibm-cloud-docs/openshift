@@ -1354,6 +1354,17 @@ subcollection: openshift
   * [Gathering logs](/docs/openshift?topic=openshift-portworx#portworx_logs)
 * [Limitations](/docs/openshift?topic=openshift-portworx#portworx_limitations)
 
+[Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged)
+* [Prerequisites](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-prereq)
+  * [Labelling your worker nodes](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-label-um)
+  * [Retrieving IAM and VPC details](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-driver-get-details)
+* [Creating the image pull secret in your cluster](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-create-storage-secret)
+* [Creating the {{site.data.keyword.block_storage_is_short}} driver deployment](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-deploy-cm)
+* [Deploying a stateful set that uses {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-stateful-set-deploy)
+* [Config map reference](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-cm-ref)
+  * [RHEL or CentOS configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-rhel-cm)
+  * [Ubuntu configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
+
 [Backing up and restoring storage data](/docs/openshift?topic=openshift-storage_br)
 
 [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities)

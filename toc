@@ -183,6 +183,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_storage_block_vpc.md
         openshift_storage_object.md
         openshift_storage_portworx.md
+        openshift_storage_vpc_block_driver.md
         openshift_storage_br.md
         openshift_storage_utilities.md
 
