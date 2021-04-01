@@ -101,7 +101,7 @@ The following documentation covers the steps to deploy the {{site.data.keyword.b
 **Supported infrastructure provider**:
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
-Want to use {{site.data.keyword.block_storage_is_short}} in an {{site.data.keyword.containerlong_notmt}} or {{site.data.keyword.openshiftlong_notm}} cluster? See [Storing data on Block Storage for VPC](/docs/openshift?topic=openshift-vpc-block) for more information.
+Want to use {{site.data.keyword.block_storage_is_short}} in an {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong_notm}} cluster? See [Storing data on Block Storage for VPC](/docs/openshift?topic=openshift-vpc-block) for more information.
 {: tip}
  
 ## Prerequisites
@@ -241,7 +241,7 @@ Create an image pull secret in your cluster. The secret you create is used to pu
 ## Creating the {{site.data.keyword.block_storage_is_short}} driver deployment
 {: #vpc-block-um-deploy-cm}
 
-Select the {{site.data.keyword.block_storage_is_short}} driver configmap that matches the operating system of your worker nodes. When you create the deployment in your cluster, the {site.data.keyword.block_storage_is_short}} driver and storage classes are installed.
+Select the {{site.data.keyword.block_storage_is_short}} driver configmap that matches the operating system of your worker nodes. When you create the deployment in your cluster, the {{site.data.keyword.block_storage_is_short}} driver and storage classes are installed.
 {: shortdesc}
 
 1. Save one of the following YAML configurations to a file on your local machine called `configmap.yaml`. Select the configmap based on your cluster operating system.
