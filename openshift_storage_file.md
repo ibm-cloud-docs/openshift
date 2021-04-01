@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-04-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1474,9 +1474,6 @@ To use {{site.data.keyword.filestorage_short}} in a multizone cluster, your pod 
 {: shortdesc}
 
 Creating the {{site.data.keyword.filestorage_short}} instance without knowing the constraints of the pod can lead to unwanted results. For example, your pod might not be able to be scheduled to the same worker node as your storage because the worker node has insufficient resources or the worker node is tainted and does not allow the pod to be scheduled. With topology-aware volume scheduling, the {{site.data.keyword.filestorage_short}} instance is delayed until the first pod that uses the storage is created.
-
-Topology-aware volume scheduling is supported on clusters that run Kubernetes version 1.12 or later only.
-{: note}
 
 The following examples show how to create storage classes that delay the creation of the {{site.data.keyword.filestorage_short}} instance until the first pod that uses this storage is ready to be scheduled. To delay the creation, you must include the `volumeBindingMode: WaitForFirstConsumer` option. If you do not include this option, the `volumeBindingMode` is automatically set to `Immediate` and the {{site.data.keyword.filestorage_short}} instance is created when you create the PVC.
 
