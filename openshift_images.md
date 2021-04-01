@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-04-01"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -465,10 +465,58 @@ You can build containers from trusted images that are signed and stored in {{sit
 {: shortdesc}
 
 1.  [Sign images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent). After you set up trust for your images, you can manage trusted content and signers that can push images to your registry.
+2.  To enforce a policy so that only signed images can be used to build containers in your cluster, [install the open source Portieris project](#portieris-image-sec).
 3.  Cluster users can deploy apps that are built from trusted images.
     1. [Deploy to the `default` Kubernetes namespace](/docs/openshift?topic=openshift-images#namespace).
     2. [Deploy to a different Kubernetes namespace, or from a different {{site.data.keyword.cloud_notm}} region or account](/docs/openshift?topic=openshift-registry#other).
 
 <br />
 
+## Enabling image security enforcement in your cluster
+{: #portieris-image-sec}
 
+When you enable image security enforcement in your cluster, you install the open-source Portieris Kubernetes project. Then, you can create image policies to prevent pods that do not meet the policies, such as unsigned images, from running in your cluster.
+{: shortdesc}
+
+For more information, see the [Portieris documentation](https://github.com/IBM/portieris){: external}.
+
+**Mutated images**: By default, Portieris uses the `MutatingAdmissionWebhook` admission controller to mutate your image to refer to the image by a digest instead of a tag. However, you might have some deployment technology that rejects a mutated image. If so, you can use the [image mutation option](https://github.com/IBM/portieris/blob/master/README.md#image-mutation-option){: external} and [policy](https://github.com/IBM/portieris/blob/master/POLICIES.md#image-mutation-option){: external} to change the default behavior.
+{: note}
+
+### Enabling or disabling image security enforcement
+{: #portieris-enable}
+
+**{{site.data.keyword.openshiftshort}} version 4.5 or later**: You can enable or disable image security enforcement for your cluster from the CLI or console. For earlier versions, see the [Portieris documentation](https://github.com/IBM/portieris){: external}.
+{: shortdesc}
+
+**CLI**: See the following commands.
+* [`ibmcloud oc cluster image-security enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs-image-security-enable)
+* [`ibmcloud oc cluster image-security disable`](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs-image-security-disable)
+
+**Console**:
+1.  From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
+2.  From the **Overview** tab, in the **Summary** pane, find the **Image security enforcement** field and click **Enable** or **Disable**.
+
+### Default image policies
+{: #portieris-default-policies}
+
+When you enable image security enforcement, {{site.data.keyword.openshiftlong_notm}} automatically creates certain image policies in your cluster. When you disable the feature, the underlying `ClusterImagePolicy` CRD is removed, which removes all of the default image policies and any custom images policies that you created.
+{: shortdesc}
+
+* Image policies with the name `ibm-signed-image-enforcement` restrict the images that are run in the project to {{site.data.keyword.openshiftlong_notm}} images only. Do not modify these image policies. Any changes that you make are overwritten within a few minutes.
+* Other image policies, such as `default` or `default-allow-all`, permit images that are not restricted by another image policy. You can modify these image policies and your changes are preserved, but do not rename the image policy. If you rename the policy, more policies with the default name and settings are created.
+
+**To review the image policies in your cluster**:
+
+Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+1.  List the image policies that apply globally to the cluster. For an example configuration, see the [Portieris policy documentation](https://github.com/IBM/portieris/blob/master/helm/portieris/templates/policies.yaml#L66){: external}.
+    ```
+    oc get ClusterImagePolicy
+    ```
+    {: pre}
+2.  List the image policies that apply to particular namespaces within the cluster. For an example configuration, see the [Portieris policy documentation](https://github.com/IBM/portieris/blob/master/helm/portieris/templates/policies.yaml#L14){: external}.
+    ```
+    oc get ImagePolicy --all-namespaces
+    ```
+    {: pre}

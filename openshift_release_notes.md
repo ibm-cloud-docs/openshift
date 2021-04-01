@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-31"
+lastupdated: "2021-04-01"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -104,11 +104,21 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status){: external}.
 {: note}
 
+## April 2021
+{: #apr21}
+
+| Date | Description |
+| ---- | ----------- |
+| 01 April 2021 | **New! image security add-on**: In clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or later, you can [install the container image security enforcement add-on](/docs/openshift?topic=openshift-images#portieris-image-sec) to set up the [Portieris](https://github.com/IBM/portieris){: external} project in your cluster.|
+{: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
+{: caption="Documentation updates in April 2021"}
+
 ## March 2021
 {: #mar21}
 
 | Date | Description |
 | ---- | ----------- |
+| 01 April 2021 | <ul><li>**Cluster autoscaler add-on**: [Patch update `1.0.2_249`](/docs/openshift?topic=openshift-ca_changelog) of the cluster autoscaler add-on is available.</li><li>**{{site.data.keyword.block_storage_is_short}} add-on**: [Patch update `3.0.0_521`](/docs/openshift?topic=openshift-vpc_bs_changelog) of the {{site.data.keyword.block_storage_is_short}} add-on is available.</li><li>**{{site.data.keyword.block_storage_is_short}} driver**: Added steps to install the `vpc-block-csi-driver` on unmanaged clusters. For more information, see [Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged).</li></ul> |
 | 31 March 2021 | **Compliance operator**: Review how you can use the compliance operator from Red Hat with a [tailored profile specific to {{site.data.keyword.openshiftlong_notm}} worker nodes](/docs/openshift?topic=openshift-compliance-operator).
 | 30 March 2021 | **Master versions**: Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.21_1535_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4621_1535), [`4.5.35_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4535_1533), [`4.4.33_1536_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4433_1536), and [`3.11.394_1583_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311394_1583).|
 | 29 March 2021 | **Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.22_1536_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4622_1536), [`4.5.35_1534_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4535_1534), [`4.4.33_1537_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4433_1537), and [`3.11.404_1584_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311404_1584). |
@@ -272,7 +282,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 | Date | Description |
 | ---- | ----------- |
 | 24 June 2020 | <ul><li>**Gateway appliance firewalls**: Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#firewall_outbound) that you must open in a public gateway device.</li><li>**Ingress ALB changelog**: Updated the [`ingress-auth` image build to 413](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li></ul> |
-| 23 June 2020 | **New! {{site.data.keyword.openshiftlong_notm}} observability plug-in**: You can now use the {{site.data.keyword.openshiftlong_notm}} observability plug-in to create a logging or monitoring configuration for your cluster so that you can forward cluster logs and metrics to an {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} service instance. For more information, see [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logdna) and [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor#openshift_sysdig). You can also use the command line to create the logging and monitoring configuration. For more information, see the [Observability plug-in CLI](/docs/openshift?topic=openshift-observability_cli) reference.|
+| 23 June 2020 | **New! {{site.data.keyword.openshiftlong_notm}} observability plug-in**: You can now use the {{site.data.keyword.openshiftlong_notm}} observability plug-in to create a logging or monitoring configuration for your cluster so that you can forward cluster logs and metrics to an {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} service instance. For more information, see [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_la) and [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor). You can also use the command line to create the logging and monitoring configuration. For more information, see the [Observability plug-in CLI](/docs/openshift?topic=openshift-observability_cli) reference.|
 | 22 June 2020 | **Version changelogs**: Changelog documentation is available for  {{site.data.keyword.openshiftshort}} [`4.3.13_1522_openshift` master and `4.3.25_1527_openshift` worker node](/docs/openshift?topic=openshift-openshift_changelog#4323_1527_master) and [`3.11.219_1554_openshift` master and `3.11.232_1554_openshift` worker node](/docs/openshift?topic=openshift-openshift_changelog#311219_1554_master) fix pack patch updates.
 | 18 June 2020 | **Ingress ALB changelog**: Updated the [`ingress-auth` image build to 413](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).|
 | 16 June 2020 | <ul><li>**New! Virtual Private Cloud Generation 2**: You can now create {{site.data.keyword.openshiftshort}} clusters in your [Gen 2 Virtual Private Cloud (VPC)](/docs/vpc?topic=vpc-getting-started). VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud. VPC Gen 2 clusters are available for version 4 clusters only.<br><br>For more information, check out the following links:<ul><li>[Overview of Classic and VPC infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers)</li><li>[Supported virtual machine flavors for VPC Gen 2 worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#vm)</li><li>New VPC Gen 2 commands for the CLI</li><li>[VPC Gen 2 compute cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ks_vpc_gen2_limits)</li><li>[Changelog for master fix pack `4.3.23_1525_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4323_1525)</ul>Ready to get started? Try out the [Creating a cluster in your VPC on generation 2 compute tutorial](/docs/openshift?topic=openshift-vpc_rh_tutorial).</li><li>**CLI changelog**: Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.99](/docs/openshift?topic=openshift-cs_cli_changelog#10).</li></ul>|
@@ -516,7 +526,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 <tr>
   <td>01 October 2019</td>
   <td><ul>
-    <li><strong>End of service of {{site.data.keyword.loganalysislong_notm}} and {{site.data.keyword.monitoringlong_notm}}</strong>: Removed steps for using {{site.data.keyword.loganalysislong_notm}} and {{site.data.keyword.monitoringlong_notm}} to work with cluster logs and metrics. You can collect logs and metrics for your cluster by setting up [{{site.data.keyword.la_full_notm}}](/docs/containers?topic=containers-health#logdna) and [{{site.data.keyword.mon_full_notm}}](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-kubernetes_cluster#kubernetes_cluster) instead.</li>
+    <li><strong>End of service of {{site.data.keyword.la_full_notm}} and {{site.data.keyword.monitoringlong_notm}}</strong>: Removed steps for using {{site.data.keyword.la_full_notm}} and {{site.data.keyword.monitoringlong_notm}} to work with cluster logs and metrics. You can collect logs and metrics for your cluster by setting up [{{site.data.keyword.la_full_notm}}](/docs/containers?topic=containers-health#logging) and [{{site.data.keyword.mon_full_notm}}](/docs/monitoring?topic=monitoring-kubernetes_cluster#kubernetes_cluster) instead.</li>
     <li><strong>{{site.data.keyword.openshiftshort}} options</strong>: To help you decide whether to use built-in {{site.data.keyword.openshiftshort}} capabilities or integration with {{site.data.keyword.cloud_notm}} services, the following topics are added:<ul>
       <li>[Choosing an image registry solution](/docs/openshift?topic=openshift-registry#openshift_registry_options)</li>
       <li>[Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress) like router or Ingress</li>
@@ -796,7 +806,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
   <li><strong>Access to the Kubernetes master through the private cloud service endpoint</strong>: Added [steps](/docs/openshift?topic=openshift-access_cluster#access_private_se) to expose the private cloud service endpoint through a private load balancer. After you complete these steps, your authorized cluster users can access the Kubernetes master from a VPN or {{site.data.keyword.dl_full_notm}} connection.</li>
   <li><strong>{{site.data.keyword.BluDirectLink}}</strong>: Added {{site.data.keyword.dl_full_notm}} to the [VPN connectivity](/docs/openshift?topic=openshift-vpn) and [hybrid cloud](/docs/containers?topic=containers-hybrid_iks_icp) pages as a way to create a direct, private connection between your remote network environments and {{site.data.keyword.containerlong_notm}} without routing over the public internet.</li>
   <li><strong>Ingress ALB changelog</strong>: Updated the [ALB `ingress-auth` image to build 330](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).</li>
-  <li><strong>{{site.data.keyword.openshiftshort}} beta</strong>: [Added a lesson](/docs/openshift?topic=openshift-health#openshift_logdna) about how to modify app deployments for privileged security context constraints for {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} add-ons.</li>
+  <li><strong>{{site.data.keyword.openshiftshort}} beta</strong>: [Added a lesson](/docs/openshift?topic=openshift-health#openshift_la) about how to modify app deployments for privileged security context constraints for {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} add-ons.</li>
   </ul></td>
 </tr>
 <tr>
