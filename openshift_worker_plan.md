@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-04-01"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -258,20 +258,20 @@ If your classic cluster has deprecated `x1c` or older Ubuntu 16 `x2c` worker nod
 
 | Name and use case | Cores / Memory | Primary disk | Network speed `*` |
 |:-----------------|:-----------------|:------------------|:-------------|
-| **Virtual, b1.8x32**: Select this balanced VM if you want a 1:4 ratio of CPU and memory resources from the worker node for light to mid-sized workloads. | 8 / 32 GB | 100 GB | 1000 Mbps |
-| **Virtual, b2.4x16**: Select this balanced VM if you want a 1:4 ratio of CPU and memory resources from the worker node for testing, development, and other light workloads. | 4 / 16 GB | 100 GB | 1000 Mbps |
-| **Virtual, b2.8x32**: Select this balanced VM if you want a 1:4 ratio of CPU and memory resources from the worker node for light to mid-sized workloads. | 8 / 32 GB | 100 GB | 1000 Mbps |
-| **Virtual, b2.16x64**: Select this balanced VM if you want a 1:4 ratio of CPU and memory resources from the worker node for mid-sized workloads.  | 16 / 64 GB | 100 GB | 1000 Mbps |
-| **Virtual, b2.32x128**: Select this balanced VM if you want a 1:4 ratio of CPU and memory resources from the worker node for large-sized workloads.| 32 / 128 GB | 100 GB | 1000 Mbps |
-| **Virtual, b2.48x192**: Select this balanced VM if you want a 1:4 ratio of CPU and memory resources from the worker node for large-sized workloads.| 48 / 192 GB | 100 GB | 1000 Mbps |
-| **Virtual, c2.4x8**: Use this flavor when you want a 1:2 ratio of CPU and memory resources from the worker node for light-sized workloads. | 4 / 8 GB | 100 GB | 1000 Mbps |
-| **Virtual, c2.8x16**: Use this flavor when you want a 1:2 ratio of CPU and memory resources from the worker node for light to mid-sized workloads. | 8 / 16 GB | 100 GB | 1000 Mbps |
-| **Virtual, c2.16x32**: Use this flavor when you want a 1:2 ratio of CPU and memory resources from the worker node for mid-sized workloads. | 16 / 32 GB | 100 GB | 1000 Mbps |
-| **Virtual, c2.32x64**: Use this flavor when you want a 1:2 ratio of CPU and memory resources from the worker node for mid to large-sized workloads. | 32 / 64 GB | 100 GB | 1000 Mbps |
-| **Virtual, m2.4x32**: Use this flavor when you want a 1:8 ratio of CPU and memory resources from the worker node for light to mid-sized workloads that require more memory. | 4 / 32 GB | 100 GB | 1000 Mbps |
-| **Virtual, m2.8x64**: Use this flavor when you want a 1:8 ratio of CPU and memory resources from the worker node for mid-sized workloads that require more memory. | 8 / 64 GB | 100 GB | 1000 Mbps |
-| **Virtual, m2.16x128**: Use this flavor when you want a 1:8 ratio of CPU and memory resources from the worker node for mid to large-sized workloads that require more memory. | 16 / 128 GB | 100 GB | 1000 Mbps |
-| **Virtual, m2.32x256**: Use this flavor when you want a 1:8 ratio of CPU and memory resources from the worker node for large-sized workloads that require more memory. | 32 / 256 GB | 100 GB | 1000 Mbps |
+| **Virtual, bx2.4x16**: Select this balanced VM if you want a 1:4 ratio of CPU and memory resources from the worker node for testing, development, and other light workloads. | 4 / 16 GB | 100 GB | 1000 Mbps |
+| **Virtual, bx2.8x32**: Select this balanced VM if you want a 1:4 ratio of CPU and memory resources from the worker node for light to mid-sized workloads. | 8 / 32 GB | 100 GB | 1000 Mbps |
+| **Virtual, bx2.16x64**: Select this balanced VM if you want a 1:4 ratio of CPU and memory resources from the worker node for mid-sized workloads.  | 16 / 64 GB | 100 GB | 1000 Mbps |
+| **Virtual, bx2.32x128**: Select this balanced VM if you want a 1:4 ratio of CPU and memory resources from the worker node for large-sized workloads.| 32 / 128 GB | 100 GB | 1000 Mbps |
+| **Virtual, bx2.48x192**: Select this balanced VM if you want a 1:4 ratio of CPU and memory resources from the worker node for large-sized workloads.| 48 / 192 GB | 100 GB | 1000 Mbps |
+| **Virtual, cx2.8x16**: Use this flavor when you want a 1:2 ratio of CPU and memory resources from the worker node for light to mid-sized workloads. | 8 / 16 GB | 100 GB | 1000 Mbps |
+| **Virtual, cx2.16x32**: Use this flavor when you want a 1:2 ratio of CPU and memory resources from the worker node for mid-sized workloads. | 16 / 32 GB | 100 GB | 1000 Mbps |
+| **Virtual, cx2.32x64**: Use this flavor when you want a 1:2 ratio of CPU and memory resources from the worker node for mid to large-sized workloads. | 32 / 64 GB | 100 GB | 1000 Mbps |
+| **Virtual, cx2.48x96**: Use this flavor when you want a 1:2 ratio of CPU and memory resources from the worker node for mid to large-sized workloads. | 48 / 96 GB | 100 GB | 1000 Mbps |
+| **Virtual, mx2.4x32**: Use this flavor when you want a 1:8 ratio of CPU and memory resources from the worker node for light to mid-sized workloads that require more memory. | 4 / 32 GB | 100 GB | 1000 Mbps |
+| **Virtual, mx2.8x64**: Use this flavor when you want a 1:8 ratio of CPU and memory resources from the worker node for mid-sized workloads that require more memory. | 8 / 64 GB | 100 GB | 1000 Mbps |
+| **Virtual, mx2.16x128**: Use this flavor when you want a 1:8 ratio of CPU and memory resources from the worker node for mid to large-sized workloads that require more memory. | 16 / 128 GB | 100 GB | 1000 Mbps |
+| **Virtual, mx2.32x256**: Use this flavor when you want a 1:8 ratio of CPU and memory resources from the worker node for large-sized workloads that require more memory. | 32 / 256 GB | 100 GB | 1000 Mbps |
+| **Virtual, mx2.48x384**: Use this flavor when you want a 1:8 ratio of CPU and memory resources from the worker node for large-sized workloads that require more memory. | 48 / 384 GB | 100 GB | 1000 Mbps |
 {: class="simple-tab-table"}
 {: caption="Available worker node flavors for VPC Gen 2 compute clusters" caption-side="top"}
 {: #vpc-gen2-worker-vm-flavors}
