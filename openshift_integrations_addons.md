@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-04-01"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -113,7 +113,7 @@ If the tool that you add to your cluster incurs costs, these costs are automatic
 
 **What limitations do I need to account for?**
 
-If you installed an admission controller that blocks unsigned images, such as [Portieris](https://github.com/IBM/portieris){: external}, you cannot enable managed add-ons in your cluster.
+If you installed an admission controller that blocks unsigned images, such as [Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec), you cannot enable managed add-ons in your cluster.
 
 ## Adding managed add-ons
 {: #adding-managed-add-ons}

@@ -884,6 +884,9 @@ subcollection: openshift
 * [Pushing images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-images#push-images)
 * [Managing security of images in {{site.data.keyword.registrylong_notm}} with Vulnerability Advisor](/docs/openshift?topic=openshift-images#va-images)
 * [Setting up trusted content for container images](/docs/openshift?topic=openshift-images#trusted_images)
+* [Enabling image security enforcement in your cluster](/docs/openshift?topic=openshift-images#portieris-image-sec)
+  * [Enabling or disabling image security enforcement](/docs/openshift?topic=openshift-images#portieris-enable)
+  * [Default image policies](/docs/openshift?topic=openshift-images#portieris-default-policies)
 
 [Developing apps to run on OpenShift](/docs/openshift?topic=openshift-openshift_apps)
 * [Specifying your app requirements in your YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml)
@@ -1485,6 +1488,8 @@ subcollection: openshift
   * [`ibmcloud oc cluster create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create)
   * [`ibmcloud oc cluster create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2)
   * [`ibmcloud oc cluster get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_get)
+  * [`ibmcloud oc cluster image-security disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs-image-security-enable)
+  * [`ibmcloud oc cluster image-security enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs-image-security-enable)
   * [`ibmcloud oc cluster ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_clusters)
   * [`ibmcloud oc cluster master private-service-endpoint allowlist`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist)
   * [`ibmcloud oc cluster master private-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_enable)
@@ -2146,6 +2151,8 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
+
+[April 2021](/docs/openshift?topic=openshift-iks-release#apr21)
 
 [March 2021](/docs/openshift?topic=openshift-iks-release#mar21)
 
