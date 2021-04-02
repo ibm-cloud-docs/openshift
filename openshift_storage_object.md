@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-04-01"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -1096,7 +1096,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     </tr>
     <tr>
     <td><code>runAsUser</code></td>
-    <td>In the spec containers security context section, you can optionally set the run as user value. To run the app with a non-root user in a cluster that runs Kubernetes version 1.12 or earlier, specify the [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external} for your pod by defining the non-root user.</td>
+    <td>In the spec containers security context section, you can optionally set the run as user value.</td>
     </tr>
     <tr>
     <td><code>mountPath</code></td>

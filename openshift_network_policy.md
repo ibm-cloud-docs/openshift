@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -748,6 +748,6 @@ Before you begin, [install and configure the Calico CLI, and set the context for
   ```
   {: screen}
 
-6. Optional: Forward the logs from `/var/log/syslog` to [{{site.data.keyword.la_full}}](/docs/openshift?topic=openshift-health#openshift_la).
+6. Optional: Forward the logs from `/var/log/syslog` to [{{site.data.keyword.la_full}}](/docs/openshift?topic=openshift-health#openshift_logging).
 
 

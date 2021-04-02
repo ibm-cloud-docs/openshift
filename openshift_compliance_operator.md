@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-31"
+lastupdated: "2021-04-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -90,7 +90,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
+
 
 # Using the compliance operator
 {: #compliance-operator}
@@ -98,7 +98,7 @@ subcollection: openshift
 With the compliance operator, you can check whether the worker nodes in your cluster meet the set of criteria in the profile that is tailored to {{site.data.keyword.openshiftlong}}. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.6/security/compliance_operator/compliance-operator-understanding.html){: external}.
 {: shortdesc}
 
-<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> The compliance operator is available for clusters that run {{site.data.keyword.opneshiftlong_notm}} version 4.6 or later.
+<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> The compliance operator is available for clusters that run {{site.data.keyword.openshiftlong_notm}} version 4.6 or later.
 {: note}
 
 Looking for the CIS Kubernetes benchmark? See [Running the worker node CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test).

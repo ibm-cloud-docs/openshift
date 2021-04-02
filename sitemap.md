@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-02"
 
 keywords: openshift
 subcollection: openshift
@@ -575,6 +575,7 @@ subcollection: openshift
 [Understanding costs for your clusters](/docs/openshift?topic=openshift-costs)
 * [Understanding costs by component](/docs/openshift?topic=openshift-costs#costs-for-clusters)
   * [Worker nodes](/docs/openshift?topic=openshift-costs#nodes)
+  * [Compute licenses](/docs/openshift?topic=openshift-costs#compute-licenses)
   * [Public bandwidth](/docs/openshift?topic=openshift-costs#bandwidth)
   * [Subnet IP addresses](/docs/openshift?topic=openshift-costs#subnet_ips)
   * [Multizone load balancer](/docs/openshift?topic=openshift-costs#mzlb_pricing)
@@ -864,6 +865,7 @@ subcollection: openshift
   * [How can I add IBM services to my app, such as {{site.data.keyword.watson}}?](/docs/openshift?topic=openshift-plan_deploy#services_ibm)
 * [Planning highly available deployments](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps)
   * [How can I increase the availability of my app?](/docs/openshift?topic=openshift-plan_deploy#increase_availability)
+  * [How can I scale my app?](/docs/openshift?topic=openshift-plan_deploy#how-can-i-scale-my-app?)
 * [Versioning and updating apps](/docs/openshift?topic=openshift-plan_deploy#updating)
   * [How can I organize my deployments to make them easier to update and manage?](/docs/openshift?topic=openshift-plan_deploy#deploy_organize)
   * [What app update strategies can I use?](/docs/openshift?topic=openshift-plan_deploy#updating_apps_strategy)
@@ -1326,6 +1328,7 @@ subcollection: openshift
 * [Limitations](/docs/openshift?topic=openshift-object_storage#cos_limitations)
 
 [Storing data on software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx)
+* [About Portworx](/docs/openshift?topic=openshift-portworx#about-portworx)
   * [What is software-defined storage (SDS)?](/docs/openshift?topic=openshift-portworx#about-px-sds)
   * [How does Portworx work?](/docs/openshift?topic=openshift-portworx#about-px-work)
   * [What worker node flavor in {{site.data.keyword.openshiftlong_notm}} is the right one for Portworx?](/docs/openshift?topic=openshift-portworx#about-px-flavors)
@@ -1342,6 +1345,7 @@ subcollection: openshift
   * [Portworx per-volume encryption workflow](/docs/openshift?topic=openshift-portworx#px_encryption)
   * [Portworx per-volume decryption workflow](/docs/openshift?topic=openshift-portworx#decryption)
   * [Enabling per-volume encryption for your Portworx volumes](/docs/openshift?topic=openshift-portworx#setup_encryption)
+  * [Creating a secret to store the KMS credentials](/docs/openshift?topic=openshift-portworx#creating-a-secret-to-store-the-kms-credentials)
 * [Installing Portworx in your cluster](/docs/openshift?topic=openshift-portworx#install_portworx)
   * [Updating Portworx in your cluster](/docs/openshift?topic=openshift-portworx#update_portworx)
   * [Removing Portworx from your cluster](/docs/openshift?topic=openshift-portworx#remove_portworx)
@@ -1364,6 +1368,7 @@ subcollection: openshift
 * [Creating the image pull secret in your cluster](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-create-storage-secret)
 * [Creating the {{site.data.keyword.block_storage_is_short}} driver deployment](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-deploy-cm)
 * [Deploying a stateful set that uses {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-stateful-set-deploy)
+* [Removing the {{site.data.keyword.block_storage_is_short}} driver](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#removing-the-{{site.data.keyword.block_storage_is_short}}-driver)
 * [Config map reference](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-cm-ref)
   * [RHEL or CentOS configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-rhel-cm)
   * [Ubuntu configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
@@ -1381,9 +1386,6 @@ subcollection: openshift
   * [Reviewing volume attachment details for a VPC worker node by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_get_worker)
 * [VPC: Attaching raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes by using the CLI](/docs/openshift?topic=openshift-utilities#vpc_cli_attach)
   * [Removing raw {{site.data.keyword.blockstorageshort}} from VPC worker nodes by using the CLI](/docs/openshift?topic=openshift-utilities#storage-util-rm-vpc-cli)
-* [Backing up and restoring PVC data for file and block storage](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore)
-  * [Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-utilities#backup_restore_setup_object_storage)
-  * [Using {{site.data.keyword.cos_full_notm}} to back up and restore PVC data](/docs/openshift?topic=openshift-utilities#backup-restore-pvc)
 * [Setting up {{site.data.keyword.mon_full_notm}} for storage volumes](/docs/openshift?topic=openshift-utilities#monitor_storage)
   * [Troubleshooting persistent storage when a {{site.data.keyword.mon_full_notm}} alert is triggered](/docs/openshift?topic=openshift-utilities#monitor_storage_ts)
 
@@ -1506,6 +1508,7 @@ subcollection: openshift
   * [`ibmcloud oc cluster subnet detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_detach)
   * [Deprecated: `ibmcloud oc cluster user-subnet add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_user_subnet_add)
   * [Deprecated: `ibmcloud oc cluster user-subnet rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_user_subnet_rm)
+* [`worker` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#`worker`-commands)
   * [Deprecated: `ibmcloud oc worker add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_add)
   * [`ibmcloud oc worker get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_get)
   * [`ibmcloud oc worker ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_workers)
@@ -1638,12 +1641,16 @@ subcollection: openshift
   * [Version 0.1](/docs/openshift?topic=openshift-cs_cli_changelog#01)
 
 [Observability plug-in CLI](/docs/openshift?topic=openshift-observability_cli)
+* [Logging commands](/docs/openshift?topic=openshift-observability_cli#logging-commands)
+  * [`ibmcloud ob logging agent discover`](/docs/openshift?topic=openshift-observability_cli#`ibmcloud-ob-logging-agent-discover`)
   * [`ibmcloud ob logging config create`](/docs/openshift?topic=openshift-observability_cli#logging_config_create)
   * [`ibmcloud ob logging config delete`](/docs/openshift?topic=openshift-observability_cli#logging_config_delete)
   * [`ibmcloud ob logging config list`](/docs/openshift?topic=openshift-observability_cli#logging_config_list)
   * [`ibmcloud ob logging config enable public-endpoint|private-endpoint`](/docs/openshift?topic=openshift-observability_cli#logging_config_enable)
   * [`ibmcloud ob logging config replace`](/docs/openshift?topic=openshift-observability_cli#logging_config_replace)
   * [`ibmcloud ob logging config show`](/docs/openshift?topic=openshift-observability_cli#logging_config_show)
+* [Monitoring commands](/docs/openshift?topic=openshift-observability_cli#monitoring-commands)
+  * [`ibmcloud ob monitoring agent discover`](/docs/openshift?topic=openshift-observability_cli#`ibmcloud-ob-monitoring-agent-discover`)
   * [`ibmcloud ob monitoring config create`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_create)
   * [`ibmcloud ob monitoring config delete`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_delete)
   * [`ibmcloud ob monitoring config list`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_list)
@@ -1672,6 +1679,7 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
+  * [Changelog for master fix pack 4.6.22_1538_openshift, released 2 April 2021](/docs/openshift?topic=openshift-openshift_changelog#4622_1538)
   * [Changelog for master fix pack 4.6.21_1535_openshift, released 30 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4621_1535)
   * [Changelog for worker node fix pack 4.6.22_1536_openshift, released 29 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4622_1536)
   * [Changelog for worker node fix pack 4.6.20_1534_openshift, released 12 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4620_1534)
@@ -2131,6 +2139,7 @@ subcollection: openshift
 * [Object storage: Changing the ownership of the mount path fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_mountpath_error)
 * [Object storage: Accessing files with a non-root user fails](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_nonroot_access)
 * [Object Storage: App pod fails because of an `Operation not permitted` error](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cos_operation_not_permitted)
+* [Object Storage: Transport endpoint is not connected](/docs/openshift?topic=openshift-cs_troubleshoot_storage#object-storage-transport-endpoint-is-not-connected)
 * [PVC creation fails because of missing permissions](/docs/openshift?topic=openshift-cs_troubleshoot_storage#missing_permissions)
 * [Portworx: Debugging your Portworx installation](/docs/openshift?topic=openshift-cs_troubleshoot_storage#debug-portworx)
   * [Step 1: Verifying the {{site.data.keyword.cloud_notm}} catalog information](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-verify-catalog)

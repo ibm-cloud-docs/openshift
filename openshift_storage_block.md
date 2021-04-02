@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-04-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -375,7 +375,7 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
     ```
     {: pre}
 
-  8. [Create an IAM service policy](/docs/cli/reference/ibmcloud?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_policy_create) to grant your service ID access to your {{site.data.keyword.keymanagementserviceshort}} instance. The following command grants your service ID `Reader` access to your {{site.data.keyword.keymanagementserviceshort}} instance. The Reader access role is the minimum service access role that your service ID must have to retrieve {{site.data.keyword.keymanagementserviceshort}} keys. For more information, see [Managing user access for {{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-manage-access).
+  8. [Create an IAM service policy](/docs/cli/reference/ibmcloud?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_policy_create) to grant your service ID access to your {{site.data.keyword.keymanagementserviceshort}} instance. The following command grants your service ID `Reader` access to your {{site.data.keyword.keymanagementserviceshort}} instance. The Reader access role is the minimum service access role that your service ID must have to retrieve {{site.data.keyword.keymanagementserviceshort}} keys. For more information, see [Managing user access for {{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-grant-access-keys).
     ```
     ibmcloud iam service-policy-create <service_ID_name> --roles Reader --service-name kms --service-instance <service_instance_GUID>
     ```
@@ -1743,7 +1743,7 @@ To use block storage in a multizone cluster, your pod must be scheduled in the s
 
 Creating the block storage instance without knowing the constraints of the pod can lead to unwanted results. For example, your pod might not be able to be scheduled to the same worker node as your storage because the worker node has insufficient resources or the worker node is tainted and does not allow the pod to be scheduled. With topology-aware volume scheduling, the block storage instance is delayed until the first pod that uses the storage is created.
 
-Topology-aware volume scheduling is supported on clusters that run Kubernetes version 1.12 or later only. To use this feature, make sure that you installed the {{site.data.keyword.cloud_notm}} Block Storage plug-in version 1.2.0 or later.
+To use topology-aware volume scheduling, make sure that you installed the {{site.data.keyword.cloud_notm}} Block Storage plug-in version 1.2.0 or later.
 {: note}
 
 The following examples show how to create storage classes that delay the creation of the block storage instance until the first pod that uses this storage is ready to be scheduled. To delay the creation, you must include the `volumeBindingMode: WaitForFirstConsumer` option. If you do not include this option, the `volumeBindingMode` is automatically set to `Immediate` and the block storage instance is created when you create the PVC.
