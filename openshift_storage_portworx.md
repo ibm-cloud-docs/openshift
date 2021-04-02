@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-26"
+lastupdated: "2021-04-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -390,7 +390,7 @@ The following image illustrates the decryption workflow in Portworx when you set
 Follow these steps to set up encryption for your Portworx volumes.
 {: shortdesc}
 
-1. Make sure that you are [assigned the `Editor` platform access role and the `Writer` service access role](/docs/key-protect?topic=key-protect-manage-access#manage-access) in {{site.data.keyword.cloud_notm}} Identity and Access Management for the KMS provider that you want to use.
+1. Make sure that you are [assigned the `Editor` platform access role and the `Writer` service access role](/docs/key-protect?topic=key-protect-grant-access-keys#manage-access) in {{site.data.keyword.cloud_notm}} Identity and Access Management for the KMS provider that you want to use.
 
 2. Create a service instance of the KMS provider that you want to use. Note the name of the service instance that you created.
    * **[{{site.data.keyword.keymanagementservicelong_notm}}](/docs/key-protect?topic=key-protect-provision)**
