@@ -1679,6 +1679,7 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
+  * [Changelog for master fix pack 4.6.22_1538_openshift, released 2 April 2021](/docs/openshift?topic=openshift-openshift_changelog#4622_1538)
   * [Changelog for master fix pack 4.6.21_1535_openshift, released 30 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4621_1535)
   * [Changelog for worker node fix pack 4.6.22_1536_openshift, released 29 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4622_1536)
   * [Changelog for worker node fix pack 4.6.20_1534_openshift, released 12 March 2021](/docs/openshift?topic=openshift-openshift_changelog#4620_1534)

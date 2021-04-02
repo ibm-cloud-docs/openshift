@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-04-02"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -111,6 +111,22 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.6 patch updates.
 {: shortdesc}
+
+### Changelog for master fix pack 4.6.22_1538_openshift, released 2 April 2021
+{: #4622_1538}
+
+The following table shows the changes that are included in the master fix pack patch update `4.6.22_1538_openshift`. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.0.1 | v2.0.3 | Updated to use `Go` version 1.15.9 and for [CVE-2020-28851](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28851){: external}. |
+| {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.6.0-20210126 | v4.6.0-20210331 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20210331){: external}. |
+| {{site.data.keyword.openshiftshort}} | 4.6.21 | 4.6.22 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-22){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.6.0-20210126 | v4.6.0-20210331 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20210331){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} toolkit | 4.6.0+20210126 | 4.6.0+20210331 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20210331){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.6.21_1535_openshift" caption-side="top"}
 
 ### Changelog for master fix pack 4.6.21_1535_openshift, released 30 March 2021
 {: #4621_1535}
@@ -595,7 +611,7 @@ The following table shows the changes that are included in the master fix pack p
 | Gateway-enabled cluster controller | 1232 | 1322 | Updated to use `Go` version 1.15.10 and for [CVE-2021-23839](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23839){: external}, [CVE-2021-23840](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23840){: external}, and [CVE-2021-23841](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23841){: external}. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 388 | 389 | Updated to use `Go` version 1.15.8. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 86de2b7 | 3dd6bbc | Updated image for [CVE-2020-28851](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28851){: external}. |
-| Load balancer and load balancer monitor for IBM Cloud Provider | 1165 | 1274 | Fixed a bug that might cause version 2.0 network load balancers (NLBs) to crash and restart on load balancer updates. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1165 | 1274 | Fixed a bug that might cause version 2.0 network load balancers (NLBs) to crash and restart on load balancer updates. |
 | OpenVPN Operator image | v1.1.0 | v1.2.0 | Fixed a bug that could prevent worker node VPN updates. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.4.33_1534_openshift" caption-side="top"}
@@ -1056,7 +1072,7 @@ The following table shows the changes that are included in the master fix pack p
 | {{site.data.keyword.at_short}} event | N/A | N/A | Now, the `containers-kubernetes.version.update` event is sent to {{site.data.keyword.at_short}} when a master fix pack update is initiated for a cluster. |
 | Cluster health image | v1.1.18 | v1.1.19 | Updated image for [CVE-2020-28851](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28851){: external}. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 388 | 389 | Updated to use `Go` version 1.15.8. |
-| Load balancer and load balancer monitor for IBM Cloud Provider | 1165 | 1274 | Fixed a bug that might cause version 2.0 network load balancers (NLBs) to crash and restart on load balancer updates. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1165 | 1274 | Fixed a bug that might cause version 2.0 network load balancers (NLBs) to crash and restart on load balancer updates. |
 | {{site.data.keyword.openshiftshort}} | 3.11.380 | 3.11.394 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-394){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.380_1581_openshift" caption-side="top"}
