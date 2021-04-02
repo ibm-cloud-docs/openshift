@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-02"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -109,7 +109,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
-| 01 April 2021 | **New! image security add-on**: In clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or later, you can [install the container image security enforcement add-on](/docs/openshift?topic=openshift-images#portieris-image-sec) to set up the [Portieris](https://github.com/IBM/portieris){: external} project in your cluster.|
+| 01 April 2021 | <ul><li>**Cluster autoscaler add-on**: [Patch update `1.0.2_249`](/docs/openshift?topic=openshift-ca_changelog) of the cluster autoscaler add-on is available.</li><li>**{{site.data.keyword.block_storage_is_short}} add-on**: [Patch update `3.0.0_521`](/docs/openshift?topic=openshift-vpc_bs_changelog) of the {{site.data.keyword.block_storage_is_short}} add-on is available.</li><li>**{{site.data.keyword.block_storage_is_short}} driver**: Added steps to install the `vpc-block-csi-driver` on unmanaged clusters. For more information, see [Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged).</li><li>**New! image security add-on**: In clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or later, you can [install the container image security enforcement add-on](/docs/openshift?topic=openshift-images#portieris-image-sec) to set up the [Portieris](https://github.com/IBM/portieris){: external} project in your cluster.</li></ul> |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in April 2021"}
 
@@ -118,8 +118,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
-| 01 April 2021 | <ul><li>**Cluster autoscaler add-on**: [Patch update `1.0.2_249`](/docs/openshift?topic=openshift-ca_changelog) of the cluster autoscaler add-on is available.</li><li>**{{site.data.keyword.block_storage_is_short}} add-on**: [Patch update `3.0.0_521`](/docs/openshift?topic=openshift-vpc_bs_changelog) of the {{site.data.keyword.block_storage_is_short}} add-on is available.</li><li>**{{site.data.keyword.block_storage_is_short}} driver**: Added steps to install the `vpc-block-csi-driver` on unmanaged clusters. For more information, see [Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged).</li></ul> |
-| 31 March 2021 | **Compliance operator**: Review how you can use the compliance operator from Red Hat with a [tailored profile specific to {{site.data.keyword.openshiftlong_notm}} worker nodes](/docs/openshift?topic=openshift-compliance-operator).
+| 31 March 2021 | **Compliance operator**: Review how you can use the compliance operator from Red Hat with a [tailored profile specific to {{site.data.keyword.openshiftlong_notm}} worker nodes](/docs/openshift?topic=openshift-compliance-operator). |
 | 30 March 2021 | **Master versions**: Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.21_1535_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4621_1535), [`4.5.35_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4535_1533), [`4.4.33_1536_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4433_1536), and [`3.11.394_1583_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311394_1583).|
 | 29 March 2021 | **Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.22_1536_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4622_1536), [`4.5.35_1534_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4535_1534), [`4.4.33_1537_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4433_1537), and [`3.11.404_1584_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311404_1584). |
 | 25 March 2021 | <ul><li>**CIS Kubernetes Benchmark**: Added information about {{site.data.keyword.openshiftlong_notm}} compliance with the [Center for Internet Security (CIS) Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark) for clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or later.</li><li>**CRI-O container runtime**: Added [information about the CRI-O container runtime interface](/docs/openshift?topic=openshift-security#container-runtime) for worker nodes.</li><li>**{{site.data.keyword.cloudcerts_short}} instances**: The default {{site.data.keyword.cloudcerts_short}} instance for your cluster is now named in the format `kube-crtmgr-<cluster_ID>`.</li></ul> |
