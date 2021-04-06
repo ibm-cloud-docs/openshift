@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-02"
+lastupdated: "2021-04-06"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -109,6 +109,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 05 April 2021 | **Deprecated data centers for classic clusters**: Houston (`hou02`) and Oslo (`osl01`) are deprecated and become unsupported later this year. To prevent any interruption of service, [redeploy all of your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your `osl01` or `hou02` clusters by **1 August 2021**. Before the unsupported date, you are blocked from adding new worker nodes and clusters starting on **1 July 2021**. For more information, see [Data center closures in 2021](/docs/get-support?topic=get-support-dc-closure). |
 | 02 April 2021 | **Master versions**: Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.22_1538_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4622_1538). |
 | 01 April 2021 | <ul><li>**Cluster autoscaler add-on**: [Patch update `1.0.2_249`](/docs/openshift?topic=openshift-ca_changelog) of the cluster autoscaler add-on is available.</li><li>**{{site.data.keyword.block_storage_is_short}} add-on**: [Patch update `3.0.0_521`](/docs/openshift?topic=openshift-vpc_bs_changelog) of the {{site.data.keyword.block_storage_is_short}} add-on is available.</li><li>**{{site.data.keyword.block_storage_is_short}} driver**: Added steps to install the `vpc-block-csi-driver` on unmanaged clusters. For more information, see [Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged).</li><li>**New! image security add-on**: In clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or later, you can [install the container image security enforcement add-on](/docs/openshift?topic=openshift-images#portieris-image-sec) to set up the [Portieris](https://github.com/IBM/portieris){: external} project in your cluster.</li></ul> |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
