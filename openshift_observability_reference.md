@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-06"
 
 keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logging config, monitoring config
 
@@ -103,10 +103,9 @@ Looking for `ibmcloud oc` commands? See the [{{site.data.keyword.openshiftlong_n
 {:tip}
 
 ## Logging commands
-
-
+{: #logging-commands}
 ### `ibmcloud ob logging agent discover`
-{:  #logging_agent_discover}
+{: #logging_agent_discover}
 
 Discover {{site.data.keyword.la_short}} agents that you manually installed in your cluster without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, and make this logging configuration visible to the plug-in so that you can use the observability plug-in commands and functionality in the {{site.data.keyword.cloud_notm}} console to manage this configuration.
 {: shortdesc}
@@ -370,7 +369,7 @@ ibmcloud ob logging config show --cluster CLUSTER --instance LOGGING_INSTANCE
 
 
 ### `ibmcloud ob monitoring agent discover`
-{:  #monitoring_agent_discover}
+{: #monitoring_agent_discover}
 
 Discover {{site.data.keyword.mon_short}} agents that you manually installed in your cluster without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, and make this monitoring configuration visible to the plug-in so that you can use the observability plug-in commands and functionality in the {{site.data.keyword.cloud_notm}} console to manage this configuration.
 {: shortdesc}

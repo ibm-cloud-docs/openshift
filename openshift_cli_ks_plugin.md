@@ -814,7 +814,7 @@ ibmcloud oc cluster get --cluster my_cluster --show-resources
 </br>
 
 ### `ibmcloud oc cluster image-security disable`
-{: #cs-image-security-enable}
+{: #cs-image-security-disable}
 
 Disable [image security enforcement](/docs/openshift?topic=openshift-images#portieris-image-sec). When you disable the feature, the underlying `ClusterImagePolicy` CRD is removed, which removes all of the default image policies and any custom images policies that you created.
 {: shortdesc}
@@ -1687,7 +1687,7 @@ ibmcloud oc cluster user-subnet rm --cluster my_cluster --subnet-cidr 169.xx.xxx
 <br />
 
 ## `worker` commands
-{: worker_node_commands}
+{: #worker_node_commands}
 
 View and modify worker nodes for a cluster.
 {: shortdesc}
