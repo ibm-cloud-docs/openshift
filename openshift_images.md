@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-06"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -491,7 +491,7 @@ For more information, see the [Portieris documentation](https://github.com/IBM/p
 
 **CLI**: See the following commands.
 * [`ibmcloud oc cluster image-security enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs-image-security-enable)
-* [`ibmcloud oc cluster image-security disable`](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs-image-security-disable)
+* [`ibmcloud oc cluster image-security disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs-image-security-disable)
 
 **Console**:
 1.  From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-02"
+lastupdated: "2021-04-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -183,11 +183,6 @@ Before you create your cluster and install Portworx, review the following planni
 5. [Set up encryption](#setup_encryption).
 6. Install or migrate to [Helm version 3](/docs/openshift?topic=openshift-helm).
 7. [Install Portworx](#install_portworx).
-8. Maintain the lifecycle of your Portworx deployment in your cluster.
-   1. When you update worker nodes in [VPC](#portworx_vpc_up) clusters, you must take additional steps to re-attach your Portworx volumes. You can attach your storage volumes by using the API or CLI.
-      * [Attaching {{site.data.keyword.block_storage_is_short}} volumes with the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_cr).
-      * [Attaching {{site.data.keyword.block_storage_is_short}} volumes with the API](/docs/openshift?topic=openshift-utilities#vpc_api_attach).
-   2. To remove a Portworx volume, storage node, or the entire Portworx cluster, see [Portworx cleanup](#portworx_cleanup).
 
 ## Creating raw, unformatted, and unmounted block storage for VPC and non-SDS classic worker nodes
 {: #create_block_storage}
@@ -390,7 +385,7 @@ The following image illustrates the decryption workflow in Portworx when you set
 Follow these steps to set up encryption for your Portworx volumes.
 {: shortdesc}
 
-1. Make sure that you are [assigned the `Editor` platform access role and the `Writer` service access role](/docs/key-protect?topic=key-protect-grant-access-keys#manage-access) in {{site.data.keyword.cloud_notm}} Identity and Access Management for the KMS provider that you want to use.
+1. Make sure that you are [assigned the `Editor` platform access role and the `Writer` service access role](/docs/key-protect?topic=key-protect-grant-access-keys) in {{site.data.keyword.cloud_notm}} Identity and Access Management for the KMS provider that you want to use.
 
 2. Create a service instance of the KMS provider that you want to use. Note the name of the service instance that you created.
    * **[{{site.data.keyword.keymanagementservicelong_notm}}](/docs/key-protect?topic=key-protect-provision)**

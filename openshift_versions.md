@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-04-06"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -90,7 +90,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
+
 
 
 # Version information and update actions
@@ -211,7 +211,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
   <td>Aug 2021 `†`</td>
 </tr>
 <tr>
-  <td><img src="images/checkmark-filled.png" align="left" width="32" style="width:32px;" alt="This version is supported."/></td>
+  <td><img src="images/warning-filled.png" align="left" width="32" style="width:32px;" alt="This version is deprecated."/></td>
   <td>4.4 / 1.17</td>
   <td>21 Jul 2020</td>
   <td>31 May 2021 `†`</td>

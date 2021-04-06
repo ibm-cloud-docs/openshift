@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-06"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -814,7 +814,7 @@ ibmcloud oc cluster get --cluster my_cluster --show-resources
 </br>
 
 ### `ibmcloud oc cluster image-security disable`
-{: #cs-image-security-enable}
+{: #cs-image-security-disable}
 
 Disable [image security enforcement](/docs/openshift?topic=openshift-images#portieris-image-sec). When you disable the feature, the underlying `ClusterImagePolicy` CRD is removed, which removes all of the default image policies and any custom images policies that you created.
 {: shortdesc}
@@ -1687,7 +1687,7 @@ ibmcloud oc cluster user-subnet rm --cluster my_cluster --subnet-cidr 169.xx.xxx
 <br />
 
 ## `worker` commands
-{: worker_node_commands}
+{: #worker_node_commands}
 
 View and modify worker nodes for a cluster.
 {: shortdesc}
@@ -6557,7 +6557,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --pull-secr
 <dd>Required. Enter the {{site.data.keyword.openshiftlong_notm}} version that you want to run in your cluster. For a list of supported versions, run <code>ibmcloud oc versions</code>.</dd>
 
 <dt><code>--enable-admin-agent</code></dt>
-<dd>Optional. Grant the {{site.data.keyword.satelliteshort}} Config service accounts access to the cluster admin role to manage Kubernetes resources.</dd>
+<dd>Optional. Grant the {{site.data.keyword.satelliteshort}} Config service accounts access to the cluster admin role to manage Kubernetes resources. If you do not grant {{site.data.keyword.satelliteshort}} Config access, you cannot later use the {{site.data.keyword.satelliteshort}} Config functionality to view or deploy Kubernetes resources for your clusters. If you want to enable access later, you can [create custom RBAC roles for {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-access).</dd>
 
 <dt><code>--host-label, -hl <em>LABEL</em></code></dt>
 <dd>Optional. Enter existing labels that describe {{site.data.keyword.satelliteshort}} hosts, formatted as `-hl key=value` pairs, so hosts with matching labels can be automatically assigned as worker nodes for the cluster. To find available host labels, run <code>ibmcloud sat host get --host &lt;host_name_or_ID&gt; --location &lt;location_name_or_ID&gt;</code>.</dd>

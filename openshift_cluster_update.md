@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-04-06"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade, update
 
@@ -427,9 +427,7 @@ You VPC worker node is replaced by removing the old worker node and provisioning
 
 **What if I replace multiple worker nodes at the same time?**
 
-If you replace multiple worker nodes at the same ti**
-ey are deleted and replaced concurrently, not one by one. Make sure that you have enough capacity in your cluster to reschedule your workloads before you replace worker nodes.
-**
+If you replace multiple worker nodes at the same time, they are deleted and replaced concurrently, not one by one. Make sure that you have enough capacity in your cluster to reschedule your workloads before you replace worker nodes.
 
 **What if a replacement worker node is not created?**
 
@@ -477,9 +475,6 @@ Before you update your VPC worker nodes, review the prerequisite steps.
        {: pre}
 6.  Repeat these steps for each worker node that you must update.
 7.  Optional: After the replaced worker nodes are in a **Ready** status, [resize the worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) to meet the cluster capacity that you want.
-
-If you are running Portworx in your VPC cluster, you must [manually attach your {{site.data.keyword.block_storage_is_short}} volume to your new worker node.](/docs/containers?topic=containers-portworx#portworx_vpc_up)
-{: note}
 
 ### Updating VPC worker nodes in the console
 {: #vpc_worker_ui}
