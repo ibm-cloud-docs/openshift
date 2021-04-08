@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-04-08"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -442,7 +442,7 @@ Consider the following options to increase availability of your app.
 </dl>
 
 ### How can I scale my app?
-{: scale}
+{: #scale}
 
 If you want to dynamically add and remove apps in response to workload usage, see [Scaling apps](/docs/openshift?topic=openshift-update_app#app_scaling) for steps to enable horizontal pod autoscaling.
 {: shortdesc}

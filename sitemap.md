@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-04-07"
+lastupdated: "2021-04-08"
 
 keywords: openshift
 subcollection: openshift
@@ -865,7 +865,7 @@ subcollection: openshift
   * [How can I add IBM services to my app, such as {{site.data.keyword.watson}}?](/docs/openshift?topic=openshift-plan_deploy#services_ibm)
 * [Planning highly available deployments](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps)
   * [How can I increase the availability of my app?](/docs/openshift?topic=openshift-plan_deploy#increase_availability)
-  * [How can I scale my app?](/docs/openshift?topic=openshift-plan_deploy#how-can-i-scale-my-app?)
+  * [How can I scale my app?](/docs/openshift?topic=openshift-plan_deploy#scale)
 * [Versioning and updating apps](/docs/openshift?topic=openshift-plan_deploy#updating)
   * [How can I organize my deployments to make them easier to update and manage?](/docs/openshift?topic=openshift-plan_deploy#deploy_organize)
   * [What app update strategies can I use?](/docs/openshift?topic=openshift-plan_deploy#updating_apps_strategy)
@@ -1368,7 +1368,7 @@ subcollection: openshift
 * [Creating the image pull secret in your cluster](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-create-storage-secret)
 * [Creating the {{site.data.keyword.block_storage_is_short}} driver deployment](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-deploy-cm)
 * [Deploying a stateful set that uses {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-stateful-set-deploy)
-* [Removing the {{site.data.keyword.block_storage_is_short}} driver](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#removing-the-{{site.data.keyword.block_storage_is_short}}-driver)
+* [Removing the {{site.data.keyword.block_storage_is_short}} driver](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#removing-the-block-storage-for-vpc-driver)
 * [Config map reference](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-cm-ref)
   * [RHEL or CentOS configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-rhel-cm)
   * [Ubuntu configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
