@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-04-08"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -90,7 +90,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
+
 
 # Encrypting routes with keys stored in {{site.data.keyword.hscrypto}}
 {: #hpcs-router}
@@ -433,3 +433,8 @@ After you obtain the certificate from your certificate authority, use the certif
 4. Verify that the TLS session is correctly established by making `https` calls to your app's route.
 
 5. Optional: Customize routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.5/networking/routes/route-configuration.html){: external}. For example, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.5/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}.
+
+## Version history
+{: #hpcs-versions}
+
+For the list of changes for each {{site.data.keyword.cloud_notm}} HPCS Router add-on version, see the [{{site.data.keyword.cloud_notm}} HPCS Router add-on changelog](/docs/openshift?topic=openshift-hpcs-router-changelog).

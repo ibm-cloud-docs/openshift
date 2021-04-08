@@ -970,6 +970,7 @@ subcollection: openshift
 * [Step 3: Create and integrate a router with {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-hpcs-router#create-hpcs-router)
 * [Step 4: Create a route certificate that uses a private key from {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-hpcs-router#generate-csr)
 * [Step 5: Create an encrypted route with the certificate](/docs/openshift?topic=openshift-hpcs-router#create-route)
+* [Version history](/docs/openshift?topic=openshift-hpcs-router#hpcs-versions)
 
 [Exposing apps with routes in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-routes-311)
 * [Overview](/docs/openshift?topic=openshift-routes-311#routes-overview)
@@ -1827,6 +1828,13 @@ subcollection: openshift
 
 [Back up and restore Helm chart](/docs/openshift?topic=openshift-backup_restore_changelog)
 * [Changelog for 1.0.5](/docs/openshift?topic=openshift-backup_restore_changelog#0105_br_chart)
+
+[{{site.data.keyword.cloud_notm}} HPCS Router add-on changelog](/docs/openshift?topic=openshift-hpcs-router-changelog)
+* [Version 4.6.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0)
+* [Version 4.5.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0)
+
+[{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog)
+* [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0)
 
 [Archived {{site.data.keyword.openshiftshort}} version changelogs](/docs/openshift?topic=openshift-changelog_archive)
 * [Version 4.3 changelog (unsupported as of 7 March 2021)](/docs/openshift?topic=openshift-changelog_archive#version-43)

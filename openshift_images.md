@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-04-08"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -349,6 +349,9 @@ To deploy containers that use encrypted images:
 
 If you later decide to disable the add-on, the `addon-image-key-syncrhonizer` daemon set is removed, but the `image-key-synchronizer` project and any secrets that you created in that project are not removed, and the container runtime can still use the secrets to run encrypted images. If you want to remove the keys from your worker nodes as well, you must delete the corresponding secrets from the `image-key-synchronizer` project before you disable the add-on.
 {: note}
+
+For the list of changes for each Image Key Synchronizer add-on version, see the [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+{: tip}
 
 <br />
 
