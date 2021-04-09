@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-04-09"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -93,7 +93,7 @@ subcollection: openshift
  
 
 
-# Classic: Configuring subnets and IP addresses
+# Configuring classic subnets and IP addresses
 {: #subnets}
 
 Change the pool of available portable public or private IP addresses by adding subnets to your {{site.data.keyword.openshiftlong}} cluster.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-08"
 
 keywords: openshift, roks, vpc, block storage
 
@@ -390,6 +390,7 @@ After you deploy the {{site.data.keyword.block_storage_is_short}} driver, you ca
 <br />
 
 ## Removing the {{site.data.keyword.block_storage_is_short}} driver
+{: #removing-the-block-storage-for-vpc-driver}
 If you no longer want to use the {{site.data.keyword.block_storage_is_short}} driver in your cluster, you can remove the configmap to remove the driver pods.
 {: shortdesc}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-04-09"
 
 keywords: openshift
 subcollection: openshift
@@ -703,7 +703,7 @@ subcollection: openshift
 {: #sitemap_classic_clusters_}
 
 
-[Classic: Configuring subnets and IP addresses](/docs/openshift?topic=openshift-subnets)
+[Configuring classic subnets and IP addresses](/docs/openshift?topic=openshift-subnets)
 * [Overview of classic networking in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-subnets#basics)
   * [VLANs](/docs/openshift?topic=openshift-subnets#basics_vlans)
   * [Subnets and IP addresses](/docs/openshift?topic=openshift-subnets#basics_subnets)
@@ -720,12 +720,12 @@ subcollection: openshift
   * [Managing subnet routing for gateway appliances](/docs/openshift?topic=openshift-subnets#vra-routing)
 * [Removing subnets from a cluster](/docs/openshift?topic=openshift-subnets#remove-subnets)
 
-[Classic: Changing service endpoints or VLAN connections in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-cs_network_cluster)
+[Changing service endpoints or VLAN connections in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-cs_network_cluster)
 * [Setting up the private cloud service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-private-se)
 * [Setting up the public cloud service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se)
 * [Changing your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans)
 
-[Classic: Setting up VPN connectivity](/docs/openshift?topic=openshift-vpn)
+[Setting up classic VPN connectivity](/docs/openshift?topic=openshift-vpn)
 * [Using the strongSwan IPSec VPN service Helm chart](/docs/openshift?topic=openshift-vpn#vpn-setup)
 * [strongSwan VPN service considerations](/docs/openshift?topic=openshift-vpn#strongswan_limitations)
 * [Configuring the strongSwan VPN in a multizone cluster](/docs/openshift?topic=openshift-vpn#vpn_multizone)
@@ -865,7 +865,7 @@ subcollection: openshift
   * [How can I add IBM services to my app, such as {{site.data.keyword.watson}}?](/docs/openshift?topic=openshift-plan_deploy#services_ibm)
 * [Planning highly available deployments](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps)
   * [How can I increase the availability of my app?](/docs/openshift?topic=openshift-plan_deploy#increase_availability)
-  * [How can I scale my app?](/docs/openshift?topic=openshift-plan_deploy#how-can-i-scale-my-app?)
+  * [How can I scale my app?](/docs/openshift?topic=openshift-plan_deploy#scale)
 * [Versioning and updating apps](/docs/openshift?topic=openshift-plan_deploy#updating)
   * [How can I organize my deployments to make them easier to update and manage?](/docs/openshift?topic=openshift-plan_deploy#deploy_organize)
   * [What app update strategies can I use?](/docs/openshift?topic=openshift-plan_deploy#updating_apps_strategy)
@@ -970,6 +970,7 @@ subcollection: openshift
 * [Step 3: Create and integrate a router with {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-hpcs-router#create-hpcs-router)
 * [Step 4: Create a route certificate that uses a private key from {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-hpcs-router#generate-csr)
 * [Step 5: Create an encrypted route with the certificate](/docs/openshift?topic=openshift-hpcs-router#create-route)
+* [Version history](/docs/openshift?topic=openshift-hpcs-router#hpcs-versions)
 
 [Exposing apps with routes in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-routes-311)
 * [Overview](/docs/openshift?topic=openshift-routes-311#routes-overview)
@@ -1368,7 +1369,7 @@ subcollection: openshift
 * [Creating the image pull secret in your cluster](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-create-storage-secret)
 * [Creating the {{site.data.keyword.block_storage_is_short}} driver deployment](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-deploy-cm)
 * [Deploying a stateful set that uses {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-stateful-set-deploy)
-* [Removing the {{site.data.keyword.block_storage_is_short}} driver](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#removing-the-{{site.data.keyword.block_storage_is_short}}-driver)
+* [Removing the {{site.data.keyword.block_storage_is_short}} driver](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#removing-the-block-storage-for-vpc-driver)
 * [Config map reference](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-cm-ref)
   * [RHEL or CentOS configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-rhel-cm)
   * [Ubuntu configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
@@ -1821,11 +1822,19 @@ subcollection: openshift
 * [Changelog for version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [Object storage plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog)
+* [Changelog for version 2.0.7](/docs/openshift?topic=openshift-cos_plugin_changelog#0207_object_plugin)
 * [Changelog for version 2.0.6](/docs/openshift?topic=openshift-cos_plugin_changelog#0206_object_plugin)
 * [Changelog for version 2.0.5](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_object_plugin)
 
 [Back up and restore Helm chart](/docs/openshift?topic=openshift-backup_restore_changelog)
 * [Changelog for 1.0.5](/docs/openshift?topic=openshift-backup_restore_changelog#0105_br_chart)
+
+[{{site.data.keyword.cloud_notm}} HPCS Router add-on changelog](/docs/openshift?topic=openshift-hpcs-router-changelog)
+* [Version 4.6.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0)
+* [Version 4.5.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0)
+
+[{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog)
+* [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0)
 
 [Archived {{site.data.keyword.openshiftshort}} version changelogs](/docs/openshift?topic=openshift-changelog_archive)
 * [Version 4.3 changelog (unsupported as of 7 March 2021)](/docs/openshift?topic=openshift-changelog_archive#version-43)

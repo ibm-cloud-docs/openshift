@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-08"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -121,11 +121,12 @@ If you installed an admission controller that blocks unsigned images, such as [P
 To enable a managed add-on in your cluster from the CLI, use the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable). To enable a managed add-on in your cluster in the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, use the **Add-ons** pane of the cluster details page. When you enable the managed add-on, a supported version of the tool, including all Kubernetes resources are automatically installed in your cluster. Refer to the documentation of each managed add-on to find the prerequisites that your cluster must meet to install the managed add-on.
 
 For more information about the prerequisites for each add-on, see:
-- [Kubernetes web terminal](/docs/containers?topic=containers-cs_cli_install#cli_web)
 - [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block)
-- [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility)
-- [Static routes](/docs/openshift?topic=openshift-static-routes)
 - [Cluster Autoscaler](/docs/openshift?topic=openshift-ca)
+- [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility)
+- [HPCS Router](/docs/openshift?topic=openshift-hpcs-router)
+- [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
+- [Static routes](/docs/openshift?topic=openshift-static-routes)
 
 ## Updating managed add-ons
 {: #updating-managed-add-ons}
@@ -145,7 +146,7 @@ The versions of each managed add-on are tested by {{site.data.keyword.cloud_notm
 
 You can check the health state and status of a cluster add-on by running the following command:
 ```
-ibmcloud oc cluster addons -c <cluster_name_or_ID>
+ibmcloud oc cluster addon ls -c <cluster_name_or_ID>
 ```
 {: pre}
 

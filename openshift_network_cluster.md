@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-31"
+lastupdated: "2021-04-09"
 
 keywords: openshift, roks, rhos, rhoks, vlan
 
@@ -93,7 +93,7 @@ subcollection: openshift
  
 
 
-# Classic: Changing service endpoints or VLAN connections in {{site.data.keyword.openshiftshort}} 3.11
+# Changing service endpoints or VLAN connections in {{site.data.keyword.openshiftshort}} 3.11
 {: #cs_network_cluster}
 
 After you initially set up your network when you [create a cluster](/docs/openshift?topic=openshift-clusters), you can change the service endpoints that your cluster master is accessible through or change the VLAN connections for your worker nodes.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-04-07"
 
 keywords: object storage, plug-in, changelog
 
@@ -103,21 +103,33 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | Object Storage plug-in version | Supported? | {{site.data.keyword.openshiftshort}} version support |
 | -------------------- | -----------|--------------------------- |
+| 2.0.7 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
 | 2.0.6 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
 | 2.0.5 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
 {: caption="Object Storage plug-in versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the Object Storage plug-in version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the Object Storage plug-in version is supported for."}
 
+## Changelog for version 2.0.7
+{: #0207_object_plugin}
+
+| Version | Image tags | Release date | Description |
+| --- | --- | --- | --- |
+| `2.0.7` | `1.8.24` | 26 March 2021 | Updates in this version: <ul><li>Updates the Go version to `1.15.8`.</li><li>The plug-in now uses a universal base image (UBI).</li><li>Fixes for [CVE-2021-3114](https://nvd.nist.gov/vuln/detail/CVE-2021-3114){: external}, [CVE-2021-3115](https://nvd.nist.gov/vuln/detail/CVE-2021-3115){: external}, [CVE-2020-28852](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28852){: external}, and [CVE-2020-28851](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28851){: external}.</li></ul> |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Object Storage plug-in version 2.0.7" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the version of the component. The second column contains image tag. The third column contains the release date of the component. The fourth column contains a brief description of the change made to the component."}
+
 ## Changelog for version 2.0.6
 {: #0206_object_plugin}
 
-| Version | Image tags | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
+| Version | Image tags | Release date | Description |
 | --- | --- | --- | --- |
-| `2.0.6` | `1.8.23` | 18 December 2020 | 4.3 - 4.6 | Updates in this version: <ul><li>The `1.8.23` image is signed.</li><li>Updates the Go version to `1.15.5`.</li><li>Fixes `CVE-2020-28362`, `CVE-2020-28367`, and `CVE-2020-28366`.</li><li>Resources that are deployed by the Object Storage plug-in are now linked with the corresponding source code and build URLs.</li><li>The Object Storage plug-in now pulls the universal base image (UBI) from the proxy image registry.</li></ul> |
+| `2.0.6` | `1.8.23` | 18 December 2020 | Updates in this version: <ul><li>The `1.8.23` image is signed.</li><li>Updates the Go version to `1.15.5`.</li><li>Fixes `CVE-2020-28362`, `CVE-2020-28367`, and `CVE-2020-28366`.</li><li>Resources that are deployed by the Object Storage plug-in are now linked with the corresponding source code and build URLs.</li><li>The Object Storage plug-in now pulls the universal base image (UBI) from the proxy image registry.</li></ul> |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Object Storage plug-in version 2.0.6" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the version of the component. The second column contains image tag. The third column contains the release date of the component. The fourth column contains the supported cluster versions. The fifth column contains a brief description of the change made to the component."}
+{: summary="The rows are read from left to right. The first column is the version of the component. The second column contains image tag. The third column contains the release date of the component. The fourth column contains a brief description of the change made to the component."}
 
 
 <br />
@@ -127,11 +139,10 @@ Refer to the following tables for a summary of changes for each version of the [
 The following table shows the changes that are included in version 2.0.5 of the Object Storage plug-in.
 {: shortdesc}
 
-
-| Version | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
-| --- | --- | --- | --- |
-| `2.0.5` | 25 November 2020 | 4.3 - 4.6 | Fixes a `NilPointer` error and the following CVEs: `CVE-2018-20843`, `CVE-2019-13050`, `CVE-2019-13627`, `CVE-2019-14889`, `CVE-2019-1551`, `CVE-2019-15903`, `,CVE-2019-16168`, `CVE-2019-16935`, `CVE-2019-19221`, `CVE-2019-19906`, `CVE-2019-19956`, `CVE-2019-20218`, `CVE-2019-20386`, `CVE-2019-20387`, `CVE-2019-20388`, `CVE-2019-20454`, `CVE-2019-20907`, `CVE-2019-5018`, `CVE-2020-10029`, `CVE-2020-13630`, `CVE-2020-13631`, `CVE-2020-13632`, `CVE-2020-14422`, `CVE-2020-1730`, `CVE-2020-1751`, `CVE-2020-1752`, `CVE-2020-6405`, `CVE-2020-7595`, and `CVE-2020-8177`. |
+| Version | Release date | Description |
+| --- | --- | --- |
+| `2.0.5` | 25 November 2020 | Fixes a `NilPointer` error and the following CVEs: `CVE-2018-20843`, `CVE-2019-13050`, `CVE-2019-13627`, `CVE-2019-14889`, `CVE-2019-1551`, `CVE-2019-15903`, `,CVE-2019-16168`, `CVE-2019-16935`, `CVE-2019-19221`, `CVE-2019-19906`, `CVE-2019-19956`, `CVE-2019-20218`, `CVE-2019-20386`, `CVE-2019-20387`, `CVE-2019-20388`, `CVE-2019-20454`, `CVE-2019-20907`, `CVE-2019-5018`, `CVE-2020-10029`, `CVE-2020-13630`, `CVE-2020-13631`, `CVE-2020-13632`, `CVE-2020-14422`, `CVE-2020-1730`, `CVE-2020-1751`, `CVE-2020-1752`, `CVE-2020-6405`, `CVE-2020-7595`, and `CVE-2020-8177`. |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Object Storage plug-in version 2.0.5" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the version of the component. The second column contains the release date of the component. The third column contains the supported cluster versions. The fourth column contains a brief description of the change made to the component."}
+{: summary="The rows are read from left to right. The first column is the version of the component. The second column contains the release date of the component. The third column contains a brief description of the change made to the component."}

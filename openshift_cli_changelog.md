@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-04-09"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, oc, ibmcloud oc
 
@@ -110,7 +110,7 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 
 |Version|Release date|Changes|
 |-------|------------|-------|
-| 1.0.233 | 01 Mar 2021 | [Removes `beta` tags from `ibmcloud sat` commands for the generally available release of {{site.data.keyword.satellitelong_notm}}.](/docs/satellite?topic=satellite-satellite-cli-changelog). |
+| 1.0.233 | 01 Mar 2021 | <ul><li>Adds `satellite` as a supported provider to the output of the `ibmcloud oc cluster ls` command.</li><li>[Removes `beta` tags from `ibmcloud sat` commands for the generally available release of {{site.data.keyword.satellitelong_notm}}.](/docs/satellite?topic=satellite-satellite-cli-changelog).</li></ul> |
 | 1.0.231 | 25 Feb 2021 | <ul><li>Updates the Go version to 1.15.8.</li><li>Updates the help text in various languages.</li></ul> |
 | 1.0.223 | 08 Feb 2021 | <ul><li>Adds the [`ibmcloud oc worker-pool label set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_set) and [`ibmcloud oc worker-pool label rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_rm) commands to set and remove custom Kubernetes labels for all worker nodes in a worker pool.</li><li>[Adds several commands and command changes for managing {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-satellite-cli-changelog).</li></ul> |
 | 1.0.208 | 18 Dec 2020 | Updates the help text in various languages. |
