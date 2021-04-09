@@ -703,7 +703,7 @@ subcollection: openshift
 {: #sitemap_classic_clusters_}
 
 
-[Classic: Configuring subnets and IP addresses](/docs/openshift?topic=openshift-subnets)
+[Configuring classic subnets and IP addresses](/docs/openshift?topic=openshift-subnets)
 * [Overview of classic networking in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-subnets#basics)
   * [VLANs](/docs/openshift?topic=openshift-subnets#basics_vlans)
   * [Subnets and IP addresses](/docs/openshift?topic=openshift-subnets#basics_subnets)
@@ -720,12 +720,12 @@ subcollection: openshift
   * [Managing subnet routing for gateway appliances](/docs/openshift?topic=openshift-subnets#vra-routing)
 * [Removing subnets from a cluster](/docs/openshift?topic=openshift-subnets#remove-subnets)
 
-[Classic: Changing service endpoints or VLAN connections in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-cs_network_cluster)
+[Changing service endpoints or VLAN connections in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-cs_network_cluster)
 * [Setting up the private cloud service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-private-se)
 * [Setting up the public cloud service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se)
 * [Changing your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans)
 
-[Classic: Setting up VPN connectivity](/docs/openshift?topic=openshift-vpn)
+[Setting up classic VPN connectivity](/docs/openshift?topic=openshift-vpn)
 * [Using the strongSwan IPSec VPN service Helm chart](/docs/openshift?topic=openshift-vpn#vpn-setup)
 * [strongSwan VPN service considerations](/docs/openshift?topic=openshift-vpn#strongswan_limitations)
 * [Configuring the strongSwan VPN in a multizone cluster](/docs/openshift?topic=openshift-vpn#vpn_multizone)
