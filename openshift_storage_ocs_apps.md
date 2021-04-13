@@ -92,6 +92,7 @@ subcollection: openshift
 {:video: .video}
  
 
+
 # Deploying an app that uses OpenShift Container Storage
 {: #ocs-deploy-app}
 

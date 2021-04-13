@@ -92,8 +92,10 @@ subcollection: openshift
 {:video: .video}
  
 
+
 # Installing OpenShift Container Storage in your cluster
 {: #ocs-storage-install}
+
 OpenShift Container Storage is a highly available storage solution that you can use to manage persistent storage for your containerized databases and other stateful apps in {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
@@ -130,6 +132,7 @@ The following table provides an overview of the benefits and supported features 
 
 ## Installing the OCS add-on
 {: #install-ocs-addon}
+
 You can install the OCS cluster add-on from the console or the CLI.
 {: shortdesc}
 
@@ -196,6 +199,7 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
 
 ### Installing the OpenShift Container Storage add-on from the console
 {: #install-ocs-console}
+
 To install OCS in your cluster, complete the following steps.
 {: shortdesc}
 
@@ -207,6 +211,7 @@ To install OCS in your cluster, complete the following steps.
 
 ### Installing the OpenShift Container Storage add-on from the CLI
 {: install-ocs-cli}
+
 You can install the OCS add-on by using the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable).
 {: shortdesc}
 
@@ -232,6 +237,7 @@ You can install the OCS add-on by using the [`ibmcloud oc cluster addon enable` 
 
 ### Removing the OpenShift Container Storage add-on from your cluster
 {: #ocs-addon-rm}
+
 You can remove OCS add-on from your cluster by using the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or the CLI.
 {: shortdesc}
 
@@ -251,6 +257,7 @@ To uninstall the OpenShift Container Storage add-on from your cluster, complete 
 
 #### Uninstalling the OpenShift Container Storage add-on from the CLI
 {: #ocs-addon-rm-cli}
+
 You can uninstall the OpenShift Container Storage add-on from your cluster by using the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or the CLI.
 {: shortdesc}
 
@@ -272,6 +279,7 @@ You can uninstall the OpenShift Container Storage add-on from your cluster by us
 
 ## Installing OpenShift Container Storage from OperatorHub
 {: #ocs-install-oh}
+
 Before you can install OCS from OperatorHub, you must deploy the following configmap to your cluster to set update the kubelet path for the OCS drivers.
 {: shortdesc}
 

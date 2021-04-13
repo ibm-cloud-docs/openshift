@@ -92,8 +92,10 @@ subcollection: openshift
 {:video: .video}
  
 
+
 # Managing your OpenShift Container Storage deployment
-{: #ocs-manage}
+{: #ocs-manage-deployment}
+
 Review the following topics to manage your OpenShift Container Storage deployment.
 
 ## VPC: Expanding OCS by adding worker nodes
@@ -101,7 +103,6 @@ Review the following topics to manage your OpenShift Container Storage deploymen
 
 To increase the storage capacity that is available to OpenShift Container Storage, add compatible worker nodes to your cluster.
 {: shortdesc}
-
 
 1. Expand the worker pool of the cluster used for OCS by [adding worker nodes](/docs/openshift?topic=openshift-add_worker nodes). Ensure that your worker nodes meet the [requirements for OCS](#ocs-storage-classic). If you deployed OCS on all of the worker nodes in your cluster, the OCS drivers are installed on the new worker nodes when they are added to your cluster.
 2. If you deployed OCS on a subset of worker nodes in your cluster by specifying the `<worker-IP>` parameters in your `OcsCluster` custom resource, you can add the IP addresses of the new worker nodes to your OCS deployment by editing the custom resource definition.
@@ -114,7 +115,8 @@ To increase the storage capacity that is available to OpenShift Container Storag
 <br />
 
 ## VPC: Scaling OCS by increasing the `numOfOsd`
-{: #ocs-remote-scale-config}
+{: #ocs-vpc-scaling-config}
+
 You can scale your OCS configuration by increasing the `numOfOsd` setting. When you increase the number of OSDs, OCS provisions that number of disks of the same `osdSize` capacity in GB in each of the worker nodes in your OCS cluster. However, the total storage that is available to your applications is equal to the number of worker nodes multiplied by the `osdSize` multiplied by the `numOfOsd`, and then divided by the replication factor, which is a constant of 3. 
 {: shortdesc}
 
@@ -212,7 +214,7 @@ If you deployed OCS by using a CRD, you can update your OCS deployment by editin
 <br />
 
 ## Classic: Increasing storage capacity by adding worker nodes to your cluster
-{: #ocs-add-worker-classic}
+{: #ocs-add-worker-nodes-classic}
 
 To increase the storage capacity that is available to OpenShift Container Storage, add compatible worker nodes to your cluster.
 {: shortdesc}
@@ -232,7 +234,7 @@ To increase the storage capacity that is available to OpenShift Container Storag
 <br />
 
 ## Setting up backing stores by using the NooBaa CLI
-{: #ocs-backing-store}
+{: #ocs-backing-store-setup}
 
 After you deploy OCS, you can configure additional backing stores in your OCS storage cluster. You can create a backing store by using any s3 compatible object store such as AWS or {{site.data.keyword.cos_full_notm}}.
 {: shortdesc}
@@ -280,7 +282,7 @@ To add a backing store to your OCS storage cluster by using the NooBaa CLI:
 <br />
 
 ## Removing OCS from your apps
-{: #ocs-remove-apps}
+{: #ocs-remove-apps-storage}
 
 If you no longer need your OpenShift Container Storage, you can remove your PVC, PV, and the OCS operator from your clusters.
 {: shortdesc}
@@ -392,7 +394,7 @@ When you delete the `OcsCluster` custom resource from your cluster, the followin
 1. **Optional** If you do not want to reinstall OCS, you can [Remove the OCS add-on from your cluster](#ocs-addon-rm-vpc).
 
 ## Cleaning up your OCS deployment
-{: #ocs-rm-cleanup}
+{: #ocs-rm-cleanup-resources}
 
 After you remove OCS from your apps, and remove your OCS storage cluster, you can clean up the remaining Kubernetes resources that were deployed with OCS.
 {: shortdesc}
@@ -432,7 +434,7 @@ After you remove OCS from your apps, and remove your OCS storage cluster, you ca
   {: pre}
 
 ### Classic: Cleaning up OCS
-{: #ocs-cleanup-classic}
+{: #ocs-cleanup-classic-resources}
 
 1. Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
   ```sh
@@ -526,7 +528,7 @@ After you remove OCS from your apps, and remove your OCS storage cluster, you ca
   {: pre}
 
 ## Troubleshooting OCS
-{: #ocs-troubleshoot}
+{: #ocs-troubleshooting-gather}
 
 To gather the information that is needed to troubleshoot OCS, you can use the `oc adm must-gather` command and specify the OCS image. For more information, see [Gathering cluster data](https://docs.openshift.com/container-platform/4.5/support/gathering-cluster-data.html).
 {: shortdesc}

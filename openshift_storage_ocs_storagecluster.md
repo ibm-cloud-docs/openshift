@@ -92,6 +92,7 @@ subcollection: openshift
 {:video: .video}
 
 
+
 # Setting up your storage cluster
 {: #ocs-storage-cluster-setup}
 
@@ -246,6 +247,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 ## Operator: Creating an OCS storage cluster in the web console
 {: #ocs-create-storagecluster-console}
+
 If you installed the OCS operator from OperatorHub, you can use the web console to create a storage cluster.
 
 ### VPC: Creating a storage cluster in the web console
@@ -297,8 +299,11 @@ Complete the following steps only if you installed the OCS Operator from Operato
 
 ## VPC: OpenShift Container Storage parameter reference
 {: #ocs-vpc-param-ref}
+
 Refer to the following OpenShift Container Storage parameters when you use the add-on or operator in VPC clusters.
 {: shortdesc}
+
+
 | Parameter | Description | Default value |
 | --- | --- | --- |
 | `monStorageClassName` | Enter the name of the storage class that you want to use for your monitoring pods. <ul><li><b>Multizone clusters</b>: Enter the name of the metro storage class that you want to use. Metro storage classes have the volume binding mode <code>WaitForFirstConsumer</code> which is required for multizone OCS deployments. Example: <code>ibmc-vpc-block-metro-retain-10iops-tier</code>.</li><li><b>Single zone clusters</b>: Enter the name of the tiered storage class that you want to use. Example: <code>ibmc-vpc-block-10iops-tier</code>. For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block&locale=en#vpc-block-reference).</li></ul> | N/A |
@@ -313,9 +318,13 @@ Refer to the following OpenShift Container Storage parameters when you use the a
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
 
 ## Classic: OpenShift Container Storage parameter reference
-{: #ocs-class-param-ref}
+{: #ocs-classic-param-ref}
+
+
 Refer to the following OpenShift Container Storage parameters when you use the add-on or operator in classic clusters.
 {: shortdesc}
+
+
 | Parameter | Description | Default value |
 | --- | --- | --- |
 | `monStorageClassName` | Enter the name of the storage class that you want to use for your monitoring pods.<ul><li><b>Multizone clusters</b>: Enter the name of the custom storage class that you created earler. Example: <code>ocs-storage-class</code>.</li><li><b>Single zone clusters</b>: Enter the name of the storage class that you want to use. Example: <code>ibmc-block-gold</code>. For more information about storage classes, see the [Storage class reference](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference).</li></ul> | N/A |
@@ -332,7 +341,7 @@ Refer to the following OpenShift Container Storage parameters when you use the a
 <br />
 
 ## Storage class reference
-{: #ocs-sc-ref-vpc}
+{: #ocs-reference-section}
 
 [OCS storage class reference](/docs/openshift?topic=openshift-ocs_sc_ref)
 

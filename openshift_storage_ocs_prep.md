@@ -92,6 +92,7 @@ subcollection: openshift
 {:video: .video}
  
 
+
 # Preparing your cluster for OpenShift Container Storage
 {: #ocs-storage-prep}
 OpenShift Container Storage is a highly available storage solution that you can use to manage persistent storage for your containerized databases and other stateful apps in {{site.data.keyword.openshiftlong}} clusters.
