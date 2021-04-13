@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -327,10 +327,10 @@ If these components fail, review the following debug steps.
 {: note}
 
 1.  Check that your {{site.data.keyword.cloud_notm}} account is set up properly. Some common scenarios that can prevent the default components from running properly include the following:
-    * If you have a firewall, make sure that [open the required ports and IP addresses in your firewall](/docs/openshift?topic=openshift-firewall) so that you do not block any ingress or egress traffic for the OperatorHub or other {{site.data.keyword.openshiftshort}} components.
-    * If your cluster has multiple zones, or if you have a VPC cluster, make sure that you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-subnets#basics_segmentation). To check if VRF is already enabled, run `ibmcloud account show`. To check if VLAN spanning is enabled, run `ibmcloud oc vlan-spanning get`.
+    * If your classic cluster has multiple zones, or if you have a VPC cluster, make sure that you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-subnets#basics_segmentation). To check if VRF is already enabled, run `ibmcloud account show`. To check if VLAN spanning is enabled, run `ibmcloud oc vlan-spanning get`.
     * If some users in the account use a multifactor authentication (MFA) like [TOTP](/docs/account?topic=account-totp), make sure that you [enable MFA](/docs/account?topic=account-enablemfa) for all users in the {{site.data.keyword.cloud_notm}} account.
-2. VPC clusters: Check that a public gateway is enabled on each VPC subnet that your cluster is attached to. Public gateway are required for default components such as the web console and OperatorHub to use a secure, public connection to complete actions such as pulling images from remote, private registries.
+
+2. VPC clusters with public and private cloud service endpoints enabled: Check that a public gateway is enabled on each VPC subnet that your cluster is attached to. Public gateway are required for default components such as the web console and OperatorHub to use a secure, public connection to complete actions such as pulling images from remote, private registries.
     1. Use the {{site.data.keyword.cloud_notm}} console or CLI to [ensure that a public gateway is enabled on each subnet](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet) that your cluster is attached to.
     2. Restart the components for the **Developer catalog** in the web console.
         1. Edit the configmap for the samples operator.
@@ -341,7 +341,12 @@ If these components fail, review the following debug steps.
         2. Change the value of `managementState` from `Removed` to `Managed`.
         3. Save and close the config map. Your changes are automatically applied.
 
-3.  Check that your cluster is set up properly. If you just created your cluster, wait awhile for your cluster components to fully provision.
+3. Check any firewalls or network policies to verify that you do not block any ingress or egress traffic for the OperatorHub or other {{site.data.keyword.openshiftshort}} components.
+    * If you generated an {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) allowlist by specifying which IP addresses have access to your cluster, you must [add the CIDRs of the {{site.data.keyword.openshiftlong_notm}} control plane for the zones in the region where your cluster is located to the allowlist](/docs/openshift?topic=openshift-firewall#iam_allowlist).
+    * Classic only: If you have a firewall, [open the required ports and IP addresses in your firewall](/docs/openshift?topic=openshift-firewall).
+    * VPC only: If you control traffic with VPC ACLs or security groups, make sure that you allow the minimum required [inbound and outbound rules](/docs/openshift?topic=openshift-firewall).
+
+4.  Check that your cluster is set up properly. If you just created your cluster, wait awhile for your cluster components to fully provision.
     1.  Get the details of your cluster.
         ```
         ibmcloud oc cluster get -c <cluster_name_or_ID>
@@ -374,8 +379,13 @@ If these components fail, review the following debug steps.
         ibmcloud oc worker ls -c <cluster_name_or_ID>
         ```
         {: pre}
-3.  [Log in to your cluster](/docs/openshift?topic=openshift-access_cluster). Note that if the {{site.data.keyword.openshiftshort}} web console does not work for you to get the login token, you can [access the cluster from the CLI](/docs/openshift?topic=openshift-access_cluster#access_oc_cli).
-4.  Check the health of the {{site.data.keyword.openshiftshort}} component pods that do not work.
+
+5.  [Log in to your cluster](/docs/openshift?topic=openshift-access_cluster). Note that if the {{site.data.keyword.openshiftshort}} web console does not work for you to get the login token, you can [access the cluster from the CLI](/docs/openshift?topic=openshift-access_cluster#access_oc_cli).
+
+    If you enabled the private cloud service endpoint only for a VPC cluster, you must be [connected to the private network through your VPC VPN connection](/docs/openshift?topic=openshift-access_cluster#vpc_private_se) to access the web console.
+    {: note}
+
+6.  Check the health of the {{site.data.keyword.openshiftshort}} component pods that do not work.
     1.  Check the status of the pod.
         ```
         oc get pods -n <project>
@@ -397,7 +407,8 @@ If these components fail, review the following debug steps.
         oc delete pod -n <project> <pod>
         ```
         {: pre}
-5.  If the pods are healthy, check if other system pods are experiencing issues. Oftentimes to function properly, one component depends on another component to be healthy. For example, the OperatorHub has a set of images that are stored in external registries such as `quay.io`. These images are pulled into the internal registry to use across the projects in your {{site.data.keyword.openshiftshort}} cluster. If any of the OperatorHub or internal registry components are not set up properly, such as due to lack of permissions or compute resources, the OperatorHub and catalog do not display.
+
+7.  If the pods are healthy, check if other system pods are experiencing issues. Oftentimes to function properly, one component depends on another component to be healthy. For example, the OperatorHub has a set of images that are stored in external registries such as `quay.io`. These images are pulled into the internal registry to use across the projects in your {{site.data.keyword.openshiftshort}} cluster. If any of the OperatorHub or internal registry components are not set up properly, such as due to lack of permissions or compute resources, the OperatorHub and catalog do not display.
     1.  Check for pending pods.
         ```
         oc get pods --all-namespaces | grep Pending
@@ -419,7 +430,8 @@ If these components fail, review the following debug steps.
         ibmcloud oc worker reload -c <cluster_name_or_ID> -w <worker_node_ID>
         ```
         {: pre}
-6.  Check that the OpenVPN in the cluster is set up properly.
+
+8.  Check that the OpenVPN in the cluster is set up properly.
     1.  Check that the OpenVPN pod is **Running**.
         ```
         oc get pods -n kube-system -l app=vpn
@@ -456,12 +468,14 @@ If these components fail, review the following debug steps.
         ibmcloud oc worker reload -c <cluster_name_or_ID> -w <worker_node_ID>
         ```
         {: pre}
-7.  Refresh the cluster master to set up the default {{site.data.keyword.openshiftshort}} components. After you refresh the cluster, wait a few minutes to allow the operation to complete.
+
+9.  Refresh the cluster master to set up the default {{site.data.keyword.openshiftshort}} components. After you refresh the cluster, wait a few minutes to allow the operation to complete.
     ```
     ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
     ```
     {: pre}
-7.  Try to use the {{site.data.keyword.openshiftshort}} component again. If the error still exists, see [Feedback, questions, and support](/docs/openshift?topic=openshift-get-help).
+
+10.  Try to use the {{site.data.keyword.openshiftshort}} component again. If the error still exists, see [Feedback, questions, and support](/docs/openshift?topic=openshift-get-help).
 
 <br />
 
