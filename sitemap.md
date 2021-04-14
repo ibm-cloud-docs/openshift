@@ -1432,6 +1432,7 @@ subcollection: openshift
 * [Adding managed add-ons](/docs/openshift?topic=openshift-managed-addons#adding-managed-add-ons)
 * [Updating managed add-ons](/docs/openshift?topic=openshift-managed-addons#updating-managed-add-ons)
 * [Reviewing add-on states and statuses](/docs/openshift?topic=openshift-managed-addons#debug_addons_review)
+* [Supported add-ons for clusters in {{site.data.keyword.satelliteshort}} locations](/docs/openshift?topic=openshift-managed-addons#addons-satellite)
 
 [Adding services by using Helm charts](/docs/openshift?topic=openshift-helm)
 * [About Helm in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-helm#about-helm)

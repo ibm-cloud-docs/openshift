@@ -220,4 +220,3 @@ Before you begin, [prepare your cluster](/docs/openshift?topic=openshift-ocs-sto
 
 
 
-

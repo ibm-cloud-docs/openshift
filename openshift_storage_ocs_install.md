@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-04-14"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -315,6 +315,5 @@ Before you can install OCS from OperatorHub, you must deploy the following confi
 1. Click the **OpenShift Container Storage** and click **Install**
 
 **Next steps**: [Create your OCS storage cluster](/docs/openshift?topic=openshift-ocs-storage-cluster-setup). 
-
 
 
