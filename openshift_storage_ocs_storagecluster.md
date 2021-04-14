@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-04-14"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -114,7 +114,7 @@ After you [prepare your cluster for OCS](/docs/openshift?topic=openshift-ocs-sto
 To create an OCS storage cluster in your VPC Gen 2 cluster, you can create a custom resource that is used to specify storage device details.
 {: shortdesc}
 
-If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you have [created the service instance](/docs/openshift?topic=openshift-ocs-storage-install#ocs-create-cos), and created the Kubernetes secret in your cluster. When you create the OCS CRD in your cluster, OCS looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store that uses your {{site.data.keyword.cos_short}} HMAC credentials.
+If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](/docs/openshift?topic=openshift-ocs-storage-install#ocs-create-cos), and created the Kubernetes secret in your cluster. When you create the OCS CRD in your cluster, OCS looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store that uses your {{site.data.keyword.cos_short}} HMAC credentials.
 {: note}
 
 1. Create a custom resource called `OcsCluster`. Save one of the following custom resource definition files on your local machine and edit it to include the name of the custom storage class that you created earlier as the `monStorageClassName` and `osdStorageClassName` parameters. For more information about the `OcsCluster` parameters, see the [parameter reference](#ocs-vpc-param-ref).
@@ -180,7 +180,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 To deploy OCS in your classic cluster, you can create a custom resource definition that is used to specify your storage device details.
 {: shortdesc}
 
-If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you have [created the service instance](/docs/openshift?topic=openshift-ocs-storage-install#ocs-create-cos), and created the Kubernetes secret in your cluster. When you create the OCS CRD in your cluster, OCS looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store by using your {{site.data.keyword.cos_short}} HMAC credentials.
+If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](/docs/openshift?topic=openshift-ocs-storage-install#ocs-create-cos), and created the Kubernetes secret in your cluster. When you create the OCS CRD in your cluster, OCS looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store by using your {{site.data.keyword.cos_short}} HMAC credentials.
 {: note}
 
 1. Create a custom resource called `OcsCluster`. Save and edit the following custom resource definition to include the device paths for the local disks [that you retrieved earlier](/docs/openshift?topic=openshift-ocs-classic-get-devices). If you do not provide the optional `workerNodes` parameter, then all of the worker nodes in your cluster are used for the OCS deployment. Be sure to include the `/dev/disk/by-id/` path when you specify your storage devices.
@@ -262,15 +262,15 @@ Complete the following steps only if you installed the OCS Operator from Operato
 1. From the {{site.data.keyword.openshiftshort}} web console, click **Operators** > **Installed Operators**.
 1. Click the **OpenShift Container Storage operator**, then click the **Storage Cluster** tab and **Create Storage Cluster**
 1. On the **Create Storage Cluster** page, make sure that the **Internal** tab is selected.
-1. In the **Storage Class** dropdown menu, select the {{site.data.keyword.block_storage_is_short}} that you want to use for your OCS volumes.
-1. In the **OCS Service Capacity** dropdown menu, select the size of the OCS storage cluster that you want to create.
+1. In the **Storage Class** menu, select the {{site.data.keyword.block_storage_is_short}} that you want to use for your OCS volumes.
+1. In the **OCS Service Capacity** menu, select the size of the OCS storage cluster that you want to create.
 1. Enable or disable encrytion.
 1. In the **Nodes** section, select the worker nodes where you want to provision the volumes for your OCS storage cluster.
 1. Click **Create** to create your storage cluster.
-1. Verify that you storage cluster is created and `Ready`.
+1. Verify that your storage cluster is created and `Ready`.
   1. From the {{site.data.keyword.openshiftshort}} web console, click **Operators** > **Installed Operators**.
   1. Click the **OpenShift Container Storage operator**, then click the **Storage Cluster** tab.
-  1. Verify that the storage cluster status is `Ready`. Note that creating the storage cluster takes approximately 15 minutes.
+  1. Verify that the storage cluster status is `Ready`. Creating the storage cluster takes approximately 15 minutes.
 
 **Next steps**: [Deploy an app that uses OCS](/docs/openshift?topic=openshift-ocs-deploy-app)
 
@@ -286,14 +286,14 @@ Complete the following steps only if you installed the OCS Operator from Operato
 1. From the {{site.data.keyword.openshiftshort}} web console, click **Operators** > **Installed Operators**.
 1. Click the **OpenShift Container Storage operator**, then click the **Storage Cluster** tab and **Create Storage Cluster**
 1. On the **Create Storage Cluster** page, make sure that the **Internal - Attached Devices** tab is selected.
-1. In **1: Detect Disks**, on the **Auto Detect Volume** page, select the worker nodes where you want detect local storage volumes.
+1. In **1: Detect Disks**, on the **Auto Detect Volume** page, select the worker nodes where you want to detect local storage volumes.
 1. In **2: Create Storage Class**, on the **Local Volume Set** page, enter a name for your volume set and specify the **Disk type**.
 1. In **3: Create Storage Cluster**, specify the capacity and encryption setting that you want to use.
 1. Click **Create** to create your storage cluster.
-1. Verify that you storage cluster is created and `Ready`.
+1. Verify that your storage cluster is created and `Ready`.
   1. From the {{site.data.keyword.openshiftshort}} web console, click **Operators** > **Installed Operators**.
   1. Click the **OpenShift Container Storage operator**, then click the **Storage Cluster** tab.
-  1. Verify that the storage cluster status is `Ready`. Note that creating the storage cluster takes approximately 15 minutes.
+  1. Verify that the storage cluster status is `Ready`. Creating the storage cluster takes approximately 15 minutes.
 
 **Next steps**: [Deploy an app that uses OCS](/docs/openshift?topic=openshift-ocs-deploy-app)
 
@@ -306,13 +306,13 @@ Refer to the following OpenShift Container Storage parameters when you use the a
 
 | Parameter | Description | Default value |
 | --- | --- | --- |
-| `monStorageClassName` | Enter the name of the storage class that you want to use for your monitoring pods. <ul><li><b>Multizone clusters</b>: Enter the name of the metro storage class that you want to use. Metro storage classes have the volume binding mode <code>WaitForFirstConsumer</code> which is required for multizone OCS deployments. Example: <code>ibmc-vpc-block-metro-retain-10iops-tier</code>.</li><li><b>Single zone clusters</b>: Enter the name of the tiered storage class that you want to use. Example: <code>ibmc-vpc-block-10iops-tier</code>. For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block&locale=en#vpc-block-reference).</li></ul> | N/A |
+| `monStorageClassName` | Enter the name of the storage class that you want to use for your monitoring pods. <ul><li><b>Multizone clusters</b>: Enter the name of the metro storage class that you want to use. Metro storage classes have the volume binding mode <code>WaitForFirstConsumer</code>, which is required for multizone OCS deployments. Example: <code>ibmc-vpc-block-metro-retain-10iops-tier</code>.</li><li><b>Single zone clusters</b>: Enter the name of the tiered storage class that you want to use. Example: <code>ibmc-vpc-block-10iops-tier</code>. For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block&locale=en#vpc-block-reference).</li></ul> | N/A |
 | `monSize` | Enter a size for your monitoring storage devices. Example: `20Gi` | N/A |
 | `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD pods. <ul><li><b>Multizone clusters</b>: Enter the name of the metro storage class that you want to use. Metro storage classes have the volume binding mode <code>WaitForFirstConsumer</code> which is required for multizone OCS deployments. Example: <code>ibmc-vpc-block-metro-retain-10iops-tier</code>.</li><li><b>Single zone clusters</b>: Enter the name of the tiered storage class that you want to use. Example: <code>ibmc-vpc-block-10iops-tier</code>.</li></ul> For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block&locale=en#vpc-block-reference). | N/A |
 | `osdSize` | Enter a size for your storage devices. Example: `100Gi`. The total storage capacity of your OCS cluster is equivalent to the `osdSize` x 3 divided by the `numOfOsd`. | N/A |
-| `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. OCS creates 3 times the `numOfOsd` value. For example, if you enter <code>1</code>, OCS provisions 3 disks of the size and storage class that you specify in the `osdStorageClassName` field. | `1` |
-| `billingType` | Enter a <code>billingType</code> of either <code>hourly</code> or <code>monthly</code> for your OCS deployment. | hourly |
-| `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your OCS deployment. | false |
+| `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. OCS creates three times the `numOfOsd` value. For example, if you enter <code>1</code>, OCS provisions 3 disks of the size and storage class that you specify in the `osdStorageClassName` field. | `1` |
+| `billingType` | Enter a <code>billingType</code> of either <code>hourly</code> or <code>monthly</code> for your OCS deployment. | `hourly` |
+| `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your OCS deployment. | `false` |
 | worker-IP | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your OCS deployment. Do not specify this parameter if you want to use all of the worker nodes in your cluster. | N/A |
 {: caption="OCS parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
@@ -329,11 +329,11 @@ Refer to the following OpenShift Container Storage parameters when you use the a
 | --- | --- | --- |
 | `monStorageClassName` | Enter the name of the storage class that you want to use for your monitoring pods.<ul><li><b>Multizone clusters</b>: Enter the name of the custom storage class that you created earler. Example: <code>ocs-storage-class</code>.</li><li><b>Single zone clusters</b>: Enter the name of the storage class that you want to use. Example: <code>ibmc-block-gold</code>. For more information about storage classes, see the [Storage class reference](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference).</li></ul> | N/A |
 | `monSize` | Enter a size for your monitoring storage pods. Example: `20Gi`. | N/A |
-| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD pods. <ul><li><b>Multizone clusters</b>: Enter the name of the custom storage class that you created earler.</li><li><b>Single zone clusters</b>: Enter the name of the tiered storage class that you want to use.</li></ul> | N/A |
+| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD pods. <ul><li><b>Multizone clusters</b>: Enter the name of the custom storage class that you created earlier.</li><li><b>Single zone clusters</b>: Enter the name of the tiered storage class that you want to use.</li></ul> | N/A |
 | `osdSize` | Enter a size for your monitoring storage devices. Example: `100Gi`. | N/A |
-| `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. OCS creates 3 times the specified number. For example, if you enter `1`, OCS  creates 3 OSDs. | 1 |
-| `billingType` | Enter a <code>billingType</code> of either <code>hourly</code> or <code>monthly</code> for your OCS deployment. | hourly |
-| `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your OCS deployment. | false |
+| `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. OCS creates three times the specified number. For example, if you enter `1`, OCS creates 3 OSDs. | `1` |
+| `billingType` | Enter a <code>billingType</code> of either <code>hourly</code> or <code>monthly</code> for your OCS deployment. | `hourly` |
+| `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your OCS deployment. | `false` |
 | `worker-IP` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your OCS deployment. Do not specify this parameter if you want to use all of the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A | 
 {: caption="OpenShift Container Storage parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}

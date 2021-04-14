@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-04-14"
 
 keywords: openshift, openshift container storage, ocs, roks
 
@@ -104,29 +104,29 @@ OpenShift Container Storage is a highly available storage solution that you can 
 
 **Minimum required permissions**: **Administrator** platform access role and the **Manager** service access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-The OpenShift Container Storage add-on is available as a Technical Preview feature and might change without prior notice. Do not use this feature for production workloads. 
+The OpenShift Container Storage add-on is available as a technology preview feature and might change without prior notice. Do not use this feature for production workloads. 
 {: preview}
 
 <br />
 
-## VPC: Planning your OpenShift Container Storage set up
+## VPC: Planning your OpenShift Container Storage setup
 {: #ocs-vpc-plan}
 Before you install OCS in your VPC Gen 2 cluster, you must make sure that the following prerequisite conditions are met:
 
 1. [Install the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
-1. Create a [VPC Gen 2 cluster](/docs/containers?topic=containers-clusters) with at least 3 worker nodes. For high availability, create a cluster with at least 1 worker node per zone across 3 zones. Each worker node must have a minimum of 16 CPUs and 64GB RAM.
+1. Create a [VPC Gen 2 cluster](/docs/containers?topic=containers-clusters) with at least three worker nodes. For high availability, create a cluster with at least one worker node per zone across three zones. Each worker node must have a minimum of 16 CPUs and 64 GB RAM.
 
 **Next steps**: [Install OCS in your cluster](/docs/openshift?topic=openshift-ocs-storage-install).
 
 <br />
 
-## Classic: Planning your OpenShift Container Storage set up
+## Classic: Planning your OpenShift Container Storage setup
 {: #ocs-classic-plan}
 Before you install OCS in your cluster, you must make sure that the following prerequisite conditions are met:
 
 1. [Install the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
 1. [Review the SDS worker node flavors](/docs/openshift?topic=openshift-planning_worker_nodes#sds-table).
-1. Create a [classic cluster](/docs/containers?topic=containers-clusters) with a minimum of 1 worker node per zone across 3 zones. Create a cluster with worker nodes of flavor type `mb4c.32x384.3.8tb.ssd` or `mb4c.20x64.2x1.9tb.ssd` which have the required local disks for OCS.
+1. Create a [classic cluster](/docs/containers?topic=containers-clusters) with a minimum of one worker node per zone across three zones. Create a cluster with worker nodes of flavor type `mb4c.32x384.3.8tb.ssd` or  that have the required local disks for OCS.
 1. [Prepare your classic cluster](#ocs-cluster-prepare-classic).
 
 ### Classic: Preparing your cluster for an OpenShift Container Storage installation.
@@ -260,7 +260,7 @@ Before you install OCS, get the details of the local disks on your worker nodes.
     ```
     {: pre}
 
-5. Review the command output for available disks. You can use only unmounted disks for OCS deployments, such as `sdc` disks in the following example. Note that the initial storage capacity of your OCS deployment is equal to the size of the disk that you specify as the `osd-device-path`. In this example, the `sdc` disk is unmounted and has two availabe partitions: `sdc1` and `sdc2`.
+5. Review the command output for available disks. You can use only unmounted disks for OCS deployments, such as `sdc` disks in the following example. Note the initial storage capacity of your OCS deployment is equal to the size of the disk that you specify as the `osd-device-path`. In this example, the `sdc` disk is unmounted and has two availabe partitions: `sdc1` and `sdc2`.
     ```sh
     NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
     sda      8:0    0   931G  0 disk
@@ -282,7 +282,7 @@ Before you install OCS, get the details of the local disks on your worker nodes.
     ```
     {: pre}
 
-    **Example output:**
+    **Example output**
     ```sh
     total 0
     lrwxrwxrwx. 1 root root  9 Feb  9 04:15 scsi-3600605b00d87b43027b3bbb603150cc6 -> ../../sda

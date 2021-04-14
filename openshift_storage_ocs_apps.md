@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-04-14"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -96,7 +96,7 @@ subcollection: openshift
 # Deploying an app that uses OpenShift Container Storage
 {: #ocs-deploy-app}
 
-After you install the {[rhocs] add-on for your {{site.data.keyword.openshiftlong}} cluster, you can use the OCS storage classes to create a persistent volume claim (PVC). Then, refer to the PVC in your deployment so that your app can save and use data from the underlying OCS storage device.
+After you install the OpenShift Container Storage add-on for your {{site.data.keyword.openshiftlong}} cluster, you can use the OCS storage classes to create a persistent volume claim (PVC). Then, refer to the PVC in your deployment so that your app can save and use data from the underlying OCS storage device.
 {: shortdesc}
 
 Before you begin, [prepare your cluster](/docs/openshift?topic=openshift-ocs-storage-prep) and [install OCS](/docs/openshift?topic=openshift-ocs-storage-install).

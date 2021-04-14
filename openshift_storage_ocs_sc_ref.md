@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-04-14"
 
 keywords: openshift, openshift container storage, storage classes
 
@@ -104,7 +104,7 @@ The OCS storage classes all support dynamic provisioning and are multizone capab
 
 | Feature | Description |
 |-----|-----|
-| Supported access | RWX |
+| Supported access | rwx |
 | Volume mode | File |
 | Performance | High |
 | Consistency | Strong |
@@ -120,7 +120,7 @@ The OCS storage classes all support dynamic provisioning and are multizone capab
 
 | Feature | Description |
 |-----|-----|
-| Supported access | RWX |
+| Supported access | rwx |
 | Volume mode | Block |
 | Performance | High |
 | Consistency | Strong |
@@ -136,8 +136,8 @@ The OCS storage classes all support dynamic provisioning and are multizone capab
 
 | Feature | Description |
 |-----|-----|
-| Supported access | RWX |
-| Volume mode | s3fs (COS s3fs plug-in) |
+| Supported access | rwx |
+| Volume mode | s3fs (Cloud Object Storage s3fs plug-in) |
 | Performance | High |
 | Consistency | Eventual |
 | Resiliency | High |

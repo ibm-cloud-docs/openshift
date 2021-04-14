@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-04-14"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -98,13 +98,19 @@ subcollection: openshift
 
 Review the following topics to manage your OpenShift Container Storage deployment.
 
-## VPC: Expanding OCS by adding worker nodes
-{: #ocs-expand-vpc}
+## Expanding OCS in VPC clusters
+{: ocs-vpc-expand-storage-cluster}
+
+To expand your OCS storage cluster, you can [add worker nodes](#ocs-expand-vpc) to your cluster, or you can scale OCS by [increasing the `numOfOsd`](#ocs-vpc-scaling-osd).
+{: shortdesc}
+
+### Expanding OCS by adding worker nodes
+{: #ocs-vpc-add-worker-nodes}
 
 To increase the storage capacity that is available to OpenShift Container Storage, add compatible worker nodes to your cluster.
 {: shortdesc}
 
-1. Expand the worker pool of the cluster used for OCS by [adding worker nodes](/docs/openshift?topic=openshift-add_worker nodes). Ensure that your worker nodes meet the [requirements for OCS](#ocs-storage-classic). If you deployed OCS on all of the worker nodes in your cluster, the OCS drivers are installed on the new worker nodes when they are added to your cluster.
+1. Expand the worker pool of the cluster that is used for OCS by [adding worker nodes](/docs/openshift?topic=openshift-add_worker nodes). Ensure that your worker nodes meet the [requirements for OCS](#ocs-storage-classic). If you deployed OCS on all of the worker nodes in your cluster, the OCS drivers are installed on the new worker nodes when they are added to your cluster.
 2. If you deployed OCS on a subset of worker nodes in your cluster by specifying the `<worker-IP>` parameters in your `OcsCluster` custom resource, you can add the IP addresses of the new worker nodes to your OCS deployment by editing the custom resource definition.
   ```sh
   oc edit ocsluster ocscluster-vpc
@@ -114,13 +120,13 @@ To increase the storage capacity that is available to OpenShift Container Storag
 
 <br />
 
-## VPC: Scaling OCS by increasing the `numOfOsd`
-{: #ocs-vpc-scaling-config}
+### Scaling OCS by increasing the `numOfOsd`
+{: #ocs-vpc-scaling-osd}
 
-You can scale your OCS configuration by increasing the `numOfOsd` setting. When you increase the number of OSDs, OCS provisions that number of disks of the same `osdSize` capacity in GB in each of the worker nodes in your OCS cluster. However, the total storage that is available to your applications is equal to the number of worker nodes multiplied by the `osdSize` multiplied by the `numOfOsd`, and then divided by the replication factor, which is a constant of 3. 
+You can scale your OCS configuration by increasing the `numOfOsd` setting. When you increase the number of OSDs, OCS provisions that number of disks of the same `osdSize` capacity in GB in each of the worker nodes in your OCS cluster. However, the total storage that is available to your applications is equal to the number of worker nodes that are multiplied by the `osdSize` multiplied by the `numOfOsd`, and then divided by the replication factor, which is a constant of 3. 
 {: shortdesc}
 
-For example, if your OCS cluster has 3 worker nodes, you specify an `osdSize` of `150Gi`, and you set the `numOfOsd` to 4, then your storage totals are as follows.
+For example, if your OCS cluster has three worker nodes, you specify an `osdSize` of `150Gi`, and you set the `numOfOsd` to 4, then your storage totals are as follows.
   * **Total storage that is available for application use**: `osdSize` multiplied by `numOfOsd` and the number of worker nodes in the cluster, and divided by the replication factor of 3, or `(3 x 150Gi x 4) / 3 = 600Gi`.
   * **Total storage that is provisioned as disks in the cluster**: `osdSize` multiplied by `numOfOsd` and the number of worker nodes in the cluster, or `150Gi x 4 x 3 = 1800Gi`.
 
@@ -221,14 +227,14 @@ To increase the storage capacity that is available to OpenShift Container Storag
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1. Expand the worker pool of the cluster used for OCS by [adding SDS worker nodes](/docs/openshift?topic=openshift-add_worker nodes). Ensure that your worker nodes meet the [requirements for OCS](#ocs-storage-classic).
+1. Expand the worker pool of the cluster that is used for OCS by [adding SDS worker nodes](/docs/openshift?topic=openshift-add_worker nodes). Ensure that your worker nodes meet the [requirements for OCS](#ocs-storage-classic).
 2. [Find the `by-id` of the local disks](#ocs-classic-get-devices) on your new worker nodes.
 3. Add the `by-id` of the local disks to your `OcsCluster` custom resource definition.
   ```sh
   oc edit ocscluster ocscluster
   ```
   {: pre}
-3. If you deployed OCS on a subset of worker nodes in your cluster by specifying the `<worker-IP>` parameters in your `OcsCluster` custom resource, you can add the IP addresses of the new worker nodes to your OCS deployment by editing the custom resource definition.
+3. If you deployed OCS on a subset of worker nodes in your cluster by specifying the `<worker-IP>` parameters in your `OcsCluster` custom resource, add the IP addresses of the new worker nodes to your OCS deployment by editing the custom resource definition.
 4. Save the `OcsCluster` custom resource file to reapply it to your cluster.
 
 <br />
@@ -236,7 +242,7 @@ To increase the storage capacity that is available to OpenShift Container Storag
 ## Setting up backing stores by using the NooBaa CLI
 {: #ocs-backing-store-setup}
 
-After you deploy OCS, you can configure additional backing stores in your OCS storage cluster. You can create a backing store by using any s3 compatible object store such as AWS or {{site.data.keyword.cos_full_notm}}.
+After you deploy OCS, you can configure more backing stores in your OCS storage cluster. You can create a backing store by using any s3 compatible object store such as AWS or {{site.data.keyword.cos_full_notm}}.
 {: shortdesc}
 
 You can also create and manage your backing stores in the {{site.data.keyword.openshiftshort}} web console.
@@ -267,7 +273,7 @@ To add a backing store to your OCS storage cluster by using the NooBaa CLI:
   ```
   {: screen}
 
-1. Get the details of the service that you want to use. If you want to set up an {{site.data.keyword.cos_full_notm}}, get your HMAC credentials. For more information, see [Using HMAC credentials](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main). The following example NooBaa command shows the configuration parameters required to create a backing store by using an {{site.data.keyword.cos_full_notm}} service instance.
+1. Get the details of the service that you want to use. If you want to set up an {{site.data.keyword.cos_full_notm}}, get your HMAC credentials. For more information, see [Using HMAC credentials](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main). The following example NooBaa command shows the configuration parameters that are required to create a backing store by using an {{site.data.keyword.cos_full_notm}} service instance.
   ```sh
   noobaa backingstore create ibm-cos <backing-store-name> -n openshift-storage --access-key=<access-key> --endpoint=<endpoint> --secret-key=<secret-key> --target-bucket<target-bucket>
   ```
@@ -284,10 +290,10 @@ To add a backing store to your OCS storage cluster by using the NooBaa CLI:
 ## Removing OCS from your apps
 {: #ocs-remove-apps-storage}
 
-If you no longer need your OpenShift Container Storage, you can remove your PVC, PV, and the OCS operator from your clusters.
+To remove OCS from your apps, you can delete your app or deployment and the corresponding PVCs.
 {: shortdesc}
 
-When you delete your apps and PVCs that use OCS, your data is not removed from the volumes. If you want to fully remove OCS and all of your data, you can [remove your OCS storage cluster](#ocs-remove-storage-cluster).
+If you want to fully remove OCS and all of your data, you can [remove your OCS storage cluster](#ocs-remove-storage-cluster).
 {: note}
 
 1. List your PVCs and note the name of the PVC and the corresponding PV that you want to remove.
@@ -331,17 +337,12 @@ When you delete your apps and PVCs that use OCS, your data is not removed from t
       ```
       {: pre}
 
-3. Delete the PVC.
+3. **Optional** Delete the PVC. Deleting the PVC deletes your app data from the storage volume.
    ```sh
    oc delete pvc <pvc_name>
    ```
    {: pre}
 
-4. Delete the corresponding PV.
-   ```sh
-   oc delete pv <pv_name>
-   ```
-   {: pre}
 
 
 ## Removing your OCS storage cluster
