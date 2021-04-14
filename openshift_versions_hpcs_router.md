@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-13"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -114,6 +114,7 @@ View information for version updates to the [{{site.data.keyword.cloud_notm}} HP
 
 |Version build|Release date|Changes|
 |-------------|------------|-------|
+| 4.6.0_654 | 14 Apr 2021 | Fixes OpenSSL vulnerabilities for [CVE-2021-3449](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3449){: external} and [CVE-2021-3450](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3450){: external}. |
 |4.6.0_646|30 Mar 2021|Updates the Go version to 1.15.10 for [CVE-2021-3114](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3114){: external} and [CVE-2021-3115](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3115){: external}.|
 {: summary="The rows are read from left to right. The first column is the build of the image version. The second column is the build release date. The third column contains a brief description of the change made in the version build."}
 {: caption="Changelog for version 4.6.0 of the HPCS Router add-on" caption-side="top"}
@@ -123,6 +124,7 @@ View information for version updates to the [{{site.data.keyword.cloud_notm}} HP
 
 |Version build|Release date|Changes|
 |-------------|------------|-------|
+| 4.5.0_655 | 14 Apr 2021 | Updates to address [CVE-2021-3449](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3449){: external} and [CVE-2021-3450](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3450){: external}. |
 |4.5.0_647|30 Mar 2021|Updates the Go version to 1.15.10 for [CVE-2021-3114](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3114){: external} and [CVE-2021-3115](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3115){: external}.|
 {: summary="The rows are read from left to right. The first column is the build of the image version. The second column is the build release date. The third column contains a brief description of the change made in the version build."}
 {: caption="Changelog for version 4.5.0 of the HPCS Router add-on" caption-side="top"}
