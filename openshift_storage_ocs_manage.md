@@ -104,7 +104,7 @@ Review the following topics to manage your OpenShift Container Storage deploymen
 To expand your OCS storage cluster, you can [add worker nodes](#ocs-expand-vpc) to your cluster, or you can scale OCS by [increasing the `numOfOsd`](#ocs-vpc-scaling-osd).
 {: shortdesc}
 
-### Expanding OCS by adding worker nodes
+### Expanding OCS by adding worker nodes to your cluster
 {: #ocs-vpc-add-worker-nodes}
 
 To increase the storage capacity that is available to OpenShift Container Storage, add compatible worker nodes to your cluster.
@@ -120,7 +120,7 @@ To increase the storage capacity that is available to OpenShift Container Storag
 
 <br />
 
-### Scaling OCS by increasing the `numOfOsd`
+### Scaling OCS by increasing the `numOfOsd` in your CRD
 {: #ocs-vpc-scaling-osd}
 
 You can scale your OCS configuration by increasing the `numOfOsd` setting. When you increase the number of OSDs, OCS provisions that number of disks of the same `osdSize` capacity in GB in each of the worker nodes in your OCS cluster. However, the total storage that is available to your applications is equal to the number of worker nodes that are multiplied by the `osdSize` multiplied by the `numOfOsd`, and then divided by the replication factor, which is a constant of 3. 
@@ -168,10 +168,10 @@ For example, if your OCS cluster has three worker nodes, you specify an `osdSize
   ```sh
   oc get pv
   ```
-  {: screen}
+  {: pre}
 
 <br />
-## VPC: Updating your OCS CRD
+## VPC: Updating the OCS operator from your CRD
 {: #ocs-addon-up-vpc}
 
 If you deployed OCS by using a CRD, you can update your OCS deployment by editing the `OcsCluster` custom resource in your cluster.
@@ -536,6 +536,7 @@ To gather the information that is needed to troubleshoot OCS, you can use the `o
 
 You can use the Rook community toolbox to debug issues with your Ceph cluster. For more information, see the [Rook documentation](https://rook.io/docs/rook/v1.3/ceph-toolbox.html){: external}.
 {:tip}
+
 
 
 

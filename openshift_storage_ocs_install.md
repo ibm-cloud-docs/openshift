@@ -116,7 +116,7 @@ The installation method that you choose for OCS determines your configuration op
 
 You can install OCS in your cluster by using one of the following methods:
   * Installing the [managed cluster add-on for OpenShift Container Storage](#install-ocs-addon).
-  * Installing the community [OpenShift Container Storage operator from the OperatorHub in the [{{site.data.keyword.openshiftshort}} web console](#ocs-install-oh).
+  * Installing the community OpenShift Container Storage operator from the OperatorHub in the [{{site.data.keyword.openshiftshort}} web console](#ocs-install-oh).
 
 The following table provides an overview of the benefits and supported features for each OCS installation method.
 
@@ -303,6 +303,8 @@ Before you can install OCS from OperatorHub, you must deploy the following confi
       namespace: openshift-storage # Enter the namespace where you want to install the the OCS Operator.
     data:
       ROOK_CSI_KUBELET_DIR_PATH: "/var/data/kubelet"
+  ```
+  {: codeblock}
 
 1. Create the configmap in your cluster.
   ```sh
@@ -315,6 +317,7 @@ Before you can install OCS from OperatorHub, you must deploy the following confi
 1. Click the **OpenShift Container Storage** and click **Install**
 
 **Next steps**: [Create your OCS storage cluster](/docs/openshift?topic=openshift-ocs-storage-cluster-setup). 
+
 
 
 

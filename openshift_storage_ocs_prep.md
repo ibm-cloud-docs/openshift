@@ -348,7 +348,9 @@ The following steps apply to multizone clusters only.
   ```
   {: pre}
 
+
 **Next steps**: [Install OCS in your cluster](/docs/openshift?topic=openshift-ocs-storage-install).
+
 
 
 

@@ -169,6 +169,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
   ```
   {: pre}
 
+
 **Next steps**: [Deploy an app that uses OCS](/docs/openshift?topic=openshift-ocs-deploy-app)
 
 <br />
@@ -243,6 +244,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
   ```
   {: pre}
 
+
 **Next steps**: [Deploy an app that uses OCS](/docs/openshift?topic=openshift-ocs-deploy-app).
 
 ## Operator: Creating an OCS storage cluster in the web console
@@ -272,6 +274,7 @@ Complete the following steps only if you installed the OCS Operator from Operato
   1. Click the **OpenShift Container Storage operator**, then click the **Storage Cluster** tab.
   1. Verify that the storage cluster status is `Ready`. Creating the storage cluster takes approximately 15 minutes.
 
+
 **Next steps**: [Deploy an app that uses OCS](/docs/openshift?topic=openshift-ocs-deploy-app)
 
 ### Classic: Creating a storage cluster in the web console
@@ -294,6 +297,7 @@ Complete the following steps only if you installed the OCS Operator from Operato
   1. From the {{site.data.keyword.openshiftshort}} web console, click **Operators** > **Installed Operators**.
   1. Click the **OpenShift Container Storage operator**, then click the **Storage Cluster** tab.
   1. Verify that the storage cluster status is `Ready`. Creating the storage cluster takes approximately 15 minutes.
+
 
 **Next steps**: [Deploy an app that uses OCS](/docs/openshift?topic=openshift-ocs-deploy-app)
 
@@ -344,6 +348,7 @@ Refer to the following OpenShift Container Storage parameters when you use the a
 {: #ocs-reference-section}
 
 [OCS storage class reference](/docs/openshift?topic=openshift-ocs_sc_ref)
+
 
 
 
