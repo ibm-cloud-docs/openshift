@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-04-15"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -104,22 +104,6 @@ Review the following topics to manage your OpenShift Container Storage deploymen
 To expand your OCS storage cluster, you can [add worker nodes](#ocs-expand-vpc) to your cluster, or you can scale OCS by [increasing the `numOfOsd`](#ocs-vpc-scaling-osd).
 {: shortdesc}
 
-### Expanding OCS by adding worker nodes to your cluster
-{: #ocs-vpc-add-worker-nodes}
-
-To increase the storage capacity that is available to OpenShift Container Storage, add compatible worker nodes to your cluster.
-{: shortdesc}
-
-1. Expand the worker pool of the cluster that is used for OCS by [adding worker nodes](/docs/openshift?topic=openshift-add_worker nodes). Ensure that your worker nodes meet the [requirements for OCS](#ocs-storage-classic). If you deployed OCS on all of the worker nodes in your cluster, the OCS drivers are installed on the new worker nodes when they are added to your cluster.
-2. If you deployed OCS on a subset of worker nodes in your cluster by specifying the `<worker-IP>` parameters in your `OcsCluster` custom resource, you can add the IP addresses of the new worker nodes to your OCS deployment by editing the custom resource definition.
-  ```sh
-  oc edit ocsluster ocscluster-vpc
-  ```
-  {: pre}
-3. Save the `OcsCluster` custom resource file to reapply it to your cluster.
-
-<br />
-
 ### Scaling OCS by increasing the `numOfOsd` in your CRD
 {: #ocs-vpc-scaling-osd}
 
@@ -169,6 +153,22 @@ For example, if your OCS cluster has three worker nodes, you specify an `osdSize
   oc get pv
   ```
   {: pre}
+
+<br />
+
+### Expanding OCS by adding worker nodes to your VPC cluster
+{: #ocs-vpc-add-worker-nodes}
+
+To increase the storage capacity that is available to OpenShift Container Storage, add compatible worker nodes to your cluster.
+{: shortdesc}
+
+1. Expand the worker pool of the cluster that is used for OCS by [adding worker nodes](/docs/openshift?topic=openshift-add_worker nodes). Ensure that your worker nodes meet the [requirements for OCS](#ocs-storage-classic). If you deployed OCS on all of the worker nodes in your cluster, the OCS drivers are installed on the new worker nodes when they are added to your cluster.
+2. If you deployed OCS on a subset of worker nodes in your cluster by specifying the private `<worker-IP>` parameters in your `OcsCluster` custom resource, you can add the IP addresses of the new worker nodes to your OCS deployment by editing the custom resource definition.
+  ```sh
+  oc edit ocsluster ocscluster-vpc
+  ```
+  {: pre}
+3. Save the `OcsCluster` custom resource file to reapply it to your cluster.
 
 <br />
 ## VPC: Updating the OCS operator from your CRD
@@ -234,7 +234,7 @@ To increase the storage capacity that is available to OpenShift Container Storag
   oc edit ocscluster ocscluster
   ```
   {: pre}
-3. If you deployed OCS on a subset of worker nodes in your cluster by specifying the `<worker-IP>` parameters in your `OcsCluster` custom resource, add the IP addresses of the new worker nodes to your OCS deployment by editing the custom resource definition.
+3. If you deployed OCS on a subset of worker nodes in your cluster by specifying the private `<worker-IP>` parameters in your `OcsCluster` custom resource, add the IP addresses of the new worker nodes to your OCS deployment by editing the custom resource definition.
 4. Save the `OcsCluster` custom resource file to reapply it to your cluster.
 
 <br />

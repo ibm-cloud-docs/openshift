@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-04-15"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -143,14 +143,14 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
   metadata:
     name: ocscluster-vpc
   spec:
-    monStorageClassName: <monStorageClassName> # For multizone clusters, specify a 'metro' storage class
+    monStorageClassName: <monStorageClassName> # Example: ibmc-vpc-block-10iops-tier. For multizone clusters, specify a 'metro' storage class
     monSize: <monSize>
-    osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a 'metro' storage class
+    osdStorageClassName: <osdStorageClassName> # Example: ibmc-vpc-block-10iops-tier. For multizone clusters, specify a 'metro' storage class
     osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
     numOfOsd: 1
     billingType: hourly
     ocsUpgrade: false
-    workerNodes: # Specify the worker nodes where you want to install OCS.
+    workerNodes: # Specify the private IP addresses of the worker nodes where you want to install OCS.
       - <worker-IP> # To get a list worker nodes, run `oc get nodes`.
       - <worker-IP>
       - <worker-IP>
@@ -193,13 +193,17 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
   metadata:
     name: ocscluster-classic
   spec:
-    monStorageClassName: <monStorageClassName>
+    monStorageClassName: localfile
     monSize: 20Gi
     osdStorageClassName: localblock
     osdSize: "1"
     numOfOsd: 1
     billingType: hourly
     ocsUpgrade: false
+    monDevicePaths:
+      - <device-by-id> # Example: /dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1
+      - <device-by-id> # Example: /dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2
+      - <device-by-id> # Example: /dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2
     osdDevicePaths:
       - <device-by-id> # Example: /dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1
       - <device-by-id> # Example: /dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2
@@ -214,19 +218,23 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
   metadata:
     name: ocscluster-classic
   spec:
-    monStorageClassName: <monStorageClassName>
+    monStorageClassName: localfile
     monSize: 20Gi
     osdStorageClassName: localblock
     osdSize: "1"
     numOfOsd: 1
     billingType: hourly
     ocsUpgrade: false
+    monDevicePaths:
+      - <device-by-id> # Example: /dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1
+      - <device-by-id> # Example: /dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2
+      - <device-by-id> # Example: /dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2
     osdDevicePaths:
       - <device-by-id> # Example: /dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1
       - <device-by-id> # Example: /dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2
       - <device-by-id> # Example: /dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2
-    workerNodes: # Specify the IP addresses of each worker node where you want to install OCS.
-      - <worker-IP>
+    workerNodes: # Specify the private IP addresses of each worker node where you want to install OCS.
+      - <worker-IP> # To get a list worker nodes, run `oc get nodes`.
       - <worker-IP>
       - <worker-IP>
   ```
@@ -310,14 +318,14 @@ Refer to the following OpenShift Container Storage parameters when you use the a
 
 | Parameter | Description | Default value |
 | --- | --- | --- |
-| `monStorageClassName` | Enter the name of the storage class that you want to use for your monitoring pods. <ul><li><b>Multizone clusters</b>: Enter the name of the metro storage class that you want to use. Metro storage classes have the volume binding mode <code>WaitForFirstConsumer</code>, which is required for multizone OCS deployments. Example: <code>ibmc-vpc-block-metro-retain-10iops-tier</code>.</li><li><b>Single zone clusters</b>: Enter the name of the tiered storage class that you want to use. Example: <code>ibmc-vpc-block-10iops-tier</code>. For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block&locale=en#vpc-block-reference).</li></ul> | N/A |
+| `monStorageClassName` | Enter the name of the storage class that you want to use for your MON devices. <ul><li><b>Multizone clusters</b>: Enter the name of the metro storage class that you want to use. Metro storage classes have the volume binding mode <code>WaitForFirstConsumer</code> which is required for multizone OCS deployments. Example: <code>ibmc-vpc-block-metro-retain-10iops-tier</code>.</li><li><b>Single zone clusters</b>: Enter the name of the tiered storage class that you want to use. Example: <code>ibmc-vpc-block-10iops-tier</code>.</li></ul> For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block&locale=en#vpc-block-reference). | N/A |
 | `monSize` | Enter a size for your monitoring storage devices. Example: `20Gi` | N/A |
-| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD pods. <ul><li><b>Multizone clusters</b>: Enter the name of the metro storage class that you want to use. Metro storage classes have the volume binding mode <code>WaitForFirstConsumer</code> which is required for multizone OCS deployments. Example: <code>ibmc-vpc-block-metro-retain-10iops-tier</code>.</li><li><b>Single zone clusters</b>: Enter the name of the tiered storage class that you want to use. Example: <code>ibmc-vpc-block-10iops-tier</code>.</li></ul> For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block&locale=en#vpc-block-reference). | N/A |
+| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD devices. <ul><li><b>Multizone clusters</b>: Enter the name of the metro storage class that you want to use. Metro storage classes have the volume binding mode <code>WaitForFirstConsumer</code> which is required for multizone OCS deployments. Example: <code>ibmc-vpc-block-metro-retain-10iops-tier</code>.</li><li><b>Single zone clusters</b>: Enter the name of the tiered storage class that you want to use. Example: <code>ibmc-vpc-block-10iops-tier</code>.</li></ul> For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block&locale=en#vpc-block-reference). | N/A |
 | `osdSize` | Enter a size for your storage devices. Example: `100Gi`. The total storage capacity of your OCS cluster is equivalent to the `osdSize` x 3 divided by the `numOfOsd`. | N/A |
 | `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. OCS creates three times the `numOfOsd` value. For example, if you enter <code>1</code>, OCS provisions 3 disks of the size and storage class that you specify in the `osdStorageClassName` field. | `1` |
 | `billingType` | Enter a <code>billingType</code> of either <code>hourly</code> or <code>monthly</code> for your OCS deployment. | `hourly` |
 | `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your OCS deployment. | `false` |
-| worker-IP | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your OCS deployment. Do not specify this parameter if you want to use all of the worker nodes in your cluster. | N/A |
+| `worker-IP` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your OCS deployment. Do not specify this parameter if you want to use all of the worker nodes in your cluster. | N/A |
 {: caption="OCS parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
 
@@ -331,9 +339,9 @@ Refer to the following OpenShift Container Storage parameters when you use the a
 
 | Parameter | Description | Default value |
 | --- | --- | --- |
-| `monStorageClassName` | Enter the name of the storage class that you want to use for your monitoring pods.<ul><li><b>Multizone clusters</b>: Enter the name of the custom storage class that you created earler. Example: <code>ocs-storage-class</code>.</li><li><b>Single zone clusters</b>: Enter the name of the storage class that you want to use. Example: <code>ibmc-block-gold</code>. For more information about storage classes, see the [Storage class reference](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference).</li></ul> | N/A |
+| `monStorageClassName` | Enter the name of the storage class that you want to use for your MON devices. For baremetal worker nodes, enter <code>localfile</localfile>. <staging internal><ul><li><b>Multizone clusters</b>: Enter the name of the custom storage class that you created earler. Example: <code>ocs-storage-class</code>.</li><li><b>Single zone clusters</b>: Enter the name of the storage class that you want to use. Example: <code>ibmc-block-gold</code>. For more information about storage classes, see the [Storage class reference](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference).</li></ul><staging internal> | N/A |
 | `monSize` | Enter a size for your monitoring storage pods. Example: `20Gi`. | N/A |
-| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD pods. <ul><li><b>Multizone clusters</b>: Enter the name of the custom storage class that you created earlier.</li><li><b>Single zone clusters</b>: Enter the name of the tiered storage class that you want to use.</li></ul> | N/A |
+| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD devices. For baremetal worker nodes, enter <code>localblock</localfile>. <staging internal><ul><li><b>Multizone clusters</b>: Enter the name of the custom storage class that you created earler. Example: <code>ocs-storage-class</code>.</li><li><b>Single zone clusters</b>: Enter the name of the storage class that you want to use. Example: <code>ibmc-block-gold</code>. For more information about storage classes, see the [Storage class reference](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference).</li></ul><staging internal> | N/A |
 | `osdSize` | Enter a size for your monitoring storage devices. Example: `100Gi`. | N/A |
 | `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. OCS creates three times the specified number. For example, if you enter `1`, OCS creates 3 OSDs. | `1` |
 | `billingType` | Enter a <code>billingType</code> of either <code>hourly</code> or <code>monthly</code> for your OCS deployment. | `hourly` |

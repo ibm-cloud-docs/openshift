@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-04-15"
 
 keywords: openshift, openshift container storage, ocs, roks
 
@@ -305,13 +305,16 @@ Before you install OCS, get the details of the local disks on your worker nodes.
 
 <br />
 
-### Classic: Creating a `waitForFirstConsumer` storage class
+<staging internal>
+
+### Classic: Creating a `waitForFirstConsumer` storage class 
 {: #classic-ocs-sc-wffc}
 If you have a multizone cluster on classic infrastructure, you must create a custom storage class and set the `volumeBindingMode` to `waitForFirstConsumer`. You can use a tiered storage class as a template to create a storage class. For more information about {{site.data.keyword.blockstorageshort}} classes, see the [storage class reference](/docs/containers?topic=containers-block_storage#block_storageclass_reference).
 {: shortdesc}
 
-The following steps apply to multizone clusters only.
+**Internal only**: The following steps apply to multizone clusters only. You can use the `ibmcloud-block-storage-plugin` to attach storage to your worker nodes.
 {: note}
+
 
 1. Save the following `StorageClass` YAML to a file on your local machine.
 
@@ -348,10 +351,9 @@ The following steps apply to multizone clusters only.
   ```
   {: pre}
 
-
 **Next steps**: [Install OCS in your cluster](/docs/openshift?topic=openshift-ocs-storage-install).
 
-
+<staging internal>
 
 
 
