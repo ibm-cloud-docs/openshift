@@ -241,7 +241,7 @@ You can install the OCS add-on by using the [`ibmcloud oc cluster addon enable` 
 You can remove OCS add-on from your cluster by using the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or the CLI.
 {: shortdesc}
 
-When you disable the OpenShift Container Storage add-on, only the OCS operator is removed from your cluster. Your existing workloads remain, but you cannot create more OCS workloads. You also cannot delete your `OcsCluster` custom resource after the operator is removed. If you want to remove all of your OCS resources and data, see [Removing OCS from your cluster](#ocs-vpc-remove-deployment). If you removed the add-on and cannot delete your `OcsCluster`, reinstall the add-on, then delete the `OcsCluster`.
+When you disable the OpenShift Container Storage add-on, only the OCS operator is removed from your cluster. Your existing workloads remain, but you cannot create more OCS workloads. You also cannot delete your `OcsCluster` custom resource after the operator is removed. If you want to remove all of your OCS resources and data, see [Removing OCS from your cluster](/docs/openshift?topic=openshift-ocs-remove-storage-cluster). If you removed the add-on and cannot delete your `OcsCluster`, reinstall the add-on, then delete the `OcsCluster`.
 {: note}
 
 #### Uninstalling the OpenShift Container Storage add-on from the console
@@ -283,7 +283,7 @@ You can uninstall the OpenShift Container Storage add-on from your cluster by us
 Before you can install OCS from OperatorHub, you must deploy the following configmap to your cluster to set update the kubelet path for the OCS drivers.
 {: shortdesc}
 
-1. Save the following confimap to a file on your local machine.
+1. Save the following configmap to a file on your local machine.
   ```yaml
   apiVersion: v1
   kind: List
