@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-04-15"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -208,5 +208,7 @@ Unsupported add-ons for clusters in {{site.data.keyword.satelliteshort}} locatio
 - [Cluster Autoscaler](/docs/openshift?topic=openshift-ca)
 - [Istio](/docs/containers?topic=containers-istio)
 - [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block)
+
+
 
 
