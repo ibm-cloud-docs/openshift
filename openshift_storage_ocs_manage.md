@@ -90,7 +90,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
+
 
 
 # Managing your OpenShift Container Storage deployment
@@ -101,13 +101,13 @@ Review the following topics to manage your OpenShift Container Storage deploymen
 ## Expanding OCS in VPC clusters
 {: ocs-vpc-expand-storage-cluster}
 
-To expand your OCS storage cluster, you can [add worker nodes](#ocs-expand-vpc) to your cluster, or you can scale OCS by [increasing the `numOfOsd`](#ocs-vpc-scaling-osd).
+To expand your OCS storage cluster, you can [add worker nodes](#ocs-vpc-add-worker-nodes) to your cluster, or you can scale OCS by [increasing the `numOfOsd`](#ocs-vpc-scaling-osd).
 {: shortdesc}
 
 ### Scaling OCS by increasing the `numOfOsd` in your CRD
 {: #ocs-vpc-scaling-osd}
 
-You can scale your OCS configuration by increasing the `numOfOsd` setting. When you increase the number of OSDs, OCS provisions that number of disks of the same `osdSize` capacity in GB in each of the worker nodes in your OCS cluster. However, the total storage that is available to your applications is equal to the number of worker nodes that are multiplied by the `osdSize` multiplied by the `numOfOsd`, and then divided by the replication factor, which is a constant of 3. 
+You can scale your OCS configuration by increasing the `numOfOsd` setting. When you increase the number of OSDs, OCS provisions that number of disks of the same `osdSize` capacity in GB in each of the worker nodes in your OCS cluster. However, the total storage that is available to your applications is equal to the number of worker nodes that are multiplied by the `osdSize` multiplied by the `numOfOsd`, and then divided by the replication factor, which is a constant of 3.
 {: shortdesc}
 
 For example, if your OCS cluster has three worker nodes, you specify an `osdSize` of `150Gi`, and you set the `numOfOsd` to 4, then your storage totals are as follows.
@@ -148,7 +148,7 @@ For example, if your OCS cluster has three worker nodes, you specify an `osdSize
   ```
   {: pre}
 
-1. Verify that the additional OSDs are created. 
+1. Verify that the additional OSDs are created.
   ```sh
   oc get pv
   ```
@@ -162,7 +162,7 @@ For example, if your OCS cluster has three worker nodes, you specify an `osdSize
 To increase the storage capacity that is available to OpenShift Container Storage, add compatible worker nodes to your cluster.
 {: shortdesc}
 
-1. Expand the worker pool of the cluster that is used for OCS by [adding worker nodes](/docs/openshift?topic=openshift-add_worker nodes). Ensure that your worker nodes meet the [requirements for OCS](#ocs-storage-classic). If you deployed OCS on all of the worker nodes in your cluster, the OCS drivers are installed on the new worker nodes when they are added to your cluster.
+1. Expand the worker pool of the cluster that is used for OCS by [adding worker nodes](/docs/openshift?topic=openshift-add_workers). Ensure that your worker nodes meet the [requirements for OCS](#ocs-cluster-prepare-classic). If you deployed OCS on all of the worker nodes in your cluster, the OCS drivers are installed on the new worker nodes when they are added to your cluster.
 2. If you deployed OCS on a subset of worker nodes in your cluster by specifying the private `<worker-IP>` parameters in your `OcsCluster` custom resource, you can add the IP addresses of the new worker nodes to your OCS deployment by editing the custom resource definition.
   ```sh
   oc edit ocsluster ocscluster-vpc
@@ -183,7 +183,7 @@ If you deployed OCS by using a CRD, you can update your OCS deployment by editin
   ```sh
   oc get ocscluster
   ```
-  {: pre} 
+  {: pre}
 
   **Example output**
   ```sh
@@ -227,8 +227,8 @@ To increase the storage capacity that is available to OpenShift Container Storag
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1. Expand the worker pool of the cluster that is used for OCS by [adding SDS worker nodes](/docs/openshift?topic=openshift-add_worker nodes). Ensure that your worker nodes meet the [requirements for OCS](#ocs-storage-classic).
-2. [Find the `by-id` of the local disks](#ocs-classic-get-devices) on your new worker nodes.
+1. Expand the worker pool of the cluster that is used for OCS by [adding SDS worker nodes](/docs/openshift?topic=openshift-add_workers). Ensure that your worker nodes meet the [requirements for OCS](#ocs-cluster-prepare-classic).
+2. [Find the `by-id` of the local disks](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-get-devices) on your new worker nodes.
 3. Add the `by-id` of the local disks to your `OcsCluster` custom resource definition.
   ```sh
   oc edit ocscluster ocscluster
@@ -392,7 +392,7 @@ When you delete the `OcsCluster` custom resource from your cluster, the followin
   ```
   {: pre}
 
-1. **Optional** If you do not want to reinstall OCS, you can [Remove the OCS add-on from your cluster](#ocs-addon-rm-vpc).
+1. **Optional** If you do not want to reinstall OCS, you can [Remove the OCS add-on from your cluster](#ocs-addon-rm).
 
 ## Cleaning up your OCS deployment
 {: #ocs-rm-cleanup-resources}
@@ -536,7 +536,3 @@ To gather the information that is needed to troubleshoot OCS, you can use the `o
 
 You can use the Rook community toolbox to debug issues with your Ceph cluster. For more information, see the [Rook documentation](https://rook.io/docs/rook/v1.3/ceph-toolbox.html){: external}.
 {:tip}
-
-
-
-

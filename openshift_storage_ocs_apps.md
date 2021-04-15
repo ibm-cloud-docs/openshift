@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-04-15"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -90,7 +90,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
+
 
 
 # Deploying an app that uses OpenShift Container Storage
@@ -105,7 +105,7 @@ Before you begin, [prepare your cluster](/docs/openshift?topic=openshift-ocs-sto
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1. List the OCS storage classes. For more information about OCS storage classes, see the [Storage class reference](#ocs-sc-ref).
+1. List the OCS storage classes. For more information about OCS storage classes, see the [Storage class reference](/docs/openshift?topic=openshift-ocs-sc-ref#ocs-sc-ref).
   ```sh
   oc get sc | grep openshift
   ```
@@ -217,8 +217,3 @@ Before you begin, [prepare your cluster](/docs/openshift?topic=openshift-ocs-sto
 
 
 <br />
-
-
-
-
-

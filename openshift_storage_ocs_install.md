@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-04-15"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -90,7 +90,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
+
 
 
 # Installing OpenShift Container Storage in your cluster
@@ -108,7 +108,7 @@ OpenShift Container Storage is a highly available storage solution that you can 
 ## Choosing on an OCS installation path
 {: #ocs-install-path}
 
-After [preparing your cluster for OpenShift Container Storage](/docs/openshift?topics=openshift-ocs-storage-prep), you must determine the best installation path of the OCS drivers and operators for your cluster and your desired OCS storage cluster configuration. 
+After [preparing your cluster for OpenShift Container Storage](/docs/openshift?topic=openshift-ocs-storage-prep), you must determine the best installation path of the OCS drivers and operators for your cluster and your desired OCS storage cluster configuration.
 {: shortdesc}
 
 The installation method that you choose for OCS determines your configuration options when you create your storage cluster later. If you want to change the configuration later, you must uninstall and reinstall the add-on.
@@ -141,7 +141,7 @@ Before you install the OCS add-on, [plan your OCS set up](/docs/openshift?topic=
 ### Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance
 {: #ocs-create-cos}
 
-If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing store in your OCS storage cluster, create an instance of {{site.data.keyword.cos_full_notm}}. Then, create a set of HMAC credentials and a Kubernetes secret that uses your {{site.data.keyword.cos_short}} HMAC credentials. If you do not specify {{site.data.keyword.cos_full_notm}} credentials during installation, then the default backing store in your OCS storage cluster is created by using the PVs in your cluster. You can [set up additional backing stores](/docs/openshift?topic=openshift-ocs-manage#ocs-backing-store) after deploying OCS, but you cannot change the default backing store.
+If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing store in your OCS storage cluster, create an instance of {{site.data.keyword.cos_full_notm}}. Then, create a set of HMAC credentials and a Kubernetes secret that uses your {{site.data.keyword.cos_short}} HMAC credentials. If you do not specify {{site.data.keyword.cos_full_notm}} credentials during installation, then the default backing store in your OCS storage cluster is created by using the PVs in your cluster. You can [set up additional backing stores](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-backing-store-setup) after deploying OCS, but you cannot change the default backing store.
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -155,13 +155,13 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
       name: openshift-storage
     ```
     {: codeblock}
-    
+
 1. Create the `openshift-storage` namespace by using the YAML file that you saved.
     ```sh
     oc create -f os-namespace.yaml
     ```
     {: pre}
-  
+
 1. Verify that the namespace is created.
     ```sh
     oc get namespaces | grep storage
@@ -174,7 +174,7 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
     ```
     {: pre}
 
-1. Create HMAC credentials. Make a note of your credentials. 
+1. Create HMAC credentials. Make a note of your credentials.
     ```sh
     ibmcloud resource service-key-create cos-cred-rw Writer --instance-name noobaa-store --parameters '{"HMAC": true}'
     ```
@@ -185,7 +185,7 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
     oc -n 'openshift-storage' create secret generic 'ibm-cloud-cos-creds' --type=Opaque --from-literal=IBM_COS_ACCESS_KEY_ID=<access_key_id> --from-literal=IBM_COS_SECRET_ACCESS_KEY=<secret_access_key>
     ```
     {: pre}
-    
+
 1. Verify that your secret is created.
     ```sh
     oc get secrets -A | grep cos
@@ -210,7 +210,7 @@ To install OCS in your cluster, complete the following steps.
 **Next steps**: [Create your OCS storage cluster](/docs/openshift?topic=openshift-ocs-storage-cluster-setup).
 
 ### Installing the OpenShift Container Storage add-on from the CLI
-{: install-ocs-cli}
+{: #install-ocs-cli}
 
 You can install the OCS add-on by using the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable).
 {: shortdesc}
@@ -316,8 +316,4 @@ Before you can install OCS from OperatorHub, you must deploy the following confi
 1. In OperatorHub, search for `openshift container storage`.
 1. Click the **OpenShift Container Storage** and click **Install**
 
-**Next steps**: [Create your OCS storage cluster](/docs/openshift?topic=openshift-ocs-storage-cluster-setup). 
-
-
-
-
+**Next steps**: [Create your OCS storage cluster](/docs/openshift?topic=openshift-ocs-storage-cluster-setup).

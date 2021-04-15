@@ -100,13 +100,13 @@ After you [prepare your cluster for OCS](/docs/openshift?topic=openshift-ocs-sto
 
 * If you installed OCS by using the managed cluster add-on, you must create a CRD for your storage cluster. In your CRD, you specify the details of the storage cluster that you create.
 
-  * [VPC: Creating your OCS storage cluster by using a CRD](#ocs-vpc-deploy).
-  * [Classic: Creating your OCS storage cluster by using a CRD](#ocs-classic-deploy).
+  * [VPC: Creating your OCS storage cluster by using a CRD](#ocs-vpc-deploy-crd).
+  * [Classic: Creating your OCS storage cluster by using a CRD](#ocs-classic-deploy-crd).
 
 * If you installed OCS by using OperatorHub, you must create your storage cluster by using the {{site.data.keyword.openshiftshort}} web console.
 
-  * [VPC: Creating a storage cluster in the web console](#ocs-vpc-web-console-storagecluster).
-  * [Classic: Creating a storage cluster in the web console](#ocs-classic-web-console-storagecluster).
+  * [VPC: Creating a storage cluster in the web console](#ocs-vpc-deploy-console).
+  * [Classic: Creating a storage cluster in the web console](#ocs-classic-deploy-console).
 
 ## Add-on for VPC clusters: Creating your OCS storage cluster CRD
 {: #ocs-vpc-deploy-crd}
@@ -266,7 +266,7 @@ If you installed the OCS operator from OperatorHub, you can use the web console 
 Complete the following steps to create an OCS storage cluster by using the {{site.data.keyword.openshiftshort}} web console.
 {: shortdesc}
 
-Complete the following steps only if you installed the OCS Operator from OperatorHub. If you installed the OCS add-on in your cluster, see [creating a storage cluster by using a CRD](#ocs-vpc-deploy)
+Complete the following steps only if you installed the OCS Operator from OperatorHub. If you installed the OCS add-on in your cluster, see [creating a storage cluster by using a CRD](#ocs-vpc-deploy-crd)
 {: note}
 
 1. From the {{site.data.keyword.openshiftshort}} web console, click **Operators** > **Installed Operators**.
@@ -291,7 +291,7 @@ Complete the following steps only if you installed the OCS Operator from Operato
 Complete the following steps to create an OCS storage cluster by using the {{site.data.keyword.openshiftshort}} web console.
 {: shortdesc}
 
-Complete the following steps only if you installed the OCS Operator from OperatorHub. If you installed the OCS add-on in your cluster, see [creating a storage cluster by using a CRD](#ocs-classic-deploy)
+Complete the following steps only if you installed the OCS Operator from OperatorHub. If you installed the OCS add-on in your cluster, see [creating a storage cluster by using a CRD](#ocs-classic-deploy-crd)
 {: note}
 
 1. From the {{site.data.keyword.openshiftshort}} web console, click **Operators** > **Installed Operators**.
@@ -318,9 +318,9 @@ Refer to the following OpenShift Container Storage parameters when you use the a
 
 | Parameter | Description | Default value |
 | --- | --- | --- |
-| `monStorageClassName` | Enter the name of the storage class that you want to use for your MON devices. <ul><li><b>Multizone clusters</b>: Enter the name of the metro storage class that you want to use. Metro storage classes have the volume binding mode <code>WaitForFirstConsumer</code> which is required for multizone OCS deployments. Example: <code>ibmc-vpc-block-metro-retain-10iops-tier</code>.</li><li><b>Single zone clusters</b>: Enter the name of the tiered storage class that you want to use. Example: <code>ibmc-vpc-block-10iops-tier</code>.</li></ul> For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block&locale=en#vpc-block-reference). | N/A |
+| `monStorageClassName` | Enter the name of the storage class that you want to use for your MON devices. <ul><li><b>Multizone clusters</b>: Enter the name of the metro storage class that you want to use. Metro storage classes have the volume binding mode <code>WaitForFirstConsumer</code> which is required for multizone OCS deployments. Example: <code>ibmc-vpc-block-metro-retain-10iops-tier</code>.</li><li><b>Single zone clusters</b>: Enter the name of the tiered storage class that you want to use. Example: <code>ibmc-vpc-block-10iops-tier</code>.</li></ul> For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference). | N/A |
 | `monSize` | Enter a size for your monitoring storage devices. Example: `20Gi` | N/A |
-| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD devices. <ul><li><b>Multizone clusters</b>: Enter the name of the metro storage class that you want to use. Metro storage classes have the volume binding mode <code>WaitForFirstConsumer</code> which is required for multizone OCS deployments. Example: <code>ibmc-vpc-block-metro-retain-10iops-tier</code>.</li><li><b>Single zone clusters</b>: Enter the name of the tiered storage class that you want to use. Example: <code>ibmc-vpc-block-10iops-tier</code>.</li></ul> For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block&locale=en#vpc-block-reference). | N/A |
+| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD devices. <ul><li><b>Multizone clusters</b>: Enter the name of the metro storage class that you want to use. Metro storage classes have the volume binding mode <code>WaitForFirstConsumer</code> which is required for multizone OCS deployments. Example: <code>ibmc-vpc-block-metro-retain-10iops-tier</code>.</li><li><b>Single zone clusters</b>: Enter the name of the tiered storage class that you want to use. Example: <code>ibmc-vpc-block-10iops-tier</code>.</li></ul> For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference). | N/A |
 | `osdSize` | Enter a size for your storage devices. Example: `100Gi`. The total storage capacity of your OCS cluster is equivalent to the `osdSize` x 3 divided by the `numOfOsd`. | N/A |
 | `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. OCS creates three times the `numOfOsd` value. For example, if you enter <code>1</code>, OCS provisions 3 disks of the size and storage class that you specify in the `osdStorageClassName` field. | `1` |
 | `billingType` | Enter a <code>billingType</code> of either <code>hourly</code> or <code>monthly</code> for your OCS deployment. | `hourly` |
@@ -346,7 +346,7 @@ Refer to the following OpenShift Container Storage parameters when you use the a
 | `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. OCS creates three times the specified number. For example, if you enter `1`, OCS creates 3 OSDs. | `1` |
 | `billingType` | Enter a <code>billingType</code> of either <code>hourly</code> or <code>monthly</code> for your OCS deployment. | `hourly` |
 | `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your OCS deployment. | `false` |
-| `worker-IP` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your OCS deployment. Do not specify this parameter if you want to use all of the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A | 
+| `worker-IP` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your OCS deployment. Do not specify this parameter if you want to use all of the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
 {: caption="OpenShift Container Storage parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
 
@@ -355,9 +355,4 @@ Refer to the following OpenShift Container Storage parameters when you use the a
 ## Storage class reference
 {: #ocs-reference-section}
 
-[OCS storage class reference](/docs/openshift?topic=openshift-ocs_sc_ref)
-
-
-
-
-
+[OCS storage class reference](/docs/openshift?topic=openshift-ocs-sc-ref)

@@ -90,7 +90,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
+
 
 
 # Preparing your cluster for OpenShift Container Storage
@@ -104,7 +104,7 @@ OpenShift Container Storage is a highly available storage solution that you can 
 
 **Minimum required permissions**: **Administrator** platform access role and the **Manager** service access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-The OpenShift Container Storage add-on is available as a technology preview feature and might change without prior notice. Do not use this feature for production workloads. 
+The OpenShift Container Storage add-on is available as a technology preview feature and might change without prior notice. Do not use this feature for production workloads.
 {: preview}
 
 <br />
@@ -129,7 +129,7 @@ Before you install OCS in your cluster, you must make sure that the following pr
 1. Create a [classic cluster](/docs/containers?topic=containers-clusters) with a minimum of one worker node per zone across three zones. Create a cluster with worker nodes of flavor type `mb4c.32x384.3.8tb.ssd` or `mb4c.20x64.2x1.9tb.ssd` that have the required local disks for OCS.
 1. [Prepare your classic cluster](#ocs-cluster-prepare-classic).
 
-### Classic: Preparing your cluster for an OpenShift Container Storage installation.
+### Classic: Preparing your cluster for an OpenShift Container Storage installation
 {: #ocs-cluster-prepare-classic}
 Before you install OpenShift Container Storage in a classic cluster, review the following steps to prepare your cluster for an OCS installation.
 {: shortdesc}
@@ -154,7 +154,7 @@ Before you install OpenShift Container Storage in a classic cluster, review the 
       ```sh
       exit
       ```
-    
+
 1. Repeat step 3 for each worker node that you want use in your OCS deployment.
 
 1. Update the `clusterRole` and `ClusterRoleBindings` for each worker node in your cluster. Edit the `system:node` cluster role to have `get, create, update, delete, list` access for the `volumeattachments.storage.k8s.io` resource.
@@ -242,12 +242,12 @@ Before you install OCS, get the details of the local disks on your worker nodes.
     ```
     {: pre}
 
-2. Log in to each worker node that you want to use for your OCS. 
+2. Log in to each worker node that you want to use for your OCS.
     ```sh
     oc debug node/<node-name>
     ```
     {: pre}
-    
+
 3. When the debug pod is deployed on the worker node, run the following command to allow host binaries.
     ```sh
     chroot /host
@@ -303,8 +303,5 @@ Before you install OCS, get the details of the local disks on your worker nodes.
   * **Single zone clusters**: [Install OCS in your cluster](/docs/openshift?topic=openshift-ocs-storage-install).
 
 <br />
-
-
-
 
 

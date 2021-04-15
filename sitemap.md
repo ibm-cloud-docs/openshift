@@ -1365,7 +1365,7 @@ subcollection: openshift
 [Preparing your cluster for OpenShift Container Storage](/docs/openshift?topic=openshift-ocs-storage-prep)
 * [VPC: Planning your OpenShift Container Storage setup](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-vpc-plan)
 * [Classic: Planning your OpenShift Container Storage setup](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-plan)
-  * [Classic: Preparing your cluster for an OpenShift Container Storage installation.](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-cluster-prepare-classic)
+  * [Classic: Preparing your cluster for an OpenShift Container Storage installation](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-cluster-prepare-classic)
   * [Classic: Getting your device details](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-get-devices)
 
 [Installing OpenShift Container Storage in your cluster](/docs/openshift?topic=openshift-ocs-storage-install)
@@ -1373,7 +1373,7 @@ subcollection: openshift
 * [Installing the OCS add-on](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-addon)
   * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-ocs-storage-install#ocs-create-cos)
   * [Installing the OpenShift Container Storage add-on from the console](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-console)
-  * [Installing the OpenShift Container Storage add-on from the CLI](/docs/openshift?topic=openshift-ocs-storage-install#installing-the-openshift-container-storage-add-on-from-the-cli)
+  * [Installing the OpenShift Container Storage add-on from the CLI](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-cli)
   * [Removing the OpenShift Container Storage add-on from your cluster](/docs/openshift?topic=openshift-ocs-storage-install#ocs-addon-rm)
 * [Installing OpenShift Container Storage from OperatorHub](/docs/openshift?topic=openshift-ocs-storage-install#ocs-install-oh)
 
