@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-04-12"
+lastupdated: "2021-04-15"
 
 keywords: openshift
 subcollection: openshift
@@ -440,12 +440,12 @@ subcollection: openshift
 
 [Accessing {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-access_cluster)
 * [Prerequisites](/docs/openshift?topic=openshift-access_cluster#prereqs)
-* [Accessing {{site.data.keyword.openshiftshort}} clusters through the public cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#access_public_se)
+* [Accessing clusters through the public cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#access_public_se)
   * [Connecting to the cluster from the console](/docs/openshift?topic=openshift-access_cluster#access_oc_console)
   * [Connecting to the cluster from the CLI](/docs/openshift?topic=openshift-access_cluster#access_oc_cli)
-* [Accessing {{site.data.keyword.openshiftshort}} clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#access_private_se)
-  * [Accessing version 4 VPC clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#vpc_private_se)
-  * [Accessing 3.11 clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#classic_private_se)
+* [Accessing clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#access_private_se)
+  * [Accessing VPC clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#vpc_private_se)
+  * [Accessing classic clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#classic_private_se)
   * [Creating an allowlist for the private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#private-se-allowlist)
 * [Accessing {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat)
   * [Accessing clusters through the cluster service URL](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_se)
@@ -1362,6 +1362,49 @@ subcollection: openshift
   * [Gathering logs](/docs/openshift?topic=openshift-portworx#portworx_logs)
 * [Limitations](/docs/openshift?topic=openshift-portworx#portworx_limitations)
 
+[Preparing your cluster for OpenShift Container Storage](/docs/openshift?topic=openshift-ocs-storage-prep)
+* [VPC: Planning your OpenShift Container Storage setup](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-vpc-plan)
+* [Classic: Planning your OpenShift Container Storage setup](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-plan)
+  * [Classic: Preparing your cluster for an OpenShift Container Storage installation](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-cluster-prepare-classic)
+  * [Classic: Getting your device details](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-get-devices)
+
+[Installing OpenShift Container Storage in your cluster](/docs/openshift?topic=openshift-ocs-storage-install)
+* [Choosing on an OCS installation path](/docs/openshift?topic=openshift-ocs-storage-install#ocs-install-path)
+* [Installing the OCS add-on](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-addon)
+  * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-ocs-storage-install#ocs-create-cos)
+  * [Installing the OpenShift Container Storage add-on from the console](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-console)
+  * [Installing the OpenShift Container Storage add-on from the CLI](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-cli)
+  * [Removing the OpenShift Container Storage add-on from your cluster](/docs/openshift?topic=openshift-ocs-storage-install#ocs-addon-rm)
+* [Installing OpenShift Container Storage from OperatorHub](/docs/openshift?topic=openshift-ocs-storage-install#ocs-install-oh)
+
+[Setting up your storage cluster](/docs/openshift?topic=openshift-ocs-storage-cluster-setup)
+* [Add-on for VPC clusters: Creating your OCS storage cluster CRD](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-deploy-crd)
+* [Add-on for classic clusters: Creating your OCS storage cluster CRD](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-deploy-crd)
+* [Operator: Creating an OCS storage cluster in the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-create-storagecluster-console)
+  * [VPC: Creating a storage cluster in the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-deploy-console)
+  * [Classic: Creating a storage cluster in the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-deploy-console)
+* [VPC: OpenShift Container Storage parameter reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-param-ref)
+* [Classic: OpenShift Container Storage parameter reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-param-ref)
+* [Storage class reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-reference-section)
+
+[Deploying an app that uses OpenShift Container Storage](/docs/openshift?topic=openshift-ocs-deploy-app)
+
+[Managing your OpenShift Container Storage deployment](/docs/openshift?topic=openshift-ocs-manage-deployment)
+* [Expanding OCS in VPC clusters](/docs/openshift?topic=openshift-ocs-manage-deployment#expanding-ocs-in-vpc-clusters)
+  * [Scaling OCS by increasing the `numOfOsd` in your CRD](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-vpc-scaling-osd)
+  * [Expanding OCS by adding worker nodes to your VPC cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-vpc-add-worker-nodes)
+* [VPC: Updating the OCS operator from your CRD](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-up-vpc)
+* [Classic: Increasing storage capacity by adding worker nodes to your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-add-worker-nodes-classic)
+* [Setting up backing stores by using the NooBaa CLI](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-backing-store-setup)
+* [Removing OCS from your apps](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-apps-storage)
+* [Removing your OCS storage cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster)
+* [Cleaning up your OCS deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-cleanup-resources)
+  * [VPC: Cleaning up OCS](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-cleanup-vpc)
+  * [Classic: Cleaning up OCS](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-cleanup-classic-resources)
+* [Troubleshooting OCS](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-troubleshooting-gather)
+
+[Storage class reference](/docs/openshift?topic=openshift-ocs-sc-ref)
+
 [Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged)
 * [Prerequisites](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-prereq)
   * [Labelling your worker nodes](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-label-um)
@@ -1432,6 +1475,7 @@ subcollection: openshift
 * [Adding managed add-ons](/docs/openshift?topic=openshift-managed-addons#adding-managed-add-ons)
 * [Updating managed add-ons](/docs/openshift?topic=openshift-managed-addons#updating-managed-add-ons)
 * [Reviewing add-on states and statuses](/docs/openshift?topic=openshift-managed-addons#debug_addons_review)
+* [Supported add-ons for clusters in {{site.data.keyword.satelliteshort}} locations](/docs/openshift?topic=openshift-managed-addons#addons-satellite)
 
 [Adding services by using Helm charts](/docs/openshift?topic=openshift-helm)
 * [About Helm in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-helm#about-helm)

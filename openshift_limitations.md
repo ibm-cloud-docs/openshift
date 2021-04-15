@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-14"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
@@ -285,7 +285,7 @@ Review the following limitations for [{{site.data.keyword.openshiftlong_notm}} c
 
 | Category | Description |
 | -------- | ----------- |
-| Cluster autoscaler | The [cluster autoscaler](/docs/openshift?topic=openshift-ca) is not supported.|
+| Cluster add-ons | Review the [unsupported managed add-ons for {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-managed-addons#addons-satellite) in a {{site.data.keyword.satelliteshort}} location. For example, the cluster autoscaler and Istio are not supported. |
 | Key management service (KMS) | Cluster integration with a key management service (KMS) provider like {{site.data.keyword.keymanagementserviceshort}} is not supported.|
 | Locations | You must create your own [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations) that is managed from [select {{site.data.keyword.cloud_notm}} multizone metros](/docs/satellite?topic=satellite-sat-regions). |
 | Logging and monitoring | You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable logging and monitoring for {{site.data.keyword.satelliteshort}} clusters. Instead, you can manually deploy [{{site.data.keyword.la_short}} agents](/docs/log-analysis?topic=log-analysis-kube#kube) and [{{site.data.keyword.mon_short}} agents](/docs/monitoring?topic=monitoring-kubernetes_cluster#kubernetes_cluster) to your cluster to forward logs and metrics to {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}. |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-13"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -105,18 +105,17 @@ After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin
 
 1. [Install the required CLI tools](/docs/openshift?topic=openshift-openshift-cli), including the {{site.data.keyword.cloud_notm}} CLI, {{site.data.keyword.containershort_notm}} plug-in alias for {{site.data.keyword.openshiftshort}} (`ibmcloud oc`), and {{site.data.keyword.openshiftshort}} CLI (`oc`).
 2. [Create your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-clusters).
-3. If your network is protected by a company firewall, [allow access](/docs/openshift?topic=openshift-firewall#corporate) to the {{site.data.keyword.cloud_notm}} and {{site.data.keyword.openshiftlong_notm}} API endpoints and ports. For private cloud service endpoint-only clusters, you cannot test the connection to your cluster until you expose the private cloud service endpoint of the master to the cluster by using a [private NLB](#access_private_se).
+3. If your network is protected by a company firewall, [allow access](/docs/openshift?topic=openshift-firewall#corporate) to the {{site.data.keyword.cloud_notm}} and {{site.data.keyword.openshiftlong_notm}} API endpoints and ports. For VPC clusters with only the private cloud service endpoint enabled, you cannot test the connection to your cluster until you [configure a VPC VPN with the cloud service endpoint subnet](#vpc_private_se).
 4. Check that your cluster is in a healthy state by running `ibmcloud oc cluster get -c <cluster_name_or_ID>`. If your cluster is not in a healthy state, review the [Debugging clusters](/docs/openshift?topic=openshift-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall).
 5. Find your cluster's service endpoint.
   * **Classic or VPC clusters**: In the output of the cluster details from the previous step, check the **Public** or **Private Service Endpoint** URL of the cluster.
-      *  Public Service Endpoint URL only: Continue with [Accessing {{site.data.keyword.openshiftshort}} clusters through the public cloud service endpoint](#access_public_se).
-      *  Private Service Endpoint URL only: If your cluster has only a private cloud service endpoint enabled, continue with [Accessing {{site.data.keyword.openshiftshort}} clusters through the private cloud service endpoint](#access_private_se).
+      *  Public Service Endpoint URL only: Continue with [Accessing clusters through the public cloud service endpoint](#access_public_se).
       *  Both service endpoint URLs: You can access your cluster either through the [public](#access_public_se) or the [private](#access_private_se) service endpoint.
-  * **{{site.data.keyword.satellitelong_notm}} clusters**: Continue with [Accessing {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}}](#access_cluster_sat).
+  * **{{site.data.keyword.satellitelong_notm}} clusters**: Continue with [Accessing clusters on {{site.data.keyword.satelliteshort}}](#access_cluster_sat).
 
 <br />
 
-## Accessing {{site.data.keyword.openshiftshort}} clusters through the public cloud service endpoint
+## Accessing clusters through the public cloud service endpoint
 {: #access_public_se}
 
 For {{site.data.keyword.openshiftshort}} clusters with a public cloud service endpoint, you can log in to your cluster from the console or CLI.
@@ -173,104 +172,24 @@ Choose from the following options.
 
 <br />
 
-## Accessing {{site.data.keyword.openshiftshort}} clusters through the private cloud service endpoint
+## Accessing clusters through the private cloud service endpoint
 {: #access_private_se}
 
-This information is applicable for version 3.11 clusters or version 4 clusters on VPC compute infrastructure. The private cloud service endpoint cannot be enabled on version 4 clusters on classic infrastructure.
-{: note}
-
-The {{site.data.keyword.openshiftshort}} master is accessible through the private cloud service endpoint if authorized cluster users are in your {{site.data.keyword.cloud_notm}} private network or are connected to the private network through a [VPC VPN connection](/docs/vpc?topic=vpc-vpn-onprem-example) for VPC infrastructure, or for classic infrastructure, a [VPN connection](/docs/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl). However, communication with the Kubernetes master over the private cloud service endpoint must go through the <code>166.X.X.X</code> IP address range, which is not routable from a VPN connection or through {{site.data.keyword.dl_full_notm}}. You can expose the private cloud service endpoint of the master for your cluster users by using a private network load balancer (NLB). The private NLB exposes the private cloud service endpoint of the master as an internal <code>10.X.X.X</code> IP address range that users can access with the VPN or {{site.data.keyword.dl_full_notm}} connection. If you enable only the private cloud service endpoint, you can use the {{site.data.keyword.openshiftshort}} web console to create the private NLB.
+Allow authorized cluster users to access your [VPC](#vpc_private_se) or [classic](#access_private_se) cluster through the private cloud service endpoint.
 {: shortdesc}
 
-### Accessing version 4 VPC clusters through the private cloud service endpoint
+### Accessing VPC clusters through the private cloud service endpoint
 {: #vpc_private_se}
+
+The {{site.data.keyword.openshiftshort}} master is accessible through the private cloud service endpoint if authorized cluster users are in your {{site.data.keyword.cloud_notm}} private network or are connected to the private network, such as through a [VPC VPN connection](/docs/vpc?topic=vpc-vpn-onprem-example). However, communication with the Kubernetes master over the private cloud service endpoint must go through the `166.X.X.X` IP address range, which you must configure in your VPN gateway and connection setup.
+{: shortdesc}
 
 1. Set up your {{site.data.keyword.vpc_short}} VPN and connect to your private network through the VPN.
   1. [Configure a VPN gateway on your local machine](/docs/vpc?topic=vpc-vpn-onprem-example#configuring-onprem-gateway). For example, you might choose to set up StrongSwan on your machine.
-  2. [Create a VPN gateway in your VPC, and create the connection between the VPC VPN gateway and your local VPN gateway](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console#vpn-ui). If you have a multizone cluster, you must create a VPC gateway on a subnet in each zone where you have worker nodes.
+  2. [Create a VPN gateway in your VPC, and create the connection between the VPC VPN gateway and your local VPN gateway](/docs/vpc?topic=vpc-vpn-create-gateway#vpn-create-ui). In the **New VPN connection for VPC** section, add the `166.8.0.0/14` subnet to the **Local subnets** field. If you have a multizone cluster, repeat this step to configure a VPC gateway on a subnet in each zone where you have worker nodes.
   3. Verify that you are connected to the private network through your {{site.data.keyword.vpc_short}} VPN connection.
 
-2. Get the private cloud service endpoint URL and port for your cluster.
-  ```
-  ibmcloud oc cluster get -c <cluster_name_or_ID>
-  ```
-  {: pre}
-
-  In this example output, the **Private Service Endpoint URL** is `https://c1.private.us-east.containers.cloud.ibm.com:31144`.
-  ```
-  Name:                           setest
-  ID:                             b8dcc56743394fd19c9f3db7b990e5e3
-  State:                          normal
-  Status:                         healthy cluster
-  Created:                        2019-04-25T16:03:34+0000
-  Location:                       wdc04
-  Pod Subnet:                     172.30.0.0/16
-  Service Subnet:                 172.21.0.0/16
-  Master URL:                     https://c1-e.us-east.containers.cloud.ibm.com:31144
-  Public Service Endpoint URL:    https://c1-e.us-east.containers.cloud.ibm.com:31144
-  Private Service Endpoint URL:   https://c1.private.us-east.containers.cloud.ibm.com:31144
-  Master Location:                Washington D.C.
-  ...
-  ```
-  {: screen}
-
-3. Create a YAML file that is named `oc-api-via-nlb.yaml`. This YAML creates a private `LoadBalancer` service and exposes the private cloud service endpoint through that NLB. Replace `<private_service_endpoint_port>` with the port you found in the previous step.
-   ```yaml
-   apiVersion: v1
-   kind: Service
-   metadata:
-     name: oc-api-via-nlb
-     annotations:
-       service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: private
-     namespace: default
-   spec:
-     type: LoadBalancer
-     ports:
-     - protocol: TCP
-       port: <private_service_endpoint_port>
-       targetPort: <private_service_endpoint_port>
-   ---
-   kind: Endpoints
-   apiVersion: v1
-   metadata:
-     name: oc-api-via-nlb
-     namespace: default
-   subsets:
-     - addresses:
-         - ip: 172.20.0.1
-       ports:
-         - port: 2040
-   ```
-   {: codeblock}
-
-4. To create the private NLB, you must be connected to the cluster master. Because you cannot yet connect through the private cloud service endpoint from a VPN or {{site.data.keyword.dl_full_notm}}, you must connect to the cluster master and create the NLB by using the public cloud service endpoint or {{site.data.keyword.openshiftshort}} web console.
-  * Public service endpoint enabled: You already have access to the master.
-    1. Apply the configuration file that you previously created.
-      ```
-      oc apply -f oc-api-via-nlb.yaml
-      ```
-      {: pre}
-    2. Verify that the `oc-api-via-nlb` NLB is created. In the output, note the `10.x.x.x` **EXTERNAL-IP** address. This IP address exposes the private cloud service endpoint for the cluster master on the port that you specified in your YAML file.
-      ```
-      oc get svc -o wide
-      ```
-      {: pre}
-
-      In this example output, the IP address for the private cloud service endpoint of the master is `10.186.92.42`.
-      ```
-      NAME                     TYPE           CLUSTER-IP       EXTERNAL-IP      PORT(S)          AGE   SELECTOR
-      oc-api-via-nlb           LoadBalancer   172.21.150.118   10.186.92.42     443:32235/TCP    10m   <none>
-      ...
-      ```
-      {: screen}
-  * Private service endpoint enabled only: Use the {{site.data.keyword.openshiftshort}} web console dashboard to create the NLB. The web console automatically routes all requests to the private cloud service endpoint of the master.
-    1. From the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your {{site.data.keyword.openshiftshort}} cluster, then click **{{site.data.keyword.openshiftshort}} web console**.
-    2. In the **Networking** tab, click **Services**
-    3. Click **Create Service**.
-    4. Paste the contents of the `kube-api-via-nlb.yaml` file, and click **Create**.
-    5. In the **Overview** page, verify that the `kube-api-via-nlb` service is created and copy the `10.x.x.x` address. This IP address exposes the private cloud service endpoint for the cluster master on the port that you specified in your YAML file.
-
-5. To log in to your cluster, choose from the following options.
+2. To log in to your cluster, choose from the following options.
   * **Log in as admin**:
       1.  Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
       2.  Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
@@ -297,7 +216,7 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
           ```
           {: pre}
 
-6. Verify that the `oc` commands run properly with your cluster through the private cloud service endpoint by checking the version.
+3. Verify that the `oc` commands run properly with your cluster through the private cloud service endpoint by checking the version.
   ```
   oc version
   ```
@@ -307,12 +226,16 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
 
   ```
   Client Version: 4.5.0-0.okd-2020-09-04-180756
-  Kubernetes Version: v1.17.1+45f8ddb
+  Server Version: 4.5.35
+  Kubernetes Version: v1.18.3+cdb0358
   ```
   {: screen}
 
-### Accessing 3.11 clusters through the private cloud service endpoint
+### Accessing classic clusters through the private cloud service endpoint
 {: #classic_private_se}
+
+The {{site.data.keyword.openshiftshort}} master is accessible through the private cloud service endpoint if authorized cluster users are in your {{site.data.keyword.cloud_notm}} private network or are connected to the private network such as through a [classic VPN connection](/docs/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl). However, communication with the Kubernetes master over the private cloud service endpoint must go through the <code>166.X.X.X</code> IP address range, which is not routable from a classic VPN connection or through {{site.data.keyword.dl_full_notm}}. You can expose the private cloud service endpoint of the master for your cluster users by using a private network load balancer (NLB). The private NLB exposes the private cloud service endpoint of the master as an internal <code>10.X.X.X</code> IP address range that users can access with the VPN or {{site.data.keyword.dl_full_notm}} connection. If you enable only the private cloud service endpoint, you can use the {{site.data.keyword.openshiftshort}} web console to create the private NLB.
+{: shortdesc}
 
 1. Log in to your [{{site.data.keyword.openshiftshort}} cluster by using the public cloud service endpoint](#access_public_se).
 
@@ -448,18 +371,11 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
     Example output:
 
     ```
-    oc v3.11.0+0cbc58b
-    kubernetes v1.11.0+d4cacc0
-    features: Basic-Auth
-
-    Server https://c1.private.us-east.containers.cloud.ibm.com:31144
-    openshift v3.11.98
-    kubernetes v1.11.0+d4cacc0
+    Client Version: 4.5.0-0.okd-2020-09-04-180756
+    Server Version: 4.5.35
+    Kubernetes Version: v1.18.3+cdb0358
     ```
     {: screen}
-
-<br />
-
 
 ### Creating an allowlist for the private cloud service endpoint
 {: #private-se-allowlist}
@@ -505,6 +421,8 @@ To create a private cloud service endpoint allowlist:
   {: pre}
 
 Your authorized users can now continue with [Accessing {{site.data.keyword.openshiftshort}} clusters through the private cloud service endpoint](#access_private_se).
+
+<br />
 
 
 ## Accessing {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}}

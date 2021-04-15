@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-15"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -185,5 +185,30 @@ The **Health State** reflects the lifecycle of the add-on components. The **Heal
 |H1512|`Addon daemonset may not be available on all Ready nodes.`|For the static route add-on: The static route operator `DaemonSet` is not available on any worker nodes, which prevents you from applying static route resources. Your worker nodes cannot run the static route operator `DaemonSet` for the following reasons:<ul><li>One or more worker nodes reached their [resource limits](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#debug_worker_nodes).</li><li>One or more worker nodes are running the [maximum number of pods per worker node](/docs/openshift?topic=openshift-openshift_limitations#classic_limits).</li></ul>|
 {: caption="Add-on health statuses"}
 {: summary="Table rows read from left to right, with the add-on status in column one and a description in column two."}
+
+
+
+
+
+## Supported add-ons for clusters in {{site.data.keyword.satelliteshort}} locations
+{: #addons-satellite}
+
+Review which managed add-ons are available for {{site.data.keyword.openshiftshort}} clusters that are created in an {{site.data.keyword.satellitelong_notm}} location.
+{: shortdesc}
+
+Supported add-ons for clusters in {{site.data.keyword.satelliteshort}} locations:
+- [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility)
+- [HPCS Router](/docs/openshift?topic=openshift-hpcs-router)
+- [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
+- [Kubernetes web terminal](/docs/containers?topic=containers-cs_cli_install#cli_web)
+- [Static routes](/docs/openshift?topic=openshift-static-routes)
+
+Unsupported add-ons for clusters in {{site.data.keyword.satelliteshort}} locations:
+- [ALB OAuth Proxy](/docs/containers?topic=containers-comm-ingress-annotations#app-id)
+- [Cluster Autoscaler](/docs/openshift?topic=openshift-ca)
+- [Istio](/docs/containers?topic=containers-istio)
+- [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block)
+
+
 
 
