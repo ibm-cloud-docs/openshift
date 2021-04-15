@@ -126,7 +126,7 @@ Before you install OCS in your cluster, you must make sure that the following pr
 
 1. [Install the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
 1. [Review the SDS worker node flavors](/docs/openshift?topic=openshift-planning_worker_nodes#sds-table).
-1. Create a [classic cluster](/docs/containers?topic=containers-clusters) with a minimum of one worker node per zone across three zones. Create a cluster with worker nodes of flavor type `mb4c.32x384.3.8tb.ssd` or  that have the required local disks for OCS.
+1. Create a [classic cluster](/docs/containers?topic=containers-clusters) with a minimum of one worker node per zone across three zones. Create a cluster with worker nodes of flavor type `mb4c.32x384.3.8tb.ssd` or `mb4c.20x64.2x1.9tb.ssd` that have the required local disks for OCS.
 1. [Prepare your classic cluster](#ocs-cluster-prepare-classic).
 
 ### Classic: Preparing your cluster for an OpenShift Container Storage installation.
@@ -300,60 +300,11 @@ Before you install OCS, get the details of the local disks on your worker nodes.
 7. Repeat the previous steps for each worker node that you want to use for your OpenShift Container Storage deployment.
 
 8. Finishing installing OCS for your cluster type:
-  * **Multizone clusters**: [Create a `waitForFirstConsumer` storage class](#classic-ocs-sc-wffc).
   * **Single zone clusters**: [Install OCS in your cluster](/docs/openshift?topic=openshift-ocs-storage-install).
 
 <br />
 
-<staging internal>
 
-### Classic: Creating a `waitForFirstConsumer` storage class 
-{: #classic-ocs-sc-wffc}
-If you have a multizone cluster on classic infrastructure, you must create a custom storage class and set the `volumeBindingMode` to `waitForFirstConsumer`. You can use a tiered storage class as a template to create a storage class. For more information about {{site.data.keyword.blockstorageshort}} classes, see the [storage class reference](/docs/containers?topic=containers-block_storage#block_storageclass_reference).
-{: shortdesc}
-
-**Internal only**: The following steps apply to multizone clusters only. You can use the `ibmcloud-block-storage-plugin` to attach storage to your worker nodes.
-{: note}
-
-
-1. Save the following `StorageClass` YAML to a file on your local machine.
-
-  ```yaml
-  apiVersion: storage.k8s.io/v1
-  kind: StorageClass
-  metadata:
-    name: <name> # Enter a name for your storage class. Example: ocs-storage-class
-    labels:
-      app: ibmcloud-block-storage-plugin
-  provisioner: ibm.io/ibmc-block
-  parameters:
-    type: "Endurance"
-    iopsPerGB: "10"
-    sizeRange: '[20-4000]Gi'
-    fsType: "ext4"
-    billingType: "hourly"
-    classVersion: "2"
-  reclaimPolicy: "Delete"
-  allowVolumeExpansion: true
-  volumeBindingMode: WaitForFirstConsumer # Important: For multizone clusters, set the volumeBidingMode to WaitForFirstConsumer.
-  ```
-  {: codeblock}
-
-2. Save the file and create the storage class in your cluster.
-  ```sh
-  oc create -f <storageclass-filename>
-  ```
-  {: pre}
-
-3. Verify that your storage class is deployed.
-  ```
-  oc get sc
-  ```
-  {: pre}
-
-**Next steps**: [Install OCS in your cluster](/docs/openshift?topic=openshift-ocs-storage-install).
-
-<staging internal>
 
 
 
