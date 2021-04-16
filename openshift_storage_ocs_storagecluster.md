@@ -339,9 +339,9 @@ Refer to the following OpenShift Container Storage parameters when you use the a
 
 | Parameter | Description | Default value |
 | --- | --- | --- |
-| `monStorageClassName` | Enter the name of the storage class that you want to use for your MON devices. For baremetal worker nodes, enter <code>localfile</code>. <staging internal><ul><li><b>Multizone clusters</b>: Enter the name of the custom storage class that you created earler. Example: <code>ocs-storage-class</code>.</li><li><b>Single zone clusters</b>: Enter the name of the storage class that you want to use. Example: <code>ibmc-block-gold</code>. For more information about storage classes, see the [Storage class reference](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference).</li></ul><staging internal> | N/A |
+| `monStorageClassName` | Enter the name of the storage class that you want to use for your MON devices. For baremetal worker nodes, enter <code>localfile</code>.  | N/A |
 | `monSize` | Enter a size for your monitoring storage pods. Example: `20Gi`. | N/A |
-| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD devices. For baremetal worker nodes, enter <code>localblock</code>. <staging internal><ul><li><b>Multizone clusters</b>: Enter the name of the custom storage class that you created earler. Example: <code>ocs-storage-class</code>.</li><li><b>Single zone clusters</b>: Enter the name of the storage class that you want to use. Example: <code>ibmc-block-gold</code>. For more information about storage classes, see the [Storage class reference](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference).</li></ul><staging internal> | N/A |
+| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD devices. For baremetal worker nodes, enter <code>localblock</code>.  | N/A |
 | `osdSize` | Enter a size for your monitoring storage devices. Example: `100Gi`. | N/A |
 | `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. OCS creates three times the specified number. For example, if you enter `1`, OCS creates 3 OSDs. | `1` |
 | `billingType` | Enter a <code>billingType</code> of either <code>hourly</code> or <code>monthly</code> for your OCS deployment. | `hourly` |
