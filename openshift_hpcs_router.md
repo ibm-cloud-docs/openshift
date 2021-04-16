@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-16"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -357,7 +357,7 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to generate and si
   When this resource is created, the following processes occur:
     * {{site.data.keyword.cloud_notm}} HPCS Router operator creates a CSR generator job and a `ConfigMap` resource.
     * The CSR generator job uses the `ConfigMap` to process the data in the `Certificate` custom resource.
-    * The CSR generator job uses the data in the `Certificate` custom resource and the cerdentials in the `hpcs-credentials` secret to sign the CSR.
+    * The CSR generator job uses the data in the `Certificate` custom resource and the credentials in the `hpcs-credentials` secret to sign the CSR.
     * A secret that contains the signed CSR, the `grep11` reference to the generated private key, and the generated public key is created in the project that you specified in the `Certificate` custom resource.
 
 3. Get the signed CSR from the generated secret. Additionally, note the `grep11` reference to the generated private key, which is used in a later step.

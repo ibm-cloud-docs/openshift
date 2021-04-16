@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-04-15"
+lastupdated: "2021-04-16"
 
 keywords: openshift
 subcollection: openshift
@@ -349,8 +349,8 @@ subcollection: openshift
 
 
 
-## Planning your cluster environment
-{: #sitemap_planning_your_cluster_environment}
+## Planning the cluster environment
+{: #sitemap_planning_the_cluster_environment}
 
 
 [Moving your environment to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-strategy)
@@ -1362,76 +1362,152 @@ subcollection: openshift
   * [Gathering logs](/docs/openshift?topic=openshift-portworx#portworx_logs)
 * [Limitations](/docs/openshift?topic=openshift-portworx#portworx_limitations)
 
+
+## Preparing your cluster for OpenShift Container Storage
+{: #sitemap_preparing_your_cluster_for_openshift_container_storage}
+
+
 [Preparing your cluster for OpenShift Container Storage](/docs/openshift?topic=openshift-ocs-storage-prep)
-* [VPC: Planning your OpenShift Container Storage setup](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-vpc-plan)
-* [Classic: Planning your OpenShift Container Storage setup](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-plan)
-  * [Classic: Preparing your cluster for an OpenShift Container Storage installation](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-cluster-prepare-classic)
-  * [Classic: Getting your device details](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-get-devices)
+
+[VPC: Planning your OpenShift Container Storage setup](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-vpc-plan)
+
+[Classic: Planning your OpenShift Container Storage setup](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-plan)
+* [Classic: Preparing your cluster for an OpenShift Container Storage installation](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-cluster-prepare-classic)
+* [Classic: Getting your device details](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-get-devices)
+
+
+## Installing OpenShift Container Storage in your cluster
+{: #sitemap_installing_openshift_container_storage_in_your_cluster}
+
 
 [Installing OpenShift Container Storage in your cluster](/docs/openshift?topic=openshift-ocs-storage-install)
-* [Choosing on an OCS installation path](/docs/openshift?topic=openshift-ocs-storage-install#ocs-install-path)
-* [Installing the OCS add-on](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-addon)
-  * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-ocs-storage-install#ocs-create-cos)
-  * [Installing the OpenShift Container Storage add-on from the console](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-console)
-  * [Installing the OpenShift Container Storage add-on from the CLI](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-cli)
-  * [Removing the OpenShift Container Storage add-on from your cluster](/docs/openshift?topic=openshift-ocs-storage-install#ocs-addon-rm)
-* [Installing OpenShift Container Storage from OperatorHub](/docs/openshift?topic=openshift-ocs-storage-install#ocs-install-oh)
+
+[Choosing on an OCS installation path](/docs/openshift?topic=openshift-ocs-storage-install#ocs-install-path)
+
+[Installing the OCS add-on](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-addon)
+* [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-ocs-storage-install#ocs-create-cos)
+* [Installing the OpenShift Container Storage add-on from the console](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-console)
+* [Installing the OpenShift Container Storage add-on from the CLI](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-cli)
+* [Removing the OpenShift Container Storage add-on from your cluster](/docs/openshift?topic=openshift-ocs-storage-install#ocs-addon-rm)
+
+[Installing OpenShift Container Storage from OperatorHub](/docs/openshift?topic=openshift-ocs-storage-install#ocs-install-oh)
+
+
+## Setting up your storage cluster
+{: #sitemap_setting_up_your_storage_cluster}
+
 
 [Setting up your storage cluster](/docs/openshift?topic=openshift-ocs-storage-cluster-setup)
-* [Add-on for VPC clusters: Creating your OCS storage cluster CRD](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-deploy-crd)
-* [Add-on for classic clusters: Creating your OCS storage cluster CRD](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-deploy-crd)
-* [Operator: Creating an OCS storage cluster in the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-create-storagecluster-console)
-  * [VPC: Creating a storage cluster in the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-deploy-console)
-  * [Classic: Creating a storage cluster in the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-deploy-console)
-* [VPC: OpenShift Container Storage parameter reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-param-ref)
-* [Classic: OpenShift Container Storage parameter reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-param-ref)
-* [Storage class reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-reference-section)
+
+[Add-on for VPC clusters: Creating your OCS storage cluster CRD](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-deploy-crd)
+
+[Add-on for classic clusters: Creating your OCS storage cluster CRD](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-deploy-crd)
+
+[Operator: Creating an OCS storage cluster in the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-create-storagecluster-console)
+* [VPC: Creating a storage cluster in the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-deploy-console)
+* [Classic: Creating a storage cluster in the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-deploy-console)
+
+[VPC: OpenShift Container Storage parameter reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-param-ref)
+
+[Classic: OpenShift Container Storage parameter reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-param-ref)
+
+[Storage class reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-reference-section)
+
+
+## Deploying an app that uses OpenShift Container Storage
+{: #sitemap_deploying_an_app_that_uses_openshift_container_storage}
+
 
 [Deploying an app that uses OpenShift Container Storage](/docs/openshift?topic=openshift-ocs-deploy-app)
 
+
+## Managing your OpenShift Container Storage deployment
+{: #sitemap_managing_your_openshift_container_storage_deployment}
+
+
 [Managing your OpenShift Container Storage deployment](/docs/openshift?topic=openshift-ocs-manage-deployment)
-* [Expanding OCS in VPC clusters](/docs/openshift?topic=openshift-ocs-manage-deployment#expanding-ocs-in-vpc-clusters)
-  * [Scaling OCS by increasing the `numOfOsd` in your CRD](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-vpc-scaling-osd)
-  * [Expanding OCS by adding worker nodes to your VPC cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-vpc-add-worker-nodes)
-* [VPC: Updating the OCS operator from your CRD](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-up-vpc)
-* [Classic: Increasing storage capacity by adding worker nodes to your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-add-worker-nodes-classic)
-* [Setting up backing stores by using the NooBaa CLI](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-backing-store-setup)
-* [Removing OCS from your apps](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-apps-storage)
-* [Removing your OCS storage cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster)
-* [Cleaning up your OCS deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-cleanup-resources)
-  * [VPC: Cleaning up OCS](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-cleanup-vpc)
-  * [Classic: Cleaning up OCS](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-cleanup-classic-resources)
-* [Troubleshooting OCS](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-troubleshooting-gather)
+
+[Expanding OCS in VPC clusters](/docs/openshift?topic=openshift-ocs-manage-deployment#expanding-ocs-in-vpc-clusters)
+* [Scaling OCS by increasing the `numOfOsd` in your CRD](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-vpc-scaling-osd)
+* [Expanding OCS by adding worker nodes to your VPC cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-vpc-add-worker-nodes)
+
+[VPC: Updating the OCS operator from your CRD](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-up-vpc)
+
+[Classic: Increasing storage capacity by adding worker nodes to your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-add-worker-nodes-classic)
+
+[Setting up backing stores by using the NooBaa CLI](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-backing-store-setup)
+
+[Removing OCS from your apps](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-apps-storage)
+
+[Removing your OCS storage cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster)
+
+[Cleaning up your OCS deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-cleanup-resources)
+* [VPC: Cleaning up OCS](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-cleanup-vpc)
+* [Classic: Cleaning up OCS](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-cleanup-classic-resources)
+
+[Troubleshooting OCS](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-troubleshooting-gather)
+
+
+## Storage class reference
+{: #sitemap_storage_class_reference}
+
 
 [Storage class reference](/docs/openshift?topic=openshift-ocs-sc-ref)
 
+
+## Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters
+{: #sitemap_storing_data_on__for_unmanaged_clusters}
+
+
 [Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged)
-* [Prerequisites](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-prereq)
-  * [Labelling your worker nodes](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-label-um)
-  * [Retrieving IAM and VPC details](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-driver-get-details)
-* [Creating the image pull secret in your cluster](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-create-storage-secret)
-* [Creating the {{site.data.keyword.block_storage_is_short}} driver deployment](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-deploy-cm)
-* [Deploying a stateful set that uses {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-stateful-set-deploy)
-* [Removing the {{site.data.keyword.block_storage_is_short}} driver](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#removing-the-block-storage-for-vpc-driver)
-* [Config map reference](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-cm-ref)
-  * [RHEL or CentOS configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-rhel-cm)
-  * [Ubuntu configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
+
+[Prerequisites](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-prereq)
+* [Labelling your worker nodes](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-label-um)
+* [Retrieving IAM and VPC details](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-driver-get-details)
+
+[Creating the image pull secret in your cluster](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-create-storage-secret)
+
+[Creating the {{site.data.keyword.block_storage_is_short}} driver deployment](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-deploy-cm)
+
+[Deploying a stateful set that uses {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-stateful-set-deploy)
+
+[Removing the {{site.data.keyword.block_storage_is_short}} driver](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#removing-the-block-storage-for-vpc-driver)
+
+[Config map reference](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-cm-ref)
+* [RHEL or CentOS configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-rhel-cm)
+* [Ubuntu configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
+
+
+## Backing up and restoring storage data
+{: #sitemap_backing_up_and_restoring_storage_data}
+
 
 [Backing up and restoring storage data](/docs/openshift?topic=openshift-storage_br)
 
+
+## IBM Cloud storage utilities
+{: #sitemap_ibm_cloud_storage_utilities}
+
+
 [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities)
-* [Classic: Installing the IBM Cloud Block Storage Attacher plug-in (beta)](/docs/openshift?topic=openshift-utilities#block_storage_attacher)
-  * [Updating the IBM Cloud Block Storage Attacher plug-in](/docs/openshift?topic=openshift-utilities#update_block_attacher)
-  * [Removing the IBM Cloud Block Volume Attacher plug-in](/docs/openshift?topic=openshift-utilities#remove_block_attacher)
-* [Classic: Manually adding block storage to specific worker nodes](/docs/openshift?topic=openshift-utilities#manual_block)
-* [Classic: Attaching raw block storage to non-SDS worker nodes](/docs/openshift?topic=openshift-utilities#attach_block)
-* [VPC: Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_attach)
-  * [Detaching raw and unformatted {{site.data.keyword.blockstorageshort}} from a worker node in a VPC cluster by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_detach)
-  * [Reviewing volume attachment details for a VPC worker node by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_get_worker)
-* [VPC: Attaching raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes by using the CLI](/docs/openshift?topic=openshift-utilities#vpc_cli_attach)
-  * [Removing raw {{site.data.keyword.blockstorageshort}} from VPC worker nodes by using the CLI](/docs/openshift?topic=openshift-utilities#storage-util-rm-vpc-cli)
-* [Setting up {{site.data.keyword.mon_full_notm}} for storage volumes](/docs/openshift?topic=openshift-utilities#monitor_storage)
-  * [Troubleshooting persistent storage when a {{site.data.keyword.mon_full_notm}} alert is triggered](/docs/openshift?topic=openshift-utilities#monitor_storage_ts)
+
+[Classic: Installing the IBM Cloud Block Storage Attacher plug-in (beta)](/docs/openshift?topic=openshift-utilities#block_storage_attacher)
+* [Updating the IBM Cloud Block Storage Attacher plug-in](/docs/openshift?topic=openshift-utilities#update_block_attacher)
+* [Removing the IBM Cloud Block Volume Attacher plug-in](/docs/openshift?topic=openshift-utilities#remove_block_attacher)
+
+[Classic: Manually adding block storage to specific worker nodes](/docs/openshift?topic=openshift-utilities#manual_block)
+
+[Classic: Attaching raw block storage to non-SDS worker nodes](/docs/openshift?topic=openshift-utilities#attach_block)
+
+[VPC: Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_attach)
+* [Detaching raw and unformatted {{site.data.keyword.blockstorageshort}} from a worker node in a VPC cluster by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_detach)
+* [Reviewing volume attachment details for a VPC worker node by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_get_worker)
+
+[VPC: Attaching raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes by using the CLI](/docs/openshift?topic=openshift-utilities#vpc_cli_attach)
+* [Removing raw {{site.data.keyword.blockstorageshort}} from VPC worker nodes by using the CLI](/docs/openshift?topic=openshift-utilities#storage-util-rm-vpc-cli)
+
+[Setting up {{site.data.keyword.mon_full_notm}} for storage volumes](/docs/openshift?topic=openshift-utilities#monitor_storage)
+* [Troubleshooting persistent storage when a {{site.data.keyword.mon_full_notm}} alert is triggered](/docs/openshift?topic=openshift-utilities#monitor_storage_ts)
 
 
 ## Enhancing your cluster with Cloud Paks, Operators, and integrations
