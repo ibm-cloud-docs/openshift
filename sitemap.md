@@ -349,8 +349,8 @@ subcollection: openshift
 
 
 
-## Planning the cluster environment
-{: #sitemap_planning_the_cluster_environment}
+## Planning your cluster environment
+{: #sitemap_planning_your_cluster_environment}
 
 
 [Moving your environment to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-strategy)

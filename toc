@@ -55,7 +55,7 @@ Red Hat OpenShift on IBM Cloud
     Setting up clusters
 
         {: .topicgroup}
-        Planning the cluster environment
+        Planning your cluster environment
             openshift_kube_strategy.md
             openshift_cluster_plan_network.md
             openshift_cluster_plan_ha.md
