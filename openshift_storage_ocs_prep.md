@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-15"
+lastupdated: "2021-04-19"
 
 keywords: openshift, openshift container storage, ocs, roks
 
@@ -104,7 +104,7 @@ OpenShift Container Storage is a highly available storage solution that you can 
 
 **Minimum required permissions**: **Administrator** platform access role and the **Manager** service access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-The OpenShift Container Storage add-on is available as a technology preview feature and might change without prior notice. Do not use this feature for production workloads.
+The OpenShift Container Storage add-on is available as a technology preview and might change without prior notice. Do not use this add-on for production workloads.
 {: preview}
 
 <br />

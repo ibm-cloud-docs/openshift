@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-16"
+lastupdated: "2021-04-19"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -318,12 +318,12 @@ Refer to the following OpenShift Container Storage parameters when you use the a
 
 | Parameter | Description | Default value |
 | --- | --- | --- |
-| `monStorageClassName` | Enter the name of the storage class that you want to use for your MON devices. <ul><li><b>Multizone clusters</b>: Enter the name of the metro storage class that you want to use. Metro storage classes have the volume binding mode <code>WaitForFirstConsumer</code> which is required for multizone OCS deployments. Example: <code>ibmc-vpc-block-metro-retain-10iops-tier</code>.</li><li><b>Single zone clusters</b>: Enter the name of the tiered storage class that you want to use. Example: <code>ibmc-vpc-block-10iops-tier</code>.</li></ul> For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference). | N/A |
+| `monStorageClassName` | Enter the name of the storage class that you want to use for your MON devices. For **Multizone clusters**, enter the name of the metro storage class that you want to use. Metro storage classes have the volume binding mode `WaitForFirstConsumer` which is required for multizone OCS deployments. Example: `ibmc-vpc-block-metro-retain-10iops-tier`. For **Single zone clusters**, enter the name of the tiered storage class that you want to use. Example: `ibmc-vpc-block-10iops-tier`. For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference).| N/A |
 | `monSize` | Enter a size for your monitoring storage devices. Example: `20Gi` | N/A |
-| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD devices. <ul><li><b>Multizone clusters</b>: Enter the name of the metro storage class that you want to use. Metro storage classes have the volume binding mode <code>WaitForFirstConsumer</code> which is required for multizone OCS deployments. Example: <code>ibmc-vpc-block-metro-retain-10iops-tier</code>.</li><li><b>Single zone clusters</b>: Enter the name of the tiered storage class that you want to use. Example: <code>ibmc-vpc-block-10iops-tier</code>.</li></ul> For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference). | N/A |
+| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD devices. For **Multizone clusters**, enter the name of the metro storage class that you want to use. Metro storage classes have the volume binding mode `WaitForFirstConsumer` which is required for multizone OCS deployments. Example: `ibmc-vpc-block-metro-retain-10iops-tier`. For **Single zone clusters**, enter the name of the tiered storage class that you want to use. Example: `ibmc-vpc-block-10iops-tier`. For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference).| N/A |
 | `osdSize` | Enter a size for your storage devices. Example: `100Gi`. The total storage capacity of your OCS cluster is equivalent to the `osdSize` x 3 divided by the `numOfOsd`. | N/A |
-| `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. OCS creates three times the `numOfOsd` value. For example, if you enter <code>1</code>, OCS provisions 3 disks of the size and storage class that you specify in the `osdStorageClassName` field. | `1` |
-| `billingType` | Enter a <code>billingType</code> of either <code>hourly</code> or <code>monthly</code> for your OCS deployment. | `hourly` |
+| `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. OCS creates three times the `numOfOsd` value. For example, if you enter `1`, OCS provisions 3 disks of the size and storage class that you specify in the `osdStorageClassName` field. | `1` |
+| `billingType` | Enter a `billingType` of either `hourly` or `monthly` for your OCS deployment. | `hourly` |
 | `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your OCS deployment. | `false` |
 | `worker-IP` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your OCS deployment. Do not specify this parameter if you want to use all of the worker nodes in your cluster. | N/A |
 {: caption="OCS parameter reference" caption-side="top"}
@@ -339,12 +339,12 @@ Refer to the following OpenShift Container Storage parameters when you use the a
 
 | Parameter | Description | Default value |
 | --- | --- | --- |
-| `monStorageClassName` | Enter the name of the storage class that you want to use for your MON devices. For baremetal worker nodes, enter <code>localfile</code>.  | N/A |
+| `monStorageClassName` | Enter the name of the storage class that you want to use for your MON devices. For baremetal worker nodes, enter `localfile`. | N/A |
 | `monSize` | Enter a size for your monitoring storage pods. Example: `20Gi`. | N/A |
-| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD devices. For baremetal worker nodes, enter <code>localblock</code>.  | N/A |
+| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD devices. For baremetal worker nodes, enter `localblock`. | N/A |
 | `osdSize` | Enter a size for your monitoring storage devices. Example: `100Gi`. | N/A |
 | `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. OCS creates three times the specified number. For example, if you enter `1`, OCS creates 3 OSDs. | `1` |
-| `billingType` | Enter a <code>billingType</code> of either <code>hourly</code> or <code>monthly</code> for your OCS deployment. | `hourly` |
+| `billingType` | Enter a `billingType` of either `hourly` or `monthly` for your OCS deployment. | `hourly` |
 | `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your OCS deployment. | `false` |
 | `worker-IP` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your OCS deployment. Do not specify this parameter if you want to use all of the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
 {: caption="OpenShift Container Storage parameter reference" caption-side="top"}
