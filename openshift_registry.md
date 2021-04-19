@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-04-19"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -316,7 +316,7 @@ To use the internal registry, set up a public route to access the registry. Then
 
 1.  From the `openshift-image-registry` project, make sure that the `image-registry` service exists for the internal registry.
     ```
-    oc get svc
+    oc get svc -n openshift-image-registry
     ```
     {: pre}
 
@@ -329,12 +329,12 @@ To use the internal registry, set up a public route to access the registry. Then
     {: screen}
 2.  Create a secured route for the `image-registry` service that uses `reencrypt` TLS termination. With re-encryption, the router terminates the TLS connection with a certificate, and then re-encrypts the connection to the internal registry with a different certificate. With this approach, the full path of the connection between the user and the internal registry is encrypted. To provide your own custom domain name, include the `--hostname` flag.
     ```
-    oc create route reencrypt --service=image-registry
+    oc create route reencrypt --service=image-registry -n openshift-image-registry
     ```
     {: pre}
 3.  Retrieve the hostname (**HOST/PORT**) and the **PORT** that were assigned to the `image-registry` route.
     ```
-    oc get route image-registry
+    oc get route image-registry -n openshift-image-registry
     ```
     {: pre}
     Example output:
@@ -345,7 +345,7 @@ To use the internal registry, set up a public route to access the registry. Then
     {: screen}
 4.  Edit the route to set the [load balancing strategy](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#load-balancing){: external} to `source` so that the same client IP address reaches the same server, as in a passthrough route setup. You can set the strategy by adding an annotation in the `metadata.annotations` section: `haproxy.router.openshift.io/balance: source`. You can edit the configuration file from the **{{site.data.keyword.openshiftshort}} Application Console** or in your command line by running the following command.
     ```
-    oc edit route image-registry
+    oc edit route image-registry -n openshift-image-registry
     ```
     {: pre}
 
