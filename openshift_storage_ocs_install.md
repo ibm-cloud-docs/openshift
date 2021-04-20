@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-15"
+lastupdated: "2021-04-20"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -241,7 +241,7 @@ You can install the OCS add-on by using the [`ibmcloud oc cluster addon enable` 
 You can remove OCS add-on from your cluster by using the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or the CLI.
 {: shortdesc}
 
-When you disable the OpenShift Container Storage add-on, only the OCS operator is removed from your cluster. Your existing workloads remain, but you cannot create more OCS workloads. You also cannot delete your `OcsCluster` custom resource after the operator is removed. If you want to remove all of your OCS resources and data, see [Removing OCS from your cluster](/docs/openshift?topic=openshift-ocs-remove-storage-cluster). If you removed the add-on and cannot delete your `OcsCluster`, reinstall the add-on, then delete the `OcsCluster`.
+When you disable the OpenShift Container Storage add-on, only the OCS operator is removed from your cluster. Your existing workloads remain, but you cannot create more OCS workloads. You also cannot delete your `OcsCluster` custom resource after the operator is removed. If you want to remove all of your OCS resources and data, see [Removing OCS from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster). If you removed the add-on and cannot delete your `OcsCluster`, reinstall the add-on, then delete the `OcsCluster`.
 {: note}
 
 #### Uninstalling the OpenShift Container Storage add-on from the console
@@ -250,7 +250,7 @@ When you disable the OpenShift Container Storage add-on, only the OCS operator i
 To uninstall the OpenShift Container Storage add-on from your cluster, complete the following steps.
 {: shortdesc}
 
-1. **Optional**: To remove the add-on and all OCS resources, first [remove OCS from your cluster](#ocs-vpc-remove-deployment).
+1. **Optional**: To remove the add-on and all OCS resources, first [remove OCS from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster).
 2. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to remove the OpenShift Container Storage add-on.
 3. On the cluster **Overview** page, click **Add-ons**.
 4. On the OpenShift Container Storage card, click **Uninstall**.
@@ -261,7 +261,7 @@ To uninstall the OpenShift Container Storage add-on from your cluster, complete 
 You can uninstall the OpenShift Container Storage add-on from your cluster by using the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or the CLI.
 {: shortdesc}
 
-1. **Optional**: To remove the add-on and all OCS resources, first [remove OCS from your cluster](#ocs-vpc-remove-deployment).
+1. **Optional**: To remove the add-on and all OCS resources, first [remove OCS from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster).
 
 2. Uninstall the add-on.
   ```
