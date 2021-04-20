@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-15"
+lastupdated: "2021-04-20"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -162,7 +162,7 @@ For example, if your OCS cluster has three worker nodes, you specify an `osdSize
 To increase the storage capacity that is available to OpenShift Container Storage, add compatible worker nodes to your cluster.
 {: shortdesc}
 
-1. Expand the worker pool of the cluster that is used for OCS by [adding worker nodes](/docs/openshift?topic=openshift-add_workers). Ensure that your worker nodes meet the [requirements for OCS](#ocs-cluster-prepare-classic). If you deployed OCS on all of the worker nodes in your cluster, the OCS drivers are installed on the new worker nodes when they are added to your cluster.
+1. Expand the worker pool of the cluster that is used for OCS by [adding worker nodes](/docs/openshift?topic=openshift-add_workers). Ensure that your worker nodes meet the [requirements for OCS](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-plan). If you deployed OCS on all of the worker nodes in your cluster, the OCS drivers are installed on the new worker nodes when they are added to your cluster.
 2. If you deployed OCS on a subset of worker nodes in your cluster by specifying the private `<worker-IP>` parameters in your `OcsCluster` custom resource, you can add the IP addresses of the new worker nodes to your OCS deployment by editing the custom resource definition.
   ```sh
   oc edit ocsluster ocscluster-vpc
@@ -227,7 +227,7 @@ To increase the storage capacity that is available to OpenShift Container Storag
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1. Expand the worker pool of the cluster that is used for OCS by [adding SDS worker nodes](/docs/openshift?topic=openshift-add_workers). Ensure that your worker nodes meet the [requirements for OCS](#ocs-cluster-prepare-classic).
+1. Expand the worker pool of the cluster that is used for OCS by [adding SDS worker nodes](/docs/openshift?topic=openshift-add_workers). Ensure that your worker nodes meet the [requirements for OCS](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-plan).
 2. [Find the `by-id` of the local disks](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-get-devices) on your new worker nodes.
 3. Add the `by-id` of the local disks to your `OcsCluster` custom resource definition.
   ```sh
@@ -392,7 +392,7 @@ When you delete the `OcsCluster` custom resource from your cluster, the followin
   ```
   {: pre}
 
-1. **Optional** If you do not want to reinstall OCS, you can [Remove the OCS add-on from your cluster](#ocs-addon-rm).
+1. **Optional** If you do not want to reinstall OCS, you can [Remove the OCS add-on from your cluster](/docs/openshift?topic=openshift-ocs-storage-install#ocs-addon-rm).
 
 ## Cleaning up your OCS deployment
 {: #ocs-rm-cleanup-resources}

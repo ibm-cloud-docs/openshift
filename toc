@@ -183,7 +183,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_storage_block_vpc.md
         openshift_storage_object.md
         openshift_storage_portworx.md
-        
+
         {: topicgroup}
         Storing data on OpenShift Container Storage
             openshift_storage_ocs_prep.md
@@ -271,3 +271,5 @@ Red Hat OpenShift on IBM Cloud
     openshift_limitations.md
     sitemap.md
     {: .navgroup-end}
+
+
