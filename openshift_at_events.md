@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-04-16"
+lastupdated: "2021-04-20"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -396,18 +396,19 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 | Montreal (mon01) | Dallas |
 | San Jose (sjc03, sjc04) | Dallas |
 | São Paulo (sao01) | Dallas |
-| Toronto (tor01) | Dallas |
-| Washington, D.C. (wdc04, wdc06, wdc07) | Dallas |
+| Toronto (tor01) | Washington, D.C. |
+| Washington, D.C. (wdc04, wdc06, wdc07) | Washington, D.C. |
 | Amsterdam (ams03) | Frankfurt |
 | Frankfurt (fra02, fra04, fra05) | Frankfurt |
 | Milan (mil01) | Frankfurt |
 | Oslo (osl01) | Frankfurt |
 | Paris (par01) | Frankfurt |
 | London (lon02, lon04, lon05, lon06) | London |
-| Sydney (syd01, syd04, syd05) | Tokyo |
-| Chennai (che01) | Tokyo |
+| Sydney (syd01, syd04, syd05) | Sydney |
+| Chennai (che01) | Chennai |
+| Seoul (seo01) | Seoul |
+| Osaka (osa21, osa22, osa23) | Osaka |
 | Hong Kong SAR of the PRC (hkg02) | Tokyo |
-| Seoul (seo01) | Tokyo |
 | Singapore (sng01) | Tokyo |
 | Tokyo (tok02, tok04, tok05) | Tokyo |
 {: caption="Corresponding {{site.data.keyword.at_short}} instance and {{site.data.keyword.openshiftlong_notm}} cluster locations." caption-side="top"}
@@ -419,10 +420,11 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 | {{site.data.keyword.openshiftlong_notm}} VPC location | {{site.data.keyword.at_short}} event location |
 |-----|-----|-----|
 | Dallas (us-south-1, us-south-2, us-south-3) | Dallas |
-| Washington, D.C. (us-east-1, us-east-2, us-east-3) | Dallas |
+| Washington, D.C. (us-east-1, us-east-2, us-east-3) | Washington, D.C. |
+| Toronto (ca-tor-1, ca-tor-2, ca-tor-3) | Washington, D.C. |
 | Frankfurt (eu-de-1, eu-de-2, eu-de-3) | Frankfurt |
 | London (eu-gb-1, eu-gb-2, eu-gb-3) | London |
-| Sydney (au-syd-1, au-syd-2, au-syd-3) | Tokyo |
+| Sydney (au-syd-1, au-syd-2, au-syd-3) | Sydney |
 | Tokyo (jp-tok-1, jp-tok-2, jp-tok-3) | Tokyo |
 {: class="simple-tab-table"}
 {: caption="Corresponding {{site.data.keyword.at_short}} instance and {{site.data.keyword.openshiftlong_notm}} cluster locations." caption-side="top"}

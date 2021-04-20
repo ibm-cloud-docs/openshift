@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-19"
+lastupdated: "2021-04-20"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -109,6 +109,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 20 April 2021 | **New! Toronto multizone region for VPC**: You can now create clusters on VPC infrastructure in the Toronto, Canada (`ca-tor`) [location](/docs/openshift?topic=openshift-regions-and-zones).|
 | 19 April 2021 | <ul><li>**Add-on changelogs**: Updated version changelogs for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog) and [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-ons.</li><li>**Cluster autoscaler add-on**: [Patch update `1.0.2_256`](/docs/openshift?topic=openshift-ca_changelog) of the cluster autoscaler add-on is available.</li><li>**{{site.data.keyword.cos_full_notm}} plug-in**: Version `2.0.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in changelog](/docs/openshift?topic=openshift-cos_plugin_changelog).</li></ul> |
 | 16 April 2021 | **New fields and events for {{site.data.keyword.at_short}}**: To align with event auditing standards across {{site.data.keyword.cloud_notm}}, the [previously deprecated cluster fields and events](#deprecated-at-events) are now replaced by new fields and events. For an updated list of events, see [{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events).|
 | 15 April 2021 | <ul><li>**New! OpenShift Container Storage add-on**: The OCS managed add-on is now available as a technology preview. For more information, see [preparing your cluster for OpenShift Container Storage](/docs/openshift?topic=openshift-ocs-storage-prep).</li><li>**Supported add-ons**: Added the [list](/docs/openshift?topic=openshift-managed-addons#addons-satellite) of supported add-ons for clusters in {{site.data.keyword.satelliteshort}} locations.</li><li>**Accessing VPC clusters**: Updated the steps for [accessing VPC clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#vpc_private_se) by configuring the VPC VPN gateway to access the `166.8.0.0/14` subnet.</li></ul> |
