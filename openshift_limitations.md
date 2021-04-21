@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-04-21"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
@@ -213,10 +213,10 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 
 <br />
 
-## VPC Gen 2 compute cluster limitations
+## VPC cluster limitations
 {: #ks_vpc_gen2_limits}
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute clusters in {{site.data.keyword.openshiftlong_notm}} are released with the following limitations. Additionally, all the underlying [VPC quotas, VPC limits](/docs/vpc?topic=vpc-quotas), [VPC service limitations](/docs/vpc?topic=vpc-limitations), and [regular service limitations](#tech_limits) apply.
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC clusters in {{site.data.keyword.openshiftlong_notm}} are released with the following limitations. Additionally, all the underlying [VPC quotas, VPC limits](/docs/vpc?topic=vpc-quotas), [VPC service limitations](/docs/vpc?topic=vpc-limitations), and [regular service limitations](#tech_limits) apply.
 {: shortdesc}
 
 ### Compute
@@ -227,16 +227,16 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | Category | Description |
 | -------- | ----------- |
 | Encryption | The secondary disks of your worker nodes are encrypted at rest by default by the [underlying VPC infrastructure provider](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption). However, you cannot [bring your own encryption to the underlying virtual server instances](/docs/vpc?topic=vpc-creating-instances-byok).|
-| Location | VPC Gen 2 clusters are available only in [select multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc). |
+| Location | VPC clusters are available only in [select multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc). |
 | Operating system | You cannot create a cluster with worker nodes that run multiple operating systems, such as {{site.data.keyword.openshiftshort}} on Red Hat Enterprise Linux and community Kubernetes on Ubuntu. |
-| Versions | VPC Gen 2 clusters must run {{site.data.keyword.openshiftshort}} version 4.3 or later. |
+| Versions | VPC clusters must run {{site.data.keyword.openshiftshort}} version 4.3 or later. |
 | Virtual Private Cloud | See [Known limitations](/docs/vpc-on-classic?topic=vpc-on-classic-known-limitations) and [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas). |
 | v2 API | VPC clusters use the [{{site.data.keyword.openshiftlong_notm}} v2 API](/docs/openshift?topic=openshift-cs_api_install#api_about). The v2 API is currently under development, with only a limited number of API operations currently available. You can run certain v1 API operations against the VPC cluster, such as `GET /v1/clusters` or `ibmcloud oc cluster ls`, but not all the information that a Classic cluster has is returned or you might experience unexpected results. For supported VPC v2 operations, see the [CLI reference topic for VPC commands](/docs/openshift?topic=openshift-kubernetes-service-cli). |
 | Worker node flavors | Only certain flavors are available for worker node [virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#vm). Bare metal machines are not supported.|
 | Worker node host access | For security, you cannot SSH into the worker node compute host. |
 | Worker node updates | You cannot update or reload worker nodes. Instead, you can delete the worker node and rebalance the worker pool with the `ibmcloud oc worker replace` command. If you replace multiple worker nodes at the same time, they are deleted and replaced concurrently, not one by one. Make sure that you have enough capacity in your cluster to reschedule your workloads before you replace worker nodes. |
-{: summary="This table contains information on compute limitations for VPC Gen 2 clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
-{: caption="VPC Gen 2 cluster compute limitations"}
+{: summary="This table contains information on compute limitations for VPC clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
+{: caption="VPC cluster compute limitations"}
 
 
 ### Networking
@@ -247,7 +247,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | Category | Description |
 | -------- | ----------- |
 | App URL length | {{site.data.keyword.openshiftshort}} version 4.6 or later only: DNS resolution is managed by the cluster's [virtual private endpoint (VPE)](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_vpe), which can resolve URLs up to 130 characters. If you expose apps in your cluster with URLs, such as the Ingress subdomain or {{site.data.keyword.openshiftshort}} routes, ensure that the URLs are 130 characters or fewer. |
-| Network speeds | [VPC Gen 2 compute profile network speeds](/docs/vpc?topic=vpc-profiles) refer to the speeds of the worker node interfaces. The maximum speed available to your worker nodes is `16Gbps`. Because IP in IP encapsulation is required for traffic between pods that are on different VPC Gen 2 worker nodes, data transfer speeds between pods on different worker nodes might be slower, about half the compute profile network speed. Overall network speeds for apps that you deploy to your cluster depend on the worker node size and application's architecture. |
+| Network speeds | [VPC profile network speeds](/docs/vpc?topic=vpc-profiles) refer to the speeds of the worker node interfaces. The maximum speed available to your worker nodes is `16Gbps`. Because IP in IP encapsulation is required for traffic between pods that are on different VPC worker nodes, data transfer speeds between pods on different worker nodes might be slower, about half the compute profile network speed. Overall network speeds for apps that you deploy to your cluster depend on the worker node size and application's architecture. |
 | NodePort | You can access an app through a NodePort only if you are connected to your private VPC network, such as through a VPN connection. To access an app from the internet, you must use a VPC load balancer or Ingress service instead. |
 | Pod network | VPC access control lists (ACLs) filter incoming and outgoing traffic for your cluster at the subnet level, and security groups filter incoming and outgoing traffic for your cluster at the worker nodes level. To control traffic within the cluster at the pod-to-pod level, you cannot use VPC security groups or ACLs. Instead, use [Calico](/docs/openshift?topic=openshift-network_policies) and [Kubernetes network policies](/docs/openshift?topic=openshift-vpc-network-policy#kubernetes_policies), which can control the pod-level network traffic that uses IP in IP encapsulation. |
 | Public gateway | You must attach a public gateway to each VPC subnet so that so that your worker nodes can communicate on the public network. Default {{site.data.keyword.openshiftshort}} components, such as the web console and OperatorHub, require public network access. If you do not attach a public gateway to your subnets, you must instead be connected to your VPC private network, such as through a VPN connection, to access the {{site.data.keyword.openshiftshort}} web console or access your cluster with `kubectl` commands.|
@@ -256,9 +256,9 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | strongSwan VPN service | The strongSwan service is not supported. To connect your cluster to resources in an on-premises network or another VPC, see [Using VPN with your VPC](/docs/vpc?topic=vpc-vpn-onprem-example). |
 | Subnets | <ul><li>See [VPC networking limitations](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_limitations).</li><li>Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.</li></ul> |
 | VPC load balancer | See [VPC load balancer limitations](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_limitations). |
-| VPC security groups | VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: You must [allow inbound traffic requests to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-network-policy#security_groups). |
-{: summary="This table contains information on networking limitations for VPC Gen 2 clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
-{: caption="VPC Gen 2 cluster networking limitations"}
+| VPC security groups | VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: You must [allow inbound traffic requests to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-network-policy#security_groups). |
+{: summary="This table contains information on networking limitations for VPC clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
+{: caption="VPC cluster networking limitations"}
 
 ### Storage
 {: #vpc_gen2_storage_limit}
@@ -272,8 +272,8 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | Unsupported types | NFS File Storage and {{site.data.keyword.block_storage_is_short}} are not supported. |
 | Volume attachments | See [Volume attachment limits](/docs/vpc?topic=vpc-attaching-block-storage#vol-attach-limits).|
 | Portworx | Review the [Portworx limitations](/docs/openshift?topic=openshift-portworx#portworx_limitations). |
-{: summary="This table contains information on storage limitations for VPC Gen 2 clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
-{: caption="VPC Gen 2 cluster storage limitations"}
+{: summary="This table contains information on storage limitations for VPC clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
+{: caption="VPC cluster storage limitations"}
 
 
 

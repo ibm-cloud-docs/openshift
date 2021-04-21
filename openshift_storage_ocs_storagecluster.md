@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-19"
+lastupdated: "2021-04-21"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -111,7 +111,7 @@ After you [prepare your cluster for OCS](/docs/openshift?topic=openshift-ocs-sto
 ## Add-on for VPC clusters: Creating your OCS storage cluster CRD
 {: #ocs-vpc-deploy-crd}
 
-To create an OCS storage cluster in your VPC Gen 2 cluster, you can create a custom resource that is used to specify storage device details.
+To create an OCS storage cluster in your VPC cluster, you can create a custom resource that is used to specify storage device details.
 {: shortdesc}
 
 If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](/docs/openshift?topic=openshift-ocs-storage-install#ocs-create-cos), and created the Kubernetes secret in your cluster. When you create the OCS CRD in your cluster, OCS looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store that uses your {{site.data.keyword.cos_short}} HMAC credentials.
@@ -119,7 +119,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 1. Create a custom resource called `OcsCluster`. Save one of the following custom resource definition files on your local machine and edit it to include the name of the custom storage class that you created earlier as the `monStorageClassName` and `osdStorageClassName` parameters. For more information about the `OcsCluster` parameters, see the [parameter reference](#ocs-vpc-param-ref).
 
-  **Example custom resource definition for installing OCS on all worker nodes in a VPC Gen 2 cluster**
+  **Example custom resource definition for installing OCS on all worker nodes in a VPC cluster**
   ```yaml
   apiVersion: ocs.ibm.io/v1
   kind: OcsCluster
@@ -136,7 +136,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
   ```
   {: codeblock}
 
-  **Example custom resource definition for installing OCS only on specified worker nodes in a VPC Gen 2 cluster**
+  **Example custom resource definition for installing OCS only on specified worker nodes in a VPC cluster**
   ```yaml
   apiVersion: ocs.ibm.io/v1
   kind: OcsCluster

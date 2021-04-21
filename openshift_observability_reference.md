@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-04-21"
 
 keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logging config, monitoring config
 
@@ -117,7 +117,7 @@ ibmcloud ob logging agent discover --cluster CLUSTER [--instance LOGGING_INSTANC
 
 **Supported infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -152,7 +152,7 @@ ibmcloud ob logging config create --cluster CLUSTER --instance LOGGING_INSTANCE 
 
 **Supported infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -201,7 +201,7 @@ ibmcloud ob logging config delete --cluster CLUSTER --instance LOGGING_INSTANCE
 
 **Supported infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
@@ -240,7 +240,7 @@ ibmcloud ob logging config list --cluster CLUSTER
 
 **Supported infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 **Minimum required permissions**: 
 - **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}. 
@@ -271,7 +271,7 @@ ibmcloud ob logging config enable public-endpoint|private-endpoint --cluster CLU
 
 **Supported infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -311,7 +311,7 @@ ibmcloud ob logging config replace --cluster CLUSTER --instance LOGGING_INSTANCE
 
 **Supported infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -349,7 +349,7 @@ ibmcloud ob logging config show --cluster CLUSTER --instance LOGGING_INSTANCE
 
 **Supported infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}. 
@@ -381,7 +381,7 @@ ibmcloud ob monitoring agent discover --cluster CLUSTER [--instance MONITORING_I
 
 **Supported infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -413,7 +413,7 @@ ibmcloud ob monitoring config create --cluster CLUSTER --instance MONITORING_INS
 
 **Supported infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -462,7 +462,7 @@ ibmcloud ob monitoring config delete --cluster CLUSTER --instance MONITORING_INS
 
 **Supported infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
@@ -501,7 +501,7 @@ ibmcloud ob monitoring config list --cluster CLUSTER
 
 **Supported infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 **Minimum required permissions**: 
 - **Administratorr** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
@@ -531,7 +531,7 @@ ibmcloud ob monitoring config enable public-endpoint|private-endpoint --cluster 
 
 **Supported infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -571,7 +571,7 @@ ibmcloud ob logging config replace --cluster CLUSTER --instance MONITORING_INSTA
 
 **Supported infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -609,7 +609,7 @@ ibmcloud ob monitoring config show --cluster CLUSTER --instance MONITORING_INSTA
 
 **Supported infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 **Minimum required permissions**: 
 - **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.

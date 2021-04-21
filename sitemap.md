@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-04-20"
+lastupdated: "2021-04-21"
 
 keywords: openshift
 subcollection: openshift
@@ -107,7 +107,7 @@ subcollection: openshift
 
 [Creating a classic {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-getting-started#clusters_gs)
 
-[Creating a VPC Gen 2 compute cluster](/docs/openshift?topic=openshift-getting-started#vpc-gen2-gs)
+[Creating a VPC cluster](/docs/openshift?topic=openshift-getting-started#vpc-gen2-gs)
 
 [Deploying an app with the {{site.data.keyword.openshiftshort}} service catalog](/docs/openshift?topic=openshift-getting-started#deploy-app)
 
@@ -419,9 +419,9 @@ subcollection: openshift
 * [Creating a standard classic cluster](/docs/openshift?topic=openshift-clusters#clusters_standard)
   * [Creating a standard classic cluster in the console](/docs/openshift?topic=openshift-clusters#clusters_ui)
   * [Creating a standard classic cluster in the CLI](/docs/openshift?topic=openshift-clusters#clusters_cli_steps)
-* [Creating a standard VPC Gen 2 compute cluster](/docs/openshift?topic=openshift-clusters#clusters_vpcg2)
-  * [Creating a standard VPC Gen 2 compute cluster in the console](/docs/openshift?topic=openshift-clusters#clusters_vpcg2_ui)
-  * [Creating standard VPC Gen 2 compute clusters from the CLI](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli)
+* [Creating a standard VPC cluster](/docs/openshift?topic=openshift-clusters#clusters_vpcg2)
+  * [Creating a standard VPC cluster in the console](/docs/openshift?topic=openshift-clusters#clusters_vpcg2_ui)
+  * [Creating standard VPC clusters from the CLI](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli)
 * [Next steps](/docs/openshift?topic=openshift-clusters#next_steps)
 
 [Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters)
@@ -583,7 +583,7 @@ subcollection: openshift
   * [Storage for apps](/docs/openshift?topic=openshift-costs#persistent_storage)
   * [{{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-costs#services)
   * [Operators and other third-party integrations](/docs/openshift?topic=openshift-costs#operators_pricing)
-  * [VPC Generation 2 compute worker nodes](/docs/openshift?topic=openshift-costs#charges_vpc_gen2)
+  * [VPC worker nodes](/docs/openshift?topic=openshift-costs#charges_vpc_gen2)
 * [Estimating costs](/docs/openshift?topic=openshift-costs#costs-estimate)
 * [Managing costs](/docs/openshift?topic=openshift-costs#costs-manage)
 
@@ -2347,7 +2347,7 @@ subcollection: openshift
 * [Networking](/docs/openshift?topic=openshift-openshift_limitations#classic_networking_limit)
 * [Storage](/docs/openshift?topic=openshift-openshift_limitations#classic_storage_limit)
 
-[VPC Gen 2 compute cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ks_vpc_gen2_limits)
+[VPC cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ks_vpc_gen2_limits)
 * [Compute](/docs/openshift?topic=openshift-openshift_limitations#vpc_gen2_compute_limit)
 * [Networking](/docs/openshift?topic=openshift-openshift_limitations#vpc_gen2_networking_limit)
 * [Storage](/docs/openshift?topic=openshift-openshift_limitations#vpc_gen2_storage_limit)

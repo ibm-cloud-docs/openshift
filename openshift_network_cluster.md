@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-09"
+lastupdated: "2021-04-21"
 
 keywords: openshift, roks, rhos, rhoks, vlan
 
@@ -147,7 +147,7 @@ The private cloud service endpoint makes your Kubernetes master privately access
 Enable the public cloud service endpoint for your cluster.
 {: shortdesc}
 
-Your cluster must have a public cloud service endpoint on classic infrastructre. For a cluster with only a private cloud service endpoint, create the cluster on VPC Gen 2 compute infrastructure instead.
+Your cluster must have a public cloud service endpoint on classic infrastructre. For a cluster with only a private cloud service endpoint, create a VPC cluster instead.
 {: important}
 
 The public cloud service endpoint makes your Kubernetes master publicly accessible. Your worker nodes and your authorized cluster users can securely communicate with the Kubernetes master over the public network. For more information, see [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_clusters#internet-facing).

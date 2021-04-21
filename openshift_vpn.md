@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-09"
+lastupdated: "2021-04-21"
 
 keywords: openshift, roks, rhos, rhoks, strongswan, ipsec, on-prem
 
@@ -138,7 +138,7 @@ Because strongSwan is integrated within your cluster, you don't need an external
 Before using the strongSwan Helm chart, review the following considerations and limitations.
 {: shortdesc}
 
-* The strongSwan Helm chart is supported only for classic clusters, and is not supported for VPC Gen 2 clusters. For VPN information for VPC clusters, see [Setting up VPC VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas).
+* The strongSwan Helm chart is supported only for classic clusters, and is not supported for VPC clusters. For VPN information for VPC clusters, see [Setting up VPC VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas).
 * The strongSwan Helm chart requires NAT traversal to be enabled by the remote VPN endpoint. NAT traversal requires UDP port 4500 in addition to the default IPSec UDP port of 500. Both UDP ports need to be allowed through any firewall that is configured.
 * The strongSwan Helm chart does not support route-based IPSec VPNs.
 * The strongSwan Helm chart supports IPSec VPNs that use preshared keys, but does not support IPSec VPNs that require certificates.

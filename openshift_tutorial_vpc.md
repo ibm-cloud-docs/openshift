@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-04-21"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -95,7 +95,7 @@ completion-time: 45m
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
+
 
 
 # Creating an {{site.data.keyword.openshiftshort}} cluster in your Virtual Private Cloud (VPC)
@@ -104,10 +104,10 @@ completion-time: 45m
 {: toc-services="openshift, vpc"}
 {: toc-completion-time="45m"}
 
-Create an {{site.data.keyword.openshiftlong}} cluster on Virtual Private Cloud (VPC) Generation 2 compute.
+Create an {{site.data.keyword.openshiftlong}} cluster in your Virtual Private Cloud (VPC).
 {: shortdesc}
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> With **{{site.data.keyword.openshiftlong_notm}} clusters on VPC Generation 2 compute**, you can create your cluster on VPC infrastructure in the next generation of the {{site.data.keyword.cloud_notm}} platform, in your [Virtual Private Cloud](/docs/vpc?topic=vpc-about-vpc).
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> With **{{site.data.keyword.openshiftlong_notm}} clusters on VPC**, you can create your cluster in the next generation of the {{site.data.keyword.cloud_notm}} platform, in your [Virtual Private Cloud](/docs/vpc?topic=vpc-about-vpc).
 
 * {{site.data.keyword.openshiftlong_notm}} gives you all the [advantages of a managed offering](/docs/openshift?topic=openshift-cs_ov) for your cluster infrastructure environment, while using the [{{site.data.keyword.openshiftshort}} tooling and catalog](https://docs.openshift.com/container-platform/4.5/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments.
 * VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud. VPC uses the next version of {{site.data.keyword.openshiftlong_notm}} [infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers#infrastructure_providers), with a select group of v2 API, CLI, and console functionality.
@@ -118,36 +118,31 @@ Create an {{site.data.keyword.openshiftlong}} cluster on Virtual Private Cloud (
 ## Objectives
 {: #vpc_rh_objectives}
 
-In the tutorial lessons, you create a {{site.data.keyword.openshiftlong_notm}} cluster in a Gen 2 Virtual Private Cloud (VPC). Then, you access built-in {{site.data.keyword.openshiftshort}} components, deploy an app in an {{site.data.keyword.openshiftshort}} project, and expose the app on with a VPC load balancer so that external users can access the service.
+In the tutorial lessons, you create a {{site.data.keyword.openshiftlong_notm}} cluster in a Virtual Private Cloud (VPC). Then, you access built-in {{site.data.keyword.openshiftshort}} components, deploy an app in an {{site.data.keyword.openshiftshort}} project, and expose the app on with a VPC load balancer so that external users can access the service.
 
 ## Audience
 {: #vpc_rh_audience}
 
-This tutorial is for administrators who are creating a cluster in {{site.data.keyword.openshiftlong_notm}} in VPC Generation 2 compute for the first time.
+This tutorial is for administrators who are creating a cluster in {{site.data.keyword.openshiftlong_notm}} in VPC compute for the first time.
 {: shortdesc}
 
 ## Prerequisites
 {: #vpc_rh_prereqs}
 
-Ensure that you have the following {{site.data.keyword.cloud_notm}} IAM access policies.
-* The [**Administrator** platform access role for VPC Infrastructure](/docs/vpc?topic=vpc-managing-user-permissions-for-vpc-resources).
-* The [**Administrator** platform access role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}}
-* The [**Writer** or **Manager** service access role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}}
-* The [**Administrator** platform access role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.registrylong_notm}}
-* If you want to use a resource group other than `default`, at least [**Viewer** platform access role](/docs/openshift?topic=openshift-users#platform) for the resource group.
+Complete the following prerequisite steps to set up permissions and the command-line environment.
+{: shortdesc}
 
-If this cluster is not the first cluster in the region and resource group, make sure that the API key for the region and resource group that you plan to create the cluster in is set up with the correct [infrastructure permissions](/docs/openshift?topic=openshift-users#api_key).
+**Permissions**: If you are the account owner, you already have the required permissions to create a cluster and can continue to the next step. Otherwise, ask the account owner to [set up the API key and assign you the minimum user permissions in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions).
 
-<br>
-Install the command-line tools.
-*   [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc`), and {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
-*   [Install the {{site.data.keyword.openshiftshort}} (`oc`) and Kubernetes (`oc`) CLIs](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
-*   To work with VPC, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
+**Command-line tools**: For quick access to your resources from the command line, try the [{{site.data.keyword.cloud_notm}} Shell](https://cloud.ibm.com/shell). Otherwise, set up your local command-line environment by completing the following steps.
+1.  [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc`), and {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
+2.  [Install the {{site.data.keyword.openshiftshort}} (`oc`) and Kubernetes (`kubectl`) CLIs](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
+3.  To work with VPC, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
     ```
     ibmcloud plugin install infrastructure-service
     ```
     {: pre}
-*   Update your {{site.data.keyword.containershort_notm}} plug-in to the latest version.
+4.  Update your {{site.data.keyword.containershort_notm}} plug-in to the latest version.
     ```
     ibmcloud plugin update kubernetes-service
     ```
@@ -169,11 +164,6 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
     {: pre}
 
 2.  Create a VPC for your cluster. For more information, see the docs for creating a VPC in the [console](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console) or [CLI](/docs/vpc?topic=vpc-creating-a-vpc-using-cli).
-    1.  Target the VPC infrastructure generation 2.
-        ```
-        ibmcloud is target --gen 2
-        ```
-        {: pre}
     2.  Create a VPC that is called `myvpc` and note the **ID** in the output. VPCs provide an isolated environment for your workloads to run within the public cloud. You can use the same VPC for multiple clusters, such as if you plan to have different clusters host separate microservices that need to communicate with each other. If you want to separate your clusters, such as for different departments, you can create a VPC for each cluster.
         ```
         ibmcloud is vpc-create myvpc
@@ -194,7 +184,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
         ```
         {: pre}
 
-3. VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: To allow any traffic requests to apps that you deploy on your worker nodes, modify the VPC's default security group.
+3. Clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: To allow any traffic requests to apps that you deploy on your worker nodes, modify the VPC's default security group.
     1. List your security groups. For the **VPC** that you created, note the ID of the default security group.
       ```
       ibmcloud is security-groups
@@ -500,7 +490,7 @@ Now that you have a VPC cluster, learn more about what you can do.
 
 * [Backing up your internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry)
 * [Overview of the differences between classic and VPC clusters](/docs/openshift?topic=openshift-infrastructure_providers)
-* [VPC Gen 2 compute cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ks_vpc_gen2_limits)
+* [VPC cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ks_vpc_gen2_limits)
 * [About the v2 API](/docs/openshift?topic=openshift-cs_api_install#api_about)
 
 Need help, have questions, or want to give feedback on VPC clusters? Try posting in the [Slack channel](https://cloud.ibm.com/kubernetes/slack){: external}.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-19"
+lastupdated: "2021-04-21"
 
 keywords: openshift, openshift container storage, ocs, roks
 
@@ -99,7 +99,7 @@ OpenShift Container Storage is a highly available storage solution that you can 
 {: shortdesc}
 
 **Supported infrastructure provider**:
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
 **Minimum required permissions**: **Administrator** platform access role and the **Manager** service access role for the cluster in {{site.data.keyword.containerlong_notm}}.
@@ -111,10 +111,10 @@ The OpenShift Container Storage add-on is available as a technology preview and 
 
 ## VPC: Planning your OpenShift Container Storage setup
 {: #ocs-vpc-plan}
-Before you install OCS in your VPC Gen 2 cluster, you must make sure that the following prerequisite conditions are met:
+Before you install OCS in your VPC cluster, you must make sure that the following prerequisite conditions are met:
 
 1. [Install the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
-1. Create a [VPC Gen 2 cluster](/docs/containers?topic=containers-clusters) with at least three worker nodes. For high availability, create a cluster with at least one worker node per zone across three zones. Each worker node must have a minimum of 16 CPUs and 64 GB RAM.
+1. Create a [VPC cluster](/docs/containers?topic=containers-clusters) with at least three worker nodes. For high availability, create a cluster with at least one worker node per zone across three zones. Each worker node must have a minimum of 16 CPUs and 64 GB RAM.
 
 **Next steps**: [Install OCS in your cluster](/docs/openshift?topic=openshift-ocs-storage-install).
 

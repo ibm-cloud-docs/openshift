@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-04-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -125,7 +125,7 @@ While you troubleshoot, you can use the {{site.data.keyword.containerlong_notm}}
 
 **Infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 **Before you begin**:
 If you previously installed the debug tool by using Helm, first uninstall the `ibmcloud-iks-debug` Helm chart.
@@ -183,7 +183,7 @@ Review the options to debug your clusters and find the root causes for failures.
 
 **Infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 1.  List your cluster and find the `State` of the cluster.
 
@@ -272,7 +272,7 @@ Review the options to debug your clusters and find the root causes for failures.
 
 **Infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 Your {{site.data.keyword.openshiftlong_notm}} includes an IBM-managed master with highly available replicas, automatic security patch updates applied for you, and automation in place to recover in case of an incident. You can check the health, status, and state of the cluster master by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 {: shortdesc}
@@ -311,7 +311,7 @@ The **Master Status** provides details of what operation from the master state i
 
 **Infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {{site.data.keyword.openshiftshort}} clusters have many built-in components that work together to simplify the developer experience. For example, you can use the {{site.data.keyword.openshiftshort}} web console to manage and deploy your cluster workloads, or enable 3rd-party operators from the OperatorHub to enhance your cluster with a service mesh and other capabilities.  
 {: shortdesc}
@@ -491,7 +491,7 @@ Review the following common reasons for CLI connection issues or command failure
 
 **Infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 ### Firewall prevents running CLI commands
 {: #ts_firewall_clis}
@@ -572,7 +572,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
 **Infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {: tsSymptoms}
 You do not see all the projects that you have access to. When you try to run `oc` or `kubectl` commands, you see an error similar to the following.
@@ -791,7 +791,7 @@ Consider the following example scenario to understand how clusters might become 
 ### Unable to create or delete worker nodes due to endpoints error
 {: #vpe-ts}
 
-**Infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute, {{site.data.keyword.openshiftshort}} version 4.6 or later
+**Infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC {{site.data.keyword.openshiftshort}} version 4.6 or later
 
 {: tsSymptoms}
 You cannot manage worker nodes for your cluster, and you receive an error message similar to one of the following.
@@ -891,11 +891,10 @@ The {{site.data.keyword.cloud_notm}} account owner or an account administrator m
 
 
 
-
 ## Unable to create a cluster in the console due to `No VPC is available` error
 {: #ts_no_vpc}
 
-**Infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+**Infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {: tsSymptoms}
 You try to create a VPC cluster by using the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/catalog/create){: external}. You have an existing [VPC](https://cloud.ibm.com/vpc){: external} in your account, but when you try to select an existing **Virtual Private Cloud** to create the cluster in, you see the following error message:
@@ -936,7 +935,7 @@ To set an API key for the `default` resource group, use the {{site.data.keyword.
 ## Cluster create error about cloud object storage bucket
 {: #ts_cos_bucket_cluster_create}
 
-**Infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+**Infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {: tsSymptoms}
 When you create a cluster, you see an error message similar to the following.
@@ -967,7 +966,7 @@ Verify your user permissions and the API key permissions to Cloud Object Storage
 {: screen}
 
 {: tsCauses}
-When you create a {{site.data.keyword.openshiftlong_notm}} version 4 cluster on VPC generation 2 compute infrastructure, a bucket is automatically created in a standard {{site.data.keyword.cos_full_notm}} instance that you select in your account. However, the bucket might not create for several reasons such as:
+When you create a {{site.data.keyword.openshiftlong_notm}} version 4 cluster on VPC infrastructure, a bucket is automatically created in a standard {{site.data.keyword.cos_full_notm}} instance that you select in your account. However, the bucket might not create for several reasons such as:
 * {{site.data.keyword.cos_full_notm}} is temporarily unavailable.
 * No standard {{site.data.keyword.cos_full_notm}} instance exists in your account, or the person whose API key is set for the region and resouce group does not have permissions to view the instance.
 * The person who created your cluster did not have the **Administrator** platform access role to {{site.data.keyword.cos_full_notm}} in IAM.
@@ -1004,7 +1003,7 @@ Manually set up your cluster to back up the internal registry to an {{site.data.
 
 **Infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {: tsSymptoms}
 When you created a cluster, you received an error message similar to the following.
@@ -1037,7 +1036,7 @@ Steps:
 
 **Infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {: tsSymptoms}
 During a master operation such as updating your cluster version, the cluster had a broken webhook application. Now, master operations cannot complete. You see an error similar to the following:
@@ -1154,7 +1153,7 @@ Identify and restore the resource that causes the broken webhook.
 
 **Infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {: tsSymptoms}
 Portieris image security enforcement add-on does not install.  You see a master status similar to the following:
@@ -1222,7 +1221,7 @@ Identify and remove the conflicting image admission controller.
 
 **Infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {: tsSymptoms}
 When you deploy your cluster, it remains in a pending state and doesn't start.
@@ -1244,7 +1243,7 @@ You can try one of the following solutions:
 
 **Infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {: tsSymptoms}
 * You are not able to find a cluster. When you run `ibmcloud oc cluster ls`, the cluster is not listed in the output.
@@ -1375,7 +1374,7 @@ To check your user access permissions:
 
 **Infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {: tsSymptoms}
 When you are running an `oc` command such as `oc get nodes` or `oc get secrets`, you see an error message similar to the following.
@@ -1398,7 +1397,7 @@ Re-authenticate with the {{site.data.keyword.openshiftshort}} token by [copying 
 
 **Infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {: tsSymptoms}
 After you create or update a cluster, the master status returns a VPN server configuration error message similar to the following.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-04-21"
 
 keywords: red hat openshift, red hat openshift on ibm cloud, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters, roks, rhoks, rhos
 
@@ -90,7 +90,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
+
 
 
 <style>
@@ -278,18 +278,17 @@ Now that your cluster is ready, [deploying your first app](#deploy-app)!
 
 
 
-## Creating a VPC Gen 2 compute cluster
+## Creating a VPC cluster
 {: #vpc-gen2-gs}
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Create a VPC Generation 2 compute cluster by using the {{site.data.keyword.cloud_notm}} console. VPC {{site.data.keyword.openshiftshort}} clusters run version 4.5, which includes Kubernetes version 1.18. The operating system is Red Hat Enterprise Linux 7.
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Create a VPC cluster by using the {{site.data.keyword.cloud_notm}} console. VPC {{site.data.keyword.openshiftshort}} clusters run version 4.5, which includes Kubernetes version 1.18. The operating system is Red Hat Enterprise Linux 7.
 {: shortdesc}
 
-Want to learn more about customizing your cluster setup with the CLI? Check out [Creating a VPC Gen 2 compute cluster](/docs/openshift?topic=openshift-clusters#clusters_vpcg2).
+Want to learn more about customizing your cluster setup with the CLI? Check out [Creating a VPC cluster](/docs/openshift?topic=openshift-clusters#clusters_vpcg2).
 {: tip}
 
 1. Create a Virtual Private Cloud (VPC) on generation 2 compute.
   1. Navigate to the [VPC create console](https://cloud.ibm.com/vpc/provision/vpc){: external}.
-  2. Make sure that the banner at the beginning of the page is set to **Gen 2 compute**. If **Gen 1 compute** is set, click **Switch to Gen 2 compute**.
   3. Give the VPC a name and select a resource group to deploy the VPC into.
   4. Give the VPC subnet a name and select the location where you want to create the cluster.
   5. Attach a public gateway to your subnet so that you can access public endpoints from your cluster. This public gateway is used later on to access default {{site.data.keyword.openshiftshort}} components like the web console, OperatorHub, and service catalog.
@@ -299,7 +298,7 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
   1.  Review the platform version details, **{{site.data.keyword.openshiftshort}} 4.5.35**.
   2.  If you see the **OCP entitlement** section: Leave the value set to **Purchase additional licenses for this worker pool** because you are not using an {{site.data.keyword.cloud_notm}} Pak for this getting started cluster.
   3.  For the **Infrastructure**, select **VPC**.
-  4.  From the **Virtual private cloud** drop-down menu, select the **Gen 2** VPC that you created earlier.
+  4.  From the **Virtual private cloud** drop-down menu, select the VPC that you created earlier.
   5.  From the **Cloud Object Storage** drop-down menu, select a standard {{site.data.keyword.cos_full_notm}} instance to use for the internal {{site.data.keyword.openshiftshort}} container registry, or [create a standard {{site.data.keyword.cos_full_notm}} instance](/docs/cloud-object-storage/basics?topic=cloud-object-storage-provision#provision-instance) to use.
 4.  Configure the **Location** details for your cluster.
     1. Select the **Resource group** that you want to create your cluster in. You cannot change the resource group later. If you do not select a resource group, your cluster is created in the default resource group.

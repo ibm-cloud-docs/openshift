@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-04-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -123,7 +123,7 @@ Containers provide a standard way to package your application's code, configurat
 
 **What compute host infrastructure does the service offer?**
 
-With {{site.data.keyword.openshiftlong_notm}}, you can create your cluster of compute hosts on classic {{site.data.keyword.cloud_notm}} infrastructure or VPC Gen 2 compute infrastructure.
+With {{site.data.keyword.openshiftlong_notm}}, you can create your cluster of compute hosts on classic {{site.data.keyword.cloud_notm}} infrastructure or VPC infrastructure.
 
 [Classic clusters](/docs/containers?topic=containers-getting-started) are created on your choice of virtual or bare metal worker nodes that are connected to VLANs. If you require additional local disks, you can also choose one of the bare metal flavors that are designed for software-defined storage solutions, such as Portworx. Depending on the level of hardware isolation that you need, virtual worker nodes can be set up as shared or dedicated nodes, whereas bare metal machines are always set up as dedicated nodes.
 

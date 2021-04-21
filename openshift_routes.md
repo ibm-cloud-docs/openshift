@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-04-21"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -116,8 +116,8 @@ By default, an {{site.data.keyword.openshiftshort}} router is deployed to your c
 You can use the OpenShift router to create routes for your apps. Routes are assigned a publicly or privately accessible hostname from the router subdomain that external clients can use to send requests to your app. You can choose to create unsecured or secured routes by using the TLS certificate of the router to secure your hostname. When external request reach your hostname, the router proxies your request and forwards it to the private IP address that your app listens on.
 
 The type of router that is created by default varies depending on your cluster's infrastructure provider and your service endpoint setup.
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters / <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2 clusters with public cloud service endpoint**: Your cluster is created with a public router by default. The router assigns publicly accessible routes for your apps and listens for requests to your apps on the public host network interface. When a request is received, the router directs the request to the private IP address that the app listens on. If you want to privately expose your apps instead, you must first create a private router, and then create private routes.
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC Gen 2 clusters with private cloud service endpoint only**: Your cluster is created with a private router by default. The router assigns privately accessible routes for your apps and listens on the private host network interface. Only clients that are connected to your private VPC network can access apps that are exposed by a private route. If you want to publicly expose your apps instead, you must first create a public router, and then create public routes.
+* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters / <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC clusters with public cloud service endpoint**: Your cluster is created with a public router by default. The router assigns publicly accessible routes for your apps and listens for requests to your apps on the public host network interface. When a request is received, the router directs the request to the private IP address that the app listens on. If you want to privately expose your apps instead, you must first create a private router, and then create private routes.
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC clusters with private cloud service endpoint only**: Your cluster is created with a private router by default. The router assigns privately accessible routes for your apps and listens on the private host network interface. Only clients that are connected to your private VPC network can access apps that are exposed by a private route. If you want to publicly expose your apps instead, you must first create a public router, and then create public routes.
 
 If you have a multizone cluster, one high-availability router is deployed to your cluster, and one router service is created in each zone. Two worker nodes are required per zone so that the two replicas of the router can be deployed and updated correctly. Note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in zones that you subsequently add to your cluster have names such as `router-dal12`.
 * To see the router services in each zone of your cluster, run `oc get svc -n openshift-ingress`.
@@ -237,7 +237,7 @@ The method for setting up public routes varies depending on your cluster's infra
 ### Setting up public routes in classic clusters or in VPC clusters with a public cloud service endpoint
 {: #routes-public-classic}
 
-If your cluster is created on <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> classic infrastructure, or if your cluster is created on <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2 infrastructure and you enabled the public cloud service endpoint during cluster creation, your cluster is created with a public router by default. You can use this router to create public routes for your app.
+If your cluster is created on <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> classic infrastructure, or if your cluster is created on <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC infrastructure and you enabled the public cloud service endpoint during cluster creation, your cluster is created with a public router by default. You can use this router to create public routes for your app.
 {: shortdesc}
 
 1. Create a Kubernetes `ClusterIP` service for your app deployment. The service provides an internal IP address for the app that the router can send traffic to.
@@ -293,7 +293,7 @@ If your cluster is created on <img src="images/icon-classic.png" alt="Classic in
 ### Setting up public routes in VPC clusters with a private cloud service endpoint only
 {: #routes-public-vpc-privse}
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> If your cluster is created on VPC Gen 2 infrastructure and you enabled only the private cloud service endpoint during cluster creation, your cluster is created with only a private router by default. To publicly expose your apps, you must first create a public Ingress controller and configure the controller with a subdomain. The Ingress controller automatically creates and configures a new public router, which you can use to create public routes for your apps.
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> If your cluster is created on VPC infrastructure and you enabled only the private cloud service endpoint during cluster creation, your cluster is created with only a private router by default. To publicly expose your apps, you must first create a public Ingress controller and configure the controller with a subdomain. The Ingress controller automatically creates and configures a new public router, which you can use to create public routes for your apps.
 {: shortdesc}
 
 Note that even though you create an Ingress controller in the following steps, the Ingress controller is only required to create and configure the necessary router for you. After the router is created, you use the router directly to create routes, and you do not use the Ingress controller.
@@ -422,7 +422,7 @@ The method for setting up private routes varies depending on your cluster's infr
 ### Setting up private routes in classic clusters or in VPC clusters with a public cloud service endpoint
 {: #private-routes-setup-43}
 
-If your cluster is created on <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> classic infrastructure, or if your cluster is created on <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2 infrastructure and you enabled the public cloud service endpoint during cluster creation, your cluster is created with only a public router by default. To privately expose your apps, you must first create a private Ingress controller and configure the controller with a subdomain. The Ingress controller automatically creates and configures a new private router, which you can use to create private routes for your apps.
+If your cluster is created on <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> classic infrastructure, or if your cluster is created on <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC infrastructure and you enabled the public cloud service endpoint during cluster creation, your cluster is created with only a public router by default. To privately expose your apps, you must first create a private Ingress controller and configure the controller with a subdomain. The Ingress controller automatically creates and configures a new private router, which you can use to create private routes for your apps.
 {: shortdesc}
 
 Note that even though you create an Ingress controller in the following steps, the Ingress controller is only required to create and configure the necessary router for you. After the router is created, you use the router directly to create routes, and you do not use the Ingress controller.
@@ -547,7 +547,7 @@ Note that even though you create an Ingress controller in the following steps, t
 ### Setting up private routes in VPC clusters with a private cloud service endpoint only
 {: #routes-private-vpc-privse}
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> If your cluster is created on VPC Gen 2 infrastructure and you enabled the only private cloud service endpoint during cluster creation, your cluster is created with a private router by default. You can use this router to create private routes for your app.
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> If your cluster is created on VPC infrastructure and you enabled the only private cloud service endpoint during cluster creation, your cluster is created with a private router by default. You can use this router to create private routes for your app.
 {: shortdesc}
 
 1. Create a Kubernetes `ClusterIP` service for your app deployment. The service provides an internal IP address for the app that the router can send traffic to.

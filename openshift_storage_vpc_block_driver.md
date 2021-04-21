@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-15"
+lastupdated: "2021-04-21"
 
 keywords: openshift, roks, vpc, block storage
 
@@ -99,7 +99,7 @@ The following documentation covers the steps to deploy the {{site.data.keyword.b
 {: important}
 
 **Supported infrastructure provider**:
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 Want to use {{site.data.keyword.block_storage_is_short}} in an {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong_notm}} cluster? See [Storing data on Block Storage for VPC](/docs/openshift?topic=openshift-vpc-block) for more information.
 {: tip}
@@ -109,7 +109,7 @@ Want to use {{site.data.keyword.block_storage_is_short}} in an {{site.data.keywo
 To use the {{site.data.keyword.block_storage_is_short}} driver, complete the following tasks: 
 {: shortdesc}
 
-* Create an {{site.data.keyword.openshiftlong_notm}} cluster on VPC Gen 2 infrastructure.
+* Create an {{site.data.keyword.openshiftlong_notm}} cluster on VPC infrastructure.
 * [Label your worker nodes](#vpc-block-label-um).
 * [Create your storage secret](#vpc-block-create-storage-secret).
 * [Create an image pull secret that uses your IAM credentials](#vpc-block-create-storage-secret).
@@ -195,7 +195,7 @@ To create the Kubernetes secret that is used in the {{site.data.keyword.block_st
 1. Retrieve the following configuration parameter values. These values are used to create the Kubernetes secret that is required for {{site.data.keyword.block_storage_is_short}}.
 
     * `<g2_api_key>` - The IAM API key. You can use your existing API key or you can create an API key by running the `ibmcloud iam api-key-create NAME` command.
-    * `<g2_riaas_endpoint>` - The VPC regional endpoint of your VPC Gen 2 cluster in the format `https://<region>.iaas.cloud.ibm.com`. Example: `https://eu-de.iaas.cloud.ibm.com`. For more information, see [VPC endpoints](/docs/vpc?topic=vpc-service-endpoints-for-vpc).
+    * `<g2_riaas_endpoint>` - The VPC regional endpoint of your VPC cluster in the format `https://<region>.iaas.cloud.ibm.com`. Example: `https://eu-de.iaas.cloud.ibm.com`. For more information, see [VPC endpoints](/docs/vpc?topic=vpc-service-endpoints-for-vpc).
     * `<g2_resource_group_id>` - To retrieve this value, run the `ibmcloud is vpc <vpc-ID>` command and note the `Resource group` field.
 
 2. Save the following TOML configuration file to your local machine called `config.toml`. Make sure that there are no blank lines between the values and no blank lines at the end of the file.

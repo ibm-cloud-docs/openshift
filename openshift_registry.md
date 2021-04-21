@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-19"
+lastupdated: "2021-04-21"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -170,7 +170,7 @@ Your app's images must be stored in a container registry that your cluster can a
 Your images in your {{site.data.keyword.openshiftshort}} cluster internal registry are automatically backed up to an {{site.data.keyword.cos_full_notm}} bucket. Any data that is stored in the object storage bucket remains even if you delete the cluster.
 {: shortdesc}
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> The internal registry is backed up to {{site.data.keyword.cos_full_notm}} only for {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 on VPC generation 2 compute infrastructure.
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> The internal registry is backed up to {{site.data.keyword.cos_full_notm}} only for {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 on VPC infrastructure.
 {: note}
 
 However, if the bucket fails to create when you create your cluster, you must manually create a bucket and set up your cluster to use the bucket. In the meantime, the internal registry uses an `emptyDir` Kubernetes volume that stores your container images on the secondary disk of your worker node. The `emptyDir` volumes are not considered persistent highly available storage, and if you delete the pods that use the image, the image is automatically deleted.
