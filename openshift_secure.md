@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-21"
+lastupdated: "2021-04-22"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -331,7 +331,7 @@ The image does not include components that ensure secure end-to-end communicatio
   <th>Description</th>
   </thead>
   <tbody>
-    <tr><td>CIS-compliant RHEL image</td><td>Every worker node is set up with an Red Hat Enterprise Linux (RHEL) operating system that implements the benchmarks that are published by the Center of Internet Security (CIS). The operating system cannot be changed by the user or the owner of the machine. To review the current RHEL version, run <code>oc get nodes -o wide</code>. IBM works with internal and external security advisory teams to address potential security compliance vulnerabilities. Security updates and patches for the operating system are made available through {{site.data.keyword.openshiftlong_notm}} and must be installed by the user to keep the worker node secure.<p class="important">{{site.data.keyword.openshiftlong_notm}} uses a Red Hat Enterprise Linux kernel for worker nodes. You can run containers based on any Linux distribution in {{site.data.keyword.openshiftlong_notm}}. Check with your container image vendor to verify that your container images can be run on an Red Hat Enterprise kernel.</p></td></tr>
+    <tr><td>CIS-compliant RHEL image</td><td>Every worker node is set up with an Red Hat Enterprise Linux (RHEL) operating system that implements the benchmarks that are published by the Center of Internet Security (CIS). The user or the owner of the machine cannot change this operating system to another operating system. To review the current RHEL version, run <code>oc get nodes -o wide</code>. IBM works with internal and external security advisory teams to address potential security compliance vulnerabilities. Security updates and patches for the operating system are made available through {{site.data.keyword.openshiftlong_notm}} and must be installed by the user to keep the worker node secure.<p class="important">{{site.data.keyword.openshiftlong_notm}} uses a Red Hat Enterprise Linux kernel for worker nodes. You can run containers based on any Linux distribution in {{site.data.keyword.openshiftlong_notm}}. Check with your container image vendor to verify that your container images can be run on an Red Hat Enterprise kernel.</p></td></tr>
     <tr>
     <td>Continuous monitoring by Site Reliability Engineers (SREs) </td>
     <td>The image that is installed on your worker nodes is continuously monitored by IBM Site Reliability Engineers (SREs) to detect vulnerabilities and security compliance issues. To address vulnerabilities, SREs create security patches and fix packs for your worker nodes. Make sure to apply these patches when they are available to ensure a secure environment for your worker nodes and the apps that you run on top of them.</td>
