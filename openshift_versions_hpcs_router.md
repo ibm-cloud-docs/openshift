@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-19"
+lastupdated: "2021-04-22"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -114,6 +114,7 @@ View information for version updates to the [{{site.data.keyword.cloud_notm}} HP
 
 |Version build|Release date|Changes|
 |-------------|------------|-------|
+| 4.6.0_678 | 22 Apr 2021 | Updates to address `Nettle` vulnerabilities for [CVE-2021-20305](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20305){: external}.|
 | 4.6.0_663 | 19 Apr 2021 | Updates to address [CVE-2021-3121](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3121){: external}, [CVE-2021-28851](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-28851){: external}, and [CVE-2021-28852](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-28852){: external}.|
 | 4.6.0_654 | 14 Apr 2021 | Fixes OpenSSL vulnerabilities for [CVE-2021-3449](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3449){: external} and [CVE-2021-3450](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3450){: external}. |
 |4.6.0_646|30 Mar 2021|Updates the Go version to 1.15.10 for [CVE-2021-3114](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3114){: external} and [CVE-2021-3115](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3115){: external}.|
@@ -125,6 +126,7 @@ View information for version updates to the [{{site.data.keyword.cloud_notm}} HP
 
 |Version build|Release date|Changes|
 |-------------|------------|-------|
+| 4.6.0_679 | 22 Apr 2021 | Updates to address `Nettle` vulnerabilities for [CVE-2021-20305](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20305){: external}.|
 | 4.5.0_662 | 19 Apr 2021 | Updates to address [CVE-2021-23336](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-23336){: external} and [CVE-2021-22890](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-22890){: external}.|
 | 4.5.0_655 | 14 Apr 2021 | Updates to address [CVE-2021-3449](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3449){: external} and [CVE-2021-3450](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3450){: external}. |
 |4.5.0_647|30 Mar 2021|Updates the Go version to 1.15.10 for [CVE-2021-3114](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3114){: external} and [CVE-2021-3115](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3115){: external}.|
