@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-21"
+lastupdated: "2021-04-22"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -810,13 +810,20 @@ In clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later, 
 {: tsResolve}
 Re-establish the VPE connection between your worker nodes and Kubernetes master.
 
-1. Refresh the cluster master. If the VPE gateway did not exist in your VPC, it is created, and connectivity to the reserved IP addresses on the subnets that your worker nodes are connected to is re-established. After you refresh the cluster, wait a few minutes to allow the operation to complete.
+1. To check the VPE gateway for your cluster in the VPC infrastructure console, open the [Virtual private endpoint gateways for VPC dashboard](https://cloud.ibm.com/vpc-ext/network/endpointGateways){: external} and look for the VPE gateway in the format `iks-<cluster_ID>`.
+  * If the gateway for your cluster is not listed, continue to the next step.
+  * If the gateway for your cluster is listed but its status is not `Stable`, [open a support case](/docs/openshift?topic=openshift-get-help#help-support). In the case details, include the cluster ID.
+  * If the gateway for your cluster is listed and its status is `Stable`, you might have firewall or security group rules that are blocking worker node communication to the cluster master. [Configure your security group rules to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-vpc-network-policy#security_groups).
+
+2. Refresh the cluster master. If the VPE gateway did not exist in your VPC, it is created, and connectivity to the reserved IP addresses on the subnets that your worker nodes are connected to is re-established. After you refresh the cluster, wait a few minutes to allow the operation to complete.
     ```
     ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
     ```
     {: pre}
 
-2. If you still cannot manage worker nodes after the cluster master is refreshed, replace the worker nodes that you cannot access.
+3. Verify that the VPE gateway for your cluster is created by opening the [Virtual private endpoint gateways for VPC dashboard](https://cloud.ibm.com/vpc-ext/network/endpointGateways){: external} and looking for the VPE gateway in the format `iks-<cluster_ID>`.
+
+4. If you still cannot manage worker nodes after the cluster master is refreshed, replace the worker nodes that you cannot access.
     1. List all worker nodes in your cluster and note the **name** of the worker node that you want to replace.
        ```sh
        oc get nodes
