@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-21"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -378,7 +378,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 
   - **For OS X and Linux:**
 
-      **VPC Gen 2 clusters** To enable authorized IPs on VPC Gen 2, set the `--set bucketAccessPolicy=true` flag.
+      **VPC clusters** To enable authorized IPs on VPC, set the `--set bucketAccessPolicy=true` flag.
       {: note}
         ```
         helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set license=true [--set bucketAccessPolicy=false]
@@ -387,7 +387,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 
   - **For Windows:**
 
-      **VPC Gen 2 clusters** To enable authorized IPs on VPC Gen 2, set the `--set bucketAccessPolicy=true` flag.
+      **VPC clusters** To enable authorized IPs on VPC, set the `--set bucketAccessPolicy=true` flag.
       {: note}
         ```
         helm install ibm-object-storage-plugin ./ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --set platform="${PLATFORM}" --set license=true [--set bucketAccessPolicy=false]
@@ -752,7 +752,7 @@ Now that you decided on the configuration that you want, you are ready to [creat
 ## VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}
 {: #cos_auth_ip}
 
-You can authorize your VPC Gen 2 Cloud Service Endpoint source IP addresses to access your {{site.data.keyword.cos_full_notm}} bucket. When you set up authorized IP addresses, you can only access your bucket data from those IP addresses; for example, in an app pod.
+You can authorize your VPC Cloud Service Endpoint source IP addresses to access your {{site.data.keyword.cos_full_notm}} bucket. When you set up authorized IP addresses, you can only access your bucket data from those IP addresses; for example, in an app pod.
 {: shortdesc}
 
 **Minimum required permissions**:
@@ -760,7 +760,7 @@ You can authorize your VPC Gen 2 Cloud Service Endpoint source IP addresses to a
  * **Writer** service access role for the {{site.data.keyword.cos_full_notm}} service.
 
 **Supported infrastructure provider**:
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 1. [Follow the instructions to install the `ibmc` Helm plugin](#install_cos). Make sure to install the `ibm-object-storage-plugin` and set the `bucketAccessPolicy` flag to `true`.
 

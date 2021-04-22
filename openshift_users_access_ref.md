@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-04-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -96,7 +96,7 @@ subcollection: openshift
 # User access permissions
 {: #access_reference}
 
-When you [assign cluster permissions](/docs/openshift?topic=openshift-users)(/docs/openshift?topic=openshift-users), it can be hard to judge which role you need to assign to a user. Use the tables in the following sections to determine the minimum level of permissions that are required to perform common tasks in {{site.data.keyword.openshiftlong}}.
+When you [assign cluster permissions](/docs/openshift?topic=openshift-users), it can be hard to judge which role you need to assign to a user. Use the tables in the following sections to determine the minimum level of permissions that are required to perform common tasks in {{site.data.keyword.openshiftlong}}.
 {: shortdesc}
 
 ## Permissions to create a cluster

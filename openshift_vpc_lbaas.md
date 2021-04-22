@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-04-21"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -104,7 +104,7 @@ Set up a Load Balancer for VPC to expose your app on the public or private netwo
 ## About VPC load balancing in {{site.data.keyword.openshiftlong_notm}}
 {: #lbaas_about}
 
-To expose an app in a VPC cluster, you can create a layer 7 Application Load Balancer for VPC. In VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later, you can optionally create a layer 4 Network Load Balancer for VPC.
+To expose an app in a VPC cluster, you can create a layer 7 Application Load Balancer for VPC. In VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later, you can optionally create a layer 4 Network Load Balancer for VPC.
 {: shortdesc}
 
 The following table describes the basic characteristics of each load balancing option.
@@ -121,12 +121,12 @@ The following table describes the basic characteristics of each load balancing o
 |Types of load balancers|Public and private|Public|
 {: caption="Load balancing options for VPC clusters"}
 
-`*` To preserve the source IP address for an Application Load Balancer for VPC, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"` annotation must be specified when the VPC application load balancer is initially created. This annotation is supported for VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or later only.
+`*` To preserve the source IP address for an Application Load Balancer for VPC, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"` annotation must be specified when the VPC application load balancer is initially created. This annotation is supported for VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or later only.
 
 ### Network Load Balancer for VPC
 {: #nlb_vpc}
 
-In VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later, set up a layer-4 [Network Load Balancer for VPC](/docs/vpc?topic=vpc-network-load-balancers) in each zone of your cluster to serve as the external entry point for incoming requests to an app.
+In VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later, set up a layer-4 [Network Load Balancer for VPC](/docs/vpc?topic=vpc-network-load-balancers) in each zone of your cluster to serve as the external entry point for incoming requests to an app.
 {: shortdesc}
 
 VPC network load balancers provide several advantages, such as providing higher throughput and better performance by utilizing direct server return (DSR). With DSR, the worker node can send app response packets directly to the client IP address and skip the network load balancer, decreasing the amount of traffic that the network load balancer must handle. Additionally, the network load balancer supports source IP address preservation on all client requests by default.
@@ -173,7 +173,7 @@ Expose your app to the public network by setting up a Kubernetes `LoadBalancer` 
 {: shortdesc}
 
 **Before you begin**:
-* VPC network load balancers can be created only in VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later.
+* VPC network load balancers can be created only in VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later.
 * Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#platform) for the `default` namespace.
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 * To view VPC network load balancers, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
@@ -367,7 +367,7 @@ Do not confuse the Application Load Balancer for VPC with Ingress applications l
 **Before you begin**:
 * Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#platform) for the `default` namespace.
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2 clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: [Allow traffic requests that are routed by the VPC application load balancer to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-network-policy#security_groups).
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: [Allow traffic requests that are routed by the VPC application load balancer to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-network-policy#security_groups).
 * To view VPC application load balancers, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
   ```
   ibmcloud plugin install infrastructure-service
@@ -414,7 +414,7 @@ Do not confuse the Application Load Balancer for VPC with Ingress applications l
   <tbody>
   <tr>
     <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"`</td>
-    <td>VPC Gen 2 and {{site.data.keyword.openshiftshort}} version 4.5 or later: Annotation to enable the PROXY protocol. The load balancer passes client connection information, including the client IP address, the proxy server IP address, and both port numbers, in request headers to your back-end app. Note that your back-end app must be configured to accept the PROXY protocol. For example, you can configure an NGINX app to accept the PROXY protocol by following [these steps ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.nginx.com/nginx/admin-guide/load-balancer/using-proxy-protocol/).</td>
+    <td>VPC and {{site.data.keyword.openshiftshort}} version 4.5 or later: Annotation to enable the PROXY protocol. The load balancer passes client connection information, including the client IP address, the proxy server IP address, and both port numbers, in request headers to your back-end app. Note that your back-end app must be configured to accept the PROXY protocol. For example, you can configure an NGINX app to accept the PROXY protocol by following [these steps ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.nginx.com/nginx/admin-guide/load-balancer/using-proxy-protocol/).</td>
   </tr>
   <tr>
     <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type`</td>

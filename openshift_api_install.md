@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-04-21"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -410,9 +410,6 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
      <td>Header</td>
      <td>`Authorization`: Your {{site.data.keyword.cloud_notm}} IAM access token (`bearer <iam_token>`).</td>
      </tr>
-     <tr>
-     <td>Path</td>
-     <td>`vpc-gen2`: Filter output for VPC Gen 2 clusters.</td>
      </tbody>
      </table>
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-19"
+lastupdated: "2021-04-22"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -108,7 +108,7 @@ While you troubleshoot, you can use the [{{site.data.keyword.containerlong_notm}
 
 **Infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 To check the overall health and status of your cluster's Ingress components:
 {: shortdesc}
@@ -174,7 +174,7 @@ The **Ingress Status** reflects the overall health of the Ingress components. Th
 
 **Infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {: tsSymptoms}
 You create a cluster and run `ibmcloud oc cluster get --cluster <cluster>` to check its status. The cluster **State** is `normal`, but the **Ingress Subdomain** and **Ingress Secret** are not available.
@@ -428,7 +428,7 @@ For more information, see [Managing TLS certificates and secrets](/docs/containe
 
 **Infrastructure provider**:
 * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {: tsSymptoms}
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> You publicly exposed your app by creating an Ingress resource for your app in your classic cluster. When you tried to connect to your app by using the public IP address or Ingress subdomain, the connection failed or timed out.
@@ -459,7 +459,7 @@ Version 4: If you recently restarted your ALB pods or enabled an ALB, a [readine
 
 **Infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to {{site.data.keyword.openshiftshort}} clusters that run version 4. For 3.11 clusters, see [Version 3.11: Debugging Ingress](#ingress-debug).
 {: note}
@@ -732,11 +732,11 @@ Check the availability of the public IP addresses of the Ingress controller's ro
 {: #router-mzr-error}
 
 **Supported infrastructure provider and versions**:
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 * <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 4 clusters
 
 {: tsSymptoms}
-You create a multizone VPC Gen 2 cluster. However, when you run `ibmcloud is load-balancers` to find the VPC load balancer that exposes the router, the VPC subnet for only one zone in your cluster is listed instead of the subnets for all zones in your cluster. In the output, look for the VPC load balancer **Name** that starts with `kube-crtmgr-<cluster_ID>`.
+You create a multizone VPC cluster. However, when you run `ibmcloud is load-balancers` to find the VPC load balancer that exposes the router, the VPC subnet for only one zone in your cluster is listed instead of the subnets for all zones in your cluster. In the output, look for the VPC load balancer **Name** that starts with `kube-crtmgr-<cluster_ID>`.
 ```
 ID                                          Name                                                         Family        Subnets               Is public   Provision status   Operating status   Resource group
 r006-d044af9b-92bf-4047-8f77-a7b86efcb923   kube-bsaucubd07dhl66e4tgg-1f4f408ce6d2485499bcbdec0fa2d306   Application   mysubnet-us-south-3   true        active             online             default
@@ -745,7 +745,7 @@ r006-d044af9b-92bf-4047-8f77-a7b86efcb923   kube-bsaucubd07dhl66e4tgg-1f4f408ce6
 
 
 {: tsCauses}
-When you create an {{site.data.keyword.openshiftlong_notm}} cluster on VPC Gen 2 infrastructure in the CLI, the cluster is initially created with worker nodes in one zone only. You then make the cluster multizone by manually adding zones to your worker pools with the `ibmcloud oc zone add vpc-gen2` command. Currently, when you add zones to your cluster, the Ingress controller is not updated with the VPC subnets for the new zones, and does not route requests to apps in the new zones.
+When you create an {{site.data.keyword.openshiftlong_notm}} cluster on VPC infrastructure in the CLI, the cluster is initially created with worker nodes in one zone only. You then make the cluster multizone by manually adding zones to your worker pools with the `ibmcloud oc zone add vpc-gen2` command. Currently, when you add zones to your cluster, the Ingress controller is not updated with the VPC subnets for the new zones, and does not route requests to apps in the new zones.
 
 {: tsResolve}
 Restart the Ingress controller so that a new VPC load balancer is created, which registers the router behind a hostname and forwards traffic to the router. Then, update your Ingress subdomain to use the new VPC load balancer hostname.
@@ -956,14 +956,14 @@ Option 3: If you are not using all the subnets in the VLAN, you can reuse subnet
 {: #vpc_lb_healthcheck}
 
 **Supported infrastructure provider and versions**:
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 * <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 4 clusters
 
 {: tsSymptoms}
 In the [Load balancers for VPC dashboard](https://cloud.ibm.com/vpc-ext/network/loadBalancers){: external}, you view the details of the VPC load balancer that exposes your cluster's router. Although traffic to your apps is flowing correctly in your cluster, the **Health status** of the VPC load balancer shows that at most 2 instances (worker nodes) are **Passing**, while all other instances are **Failing**. For example, if you have 4 worker nodes in your cluster, the health status shows `2/4`.
 
 {: tsCauses}
-In VPC Gen 2 clusters, a VPC load balancer that exposes the router is automatically created outside of your cluster. In the configuration for the load balancer, `externalTrafficPolicy` is set to `Local`, which offers better routing performance than `Cluster`. This `externalTrafficPolicy: Local` setting indicates that when the VPC load balancer receives a request to your app service's node port, the load balancer forwards the traffic only to router pods that are also on the same worker node as the app service's node port.
+In VPC clusters, a VPC load balancer that exposes the router is automatically created outside of your cluster. In the configuration for the load balancer, `externalTrafficPolicy` is set to `Local`, which offers better routing performance than `Cluster`. This `externalTrafficPolicy: Local` setting indicates that when the VPC load balancer receives a request to your app service's node port, the load balancer forwards the traffic only to router pods that are also on the same worker node as the app service's node port.
 
 By default in the OpenShift Container Platform Ingress controller, only 2 router pods are deployed to your cluster, so only 2 worker nodes have router pods. Because the VPC load balancer forwards traffic only to worker nodes that contain router pods, the load balancer's health check only reports the 2 worker nodes that have the router pods as **Passing**, and the other worker nodes as **Failing**. For this reason, the failures are expected, and do not indicate that your VPC load balancer is unable to forward traffic to your cluster.
 
@@ -1088,7 +1088,7 @@ Start by checking for error messages in the Ingress resource deployment events a
         ibmcloud oc ingress alb enable classic --alb <ALB_ID> -c <cluster_name_or_ID>
         ```
         {: pre}
-      * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Gen 2 clusters:
+      * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC clusters:
         ```
         ibmcloud oc ingress alb disable --alb <ALB_ID> -c <cluster_name_or_ID>
         ```
@@ -1468,12 +1468,29 @@ When you run `oc get pods -n kube-system | grep alb`, either no ALB pods or only
 {: screen}
 
 {: tsCauses}
-Ingress requires at least two worker nodes per zone to ensure high availability and that periodic updates are applied. By default, ALB pods have two replicas. However, ALB pods have anti-affinity rules to ensure that only one pod is scheduled to each worker node for high availability. When only one worker node exists per zone in your cluster, ALB pods cannot deploy correctly.
+Ingress requires at least two worker nodes per zone to ensure high availability and apply periodic updates. By default, ALB pods have two replicas. However, ALB pods have anti-affinity rules to ensure that only one pod is scheduled to each worker node for high availability. When only one worker node exists per zone in a classic or VPC cluster, or if only one worker node exists on a VLAN that your classic cluster is attached to, ALB pods cannot deploy correctly.
 
 {: tsResolve}
-The method to increase the number of worker nodes per zone depends on whether you restrict network traffic to edge worker nodes.
-* **If you do not use edge nodes**: Ensure that at least two worker nodes exist in each zone by [resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool), [creating a new worker pool in a VPC cluster](/docs/openshift?topic=openshift-add_workers#vpc_add_pool), or [creating a new worker pool in a classic cluster](/docs/openshift?topic=openshift-add_workers#add_pool).
-* **If you use edge nodes**: Ensure that at least two [edge worker nodes](/docs/openshift?topic=openshift-edge) are enabled in each zone.
+
+1. Check the number of worker nodes per zone in your cluster.
+  ```
+  ibmcloud oc worker ls -c <cluster_name_or_ID>
+  ```
+  {: pre}
+  * Classic and VPC clusters: If only one worker node exists in a zone, increase the number of worker nodes in that zone.
+    * **If you do not use edge nodes**: Ensure that at least two worker nodes exist in each zone by [resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool), [creating a new worker pool in a VPC cluster](/docs/openshift?topic=openshift-add_workers#vpc_add_pool), or [creating a new worker pool in a classic cluster](/docs/openshift?topic=openshift-add_workers#add_pool).
+    * **If you use edge nodes**: Ensure that at least two [edge worker nodes](/docs/openshift?topic=openshift-edge) are enabled in each zone.
+  * Classic clusters only: If more than one worker node exists in each zone of your classic cluster, your worker nodes might be connected to different VLANs within one zone so that only one worker node exists on a private VLAN. Continue to the next step.
+
+2. For each worker node in one zone, get the private VLAN that the worker node is attached to.
+  ```
+  ibmcloud oc worker get -w <worker_ID> -c <cluster_name_or_ID>
+  ```
+  {: pre}
+
+3. If only one worker node exists on a private VLAN, and the other worker nodes in the zone are attached to a different private VLAN, [create a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) with a size of at least one worker node. When you add a zone to the worker pool in step 6, specify the same zone and private VLAN as the worker node that you previously identified.
+
+4. Repeat these steps for each zone in your cluster to ensure that more than one worker node exists on a private VLAN.
 
 After the new worker nodes deploy, the ALB pods are automatically scheduled to deploy to those worker nodes.
 <br />
@@ -1622,7 +1639,7 @@ If you complete one of the above options but the `keepalived` pods are still not
 
 **Infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
   * <img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> {{site.data.keyword.satelliteshort}}
 
 {: tsSymptoms}
@@ -1641,7 +1658,7 @@ If you need to continue testing, you can change the name of the cluster so that 
 
 **Infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {: tsSymptoms}
 When you run `ibmcloud oc cluster get -c <cluster_name_or_ID>` or `ibmcloud oc ingress status -c <cluster_name_or_ID>`, you see the following **Ingress Message**:
@@ -1710,7 +1727,7 @@ To resynchronize the expiration dates, you can regenerate the secrets for your I
 
 **Infrastructure provider**:
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {: tsSymptoms}
 Your Ingress service exposes an app that uses a WebSocket. However, the connection between a client and your WebSocket app closes when no traffic is sent between them for 60 seconds.

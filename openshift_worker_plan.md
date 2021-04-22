@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-21"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -273,12 +273,12 @@ If your classic cluster has deprecated `x1c` or older Ubuntu 16 `x2c` worker nod
 | **Virtual, mx2.32x256**: Use this flavor when you want a 1:8 ratio of CPU and memory resources from the worker node for large-sized workloads that require more memory. | 32 / 256 GB | 100 GB | 1000 Mbps |
 | **Virtual, mx2.48x384**: Use this flavor when you want a 1:8 ratio of CPU and memory resources from the worker node for large-sized workloads that require more memory. | 48 / 384 GB | 100 GB | 1000 Mbps |
 {: class="simple-tab-table"}
-{: caption="Available worker node flavors for VPC Gen 2 compute clusters" caption-side="top"}
+{: caption="Available worker node flavors for VPC clusters" caption-side="top"}
 {: #vpc-gen2-worker-vm-flavors}
-{: tab-title="VPC Gen 2 compute"}
+{: tab-title="VPC"}
 {: tab-group="vm-worker-flavors"}
 
-`*` VPC Gen 2: For more information about network performance caps for virtual machines, see [VPC Gen 2 compute profiles](/docs/vpc?topic=vpc-profiles). The network speeds refer to the speeds of the worker node interfaces. The maximum speed available to your worker nodes is `16Gbps`. Because IP in IP encapsulation is required for traffic between pods that are on different VPC Gen 2 worker nodes, data transfer speeds between pods on different worker nodes might be slower, about half the compute profile network speed. Overall network speeds for apps that you deploy to your cluster depend on the worker node size and application's architecture.
+`*` VPC: For more information about network performance caps for virtual machines, see [VPC profiles](/docs/vpc?topic=vpc-profiles). The network speeds refer to the speeds of the worker node interfaces. The maximum speed available to your worker nodes is `16Gbps`. Because IP in IP encapsulation is required for traffic between pods that are on different VPC worker nodes, data transfer speeds between pods on different worker nodes might be slower, about half the compute profile network speed. Overall network speeds for apps that you deploy to your cluster depend on the worker node size and application's architecture.
 
 <br />
 

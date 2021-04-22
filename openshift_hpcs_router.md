@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-16"
+lastupdated: "2021-04-21"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -262,7 +262,7 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to create a router
   ```
   {: codeblock}
 
-5. Deploy the `HPCSIngressController` custom resource into the `openshift-ingress` project. When this router is deployed, the operator automatically creates a Kubernetes load balancer service to expose the router deployment. In multizone classic clusters, one load balancer is created in every zone. In multizone VPC Gen 2 clusters, one load balancer that process traffic for every zone is created.
+5. Deploy the `HPCSIngressController` custom resource into the `openshift-ingress` project. When this router is deployed, the operator automatically creates a Kubernetes load balancer service to expose the router deployment. In multizone classic clusters, one load balancer is created in every zone. In multizone VPC clusters, one load balancer that process traffic for every zone is created.
   ```
   oc create -n openshift-ingress -f <router_name>.yaml
   ```
@@ -276,12 +276,12 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to create a router
 
 7. Register the IP address (classic) or hostname (VPC) of each load balancer with a DNS entry by creating a subdomain for your {{site.data.keyword.cloud_notm}} HPCS router.
   * **IBM-provided domain**: If you do not need to use a custom domain, you can generate an IBM-provided subdomain.
-      * Classic:
+      * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic:
         ```
         ibmcloud oc nlb-dns create classic --cluster <cluster_name_or_ID> --ip LB_IP [--ip LB2_IP --ip LB3_IP]
         ```
         {: pre}
-      * VPC:
+      * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC:
         ```
         ibmcloud oc nlb-dns create vpc-gen2 --cluster <cluster_name_or_ID> --lb-host <LB_hostname>
         ```

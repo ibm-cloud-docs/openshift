@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-31"
+lastupdated: "2021-04-21"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -143,7 +143,7 @@ Have you created a cluster before and are just looking for quick example command
 
 
 <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC clusters**:
-*  <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute cluster:
+*  <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC cluster:
     ```
     ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.5_openshift --zone us-east-1 --vpc-id <VPC_ID> --subnet-id <VPC_SUBNET_ID> --cos-instance <COS_CRN>--flavor b2.4x16 --workers 3
     ```
@@ -462,16 +462,16 @@ Your cluster is ready for your workloads! You might also want to [add a tag to y
 
 <br />
 
-## Creating a standard VPC Gen 2 compute cluster
+## Creating a standard VPC cluster
 {: #clusters_vpcg2}
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console to create a standard VPC Generation 2 compute cluster, and customize your cluster to meet the high availability and security requirements of your apps.
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console to create a standard VPC cluster, and customize your cluster to meet the high availability and security requirements of your apps.
 {: shortdesc}
 
-### Creating a standard VPC Gen 2 compute cluster in the console
+### Creating a standard VPC cluster in the console
 {: #clusters_vpcg2_ui}
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Create your single zone or multizone VPC Generation 2 compute cluster by using the {{site.data.keyword.cloud_notm}} console.
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Create your single zone or multizone VPC cluster by using the {{site.data.keyword.cloud_notm}} console.
 {: shortdesc}
 
 Your VPC cluster is created with both a public and a private cloud service endpoint. Want to create a VPC cluster with no public cloud service endpoint and only a private cloud service endpoint? Create the cluster [in the CLI](#cluster_vpcg2_cli) instead, and include the `--disable-public-service-endpoint` flag.
@@ -485,7 +485,6 @@ Your VPC cluster is created with both a public and a private cloud service endpo
   * For more information, see [Creating a VPC using the IBM Cloud console](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console) and [Overview of VPC networking in {{site.data.keyword.openshiftlong_notm}}: Subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets).
 3. If you want to create a multizone cluster, create the subnets for all of the remaining zones that you want to include in your cluster. You must have one VPC subnet in all of the zones where you want to create your multizone cluster.
    1. From the [VPC subnet dashboard](https://cloud.ibm.com/vpc/network/subnets){: external}, click **New subnet**.
-   2. Verify that the banner at the beginning of the new subnet page is set to **Gen 2 compute**.
    3. Enter a name for your subnet and select the name of the VPC that you created.
    4. Select the location and zone where you want to create the subnet.
    5. Specify the number of IP addresses to create. VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later. If you enter a specific IP range, do not use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
@@ -497,7 +496,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
    2. From the {{site.data.keyword.openshiftshort}} drop-down list, select the version that you want to use in your cluster. You must choose **{{site.data.keyword.openshiftshort}} 4.4 or later**.
    3. **Optional**: For the **OCP entitlement** section, you can select an entitlement for a worker pool, if you have one. In most cases, leave the value set to **Purchase additional licenses for this worker pool**. If you have an {{site.data.keyword.cloud_notm}} Pak with an {{site.data.keyword.openshiftshort}} entitlement that you want to use, you can select **Apply my Cloud Pak OCP entitlement to this worker pool**. Later, when you configure the worker pool, make sure to select only the flavor and number of worker nodes that your entitlement permits.
    3. Select **VPC** infrastructure.
-   4. From the **Virtual private cloud** drop-down menu, select the **Gen 2** VPC that you created earlier.
+   4. From the **Virtual private cloud** drop-down menu, select the VPC that you created earlier.
    5.  From the **Cloud Object Storage** drop-down menu, select a standard {{site.data.keyword.cos_full_notm}} instance to use for the internal {{site.data.keyword.openshiftshort}} container registry, or [create a standard {{site.data.keyword.cos_full_notm}} instance](/docs/cloud-object-storage/basics?topic=cloud-object-storage-provision#provision-instance) to use.
 6. Configure the **Location** details for your cluster.
    1. Select the **Resource group** that you want to create your cluster in.
@@ -528,10 +527,10 @@ Your VPC cluster is created with both a public and a private cloud service endpo
  4. Click **Save**.
  5. If you require VPC VPN access or classic infrastructure access into this cluster, repeat these steps to add a rule that uses the **UDP** protocol, `30000` for the **Port min**, `32767` for the **Port max**, and the **Any** source type.
 
-### Creating standard VPC Gen 2 compute clusters from the CLI
+### Creating standard VPC clusters from the CLI
 {: #cluster_vpcg2_cli}
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Create your single zone or multizone VPC Generation 2 compute cluster by using the {{site.data.keyword.cloud_notm}} CLI.
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Create your single zone or multizone VPC cluster by using the {{site.data.keyword.cloud_notm}} CLI.
 {: shortdesc}
 
 **Before you begin**:
@@ -549,14 +548,8 @@ Your VPC cluster is created with both a public and a private cloud service endpo
    ```
    {: pre}
 
-2. Target the {{site.data.keyword.cloud_notm}} infrastructure generation **2** for VPC.
-   ```
-   ibmcloud is target --gen 2
-   ```
-   {: pre}
-
-3. [Create a Gen 2 VPC](/docs/vpc?topic=vpc-creating-a-vpc-using-cli#create-a-vpc-cli) in the same region where you want to create the cluster.<p class="important">Do the clusters of worker nodes in your VPC need to send and receive information to and from IBM Cloud classic infrastructure? Follow the steps in [Creating VPC subnets for classic access](/docs/openshift?topic=openshift-vpc-subnets#ca_subnet_cli) to create a classic-enabled VPC and VPC subnets without the automatic default address prefixes.<p>
-4. [Create a Gen 2 subnet for your VPC](/docs/vpc?topic=vpc-creating-a-vpc-using-cli#create-a-subnet-cli).
+3. [Create a VPC](/docs/vpc?topic=vpc-creating-a-vpc-using-cli#create-a-vpc-cli) in the same region where you want to create the cluster.<p class="important">Do the clusters of worker nodes in your VPC need to send and receive information to and from IBM Cloud classic infrastructure? Follow the steps in [Creating VPC subnets for classic access](/docs/openshift?topic=openshift-vpc-subnets#ca_subnet_cli) to create a classic-enabled VPC and VPC subnets without the automatic default address prefixes.<p>
+4. [Create a subnet for your VPC](/docs/vpc?topic=vpc-creating-a-vpc-using-cli#create-a-subnet-cli).
   * If you want to create a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone), repeat this step to create additional subnets in all of the zones that you want to include in your cluster.
   * VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
   * Do not use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
@@ -595,11 +588,11 @@ Your VPC cluster is created with both a public and a private cloud service endpo
     </tr>
     <tr>
     <td><code>--flavor <em>&lt;worker_flavor&gt;</em></code></td>
-    <td>Enter the worker node flavor that you want to use. The flavor determines the amount of virtual CPU, memory, and disk space that is set up in each worker node and made available to your apps. VPC Gen 2 worker nodes can be created as virtual machines on shared infrastructure only. Bare metal or software-defined storage machines are not supported.  For more information, see [Planning your worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes). To view available flavors, first list available VPC zones with <code>ibmcloud oc zone ls --provider vpc-gen2</code>, and then use the zone to list supported flavors by running <code>ibmcloud oc flavors --zone &lt;VPC_zone&gt; --provider vpc-gen2</code>. After you create your cluster, you can add different flavors by adding a worker node or worker pool to the cluster.</td>
+    <td>Enter the worker node flavor that you want to use. The flavor determines the amount of virtual CPU, memory, and disk space that is set up in each worker node and made available to your apps. VPC worker nodes can be created as virtual machines on shared infrastructure only. Bare metal or software-defined storage machines are not supported.  For more information, see [Planning your worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes). To view available flavors, first list available VPC zones with <code>ibmcloud oc zone ls --provider vpc-gen2</code>, and then use the zone to list supported flavors by running <code>ibmcloud oc flavors --zone &lt;VPC_zone&gt; --provider vpc-gen2</code>. After you create your cluster, you can add different flavors by adding a worker node or worker pool to the cluster.</td>
     </tr>
     <tr>
     <td><code>--version 4.5_openshift</code></td>
-    <td>VPC Gen 2 clusters are supported for {{site.data.keyword.openshiftshort}} version 4 only.</td>
+    <td>VPC clusters are supported for {{site.data.keyword.openshiftshort}} version 4 only.</td>
     </tr>
     <tr>
     <td><code>--cos-instance <em>&lt;cos_CRN&gt;</em></code></td>
@@ -611,7 +604,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
     </tr>
     <tr>
     <td><code>--pod-subnet</code></td>
-    <td>In the first cluster that you create in a Gen 2 VPC, the default pod subnet is `172.17.0.0/18`. In the second cluster that you create in that VPC, the default pod subnet is `172.17.64.0/18`. In each subsequent cluster, the pod subnet range is the next available, non-overlapping `/18` subnet. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.BluDirectLink}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
+    <td>In the first cluster that you create in a VPC, the default pod subnet is `172.17.0.0/18`. In the second cluster that you create in that VPC, the default pod subnet is `172.17.64.0/18`. In each subsequent cluster, the pod subnet range is the next available, non-overlapping `/18` subnet. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.BluDirectLink}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
     <p>When you choose a subnet size, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least <code>/23</code>, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use <code>/22</code> to have enough pod IP addresses for eight worker nodes, <code>/21</code> to have enough pod IP addresses for 16 worker nodes, and so on.</p>
     <p>The subnet that you choose must be within one of the following ranges:
     <ul><li><code>172.17.0.0 - 172.17.255.255</code></li>

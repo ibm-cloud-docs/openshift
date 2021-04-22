@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-02"
+lastupdated: "2021-04-21"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -129,11 +129,14 @@ This tutorial is for cluster administrators who want to learn how to create a {{
 ## Prerequisites
 {: #openshift_prereqs}
 
-*   Ensure that you have the following {{site.data.keyword.cloud_notm}} IAM access policies.
-    *   The [**Administrator** platform access role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}}
-    *   The [**Writer** or **Manager** service access role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}}
-    *   The [**Administrator** platform access role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.registrylong_notm}}
-*   Make sure that the [API key](/docs/openshift?topic=openshift-users#api_key) for the {{site.data.keyword.cloud_notm}} region and resource group is set up with the correct infrastructure permissions, **Super User**, or the [minimum roles](/docs/openshift?topic=openshift-access_reference#infra) to create a cluster.
+Complete the following prerequisite steps to set up permissions and the command-line environment.
+{: shortdesc}
+
+**Permissions**: If you are the account owner, you already have the required permissions to create a cluster and can continue to the next step. Otherwise, ask the account owner to [set up the API key and assign you the minimum user permissions in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions).
+
+**Command-line tools**: For quick access to your resources from the command line, try the [{{site.data.keyword.cloud_notm}} Shell](https://cloud.ibm.com/shell). Otherwise, set up your local command-line environment by completing the following steps.
+1.  [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc`), and {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
+2.  [Install the {{site.data.keyword.openshiftshort}} (`oc`) and Kubernetes (`kubectl`) CLIs](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
 
 <br />
 
@@ -144,32 +147,29 @@ This tutorial is for cluster administrators who want to learn how to create a {{
 Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what components are set up when you create a cluster, see the [Service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture). {{site.data.keyword.openshiftshort}} is available for only standard clusters. You can learn more about the price of standard clusters in the [frequently asked questions](/docs/openshift?topic=openshift-faqs#charges).
 {: shortdesc}
 
-1.  Install the command-line tools.
-    *   [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc`), and {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
-    *   [Install the {{site.data.keyword.openshiftshort}} (`oc`) and Kubernetes (`kubectl`) CLIs](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
-2.  Log in to the account and resource group where you want to create {{site.data.keyword.openshiftshort}} clusters. If you have a federated account, include the `--sso` flag.
+1.  Log in to the account and resource group where you want to create {{site.data.keyword.openshiftshort}} clusters. If you have a federated account, include the `--sso` flag.
     ```
     ibmcloud login [-g <resource_group>] [--sso]
     ```
     {: pre}
-3.  Create a cluster with a unique name. The following command creates a version 4.6 cluster in Washington, DC with the minimum configuration of 2 worker nodes that have at least 4 cores and 16 GB memory so that default {{site.data.keyword.openshiftshort}} components can deploy. If you have existing VLANs that you want to use, get the VLAN IDs by running `ibmcloud oc vlan ls --zone <zone>`. For more information, see [Creating a standard classic cluster in the CLI](/docs/openshift?topic=openshift-clusters#clusters_cli_steps).
+2.  Create a cluster with a unique name. The following command creates a version 4.6 cluster in Washington, DC with the minimum configuration of 2 worker nodes that have at least 4 cores and 16 GB memory so that default {{site.data.keyword.openshiftshort}} components can deploy. If you have existing VLANs that you want to use, get the VLAN IDs by running `ibmcloud oc vlan ls --zone <zone>`. For more information, see [Creating a standard classic cluster in the CLI](/docs/openshift?topic=openshift-clusters#clusters_cli_steps).
     ```
     ibmcloud oc cluster create classic --name my_openshift --location wdc04 --version 4.6_openshift --flavor b3c.4x16.encrypted  --workers 2 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --public-service-endpoint
     ```
     {: pre}
-4.  List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and router components take about 10 more minutes to deploy and update the cluster domain that you use for the {{site.data.keyword.openshiftshort}} web console and other routes. Before you continue, wait until the cluster is ready by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.</p>
+3.  List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and router components take about 10 more minutes to deploy and update the cluster domain that you use for the {{site.data.keyword.openshiftshort}} web console and other routes. Before you continue, wait until the cluster is ready by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.</p>
     ```
     ibmcloud oc cluster get --cluster <cluster_name_or_ID>
     ```
     {: pre}
-5.  Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the last file in the `KUBECONFIG` environment variable.
+4.  Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the last file in the `KUBECONFIG` environment variable.
     ```
     ibmcloud oc cluster config --cluster <cluster_name_or_ID>
     ```
     {: pre}
-6.  In your browser, navigate to the address of your **Master URL** and append `/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`.
-7.  From the {{site.data.keyword.openshiftshort}} web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.<p class="tip">Save your cluster master URL to access the {{site.data.keyword.openshiftshort}} console later. In future sessions, you can skip the `cluster config` step and copy the login command from the console instead.</p>
-8.  Verify that the `oc` commands run properly with your cluster by checking the version.
+5.  In your browser, navigate to the address of your **Master URL** and append `/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`.
+6.  From the {{site.data.keyword.openshiftshort}} web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.<p class="tip">Save your cluster master URL to access the {{site.data.keyword.openshiftshort}} console later. In future sessions, you can skip the `cluster config` step and copy the login command from the console instead.</p>
+7.  Verify that the `oc` commands run properly with your cluster by checking the version.
     ```
     oc version
     ```

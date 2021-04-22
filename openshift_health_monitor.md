@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-21"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -120,10 +120,10 @@ To help understand when to use the built-in {{site.data.keyword.openshiftshort}}
 
 <dt>Built-in {{site.data.keyword.openshiftshort}} monitoring tools</dt>
 <dd><ul>
-<li>Built-in Prometheus and Grafana deployments in `openshift-monitoring` project for clumetrics.</li>
-<li>At-a-glance, real-time view of how your pods consume cluster resources that caaccessed from the {{site.data.keyword.openshiftshort}} **Cluster Console**.</li>
+<li>Built-in Prometheus and Grafana deployments in `openshift-monitoring` project for cluster metrics.</li>
+<li>At-a-glance, real-time view of how your pods consume cluster resources that can be accessed from the {{site.data.keyword.openshiftshort}} **Cluster Console**.</li>
 <li>Monitoring is on a per-cluster basis.</li>
-<li>The `openshift-monitoring` project stack is set up in a single zone only. No persisstorage is available to back up or view metric history.</li></ul>
+<li>The `openshift-monitoring` project stack is set up in a single zone only. No persistant storage is available to back up or view metric history.</li></ul>
 <br>For more information, see [the {{site.data.keyword.openshiftshort}} documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](http://docs.openshift.com/container-platform/4.5/monitoring/cluster_monitoring/about-cluster-monitoring.html).</dd>
 
 </dl>
@@ -136,7 +136,7 @@ To help understand when to use the built-in {{site.data.keyword.openshiftshort}}
 Use the {{site.data.keyword.openshiftlong_notm}} observability plug-in to create a monitoring configuration for {{site.data.keyword.mon_full_notm}} in your cluster, and use this monitoring configuration to automatically collect and forward metrics to {{site.data.keyword.mon_full_notm}}.
 {: shortdesc}
 
-With {{site.data.keyword.mon_full_notm}}, you can collects cluster and pod metrics, such as the CPU and memory usage of your worker nodes, incoming and outgoing HTTP traffic for your pods, and data about several infrastructure components. In addition, the agent can collect custom application metrics by using either a Prometheus-compatible scraper or a StatsD facade.
+With {{site.data.keyword.mon_full_notm}}, you can collect cluster and pod metrics, such as the CPU and memory usage of your worker nodes, incoming and outgoing HTTP traffic for your pods, and data about several infrastructure components. In addition, the agent can collect custom application metrics by using either a Prometheus-compatible scraper or a StatsD facade.
 
 Considerations for using the {{site.data.keyword.openshiftlong_notm}} observability plug-in:
 * You can have only one monitoring configuration for {{site.data.keyword.mon_full_notm}} in your cluster at a time. If you want to use a different {{site.data.keyword.mon_full_notm}} service instance to send metrics to, use the [`ibmcloud ob monitoring config replace`](/docs/containers?topic=containers-observability_cli#monitoring_config_replace) command.
@@ -198,7 +198,7 @@ To set up a monitoring configuration for your cluster:
    1. If you used the console to create the {{site.data.keyword.mon_short}} configuration, log in to your cluster. For more information, see [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
    2. Verify that the daemon set for the {{site.data.keyword.mon_short}} agent was created and all instances are listed as `AVAILABLE`.
       ```
-      oc get daemon sets -n ibm-observe
+      oc get daemonsets -n ibm-observe
       ```
       {: pre}
 
@@ -306,7 +306,7 @@ You can view the current cluster state by running the `ibmcloud oc cluster ls` c
 ### Master states
 {: #states_master}
 
-Your {{site.data.keyword.openshiftlong_notm}} includes an IBM-managed master with highly available replicas, automatic security patch updates applied for you, and automation in place to recover in case of an incident. You can check the health, status, and state of the cluster master by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
+Your {{site.data.keyword.openshiftlong_notm}} cluster includes an IBM-managed master with highly available replicas, automatic security patch updates applied for you, and automation in place to recover in case of an incident. You can check the health, status, and state of the cluster master by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 {: shortdesc}
 
 **Master Health**
@@ -426,7 +426,7 @@ You can view the current worker node state by running the `ibmcloud oc worker ls
 ## Disabling remote health reporting
 {: #oc_disable_telemetry_reports}
 
-OpenShift Container Platform collects anonymized health reports about your cluster through a [telemetry component that is enabled by default](https://docs.openshift.com/container-platform/4.5/support/remote_health_monitoring/about-remote-health-monitoring.html){: external} in your {{site.data.keyword.openshiftlong_notm}} cluster. 
+OpenShift Container Platform collects anonymized health reports about your cluster through a [telemetry component that is enabled by default](https://docs.openshift.com/container-platform/4.5/support/remote_health_monitoring/about-remote-health-monitoring.html){: external} in your {{site.data.keyword.openshiftlong_notm}} cluster.
 {: shortdesc}
 
 You might want to disable this remote health reporting to comply with privacy laws, organizational standards, or data governance practices. To disable, you must modify the global configuration for the cluster and reload all of the worker nodes.
