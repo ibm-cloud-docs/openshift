@@ -294,6 +294,8 @@ Before you begin:
   You must use NVIDIA GPU operator version 1.3.1 or later. When you install the Node Feature Discovery operator, select the update channel that matches your {{site.data.keyword.openshiftshort}} cluster version. Do not install the operators through another method, such as a Helm chart.
   {: important}
 
+* **Version 4.6 clusters**: Make sure that your worker nodes are updated to at least version `4.6.25_1541_openshift`. When you create an instance of the `ClusterPolicy` for the GPU operator, you must enter `450.80.02` for the **Driver Config** version.
+
 To execute a workload on a GPU machine:
 1.  Create a YAML file. In this example, a `Job` YAML manages batch-like workloads by making a short-lived pod that runs until the command that it is scheduled to complete successfully terminates.
 
