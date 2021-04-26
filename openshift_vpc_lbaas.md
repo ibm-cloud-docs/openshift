@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-21"
+lastupdated: "2021-04-26"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -350,8 +350,74 @@ Expose your app to the public network by setting up a Kubernetes `LoadBalancer` 
 
 7. Repeat steps 2 - 6 to deploy a VPC network load balancer in each zone where you want to expose your app.
 
+8. Optional: Register the external IP addresses of the VPC network load balancer in each zone with a [DNS subdomain](#vpc_nlb_dns).
+
 Do not delete the subnets that you attached to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any network load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
 {: important}
+
+<br />
+
+## Registering a network load balancer with a DNS record and TLS certificate
+{: #vpc_nlb_dns}
+
+VPC network load balancers provide static external IP addresses through which you can access your app. To register an SSL certificate for your app domain to support HTTPS, you can create an IBM-provided subdomain or bring your own custom domain.
+{: shortdesc}
+
+For example, say that you have a multizone cluster, and run replicas of your app on worker nodes in each zone of your cluster. You [create one VPC network load balancer](#setup_vpc_nlb) per zone to expose the app replicas. Then, you can register the external IP addresses provided by each VPC network load balancer with one DNS entry.
+
+After you create a DNS subdomain for VPC network load balancers, you cannot use `nlb-dns health-monitor` commands to create a custom health check. Instead, the default VPC health check is used. For more information, see the [VPC documentation](/docs/vpc?topic=vpc-nlb-health-checks).
+{: note}
+
+Before you begin:
+* [Create one VPC network load balancer](#setup_vpc_nlb) per zone for your app. Ensure that you define an HTTPS port in your Kubernetes `LoadBalancer` service that configures the VPC network load balancer.
+* To use the SSL certificate to access your app via HTTPS, your app must be able to terminate TLS connections.
+
+To register VPC network load balancer IP addresses with a DNS subdomain:
+
+1. Get the **EXTERNAL-IP** addresses for the load balancers that expose the same app.
+  ```
+  oc get svc -o wide
+  ```
+  {: pre}
+
+  Example output:
+  ```
+  NAME                       TYPE           CLUSTER-IP       EXTERNAL-IP       PORT(S)            AGE      SELECTOR
+  ...
+  webserver-lb-us-south-1    LoadBalancer   172.21.xxx.xxx   169.xx.xxx.xx     8080:30532/TCP     1d       run=webserver
+  webserver-lb-us-south-2    LoadBalancer   172.21.xxx.xxx   169.xx.xxx.xx     8080:30653/TCP     1d       run=webserver
+  ```
+  {: screen}
+
+2. Create a DNS subdomain for the IP addresses.
+  * **IBM-provided subdomain**: Use `nlb-dns` commands to generate a subdomain with an SSL certificate for the IP addresses. {{site.data.keyword.cloud_notm}} takes care of generating and maintaining the wildcard SSL certificate for the subdomain for you.
+    1. Create a DNS subdomain and SSL certificate.
+        ```
+        ibmcloud oc nlb-dns create vpc-gen2 --type public --cluster <cluster_name_or_id> --ip <vpc_nlb1_ip> --ip <vpc_nlb2_ip> --ip <vpc_nlb3_ip>
+        ```
+        {: pre}
+
+    2. Verify that the subdomain is created. For more information, see [Understanding the subdomain format](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_format).
+      ```
+      ibmcloud oc nlb-dns ls --cluster <cluster_name_or_id>
+      ```
+      {: pre}
+
+      Example output:
+      ```
+      Subdomain                                                                               IP(s)                                        Health Monitor   SSL Cert Status           SSL Cert Secret Name
+      mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud     169.46.xx.x,169.48.xxx.xx,169.48.xxx.xx      None             created                   <certificate>
+      ```
+      {: screen}
+
+  * **Custom domain**:
+    1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started).
+    2. Define an alias for your custom domain by specifying the load balancer IP addresses as A records.
+
+3. Open a web browser and enter the URL to access your app through the subdomain.
+
+To use the SSL certificate to access your app via HTTPS, ensure that you defined an HTTPS port in your [Kubernetes `LoadBalancer` service](#setup_vpc_ks_vpc_lb). You can verify that requests are correctly routing through the HTTPS port by running `curl -v --insecure https://<domain>`. A connection error indicates that no HTTPS port is open on the service. Also, ensure that TLS connections can be terminated by your app. You can verify that your app terminates TLS properly by running `curl -v https://<domain>`. A certificate error indicates that your app is not properly terminating TLS connections.
+{: tip}
 
 <br />
 
@@ -544,7 +610,7 @@ Do not delete the subnets that you attached to your cluster during cluster creat
 
 <br />
 
-## Registering a VPC load balancer with a DNS subdomain and TLS certificate
+## Registering an application load balancer with a DNS record and TLS certificate
 {: #vpc_lb_dns}
 
 The VPC load balancer provides a default HTTP hostname in the format `1234abcd-<region>.lb.appdomain.cloud` through which you can access your app. However, if you want a TLS certificate for your app domain to support HTTPS, you can create an IBM-provided subdomain or bring your own custom domain for both public and private VPC load balancers.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-22"
+lastupdated: "2021-04-26"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -109,6 +109,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 26 April 2021 | <ul><li>**CLI changelog**: Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.258](/docs/openshift?topic=openshift-cs_cli_changelog#10).</li></ul> |
 | 22 April 2021 | **HPCS Router**: Updated version changelog for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog) add-on. |
 | 20 April 2021 | **New! Toronto multizone region for VPC**: You can now create clusters on VPC infrastructure in the Toronto, Canada (`ca-tor`) [location](/docs/openshift?topic=openshift-regions-and-zones).|
 | 19 April 2021 | <ul><li>**Add-on changelogs**: Updated version changelogs for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog) and [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-ons.</li><li>**Cluster autoscaler add-on**: [Patch update `1.0.2_256`](/docs/openshift?topic=openshift-ca_changelog) of the cluster autoscaler add-on is available.</li><li>**{{site.data.keyword.cos_full_notm}} plug-in**: Version `2.0.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in changelog](/docs/openshift?topic=openshift-cos_plugin_changelog).</li></ul> |

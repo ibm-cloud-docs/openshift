@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-21"
+lastupdated: "2021-04-26"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -323,6 +323,41 @@ ibmcloud oc cluster addon enable kube-terminal --cluster CLUSTER [--version VERS
 <dd>Optional: Specify the version of the add-on to install. If no version is specified, the default version is installed.</dd>
 </dl>
 
+#### `ibmcloud oc cluster addon enable openshift-container-storage`
+{: #cs_cluster_addon_enable_openshift-container-storage}
+
+Enable the [OCS](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-addon) add-on.
+{: shortdesc}
+
+The OpenShift Container Storage add-on is available as a technology preview and might change without prior notice. Do not use this add-on for production workloads.
+{: preview}
+
+```sh
+ibmcloud oc cluster addon enable openshift-container-storage [-f] [-q] [--version VERSION]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+
+**Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>Required: The name or ID of the cluster.</dd>
+
+<dt><code>-f</code></dt>
+<dd>Optional: Force the command to run with no user prompts.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+
+<dt><code>--version <em>VERSION</em></code></dt>
+<dd>Optional: Specify the version of the add-on to install. To see available versions, run `ibmcloud oc addon-versions`. If no version is specified, the default version is installed.</dd>
+</dl>
+
 #### `ibmcloud oc cluster addon enable static-route`
 {: #cs_cluster_addon_enable_static-route}
 
@@ -363,7 +398,8 @@ ibmcloud oc cluster addon ls --cluster CLUSTER
 {: pre}
 
 **Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -375,8 +411,6 @@ ibmcloud oc cluster addon ls --cluster CLUSTER
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
 </dl>
-
-</br>
 
 
 
@@ -4559,10 +4593,10 @@ Create and manage subdomains for network load balancer (NLB) IP addresses and he
 ### `ibmcloud oc nlb-dns add`
 {: #cs_nlb-dns-add}
 
-Add one or more network load balancer (NLB) IP addresses to an existing subdomain that you created with the [`ibmcloud oc nlb-dns create classic` command](#cs_nlb-dns-create).
+Add one or more network load balancer (NLB) IP addresses to an existing subdomain that you created with the `ibmcloud oc nlb-dns create` command.
 {: shortdesc}
 
-For example, in a multizone cluster, you might create an NLB in each zone to expose an app. You register the NLB IPs with a subdomain by running `ibmcloud oc nlb-dns create classic`. Later, you add another zone to your cluster and another NLB for that zone. You can use this command to add the new NLB IP to this existing subdomain. When a user accesses your app subdomain, the client accesses one of these IPs at random, and the request is sent to that NLB.
+For example, in a multizone classic cluster, you might create an NLB in each zone to expose an app. You register the NLB IPs with a subdomain by running `ibmcloud oc nlb-dns create classic`. Later, you add another zone to your cluster and another NLB for that zone. You can use this command to add the new NLB IP to this existing subdomain. When a user accesses your app subdomain, the client accesses one of these IPs at random, and the request is sent to that NLB.
 
 ```sh
 ibmcloud oc nlb-dns add --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP2 --ip NLB3_IP ...] --nlb-host SUBDOMAIN [--output json] [-q]
@@ -4606,7 +4640,7 @@ Publicly expose your app by creating a DNS subdomain to register a network load 
 {: shortdesc}
 
 ```sh
-ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP --ip NLB3_IP ...] [--secret-namespace NAMESPACE] --type public [--output json] [-q]
+ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP --ip NLB3_IP ...] [--secret-namespace NAMESPACE] [--dns-type public] --type public [--output json] [-q]
 ```
 {: pre}
 
@@ -4624,6 +4658,9 @@ ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP -
 
 <dt><code>--secret-namespace <em>NAMESPACE</em></code></dt>
 <dd>The {{site.data.keyword.openshiftshort}} project where you want to create the Kubernetes secret that holds the SSL certificate information for the NLB. If you do not specify a project, the secret is automatically created in the <code>default</code> project.</dd>
+
+<dt><code>--dns-type public</code></dt>
+<dd>The subdomain type. Currently, only `public` is supported.</dd>
 
 <dt><code>--type public</code></dt>
 <dd>The subdomain type. Currently, only `public` is supported.</dd>
@@ -4646,17 +4683,13 @@ ibmcloud oc nlb-dns create classic --cluster mycluster --ip 1.1.1.1
 ### `ibmcloud oc nlb-dns create vpc-gen2`
 {: #cs_nlb-dns-create-vpc-gen2}
 
-Create a DNS entry for a VPC load balancer hostname.
+Create a DNS record for a Network Load Balancer for VPC or Application Load Balancer for VPC.
 {: shortdesc}
 
-When you create a VPC load balancer, the load balancer is assigned a hostname instead of an external IP address. Additionally, a default public VPC load balancer provides a hostname for all public router services in your cluster, and a default private VPC load balancer provides a hostname for all private router services in your cluster. If you created a VPC load balancer, you can use this hostname to access your app directly. If you use Ingress, you can specify this hostname in your Ingress resource files to register your app with Ingress.
-
-However, this VPC load balancer hostname does not support TLS termination. If you want an SSL certificate for your app domain, you can use the `ibmcloud oc nlb-dns create vpc-gen2` command to create a DNS subdomain for the VPC load balancer hostname. {{site.data.keyword.cloud_notm}} takes care of generating and maintaining the wildcard SSL certificate for the subdomain for you. Note that in VPC clusters, you can create subdomains for both public and private VPC load balancers.
-
-You can also use this command to create a DNS entry for the hostname for your private ALBs.</br>
+When you create a Network Load Balancer for VPC, the load balancer is assigned external IP addresses for each zone in your cluster. When you create an Application Load Balancer for VPC, the load balancer is assigned a hostname. If you want an app subdomain with TLS termination, you can use the `ibmcloud oc nlb-dns create vpc-gen2` command to create a DNS record for the IP addresses or hostname. {{site.data.keyword.cloud_notm}} takes care of generating and maintaining the wildcard SSL certificate for the subdomain for you. You can create subdomains for both public and private VPC load balancers.
 
 ```sh
-ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER --lb-host VPC_LB_HOSTNAME [--secret-namespace NAMESPACE] [--type (public|private)] [--output json] [-q]
+ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER (--lb-host VPC_ALB_HOSTNAME | --ip VPC_NLB_IP) [--dns-type public] [--secret-namespace NAMESPACE] [--type (public|private)] [--output json] [-q]
 ```
 {: pre}
 
@@ -4669,14 +4702,17 @@ ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER --lb-host VPC_LB_HOSTNAME 
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>Required: The name or ID of the cluster.</dd>
 
-<dt><code>--lb-host <em>VPC_LB_HOSTNAME</em></code></dt>
-<dd>The VPC load balancer hostname. To see VPC load balancer hostnames, run `oc get svc -o wide`.</dd>
+<dt><code>--lb-host <em>VPC_ALB_HOSTNAME</em> | <code>--ip <em>VPC_NLB_IP</em></code></dt>
+<dd>For VPC application load balancers, the load balancer hostname. To see load balancer hostnames, run `oc get svc -o wide`. For VPC network load balancers, the external IP addresses. To specify multiple IP addresses, use multiple `--ip` flags. To see load balancer IP addresses, run `oc get svc -o wide`.</dd>
+
+<dt><code>--dns-type <em>public</em></code></dt>
+<dd>The DNS provider type for the subdomain registration. Currently, only `public` DNS is supported.</dd>
 
 <dt><code>--secret-namespace <em>NAMESPACE</em></code></dt>
 <dd>The {{site.data.keyword.openshiftshort}} project where you want to create the Kubernetes secret that holds the SSL certificate information for the NLB. If you do not specify a project, the secret is automatically created in the <code>default</code> project.</dd>
 
 <dt><code>--type <em>(public|private)</em></code></dt>
-<dd>The VPC load balancer type.</dd>
+<dd>The VPC load balancer type. For VPC application load balancers, both values are supported. For VPC network load balancers, only `public` is supported.</dd>
 
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
@@ -5087,11 +5123,13 @@ ibmcloud oc nlb-dns rm classic --cluster mycluster --ip 1.1.1.1 --nlb-host myclu
 ### `ibmcloud oc nlb-dns rm vpc-gen2`
 {: #cs_nlb-dns-rm-vpc-gen2}
 
-Remove the VPC load balancer hostname that is registered with a DNS subdomain. After you remove the hostname, the DNS subdomain still exists, but no VPC load balancer is registered with it.
+Remove the load balancer hostname (VPC application load balancers) or IP addresses (VPC network load balancers) from the DNS record for that load balancer.
 {: shortdesc}
 
+After you remove the hostname or IP addresses, the DNS subdomain still exists, but no load balancer is registered with it.
+
 ```sh
-ibmcloud oc nlb-dns rm vpc-gen2 --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--output json] [-q]
+ibmcloud oc nlb-dns rm vpc-gen2 --cluster CLUSTER --nlb-subdomain SUBDOMAIN [ --ip IP] [--output json] [-q]
 ```
 {: pre}
 
@@ -5106,6 +5144,9 @@ ibmcloud oc nlb-dns rm vpc-gen2 --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--o
 
 <dt><code>--nlb-subdomain <em>SUBDOMAIN</em></code></dt>
 <dd>The subdomain that you want to disassociate from the VPC load balancer hostname. To see existing subdomains, run `ibmcloud oc nlb-dns ls --cluster <cluster>`.</dd>
+
+<dt><code>--ip <em>IP</em></code></dt>
+<dd>For VPC network load balancers, the IP address that you want to remove. To see the IPs registered with each subdomain, run `ibmcloud oc nlb-dns ls --cluster <cluster>`. Note that you must repeat this command for each IP address that you want to remove.</dd>
 
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
@@ -5404,7 +5445,7 @@ Before you use this command, make sure that the user whose credentials are used 
 {: important}
 
 ```sh
-ibmcloud oc credential set classic --infrastructure-api-key API_KEY --infrastructure-username USERNAME [--region REGION] [-q]
+ibmcloud oc credential set classic --infrastructure-api-key API_KEY --infrastructure-username USERNAME --region REGION [-q]
 ```
 {: pre}
 
@@ -5871,8 +5912,8 @@ ibmcloud oc vpcs [--provider vpc-gen2] [--output json] [-q]
 
 **Command options**:
 <dl>
-<dt><code>--provider vpc-gen2</code></dt>
-<dd>The infrastructure provider type ID for the VPC worker node machine. `vpc-gen2` for VPC Gen 2 compute is supported.</dd>
+<dt><code>--provider vpc-gen2</em></code></dt>
+<dd>The infrastructure provider type ID for the VPC worker node machine. `vpc-gen2` for VPC Generation 2 compute is supported.</dd>
 
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
