@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-21"
+lastupdated: "2021-04-26"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, oc, ibmcloud oc
 
@@ -108,8 +108,11 @@ Refer to the following tables for a summary of changes for each version of the [
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
+
+
 |Version|Release date|Changes|
 |-------|------------|-------|
+| 1.0.258 | 26 Apr 2021 | <ul><li>Adds the `--ip` flag to the `ibmcloud oc nlb-dns create vpc-gen2` and `ibmcloud oc nlb-dns rm vpc-gen2` commands to support DNS records for Network Load Balancers for VPC.</li><li>Adds the `--dns-type` flag to `ibmcloud oc nlb-dns create` commands to specify the DNS provider type for the subdomain registration. Currently, only `public` DNS is supported.</li><li>Adds a warning that the `--region` flag is planned to be required for the `ibmcloud oc api-key reset`, `ibmcloud oc credential get`, and `ibmcloud oc credential set` commands as of 10 May 2021. The region is already required by the API. Currently in the CLI, the region defaults to the targeted region if the `--region` flag is not used.</li><li>In the output of the `ibmcloud oc addon-versions` command, changes the `Min. OpenShift version` column to `Supported Openshift Range`.</li><li>When `--output json` is specified for the `ibmcloud oc storage attachment get` or `ibmcloud oc storage attachment ls` commands, fixes the output so that a volume table is not printed after the JSON output.</li><li>Fixes a `golang` vulnerability for [CVE-2020-28852](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28852){: external}.</li><li>Updates the help text in various languages.</li></ul> |
 | 1.0.233 | 01 Mar 2021 | <ul><li>Adds `satellite` as a supported provider to the output of the `ibmcloud oc cluster ls` command.</li><li>[Removes `beta` tags from `ibmcloud sat` commands for the generally available release of {{site.data.keyword.satellitelong_notm}}.](/docs/satellite?topic=satellite-satellite-cli-changelog).</li></ul> |
 | 1.0.231 | 25 Feb 2021 | <ul><li>Updates the Go version to 1.15.8.</li><li>Updates the help text in various languages.</li></ul> |
 | 1.0.223 | 08 Feb 2021 | <ul><li>Adds the [`ibmcloud oc worker-pool label set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_set) and [`ibmcloud oc worker-pool label rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_rm) commands to set and remove custom Kubernetes labels for all worker nodes in a worker pool.</li><li>[Adds several commands and command changes for managing {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-satellite-cli-changelog).</li></ul> |
