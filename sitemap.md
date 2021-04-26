@@ -1870,7 +1870,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020](/docs/openshift?topic=openshift-openshift_changelog#4414_1512)
   * [Changelog for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-openshift_changelog#4411_1511)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
-  * [Changelog for worker node fix pack 3.11.404_1585_openshift, released 26 April 2021](/docs/openshift?topic=openshift-openshift_changelog#311404_1585)
+  * [Changelog for worker node fix pack 3.11.420_1587_openshift, released 26 April 2021](/docs/openshift?topic=openshift-openshift_changelog#311420_1587)
   * [Changelog for worker node fix pack 3.11.404_1585_openshift, released 12 April 2021](/docs/openshift?topic=openshift-openshift_changelog#311404_1585)
   * [Changelog for master fix pack 3.11.394_1583_openshift, released 30 March 2021](/docs/openshift?topic=openshift-openshift_changelog#311394_1583)
   * [Changelog for worker node fix pack 3.11.404_1584_openshift, released 29 March 2021](/docs/openshift?topic=openshift-openshift_changelog#311404_1584)
@@ -2280,7 +2280,7 @@ subcollection: openshift
   * [Step 3: Reach out to Portworx and IBM](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-support)
 * [Portworx: Encryption set up fails due to invalid KMS endpoint](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-kms-endpoint)
 * [OpenShift Container Storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage#openshift-container-storage)
-  * [OCS device set creation fails due to PVC names exceeding the Kubernetes character limit.](/docs/openshift?topic=openshift-cs_troubleshoot_storage#ocs-ts-sc-character-limit)
+  * [OCS device set creation fails due to PVC names exceeding the Kubernetes character limit](/docs/openshift?topic=openshift-cs_troubleshoot_storage#ocs-ts-sc-character-limit)
 * [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot_storage#getting_help_storage)
 
 [Getting help](/docs/openshift?topic=openshift-get-help)

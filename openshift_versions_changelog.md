@@ -1145,10 +1145,10 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 3.11 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported on 6 June 2022 (date subject to change).
 {: deprecated}
 
-### Changelog for worker node fix pack 3.11.404_1585_openshift, released 26 April 2021
-{: #311404_1585}
+### Changelog for worker node fix pack 3.11.420_1587_openshift, released 26 April 2021
+{: #311420_1587}
 
-The following table shows the changes that are included in the worker node fix pack `3.11.404_1585_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are included in the worker node fix pack `3.11.420_1587_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
