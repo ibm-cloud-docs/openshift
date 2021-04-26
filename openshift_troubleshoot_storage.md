@@ -2121,6 +2121,50 @@ The endpoint that you entered in your Kubernetes secret is incorrect. If the KMS
 
 If you find information that you entered incorrectly or you must change the setup of your cluster, correct the information or the cluster setup.
 
+
+
+## OpenShift Container Storage
+
+**Infrastructure provider**:
+* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+
+### OCS device set creation fails due to PVC names exceeding the Kubernetes character limit.
+{: #ocs-ts-sc-character-limit}
+
+{: tsSymptoms}
+When you create your OCS storage cluster and you run `oc describe storagecluster <storage-cluster-name>`, you see an error similar to the following.
+
+```sh
+ceph-cluster-controller: failed to reconcile. failed to reconcile cluster "ocs-storagecluster-cephcluster": failed to configure local ceph cluster: failed to create cluster: failed to start ceph osds: 3 failures encountered while running osds in namespace openshift-storage: failed to create "provision" job for node "ocs-deviceset-ibmc-vpc-block-metro-retain-10iops-tier-0-datnv6k". Job.batch "rook-ceph-osd-prepare-aaa000aaa111a1a0e10ba1a11aa1a119" is invalid: [spec.template.spec.volumes[8].name: Invalid value: "ocs-deviceset-ibmc-vpc-block-metro-retain-10iops-tier-0-aaaaa1b-bridge": must be no more than 63 characters
+```
+{: screen}
+
+{: tsCauses}
+Kubernetes PVC names must be fewer than 63 characters. If you a have multizone VPC cluster and create your OCS storage cluster by using a `retain` class like the `ibmc-vpc-block-metro-retain-10iops-tier`, the corresponding OCS device set PVCs that are created by using this storage class are assigned names that exceed the 63 character limit.
+
+{: tsResolve}
+Create a custom storage class that uses the same configuration as the pre-defined storage class that you want to use, but with a name that does not exceed 63 characters.
+
+1. Get the YAML configuration of the storage class that you want to use in your OCS storage cluster and save it in a file on your local machine.
+  ```sh
+  oc get sc ibmc-vpc-block-metro-retain-10iops-tier -o yaml
+  ```
+  {: pre}
+
+1. Edit the name of the storage class. Make sure that the name of your custom storage class is fewer than 30 characters to allow for the OCS storage cluster device set IDs to be under the 63 character kubernetes limit. Create the storage class in your cluster.
+  ```sh
+  oc create -f <custom-storage-class.yaml>
+  ```
+  {: pre}
+
+1. Clean up your [OCS deployment](#ocs-rm-cleanup-resources).
+
+1. Create a OCS deployment that uses the custom storage class you created.
+
+
+
+
 ## Feedback, questions, and support
 {: #getting_help_storage}
 
@@ -2128,5 +2172,6 @@ If you still experience issues with persistent storage in your cluster, review t
 
 - For issues with {{site.data.keyword.cloud_notm}} File, Block, or Object Storage, see [Getting help](/docs/openshift?topic=openshift-get-help) to find information about how to contact the IBM team on Slack or open an {{site.data.keyword.cloud_notm}} support case.
 - For issues with Portworx, open an issue in the [Portworx Service Portal](https://portworx.atlassian.net/servicedesk/customer/portal/2){: external}. You can also submit a request by sending an e-mail to `support@portworx.com`. If you do not have an account on the Portworx Service Portal, send an e-mail to `support@portworx.com`.
+
 
 

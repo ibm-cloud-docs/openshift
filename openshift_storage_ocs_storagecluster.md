@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-21"
+lastupdated: "2021-04-26"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -118,6 +118,9 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 {: note}
 
 1. Create a custom resource called `OcsCluster`. Save one of the following custom resource definition files on your local machine and edit it to include the name of the custom storage class that you created earlier as the `monStorageClassName` and `osdStorageClassName` parameters. For more information about the `OcsCluster` parameters, see the [parameter reference](#ocs-vpc-param-ref).
+
+  **Multizone clusters** To use a metro `retain` storage class like `ibmc-vpc-block-metro-retain-10iops-tier` to create your OCS storage cluster, you must [create a custom storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class) with the same specifications as the metro `retain` class that you want to use. For more information, see the [Limitations](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-limitations).
+  {: important}
 
   **Example custom resource definition for installing OCS on all worker nodes in a VPC cluster**
   ```yaml
@@ -318,9 +321,9 @@ Refer to the following OpenShift Container Storage parameters when you use the a
 
 | Parameter | Description | Default value |
 | --- | --- | --- |
-| `monStorageClassName` | Enter the name of the storage class that you want to use for your MON devices. For **Multizone clusters**, enter the name of the metro storage class that you want to use. Metro storage classes have the volume binding mode `WaitForFirstConsumer` which is required for multizone OCS deployments. Example: `ibmc-vpc-block-metro-retain-10iops-tier`. For **Single zone clusters**, enter the name of the tiered storage class that you want to use. Example: `ibmc-vpc-block-10iops-tier`. For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference).| N/A |
+| `monStorageClassName` | Enter the name of the storage class that you want to use for your MON devices. For **multizone clusters**, specify the metro storage class that you want to use. If you want to use a metro `retain` storage class, [create a custom `WaitForFirstConsumer` storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class) that is based off the tiered metro `retain` storage class that you want to use. Metro storage classes have the volume binding mode `WaitForFirstConsumer`, which is required for multizone OCS deployments. For **single zone clusters**, enter the name of the tiered storage class that you want to use. Example: `ibmc-vpc-block-10iops-tier`. For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference).| N/A |
 | `monSize` | Enter a size for your monitoring storage devices. Example: `20Gi` | N/A |
-| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD devices. For **Multizone clusters**, enter the name of the metro storage class that you want to use. Metro storage classes have the volume binding mode `WaitForFirstConsumer` which is required for multizone OCS deployments. Example: `ibmc-vpc-block-metro-retain-10iops-tier`. For **Single zone clusters**, enter the name of the tiered storage class that you want to use. Example: `ibmc-vpc-block-10iops-tier`. For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference).| N/A |
+| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD devices. For **multizone clusters**, specify the metro storage class that you want to use. If you want to use a metro `retain` storage class, [create a custom `WaitForFirstConsumer` storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class) that is based off the tiered metro `retain` storage class that you want to use. Metro storage classes have the volume binding mode `WaitForFirstConsumer`, which is required for multizone OCS deployments. For **single zone clusters**, enter the name of the tiered storage class that you want to use. Example: `ibmc-vpc-block-10iops-tier`. For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference).| N/A |
 | `osdSize` | Enter a size for your storage devices. Example: `100Gi`. The total storage capacity of your OCS cluster is equivalent to the `osdSize` x 3 divided by the `numOfOsd`. | N/A |
 | `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. OCS creates three times the `numOfOsd` value. For example, if you enter `1`, OCS provisions 3 disks of the size and storage class that you specify in the `osdStorageClassName` field. | `1` |
 | `billingType` | Enter a `billingType` of either `hourly` or `monthly` for your OCS deployment. | `hourly` |
@@ -351,6 +354,13 @@ Refer to the following OpenShift Container Storage parameters when you use the a
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
 
 <br />
+
+## Limitations
+{: #ocs-limitations}
+
+Review the following limitations for deploying OCS.
+
+**Kubernetes resource ID character limit:** Kubernetes PVC names must be fewer than 63 characters. If you deploy OCS in a multizone VPC cluster and create your OCS storage cluster by using a metro `retain` storage class such as `ibmc-vpc-block-metro-retain-10iops-tier`, the corresponding OCS device set that is created by using this storage class fails. For more information see [OCS device set creation fails due to Kubernetes character limitation](/docs/openshift?topic=openshift-ocs-manage-deployment##ocs-ts-sc-name-limit).
 
 ## Storage class reference
 {: #ocs-reference-section}

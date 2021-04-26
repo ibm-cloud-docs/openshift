@@ -1411,6 +1411,8 @@ subcollection: openshift
 
 [Classic: OpenShift Container Storage parameter reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-param-ref)
 
+[Limitations](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-limitations)
+
 [Storage class reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-reference-section)
 
 
@@ -1446,6 +1448,7 @@ subcollection: openshift
 * [Classic: Cleaning up OCS](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-cleanup-classic-resources)
 
 [Troubleshooting OCS](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-troubleshooting-gather)
+* [OCS device set creation fails due to PVC names exceeding the Kubernetes character limit](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-ts-sc-name-limit)
 
 
 ## Storage class reference
@@ -2275,6 +2278,8 @@ subcollection: openshift
   * [Step 2: Verifying the cluster setup](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-verify-cluster)
   * [Step 3: Reach out to Portworx and IBM](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-support)
 * [Portworx: Encryption set up fails due to invalid KMS endpoint](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-kms-endpoint)
+* [OpenShift Container Storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage#openshift-container-storage)
+  * [OCS device set creation fails due to PVC names exceeding the Kubernetes character limit.](/docs/openshift?topic=openshift-cs_troubleshoot_storage#ocs-ts-sc-character-limit)
 * [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot_storage#getting_help_storage)
 
 [Getting help](/docs/openshift?topic=openshift-get-help)
