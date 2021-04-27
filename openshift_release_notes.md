@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-26"
+lastupdated: "2021-04-27"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -109,6 +109,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 27 April 2021 | **Master versions**: Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.23_1540_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4623_1540), [`4.5.37_1536_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4537_1536), [`4.4.33_1539_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4433_1539), and [`3.11.420_1586_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311420_1586)|
 | 26 April 2021 | <ul><li>**CLI changelog**: Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.258](/docs/openshift?topic=openshift-cs_cli_changelog#10).</li><li>**OpenShift Container Storage**: Adds a troubleshooting topic for [OCS device set creation failure due to PVC names exceeding the Kubernetes character limit](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-ts-sc-name-limit).</li><li>**VPC NLB**: Adds steps for [registering a VPC network load balancer with a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_nlb_dns).</li><li>**Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.25_1541_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4625_1541), [`4.5.37_1537_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4537_1537), [`4.4.33_1540_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4433_1540), and [`3.11.420_1587_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311420_1587).</li></ul> |
 | 22 April 2021 | **HPCS Router**: Updated version changelog for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog) add-on. |
 | 20 April 2021 | **New! Toronto multizone region for VPC**: You can now create clusters on VPC infrastructure in the Toronto, Canada (`ca-tor`) [location](/docs/openshift?topic=openshift-regions-and-zones).|
