@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-26"
+lastupdated: "2021-04-27"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -275,7 +275,7 @@ Complete the following steps only if you installed the OCS Operator from Operato
 1. From the {{site.data.keyword.openshiftshort}} web console, click **Operators** > **Installed Operators**.
 1. Click the **OpenShift Container Storage operator**, then click the **Storage Cluster** tab and **Create Storage Cluster**
 1. On the **Create Storage Cluster** page, make sure that the **Internal** tab is selected.
-1. In the **Storage Class** menu, select the {{site.data.keyword.block_storage_is_short}} that you want to use for your OCS volumes.
+1. In the **Storage Class** menu, select the {{site.data.keyword.block_storage_is_short}} that you want to use for your OCS volumes. For multizone clusters, you must specify a metro storage class. Metro storage classes have the volume binding mode `WaitForFirstConsumer`, which is required for multizone OCS deployments. **Note**: To use a metro `retain` storage class like `ibmc-vpc-block-metro-retain-10iops-tier` to create your OCS storage cluster, you must [create a custom storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class) with the same specifications as the metro `retain` class that you want to use. For more information, see the [Limitations](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-limitations).
 1. In the **OCS Service Capacity** menu, select the size of the OCS storage cluster that you want to create.
 1. Enable or disable encrytion.
 1. In the **Nodes** section, select the worker nodes where you want to provision the volumes for your OCS storage cluster.
