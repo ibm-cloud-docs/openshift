@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-22"
+lastupdated: "2021-04-27"
 
 keywords: openshift, roks, rhoks, rhos, ips, vlans, networking, public gateway
 
@@ -173,10 +173,12 @@ To see the pod and service subnets that your cluster uses, look for the `Pod Sub
 ### Public gateways
 {: #vpc_basics_pgw}
 
-A public gateway enables a subnet and all worker nodes that are attached to the subnet to establish outbound connections to the internet. Enable a [public gateway](/docs/vpc?topic=vpc-about-networking-for-vpc#public-gateway-for-external-connectivity) on the VPC subnets that worker nodes are deployed to to access default {{site.data.keyword.openshiftshort}} components without being connected to your VPC's private network.
+A public gateway enables a subnet and all worker nodes that are attached to the subnet to establish outbound connections to the internet. If both the public and private cloud service endpoints are enabled for your cluster, you must enable a [public gateway](/docs/vpc?topic=vpc-about-networking-for-vpc#public-gateway-for-external-connectivity) on the VPC subnets that worker nodes are deployed to to access default {{site.data.keyword.openshiftshort}} components without being connected to your VPC's private network.
 {: shortdesc}
 
-If you do not attach a public gateway to your subnets, you must instead be connected to your VPC private network, such as through a VPN connection, to access the {{site.data.keyword.openshiftshort}} web console or access your cluster with `kubectl` commands. Also, if an {{site.data.keyword.cloud_notm}} service does not support private cloud service endpoints, your worker nodes must be connected to a subnet that has a public gateway attached to it. The pods on those worker nodes can securely communicate with the services over the public network through the subnet's public gateway. Note that a public gateway is not required on your subnets to allow inbound network traffic from the internet to `LoadBalancer` services or ALBs.
+When you create a VPC cluster and enable both the public and private cloud service endpoints during cluster creation, the public cloud service endpoint is used by default for access to components such as the {{site.data.keyword.openshiftshort}} web console for your cluster. In order for console pods to establish a secure, public connection over the internet through the public service endpoint, you must enable a public gateway on each VPC subnet that your worker nodes are deployed to.
+
+When you create a VPC cluster and enable only the private cloud service endpoints during cluster creation, the private cloud service endpoint is used by default for access to components such as the {{site.data.keyword.openshiftshort}} web console for your cluster. If you do not attach a public gateway to your subnets, you must instead be connected to your VPC private network, such as through a VPN connection, to access the {{site.data.keyword.openshiftshort}} web console or access your cluster with `kubectl` commands. Also, if an {{site.data.keyword.cloud_notm}} service does not support private cloud service endpoints, your worker nodes must be connected to a subnet that has a public gateway attached to it. The pods on those worker nodes can securely communicate with the services over the public network through the subnet's public gateway. Note that a public gateway is not required on your subnets to allow inbound network traffic from the internet to `LoadBalancer` services or ALBs.
 
 Within one VPC, you can create only one public gateway per zone, but that public gateway can be attached to multiple subnets within the zone. For more information about public gateways, see the [Networking for VPC documentation](/docs/vpc?topic=vpc-about-networking-for-vpc#public-gateway-for-external-connectivity).
 
