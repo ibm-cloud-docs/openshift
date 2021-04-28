@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-27"
+lastupdated: "2021-04-28"
 
 keywords: openshift, rhoks, roks, rhos, multi az, multi-az, szr, mzr
 
@@ -131,7 +131,7 @@ Subnets provide a channel for connectivity among the worker nodes within the clu
 
 When you create a VPC cluster and enable both the public and private cloud service endpoints during cluster creation, the public cloud service endpoint is used by default for access to components such as the {{site.data.keyword.openshiftshort}} web console for your cluster. In order for console pods to establish a secure, public connection over the internet through the public service endpoint, you must enable a public gateway on each VPC subnet that your worker nodes are deployed to.
 
-When you create a VPC cluster and enable only the private cloud service endpoints during cluster creation, the private cloud service endpoint is used by default for access to components such as the {{site.data.keyword.openshiftshort}} web console for your cluster. If you do not attach a public gateway to your subnets, you must instead be connected to your VPC private network, such as through a VPN connection, to access the {{site.data.keyword.openshiftshort}} web console or access your cluster with `kubectl` commands.
+When you create a VPC cluster and enable only the private cloud service endpoint during cluster creation, the private cloud service endpoint is used by default to access {{site.data.keyword.openshiftshort}} components such as the {{site.data.keyword.openshiftshort}} web console or OperatorHub. You must be connected to the private VPC network, such as through a VPN connection, to access these components or run `kubectl` commands on your cluster.
 
 The default IP address range for VPC subnets is 10.0.0.0 – 10.255.255.255. For a list of IP address ranges per VPC zone, see the [VPC default address prefixes](/docs/vpc?topic=vpc-configuring-address-prefixes).
 
