@@ -995,9 +995,11 @@ subcollection: openshift
   * [Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#nlb_vpc)
   * [Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#lb_vpc)
 * [Setting up a Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb)
-* [Registering a network load balancer with a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_nlb_dns)
+  * [Setting up a public VPC NLB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb_pub)
+  * [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_nlb_dns)
 * [Setting up an Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb)
-* [Registering an application load balancer with a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
+  * [Setting up a public or private VPC ALB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_alb_pub_priv)
+  * [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
 * [Limitations](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_limitations)
 
 [Classic: About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about)
