@@ -169,12 +169,6 @@ The following diagram illustrates how a user accesses an app from the internet t
 ## Setting up a Network Load Balancer for VPC
 {: #setup_vpc_nlb}
 
-Expose your app to the public network by setting up a [public](#setup_vpc_nlb_pub) or [private](#setup_vpc_nlb_priv) Kubernetes `LoadBalancer` service in each zone of your VPC cluster. Then, you can optionally [register the VPC NLB with a DNS record and TLS certificate](#vpc_nlb_dns).
-{: shortdesc}
-
-### Setting up a public VPC NLB
-{: #setup_vpc_nlb_pub}
-
 Expose your app to public network traffic by setting up a Kubernetes `LoadBalancer` service in each zone of your cluster. When you create the Kubernetes `LoadBalancer` service, a public Network Load Balancer for VPC (VPC NLB) that routes requests to your app is automatically created for you in your VPC outside of your cluster.
 {: shortdesc}
 
@@ -277,7 +271,7 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
   </tr>
   <tr>
     <td>`externalTrafficPolicy: Local`</td>
-    <td><ul><li>Set to `Local` to preserve the source IP address of client requests to your apps. You must ensure that an app pod exists on each worker node in the zone that the VPC NLB deploys to, such as by using a daemonset.</li><li>If `Cluster` is set, DSR is implemented only from the worker node that the incoming request is first forwarded to from the VPC load balancer. Once the incoming request arrives, the request is forwarded to a worker node that contains the app pod. The response from the app pod is sent to the original worker node, and that worker node uses DSR to send the response directly back to the client, bypassing the VPC load balancer.</li></ul></td>
+    <td><ul><li>Set to `Local` to preserve the source IP address of client requests to your apps. You must ensure that an app pod exists on each worker node in the zone that the VPC NLB deploys to, such as by using a daemonset.</li><li>If `Cluster` is set, DSR is implemented only from the worker node that the incoming request is first forwarded to from the VPC NLB. Once the incoming request arrives, the request is forwarded to a worker node that contains the app pod. The response from the app pod is sent to the original worker node, and that worker node uses DSR to send the response directly back to the client, bypassing the VPC NLB.</li></ul></td>
   </tr>
   </tbody></table>
 

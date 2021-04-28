@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-27"
+lastupdated: "2021-04-28"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -1213,7 +1213,7 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 3.11 
 ### Changelog for master fix pack 3.11.420_1586_openshift, released 27 April 2021
 {: #311420_1586}
 
-The following table shows the changes that are included in the master fix pack patch update 3.11.420_1586_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are included in the master fix pack patch update `3.11.420_1586_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |

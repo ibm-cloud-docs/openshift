@@ -142,6 +142,7 @@ You must [update your cluster](/docs/openshift?topic=openshift-update) by using 
 **Supported versions**:
 * Latest: 4.6 (Kubernetes 1.19)
 * Default: 4.6 (Kubernetes 1.19)
+* Other: 4.5 (Kubernetes 1.18)
 
 **Deprecated and unsupported versions**:
 * Deprecated: 3.11 (Kubernetes 1.11), 4.4 (Kubernetes 1.17)
