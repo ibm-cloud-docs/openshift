@@ -124,7 +124,7 @@ To help understand when to use the built-in {{site.data.keyword.openshiftshort}}
 <li>At-a-glance, real-time view of how your pods consume cluster resources that can be accessed from the {{site.data.keyword.openshiftshort}} **Cluster Console**.</li>
 <li>Monitoring is on a per-cluster basis.</li>
 <li>The `openshift-monitoring` project stack is set up in a single zone only. No persistant storage is available to back up or view metric history.</li></ul>
-<br>For more information, see [the {{site.data.keyword.openshiftshort}} documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](http://docs.openshift.com/container-platform/4.5/monitoring/cluster_monitoring/about-cluster-monitoring.html).</dd>
+<br>For more information, see [the {{site.data.keyword.openshiftshort}} documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](http://docs.openshift.com/container-platform/4.6/monitoring/cluster_monitoring/about-cluster-monitoring.html).</dd>
 
 </dl>
 
@@ -426,7 +426,7 @@ You can view the current worker node state by running the `ibmcloud oc worker ls
 ## Disabling remote health reporting
 {: #oc_disable_telemetry_reports}
 
-OpenShift Container Platform collects anonymized health reports about your cluster through a [telemetry component that is enabled by default](https://docs.openshift.com/container-platform/4.5/support/remote_health_monitoring/about-remote-health-monitoring.html){: external} in your {{site.data.keyword.openshiftlong_notm}} cluster.
+OpenShift Container Platform collects anonymized health reports about your cluster through a [telemetry component that is enabled by default](https://docs.openshift.com/container-platform/4.6/support/remote_health_monitoring/about-remote-health-monitoring.html){: external} in your {{site.data.keyword.openshiftlong_notm}} cluster.
 {: shortdesc}
 
 You might want to disable this remote health reporting to comply with privacy laws, organizational standards, or data governance practices. To disable, you must modify the global configuration for the cluster and reload all of the worker nodes.
@@ -444,7 +444,7 @@ You might want to disable this remote health reporting to comply with privacy la
     ...
     ```
     {: screen}
-2.  Follow the {{site.data.keyword.openshiftshort}} instructions to [update the global pull secret in the cluster to disable remote health reporting](https://docs.openshift.com/container-platform/4.5/support/remote_health_monitoring/opting-out-of-remote-health-reporting.html){: external}.
+2.  Follow the {{site.data.keyword.openshiftshort}} instructions to [update the global pull secret in the cluster to disable remote health reporting](https://docs.openshift.com/container-platform/4.6/support/remote_health_monitoring/opting-out-of-remote-health-reporting.html){: external}.
 3.  To pick up the global configuration changes, reload all of the worker nodes in your cluster.
     1.  Note the **ID** of the worker nodes in your cluster.
         ```

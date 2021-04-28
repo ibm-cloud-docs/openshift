@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-21"
+lastupdated: "2021-04-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -202,7 +202,7 @@ By default, your cluster is set up with image pull secrets to Red Hat registries
 However, if an operator or built-in template has a build component that must pull an image from a private registry, the build might fail with an authentication error because the build does not have access to the default image pull secrets in its service account. By default, builds can pull images that are stored only in the internal registry.
 
 {: tsResolve}
-Set up the build with access to the image, either by pulling the image from the private registry or by importing the image from the private registry into the internal registry. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.5/builds/creating-build-inputs.html#builds-docker-credentials-private-registries_creating-build-inputs){: external}.
+Set up the build with access to the image, either by pulling the image from the private registry or by importing the image from the private registry into the internal registry. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.6/builds/creating-build-inputs.html#builds-docker-credentials-private-registries_creating-build-inputs){: external}.
 
 1.  Check the build configuration file to see what registry the build needs pull access to. For example, if your build is part of an {{site.data.keyword.openshiftshort}} template, the build config `spec.strategy.sourceStrategy.from.name` value refers to the `registry.redhat.io` private registry.
     ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-04-28"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, annotations
 
@@ -100,7 +100,7 @@ To add capabilities to your Ingress application load balancer (ALB), you can spe
 {: shortdesc}
 
 
-<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> These custom {{site.data.keyword.openshiftlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and Kubernetes NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in {{site.data.keyword.openshiftshort}} version 4. If you want to customize routing rules for apps in a cluster that runs {{site.data.keyword.openshiftshort}} version 4, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.5/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}, which are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.
+<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> These custom {{site.data.keyword.openshiftlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and Kubernetes NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in {{site.data.keyword.openshiftshort}} version 4. If you want to customize routing rules for apps in a cluster that runs {{site.data.keyword.openshiftshort}} version 4, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.6/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}, which are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.
 {: important}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-04-28"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -172,7 +172,7 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
    * For more information about this command's options, see the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).
 
    ```
-   ibmcloud oc cluster create satellite --location <location_name_or_ID> --name <cluster_name> --pull-secret <secret> --version 4.5_openshift [--enable-admin-agent] [--host-label LABEL ...] [--pod-subnet SUBNET] [-q] [--service-subnet SUBNET] [--workers <workers_per_zone>] [--zone <zone_name>]
+   ibmcloud oc cluster create satellite --location <location_name_or_ID> --name <cluster_name> --pull-secret <secret> --version 4.6_openshift [--enable-admin-agent] [--host-label LABEL ...] [--pod-subnet SUBNET] [-q] [--service-subnet SUBNET] [--workers <workers_per_zone>] [--zone <zone_name>]
    ```
    {: pre}
 
@@ -250,7 +250,7 @@ By default, the internal registry does not run in your {{site.data.keyword.satel
 *  **Non-persistent data on the worker node**: See [Storing images in the worker node empty directory](/docs/openshift?topic=openshift-registry#emptydir_internal_registry).
 *  **Persistent data in {{site.data.keyword.cos_full_notm}}**: See the resolution steps in [Cluster create error about cloud object storage bucket](/docs/openshift?topic=openshift-cs_troubleshoot#ts_cos_bucket_cluster_create).
 
-By default, the [image registry operator management state](https://docs.openshift.com/container-platform/4.5/registry/configuring-registry-operator.html#registry-operator-configuration-resource-overview_configuring-registry-operator){: external} is set to `Unmanaged`. After you change the storage section in the configmap to use a different solution such as the `emptyDir`, you must update the management state to `Managed`. Then, the operator creates the internal registry pod. Use the following command: `oc patch configs.imageregistry.operator.openshift.io/cluster --type merge -p '{"spec":{"managementState":"Managed"}}'`
+By default, the [image registry operator management state](https://docs.openshift.com/container-platform/4.6/registry/configuring-registry-operator.html#registry-operator-configuration-resource-overview_configuring-registry-operator){: external} is set to `Unmanaged`. After you change the storage section in the configmap to use a different solution such as the `emptyDir`, you must update the management state to `Managed`. Then, the operator creates the internal registry pod. Use the following command: `oc patch configs.imageregistry.operator.openshift.io/cluster --type merge -p '{"spec":{"managementState":"Managed"}}'`
 {: note}
 
 <br />
@@ -366,7 +366,7 @@ Unlike standard {{site.data.keyword.openshiftshort}} clusters that are created o
 
 *  Install the [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage) in your cluster.
 *  Manually set up a storage operator that uses a backing storage provider in your cluster. For more information, see the storage operator provider documentation.
-*  Use local storage on the host, such as the [local storage operator](https://docs.openshift.com/container-platform/4.5/storage/persistent_storage/persistent-storage-local.html){: external}.
+*  Use local storage on the host, such as the [local storage operator](https://docs.openshift.com/container-platform/4.6/storage/persistent_storage/persistent-storage-local.html){: external}.
 
 <br />
 
