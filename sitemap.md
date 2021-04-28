@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-04-27"
+lastupdated: "2021-04-28"
 
 keywords: openshift
 subcollection: openshift
@@ -995,9 +995,10 @@ subcollection: openshift
   * [Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#nlb_vpc)
   * [Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#lb_vpc)
 * [Setting up a Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb)
-* [Registering a network load balancer with a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_nlb_dns)
+  * [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_nlb_dns)
 * [Setting up an Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb)
-* [Registering an application load balancer with a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
+  * [Setting up a public or private VPC ALB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_alb_pub_priv)
+  * [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
 * [Limitations](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_limitations)
 
 [Classic: About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about)
@@ -1596,7 +1597,7 @@ subcollection: openshift
 
 [IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}
 
-[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.5/rest_api/index.html){: external}
+[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.6/rest_api/index.html){: external}
 
 
 ## CLI plug-in reference

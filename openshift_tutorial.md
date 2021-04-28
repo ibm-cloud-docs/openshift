@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-21"
+lastupdated: "2021-04-28"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -107,7 +107,7 @@ completion-time: 45m
 Create a cluster with worker nodes that come installed with {{site.data.keyword.openshiftshort}} container orchestration platform.
 {: shortdesc}
 
-With {{site.data.keyword.openshiftlong}}, you can create highly available clusters with virtual or bare metal worker nodes that come installed with the {{site.data.keyword.openshiftlong_notm}} Container Platform orchestration software. You get all the [advantages of a managed offering](/docs/openshift?topic=openshift-cs_ov) for your cluster infrastructure environment, while using the [{{site.data.keyword.openshiftshort}} tooling and catalog](https://docs.openshift.com/container-platform/4.5/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments.
+With {{site.data.keyword.openshiftlong}}, you can create highly available clusters with virtual or bare metal worker nodes that come installed with the {{site.data.keyword.openshiftlong_notm}} Container Platform orchestration software. You get all the [advantages of a managed offering](/docs/openshift?topic=openshift-cs_ov) for your cluster infrastructure environment, while using the [{{site.data.keyword.openshiftshort}} tooling and catalog](https://docs.openshift.com/container-platform/4.6/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments.
 
 {{site.data.keyword.openshiftshort}} worker nodes are available for paid accounts and standard clusters only. In this tutorial, you create a cluster that runs version 4.6. The operating system is Red Hat Enterprise Linux 7.
 {: note}
@@ -213,12 +213,12 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
     <tr>
     <td>Administrator perspective</td>
     <td>Side navigation menu perspective switcher.</td>
-    <td>From the Administrator perspective, you can manage and set up the components that your team needs to run your apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see [Viewing cluster information](http://docs.openshift.com/container-platform/4.5/web_console/using-dashboard-to-get-cluster-information.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.</td>
+    <td>From the Administrator perspective, you can manage and set up the components that your team needs to run your apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see [Viewing cluster information](http://docs.openshift.com/container-platform/4.6/web_console/using-dashboard-to-get-cluster-information.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.</td>
     </tr>
     <tr>
     <td>Developer perspective</td>
     <td>Side navigation menu perspective switcher.</td>
-    <td>From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](http://docs.openshift.com/container-platform/4.5/web_console/odc-about-developer-perspective.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.</td>
+    <td>From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](http://docs.openshift.com/container-platform/4.6/web_console/odc-about-developer-perspective.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.</td>
     </tr>
     </tbody>
     </table>
@@ -271,7 +271,7 @@ If you took a break from the last lesson and started a new command line, make su
     oc new-project hello-world
     ```
     {: pre}
-2.  Build the sample app [from the source code](https://github.com/IBM/container-service-getting-started-wt){: external}. With the {{site.data.keyword.openshiftshort}} `new-app` command, you can refer to a directory in a remote repository that contains the Dockerfile and app code to build your image. The command builds the image, stores the image in the local Docker registry, and creates the app deployment configurations (`dc`) and services (`svc`). For more information about creating new apps, [see the {{site.data.keyword.openshiftshort}} docs](http://docs.openshift.com/container-platform/4.5/applications/application_life_cycle_management/odc-creating-applications-using-developer-perspective.html){: external}.
+2.  Build the sample app [from the source code](https://github.com/IBM/container-service-getting-started-wt){: external}. With the {{site.data.keyword.openshiftshort}} `new-app` command, you can refer to a directory in a remote repository that contains the Dockerfile and app code to build your image. The command builds the image, stores the image in the local Docker registry, and creates the app deployment configurations (`dc`) and services (`svc`). For more information about creating new apps, [see the {{site.data.keyword.openshiftshort}} docs](http://docs.openshift.com/container-platform/4.6/applications/application_life_cycle_management/odc-creating-applications-using-developer-perspective.html){: external}.
     ```
     oc new-app --name hello-world https://github.com/IBM/container-service-getting-started-wt --context-dir="Lab 1"
     ```
@@ -363,6 +363,6 @@ If you took a break from the last lesson and started a new command line, make su
 ## What's next?
 {: #openshift_next}
 
-For more information about working with your apps, see the [{{site.data.keyword.openshiftshort}} developer activities](https://docs.openshift.com/container-platform/4.5/welcome/index.html#developer-activities){: external} documentation.
+For more information about working with your apps, see the [{{site.data.keyword.openshiftshort}} developer activities](https://docs.openshift.com/container-platform/4.6/welcome/index.html#developer-activities){: external} documentation.
 
 Install two popular {{site.data.keyword.openshiftlong_notm}} add-ons: [{{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging) and [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor).

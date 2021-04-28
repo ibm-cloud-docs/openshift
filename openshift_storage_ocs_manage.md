@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-26"
+lastupdated: "2021-04-28"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -531,7 +531,7 @@ After you remove OCS from your apps, and remove your OCS storage cluster, you ca
 ## Troubleshooting OCS
 {: #ocs-troubleshooting-gather}
 
-To gather the information that is needed to troubleshoot OCS, you can use the `oc adm must-gather` command and specify the OCS image. For more information, see [Gathering cluster data](https://docs.openshift.com/container-platform/4.5/support/gathering-cluster-data.html).
+To gather the information that is needed to troubleshoot OCS, you can use the `oc adm must-gather` command and specify the OCS image. For more information, see [Gathering cluster data](https://docs.openshift.com/container-platform/4.6/support/gathering-cluster-data.html).
 {: shortdesc}
 
 You can use the Rook community toolbox to debug issues with your Ceph cluster. For more information, see the [Rook documentation](https://rook.io/docs/rook/v1.3/ceph-toolbox.html){: external}.
