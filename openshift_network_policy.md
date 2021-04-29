@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-02"
+lastupdated: "2021-04-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -403,12 +403,14 @@ Before you begin, [install and configure the Calico CLI, and set the context for
   ```
   {: pre}
 
+3. Review each policy for any changes you might need to make. For example, if you specified a custom subnet when you created your cluster that provides the private IP addresses for your pods, you must specify that CIDR instead of the `172.30.0.0/16` CIDR in the `allow-ibm-ports-public.yaml` policy.
+
 3. Apply the policies.
   ```
   calicoctl apply -f allow-egress-pods-public.yaml
   calicoctl apply -f allow-ibm-ports-public.yaml
   calicoctl apply -f allow-public-service-endpoint.yaml
-  calicoctl apply -f deny-all-outbound.yaml
+  calicoctl apply -f deny-all-outbound-public.yaml
   ```
   {: pre}
 
