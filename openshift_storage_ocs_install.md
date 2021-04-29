@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-21"
+lastupdated: "2021-04-29"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -295,12 +295,12 @@ Before you can install OCS from OperatorHub, you must deploy the following confi
     metadata:
       labels:
         openshift.io/cluster-monitoring: "true"
-      name: openshift-storage
+      name: openshift-storage # Enter the namespace where you want to install the OCS Operator.
   - kind: ConfigMap
     apiVersion: v1
     metadata:
       name: rook-ceph-operator-config
-      namespace: openshift-storage # Enter the namespace where you want to install the the OCS Operator.
+      namespace: openshift-storage # Enter the namespace where you want to install the OCS Operator.
     data:
       ROOK_CSI_KUBELET_DIR_PATH: "/var/data/kubelet"
   ```

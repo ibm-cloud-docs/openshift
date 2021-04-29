@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-28"
+lastupdated: "2021-04-29"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -132,19 +132,19 @@ For example, if your OCS cluster has three worker nodes, you specify an `osdSize
 
 1. Get the name of your `OcsCluster` custom resource.
   ```sh
-  oc get ocsluster
+  oc get ocscluster
   ```
   {: pre}
 
-1. Save your `OcsCluster` custom resource YAML file to your local machine as `ocsluster.yaml`.
+1. Save your `OcsCluster` custom resource YAML file to your local machine as `ocscluster.yaml`.
   ```sh
-  oc get ocsluster ocsluster-vpc -o yaml
+  oc get ocscluster ocscluster-vpc -o yaml
   ```
   {: pre}
 
 1. Increase the `numOfOsd` parameter and reapply the `ocscluster` CRD to your cluster.
   ```sh
-  oc apply -f ocsluster.yaml
+  oc apply -f ocscluster.yaml
   ```
   {: pre}
 
@@ -165,7 +165,7 @@ To increase the storage capacity that is available to OpenShift Container Storag
 1. Expand the worker pool of the cluster that is used for OCS by [adding worker nodes](/docs/openshift?topic=openshift-add_workers). Ensure that your worker nodes meet the [requirements for OCS](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-plan). If you deployed OCS on all of the worker nodes in your cluster, the OCS drivers are installed on the new worker nodes when they are added to your cluster.
 2. If you deployed OCS on a subset of worker nodes in your cluster by specifying the private `<worker-IP>` parameters in your `OcsCluster` custom resource, you can add the IP addresses of the new worker nodes to your OCS deployment by editing the custom resource definition.
   ```sh
-  oc edit ocsluster ocscluster-vpc
+  oc edit ocscluster ocscluster-vpc
   ```
   {: pre}
 3. Save the `OcsCluster` custom resource file to reapply it to your cluster.
@@ -376,13 +376,13 @@ When you delete the `OcsCluster` custom resource from your cluster, the followin
 
 1. Delete your `OcsCluster` custom resource. Replace `<ocscluster_name>` with the name of your custom resource.
   ```
-  oc delete ocsluster <ocscluster_name>
+  oc delete ocscluster <ocscluster_name>
   ```
   {: pre}
 
   **Example command for an `OcsCluster` custom resource called `ocscluster-vpc`.**
   ```
-  oc delete ocsluster ocscluster-vpc
+  oc delete ocscluster ocscluster-vpc
   ```
   {: pre}
 
