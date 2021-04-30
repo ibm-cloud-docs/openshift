@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-27"
+lastupdated: "2021-04-30"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -360,7 +360,7 @@ Refer to the following OpenShift Container Storage parameters when you use the a
 
 Review the following limitations for deploying OCS.
 
-**Kubernetes resource ID character limit:** Kubernetes PVC names must be fewer than 63 characters. If you deploy OCS in a multizone VPC cluster and create your OCS storage cluster by using a metro `retain` storage class such as `ibmc-vpc-block-metro-retain-10iops-tier`, the corresponding OCS device set that is created by using this storage class fails. For more information see [OCS device set creation fails due to Kubernetes character limitation](/docs/openshift?topic=openshift-ocs-manage-deployment##ocs-ts-sc-name-limit).
+**Kubernetes resource ID character limit:** Kubernetes PVC names must be fewer than 63 characters. If you deploy OCS in a multizone VPC cluster and create your OCS storage cluster by using a metro `retain` storage class such as `ibmc-vpc-block-metro-retain-10iops-tier`, the corresponding OCS device set that is created by using this storage class fails. For more information see [OCS device set creation fails due to Kubernetes character limitation](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-ts-sc-name-limit).
 
 ## Storage class reference
 {: #ocs-reference-section}

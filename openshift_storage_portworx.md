@@ -424,8 +424,8 @@ Follow these steps to set up encryption for your Portworx volumes.
    {: note}
 
 
-### Creating a secret to store the KMS encryption credentials
-{: px_create_km_secret}
+### Creating a secret to store the KMS credentials
+{: #px_create_km_secret}
 
 **Before you begin:** [Set up encryption](#setup_encryption)
 

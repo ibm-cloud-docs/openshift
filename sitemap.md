@@ -1348,7 +1348,7 @@ subcollection: openshift
   * [Portworx per-volume encryption workflow](/docs/openshift?topic=openshift-portworx#px_encryption)
   * [Portworx per-volume decryption workflow](/docs/openshift?topic=openshift-portworx#decryption)
   * [Enabling per-volume encryption for your Portworx volumes](/docs/openshift?topic=openshift-portworx#setup_encryption)
-  * [Creating a secret to store the KMS encryption credentials](/docs/openshift?topic=openshift-portworx#creating-a-secret-to-store-the-kms-encryption-credentials)
+  * [Creating a secret to store the KMS credentials](/docs/openshift?topic=openshift-portworx#px_create_km_secret)
 * [Installing Portworx in your cluster](/docs/openshift?topic=openshift-portworx#install_portworx)
   * [Updating Portworx in your cluster](/docs/openshift?topic=openshift-portworx#update_portworx)
   * [Removing Portworx from your cluster](/docs/openshift?topic=openshift-portworx#remove_portworx)

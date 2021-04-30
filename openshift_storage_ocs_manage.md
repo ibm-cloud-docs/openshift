@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-29"
+lastupdated: "2021-04-30"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -566,7 +566,7 @@ Create a custom storage class that uses the same configuration as the pre-define
   ```
   {: pre}
 
-1. Clean up your [OCS deployment](#ocs-rm-cleanup-resources).
+1. Clean up your [OCS deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-cleanup-resources).
 
 1. Create a OCS deployment that uses the custom storage class you created.
 
