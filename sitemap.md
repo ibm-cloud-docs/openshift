@@ -105,13 +105,13 @@ subcollection: openshift
 
 [Getting started with {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-getting-started)
 
-[Creating a classic {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-getting-started#clusters_gs)
+* [Creating a classic {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-getting-started#clusters_gs)
 
-[Creating a VPC cluster](/docs/openshift?topic=openshift-getting-started#vpc-gen2-gs)
+* [Creating a VPC cluster](/docs/openshift?topic=openshift-getting-started#vpc-gen2-gs)
 
-[Deploying an app with the {{site.data.keyword.openshiftshort}} service catalog](/docs/openshift?topic=openshift-getting-started#deploy-app)
+* [Deploying an app with the {{site.data.keyword.openshiftshort}} service catalog](/docs/openshift?topic=openshift-getting-started#deploy-app)
 
-[What's next?](/docs/openshift?topic=openshift-getting-started#whats-next)
+* [What's next?](/docs/openshift?topic=openshift-getting-started#whats-next)
 
 
 ## About
@@ -249,19 +249,19 @@ subcollection: openshift
 
 [Creating {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_tutorial)
 
-[Objectives](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
+* [Objectives](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
 
-[Audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_audience)
+* [Audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_audience)
 
-[Prerequisites](/docs/openshift?topic=openshift-openshift_tutorial#openshift_prereqs)
+* [Prerequisites](/docs/openshift?topic=openshift-openshift_tutorial#openshift_prereqs)
 
-[Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_create_cluster)
+* [Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_create_cluster)
 
-[Navigate the {{site.data.keyword.openshiftshort}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
+* [Navigate the {{site.data.keyword.openshiftshort}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
 
-[Deploy an app to your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
+* [Deploy an app to your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
 
-[What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
+* [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
 
 
 ## Creating an {{site.data.keyword.openshiftshort}} cluster in your Virtual Private Cloud (VPC)
@@ -270,19 +270,19 @@ subcollection: openshift
 
 [Creating an {{site.data.keyword.openshiftshort}} cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial)
 
-[Objectives](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_objectives)
+* [Objectives](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_objectives)
 
-[Audience](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_audience)
+* [Audience](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_audience)
 
-[Prerequisites](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_prereqs)
+* [Prerequisites](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_prereqs)
 
-[Create a cluster in a VPC](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_create_vpc_cluster)
+* [Create a cluster in a VPC](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_create_vpc_cluster)
 
-[Deploy an app to your cluster](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_app)
+* [Deploy an app to your cluster](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_app)
 
-[Set up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_vpc_lb)
+* [Set up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_vpc_lb)
 
-[What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
+* [What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
 
 
 ## Developing in clusters with the OpenShift Do CLI
@@ -291,17 +291,17 @@ subcollection: openshift
 
 [Developing in clusters with the OpenShift Do CLI](/docs/openshift?topic=openshift-odo-tutorial)
 
-[Objectives](/docs/openshift?topic=openshift-odo-tutorial#odo-objectives)
+* [Objectives](/docs/openshift?topic=openshift-odo-tutorial#odo-objectives)
 
-[Audience](/docs/openshift?topic=openshift-odo-tutorial#odo-audience)
+* [Audience](/docs/openshift?topic=openshift-odo-tutorial#odo-audience)
 
-[Prerequisites](/docs/openshift?topic=openshift-odo-tutorial#odo-prereqs)
+* [Prerequisites](/docs/openshift?topic=openshift-odo-tutorial#odo-prereqs)
 
-[Create a microservice](/docs/openshift?topic=openshift-odo-tutorial#odo-new-microservice)
+* [Create a microservice](/docs/openshift?topic=openshift-odo-tutorial#odo-new-microservice)
 
-[Push a microservice to the cluster](/docs/openshift?topic=openshift-odo-tutorial#odo-push-microservice)
+* [Push a microservice to the cluster](/docs/openshift?topic=openshift-odo-tutorial#odo-push-microservice)
 
-[What's next?](/docs/openshift?topic=openshift-odo-tutorial#odo-next-steps)
+* [What's next?](/docs/openshift?topic=openshift-odo-tutorial#odo-next-steps)
 
 
 ## Scalable web application on OpenShift
@@ -1217,13 +1217,13 @@ subcollection: openshift
 
 [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps)
 
-[Exposing apps with {{site.data.keyword.openshiftshort}} routes](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-routes)
+* [Exposing apps with {{site.data.keyword.openshiftshort}} routes](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-routes)
 
-[Setting up a third-party load balancer in front of the {{site.data.keyword.openshiftshort}} router](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-byolb)
+* [Setting up a third-party load balancer in front of the {{site.data.keyword.openshiftshort}} router](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-byolb)
 
-[Exposing apps with NodePorts](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-np)
+* [Exposing apps with NodePorts](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-np)
 
-[Exposing apps with routes and Link endpoints for traffic from {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-cloud)
+* [Exposing apps with routes and Link endpoints for traffic from {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-cloud)
 
 
 ## Storing data on persistent storage
@@ -1343,12 +1343,12 @@ subcollection: openshift
 * [Creating raw, unformatted, and unmounted block storage for VPC and non-SDS classic worker nodes](/docs/openshift?topic=openshift-portworx#create_block_storage)
 * [Setting up a key-value store for Portworx metadata](/docs/openshift?topic=openshift-portworx#portworx_database)
   * [Using the Portworx KVDB](/docs/openshift?topic=openshift-portworx#portworx-kvdb)
-  * [Setting up a Databases for etcd service instance](/docs/openshift?topic=openshift-portworx#databases-for-etcd)
-* [Setting up volume encryption](/docs/openshift?topic=openshift-portworx#encrypt_volumes)
+  * [Optional: Setting up a Databases for etcd service instance](/docs/openshift?topic=openshift-portworx#databases-for-etcd)
+* [Optional: Setting up volume encryption](/docs/openshift?topic=openshift-portworx#encrypt_volumes)
   * [Portworx per-volume encryption workflow](/docs/openshift?topic=openshift-portworx#px_encryption)
   * [Portworx per-volume decryption workflow](/docs/openshift?topic=openshift-portworx#decryption)
   * [Enabling per-volume encryption for your Portworx volumes](/docs/openshift?topic=openshift-portworx#setup_encryption)
-  * [Creating a secret to store the KMS credentials](/docs/openshift?topic=openshift-portworx#creating-a-secret-to-store-the-kms-credentials)
+  * [Creating a secret to store the KMS encryption credentials](/docs/openshift?topic=openshift-portworx#creating-a-secret-to-store-the-kms-encryption-credentials)
 * [Installing Portworx in your cluster](/docs/openshift?topic=openshift-portworx#install_portworx)
   * [Updating Portworx in your cluster](/docs/openshift?topic=openshift-portworx#update_portworx)
   * [Removing Portworx from your cluster](/docs/openshift?topic=openshift-portworx#remove_portworx)
@@ -1371,11 +1371,11 @@ subcollection: openshift
 
 [Preparing your cluster for OpenShift Container Storage](/docs/openshift?topic=openshift-ocs-storage-prep)
 
-[VPC: Planning your OpenShift Container Storage setup](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-vpc-plan)
+* [VPC: Planning your OpenShift Container Storage setup](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-vpc-plan)
 
-[Classic: Planning your OpenShift Container Storage setup](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-plan)
-* [Classic: Preparing your cluster for an OpenShift Container Storage installation](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-cluster-prepare-classic)
-* [Classic: Getting your device details](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-get-devices)
+* [Classic: Planning your OpenShift Container Storage setup](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-plan)
+    * [Classic: Preparing your cluster for an OpenShift Container Storage installation](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-cluster-prepare-classic)
+    * [Classic: Getting your device details](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-get-devices)
 
 
 ## Installing OpenShift Container Storage in your cluster
@@ -1384,15 +1384,15 @@ subcollection: openshift
 
 [Installing OpenShift Container Storage in your cluster](/docs/openshift?topic=openshift-ocs-storage-install)
 
-[Choosing on an OCS installation path](/docs/openshift?topic=openshift-ocs-storage-install#ocs-install-path)
+* [Choosing on an OCS installation path](/docs/openshift?topic=openshift-ocs-storage-install#ocs-install-path)
 
-[Installing the OCS add-on](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-addon)
-* [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-ocs-storage-install#ocs-create-cos)
-* [Installing the OpenShift Container Storage add-on from the console](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-console)
-* [Installing the OpenShift Container Storage add-on from the CLI](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-cli)
-* [Removing the OpenShift Container Storage add-on from your cluster](/docs/openshift?topic=openshift-ocs-storage-install#ocs-addon-rm)
+* [Installing the OCS add-on](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-addon)
+    * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-ocs-storage-install#ocs-create-cos)
+    * [Installing the OpenShift Container Storage add-on from the console](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-console)
+    * [Installing the OpenShift Container Storage add-on from the CLI](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-cli)
+    * [Removing the OpenShift Container Storage add-on from your cluster](/docs/openshift?topic=openshift-ocs-storage-install#ocs-addon-rm)
 
-[Installing OpenShift Container Storage from OperatorHub](/docs/openshift?topic=openshift-ocs-storage-install#ocs-install-oh)
+* [Installing OpenShift Container Storage from OperatorHub](/docs/openshift?topic=openshift-ocs-storage-install#ocs-install-oh)
 
 
 ## Setting up your storage cluster
@@ -1401,21 +1401,21 @@ subcollection: openshift
 
 [Setting up your storage cluster](/docs/openshift?topic=openshift-ocs-storage-cluster-setup)
 
-[Add-on for VPC clusters: Creating your OCS storage cluster CRD](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-deploy-crd)
+* [Add-on for VPC clusters: Creating your OCS storage cluster CRD](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-deploy-crd)
 
-[Add-on for classic clusters: Creating your OCS storage cluster CRD](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-deploy-crd)
+* [Add-on for classic clusters: Creating your OCS storage cluster CRD](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-deploy-crd)
 
-[Operator: Creating an OCS storage cluster in the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-create-storagecluster-console)
-* [VPC: Creating a storage cluster in the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-deploy-console)
-* [Classic: Creating a storage cluster in the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-deploy-console)
+* [Operator: Creating an OCS storage cluster in the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-create-storagecluster-console)
+    * [VPC: Creating a storage cluster in the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-deploy-console)
+    * [Classic: Creating a storage cluster in the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-deploy-console)
 
-[VPC: OpenShift Container Storage parameter reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-param-ref)
+* [VPC: OpenShift Container Storage parameter reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-param-ref)
 
-[Classic: OpenShift Container Storage parameter reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-param-ref)
+* [Classic: OpenShift Container Storage parameter reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-param-ref)
 
-[Limitations](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-limitations)
+* [Limitations](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-limitations)
 
-[Storage class reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-reference-section)
+* [Storage class reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-reference-section)
 
 
 ## Deploying an app that uses OpenShift Container Storage
@@ -1431,26 +1431,26 @@ subcollection: openshift
 
 [Managing your OpenShift Container Storage deployment](/docs/openshift?topic=openshift-ocs-manage-deployment)
 
-[Expanding OCS in VPC clusters](/docs/openshift?topic=openshift-ocs-manage-deployment#expanding-ocs-in-vpc-clusters)
-* [Scaling OCS by increasing the `numOfOsd` in your CRD](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-vpc-scaling-osd)
-* [Expanding OCS by adding worker nodes to your VPC cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-vpc-add-worker-nodes)
+* [Expanding OCS in VPC clusters](/docs/openshift?topic=openshift-ocs-manage-deployment#expanding-ocs-in-vpc-clusters)
+    * [Scaling OCS by increasing the `numOfOsd` in your CRD](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-vpc-scaling-osd)
+    * [Expanding OCS by adding worker nodes to your VPC cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-vpc-add-worker-nodes)
 
-[VPC: Updating the OCS operator from your CRD](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-up-vpc)
+* [VPC: Updating the OCS operator from your CRD](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-up-vpc)
 
-[Classic: Increasing storage capacity by adding worker nodes to your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-add-worker-nodes-classic)
+* [Classic: Increasing storage capacity by adding worker nodes to your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-add-worker-nodes-classic)
 
-[Setting up backing stores by using the NooBaa CLI](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-backing-store-setup)
+* [Setting up backing stores by using the NooBaa CLI](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-backing-store-setup)
 
-[Removing OCS from your apps](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-apps-storage)
+* [Removing OCS from your apps](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-apps-storage)
 
-[Removing your OCS storage cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster)
+* [Removing your OCS storage cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster)
 
-[Cleaning up your OCS deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-cleanup-resources)
-* [VPC: Cleaning up OCS](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-cleanup-vpc)
-* [Classic: Cleaning up OCS](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-cleanup-classic-resources)
+* [Cleaning up your OCS deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-cleanup-resources)
+    * [VPC: Cleaning up OCS](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-cleanup-vpc)
+    * [Classic: Cleaning up OCS](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-cleanup-classic-resources)
 
-[Troubleshooting OCS](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-troubleshooting-gather)
-* [OCS device set creation fails due to PVC names exceeding the Kubernetes character limit](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-ts-sc-name-limit)
+* [Troubleshooting OCS](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-troubleshooting-gather)
+    * [OCS device set creation fails due to PVC names exceeding the Kubernetes character limit](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-ts-sc-name-limit)
 
 
 ## Storage class reference
@@ -1466,21 +1466,21 @@ subcollection: openshift
 
 [Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged)
 
-[Prerequisites](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-prereq)
-* [Labelling your worker nodes](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-label-um)
-* [Retrieving IAM and VPC details](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-driver-get-details)
+* [Prerequisites](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-prereq)
+    * [Labelling your worker nodes](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-label-um)
+    * [Retrieving IAM and VPC details](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-driver-get-details)
 
-[Creating the image pull secret in your cluster](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-create-storage-secret)
+* [Creating the image pull secret in your cluster](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-create-storage-secret)
 
-[Creating the {{site.data.keyword.block_storage_is_short}} driver deployment](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-deploy-cm)
+* [Creating the {{site.data.keyword.block_storage_is_short}} driver deployment](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-deploy-cm)
 
-[Deploying a stateful set that uses {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-stateful-set-deploy)
+* [Deploying a stateful set that uses {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-stateful-set-deploy)
 
-[Removing the {{site.data.keyword.block_storage_is_short}} driver](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#removing-the-block-storage-for-vpc-driver)
+* [Removing the {{site.data.keyword.block_storage_is_short}} driver](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#removing-the-block-storage-for-vpc-driver)
 
-[Config map reference](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-cm-ref)
-* [RHEL or CentOS configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-rhel-cm)
-* [Ubuntu configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
+* [Config map reference](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-cm-ref)
+    * [RHEL or CentOS configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-rhel-cm)
+    * [Ubuntu configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
 
 
 ## Backing up and restoring storage data
@@ -1496,23 +1496,23 @@ subcollection: openshift
 
 [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities)
 
-[Classic: Installing the IBM Cloud Block Storage Attacher plug-in (beta)](/docs/openshift?topic=openshift-utilities#block_storage_attacher)
-* [Updating the IBM Cloud Block Storage Attacher plug-in](/docs/openshift?topic=openshift-utilities#update_block_attacher)
-* [Removing the IBM Cloud Block Volume Attacher plug-in](/docs/openshift?topic=openshift-utilities#remove_block_attacher)
+* [Classic: Installing the IBM Cloud Block Storage Attacher plug-in (beta)](/docs/openshift?topic=openshift-utilities#block_storage_attacher)
+    * [Updating the IBM Cloud Block Storage Attacher plug-in](/docs/openshift?topic=openshift-utilities#update_block_attacher)
+    * [Removing the IBM Cloud Block Volume Attacher plug-in](/docs/openshift?topic=openshift-utilities#remove_block_attacher)
 
-[Classic: Manually adding block storage to specific worker nodes](/docs/openshift?topic=openshift-utilities#manual_block)
+* [Classic: Manually adding block storage to specific worker nodes](/docs/openshift?topic=openshift-utilities#manual_block)
 
-[Classic: Attaching raw block storage to non-SDS worker nodes](/docs/openshift?topic=openshift-utilities#attach_block)
+* [Classic: Attaching raw block storage to non-SDS worker nodes](/docs/openshift?topic=openshift-utilities#attach_block)
 
-[VPC: Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_attach)
-* [Detaching raw and unformatted {{site.data.keyword.blockstorageshort}} from a worker node in a VPC cluster by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_detach)
-* [Reviewing volume attachment details for a VPC worker node by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_get_worker)
+* [VPC: Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_attach)
+    * [Detaching raw and unformatted {{site.data.keyword.blockstorageshort}} from a worker node in a VPC cluster by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_detach)
+    * [Reviewing volume attachment details for a VPC worker node by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_get_worker)
 
-[VPC: Attaching raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes by using the CLI](/docs/openshift?topic=openshift-utilities#vpc_cli_attach)
-* [Removing raw {{site.data.keyword.blockstorageshort}} from VPC worker nodes by using the CLI](/docs/openshift?topic=openshift-utilities#storage-util-rm-vpc-cli)
+* [VPC: Attaching raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes by using the CLI](/docs/openshift?topic=openshift-utilities#vpc_cli_attach)
+    * [Removing raw {{site.data.keyword.blockstorageshort}} from VPC worker nodes by using the CLI](/docs/openshift?topic=openshift-utilities#storage-util-rm-vpc-cli)
 
-[Setting up {{site.data.keyword.mon_full_notm}} for storage volumes](/docs/openshift?topic=openshift-utilities#monitor_storage)
-* [Troubleshooting persistent storage when a {{site.data.keyword.mon_full_notm}} alert is triggered](/docs/openshift?topic=openshift-utilities#monitor_storage_ts)
+* [Setting up {{site.data.keyword.mon_full_notm}} for storage volumes](/docs/openshift?topic=openshift-utilities#monitor_storage)
+    * [Troubleshooting persistent storage when a {{site.data.keyword.mon_full_notm}} alert is triggered](/docs/openshift?topic=openshift-utilities#monitor_storage_ts)
 
 
 ## Enhancing your cluster with Cloud Paks, Operators, and integrations
@@ -1578,15 +1578,15 @@ subcollection: openshift
 
 [Understanding high availability and disaster recovery for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha)
 
-[About high availability](/docs/openshift?topic=openshift-ha#ha-about)
+* [About high availability](/docs/openshift?topic=openshift-ha#ha-about)
 
-[Overview of potential points of failure in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha#fault_domains)
-* [1. Container or pod availability](/docs/openshift?topic=openshift-ha#ha-container)
-* [2. Worker node availability](/docs/openshift?topic=openshift-ha#ha-worker)
-* [3. Cluster availability](/docs/openshift?topic=openshift-ha#ha-cluster)
-* [4. Zone availability](/docs/openshift?topic=openshift-ha#ha-zone)
-* [5. Region availability](/docs/openshift?topic=openshift-ha#ha-region)
-* [6. Storage availability](/docs/openshift?topic=openshift-ha#ha-storage)
+* [Overview of potential points of failure in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha#fault_domains)
+    * [1. Container or pod availability](/docs/openshift?topic=openshift-ha#ha-container)
+    * [2. Worker node availability](/docs/openshift?topic=openshift-ha#ha-worker)
+    * [3. Cluster availability](/docs/openshift?topic=openshift-ha#ha-cluster)
+    * [4. Zone availability](/docs/openshift?topic=openshift-ha#ha-zone)
+    * [5. Region availability](/docs/openshift?topic=openshift-ha#ha-region)
+    * [6. Storage availability](/docs/openshift?topic=openshift-ha#ha-storage)
 
 
 ## API reference
@@ -2071,17 +2071,17 @@ subcollection: openshift
 
 [Locations](/docs/openshift?topic=openshift-regions-and-zones)
 
-[{{site.data.keyword.openshiftlong_notm}} locations](/docs/openshift?topic=openshift-regions-and-zones#locations)
-* [How locations are organized](/docs/openshift?topic=openshift-regions-and-zones#example_locations_org)
-* [Classic multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-mz)
-* [Classic single zone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-sz)
-* [VPC multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc)
-* [Resources in a single zone cluster](/docs/openshift?topic=openshift-regions-and-zones#regions_single_zone)
-* [Resources in a multizone cluster](/docs/openshift?topic=openshift-regions-and-zones#regions_multizone)
+* [{{site.data.keyword.openshiftlong_notm}} locations](/docs/openshift?topic=openshift-regions-and-zones#locations)
+    * [How locations are organized](/docs/openshift?topic=openshift-regions-and-zones#example_locations_org)
+    * [Classic multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-mz)
+    * [Classic single zone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-sz)
+    * [VPC multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc)
+    * [Resources in a single zone cluster](/docs/openshift?topic=openshift-regions-and-zones#regions_single_zone)
+    * [Resources in a multizone cluster](/docs/openshift?topic=openshift-regions-and-zones#regions_multizone)
 
-[Accessing the global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint)
-* [Logging in to {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-regions-and-zones#login-ic)
-* [Logging in to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones#login-iks)
+* [Accessing the global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint)
+    * [Logging in to {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-regions-and-zones#login-ic)
+    * [Logging in to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones#login-iks)
 
 
 ## Supported IBM Cloud and third-party integrations
@@ -2097,9 +2097,9 @@ subcollection: openshift
 
 [Default service settings for {{site.data.keyword.openshiftshort}} components](/docs/openshift?topic=openshift-service-settings)
 
-[Feature gates](/docs/openshift?topic=openshift-service-settings#feature-gates)
+* [Feature gates](/docs/openshift?topic=openshift-service-settings#feature-gates)
 
-[Global settings](/docs/openshift?topic=openshift-service-settings#global-settings)
+* [Global settings](/docs/openshift?topic=openshift-service-settings#global-settings)
 
 
 ## Related links
@@ -2117,41 +2117,41 @@ subcollection: openshift
 
 [FAQs](/docs/openshift?topic=openshift-faqs)
 
-[How does {{site.data.keyword.openshiftlong_notm}} work?](/docs/openshift?topic=openshift-faqs#kubernetes_service)
+* [How does {{site.data.keyword.openshiftlong_notm}} work?](/docs/openshift?topic=openshift-faqs#kubernetes_service)
 
-[Why should I use {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-faqs#faq_benefits)
+* [Why should I use {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-faqs#faq_benefits)
 
-[Can I get a free cluster?](/docs/openshift?topic=openshift-faqs#faq_free)
+* [Can I get a free cluster?](/docs/openshift?topic=openshift-faqs#faq_free)
 
-[What container platforms are available for my cluster?](/docs/openshift?topic=openshift-faqs#container_platforms)
+* [What container platforms are available for my cluster?](/docs/openshift?topic=openshift-faqs#container_platforms)
 
-[Does the service come with a managed {{site.data.keyword.openshiftshort}} master and worker nodes?](/docs/openshift?topic=openshift-faqs#managed_master_worker)
+* [Does the service come with a managed {{site.data.keyword.openshiftshort}} master and worker nodes?](/docs/openshift?topic=openshift-faqs#managed_master_worker)
 
-[Are the master and worker nodes highly available?](/docs/openshift?topic=openshift-faqs#faq_ha)
+* [Are the master and worker nodes highly available?](/docs/openshift?topic=openshift-faqs#faq_ha)
 
-[What options do I have to secure my cluster?](/docs/openshift?topic=openshift-faqs#secure_cluster)
+* [What options do I have to secure my cluster?](/docs/openshift?topic=openshift-faqs#secure_cluster)
 
-[What access policies do I give my cluster users?](/docs/openshift?topic=openshift-faqs#faq_access)
+* [What access policies do I give my cluster users?](/docs/openshift?topic=openshift-faqs#faq_access)
 
-[Where can I find a list of security bulletins that affect my cluster?](/docs/openshift?topic=openshift-faqs#faq_security_bulletins)
+* [Where can I find a list of security bulletins that affect my cluster?](/docs/openshift?topic=openshift-faqs#faq_security_bulletins)
 
-[Does the service offer support for bare metal and GPU?](/docs/openshift?topic=openshift-faqs#bare_metal_gpu)
+* [Does the service offer support for bare metal and GPU?](/docs/openshift?topic=openshift-faqs#bare_metal_gpu)
 
-[What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster)
+* [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster)
 
-[Which Kubernetes versions does the service support?](/docs/openshift?topic=openshift-faqs#supported_kube_versions)
+* [Which Kubernetes versions does the service support?](/docs/openshift?topic=openshift-faqs#supported_kube_versions)
 
-[Where is the service available?](/docs/openshift?topic=openshift-faqs#supported_regions)
+* [Where is the service available?](/docs/openshift?topic=openshift-faqs#supported_regions)
 
-[Is the service highly available?](/docs/openshift?topic=openshift-faqs#ha_sla)
+* [Is the service highly available?](/docs/openshift?topic=openshift-faqs#ha_sla)
 
-[What compliance standards does the service meet?](/docs/openshift?topic=openshift-faqs#standards)
+* [What compliance standards does the service meet?](/docs/openshift?topic=openshift-faqs#standards)
 
-[Can I use IBM Cloud and other services with my cluster?](/docs/openshift?topic=openshift-faqs#faq_integrations)
+* [Can I use IBM Cloud and other services with my cluster?](/docs/openshift?topic=openshift-faqs#faq_integrations)
 
-[Does IBM support third-party and open source tools that I use with my cluster?](/docs/openshift?topic=openshift-faqs#faq_thirdparty_oss)
+* [Does IBM support third-party and open source tools that I use with my cluster?](/docs/openshift?topic=openshift-faqs#faq_thirdparty_oss)
 
-[What am I charged for? Can I estimate and control costs in my cluster?](/docs/openshift?topic=openshift-faqs#charges)
+* [What am I charged for? Can I estimate and control costs in my cluster?](/docs/openshift?topic=openshift-faqs#charges)
 
 
 ## Troubleshooting clusters
@@ -2309,51 +2309,51 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
 
-[April 2021](/docs/openshift?topic=openshift-iks-release#apr21)
+* [April 2021](/docs/openshift?topic=openshift-iks-release#apr21)
 
-[March 2021](/docs/openshift?topic=openshift-iks-release#mar21)
+* [March 2021](/docs/openshift?topic=openshift-iks-release#mar21)
 
-[February 2021](/docs/openshift?topic=openshift-iks-release#feb21)
+* [February 2021](/docs/openshift?topic=openshift-iks-release#feb21)
 
-[January 2021](/docs/openshift?topic=openshift-iks-release#jan21)
+* [January 2021](/docs/openshift?topic=openshift-iks-release#jan21)
 
-[December 2020](/docs/openshift?topic=openshift-iks-release#dec20)
+* [December 2020](/docs/openshift?topic=openshift-iks-release#dec20)
 
-[November 2020](/docs/openshift?topic=openshift-iks-release#nov20)
+* [November 2020](/docs/openshift?topic=openshift-iks-release#nov20)
 
-[October 2020](/docs/openshift?topic=openshift-iks-release#oct20)
+* [October 2020](/docs/openshift?topic=openshift-iks-release#oct20)
 
-[September 2020](/docs/openshift?topic=openshift-iks-release#sep20)
+* [September 2020](/docs/openshift?topic=openshift-iks-release#sep20)
 
-[August 2020](/docs/openshift?topic=openshift-iks-release#aug20)
+* [August 2020](/docs/openshift?topic=openshift-iks-release#aug20)
 
-[July 2020](/docs/openshift?topic=openshift-iks-release#july20)
+* [July 2020](/docs/openshift?topic=openshift-iks-release#july20)
 
-[June 2020](/docs/openshift?topic=openshift-iks-release#june20)
+* [June 2020](/docs/openshift?topic=openshift-iks-release#june20)
 
-[May 2020](/docs/openshift?topic=openshift-iks-release#may20)
+* [May 2020](/docs/openshift?topic=openshift-iks-release#may20)
 
-[April 2020](/docs/openshift?topic=openshift-iks-release#apr20)
+* [April 2020](/docs/openshift?topic=openshift-iks-release#apr20)
 
-[March 2020](/docs/openshift?topic=openshift-iks-release#mar20)
+* [March 2020](/docs/openshift?topic=openshift-iks-release#mar20)
 
-[February 2020](/docs/openshift?topic=openshift-iks-release#feb20)
+* [February 2020](/docs/openshift?topic=openshift-iks-release#feb20)
 
-[January 2020](/docs/openshift?topic=openshift-iks-release#jan20)
+* [January 2020](/docs/openshift?topic=openshift-iks-release#jan20)
 
-[December 2019](/docs/openshift?topic=openshift-iks-release#dec19)
+* [December 2019](/docs/openshift?topic=openshift-iks-release#dec19)
 
-[November 2019](/docs/openshift?topic=openshift-iks-release#nov19)
+* [November 2019](/docs/openshift?topic=openshift-iks-release#nov19)
 
-[October 2019](/docs/openshift?topic=openshift-iks-release#oct19)
+* [October 2019](/docs/openshift?topic=openshift-iks-release#oct19)
 
-[September 2019](/docs/openshift?topic=openshift-iks-release#sept19)
+* [September 2019](/docs/openshift?topic=openshift-iks-release#sept19)
 
-[August 2019](/docs/openshift?topic=openshift-iks-release#aug19)
+* [August 2019](/docs/openshift?topic=openshift-iks-release#aug19)
 
-[July 2019](/docs/openshift?topic=openshift-iks-release#jul19)
+* [July 2019](/docs/openshift?topic=openshift-iks-release#jul19)
 
-[June 2019](/docs/openshift?topic=openshift-iks-release#jun19)
+* [June 2019](/docs/openshift?topic=openshift-iks-release#jun19)
 
 
 ## Service limitations
@@ -2362,17 +2362,17 @@ subcollection: openshift
 
 [Service limitations](/docs/openshift?topic=openshift-openshift_limitations)
 
-[Service and quota limitations](/docs/openshift?topic=openshift-openshift_limitations#tech_limits)
-* [Version 4 cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ocp4_limitations)
+* [Service and quota limitations](/docs/openshift?topic=openshift-openshift_limitations#tech_limits)
+    * [Version 4 cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ocp4_limitations)
 
-[Classic cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#classic_limits)
-* [Compute](/docs/openshift?topic=openshift-openshift_limitations#classic_compute_limit)
-* [Networking](/docs/openshift?topic=openshift-openshift_limitations#classic_networking_limit)
-* [Storage](/docs/openshift?topic=openshift-openshift_limitations#classic_storage_limit)
+* [Classic cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#classic_limits)
+    * [Compute](/docs/openshift?topic=openshift-openshift_limitations#classic_compute_limit)
+    * [Networking](/docs/openshift?topic=openshift-openshift_limitations#classic_networking_limit)
+    * [Storage](/docs/openshift?topic=openshift-openshift_limitations#classic_storage_limit)
 
-[VPC cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ks_vpc_gen2_limits)
-* [Compute](/docs/openshift?topic=openshift-openshift_limitations#vpc_gen2_compute_limit)
-* [Networking](/docs/openshift?topic=openshift-openshift_limitations#vpc_gen2_networking_limit)
-* [Storage](/docs/openshift?topic=openshift-openshift_limitations#vpc_gen2_storage_limit)
+* [VPC cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ks_vpc_gen2_limits)
+    * [Compute](/docs/openshift?topic=openshift-openshift_limitations#vpc_gen2_compute_limit)
+    * [Networking](/docs/openshift?topic=openshift-openshift_limitations#vpc_gen2_networking_limit)
+    * [Storage](/docs/openshift?topic=openshift-openshift_limitations#vpc_gen2_storage_limit)
 
-[{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits)
+* [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits)
