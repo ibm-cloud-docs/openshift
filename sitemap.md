@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-04-29"
+lastupdated: "2021-04-30"
 
 keywords: openshift
 subcollection: openshift
@@ -1944,7 +1944,15 @@ subcollection: openshift
   * [Changelog for 3.11.129_1517_openshift, released 2 August 2019](/docs/openshift?topic=openshift-openshift_changelog#311129_1517)
 
 [CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark)
+* [Using the benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-use)
 * [Running the worker node CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test)
+* [Benchmark 1.5 results for {{site.data.keyword.openshiftshort}} version 4.6](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15)
+  * [Section 1: Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-1)
+  * [Section 2: Etcd node configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-2)
+  * [Section 3: Control plane configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-3)
+  * [Section 4: Worker node security configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-4)
+  * [Section 5: Kubernetes policies](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-5)
+  * [Explanation and remediation](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-remediation)
 
 [Using the compliance operator](/docs/openshift?topic=openshift-compliance-operator)
 * [Installing the compliance operator with the tailored profile](/docs/openshift?topic=openshift-compliance-operator#comp-op-install)
