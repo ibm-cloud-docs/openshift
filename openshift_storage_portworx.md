@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-30"
+lastupdated: "2021-05-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1068,6 +1068,8 @@ To access the storage from your app, you must mount the PVC to your app.
       {: pre}
 
       <br />
+
+
 
 
 
