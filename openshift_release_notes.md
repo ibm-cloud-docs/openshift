@@ -102,12 +102,6 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status){: external}.
-{: note}
-
-## May 2021
-{: #may21}
-| Date | Description |
-| ---- | ----------- |
 
 ## April 2021
 {: #apr21}
