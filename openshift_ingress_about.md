@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-05-05"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -96,7 +96,7 @@ subcollection: openshift
 # About Ingress in {{site.data.keyword.openshiftshort}} 3.11
 {: #ingress-about}
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run {{site.data.keyword.openshiftshort}} version 3.11 only. To learn about Ingress for {{site.data.keyword.openshiftshort}} version 4, see [About Ingress in {{site.data.keyword.openshiftshort}} version 4](/docs/openshift?topic=openshift-ingress-about-roks4).
+<img src="../images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run {{site.data.keyword.openshiftshort}} version 3.11 only. To learn about Ingress for {{site.data.keyword.openshiftshort}} version 4, see [About Ingress in {{site.data.keyword.openshiftshort}} version 4](/docs/openshift?topic=openshift-ingress-about-roks4).
 {: important}
 
 Ingress is a Kubernetes service discovery method that balances network traffic workloads in your cluster by forwarding public or private requests to your apps. You can use Ingress to expose multiple app services to the public or to a private network by using a unique public or private route.
@@ -162,7 +162,7 @@ In rare cases, some DNS resolvers or client apps might continue to use the unhea
 
 Because Cloudflare is a public service, the MZLB load balances for public ALBs that use the IBM-provided Ingress subdomain only. If you use only private ALBs, you must manually check the health of the ALBs and update DNS lookup results. If you use public ALBs that use a custom domain, you can include the ALBs in MZLB load balancing by creating a CNAME in your DNS entry to forward requests from your custom domain to the IBM-provided Ingress subdomain for your cluster.
 
-If you use Calico pre-DNAT network policies to block all incoming traffic to Ingress services, you must allow inbound access on port 80 to your ALBs from [the IP addresses in step 6 of this section](/docs/openshift?topic=openshift-firewall#iam_allowlist) and [Cloudflare's IPv4 IP addresses](https://www.cloudflare.com/ips/){: external} so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers. For steps on how to create a Calico pre-DNAT policy to allow these IP addresses, see [Lesson 3 of the Calico network policy tutorial](/docs/containers?topic=containers-policy_tutorial#lesson3).
+If you use Calico pre-DNAT network policies, VPC ACLs, or any other firewall solution to block all incoming traffic to Ingress services, you must allow inbound access on port 80 to your ALBs from [the IP addresses in step 6 of this section](/docs/openshift?topic=openshift-firewall#iam_allowlist) and [Cloudflare's IPv4 IP addresses](https://www.cloudflare.com/ips/){: external} so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers. For steps on how to create a Calico pre-DNAT policy to allow these IP addresses, see [Lesson 3 of the Calico network policy tutorial](/docs/containers?topic=containers-policy_tutorial#lesson3).
 {: note}
 
 <br />
@@ -173,10 +173,10 @@ If you use Calico pre-DNAT network policies to block all incoming traffic to Ing
 ### Single-zone cluster
 {: #classic-single}
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> The following diagram shows how Ingress directs communication from the internet to an app in a classic single-zone cluster.
+<img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> The following diagram shows how Ingress directs communication from the internet to an app in a classic single-zone cluster.
 {: shortdesc}
 
-<img src="images/cs_ingress_singlezone.png" width="600" alt="Expose an app in a single-zone cluster by using Ingress" style="width:600px; border-style: none"/>
+<img src="../images/cs_ingress_singlezone.png" width="600" alt="Expose an app in a single-zone cluster by using Ingress" style="width:600px; border-style: none"/>
 
 1. A user sends a request to your app by accessing your app's URL. This URL is the Ingress subdomain for your cluster appended with the Ingress resource path for your exposed app, such as `mycluster-<hash>-0000.us-south.containers.appdomain.cloud/myapp`.
 
@@ -193,10 +193,10 @@ If you use Calico pre-DNAT network policies to block all incoming traffic to Ing
 ### Multizone cluster
 {: #classic-multi}
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> The following diagram shows how Ingress directs communication from the internet to an app in a classic multizone cluster.
+<img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> The following diagram shows how Ingress directs communication from the internet to an app in a classic multizone cluster.
 {: shortdesc}
 
-<img src="images/cs_ingress_multizone.png" width="800" alt="Expose an app in a multizone cluster by using Ingress" style="width:800px; border-style: none"/>
+<img src="../images/cs_ingress_multizone.png" width="800" alt="Expose an app in a multizone cluster by using Ingress" style="width:800px; border-style: none"/>
 
 1. A user sends a request to your app by accessing your app's URL. This URL is the Ingress subdomain for your cluster appended with the Ingress resource path for your exposed app, such as `mycluster-<hash>-0000.us-south.containers.appdomain.cloud/myapp`.
 
