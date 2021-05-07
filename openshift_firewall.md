@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-03"
+lastupdated: "2021-05-07"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -542,7 +542,7 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
         <td><code>166.9.28.35</code></br><code>166.9.30.2</code></br><code>166.9.32.2</code></td>
        </tr>
        <tr>
-         <td>JP Osaka</td>
+         <td>Osaka</td>
          <td><code>private.jp2.icr.io</code></td>
          <td><code>166.9.70.4</code></br><code>166.9.71.5</code></br><code>166.9.72.6</code></td>
        </tr>
