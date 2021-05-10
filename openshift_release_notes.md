@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-05"
+lastupdated: "2021-05-10"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -102,6 +102,17 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status){: external}.
+{: note}
+
+## May 2021
+{: #may21}
+
+| Date | Description |
+| ---- | ----------- |
+| 10 May 2021 | <ul><li>**New! PX-Backup is now available**: For more information, see [Backing up and restoring apps and data with PX-Backup](/docs/openshift?topic=openshift-portworx).</li><li>**{{site.data.keyword.cos_full_notm}} plug-in**: [Version `2.0.9`](/docs/openshift?topic=openshift-cos_plugin_changelog) of the {{site.data.keyword.cos_full_notm}} plug-in is available.</li><li>**Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.27_1542_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4627_1542), [`4.5.38_1538_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4538_1538), [`4.4.33_1541_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4433_1541), and [`3.11.420_1588_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311420_1588).</li></ul> |
+| 4 May 2021 |  **Master versions**: Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [1.20.5_1538](/docs/containers?topic=containers-changelog#1206_1538) and [1.19.10_1545](/docs/containers?topic=containers-changelog#11910_1545).|
+{: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
+{: caption="Documentation updates in May 2021"}
 
 ## April 2021
 {: #apr21}

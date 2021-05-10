@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-29"
+lastupdated: "2021-05-07"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -100,8 +100,8 @@ OpenShift Container Storage is a highly available storage solution that you can 
 {: shortdesc}
 
 **Supported infrastructure provider**:
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+  * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
 **Minimum required permissions**: **Administrator** platform access role and the **Manager** service access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
@@ -122,9 +122,9 @@ The following table provides an overview of the benefits and supported features 
 
 | Feature | OCS cluster add-on | OperatorHub |
 |---------------|-------------|-----------------|
-| Set up {{site.data.keyword.cos_full_notm}} as your default backing store during installation. | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |  |
-| Granular control over storage cluster volume sizes. | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
-| Create a storage cluster from the web console. | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Set up {{site.data.keyword.cos_full_notm}} as your default backing store during installation. | <img src="../images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |  |
+| Granular control over storage cluster volume sizes. | <img src="../images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
+| Create a storage cluster from the web console. | | <img src="../images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: caption="OCS installation path comparison." caption-side="top"}
 
 
@@ -280,7 +280,7 @@ You can uninstall the OpenShift Container Storage add-on from your cluster by us
 ## Installing OpenShift Container Storage from OperatorHub
 {: #ocs-install-oh}
 
-Before you can install OCS from OperatorHub, you must deploy the following configmap to your cluster to set update the kubelet path for the OCS drivers.
+Before you can install OCS from OperatorHub, you must deploy the following configmap to your cluster to set the kubelet path for the OCS drivers.
 {: shortdesc}
 
 1. Save the following configmap to a file on your local machine.
@@ -316,4 +316,4 @@ Before you can install OCS from OperatorHub, you must deploy the following confi
 1. In OperatorHub, search for `openshift container storage`.
 1. Click the **OpenShift Container Storage** and click **Install**
 
-**Next steps**: [Create your OCS storage cluster](/docs/openshift?topic=openshift-ocs-storage-cluster-setup).
+**Next steps**: [Create your OCS storage cluster by using the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-create-storagecluster-console).

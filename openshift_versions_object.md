@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-19"
+lastupdated: "2021-05-10"
 
 keywords: object storage, plug-in, changelog
 
@@ -103,10 +103,11 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | Object Storage plug-in version | Supported? | {{site.data.keyword.openshiftshort}} version support |
 | -------------------- | -----------|--------------------------- |
-| 2.0.8 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
-| 2.0.7 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
-| 2.0.6 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
-| 2.0.5 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
+| 2.0.9 | <img src="../images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
+| 2.0.8 | <img src="../images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
+| 2.0.7 | <img src="../images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
+| 2.0.6 | <img src="../images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
+| 2.0.5 | <img src="../images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
 {: caption="Object Storage plug-in versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the Object Storage plug-in version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the Object Storage plug-in version is supported for."}
 
@@ -115,6 +116,7 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | Version | Image tags | Release date | Description |
 | --- | --- | --- | --- |
+| `2.0.9` | `1.8.27` | 10 May 2021 | Updates in this version: <ul><li>Updates the UBI to `8.3-298.1618432845`.</li><li>Replaces the Flex storage classes with Smart Tier storage classes.</li><li>Fixes [CVE-2021-20305](https://nvd.nist.gov/vuln/detail/CVE-2021-20305){: external}.</li><li>Updates IAM Endpoints.</li><li>Updates the `object-store-endpoint`.</li><li>Fixes a PVC mount issue in private-only VPC clusters.</li><li>Updates the `ResourceConfiguration` endpoint.</li></ul> |
 | `2.0.8` | `1.8.25` | 19 April 2021 | Updates in this version: <ul><li>Updates the Go version to `1.15.9`.</li><li>Updates the UBI from `ubi-minimal:8.3-291` to `ubi-minimal:8.3-298`.</li><li>Fixes [CVE-2021-3449](https://nvd.nist.gov/vuln/detail/CVE-2021-3449){: external}, [CVE-2021-3450](https://nvd.nist.gov/vuln/detail/CVE-2021-3450){: external}, [CVE-2021-27919](https://nvd.nist.gov/vuln/detail/CVE-2021-27919){: external}, and [CVE-2021-27918](https://nvd.nist.gov/vuln/detail/CVE-2021-27918){: external}.</li></ul> |
 | `2.0.7` | `1.8.24` | 26 March 2021 | Updates in this version: <ul><li>Updates the Go version to `1.15.8`.</li><li>The plug-in now uses a universal base image (UBI).</li><li>Fixes for [CVE-2021-3114](https://nvd.nist.gov/vuln/detail/CVE-2021-3114){: external}, [CVE-2021-3115](https://nvd.nist.gov/vuln/detail/CVE-2021-3115){: external}, [CVE-2020-28852](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28852){: external}, and [CVE-2020-28851](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28851){: external}.</li></ul> |
 {: row-headers}

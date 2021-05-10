@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-28"
+lastupdated: "2021-05-10"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -283,7 +283,7 @@ If you have a [bare metal graphics processing unit (GPU) machine type](/docs/ope
 
 In the following steps, you learn how to deploy workloads that require the GPU. You can also deploy apps that don't need to process their workloads across both the GPU and CPU. After, you might find it useful to play around with mathematically intensive workloads such as the [TensorFlow](https://www.tensorflow.org/){: external} machine learning framework with [this Kubernetes demo](https://github.com/pachyderm/pachyderm/tree/master/examples/ml/tensorflow){: external}.
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> GPU machines are available only for clusters that run {{site.data.keyword.openshiftshort}} version 4 on classic infrastructure.
+<img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="../images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> GPU machines are available only for clusters that run {{site.data.keyword.openshiftshort}} version 4 on classic infrastructure.
 {: note}
 
 Before you begin:
@@ -294,7 +294,7 @@ Before you begin:
   You must use NVIDIA GPU operator version 1.3.1 or later. When you install the Node Feature Discovery operator, select the update channel that matches your {{site.data.keyword.openshiftshort}} cluster version. Do not install the operators through another method, such as a Helm chart.
   {: important}
 
-* **Version 4.6 clusters**: Make sure that your worker nodes are updated to at least version `4.6.25_1541_openshift`. When you create an instance of the `ClusterPolicy` for the GPU operator, you must enter `450.80.02` for the **Driver Config** version.
+* **Version 4.5 and 4.6 clusters**: Make sure that your worker nodes are updated to at least version `4.5.38_1538_openshift` or `4.6.25_1541_openshift`. When you create an instance of the `ClusterPolicy` for the GPU operator, you must enter `450.80.02` for the **Driver Config** version.
 
 To execute a workload on a GPU machine:
 1.  Create a YAML file. In this example, a `Job` YAML manages batch-like workloads by making a short-lived pod that runs until the command that it is scheduled to complete successfully terminates.
@@ -482,7 +482,7 @@ For more information about the console, see the [{{site.data.keyword.openshiftsh
 
     <table class="simple-tab-table" id="console1" tab-title="OCP 4" tab-group="console-version" aria-describedby="tableSummary-19ecbef4c01853826b42de82471b9035">
     <caption caption-side="top">
-      <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview<br>
+      <img src="../images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview<br>
       <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9035">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, and the description of the console area in the third column. You can change between {{site.data.keyword.openshiftshort}} console versions by toggling the tabs at the beginning of the table.</span>
     </caption>
     <thead>
@@ -507,7 +507,7 @@ For more information about the console, see the [{{site.data.keyword.openshiftsh
     </table>
     <table class="simple-tab-table" id="console2" tab-title="OCP 3" tab-group="console-version" aria-describedby="tableSummary-a4edc48da30a2a6943cabb6b3a128df4">
     <caption caption-side="top">
-      <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview<br>
+      <img src="../images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview<br>
       <span class="table-summary" id="tableSummary-a4edc48da30a2a6943cabb6b3a128df4">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, and the description of the console area in the third column. You can change between {{site.data.keyword.openshiftshort}} console versions by toggling the tabs at the beginning of the table.</span>
     </caption>
     <thead>
