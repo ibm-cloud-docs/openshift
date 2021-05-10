@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-07"
+lastupdated: "2021-05-10"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -404,6 +404,16 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
         <td><code>169.50.58.104/29</code></br><code>161.156.93.16/29</code></br><code>149.81.79.152/29</code></td>
        </tr>
        <tr>
+        <td>Osaka</td>
+        <td><code>jp2.icr.io</code></td>
+        <td><code>163.68.67.32/28</code></br><code>163.69.67.0/28</code></br><code>163.73.67.64/28</code></td>
+       </tr>
+       <tr>
+        <td>Toronto</td>
+        <td><code>ca.icr.io</code></td>
+        <td><code>158.85.100.0/29</code></br><code>163.74.65.192/29</code></br><code>163.75.66.88/29</code></td>
+       </tr>
+       <tr>
         <td>UK South</td>
         <td><code>uk.icr.io</code><br><br>
         Deprecated: <code>registry.eu-gb.bluemix.net</code></td>
@@ -545,6 +555,11 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
          <td>Osaka</td>
          <td><code>private.jp2.icr.io</code></td>
          <td><code>166.9.70.4</code></br><code>166.9.71.5</code></br><code>166.9.72.6</code></td>
+       </tr>
+       <tr>
+         <td>Toronto</td>
+         <td><code>private.ca.icr.io</code></td>
+         <td><code>166.9.76.12</code></br><code>166.9.77.11</code></br><code>166.9.78.11</code></td>
        </tr>
        <tr>
         <td>UK South</td>
