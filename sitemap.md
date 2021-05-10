@@ -2313,6 +2313,8 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
 
+* [May 2021](/docs/openshift?topic=openshift-iks-release#may21)
+
 * [April 2021](/docs/openshift?topic=openshift-iks-release#apr21)
 
 * [March 2021](/docs/openshift?topic=openshift-iks-release#mar21)
