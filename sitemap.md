@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-11"
 
 keywords: openshift
 subcollection: openshift
@@ -1978,6 +1978,8 @@ subcollection: openshift
 * [Changelog for version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [Object storage plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog)
+* [Changelog for version 2.0.9](/docs/openshift?topic=openshift-cos_plugin_changelog#0209_object_plugin)
+* [Changelog for version 2.0.8](/docs/openshift?topic=openshift-cos_plugin_changelog#0208_object_plugin)
 * [Changelog for version 2.0.7](/docs/openshift?topic=openshift-cos_plugin_changelog#0207_object_plugin)
 * [Changelog for version 2.0.6](/docs/openshift?topic=openshift-cos_plugin_changelog#0206_object_plugin)
 * [Changelog for version 2.0.5](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_object_plugin)

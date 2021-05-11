@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-11"
 
 keywords: object storage, plug-in, changelog
 
@@ -99,6 +99,9 @@ subcollection: openshift, object storage
 View information for updates to the {{site.data.keyword.cos_full_notm}} plug-in in your {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
+With version 2.0.9, there is a new version of the `ibmc` plug-in. Storage classes created with earlier chart versions are immutable and cannot be upgraded. To remove the storage classes from previous versions and install the latest storage classes in your cluster, uninstall and re-install the {{site.data.keyword.cos_full_notm}} plugin. For more information, see [Updating the {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).
+{: note}
+
 Refer to the following tables for a summary of changes for each version of the [Object Storage plug-in](/docs/openshift?topic=openshift-object_storage).
 
 | Object Storage plug-in version | Supported? | {{site.data.keyword.openshiftshort}} version support |
@@ -111,13 +114,32 @@ Refer to the following tables for a summary of changes for each version of the [
 {: caption="Object Storage plug-in versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the Object Storage plug-in version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the Object Storage plug-in version is supported for."}
 
-## Changelog for version 2.0.7
-{: #0207_object_plugin}
+## Changelog for version 2.0.9
+{: #0209_object_plugin}
 
 | Version | Image tags | Release date | Description |
 | --- | --- | --- | --- |
 | `2.0.9` | `1.8.27` | 10 May 2021 | Updates in this version: <ul><li>Updates the UBI to `8.3-298.1618432845`.</li><li>Replaces the Flex storage classes with Smart Tier storage classes.</li><li>Fixes [CVE-2021-20305](https://nvd.nist.gov/vuln/detail/CVE-2021-20305){: external}.</li><li>Updates IAM Endpoints.</li><li>Updates the `object-store-endpoint`.</li><li>Fixes a PVC mount issue in private-only VPC clusters.</li><li>Updates the `ResourceConfiguration` endpoint.</li></ul> |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Object Storage plug-in version 2.0.9" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the version of the component. The second column contains image tag. The third column contains the release date of the component. The fourth column contains a brief description of the change made to the component."}
+
+## Changelog for version 2.0.8
+{: #0208_object_plugin}
+| Version | Image tags | Release date | Description |
+| --- | --- | --- | --- |
 | `2.0.8` | `1.8.25` | 19 April 2021 | Updates in this version: <ul><li>Updates the Go version to `1.15.9`.</li><li>Updates the UBI from `ubi-minimal:8.3-291` to `ubi-minimal:8.3-298`.</li><li>Fixes [CVE-2021-3449](https://nvd.nist.gov/vuln/detail/CVE-2021-3449){: external}, [CVE-2021-3450](https://nvd.nist.gov/vuln/detail/CVE-2021-3450){: external}, [CVE-2021-27919](https://nvd.nist.gov/vuln/detail/CVE-2021-27919){: external}, and [CVE-2021-27918](https://nvd.nist.gov/vuln/detail/CVE-2021-27918){: external}.</li></ul> |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Object Storage plug-in version 2.0.8" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the version of the component. The second column contains image tag. The third column contains the release date of the component. The fourth column contains a brief description of the change made to the component."}
+
+
+## Changelog for version 2.0.7
+{: #0207_object_plugin}
+| Version | Image tags | Release date | Description |
+| --- | --- | --- | --- |
 | `2.0.7` | `1.8.24` | 26 March 2021 | Updates in this version: <ul><li>Updates the Go version to `1.15.8`.</li><li>The plug-in now uses a universal base image (UBI).</li><li>Fixes for [CVE-2021-3114](https://nvd.nist.gov/vuln/detail/CVE-2021-3114){: external}, [CVE-2021-3115](https://nvd.nist.gov/vuln/detail/CVE-2021-3115){: external}, [CVE-2020-28852](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28852){: external}, and [CVE-2020-28851](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28851){: external}.</li></ul> |
 {: row-headers}
 {: class="comparison-table"}

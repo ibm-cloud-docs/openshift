@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1086,8 +1086,12 @@ Install PX-Backup on a {{site.data.keyword.openshiftlong_notm}} cluster in your 
 
 Before you begin:
 - Make sure that your cluster meets the [minimum Portworx requirements](https://docs.portworx.com/start-here-installation/){: external}. 
-. - Provision and attach 320Gi of block storage to your cluster. See [Storing data on classic {{site.data.keyword.cloud_notm}} Block Storage](/docs/openshift?topic=openshift-block_storage) or [Storing data on Block Storage for VPC](/docs/openshift?topic=openshift-vpc-block).
+- [Log in to your cluster](/docs/openshift?topic=openshift-access_cluster).
+- Provision and attach 320Gi of block storage to your cluster. See [Storing data on classic {{site.data.keyword.cloud_notm}} Block Storage](/docs/openshift?topic=openshift-block_storage) or [Storing data on Block Storage for VPC](/docs/openshift?topic=openshift-vpc-block).
 
+
+If you are installing PX-Backup in a newly-provisioned cluster, [you must log in to it at least once](/docs/openshift?topic=openshift-access_cluster) before beginning the installation.
+{: important}
 
 
 1. Open the PX-Backup service from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/px-backup-for-kubernetes){: external}.
@@ -1167,8 +1171,9 @@ Access the PX-Backup console through the URL supplied in the {{site.data.keyword
 5. Copy and paste the IP address and node port into your web browser to open the PX-Backup console.
 7. Log in to the PX-Backup console. If you are the first user to access the console, you must log in in with the username `admin` and the password `admin`. You are redirected to a registration page to set a uniqe username and password. Subsequent users must register a new account to access the console.
 
-**For private classic clusters**
-[Expose the **px-backup-ui** service on your private cluster to access the PX-Backup console](/docs/containers?topic=containers-ingress-types#alb-comm-create-private).
+
+**For private classic clusters** 
+- [Expose the **px-backup-ui** service on your private cluster to access the PX-Backup console](/docs/containers?topic=containers-ingress-types#alb-comm-create-private).
 
 ### Adding a backup location to your PX-Backup service
 {: #px-backup-storage}
@@ -1246,7 +1251,7 @@ If a cluster that you want to back up with PX-Backup does not have Portworx Ente
 2. Open a text editor and paste the command.
 3. Copy the URL in the command and enter it in to your web browser to open the YAML file for the Stork installation.
 4. Copy and paste the entire YAML file into a new file in your text editor.
-5. If the cluster you want to add is a private cluster, find the **image** field and replace `openstorage/stork:<version_number>` with `icr.io/ext/portworx/stork:<version_numer>`. To find the latest availale version of Stork, see the [Stork releases]https://github.com/libopenstorage/stork/releases){: external}.
+5. If the cluster you want to add is a private cluster, find the **image** field and replace `openstorage/stork:<version_number>` with `icr.io/ext/portworx/stork:<version_numer>`. To find the latest available version of Stork, see the [Stork releases](https://github.com/libopenstorage/stork/releases){: external}.
    ```
     - --health-monitor-interval=120
     - --webhook-controller=false

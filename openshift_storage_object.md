@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-28"
+lastupdated: "2021-05-11"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -102,7 +102,7 @@ subcollection: openshift
 If you want to use {{site.data.keyword.cos_full_notm}} in a private cluster without public network access, you must set up your {{site.data.keyword.cos_full_notm}} service instance for HMAC authentication. If you don't want to use HMAC authentication, you must open up all outbound network traffic on port 443 for the plug-in to work properly in a private cluster.
 {: important}
 
-With version 2.0.0, the {{site.data.keyword.cos_full_notm}} Helm chart is now available in the `ibm-helm` repository. To add the repository, run `helm repo add ibm-helm https://raw.githubusercontent.com/IBM/charts/master/repo/ibm-helm`.
+With version 2.0.9, there is a new version of the `ibmc` plug-in. Storage classes created with earlier chart versions are immutable and cannot be upgraded. To remove the storage classes from previous versions and install the latest storage classes in your cluster, uninstall and re-install the {{site.data.keyword.cos_full_notm}} plugin. For more information, see [Updating the {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).
 {: note}
 
 <br />
@@ -486,29 +486,27 @@ Check the name of your {{site.data.keyword.cos_full_notm}} plug-in Helm release 
   ```
   {: screen}
 
-**Version 1.0.4 and earlier**: If you previously installed version 1.0.4 or earlier of the Helm chart that is named `ibmcloud-object-storage-plugin`, remove this Helm installation from your cluster. Then, reinstall the Helm chart.
   1. Remove the Helm chart from your cluster.
     ```
     helm uninstall <release_name> -n <namespace>
     ```
     {: pre}
 
-  2. Follow the steps in [Installing the {{site.data.keyword.cos_full_notm}} plug-in](#install_cos) to install the latest version of the {{site.data.keyword.cos_full_notm}} plug-in.
+  1. Follow the steps in [Installing the {{site.data.keyword.cos_full_notm}} plug-in](#install_cos) to install the latest version of the {{site.data.keyword.cos_full_notm}} plug-in.
 
-**Version 1.0.5 and later**
   1. Update the {{site.data.keyword.cloud_notm}} Helm repo to retrieve the latest version of all Helm charts in this repo.
     ```
     helm repo update
     ```
     {: pre}
 
-  2. Update the {{site.data.keyword.cos_full_notm}} `ibmc` Helm plug-in to the latest version.
+  1. Update the {{site.data.keyword.cos_full_notm}} `ibmc` Helm plug-in to the latest version.
     ```
     helm ibmc --update
     ```
     {: pre}
 
-  3. Install the latest version of the `ibm-object-storage-plugin`. </br>
+  1. Install the latest version of the `ibm-object-storage-plugin`. </br>
     ```
     helm ibmc upgrade <release_name> ibm-helm/ibm-object-storage-plugin --force --set license=true
     ```
@@ -522,7 +520,7 @@ Check the name of your {{site.data.keyword.cos_full_notm}} plug-in Helm release 
 
     The upgrade of the plug-in is successful when you see `deployment "ibmcloud-object-storage-plugin" successfully rolled out` in your CLI output.
 
-  5. Verify that the `ibmcloud-object-storage-driver` is successfully upgraded.
+  1. Verify that the `ibmcloud-object-storage-driver` is successfully upgraded.
     ```
     oc rollout status ds/ibmcloud-object-storage-driver -n kube-system
     ```
@@ -530,7 +528,7 @@ Check the name of your {{site.data.keyword.cos_full_notm}} plug-in Helm release 
 
     The upgrade is successful when you see `daemon set "ibmcloud-object-storage-driver" successfully rolled out` in your CLI output.
 
-  6. Verify that the {{site.data.keyword.cos_full_notm}} pods are in a `Running` state.
+  1. Verify that the {{site.data.keyword.cos_full_notm}} pods are in a `Running` state.
     ```
     oc get pods -n <namespace> -o wide | grep object-storage
     ```
@@ -763,7 +761,7 @@ You can authorize your VPC Cloud Service Endpoint source IP addresses to access 
  * **Writer** service access role for the {{site.data.keyword.cos_full_notm}} service.
 
 **Supported infrastructure provider**:
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+  * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 1. [Follow the instructions to install the `ibmc` Helm plugin](#install_cos). Make sure to install the `ibm-object-storage-plugin` and set the `bucketAccessPolicy` flag to `true`.
 
