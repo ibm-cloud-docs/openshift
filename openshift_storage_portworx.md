@@ -1186,7 +1186,7 @@ Before you begin, [log in to the PX-Backup console](#px-backup-ui). Note that if
 1. [Create your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-object_storage#create_cos_service).
 2. [Create service credentials for your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-object_storage#service_credentials). Be sure to enable HMAC authentication by clicking **Advanced Options** in the **Create credential** dialog box and switching the **Include HMAC Credential** parameter to **On**.
 3. Expand your credentials in the service credentials table. Note the **access_key_id** and the **secret_access_key** in the **cos_hmac_keys** section.
-4. [Create a storage bucket in your {{site.data.keyword.cos_full_notm}} instance](docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
+4. [Create a storage bucket in your {{site.data.keyword.cos_full_notm}} instance](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
 5. Click on your bucket and note its location.
 6. Open the bucket configuration page and note the endpoint that you must use to connect to your {{site.data.keyword.cos_full_notm}} instance.
    - If you installed PX-Backup on a private classic cluster, note the **private** endpoint.
