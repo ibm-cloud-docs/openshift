@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-12"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
@@ -271,6 +271,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | Unsupported types | NFS File Storage and {{site.data.keyword.block_storage_is_short}} are not supported. |
 | Volume attachments | See [Volume attachment limits](/docs/vpc?topic=vpc-attaching-block-storage#vol-attach-limits).|
 | Portworx | Review the [Portworx limitations](/docs/openshift?topic=openshift-portworx#portworx_limitations). |
+| {{site.data.keyword.block_storage_is_short}} | The default storage class in VPC clusters can not be changed. However, you can [create a custom storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class). |
 {: summary="This table contains information on storage limitations for VPC clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="VPC cluster storage limitations"}
 
