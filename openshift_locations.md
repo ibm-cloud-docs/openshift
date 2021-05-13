@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-13"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -198,6 +198,7 @@ The following image is used as an example to explain how {{site.data.keyword.ope
 | Geography |  Country  | Metro | Region | Zone`*` | Location`*` |
 |-----|-----|-----|-----|-----|
 | Asia Pacific | Australia | Sydney | au-syd | au-syd-1<br>au-syd-2<br>au-syd-3 | Sydney 1<br>Sydney 2<br>Sydney 3|
+| Asia Pacific | Japan | Osaka | jp-osa | jp-osa-1<br>jp-osa-2<br>jp-osa-3 | Osaka 1<br>Osaka 2<br>Osaka 3|
 | Asia Pacific | Japan | Tokyo | jp-tok | jp-tok-1<br>jp-tok-2<br>jp-tok-3 | Tokyo 1<br>Tokyo 2<br>Tokyo 3|
 | Europe | Germany | Frankfurt | eu-de | eu-de-1<br>eu-de-2<br>eu-de-3 | Frankfurt 1<br>Frankfurt 2<br>Frankfurt 3|
 | Europe | United Kingdom | London | eu-gb | eu-gb-1<br>eu-gb-2<br>eu-gb-3 | London 1<br>London 2<br>London 3|
@@ -206,9 +207,6 @@ The following image is used as an example to explain how {{site.data.keyword.ope
 | North America | United States | Washington DC | us-east | us-east-1<br>us-east-2<br>us-east-3 | Washington DC 1<br>Washington DC 2<br>Washington DC 3|
 {: caption="Available multizone metro locations for VPC clusters in {{site.data.keyword.openshiftlong_notm}}." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the IBM Cloud geography of the location. The second column is where the country of the location. The third column is the metro that the location is in. The fourth column is the zone of the location. The fifth column is the name of the location."}
-
-`*` For the data center code that the VPC zone and location corresponds to, such as `us-south-1` and `DAL10`, see [Multizone regions](/docs/overview?topic=overview-locations#mzr-table).
-{: note}
 
 `†` **Toronto multizone region**: Toronto is available as a multizone region for clusters on VPC infrastructure only.
 

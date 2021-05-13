@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -664,6 +664,8 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
 ## Updating IAM firewalls for {{site.data.keyword.containershort}} IP addresses
 {: #iam_allowlist}
 
+
+
 By default, all IP addresses can be used to log in to the {{site.data.keyword.cloud_notm}} console and access your cluster. In the IBM Cloud Identity and Access Management (IAM) console, you can generate a firewall by [creating an allowlist by specifying which IP addresses have access](/docs/account?topic=account-ips), and all other IP addresses are restricted. If you use an IAM firewall, you must add the CIDRs of the {{site.data.keyword.openshiftlong_notm}} control plane for the zones in the region where your cluster is located to the allowlist. You must allow these CIDRs so that {{site.data.keyword.openshiftlong_notm}} can create Ingress ALBs and `LoadBalancers` in your cluster.
 {: shortdesc}
 
@@ -733,6 +735,16 @@ Setting up an IAM allowlist blocks access to the {{site.data.keyword.openshiftsh
        <td>EU Central</td>
        <td>ams03<br>mil01<br>osl01<br>par01<br><br>fra02, fra04, fra05</td>
        <td><code>169.50.177.128/25, 169.50.185.32/27, 169.51.161.128/25, 169.51.39.64/26, 169.51.41.64/26</code><br><code>159.122.157.192/26, 159.122.168.128/25, 159.122.169.64/26, 169.51.193.0/24</code><br><code>169.51.84.64/26</code><br><code>159.8.74.64/27, 169.51.22.64/26, 169.51.28.128/25, 169.51.3.64/26</code><br><br><code>158.177.160.0/25, 158.177.84.64/26, 169.50.48.160/28, 169.50.58.160/27, 161.156.102.0/26, 161.156.125.80/28, 161.156.66.224/27, 149.81.105.192/26, 149.81.124.16/28, 149.81.72.192/27, 149.81.141.128/25, 161.156.14.128/25</code></td>
+      </tr>
+    <tr>
+       <td>Osaka</td>
+       <td>osa21, osa22, osa23</td>
+       <td><code>163.68.69.144/28, 163.68.70.64/27, 163.69.65.160/28, 163.69.66.32/27, 163.73.64.80/28, 163.73.66.64/27</code></td>
+      </tr>
+    <tr>
+       <td>Toronto</td>
+       <td>tor01, tor04, tor05</td>
+       <td><code>163.74.65.64/28, 163.75.64.144/28, 169.53.170.160/28, 169.53.178.192/26, 169.55.148.128/25</code></td>
       </tr>
     <tr>
       <td>UK South</td>
