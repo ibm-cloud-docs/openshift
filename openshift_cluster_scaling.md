@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-15"
+lastupdated: "2021-05-13"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -1026,9 +1026,12 @@ This table refers to the cluster autoscaler add-on parameters. For Helm chart va
 <td>64</td>
 </tr>
 <tr>
-<td>`scaleDownDelayAfterAdd` and `scaleDownDelayAfterDelete`</td>
-<td>Set the amount of time in minutes that the cluster autoscaler waits to start scaling actions again after scaling up (`add`) or scaling down (`delete`).</td>
+<td>`scaleDownDelayAfterAdd`</td>
+<td>Set the amount of time after scale up that scale down evaluation resumes. The default value for `scaleDownDelayAfterAdd` is 10 minutes.</td>
 <td>`10m`</td>
+<td>`scaleDownDelayAfterDelete`</td>
+<td>Set the amount of time after node deletion that scale down evaluation resumes. The default value for `scaleDownDelayAfterDelete` is the same as the `scan-interval` which is `1m`.</td>
+<td>`1m`</td>
 </tr>
 <tr>
 <td>`scaleDownUnneededTime`</td>
@@ -1119,9 +1122,12 @@ This table refers to the cluster autoscaler Helm chart parameters. For add-on va
 <td>`10m`</td>
 </tr>
 <tr>
-<td>`scaleDownDelayAfterAdd`, `scaleDownDelayAfterDelete` parameters</td>
-<td>Set the amount of time in minutes that the cluster autoscaler waits to start scaling actions again after scaling up (`add`) or scaling down (`delete`).</td>
+<td>`scaleDownDelayAfterAdd`</td>
+<td>Set the amount of time after scale up that scale down evaluation resumes. The default value for `scaleDownDelayAfterAdd` is 10 minutes.</td>
 <td>`10m`</td>
+<td>`scaleDownDelayAfterDelete`</td>
+<td>Set the amount of time after node deletion that scale down evaluation resumes. The default value for `scaleDownDelayAfterDelete` is the same as the `scan-interval` which is `1m`.</td>
+<td>`1m`</td>
 </tr>
 <tr>
 <td>`scaleDownUtilizationThreshold` parameter</td>

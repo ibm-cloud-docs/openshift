@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1242,7 +1242,7 @@ Adding a cluster:
 10. Repeat these steps to add more clusters to your PX-Backup service.
 
 #### Installing Stork on a non-Portworx cluster
-{: px-backup-stork}
+{: #px-backup-stork}
 
 If a cluster that you want to back up with PX-Backup does not have Portworx Enterprise installed on it, you must install Stork on to the cluster before adding it to your PX-Backup service.
 {: shortdesc}
