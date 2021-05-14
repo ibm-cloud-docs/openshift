@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-12"
+lastupdated: "2021-05-14"
 
 keywords: openshift, roks, rhoks, rhos, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, roks pricing, iks pricing, openshift charges, ocp charges, openshift price, ocp price, roks price, openshift billing, ocp billing, roks billing, openshift costs, ocp costs, roks costs,
 
@@ -229,7 +229,7 @@ Your cluster must have at least 2 worker nodes to run default Kubernetes and Ope
 Keep in mind that some services such as Ingress might require multiple worker nodes for high availability, and you might not be able to run these services or your apps in the smallest size cluster possible.
 {: important}
 
-`*` <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters only**: Initially, you can create a classic cluster with only 1 worker node. This operation is allowed for multizone clusters, so that you are not forced to create 2 worker nodes per zone. If you have a single zone cluster, resize the worker pool to 2. Also, note that after resizing a worker pool to 2, you cannot later resize back down to 1 worker node.
+`*` <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters only**: Initially, you can create a classic cluster with only 1 worker node. This operation is allowed for multizone clusters, so that you are not forced to create 2 worker nodes per zone. If you have a single zone cluster, resize the worker pool to 2. Also, note that after resizing a worker pool to 2, you cannot later resize back down to 1 worker node.
 {: note}
 
 ## Which Kubernetes versions does the service support?
@@ -275,7 +275,7 @@ For the latest HA service level agreement terms, refer to the [{{site.data.keywo
 
 To view detailed system requirements, you can run a [software product compatibility report for {{site.data.keyword.openshiftlong_notm}}](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=4440E450C2C811E6A98AAE81A233E762){: external}. Note that compliance depends on the underlying [infrastructure provider](/docs/openshift?topic=openshift-infrastructure_providers) for the cluster worker nodes, networking, and storage resources.
 
-<img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic infrastructure**: {{site.data.keyword.openshiftlong_notm}} implements controls commensurate with the following security standards:
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic infrastructure**: {{site.data.keyword.openshiftlong_notm}} implements controls commensurate with the following security standards:
 - EU-US Privacy Shield and Swiss-US Privacy Shield Framework
 - Health Insurance Portability and Accountability Act (HIPAA)
 - Service Organization Control standards (SOC 1 Type 2, SOC 2 Type 2)
@@ -286,14 +286,14 @@ To view detailed system requirements, you can run a [software product compatibil
 **Classic infrastructure only**: To achieve HIPAA and PCI compliance for your environment, make sure to use [dedicated virtual](/docs/openshift?topic=openshift-planning_worker_nodes#vm) or [bare metal](/docs/openshift?topic=openshift-planning_worker_nodes#bm) classic infrastructure machines for your worker nodes, not shared virtual machines. With dedicated virtual or bare metal machines, all compute resources are dedicated exclusively to you, and you can control the isolation and resource consumption of your workloads.
 {: important}
 
-<img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC infrastructure**: {{site.data.keyword.openshiftlong_notm}} implements controls commensurate with the following security standards:
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC infrastructure**: {{site.data.keyword.openshiftlong_notm}} implements controls commensurate with the following security standards:
 - EU-US Privacy Shield and Swiss-US Privacy Shield Framework
 - Health Insurance Portability and Accountability Act (HIPAA)
 - International Standard on Assurance Engagements 3402 (ISAE 3402), Assurance Reports on Controls at a Service Organization
 
 
 
-<img src="../images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **{{site.data.keyword.satelliteshort}}**: See the [{{site.data.keyword.satellitelong_notm}} documentation](/docs/satellite?topic=satellite-faqs#standards).
+<img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **{{site.data.keyword.satelliteshort}}**: See the [{{site.data.keyword.satellitelong_notm}} documentation](/docs/satellite?topic=satellite-faqs#standards).
 
 
 
@@ -320,3 +320,4 @@ See the [IBM Open Source and Third Party policy](https://www.ibm.com/support/pag
 {: faq}
 
 See [Managing costs for your clusters](/docs/openshift?topic=openshift-costs).
+
