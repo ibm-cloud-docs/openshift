@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-05-14"
 
 keywords: vpc block, add-on, vpc block changelog
 
@@ -90,8 +90,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
-
+  
+  
 # {{site.data.keyword.block_storage_is_short}} add-on changelog
 {: #vpc_bs_changelog}
 

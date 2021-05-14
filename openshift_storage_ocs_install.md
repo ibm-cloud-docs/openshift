@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-07"
+lastupdated: "2021-05-14"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -90,7 +90,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
+  
+ 
 
 
 # Installing OpenShift Container Storage in your cluster
@@ -100,8 +101,8 @@ OpenShift Container Storage is a highly available storage solution that you can 
 {: shortdesc}
 
 **Supported infrastructure provider**:
-  * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
-  * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
 **Minimum required permissions**: **Administrator** platform access role and the **Manager** service access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
@@ -122,9 +123,9 @@ The following table provides an overview of the benefits and supported features 
 
 | Feature | OCS cluster add-on | OperatorHub |
 |---------------|-------------|-----------------|
-| Set up {{site.data.keyword.cos_full_notm}} as your default backing store during installation. | <img src="../images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |  |
-| Granular control over storage cluster volume sizes. | <img src="../images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
-| Create a storage cluster from the web console. | | <img src="../images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Set up {{site.data.keyword.cos_full_notm}} as your default backing store during installation. | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |  |
+| Granular control over storage cluster volume sizes. | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
+| Create a storage cluster from the web console. | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: caption="OCS installation path comparison." caption-side="top"}
 
 

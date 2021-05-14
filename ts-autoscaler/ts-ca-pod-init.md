@@ -91,8 +91,8 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
-
+  
+  
 # Why does the cluster autoscaler add-on fail with the pod stuck in `Init` state?
 {: #ca_ts_secret}
 
