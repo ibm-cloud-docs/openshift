@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-14"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -90,8 +90,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
-
+  
+  
 
 # Version changelog
 {: #openshift_changelog}
@@ -1245,7 +1245,7 @@ The following table shows the changes that are included in the `4.4.11_1511_open
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 3.11 patch updates.
 {: shortdesc}
 
-<img src="../images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported on 6 June 2022 (date subject to change).
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported on 6 June 2022 (date subject to change).
 {: deprecated}
 
 ### Changelog for worker node fix pack 3.11.420_1588_openshift, released 10 May 2021

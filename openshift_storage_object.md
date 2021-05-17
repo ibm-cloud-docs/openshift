@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-14"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -90,8 +90,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
-
+  
+  
 
 # Storing data on IBM Cloud Object Storage
 {: #object_storage}
@@ -393,7 +393,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
       **VPC clusters** To enable authorized IPs on VPC, set the `--set bucketAccessPolicy=true` flag.
       {: note}
         ```
-        helm install ibm-object-storage-plugin ./ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --set platform="${PLATFORM}" --set license=true [--set bucketAccessPolicy=false]
+        helm install ibm-object-storage-plugin ./ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --region="${REGION} --set platform="${PLATFORM}" --set license=true [--set bucketAccessPolicy=false]
         ```
         {: pre}
 
@@ -416,6 +416,10 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     <tr>
       <td><code>WORKER_OS</code> and <code>PLATFORM</code></td>
       <td>The operating system of the worker nodes. To retrieve these values, run <code>oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/os}{'\n'}"</code>. Store the operating system of the worker nodes in an environment variable. For {{site.data.keyword.openshiftlong_notm}} clusters, run <code>SET WORKER_OS="redhat"</code> and <code>SET PLATFORM="openshift"</code>.</td>
+    </tr>
+    <tr>
+      <td><code>REGION</code></td>
+      <td>The region of the worker nodes. To retrieve this value, run <code>oc get nodes -o yaml | grep 'ibm-cloud\.kubernetes\.io/region'</code>. Store the region of the worker nodes in an environment variable by running <code>SET REGION="&lt;region&gt;"</code>.</td>
     </tr>
     </tbody>
     </table>
@@ -761,7 +765,7 @@ You can authorize your VPC Cloud Service Endpoint source IP addresses to access 
  * **Writer** service access role for the {{site.data.keyword.cos_full_notm}} service.
 
 **Supported infrastructure provider**:
-  * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 1. [Follow the instructions to install the `ibmc` Helm plugin](#install_cos). Make sure to install the `ibm-object-storage-plugin` and set the `bucketAccessPolicy` flag to `true`.
 

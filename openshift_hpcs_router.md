@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-28"
+lastupdated: "2021-05-14"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -90,7 +90,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
+  
+ 
 
 # Encrypting routes with keys stored in {{site.data.keyword.hscrypto}}
 {: #hpcs-router}

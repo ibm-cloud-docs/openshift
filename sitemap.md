@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-17"
 
 keywords: openshift
 subcollection: openshift
@@ -89,8 +89,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
-
+  
+  
 
 # Site map
 {: #sitemap}
@@ -804,8 +804,6 @@ subcollection: openshift
 * [Kubernetes API server audit logs](/docs/openshift?topic=openshift-health-audit#audit-api-server)
   * [Understanding the Kubernetes API audit configuration](/docs/openshift?topic=openshift-health-audit#api-server-config)
   * [Forwarding Kubernetes API audit logs to {{site.data.keyword.la_short}}](/docs/openshift?topic=openshift-health-audit#audit-api-server-la)
-  * [Managing API server log forwarding](/docs/openshift?topic=openshift-health-audit#audit-api-server-manage)
-  * [Taking a snapshot of API server logs](/docs/openshift?topic=openshift-health-audit#audit-api-server-snapshot)
 * [Worker node audit logs](/docs/openshift?topic=openshift-health-audit#audit-worker)
   * [Understanding the worker node audit configuration](/docs/openshift?topic=openshift-health-audit#audit-worker-config)
   * [Setting up log forwarding for worker nodes](/docs/openshift?topic=openshift-health-audit#audit-worker-setup)
@@ -1691,21 +1689,6 @@ subcollection: openshift
   * [Beta: `ibmcloud oc ingress secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_rm)
   * [Beta: `ibmcloud oc ingress secret update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_update)
   * [`ibmcloud oc ingress status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status)
-* [`logging` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#logging_commands)
-  * [`ibmcloud oc logging autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_autoupdate_disable)
-  * [`ibmcloud oc logging autoupdate enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_autoupdate_enable)
-  * [`ibmcloud oc logging autoupdate get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_autoupdate_get)
-  * [`ibmcloud oc logging collect`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_collect)
-  * [`ibmcloud oc logging collect-status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_collect_status)
-  * [`ibmcloud oc logging config create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_logging_create)
-  * [`ibmcloud oc logging config get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_logging_get)
-  * [`ibmcloud oc logging config rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_logging_rm)
-  * [`ibmcloud oc logging config update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_logging_update)
-  * [`ibmcloud oc logging filter create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_filter_create)
-  * [`ibmcloud oc logging filter get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_filter_view)
-  * [`ibmcloud oc logging filter rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_filter_delete)
-  * [`ibmcloud oc logging filter update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_filter_update)
-  * [`ibmcloud oc logging refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_logging_refresh)
 * [`nlb-dns` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns)
   * [`ibmcloud oc nlb-dns add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-add)
   * [`ibmcloud oc nlb-dns create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-create)
@@ -2305,7 +2288,7 @@ subcollection: openshift
   * [Step 2: Verifying the cluster setup](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-verify-cluster)
   * [Step 3: Reach out to Portworx and IBM](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-support)
 * [Portworx: Encryption set up fails due to invalid KMS endpoint](/docs/openshift?topic=openshift-cs_troubleshoot_storage#px-kms-endpoint)
-* [OpenShift Container Storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage#openshift-container-storage)
+* [OpenShift Container Storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage#ocs-ts-provider-support)
   * [OCS device set creation fails due to PVC names exceeding the Kubernetes character limit](/docs/openshift?topic=openshift-cs_troubleshoot_storage#ocs-ts-sc-character-limit)
 * [Feedback, questions, and support](/docs/openshift?topic=openshift-cs_troubleshoot_storage#getting_help_storage)
 

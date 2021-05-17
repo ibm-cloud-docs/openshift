@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-17"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -90,8 +90,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
-
+  
+  
 
 # Release notes
 {: #iks-release}
@@ -109,6 +109,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 17 May 2021 | <ul><li>**Deprecated: Kubernetes web terminal.** The Kubernetes web terminal add-on is deprecated. Instead, use the [{{site.data.keyword.cloud-shell_notm}}](/docs/openshift?topic=openshift-openshift-cli#cloud-shell).</li></ul> |
 | 11 May 2021 | <ul><li>**Router healthchecks in VPC clusters**: If you set up [VPC security groups](/docs/openshift?topic=openshift-vpc-network-policy#security_groups) or [VPC access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-network-policy#acls) to secure your cluster network, you can now create the rules to allow the necessary traffic from the {{site.data.keyword.openshiftshort}} control plane IP addresses and Cloudflare IPv4 IP addresses to health check your routers. Previously, a quota on the number of rules per security group or ACL prevented the ability to create all necessary rules for health checks.</li></ul>|
 | 10 May 2021 | <ul><li>**New! PX-Backup is now available**: For more information, see [Backing up and restoring apps and data with PX-Backup](/docs/openshift?topic=openshift-portworx).</li><li>**Cluster autoscaler add-on**: [Patch update `1.0.2_267`](/docs/openshift?topic=openshift-ca_changelog) of the cluster autoscaler add-on is available.</li><li>**{{site.data.keyword.cos_full_notm}} plug-in**: [Version `2.0.9`](/docs/openshift?topic=openshift-cos_plugin_changelog) of the {{site.data.keyword.cos_full_notm}} plug-in is available.</li><li>**Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.27_1542_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4627_1542), [`4.5.38_1538_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4538_1538), [`4.4.33_1541_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4433_1541), and [`3.11.420_1588_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311420_1588).</li></ul> |
 | 4 May 2021 |  **Master versions**: Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [1.20.5_1538](/docs/containers?topic=containers-changelog#1206_1538) and [1.19.10_1545](/docs/containers?topic=containers-changelog#11910_1545).|
@@ -218,7 +219,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 | Date | Description |
 | ---- | ----------- |
 | 25 November 2020 | **New! {{site.data.keyword.cloud_notm}} HPCS Router**: In clusters that run {{site.data.keyword.openshiftshort}} version 4.5, you can now deploy the {{site.data.keyword.cloud_notm}} HPCS Router to encrypt routes with a private key that is stored in an {{site.data.keyword.cloud}} {{site.data.keyword.hscrypto}} instance. This key can be used by the router in TLS session establishment and in Certificate Signing Request (CSR) signing. To get started, see [Encrypting routes with keys stored in {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-hpcs-router). |
-| 24 November 2020 | <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **New! Reservations to reduce classic worker node costs**: Create a reservation with contracts for 1 or 3 year terms for classic worker nodes to lock in a reduced cost for the life of the contract. Typical savings range between 30-50% compared to on-demand worker node costs. Reservations can be created in the {{site.data.keyword.cloud_notm}} console for classic infrastructure only. For more information, see [Reserving instances to reduce classic worker node costs](/docs/openshift?topic=openshift-reservations). |
+| 24 November 2020 | <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **New! Reservations to reduce classic worker node costs**: Create a reservation with contracts for 1 or 3 year terms for classic worker nodes to lock in a reduced cost for the life of the contract. Typical savings range between 30-50% compared to on-demand worker node costs. Reservations can be created in the {{site.data.keyword.cloud_notm}} console for classic infrastructure only. For more information, see [Reserving instances to reduce classic worker node costs](/docs/openshift?topic=openshift-reservations). |
 | 23 November 2020 | **Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} [`4.5.19_1521_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4519_1521), [`4.4.30_1525_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4430_1525), [`4.3.40_1546_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1546_worker), and [`3.11.313.318_1573_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311318_1573). |
 | 20 November 2020 | **New! Portieris for image security enforcement**: With the [open source Portieris project](https://github.com/IBM/portieris){: external}, you can set up a Kubernetes admission controller to enforce image security policies by namespace or cluster. Use Portieris instead of the [deprecated Container Image Security Enforcement Helm chart](/docs/Registry?topic=Registry-security_enforce). |
 | 19 November 2020 | **Ingress ALB changelog**: Updated the [`nginx-ingress` build to 653 and the `ingress-auth` build to 425](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image. |

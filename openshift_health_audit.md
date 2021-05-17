@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-05-14"
 
 keywords: openshift, roks, rhoks, logmet, logs, metrics, audit, events
 
@@ -90,8 +90,8 @@ subcollection: containers
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
-
+  
+  
 # Reviewing service, API server, and worker node logs
 {: #health-audit}
 
@@ -256,16 +256,6 @@ For more information, see the following topics:
 11. After the master refresh completes and the logging agents are running on your worker nodes, you can [view your Kubernetes API audit logs in {{site.data.keyword.la_full_notm}}](/docs/log-analysis?topic=log-analysis-kube#kube_step4).
 
 
-
-### Managing API server log forwarding
-{: #audit-api-server-manage}
-
-See [Verifying, updating, and deleting log forwarding](/docs/containers?topic=containers-health#verifying-log-forwarding).
-
-### Taking a snapshot of API server logs
-{: #audit-api-server-snapshot}
-
-See [Collecting master logs in an {{site.data.keyword.cos_full_notm}} bucket](/docs/containers?topic=containers-health#collect_master).
 
 <br />
 

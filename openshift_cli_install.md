@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-28"
+lastupdated: "2021-05-14"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -90,8 +90,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
-
+  
+  
 
 # Installing the OpenShift CLI
 {: #openshift-cli}
@@ -182,7 +182,7 @@ For reference information about these CLIs, see the documentation for those tool
 To view a local version of the {{site.data.keyword.openshiftshort}} dashboard and to deploy apps into your {{site.data.keyword.openshiftlong_notm}} clusters, install the {{site.data.keyword.openshiftshort}} CLI (`oc`) and Kubernetes CLI (`kubectl`).
 {: shortdesc}
 
-Using both community Kubernetes and {{site.data.keyword.openshiftshort}} clusters? Your clusters might run different versions of Kubernetes, such as 1.11 on {{site.data.keyword.openshiftshort}} and 1.20.6 on Ubuntu. Make sure to use the `kubectl` binary file that matches the `+/- 1` [skew policy](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} for your cluster `major.minor` {{site.data.keyword.openshiftshort}} and Kubernetes versions. For supported versions, see [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types).
+Using both community Kubernetes and {{site.data.keyword.openshiftshort}} clusters? Your clusters might run different versions of Kubernetes, such as 1.11 on {{site.data.keyword.openshiftshort}} and 1.20.6 on Ubuntu. Make sure to use the `kubectl` binary file that matches the `+/- 1` [skew policy](https://kubernetes.io/releases/version-skew-policy/){: external} for your cluster `major.minor` {{site.data.keyword.openshiftshort}} and Kubernetes versions. For supported versions, see [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types).
 {: note}
 
 Looking for a simple installation? You can try installing the plug-in with a package manager such as Homebrew. Keep in mind that the version skew might not match your cluster. For example, in Homebrew, you can update Homebrew by running `brew update` and check what version of the plug-in is installed by running `brew info openshift-cli`. Then, install the plug-in by running `brew install openshift-cli`.
@@ -203,7 +203,7 @@ Looking for a simple installation? You can try installing the plug-in with a pac
 
 2.  Download the Kubernetes CLI (`kubectl`) for your {{site.data.keyword.openshiftshort}} cluster. You might use different `kubectl` versions if you have community Kubernetes clusters that run other Kubernetes versions such as 1.20.6.
 
-    * <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> For clusters that run {{site.data.keyword.openshiftshort}} 3.11: Download at least version 1.15. Because earlier `kubectl` versions are no longer supported, the `kubectl` version that you use for your {{site.data.keyword.openshiftshort}} 3.11, Kubernetes 1.11 cluster cannot meet the `+/- 1` [skew policy](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external}. Instead, use at least `kubectl` version 1.15 to protect your cluster from Common Vulnerability and Exposures (CVEs) that might arise in unsupported versions.
+    * <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> For clusters that run {{site.data.keyword.openshiftshort}} 3.11: Download at least version 1.15. Because earlier `kubectl` versions are no longer supported, the `kubectl` version that you use for your {{site.data.keyword.openshiftshort}} 3.11, Kubernetes 1.11 cluster cannot meet the `+/- 1` [skew policy](https://kubernetes.io/releases/version-skew-policy/){: external}. Instead, use at least `kubectl` version 1.15 to protect your cluster from Common Vulnerability and Exposures (CVEs) that might arise in unsupported versions.
         -   **OS X**: [https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/darwin/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/darwin/amd64/kubectl){: external}
         -   **Linux**: [https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/linux/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/linux/amd64/kubectl){: external}
         -   **Windows**: Install the Kubernetes CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later. [https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/windows/amd64/kubectl.exe](https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/windows/amd64/kubectl.exe){: external}
