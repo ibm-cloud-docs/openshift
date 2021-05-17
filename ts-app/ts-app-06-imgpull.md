@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -309,4 +309,7 @@ This method of using a token to authorize cluster access to {{site.data.keyword.
     ```
     docker pull registry.<region>.bluemix.net/<namespace>/<image>:<tag>
     ```
-    {: pre}
+    {: pre} 
+    
+    
+    
