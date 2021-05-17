@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-17"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -187,6 +187,9 @@ ibmcloud oc cluster addon disable image-key-synchronizer --cluster my_cluster
 Disable the [Kubernetes web terminal](/docs/containers?topic=containers-cs_cli_install#cli_web) add-on. To use the Kubernetes web terminal in the {{site.data.keyword.containerlong_notm}} cluster console, you must re-enable the add-on first.
 {: shortdesc}
 
+The Kubernetes web terminal add-on is deprecated. Instead, use the [{{site.data.keyword.cloud-shell_notm}}](/docs/openshift?topic=openshift-openshift-cli#cloud-shell).
+{: deprecated}
+
 ```sh
 ibmcloud oc cluster addon disable kube-terminal --cluster CLUSTER [-f]
 ```
@@ -302,6 +305,9 @@ ibmcloud oc cluster addon enable image-key-synchronizer --cluster CLUSTER [--ver
 
 Enable the [Kubernetes web terminal](/docs/containers?topic=containers-cs_cli_install#cli_web) add-on to use the Kubernetes web terminal in the {{site.data.keyword.containerlong_notm}} cluster console.
 {: shortdesc}
+
+The Kubernetes web terminal add-on is deprecated. Instead, use the [{{site.data.keyword.cloud-shell_notm}}](/docs/openshift?topic=openshift-openshift-cli#cloud-shell).
+{: deprecated}
 
 ```sh
 ibmcloud oc cluster addon enable kube-terminal --cluster CLUSTER [--version VERSION]

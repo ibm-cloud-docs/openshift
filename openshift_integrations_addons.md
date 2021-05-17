@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-17"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -100,7 +100,7 @@ Quickly add extra capabilities and open-source technologies to your cluster with
 
 **What are managed add-ons?**
 
-Managed {{site.data.keyword.openshiftlong_notm}} add-ons are an easy way to enhance your cluster with extra capabilities and open-source capabilities, such as the Diagnostics and Debug Tool, Kubernetes web terminal, {{site.data.keyword.block_storage_is_short}}, or the Cluster Autoscaler. The version of the driver, plug-in, or open-source tool that you add to your cluster is tested by IBM and approved to be used in {{site.data.keyword.openshiftlong_notm}}.
+Managed {{site.data.keyword.openshiftlong_notm}} add-ons are an easy way to enhance your cluster with extra capabilities and open-source capabilities, such asthe Diagnostics and Debug Tool, {{site.data.keyword.block_storage_is_short}}, or the Cluster Autoscaler. The version of the driver, plug-in, or open-source tool that you add to your cluster is tested by IBM and approved to be used in {{site.data.keyword.openshiftlong_notm}}.
 
 The managed add-ons that you can install in your cluster depend on the type of cluster, the container platform, and the infrastructure provider that you choose.
 {: note}
@@ -200,7 +200,7 @@ Supported add-ons for clusters in {{site.data.keyword.satelliteshort}} locations
 - [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility)
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
-- [Kubernetes web terminal](/docs/containers?topic=containers-cs_cli_install#cli_web)
+- **Deprecated**: [Kubernetes web terminal](/docs/containers?topic=containers-cs_cli_install#cli_web)
 - [Static routes](/docs/openshift?topic=openshift-static-routes)
 
 Unsupported add-ons for clusters in {{site.data.keyword.satelliteshort}} locations:

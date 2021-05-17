@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-17"
 
 keywords: openshift, roks, rhoks, rhos, app access
 
@@ -131,7 +131,7 @@ The public IP address of the worker node is not permanent. When a worker node is
 You can expose your app as a Kubernetes NodePort service for free or standard clusters.
 {: shortdesc}
 
-Because worker nodes in VPC clusters do not have a public IP address, you can access an app through a NodePort only if you are connected to your private VPC network, such as through a VPN connection or by using the [Kubernetes web terminal](/docs/containers?topic=containers-cs_cli_install#cli_web). To access an app from the internet, you must use a [VPC load balancer](/docs/openshift?topic=openshift-vpc-lbaas) or [Ingress](/docs/openshift?topic=openshift-ingress-about) service instead.
+Because worker nodes in VPC clusters do not have a public IP address, you can access an app through a NodePort only if you are connected to your private VPC network, such as through a VPN connection. To access an app from the internet, you must use a [VPC load balancer](/docs/openshift?topic=openshift-vpc-lbaas) or [Ingress](/docs/openshift?topic=openshift-ingress-about) service instead.
 {: note}
 
 If you do not already have an app ready, you can use a Kubernetes example app called [Guestbook](https://github.com/kubernetes/examples/blob/master/guestbook/all-in-one/guestbook-all-in-one.yaml){: external}.
@@ -247,6 +247,5 @@ If you do not already have an app ready, you can use a Kubernetes example app ca
         {: note}
 
     3.  Form the URL with one of the worker node IP addresses and the NodePort. Example: `http://192.0.2.23:30872`.
-        For VPC clusters, you must be connected to the private network through a VPN connection to access the worker node private IP address and NodePort.
+        For VPC clusters, you must be connected to the private network, such as through a VPN connection, to access the worker node private IP address and NodePort.
         {: note}
-

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-17"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -196,7 +196,7 @@ The following list of the cluster add-on events are sent to {{site.data.keyword.
 | `containers-kubernetes.cluster-addon-istio-grafana-dashboard.start` | The Grafana dashboard for the managed Istio add-on is started. |
 | `containers-kubernetes.cluster-addon-istio-jaeger-dashboard.start` | The Jaeger dashboard for the managed Istio add-on is started. |
 | `containers-kubernetes.cluster-addon-istio-kiali-dashboard.start` | The Kiali dashboard for the managed Istio add-on Kiali is started. |
-| `containers-kubernetes.cluster-addon-terminal.start` | starts the Kubernetes terminal proxy |
+| `containers-kubernetes.cluster-addon-terminal.start` | **Deprecated**: Starts the Kubernetes web terminal proxy. |
 {: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
 {: caption="Cluster add-on events" caption-side="top"}
 
