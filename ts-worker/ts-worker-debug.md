@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -91,8 +91,8 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
-
+  
+  
 # Debugging worker nodes
 {: #debug_worker_nodes}
 {: troubleshoot}
@@ -102,16 +102,25 @@ Review the options to debug your worker nodes and find the root causes for failu
 {: shortdesc}
 
 **Infrastructure provider**:
-  * <img src="../../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="../../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+  * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-1. If your cluster is in a **Critical**, **Delete failed**, or **Warning** state, or is stuck in the **Pending** state for a long time, review the state of your worker nodes.
-    ```
-    ibmcloud oc worker ls --cluster <cluster_name_or_id>
-    ```
-    {: pre}
-2. Review the **State** and **Status** field for every worker node in your CLI output.
-    You can view the current worker node state by running the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and locating the **State** and **Status** fields.
+## Step 1: Get the worker node state
+{: #worker-debug-get-state}
+
+If your cluster is in a **Critical**, **Delete failed**, or **Warning** state, or is stuck in the **Pending** state for a long time, review the state of your worker nodes.
+
+```
+ibmcloud oc worker ls --cluster <cluster_name_or_id>
+```
+{: pre}
+
+## Step 2: Review the worker node state
+{: #worker-debug-rev-state}
+
+Review the **State** and **Status** field for every worker node in your CLI output.
+
+You can view the current worker node state by running the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and locating the **State** and **Status** fields.
 {: shortdesc}
     <table summary="Every table row should be read left to right, with the cluster state in column one and a description in column two.">
     <caption>Worker node states</caption>
@@ -194,14 +203,21 @@ Review the options to debug your worker nodes and find the root causes for failu
     </tr>
       </tbody>
     </table>
-3. List the details for the worker node. If the details include an error message, review the list of [common error messages for worker nodes](#common_worker_nodes_issues) to learn how to resolve the problem.
-    ```
-    ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id>
-    ```
-    {: pre}
-4.  Review the infrastructure environment to check for other reasons that might cause the worker node issues.
-    1.  Check with your networking team to make sure that no recent maintenance, such as firewall or subnet updates, might impact the worker node connections.
-    2.  Review [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/status/){: external} for **{{site.data.keyword.openshiftlong_notm}}** and the underlying infrastructure provider, such as **Virtual Servers** for classic, **VPC** related components, or **{{site.data.keyword.satelliteshort}}**.
-    3.  If you have access to the underlying infrastructure, such as classic **Virtual Servers**, review the details of the corresponding machines for the worker nodes.
 
+## Step 3: Get the details for each worker node
+{: #worker-debug-get-details}
 
+Get the details for the worker node. If the details include an error message, review the list of [common error messages for worker nodes](#common_worker_nodes_issues) to learn how to resolve the problem.
+
+```
+ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id>
+```
+{: pre}
+
+## Step 4: Review the infrastructure provider for the worker node
+{: #worker-debug-rev-infra}
+
+Review the infrastructure environment to check for other reasons that might cause the worker node issues.
+1.  Check with your networking team to make sure that no recent maintenance, such as firewall orsubnet updates, might impact the worker node connections.
+2.  Review [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/status/){: external} for **{{site.data.keyword.openshiftlong_notm}}** and the underlying infrastructure provider, such as **Virtual Servers** for classic, **VPC** related components, or **{{site.data.keyword.satelliteshort}}**.
+3.  If you have access to the underlying infrastructure, such as classic **Virtual Servers**, review the details of the corresponding machines for the worker nodes.
