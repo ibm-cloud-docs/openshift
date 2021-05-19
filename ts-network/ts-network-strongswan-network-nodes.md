@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -91,12 +91,12 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
-
+  
+  
 # Why does strongSwan VPN connectivity fail after I add or delete worker nodes?
 {: #cs_vpn_fails_worker_add}
 
-**Infrastructure provider**: <img src="../../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
 {: tsSymptoms}
 You previously established a working VPN connection by using the strongSwan IPSec VPN service. However, after you added or deleted a worker node on your cluster, you experience one or more of the following symptoms:
@@ -108,16 +108,16 @@ You previously established a working VPN connection by using the strongSwan IPSe
 {: tsCauses}
 If you added a worker node to a worker pool:
 
-* The worker node was provisioned on a new private subnet that is not exposed over the VPN connection by your existing `localSubnetNAT` or `local.subnet` settings
-* VPN routes cannot be added to the worker node because the worker has taints or labels that are not included in your existing `tolerations` or `nodeSelector` settings
-* The VPN pod is running on the new worker node, but the public IP address of that worker node is not allowed through the on-premises firewall
+* The worker node was provisioned on a new private subnet that is not exposed over the VPN connection by your existing `localSubnetNAT` or `local.subnet` settings.
+* VPN routes cannot be added to the worker node because the worker has taints or labels that are not included in your existing `tolerations` or `nodeSelector` settings.
+* The VPN pod is running on the new worker node, but the public IP address of that worker node is not allowed through the on-premises firewall.
 
 If you deleted a worker node:
 
-* That worker node was the only node where a VPN pod was running, due to restrictions on certain taints or labels in your existing `tolerations` or `nodeSelector` settings
+* That worker node was the only node where a VPN pod was running, due to restrictions on certain taints or labels in your existing `tolerations` or `nodeSelector` settings.
 
 {: tsResolve}
-Update the Helm chart values to reflect the worker node changes:
+Update the Helm chart values to reflect the worker node changes.
 
 1. Delete the existing Helm chart.
 
@@ -135,7 +135,7 @@ Update the Helm chart values to reflect the worker node changes:
 
 3. Check the following settings and change the settings to reflect the deleted or added worker nodes as necessary.
 
-    If you added a worker node:
+    **If you added a worker node:**
 
     <table summary="The columns are read from left to right. The first column has the worker node setting. The second column describes the setting.">
     <caption>Worker node settings</caption>
@@ -163,7 +163,7 @@ Update the Helm chart values to reflect the worker node changes:
      </tr>
      </tbody></table>
 
-    If you deleted a worker node:
+    **If you deleted a worker node:**
 
     <table summary="The columns are read from left to right. The first column has the worker node setting. The second column describes the setting.">
     <caption>Worker node settings</caption>
@@ -223,5 +223,4 @@ Update the Helm chart values to reflect the worker node changes:
     {: pre}
 
     * If the VPN connection has a status of `ESTABLISHED`, the VPN connection was successful. No further action is needed.
-
-    * If you are still having connection issues, see [Cannot establish VPN connectivity with the strongSwan Helm chart](#cs_vpn_fails) to further troubleshoot your VPN connection.
+    * If you are still having connection issues, see [Why can't I establish VPN connectivity with the strongSwan Helm chart?](/docs/containers?topic=containers-cs_vpn_fails) to further troubleshoot your VPN connection.

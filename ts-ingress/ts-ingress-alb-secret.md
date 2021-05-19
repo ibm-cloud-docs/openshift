@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -91,65 +91,33 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
-
-# Version 3.11: Why does the Ingress application load balancer (ALB) secret have issues?
+  
+  
+# Version 3.11: Why does ALB secret creation or deletion fail?
 {: #cs_albsecret_fails}
 
-**Infrastructure provider**:
-  * <img src="../../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-
-
-<img src="../../images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to {{site.data.keyword.openshiftshort}} clusters that run version 3.11.
-{: note}
-
+**Infrastructure provider and version**:
+* <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="../images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 3.11
 
 {: tsSymptoms}
-After you deploy an Ingress application load balancer (ALB) secret to your cluster by using the `ibmcloud oc ingress secret create` command, the `Description` field is not updating with the secret name when you view your certificate in {{site.data.keyword.cloudcerts_full_notm}}.
-
-When you list information about the ALB secret, the state says `*_failed`. For example, `create_failed`, `update_failed`, `delete_failed`.
-
-List the ALB secret details (`ibmcloud oc ingress secretget`) and view the ALB secret `status` to get more information on the reason for failure.
+* After you deploy an Ingress application load balancer (ALB) secret to your cluster by using the `ibmcloud oc ingress secret create` command, the `Description` field is not updating with the secret name when you view your certificate in {{site.data.keyword.cloudcerts_full_notm}}.
+* When you list information about the ALB secret, the state says `*_failed`. For example, `create_failed`, `update_failed`, `delete_failed`.
 
 {: tsResolve}
-Review the following reasons why the ALB secret might fail and the corresponding troubleshooting steps:
+Review the following reasons why the ALB secret might fail and the corresponding troubleshooting steps.
 
-<table summary="The columns are read from left to right. The first column describes why the issue happens. The second column provides steps to resolve the error.">
-<caption>Troubleshooting Ingress application load balancer secrets</caption>
- <col width="25%">
- <thead>
- <th>Why it's happening</th>
- <th>How to fix it</th>
- </thead>
- <tbody>
- <tr>
- <td>The owner of the cluster's API Key does not have the required access roles to download and update certificate data.</td>
- <td>Check with your account Administrator to assign the owner of the cluster's API Key, the following {{site.data.keyword.cloud_notm}} IAM roles:<ul><li>The **Manager** and **Writer** service access roles for your {{site.data.keyword.cloudcerts_full_notm}} instance. For more information, see <a href="/docs/certificate-manager?topic=certificate-manager-managing-service-access-roles#managing-service-access-roles">Managing service access</a> for {{site.data.keyword.cloudcerts_short}}.</li><li>The <a href="/docs/containers?topic=containers-users#platform">**Administrator** platform access role</a> for the cluster.</li></ul></td>
- </tr>
- <tr>
- <td>The certificate CRN provided at time of create, update, or remove does not belong to the same account as the cluster.</td>
- <td>Check that the certificate CRN you provided is imported to an instance of the {{site.data.keyword.cloudcerts_short}} service that is deployed in the same account as your cluster.</td>
- </tr>
- <tr>
- <td>The certificate CRN provided at time of create is incorrect.</td>
- <td><ol><li>Check the accuracy of the certificate CRN string you provide.</li><li>If the certificate CRN is found to be accurate, then try to update the secret: <code>ibmcloud oc ingress secret update --cluster &lt;cluster_name_or_ID&gt; --name &lt;secret_name&gt; --namespace &lt;namespace&gt; --cert-crn &lt;certificate_CRN&gt;</code></li><li>If this command results in the <code>update_failed</code> status, then remove the secret: <code>ibmcloud oc ingress secret rm --cluster &lt;cluster_name_or_ID&gt; --name &lt;secret_name&gt; --namespace &lt;namespace&gt;</code></li><li>Deploy the secret again: <code>ibmcloud oc ingress secret create --cluster &lt;cluster_name_or_ID&gt; --name &lt;secret_name&gt; --cert-crn &lt;certificate_CRN&gt; --namespace &lt;namespace&gt;</code></li></ol></td>
- </tr>
- <tr>
- <td>The certificate CRN provided at time of update is incorrect.</td>
- <td><ol><li>Check the accuracy of the certificate CRN string you provide.</li><li>If the certificate CRN is found to be accurate, then remove the secret: <code>ibmcloud oc ingress secret rm --cluster &lt;cluster_name_or_ID&gt; --name &lt;secret_name&gt; --namespace &lt;namespace&gt;</code></li><li>Deploy the secret again: <code>ibmcloud oc ingress secret create --cluster &lt;cluster_name_or_ID&gt; --name &lt;secret_name&gt; --cert-crn &lt;certificate_CRN&gt; --namespace &lt;namespace&gt;</code></li><li>Try to update the secret: <code>ibmcloud oc ingress secret update --cluster &lt;cluster_name_or_ID&gt; --name &lt;secret_name&gt; --namespace &lt;namespace&gt; --cert-crn &lt;certificate_CRN&gt;</code></li></ol></td>
- </tr>
- <tr>
- <td>The {{site.data.keyword.cloudcerts_long_notm}} service is experiencing downtime.</td>
- <td>Check that your {{site.data.keyword.cloudcerts_short}} service is up and running.</td>
- </tr>
- <tr>
- <td>Your imported secret has the same name as the IBM-provided Ingress secret.</td>
- <td>Rename your secret. You can check the name of the IBM-provided Ingress secret by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.</td>
- </tr>
-  <tr>
-  <td>The description for the certificate is not updated with the secret name when you view the certificate in {{site.data.keyword.cloudcerts_full_notm}}.</td>
-  <td>Check whether the length of the certificate description reached the <a href="/apidocs/certificate-manager#update-a-certificate-s-metadata">upper limit of 1024 characters</a>.</td>
-  </tr>
- </tbody></table>
+Before you begin, list the ALB secret details (`ibmcloud oc ingress secretget`) and view the ALB secret `status` to get more information on the reason for failure.
+{: tip}
 
-
+|Why it's happening|How to fix it|
+|--- |--- |
+|The owner of the cluster's API Key does not have the required access roles to download and update certificate data.|Check with your account Administrator to assign the owner of the cluster's API Key, the following {{site.data.keyword.cloud_notm}} IAM roles:<ul><li>The **Manager** and **Writer** service access roles for your {{site.data.keyword.cloudcerts_full_notm}} instance. For more information, see Managing service access for {{site.data.keyword.cloudcerts_short}}.</li><li>The **Administrator** platform access role for the cluster.</li></ul>|
+|The certificate CRN provided at time of create, update, or remove does not belong to the same account as the cluster.|Check that the certificate CRN you provided is imported to an instance of the {{site.data.keyword.cloudcerts_short}} service that is deployed in the same account as your cluster.|
+|The certificate CRN provided at time of create is incorrect.|<ol><li>Check the accuracy of the certificate CRN string you provide.</li><li>If the certificate CRN is found to be accurate, then try to update the secret: ibmcloud oc ingress secret update --cluster <cluster_name_or_ID> --name <secret_name> --namespace <namespace> --cert-crn <certificate_CRN></li><li>If this command results in the update_failed status, then remove the secret: ibmcloud oc ingress secret rm --cluster <cluster_name_or_ID> --name <secret_name> --namespace <namespace></li><li>Deploy the secret again: ibmcloud oc ingress secret create --cluster <cluster_name_or_ID> --name <secret_name> --cert-crn <certificate_CRN> --namespace <namespace></li></ol>|
+|The certificate CRN provided at time of update is incorrect.|<ol><li>Check the accuracy of the certificate CRN string you provide.</li><li>If the certificate CRN is found to be accurate, then remove the secret: ibmcloud oc ingress secret rm --cluster <cluster_name_or_ID> --name <secret_name> --namespace <namespace></li><li>Deploy the secret again: ibmcloud oc ingress secret create --cluster <cluster_name_or_ID> --name <secret_name> --cert-crn <certificate_CRN> --namespace <namespace></li><li>Try to update the secret: ibmcloud oc ingress secret update --cluster <cluster_name_or_ID> --name <secret_name> --namespace <namespace> --cert-crn <certificate_CRN></li></ol>|
+|The {{site.data.keyword.cloudcerts_long_notm}} service is experiencing downtime.|Check that your {{site.data.keyword.cloudcerts_short}} service is up and running.|
+|Your imported secret has the same name as the IBM-provided Ingress secret.|Rename your secret. You can check the name of the IBM-provided Ingress secret by running `ibmcloud oc cluster get --cluster  | grep Ingress`.|
+|The description for the certificate is not updated with the secret name when you view the certificate in {{site.data.keyword.cloudcerts_full_notm}}.|Check whether the length of the certificate description reached the upper limit of 1024 characters.|
+{: caption="Troubleshooting Ingress application load balancer secrets"}
+{: summary="The columns are read from left to right. The first column describes why the issue happens. The second column provides steps to resolve the error."}

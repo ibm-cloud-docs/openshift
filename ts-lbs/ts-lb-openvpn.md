@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -91,26 +91,31 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
+  
 
 # Classic clusters: Why does the OpenVPN server have an ingress IP address for NLB error?
 {: #rhoks_ts_openvpn_subnet}
 
-**Infrastructure provider**: <img src="../../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
 {: tsSymptoms}
-<img src="../../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> You see the following error message.
+When you run `ibmcloud oc cluster get -c <cluster_name_or_ID>`, you see the following error message in the **Master Status** field.
 ```
 CAE003: Unable to determine the ingress IP address for the network load balancer.
 ```
 {: screen}
 
+Additionally, when you run `ibmcloud oc nlb-dns create` to create a subdomain for a network load balancer (NLB), the command might fail with a message that the cluster is not found, the input parameters are incorrect, or you do not have the required roles.
+
 {: tsCauses}
-The OpenVPN server could not be configured because the router IP address that is created for the network load balancer (NLB) could not be found. The router might not have been assigned an IP address because your cluster does not have a subnet with available portable IP addresses, or the NLB setup did not complete.
+The OpenVPN server could not be configured because load balancer IP address that exposes the default router could not be found. The router's load balancer service might not have been assigned an IP address because your cluster does not have a subnet with available portable IP addresses, or the load balancer setup did not complete.
 
 {: tsResolve}
+Verify that your cluster has available subnets, and that the load balancer setup completed successfully.
 
-**Verify that your cluster has available subnets.**
+## Verifying that your cluster has available subnets
+{: #verify_subnets}
+
 1.  Check that your cluster has a **Subnet CIDR** for public and private subnets. If you set up a private VLAN-only cluster, you might have only a private subnet.
     ```
     ibmcloud oc cluster get --cluster <cluster_name_or_ID> --show-resources
@@ -136,8 +141,10 @@ The OpenVPN server could not be configured because the router IP address that is
     ```
     {: pre}
 
-**Verify that the NLB setup completed successfully.**
-1.  Check that the `ibm-cloud-provider-ip-*` pods for the NLB are in a **Running** status.
+## Verifying that the load balancer setup completed successfully
+{: #verify_nlb}
+
+1.  Check that the `ibm-cloud-provider-ip-*` pods for the load balancer are in a **Running** status.
     ```
     oc get pods -n ibm-system | grep ibm-cloud-provider-ip
     ```
@@ -147,10 +154,8 @@ The OpenVPN server could not be configured because the router IP address that is
     oc describe pod -n kube-system <pod_name>
     ```
     {: pre}
-3.  After you resolve the NLB pod issue, refresh the master to restart the NLB setup.
+3.  After you resolve the load balancer pod issue, refresh the master to restart the NLB setup.
     ```
     ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
     ```
     {: pre}
-
-

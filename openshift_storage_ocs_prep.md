@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-19"
 
 keywords: openshift, openshift container storage, ocs, roks
 
@@ -115,7 +115,7 @@ The OpenShift Container Storage add-on is available as a technology preview and 
 Before you install OCS in your VPC cluster, you must make sure that the following prerequisite conditions are met:
 
 1. [Install the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
-1. Create a [VPC cluster](/docs/containers?topic=containers-clusters) with at least three worker nodes. For high availability, create a cluster with at least one worker node per zone across three zones. Each worker node must have a minimum of 16 CPUs and 64 GB RAM.
+1. Create a [VPC cluster](/docs/openshift?topic=openshift-clusters) with at least three worker nodes. For high availability, create a cluster with at least one worker node per zone across three zones. Each worker node must have a minimum of 16 CPUs and 64 GB RAM.
 
 **Next steps**: [Install OCS in your cluster](/docs/openshift?topic=openshift-ocs-storage-install).
 
@@ -127,7 +127,7 @@ Before you install OCS in your cluster, you must make sure that the following pr
 
 1. [Install the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
 1. [Review the SDS worker node flavors](/docs/openshift?topic=openshift-planning_worker_nodes#sds-table).
-1. Create a [classic cluster](/docs/containers?topic=containers-clusters) with a minimum of one worker node per zone across three zones. Create a cluster with worker nodes of flavor type `mb4c.32x384.3.8tb.ssd` or `mb4c.20x64.2x1.9tb.ssd` that have the required local disks for OCS.
+1. Create a [classic cluster](/docs/openshift?topic=openshift-clusters) with a minimum of one worker node per zone across three zones. Create a cluster with worker nodes of flavor type `mb4c.32x384.3.8tb.ssd` or `mb4c.20x64.2x1.9tb.ssd` that have the required local disks for OCS.
 1. [Prepare your classic cluster](#ocs-cluster-prepare-classic).
 
 ### Classic: Preparing your cluster for an OpenShift Container Storage installation

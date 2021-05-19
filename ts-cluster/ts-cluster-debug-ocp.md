@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-18"
+lastupdated: "2021-05-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -111,7 +111,6 @@ Commonly used components include the following. If these components fail, review
 <img src="../images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> Some components, such as the OperatorHub, are available only in clusters that run {{site.data.keyword.openshiftshort}} version 4, or run in different projects in version 3.11. You can still troubleshoot {{site.data.keyword.openshiftshort}} components in 3.11 clusters, but the project and resource names might vary.
 {: note}
 
-
 ## Step 1: Check your account setup
 {: #oc-debug-acct}
 
@@ -124,7 +123,7 @@ Check that your {{site.data.keyword.cloud_notm}} account is set up properly. Som
 
 VPC clusters only, with public and private cloud service endpoints enabled: Check that a public gateway is enabled on each VPC subnet that your cluster is attached to. Public gateway are required for default components such as the web console and OperatorHub to use a secure, public connection to complete actions such as pulling images from remote, private registries.
 
-1. Use the {{site.data.keyword.cloud_notm}} console or CLI to [ensure that a public gateway isenabled on each subnet](/docs/containers?topic=containers-vpc-subnets#create_vpc_subnet) thatyour cluster is attached to.
+1. Use the {{site.data.keyword.cloud_notm}} console or CLI to [ensure that a public gateway isenabled on each subnet](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet) thatyour cluster is attached to.
 2. Restart the components for the **Developer catalog** in the web console.
     1.  Edit the configmap for the samples operator.
         ```
@@ -140,8 +139,8 @@ VPC clusters only, with public and private cloud service endpoints enabled: Chec
 Check any firewalls or network policies to verify that you do not block any ingress or egress traffic for the OperatorHub or other {{site.data.keyword.openshiftshort}} components.
 
 * If you generated an {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) allowlist by specifying which IP addresses have access to your cluster, you must [add the CIDRs of the {{site.data.keyword.openshiftlong_notm}} control plane for the zones in the region where your cluster is located to the allowlist](/docs/openshift?topic=openshift-firewall#iam_allowlist).
-* Classic only: If you have a firewall, [open the required ports and IP addresses in your firewall](/docs/containers?topic=containers-firewall).
-* VPC only: If you control traffic with VPC ACLs or security groups, make sure that you allow the minimum required [inbound and outbound rules](/docs/containers?topic=containers-firewall).
+* Classic only: If you have a firewall, [open the required ports and IP addresses in your firewall](/docs/openshift?topic=openshift-firewall).
+* VPC only: If you control traffic with VPC ACLs or security groups, make sure that you allow the minimum required [inbound and outbound rules](/docs/openshift?topic=openshift-firewall).
 
 
 ## Step 4: Check the cluster setup
@@ -197,7 +196,7 @@ Check the health of the {{site.data.keyword.openshiftshort}} component pods that
     oc get pods -n <project>
     ```
     {: pre}
-2.  If a pod is not in a **Running** status, describe the pod and check for the events. Forexample, you might see an error that the pod cannot be scheduled because of a lack of CPU ormemory resources, which is common if you have a cluster with less than 3 worker nodes. [Resizeyour worker pool](/docs/containers?topic=containers-add_workers) and try again.
+2.  If a pod is not in a **Running** status, describe the pod and check for the events. Forexample, you might see an error that the pod cannot be scheduled because of a lack of CPU ormemory resources, which is common if you have a cluster with less than 3 worker nodes. [Resizeyour worker pool](/docs/openshift?topic=openshift-add_workers) and try again.
     ```
     oc describe pod -n <project> <pod>
     ```
@@ -298,4 +297,4 @@ ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
 
 Try to use the {{site.data.keyword.openshiftshort}} component again. 
 
-If the error still exists, see [Feedback, questions, and support](/docs/containers?topic=containers-get-help).
+If the error still exists, see [Feedback, questions, and support](/docs/openshift?topic=openshift-get-help).
