@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-17"
+lastupdated: "2021-05-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -739,54 +739,6 @@ You can upgrade Portworx to the latest version.
    ```
    {: pre}
 
-
-### Removing Portworx from your cluster
-{: #remove_portworx}
-
-If you do not want to use Portworx in your cluster, you can uninstall the Helm chart and delete your Portworx instance.
-{: shortdesc}
-
-The following steps walk you through deleting the Portworx Helm chart from your cluster and deleting your Portworx instance. If you want to clean up your Portworx installation by removing your volumes from your apps, removing individual worker nodes from Portworx, or if you want to completely remove Portworx and all your volumes and data, see [Cleaning up your Portworx cluster](#portworx_cleanup).
-{: note}
-
-1. Find the installation name of your Portworx Helm chart.
-   ```
-   helm ls -A | grep portworx
-   ```
-   {: pre}
-
-   Example output:
-   ```
-   NAME        	 NAMESPACE  	REVISION	UPDATED                             	STATUS  	 CHART                              	APP VERSION
-   <release_name>	 <namespace>    	1     2020-01-27 09:18:33.046018 -0500 EST	deployed  portworx-1.0.0     default     
-   ```
-   {: screen}
-
-2. Delete Portworx by removing the Helm chart.
-   ```
-   helm uninstall <release_name>
-   ```
-   {: pre}
-
-3. Verify that the Portworx pods are removed.
-   ```
-   oc get pod -n kube-system | grep 'portworx\|stork'
-   ```
-   {: pre}
-
-   The removal of the pods is successful if no pods are displayed in your CLI output.
-
-4. Remove the Portworx service instance from your {{site.data.keyword.cloud_notm}} account.
-   1. From the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources), find the Portworx service that you created.
-   2. From the actions menu, click **Delete**.
-   3. Confirm the deletion of the service instance by clicking **Delete**.
-
-To stop billing for Portworx, you must remove the Portworx Helm installation from your cluster and remove the Portworx service instance from your {{site.data.keyword.cloud_notm}} account.
-{: important}
-
-**Next steps**
-[Cleaning up your Portworx volumes and cluster](#portworx_cleanup).
-
 <br />
 
 ## Creating a Portworx volume
@@ -1462,7 +1414,8 @@ Removing your Portworx cluster removes all the data from your Portworx cluster. 
 {: important}
 
 - **Remove a worker node from the Portworx cluster:** If you want to remove a worker node that runs Portworx and stores data in your Portworx cluster,  you must migrate existing pods to remaining worker nodes and then uninstall Portworx from the node. For more information, see [Decommission a Portworx node in Kubernetes](https://docs.portworx.com/portworx-install-with-kubernetes/operate-and-maintain-on-kubernetes/uninstall/decommission-a-node/){: external}.
-- **Remove the entire Portworx cluster:** When you remove a Portworx cluster, you can decide if you want to delete all your data at the same time. For more information, see [Uninstall from Kubernetes cluster](https://docs.portworx.com/portworx-install-with-kubernetes/operate-and-maintain-on-kubernetes/uninstall/uninstall/#delete-wipe-px-cluster-configuration){: external}.
+- **Remove the Portworx daemonset**: When you remove the Portworx daemon set, the Portworx containers are removed from your worker nodes. However, the Portworx configuration files remain on the worker nodes and the storage devices, and the data volumes are still intact. You can use the data volumes again if you restart the Portworx daemon set and containers by using the same configuration files. For more infrormation, see [Removing the Portworx daemon set](#remove_px_daemonset).
+- **Remove Portworx from your cluster:** If you want to remove Portworx and all of your data from your cluster, follow the steps to [remove Portworx](#remove_portworx) from your cluster.
 
 ### Removing the Portworx daemon set
 {: #remove_px_daemonset}
@@ -1492,6 +1445,78 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
 <br />
 
+### Removing Portworx from your cluster
+{: #remove_portworx}
+
+If you do not want to use Portworx in your cluster, you can uninstall the Helm chart and delete your Portworx instance.
+{: shortdesc}
+
+The following steps walk you through deleting the Portworx Helm chart from your cluster and deleting your Portworx instance. If you want to clean up your Portworx installation by removing your volumes from your apps, removing individual worker nodes from Portworx, or if you want to completely remove Portworx and all your volumes and data, see [Cleaning up your Portworx cluster](#portworx_cleanup).
+{: note}
+
+The following commands result in data loss.
+{: important}
+
+1. Follow the steps to [uninstall Portworx](https://docs.portworx.com/portworx-install-with-kubernetes/operate-and-maintain-on-kubernetes/uninstall/uninstall/#delete-wipe-px-cluster-configuration){: external}. Note that for private clusters, you must specify the `px-node-wiper` image from the private `icr.io` registry.
+   ```sh
+   curl  -fSsL https://install.portworx.com/px-wipe | bash -s -- --talismanimage icr.io/ext/portworx/talisman --talismantag 1.1.0 --wiperimage icr.io/ext/portworx/px-node-wiper --wipertag 2.5.0
+   ```
+   {: pre}
+
+2. Find the installation name of your Portworx Helm chart.
+   ```sh
+   helm ls -A | grep portworx
+   ```
+   {: pre}
+
+   Example output:
+   ```sh
+   NAME        	 NAMESPACE  	REVISION	UPDATED                             	STATUS  	 CHART                              	APP VERSION
+   <release_name>	 <namespace>    	1     2020-01-27 09:18:33.046018 -0500 EST	deployed  portworx-1.0.0     default     
+   ```
+   {: screen}
+
+3. Delete Portworx by removing the Helm chart.
+   ```sh
+   helm uninstall <release_name>
+   ```
+   {: pre}
+
+4. Verify that the Portworx pods are removed.
+   ```sh
+   oc get pod -n kube-system | grep 'portworx\|stork'
+   ```
+   {: pre}
+
+   The removal of the pods is successful if no pods are displayed in your CLI output.
+
+5. Delete the Portworx storage classes from your cluster.
+   ```sh
+   oc delete sc portworx-db-sc portworx-db-sc-remote portworx-db2-sc portworx-null-sc portworx-shared-sc
+   ```
+   {: pre}
+
+6. Verify that the storage classes are removed.
+   ```sh
+   oc get sc
+   ```
+   {: pre}
+
+7. Verify that the Portworx resources are removed.
+   ```sh
+   oc get all -A | grep portworx
+   ```
+   {: pre}
+
+7. Remove the Portworx service instance from your {{site.data.keyword.cloud_notm}} account.
+   1. From the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources), find the Portworx service that you created.
+   2. From the actions menu, click **Delete**.
+   3. Confirm the deletion of the service instance by clicking **Delete**.
+
+To stop billing for Portworx, you must remove the Portworx Helm installation from your cluster and remove the Portworx service instance from your {{site.data.keyword.cloud_notm}} account.
+{: important}
+
+<br />
 ## Getting help and support
 {: #portworx_help}
 

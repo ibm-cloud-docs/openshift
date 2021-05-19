@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-19"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -1148,9 +1148,9 @@ IBM Cloud Ingress versions
 2466
 
 Kubernetes Ingress versions
-0.35.0_1182_iks (default)
+0.45.0_1228_iks (default)
+0.35.0_1182_iks
 0.34.1_1191_iks
-0.33.0_1198_iks
 ```
 {: screen}Note that only the custom {{site.data.keyword.cloud_notm}} Ingress image versions are supported for {{site.data.keyword.openshiftshort}} clusters. For the changes that are included in each version of the {{site.data.keyword.cloud_notm}} Ingress image, see the [Ingress version changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).
 

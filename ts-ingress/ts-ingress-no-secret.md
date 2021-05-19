@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -91,10 +91,14 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
-
+  
+  
 # Why does no Ingress secret exist after cluster creation?
 {: #ingress_secret}
+
+**Infrastructure provider**:
+* <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {: tsSymptoms}
 When you run `ibmcloud oc ingress status -c <cluster_name_or_ID>`, one of the following messages continues to be displayed:
@@ -129,7 +133,10 @@ Also, if you used the same cluster name repeatedly, you might have a rate limiti
 2. [Assign the following IAM permissions](/docs/containers?topic=containers-users#add_users) to the user or functional user who sets the API key.
   * The **Administrator** or **Editor** platform access role for {{site.data.keyword.cloudcerts_short}} in **All resource groups**
   * The **Manager** service access role for {{site.data.keyword.cloudcerts_short}} in **All resource groups**
-3. The user must [reset the API key for the region and resource group](/docs/containers?topic=containers-users#api_key_most_cases).<p class="warning">When the API key is reset, the previous API key that was used for the region and resource group is deleted. Before you reset the API key, check whether you have other services that use the existing API key, such as a [key management service (KMS) provider](/docs/containers?topic=containers-encryption#keyprotect).</p>
+3. The user must [reset the API key for the region and resource group](/docs/containers?topic=containers-users#api_key_most_cases).
+
+  When the API key is reset, the previous API key that was used for the region and resource group is deleted. Before you reset the API key, check whether you have other services that use the existing API key, such as a [key management service (KMS) provider](/docs/containers?topic=containers-encryption#keyprotect).
+  {: important}
 4. After the cluster has access to the updated permissions in the API key, the creation of the {{site.data.keyword.cloudcerts_short}} instance is automatically triggered. Note that the {{site.data.keyword.cloudcerts_short}} instance might take up to an hour to become visible in the {{site.data.keyword.cloud_notm}} console.
 5. Verify that your cluster is automatically assigned a {{site.data.keyword.cloudcerts_short}} instance.
   1. In the {{site.data.keyword.cloud_notm}} console, navigate to your [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources){: external}.
@@ -141,5 +148,6 @@ Also, if you used the same cluster name repeatedly, you might have a rate limiti
   ibmcloud oc ingress secret ls -c <cluster_name_or_ID>
   ```
   {: pre}
+
 
 For more information, see [Managing TLS certificates and secrets](/docs/containers?topic=containers-ingress-types#manage_certs).

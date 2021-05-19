@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -91,8 +91,8 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
-
+  
+  
 # Common issues with worker nodes
 {: #common_worker_nodes_issues}
 
@@ -100,69 +100,156 @@ Review common error messages and learn how to resolve them. Messages might begin
 {: shortdesc}
 
 **Infrastructure provider**:
-  * <img src="../../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="../../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+  * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-  <table summary="The columns are read from left to right. The first column has the error message. The second column describes the error and provides resolution steps.">
-  <caption>Common error messages</caption>
-    <col width="25%">
-    <thead>
-    <th>Error message</th>
-    <th>Description and resolution</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Your account is currently prohibited from ordering 'Computing Instances'.</td>
-        <td>Your IBM Cloud infrastructure account might be restricted from ordering compute resources. Contact {{site.data.keyword.cloud_notm}} support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).</td>
-      </tr>
-      <tr>
-      <td>Could not place order.<br><br>
-      Could not place order. There are insufficient resources behind router 'router_name' to fulfill the request for the following guests: 'worker_id'.</td>
-      <td>The zone that you selected might not have enough infrastructure capacity to provision your worker nodes. Or you might have exceeded a limit in your IBM Cloud infrastructure account. To resolve, try one of the following options:
-      <ul><li>Infrastructure resource availability in zones can fluctuate often. Wait a few minutes and try again.</li>
-      <li>For a single zone cluster, create the cluster in a different zone. For a multizone cluster, add a zone to the cluster.</li>
-      <li>Specify a different pair of public and private VLANs for your worker nodes in your IBM Cloud infrastructure account. For worker nodes that are in a worker pool, you can use the <code>ibmcloud oc zone network-set</code> [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_network_set).</li>
-      <li>Contact your IBM Cloud infrastructure account manager to verify that you do not exceed an account limit, such as a global quota.</li>
-      <li>Open an [IBM Cloud infrastructure support case](/docs/containers?topic=containers-get-help)</li></ul></td>
-      </tr>
-      <tr>
-        <td>Could not obtain network VLAN with ID: <code>&lt;vlan id&gt;</code>.</td>
-        <td>Your worker node could not be provisioned because the selected VLAN ID could not be found for one of the following reasons:<ul><li>You might have specified the VLAN number instead of the VLAN ID. The VLAN number is 3 or 4 digits long, whereas the VLAN ID is 7 digits long. Run <code>ibmcloud oc vlan ls --zone &lt;zone&gt;</code> to retrieve the VLAN ID.<li>The VLAN ID might not be associated with the IBM Cloud infrastructure account that you use. Run <code>ibmcloud oc vlan ls --zone &lt;zone&gt;</code> to list available VLAN IDs for your account. To change the IBM Cloud infrastructure account, see [`ibmcloud oc credential set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set). </ul></td>
-      </tr>
-      <tr>
-        <td>The location provided for this order is invalid.</td>
-        <td>Your IBM Cloud infrastructure is not set up to order compute resources in the selected data center. Contact [{{site.data.keyword.cloud_notm}} support](/docs/containers?topic=containers-get-help) to verify that you account is set up correctly.</td>
-       </tr>
-       <tr>
-        <td>The user does not have the necessary {{site.data.keyword.cloud_notm}} classic infrastructure permissions to add servers
-        </br></br>
-        'Item' must be ordered with permission.
-        </br></br>
-        The IBM Cloud infrastructure credentials could not be validated.<br><br>
-        '<Provider>' infrastructure request not authorized</td>
-        <td>You might not have the required permissions to perform the action in your IBM Cloud infrastructure portfolio, or you are using the wrong infrastructure credentials. See [Setting up the API key to enable access to the infrastructure portfolio](/docs/containers?topic=containers-users#api_key).</td>
-      </tr>
-      <tr>
-       <td>Worker unable to talk to {{site.data.keyword.containerlong_notm}} servers. Please verify your firewall setup is allowing traffic from this worker.
-       <td><ul><li>If you have a firewall, [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/containers?topic=containers-firewall#firewall_outbound).</li></ul></td>
-     </tr>
-  <tr>
-    <td>The worker did not respond to the soft reboot request. A hard reboot might be necessary.</td>
-    <td>Although you issued a reboot on your worker node, the worker node is unresponsive. You can rerun the [reboot command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot) with the `--hard` flag to power off the worker node, or run the `worker reload` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).</td>
-  </tr>
-      <tr>
-  <td>Cannot create IMS portal token, as no IMS account is linked to the selected BSS account</br></br>Provided user not found or active</br></br>User account is currently cancel_pending.</br></br>The worker node instance '&lt;ID&gt;' cannot be found. Review '&lt;provider&gt;' infrastructure user permissions.<br><br>The worker node instance cannot be found. Review '&lt;provider&gt;' infrastructure user permissions.<br><br>The worker node instance cannot be identified. Review '&lt;provider&gt;' infrastructure user permissions.</td>
-  <td>The owner of the API key that is used to access the IBM Cloud infrastructure portfolio does not have the required permissions to perform the action, or might be pending deletion.</br></br><strong>As the user</strong>, follow these steps:
-  <ol><li>If you have access to multiple accounts, make sure that you are logged in to the account where you want to work with {{site.data.keyword.openshiftlong_notm}}. </li>
-  <li>Run <code>ibmcloud oc api-key info --cluster &lt;cluster_name_or_ID&gt;</code> to view the current API key owner that is used to access the IBM Cloud infrastructure portfolio. </li>
-  <li>Run <code>ibmcloud account list</code> to view the owner of the {{site.data.keyword.cloud_notm}} account that you currently use. </li>
-  <li>Contact the owner of the {{site.data.keyword.cloud_notm}} account and report that the API key owner has insufficient permissions in IBM Cloud infrastructure or might be pending to be deleted. </li></ol>
-  </br><strong>As the account owner</strong>, follow these steps:
-  <ol><li>Review the [required classic permissions in IBM Cloud infrastructure](/docs/containers?topic=containers-users#infra_access) to perform the action that previously failed. For the VPC infrastructure provider, the API key owner must have the **Administrator** platform access role.</li>
-  <li>Fix the permissions of the API key owner or create a new API key by using the [<code>ibmcloud oc api-key reset --region &lt;region&gt;</code>](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset) command. </li>
-  <li>If you or another account admin manually set IBM Cloud infrastructure credentials in your account, run [<code>ibmcloud oc credential unset --region &lt;region&gt;</code>](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_unset) to remove the credentials from your account.</li></ol></td>
-  </tr>
-    </tbody>
-  </table>
+## Account prohibited from ordering
+{: #order-prohibit}
+
+**Message**:
+
+```
+Your account is currently prohibited from ordering 'Computing Instances'.
+```
+{: screen}
+
+**Description and resolution**:
+
+Your IBM Cloud infrastructure account might be restricted from ordering compute resources. Contact {{site.data.keyword.cloud_notm}} support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).
+
+## Could not place order
+{: #order-not-placed}
+
+**Message**:
+
+```
+Could not place order.
+
+Could not place order. There are insufficient resources behind router 'router_name' to fulfill the request for the following guests: 'worker_id'.
+```
+{: screen}
+
+**Description and resolution**:
+The zone that you selected might not have enough infrastructure capacity to provision your worker nodes. Or, you might have exceeded a limit in your IBM Cloud infrastructure account. 
+
+To resolve, try one of the following options:
+* Infrastructure resource availability in zones can fluctuate often. Wait a few minutes and try again.
+* For a single zone cluster, create the cluster in a different zone. For a multizone cluster, add a zone to the cluster.
+* Specify a different pair of public and private VLANs for your worker nodes in your IBM Cloud infrastructure account. For worker nodes that are in a worker pool, you can use the `ibmcloud oc zone network-set` [command](<opens</li>
+* Contact your IBM Cloud infrastructure account manager to verify that you do not exceed an account limit, such as a global quota.
+* Open an [IBM Cloud infrastructure support case](/docs/containers?topic=containers-get-help).
+
+## Could not obtain network VLAN
+{: #no-network-vlan}
+
+**Message**:
+
+```
+Could not obtain network VLAN with ID: <vlan-id>
+```
+{: screen}
+
+**Description and resolution**:
+
+Your worker node could not be provisioned because the selected VLAN ID could not be found for one of the following reasons:
+* You might have specified the VLAN number instead of the VLAN ID. The VLAN number is 3 or 4 digits long, whereas the VLAN ID is 7 digits long. To retrieve the VLAN ID, run `ibmcloud oc vlan ls --zone <zone>`.
+* The VLAN ID might not be associated with the IBM Cloud infrastructure account that you use. To list available VLAN IDs for your account, run `ibmcloud oc vlan ls --zone <zone>` . To change the IBM Cloud infrastructure account, see [`ibmcloud oc credential set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set).
+
+## Location invalid
+{: #location-invalid}
+
+**Message**:
+
+```
+The location provided for this order is invalid
+```
+{: screen}
+
+**Description and resolution**:
+
+Your IBM Cloud infrastructure is not set up to order compute resources in the selected data center. Contact [{{site.data.keyword.cloud_notm}} support](/docs/containers?topic=containers-get-help) to verify that you account is set up correctly.
+
+## Permissions error
+{: #permissions-error}
+
+**Message**:
+
+```
+The user does not have the necessary {{site.data.keyword.cloud_notm}} classic infrastructure permissions to add servers
+
+'Item' must be ordered with permission.
+
+The IBM Cloud infrastructure credentials could not be validated.
+
+'<Provider>' infrastructure request not authorized
+```
+{: screen}
+
+**Description and resolution**:
+
+You might not have the required permissions to perform the action in your IBM Cloud infrastructure portfolio, or you are using the wrong infrastructure credentials. See [Setting up the API key to enable access to the infrastructure portfolio](/docs/containers?topic=containers-users#api_key).
+
+## Firewall error
+{: #firewall-error}
+
+**Message**:
+
+```
+Worker unable to talk to {{site.data.keyword.containerlong_notm}} servers. Please verify your firewall setup is allowing traffic from this worker.
+```
+{: screen}
+
+**Description and resolution**:
+
+If you have a firewall, [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/containers?topic=containers-firewall#firewall_outbound).
 
 
+
+## Hard reboot
+{: #hard-reboot}
+
+**Message**:
+
+```
+The worker did not respond to the soft reboot request. A hard reboot might be necessary.
+```
+{: screen}
+
+**Description and resolution**:
+
+Although you issued a reboot on your worker node, the worker node is unresponsive. You can rerun the [reboot command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot) with the `--hard` flag to power off the worker node, or run the `worker reload` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
+
+## Instance cannot be found
+{: #instance-not-found}
+
+**Message**:
+
+```
+Cannot create IMS portal token, as no IMS account is linked to the selected BSS account
+
+Provided user not found or active
+
+User account is currently cancel_pending.
+
+The worker node instance '<ID>' cannot be found. Review '<provider>' infrastructure user permissions.
+
+The worker node instance cannot be found. Review '<provider>' infrastructure user permissions.
+
+The worker node instance cannot be identified. Review '<provider>' infrastructure user permissions.
+```
+{: screen}
+
+**Description and resolution**:
+
+The owner of the API key that is used to access the IBM Cloud infrastructure portfolio does not have the required permissions to perform the action, or might be pending deletion.
+
+As the **user**, follow these steps:
+1.  If you have access to multiple accounts, make sure that you are logged in to the account where you want to work with {{site.data.keyword.openshiftlong_notm}}.
+2.  Run `ibmcloud oc api-key info --cluster <cluster_name_or_ID>` to view the current API key owner that is used to access the IBM Cloud infrastructure portfolio. </li>
+3.  Run `ibmcloud account list` to view the owner of the {{site.data.keyword.cloud_notm}} account that you currently use.
+4.  Contact the owner of the {{site.data.keyword.cloud_notm}} account and report that the API key owner has insufficient permissions in IBM Cloud infrastructure or might be pending to be deleted.
+
+As the **account owner**, follow these steps:
+1.  Review the [required classic permissions in IBM Cloud infrastructure](/docs/containers?topic=containers-users#infra_access) to perform the action that previously failed. For the VPC infrastructure provider, the API key owner must have the **Administrator** platform access role.
+2.  Fix the permissions of the API key owner or create a new API key by using the [`ibmcloud oc api-key reset --region <region>`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset) command.
+3.  If you or another account admin manually set IBM Cloud infrastructure credentials in your account, run [`ibmcloud oc credential unset --region <region>`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_unset) to remove the credentials from your account.

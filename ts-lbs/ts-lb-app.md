@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -91,15 +91,15 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
-
+  
+  
 # Classic clusters: Why can't my app connect via a network load balancer (NLB) service?
 {: #cs_loadbalancer_fails}
 
-**Infrastructure provider**: <img src="../../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
 {: tsSymptoms}
-<img src="../../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> You publicly exposed your app by creating an NLB service in your classic cluster. When you tried to connect to your app by using the public IP address of the NLB, the connection failed or timed out.
+You exposed your app by creating an NLB service in your classic cluster. When you tried to connect to your app by using the public IP address of the NLB, the connection failed or timed out.
 
 {: tsCauses}
 Your NLB service might not be working properly for one of the following reasons:
@@ -109,8 +109,6 @@ Your NLB service might not be working properly for one of the following reasons:
 -   The configuration script for your NLB service includes errors.
 
 {: tsResolve}
-To troubleshoot your NLB service:
-
 1.  Check that you set up a standard cluster that is fully deployed and has at least two worker nodes to ensure high availability for your NLB service.
 
   ```
@@ -193,5 +191,3 @@ To troubleshoot your NLB service:
         {: pre}
 
     2.  Check that your custom domain is mapped to the portable public IP address of your NLB service in the Pointer record (PTR).
-
-

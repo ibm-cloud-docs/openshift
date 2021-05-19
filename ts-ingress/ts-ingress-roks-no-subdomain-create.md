@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -91,14 +91,14 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
+  
 
 # Why does no Ingress subdomain exist after cluster creation?
 {: #ingress_subdomain}
 
 **Infrastructure provider**:
-  * <img src="../../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="../../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+  * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {: tsSymptoms}
 You create a cluster and run `ibmcloud oc cluster get --cluster <cluster>` to check its status. The cluster **State** is `normal`, but the **Ingress Subdomain** and **Ingress Secret** are not available.
@@ -106,13 +106,25 @@ You create a cluster and run `ibmcloud oc cluster get --cluster <cluster>` to ch
 {: tsCauses}
 Even if the cluster is in a `normal` state, the Ingress subdomain and secret might still be in progress. The Ingress subdomain and secret creation follows a process that might take more than 15 minutes to complete:
 
+<img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters**:
+
 1. When worker nodes are fully deployed and ready on the VLANs, a portable public and a portable private subnet for the VLANs are ordered.
 2. After the portable subnet orders are successfully fulfilled, the `ibm-cloud-provider-vlan-ip-config` config map is updated with the portable public and portable private IP addresses.
 3. When the `ibm-cloud-provider-vlan-ip-config` config map is updated, the public ALB (version 3.11 clusters) or router for the Ingress controller (version 4 clusters) is triggered for creation.
-4. A load balancer service that exposes the ALB or router is created and assigned an IP address (classic clusters) or a hostname (VPC clusters).
-5. The load balancer IP address or hostname is used to register the Ingress subdomain in Cloudflare. Cloudflare might have latency during the registration process.
+4. A load balancer service that exposes the ALB or router is created and assigned an IP address.
+5. The load balancer IP address is used to register the Ingress subdomain in Cloudflare. Cloudflare might have latency during the registration process.
 
-Creating a cluster after deleting a cluster the same or similar name? See [No Ingress subdomain exists after you create clusters of the same or similar name](#cs_rate_limit) instead.
+If you create a classic cluster that is connected to private VLANs only, or if you create a free cluster, no Ingress subdomain or secret are created.
+{: note}
+
+<img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC clusters** (version 4 only):
+
+1. When you create a VPC cluster, one public and one private VPC load balancer are automatically created outside of your cluster in your VPC.
+2. One public router per zone is triggered for creation.
+3. A load balancer service that exposes the router is created and assigned a hostname.
+4. The load balancer hostname is used to register the Ingress subdomain in Cloudflare. Cloudflare might have latency during the registration process.
+
+Creating a cluster after deleting a cluster the same or similar name? See [No Ingress subdomain exists after you create clusters of the same or similar name](docs/openshift?topic=openshift-cs_rate_limit) instead.
 {: tip}
 
 {: tsResolve}
@@ -136,14 +148,14 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
    ```
    {: screen}
 
-3. Get the details of the `ibm-cloud-provider-vlan-ip-config` config map.
-  * If the config map shows IP addresses, continue to the next step.
-  * If the **Events** section shows a warning message similar to `ErrorSubnetLimitReached: There are already the maximum number of subnets permitted in this VLAN`, see the [VLAN capacity troubleshooting topic](/docs/containers?topic=containers-cs_troubleshoot_debug_ingress#cs_subnet_limit).
-
+3. Verify that the prerequisite steps for your ALB creation are completed.
+  * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters**: Get the details of the `ibm-cloud-provider-vlan-ip-config` config map.
     ```
-    kubectl describe cm ibm-cloud-provider-vlan-ip-config -n kube-system
+    oc describe cm ibm-cloud-provider-vlan-ip-config -n kube-system
     ```
     {: pre}
+    * If the config map shows IP addresses, continue to the next step.
+    * If the **Events** section shows a warning message similar to `ErrorSubnetLimitReached: There are already the maximum number of subnets permitted in this VLAN`, see the [VLAN capacity troubleshooting topic](/docs/openshift?topic=openshift-cs_subnet_limit).
 
     Example output of a config map populated with IP addresses:
     ```
@@ -220,12 +232,18 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
     Events:  <none>
     ```
     {: screen}
+  * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC clusters** (version 4 only): Verify that the VPC load balancer for your routers exists. In the output, look for the VPC load balancer **Name** that starts with `kube-<cluster_ID>`. If you did not install the `infrastructure-service` plug-in, install it by running `ibmcloud plugin install infrastructure-service`.
+    ```
+    ibmcloud is load-balancers
+    ```
+    {: pre}
+    <p class="note">Even though the VPC load balancer is listed, its DNS entry might still be registering. When a VPC load balancer is created, the hostname is registered through a public DNS. In some cases, it can take several minutes for this DNS entry to be replicated to the specific DNS that your client is using.</p>
 
-4. Verify that the ALB (version 3.11 clusters) or router for the Ingress controller (version 4 clusters) is successfully created.
+4. Verify that the router for the Ingress controller (version 4 clusters) or ALB (version 3.11 clusters) is successfully created.
   * **Version 4:**
     1. Check whether a router deployment exists for your cluster.
       * If a router deployment is listed, continue to the next step.
-      * If no router deployment is created after several minutes, [review ways to get help](/docs/containers?topic=containers-get-help).
+      * If no router deployment is created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
 
         ```
         oc get deployment -n openshift-ingress
@@ -241,7 +259,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 
     2. Check whether the router's load balancer service exists and is assigned a public external IP address (classic clusters) or a hostname (VPC clusters).
       * If a service that is named `router-default` is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
-      * If no `router-default` service is created after several minutes, [review ways to get help](/docs/containers?topic=containers-get-help).
+      * If no `router-default` service is created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
 
         ```
         oc get svc -n openshift-ingress
@@ -255,10 +273,10 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
         router-internal-default   ClusterIP      172.21.51.30    <none>         80/TCP,443/TCP,1936/TCP      26m
         ```
         {: screen}
-  * **Version 4:**
-    1. Check whether an ALB exists for your cluster and that the ALB has a public IP address (classic clusters) or a hostname (VPC clusters) assigned.
-      * If a public ALB is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
-      * If no ALBs are created after several minutes, [review ways to get help](/docs/containers?topic=containers-get-help).
+  * **Version 3.11:**
+    1. Check whether an ALB exists for your cluster and that the ALB has a public IP address assigned.
+      * If a public ALB is listed and is assigned an IP address, continue to the next step.
+      * If no ALBs are created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
 
         ```
         ibmcloud oc ingress alb ls -c <cluster_name_or_ID>
@@ -273,9 +291,9 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
         ```
         {: screen}
 
-    2. Check whether the `LoadBalancer` service that exposes the ALB exists and is assigned the same IP address (classic clusters) or a hostname (VPC clusters) as the public ALB.
-      * If a `LoadBalancer` service is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
-      * If no `LoadBalancer` services are created after several minutes, [review ways to get help](/docs/containers?topic=containers-get-help).
+    2. Check whether the `LoadBalancer` service that exposes the ALB exists and is assigned the same IP address as the public ALB.
+      * If a `LoadBalancer` service is listed and is assigned an IP address, continue to the next step.
+      * If no `LoadBalancer` services are created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
 
         ```
         kubectl get svc -n kube-system | grep LoadBalancer
@@ -288,7 +306,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
         ```
         {: screen}
 
-5. Check again whether the Ingress subdomain and secret are created. If they are not available, but you verified that all of the components in steps 1 - 3 exist, [review ways to get help](/docs/containers?topic=containers-get-help).
+5. Check again whether the Ingress subdomain and secret are created. If they are not available, but you verified that all of the components in steps 1 - 3 exist, [review ways to get help](/docs/openshift?topic=openshift-get-help).
   ```
   ibmcloud oc cluster get -c <cluster_name_or_ID>
   ```

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-17"
 
-keywords: openshift, roks, rhoks, rhos
+keywords: openshift
 
 subcollection: openshift
 content-type: troubleshoot
@@ -91,33 +91,44 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
-
-# Why does the OpenVPN server have NLB DNS errors?
-{: #rhoks_ts_openvpn_dns}
+  
+  
+# Why can't I install a Helm chart with updated configuration values?
+{: #ts-app-helm-install}
 
 **Infrastructure provider**:
-  * <img src="../../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="../../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+  * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {: tsSymptoms}
-Could not create a domain name service for the network load balancer (`ibmcloud oc nlb-dns create`) with the following error message:<ul>
-<li><code>This action requires the Editor role for the cluster in IBM Cloud Container Service. Contact the IBM Cloud account administrator and request the required Identity and Access user role. (A0008)</code></li>
-<li><code>The specified cluster could not be found. (A0006)</code></li>
-<li><code>The input parameters in the request body are either incomplete or in the wrong format. Be sure to include all required parameters in your request in JSON format. (E0011)</code></li></ul>
+When you try to install an updated Helm chart by running `helm install <release_name> <helm_repo>/<chart_name> -f config.yaml`, you get the following error message.
+
+```
+Error: failed to download "<helm_repo>/<chart_name>"
+```
+{: screen}
 
 {: tsCauses}
-The OpenVPN server could not be configured because a domain name service (DNS) was not created for the network load balancer (NLB).
+You might need to update your Helm installation because of the following reasons:
+* The URL to the {{site.data.keyword.cloud_notm}} Helm repository that is configured on your local machine might be incorrect.
+* The name of your local Helm repository might not match the Helm repository name or URL of the installation command that you copied from the Helm chart instructions.
+* The Helm chart that you want to install does not support the version of Helm that you installed on your local machine.
 
 {: tsResolve}
-1.  Check that you have the correct permissions in {{site.data.keyword.cloud_notm}} IAM. If not, contact your account administrator to [assign you the appropriate IAM platform or service access role](/docs/openshift?topic=openshift-users#platform).
+To troubleshoot your Helm chart:
+
+1.  List the {{site.data.keyword.cloud_notm}} Helm repositories currently available in your Helm instance.
     ```
-    ibmcloud iam user-policies <my_user_name@example.com>
-    ```
-    {: pre}
-2.  For cluster not found or incorrect input parameter errors, continue to the next step.
-3.  Refresh the master so that NLB DNS creation operation is retried.
-    ```
-    ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
+    helm repo list
     ```
     {: pre}
+2.  Remove the {{site.data.keyword.cloud_notm}} Helm repositories.
+    ```
+    helm repo remove <helm_repo>
+    ```
+    {: pre}
+3.  Reinstall the Helm version that matches a supported version of the Helm chart that you want to install. As part of the reinstallation, you add and update the {{site.data.keyword.cloud_notm}} Helm repositories. For more information, see [Installing Helm v3 in your cluster](/docs/containers?topic=containers-helm#install_v3).
+
+Now, you can follow the instructions in the Helm chart `README` to install the Helm chart in your cluster.
+
+<br />

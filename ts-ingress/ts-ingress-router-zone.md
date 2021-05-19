@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -91,15 +91,14 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
+  
 
-# Version 4: Why doesn't the router for Ingress controller deploy in a zone?
+# Version 4 classic clusters: Why doesn't the router for the Ingress controller deploy in a zone?
 {: #cs_subnet_limit_43}
 
-**Infrastructure provider**: <img src="../../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-
-<img src="../../images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> <img src="../../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This troubleshooting topic applies only to {{site.data.keyword.openshiftshort}} clusters on classic infrastructure that run version 4.
-{: note}
+**Infrastructure provider and version**:
+* <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="../images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 4
 
 {: tsSymptoms}
 When you run `oc get svc -n openshift-ingress`, one or more zones has no public router.
@@ -122,14 +121,21 @@ When you run `oc get svc -n openshift-ingress`, one or more zones has no public 
   {: screen}
 
 {: tsCauses}
-Router services may deploy for one of the following reasons:
+Router services might not deploy for one of the following reasons:
 
 * **If no router services are deployed or router services are not assigned an external IP address**: In standard clusters, the first time that you create a cluster in a zone, a public VLAN and a private VLAN in that zone are automatically provisioned for you in your IBM Cloud infrastructure account. In that zone, 1 public portable subnet is requested on the public VLAN that you specify and 1 private portable subnet is requested on the private VLAN that you specify. For {{site.data.keyword.openshiftlong_notm}}, VLANs have a limit of 40 subnets. If the cluster's VLAN in a zone already reached that limit, the **Ingress Subdomain** fails to provision and the default public router for the Ingress controller fails to provision. To view how many subnets a VLAN has, from the [IBM Cloud infrastructure console](https://cloud.ibm.com/classic?), select **Network** > **IP Management** > **VLANs**. Click the **VLAN Number** of the VLAN that you used to create your cluster. Review the **Subnets** section to see whether 40 or more subnets exist.
 
 * **If one zone has no router service**: When your router services are created, they are automatically spread across the zones in your cluster. If the network for the first zone that your cluster was created with is not ready when the router services are created, the router service for that zone might be placed in a different zone. Two router services might be created in one zone, and no router service is created in the initial zone.
 
 {: tsResolve}
-**To resolve VLAN issues**:
+Resolve VLAN issues for router services that have no IP address, or multizone router service issues for zones with no router services.
+
+## Resolving VLAN issues
+{: #resolve_vlan}
+
+To resolve VLAN issues for router services that have no IP address:
+{: shortdesc}
+
 Option 1: If you need a new VLAN, order one by [contacting {{site.data.keyword.cloud_notm}} support](/docs/vlans?topic=vlans-ordering-premium-vlans#ordering-premium-vlans). Then, [create a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) that uses this new VLAN.
 
 Option 2: If you have another VLAN that is available, you can [set up VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning) in your existing cluster. To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get). Then, you can add new worker nodes to the cluster that use the other VLAN with available subnets. Create at least 2 worker nodes per zone. Now, IP addresses are available so that the routers can automatically deploy.
@@ -160,7 +166,11 @@ Option 3: If you are not using all the subnets in the VLAN, you can reuse subnet
   * **No Ingress subdomain**: Run `ibmcloud oc cluster get --cluster <cluster>` to verify that the **Ingress Subdomain** is populated.
   * **A router does not deploy in a zone**: Run `oc get svc -n openshift-ingress` to verify that the missing router is deployed with an external IP address.
 
-**To resolve multizone router service deployment issues**: Create a router service in the zone where a router service did not deploy. If a duplicate router service was initially created in a different zone, do **not** delete that router service.
+## Resolving multizone router service deployment issues
+{: #resolve_mzr_router}
+
+Create a router service in the zone where a router service did not deploy. If a duplicate router service was initially created in a different zone, do **not** delete that router service.
+{: shortdesc}
 
 1. Create a YAML for a router service in the zone where a router service did not deploy. Name the router service `router-<zone>`.
   ```yaml
@@ -213,5 +223,3 @@ Option 3: If you are not using all the subnets in the VLAN, you can reuse subnet
   ibmcloud oc nlb-dns add -c <cluster_name_or_ID> --ip <router_svc_ip> --nlb-host <router_subdomain>
   ```
   {: pre}
-
-

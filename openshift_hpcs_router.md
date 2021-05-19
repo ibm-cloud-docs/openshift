@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-19"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -120,7 +120,7 @@ Before you begin, complete the following {{site.data.keyword.hscrypto}} and {{si
 {: shortdesc}
 
 1. [Provision an {{site.data.keyword.hscrypto}} instance](/docs/hs-crypto?topic=hs-crypto-get-started).
-2. Make sure that you have the {{site.data.keyword.cloud_notm}} IAM [**Administrator** platform access role](/docs/containers?topic=containers-users#platform) for {{site.data.keyword.containershort_notm}} for the cluster and the [**Manager** service access role](/docs/containers?topic=containers-users#platform) {{site.data.keyword.containershort_notm}} for the cluster in all namespaces (projects).
+2. Make sure that you have the {{site.data.keyword.cloud_notm}} IAM [**Administrator** platform access role](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containershort_notm}} for the cluster and the [**Manager** service access role](/docs/openshift?topic=openshift-users#platform) {{site.data.keyword.containershort_notm}} for the cluster in all namespaces (projects).
 3. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that the {{site.data.keyword.cloud_notm}} HPCS Router is supported only for {{site.data.keyword.openshiftshort}} version 4.5 and later.
 
 ## Step 1: Set up default router sharding
