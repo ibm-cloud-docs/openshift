@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-18"
+lastupdated: "2021-05-20"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -1029,6 +1030,9 @@ To access the storage from your app, you must mount the PVC to your app.
 
 PX-Backup is a Portworx proprietary backup solution that is compatible with any {{site.data.keyword.openshiftlong_notm}} cluster. You can use PX-Backup to back up and restore {{site.data.keyword.openshiftlong_notm}} resources, apps and data across multiple clusters. For more information on PX-Backup, see [Understanding PX-Backup](https://backup.docs.portworx.com/understand/){: external}.
 {: shortdesc}
+
+To back up the data in your persistent volumes, you must have a storage class that supports snapshots in your cluster. Clusters with Portworx Enterprise have storage classes available that support snapshots by default. However, for clusters that do not have Portworx Enterprise, you must have a storage classes with snapshot support to back up your persistent volume data. The {{site.data.keyword.block_storage_is_short}} driver, {{site.data.keyword.blockstorageshort}} driver, and the {{site.data.keyword.filestorage_short}} driver do not have storage classes that support snapshots. If you have workloads that use these drivers, you can use PX-Backup to back up your apps, but not the data in the persistent volumes. For more information see [Backing up and restoring cluster data with PX-Backup](#px-backup-and-restore).
+{: important}
 
 ### Installing PX-Backup on a {{site.data.keyword.openshiftlong_notm}} cluster
 {: #px-backup-install}
