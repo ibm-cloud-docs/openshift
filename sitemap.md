@@ -488,8 +488,8 @@ subcollection: openshift
   * [Removing specific permissions](/docs/openshift?topic=openshift-users#remove_permissions)
 
 
-## Managing the cluster lifecycle
-{: #sitemap_managing_the_cluster_lifecycle}
+## Managing the cluster and worker node lifecycle
+{: #sitemap_managing_the_cluster_and_worker_node_lifecycle}
 
 
 [Adding worker nodes and zones to clusters](/docs/openshift?topic=openshift-add_workers)

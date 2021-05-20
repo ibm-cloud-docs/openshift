@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-05-20"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -229,7 +230,6 @@ ibmcloud oc cluster addon disable static-route --cluster CLUSTER
 
 </br>
 
-</br>
 
 ### `ibmcloud oc cluster addon enable`
 {: #cs_cluster_addon_enable}
@@ -281,7 +281,8 @@ ibmcloud oc cluster addon enable image-key-synchronizer --cluster CLUSTER [--ver
 {: pre}
 
 **Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic  
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -391,6 +392,9 @@ ibmcloud oc cluster addon enable static-route --cluster CLUSTER [--version VERSI
 </dl>
 
 </br>
+
+
+
 
 ### `ibmcloud oc cluster addon ls`
 {: #cs_cluster_addons}

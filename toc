@@ -69,7 +69,7 @@ Red Hat OpenShift on IBM Cloud
             openshift_users.md
 
         {: .topicgroup}
-        Managing the cluster lifecycle
+        Managing the cluster and worker node lifecycle
             openshift_worker_add.md
             openshift_cluster_scaling.md
             openshift_cluster_update.md
