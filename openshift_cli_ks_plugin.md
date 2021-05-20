@@ -4029,7 +4029,7 @@ ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER (--lb-host VPC_ALB_HOSTNAM
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>Required: The name or ID of the cluster.</dd>
 
-<dt><code>--lb-host <em>VPC_ALB_HOSTNAME</em> | <code>--ip <em>VPC_NLB_IP</em></code></dt>
+<dt><code>--lb-host <em>VPC_ALB_HOSTNAME</em></code> | <code>--ip <em>VPC_NLB_IP</em></code></dt>
 <dd>For VPC application load balancers, the load balancer hostname. To see load balancer hostnames, run `oc get svc -o wide`. For VPC network load balancers, the external IP addresses. To specify multiple IP addresses, use multiple `--ip` flags. To see load balancer IP addresses, run `oc get svc -o wide`.</dd>
 
 <dt><code>--dns-type <em>public</em></code></dt>
@@ -5239,7 +5239,7 @@ ibmcloud oc vpcs [--provider vpc-gen2] [--output json] [-q]
 
 **Command options**:
 <dl>
-<dt><code>--provider vpc-gen2</em></code></dt>
+<dt><code>--provider vpc-gen2</code></dt>
 <dd>The infrastructure provider type ID for the VPC worker node machine. `vpc-gen2` for VPC Generation 2 compute is supported.</dd>
 
 <dt><code>--output json</code></dt>
