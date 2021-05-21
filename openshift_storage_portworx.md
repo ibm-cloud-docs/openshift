@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-20"
+lastupdated: "2021-05-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -630,7 +630,7 @@ To install Portworx:
 1. Click **Create** to start the Portworx installation in your cluster. This process might take a few minutes to complete. The service details page opens with instructions for how to verify your Portworx installation, create a persistent volume claim (PVC), and mount the PVC to an app.
 1. From the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources), find the Portworx service that you created.
 1. Review the **Status** column to see if the installation succeeded or failed. The status might take a few minutes to update.
-1. If the **Status** changes to `Provision failure`, follow the [instructions](/docs/openshift?topic=openshift-cs_troubleshoot_storage#debug-portworx) to start troubleshooting why your installation failed.
+1. If the **Status** changes to `Provision failure`, follow the [instructions](/docs/containers?topic=containers-debug-portworx) to start troubleshooting why your installation failed.
 1. If the **Status** changes to `Provisioned`, verify that your Portworx installation completed successfully and that all your local disks were recognized and added to the Portworx storage layer.
    1. List the Portworx pods in the `kube-system` project. The installation is successful when you see one or more `portworx`, `stork`, and `stork-scheduler` pods. The number of pods equals the number of worker nodes that are included in your Portworx cluster. All pods must be in a `Running` state.
       ```

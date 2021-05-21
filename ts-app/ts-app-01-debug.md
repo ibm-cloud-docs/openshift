@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-17"
+lastupdated: "2021-05-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -78,6 +78,7 @@ content-type: troubleshoot
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -115,7 +116,7 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
     ```
     {: pre}
 
-2. [Check whether the containers are stuck in the `ContainerCreating` state](/docs/containers?topic=containers-block_app_failures).
+2. [Check whether the containers are stuck in the `ContainerCreating` state](/docs/containers?topic=containers-stuck_creating_state).
 
 3. Check whether the cluster is in the `Critical` state. If the cluster is in a `Critical` state, check the firewall rules and verify that the master can communicate with the worker nodes.
 

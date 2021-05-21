@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-17"
+lastupdated: "2021-05-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -78,6 +78,7 @@ content-type: troubleshoot
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -121,7 +122,7 @@ Start by verifying that the information that you entered in the {{site.data.keyw
 {: shortdesc}
 
 1. Verify that the cluster where you want to install Portworx is located in the {{site.data.keyword.cloud_notm}} region and resource group that you selected.
-   ```
+   ```sh
    ibmcloud oc cluster get --cluster <cluster_name_or_ID>
    ```
    {: pre}
@@ -131,14 +132,14 @@ Start by verifying that the information that you entered in the {{site.data.keyw
    2. Add the etcd endpoint in the format `etcd:<etcd_endpoint1>;etcd:<etcd_endpoint2>`. If you have more than one endpoint, include all endpoints and separate them with a semicolon (;).
 
       Example endpoint:
-      ```
+      ```sh
       etcd:https://1ab234c5-12a1-1234-a123.databases.appdomain.cloud:32059
       ```
       {: screen}
 4. Verify that you stored the credentials to access your Databases for etcd service instance in a Kubernetes secret in your cluster. For more information, see [Setting up a Databases for etcd service instance for Portworx metadata](/docs/containers?topic=containers-portworx#portworx_database).
    1. Review steps 4-6 and verify that you retrieved the correct username, password, and certificate.
    2. List the secrets in your cluster and look for the secret that holds the credentials of your Databases for etcd service instance.
-      ```
+      ```sh
       oc get secrets
       ```
       {: pre}

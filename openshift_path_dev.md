@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-21"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, dev
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -437,7 +438,7 @@ Publicly expose an app in your cluster to the internet or privately expose an ap
 2. **Requirements**: Determine your [requirements for a storage solution](/docs/openshift?topic=openshift-storage_planning).
 3. **Choose a solution**: Using your storage requirements, choose a storage solution by comparing [non-persistent](/docs/openshift?topic=openshift-storage_planning#non_persistent_overview), [single-zone persistent](/docs/openshift?topic=openshift-storage_planning#single_zone_persistent_storage), or [multizone persistent](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview) storage.
 
-</br>Need help? Check out [Troubleshooting persistent storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage#cs_troubleshoot_storage).
+</br>Need help? Check out [Troubleshooting persistent storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage).
 
 <br />
 

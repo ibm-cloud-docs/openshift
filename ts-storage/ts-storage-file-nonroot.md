@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -78,6 +78,7 @@ content-type: troubleshoot
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -91,12 +92,12 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
-
+  
+  
 # File storage: Why can't I add non-root user access to persistent storage?
 {: #cs_storage_nonroot}
 
-**Infrastructure provider**: <img src="../../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
 {: tsSymptoms}
 After you [add non-root user access to persistent storage](#nonroot) or deploy a Helm chart with a non-root user ID specified, the user cannot write to the mounted storage.
@@ -163,22 +164,20 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
    {: codeblock}
 
 4. Create the PVC in your cluster.
-   ```
+   ```sh
    kubectl apply -f pvc.yaml
    ```
    {: pre}
 
-5. Wait a few minutes for the file storage to be provisioned and the PVC to change to a `Bound` status.
-   ```
+5. Wait a few minutes for the file storage to be provisioned and the PVC to change to a `Bound` status. Note that if you created the PVC in a multizone cluster, the PVC remains in a `pending` state.
+   {: note}
+   ```sh
    kubectl get pvc
    ```
    {: pre}
 
-   If you tried creating the PVC in a multizone cluster, the PVC remains in a `pending` state.
-   {: note}
-
-   Example output:
-   ```
+   **Example output**:
+   ```sh
    NAME      STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS           AGE
    gid-pvc   Bound    pvc-5e4acab4-9b6f-4278-b53c-22e1d3ffa123   20Gi       RWX            ibmc-file-bronze-gid   2m54s
    ```
@@ -219,89 +218,88 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
    {: codeblock}
 
 7. Create the deployment in your cluster.
-   ```
+   ```sh
    kubectl apply -f deployment.yaml
    ```
    {: pre}
 
 8. Verify that your pod is in a **Running** status.
-   ```
+   ```sh
    kubectl get pods
    ```
    {: pre}
 
-   Example output:
-   ```
+   **Example output**:
+   ```sh
    NAME                              READY   STATUS    RESTARTS   AGE
    gid-deployment-5dc86db4c4-5hbts   2/2     Running   0          69s
    ```
    {: screen}
 
 9. Log in to your pod.
-    ```
+    ```sh
     kubectl exec <pod_name> -it bash
     ```
     {: pre}
 
-10. Verify the read and write permissions for the non-root user.
-    1. List the user ID and group IDs for the current user inside the pod.
-       ```
-       id
-       ```
-       {: pre}
+## Verifying the read and write permissions for the non-root user
+{: #verify-rw-permissions}
+1. List the user ID and group IDs for the current user inside the pod. The setup is correct if your non-root user ID is listed as `uid` and the supplemental group ID that you defined in your storage class is listed under `groups`.
+  ```sh
+  id
+  ```
+  {: pre}
 
-       Example output:
-       ```
-       uid=2020 gid=0(root) groups=0(root), 65531
-       ```
-       {: screen}
+  **Example output**:
+  ```sh
+  uid=2020 gid=0(root) groups=0(root), 65531
+  ```
+  {: screen}
 
-       The setup is correct if your non-root user ID is listed as `uid` and the supplemental group ID that you defined in your storage class is listed under `groups`.
+2. List the permissions for your volume mount directory that you defined in your deployment. The setup is correct if the supplemental group ID that you defined in your storage class is listed with read and write permissions in your volume mount directory.
+  ```sh
+  ls -l /<volume_mount_path>
+  ```
+  {: pre}
 
-    2. List the permissions for your volume mount directory that you defined in your deployment.
-       ```
-       ls -l /<volume_mount_path>
-       ```
-       {: pre}
+  **Example output**:
+  ```sh
+  drwxrwxr-x 2 nobody 65531 4096 Dec 11 07:40 .
+  drwxr-xr-x 1 root   root  4096 Dec 11 07:30 ..
+  ```
+  {: screen}
 
-       Example output:
-       ```
-       drwxrwxr-x 2 nobody 65531 4096 Dec 11 07:40 .
-       drwxr-xr-x 1 root   root  4096 Dec 11 07:30 ..
-       ```
-       {: screen}
+3. Create a file in your mount directory.
+  ```sh
+  echo "Able to write to file storage with my non-root user." > /myvol/gidtest.txt
+  ```
+  {: pre}
 
-       The setup is correct if the supplemental group ID that you defined in your storage class is listed with read and write permissions in your volume mount directory.
+4. List the permissions for the files in your volume mount directory.
+  ```sh
+  ls -al /mnt/nfsvol/
+  ```
+  {: pre}
 
-   3. Create a file in your mount directory.
-      ```
-      echo "Able to write to file storage with my non-root user." > /myvol/gidtest.txt
-      ```
-      {: pre}
+  **Example output**:
+  ```sh
+  drwxrwxr-x 2 nobody      65531 4096 Dec 11 07:40 .
+  drwxr-xr-x 1 root        root  4096 Dec 11 07:30 ..
+  -rw-r--r-- 1 2020   4294967294   42 Dec 11 07:40 gidtest.txt .
+  ```
+  {: screen}
 
-   4. List the permissions for the files in your volume mount directory.
-      ```
-      ls -al /mnt/nfsvol/
-      ```
-      {: pre}
+  In your CLI output, the non-root user ID is listed with read and write access to the file that you created.
 
-      Example output:
-      ```
-      drwxrwxr-x 2 nobody      65531 4096 Dec 11 07:40 .
-      drwxr-xr-x 1 root        root  4096 Dec 11 07:30 ..
-      -rw-r--r-- 1 2020   4294967294   42 Dec 11 07:40 gidtest.txt .
-      ```
-      {: screen}
-
-      In your CLI output, the non-root user ID is listed with read and write access to the file that you created.
-
-   5. Exit your pod.
-      ```
-      exit
-      ```
-      {: pre}
+5. Exit your pod.
+  ```sh
+  exit
+  ```
+  {: pre}
 
 
 If you need to change the ownership of the mount path from `nobody`, see [App fails when a non-root user owns the NFS file storage mount path](#nonroot).
 {: tip}
+
+
 

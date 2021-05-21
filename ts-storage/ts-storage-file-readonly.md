@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -78,6 +78,7 @@ content-type: troubleshoot
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -91,12 +92,12 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
-
+  
+  
 # File storage: Why are the file systems for worker nodes changed to read-only?
 {: #readonly_nodes}
 
-**Infrastructure provider**: <img src="../../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
 {: tsSymptoms}
 {: #stuck_creating_state}
@@ -110,7 +111,10 @@ The file system on the worker node is read-only.
 {: tsResolve}
 1.  Back up any data that might be stored on the worker node or in your containers.
 2.  For a short-term fix to the existing worker node, reload the worker node.
-    <pre class="pre"><code>ibmcloud oc worker reload --cluster &lt;cluster_name&gt; --worker &lt;worker_ID&gt;</code></pre>
+    ```sh
+    ibmcloud oc worker reload --cluster <cluster_name> --worker <worker_ID>
+    ```
+    {: pre}
 
 For a long-term fix, [update the flavor of your worker pool](/docs/containers?topic=containers-update#machine_type).
 
