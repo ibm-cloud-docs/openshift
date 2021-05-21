@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -501,7 +502,7 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
           <tr>
             <td>US East</td>
              <td>mon01<br>tor01<br><br>wdc04, wdc06, wdc07</td>
-             <td><code>166.9.20.11, 166.9.24.22</code><br><code>166.9.20.42, 166.9.22.8</code><br><br><code>166.9.20.116, 166.9.20.117, 166.9.20.12, 166.9.20.13, 166.9.20.38, 166.9.20.80, 166.9.20.187, 166.9.22.9, 166.9.22.10, 166.9.22.26, 166.9.22.43, 166.9.22.52, 166.9.22.54, 166.9.22.109, 166.9.24.19, 166.9.24.35, 166.9.24.4, 166.9.24.46, 166.9.24.47, 166.9.24.5, 166.9.24.90</code></td>
+             <td><code>166.9.20.11, 166.9.24.22</code><br><code>166.9.20.42, 166.9.22.8</code><br><br><code>166.9.20.117, 166.9.20.12, 166.9.20.13, 166.9.20.38, 166.9.20.63, 166.9.20.80, 166.9.20.187, 166.9.22.9, 166.9.22.10, 166.9.22.26, 166.9.22.43, 166.9.22.51, 166.9.22.52, 166.9.22.109, 166.9.24.19, 166.9.24.35, 166.9.24.4, 166.9.24.45, 166.9.24.47, 166.9.24.5, 166.9.24.90</code></td>
           </tr>
           <tr>
             <td>US South</td>
