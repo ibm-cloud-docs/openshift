@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -78,6 +78,7 @@ content-type: troubleshoot
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -100,7 +101,7 @@ content-type: troubleshoot
 As you use {{site.data.keyword.openshiftlong_notm}}, consider these techniques for troubleshooting the management of your cluster network.
 {: shortdesc}
 
-While you troubleshoot, you can use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to run tests and gather pertinent information from your cluster.
+While you troubleshoot, you can use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool) to run tests and gather pertinent information from your cluster.
 {: tip}
 
 
@@ -132,7 +133,7 @@ When the components fully provision, a public router subdomain is available for 
 {: tsResolve}
 
 1.  After you create a cluster, wait some time before you expose your apps, even after the cluster enters a **normal** state.
-2.  Check the **Master Status**. If the **Master Status** is not **Ready**, [review its status](/docs/openshift?topic=openshift-cs_troubleshoot#debug_master) and follow any troubleshooting information to resolve the issue.   
+2.  Check the **Master Status**. If the **Master Status** is not **Ready**, [review its status](/docs/containers?topic=containers-debug_master) and follow any troubleshooting information to resolve the issue.   
     ```
     ibmcloud oc cluster get -c <cluster_name_or_ID>
     ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-17"
+lastupdated: "2021-05-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -78,6 +78,7 @@ content-type: troubleshoot
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -100,7 +101,7 @@ content-type: troubleshoot
 As you use {{site.data.keyword.openshiftlong}}, consider these techniques for troubleshooting persistent storage.
 {: shortdesc}
 
-If you have a more general issue, try out [Troubleshooting {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-cs_troubleshoot). 
+If you have a more general issue, try out [Troubleshooting {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-debug_clusters). 
 
 ## Debugging persistent storage failures
 {: #debug_storage}

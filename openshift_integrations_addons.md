@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-20"
+lastupdated: "2021-05-21"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -124,7 +124,7 @@ To enable a managed add-on in your cluster from the CLI, use the [`ibmcloud oc c
 For more information about the prerequisites for each add-on, see:
 - [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block)
 - [Cluster Autoscaler](/docs/openshift?topic=openshift-ca)
-- [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility)
+- [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool)
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
 - [OpenShift Container Storage](/docs/openshift?topic=openshift-ocs-storage-prep)
@@ -197,7 +197,7 @@ Review which managed add-ons are available for {{site.data.keyword.openshiftshor
 {: shortdesc}
 
 Supported add-ons for clusters in {{site.data.keyword.satelliteshort}} locations:
-- [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility)
+- [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool)
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
 - **Deprecated**: [Kubernetes web terminal](/docs/containers?topic=containers-cs_cli_install#cli_web)

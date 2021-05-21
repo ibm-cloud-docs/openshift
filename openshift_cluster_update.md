@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-17"
+lastupdated: "2021-05-21"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade, update
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -378,12 +379,12 @@ Set up a configmap to perform a rolling update of your classic worker nodes.
    ```
    {: pre}
 
-10. Verify that you do not have duplicate worker nodes. In some cases, older clusters might list duplicate worker nodes with a **`NotReady`** status after an update. To remove duplicates, see [troubleshooting](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#cs_duplicate_nodes).
+10. Verify that you do not have duplicate worker nodes. In some cases, older clusters might list duplicate worker nodes with a **`NotReady`** status after an update. To remove duplicates, see [troubleshooting](/docs/containers?topic=containers-cs_duplicate_nodes).
 
 Next steps:
 -   Repeat the update process with other worker pools.
 -   Inform developers who work in the cluster to update their `oc` CLI to the version of the Kubernetes master.
--   If the Kubernetes dashboard does not display utilization graphs, [delete the `kube-dashboard` pod](/docs/containers?topic=containers-cs_troubleshoot_health#cs_dashboard_graphs).
+-   If the Kubernetes dashboard does not display utilization graphs, [delete the `kube-dashboard` pod](/docs/containers?topic=containers-cs_dashboard_graphs).
 
 ### Updating classic worker nodes in the console
 {: #worker_up_console}
@@ -431,7 +432,7 @@ If you replace multiple worker nodes at the same time, they are deleted and repl
 
 **What if a replacement worker node is not created?**
 
-A replacement worker node is not created if the worker pool does not have [automatic rebalancing enabled](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#auto-rebalance-off).
+A replacement worker node is not created if the worker pool does not have [automatic rebalancing enabled](/docs/containers?topic=containers-auto-rebalance-off).
 
 ### Prerequisites
 {: #vpc_worker_prereqs}

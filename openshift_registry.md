@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-21"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -175,9 +176,9 @@ Your images in your {{site.data.keyword.openshiftshort}} cluster internal regist
 
 However, if the bucket fails to create when you create your cluster, you must manually create a bucket and set up your cluster to use the bucket. In the meantime, the internal registry uses an `emptyDir` Kubernetes volume that stores your container images on the secondary disk of your worker node. The `emptyDir` volumes are not considered persistent highly available storage, and if you delete the pods that use the image, the image is automatically deleted.
 
-To manually create a bucket for your internal registry, see [Cluster create error about cloud object storage bucket](/docs/openshift?topic=openshift-cs_troubleshoot#ts_cos_bucket_cluster_create).
+To manually create a bucket for your internal registry, see [Cluster create error about cloud object storage bucket](/docs/openshift?topic=openshift-ts_cos_bucket_cluster_create).
 
-For clusters that run {{site.data.keyword.openshiftshort}} version 4.4, you might need to [modify the default configuration](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts-app-ocr-vpc-push) so that external sources outside the VPC, such as a CI/CD process, can push images to the internal registry.
+For clusters that run {{site.data.keyword.openshiftshort}} version 4.4, you might need to [modify the default configuration](/docs/openshift?topic=openshift-ts-app-ocr-vpc-push) so that external sources outside the VPC, such as a CI/CD process, can push images to the internal registry.
 
 ### Classic: Storing images in the internal registry
 {: #storage_internal_registry}
@@ -1139,9 +1140,6 @@ Every {{site.data.keyword.openshiftshort}} project has a Kubernetes service acco
 
 You can set up your {{site.data.keyword.openshiftlong_notm}} cluster to pull entitled software, which is a collection of protected container images that are packaged in Helm charts that you are licensed to use by IBM. Entitled software is stored in a special {{site.data.keyword.registrylong_notm}} `cp.icr.io` domain. To access this domain, you must create an image pull secret with an entitlement key for your cluster and add this image pull secret to the Kubernetes service account of each project where you want to deploy this entitled software.
 {: shortdesc}
-
-Do you have older entitled software from Passport Advantage? Use the [PPA importer tool](/docs/containers?topic=containers-hybrid_iks_icp#hybrid_ppa_importer) instead to deploy this software in your cluster.
-{: tip}
 
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 

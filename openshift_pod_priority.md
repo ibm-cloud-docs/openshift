@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -125,7 +126,7 @@ _Figure: Pod priority scenarios_
 2.  Three pods with high, medium, and low priority are pending scheduling. The {{site.data.keyword.openshiftshort}} controller finds an available worker node, but the worker node has only enough resources to support the high and medium priority pods. The low-priority pod is not scheduled and it remains in pending.
 3.  Two pods with high and medium priority are pending scheduling. A third pod with low priority exists on an available worker node. However, the worker node does not have enough resources to schedule any of the pending pods. The {{site.data.keyword.openshiftshort}} controller preempts, or removes, the low-priority pod, which returns the pod to a pending state. Then, the {{site.data.keyword.openshiftshort}} controller tries to schedule the high priority pod. However, the worker node does not have enough resources to schedule the high priority pod, and instead, the {{site.data.keyword.openshiftshort}} controller schedules the medium priority pod.
 
-**For more information**: See the Kubernetes documentation on [pod priority and preemption](https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/){: external}.
+**For more information**: See the Kubernetes documentation on [pod priority and preemption](https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/){: external}.
 
 **Can I disable the pod priority admission controller?**
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-20"
+lastupdated: "2021-05-21"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -295,7 +295,7 @@ If you have multiple worker pools in your cluster, add the zone to all of them s
   ```
   {: screen}
 
-7. To expose apps with [Ingress](/docs/openshift?topic=openshift-ingress-about-roks4), you must [update the VPC load balancer that exposes the router](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#router-mzr-error) to include the subnet for the new zone in your cluster.
+7. To expose apps with [Ingress](/docs/openshift?topic=openshift-ingress-about-roks4), you must [update the VPC load balancer that exposes the router](/docs/openshift?topic=openshift-router-mzr-error) to include the subnet for the new zone in your cluster.
 
 
 <br />
