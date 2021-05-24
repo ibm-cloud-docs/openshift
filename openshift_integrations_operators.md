@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-05-24"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -230,7 +230,7 @@ In {{site.data.keyword.openshiftshort}} clusters that run version 4, operators a
         *  To manage your custom Operator, see the [Operator Lifecycle Manager](http://docs.openshift.com/container-platform/4.6/operators/understanding/olm/olm-understanding-olm.html){: external} documentation.
 2.  Review any custom steps to install an operator in your cluster.
     *   To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/4.6/logging/cluster-logging.html){: external}, see [installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator).
-3.  If the operator uses a template with a build component that must pull an image from a private registry, the build might fail with an authentication error. To resolve this error, see [Build error due to image pull authentication](/docs/openshift?topic=openshift-ts-app-build-img-pull).
+3.  If the operator uses a template with a build component that must pull an image from a private registry, the build might fail with an authentication error. To resolve this error, see [Build error due to image pull authentication](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts_build_img_pull).
 
 <br />
 

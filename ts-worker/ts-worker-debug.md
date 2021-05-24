@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-05-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -163,7 +163,7 @@ You can view the current worker node state by running the `ibmcloud oc worker ls
        </tr>
           <tr>
           <td>`Normal`</td>
-          <td>Your worker node is fully provisioned and ready to be used in the cluster. This state is considered healthy and does not require an action from the user. **Note**: Although the worker nodes might be normal, other infrastructure resources, such as [networking](/docs/containers?topic=containers-coredns_lameduck) and [storage](/docs/containers?topic=containers-cs_troubleshoot_storage), might still need attention.</td>
+          <td>Your worker node is fully provisioned and ready to be used in the cluster. This state is considered healthy and does not require an action from the user. **Note**: Although the worker nodes might be normal, other infrastructure resources, such as [networking](/docs/containers?topic=containers-cs_troubleshoot_network) and [storage](/docs/containers?topic=containers-cs_troubleshoot_storage), might still need attention.</td>
        </tr>
      <tr>
           <td>`Provisioned`</td>
@@ -208,7 +208,7 @@ You can view the current worker node state by running the `ibmcloud oc worker ls
 ## Step 3: Get the details for each worker node
 {: #worker-debug-get-details}
 
-Get the details for the worker node. If the details include an error message, review the list of [common error messages for worker nodes](/docs/containers?topic=containers-common_worker_nodes_issues) to learn how to resolve the problem.
+Get the details for the worker node. If the details include an error message, review the list of [common error messages for worker nodes](#common_worker_nodes_issues) to learn how to resolve the problem.
 
 ```
 ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id>

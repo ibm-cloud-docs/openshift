@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-05-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -176,7 +176,7 @@ Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many of t
 | OCP versions and patch updates | You are responsible for updating the underlying infrastructure for the master and worker nodes. You can use the {{site.data.keyword.openshiftshort}} web console to update OCP versions. | IBM automatically applies updates to the master, and provides version updates and security patch updates for the worker nodes. You choose when to apply these updates to your worker nodes, from the {{site.data.keyword.cloud_notm}} interface (not the {{site.data.keyword.openshiftshort}} web console). Supported versions might vary from standard OpenShift Container Platform.|
 | Autoscaling compute machines | You can set up a `ClusterAutoscaler` resource. | You can set up the [cluster autoscaler plug-in](/docs/openshift?topic=openshift-ca). |
 | Worker node operating system | CoreOS or RHEL. | RHEL 7. |
-| Support | Provided per the terms of your Red Hat subscription or cloud provider. You can use the `oc adm must-gather` tool to help gather information. | Provided by [{{site.data.keyword.cloud_notm}} Support](https://www.ibm.com/cloud/support){: external}. You can use the `oc adm must-gather` tool, or the [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool) to help gather information. |
+| Support | Provided per the terms of your Red Hat subscription or cloud provider. You can use the `oc adm must-gather` tool to help gather information. | Provided by [{{site.data.keyword.cloud_notm}} Support](https://www.ibm.com/cloud/support){: external}. You can use the `oc adm must-gather` tool, or the [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) to help gather information. |
 | {{site.data.keyword.openshiftshort}} web console | You set up and can configure or disable the {{site.data.keyword.openshiftshort}} web console. | The {{site.data.keyword.openshiftshort}} web console is set up for you. You cannot configure or disable the web console. IBM also provides the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} to manage your cluster infrastructure. |
 | Authentication | An OAuth server is provided, but you configure the token settings and identity provider to control access to the cluster. You also manage RBAC to control user access within the cluster. | IBM automatically sets up the OAuth server to use {{site.data.keyword.cloud_notm}} IAM. You cannot change the identity provider. {{site.data.keyword.cloud_notm}} IAM is also set up to [automatically sync to RBAC](/docs/openshift?topic=openshift-access_reference#service) so that you can use IAM to manage access to and within the cluster. |
 | Container network for clusters | The cluster network operator sets up the SDN container network interface (CNI) plug-in. You can change the CNI plug-in, configure multiple networks, or attach a hardware network such as single root I/O virtualization (SR-IOV). | Calico is set up for you. You cannot change the CNI plug-in, configure multiple networks, or attach a hardware network.|

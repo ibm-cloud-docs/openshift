@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-05-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -122,7 +122,7 @@ When the components fully provision, a public router subdomain is available for 
 {: tsResolve}
 
 1.  After you create a cluster, wait some time before you expose your apps, even after the cluster enters a **normal** state.
-2.  Check the **Master Status**. If the **Master Status** is not **Ready**, [review its status](/docs/openshift?topic=openshift-debug_master) and follow any troubleshooting information to resolve the issue.   
+2.  Check the **Master Status**. If the **Master Status** is not **Ready**, [review its status](/docs/openshift?topic=openshift-cs_troubleshoot#debug_master) and follow any troubleshooting information to resolve the issue.   
     ```
     ibmcloud oc cluster get -c <cluster_name_or_ID>
     ```

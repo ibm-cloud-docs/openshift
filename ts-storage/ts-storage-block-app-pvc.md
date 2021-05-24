@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-05-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -126,6 +126,6 @@ When you mount a PVC to your pod, you might experience errors when accessing or 
 | Symptom or error message | Description | Steps to resolve |
 | --- | --- | --- |
 | Your pod is stuck in a `ContainerCreating` or `CrashLoopBackOff` state. `MountVolume.SetUp failed for volume ... read-only.` | The {{site.data.keyword.cloud_notm}} infrastructure back end experienced network problems. To protect your data and to avoid data corruption, {{site.data.keyword.cloud_notm}} automatically disconnected the block storage server to prevent write operations on block storage instances. | See [Block storage: Block storage changes to read-only](#readonly_block) |
-| `failed to mount the volume as "ext4", it already contains xfs. Mount error: mount failed: exit status 32`. | You want to mount an existing block storage instance that was set up with an `XFS` file system. When you created the PV and the matching PVC, you specified an `ext4` or no file system. The file system that you specify in your PV must be the same file system that is set up in your block storage instance. | See [Block storage: Mounting existing block storage to a pod fails due to the wrong file system](/docs/containers?topic=containers-block_filesystem) |
+| `failed to mount the volume as "ext4", it already contains xfs. Mount error: mount failed: exit status 32`. | You want to mount an existing block storage instance that was set up with an `XFS` file system. When you created the PV and the matching PVC, you specified an `ext4` or no file system. The file system that you specify in your PV must be the same file system that is set up in your block storage instance. | See [Block storage: Mounting existing block storage to a pod fails due to the wrong file system](#block_filesystem) |
 {: caption="Block Storage error messages" caption-side="top"}
 {: summary="The columns are read from left to right. The first column has the symptom or error message. The second column describes the message. The third column provides steps to resolve the error."}

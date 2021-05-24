@@ -101,7 +101,7 @@ content-type: troubleshoot
 As you use {{site.data.keyword.openshiftlong}}, consider these techniques for troubleshooting persistent storage.
 {: shortdesc}
 
-If you have a more general issue, try out [Troubleshooting {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-debug_clusters). 
+If you have a more general issue, try out [Troubleshooting {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-cs_troubleshoot). 
 
 ## Debugging persistent storage failures
 {: #debug_storage}
