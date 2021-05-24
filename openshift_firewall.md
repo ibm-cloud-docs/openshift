@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -438,11 +439,13 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
         Replace <em>&lt;monitoring_public_IP&gt;</em> with the [{{site.data.keyword.mon_short}} IP addresses](/docs/monitoring?topic=monitoring-endpoints).
     *   **{{site.data.keyword.la_full_notm}}**:
         <pre class="screen">TCP port 443, port 80 FROM &lt;each_worker_node_public_IP&gt; TO &lt;logging_public_IP&gt;</pre>
-        Replace &lt;<em>logging_public_IP&gt;</em> with the [{{site.data.keyword.la_short}} IP addresses](/docs/log-analysis?topic=log-analysis-service-connection#network_outgoing_traffic).
+        Replace &lt;<em>logging_public_IP&gt;</em> with the [{{site.data.keyword.la_short}} IP addresses](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_public).
 
 7. If you use load balancer services, ensure that all traffic that uses the VRRP protocol is allowed between worker nodes on the public and private interfaces. {{site.data.keyword.openshiftlong_notm}} uses the VRRP protocol to manage IP addresses for public and private load balancers.
 
 8. If you use Ingress or routes to expose apps in your cluster, allow incoming network traffic from [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} on port 80 to the IP addresses of your router services so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers.
+
+  <p class="important">On 05 July 2021, the DNS provider is changed from Cloudflare to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains for all clusters in {{site.data.keyword.openshiftlong_notm}}. If you currently allow inbound traffic from the Cloudflare source IP addresses, you must also allow inbound traffic from the [Akamai source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} before 05 July. After the migration, you can remove the Cloudflare IP address rules. For more information, see the [announcement](https://cloud.ibm.com/notifications?selected=1621697674798){: external}.</p>
 
 </br>
 
@@ -501,7 +504,7 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
           <tr>
             <td>US East</td>
              <td>mon01<br>tor01<br><br>wdc04, wdc06, wdc07</td>
-             <td><code>166.9.20.11, 166.9.24.22</code><br><code>166.9.20.42, 166.9.22.8</code><br><br><code>166.9.20.116, 166.9.20.117, 166.9.20.12, 166.9.20.13, 166.9.20.38, 166.9.20.80, 166.9.20.187, 166.9.22.9, 166.9.22.10, 166.9.22.26, 166.9.22.43, 166.9.22.52, 166.9.22.54, 166.9.22.109, 166.9.24.19, 166.9.24.35, 166.9.24.4, 166.9.24.46, 166.9.24.47, 166.9.24.5, 166.9.24.90</code></td>
+             <td><code>166.9.20.11, 166.9.24.22</code><br><code>166.9.20.42, 166.9.22.8</code><br><br><code>166.9.20.117, 166.9.20.12, 166.9.20.13, 166.9.20.38, 166.9.20.63, 166.9.20.80, 166.9.20.187, 166.9.22.9, 166.9.22.10, 166.9.22.26, 166.9.22.43, 166.9.22.51, 166.9.22.52, 166.9.22.109, 166.9.24.19, 166.9.24.35, 166.9.24.4, 166.9.24.45, 166.9.24.47, 166.9.24.5, 166.9.24.90</code></td>
           </tr>
           <tr>
             <td>US South</td>
@@ -574,8 +577,8 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
       </tbody>
     </table>
 8. Optional: To send logging and metric data, set up firewall rules for your {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} services.
-   *  [{{site.data.keyword.la_short}} private endpoints](/docs/log-analysis?topic=log-analysis-service-connection#ips_api)
-   *  [{{site.data.keyword.mon_short}} private endpoints](/docs/monitoring?topic=monitoring-endpoints)
+   *  [{{site.data.keyword.la_short}} private endpoints](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_private)
+   *  [{{site.data.keyword.mon_short}} private endpoints](/docs/monitoring?topic=monitoring-endpoints#endpoints_monitoring)
 
 </br>
 
@@ -629,10 +632,10 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
     2. From the output of the previous step, note all the unique network IDs (first three octets) of the **Public IP** for the worker nodes in your cluster. In the following output, the unique network IDs are `169.xx.178` and `169.xx.210`.
         ```
         ID                                                  Public IP        Private IP     Machine Type        State    Status   Zone    Version   
-        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w31   169.xx.178.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.20.6   
-        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w34   169.xx.178.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.20.6  
-        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w32   169.xx.210.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.20.6   
-        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w33   169.xx.210.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.20.6  
+        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w31   169.xx.178.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.20.7   
+        kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w34   169.xx.178.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.20.7  
+        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w32   169.xx.210.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.20.7   
+        kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w33   169.xx.210.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.20.7  
         ```
         {: screen}
     3.  List the VLAN subnets for each unique network ID.

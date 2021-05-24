@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -78,6 +78,7 @@ content-type: troubleshoot
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -91,19 +92,19 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
-
+  
+  
 # What permissions do I need to manage storage and create PVCs?
 {: #missing_permissions}
 
 **Infrastructure provider**:
-* <img src="../../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="../../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {: tsSymptoms}
 When you create a PVC, the PVC remains pending. When you run `oc describe pvc <pvc_name>`, you see an error message similar to the following:
 
-```
+```sh
 User doesn't have permissions to create or manage Storage
 ```
 {: screen}
@@ -113,13 +114,13 @@ The IAM API key or the IBM Cloud infrastructure API key that is stored in the `s
 
 {: tsResolve}
 1. Retrieve the IAM key or IBM Cloud infrastructure API key that is stored in the `storage-secret-store` Kubernetes secret of your cluster and verify that the correct API key is used.
-   ```
+   ```sh
    oc get secret storage-secret-store -n kube-system -o yaml | grep slclient.toml: | awk '{print $2}' | base64 --decode
    ```
    {: pre}
 
    Example output:
-   ```
+   ```sh
    [Bluemix]
    iam_url = "https://iam.bluemix.net"
    iam_client_id = "bx"
@@ -144,7 +145,7 @@ The IAM API key or the IBM Cloud infrastructure API key that is stored in the `s
 2. If you want to change the credentials, update the API key that is used.
     1.  To update the IAM API key, use the `ibmcloud oc api-key reset` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_api_key_reset). To update the IBM Cloud infrastructure key, use the `ibmcloud oc credential set` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_credentials_set).
     2. Wait about 10 - 15 minutes for the `storage-secret-store` Kubernetes secret to update, then verify that the key is updated.
-       ```
+       ```sh
        oc get secret storage-secret-store -n kube-system -o yaml | grep slclient.toml: | awk '{print $2}' | base64 --decode
        ```
        {: pre}
@@ -158,13 +159,13 @@ The IAM API key or the IBM Cloud infrastructure API key that is stored in the `s
    6. Expand the **Account** category and verify that the **Add/ Upgrade Storage (Storage Layer)** permission is assigned.
    7. Expand the **Services** category and verify that the **Storage Manage** permission is assigned.
 4. Remove the PVC that failed.
-   ```
+   ```sh
    oc delete pvc <pvc_name>
    ```
    {: pre}
 
 5. Re-create the PVC.
-   ```
+   ```sh
    oc apply -f pvc.yaml
    ```
    {: pre}

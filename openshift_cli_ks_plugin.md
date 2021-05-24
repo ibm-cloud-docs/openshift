@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-05-24"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -229,7 +230,6 @@ ibmcloud oc cluster addon disable static-route --cluster CLUSTER
 
 </br>
 
-</br>
 
 ### `ibmcloud oc cluster addon enable`
 {: #cs_cluster_addon_enable}
@@ -281,7 +281,8 @@ ibmcloud oc cluster addon enable image-key-synchronizer --cluster CLUSTER [--ver
 {: pre}
 
 **Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic  
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -391,6 +392,9 @@ ibmcloud oc cluster addon enable static-route --cluster CLUSTER [--version VERSI
 </dl>
 
 </br>
+
+
+
 
 ### `ibmcloud oc cluster addon ls`
 {: #cs_cluster_addons}
@@ -4025,7 +4029,7 @@ ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER (--lb-host VPC_ALB_HOSTNAM
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>Required: The name or ID of the cluster.</dd>
 
-<dt><code>--lb-host <em>VPC_ALB_HOSTNAME</em> | <code>--ip <em>VPC_NLB_IP</em></code></dt>
+<dt><code>--lb-host <em>VPC_ALB_HOSTNAME</em></code> | <code>--ip <em>VPC_NLB_IP</em></code></dt>
 <dd>For VPC application load balancers, the load balancer hostname. To see load balancer hostnames, run `oc get svc -o wide`. For VPC network load balancers, the external IP addresses. To specify multiple IP addresses, use multiple `--ip` flags. To see load balancer IP addresses, run `oc get svc -o wide`.</dd>
 
 <dt><code>--dns-type <em>public</em></code></dt>
@@ -5235,7 +5239,7 @@ ibmcloud oc vpcs [--provider vpc-gen2] [--output json] [-q]
 
 **Command options**:
 <dl>
-<dt><code>--provider vpc-gen2</em></code></dt>
+<dt><code>--provider vpc-gen2</code></dt>
 <dd>The infrastructure provider type ID for the VPC worker node machine. `vpc-gen2` for VPC Generation 2 compute is supported.</dd>
 
 <dt><code>--output json</code></dt>

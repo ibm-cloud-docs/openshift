@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -78,6 +78,7 @@ content-type: troubleshoot
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -91,12 +92,12 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
- 
-
+  
+  
 # File storage: Why does my app fail with a group ID error for NFS file storage permissions?
 {: #root}
 
-**Infrastructure provider**: <img src="../../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
 {: tsSymptoms}
 After you [create](/docs/containers?topic=containers-file_storage#add_file) or [add existing](/docs/containers?topic=containers-file_storage#existing_file) NFS storage to your cluster, your app's container deployment fails. You see group ID (GID) error messages.
@@ -120,37 +121,28 @@ Before you begin:
 
 Steps:
 
-1.  Copy the `norootsquash` daemon set deployment YAML file from the following URL.
-
-    ```
-    https://github.com/IBM-Cloud/kube-samples/tree/master/daemonset-sample
-    ```
-    {: codeblock}
+1.  Copy the `norootsquash` daemon set [deployment YAML file](https://github.com/IBM-Cloud/kube-samples/tree/master/daemonset-sample){: external}
 
 2.  Create the `norootsquash` daemon set deployment.
-
-    ```
+    ```sh
     oc apply -f norootsquash.yaml
     ```
     {: pre}
 
 3.  Get the name of the pod that your storage volume is mounted to. This pod is not the same as the `norootsquash`  pods.
-
-    ```
+    ```sh
     oc get pods
     ```
     {: pre}
 
 4.  Log in to the pod.
-
-    ```
+    ```sh
     oc exec -it mypod /bin/bash
     ```
     {: pre}
 
 5.  Verify that the permissions to the mount path are `root`.
-
-    ```
+    ```sh
     root@mypod:/# ls -al /mnt/myvol/
     total 8
     drwxr-xr-x 2 root root 4096 Feb  7 20:49 .
@@ -160,16 +152,13 @@ Steps:
 
     This output shows that the UID in the first row is now owned by `root` (instead of previously `nobody`).
 
-6.  If the UID is owned by `nobody`:
+6.  If the UID is owned by `nobody`, exit the pod and reboot your cluster's worker nodes. Wait for the nodes to reboot.
+    ```sh
+    ibmcloud oc worker reboot --cluster <my_cluster> --worker <my_worker1>,<my_worker2>
+    ```
+    {: pre}
 
-    1. Exit the pod and reboot your cluster's worker nodes. Wait for the nodes to reboot.
-
-       ```
-       ibmcloud oc worker reboot --cluster <my_cluster> --worker <my_worker1>,<my_worker2>
-       ```
-       {: pre}
-
-    2. Repeat Steps 4 and 5 to verify the permissions.
+7. Repeat Steps 4 and 5 to verify the permissions.
 
 
-</staging>
+

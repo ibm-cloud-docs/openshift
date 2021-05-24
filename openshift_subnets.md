@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -265,7 +266,7 @@ Before you begin:
 
     ```
     Name         ID                                   State      Created          Workers    Zone      Version     Resource Group Name   Provider
-    mycluster    aaf97a8843a29941b49a598f516da72101   deployed   20170201162433   3          dal10     1.20.6      Default             classic
+    mycluster    aaf97a8843a29941b49a598f516da72101   deployed   20170201162433   3          dal10     1.20.7      Default             classic
     ```
     {: screen}
 
@@ -280,7 +281,7 @@ Before you begin:
 
     ```
     ID                                                  Public IP        Private IP     Machine Type   State      Status   Zone     Version
-    prod-dal10-pa8dfcc5223804439c87489886dbbc9c07-w1    169.xx.xxx.xxx   10.xxx.xx.xxx  free           normal     Ready    dal10      1.20.6
+    prod-dal10-pa8dfcc5223804439c87489886dbbc9c07-w1    169.xx.xxx.xxx   10.xxx.xx.xxx  free           normal     Ready    dal10      1.20.7
     ```
     {: screen}
 
@@ -592,7 +593,10 @@ To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning
 If you no longer need subnets, you can remove them from your cluster. After you remove the subnet, it is no longer available to your cluster, but it still exists in your IBM Cloud infrastructure account.
 {: shortdesc}
 
-<p class="note">Subnets can only be detached from a cluster if none of the IP addresses derived from that subnet range are in use in your cluster.</br></br>Portable public IP addresses are charged monthly. If you remove the subnet, you still must pay the monthly charge for the IP addresses, even if you used them only for a short amount of time.</p>
+**Before you begin**, review the following considerations:
+* Subnets can only be detached from a cluster if none of the IP addresses derived from that subnet range are in use in your cluster.
+* Portable public IP addresses are charged monthly. If you remove the subnet, you still must pay the monthly charge for the IP addresses, even if you used them only for a short amount of time.
+* If your worker nodes previously used the subnet that you want to detach, but no workers are currently attached to any subnets on this subnet's VLAN, then the subnet is not visible to the cluster. You can instead cancel the subnet directly in the [{{site.data.keyword.cloud_notm}} Classic Infrastructure console](https://cloud.ibm.com/gen1/infrastructure/devices){: external}.
 
 1. Find the CIDR for the subnet that you want to remove.
   ```
