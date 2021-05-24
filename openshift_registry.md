@@ -1141,9 +1141,6 @@ Every {{site.data.keyword.openshiftshort}} project has a Kubernetes service acco
 You can set up your {{site.data.keyword.openshiftlong_notm}} cluster to pull entitled software, which is a collection of protected container images that are packaged in Helm charts that you are licensed to use by IBM. Entitled software is stored in a special {{site.data.keyword.registrylong_notm}} `cp.icr.io` domain. To access this domain, you must create an image pull secret with an entitlement key for your cluster and add this image pull secret to the Kubernetes service account of each project where you want to deploy this entitled software.
 {: shortdesc}
 
-Do you have older entitled software from Passport Advantage? Use the [PPA importer tool](/docs/containers?topic=containers-hybrid_iks_icp#hybrid_ppa_importer) instead to deploy this software in your cluster.
-{: tip}
-
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1.  Get the entitlement key for your entitled software library.
