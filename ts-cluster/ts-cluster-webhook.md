@@ -203,7 +203,7 @@ Identify and restore the resource that causes the broken webhook.
         {: pre}
 6.  Retry the cluster master operation, such as updating the cluster.
 7.  If you still see the error, you might have worker node or network connectivity issues.
-    *   [Worker node troubleshooting](/docs/openshift?topic=openshift-debug_worker_nodes.
+    *   [Worker node troubleshooting](/docs/openshift?topic=openshift-debug_worker_nodes).
     *   Make sure that the webhook can connect to the Kubernetes API server in the cluster master. For example, if you use Calico network policies, security groups, or some other type of firewall, set up your [classic](/docs/openshift?topic=openshift-firewall) or [VPC](/docs/openshift?topic=openshift-vpc-firewall) cluster with the appropriate access.
     *   If the webhook is managed by an add-on that you installed, uninstall the add-on. Common add-ons that cause webhook issues include the following:
         * [Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec)
