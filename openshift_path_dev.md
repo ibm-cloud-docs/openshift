@@ -427,7 +427,7 @@ Publicly expose an app in your cluster to the internet or privately expose an ap
 
   * Routes: [Create a route to expose your app on a subdomain.](/docs/openshift?topic=openshift-openshift_routes)
 
-</br>Need help? Check out [Troubleshooting Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress) and [Troubleshooting load balancers](/docs/containers?topic=containers-cs_loadbalancer_fails).
+</br>Need help? Check out [Troubleshooting Ingress](/docs/containers?topic=containers-ingress-debug) and [Troubleshooting load balancers](/docs/containers?topic=containers-cs_loadbalancer_fails).
 
 <br />
 
@@ -438,7 +438,7 @@ Publicly expose an app in your cluster to the internet or privately expose an ap
 2. **Requirements**: Determine your [requirements for a storage solution](/docs/openshift?topic=openshift-storage_planning).
 3. **Choose a solution**: Using your storage requirements, choose a storage solution by comparing [non-persistent](/docs/openshift?topic=openshift-storage_planning#non_persistent_overview), [single-zone persistent](/docs/openshift?topic=openshift-storage_planning#single_zone_persistent_storage), or [multizone persistent](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview) storage.
 
-</br>Need help? Check out [Troubleshooting persistent storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage).
+</br>Need help? Check out [Troubleshooting persistent storage](/docs/containers?topic=containers-debug_storage).
 
 <br />
 

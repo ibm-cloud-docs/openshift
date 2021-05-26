@@ -154,7 +154,7 @@ Check that your cluster is set up properly. If you just created your cluster, wa
     ```
     {: pre}
 2.  Review the output of the previous step to check the **Ingress Subdomain**.
-    *  If your cluster does **not** have a subdomain, see [No Ingress subdomain exists aftercluster creation](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#ingress_subdomain).
+    *  If your cluster does **not** have a subdomain, see [No Ingress subdomain exists aftercluster creation](/docs/openshift?topic=openshift-ingress_subdomain).
     *  If your cluster does have a subdomain, continue to the next step.
 3.  Verify that your cluster runs the latest patch **Version**. If your cluster does not run thelatest patch version, update the cluster and worker nodes.
     1.  [Update the cluster master](/docs/openshift?topic=openshift-update#master) to the latestpatch version for your cluster major and minor version.

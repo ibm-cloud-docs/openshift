@@ -409,7 +409,7 @@ Plan and add highly available persistent storage based on your app requirements,
 2. **Requirements**: Determine your [requirements for a storage solution](/docs/openshift?topic=openshift-storage_planning).
 3. **Choose a solution**: Using your storage requirements, choose a storage solution by comparing [non-persistent](/docs/openshift?topic=openshift-storage_planning#non_persistent_overview), [single-zone persistent](/docs/openshift?topic=openshift-storage_planning#single_zone_persistent_storage), or [multizone persistent](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview) storage.
 
-</br>Need help? Check out [Troubleshooting persistent storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage).
+</br>Need help? Check out [Troubleshooting persistent storage](/docs/containers?topic=containers-debug_storage).
 
 <br />
 

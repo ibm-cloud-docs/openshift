@@ -92,7 +92,7 @@ subcollection: openshift
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
   
-  
+
 
 # Version changelog
 {: #openshift_changelog}
@@ -388,7 +388,7 @@ The following table shows the changes that are included in the master fix pack p
 | OpenVPN Operator image | v1.3.0 | v1.3.1 | Updated image for [CVE-2021-20305](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20305){: external}. |
 | Portieris admission controller | v0.10.1 | v0.10.2 | See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.10.2){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.5.0-20210329 | v4.5.0-20210512 | See the [ {{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20210512 ){: external}. |
-| {{site.data.keyword.openshiftlong_notm}} toolkit | 4.5.0+20210329 | 4.5.0+20210512 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20210512{: external}). |
+| {{site.data.keyword.openshiftlong_notm}} toolkit | 4.5.0+20210329 | 4.5.0+20210512 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20210512){: external}). |
 {: caption="Changes since version 4.5.37_1536_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 4.5.38_1538_openshift, released 10 May 2021

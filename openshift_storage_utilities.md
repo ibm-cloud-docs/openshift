@@ -1318,7 +1318,7 @@ When an alert is triggered, review the alert details in {{site.data.keyword.mon_
 {: shortdesc}
 
 
-* [Troubleshooting persistent storage volumes](/docs/openshift?topic=openshift-cs_troubleshoot_storage).
+* [Troubleshooting persistent storage volumes](/docs/containers?topic=containers-debug_storage).
 * [Troubleshooting worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
 * [Troubleshooting apps](/docs/containers?topic=containers-debug_apps).
 * [Troubleshooting clusters](/docs/containers?topic=containers-debug_clusters).
