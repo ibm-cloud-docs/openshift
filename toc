@@ -256,16 +256,152 @@ Red Hat OpenShift on IBM Cloud
     faqs.md
 
     {: .topicgroup}
-    Troubleshooting clusters
-        openshift_ts.md
-        openshift_troubleshoot_workers.md
-        openshift_ts_cluster_autoscaler.md
-        openshift_troubleshoot_network.md
-        openshift_troubleshoot_app.md
-        openshift_troubleshoot_lb.md
-        openshift_troubleshoot_ingress.md
-        openshift_troubleshoot_storage.md
+    Troubleshooting
         get_help.md
+        openshift_ts_debug_tool.md
+
+        {: .topicgroup}
+        Clusters and masters
+            ts-cluster/ts-cluster-debug.md
+            ts-cluster/ts-cluster-master.md
+            ts-cluster/ts-cluster-debug-ocp.md
+            ts-cluster/ts-cluster-cli.md
+            ts-cluster/ts-cluster-create-delete.md
+            ts-cluster/ts-cluster-cos-bucket.md
+            ts-cluster/ts-cluster-no-resources.md
+            ts-cluster/ts-cluster-vpn.md
+            ts-cluster/ts-cluster-no-vpc.md
+            ts-cluster/ts-cluster-icr-pull-img.md
+            ts-cluster/ts-cluster-webhook.md
+            ts-cluster/ts-cluster-portieris.md
+            ts-cluster/ts-cluster-pending.md
+            ts-cluster/ts-cluster-view-work.md
+
+        {: .topicgroup}
+        Worker nodes
+            ts-worker/ts-worker-debug.md
+            ts-worker/ts-worker-debug-kube-api.md
+            ts-worker/ts-worker-common-issues.md
+            ts-worker/ts-worker-create-delete.md
+            ts-worker/ts-worker-autorebalance.md
+            ts-worker/ts-worker-bm-instance-id.md
+            ts-worker/ts-worker-delete-pods-fail.md
+            ts-worker/ts-worker-dupe-nodes.md
+            ts-worker/ts-worker-invalid-vlan.md
+            ts-worker/ts-worker-pod-timeout.md
+            ts-worker/ts-worker-ssh-fail.md
+
+        {: .topicgroup}
+        Cluster autoscaler
+            ts-autoscaler/ts-ca-debug.md
+            ts-autoscaler/ts-ca-pod-init.md
+
+        {: .topicgroup}
+        Cluster network
+            ts-network/ts-network-roks-subdomain-missing.md
+            ts-network/ts-network-strongswan-vpn.md
+            ts-network/ts-network-strongswan-install-new.md
+            ts-network/ts-network-strongswan-network-nodes.md
+
+        {: .topicgroup}
+        Apps and services
+            ts-app/ts-app-01-debug.md
+            ts-app/ts-app-02-build.md
+            ts-app/ts-app-03-docker-pull.md
+            ts-app/ts-app-04-timeout-build.md
+            ts-app/ts-app-14-ocr-vpc.md
+            ts-app/ts-app-05-scc.md
+            ts-app/ts-app-06-imgpull.md
+            ts-app/ts-app-07-container-start.md
+            ts-app/ts-app-08-pod-pending.md
+            ts-app/ts-app-09-crashloop.md
+            ts-app/ts-app-10-pod-fail.md
+            ts-app/ts-app-11-svc-not-found.md
+            ts-app/ts-app-12-svc-key.md
+            ts-app/ts-app-15-helm-install.md
+
+        {: .topicgroup}
+        Managed add-ons
+            ts-addons/ts-addon-debug.md
+
+        {: .topicgroup}
+        Load balancers
+            ts-lbs/ts-lb-app.md
+            ts-lbs/ts-lb-deploy.md
+            ts-lbs/ts-lb-openvpn.md
+            ts-lbs/ts-lb-tainted-nodes.md
+            ts-lbs/ts-lb-roks-vpc-status.md
+            ts-lbs/ts-lb-vpc-app.md
+            ts-lbs/ts-lb-vpc-no-ips.md
+
+        {: .topicgroup}
+        Ingress and routers
+            ts-ingress/ts-ingress-status.md
+            ts-ingress/ts-ingress-debug.md
+            ts-ingress/ts-ingress-debug-roks4.md
+            ts-ingress/ts-ingress-app.md
+            ts-ingress/ts-ingress-vpc-app.md
+            ts-ingress/ts-ingress-roks-no-subdomain-create.md
+            ts-ingress/ts-ingress-subdomain-dupe-name.md
+            ts-ingress/ts-ingress-no-secret.md
+            ts-ingress/ts-ingress-secret-expiry.md
+            ts-ingress/ts-ingress-vpc-router-zone.md
+            ts-ingress/ts-ingress-router-zone.md
+            ts-ingress/ts-ingress-alb-no-deploy-zone.md
+            ts-ingress/ts-ingress-source-ip-tainted.md
+            ts-ingress/ts-ingress-alb-subnet.md
+            ts-ingress/ts-ingress-alb-secret.md
+            ts-ingress/ts-ingress-alb-pods-nodes.md
+
+        {: .topicgroup}
+        File Storage
+            ts-storage/ts-storage-debug.md
+            ts-storage/ts-storage-pvc-fail-permissions.md
+            ts-storage/ts-storage-file-block-pvc-pending.md
+            ts-storage/ts-storage-file-app.md
+            ts-storage/ts-storage-file-group-id-fail.md
+            ts-storage/ts-storage-file-nonroot-nfs-mount.md
+            ts-storage/ts-storage-file-nonroot.md
+            ts-storage/ts-storage-file-readonly.md
+            ts-storage/ts-storage-feedback.md
+            
+        {: .topicgroup}
+        Block Storage
+            [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage)
+            [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions)
+            ts-storage/ts-storage-block-app-pvc.md
+            ts-storage/ts-storage-block-mount-wrong-fs.md
+            ts-storage/ts-storage-block-read-only.md
+            ts-storage/ts-storage-block-throttling.md
+            
+        {: .topicgroup}
+        Object Storage
+            [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage)
+            [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions)
+            ts-storage/ts-storage-object-access-bucket.md
+            ts-storage/ts-storage-object-helm-fails.md
+            ts-storage/ts-storage-object-nonroot.md
+            ts-storage/ts-storage-object-op-not-permitted.md
+            ts-storage/ts-storage-object-ownership-mountpath.md
+            ts-storage/ts-storage-object-plugin-fails.md
+            ts-storage/ts-storage-object-pvc-fails.md
+            ts-storage/ts-storage-object-pvc-fails-s3fs-iam-ep.md
+            ts-storage/ts-storage-object-pvc-pending.md
+            ts-storage/ts-storage-object-pvc-pod-fail-secret.md
+            ts-storage/ts-storage-object-transport-ep.md
+            
+        {: .topicgroup}
+        Portworx
+            [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage)
+            [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions)         
+            ts-storage/ts-storage-px-debug.md
+            ts-storage/ts-storage-px-encryption-fails.md
+            
+        {: .topicgroup}
+        OpenShift Container Storage
+            [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage)
+            [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions)
+            ts-storage/ts-ocs-roks.md
 
     openshift_release_notes.md
     openshift_limitations.md
