@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-24"
+lastupdated: "2021-05-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -177,7 +177,7 @@ Review the options to debug your worker nodes and find the root causes for failu
        </tr>
           <tr>
           <td>`Normal`</td>
-          <td>Your worker node is fully provisioned and ready to be used in the cluster. This state is considered healthy and does not require an action from the user. **Note**: Although the worker nodes might be normal, other infrastructure resources, such as [networking](/docs/openshift?topic=openshift-cs_troubleshoot_network) and [storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage), might still need attention.</td>
+          <td>Your worker node is fully provisioned and ready to be used in the cluster. This state is considered healthy and does not require an action from the user. **Note**: Although the worker nodes might be normal, other infrastructure resources, such as [networking](/docs/containers?topic=containers-coredns_lameduck) and [storage](/docs/openshift?topic=openshift-cs_troubleshoot_storage), might still need attention.</td>
        </tr>
      <tr>
           <td>`Provisioned`</td>
@@ -374,7 +374,7 @@ Before you begin, make sure that you have the **Manager** service access role in
           operator: Exists
         ```
         {: copyblock}
-    6.  After you identify the workload that causes the issue, continue with [Debugging app deployments](/docs/openshift?topic=openshift-cs_troubleshoot_app#debug_apps).
+    6.  After you identify the workload that causes the issue, continue with [Debugging app deployments](/docs/containers?topic=containers-debug_apps).
 
 <br />
 
@@ -511,7 +511,7 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
         ```
         {: screen}
 
-    3.  If the worker node is not removed, review that [**State** and **Status** fields](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#debug_worker_nodes) and the [common issues with worker nodes](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#common_worker_nodes_issues) to continue debugging.
+    3.  If the worker node is not removed, review that [**State** and **Status** fields](/docs/containers?topic=containers-debug_worker_nodes) and the [common issues with worker nodes](/docs/containers?topic=containers-common_worker_nodes_issues) to continue debugging.
     4.  If you manually set credentials and still cannot see the cluster's worker nodes in your infrastructure account, you might check whether the [cluster is orphaned](#orphaned).
 
 ### Unable to create or delete worker nodes due to incorrect account error
@@ -568,7 +568,7 @@ Consider the following example scenario to understand how clusters might become 
 
         If you no longer have access to the infrastructure credentials, you can open an {{site.data.keyword.cloud_notm}} support case to determine an email address for the administrator of the other infrastructure account. However, {{site.data.keyword.cloud_notm}} Support cannot remove the orphaned cluster for you, and you must contact the administrator of the other account to get the infrastructure credentials.
         {: note}
-    *   **If the infrastructure accounts match**: Check the rest of the worker nodes in the cluster and see if any has a different infrastructure account. Make sure that you checked the worker nodes in the cluster that has the credentials issue. Review other [common infrastructure credential issues](#infra_errors).
+    *   **If the infrastructure accounts match**: Check the rest of the worker nodes in the cluster and see if any has a different infrastructure account. Make sure that you checked the worker nodes in the cluster that has the credentials issue. Review other [common infrastructure credential issues](/docs/containers?topic=containers-worker_infra_errors).
 4.  Now that the infrastructure credentials are updated, retry the blocked action, such as updating or deleting a worker node, and verify that the action succeeds.
 5.  If you have other clusters in the same region and resource that require the previous infrastructure credentials, repeat Step 3 to reset the infrastructure credentials to the previous account. Note that if you created clusters with a different infrastructure account than the account that you switch to, you might orphan those clusters.
 

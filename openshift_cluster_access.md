@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-24"
+lastupdated: "2021-05-26"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -105,10 +105,10 @@ After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin
 ## Prerequisites
 {: #prereqs}
 
-1. [Install the required CLI tools](/docs/openshift?topic=openshift-openshift-cli), including the {{site.data.keyword.cloud_notm}} CLI, {{site.data.keyword.containershort_notm}} plug-in alias for {{site.data.keyword.openshiftshort}} (`ibmcloud oc`), and {{site.data.keyword.openshiftshort}} CLI (`oc`). For quick access to test features in your cluster, you can also use the [{{site.data.keyword.cloud-shell_notm}}](/docs/openshift?topic=openshift-cs_cli_install#cloud-shell).
+1. [Install the required CLI tools](/docs/openshift?topic=openshift-openshift-cli), including the {{site.data.keyword.cloud_notm}} CLI, {{site.data.keyword.containershort_notm}} plug-in alias for {{site.data.keyword.openshiftshort}} (`ibmcloud oc`), and {{site.data.keyword.openshiftshort}} CLI (`oc`). For quick access to test features in your cluster, you can also use the [{{site.data.keyword.cloud-shell_notm}}](/docs/openshift?topic=openshift-openshift-cli#cloud-shell).
 2. [Create your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-clusters).
 3. If your network is protected by a company firewall, [allow access](/docs/openshift?topic=openshift-firewall#corporate) to the {{site.data.keyword.cloud_notm}} and {{site.data.keyword.openshiftlong_notm}} API endpoints and ports. For VPC clusters with only the private cloud service endpoint enabled, you cannot test the connection to your cluster until you [configure a VPC VPN with the cloud service endpoint subnet](#vpc_private_se).
-4. Check that your cluster is in a healthy state by running `ibmcloud oc cluster get -c <cluster_name_or_ID>`. If your cluster is not in a healthy state, review the [Debugging clusters](/docs/openshift?topic=openshift-cs_troubleshoot) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall).
+4. Check that your cluster is in a healthy state by running `ibmcloud oc cluster get -c <cluster_name_or_ID>`. If your cluster is not in a healthy state, review the [Debugging clusters](/docs/openshift?topic=openshift-debug_clusters) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall).
 5. Find your cluster's service endpoint.
   * **Classic or VPC clusters**: In the output of the cluster details from the previous step, check the **Public** or **Private Service Endpoint** URL of the cluster.
       *  Public Service Endpoint URL only: Continue with [Accessing clusters through the public cloud service endpoint](#access_public_se).
@@ -766,4 +766,4 @@ Many cluster add-ons, plug-ins, and other third-party extensions use admission c
 
 **I need help with a broken webhook. What can I do?**
 
-See [Cluster cannot update because of broken webhook](/docs/openshift?topic=openshift-cs_troubleshoot#webhooks_update).
+See [Cluster cannot update because of broken webhook](/docs/containers?topic=containers-webhooks_update).

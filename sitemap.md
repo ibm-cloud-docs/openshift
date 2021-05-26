@@ -356,6 +356,7 @@ subcollection: openshift
 
 [Moving your environment to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-strategy)
 * [Moving your workloads to the {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-strategy#cloud_workloads)
+  * [What can I move to the {{site.data.keyword.cloud_notm}}?](/docs/openshift?topic=openshift-strategy#move_to_cloud)
   * [Can I automate my infrastructure deployments?](/docs/openshift?topic=openshift-strategy#infra_packaging)
   * [What kind of apps can I run? Can I move existing apps, or do I need to develop new apps?](/docs/openshift?topic=openshift-strategy#app_kinds)
   * [What knowledge and technical skills are good to have before I move my apps to {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-strategy#knowledge)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-24"
+lastupdated: "2021-05-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -186,12 +186,12 @@ Identify and restore the resource that causes the broken webhook.
         oc describe service -n <namespace> <service_name>
         ```
         {: pre}
-    2.  If the service type is **ClusterIP**, check that the OpenVPN pod is in a **Running** status so that the webhook can connect securely to the Kubernetes API in the cluster master. If the pod is not healthy, check the pod events, logs, worker node health, and other components to troubleshoot. For more information, see [Debugging app deployments](/docs/containers?topic=containers-cs_troubleshoot_app).
+    2.  If the service type is **ClusterIP**, check that the OpenVPN pod is in a **Running** status so that the webhook can connect securely to the Kubernetes API in the cluster master. If the pod is not healthy, check the pod events, logs, worker node health, and other components to troubleshoot. For more information, see [Debugging app deployments](/docs/containers?topic=containers-debug_apps).
         ```
         oc describe pods -n kube-system -l app=vpn
         ```
         {: pre}
-    3.  If the service does not have an endpoint, check the health of the backing resources, such as a deployment or pod. If the resource is not healthy, check the pod events, logs, worker node health, and other components to troubleshoot. For more information, see [Debugging app deployments](/docs/containers?topic=containers-cs_troubleshoot_app).
+    3.  If the service does not have an endpoint, check the health of the backing resources, such as a deployment or pod. If the resource is not healthy, check the pod events, logs, worker node health, and other components to troubleshoot. For more information, see [Debugging app deployments](/docs/containers?topic=containers-debug_apps).
         ```
         oc get all -n my-service-namespace -l <key=value>
         ```
@@ -203,7 +203,7 @@ Identify and restore the resource that causes the broken webhook.
         {: pre}
 6.  Retry the cluster master operation, such as updating the cluster.
 7.  If you still see the error, you might have worker node or network connectivity issues.
-    *   [Worker node troubleshooting](/docs/containers?topic=containers-cs_troubleshoot_clusters).
+    *   [Worker node troubleshooting](/docs/containers?topic=containers-debug_worker_nodes.
     *   Make sure that the webhook can connect to the Kubernetes API server in the cluster master. For example, if you use Calico network policies, security groups, or some other type of firewall, set up your [classic](/docs/containers?topic=containers-firewall) or [VPC](/docs/containers?topic=containers-vpc-firewall) cluster with the appropriate access.
     *   If the webhook is managed by an add-on that you installed, uninstall the add-on. Common add-ons that cause webhook issues include the following:
         * [Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec)

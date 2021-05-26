@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-05-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -112,6 +112,34 @@ Use this page to learn some strategies for your Kubernetes deployments on {{site
 
 Not on slack yet? [Request an invite!](https://cloud.ibm.com/kubernetes/slack){: external}
 {: tip}
+
+### What can I move to the {{site.data.keyword.cloud_notm}}?
+{: #move_to_cloud}
+
+With {{site.data.keyword.cloud_notm}}, you have flexibility to create {{site.data.keyword.openshiftshort}} clusters in [off-premises, on-premises, or hybrid cloud environments](/docs/containers?topic=containers-cs_ov#differentiation). The following table provides some examples of what types of workloads that users typically move to the various types of clouds. You might also choose a hybrid approach where you have clusters that run in both environments.
+{: shortdesc}
+
+| Workload | {{site.data.keyword.containershort_notm}} off-prem | on-prem |
+| --- | --- | --- |
+| DevOps enablement tools | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
+| Developing and testing apps | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
+| Apps have major shifts in demand and need to scale rapidly | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
+| Business apps such as CRM, HCM, ERP, and E-commerce | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
+| Collaboration and social tools such as email | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
+| RHEL workloads | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
+| Bare metal and GPU compute resources | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| PCI and HIPAA-compliant workloads | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Legacy apps with platform and infrastructure constraints and dependencies | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Proprietary apps with strict designs, licensing, or heavy regulations | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+{: caption="{{site.data.keyword.cloud_notm}} implementations support your workloads" caption-side="top"}
+
+**Ready to run workloads off-premises in {{site.data.keyword.openshiftlong_notm}}?**
+
+Great! You're already in our public cloud documentation. Keep reading for more strategy ideas, or hit the ground running by [creating a cluster now](/docs/containers?topic=containers-getting-started).
+
+**Want to run workloads in both on-premises and off-premises clouds?**
+
+Explore [{{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-about) to extend the flexibility and scalability of {{site.data.keyword.cloud_notm}} into your on-premises, edge, or other cloud provider environments.
 
 ### Can I automate my infrastructure deployments?
 {: #infra_packaging}

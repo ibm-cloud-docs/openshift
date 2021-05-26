@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-25"
+lastupdated: "2021-05-26"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -792,7 +792,7 @@ The following table shows the changes that are included in the `4.5.13_1515_open
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 208 | 234 | Improved startup performance of version 2.0 private network load balancers (NLBs). Updated to use `Go` version 1.15.2. |
 | {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.4.0-20200821 | v4.5.0-20201009 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20201009){: external}. |
 | {{site.data.keyword.openshiftshort}} | 4.4.20 | 4.5.13 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html#ocp-4-5-13){: external}. |
-| {{site.data.keyword.openshiftshort}} configuration | N/A | N/A | New version 4.5 clusters that run on the VPC infrastructure provider and use {{site.data.keyword.cos_full_notm}} now proxy container image traffic through the internal registry pods directly to the {{site.data.keyword.cos_short}} endpoints. To configure this proxying for version 4.5 clusters that were updated from a previous version, see [the troubleshooting topic](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts-app-ocr-vpc-push). |
+| {{site.data.keyword.openshiftshort}} configuration | N/A | N/A | New version 4.5 clusters that run on the VPC infrastructure provider and use {{site.data.keyword.cos_full_notm}} now proxy container image traffic through the internal registry pods directly to the {{site.data.keyword.cos_short}} endpoints. To configure this proxying for version 4.5 clusters that were updated from a previous version, see [the troubleshooting topic](/docs/openshift?topic=openshift-ts-app-ocr-vpc-push). |
 | OpenVPN Operator image | v1.0.8 | v1.0.9 | Updated to improve OpenVPN availability. |
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server | N/A | v4.5.0-20201009 | **New!**: {{site.data.keyword.openshiftlong_notm}} now provides custom cluster metrics. See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20201009){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} toolkit | 4.4.0+20200821 | 4.5.0+20201009 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20201009){: external}. |
@@ -1181,7 +1181,7 @@ The following table shows the changes that are included in the master fix pack p
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.17.12-1 | v1.17.13-1 | Updated to support the Kubernetes 1.17.13 release. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 4b47693 | 31c794a | Updated to use `Go` version 1.15.2. |
 | {{site.data.keyword.openshiftshort}} | 4.4.20 | 4.4.27 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-27){: external}. |
-| {{site.data.keyword.openshiftshort}} configuration | N/A | N/A | New version 4.4 clusters that run on the VPC infrastructure provider and use {{site.data.keyword.cos_full_notm}} now proxy container image traffic through the internal registry pods directly to the {{site.data.keyword.cos_short}} endpoints. To configure this proxying for existing version 4.4 clusters, see [the troubleshooting topic](/docs/openshift?topic=openshift-cs_troubleshoot_app#ts-app-ocr-vpc-push). |
+| {{site.data.keyword.openshiftshort}} configuration | N/A | N/A | New version 4.4 clusters that run on the VPC infrastructure provider and use {{site.data.keyword.cos_full_notm}} now proxy container image traffic through the internal registry pods directly to the {{site.data.keyword.cos_short}} endpoints. To configure this proxying for existing version 4.4 clusters, see [the troubleshooting topic](/docs/openshift?topic=openshift-ts-app-ocr-vpc-push). |
 | OpenVPN Operator image | v1.0.8 | v1.0.9 | Updated to improve OpenVPN availability. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.4.20_1518_openshift" caption-side="top"}
@@ -1903,7 +1903,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for 3.11.216_1551_openshift, released 26 May 2020
 {: #311216_1551}
 
-The following table shows the changes that are included in the master and worker node update `3.11.216_1551_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating or reloading the worker node For more information, see [Update types](/docs/openshift?topic=openshift-cs_versions#update_types).
+The following table shows the changes that are included in the master and worker node update `3.11.216_1551_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating or reloading the worker node For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
 {: shortdesc}
 
 | Component | Location | Previous | Current | Description |

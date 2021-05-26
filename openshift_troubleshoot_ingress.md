@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-24"
+lastupdated: "2021-05-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -485,7 +485,7 @@ Seeing an **Application is not available** page when you try to access your app'
 Start by checking for errors in your app deployment and the Ingress resource deployment. Error messages in your deployments can help you find the root causes for failures and further debug your Ingress setup in the next sections.
 {: shortdesc}
 
-1. Before you debug Ingress, first check out [Debugging app deployments](/docs/openshift?topic=openshift-cs_troubleshoot_app#debug_apps). Ingress issues are often caused by underlying issues in your app deployment or in the `ClusterIP` service that exposes your app. For example, your app label and service selector might not match, or your app and service target ports might not match.
+1. Before you debug Ingress, first check out [Debugging app deployments](/docs/containers?topic=containers-debug_apps). Ingress issues are often caused by underlying issues in your app deployment or in the `ClusterIP` service that exposes your app. For example, your app label and service selector might not match, or your app and service target ports might not match.
 
 2. Check your Ingress resource deployment and look for warnings or error messages.
     ```
@@ -629,7 +629,7 @@ Verify that the Ingress operator and the Ingress controller's router are healthy
       oc describe svc router-default -n openshift-ingress
       ```
       {: pre}
-      * For example, in VPC clusters, you might see an error message such as `The VPC load balancer that routes requests to this Kubernetes LoadBalancer service is offline`. For more information, see [Cannot connect to an app via load balancer](/docs/openshift?topic=openshift-cs_troubleshoot_lb#vpc_ts_lb).
+      * For example, in VPC clusters, you might see an error message such as `The VPC load balancer that routes requests to this Kubernetes LoadBalancer service is offline`. For more information, see [Cannot connect to an app via load balancer](/docs/openshift?topic=openshift-vpc_ts_lb).
 
 ### Step 4: Ping the Ingress subdomain and router public IP address
 {: #ping-43}
@@ -658,7 +658,7 @@ Check the availability of the public IP addresses of the Ingress controller's ro
     ```
     {: screen}
 
-    If a router has no external IP address (classic) or hostname (VPC), see [Version 4: Router for Ingress controller does not deploy](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress#cs_subnet_limit_43).
+    If a router has no external IP address (classic) or hostname (VPC), see [Version 4: Router for Ingress controller does not deploy](/docs/openshift?topic=openshift-cs_subnet_limit_43).
     {: note}
 
 3. Check the health of your router by pinging its IP address (classic) or hostname (VPC).
@@ -999,7 +999,7 @@ Before you begin, ensure you have the following [{{site.data.keyword.cloud_notm}
 ### Step 1: Check your app deployment
 {: #app-debug-ingress}
 
-Before you debug Ingress, first check out [Debugging app deployments](/docs/openshift?topic=openshift-cs_troubleshoot_app#debug_apps).
+Before you debug Ingress, first check out [Debugging app deployments](/docs/containers?topic=containers-debug_apps).
 {: shortdesc}
 
 Ingress issues are often caused by underlying issues in your app deployment or in the `ClusterIP` service that exposes your app. For example, your app label and service selector might not match, or your app and service target ports might not match.
