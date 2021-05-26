@@ -144,7 +144,7 @@ To get started with static routes in {{site.data.keyword.openshiftlong_notm}}, e
 </br>
 **To use the CLI:**
 
-1. [Target the CLI to your cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
+1. [Target the CLI to your cluster](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure).
 
 2. Enable the `static-route` add-on.
   ```

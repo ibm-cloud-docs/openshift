@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-05-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -104,7 +104,7 @@ Review the options that you have to debug your app deployments and find the root
   * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
   * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/containers?topic=containers-users#platform) for the namespace where your app is deployed.
+Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#platform) for the namespace where your app is deployed.
 
 
 
@@ -116,7 +116,7 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
     ```
     {: pre}
 
-2. [Check whether the containers are stuck in the `ContainerCreating` state](/docs/containers?topic=containers-stuck_creating_state).
+2. [Check whether the containers are stuck in the `ContainerCreating` state](/docs/openshift?topic=openshift-readonly_nodes).
 
 3. Check whether the cluster is in the `Critical` state. If the cluster is in a `Critical` state, check the firewall rules and verify that the master can communicate with the worker nodes.
 
@@ -173,5 +173,3 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
       curl <host_name>.<domain>
       ```
       {: pre}
-
-

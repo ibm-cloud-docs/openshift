@@ -125,7 +125,7 @@ During the installation, many different tasks are executed by the {{site.data.ke
    ```
    {: pre}
 
-2. [Retry the installation](/docs/containers?topic=containers-object_storage#install_cos).
+2. [Retry the installation](/docs/openshift?topic=openshift-object_storage#install_cos).
 
 3. If you continue to see the same error, get a list of the resources that are installed when the plug-in is installed. Get a list of storage classes that are created by the `ibmcloud-object-storage-plugin`.
    ```sh
@@ -201,7 +201,7 @@ During the installation, many different tasks are executed by the {{site.data.ke
 
 4. Delete the conflicting resources.
 
-5. After you delete the conflicting resources, [retry the installation](/docs/containers?topic=containers-object_storage#install_cos).
+5. After you delete the conflicting resources, [retry the installation](/docs/openshift?topic=openshift-object_storage#install_cos).
 
 
 

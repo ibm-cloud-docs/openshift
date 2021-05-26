@@ -133,8 +133,8 @@ Verify that your cluster has available subnets, and that the load balancer setup
     2876543   169.xx.xxx.xxx/29  true     false
     ```
     {: screen}
-2.  If the cluster does not have a subnet, [create a subnet for the cluster](/docs/containers?topic=containers-subnets#request) or [add an existing subnet from your account to the cluster](/docs/containers?topic=containers-subnets#add-existing).
-3.  If the cluster does have a subnet, [check for available portable IP addresses](/docs/containers?topic=containers-subnets#review_ip) and if necessary, [add more portable IP address by adding a subnet](/docs/containers?topic=containers-subnets#adding_ips).
+2.  If the cluster does not have a subnet, [create a subnet for the cluster](/docs/openshift?topic=openshift-subnets#request) or [add an existing subnet from your account to the cluster](/docs/openshift?topic=openshift-subnets#add-existing).
+3.  If the cluster does have a subnet, [check for available portable IP addresses](/docs/openshift?topic=openshift-subnets#review_ip) and if necessary, [add more portable IP address by adding a subnet](/docs/openshift?topic=openshift-subnets#adding_ips).
 4.  Refresh the master to restart the OpenVPN setup so that it uses the available subnet.
     ```
     ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>

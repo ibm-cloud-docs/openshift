@@ -115,7 +115,7 @@ When you run `ibmcloud`, `kubectl`,`oc`,  or `calicoctl` commands from the CLI, 
 You might have corporate network policies that prevent access from your local system to public endpoints via proxies or firewalls.
 
 {: tsResolve}
-[Allow TCP access for the CLI commands to work](/docs/containers?topic=containers-firewall#firewall_bx). This task requires the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/containers?topic=containers-users#platform) for the cluster.
+[Allow TCP access for the CLI commands to work](/docs/openshift?topic=openshift-firewall#firewall_bx). This task requires the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#platform) for the cluster.
 
 <br />
 

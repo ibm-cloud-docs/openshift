@@ -155,15 +155,15 @@ Use the {{site.data.keyword.openshiftlong_notm}} observability plug-in to create
 {: shortdesc}
 
 Considerations for using the {{site.data.keyword.openshiftlong_notm}} observability plug-in:
-* You can have only one logging configuration for {{site.data.keyword.la_full_notm}} in your cluster at a time. If you want to use a different {{site.data.keyword.la_full_notm}} service instance to send logs to, use the [`ibmcloud ob logging config replace`](/docs/containers?topic=containers-observability_cli#logging_config_replace) command.
+* You can have only one logging configuration for {{site.data.keyword.la_full_notm}} in your cluster at a time. If you want to use a different {{site.data.keyword.la_full_notm}} service instance to send logs to, use the [`ibmcloud ob logging config replace`](/docs/openshift?topic=openshift-observability_cli#logging_config_replace) command.
 * {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}} cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI to enable logging for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy logging agents to your cluster to forward logs to {{site.data.keyword.la_short}}.
-* If you created a {{site.data.keyword.la_short}} configuration in your cluster without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you can use the [`ibmcloud ob logging agent discover`](/docs/containers?topic=containers-observability_cli#logging_agent_discover) command to make the configuration visible to the plug-in. Then, you can use the observability plug-in commands and functionality in the {{site.data.keyword.cloud_notm}} console to manage the configuration.
+* If you created a {{site.data.keyword.la_short}} configuration in your cluster without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you can use the [`ibmcloud ob logging agent discover`](/docs/openshift?topic=openshift-observability_cli#logging_agent_discover) command to make the configuration visible to the plug-in. Then, you can use the observability plug-in commands and functionality in the {{site.data.keyword.cloud_notm}} console to manage the configuration.
 
 Before you begin:
 - Verify that you are assigned the **Editor** platform access role and **Manager** server access role for {{site.data.keyword.la_full_notm}}.
 - Verify that you are assigned the **Administrator** platform access role and the **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}} to create the logging configuration. To view a logging configuration or launch the {{site.data.keyword.la_short}} dashboard after the logging configuration is created, users must be assigned the **Administrator** platform access role and the **Manager** service access for the `ibm-observe` Kubernetes namespace in {{site.data.keyword.containerlong_notm}}.
 - If you want to use the CLI to set up the logging configuration:
-  - [Install the {{site.data.keyword.openshiftlong_notm}} observability CLI plug-in (`ibmcloud ob`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
+  - [Install the {{site.data.keyword.openshiftlong_notm}} observability CLI plug-in (`ibmcloud ob`)](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_install_steps).
   - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To set up a logging configuration for your cluster:
@@ -179,7 +179,7 @@ To set up a logging configuration for your cluster:
    - **From the CLI:**
      1.  Create the {{site.data.keyword.la_short}} configuration. When you create the {{site.data.keyword.la_short}} configuration, the ingestion key that was last added is retrieved automatically. If you want to use a different ingestion key, add the `--logdna-ingestion-key <ingestion_key>` option to the command.
 
-         To use a different ingestion key after you created your logging configuration, use the [`ibmcloud ob logging config replace`](/docs/containers?topic=containers-observability_cli#logging_config_replace) command.
+         To use a different ingestion key after you created your logging configuration, use the [`ibmcloud ob logging config replace`](/docs/openshift?topic=openshift-observability_cli#logging_config_replace) command.
          {: tip}
 
          ```

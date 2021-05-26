@@ -140,7 +140,7 @@ If you see a `permission denied` error, you do not have the required `read`, `wr
    ```
    {: pre}
 
-2. Follow the [documentation](/docs/containers?topic=containers-object_storage#install_cos) to re-install the `ibmc` Helm plug-in and the {{site.data.keyword.cos_full_notm}} plug-in.
+2. Follow the [documentation](/docs/openshift?topic=openshift-object_storage#install_cos) to re-install the `ibmc` Helm plug-in and the {{site.data.keyword.cos_full_notm}} plug-in.
 
 **For permission errors**:
 
@@ -162,6 +162,6 @@ If you see a `permission denied` error, you do not have the required `read`, `wr
    ```
    {: pre}
 
-3. [Continue installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-object_storage#install_cos).
+3. [Continue installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#install_cos).
 
 

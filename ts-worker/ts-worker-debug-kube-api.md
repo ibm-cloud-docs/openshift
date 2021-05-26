@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-24"
+lastupdated: "2021-05-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -118,7 +118,7 @@ Before you begin, make sure that you have the **Manager** service access role in
     {: pre}
 4.  Check the usage of the worker nodes.
     1.  In the `Allocated resources` output of the previous command, review the workloads that use the worker node's CPU and memory resources. You might notice that some pods do not set resource limits, and are consuming more resources than you expected. If so, adjust the resource usage of the pods.
-    2.  Review the percentage of usage of CPU and memory across the worker nodes in your cluster. If the usage is consistently over 80%, [add more worker nodes](/docs/containers?topic=containers-add_workers) to the cluster to support the workloads.
+    2.  Review the percentage of usage of CPU and memory across the worker nodes in your cluster. If the usage is consistently over 80%, [add more worker nodes](/docs/openshift?topic=openshift-add_workers) to the cluster to support the workloads.
 5.  Check for custom admission controllers that are installed in your cluster. Admission controllers often block required pods from running, which might make your worker nodes enter a critical state. If you have custom admission controllers, try removing them with `oc delete`. Then, check if the worker node issue resolves.
     ```
     kubectl get mutatingwebhookconfigurations --all-namespaces
@@ -129,7 +129,7 @@ Before you begin, make sure that you have the **Manager** service access role in
     kubectl get validatingwebhookconfigurations --all-namespaces
     ```
     {: pre}
-6.  If you configured [log forwarding](/docs/containers?topic=containers-health), review the node-related logs from the following paths.
+6.  If you configured [log forwarding](/docs/openshift?topic=openshift-health), review the node-related logs from the following paths.
     ```
     /var/log/containerd.log
     /var/log/kubelet.log
@@ -164,4 +164,4 @@ Before you begin, make sure that you have the **Manager** service access role in
           operator: Exists
         ```
         {: copyblock}
-    6.  After you identify the workload that causes the issue, continue with [Debugging app deployments](/docs/containers?topic=containers-cs_troubleshoot_app#debug_apps).
+    6.  After you identify the workload that causes the issue, continue with [Debugging app deployments](/docs/openshift?topic=openshift-debug_apps).

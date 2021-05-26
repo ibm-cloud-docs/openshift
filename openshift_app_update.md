@@ -110,7 +110,7 @@ To update your app, you can choose from various strategies such as the following
 <dt>Instantaneous switch</dt>
   <dd>Also referred to as a blue-green deployment, an instantaneous switch requires double the compute resources to have two versions of an app running at once. With this approach, you can switch your users to the newer version in near real time. Make sure that you use service label selectors (such as `version: green` and `version: blue`) to make sure that requests are sent to the right app version. You can create the new `version: green` deployment, wait until it is ready, and then delete the `version: blue` deployment. Or you can perform a [rolling update](/docs/openshift?topic=openshift-update_app#app_rolling), but set the `maxUnavailable` parameter to `0%` and the `maxSurge` parameter to `100%`.</dd>
 <dt>Canary or A/B deployment</dt>
-  <dd>A more complex update strategy, a canary deployment is when you pick a percentage of users such as 5% and send them to the new app version. You collect metrics in your logging and monitoring tools on how the new app version performs, do A/B testing, and then roll out the update to more users. As with all deployments, labeling the app (such as `version: stable` and `version: canary`) is critical. To manage canary deployments, you might [install the managed Istio add-on service mesh](/docs/containers?topic=containers-istio), [set up {{site.data.keyword.mon_short}} for your cluster](/docs/monitoring?topic=monitoring-kubernetes_cluster#kubernetes_cluster), and then use the Istio service mesh for A/B testing as described [in this blog post ![External link icon](../icons/launch-glyph.svg "External link icon")](https://sysdig.com/blog/monitor-istio/).</dd>
+  <dd>A more complex update strategy, a canary deployment is when you pick a percentage of users such as 5% and send them to the new app version. You collect metrics in your logging and monitoring tools on how the new app version performs, do A/B testing, and then roll out the update to more users. As with all deployments, labeling the app (such as `version: stable` and `version: canary`) is critical. To manage canary deployments, you might [install the managed Istio add-on service mesh](/docs/openshift?topic=openshift-istio), [set up {{site.data.keyword.mon_short}} for your cluster](/docs/monitoring?topic=monitoring-kubernetes_cluster#kubernetes_cluster), and then use the Istio service mesh for A/B testing as described [in this blog post ![External link icon](../icons/launch-glyph.svg "External link icon")](https://sysdig.com/blog/monitor-istio/).</dd>
 </dl>
 
 
@@ -129,7 +129,7 @@ Before you begin:
 
 Steps:
 
-1.  Deploy your app to a cluster from the CLI. For more complex deployments, you might need to create a [configuration file](/docs/containers?topic=containers-deploy_app#app_cli).
+1.  Deploy your app to a cluster from the CLI. For more complex deployments, you might need to create a [configuration file](/docs/openshift?topic=openshift-deploy_app#app_cli).
     ```
     oc create deployment <app_name> --image=<image>
     ```
@@ -182,7 +182,7 @@ Want to prevent downtime during your rolling update? Be sure to specify a [readi
 
 Before you begin:
 *   [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-*   Create a [deployment](/docs/containers?topic=containers-deploy_app#app_cli).
+*   Create a [deployment](/docs/openshift?topic=openshift-deploy_app#app_cli).
 *   Make sure that you have a [service access role](/docs/openshift?topic=openshift-users#platform) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
 
 To manage rolling updates to your apps:

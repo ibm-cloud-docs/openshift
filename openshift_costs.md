@@ -115,7 +115,7 @@ Clusters can have two main types of worker nodes: virtual or physical (bare meta
 
 **When do worker nodes begin to incur charges?**
 
-Worker nodes begin to incur charges after successfully complete the `provisioning` state and continue until you delete the worker nodes and they complete the `deleting` state. For more information, see [Worker node states](/docs/containers?topic=containers-health-monitor#states_workers).
+Worker nodes begin to incur charges after successfully complete the `provisioning` state and continue until you delete the worker nodes and they complete the `deleting` state. For more information, see [Worker node states](/docs/openshift?topic=openshift-health-monitor#states_workers).
 
 **What is the difference between virtual and physical machines?**
 
@@ -255,7 +255,7 @@ Each service that you integrate with your cluster has its own pricing model. Rev
 ### Operators and other third-party integrations
 {: #operators_pricing}
 
-[Operators](/docs/openshift?topic=openshift-operators) and other [third-party integrations](/docs/containers?topic=containers-supported_integrations) are a convenient way to add services to your cluster from community, third-party, your own, or other providers. Keep in mind that you are responsible for additional charges and how these services operate in your cluster, from deployment and maintenance to integration with your apps. If you have issues with an operator or third-party integration, work with the appropriate provider to troubleshoot the issue.
+[Operators](/docs/openshift?topic=openshift-operators) and other [third-party integrations](/docs/openshift?topic=openshift-supported_integrations) are a convenient way to add services to your cluster from community, third-party, your own, or other providers. Keep in mind that you are responsible for additional charges and how these services operate in your cluster, from deployment and maintenance to integration with your apps. If you have issues with an operator or third-party integration, work with the appropriate provider to troubleshoot the issue.
 {: shortdesc}
 
 ### VPC worker nodes

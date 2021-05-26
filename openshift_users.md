@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-24"
+lastupdated: "2021-05-26"
 
 keywords: openshift, roks, rhoks, rhos, access, permissions, api key
 
@@ -330,8 +330,8 @@ The API key is used to authorize underlying actions in the following {{site.data
 *   **{{site.data.keyword.keymanagementserviceshort}}** or **{{site.data.keyword.hscrypto}}**, if you [enable a key management service provider](/docs/openshift?topic=openshift-encryption#kms) in your cluster.
 *   **{{site.data.keyword.cloudcerts_short}}**, for managing the Ingress certificates for your cluster.
 *   **{{site.data.keyword.registryshort}}**, for setting up default access to pull images from the registry to your cluster.
-*   **{{site.data.keyword.la_short}}**, if you [enable the logging service](/docs/containers?topic=containers-health).
-*   **{{site.data.keyword.mon_short}}**, if you [enable the monitoring service](/docs/containers?topic=containers-health).
+*   **{{site.data.keyword.la_short}}**, if you [enable the logging service](/docs/openshift?topic=openshift-health).
+*   **{{site.data.keyword.mon_short}}**, if you [enable the monitoring service](/docs/openshift?topic=openshift-health).
 *   **{{site.data.keyword.at_short}}**, for sending audit events from your cluster.
 
 **How many API keys do I need?**
@@ -498,7 +498,7 @@ Instead of using the default linked IBM Cloud infrastructure account to order in
 You can manually set infrastructure credentials to a different account only for classic clusters, not for VPC clusters.
 {: note}
 
-The IBM Cloud infrastructure credentials that are set by the `ibmcloud oc credential set` command persist after your session ends. If you remove IBM Cloud infrastructure credentials that were manually set with the [`ibmcloud oc credential unset --region <region>`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_unset) command, the credentials of the Pay-As-You-Go or Subscription account are used instead. However, this change in infrastructure account credentials might cause [orphaned clusters](/docs/containers?topic=containers-cs_troubleshoot_clusters#orphaned).
+The IBM Cloud infrastructure credentials that are set by the `ibmcloud oc credential set` command persist after your session ends. If you remove IBM Cloud infrastructure credentials that were manually set with the [`ibmcloud oc credential unset --region <region>`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_unset) command, the credentials of the Pay-As-You-Go or Subscription account are used instead. However, this change in infrastructure account credentials might cause [orphaned clusters](/docs/openshift?topic=openshift-worker_infra_errors#orphaned).
 {: important}
 
 **Before you begin**:
@@ -958,7 +958,7 @@ To prevent breaking changes, do not change the predefined `view`, `edit`, `admin
 
 **Before you begin**:
 
-- Target the [Kubernetes CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to your cluster.
+- Target the [Kubernetes CLI](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure) to your cluster.
 - Ensure you that have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#platform) for all namespaces.
 - To assign access to individual users or users in an access group, ensure that the user or group has been assigned at least one [{{site.data.keyword.cloud_notm}} IAM platform access role](#platform) at the {{site.data.keyword.openshiftlong_notm}} service level.
 
@@ -1245,7 +1245,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     oc apply -f <cluster_role_file.yaml>
     ```
     {: pre}
-3.  Follow up with users that have the `admin` cluster role. Ask them to [refresh their cluster configuration](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) and test the action, such as `oc top pods`.
+3.  Follow up with users that have the `admin` cluster role. Ask them to [refresh their cluster configuration](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure) and test the action, such as `oc top pods`.
 
 
 <br />
@@ -1431,7 +1431,7 @@ To avoid this issue for future users, consider using a functional ID user for th
         5.  If you do not find the worker node ID, the worker node is not provisioned into this infrastructure account. Switch to a different infrastructure account and try again.
     2. Determine what happens to the infrastructure account that the user used to provision the clusters after the user leaves.
         * If the user does not own the infrastructure account, then other users have access to this infrastructure account and it persists after the user leaves. You can continue to work with these clusters in your account. Make sure that at least one other user has the [**Administrator** platform access role](#platform) for the clusters.
-        * If the user owns the infrastructure account, then the infrastructure account is deleted when the user leaves. You cannot continue to work with these clusters. To prevent the cluster from becoming orphaned, the user must delete the clusters before the user leaves. If the user has left but the clusters were not deleted, you must use the `ibmcloud oc credential set` command to change your infrastructure credentials to the account that the cluster worker nodes are provisioned in, and delete the cluster. For more information, see [Unable to modify or delete infrastructure in an orphaned cluster](/docs/containers?topic=containers-cs_troubleshoot_clusters#orphaned).
+        * If the user owns the infrastructure account, then the infrastructure account is deleted when the user leaves. You cannot continue to work with these clusters. To prevent the cluster from becoming orphaned, the user must delete the clusters before the user leaves. If the user has left but the clusters were not deleted, you must use the `ibmcloud oc credential set` command to change your infrastructure credentials to the account that the cluster worker nodes are provisioned in, and delete the cluster. For more information, see [Unable to modify or delete infrastructure in an orphaned cluster](/docs/openshift?topic=openshift-worker_infra_errors#orphaned).
 5. Repeat these steps for each combination of resource groups and regions where you have clusters.
 
 ### Removing a user from your account

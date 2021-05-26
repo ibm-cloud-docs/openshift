@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-05-26"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -547,7 +548,7 @@ http://<subdomain2>.<domain>/<app1_path>
 ```
 {: codeblock}
 
-<p class="tip">Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress). You can check the health and status of your Ingress components by running `ibmcloud oc ingress status -c <cluster_name_or_ID>`.</p>
+<p class="tip">Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/openshift?topic=openshift-ingress-debug). You can check the health and status of your Ingress components by running `ibmcloud oc ingress status -c <cluster_name_or_ID>`.</p>
 
 <br />
 
@@ -707,7 +708,7 @@ To expose apps that are outside of your cluster to the public:
   ```
   {: codeblock}
 
-<p class="tip">Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress). You can check the health and status of your Ingress components by running `ibmcloud oc ingress status -c <cluster_name_or_ID>`.</p>
+<p class="tip">Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/openshift?topic=openshift-ingress-debug). You can check the health and status of your Ingress components by running `ibmcloud oc ingress status -c <cluster_name_or_ID>`.</p>
 
 <br />
 
@@ -960,7 +961,7 @@ http://<subdomain2>.<domain>/<app1_path>
 ```
 {: codeblock}
 
-<p class="tip">Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/openshift?topic=openshift-cs_troubleshoot_debug_ingress). You can check the health and status of your Ingress components by running `ibmcloud oc ingress status -c <cluster_name_or_ID>`.</p>
+<p class="tip">Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/openshift?topic=openshift-ingress-debug). You can check the health and status of your Ingress components by running `ibmcloud oc ingress status -c <cluster_name_or_ID>`.</p>
 
 ### Optional: Block traffic to public NodePorts
 {: #block-nodeports}
@@ -1152,7 +1153,7 @@ Kubernetes Ingress versions
 0.35.0_1182_iks
 0.34.1_1191_iks
 ```
-{: screen}Note that only the custom {{site.data.keyword.cloud_notm}} Ingress image versions are supported for {{site.data.keyword.openshiftshort}} clusters. For the changes that are included in each version of the {{site.data.keyword.cloud_notm}} Ingress image, see the [Ingress version changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).
+{: screen}Note that only the custom {{site.data.keyword.cloud_notm}} Ingress image versions are supported for {{site.data.keyword.openshiftshort}} clusters. For the changes that are included in each version of the {{site.data.keyword.cloud_notm}} Ingress image, see the [Ingress version changelog](/docs/openshift?topic=openshift-cluster-add-ons-changelog#alb_changelog).
 
 ### Managing automatic updates
 {: #autoupdate}

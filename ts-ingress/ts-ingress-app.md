@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-05-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -78,6 +78,7 @@ content-type: troubleshoot
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -110,5 +111,5 @@ ibmcloud oc worker ls --cluster <cluster_name_or_ID>
 
 In your CLI output, make sure that the **Status** of your worker nodes displays **Ready** and that the **Machine Type** shows a flavor other than **free**.
 
-* If your standard cluster is fully deployed and has at least 2 worker nodes per zone, but no **Ingress Subdomain** is available, see [Why does no Ingress subdomain exist after cluster creation?](/docs/containers?topic=containers-ingress_subdomain).
+* If your standard cluster is fully deployed and has at least 2 worker nodes per zone, but no **Ingress Subdomain** is available, see [Why does no Ingress subdomain exist after cluster creation?](/docs/openshift?topic=openshift-ingress_subdomain).
 * For other issues, troubleshoot your Ingress setup by following the steps in [Version 3.11: Debugging Ingress](/docs/openshift?topic=openshift-ingress-debug) or [Version 4: Debugging Ingress](/docs/openshift?topic=openshift-ingress-debug-roks4).

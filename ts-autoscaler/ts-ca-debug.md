@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-24"
+lastupdated: "2021-05-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -131,7 +131,7 @@ Check that the cluster autoscaler is configured correctly.
     {: pre}
 2.  In the `data.workerPoolsConfig.json` field, check that the correct worker pools are enabledwith the minimum and maximum size per worker pool.
     *  **`"name": "<worker_pool_name>"`**: The name of your worker pool in the configmap must beexactly the same as the name of the worker pool in your cluster. Multiple worker pools mustbe comma-separated. To check the name of your cluster worker pools, run `ibmcloud oc worker-poolls -c <cluster_name_or_ID>`.
-    *  **`"minSize": 2`**: In general, the `minSize` must be `2` or greater. Remember that the`minSize` value cannot be `0`, and you can only have a `minSize` of 1 if you [disable thepublic ALBs](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_alb_configure).
+    *  **`"minSize": 2`**: In general, the `minSize` must be `2` or greater. Remember that the`minSize` value cannot be `0`, and you can only have a `minSize` of 1 if you [disable the public ALBs](/docs/openshift?topic=openshift-cli-plugin-kubernetes-service-cli#cs_alb_configure).
     * **`"maxSize": 3`**: The `maxSize` must be equal to or greater than the `minSize`.
     * **`"enabled": true`**: Set the value to `true` to enable autoscaling the worker pool.
     ```
@@ -202,7 +202,7 @@ Check the health of the cluster autoscaler pod.
     oc describe pod -n kube-system <pod_name>
     ```
     {: pre}
-3.  Review the **Command** section to check that the [custom cluster autoscaler configuration](/docs/containers?topic=containers-ca#ca_chart_values) matches what you expect, such as the`scale-down-delay-after-add` value.
+3.  Review the **Command** section to check that the [custom cluster autoscaler configuration](/docs/openshift?topic=openshift-ca#ca_chart_values) matches what you expect, such as the`scale-down-delay-after-add` value.
     ```
     Command:
         ./cluster-autoscaler
@@ -229,7 +229,7 @@ Check the health of the cluster autoscaler pod.
 
 Search the logs of the cluster autoscaler pod for relevant messages, such as failure messages like `lastScaleDownFailTime`, the `Final scale-up plan`, or [cluster autoscaler events](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#what-events-are-emitted-by-ca){: external}.
 
-If your cluster autoscaler pod is unhealthy and cannot stream logs, check your [{{site.data.keyword.la_full}} instance](https://cloud.ibm.com/observe/logging) for the pod logs. Note that if your cluster administrator did not [enable {{site.data.keyword.la_short}} for your cluster](/docs/containers?topic=containers-health), you might not have any logs to review.
+If your cluster autoscaler pod is unhealthy and cannot stream logs, check your [{{site.data.keyword.la_full}} instance](https://cloud.ibm.com/observe/logging) for the pod logs. Note that if your cluster administrator did not [enable {{site.data.keyword.la_short}} for your cluster](/docs/openshift?topic=openshift-health), you might not have any logs to review.
 {: tip}
 
 ```
@@ -287,6 +287,6 @@ Optional: If you completed the debugging steps and your cluster still does not s
 5. Edit the `minSize` or `maxSize` parameters and save your changes.
 
 ## Step 8: Check if the issue is resolved
-{: #ca-debug-pod-restart}
+{: #ca-debug-more}
 
-Monitor the cluster autoscaler activities in your cluster to see if the issue is resolved. If you still experience issues, see [Feedback, questions, and support](/docs/containers?topic=containers-get-help).
+Monitor the cluster autoscaler activities in your cluster to see if the issue is resolved. If you still experience issues, see [Feedback, questions, and support](/docs/openshift?topic=openshift-get-help).

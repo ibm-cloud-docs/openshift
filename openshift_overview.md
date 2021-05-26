@@ -125,9 +125,9 @@ Containers provide a standard way to package your application's code, configurat
 
 With {{site.data.keyword.openshiftlong_notm}}, you can create your cluster of compute hosts on classic {{site.data.keyword.cloud_notm}} infrastructure or VPC infrastructure.
 
-[Classic clusters](/docs/containers?topic=containers-getting-started) are created on your choice of virtual or bare metal worker nodes that are connected to VLANs. If you require additional local disks, you can also choose one of the bare metal flavors that are designed for software-defined storage solutions, such as Portworx. Depending on the level of hardware isolation that you need, virtual worker nodes can be set up as shared or dedicated nodes, whereas bare metal machines are always set up as dedicated nodes.
+[Classic clusters](/docs/openshift?topic=openshift-getting-started) are created on your choice of virtual or bare metal worker nodes that are connected to VLANs. If you require additional local disks, you can also choose one of the bare metal flavors that are designed for software-defined storage solutions, such as Portworx. Depending on the level of hardware isolation that you need, virtual worker nodes can be set up as shared or dedicated nodes, whereas bare metal machines are always set up as dedicated nodes.
 
-[VPC clusters](/docs/containers?topic=containers-getting-started) are created in your own Virtual Private Cloud that gives you the security of a private cloud environment with the dynamic scalability of a public cloud. You use network access control lists to protect the subnets that your worker nodes are connected to. VPC clusters can be provisioned on shared virtual infrastructure only.
+[VPC clusters](/docs/openshift?topic=openshift-getting-started) are created in your own Virtual Private Cloud that gives you the security of a private cloud environment with the dynamic scalability of a public cloud. You use network access control lists to protect the subnets that your worker nodes are connected to. VPC clusters can be provisioned on shared virtual infrastructure only.
 
 For more information, see [Overview of Classic and VPC infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers). 
 
@@ -138,7 +138,7 @@ Review the following links to find out more about the benefits and responsibilit
 
 - [Benefits of using {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-cs_ov)
 - [{{site.data.keyword.openshiftlong_notm}} service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture)
-- [Use cases](/docs/containers?topic=containers-cs_uc_intro)
+- [Use cases](/docs/openshift?topic=openshift-cs_uc_intro)
 - [Your responsibilities by using {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-responsibilities_iks)
 - [Defining your Kubernetes strategy](/docs/openshift?topic=openshift-strategy)
 - [Limitations](/docs/openshift?topic=openshift-openshift_limitations)
@@ -212,7 +212,7 @@ Learn more about the key concepts of Kubernetes as illustrated in the following 
 <dt>Account</dt>
 <dd>Your account refers to your {{site.data.keyword.cloud_notm}} account.</dd>
 <dt>Cluster, worker pool, and worker node</dt>
-<dd>A Kubernetes cluster consists of a master and one or more compute hosts that are called worker nodes. Worker nodes are organized into worker pools of the same flavor, or profile of CPU, memory, operating system, attached disks, and other properties. The worker nodes correspond to the Kubernetes `Node` resource, and are managed by a Kubernetes master that centrally controls and monitors all Kubernetes resources in the cluster. So when you deploy the resources for a containerized app, the Kubernetes master decides which worker node to deploy those resources on, accounting for the deployment requirements and available capacity in the cluster. Kubernetes resources include services, deployments, and pods. For more information, see [Service architecture](/docs/containers?topic=containers-service-arch).</dd>
+<dd>A Kubernetes cluster consists of a master and one or more compute hosts that are called worker nodes. Worker nodes are organized into worker pools of the same flavor, or profile of CPU, memory, operating system, attached disks, and other properties. The worker nodes correspond to the Kubernetes `Node` resource, and are managed by a Kubernetes master that centrally controls and monitors all Kubernetes resources in the cluster. So when you deploy the resources for a containerized app, the Kubernetes master decides which worker node to deploy those resources on, accounting for the deployment requirements and available capacity in the cluster. Kubernetes resources include services, deployments, and pods. For more information, see [Service architecture](/docs/openshift?topic=openshift-service-arch).</dd>
 <dt>Namespace</dt>
 <dd>Kubernetes namespaces are a way to divide your cluster resources into separate areas that you can deploy apps and restrict access to, such as if you want to share the cluster with multiple teams. For example, system resources that are configured for you are kept in separate namespaces like `kube-system` or `ibm-system`. If you do not designate a namespace when you create a Kubernetes resource, the resource is automatically created in the `default` namespace. For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/){: external}.</dd>
 <dt>Service</dt>

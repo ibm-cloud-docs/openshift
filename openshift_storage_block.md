@@ -332,7 +332,7 @@ The following example explains how to create a service ID with the required acce
 You can enable encryption by creating a Kubernetes secret that uses your personal API key as long as you have the **Reader** service access role for your {{site.data.keyword.keymanagementserviceshort}} instance as well as the **Viewer** platform access role and the **Writer** service access role for your cluster.
 {: tip}
 
-  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure)
 
   1. Make sure that you are assigned the Editor platform access role and the Writer service access role for {{site.data.keyword.keymanagementserviceshort}} so that you can create your own root key that you use to encrypt your {{site.data.keyword.blockstorageshort}} instance. You can review your IAM access roles in the [IAM console](https://cloud.ibm.com/iam){: external}. For more information about IAM roles, see [IAM access](/docs/account?topic=account-userroles).
   2. If you do not have a {{site.data.keyword.keymanagementserviceshort}} instance, [provision one](/docs/key-protect?topic=key-protect-provision).

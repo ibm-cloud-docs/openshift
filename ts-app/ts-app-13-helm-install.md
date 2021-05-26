@@ -127,7 +127,7 @@ To troubleshoot your Helm chart:
     helm repo remove <helm_repo>
     ```
     {: pre}
-3.  Reinstall the Helm version that matches a supported version of the Helm chart that you want to install. As part of the reinstallation, you add and update the {{site.data.keyword.cloud_notm}} Helm repositories. For more information, see [Installing Helm v3 in your cluster](/docs/containers?topic=containers-helm#install_v3).
+3.  Reinstall the Helm version that matches a supported version of the Helm chart that you want to install. As part of the reinstallation, you add and update the {{site.data.keyword.cloud_notm}} Helm repositories. For more information, see [Installing Helm v3 in your cluster](/docs/openshift?topic=openshift-helm#install_v3).
 
 Now, you can follow the instructions in the Helm chart `README` to install the Helm chart in your cluster.
 

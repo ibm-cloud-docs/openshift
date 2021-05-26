@@ -99,7 +99,7 @@ content-type: troubleshoot
 **Infrastructure provider**: <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {: tsSymptoms}
-When you [replace a worker node](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cli_worker_replace) or [update a VPC worker node](/docs/containers?topic=containers-update#vpc_worker_node), a worker node is not automatically added back to your cluster.
+When you [replace a worker node](/docs/openshift?topic=openshift-cli-plugin-kubernetes-service-cli#cli_worker_replace) or [update a VPC worker node](/docs/openshift?topic=openshift-update#vpc_worker_node), a worker node is not automatically added back to your cluster.
 
 {: tsCauses}
 By default, your worker pools are set to automatically rebalance when you replace a worker node. However, you might have disabled automatic rebalancing by manually removing a worker node, such as in the following scenario.
@@ -113,6 +113,6 @@ You might also have issued the `remove` command shortly after the `replace` comm
 {: note}
 
 {: tsResolve}
-To enable automatical rebalancing, [rebalance](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_rebalance) or [resize](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_worker_pool_resize) your worker pool. Now, when you replace a worker node, another worker node is created for you.
+To enable automatical rebalancing, [rebalance](/docs/openshift?topic=openshift-cli-plugin-kubernetes-service-cli#cs_rebalance) or [resize](/docs/openshift?topic=openshift-cli-plugin-kubernetes-service-cli#cs_worker_pool_resize) your worker pool. Now, when you replace a worker node, another worker node is created for you.
 
 

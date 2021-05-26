@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -78,6 +78,7 @@ content-type: troubleshoot
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -91,8 +92,8 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-  
-  
+ 
+
 # Running tests with the Diagnostics and Debug Tool
 {: #debug-tool}
 {: troubleshoot}
@@ -142,7 +143,7 @@ If you previously installed the debug tool by using Helm, first uninstall the `i
 
 3. On the Diagnostics and Debug Tool card, click **Install**.
 
-4. In the dialog box, click **Install**. Note that it can take a few minutes for the add-on to be installed. <p class="tip">To resolve some common issues that you might encounter during the add-on deployment, see [Reviewing add-on state and statuses](/docs/containers?topic=containers-cs_troubleshoot_addons#debug_addons).</p>
+4. In the dialog box, click **Install**. Note that it can take a few minutes for the add-on to be installed. <p class="tip">To resolve some common issues that you might encounter during the add-on deployment, see [Reviewing add-on state and statuses](/docs/openshift?topic=openshift-cs_troubleshoot_addons#debug_addons).</p>
 
 5. On the Diagnostics and Debug Tool card, click **Dashboard**.
 

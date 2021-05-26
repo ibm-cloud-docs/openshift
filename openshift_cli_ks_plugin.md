@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-24"
+lastupdated: "2021-05-26"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -185,7 +185,7 @@ ibmcloud oc cluster addon disable image-key-synchronizer --cluster my_cluster
 #### `ibmcloud oc cluster addon disable kube-terminal`
 {: #cs_cluster_addon_disable_kube-terminal}
 
-Disable the [Kubernetes web terminal](/docs/containers?topic=containers-cs_cli_install#cli_web) add-on. To use the Kubernetes web terminal in the {{site.data.keyword.containerlong_notm}} cluster console, you must re-enable the add-on first.
+Disable the [Kubernetes web terminal](/docs/openshift?topic=openshift-cs_cli_install#cli_web) add-on. To use the Kubernetes web terminal in the {{site.data.keyword.containerlong_notm}} cluster console, you must re-enable the add-on first.
 {: shortdesc}
 
 The Kubernetes web terminal add-on is deprecated. Instead, use the [{{site.data.keyword.cloud-shell_notm}}](/docs/openshift?topic=openshift-openshift-cli#cloud-shell).
@@ -240,7 +240,7 @@ Enable a managed add-on in an existing cluster. This command must be combined wi
 #### `ibmcloud oc cluster addon enable debug-tool`
 {: #cs_cluster_addon_enable_debug}
 
-Enable the add-on for the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-cs_troubleshoot#debug_utility) in a cluster.
+Enable the add-on for the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool) in a cluster.
 {: shortdesc}
 
 ```sh
@@ -304,7 +304,7 @@ ibmcloud oc cluster addon enable image-key-synchronizer --cluster CLUSTER [--ver
 #### `ibmcloud oc cluster addon enable kube-terminal`
 {: #cs_cluster_addon_enable_kube-terminal}
 
-Enable the [Kubernetes web terminal](/docs/containers?topic=containers-cs_cli_install#cli_web) add-on to use the Kubernetes web terminal in the {{site.data.keyword.containerlong_notm}} cluster console.
+Enable the [Kubernetes web terminal](/docs/openshift?topic=openshift-cs_cli_install#cli_web) add-on to use the Kubernetes web terminal in the {{site.data.keyword.containerlong_notm}} cluster console.
 {: shortdesc}
 
 The Kubernetes web terminal add-on is deprecated. Instead, use the [{{site.data.keyword.cloud-shell_notm}}](/docs/openshift?topic=openshift-openshift-cli#cloud-shell).
@@ -362,7 +362,7 @@ ibmcloud oc cluster addon enable openshift-container-storage [-f] [-q] [--versio
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
 
 <dt><code>--version <em>VERSION</em></code></dt>
-<dd>Optional: Specify the version of the add-on to install. To see available versions, run `ibmcloud oc addon-versions`. If no version is specified, the default version is installed.</dd>
+<dd>Optional: Specify the version of the add-on to install. To see available versions, run `ibmcloud oc cluster addon versions`. If no version is specified, the default version is installed.</dd>
 </dl>
 
 #### `ibmcloud oc cluster addon enable static-route`
@@ -394,8 +394,6 @@ ibmcloud oc cluster addon enable static-route --cluster CLUSTER [--version VERSI
 </br>
 
 
-
-
 ### `ibmcloud oc cluster addon ls`
 {: #cs_cluster_addons}
 
@@ -421,6 +419,42 @@ ibmcloud oc cluster addon ls --cluster CLUSTER
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
 </dl>
+
+### `ibmcloud oc cluster addon versions`
+{: #cs_addon_versions}
+
+View a list of supported versions for managed add-ons in {{site.data.keyword.containerlong_notm}}.
+{: shortdesc}
+
+```sh
+ibmcloud oc cluster addon versions [--addon ADD-ON_NAME] [--output json] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+
+**Minimum required permissions**: None
+
+**Command options**:
+<dl>
+<dt><code>--addon <em>ADD-ON_NAME</em></code></dt>
+<dd>Optional: Specify an add-on name such as <code>istio</code> to filter versions for.</dd>
+
+<dt><code>--output json</code></dt>
+<dd>Optional: Prints the command output in JSON format.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example**:
+
+  ```
+  ibmcloud oc cluster addon versions --addon istio
+  ```
+  {: pre}
 
 
 
@@ -544,7 +578,7 @@ ibmcloud oc cluster ca status --cluster my_cluster
 After logging in to {{site.data.keyword.cloud_notm}}, download the Kubernetes configuration data and certificates as a `kubeconfig` file to your local machine so that you can connect to your cluster and run `oc` commands.
 {: shortdesc}
 
-The `kubeconfig` file is merged to your existing `kubeconfig` file in `~/.kube/config` (`<user_profile>/.kube/config` in Windows), or to the last file that is set by the `KUBECONFIG` environment variable in your command line session. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately, and quickly [change the context to other clusters in the Kubernetes context](/docs/containers?topic=containers-cs_cli_install#cli_config_multiple).
+The `kubeconfig` file is merged to your existing `kubeconfig` file in `~/.kube/config` (`<user_profile>/.kube/config` in Windows), or to the last file that is set by the `KUBECONFIG` environment variable in your command line session. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately, and quickly [change the context to other clusters in the Kubernetes context](/docs/openshift?topic=openshift-cs_cli_install#cli_config_multiple).
 
 ```sh
 ibmcloud oc cluster config --cluster CLUSTER [--admin] [--endpoint ENDPOINT_TYPE] [--network] [--skip-rbac] [-q] [--yaml]
@@ -1279,7 +1313,7 @@ ibmcloud oc cluster master refresh --cluster CLUSTER [-q]
 Update the Kubernetes master to the default API version. During the update, you cannot access or change the cluster. Worker nodes, apps, and resources that were deployed by the user are not modified and continue to run.
 {: shortdesc}
 
-You might need to change your YAML files for future deployments. Review this [release note](/docs/containers?topic=containers-cs_versions) for details.
+You might need to change your YAML files for future deployments. Review this [release note](/docs/openshift?topic=openshift-cs_versions) for details.
 
 The `cluster-update` alias for this command is deprecated.
 {: note}
@@ -2036,7 +2070,7 @@ You can also use this command to update the Kubernetes version of the worker nod
 
 * **Multiple worker nodes are replaced concurrently**: If you replace multiple worker nodes at the same time, they are deleted and replaced concurrently, not one by one. Make sure that you have enough capacity in your cluster to reschedule your workloads before you replace worker nodes.
 * **Node-level customizations are not preserved**: Any custom labels or taints that you applied at the individual worker node level are not applied to the replacement worker node. Instead, apply [labels](/docs/openshift?topic=openshift-add_workers#worker_pool_labels) or [taints](#worker_pool_taint) at the worker pool level so that the replacement worker node gets these attributes.
-* **Automatic rebalancing**: A replacement worker node is not created if the worker pool does not have [automatic rebalancing enabled](/docs/openshift?topic=openshift-cs_troubleshoot_clusters#auto-rebalance-off).</li></ul>
+* **Automatic rebalancing**: A replacement worker node is not created if the worker pool does not have [automatic rebalancing enabled](/docs/openshift?topic=openshift-auto-rebalance-off).</li></ul>
 
 Before you begin, make sure that your cluster has enough other worker nodes so that your pods can be rescheduled and continue to run.
 
@@ -2146,7 +2180,7 @@ Update worker nodes to apply the latest security updates and patches to the oper
 Running `ibmcloud oc worker update` can cause downtime for your apps and services. During the update, all pods are rescheduled onto other worker nodes, the worker node is reimaged, and data is deleted if not stored outside the pod. To avoid downtime, [ensure that you have enough worker nodes to handle your workload while the selected worker nodes are updating](/docs/openshift?topic=openshift-update#worker_node).
 {: important}
 
-You might need to change your YAML files for deployments before you update. Review this [release note](/docs/containers?topic=containers-cs_versions) for details.
+You might need to change your YAML files for deployments before you update. Review this [release note](/docs/openshift?topic=openshift-cs_versions) for details.
 
 ```sh
 ibmcloud oc worker update --cluster CLUSTER --worker WORKER_ID [-f] [-q]
@@ -3355,7 +3389,7 @@ ibmcloud oc ingress alb migrate clean -c my_cluster --reset-kube-controller-conf
 ### Beta: `ibmcloud oc ingress alb migrate start`
 {: #cs_alb_migrate_start}
 
-Version 3.11 clusters only: Start a migration of your Ingress configmap and resources that are formatted for use with ALBs that run the {{site.data.keyword.openshiftlong_notm}} Ingress to instead use with ALBs that run the Kubernetes Ingress image. Note that this command helps you create all the resources for ALBs that run Kubernetes Ingress, but afterward you must still manually change your ALB from one type of image to another. For more information about how to prepare for a migration, see [Changing the image of existing ALBs](/docs/containers?topic=containers-ingress-types#alb-type-migration).
+Version 3.11 clusters only: Start a migration of your Ingress configmap and resources that are formatted for use with ALBs that run the {{site.data.keyword.openshiftlong_notm}} Ingress to instead use with ALBs that run the Kubernetes Ingress image. Note that this command helps you create all the resources for ALBs that run Kubernetes Ingress, but afterward you must still manually change your ALB from one type of image to another. For more information about how to prepare for a migration, see [Changing the image of existing ALBs](/docs/openshift?topic=openshift-ingress-types#alb-type-migration).
 {: shortdesc}
 
 ```sh
@@ -3375,7 +3409,7 @@ ibmcloud oc ingress alb migrate start --cluster CLUSTER --type (test | test-with
 <dd>Required: The name or ID of the cluster where you want to start a migration of the Ingress configmap and resources.</dd>
 
 <dt><code>--type <em>(test | test-with-private | production)</em></code></dt>
-<dd>The type of migration: a test migration for public Ingress routing, a test migration with private Ingress routing, or a production migration of all Ingress routing. To see the resources that are created by and the processes for each type of migration, see [Changing the image of existing ALBs](/docs/containers?topic=containers-ingress-types#alb-type-migration).</dd>
+<dd>The type of migration: a test migration for public Ingress routing, a test migration with private Ingress routing, or a production migration of all Ingress routing. To see the resources that are created by and the processes for each type of migration, see [Changing the image of existing ALBs](/docs/openshift?topic=openshift-ingress-types#alb-type-migration).</dd>
 
 <dt><code>-f</code></dt>
 <dd>Optional: Force the command to run with no user prompts./dd>
@@ -3457,7 +3491,7 @@ ibmcloud oc ingress alb update --cluster CLUSTER [--alb ALB1_ID --alb ALB2_ID ..
 <dd>Optional: The ID of the individual ALB to update. To list ALB IDs, run `ibmcloud oc ingress alb ls -c <cluster>`. To update multiple ALBs, use multiple flags, such as `--alb ALB1_ID --alb ALB2_ID`. If you omit this flag, all ALBs in the cluster are updated.</dd>
 
 <dt><code>--version <em>IMAGE_VERSION</em></code></dt>
-<dd>Optional: The version of the image that you want to update ALBs to. Note that you cannot use this flag to [change your ALB from one type of image to another](/docs/containers?topic=containers-ingress-types#alb-type-migration). To list available versions, run `ibmcloud oc ingress alb versions`. If you omit this flag, ALBs are updated to the latest version of the image type.</dd>
+<dd>Optional: The version of the image that you want to update ALBs to. Note that you cannot use this flag to [change your ALB from one type of image to another](/docs/openshift?topic=openshift-ingress-types#alb-type-migration). To list available versions, run `ibmcloud oc ingress alb versions`. If you omit this flag, ALBs are updated to the latest version of the image type.</dd>
 
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
@@ -5257,45 +5291,6 @@ ibmcloud oc vpcs
 
 <br />
 
-
-## `addon-versions` command
-{: #cs_addon_versions}
-
-View a list of supported versions for managed add-ons in {{site.data.keyword.containerlong_notm}}.
-{: shortdesc}
-
-```sh
-ibmcloud oc addon-versions [--addon ADD-ON_NAME] [--output json] [-q]
-```
-{: pre}
-
-**Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
-
-**Minimum required permissions**: None
-
-**Command options**:
-<dl>
-<dt><code>--addon <em>ADD-ON_NAME</em></code></dt>
-<dd>Optional: Specify an add-on name such as <code>istio</code> to filter versions for.</dd>
-
-<dt><code>--output json</code></dt>
-<dd>Optional: Prints the command output in JSON format.</dd>
-
-<dt><code>-q</code></dt>
-<dd>Optional: Do not show the message of the day or update reminders.</dd>
-</dl>
-
-**Example**:
-
-  ```
-  ibmcloud oc addon-versions --addon istio
-  ```
-  {: pre}
-
-<br />
-
 ## `flavors` command
 {: #cs_machine_types}
 
@@ -6052,8 +6047,6 @@ ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER --worker-pool WORKER_
 ibmcloud oc zone add satellite --zone myzone2 --cluster my_cluster -w pool1 -w pool2
 ```
 {: pre}
-
-
 
 
 

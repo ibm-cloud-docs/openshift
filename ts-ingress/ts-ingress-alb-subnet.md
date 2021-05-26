@@ -113,4 +113,4 @@ However, you ran `ibmcloud oc ks subnets` and verified that one or more subnets 
 Your ALBs and your worker nodes might not exist on the same VLANs. This can occur when you delete worker nodes on the VLANs that the ALBs were also originally created on, and then create new worker nodes on new VLANs.
 
 {: tsResolve}
-Move your ALBs to the same VLANs that your worker nodes exist on by following the steps in [Moving ALBs across VLANs](/docs/containers?topic=containers-ingress#migrate-alb-vlan).
+Move your ALBs to the same VLANs that your worker nodes exist on by following the steps in [Moving ALBs across VLANs](/docs/openshift?topic=openshift-ingress#migrate-alb-vlan).

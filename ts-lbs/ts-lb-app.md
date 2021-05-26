@@ -118,7 +118,7 @@ Your NLB service might not be working properly for one of the following reasons:
 
     In your CLI output, make sure that the **Status** of your worker nodes displays **Ready** and that the **Machine Type** shows a flavor other than **free**.
 
-2. For version 2.0 NLBs: Ensure that you complete the [NLB 2.0 prerequisites](/docs/containers?topic=containers-loadbalancer-v2#ipvs_provision).
+2. For version 2.0 NLBs: Ensure that you complete the [NLB 2.0 prerequisites](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_provision).
 
 3. Check the accuracy of the configuration file for your NLB service.
     * Version 2.0 NLBs:
@@ -176,7 +176,7 @@ Your NLB service might not be working properly for one of the following reasons:
     Look for the following error messages:
 
     <ul><li><pre class="screen"><code>Clusters with one node must use services of type NodePort</code></pre></br>To use the NLB service, you must have a standard cluster with at least two worker nodes.</li>
-    <li><pre class="screen"><code>No cloud provider IPs are available to fulfill the NLB service request. Add a portable subnet to the cluster and try again</code></pre></br>This error message indicates that no portable public IP addresses are left to be allocated to your NLB service. Refer to <a href="/docs/containers?topic=containers-subnets#subnets">Adding subnets to clusters</a> to find information about how to request portable public IP addresses for your cluster. After portable public IP addresses are available to the cluster, the NLB service is automatically created.</li>
+    <li><pre class="screen"><code>No cloud provider IPs are available to fulfill the NLB service request. Add a portable subnet to the cluster and try again</code></pre></br>This error message indicates that no portable public IP addresses are left to be allocated to your NLB service. Refer to <a href="/docs/openshift?topic=openshift-subnets#subnets">Adding subnets to clusters</a> to find information about how to request portable public IP addresses for your cluster. After portable public IP addresses are available to the cluster, the NLB service is automatically created.</li>
     <li><pre class="screen"><code>Requested cloud provider IP &lt;cloud-provider-ip&gt; is not available. The following cloud provider IPs are available: &lt;available-cloud-provider-ips&gt;</code></pre></br>You defined a portable public IP address for your load balancer YAML by using the **`loadBalancerIP`** section, but this portable public IP address is not available in your portable public subnet. In the **`loadBalancerIP`** section your configuration script, remove the existing IP address and add one of the available portable public IP addresses. You can also remove the **`loadBalancerIP`** section from your script so that an available portable public IP address can be allocated automatically.</li>
     <li><pre class="screen"><code>No available nodes for NLB services</code></pre>You do not have enough worker nodes to deploy an NLB service. One reason might be that you deployed a standard cluster with more than one worker node, but the provisioning of the worker nodes failed.</li>
     <ol><li>List available worker nodes.</br><pre class="pre"><code>oc get nodes</code></pre></li>
