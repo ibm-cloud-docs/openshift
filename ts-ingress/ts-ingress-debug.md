@@ -109,14 +109,14 @@ You exposed your app by creating an Ingress resource for your app in your cluste
 {: tsResolve}
 The steps in the following sections can help you debug your Ingress setup.
 
-Before you begin, ensure you have the following [{{site.data.keyword.cloud_notm}} IAM access policies](/docs/containers?topic=containers-users#platform) for {{site.data.keyword.containerlong_notm}}:
+Before you begin, ensure you have the following [{{site.data.keyword.cloud_notm}} IAM access policies](/docs/openshift?topic=openshift-users#platform) for {{site.data.keyword.containerlong_notm}}:
   - **Editor** or **Administrator** platform access role for the cluster
   - **Writer** or **Manager** service access role
 
 ## Step 1: Check your app deployment
 {: #app-debug-ingress}
 
-Before you debug Ingress, first check out [Debugging app deployments](/docs/containers?topic=containers-debug_apps).
+Before you debug Ingress, first check out [Debugging app deployments](/docs/openshift?topic=openshift-debug_apps).
 {: shortdesc}
 
 Ingress issues are often caused by underlying issues in your app deployment or in the `ClusterIP` service that exposes your app. For example, your app label and service selector might not match, or your app and service target ports might not match.
@@ -133,7 +133,7 @@ While you troubleshoot, you can use the {{site.data.keyword.containerlong_notm}}
 
 3. On the Diagnostics and Debug Tool card, click **Install**.
 
-4. In the dialog box, click **Install**. Note that it can take a few minutes for the add-on to be installed. <p class="tip">To resolve some common issues that you might encounter during the add-on deployment, see [Reviewing add-on state and statuses](/docs/containers?topic=containers-debug_addons).</p>
+4. In the dialog box, click **Install**. Note that it can take a few minutes for the add-on to be installed. <p class="tip">To resolve some common issues that you might encounter during the add-on deployment, see [Reviewing add-on state and statuses](/docs/openshift?topic=openshift-debug_addons).</p>
 
 5. On the Diagnostics and Debug Tool card, click **Dashboard**.
 
@@ -157,7 +157,7 @@ Start by checking for error messages in the Ingress resource deployment events a
     ```
     {: pre}
 
-    In the **Events** section of the output, you might see warning messages about invalid values in your Ingress resource or in certain annotations that you used. Check the [Ingress resource configuration documentation](/docs/containers?topic=containers-ingress-types#alb-comm-create) or the [annotations documentation](/docs/containers?topic=containers-comm-ingress-annotations).
+    In the **Events** section of the output, you might see warning messages about invalid values in your Ingress resource or in certain annotations that you used. Check the [Ingress resource configuration documentation](/docs/openshift?topic=openshift-ingress-types#alb-comm-create) or the [annotations documentation](/docs/openshift?topic=openshift-comm-ingress-annotations).
 
     ```
     Name:             myingress
@@ -244,9 +244,9 @@ Check the availability of your Ingress subdomain and ALBs' public IP addresses. 
     ```
     {: screen}
 
-    * If a public ALB has no IP address, see [Ingress ALB does not deploy in a zone](/docs/containers?topic=containers-cs_subnet_limit).
+    * If a public ALB has no IP address, see [Ingress ALB does not deploy in a zone](/docs/openshift?topic=openshift-cs_subnet_limit).
 
-2. Verify that your ALB IP addresses are reachable by the ALB health check. If you use Calico pre-DNAT network policies or another custom firewall to block incoming traffic to your cluster, you must allow inbound access on port 80 from the {{site.data.keyword.openshiftshort}} control plane and Cloudflare's IPv4 IP addresses to the IP addresses of your ALBs so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your ALBs. For example, if you use Calico policies, [create a Calico pre-DNAT policy](/docs/containers?topic=containers-policy_tutorial#lesson3) to allow inbound access to your ALB IP addresses from [Cloudflare's IPv4 IP addresses](https://www.cloudflare.com/ips/){: external} on port 80 and [the IP addresses in step 6 of the Updating IAM firewalls section](/docs/containers?topic=containers-firewall#iam_allowlist).
+2. Verify that your ALB IP addresses are reachable by the ALB health check. If you use Calico pre-DNAT network policies or another custom firewall to block incoming traffic to your cluster, you must allow inbound access on port 80 from the {{site.data.keyword.openshiftshort}} control plane and Cloudflare's IPv4 IP addresses to the IP addresses of your ALBs so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your ALBs. For example, if you use Calico policies, [create a Calico pre-DNAT policy](/docs/openshift?topic=openshift-policy_tutorial#lesson3) to allow inbound access to your ALB IP addresses from [Cloudflare's IPv4 IP addresses](https://www.cloudflare.com/ips/){: external} on port 80 and [the IP addresses in step 6 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist).
 
   <p class="important">On 05 July 2021, the DNS provider is changed from Cloudflare to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains for all clusters in {{site.data.keyword.openshiftlong_notm}}. If you currently allow inbound traffic from the Cloudflare source IP addresses, you must also allow inbound traffic from the [Akamai source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} before 05 July. After the migration, you can remove the Cloudflare IP address rules. For more information, see the [announcement](https://cloud.ibm.com/notifications?selected=1621697674798){: external}.</p>
 
@@ -261,7 +261,7 @@ Check the availability of your Ingress subdomain and ALBs' public IP addresses. 
         * If the CLI returns a timeout and you have a custom firewall that is protecting your worker nodes, make sure that you allow ICMP in your firewall.
         * If you don't have a firewall or your firewall does not block the pings and the pings still timeout, [check the status of your ALB pods](#check_pods).
 
-    * Multizone clusters only: You can use the MZLB health check to determine the status of your ALB IPs. For more information about the MZLB, see [Multizone load balancer (MZLB)](/docs/containers?topic=containers-ingress-about#ingress_components). The following HTTP cURL command uses the `albhealth` host, which is configured by {{site.data.keyword.openshiftlong_notm}} to return the `healthy` or `unhealthy` status for an ALB IP.
+    * Multizone clusters only: You can use the MZLB health check to determine the status of your ALB IPs. For more information about the MZLB, see [Multizone load balancer (MZLB)](/docs/openshift?topic=openshift-ingress-about#ingress_components). The following HTTP cURL command uses the `albhealth` host, which is configured by {{site.data.keyword.openshiftlong_notm}} to return the `healthy` or `unhealthy` status for an ALB IP.
         ```
         curl -X GET http://169.62.196.238/ -H "Host: albhealth.mycluster-<hash>-0000.us-south.containers.appdomain.cloud"
         ```
@@ -342,7 +342,7 @@ Check the availability of your Ingress subdomain and ALBs' public IP addresses. 
 
     2. Check that the subdomain and TLS certificate are correct. To find the IBM provided Ingress subdomain and TLS certificate, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 
-    3.  Make sure that your app listens on the same path that is configured in the **path** section of your Ingress. If your app is set up to listen on the root path, use `/` as the path. If incoming traffic to this path must be routed to a different path that your app listens on, use the [rewrite paths](/docs/containers?topic=containers-comm-ingress-annotations#rewrite-paths) annotation.
+    3.  Make sure that your app listens on the same path that is configured in the **path** section of your Ingress. If your app is set up to listen on the root path, use `/` as the path. If incoming traffic to this path must be routed to a different path that your app listens on, use the [rewrite paths](/docs/openshift?topic=openshift-comm-ingress-annotations#rewrite-paths) annotation.
 
     4. Edit your resource configuration YAML as needed. When you close the editor, your changes are saved and automatically applied.
         ```
@@ -461,7 +461,7 @@ For example, say you have a multizone cluster in 2 zones, and the 2 public ALBs 
     {: pre}
 
     * If everything is configured correctly, you get back the expected response from your app.
-    * If you get an error in response, there might be an error in your app or in a configuration that applies only to this specific ALB. Check your app code, your [Ingress resource configuration files](/docs/containers?topic=containers-ingress-types#alb-comm-create), or any other configurations you have applied to only this ALB.
+    * If you get an error in response, there might be an error in your app or in a configuration that applies only to this specific ALB. Check your app code, your [Ingress resource configuration files](/docs/openshift?topic=openshift-ingress-types#alb-comm-create), or any other configurations you have applied to only this ALB.
 
 7. After you finish debugging, restore the health check on the ALB pods. Repeat these steps for each ALB pod.
   1. Log in to the ALB pod and remove the `#` from the `server_name`.

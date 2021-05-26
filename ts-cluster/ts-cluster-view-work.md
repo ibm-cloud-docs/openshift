@@ -205,7 +205,7 @@ To check your user access permissions:
         {: pre}
 
     * If you do not have access to the cluster:
-        1. Ask your account owner to assign an [{{site.data.keyword.cloud_notm}} IAM platform access role](/docs/containers?topic=containers-users#platform) to you for that cluster.
+        1. Ask your account owner to assign an [{{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#platform) to you for that cluster.
         2. Do not target a resource group. If you already targeted a resource group, untarget it:
           ```
           ibmcloud target --unset-resource-group

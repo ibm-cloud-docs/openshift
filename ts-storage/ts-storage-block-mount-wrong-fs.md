@@ -109,7 +109,7 @@ failed to mount the volume as "ext4", it already contains xfs. Mount error: moun
 {: screen}
 
 {: tsCauses}
-You have an existing block storage device that is set up with an `XFS` file system. To mount this device to your pod, you [created a PV](/docs/containers?topic=containers-block_storage#existing_block) that specified `ext4` as your file system or no file system in the `spec/flexVolume/fsType` section. If no file system is defined, the PV defaults to `ext4`.
+You have an existing block storage device that is set up with an `XFS` file system. To mount this device to your pod, you [created a PV](/docs/openshift?topic=openshift-block_storage#existing_block) that specified `ext4` as your file system or no file system in the `spec/flexVolume/fsType` section. If no file system is defined, the PV defaults to `ext4`.
 The PV was created successfully and was linked to your existing block storage instance. However, when you try to mount the PV to your cluster by using a matching PVC, the volume fails to mount. You cannot mount your `XFS` block storage instance with an `ext4` file system to the pod.
 
 {: tsResolve}

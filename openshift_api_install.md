@@ -686,7 +686,7 @@ Use the following steps if you want to create an {{site.data.keyword.cloud_notm}
 ## Refreshing {{site.data.keyword.cloud_notm}} IAM access tokens and obtaining new refresh tokens with the CLI
 {: #cs_cli_refresh}
 
-You can use the command line to [set the cluster context](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure), download the `kubeconfig` file for your {{site.data.keyword.openshiftshort}} cluster, and generate an {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) ID token and a refresh token to provide authentication.
+You can use the command line to [set the cluster context](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure), download the `kubeconfig` file for your {{site.data.keyword.openshiftshort}} cluster, and generate an {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) ID token and a refresh token to provide authentication.
 {: shortdesc}
 
 You can use [{{site.data.keyword.cloud_notm}} IAM](https://cloud.ibm.com/iam/overview){: external} to change the default expiration times for your tokens and sessions.
