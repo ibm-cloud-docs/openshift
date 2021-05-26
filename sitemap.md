@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-05-25"
+lastupdated: "2021-05-26"
 
 keywords: openshift
 subcollection: openshift
@@ -1615,6 +1615,7 @@ subcollection: openshift
   * [`ibmcloud oc cluster addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable)
   * [`ibmcloud oc cluster addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable)
   * [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addons)
+  * [`ibmcloud oc cluster addon versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_addon_versions)
   * [`ibmcloud oc cluster ca create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_create)
   * [`ibmcloud oc cluster ca rotate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_rotate)
   * [`ibmcloud oc cluster ca status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_status)
@@ -1727,7 +1728,6 @@ subcollection: openshift
   * [`ibmcloud oc vlan ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlans)
   * [`ibmcloud oc vlan spanning get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get)
 * [`vpcs` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vpcs)
-* [`addon-versions` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_addon_versions)
 * [`flavors` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_machine_types)
 * [`messages` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_messages)
 * [locations command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_supported-locations)
