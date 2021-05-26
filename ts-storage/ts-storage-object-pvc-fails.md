@@ -143,7 +143,7 @@ The {{site.data.keyword.cos_full_notm}} service credentials that you use to acce
 2. Find your credentials, then click **View credentials**.
 3. In the **iam_role_crn** section, verify that you have the `Writer` or `Manager` role. If you do not have the correct role, you must create new {{site.data.keyword.cos_full_notm}} service credentials with the correct permission.
 4. If the role is correct, verify that you use the correct **access_key_id** and **secret_access_key** in your Kubernetes secret.
-5. [Create a new secret with the updated **access_key_id** and **secret_access_key**](/docs/containers?topic=containers-object_storage#create_cos_secret).
+5. [Create a new secret with the updated **access_key_id** and **secret_access_key**](/docs/openshift?topic=openshift-object_storage#create_cos_secret).
 
 
 

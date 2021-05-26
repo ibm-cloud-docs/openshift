@@ -223,7 +223,7 @@ Follow the steps to gather logging information.
    ```
    {: pre}
 
-8. Review the `syslog` and the `s3fslog` for information about the `Transport endpoint` error. [Open a support ticket](/docs/containers?topic=containers-get-help#help-support) and share the log files that you gathered.
+8. Review the `syslog` and the `s3fslog` for information about the `Transport endpoint` error. [Open a support ticket](/docs/openshift?topic=openshift-get-help#help-support) and share the log files that you gathered.
 
 9. Delete the `ibm-inspectnode` daemonset that you deployed.
    ```sh

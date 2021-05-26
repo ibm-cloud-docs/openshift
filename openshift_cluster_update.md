@@ -178,7 +178,7 @@ To update the {{site.data.keyword.openshiftshort}} master _major_ or _minor_ ver
 
 4.  Update your API server and associated master components by using the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/login) or running the CLI `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update).
 5.  Wait a few minutes, then confirm that the update is complete. Review the API server version on the {{site.data.keyword.cloud_notm}} clusters dashboard or run `ibmcloud oc cluster ls`.
-6.  Install the version of the [`oc cli`](/docs/containers?topic=containers-cs_cli_install#kubectl) that matches the API server version that runs in the master. [Kubernetes does not support](https://kubernetes.io/releases/version-skew-policy/){: external} `oc` client versions that are two or more versions apart from the server version (n +/- 2).
+6.  Install the version of the [`oc cli`](/docs/openshift?topic=openshift-cs_cli_install#kubectl) that matches the API server version that runs in the master. [Kubernetes does not support](https://kubernetes.io/releases/version-skew-policy/){: external} `oc` client versions that are two or more versions apart from the server version (n +/- 2).
 
 When the master update is complete, you can update your worker nodes, depending on the type of cluster infrastructure provider that you have.
 *  [Updating classic worker nodes](#worker_node).
@@ -198,7 +198,7 @@ You notice that an update is available for your worker nodes in a [classic infra
 * **Patch**: A worker node patch update includes security fixes. You can update the classic worker node to the latest patch by using the `ibmcloud oc worker reload` or `update` commands. Keep in mind that the `update` command also updates the worker node to the same `major.minor` version as the master and latest patch version, if a `major.minor` version update is also available.
 * **Major.minor**: A `major.minor` update moves up the Kubernetes version of the worker node to the same version as the master. This type of update often includes changes to the Kubernetes API or other behaviors that you must prepare your cluster for. Remember that your worker nodes can be only up to two versions behind the master version (`n-2`). You can update the classic worker node to the same patch by using the `ibmcloud oc worker update` command.
 
-For more information, see [Update types](/docs/containers?topic=containers-cs_versions#update_types).
+For more information, see [Update types](/docs/openshift?topic=openshift-cs_versions#update_types).
 {: shortdesc}
 
 **What happens to my apps during an update?**
@@ -379,12 +379,12 @@ Set up a configmap to perform a rolling update of your classic worker nodes.
    ```
    {: pre}
 
-10. Verify that you do not have duplicate worker nodes. In some cases, older clusters might list duplicate worker nodes with a **`NotReady`** status after an update. To remove duplicates, see [troubleshooting](/docs/containers?topic=containers-cs_duplicate_nodes).
+10. Verify that you do not have duplicate worker nodes. In some cases, older clusters might list duplicate worker nodes with a **`NotReady`** status after an update. To remove duplicates, see [troubleshooting](/docs/openshift?topic=openshift-cs_duplicate_nodes).
 
 Next steps:
 -   Repeat the update process with other worker pools.
 -   Inform developers who work in the cluster to update their `oc` CLI to the version of the Kubernetes master.
--   If the Kubernetes dashboard does not display utilization graphs, [delete the `kube-dashboard` pod](/docs/containers?topic=containers-cs_dashboard_graphs).
+-   If the Kubernetes dashboard does not display utilization graphs, [delete the `kube-dashboard` pod](/docs/openshift?topic=openshift-cs_dashboard_graphs).
 
 ### Updating classic worker nodes in the console
 {: #worker_up_console}
@@ -415,7 +415,7 @@ You notice that an update is available for your worker nodes in a [VPC infrastru
 * **Patch**: A worker node patch update includes security fixes. You can update the VPC worker node to the latest patch by using the `ibmcloud oc worker replace` command.
 * **Major.minor**: A `major.minor` update moves up the Kubernetes version of the worker node to the same version as the master. This type of update often includes changes to the Kubernetes API or other behaviors that you must prepare your cluster for. Remember that your worker nodes can be only up to two versions behind the master version (`n-2`). You can update the VPC worker node to the same patch by using the `ibmcloud oc worker replace` command with the `--update` flag.
 
-For more information, see [Update types](/docs/containers?topic=containers-cs_versions#update_types).
+For more information, see [Update types](/docs/openshift?topic=openshift-cs_versions#update_types).
 
 **What happens to my apps during an update?**
 
@@ -432,7 +432,7 @@ If you replace multiple worker nodes at the same time, they are deleted and repl
 
 **What if a replacement worker node is not created?**
 
-A replacement worker node is not created if the worker pool does not have [automatic rebalancing enabled](/docs/containers?topic=containers-auto-rebalance-off).
+A replacement worker node is not created if the worker pool does not have [automatic rebalancing enabled](/docs/openshift?topic=openshift-auto-rebalance-off).
 
 ### Prerequisites
 {: #vpc_worker_prereqs}
@@ -653,13 +653,13 @@ Yes. {{site.data.keyword.openshiftlong_notm}} provides other plugin-ins and add-
 When you create a logging configuration for a source in your cluster to forward to an external server, a Fluentd component is created in your cluster. In order to change your logging or filter configurations, the Fluentd component must be at the latest version. By default, automatic updates to the component are enabled.
 {: shortdesc}
 
-As of 14 November 2019, a Fluentd component is created for your cluster only if you [create a logging configuration to forward logs to a syslog server](/docs/containers?topic=containers-health#configuring). If no logging configurations for syslog exist in your cluster, the Fluentd component is removed automatically. If you do not forward logs to syslog and want to ensure that the Fluentd component is removed from your cluster, automatic updates to Fluentd must be enabled.
+As of 14 November 2019, a Fluentd component is created for your cluster only if you [create a logging configuration to forward logs to a syslog server](/docs/openshift?topic=openshift-health#configuring). If no logging configurations for syslog exist in your cluster, the Fluentd component is removed automatically. If you do not forward logs to syslog and want to ensure that the Fluentd component is removed from your cluster, automatic updates to Fluentd must be enabled.
 {: important}
 
 You can manage automatic updates of the Fluentd component in the following ways. **Note**: To run the following commands, you must have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#platform) for the cluster.
 
-* Check whether automatic updates are enabled by running the `ibmcloud oc logging autoupdate get --cluster <cluster_name_or_ID>` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_log_autoupdate_get).
-* Disable automatic updates by running the `ibmcloud oc logging autoupdate disable` [command](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_log_autoupdate_disable).
+* Check whether automatic updates are enabled by running the `ibmcloud oc logging autoupdate get --cluster <cluster_name_or_ID>` [command](/docs/openshift?topic=openshift-cli-plugin-kubernetes-service-cli#cs_log_autoupdate_get).
+* Disable automatic updates by running the `ibmcloud oc logging autoupdate disable` [command](/docs/openshift?topic=openshift-cli-plugin-kubernetes-service-cli#cs_log_autoupdate_disable).
 * If automatic updates are disabled, but you need to change your configuration, you have two options:
     * Turn on automatic updates for your Fluentd pods.
         ```

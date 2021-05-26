@@ -548,7 +548,7 @@ http://<subdomain2>.<domain>/<app1_path>
 ```
 {: codeblock}
 
-<p class="tip">Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/containers?topic=containers-ingress-debug). You can check the health and status of your Ingress components by running `ibmcloud oc ingress status -c <cluster_name_or_ID>`.</p>
+<p class="tip">Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/openshift?topic=openshift-ingress-debug). You can check the health and status of your Ingress components by running `ibmcloud oc ingress status -c <cluster_name_or_ID>`.</p>
 
 <br />
 
@@ -708,7 +708,7 @@ To expose apps that are outside of your cluster to the public:
   ```
   {: codeblock}
 
-<p class="tip">Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/containers?topic=containers-ingress-debug). You can check the health and status of your Ingress components by running `ibmcloud oc ingress status -c <cluster_name_or_ID>`.</p>
+<p class="tip">Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/openshift?topic=openshift-ingress-debug). You can check the health and status of your Ingress components by running `ibmcloud oc ingress status -c <cluster_name_or_ID>`.</p>
 
 <br />
 
@@ -961,7 +961,7 @@ http://<subdomain2>.<domain>/<app1_path>
 ```
 {: codeblock}
 
-<p class="tip">Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/containers?topic=containers-ingress-debug). You can check the health and status of your Ingress components by running `ibmcloud oc ingress status -c <cluster_name_or_ID>`.</p>
+<p class="tip">Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/openshift?topic=openshift-ingress-debug). You can check the health and status of your Ingress components by running `ibmcloud oc ingress status -c <cluster_name_or_ID>`.</p>
 
 ### Optional: Block traffic to public NodePorts
 {: #block-nodeports}
@@ -1153,7 +1153,7 @@ Kubernetes Ingress versions
 0.35.0_1182_iks
 0.34.1_1191_iks
 ```
-{: screen}Note that only the custom {{site.data.keyword.cloud_notm}} Ingress image versions are supported for {{site.data.keyword.openshiftshort}} clusters. For the changes that are included in each version of the {{site.data.keyword.cloud_notm}} Ingress image, see the [Ingress version changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#alb_changelog).
+{: screen}Note that only the custom {{site.data.keyword.cloud_notm}} Ingress image versions are supported for {{site.data.keyword.openshiftshort}} clusters. For the changes that are included in each version of the {{site.data.keyword.cloud_notm}} Ingress image, see the [Ingress version changelog](/docs/openshift?topic=openshift-cluster-add-ons-changelog#alb_changelog).
 
 ### Managing automatic updates
 {: #autoupdate}

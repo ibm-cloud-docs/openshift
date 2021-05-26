@@ -110,7 +110,7 @@ The worker node instance ID changed. Reload the worker node if bare metal hardwa
 The machine ID can become inconsistent with the {{site.data.keyword.openshiftlong_notm}} worker record when the machine experiences hardware issues. When IBM Cloud infrastructure resolves this issue, a component can change within the system that the service does not identify.
 
 {: tsResolve}
-For {{site.data.keyword.openshiftlong_notm}} to re-identify the machine, [reload the bare metal worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload). Note that reloading also updates the machine's [patch version](/docs/containers?topic=containers-changelog).
+For {{site.data.keyword.openshiftlong_notm}} to re-identify the machine, [reload the bare metal worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload). Note that reloading also updates the machine's [patch version](/docs/openshift?topic=openshift-changelog).
 
 You can also [delete the bare metal worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_rm). Keep in mind that bare metal instances are billed monthly.
 

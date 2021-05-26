@@ -184,7 +184,7 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
   {: pre}
 
 </br>**To enable your app to receive public requests:**
-1.  [Deploy your app to the cluster](/docs/containers?topic=containers-deploy_app#app_cli). Ensure that you add a label in the metadata section of your deployment configuration file. This custom label identifies all pods where your app runs to include them in the load balancing.
+1.  [Deploy your app to the cluster](/docs/openshift?topic=openshift-deploy_app#app_cli). Ensure that you add a label in the metadata section of your deployment configuration file. This custom label identifies all pods where your app runs to include them in the load balancing.
 
 2. Create a configuration YAML file for your Kubernetes `LoadBalancer` service. Consider naming the service in the format `<app_name>-vpc-nlb-<VPC_zone>`.
   ```yaml

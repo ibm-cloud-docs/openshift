@@ -158,7 +158,7 @@ Some open source technologies, such as Portworx are tested by IBM and provided a
 
 You can install other open source tools in your cluster, but these tools might not be managed, supported, or verified to work in {{site.data.keyword.openshiftlong_notm}}.
 
-Supported integrations depend on the container platform, the infrastructure provider, and the cluster type that you choose. For more information, see [Supported {{site.data.keyword.cloud_notm}} and third-party integrations](/docs/containers?topic=containers-supported_integrations).
+Supported integrations depend on the container platform, the infrastructure provider, and the cluster type that you choose. For more information, see [Supported {{site.data.keyword.cloud_notm}} and third-party integrations](/docs/openshift?topic=openshift-supported_integrations).
 {: note}
 
 ### Integrations operated in partnership

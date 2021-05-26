@@ -766,4 +766,4 @@ Many cluster add-ons, plug-ins, and other third-party extensions use admission c
 
 **I need help with a broken webhook. What can I do?**
 
-See [Cluster cannot update because of broken webhook](/docs/containers?topic=containers-webhooks_update).
+See [Cluster cannot update because of broken webhook](/docs/openshift?topic=openshift-webhooks_update).

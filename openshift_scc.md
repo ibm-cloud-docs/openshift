@@ -111,7 +111,7 @@ For system groups such as `system:authenticated`, these groups already are assig
 
 **Are any SCCs set by default?**
 
-By default, {{site.data.keyword.openshiftlong_notm}} clusters include a standard set of [{{site.data.keyword.openshiftshort}} SCCs](#oc_sccs). Additionally, clusters have [IBM SCCs](#ibm_sccs) that closely resemble the [Kubernetes pod security policies of community Kubernetes clusters in {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-psp#ibm_psp). These IBM SCCs are included for improved portability with {{site.data.keyword.cloud_notm}} Private packages such as Cloud Paks.
+By default, {{site.data.keyword.openshiftlong_notm}} clusters include a standard set of [{{site.data.keyword.openshiftshort}} SCCs](#oc_sccs). Additionally, clusters have [IBM SCCs](#ibm_sccs) that closely resemble the [Kubernetes pod security policies of community Kubernetes clusters in {{site.data.keyword.containerlong_notm}}](/docs/openshift?topic=openshift-psp#ibm_psp). These IBM SCCs are included for improved portability with {{site.data.keyword.cloud_notm}} Private packages such as Cloud Paks.
 
 **What SCCs are applied to my resources by default?**
 

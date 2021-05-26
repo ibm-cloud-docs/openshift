@@ -125,7 +125,7 @@ Example error message for a pod creation failure:
 The Kubernetes secret that you created is not referenced correctly in your deployment yaml or is not set to the `ibm/ibmc-s3fs` type.
 
 {: tsResolve}
-This task requires [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/containers?topic=containers-users#platform) for all projects.
+This task requires [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#platform) for all projects.
 
 1. List the secrets in your cluster and review the secret type. The secret must show `ibm/ibmc-s3fs` as the **Type**.
    ```sh
@@ -133,7 +133,7 @@ This task requires [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} I
    ```
    {: pre}
 
-2. If your secret does not show `ibm/ibmc-s3fs` as the **Type**, [re-create your secret](/docs/containers?topic=containers-object_storage#create_cos_secret).
+2. If your secret does not show `ibm/ibmc-s3fs` as the **Type**, [re-create your secret](/docs/openshift?topic=openshift-object_storage#create_cos_secret).
 
 3. Check your YAML configuration file for your PVC and pod to verify that you used the correct secret.
 

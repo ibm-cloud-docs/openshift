@@ -232,7 +232,7 @@ The cluster autoscaler add-on is not supported for baremetal worker nodes.
     *  Kubernetes (`kubectl`)
 2.  [Create a standard cluster](/docs/openshift?topic=openshift-clusters).
 3.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-4.  Confirm that your {{site.data.keyword.cloud_notm}} Identity and Access Management credentials are stored in the cluster. The cluster autoscaler uses this secret to authenticate credentials. If the secret is missing, [create it by resetting credentials](/docs/containers?topic=containers-missing_permissions).
+4.  Confirm that your {{site.data.keyword.cloud_notm}} Identity and Access Management credentials are stored in the cluster. The cluster autoscaler uses this secret to authenticate credentials. If the secret is missing, [create it by resetting credentials](/docs/openshift?topic=openshift-missing_permissions).
     ```
     oc get secrets -n kube-system | grep storage-secret-store
     ```

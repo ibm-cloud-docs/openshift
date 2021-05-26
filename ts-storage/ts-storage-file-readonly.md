@@ -116,7 +116,7 @@ The file system on the worker node is read-only.
     ```
     {: pre}
 
-For a long-term fix, [update the flavor of your worker pool](/docs/containers?topic=containers-update#machine_type).
+For a long-term fix, [update the flavor of your worker pool](/docs/openshift?topic=openshift-update#machine_type).
 
 
 

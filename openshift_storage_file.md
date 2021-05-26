@@ -466,7 +466,7 @@ To add {{site.data.keyword.filestorage_short}}:
 
 4.  {: #file_app_volume_mount}To mount the storage to your deployment, create a configuration `.yaml` file and specify the PVC that binds the PV.
 
-    If you have an app that requires a non-root user to write to the persistent storage, or an app that requires that the mount path is owned by the root user, see [Adding non-root user access to NFS {{site.data.keyword.filestorage_short}}](/docs/containers?topic=containers-nonroot) or [Enabling root permission for NFS {{site.data.keyword.filestorage_short}}](/docs/containers?topic=containers-nonroot).
+    If you have an app that requires a non-root user to write to the persistent storage, or an app that requires that the mount path is owned by the root user, see [Adding non-root user access to NFS {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-nonroot) or [Enabling root permission for NFS {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-nonroot).
     {: tip}
 
     ```yaml
@@ -1395,7 +1395,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Size range in gigabytes | 20-12000 Gi|
 | Hard disk | SSD|
 | Reclaim policy | <code>ibmc-file-bronze</code>: Delete</br><code>ibmc-file-retain-bronze</code>: Retain </br><code>ibmc-file-bronze-gid:</code> Delete|
-| Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the <code>ibmc-file-bronze-gid</code> storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/containers?topic=containers-cs_storage_nonroot).  |
+| Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the <code>ibmc-file-bronze-gid</code> storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/openshift?topic=openshift-cs_storage_nonroot).  |
 | Billing | Hourly|
 | Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}
@@ -1413,7 +1413,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Size range in gigabytes | 20-12000 Gi|
 | Hard disk | SSD|
 | Reclaim policy | <code>ibmc-file-silver</code>: Delete</br><code>ibmc-file-retain-silver</code>: Retain </br><code>ibmc-file-silver-gid:</code> Delete |
-| Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the <code>ibmc-file-bronze-gid</code> storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/containers?topic=containers-cs_storage_nonroot).  |
+| Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the <code>ibmc-file-bronze-gid</code> storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/openshift?topic=openshift-cs_storage_nonroot).  |
 | Billing | Hourly|
 | Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}
@@ -1431,7 +1431,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Size range in gigabytes | 20-4000 Gi|
 | Hard disk | SSD|
 | Reclaim policy | <code>ibmc-file-gold</code>: Delete</br><code>ibmc-file-retain-gold</code>: Retain </br><code>ibmc-file-gold-gid:</code> Delete |
-| Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the <code>ibmc-file-bronze-gid</code> storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/containers?topic=containers-cs_storage_nonroot).  |
+| Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the <code>ibmc-file-bronze-gid</code> storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/openshift?topic=openshift-cs_storage_nonroot).  |
 | Billing | Hourly|
 | Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}
