@@ -391,7 +391,7 @@ Red Hat OpenShift on IBM Cloud
             ts-storage/ts-storage-object-transport-ep.md
             
         {: .topicgroup}
-        Portworx
+        Portworx Storage
             [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage)
             [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions)         
             ts-storage/ts-storage-px-debug.md
