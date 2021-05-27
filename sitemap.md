@@ -1364,7 +1364,7 @@ subcollection: openshift
 * [Exploring other Portworx features](/docs/openshift?topic=openshift-portworx#features)
 * [Cleaning up your Portworx volumes and cluster](/docs/openshift?topic=openshift-portworx#portworx_cleanup)
   * [Removing Portworx volumes from apps](/docs/openshift?topic=openshift-portworx#remove_pvc)
-  * [Removing a worker node from your Portworx cluster or the entire Portworx cluster](/docs/openshift?topic=openshift-portworx#remove_storage_node_cluster)
+  * [Removing a worker node from your Portworx cluster or the entire Portworx cluster](/docs/openshift?topic=openshift-portworx#remove_storage_node_cluster-px)
   * [Removing the Portworx daemon set](/docs/openshift?topic=openshift-portworx#remove_px_daemonset)
   * [Removing Portworx from your cluster](/docs/openshift?topic=openshift-portworx#remove_portworx)
 * [Getting help and support](/docs/openshift?topic=openshift-portworx#portworx_help_sup)

@@ -1409,7 +1409,7 @@ When you added storage from your Portworx cluster to your app, you have three ma
    {: pre}
 
 ### Removing a worker node from your Portworx cluster or the entire Portworx cluster
-{: #remove_storage_node_cluster}
+{: #remove_storage_node_cluster-px}
 
 You can exclude worker nodes from your Portworx cluster or remove the entire Portworx cluster if you do not want to use Portworx anymore.
 {: shortdesc}
