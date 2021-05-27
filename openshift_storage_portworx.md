@@ -106,7 +106,7 @@ subcollection: openshift
 
 
 ## About Portworx
-{: about-portworx}
+{: #about-portworx}
 
 Review frequently asked questions to learn more about Portworx and how Portworx provides highly available persistent storage management for your containerized apps.
 {: shortdesc}
