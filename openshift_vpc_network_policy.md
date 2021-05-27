@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-24"
+lastupdated: "2021-05-27"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -217,10 +217,10 @@ Use the {{site.data.keyword.cloud_notm}} console to add inbound and outbound rul
     <td>Any</td>
     </tr>
     <tr>
-    <td>`*` Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each control plane IP address [in step 6 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist).</td>
+    <td>`*` Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each control plane IP address [in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist).</td>
     <td>TCP</td>
     <td>`80`</td>
-    <td>Each control plane IP address for your region [in step 6 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist)</td>
+    <td>Each control plane IP address for your region [in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist)</td>
     </tr>
     <tr>
     <td>`*` Allow access from the Cloudflare IP addresses that are used to health check the IP addresses of your router services. Create one rule for each [Cloudflare IPv4 IP address ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cloudflare.com/ips/).</td>
@@ -373,10 +373,10 @@ To create rules in your default security group:
     <td>Any</td>
     </tr>
     <tr>
-    <td>`*` **Optional**: Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each control plane IP address [in step 6 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist).</td>
+    <td>`*` **Optional**: Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each control plane IP address [in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist).</td>
     <td>TCP</td>
     <td>`80`</td>
-    <td>Each control plane IP address for your region [in step 6 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist)</td>
+    <td>Each control plane IP address for your region [in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist)</td>
     </tr>
     <tr>
     <td>`*` **Optional**: Allow access from the Cloudflare IP addresses that are used to health check the IP addresses of your router services. Create one rule for each [Cloudflare IPv4 IP address ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cloudflare.com/ips/).</td>
@@ -567,10 +567,10 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>After 4</td>
    </tr>
    <tr>
-   <td>`*` **Optional**: Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each control plane IP address [in step 6 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist).</td>
+   <td>`*` **Optional**: Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each control plane IP address [in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist).</td>
    <td>Allow</td>
    <td>TCP</td>
-   <td>Each control plane IP address for your region [in step 6 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist)</td>
+   <td>Each control plane IP address for your region [in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist)</td>
    <td>80</td>
    <td>Any</td>
    <td>-</td>
@@ -668,12 +668,12 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>After 4</td>
    </tr>
    <tr>
-   <td>`*` **Optional**: Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each control plane IP address [in step 6 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist).</td>
+   <td>`*` **Optional**: Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each control plane IP address [in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist).</td>
    <td>Allow</td>
    <td>TCP</td>
    <td>Any</td>
    <td>80</td>
-   <td>Each control plane IP address for your region [in step 6 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist)</td>
+   <td>Each control plane IP address for your region [in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist)</td>
    <td>-</td>
    <td>After 5</td>
    </tr>
@@ -819,7 +819,7 @@ To create an ACL for each subnet that your cluster is attached to:
   ```
   {: pre}
 
-8. Optional: Allow access to and from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one inbound and one outbound rule for each control plane IP address [in step 6 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist). Alternatively, you can create a single inbound rule and outbound rule to allow all incoming and outgoing traffic on port 80.
+8. Optional: Allow access to and from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one inbound and one outbound rule for each control plane IP address [in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist). Alternatively, you can create a single inbound rule and outbound rule to allow all incoming and outgoing traffic on port 80.
   ```
   ibmcloud is network-acl-rule-add $acl_id allow outbound tcp 0.0.0.0/0 <IP_address> --name allow-hc-outbound --destination-port-min 80 --destination-port-max 80
   ibmcloud is network-acl-rule-add $acl_id allow inbound tcp <IP_address> 0.0.0.0/0 --name allow-hc-inbound --destination-port-min 80 --destination-port-max 80
