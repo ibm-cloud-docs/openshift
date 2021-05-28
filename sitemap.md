@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-05-26"
+lastupdated: "2021-05-28"
 
 keywords: openshift
 subcollection: openshift
@@ -1363,11 +1363,11 @@ subcollection: openshift
 * [Setting up disaster recovery with Portworx](/docs/openshift?topic=openshift-portworx#px-dr)
 * [Exploring other Portworx features](/docs/openshift?topic=openshift-portworx#features)
 * [Cleaning up your Portworx volumes and cluster](/docs/openshift?topic=openshift-portworx#portworx_cleanup)
-  * [Removing Portworx volumes from apps](/docs/openshift?topic=openshift-portworx#remove_pvc)
-  * [Removing a worker node from your Portworx cluster or the entire Portworx cluster](/docs/openshift?topic=openshift-portworx#remove_storage_node_cluster)
+  * [Removing Portworx volumes from apps](/docs/openshift?topic=openshift-portworx#remove_pvc_apps_volumes)
+  * [Removing a worker node from your Portworx cluster or the entire Portworx cluster](/docs/openshift?topic=openshift-portworx#remove_storage_node_cluster-px)
   * [Removing the Portworx daemon set](/docs/openshift?topic=openshift-portworx#remove_px_daemonset)
   * [Removing Portworx from your cluster](/docs/openshift?topic=openshift-portworx#remove_portworx)
-* [Getting help and support](/docs/openshift?topic=openshift-portworx#portworx_help)
+* [Getting help and support](/docs/openshift?topic=openshift-portworx#portworx_help_sup)
   * [Gathering logs](/docs/openshift?topic=openshift-portworx#portworx_logs)
 * [Limitations](/docs/openshift?topic=openshift-portworx#portworx_limitations)
 
@@ -2430,6 +2430,7 @@ subcollection: openshift
 * [Restarting your app pod](/docs/openshift?topic=openshift-debug_storage#ts-restart-app-pod)
 * [Verifying that the storage driver and plug-in pods show a status of **Running**](/docs/openshift?topic=openshift-debug_storage#verify_driver_pod_running_status)
 * [Checking whether your PVC is successfully provisioned.](/docs/openshift?topic=openshift-debug_storage#check_pvc_provision)
+* [Portworx](/docs/openshift?topic=openshift-debug_storage#ts-portworx-helm)
 
 [What permissions do I need to manage storage and create PVCs?](/docs/openshift?topic=openshift-missing_permissions)
 

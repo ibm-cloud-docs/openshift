@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-26"
+lastupdated: "2021-05-28"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -261,7 +261,7 @@ Cluster administrators make sure that teams that share a cluster don't take up m
 
 Even if no resource quota is set, you can include resource requests and limits in your deployment to improve the management of worker node resources.
 
-If a container exceeds its limit, the container might be restarted or fail. If a container exceeds a request, its pod might be evicted if the worker node runs out of that resource that is exceeded. For more information about troubleshooting, see [Pods repeatedly fail to restart or are unexpectedly removed](/docs/openshift?topic=openshift-pods_fail).
+If a container exceeds its limit, the container might be restarted or fail. If a container exceeds a request, its pod might be evicted if the worker node runs out of that resource that is exceeded. For more information about troubleshooting, see [Pods repeatedly fail to restart or are unexpectedly removed](/docs/openshift?topic=openshift-ts-app-pod-fail).
 {: note}
 
 **Request**: The minimum amount of the resource that the scheduler reserves for the container to use. If the amount is equal to the limit, the request is guaranteed. If the amount is less than the limit, the request is still guaranteed, but the scheduler can use the difference between the request and the limit to fulfill the resources of other containers.

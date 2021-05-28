@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-05-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -106,7 +106,7 @@ subcollection: openshift
 
 
 ## About Portworx
-{: about-portworx}
+{: #about-portworx}
 
 Review frequently asked questions to learn more about Portworx and how Portworx provides highly available persistent storage management for your containerized apps.
 {: shortdesc}
@@ -1024,7 +1024,7 @@ To access the storage from your app, you must mount the PVC to your app.
 
 
 
-	
+
 ## Backing up and restoring apps and data with PX-Backup
 {: #px-backup}
 
@@ -1052,12 +1052,12 @@ If you are installing PX-Backup in a newly-provisioned cluster, [you must log in
 
 1. Open the PX-Backup service from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/px-backup-for-kubernetes){: external}.
 2. Select the same location where the  cluster you want to install PX-Backup on is located. You can find the location of your cluster from the {{site.data.keyword.openshiftlong_notm}} dashboard.
-3. Enter the name for your PX-Backup service in the **Service name** field. 
+3. Enter the name for your PX-Backup service in the **Service name** field.
 3. Select the resource group where you want to create the PX-Backup service.
 4. In the **Tag** field, enter the name of the cluster where you want to install PX-Backup. After you complete the installation, you cannot see the name of the cluster where you installed PX-Backup. To find the cluster more easily later, make sure that you enter the cluster name and any additional information as tags.
-5. Enter your {{site.data.keyword.cloud_notm}} API key. After you enter the API key, the **Kubernetes or OpenShift cluster name** field appears. If you do not have an {{site.data.keyword.cloud_notm}} API key, see [Creating an API key](/docs/account?topic=account-userapikey#create_user_key) to create one. 
+5. Enter your {{site.data.keyword.cloud_notm}} API key. After you enter the API key, the **Kubernetes or OpenShift cluster name** field appears. If you do not have an {{site.data.keyword.cloud_notm}} API key, see [Creating an API key](/docs/account?topic=account-userapikey#create_user_key) to create one.
 6. In the **Kubernetes or OpenShift cluster name** field, select the cluster where you want to install PX-Backup.
-7. Enter the name of the {{site.data.keyword.openshiftshort}} project where you want to install your PX-Backup service components. Do not use the `kube-system` or `default` namespace. If the {{site.data.keyword.openshiftshort}} project that you enter does not already exist in your cluster, it is automatically created during the installation. 
+7. Enter the name of the {{site.data.keyword.openshiftshort}} project where you want to install your PX-Backup service components. Do not use the `kube-system` or `default` namespace. If the {{site.data.keyword.openshiftshort}} project that you enter does not already exist in your cluster, it is automatically created during the installation.
 8. Select an existing storage class in your cluster to provision persistent volumes for the PX-Backup service. The service uses this storage to store service metadata and is not used to back up your apps and data. [Your apps and data are backed up to an {{site.data.keyword.cos_full_notm}} service instance](#px-backup-storage).
 9. Click **Create** to begin the PX-Backup installation. The installation may take a few minutes to complete.
 10. [Verify that your PX-Backup service is installed corrrectly](#px-backup-verify).
@@ -1085,7 +1085,7 @@ Verify that PX-Backup is correctly installed on your cluster.
    8. Find the **px-backup-ui** route and verify that a URL is listed in the **Location** column.
    4. Click **Workloads>Jobs**.
    5. Verify that the **pxcentral-post-install-hook** job is complete.
-	
+
 **From the CLI**
 
 1. From the {{site.data.keyword.cloud_notm}} [Resource list](https://cloud.ibm.com/resources){: external}, find the PX-Backup service you created.
@@ -1093,7 +1093,7 @@ Verify that PX-Backup is correctly installed on your cluster.
 3. If the status changes to **Active**, verify that the PX-Backup pods are running in your cluster.
    1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
    2. Run the command to verify that the installation has completed.
-      ``` 
+      ```
       oc get po -n <px_backup_namespace> -ljob-name=pxcentral-post-install-hook  -o wide | awk '{print $1   $3}' | grep -iv error
       ```
       {: pre}
@@ -1103,8 +1103,8 @@ Verify that PX-Backup is correctly installed on your cluster.
       pxcentral-post-install-hook-5b86qCompleted
       ```
       {: screen}
-      
-  
+
+
 ### Logging in to the PX-Backup console
 {: #px-backup-ui}
 
@@ -1128,7 +1128,7 @@ Access the PX-Backup console through the URL supplied in the {{site.data.keyword
 7. Log in to the PX-Backup console. If you are the first user to access the console, you must log in in with the username `admin` and the password `admin`. You are redirected to a registration page to set a uniqe username and password. Subsequent users must register a new account to access the console.
 
 
-**For private classic clusters** 
+**For private classic clusters**
 - [Expose the **px-backup-ui** service on your private cluster to access the PX-Backup console](/docs/openshift?topic=openshift-ingress-types#alb-comm-create-private).
 
 ### Adding a backup location to your PX-Backup service
@@ -1138,7 +1138,7 @@ Create an {{site.data.keyword.cos_full_notm}} instance and bucket, and add them 
 {: shortdesc}
 
 Before you begin, [log in to the PX-Backup console](#px-backup-ui). Note that if you are the first user to access the console, you must login in with the username `admin` and the password `admin`. You are redirected to a registration page to set a uniqe username and password. Subsequent users must register a new account to access the console.
-	
+
 1. [Create your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-object_storage#create_cos_service).
 2. [Create service credentials for your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-object_storage#service_credentials). Be sure to enable HMAC authentication by clicking **Advanced Options** in the **Create credential** dialog box and switching the **Include HMAC Credential** parameter to **On**.
 3. Expand your credentials in the service credentials table. Note the **access_key_id** and the **secret_access_key** in the **cos_hmac_keys** section.
@@ -1146,9 +1146,9 @@ Before you begin, [log in to the PX-Backup console](#px-backup-ui). Note that if
 5. Click on your bucket and note its location.
 6. Open the bucket configuration page and note the endpoint that you must use to connect to your {{site.data.keyword.cos_full_notm}} instance.
    - If you installed PX-Backup on a private classic cluster, note the **private** endpoint.
-   - If you installed PX-Backup on a private VPC cluster, note the **direct** endpoint. 
-   - For all other cluster types, note the **public** endpoint. 
-7. In the PX-Backup console, click **Backups**. 
+   - If you installed PX-Backup on a private VPC cluster, note the **direct** endpoint.
+   - For all other cluster types, note the **public** endpoint.
+7. In the PX-Backup console, click **Backups**.
 8. Click **Settings**>**Cloud Settings**.
 9. Create a cloud account to specify your {{site.data.keyword.cos_full_notm}} instance as the backup location where your data and apps are stored.
    1. For the cloud provider, choose **AWS / S3 Compliant Object Store**.
@@ -1156,7 +1156,7 @@ Before you begin, [log in to the PX-Backup console](#px-backup-ui). Note that if
    3. Enter the **access_key_id** that you retrieved earlier.
    4. Enter the **secret_access_key** that you retrieved earlier.
    5. Click **Add+** and return to the **Cloud Settings** page.
-10. In the **Backup Locations** section, add your {{site.data.keyword.cos_full_notm}} bucket as the backup location for your PX-Backup service. 
+10. In the **Backup Locations** section, add your {{site.data.keyword.cos_full_notm}} bucket as the backup location for your PX-Backup service.
     1. Enter a name for your backup location.
     2. Select the cloud account that you created earlier.
     3. In the **Path/Bucket** field, enter the name of your bucket.
@@ -1182,8 +1182,8 @@ ibmcloud oc cluster config --cluster <cluster_name> --admin
 
 Adding a cluster:
 
-1. In the PX-Backup console, click **Backups**. 
-2. Click **Add Cluster**. 
+1. In the PX-Backup console, click **Backups**.
+2. Click **Add Cluster**.
 3. Enter the name of the cluster that you want to back up.
 4. In the CLI, get the Kubeconfig file output for your cluster. Make sure that you have set the context to your cluster with the `--admin` flag to prevent the Kubeconfig from expiring.
    ```
@@ -1220,7 +1220,7 @@ If a cluster that you want to back up with PX-Backup does not have Portworx Ente
    serviceAccountName: stork-account  
    ```
    {: screen}
-  
+
 7. Save the file and run the command to apply the file to your cluster and install Stork.
    ```
    oc apply -f <file_name>.yaml
@@ -1241,10 +1241,12 @@ If a cluster that you want to back up with PX-Backup does not have Portworx Ente
 
 ### Backing up and restoring cluster data with PX-Backup
 {: #px-backup-and-restore}
+
+
 To back up data from your cluster or to restore data to your cluster, refer to the [PX-Backup documentation](https://backup.docs.portworx.com/use-px-backup/backup-restore/){: external}.
 {: shortdesc}
 
-**Back up apps and data from your cluster to {{site.data.keyword.cos_full_notm}}**: </br> 
+**Back up apps and data from your cluster to {{site.data.keyword.cos_full_notm}}**: </br>
 You can back up an entire cluster namespace, single apps, and the data that is stored in your persistent volumes to the {{site.data.keyword.cos_full_notm}} service instance that you set up as your backup location. Note that in order to back up data in persistent volumes, you must have a CSI snapshot storage class in your cluster. PX-Backup uses this storage class to first take a snapshot of your data and then sends this data to your {{site.data.keyword.cos_full_notm}} backup location. For more information, see the [PX-Backup documentation](https://backup.docs.portworx.com/use-px-backup/backup-restore/perform-backup/){: external}.
 
 **Restore any backup that you created to another cluster**: </br>
@@ -1309,11 +1311,11 @@ To include your cluster in a Portworx disaster recovery configuration:
 ## Cleaning up your Portworx volumes and cluster
 {: #portworx_cleanup}
 
-Remove a [Portworx volume](#remove_pvc), a [storage node](#remove_storage_node_cluster), or the [entire Portworx cluster](#remove_storage_node_cluster) if you do not need it anymore.
+Remove a [Portworx volume](#remove_pvc_apps_volumes), a [storage node](#remove_storage_node_cluster-px), or the [entire Portworx cluster](#remove_storage_node_cluster-px) if you do not need it anymore.
 {: shortdesc}
 
 ### Removing Portworx volumes from apps
-{: #remove_pvc}
+{: #remove_pvc_apps_volumes}
 
 When you added storage from your Portworx cluster to your app, you have three main components: the Kubernetes persistent volume claim (PVC) that requested the storage, the Kubernetes persistent volume (PV) that is mounted to your pod and described in the PVC, and the Portworx volume that blocks space on the physical disks of your Portworx cluster. To remove storage from your app, you must remove all components.
 {: shortdesc}
@@ -1409,7 +1411,7 @@ When you added storage from your Portworx cluster to your app, you have three ma
    {: pre}
 
 ### Removing a worker node from your Portworx cluster or the entire Portworx cluster
-{: #remove_storage_node_cluster}
+{: #remove_storage_node_cluster-px}
 
 You can exclude worker nodes from your Portworx cluster or remove the entire Portworx cluster if you do not want to use Portworx anymore.
 {: shortdesc}
@@ -1522,7 +1524,7 @@ To stop billing for Portworx, you must remove the Portworx Helm installation fro
 
 <br />
 ## Getting help and support
-{: #portworx_help}
+{: #portworx_help_sup}
 
 If you run into an issue with using Portworx, you can open an issue in the [Portworx Service Portal](https://pure1.purestorage.com/support){: external}. You can also submit a request by sending an e-mail to `support@purestorage.com`. If you do not have an account on the Portworx Service Portal, send an e-mail to `support@purestorage.com`. You can also [gather logging information](#portworx_logs) before opening a support ticket.
 
@@ -1563,7 +1565,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
       ```
       {: pre}
 
-4. Review the log files locally. If you cannot resolve your issue by reviewing the logs, [open a support ticket](#portworx_help) and provide the log information that you collected.
+4. Review the log files locally. If you cannot resolve your issue by reviewing the logs, [open a support ticket](/docs/openshift?topic=openshift-getting-started-with-px-backup#portworx_help) and provide the log information that you collected.
 
 
 ## Limitations

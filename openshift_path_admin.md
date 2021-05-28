@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-26"
+lastupdated: "2021-05-28"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -445,4 +445,4 @@ Manage your cluster and worker nodes through each phase of the cluster lifecycle
   * [Fluentd and Ingress ALB changelog](/docs/openshift?topic=openshift-cluster-add-ons-changelog)
 * **Removing**: [Remove clusters and clean up related resources](/docs/openshift?topic=openshift-remove).
 
-</br>Need help? Check out troubleshooting [clusters and masters](/docs/openshift?topic=openshift-debug_clusters), [worker nodes](/docs/openshift?topic=openshift-debug_worker_nodes), or the [cluster autoscaler](/docs/openshift?topic=openshift-debug_cluster_autoscaler).
+</br>Need help? Check out troubleshooting [clusters and masters](/docs/openshift?topic=openshift-debug_clusters), [worker nodes](/docs/openshift?topic=openshift-debug_worker_nodes, or the [cluster autoscaler](/docs/openshift?topic=openshift-debug_cluster_autoscaler).

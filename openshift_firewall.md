@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-24"
+lastupdated: "2021-05-27"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -711,11 +711,33 @@ Setting up an IAM allowlist blocks access to the {{site.data.keyword.openshiftsh
         No credentials set for resource group <resource_group_name>.: The user credentials could not be found. (E0051)
         ```
         {: screen}
-2. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}.
-3. From the menu bar, click **Manage** > **Access (IAM)**, and select **Users**.
-4. Select the user that you found in step 1 from the list.
-5. From the **User details** page, go to the **IP address restrictions** section.
-6. For **Classic infrastructure**, enter the CIDRs of the zones in the region where your cluster is located.<p class="note">You must allow all of the zones within the region that your cluster is in.</p>
+2. Get the CIDRs of the private and public subnets that your worker nodes are attached to.
+    ```
+    ibmcloud oc cluster get -c <cluster_name_or_ID> --show-resources
+    ```
+    {: pre}
+
+    Example output:
+    ```
+    Name:                           mycluster
+    ID:                             df222b2222d64944ab99ed63bb4567b6
+    State:                          normal
+    Status:                         All Workers
+    ...
+
+    Subnet VLANs
+    VLAN ID   Subnet CIDR        Public   User-managed
+    2234947   10.176.22.48/29    false    false
+    2294021   10.185.94.144/29   false    false
+    2234945   169.46.17.0/29     true     false
+    2294019   169.48.228.72/29   true     false
+    ```
+    {: screen}
+3. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}.
+4. From the menu bar, click **Manage** > **Access (IAM)**, and select **Users**.
+5. Select the user that you found in step 1 from the list.
+6. From the **User details** page, go to the **IP address restrictions** section.
+7. For **Classic infrastructure**, enter the CIDRs of the zones in the region where your cluster is located.<p class="note">You must allow all of the zones within the region that your cluster is in.</p>
   <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the region in column one, the zone in column two, and IP addresses to match in column three.">
   <caption>CIDRs to allow in IAM</caption>
     <thead>
@@ -766,6 +788,7 @@ Setting up an IAM allowlist blocks access to the {{site.data.keyword.openshiftsh
     </tr>
     </tbody>
   </table>
-7. Click **Apply**.
+7. Enter the CIDRs of the worker node subnets that you found in step 2.
+8. Click **Apply**.
 
 
