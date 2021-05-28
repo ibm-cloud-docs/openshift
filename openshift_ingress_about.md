@@ -163,7 +163,7 @@ In rare cases, some DNS resolvers or client apps might continue to use the unhea
 
 Because Cloudflare is a public service, the MZLB load balances for public ALBs that use the IBM-provided Ingress subdomain only. If you use only private ALBs, you must manually check the health of the ALBs and update DNS lookup results. If you use public ALBs that use a custom domain, you can include the ALBs in MZLB load balancing by creating a CNAME in your DNS entry to forward requests from your custom domain to the IBM-provided Ingress subdomain for your cluster.
 
-If you use Calico pre-DNAT network policies, VPC ACLs, or any other firewall solution to block all incoming traffic to Ingress services, you must allow inbound access on port 80 to your ALBs from [the IP addresses in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist) and [Cloudflare's IPv4 IP addresses](https://www.cloudflare.com/ips/){: external} so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers. For steps on how to create a Calico pre-DNAT policy to allow these IP addresses, see [Lesson 3 of the Calico network policy tutorial](/docs/containers?topic=containers-policy_tutorial#lesson3).
+If you use Calico pre-DNAT network policies, VPC ACLs, or any other firewall solution to block all incoming traffic to Ingress services, you must allow inbound access on port 80 to your ALBs from [the IP addresses in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist) and [Cloudflare's IPv4 IP addresses](https://www.cloudflare.com/ips/){: external} so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers. For steps on how to create a Calico pre-DNAT policy to allow these IP addresses, see [Lesson 3 of the Calico network policy tutorial](/docs/openshift?topic=openshift-policy_tutorial#lesson3).
 {: note}
 
 On 05 July 2021, the DNS provider is changed from Cloudflare to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains for all clusters in {{site.data.keyword.openshiftlong_notm}}. If you currently allow inbound traffic from the Cloudflare source IP addresses, you must also allow inbound traffic from the [Akamai source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} before 05 July. After the migration, you can remove the Cloudflare IP address rules. For more information, see the [announcement](https://cloud.ibm.com/notifications?selected=1621697674798){: external}.
@@ -239,7 +239,7 @@ You can modify default ALB settings and add annotations to your Ingress resource
 ## How do I manage the lifecycle of my ALBs?
 {: #alb-lifecycle}
 
-Ingress ALBs are managed by {{site.data.keyword.openshiftlong_notm}}. To further modify and manage your ALBs, such as to manage version updates for your ALBs or to scale up ALB replicas, you can use `ibmcloud oc ingress alb` commands. For more information, see [Updating ALBs](/docs/containers?topic=containers-ingress#alb-update).
+Ingress ALBs are managed by {{site.data.keyword.openshiftlong_notm}}. To further modify and manage your ALBs, such as to manage version updates for your ALBs or to scale up ALB replicas, you can use `ibmcloud oc ingress alb` commands. For more information, see [Updating ALBs](/docs/openshift?topic=openshift-ingress#alb-update).
 {: shortdesc}
 
 
