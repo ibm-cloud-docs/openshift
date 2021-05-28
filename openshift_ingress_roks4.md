@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-26"
+lastupdated: "2021-05-28"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -92,16 +92,16 @@ subcollection: openshift
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
   
- 
 
 
-# Setting up Ingress in {{site.data.keyword.openshiftshort}} 4
+
+# Setting up Ingress
 {: #ingress-roks4}
 
 Expose multiple apps in your {{site.data.keyword.openshiftlong}} cluster by creating Ingress resources that are managed by the Ingress controller.
 {: shortdesc}
 
-<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run {{site.data.keyword.openshiftshort}} version 4 only. To set up Ingress for clusters that run {{site.data.keyword.openshiftshort}} version 3.11, see [Setting up Ingress in {{site.data.keyword.openshiftshort}} version 3.11](/docs/openshift?topic=openshift-ingress).
+<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run {{site.data.keyword.openshiftshort}} version 4 only.
 {: note}
 
 ## Prerequisites
@@ -195,6 +195,7 @@ Start by deploying your apps and creating Kubernetes services to expose them.
 {: shortdesc}
 
 1.  [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods can be included in the Ingress load balancing.
+
 2.   For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
       ```
       oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
@@ -343,12 +344,13 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     oc apply -f myingressresource.yaml -n <project>
     ```
     {: pre}
-4.   Verify that the Ingress resource was created successfully. If messages in the events describe an error in your resource configuration, change the values in your resource file and reapply the file for the resource.
 
+4. Verify that the Ingress resource was created successfully. If messages in the events describe an error in your resource configuration, change the values in your resource file and reapply the file for the resource.
     ```
     oc describe ingress myingressresource
     ```
     {: pre}
+
 
 Your Ingress resource is created in the same project as your app services, and your apps are registered with the Ingress controller.
 
@@ -403,6 +405,7 @@ Start by deploying your apps and creating Kubernetes services to expose them.
 {: shortdesc}
 
 1.  [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods can be included in the Ingress load balancing.
+
 2.   For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
       ```
       oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
@@ -596,8 +599,8 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     oc apply -f myingressresource.yaml -n <project>
     ```
     {: pre}
-4.   Verify that the Ingress resource was created successfully. If messages in the events describe an error in your resource configuration, change the values in your resource file and reapply the file for the resource.
 
+4. Verify that the Ingress resource was created successfully. If messages in the events describe an error in your resource configuration, change the values in your resource file and reapply the file for the resource.
     ```
     oc describe ingress myingressresource
     ```
@@ -734,6 +737,7 @@ Start by deploying your apps and creating Kubernetes services to expose them.
 {: shortdesc}
 
 1.  [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods can be included in the Ingress load balancing.
+
 2.   For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
       ```
       oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
@@ -934,8 +938,8 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     oc apply -f myingressresource.yaml -n <project>
     ```
     {: pre}
-4.   Verify that the Ingress resource was created successfully. If messages in the events describe an error in your resource configuration, change the values in your resource file and reapply the file for the resource.
 
+4. Verify that the Ingress resource was created successfully. If messages in the events describe an error in your resource configuration, change the values in your resource file and reapply the file for the resource.
     ```
     oc describe ingress myingressresource
     ```
@@ -997,6 +1001,7 @@ Start by deploying your apps and creating Kubernetes services to expose them.
 {: shortdesc}
 
 1.  [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods can be included in the Ingress load balancing.
+
 2.   For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
       ```
       oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
@@ -1145,8 +1150,8 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     oc apply -f myingressresource.yaml -n <project>
     ```
     {: pre}
-4.   Verify that the Ingress resource was created successfully. If messages in the events describe an error in your resource configuration, change the values in your resource file and reapply the file for the resource.
 
+4. Verify that the Ingress resource was created successfully. If messages in the events describe an error in your resource configuration, change the values in your resource file and reapply the file for the resource.
     ```
     oc describe ingress myingressresource
     ```

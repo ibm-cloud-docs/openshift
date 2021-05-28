@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-28"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, ingress operator, router
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -91,18 +92,18 @@ subcollection: openshift
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
   
-  
 
-# About Ingress in {{site.data.keyword.openshiftshort}} 4
+
+# About Ingress
 {: #ingress-about-roks4}
 
-<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run {{site.data.keyword.openshiftshort}} version 4 only. To learn about Ingress for {{site.data.keyword.openshiftshort}} version 3.11 clusters, see [About Ingress in {{site.data.keyword.openshiftshort}} version 3.11](/docs/openshift?topic=openshift-ingress-about).
+<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run {{site.data.keyword.openshiftshort}} version 4 only.
 {: note}
 
 Ingress is a service that balances network traffic workloads in your cluster by forwarding public or private requests to your apps. You can use Ingress to expose multiple app services to the public or to a private network by using a unique public or private domain.
 {: shortdesc}
 
-In your cluster, the OpenShift router is a layer 7 load balancer which implements an HAProxy Ingress controller. A layer 4 `LoadBalancer` service exposes the router so that the router can receive external requests that come into your cluster. The router then forwards requests to app pods in your cluster based on distinguishing layer 7 protocol characteristics, such as headers.
+In your cluster, the {{site.data.keyword.openshiftshort}} router is a layer 7 load balancer which implements an HAProxy Ingress controller. A layer 4 `LoadBalancer` service exposes the router so that the router can receive external requests that come into your cluster. The router then forwards requests to app pods in your cluster based on distinguishing layer 7 protocol characteristics, such as headers.
 
 ## What are the components of Ingress?
 {: #ingress_roks4_components}

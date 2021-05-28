@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-28"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -91,15 +92,15 @@ subcollection: openshift
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
   
-  
 
-# Quick start for Ingress in {{site.data.keyword.openshiftshort}} 4
+
+# Quick start for Ingress
 {: #ingress-qs-roks4}
 
 Quickly expose your app to the Internet by creating an Ingress resource.
 {: shortdesc}
 
-<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> This quick start is for clusters that run {{site.data.keyword.openshiftshort}} version 4 only. For clusters that run {{site.data.keyword.openshiftshort}} version 3.11, see [Quick start for Ingress in {{site.data.keyword.openshiftshort}} version 3.11](/docs/openshift?topic=openshift-ingress#ingress-qs).
+<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> This quick start is for clusters that run {{site.data.keyword.openshiftshort}} version 4 only.
 {: note}
 
 1. Create a Kubernetes `ClusterIP` service for your app so that it can be included in the router load balancing.

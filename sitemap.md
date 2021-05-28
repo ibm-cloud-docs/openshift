@@ -1032,13 +1032,13 @@ subcollection: openshift
   * [Updating and removing IPs and monitors from subdomains](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_delete)
 
 
-## Exposing apps with Ingress in OpenShift 4
-{: #sitemap_exposing_apps_with_ingress_in_openshift_4}
+## Exposing apps with Ingress
+{: #sitemap_exposing_apps_with_ingress}
 
 
-[Quick start for Ingress in {{site.data.keyword.openshiftshort}} 4](/docs/openshift?topic=openshift-ingress-qs-roks4)
+[Quick start for Ingress](/docs/openshift?topic=openshift-ingress-qs-roks4)
 
-[About Ingress in {{site.data.keyword.openshiftshort}} 4](/docs/openshift?topic=openshift-ingress-about-roks4)
+[About Ingress](/docs/openshift?topic=openshift-ingress-about-roks4)
 * [What are the components of Ingress?](/docs/openshift?topic=openshift-ingress-about-roks4#ingress_roks4_components)
   * [Ingress controller](/docs/openshift?topic=openshift-ingress-about-roks4#ingress-controller)
   * [Router](/docs/openshift?topic=openshift-ingress-about-roks4#ingress-router)
@@ -1052,7 +1052,7 @@ subcollection: openshift
 * [How can I customize routing?](/docs/openshift?topic=openshift-ingress-about-roks4#custom-routing)
 * [How can I enable TLS certificates?](/docs/openshift?topic=openshift-ingress-about-roks4#certs)
 
-[Setting up Ingress in {{site.data.keyword.openshiftshort}} 4](/docs/openshift?topic=openshift-ingress-roks4)
+[Setting up Ingress](/docs/openshift?topic=openshift-ingress-roks4)
 * [Prerequisites](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-prereqs)
 * [Planning networking for single or multiple projects](/docs/openshift?topic=openshift-ingress-roks4#multiple_projects)
   * [All apps are in one project](/docs/openshift?topic=openshift-ingress-roks4#one-project)
@@ -1085,130 +1085,6 @@ subcollection: openshift
   * [Using the default TLS certificate for the IBM-provided Ingress subdomain](/docs/openshift?topic=openshift-ingress-roks4#manage_certs_ibm)
   * [Using a TLS certificate for a custom subdomain](/docs/openshift?topic=openshift-ingress-roks4#manage_certs_custom)
 * [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4)
-
-
-## Exposing apps with Ingress in OpenShift 3.11
-{: #sitemap_exposing_apps_with_ingress_in_openshift_3.11}
-
-
-[About Ingress in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-ingress-about)
-* [What are the components of Ingress?](/docs/openshift?topic=openshift-ingress-about#ingress_components)
-  * [Ingress resource](/docs/openshift?topic=openshift-ingress-about#ingress-resource)
-  * [Application load balancer (ALB)](/docs/openshift?topic=openshift-ingress-about#alb-about)
-  * [Multizone load balancer (MZLB)](/docs/openshift?topic=openshift-ingress-about#mzlb)
-* [How does a request get to my app?](/docs/openshift?topic=openshift-ingress-about#architecture-classic)
-  * [Single-zone cluster](/docs/openshift?topic=openshift-ingress-about#classic-single)
-  * [Multizone cluster](/docs/openshift?topic=openshift-ingress-about#classic-multi)
-* [How can I enable TLS certificates?](/docs/openshift?topic=openshift-ingress-about#enable-certs)
-* [How can I customize routing?](/docs/openshift?topic=openshift-ingress-about#custom-routing)
-* [How do I manage the lifecycle of my ALBs?](/docs/openshift?topic=openshift-ingress-about#alb-lifecycle)
-
-[Setting up {{site.data.keyword.openshiftlong_notm}} Ingress in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-ingress)
-* [Quick start](/docs/openshift?topic=openshift-ingress#ingress-qs)
-* [Prerequisites](/docs/openshift?topic=openshift-ingress#config_prereqs)
-* [Planning networking for single or multiple namespaces](/docs/openshift?topic=openshift-ingress#multiple_namespaces)
-  * [All apps are in one namespace](/docs/openshift?topic=openshift-ingress#one-ns)
-  * [Apps are in multiple namespaces](/docs/openshift?topic=openshift-ingress#multi-ns)
-  * [Multiple domains within a namespace](/docs/openshift?topic=openshift-ingress#multi-domains)
-* [Exposing apps that are inside your cluster to the public](/docs/openshift?topic=openshift-ingress#ingress_expose_public)
-  * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress#public_inside_1)
-  * [Step 2: Select an app domain](/docs/openshift?topic=openshift-ingress#public_inside_2)
-  * [Step 3: Select TLS termination](/docs/openshift?topic=openshift-ingress#public_inside_3)
-  * [Step 4: Create the Ingress resource](/docs/openshift?topic=openshift-ingress#public_inside_4)
-  * [Step 5: Access your app from the internet](/docs/openshift?topic=openshift-ingress#public_inside_5)
-* [Exposing apps that are outside your cluster to the public](/docs/openshift?topic=openshift-ingress#external_endpoint)
-  * [Exposing external apps through a Kubernetes endpoint](/docs/openshift?topic=openshift-ingress#external_ip)
-  * [Exposing external apps through the `proxy-external-service` Ingress annotation](/docs/openshift?topic=openshift-ingress#proxy-external)
-* [Exposing apps to a private network](/docs/openshift?topic=openshift-ingress#ingress_expose_private)
-  * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress#private_1)
-  * [Step 2: Enable the default private ALB](/docs/openshift?topic=openshift-ingress#private_ingress)
-  * [Step 3: Map your custom domain](/docs/openshift?topic=openshift-ingress#private_3)
-  * [Step 4: Select TLS termination](/docs/openshift?topic=openshift-ingress#private_4)
-  * [Step 5: Create the Ingress resource](/docs/openshift?topic=openshift-ingress#private_5)
-  * [Step 6: Access your app from your private network](/docs/openshift?topic=openshift-ingress#private_6)
-  * [Optional: Block traffic to public NodePorts](/docs/openshift?topic=openshift-ingress#block-nodeports)
-* [Managing TLS certificates and secrets](/docs/openshift?topic=openshift-ingress#manage_certs)
-  * [Using TLS certificates in {{site.data.keyword.cloudcerts_short}}](/docs/openshift?topic=openshift-ingress#manage_certs_about)
-  * [Using the default TLS certificate for the IBM-provided Ingress subdomain](/docs/openshift?topic=openshift-ingress#manage_certs_ibm)
-  * [Using a TLS certificate for a custom subdomain](/docs/openshift?topic=openshift-ingress#manage_certs_custom)
-* [Opening non-default ports in the Ingress ALB](/docs/openshift?topic=openshift-ingress#opening_ingress_ports)
-* [Updating ALBs](/docs/openshift?topic=openshift-ingress#alb-update)
-  * [Choosing a supported image version](/docs/openshift?topic=openshift-ingress#alb-version-choose)
-  * [Managing automatic updates](/docs/openshift?topic=openshift-ingress#autoupdate)
-  * [Reverting to an earlier version](/docs/openshift?topic=openshift-ingress#revert)
-* [Scaling ALBs](/docs/openshift?topic=openshift-ingress#scale_albs)
-  * [Increasing the number of ALB pod replicas](/docs/openshift?topic=openshift-ingress#alb_replicas)
-  * [Creating more ALBs](/docs/openshift?topic=openshift-ingress#create_alb)
-* [Moving ALBs across VLANs](/docs/openshift?topic=openshift-ingress#migrate-alb-vlan)
-* [Increasing the restart readiness check time for ALB pods](/docs/openshift?topic=openshift-ingress#readiness-check)
-
-[{{site.data.keyword.openshiftlong_notm}} Ingress annotations](/docs/openshift?topic=openshift-ingress_annotation)
-* [General annotations](/docs/openshift?topic=openshift-ingress_annotation#general)
-  * [Custom error actions (`custom-errors`, `custom-error-actions`)](/docs/openshift?topic=openshift-ingress_annotation#custom-errors)
-  * [Location snippets (`location-snippets`)](/docs/openshift?topic=openshift-ingress_annotation#location-snippets)
-  * [Private ALB routing (`ALB-ID`)](/docs/openshift?topic=openshift-ingress_annotation#alb-id)
-  * [Server snippets (`server-snippets`)](/docs/openshift?topic=openshift-ingress_annotation#server-snippets)
-* [Connection annotations](/docs/openshift?topic=openshift-ingress_annotation#connection)
-  * [Custom connect-timeouts and read-timeouts (`proxy-connect-timeout`, `proxy-read-timeout`)](/docs/openshift?topic=openshift-ingress_annotation#proxy-connect-timeout)
-  * [Keepalive requests (`keepalive-requests`)](/docs/openshift?topic=openshift-ingress_annotation#keepalive-requests)
-  * [Keepalive timeout (`keepalive-timeout`)](/docs/openshift?topic=openshift-ingress_annotation#keepalive-timeout)
-  * [Proxy next upstream (`proxy-next-upstream-config`)](/docs/openshift?topic=openshift-ingress_annotation#proxy-next-upstream-config)
-  * [Session-affinity with cookies (`sticky-cookie-services`)](/docs/openshift?topic=openshift-ingress_annotation#sticky-cookie-services)
-  * [Upstream fail timeout (`upstream-fail-timeout`)](/docs/openshift?topic=openshift-ingress_annotation#upstream-fail-timeout)
-  * [Upstream keepalive (`upstream-keepalive`)](/docs/openshift?topic=openshift-ingress_annotation#upstream-keepalive)
-  * [Upstream keepalive timeout (`upstream-keepalive-timeout`)](/docs/openshift?topic=openshift-ingress_annotation#upstream-keepalive-timeout)
-  * [Upstream max fails (`upstream-max-fails`)](/docs/openshift?topic=openshift-ingress_annotation#upstream-max-fails)
-* [HTTPS and TLS/SSL authentication annotations](/docs/openshift?topic=openshift-ingress_annotation#https-auth)
-  * [Custom HTTP and HTTPS ports (`custom-port`)](/docs/openshift?topic=openshift-ingress_annotation#custom-port)
-  * [HTTP redirects to HTTPS (`redirect-to-https`)](/docs/openshift?topic=openshift-ingress_annotation#redirect-to-https)
-  * [HTTP Strict Transport Security (`hsts`)](/docs/openshift?topic=openshift-ingress_annotation#hsts)
-  * [Mutual authentication (`mutual-auth`)](/docs/openshift?topic=openshift-ingress_annotation#mutual-auth)
-  * [SSL services support (`ssl-services`)](/docs/openshift?topic=openshift-ingress_annotation#ssl-services)
-  * [TCP ports (`tcp-ports`)](/docs/openshift?topic=openshift-ingress_annotation#tcp-ports)
-* [Path routing annotations](/docs/openshift?topic=openshift-ingress_annotation#path-routing)
-  * [External services (`proxy-external-service`)](/docs/openshift?topic=openshift-ingress_annotation#proxy-external-service)
-  * [Location modifier (`location-modifier`)](/docs/openshift?topic=openshift-ingress_annotation#location-modifier)
-  * [Rewrite paths (`rewrite-path`)](/docs/openshift?topic=openshift-ingress_annotation#rewrite-path)
-* [Proxy buffer annotations](/docs/openshift?topic=openshift-ingress_annotation#proxy-buffer)
-  * [Large client header buffers (`large-client-header-buffers`)](/docs/openshift?topic=openshift-ingress_annotation#large-client-header-buffers)
-  * [Client response data buffering (`proxy-buffering`)](/docs/openshift?topic=openshift-ingress_annotation#proxy-buffering)
-  * [Proxy buffers (`proxy-buffers`)](/docs/openshift?topic=openshift-ingress_annotation#proxy-buffers)
-  * [Proxy buffer size (`proxy-buffer-size`)](/docs/openshift?topic=openshift-ingress_annotation#proxy-buffer-size)
-  * [Proxy busy buffers size (`proxy-busy-buffers-size`)](/docs/openshift?topic=openshift-ingress_annotation#proxy-busy-buffers-size)
-* [Request and response annotations](/docs/openshift?topic=openshift-ingress_annotation#request-response)
-  * [Add server port to host header (`add-host-port`)](/docs/openshift?topic=openshift-ingress_annotation#add-host-port)
-  * [Additional client request or response header (`proxy-add-headers`, `response-add-headers`)](/docs/openshift?topic=openshift-ingress_annotation#proxy-add-headers)
-  * [Client response header removal (`response-remove-headers`)](/docs/openshift?topic=openshift-ingress_annotation#response-remove-headers)
-  * [Client request body size (`client-max-body-size`)](/docs/openshift?topic=openshift-ingress_annotation#client-max-body-size)
-* [Service limit annotations](/docs/openshift?topic=openshift-ingress_annotation#service-limit)
-  * [Global rate limits (`global-rate-limit`)](/docs/openshift?topic=openshift-ingress_annotation#global-rate-limit)
-  * [Service rate limits (`service-rate-limit`)](/docs/openshift?topic=openshift-ingress_annotation#service-rate-limit)
-* [User authentication annotations](/docs/openshift?topic=openshift-ingress_annotation#user-authentication)
-  * [{{site.data.keyword.appid_short_notm}} Authentication (`appid-auth`)](/docs/openshift?topic=openshift-ingress_annotation#appid-auth)
-* [Preserving the source IP address](/docs/openshift?topic=openshift-ingress_annotation#preserve_source_ip)
-  * [Enabling the PROXY protocol in VPC clusters](/docs/openshift?topic=openshift-ingress_annotation#preserve_source_ip_vpc)
-  * [Changing the `externalTrafficPolicy` in classic clusters](/docs/openshift?topic=openshift-ingress_annotation#preserve_source_ip_classic)
-* [Configuring SSL protocols and SSL ciphers at the HTTP level](/docs/openshift?topic=openshift-ingress_annotation#ssl_protocols_ciphers)
-* [Sending your custom certificate to legacy clients](/docs/openshift?topic=openshift-ingress_annotation#default_server_cert)
-* [Tuning ALB performance](/docs/openshift?topic=openshift-ingress_annotation#perf_tuning)
-  * [Adding ALB socket listeners for each NGINX worker process](/docs/openshift?topic=openshift-ingress_annotation#reuse-port)
-  * [Enabling log buffering and flush timeout](/docs/openshift?topic=openshift-ingress_annotation#access-log)
-  * [Changing the number or duration of keepalive connections](/docs/openshift?topic=openshift-ingress_annotation#keepalive_time)
-  * [Changing the pending connections backlog](/docs/openshift?topic=openshift-ingress_annotation#backlog)
-
-[Logging and monitoring {{site.data.keyword.openshiftlong_notm}} Ingress](/docs/openshift?topic=openshift-ingress_health)
-* [Viewing Ingress logs](/docs/openshift?topic=openshift-ingress_health#ingress_logs)
-* [Customizing Ingress log content and format](/docs/openshift?topic=openshift-ingress_health#ingress_log_format)
-* [Monitoring the Ingress ALB](/docs/openshift?topic=openshift-ingress_health#ingress_monitoring)
-  * [Installing the metrics exporter Helm chart](/docs/openshift?topic=openshift-ingress_health#metrics-exporter)
-  * [Installing the Prometheus agent Helm chart](/docs/openshift?topic=openshift-ingress_health#prometheus-agent)
-  * [ALB metrics](/docs/openshift?topic=openshift-ingress_health#alb_metrics)
-  * [Server metrics](/docs/openshift?topic=openshift-ingress_health#server_metrics)
-  * [Upstream metrics](/docs/openshift?topic=openshift-ingress_health#upstream_metrics)
-* [Increasing the shared memory zone size for Ingress metrics collection](/docs/openshift?topic=openshift-ingress_health#vts_zone_size)
-
-[Bringing your own Ingress controller](/docs/openshift?topic=openshift-ingress-user_managed)
-* [Exposing your Ingress controller by creating an NLB and a hostname](/docs/openshift?topic=openshift-ingress-user_managed#user_managed_nlb)
 
 
 ## Exposing apps in {{site.data.keyword.satelliteshort}} clusters
@@ -2378,15 +2254,7 @@ subcollection: openshift
 * [Ingress statuses](/docs/openshift?topic=openshift-ingress-status#ingress_status)
 * [Ingress messages](/docs/openshift?topic=openshift-ingress-status#ingress_message)
 
-[Version 3.11: Debugging Ingress](/docs/openshift?topic=openshift-ingress-debug)
-* [Step 1: Check your app deployment](/docs/openshift?topic=openshift-ingress-debug#app-debug-ingress)
-* [Step 2: Run Ingress tests in the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-ingress-debug#debug-tool-ingress)
-* [Step 3: Check for error messages in your Ingress deployment and the ALB pod logs](/docs/openshift?topic=openshift-ingress-debug#errors)
-* [Step 4: Ping the ALB subdomain and public IP addresses](/docs/openshift?topic=openshift-ingress-debug#ping)
-* [Step 5: Check your domain mappings and Ingress resource configuration](/docs/openshift?topic=openshift-ingress-debug#ts_ingress_config)
-* [Removing an ALB from DNS for debugging](/docs/openshift?topic=openshift-ingress-debug#one_alb)
-
-[Version 4: Debugging Ingress](/docs/openshift?topic=openshift-ingress-debug-roks4)
+[Debugging Ingress](/docs/openshift?topic=openshift-ingress-debug-roks4)
 * [Step 1: Check your app deployment and Ingress resource configuration](/docs/openshift?topic=openshift-ingress-debug-roks4#app-debug-ingress-43)
 * [Step 2: Run Ingress tests in the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-ingress-debug-roks4#debug-tool-43)
 * [Step 3: Check the health of the Ingress controller's router](/docs/openshift?topic=openshift-ingress-debug-roks4#errors-43)
@@ -2394,7 +2262,7 @@ subcollection: openshift
 
 [Classic clusters: Why can't my app connect via Ingress?](/docs/openshift?topic=openshift-cs_ingress_fails)
 
-[Version 4 VPC clusters: Why can't my app connect via Ingress?](/docs/openshift?topic=openshift-vpc_ts_alb)
+[VPC clusters: Why can't my app connect via Ingress?](/docs/openshift?topic=openshift-vpc_ts_alb)
 
 [Why does no Ingress subdomain exist after cluster creation?](/docs/openshift?topic=openshift-ingress_subdomain)
 
@@ -2404,21 +2272,11 @@ subcollection: openshift
 
 [Why isn't the Ingress secret expiration date updated?](/docs/openshift?topic=openshift-sync_cert_dates)
 
-[Version 4 VPC clusters: Why does the VPC load balancer for router only route to one zone?](/docs/openshift?topic=openshift-router-mzr-error)
+[VPC clusters: Why does the VPC load balancer for router only route to one zone?](/docs/openshift?topic=openshift-router-mzr-error)
 
-[Version 4 classic clusters: Why doesn't the router for the Ingress controller deploy in a zone?](/docs/openshift?topic=openshift-cs_subnet_limit_43)
+[Classic clusters: Why doesn't the router for the Ingress controller deploy in a zone?](/docs/openshift?topic=openshift-cs_subnet_limit_43)
 * [Resolving VLAN issues](/docs/openshift?topic=openshift-cs_subnet_limit_43#resolve_vlan)
 * [Resolving multizone router service deployment issues](/docs/openshift?topic=openshift-cs_subnet_limit_43#resolve_mzr_router)
-
-[Version 3.11 Why are no ALBs deployed in a zone?](/docs/openshift?topic=openshift-cs_subnet_limit)
-
-[Version 3.11: Why does source IP preservation fail when using tainted nodes?](/docs/openshift?topic=openshift-cs_source_ip_fails)
-
-[Version 3.11: Why does enabling Ingress ALBs result in subnet errors?](/docs/openshift?topic=openshift-cs_alb_subnet)
-
-[Version 3.11: Why does ALB secret creation or deletion fail?](/docs/openshift?topic=openshift-cs_albsecret_fails)
-
-[Version 3.11: Why do ALB pods not deploy to worker nodes?](/docs/openshift?topic=openshift-alb-pod-affinity)
 
 
 ## File Storage
@@ -2448,6 +2306,11 @@ subcollection: openshift
 [File storage: Why are the file systems for worker nodes changed to read-only?](/docs/openshift?topic=openshift-readonly_nodes)
 
 [Storage: Feedback, questions, and support](/docs/openshift?topic=openshift-getting_help_storage)
+
+
+## Block Storage
+{: #sitemap_block_storage}
+
 * [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage){: external}
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
@@ -2458,6 +2321,11 @@ subcollection: openshift
 [Block storage: Why does block storage change to read-only?](/docs/openshift?topic=openshift-readonly_block)
 
 [Block storage: Why does the Block storage plug-in Helm chart give CPU throttling warnings?](/docs/openshift?topic=openshift-block_helm_cpu)
+
+
+## Object Storage
+{: #sitemap_object_storage}
+
 * [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage){: external}
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
@@ -2481,8 +2349,13 @@ subcollection: openshift
 [Object storage: Why does my PVC remain in a pending state?](/docs/openshift?topic=openshift-cos_pvc_pending)
 
 [Object storage: Why does PVC or pod creation fail due to not finding the Kubernetes secret?](/docs/openshift?topic=openshift-cos_secret_access_fails)
+
+
+## Portworx Storage
+{: #sitemap_portworx_storage}
+
 * [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage){: external}
-* [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions) {: external}
+* [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
 [Portworx: Debugging your Portworx installation](/docs/openshift?topic=openshift-debug-portworx)
 * [Step 1: Verifying the {{site.data.keyword.cloud_notm}} catalog information](/docs/openshift?topic=openshift-debug-portworx#px-verify-catalog)
@@ -2490,6 +2363,11 @@ subcollection: openshift
 * [Step 3: Reach out to Portworx and IBM](/docs/openshift?topic=openshift-debug-portworx#px-support)
 
 [Portworx: Why does encryption fail with an invalid KMS endpoint?](/docs/openshift?topic=openshift-px-kms-endpoint)
+
+
+## OpenShift Container Storage
+{: #sitemap_openshift_container_storage}
+
 * [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage){: external}
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
@@ -2502,6 +2380,8 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
+
+* [June 2021](/docs/openshift?topic=openshift-iks-release#jun21)
 
 * [May 2021](/docs/openshift?topic=openshift-iks-release#may21)
 

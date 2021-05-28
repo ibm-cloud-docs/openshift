@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-27"
+lastupdated: "2021-05-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -94,15 +94,14 @@ content-type: troubleshoot
 {:video: .video}
   
 
-# Version 4: Debugging Ingress
+# Debugging Ingress
 {: #ingress-debug-roks4}
 {: troubleshoot}
 {: support}
 
-**Infrastructure provider and version**:
+**Infrastructure provider**:
 * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
-* <img src="../images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 4
 
 {: tsSymptoms}
 You exposed your app by creating an Ingress resource for your app in your cluster. However, when you try to connect to your app through the Ingress subdomain or the IP address of the Ingress controller's router, the connection fails or times out.

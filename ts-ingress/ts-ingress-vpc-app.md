@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-26"
+lastupdated: "2021-05-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -94,12 +94,11 @@ content-type: troubleshoot
 {:video: .video}
 
 
-# Version 4 VPC clusters: Why can't my app connect via Ingress?
+# VPC clusters: Why can't my app connect via Ingress?
 {: #vpc_ts_alb}
 
-**Infrastructure provider and version**:
+**Infrastructure provider**:
 * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
-* <img src="../images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 4
 
 {: tsSymptoms}
 You exposed your app by creating an Ingress resource for your app in your VPC cluster. When you tried to connect to your app by using the Ingress subdomain, the connection failed or timed out.
@@ -119,7 +118,7 @@ Verify that no VPC security groups are blocking traffic to your cluster and that
   ```
   {: pre}
 
-2. {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: [Allow traffic requests that are routed by the VPC load balancer to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-network-policy#security_groups).
+2. {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: [Allow traffic requests that are routed by the VPC load balancer to node ports on your worker nodes](/docs/containers?topic=containers-vpc-network-policy#security_groups).
 
 3. Verify that the VPC load balancer for your routers exists. In the output, look for the VPC load balancer **Name** that starts with `kube-crtmgr-<cluster_ID>`. If you did not install the `infrastructure-service` plug-in, install it by running `ibmcloud plugin install infrastructure-service`.
   ```
