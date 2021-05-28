@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-26"
+lastupdated: "2021-05-28"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -261,7 +261,7 @@ Cluster administrators make sure that teams that share a cluster don't take up m
 
 Even if no resource quota is set, you can include resource requests and limits in your deployment to improve the management of worker node resources.
 
-If a container exceeds its limit, the container might be restarted or fail. If a container exceeds a request, its pod might be evicted if the worker node runs out of that resource that is exceeded. For more information about troubleshooting, see [Pods repeatedly fail to restart or are unexpectedly removed](/docs/openshift?topic=openshift-pods_fail).
+If a container exceeds its limit, the container might be restarted or fail. If a container exceeds a request, its pod might be evicted if the worker node runs out of that resource that is exceeded. For more information about troubleshooting, see [Pods repeatedly fail to restart or are unexpectedly removed](/docs/containers?topic=containers-ts-app-pod-fail).
 {: note}
 
 **Request**: The minimum amount of the resource that the scheduler reserves for the container to use. If the amount is equal to the limit, the request is guaranteed. If the amount is less than the limit, the request is still guaranteed, but the scheduler can use the difference between the request and the limit to fulfill the resources of other containers.
@@ -345,7 +345,7 @@ You can create a service that exposes your app. In the `spec` section, make sure
 
 * By default, a service uses [`ClusterIP`](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/){: external}, which makes the service accessible only within the cluster but not outside the cluster.
 * You can create a NodePort, load balancer, or Ingress service to expose the app publicly. These services have two IPs, one external and one internal. When traffic is received on the external IP, it is forwarded to the internal cluster IP. Then, from the internal cluster IP, the traffic is routed to the container IP of the app.
-* The example uses `NodePort` to expose the service outside the cluster. For more information about how to set up external access, see [Choosing a NodePort, load balancer, or Ingress service](/docs/openshift?topic=openshift-cs_network_planning#external).
+* The example uses `NodePort` to expose the service outside the cluster. For more information about how to set up external access, see [Choosing a NodePort, load balancer, or Ingress service](/docs/containers?topic=containers-cs_network_planning#external).
 
 ```yaml
 apiVersion: v1
