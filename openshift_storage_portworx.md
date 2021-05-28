@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-27"
+lastupdated: "2021-05-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1241,6 +1241,8 @@ If a cluster that you want to back up with PX-Backup does not have Portworx Ente
 
 ### Backing up and restoring cluster data with PX-Backup
 {: #px-backup-and-restore}
+
+
 To back up data from your cluster or to restore data to your cluster, refer to the [PX-Backup documentation](https://backup.docs.portworx.com/use-px-backup/backup-restore/){: external}.
 {: shortdesc}
 
@@ -1313,7 +1315,7 @@ Remove a [Portworx volume](#remove_pvc), a [storage node](#remove_storage_node_c
 {: shortdesc}
 
 ### Removing Portworx volumes from apps
-{: #remove_pvc}
+{: #remove_pvc_apps_volumes}
 
 When you added storage from your Portworx cluster to your app, you have three main components: the Kubernetes persistent volume claim (PVC) that requested the storage, the Kubernetes persistent volume (PV) that is mounted to your pod and described in the PVC, and the Portworx volume that blocks space on the physical disks of your Portworx cluster. To remove storage from your app, you must remove all components.
 {: shortdesc}

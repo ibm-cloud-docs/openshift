@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-05-27"
+lastupdated: "2021-05-28"
 
 keywords: openshift
 subcollection: openshift
@@ -1363,7 +1363,7 @@ subcollection: openshift
 * [Setting up disaster recovery with Portworx](/docs/openshift?topic=openshift-portworx#px-dr)
 * [Exploring other Portworx features](/docs/openshift?topic=openshift-portworx#features)
 * [Cleaning up your Portworx volumes and cluster](/docs/openshift?topic=openshift-portworx#portworx_cleanup)
-  * [Removing Portworx volumes from apps](/docs/openshift?topic=openshift-portworx#remove_pvc)
+  * [Removing Portworx volumes from apps](/docs/openshift?topic=openshift-portworx#remove_pvc_apps_volumes)
   * [Removing a worker node from your Portworx cluster or the entire Portworx cluster](/docs/openshift?topic=openshift-portworx#remove_storage_node_cluster-px)
   * [Removing the Portworx daemon set](/docs/openshift?topic=openshift-portworx#remove_px_daemonset)
   * [Removing Portworx from your cluster](/docs/openshift?topic=openshift-portworx#remove_portworx)
