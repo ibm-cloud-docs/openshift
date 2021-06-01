@@ -1435,6 +1435,8 @@ subcollection: openshift
 * [Using Operators in 3.11 clusters](/docs/openshift?topic=openshift-operators#operators_311)
 * [Using the service catalog in 3.11 clusters](/docs/openshift?topic=openshift-operators#service_catalog)
 
+[Setting up the {{site.data.keyword.redhat_notm}} Marketplace](/docs/openshift?topic=openshift-rh-marketplace)
+
 [Adding services by using managed add-ons](/docs/openshift?topic=openshift-managed-addons)
 * [Adding managed add-ons](/docs/openshift?topic=openshift-managed-addons#adding-managed-add-ons)
 * [Updating managed add-ons](/docs/openshift?topic=openshift-managed-addons#updating-managed-add-ons)

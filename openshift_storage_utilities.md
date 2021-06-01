@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-26"
+lastupdated: "2021-06-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -525,7 +525,7 @@ To attach the block storage device to a non-SDS worker node, you must create a p
 
    The block storage device is successfully attached when the **ibm.io/dm** is set to a device ID, such as `/dev/dm/1`, and you can see **ibm.io/attachstatus=attached** in the **Annotations** section of your CLI output.
 
-If you want to detach a volume, delete the PV. Detached volumes are still authorized to be accessed by a specific worker node and are attached again when you create a new PV with the {{site.data.keyword.cloud_notm}} Block Volume Attacher storage class to attach a different volume to the same worker node. To avoid attaching the old detached volume again, unauthorize the worker node to access the detached volume by using the `ibmcloud sl block access-revoke` command. Detaching the volume does not remove the volume from your IBM Cloud infrastructure account. To cancel the billing for your volume, you must manually [remove the storage from your IBM Cloud infrastructure account](/docs/openshift?topic=openshift-block_storage#cleanup).
+If you want to detach a volume, delete the PV. Detached volumes are still authorized to be accessed by a specific worker node and are attached again when you create a new PV with the {{site.data.keyword.cloud_notm}} Block Volume Attacher storage class to attach a different volume to the same worker node. To avoid attaching the old detached volume again, unauthorize the worker node to access the detached volume by using the `ibmcloud sl block access-revoke` command. Detaching the volume does not remove the volume from your IBM Cloud infrastructure account. To cancel the billing for your volume, you must manually [remove the storage from your IBM Cloud infrastructure account](/docs/containers?topic=containers-block_storage#cleanup).
 {: note}
 
 <br />
@@ -852,7 +852,7 @@ Before you begin:
 You can remove storage from your worker node by using the `ibmcloud oc storage attachment rm` command.
 {: shortdesc}
 
-[Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure)
+[Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
 1. List your storage volumes and note the ID of the volume that you want to remove.
   ```sh
@@ -1258,7 +1258,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
             ```
             {: pre}
 
-      8.  You successfully restored your backup. You can now mount the PVC that binds the PV to any other pod in your cluster to access the restored files. If the container data that was backed up included a non-root user, you must add non-root permissions to your new container. For more information, see [Adding non-root user access to volumes](/docs/openshift?topic=openshift-cs_storage_nonroot).
+      8.  You successfully restored your backup. You can now mount the PVC that binds the PV to any other pod in your cluster to access the restored files. If the container data that was backed up included a non-root user, you must add non-root permissions to your new container. For more information, see [Adding non-root user access to volumes](/docs/containers?topic=containers-cs_storage_nonroot).
 
 
 ## Setting up {{site.data.keyword.mon_full_notm}} for storage volumes
@@ -1318,9 +1318,9 @@ When an alert is triggered, review the alert details in {{site.data.keyword.mon_
 {: shortdesc}
 
 
-* [Troubleshooting persistent storage volumes](/docs/openshift?topic=openshift-debug_storage).
+* [Troubleshooting persistent storage volumes](/docs/containers?topic=containers-debug_storage).
 * [Troubleshooting worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
-* [Troubleshooting apps](/docs/openshift?topic=openshift-debug_apps).
-* [Troubleshooting clusters](/docs/openshift?topic=openshift-debug_clusters).
+* [Troubleshooting apps](/docs/containers?topic=containers-debug_apps).
+* [Troubleshooting clusters](/docs/containers?topic=containers-debug_clusters).
 * [Open a support case](/docs/get-support?topic=get-support-using-avatar).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-18"
+lastupdated: "2021-06-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -78,6 +78,7 @@ content-type: troubleshoot
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -115,7 +116,7 @@ Your account is currently prohibited from ordering 'Computing Instances'.
 
 **Description and resolution**:
 
-Your IBM Cloud infrastructure account might be restricted from ordering compute resources. Contact {{site.data.keyword.cloud_notm}} support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-get-help).
+Your IBM Cloud infrastructure account might be restricted from ordering compute resources. Contact {{site.data.keyword.cloud_notm}} support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).
 
 ## Could not place order
 {: #order-not-placed}
@@ -137,7 +138,7 @@ To resolve, try one of the following options:
 * For a single zone cluster, create the cluster in a different zone. For a multizone cluster, add a zone to the cluster.
 * Specify a different pair of public and private VLANs for your worker nodes in your IBM Cloud infrastructure account. For worker nodes that are in a worker pool, you can use the `ibmcloud oc zone network-set` [command](<opens</li>
 * Contact your IBM Cloud infrastructure account manager to verify that you do not exceed an account limit, such as a global quota.
-* Open an [IBM Cloud infrastructure support case](/docs/openshift?topic=openshift-get-help).
+* Open an [IBM Cloud infrastructure support case](/docs/containers?topic=containers-get-help).
 
 ## Could not obtain network VLAN
 {: #no-network-vlan}
@@ -167,7 +168,7 @@ The location provided for this order is invalid
 
 **Description and resolution**:
 
-Your IBM Cloud infrastructure is not set up to order compute resources in the selected data center. Contact [{{site.data.keyword.cloud_notm}} support](/docs/openshift?topic=openshift-get-help) to verify that you account is set up correctly.
+Your IBM Cloud infrastructure is not set up to order compute resources in the selected data center. Contact [{{site.data.keyword.cloud_notm}} support](/docs/containers?topic=containers-get-help) to verify that you account is set up correctly.
 
 ## Permissions error
 {: #permissions-error}
@@ -187,7 +188,7 @@ The IBM Cloud infrastructure credentials could not be validated.
 
 **Description and resolution**:
 
-You might not have the required permissions to perform the action in your IBM Cloud infrastructure portfolio, or you are using the wrong infrastructure credentials. See [Setting up the API key to enable access to the infrastructure portfolio](/docs/openshift?topic=openshift-users#api_key).
+You might not have the required permissions to perform the action in your IBM Cloud infrastructure portfolio, or you are using the wrong infrastructure credentials. See [Setting up the API key to enable access to the infrastructure portfolio](/docs/containers?topic=containers-users#api_key).
 
 ## Firewall error
 {: #firewall-error}
@@ -201,7 +202,7 @@ Worker unable to talk to {{site.data.keyword.containerlong_notm}} servers. Pleas
 
 **Description and resolution**:
 
-If you have a firewall, [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound).
+If you have a firewall, [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/containers?topic=containers-firewall#firewall_outbound).
 
 
 
@@ -250,6 +251,6 @@ As the **user**, follow these steps:
 4.  Contact the owner of the {{site.data.keyword.cloud_notm}} account and report that the API key owner has insufficient permissions in IBM Cloud infrastructure or might be pending to be deleted.
 
 As the **account owner**, follow these steps:
-1.  Review the [required classic permissions in IBM Cloud infrastructure](/docs/openshift?topic=openshift-users#infra_access) to perform the action that previously failed. For the VPC infrastructure provider, the API key owner must have the **Administrator** platform access role.
+1.  Review the [required classic permissions in IBM Cloud infrastructure](/docs/containers?topic=containers-users#infra_access) to perform the action that previously failed. For the VPC infrastructure provider, the API key owner must have the **Administrator** platform access role.
 2.  Fix the permissions of the API key owner or create a new API key by using the [`ibmcloud oc api-key reset --region <region>`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset) command.
 3.  If you or another account admin manually set IBM Cloud infrastructure credentials in your account, run [`ibmcloud oc credential unset --region <region>`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_unset) to remove the credentials from your account.
