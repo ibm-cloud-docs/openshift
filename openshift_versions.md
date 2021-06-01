@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-26"
+lastupdated: "2021-06-01"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -214,10 +214,10 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
   <td>Aug 2021 `†`</td>
 </tr>
 <tr>
-  <td><img src="images/warning-filled.png" align="left" width="32" style="width:32px;" alt="This version is deprecated."/></td>
+  <td><img src="images/close-filled.png" align="left" width="32" style="width:32px;" alt="This version is unsupported."/></td>
   <td>4.4 / 1.17</td>
   <td>21 Jul 2020</td>
-  <td>31 May 2021 `†`</td>
+  <td>31 May 2021</td>
 </tr>
 <tr>
   <td><img src="images/close-filled.png" align="left" width="32" style="width:32px;" alt="This version is unsupported."/></td>
@@ -302,50 +302,24 @@ The following table shows the actions that you must take after you [update the c
 
 <br />
 
-## Deprecated: {{site.data.keyword.openshiftshort}} 4.4
-{: #ocp44}
-
-<img src="images/certified_kubernetes_1x17.png" style="padding-right: 10px;" align="left" alt="This badge indicates Kubernetes version 1.17 certification for {{site.data.keyword.openshiftlong_notm}}."/> {{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.17 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
-
-Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.openshiftshort}} 4.3 to {{site.data.keyword.openshiftshort}} 4.4.
-{: shortdesc}
-
-{{site.data.keyword.openshiftlong_notm}} version 4.4 is deprecated, with a tentative unsupported date of 31 May 2021. Update your cluster to at least [version 4.5](#ocp45) as soon as possible.
-{: deprecated}
-
-With {{site.data.keyword.openshiftshort}} 4.4, you get access to Kubernetes version 1.17 APIs that enable features such as [key management service (KMS)](/docs/openshift?topic=openshift-encryption#keyprotect) integration. For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/cloud/blog/announcements/openshift-version-44-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.
-
-You cannot update a cluster that runs 3.11 to a version 4 cluster. [Create a cluster](/docs/openshift?topic=openshift-clusters) and [copy your deployments](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) from the outdated cluster to the new cluster.
-{: important}
-
-### Update before master
-{: #44_before}
-
-The following table shows the actions that you must take before you [update the cluster master](/docs/openshift?topic=openshift-update#master).
-{: shortdesc}
-
-| Type | Description |
-| ---- | ----------- |
-| Add-ons and plug-ins | For each add-on and plug-in that you installed in your cluster, check for any impacts that might be caused by updating the cluster version. For instructions, see [Steps to update the cluster master](/docs/openshift?topic=openshift-update#master-steps) and refer to the add-on and plug-in documentation. |
-| Temporary `oc` and `kubectl` latency | RBAC operations are now performed asynchronously. After you run `ibmcloud oc cluster config` for the first time after the update, `oc` and `kubectl` commands might fail for a few seconds while RBAC synchronizes for the first time. Afterward, `oc` and `kubectl` commands perform as expected. If you use automation to access the cluster with `oc` and `kubectl` commands, add retry logic for `oc` and `kubectl` commands after a `kubeconfig` file is successfully retrieved. |
-| **Unsupported:** Deprecated Kubernetes APIs are removed | Although Kubernetes version 1.16 removed several common, deprecated Kubernetes APIs, {{site.data.keyword.openshiftshort}} version 4.3, which is based on Kubernetes version 1.16, kept these APIs enabled. Now, {{site.data.keyword.openshiftshort}} version 4.4, which is based on Kubernetes version 1.17, removes these Kubernetes APIs that were removed in the Kubernetes 1.16 project. You can take the following steps to mitigate impact to your Kubernetes resources. Note that the blog was written specifically for {{site.data.keyword.containerlong_notm}} clusters, but the tips apply to {{site.data.keyword.openshiftlong_notm}}, too.<ol><li>Follow the [blog update tips](https://www.ibm.com/cloud/blog/announcements/kubernetes-version-1-16-removes-deprecated-apis){: external}.</li><li>Update the configuration files for any impacted Kubernetes resources, such as daemon sets, deployments, replica sets, stateful sets, and network policies.</li><li>If you [add services to your cluster by using Helm charts](/docs/openshift?topic=openshift-helm), update to Helm version 2.15.2 or later.</li></ol>|
-| **Unsupported:** Deprecated and removed {{site.data.keyword.openshiftshort}} features | For more information, review the [{{site.data.keyword.openshiftshort}} version 4.4 deprecated and removed features](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-deprecated-removed-features). |
-| Kubernetes API server checks client certificates before tokens | For more information, review [`kube-apiserver` checks client certificates before tokens](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-kube-apiserver-check-certs-before-tokens). |
-{: caption="Changes to make before you update the master to {{site.data.keyword.openshiftshort}} 4.4" caption-side="top"}
-{: summary="The rows are read from left to right. The type of update action is in the first column, and a description of the update action type is in the second column."}
-
-<br />
-
 ## Archive
 {: #version-archive}
 
 Review unsupported versions of {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}
 
+### {{site.data.keyword.openshiftshort}} 4.4 (Unsupported)
+{: #ocp44}
+
+As of 31 May 2021, {{site.data.keyword.openshiftlong_notm}} clusters that run [version 4.4](/docs/openshift?topic=openshift-changelog_archive) are unsupported. Version 4.4 clusters cannot receive security updates or support unless they are updated to the next most recent version.
+{: shortdesc}
+
+[Review the potential impact](#ocp45) and then [update your cluster](/docs/openshift?topic=openshift-update) immediately to at least {{site.data.keyword.openshiftshort}} 4.5.
+
 ### {{site.data.keyword.openshiftshort}} 4.3 (Unsupported)
 {: #ocp43}
 
-As of 7 March 2021, {{site.data.keyword.openshiftlong_notm}} clusters that run [version 4.3](/docs/openshift?topic=openshift-changelog_archive) are unsupported. Version 4.3 clusters cannot receive security updates or support unless they are updated to the next most recent version.
+As of 7 March 2021, {{site.data.keyword.openshiftlong_notm}} clusters that run [version 4.3](/docs/openshift?topic=openshift-changelog_archive) are unsupported. Version 4.3 clusters cannot receive security updates or support.
 {: shortdesc}
 
-[Review the potential impact](#ocp44) and then [update your cluster](/docs/openshift?topic=openshift-update) immediately to at least {{site.data.keyword.openshiftshort}} 4.4.
+To continue running your apps in {{site.data.keyword.openshiftlong_notm}}, [create a new cluster](/docs/openshift?topic=openshift-clusters#clusters) and [copy your deployments](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) from the unsupported cluster to the new cluster.
