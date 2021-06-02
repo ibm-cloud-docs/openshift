@@ -110,7 +110,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
-| 02 June 2021 | <ul></li><li>**HPCS Router**: Updated version changelog for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog) add-on.</li><li>**Image key synchronizer**: Updated the version changelog for the [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-on.</li></ul>|
+| 02 June 2021 | <ul><li>**HPCS Router**: Updated version changelog for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog) add-on.</li><li>**Image key synchronizer**: Updated the version changelog for the [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-on.</li></ul>|
 | 01 June 2021 | <li>**Unsupported version**: {{site.data.keyword.openshiftshort}} version 4.4 is unsupported. Update your cluster to [version 4.5](/docs/openshift?topic=openshift-openshift_versions#ocp45) as soon as possible.| 
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in June 2021"}
