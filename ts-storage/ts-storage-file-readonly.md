@@ -94,4 +94,29 @@ content-type: troubleshoot
 {:video: .video}
   
   
-{[pg-ts-storage/ts-storage-file-readonly.md]}
+# File storage: Why are the file systems for worker nodes changed to read-only?
+{: #readonly_nodes}
+
+**Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+
+{: tsSymptoms}
+{: #stuck_creating_state}
+You might see one of the following symptoms:
+- When you run `oc get pods -o wide`, you see that multiple pods that are running on the same worker node are stuck in the `ContainerCreating` state.
+- When you run a `oc describe` command, you see the following error in the **Events** section: `MountVolume.SetUp failed for volume ... read-only file system`.
+
+{: tsCauses}
+The file system on the worker node is read-only.
+
+{: tsResolve}
+1.  Back up any data that might be stored on the worker node or in your containers.
+2.  For a short-term fix to the existing worker node, reload the worker node.
+    ```sh
+    ibmcloud oc worker reload --cluster <cluster_name> --worker <worker_ID>
+    ```
+    {: pre}
+
+For a long-term fix, [update the flavor of your worker pool](/docs/openshift?topic=openshift-update#machine_type).
+
+
+

@@ -94,4 +94,18 @@ content-type: troubleshoot
 {:video: .video}
   
   
-{[pg-ts-app/ts-app-container-start.md]}
+# Why don't my containers start?
+{: #ts-app-container-start}
+
+**Infrastructure provider**:
+  * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+
+{: tsSymptoms}
+The pods deploy successfully to clusters, but the containers do not start.
+
+{: tsCauses}
+Containers might not start when the registry quota is reached.
+
+{: tsResolve}
+[Free up storage in {{site.data.keyword.registrylong_notm}}.](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup)
