@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-06-01"
+lastupdated: "2021-06-02"
 
 keywords: openshift
 subcollection: openshift
@@ -2056,12 +2056,6 @@ subcollection: openshift
 {: #sitemap_clusters_and_masters}
 
 
-[Debugging clusters](/docs/openshift?topic=openshift-debug_clusters)
-
-[Reviewing master health](/docs/openshift?topic=openshift-debug_master)
-* [Reviewing master health, status, and states](/docs/openshift?topic=openshift-debug_master#review-master-health)
-* [Understanding the impact of a master outage](/docs/openshift?topic=openshift-debug_master#review-master-outage)
-
 [Debugging {{site.data.keyword.openshiftshort}} web console, OperatorHub, internal registry, and other components](/docs/openshift?topic=openshift-ocp-debug)
 * [Step 1: Check your account setup](/docs/openshift?topic=openshift-ocp-debug#oc-debug-acct)
 * [Step 2: VPC: Check the public gateway](/docs/openshift?topic=openshift-ocp-debug#oc-debug-pgw)
@@ -2074,98 +2068,21 @@ subcollection: openshift
 * [Step 9: Refresh the cluster master](/docs/openshift?topic=openshift-ocp-debug#oc-debug-refresh-master)
 * [Step 10: Retry](/docs/openshift?topic=openshift-ocp-debug#oc-debug-retry)
 
-[Debugging common CLI issues with clusters](/docs/openshift?topic=openshift-ts_clis)
-* [Firewall prevents running CLI commands](/docs/openshift?topic=openshift-ts_clis#ts_firewall_clis)
-* [`kubectl` or `oc` commands do not work](/docs/openshift?topic=openshift-ts_clis#kubectl_fails)
-* [Time out when trying to connect to a pod](/docs/openshift?topic=openshift-ts_clis#roks_timeout)
-* [Missing projects or `oc` and `kubectl` commands fail](/docs/openshift?topic=openshift-ts_clis#rhoks_ts_admin_config)
-
-[Why can't I create or delete clusters?](/docs/openshift?topic=openshift-cluster_infra_errors)
-* [Unable to create or delete worker nodes due to permission errors](/docs/openshift?topic=openshift-cluster_infra_errors#cs_credentials)
-* [Unable to create or delete worker nodes due to incorrect account error](/docs/openshift?topic=openshift-cluster_infra_errors#orphaned)
-* [Unable to create or delete worker nodes due to endpoints error](/docs/openshift?topic=openshift-cluster_infra_errors#vpe-ts)
-* [Unable to create or delete worker nodes due to paid account or one time password error](/docs/openshift?topic=openshift-cluster_infra_errors#cs_totp)
-
 [Why do I get an error about a cloud object storage bucket when I create a cluster?](/docs/openshift?topic=openshift-ts_cos_bucket_cluster_create)
 
 [After logging in to my cluster, why do I see a no resources found message?](/docs/openshift?topic=openshift-rhoks_ts_not_found)
 
 [Why does the cluster master return a VPN server error?](/docs/openshift?topic=openshift-rhoks_ts_openvpn_login)
 
-[VPC: Why is no VPC available when I create a cluster in the console?](/docs/openshift?topic=openshift-ts_no_vpc)
-
-[Why can't the cluster pull images from {{site.data.keyword.registrylong_notm}} during creation?](/docs/openshift?topic=openshift-ts_image_pull_create)
-
-[Why do cluster operations fail due to a broken webhook?](/docs/openshift?topic=openshift-webhooks_update)
-
-[Why is my Portieris cluster image security enforcement installation canceled?](/docs/openshift?topic=openshift-portieris_enable)
-
-[Why does my cluster stay in a pending state?](/docs/openshift?topic=openshift-cs_cluster_pending)
-
-[Why can't I view or work with my cluster?](/docs/openshift?topic=openshift-cs_cluster_access)
-
 
 ## Worker nodes
 {: #sitemap_worker_nodes}
 
 
-[Debugging worker nodes](/docs/openshift?topic=openshift-debug_worker_nodes)
-* [Step 1: Get the worker node state](/docs/openshift?topic=openshift-debug_worker_nodes#worker-debug-get-state)
-* [Step 2: Review the worker node state](/docs/openshift?topic=openshift-debug_worker_nodes#worker-debug-rev-state)
-* [Step 3: Get the details for each worker node](/docs/openshift?topic=openshift-debug_worker_nodes#worker-debug-get-details)
-* [Step 4: Review the infrastructure provider for the worker node](/docs/openshift?topic=openshift-debug_worker_nodes#worker-debug-rev-infra)
-
-[Debugging worker nodes with Kubernetes API](/docs/openshift?topic=openshift-debug-kube-nodes)
-
-[Common issues with worker nodes](/docs/openshift?topic=openshift-common_worker_nodes_issues)
-* [Account prohibited from ordering](/docs/openshift?topic=openshift-common_worker_nodes_issues#order-prohibit)
-* [Could not place order](/docs/openshift?topic=openshift-common_worker_nodes_issues#order-not-placed)
-* [Could not obtain network VLAN](/docs/openshift?topic=openshift-common_worker_nodes_issues#no-network-vlan)
-* [Location invalid](/docs/openshift?topic=openshift-common_worker_nodes_issues#location-invalid)
-* [Permissions error](/docs/openshift?topic=openshift-common_worker_nodes_issues#permissions-error)
-* [Firewall error](/docs/openshift?topic=openshift-common_worker_nodes_issues#firewall-error)
-* [Hard reboot](/docs/openshift?topic=openshift-common_worker_nodes_issues#hard-reboot)
-* [Instance cannot be found](/docs/openshift?topic=openshift-common_worker_nodes_issues#instance-not-found)
-
-[Why can't I create or delete worker nodes?](/docs/openshift?topic=openshift-worker_infra_errors)
-* [Unable to create or delete worker nodes due to permission errors](/docs/openshift?topic=openshift-worker_infra_errors#cs_credentials)
-* [Unable to create or delete worker nodes due to incorrect account error](/docs/openshift?topic=openshift-worker_infra_errors#orphaned)
-* [Unable to create or delete worker nodes due to endpoints error](/docs/openshift?topic=openshift-worker_infra_errors#vpe-ts)
-* [Unable to create or delete worker nodes due to paid account or one time password error](/docs/openshift?topic=openshift-worker_infra_errors#cs_totp)
-
-[VPC: Why doesn't replacing a worker node create a worker node?](/docs/openshift?topic=openshift-auto-rebalance-off)
-
-[Classic: Why is the bare metal instance ID inconsistent with worker records?](/docs/openshift?topic=openshift-bm_machine_id)
-
-[After deleting all worker nodes, why don't my pods start on new worker nodes?](/docs/openshift?topic=openshift-zero_nodes_calico_failure)
-
-[After a worker node updates or reloads, why do duplicate nodes and pods appear?](/docs/openshift?topic=openshift-cs_duplicate_nodes)
-
-[Classic: Why can't I add worker nodes with an invalid VLAN ID?](/docs/openshift?topic=openshift-suspended)
-
-[Classic: Why do I see a timeout error when I try to log in to a pod on a new worker node?](/docs/openshift?topic=openshift-cs_nodes_duplicate_ip)
-
-[Why can't I SSH into my worker node?](/docs/openshift?topic=openshift-cs_ssh_worker)
-* [Option 1: `oc debug`](/docs/openshift?topic=openshift-cs_ssh_worker#oc-debug)
-* [Option 2: `kubectl exec`](/docs/openshift?topic=openshift-cs_ssh_worker#kubectl-exec)
-* [Option 3: Create a pod with root SSH access](/docs/openshift?topic=openshift-cs_ssh_worker#pod-ssh)
-
 
 ## Cluster autoscaler
 {: #sitemap_cluster_autoscaler}
 
-
-[Debugging the cluster autoscaler](/docs/openshift?topic=openshift-debug_cluster_autoscaler)
-* [Step 1: Check the version](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-version)
-* [Step 2: Check the configuration](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-config)
-* [Step 3: Review the cluster autoscaler status](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-status)
-* [Step 4: Check the cluster autoscaler pod](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-pod)
-* [Step 5: Search the pod logs](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-pod-logs)
-* [Step 5: Restart the pod](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-pod-restart)
-* [Step 6: Disable and reenable](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-disable)
-* [Step 8: Check if the issue is resolved](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-more)
-
-[Why does the cluster autoscaler add-on fail with the pod stuck in `Init` state?](/docs/openshift?topic=openshift-ca_ts_secret)
 
 
 ## Cluster network
@@ -2174,18 +2091,10 @@ subcollection: openshift
 
 [Why is my cluster missing the public `containers.appdomain.cloud` subdomain?](/docs/openshift?topic=openshift-roks_ts_subdomain)
 
-[Why can't I establish VPN connectivity with the strongSwan Helm chart?](/docs/openshift?topic=openshift-cs_vpn_fails)
-
-[Why can't I install a new strongSwan Helm chart release?](/docs/openshift?topic=openshift-cs_strongswan_release)
-
-[Why does strongSwan VPN connectivity fail after I add or delete worker nodes?](/docs/openshift?topic=openshift-cs_vpn_fails_worker_add)
-
 
 ## Apps and services
 {: #sitemap_apps_and_services}
 
-
-[Debugging app deployments](/docs/openshift?topic=openshift-debug_apps)
 
 [Why does my build error due to image pull authentication?](/docs/openshift?topic=openshift-ts-app-build-img-pull)
 
@@ -2197,63 +2106,28 @@ subcollection: openshift
 
 [Why does pod not build with a permission denied error because of security context constraint (SCC)?](/docs/openshift?topic=openshift-ts-app-scc)
 
-[Why do images fail to pull from registry with `ImagePullBackOff` or authorization errors?](/docs/openshift?topic=openshift-ts-app-image-pull)
-* [Troubleshooting image pull secrets that use API keys](/docs/openshift?topic=openshift-ts-app-image-pull#img-pull-api-key)
-* [Deprecated: Troubleshooting image pull secrets that use tokens](/docs/openshift?topic=openshift-ts-app-image-pull#img-pull-token)
-
-[Why don't my containers start?](/docs/openshift?topic=openshift-ts-app-container-start)
-
-[Why do pods remain in pending state?](/docs/openshift?topic=openshift-ts-app-pod-pending)
-
 [Why are pods in a `CrashLoopBackOff` status?](/docs/openshift?topic=openshift-ts-app-pod-crashloop)
-
-[Why do pods repeatedly fail to restart or are unexpectedly removed?](/docs/openshift?topic=openshift-ts-app-pod-fail)
-* [Fixing container resource limits](/docs/openshift?topic=openshift-ts-app-pod-fail#pod-fail-resource-limits)
-* [Fixing pod replacement by higher priority pods](/docs/openshift?topic=openshift-ts-app-pod-fail#pod-fail-higher-priority)
-
-[Why does binding a service to a cluster results in service not found error?](/docs/openshift?topic=openshift-ts-app-svc-bind-not-found)
-
-[Why does binding a service to a cluster results in service does not support service keys error?](/docs/openshift?topic=openshift-ts-app-svc-key)
-
-[Why can't I install a Helm chart with updated configuration values?](/docs/openshift?topic=openshift-ts-app-helm-install)
 
 
 ## Managed add-ons
 {: #sitemap_managed_add-ons}
 
 
-[Debugging cluster add-ons](/docs/openshift?topic=openshift-debug_addons)
-
 
 ## Load balancers
 {: #sitemap_load_balancers}
 
 
-[Classic clusters: Why can't my app connect via a network load balancer (NLB) service?](/docs/openshift?topic=openshift-cs_loadbalancer_fails)
-
-[Classic clusters: Why can't I deploy a load balancer?](/docs/openshift?topic=openshift-cs_subnet_limit_lb)
-
 [Classic clusters: Why does the OpenVPN server have an ingress IP address for NLB error?](/docs/openshift?topic=openshift-rhoks_ts_openvpn_subnet)
 * [Verifying that your cluster has available subnets](/docs/openshift?topic=openshift-rhoks_ts_openvpn_subnet#verify_subnets)
 * [Verifying that the load balancer setup completed successfully](/docs/openshift?topic=openshift-rhoks_ts_openvpn_subnet#verify_nlb)
 
-[Classic clusters: Why does source IP preservation fail when using tainted nodes?](/docs/openshift?topic=openshift-cs_source_ip_fails_lb)
-
 [VPC clusters: Why do I see VPC load balancer health status failures?](/docs/openshift?topic=openshift-vpc_lb_healthcheck)
-
-[VPC clusters: Why can't my app connect via load balancer?](/docs/openshift?topic=openshift-vpc_ts_lb)
-
-[VPC clusters: Why does a Kubernetes `LoadBalancer` service fail with no IPs?](/docs/openshift?topic=openshift-vpc_no_lb)
 
 
 ## Ingress and routers
 {: #sitemap_ingress_and_routers}
 
-
-[Checking the status of Ingress components](/docs/openshift?topic=openshift-ingress-status)
-* [Getting the status and message](/docs/openshift?topic=openshift-ingress-status#check_status)
-* [Ingress statuses](/docs/openshift?topic=openshift-ingress-status#ingress_status)
-* [Ingress messages](/docs/openshift?topic=openshift-ingress-status#ingress_message)
 
 [Debugging Ingress](/docs/openshift?topic=openshift-ingress-debug-roks4)
 * [Step 1: Check your app deployment and Ingress resource configuration](/docs/openshift?topic=openshift-ingress-debug-roks4#app-debug-ingress-43)
@@ -2261,17 +2135,7 @@ subcollection: openshift
 * [Step 3: Check the health of the Ingress controller's router](/docs/openshift?topic=openshift-ingress-debug-roks4#errors-43)
 * [Step 4: Ping the Ingress subdomain and router public IP address](/docs/openshift?topic=openshift-ingress-debug-roks4#ping-43)
 
-[Classic clusters: Why can't my app connect via Ingress?](/docs/openshift?topic=openshift-cs_ingress_fails)
-
-[VPC clusters: Why can't my app connect via Ingress?](/docs/openshift?topic=openshift-vpc_ts_alb)
-
 [Why does no Ingress subdomain exist after cluster creation?](/docs/openshift?topic=openshift-ingress_subdomain)
-
-[Why does no Ingress subdomain exist after I create clusters of the same or similar name?](/docs/openshift?topic=openshift-cs_rate_limit)
-
-[Why does no Ingress secret exist after cluster creation?](/docs/openshift?topic=openshift-ingress_secret)
-
-[Why isn't the Ingress secret expiration date updated?](/docs/openshift?topic=openshift-sync_cert_dates)
 
 [VPC clusters: Why does the VPC load balancer for router only route to one zone?](/docs/openshift?topic=openshift-router-mzr-error)
 
@@ -2284,44 +2148,12 @@ subcollection: openshift
 {: #sitemap_file_storage}
 
 
-[Debugging persistent storage failures](/docs/openshift?topic=openshift-debug_storage)
-* [Checking whether the pod that mounts your storage instance is successfully deployed](/docs/openshift?topic=openshift-debug_storage#check-pod-success-deploy)
-* [Restarting your app pod](/docs/openshift?topic=openshift-debug_storage#ts-restart-app-pod)
-* [Verifying that the storage driver and plug-in pods show a status of **Running**](/docs/openshift?topic=openshift-debug_storage#verify_driver_pod_running_status)
-* [Checking whether your PVC is successfully provisioned.](/docs/openshift?topic=openshift-debug_storage#check_pvc_provision)
-* [Portworx](/docs/openshift?topic=openshift-debug_storage#ts-portworx-helm)
-
-[What permissions do I need to manage storage and create PVCs?](/docs/openshift?topic=openshift-missing_permissions)
-
-[File storage and block storage: Why does my PVC remain in a pending state?](/docs/openshift?topic=openshift-file_pvc_pending)
-
-[File storage: Why can't my app access or write to PVCs?](/docs/openshift?topic=openshift-file_app_failures)
-
-[File storage: Why does my app fail with a group ID error for NFS file storage permissions?](/docs/openshift?topic=openshift-root)
-
-[File storage: Why does my app fail when a non-root user owns the NFS file storage mount path?](/docs/openshift?topic=openshift-nonroot)
-
-[File storage: Why can't I add non-root user access to persistent storage?](/docs/openshift?topic=openshift-cs_storage_nonroot)
-* [Verifying the read and write permissions for the non-root user](/docs/openshift?topic=openshift-cs_storage_nonroot#verify-rw-permissions)
-
-[File storage: Why are the file systems for worker nodes changed to read-only?](/docs/openshift?topic=openshift-readonly_nodes)
-
-[Storage: Feedback, questions, and support](/docs/openshift?topic=openshift-getting_help_storage)
-
 
 ## Block Storage
 {: #sitemap_block_storage}
 
 * [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage){: external}
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
-
-[Block Storage: Why can't my app access or write to PVCs?](/docs/openshift?topic=openshift-block_app_failures)
-
-[Block storage: Why does mounting existing block storage to a pod fail with the wrong file system?](/docs/openshift?topic=openshift-block_filesystem)
-
-[Block storage: Why does block storage change to read-only?](/docs/openshift?topic=openshift-readonly_block)
-
-[Block storage: Why does the Block storage plug-in Helm chart give CPU throttling warnings?](/docs/openshift?topic=openshift-block_helm_cpu)
 
 
 ## Object Storage
@@ -2330,40 +2162,12 @@ subcollection: openshift
 * [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage){: external}
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
-[Object storage: Why can't my PVC access an existing bucket?](/docs/openshift?topic=openshift-cos_access_bucket_fails)
-
-[Object storage: Why does installing the Object storage `ibmc` Helm plug-in fail?](/docs/openshift?topic=openshift-cos_helm_fails)
-
-[Object storage: Why can't non-root users access files?](/docs/openshift?topic=openshift-cos_nonroot_access)
-* [Verifying that the permissions for your files are updated](/docs/openshift?topic=openshift-cos_nonroot_access#verifying_file_permission_update)
-
-[Object Storage: Why does my app pod fail with an `Operation not permitted` error?](/docs/openshift?topic=openshift-cos_operation_not_permitted)
-
-[Object storage: Why can't the ownership of the mount path be changed?](/docs/openshift?topic=openshift-cos_mountpath_error)
-
-[Object storage: Why does installing the Object storage plug-in fail?](/docs/openshift?topic=openshift-cos_plugin_fails)
-
-[Object storage: Why do I see wrong credentials or access denied messages when I create a PVC?](/docs/openshift?topic=openshift-cred_failure)
-
-[Object storage: Why do I see wrong s3fs or IAM API endpoints when I create a PVC?](/docs/openshift?topic=openshift-cos_api_endpoint_failure)
-
-[Object storage: Why does my PVC remain in a pending state?](/docs/openshift?topic=openshift-cos_pvc_pending)
-
-[Object storage: Why does PVC or pod creation fail due to not finding the Kubernetes secret?](/docs/openshift?topic=openshift-cos_secret_access_fails)
-
 
 ## Portworx Storage
 {: #sitemap_portworx_storage}
 
 * [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage){: external}
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
-
-[Portworx: Debugging your Portworx installation](/docs/openshift?topic=openshift-debug-portworx)
-* [Step 1: Verifying the {{site.data.keyword.cloud_notm}} catalog information](/docs/openshift?topic=openshift-debug-portworx#px-verify-catalog)
-* [Step 2: Verifying the cluster setup](/docs/openshift?topic=openshift-debug-portworx#px-verify-cluster)
-* [Step 3: Reach out to Portworx and IBM](/docs/openshift?topic=openshift-debug-portworx#px-support)
-
-[Portworx: Why does encryption fail with an invalid KMS endpoint?](/docs/openshift?topic=openshift-px-kms-endpoint)
 
 
 ## OpenShift Container Storage

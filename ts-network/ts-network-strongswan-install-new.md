@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-06-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -78,6 +78,7 @@ content-type: troubleshoot
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -93,42 +94,4 @@ content-type: troubleshoot
 {:video: .video}
   
   
-# Why can't I install a new strongSwan Helm chart release?
-{: #cs_strongswan_release}
-
-**Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-
-{: tsSymptoms}
-You modify your strongSwan Helm chart and try to install your new release by running `helm install vpn iks-charts/strongswan -f config.yaml`. However, you see the following error:
-```
-Error: release vpn failed: deployments.extensions "vpn-strongswan" already exists
-```
-{: screen}
-
-{: tsCauses}
-This error indicates that the previous release of the strongSwan chart was not completely uninstalled.
-
-{: tsResolve}
-1. Delete the previous chart release.
-    ```
-    helm uninstall vpn -n <project>
-    ```
-    {: pre}
-
-2. Delete the deployment for the previous release. Deletion of the deployment and associated pod takes up to 1 minute.
-    ```
-    oc delete deploy vpn-strongswan
-    ```
-    {: pre}
-
-3. Verify that the deployment has been deleted. The deployment `vpn-strongswan` does not appear in the list.
-    ```
-    oc get deployments
-    ```
-    {: pre}
-
-4. Re-install the updated strongSwan Helm chart with a new release name.
-    ```
-    helm install vpn iks-charts/strongswan -f config.yaml
-    ```
-    {: pre}
+{[pg-ts-network/ts-network-strongswan-install-new.md]}

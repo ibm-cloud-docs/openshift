@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-01"
+lastupdated: "2021-06-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -94,25 +94,4 @@ content-type: troubleshoot
 {:video: .video}
   
   
-# Classic: Why is the bare metal instance ID inconsistent with worker records?
-{: #bm_machine_id}
-
-**Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-
-{: tsSymptoms}
-When you use `ibmcloud oc worker` commands with your bare metal worker node, you see a message similar to the following.
-
-```
-The worker node instance ID changed. Reload the worker node if bare metal hardware was serviced.
-```
-{: screen}
-
-{: tsCauses}
-The machine ID can become inconsistent with the {{site.data.keyword.openshiftlong_notm}} worker record when the machine experiences hardware issues. When IBM Cloud infrastructure resolves this issue, a component can change within the system that the service does not identify.
-
-{: tsResolve}
-For {{site.data.keyword.openshiftlong_notm}} to re-identify the machine, [reload the bare metal worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload). Note that reloading also updates the machine's [patch version](/docs/containers?topic=containers-changelog).
-
-You can also [delete the bare metal worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_rm). Keep in mind that bare metal instances are billed monthly.
-
-
+{[pg-ts-worker/ts-worker-bm-instance-id.md]}
