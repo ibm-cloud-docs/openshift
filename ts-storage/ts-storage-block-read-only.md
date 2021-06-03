@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-06-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -143,7 +143,7 @@ If a network error occurs while a pod writes to a volume, IBM Cloud infrastructu
       ```
       {: pre}
 
-   3. Gracefully [reload the worker node](/docs/openshift?topic=openshift-cli-plugin-kubernetes-service-cli#cs_worker_reload).
+   3. Gracefully [reload the worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
 
 
 

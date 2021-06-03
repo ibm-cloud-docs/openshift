@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-26"
+lastupdated: "2021-06-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -131,7 +131,7 @@ Check that the cluster autoscaler is configured correctly.
     {: pre}
 2.  In the `data.workerPoolsConfig.json` field, check that the correct worker pools are enabledwith the minimum and maximum size per worker pool.
     *  **`"name": "<worker_pool_name>"`**: The name of your worker pool in the configmap must beexactly the same as the name of the worker pool in your cluster. Multiple worker pools mustbe comma-separated. To check the name of your cluster worker pools, run `ibmcloud oc worker-poolls -c <cluster_name_or_ID>`.
-    *  **`"minSize": 2`**: In general, the `minSize` must be `2` or greater. Remember that the`minSize` value cannot be `0`, and you can only have a `minSize` of 1 if you [disable the public ALBs](/docs/openshift?topic=openshift-cli-plugin-kubernetes-service-cli#cs_alb_configure).
+    *  **`"minSize": 2`**: In general, the `minSize` must be `2` or greater. Remember that the`minSize` value cannot be `0`, and you can only have a `minSize` of 1 if you [disable the public ALBs](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure).
     * **`"maxSize": 3`**: The `maxSize` must be equal to or greater than the `minSize`.
     * **`"enabled": true`**: Set the value to `true` to enable autoscaling the worker pool.
     ```

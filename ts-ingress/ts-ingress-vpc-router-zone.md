@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-05-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -78,6 +78,7 @@ content-type: troubleshoot
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -93,12 +94,11 @@ content-type: troubleshoot
 {:video: .video}
   
 
-# Version 4 VPC clusters: Why does the VPC load balancer for router only route to one zone?
+# VPC clusters: Why does the VPC load balancer for router only route to one zone?
 {: #router-mzr-error}
 
-**Supported infrastructure provider and version**:
+**Supported infrastructure provider**:
 * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
-* <img src="../images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 4
 
 {: tsSymptoms}
 You create a multizone VPC cluster. However, when you run `ibmcloud is load-balancers` to find the VPC load balancer that exposes the router, the VPC subnet for only one zone in your cluster is listed instead of the subnets for all zones in your cluster. In the output, look for the VPC load balancer **Name** that starts with `kube-crtmgr-<cluster_ID>`.

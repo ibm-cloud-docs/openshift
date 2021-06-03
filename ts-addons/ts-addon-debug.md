@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-17"
+lastupdated: "2021-06-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -78,6 +78,7 @@ content-type: troubleshoot
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -139,6 +140,6 @@ The **Health State** reflects the lifecycle of the add-on components. The **Heal
 |H1509|`Addon Unsupported`|The add-on runs an unsupported version, or the add-on version is unsupported for your cluster version. [Update your add-on to the latest version](/docs/openshift?topic=openshift-managed-addons#updating-managed-add-ons).|
 |H1510|`Cluster resources low, not enough workers in Ready state.`|The add-on is not ready to be used for one of the following reasons:<ul><li>The cluster does not meet the size criteria for the add-on. </li><li>Worker nodes in your cluster are not in a `Normal` state. [Review the worker nodes' state and status](/docs/openshift?topic=openshift-debug_worker_nodes).</li></ul>|
 |-|`Enabling`|The add-on is currently deploying to the cluster. Note that the add-on might take up to 15 minutes to install.|
-|H1512|`Addon daemonset may not be available on all Ready nodes.`|For the static route add-on: The static route operator `DaemonSet` is not available on any worker nodes, which prevents you from applying static route resources. Your worker nodes cannot run the static route operator `DaemonSet` for the following reasons:<ul><li>One or more worker nodes reached their [resource limits](/docs/openshift?topic=openshift-debug_worker_nodes).</li><li>One or more worker nodes are running the [maximum number of pods per worker node](/docs/openshift?topic=openshift-limitations#classic_limits).</li></ul>|
+|H1512|`Addon daemonset may not be available on all Ready nodes.`|For the static route add-on: The static route operator `DaemonSet` is not available on any worker nodes, which prevents you from applying static route resources. Your worker nodes cannot run the static route operator `DaemonSet` for the following reasons:<ul><li>One or more worker nodes reached their [resource limits](/docs/openshift?topic=openshift-debug_worker_nodes).</li><li>One or more worker nodes are running the [maximum number of pods per worker node](/docs/openshift?topic=openshift-openshift_limitations#classic_limits).</li></ul>|
 {: caption="Add-on health statuses"}
 {: summary="Table rows read from left to right, with the add-on status in column one and a description in column two."}

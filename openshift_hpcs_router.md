@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-06-01"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -99,7 +100,7 @@ subcollection: openshift
 Deploy the {{site.data.keyword.cloud_notm}} HPCS Router to encrypt routes with a private key that is stored in an [{{site.data.keyword.cloud}} {{site.data.keyword.hscrypto}} instance](/docs/hs-crypto?topic=hs-crypto-get-started).
 {: shortdesc}
 
-<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.cloud_notm}} HPCS Router support is for clusters that run {{site.data.keyword.openshiftshort}} version 4.5 and later only. To set up routes for {{site.data.keyword.openshiftshort}} version 4.4, you must [use the default router to expose apps](/docs/openshift?topic=openshift-openshift_routes). To set up routes for {{site.data.keyword.openshiftshort}} version 3.11, see [Exposing apps with routes in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-routes-311).
+<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.cloud_notm}} HPCS Router support is for clusters that run {{site.data.keyword.openshiftshort}} version 4.5 and later only. To set up routes for {{site.data.keyword.openshiftshort}} version 3.11, see [Exposing apps with routes in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-routes-311).
 {: important}
 
 {{site.data.keyword.hscrypto}} allows you to securely create, store, and manage encryption keys in {{site.data.keyword.cloud_notm}}. A private key that is stored in an {{site.data.keyword.hscrypto}} instance can be used by an {{site.data.keyword.openshiftshort}} router in [TLS session establishment](/docs/hs-crypto?topic=hs-crypto-use-cases#ssl-offloading) and in Certificate Signing Request (CSR) signing. To access {{site.data.keyword.hscrypto}}, an {{site.data.keyword.openshiftshort}} router must use the [OpenSSL Engine](https://github.com/openssl/openssl/blob/OpenSSL_1_1_1-stable/README.ENGINE){: external} `grep11` to make calls to the [Enterprise PKCS #11 over gRPC (GREP11) API](/docs/hs-crypto?topic=hs-crypto-introduce-cloud-hsm#access-cloud-hsm-grep11). However, the default router in {{site.data.keyword.openshiftlong_notm}} version 4 clusters cannot be configured to use an alternative OpenSSL Engine integration.

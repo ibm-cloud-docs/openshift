@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-06-03"
 
 keywords: openshift, roks, vpc, block storage
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -90,8 +91,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-  
- 
+
+
 
 # Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters
 {: #vpc-block-storage-driver-unmanaged}
@@ -104,10 +105,10 @@ The following documentation covers the steps to deploy the {{site.data.keyword.b
 
 Want to use {{site.data.keyword.block_storage_is_short}} in an {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong_notm}} cluster? See [Storing data on Block Storage for VPC](/docs/openshift?topic=openshift-vpc-block) for more information.
 {: tip}
- 
+
 ## Prerequisites
 {: #vpc-block-um-prereq}
-To use the {{site.data.keyword.block_storage_is_short}} driver, complete the following tasks: 
+To use the {{site.data.keyword.block_storage_is_short}} driver, complete the following tasks:
 {: shortdesc}
 
 * Create an {{site.data.keyword.openshiftlong_notm}} cluster on VPC infrastructure.
@@ -209,7 +210,7 @@ To create the Kubernetes secret that is used in the {{site.data.keyword.block_st
     g2_token_exchange_endpoint_url = "https://iam.bluemix.net"
     g2_riaas_endpoint_url = "<g2_riaas_endpoint>"
     g2_resource_group_id = "<resource_group_id>"
-    g2_api_key = "<IAM_API_key>" 
+    g2_api_key = "<IAM_API_key>"
     provider_type = "g2"
     ```
     {: codeblock}
@@ -313,57 +314,57 @@ After you deploy the {{site.data.keyword.block_storage_is_short}} driver, you ca
     apiVersion: v1
     kind: Service
     metadata:
-    name: nginx
-    labels:
+      name: nginx
+      labels:
         app: nginx
     spec:
-    ports:
-    - port: 80
+      ports:
+      - port: 80
         name: web
-    clusterIP: None
-    selector:
+      clusterIP: None
+      selector:
         app: nginx
     ---
     apiVersion: apps/v1
     kind: StatefulSet
     metadata:
-    name: web
+      name: web
     spec:
-    serviceName: "nginx"
-    replicas: 2
-    podManagementPolicy: "Parallel"
-    selector:
+      serviceName: "nginx"
+      replicas: 2
+      podManagementPolicy: "Parallel"
+      selector:
         matchLabels:
-        app: nginx
-    template:
+          app: nginx
+      template:
         metadata:
-        labels:
+          labels:
             app: nginx
         spec:
-        containers:
-        - name: nginx
+          containers:
+          - name: nginx
             securityContext:
-            privileged: true
+              privileged: false
             image: k8s.gcr.io/nginx-slim:0.8
             ports:
             - containerPort: 80
             name: web
             volumeMounts:
             - name: www
-            mountPath: /usr/share/nginx/html
-        tolerations:
-        - operator: Exists 
-    volumeClaimTemplates:
-    - metadata:
-        annotations:
+              mountPath: /usr/share/nginx/html
+          tolerations:
+          - operator: Exists
+      volumeClaimTemplates:
+      - metadata:
+          annotations:
             volume.beta.kubernetes.io/storage-class: ibmc-vpc-block-5iops-tier
-        name: www
+          name: www
         spec:
-        accessModes:
-        - ReadWriteOnce # access mode
-        resources:
+          accessModes:
+          - ReadWriteOnce # access mode
+          resources:
             requests:
-            storage: 25Gi #
+              storage: 25Gi #
     ```
     {: pre}
 
@@ -2039,4 +2040,3 @@ metadata:
 
 ```
 {: codeblock}
-

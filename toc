@@ -158,19 +158,10 @@ Red Hat OpenShift on IBM Cloud
             openshift_loadbalancer_dns.md
 
         {: .topicgroup}
-        Exposing apps with Ingress in OpenShift 4
+        Exposing apps with Ingress
             openshift_ingress_qs_roks4.md
             openshift_ingress_about_roks4.md
             openshift_ingress_roks4.md
-
-        {: .topicgroup}
-        Exposing apps with Ingress in OpenShift 3.11
-            openshift_ingress_about.md
-            openshift_ingress.md
-            openshift_annotations.md
-            openshift_ingress_health.md
-            openshift_ingress_user_managed.md
-            openshift_troubleshoot_debug_ingress.md
 
         satellite_expose_apps.md
 
@@ -202,6 +193,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_integrations_ibm_third_party.md
         openshift_integrations_cloud_paks.md
         openshift_integrations_operators.md
+        openshift_integrations_rh_marketplace.md
         openshift_integrations_addons.md
         openshift_integrations_helm.md
         openshift_integrations_service_binding.md
@@ -337,7 +329,6 @@ Red Hat OpenShift on IBM Cloud
         {: .topicgroup}
         Ingress and routers
             ts-ingress/ts-ingress-status.md
-            ts-ingress/ts-ingress-debug.md
             ts-ingress/ts-ingress-debug-roks4.md
             ts-ingress/ts-ingress-app.md
             ts-ingress/ts-ingress-vpc-app.md
@@ -347,11 +338,6 @@ Red Hat OpenShift on IBM Cloud
             ts-ingress/ts-ingress-secret-expiry.md
             ts-ingress/ts-ingress-vpc-router-zone.md
             ts-ingress/ts-ingress-router-zone.md
-            ts-ingress/ts-ingress-alb-no-deploy-zone.md
-            ts-ingress/ts-ingress-source-ip-tainted.md
-            ts-ingress/ts-ingress-alb-subnet.md
-            ts-ingress/ts-ingress-alb-secret.md
-            ts-ingress/ts-ingress-alb-pods-nodes.md
 
         {: .topicgroup}
         File Storage
@@ -364,7 +350,7 @@ Red Hat OpenShift on IBM Cloud
             ts-storage/ts-storage-file-nonroot.md
             ts-storage/ts-storage-file-readonly.md
             ts-storage/ts-storage-feedback.md
-            
+
         {: .topicgroup}
         Block Storage
             [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage)
@@ -373,7 +359,7 @@ Red Hat OpenShift on IBM Cloud
             ts-storage/ts-storage-block-mount-wrong-fs.md
             ts-storage/ts-storage-block-read-only.md
             ts-storage/ts-storage-block-throttling.md
-            
+
         {: .topicgroup}
         Object Storage
             [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage)
@@ -389,14 +375,14 @@ Red Hat OpenShift on IBM Cloud
             ts-storage/ts-storage-object-pvc-pending.md
             ts-storage/ts-storage-object-pvc-pod-fail-secret.md
             ts-storage/ts-storage-object-transport-ep.md
-            
+
         {: .topicgroup}
         Portworx Storage
             [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage)
-            [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions)         
+            [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions)
             ts-storage/ts-storage-px-debug.md
             ts-storage/ts-storage-px-encryption-fails.md
-            
+
         {: .topicgroup}
         OpenShift Container Storage
             [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage)

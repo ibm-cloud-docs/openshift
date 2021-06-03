@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-24"
+lastupdated: "2021-06-03"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -964,6 +964,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
        ibm.io/object-path: "<bucket_subdirectory>"
        ibm.io/secret-name: "<secret_name>"
        ibm.io/endpoint: "https://<s3fs_service_endpoint>"
+       ibm.io/tls-cipher-suite: "default"
    spec:
      accessModes:
        - ReadWriteOnce

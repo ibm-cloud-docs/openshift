@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-06-03"
 
 keywords: object storage, plug-in, changelog
 
@@ -77,6 +77,7 @@ subcollection: openshift, object storage
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -99,6 +100,9 @@ subcollection: openshift, object storage
 View information for updates to the {{site.data.keyword.cos_full_notm}} plug-in in your {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
+With version 2.1.0, a new version of the `ibmc` plug-in is included. To update the `ibmc` plugin, uninstall and re-install the {{site.data.keyword.cos_full_notm}} plugin. For more information, see [Updating the {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#update_cos_plugin) plug-in.
+{: note}
+
 With version 2.0.9, there is a new version of the `ibmc` plug-in. Storage classes created with earlier chart versions are immutable and cannot be upgraded. To remove the storage classes from previous versions and install the latest storage classes in your cluster, uninstall and re-install the {{site.data.keyword.cos_full_notm}} plugin. For more information, see [Updating the {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).
 {: note}
 
@@ -106,6 +110,8 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | Object Storage plug-in version | Supported? | {{site.data.keyword.openshiftshort}} version support |
 | -------------------- | -----------|--------------------------- |
+| 2.1.1 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
+| 2.1.0 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
 | 2.0.9 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
 | 2.0.8 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
 | 2.0.7 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
@@ -113,6 +119,29 @@ Refer to the following tables for a summary of changes for each version of the [
 | 2.0.5 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
 {: caption="Object Storage plug-in versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the Object Storage plug-in version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the Object Storage plug-in version is supported for."}
+
+
+## Changelog for version 2.1.1
+{: #0211_object_plugin}
+
+| Version | Image tags | Release date | Description |
+| --- | --- | --- | --- |
+| `2.1.1` | `1.8.29` | 03 June 2021 | Updates in this version: <ul><li>Fixes an upgrade issue in version `2.1.0`.</li><li>Includes a new version of the `helm ibmc` plug-in. For more information, see [Updating the {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#update_cos_plugin) plug-in.</li><li>Users can now specify `default` in PVC configurations to use the default TLS cipher suite when a connection to {{site.data.keyword.cos_full_notm}} is established via the HTTPS endpoint. If your worker nodes run an Ubuntu operating system, your storage classes are set up to use the `AESGCM` cipher suite by default. For worker nodes that run a Red Hat operating system, the `ecdhe_rsa_aes_128_gcm_sha_256` cipher suite is used by default. For more information, see [Adding object storage to apps](/docs/openshift?topic=openshift-object_storage#add_cos).</li><li>Fixes [CVE-2020-28851](https://nvd.nist.gov/vuln/detail/CVE-2020-28851){: external}.</li></ul> |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Object Storage plug-in version 2.1.1" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the version of the component. The second column contains image tag. The third column contains the release date of the component. The fourth column contains a brief description of the change made to the component."}
+
+## Changelog for version 2.1.0
+{: #0210_object_plugin}
+
+| Version | Image tags | Release date | Description |
+| --- | --- | --- | --- |
+| `2.1.0` | `1.8.28` | 26 May 2021 | Updates the UBI to `8.4-200`. |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Object Storage plug-in version 2.1.0" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the version of the component. The second column contains image tag. The third column contains the release date of the component. The fourth column contains a brief description of the change made to the component."}
 
 ## Changelog for version 2.0.9
 {: #0209_object_plugin}

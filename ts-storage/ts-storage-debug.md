@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-28"
+lastupdated: "2021-06-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -138,7 +138,7 @@ Review the options to debug persistent storage and find the root causes for fail
   ```
   {: pre}
 
-3. If restarting your pod does not resolve the issue, [reload your worker node](/docs/openshift?topic=openshift-cli-plugin-kubernetes-service-cli#cs_worker_reload).
+3. If restarting your pod does not resolve the issue, [reload your worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
 
 4. Verify that you use the latest {{site.data.keyword.cloud_notm}} and {{site.data.keyword.containerlong_notm}} plug-in version.
    ```sh

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-26"
+lastupdated: "2021-06-01"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -185,37 +185,12 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
         ibmcloud is subnet-create mysubnet1 <vpc_ID> --zone us-south-1 --ipv4-address-count 256 --public-gateway-id <gateway_ID>
         ```
         {: pre}
-
-3. Clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: To allow any traffic requests to apps that you deploy on your worker nodes, modify the VPC's default security group.
-    1. List your security groups. For the **VPC** that you created, note the ID of the default security group.
-      ```
-      ibmcloud is security-groups
-      ```
-      {: pre}
-      Example output with only the default security group of a randomly generated name, `preppy-swimmer-island-green-refreshment`:
-      ```
-      ID                                     Name                                       Rules   Network interfaces         Created                     VPC                      Resource group
-      1a111a1a-a111-11a1-a111-111111111111   preppy-swimmer-island-green-refreshment    4       -                          2019-08-12T13:24:45-04:00   <vpc_name>(bbbb222b-.)   c3c33cccc33c333ccc3c33cc3c333cc3
-      ```
-      {: screen}
-
-    2. Add a security group rule to allow inbound TCP traffic on ports 30000-32767.
-      ```
-      ibmcloud is security-group-rule-add <security_group_ID> inbound tcp --port-min 30000 --port-max 32767
-      ```
-      {: pre}
-
-    3. If you require VPC VPN access or classic infrastructure access into this cluster, add a security group rule to allow inbound UDP traffic on ports 30000-32767.
-      ```
-      ibmcloud is security-group-rule-add <security_group_ID> inbound udp --port-min 30000 --port-max 32767
-      ```
-      {: pre}
-4.  Create a standard {{site.data.keyword.cos_full_notm}} instance to back up the internal registry in your cluster. In the output, note the instance **ID**.
+3.  Create a standard {{site.data.keyword.cos_full_notm}} instance to back up the internal registry in your cluster. In the output, note the instance **ID**.
     ```
     ibmcloud resource service-instance-create myvpc-cos cloud-object-storage standard global
     ```
     {: pre}
-5.  Create a cluster in your VPC in the same zone as the subnet.
+4.  Create a cluster in your VPC in the same zone as the subnet.
     * The following command creates a version 4.6 cluster in Dallas with the minimum configuration of 2 worker nodes that have at least 4 cores and 16 GB memory so that default {{site.data.keyword.openshiftshort}} components can deploy.
     * By default, your cluster is created with a public and a private cloud service endpoint. You can use the public cloud service endpoint to access the Kubernetes master, such as to run `oc` commands, from your local machine. Your worker nodes communicate with the master on the private cloud service endpoint. For the purposes of this tutorial, do **not** specify the `--disable-public-service-endpoint` flag.
     * For more information about the command options, see the [`cluster create vpc-gen2` CLI reference docs](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2).
@@ -223,17 +198,17 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
    ibmcloud oc cluster create vpc-gen2 --name myvpc-cluster --zone us-south-1 --version 4.6_openshift --flavor bx2.4x16 --workers 2 --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --cos-instance <COS_CRN>
    ```
    {: pre}
-6.  List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and router components take about 10 more minutes to deploy and update the cluster domain that you use for the {{site.data.keyword.openshiftshort}} web console and other routes. Before you continue, wait until the cluster is ready by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.</p>
+5.  List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and router components take about 10 more minutes to deploy and update the cluster domain that you use for the {{site.data.keyword.openshiftshort}} web console and other routes. Before you continue, wait until the cluster is ready by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.</p>
   ```
   ibmcloud oc cluster get --cluster myvpc-cluster
   ```
   {: pre}
-7.  Add yourself as a user to the {{site.data.keyword.openshiftshort}} cluster by setting the cluster context.
+6.  Add yourself as a user to the {{site.data.keyword.openshiftshort}} cluster by setting the cluster context.
     ```
     ibmcloud oc cluster config --cluster myvpc-cluster --admin
     ```
     {: pre}
-8.  In your browser, navigate to the address of your **Master URL** and append `/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`. If time permits, you can explore the different areas of the {{site.data.keyword.openshiftshort}} web console.
+7.  In your browser, navigate to the address of your **Master URL** and append `/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`. If time permits, you can explore the different areas of the {{site.data.keyword.openshiftshort}} web console.
     <table aria-describedby="tableSummary-19ecbef4c01853826b42de82471b9035">
     <caption caption-side="top">
       <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview<br>
@@ -259,8 +234,8 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
     </tr>
     </tbody>
     </table>
-9.  From the {{site.data.keyword.openshiftshort}} web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.<p class="tip">Save your cluster master URL to access the {{site.data.keyword.openshiftshort}} console later. In future sessions, you can skip the `cluster config` step and copy the login command from the console instead.</p>
-10.  Verify that the `oc` commands run properly with your cluster by checking the version.
+8.  From the {{site.data.keyword.openshiftshort}} web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.<p class="tip">Save your cluster master URL to access the {{site.data.keyword.openshiftshort}} console later. In future sessions, you can skip the `cluster config` step and copy the login command from the console instead.</p>
+9.  Verify that the `oc` commands run properly with your cluster by checking the version.
     ```
     oc version
     ```

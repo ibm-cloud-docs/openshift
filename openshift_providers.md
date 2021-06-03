@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-26"
+lastupdated: "2021-06-03"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -91,8 +91,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-  
-  
+
+
 
 # Supported infrastructure providers
 {: #infrastructure_providers}
@@ -103,7 +103,7 @@ With {{site.data.keyword.openshiftlong}}, you can create a cluster from the foll
 
 |Area|Classic|VPC|
 |----|----|----|
-|Overview|Clusters on classic infrastructure include all of the {{site.data.keyword.openshiftlong_notm}} mature and robust features for compute, networking, and storage. To get started, create a [Kubernetes](/docs/openshift?topic=openshift-cs_cluster_tutorial#cs_cluster_tutorial) or [{{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-openshift_tutorial) cluster.|With VPC, you can create your cluster in the next generation of the {{site.data.keyword.cloud_notm}} platform, in your [Virtual Private Cloud](/docs/vpc?topic=vpc-about-vpc). VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud, with the ability to deploy your cluster worker nodes as generation 2 compute virtual servers. To get started, try out the [VPC cluster tutorial](/docs/openshift?topic=openshift-vpc_ks_tutorial).|
+|Overview|Clusters on classic infrastructure include all of the {{site.data.keyword.openshiftlong_notm}} mature and robust features for compute, networking, and storage. To get started, create a [Kubernetes](/docs/containers?topic=containers-cs_cluster_tutorial#cs_cluster_tutorial) or [{{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-openshift_tutorial) cluster.|With VPC, you can create your cluster in the next generation of the {{site.data.keyword.cloud_notm}} platform, in your [Virtual Private Cloud](/docs/vpc?topic=vpc-about-vpc). VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud, with the ability to deploy your cluster worker nodes as generation 2 compute virtual servers. To get started, try out the [VPC cluster tutorial](/docs/openshift?topic=openshift-vpc_rh_tutorial).|
 |Doc icons|<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="25" style="width:25px; border-style: none"/> Throughout the documentation, pages and topics might include a note that the content applies only to the classic infrastructure provider.|<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="25" style="width:25px; border-style: none"/> Throughout the documentation, pages and topics might include a note that the content applies only to the VPC infrastructure provider.|
 |Compute and worker node resources|[Virtual](/docs/openshift?topic=openshift-planning_worker_nodes#vm), [bare metal](/docs/openshift?topic=openshift-planning_worker_nodes#bm), and [software-defined storage](/docs/openshift?topic=openshift-planning_worker_nodes#sds) machines are available for your worker nodes. Your worker node instances reside in your IBM Cloud infrastructure account, but you can manage them through {{site.data.keyword.openshiftlong_notm}}. You own the worker node instances.|VPC supports [only a select group of virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#vm) for your worker nodes. Unlike classic clusters, your VPC cluster worker nodes do not appear in your infrastructure portal or a separate infrastructure bill. Instead, you manage all maintenance and billing activity for the worker nodes through {{site.data.keyword.openshiftlong_notm}}. Your worker node instances are connected to certain VPC instances that do reside in your infrastructure account, such as the VPC subnet or storage volumes.|
 |Security|Classic clusters have many built-in security features that help you protect your cluster infrastructure, isolate resources, and ensure security compliance. For more information, see the [classic Network Infrastructure documentation](/docs/cloud-infrastructure?topic=cloud-infrastructure-compare-infrastructure).|With VPC, your cluster runs in an isolated environment in the public cloud. Network access control lists protect the subnets that provide the floating IPs for your worker nodes. For more information, see the [VPC documentation](/docs/vpc?topic=vpc-about-vpc).|
@@ -123,6 +123,3 @@ With {{site.data.keyword.openshiftlong}}, you can create a cluster from the foll
 |Troubleshooting and support|Both classic and VPC clusters are supported through the same {{site.data.keyword.cloud_notm}} Support processes. For cluster issues, check out the [Debugging your clusters](/docs/openshift?topic=openshift-debug_clusters) guide. For questions, try posting in the [Slack channel](https://cloud.ibm.com/kubernetes/slack){: external}.|Both classic and VPC clusters are supported through the same {{site.data.keyword.cloud_notm}} Support processes. For cluster issues, check out the [troubleshooting documentation](/docs/openshift?topic=openshift-debug_clusters) for VPC-specific topics. For questions, try posting in the [Slack channel](https://cloud.ibm.com/kubernetes/slack){: external}.|
 {: caption="Infrastructure providers for {{site.data.keyword.openshiftlong_notm}} clusters"}
 {: summary="The rows are read from left to right, with the area of comparison in column one, classic infrastructure provider in column two, and VPC infrastructure provider in column three."}
-
-
-
