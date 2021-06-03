@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-06-03"
 
 keywords: openshift, roks, vpc, block storage
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -121,7 +122,7 @@ Before you can deploy the {{site.data.keyword.block_storage_is_short}} driver, y
 {: shortdesc}
 
 
-Before you begin, [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure)
+Before you begin, [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
 1. Retrieve the following details of your VPC instance. These parameters are used to apply labels to your worker nodes.
 
@@ -313,57 +314,57 @@ After you deploy the {{site.data.keyword.block_storage_is_short}} driver, you ca
     apiVersion: v1
     kind: Service
     metadata:
-    name: nginx
-    labels:
+      name: nginx
+      labels:
         app: nginx
     spec:
-    ports:
-    - port: 80
+      ports:
+      - port: 80
         name: web
-    clusterIP: None
-    selector:
+      clusterIP: None
+      selector:
         app: nginx
     ---
     apiVersion: apps/v1
     kind: StatefulSet
     metadata:
-    name: web
+      name: web
     spec:
-    serviceName: "nginx"
-    replicas: 2
-    podManagementPolicy: "Parallel"
-    selector:
+      serviceName: "nginx"
+      replicas: 2
+      podManagementPolicy: "Parallel"
+      selector:
         matchLabels:
-        app: nginx
-    template:
+          app: nginx
+      template:
         metadata:
-        labels:
+          labels:
             app: nginx
         spec:
-        containers:
-        - name: nginx
+          containers:
+          - name: nginx
             securityContext:
-            privileged: true
+              privileged: false
             image: k8s.gcr.io/nginx-slim:0.8
             ports:
             - containerPort: 80
             name: web
             volumeMounts:
             - name: www
-            mountPath: /usr/share/nginx/html
-        tolerations:
-        - operator: Exists 
-    volumeClaimTemplates:
-    - metadata:
-        annotations:
+              mountPath: /usr/share/nginx/html
+          tolerations:
+          - operator: Exists 
+      volumeClaimTemplates:
+      - metadata:
+          annotations:
             volume.beta.kubernetes.io/storage-class: ibmc-vpc-block-5iops-tier
-        name: www
+          name: www
         spec:
-        accessModes:
-        - ReadWriteOnce # access mode
-        resources:
+          accessModes:
+          - ReadWriteOnce # access mode
+          resources:
             requests:
-            storage: 25Gi #
+              storage: 25Gi #
     ```
     {: pre}
 

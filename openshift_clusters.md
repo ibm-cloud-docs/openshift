@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-01"
+lastupdated: "2021-06-03"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -100,7 +100,7 @@ subcollection: openshift
 Create a cluster in {{site.data.keyword.openshiftlong}}.
 {: shortdesc}
 
-After [getting started](/docs/openshift?topic=openshift-getting-started), you might want to create a cluster that is customized to your use case and different public and private cloud environments. Consider the following steps to create the right cluster each time.
+After [getting started](/docs/containers?topic=containers-getting-started), you might want to create a cluster that is customized to your use case and different public and private cloud environments. Consider the following steps to create the right cluster each time.
 
 1.  [Prepare your account to create clusters](/docs/openshift?topic=openshift-clusters#cluster_prepare). This step includes creating a billable account, setting up an API key with infrastructure permissions, making sure that you have Administrator access in {{site.data.keyword.cloud_notm}} IAM, planning resource groups, and setting up account networking.
 2.  [Decide on your cluster setup](/docs/openshift?topic=openshift-clusters#prepare_cluster_level). This step includes planning cluster network and HA setup, estimating costs, and if applicable, allowing network traffic through a firewall.
@@ -205,16 +205,16 @@ The following image walks you through choosing the setup that you want for your 
 
 <img usemap="#cluster-plan-map" border="0" class="image" src="images/cluster-plan-dt-vpc.png" alt="This image walks you through choosing the setup that you want for your cluster."/>
 <map name="cluster-plan-map">
-    <area target="" alt="Free and standard cluster comparison" title="Free and standard cluster comparison" href="/docs/openshift?topic=openshift-cs_ov#cluster_types" coords="43,9,361,106" shape="rect">
+    <area target="" alt="Free and standard cluster comparison" title="Free and standard cluster comparison" href="/docs/containers?topic=containers-cs_ov#cluster_types" coords="43,9,361,106" shape="rect">
     <area target="" alt="OpenShift and Kubernetes comparison" title="OpenShift and Kubernetes comparison" href="/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes" coords="110,128,467,224" shape="rect">
-    <area target="" alt="VPC and classic infrastructure comparison" title="VPC and classic infrastructure comparison" href="/docs/openshift?topic=openshift-infrastructure_providers" coords="60,252,398,352" shape="rect">
+    <area target="" alt="VPC and classic infrastructure comparison" title="VPC and classic infrastructure comparison" href="/docs/containers?topic=containers-infrastructure_providers" coords="60,252,398,352" shape="rect">
     <area target="" alt="Locations" title="Locations" href="/docs/openshift?topic=openshift-regions-and-zones#zones-mz" coords="101,377,564,456" shape="rect">
     <area target="" alt="Virtual Machines" title="Virtual Machines" href="/docs/openshift?topic=openshift-planning_worker_nodes#vm" coords="105,488,564,538" shape="rect">
     <area target="" alt="Bare metal machines" title="Bare metal machines" href="/docs/openshift?topic=openshift-planning_worker_nodes#bm" coords="566,569,372,546" shape="rect">
     <area target="" alt="VPC scenarios" title="VPC scenarios" href="/docs/openshift?topic=openshift-plan_clusters#vpc-scenarios" coords="104,597,298,675" shape="rect">
     <area target="" alt="Classic scenarios" title="Classic scenarios" href="/docs/openshift?topic=openshift-plan_clusters#classic-scenarios" coords="369,596,566,674" shape="rect">
-    <area target="" alt="Classic firewall" title="Classic firewall" href="/docs/openshift?topic=openshift-firewall" coords="369,681,564,704" shape="rect">
-    <area target="" alt="VPC security groups and firewall" title="VPC security groups and firewall" href="/docs/openshift?topic=openshift-firewall" coords="103,680,298,704" shape="rect">
+    <area target="" alt="Classic firewall" title="Classic firewall" href="/docs/containers?topic=containers-firewall" coords="369,681,564,704" shape="rect">
+    <area target="" alt="VPC security groups and firewall" title="VPC security groups and firewall" href="/docs/containers?topic=containers-firewall" coords="103,680,298,704" shape="rect">
     <area target="" alt="Estimate costs (cluster create page)" title="Estimate costs (cluster create page)" href="https://cloud.ibm.com/kubernetes/catalog/create" coords="248,732,426,776" shape="rect">
 </map>
 
@@ -259,14 +259,14 @@ The following image walks you through choosing the setup that you want for your 
       * **Virtual - dedicated**: Your worker nodes are hosted on infrastructure that is devoted to your account. Your physical resources are completely isolated. Virtual machines are billed hourly.
    2. Set how many worker nodes to create per zone, such as **3**. For example, if you selected 2 zones and want to create 3 worker nodes, a total of 6 worker nodes are provisioned in your cluster with 3 worker nodes in each zone. You must set at least 2 worker nodes. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).
    3. Toggle disk encryption. By default, [worker nodes feature AES 256-bit disk encryption](/docs/openshift?topic=openshift-security#workernodes).
-6. Configure your cluster with a public only or both a public and a private cloud service endpoint by setting the **Master service endpoint**. For more information about what setup is required to run internet-facing apps, or to keep your cluster private, see [Planning your cluster network setup](/docs/openshift?topic=openshift-plan_clusters#vpc-pgw). After you create the cluster, you cannot later change the cloud service endpoints.
+6. Configure your cluster with a public only or both a public and a private cloud service endpoint by setting the **Master service endpoint**. For more information about what setup is required to run internet-facing apps, or to keep your cluster private, see [Planning your cluster network setup](/docs/containers?topic=containers-plan_clusters#vpc-pgw). After you create the cluster, you cannot later change the cloud service endpoints.
 7. If you do not have the required infrastructure permissions to create a cluster, the **Infrastructure permissions checker** lists the missing permissions. Ask your account owner to [set up the API key](/docs/openshift?topic=openshift-users#api_key) with the required permissions.
 
 8. Complete the **Resource details** to customize the unique cluster name and any [tags](/docs/account?topic=account-tag) that you want to use to organize your {{site.data.keyword.cloud_notm}} resources, such as the team or billing department.
 
 9. In the **Summary** pane, review your order summary and then click **Create**. A worker pool is created with the number of workers that you specified. You can see the progress of the worker node deployment in the **Worker nodes** tab.
    *  Your cluster might take some time to provision the {{site.data.keyword.openshiftshort}} master and all worker nodes and enter a   **Normal** state. Note that even if the cluster is ready, some parts of the cluster that are used by other services, such as Ingress  secrets or registry image pull secrets, might still be in process. Before you continue, wait until the cluster is ready by checking that the **Ingress subdomain** follows a pattern of `<cluster_name>.<region>.containers.appdomain.cloud`.
-   *  Every worker node is assigned a unique worker node ID and domain name that must not be changed manually after the cluster is created. Changing the ID or domain name prevents the {{site.data.keyword.openshiftshort}} master from managing your cluster.<p class="tip">Is your cluster not in a **Normal** state? Check out the [Debugging clusters](/docs/openshift?topic=openshift-debug_clusters) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound).</p>
+   *  Every worker node is assigned a unique worker node ID and domain name that must not be changed manually after the cluster is created. Changing the ID or domain name prevents the {{site.data.keyword.openshiftshort}} master from managing your cluster.<p class="tip">Is your cluster not in a **Normal** state? Check out the [Debugging clusters](/docs/containers?topic=containers-debug_clusters) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound).</p>
 10. After your cluster is created, you can [begin working with your cluster by configuring your CLI session](/docs/openshift?topic=openshift-access_cluster). For more possibilities, review the [Next steps](/docs/openshift?topic=openshift-clusters#next_steps).
 
 <br />
@@ -377,7 +377,7 @@ The following image walks you through choosing the setup that you want for your 
    </tr>
    <tr>
    <td><code>--workers <em>&lt;number&gt;</em></code></td>
-   <td>Specify the number of worker nodes to include in the cluster. If you do not specify this option, a cluster with the minimum value of 2 is created. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).</td>
+   <td>Specify at least 2 worker nodes to include in the cluster.  For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).</td>
    </tr>
    <tr>
    <td><code>--version <em>&lt;major.minor.patch&gt;</em></code></td>
@@ -425,14 +425,14 @@ The following image walks you through choosing the setup that you want for your 
    ```
    {: pre}
 
-   When the provisioning of your {{site.data.keyword.openshiftshort}} master is completed, the **State** of your cluster changes to `deployed`. After your {{site.data.keyword.openshiftshort}} master is ready, the provisioning of your worker nodes is initiated.
+   When the provisioning of your {{site.data.keyword.openshiftshort}} master is completed, the **State** of your cluster changes to `normal`. After your {{site.data.keyword.openshiftshort}} master is ready, the provisioning of your worker nodes is initiated.
    ```
    Name         ID                         State      Created          Workers    Zone      Version     Resource Group Name   Provider
-   mycluster    blrs3b1d0p0p2f7haq0g       deployed   20170201162433   3          dal10     4.6.28_xxxx_openshift      Default             classic
+   mycluster    blrs3b1d0p0p2f7haq0g       normal   20170201162433   3          dal10     4.6.28_xxxx_openshift      Default             classic
    ```
    {: screen}
 
-   Is your cluster not in a `deployed` state? Check out the [Debugging clusters](/docs/openshift?topic=openshift-debug_clusters) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound).
+   Is your cluster not in a `normal` state? Check out the [Debugging clusters](/docs/containers?topic=containers-debug_clusters) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound).
    {: tip}
 
 8. Check the status of the worker nodes.
@@ -520,7 +520,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
 10. Complete the **Resource details** to customize the unique cluster name and any [tags](/docs/account?topic=account-tag) that you want to use to organize your {{site.data.keyword.cloud_notm}} resources, such as the team or billing department.
 11. In the **Summary** pane, review the order summary and then click **Create**. A worker pool is created with the number of workers that you specified. You can see the progress of the worker node deployment in the **Worker nodes** tab.
    *  Your cluster might take some time to provision the {{site.data.keyword.openshiftshort}} master and all worker nodes and enter a   **Normal** state. Note that even if the cluster is ready, some parts of the cluster that are used by other services, such as Ingress  secrets or registry image pull secrets, might still be in process. Before you continue, wait until the cluster is ready by checking that the **Ingress subdomain** follows a pattern of `<cluster_name>.<region>.containers.appdomain.cloud`.
-   *  Every worker node is assigned a unique worker node ID and domain name that must not be changed manually after the cluster is created. Changing the ID or domain name prevents the {{site.data.keyword.openshiftshort}} master from managing your cluster.<p class="tip">Is your cluster not in a **Normal** state? Check out the [Debugging clusters](/docs/openshift?topic=openshift-debug_clusters) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound).</p>
+   *  Every worker node is assigned a unique worker node ID and domain name that must not be changed manually after the cluster is created. Changing the ID or domain name prevents the {{site.data.keyword.openshiftshort}} master from managing your cluster.<p class="tip">Is your cluster not in a **Normal** state? Check out the [Debugging clusters](/docs/containers?topic=containers-debug_clusters) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound).</p>
 12. After your cluster is created, you can [begin working with your cluster by configuring your CLI session](/docs/openshift?topic=openshift-access_cluster). For more possibilities, review the [Next steps](/docs/openshift?topic=openshift-clusters#next_steps).
 13. {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: To allow any traffic requests to apps that you deploy on your worker nodes, modify the VPC's default security group.
  1. From the [Virtual private cloud dashboard](https://cloud.ibm.com/vpc-ext/network/vpcs){: external}, click the name of the **Default Security Group** for the VPC that you created.
@@ -537,7 +537,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
 
 **Before you begin**:
 * Make sure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level).
-* Install the {{site.data.keyword.cloud_notm}} CLI and the [{{site.data.keyword.openshiftlong_notm}} plug-in](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_install).
+* Install the {{site.data.keyword.cloud_notm}} CLI and the [{{site.data.keyword.openshiftlong_notm}} plug-in](/docs/containers?topic=containers-cs_cli_install#cs_cli_install).
 * Install the [VPC CLI plug-in](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#cli-ref-prereqs).
 
 <br>
@@ -560,7 +560,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
   * For more information, see [Overview of VPC networking in {{site.data.keyword.openshiftlong_notm}}: Subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets).
 5. Create the cluster in your VPC. You can use the `ibmcloud oc cluster create vpc-gen2` command to create a single zone cluster in your VPC with worker nodes that are connected to one VPC subnet only. If you want to create a multizone cluster, you can use the {{site.data.keyword.cloud_notm}} console, or [add more zones](/docs/openshift?topic=openshift-add_workers#vpc_add_zone) to your cluster after the cluster is created. The cluster takes a few minutes to provision.
     ```
-    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.6_openshift --cos-instance <COS_CRN> [--workers <number_workers_per_zone>] [--pod-subnet] [--service-subnet] [--disable-public-service-endpoint]
+    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.6_openshift --cos-instance <COS_CRN> --workers <number_workers_per_zone> [--pod-subnet] [--service-subnet] [--disable-public-service-endpoint]
     ```
     {: pre}
 
@@ -598,11 +598,11 @@ Your VPC cluster is created with both a public and a private cloud service endpo
     </tr>
     <tr>
     <td><code>--cos-instance <em>&lt;cos_CRN&gt;</em></code></td>
-    <td>Include the CRN ID of a standard {{site.data.keyword.cos_full_notm}} instance to back up the internal registry of your cluster. To list the CRN of existing instances, run <code>ibmcloud resource service-instances --long</code> and find the **ID** of your object storage instance. To create a standard object storage instance, run <code>ibmcloud resource service-instance-create <name> cloud-object-storage standard global</code> and note its **ID**.</td>
+    <td>Include the CRN ID of a standard {{site.data.keyword.cos_full_notm}} instance to back up the internal registry of your cluster. To list the CRN of existing instances, run <code>ibmcloud resource service-instances --long</code> and find the **ID** of your object storage instance. To create a standard object storage instance, run <code>ibmcloud resource service-instance-create &lt;name&gt; cloud-object-storage standard global</code> and note its **ID**.</td>
     </tr>
     <tr>
     <td><code>--workers <em>&lt;number&gt;</em></code></td>
-    <td>Specify the number of worker nodes to include in the cluster. If you do not specify this option, a cluster with the minimum value of 2 is created. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster). This value is optional.</td>
+    <td>Specify at least 2 worker nodes to include in the cluster. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster). This value is optional.</td>
     </tr>
     <tr>
     <td><code>--pod-subnet</code></td>
@@ -634,14 +634,14 @@ Your VPC cluster is created with both a public and a private cloud service endpo
     ```
     {: pre}
 
-    When the provisioning of your {{site.data.keyword.openshiftshort}} master is completed, the status of your cluster changes to **deployed**. After the {{site.data.keyword.openshiftshort}} master is ready, your worker nodes are set up.
+    When the provisioning of your {{site.data.keyword.openshiftshort}} master is completed, the state of your cluster changes to **normal**. After the {{site.data.keyword.openshiftshort}} master is ready, your worker nodes are set up.
     ```
     Name         ID                                   State      Created          Workers    Zone      Version     Resource Group Name   Provider
-    mycluster    aaf97a8843a29941b49a598f516da72101   deployed   20170201162433   3          mil01     1.20.7      Default               vpc-gen2
+    mycluster    aaf97a8843a29941b49a598f516da72101   normal   20170201162433   3          Dallas     4.6.28_xxxx_openshift      Default               vpc-gen2
     ```
     {: screen}
 
-    Is your cluster not in a **deployed** state? Check out the [Debugging clusters](/docs/openshift?topic=openshift-debug_clusters) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound).
+    Is your cluster not in a **normal** state? Check out the [Debugging clusters](/docs/containers?topic=containers-debug_clusters) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound).
     {: tip}
 
 7. Check the status of the worker nodes.
@@ -650,10 +650,10 @@ Your VPC cluster is created with both a public and a private cloud service endpo
    ```
    {: pre}
 
-   When the worker nodes are ready, the worker node **State** changes to `deployed` and the **Status** changes to `Ready`. When the node **Status** changes to `Ready`, you can access the cluster. Note that even if the cluster is ready, some parts of the cluster that are used by other services, such as Ingress secrets or registry image pull secrets, might still be in process.
+   When the worker nodes are ready, the worker node **State** changes to `normal` and the **Status** changes to `Ready`. When the node **Status** changes to `Ready`, you can access the cluster. Note that even if the cluster is ready, some parts of the cluster that are used by other services, such as Ingress secrets or registry image pull secrets, might still be in process.
    ```
    ID                                                     Public IP        Private IP     Flavor              State    Status   Zone    Version
-   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   u3c.2x4.encrypted   normal   Ready    dal10   1.20.7
+   kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   b3c.4x16.encrypted  normal   Ready    dal10   4.6.28_xxxx_openshift
    ```
    {: screen}
 
@@ -698,10 +698,10 @@ Your cluster is ready for your workloads! You might also want to [add a tag to y
 
 When the cluster is up and running, you can check out the following cluster administration tasks:
 - If you created the cluster in a multizone capable zone, [spread worker nodes by adding a zone to your cluster](/docs/openshift?topic=openshift-add_workers).
-- [Deploy an app in your cluster.](/docs/openshift?topic=openshift-deploy_app#app_cli)
+- [Deploy an app in your cluster.](/docs/containers?topic=containers-deploy_app#app_cli)
 - [Set up your own private registry in {{site.data.keyword.cloud_notm}} to store and share Docker images with other users.](/docs/Registry?topic=Registry-getting-started)
 - [Set up the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca) to automatically add or remove worker nodes from your worker pools based on your workload resource requests.
-- Control who can create pods in your cluster with [pod security policies](/docs/openshift?topic=openshift-psp).
+- Control who can create pods in your cluster with [pod security policies](/docs/containers?topic=containers-psp).
 
 Then, you can check out the following network configuration steps for your cluster setup:
 * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic clusters:
