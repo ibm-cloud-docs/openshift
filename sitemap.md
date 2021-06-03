@@ -1812,6 +1812,8 @@ subcollection: openshift
 * [Changelog for version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [Object storage plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog)
+* [Changelog for version 2.1.1](/docs/openshift?topic=openshift-cos_plugin_changelog#0211_object_plugin)
+* [Changelog for version 2.1.0](/docs/openshift?topic=openshift-cos_plugin_changelog#0210_object_plugin)
 * [Changelog for version 2.0.9](/docs/openshift?topic=openshift-cos_plugin_changelog#0209_object_plugin)
 * [Changelog for version 2.0.8](/docs/openshift?topic=openshift-cos_plugin_changelog#0208_object_plugin)
 * [Changelog for version 2.0.7](/docs/openshift?topic=openshift-cos_plugin_changelog#0207_object_plugin)
