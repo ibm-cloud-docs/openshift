@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-26"
+lastupdated: "2021-06-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -287,8 +287,8 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
         Example output:
         ```
         ALB ID                                Enabled   Status     Type      ALB IP          Zone    Build                          ALB VLAN ID   NLB Version
-        private-crbmnj1b1d09lpvv3oof0g-alb1   false     disabled   private   -               dal10   ingress:2477/ingress-auth:992   2234947       2.0
-        public-crbmnj1b1d09lpvv3oof0g-alb1    true      enabled    public    169.XX.XXX.XX   dal10   ingress:2477/ingress-auth:992   2234945       2.0
+        private-crbmnj1b1d09lpvv3oof0g-alb1   false     disabled   private   -               dal10   ingress:0.45.0_1228_iks   2234947       2.0
+        public-crbmnj1b1d09lpvv3oof0g-alb1    true      enabled    public    169.XX.XXX.XX   dal10   ingress:0.45.0_1228_iks   2234945       2.0
         ```
         {: screen}
 
