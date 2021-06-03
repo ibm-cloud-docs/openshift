@@ -91,8 +91,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-  
- 
+
+
 
 # Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters
 {: #vpc-block-storage-driver-unmanaged}
@@ -105,10 +105,10 @@ The following documentation covers the steps to deploy the {{site.data.keyword.b
 
 Want to use {{site.data.keyword.block_storage_is_short}} in an {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong_notm}} cluster? See [Storing data on Block Storage for VPC](/docs/openshift?topic=openshift-vpc-block) for more information.
 {: tip}
- 
+
 ## Prerequisites
 {: #vpc-block-um-prereq}
-To use the {{site.data.keyword.block_storage_is_short}} driver, complete the following tasks: 
+To use the {{site.data.keyword.block_storage_is_short}} driver, complete the following tasks:
 {: shortdesc}
 
 * Create an {{site.data.keyword.openshiftlong_notm}} cluster on VPC infrastructure.
@@ -122,7 +122,7 @@ Before you can deploy the {{site.data.keyword.block_storage_is_short}} driver, y
 {: shortdesc}
 
 
-Before you begin, [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+Before you begin, [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure)
 
 1. Retrieve the following details of your VPC instance. These parameters are used to apply labels to your worker nodes.
 
@@ -210,7 +210,7 @@ To create the Kubernetes secret that is used in the {{site.data.keyword.block_st
     g2_token_exchange_endpoint_url = "https://iam.bluemix.net"
     g2_riaas_endpoint_url = "<g2_riaas_endpoint>"
     g2_resource_group_id = "<resource_group_id>"
-    g2_api_key = "<IAM_API_key>" 
+    g2_api_key = "<IAM_API_key>"
     provider_type = "g2"
     ```
     {: codeblock}
@@ -353,7 +353,7 @@ After you deploy the {{site.data.keyword.block_storage_is_short}} driver, you ca
             - name: www
               mountPath: /usr/share/nginx/html
           tolerations:
-          - operator: Exists 
+          - operator: Exists
       volumeClaimTemplates:
       - metadata:
           annotations:
@@ -2040,4 +2040,3 @@ metadata:
 
 ```
 {: codeblock}
-
