@@ -116,7 +116,7 @@ Clusters can have two main types of worker nodes: virtual or physical (bare meta
 
 **When do worker nodes begin to incur charges?**
 
-Worker nodes begin to incur charges after successfully complete the `provisioning` state and continue until you delete the worker nodes and they complete the `deleting` state. For more information, see [Worker node states](/docs/containers?topic=containers-health-monitor#states_workers).
+Worker nodes begin to incur charges after successfully complete the `provisioning` state and continue until you delete the worker nodes and they complete the `deleting` state. For more information, see [Worker node states](/docs/openshift?topic=openshift-health-monitor#states_workers).
 
 **What is the difference between virtual and physical machines?**
 
@@ -219,7 +219,7 @@ Subnets for {{site.data.keyword.openshiftlong_notm}} clusters vary by infrastruc
 When you create a multizone cluster or add zones to a single zone cluster, you must have a load balancer to health check Ingress and load balancer IP addresses in each zone, and forward requests to your apps across zones in the region.
 {: shortdesc}
 
-The type of load balancer that is automatically created varies depending on the type of cluster. For more information, see [Multizone load balancer (MZLB) or Load Balancer for VPC](/docs/containers?topic=containers-ingress-about#mzlb).
+The type of load balancer that is automatically created varies depending on the type of cluster. For more information, see [Multizone load balancer (MZLB) or Load Balancer for VPC](/docs/openshift?topic=openshift-ingress-about#mzlb).
 * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters**: A Cloudflare MZLB is automatically created for each multizone cluster. You can view the hourly cost in the pricing summary when you create the cluster.
 * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC clusters**: A Load Balancer for VPC is automatically created in your VPC for your cluster. For cost information, see [Pricing for Load Balancer for VPC](https://www.ibm.com/cloud/vpc/pricing){: external}.
 
@@ -256,7 +256,7 @@ Each service that you integrate with your cluster has its own pricing model. Rev
 ### Operators and other third-party integrations
 {: #operators_pricing}
 
-[Operators](/docs/openshift?topic=openshift-operators) and other [third-party integrations](/docs/containers?topic=containers-supported_integrations) are a convenient way to add services to your cluster from community, third-party, your own, or other providers. Keep in mind that you are responsible for additional charges and how these services operate in your cluster, from deployment and maintenance to integration with your apps. If you have issues with an operator or third-party integration, work with the appropriate provider to troubleshoot the issue.
+[Operators](/docs/openshift?topic=openshift-operators) and other [third-party integrations](/docs/openshift?topic=openshift-supported_integrations) are a convenient way to add services to your cluster from community, third-party, your own, or other providers. Keep in mind that you are responsible for additional charges and how these services operate in your cluster, from deployment and maintenance to integration with your apps. If you have issues with an operator or third-party integration, work with the appropriate provider to troubleshoot the issue.
 {: shortdesc}
 
 ### VPC worker nodes

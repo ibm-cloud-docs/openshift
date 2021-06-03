@@ -161,7 +161,7 @@ The infrastructure credentials that are set for the region and resource group ar
 {: tsResolve}
 The account owner must set up the infrastructure account credentials properly. The credentials depend on what type of infrastructure account you are using.
 
-Before you begin, [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
+Before you begin, [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure).
 
 1.  Identify what user credentials are used for the region and resource group's infrastructure permissions.
     1.  Check the API key for a region and resource group of the cluster.
@@ -227,7 +227,7 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
         ```
         {: screen}
 
-    3.  If the worker node is not removed, review that [**State** and **Status** fields](/docs/containers?topic=containers-debug_worker_nodes) and the [common issues with worker nodes](/docs/containers?topic=containers-common_worker_nodes_issues) to continue debugging.
+    3.  If the worker node is not removed, review that [**State** and **Status** fields](/docs/openshift?topic=openshift-debug_worker_nodes) and the [common issues with worker nodes](/docs/openshift?topic=openshift-common_worker_nodes_issues) to continue debugging.
     4.  If you manually set credentials and still cannot see the cluster's worker nodes in your infrastructure account, you might check whether the [cluster is orphaned](#orphaned).
 
 ## Unable to create or delete worker nodes due to incorrect account error
@@ -284,7 +284,7 @@ Consider the following example scenario to understand how clusters might become 
 
         If you no longer have access to the infrastructure credentials, you can open an {{site.data.keyword.cloud_notm}} support case to determine an email address for the administrator of the other infrastructure account. However, {{site.data.keyword.cloud_notm}} Support cannot remove the orphaned cluster for you, and you must contact the administrator of the other account to get the infrastructure credentials.
         {: note}
-    *   **If the infrastructure accounts match**: Check the rest of the worker nodes in the cluster and see if any has a different infrastructure account. Make sure that you checked the worker nodes in the cluster that has the credentials issue. Review other [common infrastructure credential issues](/docs/containers?topic=containers-worker_infra_errors).
+    *   **If the infrastructure accounts match**: Check the rest of the worker nodes in the cluster and see if any has a different infrastructure account. Make sure that you checked the worker nodes in the cluster that has the credentials issue. Review other [common infrastructure credential issues](/docs/openshift?topic=openshift-worker_infra_errors).
 4.  Now that the infrastructure credentials are updated, retry the blocked action, such as updating or deleting a worker node, and verify that the action succeeds.
 5.  If you have other clusters in the same region and resource that require the previous infrastructure credentials, repeat Step 3 to reset the infrastructure credentials to the previous account. Note that if you created clusters with a different infrastructure account than the account that you switch to, you might orphan those clusters.
 

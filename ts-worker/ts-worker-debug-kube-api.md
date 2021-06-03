@@ -129,7 +129,7 @@ Before you begin, make sure that you have the **Manager** service access role in
     kubectl get validatingwebhookconfigurations --all-namespaces
     ```
     {: pre}
-6.  If you configured [log forwarding](/docs/containers?topic=containers-health), review the node-related logs from the following paths.
+6.  If you configured [log forwarding](/docs/openshift?topic=openshift-health), review the node-related logs from the following paths.
     ```
     /var/log/containerd.log
     /var/log/kubelet.log
@@ -164,4 +164,4 @@ Before you begin, make sure that you have the **Manager** service access role in
           operator: Exists
         ```
         {: copyblock}
-    6.  After you identify the workload that causes the issue, continue with [Debugging app deployments](/docs/containers?topic=containers-debug_apps).
+    6.  After you identify the workload that causes the issue, continue with [Debugging app deployments](/docs/openshift?topic=openshift-debug_apps).
