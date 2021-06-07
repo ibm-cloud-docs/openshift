@@ -342,7 +342,6 @@ Red Hat OpenShift on IBM Cloud
         {: .topicgroup}
         File Storage
             
-            ts-storage/ts-storage-debug.md
             ts-storage/ts-storage-pvc-fail-permissions.md
             ts-storage/ts-storage-file-block-pvc-pending.md
             ts-storage/ts-storage-file-app.md
@@ -354,7 +353,7 @@ Red Hat OpenShift on IBM Cloud
 
         {: .topicgroup}
         Block Storage
-            [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage)
+            
             [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions)
             ts-storage/ts-storage-block-app-pvc.md
             ts-storage/ts-storage-block-mount-wrong-fs.md
@@ -363,7 +362,7 @@ Red Hat OpenShift on IBM Cloud
 
         {: .topicgroup}
         Object Storage
-            [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage)
+            
             [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions)
             ts-storage/ts-storage-object-access-bucket.md
             ts-storage/ts-storage-object-helm-fails.md
@@ -379,14 +378,14 @@ Red Hat OpenShift on IBM Cloud
 
         {: .topicgroup}
         Portworx Storage
-            [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage)
+            
             [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions)
             ts-storage/ts-storage-px-debug.md
             ts-storage/ts-storage-px-encryption-fails.md
 
         {: .topicgroup}
         OpenShift Container Storage
-            [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage)
+            
             [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions)
             ts-storage/ts-ocs-roks.md
             ts-storage-ocs-install.md

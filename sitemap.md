@@ -2289,14 +2289,6 @@ subcollection: openshift
 {: #sitemap_file_storage}
 
 
-[Debugging persistent storage failures](/docs/openshift?topic=openshift-debug_storage)
-* [Checking whether the pod that mounts your storage instance is successfully deployed](/docs/openshift?topic=openshift-debug_storage#check-pod-success-deploy)
-* [Restarting your app pod](/docs/openshift?topic=openshift-debug_storage#ts-restart-app-pod)
-* [Verifying that the storage driver and plug-in pods show a status of **Running**](/docs/openshift?topic=openshift-debug_storage#verify_driver_pod_running_status)
-* [Checking whether your PVC is successfully provisioned.](/docs/openshift?topic=openshift-debug_storage#check_pvc_provision)
-* [Portworx](/docs/openshift?topic=openshift-debug_storage#ts-portworx-helm)
-* [OpenShift Container Storage](/docs/openshift?topic=openshift-debug_storage#ts-ocs-debug)
-
 [What permissions do I need to manage storage and create PVCs?](/docs/openshift?topic=openshift-missing_permissions)
 
 [File storage and block storage: Why does my PVC remain in a pending state?](/docs/openshift?topic=openshift-file_pvc_pending)
@@ -2318,7 +2310,6 @@ subcollection: openshift
 ## Block Storage
 {: #sitemap_block_storage}
 
-* [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage){: external}
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
 [Block Storage: Why can't my app access or write to PVCs?](/docs/openshift?topic=openshift-block_app_failures)
@@ -2333,7 +2324,6 @@ subcollection: openshift
 ## Object Storage
 {: #sitemap_object_storage}
 
-* [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage){: external}
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
 [Object storage: Why can't my PVC access an existing bucket?](/docs/openshift?topic=openshift-cos_access_bucket_fails)
@@ -2361,7 +2351,6 @@ subcollection: openshift
 ## Portworx Storage
 {: #sitemap_portworx_storage}
 
-* [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage){: external}
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
 [Portworx: Debugging your Portworx installation](/docs/openshift?topic=openshift-debug-portworx)
@@ -2375,7 +2364,6 @@ subcollection: openshift
 ## OpenShift Container Storage
 {: #sitemap_openshift_container_storage}
 
-* [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage){: external}
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
 [Debugging OpenShift Container Storage](/docs/openshift?topic=openshift-ts-ocs-roks-debug)
