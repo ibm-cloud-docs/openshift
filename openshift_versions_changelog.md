@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-01"
+lastupdated: "2021-06-07"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -107,11 +107,28 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
 
+
+
 ## Version 4.6 changelog
 {: #version-46}
 
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.6 patch updates.
 {: shortdesc}
+
+### Changelog for worker node fix pack 4.6.31_1545_openshift, released 7 June 2021
+{: #4631_1545}
+
+The following table shows the changes that are included in the worker node fix pack `4.6.31_1545_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| HA proxy | 26c5cc | 700dc6 | Updated the image for [CVE-2021-27219](https://nvd.nist.gov/vuln/detail/CVE-2021-27219){: external}.|
+|{{site.data.keyword.openshiftshort}} | 4.6.29 | 4.6.31 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-31){: external}.|
+| TCP `keepalive` optimization for VPC | N/A | N/A | Set the `net.ipv4.tcp_keepalive_time` setting to 180 seconds for compatibility with VPC gateways. |
+| RHEL 7 Packages | N/A | N/A | Updated worker node image with package updates for [CVE-2021-27219](https://nvd.nist.gov/vuln/detail/CVE-2021-27219){: external}.|
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.6.29_1544_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 4.6.29_1544_openshift, released 24 May 2021
 {: #4629_1544}
@@ -351,6 +368,21 @@ The following table shows the changes that are included in the version updates f
 
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.5 patch updates.
 {: shortdesc}
+
+### Changelog for worker node fix pack 4.5.40_1541_openshift, released 7 June 2021
+{: #4540_1541}
+
+The following table shows the changes that are included in the worker node fix pack `4.5.40_1541_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| HA proxy | 26c5cc | 700dc6 | Updated the image for [CVE-2021-27219](https://nvd.nist.gov/vuln/detail/CVE-2021-27219){: external}.|
+|{{site.data.keyword.openshiftshort}} | 4.5.39 | 4.5.40 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html#ocp-4-5-40){: external}.|
+| TCP `keepalive` optimization for VPC | N/A | N/A | Set the `net.ipv4.tcp_keepalive_time` setting to 180 seconds for compatibility with VPC gateways. |
+| RHEL 7 Packages | N/A | N/A | Updated worker node image with package updates for [CVE-2021-27219](https://nvd.nist.gov/vuln/detail/CVE-2021-27219){: external}.|
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.5.39_1540_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 4.5.39_1540_openshift, released 24 May 2021
 {: #4539_1540}
@@ -807,6 +839,20 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 3.11 
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported on 6 June 2022 (date subject to change).
 {: deprecated}
+
+### Changelog for worker node fix pack 3.11.439_1592_openshift, released 7 June 2021
+{: #311439_1592}
+
+The following table shows the changes that are included in the worker node fix pack `3.11.439_1592_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| HA proxy | 26c5cc | 700dc6 | Updated the image for [CVE-2021-27219](https://nvd.nist.gov/vuln/detail/CVE-2021-27219){: external}.|
+| TCP `keepalive` optimization for VPC | N/A | N/A | Set the `net.ipv4.tcp_keepalive_time` setting to 180 seconds for compatibility with VPC gateways. |
+| RHEL 7 Packages | N/A | N/A | Updated worker node image with package updates for [CVE-2021-27219](https://nvd.nist.gov/vuln/detail/CVE-2021-27219){: external}.|
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.439_1591_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 3.11.439_1591_openshift, released 24 May 2021
 {: #311439_1591}

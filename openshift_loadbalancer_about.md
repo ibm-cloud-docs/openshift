@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-24"
+lastupdated: "2021-06-07"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -103,8 +103,8 @@ subcollection: openshift
 When you create a standard cluster, {{site.data.keyword.openshiftlong}} automatically provisions a portable public subnet and a portable private subnet.
 {: shortdesc}
 
-* The portable public subnet provides 5 usable IP addresses. 1 portable public IP address is used by the default [public Ingress ALB](/docs/openshift?topic=openshift-ingress). The remaining 4 portable public IP addresses can be used to expose single apps to the internet by creating public network load balancer services, or NLBs.
-* The portable private subnet provides 5 usable IP addresses. 1 portable private IP address is used by the default [private Ingress ALB](/docs/openshift?topic=openshift-ingress#private_ingress). The remaining 4 portable private IP addresses can be used to expose single apps to a private network by creating private load balancer services, or NLBs.
+* The portable public subnet provides 5 usable IP addresses. 1 portable public IP address is used by the default [public Ingress ALB](/docs/containers?topic=containers-ingress-types). The remaining 4 portable public IP addresses can be used to expose single apps to the internet by creating public network load balancer services, or NLBs.
+* The portable private subnet provides 5 usable IP addresses. 1 portable private IP address is used by the default [private Ingress ALB](/docs/containers?topic=containers-ingress-types#alb-comm-create-private). The remaining 4 portable private IP addresses can be used to expose single apps to a private network by creating private load balancer services, or NLBs.
 
 To make an app accessible through both a portable public and a portable private IP address, you must create both a public NLB and a private NLB. Portable public and private IP addresses are static floating IPs and do not change when a worker node is removed. If the worker node that the NLB IP address is on is removed, a Keepalived daemon that constantly monitors the IP automatically moves the IP to another worker node. You can assign any port to your NLB. The NLB serves as the external entry point for incoming requests for the app. To access the NLB from the internet, you can use the public IP address of your NLB and the assigned port in the format `<IP_address>:<port>`. You can also create DNS entries for NLBs by registering the NLB IP addresses with subdomains.
 

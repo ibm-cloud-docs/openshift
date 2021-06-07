@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-06-07"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -91,8 +92,6 @@ subcollection: openshift
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
   
- 
-
 
 # Installing OpenShift Container Storage in your cluster
 {: #ocs-storage-install}
@@ -216,9 +215,13 @@ To install OCS in your cluster, complete the following steps.
 You can install the OCS add-on by using the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable).
 {: shortdesc}
 
+
+The default version of the OpenShift Container Storage add-on is `4.7.0`. If you have a `4.6` cluster, specify the `--version 4.6.0` flag when you enable the add-on.
+{: note}
+
 1. Install the `openshift-container-storage` add-on.
   ```sh
-  ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name>
+  ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version>
   ```
   {: pre}
 

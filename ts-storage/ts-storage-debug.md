@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-06-07"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -212,13 +212,13 @@ Review the options to debug persistent storage and find the root causes for fail
    {: pre}
 
 3. Review common errors that can occur during the PVC creation.
-   - [File storage and classic block storage: PVC remains in a pending state](/docs/openshift?topic=openshift-file_pvc_pending)
-   - [Object storage: PVC remains in a pending state](/docs/openshift?topic=openshift-cos_pvc_pending)
+   - [File storage and classic block storage: PVC remains in a pending state](/docs/containers?topic=containers-file_pvc_pending)
+   - [Object storage: PVC remains in a pending state](/docs/containers?topic=containers-cos_pvc_pending)
 
 4. Review common errors that can occur when you mount a PVC to your app.
-   - [File storage: App cannot access or write to PVC](/docs/openshift?topic=openshift-file_app_failures)
-   - [Classic Block storage: App cannot access or write to PVC](/docs/openshift?topic=openshift-block_app_failures)
-   - [Object storage: Accessing files with a non-root user fails](/docs/openshift?topic=openshift-cos_nonroot_access)
+   - [File storage: App cannot access or write to PVC](/docs/containers?topic=containers-file_app_failures)
+   - [Classic Block storage: App cannot access or write to PVC](/docs/containers?topic=containers-block_app_failures)
+   - [Object storage: Accessing files with a non-root user fails](/docs/containers?topic=containers-cos_nonroot_access)
 
 7. Verify that the `kubectl` CLI version that you run on your local machine matches the Kubernetes version that is installed in your cluster. If you use a `kubectl` CLI version that does not match at least the major.minor version of your cluster, you might experience unexpected results. For example, [Kubernetes does not support ![External link icon](../icons/launch-glyph.svg “External link icon”)](https://kubernetes.io/releases/version-skew-policy/) `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2).
    1. Show the `kubectl` CLI version that is installed in your cluster and your local machine.
@@ -235,7 +235,7 @@ Review the options to debug persistent storage and find the root causes for fail
       {: screen}
 
       The CLI versions match if you can see the same version in `GitVersion` for the client and the server. You can ignore the `+IKS` part of the version for the server.
-   2. If the `kubectl` CLI versions on your local machine and your cluster do not match, either [update your cluster](/docs/openshift?topic=openshift-update) or [install a different CLI version on your local machine](/docs/openshift?topic=openshift-cs_cli_install#kubectl).
+   2. If the `kubectl` CLI versions on your local machine and your cluster do not match, either [update your cluster](/docs/openshift?topic=openshift-update) or [install a different CLI version on your local machine](/docs/containers?topic=containers-cs_cli_install#kubectl).
 
 
 8. For {{site.data.keyword.block_storage_is_short}}, [verify that you have the latest version of the add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).
@@ -282,7 +282,7 @@ Review the options to debug persistent storage and find the root causes for fail
       ```
       {: pre}
 
-   4. If a more recent version is available, install this version. For instructions, see [Updating the {{site.data.keyword.cloud_notm}} Block Storage plug-in](/docs/openshift?topic=openshift-block_storage#update_block) and [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).
+   4. If a more recent version is available, install this version. For instructions, see [Updating the {{site.data.keyword.cloud_notm}} Block Storage plug-in](/docs/containers?topic=containers-block_storage#update_block) and [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).
 
 ## Portworx
 {: #ts-portworx-helm}
@@ -296,5 +296,73 @@ Review the options to debug persistent storage and find the root causes for fail
       {: pre}
 
    3. If a more recent version is available, install this version. For instructions, see [Updating Portworx in your cluster](/docs/openshift?topic=openshift-portworx#update_portworx).
+
+
+## OpenShift Container Storage 
+{: #ts-ocs-debug}
+
+Describe your OCS resources and review the command outputs for any error messages.
+{: shortdesc}
+
+1. List the name of your OCS cluster. 
+    ```sh
+    oc get ocscluster
+    ```
+    {: pre}
+    **Example output**:
+    ```
+    NAME             AGE
+    ocscluster-vpc   71d
+    ```
+    {: screen}
+
+1. Describe the storage cluster and review the `Events` section of the output for any error messages. 
+    ```sh
+    oc describe ocscluster <ocscluster-name>
+    ```
+    {:pre}
+
+2. List the OCS pods in the `kube-system` namespace and verify that they are `Running.`
+    ```sh
+    oc get pods -n kube-system
+    ```
+    {: pre}
+    **Example output**
+    ```
+    NAME                                                   READY   STATUS    RESTARTS   AGE
+    ibm-keepalived-watcher-5g2gs                           1/1     Running   0          7d21h
+    ibm-keepalived-watcher-8l4ld                           1/1     Running   0          7d21h
+    ibm-keepalived-watcher-mhkh5                           1/1     Running   0          7d21h
+    ibm-master-proxy-static-10.240.128.10                  2/2     Running   0          71d
+    ibm-master-proxy-static-10.240.128.11                  2/2     Running   0          71d
+    ibm-master-proxy-static-10.240.128.12                  2/2     Running   0          71d
+    ibm-ocs-operator-controller-manager-55667f4d68-md4zb   1/1     Running   8          15d
+    ibm-vpc-block-csi-controller-0                         4/4     Running   0          48d
+    ibm-vpc-block-csi-node-6gnwv                           3/3     Running   0          48d
+    ibm-vpc-block-csi-node-j2h62                           3/3     Running   0          48d
+    ibm-vpc-block-csi-node-xpwpf                           3/3     Running   0          48d
+    vpn-5b8694cdb-pll6z 
+    ```
+    {: screen}
+
+4. Describe the `ibm-ocs-operator-controller-manager` pod and review the `Events` section in the output for any error messages.
+    ```sh
+    oc describe pod <ibm-ocs-operator-controller-manager-a1a1a1a> -n kube-system
+    ```
+    {: pre}
+
+5. Review the logs of the `ibm-ocs-operator-controller-manager`.
+    ```sh
+    oc logs <ibm-ocs-operator-controller-manager-a1a1a1a> -n kube-system
+    ```
+    {: pre}
+
+6. Describe NooBaa and review the `Events` section of the output for any error messages.
+    ```sh
+    oc describe noobaa -n openshift-storage
+    ```
+    {: pre}
+
+
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-03"
+lastupdated: "2021-06-07"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -156,7 +156,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
     ```
     {: pre}
     * If the config map shows IP addresses, continue to the next step.
-    * If the **Events** section shows a warning message similar to `ErrorSubnetLimitReached: There are already the maximum number of subnets permitted in this VLAN`, see the [VLAN capacity troubleshooting topic](/docs/openshift?topic=openshift-cs_subnet_limit).
+    * If the **Events** section shows a warning message similar to `ErrorSubnetLimitReached: There are already the maximum number of subnets permitted in this VLAN`, see the [VLAN capacity troubleshooting topic](/docs/openshift?topic=openshift-cs_subnet_limit_43).
 
     Example output of a config map populated with IP addresses:
     ```

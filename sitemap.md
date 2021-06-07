@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-06-03"
+lastupdated: "2021-06-07"
 
 keywords: openshift
 subcollection: openshift
@@ -1674,6 +1674,7 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
+  * [Changelog for worker node fix pack 4.6.31_1545_openshift, released 7 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4631_1545)
   * [Changelog for worker node fix pack 4.6.29_1544_openshift, released 24 May 2021](/docs/openshift?topic=openshift-openshift_changelog#4629_1544)
   * [Changelog for master fix pack 4.6.28_1543_openshift, released 24 May 2021](/docs/openshift?topic=openshift-openshift_changelog#4628_1543)
   * [Changelog for worker node fix pack 4.6.27_1542_openshift, released 10 May 2021](/docs/openshift?topic=openshift-openshift_changelog#4627_1542)
@@ -1689,6 +1690,7 @@ subcollection: openshift
   * [Changelog for master fix pack 4.6.16_1532_openshift, released 22 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4616_1532)
   * [Changelog for 4.6.16_1530_openshift (master) and 4.6.16_1529_openshift (worker node), released 17 February 2020](/docs/openshift?topic=openshift-openshift_changelog#4616_1530)
 * [Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
+  * [Changelog for worker node fix pack 4.5.40_1541_openshift, released 7 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4540_1541)
   * [Changelog for worker node fix pack 4.5.39_1540_openshift, released 24 May 2021](/docs/openshift?topic=openshift-openshift_changelog#4539_1540)
   * [Changelog for master fix pack 4.5.39_1539_openshift, released 24 May 2021](/docs/openshift?topic=openshift-openshift_changelog#4539_1539)
   * [Changelog for worker node fix pack 4.5.38_1538_openshift, released 10 May 2021](/docs/openshift?topic=openshift-openshift_changelog#4538_1538)
@@ -1716,6 +1718,7 @@ subcollection: openshift
   * [Changelog for master fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518)
   * [Changelog for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4513_1515)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for worker node fix pack 3.11.439_1592_openshift, released 7 June 2021](/docs/openshift?topic=openshift-openshift_changelog#311439_1592)
   * [Changelog for worker node fix pack 3.11.439_1591_openshift, released 24 May 2021](/docs/openshift?topic=openshift-openshift_changelog#311439_1591)
   * [Changelog for master fix pack 3.11.420_1590_openshift, released 24 May 2021](/docs/openshift?topic=openshift-openshift_changelog#311420_1590)
   * [Changelog for worker node fix pack 3.11.420_1588_openshift, released 10 May 2021](/docs/openshift?topic=openshift-openshift_changelog#311420_1588)
@@ -2286,13 +2289,6 @@ subcollection: openshift
 {: #sitemap_file_storage}
 
 
-[Debugging persistent storage failures](/docs/openshift?topic=openshift-debug_storage)
-* [Checking whether the pod that mounts your storage instance is successfully deployed](/docs/openshift?topic=openshift-debug_storage#check-pod-success-deploy)
-* [Restarting your app pod](/docs/openshift?topic=openshift-debug_storage#ts-restart-app-pod)
-* [Verifying that the storage driver and plug-in pods show a status of **Running**](/docs/openshift?topic=openshift-debug_storage#verify_driver_pod_running_status)
-* [Checking whether your PVC is successfully provisioned.](/docs/openshift?topic=openshift-debug_storage#check_pvc_provision)
-* [Portworx](/docs/openshift?topic=openshift-debug_storage#ts-portworx-helm)
-
 [What permissions do I need to manage storage and create PVCs?](/docs/openshift?topic=openshift-missing_permissions)
 
 [File storage and block storage: Why does my PVC remain in a pending state?](/docs/openshift?topic=openshift-file_pvc_pending)
@@ -2314,7 +2310,6 @@ subcollection: openshift
 ## Block Storage
 {: #sitemap_block_storage}
 
-* [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage){: external}
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
 [Block Storage: Why can't my app access or write to PVCs?](/docs/openshift?topic=openshift-block_app_failures)
@@ -2329,7 +2324,6 @@ subcollection: openshift
 ## Object Storage
 {: #sitemap_object_storage}
 
-* [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage){: external}
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
 [Object storage: Why can't my PVC access an existing bucket?](/docs/openshift?topic=openshift-cos_access_bucket_fails)
@@ -2357,7 +2351,6 @@ subcollection: openshift
 ## Portworx Storage
 {: #sitemap_portworx_storage}
 
-* [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage){: external}
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
 [Portworx: Debugging your Portworx installation](/docs/openshift?topic=openshift-debug-portworx)
@@ -2371,7 +2364,6 @@ subcollection: openshift
 ## OpenShift Container Storage
 {: #sitemap_openshift_container_storage}
 
-* [Debugging persistent storage failures](https://cloud.ibm.com/docs/openshift?topic=openshift-debug_storage){: external}
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
 [Debugging OpenShift Container Storage](/docs/openshift?topic=openshift-ts-ocs-roks-debug)

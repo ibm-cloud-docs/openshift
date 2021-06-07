@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-06-07"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -104,4 +104,32 @@ content-type: troubleshoot
 ## OCS device set creation fails due to PVC names exceeding the Kubernetes character limit
 {: #ocs-ts-sc-character-limit}
 
-{[pg-ts-ocs-storageclass.md]}
+{: tsSymptoms}
+When you create your OCS storage cluster and you run `oc describe storagecluster <storage-cluster-name>`, you see an error similar to the following.
+
+```sh
+ceph-cluster-controller: failed to reconcile. failed to reconcile cluster "ocs-storagecluster-cephcluster": failed to configure local ceph cluster: failed to create cluster: failed to start ceph osds: 3 failures encountered while running osds in namespace openshift-storage: failed to create "provision" job for node "ocs-deviceset-ibmc-vpc-block-metro-retain-10iops-tier-0-datnv6k". Job.batch "rook-ceph-osd-prepare-aaa000aaa111a1a0e10ba1a11aa1a119" is invalid: [spec.template.spec.volumes[8].name: Invalid value: "ocs-deviceset-ibmc-vpc-block-metro-retain-10iops-tier-0-aaaaa1b-bridge": must be no more than 63 characters
+```
+{: screen}
+
+{: tsCauses}
+Kubernetes PVC names must be fewer than 63 characters. If you a have multizone VPC cluster and create your OCS storage cluster by using a `retain` class like the `ibmc-vpc-block-metro-retain-10iops-tier`, the corresponding OCS device set PVCs that are created by using this storage class are assigned names that exceed the 63 character limit.
+
+{: tsResolve}
+Create a custom storage class that uses the same configuration as the pre-defined storage class that you want to use, but with a name that does not exceed 63 characters.
+
+1. Get the YAML configuration of the storage class that you want to use in your OCS storage cluster and save it in a file on your local machine.
+  ```sh
+  oc get sc ibmc-vpc-block-metro-retain-10iops-tier -o yaml
+  ```
+  {: pre}
+
+1. Edit the name of the storage class. Make sure that the name of your custom storage class is fewer than 30 characters to allow for the OCS storage cluster device set IDs to be under the 63 character kubernetes limit. Create the storage class in your cluster.
+  ```sh
+  oc create -f <custom-storage-class.yaml>
+  ```
+  {: pre}
+
+1. Clean up your [OCS deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-cleanup-resources).
+
+1. Create a OCS deployment that uses the custom storage class you created.

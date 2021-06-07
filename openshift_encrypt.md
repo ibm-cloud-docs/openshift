@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-01"
+lastupdated: "2021-06-07"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -273,7 +273,7 @@ You can enable a KMS provider or update the instance or root key that encrypts s
     {: note}
 
 6.  **Clusters that run version 3.11**: To encrypt existing secrets with the root key, rewrite the secrets.
-    1.  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure)
+    1.  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
     2.  With `cluster-admin` access, rewrite the secrets.
         ```
         kubectl get secrets --all-namespaces -o json | kubectl replace -f -
@@ -311,7 +311,7 @@ You can enable a KMS provider or update the instance or root key that encrypts s
     {: note}
 
 6.  **Clusters that run version 3.11**: To encrypt existing secrets with the root key, rewrite the secrets.
-    1.  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure)
+    1.  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
     2.  With `cluster-admin` access, rewrite the secrets.
         ```
         kubectl get secrets --all-namespaces -o json | kubectl replace -f -
