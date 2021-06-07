@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-03"
+lastupdated: "2021-06-07"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -110,6 +110,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 07 June 2021 | <ul><li>**Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.31_1545_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4631_1545), [`4.5.40_1541_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4540_1541), and [`3.11.439_1592_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311439_1592).</li></ul>|
 | 03 June 2021 | **{{site.data.keyword.cos_full_notm}} plug-in**: Version `2.0.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in changelog](/docs/openshift?topic=openshift-cos_plugin_changelog). |
 | 02 June 2021 | <ul><li>**HPCS Router**: Updated version changelog for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog) add-on.</li><li>**Image key synchronizer**: Updated the version changelog for the [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-on.</li></ul>|
 | 01 June 2021 | **Unsupported version**: {{site.data.keyword.openshiftshort}} version 4.4 is unsupported. Update your cluster to [version 4.5](/docs/openshift?topic=openshift-openshift_versions#ocp45) as soon as possible.|
