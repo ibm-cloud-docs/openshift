@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-06-07"
 
 keywords: openshift, openshift container storage, ocs, vpc, roks
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -188,7 +189,7 @@ To deploy OCS in your classic cluster, you can create a custom resource definiti
 If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](/docs/openshift?topic=openshift-ocs-storage-install#ocs-create-cos), and created the Kubernetes secret in your cluster. When you create the OCS CRD in your cluster, OCS looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store by using your {{site.data.keyword.cos_short}} HMAC credentials.
 {: note}
 
-1. Create a custom resource called `OcsCluster`. Save and edit the following custom resource definition to include the device paths for the local disks [that you retrieved earlier](/docs/openshift?topic=openshift-ocs-classic-get-devices). If you do not provide the optional `workerNodes` parameter, then all of the worker nodes in your cluster are used for the OCS deployment. Be sure to include the `/dev/disk/by-id/` path when you specify your storage devices.
+1. Create a custom resource called `OcsCluster`. Save and edit the following custom resource definition to include the device paths for the local disks [that you retrieved earlier](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-get-devices). If you do not provide the optional `workerNodes` parameter, then all of the worker nodes in your cluster are used for the OCS deployment. Be sure to include the `/dev/disk/by-id/` path when you specify your storage devices.
 
   **Example custom resource for installing OCS on all worker nodes in a classic cluster**
   ```yaml
