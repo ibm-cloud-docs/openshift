@@ -188,7 +188,7 @@ ibmcloud oc cluster addon disable image-key-synchronizer --cluster my_cluster
 Disable the [Kubernetes web terminal](/docs/containers?topic=containers-cs_cli_install#cli_web) add-on. To use the Kubernetes web terminal in the {{site.data.keyword.containerlong_notm}} cluster console, you must re-enable the add-on first.
 {: shortdesc}
 
-The Kubernetes web terminal add-on is deprecated. Instead, use the [{{site.data.keyword.cloud-shell_notm}}](/docs/openshift?topic=openshift-openshift-cli#cloud-shell).
+The Kubernetes web terminal add-on is deprecated and becomes unsupported 1 July 2021. Instead, use the [{{site.data.keyword.cloud-shell_notm}}](/docs/openshift?topic=openshift-openshift-cli#cloud-shell).
 {: deprecated}
 
 ```sh
@@ -307,7 +307,7 @@ ibmcloud oc cluster addon enable image-key-synchronizer --cluster CLUSTER [--ver
 Enable the [Kubernetes web terminal](/docs/containers?topic=containers-cs_cli_install#cli_web) add-on to use the Kubernetes web terminal in the {{site.data.keyword.containerlong_notm}} cluster console.
 {: shortdesc}
 
-The Kubernetes web terminal add-on is deprecated. Instead, use the [{{site.data.keyword.cloud-shell_notm}}](/docs/openshift?topic=openshift-openshift-cli#cloud-shell).
+The Kubernetes web terminal add-on is deprecated and becomes unsupported 1 July 2021. Instead, use the [{{site.data.keyword.cloud-shell_notm}}](/docs/openshift?topic=openshift-openshift-cli#cloud-shell).
 {: deprecated}
 
 ```sh
