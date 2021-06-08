@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-07"
+lastupdated: "2021-06-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -94,7 +94,7 @@ content-type: troubleshoot
 {:video: .video}
   
   
-# Debugging OpenShift Container Storage
+# Why is the status of my OpenShift Container Storage storage cluster stuck at `Failed to reconcile`.
 {: #ts-ocs-roks-debug}
 
 **Infrastructure provider**:
@@ -132,4 +132,4 @@ Create a custom storage class that uses the same configuration as the pre-define
 
 1. Clean up your [OCS deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-cleanup-resources).
 
-1. Create a OCS deployment that uses the custom storage class you created.
+1. Create an OCS deployment that uses the custom storage class you created.

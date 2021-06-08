@@ -2366,7 +2366,7 @@ subcollection: openshift
 
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
-[Debugging OpenShift Container Storage](/docs/openshift?topic=openshift-ts-ocs-roks-debug)
+[Why is the status of my OpenShift Container Storage storage cluster stuck at `Failed to reconcile`.](/docs/openshift?topic=openshift-ts-ocs-roks-debug)
 * [OCS device set creation fails due to PVC names exceeding the Kubernetes character limit](/docs/openshift?topic=openshift-ts-ocs-roks-debug#ocs-ts-sc-character-limit)
 
 [Why does my OpenShift Container Storage storage cluster have an 'Error' status?](/docs/openshift?topic=openshift-ts-ocs-install-error-status)
