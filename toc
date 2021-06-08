@@ -388,11 +388,11 @@ Red Hat OpenShift on IBM Cloud
             
             [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions)
             ts-storage/ts-ocs-roks.md
-            ts-storage-ocs-install.md
-            ts-storage-ocs-pending.md
-            ts-storage-ocs-progressing.md
-            ts-storage-ocs-missing-pods.md
-            ts-storage-ocs-unresolved.md
+            ts-storage/ts-storage-ocs-install.md
+            ts-storage/ts-storage-ocs-pending.md
+            ts-storage/ts-storage-ocs-progressing.md
+            ts-storage/ts-storage-ocs-missing-pods.md
+            ts-storage/ts-storage-ocs-unresolved.md
 
     openshift_release_notes.md
     openshift_limitations.md
