@@ -2351,6 +2351,13 @@ subcollection: openshift
 ## Portworx Storage
 {: #sitemap_portworx_storage}
 
+
+[Debugging Portworx failures](/docs/openshift?topic=openshift-debug_storage_px)
+* [Checking whether the pod that mounts your storage instance is successfully deployed](/docs/openshift?topic=openshift-debug_storage_px#debug_storage_px_deploy)
+* [Restarting your app pod](/docs/openshift?topic=openshift-debug_storage_px#debug_storage_px_restart)
+* [Verifying that the Portworx storage driver and plug-in pods show a status of **Running**](/docs/openshift?topic=openshift-debug_storage_px#debug_storage_px_driver_plugin)
+* [Checking and updating the oc CLI version](/docs/openshift?topic=openshift-debug_storage_px#debug_storage_px_cli)
+* [Updating Helm charts](/docs/openshift?topic=openshift-debug_storage_px#debug_storage_px_helm)
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
 [Portworx: Debugging your Portworx installation](/docs/openshift?topic=openshift-debug-portworx)
