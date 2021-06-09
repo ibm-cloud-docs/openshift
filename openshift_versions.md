@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-01"
+lastupdated: "2021-06-09"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -102,9 +102,9 @@ Review information about the supported {{site.data.keyword.openshiftshort}} vers
 {: shortdesc}
 
 For more information about the {{site.data.keyword.openshiftshort}} and Kubernetes project versions, review the following information.
+* [{{site.data.keyword.openshiftshort}} 4.7 release notes overview](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html){: external}
 * [{{site.data.keyword.openshiftshort}} 4.6 release notes overview](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html){: external}
-* [{{site.data.keyword.openshiftshort}} 4.5 release notes overview](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html){: external}
-* Deprecated: [{{site.data.keyword.openshiftshort}} 4.4 release notes overview](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html){: external}
+* Deprecated: [{{site.data.keyword.openshiftshort}} 4.5 release notes overview](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html){: external}
 * Deprecated: [{{site.data.keyword.openshiftshort}} 3.11 release notes overview](https://docs.openshift.com/container-platform/3.11/release_notes/index.html){: external}
 * [Kubernetes changelog](https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG){: external}
 
@@ -142,13 +142,12 @@ You must [update your cluster](/docs/openshift?topic=openshift-update) by using 
 {{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.openshiftshort}}. The worker node operating system is Red Hat Enterprise Linux 7.
 
 **Supported versions**:
-* Latest: 4.6 (Kubernetes 1.19)
+* Latest: 4.7 (Kubernetes 1.20)
 * Default: 4.6 (Kubernetes 1.19)
-* Other: 4.5 (Kubernetes 1.18)
 
 **Deprecated and unsupported versions**:
-* Deprecated: 3.11 (Kubernetes 1.11), 4.4 (Kubernetes 1.17)
-* Unsupported: 4.3 (Kubernetes 1.16)
+* Deprecated: 3.11 (Kubernetes 1.11), 4.5 (Kubernetes 1.18)
+* Unsupported: 4.3 (Kubernetes 1.16), 4.4 (Kubernetes 1.17)
 
 To check the Kubernetes server version of a cluster, log in to the cluster and run the following command.
 
@@ -203,15 +202,21 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 <tbody>
 <tr>
   <td><img src="images/checkmark-filled.png" align="left" width="32" style="width:32px;" alt="This version is supported."/></td>
+  <td>4.7 / 1.20</td>
+  <td>09 Jun 2021</td>
+  <td>Jun 2022`†`</td>
+</tr>
+<tr>
+  <td><img src="images/checkmark-filled.png" align="left" width="32" style="width:32px;" alt="This version is supported."/></td>
   <td>4.6 / 1.19</td>
   <td>17 Feb 2021</td>
   <td>Apr 2022 `†`</td>
 </tr>
 <tr>
-  <td><img src="images/checkmark-filled.png" align="left" width="32" style="width:32px;" alt="This version is supported."/></td>
+  <td><img src="images/checkmark-warning.png" align="left" width="32" style="width:32px;" alt="This version is deprecated."/></td>
   <td>4.5 / 1.18</td>
   <td>13 Oct 2020</td>
-  <td>Aug 2021 `†`</td>
+  <td>01 Sep 2021 `†`</td>
 </tr>
 <tr>
   <td><img src="images/close-filled.png" align="left" width="32" style="width:32px;" alt="This version is unsupported."/></td>
@@ -229,10 +234,32 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
   <td><img src="images/warning-filled.png" align="left" width="32" style="width:32px;" alt="This version is deprecated."/></td>
   <td>3.11 / 1.11</td>
   <td>01 Aug 2019</td>
-  <td>6 Jun 2022 `†`</td>
+  <td>06 Jun 2022 `†`</td>
 </tr>
 </tbody>
 </table>
+
+<br />
+
+## {{site.data.keyword.openshiftshort}} 4.7
+{: #ocp47}
+
+
+
+Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.openshiftshort}} 4.6 to {{site.data.keyword.openshiftshort}} 4.7.
+{: shortdesc}
+
+### Update before master
+{: #47_before}
+
+The following table shows the actions that you must take before you [update the cluster master](/docs/openshift?topic=openshift-update#master).
+{: shortdesc}
+
+| Type | Description |
+| ---- | ----------- |
+| **Unsupported:** Deprecated and removed {{site.data.keyword.openshiftshort}} features | For more information, review the [{{site.data.keyword.openshiftshort}} version 4.7 deprecated and removed features](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-deprecated-removed-features){: external}. |
+{: caption="Changes to make before you update the master to {{site.data.keyword.openshiftshort}} 4.7" caption-side="top"}
+{: summary="The rows are read from left to right. The type of update action is in the first column, and a description of the update action type is in the second column."}
 
 <br />
 
@@ -259,13 +286,16 @@ The following table shows the actions that you must take before you [update the 
 
 <br />
 
-## {{site.data.keyword.openshiftshort}} 4.5
+## Deprecated: {{site.data.keyword.openshiftshort}} 4.5
 {: #ocp45}
 
 <img src="images/certified_kubernetes_1x18.png" style="padding-right: 10px;" align="left" alt="This badge indicates Kubernetes version 1.18 certification for {{site.data.keyword.openshiftlong_notm}}."/> {{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.18 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
 Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.openshiftshort}} 4.4 to {{site.data.keyword.openshiftshort}} 4.5.
 {: shortdesc}
+
+{{site.data.keyword.openshiftshort}} version 4.5 is deprecated, with a tentative unsupported date of 1 September 2021. Update your cluster to at least [version 4.6](#ocp46) as soon as possible.
+{: deprecated}
 
 You cannot update a cluster that runs 3.11 to a version 4 cluster. [Create a cluster](/docs/openshift?topic=openshift-clusters) and [copy your deployments](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) from the outdated cluster to the new cluster.
 {: important}
