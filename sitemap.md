@@ -2240,7 +2240,7 @@ subcollection: openshift
 
 [Classic clusters: Why can't I deploy a load balancer?](/docs/openshift?topic=openshift-cs_subnet_limit_lb)
 
-[Classic clusters: Why does the OpenVPN server have an ingress IP address for NLB error?](/docs/openshift?topic=openshift-rhoks_ts_openvpn_subnet)
+[Classic clusters: Why does the master status have an ingress IP address for NLB error?](/docs/openshift?topic=openshift-rhoks_ts_openvpn_subnet)
 * [Verifying that your cluster has available subnets](/docs/openshift?topic=openshift-rhoks_ts_openvpn_subnet#verify_subnets)
 * [Verifying that the load balancer setup completed successfully](/docs/openshift?topic=openshift-rhoks_ts_openvpn_subnet#verify_nlb)
 
