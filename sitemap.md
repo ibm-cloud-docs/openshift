@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-06-08"
+lastupdated: "2021-06-09"
 
 keywords: openshift
 subcollection: openshift
@@ -2364,6 +2364,13 @@ subcollection: openshift
 ## OpenShift Container Storage
 {: #sitemap_openshift_container_storage}
 
+
+[Debugging OpenShift Container Storage failures](/docs/openshift?topic=openshift-debug_storage_ocs)
+* [Checking whether the pod that mounts your storage instance is successfully deployed](/docs/openshift?topic=openshift-debug_storage_ocs#debug_storage_ocs_deploy)
+* [Restarting your app pod](/docs/openshift?topic=openshift-debug_storage_ocs#debug_storage_ocs_restart)
+* [Verifying that the storage driver and plug-in pods show a status of **Running**](/docs/openshift?topic=openshift-debug_storage_ocs#debug_storage_ocs_driver_plugin)
+* [Checking and updating the oc CLI version](/docs/openshift?topic=openshift-debug_storage_ocs#debug_storage_ocs_cli)
+* [Debugging your OCS resources](/docs/openshift?topic=openshift-debug_storage_ocs#debug_storage_ocs_cluster)
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
 [Why is the status of my OpenShift Container Storage storage cluster stuck at `Failed to reconcile`.](/docs/openshift?topic=openshift-ts-ocs-roks-debug)
