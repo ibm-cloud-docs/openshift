@@ -2291,6 +2291,13 @@ subcollection: openshift
 {: #sitemap_file_storage}
 
 
+[Debugging {{site.data.keyword.filestorage_full_notm}} failures](/docs/openshift?topic=openshift-debug_storage_file)
+* [Checking whether the pod that mounts your storage instance is successfully deployed](/docs/openshift?topic=openshift-debug_storage_file#debug_storage_file_deploy)
+* [Restarting your app pod](/docs/openshift?topic=openshift-debug_storage_file#debug_storage_file_restart)
+* [Verifying that the storage driver and plug-in pods show a status of **Running**](/docs/openshift?topic=openshift-debug_storage_file#debug_storage_file_driver_plugin)
+* [Checking whether your PVC is successfully provisioned.](/docs/openshift?topic=openshift-debug_storage_file#debug_storage_file_pvc)
+* [Checking and updating the oc CLI version](/docs/openshift?topic=openshift-debug_storage_file#debug_storage_file_cli)
+
 [What permissions do I need to manage storage and create PVCs?](/docs/openshift?topic=openshift-missing_permissions)
 
 [File storage and block storage: Why does my PVC remain in a pending state?](/docs/openshift?topic=openshift-file_pvc_pending)
@@ -2312,6 +2319,14 @@ subcollection: openshift
 ## Block Storage
 {: #sitemap_block_storage}
 
+
+[Debugging {{site.data.keyword.blockstorageshort}} failures](/docs/openshift?topic=openshift-debug_storage_block)
+* [Checking whether the pod that mounts your storage instance is successfully deployed](/docs/openshift?topic=openshift-debug_storage_block#debug_storage_block_deploy)
+* [Restarting your app pod](/docs/openshift?topic=openshift-debug_storage_block#debug_storage_block_restart)
+* [Verifying that the storage driver and plug-in pods show a status of **Running**](/docs/openshift?topic=openshift-debug_storage_block#debug_storage_block_driver_plugin)
+* [Checking whether your PVC is successfully provisioned.](/docs/openshift?topic=openshift-debug_storage_block#debug_storage_block_pvc)
+* [Checking and updating the oc CLI version](/docs/openshift?topic=openshift-debug_storage_block#debug_storage_block_cli)
+* [Checking and updating the {{site.data.keyword.blockstorageshort}} driver](/docs/openshift?topic=openshift-debug_storage_block#debug_storage_block_driver)
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
 [Block Storage: Why can't my app access or write to PVCs?](/docs/openshift?topic=openshift-block_app_failures)
@@ -2326,6 +2341,14 @@ subcollection: openshift
 ## Object Storage
 {: #sitemap_object_storage}
 
+
+[Debugging {{site.data.keyword.cos_full_notm}} failures](/docs/openshift?topic=openshift-debug_storage_cos)
+* [Checking whether the pod that mounts your storage instance is successfully deployed](/docs/openshift?topic=openshift-debug_storage_cos#debug_storage_cos_deploy)
+* [Restarting your app pod](/docs/openshift?topic=openshift-debug_storage_cos#debug_storage_cos_restart)
+* [Verifying that the storage driver and plug-in pods show a status of **Running**](/docs/openshift?topic=openshift-debug_storage_cos#debug_storage_cos_driver_plugin)
+* [Checking whether your PVC is successfully provisioned](/docs/openshift?topic=openshift-debug_storage_cos#debug_storage_cos_pvc)
+* [Checking and updating the oc CLI version](/docs/openshift?topic=openshift-debug_storage_cos#debug_storage_cos_cli)
+* [Checking and updating the {{site.data.keyword.cos_short}} plug-in](/docs/openshift?topic=openshift-debug_storage_cos#debug_storage_cos_plugin)
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
 [Object storage: Why can't my PVC access an existing bucket?](/docs/openshift?topic=openshift-cos_access_bucket_fails)
