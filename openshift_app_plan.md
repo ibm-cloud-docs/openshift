@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-06-09"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -136,7 +136,7 @@ Check out the [Twelve-Factor App](https://12factor.net/){: external}, a language
 8.  **Concurrency**: Manage and scale your app through process instances such as replicas and horizontal scaling. Set resource requests and limits for your deployments. Note that Calico network policies cannot limit bandwidth.
 9.  **Disposability**: Design your app to be disposable, with minimal startup, graceful shutdown, and toleration for abrupt process terminations. Remember, containers, pods, and even worker nodes are meant to be disposable, so plan your app accordingly.
 10.  **Dev-to-prod parity**: Set up a [continuous integration](https://www.ibm.com/garage/method/practices/code/practice_continuous_integration) and [continuous delivery](https://www.ibm.com/garage/method/practices/deliver/practice_continuous_delivery) pipeline for your app, with minimal difference between the app in development and the app in prod.
-11.  **Logs**: Treat logs as event streams: the outer or hosting environment processes and routes log files. **Important**: In {{site.data.keyword.openshiftlong_notm}}, logs are not turned on by default. To enable, see [Configuring log forwarding](/docs/openshift?topic=openshift-health).
+11.  **Logs**: Treat logs as event streams: the outer or hosting environment processes and routes log files. **Important**: In {{site.data.keyword.openshiftlong_notm}}, logs are not turned on by default. To enable, see [Configuring log forwarding](/docs/containers?topic=containers-health).
 12.  **Admin processes**: Keep any one-time admin scripts with your app and run them as a [Kubernetes Job object](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/){: external} to ensure that the admin scripts run with the same environment as the app itself. For orchestration of larger packages that you want to run in your Kubernetes clusters, consider using a package manager such as [Helm](https://helm.sh/){: external}.
 
 ### I already have an app. How can I migrate it to {{site.data.keyword.openshiftlong_notm}}?
@@ -158,7 +158,7 @@ You can take some general steps to containerize your app as follows.
 5.  Over time, refactor your app processes into microservices.
 
 For more, see the following tutorials:
-*  [Migrating an app from Cloud Foundry to a cluster](/docs/openshift?topic=openshift-cf_tutorial#cf_tutorial)
+*  [Migrating an app from Cloud Foundry to a cluster](/docs/containers?topic=containers-cf_tutorial#cf_tutorial)
 *  [Moving a VM-based app to Kubernetes](/docs/solution-tutorials?topic=solution-tutorials-vm-to-containers-and-kubernetes)
 
 
@@ -538,10 +538,10 @@ Sometimes, you don't want the service to use a label. For example, you might hav
 You can create three types of services for external networking: NodePort, LoadBalancer, and Ingress.
 {: shortdesc}
 
-You have different options that depend on your cluster type. For more information, see [Planning networking services](/docs/openshift?topic=openshift-cs_network_planning#external).
-*  **Standard cluster**: You can expose your app by using a [NodePort, load balancer, or Ingress service](/docs/openshift?topic=openshift-cs_network_planning#external).
-*  **Cluster that is made private by using Calico**: You can expose your app by using a [NodePort, load balancer, or Ingress service](/docs/openshift?topic=openshift-cs_network_planning#private_both_vlans). You also must use a Calico preDNAT network policy to block the public node ports.
-*  **Private VLAN-only standard cluster**: You can expose your app by using a [NodePort, load balancer, or Ingress service](/docs/openshift?topic=openshift-cs_network_planning#plan_private_vlan). You also must open the port for the service's private IP address in your firewall.
+You have different options that depend on your cluster type. For more information, see [Planning networking services](/docs/containers?topic=containers-cs_network_planning#external).
+*  **Standard cluster**: You can expose your app by using a [NodePort, load balancer, or Ingress service](/docs/containers?topic=containers-cs_network_planning#external).
+*  **Cluster that is made private by using Calico**: You can expose your app by using a [NodePort, load balancer, or Ingress service](/docs/containers?topic=containers-cs_network_planning#private_both_vlans). You also must use a Calico preDNAT network policy to block the public node ports.
+*  **Private VLAN-only standard cluster**: You can expose your app by using a [NodePort, load balancer, or Ingress service](/docs/containers?topic=containers-cs_network_planning#plan_private_vlan). You also must open the port for the service's private IP address in your firewall.
 
 As you plan how many `Service` objects you need in your cluster, keep in mind that Kubernetes uses `iptables` to handle networking and port forwarding rules. If you run a large number of services in your cluster, such as 5000, performance might be impacted.
 
@@ -561,7 +561,7 @@ As you plan and develop your app, consider the following options to maintain a s
 <dt>Secret encryption</dt>
 <dd>You can encrypt the Kubernetes secrets that you create in your cluster by using a key management service (KMS) provider, such as {{site.data.keyword.keymanagementserviceshort}}. To get started, see [Encrypt secrets by using a KMS provider](/docs/openshift?topic=openshift-encryption#keyprotect) and [Verify that secrets are encrypted](/docs/openshift?topic=openshift-encryption#verify_kms).</dd>
 <dt>Pod traffic management</dt>
-<dd>By default, any pod has access to any other pod in the cluster. Additionally, any pod has access to any services that are exposed by the pod network, such as a metrics service, the cluster DNS, the API server, or any services that you manually create in your cluster. [Kubernetes network policies](/docs/openshift?topic=openshift-network_policies#isolate_services) protect pods from internal network traffic. For example, if most or all pods do not require access to specific pods or services, and you want to ensure that pods by default cannot access those pods or services, you can create a Kubernetes network policy to block ingress traffic to those pods or services. Kubernetes network policies can also help you enforce workload isolation between namespaces by controlling how pods and services in different namespaces can communicate.</dd>
+<dd>By default, any pod has access to any other pod in the cluster. Additionally, any pod has access to any services that are exposed by the pod network, such as a metrics service, the cluster DNS, the API server, or any services that you manually create in your cluster. [Kubernetes network policies](/docs/openshift?topic=openshift-network_policies#isolate_services) protect pods from internal network traffic. For example, if most or all pods do not require access to specific pods or services, and you want to ensure that pods by default cannot access those pods or services, you can create a Kubernetes network policy to block ingress traffic to those pods or services. Kubernetes network policies can also help you enforce workload isolation between namespaces by controlling how pods and services in different namespaces can communicate.<br><br>For clusters that run Kubernetes 1.21 and later, the service account tokens that pods use to communicate with the Kubernetes API server are time-limited, automatically refreshed, scoped to a particular audience of users (the pod), and invalidated after the pod is deleted. To continue communicating with the API server, you must design your apps to read the refreshed token value on a regular basis, such as every minute. For more information, see [Bound Service Account Tokens](https://github.com/kubernetes/enhancements/blob/master/keps/sig-auth/1205-bound-service-account-tokens/README.md){: external}.</dd>
 </dl>
 
 ## Managing access and monitoring app health
@@ -588,7 +588,7 @@ Want to control access at the application level? To create a sign-on flow that y
 ### After I deploy my app, how can I monitor its health?
 {: #app_plan_logmet_monitor}
 
-You can set up {{site.data.keyword.cloud_notm}} [logging and monitoring](/docs/openshift?topic=openshift-health) for your cluster.
+You can set up {{site.data.keyword.cloud_notm}} [logging and monitoring](/docs/containers?topic=containers-health) for your cluster.
 {: shortdesc}
 
 

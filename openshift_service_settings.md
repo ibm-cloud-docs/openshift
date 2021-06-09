@@ -146,3 +146,4 @@ Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many Open
 *   `OAuth`
 *   `Proxy`
 *   `Scheduler`
+

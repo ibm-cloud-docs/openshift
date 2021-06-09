@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-06-09"
 
 keywords: openshift, roks
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -156,7 +157,7 @@ To review the results of the CIS Kubernetes benchmark for [Section 4: Worker nod
 These steps apply to clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or later only.
 {: note}
 
-Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure)
+Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
 1.  Create a project for the resources to run the benchmark.
     ```
@@ -525,7 +526,7 @@ Review the following explanations and possible remediation actions that you can 
 | 1.2.12 | {{site.data.keyword.openshiftlong_notm}} does not enable the [`AlwaysPullImages`](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages){: external} admission controller because this setting overrides the `imagePullPolicy` of a container and might impact performance. |
 | 1.2.13 | {{site.data.keyword.openshiftlong_notm}} supports [security context constraints](/docs/openshift?topic=openshift-openshift_scc) for pods instead, which are similar to Kubernetes pod security policies. |
 | 1.2.16 | {{site.data.keyword.openshiftlong_notm}} supports [security context constraints](/docs/openshift?topic=openshift-openshift_scc) for pods instead, which are similar to Kubernetes pod security policies.|
-| 1.2.21 | {{site.data.keyword.openshiftlong_notm}} enables profiling for cluster administrator troubleshooting purposes. |
+| 1.2.21 | {{site.data.keyword.openshiftlong_notm}} enables [profiling](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/){: external} for cluster administrator troubleshooting purposes. |
 | 1.2.22 | You can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit). |
 | 1.2.23 | You can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit). |
 | 1.2.24 | You can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit). |
@@ -538,8 +539,8 @@ Review the following explanations and possible remediation actions that you can 
 | 4.2.8 | {{site.data.keyword.openshiftlong_notm}} ensures that the hostname matches the name that is issued by the infrastructure provider. |
 | 5.1.2 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that might have their Kubernetes secret access further restricted. |
 | 5.1.3 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that might have their Kubernetes resource access further restricted. |
-| 5.1.5 | {{site.data.keyword.openshiftlong_notm}} does not set `automountServiceAccountToken: false` for each default service account. |
-| 5.1.6 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that could set `automountServiceAccountToken: false`.  |
+| 5.1.5 | {{site.data.keyword.openshiftlong_notm}} does not set [`automountServiceAccountToken: false`](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#use-the-default-service-account-to-access-the-api-server){: external} for each default service account. |
+| 5.1.6 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that could set [`automountServiceAccountToken: false`](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#use-the-default-service-account-to-access-the-api-server){: external}.  |
 | 5.2.1 | You can optionally configure [security context constraints](/docs/openshift?topic=openshift-openshift_scc). |
 | 5.2.2 | You can optionally configure [security context constraints](/docs/openshift?topic=openshift-openshift_scc). |
 | 5.2.3 | You can optionally configure [security context constraints](/docs/openshift?topic=openshift-openshift_scc). |
@@ -554,6 +555,6 @@ Review the following explanations and possible remediation actions that you can 
 | 5.4.2 | You can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
 | 5.5.1 | You can optionally enable enforcing image security by using a project such as [Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec). |
 | 5.6.2 | {{site.data.keyword.openshiftlong_notm}} does not annotate all pods with [`seccomp` profiles](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#seccomp){: external}. |
-| 5.6.3 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that do not set a pod or container `securityContext`. |
+| 5.6.3 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that do not set a [pod or container `securityContext`](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external}. |
 {: summary="The rows are read from left to right. The first column is the section number for the benchmark recommendation. The second column contains the description of why the benchmark recommendation is not met and possible remediation actions."}
 {: caption="Explanation and remediation for benchmark results" caption-side="top"}

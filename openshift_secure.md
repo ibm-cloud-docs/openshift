@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-07"
+lastupdated: "2021-06-09"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -186,32 +186,7 @@ The following image shows the default cluster security settings that address aut
     </tr>
     <tr>
       <td>Admission controllers</td>  
-      <td>Admission controllers are implemented for specific features in Kubernetes and {{site.data.keyword.openshiftlong_notm}}. With admission controllers, you can set up policies in your cluster that determine whether a particular action in the cluster is allowed or not. In the policy, you can specify conditions when a user cannot perform an action, even if this action is part of the general permissions that you assigned the user by using RBAC roles. Therefore, admission controllers can provide an extra layer of security for your cluster before an API request is processed by the {{site.data.keyword.openshiftshort}} API server. </br></br> When you create a cluster, {{site.data.keyword.openshiftlong_notm}} automatically installs the following [Kubernetes admission controllers ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/) in the given order in the {{site.data.keyword.openshiftshort}} master, which cannot be changed by the user: <ul><li>`NamespaceLifecycle`</li><li>`LimitRanger`</li>
-      <li>`ServiceAccount`</li>
-      <li>`DefaultStorageClass`</li>
-      <li>`ResourceQuota`</li>
-      <li>`StorageObjectInUseProtection`</li>
-      <li>`PersistentVolumeClaimResize`</li>
-      <li>`Priority`</li>
-      <li>`BuildByStrategy`</li>
-      <li>`OriginPodNodeEnvironment`</li>
-      <li>`PodNodeSelector`</li>
-      <li>`ExternalIPRanger`</li>
-      <li>`NodeRestriction`</li>
-      <li>`SecurityContextConstraint`</li>
-      <li>`SCCExecRestrictions`</li>
-      <li>`PersistentVolumeLabel`</li>
-      <li>`OwnerReferencesPermissionEnforcement`</li>
-      <li>`PodTolerationRestriction`</li>
-      <li>`openshift.io/JenkinsBootstrapper`</li>
-      <li>`openshift.io/BuildConfigSecretInjector`</li>
-      <li>`openshift.io/ImageLimitRange`</li>
-      <li>`openshift.io/RestrictedEndpointsAdmission`</li>
-      <li>`openshift.io/ImagePolicy`</li>
-      <li>`openshift.io/IngressAdmission`</li>
-      <li>`openshift.io/ClusterResourceQuota`</li>
-      <li>`MutatingAdmissionWebhook`</li>
-      <li>`ValidatingAdmissionWebhook`</li></ul>
+      <td>Admission controllers are implemented for specific features in Kubernetes and {{site.data.keyword.openshiftlong_notm}}. With admission controllers, you can set up policies in your cluster that determine whether a particular action in the cluster is allowed or not. In the policy, you can specify conditions when a user cannot perform an action, even if this action is part of the general permissions that you assigned the user by using RBAC roles. Therefore, admission controllers can provide an extra layer of security for your cluster before an API request is processed by the {{site.data.keyword.openshiftshort}} API server. </br></br> When you create a cluster, {{site.data.keyword.openshiftlong_notm}} automatically installs the default [Kubernetes admission controllers ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/) in a particular order in the {{site.data.keyword.openshiftshort}} master, which cannot be changed by the user. Review the order of default admission controllers by cluster version in the [`kube-apiserver` component reference information](/docs/containers?topic=containers-service-settings#kube-apiserver).
 </br>
       You can [install your own admission controllers in the cluster ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/#admission-webhooks) or choose from the optional admission controllers that {{site.data.keyword.openshiftlong_notm}} provides: <ul><li><strong>[Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec):</strong> Use this admission controller to block container deployments from unsigned images.</li></ul></br><p class="note">If you manually installed admission controllers and you do not want to use them anymore, make sure to remove them entirely. If admission controllers are not entirely removed, they might block all actions that you want to perform on the cluster.</p></td>
     </tr>
