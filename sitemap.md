@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-06-07"
+lastupdated: "2021-06-09"
 
 keywords: openshift
 subcollection: openshift
@@ -1663,9 +1663,11 @@ subcollection: openshift
 * [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types)
 * [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types)
 * [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history)
+* [{{site.data.keyword.openshiftshort}} 4.7](/docs/openshift?topic=openshift-openshift_versions#ocp47)
+  * [Update before master](/docs/openshift?topic=openshift-openshift_versions#47_before)
 * [{{site.data.keyword.openshiftshort}} 4.6](/docs/openshift?topic=openshift-openshift_versions#ocp46)
   * [Update before master](/docs/openshift?topic=openshift-openshift_versions#46_before)
-* [{{site.data.keyword.openshiftshort}} 4.5](/docs/openshift?topic=openshift-openshift_versions#ocp45)
+* [Deprecated: {{site.data.keyword.openshiftshort}} 4.5](/docs/openshift?topic=openshift-openshift_versions#ocp45)
   * [Update before master](/docs/openshift?topic=openshift-openshift_versions#45_before)
   * [Update after master](/docs/openshift?topic=openshift-openshift_versions#45_after)
 * [Archive](/docs/openshift?topic=openshift-openshift_versions#version-archive)
@@ -1689,7 +1691,7 @@ subcollection: openshift
   * [Changelog for master fix pack 4.6.17_1533_openshift, released 27 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4617_1533)
   * [Changelog for master fix pack 4.6.16_1532_openshift, released 22 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4616_1532)
   * [Changelog for 4.6.16_1530_openshift (master) and 4.6.16_1529_openshift (worker node), released 17 February 2020](/docs/openshift?topic=openshift-openshift_changelog#4616_1530)
-* [Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
+* [Deprecated: Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
   * [Changelog for worker node fix pack 4.5.40_1541_openshift, released 7 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4540_1541)
   * [Changelog for worker node fix pack 4.5.39_1540_openshift, released 24 May 2021](/docs/openshift?topic=openshift-openshift_changelog#4539_1540)
   * [Changelog for master fix pack 4.5.39_1539_openshift, released 24 May 2021](/docs/openshift?topic=openshift-openshift_changelog#4539_1539)
@@ -2238,7 +2240,7 @@ subcollection: openshift
 
 [Classic clusters: Why can't I deploy a load balancer?](/docs/openshift?topic=openshift-cs_subnet_limit_lb)
 
-[Classic clusters: Why does the OpenVPN server have an ingress IP address for NLB error?](/docs/openshift?topic=openshift-rhoks_ts_openvpn_subnet)
+[Classic clusters: Why does the master status have an ingress IP address for NLB error?](/docs/openshift?topic=openshift-rhoks_ts_openvpn_subnet)
 * [Verifying that your cluster has available subnets](/docs/openshift?topic=openshift-rhoks_ts_openvpn_subnet#verify_subnets)
 * [Verifying that the load balancer setup completed successfully](/docs/openshift?topic=openshift-rhoks_ts_openvpn_subnet#verify_nlb)
 
@@ -2351,6 +2353,13 @@ subcollection: openshift
 ## Portworx Storage
 {: #sitemap_portworx_storage}
 
+
+[Debugging Portworx failures](/docs/openshift?topic=openshift-debug_storage_px)
+* [Checking whether the pod that mounts your storage instance is successfully deployed](/docs/openshift?topic=openshift-debug_storage_px#debug_storage_px_deploy)
+* [Restarting your app pod](/docs/openshift?topic=openshift-debug_storage_px#debug_storage_px_restart)
+* [Verifying that the Portworx storage driver and plug-in pods show a status of **Running**](/docs/openshift?topic=openshift-debug_storage_px#debug_storage_px_driver_plugin)
+* [Checking and updating the oc CLI version](/docs/openshift?topic=openshift-debug_storage_px#debug_storage_px_cli)
+* [Updating Helm charts](/docs/openshift?topic=openshift-debug_storage_px#debug_storage_px_helm)
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
 [Portworx: Debugging your Portworx installation](/docs/openshift?topic=openshift-debug-portworx)
@@ -2364,10 +2373,31 @@ subcollection: openshift
 ## OpenShift Container Storage
 {: #sitemap_openshift_container_storage}
 
+
+[Debugging OpenShift Container Storage failures](/docs/openshift?topic=openshift-debug_storage_ocs)
+* [Checking whether the pod that mounts your storage instance is successfully deployed](/docs/openshift?topic=openshift-debug_storage_ocs#debug_storage_ocs_deploy)
+* [Restarting your app pod](/docs/openshift?topic=openshift-debug_storage_ocs#debug_storage_ocs_restart)
+* [Verifying that the storage driver and plug-in pods show a status of **Running**](/docs/openshift?topic=openshift-debug_storage_ocs#debug_storage_ocs_driver_plugin)
+* [Checking and updating the oc CLI version](/docs/openshift?topic=openshift-debug_storage_ocs#debug_storage_ocs_cli)
+* [Debugging your OCS resources](/docs/openshift?topic=openshift-debug_storage_ocs#debug_storage_ocs_cluster)
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
-[Debugging OpenShift Container Storage](/docs/openshift?topic=openshift-ts-ocs-roks-debug)
+[Why is the status of my OpenShift Container Storage storage cluster stuck at `Failed to reconcile`.](/docs/openshift?topic=openshift-ts-ocs-roks-debug)
 * [OCS device set creation fails due to PVC names exceeding the Kubernetes character limit](/docs/openshift?topic=openshift-ts-ocs-roks-debug#ocs-ts-sc-character-limit)
+
+[Why does my OpenShift Container Storage storage cluster have an 'Error' status?](/docs/openshift?topic=openshift-ts-ocs-install-error-status)
+* [Error: Number of worker nodes less than 3.](/docs/openshift?topic=openshift-ts-ocs-install-error-status#ts-ocs-install-3workers)
+* [Error: Failed to update storage cluster](/docs/openshift?topic=openshift-ts-ocs-install-error-status#ts-ocs-install-decrease-capacity)
+* [Error: Error in reconcile of local volumes](/docs/openshift?topic=openshift-ts-ocs-install-error-status#ts-ocs-install-local-volumes)
+
+[Why are the OCS pods stuck at `Pending`?](/docs/openshift?topic=openshift-ts-ocs-pods-pending-status)
+
+[Why is the status of my OpenShift Container Storage storage cluster stuck at `Progressing`?](/docs/openshift?topic=openshift-ocs-ts-error-progressing)
+* [Error: Cloud credentials secret "ibm-cloud-cos-creds" is not ready yet](/docs/openshift?topic=openshift-ocs-ts-error-progressing#ts-storage-ocs-cos-cred)
+
+[Why are no pods listed in the `openshift-storage` namespace?](/docs/openshift?topic=openshift-ts-ocs-no-pods)
+
+[What if my OpenShift Container Storage issue is still unresolved?](/docs/openshift?topic=openshift-ocs-error-unresolved)
 
 
 ## Release notes

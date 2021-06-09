@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-07"
+lastupdated: "2021-06-09"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -579,10 +579,7 @@ To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning
 When you create a cluster, a portable public and a portable private subnet are ordered on the VLANs that the cluster is connected to. These subnets provide IP addresses for Ingress application load balancer (ALB) and network load balancer (NLB) services.
 {: shortdesc}
 
-However, if you have an existing router appliance, such as a [Virtual Router Appliance (VRA)](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra#about-the-vra), the newly added portable subnets from those VLANs that the cluster is connected to are not configured on the router. To use NLBs or Ingress ALBs, you must ensure that network devices can route between different subnets on the same VLAN by [enabling VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning).
-
-To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).
-{: tip}
+However, if you have an existing router appliance, such as a [Virtual Router Appliance (VRA)](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra#about-the-vra), the newly added portable subnets from those VLANs that the cluster is connected to are not configured on the router. To use NLBs or Ingress ALBs, you must ensure that network devices can route between different subnets on the same VLAN by enabling a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-users#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).
 
 <br />
 

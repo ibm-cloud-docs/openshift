@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-06-09"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -109,6 +110,7 @@ Review the feature gates that are applied to all master and worker node componen
 
 | {{site.data.keyword.openshiftshort}} version | Default feature gates |
 |---|---|
+| 4.7 | <li><code>LegacyNodeRoleBehavior=false</code></li><li><code>RemoveSelfLink=false</code></li></ul>|
 | 4.6 | <ul><li><code>APIPriorityAndFairness=true</code></li><li><code>LegacyNodeRoleBehavior=false</code></li><li><code>SCTPSupport=false</code></li><li><code>ServiceAppProtocol=false</code></li></ul>|
 | 4.5 | <ul><li><code>ExperimentalCriticalPodAnnotation=true</code></li><li><code>LocalStorageCapacityIsolation=false</code></li></ul>|
 | 4.4 | <ul><li><code>ExperimentalCriticalPodAnnotation=true</code></li><li><code>LocalStorageCapacityIsolation=false</code></li></ul>|
@@ -144,3 +146,4 @@ Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many Open
 *   `OAuth`
 *   `Proxy`
 *   `Scheduler`
+

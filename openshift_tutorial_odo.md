@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-06-09"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, odo
 
@@ -82,6 +82,7 @@ completion-time: 10m
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -123,9 +124,9 @@ This tutorial is intended for software developers who have some familiarity with
 ## Prerequisites
 {: #odo-prereqs}
 
-* [Install the {{site.data.keyword.cloud_notm}} CLI ](/docs/cli?topic=cli-getting-started).
+* [Install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started).
 * [Install the `odo` CLI](https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_odo/installing-odo.html){: external}.
-* [Create](/docs/openshift?topic=openshift-getting-started) or identify an existing Kubernetes cluster to use. In the CLI, you can list clusters by running `ibmcloud oc cluster ls`.
+* [Create](/docs/containers?topic=containers-getting-started) or identify an existing Kubernetes cluster to use. In the CLI, you can list clusters by running `ibmcloud oc cluster ls`.
 
 ## Create a microservice
 {: #odo-new-microservice}
@@ -134,7 +135,7 @@ This tutorial is intended for software developers who have some familiarity with
 After you complete the [prerequisites](#odo-prereqs) install the CLI and select a cluster, you can start creating your microservice with `odo`.
 {: shortdesc}
 
-1.  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure)
+1.  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 2.  Verify that the `odo` CLI is able to communicate with your cluster by listing the projects in your cluster. The projects represent Kubernetes namespaces where your apps and other microservice resources run.
     ```
     odo project list

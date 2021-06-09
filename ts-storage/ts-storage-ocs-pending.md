@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2014, 2021
-lastupdated: "2021-06-07"
+  years: 2021, 2021
+lastupdated: "2021-06-08"
 
-keywords: openshift, roks, rhoks, rhos
+keywords: openshift, storage
 
 subcollection: openshift
 content-type: troubleshoot
@@ -92,44 +92,58 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-  
-  
-# Debugging OpenShift Container Storage
-{: #ts-ocs-roks-debug}
 
-**Infrastructure provider**:
-* <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-## OCS device set creation fails due to PVC names exceeding the Kubernetes character limit
-{: #ocs-ts-sc-character-limit}
+# Why are the OCS pods stuck at `Pending`?
+{: #ts-ocs-pods-pending-status}
 
 {: tsSymptoms}
-When you create your OCS storage cluster and you run `oc describe storagecluster <storage-cluster-name>`, you see an error similar to the following.
-
-```sh
-ceph-cluster-controller: failed to reconcile. failed to reconcile cluster "ocs-storagecluster-cephcluster": failed to configure local ceph cluster: failed to create cluster: failed to start ceph osds: 3 failures encountered while running osds in namespace openshift-storage: failed to create "provision" job for node "ocs-deviceset-ibmc-vpc-block-metro-retain-10iops-tier-0-datnv6k". Job.batch "rook-ceph-osd-prepare-aaa000aaa111a1a0e10ba1a11aa1a119" is invalid: [spec.template.spec.volumes[8].name: Invalid value: "ocs-deviceset-ibmc-vpc-block-metro-retain-10iops-tier-0-aaaaa1b-bridge": must be no more than 63 characters
-```
-{: screen}
+When you list pods in the `openshift-storage` namespace with the `oc get pods -n openshift-storage` command, the OCS pods are stuck at `Pending`.
 
 {: tsCauses}
-Kubernetes PVC names must be fewer than 63 characters. If you a have multizone VPC cluster and create your OCS storage cluster by using a `retain` class like the `ibmc-vpc-block-metro-retain-10iops-tier`, the corresponding OCS device set PVCs that are created by using this storage class are assigned names that exceed the 63 character limit.
+To determine why your storage cluster status is stuck at `Pending`, describe the pods that have the status `Pending`. 
+   ```sh 
+   oc describe pod <pod> -n openshift-storage
+   ```
+   {: pre}
+
+In the output, check the `Events` section for the following error:
+   ```
+   "Error: 0/3 nodes are available: 1 node(s) didn't match pod affinity/anti-affinity, 2 node(s) had volume node affinity conflict"
+   ```
+   {: screen}
+
+This error indicates that that the classic or VPC cluster where your OCS storage cluster is installed is a multizone cluster, but the storage classes specified in the `monStorageClassName` or `osdStorageClassName` fields in your CRD have a `VolumeBindingMode` parameter that is set to `Immediate`. Multizone OCS deployments require storage classes that have the `VolumeBindingMode` parameter set to `WaitForFirstConsumer`.
 
 {: tsResolve}
-Create a custom storage class that uses the same configuration as the pre-defined storage class that you want to use, but with a name that does not exceed 63 characters.
+1. [Create custom storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class) with the `VolumeBindingMode` set to `WaitForFirstConsumer`, or choose a pre-exisiting storage class with the same parameters. 
 
-1. Get the YAML configuration of the storage class that you want to use in your OCS storage cluster and save it in a file on your local machine.
-  ```sh
-  oc get sc ibmc-vpc-block-metro-retain-10iops-tier -o yaml
-  ```
-  {: pre}
+2. List the name of your OCS storage cluster. 
+   ```sh
+   oc get ocscluster
+   ```
+   {: pre}
+   **Example output**:
+   ```
+   NAME             AGE
+   ocscluster-vpc   71d
+   ```
+   {: screen}
 
-1. Edit the name of the storage class. Make sure that the name of your custom storage class is fewer than 30 characters to allow for the OCS storage cluster device set IDs to be under the 63 character kubernetes limit. Create the storage class in your cluster.
-  ```sh
-  oc create -f <custom-storage-class.yaml>
-  ```
-  {: pre}
+3. Delete the storage cluster.
+   ```sh
+   oc delete ocscluster <ocs_cluster_name>
+   ```
+   {: pre}
 
-1. Clean up your [OCS deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-cleanup-resources).
+4. Verify that your storage cluster is deleted and is not listed.
+   ```sh
+   oc get ocscluster
+   ```
+   {: pre}
+  
+5. [Re-create the CRD with the pre-existing or custom storage class you chose earlier](/docs/openshift?topic=openshift-ocs-storage-cluster-setup).
 
-1. Create a OCS deployment that uses the custom storage class you created.
+6. [Re-deploy the storage cluster](/docs/openshift?topic=openshift-ocs-storage-cluster-setup).
+
+
