@@ -1,5 +1,4 @@
 ---
-
 copyright:
   years: 2014, 2021
 lastupdated: "2021-06-09"
@@ -95,16 +94,16 @@ content-type: troubleshoot
   
   
 
-# Debugging Portworx failures
-{: #debug_storage_px}
+# Debugging {{site.data.keyword.cos_full_notm}} failures
+{: #debug_storage_cos}
 {: troubleshoot}
 {: support}
 
-Review the options to debug Portworx and find the root causes of any failures.
+Review the options to debug {{site.data.keyword.cos_short}} and find the root causes of any failures.
 {: shortdesc}
 
 ## Checking whether the pod that mounts your storage instance is successfully deployed
-{: #debug_storage_px_deploy}
+{: #debug_storage_cos_deploy}
 
 Follow the steps to review any error messages related to pod deployment.
 {: shortdesc}
@@ -127,10 +126,10 @@ Follow the steps to review any error messages related to pod deployment.
     ```
     {: pre}
 
-4. [Review the Portworx troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_portworx_storage).  
+4. [Review the {{site.data.keyword.cos_short}} troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_object_storage).  
 
 ## Restarting your app pod
-{: #debug_storage_px_restart}
+{: #debug_storage_cos_restart}
 
 Some issues can be resolved by restarting and redeploying your pods. Follow the steps to redeploy a specific pod.
 {: shortdesc}
@@ -178,31 +177,17 @@ Some issues can be resolved by restarting and redeploying your pods. Follow the 
       ```
       {: pre}
 
-## Verifying that the Portworx storage driver and plug-in pods show a status of **Running**
-{: #debug_storage_px_driver_plugin}
+## Verifying that the storage driver and plug-in pods show a status of **Running**
+{: #debug_storage_cos_driver_plugin}
 
 Follow the steps to check the status of your storage driver and plug-in pods and review any error messages.
 {: shortdesc}
 
 1. List the pods in the `kube-system` project.
-    ```sh
-    oc get pods -n kube-system | grep `portworx\|stork` 
-    ```
-    {: pre}
-
-    **Example output**:
-    ```
-    portworx-594rw                          1/1       Running     0          20h
-    portworx-rn6wk                          1/1       Running     0          20h
-    portworx-rx9vf                          1/1       Running     0          20h
-    stork-6b99cf5579-5q6x4                  1/1       Running     0          20h
-    stork-6b99cf5579-slqlr                  1/1       Running     0          20h
-    stork-6b99cf5579-vz9j4                  1/1       Running     0          20h
-    stork-scheduler-7dd8799cc-bl75b         1/1       Running     0          20h
-    stork-scheduler-7dd8799cc-j4rc9         1/1       Running     0          20h
-    stork-scheduler-7dd8799cc-knjwt         1/1       Running     0          20h
-    ```
-    {: screen}
+      ```sh
+      oc get pods -n kube-system
+      ```
+      {: pre}
 
 1. If the storage driver and plug-in pods do not show a **Running** status, get more details of the pod to find the root cause. Depending on the status of your pod, you might not be able to execute all of the following commands.
    1. Get the names of the containers that run in the driver pod.
@@ -221,12 +206,62 @@ Follow the steps to check the status of your storage driver and plug-in pods and
       ```sh
       cat logs.txt
       ```
-      {: pre} 
+      {: pre}
 
-3. Check the latest logs for any error messages. [Review the Portworx troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_portworx_storage).
+3. Check the latest logs for any error messages. [Review the {{site.data.keyword.cos_short}} troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_object_storage).
 
+## Checking whether your PVC is successfully provisioned
+{: #debug_storage_cos_pvc}
+
+Follow the steps to check the status of your PVC and review any error messages.
+{: shortdesc}
+
+1. Check the status of your PVC. A PVC is successfully provisioned if the PVC shows a status of **Bound**.
+     ```sh
+     oc get pvc
+     ```
+     {: pre}
+
+     * If the PVC shows a status of **Bound**, the PVC is successfully provisioned.
+          **Example output**:
+          ```
+          NAME         STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS                AGE
+          silver-pvc   Bound     pvc-4b881a6b-ada8-4a44-b568-fe909107d756   24Gi       RWX            ibmc-file-silver            7m29s
+          ```
+          {: screen}
+    
+     * If the status of the PVC shows **Pending**, describe the PVC and review the **Events** section of the output for any warnings or error messages. Note that PVCs that reference storage classes with the volume binding mode set to `WaitForFirstConsumer` remain **Pending** until an app pod is deployed that uses the PVC.
+
+          ```sh
+          oc describe pvc <pvc_name>
+          ```
+          {: pre}
+          
+          **Example output**:
+          ```
+          Name:          local-pvc
+          Namespace:     default
+          StorageClass:  sat-local-file-gold
+          Status:        Pending
+          Volume:        
+          Labels:        <none>
+          Annotations:   <none>
+          Finalizers:    [kubernetes.io/pvc-protection]
+          Capacity:      
+          Access Modes:  
+          VolumeMode:    Filesystem
+          Mounted By:    <none>
+          Events:
+          Type     Reason              Age                 From                         Message
+          ----     ------              ----                ----                         -------
+          Warning  ProvisioningFailed  60s (x42 over 11m)  persistentvolume-controller  storageclass.storage.k8s.io "sat-local-file-gold" not found
+          ```
+          {: screen}
+
+4. [Review the {{site.data.keyword.cos_short}} troubleshooting documentation for steps to resolve common {{site.data.keyword.cos_short}} PVC errors](/docs/openshift?topic=openshift-sitemap#sitemap_object_storage).
+  
 ## Checking and updating the oc CLI version
-{: #debug_storage_px_cli}
+{: #debug_storage_cos_cli}
 
 If you use a `oc` CLI version that does not match at least the major.minor version of your cluster, you might experience unexpected results. For example, [Kubernetes does not support](https://kubernetes.io/releases/version-skew-policy/){: external} `oc` client versions that are 2 or more versions apart from the server version (n +/- 2).
 {: shortdesc}
@@ -248,16 +283,9 @@ If you use a `oc` CLI version that does not match at least the major.minor versi
 
 2. If the `oc` CLI versions on your local machine and your cluster do not match, either [update your cluster](/docs/openshift?topic=openshift-update) or [install a different CLI version on your local machine](/docs/openshift?topic=openshift-openshift-cli#cs_cli_upgrade).
 
-## Updating Helm charts
-{: #debug_storage_px_helm}
+## Checking and updating the {{site.data.keyword.cos_short}} plug-in
+{: #debug_storage_cos_plugin}
 
-   1. Find the [latest Helm chart version](https://github.com/IBM/charts/tree/master/community/portworx){: external} that is available.
+[Follow the steps to update the {{site.data.keyword.cos_short}} plug-in](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).
 
-   2. List the installed Helm charts in your cluster and compare the version that you installed with the version that is available.
-      ```sh
-      helm list --all-namespaces
-      ```
-      {: pre}
-
-   3. If a more recent version is available, install this version. For instructions, see [Updating Portworx in your cluster](/docs/openshift?topic=openshift-portworx#update_portworx).
 
