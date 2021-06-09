@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2021
-lastupdated: "2021-06-08"
+lastupdated: "2021-06-09"
 
 keywords: openshift, storage
 
@@ -114,7 +114,7 @@ The catalog source for your OCS storage cluster is unhealthy.
     ```
     {: pre}
     
-2. Wait a few minutes and verify that the pods regenerate. If the pods regenerate, the OCS installation proceeds. If the pods do not regenerate, [contact OCS support by raising a case in the {{site.data.keyword.redhat_notm}} customer portal](/docs/openshift?topic=ocs-error-unresolved).
+2. Wait a few minutes and verify that the pods regenerate. If the pods regenerate, the OCS installation proceeds. If the pods do not regenerate, [contact OCS support by raising a case in the {{site.data.keyword.redhat_notm}} customer portal](/docs/openshift?topic=openshift-ocs-error-unresolved).
     ```sh
     oc get pods,catsrc -n openshift-marketplace
     ```

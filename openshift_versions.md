@@ -92,7 +92,7 @@ subcollection: openshift
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
   
- 
+
 
 
 # Version information and update actions
@@ -213,7 +213,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
   <td>Apr 2022 `†`</td>
 </tr>
 <tr>
-  <td><img src="images/checkmark-warning.png" align="left" width="32" style="width:32px;" alt="This version is deprecated."/></td>
+  <td><img src="images/warning-filled.png" align="left" width="32" style="width:32px;" alt="This version is deprecated."/></td>
   <td>4.5 / 1.18</td>
   <td>13 Oct 2020</td>
   <td>01 Sep 2021 `†`</td>
