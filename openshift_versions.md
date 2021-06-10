@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-06-10"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -244,7 +244,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 ## {{site.data.keyword.openshiftshort}} 4.7
 {: #ocp47}
 
-
+<img src="images/certified_kubernetes_1x20.png" style="padding-right: 10px;" align="left" alt="This badge indicates Kubernetes version 1.20 certification for {{site.data.keyword.openshiftlong_notm}}."/> {{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.20 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
 Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.openshiftshort}} 4.6 to {{site.data.keyword.openshiftshort}} 4.7.
 {: shortdesc}
