@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-06-10"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -91,8 +91,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
-
+  
+  
 
 <style>
     <!--
@@ -335,7 +335,7 @@ Create a cluster with infrastructure, network, and availability setups that are 
     3. [Choose the scope of user access to cluster instances, {{site.data.keyword.openshiftshort}} project, or resource groups](/docs/openshift?topic=openshift-users#resource_groups).
   2. Allow users to create apps or audit your cluster activity by [assigning cluster access](/docs/openshift?topic=openshift-users#platform). To see specific permissions and actions that you can grant users, see the [user access permissions reference](/docs/openshift?topic=openshift-access_reference).
 
-</br>Need help? Check out [Troubleshooting clusters and masters](/docs/openshift?topic=openshift-debug_clusters) and [Troubleshooting worker nodes](/docs/openshift?topic=openshift-debug_worker_nodes).
+</br>Need help? Check out [Troubleshooting clusters and masters](/docs/containers?topic=containers-debug_clusters) and [Troubleshooting worker nodes](/docs/containers?topic=containers-debug_worker_nodes).
 
 <br />
 
@@ -409,7 +409,7 @@ Plan and add highly available persistent storage based on your app requirements,
 2. **Requirements**: Determine your [requirements for a storage solution](/docs/openshift?topic=openshift-storage_planning).
 3. **Choose a solution**: Using your storage requirements, choose a storage solution by comparing [non-persistent](/docs/openshift?topic=openshift-storage_planning#non_persistent_overview), [single-zone persistent](/docs/openshift?topic=openshift-storage_planning#single_zone_persistent_storage), or [multizone persistent](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview) storage.
 
-</br>Need help? Check out [Troubleshooting persistent storage](/docs/openshift?topic=openshift-debug_storage).
+</br>Need help? Check out the troubleshooting page for your persistent storage solution.
 
 <br />
 
@@ -420,7 +420,7 @@ Enhance cluster capabilities by integrating various external services and catalo
 {: shortdesc}
 
 1. **Review supported integrations**:
-  * [All supported integrations](/docs/openshift?topic=openshift-supported_integrations)
+  * [All supported integrations](/docs/containers?topic=containers-supported_integrations)
   * [{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-service-partners)
   * [{{site.data.keyword.cloud_notm}} services and third-party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations)
 2. **Add services to your cluster**:
@@ -428,7 +428,7 @@ Enhance cluster capabilities by integrating various external services and catalo
   * [Adding services by using Operators](/docs/openshift?topic=openshift-operators)
   * [Adding services by using {{site.data.keyword.cloud_notm}} service binding](/docs/openshift?topic=openshift-service-binding)
 
-</br>Need help? Check out [Troubleshooting apps and integrations](/docs/openshift?topic=openshift-debug_worker_nodes).
+</br>Need help? Check out [Troubleshooting apps and integrations](/docs/containers?topic=containers-debug_worker_nodes).
 
 <br />
 
@@ -442,7 +442,9 @@ Manage your cluster and worker nodes through each phase of the cluster lifecycle
 * **Updating**: Keep your environment up-to-date by frequently [updating clusters, worker nodes, and cluster components](/docs/openshift?topic=openshift-update). While you update, refer to these version reference pages:
   * [Version information and update actions](/docs/openshift?topic=openshift-openshift_versions)
   * [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
-  * [Fluentd and Ingress ALB changelog](/docs/openshift?topic=openshift-cluster-add-ons-changelog)
+  * [Fluentd and Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog)
 * **Removing**: [Remove clusters and clean up related resources](/docs/openshift?topic=openshift-remove).
 
-</br>Need help? Check out troubleshooting [clusters and masters](/docs/openshift?topic=openshift-debug_clusters), [worker nodes](/docs/openshift?topic=openshift-debug_worker_nodes), or the [cluster autoscaler](/docs/openshift?topic=openshift-debug_cluster_autoscaler).
+</br>Need help? Check out troubleshooting [clusters and masters](/docs/containers?topic=containers-debug_clusters), [worker nodes](/docs/containers?topic=containers-debug_worker_nodes), or the [cluster autoscaler](/docs/containers?topic=containers-debug_cluster_autoscaler).
+
+
