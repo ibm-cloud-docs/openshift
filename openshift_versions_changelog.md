@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-06-10"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -107,7 +107,51 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
 
+## Version 4.7 changelog
+{: #version-47}
 
+Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.7 patch updates.
+{: shortdesc}
+
+### Changelog for worker node fix pack 4.7.13_1521_openshift, released 9 June 2021
+{: #4713_1521}
+
+The following table shows the changes that are included in the worker node fix pack `4.7.13_1521_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| HA proxy | 26c5cc | 700dc6 | Updated the image for [CVE-2021-27219](https://nvd.nist.gov/vuln/detail/CVE-2021-27219){: external}.|
+|{{site.data.keyword.openshiftshort}} | 4.6.31 | 4.7.13 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-6-release-notes.html#ocp-4-7-13){: external}.|
+| TCP `keepalive` optimization for VPC | N/A | N/A | Set the `net.ipv4.tcp_keepalive_time` setting to 180 seconds for compatibility with VPC gateways. |
+| RHEL 7 Packages | N/A | N/A | Updated worker node image with package updates for [CVE-2021-27219](https://nvd.nist.gov/vuln/detail/CVE-2021-27219){: external}.|
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.6.31_1545_openshift" caption-side="top"}
+
+### Changelog for master fix pack 4.7.12_1520_openshift, released 9 June 2021
+{: #4712_1520}
+
+The following table shows the changes that are included in the master fix pack patch update `4.7.12_1520_openshift`. Master patch updates are applied automatically. 
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Calico | v3.17.2 | v3.19.1 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. |
+| Calico Operator | v1.13.4 | v1.17.3 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.17.3){: external}. |
+| Gateway-enabled cluster controller | 1352 | 1348 | Updated to run as a non-root user by default, with privileged escalation as needed. |
+| IBM Calico extension | 689 | 695 | Updated the universal base image (UBI) to version 8.4 to resolve CVEs. |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} driver and plug-in | v2.0.4 | v2.0.6 | Updated UBI minimal base image to version 8.4 to resolve CVEs. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.19.11-3 | v1.20.7-4 | Updated to support the Kubernetes 1.20.7 release, use `calicoctl` version 3.17.3 and implement additional IBM security controls. **Unsupported**: Although the Kubernetes [SCTP protocol](https://kubernetes.io/docs/concepts/services-networking/service/#sctp){: external} and [application protocol](https://kubernetes.io/docs/concepts/services-networking/service/#application-protocol){: external} features are generally available in the community release, creating load balancers that use these protocols is not supported in Red Hat OpenShift on {{site.data.keyword.cloud_notm}} clusters. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 392 | 393 | Updated UBI base image to version 8.4 to resolve CVEs. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | 63cd064 | cfd8ae9 | Update to use `Go` version 1.16.4. Updated UBI base image to version 8.4 to resolve CVEs. |
+| {{site.data.keyword.openshiftshort}} | 4.6.28 (master) | 4.7.12 (master) | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-12){: external}. |
+| {{site.data.keyword.openshiftshort}} configuration | N/A | N/A | Updated the [feature gate configuration](https://cloud.ibm.com/docs/openshift?topic=openshift-service-settings#feature-gates){: external}. |
+| {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.6.0-20210512 | v4.7.0-20210512 | See the [{{site.data.keyword.openshiftlong_notm}} on {{site.data.keyword.cloud_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20210512){: external}. |
+| OpenVPN Operator image | v1.3.1 | v1.3.2 | Updated ansible operator base image to version 1.7.2 to resolve CVEs and updaged image to implement additional IBM security controls. |
+| {{site.data.keyword.openshiftlong_notm}}  Metrics Server | v4.6.0-20210512 | v4.7.0-20210512 | See the [{{site.data.keyword.openshiftlong_notm}} on {{site.data.keyword.cloud_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20210512){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}  toolkit | 4.6.0+20210512 | 4.7.0+20210512 | See the [{{site.data.keyword.openshiftlong_notm}} on {{site.data.keyword.cloud_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20210512){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.6.28_1543_openshift" caption-side="top"}
 
 ## Version 4.6 changelog
 {: #version-46}

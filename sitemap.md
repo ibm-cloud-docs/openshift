@@ -1675,6 +1675,9 @@ subcollection: openshift
   * [{{site.data.keyword.openshiftshort}} 4.3 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#ocp43)
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
+* [Version 4.7 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-47)
+  * [Changelog for worker node fix pack 4.7.13_1521_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4713_1521)
+  * [Changelog for master fix pack 4.7.12_1520_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4712_1520)
 * [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
   * [Changelog for worker node fix pack 4.6.31_1545_openshift, released 7 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4631_1545)
   * [Changelog for worker node fix pack 4.6.29_1544_openshift, released 24 May 2021](/docs/openshift?topic=openshift-openshift_changelog#4629_1544)
