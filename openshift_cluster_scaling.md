@@ -764,7 +764,7 @@ Before you can rebalance or resize your worker pool, you must remove the worker 
 
 1. Edit `iks-ca-configmap` and disable the worker pool that you want to resize or rebalance by removing it from the `workerPoolsConfigStatus` section.
   ```sh
-  {[kubetcl]} edit cm -n kube-system iks-ca-configmap
+  oc edit cm -n kube-system iks-ca-configmap
   ```
   {: pre}
 
@@ -783,7 +783,7 @@ Before you can rebalance or resize your worker pool, you must remove the worker 
 6. Add the worker pool to the `iks-ca-configmap`.
   2. Edit `iks-ca-configmap` and disable the worker pool that you want to update by removing it from the `workerPoolsConfigStatus` section.
   ```sh
-  {[kubetcl]} edit cm -n kube-system iks-ca-configmap
+  oc edit cm -n kube-system iks-ca-configmap
   ```
   {: pre}
 
