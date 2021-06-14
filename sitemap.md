@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-06-10"
+lastupdated: "2021-06-14"
 
 keywords: openshift
 subcollection: openshift
@@ -530,6 +530,7 @@ subcollection: openshift
 * [Deploying apps to your autoscaled worker pools](/docs/openshift?topic=openshift-ca#ca_limit_pool)
 * [Scaling up worker nodes before the worker pool has insufficient resources](/docs/openshift?topic=openshift-ca#ca_scaleup)
 * [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-ca#ca_addon_up)
+* [Rebalancing or resizing autoscaled worker pools](/docs/openshift?topic=openshift-ca#ca_update_worker_node_pool)
 * [Upgrading a cluster autoscaler Helm chart release](/docs/openshift?topic=openshift-ca#ca_helm_up)
   * [Prerequisites](/docs/openshift?topic=openshift-ca#ca_helm_up_prereqs)
   * [Upgrading the cluster autoscaler release version](/docs/openshift?topic=openshift-ca#ca_helm_up_general)
