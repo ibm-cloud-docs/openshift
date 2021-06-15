@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-06-15"
 
 keywords: openshift, roks
 
@@ -213,10 +213,10 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 
 <br />
 
-## Benchmark 1.5 results for {{site.data.keyword.openshiftshort}} version 4.6
+## Benchmark 1.5 results for {{site.data.keyword.openshiftshort}} versions 4.6 and 4.7
 {: #cis-benchmark-15}
 
-Review how {{site.data.keyword.openshiftlong_notm}} complies with the version 1.5 CIS Kubernetes benchmark for clusters that run {{site.data.keyword.openshiftshort}} version 4.6. For help understanding the benchmark, see [Using the benchmark](#cis-benchmark-use).
+Review how {{site.data.keyword.openshiftlong_notm}} complies with the version 1.5 CIS Kubernetes benchmark for clusters that run {{site.data.keyword.openshiftshort}} versions 4.6 and 4.7. For help understanding the benchmark, see [Using the benchmark](#cis-benchmark-use).
 {: shortdesc}
 
 * [Section 1: Master node security configuration](#cis-benchmark-15-1)

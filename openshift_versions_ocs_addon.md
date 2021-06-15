@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-06-15"
 
 keywords: ocs, add-on, changelog
 
@@ -103,7 +103,7 @@ View information for updates to the OpenShift Container Storage} add-on in your 
 The default version of the OpenShift Container Storage add-on is `4.7.0`. If you have a cluster version other than the default, specify the `--version <version>` flag when you enable the add-on.
 {: note}
 
-Refer to the following tables for a summary of changes for each version of the [OpenShift Container Storage} add-on](/docs/containers?topic=openshift-ocs-prep).
+Refer to the following tables for a summary of changes for each version of the [OpenShift Container Storage} add-on](/docs/openshift?topic=openshift-ocs-storage-prep).
 
 | OpenShift Container Storage} add-on | Supported? | {{site.data.keyword.openshiftshort}} version support |
 | -------------------- | -----------|--------------------------- |
@@ -111,5 +111,6 @@ Refer to the following tables for a summary of changes for each version of the [
 | 4.6.0 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | 4.6 |
 {: caption="OpenShift Container Storage add-on versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the add-on version is supported for."}
+
 
 

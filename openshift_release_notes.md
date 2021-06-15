@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-06-15"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -110,6 +110,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 15 June 2021 | <ul><li>**New! Private VPC NLB**: You can now create [private Network Load Balancers for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb_priv) to expose apps in clusters that run {{site.data.keyword.openshiftshort}} version 4.6 and later.</li></ul> |
 | 09 June 2021 | <ul><li>**New! {{site.data.keyword.openshiftshort}} 4.7**: You can create or [update](/docs/openshift?topic=openshift-openshift_versions#ocp47) your cluster to {{site.data.keyword.openshiftshort}} version 4.7, which includes Kubernetes 1.20. With {{site.data.keyword.openshiftshort}} 4.7, you get the latest stable enhancements from the community, as well as beta access to select features such as [API server priority](/docs/openshift?topic=openshift-kubeapi-priority). You also get enhancements to the {{site.data.keyword.cloud_notm}} product, such as a refreshed user interface experience. For more information, see the [blog announcement](https://www.ibm.com/cloud/blog/announcements/openshift-version-47-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.</li><li>**Deprecated {{site.data.keyword.openshiftshort}} 4.5**: With the release of {{site.data.keyword.openshiftshort}} 4.7, clusters that run version 4.5 are deprecated, with a tentative unsupported date of 1 September 2021. Update your cluster to at least [version 4.6](/docs/openshift?topic=openshift-openshift_versions#ocp46) as soon as possible.</li><li>**Expanded Troubleshooting**: You can now find troubleshooting steps for {{site.data.keyword.cloud_notm}} persistent storage in the following pages: <ul><li>[{{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-debug_storage_file)</li><li>[{{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-debug_storage_block)</li><li>[{{site.data.keyword.cos_short}}](/docs/openshift?topic=openshift-debug_storage_cos)</li><li>[Portworx](/docs/openshift?topic=openshift-debug_storage_px)</li><li>[OpenShift Container Storage](/docs/openshift?topic=openshift-debug_storage_ocs)</li></ul></ul>|
 | 07 June 2021 | **Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.31_1545_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4631_1545), [`4.5.40_1541_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4540_1541), and [`3.11.439_1592_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311439_1592).|
 | 03 June 2021 | **{{site.data.keyword.cos_full_notm}} plug-in**: Version `2.0.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in changelog](/docs/openshift?topic=openshift-cos_plugin_changelog). |
