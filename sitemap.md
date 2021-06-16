@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-06-15"
+lastupdated: "2021-06-16"
 
 keywords: openshift
 subcollection: openshift
@@ -956,6 +956,7 @@ subcollection: openshift
   * [Traffic flow in a multizone VPC cluster with a public cloud service endpoint](/docs/openshift?topic=openshift-openshift_routes#route_vpc)
   * [Traffic flow in a multizone VPC cluster with a private cloud service endpoint only](/docs/openshift?topic=openshift-openshift_routes#route_vpc_private)
 * [Route types and TLS termination](/docs/openshift?topic=openshift-openshift_routes#route-types)
+* [Router health checks](/docs/openshift?topic=openshift-openshift_routes#health-checks)
 * [Setting up public routes](/docs/openshift?topic=openshift-openshift_routes#routes-setup)
   * [Setting up public routes in classic clusters or in VPC clusters with a public cloud service endpoint](/docs/openshift?topic=openshift-openshift_routes#routes-public-classic)
   * [Setting up public routes in VPC clusters with a private cloud service endpoint only](/docs/openshift?topic=openshift-openshift_routes#routes-public-vpc-privse)
