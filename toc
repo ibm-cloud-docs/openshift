@@ -12,7 +12,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_overview.md
         openshift_why.md
         openshift_providers.md
-        openshift_tech.md
+        openshift_responsibilities.md
 
     {: .topicgroup}
     Use cases
@@ -27,12 +27,6 @@ Red Hat OpenShift on IBM Cloud
     Learning paths
         openshift_path_admin.md
         openshift_path_dev.md
-
-    {: .topicgroup}
-    Cluster strategy
-        openshift_responsibilities.md
-        openshift_secure.md
-    {: .navgroup-end}
 
     {: .navgroup id="tutorial"}
     [Tutorials library for OpenShift](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20)
@@ -82,25 +76,27 @@ Red Hat OpenShift on IBM Cloud
             openshift_costs_reserved.md
 
     {: .topicgroup}
-    Securing cluster workloads
-        openshift_encrypt.md
-        openshift_scc.md
-        openshift_pod_priority.md
-        openshift_kubeapi_priority.md
-
-    {: .topicgroup}
-    Securing the cluster network
+    Enhancing security
+        openshift_secure.md
+        openshift_tech.md
 
         {: .topicgroup}
-        Classic clusters
+        Securing cluster workloads
+            openshift_encrypt.md
+            openshift_scc.md
+            openshift_pod_priority.md
+            openshift_kubeapi_priority.md
+
+        {: .topicgroup}
+        Securing the cluster network
             openshift_firewall.md
             openshift_edge.md
             openshift_network_policy.md
-
-        {: .topicgroup}
-        VPC clusters
             openshift_vpc_network_policy.md
             openshift_vpc_firewall.md
+
+        openshift_manage_scc.md
+        openshift_compliance_operator.md
 
     {: .topicgroup}
     Managing the cluster network
@@ -219,7 +215,6 @@ Red Hat OpenShift on IBM Cloud
         openshift_versions.md
         openshift_versions_changelog.md
         openshift_benchmarks.md
-        openshift_compliance_operator.md
         openshift_versions_autoscaler.md
         openshift_versions_vpc_block_addon.md
         openshift_versions_object.md
