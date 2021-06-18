@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-06-16"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -91,7 +92,7 @@ subcollection: openshift
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
   
-  
+
 
 # Exposing apps with routes in {{site.data.keyword.openshiftshort}} 4
 {: #openshift_routes}
@@ -223,6 +224,19 @@ The following diagram shows how a router directs network traffic from private ne
 If you do not need to use a custom domain, you can use an IBM-provided route hostname in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
 
 <br />
+
+## Router health checks
+{: #health-checks}
+
+Allow access through network policies or other firewall rules so that your router services are reachable by the router health check.
+{: shortdesc}
+
+**Classic**: If you use Calico pre-DNAT network policies or another custom firewall to block incoming traffic to your cluster, you must allow inbound access on port 80 from the {{site.data.keyword.openshiftshort}} control plane and Cloudflare's IPv4 IP addresses to the IP addresses of your router services so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers. For example, if you use Calico policies, [create a Calico pre-DNAT policy](/docs/openshift?topic=openshift-network_policies#isolate_workers) to allow inbound access to your routers from [Cloudflare's IPv4 IP addresses](https://www.cloudflare.com/ips/){: external} that are used to check the health of your routers on port 80 and [the IP addresses in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist). Continue to the next step to get the router service IP addresses.
+
+**VPC**: If you set up [VPC security groups](/docs/openshift?topic=openshift-vpc-network-policy#security_groups) or [VPC access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-network-policy#acls) to secure your cluster network, ensure that you create the rules to allow the necessary traffic from the {{site.data.keyword.openshiftshort}} control plane IP addresses and Cloudflare IPv4 IP addresses. Alternatively, to allow the inbound traffic for router healthchecks, you can create one rule to allow all incoming traffic on port 80.
+
+On 05 July 2021, the DNS provider is changed from Cloudflare to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains for all clusters in {{site.data.keyword.openshiftlong_notm}}. If you currently allow inbound traffic from the Cloudflare source IP addresses, you must also allow inbound traffic from the [Akamai source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} before 05 July. After the migration, you can remove the Cloudflare IP address rules. For more information, see the [announcement](https://cloud.ibm.com/notifications?selected=1621697674798){: external}.
+{: important}
 
 ## Setting up public routes
 {: #routes-setup}
