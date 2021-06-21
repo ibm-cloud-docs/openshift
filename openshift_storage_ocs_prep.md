@@ -141,7 +141,7 @@ Before you install ODF in your VPC cluster, you must make sure that the followin
 <br />
 
 ## {{site.data.keyword.satelliteshort}}: Planning your setup
-{: #ocs-vpc-plan}
+{: #ocs-sat-plan}
 Before you install ODF in your {{site.data.keyword.satelliteshort}} cluster, each cluster must meet the following prerequisite conditions.
 {: shortdesc}
 

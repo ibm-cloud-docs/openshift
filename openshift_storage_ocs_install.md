@@ -193,7 +193,7 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
     ```
     {: pre}
 
-**Next steps**: Install ODF by using the managed add-on from the [command line](#install-ocs-cli) or the [console](#install-ocs-console).
+**Next steps**: Install ODF by using the managed add-on from the [command line](#install-odf-cli) or the [console](#install-ocs-console).
 
 
 <br />

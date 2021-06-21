@@ -1273,7 +1273,7 @@ subcollection: openshift
 
 * [VPC: Planning your setup](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-vpc-plan)
 
-* [{{site.data.keyword.satelliteshort}}: Planning your setup](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-vpc-plan)
+* [{{site.data.keyword.satelliteshort}}: Planning your setup](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-sat-plan)
 
 * [Classic: Planning your setup](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-plan)
     * [Classic: Preparing your cluster for an OpenShift Data Foundation installation](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-cluster-prepare-classic)
@@ -1847,7 +1847,7 @@ subcollection: openshift
 * [Changelog for version 2.0.6](/docs/openshift?topic=openshift-cos_plugin_changelog#0206_object_plugin)
 * [Changelog for version 2.0.5](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_object_plugin)
 
-[OpenShift Data Foundation} add-on changelog](/docs/openshift?topic=openshift-ocs_addon_changelog)
+[OpenShift Data Foundation add-on changelog](/docs/openshift?topic=openshift-odf_addon_changelog)
 
 [Back up and restore Helm chart](/docs/openshift?topic=openshift-backup_restore_changelog)
 * [Changelog for 1.0.5](/docs/openshift?topic=openshift-backup_restore_changelog#0105_br_chart)

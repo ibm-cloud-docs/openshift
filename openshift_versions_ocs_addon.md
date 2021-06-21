@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2021
 lastupdated: "2021-06-21"
 
-keywords: ocs, add-on, changelog
+keywords: odf, openshift data foundation add-on, changelog
 
 subcollection: openshift, container storage
 
@@ -94,8 +94,8 @@ subcollection: openshift, container storage
   
   
 
-# OpenShift Data Foundation} add-on changelog
-{: #ocs_addon_changelog}
+# OpenShift Data Foundation add-on changelog
+{: #odf_addon_changelog}
 
 View information for updates to the OpenShift Data Foundation} add-on in your {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
@@ -105,7 +105,7 @@ The default version of the OpenShift Data Foundation add-on is 4.7.0. If you hav
 
 Refer to the following tables for a summary of changes for each version of the [OpenShift Data Foundation} add-on](/docs/containers?topic=openshift-ocs-prep).
 
-| OpenShift Data Foundation} add-on | Supported? | {{site.data.keyword.openshiftshort}} version support |
+| OpenShift Data Foundation add-on | Supported? | {{site.data.keyword.openshiftshort}} version support |
 | -------------------- | -----------|--------------------------- |
 | 4.7.0 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | 4.7 |
 | 4.6.0 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | 4.6 |
