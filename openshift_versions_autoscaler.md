@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-03"
+lastupdated: "2021-06-21"
 
 keywords: autoscaler, add-on, autoscaler changelog
 
@@ -109,8 +109,8 @@ Version `1.0.1` of {{site.data.keyword.block_storage_is_short}} add-on is deprec
 
 | Cluster autoscaler add-on version | Supported? | {{site.data.keyword.openshiftshort}} version support |
 | -------------------- | -----------|--------------------------- |
-| 1.0.2 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6</li></ul> |
-| 1.0.1 | | {{site.data.keyword.openshiftshort}} 4.3 - 4.6</li></ul> |
+| 1.0.2 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
+| 1.0.1 | | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
 {: summary="The rows are read from left to right. The first column is the cluster autoscaler add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the cluster autoscaler version is supported for."}
 
 
