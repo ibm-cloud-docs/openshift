@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-06-21"
 
-keywords: openshift, openshift container storage, storage classes
+keywords: openshift, openshift data foundation, openshift container storage, storage classes
 
 subcollection: openshift
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -96,10 +97,10 @@ subcollection: openshift
 # Storage class reference
 {: #ocs-sc-ref}
 
-Review the following OCS storage classes.
+Review the following ODF storage classes.
 {: shortdesc}
 
-The OCS storage classes all support dynamic provisioning and are multizone capable.
+The ODF storage classes all support dynamic provisioning and are multizone capable.
 {: note}
 
 | Feature | Description |

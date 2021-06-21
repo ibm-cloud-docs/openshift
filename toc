@@ -172,7 +172,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_storage_portworx.md
 
         {: topicgroup}
-        Storing data on OpenShift Container Storage
+        Storing data on OpenShift Data Foundation
             openshift_storage_ocs_prep.md
             openshift_storage_ocs_install.md
             openshift_storage_ocs_storagecluster.md
@@ -380,7 +380,7 @@ Red Hat OpenShift on IBM Cloud
             ts-storage/ts-storage-px-encryption-fails.md
 
         {: .topicgroup}
-        OpenShift Container Storage
+        OpenShift Data Foundation
             ts-storage/ts-storage-debug-ocs.md
             [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions)
             ts-storage/ts-ocs-storageclass.md

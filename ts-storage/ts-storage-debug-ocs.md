@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-06-21"
 
 keywords: file, debug, help
 
@@ -94,12 +94,12 @@ content-type: troubleshoot
   
   
 
-# Debugging OpenShift Container Storage failures
+# Debugging OpenShift Data Foundation failures
 {: #debug_storage_ocs}
 {: troubleshoot}
 {: support}
 
-Review the options to debug OCS and find the root causes of any failures.
+Review the options to debug ODF and find the root causes of any failures.
 {: shortdesc}
 
 ## Checking whether the pod that mounts your storage instance is successfully deployed
@@ -126,7 +126,7 @@ Follow the steps to review any error messages related to pod deployment.
     ```
     {: pre}
 
-1. [Review the OCS troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_openshift_container_storage).  
+1. [Review the ODF troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_openshift_container_storage).  
 
 ## Restarting your app pod
 {: #debug_storage_ocs_restart}
@@ -208,7 +208,7 @@ Follow the steps to check the status of your storage driver and plug-in pods and
       ```
       {: pre}
 
-1. Check the latest logs for any error messages. [Review the OCS troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_openshift_container_storage).
+1. Check the latest logs for any error messages. [Review the ODF troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_openshift_container_storage).
   
 ## Checking and updating the oc CLI version
 {: #debug_storage_ocs_cli}
@@ -233,13 +233,13 @@ If you use a `oc` CLI version that does not match at least the major.minor versi
 
 2. If the `oc` CLI versions on your local machine and your cluster do not match, either [update your cluster](/docs/openshift?topic=openshift-update) or [install a different CLI version on your local machine](/docs/openshift?topic=openshift-openshift-cli#cs_cli_upgrade).
 
-## Debugging your OCS resources 
+## Debugging your ODF resources 
 {: #debug_storage_ocs_cluster}
 
-Describe your OCS resources and review the command outputs for any error messages.
+Describe your ODF resources and review the command outputs for any error messages.
 {: shortdesc}
 
-1. List the name of your OCS cluster. 
+1. List the name of your ODF cluster. 
     ```sh
     oc get ocscluster
     ```
@@ -257,7 +257,7 @@ Describe your OCS resources and review the command outputs for any error message
     ```
     {:pre}
 
-1. List the OCS pods in the `kube-system` namespace and verify that they are `Running.`
+1. List the ODF pods in the `kube-system` namespace and verify that they are `Running.`
     ```sh
     oc get pods -n kube-system
     ```
@@ -298,7 +298,7 @@ Describe your OCS resources and review the command outputs for any error message
     ```
     {: pre}
 
-1. [Review the OCS trouble shooting documentation for steps to solve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_openshift_container_storage). 
+1. [Review the ODF trouble shooting documentation for steps to solve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_openshift_container_storage). 
 
 
 

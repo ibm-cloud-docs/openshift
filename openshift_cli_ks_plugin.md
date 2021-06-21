@@ -333,14 +333,14 @@ ibmcloud oc cluster addon enable kube-terminal --cluster CLUSTER [--version VERS
 #### `ibmcloud oc cluster addon enable openshift-container-storage`
 {: #cs_cluster_addon_enable_openshift-container-storage}
 
-Enable the [OCS](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-addon) add-on.
+Enable the [OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-addon) add-on.
 {: shortdesc}
 
-The OpenShift Container Storage add-on is available as a technology preview and might change without prior notice. Do not use this add-on for production workloads.
+The OpenShift Data Foundation add-on is available as a technology preview and might change without prior notice. Do not use this add-on for production workloads.
 {: preview}
 
 ```sh
-ibmcloud oc cluster addon enable openshift-container-storage [-f] [-q] [--version VERSION]
+ibmcloud oc cluster addon enable openshift-container-storage [-f] [--param PARAM]</staging cli-addon> [-q] [--version VERSION]
 ```
 {: pre}
 
@@ -357,6 +357,9 @@ ibmcloud oc cluster addon enable openshift-container-storage [-f] [-q] [--versio
 
 <dt><code>-f</code></dt>
 <dd>Optional: Force the command to run with no user prompts.</dd>
+
+<dt><code>--param <em>PARAM</em></code></dt>
+<dd>Optional: Specify an installation setting. To see available settings, run `ibmcloud oc cluster addon options --addon openshift-container-storage`.</dd></staging cli-addon>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -394,6 +397,40 @@ ibmcloud oc cluster addon enable static-route --cluster CLUSTER [--version VERSI
 </br>
 
 
+### `ibmcloud oc cluster addon get`
+{: #cs_cluster_addon_get}
+
+View the details of an installed add-on.
+{: shortdesc}
+
+```sh
+ibmcloud oc get --addon ADDON --cluster CLUSTER [--output OUTPUT] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+
+**Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>--addon <em>ADDON</em></code></dt>
+<dd>Required: The name of the addon. To list installed add-ons, run `ibmcloud oc cluster addon ls`.</dd>
+
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>Required: The name or ID of the cluster.</dd>
+
+<dt><code>--output json</code></dt>
+<dd>Optional: Prints the command output in JSON format.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+</dl>
+
+</br></staging cli-addon>
+
 ### `ibmcloud oc cluster addon ls`
 {: #cs_cluster_addons}
 
@@ -419,6 +456,40 @@ ibmcloud oc cluster addon ls --cluster CLUSTER
 <dt><code>--output json</code></dt>
 <dd>Optional: Prints the command output in JSON format.</dd>
 </dl>
+
+### `ibmcloud oc cluster addon options`
+{: #cs_cluster_addon_options}
+
+Before you enable an add-on, view its installation options.
+{: shortdesc}
+
+```sh
+ibmcloud oc cluster addon options --addon ADDON [--output OUTPUT] [-q] [--version VERSION]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+
+**Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>--addon <em>ADDON</em></code></dt>
+<dd>Required: The name of the addon. To list available add-ons, run `ibmcloud oc cluster addon versions`.</dd>
+
+<dt><code>--output json</code></dt>
+<dd>Optional: Prints the command output in JSON format.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+
+<dt><code>--version <em>VERSION</em></code></dt>
+<dd>Optional: Specify an add-on version to display options for. If no version is specified, the default version's options are displayed. To list available add-on versions, run `ibmcloud oc cluster addon versions`.</dd>
+</dl>
+
+</br></staging cli-addon>
 
 ### `ibmcloud oc cluster addon versions`
 {: #cs_addon_versions}

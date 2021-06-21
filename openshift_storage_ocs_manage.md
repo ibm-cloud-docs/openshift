@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-07"
+lastupdated: "2021-06-21"
 
-keywords: openshift, openshift container storage, ocs, vpc, roks
+keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc, roks
 
 subcollection: openshift
 
@@ -95,24 +95,24 @@ subcollection: openshift
  
 
 
-# Managing your OpenShift Container Storage deployment
+# Managing your OpenShift Data Foundation deployment
 {: #ocs-manage-deployment}
 
-Review the following topics to manage your OpenShift Container Storage deployment.
+Review the following topics to manage your OpenShift Data Foundation deployment.
 
-## Expanding OCS in VPC clusters
+## Expanding ODF in VPC clusters
 {: ocs-vpc-expand-storage-cluster}
 
-To expand your OCS storage cluster, you can [add worker nodes](#ocs-vpc-add-worker-nodes) to your cluster, or you can scale OCS by [increasing the `numOfOsd`](#ocs-vpc-scaling-osd).
+To expand your storage cluster, you can [add worker nodes](#ocs-vpc-add-worker-nodes) to your cluster, or you can scale by [increasing the `numOfOsd`](#ocs-vpc-scaling-osd).
 {: shortdesc}
 
-### Scaling OCS by increasing the `numOfOsd` in your CRD
+### Scaling by increasing the `numOfOsd` in your CRD
 {: #ocs-vpc-scaling-osd}
 
-You can scale your OCS configuration by increasing the `numOfOsd` setting. When you increase the number of OSDs, OCS provisions that number of disks of the same `osdSize` capacity in GB in each of the worker nodes in your OCS cluster. However, the total storage that is available to your applications is equal to the number of worker nodes that are multiplied by the `osdSize` multiplied by the `numOfOsd`, and then divided by the replication factor, which is a constant of 3.
+You can scale your ODF configuration by increasing the `numOfOsd` setting. When you increase the number of OSDs, ODF provisions that number of disks of the same `osdSize` capacity in GB in each of the worker nodes in your ODF cluster. However, the total storage that is available to your applications is equal to the number of worker nodes that are multiplied by the `osdSize` multiplied by the `numOfOsd`, and then divided by the replication factor, which is a constant of 3.
 {: shortdesc}
 
-For example, if your OCS cluster has three worker nodes, you specify an `osdSize` of `150Gi`, and you set the `numOfOsd` to 4, then your storage totals are as follows.
+For example, if your ODF cluster has three worker nodes, you specify an `osdSize` of `150Gi`, and you set the `numOfOsd` to 4, then your storage totals are as follows.
   * **Total storage that is available for application use**: `osdSize` multiplied by `numOfOsd` and the number of worker nodes in the cluster, and divided by the replication factor of 3, or `(3 x 150Gi x 4) / 3 = 600Gi`.
   * **Total storage that is provisioned as disks in the cluster**: `osdSize` multiplied by `numOfOsd` and the number of worker nodes in the cluster, or `150Gi x 4 x 3 = 1800Gi`.
 
@@ -127,7 +127,7 @@ For example, if your OCS cluster has three worker nodes, you specify an `osdSize
 | 6 | 150Gi | 2 | 600Gi | 1800Gi |
 | 6 | 150Gi | 3 | 900Gi | 2700Gi |
 | 6 | 150Gi | 4 | 1200Gi | 3600Gi |
-{: caption="Table 1. OpenShift Container Storage scaling." caption-side="top"}
+{: caption="Table 1. OpenShift Data Foundation scaling." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the number of worker nodes. The second column is the initial OSD size. The third column is the number of OSDs. The fourth column is the total storage capacity that is available to applications in the cluster. The fifth column is the total storage capacity of the provisioned disks."}
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -158,14 +158,14 @@ For example, if your OCS cluster has three worker nodes, you specify an `osdSize
 
 <br />
 
-### Expanding OCS by adding worker nodes to your VPC cluster
+### Expanding ODF by adding worker nodes to your VPC cluster
 {: #ocs-vpc-add-worker-nodes}
 
-To increase the storage capacity that is available to OpenShift Container Storage, add compatible worker nodes to your cluster.
+To increase the storage capacity that is available to OpenShift Data Foundation, add compatible worker nodes to your cluster.
 {: shortdesc}
 
-1. Expand the worker pool of the cluster that is used for OCS by [adding worker nodes](/docs/openshift?topic=openshift-add_workers). Ensure that your worker nodes meet the [requirements for OCS](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-plan). If you deployed OCS on all of the worker nodes in your cluster, the OCS drivers are installed on the new worker nodes when they are added to your cluster.
-2. If you deployed OCS on a subset of worker nodes in your cluster by specifying the private `<worker-IP>` parameters in your `OcsCluster` custom resource, you can add the IP addresses of the new worker nodes to your OCS deployment by editing the custom resource definition.
+1. Expand the worker pool of the cluster that is used for OCS by [adding worker nodes](/docs/openshift?topic=openshift-add_workers). Ensure that your worker nodes meet the [requirements for ODF](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-plan). If you deployed ODF on all of the worker nodes in your cluster, the ODF drivers are installed on the new worker nodes when they are added to your cluster.
+2. If you deployed ODF on a subset of worker nodes in your cluster by specifying the private `<worker-IP>` parameters in your `OcsCluster` custom resource, you can add the IP addresses of the new worker nodes to your ODF deployment by editing the custom resource definition.
   ```sh
   oc edit ocscluster ocscluster-vpc
   ```
@@ -173,15 +173,43 @@ To increase the storage capacity that is available to OpenShift Container Storag
 3. Save the `OcsCluster` custom resource file to reapply it to your cluster.
 
 <br />
-## VPC: Updating the OCS operator from your CRD
+
+## Updating the add-on
+{: #odf-addon-update}
+
+The ODF add-on supports `n+1` cluster versions. For example, if you have version `4.7.0` of the add-on, it is supported on cluster versions `4.7` to `4.8`.
+{: shortdesc}
+
+To update the OpenShift Data Foundation in your cluster, disable the add-on and then re-enable the add-on with the following commands.
+
+1. Check the existing version.
+  ```sh
+  ibmcloud oc cluster addon ls --cluster <cluster>
+  ```
+  {: pre}
+
+1. Disable the add-on. Note that you might see a warning that resources or data might be deleted. For the ODF add-on update, PVC creation and app deployment are not disrupted when the add-on is disabled
+  ```sh
+  ibmcloud oc cluster addon disable openshift-container-storage --cluster <cluster>
+  ```
+  {: pre}
+
+1. Enable the add-on.
+  ```sh
+  ibmcloud koc cluster addon enable openshift-container-storage --cluster <version> --version <version>
+  ```
+  {: pre}
+
+<br />
+## VPC: Updating the ODF operator from your CRD
 {: #ocs-addon-up-vpc}
 
-If you deployed OCS by using a CRD, you can update your OCS deployment by editing the `OcsCluster` custom resource in your cluster.
+If you deployed ODF by using a CRD, you can update your ODF deployment by editing the `OcsCluster` custom resource in your cluster.
 {: shortdesc}
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1. Get the name of you OCS storage cluster
+1. Get the name of you ODF storage cluster
   ```sh
   oc get ocscluster
   ```
@@ -224,78 +252,30 @@ If you deployed OCS by using a CRD, you can update your OCS deployment by editin
 ## Classic: Increasing storage capacity by adding worker nodes to your cluster
 {: #ocs-add-worker-nodes-classic}
 
-To increase the storage capacity that is available to OpenShift Container Storage, add compatible worker nodes to your cluster.
+To increase the storage capacity that is available to OpenShift Data Foundation, add compatible worker nodes to your cluster.
 {: shortdesc}
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1. Expand the worker pool of the cluster that is used for OCS by [adding SDS worker nodes](/docs/openshift?topic=openshift-add_workers). Ensure that your worker nodes meet the [requirements for OCS](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-plan).
+1. Expand the worker pool of the cluster that is used for OCS by [adding SDS worker nodes](/docs/openshift?topic=openshift-add_workers). Ensure that your worker nodes meet the [requirements for ODF](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-plan).
 2. [Find the `by-id` of the local disks](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-get-devices) on your new worker nodes.
 3. Add the `by-id` of the local disks to your `OcsCluster` custom resource definition.
   ```sh
   oc edit ocscluster ocscluster
   ```
   {: pre}
-3. If you deployed OCS on a subset of worker nodes in your cluster by specifying the private `<worker-IP>` parameters in your `OcsCluster` custom resource, add the IP addresses of the new worker nodes to your OCS deployment by editing the custom resource definition.
+3. If you deployed ODF on a subset of worker nodes in your cluster by specifying the private `<worker-IP>` parameters in your `OcsCluster` custom resource, add the IP addresses of the new worker nodes to your ODF deployment by editing the custom resource definition.
 4. Save the `OcsCluster` custom resource file to reapply it to your cluster.
 
 <br />
 
-## Setting up backing stores by using the NooBaa CLI
-{: #ocs-backing-store-setup}
-
-After you deploy OCS, you can configure more backing stores in your OCS storage cluster. You can create a backing store by using any s3 compatible object store such as AWS or {{site.data.keyword.cos_full_notm}}.
-{: shortdesc}
-
-You can also create and manage your backing stores in the {{site.data.keyword.openshiftshort}} web console.
-{: tip}
-
-To add a backing store to your OCS storage cluster by using the NooBaa CLI:
-
-[Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-
-1. Install the [NooBaa Operator CLI](https://github.com/noobaa/noobaa-operator){: external}.
-1. Run the `noobaa backingstore create` command to see a list of supported backing store types.
-  ```sh
-  noobaa backingstore create
-  ```
-  {: pre}
-
-  **Example output**
-  ```sh
-  Create backing store
-
-  Available Commands:
-    aws-s3               Create aws-s3 backing store
-    azure-blob           Create azure-blob backing store
-    google-cloud-storage Create google-cloud-storage backing store
-    ibm-cos              Create ibm-cos backing store
-    pv-pool              Create pv-pool backing store
-    s3-compatible        Create s3-compatible backing store
-  ```
-  {: screen}
-
-1. Get the details of the service that you want to use. If you want to set up an {{site.data.keyword.cos_full_notm}}, get your HMAC credentials. For more information, see [Using HMAC credentials](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main). The following example NooBaa command shows the configuration parameters that are required to create a backing store by using an {{site.data.keyword.cos_full_notm}} service instance.
-  ```sh
-  noobaa backingstore create ibm-cos <backing-store-name> -n openshift-storage --access-key=<access-key> --endpoint=<endpoint> --secret-key=<secret-key> --target-bucket<target-bucket>
-  ```
-  {: pre}
-
-1. Get the details of your backing store.
-  ```sh
-  noobaa backingstore status <backing-store-name> -n openshift-storage
-  ```
-  {: pre}
-
-<br />
-
-## Removing OCS from your apps
+## Removing ODF from your apps
 {: #ocs-remove-apps-storage}
 
-To remove OCS from your apps, you can delete your app or deployment and the corresponding PVCs.
+To remove ODF from your apps, you can delete your app or deployment and the corresponding PVCs.
 {: shortdesc}
 
-If you want to fully remove OCS and all of your data, you can [remove your OCS storage cluster](#ocs-remove-storage-cluster).
+If you want to fully remove ODF and all of your data, you can [remove your storage cluster](#ocs-remove-storage-cluster).
 {: note}
 
 1. List your PVCs and note the name of the PVC and the corresponding PV that you want to remove.
@@ -347,19 +327,19 @@ If you want to fully remove OCS and all of your data, you can [remove your OCS s
 
 
 
-## Removing your OCS storage cluster
+## Removing your ODF storage cluster
 {: #ocs-remove-storage-cluster}
 
-Complete the following steps to remove the OCS resources from your cluster.
+Complete the following steps to remove the ODF resources from your cluster.
 {: shortdesc}
 
-The following steps result in data loss. Back up the data on your local volumes before you remove your OCS deployment.
+The following steps result in data loss. Back up the data on your local volumes before you remove your ODF deployment.
 {: important}
 
-**What happens when I delete the OCS storage cluster?**
+**What happens when I delete the ODF storage cluster?**
 
 When you delete the `OcsCluster` custom resource from your cluster, the following resources are deleted. Additionally, any apps that require access to the data on your local volumes might experience downtime.
-  - OCS driver pods.
+  - ODF driver pods.
   - The MON and OSD PVCs.
   - All data from your volumes. However, if you created PVCs by using the NooBaa storage class, and your apps wrote data to your backing store, the data in your backing store is not deleted.
 
@@ -394,15 +374,15 @@ When you delete the `OcsCluster` custom resource from your cluster, the followin
   ```
   {: pre}
 
-1. **Optional** If you do not want to reinstall OCS, you can [Remove the OCS add-on from your cluster](/docs/openshift?topic=openshift-ocs-storage-install#ocs-addon-rm).
+1. **Optional** If you do not want to reinstall ODF, you can [Remove the ODF add-on from your cluster](/docs/openshift?topic=openshift-ocs-storage-install#ocs-addon-rm).
 
-## Cleaning up your OCS deployment
+## Cleaning up your ODF deployment
 {: #ocs-rm-cleanup-resources}
 
-After you remove OCS from your apps, and remove your OCS storage cluster, you can clean up the remaining Kubernetes resources that were deployed with OCS.
+After you remove ODF from your apps, and remove your ODF storage cluster, you can clean up the remaining Kubernetes resources that were deployed with ODF.
 {: shortdesc}
 
-### VPC: Cleaning up OCS
+### VPC: Cleaning up ODF
 {: #ocs-cleanup-vpc}
 
 1. Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
@@ -436,7 +416,7 @@ After you remove OCS from your apps, and remove your OCS storage cluster, you ca
   ```
   {: pre}
 
-### Classic: Cleaning up OCS
+### Classic: Cleaning up ODF
 {: #ocs-cleanup-classic-resources}
 
 1. Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
@@ -530,45 +510,17 @@ After you remove OCS from your apps, and remove your OCS storage cluster, you ca
   ```
   {: pre}
 
-## Troubleshooting OCS
+## Troubleshooting ODF
 {: #ocs-troubleshooting-gather}
 
-To gather the information that is needed to troubleshoot OCS, you can use the `oc adm must-gather` command and specify the OCS image. For more information, see [Gathering cluster data](https://docs.openshift.com/container-platform/4.6/support/gathering-cluster-data.html).
+To gather the information that is needed to troubleshoot ODF, you can use the `oc adm must-gather` command and specify the ODF image. For more information, see [Gathering cluster data](https://docs.openshift.com/container-platform/4.6/support/gathering-cluster-data.html).
 {: shortdesc}
 
 You can use the Rook community toolbox to debug issues with your Ceph cluster. For more information, see the [Rook documentation](https://rook.io/docs/rook/v1.3/ceph-toolbox.html){: external}.
 {:tip}
 
-### OCS device set creation fails due to PVC names exceeding the Kubernetes character limit
+### ODF device set creation fails due to PVC names exceeding the Kubernetes character limit
 {: #ocs-ts-sc-name-limit}
 
-{: tsSymptoms}
-When you create your OCS storage cluster and you run `oc describe storagecluster <storage-cluster-name>`, you see an error similar to the following.
-
-```sh
-ceph-cluster-controller: failed to reconcile. failed to reconcile cluster "ocs-storagecluster-cephcluster": failed to configure local ceph cluster: failed to create cluster: failed to start ceph osds: 3 failures encountered while running osds in namespace openshift-storage: failed to create "provision" job for node "ocs-deviceset-ibmc-vpc-block-metro-retain-10iops-tier-0-datnv6k". Job.batch "rook-ceph-osd-prepare-aaa000aaa111a1a0e10ba1a11aa1a119" is invalid: [spec.template.spec.volumes[8].name: Invalid value: "ocs-deviceset-ibmc-vpc-block-metro-retain-10iops-tier-0-aaaaa1b-bridge": must be no more than 63 characters
-```
-{: screen}
-
-{: tsCauses}
-Kubernetes PVC names must be fewer than 63 characters. If you a have multizone VPC cluster and create your OCS storage cluster by using a `retain` class like the `ibmc-vpc-block-metro-retain-10iops-tier`, the corresponding OCS device set PVCs that are created by using this storage class are assigned names that exceed the 63 character limit.
-
-{: tsResolve}
-Create a custom storage class that uses the same configuration as the pre-defined storage class that you want to use, but with a name that does not exceed 63 characters.
-
-1. Get the YAML configuration of the storage class that you want to use in your OCS storage cluster and save it in a file on your local machine.
-  ```sh
-  oc get sc ibmc-vpc-block-metro-retain-10iops-tier -o yaml
-  ```
-  {: pre}
-
-1. Edit the name of the storage class. Make sure that the name of your custom storage class is fewer than 30 characters to allow for the OCS storage cluster device set IDs to be under the 63 character kubernetes limit. Create the storage class in your cluster.
-  ```sh
-  oc create -f <custom-storage-class.yaml>
-  ```
-  {: pre}
-
-1. Clean up your [OCS deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-cleanup-resources).
-
-1. Create a OCS deployment that uses the custom storage class you created.
+{[ts-ocs-storageclass.md]}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-07"
+lastupdated: "2021-06-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -298,13 +298,13 @@ Review the options to debug persistent storage and find the root causes for fail
    3. If a more recent version is available, install this version. For instructions, see [Updating Portworx in your cluster](/docs/openshift?topic=openshift-portworx#update_portworx).
 
 
-## OpenShift Container Storage 
+## OpenShift Data Foundation 
 {: #ts-ocs-debug}
 
-Describe your OCS resources and review the command outputs for any error messages.
+Describe your ODF resources and review the command outputs for any error messages.
 {: shortdesc}
 
-1. List the name of your OCS cluster. 
+1. List the name of your ODF cluster. 
     ```sh
     oc get ocscluster
     ```
@@ -322,28 +322,11 @@ Describe your OCS resources and review the command outputs for any error message
     ```
     {:pre}
 
-2. List the OCS pods in the `kube-system` namespace and verify that they are `Running.`
+2. List the pods in the `kube-system` namespace and verify that they are `Running.`
     ```sh
     oc get pods -n kube-system
     ```
     {: pre}
-    **Example output**
-    ```
-    NAME                                                   READY   STATUS    RESTARTS   AGE
-    ibm-keepalived-watcher-5g2gs                           1/1     Running   0          7d21h
-    ibm-keepalived-watcher-8l4ld                           1/1     Running   0          7d21h
-    ibm-keepalived-watcher-mhkh5                           1/1     Running   0          7d21h
-    ibm-master-proxy-static-10.240.128.10                  2/2     Running   0          71d
-    ibm-master-proxy-static-10.240.128.11                  2/2     Running   0          71d
-    ibm-master-proxy-static-10.240.128.12                  2/2     Running   0          71d
-    ibm-ocs-operator-controller-manager-55667f4d68-md4zb   1/1     Running   8          15d
-    ibm-vpc-block-csi-controller-0                         4/4     Running   0          48d
-    ibm-vpc-block-csi-node-6gnwv                           3/3     Running   0          48d
-    ibm-vpc-block-csi-node-j2h62                           3/3     Running   0          48d
-    ibm-vpc-block-csi-node-xpwpf                           3/3     Running   0          48d
-    vpn-5b8694cdb-pll6z 
-    ```
-    {: screen}
 
 4. Describe the `ibm-ocs-operator-controller-manager` pod and review the `Events` section in the output for any error messages.
     ```sh

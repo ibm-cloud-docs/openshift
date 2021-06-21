@@ -1263,34 +1263,38 @@ subcollection: openshift
 * [Limitations](/docs/openshift?topic=openshift-portworx#portworx_limitations)
 
 
-## Preparing your cluster for OpenShift Container Storage
-{: #sitemap_preparing_your_cluster_for_openshift_container_storage}
+## Preparing your cluster for OpenShift Data Foundation
+{: #sitemap_preparing_your_cluster_for_openshift_data_foundation}
 
 
-[Preparing your cluster for OpenShift Container Storage](/docs/openshift?topic=openshift-ocs-storage-prep)
+[Preparing your cluster for OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep)
 
-* [VPC: Planning your OpenShift Container Storage setup](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-vpc-plan)
+* [Quick start for VPC clusters](/docs/openshift?topic=openshift-ocs-storage-prep#odf-quickstart)
 
-* [Classic: Planning your OpenShift Container Storage setup](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-plan)
-    * [Classic: Preparing your cluster for an OpenShift Container Storage installation](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-cluster-prepare-classic)
-    * [Classic: Getting your device details](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-get-devices)
+* [VPC: Planning your setup](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-vpc-plan)
+
+* [{{site.data.keyword.satelliteshort}}: Planning your setup](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-vpc-plan)
+
+* [Classic: Planning your setup](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-plan)
+    * [Classic: Preparing your cluster for an OpenShift Data Foundation installation](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-cluster-prepare-classic)
+    * [Classic and {{site.data.keyword.satelliteshort}} local disk: Getting your device details](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-get-devices)
 
 
-## Installing OpenShift Container Storage in your cluster
-{: #sitemap_installing_openshift_container_storage_in_your_cluster}
+## Installing OpenShift Data Foundation in your cluster
+{: #sitemap_installing_openshift_data_foundation_in_your_cluster}
 
 
-[Installing OpenShift Container Storage in your cluster](/docs/openshift?topic=openshift-ocs-storage-install)
+[Installing OpenShift Data Foundation in your cluster](/docs/openshift?topic=openshift-ocs-storage-install)
 
-* [Choosing on an OCS installation path](/docs/openshift?topic=openshift-ocs-storage-install#ocs-install-path)
+* [Choosing an ODF installation path](/docs/openshift?topic=openshift-ocs-storage-install#ocs-install-path)
 
-* [Installing the OCS add-on](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-addon)
+* [Installing the ODF add-on](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-addon)
     * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-ocs-storage-install#ocs-create-cos)
-    * [Installing the OpenShift Container Storage add-on from the console](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-console)
-    * [Installing the OpenShift Container Storage add-on from the CLI](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-cli)
-    * [Removing the OpenShift Container Storage add-on from your cluster](/docs/openshift?topic=openshift-ocs-storage-install#ocs-addon-rm)
+    * [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-ocs-storage-install#install-ocs-console)
+    * [Installing the add-on from the CLI](/docs/openshift?topic=openshift-ocs-storage-install#install-odf-cli)
+    * [Removing the OpenShift Data Foundation add-on from your cluster](/docs/openshift?topic=openshift-ocs-storage-install#ocs-addon-rm)
 
-* [Installing OpenShift Container Storage from OperatorHub](/docs/openshift?topic=openshift-ocs-storage-install#ocs-install-oh)
+* [Installing OpenShift Data Foundation from OperatorHub](/docs/openshift?topic=openshift-ocs-storage-install#ocs-install-oh)
 
 
 ## Setting up your storage cluster
@@ -1299,56 +1303,58 @@ subcollection: openshift
 
 [Setting up your storage cluster](/docs/openshift?topic=openshift-ocs-storage-cluster-setup)
 
-* [Add-on for VPC clusters: Creating your OCS storage cluster CRD](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-deploy-crd)
+* [Add-on for {{site.data.keyword.satelliteshort}} clusters: Creating your ODF storage cluster CRD](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-sat-deploy-crd)
 
-* [Add-on for classic clusters: Creating your OCS storage cluster CRD](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-deploy-crd)
+* [Add-on for classic clusters: Creating your ODF storage cluster CRD](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-deploy-crd)
 
-* [Operator: Creating an OCS storage cluster in the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-create-storagecluster-console)
-    * [VPC: Creating a storage cluster in the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-deploy-console)
+* [OperatorHub: Creating an ODF storage cluster in the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-create-storagecluster-console)
+    * [VPC or {{site.data.keyword.satelliteshort}}: Creating a storage cluster in the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-deploy-console)
     * [Classic: Creating a storage cluster in the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-deploy-console)
 
-* [VPC: OpenShift Container Storage parameter reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-param-ref)
+* [VPC: OpenShift Data Foundation parameter reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-param-ref)
 
-* [Classic: OpenShift Container Storage parameter reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-param-ref)
+* [{{site.data.keyword.satelliteshort}}: OpenShift Data Foundation parameter reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-sat-param-ref)
+
+* [Classic: OpenShift Data Foundation parameter reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-param-ref)
 
 * [Limitations](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-limitations)
 
 * [Storage class reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-reference-section)
 
 
-## Deploying an app that uses OpenShift Container Storage
-{: #sitemap_deploying_an_app_that_uses_openshift_container_storage}
+## Deploying an app that uses OpenShift Data Foundation
+{: #sitemap_deploying_an_app_that_uses_openshift_data_foundation}
 
 
-[Deploying an app that uses OpenShift Container Storage](/docs/openshift?topic=openshift-ocs-deploy-app)
+[Deploying an app that uses OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-deploy-app)
 
 
-## Managing your OpenShift Container Storage deployment
-{: #sitemap_managing_your_openshift_container_storage_deployment}
+## Managing your OpenShift Data Foundation deployment
+{: #sitemap_managing_your_openshift_data_foundation_deployment}
 
 
-[Managing your OpenShift Container Storage deployment](/docs/openshift?topic=openshift-ocs-manage-deployment)
+[Managing your OpenShift Data Foundation deployment](/docs/openshift?topic=openshift-ocs-manage-deployment)
 
-* [Expanding OCS in VPC clusters](/docs/openshift?topic=openshift-ocs-manage-deployment#expanding-ocs-in-vpc-clusters)
-    * [Scaling OCS by increasing the `numOfOsd` in your CRD](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-vpc-scaling-osd)
-    * [Expanding OCS by adding worker nodes to your VPC cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-vpc-add-worker-nodes)
+* [Expanding ODF in VPC clusters](/docs/openshift?topic=openshift-ocs-manage-deployment#expanding-odf-in-vpc-clusters)
+    * [Scaling by increasing the `numOfOsd` in your CRD](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-vpc-scaling-osd)
+    * [Expanding ODF by adding worker nodes to your VPC cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-vpc-add-worker-nodes)
 
-* [VPC: Updating the OCS operator from your CRD](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-up-vpc)
+* [Updating the add-on](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-addon-update)
+
+* [VPC: Updating the ODF operator from your CRD](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-up-vpc)
 
 * [Classic: Increasing storage capacity by adding worker nodes to your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-add-worker-nodes-classic)
 
-* [Setting up backing stores by using the NooBaa CLI](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-backing-store-setup)
+* [Removing ODF from your apps](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-apps-storage)
 
-* [Removing OCS from your apps](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-apps-storage)
+* [Removing your ODF storage cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster)
 
-* [Removing your OCS storage cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster)
+* [Cleaning up your ODF deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-cleanup-resources)
+    * [VPC: Cleaning up ODF](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-cleanup-vpc)
+    * [Classic: Cleaning up ODF](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-cleanup-classic-resources)
 
-* [Cleaning up your OCS deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-cleanup-resources)
-    * [VPC: Cleaning up OCS](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-cleanup-vpc)
-    * [Classic: Cleaning up OCS](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-cleanup-classic-resources)
-
-* [Troubleshooting OCS](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-troubleshooting-gather)
-    * [OCS device set creation fails due to PVC names exceeding the Kubernetes character limit](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-ts-sc-name-limit)
+* [Troubleshooting ODF](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-troubleshooting-gather)
+    * [ODF device set creation fails due to PVC names exceeding the Kubernetes character limit](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-ts-sc-name-limit)
 
 
 ## Storage class reference
@@ -1508,7 +1514,9 @@ subcollection: openshift
 * [`cluster` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster)
   * [`ibmcloud oc cluster addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable)
   * [`ibmcloud oc cluster addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable)
+  * [`ibmcloud oc cluster addon get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_get)
   * [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addons)
+  * [`ibmcloud oc cluster addon options`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_options)
   * [`ibmcloud oc cluster addon versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_addon_versions)
   * [`ibmcloud oc cluster ca create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_create)
   * [`ibmcloud oc cluster ca rotate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_rotate)
@@ -1839,7 +1847,7 @@ subcollection: openshift
 * [Changelog for version 2.0.6](/docs/openshift?topic=openshift-cos_plugin_changelog#0206_object_plugin)
 * [Changelog for version 2.0.5](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_object_plugin)
 
-[OpenShift Container Storage} add-on changelog](/docs/openshift?topic=openshift-ocs_addon_changelog)
+[OpenShift Data Foundation} add-on changelog](/docs/openshift?topic=openshift-ocs_addon_changelog)
 
 [Back up and restore Helm chart](/docs/openshift?topic=openshift-backup_restore_changelog)
 * [Changelog for 1.0.5](/docs/openshift?topic=openshift-backup_restore_changelog#0105_br_chart)
@@ -2409,34 +2417,34 @@ subcollection: openshift
 [Portworx: Why does encryption fail with an invalid KMS endpoint?](/docs/openshift?topic=openshift-px-kms-endpoint)
 
 
-## OpenShift Container Storage
-{: #sitemap_openshift_container_storage}
+## OpenShift Data Foundation
+{: #sitemap_openshift_data_foundation}
 
 
-[Debugging OpenShift Container Storage failures](/docs/openshift?topic=openshift-debug_storage_ocs)
+[Debugging OpenShift Data Foundation failures](/docs/openshift?topic=openshift-debug_storage_ocs)
 * [Checking whether the pod that mounts your storage instance is successfully deployed](/docs/openshift?topic=openshift-debug_storage_ocs#debug_storage_ocs_deploy)
 * [Restarting your app pod](/docs/openshift?topic=openshift-debug_storage_ocs#debug_storage_ocs_restart)
 * [Verifying that the storage driver and plug-in pods show a status of **Running**](/docs/openshift?topic=openshift-debug_storage_ocs#debug_storage_ocs_driver_plugin)
 * [Checking and updating the oc CLI version](/docs/openshift?topic=openshift-debug_storage_ocs#debug_storage_ocs_cli)
-* [Debugging your OCS resources](/docs/openshift?topic=openshift-debug_storage_ocs#debug_storage_ocs_cluster)
+* [Debugging your ODF resources](/docs/openshift?topic=openshift-debug_storage_ocs#debug_storage_ocs_cluster)
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
-[Why is the status of my OpenShift Container Storage storage cluster stuck at `Failed to reconcile`.](/docs/openshift?topic=openshift-ts-ocs-roks-debug)
-* [OCS device set creation fails due to PVC names exceeding the Kubernetes character limit](/docs/openshift?topic=openshift-ts-ocs-roks-debug#ocs-ts-sc-character-limit)
+[Why is the status of my OpenShift Data Foundation storage cluster stuck at `Failed to reconcile`.](/docs/openshift?topic=openshift-ts-ocs-roks-debug)
+* [ODF device set creation fails due to PVC names exceeding the Kubernetes character limit](/docs/openshift?topic=openshift-ts-ocs-roks-debug#ocs-ts-sc-character-limit)
 
-[Why does my OpenShift Container Storage storage cluster have an 'Error' status?](/docs/openshift?topic=openshift-ts-ocs-install-error-status)
+[Why does my OpenShift Data Foundation storage cluster have an 'Error' status?](/docs/openshift?topic=openshift-ts-ocs-install-error-status)
 * [Error: Number of worker nodes less than 3.](/docs/openshift?topic=openshift-ts-ocs-install-error-status#ts-ocs-install-3workers)
 * [Error: Failed to update storage cluster](/docs/openshift?topic=openshift-ts-ocs-install-error-status#ts-ocs-install-decrease-capacity)
 * [Error: Error in reconcile of local volumes](/docs/openshift?topic=openshift-ts-ocs-install-error-status#ts-ocs-install-local-volumes)
 
-[Why are the OCS pods stuck at `Pending`?](/docs/openshift?topic=openshift-ts-ocs-pods-pending-status)
+[Why are the ODF pods stuck at `Pending`?](/docs/openshift?topic=openshift-ts-ocs-pods-pending-status)
 
-[Why is the status of my OpenShift Container Storage storage cluster stuck at `Progressing`?](/docs/openshift?topic=openshift-ocs-ts-error-progressing)
+[Why is the status of my OpenShift Data Foundation storage cluster stuck at `Progressing`?](/docs/openshift?topic=openshift-ocs-ts-error-progressing)
 * [Error: Cloud credentials secret "ibm-cloud-cos-creds" is not ready yet](/docs/openshift?topic=openshift-ocs-ts-error-progressing#ts-storage-ocs-cos-cred)
 
 [Why are no pods listed in the `openshift-storage` namespace?](/docs/openshift?topic=openshift-ts-ocs-no-pods)
 
-[What if my OpenShift Container Storage issue is still unresolved?](/docs/openshift?topic=openshift-ocs-error-unresolved)
+[What if my OpenShift Data Foundation issue is still unresolved?](/docs/openshift?topic=openshift-ocs-error-unresolved)
 
 
 ## Release notes

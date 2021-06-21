@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-06-21"
 
 keywords: vpc block, add-on, vpc block changelog
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -115,19 +116,19 @@ Refer to the following tables for a summary of changes for each version of the {
 ## Changelog for version 3.0.0
 {: #0300_is_block}
 
-The following table shows the changes that are included in version 3.0.0 {{site.data.keyword.block_storage_is_full}} add-on.
+The following table shows the changes in version 3.0.0 {{site.data.keyword.block_storage_is_full}} add-on.
 {: shortdesc}
 
 To view a list of add-ons and the supported {{site.data.keyword.openshiftshort}} versions, run the following command.
-```
-ibmcloud oc addon-versions
+```sh
+ibmcloud oc cluster addon versions --addon vpc-block-csi-driver
 ```
 {: pre}
 
 | Patch version | `vpc-block-csi-driver` image tag | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
 | --- | --- | --- | --- | --- |
-| `3.0.0_521` | `v.3.0.1` | 01 April 2021 | 4.3 - 4.6 | Updates the Golang version from `1.15.5` to `1.15.9`. |
-| N/A | `v.3.0.0` | 26 February 2021 | 4.3 - 4.6 | The `vpc-block-csi-driver` is now available for both managed clusters and unmanaged clusters. This release contains no functional changes. |
+| `3.0.0_521` | `v.3.0.1` | 01 April 2021 | >=4.3 | Updates the Golang version from `1.15.5` to `1.15.9`. |
+| N/A | `v.3.0.0` | 26 February 2021 | >=4.3 | The `vpc-block-csi-driver` is now available for both managed clusters and unmanaged clusters. This release contains no functional changes. |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Patch updates for version 3.0.0" caption-side="top"}
@@ -140,8 +141,8 @@ The following table shows the changes that are included in version 2.0.3 {{site.
 {: shortdesc}
 
 To view a list of add-ons and the supported {{site.data.keyword.openshiftshort}} versions, run the following command.
-```
-ibmcloud oc addon-versions
+```sh
+ibmcloud oc cluster addon versions --addon vpc-block-csi-driver
 ```
 {: pre}
 

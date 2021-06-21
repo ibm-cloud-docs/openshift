@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-06-21"
 
 keywords: openshift, storage
 
@@ -105,7 +105,7 @@ There are no pods listed when you run the `oc get pods -n openshift-storage` com
     {: screen}
 
 {: tsCauses}
-The catalog source for your OCS storage cluster is unhealthy.
+The catalog source for your ODF storage cluster is unhealthy.
 
 {: tsResolve}
 1. Remove all catalog sources from your cluster. A new catalog source and respective pods automatically generate.
@@ -114,7 +114,7 @@ The catalog source for your OCS storage cluster is unhealthy.
     ```
     {: pre}
     
-2. Wait a few minutes and verify that the pods regenerate. If the pods regenerate, the OCS installation proceeds. If the pods do not regenerate, [contact OCS support by raising a case in the {{site.data.keyword.redhat_notm}} customer portal](/docs/openshift?topic=openshift-ocs-error-unresolved).
+2. Wait a few minutes and verify that the pods regenerate. If the pods regenerate, the ODF installation proceeds. If the pods do not regenerate, [contact ODF support by raising a case in the {{site.data.keyword.redhat_notm}} customer portal](/docs/openshift?topic=openshift-ocs-error-unresolved).
     ```sh
     oc get pods,catsrc -n openshift-marketplace
     ```

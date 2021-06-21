@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-17"
+lastupdated: "2021-06-21"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -348,7 +348,7 @@ The following table shows the changes that are included in the worker node fix p
 | Image garbage collection | N/A | N/A | Fixed a race condition during the provisioning of worker nodes that might cause image garbage collection to fail.  |
 | {{site.data.keyword.registrylong_notm}} private endpoints | N/A | N/A | **VPC worker nodes**: Fixed a bug where traffic to the private endpoints of {{site.data.keyword.registrylong_notm}} might fail after rebooting the worker node. |
 | {{site.data.keyword.openshiftshort}} | 4.6.16 | 4.6.18 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-18){: external}.|
-| OpenShift Container Storage | N/A | N/A | Fixed the worker node configuration to resolve an error with deploying OCS. |
+| OpenShift Data Foundation | N/A | N/A | Fixed the worker node configuration to resolve an error with deploying ODF. |
 | RHEL 7 Packages | N/A | N/A | Updated worker node with package updates. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.16_1529_openshift" caption-side="top"}

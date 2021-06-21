@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2021
-lastupdated: "2021-06-08"
+lastupdated: "2021-06-21"
 
 keywords: openshift, storage
 
@@ -94,11 +94,11 @@ content-type: troubleshoot
 {:video: .video}
 
 
-# Why are the OCS pods stuck at `Pending`?
+# Why are the ODF pods stuck at `Pending`?
 {: #ts-ocs-pods-pending-status}
 
 {: tsSymptoms}
-When you list pods in the `openshift-storage` namespace with the `oc get pods -n openshift-storage` command, the OCS pods are stuck at `Pending`.
+When you list pods in the `openshift-storage` namespace with the `oc get pods -n openshift-storage` command, the ODF pods are stuck at `Pending`.
 
 {: tsCauses}
 To determine why your storage cluster status is stuck at `Pending`, describe the pods that have the status `Pending`. 
@@ -113,12 +113,12 @@ In the output, check the `Events` section for the following error:
    ```
    {: screen}
 
-This error indicates that that the classic or VPC cluster where your OCS storage cluster is installed is a multizone cluster, but the storage classes specified in the `monStorageClassName` or `osdStorageClassName` fields in your CRD have a `VolumeBindingMode` parameter that is set to `Immediate`. Multizone OCS deployments require storage classes that have the `VolumeBindingMode` parameter set to `WaitForFirstConsumer`.
+This error indicates that that the classic or VPC cluster where your ODF storage cluster is installed is a multizone cluster, but the storage classes specified in the `monStorageClassName` or `osdStorageClassName` fields in your CRD have a `VolumeBindingMode` parameter that is set to `Immediate`. Multizone ODF deployments require storage classes that have the `VolumeBindingMode` parameter set to `WaitForFirstConsumer`.
 
 {: tsResolve}
 1. [Create custom storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class) with the `VolumeBindingMode` set to `WaitForFirstConsumer`, or choose a pre-exisiting storage class with the same parameters. 
 
-2. List the name of your OCS storage cluster. 
+2. List the name of your ODF storage cluster. 
    ```sh
    oc get ocscluster
    ```

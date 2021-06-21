@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-07"
+lastupdated: "2021-06-21"
 
-keywords: openshift, openshift container storage, ocs, vpc, roks
+keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc, roks
 
 subcollection: openshift
 
@@ -93,59 +93,60 @@ subcollection: openshift
 {:video: .video}
   
 
-# Installing OpenShift Container Storage in your cluster
+# Installing OpenShift Data Foundation in your cluster
 {: #ocs-storage-install}
 
-OpenShift Container Storage is a highly available storage solution that you can use to manage persistent storage for your containerized databases and other stateful apps in {{site.data.keyword.openshiftlong}} clusters.
+OpenShift Data Foundation is a highly available storage solution that you can use to manage persistent storage for your containerized databases and other stateful apps in {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
 **Supported infrastructure provider**:
   * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
   * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> {{site.data.keyword.satelliteshort}}
 
 **Minimum required permissions**: **Administrator** platform access role and the **Manager** service access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-## Choosing on an OCS installation path
+## Choosing an ODF installation path
 {: #ocs-install-path}
 
-After [preparing your cluster for OpenShift Container Storage](/docs/openshift?topic=openshift-ocs-storage-prep), you must determine the best installation path of the OCS drivers and operators for your cluster and your desired OCS storage cluster configuration.
+After [preparing your cluster for OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep), you must determine the best installation path for your desired storage cluster configuration.
 {: shortdesc}
 
-The installation method that you choose for OCS determines your configuration options when you create your storage cluster later. If you want to change the configuration later, you must uninstall and reinstall the add-on.
+The installation method that you choose determines your configuration options when you create your storage cluster later. If you want to change the configuration later, you must uninstall and reinstall the add-on.
 {: important}
 
-You can install OCS in your cluster by using one of the following methods:
-  * Installing the [managed cluster add-on for OpenShift Container Storage](#install-ocs-addon).
-  * Installing the community OpenShift Container Storage operator from the OperatorHub in the [{{site.data.keyword.openshiftshort}} web console](#ocs-install-oh).
+You can install ODF in your cluster by using one of the following methods:
+  * Installing the [managed cluster add-on for OpenShift Data Foundation](#install-ocs-addon).
+  * Installing the OpenShift Data Foundation operator from the OperatorHub in the [{{site.data.keyword.openshiftshort}} web console](#ocs-install-oh).
 
-The following table provides an overview of the benefits and supported features for each OCS installation method.
+The following table provides an overview of the benefits and supported features for each installation method.
 
-| Feature | OCS cluster add-on | OperatorHub |
+| Feature | Cluster add-on | OperatorHub |
 |---------------|-------------|-----------------|
 | Set up {{site.data.keyword.cos_full_notm}} as your default backing store during installation. | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |  |
 | Granular control over storage cluster volume sizes. | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
 | Create a storage cluster from the web console. | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-{: caption="OCS installation path comparison." caption-side="top"}
+{: caption="Installation path comparison." caption-side="top"}
 
 
 <br />
 
-## Installing the OCS add-on
+## Installing the ODF add-on
 {: #install-ocs-addon}
 
-You can install the OCS cluster add-on from the console or the CLI.
+You can install the cluster add-on from the console or the CLI.
 {: shortdesc}
 
-Before you install the OCS add-on, [plan your OCS set up](/docs/openshift?topic=openshift-ocs-storage-prep).
+Before you install the add-on, [plan your ODF set up](/docs/openshift?topic=openshift-ocs-storage-prep).
 
 ### Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance
 {: #ocs-create-cos}
 
-If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing store in your OCS storage cluster, create an instance of {{site.data.keyword.cos_full_notm}}. Then, create a set of HMAC credentials and a Kubernetes secret that uses your {{site.data.keyword.cos_short}} HMAC credentials. If you do not specify {{site.data.keyword.cos_full_notm}} credentials during installation, then the default backing store in your OCS storage cluster is created by using the PVs in your cluster. You can [set up additional backing stores](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-backing-store-setup) after deploying OCS, but you cannot change the default backing store.
+If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing store in your storage cluster, create an instance of {{site.data.keyword.cos_full_notm}}. Then, create a set of HMAC credentials and a Kubernetes secret that uses your {{site.data.keyword.cos_short}} HMAC credentials. If you do not specify {{site.data.keyword.cos_full_notm}} credentials during installation, then the default backing store in your storage cluster is created by using the PVs in your cluster. You can [set up additional backing stores](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-backing-store-setup) after deploying ODF, but you cannot change the default backing store.
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1. Create an `openshift-storage` namespace in your cluster. The OCS driver pods are deployed to this namespace. Copy the following YAML and save it as `os-namespace.yaml` on your local machine.
+1. Create an `openshift-storage` namespace in your cluster. The driver pods are deployed to this namespace. Copy the following YAML and save it as `os-namespace.yaml` on your local machine.
     ```yaml
     apiVersion: v1
     kind: Namespace
@@ -192,36 +193,65 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
     ```
     {: pre}
 
-**Next steps**: Install OCS by using the managed add-on from the [command line](#install-ocs-cli) or the [console](#install-ocs-console).
+**Next steps**: Install ODF by using the managed add-on from the [command line](#install-ocs-cli) or the [console](#install-ocs-console).
 
 
 <br />
 
-### Installing the OpenShift Container Storage add-on from the console
+### Installing the OpenShift Data Foundation add-on from the console
 {: #install-ocs-console}
 
-To install OCS in your cluster, complete the following steps.
+To install ODF in your cluster, complete the following steps.
 {: shortdesc}
 
-1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to install the OCS add-on.
+1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to install the add-on.
 2. On the cluster **Overview** page, click **Add-ons**.
-3. On the OpenShift Container Storage card, click **Install**.
+3. On the OpenShift Data Foundation card, click **Install**.
 
-**Next steps**: [Create your OCS storage cluster](/docs/openshift?topic=openshift-ocs-storage-cluster-setup).
+**Next steps**: [Create your storage cluster](/docs/openshift?topic=openshift-ocs-storage-cluster-setup).
 
-### Installing the OpenShift Container Storage add-on from the CLI
-{: #install-ocs-cli}
+### Installing the add-on from the CLI
+{: #install-odf-cli}
 
-You can install the OCS add-on by using the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable).
+You can install the add-on by using the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable).
 {: shortdesc}
 
 
-The default version of the OpenShift Container Storage add-on is `4.7.0`. If you have a `4.6` cluster, specify the `--version 4.6.0` flag when you enable the add-on.
+The default version of the OpenShift Data Foundation add-on is 4.7.0. If you have a cluster version other than the default, you must specify the `--version 4.6.0` flag when you enable the add-on.
 {: note}
 
-1. Install the `openshift-container-storage` add-on.
+1. Review the add-on configuration options.
   ```sh
-  ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version>
+  ibmcloud cluster addon options --addon openshift-container-storage
+  ```
+  {: pre}
+
+  ```sh
+  Add-on Options
+  Option                Default Value   
+  monStorageClassName   ibmc-vpc-block-metro-10iops-tier   
+  osdSize               250Gi   
+  osdDevicePaths        invalid   
+  workerNodes           all   
+  ocsUpgrade            false   
+  ocsDeploy             false   
+  monSize               20Gi   
+  numOfOsd              1   
+  monDevicePaths        invalid   
+  osdStorageClassName   ibmc-vpc-block-metro-10iops-tier
+  ```
+  {: screen}
+
+1. Enable the `openshift-container-storage` add-on and specify the `"ocsDeploy=true"` true. If you want to override any of the default parameters, specify the `--param "key=value"` flag for each parameter you want to override. For more information, see the parameters and the default values, see the [VPC parameter reference](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-param-ref).
+
+  ```sh
+  ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true"
+  ```
+  {: pre}
+
+  **Example command for overriding the `osdSize` parameter**:
+  ```sh
+  ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true" --param "osdSize=500Gi"
   ```
   {: pre}
 
@@ -237,35 +267,34 @@ The default version of the OpenShift Container Storage add-on is `4.7.0`. If you
   ```
   {: pre}
 
-**Next steps**: [Create your OCS storage cluster](/docs/openshift?topic=openshift-ocs-storage-cluster-setup).
 
-### Removing the OpenShift Container Storage add-on from your cluster
+### Removing the OpenShift Data Foundation add-on from your cluster
 {: #ocs-addon-rm}
 
-You can remove OCS add-on from your cluster by using the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or the CLI.
+You can remove ODF add-on from your cluster by using the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or the CLI.
 {: shortdesc}
 
-When you disable the OpenShift Container Storage add-on, only the OCS operator is removed from your cluster. Your existing workloads remain, but you cannot create more OCS workloads. You also cannot delete your `OcsCluster` custom resource after the operator is removed. If you want to remove all of your OCS resources and data, see [Removing OCS from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster). If you removed the add-on and cannot delete your `OcsCluster`, reinstall the add-on, then delete the `OcsCluster`.
+When you disable the OpenShift Data Foundation add-on, only the ODF operator is removed from your cluster. Your existing workloads remain, but you cannot create more ODF workloads. You also cannot delete your `OcsCluster` custom resource after the operator is removed. If you want to remove all of your ODF resources and data, see [Removing ODF from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster). If you removed the add-on and cannot delete your `OcsCluster`, reinstall the add-on, then delete the `OcsCluster`.
 {: note}
 
-#### Uninstalling the OpenShift Container Storage add-on from the console
+#### Uninstalling the OpenShift Data Foundation add-on from the console
 {: #ocs-addon-rm-console}
 
-To uninstall the OpenShift Container Storage add-on from your cluster, complete the following steps.
+To remove the OpenShift Data Foundation add-on from your cluster, complete the following steps.
 {: shortdesc}
 
-1. **Optional**: To remove the add-on and all OCS resources, first [remove OCS from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster).
-2. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to remove the OpenShift Container Storage add-on.
+1. **Optional**: To remove the add-on and all ODF resources, first [remove the add-on from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster).
+2. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to remove the OpenShift Data Foundation add-on.
 3. On the cluster **Overview** page, click **Add-ons**.
-4. On the OpenShift Container Storage card, click **Uninstall**.
+4. On the OpenShift Data Foundation card, click **Uninstall**.
 
-#### Uninstalling the OpenShift Container Storage add-on from the CLI
+#### Uninstalling the OpenShift Data Foundation add-on from the CLI
 {: #ocs-addon-rm-cli}
 
-You can uninstall the OpenShift Container Storage add-on from your cluster by using the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or the CLI.
+You can uninstall the OpenShift Data Foundation add-on from your cluster by using the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or the CLI.
 {: shortdesc}
 
-1. **Optional**: To remove the add-on and all OCS resources, first [remove OCS from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster).
+1. **Optional**: To remove the add-on and all ODF resources, first [remove add-on from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster).
 
 2. Uninstall the add-on.
   ```
@@ -281,10 +310,10 @@ You can uninstall the OpenShift Container Storage add-on from your cluster by us
 
 <br />
 
-## Installing OpenShift Container Storage from OperatorHub
+## Installing OpenShift Data Foundation from OperatorHub
 {: #ocs-install-oh}
 
-Before you can install OCS from OperatorHub, you must deploy the following configmap to your cluster to set the kubelet path for the OCS drivers.
+Before you can install the operator from OperatorHub, you must deploy the following configmap to your cluster to set the kubelet path for the storage drivers.
 {: shortdesc}
 
 1. Save the following configmap to a file on your local machine.
@@ -317,7 +346,7 @@ Before you can install OCS from OperatorHub, you must deploy the following confi
   {: pre}
 
 1. From the web console, click **Operators** > **OperatorHub**.
-1. In OperatorHub, search for `openshift container storage`.
-1. Click the **OpenShift Container Storage** and click **Install**
+1. In OperatorHub, search for `OpenShift Data Foundation`.
+1. Click the **OpenShift Data Foundation** and click **Install**
 
-**Next steps**: [Create your OCS storage cluster by using the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-create-storagecluster-console).
+**Next steps**: [Create your ODF storage cluster by using the web console](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-create-storagecluster-console).
