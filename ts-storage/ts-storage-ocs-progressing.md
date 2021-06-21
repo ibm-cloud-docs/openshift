@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2021
-lastupdated: "2021-06-08"
+lastupdated: "2021-06-21"
 
 keywords: openshift, storage
 
@@ -11,7 +11,7 @@ content-type: troubleshoot
 
 ---
 
-# Why is the status of my OpenShift Container Storage storage cluster stuck at `Progressing`?
+# Why is the status of my OpenShift Data Foundation storage cluster stuck at `Progressing`?
 {: #ocs-ts-error-progressing}
 
 {: tsSymptoms}
@@ -28,7 +28,7 @@ To determine why your storage cluster status is stuck, describe your storage clu
    ```
    {: pre}
 
-3. List the name of your OCS storage cluster.
+3. List the name of your ODF storage cluster.
    ```sh
    oc get ocscluster
    ```
@@ -40,7 +40,7 @@ To determine why your storage cluster status is stuck, describe your storage clu
    ```
    {: screen}
 
-4. Describe your OCS storage cluster. Note any error messages in the `Events` section of the output.
+4. Describe your ODF storage cluster. Note any error messages in the `Events` section of the output.
    ```sh 
    oc describe ocscluster <ocscluster_name>
    ```
@@ -61,7 +61,7 @@ When you run `oc describe noobaa` or `oc describe ocscluster <ocscluster_name>`,
    ```
    {: screen}
 
-You want to use {{site.data.keyword.cos_full_notm}} as a backingstore for your OCS cluster, but the credentials specified in the `ibm-cloud-cos-creds` secret are invalid. 
+You want to use {{site.data.keyword.cos_full_notm}} as a backingstore for your ODF cluster, but the credentials specified in the `ibm-cloud-cos-creds` secret are invalid. 
 
 Verify your {{site.data.keyword.cos_short}} credentials and [update the Kubernetes secret for your {{site.data.keyword.cos_short}} service credentials](/docs/openshift?topic=openshift-object_storage#create_cos_secret).
 

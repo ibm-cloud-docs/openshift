@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2021
-lastupdated: "2021-06-08"
+lastupdated: "2021-06-21"
 
 keywords: openshift, storage
 
@@ -94,17 +94,17 @@ content-type: troubleshoot
 {:video: .video}
 
 
-# Why does my OpenShift Container Storage storage cluster have an 'Error' status?
+# Why does my OpenShift Data Foundation storage cluster have an 'Error' status?
 {: #ts-ocs-install-error-status}
 
 {: tsSymptoms}
-When you check the status of your OCS storage cluster by running `kubectl describe ocscluster <ocscluster-name>`, the status is `Error`.
+When you check the status of your ODF storage cluster by running `kubectl describe ocscluster <ocscluster-name>`, the status is `Error`.
 
 {: tsCauses}
 To determine why your storage cluster status is `Error`, check the logs of the `ibm-ocs-operator-controller-manager` pod for any error messages.
 
 1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-2. List the name of your OCS cluster. 
+2. List the name of your ODF cluster. 
     ```sh
     oc get ocscluster
     ```
@@ -116,13 +116,13 @@ To determine why your storage cluster status is `Error`, check the logs of the `
     ```
     {: screen}
 
-2. View the status of your OCS cluster.
+2. View the status of your ODF cluster.
     ```sh
     oc describe ocscluster <ocscluster-name>
     ```
     {: pre}
 
-2. Get the ID of the `ibm-ocs-operator-controller-manager` pod for your OCS cluster.
+2. Get the ID of the `ibm-ocs-operator-controller-manager` pod for your ODF cluster.
     ```sh
     oc get pods -n kube-system | grep ocs
     ```
@@ -141,22 +141,22 @@ To determine why your storage cluster status is `Error`, check the logs of the `
    {: pre}
   
 {: tsResolve} 
-Review the following OCS installation error messages for steps to resolve the related issue.
+Review the following ODF installation error messages for steps to resolve the related issue.
 
 ## Error: Number of worker nodes less than 3.
 {: #ts-ocs-install-3workers}
 
-When you describe your OCS storage cluster with the `[{kubectl]} describe ocscluster <ocscluster-name>` command, you see an error message similar to the following: 
+When you describe your ODF storage cluster with the `[{kubectl]} describe ocscluster <ocscluster-name>` command, you see an error message similar to the following: 
 ```
 Error: Number of worker nodes less than 3. At least 3 worker nodes are required for ocs deployment.
 ```
 {: screen}
 
-Fewer than 3 worker nodes are specified for OCS installation. OCS must install on a minimum of 3 worker nodes.
+Fewer than 3 worker nodes are specified for ODF installation. ODF must install on a minimum of 3 worker nodes.
 
-1. [Review the steps to prepare your cluster for OCS](/docs/openshift?topic=openshift-ocs-storage-prep).
+1. [Review the steps to prepare your cluster for ODF](/docs/openshift?topic=openshift-ocs-storage-prep).
 
-2. Make sure that your cluster has at least 3 worker nodes specified for your OCS installation. 
+2. Make sure that your cluster has at least 3 worker nodes specified for your ODF installation. 
     ```sh
     oc get nodes
     ```
@@ -180,7 +180,7 @@ Fewer than 3 worker nodes are specified for OCS installation. OCS must install o
 
 5. For classic clusters, [gather the device paths of the local disks on each worker node](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-get-devices).
 
-6. If you have available worker nodes that do not have OCS installed, specify them in the CRD by [adding the private IP address of the nodes you want to specify](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-deploy-crd). For classic clusters, you must also [add the device paths of the local disks that you found earlier for each node you want to specify](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-deploy-crd).
+6. If you have available worker nodes that do not have ODF installed, specify them in the CRD by [adding the private IP address of the nodes you want to specify](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-deploy-crd). For classic clusters, you must also [add the device paths of the local disks that you found earlier for each node you want to specify](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-deploy-crd).
 
 ## Error: Failed to update storage cluster
 {: #ts-ocs-install-decrease-capacity}
@@ -191,9 +191,9 @@ When you describe your cluster with the `oc describe ocscluster <ocscluster-name
     ```
     {: screen}
 
-A command to scale down OCS has failed because decreasing the storage capacity by decreasing the number of OSDs is not supported. If you want to scale down OCS, you will need to remove the OCS storage cluster, resize the classic or VPC cluster where OCS is installed, and then create and deploy a new storage cluster.
+A command to scale down ODF has failed because decreasing the storage capacity by decreasing the number of OSDs is not supported. If you want to scale down ODF, you will need to remove the ODF storage cluster, resize the classic or VPC cluster where ODF is installed, and then create and deploy a new storage cluster.
 
-2. List the name of your OCS cluster. 
+2. List the name of your ODF cluster. 
    ```sh
    oc get ocscluster
    ```
@@ -217,9 +217,9 @@ A command to scale down OCS has failed because decreasing the storage capacity b
    ```
    {: pre}
 
-5. Optional: If you want to remove worker nodes from your cluster, [resize the classic or VPC cluster where OCS is installed](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize). Make sure that your cluster still has at least 3 worker nodes.
+5. Optional: If you want to remove worker nodes from your cluster, [resize the classic or VPC cluster where ODF is installed](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize). Make sure that your cluster still has at least 3 worker nodes.
 
-6. [Create and deploy a new OCS storage cluster](/docs/openshift?topic=openshift-ocs-storage-cluster-setup). If you want to deploy OCS on all worker nodes in your cluster, make sure that your cluster has at least 3 worker nodes. If you want to deploy OCS on a subset of worker nodes, make sure that you specify the private IP addresses of the worker nodes where you want to install OCS in your CRD.
+6. [Create and deploy a new ODF storage cluster](/docs/openshift?topic=openshift-ocs-storage-cluster-setup). If you want to deploy ODF on all worker nodes in your cluster, make sure that your cluster has at least 3 worker nodes. If you want to deploy ODF on a subset of worker nodes, make sure that you specify the private IP addresses of the worker nodes where you want to install ODF in your CRD.
 
 ## Error: Error in reconcile of local volumes
 {: #ts-ocs-install-local-volumes}
@@ -230,8 +230,8 @@ When you describe your cluster with the `oc describe ocscluster <ocscluster-name
     ```
     {: screen}
 
-You want to deploy OCS on a classic cluster by using local volumes, but the device paths for the disks that are required for OCS are either incorrect or are not specified in your CRD.
+You want to deploy ODF on a classic cluster by using local volumes, but the device paths for the disks that are required for ODF are either incorrect or are not specified in your CRD.
 
-1. [Gather the device paths for the local disks on the worker nodes where you want to install OCS on](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-get-devices). 
+1. [Gather the device paths for the local disks on the worker nodes where you want to install ODF on](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-get-devices). 
 
 2. [In your CRD, add the correct device paths to the `monDevicePaths` or `osdDevicePaths` fields](/docs/openshift?topic=openshift-ocs-storage-cluster-setup). 

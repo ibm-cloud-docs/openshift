@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-06-21"
 
-keywords: openshift, openshift container storage, ocs, roks
+keywords: openshift, openshift data foundation, openshift container storage, ocs, roks
 
 subcollection: openshift
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -94,9 +95,9 @@ subcollection: openshift
  
 
 
-# Preparing your cluster for OpenShift Container Storage
+# Preparing your cluster for OpenShift Data Foundation
 {: #ocs-storage-prep}
-OpenShift Container Storage is a highly available storage solution that you can use to manage persistent storage for your containerized databases and other stateful apps in {{site.data.keyword.openshiftlong}} clusters.
+OpenShift Data Foundation is a highly available storage solution that you can use to manage persistent storage for your containerized databases and other stateful apps in {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
 **Supported infrastructure provider**:
@@ -105,34 +106,68 @@ OpenShift Container Storage is a highly available storage solution that you can 
 
 **Minimum required permissions**: **Administrator** platform access role and the **Manager** service access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-The OpenShift Container Storage add-on is available as a technology preview and might change without prior notice. Do not use this add-on for production workloads.
+The OpenShift Data Foundation add-on is available as a technology preview and might change without prior notice. Do not use this add-on for production workloads.
 {: preview}
 
 <br />
 
-## VPC: Planning your OpenShift Container Storage setup
+## Quick start for VPC clusters
+{: #odf-quickstart}
+You can deploy ODF on VPC clusters by running the `addon enable` command and specifying the `"ocsDeploy=true"` flag.
+{: shortdesc}
+
+1. [Install the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
+1. Create a [VPC cluster](/docs/openshift?topic=openshift-clusters) with at least three worker nodes. For high availability, create a cluster with at least one worker node per zone across three zones. Each worker node must have a minimum of 16 CPUs and 64 GB RAM.
+[Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+  
+1. Enable the ODF and specify the `ocsDeploy=True` parameter to deploy ODF with the default configuration parameters. To see the default parameters, run `ibmcloud oc cluster addon options --addon openshift-container-storage`. Note that the default version of the add-on is 4.7.0. If you have a cluster version other than the default, specify the `--version` flag. The add-on supports `n+1` cluster versions. 
+  ```sh
+  ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true"
+  ```
+  {: pre}
+
+**Optional**: If you want to override the default parameters when deploying the add-on, you can use the `--param "key=value"` format. For more information, see [Install ODF in your cluster](/docs/openshift?topic=openshift-ocs-storage-install).
+
+
+## VPC: Planning your setup
 {: #ocs-vpc-plan}
-Before you install OCS in your VPC cluster, you must make sure that the following prerequisite conditions are met:
+Before you install ODF in your VPC cluster, you must make sure that the following prerequisite conditions are met:
 
 1. [Install the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
 1. Create a [VPC cluster](/docs/openshift?topic=openshift-clusters) with at least three worker nodes. For high availability, create a cluster with at least one worker node per zone across three zones. Each worker node must have a minimum of 16 CPUs and 64 GB RAM.
 
-**Next steps**: [Install OCS in your cluster](/docs/openshift?topic=openshift-ocs-storage-install).
+**Next steps**: [Install ODF in your cluster](/docs/openshift?topic=openshift-ocs-storage-install).
 
 <br />
 
-## Classic: Planning your OpenShift Container Storage setup
+## {{site.data.keyword.satelliteshort}}: Planning your setup
+{: #ocs-sat-plan}
+Before you install ODF in your {{site.data.keyword.satelliteshort}} cluster, each cluster must meet the following prerequisite conditions.
+{: shortdesc}
+
+1. [Install the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
+1. [Set up a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
+1. [Attach at least 3 hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) that meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs). Additionally, each host must have a minimum of 16 CPUs and 64 GB RAM.
+1. [Create a cluster](/docs/openshift?topic=openshift-clusters) with the hosts that you previously attached to the location.
+
+You can also deploy ODF to your {{site.data.keyword.satelliteshort}} cluster by using the {{site.data.keyword.satelliteshort}} storage templates. Templates allow you to automate your deployment across multiple {{site.data.keyword.satelliteshort}} clusters. For more information, see [ODF](/docs/satellite?topic=satellite-config-storage-ocs-remote) or [ODF](https://cloud.ibm.com/docs/satellite?topic=satellite-config-storage-ocs-local) depending on your cluster setup.
+{: tip}
+
+**Next steps**:[Install ODF in your cluster](/docs/openshift?topic=openshift-ocs-storage-install).
+
+
+## Classic: Planning your setup
 {: #ocs-classic-plan}
-Before you install OCS in your cluster, you must make sure that the following prerequisite conditions are met:
+Before you install ODF in your cluster, you must make sure that the following prerequisite conditions are met:
 
 1. [Install the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
 1. [Review the SDS worker node flavors](/docs/openshift?topic=openshift-planning_worker_nodes#sds-table).
-1. Create a [classic cluster](/docs/openshift?topic=openshift-clusters) with a minimum of one worker node per zone across three zones. Create a cluster with worker nodes of flavor type `mb4c.32x384.3.8tb.ssd` or `mb4c.20x64.2x1.9tb.ssd` that have the required local disks for OCS.
+1. Create a [classic cluster](/docs/openshift?topic=openshift-clusters) with a minimum of one worker node per zone across three zones. Create a cluster with worker nodes of flavor type `mb4c.32x384.3.8tb.ssd` or `mb4c.20x64.2x1.9tb.ssd` that have the required local disks for ODF.
 1. [Prepare your classic cluster](#ocs-cluster-prepare-classic).
 
-### Classic: Preparing your cluster for an OpenShift Container Storage installation
+### Classic: Preparing your cluster for an OpenShift Data Foundation installation
 {: #ocs-cluster-prepare-classic}
-Before you install OpenShift Container Storage in a classic cluster, review the following steps to prepare your cluster for an OCS installation.
+Before you install OpenShift Data Foundation in a classic cluster, review the following steps to prepare your cluster for an ODF installation.
 {: shortdesc}
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -156,7 +191,7 @@ Before you install OpenShift Container Storage in a classic cluster, review the 
       exit
       ```
 
-1. Repeat step 3 for each worker node that you want use in your OCS deployment.
+1. Repeat step 3 for each worker node that you want use in your ODF deployment.
 
 1. Update the `clusterRole` and `ClusterRoleBindings` for each worker node in your cluster. Edit the `system:node` cluster role to have `get, create, update, delete, list` access for the `volumeattachments.storage.k8s.io` resource.
   ```sh
@@ -231,10 +266,10 @@ Before you install OpenShift Container Storage in a classic cluster, review the 
 
 <br />
 
-### Classic: Getting your device details
+### Classic and {{site.data.keyword.satelliteshort}} local disk: Getting your device details
 {: #ocs-classic-get-devices}
 
-Before you install OCS, get the details of the local disks on your worker nodes.
+Before you install ODF, get the details of the local disks on your worker nodes.
 {: shortdesc}
 
 1. Log in to your cluster and get a list of available worker nodes. Make a note of the worker nodes that you want to use in your OCS deployment.
@@ -243,7 +278,7 @@ Before you install OCS, get the details of the local disks on your worker nodes.
     ```
     {: pre}
 
-2. Log in to each worker node that you want to use for your OCS.
+2. Log in to each worker node that you want to use for your ODF.
     ```sh
     oc debug node/<node-name>
     ```
@@ -261,7 +296,7 @@ Before you install OCS, get the details of the local disks on your worker nodes.
     ```
     {: pre}
 
-5. Review the command output for available disks. You can use only unmounted disks for OCS deployments, such as `sdc` disks in the following example. Note the initial storage capacity of your OCS deployment is equal to the size of the disk that you specify as the `osd-device-path`. In this example, the `sdc` disk is unmounted and has two availabe partitions: `sdc1` and `sdc2`.
+5. Review the command output for available disks. You can use only unmounted disks for ODF deployments, such as `sdc` disks in the following example. Note the initial storage capacity of your ODF deployment is equal to the size of the disk that you specify as the `osd-device-path`. In this example, the `sdc` disk is unmounted and has two availabe partitions: `sdc1` and `sdc2`.
     ```sh
     NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
     sda      8:0    0   931G  0 disk
@@ -298,10 +333,10 @@ Before you install OCS, get the details of the local disks on your worker nodes.
     ```
     {: pre}
 
-7. Repeat the previous steps for each worker node that you want to use for your OpenShift Container Storage deployment.
+7. Repeat the previous steps for each worker node that you want to use for your OpenShift Data Foundation deployment.
 
-8. Finishing installing OCS for your cluster type:
-  * **Single zone clusters**: [Install OCS in your cluster](/docs/openshift?topic=openshift-ocs-storage-install).
+8. Finishing installing ODF for your cluster type:
+  * **Single zone clusters**: [Install ODF in your cluster](/docs/openshift?topic=openshift-ocs-storage-install).
 
 <br />
 

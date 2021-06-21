@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-15"
+lastupdated: "2021-06-21"
 
-keywords: ocs, add-on, changelog
+keywords: odf, openshift data foundation add-on, changelog
 
 subcollection: openshift, container storage
 
@@ -94,23 +94,22 @@ subcollection: openshift, container storage
   
   
 
-# OpenShift Container Storage} add-on changelog
-{: #ocs_addon_changelog}
+# OpenShift Data Foundation add-on changelog
+{: #odf_addon_changelog}
 
-View information for updates to the OpenShift Container Storage} add-on in your {{site.data.keyword.openshiftlong}} clusters.
+View information for updates to the OpenShift Data Foundation} add-on in your {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
-The default version of the OpenShift Container Storage add-on is `4.7.0`. If you have a cluster version other than the default, specify the `--version <version>` flag when you enable the add-on.
+The default version of the OpenShift Data Foundation add-on is 4.7.0. If you have a cluster version other than the default, specify the `--version <version>` flag when you enable the add-on.
 {: note}
 
-Refer to the following tables for a summary of changes for each version of the [OpenShift Container Storage} add-on](/docs/openshift?topic=openshift-ocs-storage-prep).
+Refer to the following tables for a summary of changes for each version of the [OpenShift Data Foundation} add-on](/docs/containers?topic=openshift-ocs-prep).
 
-| OpenShift Container Storage} add-on | Supported? | {{site.data.keyword.openshiftshort}} version support |
+| OpenShift Data Foundation add-on | Supported? | {{site.data.keyword.openshiftshort}} version support |
 | -------------------- | -----------|--------------------------- |
 | 4.7.0 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | 4.7 |
 | 4.6.0 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | 4.6 |
-{: caption="OpenShift Container Storage add-on versions" caption-side="top"}
+{: caption="Add-on versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the add-on version is supported for."}
-
 
 

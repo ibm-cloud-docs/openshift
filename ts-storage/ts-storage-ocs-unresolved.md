@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2021
-lastupdated: "2021-06-08"
+lastupdated: "2021-06-21"
 
 keywords: openshift, storage
 
@@ -94,16 +94,16 @@ content-type: troubleshoot
 {:video: .video}
 
 
-# What if my OpenShift Container Storage issue is still unresolved?
+# What if my OpenShift Data Foundation issue is still unresolved?
 {: #ocs-error-unresolved}
 
-If your OCS issue is still unresolved or is not addressed in the troubleshooting steps, contact OCS support by raising a case in the {{site.data.keyword.redhat_notm}} customer portal.
+If your ODF issue is still unresolved or is not addressed in the troubleshooting steps, contact ODF support by raising a case in the {{site.data.keyword.redhat_notm}} customer portal.
 
 1. [Access the Red Hat Customer Portal](https://access.redhat.com){: external} and sign in with your support credentials. 
 
-2. Find the **Troubleshoot a product issue** section and select **Red Hat Openshift Container Storage**.
+2. Find the **Troubleshoot a product issue** section and select **Red Hat OpenShift Container Storage**.
 
-3. Select the version of your OCS instance.
+3. Select the version of your ODF instance.
 
 4. Click **Continue**.
 

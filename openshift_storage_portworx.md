@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-28"
+lastupdated: "2021-06-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -158,6 +158,7 @@ You can also choose to use only a subset of worker nodes for your Portworx stora
 
 
 
+
 ### What's next?
 {: #about-px-next}
 
@@ -170,6 +171,11 @@ All set? Let's start with [creating a cluster with an SDS worker pool of at leas
 
 Before you create your cluster and install Portworx, review the following planning steps.
 {: shortdesc}
+
+**Minimum required permissions**: 
+* **Administrator** and **VirtualServerConsoleAdmin** for the VPC service.
+* **Manager** and **Administrator** for the {{site.data.keyword.registrylong_notm}} service.
+* **Operator** and **Manager** for the Kubernetes service.
 
 1. Review the [Portworx limitations](#portworx_limitations).
 2. Create a [multizone cluster](/docs/openshift?topic=openshift-clusters).
@@ -630,7 +636,7 @@ To install Portworx:
 1. Click **Create** to start the Portworx installation in your cluster. This process might take a few minutes to complete. The service details page opens with instructions for how to verify your Portworx installation, create a persistent volume claim (PVC), and mount the PVC to an app.
 1. From the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources), find the Portworx service that you created.
 1. Review the **Status** column to see if the installation succeeded or failed. The status might take a few minutes to update.
-1. If the **Status** changes to `Provision failure`, follow the [instructions](/docs/openshift?topic=openshift-debug-portworx) to start troubleshooting why your installation failed.
+1. If the **Status** changes to `Provision failure`, follow the [instructions](/docs/containers?topic=containers-debug-portworx) to start troubleshooting why your installation failed.
 1. If the **Status** changes to `Provisioned`, verify that your Portworx installation completed successfully and that all your local disks were recognized and added to the Portworx storage layer.
    1. List the Portworx pods in the `kube-system` project. The installation is successful when you see one or more `portworx`, `stork`, and `stork-scheduler` pods. The number of pods equals the number of worker nodes that are included in your Portworx cluster. All pods must be in a `Running` state.
       ```
@@ -1129,7 +1135,7 @@ Access the PX-Backup console through the URL supplied in the {{site.data.keyword
 
 
 **For private classic clusters**
-- [Expose the **px-backup-ui** service on your private cluster to access the PX-Backup console](/docs/openshift?topic=openshift-ingress-types#alb-comm-create-private).
+- [Expose the **px-backup-ui** service on your private cluster to access the PX-Backup console](/docs/containers?topic=containers-ingress-types#alb-comm-create-private).
 
 ### Adding a backup location to your PX-Backup service
 {: #px-backup-storage}
@@ -1172,7 +1178,7 @@ Add the {{site.data.keyword.openshiftlong_notm}} cluster that you want to back u
 
 Before you begin:
 - [Log in to the PX-Backup console](#px-backup-ui).
-- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure)
+- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
 The Kubeconfig in clusters with PX-Backup expires after 24 hours. To prevent your cluster's Kubeconfig file from expiring, set the context with your cluster using the `--admin` flag.
 `
@@ -1565,7 +1571,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
       ```
       {: pre}
 
-4. Review the log files locally. If you cannot resolve your issue by reviewing the logs, [open a support ticket](/docs/openshift?topic=openshift-getting-started-with-px-backup#portworx_help) and provide the log information that you collected.
+4. Review the log files locally. If you cannot resolve your issue by reviewing the logs, [open a support ticket](/docs/containers?topic=containers-getting-started-with-px-backup#portworx_help) and provide the log information that you collected.
 
 
 ## Limitations

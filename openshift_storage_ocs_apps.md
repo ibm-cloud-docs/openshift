@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-06-21"
 
-keywords: openshift, openshift container storage, ocs, vpc, roks
+keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc, roks
 
 subcollection: openshift
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -94,19 +95,19 @@ subcollection: openshift
  
 
 
-# Deploying an app that uses OpenShift Container Storage
+# Deploying an app that uses OpenShift Data Foundation
 {: #ocs-deploy-app}
 
-After you install the OpenShift Container Storage add-on for your {{site.data.keyword.openshiftlong}} cluster, you can use the OCS storage classes to create a persistent volume claim (PVC). Then, refer to the PVC in your deployment so that your app can save and use data from the underlying OCS storage device.
+After you install the OpenShift Data Foundation add-on for your {{site.data.keyword.openshiftlong}} cluster, you can use the ODF storage classes to create a persistent volume claim (PVC). Then, refer to the PVC in your deployment so that your app can save and use data from the underlying ODF storage device.
 {: shortdesc}
 
-Before you begin, [prepare your cluster](/docs/openshift?topic=openshift-ocs-storage-prep) and [install OCS](/docs/openshift?topic=openshift-ocs-storage-install).
+Before you begin, [prepare your cluster](/docs/openshift?topic=openshift-ocs-storage-prep) and [install ODF](/docs/openshift?topic=openshift-ocs-storage-install).
 
 **Minimum required permissions**: **Editor** platform access role and the **Writer** service access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1. List the OCS storage classes. For more information about OCS storage classes, see the [Storage class reference](/docs/openshift?topic=openshift-ocs-sc-ref#ocs-sc-ref).
+1. List the ODF storage classes. For more information about ODF storage classes, see the [Storage class reference](/docs/openshift?topic=openshift-ocs-sc-ref#ocs-sc-ref).
   ```sh
   oc get sc | grep openshift
   ```

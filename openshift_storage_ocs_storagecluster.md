@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-07"
+lastupdated: "2021-06-21"
 
-keywords: openshift, openshift container storage, ocs, vpc, roks
+keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc, roks
 
 subcollection: openshift
 
@@ -98,62 +98,59 @@ subcollection: openshift
 # Setting up your storage cluster
 {: #ocs-storage-cluster-setup}
 
-After you [prepare your cluster for OCS](/docs/openshift?topic=openshift-ocs-storage-prep) and [install OCS in your cluster](/docs/openshift?topic=openshift-ocs-storage-install), you must configure a storage cluster.
+After you [prepare your cluster for ODF](/docs/openshift?topic=openshift-ocs-storage-prep) and [install ODF in your cluster](/docs/openshift?topic=openshift-ocs-storage-install), you must configure a storage cluster.
 
-* If you installed OCS by using the managed cluster add-on, you must create a CRD for your storage cluster. In your CRD, you specify the details of the storage cluster that you create.
+* If you installed ODF in your {{site.data.keyword.satelliteshort}} or Classic cluster by using the managed cluster add-on, you must create a CRD for your storage cluster. In your CRD, you specify the details of the storage cluster that you create.
 
-  * [VPC: Creating your OCS storage cluster by using a CRD](#ocs-vpc-deploy-crd).
-  * [Classic: Creating your OCS storage cluster by using a CRD](#ocs-classic-deploy-crd).
+  * [{{site.data.keyword.satelliteshort}} with remote volumes: Creating your ODF storage cluster](#ocs-vpc-deploy-crd) by specifying the storage classes that you want to use to dynamically provision storage volumes.
+  * [Classic or {{site.data.keyword.satelliteshort}} local disk: Creating your ODF storage cluster by using a CRD](#ocs-classic-deploy-crd) and specifying the device paths to the local disks on your worker nodes.
 
-* If you installed OCS by using OperatorHub, you must create your storage cluster by using the {{site.data.keyword.openshiftshort}} web console.
+* If you installed ODF by using OperatorHub, you must create your storage cluster by using the {{site.data.keyword.openshiftshort}} web console.
 
-  * [VPC: Creating a storage cluster in the web console](#ocs-vpc-deploy-console).
+  * [VPC or {{site.data.keyword.satelliteshort}}: Creating a storage cluster in the web console](#ocs-vpc-deploy-console).
   * [Classic: Creating a storage cluster in the web console](#ocs-classic-deploy-console).
 
-## Add-on for VPC clusters: Creating your OCS storage cluster CRD
-{: #ocs-vpc-deploy-crd}
+## Add-on for {{site.data.keyword.satelliteshort}} clusters: Creating your ODF storage cluster CRD
+{: #ocs-sat-deploy-crd}
 
-To create an OCS storage cluster in your VPC cluster, you can create a custom resource that is used to specify storage device details.
+To create an ODF storage cluster in your VPC cluster or your {{site.data.keyword.satelliteshort}} cluster by using dynamic provisioning for your storage volumes, you can create a custom resource that is used to specify storage device details.
 {: shortdesc}
 
-If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](/docs/openshift?topic=openshift-ocs-storage-install#ocs-create-cos), and created the Kubernetes secret in your cluster. When you create the OCS CRD in your cluster, OCS looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store that uses your {{site.data.keyword.cos_short}} HMAC credentials.
+If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](/docs/openshift?topic=openshift-ocs-storage-install#ocs-create-cos), and created the Kubernetes secret in your cluster. When you create the ODF CRD in your cluster, ODF looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store that uses your {{site.data.keyword.cos_short}} HMAC credentials.
 {: note}
 
 1. Create a custom resource called `OcsCluster`. Save one of the following custom resource definition files on your local machine and edit it to include the name of the custom storage class that you created earlier as the `monStorageClassName` and `osdStorageClassName` parameters. For more information about the `OcsCluster` parameters, see the [parameter reference](#ocs-vpc-param-ref).
 
-  **Multizone clusters** To use a metro `retain` storage class like `ibmc-vpc-block-metro-retain-10iops-tier` to create your OCS storage cluster, you must [create a custom storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class) with the same specifications as the metro `retain` class that you want to use. For more information, see the [Limitations](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-limitations).
-  {: important}
-
-  **Example custom resource definition for installing OCS on all worker nodes in a VPC cluster**
+  **Example custom resource definition for installing ODF on all worker nodes in a {{site.data.keyword.satelliteshort}} cluster**
   ```yaml
   apiVersion: ocs.ibm.io/v1
   kind: OcsCluster
   metadata:
     name: ocscluster-vpc
   spec:
-    monStorageClassName: <monStorageClassName> # For multizone clusters, specify a 'metro' storage class
+    monStorageClassName: <monStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
     monSize: <monSize>
-    osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a 'metro' storage class
+    osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
     osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
     numOfOsd: 1
-    billingType: hourly
+    billingType: advanced
     ocsUpgrade: false
   ```
   {: codeblock}
 
-  **Example custom resource definition for installing OCS only on specified worker nodes in a VPC cluster**
+  **Example custom resource definition for installing ODF only on specified worker nodes in a {{site.data.keyword.satelliteshort}} cluster**
   ```yaml
   apiVersion: ocs.ibm.io/v1
   kind: OcsCluster
   metadata:
-    name: ocscluster-vpc
+    name: ocscluster-sat
   spec:
-    monStorageClassName: <monStorageClassName> # Example: ibmc-vpc-block-10iops-tier. For multizone clusters, specify a 'metro' storage class
+    monStorageClassName: <monStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
     monSize: <monSize>
-    osdStorageClassName: <osdStorageClassName> # Example: ibmc-vpc-block-10iops-tier. For multizone clusters, specify a 'metro' storage class
+    osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
     osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
     numOfOsd: 1
-    billingType: hourly
+    billingType: advanced
     ocsUpgrade: false
     workerNodes: # Specify the private IP addresses of the worker nodes where you want to install OCS.
       - <worker-IP> # To get a list worker nodes, run `oc get nodes`.
@@ -175,35 +172,35 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
   {: pre}
 
 
-**Next steps**: [Deploy an app that uses OCS](/docs/openshift?topic=openshift-ocs-deploy-app)
+**Next steps**: [Deploy an app that uses ODF](/docs/openshift?topic=openshift-ocs-deploy-app)
 
 <br />
 
 
-## Add-on for classic clusters: Creating your OCS storage cluster CRD
+## Add-on for classic clusters: Creating your ODF storage cluster CRD
 {: #ocs-classic-deploy-crd}
 
-To deploy OCS in your classic cluster, you can create a custom resource definition that is used to specify your storage device details.
+To deploy ODF in your classic cluster, you can create a custom resource definition that is used to specify your storage device details.
 {: shortdesc}
 
-If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](/docs/openshift?topic=openshift-ocs-storage-install#ocs-create-cos), and created the Kubernetes secret in your cluster. When you create the OCS CRD in your cluster, OCS looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store by using your {{site.data.keyword.cos_short}} HMAC credentials.
+If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](/docs/openshift?topic=openshift-ocs-storage-install#ocs-create-cos), and created the Kubernetes secret in your cluster. When you create the ODF CRD in your cluster, ODF looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store by using your {{site.data.keyword.cos_short}} HMAC credentials.
 {: note}
 
-1. Create a custom resource called `OcsCluster`. Save and edit the following custom resource definition to include the device paths for the local disks [that you retrieved earlier](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-get-devices). If you do not provide the optional `workerNodes` parameter, then all of the worker nodes in your cluster are used for the OCS deployment. Be sure to include the `/dev/disk/by-id/` path when you specify your storage devices.
+1. Create a custom resource called `OcsCluster`. Save and edit the following custom resource definition to include the device paths for the local disks [that you retrieved earlier](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-get-devices). If you do not provide the optional `workerNodes` parameter, then all of the worker nodes in your cluster are used for the ODF deployment. Be sure to include the `/dev/disk/by-id/` path when you specify your storage devices.
 
-  **Example custom resource for installing OCS on all worker nodes in a classic cluster**
+  **Example custom resource for installing ODF on all worker nodes in a classic cluster**
   ```yaml
   apiVersion: ocs.ibm.io/v1
   kind: OcsCluster
   metadata:
-    name: ocscluster-classic
+    name: ocscluster
   spec:
     monStorageClassName: localfile
     monSize: 20Gi
     osdStorageClassName: localblock
     osdSize: "1"
     numOfOsd: 1
-    billingType: hourly
+    billingType: advanced
     ocsUpgrade: false
     monDevicePaths:
       - <device-by-id> # Example: /dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1
@@ -216,19 +213,19 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
   ```
   {: codeblock}
 
-  **Example custom resource for installing OCS only on certain worker nodes in a classic cluster**
+  **Example custom resource for installing ODF only on certain worker nodes in a classic cluster**
   ```yaml
   apiVersion: ocs.ibm.io/v1
   kind: OcsCluster
   metadata:
-    name: ocscluster-classic
+    name: ocscluster
   spec:
     monStorageClassName: localfile
     monSize: 20Gi
     osdStorageClassName: localblock
     osdSize: "1"
     numOfOsd: 1
-    billingType: hourly
+    billingType: advanced
     ocsUpgrade: false
     monDevicePaths:
       - <device-by-id> # Example: /dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1
@@ -253,54 +250,54 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 1. Verify that your `OcsCluster` custom resource is running.
   ```sh
-  oc describe OcsCluster ocscluster-classic
+  oc describe OcsCluster ocscluster
   ```
   {: pre}
 
 
-**Next steps**: [Deploy an app that uses OCS](/docs/openshift?topic=openshift-ocs-deploy-app).
+**Next steps**: [Deploy an app that uses ODF](/docs/openshift?topic=openshift-ocs-deploy-app).
 
-## Operator: Creating an OCS storage cluster in the web console
+## OperatorHub: Creating an ODF storage cluster in the web console
 {: #ocs-create-storagecluster-console}
 
-If you installed the OCS operator from OperatorHub, you can use the web console to create a storage cluster.
+If you installed the ODF operator from OperatorHub, you can use the web console to create a storage cluster.
 
-### VPC: Creating a storage cluster in the web console
+### VPC or {{site.data.keyword.satelliteshort}}: Creating a storage cluster in the web console
 {: #ocs-vpc-deploy-console}
 
-Complete the following steps to create an OCS storage cluster by using the {{site.data.keyword.openshiftshort}} web console.
+Complete the following steps to create an ODF storage cluster by using the {{site.data.keyword.openshiftshort}} web console.
 {: shortdesc}
 
-Complete the following steps only if you installed the OCS Operator from OperatorHub. If you installed the OCS add-on in your cluster, see [creating a storage cluster by using a CRD](#ocs-vpc-deploy-crd)
+Complete the following steps only if you installed the ODF Operator from OperatorHub. If you installed the ODF add-on in your cluster, see [creating a storage cluster by using a CRD](#ocs-vpc-deploy-crd)
 {: note}
 
 1. From the {{site.data.keyword.openshiftshort}} web console, click **Operators** > **Installed Operators**.
-1. Click the **OpenShift Container Storage operator**, then click the **Storage Cluster** tab and **Create Storage Cluster**
+1. Click the **OpenShift Data Foundation operator**, then click the **Storage Cluster** tab and **Create Storage Cluster**
 1. On the **Create Storage Cluster** page, make sure that the **Internal** tab is selected.
-1. In the **Storage Class** menu, select the {{site.data.keyword.block_storage_is_short}} that you want to use for your OCS volumes. For multizone clusters, you must specify a metro storage class. Metro storage classes have the volume binding mode `WaitForFirstConsumer`, which is required for multizone OCS deployments. **Note**: To use a metro `retain` storage class like `ibmc-vpc-block-metro-retain-10iops-tier` to create your OCS storage cluster, you must [create a custom storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class) with the same specifications as the metro `retain` class that you want to use. For more information, see the [Limitations](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-limitations).
-1. In the **OCS Service Capacity** menu, select the size of the OCS storage cluster that you want to create.
-1. Enable or disable encrytion.
-1. In the **Nodes** section, select the worker nodes where you want to provision the volumes for your OCS storage cluster.
+1. In the **Storage Class** menu, select the {{site.data.keyword.block_storage_is_short}} that you want to use for your ODF volumes. For multizone clusters, you must specify a metro storage class. Metro storage classes have the volume binding mode `WaitForFirstConsumer`, which is required for multizone ODF deployments. **Note**: To use a metro `retain` storage class like `ibmc-vpc-block-metro-retain-10iops-tier` to create your ODF storage cluster, you must [create a custom storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class) with the same specifications as the metro `retain` class that you want to use. For more information, see the [Limitations](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-limitations).
+1. In the **OCS Service Capacity** menu, select the size of the ODF storage cluster that you want to create.
+1. Enable or disable encryption.
+1. In the **Nodes** section, select the worker nodes where you want to provision the volumes for your ODF storage cluster.
 1. Click **Create** to create your storage cluster.
 1. Verify that your storage cluster is created and `Ready`.
   1. From the {{site.data.keyword.openshiftshort}} web console, click **Operators** > **Installed Operators**.
-  1. Click the **OpenShift Container Storage operator**, then click the **Storage Cluster** tab.
-  1. Verify that the storage cluster status is `Ready`. Creating the storage cluster takes approximately 15 minutes.
+  1. Click the **OpenShift Data Foundation operator**, then click the **Storage Cluster** tab.
+  1. Verify that the storage cluster status is `Ready`. Creating the storage cluster takes about 15 minutes.
 
 
-**Next steps**: [Deploy an app that uses OCS](/docs/openshift?topic=openshift-ocs-deploy-app)
+**Next steps**: [Deploy an app that uses ODF](/docs/openshift?topic=openshift-ocs-deploy-app)
 
 ### Classic: Creating a storage cluster in the web console
 {: #ocs-classic-deploy-console}
 
-Complete the following steps to create an OCS storage cluster by using the {{site.data.keyword.openshiftshort}} web console.
+Complete the following steps to create an ODF storage cluster by using the {{site.data.keyword.openshiftshort}} web console.
 {: shortdesc}
 
-Complete the following steps only if you installed the OCS Operator from OperatorHub. If you installed the OCS add-on in your cluster, see [creating a storage cluster by using a CRD](#ocs-classic-deploy-crd)
+Complete the following steps only if you installed the ODF Operator from OperatorHub. If you installed the ODF add-on in your cluster, see [creating a storage cluster by using a CRD](#ocs-classic-deploy-crd)
 {: note}
 
 1. From the {{site.data.keyword.openshiftshort}} web console, click **Operators** > **Installed Operators**.
-1. Click the **OpenShift Container Storage operator**, then click the **Storage Cluster** tab and **Create Storage Cluster**
+1. Click the **OpenShift Data Foundation operator**, then click the **Storage Cluster** tab and **Create Storage Cluster**
 1. On the **Create Storage Cluster** page, make sure that the **Internal - Attached Devices** tab is selected.
 1. In **1: Detect Disks**, on the **Auto Detect Volume** page, select the worker nodes where you want to detect local storage volumes.
 1. In **2: Create Storage Class**, on the **Local Volume Set** page, enter a name for your volume set and specify the **Disk type**.
@@ -308,37 +305,60 @@ Complete the following steps only if you installed the OCS Operator from Operato
 1. Click **Create** to create your storage cluster.
 1. Verify that your storage cluster is created and `Ready`.
   1. From the {{site.data.keyword.openshiftshort}} web console, click **Operators** > **Installed Operators**.
-  1. Click the **OpenShift Container Storage operator**, then click the **Storage Cluster** tab.
+  1. Click the **OpenShift Data Foundation operator**, then click the **Storage Cluster** tab.
   1. Verify that the storage cluster status is `Ready`. Creating the storage cluster takes approximately 15 minutes.
 
 
-**Next steps**: [Deploy an app that uses OCS](/docs/openshift?topic=openshift-ocs-deploy-app)
+**Next steps**: [Deploy an app that uses ODF](/docs/openshift?topic=openshift-ocs-deploy-app)
 
-## VPC: OpenShift Container Storage parameter reference
+## VPC: OpenShift Data Foundation parameter reference
 {: #ocs-vpc-param-ref}
 
-Refer to the following OpenShift Container Storage parameters when you use the add-on or operator in VPC clusters.
+Refer to the following parameters when you use the add-on or operator in VPC clusters.
 {: shortdesc}
 
 
 | Parameter | Description | Default value |
 | --- | --- | --- |
-| `monStorageClassName` | Enter the name of the storage class that you want to use for your MON devices. For **multizone clusters**, specify the metro storage class that you want to use. If you want to use a metro `retain` storage class, [create a custom `WaitForFirstConsumer` storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class) that is based off the tiered metro `retain` storage class that you want to use. Metro storage classes have the volume binding mode `WaitForFirstConsumer`, which is required for multizone OCS deployments. For **single zone clusters**, enter the name of the tiered storage class that you want to use. Example: `ibmc-vpc-block-10iops-tier`. For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference).| N/A |
+| `monStorageClassName` | Enter the name of the storage class that you want to use for your MON devices. For **multizone clusters**, specify the metro storage class that you want to use. If you want to use a metro `retain` storage class, [create a custom `WaitForFirstConsumer` storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class) that is based off the tiered metro `retain` storage class that you want to use. Metro storage classes have the volume binding mode `WaitForFirstConsumer`, which is required for multizone ODF deployments. For **single zone clusters**, enter the name of the tiered storage class that you want to use. Example: `ibmc-vpc-block-10iops-tier`. For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference).| N/A |
 | `monSize` | Enter a size for your monitoring storage devices. Example: `20Gi` | N/A |
-| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD devices. For **multizone clusters**, specify the metro storage class that you want to use. If you want to use a metro `retain` storage class, [create a custom `WaitForFirstConsumer` storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class) that is based off the tiered metro `retain` storage class that you want to use. Metro storage classes have the volume binding mode `WaitForFirstConsumer`, which is required for multizone OCS deployments. For **single zone clusters**, enter the name of the tiered storage class that you want to use. Example: `ibmc-vpc-block-10iops-tier`. For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference).| N/A |
-| `osdSize` | Enter a size for your storage devices. Example: `100Gi`. The total storage capacity of your OCS cluster is equivalent to the `osdSize` x 3 divided by the `numOfOsd`. | N/A |
-| `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. OCS creates three times the `numOfOsd` value. For example, if you enter `1`, OCS provisions 3 disks of the size and storage class that you specify in the `osdStorageClassName` field. | `1` |
-| `billingType` | Enter a `billingType` of either `hourly` or `monthly` for your OCS deployment. | `hourly` |
-| `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your OCS deployment. | `false` |
-| `worker-IP` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your OCS deployment. Do not specify this parameter if you want to use all of the worker nodes in your cluster. | N/A |
-{: caption="OCS parameter reference" caption-side="top"}
+| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD devices. For **multizone clusters**, specify the metro storage class that you want to use. If you want to use a metro `retain` storage class, [create a custom `WaitForFirstConsumer` storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class) that is based off the tiered metro `retain` storage class that you want to use. Metro storage classes have the volume binding mode `WaitForFirstConsumer`, which is required for multizone ODF deployments. For **single zone clusters**, enter the name of the tiered storage class that you want to use. Example: `ibmc-vpc-block-10iops-tier`. For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference).| N/A |
+| `osdSize` | Enter a size for your storage devices. Example: `100Gi`. The total storage capacity of your ODF cluster is equivalent to the `osdSize` x 3 divided by the `numOfOsd`. | N/A |
+| `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the `numOfOsd` value. For example, if you enter `1`, ODF provisions 3 disks of the size and storage class that you specify in the `osdStorageClassName` field. | `1` |
+| `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your ODF deployment. | `advanced` |
+| `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
+| `worker-IP` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Do not specify this parameter if you want to use all of the worker nodes in your cluster. | N/A |
+{: caption="ODF parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
 
-## Classic: OpenShift Container Storage parameter reference
+<br />
+
+## {{site.data.keyword.satelliteshort}}: OpenShift Data Foundation parameter reference
+{: #ocs-sat-param-ref}
+
+Refer to the following parameters when you use the add-on or operator in {{site.data.keyword.satelliteshort}} clusters.
+{: shortdesc}
+
+| Parameter | Description | Default value |
+| --- | --- | --- |
+| `monStorageClassName` | Enter the name of the storage class that you want to use for your MON devices. For **multizone clusters**, specify a storage class that has the volume binding mode `WaitForFirstConsumer`, which is required for multizone ODF deployments. | N/A |
+| `monSize` | Enter a size for your monitoring storage devices. Example: `20Gi` | N/A |
+| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD devices. For **multizone clusters**, specify a storage class that has the volume binding mode `WaitForFirstConsumer`, which is required for multizone ODF deployments. | N/A |
+| `osdSize` | Enter a size for your storage devices. Example: `100Gi`. The total storage capacity of your ODF cluster is equivalent to the `osdSize` x 3 divided by the `numOfOsd`. | N/A |
+| `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the `numOfOsd` value. For example, if you enter `1`, ODF provisions 3 disks of the size and storage class that you specify in the `osdStorageClassName` field. | `1` |
+| `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your ODF deployment. | `advanced` |
+| `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
+| `worker-IP` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Do not specify this parameter if you want to use all of the worker nodes in your cluster. | N/A |
+{: caption="Satellite ODF parameter reference" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
+
+<br />
+
+## Classic: OpenShift Data Foundation parameter reference
 {: #ocs-classic-param-ref}
 
 
-Refer to the following OpenShift Container Storage parameters when you use the add-on or operator in classic clusters.
+Refer to the following OpenShift Data Foundation parameters when you use the add-on or operator in classic clusters.
 {: shortdesc}
 
 
@@ -348,11 +368,11 @@ Refer to the following OpenShift Container Storage parameters when you use the a
 | `monSize` | Enter a size for your monitoring storage pods. Example: `20Gi`. | N/A |
 | `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD devices. For baremetal worker nodes, enter `localblock`. | N/A |
 | `osdSize` | Enter a size for your monitoring storage devices. Example: `100Gi`. | N/A |
-| `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. OCS creates three times the specified number. For example, if you enter `1`, OCS creates 3 OSDs. | `1` |
-| `billingType` | Enter a `billingType` of either `hourly` or `monthly` for your OCS deployment. | `hourly` |
-| `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your OCS deployment. | `false` |
-| `worker-IP` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your OCS deployment. Do not specify this parameter if you want to use all of the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
-{: caption="OpenShift Container Storage parameter reference" caption-side="top"}
+| `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the specified number. For example, if you enter `1`, ODF creates 3 OSDs. | `1` |
+| `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your OCS deployment. | `hourly` |
+| `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
+| `worker-IP` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Do not specify this parameter if you want to use all of the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
+{: caption="Classic OpenShift Data Foundation parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
 
 <br />
@@ -360,11 +380,11 @@ Refer to the following OpenShift Container Storage parameters when you use the a
 ## Limitations
 {: #ocs-limitations}
 
-Review the following limitations for deploying OCS.
+Review the following limitations for deploying ODF.
 
-**Kubernetes resource ID character limit:** Kubernetes PVC names must be fewer than 63 characters. If you deploy OCS in a multizone VPC cluster and create your OCS storage cluster by using a metro `retain` storage class such as `ibmc-vpc-block-metro-retain-10iops-tier`, the corresponding OCS device set that is created by using this storage class fails. For more information see [OCS device set creation fails due to Kubernetes character limitation](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-ts-sc-name-limit).
+**Kubernetes resource ID character limit:** Kubernetes PVC names must be fewer than 63 characters. If you deploy ODF in a multizone VPC cluster and create your ODF storage cluster by using a metro `retain` storage class such as `ibmc-vpc-block-metro-retain-10iops-tier`, the corresponding ODF device set that is created by using this storage class fails. For more information see [ODF device set creation fails because of the Kubernetes character limitation](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-ts-sc-name-limit).
 
 ## Storage class reference
 {: #ocs-reference-section}
 
-[OCS storage class reference](/docs/openshift?topic=openshift-ocs-sc-ref)
+[ODF storage class reference](/docs/openshift?topic=openshift-ocs-sc-ref)
