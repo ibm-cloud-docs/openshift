@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-03"
+lastupdated: "2021-06-22"
 
 keywords: object storage, plug-in, changelog
 
@@ -103,23 +103,34 @@ View information for updates to the {{site.data.keyword.cos_full_notm}} plug-in 
 With version 2.1.0, a new version of the `ibmc` plug-in is included. To update the `ibmc` plugin, uninstall and re-install the {{site.data.keyword.cos_full_notm}} plugin. For more information, see [Updating the {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#update_cos_plugin) plug-in.
 {: note}
 
-With version 2.0.9, there is a new version of the `ibmc` plug-in. Storage classes created with earlier chart versions are immutable and cannot be upgraded. To remove the storage classes from previous versions and install the latest storage classes in your cluster, uninstall and re-install the {{site.data.keyword.cos_full_notm}} plugin. For more information, see [Updating the {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).
+With version 2.0.9, there is a new version of the `ibmc` plug-in. Storage classes that were created with earlier chart versions are immutable and can't be upgraded. To install the latest storage classes in your cluster, uninstall and re-install the {{site.data.keyword.cos_full_notm}} plug-in. For more information, see [Updating the {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).
 {: note}
 
 Refer to the following tables for a summary of changes for each version of the [Object Storage plug-in](/docs/openshift?topic=openshift-object_storage).
 
 | Object Storage plug-in version | Supported? | {{site.data.keyword.openshiftshort}} version support |
 | -------------------- | -----------|--------------------------- |
-| 2.1.1 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
-| 2.1.0 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
-| 2.0.9 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
-| 2.0.8 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
-| 2.0.7 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
+| 2.1.2 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} >= 4.3  |
+| 2.1.1 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 to 4.6 |
+| 2.1.0 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 to 4.6 |
+| 2.0.9 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 to 4.6 |
+| 2.0.8 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 to 4.6 |
+| 2.0.7 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 to 4.6 |
 | 2.0.6 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
-| 2.0.5 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
+| 2.0.5 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 to 4.6 |
 {: caption="Object Storage plug-in versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the Object Storage plug-in version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the Object Storage plug-in version is supported for."}
 
+## Changelog for version 2.1.2
+{: #0212_object_plugin}
+
+| Version | Image tags | Release date | Description |
+| --- | --- | --- | --- |
+| `2.1.2` | `1.8.30` | 22 June 2021 | Updates in this version: <ul><li>Version `v2.0.5` of the `helm-ibmc` plug-in is available.</li><li>Fixes [`CVE-2021-31525`](https://nvd.nist.gov/vuln/detail/CVE-2021-31525){: external},[`CVE-2021-33194`](https://nvd.nist.gov/vuln/detail/CVE-2021-33194){: external}, and [`CVE-2021-27219`](https://nvd.nist.gov/vuln/detail/CVE-2021-27219){: external}.</li></ul> |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Object Storage plug-in version 2.1.2" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the version of the component. The second column contains image tag. The third column contains the release date of the component. The fourth column contains a brief description of the change made to the component."}
 
 ## Changelog for version 2.1.1
 {: #0211_object_plugin}
