@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-06-22"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc, roks
 
@@ -102,7 +102,7 @@ After you [prepare your cluster for ODF](/docs/openshift?topic=openshift-ocs-sto
 
 * If you installed ODF in your {{site.data.keyword.satelliteshort}} or Classic cluster by using the managed cluster add-on, you must create a CRD for your storage cluster. In your CRD, you specify the details of the storage cluster that you create.
 
-  * [{{site.data.keyword.satelliteshort}} with remote volumes: Creating your ODF storage cluster](#ocs-vpc-deploy-crd) by specifying the storage classes that you want to use to dynamically provision storage volumes.
+  * [{{site.data.keyword.satelliteshort}} with remote volumes: Creating your ODF storage cluster](#ocs-sat-deploy-crd) by specifying the storage classes that you want to use to dynamically provision storage volumes.
   * [Classic or {{site.data.keyword.satelliteshort}} local disk: Creating your ODF storage cluster by using a CRD](#ocs-classic-deploy-crd) and specifying the device paths to the local disks on your worker nodes.
 
 * If you installed ODF by using OperatorHub, you must create your storage cluster by using the {{site.data.keyword.openshiftshort}} web console.
@@ -268,7 +268,7 @@ If you installed the ODF operator from OperatorHub, you can use the web console 
 Complete the following steps to create an ODF storage cluster by using the {{site.data.keyword.openshiftshort}} web console.
 {: shortdesc}
 
-Complete the following steps only if you installed the ODF Operator from OperatorHub. If you installed the ODF add-on in your cluster, see [creating a storage cluster by using a CRD](#ocs-vpc-deploy-crd)
+Complete the following steps only if you installed the ODF Operator from OperatorHub. If you installed the ODF add-on in your cluster, see [creating a storage cluster by using a CRD](#ocs-sat-deploy-crd)
 {: note}
 
 1. From the {{site.data.keyword.openshiftshort}} web console, click **Operators** > **Installed Operators**.

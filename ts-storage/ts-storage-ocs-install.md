@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-06-22"
 
 keywords: openshift, storage
 
@@ -180,7 +180,7 @@ Fewer than 3 worker nodes are specified for ODF installation. ODF must install o
 
 5. For classic clusters, [gather the device paths of the local disks on each worker node](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-get-devices).
 
-6. If you have available worker nodes that do not have ODF installed, specify them in the CRD by [adding the private IP address of the nodes you want to specify](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-vpc-deploy-crd). For classic clusters, you must also [add the device paths of the local disks that you found earlier for each node you want to specify](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-deploy-crd).
+6. If you have available worker nodes that do not have ODF installed, specify them in the CRD by [adding the private IP address of the nodes you want to specify](/docs/openshift?topic=openshift-ocs-storage-install#install-odf-cli). For classic clusters, you must also [add the device paths of the local disks that you found earlier for each node you want to specify](/docs/openshift?topic=openshift-ocs-storage-cluster-setup#ocs-classic-deploy-crd).
 
 ## Error: Failed to update storage cluster
 {: #ts-ocs-install-decrease-capacity}
