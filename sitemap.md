@@ -1229,6 +1229,7 @@ subcollection: openshift
   * [What if I want to run Portworx in a classic cluster with non-SDS worker nodes?](/docs/openshift?topic=openshift-portworx#about-px-non-sds)
   * [How can I make sure that my data is stored highly available?](/docs/openshift?topic=openshift-portworx#about-px-ha)
   * [What volume topology offers the best performance for my pods?](/docs/openshift?topic=openshift-portworx#about-px-topology)
+  * [Can I install Portworx in a private cluster?](/docs/openshift?topic=openshift-portworx#about-px-private)
   * [What's next?](/docs/openshift?topic=openshift-portworx#about-px-next)
 * [Planning your Portworx setup](/docs/openshift?topic=openshift-portworx#portworx_planning)
 * [Creating raw, unformatted, and unmounted block storage for VPC and non-SDS classic worker nodes](/docs/openshift?topic=openshift-portworx#create_block_storage)
@@ -1843,6 +1844,7 @@ subcollection: openshift
 * [Changelog for version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [Object storage plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog)
+* [Changelog for version 2.1.2](/docs/openshift?topic=openshift-cos_plugin_changelog#0212_object_plugin)
 * [Changelog for version 2.1.1](/docs/openshift?topic=openshift-cos_plugin_changelog#0211_object_plugin)
 * [Changelog for version 2.1.0](/docs/openshift?topic=openshift-cos_plugin_changelog#0210_object_plugin)
 * [Changelog for version 2.0.9](/docs/openshift?topic=openshift-cos_plugin_changelog#0209_object_plugin)
