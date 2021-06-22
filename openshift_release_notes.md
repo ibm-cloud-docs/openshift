@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-06-22"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -110,6 +110,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 22 June 2021 | **Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.7.16_1522_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4716_1522), [`4.6.34_1546_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4634_1546) [`4.5.40_1542_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4540_1542) and [`3.11.452_1593_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311452_1593).|
 | 21 June 2021 | <ul><li>**Ingress changelogs**: Updated the [Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for the release of version 0.47.0 of the Kubernetes Ingress image.</li><li>**New! The `addon options` command is now available**: For more information, see [addon options](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_options)</li><li>**New! OpenShift Container Storage is now OpenShift Data Foundation**.</li><li>**New! Deploy OpenShift Data Foundation on VPC clusters with a single command**: For more information, see [Quick start for VPC](/docs/openshift?topic=openshift-ocs-storage-prep#odf-quickstart)</li></ul> |
 | 17 June 2021 | <ul><li>On 05 July 2021, the DNS provider is changed from Cloudflare to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains for all clusters in {{site.data.keyword.openshiftlong_notm}}. If you currently allow inbound traffic from the Cloudflare source IP addresses, you must also allow inbound traffic from the [Akamai source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} before 05 July. After the migration, you can remove the Cloudflare IP address rules. For more information, see the [announcement](https://cloud.ibm.com/notifications?selected=1621697674798){: external}.</li><li>**Image key synchronizer**: Updated the version changelog for the [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-on.</li></ul> |
 | 15 June 2021 | **New! Private VPC NLB**: You can now create [private Network Load Balancers for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb_priv) to expose apps in clusters that run {{site.data.keyword.openshiftshort}} version 4.6 and later. |
