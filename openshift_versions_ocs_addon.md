@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-06-23"
 
 keywords: odf, openshift data foundation add-on, changelog
 
@@ -103,7 +103,7 @@ View information for updates to the OpenShift Data Foundation} add-on in your {{
 The default version of the OpenShift Data Foundation add-on is 4.7.0. If you have a cluster version other than the default, specify the `--version <version>` flag when you enable the add-on.
 {: note}
 
-Refer to the following tables for a summary of changes for each version of the [OpenShift Data Foundation} add-on](/docs/containers?topic=openshift-ocs-prep).
+Refer to the following tables for a summary of changes for each version of the [OpenShift Data Foundation} add-on](/docs/openshift?topic=openshift-ocs-prep).
 
 | OpenShift Data Foundation add-on | Supported? | {{site.data.keyword.openshiftshort}} version support |
 | -------------------- | -----------|--------------------------- |

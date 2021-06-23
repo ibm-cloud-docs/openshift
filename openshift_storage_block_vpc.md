@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-01"
+lastupdated: "2021-06-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -102,11 +102,8 @@ subcollection: openshift
 
 You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.block_storage_is_short}} is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution). For pricing information, see [Pricing for {{site.data.keyword.block_storage_is_short}}](https://www.ibm.com/cloud/vpc/pricing).
 
-The {{site.data.keyword.block_storage_is_short}} add-on is installed and enabled by default on VPC clusters. Later, you can disable or reenable the add-on by using the [`addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable) or [`addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable) command in the CLI.
+The {{site.data.keyword.block_storage_is_short}} add-on is installed and enabled by default on VPC clusters. Later, you can disable or reenable the add-on by using the [`addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable) or [`addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable) command in the CLI. PVC creation and app deployment are not disrupted when the add-on is disabled. Existing volumes and data are not impacted.
 {: note}
-
-Version `2.0.2` of {{site.data.keyword.block_storage_is_short}} add-on is unsupported. Version `2.0.3` is deprecated and no longer receives fixes or updates. If your cluster runs a deprecated or unsupported add-on version, update your clusters to use version `3.0.0`. You can update the add-on by disabling and re-enabling it. Disable the add-on by running the `ibmcloud oc cluster addon disable vpc-block-csi-driver --cluster <cluster-name>` command. Then, re-enable by running the `ibmcloud oc cluster addon enable vpc-block-csi-driver --cluster <cluster-name>` command. Existing PVs and PVCs are not impacted. For more information, see [updating the {{site.data.keyword.block_storage_is_short}} add-on](#vpc-addon-update)
-{: important}
 
 ## Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.block_storage_is_short}}
 {: #vpc_block_qs}
@@ -572,7 +569,7 @@ You can attach a volume to one worker node only. Make sure that the volume is in
 ## Updating the {{site.data.keyword.block_storage_is_short}} add-on
 {: #vpc-addon-update}
 
-You can update the {{site.data.keyword.block_storage_is_short}} add-on by disabling and re-enabling the add-on in your cluster.
+You can update the {{site.data.keyword.block_storage_is_short}} add-on by disabling and re-enabling the add-on in your cluster. When you disable the add-on, PVC creation and app deployment are not disrupted when the add-on is disabled. Existing volumes and data are not impacted.
 {: shortdesc}
 
 1. Check to see if an update is available. If an update is available, the plug-in version is flagged with an asterisk and the latest version is shown. Note the latest version as this value is used later.
