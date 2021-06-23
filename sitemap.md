@@ -816,8 +816,8 @@ subcollection: openshift
 
 [Reviewing service, API server, and worker node logs](/docs/openshift?topic=openshift-health-audit)
 * [Kubernetes API server audit logs](/docs/openshift?topic=openshift-health-audit#audit-api-server)
-  * [Understanding the Kubernetes API audit configuration](/docs/openshift?topic=openshift-health-audit#api-server-config)
   * [Forwarding Kubernetes API audit logs to {{site.data.keyword.la_short}}](/docs/openshift?topic=openshift-health-audit#audit-api-server-la)
+  * [Forwarding Kubernetes API audit logs to a resource in the {{site.data.keyword.cloud_notm}} private network](/docs/openshift?topic=openshift-health-audit#audit-api-server-priv)
 * [Worker node audit logs](/docs/openshift?topic=openshift-health-audit#audit-worker)
   * [Understanding the worker node audit configuration](/docs/openshift?topic=openshift-health-audit#audit-worker-config)
   * [Setting up log forwarding for worker nodes](/docs/openshift?topic=openshift-health-audit#audit-worker-setup)
