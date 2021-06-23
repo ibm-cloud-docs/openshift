@@ -355,6 +355,7 @@ Red Hat OpenShift on IBM Cloud
             ts-storage/ts-storage-block-mount-wrong-fs.md
             ts-storage/ts-storage-block-read-only.md
             ts-storage/ts-storage-block-throttling.md
+            ts-storage/ts-storage-vpc-block-api-key.md
 
         {: .topicgroup}
         Object Storage
