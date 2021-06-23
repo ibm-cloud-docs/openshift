@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-06-22"
+lastupdated: "2021-06-23"
 
 keywords: openshift
 subcollection: openshift
@@ -816,8 +816,8 @@ subcollection: openshift
 
 [Reviewing service, API server, and worker node logs](/docs/openshift?topic=openshift-health-audit)
 * [Kubernetes API server audit logs](/docs/openshift?topic=openshift-health-audit#audit-api-server)
-  * [Understanding the Kubernetes API audit configuration](/docs/openshift?topic=openshift-health-audit#api-server-config)
   * [Forwarding Kubernetes API audit logs to {{site.data.keyword.la_short}}](/docs/openshift?topic=openshift-health-audit#audit-api-server-la)
+  * [Forwarding Kubernetes API audit logs to a resource in the {{site.data.keyword.cloud_notm}} private network](/docs/openshift?topic=openshift-health-audit#audit-api-server-priv)
 * [Worker node audit logs](/docs/openshift?topic=openshift-health-audit#audit-worker)
   * [Understanding the worker node audit configuration](/docs/openshift?topic=openshift-health-audit#audit-worker-config)
   * [Setting up log forwarding for worker nodes](/docs/openshift?topic=openshift-health-audit#audit-worker-setup)
@@ -1836,6 +1836,7 @@ subcollection: openshift
   * [Explanation and remediation](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-remediation)
 
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog)
+* [Changelog for 1.0.3, released 23 June 2021](/docs/openshift?topic=openshift-ca_changelog#0103_ca_addon)
 * [Changelog for 1.0.2, released 08 March 2021](/docs/openshift?topic=openshift-ca_changelog#0102_ca_addon)
 * [Changelog for 1.0.1, released 15 August 2020](/docs/openshift?topic=openshift-ca_changelog#0101_ca_addon)
 
@@ -2366,6 +2367,8 @@ subcollection: openshift
 [Block storage: Why does block storage change to read-only?](/docs/openshift?topic=openshift-readonly_block)
 
 [Block storage: Why does the Block storage plug-in Helm chart give CPU throttling warnings?](/docs/openshift?topic=openshift-block_helm_cpu)
+
+[{{site.data.keyword.block_storage_is_short}} PVC creation fails after API key reset](/docs/openshift?topic=openshift-vpc-block-api-key-reset-ts)
 
 
 ## Object Storage

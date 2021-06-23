@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-06-23"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc, roks
 
@@ -142,7 +142,7 @@ Before you install the add-on, [plan your ODF set up](/docs/openshift?topic=open
 ### Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance
 {: #ocs-create-cos}
 
-If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing store in your storage cluster, create an instance of {{site.data.keyword.cos_full_notm}}. Then, create a set of HMAC credentials and a Kubernetes secret that uses your {{site.data.keyword.cos_short}} HMAC credentials. If you do not specify {{site.data.keyword.cos_full_notm}} credentials during installation, then the default backing store in your storage cluster is created by using the PVs in your cluster. You can [set up additional backing stores](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-backing-store-setup) after deploying ODF, but you cannot change the default backing store.
+If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing store in your storage cluster, create an instance of {{site.data.keyword.cos_full_notm}}. Then, create a set of HMAC credentials and a Kubernetes secret that uses your {{site.data.keyword.cos_short}} HMAC credentials. If you do not specify {{site.data.keyword.cos_full_notm}} credentials during installation, then the default backing store in your storage cluster is created by using the PVs in your cluster. You can set up additional backing stores after deploying ODF, but you can't change the default backing store.
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 

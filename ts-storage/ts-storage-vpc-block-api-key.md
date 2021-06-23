@@ -1,12 +1,13 @@
 ---
 
 copyright:
-  years: 2014, 2021
+  years: 2021, 2021
 lastupdated: "2021-06-23"
 
-keywords: odf, openshift data foundation add-on, changelog
+keywords: openshift, storage
 
-subcollection: openshift, container storage
+subcollection: openshift
+content-type: troubleshoot
 
 ---
 
@@ -91,25 +92,26 @@ subcollection: openshift, container storage
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-  
-  
 
-# OpenShift Data Foundation add-on changelog
-{: #odf_addon_changelog}
 
-View information for updates to the OpenShift Data Foundation} add-on in your {{site.data.keyword.openshiftlong}} clusters.
-{: shortdesc}
+# {{site.data.keyword.block_storage_is_short}} PVC creation fails after API key reset
+{: #vpc-block-api-key-reset-ts}
 
-The default version of the OpenShift Data Foundation add-on is 4.7.0. If you have a cluster version other than the default, specify the `--version <version>` flag when you enable the add-on.
-{: note}
+**Infrastructure provider**:
+<img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-Refer to the following tables for a summary of changes for each version of the [OpenShift Data Foundation} add-on](/docs/openshift?topic=openshift-ocs-prep).
+{: tsSymptoms}
+After you reset your API key, {{site.data.keyword.block_storage_is_short}} PVC creation fails with an IAM permission error.
 
-| OpenShift Data Foundation add-on | Supported? | {{site.data.keyword.openshiftshort}} version support |
-| -------------------- | -----------|--------------------------- |
-| 4.7.0 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | 4.7 |
-| 4.6.0 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | 4.6 |
-{: caption="Add-on versions" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the add-on version is supported for."}
+{: tsCauses}
+Resetting your API key means the credentials the {{site.data.keyword.block_storage_is_short}} add-on uses to provision volumes are no longer valid. After resetting your API key, you must reset the {{site.data.keyword.block_storage_is_short}} controller to use the latest API key for volume provisioning.
+
+{: tsResolve}
+After resetting your API key, you must recreate the {{site.data.keyword.block_storage_is_short}} controller pod. To recreate the controller pod, delete it by running the following command:
+```sh
+oc delete pod -n kube-system ibm-vpc-block-csi-controller-0
+```
+{: pre}
+
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-06-23"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -4785,6 +4785,9 @@ ibmcloud oc api-key info --cluster my_cluster
 
 Create an {{site.data.keyword.cloud_notm}} IAM API key that impersonates the user's permissions to authenticate requests for all clusters in the current resource group and region. For more information, see [Understanding how the API key works](/docs/openshift?topic=openshift-users#api_key_about).
 {: shortdesc}
+
+If you use the {{site.data.keyword.block_storage_is_short}} add-on in your cluster, you must recreate the controller pod after resetting your API key. To recreate the controller pod, delete it by running the `oc delete pod -n kube-system ibm-vpc-block-csi-controller-0` command.
+{: note}
 
 <p class="important">Before you use this command, make sure that the user who runs this command has the required [{{site.data.keyword.containerlong_notm}} and IBM Cloud infrastructure permissions](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions). Target the resource group and region that you want to set the API key for.</br></br>When the API key is reset, the previous API key that was used, if any, for the region and resource group is deleted. Before you reset the API key, check whether you have other services that use the existing API key, such as a [key management service (KMS) provider](/docs/openshift?topic=openshift-encryption#keyprotect) or the [default {{site.data.keyword.cloudcerts_long}} service instance for your cluster](/docs/containers?topic=containers-ingress-types#manage_certs).</p>
 
