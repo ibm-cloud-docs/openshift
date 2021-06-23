@@ -340,7 +340,7 @@ The OpenShift Data Foundation add-on is available as a technology preview and mi
 {: preview}
 
 ```sh
-ibmcloud oc cluster addon enable openshift-container-storage [-f] [--param PARAM]</staging cli-addon> [-q] [--version VERSION]
+ibmcloud oc cluster addon enable openshift-container-storage [-f] [--param PARAM] [-q] [--version VERSION]
 ```
 {: pre}
 
@@ -359,7 +359,7 @@ ibmcloud oc cluster addon enable openshift-container-storage [-f] [--param PARAM
 <dd>Optional: Force the command to run with no user prompts.</dd>
 
 <dt><code>--param <em>PARAM</em></code></dt>
-<dd>Optional: Specify an installation setting. To see available settings, run `ibmcloud oc cluster addon options --addon openshift-container-storage`.</dd></staging cli-addon>
+<dd>Optional: Specify an installation setting. To see available settings, run `ibmcloud oc cluster addon options --addon openshift-container-storage`.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -429,7 +429,7 @@ ibmcloud oc get --addon ADDON --cluster CLUSTER [--output OUTPUT] [-q]
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
 </dl>
 
-</br></staging cli-addon>
+</br>
 
 ### `ibmcloud oc cluster addon ls`
 {: #cs_cluster_addons}
@@ -489,7 +489,7 @@ ibmcloud oc cluster addon options --addon ADDON [--output OUTPUT] [-q] [--versio
 <dd>Optional: Specify an add-on version to display options for. If no version is specified, the default version's options are displayed. To list available add-on versions, run `ibmcloud oc cluster addon versions`.</dd>
 </dl>
 
-</br></staging cli-addon>
+</br>
 
 ### `ibmcloud oc cluster addon versions`
 {: #cs_addon_versions}
