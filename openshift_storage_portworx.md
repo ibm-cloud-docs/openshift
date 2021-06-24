@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-22"
+lastupdated: "2021-06-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -176,7 +176,7 @@ All set? Let's start with [creating a cluster with an SDS worker pool of at leas
 Before you create your cluster and install Portworx, review the following planning steps.
 {: shortdesc}
 
-**Minimum required permissions**: 
+**Minimum required permissions**:
 * **Administrator** and **VirtualServerConsoleAdmin** for the VPC service.
 * **Manager** and **Administrator** for the {{site.data.keyword.registrylong_notm}} service.
 * **Operator** and **Manager** for the Kubernetes service.
@@ -394,7 +394,7 @@ The following image illustrates the decryption workflow in Portworx when you set
 Follow these steps to set up encryption for your Portworx volumes.
 {: shortdesc}
 
-1. Make sure that you are [assigned the `Editor` platform access role and the `Writer` service access role](/docs/key-protect?topic=key-protect-grant-access-keys) in {{site.data.keyword.cloud_notm}} Identity and Access Management for the KMS provider that you want to use.
+1. Make sure that you are [assigned the `Editor` platform access role and the `Writer` service access role](/docs/key-protect?topic=key-protect-manage-access) in {{site.data.keyword.cloud_notm}} Identity and Access Management for the KMS provider that you want to use.
 
 2. Create a service instance of the KMS provider that you want to use. Note the name of the service instance that you created.
    * **[{{site.data.keyword.keymanagementservicelong_notm}}](/docs/key-protect?topic=key-protect-provision)**
