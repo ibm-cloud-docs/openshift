@@ -103,7 +103,15 @@ View information for updates to the OpenShift Data Foundation} add-on in your {{
 The default version of the OpenShift Data Foundation add-on is 4.7.0. If you have a cluster version other than the default, specify the `--version <version>` flag when you enable the add-on.
 {: note}
 
-Refer to the following tables for a summary of changes for each version of the [OpenShift Data Foundation} add-on](/docs/openshift?topic=openshift-ocs-storage-prep).
+
+
+To view a list of add-ons and the supported {{site.data.keyword.openshiftshort}} versions, run the following command.
+```sh
+ibmcloud oc cluster addon versions --addon openshift-container-storage
+```
+{: pre}
+
+Refer to the following table for a summary of changes for each version of the [OpenShift Data Foundation} add-on](/docs/openshift?topic=openshift-ocs-storage-prep).
 
 | OpenShift Data Foundation add-on | Supported? | {{site.data.keyword.openshiftshort}} version support |
 | -------------------- | -----------|--------------------------- |
