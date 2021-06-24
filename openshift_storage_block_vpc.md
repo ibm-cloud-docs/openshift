@@ -569,7 +569,7 @@ You can attach a volume to one worker node only. Make sure that the volume is in
 ## Updating the {{site.data.keyword.block_storage_is_short}} add-on
 {: #vpc-addon-update}
 
-You can update the {{site.data.keyword.block_storage_is_short}} add-on by disabling and re-enabling the add-on in your cluster. When you disable the add-on, PVC creation and app deployment are not disrupted when the add-on is disabled. Existing volumes and data are not impacted.
+You can update the {{site.data.keyword.block_storage_is_short}} add-on by disabling and re-enabling the add-on in your cluster. When you disable the add-on, PVC creation and app deployment are not disrupted. Existing volumes and data are not impacted.
 {: shortdesc}
 
 1. Check to see if an update is available. If an update is available, the plug-in version is flagged with an asterisk and the latest version is shown. Note the latest version as this value is used later.

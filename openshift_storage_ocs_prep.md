@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-06-24"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, roks
 
@@ -150,7 +150,7 @@ Before you install ODF in your {{site.data.keyword.satelliteshort}} cluster, eac
 1. [Attach at least 3 hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) that meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs). Additionally, each host must have a minimum of 16 CPUs and 64 GB RAM.
 1. [Create a cluster](/docs/openshift?topic=openshift-clusters) with the hosts that you previously attached to the location.
 
-You can also deploy ODF to your {{site.data.keyword.satelliteshort}} cluster by using the {{site.data.keyword.satelliteshort}} storage templates. Templates allow you to automate your deployment across multiple {{site.data.keyword.satelliteshort}} clusters. For more information, see [ODF](/docs/satellite?topic=satellite-config-storage-ocs-remote) or [ODF](https://cloud.ibm.com/docs/satellite?topic=satellite-config-storage-ocs-local) depending on your cluster setup.
+You can also deploy ODF to your {{site.data.keyword.satelliteshort}} cluster by using the {{site.data.keyword.satelliteshort}} storage templates. Templates allow you to automate your deployment across multiple {{site.data.keyword.satelliteshort}} clusters. For more information, see [ODF](/docs/satellite?topic=satellite-config-storage-ocs-remote) or [ODF](/docs/satellite?topic=satellite-config-storage-ocs-local) depending on your cluster setup.
 {: tip}
 
 **Next steps**:[Install ODF in your cluster](/docs/openshift?topic=openshift-ocs-storage-install).

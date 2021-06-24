@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-06-24"
 
 keywords: file, debug, help
 
@@ -126,7 +126,7 @@ Follow the steps to review any error messages related to pod deployment.
     ```
     {: pre}
 
-1. [Review the ODF troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_openshift_container_storage).  
+1. [Review the ODF troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_openshift_data_foundation).  
 
 ## Restarting your app pod
 {: #debug_storage_ocs_restart}
@@ -208,7 +208,7 @@ Follow the steps to check the status of your storage driver and plug-in pods and
       ```
       {: pre}
 
-1. Check the latest logs for any error messages. [Review the ODF troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_openshift_container_storage).
+1. Check the latest logs for any error messages. [Review the ODF troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_openshift_data_foundation).
   
 ## Checking and updating the oc CLI version
 {: #debug_storage_ocs_cli}
@@ -298,7 +298,7 @@ Describe your ODF resources and review the command outputs for any error message
     ```
     {: pre}
 
-1. [Review the ODF trouble shooting documentation for steps to solve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_openshift_container_storage). 
+1. [Review the ODF trouble shooting documentation for steps to solve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_openshift_data_foundation). 
 
 
 
