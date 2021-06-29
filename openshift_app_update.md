@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-06-29"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, update, upgrade
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -110,7 +111,7 @@ To update your app, you can choose from various strategies such as the following
 <dt>Instantaneous switch</dt>
   <dd>Also referred to as a blue-green deployment, an instantaneous switch requires double the compute resources to have two versions of an app running at once. With this approach, you can switch your users to the newer version in near real time. Make sure that you use service label selectors (such as `version: green` and `version: blue`) to make sure that requests are sent to the right app version. You can create the new `version: green` deployment, wait until it is ready, and then delete the `version: blue` deployment. Or you can perform a [rolling update](/docs/openshift?topic=openshift-update_app#app_rolling), but set the `maxUnavailable` parameter to `0%` and the `maxSurge` parameter to `100%`.</dd>
 <dt>Canary or A/B deployment</dt>
-  <dd>A more complex update strategy, a canary deployment is when you pick a percentage of users such as 5% and send them to the new app version. You collect metrics in your logging and monitoring tools on how the new app version performs, do A/B testing, and then roll out the update to more users. As with all deployments, labeling the app (such as `version: stable` and `version: canary`) is critical. To manage canary deployments, you might [install the managed Istio add-on service mesh](/docs/openshift?topic=openshift-istio), [set up {{site.data.keyword.mon_short}} for your cluster](/docs/monitoring?topic=monitoring-kubernetes_cluster#kubernetes_cluster), and then use the Istio service mesh for A/B testing as described [in this blog post ![External link icon](../icons/launch-glyph.svg "External link icon")](https://sysdig.com/blog/monitor-istio/).</dd>
+  <dd>A more complex update strategy, a canary deployment is when you pick a percentage of users such as 5% and send them to the new app version. You collect metrics in your logging and monitoring tools on how the new app version performs, do A/B testing, and then roll out the update to more users. As with all deployments, labeling the app (such as `version: stable` and `version: canary`) is critical. To manage canary deployments, you might [install the managed Istio add-on service mesh](/docs/containers?topic=containers-istio), [set up {{site.data.keyword.mon_short}} for your cluster](/docs/monitoring?topic=monitoring-kubernetes_cluster#kubernetes_cluster), and then use the Istio service mesh for A/B testing as described [in this blog post ![External link icon](../icons/launch-glyph.svg "External link icon")](https://sysdig.com/blog/monitor-istio/).</dd>
 </dl>
 
 
@@ -125,11 +126,11 @@ Want to scale your worker nodes instead of your pods? Check out the [cluster aut
 
 Before you begin:
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-- Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-users#platform) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
+- Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-users) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
 
 Steps:
 
-1.  Deploy your app to a cluster from the CLI. For more complex deployments, you might need to create a [configuration file](/docs/openshift?topic=openshift-deploy_app#app_cli).
+1.  Deploy your app to a cluster from the CLI. For more complex deployments, you might need to create a [configuration file](/docs/containers?topic=containers-deploy_app#app_cli).
     ```
     oc create deployment <app_name> --image=<image>
     ```
@@ -182,8 +183,8 @@ Want to prevent downtime during your rolling update? Be sure to specify a [readi
 
 Before you begin:
 *   [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-*   Create a [deployment](/docs/openshift?topic=openshift-deploy_app#app_cli).
-*   Make sure that you have a [service access role](/docs/openshift?topic=openshift-users#platform) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
+*   Create a [deployment](/docs/containers?topic=containers-deploy_app#app_cli).
+*   Make sure that you have a [service access role](/docs/openshift?topic=openshift-users) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
 
 To manage rolling updates to your apps:
 1.  To make sure that your deployments are marked as ready only when the container is running and ready to service requests, add [liveness and readiness probes to your deployment](/docs/openshift?topic=openshift-openshift_apps#probe).
@@ -332,7 +333,7 @@ To see a list of supported integrations and steps for setting up a continuous de
 When you use a [version control system such as Git](/docs/openshift?topic=openshift-plan_deploy#deploy_organize), configuration management projects such as [`kustomize`](/docs/openshift?topic=openshift-openshift_apps#kustomize), or continuous delivery tools such as [Razee](https://razee.io/){: external} in your cluster, you can deploy your app configuration files quickly from cluster to cluster. Sometimes you have only a few deployments that you tested in a cluster and prefer to copy these deployments and redeploy in another cluster.
 {: shortdesc}
 
-Before you begin, you need two clusters and the **Manager** [service access role](/docs/openshift?topic=openshift-users#platform) for all projects in both clusters so that you can copy all the resources from one cluster and deploy them to another.
+Before you begin, you need two clusters and the **Manager** [service access role](/docs/openshift?topic=openshift-users) for all projects in both clusters so that you can copy all the resources from one cluster and deploy them to another.
 
 1.  [Target](/docs/openshift?topic=openshift-access_cluster) the cluster that you want to copy resources from.
 2.  List all the configuration files in your cluster and verify that you want to copy these configurations.

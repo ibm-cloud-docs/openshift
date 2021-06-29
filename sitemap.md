@@ -421,36 +421,6 @@ subcollection: openshift
   * [Using a service ID to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_service_id)
 * [Accessing the cluster master via admission controllers and webhooks](/docs/openshift?topic=openshift-access_cluster#access_webhooks)
 
-[Assigning cluster access](/docs/openshift?topic=openshift-users)
-* [Setting up access to your cluster](/docs/openshift?topic=openshift-users#access-checklist)
-* [Understanding access policies and roles](/docs/openshift?topic=openshift-users#access_policies)
-  * [Pick the right access policy and role for your users](/docs/openshift?topic=openshift-users#access_roles)
-  * [Assign access roles to individual or groups of users in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#iam_individuals_groups)
-  * [Scope user access to cluster instances, namespaces, or resource groups](/docs/openshift?topic=openshift-users#resource_groups)
-* [Setting up the API key to enable access to the infrastructure portfolio and other services](/docs/openshift?topic=openshift-users#api_key_setup)
-  * [Setting up the API key in most cases](/docs/openshift?topic=openshift-users#api_key_most_cases)
-  * [Understanding other options than the API key](/docs/openshift?topic=openshift-users#api_key_other)
-  * [Understanding how the API key works](/docs/openshift?topic=openshift-users#api_key_about)
-  * [Ensuring that the API key or infrastructure credentials owner has the correct permissions](/docs/openshift?topic=openshift-users#owner_permissions)
-  * [Understanding access to the infrastructure portfolio](/docs/openshift?topic=openshift-users#understand_infra)
-  * [Accessing the infrastructure portfolio with your {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account](/docs/openshift?topic=openshift-users#default_account)
-  * [Accessing a different classic infrastructure account](/docs/openshift?topic=openshift-users#credentials)
-* [Granting users access to your cluster through {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#platform)
-  * [Example use cases and roles](/docs/openshift?topic=openshift-users#example-iam)
-  * [Assigning {{site.data.keyword.cloud_notm}} IAM roles with the console](/docs/openshift?topic=openshift-users#add_users)
-  * [Assigning {{site.data.keyword.cloud_notm}} IAM roles with the CLI](/docs/openshift?topic=openshift-users#add_users_cli)
-* [Assigning RBAC permissions](/docs/openshift?topic=openshift-users#role-binding-assign)
-  * [Understanding RBAC permissions](/docs/openshift?topic=openshift-users#understand-rbac)
-  * [Creating custom RBAC permissions for users, groups, or service accounts](/docs/openshift?topic=openshift-users#rbac)
-  * [Extending existing permissions by aggregating cluster roles](/docs/openshift?topic=openshift-users#rbac_aggregate)
-* [Customizing classic infrastructure permissions](/docs/openshift?topic=openshift-users#infra_access)
-  * [Assigning infrastructure access through the console](/docs/openshift?topic=openshift-users#infra_console)
-  * [Assigning infrastructure access through the CLI](/docs/openshift?topic=openshift-users#infra_cli)
-* [Removing user permissions](/docs/openshift?topic=openshift-users#removing)
-  * [Checking if the user's credentials are used for infrastructure permissions](/docs/openshift?topic=openshift-users#removing_check_infra)
-  * [Removing a user from your account](/docs/openshift?topic=openshift-users#remove_user)
-  * [Removing specific permissions](/docs/openshift?topic=openshift-users#remove_permissions)
-
 
 ## Managing the cluster and worker node lifecycle
 {: #sitemap_managing_the_cluster_and_worker_node_lifecycle}
@@ -597,6 +567,48 @@ subcollection: openshift
   * [Does Red Hat collect information about my cluster?](/docs/openshift?topic=openshift-service-arch#pi-rh-telemetry)
 * [Dependencies to other {{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-service-arch#dependencies-ibmcloud)
 * [Dependencies to 3rd party services](/docs/openshift?topic=openshift-service-arch#dependencies-3rd-party)
+
+
+## Managing access control
+{: #sitemap_managing_access_control}
+
+
+[Understanding access control for clusters](/docs/openshift?topic=openshift-access-overview)
+* [Access control checklist](/docs/openshift?topic=openshift-access-overview#access-checklist)
+  * [{{site.data.keyword.cloud_notm}} access control](/docs/openshift?topic=openshift-access-overview#access-checklist-iam)
+  * [Other types of access control](/docs/openshift?topic=openshift-access-overview#access-checklist-other)
+* [Understanding IAM access policies and roles](/docs/openshift?topic=openshift-access-overview#access_policies)
+  * [Pick the right access policy and role for your users](/docs/openshift?topic=openshift-access-overview#access_roles)
+  * [Assign access roles to individual or groups of users in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-access-overview#iam_individuals_groups)
+  * [Scope user access to cluster instances, namespaces, or resource groups](/docs/openshift?topic=openshift-access-overview#resource_groups)
+
+[Setting up API key credentials so the service can access the infrastructure and other cloud services](/docs/openshift?topic=openshift-access-creds)
+* [Setting up the API key in most cases](/docs/openshift?topic=openshift-access-creds#api_key_most_cases)
+* [Understanding other options than the API key](/docs/openshift?topic=openshift-access-creds#api_key_other)
+* [Understanding how the API key works](/docs/openshift?topic=openshift-access-creds#api_key_about)
+* [Ensuring that the API key or infrastructure credentials owner has the correct permissions](/docs/openshift?topic=openshift-access-creds#owner_permissions)
+* [Understanding access to the infrastructure portfolio](/docs/openshift?topic=openshift-access-creds#understand_infra)
+* [Accessing the infrastructure portfolio with your {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account](/docs/openshift?topic=openshift-access-creds#default_account)
+* [Accessing a different classic infrastructure account](/docs/openshift?topic=openshift-access-creds#credentials)
+* [Customizing classic infrastructure permissions](/docs/openshift?topic=openshift-access-creds#infra_access)
+  * [Assigning infrastructure access through the console](/docs/openshift?topic=openshift-access-creds#infra_console)
+  * [Assigning infrastructure access through the CLI](/docs/openshift?topic=openshift-access-creds#infra_cli)
+
+[Controlling user access with {{site.data.keyword.cloud_notm}} IAM and Kubernetes RBAC](/docs/openshift?topic=openshift-users)
+* [Example cluster use cases and IAM roles](/docs/openshift?topic=openshift-users#example-iam)
+* [Assigning {{site.data.keyword.cloud_notm}} IAM roles with the console](/docs/openshift?topic=openshift-users#add_users)
+* [Assigning {{site.data.keyword.cloud_notm}} IAM roles with the CLI](/docs/openshift?topic=openshift-users#add_users_cli)
+* [Understanding RBAC permissions](/docs/openshift?topic=openshift-users#understand-rbac)
+* [Creating custom RBAC permissions for users, groups, or service accounts](/docs/openshift?topic=openshift-users#rbac)
+* [Extending existing permissions by aggregating cluster roles](/docs/openshift?topic=openshift-users#rbac_aggregate)
+* [Removing user permissions](/docs/openshift?topic=openshift-users#removing)
+  * [Checking if the user's credentials are used for infrastructure permissions](/docs/openshift?topic=openshift-users#removing_check_infra)
+  * [Removing a user from your account](/docs/openshift?topic=openshift-users#remove_user)
+  * [Removing specific permissions](/docs/openshift?topic=openshift-users#remove_permissions)
+
+[Authorizing pods in your cluster to {{site.data.keyword.cloud_notm}} services with IAM trusted profiles](/docs/openshift?topic=openshift-pod-iam-identity)
+* [Prerequisites](/docs/openshift?topic=openshift-pod-iam-identity#iam-identity-prereqs)
+* [Creating an IAM trusted profile for your cluster in the API](/docs/openshift?topic=openshift-pod-iam-identity#iam-identity-create-api)
 
 
 ## Securing cluster workloads

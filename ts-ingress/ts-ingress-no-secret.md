@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-06-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -123,7 +123,7 @@ As of 24 August 2020, an [{{site.data.keyword.cloudcerts_long}}](/docs/certifica
 
 For a {{site.data.keyword.cloudcerts_short}} instance to be created for your new or existing cluster, the API key for the region and resource group that the cluster is created in must have the correct IAM permissions. The API key that your cluster uses does not have the correct IAM permissions to create and access a {{site.data.keyword.cloudcerts_short}} instance.
 
-Also, if you used the same cluster name repeatedly, you might have a rate limiting issue. For more information, see [No Ingress subdomain exists after you create clusters of the same or similar name](/docs/openshift?topic=openshift-cs_rate_limit).
+Also, if you used the same cluster name repeatedly, you might have a rate limiting issue. For more information, see [No Ingress subdomain exists after you create clusters of the same or similar name](/docs/containers?topic=containers-cs_rate_limit).
 
 {: tsResolve}
 1. Check the ID of the user or functional user who sets the API key for this cluster.
@@ -134,7 +134,7 @@ Also, if you used the same cluster name repeatedly, you might have a rate limiti
 2. [Assign the following IAM permissions](/docs/openshift?topic=openshift-users#add_users) to the user or functional user who sets the API key.
   * The **Administrator** or **Editor** platform access role for {{site.data.keyword.cloudcerts_short}} in **All resource groups**
   * The **Manager** service access role for {{site.data.keyword.cloudcerts_short}} in **All resource groups**
-3. The user must [reset the API key for the region and resource group](/docs/openshift?topic=openshift-users#api_key_most_cases).
+3. The user must [reset the API key for the region and resource group](/docs/openshift?topic=openshift-access-creds#api_key_most_cases).
 
   When the API key is reset, the previous API key that was used for the region and resource group is deleted. Before you reset the API key, check whether you have other services that use the existing API key, such as a [key management service (KMS) provider](/docs/openshift?topic=openshift-encryption#keyprotect).
   {: important}
@@ -151,4 +151,4 @@ Also, if you used the same cluster name repeatedly, you might have a rate limiti
   {: pre}
 
 
-For more information, see [Managing TLS certificates and secrets](/docs/openshift?topic=openshift-ingress-types#manage_certs).
+For more information, see [Managing TLS certificates and secrets](/docs/containers?topic=containers-ingress-types#manage_certs).

@@ -203,6 +203,7 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.6 p
 
 The following table shows the changes that are included in the master fix pack patch update `4.6.34_1547_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
+
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Cluster health image | v1.2.12 | v1.2.13 | Updated to use `Go` version `1.15.12`. Updated image for [CVE-2021-33194](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33194){: external}. |

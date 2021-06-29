@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-06-29"
 
 keywords: openshift, roks, rhos, rhoks, vpn, on-prem, gateway, static
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -125,7 +126,7 @@ To get started with static routes in {{site.data.keyword.openshiftlong_notm}}, e
 {: shortdesc}
 
 **Before you begin**:
-* Ensure that you have the [**Administrator** IAM platform access role for the cluster in {{site.data.keyword.containerlong_notm}}](/docs/openshift?topic=openshift-users#platform).
+* Ensure that you have the [**Administrator** IAM platform access role for the cluster in {{site.data.keyword.containerlong_notm}}](/docs/openshift?topic=openshift-users).
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 </br>
@@ -144,7 +145,7 @@ To get started with static routes in {{site.data.keyword.openshiftlong_notm}}, e
 </br>
 **To use the CLI:**
 
-1. [Target the CLI to your cluster](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure).
+1. [Target the CLI to your cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
 
 2. Enable the `static-route` add-on.
   ```

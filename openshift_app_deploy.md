@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-24"
+lastupdated: "2021-06-29"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -147,7 +147,7 @@ When you deploy an app, the app pods indiscriminately deploy to various worker n
 
 Before you begin:
 *   [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-*   Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-users#platform) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the {{site.data.keyword.openshiftshort}} project.
+*   Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-users) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the {{site.data.keyword.openshiftshort}} project.
 *  **Optional**: [Set a label for the worker pool](/docs/openshift?topic=openshift-add_workers#worker_pool_labels) that you want to run the app on.
 
 To deploy apps to specific worker nodes:
@@ -289,7 +289,7 @@ In the following steps, you learn how to deploy workloads that require the GPU. 
 
 Before you begin:
 * Create a [cluster](/docs/openshift?topic=openshift-clusters#clusters_standard) or [worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that uses a GPU bare metal flavor. Keep in mind that setting up a bare metal machine can take more than one business day to complete.
-* Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-users#platform) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the cluster.
+* Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-users) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the cluster.
 * [Install the Node Feature Discovery and NVIDIA GPU operators for you cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){: external}.
   
   You must use NVIDIA GPU operator version 1.3.1 or later. When you install the Node Feature Discovery operator, select the update channel that matches your {{site.data.keyword.openshiftshort}} cluster version. Do not install the operators through another method, such as a Helm chart.

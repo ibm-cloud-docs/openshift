@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-06-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -111,7 +111,7 @@ During cluster creation, the {{site.data.keyword.openshiftlong_notm}} console us
 
 {: tsResolve}
 To set an API key for the `default` resource group, use the {{site.data.keyword.openshiftlong_notm}} CLI.
-1. Log in to the command line as the account owner. If you want a different user than the account owner to set the API key, first [ensure that the API key owner has the correct permissions](/docs/openshift?topic=openshift-users#owner_permissions).
+1. Log in to the command line as the account owner. If you want a different user than the account owner to set the API key, first [ensure that the API key owner has the correct permissions](/docs/openshift?topic=openshift-access-creds#owner_permissions).
     ```
     ibmcloud login [--sso]
     ```
