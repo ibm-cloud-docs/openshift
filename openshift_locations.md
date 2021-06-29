@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-06-29"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -195,7 +196,7 @@ The following image is used as an example to explain how {{site.data.keyword.ope
 <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC regions and zones**: VPC resources are provisioned in a region, which is a separate group of zones within a metro. The zones are mapped to separate data centers to ensure that resources are distributed evenly across zones in a multizone architecture. In the API and CLI, zones use the regional zone name in the API and command line (`us-south-1`), but in the console, zones use by the data center location (`Dallas 1`). For the data center code that the VPC zone and location corresponds to, such as `us-south-1` and `DAL10`, see [Multizone regions](/docs/overview?topic=overview-locations#mzr-table).
 {: shortdesc}
 
-| Geography |  Country  | Metro | Region | Zone`*` | Location`*` |
+| Geography |  Country  | Metro | Region | Zone | Location |
 |-----|-----|-----|-----|-----|
 | Asia Pacific | Australia | Sydney | au-syd | au-syd-1<br>au-syd-2<br>au-syd-3 | Sydney 1<br>Sydney 2<br>Sydney 3|
 | Asia Pacific | Japan | Osaka | jp-osa | jp-osa-1<br>jp-osa-2<br>jp-osa-3 | Osaka 1<br>Osaka 2<br>Osaka 3|
@@ -233,7 +234,7 @@ In a multizone cluster, your cluster's resources are spread across multiple zone
 2.  Other cluster resources, such as storage, networking, compute, or apps running in pods, vary in how they deploy to the zones in your multizone cluster. For more information, review these topics:
     *   Setting up [file storage](/docs/openshift?topic=openshift-file_storage#add_file) and [block storage](/docs/openshift?topic=openshift-block_storage#add_block) in multizone clusters, or [choosing a multizone persistent storage solution](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
     *   [Enabling public or private access to an app by using a network load balancer (NLB) service in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config).
-    *   [Managing network traffic by using Ingress](/docs/openshift?topic=openshift-ingress-about).
+    *   [Managing network traffic by using Ingress](/docs/containers?topic=containers-ingress-about).
     *   [Increasing the availability of your app](/docs/openshift?topic=openshift-openshift_apps).
 
 3.  When you initiate cluster management actions, such as using [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli), basic information about the cluster (such as name, ID, user, the command) is routed through the global endpoint.
