@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-25"
+lastupdated: "2021-06-29"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -110,6 +110,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 28 June 2021 | **Master versions**: Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.7.16_1523_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4716_1523), [`4.6.34_1547_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4634_1547), [`4.5.40_1543_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4540_1543), and [`3.11.439_1594_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311439_1594). |
 | 24 June 2021 | **CLI changelog**: Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.295](/docs/openshift?topic=openshift-cs_cli_changelog#10). |
 | 23 June 2021 | **Cluster autoscaler add-on**: [Version `1.0.3`](/docs/openshift?topic=openshift-ca_changelog) of the cluster autoscaler add-on is available. |
 | 22 June 2021 | <ul><li>**{{site.data.keyword.cos_full_notm}} plug-in**: Version `2.1.2` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in changelog](/docs/openshift?topic=openshift-cos_plugin_changelog)</li><li>**Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.7.16_1522_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4716_1522), [`4.6.34_1546_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4634_1546) [`4.5.40_1542_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4540_1542) and [`3.11.452_1593_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311452_1593)</li></ul>.|
