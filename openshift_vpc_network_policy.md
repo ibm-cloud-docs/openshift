@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-27"
+lastupdated: "2021-06-25"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -222,15 +222,9 @@ Use the {{site.data.keyword.cloud_notm}} console to add inbound and outbound rul
     <td>`80`</td>
     <td>Each control plane IP address for your region [in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist)</td>
     </tr>
-    <tr>
-    <td>`*` Allow access from the Cloudflare IP addresses that are used to health check the IP addresses of your router services. Create one rule for each [Cloudflare IPv4 IP address ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cloudflare.com/ips/).</td>
-    <td>TCP</td>
-    <td>`80`</td>
-    <td>Each [Cloudflare IPv4 IP address ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cloudflare.com/ips/)</td>
-    </tr>
     </tbody>
     </table>
-    <p>`*` Alternatively, to allow the inbound traffic for router healthchecks, you can create a single rule to allow all incoming traffic on port 80.</p><p class="important">On 05 July 2021, the DNS provider is changed from Cloudflare to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains for all clusters in {{site.data.keyword.openshiftlong_notm}}. If you currently allow inbound traffic from the Cloudflare source IP addresses, you must also allow inbound traffic from the [Akamai source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} before 05 July. After the migration, you can remove the Cloudflare IP address rules. For more information, see the [announcement](https://cloud.ibm.com/notifications?selected=1621697674798){: external}.</p>
+    <p>`*` Alternatively, to allow the inbound traffic for router healthchecks, you can create a single rule to allow all incoming traffic on port 80.</p>
 5. To create new rules to control outbound traffic to your worker nodes, in the **Outbound rules** section, delete the default rule that allows all outbound traffic.
 6. In the **Outbound rules** section, click **Create**. Keep in mind that in addition to any rules that you create, the rules in the following table are required to allow necessary outbound traffic from your cluster.
     <table summary="The columns are read from left to right. The first column describes the purpose of the outbound rule. The second column states is the protocol type. The third column is the range of ports to allow traffic through. The fourth column is the type of source.">
@@ -373,20 +367,14 @@ To create rules in your default security group:
     <td>Any</td>
     </tr>
     <tr>
-    <td>`*` **Optional**: Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each control plane IP address [in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist).</td>
+    <td>`*` Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each control plane IP address [in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist).</td>
     <td>TCP</td>
     <td>`80`</td>
     <td>Each control plane IP address for your region [in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist)</td>
     </tr>
-    <tr>
-    <td>`*` **Optional**: Allow access from the Cloudflare IP addresses that are used to health check the IP addresses of your router services. Create one rule for each [Cloudflare IPv4 IP address ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cloudflare.com/ips/).</td>
-    <td>TCP</td>
-    <td>`80`</td>
-    <td>Each [Cloudflare IPv4 IP address ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cloudflare.com/ips/)</td>
-    </tr>
     </tbody>
     </table>
-    <p>`*` Alternatively, to allow the inbound traffic for router healthchecks, you can create a single rule to allow all incoming traffic on port 80.</p><p class="important">On 05 July 2021, the DNS provider is changed from Cloudflare to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains for all clusters in {{site.data.keyword.openshiftlong_notm}}. If you currently allow inbound traffic from the Cloudflare source IP addresses, you must also allow inbound traffic from the [Akamai source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} before 05 July. After the migration, you can remove the Cloudflare IP address rules. For more information, see the [announcement](https://cloud.ibm.com/notifications?selected=1621697674798){: external}.</p>
+    <p>`*` Alternatively, to allow the inbound traffic for router healthchecks, you can create a single rule to allow all incoming traffic on port 80.</p>
 
 6. To create new rules to control outbound traffic to your worker nodes, get the ID of the default rule that allows all outbound traffic.
     ```
@@ -567,7 +555,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>After 4</td>
    </tr>
    <tr>
-   <td>`*` **Optional**: Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each control plane IP address [in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist).</td>
+   <td>`*` Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each control plane IP address [in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist).</td>
    <td>Allow</td>
    <td>TCP</td>
    <td>Each control plane IP address for your region [in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist)</td>
@@ -575,16 +563,6 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>Any</td>
    <td>-</td>
    <td>After 5</td>
-   </tr>
-   <tr>
-   <td>`*` **Optional**: Allow access from the Cloudflare IP addresses that are used to health check the IP addresses of your router services. Create one rule for each [Cloudflare IPv4 IP address ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cloudflare.com/ips/).</td>
-   <td>Allow</td>
-   <td>TCP</td>
-   <td>Each [Cloudflare IPv4 IP address ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cloudflare.com/ips/)</td>
-   <td>80</td>
-   <td>Any</td>
-   <td>-</td>
-   <td>After previous rule order</td>
    </tr>
    <tr>
    <td>Deny all other traffic that does not match the previous rules.</td>
@@ -598,7 +576,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    </tr>
    </tbody>
    </table>
-   <p>`*` Alternatively, to allow the inbound traffic for router healthchecks, you can create a single inbound rule and outbound rule to allow all incoming and outgoing traffic on port 80.</p><p class="important">On 05 July 2021, the DNS provider is changed from Cloudflare to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains for all clusters in {{site.data.keyword.openshiftlong_notm}}. If you currently allow inbound traffic from the Cloudflare source IP addresses, you must also allow inbound traffic from the [Akamai source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} before 05 July. After the migration, you can remove the Cloudflare IP address rules. For more information, see the [announcement](https://cloud.ibm.com/notifications?selected=1621697674798){: external}.</p>
+   <p>`*` Alternatively, to allow the inbound traffic for router healthchecks, you can create a single inbound rule and outbound rule to allow all incoming and outgoing traffic on port 80.</p>
 6. In the **Outbound rules** section, create the following rules by clicking **Create**.
 
    <p class="note">ACL rules are applied to traffic in a specific order. If you must create custom rules to allow other traffic to or from your worker nodes on this subnet, be sure to set the custom rules' **Priority** before final the rule that denies all traffic. If you add a rule after the deny rule, your rule is ignored, because the packet matches the deny rule and is blocked and removed before it can reach your rule.</p>
@@ -668,7 +646,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>After 4</td>
    </tr>
    <tr>
-   <td>`*` **Optional**: Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each control plane IP address [in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist).</td>
+   <td>`*` Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each control plane IP address [in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist).</td>
    <td>Allow</td>
    <td>TCP</td>
    <td>Any</td>
@@ -676,16 +654,6 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>Each control plane IP address for your region [in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist)</td>
    <td>-</td>
    <td>After 5</td>
-   </tr>
-   <tr>
-   <td>`*` **Optional**: Allow access from the Cloudflare IP addresses that are used to health check the IP addresses of your router services. Create one rule for each [Cloudflare IPv4 IP address ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cloudflare.com/ips/).</td>
-   <td>Allow</td>
-   <td>TCP</td>
-   <td>Any</td>
-   <td>80</td>
-   <td>Each [Cloudflare IPv4 IP address ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cloudflare.com/ips/)</td>
-   <td>-</td>
-   <td>After previous rule order</td>
    </tr>
    <tr>
    <td>Deny all other traffic that does not match the previous rules.</td>
@@ -699,7 +667,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    </tr>
    </tbody>
    </table>
-   <p>`*` Alternatively, to allow the inbound traffic for router healthchecks, you can create a single inbound rule and outbound rule to allow all incoming and outgoing traffic on port 80.</p><p class="important">On 05 July 2021, the DNS provider is changed from Cloudflare to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains for all clusters in {{site.data.keyword.openshiftlong_notm}}. If you currently allow inbound traffic from the Cloudflare source IP addresses, you must also allow inbound traffic from the [Akamai source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} before 05 July. After the migration, you can remove the Cloudflare IP address rules. For more information, see the [announcement](https://cloud.ibm.com/notifications?selected=1621697674798){: external}.</p>
+   <p>`*` Alternatively, to allow the inbound traffic for router healthchecks, you can create a single inbound rule and outbound rule to allow all incoming and outgoing traffic on port 80.</p>
 7. In the **Attach subnets** section, choose the name of the subnet for which you created this ACL.
 
 8. Click **Create access control list**.
@@ -825,15 +793,6 @@ To create an ACL for each subnet that your cluster is attached to:
   ibmcloud is network-acl-rule-add $acl_id allow inbound tcp <IP_address> 0.0.0.0/0 --name allow-hc-inbound --destination-port-min 80 --destination-port-max 80
   ```
   {: pre}
-
-8. Optional: Allow access to and from the Cloudflare IP addresses that are used to health check the IP addresses of your router services. Create one rule for each [Cloudflare IPv4 IP address](https://www.cloudflare.com/ips/){: external}. Alternatively, you can create a single inbound rule and outbound rule to allow all incoming and outgoing traffic on port 80.
-    ```
-    ibmcloud is network-acl-rule-add $acl_id allow outbound tcp 0.0.0.0/0 <IP_address> --name allow-hc-outbound --destination-port-min 80 --destination-port-max 80
-    ibmcloud is network-acl-rule-add $acl_id allow inbound tcp <IP_address> 0.0.0.0/0 --name allow-hc-inbound --destination-port-min 80 --destination-port-max 80
-    ```
-    {: pre}
-
-    <p class="important">On 05 July 2021, the DNS provider is changed from Cloudflare to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains for all clusters in {{site.data.keyword.openshiftlong_notm}}. If you currently allow inbound traffic from the Cloudflare source IP addresses, you must also allow inbound traffic from the [Akamai source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} before 05 July. After the migration, you can remove the Cloudflare IP address rules. For more information, see the [announcement](https://cloud.ibm.com/notifications?selected=1621697674798){: external}.</p>
 
 9. Optional: If you must allow other traffic to or from your worker nodes on this subnet, add rules for that traffic.
 

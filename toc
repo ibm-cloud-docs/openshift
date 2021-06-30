@@ -60,7 +60,6 @@ Red Hat OpenShift on IBM Cloud
             openshift_clusters.md
             satellite_clusters.md
             openshift_cluster_access.md
-            openshift_users.md
 
         {: .topicgroup}
         Managing the cluster and worker node lifecycle
@@ -79,6 +78,13 @@ Red Hat OpenShift on IBM Cloud
     Enhancing security
         openshift_secure.md
         openshift_tech.md
+
+        {: .topicgroup}
+        Managing access control
+            openshift_access_overview.md
+            openshift_access_apikey.md
+            openshift_access_iam_rbac.md
+            openshift_access_pod_identity.md
 
         {: .topicgroup}
         Securing cluster workloads

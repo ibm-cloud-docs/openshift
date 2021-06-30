@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-06-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -156,12 +156,12 @@ The cluster could not be configured with the registry. Make sure that you have t
 {: screen}
 
 {: tsCauses}
-The infrastructure credentials that are set for the region and resource group are missing the appropriate [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra). The user's infrastructure permissions are most commonly stored as an [API key](/docs/openshift?topic=openshift-users#api_key) for the region and resource group. More rarely, if you use a [different {{site.data.keyword.cloud_notm}} account type](/docs/openshift?topic=openshift-users#understand_infra), you might have [set infrastructure credentials manually](/docs/openshift?topic=openshift-users#credentials).
+The infrastructure credentials that are set for the region and resource group are missing the appropriate [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra). The user's infrastructure permissions are most commonly stored as an [API key](/docs/openshift?topic=openshift-access-creds) for the region and resource group. More rarely, if you use a [different {{site.data.keyword.cloud_notm}} account type](/docs/openshift?topic=openshift-access-creds#understand_infra), you might have [set infrastructure credentials manually](/docs/openshift?topic=openshift-access-creds#credentials).
 
 {: tsResolve}
 The account owner must set up the infrastructure account credentials properly. The credentials depend on what type of infrastructure account you are using.
 
-Before you begin, [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure).
+Before you begin, [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
 
 1.  Identify what user credentials are used for the region and resource group's infrastructure permissions.
     1.  Check the API key for a region and resource group of the cluster.
@@ -206,7 +206,7 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
 
         For console and CLI commands to assign these permissions, see [Classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra).
         {: tip}
-    2.  Make sure that the [infrastructure credentials owner for the API key or the manually-set account has the correct permissions](/docs/openshift?topic=openshift-users#owner_permissions).
+    2.  Make sure that the [infrastructure credentials owner for the API key or the manually-set account has the correct permissions](/docs/openshift?topic=openshift-access-creds#owner_permissions).
     3.  If necessary, you can change the [API key](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset) or [manually-set](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set) infrastructure credentials owner for the region and resource group.
 3.  Test that the changed permissions permit authorized users to perform infrastructure operations for the cluster.
     1.  For example, you might try to a delete a worker node.
@@ -227,7 +227,7 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
         ```
         {: screen}
 
-    3.  If the worker node is not removed, review that [**State** and **Status** fields](/docs/openshift?topic=openshift-debug_worker_nodes) and the [common issues with worker nodes](/docs/openshift?topic=openshift-common_worker_nodes_issues) to continue debugging.
+    3.  If the worker node is not removed, review that [**State** and **Status** fields](/docs/containers?topic=containers-debug_worker_nodes) and the [common issues with worker nodes](/docs/containers?topic=containers-common_worker_nodes_issues) to continue debugging.
     4.  If you manually set credentials and still cannot see the cluster's worker nodes in your infrastructure account, you might check whether the [cluster is orphaned](#orphaned).
 
 ## Unable to create or delete worker nodes due to incorrect account error
@@ -284,7 +284,7 @@ Consider the following example scenario to understand how clusters might become 
 
         If you no longer have access to the infrastructure credentials, you can open an {{site.data.keyword.cloud_notm}} support case to determine an email address for the administrator of the other infrastructure account. However, {{site.data.keyword.cloud_notm}} Support cannot remove the orphaned cluster for you, and you must contact the administrator of the other account to get the infrastructure credentials.
         {: note}
-    *   **If the infrastructure accounts match**: Check the rest of the worker nodes in the cluster and see if any has a different infrastructure account. Make sure that you checked the worker nodes in the cluster that has the credentials issue. Review other [common infrastructure credential issues](/docs/openshift?topic=openshift-worker_infra_errors).
+    *   **If the infrastructure accounts match**: Check the rest of the worker nodes in the cluster and see if any has a different infrastructure account. Make sure that you checked the worker nodes in the cluster that has the credentials issue. Review other [common infrastructure credential issues](/docs/containers?topic=containers-worker_infra_errors).
 4.  Now that the infrastructure credentials are updated, retry the blocked action, such as updating or deleting a worker node, and verify that the action succeeds.
 5.  If you have other clusters in the same region and resource that require the previous infrastructure credentials, repeat Step 3 to reset the infrastructure credentials to the previous account. Note that if you created clusters with a different infrastructure account than the account that you switch to, you might orphan those clusters.
 
@@ -377,7 +377,7 @@ The {{site.data.keyword.cloud_notm}} account owner or an account administrator m
 4. Select **None**, and click **Update**.
 
 **To use TOTP MFA and create an infrastructure API key for {{site.data.keyword.containerlong_notm}}:**
-1. From the [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/){: external} console, select **Manage** > **Access (IAM)** > **Users** and click the name of the account owner. **Note**: If you do not use the account owner's credentials, first [ensure that the user whose credentials you use has the correct permissions](/docs/openshift?topic=openshift-users#owner_permissions).
+1. From the [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/){: external} console, select **Manage** > **Access (IAM)** > **Users** and click the name of the account owner. **Note**: If you do not use the account owner's credentials, first [ensure that the user whose credentials you use has the correct permissions](/docs/openshift?topic=openshift-access-creds#owner_permissions).
 2. In the **API Keys** section, find or create a classic infrastructure API key.
 3. Use the infrastructure API key to set the infrastructure API credentials for {{site.data.keyword.containerlong_notm}}. Repeat this command for each region where you create clusters.
     ```

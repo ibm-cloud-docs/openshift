@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-15"
+lastupdated: "2021-06-29"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -181,7 +181,7 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
 
 **Before you begin**:
 * VPC NLBs can be created only in VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later.
-* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#platform) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC NLB.
+* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC NLB.
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 * To view VPC NLBs, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
   ```
@@ -358,7 +358,7 @@ Expose your app to private network traffic by setting up a Kubernetes `LoadBalan
 
 **Before you begin**:
 * VPC NLBs can be created only in VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later and that exist in London, Osaka, Tokyo, or Washington, D.C.
-* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#platform) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC NLB.
+* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC NLB.
 * Connect to your VPC private network, such as through a [VPC VPN connection](/docs/openshift?topic=openshift-vpc-vpnaas).
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 * To view VPC NLBs, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
@@ -616,7 +616,7 @@ Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.op
 {: #setup_vpc_alb_pub_priv}
 
 **Before you begin**:
-* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#platform) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC NLB.
+* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC NLB.
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: [Allow traffic requests that are routed by the VPC ALB to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-network-policy#security_groups).
 * To view VPC ALBs, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.

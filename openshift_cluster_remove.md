@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-01"
+lastupdated: "2021-06-29"
 
 keywords: openshift, roks, rhos, rhoks, clusters, delete, remove
 
@@ -107,11 +107,11 @@ No backups are created of your cluster or your data in your persistent storage. 
 
 **Before you begin**:
 * Note your cluster ID. You might need the cluster ID to investigate and remove related IBM Cloud infrastructure resources that are not automatically deleted with your cluster.
-* Make sure that you have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#platform).
+* Make sure that you have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users).
 * If you want to delete the data in your persistent storage, review the delete options for the type of storage that you use.
-  * [File storage](/docs/openshift?topic=openshift-file_storage#storage_delete_options)
-  * [Block storage](/docs/openshift?topic=openshift-block_storage#cleanup) for classic clusters
-  * [Block storage](/docs/openshift?topic=openshift-vpc-block#cleanup) for VPC clusters
+  * [File storage](/docs/containers?topic=containers-file_storage#storage_delete_options)
+  * [Block storage](/docs/containers?topic=containers-block_storage#cleanup) for classic clusters
+  * [Block storage](/docs/containers?topic=containers-vpc-block#cleanup) for VPC clusters
   * [Object storage](/docs/cloud-object-storage?topic=cloud-object-storage-deleting-multiple-objects-patterns)
   * [Portworx](/docs/openshift?topic=openshift-portworx#portworx_cleanup)
 

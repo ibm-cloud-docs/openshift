@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-06-24"
+lastupdated: "2021-06-30"
 
 keywords: openshift
 subcollection: openshift
@@ -421,36 +421,6 @@ subcollection: openshift
   * [Using a service ID to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_service_id)
 * [Accessing the cluster master via admission controllers and webhooks](/docs/openshift?topic=openshift-access_cluster#access_webhooks)
 
-[Assigning cluster access](/docs/openshift?topic=openshift-users)
-* [Setting up access to your cluster](/docs/openshift?topic=openshift-users#access-checklist)
-* [Understanding access policies and roles](/docs/openshift?topic=openshift-users#access_policies)
-  * [Pick the right access policy and role for your users](/docs/openshift?topic=openshift-users#access_roles)
-  * [Assign access roles to individual or groups of users in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#iam_individuals_groups)
-  * [Scope user access to cluster instances, namespaces, or resource groups](/docs/openshift?topic=openshift-users#resource_groups)
-* [Setting up the API key to enable access to the infrastructure portfolio and other services](/docs/openshift?topic=openshift-users#api_key_setup)
-  * [Setting up the API key in most cases](/docs/openshift?topic=openshift-users#api_key_most_cases)
-  * [Understanding other options than the API key](/docs/openshift?topic=openshift-users#api_key_other)
-  * [Understanding how the API key works](/docs/openshift?topic=openshift-users#api_key_about)
-  * [Ensuring that the API key or infrastructure credentials owner has the correct permissions](/docs/openshift?topic=openshift-users#owner_permissions)
-  * [Understanding access to the infrastructure portfolio](/docs/openshift?topic=openshift-users#understand_infra)
-  * [Accessing the infrastructure portfolio with your {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account](/docs/openshift?topic=openshift-users#default_account)
-  * [Accessing a different classic infrastructure account](/docs/openshift?topic=openshift-users#credentials)
-* [Granting users access to your cluster through {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#platform)
-  * [Example use cases and roles](/docs/openshift?topic=openshift-users#example-iam)
-  * [Assigning {{site.data.keyword.cloud_notm}} IAM roles with the console](/docs/openshift?topic=openshift-users#add_users)
-  * [Assigning {{site.data.keyword.cloud_notm}} IAM roles with the CLI](/docs/openshift?topic=openshift-users#add_users_cli)
-* [Assigning RBAC permissions](/docs/openshift?topic=openshift-users#role-binding-assign)
-  * [Understanding RBAC permissions](/docs/openshift?topic=openshift-users#understand-rbac)
-  * [Creating custom RBAC permissions for users, groups, or service accounts](/docs/openshift?topic=openshift-users#rbac)
-  * [Extending existing permissions by aggregating cluster roles](/docs/openshift?topic=openshift-users#rbac_aggregate)
-* [Customizing classic infrastructure permissions](/docs/openshift?topic=openshift-users#infra_access)
-  * [Assigning infrastructure access through the console](/docs/openshift?topic=openshift-users#infra_console)
-  * [Assigning infrastructure access through the CLI](/docs/openshift?topic=openshift-users#infra_cli)
-* [Removing user permissions](/docs/openshift?topic=openshift-users#removing)
-  * [Checking if the user's credentials are used for infrastructure permissions](/docs/openshift?topic=openshift-users#removing_check_infra)
-  * [Removing a user from your account](/docs/openshift?topic=openshift-users#remove_user)
-  * [Removing specific permissions](/docs/openshift?topic=openshift-users#remove_permissions)
-
 
 ## Managing the cluster and worker node lifecycle
 {: #sitemap_managing_the_cluster_and_worker_node_lifecycle}
@@ -597,6 +567,48 @@ subcollection: openshift
   * [Does Red Hat collect information about my cluster?](/docs/openshift?topic=openshift-service-arch#pi-rh-telemetry)
 * [Dependencies to other {{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-service-arch#dependencies-ibmcloud)
 * [Dependencies to 3rd party services](/docs/openshift?topic=openshift-service-arch#dependencies-3rd-party)
+
+
+## Managing access control
+{: #sitemap_managing_access_control}
+
+
+[Understanding access control for clusters](/docs/openshift?topic=openshift-access-overview)
+* [Access control checklist](/docs/openshift?topic=openshift-access-overview#access-checklist)
+  * [{{site.data.keyword.cloud_notm}} access control](/docs/openshift?topic=openshift-access-overview#access-checklist-iam)
+  * [Other types of access control](/docs/openshift?topic=openshift-access-overview#access-checklist-other)
+* [Understanding IAM access policies and roles](/docs/openshift?topic=openshift-access-overview#access_policies)
+  * [Pick the right access policy and role for your users](/docs/openshift?topic=openshift-access-overview#access_roles)
+  * [Assign access roles to individual or groups of users in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-access-overview#iam_individuals_groups)
+  * [Scope user access to cluster instances, namespaces, or resource groups](/docs/openshift?topic=openshift-access-overview#resource_groups)
+
+[Setting up API key credentials so the service can access the infrastructure and other cloud services](/docs/openshift?topic=openshift-access-creds)
+* [Setting up the API key in most cases](/docs/openshift?topic=openshift-access-creds#api_key_most_cases)
+* [Understanding other options than the API key](/docs/openshift?topic=openshift-access-creds#api_key_other)
+* [Understanding how the API key works](/docs/openshift?topic=openshift-access-creds#api_key_about)
+* [Ensuring that the API key or infrastructure credentials owner has the correct permissions](/docs/openshift?topic=openshift-access-creds#owner_permissions)
+* [Understanding access to the infrastructure portfolio](/docs/openshift?topic=openshift-access-creds#understand_infra)
+* [Accessing the infrastructure portfolio with your {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account](/docs/openshift?topic=openshift-access-creds#default_account)
+* [Accessing a different classic infrastructure account](/docs/openshift?topic=openshift-access-creds#credentials)
+* [Customizing classic infrastructure permissions](/docs/openshift?topic=openshift-access-creds#infra_access)
+  * [Assigning infrastructure access through the console](/docs/openshift?topic=openshift-access-creds#infra_console)
+  * [Assigning infrastructure access through the CLI](/docs/openshift?topic=openshift-access-creds#infra_cli)
+
+[Controlling user access with {{site.data.keyword.cloud_notm}} IAM and Kubernetes RBAC](/docs/openshift?topic=openshift-users)
+* [Example cluster use cases and IAM roles](/docs/openshift?topic=openshift-users#example-iam)
+* [Assigning {{site.data.keyword.cloud_notm}} IAM roles with the console](/docs/openshift?topic=openshift-users#add_users)
+* [Assigning {{site.data.keyword.cloud_notm}} IAM roles with the CLI](/docs/openshift?topic=openshift-users#add_users_cli)
+* [Understanding RBAC permissions](/docs/openshift?topic=openshift-users#understand-rbac)
+* [Creating custom RBAC permissions for users, groups, or service accounts](/docs/openshift?topic=openshift-users#rbac)
+* [Extending existing permissions by aggregating cluster roles](/docs/openshift?topic=openshift-users#rbac_aggregate)
+* [Removing user permissions](/docs/openshift?topic=openshift-users#removing)
+  * [Checking if the user's credentials are used for infrastructure permissions](/docs/openshift?topic=openshift-users#removing_check_infra)
+  * [Removing a user from your account](/docs/openshift?topic=openshift-users#remove_user)
+  * [Removing specific permissions](/docs/openshift?topic=openshift-users#remove_permissions)
+
+[Authorizing pods in your cluster to {{site.data.keyword.cloud_notm}} services with IAM trusted profiles](/docs/openshift?topic=openshift-pod-iam-identity)
+* [Prerequisites](/docs/openshift?topic=openshift-pod-iam-identity#iam-identity-prereqs)
+* [Creating an IAM trusted profile for your cluster in the API](/docs/openshift?topic=openshift-pod-iam-identity#iam-identity-create-api)
 
 
 ## Securing cluster workloads
@@ -816,6 +828,7 @@ subcollection: openshift
 
 [Reviewing service, API server, and worker node logs](/docs/openshift?topic=openshift-health-audit)
 * [Kubernetes API server audit logs](/docs/openshift?topic=openshift-health-audit#audit-api-server)
+  * [Considerations and prerequisites](/docs/openshift?topic=openshift-health-audit#prereqs-apiserver-logs)
   * [Forwarding Kubernetes API audit logs to {{site.data.keyword.la_short}}](/docs/openshift?topic=openshift-health-audit#audit-api-server-la)
   * [Forwarding Kubernetes API audit logs to a resource in the {{site.data.keyword.cloud_notm}} private network](/docs/openshift?topic=openshift-health-audit#audit-api-server-priv)
 * [Worker node audit logs](/docs/openshift?topic=openshift-health-audit#audit-worker)
@@ -1700,10 +1713,12 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.7 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-47)
+  * [Changelog for master fix pack 4.7.16_1523_openshift, released 28 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4716_1523)
   * [Changelog for worker node fix pack 4.7.16_1522_openshift, released 22 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4716_1522)
   * [Changelog for worker node fix pack 4.7.13_1521_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4713_1521)
   * [Changelog for master fix pack 4.7.12_1520_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4712_1520)
 * [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
+  * [Changelog for master fix pack 4.6.34_1547_openshift, released 28 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4634_1547)
   * [Changelog for worker node fix pack 4.6.34_1546_openshift, released 22 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4634_1546)
   * [Changelog for worker node fix pack 4.6.31_1545_openshift, released 7 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4631_1545)
   * [Changelog for worker node fix pack 4.6.29_1544_openshift, released 24 May 2021](/docs/openshift?topic=openshift-openshift_changelog#4629_1544)
@@ -1721,6 +1736,7 @@ subcollection: openshift
   * [Changelog for master fix pack 4.6.16_1532_openshift, released 22 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4616_1532)
   * [Changelog for 4.6.16_1530_openshift (master) and 4.6.16_1529_openshift (worker node), released 17 February 2020](/docs/openshift?topic=openshift-openshift_changelog#4616_1530)
 * [Deprecated: Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
+  * [Changelog for master fix pack 4.5.40_1543_openshift, released 28 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4540_1543)
   * [Changelog for worker node fix pack 4.5.40_1542_openshift, released 22 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4540_1542)
   * [Changelog for worker node fix pack 4.5.40_1541_openshift, released 7 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4540_1541)
   * [Changelog for worker node fix pack 4.5.39_1540_openshift, released 24 May 2021](/docs/openshift?topic=openshift-openshift_changelog#4539_1540)
@@ -1750,6 +1766,7 @@ subcollection: openshift
   * [Changelog for master fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518)
   * [Changelog for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4513_1515)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for master fix pack 3.11.439_1594_openshift, released 28 June 2021](/docs/openshift?topic=openshift-openshift_changelog#311439_1594)
   * [Changelog for worker node fix pack 3.11.452_1593_openshift, released 22 June 2021](/docs/openshift?topic=openshift-openshift_changelog#311452_1593)
   * [Changelog for worker node fix pack 3.11.439_1592_openshift, released 7 June 2021](/docs/openshift?topic=openshift-openshift_changelog#311439_1592)
   * [Changelog for worker node fix pack 3.11.439_1591_openshift, released 24 May 2021](/docs/openshift?topic=openshift-openshift_changelog#311439_1591)

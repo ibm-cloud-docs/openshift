@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-06-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -206,7 +206,7 @@ To check your user access permissions:
         {: pre}
 
     * If you do not have access to the cluster:
-        1. Ask your account owner to assign an [{{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#platform) to you for that cluster.
+        1. Ask your account owner to assign an [{{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users) to you for that cluster.
         2. Do not target a resource group. If you already targeted a resource group, untarget it:
           ```
           ibmcloud target --unset-resource-group
