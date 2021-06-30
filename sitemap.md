@@ -606,10 +606,6 @@ subcollection: openshift
   * [Removing a user from your account](/docs/openshift?topic=openshift-users#remove_user)
   * [Removing specific permissions](/docs/openshift?topic=openshift-users#remove_permissions)
 
-[Authorizing pods in your cluster to {{site.data.keyword.cloud_notm}} services with IAM trusted profiles](/docs/openshift?topic=openshift-pod-iam-identity)
-* [Prerequisites](/docs/openshift?topic=openshift-pod-iam-identity#iam-identity-prereqs)
-* [Creating an IAM trusted profile for your cluster in the API](/docs/openshift?topic=openshift-pod-iam-identity#iam-identity-create-api)
-
 
 ## Securing cluster workloads
 {: #sitemap_securing_cluster_workloads}

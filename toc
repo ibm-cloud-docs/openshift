@@ -84,7 +84,6 @@ Red Hat OpenShift on IBM Cloud
             openshift_access_overview.md
             openshift_access_apikey.md
             openshift_access_iam_rbac.md
-            openshift_access_pod_identity.md
 
         {: .topicgroup}
         Securing cluster workloads
