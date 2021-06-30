@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-29"
+lastupdated: "2021-06-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -100,7 +100,7 @@ subcollection: openshift
 Set {{site.data.keyword.cloud_notm}} IAM platform access and service access policies in the {{site.data.keyword.cloud_notm}} console or CLI so that users can work with clusters in {{site.data.keyword.openshiftlong_notm}}. IAM service access roles correspond with Kubernetes role-based access control (RBAC) within the cluster.
 {: shortdesc}
 
-Before you begin, check out [Understanding access policies and roles](/docs/containers?topic=containers-users#access-overview#access_policies) to review what policies are, whom you can assign policies to, and what resources can be granted policies.
+Before you begin, check out [Understanding access policies and roles](/docs/openshift?topic=openshift-access-overview#access_policies) to review what policies are, whom you can assign policies to, and what resources can be granted policies.
 {: shortdesc}
 
 {{site.data.keyword.cloud_notm}} IAM roles can't be assigned to a service account. Instead, you can directly [assign RBAC roles to service accounts](#rbac).
@@ -187,7 +187,7 @@ Grant users access to your {{site.data.keyword.openshiftlong_notm}} clusters by 
 - Verify that you're assigned the `cluster-admin` {{site.data.keyword.cloud_notm}} IAM platform access role for the {{site.data.keyword.cloud_notm}} account in which you're working.
 - Verify that the user is added to the account. If the user is not, invite the user to your account by running `ibmcloud account user-invite <user@email.com>`.
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-- Decide whether to assign [platform or service access](/docs/containers?topic=containers-users#access-overview#access_policies) roles. The CLI steps vary depending on which access role you want to assign:
+- Decide whether to assign [platform or service access](/docs/openshift?topic=openshift-access-overview#access_policies) roles. The CLI steps vary depending on which access role you want to assign:
   * [Assign platform access roles from the CLI](#add_users_cli_platform)
   * [Assign service access roles from the CLI](#add_users_cli_service)
 
@@ -389,7 +389,7 @@ You cannot scope {{site.data.keyword.cloud_notm}} IAM service access roles to an
 
 4.  If you assigned only service access roles to users, the users must be given the cluster master URL to open the {{site.data.keyword.openshiftshort}} web console from their browser at `https://<master_URL>/console` instead of the {{site.data.keyword.cloud_notm}} console. Otherwise, [give the users the platform **Viewer** role](#add_users_cli_platform).
 
-5.  **Optional**: After a couple minutes, verify that the user is added to the corresponding [RBAC role binding or cluster role binding](#role-binding). Note that you must be a cluster administrator (**Manager** service access role in all namespaces) to check role bindings and cluster role bindings. Users are not added to a role binding if they have a higher permission. For example, if users have a cluster role and are in a cluster role binding, they are not added to each individual namespace role binding as well.
+5.  **Optional**: After a couple minutes, verify that the user is added to the corresponding [RBAC role binding or cluster role binding](/docs/openshift?topic=openshift-access-overview#role-binding). Note that you must be a cluster administrator (**Manager** service access role in all namespaces) to check role bindings and cluster role bindings. Users are not added to a role binding if they have a higher permission. For example, if users have a cluster role and are in a cluster role binding, they are not added to each individual namespace role binding as well.
 
     *   Reader:
         ```
@@ -447,7 +447,7 @@ You cannot scope {{site.data.keyword.cloud_notm}} IAM service access roles to an
 RBAC roles and cluster roles define a set of permissions for how users can interact with Kubernetes resources in your cluster.
 {: shortdesc}
 
-With {{site.data.keyword.cloud_notm}} IAM, you can automatically manage RBAC from {{site.data.keyword.cloud_notm}}, by assigning users [service access roles](/docs/openshift?topic=openshift-users). You might want a deeper understanding of RBAC to customize access for resources within your cluster, like service accounts.
+With {{site.data.keyword.cloud_notm}} IAM, you can automatically manage RBAC from {{site.data.keyword.cloud_notm}}, by assigning users [service access roles](#add_users). You might want a deeper understanding of RBAC to customize access for resources within your cluster, like service accounts.
 {: note}
 
 **What are the types of RBAC roles?**
@@ -463,7 +463,7 @@ Cluster role bindings apply RBAC cluster roles to all namespaces in the cluster.
 
 **What do these roles look like in my cluster?**
 
-If you want users to be able to interact with Kubernetes resources from within a cluster, you must assign user access to one or more namespaces through [{{site.data.keyword.cloud_notm}} IAM service access roles](#platform). Every user who is assigned a service access role is automatically assigned a corresponding RBAC cluster role. These RBAC cluster roles are predefined and permit users to interact with Kubernetes resources in your cluster. Additionally, a role binding is created to apply the cluster role to a specific namespace, or a cluster role binding is created to apply the cluster role to all namespaces.
+If you want users to be able to interact with Kubernetes resources from within a cluster, you must assign user access to one or more namespaces through [{{site.data.keyword.cloud_notm}} IAM service access roles](#add_users). Every user who is assigned a service access role is automatically assigned a corresponding RBAC cluster role. These RBAC cluster roles are predefined and permit users to interact with Kubernetes resources in your cluster. Additionally, a role binding is created to apply the cluster role to a specific namespace, or a cluster role binding is created to apply the cluster role to all namespaces.
 
 To learn more about the actions permitted by each RBAC role, check out the [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-access_reference#service) reference topic. To see the permissions that are granted by each RBAC role to individual Kubernetes resources, check out [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-access_reference#rbac_ref).
 
@@ -513,8 +513,8 @@ To prevent breaking changes, do not change the predefined `view`, `edit`, `admin
 **Before you begin**:
 
 - Target the [Kubernetes CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to your cluster.
-- Ensure you that have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users) for all namespaces.
-- To assign access to individual users or users in an access group, ensure that the user or group has been assigned at least one [{{site.data.keyword.cloud_notm}} IAM platform access role](#platform) at the {{site.data.keyword.openshiftlong_notm}} service level.
+- Ensure you that have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service access role](#add_users) for all namespaces.
+- To assign access to individual users or users in an access group, ensure that the user or group has been assigned at least one [{{site.data.keyword.cloud_notm}} IAM platform access role](#add_users) at the {{site.data.keyword.openshiftlong_notm}} service level.
 
 **To create custom RBAC permissions**:
 
@@ -864,7 +864,7 @@ To avoid this issue for future users, consider using a functional ID user for th
         4.  Search for the worker node ID that you previously noted.
         5.  If you do not find the worker node ID, the worker node is not provisioned into this infrastructure account. Switch to a different infrastructure account and try again.
     2. Determine what happens to the infrastructure account that the user used to provision the clusters after the user leaves.
-        * If the user does not own the infrastructure account, then other users have access to this infrastructure account and it persists after the user leaves. You can continue to work with these clusters in your account. Make sure that at least one other user has the [**Administrator** platform access role](#platform) for the clusters.
+        * If the user does not own the infrastructure account, then other users have access to this infrastructure account and it persists after the user leaves. You can continue to work with these clusters in your account. Make sure that at least one other user has the [**Administrator** platform access role](#add_users) for the clusters.
         * If the user owns the infrastructure account, then the infrastructure account is deleted when the user leaves. You cannot continue to work with these clusters. To prevent the cluster from becoming orphaned, the user must delete the clusters before the user leaves. If the user has left but the clusters were not deleted, you must use the `ibmcloud oc credential set` command to change your infrastructure credentials to the account that the cluster worker nodes are provisioned in, and delete the cluster. For more information, see [Unable to modify or delete infrastructure in an orphaned cluster](/docs/containers?topic=containers-worker_infra_errors#orphaned).
 5. Repeat these steps for each combination of resource groups and regions where you have clusters.
 

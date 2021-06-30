@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-29"
+lastupdated: "2021-06-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -188,7 +188,7 @@ The IBM Cloud infrastructure credentials could not be validated.
 
 **Description and resolution**:
 
-You might not have the required permissions to perform the action in your IBM Cloud infrastructure portfolio, or you are using the wrong infrastructure credentials. See [Setting up the API key to enable access to the infrastructure portfolio](/docs/containers?topic=containers-users#api_key).
+You might not have the required permissions to perform the action in your IBM Cloud infrastructure portfolio, or you are using the wrong infrastructure credentials. See [Setting up the API key to enable access to the infrastructure portfolio](/docs/openshift?topic=openshift-access-creds).
 
 ## Firewall error
 {: #firewall-error}

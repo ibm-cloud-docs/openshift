@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-29"
+lastupdated: "2021-06-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -103,7 +103,7 @@ Give application pods that run in your {{site.data.keyword.openshiftlong}} clust
 Authorizing pods with IAM trusted profiles is available for new clusters that run {{site.data.keyword.openshiftshort}} version 4.7 or later.
 {: note}
 
-**In IAM**: Start by creating an [IAM trusted profile](/docs/account?topic=account-create-trusted-profile), and assigning access policies or adding the trusted profile to an access group with the access policies. Then, you link the trusted profile with a Kubernetes namespace in your cluster. 
+**In IAM**: Start by creating an IAM trusted profile, and assigning access policies or adding the trusted profile to an access group with the access policies. Then, you link the trusted profile with a Kubernetes namespace in your cluster. 
 
 **In your cluster**: Through [Kubernetes service account token volume projection](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#service-account-token-volume-projection){: external}, the apps that run in your linked cluster's namespace and use the namespace's service account can exchange the cluster's public key to get an {{site.data.keyword.cloud_notm}} IAM access token. Your app can use this access token to authenticate API requests to {{site.data.keyword.cloud_notm}} services, such as databases, {{site.data.keyword.watson}}, or VPC infrastructure. Through the access policies of the trusted profile, you control what actions the token lets the app perform.
 
@@ -131,10 +131,12 @@ To use {{site.data.keyword.cloud_notm}} IAM identities for pods in your cluster,
 
 **Before you begin**: Verify that you meet the [prerequisites](#iam-identity-prereqs).
 
-1.  [Create a trusted profile](/docs/account?topic=account-create-trusted-profile#create-profile-compute) in {{site.data.keyword.cloud_notm}} Identity and Access Management. Note the `uuid` (profile ID) in the output. 
+1.  Create an IAM trusted profile in {{site.data.keyword.cloud_notm}} Identity and Access Management. Note the `uuid` (profile ID) in the output.
+
     *   Replace `<access_token>` with your {{site.data.keyword.cloud_notm}} token. To get this token from the command line, log in and run `ibmcloud iam oauth-tokens`.
     *   Enter a `<profile_name>` and optional `<description>` for the IAM trusted profile.
-    *   Replace `<account_id>` with the ID of your {{site.data.keyword.cloud_notm}} account. To get this ID from the command line, run `ibmcloud account show`. 
+    *   Replace `<account_id>` with the ID of your {{site.data.keyword.cloud_notm}} account. To get this ID from the command line, run `ibmcloud account show`.
+
     ```
     curl -L -X POST 'https://iam.cloud.ibm.com/v1/profiles' \
     -H 'Accept: application/json' \
@@ -147,6 +149,7 @@ To use {{site.data.keyword.cloud_notm}} IAM identities for pods in your cluster,
     }'
     ```
     {: codeblock}
+
 2.  [Assign the trusted profile to an access group](/docs/account?topic=account-groups#access_ag_api) with access policies to the {{site.data.keyword.cloud_notm}} services that you want your apps to have access to.
 3.  Link the IAM trusted profile to a Kubernetes namespace in your {{site.data.keyword.openshiftlong_notm}} cluster.
     1.  Get your `<profile-id>` from the output of the first step. Or, you can run the following API command.
@@ -163,10 +166,12 @@ To use {{site.data.keyword.cloud_notm}} IAM identities for pods in your cluster,
         --header 'Authorization: <access_token>'
         ```
         {: codeblock}
-    3.  Link the IAM trusted profile to your cluster. 
+    3.  Link the IAM trusted profile to your cluster.
+
         * For `<link_name>`, enter a name for the link between the trusted profile and the cluster.
         * Replace `<profile-id>`, `<access_token>`, `<cluster_crn>`, and `<cluster_name>` with the values that you previously retrieved.
         * For `<ns>`, enter the namespace in your cluster. You can list namespaces by logging in to the cluster and running `oc get ns`.
+
         ```
         curl -L -X POST 'https://iam.cloud.ibm.com/v1/profiles/<profile-id>/links' \
         -H 'Accept: application/json' \
@@ -183,6 +188,7 @@ To use {{site.data.keyword.cloud_notm}} IAM identities for pods in your cluster,
         }'
         ```
         {: codeblock}
+        
 4.  When you [design your pod configuration file](/docs/openshift?topic=openshift-openshift_apps), mount the identity token in the `volumeMounts` of the `containers` section.
     ```
     ...
