@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-07-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -94,7 +94,7 @@ content-type: troubleshoot
 {:video: .video}
   
   
-# Object storage: Why can't non-root users access files?
+# Why can't non-root users access files?
 {: #cos_nonroot_access}
 
 **Infrastructure provider**:

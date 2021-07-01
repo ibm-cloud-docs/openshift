@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-29"
+lastupdated: "2021-07-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -94,7 +94,7 @@ content-type: troubleshoot
 {:video: .video}
   
   
-# Object storage: Why does PVC or pod creation fail due to not finding the Kubernetes secret?
+# Why does PVC or pod creation fail due to not finding the Kubernetes secret?
 {: #cos_secret_access_fails}
 
 **Infrastructure provider**:

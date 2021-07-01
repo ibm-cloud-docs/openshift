@@ -2347,16 +2347,16 @@ subcollection: openshift
 
 [File storage and block storage: Why does my PVC remain in a pending state?](/docs/openshift?topic=openshift-file_pvc_pending)
 
-[File storage: Why can't my app access or write to PVCs?](/docs/openshift?topic=openshift-file_app_failures)
+[Why can't my app access or write to PVCs?](/docs/openshift?topic=openshift-file_app_failures)
 
-[File storage: Why does my app fail with a group ID error for NFS file storage permissions?](/docs/openshift?topic=openshift-root)
+[Why does my app fail with a group ID error for NFS file storage permissions?](/docs/openshift?topic=openshift-root)
 
-[File storage: Why does my app fail when a non-root user owns the NFS file storage mount path?](/docs/openshift?topic=openshift-nonroot)
+[Why does my app fail when a non-root user owns the NFS file storage mount path?](/docs/openshift?topic=openshift-nonroot)
 
-[File storage: Why can't I add non-root user access to persistent storage?](/docs/openshift?topic=openshift-cs_storage_nonroot)
+[Why can't I add non-root user access to persistent storage?](/docs/openshift?topic=openshift-cs_storage_nonroot)
 * [Verifying the read and write permissions for the non-root user](/docs/openshift?topic=openshift-cs_storage_nonroot#verify-rw-permissions)
 
-[File storage: Why are the file systems for worker nodes changed to read-only?](/docs/openshift?topic=openshift-readonly_nodes)
+[Why are the file systems for worker nodes changed to read-only?](/docs/openshift?topic=openshift-readonly_nodes)
 
 [Storage: Feedback, questions, and support](/docs/openshift?topic=openshift-getting_help_storage)
 
@@ -2374,17 +2374,17 @@ subcollection: openshift
 * [Checking and updating the {{site.data.keyword.blockstorageshort}} driver](/docs/openshift?topic=openshift-debug_storage_block#debug_storage_block_driver)
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
-[Block Storage: Why can't my app access or write to PVCs?](/docs/openshift?topic=openshift-block_app_failures)
+[Why can't my app access or write to PVCs?](/docs/openshift?topic=openshift-block_app_failures)
 
-[Block storage: Why does mounting existing block storage to a pod fail with the wrong file system?](/docs/openshift?topic=openshift-block_filesystem)
+[Why does mounting existing block storage to a pod fail with the wrong file system?](/docs/openshift?topic=openshift-block_filesystem)
 
-[Block storage: Why does block storage change to read-only?](/docs/openshift?topic=openshift-readonly_block)
+[Why does block storage change to read-only?](/docs/openshift?topic=openshift-readonly_block)
 
-[Block storage: Why does the Block storage plug-in Helm chart give CPU throttling warnings?](/docs/openshift?topic=openshift-block_helm_cpu)
+[Why does the Block storage plug-in Helm chart give CPU throttling warnings?](/docs/openshift?topic=openshift-block_helm_cpu)
 
 [{{site.data.keyword.block_storage_is_short}} PVC creation fails after API key reset](/docs/openshift?topic=openshift-vpc-block-api-key-reset-ts)
 
-[Block storage: Why do I get a `Volume not attached` error when trying to expand a {{site.data.keyword.block_storage_is_short}} volume?](/docs/openshift?topic=openshift-block_not_attached_vpc)
+[Why do I get a `Volume not attached` error when trying to expand a {{site.data.keyword.block_storage_is_short}} volume?](/docs/openshift?topic=openshift-block_not_attached_vpc)
 
 
 ## Object Storage
@@ -2400,26 +2400,26 @@ subcollection: openshift
 * [Checking and updating the {{site.data.keyword.cos_short}} plug-in](/docs/openshift?topic=openshift-debug_storage_cos#debug_storage_cos_plugin)
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
-[Object storage: Why can't my PVC access an existing bucket?](/docs/openshift?topic=openshift-cos_access_bucket_fails)
+[Why can't my PVC access an existing bucket?](/docs/openshift?topic=openshift-cos_access_bucket_fails)
 
-[Object storage: Why does installing the Object storage `ibmc` Helm plug-in fail?](/docs/openshift?topic=openshift-cos_helm_fails)
+[Why does installing the Object storage `ibmc` Helm plug-in fail?](/docs/openshift?topic=openshift-cos_helm_fails)
 
-[Object storage: Why can't non-root users access files?](/docs/openshift?topic=openshift-cos_nonroot_access)
+[Why can't non-root users access files?](/docs/openshift?topic=openshift-cos_nonroot_access)
 * [Verifying that the permissions for your files are updated](/docs/openshift?topic=openshift-cos_nonroot_access#verifying_file_permission_update)
 
-[Object Storage: Why does my app pod fail with an `Operation not permitted` error?](/docs/openshift?topic=openshift-cos_operation_not_permitted)
+[Why does my app pod fail with an `Operation not permitted` error?](/docs/openshift?topic=openshift-cos_operation_not_permitted)
 
-[Object storage: Why can't the ownership of the mount path be changed?](/docs/openshift?topic=openshift-cos_mountpath_error)
+[Why can't the ownership of the mount path be changed?](/docs/openshift?topic=openshift-cos_mountpath_error)
 
-[Object storage: Why does installing the Object storage plug-in fail?](/docs/openshift?topic=openshift-cos_plugin_fails)
+[Why does installing the Object storage plug-in fail?](/docs/openshift?topic=openshift-cos_plugin_fails)
 
-[Object storage: Why do I see wrong credentials or access denied messages when I create a PVC?](/docs/openshift?topic=openshift-cred_failure)
+[Why do I see wrong credentials or access denied messages when I create a PVC?](/docs/openshift?topic=openshift-cred_failure)
 
-[Object storage: Why do I see wrong s3fs or IAM API endpoints when I create a PVC?](/docs/openshift?topic=openshift-cos_api_endpoint_failure)
+[Why do I see wrong s3fs or IAM API endpoints when I create a PVC?](/docs/openshift?topic=openshift-cos_api_endpoint_failure)
 
-[Object storage: Why does my PVC remain in a pending state?](/docs/openshift?topic=openshift-cos_pvc_pending)
+[Why does my PVC remain in a pending state?](/docs/openshift?topic=openshift-cos_pvc_pending)
 
-[Object storage: Why does PVC or pod creation fail due to not finding the Kubernetes secret?](/docs/openshift?topic=openshift-cos_secret_access_fails)
+[Why does PVC or pod creation fail due to not finding the Kubernetes secret?](/docs/openshift?topic=openshift-cos_secret_access_fails)
 
 
 ## Portworx Storage
@@ -2434,12 +2434,12 @@ subcollection: openshift
 * [Updating Helm charts](/docs/openshift?topic=openshift-debug_storage_px#debug_storage_px_helm)
 * [What permissions do I need to manage storage and create PVCs](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
-[Portworx: Debugging your Portworx installation](/docs/openshift?topic=openshift-debug-portworx)
+[Debugging your Portworx installation](/docs/openshift?topic=openshift-debug-portworx)
 * [Step 1: Verifying the {{site.data.keyword.cloud_notm}} catalog information](/docs/openshift?topic=openshift-debug-portworx#px-verify-catalog)
 * [Step 2: Verifying the cluster setup](/docs/openshift?topic=openshift-debug-portworx#px-verify-cluster)
 * [Step 3: Reach out to Portworx and IBM](/docs/openshift?topic=openshift-debug-portworx#px-support)
 
-[Portworx: Why does encryption fail with an invalid KMS endpoint?](/docs/openshift?topic=openshift-px-kms-endpoint)
+[Why does encryption fail with an invalid KMS endpoint?](/docs/openshift?topic=openshift-px-kms-endpoint)
 
 
 ## OpenShift Data Foundation

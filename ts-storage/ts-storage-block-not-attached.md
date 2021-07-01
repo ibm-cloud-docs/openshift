@@ -95,7 +95,7 @@ content-type: troubleshoot
   
   
 
-# Block storage: Why do I get a `Volume not attached` error when trying to expand a {{site.data.keyword.block_storage_is_short}} volume?
+# Why do I get a `Volume not attached` error when trying to expand a {{site.data.keyword.block_storage_is_short}} volume?
 {: #block_not_attached_vpc}
 
 **Infrastructure provider**:
@@ -145,3 +145,5 @@ Verify that your PVC supports volume expansion, then create an app pod that uses
     ibmcloud is vol <volume-ID>
     ```
     {: pre}
+
+

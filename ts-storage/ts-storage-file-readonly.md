@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-07-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -94,7 +94,7 @@ content-type: troubleshoot
 {:video: .video}
   
   
-# File storage: Why are the file systems for worker nodes changed to read-only?
+# Why are the file systems for worker nodes changed to read-only?
 {: #readonly_nodes}
 
 **Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
