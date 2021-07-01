@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-29"
+lastupdated: "2021-07-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -172,6 +172,7 @@ To specify custom pod and service subnets during cluster creation, use the `--po
     * `172.21.0.0 - 172.31.255.255`
     * `192.168.0.0 - 192.168.254.255`
     * `198.18.0.0 - 198.19.255.255`
+* The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
 
 **Services**:
 * Default range: All services that are deployed to the cluster are assigned a private IP address in the `172.21.0.0/16` range by default.
@@ -181,6 +182,7 @@ To specify custom pod and service subnets during cluster creation, use the `--po
     * `172.21.0.0 - 172.31.255.255`
     * `192.168.0.0 - 192.168.254.255`
     * `198.18.0.0 - 198.19.255.255`
+* The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
 
 ### Network segmentation
 {: #basics_segmentation}
@@ -226,6 +228,7 @@ Before you begin:
    ibmcloud oc cluster rm --cluster <cluster_name_or_ID>
    ```
    {: pre}
+- The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` subnet ranges are prohibited.
 
 </br>To create a cluster by using existing subnets:
 
