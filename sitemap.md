@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-07-01"
 
 keywords: openshift
 subcollection: openshift
@@ -1204,6 +1204,7 @@ subcollection: openshift
   * [Storing your custom PVC settings in a Kubernetes secret](/docs/openshift?topic=openshift-vpc-block#vpc-block-storageclass-secret)
   * [Enabling every user to customize the default PVC settings](/docs/openshift?topic=openshift-vpc-block#customize-with-secret)
   * [Enforcing base64 encoding for the {{site.data.keyword.keymanagementserviceshort}} root key CRN](/docs/openshift?topic=openshift-vpc-block#static-secret)
+* [Setting up volume expansion](/docs/openshift?topic=openshift-vpc-block#vpc-block-volume-expand)
 * [Backing up and restoring data](/docs/openshift?topic=openshift-vpc-block#vpc-block-backup-restore)
 * [Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference)
 * [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-vpc-block#cleanup)
@@ -2382,6 +2383,8 @@ subcollection: openshift
 [Block storage: Why does the Block storage plug-in Helm chart give CPU throttling warnings?](/docs/openshift?topic=openshift-block_helm_cpu)
 
 [{{site.data.keyword.block_storage_is_short}} PVC creation fails after API key reset](/docs/openshift?topic=openshift-vpc-block-api-key-reset-ts)
+
+[Block storage: Why do I get a `Volume not attached` error when trying to expand a {{site.data.keyword.block_storage_is_short}} volume?](/docs/openshift?topic=openshift-block_not_attached_vpc)
 
 
 ## Object Storage

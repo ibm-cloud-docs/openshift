@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-23"
+lastupdated: "2021-07-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1135,6 +1135,40 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
 4. As the cluster user, follow the steps in [Adding {{site.data.keyword.block_storage_is_short}} to your apps](#vpc-block-add) to create a PVC from your customized storage class.
 
 <br />
+
+## Setting up volume expansion
+{: #vpc-block-volume-expand}
+To provision volumes that support expansion, you must first create a custom storage class and set `allowVolumeExpansion` to `true`. 
+{: shortdesc}
+
+{[target-both]}
+1. [Update the {{site.data.keyword.block_storage_is_short}} add-on in your cluster](#vpc-addon-update).
+1. [Create a custom storage class](#vpc-customize-storage-class) and set `allowVolumeExpansion` to `true`.
+1. [Create a PVC](#vpc_block_qs) that uses your custom storage class.
+1. [Deploy an app](#vpc_block_qs) that uses your PVC. Note that only mounted volumes can be expanded. Attempting to expand an unmounted volume by a pod results in a [`Volume not attached`](/docs/containers?topic=containers-block_not_attached_vpc) error.
+1. Edit your PVC and increase the value in the `spec.resources.requests.storage` field.
+    ```sh
+    oc edit pvc <pvc-name>
+    ```
+    {: pre}
+
+1. Get the details of your PVC and make a note of the PV name.
+    ```sh
+    oc get pvc <pvc-name>
+    ```
+    {: pre}
+
+1. Describe your PV and make a note of the volume ID
+    ```sh
+    oc describe PV
+    ```
+    {: pre}
+
+1. Get the details of your {{site.data.keyword.block_storage_is_shortl}} volume and verify the capacity.
+    ```sh
+    ibmcloud is vol <volume-ID>
+    ```
+    {: pre}
 
 ## Backing up and restoring data
 {: #vpc-block-backup-restore}
