@@ -109,7 +109,7 @@ Volume not attached
 {: screen}
 
 {: tsCauses}
-You tried to expand the volume size of an existing {{site.data.keyword.block_storage_is_shortl}} PVC that is not mounted by a pod. Only volumes mounted by app pods can be expanded.
+You tried to expand the volume size of an existing {{site.data.keyword.block_storage_is_short}} PVC that is not mounted by a pod. Only volumes mounted by app pods can be expanded.
 
 {: tsResolve}
 Verify that your PVC supports volume expansion, then create an app pod that uses your PVC.
@@ -140,7 +140,7 @@ Verify that your PVC supports volume expansion, then create an app pod that uses
     ```
     {: pre}
 
-1. Get the details of your {{site.data.keyword.block_storage_is_shortl}} volume and verify the capacity.
+1. Get the details of your {{site.data.keyword.block_storage_is_short}} volume and verify the capacity.
     ```sh
     ibmcloud is vol <volume-ID>
     ```

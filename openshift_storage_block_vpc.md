@@ -1141,7 +1141,7 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
 To provision volumes that support expansion, you must first create a custom storage class and set `allowVolumeExpansion` to `true`. 
 {: shortdesc}
 
-{[target-both]}
+[Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 1. [Update the {{site.data.keyword.block_storage_is_short}} add-on in your cluster](#vpc-addon-update).
 1. [Create a custom storage class](#vpc-customize-storage-class) and set `allowVolumeExpansion` to `true`.
 1. [Create a PVC](#vpc_block_qs) that uses your custom storage class.
@@ -1164,7 +1164,7 @@ To provision volumes that support expansion, you must first create a custom stor
     ```
     {: pre}
 
-1. Get the details of your {{site.data.keyword.block_storage_is_shortl}} volume and verify the capacity.
+1. Get the details of your {{site.data.keyword.block_storage_is_short}} volume and verify the capacity.
     ```sh
     ibmcloud is vol <volume-ID>
     ```
