@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-29"
+lastupdated: "2021-07-02"
 
 keywords: openshift, roks, rhos, rhoks, vpn, on-prem, gateway, static
 
@@ -126,7 +126,7 @@ To get started with static routes in {{site.data.keyword.openshiftlong_notm}}, e
 {: shortdesc}
 
 **Before you begin**:
-* Ensure that you have the [**Administrator** IAM platform access role for the cluster in {{site.data.keyword.containerlong_notm}}](/docs/openshift?topic=openshift-users).
+* Ensure that you have the [**Administrator** IAM platform access role for the cluster in {{site.data.keyword.containerlong_notm}}](/docs/openshift?topic=openshift-users#checking-perms).
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 </br>
