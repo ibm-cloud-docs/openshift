@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-07-02"
 
 keywords: vpc block, add-on, vpc block changelog
 
@@ -119,6 +119,8 @@ Refer to the following tables for a summary of changes for each version of the {
 | 2.0.3 | | >=4.3 |
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.block_storage_is_full}} add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the {{site.data.keyword.block_storage_is_full}} version is supported for."}
 
+
+
 ## Changelog for version 3.0.0
 {: #0300_is_block}
 
@@ -127,7 +129,6 @@ The following table shows the changes in version 3.0.0 {{site.data.keyword.block
 
 | Patch version | `vpc-block-csi-driver` image tag | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
 | --- | --- | --- | --- | --- |
-| `3.0.1` | `v.3.0.5` | 01 July 2021 | >=4.3 | Includes support for volume expansion and fixes vulnerability [CVE-2021-27219](https://nvd.nist.gov/vuln/detail/CVE-2021-27219){: external}. |
 | `3.0.0_521` | `v.3.0.1` | 01 April 2021 | >=4.3 | Updates the Golang version from `1.15.5` to `1.15.9`. |
 | N/A | `v.3.0.0` | 26 February 2021 | >=4.3 | The `vpc-block-csi-driver` is now available for both managed clusters and unmanaged clusters. This release contains no functional changes. |
 {: row-headers}
