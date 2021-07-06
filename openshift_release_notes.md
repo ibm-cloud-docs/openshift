@@ -111,6 +111,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 | Date | Description |
 | ---- | ----------- |
 | 06 July 2021 |<ul><li> **Ingress changelogs**: Updated the [Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.47.0_1376_iks`, `0.45.0_1375_iks`, and `0.35.0_1374_iks`.</li><li>**Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.7.18_1524_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4718_1524), [`4.6.36_1548_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4636_1548), [`4.5.40_1544_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4540_1544), and [`3.11.462_1595_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311462_1595).</li></ul> |
+| 02 July 2021 | **Unsupported Kubernetes version 1.17**: To continue receiving important security updates and support, you must [update the cluster to a supported version](/docs/containers?topic=containers-cs_versions#prep-up) immediately. |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in July 2021"}
 

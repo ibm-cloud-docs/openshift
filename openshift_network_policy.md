@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-07-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -129,7 +129,7 @@ In OpenShift Container Platform version 4, Calico is based on the Kubernetes dat
 When a cluster with a public VLAN is created, a `HostEndpoint` resource with the `ibm.role: worker_public` label is created automatically for each worker node and its public network interface. To protect the public network interface of a worker node, default Calico policies are applied to any host endpoint with the `ibm.role: worker_public` label.
 {: shortdesc}
 
-In clusters that run {{site.data.keyword.openshiftshort}} version 4.3 or later, a `HostEndpoint` resource with the `ibm.role: worker_private` label is also created automatically for each worker node and its private network interface. To protect the private network interface of a worker node, default Calico policies are applied to any host endpoint with the `ibm.role: worker_private` label.
+**Clusters that run {{site.data.keyword.openshiftshort}} version 4**: A `HostEndpoint` resource with the `ibm.role: worker_private` label is also created automatically for each worker node and its private network interface. To protect the private network interface of a worker node, default Calico policies are applied to any host endpoint with the `ibm.role: worker_private` label.
 
 These default Calico host policies allow all outbound network traffic and allow inbound traffic to specific cluster components, such as Kubernetes NodePort, LoadBalancer, and Ingress services. Any other inbound network traffic from the internet to your worker nodes that isn't specified in the default policies is blocked. The default policies don't affect pod to pod traffic.
 
@@ -141,7 +141,7 @@ Review the following default Calico host policies that are automatically applied
 |Calico policy|Description|
 |--- |--- |
 |`allow-all-outbound`|Allows all outbound traffic on the public network.|
-|`allow-all-private-default`|In {{site.data.keyword.openshiftshort}} version 4.3 or later: Allows all inbound and outbound traffic on the private network.|
+|`allow-all-private-default`|In {{site.data.keyword.openshiftshort}} version 4 or later: Allows all inbound and outbound traffic on the private network.|
 |`allow-bigfix-port`|Allows incoming traffic on port 52311 to the BigFix app to allow necessary worker node updates.|
 |`allow-icmp`|Allows incoming ICMP packets (pings).|
 |`allow-node-port-dnat`|Allows incoming network load balancer (NLB), Ingress application load balancer (ALB), and NodePort service traffic to the pods that those services are exposing. Note: You don't need to specify the exposed ports because Kubernetes uses destination network address translation (DNAT) to forward the service requests to the correct pods. That forwarding takes place before the host endpoint policies are applied in Iptables.|
