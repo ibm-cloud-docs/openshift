@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-29"
+lastupdated: "2021-07-02"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, update, upgrade
 
@@ -126,7 +126,7 @@ Want to scale your worker nodes instead of your pods? Check out the [cluster aut
 
 Before you begin:
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-- Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-users) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
+- Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-users#checking-perms) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
 
 Steps:
 
@@ -184,7 +184,7 @@ Want to prevent downtime during your rolling update? Be sure to specify a [readi
 Before you begin:
 *   [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 *   Create a [deployment](/docs/containers?topic=containers-deploy_app#app_cli).
-*   Make sure that you have a [service access role](/docs/openshift?topic=openshift-users) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
+*   Make sure that you have a [service access role](/docs/openshift?topic=openshift-users#checking-perms) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
 
 To manage rolling updates to your apps:
 1.  To make sure that your deployments are marked as ready only when the container is running and ready to service requests, add [liveness and readiness probes to your deployment](/docs/openshift?topic=openshift-openshift_apps#probe).
@@ -333,7 +333,7 @@ To see a list of supported integrations and steps for setting up a continuous de
 When you use a [version control system such as Git](/docs/openshift?topic=openshift-plan_deploy#deploy_organize), configuration management projects such as [`kustomize`](/docs/openshift?topic=openshift-openshift_apps#kustomize), or continuous delivery tools such as [Razee](https://razee.io/){: external} in your cluster, you can deploy your app configuration files quickly from cluster to cluster. Sometimes you have only a few deployments that you tested in a cluster and prefer to copy these deployments and redeploy in another cluster.
 {: shortdesc}
 
-Before you begin, you need two clusters and the **Manager** [service access role](/docs/openshift?topic=openshift-users) for all projects in both clusters so that you can copy all the resources from one cluster and deploy them to another.
+Before you begin, you need two clusters and the **Manager** [service access role](/docs/openshift?topic=openshift-users#checking-perms) for all projects in both clusters so that you can copy all the resources from one cluster and deploy them to another.
 
 1.  [Target](/docs/openshift?topic=openshift-access_cluster) the cluster that you want to copy resources from.
 2.  List all the configuration files in your cluster and verify that you want to copy these configurations.

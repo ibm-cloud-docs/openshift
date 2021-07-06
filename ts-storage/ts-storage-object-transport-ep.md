@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-07-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -94,7 +94,7 @@ content-type: troubleshoot
 {:video: .video}
   
   
-# Object Storage: Why is the transport endpoint not connected?
+# Why is the transport endpoint not connected?
 {: cos_transport_ts_connect}
 
 **Infrastructure provider**:

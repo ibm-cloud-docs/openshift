@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-07-01"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -201,6 +201,7 @@ Supported add-ons for clusters in {{site.data.keyword.satelliteshort}} locations
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
 - **Deprecated**: [Kubernetes web terminal](/docs/containers?topic=containers-cs_cli_install#cli_web)
+- [OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep) (However, you can also use [{{site.data.keyword.satelliteshort}} storage templates](/docs/satellite?topic=satellite-config-storage-ocs-local) to consistently deploy ODF across clusters in your location.)
 - [Static routes](/docs/openshift?topic=openshift-static-routes)
 
 Unsupported add-ons for clusters in {{site.data.keyword.satelliteshort}} locations:

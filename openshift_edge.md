@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-29"
+lastupdated: "2021-07-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -116,7 +116,7 @@ Add the `dedicated=edge` label to worker nodes on each public or private VLAN in
 
 Before you begin:
 
-* Ensure that you have the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-users):
+* Ensure that you have the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-users#checking-perms):
   * Any platform access role for the cluster
   * **Writer** or **Manager** service access role for all namespaces
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -255,7 +255,7 @@ Using the `dedicated=edge` toleration means that all network load balancer (NLB)
 
 
 Before you begin:
-- Ensure you that have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service access role for all namespaces](/docs/openshift?topic=openshift-users).
+- Ensure you that have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service access role for all namespaces](/docs/openshift?topic=openshift-users#checking-perms).
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 </br>To prevent other workloads from running on edge worker nodes:

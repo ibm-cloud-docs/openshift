@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-07-06"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -242,7 +242,7 @@ The following image walks you through choosing the setup that you want for your 
 4. Configure the **Location** details for your cluster.
    1. Select the **Resource group** that you want to create your cluster in.
       * A cluster can be created in only one resource group, and after the cluster is created, you cannot change its resource group.
-      * To create clusters in a resource group other than the default, you must have at least the [**Viewer** role](/docs/openshift?topic=openshift-users) for the resource group.
+      * To create clusters in a resource group other than the default, you must have at least the [**Viewer** role](/docs/openshift?topic=openshift-users#checking-perms) for the resource group.
    2.  Select a **Geography** to create the cluster in, such as **North America**. The geography helps filter the **Availability** and **Metro** values that you can select.
    3.  Select the **Availability** that you want for your cluster, **Single zone** or **Multizone**. In a multizone cluster, the {{site.data.keyword.openshiftshort}} master is deployed in a multizone-capable zone and three replicas of your master are spread across zones.
    4. Enter the **Metro** and **Worker zones** details, depending on the availability that you selected for your cluster.
@@ -295,7 +295,7 @@ The following image walks you through choosing the setup that you want for your 
    2. If you have multiple {{site.data.keyword.cloud_notm}} accounts, select the account where you want to create your Kubernetes cluster.
    3. To create clusters in a resource group other than default, target that resource group.
       * A cluster can be created in only one resource group, and after the cluster is created, you can't change its resource group.
-      * You must have at least the [**Viewer** role](/docs/openshift?topic=openshift-users) for the resource group.
+      * You must have at least the [**Viewer** role](/docs/openshift?topic=openshift-users#checking-perms) for the resource group.
 
       ```
       ibmcloud target -g <resource_group_name>
@@ -495,7 +495,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
 4. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Create cluster**.
 5. Configure your cluster environment.
    1. Select the **Standard** cluster plan.
-   2. From the {{site.data.keyword.openshiftshort}} drop-down list, select the version that you want to use in your cluster. You must choose **{{site.data.keyword.openshiftshort}} 4.4 or later**.
+   2. From the {{site.data.keyword.openshiftshort}} drop-down list, select the version that you want to use in your cluster.
    3. **Optional**: For the **OCP entitlement** section, you can select an entitlement for a worker pool, if you have one. In most cases, leave the value set to **Purchase additional licenses for this worker pool**. If you have an {{site.data.keyword.cloud_notm}} Pak with an {{site.data.keyword.openshiftshort}} entitlement that you want to use, you can select **Apply my Cloud Pak OCP entitlement to this worker pool**. Later, when you configure the worker pool, make sure to select only the flavor and number of worker nodes that your entitlement permits.
    3. Select **VPC** infrastructure.
    4. From the **Virtual private cloud** drop-down menu, select the VPC that you created earlier.
@@ -503,7 +503,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
 6. Configure the **Location** details for your cluster.
    1. Select the **Resource group** that you want to create your cluster in.
       * A cluster can be created in only one resource group, and after the cluster is created, you cannot change its resource group.
-      * To create clusters in a resource group other than the default, you must have at least the [**Viewer** role](/docs/openshift?topic=openshift-users) for the resource group.
+      * To create clusters in a resource group other than the default, you must have at least the [**Viewer** role](/docs/openshift?topic=openshift-users#checking-perms) for the resource group.
    2. Select the zones to create your cluster in.
       * The zones are filtered based on the VPC that you selected, and include the VPC subnets that you previously created.
       * To create a [single zone cluster](/docs/openshift?topic=openshift-ha_clusters#single_zone), select one zone only. If you select only one zone, you can [add zones to your cluster](/docs/openshift?topic=openshift-add_workers#add_zone) after the cluster is created.

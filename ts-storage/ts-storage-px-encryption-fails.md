@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-07-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -94,7 +94,7 @@ content-type: troubleshoot
 {:video: .video}
   
   
-# Portworx: Why does encryption fail with an invalid KMS endpoint?
+# Why does encryption fail with an invalid KMS endpoint?
 {: #px-kms-endpoint}
 
 **Infrastructure provider**:

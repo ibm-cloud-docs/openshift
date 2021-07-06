@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-07-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -389,54 +389,7 @@ You cannot scope {{site.data.keyword.cloud_notm}} IAM service access roles to an
 
 4.  If you assigned only service access roles to users, the users must be given the cluster master URL to open the {{site.data.keyword.openshiftshort}} web console from their browser at `https://<master_URL>/console` instead of the {{site.data.keyword.cloud_notm}} console. Otherwise, [give the users the platform **Viewer** role](#add_users_cli_platform).
 
-5.  **Optional**: After a couple minutes, verify that the user is added to the corresponding [RBAC role binding or cluster role binding](/docs/openshift?topic=openshift-access-overview#role-binding). Note that you must be a cluster administrator (**Manager** service access role in all namespaces) to check role bindings and cluster role bindings. Users are not added to a role binding if they have a higher permission. For example, if users have a cluster role and are in a cluster role binding, they are not added to each individual namespace role binding as well.
-
-    *   Reader:
-        ```
-        oc get rolebinding ibm-view -o yaml -n <namespace>
-        ```
-        {: pre}
-    *   Writer:
-        ```
-        oc get rolebinding ibm-edit -o yaml -n <namespace>
-        ```
-        {: pre}
-    *   Manager, scoped to a namespace:
-        ```
-        oc get rolebinding ibm-operate -o yaml -n <namespace>
-        ```
-        {: pre}
-    *   Manager, all namespaces:
-        ```
-        oc get clusterrolebinding ibm-admin -o yaml
-        ```
-        {: pre}
-
-    **Example output**: You get the following example output if you assign user `user@email.com` and access group `team1` the **Reader** service access role, and then run `oc get rolebinding ibm-view -o yaml -n default`.
-
-    ```
-    apiVersion: rbac.authorization.k8s.io/v1
-    kind: RoleBinding
-    metadata:
-      creationTimestamp: 2018-05-23T14:34:24Z
-      name: ibm-view
-      namespace: default
-      resourceVersion: "8192510"
-      selfLink: /apis/rbac.authorization.k8s.io/v1/namespaces/default/rolebindings/ibm-view
-      uid: 63f62887-5e96-11e8-8a75-b229c11ba64a
-    roleRef:
-      apiGroup: rbac.authorization.k8s.io
-      kind: ClusterRole
-      name: view
-    subjects:
-    - apiGroup: rbac.authorization.k8s.io
-      kind: User
-      name: IAM#user@email.com
-    - apiGroup: rbac.authorization.k8s.io
-      kind: group
-      name: team1
-    ```
-    {: screen}
+5.  **Optional**: After a couple minutes, verify that the user is added to the corresponding [RBAC role binding or cluster role binding](#checking-rbac). 
 
 <br />
 
@@ -804,6 +757,202 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 3.  Follow up with users that have the `admin` cluster role. Ask them to [refresh their cluster configuration](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) and test the action, such as `oc top pods`.
 
 <br />
+
+
+## Checking user permissions
+{: #checking-perms}
+
+Before you complete a task, you might want to check that you have the appropriate permissions in {{site.data.keyword.cloud}} Identity and Access Management (IAM).
+{: shortdesc}
+
+### Checking IAM platform and service access roles
+{: #checking-iam}
+
+Check your access policies that are assigned by IAM platform and service access roles.
+{: shortdesc}
+
+**From the UI**:
+1.  Log in to the [{{site.data.keyword.cloud_notm}} IAM console](https://cloud.ibm.com/iam){: external}.
+2.  From the navigation menu, click the **Users** tab.
+3.  In the table, click the user with the tag `self` for yourself or the user that you want to check.
+4.  Click the **Access policies** tab.
+5.  Review the **Resource attributes** column for a short description of the access. Click the number tag to view all the allowed actions for the role.
+
+    Service access roles are synchronized with Kubernetes RBAC roles within your cluster. If you have a service access role, you might want to [verify your RBAC role](#checking-rbac), too.
+    {: tip}
+
+6.  To review what the roles and allowed actions permit, see the following topics.
+    *   [IAM roles and actions](/docs/account?topic=account-iam-service-roles-actions)
+    *   [{{site.data.keyword.openshiftlong_notm}} user access permissions](/docs/openshift?topic=openshift-access_reference)
+    *   <img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Satellite-only**: [{{site.data.keyword.satelliteshort}} IAM platform and service roles](docs/satellite?topic=satellite-iam#iam-roles)
+7.  To change or assign new access policies, see [Assigning {{site.data.keyword.openshiftlong_notm}} roles](#add_users) or [Assigning {{site.data.keyword.satelliteshort}} access](/docs/satellite?topic=satellite-iam#iam-assign).
+
+<br>
+
+**From the CLI**:
+
+1.  Log in to your {{site.data.keyword.cloud_notm}} account. If you have a federated ID, include the `--sso` flag.
+    ```
+    ibmcloud login -r [--sso]
+    ```
+    {: pre}
+2.  Find the **User ID** of the user whose permissions you want to check.
+    ```
+    ibmcloud account users
+    ```
+    {: pre}
+3.  Check the IAM access policies of the user.
+    ```
+    ibmcloud iam user-policies <user_id>
+    ```
+    {: pre}
+
+    Service access roles are synchronized with Kubernetes RBAC roles within your cluster. If you have a service access role, you might want to [verify your RBAC role](#checking-rbac), too.
+    {: tip}
+
+4.  To review what the roles and allowed actions permit, see the following topics.
+    *   [IAM roles and actions](/docs/account?topic=account-iam-service-roles-actions)
+    *   [{{site.data.keyword.openshiftlong_notm}} user access permissions](/docs/openshift?topic=openshift-access_reference)
+    *   <img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Satellite-only**: [{{site.data.keyword.satelliteshort}} IAM platform and service roles](docs/satellite?topic=satellite-iam#iam-roles)
+5.  To change or assign new access policies, see [Assigning {{site.data.keyword.openshiftlong_notm}} roles](#add_users_cli) or [Assigning {{site.data.keyword.satelliteshort}} access](/docs/satellite?topic=satellite-iam#iam-assign-cli).
+
+### Checking RBAC roles
+{: #checking-rbac}
+
+Verify your custom RBAC or synchronized IAM service access to RBAC roles in your {{site.data.keyword.openshiftlong_notm}} cluster.
+{: shortdesc} 
+
+**From the UI**:
+1.  Log in to the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
+2.  Click the cluster with the RBAC roles that you want to check.
+3.  Click the **{{site.data.keyword.openshiftshort}} web console**.
+
+     If you have a private network only cluster, you might not be able to open the dashboard unless you are on a VPN. See [Accessing clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#access_private_se) or for {{site.data.keyword.satelliteshort}}, [Accessing {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
+    {: note}
+
+4.  From the **Administrator** perspective, click **User Management > Users**.
+5.  Click the user that you want to check, then click **Role Bindings**.
+
+<br>
+
+**From the CLI**:
+
+1.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+2.  Check that the user is added to the RBAC role. Users are not added to a role binding if they have a higher permission. For example, if users have a cluster role and are in a cluster role binding, they are not added to each individual namespace role binding as well.
+
+    You must be a cluster administrator (**Manager** service access role in all namespaces) to check role bindings and cluster role bindings.
+    {: note}
+
+    *   Reader:
+        ```
+        oc get rolebinding ibm-view -o yaml -n <namespace>
+        ```
+        {: pre}
+    *   Writer:
+        ```
+        oc get rolebinding ibm-edit -o yaml -n <namespace>
+        ```
+        {: pre}
+    *   Manager, scoped to a namespace:
+        ```
+        oc get rolebinding ibm-operate -o yaml -n <namespace>
+        ```
+        {: pre}
+    *   Manager, all namespaces:
+        ```
+        oc get clusterrolebinding ibm-admin -o yaml
+        ```
+        {: pre}
+
+    **Example output**: If you assign user `user@email.com` and access group `team1` the **Reader** service access role, and then run `oc get rolebinding ibm-view -o yaml -n default`, you get the following example output.
+
+    ```
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: RoleBinding
+    metadata:
+      creationTimestamp: 2018-05-23T14:34:24Z
+      name: ibm-view
+      namespace: default
+      resourceVersion: "8192510"
+      selfLink: /apis/rbac.authorization.k8s.io/v1/namespaces/default/rolebindings/ibm-view
+      uid: 63f62887-5e96-11e8-8a75-b229c11ba64a
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: view
+    subjects:
+    - apiGroup: rbac.authorization.k8s.io
+      kind: User
+      name: IAM#user@email.com
+    - apiGroup: rbac.authorization.k8s.io
+      kind: group
+      name: team1
+    ```
+    {: screen}
+
+### Checking infrastructure roles
+{: #checking-infra}
+
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Check your {{site.data.keyword.cloud_notm}} classic infrastructure roles. For more information, see [Understanding access to the infrastructure portfolio](/docs/openshift?topic=openshift-access-creds#understand_infra).
+{: shortdesc}
+
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC infrastructure permissions are managed with [IAM platform and service access roles](#checking-iam).
+{: note}
+
+If you are an adminstrator for the region and resource group, you might want to [check if the user's credentials are used for infrastructure permissions](#removing_check_infra), especially before removing the user.
+{: tip}
+
+**From the UI**:
+1.  Log in to the [{{site.data.keyword.cloud_notm}} IAM console](https://cloud.ibm.com/iam){: external}.
+2.  From the navigation menu, click the **Users** tab.
+3.  In the table, click the user with the tag `self` for yourself or the user that you want to check.
+4.  Click the **Classic infrastructure** tab.
+5.  Review each of the classic infrastructure tabs.
+    1.  **Permissions**: Expand the categories to review the permissions that the user has.
+    2.  **Devices**: Review the devices that the user has permissions to. A common issue is when a user has administrator permissions but the `Enable future access` was not checked so whenever a new device is ordered, the user cannot administer the device.
+    3.  **VPN subnets**: The subnets permission is important if the user must administer the subnets for the cluster.
+6.  To review what the roles and allowed actions permit, see the following topics.
+    *   [Account classic infrastructure permissions](/docs/account?topic=account-infrapermission)
+    *   [{{site.data.keyword.openshiftlong_notm}} classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra)
+7.  To change or assign new access policies, see [Customizing infrastructure permissions](/docs/openshift?topic=openshift-access-creds#infra_access).
+
+<br>
+
+**From the CLI**:
+
+1.  Log in to your {{site.data.keyword.cloud_notm}} account. If you have a federated ID, include the `--sso` flag.
+    ```
+    ibmcloud login -r [--sso]
+    ```
+    {: pre}
+2.  List the users in your classic infrastructure account and note the **id** of the user whose credentials are set manually or by the API key.
+    ```
+    ibmcloud sl user list
+    ```
+    {: pre}
+3.  List the current classic infrastructure permissions that the user has.
+    ```
+    ibmcloud sl user permissions <user_id>
+    ```
+    {: pre}
+4.  To review what the roles and allowed actions permit, see the following topics.
+    *   [Account classic infrastructure permissions](/docs/account?topic=account-infrapermission)
+    *   [{{site.data.keyword.openshiftlong_notm}} classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra)
+5.  To change or assign new access policies, see [Customizing infrastructure permissions](/docs/openshift?topic=openshift-access-creds#infra_access).
+
+
+
+### Checking other cloud infrastructure provider roles
+{: #checking-infra-providers}
+
+<img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Satellite-only**: If your cluster runs in a {{site.data.keyword.satelliteshort}} location, you use infrastructure that comes from other on-prem or cloud providers. Consult their product documentation to make sure that you have the correct permissions to create infrastructure resources.
+{: shortdesc}
+
+Also, see the following related topics.
+
+* [Common permissions in other cloud providers](/docs/satellite?topic=satellite-iam#permissions-other-clouds)
+
+
 
 ## Removing user permissions
 {: #removing}

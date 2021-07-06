@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-07-02"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -333,7 +333,7 @@ Create a cluster with infrastructure, network, and availability setups that are 
     1. [Pick the right access policy and role for your users](/docs/openshift?topic=openshift-access-overview#access_roles).
     2. [Understand access roles for individual or groups of users in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-access-overview#iam_individuals_groups).
     3. [Choose the scope of user access to cluster instances, {{site.data.keyword.openshiftshort}} project, or resource groups](/docs/openshift?topic=openshift-access-overview#resource_groups).
-  2. Allow users to create apps or audit your cluster activity by [assigning cluster access](/docs/openshift?topic=openshift-users). To see specific permissions and actions that you can grant users, see the [user access permissions reference](/docs/openshift?topic=openshift-access_reference).
+  2. Allow users to create apps or audit your cluster activity by [assigning cluster access](/docs/openshift?topic=openshift-users#checking-perms). To see specific permissions and actions that you can grant users, see the [user access permissions reference](/docs/openshift?topic=openshift-access_reference).
 
 </br>Need help? Check out [Troubleshooting clusters and masters](/docs/containers?topic=containers-debug_clusters) and [Troubleshooting worker nodes](/docs/containers?topic=containers-debug_worker_nodes).
 

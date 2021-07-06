@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-29"
+lastupdated: "2021-07-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -112,7 +112,7 @@ If this cluster is an existing one:
 *  The pod might have exceeded a resource request or limit.
 
 {: tsResolve}
-This task requires the {{site.data.keyword.cloud_notm}} IAM [**Administrator** platform access role](/docs/openshift?topic=openshift-users) for the cluster and the [**Manager** service access role](/docs/openshift?topic=openshift-users) for all namespaces.
+This task requires the {{site.data.keyword.cloud_notm}} IAM [**Administrator** platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster and the [**Manager** service access role](/docs/openshift?topic=openshift-users#checking-perms) for all namespaces.
 
 If you just created the {{site.data.keyword.openshiftshort}} cluster, run the following command and wait for the worker nodes to initialize.
 

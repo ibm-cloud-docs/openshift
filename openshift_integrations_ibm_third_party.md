@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-07-06"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -158,7 +159,7 @@ Some open source technologies, such as Portworx are tested by IBM and provided a
 
 You can install other open source tools in your cluster, but these tools might not be managed, supported, or verified to work in {{site.data.keyword.openshiftlong_notm}}.
 
-Supported integrations depend on the container platform, the infrastructure provider, and the cluster type that you choose. For more information, see [Supported {{site.data.keyword.cloud_notm}} and third-party integrations](/docs/openshift?topic=openshift-supported_integrations).
+Supported integrations depend on the container platform, the infrastructure provider, and the cluster type that you choose. For more information, see [Supported {{site.data.keyword.cloud_notm}} and third-party integrations](/docs/containers?topic=containers-supported_integrations).
 {: note}
 
 ### Integrations operated in partnership
@@ -188,7 +189,10 @@ Installing third-party open source integrations or Helm charts from the Kubernet
 ### Extending {{site.data.keyword.openshiftshort}} API and software with CRDs and Operators
 {: #kube-crd-operators}
 
-You might use custom resource definitions (CRDs) to extend the {{site.data.keyword.openshiftshort}} API to create and orchestrate custom objects in your cluster. Operators combine custom resources and controllers to automate the lifecycle of app, such as installing and rolling out updates to a customized app from a catalog in your cluster. 
+You might use custom resource definitions (CRDs) to extend the {{site.data.keyword.openshiftshort}} API to create and orchestrate custom objects in your cluster. Operators combine custom resources and controllers to automate the lifecycle of app, such as installing and rolling out updates to a customized app from a catalog in your cluster.
+{: shortdesc}
+
+
 
 For more information, see [Operators](/docs/openshift?topic=openshift-operators).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-29"
+lastupdated: "2021-07-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -172,6 +172,7 @@ To specify custom pod and service subnets during cluster creation, use the `--po
     * `172.21.0.0 - 172.31.255.255`
     * `192.168.0.0 - 192.168.254.255`
     * `198.18.0.0 - 198.19.255.255`
+* The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
 
 **Services**:
 * Default range: All services that are deployed to the cluster are assigned a private IP address in the `172.21.0.0/16` range by default.
@@ -181,6 +182,7 @@ To specify custom pod and service subnets during cluster creation, use the `--po
     * `172.21.0.0 - 172.31.255.255`
     * `192.168.0.0 - 192.168.254.255`
     * `198.18.0.0 - 198.19.255.255`
+* The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
 
 ### Network segmentation
 {: #basics_segmentation}
@@ -226,6 +228,7 @@ Before you begin:
    ibmcloud oc cluster rm --cluster <cluster_name_or_ID>
    ```
    {: pre}
+- The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` subnet ranges are prohibited.
 
 </br>To create a cluster by using existing subnets:
 
@@ -323,7 +326,7 @@ oc get cm ibm-cloud-provider-vlan-ip-config -n kube-system -o yaml
 To list only portable public IP addresses that are available to create public NLBs or more public ALBs, you can use the following steps:
 
 Before you begin:
--  Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users) for the `default` namespace.
+-  Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the `default` namespace.
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To list available portable public IP addresses:
@@ -383,7 +386,7 @@ You can free up a used portable IP address by deleting the network load balancer
 {: shortdesc}
 
 Before you begin:
--  Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users) for the `default` namespace.
+-  Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the `default` namespace.
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To delete an NLB or disable an ALB:
@@ -427,7 +430,7 @@ Portable public IP addresses are charged monthly. If you remove portable public 
 {: note}
 
 Before you begin:
--  Ensure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users) for the cluster.
+-  Ensure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster.
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To order a subnet:
@@ -488,7 +491,7 @@ You can get more portable IPs for NLB services by making an existing subnet in a
 {: shortdesc}
 
 Before you begin:
--  Ensure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users) for the cluster.
+-  Ensure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster.
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To make a subnet available to your cluster:

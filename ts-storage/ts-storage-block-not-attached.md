@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-02"
+lastupdated: "2021-07-01"
 
-keywords: openshift, roks, rhoks, rhos
+keywords: block, debug, help
 
 subcollection: openshift
 content-type: troubleshoot
@@ -94,70 +94,56 @@ content-type: troubleshoot
 {:video: .video}
   
   
-# Why does binding a service to a cluster results in service not found error?
-{: #ts-app-svc-bind-not-found}
+
+# Why do I get a `Volume not attached` error when trying to expand a {{site.data.keyword.block_storage_is_short}} volume?
+{: #block_not_attached_vpc}
 
 **Infrastructure provider**:
-  * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {: tsSymptoms}
-When you run `ibmcloud oc cluster service bind --cluster <cluster_name> --namespace <project> --service <service_instance_name>`, you see the following message.
-
-```
-Binding service to a namespace...
-FAILED
-
-The specified IBM Cloud service could not be found. If you just created the service, wait a little and then try to bind it again. To view available IBM Cloud service instances, run 'ibmcloud service list'. (E0023)
+When you edit a {{site.data.keyword.block_storage_is_short}} and update the `spec.resources.requests.storage` section to expand your volume, you see the following error:
+```sh
+Volume not attached
 ```
 {: screen}
 
 {: tsCauses}
-To bind services to a cluster, you must have the Cloud Foundry developer user role for the space where the service instance is provisioned. In addition, you must have the {{site.data.keyword.cloud_notm}} IAM Editor platform access to {{site.data.keyword.containerlong_notm}}. To access the service instance, you must be logged in to the space where the service instance is provisioned.
+You tried to expand the volume size of an existing {{site.data.keyword.block_storage_is_short}} PVC that is not mounted by a pod. Only volumes mounted by app pods can be expanded.
 
 {: tsResolve}
+Verify that your PVC supports volume expansion, then create an app pod that uses your PVC.
 
-**As a user in the cluster:**
-
-1. Log in to {{site.data.keyword.cloud_notm}}.
-   ```
-   ibmcloud login
-   ```
-   {: pre}
-
-2. Target the org and the space where the service instance is provisioned.
-   ```
-   ibmcloud target -o <org> -s <space>
+1. Describe your existing PVC. Verify that `allowVolumeExpansion` is set to `true`.
+   ```sh
+   oc describe pvc <pvc-name>
    ```
    {: pre}
 
-3. Verify that you are in the right space by listing your service instances.
-   ```
-   ibmcloud service list
-   ```
-   {: pre}
+1. Create an app pod that uses your PVC and deploy it to your cluster.
 
-4. Try binding the service again. If you get the same error, then contact the account administrator and verify that you have sufficient permissions to bind services (see the following account admin steps).
+1. Edit the PVC and increase the value in the `spec.resources.requests.storage` field.
+    ```sh
+    oc edit pvc <pvc-name>
+    ```
+    {: pre}
 
-**As the account admin:**
+1. Get the details of your PVC and make a note of the PV name.
+    ```sh
+    oc get pvc <pvc-name>
+    ```
+    {: pre}
 
-1. Verify that the user who experiences this problem has [Editor permissions for {{site.data.keyword.containerlong_notm}}](/docs/openshift?topic=openshift-users#checking-perms).
+1. Describe your PV and make a note of the volume ID
+    ```sh
+    oc describe PV
+    ```
+    {: pre}
 
-2. Verify that the user who experiences this problem has the [Cloud Foundry developer role for the space](/docs/account?topic=account-mngcf#update_cf_access) where the service is provisioned.
+1. Get the details of your {{site.data.keyword.block_storage_is_short}} volume and verify the capacity.
+    ```sh
+    ibmcloud is vol <volume-ID>
+    ```
+    {: pre}
 
-3. If the correct permissions exists, try assigning a different permission and then re-assigning the required permission.
 
-4. Wait a few minutes, then let the user try to bind the service again.
-
-5. If this does not resolve the problem, then the {{site.data.keyword.cloud_notm}} IAM permissions are out of sync and you cannot resolve the issue yourself. [Contact IBM support](/docs/get-support?topic=get-support-using-avatar) by opening a support case. Make sure to provide the cluster ID, the user ID, and the service instance ID.
-   1. Retrieve the cluster ID.
-      ```
-      ibmcloud oc cluster ls
-      ```
-      {: pre}
-
-   2. Retrieve the service instance ID.
-      ```
-      ibmcloud service show <service_name> --guid
-      ```
-      {: pre}
