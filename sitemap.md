@@ -2487,7 +2487,7 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
 
-* [June 2021](/docs/openshift?topic=openshift-iks-release#jun21)
+* [July 2021](/docs/openshift?topic=openshift-iks-release#jul21)
 
 * [June 2021](/docs/openshift?topic=openshift-iks-release#jun21)
 
