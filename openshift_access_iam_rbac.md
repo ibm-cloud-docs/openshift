@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-02"
+lastupdated: "2021-07-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -927,12 +927,12 @@ If you are an adminstrator for the region and resource group, you might want to 
     {: pre}
 2.  List the users in your classic infrastructure account and note the **id** of the user whose credentials are set manually or by the API key.
     ```
-    {[icsl]} user list
+    ibmcloud sl user list
     ```
     {: pre}
 3.  List the current classic infrastructure permissions that the user has.
     ```
-    {[icsl]} user permissions <user_id>
+    ibmcloud sl user permissions <user_id>
     ```
     {: pre}
 4.  To review what the roles and allowed actions permit, see the following topics.
