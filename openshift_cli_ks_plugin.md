@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-06"
+lastupdated: "2021-07-07"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -487,6 +487,43 @@ ibmcloud oc cluster addon options --addon ADDON [--output OUTPUT] [-q] [--versio
 
 <dt><code>--version <em>VERSION</em></code></dt>
 <dd>Optional: Specify an add-on version to display options for. If no version is specified, the default version's options are displayed. To list available add-on versions, run `ibmcloud oc cluster addon versions`.</dd>
+</dl>
+
+</br>
+
+### `ibmcloud oc cluster addon update`
+{: #cs_cluster_addon_update}
+
+Update an installed add-on.
+{: shortdesc}
+
+```sh
+ibmcloud oc cluster addon update --addon ADD-ON_NAME --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+
+**Minimum required permissions**: None
+
+**Command options**:
+<dl>
+<dt><code>--addon <em>ADD-ON_NAME</em></code></dt>
+<dd>Required: Specify an add-on name, such as <code>istio</code>, to update. To see installed add-ons, run `ibmcloud oc cluster addon ls --cluster <cluster_name_or_ID>`.</dd>
+
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>Required: The name or ID of the cluster.</dd>
+
+<dt><code>-f</code>
+<dd>Optional: Force the command to run with no user prompts.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+
+<dt><code>--version <em>VERSION</em></code></dt>
+<dd>Optional: Specify the version to update the add-on to. If no version is specified, the add-on is updated to the default version. To list available add-on versions, run `ibmcloud oc cluster addon versions`.</dd>
 </dl>
 
 </br>

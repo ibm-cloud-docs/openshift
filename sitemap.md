@@ -1533,6 +1533,7 @@ subcollection: openshift
   * [`ibmcloud oc cluster addon get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_get)
   * [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addons)
   * [`ibmcloud oc cluster addon options`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_options)
+  * [`ibmcloud oc cluster addon update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_update)
   * [`ibmcloud oc cluster addon versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_addon_versions)
   * [`ibmcloud oc cluster ca create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_create)
   * [`ibmcloud oc cluster ca rotate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_rotate)
