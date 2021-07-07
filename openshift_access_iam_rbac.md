@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-06"
+lastupdated: "2021-07-07"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -784,7 +784,7 @@ Check your access policies that are assigned by IAM platform and service access 
 6.  To review what the roles and allowed actions permit, see the following topics.
     *   [IAM roles and actions](/docs/account?topic=account-iam-service-roles-actions)
     *   [{{site.data.keyword.openshiftlong_notm}} user access permissions](/docs/openshift?topic=openshift-access_reference)
-    *   <img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Satellite-only**: [{{site.data.keyword.satelliteshort}} IAM platform and service roles](docs/satellite?topic=satellite-iam#iam-roles)
+    *   <img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Satellite-only**: [{{site.data.keyword.satelliteshort}} IAM platform and service roles](/docs/satellite?topic=satellite-iam#iam-roles)
 7.  To change or assign new access policies, see [Assigning {{site.data.keyword.openshiftlong_notm}} roles](#add_users) or [Assigning {{site.data.keyword.satelliteshort}} access](/docs/satellite?topic=satellite-iam#iam-assign).
 
 <br>
@@ -813,7 +813,7 @@ Check your access policies that are assigned by IAM platform and service access 
 4.  To review what the roles and allowed actions permit, see the following topics.
     *   [IAM roles and actions](/docs/account?topic=account-iam-service-roles-actions)
     *   [{{site.data.keyword.openshiftlong_notm}} user access permissions](/docs/openshift?topic=openshift-access_reference)
-    *   <img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Satellite-only**: [{{site.data.keyword.satelliteshort}} IAM platform and service roles](docs/satellite?topic=satellite-iam#iam-roles)
+    *   <img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Satellite-only**: [{{site.data.keyword.satelliteshort}} IAM platform and service roles](/docs/satellite?topic=satellite-iam#iam-roles)
 5.  To change or assign new access policies, see [Assigning {{site.data.keyword.openshiftlong_notm}} roles](#add_users_cli) or [Assigning {{site.data.keyword.satelliteshort}} access](/docs/satellite?topic=satellite-iam#iam-assign-cli).
 
 ### Checking RBAC roles
