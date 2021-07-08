@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-07-08"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -132,7 +133,7 @@ Helm charts from the **iks-charts**, **ibm-charts**, and, if licensed, **entitle
 Set up Helm v3 and the {{site.data.keyword.cloud_notm}} Helm repositories in your cluster.
 {: shortdesc}
 
-Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure)
+Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
 1. Install the latest release of the version 3 [Helm CLI](https://github.com/helm/helm/releases){: external} on your local machine.
 

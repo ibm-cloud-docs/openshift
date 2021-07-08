@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-07-08"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc, roks
 
@@ -91,89 +91,12 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-  
- 
 
 
 # Managing your OpenShift Data Foundation deployment
 {: #ocs-manage-deployment}
 
 Review the following topics to manage your OpenShift Data Foundation deployment.
-
-## Expanding ODF in VPC clusters
-{: ocs-vpc-expand-storage-cluster}
-
-To expand your storage cluster, you can [add worker nodes](#ocs-vpc-add-worker-nodes) to your cluster, or you can scale by [increasing the `numOfOsd`](#ocs-vpc-scaling-osd).
-{: shortdesc}
-
-### Scaling by increasing the `numOfOsd` in your CRD
-{: #ocs-vpc-scaling-osd}
-
-You can scale your ODF configuration by increasing the `numOfOsd` setting. When you increase the number of OSDs, ODF provisions that number of disks of the same `osdSize` capacity in GB in each of the worker nodes in your ODF cluster. However, the total storage that is available to your applications is equal to the number of worker nodes that are multiplied by the `osdSize` multiplied by the `numOfOsd`, and then divided by the replication factor, which is a constant of 3.
-{: shortdesc}
-
-For example, if your ODF cluster has three worker nodes, you specify an `osdSize` of `150Gi`, and you set the `numOfOsd` to 4, then your storage totals are as follows.
-  * **Total storage that is available for application use**: `osdSize` multiplied by `numOfOsd` and the number of worker nodes in the cluster, and divided by the replication factor of 3, or `(3 x 150Gi x 4) / 3 = 600Gi`.
-  * **Total storage that is provisioned as disks in the cluster**: `osdSize` multiplied by `numOfOsd` and the number of worker nodes in the cluster, or `150Gi x 4 x 3 = 1800Gi`.
-
-
-| Number of worker nodes | Initial `osdSize` | `numOfOsd` per worker node | Storage capacity available to applications | Total storage of provisioned disks |
-| --- | --- | --- | --- | --- |
-| 3 | 150Gi | 1 | 150Gi | 450Gi |
-| 3 | 150Gi | 2 | 300Gi | 900Gi |
-| 3 | 150Gi | 3 | 450Gi | 1350Gi |
-| 3 | 150Gi | 4 | 600Gi | 1800Gi |
-| 6 | 150Gi | 1 | 300Gi | 900Gi |
-| 6 | 150Gi | 2 | 600Gi | 1800Gi |
-| 6 | 150Gi | 3 | 900Gi | 2700Gi |
-| 6 | 150Gi | 4 | 1200Gi | 3600Gi |
-{: caption="Table 1. OpenShift Data Foundation scaling." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the number of worker nodes. The second column is the initial OSD size. The third column is the number of OSDs. The fourth column is the total storage capacity that is available to applications in the cluster. The fifth column is the total storage capacity of the provisioned disks."}
-
-[Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-
-1. Get the name of your `OcsCluster` custom resource.
-  ```sh
-  oc get ocscluster
-  ```
-  {: pre}
-
-1. Save your `OcsCluster` custom resource YAML file to your local machine as `ocscluster.yaml`.
-  ```sh
-  oc get ocscluster ocscluster-vpc -o yaml
-  ```
-  {: pre}
-
-1. Increase the `numOfOsd` parameter and reapply the `ocscluster` CRD to your cluster.
-  ```sh
-  oc apply -f ocscluster.yaml
-  ```
-  {: pre}
-
-1. Verify that the additional OSDs are created.
-  ```sh
-  oc get pv
-  ```
-  {: pre}
-
-<br />
-
-### Expanding ODF by adding worker nodes to your VPC cluster
-{: #ocs-vpc-add-worker-nodes}
-
-To increase the storage capacity that is available to OpenShift Data Foundation, add compatible worker nodes to your cluster.
-{: shortdesc}
-
-1. Expand the worker pool of the cluster that is used for OCS by [adding worker nodes](/docs/openshift?topic=openshift-add_workers). Ensure that your worker nodes meet the [requirements for ODF](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-plan). If you deployed ODF on all of the worker nodes in your cluster, the ODF drivers are installed on the new worker nodes when they are added to your cluster.
-2. If you deployed ODF on a subset of worker nodes in your cluster by specifying the private `<worker-IP>` parameters in your `OcsCluster` custom resource, you can add the IP addresses of the new worker nodes to your ODF deployment by editing the custom resource definition.
-  ```sh
-  oc edit ocscluster ocscluster-vpc
-  ```
-  {: pre}
-3. Save the `OcsCluster` custom resource file to reapply it to your cluster.
-
-<br />
-
 ## Updating the add-on
 {: #odf-addon-update}
 
@@ -197,6 +120,48 @@ To update the OpenShift Data Foundation in your cluster, disable the add-on and 
 1. Enable the add-on.
   ```sh
   ibmcloud koc cluster addon enable openshift-container-storage --cluster <version> --version <version>
+  ```
+  {: pre}
+
+<br />
+
+## Removing the OpenShift Data Foundation add-on from your cluster
+{: #ocs-addon-rm}
+
+You can remove ODF add-on from your cluster by using the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or the CLI.
+{: shortdesc}
+
+When you disable the OpenShift Data Foundation add-on, only the ODF operator is removed from your cluster. Your existing workloads remain, but you cannot create more ODF workloads. You also cannot delete your `OcsCluster` custom resource after the operator is removed. If you want to remove all of your ODF resources and data, see [Removing ODF from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster). If you removed the add-on and can't delete your `OcsCluster`, reinstall the add-on, then delete the `OcsCluster`.
+{: note}
+
+### Uninstalling the OpenShift Data Foundation add-on from the console
+{: #ocs-addon-rm-console}
+
+To remove the OpenShift Data Foundation add-on from your cluster, complete the following steps.
+{: shortdesc}
+
+1. **Optional**: To remove the add-on and all ODF resources, first [remove the add-on from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster).
+2. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to remove the OpenShift Data Foundation add-on.
+3. On the cluster **Overview** page, click **Add-ons**.
+4. On the OpenShift Data Foundation card, click **Uninstall**.
+
+### Uninstalling the OpenShift Data Foundation add-on from the CLI
+{: #ocs-addon-rm-cli}
+
+You can uninstall the OpenShift Data Foundation add-on from your cluster by using the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or the CLI.
+{: shortdesc}
+
+1. **Optional**: To remove the add-on and all ODF resources, first [remove add-on from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster).
+
+2. Uninstall the add-on.
+  ```
+  ibmcloud oc cluster addon disable openshift-container-storage -c <cluster_name>
+  ```
+  {: pre}
+
+3. Verify that the add-on is removed.
+  ```
+  ibmcloud oc cluster addon ls -c <cluster_name>
   ```
   {: pre}
 
@@ -257,7 +222,7 @@ To increase the storage capacity that is available to OpenShift Data Foundation,
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1. Expand the worker pool of the cluster that is used for OCS by [adding SDS worker nodes](/docs/openshift?topic=openshift-add_workers). Ensure that your worker nodes meet the [requirements for ODF](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-plan).
+1. Expand the worker pool of the cluster by [adding SDS worker nodes](/docs/openshift?topic=openshift-add_workers). Ensure that your worker nodes meet the [requirements for ODF](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-plan).
 2. [Find the `by-id` of the local disks](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-get-devices) on your new worker nodes.
 3. Add the `by-id` of the local disks to your `OcsCluster` custom resource definition.
   ```sh
@@ -275,7 +240,7 @@ To increase the storage capacity that is available to OpenShift Data Foundation,
 To remove ODF from your apps, you can delete your app or deployment and the corresponding PVCs.
 {: shortdesc}
 
-If you want to fully remove ODF and all of your data, you can [remove your storage cluster](#ocs-remove-storage-cluster).
+If you want to fully remove ODF and all your data, you can [remove your storage cluster](#ocs-remove-storage-cluster).
 {: note}
 
 1. List your PVCs and note the name of the PVC and the corresponding PV that you want to remove.
@@ -285,7 +250,7 @@ If you want to fully remove ODF and all of your data, you can [remove your stora
    {: pre}
 
 2. Remove any pods that mount the PVC.
-   1. List all the pods that currently mount the PVC that you want to delete. If no pods are returned, you do not have any pods that currently use your PVC.
+   1. List all the pods that currently mount the PVC that you want to delete. If no pods are returned, you don't have any pods that currently use your PVC.
       ```sh
       oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
       ```
@@ -382,72 +347,64 @@ When you delete the `OcsCluster` custom resource from your cluster, the followin
 After you remove ODF from your apps, and remove your ODF storage cluster, you can clean up the remaining Kubernetes resources that were deployed with ODF.
 {: shortdesc}
 
-### VPC: Cleaning up ODF
-{: #ocs-cleanup-vpc}
+### Cleaning up ODF
+{: #ocs-cleanup}
 
-1. Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
-  ```sh
-  #!/bin/bash
-  ocscluster_name=`oc get ocscluster | awk 'NR==2 {print $1}'`
-  oc delete ocscluster --all --wait=false
-  kubectl patch ocscluster/$ocscluster_name -p '{"metadata":{"finalizers":[]}}' --type=merge
-  oc delete ns openshift-storage --wait=false
-  sleep 20
-  kubectl -n openshift-storage patch persistentvolumeclaim/db-noobaa-db-0 -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch cephblockpool.ceph.rook.io/ocs-storagecluster-cephblockpool -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch cephcluster.ceph.rook.io/ocs-storagecluster-cephcluster -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch cephfilesystem.ceph.rook.io/ocs-storagecluster-cephfilesystem -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch cephobjectstore.ceph.rook.io/ocs-storagecluster-cephobjectstore -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch cephobjectstoreuser.ceph.rook.io/noobaa-ceph-objectstore-user -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch cephobjectstoreuser.ceph.rook.io/ocs-storagecluster-cephobjectstoreuser -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch NooBaa/noobaa -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch backingstores.noobaa.io/noobaa-default-backing-store -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch bucketclasses.noobaa.io/noobaa-default-bucket-class -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch storagecluster.ocs.openshift.io/ocs-storagecluster -p '{"metadata":{"finalizers":[]}}' --type=merge
-  sleep 20
-  oc delete pods -n openshift-storage --all --force --grace-period=0
-  sleep 20
-  ```
-  {: pre}
+1. Copy one of the following clean up scripts based on your ODF deployment.
+  * **VPC or {{site.data.keyword.satelliteshort}} with dynamically provisioned disks** Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
+    ```sh
+    #!/bin/bash
+    ocscluster_name=`oc get ocscluster | awk 'NR==2 {print $1}'`
+    oc delete ocscluster --all --wait=false
+    kubectl patch ocscluster/$ocscluster_name -p '{"metadata":{"finalizers":[]}}' --type=merge
+    oc delete ns openshift-storage --wait=false
+    sleep 20
+    kubectl -n openshift-storage patch persistentvolumeclaim/db-noobaa-db-0 -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch cephblockpool.ceph.rook.io/ocs-storagecluster-cephblockpool -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch cephcluster.ceph.rook.io/ocs-storagecluster-cephcluster -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch cephfilesystem.ceph.rook.io/ocs-storagecluster-cephfilesystem -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch cephobjectstore.ceph.rook.io/ocs-storagecluster-cephobjectstore -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch cephobjectstoreuser.ceph.rook.io/noobaa-ceph-objectstore-user -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch cephobjectstoreuser.ceph.rook.io/ocs-storagecluster-cephobjectstoreuser -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch NooBaa/noobaa -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch backingstores.noobaa.io/noobaa-default-backing-store -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch bucketclasses.noobaa.io/noobaa-default-bucket-class -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch storagecluster.ocs.openshift.io/ocs-storagecluster -p '{"metadata":{"finalizers":[]}}' --type=merge
+    sleep 20
+    oc delete pods -n openshift-storage --all --force --grace-period=0
+    sleep 20
+    ```
+    {: pre}
 
-1. Run the `cleanup.sh` script.
-  ```sh
-  sh ./cleanup.sh
-  ```
-  {: pre}
-
-### Classic: Cleaning up ODF
-{: #ocs-cleanup-classic-resources}
-
-1. Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
-  ```sh
-  #!/bin/bash
-  ocscluster_name=`oc get ocscluster | awk 'NR==2 {print $1}'`
-  oc delete ocscluster --all --wait=false
-  kubectl patch ocscluster/$ocscluster_name -p '{"metadata":{"finalizers":[]}}' --type=merge
-  oc delete ns openshift-storage --wait=false
-  sleep 20
-  kubectl -n openshift-storage patch persistentvolumeclaim/db-noobaa-db-0 -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch cephblockpool.ceph.rook.io/ocs-storagecluster-cephblockpool -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch cephcluster.ceph.rook.io/ocs-storagecluster-cephcluster -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch cephfilesystem.ceph.rook.io/ocs-storagecluster-cephfilesystem -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch cephobjectstore.ceph.rook.io/ocs-storagecluster-cephobjectstore -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch cephobjectstoreuser.ceph.rook.io/noobaa-ceph-objectstore-user -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch cephobjectstoreuser.ceph.rook.io/ocs-storagecluster-cephobjectstoreuser -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch NooBaa/noobaa -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch backingstores.noobaa.io/noobaa-default-backing-store -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch bucketclasses.noobaa.io/noobaa-default-bucket-class -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch storagecluster.ocs.openshift.io/ocs-storagecluster -p '{"metadata":{"finalizers":[]}}' --type=merge
-  sleep 20
-  oc delete pods -n openshift-storage --all --force --grace-period=0
-  oc delete ns local-storage --wait=false
-  sleep 20
-  kubectl -n local-storage patch localvolume.local.storage.openshift.io/local-block -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n local-storage patch localvolume.local.storage.openshift.io/local-file -p '{"metadata":{"finalizers":[]}}' --type=merge
-  sleep 20
-  oc delete pods -n local-storage --all --force --grace-period=0
-  ```
-  {: pre}
+  * **Classic clusters or {{site.data.keyword.satelliteshort}} clusters with local disks** Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
+    ```sh
+    #!/bin/bash
+    ocscluster_name=`oc get ocscluster | awk 'NR==2 {print $1}'`
+    oc delete ocscluster --all --wait=false
+    kubectl patch ocscluster/$ocscluster_name -p '{"metadata":{"finalizers":[]}}' --type=merge
+    oc delete ns openshift-storage --wait=false
+    sleep 20
+    kubectl -n openshift-storage patch persistentvolumeclaim/db-noobaa-db-0 -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch cephblockpool.ceph.rook.io/ocs-storagecluster-cephblockpool -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch cephcluster.ceph.rook.io/ocs-storagecluster-cephcluster -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch cephfilesystem.ceph.rook.io/ocs-storagecluster-cephfilesystem -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch cephobjectstore.ceph.rook.io/ocs-storagecluster-cephobjectstore -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch cephobjectstoreuser.ceph.rook.io/noobaa-ceph-objectstore-user -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch cephobjectstoreuser.ceph.rook.io/ocs-storagecluster-cephobjectstoreuser -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch NooBaa/noobaa -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch backingstores.noobaa.io/noobaa-default-backing-store -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch bucketclasses.noobaa.io/noobaa-default-bucket-class -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch storagecluster.ocs.openshift.io/ocs-storagecluster -p '{"metadata":{"finalizers":[]}}' --type=merge
+    sleep 20
+    oc delete pods -n openshift-storage --all --force --grace-period=0
+    oc delete ns local-storage --wait=false
+    sleep 20
+    kubectl -n local-storage patch localvolume.local.storage.openshift.io/local-block -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n local-storage patch localvolume.local.storage.openshift.io/local-file -p '{"metadata":{"finalizers":[]}}' --type=merge
+    sleep 20
+    oc delete pods -n local-storage --all --force --grace-period=0
+    ```
+    {: pre}
 
 1. Run the `cleanup.sh` script.
   ```sh
@@ -455,7 +412,7 @@ After you remove ODF from your apps, and remove your ODF storage cluster, you ca
   ```
   {: pre}
 
-1. After you run the cleanup script, log in to each worker node and run the following commands.
+1. ****Classic clusters or {{site.data.keyword.satelliteshort}} clusters with local disks** After you run the cleanup script, log in to each worker node and run the following commands.
   1. Deploy a debug pod and run `chroot /host`.
     ```sh
     oc debug node/<node_name> -- chroot /host
@@ -487,7 +444,7 @@ After you remove ODF from your apps, and remove your ODF storage cluster, you ca
     ```
     {: codeblock}
 
-1. **Optional**: If you no longer want to use the local volumes that you used in your OCS configuration, you can delete them from the cluster. List the local PVs.
+1. **Optional**: **Classic clusters or {{site.data.keyword.satelliteshort}} clusters with local disks** If you no longer want to use the local volumes that you used in your configuration, you can delete them from the cluster. List the local PVs.
   ```sh
   oc get pv
   ```
@@ -511,16 +468,13 @@ After you remove ODF from your apps, and remove your ODF storage cluster, you ca
   {: pre}
 
 ## Troubleshooting ODF
-{: #ocs-troubleshooting-gather}
+{: #odf-troubleshooting-gather}
 
-To gather the information that is needed to troubleshoot ODF, you can use the `oc adm must-gather` command and specify the ODF image. For more information, see [Gathering cluster data](https://docs.openshift.com/container-platform/4.6/support/gathering-cluster-data.html).
+To gather the information to troubleshoot ODF, you can use the `oc adm must-gather` command and specify the ODF image. For more information, see [Gathering cluster data](https://docs.openshift.com/container-platform/4.6/support/gathering-cluster-data.html).
 {: shortdesc}
 
 You can use the Rook community toolbox to debug issues with your Ceph cluster. For more information, see the [Rook documentation](https://rook.io/docs/rook/v1.3/ceph-toolbox.html){: external}.
 {:tip}
 
-### ODF device set creation fails due to PVC names exceeding the Kubernetes character limit
-{: #ocs-ts-sc-name-limit}
-
-{[ts-ocs-storageclass.md]}
+For more information, review the [common troubleshooting topics](/docs/openshift?topic=openshift-sitemap#sitemap_openshift_data_foundation).
 
