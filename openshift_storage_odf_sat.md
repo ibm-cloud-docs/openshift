@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-08"
+lastupdated: "2021-07-09"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic, roks
 
@@ -104,7 +104,7 @@ The OpenShift Data Foundation add-on is available as a technology preview and mi
 {: preview}
 
 **Supported infrastructure provider**:
-  * {[icon_sat]} {{site.data.keyword.satelliteshort}}
+  * <img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> {{site.data.keyword.satelliteshort}}
 ## Planning your setup
 {: #odf-sat-plan}
 Before you install ODF in your {{site.data.keyword.satelliteshort}} cluster, each cluster must meet the following prerequisite conditions.

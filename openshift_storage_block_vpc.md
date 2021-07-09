@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-07-09"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -841,6 +841,7 @@ To create your own storage class:
      classVersion: "1"
      iops: "<iops>" # Only specify this parameter if you are using a "custom" profile.
    reclaimPolicy: "<reclaim_policy>"
+   allowVolumeExpansion: (true|false) # Select true or false. Only supported on version 3.0.1 and later
    volumeBindingMode: <volume_binding_mode>
    ```
    {: codeblock}
@@ -894,6 +895,10 @@ To create your own storage class:
       <td>Enter the reclaim policy for your storage class. If you want to keep the PV, the physical storage device and your data when you remove the PVC, enter <code>Retain</code>. If you want to delete the PV, the physical storage device and your data when you remove the PVC, enter <code>Delete</code>.</td>
       </tr>
       <tr>
+      <td><code>allowVolumeExpansion</code></td>
+      <td>Enter the volume expansion policy for your storage class. If you want to allow volume expansion, enter <code>true</code>. If you don't want to allow volume expansion, enter <code>false</code>.</td>
+      </tr>
+      <tr>
       <td><code>volumeBindingMode</code></td>
       <td>Choose if you want to delay the creation of the {{site.data.keyword.block_storage_is_short}} instance until the first pod that uses this storage is ready to be scheduled. To delay the creation, enter <code>WaitForFirstConsumer</code>. To create the instance when you create the PVC, enter <code>Immediate</code>.</td>
       </tr>
@@ -901,13 +906,13 @@ To create your own storage class:
    </table>
 
 4. Create the customized storage class in your cluster.
-   ```
+   ```sh
    oc apply -f custom-storageclass.yaml
    ```
    {: pre}
 
 5. Verify that your storage class is available in the cluster.
-   ```
+   ```sh
    oc get storageclasses
    ```
    {: pre}
@@ -1136,17 +1141,58 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
 
 <br />
 
+
+
 ## Setting up volume expansion
 {: #vpc-block-volume-expand}
 To provision volumes that support expansion, you must first create a custom storage class and set `allowVolumeExpansion` to `true`. 
 {: shortdesc}
 
+Volume expansion is available in beta for allowlisted accounts and is only supported for version `3.0.1` of the add-on and later. Don't use this feature for production workloads.
+{: beta}
+
+You can only expand volumes that are mounted by an app pod.
+{: note}
+
 [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 1. [Update the {{site.data.keyword.block_storage_is_short}} add-on in your cluster](#vpc-addon-update).
 1. [Create a custom storage class](#vpc-customize-storage-class) and set `allowVolumeExpansion` to `true`.
+  ```yaml
+  apiVersion: storage.k8s.io/v1
+  kind: StorageClass
+  metadata:
+    name: expansion-class
+  provisioner: vpc.block.csi.ibm.io
+  parameters:
+    profile: "<profile>"
+    sizeRange: "<size_range>"
+    csi.storage.k8s.io/fstype: "<file_system_type>"
+    billingType: "hourly"
+    encrypted: "<encrypted_true_false>"
+    encryptionKey: "<encryption_key>"
+    resourceGroup: ""
+    zone: "<zone>"
+    tags: "<tags>"
+    generation: "gc"
+    classVersion: "1"
+    iops: "<iops>" # Only specify this parameter if you are using a "custom" profile.
+  reclaimPolicy: "<reclaim_policy>"
+  allowVolumeExpansion: true
+  volumeBindingMode: <volume_binding_mode>
+  ```
+  {: codeblock}
+
+1. Create the storage class in your cluster.
+  ```sh
+  oc apply -f sc.yaml
+  ```
+  {: pre}
+
 1. [Create a PVC](#vpc_block_qs) that uses your custom storage class.
-1. [Deploy an app](#vpc_block_qs) that uses your PVC. Note that only mounted volumes can be expanded. Attempting to expand an unmounted volume by a pod results in a [`Volume not attached`](/docs/containers?topic=containers-block_not_attached_vpc) error.
-1. Edit your PVC and increase the value in the `spec.resources.requests.storage` field.
+
+1. [Deploy an app](#vpc_block_qs) that uses your PVC. When you create your app, make a note of the `mountPath` that you specify.
+
+1. After your app pod is mounted to your PVC, you can expand your volume by increasing the `spec.resources.requests.storage`. To expand your volume, edit your PVC and increase the value in the `spec.resources.requests.storage` field.
     ```sh
     oc edit pvc <pvc-name>
     ```
@@ -1170,10 +1216,86 @@ To provision volumes that support expansion, you must first create a custom stor
     ```
     {: pre}
 
+### Expanding existing volumes
+{: #expanding-existing-volumes}
+
+Complete the following steps to expand your existing {{site.data.keyword.block_storage_is_short}} volumes.
+{: shortdesc}
+
+Volume expansion is available in beta for allowlisted accounts and is only supported for version `3.0.1` of the add-on and later Don't use this feature for production workloads.
+{: beta}
+
+You can only expand volumes that are mounted by an app pod.
+{: note}
+
+1. Get the details of your app and make a note of the PVC name and `mountPath`
+  ```sh
+  oc get pod <pod-name> -n <pod-namespace> -o yaml
+  ```
+  {: pre}
+1. Get the details of your PVC and make a note of the PV name.
+  ```sh
+  oc get pvc
+  ```
+  {: pre}
+
+1. Describe your PV and get the `volumeId`
+  ```sh
+  oc describe pv `pv-name` | grep volumeId 
+  ```
+  {: pre}
+
+1. Resize the volume by using with an API request. Replace `<IAM_TOKEN>` with your IAM token. To retrieve your IAM token, run `ibmcloud iam oauth-tokens`. Replace `<region>` with the region your cluster is in, for example `us-south`. Replace`<volumeId>` the volume ID that you retrieved earlier and replace `<capacity>` with the increased capacity, for example `100Gi`.
+  ```sh
+  curl -sS -X PATCH -H "Authorization: <IAM_TOKEN>" "https://<region>.iaas.cloud.ibm.com/v1/volumes/<volumeId>?generation=2&version=2020-06-16" -d '{"capacity": <capacity>}')
+  ```
+  {: pre}
+
+1. Log in to your app pod.
+  ```sh
+  oc exec <pod-name> -it bash
+  ```
+  {: pre}
+
+1. Get the file system details and make a note of the `Filesystem` path that you want to update.
+  ```sh
+  df -h
+  ```
+  {: pre}
+
+  **Example output**
+  ```sh
+  Filesystem      Size  Used Avail Use% Mounted on
+  overlay          98G   64G   29G  70% /
+  tmpfs            64M     0   64M   0% /dev
+  tmpfs            32G     0   32G   0% /sys/fs/cgroup
+  shm              64M     0   64M   0% /dev/shm
+  /dev/vda2        98G   64G   29G  70% /etc/hosts
+  /dev/vdg        9.8G   37M  9.8G   1% /mount-path # Note the Filesystem path that corresponds to the mountPath that you specified in your app.
+  tmpfs            32G   40K   32G   1% /run/secrets/kubernetes.io/serviceaccount
+  tmpfs            32G     0   32G   0% /proc/acpi
+  tmpfs            32G     0   32G   0% /proc/scsi
+  tmpfs            32G     0   32G   0% /sys/firmware
+  ```
+  {: screen}
+
+1. Resize the file system.
+  ```sh
+  resize2fs <filesystem-path>
+  ```
+  {: pre}
+
+  **Example command**
+  ```sh
+  resize2fs /dev/vdg
+  ```
+  {: pre}
+
+
 ## Backing up and restoring data
 {: #vpc-block-backup-restore}
 
-Data that is stored on {{site.data.keyword.block_storage_is_short}} is secured across redundant fault zones in your region. To manually back up your data, use the Kubernetes `oc cp` command.
+Data on {{site.data.keyword.block_storage_is_short}} is secured across redundant fault zones in your region. To manually back up your data, use the Kubernetes `oc cp` command.
 {: shortdesc}
 
 You can use the `oc cp` [command](https://kubernetes.io/docs/reference/kubectl/overview/#cp){: external} to copy files and directories to and from pods or specific containers in your cluster
