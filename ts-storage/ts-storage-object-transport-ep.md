@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-07-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -115,7 +115,7 @@ To determine the cause of the issue, gather system logs by deploying an `inspect
 {: tsResolve}
 Follow the steps to gather logging information.
 
-1. Create a `debug-pvc.yaml` file and specify the `ibm.io/debug-level: "info"` and `ibm.io/curl-debug: "true"` annonations.
+1. Create a `debug-pvc.yaml` file and specify the `ibm.io/debug-level: "info"` and `ibm.io/curl-debug: "true"` annotations.
    ```yaml
    apiVersion: v1
    kind: PersistentVolumeClaim
@@ -145,7 +145,7 @@ Follow the steps to gather logging information.
    ```
    {: pre}
 
-3. Redploy your app and reference the `debug-pvc`. Alternatively, you can use the following sample pod.
+3. Redeploy your app and reference the `debug-pvc`. Alternatively, you can use the following sample pod.
    ```yaml
    apiVersion: v1
    kind: Pod

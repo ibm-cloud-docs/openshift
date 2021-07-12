@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-08"
+lastupdated: "2021-07-12"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -247,7 +247,7 @@ To set up a logging configuration for your cluster:
 ## Using the cluster logging operator
 {: #oc_logging_operator}
 
-To deploy the OpenShift Container Platform cluster logging operator and stack on your {{site.data.keyword.openshiftlong_notm}} cluster, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.6/logging/cluster-logging.html){: external}. Additionally, you must update the cluster logging instance to use a {{site.data.keyword.cloud_notm}} Block Storage storage class.
+To deploy the OpenShift Container Platform cluster logging operator and stack on your {{site.data.keyword.openshiftlong_notm}} cluster, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.6/logging/cluster-logging.html){: external}. Additionally, you must update the cluster logging instance to use an {{site.data.keyword.cloud_notm}} Block Storage storage class.
 {: shortdesc}
 
 1.  Prepare your worker pool to run the operator.

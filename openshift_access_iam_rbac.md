@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-07"
+lastupdated: "2021-07-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -899,7 +899,7 @@ Verify your custom RBAC or synchronized IAM service access to RBAC roles in your
 <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC infrastructure permissions are managed with [IAM platform and service access roles](#checking-iam).
 {: note}
 
-If you are an adminstrator for the region and resource group, you might want to [check if the user's credentials are used for infrastructure permissions](#removing_check_infra), especially before removing the user.
+If you are an administrator for the region and resource group, you might want to [check if the user's credentials are used for infrastructure permissions](#removing_check_infra), especially before removing the user.
 {: tip}
 
 **From the UI**:
