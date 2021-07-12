@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-08"
+lastupdated: "2021-07-12"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, roks
 
@@ -112,7 +112,7 @@ The OpenShift Data Foundation add-on is available as a technology preview and mi
 You can deploy ODF on VPC clusters with the default configuration settings by running the `addon enable` command and specifying the `"ocsDeploy=true"` flag. Before enabling the add-on make sure that you have a [VPC cluster](/docs/openshift?topic=openshift-clusters) with at least three worker nodes. For high availability, create a cluster with at least one worker node per zone across three zones. Each worker node must have a minimum of 16 CPUs and 64 GB RAM.
 {: shortdesc}
 
-If you want to override the default parameters when deploying the add-on, you can use the `--param "key=value"` format. For more information, see [Deploying ODF](odf-custom-install).
+If you want to override the default parameters when deploying the add-on, you can use the `--param "key=value"` format. For more information, see [Deploying ODF](#odf-custom-install).
 {: tip}
   
 1. Enable the ODF and specify the `ocsDeploy=True` parameter to deploy ODF with the default configuration parameters. To see the default parameters, run `ibmcloud oc cluster addon options --addon openshift-container-storage`. To list the versions and find the current default, run `ibmcloud oc cluster addon versions`. If you have a cluster version other than the default, specify the `--version` flag. The add-on supports `n+1` cluster versions. 
@@ -459,7 +459,7 @@ To increase the storage capacity in your storage cluster, add compatible worker 
 
 Review the following limitations for deploying ODF.
 
-**Kubernetes resource ID character limit:** Kubernetes PVC names must be fewer than 63 characters. If you deploy ODF in a multizone VPC cluster and create your ODF storage cluster by using a metro `retain` storage class such as `ibmc-vpc-block-metro-retain-10iops-tier`, the corresponding ODF device set that is created by using this storage class fails. For more information see [ODF device set creation fails because of the Kubernetes character limitation](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-ts-sc-name-limit).
+**Kubernetes resource ID character limit:** Kubernetes PVC names must be fewer than 63 characters. If you deploy ODF in a multizone VPC cluster and create your ODF storage cluster by using a metro `retain` storage class such as `ibmc-vpc-block-metro-retain-10iops-tier`, the corresponding ODF device set that is created by using this storage class fails. For more information see [ODF device set creation fails because of the Kubernetes character limitation](/docs/openshift?topic=openshift-ts-ocs-roks-debug).
 
 ## Storage class reference
 {: #ocs-reference-section}
