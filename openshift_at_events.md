@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-05-17"
+lastupdated: "2021-07-12"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -77,6 +77,7 @@ subcollection: openshift
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -401,7 +402,6 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 | Amsterdam (ams03) | Frankfurt |
 | Frankfurt (fra02, fra04, fra05) | Frankfurt |
 | Milan (mil01) | Frankfurt |
-| Oslo (osl01) | Frankfurt |
 | Paris (par01) | Frankfurt |
 | London (lon02, lon04, lon05, lon06) | London |
 | Sydney (syd01, syd04, syd05) | Sydney |

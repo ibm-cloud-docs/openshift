@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-29"
+lastupdated: "2021-07-07"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -110,7 +110,7 @@ Expose multiple apps in your {{site.data.keyword.openshiftlong}} cluster by crea
 Before you get started with Ingress, review the following prerequisites.
 {: shortdesc}
 
-- Setting up Ingress requires the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-users#platform):
+- Setting up Ingress requires the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-users):
     - **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
     - **Manager** service access role in all {{site.data.keyword.containerlong_notm}} namespaces ({{site.data.keyword.openshiftshort}} projects)
 - If a zone fails, you might see intermittent failures in requests to apps that are exposed by the Ingress controller and router in that zone.

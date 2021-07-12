@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-02"
+lastupdated: "2021-07-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -372,8 +372,8 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
         </table>
 
 3.  {: #firewall_registry}To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}, allow outgoing network traffic from the worker nodes to [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions):
-  - `TCP port 443, port 4443 FROM <each_worker_node_publicIP> TO <registry_subnet>`
-  -  Replace <em>&lt;registry_subnet&gt;</em> with the registry subnet to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images. Port 4443 is required for notary functions, such as [Verifying image signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent). <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two.">
+  - `TCP port 443 FROM <each_worker_node_publicIP> TO <registry_subnet>`
+  -  Replace <em>&lt;registry_subnet&gt;</em> with the registry subnet to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images.<table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two.">
   <caption>IP addresses to open for Registry traffic</caption>
     <thead>
       <th>{{site.data.keyword.openshiftlong_notm}} region</th>
@@ -445,7 +445,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
 
 8. If you use Ingress or routes to expose apps in your cluster, allow incoming network traffic from [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} on port 80 to the IP addresses of your router services so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers.
 
-  <p class="important">As of 07 July 2021, the DNS provider is changed from Cloudflare to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains for all clusters in {{site.data.keyword.openshiftlong_notm}}. If you currently allow inbound traffic to your classic cluster from the Cloudflare source IP addresses, you must also allow inbound traffic from the [Akamai source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} before 05 July. After the migration, you can remove the Cloudflare IP address rules. For more information, see the [announcement](https://cloud.ibm.com/notifications?selected=1621697674798){: external}.</p>
+  <p class="important">From 07 to 15 July 2021, the DNS provider is changed from Cloudflare to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains for all clusters in {{site.data.keyword.openshiftlong_notm}}. If you currently allow inbound traffic to your classic cluster from the Cloudflare source IP addresses, you must also allow inbound traffic from the [Akamai source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} before 07 July. After the migration, you can remove the Cloudflare IP address rules. For more information, see the [announcement](https://cloud.ibm.com/notifications?selected=1621697674798){: external}.</p>
 
 </br>
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-02"
+lastupdated: "2021-07-07"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -117,7 +117,7 @@ Your clusters use {{site.data.keyword.cloud_notm}} Identity and Access Managemen
 2. Invite users to your account and [assign them {{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-users#checking-perms) for the service (**containers-kubernetes** in the API or CLI, and **Kubernetes Service** in the console).<p class="note">Do not assign {{site.data.keyword.cloud_notm}} IAM platform access roles at the same time as a service access role. You must assign platform and service access roles separately.</p>
 3. To allow users to bind services to the cluster or to view logs that are forwarded from cluster logging configurations, [grant users Cloud Foundry roles](/docs/account?topic=account-mngcf) for the org and space that the services are deployed to or where logs are collected.
 4. If you use Kubernetes namespaces to isolate resources within the cluster, grant access to namespaces by [assigning users {{site.data.keyword.cloud_notm}} IAM service access roles for the namespaces](/docs/openshift?topic=openshift-users#checking-perms).
-5. For any automation tooling such as in your CI/CD pipeline, set up service accounts and [assign the service accounts Kubernetes RBAC permissions](#rbac).
+5. For any automation tooling such as in your CI/CD pipeline, set up service accounts and [assign the service accounts Kubernetes RBAC permissions](/docs/openshift?topic=openshift-users#rbac)).
 
 For more information about setting up your account and resources, try out this tutorial about the [best practices for organizing users, teams, and applications](/docs/solution-tutorials?topic=solution-tutorials-users-teams-applications).
 {: tip}

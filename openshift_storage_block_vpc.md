@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-07-09"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -841,6 +841,7 @@ To create your own storage class:
      classVersion: "1"
      iops: "<iops>" # Only specify this parameter if you are using a "custom" profile.
    reclaimPolicy: "<reclaim_policy>"
+   allowVolumeExpansion: (true|false) # Select true or false. Only supported on version 3.0.1 and later
    volumeBindingMode: <volume_binding_mode>
    ```
    {: codeblock}
@@ -894,6 +895,10 @@ To create your own storage class:
       <td>Enter the reclaim policy for your storage class. If you want to keep the PV, the physical storage device and your data when you remove the PVC, enter <code>Retain</code>. If you want to delete the PV, the physical storage device and your data when you remove the PVC, enter <code>Delete</code>.</td>
       </tr>
       <tr>
+      <td><code>allowVolumeExpansion</code></td>
+      <td>Enter the volume expansion policy for your storage class. If you want to allow volume expansion, enter <code>true</code>. If you don't want to allow volume expansion, enter <code>false</code>.</td>
+      </tr>
+      <tr>
       <td><code>volumeBindingMode</code></td>
       <td>Choose if you want to delay the creation of the {{site.data.keyword.block_storage_is_short}} instance until the first pod that uses this storage is ready to be scheduled. To delay the creation, enter <code>WaitForFirstConsumer</code>. To create the instance when you create the PVC, enter <code>Immediate</code>.</td>
       </tr>
@@ -901,13 +906,13 @@ To create your own storage class:
    </table>
 
 4. Create the customized storage class in your cluster.
-   ```
+   ```sh
    oc apply -f custom-storageclass.yaml
    ```
    {: pre}
 
 5. Verify that your storage class is available in the cluster.
-   ```
+   ```sh
    oc get storageclasses
    ```
    {: pre}
@@ -1136,44 +1141,12 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
 
 <br />
 
-## Setting up volume expansion
-{: #vpc-block-volume-expand}
-To provision volumes that support expansion, you must first create a custom storage class and set `allowVolumeExpansion` to `true`. 
-{: shortdesc}
 
-[Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
-1. [Update the {{site.data.keyword.block_storage_is_short}} add-on in your cluster](#vpc-addon-update).
-1. [Create a custom storage class](#vpc-customize-storage-class) and set `allowVolumeExpansion` to `true`.
-1. [Create a PVC](#vpc_block_qs) that uses your custom storage class.
-1. [Deploy an app](#vpc_block_qs) that uses your PVC. Note that only mounted volumes can be expanded. Attempting to expand an unmounted volume by a pod results in a [`Volume not attached`](/docs/containers?topic=containers-block_not_attached_vpc) error.
-1. Edit your PVC and increase the value in the `spec.resources.requests.storage` field.
-    ```sh
-    oc edit pvc <pvc-name>
-    ```
-    {: pre}
-
-1. Get the details of your PVC and make a note of the PV name.
-    ```sh
-    oc get pvc <pvc-name>
-    ```
-    {: pre}
-
-1. Describe your PV and make a note of the volume ID
-    ```sh
-    oc describe PV
-    ```
-    {: pre}
-
-1. Get the details of your {{site.data.keyword.block_storage_is_short}} volume and verify the capacity.
-    ```sh
-    ibmcloud is vol <volume-ID>
-    ```
-    {: pre}
 
 ## Backing up and restoring data
 {: #vpc-block-backup-restore}
 
-Data that is stored on {{site.data.keyword.block_storage_is_short}} is secured across redundant fault zones in your region. To manually back up your data, use the Kubernetes `oc cp` command.
+Data on {{site.data.keyword.block_storage_is_short}} is secured across redundant fault zones in your region. To manually back up your data, use the Kubernetes `oc cp` command.
 {: shortdesc}
 
 You can use the `oc cp` [command](https://kubernetes.io/docs/reference/kubectl/overview/#cp){: external} to copy files and directories to and from pods or specific containers in your cluster
