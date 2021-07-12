@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-02"
+lastupdated: "2021-07-12"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -430,7 +430,7 @@ Your authorized users can now continue with [Accessing {{site.data.keyword.opens
 ## Accessing {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}}
 {: #access_cluster_sat}
 
-After you [create a {{site.data.keyword.openshiftshort}} cluster in your {{site.data.keyword.satelliteshort}} location](/docs/openshift?topic=openshift-satellite-clusters), you can begin working with your cluster by accessing the cluster.
+After you [create an {{site.data.keyword.openshiftshort}} cluster in your {{site.data.keyword.satelliteshort}} location](/docs/openshift?topic=openshift-satellite-clusters), you can begin working with your cluster by accessing the cluster.
 {: shortdesc}
 
 ### Accessing clusters through the cluster service URL

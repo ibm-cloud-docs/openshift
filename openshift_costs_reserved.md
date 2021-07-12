@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-02"
+lastupdated: "2021-07-12"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -199,7 +199,7 @@ Before you begin, make sure that you have the [**Administrator** platform access
 1.  Log in to the [{{site.data.keyword.openshiftlong_notm}} reservations console](https://cloud.ibm.com/kubernetes/reservations){: external}.
 2.  Click **Create reservation**.
 3.  Select the **Infrastructure** provider to use for your worker nodes.
-4.  Select the **Location** for your reservation. Keep in mind that you cannnot change the location later.
+4.  Select the **Location** for your reservation. Keep in mind that you cannot change the location later.
     * **Geography**: The geographic area to filter locations by.
     * **Availability**: Choose single zone or multizone. For multizone areas, you select specific zones for your worker nodes when you create the worker pool.
     * **Metro**: The metro for the location.

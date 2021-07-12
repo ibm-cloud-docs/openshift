@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-10"
+lastupdated: "2021-07-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -133,9 +133,9 @@ Check that the cluster autoscaler is configured correctly.
     ```
     {: pre}
 
-2.  In the `data.workerPoolsConfig.json` field, check that the correct worker pools are enabledwith the minimum and maximum size per worker pool.
+2.  In the `data.workerPoolsConfig.json` field, check that the correct worker pools are enabled with the minimum and maximum size per worker pool.
 
-    *  **`"name": "<worker_pool_name>"`**: The name of your worker pool in the configmap must beexactly the same as the name of the worker pool in your cluster. Multiple worker pools mustbe comma-separated. To check the name of your cluster worker pools, run `ibmcloud oc worker-poolls -c <cluster_name_or_ID>`.
+    *  **`"name": "<worker_pool_name>"`**: The name of your worker pool in the configmap must be exactly the same as the name of the worker pool in your cluster. Multiple worker pools must be comma-separated. To check the name of your cluster worker pools, run `ibmcloud oc worker-pool ls -c <cluster_name_or_ID>`.
     *  **`"minSize": 2`**: In general, the `minSize` must be `2` or greater. Remember that the`minSize` value cannot be `0`, and you can only have a `minSize` of 1 if you [disable the public ALBs](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure).
     * **`"maxSize": 3`**: The `maxSize` must be equal to or greater than the `minSize`.
     * **`"enabled": true`**: Set the value to `true` to enable autoscaling the worker pool.
@@ -173,8 +173,8 @@ oc describe cm -n kube-system cluster-autoscaler-status
 {: pre}
 * **`status`**: Review the status message for more troubleshooting information, if any.
 * **`Health`**: Review the overall health of the cluster autoscaler for any errors or failures.
-* **`ScaleUp`**: Review the status of scaleup activity. In general, if the number of worker nodes that are ready and registered match, the scaleup has `NoActivity` because your worker pool hasenough worker nodes.
-* **`ScaleDown`**: Review the status of scaledown activity. If the cluster autoscaler identifies`NoCandidates`, your worker pool is not scaled down because none of the worker nodes can be removed without taking away requested resources from your workloads.
+* **`ScaleUp`**: Review the status of scaleup activity. In general, if the number of worker nodes that are ready and registered match, the scaleup has `NoActivity` because your worker pool has enough worker nodes.
+* **`ScaleDown`**: Review the status of scaledown activity. If the cluster autoscaler identifies `NoCandidates`, your worker pool is not scaled down because none of the worker nodes can be removed without taking away requested resources from your workloads.
 * **`Events`**: Review the events for more troubleshooting information, if any.
 
 **Example of a healthy cluster autoscaler status**
@@ -209,7 +209,7 @@ Check the health of the cluster autoscaler pod.
     ```
     {: pre}
 
-2.  Describe the cluster autoscaler pod. Review the **Events** section for more troubleshootinginformation.
+2.  Describe the cluster autoscaler pod. Review the **Events** section for more troubleshooting information.
 
     ```sh
     oc describe pod -n kube-system <pod_name>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-07-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -142,4 +142,4 @@ To verify that the issue is a secret validation issue, get the logs from the `se
     ```
     {: pre}
 
-4. Update your `storage-secret-store` secret with the requried IAM permissions by [resetting your credentials](/docs/openshift?topic=openshift-missing_permissions).
+4. Update your `storage-secret-store` secret with the required IAM permissions by [resetting your credentials](/docs/containers?topic=containers-missing_permissions).

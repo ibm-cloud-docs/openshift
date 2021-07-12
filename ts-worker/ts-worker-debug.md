@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-10"
+lastupdated: "2021-07-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -219,6 +219,6 @@ ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id>
 {: #worker-debug-rev-infra}
 
 Review the infrastructure environment to check for other reasons that might cause the worker node issues.
-1.  Check with your networking team to make sure that no recent maintenance, such as firewall orsubnet updates, might impact the worker node connections.
+1.  Check with your networking team to make sure that no recent maintenance, such as firewall or subnet updates, might impact the worker node connections.
 2.  Review [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/status/){: external} for **{{site.data.keyword.openshiftlong_notm}}** and the underlying infrastructure provider, such as **Virtual Servers** for classic, **VPC** related components, or **{{site.data.keyword.satelliteshort}}**.
 3.  If you have access to the underlying infrastructure, such as classic **Virtual Servers**, review the details of the corresponding machines for the worker nodes.

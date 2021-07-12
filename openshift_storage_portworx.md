@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-24"
+lastupdated: "2021-07-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1126,7 +1126,7 @@ Access the PX-Backup console through the URL supplied in the {{site.data.keyword
 2. Open the {{site.data.keyword.openshiftshort}} web console .
 3. Click on **Networking>Routes**.
 4. Find the **px-backup-ui** route and click on the URL that is listed in the **Location** column to open the PX-Backup console.
-7. Log in to the PX-Backup console. If you are the first user to access the console, you must log in in with the username `admin` and the password `admin`. You are redirected to a registration page to set a uniqe username and password. Subsequent users must register a new account to access the console.
+7. Log in to the PX-Backup console. If you are the first user to access the console, you must log in in with the username `admin` and the password `admin`. You are redirected to a registration page to set a unique username and password. Subsequent users must register a new account to access the console.
 
 
 **For public classic clusters**
@@ -1135,7 +1135,7 @@ Access the PX-Backup console through the URL supplied in the {{site.data.keyword
 3. Click on **Networking>Routes**.
 4. Find the **px-backup-ui** route and note the IP address and node port listed in the **Locations** column.
 5. Copy and paste the IP address and node port into your web browser to open the PX-Backup console.
-7. Log in to the PX-Backup console. If you are the first user to access the console, you must log in in with the username `admin` and the password `admin`. You are redirected to a registration page to set a uniqe username and password. Subsequent users must register a new account to access the console.
+7. Log in to the PX-Backup console. If you are the first user to access the console, you must log in in with the username `admin` and the password `admin`. You are redirected to a registration page to set a unique username and password. Subsequent users must register a new account to access the console.
 
 
 **For private classic clusters**
@@ -1147,7 +1147,7 @@ Access the PX-Backup console through the URL supplied in the {{site.data.keyword
 Create an {{site.data.keyword.cos_full_notm}} instance and bucket, and add them as a backup location to your PX-Backup service.
 {: shortdesc}
 
-Before you begin, [log in to the PX-Backup console](#px-backup-ui). Note that if you are the first user to access the console, you must login in with the username `admin` and the password `admin`. You are redirected to a registration page to set a uniqe username and password. Subsequent users must register a new account to access the console.
+Before you begin, [log in to the PX-Backup console](#px-backup-ui). Note that if you are the first user to access the console, you must login in with the username `admin` and the password `admin`. You are redirected to a registration page to set a unique username and password. Subsequent users must register a new account to access the console.
 
 1. [Create your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-object_storage#create_cos_service).
 2. [Create service credentials for your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-object_storage#service_credentials). Be sure to enable HMAC authentication by clicking **Advanced Options** in the **Create credential** dialog box and switching the **Include HMAC Credential** parameter to **On**.
@@ -1236,7 +1236,7 @@ If a cluster that you want to back up with PX-Backup does not have Portworx Ente
    oc apply -f <file_name>.yaml
    ```
    {: pre}
-8. Verify that Stork is successfuly installed on your cluster and that all pods are running.
+8. Verify that Stork is successfully installed on your cluster and that all pods are running.
    ```
    oc get deployment -n kube-system | grep stork
    ```
@@ -1430,7 +1430,7 @@ Removing your Portworx cluster removes all the data from your Portworx cluster. 
 {: important}
 
 - **Remove a worker node from the Portworx cluster:** If you want to remove a worker node that runs Portworx and stores data in your Portworx cluster,  you must migrate existing pods to remaining worker nodes and then uninstall Portworx from the node. For more information, see [Decommission a Portworx node in Kubernetes](https://docs.portworx.com/portworx-install-with-kubernetes/operate-and-maintain-on-kubernetes/uninstall/decommission-a-node/){: external}.
-- **Remove the Portworx daemonset**: When you remove the Portworx daemon set, the Portworx containers are removed from your worker nodes. However, the Portworx configuration files remain on the worker nodes and the storage devices, and the data volumes are still intact. You can use the data volumes again if you restart the Portworx daemon set and containers by using the same configuration files. For more infrormation, see [Removing the Portworx daemon set](#remove_px_daemonset).
+- **Remove the Portworx daemonset**: When you remove the Portworx daemon set, the Portworx containers are removed from your worker nodes. However, the Portworx configuration files remain on the worker nodes and the storage devices, and the data volumes are still intact. You can use the data volumes again if you restart the Portworx daemon set and containers by using the same configuration files. For more information, see [Removing the Portworx daemon set](#remove_px_daemonset).
 - **Remove Portworx from your cluster:** If you want to remove Portworx and all of your data from your cluster, follow the steps to [remove Portworx](#remove_portworx) from your cluster.
 
 ### Removing the Portworx daemon set
