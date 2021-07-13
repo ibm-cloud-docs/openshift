@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-10"
+lastupdated: "2021-07-13"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -341,15 +341,15 @@ Review unsupported versions of {{site.data.keyword.openshiftlong_notm}}.
 ### {{site.data.keyword.openshiftshort}} 4.4 (Unsupported)
 {: #ocp44}
 
-As of 31 May 2021, {{site.data.keyword.openshiftlong_notm}} clusters that run [version 4.4](/docs/openshift?topic=openshift-changelog_archive) are unsupported. Version 4.4 clusters cannot receive security updates or support unless they are updated to the next most recent version.
+As of 31 May 2021, {{site.data.keyword.openshiftlong_notm}} clusters that run [version 4.4](/docs/openshift?topic=openshift-changelog_archive) are unsupported.
 {: shortdesc}
 
-[Review the potential impact](#ocp45) and then [update your cluster](/docs/openshift?topic=openshift-update) immediately to at least {{site.data.keyword.openshiftshort}} 4.5.
+Unsupported clusters are not provided with security and patch updates and are not supported by {{site.data.keyword.cloud_notm}} Support. Although your cluster and apps might continue to run for a time, you can no longer create, reload, or take other corrective actions on your cluster master or worker nodes when an issue occurs. You can still delete the cluster or worker nodes, or update the cluster to the next version. Review the potential impacts and immediately [update the cluster](/docs/containers?topic=containers-update#update) to continue receiving important security updates and support.
 
 ### {{site.data.keyword.openshiftshort}} 4.3 (Unsupported)
 {: #ocp43}
 
-As of 7 March 2021, {{site.data.keyword.openshiftlong_notm}} clusters that run [version 4.3](/docs/openshift?topic=openshift-changelog_archive) are unsupported. Version 4.3 clusters cannot receive security updates or support.
+As of 7 March 2021, {{site.data.keyword.openshiftlong_notm}} clusters that run [version 4.3](/docs/openshift?topic=openshift-changelog_archive) are unsupported.
 {: shortdesc}
 
-To continue running your apps in {{site.data.keyword.openshiftlong_notm}}, [create a new cluster](/docs/openshift?topic=openshift-clusters#clusters) and [copy your deployments](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) from the unsupported cluster to the new cluster.
+Unsupported clusters are not provided with security and patch updates and are not supported by {{site.data.keyword.cloud_notm}} Support. Although your cluster and apps might continue to run for a time, you can no longer create, reload, or take other corrective actions on your cluster master or worker nodes when an issue occurs. You can still delete the cluster or worker nodes. To continue running your apps in {{site.data.keyword.openshiftlong_notm}}, [make a new cluster](/docs/containers?topic=containers-clusters#clusters) and [deploy your apps](/docs/containers?topic=containers-app#app) to the new cluster.
