@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-07-14"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -522,7 +522,7 @@ Making your location and cluster subdomains available outside of your hosts' pri
   ```
   {: pre}
 
-<br />
+<br /> 
 
 ## Accessing clusters from automation tools by using an API key
 {: #access_automation}
