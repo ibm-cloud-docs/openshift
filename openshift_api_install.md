@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-24"
+lastupdated: "2021-07-14"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -142,10 +142,11 @@ You can use the version two (`v2`) API to manage both classic and VPC clusters. 
     <td>Use the {{site.data.keyword.openshiftlong_notm}} `v2` API to manage your {{site.data.keyword.cloud_notm}} infrastructure resources, such as worker nodes, for **both community Kubernetes and {{site.data.keyword.openshiftshort}} VPC clusters**.</td>
  </tr>
  <tr>
-  <td>Kubernetes API</td>
-  <td>To use the Kubernetes API to manage Kubernetes resources within the cluster, such as pods or namespaces, see [Working with your cluster by using the Kubernetes API](#kube_api).</td>
-  <td>Same as `v1`; see [Working with your cluster by using the Kubernetes API](#kube_api).</td>
+  <td>{{site.data.keyword.openshiftshort}} API</td>
+  <td>To use the {{site.data.keyword.openshiftshort}} API to manage {{site.data.keyword.openshiftshort}} and Kubernetes resources within the cluster, such as pods or namespaces, you must log in by exchanging an {{site.data.keyword.cloud_notm}} API key for an {{site.data.keyword.openshiftshort}} access token. See [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key).</td>
+  <td>Same as `v1`; see [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key).</td>
  </tr>
+ 
  <tr>
    <td>Supported infrastructure providers</td>
    <td>`classic`</td>
@@ -421,188 +422,6 @@ When you use the API for automation, be sure to rely on the responses from the A
 
 <br />
 
-## Working with your cluster by using the Kubernetes API
-{: #kube_api}
-
-You can use the [Kubernetes API](https://kubernetes.io/docs/reference/using-api/api-overview/){: external} to interact with your cluster in {{site.data.keyword.openshiftlong_notm}}. For authentication details, see [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-access_reference#iam_issuer_users).
-{: shortdesc}
-
-The following instructions require public network access in your cluster to connect to the public cloud service endpoint of your Kubernetes master.
-{: note}
-
-1. Follow the steps in [Automating cluster deployments with the API](#cs_api) to retrieve your {{site.data.keyword.cloud_notm}} IAM access token, refresh token, the ID of the cluster where you want to run Kubernetes API requests, and the {{site.data.keyword.openshiftlong_notm}} region where your cluster is located.
-
-2. Retrieve an {{site.data.keyword.cloud_notm}} IAM delegated refresh token.
-   ```
-   POST https://iam.cloud.ibm.com/identity/token
-   ```
-   {: codeblock}
-
-   <table summary="Input parameters to get an IAM delegated refresh token with the input parameter in column 1 and the value in column 2.">
-   <caption>Input parameters to get an IAM delegated refresh token. </caption>
-   <thead>
-   <th>Input parameters</th>
-   <th>Values</th>
-   </thead>
-   <tbody>
-   <tr>
-   <td>Header</td>
-   <td><ul><li>`Content-Type: application/x-www-form-urlencoded`</li> <li>`Authorization: Basic Yng6Yng=`</br>**Note**: `Yng6Yng=` equals the URL-encoded authorization for the username **bx** and the password **bx**.</li><li>`cache-control: no-cache`</li></ul>
-   </td>
-   </tr>
-   <tr>
-   <td>Body</td>
-   <td><ul><li>`delegated_refresh_token_expiry: 600`</li>
-   <li>`receiver_client_ids: kube`</li>
-   <li>`response_type: delegated_refresh_token` </li>
-   <li>`refresh_token`: Your {{site.data.keyword.cloud_notm}} IAM refresh token. </li>
-   <li>`grant_type: refresh_token`</li></ul></td>
-   </tr>
-   </tbody>
-   </table>
-
-   Example output:
-   ```
-   {
-    "delegated_refresh_token": <delegated_refresh_token>
-   }
-   ```
-   {: screen}
-
-3. Retrieve an {{site.data.keyword.cloud_notm}} IAM ID, IAM access, and IAM refresh token by using the delegated refresh token from the previous step. In your API output, you can find the IAM ID token in the **id_token** field, the IAM access token in the **access_token** field, and the IAM refresh token in the **refresh_token** field.
-   ```
-   POST https://iam.cloud.ibm.com/identity/token
-   ```
-   {: codeblock}
-
-   <table summary="Input parameters to get IAM ID and IAM access tokens with the input parameter in column 1 and the value in column 2.">
-   <caption>Input parameters to get IAM ID and IAM access tokens.</caption>
-   <thead>
-   <th>Input parameters</th>
-   <th>Values</th>
-   </thead>
-   <tbody>
-   <tr>
-   <td>Header</td>
-   <td><ul><li>`Content-Type: application/x-www-form-urlencoded`</li> <li>`Authorization: Basic a3ViZTprdWJl`</br>**Note**: `a3ViZTprdWJl` equals the URL-encoded authorization for the username **`kube`** and the password **`kube`**.</li><li>`cache-control: no-cache`</li></ul>
-   </td>
-   </tr>
-   <tr>
-   <td>Body</td>
-   <td><ul><li>`refresh_token`: Your {{site.data.keyword.cloud_notm}} IAM delegated refresh token. </li>
-   <li>`grant_type: urn:ibm:params:oauth:grant-type:delegated-refresh-token`</li></ul></td>
-   </tr>
-   </tbody>
-   </table>
-
-   Example output:
-   ```
-   {
-    "access_token": "<iam_access_token>",
-    "id_token": "<iam_id_token>",
-    "refresh_token": "<iam_refresh_token>",
-    "token_type": "Bearer",
-    "expires_in": 3600,
-    "expiration": 1553629664,
-    "scope": "ibm openid containers-kubernetes"
-   }
-   ```
-   {: screen}
-
-4. Retrieve the URL of the default service endpoint for your Kubernetes master by using the IAM access token and the name or ID of your cluster. You can find the URL in the **`masterURL`** of your API output.
-
-  If only the public cloud service endpoint or only the private cloud service endpoint is enabled for your cluster, that endpoint is listed for the `masterURL`. If both the public and private cloud service endpoints are enabled for your cluster, the public cloud service endpoint is listed by default for the `masterURL`. To use the private cloud service endpoint instead, find the URL in the `privateServiceEndpointURL` field of the output.
-  {: note}
-   ```
-   GET https://containers.cloud.ibm.com/global/v2/getCluster?cluster=<cluster_name_or_ID>
-   ```
-   {: codeblock}
-
-   <table summary="Input parameters to get the public cloud service endpoint for your Kubernetes master with the input parameter in column 1 and the value in column 2.">
-   <caption>Input parameters to get the public cloud service endpoint for your Kubernetes master.</caption>
-   <thead>
-   <th>Input parameters</th>
-   <th>Values</th>
-   </thead>
-   <tbody>
-   <tr>
-   <td>Header</td>
-   <td>`Authorization`: Your {{site.data.keyword.cloud_notm}} IAM access token.</td>
-   </tr>
-   <tr>
-   <td>Path</td>
-   <td>`<cluster_name_or_ID>`: The name or ID of your cluster that you retrieved with the `GET https://containers.cloud.ibm.com/global/v2/classic/getClusters` or `GET https://containers.cloud.ibm.com/global/v2/vpc/getClusters?provider=vpc-gen2` API in [Automating cluster deployments with the API](#cs_api).</td>
-   </tr>
-   </tbody>
-   </table>
-
-   Example output for a public cloud service endpoint:
-   ```
-   ...
-   "etcdPort": "31593",
-   "masterURL": "https://c2.us-south.containers.cloud.ibm.com:30422",
-   "ingress": {
-     ...
-   ```
-   {: screen}
-
-   Example output for a private cloud service endpoint:
-   ```
-   ...
-   "etcdPort": "31593",
-   "masterURL": "https://c2.private.us-south.containers.cloud.ibm.com:30422",
-   "ingress": {
-     ...
-   ```
-   {: screen}
-
-5. To use a private cloud service endpoint, you must first [expose the private cloud service endpoint with a load balancer IP that is routable from your VPN connection into the private network](/docs/openshift?topic=openshift-access_cluster#access_private_se).
-
-6. Run Kubernetes API requests against your cluster by using the IAM ID token that you retrieved earlier. For example, list the Kubernetes version that runs in your cluster.
-
-   If you enabled SSL certificate verification in your API test framework, make sure to disable this feature.
-   {: tip}
-
-   ```
-   GET <masterURL>/version
-   ```
-   {: codeblock}
-
-   <table summary="Input parameters to view the Kubernetes version that runs in your cluster with the input parameter in column 1 and the value in column 2. ">
-   <caption>Input parameters to view the Kubernetes version that runs in your cluster. </caption>
-   <thead>
-   <th>Input parameters</th>
-   <th>Values</th>
-   </thead>
-   <tbody>
-   <tr>
-   <td>Header</td>
-   <td>`Authorization: bearer <id_token>`</td>
-   </tr>
-   <tr>
-   <td>Path</td>
-   <td>`<masterURL>`: The service endpoint of your Kubernetes master that you retrieved in the previous step.</td>
-   </tr>
-   </tbody>
-   </table>
-
-   Example output:
-   ```
-   {
-    "major": "1",
-    "minor": "1.20.7",
-    "gitVersion": "v1.20.7+IKS",
-    "gitCommit": "c35166bd86eaa91d17af1c08289ffeab3e71e11e",
-    "gitTreeState": "clean",
-    "buildDate": "2019-03-21T10:08:03Z",
-    "goVersion": "go1.11.5",
-    "compiler": "gc",
-    "platform": "linux/amd64"
-   }
-   ```
-   {: screen}
-
-6. Review the [Kubernetes API documentation](https://kubernetes.io/docs/reference/kubernetes-api/){: external} to find a list of supported APIs for the latest Kubernetes version. Make sure to use the API documentation that matches the Kubernetes version of your cluster. If you do not use the latest Kubernetes version, append your version at the end of the URL. For example, to access the API documentation for version 1.12, add `v1.12`.
 
 
 ## Refreshing {{site.data.keyword.cloud_notm}} IAM access tokens and obtaining new refresh tokens with the API
@@ -686,7 +505,7 @@ Use the following steps if you want to create an {{site.data.keyword.cloud_notm}
 ## Refreshing {{site.data.keyword.cloud_notm}} IAM access tokens and obtaining new refresh tokens with the CLI
 {: #cs_cli_refresh}
 
-You can use the command line to [set the cluster context](/docs/openshift?topic=openshift-cs_cli_install#cs_cli_configure), download the `kubeconfig` file for your {{site.data.keyword.openshiftshort}} cluster, and generate an {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) ID token and a refresh token to provide authentication.
+You can use the command line to [set the cluster context](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure), download the `kubeconfig` file for your {{site.data.keyword.openshiftshort}} cluster, and generate an {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) ID token and a refresh token to provide authentication.
 {: shortdesc}
 
 You can use [{{site.data.keyword.cloud_notm}} IAM](https://cloud.ibm.com/iam/overview){: external} to change the default expiration times for your tokens and sessions.

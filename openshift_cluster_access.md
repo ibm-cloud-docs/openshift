@@ -618,7 +618,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ...
         ```
         {: screen}
-    5.  Use your cluster master URL and the access token to access the {{site.data.keyword.openshiftshort}} API, such as to list all the pods in your cluster.
+    5.  Use your cluster master URL and the access token to access the {{site.data.keyword.openshiftshort}} API, such as to list all the pods in your cluster. For more information, see the [{{site.data.keyword.openshiftshort}} API documentation](https://docs.openshift.com/container-platform/4.6/rest_api/index.html){: external}.
 
         Example curl request:
         ```

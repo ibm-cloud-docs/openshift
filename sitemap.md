@@ -303,7 +303,6 @@ subcollection: openshift
 [Setting up the API](/docs/openshift?topic=openshift-cs_api_install)
 * [About the API](/docs/openshift?topic=openshift-cs_api_install#api_about)
 * [Automating cluster deployments with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api)
-* [Working with your cluster by using the Kubernetes API](/docs/openshift?topic=openshift-cs_api_install#kube_api)
 * [Refreshing {{site.data.keyword.cloud_notm}} IAM access tokens and obtaining new refresh tokens with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api_refresh)
 * [Refreshing {{site.data.keyword.cloud_notm}} IAM access tokens and obtaining new refresh tokens with the CLI](/docs/openshift?topic=openshift-cs_api_install#cs_cli_refresh)
 
