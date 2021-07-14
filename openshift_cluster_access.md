@@ -92,7 +92,7 @@ subcollection: openshift
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
   
- 
+  
 
 # Accessing {{site.data.keyword.openshiftshort}} clusters
 {: #access_cluster}
@@ -179,6 +179,9 @@ Choose from the following options.
 
 Allow authorized cluster users to access your [VPC](#vpc_private_se) or [classic](#access_private_se) cluster through the private cloud service endpoint.
 {: shortdesc}
+
+Want to set up a VPN to connect to your cluster from your local machine? Check out [Accessing private clusters by using the Wireguard VPN](/docs/openshift?topic=openshift-access_cluster#access_vpn). 
+{: tip}
 
 ### Accessing VPC clusters through the private cloud service endpoint
 {: #vpc_private_se}
@@ -432,6 +435,9 @@ Your authorized users can now continue with [Accessing {{site.data.keyword.opens
 
 After you [create an {{site.data.keyword.openshiftshort}} cluster in your {{site.data.keyword.satelliteshort}} location](/docs/openshift?topic=openshift-satellite-clusters), you can begin working with your cluster by accessing the cluster.
 {: shortdesc}
+
+Want to set up a VPN to connect to your cluster from your local machine? Check out [Accessing private clusters by using the Wireguard VPN](/docs/openshift?topic=openshift-access_cluster#access_vpn). 
+{: tip}
 
 ### Accessing clusters through the cluster service URL
 {: #access_cluster_sat_se}
