@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-07-14"
+lastupdated: "2021-07-15"
 
 keywords: openshift
 subcollection: openshift
@@ -2269,6 +2269,10 @@ subcollection: openshift
 * [Deprecated: Troubleshooting image pull secrets that use tokens](/docs/openshift?topic=openshift-ts-app-image-pull#img-pull-token)
 
 [Why don't my containers start?](/docs/openshift?topic=openshift-ts-app-container-start)
+* [Fixing registry quota issues](/docs/openshift?topic=openshift-ts-app-container-start#regitry-quota)
+* [Fixing IP address issues](/docs/openshift?topic=openshift-ts-app-container-start#calico-ips)
+  * [Step 1: Releasing individual IP addresses](/docs/openshift?topic=openshift-ts-app-container-start#individual-ips)
+  * [Step 2: Releasing IP address blocks](/docs/openshift?topic=openshift-ts-app-container-start#individual-ips)
 
 [Why do pods remain in pending state?](/docs/openshift?topic=openshift-ts-app-pod-pending)
 
