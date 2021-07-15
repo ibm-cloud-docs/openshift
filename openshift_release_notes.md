@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-14"
+lastupdated: "2021-07-15"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -110,6 +110,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 15 July 2021 | **{{site.data.keyword.block_storage_is_short}} add-on**: Version 3.0.1, which adds beta support for volume expansion, is now available. Version 2.0.3 becomes unsupported on 26 July 2021, and version 3.0.0 is deprecated and becomes unsupported on or after 26 August 2021. If you have a deprecated or unsupported version of the add-on installed in your cluster, update the add-on to [version 3.0.1](/docs/openshift?topic=openshift-vpc_bs_changelog). To update the add-on in your cluster, see [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update). |
 | 12 July 2021| OpenShift Data Foundation doc restructuring. For more information, see [Deploying OpenShift Data Foundation on VPC clusters](/docs/openshift?topic=openshift-deploy-odf-vpc), [Deploying OpenShift Data Foundation on {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-deploy-odf-sat), and [Deploying OpenShift Data Foundation on Classic clusters](/docs/openshift?topic=openshift-deploy-odf-classic). |
 | 07 July 2021 | **OpenShift Data Foundation** As of 10 July 2021, version `0.0.2` of the OpenShift Container Storage add-on is deprecated and becomes unsupported on 24 July 2021. Add-on versions `4.6.0` and `4.7.0` are now available. If you have version `0.0.2` of the add-on installed in your cluster, update the add-on to a supported version. For more information, see the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog). |
 | 06 July 2021 |<ul><li> **Ingress changelogs**: Updated the [Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.47.0_1376_iks`, `0.45.0_1375_iks`, and `0.35.0_1374_iks`.</li><li>**Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.7.18_1524_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4718_1524), [`4.6.36_1548_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4636_1548), [`4.5.40_1544_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4540_1544), and [`3.11.462_1595_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311462_1595).</li></ul> |

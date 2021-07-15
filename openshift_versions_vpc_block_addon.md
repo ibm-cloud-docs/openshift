@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-09"
+lastupdated: "2021-07-15"
 
 keywords: vpc block, add-on, vpc block changelog
 
@@ -104,6 +104,11 @@ View information for patch updates to the {{site.data.keyword.block_storage_is_f
 
 
 
+As of 26 July 2021, version 2.0.3 of the Block Storage for VPC add-on is unsupported. Version 3.0.0 is deprecated and becomes unsupported on or after 26 August 2021. Version 3.0.1, which adds beta support for volume expansion is now available. If you have a deprecated or unsupported version of the add-on installed in your cluster, update the add-on to version 3.0.1. If you have a deprecated or unsupported version of the add-on installed in your cluster, update the add-on to version 3.0.1. To update the Block Storage for VPC add-on in your cluster, disable the add-on and then re-enable the add-on. You might see a warning that resources or data might be deleted. For the {{site.data.keyword.block_storage_is_full}} add-on update, PVC creation and app deployment are not disrupted when the add-on is disabled and existing volumes are not impacted.
+{: important}
+
+
+
 To view a list of add-ons and the supported {{site.data.keyword.openshiftshort}} versions, run the following command.
 ```sh
 ibmcloud oc cluster addon versions --addon vpc-block-csi-driver
@@ -114,9 +119,28 @@ Refer to the following tables for a summary of changes for each version of the {
 
 | {{site.data.keyword.block_storage_is_full}} add-on version | Supported? | {{site.data.keyword.openshiftlong_notm}} version support |
 | -------------------- | -----------|--------------------------- |
+| 3.0.1 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | >= 4.3 |
 | 3.0.0 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | >= 4.3 |
 | 2.0.3 | | >=4.3 |
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.block_storage_is_full}} add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the {{site.data.keyword.block_storage_is_full}} version is supported for."}
+
+
+## Changelog for version 3.0.1
+{: #0301_is_block}
+
+The following table shows the changes in version 3.0.1 {{site.data.keyword.block_storage_is_full}} add-on.
+{: shortdesc}
+
+Volume expansion in version `3.0.1` is available in beta for allowlisted accounts. Don't use this feature for production workloads.
+{: beta}
+
+| Patch version | `vpc-block-csi-driver` image tag | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
+| --- | --- | --- | --- | --- |
+| N/A | `v3.0.7` | 15 July 2021 | >=4.3 | Includes beta support for volume expansion on allowlisted accounts and fixes vulnerability [CVE-2021-27219](https://nvd.nist.gov/vuln/detail/CVE-2021-27219){: external}. Version `3.0.1` also includes the `storage-secret-sidecar` container in the {{site.data.keyword.block_storage_is_full}} driver pods. |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Patch updates for version 3.0.1" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the patch version number of the component. The second column contains the image tag the component. The third column contains the release date of the patch. The fourth column contains the supported cluster versions. The fifth column contains a brief description of the change made to the component."}
 
 
 
