@@ -224,7 +224,7 @@ First, check for and release individual IP addresses that were not cleanly remov
 6. Continue to the next section to check for unused IP address blocks.
 
 ### Step 2: Releasing IP address blocks
-{: #individual-ips}
+{: #releasing-individual-ips}
 
 Next, check for and clean up entire blocks of IP addresses that are assigned to a worker node but are not used by that worker node.
 {: shortdesc}

@@ -2275,7 +2275,7 @@ subcollection: openshift
 * [Fixing registry quota issues](/docs/openshift?topic=openshift-ts-app-container-start#regitry-quota)
 * [Fixing IP address issues](/docs/openshift?topic=openshift-ts-app-container-start#calico-ips)
   * [Step 1: Releasing individual IP addresses](/docs/openshift?topic=openshift-ts-app-container-start#individual-ips)
-  * [Step 2: Releasing IP address blocks](/docs/openshift?topic=openshift-ts-app-container-start#individual-ips)
+  * [Step 2: Releasing IP address blocks](/docs/openshift?topic=openshift-ts-app-container-start#releasing-individual-ips)
 
 [Why do pods remain in pending state?](/docs/openshift?topic=openshift-ts-app-pod-pending)
 
@@ -2478,11 +2478,6 @@ subcollection: openshift
 
 [Why is the status of my OpenShift Data Foundation storage cluster stuck at `Failed to reconcile`.](/docs/openshift?topic=openshift-ts-ocs-roks-debug)
 * [ODF device set creation fails due to PVC names exceeding the Kubernetes character limit](/docs/openshift?topic=openshift-ts-ocs-roks-debug#ocs-ts-sc-character-limit)
-
-[Why does my OpenShift Data Foundation storage cluster have an 'Error' status?](/docs/openshift?topic=openshift-ts-ocs-install-error-status)
-* [Error: Number of worker nodes less than 3.](/docs/openshift?topic=openshift-ts-ocs-install-error-status#ts-ocs-install-3workers)
-* [Error: Failed to update storage cluster](/docs/openshift?topic=openshift-ts-ocs-install-error-status#ts-ocs-install-decrease-capacity)
-* [Error: Error in reconcile of local volumes](/docs/openshift?topic=openshift-ts-ocs-install-error-status#ts-ocs-install-local-volumes)
 
 [Why are the ODF pods stuck at `Pending`?](/docs/openshift?topic=openshift-ts-ocs-pods-pending-status)
 
