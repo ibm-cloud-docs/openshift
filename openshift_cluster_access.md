@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-14"
+lastupdated: "2021-07-16"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -92,7 +92,7 @@ subcollection: openshift
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
   
-  
+
 
 # Accessing {{site.data.keyword.openshiftshort}} clusters
 {: #access_cluster}
@@ -180,7 +180,7 @@ Choose from the following options.
 Allow authorized cluster users to access your [VPC](#vpc_private_se) or [classic](#access_private_se) cluster through the private cloud service endpoint.
 {: shortdesc}
 
-Want to set up a VPN to connect to your cluster from your local machine? Check out [Accessing private clusters by using the Wireguard VPN](/docs/openshift?topic=openshift-access_cluster#access_vpn). 
+Want to set up a VPN to connect to your cluster from your local machine? Check out [Accessing private clusters by using the Wireguard VPN](/docs/openshift?topic=openshift-access_cluster#access_vpn).
 {: tip}
 
 ### Accessing VPC clusters through the private cloud service endpoint
@@ -188,6 +188,9 @@ Want to set up a VPN to connect to your cluster from your local machine? Check o
 
 The {{site.data.keyword.openshiftshort}} master is accessible through the private cloud service endpoint if authorized cluster users are in your {{site.data.keyword.cloud_notm}} private network or are connected to the private network, such as through a [VPC VPN connection](/docs/vpc?topic=vpc-vpn-onprem-example). However, communication with the Kubernetes master over the private cloud service endpoint must go through the `166.X.X.X` IP address range, which you must configure in your VPN gateway and connection setup.
 {: shortdesc}
+
+If you enabled only the private cloud service endpoint during cluster creation, the private cloud service endpoint is used by default to access {{site.data.keyword.openshiftshort}} components such as the {{site.data.keyword.openshiftshort}} web console or OperatorHub. You must be connected to the private VPC network, such as through a VPN connection, to access these components or run `kubectl` commands on your cluster.
+{: note}
 
 1. Set up your {{site.data.keyword.vpc_short}} VPN and connect to your private network through the VPN.
   1. [Configure a VPN gateway on your local machine](/docs/vpc?topic=vpc-vpn-onprem-example#configuring-onprem-gateway). For example, you might choose to set up StrongSwan on your machine.
@@ -436,7 +439,7 @@ Your authorized users can now continue with [Accessing {{site.data.keyword.opens
 After you [create an {{site.data.keyword.openshiftshort}} cluster in your {{site.data.keyword.satelliteshort}} location](/docs/openshift?topic=openshift-satellite-clusters), you can begin working with your cluster by accessing the cluster.
 {: shortdesc}
 
-Want to set up a VPN to connect to your cluster from your local machine? Check out [Accessing private clusters by using the Wireguard VPN](/docs/openshift?topic=openshift-access_cluster#access_vpn). 
+Want to set up a VPN to connect to your cluster from your local machine? Check out [Accessing private clusters by using the Wireguard VPN](/docs/openshift?topic=openshift-access_cluster#access_vpn).
 {: tip}
 
 ### Accessing clusters through the cluster service URL

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-15"
+lastupdated: "2021-07-16"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc, roks
 
@@ -214,25 +214,6 @@ If you deployed ODF by using a CRD, you can update your ODF deployment by editin
 
 <br />
 
-## Classic: Increasing storage capacity by adding worker nodes to your cluster
-{: #ocs-add-worker-nodes-classic}
-
-To increase the storage capacity that is available to OpenShift Data Foundation, add compatible worker nodes to your cluster.
-{: shortdesc}
-
-[Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-
-1. Expand the worker pool of the cluster by [adding SDS worker nodes](/docs/openshift?topic=openshift-add_workers). Ensure that your worker nodes meet the [requirements for ODF](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-plan).
-2. [Find the `by-id` of the local disks](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-get-devices) on your new worker nodes.
-3. Add the `by-id` of the local disks to your `OcsCluster` custom resource definition.
-  ```sh
-  oc edit ocscluster ocscluster
-  ```
-  {: pre}
-3. If you deployed ODF on a subset of worker nodes in your cluster by specifying the private `<worker-IP>` parameters in your `OcsCluster` custom resource, add the IP addresses of the new worker nodes to your ODF deployment by editing the custom resource definition.
-4. Save the `OcsCluster` custom resource file to reapply it to your cluster.
-
-<br />
 
 ## Removing ODF from your apps
 {: #ocs-remove-apps-storage}
@@ -292,8 +273,8 @@ If you want to fully remove ODF and all your data, you can [remove your storage 
 
 
 
-## Removing your ODF storage cluster
-{: #ocs-remove-storage-cluster}
+## Removing your ODF custom resource
+{: #ocs-rm-crd}
 
 Complete the following steps to remove the ODF resources from your cluster.
 {: shortdesc}

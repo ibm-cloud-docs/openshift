@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-07-15"
+lastupdated: "2021-07-16"
 
 keywords: openshift
 subcollection: openshift
@@ -1294,17 +1294,16 @@ subcollection: openshift
 
 * [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-vpc#install-odf-console-vpc)
 
-* [Creating your ODF storage cluster](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-vpc-deploy-crd)
-
-* [Expanding ODF in VPC clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#expanding-odf-in-vpc-clusters)
-    * [Scaling by increasing the `numOfOsd` in your CRD](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-scaling-osd)
+* [Creating your ODF custom resource](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-vpc-deploy-crd)
+    * [Scaling ODF](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-scaling)
+    * [Scaling by increasing the `numOfOsd`](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-scaling-osd)
     * [Expanding ODF by adding worker nodes to your VPC cluster](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-add-worker-nodes)
 
 * [Limitations](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-limitations)
 
 * [Storage class reference](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-reference-section)
 
-* [VPC: OpenShift Data Foundation parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-vpc-param-ref)
+* [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-vpc-param-ref)
 
 
 ## Deploying OpenShift Data Foundation on {{site.data.keyword.satelliteshort}} clusters
@@ -1368,11 +1367,9 @@ subcollection: openshift
 
 * [VPC: Updating the ODF operator from your CRD](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-up-vpc)
 
-* [Classic: Increasing storage capacity by adding worker nodes to your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-add-worker-nodes-classic)
-
 * [Removing ODF from your apps](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-apps-storage)
 
-* [Removing your ODF storage cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster)
+* [Removing your ODF custom resource](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-crd)
 
 * [Cleaning up your ODF deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-cleanup-resources)
     * [Cleaning up ODF](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-cleanup)

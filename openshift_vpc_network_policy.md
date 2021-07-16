@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-25"
+lastupdated: "2021-07-16"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -539,9 +539,9 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>Allow</td>
    <td>TCP</td>
    <td>Any</td>
-   <td>30000 - 32767</td>
-   <td>Any</td>
    <td>-</td>
+   <td>Any</td>
+   <td>30000 - 32767</td>
    <td>After 3</td>
    </tr>
    <tr>
@@ -559,9 +559,9 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    <td>Allow</td>
    <td>TCP</td>
    <td>Each control plane IP address for your region [in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist)</td>
-   <td>80</td>
-   <td>Any</td>
    <td>-</td>
+   <td>Any</td>
+   <td>80</td>
    <td>After 5</td>
    </tr>
    <tr>
@@ -780,16 +780,16 @@ To create an ACL for each subnet that your cluster is attached to:
 
 7. To allow incoming traffic requests to apps that run on your worker nodes through router services or load balancers, allow traffic to the VPC load balancer on port `443` and to worker nodes on ports `30000 - 32767`.
   ```
-  ibmcloud is network-acl-rule-add $acl_id allow outbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-lb-outbound --destination-port-min 443 --destination-port-max 443
+  ibmcloud is network-acl-rule-add $acl_id allow outbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-lb-outbound --source-port-min 443 --source-port-max 443
   ibmcloud is network-acl-rule-add $acl_id allow inbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-lb-inbound --destination-port-min 443 --destination-port-max 443
-  ibmcloud is network-acl-rule-add $acl_id allow outbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-ingress-outbound --destination-port-min 30000 --destination-port-max 32767
+  ibmcloud is network-acl-rule-add $acl_id allow outbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-ingress-outbound --source-port-min 30000 --source-port-max 32767
   ibmcloud is network-acl-rule-add $acl_id allow inbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-ingress-inbound --destination-port-min 30000 --destination-port-max 32767  
   ```
   {: pre}
 
 8. Optional: Allow access to and from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one inbound and one outbound rule for each control plane IP address [in step 7 of the Updating IAM firewalls section](/docs/openshift?topic=openshift-firewall#iam_allowlist). Alternatively, you can create a single inbound rule and outbound rule to allow all incoming and outgoing traffic on port 80.
   ```
-  ibmcloud is network-acl-rule-add $acl_id allow outbound tcp 0.0.0.0/0 <IP_address> --name allow-hc-outbound --destination-port-min 80 --destination-port-max 80
+  ibmcloud is network-acl-rule-add $acl_id allow outbound tcp 0.0.0.0/0 <IP_address> --name allow-hc-outbound --source-port-min 80 --source-port-max 80
   ibmcloud is network-acl-rule-add $acl_id allow inbound tcp <IP_address> 0.0.0.0/0 --name allow-hc-inbound --destination-port-min 80 --destination-port-max 80
   ```
   {: pre}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-15"
+lastupdated: "2021-07-16"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic, roks
 
@@ -118,7 +118,7 @@ Before you install ODF in your cluster, you must make sure that the following pr
 {: #odf-create-cos}
 
 If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing store in your storage cluster, create an instance of {{site.data.keyword.cos_full_notm}}. Then, create a set of HMAC credentials and a Kubernetes secret that uses your {{site.data.keyword.cos_short}} HMAC credentials. If you don't specify {{site.data.keyword.cos_full_notm}} credentials during installation, then the default backing store in your storage cluster is created by using the PVs in your cluster. You can set up additional backing stores after deploying ODF, but you cannot change the default backing store.
-{: shortdesc}
+
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -353,8 +353,8 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 {: note}
 
 1. Review the [parameter reference](#odf-classic-param-ref). When you enable the add-on, you can override the default values by specifying the `--param "key=value"` flag for each parameter that you want to override. Note that for Classic clusters, you must provide the device paths to the local disks that you want to use.
-1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version 4.7.0 of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must specify the `--version` flag when you enable the add-on.
-1. Review the add-on options.
+1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.7.0` of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must specify the `--version` flag when you enable the add-on.
+1. Review the add-on options. Note that add-on options are only available for version `4.7.0` and later.
   ```sh
   ibmcloud oc cluster addon options --addon openshift-container-storage
   ```
@@ -373,6 +373,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
   numOfOsd              1   
   monDevicePaths        invalid   
   osdStorageClassName   ibmc-vpc-block-metro-10iops-tier
+  clusterEncryption     false
   ```
   {: screen}
 
@@ -410,7 +411,7 @@ To install ODF in your cluster, complete the following steps.
 {: shortdesc}
 
 1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version 4.7.0 of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must install the add-on from the CLI and specify the `--version` flag.
-1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to install the add-on.
+1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to install the add-on.
 2. On the cluster **Overview** page, click **Add-ons**.
 3. On the OpenShift Data Foundation card, click **Install**.
 
@@ -475,9 +476,9 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
       - <device-by-id> # Example: /dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2
       - <device-by-id> # Example: /dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2
     workerNodes: # Specify the private IP addresses of each worker node where you want to install OCS.
-      - <worker-IP> # To get a list worker nodes, run `oc get nodes`.
-      - <worker-IP>
-      - <worker-IP>
+      - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
+      - <workerNodes>
+      - <workerNodes>
   ```
   {: codeblock}
 
@@ -514,6 +515,7 @@ Refer to the following OpenShift Data Foundation parameters when you use the add
 | `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the specified number. For example, if you enter `1`, ODF creates 3 OSDs. | `1` |
 | `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your OCS deployment. | `hourly` |
 | `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
-| `worker-IP` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Do not specify this parameter if you want to use all of the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
+| `workerNodes` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Do not specify this parameter if you want to use all of the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
+| `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
 {: caption="Classic OpenShift Data Foundation parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}

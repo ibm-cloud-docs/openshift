@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-15"
+lastupdated: "2021-07-16"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, roks
 
@@ -109,13 +109,19 @@ The OpenShift Data Foundation add-on is available as a technology preview and mi
 
 ## Quick start for VPC clusters
 {: #odf-quickstart}
-You can deploy ODF on VPC clusters with the default configuration settings by running the `addon enable` command and specifying the `"ocsDeploy=true"` flag. Before enabling the add-on make sure that you have a [VPC cluster](/docs/openshift?topic=openshift-clusters) with at least three worker nodes. For high availability, create a cluster with at least one worker node per zone across three zones. Each worker node must have a minimum of 16 CPUs and 64 GB RAM.
+The following steps walk you through deploying ODF with the default settings. You can deploy ODF on VPC clusters with the default configuration settings by running the `addon enable` command and specifying the `"ocsDeploy=true"` flag. Before enabling the add-on make sure that you have a [VPC cluster](/docs/openshift?topic=openshift-clusters) with at least three worker nodes. For high availability, create a cluster with at least one worker node per zone across three zones. Each worker node must have a minimum of 16 CPUs and 64 GB RAM.
 {: shortdesc}
 
 If you want to override the default parameters when deploying the add-on, you can use the `--param "key=value"` format. For more information, see [Deploying ODF](#odf-custom-install).
 {: tip}
+
+1. To see the default settings for ODF on VPC clusters, run the `addon options` command.
+  ```sh
+  ibmcloud oc cluster addon options --addon openshift-container-storage
+  ```
+  {: pre}
   
-1. Enable the ODF and specify the `ocsDeploy=True` parameter to deploy ODF with the default configuration parameters. To see the default parameters, run `ibmcloud oc cluster addon options --addon openshift-container-storage`. To list the versions and find the current default, run `ibmcloud oc cluster addon versions`. If you have a cluster version other than the default, specify the `--version` flag. The add-on supports `n+1` cluster versions. 
+1. Enable the ODF and specify the `ocsDeploy=True` parameter to deploy ODF with the default configuration parameters. To list the versions and find the current default, run `ibmcloud oc cluster addon versions`. If you have a cluster version other than the default, specify the `--version` flag. The add-on supports `n+1` cluster versions. 
   ```sh
   ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true"
   ```
@@ -133,14 +139,16 @@ Review the following steps to deploy ODF on your VPC cluster.
 
 1. [Install the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
 1. Create a [VPC cluster](/docs/openshift?topic=openshift-clusters) with at least three worker nodes. For high availability, create a cluster with at least one worker node per zone across three zones. Each worker node must have a minimum of 16 CPUs and 64 GB RAM.
-1. **Optional** [Set up a {{site.data.keyword.cos_full_notm}} service instance](#odf-create-cos) as your default backing store. If you don't want to use {{site.data.keyword.cos_full_notm}} or if you want to configure backing stores later, see [Installing the add-on from the CLI](#install-odf-cli).
+1. **Optional** [Set up a {{site.data.keyword.cos_full_notm}} service instance](#odf-create-cos) as your default backing store. You can skip this step if you don't want to use {{site.data.keyword.cos_full_notm}}. You can also set up backing stores later.
 
 
 ### Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance
 {: #odf-create-cos}
+Complete the following steps to create a {{site.data.keyword.cos_full_notm}} instance which you can use as the default backing store in your ODF deployment. If you don't want to set up {{site.data.keyword.cos_full_notm}}, you can skip this step and [install the add-on](#install-odf-cli-vpc).
+{: shortdesc}
 
 If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing store in your storage cluster, create an instance of {{site.data.keyword.cos_full_notm}}. Then, create a set of HMAC credentials and a Kubernetes secret that uses your {{site.data.keyword.cos_short}} HMAC credentials. If you don't specify {{site.data.keyword.cos_full_notm}} credentials during installation, then the default backing store in your storage cluster is created by using the PVs in your cluster. You can set up additional backing stores after deploying ODF, but you cannot change the default backing store.
-{: shortdesc}
+
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -198,8 +206,8 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
 {: shortdesc}
 
 1. Review the [VPC parameter reference](#odf-vpc-param-ref). When you enable the add-on, you can override the default values by specifying the `--param "key=value"` flag for each parameter that you want to override.
-1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version 4.7.0 of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must specify the `--version` flag when you enable the add-on.
-1. Review the add-on options.
+1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.7.0` of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must specify the `--version` flag when you enable the add-on.
+1. Review the add-on options. Note that add-on options are only available for version `4.7.0` and later.
   ```sh
   ibmcloud oc cluster addon options --addon openshift-container-storage
   ```
@@ -218,6 +226,7 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
   numOfOsd              1   
   monDevicePaths        invalid   
   osdStorageClassName   ibmc-vpc-block-metro-10iops-tier
+  clusterEncryption     false
   ```
   {: screen}
 
@@ -253,14 +262,14 @@ To install ODF in your cluster, complete the following steps.
 {: shortdesc}
 
 1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version 4.7.0 of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must install the add-on from the CLI and specify the `--version` flag.
-1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to install the add-on.
+1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to install the add-on.
 2. On the cluster **Overview** page, click **Add-ons**.
 3. On the OpenShift Data Foundation card, click **Install**.
 
-## Creating your ODF storage cluster
+## Creating your ODF custom resource
 {: #ocs-vpc-deploy-crd}
 
-To create an ODF storage cluster in your VPC cluster or your {{site.data.keyword.satelliteshort}} cluster by using dynamic provisioning for your storage volumes, you can create a custom resource that is used to specify storage device details.
+To create an ODF storage cluster in your VPC cluster or your cluster by using dynamic provisioning for your storage volumes, you can create a custom resource that is used to specify storage device details.
 {: shortdesc}
 
 If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](#odf-create-cos), and created the Kubernetes secret in your cluster. When you create the ODF CRD in your cluster, ODF looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store that uses your {{site.data.keyword.cos_short}} HMAC credentials.
@@ -300,9 +309,9 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     billingType: advanced
     ocsUpgrade: false
     workerNodes: # Specify the private IP addresses of the worker nodes where you want to install OCS.
-      - <worker-IP> # To get a list worker nodes, run `oc get nodes`.
-      - <worker-IP>
-      - <worker-IP>
+      - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
+      - <workerNodes>
+      - <workerNodes>
   ```
   {: codeblock}
 
@@ -380,35 +389,24 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 **Next steps**: [Deploy an app that uses ODF](/docs/openshift?topic=openshift-ocs-deploy-app)
 
-## Expanding ODF in VPC clusters
-{: odf-vpc-expand-storage-cluster}
+### Scaling ODF
+{: #odf-scaling}
 
-To expand your storage cluster, you can [add worker nodes](#ocs-vpc-add-worker-nodes) to your cluster, or you can scale by [increasing the `numOfOsd`](#ocs-vpc-scaling-osd).
+You can scale your ODF configuration by increasing the `numOfOsd` setting. When you increase the number of OSDs, ODF provisions that number of disks of the same `osdSize` capacity in GB in each of the worker nodes in your ODF cluster. However, the total storage that is available to your applications is equal to the `osdSize` multiplied by the `numOfOsd`.
 {: shortdesc}
 
-### Scaling by increasing the `numOfOsd` in your CRD
-{: #odf-vpc-scaling-osd}
 
-You can scale your ODF configuration by increasing the `numOfOsd` setting. When you increase the number of OSDs, ODF provisions that number of disks of the same `osdSize` capacity in GB in each of the worker nodes in your ODF cluster. However, the total storage that is available to your applications is equal to the number of worker nodes that are multiplied by the `osdSize` multiplied by the `numOfOsd`, and then divided by the replication factor, which is a constant of 3.
-{: shortdesc}
-
-For example, if your ODF cluster has three worker nodes, you specify an `osdSize` of `150Gi`, and you set the `numOfOsd` to 4, then your storage totals are as follows.
-  * **Total storage that is available for application use**: `osdSize` multiplied by `numOfOsd` and the number of worker nodes in the cluster, and divided by the replication factor of 3, or `(3 x 150Gi x 4) / 3 = 600Gi`.
-  * **Total storage that is provisioned as disks in the cluster**: `osdSize` multiplied by `numOfOsd` and the number of worker nodes in the cluster, or `150Gi x 4 x 3 = 1800Gi`.
-
-
-| Number of worker nodes | Initial `osdSize` | `numOfOsd` per worker node | Storage capacity available to applications | Total storage of provisioned disks |
+| Number of worker nodes | Initial `osdSize` | `numOfOsd` | Storage capacity available to applications | Total storage of provisioned disks |
 | --- | --- | --- | --- | --- |
 | 3 | 150Gi | 1 | 150Gi | 450Gi |
 | 3 | 150Gi | 2 | 300Gi | 900Gi |
 | 3 | 150Gi | 3 | 450Gi | 1350Gi |
 | 3 | 150Gi | 4 | 600Gi | 1800Gi |
-| 6 | 150Gi | 1 | 300Gi | 900Gi |
-| 6 | 150Gi | 2 | 600Gi | 1800Gi |
-| 6 | 150Gi | 3 | 900Gi | 2700Gi |
-| 6 | 150Gi | 4 | 1200Gi | 3600Gi |
 {: caption="Table 1. OpenShift Data Foundation scaling." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the number of worker nodes. The second column is the initial OSD size. The third column is the number of OSDs. The fourth column is the total storage capacity that is available to applications in the cluster. The fifth column is the total storage capacity of the provisioned disks."}
+
+### Scaling by increasing the `numOfOsd`
+{: #odf-vpc-scaling-osd}
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -445,7 +443,7 @@ To increase the storage capacity in your storage cluster, add compatible worker 
 {: shortdesc}
 
 1. Expand the worker pool of the cluster that is used for OCS by [adding worker nodes](/docs/openshift?topic=openshift-add_workers). Ensure that your worker nodes meet the [requirements for ODF](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-plan). If you deployed ODF on all of the worker nodes in your cluster, the ODF drivers are installed on the new worker nodes when they are added to your cluster.
-2. If you deployed ODF on a subset of worker nodes in your cluster by specifying the private `<worker-IP>` parameters in your `OcsCluster` custom resource, you can add the IP addresses of the new worker nodes to your ODF deployment by editing the custom resource definition.
+2. If you deployed ODF on a subset of worker nodes in your cluster by specifying the private `<workerNodes>` parameters in your `OcsCluster` custom resource, you can add the IP addresses of the new worker nodes to your ODF deployment by editing the custom resource definition.
   ```sh
   oc edit ocscluster ocscluster-vpc
   ```
@@ -468,7 +466,7 @@ Review the following limitations for deploying ODF.
 
 <br />
 
-## VPC: OpenShift Data Foundation parameter reference
+## Parameter reference
 {: #ocs-vpc-param-ref}
 
 Refer to the following parameters when you use the add-on or operator in VPC clusters.
@@ -484,7 +482,8 @@ Refer to the following parameters when you use the add-on or operator in VPC clu
 | `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the `numOfOsd` value. For example, if you enter `1`, ODF provisions 3 disks of the size and storage class that you specify in the `osdStorageClassName` field. | `1` |
 | `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your ODF deployment. | `advanced` |
 | `ocsUpgrade` | Enter `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
-| `worker-IP` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all of the worker nodes in your cluster. | N/A |
+| `workerNodes` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all of the worker nodes in your cluster. | N/A |
+| `clusterEncryption` | Available for add-on version `4.7.0` and later. Enter `true` or `false` to enable encryption. |
 {: caption="ODF parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
 
