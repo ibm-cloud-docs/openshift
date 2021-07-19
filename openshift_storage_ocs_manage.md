@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-16"
+lastupdated: "2021-07-19"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc, roks
 
@@ -131,7 +131,7 @@ To update the OpenShift Data Foundation in your cluster, disable the add-on and 
 You can remove ODF add-on from your cluster by using the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or the CLI.
 {: shortdesc}
 
-When you disable the OpenShift Data Foundation add-on, only the ODF operator is removed from your cluster. Your existing workloads remain, but you cannot create more ODF workloads. You also cannot delete your `OcsCluster` custom resource after the operator is removed. If you want to remove all of your ODF resources and data, see [Removing ODF from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster). If you removed the add-on and can't delete your `OcsCluster`, reinstall the add-on, then delete the `OcsCluster`.
+When you disable the OpenShift Data Foundation add-on, only the ODF operator is removed from your cluster. Your existing workloads remain, but you cannot create more ODF workloads. You also cannot delete your `OcsCluster` custom resource after the operator is removed. If you want to remove all of your ODF resources and data, see [Removing ODF from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-crd). If you removed the add-on and can't delete your `OcsCluster`, reinstall the add-on, then delete the `OcsCluster`.
 {: note}
 
 ### Uninstalling the OpenShift Data Foundation add-on from the console
@@ -140,7 +140,7 @@ When you disable the OpenShift Data Foundation add-on, only the ODF operator is 
 To remove the OpenShift Data Foundation add-on from your cluster, complete the following steps.
 {: shortdesc}
 
-1. **Optional**: To remove the add-on and all ODF resources, first [remove the add-on from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster).
+1. **Optional**: To remove the add-on and all ODF resources, first [remove the add-on from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-crd).
 2. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to remove the OpenShift Data Foundation add-on.
 3. On the cluster **Overview** page, click **Add-ons**.
 4. On the OpenShift Data Foundation card, click **Uninstall**.
@@ -151,7 +151,7 @@ To remove the OpenShift Data Foundation add-on from your cluster, complete the f
 You can uninstall the OpenShift Data Foundation add-on from your cluster by using the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or the CLI.
 {: shortdesc}
 
-1. **Optional**: To remove the add-on and all ODF resources, first [remove add-on from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster).
+1. **Optional**: To remove the add-on and all ODF resources, first [remove add-on from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-crd).
 
 2. Uninstall the add-on.
   ```
@@ -221,7 +221,7 @@ If you deployed ODF by using a CRD, you can update your ODF deployment by editin
 To remove ODF from your apps, you can delete your app or deployment and the corresponding PVCs.
 {: shortdesc}
 
-If you want to fully remove ODF and all your data, you can [remove your storage cluster](#ocs-remove-storage-cluster).
+If you want to fully remove ODF and all your data, you can [remove your storage cluster](#ocs-rm-crd).
 {: note}
 
 1. List your PVCs and note the name of the PVC and the corresponding PV that you want to remove.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-14"
+lastupdated: "2021-07-19"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -375,7 +375,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
 
     You can find the {{site.data.keyword.cloud_notm}} IAM token in the **access_token** and the refresh token in the **refresh_token** field of your API output.
 
-4.  List all classic or VPC clusters in your account. If you want to [run Kubernetes API requests against a cluster](#kube_api), make sure to note the name or ID of the cluster that you want to work with.
+4.  List all classic or VPC clusters in your account.
   * **Classic**:
      ```
      GET https://containers.cloud.ibm.com/global/v2/classic/getClusters

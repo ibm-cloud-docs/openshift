@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-16"
+lastupdated: "2021-07-19"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic, roks
 
@@ -349,7 +349,7 @@ Before you install ODF, get the details of the local disks on your worker nodes.
 You can install the add-on by using the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable).
 {: shortdesc}
 
-If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](#odf-create-cos-classic), and created the Kubernetes secret in your cluster. When you create the ODF CRD in your cluster, ODF looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store by using your {{site.data.keyword.cos_short}} HMAC credentials.
+If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](#odf-create-cos), and created the Kubernetes secret in your cluster. When you create the ODF CRD in your cluster, ODF looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store by using your {{site.data.keyword.cos_short}} HMAC credentials.
 {: note}
 
 1. Review the [parameter reference](#odf-classic-param-ref). When you enable the add-on, you can override the default values by specifying the `--param "key=value"` flag for each parameter that you want to override. Note that for Classic clusters, you must provide the device paths to the local disks that you want to use.
@@ -415,7 +415,7 @@ To install ODF in your cluster, complete the following steps.
 2. On the cluster **Overview** page, click **Add-ons**.
 3. On the OpenShift Data Foundation card, click **Install**.
 
-**Next steps** [Create your storage cluster](#odf-classic-deploy-crd).
+**Next steps** [Create your storage cluster](#ocs-classic-deploy-crd).
 
 ## Creating your storage cluster
 {: #ocs-classic-deploy-crd}
@@ -423,10 +423,10 @@ To install ODF in your cluster, complete the following steps.
 To deploy ODF in your classic cluster, you can create a custom resource definition to specify your storage device details.
 {: shortdesc}
 
-If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](#odf-create-cos-classic), and created the Kubernetes secret in your cluster. When you create the ODF CRD in your cluster, ODF looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store by using your {{site.data.keyword.cos_short}} HMAC credentials.
+If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](#odf-create-cos), and created the Kubernetes secret in your cluster. When you create the ODF CRD in your cluster, ODF looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store by using your {{site.data.keyword.cos_short}} HMAC credentials.
 {: note}
 
-1. Create a custom resource called `OcsCluster`. Save and edit the following custom resource definition to include the device paths for the local disks [that you retrieved earlier](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-classic-get-devices). If you don't specify the optional `workerNodes` parameter, then all worker nodes in your cluster are used for the ODF deployment. Be sure to include the `/dev/disk/by-id/` path when you specify your storage devices.
+1. Create a custom resource called `OcsCluster`. Save and edit the following custom resource definition to include the device paths for the local disks [that you retrieved earlier](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-classic-get-devices). If you don't specify the optional `workerNodes` parameter, then all worker nodes in your cluster are used for the ODF deployment. Be sure to include the `/dev/disk/by-id/` path when you specify your storage devices.
 
   **Example custom resource for installing ODF on all worker nodes in a classic cluster**
   ```yaml
