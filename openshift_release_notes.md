@@ -110,6 +110,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 19 July 2021 | **Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.7.19_1525_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4719_1525), [`4.6.38_1549_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4638_1549), [`4.5.41_1545_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4541_1545), and [`3.11.465_1596_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311465_1596).
 | 15 July 2021 |  |
 | 12 July 2021| OpenShift Data Foundation doc restructuring. For more information, see [Deploying OpenShift Data Foundation on VPC clusters](/docs/openshift?topic=openshift-deploy-odf-vpc), [Deploying OpenShift Data Foundation on {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-deploy-odf-sat), and [Deploying OpenShift Data Foundation on Classic clusters](/docs/openshift?topic=openshift-deploy-odf-classic). |
 | 07 July 2021 | **OpenShift Data Foundation** As of 10 July 2021, version `0.0.2` of the OpenShift Container Storage add-on is deprecated and becomes unsupported on 24 July 2021. Add-on versions `4.6.0` and `4.7.0` are now available. If you have version `0.0.2` of the add-on installed in your cluster, update the add-on to a supported version. For more information, see the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog). |
