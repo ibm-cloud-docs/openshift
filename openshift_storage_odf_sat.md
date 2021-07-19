@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-07-19"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic, roks
 
@@ -117,14 +117,14 @@ Before you install ODF in your {{site.data.keyword.satelliteshort}} cluster, eac
 1. [Attach at least 3 hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) that meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs). Additionally, each host must have a minimum of 16 CPUs and 64 GB RAM.
 1. [Create a cluster](/docs/openshift?topic=openshift-clusters) with the hosts that you previously attached to the location.
 
-You can also deploy ODF to your {{site.data.keyword.satelliteshort}} cluster by using the {{site.data.keyword.satelliteshort}} storage templates. Templates allow you to automate your deployment across multiple {{site.data.keyword.satelliteshort}} clusters. For more information, see [ODF](/docs/satellite?topic=satellite-config-storage-ocs-remote) or [ODF](/docs/satellite?topic=satellite-config-storage-ocs-local) depending on your cluster setup.
+You can also deploy ODF to your {{site.data.keyword.satelliteshort}} cluster by using the {{site.data.keyword.satelliteshort}} storage templates. Templates allow you to automate your deployment across multiple {{site.data.keyword.satelliteshort}} clusters. For more information, see [ODF with remote disks](/docs/satellite?topic=satellite-config-storage-ocs-remote) or [ODF with local disks](/docs/satellite?topic=satellite-config-storage-ocs-local) depending on your cluster setup.
 {: tip}
 
 ### Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance
 {: #odf-create-cos-sat}
 
 If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing store in your storage cluster, create an instance of {{site.data.keyword.cos_full_notm}}. Then, create a set of HMAC credentials and a Kubernetes secret that uses your {{site.data.keyword.cos_short}} HMAC credentials. If you don't specify {{site.data.keyword.cos_full_notm}} credentials during installation, then the default backing store in your storage cluster is created by using the PVs in your cluster. You can set up additional backing stores after deploying ODF, but you cannot change the default backing store.
-{: shortdesc}
+
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -185,8 +185,8 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 {: note}
 
 1. Review the [parameter reference](#odf-sat-param-ref). When you enable the add-on, you can override the default values by specifying the `--param "key=value"` flag for each parameter that you want to override.
-1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version 4.7.0 of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must specify the `--version` flag when you enable the add-on.
-1. Review the add-on options.
+1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.7.0` of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must specify the `--version` flag when you enable the add-on.
+1. Review the add-on options. Note that add-on options are only available for version `4.7.0` and later.
   ```sh
   ibmcloud oc cluster addon options --addon openshift-container-storage
   ```
@@ -205,6 +205,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
   numOfOsd              1   
   monDevicePaths        invalid   
   osdStorageClassName   ibmc-vpc-block-metro-10iops-tier
+  clusterEncryption     false
   ```
   {: screen}
 
@@ -240,7 +241,7 @@ To install ODF in your cluster, complete the following steps.
 {: shortdesc}
 
 1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version 4.7.0 of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must install the add-on from the CLI and specify the `--version` flag.
-1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to install the add-on.
+1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to install the add-on.
 2. On the cluster **Overview** page, click **Add-ons**.
 3. On the OpenShift Data Foundation card, click **Install**.
 
@@ -327,10 +328,10 @@ Before you install ODF, get the details of the local disks on your worker nodes.
 To create an ODF storage cluster in your VPC cluster or your {{site.data.keyword.satelliteshort}} cluster by using dynamic provisioning for your storage volumes, you can create a custom resource to specify storage device details.
 {: shortdesc}
 
-If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](/docs/openshift?topic=openshift-ocs-storage-install#ocs-create-cos), and created the Kubernetes secret in your cluster. When you create the ODF CRD in your cluster, ODF looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store that uses your {{site.data.keyword.cos_short}} HMAC credentials.
+If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](#odf-create-cos-sat), and created the Kubernetes secret in your cluster. When you create the ODF CRD in your cluster, ODF looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store that uses your {{site.data.keyword.cos_short}} HMAC credentials.
 {: note}
 
-1. Create a custom resource called `OcsCluster`. Save one of the following custom resource definition files on your local machine and edit it to include the name of the custom storage class that you created earlier as the `monStorageClassName` and `osdStorageClassName` parameters. For more information about the `OcsCluster` parameters, see the [parameter reference](#ocs-vpc-param-ref).
+1. Create a custom resource called `OcsCluster`. Save one of the following custom resource definition files on your local machine and edit it to include the name of the custom storage class that you created earlier as the `monStorageClassName` and `osdStorageClassName` parameters. For more information about the `OcsCluster` parameters, see the [parameter reference](	/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-vpc-param-ref).
 
   **Example custom resource definition for installing ODF on all worker nodes**
   ```yaml
@@ -364,9 +365,9 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     billingType: advanced
     ocsUpgrade: false
     workerNodes: # Specify the private IP addresses of the worker nodes that you want to use.
-      - <worker-IP> # To get a list worker nodes, run `oc get nodes`.
-      - <worker-IP>
-      - <worker-IP>
+      - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
+      - <workerNodes>
+      - <workerNodes>
   ```
   {: codeblock}
 
@@ -419,9 +420,9 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
       - <device-by-id> # Example: /dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2
       - <device-by-id> # Example: /dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2
     workerNodes: # Specify the private IP addresses of each worker node you want to use.
-      - <worker-IP> # To get a list worker nodes, run `oc get nodes`.
-      - <worker-IP>
-      - <worker-IP>
+      - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
+      - <workerNodes>
+      - <workerNodes>
   ```
   {: codeblock}
 
@@ -454,7 +455,8 @@ Refer to the following parameters when you use the add-on or operator in {{site.
 | `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the specified number. For example, if you enter `1`, ODF creates 3 OSDs. | `1` |
 | `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your OCS deployment. | `hourly` |
 | `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
-| `worker-IP` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
+| `workerNodes` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
+| `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
 {: caption="Classic OpenShift Data Foundation parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
 

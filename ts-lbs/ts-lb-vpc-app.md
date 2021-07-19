@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-07-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -118,7 +118,7 @@ When you create a Kubernetes `LoadBalancer` service in your cluster, a VPC load 
 * The VPC load balancer is offline, such as due to load balancer provisioning errors or VSI connection errors.
 * The VPC load balancer is deleted through the VPC console or the CLI.
 * The VPC load balancer's DNS entry is still registering.
-* You reached the maximum number of VPC load balancers permitted per account. Across all of your VPC clusters in your VPC, a maximum of 20 VPC load balancers can be created.
+* You reached the maximum number of VPC load balancers permitted per account. Check the [VPC quotas documentation](/docs/vpc?topic=vpc-quotas#load-balancer-quotas) for VPC resource quotas across all of your VPC clusters in your VPC.
 
 {: tsResolve}
 Verify that no VPC security groups are blocking traffic to your cluster and that the VPC load balancer is available.

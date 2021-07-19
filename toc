@@ -177,8 +177,8 @@ Red Hat OpenShift on IBM Cloud
         openshift_storage_portworx.md
 
         {: topicgroup}
-        Storing data on OpenShift Data Foundation</staging>
-            openshift_storage_odf_understand.md<staging>
+        Storing data on OpenShift Data Foundation
+            </staging>openshift_storage_odf_understand.md<staging>
             openshift_storage_odf_vpc.md
             openshift_storage_odf_sat.md
             openshift_storage_odf_classic.md

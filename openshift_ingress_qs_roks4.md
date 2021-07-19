@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-28"
+lastupdated: "2021-07-14"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -122,25 +122,6 @@ Quickly expose your app to the Internet by creating an Ingress resource.
 
 3. Using the Ingress subdomain, create an Ingress resource file. Replace `<app_path>` with the path that your app listens on. If your app does not listen on a specific path, define the root path as a slash (<code>/</code>) only.
 
-  * For OpenShift 4.5 or earlier, use `networking.k8s.io/v1beta1`.
-
-    ```yaml
-    apiVersion: networking.k8s.io/v1beta1
-    kind: Ingress
-    metadata:
-      name: myingressresource
-    spec:
-      rules:
-      - host: <ingress_subdomain>
-        http:
-          paths:
-          - path: /<app_path>
-            backend:
-              serviceName: my-app-svc
-              servicePort: 80
-    ```
-    {: codeblock}
-
   * For OpenShift 4.6 or later, use `networking.k8s.io/v1`.
 
     ```yaml
@@ -162,6 +143,25 @@ Quickly expose your app to the Internet by creating an Ingress resource.
                   number: 80
     ```
     {: codeblock}
+
+    * For OpenShift 4.5 or earlier, use `networking.k8s.io/v1beta1`.
+
+      ```yaml
+      apiVersion: networking.k8s.io/v1beta1
+      kind: Ingress
+      metadata:
+        name: myingressresource
+      spec:
+        rules:
+        - host: <ingress_subdomain>
+          http:
+            paths:
+            - path: /<app_path>
+              backend:
+                serviceName: my-app-svc
+                servicePort: 80
+      ```
+      {: codeblock}
 
 4. Create the Ingress resource in the same project as your app service.
   ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-07-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -261,6 +261,9 @@ Consider the following example scenario to understand how clusters might become 
 <br>
 
 {: tsResolve}
+
+Before you begin: Log in to the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
+
 1.  Check which infrastructure account the region that your cluster is in currently uses to provision clusters. Replace `<region>` with the {{site.data.keyword.cloud_notm}} region that the cluster is in.
     ```sh
     ibmcloud oc credential get --region <region>
@@ -274,7 +277,7 @@ Consider the following example scenario to understand how clusters might become 
     {: screen}
 2.  Check which infrastructure account was used to provision the cluster.
     1.  In the **Worker Nodes** tab, select a worker node and note its **ID**.
-    2.  Open the menu ![Menu icon](../icons/icon_hamburger.svg "Menu icon") and click **Classic Infrastructure**.
+    2.  Open the menu ![Menu icon](../../icons/icon_hamburger.svg "Menu icon") and click **Classic Infrastructure**.
     3.  From the infrastructure navigation pane, click **Devices > Device List**.
     4.  Search for the worker node ID that you previously noted.
     5.  If you do not find the worker node ID, the worker node is not provisioned into this infrastructure account. Switch to a different infrastructure account and try again.

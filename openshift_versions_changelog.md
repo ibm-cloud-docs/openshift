@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-07-19"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -113,6 +113,19 @@ Master patch updates are applied automatically. Worker node patch updates can be
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.7 patch updates.
 {: shortdesc}
 
+### Changelog for worker node fix pack 4.7.19_1525_openshift, released 19 July 2021
+{: #4719_1525}
+
+The following table shows the changes that are included in the worker node fix pack `4.7.19_1525_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| {{site.data.keyword.openshiftshort}} | 4.7.18 | 4.7.19 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-19){: external}. |
+| RHEL 7 Packages| N/A | N/A | Updated worker node image with package updates. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.7.18_1524_openshift" caption-side="top"}
+
 ### Changelog for worker node fix pack 4.7.18_1524_openshift, released 6 July 2021
 {: #4718_1524}
 
@@ -211,6 +224,19 @@ The following table shows the changes that are included in the master fix pack p
 
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.6 patch updates.
 {: shortdesc}
+
+### Changelog for worker node fix pack 4.6.38_1549_openshift, released 19 July 2021
+{: #4638_1549}
+
+The following table shows the changes that are included in the worker node fix pack `4.6.38_1549_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| {{site.data.keyword.openshiftshort}} | 4.6.36 | 4.6.38 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-38){: external}. |
+| RHEL 7 Packages| N/A | N/A | Updated worker node image with package updates. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.6.36_1548_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 4.6.36_1548_openshift, released 6 July 2021
 {: #4636_1548}
@@ -521,6 +547,19 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.5 p
 
 {{site.data.keyword.openshiftshort}} version 4.5 is deprecated, with a tentative unsupported date of 1 September 2021. Update your cluster to at least [version 4.6](/docs/openshift?topic=openshift-openshift_versions#ocp46) as soon as possible.
 {: deprecated}
+
+### Changelog for worker node fix pack 4.5.41_1545_openshift, released 19 July 2021
+{: #4541_1545}
+
+The following table shows the changes that are included in the worker node fix pack `4.5.41_1545_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| {{site.data.keyword.openshiftshort}} | 4.5.40 | 4.5.41 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html#ocp-4-5-41){: external}. |
+| RHEL 7 Packages| N/A | N/A | Updated worker node image with package updates. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.5.40_1544_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 4.5.40_1544_openshift, released 6 July 2021
 {: #4540_1544}
@@ -1043,6 +1082,19 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 3.11 
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported on 6 June 2022 (date subject to change).
 {: deprecated}
+
+### Changelog for worker node fix pack 3.11.465_1596_openshift, released 19 July 2021
+{: #311465_1596}
+
+The following table shows the changes that are included in the worker node fix pack `3.11.465_1596_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| {{site.data.keyword.openshiftshort}} node | 3.11.462 | 3.11.465 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-465){: external}. |
+| RHEL 7 Packages| N/A | N/A | Updated worker node image with package updates. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.462_1595_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 3.11.462_1595_openshift, released 6 July 2021
 {: #311462_1595}

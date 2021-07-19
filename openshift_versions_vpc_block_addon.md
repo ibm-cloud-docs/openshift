@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-09"
+lastupdated: "2021-07-19"
 
 keywords: vpc block, add-on, vpc block changelog
 
@@ -117,7 +117,6 @@ Refer to the following tables for a summary of changes for each version of the {
 | 3.0.0 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | >= 4.3 |
 | 2.0.3 | | >=4.3 |
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.block_storage_is_full}} add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the {{site.data.keyword.block_storage_is_full}} version is supported for."}
-
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-07-19"
 
 keywords: openshift
 subcollection: openshift
@@ -303,7 +303,6 @@ subcollection: openshift
 [Setting up the API](/docs/openshift?topic=openshift-cs_api_install)
 * [About the API](/docs/openshift?topic=openshift-cs_api_install#api_about)
 * [Automating cluster deployments with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api)
-* [Working with your cluster by using the Kubernetes API](/docs/openshift?topic=openshift-cs_api_install#kube_api)
 * [Refreshing {{site.data.keyword.cloud_notm}} IAM access tokens and obtaining new refresh tokens with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api_refresh)
 * [Refreshing {{site.data.keyword.cloud_notm}} IAM access tokens and obtaining new refresh tokens with the CLI](/docs/openshift?topic=openshift-cs_api_install#cs_cli_refresh)
 
@@ -416,6 +415,7 @@ subcollection: openshift
   * [Accessing clusters through the cluster service URL](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_se)
   * [Accessing clusters from within the {{site.data.keyword.cloud_notm}} private network](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_link)
   * [Accessing clusters from the public network](/docs/openshift?topic=openshift-access_cluster#sat_public_access)
+* [Accessing private clusters by using the Wireguard VPN](/docs/openshift?topic=openshift-access_cluster#access_vpn)
 * [Accessing clusters from automation tools by using an API key](/docs/openshift?topic=openshift-access_cluster#access_automation)
   * [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key)
   * [Using a service ID to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_service_id)
@@ -619,10 +619,13 @@ subcollection: openshift
 [Protecting sensitive information in your cluster](/docs/openshift?topic=openshift-encryption)
 * [Overview of cluster encryption](/docs/openshift?topic=openshift-encryption#encrypt_ov)
 * [Understanding Key Management Service (KMS) providers](/docs/openshift?topic=openshift-encryption#kms)
+  * [Available KMS providers](/docs/openshift?topic=openshift-encryption#kms-providers)
+  * [Controlling encryption](/docs/openshift?topic=openshift-encryption#kms-encrypt-control)
+  * [Features and limitations of KMS providers](/docs/openshift?topic=openshift-encryption#kms-keyprotect-features)
 * [Encrypting the Kubernetes master's local disk and secrets by using a KMS provider](/docs/openshift?topic=openshift-encryption#keyprotect)
   * [Prerequisites](/docs/openshift?topic=openshift-encryption#kms_prereqs)
-  * [Enabling KMS encryption through the CLI](/docs/openshift?topic=openshift-encryption#kms_cli)
-  * [Enabling KMS encryption through the console](/docs/openshift?topic=openshift-encryption#kms_ui)
+  * [Enabling KMS encryption for the cluster through the CLI](/docs/openshift?topic=openshift-encryption#kms_cli)
+  * [Enabling KMS encryption for the cluster through the console](/docs/openshift?topic=openshift-encryption#kms_ui)
   * [Rotating the root key for your cluster](/docs/openshift?topic=openshift-encryption#kms_rotate)
 * [Verifying secret encryption](/docs/openshift?topic=openshift-encryption#verify_kms)
 * [Encrypting data in classic clusters by using IBM Cloud Data Shield (beta)](/docs/openshift?topic=openshift-encryption#datashield)
@@ -1293,17 +1296,16 @@ subcollection: openshift
 
 * [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-vpc#install-odf-console-vpc)
 
-* [Creating your ODF storage cluster](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-vpc-deploy-crd)
-
-* [Expanding ODF in VPC clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#expanding-odf-in-vpc-clusters)
-    * [Scaling by increasing the `numOfOsd` in your CRD](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-scaling-osd)
+* [Creating your ODF custom resource](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-vpc-deploy-crd)
+    * [Scaling ODF](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-scaling)
+    * [Scaling by increasing the `numOfOsd`](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-scaling-osd)
     * [Expanding ODF by adding worker nodes to your VPC cluster](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-add-worker-nodes)
 
 * [Limitations](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-limitations)
 
 * [Storage class reference](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-reference-section)
 
-* [VPC: OpenShift Data Foundation parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-vpc-param-ref)
+* [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-vpc-param-ref)
 
 
 ## Deploying OpenShift Data Foundation on {{site.data.keyword.satelliteshort}} clusters
@@ -1367,11 +1369,9 @@ subcollection: openshift
 
 * [VPC: Updating the ODF operator from your CRD](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-up-vpc)
 
-* [Classic: Increasing storage capacity by adding worker nodes to your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-add-worker-nodes-classic)
-
 * [Removing ODF from your apps](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-apps-storage)
 
-* [Removing your ODF storage cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-storage-cluster)
+* [Removing your ODF custom resource](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-crd)
 
 * [Cleaning up your ODF deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-cleanup-resources)
     * [Cleaning up ODF](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-cleanup)
@@ -1722,12 +1722,14 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.7 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-47)
+  * [Changelog for worker node fix pack 4.7.19_1525_openshift, released 19 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4719_1525)
   * [Changelog for worker node fix pack 4.7.18_1524_openshift, released 6 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4718_1524)
   * [Changelog for master fix pack 4.7.16_1523_openshift, released 28 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4716_1523)
   * [Changelog for worker node fix pack 4.7.16_1522_openshift, released 22 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4716_1522)
   * [Changelog for worker node fix pack 4.7.13_1521_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4713_1521)
   * [Changelog for master fix pack 4.7.12_1520_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4712_1520)
 * [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
+  * [Changelog for worker node fix pack 4.6.38_1549_openshift, released 19 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4638_1549)
   * [Changelog for worker node fix pack 4.6.36_1548_openshift, released 6 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4636_1548)
   * [Changelog for master fix pack 4.6.34_1547_openshift, released 28 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4634_1547)
   * [Changelog for worker node fix pack 4.6.34_1546_openshift, released 22 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4634_1546)
@@ -1747,6 +1749,7 @@ subcollection: openshift
   * [Changelog for master fix pack 4.6.16_1532_openshift, released 22 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4616_1532)
   * [Changelog for 4.6.16_1530_openshift (master) and 4.6.16_1529_openshift (worker node), released 17 February 2020](/docs/openshift?topic=openshift-openshift_changelog#4616_1530)
 * [Deprecated: Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
+  * [Changelog for worker node fix pack 4.5.41_1545_openshift, released 19 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4541_1545)
   * [Changelog for worker node fix pack 4.5.40_1544_openshift, released 6 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4540_1544)
   * [Changelog for master fix pack 4.5.40_1543_openshift, released 28 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4540_1543)
   * [Changelog for worker node fix pack 4.5.40_1542_openshift, released 22 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4540_1542)
@@ -1778,6 +1781,7 @@ subcollection: openshift
   * [Changelog for master fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518)
   * [Changelog for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4513_1515)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for worker node fix pack 3.11.465_1596_openshift, released 19 July 2021](/docs/openshift?topic=openshift-openshift_changelog#311465_1596)
   * [Changelog for worker node fix pack 3.11.462_1595_openshift, released 6 July 2021](/docs/openshift?topic=openshift-openshift_changelog#311462_1595)
   * [Changelog for master fix pack 3.11.439_1594_openshift, released 28 June 2021](/docs/openshift?topic=openshift-openshift_changelog#311439_1594)
   * [Changelog for worker node fix pack 3.11.452_1593_openshift, released 22 June 2021](/docs/openshift?topic=openshift-openshift_changelog#311452_1593)
@@ -2270,6 +2274,10 @@ subcollection: openshift
 * [Deprecated: Troubleshooting image pull secrets that use tokens](/docs/openshift?topic=openshift-ts-app-image-pull#img-pull-token)
 
 [Why don't my containers start?](/docs/openshift?topic=openshift-ts-app-container-start)
+* [Fixing registry quota issues](/docs/openshift?topic=openshift-ts-app-container-start#regitry-quota)
+* [Fixing IP address issues](/docs/openshift?topic=openshift-ts-app-container-start#calico-ips)
+  * [Step 1: Releasing individual IP addresses](/docs/openshift?topic=openshift-ts-app-container-start#individual-ips)
+  * [Step 2: Releasing IP address blocks](/docs/openshift?topic=openshift-ts-app-container-start#releasing-individual-ips)
 
 [Why do pods remain in pending state?](/docs/openshift?topic=openshift-ts-app-pod-pending)
 
@@ -2472,11 +2480,6 @@ subcollection: openshift
 
 [Why is the status of my OpenShift Data Foundation storage cluster stuck at `Failed to reconcile`.](/docs/openshift?topic=openshift-ts-ocs-roks-debug)
 * [ODF device set creation fails due to PVC names exceeding the Kubernetes character limit](/docs/openshift?topic=openshift-ts-ocs-roks-debug#ocs-ts-sc-character-limit)
-
-[Why does my OpenShift Data Foundation storage cluster have an 'Error' status?](/docs/openshift?topic=openshift-ts-ocs-install-error-status)
-* [Error: Number of worker nodes less than 3.](/docs/openshift?topic=openshift-ts-ocs-install-error-status#ts-ocs-install-3workers)
-* [Error: Failed to update storage cluster](/docs/openshift?topic=openshift-ts-ocs-install-error-status#ts-ocs-install-decrease-capacity)
-* [Error: Error in reconcile of local volumes](/docs/openshift?topic=openshift-ts-ocs-install-error-status#ts-ocs-install-local-volumes)
 
 [Why are the ODF pods stuck at `Pending`?](/docs/openshift?topic=openshift-ts-ocs-pods-pending-status)
 

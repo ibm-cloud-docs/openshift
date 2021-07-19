@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-07-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -323,50 +323,42 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
 
 2. To allow worker nodes to communicate with the cluster master over the public cloud service endpoint, allow outgoing network traffic from the source <em>&lt;each_worker_node_publicIP&gt;</em> to the destination TCP/UDP port range 20000-32767 and port 443, and the following IP addresses and network groups. Additionally, if you plan to use Ingress or routes to expose apps in your cluster, allow incoming network traffic through these ports to your worker node IP addresses as well so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers.
    - `TCP/UDP port range 20000-32767, port 443 FROM <each_worker_node_publicIP> TO <public_IPs>`
-   -  Replace <em>&lt;public_IPs&gt;</em> with the public IP addresses of the zones in the region that your cluster is located.<p class="important">You must allow outgoing traffic to port 443 for **all of the zones within the region** to balance the load during the bootstrapping process.</p>
+   -  Replace <em>&lt;public_IPs&gt;</em> with the public IP addresses of the region that your cluster is located.
     {: #master_ips}
-    <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two.">
+    <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the region in column one and IP addresses to match in column two.">
       <caption>IP addresses to open for outgoing traffic</caption>
           <thead>
           <th>Region</th>
-          <th>Zone</th>
-          <th>Public IP address</th>
+          <th>Public IP addresses</th>
           </thead>
         <tbody>
           <tr>
-            <td>AP North</td>
-            <td>che01<br>hkg02<br>seo01<br>sng01<br><br>tok02, tok04, tok05</td>
-            <td><code>169.38.70.10, 169.38.79.170</code><br><code>161.202.56.10, 161.202.57.34, 169.56.132.234</code><br><code>169.56.69.242, 169.56.96.42</code><br><code>119.81.222.210, 161.202.186.226</code><br><br><code>128.168.71.117, 128.168.75.194, 128.168.85.154, 135.90.69.66, 135.90.69.82, 161.202.126.210, 165.192.69.69, 165.192.80.146, 165.192.95.90, 169.56.1.162, 169.56.48.114</code></td>
+            <td>AP North (che01, hkg02, seo01, sng01, tok02, tok04, tok05)</td>
+            <td><code>119.81.222.210, 128.168.71.117, 128.168.75.194, 128.168.85.154, 135.90.69.66, 135.90.69.82, 161.202.126.210, 161.202.186.226, 161.202.56.10, 161.202.57.34, 165.192.69.69, 165.192.80.146, 165.192.95.90, 169.38.70.10, 169.38.79.170, 169.56.1.162, 169.56.132.234, 169.56.48.114, 169.56.69.242, 169.56.96.42</code></td>
           </tr>
           <tr>
-             <td>AP South</td>
-             <td>syd01, syd04, syd05</td>
+             <td>AP South (syd01, syd04, syd05)</td>
              <td><code>130.198.64.19, 130.198.66.26, 130.198.79.170, 130.198.83.34, 130.198.102.82, 135.90.66.2, 135.90.69.82, 135.90.68.114, 135.90.89.234, 168.1.6.106, 168.1.8.195, 168.1.12.98, 168.1.39.34, 168.1.58.66</code></td>
           </tr>
           <tr>
-             <td>EU Central</td>
-             <td>ams03<br>mil01<br>osl01<br>par01<br><br>fra02, fra04, fra05</td>
-             <td><code>169.50.146.82, 169.50.169.110, 169.50.184.18</code><br><code>159.122.150.2, 159.122.141.69</code><br><code>169.51.73.50, 169.51.91.162</code><br><code>159.8.79.250, 159.8.86.149</code><br><br><code>149.81.78.114, 149.81.103.98, 149.81.104.122, 149.81.113.154, 149.81.123.18, 149.81.142.90, 149.81.180.114, 149.81.180.122, 158.177.79.34, 158.177.107.50, 158.177.112.146, 158.177.138.138, 158.177.151.2, 158.177.156.178, 158.177.198.138, 161.156.12.82, 161.156.65.42, 161.156.65.82, 161.156.79.26, 161.156.115.138, 161.156.120.74, 161.156.183.218, 161.156.187.226, 169.50.56.174</code></td>
+             <td>EU Central (ams03, mil01, osl01, par01, fra02, fra04, fra05)</td>
+             <td><code>149.81.103.98, 149.81.104.122, 149.81.113.154, 149.81.123.18, 149.81.142.90, 149.81.180.114, 149.81.180.122, 149.81.78.114, 158.177.107.50, 158.177.112.146, 158.177.138.138, 158.177.151.2, 158.177.156.178, 158.177.198.138, 158.177.79.34, 159.122.141.69, 159.122.150.2, 159.8.79.250, 159.8.86.149, 161.156.115.138, 161.156.12.82, 161.156.120.74, 161.156.183.218, 161.156.187.226, 161.156.65.42, 161.156.65.82, 161.156.79.26, 169.50.146.82, 169.50.169.110, 169.50.184.18, 169.50.56.174, 169.51.73.50, 169.51.91.162</code></td>
           </tr>
           <tr>
-            <td>Osaka</td>
-            <td>osa21, osa22, osa23</td>
+            <td>Osaka (osa21, osa22, osa23)</td>
             <td><code>163.68.69.114, 163.68.69.122, 163.69.65.114, 163.69.65.122, 163.73.64.250, 163.73.65.194</code></td>
           </tr>
           <tr>
-            <td>UK South</td>
-            <td>lon02, lon04, lon05, lon06</td>
+            <td>UK South (lon02, lon04, lon05, lon06)</td>
             <td><code>141.125.66.26, 141.125.77.58, 141.125.91.138, 158.175.65.170, 158.175.77.178, 158.175.111.42, 158.175.125.194, 158.175.150.122, 158.176.71.242, 158.176.94.26, 158.176.95.146, 158.176.123.130, 158.176.142.26, 159.122.224.242, 159.122.242.78</code></td>
           </tr>
           <tr>
-            <td>US East</td>
-             <td>mon01<br>tor01<br><br>wdc04, wdc06, wdc07</td>
-             <td><code>169.54.80.106, 169.54.126.219</code><br><code>169.53.167.50, 169.53.171.210</code><br><br><code>52.117.88.42, 169.47.162.130, 169.47.174.106, 169.60.73.142, 169.60.92.50, 169.60.100.242, 169.60.101.42, 169.61.74.210, 169.61.83.62, 169.61.109.34, 169.62.9.250, 169.62.10.20, 169.62.10.162, 169.63.75.82, 169.63.88.178, 169.63.88.186, 169.63.94.210, 169.63.111.82, 169.63.149.122, 169.63.158.82, 169.63.160.13</code></td>
+            <td>US East (mon01, tor01, wdc04, wdc06, wdc07)</td>
+             <td><code>52.117.88.42, 169.47.162.130, 169.47.174.106, 169.53.167.50, 169.53.171.210, 169.54.126.219, 169.54.80.106, 169.60.100.242, 169.60.101.42, 169.60.73.142, 169.60.92.50, 169.61.109.34, 169.61.74.210, 169.61.83.62, 169.62.10.162, 169.62.10.20, 169.62.9.250, 169.63.111.82, 169.63.149.122, 169.63.158.82, 169.63.160.13, 169.63.75.82, 169.63.88.178, 169.63.88.186, 169.63.94.210</code></td>
           </tr>
           <tr>
-            <td>US South</td>
-            <td>mex01<br>sao01<br>sjc03<br>sjc04<br><br>dal10,dal12,dal13</td>
-            <td><code>169.57.13.10, 169.57.100.18</code><br><code>169.57.151.10, 169.57.154.98</code><br><code>169.45.67.210, 169.45.88.98</code><br><code>169.62.82.197, 169.62.87.170</code><br><br><code>50.22.129.34, 52.116.231.210, 52.116.254.234, 52.117.28.138, 52.117.197.210, 52.117.212.34, 52.117.215.162, 52.117.232.194, 52.117.240.106, 169.46.7.238, 169.46.24.210, 169.46.27.234, 169.46.68.234, 169.46.89.50, 169.46.110.218, 169.46.111.122, 169.47.70.10, 169.47.71.138, 169.47.109.34, 169.47.115.18, 169.47.201.194, 169.47.209.66, 169.47.229.90, 169.47.232.210, 169.47.239.34, 169.48.110.250, 169.48.143.218, 169.48.161.242, 169.48.230.146, 169.48.244.66, 169.59.219.90, 169.59.230.98, 169.60.128.2, 169.60.170.234, 169.61.29.194, 169.61.60.130, 169.61.28.66, 169.61.175.106, 169.61.177.2, 169.61.228.138, 169.62.166.98, 169.62.189.26, 169.62.206.234, 169.63.39.66, 169.63.47.250</code></td>
+            <td>US South (mex01, sao01, sjc03, sjc04, dal10, dal12, dal13)</td>
+            <td><code>50.22.129.34, 52.116.231.210, 52.116.254.234, 52.117.197.210, 52.117.212.34, 52.117.215.162, 52.117.232.194, 52.117.240.106, 52.117.28.138, 169.45.67.210, 169.45.88.98, 169.46.110.218, 169.46.111.122, 169.46.24.210, 169.46.27.234, 169.46.68.234, 169.46.7.238, 169.46.89.50, 169.47.109.34, 169.47.115.18, 169.47.201.194, 169.47.209.66, 169.47.229.90, 169.47.232.210, 169.47.239.34, 169.47.70.10, 169.47.71.138, 169.48.110.250, 169.48.143.218, 169.48.161.242, 169.48.230.146, 169.48.244.66, 169.57.100.18, 169.57.13.10, 169.57.151.10, 169.57.154.98, 169.59.219.90, 169.59.230.98, 169.60.128.2, 169.60.170.234, 169.61.175.106, 169.61.177.2, 169.61.228.138, 169.61.28.66, 169.61.29.194, 169.61.60.130, 169.62.166.98, 169.62.189.26, 169.62.206.234, 169.62.82.197, 169.62.87.170, 169.63.39.66, 169.63.47.250</code></td>
           </tr>
           </tbody>
         </table>
@@ -445,7 +437,7 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
 
 8. If you use Ingress or routes to expose apps in your cluster, allow incoming network traffic from [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} on port 80 to the IP addresses of your router services so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers.
 
-  <p class="important">From 07 to 15 July 2021, the DNS provider is changed from Cloudflare to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains for all clusters in {{site.data.keyword.openshiftlong_notm}}. If you currently allow inbound traffic to your classic cluster from the Cloudflare source IP addresses, you must also allow inbound traffic from the [Akamai source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} before 07 July. After the migration, you can remove the Cloudflare IP address rules. For more information, see the [announcement](https://cloud.ibm.com/notifications?selected=1621697674798){: external}.</p>
+  <p class="important">From 07 to 20 July 2021, the DNS provider is changed from Cloudflare to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains for all clusters in {{site.data.keyword.openshiftlong_notm}}. If you currently allow inbound traffic to your classic cluster from the Cloudflare source IP addresses, you must also allow inbound traffic from the [Akamai source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} before 07 July. After the migration completes on 20 July, you can remove the Cloudflare IP address rules. For more information, see the [announcement](https://cloud.ibm.com/notifications?selected=1621697674798){: external}.</p>
 
 </br>
 
@@ -467,49 +459,41 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
 
 3.  To allow worker nodes to communicate with the cluster master over the private cloud service endpoint, allow outgoing network traffic from the source <em>&lt;each_worker_node_privateIP&gt;</em> to the destination TCP/UDP port range 20000-32767 and port 443, and the following IP addresses and network groups.
     - `TCP/UDP port range 20000-32767, port 443 FROM <each_worker_node_privateIP> TO <private_IPs>`
-    -  Replace <em>&lt;private_IPs&gt;</em> with the private IP addresses of the zones in the region where your cluster is located.<p class="important">You must allow outgoing traffic to port 443 for **all of the zones within the region** to balance the load during the bootstrapping process.</p>
-    <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the region in column one, the zone in column two, and IP addresses to match in column three.">
+    -  Replace <em>&lt;private_IPs&gt;</em> with the private IP addresses of the region where your cluster is located.
+    <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the region in column one and IP addresses to match in column three.">
       <caption>IP addresses to open for outgoing traffic</caption>
           <thead>
           <th>Region</th>
-          <th>Zone</th>
           <th>Private IP address</th>
           </thead>
         <tbody>
           <tr>
-            <td>AP North</td>
-            <td>che01<br>hkg02<br>seo01<br>sng01<br><br>tok02, tok04, tok05</td>
-            <td><code>166.9.40.7, 166.9.60.2</code><br><code>166.9.40.36, 166.9.42.7, 166.9.44.3</code><br><code>166.9.44.5, 166.9.46.4</code><br><code>166.9.40.8, 166.9.42.28</code><br><br><code>166.9.40.21, 166.9.40.39, 166.9.40.6, 166.9.42.23, 166.9.42.55, 166.9.42.6, 166.9.44.15, 166.9.44.4, 166.9.44.47</code></td>
+            <td>AP North (che01, hkg02, seo01, sng01, tok02, tok04, tok05)</td>
+            <td><code>166.9.40.21, 166.9.40.36, 166.9.40.39, 166.9.40.6, 166.9.40.7, 166.9.40.8, 166.9.42.23, 166.9.42.28, 166.9.42.55, 166.9.42.6, 166.9.42.7, 166.9.44.15, 166.9.44.3, 166.9.44.4, 166.9.44.47, 166.9.44.5, 166.9.46.4, 166.9.60.2</code></td>
           </tr>
           <tr>
-            <td>AP South</td>
-            <td>syd01, syd04, syd05</td>
+            <td>AP South (syd01, syd04, syd05)</td>
             <td><code>166.9.52.14, 166.9.52.15, 166.9.52.23, 166.9.52.30, 166.9.52.31, 166.9.54.11, 166.9.54.12, 166.9.54.13, 166.9.54.21, 166.9.54.32, 166.9.54.33, 166.9.56.10, 166.9.56.11, 166.9.56.16, 166.9.56.24, 166.9.56.36</code></td>
           </tr>
           <tr>
-             <td>EU Central</td>
-             <td>ams03<br>mil01<br>osl01<br>par01<br><br>fra02, fra04, fra05</td>
-             <td><code>166.9.28.17, 166.9.28.95, 166.9.30.11, 166.9.32.26</code><br><code>166.9.28.20, 166.9.30.12, 166.9.32.27</code><br><code>166.9.32.8, 166.9.32.9, 166.9.32.28</code><br><code>166.9.28.19, 166.9.28.22, 166.9.28.24</code><br><br><code>166.9.28.23, 166.9.28.43, 166.9.28.64, 166.9.28.84, 166.9.28.87, 166.9.28.91, 166.9.28.94, 166.9.28.107, 166.9.30.9, 166.9.30.13, 166.9.30.22, 166.9.30.41, 166.9.30.54, 166.9.30.56, 166.9.30.92, 166.9.30.100, 166.9.32.20, 166.9.32.44, 166.9.32.54, 166.9.32.56, 166.9.32.84, 166.9.32.88, 166.9.32.101</code></td>
+             <td>EU Central (ams03, mil01, osl01, par01, fra02, fra04, fra05)</td>
+             <td><code>166.9.28.107, 166.9.28.17, 166.9.28.19, 166.9.28.20, 166.9.28.22, 166.9.28.23, 166.9.28.24, 166.9.28.43, 166.9.28.64, 166.9.28.84, 166.9.28.87, 166.9.28.91, 166.9.28.94, 166.9.28.95, 166.9.30.100, 166.9.30.11, 166.9.30.12, 166.9.30.13, 166.9.30.22, 166.9.30.41, 166.9.30.54, 166.9.30.56, 166.9.30.9, 166.9.30.92, 166.9.32.101, 166.9.32.20, 166.9.32.26, 166.9.32.27, 166.9.32.28, 166.9.32.44, 166.9.32.54, 166.9.32.56, 166.9.32.8, 166.9.32.84, 166.9.32.88, 166.9.32.9</code></td>
           </tr>
           <tr>
-            <td>Osaka</td>
-            <td>osa21, osa22, osa23</td>
+            <td>Osaka (osa21, osa22, osa23)</td>
             <td><code>166.9.70.6, 166.9.70.8, 166.9.71.8, 166.9.71.10, 166.9.72.9, 166.9.72.10</code></td>
           </tr>
           <tr>
-            <td>UK South</td>
-            <td>lon02, lon04, lon05, lon06</td>
-            <td><code>166.9.34.5, 166.9.34.6, 166.9.34.17, 166.9.34.42, 166.9.34.45, 166.9.34.50, 166.9.36.10, 166.9.36.11, 166.9.36.12, 166.9.36.13, 166.9.36.23, 166.9.36.30, 166.9.36.54, 166.9.36.65, 166.9.38.6, 166.9.38.7, 166.9.38.18, 166.9.38.28, 166.9.38.47, 166.9.38.54</code></td>
+            <td>UK South (lon02, lon04, lon05, lon06)</td>
+            <td><code>166.9.34.17, 166.9.34.42, 166.9.34.45, 166.9.34.5, 166.9.34.50, 166.9.34.6, 166.9.36.10, 166.9.36.11, 166.9.36.12, 166.9.36.13, 166.9.36.23, 166.9.36.30, 166.9.36.54, 166.9.36.65, 166.9.38.18, 166.9.38.28, 166.9.38.47, 166.9.38.54, 166.9.38.6, 166.9.38.7</code></td>
           </tr>
           <tr>
-            <td>US East</td>
-             <td>mon01<br>tor01<br><br>wdc04, wdc06, wdc07</td>
-             <td><code>166.9.20.11, 166.9.24.22</code><br><code>166.9.20.42, 166.9.22.8</code><br><br><code>166.9.20.117, 166.9.20.12, 166.9.20.13, 166.9.20.38, 166.9.20.63, 166.9.20.80, 166.9.20.187, 166.9.22.9, 166.9.22.10, 166.9.22.26, 166.9.22.43, 166.9.22.51, 166.9.22.52, 166.9.22.109, 166.9.24.19, 166.9.24.35, 166.9.24.4, 166.9.24.45, 166.9.24.47, 166.9.24.5, 166.9.24.90</code></td>
+            <td>US East (mon01, tor01, wdc04, wdc06, wdc07)</td>
+             <td><code>166.9.20.11, 166.9.20.117, 166.9.20.12, 166.9.20.13, 166.9.20.187, 166.9.20.38, 166.9.20.42, 166.9.20.63, 166.9.20.80, 166.9.22.10, 166.9.22.109, 166.9.22.26, 166.9.22.43, 166.9.22.51, 166.9.22.52, 166.9.22.8, 166.9.22.9, 166.9.24.19, 166.9.24.22, 166.9.24.35, 166.9.24.4, 166.9.24.45, 166.9.24.47, 166.9.24.5, 166.9.24.90</code></td>
           </tr>
           <tr>
-            <td>US South</td>
-            <td>hou02<br>mex01<br>sao01<br>sjc03<br>sjc04<br><br>dal10,dal12,dal13</td>
-            <td><code>166.9.15.74</code><br><code>166.9.15.76, 166.9.16.38</code><br><code>166.9.12.143, 166.9.16.5</code><br><code>166.9.12.144, 166.9.16.39</code><br><code>166.9.15.75, 166.9.12.26</code><br><br><code>166.9.12.140, 166.9.12.141, 166.9.12.142, 166.9.12.151, 166.9.12.193, 166.9.12.196, 166.9.12.99, 166.9.13.31, 166.9.13.93, 166.9.13.94, 166.9.14.122, 166.9.14.125, 166.9.14.202, 166.9.14.204, 166.9.14.205, 166.9.14.95, 166.9.15.130, 166.9.15.69, 166.9.15.70, 166.9.15.71, 166.9.15.72, 166.9.15.73, 166.9.16.113, 166.9.16.137, 166.9.16.149, 166.9.16.183, 166.9.16.184, 166.9.16.185, 166.9.17.2, 166.9.17.35, 166.9.17.37, 166.9.17.39, 166.9.48.50, 166.9.48.76, 166.9.48.124, 166.9.48.171, 166.9.48.175, 166.9.51.16, 166.9.51.54, 166.9.51.74, 166.9.51.104, 166.9.51.106, 166.9.58.11, 166.9.58.16, 166.9.58.65, 166.9.58.104, 166.9.58.170</code></td>
+            <td>US South (mex01, sao01, sjc03, sjc04, dal10, dal12, dal13)</td>
+            <td><code>166.9.12.140, 166.9.12.141, 166.9.12.142, 166.9.12.143, 166.9.12.144, 166.9.12.151, 166.9.12.193, 166.9.12.196, 166.9.12.26, 166.9.12.99, 166.9.13.31, 166.9.13.93, 166.9.13.94, 166.9.14.122, 166.9.14.125, 166.9.14.202, 166.9.14.204, 166.9.14.205, 166.9.14.95, 166.9.15.130, 166.9.15.69, 166.9.15.70, 166.9.15.71, 166.9.15.72, 166.9.15.73, 166.9.15.74, 166.9.15.75, 166.9.15.76, 166.9.16.113, 166.9.16.137, 166.9.16.149, 166.9.16.183, 166.9.16.184, 166.9.16.185, 166.9.16.38, 166.9.16.39, 166.9.16.5, 166.9.17.2, 166.9.17.35, 166.9.17.37, 166.9.17.39, 166.9.48.124, 166.9.48.171, 166.9.48.175, 166.9.48.50, 166.9.48.76, 166.9.51.104, 166.9.51.106, 166.9.51.16, 166.9.51.54, 166.9.51.74, 166.9.58.104, 166.9.58.11, 166.9.58.16, 166.9.58.170, 166.9.58.65</code></td>
           </tr>
           </tbody>
         </table>
