@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-23"
+lastupdated: "2021-07-22"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -302,7 +302,7 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
 
   Example command:
   ```
-  ibmcloud oc nlb-dns monitor configure --cluster mycluster --nlb-host mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud --enable --description "Login page monitor" --type HTTPS --method GET --path / --timeout 5 --retries 2 --interval 60 --header Host=example.com --header Origin=https://cloudflare.com --expected-body "healthy" --expected-codes 2xx --follows-redirects true
+  ibmcloud oc nlb-dns monitor configure --cluster mycluster --nlb-host mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud --enable --description "Login page monitor" --type HTTPS --method GET --path / --timeout 5 --retries 2 --interval 60 --header Host=example.com --header Origin=https://akamai.com --expected-body "healthy" --expected-codes 2xx --follows-redirects true
   ```
   {: pre}
 
@@ -330,7 +330,7 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
   Interval:           15
 
   Headers:
-  Origin:    https://cloudflare.com
+  Origin:    https://akamai.com
   Host:      example.com
 
   Health Monitor Apply Properties Status:   success

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-22"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -127,7 +127,7 @@ For more information about the prerequisites for each add-on, see:
 - [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool)
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
-- [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-storage-prep)
+- [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc)
 - [Static routes](/docs/openshift?topic=openshift-static-routes)
 
 ## Updating managed add-ons
@@ -201,7 +201,7 @@ Supported add-ons for clusters in {{site.data.keyword.satelliteshort}} locations
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
 - **Deprecated**: [Kubernetes web terminal](/docs/containers?topic=containers-cs_cli_install#cli_web)
-- [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-storage-prep) (However, you can also use [{{site.data.keyword.satelliteshort}} storage templates](/docs/satellite?topic=satellite-config-storage-ocs-local) to consistently deploy ODF across clusters in your location.)
+- [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc) (However, you can also use [{{site.data.keyword.satelliteshort}} storage templates](/docs/satellite?topic=satellite-config-storage-ocs-local) to consistently deploy ODF across clusters in your location.)
 - [Static routes](/docs/openshift?topic=openshift-static-routes)
 
 Unsupported add-ons for clusters in {{site.data.keyword.satelliteshort}} locations:

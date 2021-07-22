@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-22"
 
 keywords: odf, openshift data foundation add-on, changelog
 
@@ -112,7 +112,7 @@ ibmcloud oc cluster addon versions --addon openshift-container-storage
 ```
 {: pre}
 
-Refer to the following table for a summary of changes for each version of the [OpenShift Data Foundation} add-on](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-storage-prep).
+Refer to the following table for a summary of changes for each version of the [OpenShift Data Foundation} add-on](/docs/openshift?topic=openshift-deploy-odf-vpc).
 
 Refer to the following tables for a summary of changes for each version of the [OpenShift Data Foundation} add-on.
 
