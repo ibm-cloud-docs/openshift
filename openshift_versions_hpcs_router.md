@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-07-23"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 

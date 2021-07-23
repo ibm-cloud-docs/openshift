@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-26"
+lastupdated: "2021-07-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -137,13 +137,13 @@ If you previously installed the debug tool by using Helm, first uninstall the `i
 ## Enabling the Diagnostics and Debug Tool add-on
 {: #debug-tool-enable}
 
-1. In your [cluster dashboard](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the name of the cluster where you want to install the debug tool add-on.
+1. In the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the name of the cluster where you want to install the debug tool add-on.
 
 2. Click the **Add-ons** tab.
 
 3. On the Diagnostics and Debug Tool card, click **Install**.
 
-4. In the dialog box, click **Install**. Note that it can take a few minutes for the add-on to be installed. <p class="tip">To resolve some common issues that you might encounter during the add-on deployment, see [Reviewing add-on state and statuses](/docs/openshift?topic=openshift-cs_troubleshoot_addons#debug_addons).</p>
+4. In the dialog box, click **Install**. Note that it can take a few minutes for the add-on to be installed. <p class="tip">To resolve some common issues that you might encounter during the add-on deployment, see [Reviewing add-on state and statuses](/docs/containers?topic=containers-cs_troubleshoot_addons#debug_addons).</p>
 
 5. On the Diagnostics and Debug Tool card, click **Dashboard**.
 

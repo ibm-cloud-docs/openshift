@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-23"
 
 keywords: openshift
 subcollection: openshift
@@ -1493,6 +1493,12 @@ subcollection: openshift
 * [Installing Helm v3 in your cluster](/docs/openshift?topic=openshift-helm#install_v3)
 
 [Adding services by using IBM Cloud service binding](/docs/openshift?topic=openshift-service-binding)
+* [About service binding](/docs/openshift?topic=openshift-service-binding#svc-bind-about)
+  * [What types of services can I bind to my cluster?](/docs/openshift?topic=openshift-service-binding#svc-bind-types)
+  * [What is {{site.data.keyword.cloud_notm}} service binding?](/docs/openshift?topic=openshift-service-binding#svc-bind-what)
+  * [I already have an {{site.data.keyword.cloud_notm}} service. Can I still use {{site.data.keyword.cloud_notm}} service binding?](/docs/openshift?topic=openshift-service-binding#svc-bind-existing)
+  * [What if I want to use service credentials that use the private cloud service endpoint?](/docs/openshift?topic=openshift-service-binding#svc-bind-private-cse)
+  * [Can I use all {{site.data.keyword.cloud_notm}} services in my cluster?](/docs/openshift?topic=openshift-service-binding#svc-bind-which)
 * [Adding IBM Cloud services to clusters](/docs/openshift?topic=openshift-service-binding#bind-services)
 * [Accessing service credentials from your apps](/docs/openshift?topic=openshift-service-binding#adding_app)
   * [Mounting the secret as a volume to your pod](/docs/openshift?topic=openshift-service-binding#mount_secret)

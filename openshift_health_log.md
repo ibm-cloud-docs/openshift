@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-07-23"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -173,7 +173,7 @@ To set up a logging configuration for your cluster:
 2. Set up a logging configuration for your cluster. When you create the logging configuration, an {{site.data.keyword.openshiftshort}} project `ibm-observe` is created and a {{site.data.keyword.la_short}} agent is deployed as a daemon set to all worker nodes in your cluster. This agent collects logs with the extension `*.log` and extensionless files that are stored in the `/var/log` directory of your pod from all projects, including `kube-system`. The agent then forwards the logs to the {{site.data.keyword.la_full_notm}} service.
 
    - **From the console:**
-     1. From the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to create a {{site.data.keyword.la_short}} configuration.
+     1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to create a {{site.data.keyword.la_short}} configuration.
      2. On the cluster **Overview** page, click **Connect**.
      3. Select the region and the {{site.data.keyword.la_full_notm}} service instance that you created earlier, and click **Connect**.
 
@@ -236,7 +236,7 @@ To set up a logging configuration for your cluster:
       {: pre}
 
 4. Access the logs for your pods from the {{site.data.keyword.la_short}} dashboard.
-   1. From the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster that you configured.  
+   1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster that you configured.  
    2. On the cluster **Overview** page, click **Launch**. The {{site.data.keyword.la_short}} dashboard opens.
    3. Review the pod logs that the {{site.data.keyword.la_short}} agent collected from your cluster. It might take a few minutes for your first logs to show.
 

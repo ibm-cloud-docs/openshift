@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-07-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -177,7 +177,7 @@ Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many of t
 | Autoscaling compute machines | You can set up a `ClusterAutoscaler` resource. | You can set up the [cluster autoscaler plug-in](/docs/openshift?topic=openshift-ca). |
 | Worker node operating system | CoreOS or RHEL. | RHEL 7. |
 | Support | Provided per the terms of your Red Hat subscription or cloud provider. You can use the `oc adm must-gather` tool to help gather information. | Provided by [{{site.data.keyword.cloud_notm}} Support](https://www.ibm.com/cloud/support){: external}. You can use the `oc adm must-gather` tool, or the [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool) to help gather information. |
-| {{site.data.keyword.openshiftshort}} web console | You set up and can configure or disable the {{site.data.keyword.openshiftshort}} web console. | The {{site.data.keyword.openshiftshort}} web console is set up for you. You cannot configure or disable the web console. IBM also provides the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} to manage your cluster infrastructure. |
+| {{site.data.keyword.openshiftshort}} web console | You set up and can configure or disable the {{site.data.keyword.openshiftshort}} web console. | The {{site.data.keyword.openshiftshort}} web console is set up for you. You cannot configure or disable the web console. IBM also provides the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} to manage your cluster infrastructure. |
 | Authentication | An OAuth server is provided, but you configure the token settings and identity provider to control access to the cluster. You also manage RBAC to control user access within the cluster. | IBM automatically sets up the OAuth server to use {{site.data.keyword.cloud_notm}} IAM. You cannot change the identity provider. {{site.data.keyword.cloud_notm}} IAM is also set up to [automatically sync to RBAC](/docs/openshift?topic=openshift-access_reference#service) so that you can use IAM to manage access to and within the cluster. |
 | Container network for clusters | The cluster network operator sets up the SDN container network interface (CNI) plug-in. You can change the CNI plug-in, configure multiple networks, or attach a hardware network such as single root I/O virtualization (SR-IOV). | Calico is set up for you. You cannot change the CNI plug-in, configure multiple networks, or attach a hardware network.|
 | Ingress | You can use the Ingress operator to set up one or more HAProxy-based Ingress controllers. You can route traffic to your apps by specifying `Route` or `Ingress` resources. | When you create a cluster, a default Ingress subdomain is set up for you. One HAProxy-based router is set up for each Ingress controller, and one router service is automatically created in each zone that you have worker nodes in. You can route traffic to your apps by specifying `Route` or `Ingress` resources. For more information, see [About Ingress in {{site.data.keyword.openshiftshort}} version 4](/docs/openshift?topic=openshift-ingress-about-roks4). |
