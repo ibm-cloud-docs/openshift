@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-02"
+lastupdated: "2021-07-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -124,7 +124,7 @@ oc get nodes
 If this cluster is an existing one, check your cluster capacity.
 
 
-1.  From the [Cluster](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift) page, select your cluster.
+1.  From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
 2.  Click **{{site.data.keyword.openshiftshort}} web console**.
 
 3.  Check if you have enough capacity in your cluster to deploy your pod.

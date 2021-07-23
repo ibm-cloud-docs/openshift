@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-23"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -129,7 +129,7 @@ For {{site.data.keyword.openshiftshort}} clusters with a public cloud service en
 You can quickly access your {{site.data.keyword.openshiftlong_notm}} cluster from the console.
 {: shortdesc}
 
-1.  In the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the cluster that you want to access.
+1.  In the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the cluster that you want to access.
 2.  Click **{{site.data.keyword.openshiftshort}} web console**.
 3.  To continue working in the command line, click your profile name, such as `IAM#name@email.com`, and then click **Copy Login Command**. Depending on your cluster version, log in to your cluster from the command line as follows.
     *  **Version 3.11**: Paste the copied `oc login` command into your command line.
@@ -452,7 +452,7 @@ If your location hosts have private network connectivity only, or if you use Ama
 {: note}
 
 You can quickly access your {{site.data.keyword.openshiftlong_notm}} cluster from the console.
-1.  In the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the cluster that you want to access.
+1.  In the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the cluster that you want to access.
 2.  Click **{{site.data.keyword.openshiftshort}} web console**.
 3.  Click your profile name, such as `IAM#name@email.com`, and then click **Copy Login Command**.
 4.  Click **Display Token**, and copy the `oc login` command.
@@ -838,7 +838,7 @@ Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}
        {: screen}
 
 11. Check that you can connect to the private {{site.data.keyword.openshiftshort}} cluster from your local machine.
-    1. From the [{{site.data.keyword.openshiftshort}} cluster page](/kubernetes/clusters?platformType=openshift){: external}, select your private cluster that you want to connect to.  
+    1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your private cluster that you want to connect to.  
     2. On the cluster overview page, go to the **Networking** section and copy the **Ingress subdomain**.
     3. Ping the Ingress subdomain to verify that you can connect to your private {{site.data.keyword.openshiftshort}} cluster.
     4. From the cluster overview page, open the {{site.data.keyword.openshiftshort}} web console.

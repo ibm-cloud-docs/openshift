@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-01"
+lastupdated: "2021-07-23"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -112,7 +112,7 @@ With [{{site.data.keyword.redhat_full}} Marketplace](https://marketplace.redhat.
 {: note}
 
 **Before you begin**:
-*   Register for a [{{site.data.keyword.redhat_notm}} Marketplace account](https://marketplace.redhat.com/registration/en-us/v2){: external}.
+*   Register for a [{{site.data.keyword.redhat_notm}} Marketplace account](https://marketplace.redhat.com/en-us/registration/redhat-marketplace){: external}.
 *   [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 *   Make sure that the Operator Lifecycle Manager (OLM) pods in the `openshift-operator-lifecycle-manager` project and marketplace pods in the `openshift-marketplace` project are ready and running. You might have to restart a pod to return the pod to a healthy state.
     ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-02"
+lastupdated: "2021-07-23"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -478,7 +478,7 @@ You can use the {{site.data.keyword.openshiftshort}} console to manage your apps
 
 For more information about the console, see the [{{site.data.keyword.openshiftshort}} documentation](http://docs.openshift.com/container-platform/4.6/applications/application_life_cycle_management/odc-creating-applications-using-developer-perspective.html){: external}.
 
-1.  From the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your {{site.data.keyword.openshiftshort}} cluster, then click **OpenShift web console**.
+1.  From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your {{site.data.keyword.openshiftshort}} cluster, then click **OpenShift web console**.
 2.  Explore the different areas of the {{site.data.keyword.openshiftshort}} web console, as described in the following tabbed table.
 
     <table class="simple-tab-table" id="console1" tab-title="OCP 4" tab-group="console-version" aria-describedby="tableSummary-19ecbef4c01853826b42de82471b9035">
