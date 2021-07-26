@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-26"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -154,7 +154,7 @@ ibmcloud oc cluster addon disable debug-tool --cluster CLUSTER [-f]
 #### `ibmcloud oc cluster addon disable image-key-synchronizer`
 {: #cs_cluster_addon_disable_image-key-synchronizer}
 
-Enable the add-on for the [Image Key synchronizer](/docs/openshift?topic=openshift-images#encrypted-images).
+Disable the add-on for the [Image Key synchronizer](/docs/openshift?topic=openshift-images#encrypted-images).
 {: shortdesc}
 
 ```sh
