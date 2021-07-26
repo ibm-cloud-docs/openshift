@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-26"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -154,7 +154,7 @@ ibmcloud oc cluster addon disable debug-tool --cluster CLUSTER [-f]
 #### `ibmcloud oc cluster addon disable image-key-synchronizer`
 {: #cs_cluster_addon_disable_image-key-synchronizer}
 
-Enable the add-on for the [Image Key synchronizer](/docs/openshift?topic=openshift-images#encrypted-images).
+Disable the add-on for the [Image Key synchronizer](/docs/openshift?topic=openshift-images#encrypted-images).
 {: shortdesc}
 
 ```sh
@@ -5993,13 +5993,13 @@ ibmcloud oc storage volume ls --cluster aa1111aa11aaaaa11aa1
 ```
 {: pre}
 
-## Beta: {{site.data.keyword.satelliteshort}} commands
+## {{site.data.keyword.satelliteshort}} commands
 {: #sat_commands}
 
 Create and manage {{site.data.keyword.satellitelong_notm}} clusters.
 {: shortdesc}
 
-### Beta: `ibmcloud oc cluster create satellite`
+### `ibmcloud oc cluster create satellite`
 {: #cli_cluster-create-satellite}
 
 Create an {{site.data.keyword.satellitelong_notm}} cluster on your own infrastructure that you add to a {{site.data.keyword.satelliteshort}} location as hosts. The hosts are used as worker nodes in your {{site.data.keyword.satelliteshort}} cluster.
@@ -6062,7 +6062,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --pull-secr
 <dd>Required when `--host-label` is specified. The number of worker nodes per zone in the default worker pool.</dd>
 
 <dt><code>--zone <em>ZONE</em></code></dt>
-<dd>Optional. The name of the zone to create the default worker pool in. For high availability, you might want to use one of the 3 zones from the location control plane, and then add the two other zones to your cluster later. To see the zone names for your location, run `ibmcloud sat location get --location <location_name_or_ID>` and look for the `Host Zones` field. If you do not specify a zone name, the zone name that is alphabetically first is chosen.</dd>
+<dd>Optional. The name of the zone to create the default worker pool in. You can start with one zone, and then add the two other zones to your cluster later for high availability. To see the zone names for your location, run `ibmcloud sat location get --location <location_name_or_ID>` and look for the `Host Zones` field. If you do not specify a zone name, the zone name that is alphabetically first is chosen.</dd>
 
 </dl>
 
@@ -6074,7 +6074,7 @@ ibmcloud sat cluster create satellite --name mysatcluster --location mylocation 
 
 </br>
 
-### Beta: `ibmcloud oc worker-pool create satellite`
+### `ibmcloud oc worker-pool create satellite`
 {: #cs_worker_pool_create_sat}
 
 Create a worker pool for your {{site.data.keyword.openshiftshort}} cluster in {{site.data.keyword.satellitelong_notm}}.
@@ -6122,7 +6122,7 @@ ibmcloud oc worker-pool create satellite --cluster mycluster --host-label use=cl
 
 </br>
 
-### Beta: `ibmcloud oc zone add satellite`
+### `ibmcloud oc zone add satellite`
 {: #cs_zone_add_sat}
 
 After you create a {{site.data.keyword.satellitelong_notm}} cluster or worker pool, you can add a zone. When you add a zone, worker nodes are added to the new zone to match the number of workers per zone that you specified for the worker pool. You can add more than one zone only if your cluster is in a multizone metro.

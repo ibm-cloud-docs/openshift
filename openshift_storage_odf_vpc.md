@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-26"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, roks
 
@@ -112,7 +112,7 @@ The OpenShift Data Foundation add-on is available as a technology preview and mi
 The following steps walk you through deploying ODF with the default settings. You can deploy ODF on VPC clusters with the default configuration settings by running the `addon enable` command and specifying the `"ocsDeploy=true"` flag. Before enabling the add-on make sure that you have a [VPC cluster](/docs/openshift?topic=openshift-clusters) with at least three worker nodes. For high availability, create a cluster with at least one worker node per zone across three zones. Each worker node must have a minimum of 16 CPUs and 64 GB RAM.
 {: shortdesc}
 
-If you want to override the default parameters when deploying the add-on, you can use the `--param "key=value"` format. For more information, see [Deploying ODF](#odf-custom-install).
+If you want to override the default parameters when deploying the add-on, you can use the `--param "key=value"` format. For more information, see [Installing the add-on from the CLI]({#install-odf-cli-vpc}).
 {: tip}
 
 1. To see the default settings for ODF on VPC clusters, run the `addon options` command.
@@ -442,7 +442,7 @@ You can scale your ODF configuration by increasing the `numOfOsd` setting. When 
 To increase the storage capacity in your storage cluster, add compatible worker nodes to your cluster.
 {: shortdesc}
 
-1. Expand the worker pool of the cluster that is used for OCS by [adding worker nodes](/docs/openshift?topic=openshift-add_workers). Ensure that your worker nodes meet the [requirements for ODF](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-classic-plan). If you deployed ODF on all of the worker nodes in your cluster, the ODF drivers are installed on the new worker nodes when they are added to your cluster.
+1. Expand the worker pool of the cluster that is used for OCS by [adding worker nodes](/docs/openshift?topic=openshift-add_workers). Ensure that your worker nodes meet the [requirements for ODF](#ocs-storage-prep). If you deployed ODF on all of the worker nodes in your cluster, the ODF drivers are installed on the new worker nodes when they are added to your cluster.
 2. If you deployed ODF on a subset of worker nodes in your cluster by specifying the private `<workerNodes>` parameters in your `OcsCluster` custom resource, you can add the IP addresses of the new worker nodes to your ODF deployment by editing the custom resource definition.
   ```sh
   oc edit ocscluster ocscluster-vpc
@@ -467,7 +467,7 @@ Review the following limitations for deploying ODF.
 <br />
 
 ## Parameter reference
-{: #ocs-vpc-param-ref}
+{: #odf-vpc-param-ref}
 
 Refer to the following parameters when you use the add-on or operator in VPC clusters.
 {: shortdesc}

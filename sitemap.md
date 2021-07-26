@@ -1212,6 +1212,8 @@ subcollection: openshift
   * [Storing your custom PVC settings in a Kubernetes secret](/docs/openshift?topic=openshift-vpc-block#vpc-block-storageclass-secret)
   * [Enabling every user to customize the default PVC settings](/docs/openshift?topic=openshift-vpc-block#customize-with-secret)
   * [Enforcing base64 encoding for the {{site.data.keyword.keymanagementserviceshort}} root key CRN](/docs/openshift?topic=openshift-vpc-block#static-secret)
+* [Setting up volume expansion](/docs/openshift?topic=openshift-vpc-block#vpc-block-volume-expand)
+  * [Expanding existing volumes](/docs/openshift?topic=openshift-vpc-block#expanding-existing-volumes)
 * [Backing up and restoring data](/docs/openshift?topic=openshift-vpc-block#vpc-block-backup-restore)
 * [Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference)
 * [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-vpc-block#cleanup)
@@ -1305,7 +1307,7 @@ subcollection: openshift
 
 * [Storage class reference](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-reference-section)
 
-* [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-vpc-param-ref)
+* [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-param-ref)
 
 
 ## Deploying OpenShift Data Foundation on {{site.data.keyword.satelliteshort}} clusters
@@ -1325,7 +1327,7 @@ subcollection: openshift
 
 * [Creating your storage cluster](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-deploy-crd)
 
-* [{{site.data.keyword.satelliteshort}}: OpenShift Data Foundation parameter reference](/docs/openshift?topic=openshift-deploy-odf-sat#ocs-sat-param-ref)
+* [{{site.data.keyword.satelliteshort}}: OpenShift Data Foundation parameter reference](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-param-ref)
 
 
 ## Deploying OpenShift Data Foundation on Classic clusters
@@ -1674,10 +1676,10 @@ subcollection: openshift
   * [`ibmcloud oc storage attachment rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_rm)
   * [`ibmcloud oc storage volume get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_ls_c)
   * [`ibmcloud oc storage volume ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_ls_2)
-* [Beta: {{site.data.keyword.satelliteshort}} commands](/docs/openshift?topic=openshift-kubernetes-service-cli#sat_commands)
-  * [Beta: `ibmcloud oc cluster create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite)
-  * [Beta: `ibmcloud oc worker-pool create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create_sat)
-  * [Beta: `ibmcloud oc zone add satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat)
+* [{{site.data.keyword.satelliteshort}} commands](/docs/openshift?topic=openshift-kubernetes-service-cli#sat_commands)
+  * [`ibmcloud oc cluster create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite)
+  * [`ibmcloud oc worker-pool create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create_sat)
+  * [`ibmcloud oc zone add satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat)
 
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog)
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
@@ -1728,6 +1730,7 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.7 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-47)
+  * [Changelog for master fix pack 4.7.19_1526_openshift, released 26 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4719_1526)
   * [Changelog for worker node fix pack 4.7.19_1525_openshift, released 19 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4719_1525)
   * [Changelog for worker node fix pack 4.7.18_1524_openshift, released 6 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4718_1524)
   * [Changelog for master fix pack 4.7.16_1523_openshift, released 28 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4716_1523)
@@ -1735,6 +1738,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.7.13_1521_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4713_1521)
   * [Changelog for master fix pack 4.7.12_1520_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4712_1520)
 * [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
+  * [Changelog for master fix pack 4.6.38_1550_openshift, released 26 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4638_1550)
   * [Changelog for worker node fix pack 4.6.38_1549_openshift, released 19 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4638_1549)
   * [Changelog for worker node fix pack 4.6.36_1548_openshift, released 6 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4636_1548)
   * [Changelog for master fix pack 4.6.34_1547_openshift, released 28 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4634_1547)
@@ -1755,6 +1759,7 @@ subcollection: openshift
   * [Changelog for master fix pack 4.6.16_1532_openshift, released 22 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4616_1532)
   * [Changelog for 4.6.16_1530_openshift (master) and 4.6.16_1529_openshift (worker node), released 17 February 2020](/docs/openshift?topic=openshift-openshift_changelog#4616_1530)
 * [Deprecated: Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
+  * [Changelog for fix pack 4.5.41_1546_openshift, released 26 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4541_1546)
   * [Changelog for worker node fix pack 4.5.41_1545_openshift, released 19 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4541_1545)
   * [Changelog for worker node fix pack 4.5.40_1544_openshift, released 6 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4540_1544)
   * [Changelog for master fix pack 4.5.40_1543_openshift, released 28 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4540_1543)
@@ -1787,6 +1792,7 @@ subcollection: openshift
   * [Changelog for master fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518)
   * [Changelog for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4513_1515)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for master fix pack 3.11.439_1598_openshift, released 26 July 2021](/docs/openshift?topic=openshift-openshift_changelog#311439_1598)
   * [Changelog for worker node fix pack 3.11.465_1596_openshift, released 19 July 2021](/docs/openshift?topic=openshift-openshift_changelog#311465_1596)
   * [Changelog for worker node fix pack 3.11.462_1595_openshift, released 6 July 2021](/docs/openshift?topic=openshift-openshift_changelog#311462_1595)
   * [Changelog for master fix pack 3.11.439_1594_openshift, released 28 June 2021](/docs/openshift?topic=openshift-openshift_changelog#311439_1594)
@@ -1881,6 +1887,7 @@ subcollection: openshift
 * [Changelog for 1.0.1, released 15 August 2020](/docs/openshift?topic=openshift-ca_changelog#0101_ca_addon)
 
 [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog)
+* [Changelog for version 3.0.1](/docs/openshift?topic=openshift-vpc_bs_changelog#0301_is_block)
 * [Changelog for version 3.0.0](/docs/openshift?topic=openshift-vpc_bs_changelog#0300_is_block)
 * [Changelog for version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
