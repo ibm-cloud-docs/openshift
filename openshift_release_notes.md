@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-23"
+lastupdated: "2021-07-26"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -110,6 +110,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 26 July 2021 | **HPCS Router**: Updated version changelog for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog) add-on. |
 | 23 July 2021 | **Image key synchronizer**: Updated the version changelog for the [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-on. |
 | 19 July 2021 | **Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.7.19_1525_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4719_1525), [`4.6.38_1549_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4638_1549), [`4.5.41_1545_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4541_1545), and [`3.11.465_1596_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311465_1596).
 | 15 July 2021 |  |
