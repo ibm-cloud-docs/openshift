@@ -1307,7 +1307,7 @@ subcollection: openshift
 
 * [Storage class reference](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-reference-section)
 
-* [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-vpc-param-ref)
+* [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-param-ref)
 
 
 ## Deploying OpenShift Data Foundation on {{site.data.keyword.satelliteshort}} clusters
@@ -1327,7 +1327,7 @@ subcollection: openshift
 
 * [Creating your storage cluster](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-deploy-crd)
 
-* [{{site.data.keyword.satelliteshort}}: OpenShift Data Foundation parameter reference](/docs/openshift?topic=openshift-deploy-odf-sat#ocs-sat-param-ref)
+* [{{site.data.keyword.satelliteshort}}: OpenShift Data Foundation parameter reference](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-param-ref)
 
 
 ## Deploying OpenShift Data Foundation on Classic clusters

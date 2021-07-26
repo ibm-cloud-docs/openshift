@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-26"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic, roks
 
@@ -439,7 +439,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
   {: pre}
 
 ## {{site.data.keyword.satelliteshort}}: OpenShift Data Foundation parameter reference
-{: #ocs-sat-param-ref}
+{: #odf-sat-param-ref}
 
 Refer to the following parameters when you use the add-on or operator in {{site.data.keyword.satelliteshort}} clusters.
 {: shortdesc}

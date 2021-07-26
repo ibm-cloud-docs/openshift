@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-07-26"
 
 keywords: openshift, storage
 
@@ -142,8 +142,8 @@ This error indicates that that the classic or VPC cluster where your ODF storage
    ```
    {: pre}
   
-5. [Re-create the CRD with the pre-existing or custom storage class you chose earlier](/docs/openshift?topic=openshift-ocs-storage-cluster-setup).
+5. Re-create the CRD with the pre-existing or custom storage class you chose earlier.
 
-6. [Re-deploy the storage cluster](/docs/openshift?topic=openshift-ocs-storage-cluster-setup).
+6. Re-deploy the storage cluster.
 
 
