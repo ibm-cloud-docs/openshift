@@ -611,6 +611,12 @@ subcollection: openshift
   * [Removing a user from your account](/docs/openshift?topic=openshift-users#remove_user)
   * [Removing specific permissions](/docs/openshift?topic=openshift-users#remove_permissions)
 
+[Authorizing pods in your cluster to {{site.data.keyword.cloud_notm}} services with IAM trusted profiles](/docs/openshift?topic=openshift-pod-iam-identity)
+* [Prerequisites](/docs/openshift?topic=openshift-pod-iam-identity#iam-identity-prereqs)
+* [Creating an IAM trusted profile for your cluster in the API](/docs/openshift?topic=openshift-pod-iam-identity#iam-identity-create-api)
+* [Creating an IAM trusted profile for your cluster in the UI](/docs/openshift?topic=openshift-pod-iam-identity#iam-identity-create-ui)
+* [Configure your application pods to authenticate with {{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-pod-iam-identity#iam-identity-pod)
+
 
 ## Securing cluster workloads
 {: #sitemap_securing_cluster_workloads}
@@ -1501,6 +1507,7 @@ subcollection: openshift
   * [I already have an {{site.data.keyword.cloud_notm}} service. Can I still use {{site.data.keyword.cloud_notm}} service binding?](/docs/openshift?topic=openshift-service-binding#svc-bind-existing)
   * [What if I want to use service credentials that use the private cloud service endpoint?](/docs/openshift?topic=openshift-service-binding#svc-bind-private-cse)
   * [Can I use all {{site.data.keyword.cloud_notm}} services in my cluster?](/docs/openshift?topic=openshift-service-binding#svc-bind-which)
+  * [Can I bind multiple {{site.data.keyword.cloud_notm}} services to multiple clusters at once?](/docs/openshift?topic=openshift-service-binding#svc-bind-trusted-profile)
 * [Adding IBM Cloud services to clusters](/docs/openshift?topic=openshift-service-binding#bind-services)
 * [Accessing service credentials from your apps](/docs/openshift?topic=openshift-service-binding#adding_app)
   * [Mounting the secret as a volume to your pod](/docs/openshift?topic=openshift-service-binding#mount_secret)
