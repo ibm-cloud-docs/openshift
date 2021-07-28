@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-22"
+lastupdated: "2021-07-27"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -337,17 +337,16 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
   ```
   {: screen}
 
-4. View the health check status of the NLB IPs that are behind your subdomain.
+4. View the health check status of your subdomain.
   ```
-  ibmcloud oc nlb-dns monitor status --cluster <cluster_name_or_id> --nlb-host <host_name>
+  ibmcloud oc nlb-dns monitor ls --cluster <cluster_name_or_id>
   ```
   {: pre}
 
   Example output:
   ```
-  Hostname                                                                                IP          Health Monitor   H.Monitor Status
-  mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud     168.2.4.5   Enabled          Healthy
-  mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud     88.2.4.5    Enabled          Healthy
+  Hostname                                                                                Status      Type    Port   Path
+  mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud     Healthy     https   443    /alive
   ```
   {: screen}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-22"
+lastupdated: "2021-07-27"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -147,7 +147,12 @@ You can use service binding only for services that support service keys so that 
 
 Services that do not support service keys usually provide an API that you can use in your app. The service binding method does not automatically set up API access for your app. Make sure to review the API documentation of your service and implement the API interface in your app.
 
+### Can I bind multiple {{site.data.keyword.cloud_notm}} services to multiple clusters at once?
+{: #svc-bind-trusted-profile}
 
+{{site.data.keyword.cloud_notm}} service binding is on a per-cluster, per-service basis, and works by creating a Kubernetes secret that your pods can mount.
+
+For multiple clusters and services, you can [use IAM trusted profiles instead](/docs/openshift?topic=openshift-pod-iam-identity). In IAM, you create a trusted profile with access policies for the {{site.data.keyword.cloud_notm}} services that you want. Then, you link the trusted profile with as many clusters as you want, based on conditions such as all the `prod` Kubernetes namespaces in clusters in a resource group. Finally, your pods mount the Kubernetes service account projected volume to get a token that can be exchanged for an IAM token that your apps use to authenticate with the {{site.data.keyword.cloud_notm}} services.
 
 ## Adding IBM Cloud services to clusters
 {: #bind-services}
