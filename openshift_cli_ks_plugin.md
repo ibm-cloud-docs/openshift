@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-27"
+lastupdated: "2021-07-28"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -333,14 +333,14 @@ ibmcloud oc cluster addon enable kube-terminal --cluster CLUSTER [--version VERS
 #### `ibmcloud oc cluster addon enable openshift-container-storage`
 {: #cs_cluster_addon_enable_openshift-container-storage}
 
-Enable the [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc) add-on.
+Enable the [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc) add-on for {{site.data.keyword.openshiftshort}} versions 4.6 or 4.7.
 {: shortdesc}
 
 The OpenShift Data Foundation add-on is available as a technology preview and might change without prior notice. Do not use this add-on for production workloads.
 {: preview}
 
 ```sh
-ibmcloud oc cluster addon enable openshift-container-storage [-f] [--param PARAM] [-q] [--version VERSION]
+ibmcloud oc cluster addon enable openshift-container-storage --cluster CLUSTER [-f] [--param PARAM] [-q] [--version VERSION]
 ```
 {: pre}
 
