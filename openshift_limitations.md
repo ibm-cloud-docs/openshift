@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-06"
+lastupdated: "2021-07-29"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
@@ -21,13 +21,16 @@ subcollection: openshift
 {:app_url: data-hd-keyref="app_url"}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +43,28 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
+{:node: .ph data-hd-programlang='node'}
 {:note .note}
 {:note: .note}
+{:note:.deprecated}
 {:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +82,10 @@ subcollection: openshift
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +93,7 @@ subcollection: openshift
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -287,7 +301,7 @@ Review the following limitations for [{{site.data.keyword.openshiftlong_notm}} c
 | -------- | ----------- |
 | Cluster add-ons | Review the [unsupported managed add-ons for {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-managed-addons#addons-satellite) in a {{site.data.keyword.satelliteshort}} location. For example, the cluster autoscaler and Istio are not supported. |
 | Key management service (KMS) | Cluster integration with a key management service (KMS) provider like {{site.data.keyword.keymanagementserviceshort}} is not supported.|
-| Locations | You must create your own [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations) that is managed from [select {{site.data.keyword.cloud_notm}} multizone metros](/docs/satellite?topic=satellite-sat-regions). |
+| Locations | <ul><li>{{site.data.keyword.openshiftshort}} clusters that are created in {{site.data.keyword.satelliteshort}} locations must use {{site.data.keyword.openshiftshort}} version 4.5 or later.</li><li>You must create your own [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations) that is managed from [select {{site.data.keyword.cloud_notm}} multizone metros](/docs/satellite?topic=satellite-sat-regions).</li></ul> |
 | Logging and monitoring | You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable logging and monitoring for {{site.data.keyword.satelliteshort}} clusters. Instead, you can manually deploy [{{site.data.keyword.la_short}} agents](/docs/log-analysis?topic=log-analysis-kube#kube) and [{{site.data.keyword.mon_short}} agents](/docs/monitoring?topic=monitoring-kubernetes_cluster#kubernetes_cluster) to your cluster to forward logs and metrics to {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}. |
 | Network | <ul><li>The private cloud service endpoint is not supported for {{site.data.keyword.satelliteshort}} clusters.</li><li>Your {{site.data.keyword.satelliteshort}} clusters cannot use Kubernetes load balancers.</li><li>The hosts that run the worker nodes for your cluster must meet the [host networking](/docs/satellite?topic=satellite-host-reqs#reqs-host-network) and provider-specific requirements, such as for [AWS](/docs/satellite?topic=satellite-aws), [Azure](/docs/satellite?topic=satellite-azure), [GCP](/docs/satellite?topic=satellite-gcp), and [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) (testing and demonstration purposes only).</li></ul>|
 | Storage for worker node hosts | See [Host storage and attached devices](/docs/satellite?topic=satellite-host-reqs#reqs-host-storage). |
