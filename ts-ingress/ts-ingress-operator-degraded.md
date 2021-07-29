@@ -118,7 +118,7 @@ content-type: troubleshoot
 {: tsSymptoms}
 You receive an error message similar to one of the following.
 
-**Example error message when installing IBM Cloud Pak for Data from the console**
+**Example error message when installing {{site.data.keyword.icp4dfull_notm}} from the console**
 ```sh
 XXX.us-south.containers.appdomain.cloud: Get "http://image-registry-openshift-image-registry.ocp-data-privacy-prod-c-XXX.us-south.containers.appdomain.cloud/v2/": dial tcp: lookup image-registry-openshift-image-registry.ocp-data-privacy-prod-c-XXX.us-south.containers.appdomain.cloud on XXX.XX.X.XX:XX: cannot marshal DNS message
 ```
@@ -200,7 +200,7 @@ The fix for [bug 1953097](https://bugzilla.redhat.com/show_bug.cgi?id=1970140){:
     ```
     {: pre}
 
-1. Wait a few mins, then verify that the DNS resolution works. If you had an `nslookup` error, retry the `nslookup`.
+1. After a few minutes, then verify that the DNS resolution works. If you see an `nslookup` error, retry the `nslookup`.
 
     ```sh
     / # nslookup XXX.XXX.databases.appdomain.cloud

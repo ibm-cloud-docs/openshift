@@ -109,7 +109,7 @@ content-type: troubleshoot
   
   
 
-# Ingress health checks fail on Akamai Global Loab Balancer (GLB) configurations
+# Ingress health checks fail on Akamai Global Load Balancer (GLB) configurations
 {: #cs_ingress_health_check_ctm}
 
 **Supported infrastructure provider**:
