@@ -341,6 +341,7 @@ Red Hat OpenShift on IBM Cloud
             ts-ingress/ts-ingress-secret-expiry.md
             ts-ingress/ts-ingress-vpc-router-zone.md
             ts-ingress/ts-ingress-router-zone.md
+            ts-ingress/ts-ingress-nested-ctm.md
 
         {: .topicgroup}
         File Storage

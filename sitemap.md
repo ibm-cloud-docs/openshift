@@ -2388,6 +2388,8 @@ subcollection: openshift
 * [Resolving VLAN issues](/docs/openshift?topic=openshift-cs_subnet_limit_43#resolve_vlan)
 * [Resolving multizone router service deployment issues](/docs/openshift?topic=openshift-cs_subnet_limit_43#resolve_mzr_router)
 
+[Ingress health checks fail on Akamai Global Loab Balancer (GLB) configurations](/docs/openshift?topic=openshift-cs_ingress_health_check_ctm)
+
 
 ## File Storage
 {: #sitemap_file_storage}
