@@ -2,11 +2,12 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-02"
+lastupdated: "2021-07-30"
 
 keywords: openshift, roks, rhoks, rhos, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, roks pricing, iks pricing, openshift charges, ocp charges, openshift price, ocp price, roks price, openshift billing, ocp billing, roks billing, openshift costs, ocp costs, roks costs,
 
 subcollection: openshift
+content-type: faq
 
 ---
 
@@ -21,13 +22,16 @@ subcollection: openshift
 {:app_url: data-hd-keyref="app_url"}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,28 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
+{:node: .ph data-hd-programlang='node'}
 {:note .note}
 {:note: .note}
+{:note:.deprecated}
 {:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +83,10 @@ subcollection: openshift
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +94,7 @@ subcollection: openshift
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -125,14 +140,14 @@ For a detailed overview of capabilities and benefits, see [Benefits of using the
 {: support}
 
 
-You can create only standard {{site.data.keyword.openshiftshort}} clusters. If you want to test out the capabilities of Kubernetes, [create a free Kubernetes cluster](/docs/containers?topic=containers-getting-started) and [deploy some apps](/docs/openshift?topic=openshift-openshift_apps). Then, redeploy the apps that you try out in the Kubernetes cluster to your [{{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app).
+You can create only standard {{site.data.keyword.openshiftshort}} clusters. If you want to test out the capabilities of Kubernetes, [create a free Kubernetes cluster](/docs/containers?topic=containers-getting-started) and [deploy some apps](/docs/containers?topic=containers-app). Then, redeploy the apps that you try out in the Kubernetes cluster to your [{{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app).
 
 ## What container platforms are available for my cluster?
 {: #container_platforms}
 {: faq}
 {: support}
 
-With {{site.data.keyword.cloud_notm}}, you can create clusters for your containerized workloads from two different container management platforms: the IBM version of community Kubernetes and {{site.data.keyword.openshiftlong_notm}}. The container platform that you select is installed on your cluster master and worker nodes. Later, you can [update the version](/docs/openshift?topic=openshift-update#update) but cannot roll back to a previous version or switch to a different container platform. If you want to use multiple container platforms, create a separate cluster for each.
+With {{site.data.keyword.cloud_notm}}, you can create clusters for your containerized workloads from two different container management platforms: the IBM version of community Kubernetes and {{site.data.keyword.openshiftlong_notm}}. The container platform that you select is installed on your cluster master and worker nodes. Later, you can [update the version](/docs/containers?topic=containers-update#update) but cannot roll back to a previous version or switch to a different container platform. If you want to use multiple container platforms, create a separate cluster for each.
 
 For more information, see [Comparison between {{site.data.keyword.openshiftshort}} and community Kubernetes clusters](/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes).
 
@@ -151,9 +166,9 @@ For more information, see [Comparison between {{site.data.keyword.openshiftshort
 
 Every cluster in {{site.data.keyword.openshiftlong_notm}} is controlled by a dedicated {{site.data.keyword.openshiftshort}} master that is managed by IBM in an IBM-owned {{site.data.keyword.cloud_notm}} infrastructure account. The {{site.data.keyword.openshiftshort}} master, including all the master components, compute, networking, and storage resources, is continuously monitored by IBM Site Reliability Engineers (SREs). The SREs apply the latest security standards, detect and remediate malicious activities, and work to ensure reliability and availability of {{site.data.keyword.openshiftlong_notm}}.
 
-Periodically, {{site.data.keyword.openshiftshort}} releases [major, minor, or patch updates](/docs/containers?topic=containers-cs_versions#version_types). These updates can affect the {{site.data.keyword.openshiftshort}} API server version or other components in your {{site.data.keyword.openshiftshort}} master. IBM automatically updates the patch version, but you must update the master major and minor versions. For more information, see [Updating the master](/docs/openshift?topic=openshift-update#master).
+Periodically, {{site.data.keyword.openshiftshort}} releases [major, minor, or patch updates](/docs/containers?topic=containers-cs_versions#version_types). These updates can affect the {{site.data.keyword.openshiftshort}} API server version or other components in your {{site.data.keyword.openshiftshort}} master. IBM automatically updates the patch version, but you must update the master major and minor versions. For more information, see [Updating the master](/docs/containers?topic=containers-update#master).
 
-Worker nodes in standard clusters are provisioned in to your {{site.data.keyword.cloud_notm}} infrastructure account. The worker nodes are dedicated to your account and you are responsible to request timely updates to the worker nodes to ensure that the worker node OS and {{site.data.keyword.openshiftlong_notm}} components apply the latest security updates and patches. Security updates and patches are made available by IBM Site Reliability Engineers (SREs) who continuously monitor the Linux image that is installed on your worker nodes to detect vulnerabilities and security compliance issues. For more information, see [Updating worker nodes](/docs/openshift?topic=openshift-update#worker_node).
+Worker nodes in standard clusters are provisioned in to your {{site.data.keyword.cloud_notm}} infrastructure account. The worker nodes are dedicated to your account and you are responsible to request timely updates to the worker nodes to ensure that the worker node OS and {{site.data.keyword.openshiftlong_notm}} components apply the latest security updates and patches. Security updates and patches are made available by IBM Site Reliability Engineers (SREs) who continuously monitor the Linux image that is installed on your worker nodes to detect vulnerabilities and security compliance issues. For more information, see [Updating worker nodes](/docs/containers?topic=containers-update#worker_node).
 
 ## Are the master and worker nodes highly available?
 {: #faq_ha}
@@ -207,7 +222,7 @@ The access policies that you assign users vary depending on what you want your u
 
 If vulnerabilities are found in {{site.data.keyword.openshiftshort}}, {{site.data.keyword.openshiftshort}} releases CVEs in security bulletins to inform users and to describe the actions that users must take to remediate the vulnerability. {{site.data.keyword.openshiftshort}} security bulletins that affect {{site.data.keyword.openshiftlong_notm}} users or the {{site.data.keyword.cloud_notm}} platform are published in the [{{site.data.keyword.cloud_notm}} security bulletin](https://cloud.ibm.com/status?component=containers-kubernetes&selected=security).
 
-Some CVEs require the latest patch update for a version that you can install as part of the regular [cluster update process](/docs/openshift?topic=openshift-update#update) in {{site.data.keyword.openshiftlong_notm}}. Make sure to apply security patches in time to protect your cluster from malicious attacks. For more information about what is included in a security patch, refer to the [version changelog](/docs/containers?topic=containers-changelog#changelog).
+Some CVEs require the latest patch update for a version that you can install as part of the regular [cluster update process](/docs/containers?topic=containers-update#update) in {{site.data.keyword.openshiftlong_notm}}. Make sure to apply security patches in time to protect your cluster from malicious attacks. For more information about what is included in a security patch, refer to the [version changelog](/docs/containers?topic=containers-changelog#changelog).
 
 ## Does the service offer support for bare metal and GPU?
 {: #bare_metal_gpu}

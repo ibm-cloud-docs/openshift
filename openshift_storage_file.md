@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-01"
+lastupdated: "2021-07-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -21,13 +21,16 @@ subcollection: openshift
 {:app_url: data-hd-keyref="app_url"}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +43,28 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
+{:node: .ph data-hd-programlang='node'}
 {:note .note}
 {:note: .note}
+{:note:.deprecated}
 {:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +82,10 @@ subcollection: openshift
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +93,7 @@ subcollection: openshift
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -466,7 +480,7 @@ To add {{site.data.keyword.filestorage_short}}:
 
 4.  {: #file_app_volume_mount}To mount the storage to your deployment, create a configuration `.yaml` file and specify the PVC that binds the PV.
 
-    If you have an app that requires a non-root user to write to the persistent storage, or an app that requires that the mount path is owned by the root user, see [Adding non-root user access to NFS {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-nonroot) or [Enabling root permission for NFS {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-nonroot).
+    If you have an app that requires a non-root user to write to the persistent storage, or an app that requires that the mount path is owned by the root user, see [Adding non-root user access to NFS {{site.data.keyword.filestorage_short}}](/docs/containers?topic=containers-nonroot) or [Enabling root permission for NFS {{site.data.keyword.filestorage_short}}](/docs/containers?topic=containers-nonroot).
     {: tip}
 
     ```yaml
@@ -1395,7 +1409,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Size range in gigabytes | 20-12000 Gi|
 | Hard disk | SSD|
 | Reclaim policy | <code>ibmc-file-bronze</code>: Delete</br><code>ibmc-file-retain-bronze</code>: Retain </br><code>ibmc-file-bronze-gid:</code> Delete|
-| Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the <code>ibmc-file-bronze-gid</code> storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/openshift?topic=openshift-cs_storage_nonroot).  |
+| Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the <code>ibmc-file-bronze-gid</code> storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/containers?topic=containers-cs_storage_nonroot).  |
 | Billing | Hourly|
 | Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}
@@ -1413,7 +1427,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Size range in gigabytes | 20-12000 Gi|
 | Hard disk | SSD|
 | Reclaim policy | <code>ibmc-file-silver</code>: Delete</br><code>ibmc-file-retain-silver</code>: Retain </br><code>ibmc-file-silver-gid:</code> Delete |
-| Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the <code>ibmc-file-bronze-gid</code> storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/openshift?topic=openshift-cs_storage_nonroot).  |
+| Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the <code>ibmc-file-bronze-gid</code> storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/containers?topic=containers-cs_storage_nonroot).  |
 | Billing | Hourly|
 | Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}
@@ -1431,7 +1445,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Size range in gigabytes | 20-4000 Gi|
 | Hard disk | SSD|
 | Reclaim policy | <code>ibmc-file-gold</code>: Delete</br><code>ibmc-file-retain-gold</code>: Retain </br><code>ibmc-file-gold-gid:</code> Delete |
-| Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the <code>ibmc-file-bronze-gid</code> storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/openshift?topic=openshift-cs_storage_nonroot).  |
+| Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the <code>ibmc-file-bronze-gid</code> storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/containers?topic=containers-cs_storage_nonroot).  |
 | Billing | Hourly|
 | Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}
