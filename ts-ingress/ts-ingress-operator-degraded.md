@@ -200,7 +200,7 @@ The fix for [bug 1953097](https://bugzilla.redhat.com/show_bug.cgi?id=1970140){:
     ```
     {: pre}
 
-1. After a few minutes, then verify that the DNS resolution works. If you see an `nslookup` error, retry the `nslookup`.
+1. After a few minutes, verify that the DNS resolution works. If you see an `nslookup` error, retry the `nslookup`.
 
     ```sh
     / # nslookup XXX.XXX.databases.appdomain.cloud
