@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-15"
+lastupdated: "2021-08-02"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -21,13 +21,16 @@ subcollection: openshift
 {:app_url: data-hd-keyref="app_url"}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +43,28 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
+{:node: .ph data-hd-programlang='node'}
 {:note .note}
 {:note: .note}
+{:note:.deprecated}
 {:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +82,10 @@ subcollection: openshift
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +93,7 @@ subcollection: openshift
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -175,7 +189,7 @@ For more, see the following tutorials:
 | Your apps are designed to run on Docker. These apps are often logging and monitoring tools that rely on the container runtime engine, call the container runtime API directly, and access container log directories. | In {{site.data.keyword.openshiftshort}}, your image must be compatible to run with the CRI-O container runtime. For more information, see [Using the CRI-O Container Engine](https://docs.openshift.com/container-platform/3.11/crio/crio_runtime.html){: external}. |
 | Your app uses persistent file storage with a non-root user ID that cannot write to the mounted storage device. | [Adjust the security context](/docs/openshift?topic=openshift-debug_storage_file) for the app deployment so that `runAsUser` is set to `0`. |
 | Your service is exposed on port 80 or another port less than 1024. You might see a `Permission denied` error. | Ports less than 1024 are privileged ports that are reserved for start-up processes. You might choose one of the following solutions:<ul><li>Change the port to 8080 or a similar port greater than 1024, and update your containers to listen on this port.</li><li>Add your container deployment to a privileged service account, such as in the [example for giving a deployment privileged access](#openshift_move_apps_example_scc).</li><li>Set up your container to listen on any network port, then update the container runtime to map that port to port 80 on the host by using [port forwarding](https://docs.openshift.com/container-platform/4.6/nodes/containers/nodes-containers-port-forwarding.html){: external}.</li></ul> |
-| Other use cases and scenarios | Review the {{site.data.keyword.openshiftshort}} documentation for migrating databases, web framework apps, CI/CD, and other examples such as from [OCP version 3 to version 4](https://www.openshift.com/learn/topics/migration){: external}. |
+| Other use cases and scenarios | Review the {{site.data.keyword.openshiftshort}} documentation for migrating databases, web framework apps, CI/CD, and other examples such as from [OCP version 3 to version 4](https://cloud.redhat.com/learn/topics/migration){: external}. |
 {: summary="The rows are read from left to right. The first column is the scenario that might require changes. The second column is the description of the steps that you can take to modify your app."}
 {: caption="Common scenarios that require app modifications" caption-side="top"}
 {: summary="The first column describes an app scenario. The second column explains the steps that you can take to address the app scenario."}

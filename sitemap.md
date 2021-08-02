@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-07-29"
+lastupdated: "2021-08-02"
 
 keywords: openshift
 subcollection: openshift
@@ -1750,6 +1750,7 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.7 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-47)
+  * [Changelog for worker node fix pack 4.7.21_1527_openshift, released 02 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4721_1527)
   * [Changelog for master fix pack 4.7.19_1526_openshift, released 27 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4719_1526)
   * [Changelog for worker node fix pack 4.7.19_1525_openshift, released 19 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4719_1525)
   * [Changelog for worker node fix pack 4.7.18_1524_openshift, released 6 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4718_1524)
@@ -1758,6 +1759,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.7.13_1521_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4713_1521)
   * [Changelog for master fix pack 4.7.12_1520_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4712_1520)
 * [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
+  * [Changelog for worker node fix pack 4.6.40_1551_openshift, released 02 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4640_1551)
   * [Changelog for master fix pack 4.6.38_1550_openshift, released 27 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4638_1550)
   * [Changelog for worker node fix pack 4.6.38_1549_openshift, released 19 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4638_1549)
   * [Changelog for worker node fix pack 4.6.36_1548_openshift, released 6 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4636_1548)
@@ -1779,6 +1781,7 @@ subcollection: openshift
   * [Changelog for master fix pack 4.6.16_1532_openshift, released 22 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4616_1532)
   * [Changelog for 4.6.16_1530_openshift (master) and 4.6.16_1529_openshift (worker node), released 17 February 2020](/docs/openshift?topic=openshift-openshift_changelog#4616_1530)
 * [Deprecated: Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
+  * [Changelog for worker node fix pack 4.5.41_1547_openshift, released 02 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4541_1547)
   * [Changelog for fix pack 4.5.41_1546_openshift, released 27 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4541_1546)
   * [Changelog for worker node fix pack 4.5.41_1545_openshift, released 19 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4541_1545)
   * [Changelog for worker node fix pack 4.5.40_1544_openshift, released 6 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4540_1544)
@@ -1812,6 +1815,7 @@ subcollection: openshift
   * [Changelog for master fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518)
   * [Changelog for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4513_1515)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for worker node fix pack 3.11.465_1599_openshift, released 02 August 2021](/docs/openshift?topic=openshift-openshift_changelog#311465_1599)
   * [Changelog for master fix pack 3.11.439_1598_openshift, released 27 July 2021](/docs/openshift?topic=openshift-openshift_changelog#311439_1598)
   * [Changelog for worker node fix pack 3.11.465_1596_openshift, released 19 July 2021](/docs/openshift?topic=openshift-openshift_changelog#311465_1596)
   * [Changelog for worker node fix pack 3.11.462_1595_openshift, released 6 July 2021](/docs/openshift?topic=openshift-openshift_changelog#311462_1595)
@@ -2390,6 +2394,8 @@ subcollection: openshift
 
 [Ingress health checks fail on Akamai Global Load Balancer (GLB) configurations](/docs/openshift?topic=openshift-cs_ingress_health_check_ctm)
 
+[Why does the DNS Operator show a `RouteHealthDegraded` or `cannot marshal DNS message` error?](/docs/openshift?topic=openshift-ingress_subdomain)
+
 
 ## File Storage
 {: #sitemap_file_storage}
@@ -2531,6 +2537,8 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
+
+* [August 2021](/docs/openshift?topic=openshift-iks-release#aug21)
 
 * [July 2021](/docs/openshift?topic=openshift-iks-release#jul21)
 
