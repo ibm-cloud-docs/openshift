@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-07-30"
+lastupdated: "2021-08-02"
 
 keywords: openshift
 subcollection: openshift
@@ -2531,6 +2531,8 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-iks-release)
+
+* [August 2021](/docs/openshift?topic=openshift-iks-release#aug21)
 
 * [July 2021](/docs/openshift?topic=openshift-iks-release#jul21)
 
