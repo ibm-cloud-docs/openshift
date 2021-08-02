@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-29"
+lastupdated: "2021-08-02"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -222,3 +222,7 @@ The fix for [bug 1953097](https://bugzilla.redhat.com/show_bug.cgi?id=1970140){:
     Address: XXX.XX.XXX.XXX
     ```
     {: codeblock}
+
+
+
+

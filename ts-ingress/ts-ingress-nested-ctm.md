@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-29"
+lastupdated: "2021-08-02"
 
 keywords: openshift, iks, help, network, dns, health check
 
@@ -128,3 +128,5 @@ Disable the default health check for the Ingress subdomain. For more information
 ibmcloud oc nlb-dns monitor disable --cluster CLUSTER --nlb-host SUBDOMAIN 
 ```
 {: pre}
+
+

@@ -342,6 +342,7 @@ Red Hat OpenShift on IBM Cloud
             ts-ingress/ts-ingress-vpc-router-zone.md
             ts-ingress/ts-ingress-router-zone.md
             ts-ingress/ts-ingress-nested-ctm.md
+            ts-ingress/ts-ingress-operator-degraded.md
 
         {: .topicgroup}
         File Storage
