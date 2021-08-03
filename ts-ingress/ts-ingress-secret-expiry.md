@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-08-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -22,13 +22,16 @@ content-type: troubleshoot
 {:app_url: data-hd-keyref="app_url"}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -41,20 +44,27 @@ content-type: troubleshoot
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
+{:node: .ph data-hd-programlang='node'}
 {:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -72,8 +82,10 @@ content-type: troubleshoot
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -81,6 +93,7 @@ content-type: troubleshoot
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -105,7 +118,7 @@ content-type: troubleshoot
 When you run `ibmcloud oc cluster get -c <cluster_name_or_ID>` or `ibmcloud oc ingress status -c <cluster_name_or_ID>`, you see the following **Ingress Message**:
 
 ```
-The expiration dates reported by Ingress secrets are out of sync across namespaces. To resynchronize the expiration dates, see http://ibm.biz/ingress-secret-sync
+The expiration dates reported by Ingress secrets are out of sync across namespaces. To resynchronize the expiration dates, see http://ibm.biz/ingress-secret-sync 
 ```
 {: screen}
 
@@ -123,11 +136,14 @@ To resynchronize the expiration dates, you can regenerate the secrets for your I
   ```
   {: pre}
 
-2. Regenerate the Ingress subdomain secret. The certificate is renewed, a new expiration date is generated, and the updates are synchronized across the secret in different namespaces. Secret regeneration is not disruptive, and traffic continues to flow while the secret regenerates. Note that it might take up to 30 minutes for the secret regeneration to complete.
+2. Regenerate the Ingress subdomain secret. The certificate is renewed, a new expiration date is generated, and the updates are synchronized across the secret in different namespaces. Secret regeneration is not disruptive, and traffic continues to flow while the secret regenerates.
   ```
   ibmcloud oc nlb-dns secret regenerate -c <cluster_name_or_ID> --nlb-subdomain <ingress_subdomain>
   ```
   {: pre}
+  
+  It might take 30 minutes or longer for the secret regeneration to complete.
+  {: note}
 
 3. List all secrets associated with the certificate for your Ingress subdomain. In the output, verify that the **Expiration date** for the secrets are more than 30 days later than today.
   ```
@@ -144,17 +160,20 @@ To resynchronize the expiration dates, you can regenerate the secrets for your I
   ```
   {: screen}
 
-4. Optional: Other secrets for network load balancer (NLB) subdomains in your cluster might report expiration dates that are out of sync with the certificate's expiration date. You can run the following steps to resynchronize the expiration dates for other secrets in your cluster.
+4. Optional: Other secrets for network load balancer (NLB) subdomains in your cluster might report expiration dates that are out of sync with the certificate's expiration date. You can run the following steps to resynchronize the expiration dates for other secrets in your cluster
+
   1. List all NLB subdomains in your cluster.
     ```
     ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
     ```
     {: pre}
-  2. For each subdomain besides the Ingress subdomain, regenerate its secret. The certificate is renewed, a new expiration date is generated, and the updates are synchronized across the secret in different namespaces. Secret regeneration is not disruptive, and traffic continues to flow while the secret regenerates.<p class="note">It might take up to 30 minutes for the secret regeneration to complete.</p>
+    
+  2. For each subdomain besides the Ingress subdomain, regenerate its secret. The certificate is renewed, a new expiration date is generated, and the updates are synchronized across the secret in different namespaces. Secret regeneration is not disruptive, and traffic continues to flow while the secret regenerates. Note that it might take 30 minutes or longer for the secret regeneration to complete.
     ```
     ibmcloud oc nlb-dns secret regenerate -c <cluster_name_or_ID> --nlb-subdomain <NLB_DNS_subdomain>
     ```
     {: pre}
+    
   3. List all secrets associated with the certificate for your Ingress subdomain. In the output, verify that the **Expiration date** for the secrets are more than 30 days later than today.
     ```
     ibmcloud oc ingress secret ls -c <cluster_name_or_ID> | grep <ingress_subdomain>
