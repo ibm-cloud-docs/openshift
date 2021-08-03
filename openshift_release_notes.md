@@ -54,7 +54,6 @@ subcollection: openshift
 {:node: .ph data-hd-programlang='node'}
 {:note .note}
 {:note: .note}
-{:note:.deprecated}
 {:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:org_name: data-hd-keyref="org_name"}
@@ -113,6 +112,7 @@ subcollection: openshift
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.openshiftlong}} documentation that are grouped by month.
 {: shortdesc}
+
 
 
 
