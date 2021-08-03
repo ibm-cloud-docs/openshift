@@ -52,9 +52,7 @@ subcollection: openshift
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
@@ -81,7 +79,6 @@ subcollection: openshift
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
 {:swift: #swift .ph data-hd-programlang='swift'}
@@ -129,7 +126,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: caption="Documentation updates in August 2021"}
 
 ## July 2021
-{: #jul21}
+{: #jul21} 
 
 | Date | Description |
 | ---- | ----------- |
