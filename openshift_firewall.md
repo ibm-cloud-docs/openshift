@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-22"
+lastupdated: "2021-08-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -21,13 +21,16 @@ subcollection: openshift
 {:app_url: data-hd-keyref="app_url"}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +43,25 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -73,6 +81,7 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +89,7 @@ subcollection: openshift
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -150,6 +160,8 @@ If corporate network policies prevent access from your local system to public en
 
    ```
    {: screen}
+
+
 5. Allow access to the [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) that you plan to use on port 443 and 4443 in your firewall. The global registry stores IBM-provided public images, and regional registries store your own private or public images. If your firewall is IP-based, you can see which IP addresses are opened when you allow access to the {{site.data.keyword.registrylong_notm}} regional service endpoints by reviewing [this table](#firewall_registry).
   * Global registry: `icr.io`
   * AP North: `jp.icr.io`
@@ -165,6 +177,8 @@ If corporate network policies prevent access from your local system to public en
    {: pre}
 
 </br>
+
+
 
 ### Running `oc` commands from behind a firewall
 {: #firewall_kubectl}
@@ -325,6 +339,8 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
    - `TCP/UDP port range 20000-32767, port 443 FROM <each_worker_node_publicIP> TO <public_IPs>`
    -  Replace <em>&lt;public_IPs&gt;</em> with the public IP addresses of the region that your cluster is located.
     {: #master_ips}
+
+
     <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the region in column one and IP addresses to match in column two.">
       <caption>IP addresses to open for outgoing traffic</caption>
           <thead>
@@ -365,7 +381,10 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
 
 3.  {: #firewall_registry}To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}, allow outgoing network traffic from the worker nodes to [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions):
   - `TCP port 443 FROM <each_worker_node_publicIP> TO <registry_subnet>`
-  -  Replace <em>&lt;registry_subnet&gt;</em> with the registry subnet to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images.<table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two.">
+  -  Replace <em>&lt;registry_subnet&gt;</em> with the registry subnet to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images.
+  
+  
+  <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two.">
   <caption>IP addresses to open for Registry traffic</caption>
     <thead>
       <th>{{site.data.keyword.openshiftlong_notm}} region</th>
@@ -437,7 +456,10 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
 
 8. If you use Ingress or routes to expose apps in your cluster, allow incoming network traffic from [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} on port 80 to the IP addresses of your router services so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers.
 
-  <p class="important">From 07 to 31 July 2021, the DNS provider is changed from Cloudflare to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains for all clusters in {{site.data.keyword.openshiftlong_notm}}. If you currently allow inbound traffic to your classic cluster from the Cloudflare source IP addresses, you must also allow inbound traffic from the [Akamai source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} before 07 July. After the migration completes on 31 July, you can remove the Cloudflare IP address rules. For more information, see the [announcement](https://cloud.ibm.com/notifications?selected=1621697674798){: external}.</p>
+From 07 to 31 July 2021, the DNS provider is changed from Cloudflare to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains for all clusters in {{site.data.keyword.openshiftlong_notm}}. If you currently allow inbound traffic to your classic cluster from the Cloudflare source IP addresses, you must also allow inbound traffic from the [Akamai source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} before 07 July. After the migration completes on 31 July, you can remove the Cloudflare IP address rules. For more information, see the [announcement](https://cloud.ibm.com/notifications?selected=1621697674798){: external}.
+{: important}
+
+
 
 </br>
 
@@ -509,7 +531,9 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
 
 6.  To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}, allow outgoing network traffic from the worker nodes to [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions):
   - `TCP port 443, port 4443 FROM <each_worker_node_privateIP> TO <registry_subnet>`
-  -  Replace <em>&lt;registry_subnet&gt;</em> with the registry subnet to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images. Port 4443 is required for notary functions, such as [Verifying image signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent). <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two.">
+  -  Replace <em>&lt;registry_subnet&gt;</em> with the registry subnet to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images. Port 4443 is required for notary functions, such as [Verifying image signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent). 
+  
+  <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two.">
   <caption>IP addresses to open for Registry traffic</caption>
     <thead>
       <th>{{site.data.keyword.openshiftlong_notm}} region</th>
@@ -722,6 +746,8 @@ Setting up an IAM allowlist blocks access to the {{site.data.keyword.openshiftsh
 5. Select the user that you found in step 1 from the list.
 6. From the **User details** page, go to the **IP address restrictions** section.
 7. For **Classic infrastructure**, enter the CIDRs of the zones in the region where your cluster is located.
+
+
   <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the region in column one and IP addresses to match in column two.">
   <caption>CIDRs to allow in IAM</caption>
     <thead>
@@ -766,5 +792,9 @@ Setting up an IAM allowlist blocks access to the {{site.data.keyword.openshiftsh
   </table>
 7. Enter the CIDRs of the worker node subnets that you found in step 2.
 8. Click **Apply**.
+
+
+
+
 
 
