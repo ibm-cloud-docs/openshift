@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-08-04"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, oc, ibmcloud oc
 
@@ -21,13 +21,16 @@ subcollection: openshift
 {:app_url: data-hd-keyref="app_url"}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +43,25 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -73,6 +81,7 @@ subcollection: openshift
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +89,7 @@ subcollection: openshift
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -108,6 +118,8 @@ Refer to the following tables for a summary of changes for each version of the [
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+
 
 |Version|Release date|Changes|
 |-------|------------|-------|
@@ -235,7 +247,7 @@ Version 0.2 of the CLI plug-in is deprecated. To update to the latest version, s
 | 0.2.95 | 03 Apr 2019 | <ul><li>Adds versioning support for managed cluster add-ons.</li><ul><li>Adds the [`ibmcloud oc addon-versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_addon_versions) command.</li><li>Adds the `--version` flag to [`ibmcloud oc cluster addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable) commands.</li></ul><li>Updates the help text in various languages.</li><li>Updates short links to documentation in help text.</li><li>Fixes a bug where JSON error messages printed in an incorrect format.</li><li>Fixes a bug where using the silent flag (`-s`) on some commands prevented errors from printing.</li></ul> |
 | 0.2.80 | 19 Mar 2019 | <ul><li>Adds support for enabling [master-to-worker communication with service endpoints](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) in standard clusters in [VRF-enabled accounts](/docs/account?topic=account-vrf-service-endpoint#vrf).<ul><li>Adds the `--private-service-endpoint` and `--public-service-endpoint` flags to the [`ibmcloud oc cluster-create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) command.</li><li>Adds the **Public Service Endpoint URL** and **Private Service Endpoint URL** fields to the output of `ibmcloud oc cluster get`.</li><li>Adds the [`ibmcloud oc cluster master private-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_enable) command.</li><li>Adds the [`ibmcloud oc cluster master public-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pub_se_enable) command.</li></ul></li><li>Updates the help text in various languages.</li><li>Updates the Go version to 1.11.6.</li><li>Resolves intermittent networking issues for macOS users.</li></ul> |
 | 0.2.75 | 14 Mar 2019 | <ul><li>Hides raw HTML from error outputs.</li><li>Fixes typos in help text.</li><li>Updates the help text in various languages.</li></ul> |
-| 0.2.61 | 26 Feb 2019 | <ul><li>Adds the `cluster pull-secret apply` command, which creates an IAM service ID for the cluster, policies, API key, and image pull secrets so that containers that run in the `default` Kubernetes namespace can pull images from IBM Cloud Container Registry. For new clusters, image pull secrets that use IAM credentials are created by default. Use this command to update existing clusters or if your cluster has an image pull secret error during creation. For more information, see [the doc](/docs/openshift?topic=openshift-registry#cluster_registry_auth).</li><li>Fixes a bug where `ibmcloud oc init` failures caused help output to be printed.</li></ul> |
+| 0.2.61 | 26 Feb 2019 | <ul><li>Adds the `cluster pull-secret apply` command, which creates an IAM service ID for the cluster, policies, API key, and image pull secrets so that containers that run in the `default` Kubernetes namespace can pull images from IBM Cloud Container Registry. For new clusters, image pull secrets that use IAM credentials are created by default. Use this command to update existing clusters or if your cluster has an image pull secret error during creation. For more information, see [the doc](/docs/containers?topic=containers-registry#cluster_registry_auth).</li><li>Fixes a bug where `ibmcloud oc init` failures caused help output to be printed.</li></ul> |
 | 0.2.53 | 19 Feb 2019 | <ul><li>Fixes a bug where the region was ignored for `ibmcloud oc api-key reset`, `ibmcloud oc credential get/set`, and `ibmcloud oc vlan spanning get`.</li><li>Improves performance for `ibmcloud oc worker update`.</li><li>Adds the version of the add-on in `ibmcloud oc cluster addon enable` prompts.</li></ul> |
 | 0.2.44 | 08 Feb 2019 | <ul><li>Adds `--skip-rbac` option to the `ibmcloud oc cluster config` command to skip adding user Kubernetes RBAC roles based on the {{site.data.keyword.cloud_notm}} IAM service access roles to the cluster configuration. Include this option only if you [manage your own Kubernetes RBAC roles](/docs/openshift?topic=openshift-users#rbac). If you use [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-access_reference#service) to manage all your RBAC users, do not include this option.</li><li>Updates the Go version to 1.11.5.</li></ul> |
 | 0.2.40 | 06 Feb 2019 | <ul><li>Adds the [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addons), [`ibmcloud oc cluster addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable), and [`ibmcloud oc cluster addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable) commands for working with managed cluster add-ons such as the [Istio](/docs/containers?topic=containers-istio) managed add-on for {{site.data.keyword.containerlong_notm}}.</li><li>Improves help text for {{site.data.keyword.Bluemix_dedicated_notm}} users of the `ibmcloud oc vlan ls` command.</li></ul> |

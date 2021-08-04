@@ -638,7 +638,8 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
       {: pre}
 
     2. From the output of the previous step, note all the unique network IDs (first three octets) of the **Public IP** for the worker nodes in your cluster. In the following output, the unique network IDs are `169.xx.178` and `169.xx.210`.
-        ```
+    
+        ```sh
         ID                                                  Public IP        Private IP     Machine Type        State    Status   Zone    Version   
         kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w31   169.xx.178.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.20.7   
         kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w34   169.xx.178.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.20.7  
@@ -646,6 +647,7 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
         kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w33   169.xx.210.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.20.7  
         ```
         {: screen}
+
     3.  List the VLAN subnets for each unique network ID.
         ```
         ibmcloud sl subnet list | grep -e <networkID1> -e <networkID2>
@@ -659,6 +661,7 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
         7654321   169.xx.178.xxx   ADDITIONAL_PRIMARY   PUBLIC          dal10        4332211   16    0          6    
         ```
         {: screen}
+
     4.  Retrieve the subnet address. In the output, find the number of **IPs**. Then, raise `2` to the power of `n` equal to the number of IPs. For example, if the number of IPs is `16`, then `2` is raised to the power of `4` (`n`) to equal `16`. Now get the subnet CIDR by subtracting the value of `n` from `32` bits. For example, when `n` equals `4`, then the CIDR is `28` (from the equation `32 - 4 = 28`). Combine the **identifier** mask with the CIDR value to get the full subnet address. In the previous output, the subnet addresses are:
         *   `169.xx.210.xxx/28`
         *   `169.xx.178.xxx/28`
@@ -667,6 +670,7 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
     ibmcloud oc worker ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
+
 4.  Add the subnet CIDR or IP addresses to your service's firewall for outbound traffic or your on-premises firewall for inbound traffic.
 5.  Repeat these steps for each cluster that you want to allow traffic to or from.
 
