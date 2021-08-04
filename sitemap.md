@@ -552,7 +552,7 @@ subcollection: openshift
   * [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-security#cert-rotate)
 * [Worker node](/docs/openshift?topic=openshift-security#workernodes)
 * [Network](/docs/openshift?topic=openshift-security#network)
-  * [Network segmentation and privacy](/docs/openshift?topic=openshift-security#network_segmentation)
+  * [Network segmentation and privacy for classic clusters](/docs/openshift?topic=openshift-security#network_segmentation)
   * [Network segmentation and privacy for VPC clusters](/docs/openshift?topic=openshift-security#network_segmentation_vpc)
   * [Securely expose apps with routes](/docs/openshift?topic=openshift-security#expose-apps-with-routes)
   * [Securely expose apps with LoadBalancer and Ingress services](/docs/openshift?topic=openshift-security#network_lb_ingress)
