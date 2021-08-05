@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-28"
+lastupdated: "2021-08-05"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -20,15 +20,19 @@ content-type: troubleshoot
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -41,20 +45,27 @@ content-type: troubleshoot
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:note:.deprecated}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -72,8 +83,10 @@ content-type: troubleshoot
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -81,6 +94,7 @@ content-type: troubleshoot
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -116,56 +130,56 @@ When you create an {{site.data.keyword.openshiftshort}} cluster on VPC infrastru
 Restart the Ingress controller so that a new VPC load balancer is created, which registers the router behind a hostname and forwards traffic to the router. Then, update your Ingress subdomain to use the new VPC load balancer hostname.
 
 1. Delete the `default` Ingress controller. After, the Ingress controller is automatically re-created.
-  ```
-  oc delete ingresscontroller default -n openshift-ingress-operator
-  ```
-  {: pre}
+    ```
+    oc delete ingresscontroller default -n openshift-ingress-operator
+    ```
+    {: pre}
 
 2. Verify that the `default` Ingress controller is re-created.
-  ```
-  oc get ingresscontroller -n openshift-ingress-operator
-  ```
-  {: pre}
+    ```
+    oc get ingresscontroller -n openshift-ingress-operator
+    ```
+    {: pre}
 
-  Example output:
-  ```
-  NAME      AGE
-  default   2m38s
-  ```
-  {: screen}
+    Example output:
+    ```
+    NAME      AGE
+    default   2m38s
+    ```
+    {: screen}
 
 3. Verify that the new VPC load balancer that exposes the router has **Provision status** of `active` and an **Operating status** of `online`. Also, verify that the **Subnets** list now includes subnets for each zone of your cluster.
-  ```
-  ibmcloud is load-balancers
-  ```
-  {: pre}
+    ```
+    ibmcloud is load-balancers
+    ```
+    {: pre}
 
-  In the output, look for the VPC load balancer **Name** that starts with `kube-crtmgr-<cluster_ID>`.
-  ```
-  ID                                          Name                                                         Family        Subnets               Is public   Provision status   Operating status   Resource group
-  r006-d044af9b-92bf-4047-8f77-a7b86efcb923   kube-bsaucubd07dhl66e4tgg-1f4f408ce6d2485499bcbdec0fa2d306   Application   mysubnet-us-south-1, mysubnet-us-south-2, mysubnet-us-south-3   true        active             online             default
-  ```
-  {: screen}
+    In the output, look for the VPC load balancer **Name** that starts with `kube-crtmgr-<cluster_ID>`.
+    ```
+    ID                                          Name                                                         Family        Subnets               Is public   Provision status   Operating status   Resource group
+    r006-d044af9b-92bf-4047-8f77-a7b86efcb923   kube-bsaucubd07dhl66e4tgg-1f4f408ce6d2485499bcbdec0fa2d306   Application   mysubnet-us-south-1, mysubnet-us-south-2, mysubnet-us-south-3   true        active             online             default
+    ```
+    {: screen}
 
 4. For the `router-default` service, copy the hostname that is assigned by the new VPC load balancer in the **EXTERNAL-IP** field.
-  ```
-  oc get svc -n openshift-ingress
-  ```
-  {: pre}
+    ```
+    oc get svc -n openshift-ingress
+    ```
+    {: pre}
 
-  Example output:
-  ```
-  NAME                       TYPE           CLUSTER-IP      EXTERNAL-IP                            PORT(S)                      AGE
-  router-default             LoadBalancer   172.21.47.119   1234abcd-us-south.lb.appdomain.cloud   80:32637/TCP,443:31719/TCP   2m
-  router-internal-default    ClusterIP      172.21.51.30    <none>                                 80/TCP,443/TCP,1936/TCP      2m
-  ```
-  {: screen}
+    Example output:
+    ```
+    NAME                       TYPE           CLUSTER-IP      EXTERNAL-IP                            PORT(S)                      AGE
+    router-default             LoadBalancer   172.21.47.119   1234abcd-us-south.lb.appdomain.cloud   80:32637/TCP,443:31719/TCP   2m
+    router-internal-default    ClusterIP      172.21.51.30    <none>                                 80/TCP,443/TCP,1936/TCP      2m
+    ```
+    {: screen}
 
 5. Get the Ingress subdomain for your cluster.
-  ```
-  ibmcloud oc cluster get -c <cluster_name_or_ID> | grep 'Ingress Subdomain'
-  ```
-  {: pre}
+    ```
+    ibmcloud oc cluster get -c <cluster_name_or_ID> | grep 'Ingress Subdomain'
+    ```
+    {: pre}
 
   Example output:
   ```
@@ -174,20 +188,20 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
   {: screen}
 
 6. Update the Ingress subdomain DNS registration to use the new VPC load balancer hostname.
-  ```
-  ibmcloud oc nlb-dns replace --cluster <cluster_name_or_ID> --nlb-subdomain <Ingress_subdomain> --lb-host <vpc_lb_hostname>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc nlb-dns replace --cluster <cluster_name_or_ID> --nlb-subdomain <Ingress_subdomain> --lb-host <vpc_lb_hostname>
+    ```
+    {: pre}
 
 7. Verify that the ingress subdomain DNS registration is updated to include the new VPC load balancer hostname for your router.
-  ```
-  ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
+    ```
+    {: pre}
 
-  Example output:
-  ```
-  Subdomain                                                                             Load Balancer Hostname                 SSL Cert Status   SSL Cert Secret Name                            Secret Namespace   
-  mycluster-d84d4d2137685d8446c88eacf59b5038-0000.us-south.containers.appdomain.cloud   1234abcd-us-south.lb.appdomain.cloud   created           cluster-d84d4d2137685d8446c88eacf59b5038-0000   openshift-ingress
-  ```
-  {: screen}
+    Example output:
+    ```
+    Subdomain                                                                             Load Balancer Hostname                 SSL Cert Status   SSL Cert Secret Name                            Secret Namespace   
+    mycluster-d84d4d2137685d8446c88eacf59b5038-0000.us-south.containers.appdomain.cloud   1234abcd-us-south.lb.appdomain.cloud   created           cluster-d84d4d2137685d8446c88eacf59b5038-0000   openshift-ingress
+    ```
+    {: screen}

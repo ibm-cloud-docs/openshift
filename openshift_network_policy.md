@@ -259,7 +259,7 @@ Before you begin, [install and configure the Calico CLI, and set the context for
     ```
     calicoctl get NetworkPolicy --all-namespaces -o wide
     ```
-    {:pre}
+    {: pre}
 
     [Global network policies](https://docs.projectcalico.org/reference/resources/globalnetworkpolicy){: external} are not scoped to specific namespaces:
     ```
