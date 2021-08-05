@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-03"
+lastupdated: "2021-08-05"
 
 keywords: openshift
 subcollection: openshift
@@ -18,6 +18,7 @@ subcollection: openshift
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -52,7 +53,9 @@ subcollection: openshift
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
+{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -78,6 +81,7 @@ subcollection: openshift
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
 {:swift: #swift .ph data-hd-programlang='swift'}
@@ -552,7 +556,7 @@ subcollection: openshift
   * [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-security#cert-rotate)
 * [Worker node](/docs/openshift?topic=openshift-security#workernodes)
 * [Network](/docs/openshift?topic=openshift-security#network)
-  * [Network segmentation and privacy](/docs/openshift?topic=openshift-security#network_segmentation)
+  * [Network segmentation and privacy for classic clusters](/docs/openshift?topic=openshift-security#network_segmentation)
   * [Network segmentation and privacy for VPC clusters](/docs/openshift?topic=openshift-security#network_segmentation_vpc)
   * [Securely expose apps with routes](/docs/openshift?topic=openshift-security#expose-apps-with-routes)
   * [Securely expose apps with LoadBalancer and Ingress services](/docs/openshift?topic=openshift-security#network_lb_ingress)

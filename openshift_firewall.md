@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-22"
+lastupdated: "2021-08-05"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -19,15 +19,19 @@ subcollection: openshift
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,27 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:note:.deprecated}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +82,10 @@ subcollection: openshift
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +93,7 @@ subcollection: openshift
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -150,6 +164,8 @@ If corporate network policies prevent access from your local system to public en
 
    ```
    {: screen}
+
+
 5. Allow access to the [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) that you plan to use on port 443 and 4443 in your firewall. The global registry stores IBM-provided public images, and regional registries store your own private or public images. If your firewall is IP-based, you can see which IP addresses are opened when you allow access to the {{site.data.keyword.registrylong_notm}} regional service endpoints by reviewing [this table](#firewall_registry).
   * Global registry: `icr.io`
   * AP North: `jp.icr.io`
@@ -165,6 +181,8 @@ If corporate network policies prevent access from your local system to public en
    {: pre}
 
 </br>
+
+
 
 ### Running `oc` commands from behind a firewall
 {: #firewall_kubectl}
@@ -325,6 +343,8 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
    - `TCP/UDP port range 20000-32767, port 443 FROM <each_worker_node_publicIP> TO <public_IPs>`
    -  Replace <em>&lt;public_IPs&gt;</em> with the public IP addresses of the region that your cluster is located.
     {: #master_ips}
+
+
     <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the region in column one and IP addresses to match in column two.">
       <caption>IP addresses to open for outgoing traffic</caption>
           <thead>
@@ -365,7 +385,10 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
 
 3.  {: #firewall_registry}To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}, allow outgoing network traffic from the worker nodes to [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions):
   - `TCP port 443 FROM <each_worker_node_publicIP> TO <registry_subnet>`
-  -  Replace <em>&lt;registry_subnet&gt;</em> with the registry subnet to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images.<table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two.">
+  -  Replace <em>&lt;registry_subnet&gt;</em> with the registry subnet to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images.
+  
+  
+  <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two.">
   <caption>IP addresses to open for Registry traffic</caption>
     <thead>
       <th>{{site.data.keyword.openshiftlong_notm}} region</th>
@@ -437,7 +460,10 @@ If you have a firewall on the public network in your IBM Cloud infrastructure ac
 
 8. If you use Ingress or routes to expose apps in your cluster, allow incoming network traffic from [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} on port 80 to the IP addresses of your router services so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers.
 
-  <p class="important">From 07 to 31 July 2021, the DNS provider is changed from Cloudflare to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains for all clusters in {{site.data.keyword.openshiftlong_notm}}. If you currently allow inbound traffic to your classic cluster from the Cloudflare source IP addresses, you must also allow inbound traffic from the [Akamai source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} before 07 July. After the migration completes on 31 July, you can remove the Cloudflare IP address rules. For more information, see the [announcement](https://cloud.ibm.com/notifications?selected=1621697674798){: external}.</p>
+From 07 to 31 July 2021, the DNS provider is changed from Cloudflare to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains for all clusters in {{site.data.keyword.openshiftlong_notm}}. If you currently allow inbound traffic to your classic cluster from the Cloudflare source IP addresses, you must also allow inbound traffic from the [Akamai source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} before 07 July. After the migration completes on 31 July, you can remove the Cloudflare IP address rules. For more information, see the [announcement](https://cloud.ibm.com/notifications?selected=1621697674798){: external}.
+{: important}
+
+
 
 </br>
 
@@ -509,7 +535,9 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
 
 6.  To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}, allow outgoing network traffic from the worker nodes to [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions):
   - `TCP port 443, port 4443 FROM <each_worker_node_privateIP> TO <registry_subnet>`
-  -  Replace <em>&lt;registry_subnet&gt;</em> with the registry subnet to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images. Port 4443 is required for notary functions, such as [Verifying image signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent). <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two.">
+  -  Replace <em>&lt;registry_subnet&gt;</em> with the registry subnet to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images. Port 4443 is required for notary functions, such as [Verifying image signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent). 
+  
+  <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two.">
   <caption>IP addresses to open for Registry traffic</caption>
     <thead>
       <th>{{site.data.keyword.openshiftlong_notm}} region</th>
@@ -614,7 +642,8 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
       {: pre}
 
     2. From the output of the previous step, note all the unique network IDs (first three octets) of the **Public IP** for the worker nodes in your cluster. In the following output, the unique network IDs are `169.xx.178` and `169.xx.210`.
-        ```
+    
+        ```sh
         ID                                                  Public IP        Private IP     Machine Type        State    Status   Zone    Version   
         kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w31   169.xx.178.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.20.7   
         kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w34   169.xx.178.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.20.7  
@@ -622,6 +651,7 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
         kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w33   169.xx.210.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.20.7  
         ```
         {: screen}
+
     3.  List the VLAN subnets for each unique network ID.
         ```
         ibmcloud sl subnet list | grep -e <networkID1> -e <networkID2>
@@ -635,6 +665,7 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
         7654321   169.xx.178.xxx   ADDITIONAL_PRIMARY   PUBLIC          dal10        4332211   16    0          6    
         ```
         {: screen}
+
     4.  Retrieve the subnet address. In the output, find the number of **IPs**. Then, raise `2` to the power of `n` equal to the number of IPs. For example, if the number of IPs is `16`, then `2` is raised to the power of `4` (`n`) to equal `16`. Now get the subnet CIDR by subtracting the value of `n` from `32` bits. For example, when `n` equals `4`, then the CIDR is `28` (from the equation `32 - 4 = 28`). Combine the **identifier** mask with the CIDR value to get the full subnet address. In the previous output, the subnet addresses are:
         *   `169.xx.210.xxx/28`
         *   `169.xx.178.xxx/28`
@@ -643,6 +674,7 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
     ibmcloud oc worker ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
+
 4.  Add the subnet CIDR or IP addresses to your service's firewall for outbound traffic or your on-premises firewall for inbound traffic.
 5.  Repeat these steps for each cluster that you want to allow traffic to or from.
 
@@ -650,8 +682,6 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
 
 ## Updating IAM firewalls for {{site.data.keyword.containershort}} IP addresses
 {: #iam_allowlist}
-
-
 
 By default, all IP addresses can be used to log in to the {{site.data.keyword.cloud_notm}} console and access your cluster. In the IBM Cloud Identity and Access Management (IAM) console, you can generate a firewall by [creating an allowlist by specifying which IP addresses have access](/docs/account?topic=account-ips), and all other IP addresses are restricted. If you use an IAM firewall, you must add the CIDRs of the {{site.data.keyword.openshiftlong_notm}} control plane for the zones in the region where your cluster is located to the allowlist. You must allow these CIDRs so that {{site.data.keyword.openshiftlong_notm}} can create Ingress ALBs and `LoadBalancers` in your cluster.
 {: shortdesc}
@@ -721,50 +751,10 @@ Setting up an IAM allowlist blocks access to the {{site.data.keyword.openshiftsh
 4. From the menu bar, click **Manage** > **Access (IAM)**, and select **Users**.
 5. Select the user that you found in step 1 from the list.
 6. From the **User details** page, go to the **IP address restrictions** section.
-7. For **Classic infrastructure**, enter the CIDRs of the zones in the region where your cluster is located.
-  <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the region in column one and IP addresses to match in column two.">
-  <caption>CIDRs to allow in IAM</caption>
-    <thead>
-    <th>Region</th>
-    <th>IP address</th>
-    </thead>
-    <tbody>
-    <tr>
-      <td>AP North</td>
-      <td><code>119.81.192.0/26, 128.168.68.128/26, 128.168.89.14/32, 128.168.91.176/28, 128.168.97.32/27, 161.202.136.0/26, 161.202.242.224/27, 161.202.247.13/32, 165.192.70.64/26, 165.192.77.96/28, 165.192.85.219/32, 165.192.89.96/27, 169.38.97.192/28, 169.38.111.192/26, 169.38.113.64/27, 169.56.40.128/25, 169.56.49.192/28, 169.56.110.64/26, 169.56.143.0/26</code></td>
-     </tr>
-    <tr>
-      <td>AP South</td>
-      <td><code>130.198.67.0/26, 130.198.71.20/32, 130.198.74.128/26, 130.198.77.96/27, 130.198.78.128/25, 130.198.92.192/26, 130.198.96.128/25, 130.198.98.0/24, 135.90.68.64/28, 135.90.69.16/28, 135.90.69.160/27, 135.90.73.0/26, 135.90.75.0/27, 135.90.77.68/32, 135.90.78.128/26, 135.90.83.160/27, 168.1.20.148/32, 168.1.56.160/27, 168.1.199.0/26, 168.1.209.192/26, 168.1.212.128/25</code></td>
-    </tr>
-    <tr>
-      <td>EU Central</td>
-      <td><code>149.81.72.192/27, 149.81.72.236/32, 149.81.105.192/26, 149.81.115.96/28, 149.81.124.16/28, 149.81.128.192/27, 149.81.141.128/25, 158.177.28.192/27, 158.177.66.192/28, 158.177.84.64/26, 158.177.160.0/25, 158.177.210.28/32, 159.8.74.64/27, 159.122.157.192/26, 159.122.168.128/25, 159.122.169.64/26, 161.156.14.128/25, 161.156.66.224/27, 161.156.102.0/26, 161.156.125.80/28, 161.156.134.64/28, 161.156.137.131/32, 161.156.184.32/27, 169.50.48.160/28, 169.50.58.160/27, 169.50.177.128/25, 169.50.185.32/27, 169.51.3.64/26, 169.51.22.64/26, 169.51.28.128/25, 169.51.39.64/26, 169.51.41.64/26, 169.51.84.64/26, 169.51.161.128/25, 169.51.193.0/24</code></td>
-   </tr>
-   </tr>
-    <tr>
-      <td>Osaka</td>
-      <td><code>163.68.68.206/32, 163.68.69.144/28, 163.68.69.192/28, 163.68.70.64/27, 163.68.70.160/27, 163.69.64.158/32, 163.69.65.160/28, 163.69.65.192/28, 163.69.66.32/27, 163.69.66.64/27, 163.73.64.80/28, 163.73.64.243/32, 163.73.65.224/28, 163.73.66.64/27, 163.73.66.96/27</code></td>
-    </tr>
-    <tr>
-      <td>Toronto</td>
-      <td><code>158.85.73.96/27, 158.85.85.0/28, 158.85.95.211/32, 163.74.65.28/32, 163.74.65.64/28, 163.74.65.208/28, 163.74.69.0/27, 163.75.64.144/28, 163.75.64.213/32, 163.75.65.240/28, 163.75.67.192/27, 169.53.170.160/28, 169.53.178.192/26, 169.55.148.128/25</code></td>
-    </tr>
-    <tr>
-      <td>UK South</td>
-      <td><code>141.125.74.4/32, 141.125.78.16/28, 141.125.98.128/27, 158.175.68.192/26, 158.175.77.64/26, 158.175.78.192/26, 158.175.81.128/25, 158.175.90.160/27, 158.175.94.16/28, 158.175.101.64/26, 158.175.136.0/25, 158.175.136.128/25, 158.175.139.0/25, 158.175.141.0/24, 158.175.157.149/32, 158.176.66.208/28, 158.176.75.240/28, 158.176.92.32/27, 158.176.95.0/27, 158.176.95.64/27, 158.176.111.128/26, 158.176.112.0/26, 158.176.131.107/32, 158.176.137.144/28, 159.8.171.0/26, 159.122.249.128/25, 169.50.199.64/26, 169.50.220.32/27, 169.50.221.0/25</code></td>
-    </tr>
-    <tr>
-      <td>US East</td>
-      <td><code>52.117.100.64/27, 52.117.108.128/25, 169.45.253.224/27, 169.47.160.0/26, 169.47.160.128/26, 169.53.170.160/28, 169.53.178.192/26, 169.54.109.192/26, 169.55.148.128/25, 169.60.76.192/26, 169.60.77.64/27, 169.60.100.176/28, 169.60.104.64/26, 169.61.85.64/26, 169.61.125.0/28, 169.62.0.64/26, 169.62.30.148/32, 169.63.79.208/28, 169.63.121.164/32, 169.63.137.0/25, 169.63.170.60/32</code></td>
-    </tr>
-    <tr>
-      <td>US South</td>
-      <td><code>52.116.223.52/32, 52.116.235.224/28, 150.238.79.96/27, 150.238.229.128/27, 169.44.207.0/26, 169.46.30.128/26, 169.47.79.192/26, 169.47.126.192/27, 169.47.195.48/28, 169.48.138.64/26, 169.48.141.13/32, 169.48.180.128/25, 169.48.201.64/26, 169.48.212.64/26, 169.48.238.128/25, 169.57.18.48/28, 169.57.91.0/27, 169.57.162.144/28, 169.57.190.64/26, 169.57.192.128/25, 169.59.197.0/24, 169.59.222.192/27, 169.60.131.192/26, 169.61.50.28/32, 169.61.137.64/26, 169.61.176.64/26, 169.61.188.128/25, 169.61.189.128/25, 169.61.206.128/26, 169.62.73.192/26, 169.62.130.0/26, 169.62.130.64/26, 169.62.175.0/28, 169.62.216.0/25, 169.62.222.0/25, 169.62.253.0/25, 169.63.18.128/25, 169.63.20.0/25, 169.63.24.0/24, 169.63.199.128/25, 169.63.205.0/25, 173.193.93.0/24, 184.172.208.0/25, 184.173.6.0/26</code></td>
-    </tr>
-    </tbody>
-  </table>
-7. Enter the CIDRs of the worker node subnets that you found in step 2.
-8. Click **Apply**.
+7. For **Classic infrastructure**, enter the [CIDRs of the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/iam-firewall-ips){: external}. To find the region that your cluster's zones are location in, see the `README` for the directory.
+8. Enter the CIDRs of the worker node subnets that you found in step 2.
+9. Click **Apply**.
+
+
 
 

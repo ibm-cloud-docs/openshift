@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-30"
+lastupdated: "2021-08-05"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -19,6 +19,7 @@ subcollection: openshift
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -52,11 +53,10 @@ subcollection: openshift
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
 {:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -516,7 +516,7 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
           </tr>
           <tr>
           <td><code>stringData.config.root_key_crn</code></td>
-          <td>Enter the CRN of the root key that you created. To retrieve your root key CRN: <li>Navigate to the resource list in the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/resources){:external}.</li><li>Click <strong>Services</strong>, then click your {{site.data.keyword.keymanagementserviceshort}} instance.</li><li>Find your root key on the <strong>Actions Menu</strong>, then click <strong>View CRN</strong>.</li><li>Click the <strong>Copy</strong> button to copy the CRN.</li></td>
+          <td>Enter the CRN of the root key that you created. To retrieve your root key CRN: <li>Navigate to the resource list in the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/resources){: external}.</li><li>Click <strong>Services</strong>, then click your {{site.data.keyword.keymanagementserviceshort}} instance.</li><li>Find your root key on the <strong>Actions Menu</strong>, then click <strong>View CRN</strong>.</li><li>Click the <strong>Copy</strong> button to copy the CRN.</li></td>
           </tr>
           </tbody>
           </table>
@@ -2066,7 +2066,7 @@ To clean up persistent data:
    oc get pv
    ```
    {: pre}
-8. {: #sl_delete_storage}List the physical storage instance that your PV pointed to and note the **`id`** of the physical storage instance.
+8. List the physical storage instance that your PV pointed to and note the **`id`** of the physical storage instance. {: #sl_delete_storage}
 
     ```
     ibmcloud sl block volume-list --columns id --columns notes | grep <pv_name>
