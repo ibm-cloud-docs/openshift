@@ -210,9 +210,9 @@ To deploy a container into the **default** project of your cluster:
     <tr>
     <td><code>image: <em>&lt;region&gt;</em>.icr.io/<em>&lt;project&gt;</em>/<em>&lt;image&gt;</em>:<em>&lt;tag&gt;</em></code></td>
     <td>Replace the image URL variables with the information for your image:
-        <ul><li><strong><code><region></code></strong>: The regional {{site.data.keyword.registrylong_notm}} API endpoint for the registry domain. To list the domain for the region that you are logged in to, run <code>ibmcloud cr api</code>.</li>
-        <li><strong><code><namespace></code></strong>: The registry namespace. To get your namespace information, run `ibmcloud cr namespace-list`.</li>
-        <li><strong><code><image>:<tag></code></strong>: The image and tag that you want to use for your container. To list the images that are available in your registry namespace, run <code>ibmcloud cr images</code>.</li></ul></td>
+        <ul><li><strong><code>&lt;region&gt;</code></strong>: The regional {{site.data.keyword.registrylong_notm}} API endpoint for the registry domain. To list the domain for the region that you are logged in to, run <code>ibmcloud cr api</code>.</li>
+        <li><strong><code>&lt;namespace&gt;</code></strong>: The registry namespace. To get your namespace information, run <code>ibmcloud cr namespace-list</code>.</li>
+        <li><strong><code>&lt;image&gt;:<tag></code></strong>: The image and tag that you want to use for your container. To list the images that are available in your registry namespace, run <code>ibmcloud cr images</code>.</li></ul></td>
     </tr>
     </tbody></table>
 
@@ -299,37 +299,37 @@ To deploy containers that use encrypted images:
         {: codeblock}
 
     * **To wrap the private key by using a {{site.data.keyword.keymanagementserviceshort}} root key**:
-    1. Encode your private key in base64, and copy the output.
-        ```
-        cat myprivatekey.pem | base64
-        ```
-        {: pre}
+        1. Encode your private key in base64, and copy the output.
+            ```
+            cat myprivatekey.pem | base64
+            ```
+            {: pre}
 
-    2. Use the {{site.data.keyword.keymanagementserviceshort}} CLI plug-in to wrap the base64-encoded private key with your root key. In the output, copy the ciphertext of the wrapped private key.
-        ```
-        ibmcloud kp key wrap <root_key_ID> -p <base64_encoded_private_key>
-        ```
-        {: pre}
+        2. Use the {{site.data.keyword.keymanagementserviceshort}} CLI plug-in to wrap the base64-encoded private key with your root key. In the output, copy the ciphertext of the wrapped private key.
+            ```
+            ibmcloud kp key wrap <root_key_ID> -p <base64_encoded_private_key>
+            ```
+            {: pre}
 
-    3. Save the wrapped private key as a Kubernetes secret in the `image-key-synchronizer` project.
-        ```yaml
-        apiVersion: v1
-        kind: Secret
-        type: kp-key
-        metadata:
-          name: <secret_name>
-          namespace: image-key-synchronizer
-        stringData:
-          rootkeyid: "<root_key_ID>"
-          ciphertext: "<wrapped_private_key_cipertext>"
-        ```
-        {: pre}
+        3. Save the wrapped private key as a Kubernetes secret in the `image-key-synchronizer` project.
+            ```yaml
+            apiVersion: v1
+            kind: Secret
+            type: kp-key
+            metadata:
+            name: <secret_name>
+            namespace: image-key-synchronizer
+            stringData:
+            rootkeyid: "<root_key_ID>"
+            ciphertext: "<wrapped_private_key_cipertext>"
+            ```
+            {: pre}
 
-    4. Create the secret.
-        ```
-        oc apply -n image-key-synchronizer -f <secret_name>.yaml
-        ```
-        {: pre}
+        4. Create the secret.
+            ```
+            oc apply -n image-key-synchronizer -f <secret_name>.yaml
+            ```
+            {: pre}
 
 5. Use `docker` to locally pull an OCI image. Replace `<source_image>` with the repository of the image and `<tag>` with the tag of the image that you want to use, such as `latest`.
     ```
