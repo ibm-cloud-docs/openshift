@@ -210,9 +210,9 @@ To deploy a container into the **default** project of your cluster:
     <tr>
     <td><code>image: <em>&lt;region&gt;</em>.icr.io/<em>&lt;project&gt;</em>/<em>&lt;image&gt;</em>:<em>&lt;tag&gt;</em></code></td>
     <td>Replace the image URL variables with the information for your image:
-        <ul><li>**`<region>`**: The regional {{site.data.keyword.registrylong_notm}} API endpoint for the registry domain. To list the domain for the region that you are logged in to, run `ibmcloud cr api`.</li>
-        <li>**`<namespace>`**: The registry namespace. To get your namespace information, run `ibmcloud cr namespace-list`.</li>
-        <li>**`<image>:<tag>`**: The image and tag that you want to use for your container. To list the images that are available in your registry namespace, run `ibmcloud cr images`.</li></ul></td>
+        <ul><li><strong><code><region></code></strong>: The regional {{site.data.keyword.registrylong_notm}} API endpoint for the registry domain. To list the domain for the region that you are logged in to, run <code>ibmcloud cr api</code>.</li>
+        <li><strong><code><namespace></code></strong>: The registry namespace. To get your namespace information, run `ibmcloud cr namespace-list`.</li>
+        <li><strong><code><image>:<tag></code></strong>: The image and tag that you want to use for your container. To list the images that are available in your registry namespace, run <code>ibmcloud cr images</code>.</li></ul></td>
     </tr>
     </tbody></table>
 
@@ -293,10 +293,10 @@ To deploy containers that use encrypted images:
 
 4. Provide the private key directly in a secret, or first wrap the private key by using a {{site.data.keyword.keymanagementserviceshort}} root key. After you create the secret in the `image-key-synchronizer` project, the Image Key Synchronizer add-on automatically copies the private key to the `/etc/crio/keys/synced` directory on your worker nodes.
     * **To provide the private key directly**: Save the private key as a Kubernetes secret in the `image-key-synchronizer` project.
-    ```
-    oc create -n image-key-synchronizer secret generic --type=key --from-file=myprivatekey.pem <secret_name>
-    ```
-    {: codeblock}
+        ```
+        oc create -n image-key-synchronizer secret generic --type=key --from-file=myprivatekey.pem <secret_name>
+        ```
+        {: codeblock}
 
     * **To wrap the private key by using a {{site.data.keyword.keymanagementserviceshort}} root key**:
     1. Encode your private key in base64, and copy the output.
@@ -351,10 +351,10 @@ To deploy containers that use encrypted images:
         {: pre}
 
     2. Attempt to use this new key to decrypt the image. The decryption command fails because the incorrect private key was specified.
-    ```
-    skopeo copy --decryption-key ./wrongkey.pem <source_image>_encrypted:<tag> <source_image>_decrypted:<tag>
-    ```
-    {: pre}
+        ```
+        skopeo copy --decryption-key ./wrongkey.pem <source_image>_encrypted:<tag> <source_image>_decrypted:<tag>
+        ```
+        {: pre}
 
 8. Optional: [Push the encrypted image to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pushing), which supports encrypted OCI images.
 
