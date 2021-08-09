@@ -239,7 +239,7 @@ To run an app by using an encrypted image, you must share the key for decrypting
 1. Download and install the CLI clients for the following open source tools:
     * [OpenSSL](https://www.openssl.org/source/){: external}, to generate an RSA key pair.
     * [Docker Engine CLI](https://www.docker.com/products/container-runtime#/download){: external}, to locally pull images from an image registry.
-    * [Skopeo](https://github.com/containers/skopeo/blob/master/install.md){: external}, to encrypt OCI container images.
+    * [Skopeo](https://github.com/containers/skopeo/blob/main/install.md){: external}, to encrypt OCI container images.
 
 2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that encrypted images are supported only for {{site.data.keyword.openshiftshort}} version 4.5 and later.
 
