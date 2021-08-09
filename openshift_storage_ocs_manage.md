@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-05"
+lastupdated: "2021-08-09"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc, roks
 
@@ -54,7 +54,6 @@ subcollection: openshift
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -126,12 +125,26 @@ To update the OpenShift Data Foundation in your cluster, disable the add-on and 
   {: pre}
 
 1. Disable the add-on. Note that you might see a warning that resources or data might be deleted. For the ODF add-on update, PVC creation and app deployment are not disrupted when the add-on is disabled
+
+  **For {{site.data.keyword.openshift_short}} versions 4.7 and above**
+  ```sh
+  ibmcloud oc cluster addon disable openshift-data-foundation --cluster <cluster>
+  ```
+  {: pre}
+  **For {{site.data.keyword.openshift_short}} versions 4.6 and 4.7**
   ```sh
   ibmcloud oc cluster addon disable openshift-container-storage --cluster <cluster>
   ```
   {: pre}
 
 1. Enable the add-on.
+
+  **For {{site.data.keyword.openshift_short}} versions 4.7 and above**
+  ```sh
+  ibmcloud koc cluster addon enable openshift-data-foundation --cluster <version> --version <version>
+  ```
+  {: pre}
+  **For {{site.data.keyword.openshift_short}} versions 4.6 and 4.7**
   ```sh
   ibmcloud koc cluster addon enable openshift-container-storage --cluster <version> --version <version>
   ```
