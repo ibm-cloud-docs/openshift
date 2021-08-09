@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-03"
+lastupdated: "2021-08-09"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -19,6 +19,7 @@ subcollection: openshift
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -54,6 +55,7 @@ subcollection: openshift
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -79,6 +81,7 @@ subcollection: openshift
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
 {:swift: #swift .ph data-hd-programlang='swift'}
@@ -121,6 +124,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 09 August 2021 | **CLI changelog**: Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.312](/docs/openshift?topic=openshift-cs_cli_changelog). |
 | 02 August 2021 | <ul><li>**Ingress changelogs**: Updated the [Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.47.0_1434_iks` and `0.45.0_1435_iks`. Version `0.35.0` is now unsupported.</li><li>**Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.7.21_1527_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4721_1527), [`4.6.40_1551_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4640_1551), [`4.5.41_1547_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4541_1547), and [`3.11.465_1599_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311465_1599).</li></ul> |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in August 2021"}

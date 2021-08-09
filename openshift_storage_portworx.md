@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-05"
+lastupdated: "2021-08-09"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -54,7 +54,6 @@ subcollection: openshift
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -290,7 +289,7 @@ Databases for etcd is a managed etcd service that securely stores and replicates
    2. Click **New credentials**.
    3. Enter a name for your service credentials and click **Add**.
 
-4. Retrieve your service credentials and certificate. {: #databases_credentials}
+4. {: #databases_credentials}Retrieve your service credentials and certificate. 
    1. From the navigation on the service details page, select **Service credentials**.
    2. Find the credentials that you want to use, and from the **Actions** column in the service credentials table, click **View credentials**.
    3. Find the `grp.authentication` section of your service credentials and note the **`username`** and **`password`**.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-02"
+lastupdated: "2021-08-09"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, roks
 
@@ -19,6 +19,7 @@ subcollection: openshift
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -52,11 +53,9 @@ subcollection: openshift
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -130,14 +129,28 @@ If you want to override the default parameters when deploying the add-on, you ca
 {: tip}
 
 1. To see the default settings for ODF on VPC clusters, run the `addon options` command.
+
+ **For {{site.data.keyword.openshift_short}} versions 4.6 and 4.7**
   ```sh
   ibmcloud oc cluster addon options --addon openshift-container-storage
   ```
   {: pre}
+  **For {{site.data.keyword.openshift_short}} versions 4.7 and above**
+  ```sh
+  ibmcloud oc cluster addon options --addon openshift-data-foundation
+  ```
+  {: pre}
   
 1. Enable the ODF and specify the `ocsDeploy=True` parameter to deploy ODF with the default configuration parameters. To list the versions and find the current default, run `ibmcloud oc cluster addon versions`. If you have a cluster version other than the default, specify the `--version` flag. The add-on supports `n+1` cluster versions. 
+
+**For {{site.data.keyword.openshift_short}} versions 4.6 and 4.7**
   ```sh
   ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true"
+  ```
+  {: pre}
+  **For {{site.data.keyword.openshift_short}} versions 4.7 and above**
+  ```sh
+  ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "ocsDeploy=true"
   ```
   {: pre}
 

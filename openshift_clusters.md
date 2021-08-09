@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-05"
+lastupdated: "2021-08-09"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -54,7 +54,6 @@ subcollection: openshift
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}

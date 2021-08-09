@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-08-09"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -19,15 +19,19 @@ subcollection: openshift
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: openshift
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: openshift
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -119,7 +132,7 @@ With {{site.data.keyword.openshiftlong}}, you can create a cluster from the foll
 |Available locations and versions|Classic clusters are [available worldwide](/docs/openshift?topic=openshift-regions-and-zones#locations), including all six {{site.data.keyword.cloud_notm}} multizone metros and 20 single zone locations in more than a dozen countries.|VPC clusters are available worldwide in the [multizone location](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc).|
 |Service interface (API, CLI, UI)|Classic clusters are fully supported in the {{site.data.keyword.containershort_notm}} [v1 API ![External link icon](../icons/launch-glyph.svg "External link icon")](https://containers.cloud.ibm.com/global/swagger-global-api/#/), [CLI](/docs/openshift?topic=openshift-kubernetes-service-cli), and [console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/clusters).|VPC clusters are supported by the [next version (`v2`) of the {{site.data.keyword.containerlong_notm}} API](/docs/openshift?topic=openshift-cs_api_install), and you can manage your VPC clusters through the same CLI and console as classic clusters.|
 |Service compliance|See the classic section in [What standards does the service comply to?](/docs/openshift?topic=openshift-faqs#standards). | See the VPC section in [What standards does the service comply to?](/docs/openshift?topic=openshift-faqs#standards). |
-|Service limitations|See [Service limitations](/docs/openshift?topic=openshift-openshift_limitations#tech_limits). Feature-specific limitations are documented by section.|See [Service limitations](/docs/openshift?topic=openshift-openshift_limitations#tech_limits).<ul><li>For VPC-specific limitations in {{site.data.keyword.openshiftlong_notm}}, see [VPC cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ks_vpc_gen2_limits).</li><li>For general VPC infrastructure provider limitations, see [Limitations](/docs/vpc?topic=vpc-limitations).</li></ul>|
+|Service limitations|See [Service limitations](/docs/containers?topic=containers-limitations#tech_limits). Feature-specific limitations are documented by section.|See [Service limitations](/docs/containers?topic=containers-limitations#tech_limits).<ul><li>For VPC-specific limitations in {{site.data.keyword.openshiftlong_notm}}, see [VPC cluster limitations](/docs/containers?topic=containers-limitations#ks_vpc_gen2_limits).</li><li>For general VPC infrastructure provider limitations, see [Limitations](/docs/vpc?topic=vpc-limitations).</li></ul>|
 |Troubleshooting and support|Both classic and VPC clusters are supported through the same {{site.data.keyword.cloud_notm}} Support processes. For cluster issues, check out the [Debugging your clusters](/docs/containers?topic=containers-debug_clusters) guide. For questions, try posting in the [Slack channel](https://cloud.ibm.com/kubernetes/slack){: external}.|Both classic and VPC clusters are supported through the same {{site.data.keyword.cloud_notm}} Support processes. For cluster issues, check out the [troubleshooting documentation](/docs/containers?topic=containers-debug_clusters) for VPC-specific topics. For questions, try posting in the [Slack channel](https://cloud.ibm.com/kubernetes/slack){: external}.|
 {: caption="Infrastructure providers for {{site.data.keyword.openshiftlong_notm}} clusters"}
 {: summary="The rows are read from left to right, with the area of comparison in column one, classic infrastructure provider in column two, and VPC infrastructure provider in column three."}

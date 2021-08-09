@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-05"
+lastupdated: "2021-08-09"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -54,7 +54,6 @@ subcollection: openshift
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -125,7 +124,7 @@ Looking for `ibmcloud cr` commands? See the [{{site.data.keyword.registrylong_no
 The following image depicts the structure and grouping of the `ibmcloud oc` commands.
 {: shortdesc}
 
-![Image of the structure and groupings of commands in {{site.data.keyword.openshiftlong_notm}} plug-in](images/cs_cli_ref_imagemap.png)
+![Image of the structure and groupings of commands in {{site.data.keyword.openshiftlong_notm}} plug-in.](images/cs_cli_ref_imagemap.svg "Image of the structure and groupings of commands in {{site.data.keyword.openshiftlong_notm}} plug-in"){: caption="Image of the structure and groupings of commands in {{site.data.keyword.openshiftlong_notm}} plug-in" caption-side="bottom"}
 
 ## `cluster` commands
 {: #cluster}
@@ -225,6 +224,35 @@ ibmcloud oc cluster addon disable kube-terminal --cluster CLUSTER [-f]
 <dd>Optional: Force the command to run with no user prompts.</dd>
 </dl>
 
+#### `ibmcloud oc cluster addon disable openshift-data-foundation`
+{: #cs_cluster_addon_disable_openshift-data-foundation}
+
+Disable the [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc) add-on for {{site.data.keyword.openshiftshort}} version 4.7 or higher.
+{: shortdesc}
+
+```sh
+ibmcloud oc cluster addon disable openshift-data-foundation --cluster CLUSTER [-f] [-q] 
+```
+{: pre}
+
+**Supported infrastructure provider**:
+* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+
+**Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>Required: The name or ID of the cluster.</dd>
+
+<dt><code>-f</code></dt>
+<dd>Optional: Force the command to run with no user prompts.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+</dl>
+
 #### `ibmcloud oc cluster addon disable static-route`
 {: #cs_cluster_addon_disable_static-route}
 
@@ -315,35 +343,6 @@ ibmcloud oc cluster addon enable image-key-synchronizer --cluster CLUSTER [--ver
   ```
   {: pre}
 
-#### `ibmcloud oc cluster addon enable kube-terminal`
-{: #cs_cluster_addon_enable_kube-terminal}
-
-Enable the [Kubernetes web terminal](/docs/containers?topic=containers-cs_cli_install#cli_web) add-on to use the Kubernetes web terminal in the {{site.data.keyword.containerlong_notm}} cluster console.
-{: shortdesc}
-
-The Kubernetes web terminal add-on is deprecated and becomes unsupported 1 July 2021. Instead, use the [{{site.data.keyword.cloud-shell_notm}}](/docs/containers?topic=containers-cs_cli_install#cloud-shell).
-{: deprecated}
-
-```sh
-ibmcloud oc cluster addon enable kube-terminal --cluster CLUSTER [--version VERSION]
-```
-{: pre}
-
-**Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
-
-**Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-<dl>
-<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
-<dd>Required: The name or ID of the cluster.</dd>
-
-<dt><code>--version <em>VERSION</em></code></dt>
-<dd>Optional: Specify the version of the add-on to install. If no version is specified, the default version is installed.</dd>
-</dl>
-
 #### `ibmcloud oc cluster addon enable openshift-container-storage`
 {: #cs_cluster_addon_enable_openshift-container-storage}
 
@@ -374,6 +373,44 @@ ibmcloud oc cluster addon enable openshift-container-storage --cluster CLUSTER [
 
 <dt><code>--param <em>PARAM</em></code></dt>
 <dd>Optional: Specify an installation setting. To see available settings, run `ibmcloud oc cluster addon options --addon openshift-container-storage`.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional: Do not show the message of the day or update reminders.</dd>
+
+<dt><code>--version <em>VERSION</em></code></dt>
+<dd>Optional: Specify the version of the add-on to install. To see available versions, run `ibmcloud oc cluster addon versions`. If no version is specified, the default version is installed.</dd>
+</dl>
+
+#### `ibmcloud oc cluster addon enable openshift-data-foundation`
+{: #cs_cluster_addon_enable_openshift-data-foundation}
+
+Enable the [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc) add-on for {{site.data.keyword.openshiftshort}} version 4.7 or higher.
+{: shortdesc}
+
+The OpenShift Data Foundation add-on is available as a technology preview and might change without prior notice. Do not use this add-on for production workloads.
+{: preview}
+
+```sh
+ibmcloud oc cluster addon enable openshift-data-foundation --cluster CLUSTER [-f] [--param PARAM] [-q] [--version VERSION]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+
+**Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+<dl>
+<dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
+<dd>Required: The name or ID of the cluster.</dd>
+
+<dt><code>-f</code></dt>
+<dd>Optional: Force the command to run with no user prompts.</dd>
+
+<dt><code>--param <em>PARAM</em></code></dt>
+<dd>Optional: Specify an installation setting. To see available settings, run `ibmcloud oc cluster addon options --addon openshift-data-foundation`.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
