@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-08-10"
 
 keywords: openshift
 subcollection: openshift
@@ -1734,6 +1734,8 @@ subcollection: openshift
 
 [Version information and update actions](/docs/openshift?topic=openshift-openshift_versions)
 * [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types)
+  * [Major and minor updates (4.6)](/docs/openshift?topic=openshift-openshift_versions#major_minor_updates)
+  * [Patch updates (4.6.28_xxxx_openshift)](/docs/openshift?topic=openshift-openshift_versions#patch_updates_oc)
 * [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types)
 * [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history)
 * [{{site.data.keyword.openshiftshort}} 4.7](/docs/openshift?topic=openshift-openshift_versions#ocp47)
