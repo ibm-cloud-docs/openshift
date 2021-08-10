@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-08-10"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -19,15 +19,19 @@ subcollection: openshift
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: openshift
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: openshift
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -91,8 +104,6 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-  
-
 
 
 # Version information and update actions
@@ -124,15 +135,28 @@ You must [update your cluster](/docs/openshift?topic=openshift-update) by using 
 |Patch|x.x.18_1533|IBM and you|{{site.data.keyword.openshiftshort}} patches, as well as other {{site.data.keyword.cloud_notm}} Provider component updates such as security and operating system patches. IBM updates masters automatically, but you apply patches to worker nodes. See more about patches in the following section.|
 {: caption="Impacts of {{site.data.keyword.openshiftshort}} updates" caption-side="top"}
 
-<dl>
-  <dt>**Major and minor updates (4.6)**</dt>
-  <dd><p>First, [update your master node](/docs/openshift?topic=openshift-update#master) and then [update the worker nodes](/docs/openshift?topic=openshift-update#worker_node). Worker nodes cannot run an {{site.data.keyword.openshiftshort}} major or minor version that is greater than the masters. Additionally, your worker nodes can be only one version behind the master version (`n-1`).</p><p class="note">If you use an `oc` or `oc` CLI version that does match at least the `major.minor` version of your clusters, you might experience unexpected results. Make sure to keep your cluster and [CLI versions](/docs/openshift?topic=openshift-openshift-cli#cli_oc) up-to-date.</p></dd>
-  <dt>**Patch updates (4.6.28_xxxx_openshift)**</dt>
-  <dd><p>Changes across patches are documented in the [Version changelog](/docs/openshift?topic=openshift-openshift_versions). Master patches are applied automatically, but you initiate worker node patches updates. Worker nodes can also run patch versions that are greater than the masters. As updates become available, you are notified when you view information about the master and worker nodes in the {{site.data.keyword.cloud_notm}} console or CLI, such as with the following commands: `ibmcloud oc cluster ls`, `cluster get`, `worker ls`, or `worker get`.</p>
-  <p>Patches can be for worker nodes, masters, or both.</p>
-  <ul><li>**Worker node patches**: Check monthly to see whether an update is available, and use the `ibmcloud oc worker update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_update) or the `ibmcloud oc worker reload` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) to apply these security and operating system patches. During an update or reload, your worker node machine is reimaged, and data is deleted if not [stored outside the worker node](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).</li>
-  <li>**Master patches**: Master patches are applied automatically over the course of several days, so a master patch version might show up as available before it is applied to your master. The update automation also skips clusters that are in an unhealthy state or have operations currently in progress. Occasionally, IBM might disable automatic updates for a specific master fix pack, as noted in the changelog, such as a patch that is only needed if a master is updated from one minor version to another. In any of these cases, you can choose to safely use the `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) yourself without waiting for the update automation to apply. When a master patch update is initiated for a cluster, the <code>containers-kubernetes.version.update</code> event is [sent to {{site.data.keyword.at_short}}](/docs/openshift?topic=openshift-at_events).</li></ul></dd>
-</dl>
+### Major and minor updates (4.6)
+{: #major_minor_updates}
+
+First, [update your master node](/docs/openshift?topic=openshift-update#master) and then [update the worker nodes](/docs/openshift?topic=openshift-update#worker_node). Worker nodes cannot run an {{site.data.keyword.openshiftshort}} major or minor version that is greater than the masters. Additionally, your worker nodes can be only one version behind the master version (`n-1`).
+{: shortdesc}
+
+If you use an `oc` or `oc` CLI version that does match at least the `major.minor` version of your clusters, you might experience unexpected results. Make sure to keep your cluster and [CLI versions](/docs/openshift?topic=openshift-openshift-cli#cli_oc) up-to-date.
+{: note}
+
+
+### Patch updates (4.6.28_xxxx_openshift)
+Changes across patches are documented in the [Version changelog](/docs/openshift?topic=openshift-openshift_versions). Master patches are applied automatically, but you initiate worker node patches updates. 
+{: shortdesc}
+
+Worker nodes can also run patch versions that are greater than the masters. As updates become available, you are notified when you view information about the master and worker nodes in the {{site.data.keyword.cloud_notm}} console or CLI, such as with the following commands: `ibmcloud oc cluster ls`, `cluster get`, `worker ls`, or `worker get`. Patches can be for worker nodes, masters, or both.
+
+**Worker node patches**: Check monthly to see whether an update is available, and use the `ibmcloud oc worker update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_update) or the `ibmcloud oc worker reload` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) to apply these security and operating system patches. During an update or reload, your worker node machine is reimaged, and data is deleted if not [stored outside the worker node](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
+
+**Master patches**: Master patches are applied automatically over the course of several days, so a master patch version might show up as available before it is applied to your master. The update automation also skips clusters that are in an unhealthy state or have operations currently in progress. Occasionally, IBM might disable automatic updates for a specific master fix pack, as noted in the changelog, such as a patch that is only needed if a master is updated from one minor version to another. In any of these cases, you can choose to safely use the `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) yourself without waiting for the update automation to apply. When a master patch update is initiated for a cluster, the `containers-kubernetes.version.update` event is [sent to {{site.data.keyword.at_short}}](/docs/openshift?topic=openshift-at_events).
+
+
+
 
 <br />
 
@@ -185,61 +209,18 @@ Your apps still run, and you can log in to the cluster to manage your {{site.dat
 Dates that are marked with a dagger (`†`) are tentative and subject to change.
 {: important}
 
-<table summary="This table shows the release history for {{site.data.keyword.openshiftlong_notm}}.">
-<caption>Release history for {{site.data.keyword.openshiftlong_notm}}.</caption>
-<col width="20%" align="center">
-<col width="20%">
-<col width="30%">
-<col width="30%">
-<thead>
-<tr>
-<th>Supported?</th>
-<th>{{site.data.keyword.openshiftshort}} / Kubernetes version</th>
-<th>{{site.data.keyword.openshiftlong_notm}}<br>release date</th>
-<th>{{site.data.keyword.openshiftlong_notm}}<br>unsupported date</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td><img src="images/checkmark-filled.png" align="left" width="32" style="width:32px;" alt="This version is supported."/></td>
-  <td>4.7 / 1.20</td>
-  <td>09 Jun 2021</td>
-  <td>Jun 2022`†`</td>
-</tr>
-<tr>
-  <td><img src="images/checkmark-filled.png" align="left" width="32" style="width:32px;" alt="This version is supported."/></td>
-  <td>4.6 / 1.19</td>
-  <td>17 Feb 2021</td>
-  <td>Apr 2022 `†`</td>
-</tr>
-<tr>
-  <td><img src="images/warning-filled.png" align="left" width="32" style="width:32px;" alt="This version is deprecated."/></td>
-  <td>4.5 / 1.18</td>
-  <td>13 Oct 2020</td>
-  <td>30 Sep 2021 `†`</td>
-</tr>
-<tr>
-  <td><img src="images/close-filled.png" align="left" width="32" style="width:32px;" alt="This version is unsupported."/></td>
-  <td>4.4 / 1.17</td>
-  <td>21 Jul 2020</td>
-  <td>31 May 2021</td>
-</tr>
-<tr>
-  <td><img src="images/close-filled.png" align="left" width="32" style="width:32px;" alt="This version is unsupported."/></td>
-  <td>4.3 / 1.16</td>
-  <td>20 Apr 2020</td>
-  <td>7 Mar 2021</td>
-</tr>
-<tr>
-  <td><img src="images/warning-filled.png" align="left" width="32" style="width:32px;" alt="This version is deprecated."/></td>
-  <td>3.11 / 1.11</td>
-  <td>01 Aug 2019</td>
-  <td>06 Jun 2022 `†`</td>
-</tr>
-</tbody>
-</table>
+| Supported? | {{site.data.keyword.openshiftshort}} | Kubernetes version | {{site.data.keyword.openshiftlong_notm}} release date | {{site.data.keyword.openshiftlong_notm}} unsupported date |
+| --- | --- | --- | --- |
+| Supported | 4.7 / 1.20 | 09 Jun 2021 | Jun 2022`†` |
+| Supported | 4.6 / 1.19 | 17 Feb 2021 | Apr 2022 `†` |
+| Supported | 4.5 / 1.18 | 13 Oct 2020 | 30 Sep 2021 `†` |
+| Not supported | 4.4 / 1.17 | 21 Jul 2020 | 31 May 2021 |
+| Not supported | 4.3 / 1.16 | 20 Apr 2020 | 7 Mar 2021 |
+| Deprecated | 3.11 / 1.11 | 01 Aug 2019 | 06 Jun 2022 `†` |
+{: caption="Release history for {{site.data.keyword.openshiftlong_notm}}." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the supported status, the second column is OpenShift and Kubernetes version number. The third column is the release date. The fourth column is the unsupported date."}
 
-<br />
+
 
 ## {{site.data.keyword.openshiftshort}} 4.7
 {: #ocp47}
@@ -257,6 +238,7 @@ The following table shows the actions that you must take before you [update the 
 
 | Type | Description |
 | ---- | ----------- |
+| Kubernetes snapshot CRDs | {{site.data.keyword.containerlong_notm}} installs Kubernetes snapshot custom resource definition (CRD) version `v1beta1`. If you use other Kubernetes snapshot CRD versions `v1` or `v1alpha1`, you must change the version to `v1beta1`. To check the currently installed version of your snapshot CRDs, run `grep snapshot.storage.k8s.io <<(kubectl get apiservices)`. Follow the Kubernetes documentation to [Upgrade from v1alpha1 to v1beta1](https://github.com/kubernetes-csi/external-snapshotter#upgrade-from-v1alpha1-to-v1beta1){: external} to make sure that your snapshot CRDs are at the correct `v1beta1` version. The steps to downgrade from version `v1` to `v1beta1` are the same as those to upgrade from `v1alpha1`. Do not follow the instructions to upgrade from version `v1beta1` to version `v1`. |
 | **Unsupported:** Deprecated and removed {{site.data.keyword.openshiftshort}} features | For more information, review the [{{site.data.keyword.openshiftshort}} version 4.7 deprecated and removed features](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-deprecated-removed-features){: external}. |
 {: caption="Changes to make before you update the master to {{site.data.keyword.openshiftshort}} 4.7" caption-side="top"}
 {: summary="The rows are read from left to right. The type of update action is in the first column, and a description of the update action type is in the second column."}
@@ -279,6 +261,7 @@ The following table shows the actions that you must take before you [update the 
 
 | Type | Description |
 | ---- | ----------- |
+| Kubernetes snapshot CRDs | {{site.data.keyword.containerlong_notm}} installs Kubernetes snapshot custom resource definition (CRD) version `v1beta1`. If you use other Kubernetes snapshot CRD versions `v1` or `v1alpha1`, you must change the version to `v1beta1`. To check the currently installed version of your snapshot CRDs, run `grep snapshot.storage.k8s.io <<(kubectl get apiservices)`. Follow the Kubernetes documentation to [Upgrade from v1alpha1 to v1beta1](https://github.com/kubernetes-csi/external-snapshotter#upgrade-from-v1alpha1-to-v1beta1){: external} to make sure that your snapshot CRDs are at the correct `v1beta1` version. The steps to downgrade from version `v1` to `v1beta1` are the same as those to upgrade from `v1alpha1`. Do not follow the instructions to upgrade from version `v1beta1` to version `v1`. |
 | VPC clusters: App URL character length | DNS resolution is managed by the cluster's [virtual private endpoint (VPE)](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_vpe), which can resolve URLs up to 130 characters. If you expose apps in your cluster with URLs, such as the Ingress subdomain or {{site.data.keyword.openshiftshort}} routes, ensure that the URLs are 130 characters or fewer. For example, if you use an auto-generated route name in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud` that exceeds 130 characters, you might need to [create a route that uses a shorter, custom subdomain](/docs/openshift?topic=openshift-openshift_routes#routes-setup) instead. |
 | **Unsupported:** Deprecated and removed {{site.data.keyword.openshiftshort}} features | For more information, review the [OpenShift version 4.6 deprecated and removed features](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-deprecated-removed-features){: external}. |
 {: caption="Changes to make before you update the master to {{site.data.keyword.openshiftshort}} 4.6" caption-side="top"}
