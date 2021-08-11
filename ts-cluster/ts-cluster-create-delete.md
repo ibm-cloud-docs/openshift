@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-08-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -125,8 +125,9 @@ Review the error messages in the following sections to troubleshoot infrastructu
 ## Unable to create or delete worker nodes due to permission errors
 {: #cs_credentials}
 
-{: tsSymptoms}
+
 You cannot manage worker nodes for your cluster, and you receive an error message similar to one of the following.
+{: tsSymptoms}
 
 ```
 We were unable to connect to your IBM Cloud infrastructure account.
@@ -168,11 +169,16 @@ The cluster could not be configured with the registry. Make sure that you have t
 ```
 {: screen}
 
-{: tsCauses}
-The infrastructure credentials that are set for the region and resource group are missing the appropriate [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra). The user's infrastructure permissions are most commonly stored as an [API key](/docs/openshift?topic=openshift-access-creds) for the region and resource group. More rarely, if you use a [different {{site.data.keyword.cloud_notm}} account type](/docs/openshift?topic=openshift-access-creds#understand_infra), you might have [set infrastructure credentials manually](/docs/openshift?topic=openshift-access-creds#credentials).
 
-{: tsResolve}
+The infrastructure credentials that are set for the region and resource group are missing the appropriate [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra).
+{: tsCauses}
+
+The user's infrastructure permissions are most commonly stored as an [API key](/docs/openshift?topic=openshift-access-creds) for the region and resource group. More rarely, if you use a [different {{site.data.keyword.cloud_notm}} account type](/docs/openshift?topic=openshift-access-creds#understand_infra), you might have [set infrastructure credentials manually](/docs/openshift?topic=openshift-access-creds#credentials).
+
+
+
 The account owner must set up the infrastructure account credentials properly. The credentials depend on what type of infrastructure account you are using.
+{: tsResolve}
 
 Before you begin, [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
 
@@ -248,8 +254,9 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
 
 **Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
-{: tsSymptoms}
+
 You cannot manage worker nodes for your cluster, or view the cluster worker nodes in your classic IBM Cloud infrastructure account. However, you can update and manage other clusters in the account.
+{: tsSymptoms}
 
 Further, you verified that you have the [proper infrastructure credentials](#cs_credentials).
 
@@ -259,8 +266,9 @@ Incorrect account for worker - The 'classic' infrastructure user credentials cha
 ```
 {: screen}
 
-{: tsCauses}
+
 The cluster might be provisioned in a classic IBM Cloud infrastructure account that is no longer linked to your {{site.data.keyword.openshiftlong_notm}} account. The cluster is orphaned. Because the resources are in a different account, you do not have the infrastructure credentials to modify the resources.
+{: tsCauses}
 
 Consider the following example scenario to understand how clusters might become orphaned.
 1.  You have an {{site.data.keyword.cloud_notm}} Pay-As-You-Go account.
@@ -273,9 +281,10 @@ Consider the following example scenario to understand how clusters might become 
 
 <br>
 
-{: tsResolve}
+
 
 Before you begin: Log in to the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
+{: tsResolve}
 
 1.  Check which infrastructure account the region that your cluster is in currently uses to provision clusters. Replace `<region>` with the {{site.data.keyword.cloud_notm}} region that the cluster is in.
     ```sh
@@ -312,22 +321,28 @@ Before you begin: Log in to the [{{site.data.keyword.openshiftshort}} clusters c
 
 **Infrastructure provider**: <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC {{site.data.keyword.openshiftshort}} version 4.6 or later
 
-{: tsSymptoms}
+
 You cannot manage worker nodes for your cluster, and you receive an error message similar to one of the following.
+{: tsSymptoms}
+
 ```
 Worker deploy failed due to network communications failing to master or registry endpoints. Please verify your network setup is allowing traffic from this subnet then attempt a worker replace on this worker
 ```
 {: screen}
+
 ```
 Pending endpoint gateway creation
 ```
 {: screen}
 
-{: tsCauses}
-In clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later, worker nodes can communicate with the Kubernetes master through the cluster's virtual private endpoint (VPE). One VPE gateway resource is created per cluster in your VPC. If the VPE gateway for your cluster is not correctly created in your VPC, the VPE gateway is deleted from your VPC, or the IP address that is reserved for the VPE is deleted from your VPC subnet, worker nodes lose connectivity with the Kubernetes master.
 
-{: tsResolve}
+In clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later, worker nodes can communicate with the Kubernetes master through the cluster's virtual private endpoint (VPE).
+{: tsCauses}
+
+One VPE gateway resource is created per cluster in your VPC. If the VPE gateway for your cluster is not correctly created in your VPC, the VPE gateway is deleted from your VPC, or the IP address that is reserved for the VPE is deleted from your VPC subnet, worker nodes lose connectivity with the Kubernetes master.
+
 Re-establish the VPE connection between your worker nodes and Kubernetes master.
+{: tsResolve}
 
 1. To check the VPE gateway for your cluster in the VPC infrastructure console, open the [Virtual private endpoint gateways for VPC dashboard](https://cloud.ibm.com/vpc-ext/network/endpointGateways){: external} and look for the VPE gateway in the format `iks-<cluster_ID>`.
   * If the gateway for your cluster is not listed, continue to the next step.
@@ -367,8 +382,10 @@ Re-establish the VPE connection between your worker nodes and Kubernetes master.
 
 **Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
-{: tsSymptoms}
+
 You cannot manage worker nodes for your cluster, and you receive an error message similar to one of the following.
+{: tsSymptoms}
+
 ```
 Unable to connect to the IBM Cloud account. Ensure that you have a paid account.
 ```
@@ -378,11 +395,16 @@ Cannot authenticate the infrastructure user: Time-based One Time Password authen
 ```
 {: screen}
 
-{: tsCauses}
-Your {{site.data.keyword.cloud_notm}} account uses its own automatically linked infrastructure through a Pay-as-you-Go account. However, the account administrator enabled the time-based one-time passcode (TOTP) option so that users are prompted for a time-based one-time passcode (TOTP) at login. This type of [multifactor authentication (MFA)](/docs/account?topic=account-types#account-based) is account-based, and affects all access to the account. TOTP MFA also affects the access that {{site.data.keyword.containerlong_notm}} requires to make calls to {{site.data.keyword.cloud_notm}} infrastructure. If TOTP is enabled for the account, you cannot create and manage clusters and worker nodes in {{site.data.keyword.containerlong_notm}}.
 
-{: tsResolve}
+Your {{site.data.keyword.cloud_notm}} account uses its own automatically linked infrastructure through a Pay-as-you-Go account.
+{: tsCauses}
+
+However, the account administrator enabled the time-based one-time passcode (TOTP) option so that users are prompted for a time-based one-time passcode (TOTP) at login. This type of [multifactor authentication (MFA)](/docs/account?topic=account-types#account-based) is account-based, and affects all access to the account. TOTP MFA also affects the access that {{site.data.keyword.containerlong_notm}} requires to make calls to {{site.data.keyword.cloud_notm}} infrastructure. If TOTP is enabled for the account, you cannot create and manage clusters and worker nodes in {{site.data.keyword.containerlong_notm}}.
+
+
 The {{site.data.keyword.cloud_notm}} account owner or an account administrator must either:
+{: tsResolve}
+
 * Disable TOTP for the account, and continue to use the automatically linked infrastructure credentials for {{site.data.keyword.containerlong_notm}}.
 * Continue to use TOTP, but create an infrastructure API key that {{site.data.keyword.containerlong_notm}} can use to make direct calls to the {{site.data.keyword.cloud_notm}} infrastructure API.
 

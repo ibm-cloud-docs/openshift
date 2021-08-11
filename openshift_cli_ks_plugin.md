@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-08-11"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -224,14 +224,14 @@ ibmcloud oc cluster addon disable kube-terminal --cluster CLUSTER [-f]
 <dd>Optional: Force the command to run with no user prompts.</dd>
 </dl>
 
-#### `ibmcloud oc cluster addon disable openshift-data-foundation`
-{: #cs_cluster_addon_disable_openshift-data-foundation}
+#### `ibmcloud oc cluster addon disable openshift-container-storage`
+{: #cs_cluster_addon_disable_openshift-container-storage}
 
 Disable the [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc) add-on for {{site.data.keyword.openshiftshort}} version 4.7 or higher.
 {: shortdesc}
 
 ```sh
-ibmcloud oc cluster addon disable openshift-data-foundation --cluster CLUSTER [-f] [-q] 
+ibmcloud oc cluster addon disable openshift-container-storage --cluster CLUSTER [-f] [-q] 
 ```
 {: pre}
 
@@ -381,8 +381,9 @@ ibmcloud oc cluster addon enable openshift-container-storage --cluster CLUSTER [
 <dd>Optional: Specify the version of the add-on to install. To see available versions, run `ibmcloud oc cluster addon versions`. If no version is specified, the default version is installed.</dd>
 </dl>
 
-#### `ibmcloud oc cluster addon enable openshift-data-foundation`
-{: #cs_cluster_addon_enable_openshift-data-foundation}
+
+#### `ibmcloud oc cluster addon enable openshift-container-storage`
+{: #cs_cluster_addon_enable_openshift-container-storage}
 
 Enable the [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc) add-on for {{site.data.keyword.openshiftshort}} version 4.7 or higher.
 {: shortdesc}
@@ -391,7 +392,7 @@ The OpenShift Data Foundation add-on is available as a technology preview and mi
 {: preview}
 
 ```sh
-ibmcloud oc cluster addon enable openshift-data-foundation --cluster CLUSTER [-f] [--param PARAM] [-q] [--version VERSION]
+ibmcloud oc cluster addon enable openshift-container-storage --cluster CLUSTER [-f] [--param PARAM] [-q] [--version VERSION]
 ```
 {: pre}
 
@@ -410,7 +411,7 @@ ibmcloud oc cluster addon enable openshift-data-foundation --cluster CLUSTER [-f
 <dd>Optional: Force the command to run with no user prompts.</dd>
 
 <dt><code>--param <em>PARAM</em></code></dt>
-<dd>Optional: Specify an installation setting. To see available settings, run `ibmcloud oc cluster addon options --addon openshift-data-foundation`.</dd>
+<dd>Optional: Specify an installation setting. To see available settings, run `ibmcloud oc cluster addon options --addon openshift-container-storage`.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>

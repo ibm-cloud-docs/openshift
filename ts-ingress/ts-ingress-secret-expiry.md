@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-03"
+lastupdated: "2021-08-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -20,6 +20,7 @@ content-type: troubleshoot
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -55,6 +56,7 @@ content-type: troubleshoot
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -80,6 +82,7 @@ content-type: troubleshoot
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
 {:swift: #swift .ph data-hd-programlang='swift'}
@@ -111,8 +114,9 @@ content-type: troubleshoot
 * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-{: tsSymptoms}
+
 When you run `ibmcloud oc cluster get -c <cluster_name_or_ID>` or `ibmcloud oc ingress status -c <cluster_name_or_ID>`, you see the following **Ingress Message**:
+{: tsSymptoms}
 
 ```
 The expiration dates reported by Ingress secrets are out of sync across namespaces. To resynchronize the expiration dates, see http://ibm.biz/ingress-secret-sync
@@ -121,11 +125,14 @@ The expiration dates reported by Ingress secrets are out of sync across namespac
 
 When you run `ibmcloud oc ingress secret ls -c <cluster_name_or_ID>`, you notice that old expiration dates are listed for some certificates.
 
+In some cases, the expiration date that is reported by the secrets in some namespaces in your cluster can become out of sync with the expiration date of secrets for the same certificate in other namespaces. Even though your actual certificate is renewed, a secret in your cluster can show an older expiration date that is not updated to the most recent expiration date for the certificate.
 {: tsCauses}
-In some cases, the expiration date that is reported by the secrets in some namespaces in your cluster can become out of sync with the expiration date of secrets for the same certificate in other namespaces. Even though your actual certificate is renewed, a secret in your cluster can show an older expiration date that is not updated to the most recent expiration date for the certificate. However, a secret for this certificate in another namespace might show the correct expiration date.
 
-{: tsResolve}
+However, a secret for this certificate in another namespace might show the correct expiration date.
+
+
 To resynchronize the expiration dates, you can regenerate the secrets for your Ingress subdomain certificate.
+{: tsResolve}
 
 1. Get your **Ingress Subdomain**.
   ```

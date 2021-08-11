@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-05"
+lastupdated: "2021-08-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -55,7 +55,6 @@ content-type: troubleshoot
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -115,22 +114,26 @@ content-type: troubleshoot
 * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-{: tsSymptoms}
+
 When you try to install an updated Helm chart by running `helm install <release_name> <helm_repo>/<chart_name> -f config.yaml`, you get the following error message.
+{: tsSymptoms}
 
 ```
 Error: failed to download "<helm_repo>/<chart_name>"
 ```
 {: screen}
 
-{: tsCauses}
+
 You might need to update your Helm installation because of the following reasons:
+{: tsCauses}
+
 * The URL to the {{site.data.keyword.cloud_notm}} Helm repository that is configured on your local machine might be incorrect.
 * The name of your local Helm repository might not match the Helm repository name or URL of the installation command that you copied from the Helm chart instructions.
 * The Helm chart that you want to install does not support the version of Helm that you installed on your local machine.
 
-{: tsResolve}
+
 To troubleshoot your Helm chart:
+{: tsResolve}
 
 1.  List the {{site.data.keyword.cloud_notm}} Helm repositories currently available in your Helm instance.
     ```

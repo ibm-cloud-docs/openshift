@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-05"
+lastupdated: "2021-08-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -55,7 +55,6 @@ content-type: troubleshoot
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -115,14 +114,18 @@ content-type: troubleshoot
 * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-{: tsSymptoms}
+
 Your pod was healthy but unexpectedly gets removed or gets stuck in a restart loop.
+{: tsSymptoms}
 
-{: tsCauses}
+
 Your containers might exceed their resource limits, or your pods might be replaced by higher priority pods.
+{: tsCauses}
 
-{: tsResolve}
+
 See the following sections:
+{: tsResolve}
+
 * [Fixing container resource limits](#pod-fail-resource-limits)
 * [Fixing pod replacement by higher priority pods](#pod-fail-higher-priority)
 

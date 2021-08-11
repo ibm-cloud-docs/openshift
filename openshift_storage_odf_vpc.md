@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-08-11"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, roks
 
@@ -130,27 +130,27 @@ If you want to override the default parameters when deploying the add-on, you ca
 
 1. To see the default settings for ODF on VPC clusters, run the `addon options` command.
 
- **For {{site.data.keyword.openshift_short}} versions 4.6 and 4.7**
+ **For {{site.data.keyword.openshiftshort}} versions 4.6 and 4.7**
   ```sh
   ibmcloud oc cluster addon options --addon openshift-container-storage
   ```
   {: pre}
-  **For {{site.data.keyword.openshift_short}} versions 4.7 and above**
+  **For {{site.data.keyword.openshiftshort}} versions 4.7 and above**
   ```sh
-  ibmcloud oc cluster addon options --addon openshift-data-foundation
+  ibmcloud oc cluster addon options --addon openshift-container-storage
   ```
   {: pre}
   
 1. Enable the ODF and specify the `ocsDeploy=True` parameter to deploy ODF with the default configuration parameters. To list the versions and find the current default, run `ibmcloud oc cluster addon versions`. If you have a cluster version other than the default, specify the `--version` flag. The add-on supports `n+1` cluster versions. 
 
-**For {{site.data.keyword.openshift_short}} versions 4.6 and 4.7**
+**For {{site.data.keyword.openshiftshort}} versions 4.6 and 4.7**
   ```sh
   ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true"
   ```
   {: pre}
-  **For {{site.data.keyword.openshift_short}} versions 4.7 and above**
+  **For {{site.data.keyword.openshiftshort}} versions 4.7 and above**
   ```sh
-  ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "ocsDeploy=true"
+  ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true"
   ```
   {: pre}
 
