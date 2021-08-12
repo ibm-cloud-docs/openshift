@@ -54,7 +54,6 @@ subcollection: openshift
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -267,7 +266,7 @@ Now that you have a good estimate of your app size and the worker nodes that you
         {: screen}
     3.  Add the CPU and memory usage amounts to the [worker node resource reserves](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node) that are set for each worker node by default.
     4.  Subtract the worker node reserved and default app usage amounts from the total worker node size. This amount represents the total compute resources of your worker nodes before you deploy any apps or other workloads.
-3.  [Deploy your apps](/docs/containers?topic=containers-deploy_app) to the cluster, and make sure to [set resource requests and limits](/docs/containers?topic=containers-app#resourcereq) based on the [app size that you previously estimated](#sizing_resources) for your apps, to limit the amount of compute resources the apps can consume.
+3.  [Deploy your apps](/docs/openshift?topic=openshift-deploy_app) to the cluster, and make sure to [set resource requests and limits](/docs/openshift?topic=openshift-openshift_apps#resourcereq) based on the [app size that you previously estimated](#sizing_resources) for your apps, to limit the amount of compute resources the apps can consume.
 4.  Deploy any add-ons, plug-ins, or other cloud services that you want to use.
 5.  Review what compute resources your workloads consume and calculate the remaining cluster capacity to deploy additional apps or scale existing apps.
     1.  With at least the {{site.data.keyword.cloud_notm}} IAM **Reader** service access role for the cluster in all namespaces: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -343,7 +342,7 @@ The number of clusters that you create depends on your workload, company policie
 ### How can I keep my cluster in a supported state?
 {: #updating_kube}
 
-Make sure that your cluster runs a [supported {{site.data.keyword.openshiftshort}} version](/docs/openshift?topic=openshift-openshift_versions) at all times. When a new {{site.data.keyword.openshiftshort}} minor version is released, an older version is shortly deprecated after and then becomes unsupported. For more information, see [Updating the master](/docs/containers?topic=containers-update#master) and [worker nodes](/docs/containers?topic=containers-update#worker_node).
+Make sure that your cluster runs a [supported {{site.data.keyword.openshiftshort}} version](/docs/openshift?topic=openshift-openshift_versions) at all times. When a new {{site.data.keyword.openshiftshort}} minor version is released, an older version is shortly deprecated after and then becomes unsupported. For more information, see [Updating the master](/docs/openshift?topic=openshift-update#master) and [worker nodes](/docs/openshift?topic=openshift-update#master).
 
 
 

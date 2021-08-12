@@ -55,7 +55,6 @@ content-type: troubleshoot
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -196,7 +195,7 @@ For clusters that were created before **1 July 2019**, the cluster might have an
         ```
         {: pre}
 
-    2. [Copy the `all-icr-io` image pull secret from the `default` {{site.data.keyword.openshiftshort}} project to the project where you want to deploy your workload](/docs/containers?topic=containers-registry#copy_imagePullSecret).
+    2. [Copy the `all-icr-io` image pull secret from the `default` {{site.data.keyword.openshiftshort}} project to the project where you want to deploy your workload](/docs/openshift?topic=openshift-registry#copy_imagePullSecret).
     3. [Add the image pull secret to the service account for this {{site.data.keyword.openshiftshort}} project](/docs/containers?topic=containers-registry#store_imagePullSecret) so that all pods in the project can use the image pull secret credentials.
 5. If image pull secrets are listed in the pod, determine what type of credentials you use to access {{site.data.keyword.registrylong_notm}}.
     * **Deprecated**: If the secret has `bluemix` in the name, you use a registry token to authenticate with the deprecated `registry.<region>.bluemix.net` domain names. Continue with [Troubleshooting image pull secrets that use tokens](#img-pull-token).
@@ -276,7 +275,7 @@ The following steps assume that the API key stores the credentials of a service 
         ```
         {: screen}
 
-    4. Compare the image pull secret regional registry domain name with the domain name that you specified in the container image. By default, new clusters have image pull secrets for each regional registry domain name for containers that run in the `default` {{site.data.keyword.openshiftshort}} project. However, if you modified the default settings or are using a different {{site.data.keyword.openshiftshort}} project, you might not have an image pull secret for the regional registry. [Copy an image pull secret](/docs/containers?topic=containers-registry#copy_imagePullSecret) for the regional registry domain name.
+    4. Compare the image pull secret regional registry domain name with the domain name that you specified in the container image. By default, new clusters have image pull secrets for each regional registry domain name for containers that run in the `default` {{site.data.keyword.openshiftshort}} project. However, if you modified the default settings or are using a different {{site.data.keyword.openshiftshort}} project, you might not have an image pull secret for the regional registry. [Copy an image pull secret](/docs/openshift?topic=openshift-registry#copy_imagePullSecret) for the regional registry domain name.
     5.  Log in to the registry from your local machine by using the `username` and `password` from your image pull secret. If you cannot log in, you might need to fix the service ID.
         ```
         docker login -u iamapikey -p <password_string> <region>.icr.io
