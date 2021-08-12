@@ -308,7 +308,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 1. Create a custom resource definition (CRD) called `OcsCluster`. Save one of the following custom resource definition files on your local machine and edit it to include the name of the custom storage class that you created earlier as the `monStorageClassName` and `osdStorageClassName` parameters. For more information about the `OcsCluster` parameters, see the [parameter reference](#odf-vpc-param-ref).
 
-  **Example custom resource definition (CRD) for installing ODF on all worker nodes in a {{site.data.keyword.satelliteshort}} cluster**
+  **Example custom resource definition (CRD) for installing ODF on all worker nodes**
   ```yaml
   apiVersion: ocs.ibm.io/v1
   kind: OcsCluster
@@ -325,7 +325,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
   ```
   {: codeblock}
 
-  **Example custom resource definition (CRD) for installing ODF only on specified worker nodes in a {{site.data.keyword.satelliteshort}} cluster**
+  **Example custom resource definition (CRD) for installing ODF only on specified worker nodes**
   ```yaml
   apiVersion: ocs.ibm.io/v1
   kind: OcsCluster
