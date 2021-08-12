@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-08-12"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, roks
 
@@ -54,6 +54,7 @@ subcollection: openshift
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
+{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -104,7 +105,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-  
+
+ 
 
 # Deploying OpenShift Data Foundation on VPC clusters
 {: #deploy-odf-vpc}
@@ -130,27 +132,27 @@ If you want to override the default parameters when deploying the add-on, you ca
 
 1. To see the default settings for ODF on VPC clusters, run the `addon options` command.
 
- **For {{site.data.keyword.openshift_short}} versions 4.6 and 4.7**
+ **For {{site.data.keyword.openshiftshort}} versions 4.6 and 4.7**
   ```sh
   ibmcloud oc cluster addon options --addon openshift-container-storage
   ```
   {: pre}
-  **For {{site.data.keyword.openshift_short}} versions 4.7 and above**
+  **For {{site.data.keyword.openshiftshort}} versions 4.7 and above**
   ```sh
-  ibmcloud oc cluster addon options --addon openshift-data-foundation
+  ibmcloud oc cluster addon options --addon openshift-container-storage
   ```
   {: pre}
   
 1. Enable the ODF and specify the `ocsDeploy=True` parameter to deploy ODF with the default configuration parameters. To list the versions and find the current default, run `ibmcloud oc cluster addon versions`. If you have a cluster version other than the default, specify the `--version` flag. The add-on supports `n+1` cluster versions. 
 
-**For {{site.data.keyword.openshift_short}} versions 4.6 and 4.7**
+**For {{site.data.keyword.openshiftshort}} versions 4.6 and 4.7**
   ```sh
   ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true"
   ```
   {: pre}
-  **For {{site.data.keyword.openshift_short}} versions 4.7 and above**
+  **For {{site.data.keyword.openshiftshort}} versions 4.7 and above**
   ```sh
-  ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "ocsDeploy=true"
+  ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true"
   ```
   {: pre}
 
@@ -306,7 +308,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 1. Create a custom resource definition (CRD) called `OcsCluster`. Save one of the following custom resource definition files on your local machine and edit it to include the name of the custom storage class that you created earlier as the `monStorageClassName` and `osdStorageClassName` parameters. For more information about the `OcsCluster` parameters, see the [parameter reference](#odf-vpc-param-ref).
 
-  **Example custom resource definition (CRD) for installing ODF on all worker nodes in a {{site.data.keyword.satelliteshort}} cluster**
+  **Example custom resource definition (CRD) for installing ODF on all worker nodes**
   ```yaml
   apiVersion: ocs.ibm.io/v1
   kind: OcsCluster
@@ -323,7 +325,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
   ```
   {: codeblock}
 
-  **Example custom resource definition (CRD) for installing ODF only on specified worker nodes in a {{site.data.keyword.satelliteshort}} cluster**
+  **Example custom resource definition (CRD) for installing ODF only on specified worker nodes**
   ```yaml
   apiVersion: ocs.ibm.io/v1
   kind: OcsCluster

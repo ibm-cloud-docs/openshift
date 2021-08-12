@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-05"
+lastupdated: "2021-08-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -106,7 +106,8 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-  
+
+ 
   
 # Why do pods remain in pending state?
 {: #ts-app-pod-pending}
@@ -115,18 +116,21 @@ content-type: troubleshoot
 * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-{: tsSymptoms}
-When you run `oc get pods`, you can see pods that remain in a **Pending** state.
 
-{: tsCauses}
+When you run `oc get pods`, you can see pods that remain in a **Pending** state.
+{: tsSymptoms}
+
+
 If you just created the {{site.data.keyword.openshiftshort}} cluster, the worker nodes might still be configuring.
+{: tsCauses}
 
 If this cluster is an existing one:
 *  You might not have enough capacity in your cluster to deploy the pod.
 *  The pod might have exceeded a resource request or limit.
 
-{: tsResolve}
+
 This task requires the {{site.data.keyword.cloud_notm}} IAM [**Administrator** platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster and the [**Manager** service access role](/docs/openshift?topic=openshift-users#checking-perms) for all namespaces.
+{: tsResolve}
 
 If you just created the {{site.data.keyword.openshiftshort}} cluster, run the following command and wait for the worker nodes to initialize.
 

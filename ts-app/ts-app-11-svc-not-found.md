@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-05"
+lastupdated: "2021-08-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -106,7 +106,8 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-  
+
+ 
   
 # Why does binding a service to a cluster results in service not found error?
 {: #ts-app-svc-bind-not-found}
@@ -115,8 +116,9 @@ content-type: troubleshoot
 * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-{: tsSymptoms}
+
 When you run `ibmcloud oc cluster service bind --cluster <cluster_name> --namespace <project> --service <service_instance_name>`, you see the following message.
+{: tsSymptoms}
 
 ```
 Binding service to a namespace...
@@ -126,12 +128,16 @@ The specified IBM Cloud service could not be found. If you just created the serv
 ```
 {: screen}
 
-{: tsCauses}
-To bind services to a cluster, you must have the Cloud Foundry developer user role for the space where the service instance is provisioned. In addition, you must have the {{site.data.keyword.cloud_notm}} IAM Editor platform access to {{site.data.keyword.containerlong_notm}}. To access the service instance, you must be logged in to the space where the service instance is provisioned.
 
-{: tsResolve}
+To bind services to a cluster, you must have the Cloud Foundry developer user role for the space where the service instance is provisioned.
+{: tsCauses}
+
+In addition, you must have the {{site.data.keyword.cloud_notm}} IAM Editor platform access to {{site.data.keyword.containerlong_notm}}. To access the service instance, you must be logged in to the space where the service instance is provisioned.
+
+
 
 **As a user in the cluster:**
+{: tsResolve}
 
 1. Log in to {{site.data.keyword.cloud_notm}}.
    ```

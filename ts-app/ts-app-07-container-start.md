@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-05"
+lastupdated: "2021-08-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -106,33 +106,39 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-  
+
+ 
   
 # Why don't my containers start?
 {: #ts-app-container-start}
 
-{: tsSymptoms}
+
 You notice one or more of the following issues:
+{: tsSymptoms}
+
 * Worker nodes are unable to create new pods. The pods deploy successfully to worker nodes, but the containers are stuck in the `ContainerCreating` state.
 * When you run `oc describe pod <pod>` for a pod in the `ContainerCreating` state, you see an event similar to the following:
   ```
   Failed to create pod sandbox: rpc error: code = Unknown desc = failed to setup network for sandbox "XXX": failed to request 1 IPv4 addresses. IPAM allocated only 0
   ```
   {: screen}
+
 * One or more of the `calico-node` pods fail to start on a worker node and are in the `CrashLoopBackOff` state. When you run `kubectl logs -n kube-system <calico-node_pod>`, the last lines of the logs contain the following:
   ```
   Unable to autoassign an address - pools are likely exhausted. type="ipipTunnelAddress"
   ```
   {: screen}
 
-{: tsCauses}
+
 If you do not see either of the IP address-related messages that are listed in the symptoms, your containers might not start because the registry quota was reached.
+{: tsCauses}
 
 If you see either of the IP address-related messages that are listed in the symptoms, your containers might not start because the IP Address Manager (IPAM) for the Calico plug-in incorrectly detects that all pod IP addresses in the cluster are in use. Because the Calico IPAM detects no available IP addresses, it does not assign IP addresses to new pods in the cluster, and pods cannot start.
 
-{: tsResolve}
+
 ## Fixing registry quota issues
 {: #regitry-quota}
+{: tsResolve}
 
 **Infrastructure provider**:
 * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic

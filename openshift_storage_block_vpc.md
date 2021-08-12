@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-08-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -54,6 +54,7 @@ subcollection: openshift
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
+{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -104,7 +105,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-  
+
+ 
   
 
 # Storing data on {{site.data.keyword.block_storage_is_short}}
@@ -1160,8 +1162,9 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
 To provision volumes that support expansion, you must first create a custom storage class and set `allowVolumeExpansion` to `true`. 
 {: shortdesc}
 
-Volume expansion is available in beta for allowlisted accounts and is only supported for version `3.0.1` of the add-on and later. Don't use this feature for production workloads.
+Volume expansion is available in beta for allowlisted accounts and is only supported for version `3.0.1` of the add-on and later. Don't use this feature for production workloads. Currently only volume capacity can be expanded. IOPs can't be increased.
 {: beta}
+
 
 You can only expand volumes that are mounted by an app pod.
 {: note}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-08-12"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -54,6 +54,7 @@ subcollection: openshift
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
+{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -104,7 +105,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-  
+
+ 
   
 
 # Building images for your apps
@@ -211,7 +213,7 @@ To deploy a container into the **default** project of your cluster:
     <td>Replace the image URL variables with the information for your image:
         <ul><li><strong><code>&lt;region&gt;</code></strong>: The regional {{site.data.keyword.registrylong_notm}} API endpoint for the registry domain. To list the domain for the region that you are logged in to, run <code>ibmcloud cr api</code>.</li>
         <li><strong><code>&lt;namespace&gt;</code></strong>: The registry namespace. To get your namespace information, run <code>ibmcloud cr namespace-list</code>.</li>
-        <li><strong><code>&lt;image&gt;:<tag></code></strong>: The image and tag that you want to use for your container. To list the images that are available in your registry namespace, run <code>ibmcloud cr images</code>.</li></ul></td>
+        <li><strong><code>&lt;image&gt;:&lt;tag&gt;</code></strong>: The image and tag that you want to use for your container. To list the images that are available in your registry namespace, run <code>ibmcloud cr images</code>.</li></ul></td>
     </tr>
     </tbody></table>
 
@@ -538,5 +540,6 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     oc get ImagePolicy --all-namespaces
     ```
     {: pre}
+
 
 
