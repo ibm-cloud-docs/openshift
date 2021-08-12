@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-05"
+lastupdated: "2021-08-12"
 
 keywords: openshift, roks, vpc, block storage
 
@@ -105,7 +105,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-  
+
+ 
  
 
 # Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters

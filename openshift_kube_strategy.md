@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-06-07"
+lastupdated: "2021-08-12"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -19,15 +19,19 @@ subcollection: openshift
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,27 @@ subcollection: openshift
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:note:.deprecated}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +82,10 @@ subcollection: openshift
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +93,7 @@ subcollection: openshift
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -91,7 +105,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-  
+
+ 
   
 
 # Moving your environment to {{site.data.keyword.openshiftlong_notm}}
@@ -252,7 +267,7 @@ Now that you have a good estimate of your app size and the worker nodes that you
         {: screen}
     3.  Add the CPU and memory usage amounts to the [worker node resource reserves](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node) that are set for each worker node by default.
     4.  Subtract the worker node reserved and default app usage amounts from the total worker node size. This amount represents the total compute resources of your worker nodes before you deploy any apps or other workloads.
-3.  [Deploy your apps](/docs/openshift?topic=openshift-deploy_app) to the cluster, and make sure to [set resource requests and limits](/docs/openshift?topic=openshift-openshift_apps#resourcereq) based on the [app size that you previously estimated](#sizing_resources) for your apps, to limit the amount of compute resources the apps can consume.
+3.  [Deploy your apps](/docs/containers?topic=containers-deploy_app) to the cluster, and make sure to [set resource requests and limits](/docs/containers?topic=containers-app#resourcereq) based on the [app size that you previously estimated](#sizing_resources) for your apps, to limit the amount of compute resources the apps can consume.
 4.  Deploy any add-ons, plug-ins, or other cloud services that you want to use.
 5.  Review what compute resources your workloads consume and calculate the remaining cluster capacity to deploy additional apps or scale existing apps.
     1.  With at least the {{site.data.keyword.cloud_notm}} IAM **Reader** service access role for the cluster in all namespaces: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -320,7 +335,7 @@ The number of clusters that you create depends on your workload, company policie
   <dd>To ensure that every team has the necessary resources to deploy services and run apps in the cluster, you must set up [resource quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/) for every namespace. Resource quotas determine the deployment constraints for a project, such as the number of Kubernetes resources that you can deploy, and the amount of CPU and memory that can be consumed by those resources. After you set a quota, users must include resource requests and limits in their deployments.</dd>
 <dt>Organize your Kubernetes objects with labels</dt>
   <dd><p>To organize and select your Kubernetes resources such as `pods` or `nodes`, [use Kubernetes labels ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/). By default, {{site.data.keyword.openshiftlong_notm}} applies some labels, including `arch`, `os`, `region`, `zone`, and `machine-type`.</p>
-  <p>Example use cases for labels include [limiting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge), [deploying an app to a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app), and [restricting your app workloads![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/) to run on worker nodes that meet certain flavor or SDS capabilities, such as bare metal worker nodes. To see what labels are already applied to a resource, use the <code>oc get</code> command with the <code>--show-labels</code> flag. For example:</p>
+  <p>Example use cases for labels include [limiting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge), [deploying an app to a GPU machine](/docs/containers?topic=containers-deploy_app#gpu_app), and [restricting your app workloads![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/) to run on worker nodes that meet certain flavor or SDS capabilities, such as bare metal worker nodes. To see what labels are already applied to a resource, use the <code>oc get</code> command with the <code>--show-labels</code> flag. For example:</p>
   <p><pre class="pre"><code>oc get node &lt;node_ID&gt; --show-labels</code></pre></p>
   To apply labels to worker nodes, [create your worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) with labels or [update an existing worker pool](/docs/openshift?topic=openshift-add_workers#worker_pool_labels).</dd>
 </dl>
@@ -328,7 +343,7 @@ The number of clusters that you create depends on your workload, company policie
 ### How can I keep my cluster in a supported state?
 {: #updating_kube}
 
-Make sure that your cluster runs a [supported {{site.data.keyword.openshiftshort}} version](/docs/openshift?topic=openshift-openshift_versions) at all times. When a new {{site.data.keyword.openshiftshort}} minor version is released, an older version is shortly deprecated after and then becomes unsupported. For more information, see [Updating the master](/docs/openshift?topic=openshift-update#master) and [worker nodes](/docs/openshift?topic=openshift-update#worker_node).
+Make sure that your cluster runs a [supported {{site.data.keyword.openshiftshort}} version](/docs/openshift?topic=openshift-openshift_versions) at all times. When a new {{site.data.keyword.openshiftshort}} minor version is released, an older version is shortly deprecated after and then becomes unsupported. For more information, see [Updating the master](/docs/containers?topic=containers-update#master) and [worker nodes](/docs/containers?topic=containers-update#worker_node).
 
 
 
