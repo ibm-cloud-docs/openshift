@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-12"
 
 keywords: openshift, openshift data foundation, openshift container storage, vpc, roks, satellite
 
@@ -54,6 +54,7 @@ subcollection: openshift
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
+{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -130,11 +131,11 @@ Review the following diagram and table to learn more about OpenShift Data Founda
 
 | Number | ODF component | Description |
 | --- | --- | --- |
-| 1 | Monitor (Mon) pods | The Monitor pods keep a map of your OpenShift Data Foundation storage cluster and monitor storage cluster health. |
-| 2 | Monitor (Mon) block storage device | The monitor storage devices are the underlying storage devices for the monitor pods. Each monitor device is a raw block storage device that can be a local disk on your worker node or dynamically provisioned when you deploy ODF. Each device provides storage to a monitor pod. |
-| 3 | Object Storage Daemon (OSD) pods | The OSD pods manage data placement and replication across your storage devices.
-| 4 | Object Storage Daemon (OSD) block storage device | The OSD devices provide application storage in your cluster. Each OSD is a raw block storage device that can be a local disk on your worker node or dynamically provisioned when you deploy ODF. Each device is mounted by an OSD pod. The total storage available to your apps is equal to the number of worker nodes multiplied by the OSD size multiplied by the number of devices, and then divided by the replication factor, which is a constant of 3. |
-| 5 | OpenShift Data Foundation storage classes | When you deploy ODF, the ODF operator creates File, Block, and Object storage classes in your cluster. Reference these storage classes in your PVCs and to claim storage for your apps. |
+| 1 | OpenShift Data Foundation storage classes | When you deploy ODF, the ODF operator creates File, Block, and Object storage classes in your cluster. Reference these storage classes in your PVCs and to claim storage for your apps. |
+| 2 | Object Storage Daemon (OSD) block storage device | The OSD devices provide application storage in your cluster. Each OSD is a raw block storage device that can be a local disk on your worker node or dynamically provisioned when you deploy ODF. In VPC clusters, your OSD block storage devices are dynamically provisioned by using the {{site.data.keyword.block_storage_is_short}} driver. In {{site.data.keyword.satelliteshort}} clusters, you can use local volumes on your worker nodes, or dynamically provision block storage devices by using a block storage driver that supports dynamic provisioning. In Classic clusters, the OSD block devices are local disks on your worker nodes. When you deploy ODF, each device is mounted by an OSD pod. The total storage that is available to your applications is equal to the `osdSize` multiplied by the `numOfOsd`. |
+| 3 | Object Storage Daemon (OSD) pods | The OSD pods manage data placement and replication across your storage devices. |
+| 4 | Monitor (Mon) pods | The Monitor pods keep a map of your OpenShift Data Foundation storage cluster and monitor storage cluster health. |
+| 5 | Monitor (Mon) block storage device | The monitor storage devices are the underlying storage devices for the monitor pods. Each monitor device is a raw block storage device that can be a local disk on your worker node or dynamically provisioned when you deploy ODF. Each device provides storage to a monitor pod. |
 {: caption="ODF architecture overview" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the diagram number of ODF resource. The second column is the name of the resource. The third column is a brief description of the resource."}
 
