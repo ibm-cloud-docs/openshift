@@ -430,7 +430,7 @@ subcollection: openshift
   * [Accessing clusters through the cluster service URL](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_se)
   * [Accessing clusters from within the {{site.data.keyword.cloud_notm}} private network](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_link)
   * [Accessing clusters from the public network](/docs/openshift?topic=openshift-access_cluster#sat_public_access)
-* [Accessing private clusters by using the Wireguard VPN](/docs/openshift?topic=openshift-access_cluster#access_vpn)
+* [Accessing private clusters by using the Wireguard VPN](/docs/openshift?topic=openshift-access_cluster#access_vpn_openshift)
 * [Accessing clusters from automation tools by using an API key](/docs/openshift?topic=openshift-access_cluster#access_automation)
   * [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key)
   * [Using a service ID to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_service_id)
