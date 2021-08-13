@@ -133,7 +133,7 @@ Still having issues with your cluster? Review different ways to get help and sup
 
 1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
 2. Filter for the **Kubernetes Service** component.
-3. Review the [limitations and known issues documentation](docs/containers?topic=containers-limitations).
+3. Review the [limitations and known issues documentation](/docs/containers?topic=containers-limitations).
 4. For issues in open source projects that are used by {{site.data.keyword.cloud_notm}}, see the [IBM Open Source and Third Party policy](https://www.ibm.com/support/pages/node/737271){: external}. For example, you might check the {{site.data.keyword.openshiftshort}} [Bugzilla](https://bugzilla.redhat.com/){: external}.
 
 <br />

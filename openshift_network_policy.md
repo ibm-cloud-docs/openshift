@@ -190,9 +190,15 @@ To view, manage, and add Calico policies, install and configure the Calico CLI.
 
 
 ## Installing the Calico CLI, `calicoctl`, according to your operating system.
+{: #cli_install-calidoctl}
+
 Complete the following steps to install `calicoctl`.
 {: shortdesc}
+
 ### Linux and OS X
+{: #cli_install-calicoctl-linux-osx}
+
+
 1. [Download the version of the Calico CLI that matches your operating system](https://github.com/projectcalico/calicoctl/releases){: external}.
 
     For OS X, you might need to manually allow the downloaded file to be opened and run by navigating to **System Preferences**
@@ -223,6 +229,8 @@ Complete the following steps to install `calicoctl`.
     {: pre}
 
 ### Windows
+{: #cli_install-calidoctl-windows}
+
 1. [Download the Calico CLI](https://github.com/projectcalico/calicoctl/releases){: external}. When you save the file, rename it to `calicoctl.exe` and save it in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later.
 
 1. Set the `KUBECONFIG` environment variable to the network configuration file that you got in step 1.

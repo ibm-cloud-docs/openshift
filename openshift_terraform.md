@@ -124,7 +124,7 @@ Before you begin, make sure that you have the [required access](/docs/openshift?
 
 1. Follow the [Terraform on {{site.data.keyword.cloud}} getting started tutorial](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started) to install the Terraform CLI and configure the {{site.data.keyword.cloud}} Provider plug-in for Terraform. The plug-in abstracts the {{site.data.keyword.cloud}} APIs that are used to provision, update, or delete {{site.data.keyword.openshiftshort}} service instances and resources. 
 
-2. Follow the tutorial to [create single and multi-zone clusters with Terraform](docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-tutorial-tf-clusters#create-cluster).
+2. Follow the tutorial to [create single and multi-zone clusters with Terraform](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-tutorial-tf-clusters#create-cluster).
 
 3. **Optional**: [Use Terraform to configure IAM user access policies for your {{site.data.keyword.openshiftshort}} cluster](#terraform-cluster-IAM).
 
