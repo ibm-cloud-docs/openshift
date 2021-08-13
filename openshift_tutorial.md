@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-13"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -59,7 +59,6 @@ completion-time: 45m
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -110,9 +109,8 @@ completion-time: 45m
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Creating {{site.data.keyword.openshiftlong_notm}} clusters
 {: #openshift_tutorial}
@@ -151,8 +149,8 @@ Complete the following prerequisite steps to set up permissions and the command-
 **Permissions**: If you are the account owner, you already have the required permissions to create a cluster and can continue to the next step. Otherwise, ask the account owner to [set up the API key and assign you the minimum user permissions in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions).
 
 **Command-line tools**: For quick access to your resources from the command line, try the [{{site.data.keyword.cloud-shell_notm}}](https://cloud.ibm.com/shell). Otherwise, set up your local command-line environment by completing the following steps.
-1.  [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc`), and {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)](/docs/openshift?topic=openshift-openshift-cli#cs_cli_install_steps).
-2.  [Install the {{site.data.keyword.openshiftshort}} (`oc`) and Kubernetes (`kubectl`) CLIs](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
+1. [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc`), and {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)](/docs/openshift?topic=openshift-openshift-cli#cs_cli_install_steps).
+2. [Install the {{site.data.keyword.openshiftshort}} (`oc`) and Kubernetes (`kubectl`) CLIs](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
 
 <br />
 
@@ -163,29 +161,33 @@ Complete the following prerequisite steps to set up permissions and the command-
 Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what components are set up when you create a cluster, see the [Service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture). {{site.data.keyword.openshiftshort}} is available for only standard clusters. You can learn more about the price of standard clusters in the [frequently asked questions](/docs/openshift?topic=openshift-faqs#charges).
 {: shortdesc}
 
-1.  Log in to the account and resource group where you want to create {{site.data.keyword.openshiftshort}} clusters. If you have a federated account, include the `--sso` flag.
+1. Log in to the account and resource group where you want to create {{site.data.keyword.openshiftshort}} clusters. If you have a federated account, include the `--sso` flag.
     ```
     ibmcloud login [-g <resource_group>] [--sso]
     ```
     {: pre}
-2.  Create a cluster with a unique name. The following command creates a version 4.7 cluster in Washington, DC with the minimum configuration of 2 worker nodes that have at least 4 cores and 16 GB memory so that default {{site.data.keyword.openshiftshort}} components can deploy. If you have existing VLANs that you want to use, get the VLAN IDs by running `ibmcloud oc vlan ls --zone <zone>`. For more information, see [Creating a standard classic cluster in the CLI](/docs/openshift?topic=openshift-clusters#clusters_cli_steps).
+
+2. Create a cluster with a unique name. The following command creates a version 4.7 cluster in Washington, DC with the minimum configuration of 2 worker nodes that have at least 4 cores and 16 GB memory so that default {{site.data.keyword.openshiftshort}} components can deploy. If you have existing VLANs that you want to use, get the VLAN IDs by running `ibmcloud oc vlan ls --zone <zone>`. For more information, see [Creating a standard classic cluster in the CLI](/docs/openshift?topic=openshift-clusters#clusters_cli_steps).
     ```
     ibmcloud oc cluster create classic --name my_openshift --location wdc04 --version 4.7_openshift --flavor b3c.4x16.encrypted  --workers 2 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --public-service-endpoint
     ```
     {: pre}
-3.  List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and router components take about 10 more minutes to deploy and update the cluster domain that you use for the {{site.data.keyword.openshiftshort}} web console and other routes. Before you continue, wait until the cluster is ready by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.</p>
+
+3. List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and router components take about 10 more minutes to deploy and update the cluster domain that you use for the {{site.data.keyword.openshiftshort}} web console and other routes. Before you continue, wait until the cluster is ready by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.</p>
     ```
     ibmcloud oc cluster get --cluster <cluster_name_or_ID>
     ```
     {: pre}
-4.  Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the last file in the `KUBECONFIG` environment variable.
+
+4. Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the last file in the `KUBECONFIG` environment variable.
     ```
     ibmcloud oc cluster config --cluster <cluster_name_or_ID>
     ```
     {: pre}
-5.  In your browser, navigate to the address of your **Master URL** and append `/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`.
-6.  From the {{site.data.keyword.openshiftshort}} web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.<p class="tip">Save your cluster master URL to access the {{site.data.keyword.openshiftshort}} console later. In future sessions, you can skip the `cluster config` step and copy the login command from the console instead.</p>
-7.  Verify that the `oc` commands run properly with your cluster by checking the version.
+
+5. In your browser, navigate to the address of your **Master URL** and append `/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`.
+6. From the {{site.data.keyword.openshiftshort}} web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.<p class="tip">Save your cluster master URL to access the {{site.data.keyword.openshiftshort}} console later. In future sessions, you can skip the `cluster config` step and copy the login command from the console instead.</p>
+7. Verify that the `oc` commands run properly with your cluster by checking the version.
     ```
     oc version
     ```
@@ -210,13 +212,13 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
 {{site.data.keyword.openshiftlong_notm}} comes with built-in services that you can use to help operate your cluster, such as the {{site.data.keyword.openshiftshort}} console.
 {: shortdesc}
 
-1.  From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your {{site.data.keyword.openshiftshort}} cluster, then click **OpenShift web console**.
-2.  Explore the different areas of the {{site.data.keyword.openshiftshort}} web console, as described in the following tabbed table.
+1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your {{site.data.keyword.openshiftshort}} cluster, then click **OpenShift web console**.
+2. Explore the different areas of the {{site.data.keyword.openshiftshort}} web console, as described in the following tabbed table.
 
     <table class="simple-tab-table" id="console1" tab-title="OCP 4" tab-group="console-version" aria-describedby="tableSummary-19ecbef4c01853826b42de82471b9035">
     <caption caption-side="top">
-      <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview<br>
-      <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9035">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, and the description of the console area in the third column. You can change between {{site.data.keyword.openshiftshort}} console versions by toggling the tabs at the beginning of the table.</span>
+        <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview<br>
+        <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9035">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, and the description of the console area in the third column. You can change between {{site.data.keyword.openshiftshort}} console versions by toggling the tabs at the beginning of the table.</span>
     </caption>
     <thead>
     <tr>
@@ -234,14 +236,14 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
     <tr>
     <td>Developer perspective</td>
     <td>Side navigation menu perspective switcher.</td>
-    <td>From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](http://docs.openshift.com/container-platform/4.6/web_console/odc-about-developer-perspective.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.</td>
+    <td>From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The <strong>Topology</strong> view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](http://docs.openshift.com/container-platform/4.6/web_console/odc-about-developer-perspective.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.</td>
     </tr>
     </tbody>
     </table>
     <table class="simple-tab-table" id="console2" tab-title="OCP 3" tab-group="console-version" aria-describedby="tableSummary-a4edc48da30a2a6943cabb6b3a128df4">
     <caption caption-side="top">
-      <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview<br>
-      <span class="table-summary" id="tableSummary-a4edc48da30a2a6943cabb6b3a128df4">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, and the description of the console area in the third column. You can change between {{site.data.keyword.openshiftshort}} console versions by toggling the tabs at the beginning of the table.</span>
+        <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview<br>
+        <span class="table-summary" id="tableSummary-a4edc48da30a2a6943cabb6b3a128df4">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, and the description of the console area in the third column. You can change between {{site.data.keyword.openshiftshort}} console versions by toggling the tabs at the beginning of the table.</span>
     </caption>
     <thead>
     <tr>
@@ -253,22 +255,22 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
     <tbody>
     <tr>
     <td>Service Catalog</td>
-    <td>Dropdown menu in the **OpenShift Container Platform** menu bar.</td>
-    <td>Browse the catalog of built-in services that you can deploy on {{site.data.keyword.openshiftshort}}. For example, if you already have a `node.js` app that is hosted on GitHub, you can click the **Languages** tab and deploy a **JavaScript** app. The **My Projects** pane provides a quick view of all the projects that you have access to, and clicking on a project takes you to the Application Console. For more information, see the [{{site.data.keyword.openshiftshort}} Web Console Walkthrough](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.</td>
+    <td>Dropdown menu in the <strong>OpenShift Container Platform</strong> menu bar.</td>
+    <td>Browse the catalog of built-in services that you can deploy on {{site.data.keyword.openshiftshort}}. For example, if you already have a <code>node.js</code> app that is hosted on GitHub, you can click the <strong>Languages</strong> tab and deploy a <strong>JavaScript</strong> app. The <strong>My Projects</strong> pane provides a quick view of all the projects that you have access to, and clicking on a project takes you to the Application Console. For more information, see the [{{site.data.keyword.openshiftshort}} Web Console Walkthrough](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.</td>
     </tr>
     <tr>
     <td>Application Console</td>
-    <td>Dropdown menu in the **OpenShift Container Platform** menu bar.</td>
+    <td>Dropdown menu in the <strong>OpenShift Container Platform</strong> menu bar.</td>
     <td>For each project that you have access to, you can manage your {{site.data.keyword.openshiftshort}} resources such as pods, services, routes, builds, images or persistent volume claims. You can also view and analyze logs for these resources, or add services from the catalog to the project. For more information, see the [{{site.data.keyword.openshiftshort}} Web Console Walkthrough](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.</td>
     </tr>
     <tr>
     <td>Cluster Console</td>
-    <td>Dropdown menu in the **OpenShift Container Platform** menu bar.</td>
+    <td>Dropdown menu in the <strong>OpenShift Container Platform</strong> menu bar.</td>
     <td>For cluster-wide administrators across all the projects in the cluster, you can manage projects, service accounts,RBAC roles, role bindings, and resource quotas. You can also see the status and events for resources within the cluster in a combined view. For more information, see the [{{site.data.keyword.openshiftshort}} Web Console Walkthrough](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.</td>
     </tr>
     </tbody>
     </table><p></p>
-3.  To work with your cluster in the CLI, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.
+3. To work with your cluster in the CLI, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.
 
 <br />
 
@@ -282,18 +284,20 @@ With {{site.data.keyword.openshiftlong_notm}}, you can create a new app and expo
 If you took a break from the last lesson and started a new command line, make sure that you log back in to your cluster. Open your {{site.data.keyword.openshiftshort}} web console at `https://<master_URL>/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`. Then from the menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.
 {: tip}
 
-1.  Create a project for your Hello World app. A project is an {{site.data.keyword.openshiftshort}} version of a Kubernetes namespace with additional annotations.
+1. Create a project for your Hello World app. A project is an {{site.data.keyword.openshiftshort}} version of a Kubernetes namespace with additional annotations.
     ```
     oc new-project hello-world
     ```
     {: pre}
-2.  Build the sample app [from the source code](https://github.com/IBM/container-service-getting-started-wt){: external}. With the {{site.data.keyword.openshiftshort}} `new-app` command, you can refer to a directory in a remote repository that contains the Dockerfile and app code to build your image. The command builds the image, stores the image in the local Docker registry, and creates the app deployment configurations (`dc`) and services (`svc`). For more information about creating new apps, [see the {{site.data.keyword.openshiftshort}} docs](http://docs.openshift.com/container-platform/4.6/applications/application_life_cycle_management/odc-creating-applications-using-developer-perspective.html){: external}.
+
+2. Build the sample app [from the source code](https://github.com/IBM/container-service-getting-started-wt){: external}. With the {{site.data.keyword.openshiftshort}} `new-app` command, you can refer to a directory in a remote repository that contains the Dockerfile and app code to build your image. The command builds the image, stores the image in the local Docker registry, and creates the app deployment configurations (`dc`) and services (`svc`). For more information about creating new apps, [see the {{site.data.keyword.openshiftshort}} docs](http://docs.openshift.com/container-platform/4.6/applications/application_life_cycle_management/odc-creating-applications-using-developer-perspective.html){: external}.
     ```
     oc new-app --name hello-world https://github.com/IBM/container-service-getting-started-wt --context-dir="Lab 1"
     ```
     {: pre}
-3.  Verify that the sample Hello World app components are created.
-    1.  List the **hello-world** services and note the service name. Your app listens for traffic on these internal cluster IP addresses unless you create a route for the service so that the router can forward external traffic requests to the app.
+
+3. Verify that the sample Hello World app components are created.
+    1. List the **hello-world** services and note the service name. Your app listens for traffic on these internal cluster IP addresses unless you create a route for the service so that the router can forward external traffic requests to the app.
         ```
         oc get svc -n hello-world
         ```
@@ -305,7 +309,8 @@ If you took a break from the last lesson and started a new command line, make su
         hello-world   ClusterIP   172.21.xxx.xxx   <none>       8080/TCP   31m
         ```
         {: screen}
-    2.  List the pods. Pods with `build` in the name are jobs that **Completed** as part of the new app build process. Make sure that the **hello-world** pod status is **Running**.
+
+    2. List the pods. Pods with `build` in the name are jobs that **Completed** as part of the new app build process. Make sure that the **hello-world** pod status is **Running**.
         ```
         oc get pods -n hello-world
         ```
@@ -319,24 +324,28 @@ If you took a break from the last lesson and started a new command line, make su
         hello-world-1-deploy  0/1       Completed          0          31m
         ```
         {: screen}
-4.  Set up a route so that you can publicly access the hello world service. By default, the hostname is in the format of `<service_name>-<project>.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud`. If you want to customize the hostname, include the `--hostname=<hostname>` flag. **Note**: The hostname that is assigned to your route is different than the Ingress subdomain that is assigned by default to your cluster. Your route does not use the Ingress subdomain.
-    1.  Create a route for the **hello-world** service.
+
+4. Set up a route so that you can publicly access the hello world service. By default, the hostname is in the format of `<service_name>-<project>.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud`. If you want to customize the hostname, include the `--hostname=<hostname>` flag. **Note**: The hostname that is assigned to your route is different than the Ingress subdomain that is assigned by default to your cluster. Your route does not use the Ingress subdomain.
+    1. Create a route for the **hello-world** service.
         ```
         oc create route edge --service=hello-world -n hello-world
         ```
         {: pre}
-    2.  Get the route hostname address from the **Host/Port** output.
+
+    2. Get the route hostname address from the **Host/Port** output.
         ```
         oc get route -n hello-world
         ```
         {: pre}
+
         Example output:
         ```
         NAME          HOST/PORT                         PATH                                        SERVICES      PORT       TERMINATION   WILDCARD
         hello-world   hello-world-hello.world.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud    hello-world   8080-tcp   edge/Allow    None
         ```
         {: screen}
-5.  Access your app. Be sure to append `https://` to your route hostname.
+
+5. Access your app. Be sure to append `https://` to your route hostname.
     ```
     curl https://hello-world-hello-world.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud
     ```
@@ -347,12 +356,14 @@ If you took a break from the last lesson and started a new command line, make su
     Hello world from hello-world-9cv7d! Your app is up and running in a cluster!
     ```
     {: screen}
-6.  **Optional** To clean up the resources that you created in this lesson, you can use the labels that are assigned to each app.
-    1.  List all the resources for each app in the `hello-world` project.
+
+6. **Optional** To clean up the resources that you created in this lesson, you can use the labels that are assigned to each app.
+    1. List all the resources for each app in the `hello-world` project.
         ```
         oc get all -l app=hello-world -o name -n hello-world
         ```
         {: pre}
+
         Example output:
         ```
         pod/hello-world-1-dh2ff
@@ -366,7 +377,8 @@ If you took a break from the last lesson and started a new command line, make su
         route.route.openshift.io/hello-world
         ```
         {: screen}
-    2.  Delete all the resources that you created.
+
+    2. Delete all the resources that you created.
         ```
         oc delete all -l app=hello-world -n hello-world
         ```
@@ -382,3 +394,5 @@ If you took a break from the last lesson and started a new command line, make su
 For more information about working with your apps, see the [{{site.data.keyword.openshiftshort}} developer activities](https://docs.openshift.com/container-platform/4.6/welcome/index.html#developer-activities){: external} documentation.
 
 Install two popular {{site.data.keyword.openshiftlong_notm}} add-ons: [{{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging) and [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor).
+
+

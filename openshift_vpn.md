@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Setting up classic VPN connectivity
 {: #vpn}
@@ -180,13 +178,13 @@ Multizone clusters provide high availability for apps in the event of an outage 
 
 Before you configure strongSwan in a multizone cluster, first try to deploy a strongSwan Helm chart into a single-zone cluster. When you first establish a VPN connection between a single-zone cluster and an on-premises network, you can more easily determine remote network firewall settings that are important for a multizone strongSwan configuration:
 * Some remote VPN endpoints have settings such as `leftid` or `rightid` in the `ipsec.conf` file. If you have these settings, check whether you must set the `leftid` to the IP address of the VPN IPSec tunnel.
-*	If the connection is inbound to the cluster from the remote network, check whether the remote VPN endpoint can re-establish the VPN connection to a different IP address in case of load balancer failure in one zone.
+*    If the connection is inbound to the cluster from the remote network, check whether the remote VPN endpoint can re-establish the VPN connection to a different IP address in case of load balancer failure in one zone.
 
 To get started with strongSwan in a multizone cluster, choose one of the following options.
 * If you can use an outbound VPN connection, you can choose to configure only one strongSwan VPN deployment. See [Configuring one outbound VPN connection from a multizone cluster](#multizone_one_outbound).
 * If you require an inbound VPN connection, the configuration settings you can use vary depending on whether the remote VPN endpoint can be configured to re-establish the VPN connection to a different public load balancer IP when an outage is detected.
-  * If the remote VPN endpoint can automatically re-establish the VPN connection to a different IP, you can choose to configure only one strongSwan VPN deployment. See [Configuring one inbound VPN connection to a multizone cluster](#multizone_one_inbound).
-  * If the remote VPN endpoint cannot automatically re-establish the VPN connection to a different IP, you must deploy a separate inbound strongSwan VPN service in each zone. See [Configuring a VPN connection in each zone of a multizone cluster](#multizone_multiple).
+    * If the remote VPN endpoint can automatically re-establish the VPN connection to a different IP, you can choose to configure only one strongSwan VPN deployment. See [Configuring one inbound VPN connection to a multizone cluster](#multizone_one_inbound).
+    * If the remote VPN endpoint cannot automatically re-establish the VPN connection to a different IP, you must deploy a separate inbound strongSwan VPN service in each zone. See [Configuring a VPN connection in each zone of a multizone cluster](#multizone_multiple).
 
 Try to set up your environment so that you need only one strongSwan VPN deployment for an outbound or inbound VPN connection to your multizone cluster. If you must set up separate strongSwan VPNs in each zone, make sure that you plan how to manage this added complexity and increased resource usage.
 {: note}
@@ -244,11 +242,11 @@ After you deploy each Helm chart, each strongSwan VPN deployment starts up as a 
 
 2. Configure zone-specific settings on both sides of the VPN tunnel to ensure that each VPN connection is unique. Depending on which resources must be accessible over the VPN, you have two options for making the connections distinguishable:
     * If pods in the cluster must access services on the remote on-premises network:
-      - `zoneSpecificRoutes`: Set to `true`. This setting restricts the VPN connection to a single zone in the cluster. Pods in a specific zone use only the VPN connection that is set up for that specific zone. This solution reduces the number of strongSwan pods that are required to support multiple VPNs in a multizone cluster, improves VPN performance because the VPN traffic only flows to worker nodes located in the current zone, and ensures that VPN connectivity for each zone is unaffected by VPN connectivity, crashed pods, or zone outages in other zones. Note that you do not need to configure `remoteSubnetNAT`. Multiple VPNs that use the `zoneSpecificRoutes` setting can have the same `remote.subnet` because the routing is setup on a per-zone basis.
-      - `enableSingleSourceIP`: Set to `true` and set the `local.subnet` to a single /32 IP address. This combination of settings hides all of the cluster private IP addresses behind a single /32 IP address. This unique /32 IP address allows the remote on-premises network to send replies back over the correct VPN connection to the correct pod in the cluster that initiated the request. Note that the single /32 IP address that is configured for the `local.subnet` option must be unique in each strongSwan VPN configuration.
+        - `zoneSpecificRoutes`: Set to `true`. This setting restricts the VPN connection to a single zone in the cluster. Pods in a specific zone use only the VPN connection that is set up for that specific zone. This solution reduces the number of strongSwan pods that are required to support multiple VPNs in a multizone cluster, improves VPN performance because the VPN traffic only flows to worker nodes located in the current zone, and ensures that VPN connectivity for each zone is unaffected by VPN connectivity, crashed pods, or zone outages in other zones. Note that you do not need to configure `remoteSubnetNAT`. Multiple VPNs that use the `zoneSpecificRoutes` setting can have the same `remote.subnet` because the routing is setup on a per-zone basis.
+        - `enableSingleSourceIP`: Set to `true` and set the `local.subnet` to a single /32 IP address. This combination of settings hides all of the cluster private IP addresses behind a single /32 IP address. This unique /32 IP address allows the remote on-premises network to send replies back over the correct VPN connection to the correct pod in the cluster that initiated the request. Note that the single /32 IP address that is configured for the `local.subnet` option must be unique in each strongSwan VPN configuration.
     * If applications in the remote on-premises network must access services in the cluster:
-      - `localSubnetNAT`: Ensure that an application in the on-premises remote network can select a specific VPN connection to send and receive traffic to the cluster. In each strongSwan Helm configuration, use `localSubnetNAT` to uniquely identify the cluster resources that can be accessed by the remote on-premises application. Because multiple VPNs are established from the remote on-premises network to the cluster, you must add logic to the application on the on-premise network so that it can select which VPN to use when it accesses services in the cluster. Note that the services in the cluster are accessible through multiple different subnets depending on what you configured for `localSubnetNAT` in each strongSwan VPN configuration.
-      - `remoteSubnetNAT`: Ensure that a pod in your cluster uses the same VPN connection to return traffic to the remote network. In each strongSwan deployment file, map the remote on-premises subnet to a unique subnet using the `remoteSubnetNAT` setting. Traffic that is received by a pod in the cluster from a VPN-specific `remoteSubnetNAT` is sent back to that same VPN-specific `remoteSubnetNAT` and then over that same VPN connection.
+        - `localSubnetNAT`: Ensure that an application in the on-premises remote network can select a specific VPN connection to send and receive traffic to the cluster. In each strongSwan Helm configuration, use `localSubnetNAT` to uniquely identify the cluster resources that can be accessed by the remote on-premises application. Because multiple VPNs are established from the remote on-premises network to the cluster, you must add logic to the application on the on-premise network so that it can select which VPN to use when it accesses services in the cluster. Note that the services in the cluster are accessible through multiple different subnets depending on what you configured for `localSubnetNAT` in each strongSwan VPN configuration.
+        - `remoteSubnetNAT`: Ensure that a pod in your cluster uses the same VPN connection to return traffic to the remote network. In each strongSwan deployment file, map the remote on-premises subnet to a unique subnet using the `remoteSubnetNAT` setting. Traffic that is received by a pod in the cluster from a VPN-specific `remoteSubnetNAT` is sent back to that same VPN-specific `remoteSubnetNAT` and then over that same VPN connection.
 
 3. Configure the remote VPN endpoint software to establish a separate VPN connection to the load balancer IP in each zone.
 
@@ -264,7 +262,7 @@ Before you begin:
 * Install an IPSec VPN gateway in your on-premises data center.
 * Ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the `default` namespace.
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-  * **Note**: All strongSwan configurations are permitted in standard clusters. If you use a free cluster, you can choose only an outbound VPN connection in [Step 3](#strongswan_3). Inbound VPN connections require a load balancer in the cluster, and load balancers are not available for free clusters.
+    * **Note**: All strongSwan configurations are permitted in standard clusters. If you use a free cluster, you can choose only an outbound VPN connection in [Step 3](#strongswan_3). Inbound VPN connections require a load balancer in the cluster, and load balancers are not available for free clusters.
 
 ### Step 1: Get the strongSwan Helm chart
 {: #strongswan_1}
@@ -272,7 +270,7 @@ Before you begin:
 Install Helm and get the strongSwan Helm chart to view possible configurations.
 {: shortdesc}
 
-1.  [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the version 3 Helm client on your local machine.
+1. [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the version 3 Helm client on your local machine.
 
 2. Save the default configuration settings for the strongSwan Helm chart in a local YAML file.
 
@@ -395,10 +393,10 @@ To monitor the status of the strongSwan VPN, you can set up a webhook to automat
 5. Choose a Slack channel or create a new channel to send the VPN messages to.
 
 6. Copy the webhook URL that is generated. The URL format looks similar to the following:
-  ```
-  https://hooks.slack.com/services/A1AA11A1A/AAA1AAA1A/a1aaaaAAAaAaAAAaaaaaAaAA
-  ```
-  {: screen}
+    ```
+    https://hooks.slack.com/services/A1AA11A1A/AAA1AAA1A/a1aaaaAAAaAaAAAaaaaaAaAA
+    ```
+    {: screen}
 
 7. To verify that the Slack webhook is installed, send a test message to your webhook URL by running the following command:
     ```
@@ -489,7 +487,7 @@ After you deploy your Helm chart, test the VPN connectivity.
         1. Run `helm uninstall <release_name> -n <namespace>`
         2. Fix the incorrect values in the configuration file.
         3. Run `helm install vpn iks-charts/strongswan -f config.yaml`
-      You can also run more checks in the next step.
+        You can also run more checks in the next step.
 
     * If the VPN pod is in an `ERROR` state or continues to crash and restart, it might be due to parameter validation of the `ipsec.conf` settings in the chart's configmap.
         1. Check for any validation errors in the strongSwan pod logs by running `oc logs $STRONGSWAN_POD`.
@@ -708,23 +706,25 @@ To limit VPN traffic to tainted nodes for each tenant:
 1. To limit the VPN traffic to only workers dedicated to tenant A in this example, you specify the following `toleration` in the `values.yaml` file for the tenant A strongSwan Helm chart:
     ```yaml
     tolerations:
-     - key: dedicated
-       operator: "Equal"
-       value: "tenantA"
-       effect: "NoSchedule"
+        - key: dedicated
+        operator: "Equal"
+        value: "tenantA"
+        effect: "NoSchedule"
     ```
     {: codeblock}
+
     This toleration allows the route daemon set to run on the two worker nodes that have the `dedicated="tenantA"` taint and on the two untainted worker nodes. The strongSwan VPN pods for this deployment run on the two untainted worker nodes.
 
 2. To limit the VPN traffic to only workers dedicated to tenant B in this example, you specify the following `toleration` in the `values.yaml` file for the tenant B strongSwan Helm chart:
     ```yaml
     tolerations:
-     - key: dedicated
-       operator: "Equal"
-       value: "tenantB"
-       effect: "NoSchedule"
+        - key: dedicated
+        operator: "Equal"
+        value: "tenantB"
+        effect: "NoSchedule"
     ```
     {: codeblock}
+
     This toleration allows the route daemon set to run on the two worker nodes that have the `dedicated="tenantB"` taint and on the two untainted worker nodes. The strongSwan VPN pods for this deployment also run on the two untainted worker nodes.
 
 <br />
@@ -744,17 +744,17 @@ For release dates and changelogs for each strongSwan Helm chart version, run `he
 
 To upgrade your strongSwan Helm chart to the latest version:
 
-  ```
-  helm upgrade -f config.yaml <release_name> ibm/strongswan
-  ```
-  {: pre}
+    ```
+    helm upgrade -f config.yaml <release_name> ibm/strongswan
+    ```
+    {: pre}
 
 You can disable the VPN connection by deleting the Helm chart.
 
-  ```
-  helm uninstall <release_name> -n <namespace>
-  ```
-  {: pre}
+    ```
+    helm uninstall <release_name> -n <namespace>
+    ```
+    {: pre}
 
 <br />
 
@@ -788,3 +788,5 @@ To set up a Virtual Router Appliance:
 
 If you have an existing router appliance and then add a cluster, the new portable subnets that are ordered for the cluster are not configured on the router appliance. In order to use networking services, you must enable routing between the subnets on the same VLAN by [enabling VLAN spanning or VRF](/docs/openshift?topic=openshift-plan_clusters#worker-worker).
 {: important}
+
+

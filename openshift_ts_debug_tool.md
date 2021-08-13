@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -55,7 +55,6 @@ content-type: troubleshoot
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -106,8 +105,7 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
-
+ 
 
 # Running tests with the Diagnostics and Debug Tool
 {: #debug-tool}
@@ -126,28 +124,28 @@ While you troubleshoot, you can use the {{site.data.keyword.containerlong_notm}}
 
 If you previously installed the debug tool by using Helm, first uninstall the `ibmcloud-iks-debug` Helm chart.
 1. Find the installation name of your Helm chart.
-  ```
-  helm list -n <project> | grep ibmcloud-iks-debug
-  ```
-  {: pre}
+    ```
+    helm list -n <project> | grep ibmcloud-iks-debug
+    ```
+    {: pre}
 
-  Example output:
-  ```
-  <helm_chart_name> 1 Thu Sep 13 16:41:44 2019 DEPLOYED ibmcloud-iks-debug-1.0.0 default
-  ```
-  {: screen}
+    Example output:
+    ```
+    <helm_chart_name> 1 Thu Sep 13 16:41:44 2019 DEPLOYED ibmcloud-iks-debug-1.0.0 default
+    ```
+    {: screen}
 
 2. Uninstall the debug tool installation by deleting the Helm chart.
-  ```
-  helm uninstall <helm_chart_name> -n <project>
-  ```
-  {: pre}
+    ```
+    helm uninstall <helm_chart_name> -n <project>
+    ```
+    {: pre}
 
 3. Verify that the debug tool pods are removed. When the uninstallation is complete, no pods are returned by the following command.
-  ```
-  oc get pod --all-namespaces | grep ibmcloud-iks-debug
-  ```
-  {: pre}
+    ```
+    oc get pod --all-namespaces | grep ibmcloud-iks-debug
+    ```
+    {: pre}
 
 ## Enabling the Diagnostics and Debug Tool add-on
 {: #debug-tool-enable}
@@ -167,5 +165,7 @@ If you previously installed the debug tool by using Helm, first uninstall the `i
 7. Click **Run**.
 
 8. Check the results of each test.
-  * If any test fails, click the information icon next to the test's name in the left column for information about how to resolve the issue.
-  * You can also use the results of tests to gather information, such as complete YAMLs, that can help you debug your cluster in the following sections.
+    * If any test fails, click the information icon next to the test's name in the left column for information about how to resolve the issue.
+    * You can also use the results of tests to gather information, such as complete YAMLs, that can help you debug your cluster in the following sections.
+
+

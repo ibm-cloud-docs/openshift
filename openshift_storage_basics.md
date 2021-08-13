@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Understanding Kubernetes storage basics
 {: #kube_concepts}
@@ -235,37 +233,37 @@ If you cannot use one of the provided storage classes, you can create your own c
 {: shortdesc}
 
 1. Create a customized storage class. You can start by using one of the pre-defined storage classes, or check out our sample customized storage classes.
-   - Pre-defined storage classes:
-     - [Classic File Storage](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference)
-     - [Classic Block Storage](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference)
-     - [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#cos_storageclass_reference)
-   - Sample customized storage classes:
-     - [Classic File Storage](/docs/openshift?topic=openshift-file_storage#file_custom_storageclass)
-     - [Classic Block Storage](/docs/openshift?topic=openshift-block_storage#block_custom_storageclass)
+    - Pre-defined storage classes:
+        - [Classic File Storage](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference)
+        - [Classic Block Storage](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference)
+        - [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#cos_storageclass_reference)
+    - Sample customized storage classes:
+        - [Classic File Storage](/docs/openshift?topic=openshift-file_storage#file_custom_storageclass)
+        - [Classic Block Storage](/docs/openshift?topic=openshift-block_storage#block_custom_storageclass)
 
 2. Create the customized storage class.
-   ```
-   oc apply -f <local_file_path>
-   ```
-   {: pre}
+    ```
+    oc apply -f <local_file_path>
+    ```
+    {: pre}
 
-3.  Verify that the customized storage class is created.
+3. Verify that the customized storage class is created.
     ```
     oc get storageclasses                                                        
     ```
     {: pre}
 
 4. Create a persistent volume claim (PVC) to dynamically provision storage with your customized storage class.
-   - [Classic File Storage](/docs/openshift?topic=openshift-file_storage#add_file)
-   - [Classic Block Storage](/docs/openshift?topic=openshift-block_storage#add_block)
-   - [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#add_cos)
-   - [Portworx](/docs/openshift?topic=openshift-portworx#add_portworx_storage)
+    - [Classic File Storage](/docs/openshift?topic=openshift-file_storage#add_file)
+    - [Classic Block Storage](/docs/openshift?topic=openshift-block_storage#add_block)
+    - [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#add_cos)
+    - [Portworx](/docs/openshift?topic=openshift-portworx#add_portworx_storage)
 
 5. Verify that your PVC is created and bound to a persistent volume (PV). This process might take a few minutes to complete.
-   ```
-   oc get pvc
-   ```
-   {: pre}
+    ```
+    oc get pvc
+    ```
+    {: pre}
 
 ### Changing or updating to a different storage class
 {: #update_storageclass}
@@ -295,7 +293,7 @@ When you dynamically provision persistent storage by using a storage class, you 
 <tr>
 <td>Portworx</td>
 <td>You can increase your storage size by [changing your PVC specifications ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/resize-pvc/).</td>
-   </tr>
+    </tr>
 </tbody>
 </table>
 
@@ -305,27 +303,32 @@ When you dynamically provision persistent storage by using a storage class, you 
 The default storage class is `ibmc-file-gold`. You can change the default storage class that a persistent volume (PV) uses if no storage class is specified in the persistent volume claim (PVC). You can have only one default storage class.
 {: shortdesc}
 
-1.  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
-2.  List available storage classes. Note the name of the storage class that you want to make the default, and the current default storage class that has `(default)` in the **Name**.
+1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+2. List available storage classes. Note the name of the storage class that you want to make the default, and the current default storage class that has `(default)` in the **Name**.
     ```
     oc get storageclasses
     ```
     {: pre}
-3.  Create a default storage class, replacing `<storageclass>` with the storage class that you want to use.
+
+3. Create a default storage class, replacing `<storageclass>` with the storage class that you want to use.
     ```
     oc patch storageclass <storageclass> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
     ```
     {: pre}
-4.  Remove the previous default storage class.
+
+4. Remove the previous default storage class.
     ```
     oc patch storageclass <previous_default_storageclass> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
     ```
     {: pre}
-5.  Verify that the default storage class is set.
+
+5. Verify that the default storage class is set.
     ```
     oc get storageclasses | grep "(default)"
     ```
     {: pre}
+
+
 
 
 

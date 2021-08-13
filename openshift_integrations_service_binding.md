@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Adding services by using IBM Cloud service binding
 {: #service-binding}
@@ -142,10 +140,11 @@ Want to make your secrets even more secured? Ask your cluster admin to [enable a
 Yes, you can use services that meet naming requirements and reuse the service credentials.
 
 * **Naming**: Make sure that the service name is in the following regex format. Example permitted names are `myservice` or `example.com`. Unallowed characters include spaces and underscores.
-  ```
-  [a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*
-  ```
-  {: screen}
+    ```
+    [a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*
+    ```
+    {: screen}
+
 * **Service credentials**: To use your existing service credentials, specify the `--key` flag in the `ibmcloud oc cluster service bind` command and provide the name of your service credentials. {{site.data.keyword.cloud_notm}} service binding automatically creates a Kubernetes secret with your existing service credentials.
 
 ### What if I want to use service credentials that use the private cloud service endpoint?
@@ -189,79 +188,79 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
     * Some {{site.data.keyword.cloud_notm}} services are available only in select regions. You can bind a service to your cluster only if the service is available in the same region as your cluster. In addition, if you want to create a service instance in the Washington DC zone, you must use the CLI.
     * **For IAM-enabled services**: You must create the service instance in the same resource group as your cluster. A service can be created in only one resource group that you can't change afterward.
     * Make sure that the service name is in the following regex format. Example permitted names are `myservice` or `example.com`. Unallowed characters include spaces and underscores.
-      ```
-      [a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*
-      ```
-      {: screen}
+        ```
+        [a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*
+        ```
+        {: screen}
 
 2. Check the type of service that you created and make note of the service instance **Name**.
-   - **Cloud Foundry services:**
-     ```
-     ibmcloud service list
-     ```
-     {: pre}
+    - **Cloud Foundry services:**
+        ```
+        ibmcloud service list
+        ```
+        {: pre}
 
-     Example output:
-     ```
-     name                         service           plan    bound apps   last operation
-     <cf_service_instance_name>   <service_name>    spark                create succeeded
-     ```
-     {: screen}
+        Example output:
+        ```
+        name                         service           plan    bound apps   last operation
+        <cf_service_instance_name>   <service_name>    spark                create succeeded
+        ```
+        {: screen}
 
-  - **{{site.data.keyword.cloud_notm}} IAM-enabled services:**
-     ```
-     ibmcloud resource service-instances
-     ```
-     {: pre}
+    - **{{site.data.keyword.cloud_notm}} IAM-enabled services:**
+        ```
+        ibmcloud resource service-instances
+        ```
+        {: pre}
 
-     Example output:
-     ```
-     Name                          Location   State    Type               Tags
-     <iam_service_instance_name>   <region>   active   service_instance
-     ```
-     {: screen}
+        Example output:
+        ```
+        Name                          Location   State    Type               Tags
+        <iam_service_instance_name>   <region>   active   service_instance
+        ```
+        {: screen}
 
-   You can also see the different service types in your {{site.data.keyword.cloud_notm}} dashboard as **Cloud Foundry Services** and **Services**.
+    You can also see the different service types in your {{site.data.keyword.cloud_notm}} dashboard as **Cloud Foundry Services** and **Services**.
 
 3. Identify the cluster project that you want to use to add your service.
-   ```
-   oc get namespaces
-   ```
-   {: pre}
+    ```
+    oc get namespaces
+    ```
+    {: pre}
 
 4. Bind the service to your cluster to create service credentials for your service that use the public cloud service endpoint and store the credentials in a Kubernetes secret. If you have existing service credentials, use the `--key` flag to specify the name of the credentials. For IAM-enabled services, the credentials are automatically created with the **Writer** service access role, but you can use the `--role` flag to specify a different service access role. If you use the `--key` flag, do not include the `--role` flag.
 
-   If your service supports private cloud service endpoints, you can manually create the service credentials with the private cloud service endpoint, and then use the `--key` flag to specify the name of your credentials.
-   {: tip}
+    If your service supports private cloud service endpoints, you can manually create the service credentials with the private cloud service endpoint, and then use the `--key` flag to specify the name of your credentials.
+    {: tip}
 
-   ```
-   ibmcloud oc cluster service bind --cluster <cluster_name_or_ID> --namespace <project> --service <service_instance_name> [--key <service_instance_key>] [--role <IAM_service_role>]
-   ```
-   {: pre}
+    ```
+    ibmcloud oc cluster service bind --cluster <cluster_name_or_ID> --namespace <project> --service <service_instance_name> [--key <service_instance_key>] [--role <IAM_service_role>]
+    ```
+    {: pre}
 
-   When the creation of the service credentials is successful, a Kubernetes secret with the name `binding-<service_instance_name>` is created.  
+    When the creation of the service credentials is successful, a Kubernetes secret with the name `binding-<service_instance_name>` is created.  
 
-   Example output:
-   ```
-   ibmcloud oc cluster service bind --cluster mycluster --namespace myproject --service cleardb
-   Binding service instance to namespace...
-   OK
-   Namespace:	     myproject
-   Secret name:     binding-<service_instance_name>
-   ```
-   {: screen}
+    Example output:
+    ```
+    ibmcloud oc cluster service bind --cluster mycluster --namespace myproject --service cleardb
+    Binding service instance to namespace...
+    OK
+    Namespace:         myproject
+    Secret name:     binding-<service_instance_name>
+    ```
+    {: screen}
 
 5. Verify the service credentials in your Kubernetes secret.
-   1. Get the details of the secret and note the **binding** value. The **binding** value is base64 encoded and holds the credentials for your service instance in JSON format.
-      ```
-      oc get secrets binding-<service_instance_name> --namespace=<project> -o yaml
-      ```
-      {: pre}
+    1. Get the details of the secret and note the **binding** value. The **binding** value is base64 encoded and holds the credentials for your service instance in JSON format.
+        ```
+        oc get secrets binding-<service_instance_name> --namespace=<project> -o yaml
+        ```
+        {: pre}
 
-      Example output:
-      ```
-      apiVersion: v1
-      data:
+        Example output:
+        ```
+        apiVersion: v1
+        data:
         binding: <binding>
       kind: Secret
       metadata:
@@ -275,22 +274,22 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
         selfLink: /api/v1/namespaces/default/secrets/binding-mycloudant
         uid: 33333c33-3c33-33c3-cc33-cc33333333c
       type: Opaque
-      ```
-      {: screen}
+        ```
+        {: screen}
 
-   2. Decode the binding value.
-      ```
-      echo "<binding>" | base64 -D
-      ```
-      {: pre}
+    2. Decode the binding value.
+        ```
+        echo "<binding>" | base64 -D
+        ```
+        {: pre}
 
-      Example output:
-      ```
-      {"apikey":"<API_key>","host":"<ID_string>-bluemix.cloudant.com","iam_apikey_description":"Auto generated apikey during resource-key operation for Instance - crn:v1:bluemix:public:cloudantnosqldb:us-south:a/<ID_string>::","iam_apikey_name":"auto-generated-apikey-<ID_string>","iam_role_crn":"crn:v1:bluemix:public:iam::::serviceRole:Writer","iam_serviceid_crn":"crn:v1:bluemix:public:iam-identity::a/1234567890brasge5htn2ec098::serviceid:ServiceId-<ID_string>","password":"<ID_string>","port":443,"url":"https://<ID_string>-bluemix.cloudant.com","username":"123b45da-9ce1-4c24-ab12-rinwnwub1294-bluemix"}
-      ```
-      {: screen}
+        Example output:
+        ```
+        {"apikey":"<API_key>","host":"<ID_string>-bluemix.cloudant.com","iam_apikey_description":"Auto generated apikey during resource-key operation for Instance - crn:v1:bluemix:public:cloudantnosqldb:us-south:a/<ID_string>::","iam_apikey_name":"auto-generated-apikey-<ID_string>","iam_role_crn":"crn:v1:bluemix:public:iam::::serviceRole:Writer","iam_serviceid_crn":"crn:v1:bluemix:public:iam-identity::a/1234567890brasge5htn2ec098::serviceid:ServiceId-<ID_string>","password":"<ID_string>","port":443,"url":"https://<ID_string>-bluemix.cloudant.com","username":"123b45da-9ce1-4c24-ab12-rinwnwub1294-bluemix"}
+        ```
+        {: screen}
 
-   3. Optional: Compare the service credentials that you decoded in the previous step with the service credentials that you find for your service instance in the {{site.data.keyword.cloud_notm}} dashboard.
+    3. Optional: Compare the service credentials that you decoded in the previous step with the service credentials that you find for your service instance in the {{site.data.keyword.cloud_notm}} dashboard.
 
 6. Now that your service is bound to your cluster, you must configure your app to [access the service credentials in the Kubernetes secret](#adding_app).
 
@@ -315,7 +314,7 @@ Before you begin:
 When you mount the secret as a volume to your pod, a file that is named `binding` is stored in the volume mount directory. The `binding` file in JSON format includes all the information and credentials that you need to access the {{site.data.keyword.cloud_notm}} service.
 {: shortdesc}
 
-1.  List available secrets in your cluster and note the **name** of your secret. Look for a secret of type **Opaque**. If multiple secrets exist, contact your cluster administrator to identify the correct service secret.
+1. List available secrets in your cluster and note the **name** of your secret. Look for a secret of type **Opaque**. If multiple secrets exist, contact your cluster administrator to identify the correct service secret.
     ```
     oc get secrets
     ```
@@ -328,7 +327,7 @@ When you mount the secret as a volume to your pod, a file that is named `binding
     ```
     {: screen}
 
-2.  Create a YAML file for your Kubernetes deployment and mount the secret as a volume to your pod.
+2. Create a YAML file for your Kubernetes deployment and mount the secret as a volume to your pod.
     ```yaml
     apiVersion: apps/v1
     kind: Deployment
@@ -379,20 +378,20 @@ When you mount the secret as a volume to your pod, a file that is named `binding
     </tr>
     <tr>
     <td><code>secret.defaultMode</code></td>
-    <td>The read and write permissions on the secret. Use `420` to set read-only permissions. </td>
+    <td>The read and write permissions on the secret. Use <code>420</code> to set read-only permissions. </td>
     </tr>
     <tr>
     <td><code>secret.secretName</code></td>
     <td>The name of the secret that you noted in the previous step.</td>
     </tr></tbody></table>
 
-3.  Create the pod and mount the secret as a volume.
+3. Create the pod and mount the secret as a volume.
     ```
     oc apply -f secret-test.yaml
     ```
     {: pre}
 
-4.  Verify that the pod is created.
+4. Verify that the pod is created.
     ```
     oc get pods
     ```
@@ -406,38 +405,38 @@ When you mount the secret as a volume to your pod, a file that is named `binding
     ```
     {: screen}
 
-5.  Access the service credentials.
+5. Access the service credentials.
     1. Log in to your pod.
-       ```
-       oc exec <pod_name> -it bash
-       ```
-       {: pre}
+        ```
+        oc exec <pod_name> -it bash
+        ```
+        {: pre}
 
     2. Navigate to your volume mount path that you defined earlier and list the files in your volume mount path.
-       ```
-       cd <volume_mountpath> && ls
-       ```
-       {: pre}
+        ```
+        cd <volume_mountpath> && ls
+        ```
+        {: pre}
 
-       Example output:
-       ```
-       binding
-       ```
-       {: screen}
+        Example output:
+        ```
+        binding
+        ```
+        {: screen}
 
-       The `binding` file includes the service credentials that you stored in the Kubernetes secret.
+        The `binding` file includes the service credentials that you stored in the Kubernetes secret.
 
     4. View the service credentials. The credentials are stored as key value pairs in JSON format.
-       ```
-       cat binding
-       ```
-       {: pre}
+        ```
+        cat binding
+        ```
+        {: pre}
 
-       Example output:
-       ```
-       {"apikey":"<API_key>","host":"<ID_string>-bluemix.cloudant.com","iam_apikey_description":"Auto generated apikey during resource-key operation for Instance - crn:v1:bluemix:public:cloudantnosqldb:us-south:a/<ID_string>:<ID_string>::","iam_apikey_name":"auto-generated-apikey-<ID_string>","iam_role_crn":"crn:v1:bluemix:public:iam::::serviceRole:Writer","iam_serviceid_crn":"crn:v1:bluemix:public:iam-identity::a/<ID_string>::serviceid:ServiceId-<ID_string>","password":"<ID_string>","port":443,"url":"https://<ID_string>-bluemix.cloudant.com","username":"123b45da-9ce1-4c24-ab12-rinwnwub1294-bluemix"}
-       ```
-       {: screen}
+        Example output:
+        ```
+        {"apikey":"<API_key>","host":"<ID_string>-bluemix.cloudant.com","iam_apikey_description":"Auto generated apikey during resource-key operation for Instance - crn:v1:bluemix:public:cloudantnosqldb:us-south:a/<ID_string>:<ID_string>::","iam_apikey_name":"auto-generated-apikey-<ID_string>","iam_role_crn":"crn:v1:bluemix:public:iam::::serviceRole:Writer","iam_serviceid_crn":"crn:v1:bluemix:public:iam-identity::a/<ID_string>::serviceid:ServiceId-<ID_string>","password":"<ID_string>","port":443,"url":"https://<ID_string>-bluemix.cloudant.com","username":"123b45da-9ce1-4c24-ab12-rinwnwub1294-bluemix"}
+        ```
+        {: screen}
 
     5. Configure your app to parse the JSON content and retrieve the information that you need to access your service.
 
@@ -448,162 +447,162 @@ You can add the service credentials and other key value pairs from your Kubernet
 {: shortdesc}
 
 1. List available secrets in your cluster and note the **name** of your secret. Look for a secret of type **Opaque**. If multiple secrets exist, contact your cluster administrator to identify the correct service secret.
-   ```
-   oc get secrets
-   ```
-   {: pre}
+    ```
+    oc get secrets
+    ```
+    {: pre}
 
-   Example output:
-   ```
-   NAME                              TYPE            DATA      AGE
-   binding-<service_instance_name>   Opaque          1         3m
-   ```
-   {: screen}
+    Example output:
+    ```
+    NAME                              TYPE            DATA      AGE
+    binding-<service_instance_name>   Opaque          1         3m
+    ```
+    {: screen}
 
 2. Get the details of your secret to find potential key value pairs that you can reference as environment variables in your pod. The service credentials are stored in the `binding` key of your secret.
-   ```
-   oc get secrets binding-<service_instance_name> --namespace=<project> -o yaml
-   ```
-   {: pre}
+    ```
+    oc get secrets binding-<service_instance_name> --namespace=<project> -o yaml
+    ```
+    {: pre}
 
-   Example output:
-   ```
-   apiVersion: v1
-   data:
-     binding: <binding>
-   kind: Secret
-   metadata:
-     annotations:
-       service-instance-id: 7123acde-c3ef-4ba2-8c52-439ac007fa70
-       service-key-id: 9h30dh8a-023f-4cf4-9d96-d12345ec7890
-     creationTimestamp: 2018-08-07T20:47:14Z
-     name: binding-<service_instance_name>
-     namespace: <project>
-     resourceVersion: "6145900"
-     selfLink: /api/v1/namespaces/default/secrets/binding-mycloudant
-     uid: 12345a31-9a83-11e8-ba83-cd49014748f
-   type: Opaque
-   ```
-   {: screen}
+    Example output:
+    ```
+    apiVersion: v1
+    data:
+      binding: <binding>
+    kind: Secret
+    metadata:
+      annotations:
+        service-instance-id: 7123acde-c3ef-4ba2-8c52-439ac007fa70
+        service-key-id: 9h30dh8a-023f-4cf4-9d96-d12345ec7890
+      creationTimestamp: 2018-08-07T20:47:14Z
+      name: binding-<service_instance_name>
+      namespace: <project>
+      resourceVersion: "6145900"
+      selfLink: /api/v1/namespaces/default/secrets/binding-mycloudant
+      uid: 12345a31-9a83-11e8-ba83-cd49014748f
+    type: Opaque
+    ```
+    {: screen}
 
 3. Create a YAML file for your Kubernetes deployment and specify an environment variable that references the `binding` key.
 
-   ```yaml
-   apiVersion: apps/v1
-   kind: Deployment
-   metadata:
-     labels:
-       app: secret-test
-     name: secret-test
-     namespace: <my_project>
-   spec:
-     selector:
-       matchLabels:
-         app: secret-test
-     template:
-       metadata:
-         labels:
-           app: secret-test
-       spec:
-         containers:
-         - image: icr.io/ibm/liberty:latest
-           name: secret-test
-           env:
-           - name: BINDING
-             valueFrom:
-               secretKeyRef:
-                 name: binding-<service_instance_name>
-                 key: binding
-   ```
-   {: codeblock}
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      labels:
+        app: secret-test
+      name: secret-test
+      namespace: <my_project>
+    spec:
+      selector:
+        matchLabels:
+          app: secret-test
+      template:
+        metadata:
+          labels:
+            app: secret-test
+        spec:
+          containers:
+          - image: icr.io/ibm/liberty:latest
+            name: secret-test
+            env:
+            - name: BINDING
+              valueFrom:
+                secretKeyRef:
+                  name: binding-<service_instance_name>
+                  key: binding
+    ```
+    {: codeblock}
 
-     <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-     <caption>Understanding the YAML file components</caption>
-     <col width="25%">
-     <thead>
-     <th>Parameter</th>
-     <th>Description</th>
-     </thead>
-     <tbody>
-     <tr>
-     <td><code>containers.env.name</code></td>
-     <td>The name of your environment variable.</td>
-     </tr>
-     <tr>
-     <td><code>env.valueFrom.secretKeyRef.name</code></td>
-     <td>The name of the secret that you noted in the previous step.</td>
-     </tr>
-     <tr>
-     <td><code>env.valueFrom.secretKeyRef.key</code></td>
-     <td>The key that is part of your secret and that you want to reference in your environment variable. To reference the service credentials, you must use the <strong>binding</strong> key.  </td>
-     </tr>
-     </tbody></table>
+        <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
+        <caption>Understanding the YAML file components</caption>
+        <col width="25%">
+        <thead>
+        <th>Parameter</th>
+        <th>Description</th>
+        </thead>
+        <tbody>
+        <tr>
+        <td><code>containers.env.name</code></td>
+        <td>The name of your environment variable.</td>
+        </tr>
+        <tr>
+        <td><code>env.valueFrom.secretKeyRef.name</code></td>
+        <td>The name of the secret that you noted in the previous step.</td>
+        </tr>
+        <tr>
+        <td><code>env.valueFrom.secretKeyRef.key</code></td>
+        <td>The key that is part of your secret and that you want to reference in your environment variable. To reference the service credentials, you must use the <strong>binding</strong> key.  </td>
+        </tr>
+        </tbody></table>
 
 4. Create the pod that references the `binding` key of your secret as an environment variable.
-   ```
-   oc apply -f secret-test.yaml
-   ```
-   {: pre}
+    ```
+    oc apply -f secret-test.yaml
+    ```
+    {: pre}
 
 5. Verify that the pod is created.
-   ```
-   oc get pods
-   ```
-   {: pre}
+    ```
+    oc get pods
+    ```
+    {: pre}
 
-   Example CLI output:
-   ```
-   NAME                           READY     STATUS    RESTARTS   AGE
-   secret-test-1111454598-gfx32   1/1       Running   0          1m
-   ```
-   {: screen}
+    Example CLI output:
+    ```
+    NAME                           READY     STATUS    RESTARTS   AGE
+    secret-test-1111454598-gfx32   1/1       Running   0          1m
+    ```
+    {: screen}
 
 6. Verify that the environment variable is set correctly.
-   1. Log in to your pod.
-      ```
-      oc exec <pod_name> -it bash
-      ```
-      {: pre}
+    1. Log in to your pod.
+        ```
+        oc exec <pod_name> -it bash
+        ```
+        {: pre}
 
-   2. List all environment variables in the pod.
-      ```
-      env
-      ```
-      {: pre}
+    2. List all environment variables in the pod.
+        ```
+        env
+        ```
+        {: pre}
 
-      Example output:
-      ```
-      BINDING={"apikey":"<API_key>","host":"<ID_string>-bluemix.cloudant.com","iam_apikey_description":"Auto generated apikey during resource-key operation for Instance - crn:v1:bluemix:public:cloudantnosqldb:us-south:a/<ID_string>::","iam_apikey_name":"auto-generated-apikey-<ID_string>","iam_role_crn":"crn:v1:bluemix:public:iam::::serviceRole:Writer","iam_serviceid_crn":"crn:v1:bluemix:public:iam-identity::a/1234567890brasge5htn2ec098::serviceid:ServiceId-<ID_string>","password":"<password>","port":443,"url":"https://<ID_string>-bluemix.cloudant.com","username":"<ID_string>-bluemix"}
-      ```
-      {: screen}
+        Example output:
+        ```
+        BINDING={"apikey":"<API_key>","host":"<ID_string>-bluemix.cloudant.com","iam_apikey_description":"Auto generated apikey during resource-key operation for Instance - crn:v1:bluemix:public:cloudantnosqldb:us-south:a/<ID_string>::","iam_apikey_name":"auto-generated-apikey-<ID_string>","iam_role_crn":"crn:v1:bluemix:public:iam::::serviceRole:Writer","iam_serviceid_crn":"crn:v1:bluemix:public:iam-identity::a/1234567890brasge5htn2ec098::serviceid:ServiceId-<ID_string>","password":"<password>","port":443,"url":"https://<ID_string>-bluemix.cloudant.com","username":"<ID_string>-bluemix"}
+        ```
+        {: screen}
 
 7. Configure your app to read the environment variable and to parse the JSON content to retrieve the information that you need to access your service.
 
-   Example code in Python:
-   ```python
-   if os.environ.get('BINDING'):
+    Example code in Python:
+    ```python
+    if os.environ.get('BINDING'):
         credentials = json.loads(os.environ.get('BINDING'))
-   ```
-   {: codeblock}
+    ```
+    {: codeblock}
 
 8. Optional: As a precaution, add error handling to your app in case that the `BINDING` environment variable is not set properly.
 
-   Example code in Java:
-   ```java
-   if (System.getenv("BINDING") == null) {
+    Example code in Java:
+    ```java
+    if (System.getenv("BINDING") == null) {
     throw new RuntimeException("Environment variable 'SECRET' is not set!");
-   }
-   ```
-   {: codeblock}
+    }
+    ```
+    {: codeblock}
 
-   Example code in Node.js:
-   ```js
-   if (!process.env.BINDING) {
+    Example code in Node.js:
+    ```js
+    if (!process.env.BINDING) {
     console.error('ENVIRONMENT variable "BINDING" is not set!');
     process.exit(1);
-   }
-   ```
-   {: codeblock}
+    }
+    ```
+    {: codeblock}
 
 ## Removing a service from a cluster
 {: #unbind-service}
@@ -612,53 +611,53 @@ If you do not want to use an {{site.data.keyword.cloud_notm}} service that you b
 {: shortdesc}
 
 1. List the services that are bound to your cluster and note the name of your service and the project that the service is bound to.
-   ```
-   ibmcloud oc cluster service ls --cluster
-   ```
-   {: pre}
+    ```
+    ibmcloud oc cluster service ls --cluster
+    ```
+    {: pre}
 
-   Example output:
-   ```
-   OK
-   Service   Instance GUID                          Key                                                                  Namespace   
-   myservice 12345ab1-1234-1abc-a12b-12abc12a12ab   kube-a1a12abcd12a123abc1a12ab1a1234ab7.abcdefg0p1abcd123lgg.default   default  
-   ```
-   {: screen}
+    Example output:
+    ```
+    OK
+    Service   Instance GUID                          Key                                                                  Namespace   
+    myservice 12345ab1-1234-1abc-a12b-12abc12a12ab   kube-a1a12abcd12a123abc1a12ab1a1234ab7.abcdefg0p1abcd123lgg.default   default  
+    ```
+    {: screen}
 
 2. List the Kubernetes secrets in the project that your service is bound to and look for the secret with a name that follows the `binding-<service_name>` format.
-   ```
-   oc get secrets -n <project> | grep Opaque
-   ```
-   {: pre}
+    ```
+    oc get secrets -n <project> | grep Opaque
+    ```
+    {: pre}
 
-   Example output:
-   ```
-   binding-myservice   Opaque     1      3d23h
-   ```
-   {: screen}
+    Example output:
+    ```
+    binding-myservice   Opaque     1      3d23h
+    ```
+    {: screen}
 
 3. Retrieve all the pods that access the secret.
-   ```
-   oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.secret.secretName}{" "}{end}{end}' | grep "<secret_name>"
-   ```
-   {: pre}
+    ```
+    oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.secret.secretName}{" "}{end}{end}' | grep "<secret_name>"
+    ```
+    {: pre}
 
-   If your CLI output is empty, no pods exist in your cluster that mount the secret.
+    If your CLI output is empty, no pods exist in your cluster that mount the secret.
 
 4. If you have pods that mount the secret, either remove the pod or the deployment that manages the pod, or update the pod and deployment YAML to use a different secret instead.
-   - **To remove a pod or deployment**:
-     ```
-     oc delete pod <pod_name> -n <project>
-     ```
-     {: pre}
+    - **To remove a pod or deployment**:
+        ```
+        oc delete pod <pod_name> -n <project>
+        ```
+        {: pre}
 
-     ```
-     oc delete deployment <deployment_name> -n <project>
-     ```
-     {: pre}
+        ```
+        oc delete deployment <deployment_name> -n <project>
+        ```
+        {: pre}
 
-   - **To update an existing pod or deployment**:
-     1. Get the pod or deployment YAML file.
+    - **To update an existing pod or deployment**:
+        1. Get the pod or deployment YAML file.
         ```
         oc get pod <pod_name> -o yaml
         ```
@@ -669,8 +668,8 @@ If you do not want to use an {{site.data.keyword.cloud_notm}} service that you b
         ```
         {: pre}
 
-     2. Copy the YAML file and in the `spec.volumes` section, change the name of the secret that you want to use.
-     3. Apply the change in your cluster.
+        2. Copy the YAML file and in the `spec.volumes` section, change the name of the secret that you want to use.
+        3. Apply the change in your cluster.
         ```
         oc apply -f pod.yaml
         ```
@@ -681,7 +680,7 @@ If you do not want to use an {{site.data.keyword.cloud_notm}} service that you b
         ```
         {: pre}
 
-     4. Verify that a new pod is created with the updated volume specification.
+        4. Verify that a new pod is created with the updated volume specification.
         ```
         oc get pods
         ```
@@ -693,27 +692,29 @@ If you do not want to use an {{site.data.keyword.cloud_notm}} service that you b
         {: pre}
 
 5. Remove the secret.
-   ```
-   oc delete secret <secret_name> -n <project>
-   ```
-   {: pre}
+    ```
+    oc delete secret <secret_name> -n <project>
+    ```
+    {: pre}
 
 6. Verify that your secret is removed.
-   ```
-   oc get secrets -n <project>
-   ```
-   {: pre}
+    ```
+    oc get secrets -n <project>
+    ```
+    {: pre}
 
 7. Optional. Remove the {{site.data.keyword.cloud_notm}} service instance.
-   - **{{site.data.keyword.cloud_notm}} IAM-enabled services:**
-     ```
-     ibmcloud resource service-instance-delete <service_name>
-     ```
-     {: pre}
+    - **{{site.data.keyword.cloud_notm}} IAM-enabled services:**
+        ```
+        ibmcloud resource service-instance-delete <service_name>
+        ```
+        {: pre}
 
-   - **Cloud Foundry services:**
-     ```
-     ibmcloud service delete <service_name>
-     ```
-     {: pre}
+    - **Cloud Foundry services:**
+        ```
+        ibmcloud service delete <service_name>
+        ```
+        {: pre}
+
+
 

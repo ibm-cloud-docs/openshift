@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-13"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, odo
 
@@ -59,7 +59,6 @@ completion-time: 10m
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -110,9 +109,8 @@ completion-time: 10m
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 # Developing in clusters with the OpenShift Do CLI
 {: #odo-tutorial}
 {: toc-content-type="tutorial"}
@@ -150,13 +148,14 @@ This tutorial is intended for software developers who have some familiarity with
 After you complete the [prerequisites](#odo-prereqs) install the CLI and select a cluster, you can start creating your microservice with `odo`.
 {: shortdesc}
 
-1.  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
-2.  Verify that the `odo` CLI is able to communicate with your cluster by listing the projects in your cluster. The projects represent Kubernetes namespaces where your apps and other microservice resources run.
+1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+2. Verify that the `odo` CLI is able to communicate with your cluster by listing the projects in your cluster. The projects represent Kubernetes namespaces where your apps and other microservice resources run.
     ```
     odo project list
     ```
     {: pre}
-3.  Create a project for your NodeJS application. An application, or _app_, is a program that is designed for your users. The app represents the overall experience, not an individual microservice. As such, the app might consist of many microservices, each microserivce referred to as a _component_ in `odo`.
+
+3. Create a project for your NodeJS application. An application, or _app_, is a program that is designed for your users. The app represents the overall experience, not an individual microservice. As such, the app might consist of many microservices, each microserivce referred to as a _component_ in `odo`.
     ```
     odo project create nodejs-test
     ```
@@ -168,7 +167,8 @@ After you complete the [prerequisites](#odo-prereqs) install the CLI and select 
     ✓  New project created and now using project: nodejs-test
     ```
     {: screen}
-4.  In your command line, create or change directories to the path where your NodeJS app files are stored, or where you want to store the app files.
+
+4. In your command line, create or change directories to the path where your NodeJS app files are stored, or where you want to store the app files.
 
     If you do not have an existing NodeJS app and want to download a start kit in a later step, the directory must be empty.
     {: note}
@@ -177,13 +177,14 @@ After you complete the [prerequisites](#odo-prereqs) install the CLI and select 
     cd nodejs-test-app
     ```
     {: pre}
-5.  Create the NodeJS component in your project. The `odo` CLI prompts you to select the language, name, and project for your new component.
+
+5. Create the NodeJS component in your project. The `odo` CLI prompts you to select the language, name, and project for your new component.
     ```
     odo create
     ```
     {: pre}
 
-    1.  Select the `nodejs` component, as shown in the following example. Example output:
+    1. Select the `nodejs` component, as shown in the following example. Example output:
         ```
         ? Which devfile component type do you wish to create  [Use arrows to move, type to filter]
         java-openliberty
@@ -195,17 +196,20 @@ After you complete the [prerequisites](#odo-prereqs) install the CLI and select 
         python-django
         ```
         {: screen}
-    2.  Enter `nodejs-test` for the component name, as shown in the following example.
+
+    2. Enter `nodejs-test` for the component name, as shown in the following example.
         ```
         ? What do you wish to name the new devfile component nodejs-test
         ```
         {: screen}
-    3.  Use the **Enter** key or re-enter `nodejs-test` for the project that you previously created, as shown in the following example.
+
+    3. Use the **Enter** key or re-enter `nodejs-test` for the project that you previously created, as shown in the following example.
         ```
         ? What project do you want the devfile component to be created in nodejs-test
         ```
         {: screen}
-    4.  Optional: If you do not have an existing NodeJS app in your directory, you can download a starter kit, as shown in the following example. You can confirm the files are downloaded by running `ls` from the directory.
+
+    4. Optional: If you do not have an existing NodeJS app in your directory, you can download a starter kit, as shown in the following example. You can confirm the files are downloaded by running `ls` from the directory.
         ```
         ? Do you want to download a starter project Yes
         ```
@@ -220,7 +224,7 @@ Now that you have a NodeJS component that is based on your local code, you can p
 
 You might wonder, how can the microservice be pushed to the cluster without a Dockerfile to describe the image, a YAML file to describe the Kubernetes resource, a Helm chart, or other similar configuration file? The `odo` command line uses the [{{site.data.keyword.openshiftshort}} `source-to-image`](https://github.com/openshift/source-to-image){: external} capability to generate all the configuration files that are needed to deploy the microservice to the Kubernetes cluster.
 
-1.  Push the NodeJS component to your cluster. The `odo` CLI validates the NodeJS component and packages the component as a deployable container.
+1. Push the NodeJS component to your cluster. The `odo` CLI validates the NodeJS component and packages the component as a deployable container.
     ```
     odo push
     ```
@@ -250,13 +254,15 @@ You might wonder, how can the microservice be pushed to the cluster without a Do
 
     ```
     {: screen}
-2.  Verify that the component is running in your cluster. You can also view the component from your cluster's {{site.data.keyword.openshiftshort}} web console.
+
+2. Verify that the component is running in your cluster. You can also view the component from your cluster's {{site.data.keyword.openshiftshort}} web console.
     ```
     oc get all -n nodejs-test
     ```
     {: pre}
-3.  In the output of the previous step, copy the route for your microservice that users can access from outside the cluster.
-4.  In a web browser, open the URL of your NodeJS app. You see your app, or if you used the starter kit, a message similar to the following.
+
+3. In the output of the previous step, copy the route for your microservice that users can access from outside the cluster.
+4. In a web browser, open the URL of your NodeJS app. You see your app, or if you used the starter kit, a message similar to the following.
     ```
     Hello from Node.js Starter Application!
     ```
@@ -275,3 +281,5 @@ Now that you have a microservice running in your cluster, you might wonder what 
     {: tip}
 
 *   **Learn more about OpenShift Do**: Learn more about the features of `odo` by visiting the [{{site.data.keyword.redhat_notm}} {{site.data.keyword.openshiftshort}} Do CLI Documentation](https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_odo/understanding-odo.html){: external}.
+
+

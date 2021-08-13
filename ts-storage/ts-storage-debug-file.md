@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-08-13"
 
 keywords: file, debug, help
 
@@ -106,7 +106,7 @@ content-type: troubleshoot
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
   
-  
+
 # Debugging {{site.data.keyword.filestorage_full_notm}} failures
 {: #debug_storage_file}
 {: troubleshoot}
@@ -126,7 +126,7 @@ Follow the steps to review any error messages related to pod deployment.
     oc get pods
     ```
     {: pre}
-   
+
 1. Get the details of your pod and review any error messages that are displayed in the **Events** section of your CLI output.
     ```sh
     oc describe pod <pod_name>
@@ -148,47 +148,47 @@ Some issues can be resolved by restarting and redeploying your pods. Follow the 
 {: shortdesc}
 
 1. If your pod is part of a deployment, delete the pod and let the deployment rebuild it. If your pod is not part of a deployment, delete the pod and reapply your pod configuration file.
-   1. Delete the pod.
-      ```sh
-      oc delete pod <pod_name>
-      ```
-      {: pre}
+    1. Delete the pod.
+        ```sh
+        oc delete pod <pod_name>
+        ```
+        {: pre}
 
-      **Example output**:
-      ```
-      pod "nginx" deleted
-      ```
-      {: screen}
+        **Example output**:
+        ```
+        pod "nginx" deleted
+        ```
+        {: screen}
 
-   2. Reapply the configuration file to redeploy the pod.
-      ```sh
-      oc apply -f <app.yaml>
-      ```
-      {: pre}
+    2. Reapply the configuration file to redeploy the pod.
+        ```sh
+        oc apply -f <app.yaml>
+        ```
+        {: pre}
 
-      **Example output**:
-      ```
-      pod/nginx created
-      ```
-      {: pre}
+        **Example output**:
+        ```
+        pod/nginx created
+        ```
+        {: pre}
 
 1. If restarting your pod does not resolve the issue, [reload your worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
 
 1. Verify that you use the latest {{site.data.keyword.cloud_notm}} and {{site.data.keyword.containerlong_notm}} plug-in version.
-      ```sh
-      ibmcloud update
-      ```
-      {: pre}
+        ```sh
+        ibmcloud update
+        ```
+        {: pre}
 
-      ```sh
-      ibmcloud plugin repo-plugins
-      ```
-      {: pre}
+        ```sh
+        ibmcloud plugin repo-plugins
+        ```
+        {: pre}
 
-      ```sh
-      ibmcloud plugin update
-      ```
-      {: pre}
+        ```sh
+        ibmcloud plugin update
+        ```
+        {: pre}
 
 ## Verifying that the storage driver and plug-in pods show a status of **Running**
 {: #debug_storage_file_driver_plugin}
@@ -197,29 +197,29 @@ Follow the steps to check the status of your storage driver and plug-in pods and
 {: shortdesc}
 
 1. List the pods in the `kube-system` project.
-      ```sh
-      oc get pods -n kube-system
-      ```
-      {: pre}
+        ```sh
+        oc get pods -n kube-system
+        ```
+        {: pre}
 
 1. If the storage driver and plug-in pods do not show a **Running** status, get more details of the pod to find the root cause. Depending on the status of your pod, you might not be able to execute all of the following commands.
-   1. Get the names of the containers that run in the driver pod.
-      ```sh
-      kubectl describe pod <pod_name> -n kube-system 
-      ```
-      {: pre}
+    1. Get the names of the containers that run in the driver pod.
+        ```sh
+        kubectl describe pod <pod_name> -n kube-system 
+        ```
+        {: pre}
 
-   2. Export the logs from the driver pod to a `logs.txt` file on your local machine. 
-      ```sh
-      oc logs <pod_name> -n kube-system > logs.txt
-      ```
-      {: pre}
+    2. Export the logs from the driver pod to a `logs.txt` file on your local machine. 
+        ```sh
+        oc logs <pod_name> -n kube-system > logs.txt
+        ```
+        {: pre}
 
-   3. Review the log file.
-      ```sh
-      cat logs.txt
-      ```
-      {: pre}
+    3. Review the log file.
+        ```sh
+        cat logs.txt
+        ```
+        {: pre}
 
 1. Check the latest logs for any error messages. [Review the {{site.data.keyword.filestorage_short}} troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_file_storage).
 
@@ -230,20 +230,20 @@ Follow the steps to check the status of your PVC and review any error messages.
 {: shortdesc}
 
 1. Check the status of your PVC. A PVC is successfully provisioned if the PVC shows a status of **Bound**.
-     ```sh
-     oc get pvc
-     ```
-     {: pre}
+        ```sh
+        oc get pvc
+        ```
+        {: pre}
 
-     * If the PVC shows a status of **Bound**, the PVC is successfully provisioned.
+        * If the PVC shows a status of **Bound**, the PVC is successfully provisioned.
           **Example output**:
           ```
           NAME         STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS                AGE
           silver-pvc   Bound     pvc-4b881a6b-ada8-4a44-b568-fe909107d756   24Gi       RWX            ibmc-file-silver            7m29s
           ```
           {: screen}
-    
-     * If the status of the PVC shows **Pending**, describe the PVC and review the **Events** section of the output for any warnings or error messages. Note that PVCs that reference storage classes with the volume binding mode set to `WaitForFirstConsumer` remain **Pending** until an app pod is deployed that uses the PVC.
+
+        * If the status of the PVC shows **Pending**, describe the PVC and review the **Events** section of the output for any warnings or error messages. Note that PVCs that reference storage classes with the volume binding mode set to `WaitForFirstConsumer` remain **Pending** until an app pod is deployed that uses the PVC.
 
           ```sh
           oc describe pvc <pvc_name>
@@ -280,20 +280,22 @@ If you use a `oc` CLI version that does not match at least the major.minor versi
 {: shortdesc}
 
 1. Verify that the `oc` CLI version that you run on your local machine matches the Kubernetes version that is installed in your cluster. Show the `oc` CLI version that is installed in your cluster and your local machine.
-   ```sh
-   oc version
-   ```
-   {: pre}
+    ```sh
+    oc version
+    ```
+    {: pre}
 
-   **Example output**:
-   ```
-   Client Version: version.Info{Major:"1", Minor:"1.20", GitVersion:"v1.20.7", GitCommit:"641856db18352033a0d96dbc99153fa3b27298e5", GitTreeState:"clean", BuildDate:"2019-03-25T15:53:57Z", GoVersion:"go1.12.1", Compiler:"gc", Platform:"darwin/amd64"}
-   Server Version: version.Info{Major:"1", Minor:"1.20", GitVersion:"v1.20.7+IKS", GitCommit:"e15454c2216a73b59e9a059fd2def4e6712a7cf0", GitTreeState:"clean", BuildDate:"2019-04-01T10:08:07Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
-   ```   
-   {: screen}
+    **Example output**:
+    ```
+    Client Version: version.Info{Major:"1", Minor:"1.20", GitVersion:"v1.20.7", GitCommit:"641856db18352033a0d96dbc99153fa3b27298e5", GitTreeState:"clean", BuildDate:"2019-03-25T15:53:57Z", GoVersion:"go1.12.1", Compiler:"gc", Platform:"darwin/amd64"}
+    Server Version: version.Info{Major:"1", Minor:"1.20", GitVersion:"v1.20.7+IKS", GitCommit:"e15454c2216a73b59e9a059fd2def4e6712a7cf0", GitTreeState:"clean", BuildDate:"2019-04-01T10:08:07Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
+    ```   
+    {: screen}
 
-   The CLI versions match if you can see the same version in `GitVersion` for the client and the server. You can ignore the `+IKS` part of the version for the server.
+    The CLI versions match if you can see the same version in `GitVersion` for the client and the server. You can ignore the `+IKS` part of the version for the server.
 
 2. If the `oc` CLI versions on your local machine and your cluster do not match, either [update your cluster](/docs/openshift?topic=openshift-update) or [install a different CLI version on your local machine](/docs/openshift?topic=openshift-openshift-cli#cs_cli_upgrade).
+
+
 
 

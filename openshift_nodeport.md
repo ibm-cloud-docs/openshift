@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,15 +104,15 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Testing access to apps with NodePorts
 {: #nodeport}
 
 Make your containerized app available to internet access by using the public IP address of any worker node in a {{site.data.keyword.openshiftshort}} cluster and exposing a NodePort. Use this option for testing in {{site.data.keyword.openshiftlong}} and for short-term public access.
 {: shortdesc}
+
 <br>
 
 ## About NodePorts
@@ -158,7 +157,7 @@ If you do not already have an app ready, you can use a Kubernetes example app ca
 
 **To use a NodePort**:
 
-1.  In the configuration file for your app, define a [service](https://kubernetes.io/docs/concepts/services-networking/service/){: external} section.
+1. In the configuration file for your app, define a [service](https://kubernetes.io/docs/concepts/services-networking/service/){: external} section.
 
     For the Guestbook example, a front-end service section exists in the configuration file. To make the Guestbook app available externally, add the NodePort type and a NodePort in the range 30000 - 32767 to the front-end service section.
     {: tip}
@@ -187,8 +186,8 @@ If you do not already have an app ready, you can use a Kubernetes example app ca
     <caption>Understanding the NodePort service components</caption>
     <col width="25%">
     <thead>
-      <th>Component</th>
-      <th>Description</th>
+        <th>Component</th>
+        <th>Description</th>
     </thead>
     <tbody>
     <tr>
@@ -200,24 +199,24 @@ If you do not already have an app ready, you can use a Kubernetes example app ca
     <td>Replace <code><em>&lt;my-label-key&gt;</em></code> and <code><em>&lt;my-label-value&gt;</em></code> with the label that you want to use for your service.</td>
     </tr>
     <tr>
-      <td><code>selector</code></td>
-      <td>Replace <code><em>&lt;my-selector-key&gt;</em></code> and <code><em>&lt;my-selector-value&gt;</em></code> with the key/value pair that you used in the <code>spec.template.metadata.labels</code> section of your deployment YAML. To associate the service with the deployment, the selector must match the deployment labels.
-      </tr>
+        <td><code>selector</code></td>
+        <td>Replace <code><em>&lt;my-selector-key&gt;</em></code> and <code><em>&lt;my-selector-value&gt;</em></code> with the key/value pair that you used in the <code>spec.template.metadata.labels</code> section of your deployment YAML. To associate the service with the deployment, the selector must match the deployment labels.
+        </tr>
     <tr>
     <td><code>port</code></td>
     <td>Replace <code><em>&lt;8081&gt;</em></code> with the port that your service listens on. </td>
-     </tr>
-     <tr>
-     <td><code>nodePort</code></td>
-     <td>Optional: Replace <code><em>&lt;31514&gt;</em></code> with a NodePort in the 30000 - 32767 range. Do not specify a NodePort that is already in use by another service. If no NodePort is assigned, a random one is assigned for you.<br><br>To specify a NodePort and see which NodePorts are already in use, run the following command: <pre class="pre"><code>oc get svc</code></pre><p>Any NodePorts in use appear under the **Ports** field.</p></td>
-     </tr>
-     </tbody></table>
+        </tr>
+        <tr>
+        <td><code>nodePort</code></td>
+        <td>Optional: Replace <code><em>&lt;31514&gt;</em></code> with a NodePort in the 30000 - 32767 range. Do not specify a NodePort that is already in use by another service. If no NodePort is assigned, a random one is assigned for you.<br><br>To specify a NodePort and see which NodePorts are already in use, run the following command: <pre class="pre"><code>oc get svc</code></pre><p>Any NodePorts in use appear under the <strong>Ports</strong> field.</p></td>
+        </tr>
+        </tbody></table>
 
-2.  Save the updated configuration file.
+2. Save the updated configuration file.
 
 3. When the app is deployed, you can use the public IP address of any worker node and the NodePort to form the public URL to access the app in a browser. If your worker nodes are connected to a private VLAN only, then a private NodePort service was created and can be accessible through a worker node's private IP address.
 
-    1.  Get the public IP address for a worker node in the cluster. If you want to access the worker node on a private network or have a VPC cluster, get the private IP address instead.
+    1. Get the public IP address for a worker node in the cluster. If you want to access the worker node on a private network or have a VPC cluster, get the private IP address instead.
 
         ```
         ibmcloud oc worker ls --cluster <cluster_name>
@@ -233,7 +232,7 @@ If you do not already have an app ready, you can use a Kubernetes example app ca
         ```
         {: screen}
 
-    2.  If a random NodePort was assigned, find out which one was assigned.
+    2. If a random NodePort was assigned, find out which one was assigned.
 
         ```
         oc describe service <service_name>
@@ -262,6 +261,8 @@ If you do not already have an app ready, you can use a Kubernetes example app ca
         If the **Endpoints** section displays `<none>`, check the `<selectorkey>` and `<selectorvalue>` that you use in the `spec.selector` section of the NodePort service. Ensure that it is the same as the _key/value_ pair that you used in the `spec.template.metadata.labels` section of your deployment YAML.
         {: note}
 
-    3.  Form the URL with one of the worker node IP addresses and the NodePort. Example: `http://192.0.2.23:30872`.
+    3. Form the URL with one of the worker node IP addresses and the NodePort. Example: `http://192.0.2.23:30872`.
         For VPC clusters, you must be connected to the private network, such as through a VPN connection, to access the worker node private IP address and NodePort.
         {: note}
+
+

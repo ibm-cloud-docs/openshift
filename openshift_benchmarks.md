@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
+  
 
- 
- 
 
 # CIS Kubernetes Benchmark
 {: #cis-benchmark}
@@ -132,17 +130,17 @@ The benchmark covers recommendations for master components, etcd, control plane 
 The benchmark recommendations have scoring, levels, result status, and responsibilities as follows.
 
 * **Scoring**
-  * Scored: The overall benchmark score increases or decreases depending on whether or not the  recommendation is met.
-  * Not scored: The overall benchmark score is not impacted, whether or not the recommendation is met.
+    * Scored: The overall benchmark score increases or decreases depending on whether or not the  recommendation is met.
+    * Not scored: The overall benchmark score is not impacted, whether or not the recommendation is met.
 * **Levels**
-  * Level 1: Practical security measures that can be configured without inhibiting the service.
-  * Level 2: More in-depth security measures that might reduce the performance or functionality of a service.
+    * Level 1: Practical security measures that can be configured without inhibiting the service.
+    * Level 2: More in-depth security measures that might reduce the performance or functionality of a service.
 * **Result**
-  * Pass: The service complies with the benchmark recommendation.
-  * Fail: The service does not comply with the benchmark recommendation by default. Refer to the remediation section for an explanation and possible actions that you can take to comply with the benchmark recommendation.
+    * Pass: The service complies with the benchmark recommendation.
+    * Fail: The service does not comply with the benchmark recommendation by default. Refer to the remediation section for an explanation and possible actions that you can take to comply with the benchmark recommendation.
 * **Responsibility**
-  * IBM: IBM is responsible for configuring the setting that the benchmark recommends.
-  * Shared: You and IBM share responsibility for configuring the setting that the benchmark recommends.
+    * IBM: IBM is responsible for configuring the setting that the benchmark recommends.
+    * Shared: You and IBM share responsibility for configuring the setting that the benchmark recommends.
 
 **What parts of the benchmark am I responsible for?**
 
@@ -173,26 +171,29 @@ These steps apply to clusters that run {{site.data.keyword.openshiftshort}} vers
 
 Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
-1.  Create a project for the resources to run the benchmark.
+1. Create a project for the resources to run the benchmark.
     ```
     oc create ns ibm-kube-bench-test
     ```
     {: pre}
-2.  Create a configmap with the `config` and `node` configuration files from the [kube-samples](https://github.com/IBM-Cloud/kube-samples/tree/master/cis-kube-benchmark/cis-1.5/ibm){: external} GitHub repository.
-    1.  Download the the `config` and `node` configuration files into a local directory that is called `ibm`. You can also clone the repository and navigate into the `ibm` directory.
+
+2. Create a configmap with the `config` and `node` configuration files from the [kube-samples](https://github.com/IBM-Cloud/kube-samples/tree/master/cis-kube-benchmark/cis-1.5/ibm){: external} GitHub repository.
+    1. Download the the `config` and `node` configuration files into a local directory that is called `ibm`. You can also clone the repository and navigate into the `ibm` directory.
         * [`config` file](https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/cis-kube-benchmark/cis-1.5/ibm/config.yaml){: external}
         * [`node` file](https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/cis-kube-benchmark/cis-1.5/ibm/node.yaml){: external}
-    2.  Create the configmap by using the `--from-file` flag to specify the `ibm` directory where your downloaded the configuration files.
+    2. Create the configmap by using the `--from-file` flag to specify the `ibm` directory where your downloaded the configuration files.
         ```
         oc create cm kube-bench-node -n ibm-kube-bench-test --from-file ibm
         ```
         {: pre}
-3.  Create a job to run the benchmark test based on the configurations that you previously created.
+
+3. Create a job to run the benchmark test based on the configurations that you previously created.
     ```
     oc apply -n ibm-kube-bench-test -f https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/cis-kube-benchmark/cis-1.5/ibm/job-node.yaml
     ```
     {: pre}
-4.  Check that the job successfully completed.
+
+4. Check that the job successfully completed.
     ```
     oc get pods -n ibm-kube-bench-test -l job-name=kube-bench-node
     ```
@@ -204,7 +205,8 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
     kube-bench-node-hlvhc   0/1     Completed   0          23s
     ```
     {: screen}
-5.  Review the CIS Kubernetes benchmark results for your worker nodes by checking the pod logs.
+
+5. Review the CIS Kubernetes benchmark results for your worker nodes by checking the pod logs.
     ```
     oc logs -n ibm-kube-bench-test -l job-name=kube-bench-node --tail=-1
     ```
@@ -219,7 +221,8 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
     0 checks INFO
     ```
     {: screen}
-6.  Optional: When you are done reviewing results, delete the resources that you created.
+
+6. Optional: When you are done reviewing results, delete the resources that you created.
     ```
     oc delete ns ibm-kube-bench-test
     ```
@@ -572,3 +575,5 @@ Review the following explanations and possible remediation actions that you can 
 | 5.6.3 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that do not set a [pod or container `securityContext`](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external}. |
 {: summary="The rows are read from left to right. The first column is the section number for the benchmark recommendation. The second column contains the description of why the benchmark recommendation is not met and possible remediation actions."}
 {: caption="Explanation and remediation for benchmark results" caption-side="top"}
+
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-13"
 
 keywords: autoscaler, add-on, autoscaler changelog
 
@@ -54,7 +54,6 @@ subcollection: openshift, cluster autoscaler, add-on, scale
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -105,9 +104,8 @@ subcollection: openshift, cluster autoscaler, add-on, scale
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 # Cluster autoscaler add-on changelog
 {: #ca_changelog}
 
@@ -151,7 +149,7 @@ ibmcloud oc addon-versions
 
 | Patch version | Image tags | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
 | --- | --- | --- | --- | --- |
-| `1.0.3_352` | <ul><li>`1.17.4-4`</li><li>`1.18.3-4`</li><li>`1.19.1-4`</li><li>`1.20.0-4`</li><li>`1.21.0-0`</li></ul> | 23 June 2021 | >=4.3 | Adds support for Kubernetes 1.21. |
+| `1.0.3_352` | <ul><li><code>1.17.4-4</code></li><li><code>1.18.3-4</code></li><li><code>1.19.1-4</code></li><li><code>1.20.0-4</code></li><li><code>1.21.0-0</code></li></ul> | 23 June 2021 | >=4.3 | Adds support for Kubernetes 1.21. |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Cluster autoscaler 1.0.3" caption-side="top"}
@@ -173,10 +171,10 @@ ibmcloud oc addon-versions
 
 | Patch version | Image tags | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
 | --- | --- | --- | --- | --- |
-| `1.0.2_267` | <ul>`1.17.4-3`</li><li>`1.18.3-3`</li><li>`1.19.1-3`</li><li>`1.20.0-3`</li></ul> | 10 May 2021 | 4.3 - 4.6 | Includes a bux fix for the `worker replace` command on VPC clusters that caused worker creation to fail. |
-| `1.0.2_256` | <ul>`1.17.4-2`</li><li>`1.18.3-2`</li><li>`1.19.1-2`</li><li>`1.20.0-2`</li></ul> | 19 April 2021 | 4.3 - 4.6</li></ul> | Includes fixes for [CVE-2021-27919](https://nvd.nist.gov/vuln/detail/CVE-2021-27919){: external} and [CVE-2021-27918](https://nvd.nist.gov/vuln/detail/CVE-2021-27918){: external}. |
-| `1.0.2_249` | <ul><li>`1.16.7-1`</li><li>`1.17.4-1`</li><li>`1.18.3-1`</li><li>`1.19.1-1`</li><li>`1.20.0-1`</li></ul> | 01 April 2021 | 4.3 - 4.6</li></ul> | <ul><li>Includes fixes for [CVE-2021-3114](https://nvd.nist.gov/vuln/detail/CVE-2021-3114){: external} and [CVE-2021-3115](https://nvd.nist.gov/vuln/detail/CVE-2021-3115){: external}.</li><li>Removes the `init` container. Prior to this update, the cluster autoscaler pods would remain in the `initContainer` state if the API key that is provided is missing or malformed. This update removes the `init` container so that if the API key is missing or malformed, the cluster autoscaler pod fails.</li></ul>.  |
-| `1.0.2_224` | <ul><li>`1.16.7-0`</li><li>`1.17.4-0`</li><li>`1.18.3-0`</li><li>`1.19.1-0`</li><li>`1.20.0-0`</li></ul> | 09 March 2021 | 4.3 - 4.6</li></ul> | Adds support for Kubernetes version 1.20. |
+| `1.0.2_267` | <ul>`1.17.4-3`</li><li><code>1.18.3-3</code></li><li><code>1.19.1-3</code></li><li><code>1.20.0-3</code></li></ul> | 10 May 2021 | 4.3 - 4.6 | Includes a bux fix for the `worker replace` command on VPC clusters that caused worker creation to fail. |
+| `1.0.2_256` | <ul>`1.17.4-2`</li><li><code>1.18.3-2</code></li><li><code>1.19.1-2</code></li><li><code>1.20.0-2</code></li></ul> | 19 April 2021 | 4.3 - 4.6</li></ul> | Includes fixes for [CVE-2021-27919](https://nvd.nist.gov/vuln/detail/CVE-2021-27919){: external} and [CVE-2021-27918](https://nvd.nist.gov/vuln/detail/CVE-2021-27918){: external}. |
+| `1.0.2_249` | <ul><li><code>1.16.7-1</code></li><li><code>1.17.4-1</code></li><li><code>1.18.3-1</code></li><li><code>1.19.1-1</code></li><li><code>1.20.0-1</code></li></ul> | 01 April 2021 | 4.3 - 4.6</li></ul> | <ul><li>Includes fixes for [CVE-2021-3114](https://nvd.nist.gov/vuln/detail/CVE-2021-3114){: external} and [CVE-2021-3115](https://nvd.nist.gov/vuln/detail/CVE-2021-3115){: external}.</li><li>Removes the <code>init</code> container. Prior to this update, the cluster autoscaler pods would remain in the <code>initContainer</code> state if the API key that is provided is missing or malformed. This update removes the <code>init</code> container so that if the API key is missing or malformed, the cluster autoscaler pod fails.</li></ul>.  |
+| `1.0.2_224` | <ul><li><code>1.16.7-0</code></li><li><code>1.17.4-0</code></li><li><code>1.18.3-0</code></li><li><code>1.19.1-0</code></li><li><code>1.20.0-0</code></li></ul> | 09 March 2021 | 4.3 - 4.6</li></ul> | Adds support for Kubernetes version 1.20. |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Cluster autoscaler 1.0.2" caption-side="top"}
@@ -197,15 +195,16 @@ ibmcloud oc addon-versions
 
 | Patch version | Image tags | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
 | --- | --- | --- | --- | --- |
-| `1.0.1_219` | <ul><li>`1.16.7-0`</li><li>`1.17.4-0`</li><li>`1.18.3-0`</li><li>`1.19.1-0`</li></ul> | 16 February 2021 | 4.3 - 4.6 | Updates the code base to synchronize with the community autoscaler. For more information, see the [Kubernetes autoscaler documentation](https://github.com/kubernetes/autoscaler/releases){: external}. |
-| `1.0.1_210` | <ul><li>`1.16.2-9`</li><li>`1.17.0-10`</li><li>`1.18.1-9`</li><li>`1.19.0-4`</li></ul> | 13 January 2021 | 4.3 - 4.6 | Update addresses [`DLA-2509-1`](https://security-tracker.debian.org/tracker/DLA-2509-1){: external}. |
-| `1.0.1_205` | <ul><li>`1.11.0-7`</li><li>`1.16.2-8`</li><li>`1.17.0-9`</li><li>`1.18.1-8`</li><li>`1.19.0-3`</li></ul> | 15 December 2020 | 4.3 - 4.6 | Updates the `initContainer` to use the universal base image (UBI). |
-| `1.0.1_195` | <ul><li>`1.11.0-7`</li><li>`1.16.2-8`</li><li>`1.17.0-9`</li><li>`1.18.1-8`</li><li>`1.19.0-3`</li></ul>  | 10 December 2020 | 4.3 - 4.6 | <ul><li>The cluster autoscaler images are now signed.</li><li>Resources that are deployed by the cluster autoscaler add-on are now linked with the corresponding source code and build URLs.</li><li>Updates the Go version to `1.15.5`.</li></ul> |
-| `1.0.1_146` | <ul><li>`1.15.4-4`</li><li>`1.16.2-7`</li><li>`1.17.0-8`</li><li>`1.18.1-7`</li><li>`1.19.0-2`</li></ul>  | 03 December 2020 | 4.3 - 4.6 | <ul><li>The cluster autoscaler now runs as non-root.</li><li>Adds a feature to validate secrets before the autoscaler pods are initialized.</li></ul> |
-| `1.0.1_128` | <ul><li>`1.15.4-4`</li><li>`1.16.2-6`</li><li>`1.17.0-7`</li><li>`1.18.1-6`</li><li>`1.19.0-1`</li></ul> | 27 October 2020 | 4.3 - 4.5</li></ul> | Updates the Go version to `1.15.2` |
-| `1.0.1_124` | <ul><li>`1.15.4-4`</li><li>`1.16.2-6`</li><li>`1.17.0-7`</li><li>`1.18.1-6`</li><li>`1.19.0-1`</li></ul> | 16 October 2020 | 4.3 - 4.5</li></ul> | <ul><li>Exposes the `--new-pod-scale-up-delay` flag in the configmap.</li><li>Adds support for Kubernetes 1.19.</li></ul> |
-| `1.0.1_114` | <ul><li>`1.15.4-4`</li><li>`1.16.2-5`</li><li>`1.17.0-6`</li><li>`1.18.1-5`</li></ul> | 10 September 2020 | 4.3 - 4.5</li></ul> | <ul><li>Includes fixes for `CVE-5188` and `CVE-3180`.</li><li>Unlike the previous Helm chart, you can modify all of the add-on configuration settings via a single configmap.</li></ul> |
+| `1.0.1_219` | <ul><li><code>1.16.7-0</code></li><li><code>1.17.4-0</code></li><li><code>1.18.3-0</code></li><li><code>1.19.1-0</code></li></ul> | 16 February 2021 | 4.3 - 4.6 | Updates the code base to synchronize with the community autoscaler. For more information, see the [Kubernetes autoscaler documentation](https://github.com/kubernetes/autoscaler/releases){: external}. |
+| `1.0.1_210` | <ul><li><code>1.16.2-9</code></li><li><code>1.17.0-10</code></li><li><code>1.18.1-9</code></li><li><code>1.19.0-4</code></li></ul> | 13 January 2021 | 4.3 - 4.6 | Update addresses [`DLA-2509-1`](https://security-tracker.debian.org/tracker/DLA-2509-1){: external}. |
+| `1.0.1_205` | <ul><li><code>1.11.0-7</code></li><li><code>1.16.2-8</code></li><li><code>1.17.0-9</code></li><li><code>1.18.1-8</code></li><li><code>1.19.0-3</code></li></ul> | 15 December 2020 | 4.3 - 4.6 | Updates the `initContainer` to use the universal base image (UBI). |
+| `1.0.1_195` | <ul><li><code>1.11.0-7</code></li><li><code>1.16.2-8</code></li><li><code>1.17.0-9</code></li><li><code>1.18.1-8</code></li><li><code>1.19.0-3</code></li></ul>  | 10 December 2020 | 4.3 - 4.6 | <ul><li>The cluster autoscaler images are now signed.</li><li>Resources that are deployed by the cluster autoscaler add-on are now linked with the corresponding source code and build URLs.</li><li>Updates the Go version to <code>1.15.5</code>.</li></ul> |
+| `1.0.1_146` | <ul><li><code>1.15.4-4</code></li><li><code>1.16.2-7</code></li><li><code>1.17.0-8</code></li><li><code>1.18.1-7</code></li><li><code>1.19.0-2</code></li></ul>  | 03 December 2020 | 4.3 - 4.6 | <ul><li>The cluster autoscaler now runs as non-root.</li><li>Adds a feature to validate secrets before the autoscaler pods are initialized.</li></ul> |
+| `1.0.1_128` | <ul><li><code>1.15.4-4</code></li><li><code>1.16.2-6</code></li><li><code>1.17.0-7</code></li><li><code>1.18.1-6</code></li><li><code>1.19.0-1</code></li></ul> | 27 October 2020 | 4.3 - 4.5</li></ul> | Updates the Go version to `1.15.2` |
+| `1.0.1_124` | <ul><li><code>1.15.4-4</code></li><li><code>1.16.2-6</code></li><li><code>1.17.0-7</code></li><li><code>1.18.1-6</code></li><li><code>1.19.0-1</code></li></ul> | 16 October 2020 | 4.3 - 4.5</li></ul> | <ul><li>Exposes the <code>--new-pod-scale-up-delay</code> flag in the configmap.</li><li>Adds support for Kubernetes 1.19.</li></ul> |
+| `1.0.1_114` | <ul><li><code>1.15.4-4</code></li><li><code>1.16.2-5</code></li><li><code>1.17.0-6</code></li><li><code>1.18.1-5</code></li></ul> | 10 September 2020 | 4.3 - 4.5</li></ul> | <ul><li>Includes fixes for <code>CVE-5188</code> and <code>CVE-3180</code>.</li><li>Unlike the previous Helm chart, you can modify all of the add-on configuration settings via a single configmap.</li></ul> |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Cluster autoscaler 1.0.1" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the patch version of the component. The second column lists the image tags of the component. The third column contains the release date of the component. The fourth column contains a brief description of the change made to the component."}
+

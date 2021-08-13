@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,15 +104,15 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Developing apps to run on OpenShift
 {: #openshift_apps}
 
 Develop a configuration to deploy your app workload to {{site.data.keyword.openshiftlong}}. Because Kubernetes is an extensible container orchestration platform that does not mandate a specific language or app, you can run various workloads such as stateless, stateful, and data-processing apps that are written in the language of your choice.
 {: shortdesc}
+
 <br>
 
 ## Specifying your app requirements in your YAML file
@@ -222,23 +221,24 @@ Avoid using the latest tag for production workloads. You might not have tested y
 
 For example, to list the tags of public IBM images:
 1. Switch to the global registry region.
-  ```
-  ibmcloud cr region-set global
-  ```
-  {: pre}
+    ```
+    ibmcloud cr region-set global
+    ```
+    {: pre}
+
 2. List the IBM images.
-  ```
-  ibmcloud cr images --include-ibm
-  ```
-  {: pre}
+    ```
+    ibmcloud cr images --include-ibm
+    ```
+    {: pre}
 
 The default `imagePullPolicy` is set to `IfNotPresent`, which pulls the image only if it does not exist locally. If you want the image to be pulled every time that the container starts, specify the `imagePullPolicy: Always`.
 
 ```yaml
 containers:
 - name: wasliberty
-  image: icr.io/ibm/liberty:webProfile8
-  imagePullPolicy: Always
+    image: icr.io/ibm/liberty:webProfile8
+    imagePullPolicy: Always
 ```
 {: codeblock}
 
@@ -264,15 +264,16 @@ Cluster administrators make sure that teams that share a cluster don't take up m
 {: shortdesc}
 
 1. Check whether a resource quota is set for a namespace.
-  ```
-  oc get quota --namespace=<namespace>
-  ```
-  {: pre}
+    ```
+    oc get quota --namespace=<namespace>
+    ```
+    {: pre}
+
 2. See what the quota limits are.
-  ```
-  oc describe quota <quota_name> --namespace=<namespace>
-  ```
-  {: pre}
+    ```
+    oc describe quota <quota_name> --namespace=<namespace>
+    ```
+    {: pre}
 
 Even if no resource quota is set, you can include resource requests and limits in your deployment to improve the management of worker node resources.
 
@@ -709,23 +710,26 @@ For example, you can set up a base `kustomization` YAML to declare Kubernetes ob
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To set up configuration files with Kustomize:
-1.  [Install the `kustomize` tool](https://github.com/kubernetes-sigs/kustomize/blob/master/docs/INSTALL.md){: external}.
+1. [Install the `kustomize` tool](https://github.com/kubernetes-sigs/kustomize/blob/master/docs/INSTALL.md){: external}.
     *   For macOS, you can use the `brew` package manager.
         ```
         brew install kustomize
         ```
         {: pre}
+
     *   For Windows, you can use the `chocolatey` package manager.
         ```
         choco install kustomize
         ```
         {: pre}
-2.  Create a directory for your app in a version control system, such as Git.
+
+2. Create a directory for your app in a version control system, such as Git.
     ```
     git init ~/<my_app>
     ```
     {: pre}
-3.  Create your repo structure for your `kustomize` [`base`](https://github.com/kubernetes-sigs/kustomize/blob/master/docs/glossary.md#base){: external} directory, [`overlay`](https://github.com/kubernetes-sigs/kustomize/blob/master/docs/glossary.md#overlay){: external} directory, and environment directories such as staging and production. In the subsequent steps, you set up these repos for use with `kustomize`.
+
+3. Create your repo structure for your `kustomize` [`base`](https://github.com/kubernetes-sigs/kustomize/blob/master/docs/glossary.md#base){: external} directory, [`overlay`](https://github.com/kubernetes-sigs/kustomize/blob/master/docs/glossary.md#overlay){: external} directory, and environment directories such as staging and production. In the subsequent steps, you set up these repos for use with `kustomize`.
     ```
     mkdir -p ~/<my_app>/base &&
     mkdir -p ~/<my_app>/overlay &&
@@ -743,14 +747,16 @@ To set up configuration files with Kustomize:
         └── staging
     ```
     {: screen}
-4.  Set up the `base` repo.
-    1.  Navigate to the base repo.
+
+4. Set up the `base` repo.
+    1. Navigate to the base repo.
         ```
         cd ~/<my_app>/base
         ```
         {: pre}
-    2.  Create an initial set of Kubernetes configuration YAML files for your app deployment. You might use the `wasliberty` [YAML example](#yaml-example) to create a deployment, service, config map, and persistent volume claim.
-    3.  Create a [`kustomization` file](https://github.com/kubernetes-sigs/kustomize#1-make-a-kustomization-file) that specifies the base configuration to be applied across environments. The `kustomization` file must include the list of Kubernetes resource configuration YAMLs that are stored in the same `base` repo. In the `kustomization` file, you can also add configurations that apply to all the resource YAMLs in the base repo, such as a prefix or suffix that is appended to all the resource names, a label, the existing namespace all the resources are created in, secrets, configmaps, and more.
+
+    2. Create an initial set of Kubernetes configuration YAML files for your app deployment. You might use the `wasliberty` [YAML example](#yaml-example) to create a deployment, service, config map, and persistent volume claim.
+    3. Create a [`kustomization` file](https://github.com/kubernetes-sigs/kustomize#1-make-a-kustomization-file) that specifies the base configuration to be applied across environments. The `kustomization` file must include the list of Kubernetes resource configuration YAMLs that are stored in the same `base` repo. In the `kustomization` file, you can also add configurations that apply to all the resource YAMLs in the base repo, such as a prefix or suffix that is appended to all the resource names, a label, the existing namespace all the resources are created in, secrets, configmaps, and more.
         ```
         apiVersion: kustomize.config.k8s.io/v1beta1
         kind: Kustomization
@@ -770,13 +776,14 @@ To set up configuration files with Kustomize:
 
         The names of the `resources` YAMLs must match the names of the other files in the `base` repo. You might include multiple configurations in the same file, but in the example, the configurations are separate files such as `deployment.yaml`, `service.yaml`, and `pvc.yaml`.
 
-    4.  Build your resource YAML files with the configurations that you defined in the `kustomization` base YAML file. The resources are built by combining the configurations in the `kustomization` and resource YAMLs together. The combined YAML files are returned in `stdout` in the output. Use this same command to build any subsequent changes that you make to the `kustomization` YAML, such adding a label.
+    4. Build your resource YAML files with the configurations that you defined in the `kustomization` base YAML file. The resources are built by combining the configurations in the `kustomization` and resource YAMLs together. The combined YAML files are returned in `stdout` in the output. Use this same command to build any subsequent changes that you make to the `kustomization` YAML, such adding a label.
         ```
         kustomize build
         ```
         {: pre}
-5.  Set up your overlay repo with unique `kustomization` YAML files for each of your environments, such as staging and prod.
-    1.  In the staging repo, create a `kustomization.yaml` file. Add any configurations that are unique to staging, such as a label, image tag, or YAML for a new component that you want to test out.
+
+5. Set up your overlay repo with unique `kustomization` YAML files for each of your environments, such as staging and prod.
+    1. In the staging repo, create a `kustomization.yaml` file. Add any configurations that are unique to staging, such as a label, image tag, or YAML for a new component that you want to test out.
         ```
         apiVersion: kustomize.config.k8s.io/v1beta1
         kind: Kustomization
@@ -793,6 +800,7 @@ To set up configuration files with Kustomize:
         - new_staging_resource.yaml
         ```
         {: codeblock}
+
         <table summary="A table that describes in Column 1 the YAML file fields and in Column 2 how to fill out those fields.">
         <caption>YAML components</caption>
         <thead>
@@ -803,7 +811,7 @@ To set up configuration files with Kustomize:
         <tbody>
         <tr>
         <td><code>namePrefix</code></td>
-        <td>Specify a prefix to attach to the name of each resource that you want to create with your staging `kustomization` file, such as `staging-`.</td>
+        <td>Specify a prefix to attach to the name of each resource that you want to create with your staging <code>kustomization</code> file, such as <code>staging-</code>.</td>
         </tr>
         <tr>
         <td><code>commonLabels</code></td>
@@ -811,28 +819,29 @@ To set up configuration files with Kustomize:
         </tr>
         <tr>
         <td><code>bases</code></td>
-        <td>Add a relative path to a directory or URL to a remote repo that contains a base `kustomization` file. In this example, the relative path points to the base `kustomization` file in the `base` repo that you previously created. This field is required for an overlay `kustomization`.</td>
+        <td>Add a relative path to a directory or URL to a remote repo that contains a base <code>kustomization</code> file. In this example, the relative path points to the base <code>kustomization</code> file in the <code>base</code> repo that you previously created. This field is required for an overlay <code>kustomization</code>.</td>
         </tr>
         <tr>
         <td><code>patchesStrategicMerge</code></td>
-        <td>List the resource configuration YAML files that you want to merge to the base `kustomization`. You must also add these files to the same repo as the `kustomization` file, such as `overlay/staging`. These resource configuration files can contain small changes that are merged to the base configuration files of the same name as a patch. The resource gets all the components that are in the `base` configuration file, plus any additional components that you specify in the `overlay` configuration file.<br><br>If the configuration is a new file that is not in the base, you must also add the file name to the `resources` field.</td>
+        <td>List the resource configuration YAML files that you want to merge to the base <code>kustomization</code>. You must also add these files to the same repo as the <code>kustomization</code> file, such as <code>overlay/staging</code>. These resource configuration files can contain small changes that are merged to the base configuration files of the same name as a patch. The resource gets all the components that are in the <code>base</code> configuration file, plus any additional components that you specify in the <code>overlay</code> configuration file.<br><br>If the configuration is a new file that is not in the base, you must also add the file name to the <code>resources</code> field.</td>
         </tr>
         <tr>
         <td><code>resources</code></td>
-        <td>List any resource configuration YAML files that are unique to the staging repo and not included in the base repo. Include these files in the `patchesStrategicMerge` field also, and add them to the same repo as the `kustomization` file, such as `overlay/staging`.</td>
+        <td>List any resource configuration YAML files that are unique to the staging repo and not included in the base repo. Include these files in the <code>patchesStrategicMerge</code> field also, and add them to the same repo as the <code>kustomization</code> file, such as <code>overlay/staging</code>.</td>
         </tr>
         <tr>
         <td>Other possible configurations</td>
-        <td>For more configurations that you might add to your file, see the [Make a `kustomization` file ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes-sigs/kustomize#1-make-a-kustomization-file).</td>
+        <td>For more configurations that you might add to your file, see the [Make a <code>kustomization</code> file ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes-sigs/kustomize#1-make-a-kustomization-file).</td>
         </tr>
         </tbody></table>
-    2.  Build your staging overlay configuration files.
+    2. Build your staging overlay configuration files.
         ```
         kustomize build overlay/staging
         ```
         {: pre}
-    3.  Repeat these steps to create your prod overlay `kustomization` and other configuration YAML files. For example, you might increase the number of replicas in your `deployment.yaml` so that your prod environment can handle more user requests.
-    4.  Review your `kustomize` repo structure to make sure that it includes all the YAML configuration files that you need. The structure might look similar to the following example.
+
+    3. Repeat these steps to create your prod overlay `kustomization` and other configuration YAML files. For example, you might increase the number of replicas in your `deployment.yaml` so that your prod environment can handle more user requests.
+    4. Review your `kustomize` repo structure to make sure that it includes all the YAML configuration files that you need. The structure might look similar to the following example.
         ```
         ├── base
         │   ├── configmap.yaml
@@ -852,17 +861,20 @@ To set up configuration files with Kustomize:
                 └── new_staging_resource.yaml
         ```
         {: screen}
-6.  Apply the Kubernetes resources for the environment that you want to deploy. The following example uses the staging repo.
-    1.  Navigate to the staging overlay directory. If you did not build your resources in the previous step, create them now.
+
+6. Apply the Kubernetes resources for the environment that you want to deploy. The following example uses the staging repo.
+    1. Navigate to the staging overlay directory. If you did not build your resources in the previous step, create them now.
         ```
         cd overlay/staging && kustomize build
         ```
         {: pre}
-    2.  Apply the Kubernetes resources to your cluster. Include the `-k` flag and the directory where the `kustomization` file is located. For example, if you are already in the staging directory, include `../staging` to mark the path to the directory.
+
+    2. Apply the Kubernetes resources to your cluster. Include the `-k` flag and the directory where the `kustomization` file is located. For example, if you are already in the staging directory, include `../staging` to mark the path to the directory.
         ```
         oc apply -k ../staging
         ```
         {: pre}
+
         Example output:
         ```
         configmap/staging-kustomtest-configmap-v2 created
@@ -872,11 +884,12 @@ To set up configuration files with Kustomize:
         job.batch/staging-pi created
         persistentvolumeclaim/staging-kustomtest-pvc-v2 created
         ```
-    3.  Check to make sure that the staging-unique changes are applied. For example, if you added a `staging-` prefix, the pods and other resources that are created include this prefix in their name.
+    3. Check to make sure that the staging-unique changes are applied. For example, if you added a `staging-` prefix, the pods and other resources that are created include this prefix in their name.
         ```
         oc get -k ../staging
         ```
         {: pre}
+
         Example output:
         ```
         NAME                                        DATA   AGE
@@ -898,12 +911,14 @@ To set up configuration files with Kustomize:
         persistentvolumeclaim/staging-kustomtest-pvc-v2   Pending                                      ibmc-file-bronze   90s
         ```
         {: screen}
-    4.  Repeat these steps for each environment that you want to build.
-7.  **Optional**: Clean up your environment by removing all the resources that you applied with Kustomize.
+
+    4. Repeat these steps for each environment that you want to build.
+7. **Optional**: Clean up your environment by removing all the resources that you applied with Kustomize.
     ```
     oc delete -k <directory>
     ```
     {: pre}
+
     Example output:
     ```
     configmap "staging-kustomtest-configmap-v2" deleted
@@ -916,5 +931,7 @@ To set up configuration files with Kustomize:
     {: screen}
 
 <br />
+
+
 
 

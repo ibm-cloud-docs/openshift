@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,12 +104,12 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Benefits and service offerings
 {: #cs_ov}
+
 
 
 [{{site.data.keyword.openshiftlong}}](https://www.ibm.com/cloud/openshift){: external} is an {{site.data.keyword.cloud_notm}} service, where IBM sets up and helps you manage a cluster of worker nodes that come installed with the OpenShift Container Platform container orchestration software.
@@ -131,7 +130,7 @@ Ready to get started? Try out the [creating a {{site.data.keyword.openshiftlong_
 
 |Benefit|Description|
 |-------|-----------|
-|Choice of container platform provider | <ul><li>Deploy clusters with **{{site.data.keyword.openshiftshort}}** or community **Kubernetes** installed as the container platform orchestrator.</li><li>Choose the developer experience that fits your company, or run workloads across both {{site.data.keyword.openshiftshort}} or community Kubernetes clusters.</li><li>Built-in integrations from the {{site.data.keyword.cloud_notm}} console to the Kubernetes dashboard or {{site.data.keyword.openshiftshort}} web console.</li><li>Single view and management experience of all your {{site.data.keyword.openshiftshort}} or community Kubernetes clusters from {{site.data.keyword.cloud_notm}}.</li><li>For more information, see [Comparison between {{site.data.keyword.openshiftshort}} and community Kubernetes clusters](#openshift_kubernetes).</li></ul>|
+|Choice of container platform provider | <ul><li>Deploy clusters with <strong>{{site.data.keyword.openshiftshort}}</strong> or community <strong>Kubernetes</strong> installed as the container platform orchestrator.</li><li>Choose the developer experience that fits your company, or run workloads across both {{site.data.keyword.openshiftshort}} or community Kubernetes clusters.</li><li>Built-in integrations from the {{site.data.keyword.cloud_notm}} console to the Kubernetes dashboard or {{site.data.keyword.openshiftshort}} web console.</li><li>Single view and management experience of all your {{site.data.keyword.openshiftshort}} or community Kubernetes clusters from {{site.data.keyword.cloud_notm}}.</li><li>For more information, see [Comparison between {{site.data.keyword.openshiftshort}} and community Kubernetes clusters](#openshift_kubernetes).</li></ul>|
 |Single-tenant Kubernetes clusters with compute, network, and storage infrastructure isolation|<ul><li>Create your own customized infrastructure that meets the requirements of your organization.</li><li>Choose between [{{site.data.keyword.cloud_notm}} Classic or VPC infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers).</li><li>Provision a dedicated and secured {{site.data.keyword.openshiftshort}} master, worker nodes, virtual networks, and storage by using the resources provided by IBM Cloud infrastructure.</li><li>Fully managed Kubernetes master that is continuously monitored and updated by {{site.data.keyword.IBM_notm}} to keep your cluster available.</li><li>Option to provision worker nodes as bare metal servers for compute-intensive workloads such as data, GPU, and AI.</li><li>Store persistent data, share data between Kubernetes pods, and restore data when needed with the integrated and secure volume service.</li><li>Benefit from full support for all native Kubernetes APIs.</li></ul>|
 | Multizone clusters to increase high availability | <ul><li>Easily manage worker nodes of the same flavor (CPU, memory, virtual or physical) with worker pools.</li><li>Guard against zone failure by spreading nodes evenly across select multizones and by using anti-affinity pod deployments for your apps.</li><li>Decrease your costs by using multizone clusters instead of duplicating the resources in a separate cluster.</li><li>Benefit from automatic load balancing across apps with the multizone load balancer (MZLB) that is set up automatically for you in each zone of the cluster.</li></ul>|
 | Highly available masters | <ul><li>Reduce cluster downtime such as during master updates with highly available masters that are provisioned automatically when you create a cluster.</li><li>Spread your masters across zones in a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone) to protect your cluster from zonal failures.</li></ul> |
@@ -142,6 +141,7 @@ Ready to get started? Try out the [creating a {{site.data.keyword.openshiftlong_
 {: caption="Benefits of the {{site.data.keyword.containerlong_notm}}" caption-side="top"}
 
 <br />
+
 
 
 ## Comparison between {{site.data.keyword.openshiftshort}} and community Kubernetes clusters
@@ -247,6 +247,8 @@ You cannot update from an {{site.data.keyword.openshiftshort}} 3.11 to 4 cluster
 | Ingress resources with {{site.data.keyword.openshiftlong_notm}} ALBs | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
 | Ingress resources with {{site.data.keyword.openshiftshort}} Ingress controllers | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: caption="Supported features in {{site.data.keyword.openshiftshort}} 3.11 and 4 clusters" caption-side="top"}
+
+
 
 
 

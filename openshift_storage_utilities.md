@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # IBM Cloud storage utilities
 {: #utilities}
@@ -128,82 +126,82 @@ The {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in creates pods 
 Looking for instructions for how to update or remove the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in? See [Updating the plug-in](#update_block_attacher) and [Removing the plug-in](#remove_block_attacher).
 {: tip}
 
-1.  [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the Helm client version 3 on your local machine.
+1. [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the Helm client version 3 on your local machine.
 
 3. Update the Helm repo to retrieve the latest version of all Helm charts in this repo.
-   ```
-   helm repo update
-   ```
-   {: pre}
+    ```
+    helm repo update
+    ```
+    {: pre}
 
 4. Install the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in. When you install the plug-in, pre-defined block storage classes are added to your cluster.
 
-   ```
-   helm install block-attacher iks-charts/ibm-block-storage-attacher --namespace kube-system
-   ```
-   {: pre}
+    ```
+    helm install block-attacher iks-charts/ibm-block-storage-attacher --namespace kube-system
+    ```
+    {: pre}
 
-   Example output:
-   ```
-   NAME:   block-volume-attacher
-   LAST DEPLOYED: Thu Sep 13 22:48:18 2018
-   NAMESPACE: default
-   STATUS: DEPLOYED
+    Example output:
+    ```
+    NAME:   block-volume-attacher
+    LAST DEPLOYED: Thu Sep 13 22:48:18 2018
+    NAMESPACE: default
+    STATUS: DEPLOYED
 
-   RESOURCES:
-   ==> v1beta1/ClusterRoleBinding
-   NAME                             AGE
-   ibmcloud-block-storage-attacher  1s
+    RESOURCES:
+    ==> v1beta1/ClusterRoleBinding
+    NAME                             AGE
+    ibmcloud-block-storage-attacher  1s
 
-   ==> v1beta1/DaemonSet
-   NAME                             DESIRED  CURRENT  READY  UP-TO-DATE  AVAILABLE  NODE SELECTOR  AGE
-   ibmcloud-block-storage-attacher  0        0        0      0           0          <none>         1s
+    ==> v1beta1/DaemonSet
+    NAME                             DESIRED  CURRENT  READY  UP-TO-DATE  AVAILABLE  NODE SELECTOR  AGE
+    ibmcloud-block-storage-attacher  0        0        0      0           0          <none>         1s
 
-   ==> v1/StorageClass
-   NAME                 PROVISIONER                AGE
-   ibmc-block-attacher  ibm.io/ibmc-blockattacher  1s
+    ==> v1/StorageClass
+    NAME                 PROVISIONER                AGE
+    ibmc-block-attacher  ibm.io/ibmc-blockattacher  1s
 
-   ==> v1/ServiceAccount
-   NAME                             SECRETS  AGE
-   ibmcloud-block-storage-attacher  1        1s
+    ==> v1/ServiceAccount
+    NAME                             SECRETS  AGE
+    ibmcloud-block-storage-attacher  1        1s
 
-   ==> v1beta1/ClusterRole
-   NAME                             AGE
-   ibmcloud-block-storage-attacher  1s
+    ==> v1beta1/ClusterRole
+    NAME                             AGE
+    ibmcloud-block-storage-attacher  1s
 
-   NOTES:
-   Thank you for installing: ibmcloud-block-storage-attacher.   Your release is named: block-volume-attacher
+    NOTES:
+    Thank you for installing: ibmcloud-block-storage-attacher.   Your release is named: block-volume-attacher
 
-   Please refer Chart README.md file for attaching a block storage
-   Please refer Chart RELEASE.md to see the release details/fixes
-   ```
-   {: screen}
+    Please refer Chart README.md file for attaching a block storage
+    Please refer Chart RELEASE.md to see the release details/fixes
+    ```
+    {: screen}
 
 5. Verify that the {{site.data.keyword.cloud_notm}} Block Volume Attacher daemon set is installed successfully.
-   ```
-   oc get pod -n kube-system -o wide | grep attacher
-   ```
-   {: pre}
+    ```
+    oc get pod -n kube-system -o wide | grep attacher
+    ```
+    {: pre}
 
-   Example output:
-   ```
-   ibmcloud-block-storage-attacher-z7cv6           1/1       Running            0          19m
-   ```
-   {: screen}
+    Example output:
+    ```
+    ibmcloud-block-storage-attacher-z7cv6           1/1       Running            0          19m
+    ```
+    {: screen}
 
-   The installation is successful when you see one or more **ibmcloud-block-storage-attacher** pods. The number of pods equals the number of worker nodes in your cluster. All pods must be in a **Running** state.
+    The installation is successful when you see one or more **ibmcloud-block-storage-attacher** pods. The number of pods equals the number of worker nodes in your cluster. All pods must be in a **Running** state.
 
 6. Verify that the storage class for the {{site.data.keyword.cloud_notm}} Block Volume Attacher is created successfully.
-   ```
-   oc get storageclasses | grep attacher
-   ```
-   {: pre}
+    ```
+    oc get storageclasses | grep attacher
+    ```
+    {: pre}
 
-   Example output:
-   ```
-   ibmc-block-attacher       ibm.io/ibmc-blockattacher   11m
-   ```
-   {: screen}
+    Example output:
+    ```
+    ibmc-block-attacher       ibm.io/ibmc-blockattacher   11m
+    ```
+    {: screen}
 
 ### Updating the IBM Cloud Block Storage Attacher plug-in
 {: #update_block_attacher}
@@ -212,34 +210,34 @@ You can upgrade the existing {{site.data.keyword.cloud_notm}} Block Storage Atta
 {: shortdesc}
 
 1. Update the Helm repo to retrieve the latest version of all helm charts in this repo.
-   ```
-   helm repo update
-   ```
-   {: pre}
+    ```
+    helm repo update
+    ```
+    {: pre}
 
 2. Optional: Download the latest Helm chart to your local machine. Then, extract the package and review the `release.md` file to find the latest release information.
-   ```
-   helm pull iks-charts/ibmcloud-block-storage-plugin
-   ```
-   {: pre}
+    ```
+    helm pull iks-charts/ibmcloud-block-storage-plugin
+    ```
+    {: pre}
 
 3. Find the name of the Helm chart for the {{site.data.keyword.cloud_notm}} Block Storage Attacher plug-in.
-   ```
-   helm ls -A
-   ```
-   {: pre}
+    ```
+    helm ls -A
+    ```
+    {: pre}
 
-   Example output:
-   ```
-   <helm_chart_name>	1       	Wed Aug  1 14:55:15 2018	DEPLOYED	ibm-block-storage-attacher-1.0.0	default
-   ```
-   {: screen}
+    Example output:
+    ```
+    <helm_chart_name>    1           Wed Aug  1 14:55:15 2018    DEPLOYED    ibm-block-storage-attacher-1.0.0    default
+    ```
+    {: screen}
 
 4. Upgrade the {{site.data.keyword.cloud_notm}} Block Storage Attacher to latest.
-   ```
-   helm upgrade --force --recreate-pods <helm_chart_name> ibm-block-storage-attacher
-   ```
-   {: pre}
+    ```
+    helm upgrade --force --recreate-pods <helm_chart_name> ibm-block-storage-attacher
+    ```
+    {: pre}
 
 ### Removing the IBM Cloud Block Volume Attacher plug-in
 {: #remove_block_attacher}
@@ -248,40 +246,40 @@ If you do not want to provision and use the {{site.data.keyword.cloud_notm}} Blo
 {: shortdesc}
 
 1. Find the name of the Helm chart for the {{site.data.keyword.cloud_notm}} Block Storage Attacher plug-in.
-   ```
-   helm list | grep ibm-block-storage-attacher
-   ```
-   {: pre}
+    ```
+    helm list | grep ibm-block-storage-attacher
+    ```
+    {: pre}
 
-   Example output:
-   ```
-   <helm_chart_name>	1       	Wed Aug  1 14:55:15 2018	DEPLOYED	ibm-block-storage-attacher-1.0.0	default
-   ```
-   {: screen}
+    Example output:
+    ```
+    <helm_chart_name>    1           Wed Aug  1 14:55:15 2018    DEPLOYED    ibm-block-storage-attacher-1.0.0    default
+    ```
+    {: screen}
 
 2. Delete the {{site.data.keyword.cloud_notm}} Block Storage Attacher plug-in by removing the Helm chart.
-   ```
-   helm uninstall <helm_chart_name> -n <namespace>
-   ```
-   {: pre}
+    ```
+    helm uninstall <helm_chart_name> -n <namespace>
+    ```
+    {: pre}
 
 3. Verify that the {{site.data.keyword.cloud_notm}} Block Storage Attacher plug-in pods are removed.
-   ```
-   oc get pod -n kube-system -o wide | grep attacher
-   ```
-   {: pre}
+    ```
+    oc get pod -n kube-system -o wide | grep attacher
+    ```
+    {: pre}
 
-   The removal of the pods is successful if no pods are displayed in your CLI output.
+    The removal of the pods is successful if no pods are displayed in your CLI output.
 
 4. Verify that the {{site.data.keyword.cloud_notm}} Block Storage Attacher storage class is removed.
-   ```
-   oc get storageclasses | grep attacher
-   ```
-   {: pre}
+    ```
+    oc get storageclasses | grep attacher
+    ```
+    {: pre}
 
-   The removal of the storage class is successful if no storage class is displayed in your CLI output.
+    The removal of the storage class is successful if no storage class is displayed in your CLI output.
 
-   <br />
+    <br />
 
 
 
@@ -295,89 +293,89 @@ Use this option if you want to add different block storage configurations, add b
 {: note}
 
 1. List the worker nodes in your cluster and note the private IP address and the zone of the non-SDS worker nodes where you want to add a block storage device.
-   ```
-   ibmcloud oc worker ls --cluster <cluster_name_or_ID>
-   ```
-   {: pre}
+    ```
+    ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+    ```
+    {: pre}
 
 2. Review step 3 and 4 in [Deciding on your block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass) to choose the type, size, and number of IOPS for the block storage device that you want to add to your non-SDS worker node.    
 
 3. Create the block storage device in the same zone that your non-SDS worker node is in.
 
-   **Example for provisioning 20 GB endurance block storage with two IOPS per GB:**
-   ```
-   ibmcloud sl block volume-order --storage-type endurance --size 20 --tier 2 --os-type LINUX --datacenter dal10
-   ```
-   {: pre}
+    **Example for provisioning 20 GB endurance block storage with two IOPS per GB:**
+    ```
+    ibmcloud sl block volume-order --storage-type endurance --size 20 --tier 2 --os-type LINUX --datacenter dal10
+    ```
+    {: pre}
 
-   **Example for provisioning 20 GB performance block storage with 100 IOPS:**
-   ```
-   ibmcloud sl block volume-order --storage-type performance --size 20 --iops 100 --os-type LINUX --datacenter dal10
-   ```
-   {: pre}
+    **Example for provisioning 20 GB performance block storage with 100 IOPS:**
+    ```
+    ibmcloud sl block volume-order --storage-type performance --size 20 --iops 100 --os-type LINUX --datacenter dal10
+    ```
+    {: pre}
 
 4. Verify that the block storage device is created and note the **`id`** of the volume. **Note:** If you do not see your block storage device right away, wait a few minutes. Then, run this command again.
-   ```
-   ibmcloud sl block volume-list
-   ```
-   {: pre}
+    ```
+    ibmcloud sl block volume-list
+    ```
+    {: pre}
 
-   Example output:
-   ```
-   id         username          datacenter   storage_type                capacity_gb   bytes_used   ip_addr         lunId   active_transactions   
-   123456789  IBM02SL1234567-8  dal10        performance_block_storage   20            -            161.12.34.123   0       0   
-   ```
-   {: screen}
+    Example output:
+    ```
+    id         username          datacenter   storage_type                capacity_gb   bytes_used   ip_addr         lunId   active_transactions   
+    123456789  IBM02SL1234567-8  dal10        performance_block_storage   20            -            161.12.34.123   0       0   
+    ```
+    {: screen}
 
 5. Review the details for your volume and note the **`Target IP`** and **`LUN Id`**.
-   ```
-   ibmcloud sl block volume-detail <volume_ID>
-   ```
-   {: pre}
+    ```
+    ibmcloud sl block volume-detail <volume_ID>
+    ```
+    {: pre}
 
-   Example output:
-   ```
-   Name                       Value   
-   ID                         1234567890   
-   User name                  IBM123A4567890-1   
-   Type                       performance_block_storage   
-   Capacity (GB)              20   
-   LUN Id                     0   
-   IOPS                       100   
-   Datacenter                 dal10   
-   Target IP                  161.12.34.123   
-   # of Active Transactions   0   
-   Replicant Count            0
-   ```
-   {: screen}
+    Example output:
+    ```
+    Name                       Value   
+    ID                         1234567890   
+    User name                  IBM123A4567890-1   
+    Type                       performance_block_storage   
+    Capacity (GB)              20   
+    LUN Id                     0   
+    IOPS                       100   
+    Datacenter                 dal10   
+    Target IP                  161.12.34.123   
+    # of Active Transactions   0   
+    Replicant Count            0
+    ```
+    {: screen}
 
 6. Authorize the non-SDS worker node to access the block storage device. Replace `<volume_ID>` with the volume ID of your block storage device that you retrieved earlier, and `<private_worker_IP>` with the private IP address of the non-SDS worker node where you want to attach the device.
 
-   ```
-   ibmcloud sl block access-authorize <volume_ID> -p <private_worker_IP>
-   ```
-   {: pre}
+    ```
+    ibmcloud sl block access-authorize <volume_ID> -p <private_worker_IP>
+    ```
+    {: pre}
 
-   Example output:
-   ```
-   The IP address 123456789 was authorized to access <volume_ID>.
-   ```
-   {: screen}
+    Example output:
+    ```
+    The IP address 123456789 was authorized to access <volume_ID>.
+    ```
+    {: screen}
 
 7. Verify that your non-SDS worker node is successfully authorized and note the **`host_iqn`**, **`username`**, and **`password`**.
-   ```
-   ibmcloud sl block access-list <volume_ID>
-   ```
-   {: pre}
+    ```
+    ibmcloud sl block access-list <volume_ID>
+    ```
+    {: pre}
 
-   Example output:
-   ```
-   ID          name                 type   private_ip_address   source_subnet   host_iqn                                      username   password           allowed_host_id   
-   123456789   <private_worker_IP>  IP     <private_worker_IP>  -               iqn.2018-09.com.ibm:ibm02su1543159-i106288771   IBM02SU1543159-I106288771   R6lqLBj9al6e2lbp   1146581   
-   ```
-   {: screen}
+    Example output:
+    ```
+    ID          name                 type   private_ip_address   source_subnet   host_iqn                                      username   password           allowed_host_id   
+    123456789   <private_worker_IP>  IP     <private_worker_IP>  -               iqn.2018-09.com.ibm:ibm02su1543159-i106288771   IBM02SU1543159-I106288771   R6lqLBj9al6e2lbp   1146581   
+    ```
+    {: screen}
 
-   The authorization is successful when the **`host_iqn`**, **`username`**, and **`password`** are assigned.
+    The authorization is successful when the **`host_iqn`**, **`username`**, and **`password`** are assigned.
 
 8. [Attach the block storage devices to your worker nodes](#attach_block).
 
@@ -400,23 +398,23 @@ To attach the block storage device to a non-SDS worker node, you must create a p
 
 **To attach raw block storage to non-SDS worker nodes**:
 1. Prepare the PV creation.  
-   - **If you used the `mkpvyaml` container:**
-     1. Open the `pv-<cluster_name>.yaml` file.
+    - **If you used the `mkpvyaml` container:**
+        1. Open the `pv-<cluster_name>.yaml` file.
         ```
         nano pv-&lt;cluster_name&gt;.yaml
         ```
         {: pre}
 
-     2. Review the configuration for your PVs.
+        2. Review the configuration for your PVs.
 
-   - **If you manually added block storage:**
-     1. Create a `pv.yaml` file. The following command creates the file with the `nano` editor.
+    - **If you manually added block storage:**
+        1. Create a `pv.yaml` file. The following command creates the file with the `nano` editor.
         ```
         nano pv.yaml
         ```
         {: pre}
 
-     2. Add the details of your block storage device to the PV.
+        2. Add the details of your block storage device to the PV.
         ```yaml
         apiVersion: v1
         kind: PersistentVolume
@@ -443,17 +441,17 @@ To attach the block storage device to a non-SDS worker node, you must create a p
 
         <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
         <caption>Understanding the YAML file components</caption>
-         <col style="width:30%">
-	      <col style="width:70%">
+            <col style="width:30%">
+          <col style="width:70%">
         <thead>
-	      <th>Parameter</th>
-	      <th>Description</th>
+          <th>Parameter</th>
+          <th>Description</th>
         </thead>
         <tbody>
-      	<tr>
+          <tr>
           <td><code>metadata.name</code></td>
-      	<td>Enter a name for your PV.</td>
-      	</tr>
+          <td>Enter a name for your PV.</td>
+          </tr>
         <tr>
         <td><code>ibm.io/iqn</code></td>
         <td>Enter the IQN hostname that you retrieved earlier. </td>
@@ -489,29 +487,29 @@ To attach the block storage device to a non-SDS worker node, you must create a p
         </tbody>
         </table>
 2. Create the PV to attach the block storage device to your non-SDS worker node.
-   - **If you used the `mkpvyaml` container:**
-     ```
-     oc apply -f pv-&lt;cluster_name&gt;.yaml
-     ```
-     {: pre}
+    - **If you used the `mkpvyaml` container:**
+        ```
+        oc apply -f pv-&lt;cluster_name&gt;.yaml
+        ```
+        {: pre}
 
-   - **If you manually added block storage:**
-     ```
-     oc apply -f pv.yaml
-     ```
-     {: pre}
+    - **If you manually added block storage:**
+        ```
+        oc apply -f pv.yaml
+        ```
+        {: pre}
 
 3. Verify that the block storage is successfully attached to your worker node.
-   ```
-   oc describe pv <pv_name>
-   ```
-   {: pre}
+    ```
+    oc describe pv <pv_name>
+    ```
+    {: pre}
 
-   Example output:
-   ```
-   Name:            kube-wdc07-cr398f790bc285496dbeb8e9137bc6409a-w1-pv1
-   Labels:          <none>
-   Annotations:     ibm.io/attachstatus=attached
+    Example output:
+    ```
+    Name:            kube-wdc07-cr398f790bc285496dbeb8e9137bc6409a-w1-pv1
+    Labels:          <none>
+    Annotations:     ibm.io/attachstatus=attached
                     ibm.io/dm=/dev/dm-1
                     ibm.io/iqn=iqn.2018-09.com.ibm:ibm02su1543159-i106288771
                     ibm.io/lunid=0
@@ -521,24 +519,24 @@ To attach the block storage device to a non-SDS worker node, you must create a p
                     ibm.io/targetip=161.26.98.114
                     ibm.io/username=IBM02SU1543159-I106288771
                     kubectl.kubernetes.io/last-applied-configuration={"apiVersion":"v1","kind":"PersistentVolume","metadata":{"annotations":{"ibm.io/iqn":"iqn.2018-09.com.ibm:ibm02su1543159-i106288771","ibm.io/lunid":"0"...
-   Finalizers:      []
-   StorageClass:    ibmc-block-attacher
-   Status:          Available
-   Claim:           
-   Reclaim Policy:  Retain
-   Access Modes:    RWO
-   Capacity:        20Gi
-   Node Affinity:   <none>
-   Message:         
-   Source:
-       Type:          HostPath (bare host directory volume)
-       Path:          /
-       HostPathType:  
-   Events:            <none>
-   ```
-   {: screen}
+    Finalizers:      []
+    StorageClass:    ibmc-block-attacher
+    Status:          Available
+    Claim:           
+    Reclaim Policy:  Retain
+    Access Modes:    RWO
+    Capacity:        20Gi
+    Node Affinity:   <none>
+    Message:         
+    Source:
+        Type:          HostPath (bare host directory volume)
+        Path:          /
+        HostPathType:  
+    Events:            <none>
+    ```
+    {: screen}
 
-   The block storage device is successfully attached when the **ibm.io/dm** is set to a device ID, such as `/dev/dm/1`, and you can see **ibm.io/attachstatus=attached** in the **Annotations** section of your CLI output.
+    The block storage device is successfully attached when the **ibm.io/dm** is set to a device ID, such as `/dev/dm/1`, and you can see **ibm.io/attachstatus=attached** in the **Annotations** section of your CLI output.
 
 If you want to detach a volume, delete the PV. Detached volumes are still authorized to be accessed by a specific worker node and are attached again when you create a new PV with the {{site.data.keyword.cloud_notm}} Block Volume Attacher storage class to attach a different volume to the same worker node. To avoid attaching the old detached volume again, unauthorize the worker node to access the detached volume by using the `ibmcloud sl block access-revoke` command. Detaching the volume does not remove the volume from your IBM Cloud infrastructure account. To cancel the billing for your volume, you must manually [remove the storage from your IBM Cloud infrastructure account](/docs/containers?topic=containers-block_storage#cleanup).
 {: note}
@@ -568,10 +566,10 @@ Before you begin:
 
 
 1. Check which region and zone your VPC worker node is in.
-  ```
-  ibmcloud oc worker ls -c <cluster_name>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc worker ls -c <cluster_name>
+    ```
+    {: pre}
 
 2. Decide on the [{{site.data.keyword.blockstorageshort}} profile](/docs/vpc?topic=vpc-block-storage-profiles) that best meets the capacity and performance requirements that you have.
 
@@ -579,16 +577,16 @@ Before you begin:
 
 3. Retrieve your IAM token.
 
-  ```
-  ibmcloud iam oauth-tokens
-  ```
-  {: pre}
+    ```
+    ibmcloud iam oauth-tokens
+    ```
+    {: pre}
 
 5. Retrieve the ID of the worker node that you want to attach to the {{site.data.keyword.blockstorageshort}} instance. Make sure to select a worker node that is located in the same zone as your {{site.data.keyword.blockstorageshort}} volume.
-  ```
-  ibmcloud oc worker ls --cluster <cluster_name_or_ID>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+    ```
+    {: pre}
 
 6. Use a `POST` request to attach your {{site.data.keyword.blockstorageshort}} volume to the worker node.
 
@@ -597,39 +595,40 @@ Before you begin:
     curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/createAttachment" -H  "accept: application/json" -H  "Authorization: <IAM_token>" -H  "X-Auth-Resource-Group-ID: <resource_group>" -H  "Content-Type: application/json" -d "{  \"cluster\": \"<cluster_name_or_ID>\",  \"volumeID\": \"<volume_ID>\",  \"worker\": \"<worker_ID>\"}"
     ```
     {: pre}
-  <br>
-  <table summary="The columns are read from left to right. The first column has the parameter of the POST request. The second column describes the parameter.">
-      <caption>Understanding the POST request</caption>
-      <col style="width:30%">
-	   <col style="width:70%">
-      <thead>
-	      <th>Parameter</th>
-	      <th>Description</th>
-      </thead>
-      <tbody>
-      <tr>
-      <td><code>IAM_token</code></td>
-      <td>The IAM OAuth token for your current session. You can retrieve this value by running <code>ibmcloud iam oauth-tokens</code>.</td>
-      </tr>
-      <tr>
-      <td><code>cluster_name_or_ID</code></td>
-      <td>The unique ID or the name that is assigned to your cluster. You can retrieve this ID by running <code>ibmcloud oc cluster ls</code>. </td>
-      </tr>
-      <tr>
-      <td><code>worker_ID</code></td>
-      <td>The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running <code>ibmcloud oc worker ls -c &lt;cluster_name&gt;</code>. </td>
-      </tr>
-      <tr>
-      <td><code>volume_ID</code></td>
-      <td>The unique ID that is assigned to your {{site.data.keyword.blockstorageshort}} volume. You can retrieve a list of your {{site.data.keyword.blockstorageshort}} volumes by running <code>ibmcloud is volumes</code>. </td>
-      </tr>
-    </tbody>
-  </table>
 
-  **Example response**
-  ```sh
-  {
-    "id": "0111-1aaa11a1-aa1a-111a-111b-1111a1dad1bc",
+    <br>
+    <table summary="The columns are read from left to right. The first column has the parameter of the POST request. The second column describes the parameter.">
+        <caption>Understanding the POST request</caption>
+        <col style="width:30%">
+        <col style="width:70%">
+        <thead>
+          <th>Parameter</th>
+          <th>Description</th>
+        </thead>
+        <tbody>
+        <tr>
+        <td><code>IAM_token</code></td>
+        <td>The IAM OAuth token for your current session. You can retrieve this value by running <code>ibmcloud iam oauth-tokens</code>.</td>
+        </tr>
+        <tr>
+        <td><code>cluster_name_or_ID</code></td>
+        <td>The unique ID or the name that is assigned to your cluster. You can retrieve this ID by running <code>ibmcloud oc cluster ls</code>. </td>
+        </tr>
+        <tr>
+        <td><code>worker_ID</code></td>
+        <td>The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running <code>ibmcloud oc worker ls -c &lt;cluster_name&gt;</code>. </td>
+        </tr>
+        <tr>
+        <td><code>volume_ID</code></td>
+        <td>The unique ID that is assigned to your {{site.data.keyword.blockstorageshort}} volume. You can retrieve a list of your {{site.data.keyword.blockstorageshort}} volumes by running <code>ibmcloud is volumes</code>. </td>
+        </tr>
+    </tbody>
+    </table>
+
+    **Example response**
+    ```sh
+    {
+        "id": "0111-1aaa11a1-aa1a-111a-111b-1111a1dad1bc",
     "volume": {
         "name": "my-vol",
         "id": "r001-11aa0d59-a1aa-1a11-11ca-ba2bc11e01aa"
@@ -640,9 +639,9 @@ Before you begin:
     "name": "volume-attachment",
     "status": "attaching",
     "type": "data"
-  }
-  ```
-  {: screen}
+    }
+    ```
+    {: screen}
 
 7. Verify the attachment by [reviewing existing volume attachments for a VPC worker node](#vpc_api_get_worker).
 
@@ -656,103 +655,103 @@ Detaching storage from your VPC cluster does not remove your {{site.data.keyword
 {: important}
 
 1. Identify the storage volume that you want to remove and note the volume ID.
-  ```sh
-  ibmcloud is volumes
-  ```
-  {: pre}
+    ```sh
+    ibmcloud is volumes
+    ```
+    {: pre}
 
 3. Get details about the volume. This command returns the worker node ID and attachment ID. Note the worker node ID. In the following command this ID is returned as "Instance name".
-  ```sh
-  ibmcloud is volume <volume_ID>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud is volume <volume_ID>
+    ```
+    {: pre}
 
 4. Retrieve a list of your PVs. This command returns a list of your PVs that you can then you use to determine which PVC uses the volume that you want to remove.
-  ```sh
-  oc get pv
-  ```
-  {: pre}
+    ```sh
+    oc get pv
+    ```
+    {: pre}
 
 4. Describe the PV that uses the volume. If you do not know which PV uses the volume that you want to remove, you can run the `describe pv` command on each PV in your cluster. Note the PVC that uses the PV.
-  ```sh
-  oc describe pv <pv_name>
-  ```
-  {: pre}
+    ```sh
+    oc describe pv <pv_name>
+    ```
+    {: pre}
 
 5. Check to see if your storage volume is in use by a pod. The following command shows the pods that mount the volume and the associated PVC. If no pod is returned, the storage is not in use.
 
-  ```sh
-  oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
-  ```
-  {: pre}
+    ```sh
+    oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
+    ```
+    {: pre}
 
 6. If the pod your volume is using is part of a deployment, delete the deployment. If your pod does not belong to a deployment, delete the pod.
-  ```sh
-  oc delete deployment <deployment_name>
-  ```
-  {: pre}
+    ```sh
+    oc delete deployment <deployment_name>
+    ```
+    {: pre}
 
-  ```sh
-  oc delete pod <pod_name>
-  ```
-  {: pre}
+    ```sh
+    oc delete pod <pod_name>
+    ```
+    {: pre}
 
 7. Delete the PVC and PV.
-  ```sh
-  oc delete pvc <pvc_name>
-  ```
-  {: pre}
+    ```sh
+    oc delete pvc <pvc_name>
+    ```
+    {: pre}
 
-  ```sh
-  oc delete pv <pv_name>
-  ```
-  {: pre}
+    ```sh
+    oc delete pv <pv_name>
+    ```
+    {: pre}
 
 8. Retrieve your IAM token.
-  ```sh
-  ibmcloud iam oauth-tokens
-  ```
-  {: pre}
+    ```sh
+    ibmcloud iam oauth-tokens
+    ```
+    {: pre}
 
 9. Detach storage by using a `POST` request.
 
-  Example request:
-  ```sh
-  curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/deleteAttachment" -H  "accept: application/json" -H  "Authorization: <IAM_token>" -H  "X-Auth-Resource-Group-ID: <resource_group>" -H  "Content-Type: application/json" -d "{  \"cluster\": \"<cluster_name_or_ID\",  \"volumeAttachmentID\": \"<volume_attachment_ID>\",  \"volumeID\": \"<volume_ID>\",  \"worker\": \"<worker_ID>\"}"
-  ```
-  {: pre}
+    Example request:
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/deleteAttachment" -H  "accept: application/json" -H  "Authorization: <IAM_token>" -H  "X-Auth-Resource-Group-ID: <resource_group>" -H  "Content-Type: application/json" -d "{  \"cluster\": \"<cluster_name_or_ID\",  \"volumeAttachmentID\": \"<volume_attachment_ID>\",  \"volumeID\": \"<volume_ID>\",  \"worker\": \"<worker_ID>\"}"
+    ```
+    {: pre}
 
-  <br>
-    <table summary="The columns are read from left to right. The first column has the parameter of the DELETE request. The second column describes the parameter.">
-      <caption>Understanding the DELETE request</caption>
-      <col style="width:30%">
-	   <col style="width:70%">
-      <thead>
-	      <th>Parameter</th>
-	      <th>Description</th>
-      </thead>
-      <tbody>
-      <tr>
-      <td><code>IAM_token</code></td>
-      <td>The IAM OAuth token for your current session. You can retrieve this value by running <code>ibmcloud iam oauth-tokens</code>.</td>
-      </tr>
-      <tr>
-      <td><code>cluster_name_or_ID</code></td>
-      <td>The unique ID or name that is assigned to your cluster. You can retrieve this ID by running <code>ibmcloud oc cluster ls</code>. </td>
-      </tr>
-      <tr>
-      <td><code>worker_ID</code></td>
-      <td>The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running <code>ibmcloud oc worker ls -c &lt;cluster_name&gt;</code>. </td>
-      </tr>
-      <tr>
-      <td><code>volume_ID</code></td>
-      <td>The unique ID that is assigned to your {{site.data.keyword.blockstorageshort}} volume. You can retrieve a list of your {{site.data.keyword.blockstorageshort}} volumes by running <code>ibmcloud is volumes</code>. </td>
-      </tr>
-      <td><code>volume_attachment_ID</code></td>
-      <td>The unique ID that is assigned to your volume attachment. You can retrieve this ID by running <code>ibmcloud is volume <volume_ID></code>.</td>
-      </tr>
+    <br>
+        <table summary="The columns are read from left to right. The first column has the parameter of the DELETE request. The second column describes the parameter.">
+        <caption>Understanding the DELETE request</caption>
+        <col style="width:30%">
+        <col style="width:70%">
+        <thead>
+          <th>Parameter</th>
+          <th>Description</th>
+        </thead>
+        <tbody>
+        <tr>
+        <td><code>IAM_token</code></td>
+        <td>The IAM OAuth token for your current session. You can retrieve this value by running <code>ibmcloud iam oauth-tokens</code>.</td>
+        </tr>
+        <tr>
+        <td><code>cluster_name_or_ID</code></td>
+        <td>The unique ID or name that is assigned to your cluster. You can retrieve this ID by running <code>ibmcloud oc cluster ls</code>. </td>
+        </tr>
+        <tr>
+        <td><code>worker_ID</code></td>
+        <td>The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running <code>ibmcloud oc worker ls -c &lt;cluster_name&gt;</code>. </td>
+        </tr>
+        <tr>
+        <td><code>volume_ID</code></td>
+        <td>The unique ID that is assigned to your {{site.data.keyword.blockstorageshort}} volume. You can retrieve a list of your {{site.data.keyword.blockstorageshort}} volumes by running <code>ibmcloud is volumes</code>. </td>
+        </tr>
+        <td><code>volume_attachment_ID</code></td>
+        <td>The unique ID that is assigned to your volume attachment. You can retrieve this ID by running <code>ibmcloud is volume <volume_ID></code>.</td>
+        </tr>
     </tbody>
-  </table>
+    </table>
 
 
 ### Reviewing volume attachment details for a VPC worker node by using the API
@@ -763,66 +762,66 @@ You can use a `GET` request to retrieve volume attachment details for a VPC work
 
 1. Retrieve your IAM token.
 
-  ```sh
-  ibmcloud iam oauth-tokens
-  ```
-  {: pre}
+    ```sh
+    ibmcloud iam oauth-tokens
+    ```
+    {: pre}
 
 2. Retrieve the ID of the resource group where your cluster is deployed.
 
-  ```sh
-  ibmcloud oc cluster get <cluster_name_or_ID> | grep "Resource Group ID"
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc cluster get <cluster_name_or_ID> | grep "Resource Group ID"
+    ```
+    {: pre}
 
 3. Retrieve the ID of the worker node for which you want to see volume attachment details. Make sure to select a worker node that is located in the same zone as your {{site.data.keyword.blockstorageshort}} instance.
-  ```sh
-  ibmcloud oc worker ls --cluster <cluster_name_or_ID>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+    ```
+    {: pre}
 
 4. Review a list of existing volume attachments on a worker node.
-  ```sh
-  curl -X GET "https://containers.cloud.ibm.com/v2/storage/getAttachments?cluster=<cluster_ID>&worker=<worker_ID>" --header "X-Auth-Resource-Group-ID: <resource_group_ID>" --header "Authorization: <IAM_token>"
-  ```
-  {: codeblock}
+    ```sh
+    curl -X GET "https://containers.cloud.ibm.com/v2/storage/getAttachments?cluster=<cluster_ID>&worker=<worker_ID>" --header "X-Auth-Resource-Group-ID: <resource_group_ID>" --header "Authorization: <IAM_token>"
+    ```
+    {: codeblock}
 
 5. Retrieve the details for a specific attachment.
-  ```sh
-  curl -X GET "https://containers.cloud.ibm.com/v2/storage/getAttachment?cluster=<cluster_ID>&worker=<worker_ID>&volumeAttachmentID=<volume_attachment_ID>" --header "X-Auth-Resource-Group-ID: <resource_group_ID>" --header "Authorization: <IAM_token>"
-  ```
-  {: codeblock}
+    ```sh
+    curl -X GET "https://containers.cloud.ibm.com/v2/storage/getAttachment?cluster=<cluster_ID>&worker=<worker_ID>&volumeAttachmentID=<volume_attachment_ID>" --header "X-Auth-Resource-Group-ID: <resource_group_ID>" --header "Authorization: <IAM_token>"
+    ```
+    {: codeblock}
 
 <br>
 <table summary="The columns are read from left to right. The first column has the parameter of the GET request. The second column describes the parameter.">
-  <caption>Understanding the GET request</caption>
-  <col style="width:30%">
-  <col style="width:70%">
-  <thead>
-    <th>Parameter</th>
+    <caption>Understanding the GET request</caption>
+    <col style="width:30%">
+    <col style="width:70%">
+    <thead>
+        <th>Parameter</th>
     <th>Description</th>
-  </thead>
-  <tbody>
-  <tr>
-  <td><code>IAM_token</code></td>
-  <td>The IAM OAuth token for your current session. You can retrieve this value by running <code>ibmcloud iam oauth-tokens</code>.</td>
-  </tr>
-  <tr>
-  <td><code>cluster_ID</code></td>
-  <td>The unique ID that is assigned to your cluster. You can retrieve this ID by running <code>ibmcloud oc cluster ls</code>. </td>
-  </tr>
-  <tr>
-  <td><code>worker_ID</code></td>
-  <td>The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running <code>ibmcloud oc worker ls -c &lt;cluster_name&gt;</code>. </td>
-  </tr>
-  <tr>
-  <td><code>volume_ID</code></td>
-  <td>The unique ID that is assigned to your {{site.data.keyword.blockstorageshort}} volume. You can retrieve a list of your {{site.data.keyword.blockstorageshort}} volumes by running <code>ibmcloud is volumes</code>. </td>
-  </tr>
-  <tr>
-  <td><code>volume_attachment_ID</code></td>
-  <td>The unique ID that is assigned to your volume attachment. You can retrieve this ID by running <code>ibmcloud is volume <volume_ID></code>.</td>
-  </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><code>IAM_token</code></td>
+    <td>The IAM OAuth token for your current session. You can retrieve this value by running <code>ibmcloud iam oauth-tokens</code>.</td>
+    </tr>
+    <tr>
+    <td><code>cluster_ID</code></td>
+    <td>The unique ID that is assigned to your cluster. You can retrieve this ID by running <code>ibmcloud oc cluster ls</code>. </td>
+    </tr>
+    <tr>
+    <td><code>worker_ID</code></td>
+    <td>The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running <code>ibmcloud oc worker ls -c &lt;cluster_name&gt;</code>. </td>
+    </tr>
+    <tr>
+    <td><code>volume_ID</code></td>
+    <td>The unique ID that is assigned to your {{site.data.keyword.blockstorageshort}} volume. You can retrieve a list of your {{site.data.keyword.blockstorageshort}} volumes by running <code>ibmcloud is volumes</code>. </td>
+    </tr>
+    <tr>
+    <td><code>volume_attachment_ID</code></td>
+    <td>The unique ID that is assigned to your volume attachment. You can retrieve this ID by running <code>ibmcloud is volume <volume_ID></code>.</td>
+    </tr>
 </tbody>
 </table>
 
@@ -845,22 +844,22 @@ Before you begin:
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. List your storage volumes and note the ID of the volume that you want to attach.
-  ```sh
-  ibmcloud is vols
-  ```
-  {: pre}
+    ```sh
+    ibmcloud is vols
+    ```
+    {: pre}
 
 1. List the worker nodes in your cluster and note the ID of the worker node where you want to attach your volume.
-  ```sh
-  ibmcloud oc worker ls -c <cluster_name_or_ID>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc worker ls -c <cluster_name_or_ID>
+    ```
+    {: pre}
 
 1. Attach your {{site.data.keyword.blockstorageshort}} to your VPC worker node.
-  ```sh
-  ibmcloud oc storage attachment create --cluster <cluster_name_or_ID> --volume <volume> --worker <worker_ID>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc storage attachment create --cluster <cluster_name_or_ID> --volume <volume> --worker <worker_ID>
+    ```
+    {: pre}
 
 ### Removing raw {{site.data.keyword.blockstorageshort}} from VPC worker nodes by using the CLI
 {: #storage-util-rm-vpc-cli}
@@ -870,49 +869,49 @@ You can remove storage from your worker node by using the `ibmcloud oc storage a
 [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
 1. List your storage volumes and note the ID of the volume that you want to remove.
-  ```sh
-  ibmcloud is vols
-  ```
-  {: pre}
+    ```sh
+    ibmcloud is vols
+    ```
+    {: pre}
 
 1. Get the details of your volume such as the `worker-id` where the volume is attached. The `worker-id` is listed as the **Instance name** in the **Volume Attachment Instance Reference** section of the command output.
-  ```sh
-  ibmcloud is vol <volume-ID>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud is vol <volume-ID>
+    ```
+    {: pre}
 
-  **Example output**:
-  ```sh                                      
-  Volume Attachment Instance Reference   Attachment type   Instance ID                                 Instance name                                        Auto delete   Attachment ID                               Attachment name      
+    **Example output**:
+    ```sh                                      
+    Volume Attachment Instance Reference   Attachment type   Instance ID                                 Instance name                                        Auto delete   Attachment ID                               Attachment name      
                                         data              0727_e18c10d7-7f18-48aa-b5ef-5ed163e54198   kube-bsaucubd07dhl66e4tgg-cluster-default-00000a19   false         0727-3bfe90b0-dc2d-498a-946b-8837a5dad7bc   volume-attachment
-  ```
-  {: screen}
+    ```
+    {: screen}
 
 1. List the storage attachments on a worker node in your cluster and make a note of the attachment ID that your want to remove.
-  ```sh
-  ibmcloud oc storage attachment ls -c <cluster> --worker <worker-id>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc storage attachment ls -c <cluster> --worker <worker-id>
+    ```
+    {: pre}
 
-  **Example output**:
-  ```sh
-  Listing volume attachments...
-  OK
-  ID                                          Name                Status     Type   Volume ID                                   Volume Name                          Worker ID   
-  0111-1a111aaa-1111-1111-111a-aaa1a1a11a11   volume-attachment   attached   boot   a001-f11ed1e1-1aa1-11dc-b11d-a0dc111b1111  dissuade-anointer-errand-handbrake   kube-aa1111aa11aaaaa11aa1-cluster-name-default-00000110
-  {: screen}
+    **Example output**:
+    ```sh
+    Listing volume attachments...
+    OK
+    ID                                          Name                Status     Type   Volume ID                                   Volume Name                          Worker ID   
+    0111-1a111aaa-1111-1111-111a-aaa1a1a11a11   volume-attachment   attached   boot   a001-f11ed1e1-1aa1-11dc-b11d-a0dc111b1111  dissuade-anointer-errand-handbrake   kube-aa1111aa11aaaaa11aa1-cluster-name-default-00000110
+    {: screen}
 
 1. Remove the storage attachment.
-  ```sh
-  ibmcloud oc storage attachment rm --attachment <attachment-ID> -c <cluster> --worker <worker-ID>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc storage attachment rm --attachment <attachment-ID> -c <cluster> --worker <worker-ID>
+    ```
+    {: pre}
 
 1. Verify that your storage was removed from the worker node.
-  ```sh
-  ibmcloud oc storage attachment ls -c <cluster-ID> --worker <worker-id>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc storage attachment ls -c <cluster-ID> --worker <worker-id>
+    ```
+    {: pre}
 
 
 ## Backing up and restoring PVC data for file and block storage
@@ -942,16 +941,16 @@ Create and configure an {{site.data.keyword.cos_full_notm}} service instance to 
 1. Create an [{{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-object_storage#create_cos_service) that uses HMAC credentials.
 2. Store your [{{site.data.keyword.cos_full_notm}} credentials in a Kubernetes secret](/docs/openshift?topic=openshift-object_storage#create_cos_secret).
 3. Create your first {{site.data.keyword.cos_full_notm}} bucket.
-   1. In the navigation on the service details page, click **Buckets**.
-   2. Click **Create bucket**. A dialog box is displayed.
-   3. Enter a unique name for your bucket. The name must be unique within {{site.data.keyword.cos_full_notm}} across all regions and across all {{site.data.keyword.cloud_notm}} accounts.
-   4. From the **Resiliency** list, select the level of availability that you want for your data. For more information, see [{{site.data.keyword.cos_full_notm}} regions and endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints).
-   5. Change the **Location** to the region where you want to store your data. Keep in mind that your data might not be allowed to be stored in every region due to legal reasons.  
-   6. Click **Create**.
+    1. In the navigation on the service details page, click **Buckets**.
+    2. Click **Create bucket**. A dialog box is displayed.
+    3. Enter a unique name for your bucket. The name must be unique within {{site.data.keyword.cos_full_notm}} across all regions and across all {{site.data.keyword.cloud_notm}} accounts.
+    4. From the **Resiliency** list, select the level of availability that you want for your data. For more information, see [{{site.data.keyword.cos_full_notm}} regions and endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints).
+    5. Change the **Location** to the region where you want to store your data. Keep in mind that your data might not be allowed to be stored in every region due to legal reasons.  
+    6. Click **Create**.
 4. Retrieve the {{site.data.keyword.cos_full_notm}} host name for your bucket.
-   1. Click on your bucket name that you created in the previous step.
-   2. In the navigation on the service details page, click **Buckets** > **Configuration**.
-   3. Note the public URL that you can use to access the data in your bucket.
+    1. Click on your bucket name that you created in the previous step.
+    2. In the navigation on the service details page, click **Buckets** > **Configuration**.
+    3. Note the public URL that you can use to access the data in your bucket.
 
 For more information about configuring your service instance, see the [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage) documentation.
 
@@ -964,10 +963,11 @@ You can use the {{site.data.keyword.cloud_notm}} Backup Restore Helm chart to ba
 Before you begin:
 - Make sure that you have a PVC that you can back up or restore data to. For more information about how to create a PVC, see [Adding file storage to apps](/docs/openshift?topic=openshift-file_storage#add_file) and [Adding block storage to apps](/docs/openshift?topic=openshift-block_storage#add_block).
 - If you want to back up a block storage PVC, make sure that your PVC is not mounted to an app. Block storage is mounted with a RWO access mode. This access allows only one pod to be mounted to the block storage at a time. To back up your data, you must remove the app pod that mounts the storage. To check whether a pod is mounted to your PVC, run the following command.
-  ```sh
-  oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
-  ```
-  {: pre}
+    ```sh
+    oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
+    ```
+    {: pre}
+
 - [Retrieve your {{site.data.keyword.cos_full_notm}} service credentials, the bucket name, and the bucket hostname](#backup_restore_setup_object_storage).
 - [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the Helm client on your local machine and set up the {{site.data.keyword.cloud_notm}} Helm chart repositories.
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -978,48 +978,48 @@ You can deploy the `ibm-storage-backup` pod or the `ibm-storage-restore` pod by 
 To back up or restore a PVC by editing the `values.yaml` file:
 
 1. Download the latest Helm chart version to your local machine.
-  ```
-  helm fetch --untar iks-charts/ibmcloud-backup-restore
-  ```
-  {: pre}
+    ```
+    helm fetch --untar iks-charts/ibmcloud-backup-restore
+    ```
+    {: pre}
 
 2. Open the `values.yaml` file in the nano command line editor.
-  ```
-  nano ibmcloud-backup-restore/values.yaml
-  ```
-  {: pre}
+    ```
+    nano ibmcloud-backup-restore/values.yaml
+    ```
+    {: pre}
 
 3. Configure your Helm chart to back up or restore PVC data. You can configure the backup for more than one PVC.
 
-  Example to create a backup pod by configuring the `values.yaml` file:
+    Example to create a backup pod by configuring the `values.yaml` file:
 
-  ```yaml
-  image:
-    repository: icr.io/iks-charts/ibmcloud-backup-restore
+    ```yaml
+    image:
+        repository: icr.io/iks-charts/ibmcloud-backup-restore
     pullPolicy: Always
     tag: latest
-  ACCESS_KEY_ID: # Example: 10110abab1111bbb111aa1aaa111b1a1
-  SECRET_ACCESS_KEY: # Example: a1aba11aaa11b11b11aa1111a1111ba111111111a0b1b11a
-  ENDPOINT: # Example: s3.us-east.cloud-object-storage.appdomain.cloud
-  BUCKET_NAME: # Example: my-bucket
-  BACKUP_NAME: # Example: my_backup
-  PVC_NAMES:
-    - # Example: my_pvc
+    ACCESS_KEY_ID: # Example: 10110abab1111bbb111aa1aaa111b1a1
+    SECRET_ACCESS_KEY: # Example: a1aba11aaa11b11b11aa1111a1111ba111111111a0b1b11a
+    ENDPOINT: # Example: s3.us-east.cloud-object-storage.appdomain.cloud
+    BUCKET_NAME: # Example: my-bucket
+    BACKUP_NAME: # Example: my_backup
+    PVC_NAMES:
+        - # Example: my_pvc
     - # Optional example: my_pvc2
-  CHART_TYPE: # Example: backup or restore
-  BACKUP_TYPE: # Example: incremental
-  SCHEDULE_TYPE: # Example: periodic
-  SCHEDULE_INFO: # Example: weekly
-  ```
-  {: codeblock}
+    CHART_TYPE: # Example: backup or restore
+    BACKUP_TYPE: # Example: incremental
+    SCHEDULE_TYPE: # Example: periodic
+    SCHEDULE_INFO: # Example: weekly
+    ```
+    {: codeblock}
 
-  <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the <code>values.yaml</code> file</caption>
+    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
+        <caption>Understanding the <code>values.yaml</code> file</caption>
     <col style="width:30%">
-	 <col style="width:70%">
-      <thead>
-	      <th>Parameter</th>
-	      <th>Description</th>
+        <col style="width:70%">
+        <thead>
+          <th>Parameter</th>
+          <th>Description</th>
     </thead>
     <tbody>
     <tr>
@@ -1063,11 +1063,11 @@ To back up or restore a PVC by editing the `values.yaml` file:
     <td>Required only for backups. If you want to create periodic backups, you must decide on the backup schedule. Choose between <strong>hourly</strong>, <strong>daily</strong>, or <strong>weekly</strong>. If you set this option, you must set <code>SCHEDULE_TYPE</code> to <strong>periodic</strong>.</td>
     </tr>
     </tbody>
-  </table>
+    </table>
 
 4. Save and close the `values.yaml` file.
 
-5.  Install the Helm chart with your custom settings in the `values.yaml` file. When you install the Helm chart and you configure a backup or restore, an `ibm-storage-backup` or an `ibm-storage-restore` pod is deployed to your cluster. The backup pod backs up the data from your PVC to {{site.data.keyword.cos_full_notm}} and the restore pod restores data to a PVC. Replace `<release_name>` with a name for your Helm chart. Be sure to install the backup and restore pods in the same zone as the PVC that you want to back up or restore.
+5. Install the Helm chart with your custom settings in the `values.yaml` file. When you install the Helm chart and you configure a backup or restore, an `ibm-storage-backup` or an `ibm-storage-restore` pod is deployed to your cluster. The backup pod backs up the data from your PVC to {{site.data.keyword.cos_full_notm}} and the restore pod restores data to a PVC. Replace `<release_name>` with a name for your Helm chart. Be sure to install the backup and restore pods in the same zone as the PVC that you want to back up or restore.
 
     *   Install the Helm chart by using the `helm install` command.
         ```
@@ -1096,8 +1096,8 @@ To back up or restore a PVC by editing the `values.yaml` file:
         <p><pre class="pre"><code>helm install &lt;release_name&gt; --set ACCESS_KEY_ID=&lt;access_key_ID&gt;<br> --set SECRET_ACCESS_KEY=&lt;secret_access_key&gt;<br> --set ENDPOINT=&lt;public_bucket_endpoint&gt; --set BUCKET_NAME=&lt;bucket_name&gt;<br> --set BACKUP_NAME=&lt;backup_name&gt; --set PVC_NAMES[0]=&lt;pvc_name1&gt;<br> --set PVC_NAMES[1]=&lt;pvc_name2&gt; --set CHART_TYPE=backup<br> --set BACKUP_TYPE=&lt;backup_type&gt; --set SCHEDULE_TYPE=&lt;schedule_type&gt;<br> --set SCHEDULE_INFO=&lt;schedule_info&gt; ./ibmcloud-backup-restore</code></p>
 
 5. Verify that your data backup or restore completed successfully. </br>
-  **Backup**:
-  1. Verify that the `ibm-storage-backup` pod has a status of **Running**.
+    **Backup**:
+    1. Verify that the `ibm-storage-backup` pod has a status of **Running**.
     ```
     oc get pods -A | grep backup
     ```
@@ -1109,7 +1109,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
     ```
     {: screen}
 
-  2. Review the logs of the `ibm-storage-backup` pod to make sure that your backup was successful. When you see the `... backup completed` message in the event logs, your backup completed successfully.
+    2. Review the logs of the `ibm-storage-backup` pod to make sure that your backup was successful. When you see the `... backup completed` message in the event logs, your backup completed successfully.
 
     ```
     oc logs ibm-storage-backup
@@ -1155,14 +1155,14 @@ To back up or restore a PVC by editing the `values.yaml` file:
     ```
     {: screen}
 
-6.  Verify that your data is successfully backed up or restored.
+6. Verify that your data is successfully backed up or restored.
     * **Backup**:
-      1. Find your {{site.data.keyword.cos_full_notm}} service instance in the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources).
-      2. From the navigation, select **Buckets** and click on the bucket that you used in your backup configuration. Your backup is displayed as an object in your bucket.
-      3. Review the compressed files. You can download the `*.gz` file, extract the file, and verify the backed-up data.
+        1. Find your {{site.data.keyword.cos_full_notm}} service instance in the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources).
+        2. From the navigation, select **Buckets** and click on the bucket that you used in your backup configuration. Your backup is displayed as an object in your bucket.
+        3. Review the compressed files. You can download the `*.gz` file, extract the file, and verify the backed-up data.
 
     * **Restore**:
-      1.  Create a `deployment.yaml` file with a pod that mounts the PVC that contains your restored data. The following example deploys an `nginx` pod that mounts the PVC on the `/test` mount directory.
+        1. Create a `deployment.yaml` file with a pod that mounts the PVC that contains your restored data. The following example deploys an `nginx` pod that mounts the PVC on the `/test` mount directory.
             ```yaml
             apiVersion: apps/v1
             kind: Deployment
@@ -1181,13 +1181,13 @@ To back up or restore a PVC by editing the `values.yaml` file:
                 spec:
                   containers:
                     - image: nginx
-                      name: nginx
-                      volumeMounts:
-                      - name: <volume_name> # Example: my_volume
+name: nginx
+volumeMounts:
+- name: <volume_name> # Example: my_volume
                         mountPath: <mount_path> # Example: /test
                     volumes:
                     - name: <volume_name> # Example: my_volume
-                      persistentVolumeClaim:
+persistentVolumeClaim:
                         claimName: <pvc_name> # Example: my_pvc
             ```
             {: codeblock}
@@ -1195,10 +1195,10 @@ To back up or restore a PVC by editing the `values.yaml` file:
             <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
             <caption>Understanding the <code>deployment.yaml</code> file components</caption>
             <col style="width:30%">
-	         <col style="width:70%">
-             <thead>
-	           <th>Parameter</th>
-	           <th>Description</th>
+                <col style="width:70%">
+                <thead>
+                <th>Parameter</th>
+                <th>Description</th>
             </thead>
             <tbody>
             <tr>
@@ -1227,13 +1227,13 @@ To back up or restore a PVC by editing the `values.yaml` file:
             </tr>
             </tbody></table>
 
-      2.  Create the deployment.
+        2. Create the deployment.
             ```
             oc apply -f deployment.yaml
             ```
             {: pre}
 
-      3.  Verify that your pod has a status of **Running**.
+        3. Verify that your pod has a status of **Running**.
 
             If you find that your `ibm-storage-restore` pod does not reach a **Completed** or **CrashLoopBackOff** status, restoring your data might have failed. Run `oc logs ibm-storage-restore` to find the root cause for the failure.
             {: tip}
@@ -1249,31 +1249,31 @@ To back up or restore a PVC by editing the `values.yaml` file:
             ```
             {: screen}
 
-      4.  Log in to your pod.
+        4. Log in to your pod.
             ```
             oc exec <pod_name> -it bash
             ```
             {: pre}
 
-      5.  Navigate to the mount directory that you specified in your deployment YAML.
+        5. Navigate to the mount directory that you specified in your deployment YAML.
             ```
             cd <mount_directory>
             ```
             {: pre}
 
-      6.  List the files in your mount directory to verify that all your data is restored to the mount directory.
+        6. List the files in your mount directory to verify that all your data is restored to the mount directory.
             ```
             ls
             ```
             {: pre}
 
-      7.  Delete the Helm chart installation from your cluster. This step is required if you restored data to a block storage PVC. Block storage is mounted with a RWO access mode. This access allows only one pod to be mounted to the block storage at a time. Because the `ibm-storage-restore` pod already mounts the PVC, you must remove the pod to release the PVC so that you can mount the PVC to a different pod in your cluster.
+        7. Delete the Helm chart installation from your cluster. This step is required if you restored data to a block storage PVC. Block storage is mounted with a RWO access mode. This access allows only one pod to be mounted to the block storage at a time. Because the `ibm-storage-restore` pod already mounts the PVC, you must remove the pod to release the PVC so that you can mount the PVC to a different pod in your cluster.
             ```
             helm uninstall <release_name> -n <namespace>
             ```
             {: pre}
 
-      8.  You successfully restored your backup. You can now mount the PVC that binds the PV to any other pod in your cluster to access the restored files. If the container data that was backed up included a non-root user, you must add non-root permissions to your new container. For more information, see [Adding non-root user access to volumes](/docs/containers?topic=containers-cs_storage_nonroot).
+        8. You successfully restored your backup. You can now mount the PVC that binds the PV to any other pod in your cluster to access the restored files. If the container data that was backed up included a non-root user, you must add non-root permissions to your new container. For more information, see [Adding non-root user access to volumes](/docs/containers?topic=containers-cs_storage_nonroot).
 
 
 ## Setting up {{site.data.keyword.mon_full_notm}} for storage volumes
@@ -1291,41 +1291,41 @@ When a storage volume is down, your app pods that are using storage have a low f
 3. Click the **Launch** button to open the {{site.data.keyword.mon_full_notm}} dashboard.
 
 4. Create file system utilization alerts for an app that runs in your cluster.
-  1. From the {{site.data.keyword.mon_full_notm}} console, click **Overview** > **Workloads**.
-  2. Select the **Namespace** where your app is deployed. Find your app, click the arrow icon on your app, and select **Kubernetes Pod overview**.
-  3. In the **File System Utilization** section, review the **File I/O Bandwidth by Pod** tile.
-  4. Review the file I/O bandwidth from the last day or week time window to determine the average bandwidth. You can use the average bandwidth as a threshold to set an alert for when the file I/O bandwidth is lower than the average for a certain amount of time. For example, if the average file I/O bandwidth for your app is 300B/s, you can create an alert for when the network utilization remains below 300B/s for a certain amount of time.
-  5. In the **File I/O Bandwidth by Pod** tile, create an alert by clicking the **Options** menu and then **Create alert**.
-  6. Open the **Notification** section of the alert menu and create or select an alert notification channel.
-  7. Save your alert.
-  8. Repeat these steps for all of the apps that are deployed in your cluster.
-  9. Test the alert that you created by editing the threshold that you configured to manually trigger the alert. For example, if you set a file system utilization alert to trigger when the utilization is less than 300B/s for 5 minutes, increase the threshold to be greater than the current utilization of your app for 5 minutes and select the `at least once` option.
-  10. Verify that the alert is triggered after 5 minutes. Once you have verified the alert, reset the values to the values you configured earlier.
+    1. From the {{site.data.keyword.mon_full_notm}} console, click **Overview** > **Workloads**.
+    2. Select the **Namespace** where your app is deployed. Find your app, click the arrow icon on your app, and select **Kubernetes Pod overview**.
+    3. In the **File System Utilization** section, review the **File I/O Bandwidth by Pod** tile.
+    4. Review the file I/O bandwidth from the last day or week time window to determine the average bandwidth. You can use the average bandwidth as a threshold to set an alert for when the file I/O bandwidth is lower than the average for a certain amount of time. For example, if the average file I/O bandwidth for your app is 300B/s, you can create an alert for when the network utilization remains below 300B/s for a certain amount of time.
+    5. In the **File I/O Bandwidth by Pod** tile, create an alert by clicking the **Options** menu and then **Create alert**.
+    6. Open the **Notification** section of the alert menu and create or select an alert notification channel.
+    7. Save your alert.
+    8. Repeat these steps for all of the apps that are deployed in your cluster.
+    9. Test the alert that you created by editing the threshold that you configured to manually trigger the alert. For example, if you set a file system utilization alert to trigger when the utilization is less than 300B/s for 5 minutes, increase the threshold to be greater than the current utilization of your app for 5 minutes and select the `at least once` option.
+    10. Verify that the alert is triggered after 5 minutes. Once you have verified the alert, reset the values to the values you configured earlier.
 
 5. Create a network utilization alert for an app that runs in your cluster.
-  1. From the {{site.data.keyword.mon_full_notm}} console, click **Overview** > **Workloads**.
-  2. Select the **Namespace** where your app is deployed. Find your app, click the arrow icon on your app, and select **Kubernetes Pod overview**.
-  3. In the **Network Utilization** section, review the **Network Request Count by Pod** tile.
-  4. Review the average network request count by pod from the last 1 day or 1 week time window to determine the threshold.
-  5. In the **Network Request Count by Pod** tile, create an alert by clicking the **Options** menu and then **Create alert**. Set the alert parameters based on the threshold that you observed. For example, if the network utilization remains below the threshold for a certain amount of time, then the alert is triggered.
-  6. Open the **Notification** section of the alert menu and create or select an alert notification channel.
-  7. Save your alert.
-  8. Repeat these steps for all of the apps that are deployed in your cluster.
-  9. Test the alert that you created by editing the threshold that you configured to manually trigger the alert. For example, if you set an alert for when the number of network requests by pod is less than 3/s for 5 minutes, edit your alert threshold to be less than the threshold that you observed for 5 minutes and select the `at least once` option.
-  10. Verify that the alert is triggered after 5 minutes. Once you have verified the alert, reset the values to the values you configured earlier.
+    1. From the {{site.data.keyword.mon_full_notm}} console, click **Overview** > **Workloads**.
+    2. Select the **Namespace** where your app is deployed. Find your app, click the arrow icon on your app, and select **Kubernetes Pod overview**.
+    3. In the **Network Utilization** section, review the **Network Request Count by Pod** tile.
+    4. Review the average network request count by pod from the last 1 day or 1 week time window to determine the threshold.
+    5. In the **Network Request Count by Pod** tile, create an alert by clicking the **Options** menu and then **Create alert**. Set the alert parameters based on the threshold that you observed. For example, if the network utilization remains below the threshold for a certain amount of time, then the alert is triggered.
+    6. Open the **Notification** section of the alert menu and create or select an alert notification channel.
+    7. Save your alert.
+    8. Repeat these steps for all of the apps that are deployed in your cluster.
+    9. Test the alert that you created by editing the threshold that you configured to manually trigger the alert. For example, if you set an alert for when the number of network requests by pod is less than 3/s for 5 minutes, edit your alert threshold to be less than the threshold that you observed for 5 minutes and select the `at least once` option.
+    10. Verify that the alert is triggered after 5 minutes. Once you have verified the alert, reset the values to the values you configured earlier.
 
 6. Create a pod availability alert for an app that runs in your cluster.
-  1. From the {{site.data.keyword.mon_full_notm}} console, click **Overview** > **Workloads**.
-  2. Select the **Namespace** where your app is deployed. Find your app, click the arrow icon on your app, and select **Kubernetes Pod overview**.
-  3. In the **Pod Health** section, review the **Pod Availability** tile.
-  4. Review the average pod availability from the last 1 day or 1 week time window to determine the threshold.
-  5. Review your app configuration file for the number of requested replicas. You can use this number as a threshold for sending alerts when the number of available pods is fewer than your requested number of replicas for your app. If you requested 3 replicas of your app, you can set an alert for when the number of available pods stays fewer than the requested replica count for a certain time duration, for example, a 30 minute duration. In this example, when the pod availability remains fewer than the 3 requested replicas, the alert is triggered.
-  6. In the **Pod Availability** tile, create an alert by clicking the **Options** menu and then **Create alert**. Set the alert parameters based on the threshold that you observed and your requested app replicas.
-  7. Open the **Notification** section of the alert menu and create or select an alert notification channel.
-  8. Save your alert.
-  9. Repeat these steps for all of the apps that are deployed in your cluster.
-  10. Test the alert that you created by editing the threshold that you configured to manually trigger the alert. For example, if you set a pod availability alert for when the number of available pods is less than 3 for 5 minutes, edit your alert threshold to be less than 4 pods for 5 minutes and select the `at least once` option.
-  11. Verify that the alert is triggered after 5 minutes. Once you have verified the alert, reset the values to the values you configured earlier.
+    1. From the {{site.data.keyword.mon_full_notm}} console, click **Overview** > **Workloads**.
+    2. Select the **Namespace** where your app is deployed. Find your app, click the arrow icon on your app, and select **Kubernetes Pod overview**.
+    3. In the **Pod Health** section, review the **Pod Availability** tile.
+    4. Review the average pod availability from the last 1 day or 1 week time window to determine the threshold.
+    5. Review your app configuration file for the number of requested replicas. You can use this number as a threshold for sending alerts when the number of available pods is fewer than your requested number of replicas for your app. If you requested 3 replicas of your app, you can set an alert for when the number of available pods stays fewer than the requested replica count for a certain time duration, for example, a 30 minute duration. In this example, when the pod availability remains fewer than the 3 requested replicas, the alert is triggered.
+    6. In the **Pod Availability** tile, create an alert by clicking the **Options** menu and then **Create alert**. Set the alert parameters based on the threshold that you observed and your requested app replicas.
+    7. Open the **Notification** section of the alert menu and create or select an alert notification channel.
+    8. Save your alert.
+    9. Repeat these steps for all of the apps that are deployed in your cluster.
+    10. Test the alert that you created by editing the threshold that you configured to manually trigger the alert. For example, if you set a pod availability alert for when the number of available pods is less than 3 for 5 minutes, edit your alert threshold to be less than 4 pods for 5 minutes and select the `at least once` option.
+    11. Verify that the alert is triggered after 5 minutes. Once you have verified the alert, reset the values to the values you configured earlier.
 
 ### Troubleshooting persistent storage when a {{site.data.keyword.mon_full_notm}} alert is triggered
 {: #monitor_storage_ts}
@@ -1338,4 +1338,6 @@ When an alert is triggered, review the alert details in {{site.data.keyword.mon_
 * [Troubleshooting apps](/docs/containers?topic=containers-debug_apps).
 * [Troubleshooting clusters](/docs/containers?topic=containers-debug_clusters).
 * [Open a support case](/docs/get-support?topic=get-support-using-avatar).
+
+
 

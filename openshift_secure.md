@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Security for {{site.data.keyword.openshiftlong_notm}}
 {: #security}
@@ -163,15 +161,15 @@ The following image shows the default cluster security settings that address aut
 
 <table summary="The columns are read from left to right. The first column has the security feature for the API server and etcd. The second column describes the feature.">
 <caption>{{site.data.keyword.openshiftshort}} API server and etcd security</caption>
-  <thead>
-  <th>Security feature</th>
-  <th>Description</th>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Fully managed and dedicated {{site.data.keyword.openshiftshort}} master</td>
-      <td>Every cluster in {{site.data.keyword.openshiftlong_notm}} is controlled by a dedicated {{site.data.keyword.openshiftshort}} master that is managed by IBM in an IBM-owned {{site.data.keyword.cloud_notm}} account. The {{site.data.keyword.openshiftshort}} master is set up with the following dedicated components that are not shared with other IBM customers.
-        <ul><li><strong>etcd data store:</strong> Stores all Kubernetes resources of a cluster, such as `Services`, `Deployments`, and `Pods`. Kubernetes `ConfigMaps` and `Secrets` are app data that is stored as key value pairs so that they can be used by an app that runs in a pod. Data in etcd is stored on the local disk of the {{site.data.keyword.openshiftshort}} master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. You can choose to enable encryption for your etcd data on the local disk of your {{site.data.keyword.openshiftshort}} master by [enabling {{site.data.keyword.keymanagementservicelong_notm}} encryption](/docs/openshift?topic=openshift-encryption#keyprotect) for your cluster. When etcd data is sent to a pod, data is encrypted via TLS to ensure data protection and integrity.</li>
+    <thead>
+    <th>Security feature</th>
+    <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+        <td>Fully managed and dedicated {{site.data.keyword.openshiftshort}} master</td>
+        <td>Every cluster in {{site.data.keyword.openshiftlong_notm}} is controlled by a dedicated {{site.data.keyword.openshiftshort}} master that is managed by IBM in an IBM-owned {{site.data.keyword.cloud_notm}} account. The {{site.data.keyword.openshiftshort}} master is set up with the following dedicated components that are not shared with other IBM customers.
+        <ul><li><strong>etcd data store:</strong> Stores all Kubernetes resources of a cluster, such as <code>Services</code>, <code>Deployments</code>, and <code>Pods</code>. Kubernetes <code>ConfigMaps</code> and <code>Secrets</code> are app data that is stored as key value pairs so that they can be used by an app that runs in a pod. Data in etcd is stored on the local disk of the {{site.data.keyword.openshiftshort}} master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. You can choose to enable encryption for your etcd data on the local disk of your {{site.data.keyword.openshiftshort}} master by [enabling {{site.data.keyword.keymanagementservicelong_notm}} encryption](/docs/openshift?topic=openshift-encryption#keyprotect) for your cluster. When etcd data is sent to a pod, data is encrypted via TLS to ensure data protection and integrity.</li>
           <li><strong>openshift-api:</strong> Serves as the main entry point for all cluster management requests from the worker node to the {{site.data.keyword.openshiftshort}} master. The API server validates and processes requests that change the state of cluster resources, such as pods or services, and stores this state in the etcd data store.</li>
           
           <li><strong>openshift-controller:</strong> Watches for newly created pods and decides where to deploy them based on capacity, performance needs, policy constraints, anti-affinity specifications, and workload requirements. If no worker node can be found that matches the requirements, the pod is not deployed in the cluster. The controller also watches the state of cluster resources, such as replica sets. When the state of a resource changes, for example if a pod in a replica set goes down, the controller manager initiates correcting actions to achieve the required state. </li>
@@ -183,29 +181,29 @@ The following image shows the default cluster security settings that address aut
     <td>The {{site.data.keyword.openshiftshort}} master, including all the master components, compute, networking, and storage resources are continuously monitored by IBM Site Reliability Engineers (SREs). The SREs apply the latest security standards, detect and remediate malicious activities, and work to ensure reliability and availability of {{site.data.keyword.openshiftlong_notm}}. </td>
     </tr>
     <tr>
-      <td>CIS Kubernetes master benchmark</td>
-      <td>To configure {{site.data.keyword.openshiftlong_notm}}, IBM engineers follow relevant cybersecurity practices from the Kubernetes master benchmark that is published by the [Center of Internet Security (CIS) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cisecurity.org/benchmark/kubernetes/). The cluster master and all worker nodes are deployed with images that meet the benchmark.</td>
+        <td>CIS Kubernetes master benchmark</td>
+        <td>To configure {{site.data.keyword.openshiftlong_notm}}, IBM engineers follow relevant cybersecurity practices from the Kubernetes master benchmark that is published by the [Center of Internet Security (CIS) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cisecurity.org/benchmark/kubernetes/). The cluster master and all worker nodes are deployed with images that meet the benchmark.</td>
     </tr>
     <tr>
-      <td>Secure communication via TLS</td>
-      <td>To use {{site.data.keyword.openshiftlong_notm}}, you must authenticate with the service by using your credentials. When you are authenticated, {{site.data.keyword.openshiftlong_notm}} generates TLS certificates that encrypt the communication to and from the {{site.data.keyword.openshiftshort}} API server and etcd data store to ensure a secure end-to-end communication between the worker nodes and the {{site.data.keyword.openshiftshort}} master. These certificates are never shared across clusters or across {{site.data.keyword.openshiftshort}} master components.<p class="tip">Need to revoke existing certificates and create new certificates for your cluster? Check out [Rotating CA certificates in your cluster](#cert-rotate).</p></td>
+        <td>Secure communication via TLS</td>
+        <td>To use {{site.data.keyword.openshiftlong_notm}}, you must authenticate with the service by using your credentials. When you are authenticated, {{site.data.keyword.openshiftlong_notm}} generates TLS certificates that encrypt the communication to and from the {{site.data.keyword.openshiftshort}} API server and etcd data store to ensure a secure end-to-end communication between the worker nodes and the {{site.data.keyword.openshiftshort}} master. These certificates are never shared across clusters or across {{site.data.keyword.openshiftshort}} master components.<p class="tip">Need to revoke existing certificates and create new certificates for your cluster? Check out [Rotating CA certificates in your cluster](#cert-rotate).</p></td>
     </tr>
     <tr>
-      <td>OpenVPN connectivity to worker nodes</td>
-      <td>Although Kubernetes secures the communication between the master and worker nodes by using the <code>https</code> protocol, no authentication is provided on the worker node by default. To secure this communication, {{site.data.keyword.openshiftlong_notm}} automatically sets up an OpenVPN connection between the {{site.data.keyword.openshiftshort}} master and the worker node when the cluster is created.</td>
+        <td>OpenVPN connectivity to worker nodes</td>
+        <td>Although Kubernetes secures the communication between the master and worker nodes by using the <code>https</code> protocol, no authentication is provided on the worker node by default. To secure this communication, {{site.data.keyword.openshiftlong_notm}} automatically sets up an OpenVPN connection between the {{site.data.keyword.openshiftshort}} master and the worker node when the cluster is created.</td>
     </tr>
     <tr>
-      <td>Fine-grained access control</td>
-      <td>As the account administrator you can [grant access to other users for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-users#users) by using {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). {{site.data.keyword.cloud_notm}} IAM provides secure authentication with the {{site.data.keyword.cloud_notm}} platform, {{site.data.keyword.openshiftlong_notm}}, and all the resources in your account. Setting up proper user roles and permissions is key to limit who can access your resources and to limit the damage that a user can do when legitimate permissions are misused. </br></br>You can select from the following pre-defined user roles that determine the set of actions that the user can perform: <ul><li><strong>platform access roles:</strong> Determine the cluster and worker node management-related actions that a user can perform in {{site.data.keyword.openshiftlong_notm}}. platform access roles also assign users the `basic-users` and `self-provisioners` RBAC role. With these RBAC roles, you can create an {{site.data.keyword.openshiftshort}} project in the cluster, in which you can deploy apps and other Kubernetes resources. As the creator of the project, you are automatically assigned the `admin` RBAC role for the project so that you can fully control what you want to deploy and run in your project. However, these RBAC roles do not grant access to other {{site.data.keyword.openshiftshort}} projects. To view and access other {{site.data.keyword.openshiftshort}} projects, you must be assigned the appropriate service access role in IAM.  </li><li><strong>Service access roles:</strong> Determine the [Kubernetes RBAC role](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) that is assigned to the user and the actions that a user can run against the {{site.data.keyword.openshiftshort}} API server. While the <code>basic-users</code> and <code>self-provisioners</code> RBAC role that is assigned with a platform access role lets you create and manage your own {{site.data.keyword.openshiftshort}} projects, you cannot view, access, or work with other {{site.data.keyword.openshiftshort}} projects until you are assigned a service access role. For more information about the corresponding RBAC roles that are assigned to a user and associated permissions, see [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-access_reference#service). </li><li><strong>Classic infrastructure:</strong> Enables access to your classic {{site.data.keyword.cloud_notm}} infrastructure resources. Example actions that are permitted by classic infrastructure roles are viewing the details of cluster worker node machines or editing networking and storage resources.</li>
-  <li><strong>VPC infrastructure:</strong> Enables access to VPC infrastructure resources. Example actions that are permitted by VPC infrastructure roles are creating a VPC, adding subnets, changing floating IP addresses, and creating VPC Block Storage instances. </li></ul> </br> For more information about access control in a cluster, see [Assigning cluster access](/docs/openshift?topic=openshift-users).</td>
-    </tr>
-    <tr>
-      <td>Admission controllers</td>  
-      <td>Admission controllers are implemented for specific features in Kubernetes and {{site.data.keyword.openshiftlong_notm}}. With admission controllers, you can set up policies in your cluster that determine whether a particular action in the cluster is allowed or not. In the policy, you can specify conditions when a user cannot perform an action, even if this action is part of the general permissions that you assigned the user by using RBAC roles. Therefore, admission controllers can provide an extra layer of security for your cluster before an API request is processed by the {{site.data.keyword.openshiftshort}} API server. </br></br> When you create a cluster, {{site.data.keyword.openshiftlong_notm}} automatically installs the default [Kubernetes admission controllers ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/) in a particular order in the {{site.data.keyword.openshiftshort}} master, which cannot be changed by the user. Review the order of default admission controllers by cluster version in the [`kube-apiserver` component reference information](/docs/containers?topic=containers-service-settings#kube-apiserver).
+        <td>Fine-grained access control</td>
+        <td>As the account administrator you can [grant access to other users for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-users#users) by using {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). {{site.data.keyword.cloud_notm}} IAM provides secure authentication with the {{site.data.keyword.cloud_notm}} platform, {{site.data.keyword.openshiftlong_notm}}, and all the resources in your account. Setting up proper user roles and permissions is key to limit who can access your resources and to limit the damage that a user can do when legitimate permissions are misused. </br></br>You can select from the following pre-defined user roles that determine the set of actions that the user can perform: <ul><li><strong>platform access roles:</strong> Determine the cluster and worker node management-related actions that a user can perform in {{site.data.keyword.openshiftlong_notm}}. platform access roles also assign users the <code>basic-users</code> and <code>self-provisioners</code> RBAC role. With these RBAC roles, you can create an {{site.data.keyword.openshiftshort}} project in the cluster, in which you can deploy apps and other Kubernetes resources. As the creator of the project, you are automatically assigned the <code>admin</code> RBAC role for the project so that you can fully control what you want to deploy and run in your project. However, these RBAC roles do not grant access to other {{site.data.keyword.openshiftshort}} projects. To view and access other {{site.data.keyword.openshiftshort}} projects, you must be assigned the appropriate service access role in IAM.  </li><li><strong>Service access roles:</strong> Determine the [Kubernetes RBAC role](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) that is assigned to the user and the actions that a user can run against the {{site.data.keyword.openshiftshort}} API server. While the <code>basic-users</code> and <code>self-provisioners</code> RBAC role that is assigned with a platform access role lets you create and manage your own {{site.data.keyword.openshiftshort}} projects, you cannot view, access, or work with other {{site.data.keyword.openshiftshort}} projects until you are assigned a service access role. For more information about the corresponding RBAC roles that are assigned to a user and associated permissions, see [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-access_reference#service). </li><li><strong>Classic infrastructure:</strong> Enables access to your classic {{site.data.keyword.cloud_notm}} infrastructure resources. Example actions that are permitted by classic infrastructure roles are viewing the details of cluster worker node machines or editing networking and storage resources.</li>
+    <li><strong>VPC infrastructure:</strong> Enables access to VPC infrastructure resources. Example actions that are permitted by VPC infrastructure roles are creating a VPC, adding subnets, changing floating IP addresses, and creating VPC Block Storage instances. </li></ul> </br> For more information about access control in a cluster, see [Assigning cluster access](/docs/openshift?topic=openshift-users).</td>
+        </tr>
+        <tr>
+        <td>Admission controllers</td>  
+        <td>Admission controllers are implemented for specific features in Kubernetes and {{site.data.keyword.openshiftlong_notm}}. With admission controllers, you can set up policies in your cluster that determine whether a particular action in the cluster is allowed or not. In the policy, you can specify conditions when a user cannot perform an action, even if this action is part of the general permissions that you assigned the user by using RBAC roles. Therefore, admission controllers can provide an extra layer of security for your cluster before an API request is processed by the {{site.data.keyword.openshiftshort}} API server. </br></br> When you create a cluster, {{site.data.keyword.openshiftlong_notm}} automatically installs the default [Kubernetes admission controllers ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/) in a particular order in the {{site.data.keyword.openshiftshort}} master, which cannot be changed by the user. Review the order of default admission controllers by cluster version in the [<code>kube-apiserver</code> component reference information](/docs/containers?topic=containers-service-settings#kube-apiserver).
 </br>
-      You can [install your own admission controllers in the cluster ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/#admission-webhooks) or choose from the optional admission controllers that {{site.data.keyword.openshiftlong_notm}} provides: <ul><li><strong>[Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec):</strong> Use this admission controller to block container deployments from unsigned images.</li></ul></br><p class="note">If you manually installed admission controllers and you do not want to use them anymore, make sure to remove them entirely. If admission controllers are not entirely removed, they might block all actions that you want to perform on the cluster.</p></td>
+        You can [install your own admission controllers in the cluster ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/#admission-webhooks) or choose from the optional admission controllers that {{site.data.keyword.openshiftlong_notm}} provides: <ul><li><strong>[Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec):</strong> Use this admission controller to block container deployments from unsigned images.</li></ul></br><p class="note">If you manually installed admission controllers and you do not want to use them anymore, make sure to remove them entirely. If admission controllers are not entirely removed, they might block all actions that you want to perform on the cluster.</p></td>
     </tr>
-  </tbody>
+    </tbody>
 </table>
 
 **What else can I do to secure my {{site.data.keyword.openshiftshort}} API server?**
@@ -225,64 +223,64 @@ By default, certificate authority (CA) certificates are administered to secure a
 To rotate the CA certificates for your cluster:
 
 1. Create a CA for your cluster. Certificates that are signed by this new CA are issued for the cluster master components, and the API server is refreshed.
-  ```
-  ibmcloud oc cluster ca create -c <cluster_name_or_ID>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc cluster ca create -c <cluster_name_or_ID>
+    ```
+    {: pre}
 
 2. Ensure that your cluster's master health is normal, the API server refresh is complete, and any master updates are complete. It might take several minutes for the master API server to refresh.
-  ```
-  ibmcloud oc cluster get --cluster <cluster_name_or_ID>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc cluster get --cluster <cluster_name_or_ID>
+    ```
+    {: pre}
 
 3. Check the status of the CA creation. In the output, note the timestamp in the **Action Completed** field.
-  ```
-  ibmcloud oc cluster ca status -c <cluster_name_or_ID>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc cluster ca status -c <cluster_name_or_ID>
+    ```
+    {: pre}
 
-  Example output:
-  ```
-  Status:             CA certificate creation complete. Ensure that your worker nodes are reloaded before you start a CA certificate rotation.
-  Action Started:     2020-08-30T16:17:56+0000
-  Action Completed:   2020-08-30T16:21:13+0000
-  ```
-  {: screen}
+    Example output:
+    ```
+    Status:             CA certificate creation complete. Ensure that your worker nodes are reloaded before you start a CA certificate rotation.
+    Action Started:     2020-08-30T16:17:56+0000
+    Action Completed:   2020-08-30T16:21:13+0000
+    ```
+    {: screen}
 
 4. Download the updated Kubernetes configuration data and certificates in your cluster's `kubeconfig` file.
-  ```
-  ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --network
-  ```
-  {: pre}
+    ```
+    ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --network
+    ```
+    {: pre}
 
 5. Update any tooling that relies on the previous certificates.
-  * If you use {{site.data.keyword.blockchainfull}}, you must [re-establish connectivity between the {{site.data.keyword.blockchain}} management console and your cluster](/docs/blockchain?topic=blockchain-ibp-console-manage-console#ibp-console-refresh).
-  * If you use the certificate from your cluster's `kubeconfig` file in your own service such as Travis or Jenkins, or if you use `calicoctl` to manage Calico network policies, update your services and automation to use the new certificates.
+    * If you use {{site.data.keyword.blockchainfull}}, you must [re-establish connectivity between the {{site.data.keyword.blockchain}} management console and your cluster](/docs/blockchain?topic=blockchain-ibp-console-manage-console#ibp-console-refresh).
+    * If you use the certificate from your cluster's `kubeconfig` file in your own service such as Travis or Jenkins, or if you use `calicoctl` to manage Calico network policies, update your services and automation to use the new certificates.
 
 6. Verify that the timestamps on your new certificates are later than the timestamp that you found in step 3. To check the date on your certificates, you can use a tool such as [KeyCDN](https://tools.keycdn.com/ssl){: external}.
 
 7. [Reload your classic worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) or [replace your VPC worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace) to pick up the certificates that are signed by the new CA.
 
 8. Rotate the old certificates with the new certificates. The old CA certificates in your cluster are removed.
-  ```
-  ibmcloud oc cluster ca rotate -c <cluster_name_or_ID>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc cluster ca rotate -c <cluster_name_or_ID>
+    ```
+    {: pre}
 
 9. Check the status of the CA certificate rotation.
-  ```
-  ibmcloud oc cluster ca status -c <cluster_name_or_ID>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc cluster ca status -c <cluster_name_or_ID>
+    ```
+    {: pre}
 
-  Example output:
-  ```
-  Status:             CA certificate rotation complete.
-  Action Started:     2020-08-30T16:37:56+0000
-  Action Completed:   2020-08-30T16:41:13+0000
-  ```
-  {: screen}
+    Example output:
+    ```
+    Status:             CA certificate rotation complete.
+    Action Started:     2020-08-30T16:37:56+0000
+    Action Completed:   2020-08-30T16:41:13+0000
+    ```
+    {: screen}
 
 <br />
 
@@ -317,42 +315,42 @@ The image does not include components that ensure secure end-to-end communicatio
 
 <table summary="The columns are read from left to right. The first column has the parameter of the security feature of the worker node. The second column describes the feature.">
 <caption>Worker node security setup</caption>
-  <thead>
-  <th>Security feature</th>
-  <th>Description</th>
-  </thead>
-  <tbody>
-    <tr><td>CIS-compliant RHEL image</td><td>Every worker node is set up with an Red Hat Enterprise Linux (RHEL) operating system that implements the benchmarks that are published by the Center of Internet Security (CIS). The user or the owner of the machine cannot change this operating system to another operating system. To review the current RHEL version, run <code>oc get nodes -o wide</code>. IBM works with internal and external security advisory teams to address potential security compliance vulnerabilities. Security updates and patches for the operating system are made available through {{site.data.keyword.openshiftlong_notm}} and must be installed by the user to keep the worker node secure.<p class="important">{{site.data.keyword.openshiftlong_notm}} uses a Red Hat Enterprise Linux kernel for worker nodes. You can run containers based on any Linux distribution in {{site.data.keyword.openshiftlong_notm}}. Check with your container image vendor to verify that your container images can be run on an Red Hat Enterprise kernel.</p></td></tr>
+    <thead>
+    <th>Security feature</th>
+    <th>Description</th>
+    </thead>
+    <tbody>
+        <tr><td>CIS-compliant RHEL image</td><td>Every worker node is set up with an Red Hat Enterprise Linux (RHEL) operating system that implements the benchmarks that are published by the Center of Internet Security (CIS). The user or the owner of the machine cannot change this operating system to another operating system. To review the current RHEL version, run <code>oc get nodes -o wide</code>. IBM works with internal and external security advisory teams to address potential security compliance vulnerabilities. Security updates and patches for the operating system are made available through {{site.data.keyword.openshiftlong_notm}} and must be installed by the user to keep the worker node secure.<p class="important">{{site.data.keyword.openshiftlong_notm}} uses a Red Hat Enterprise Linux kernel for worker nodes. You can run containers based on any Linux distribution in {{site.data.keyword.openshiftlong_notm}}. Check with your container image vendor to verify that your container images can be run on an Red Hat Enterprise kernel.</p></td></tr>
     <tr>
     <td>Continuous monitoring by Site Reliability Engineers (SREs) </td>
     <td>The image that is installed on your worker nodes is continuously monitored by IBM Site Reliability Engineers (SREs) to detect vulnerabilities and security compliance issues. To address vulnerabilities, SREs create security patches and fix packs for your worker nodes. Make sure to apply these patches when they are available to ensure a secure environment for your worker nodes and the apps that you run on top of them.</td>
     </tr>
     <tr>
-      <td>CIS Kubernetes worker node benchmark</td>
-      <td>To configure {{site.data.keyword.openshiftlong_notm}}, IBM engineers follow relevant cybersecurity practices from the Kubernetes worker node benchmark that is published by the [Center of Internet Security (CIS) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cisecurity.org/benchmark/kubernetes/).<br><br>You can review the compliance of worker nodes against [CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test) and [{{site.data.keyword.openshiftshort}} benchmark](/docs/openshift?topic=openshift-compliance-operator) standards.</td>
+        <td>CIS Kubernetes worker node benchmark</td>
+        <td>To configure {{site.data.keyword.openshiftlong_notm}}, IBM engineers follow relevant cybersecurity practices from the Kubernetes worker node benchmark that is published by the [Center of Internet Security (CIS) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.cisecurity.org/benchmark/kubernetes/).<br><br>You can review the compliance of worker nodes against [CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test) and [{{site.data.keyword.openshiftshort}} benchmark](/docs/openshift?topic=openshift-compliance-operator) standards.</td>
     </tr>
     <tr>
-  <td>Compute isolation</td>
-  <td>Worker nodes are dedicated to a cluster and do not host workloads of other clusters. When you create a classic cluster, you can choose to provision your worker nodes as [physical machines (bare metal) or as virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes) that run on shared or dedicated physical hardware. Worker nodes in in a standard VPC compute cluster can be provisioned as virtual machines on shared infrastructure only.</td>
+    <td>Compute isolation</td>
+    <td>Worker nodes are dedicated to a cluster and do not host workloads of other clusters. When you create a classic cluster, you can choose to provision your worker nodes as [physical machines (bare metal) or as virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes) that run on shared or dedicated physical hardware. Worker nodes in in a standard VPC compute cluster can be provisioned as virtual machines on shared infrastructure only.</td>
 </tr>
 <tr>
-  <td>Option to deploy bare metal on classic</td>
-  <td>If you create a standard classic cluster, you can choose to provision your worker nodes on bare metal physical servers (instead of virtual server instances). With bare metal machines, you have additional control over the compute host, such as the memory or CPU. This setup eliminates the virtual machine hypervisor that allocates physical resources to virtual machines that run on the host. Instead, all of a bare metal machine's resources are dedicated exclusively to the worker, so you don't need to worry about "noisy neighbors" sharing resources or slowing down performance. Bare metal servers are dedicated to you, with all its resources available for cluster usage.</td>
+    <td>Option to deploy bare metal on classic</td>
+    <td>If you create a standard classic cluster, you can choose to provision your worker nodes on bare metal physical servers (instead of virtual server instances). With bare metal machines, you have additional control over the compute host, such as the memory or CPU. This setup eliminates the virtual machine hypervisor that allocates physical resources to virtual machines that run on the host. Instead, all of a bare metal machine's resources are dedicated exclusively to the worker, so you don't need to worry about "noisy neighbors" sharing resources or slowing down performance. Bare metal servers are dedicated to you, with all its resources available for cluster usage.</td>
 </tr>
 <tr>
-  <td id="encrypted_disk">Encrypted disks</td>
-    <td>By default, every worker node is provisioned with two local SSD, AES 256-bit encrypted data partitions. The first partition contains the kernel image that is used to boot the worker node and is not encrypted. The second partition holds the container file system and is unlocked by using LUKS encryption keys. Each worker node in a cluster has its own unique LUKS encryption key, managed by {{site.data.keyword.openshiftlong_notm}}. When you create a cluster or add a worker node to an existing cluster, the keys are pulled securely and then discarded after the encrypted disk is unlocked. <p class="note">Encryption can impact disk I/O performance. For workloads that require high-performance disk I/O, test a cluster with encryption both enabled and disabled to help you decide whether to turn off encryption.</p></td>
-      </tr>
+    <td id="encrypted_disk">Encrypted disks</td>
+        <td>By default, every worker node is provisioned with two local SSD, AES 256-bit encrypted data partitions. The first partition contains the kernel image that is used to boot the worker node and is not encrypted. The second partition holds the container file system and is unlocked by using LUKS encryption keys. Each worker node in a cluster has its own unique LUKS encryption key, managed by {{site.data.keyword.openshiftlong_notm}}. When you create a cluster or add a worker node to an existing cluster, the keys are pulled securely and then discarded after the encrypted disk is unlocked. <p class="note">Encryption can impact disk I/O performance. For workloads that require high-performance disk I/O, test a cluster with encryption both enabled and disabled to help you decide whether to turn off encryption.</p></td>
+        </tr>
     <tr>
-      <td>SELinux</td>
-      <td>Every worker node is set up with security and access policies that are enforced by [Security-Enhanced Linux (SELinux) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.redhat.com/en/topics/linux/what-is-selinux) profiles that are loaded into the worker node during bootstrapping. SELinux profiles cannot be changed by the user or owner of the machine. </td>
+        <td>SELinux</td>
+        <td>Every worker node is set up with security and access policies that are enforced by [Security-Enhanced Linux (SELinux) ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.redhat.com/en/topics/linux/what-is-selinux) profiles that are loaded into the worker node during bootstrapping. SELinux profiles cannot be changed by the user or owner of the machine. </td>
     </tr>
     <tr>
-      <td>SSH disabled</td>
-      <td>By default, SSH access is disabled on the worker node to protect your cluster from malicious attacks. When SSH access is disabled, access to the cluster is forced via the {{site.data.keyword.openshiftshort}} API server. The {{site.data.keyword.openshiftshort}} API server requires every request to be checked against the policies that are set in the authentication, authorization, and admission control module before the request is executed in the cluster. </br></br>  If you have a standard cluster and you want to install more features on your worker node, you can choose between the add-ons that are provided by {{site.data.keyword.openshiftlong_notm}} or use [Kubernetes daemon sets ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) for everything that you want to run on every worker node. For any one-time action that you must execute, use [Kubernetes jobs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/).</td>
+        <td>SSH disabled</td>
+        <td>By default, SSH access is disabled on the worker node to protect your cluster from malicious attacks. When SSH access is disabled, access to the cluster is forced via the {{site.data.keyword.openshiftshort}} API server. The {{site.data.keyword.openshiftshort}} API server requires every request to be checked against the policies that are set in the authentication, authorization, and admission control module before the request is executed in the cluster. </br></br>  If you have a standard cluster and you want to install more features on your worker node, you can choose between the add-ons that are provided by {{site.data.keyword.openshiftlong_notm}} or use [Kubernetes daemon sets ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) for everything that you want to run on every worker node. For any one-time action that you must execute, use [Kubernetes jobs ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/).</td>
     </tr>
-  </tbody>
-  </table>
+    </tbody>
+    </table>
 
 <br />
 
@@ -469,8 +467,8 @@ You can use network load balancer (NLB) and Ingress application load balancer (A
 
 <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC clusters: VPC security groups are applied to the network interface of a single virtual server to filter traffic at the hypervisor level. You can add inbound and outbound rules to the default security group for your cluster to manage inbound and outbound traffic to a VPC cluster. The default rules of the security group for your cluster differs with your cluster's version.
 * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or later:
-  * The default security group for the VPC is applied to your worker nodes. This security group allows incoming ICMP packets (pings) and incoming traffic from other worker nodes in your cluster.
-  * Additionally, a unique security group that is named in the format `kube-<cluster_ID>` is automatically created and applied to the worker nodes for that cluster. This security group allows incoming traffic requests to the 30000 - 32767 port range on your worker nodes, and ensures that all inbound and outbound traffic to the pod subnet is permitted so that worker nodes can communicate with each other across subnets. Do not modify or delete this security group.
+    * The default security group for the VPC is applied to your worker nodes. This security group allows incoming ICMP packets (pings) and incoming traffic from other worker nodes in your cluster.
+    * Additionally, a unique security group that is named in the format `kube-<cluster_ID>` is automatically created and applied to the worker nodes for that cluster. This security group allows incoming traffic requests to the 30000 - 32767 port range on your worker nodes, and ensures that all inbound and outbound traffic to the pod subnet is permitted so that worker nodes can communicate with each other across subnets. Do not modify or delete this security group.
 * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier: The default security group for the VPC is applied to your worker nodes. This security group denies all incoming traffic requests to your worker nodes.
 
 Because the worker nodes of your VPC cluster exist in a service account and are not listed in the VPC infrastructure dashboard, you cannot create a security group and apply it to your worker node instances. You can only modify existing security groups that are created for you.
@@ -546,15 +544,15 @@ By default, {{site.data.keyword.openshiftlong_notm}} provides many features for 
 
 <img src="images/trusted_story.png" width="700" alt="Deploying containers with trusted content" style="width:700px; border-style: none"/>
 
-1.  **Content Trust for your images**: Ensure the integrity of your images by enabling content trust in your {{site.data.keyword.registrylong_notm}}. With trusted content, you can control who can sign images as trusted. After trusted signers push an image to your registry, users can pull the signed content so that they can verify the source of the image. For more information, see [Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent).
+1. **Content Trust for your images**: Ensure the integrity of your images by enabling content trust in your {{site.data.keyword.registrylong_notm}}. With trusted content, you can control who can sign images as trusted. After trusted signers push an image to your registry, users can pull the signed content so that they can verify the source of the image. For more information, see [Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent).
 
-2.  **Container Image Security Enforcement**: Use an admission controller with custom policies so that you can verify container images before you deploy them. With a container image security enforcement project like [Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec), you control where the images are deployed from and ensure that they meet [content trust](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent) requirements. If a deployment does not meet the policies that you set, security enforcement prevents modifications to your cluster.
+2. **Container Image Security Enforcement**: Use an admission controller with custom policies so that you can verify container images before you deploy them. With a container image security enforcement project like [Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec), you control where the images are deployed from and ensure that they meet [content trust](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent) requirements. If a deployment does not meet the policies that you set, security enforcement prevents modifications to your cluster.
 
-3.  **Image Vulnerability Scanner**: By default, Vulnerability Advisor scans images that are stored in {{site.data.keyword.registrylong_notm}} to find potential security vulnerabilities. For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).
+3. **Image Vulnerability Scanner**: By default, Vulnerability Advisor scans images that are stored in {{site.data.keyword.registrylong_notm}} to find potential security vulnerabilities. For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).
 
-4.  **Network insights with Security Advisor (beta)**: With {{site.data.keyword.cloud_notm}} Security Advisor, you can centralize security insights from {{site.data.keyword.cloud_notm}} services such as Vulnerability Advisor and {{site.data.keyword.cloudcerts_short}}. When you enable Security Advisor in your cluster, you can view reports about suspicious incoming and outgoing network traffic. For more information, see [Network Analytics](/docs/security-advisor?topic=security-advisor-setup-network#setup-network). To install, see [Setting up monitoring of suspicious clients and server IP addresses for a Kubernetes cluster](/docs/security-advisor?topic=security-advisor-setup-network#setup-network).
+4. **Network insights with Security Advisor (beta)**: With {{site.data.keyword.cloud_notm}} Security Advisor, you can centralize security insights from {{site.data.keyword.cloud_notm}} services such as Vulnerability Advisor and {{site.data.keyword.cloudcerts_short}}. When you enable Security Advisor in your cluster, you can view reports about suspicious incoming and outgoing network traffic. For more information, see [Network Analytics](/docs/security-advisor?topic=security-advisor-setup-network#setup-network). To install, see [Setting up monitoring of suspicious clients and server IP addresses for a Kubernetes cluster](/docs/security-advisor?topic=security-advisor-setup-network#setup-network).
 
-5.  **{{site.data.keyword.cloudcerts_long_notm}}**: If you want to [expose your app by using a custom domain with TLS](/docs/containers?topic=containers-ingress-types#alb-comm-create), you can store your TLS certificate in {{site.data.keyword.cloudcerts_short}}. Expired or about-to-expire certificates can also be reported in your {{site.data.keyword.security-advisor_short}} dashboard. For more information, see [Getting started with {{site.data.keyword.cloudcerts_short}}](/docs/certificate-manager?topic=certificate-manager-getting-started#getting-started).
+5. **{{site.data.keyword.cloudcerts_long_notm}}**: If you want to [expose your app by using a custom domain with TLS](/docs/containers?topic=containers-ingress-types#alb-comm-create), you can store your TLS certificate in {{site.data.keyword.cloudcerts_short}}. Expired or about-to-expire certificates can also be reported in your {{site.data.keyword.security-advisor_short}} dashboard. For more information, see [Getting started with {{site.data.keyword.cloudcerts_short}}](/docs/certificate-manager?topic=certificate-manager-getting-started#getting-started).
 
 <br />
 
@@ -584,6 +582,7 @@ The following diagram presents an example request flow between the kubelet and C
 <img src="images/crio-selinux.png" width="500" alt="Example request flow between kubelet and CRI-O" style="width:400px; border-style: none"/>
 
 <br />
+
 
 
 ## Image and registry
@@ -646,7 +645,7 @@ When you run multiple apps in your cluster, you want to make sure that your work
 
 **What is an {{site.data.keyword.openshiftshort}} project and why should I use it?**
 
-  {{site.data.keyword.openshiftshort}} projects are a way to virtually partition a cluster and provide isolation for your deployments and the groups of users that want to move their workload onto the cluster. With projects, you can organize resources across worker nodes and also across zones in multizone clusters.  
+    {{site.data.keyword.openshiftshort}} projects are a way to virtually partition a cluster and provide isolation for your deployments and the groups of users that want to move their workload onto the cluster. With projects, you can organize resources across worker nodes and also across zones in multizone clusters.  
 
 Every cluster is set up with a set of default {{site.data.keyword.openshiftshort}} projects that include the deployments and services that are required for {{site.data.keyword.openshiftlong_notm}} to run properly and manage the cluster. For more information, see the [service architecture](/docs/openshift?topic=openshift-service-arch). Cluster administrators automatically have access to these projects and can set up additional projects in the cluster. In addition, cluster users who are granted access to the cluster can create their own project and, as the creator of the project, can manage the project with administrator permissions. However, cluster users do not have access to other projects by default, unless they are granted access by a cluster administrator. 
 
@@ -704,13 +703,13 @@ You are responsible for ensuring the security of your personal information in Ku
 {: shortdesc}
 
 <dl>
-  <dt>Use a Kubernetes secret to store personal information</dt>
-  <dd>Store personal information only in Kubernetes resources that are designed to hold personal information. For example, do not use your name in the name of an {{site.data.keyword.openshiftshort}} project, deployment, service, or config map. For proper protection and encryption, store personal information in [secrets ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/secret/) instead.
-  <p class="tip">For centralized management of all your secrets across clusters and injection at application runtime, try [{{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-tutorial-kubernetes-secrets).</p></dd>
+    <dt>Use a Kubernetes secret to store personal information</dt>
+    <dd>Store personal information only in Kubernetes resources that are designed to hold personal information. For example, do not use your name in the name of an {{site.data.keyword.openshiftshort}} project, deployment, service, or config map. For proper protection and encryption, store personal information in [secrets ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/secret/) instead.
+    <p class="tip">For centralized management of all your secrets across clusters and injection at application runtime, try [{{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-tutorial-kubernetes-secrets).</p></dd>
 
-  <dt>Use a Kubernetes `imagePullSecret` to store image registry credentials</dt>
-  <dd>Do not store personal information in container images or registry namespaces. For proper protection and encryption, store registry credentials in <a href="/docs/containers?topic=containers-registry#other">Kubernetes `imagePullSecrets`</a> and other personal information in [secrets ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/secret/) instead. Remember that if personal information is stored in a previous layer of an image, deleting an image might not be sufficient to delete this personal information.</dd>
-  </dl>
+    <dt>Use a Kubernetes <code>imagePullSecret</code> to store image registry credentials</dt>
+    <dd>Do not store personal information in container images or registry namespaces. For proper protection and encryption, store registry credentials in <a href="/docs/containers?topic=containers-registry#other">Kubernetes `imagePullSecrets`</a> and other personal information in [secrets ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/secret/) instead. Remember that if personal information is stored in a previous layer of an image, deleting an image might not be sufficient to delete this personal information.</dd>
+    </dl>
 
 
 
@@ -722,5 +721,7 @@ On SGX-enabled bare metal worker nodes, you can encrypt your data in use by usin
 If vulnerabilities are found in Kubernetes, Kubernetes releases CVEs in security bulletins to inform users and to describe the actions that users must take to remediate the vulnerability. Kubernetes security bulletins that affect {{site.data.keyword.openshiftlong_notm}} users or the {{site.data.keyword.cloud_notm}} platform are published in the [{{site.data.keyword.cloud_notm}} security bulletin](https://cloud.ibm.com/status?component=containers-kubernetes&selected=security).
 
 Some CVEs require the latest patch update for a {{site.data.keyword.openshiftshort}} version that you can install as part of the regular [cluster update process](/docs/containers?topic=containers-update#update) in {{site.data.keyword.openshiftlong_notm}}. Make sure to apply security patches in time to protect your cluster from malicious attacks. For more information about what is included in a security patch, refer to the [version changelog](/docs/openshift?topic=openshift-openshift_changelog).
+
+
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-05"
+lastupdated: "2021-08-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -55,7 +55,6 @@ content-type: troubleshoot
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -107,7 +106,7 @@ content-type: troubleshoot
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
   
-  
+
 # Why does my app fail when a non-root user owns the NFS file storage mount path?
 {: #nonroot}
 
@@ -191,14 +190,14 @@ When you include an [init container](https://kubernetes.io/docs/concepts/workloa
     ```
     {: codeblock}
 
-3.  Create the PVC.
+3. Create the PVC.
 
     ```sh
     oc apply -f mypvc.yaml
     ```
     {: pre}
 
-4.  In your deployment `.yaml` file, add the init container. Include the UID and GID that you previously retrieved.
+4. In your deployment `.yaml` file, add the init container. Include the UID and GID that you previously retrieved.
 
     ```yaml
     initContainers:
@@ -208,7 +207,7 @@ When you include an [init container](https://kubernetes.io/docs/concepts/workloa
       args:
         - chown <UID>:<GID> /mount; # Replace UID and GID with values from the Dockerfile
       volumeMounts:
-      - name: volume # Or you can replace with any name
+        - name: volume # Or you can replace with any name
         mountPath: /mount # Must match the mount path in the args line
     ```
     {: codeblock}
@@ -252,7 +251,7 @@ When you include an [init container](https://kubernetes.io/docs/concepts/workloa
     ```
     {: codeblock}
 
-5.  Create the pod and mount the PVC to your pod.
+5. Create the pod and mount the PVC to your pod.
     ```sh
     oc apply -f my-pod.yaml
     ```
@@ -262,69 +261,71 @@ When you include an [init container](https://kubernetes.io/docs/concepts/workloa
     {: note}
 
 6. Verify that the volume is successfully mounted to your pod. Note the pod name and **Containers/Mounts** path.
-   ```sh
-   oc describe pod <my-pod>
-   ```
-   {: pre}
+    ```sh
+    oc describe pod <my-pod>
+    ```
+    {: pre}
 
-   **Example output**:
-   ```yaml
-   Name:       mypod-123456789
-   Namespace:	default
-   ...
-   Init Containers:
-   ...
-   Mounts:
-     /mount from volume (rw)
-     /var/run/secrets/kubernetes.io/serviceaccount from default-token-cp9f0 (ro)
-   ...
-   Containers:
-     jenkins:
-       Container ID:
-       Image:		jenkins
-       Image ID:
-       Port:		  <none>
-       State:		Waiting
-         Reason:		PodInitializing
-       Ready:		False
-       Restart Count:	0
-       Environment:	<none>
-       Mounts:
-         /var/jenkins_home from volume (rw)
-         /var/run/secrets/kubernetes.io/serviceaccount from default-token-cp9f0 (ro)
-   ...
-   Volumes:
-     myvol:
-       Type:	PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
-       ClaimName:	mypvc
-       ReadOnly:	  false
+    **Example output**:
+    ```yaml
+    Name:       mypod-123456789
+    Namespace:    default
+    ...
+    Init Containers:
+    ...
+    Mounts:
+        /mount from volume (rw)
+        /var/run/secrets/kubernetes.io/serviceaccount from default-token-cp9f0 (ro)
+    ...
+    Containers:
+        jenkins:
+        Container ID:
+        Image:        jenkins
+        Image ID:
+        Port:          <none>
+        State:        Waiting
+            Reason:        PodInitializing
+        Ready:        False
+        Restart Count:    0
+        Environment:    <none>
+        Mounts:
+            /var/jenkins_home from volume (rw)
+            /var/run/secrets/kubernetes.io/serviceaccount from default-token-cp9f0 (ro)
+    ...
+    Volumes:
+        myvol:
+        Type:    PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
+        ClaimName:    mypvc
+        ReadOnly:      false
 
-   ```
-   {: screen}
+    ```
+    {: screen}
 
-7.  Log in to the pod by using the pod name that you previously noted.
+7. Log in to the pod by using the pod name that you previously noted.
     ```sh
     oc exec -it <my-pod-123456789> /bin/bash
     ```
     {: pre}
 
 8. Verify the permissions of your container's mount path. In the example, the mount path is `/var/jenkins_home`.
-   ```sh
-   ls -ln /var/jenkins_home
-   ```
-   {: pre}
+    ```sh
+    ls -ln /var/jenkins_home
+    ```
+    {: pre}
 
-   **Example output**:
-   ```sh
-   jenkins@mypod-123456789:/$ ls -ln /var/jenkins_home
-   total 12
-   -rw-r--r-- 1 1000 1000  102 Mar  9 19:58 copy_reference_file.log
-   drwxr-xr-x 2 1000 1000 4096 Mar  9 19:58 init.groovy.d
-   drwxr-xr-x 9 1000 1000 4096 Mar  9 20:16 war
-   ```
-   {: screen}
+    **Example output**:
+    ```sh
+    jenkins@mypod-123456789:/$ ls -ln /var/jenkins_home
+    total 12
+    -rw-r--r-- 1 1000 1000  102 Mar  9 19:58 copy_reference_file.log
+    drwxr-xr-x 2 1000 1000 4096 Mar  9 19:58 init.groovy.d
+    drwxr-xr-x 9 1000 1000 4096 Mar  9 20:16 war
+    ```
+    {: screen}
 
-   This output shows that the GID and UID from your Dockerfile (in this example, `1000` and `1000`) own the mount path inside the container.
+    This output shows that the GID and UID from your Dockerfile (in this example, `1000` and `1000`) own the mount path inside the container.
+
+
 
 
 

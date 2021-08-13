@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -55,7 +55,6 @@ content-type: troubleshoot
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -106,15 +105,14 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 # Why is my Portieris cluster image security enforcement installation canceled?
 {: #portieris_enable}
 
 **Infrastructure provider**:
-  * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+    * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+    * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 
 Portieris image security enforcement add-on does not install.  You see a master status similar to the following:
@@ -139,7 +137,7 @@ Potential conflicting image admission controller sources include:
 Identify and remove the conflicting image admission controller.
 {: tsResolve}
 
-1.  Check for existing image admission controllers.
+1. Check for existing image admission controllers.
     *   Check if you have an existing container image security enforcement deployment in your cluster. If no output is returned, you do not have the deployment.
         ```
         oc get deploy cise-ibmcloud-image-enforcement -n ibm-system
@@ -165,10 +163,11 @@ Identify and remove the conflicting image admission controller.
         portieris     portieris   3/3     3            3           8m8s
         ```
         {: pre}
-2.  Uninstall the conflicting deployment.
+
+2. Uninstall the conflicting deployment.
     *   For container image security enforcement, see the [{{site.data.keyword.registrylong_notm}} documentation](/docs/Registry?topic=Registry-security_enforce#remove).
     *   For Portieris, see the [open source documentation](https://github.com/IBM/portieris#uninstalling-portieris){: external}.
-3.  Confirm that conflicting admission controllers are removed by checking that the cluster no longer has a mutating webhook configuration for an image admission controller.
+3. Confirm that conflicting admission controllers are removed by checking that the cluster no longer has a mutating webhook configuration for an image admission controller.
     ```
     oc get MutatingWebhookConfiguration image-admission-config
     ```
@@ -179,4 +178,7 @@ Identify and remove the conflicting image admission controller.
     Error from server (NotFound): mutatingwebhookconfigurations.admissionregistration.k8s.io "image-admission-config" not found
     ```
     {: pre}
-4.  Retry the installing the add-on by running the `ibmcloud oc cluster image-security enable` command.
+
+4. Retry the installing the add-on by running the `ibmcloud oc cluster image-security enable` command.
+
+

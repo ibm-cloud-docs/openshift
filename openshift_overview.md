@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Overview
 {: #roks-overview}
@@ -199,9 +197,9 @@ Review the key benefits of using containers to run your workloads in the cloud.
 <dd>You can fit many containers in the amount of space that a single virtual machine requires.</dd>
 <dt>Containers are portable</dt>
 <dd><ul>
-  <li>Reuse pieces of images to build containers. </li>
-  <li>Move app code quickly from staging to production environments.</li>
-  <li>Automate your processes with continuous delivery tools.</li></ul>
+    <li>Reuse pieces of images to build containers. </li>
+    <li>Move app code quickly from staging to production environments.</li>
+    <li>Automate your processes with continuous delivery tools.</li></ul>
 </dd>
 </dl>
 
@@ -249,5 +247,7 @@ Review how you can learn about Kubernetes concepts and the terminology.
 
 * Familiarize yourself with the product by completing the [Creating clusters tutorial](/docs/openshift?topic=openshift-openshift_tutorial).
 * Learn how Kubernetes and {{site.data.keyword.openshiftlong_notm}} work together by completing this [course](https://cognitiveclass.ai/courses/kubernetes-course).
+
+
 
 

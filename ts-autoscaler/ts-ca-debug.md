@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -55,7 +55,6 @@ content-type: troubleshoot
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -106,9 +105,8 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 # Debugging the cluster autoscaler
 {: #debug_cluster_autoscaler}
 
@@ -121,7 +119,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 {: #ca-debug-version}
 
 Check that your cluster runs the latest version of the cluster autoscaler Helm chart.
-1.  Check the chart version. The **CHART** name has the version in the format`ibm-iks-cluster-autoscaler-1.1.2`.
+1. Check the chart version. The **CHART** name has the version in the format`ibm-iks-cluster-autoscaler-1.1.2`.
 
     ```sh
     helm ls
@@ -130,25 +128,25 @@ Check that your cluster runs the latest version of the cluster autoscaler Helm c
 
     **Example output**
     ```
-    NAME                      	REVISION	UPDATED                 	STATUS  CHART                           	APP VERSION	NAMESPACE  
-    ibm-iks-cluster-autoscaler	1       	Wed Aug 28 16:38:23 2019	DEPLOYEDibm-iks-cluster-autoscaler-1.0.8	           	kube-system
+    NAME                          REVISION    UPDATED                     STATUS  CHART                               APP VERSION    NAMESPACE  
+    ibm-iks-cluster-autoscaler    1           Wed Aug 28 16:38:23 2019    DEPLOYEDibm-iks-cluster-autoscaler-1.0.8                   kube-system
     ```
     {: screen}
 
-2.  Compare the version that runs in your cluster against the [latest **CHART VERSION** of the`ibm-iks-cluster-autoscaler` Helm chart](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibm-iks-cluster-autoscaler) in the **Helm Catalog** console.
-3.  If your version is outdated, [deploy the latest cluster autoscaler to your cluster](/docs/openshift?topic=openshift-ca#ca_helm).
+2. Compare the version that runs in your cluster against the [latest **CHART VERSION** of the`ibm-iks-cluster-autoscaler` Helm chart](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibm-iks-cluster-autoscaler) in the **Helm Catalog** console.
+3. If your version is outdated, [deploy the latest cluster autoscaler to your cluster](/docs/openshift?topic=openshift-ca#ca_helm).
 
 ## Step 2: Check the configuration
 {: #ca-debug-config}
 
 Check that the cluster autoscaler is configured correctly.
-1.  Get the YAML configuration file of the cluster autoscaler configmap.
+1. Get the YAML configuration file of the cluster autoscaler configmap.
     ```sh
     oc get cm iks-ca-configmap -n kube-system -o yaml > iks-ca-configmap.yaml
     ```
     {: pre}
 
-2.  In the `data.workerPoolsConfig.json` field, check that the correct worker pools are enabled with the minimum and maximum size per worker pool.
+2. In the `data.workerPoolsConfig.json` field, check that the correct worker pools are enabled with the minimum and maximum size per worker pool.
 
     *  **`"name": "<worker_pool_name>"`**: The name of your worker pool in the configmap must be exactly the same as the name of the worker pool in your cluster. Multiple worker pools must be comma-separated. To check the name of your cluster worker pools, run `ibmcloud oc worker-pool ls -c <cluster_name_or_ID>`.
     *  **`"minSize": 2`**: In general, the `minSize` must be `2` or greater. Remember that the`minSize` value cannot be `0`, and you can only have a `minSize` of 1 if you [disable the public ALBs](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure).
@@ -162,7 +160,7 @@ Check that the cluster autoscaler is configured correctly.
     ```
     {: screen}
 
-3.  In the `metadata.annotations.workerPoolsConfigStatus` field, check for a **FAILED CODE** error message. Follow any recovery steps that are included in the error message. For example, you might get a message similar to the following, where you must have the correct permissions to the resource group that the cluster is in.
+3. In the `metadata.annotations.workerPoolsConfigStatus` field, check for a **FAILED CODE** error message. Follow any recovery steps that are included in the error message. For example, you might get a message similar to the following, where you must have the correct permissions to the resource group that the cluster is in.
 
     ```yaml
     annotations:
@@ -186,6 +184,7 @@ Review the status of the cluster autoscaler.
 oc describe cm -n kube-system cluster-autoscaler-status
 ```
 {: pre}
+
 * **`status`**: Review the status message for more troubleshooting information, if any.
 * **`Health`**: Review the overall health of the cluster autoscaler for any errors or failures.
 * **`ScaleUp`**: Review the status of scaleup activity. In general, if the number of worker nodes that are ready and registered match, the scaleup has `NoActivity` because your worker pool has enough worker nodes.
@@ -218,20 +217,20 @@ Events:  none
 {: #ca-debug-pod}
 
 Check the health of the cluster autoscaler pod.
-1.  Get the cluster autoscaler pod. If the status is not **Running**, describe the pod.
+1. Get the cluster autoscaler pod. If the status is not **Running**, describe the pod.
     ```sh
     oc get pods -n kube-system | grep ibm-iks-cluster-autoscaler
     ```
     {: pre}
 
-2.  Describe the cluster autoscaler pod. Review the **Events** section for more troubleshooting information.
+2. Describe the cluster autoscaler pod. Review the **Events** section for more troubleshooting information.
 
     ```sh
     oc describe pod -n kube-system <pod_name>
     ```
     {: pre}
 
-3.  Review the **Command** section to check that the [custom cluster autoscaler configuration](/docs/openshift?topic=openshift-ca#ca_chart_values) matches what you expect, such as the`scale-down-delay-after-add` value.
+3. Review the **Command** section to check that the [custom cluster autoscaler configuration](/docs/openshift?topic=openshift-ca#ca_chart_values) matches what you expect, such as the`scale-down-delay-after-add` value.
     ```sh
     Command:
         ./cluster-autoscaler
@@ -325,5 +324,7 @@ Optional: If you completed the debugging steps and your cluster still does not s
 {: #ca-debug-more}
 
 Monitor the cluster autoscaler activities in your cluster to see if the issue is resolved. If you still experience issues, see [Feedback, questions, and support](/docs/openshift?topic=openshift-get-help).
+
+
 
 

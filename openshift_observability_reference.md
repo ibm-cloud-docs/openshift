@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Observability plug-in CLI
 {: #observability_cli}
@@ -190,40 +188,40 @@ ibmcloud ob logging config create --cluster CLUSTER --instance LOGGING_INSTANCE 
 
 </dl>
 
-**Example**:
-```
+<strong>Example</strong>:
+<code></code>`
 ibmcloud ob logging config create --cluster mycluster --instance mylogna
-```
+<code></code>`
 {: pre}
 
-### `ibmcloud ob logging config delete`
+### <code>ibmcloud ob logging config delete</code>
 {: #logging_config_delete}
 
 Delete a {{site.data.keyword.la_short}} configuration from your cluster.
 {: shortdesc}
 
 
-To remove logging configurations that you manually set up without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you must first make this configuration available to the plug-in by using the [`ibmcloud ob logging agent discover`](#logging_agent_discover) command.
+To remove logging configurations that you manually set up without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you must first make this configuration available to the plug-in by using the [<code>ibmcloud ob logging agent discover</code>](#logging_agent_discover) command.
 {: note}
 
-When you delete the logging configuration, the components that are deleted depend on how you created the logging configuration. For logging configurations that were created with the `ibmcloud ob logging config create` command, the daemon set for the {{site.data.keyword.la_short}} agent, the configmap, and secret are removed from your cluster, and pod logs are no longer sent to your {{site.data.keyword.la_full_notm}} service instance. Logging configurations that you manually created and made visible to the plug-in by using the `ibmcloud ob logging agent discover` command, only the configmap is removed. Your daemon set, secret, and the {{site.data.keyword.la_short}} agent are still deployed to your cluster and you must manually remove them. Because the configmap is removed, pod logs are no longer sent to your {{site.data.keyword.la_full_notm}} service instance. Independent of how you created the configuration, existing log data is still available in {{site.data.keyword.la_full_notm}} until your selected retention period ends.  
+When you delete the logging configuration, the components that are deleted depend on how you created the logging configuration. For logging configurations that were created with the <code>ibmcloud ob logging config create</code> command, the daemon set for the {{site.data.keyword.la_short}} agent, the configmap, and secret are removed from your cluster, and pod logs are no longer sent to your {{site.data.keyword.la_full_notm}} service instance. Logging configurations that you manually created and made visible to the plug-in by using the <code>ibmcloud ob logging agent discover</code> command, only the configmap is removed. Your daemon set, secret, and the {{site.data.keyword.la_short}} agent are still deployed to your cluster and you must manually remove them. Because the configmap is removed, pod logs are no longer sent to your {{site.data.keyword.la_full_notm}} service instance. Independent of how you created the configuration, existing log data is still available in {{site.data.keyword.la_full_notm}} until your selected retention period ends.  
 {: important}
 
 
-```
+<code></code>`
 ibmcloud ob logging config delete --cluster CLUSTER --instance LOGGING_INSTANCE
-```
+<code></code>`
 {: pre}
 
-**Supported infrastructure provider**:
+<strong>Supported infrastructure provider</strong>:
 * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-**Minimum required permissions**:
-- **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
-- **Viewer** platform access role for {{site.data.keyword.la_full_notm}}
+<strong>Minimum required permissions</strong>:
+- <strong>Administrator</strong> platform access role and <strong>Manager</strong> service access role for the <code>ibm-observe</code> Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
+- <strong>Viewer</strong> platform access role for {{site.data.keyword.la_full_notm}}
 
-**Command options**:
+<strong>Command options</strong>:
 <dl>
 <dt><code>--cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster for which you want to delete an existing {{site.data.keyword.la_short}} configurations. To retrieve the cluster name or ID, run `ibmcloud oc clusters`. This value is required.</dd>
@@ -451,40 +449,40 @@ ibmcloud ob monitoring config create --cluster CLUSTER --instance MONITORING_INS
 
 </dl>
 
-**Example**:
-```
+<strong>Example</strong>:
+<code></code>`
 ibmcloud ob monitoring config create --cluster mycluster --instance mymonitoringinstance
-```
+<code></code>`
 {: pre}
 
-### `ibmcloud ob monitoring config delete`
+### <code>ibmcloud ob monitoring config delete</code>
 {: #monitoring_config_delete}
 
 Delete a {{site.data.keyword.mon_short}} configuration from your cluster.
 {: shortdesc}
 
 
-To remove monitoring configurations that you manually set up without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you must first make this configuration available to the plug-in by using the [`ibmcloud ob monitoring agent discover`](#monitoring_agent_discover) command.
+To remove monitoring configurations that you manually set up without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you must first make this configuration available to the plug-in by using the [<code>ibmcloud ob monitoring agent discover</code>](#monitoring_agent_discover) command.
 {: note}
 
 
-When you delete the monitoring configuration, the components that are deleted depend on how you created the monitoring configuration. For monitoring configurations that were created with the `ibmcloud ob monitoring config create` command, the daemon set for the {{site.data.keyword.mon_short}} agent, the configmap, and secret are removed from your cluster, and metrics are no longer sent to your {{site.data.keyword.mon_full_notm}} service instance. Monitoring configurations that you manually created and made visible to the plug-in by using the `ibmcloud ob monitoring agent discover` command, only the configmap is removed. Your daemon set, secret, and the {{site.data.keyword.mon_short}} agent are still deployed to your cluster and you must manually remove them. Because the configmap is removed, metrics are no longer sent to your {{site.data.keyword.mon_full_notm}} service instance. Independent of how you created the configuration, existing metrics are still available in {{site.data.keyword.mon_full_notm}} until your selected retention period ends.  
+When you delete the monitoring configuration, the components that are deleted depend on how you created the monitoring configuration. For monitoring configurations that were created with the <code>ibmcloud ob monitoring config create</code> command, the daemon set for the {{site.data.keyword.mon_short}} agent, the configmap, and secret are removed from your cluster, and metrics are no longer sent to your {{site.data.keyword.mon_full_notm}} service instance. Monitoring configurations that you manually created and made visible to the plug-in by using the <code>ibmcloud ob monitoring agent discover</code> command, only the configmap is removed. Your daemon set, secret, and the {{site.data.keyword.mon_short}} agent are still deployed to your cluster and you must manually remove them. Because the configmap is removed, metrics are no longer sent to your {{site.data.keyword.mon_full_notm}} service instance. Independent of how you created the configuration, existing metrics are still available in {{site.data.keyword.mon_full_notm}} until your selected retention period ends.  
 {: important}
 
-```
+<code></code>`
 ibmcloud ob monitoring config delete --cluster CLUSTER --instance MONITORING_INSTANCE
-```
+<code></code>`
 {: pre}
 
-**Supported infrastructure provider**:
+<strong>Supported infrastructure provider</strong>:
 * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-**Minimum required permissions**:
-- **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
-- **Viewer** platform access role for {{site.data.keyword.mon_full_notm}}
+<strong>Minimum required permissions</strong>:
+- <strong>Administrator</strong> platform access role and <strong>Manager</strong> service access role for the <code>ibm-observe</code> Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
+- <strong>Viewer</strong> platform access role for {{site.data.keyword.mon_full_notm}}
 
-**Command options**:
+<strong>Command options</strong>:
 <dl>
 <dt><code>--cluster <em>CLUSTER</em></code></dt>
 <dd>The name or ID of the cluster for which you want to delete an existing {{site.data.keyword.mon_short}} configuration. To retrieve the cluster name or ID, run `ibmcloud oc cluster ls`. This value is required.</dd>
@@ -640,6 +638,8 @@ ibmcloud ob monitoring config show --cluster CLUSTER --instance MONITORING_INSTA
 <dd>The ID or name of the {{site.data.keyword.mon_full_notm}} service instance for which you want to show the monitoring configuration. To retrieve the name, run `ibmcloud resource service-instances`. This value is required.</dd>
 
 </dl>
+
+
 
 
 

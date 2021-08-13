@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-05"
+lastupdated: "2021-08-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -55,7 +55,6 @@ content-type: troubleshoot
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -107,7 +106,7 @@ content-type: troubleshoot
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
   
-  
+
 # File storage and block storage: Why does my PVC remain in a pending state?
 {: #file_pvc_pending}
 
@@ -124,10 +123,10 @@ During the PVC creation and binding, many different tasks are executed by the fi
 {: tsResolve}
 
 1. Find the root cause for why the PVC remains in a **Pending** state.
-   ```sh
-   oc describe pvc <pvc_name> -n <project>
-   ```
-   {: pre}
+    ```sh
+    oc describe pvc <pvc_name> -n <project>
+    ```
+    {: pre}
 
 2. Review common error message descriptions and resolutions.
 
@@ -142,6 +141,8 @@ During the PVC creation and binding, many different tasks are executed by the fi
 | Storage type not provided, expected storage type is `Endurance` or `Performance`. | You created a custom storage class and specified a storage type that is not supported. | Update your custom storage class to specify `Endurance` or `Performance` as your storage type. To find examples for custom storage classes, see the sample custom storage classes for [file storage](/docs/openshift?topic=openshift-file_storage#file_custom_storageclass) and [block storage](/docs/openshift?topic=openshift-block_storage#block_custom_storageclass). | 
 {: caption="File Storage error messages" caption-side="top"}
 {: summary="The columns are read from left to right. The first column has the error message. The second column describes the error message. The third column provides steps to resolve the error."}
+
+
 
 
 

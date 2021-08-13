@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,8 +104,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
+  
 
 # Deploying OpenShift Data Foundation on VPC clusters
 {: #deploy-odf-vpc}
@@ -118,7 +116,7 @@ The OpenShift Data Foundation add-on is available as a technology preview and mi
 {: preview}
 
 **Supported infrastructure provider**:
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+    * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 **Minimum required permissions**: **Administrator** platform access role and the **Manager** service access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
@@ -132,29 +130,31 @@ If you want to override the default parameters when deploying the add-on, you ca
 
 1. To see the default settings for ODF on VPC clusters, run the `addon options` command.
 
- **For {{site.data.keyword.openshiftshort}} versions 4.6 and 4.7**
-  ```sh
-  ibmcloud oc cluster addon options --addon openshift-container-storage
-  ```
-  {: pre}
-  **For {{site.data.keyword.openshiftshort}} versions 4.7 and above**
-  ```sh
-  ibmcloud oc cluster addon options --addon openshift-container-storage
-  ```
-  {: pre}
-  
+    **For {{site.data.keyword.openshiftshort}} versions 4.6 and 4.7**
+    ```sh
+    ibmcloud oc cluster addon options --addon openshift-container-storage
+    ```
+    {: pre}
+
+    **For {{site.data.keyword.openshiftshort}} versions 4.7 and above**
+    ```sh
+    ibmcloud oc cluster addon options --addon openshift-container-storage
+    ```
+    {: pre}
+
 1. Enable the ODF and specify the `ocsDeploy=True` parameter to deploy ODF with the default configuration parameters. To list the versions and find the current default, run `ibmcloud oc cluster addon versions`. If you have a cluster version other than the default, specify the `--version` flag. The add-on supports `n+1` cluster versions. 
 
 **For {{site.data.keyword.openshiftshort}} versions 4.6 and 4.7**
-  ```sh
-  ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true"
-  ```
-  {: pre}
-  **For {{site.data.keyword.openshiftshort}} versions 4.7 and above**
-  ```sh
-  ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true"
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true"
+    ```
+    {: pre}
+
+    **For {{site.data.keyword.openshiftshort}} versions 4.7 and above**
+    ```sh
+    ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true"
+    ```
+    {: pre}
 
 **Next steps**: [Deploy an app that uses ODF](/docs/openshift?topic=openshift-ocs-deploy-app)
 
@@ -239,52 +239,52 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
 1. Review the [VPC parameter reference](#odf-vpc-param-ref). When you enable the add-on, you can override the default values by specifying the `--param "key=value"` flag for each parameter that you want to override.
 1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.7.0` of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must specify the `--version` flag when you enable the add-on.
 1. Review the add-on options. Note that add-on options are only available for version `4.7.0` and later.
-  ```sh
-  ibmcloud oc cluster addon options --addon openshift-container-storage
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc cluster addon options --addon openshift-container-storage
+    ```
+    {: pre}
 
-  ```sh
-  Add-on Options
-  Option                Default Value   
-  monStorageClassName   ibmc-vpc-block-metro-10iops-tier   
-  osdSize               250Gi   
-  osdDevicePaths        invalid   
-  workerNodes           all   
-  ocsUpgrade            false   
-  ocsDeploy             false   
-  monSize               20Gi   
-  numOfOsd              1   
-  monDevicePaths        invalid   
-  osdStorageClassName   ibmc-vpc-block-metro-10iops-tier
-  clusterEncryption     false
-  ```
-  {: screen}
+    ```sh
+    Add-on Options
+    Option                Default Value   
+    monStorageClassName   ibmc-vpc-block-metro-10iops-tier   
+    osdSize               250Gi   
+    osdDevicePaths        invalid   
+    workerNodes           all   
+    ocsUpgrade            false   
+    ocsDeploy             false   
+    monSize               20Gi   
+    numOfOsd              1   
+    monDevicePaths        invalid   
+    osdStorageClassName   ibmc-vpc-block-metro-10iops-tier
+    clusterEncryption     false
+    ```
+    {: screen}
 
 1. Enable the `openshift-container-storage` add-on. If you also want to deploy ODF and create your storage cluster from the CLI, you can specify the `"ocsDeploy=true"` flag. If you want to override any of the default parameters, specify the `--param "key=value"` flag for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
 
-  ```sh
-  ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true"
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true"
+    ```
+    {: pre}
 
-  **Example command for overriding the `osdSize` parameter**:
-  ```sh
-  ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true" --param "osdSize=500Gi"
-  ```
-  {: pre}
+    **Example command for overriding the `osdSize` parameter**:
+    ```sh
+    ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true" --param "osdSize=500Gi"
+    ```
+    {: pre}
 
 1. Verify the add-on is in a `Ready` state.
-  ```sh
-  ibmcloud oc cluster addon ls -c <cluster_name>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc cluster addon ls -c <cluster_name>
+    ```
+    {: pre}
 
 1. Verify that the `ibm-ocs-operator-controller-manager-*****` pod is running in the `kube-system` namespace.
-  ```sh
-  oc get pods -A | grep ibm-ocs-operator-controller-manager
-  ```
-  {: pre}
+    ```sh
+    oc get pods -A | grep ibm-ocs-operator-controller-manager
+    ```
+    {: pre}
 
 ## Installing the OpenShift Data Foundation add-on from the console
 {: #install-odf-console-vpc}
@@ -308,13 +308,13 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 1. Create a custom resource definition (CRD) called `OcsCluster`. Save one of the following custom resource definition files on your local machine and edit it to include the name of the custom storage class that you created earlier as the `monStorageClassName` and `osdStorageClassName` parameters. For more information about the `OcsCluster` parameters, see the [parameter reference](#odf-vpc-param-ref).
 
-  **Example custom resource definition (CRD) for installing ODF on all worker nodes**
-  ```yaml
-  apiVersion: ocs.ibm.io/v1
-  kind: OcsCluster
-  metadata:
-    name: ocscluster-vpc
-  spec:
+    **Example custom resource definition (CRD) for installing ODF on all worker nodes in a {{site.data.keyword.satelliteshort}} cluster**
+    ```yaml
+    apiVersion: ocs.ibm.io/v1
+    kind: OcsCluster
+    metadata:
+        name: ocscluster-vpc
+      spec:
     monStorageClassName: <monStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
     monSize: <monSize>
     osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
@@ -322,16 +322,16 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     numOfOsd: 1
     billingType: advanced
     ocsUpgrade: false
-  ```
-  {: codeblock}
+    ```
+    {: codeblock}
 
-  **Example custom resource definition (CRD) for installing ODF only on specified worker nodes**
-  ```yaml
-  apiVersion: ocs.ibm.io/v1
-  kind: OcsCluster
-  metadata:
-    name: ocscluster-sat
-  spec:
+    **Example custom resource definition (CRD) for installing ODF only on specified worker nodes in a {{site.data.keyword.satelliteshort}} cluster**
+    ```yaml
+    apiVersion: ocs.ibm.io/v1
+    kind: OcsCluster
+    metadata:
+        name: ocscluster-sat
+      spec:
     monStorageClassName: <monStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
     monSize: <monSize>
     osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
@@ -343,38 +343,38 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
       - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
       - <workerNodes>
       - <workerNodes>
-  ```
-  {: codeblock}
+    ```
+    {: codeblock}
 
 3. Save the file and create the `OcsCluster` custom resource to your cluster.
-  ```sh
-  oc create -f <ocs-cluster-filename>.yaml
-  ```
-  {: pre}
+    ```sh
+    oc create -f <ocs-cluster-filename>.yaml
+    ```
+    {: pre}
 
 4. Verify that your `OcsCluster` is running.
-  ```sh
-  oc describe ocscluster ocscluster-vpc
-  ```
-  {: pre}
+    ```sh
+    oc describe ocscluster ocscluster-vpc
+    ```
+    {: pre}
 
-  **Example output**
-  ```yaml
-  Name:         ocscluster-vpc
-  Namespace:    
-  Labels:       <none>
-  Annotations:  <none>
-  API Version:  ocs.ibm.io/v1
-  Kind:         OcsCluster
-  Metadata:
-    Creation Timestamp:  2021-03-23T20:56:51Z
+    **Example output**
+    ```yaml
+    Name:         ocscluster-vpc
+    Namespace:    
+    Labels:       <none>
+    Annotations:  <none>
+    API Version:  ocs.ibm.io/v1
+    Kind:         OcsCluster
+    Metadata:
+        Creation Timestamp:  2021-03-23T20:56:51Z
     Finalizers:
-      finalizer.ocs.ibm.io
+        finalizer.ocs.ibm.io
     Generation:  1
     Managed Fields:
-      API Version:  ocs.ibm.io/v1
-      Fields Type:  FieldsV1
-      fieldsV1:
+        API Version:  ocs.ibm.io/v1
+        Fields Type:  FieldsV1
+        fieldsV1:
         f:spec:
           .:
           f:billingType:
@@ -384,12 +384,12 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
           f:ocsUpgrade:
           f:osdSize:
           f:osdStorageClassName:
-      Manager:      oc
-      Operation:    Update
-      Time:         2021-03-23T20:56:51Z
-      API Version:  ocs.ibm.io/v1
-      Fields Type:  FieldsV1
-      fieldsV1:
+        Manager:      oc
+        Operation:    Update
+        Time:         2021-03-23T20:56:51Z
+        API Version:  ocs.ibm.io/v1
+        Fields Type:  FieldsV1
+        fieldsV1:
         f:metadata:
           f:finalizers:
             .:
@@ -397,25 +397,26 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
         f:status:
           .:
           f:storageClusterStatus:
-      Manager:         manager
-      Operation:       Update
-      Time:            2021-04-09T23:12:02Z
+        Manager:         manager
+        Operation:       Update
+        Time:            2021-04-09T23:12:02Z
     Resource Version:  11372332
     Self Link:         /apis/ocs.ibm.io/v1/ocsclusters/ocscluster-vpc
     UID:               aa11a1a1-111f-aace-afac-1fa1afe1111a
-  Spec:
-    Billing Type:            hourly
+    Spec:
+        Billing Type:            hourly
     Mon Size:                20Gi
     Mon Storage Class Name:  ibmc-vpc-block-10iops-tier
     Num Of Osd:              1
     Ocs Upgrade:             false
     Osd Size:                100Gi
     Osd Storage Class Name:  ibmc-vpc-block-10iops-tier
-  Status:
-    Storage Cluster Status:  
-  Events:                    <none>
-  ```
-  {: codeblock}
+    Status:
+        Storage Cluster Status:  
+    Events:                    <none>
+    ```
+    {: codeblock}
+
 <br />
 
 **Next steps**: [Deploy an app that uses ODF](/docs/openshift?topic=openshift-ocs-deploy-app)
@@ -442,28 +443,28 @@ You can scale your ODF configuration by increasing the `numOfOsd` setting. When 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Get the name of your `OcsCluster` custom resource.
-  ```sh
-  oc get ocscluster
-  ```
-  {: pre}
+    ```sh
+    oc get ocscluster
+    ```
+    {: pre}
 
 1. Save your `OcsCluster` custom resource YAML file to your local machine as `ocscluster.yaml`.
-  ```sh
-  oc get ocscluster ocscluster-vpc -o yaml
-  ```
-  {: pre}
+    ```sh
+    oc get ocscluster ocscluster-vpc -o yaml
+    ```
+    {: pre}
 
 1. Increase the `numOfOsd` parameter and reapply the `ocscluster` CRD to your cluster.
-  ```sh
-  oc apply -f ocscluster.yaml
-  ```
-  {: pre}
+    ```sh
+    oc apply -f ocscluster.yaml
+    ```
+    {: pre}
 
 1. Verify that the additional OSDs are created.
-  ```sh
-  oc get pv
-  ```
-  {: pre}
+    ```sh
+    oc get pv
+    ```
+    {: pre}
 
 <br />
 
@@ -475,10 +476,11 @@ To increase the storage capacity in your storage cluster, add compatible worker 
 
 1. Expand the worker pool of the cluster that is used for OCS by [adding worker nodes](/docs/openshift?topic=openshift-add_workers). Ensure that your worker nodes meet the [requirements for ODF](#ocs-storage-prep). If you deployed ODF on all of the worker nodes in your cluster, the ODF drivers are installed on the new worker nodes when they are added to your cluster.
 2. If you deployed ODF on a subset of worker nodes in your cluster by specifying the private `<workerNodes>` parameters in your `OcsCluster` custom resource, you can add the IP addresses of the new worker nodes to your ODF deployment by editing the custom resource definition.
-  ```sh
-  oc edit ocscluster ocscluster-vpc
-  ```
-  {: pre}
+    ```sh
+    oc edit ocscluster ocscluster-vpc
+    ```
+    {: pre}
+
 3. Save the `OcsCluster` custom resource file to reapply it to your cluster.
 
 <br />
@@ -519,4 +521,6 @@ Refer to the following parameters when you use the add-on or operator in VPC clu
 {: summary="The rows are read from left to right. The first column is the parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
 
 <br />
+
+
 

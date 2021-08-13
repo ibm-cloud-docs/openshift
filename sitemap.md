@@ -9,7 +9,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -104,12 +103,13 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Site map
 {: #sitemap}
+
+
 
 
 
@@ -687,13 +687,8 @@ subcollection: openshift
 * [Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge#edge_workloads)
 
 [Classic: Controlling traffic with network policies](/docs/openshift?topic=openshift-network_policies)
-  * [Kubernetes network policies](/docs/openshift?topic=openshift-network_policies#kubernetes-network-policies)
-  * [Calico network policies](/docs/openshift?topic=openshift-network_policies#calico-network-policies)
 * [Default Calico network policies](/docs/openshift?topic=openshift-network_policies#default_policy)
 * [Installing and configuring the Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install)
-* [Installing the Calico CLI, `calicoctl`, according to your operating system.](/docs/openshift?topic=openshift-network_policies#cli_install-calicoctl)
-  * [Linux and OS X](/docs/openshift?topic=openshift-network_policies#cli_install-calicoctl-linux-osx)
-  * [Windows](/docs/openshift?topic=openshift-network_policies#cli_install-calicoctl-windows)
 * [Viewing network policies](/docs/openshift?topic=openshift-network_policies#view_policies)
 * [Adding network policies](/docs/openshift?topic=openshift-network_policies#adding_network_policies)
 * [Controlling inbound traffic to NLB or NodePort services](/docs/openshift?topic=openshift-network_policies#block_ingress)
@@ -1570,8 +1565,8 @@ subcollection: openshift
 [{{site.data.keyword.openshiftlong_notm}} CLI](/docs/openshift?topic=openshift-kubernetes-service-cli)
 * [`cluster` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster)
   * [`ibmcloud oc cluster addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable)
-  * [`ibmcloud oc cluster addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable)
-  * [`ibmcloud oc cluster addon get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_get)
+  * [<code>ibmcloud oc cluster addon enable</code>](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable)
+  * [<code>ibmcloud oc cluster addon get</code>](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_get)
   * [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addons)
   * [`ibmcloud oc cluster addon options`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_options)
   * [`ibmcloud oc cluster addon update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_update)
@@ -1613,7 +1608,7 @@ subcollection: openshift
 * [`worker-pool` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool)
   * [`ibmcloud oc worker-pool create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create)
   * [`ibmcloud oc worker-pool create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2)
-  * [`ibmcloud oc worker-pool get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_get)
+  * [<code>ibmcloud oc worker-pool get</code>](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_get)
   * [`ibmcloud oc worker-pool label rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_rm)
   * [`ibmcloud oc worker-pool label set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_set)
   * [`ibmcloud oc worker-pool ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pools)
@@ -1720,7 +1715,7 @@ subcollection: openshift
 * [Logging commands](/docs/openshift?topic=openshift-observability_cli#logging-commands)
   * [`ibmcloud ob logging agent discover`](/docs/openshift?topic=openshift-observability_cli#logging_agent_discover)
   * [`ibmcloud ob logging config create`](/docs/openshift?topic=openshift-observability_cli#logging_config_create)
-  * [`ibmcloud ob logging config delete`](/docs/openshift?topic=openshift-observability_cli#logging_config_delete)
+  * [<code>ibmcloud ob logging config delete</code>](/docs/openshift?topic=openshift-observability_cli#logging_config_delete)
   * [`ibmcloud ob logging config list`](/docs/openshift?topic=openshift-observability_cli#logging_config_list)
   * [`ibmcloud ob logging config enable public-endpoint|private-endpoint`](/docs/openshift?topic=openshift-observability_cli#logging_config_enable)
   * [`ibmcloud ob logging config replace`](/docs/openshift?topic=openshift-observability_cli#logging_config_replace)
@@ -1728,7 +1723,7 @@ subcollection: openshift
 * [Monitoring commands](/docs/openshift?topic=openshift-observability_cli#monitoring-commands)
   * [`ibmcloud ob monitoring agent discover`](/docs/openshift?topic=openshift-observability_cli#monitoring_agent_discover)
   * [`ibmcloud ob monitoring config create`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_create)
-  * [`ibmcloud ob monitoring config delete`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_delete)
+  * [<code>ibmcloud ob monitoring config delete</code>](/docs/openshift?topic=openshift-observability_cli#monitoring_config_delete)
   * [`ibmcloud ob monitoring config list`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_list)
   * [`ibmcloud ob monitoring config enable public-endpoint|private-endpoint`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_enable)
   * [`ibmcloud ob monitoring config replace`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_replace)
