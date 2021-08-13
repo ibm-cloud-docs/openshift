@@ -1304,6 +1304,17 @@ subcollection: openshift
 * [Limitations](/docs/openshift?topic=openshift-portworx#portworx_limitations)
 
 
+## Understanding OpenShift Data Foundation
+{: #sitemap_understanding_openshift_data_foundation}
+
+
+[Understanding OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep)
+
+* [Architecture overview](/docs/openshift?topic=openshift-ocs-storage-prep#odf-ov)
+
+* [Deploying OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep#odf-deploy-options)
+
+
 ## Deploying OpenShift Data Foundation on VPC clusters
 {: #sitemap_deploying_openshift_data_foundation_on_vpc_clusters}
 
