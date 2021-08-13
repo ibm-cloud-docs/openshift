@@ -2,12 +2,13 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-13"
 
 keywords: openshift
 subcollection: openshift
 
 ---
+
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
@@ -686,8 +687,13 @@ subcollection: openshift
 * [Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge#edge_workloads)
 
 [Classic: Controlling traffic with network policies](/docs/openshift?topic=openshift-network_policies)
+  * [Kubernetes network policies](/docs/openshift?topic=openshift-network_policies#kubernetes-network-policies)
+  * [Calico network policies](/docs/openshift?topic=openshift-network_policies#calico-network-policies)
 * [Default Calico network policies](/docs/openshift?topic=openshift-network_policies#default_policy)
 * [Installing and configuring the Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install)
+* [Installing the Calico CLI, `calicoctl`, according to your operating system.](/docs/openshift?topic=openshift-network_policies#cli_install-calicoctl)
+  * [Linux and OS X](/docs/openshift?topic=openshift-network_policies#cli_install-calicoctl-linux-osx)
+  * [Windows](/docs/openshift?topic=openshift-network_policies#cli_install-calicoctl-windows)
 * [Viewing network policies](/docs/openshift?topic=openshift-network_policies#view_policies)
 * [Adding network policies](/docs/openshift?topic=openshift-network_policies#adding_network_policies)
 * [Controlling inbound traffic to NLB or NodePort services](/docs/openshift?topic=openshift-network_policies#block_ingress)
