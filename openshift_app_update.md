@@ -2,13 +2,14 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-13"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, update, upgrade
 
 subcollection: openshift
 
 ---
+
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}

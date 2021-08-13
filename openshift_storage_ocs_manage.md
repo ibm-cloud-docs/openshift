@@ -2,13 +2,14 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-13"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc, roks
 
 subcollection: openshift
 
 ---
+
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}

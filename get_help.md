@@ -2,13 +2,14 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-13"
 
 keywords: red hat openshift, red hat openshift on ibm cloud, openshift container platform, red hat, red hat cluster, openshift, containers, clusters, roks, rhoks, rhos
 
 subcollection: openshift
 
 ---
+
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
