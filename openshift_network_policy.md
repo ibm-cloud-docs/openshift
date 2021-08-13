@@ -190,7 +190,7 @@ To view, manage, and add Calico policies, install and configure the Calico CLI.
 
 
 ## Installing the Calico CLI, `calicoctl`, according to your operating system.
-{: #cli_install-calidoctl}
+{: #cli_install-calicoctl}
 
 Complete the following steps to install `calicoctl`.
 {: shortdesc}
@@ -229,7 +229,7 @@ Complete the following steps to install `calicoctl`.
     {: pre}
 
 ### Windows
-{: #cli_install-calidoctl-windows}
+{: #cli_install-calicoctl-windows}
 
 1. [Download the Calico CLI](https://github.com/projectcalico/calicoctl/releases){: external}. When you save the file, rename it to `calicoctl.exe` and save it in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later.
 
