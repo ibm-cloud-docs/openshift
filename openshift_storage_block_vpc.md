@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -515,7 +515,7 @@ You can attach a volume to one worker node only. Make sure that the volume is in
     </tr>
     <tr>
     <td><code>zone</code></td>
-    <td>In the spec CSI volume attributes section, enter the VPC block zone that matches the location that you retrieved earlier. For example, if your location is <strong>Washington DC-1</strong>, then use <code>us-east-1</code> as your zone. To list available zones, run <code>ibmcloud is zones</code>. To find an overview of available VPC zones and locations, see [Creating a VPC in a different region](/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region).</td>
+    <td>In the spec CSI volume attributes section, enter the VPC block zone that matches the location that you retrieved earlier. For example, if your location is <strong>Washington DC-1</strong>, then use <code>us-east-1</code> as your zone. To list available zones, run <code>ibmcloud is zones</code>. To find an overview of available VPC zones and locations, see <a href="/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region">Creating a VPC in a different region</a>.</td>
     </tr>
     <tr>
     <td><code>volumeId</code></br><code>spec.csi.volumeHandle</code></td>
@@ -877,7 +877,7 @@ To create your own storage class:
         </tr>
         <tr>
         <td><code>sizeRange</code></td>
-        <td>In the parameters, enter the size range for your storage in gigabytes (GiB), such as <code>[10-2000]GiB</code>. The size range must match the {{site.data.keyword.block_storage_is_short}} profile that you specify in <code>parameters.profile</code>. To find supported storage sizes for a specific profile, see [Tiered IOPS profiles](/docs/vpc?topic=vpc-block-storage-profiles). Any PVC that uses this storage class must specify a size value that is within this range.</td>
+        <td>In the parameters, enter the size range for your storage in gigabytes (GiB), such as <code><a href="/docs/vpc?topic=vpc-block-storage-profiles">10-2000]GiB</code>. The size range must match the {{site.data.keyword.block_storage_is_short}} profile that you specify in <code>parameters.profile</code>. To find supported storage sizes for a specific profile, see [Tiered IOPS profiles</a>. Any PVC that uses this storage class must specify a size value that is within this range.</td>
         </tr>
         <tr>
         <td><code>csi.storage.k8s.io/fstype</code></td>
@@ -885,11 +885,11 @@ To create your own storage class:
         </tr>
         <tr>
         <td><code>encrypted</code></td>
-        <td>In the parameters, enter <strong>true</strong> to create a storage class that sets up encryption for your {{site.data.keyword.blockstorageshort}} volume. If you set this option to <strong>true</strong>, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in <code>parameterencryptionKey</code>. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).</td>
+        <td>In the parameters, enter <strong>true</strong> to create a storage class that sets up encryption for your {{site.data.keyword.blockstorageshort}} volume. If you set this option to <strong>true</strong>, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in <code>parameterencryptionKey</code>. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
         </tr>
         <tr>
         <td><code>encryptionKey</code></td>
-        <td>If you entered <strong>true</strong> for <code>parameters.encrypted</code>, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volume. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).</td>
+        <td>If you entered <strong>true</strong> for <code>parameters.encrypted</code>, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volume. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
         </tr>
         <tr>
         <td><code>zone</code></td>
@@ -901,7 +901,7 @@ To create your own storage class:
         </tr>
         <tr>
         <td><code>iops</code></td>
-        <td>If you entered <code>custom</code> for the <code>profile</code>, enter a value for the IOPs that you want your {{site.data.keyword.block_storage_is_short}} to use. Refer to the [{{site.data.keyword.block_storage_is_short}} custom IOPs profile](/docs/vpc?topic=vpc-block-storage-profiles#custom) table for a list of supported IOPs ranges by volume size.</td>
+        <td>If you entered <code>custom</code> for the <code>profile</code>, enter a value for the IOPs that you want your {{site.data.keyword.block_storage_is_short}} to use. Refer to the <a href="/docs/vpc?topic=vpc-block-storage-profiles#custom">{{site.data.keyword.block_storage_is_short}} custom IOPs profile</a> table for a list of supported IOPs ranges by volume size.</td>
         </tr>
         <tr>
         <td><code>reclaimPolicy</code></td>
@@ -1074,11 +1074,11 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
         </tr>
         <tr>
           <td><code>encrypted</code></td>
-          <td>In the string data section, enter <strong>true</strong> to create a secret that sets up encryption for {{site.data.keyword.blockstorageshort}} volumes. If you set this option to <strong>true</strong>, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in <code>parameters.encryptionKey</code>. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).</td>
+          <td>In the string data section, enter <strong>true</strong> to create a secret that sets up encryption for {{site.data.keyword.blockstorageshort}} volumes. If you set this option to <strong>true</strong>, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in <code>parameters.encryptionKey</code>. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
         </tr>
         <tr>
           <td><code>encryptionKey</code></td>
-          <td>In the data section, if you entered <strong>true</strong> for <code>parameters.encrypted</code>, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volumes. To use your root key CRN in a secret, you must first convert it to base64 by running <code>echo  -n "<root_key_CRN>" | base64</code>. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).</td>
+          <td>In the data section, if you entered <strong>true</strong> for <code>parameters.encrypted</code>, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volumes. To use your root key CRN in a secret, you must first convert it to base64 by running <code>echo  -n "<root_key_CRN>" | base64</code>. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
         </tr>
         </tbody>
         </table>
@@ -1128,11 +1128,11 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
         </tr>
         <tr>
           <td><code>encrypted</code></td>
-          <td>In the string data section, enter <strong>true</strong> to create a secret that sets up encryption for {{site.data.keyword.blockstorageshort}} volumes. If you set this option to <strong>true</strong>, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in <code>parameters.encryptionKey</code>. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).</td>
+          <td>In the string data section, enter <strong>true</strong> to create a secret that sets up encryption for {{site.data.keyword.blockstorageshort}} volumes. If you set this option to <strong>true</strong>, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in <code>parameters.encryptionKey</code>. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
         </tr>
         <tr>
           <td><code>encryptionKey</code></td>
-          <td>In the data section, if you entered <strong>true</strong> for <code>parameters.encrypted</code>, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volume. To use your root key CRN in a secret, you must first convert it to base 64 by running <code>echo  -n "<root_key_CRN>" | base64</code>. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).</td>
+          <td>In the data section, if you entered <strong>true</strong> for <code>parameters.encrypted</code>, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volume. To use your root key CRN in a secret, you must first convert it to base 64 by running <code>echo  -n "<root_key_CRN>" | base64</code>. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
         </tr>
         </tbody>
         </table>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade, update
 
@@ -338,7 +338,7 @@ Set up a configmap to perform a rolling update of your classic worker nodes.
     <tbody>
         <tr>
         <td><code>drain_timeout_seconds</code></td>
-        <td> Optional: The timeout in seconds to wait for the [drain ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/) to complete. Draining a worker node safely removes all existing pods from the worker node and reschedules the pods onto other worker nodes in the cluster. Accepted values are integers in the range 1 - 180. The default value is 30.</td>
+        <td> Optional: The timeout in seconds to wait for the <a href="https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/">drain</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> to complete. Draining a worker node safely removes all existing pods from the worker node and reschedules the pods onto other worker nodes in the cluster. Accepted values are integers in the range 1 - 180. The default value is 30.</td>
         </tr>
         <tr>
         <td><code>zonecheck.json</code></br><code>regioncheck.json</code></td>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -141,8 +141,8 @@ You can use the version two (`v2`) API to manage both classic and VPC clusters. 
     </tr>
     <tr>
     <td>API reference docs</td>
-    <td>[<code>https://containers.cloud.ibm.com/global/swagger-global-api/</code> ![External link icon](../icons/launch-glyph.svg "External link icon")](https://containers.cloud.ibm.com/global/swagger-global-api/#/)</td>
-    <td>[<code>https://containers.cloud.ibm.com/global/swagger-global-api/</code> ![External link icon](../icons/launch-glyph.svg "External link icon")](https://containers.cloud.ibm.com/global/swagger-global-api/#/)</td>
+    <td><a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/"><code>https://containers.cloud.ibm.com/global/swagger-global-api/</code></a> <img src="../icons/launch-glyph.svg" alt="External link icon"></td>
+    <td><a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/"><code>https://containers.cloud.ibm.com/global/swagger-global-api/</code></a> <img src="../icons/launch-glyph.svg" alt="External link icon"></td>
     </tr>
     <tr>
     <td>API architectural style</td>
@@ -156,8 +156,8 @@ You can use the version two (`v2`) API to manage both classic and VPC clusters. 
     </tr>
     <tr>
     <td>{{site.data.keyword.openshiftshort}} API</td>
-    <td>To use the {{site.data.keyword.openshiftshort}} API to manage {{site.data.keyword.openshiftshort}} and Kubernetes resources within the cluster, such as pods or namespaces, you must log in by exchanging an {{site.data.keyword.cloud_notm}} API key for an {{site.data.keyword.openshiftshort}} access token. See [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key).</td>
-    <td>Same as <code>v1</code>; see [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key).</td>
+    <td>To use the {{site.data.keyword.openshiftshort}} API to manage {{site.data.keyword.openshiftshort}} and Kubernetes resources within the cluster, such as pods or namespaces, you must log in by exchanging an {{site.data.keyword.cloud_notm}} API key for an {{site.data.keyword.openshiftshort}} access token. See <a href="/docs/openshift?topic=openshift-access_cluster#access_api_key">Using an API key to log in to clusters</a>.</td>
+    <td>Same as <code>v1</code>; see <a href="/docs/openshift?topic=openshift-access_cluster#access_api_key">Using an API key to log in to clusters</a>.</td>
     </tr>
     
     <tr>
@@ -201,8 +201,8 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
 
 |{{site.data.keyword.cloud_notm}} ID|My options|
 |-----------------------------------|----------|
-|Unfederated ID|<ul><li><strong>Generate an {{site.data.keyword.cloud_notm}} API key:</strong> As an alternative to using the {{site.data.keyword.cloud_notm}} username and password, you can [use {{site.data.keyword.cloud_notm}} API keys](/docs/account?topic=account-userapikey#create_user_key){: external}. {{site.data.keyword.cloud_notm}} API keys are dependent on the {{site.data.keyword.cloud_notm}} account they are generated for. You cannot combine your {{site.data.keyword.cloud_notm}} API key with a different account ID in the same {{site.data.keyword.cloud_notm}} IAM token. To access clusters that were created with an account other than the one your {{site.data.keyword.cloud_notm}} API key is based on, you must log in to the account to generate a new API key.</li><li><strong>{{site.data.keyword.cloud_notm}} username and password:</strong> You can follow the steps in this topic to fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM access token.</li></ul>|
-|Federated ID|<ul><li><strong>Generate an {{site.data.keyword.cloud_notm}} API key:</strong> [{{site.data.keyword.cloud_notm}} API keys](/docs/account?topic=account-userapikey#create_user_key){: external} are dependent on the {{site.data.keyword.cloud_notm}} account they are generated for. You cannot combine your {{site.data.keyword.cloud_notm}} API key with a different account ID in the same {{site.data.keyword.cloud_notm}} IAM token. To access clusters that were created with an account other than the one your {{site.data.keyword.cloud_notm}} API key is based on, you must log in to the account to generate a new API key.</li><li><strong>Use a one-time passcode: </strong> If you authenticate with {{site.data.keyword.cloud_notm}} by using a one-time passcode, you cannot fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM token because the retrieval of your one-time passcode requires a manual interaction with your web browser. To fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM token, you must create an {{site.data.keyword.cloud_notm}} API key instead.</ul>|
+|Unfederated ID|<ul><li><strong>Generate an {{site.data.keyword.cloud_notm}} API key:</strong> As an alternative to using the {{site.data.keyword.cloud_notm}} username and password, you can <a href="/docs/account?topic=account-userapikey#create_user_key">use {{site.data.keyword.cloud_notm}} API keys</a> <img src="../icons/launch-glyph.svg" alt="External link icon">. {{site.data.keyword.cloud_notm}} API keys are dependent on the {{site.data.keyword.cloud_notm}} account they are generated for. You cannot combine your {{site.data.keyword.cloud_notm}} API key with a different account ID in the same {{site.data.keyword.cloud_notm}} IAM token. To access clusters that were created with an account other than the one your {{site.data.keyword.cloud_notm}} API key is based on, you must log in to the account to generate a new API key.</li><li><strong>{{site.data.keyword.cloud_notm}} username and password:</strong> You can follow the steps in this topic to fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM access token.</li></ul>|
+|Federated ID|<ul><li><strong>Generate an {{site.data.keyword.cloud_notm}} API key:</strong> <a href="/docs/account?topic=account-userapikey#create_user_key">{{site.data.keyword.cloud_notm}} API keys</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> are dependent on the {{site.data.keyword.cloud_notm}} account they are generated for. You cannot combine your {{site.data.keyword.cloud_notm}} API key with a different account ID in the same {{site.data.keyword.cloud_notm}} IAM token. To access clusters that were created with an account other than the one your {{site.data.keyword.cloud_notm}} API key is based on, you must log in to the account to generate a new API key.</li><li><strong>Use a one-time passcode: </strong> If you authenticate with {{site.data.keyword.cloud_notm}} by using a one-time passcode, you cannot fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM token because the retrieval of your one-time passcode requires a manual interaction with your web browser. To fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM token, you must create an {{site.data.keyword.cloud_notm}} API key instead.</ul>|
 {: caption="ID types and options" caption-side="top"}
 {: summary="ID types and options with the input parameter in column 1 and the value in column 2."}
 

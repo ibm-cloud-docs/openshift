@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -239,12 +239,12 @@ Grant users access to your {{site.data.keyword.openshiftlong_notm}} clusters by 
         <tr>
         <td>Region</td>
         <td><code>--region</code></td>
-        <td>You can scope the policy to apply to clusters within a particular region. If you do not specify a region or specific cluster ID, the policy applies to all clusters for all regions. To list available regions, review the [Previous region](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) column in the {{site.data.keyword.openshiftlong_notm}} locations table.</td>
+        <td>You can scope the policy to apply to clusters within a particular region. If you do not specify a region or specific cluster ID, the policy applies to all clusters for all regions. To list available regions, review the <a href="/docs/openshift?topic=openshift-regions-and-zones#zones-mz">Previous region</a> column in the {{site.data.keyword.openshiftlong_notm}} locations table.</td>
         </tr>
         <tr>
         <td>Role</td>
         <td><code>--role</code></td>
-        <td>Choose the [platform access role](/docs/openshift?topic=openshift-access_reference#iam_platform) that you want to assign. Possible values are: <code>Administrator</code>, <code>Operator</code>, <code>Editor</code>, or <code>Viewer</code>.</td>
+        <td>Choose the <a href="/docs/openshift?topic=openshift-access_reference#iam_platform">platform access role</a> that you want to assign. Possible values are: <code>Administrator</code>, <code>Operator</code>, <code>Editor</code>, or <code>Viewer</code>.</td>
         </tr>
         </tbody>
         </table>
@@ -382,7 +382,7 @@ You cannot scope {{site.data.keyword.cloud_notm}} IAM service access roles to an
         </tr>
         <tr>
         <td><code>roles.role_id</code></td>
-        <td>Choose the [IAM service access role](/docs/openshift?topic=openshift-access_reference#service) that you want to assign. Possible values are:
+        <td>Choose the <a href="/docs/openshift?topic=openshift-access_reference#service">IAM service access role</a> that you want to assign. Possible values are:
         <ul><li><code>crn:v1:bluemix:public:iam::::serviceRole:Manager</code></li>
         <li><code>crn:v1:bluemix:public:iam::::serviceRole:Writer</code></li>
         <li><code>crn:v1:bluemix:public:iam::::serviceRole:Reader</code></li></ul></td>
@@ -535,15 +535,15 @@ To prevent breaking changes, do not change the predefined `view`, `edit`, `admin
           </tr>
           <tr>
           <td><code>rules.apiGroups</code></td>
-          <td>Specify the Kubernetes [API groups ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/using-api/api-overview/#api-groups) that you want users to be able to interact with, such as <code>"apps"</code>, <code>"batch"</code>, or <code>"extensions"</code>. For access to the core API group at REST path <code>api/v1</code>, leave the group blank: <code>[""]</code>.</td>
+          <td>Specify the Kubernetes <a href="https://kubernetes.io/docs/reference/using-api/api-overview/#api-groups">API groups</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> that you want users to be able to interact with, such as <code>"apps"</code>, <code>"batch"</code>, or <code>"extensions"</code>. For access to the core API group at REST path <code>api/v1</code>, leave the group blank: <code>[""]</code>.</td>
           </tr>
           <tr>
           <td><code>rules.resources</code></td>
-          <td>Specify the Kubernetes [resource types ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) to which you want to grant access, such as <code>"daemonsets"</code>, <code>"deployments"</code>, <code>"events"</code>, or <code>"ingresses"</code>. If you specify <code>"nodes"</code>, then the kind must be <code>ClusterRole</code>.</td>
+          <td>Specify the Kubernetes <a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/">resource types</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> to which you want to grant access, such as <code>"daemonsets"</code>, <code>"deployments"</code>, <code>"events"</code>, or <code>"ingresses"</code>. If you specify <code>"nodes"</code>, then the kind must be <code>ClusterRole</code>.</td>
           </tr>
           <tr>
           <td><code>rules.verbs</code></td>
-          <td>Specify the types of [actions ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubectl.docs.kubernetes.io/) that you want users to be able to do, such as <code>"get"</code>, <code>"list"</code>, <code>"describe"</code>, <code>"create"</code>, or <code>"delete"</code>.</td>
+          <td>Specify the types of <a href="https://kubectl.docs.kubernetes.io/">actions</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> that you want users to be able to do, such as <code>"get"</code>, <code>"list"</code>, <code>"describe"</code>, <code>"create"</code>, or <code>"delete"</code>.</td>
           </tr>
           </tbody>
         </table>
@@ -623,13 +623,13 @@ To prevent breaking changes, do not change the predefined `view`, `edit`, `admin
           <td><code>subjects.kind</code></td>
           <td>Specify the kind as one of the following:
           <ul><li><code>User</code>: Bind the RBAC role or cluster role to an individual user in your account.</li>
-          <li><code>Group</code>: Bind the RBAC role or cluster role to an [{{site.data.keyword.cloud_notm}} IAM access group](/docs/account?topic=account-groups#groups) in your account.</li>
+          <li><code>Group</code>: Bind the RBAC role or cluster role to an <a href="/docs/account?topic=account-groups#groups">{{site.data.keyword.cloud_notm}} IAM access group</a> in your account.</li>
           <li><code>ServiceAccount</code>: Bind the RBAC role or cluster role to a service account in a namespace in your cluster.</li></ul></td>
           </tr>
           <tr>
           <td><code>subjects.name</code></td>
           <td><ul><li>For <code>User</code>: Append the individual user's email address to <code>IAM#</code> as follows: <code>IAM#user@email.com</code>.</li>
-          <li>For <code>Group</code>: Specify the name of the [{{site.data.keyword.cloud_notm}} IAM access group](/docs/account?topic=account-groups#groups) in your account.</li>
+          <li>For <code>Group</code>: Specify the name of the <a href="/docs/account?topic=account-groups#groups">{{site.data.keyword.cloud_notm}} IAM access group</a> in your account.</li>
           <li>For <code>ServiceAccount</code>: Specify the service account name.</li></ul></td>
           </tr>
           <tr>
@@ -755,15 +755,15 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
         </tr>
         <tr>
         <td><code>rules.apiGroups</code></td>
-        <td>Specify the Kubernetes [API groups ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/using-api/api-overview/#api-groups) that you want users to be able to interact with, such as <code>"apps"</code>, <code>"batch"</code>, or <code>"extensions"</code>. For access to the core API group at REST path <code>api/v1</code>, leave the group blank: <code>[""]</code>.</td>
+        <td>Specify the Kubernetes <a href="https://kubernetes.io/docs/reference/using-api/api-overview/#api-groups">API groups</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> that you want users to be able to interact with, such as <code>"apps"</code>, <code>"batch"</code>, or <code>"extensions"</code>. For access to the core API group at REST path <code>api/v1</code>, leave the group blank: <code>[""]</code>.</td>
         </tr>
         <tr>
         <td><code>rules.resources</code></td>
-        <td>Specify the Kubernetes [resource types ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) to which you want to grant access, such as <code>"daemonsets"</code>, <code>"deployments"</code>, <code>"events"</code>, or <code>"ingresses"</code>.</td>
+        <td>Specify the Kubernetes <a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/">resource types</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> to which you want to grant access, such as <code>"daemonsets"</code>, <code>"deployments"</code>, <code>"events"</code>, or <code>"ingresses"</code>.</td>
         </tr>
         <tr>
         <td><code>rules.verbs</code></td>
-        <td>Specify the types of [actions ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubectl.docs.kubernetes.io/) that you want users to be able to do, such as <code>"get"</code>, <code>"list"</code>, <code>"describe"</code>, <code>"create"</code>, or <code>"delete"</code>.</td>
+        <td>Specify the types of <a href="https://kubectl.docs.kubernetes.io/">actions</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> that you want users to be able to do, such as <code>"get"</code>, <code>"list"</code>, <code>"describe"</code>, <code>"create"</code>, or <code>"delete"</code>.</td>
         </tr>
         </tbody>
     </table>

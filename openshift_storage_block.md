@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -513,11 +513,11 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
           </tr>        
           <tr>
           <td><code>stringData.config.key_protect_endpoint</code></td>
-          <td>Enter the regional endpoint of your {{site.data.keyword.keymanagementserviceshort}} instance. For a list of Key Protect endpoints, see [Regions and endpoints](/docs/key-protect?topic=key-protect-regions).</td>
+          <td>Enter the regional endpoint of your {{site.data.keyword.keymanagementserviceshort}} instance. For a list of Key Protect endpoints, see <a href="/docs/key-protect?topic=key-protect-regions">Regions and endpoints</a>.</td>
           </tr>
           <tr>
           <td><code>stringData.config.root_key_crn</code></td>
-          <td>Enter the CRN of the root key that you created. To retrieve your root key CRN: <li>Navigate to the resource list in the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/resources){: external}.</li><li>Click <strong>Services</strong>, then click your {{site.data.keyword.keymanagementserviceshort}} instance.</li><li>Find your root key on the <strong>Actions Menu</strong>, then click <strong>View CRN</strong>.</li><li>Click the <strong>Copy</strong> button to copy the CRN.</li></td>
+          <td>Enter the CRN of the root key that you created. To retrieve your root key CRN: <li>Navigate to the resource list in the <a href="https://cloud.ibm.com/resources">{{site.data.keyword.cloud_notm}} console</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</li><li>Click <strong>Services</strong>, then click your {{site.data.keyword.keymanagementserviceshort}} instance.</li><li>Find your root key on the <strong>Actions Menu</strong>, then click <strong>View CRN</strong>.</li><li>Click the <strong>Copy</strong> button to copy the CRN.</li></td>
           </tr>
           </tbody>
           </table>
@@ -806,11 +806,11 @@ To add block storage:
         </tr>
         <tr>
         <td><code>region</code></td>
-        <td>In the metadata labels section, specify the region where you want to provision your block storage. If you specify the region, you must also specify a zone. If you do not specify a region, or the specified region is not found, the storage is created in the same region as your cluster. <p class="note">This option is supported only with the IBM Cloud Block Storage plug-in version 1.0.1 or higher. For older plug-in versions, if you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones. To specify the zone for your storage, you can create a [customized storage class](#block_multizone_yaml) first. Then, create a PVC with your customized storage class.</p></td>
+        <td>In the metadata labels section, specify the region where you want to provision your block storage. If you specify the region, you must also specify a zone. If you do not specify a region, or the specified region is not found, the storage is created in the same region as your cluster. <p class="note">This option is supported only with the IBM Cloud Block Storage plug-in version 1.0.1 or higher. For older plug-in versions, if you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones. To specify the zone for your storage, you can create a <a href="#block_multizone_yaml">customized storage class</a> first. Then, create a PVC with your customized storage class.</p></td>
         </tr>
         <tr>
         <td><code>zone</code></td>
-            <td>In the metadata labels section, specify the zone where you want to provision your block storage. If you specify the zone, you must also specify a region. If you do not specify a zone or the specified zone is not found in a multizone cluster, the zone is selected on a round-robin basis. <p class="note">This option is supported only with the IBM Cloud Block Storage plug-in version 1.0.1 or higher. For older plug-in versions, if you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones. To specify the zone for your storage, you can create a [customized storage class](#block_multizone_yaml) first. Then, create a PVC with your customized storage class.</p></td>
+            <td>In the metadata labels section, specify the zone where you want to provision your block storage. If you specify the zone, you must also specify a region. If you do not specify a zone or the specified zone is not found in a multizone cluster, the zone is selected on a round-robin basis. <p class="note">This option is supported only with the IBM Cloud Block Storage plug-in version 1.0.1 or higher. For older plug-in versions, if you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones. To specify the zone for your storage, you can create a <a href="#block_multizone_yaml">customized storage class</a> first. Then, create a PVC with your customized storage class.</p></td>
             </tr>
         <tr>
         <td><code>storage</code></td>
@@ -822,7 +822,7 @@ To add block storage:
         </tr>
         <tr>
         <td><code>storageClassName</code></td>
-        <td>In the spec section, enter the name of the storage class that you want to use to provision block storage. You can choose to use one of the [IBM-provided storage classes](#block_storageclass_reference) or [create your own storage class](#block_custom_storageclass). </br> If you do not specify a storage class, the PV is created with the default storage class <code>ibmc-file-bronze</code><p><strong>Tip:</strong> Want to set your own default? See [Changing the default storage class](/docs/openshift?topic=openshift-kube_concepts#default_storageclass).</p></td>
+        <td>In the spec section, enter the name of the storage class that you want to use to provision block storage. You can choose to use one of the <a href="#block_storageclass_reference">IBM-provided storage classes</a> or <a href="#block_custom_storageclass">create your own storage class</a>. </br> If you do not specify a storage class, the PV is created with the default storage class <code>ibmc-file-bronze</code><p><strong>Tip:</strong> Want to set your own default? See <a href="/docs/openshift?topic=openshift-kube_concepts#default_storageclass">Changing the default storage class</a>.</p></td>
         </tr>
         </tbody></table>
 
@@ -921,7 +921,7 @@ To add block storage:
     </tr>
     <tr>
     <td><code>mountPath</code></td>
-    <td>In the container volume mounts section, enter the absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the root directory in your physical block storage instance. If you want to share a volume between different apps, you can specify [volume sub paths ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath) for each of your apps. </td>
+    <td>In the container volume mounts section, enter the absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the root directory in your physical block storage instance. If you want to share a volume between different apps, you can specify <a href="https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath">volume sub paths</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> for each of your apps. </td>
     </tr>
     <tr>
     <td><code>name</code></td>
@@ -1451,7 +1451,7 @@ zone=dal10
         </tr>
         <tr>
         <td style="text-align:left"><code>podManagementPolicy</code></td>
-        <td style="text-align:left">Enter the pod management policy that you want to use for your stateful set. Choose between the following options: <ul><li><strong><code>OrderedReady</code>: </strong>With this option, stateful set replicas are deployed one after another. For example, if you specified three replicas, then Kubernetes creates the PVC for your first replica, waits until the PVC is bound, deploys the stateful set replica, and mounts the PVC to the replica. After the deployment is finished, the second replica is deployed. For more information about this option, see [<code>OrderedReady</code> Pod Management ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#orderedready-pod-management).</li><li><strong>Parallel: </strong>With this option, the deployment of all stateful set replicas is started at the same time. If your app supports parallel deployment of replicas, then use this option to save deployment time for your PVCs and stateful set replicas. </li></ul></td>
+        <td style="text-align:left">Enter the pod management policy that you want to use for your stateful set. Choose between the following options: <ul><li><strong><code>OrderedReady</code>: </strong>With this option, stateful set replicas are deployed one after another. For example, if you specified three replicas, then Kubernetes creates the PVC for your first replica, waits until the PVC is bound, deploys the stateful set replica, and mounts the PVC to the replica. After the deployment is finished, the second replica is deployed. For more information about this option, see <a href="https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#orderedready-pod-management"><code>OrderedReady</code> Pod Management</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</li><li><strong>Parallel: </strong>With this option, the deployment of all stateful set replicas is started at the same time. If your app supports parallel deployment of replicas, then use this option to save deployment time for your PVCs and stateful set replicas. </li></ul></td>
         </tr>
         <tr>
         <td style="text-align:left"><code>matchLabels</code></td>

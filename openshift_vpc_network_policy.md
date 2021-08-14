@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -234,10 +234,10 @@ Use the {{site.data.keyword.cloud_notm}} console to add inbound and outbound rul
     <td>Any</td>
     </tr>
     <tr>
-    <td><code>*</code> Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}.</td>
+    <td><code>*</code> Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each <a href="https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips">control plane CIDR for the region where your cluster is located</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</td>
     <td>TCP</td>
     <td><code>80</code></td>
-    <td>Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}</td>
+    <td>Each <a href="https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips">control plane CIDR for the region where your cluster is located</a> <img src="../icons/launch-glyph.svg" alt="External link icon"></td>
     </tr>
     </tbody>
     </table>
@@ -386,10 +386,10 @@ To create rules in your default security group:
     <td>Any</td>
     </tr>
     <tr>
-    <td><code>*</code> Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}.</td>
+    <td><code>*</code> Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each <a href="https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips">control plane CIDR for the region where your cluster is located</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</td>
     <td>TCP</td>
     <td><code>80</code></td>
-    <td>Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}</td>
+    <td>Each <a href="https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips">control plane CIDR for the region where your cluster is located</a> <img src="../icons/launch-glyph.svg" alt="External link icon"></td>
     </tr>
     </tbody>
     </table>
@@ -574,10 +574,10 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
     <td>After 4</td>
     </tr>
     <tr>
-    <td><code>*</code> Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}.</td>
+    <td><code>*</code> Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each <a href="https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips">control plane CIDR for the region where your cluster is located</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</td>
     <td>Allow</td>
     <td>TCP</td>
-    <td>Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}</td>
+    <td>Each <a href="https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips">control plane CIDR for the region where your cluster is located</a> <img src="../icons/launch-glyph.svg" alt="External link icon"></td>
     <td>-</td>
     <td>Any</td>
     <td>80</td>
@@ -665,12 +665,12 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
     <td>After 4</td>
     </tr>
     <tr>
-    <td><code>*</code> Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}.</td>
+    <td><code>*</code> Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each <a href="https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips">control plane CIDR for the region where your cluster is located</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</td>
     <td>Allow</td>
     <td>TCP</td>
     <td>Any</td>
     <td>80</td>
-    <td>Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}</td>
+    <td>Each <a href="https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips">control plane CIDR for the region where your cluster is located</a> <img src="../icons/launch-glyph.svg" alt="External link icon"></td>
     <td>-</td>
     <td>After 5</td>
     </tr>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -207,7 +207,7 @@ When you include an [init container](https://kubernetes.io/docs/concepts/workloa
       args:
         - chown <UID>:<GID> /mount; # Replace UID and GID with values from the Dockerfile
       volumeMounts:
-        - name: volume # Or you can replace with any name
+      - name: volume # Or you can replace with any name
         mountPath: /mount # Must match the mount path in the args line
     ```
     {: codeblock}

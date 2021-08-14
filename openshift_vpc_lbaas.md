@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -682,7 +682,7 @@ Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.op
     <tbody>
     <tr>
         <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"</code></td>
-    <td>VPC and {{site.data.keyword.openshiftshort}} version 4.5 or later: Annotation to enable the PROXY protocol. The load balancer passes client connection information, including the client IP address, the proxy server IP address, and both port numbers, in request headers to your back-end app. Note that your back-end app must be configured to accept the PROXY protocol. For example, you can configure an NGINX app to accept the PROXY protocol by following [these steps ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.nginx.com/nginx/admin-guide/load-balancer/using-proxy-protocol/).</td>
+    <td>VPC and {{site.data.keyword.openshiftshort}} version 4.5 or later: Annotation to enable the PROXY protocol. The load balancer passes client connection information, including the client IP address, the proxy server IP address, and both port numbers, in request headers to your back-end app. Note that your back-end app must be configured to accept the PROXY protocol. For example, you can configure an NGINX app to accept the PROXY protocol by following <a href="https://docs.nginx.com/nginx/admin-guide/load-balancer/using-proxy-protocol/">these steps</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</td>
     </tr>
     <tr>
         <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type</code></td>

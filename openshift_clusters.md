@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -398,7 +398,7 @@ The following image walks you through choosing the setup that you want for your 
     </tr>
     <tr>
     <td><code>--workers <em>&lt;number&gt;</em></code></td>
-    <td>Specify at least 2 worker nodes to include in the cluster.  For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).</td>
+    <td>Specify at least 2 worker nodes to include in the cluster.  For more information, see <a href="/docs/openshift?topic=openshift-faqs#smallest_cluster">What is the smallest size cluster that I can make?</a>.</td>
     </tr>
     <tr>
     <td><code>--version <em>&lt;major.minor.patch&gt;</em></code></td>
@@ -410,7 +410,7 @@ The following image walks you through choosing the setup that you want for your 
     </tr>
     <tr>
     <td><code>--private-service-endpoint</code></td>
-    <td><strong>In [VRF-enabled](/docs/account?topic=account-vrf-service-endpoint#vrf) and [service endpoint-enabled](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) accounts</strong>: Enable the private cloud service endpoint so that your {{site.data.keyword.openshiftshort}} master and the worker nodes can communicate over the private VLAN. If you specify this flag, you must also enable the public cloud service endpoint by using the <code>--public-service-endpoint</code> flag. Note that you cannot later change the cloud service endpoints.<br><br>After you create the cluster, you can get the endpoint by running <code>ibmcloud oc cluster get --cluster <cluster_name_or_ID></code>.</td>
+    <td><strong>In <a href="/docs/account?topic=account-vrf-service-endpoint#vrf">VRF-enabled</a> and <a href="/docs/account?topic=account-vrf-service-endpoint#service-endpoint">service endpoint-enabled</a> accounts</strong>: Enable the private cloud service endpoint so that your {{site.data.keyword.openshiftshort}} master and the worker nodes can communicate over the private VLAN. If you specify this flag, you must also enable the public cloud service endpoint by using the <code>--public-service-endpoint</code> flag. Note that you cannot later change the cloud service endpoints.<br><br>After you create the cluster, you can get the endpoint by running <code>ibmcloud oc cluster get --cluster <cluster_name_or_ID></code>.</td>
     </tr>
     <tr>
     <td><code>--pod-subnet</code></td>
@@ -433,11 +433,11 @@ The following image walks you through choosing the setup that you want for your 
     </tr>
     <tr>
     <td><code>--disable-disk-encrypt</code></td>
-    <td>Worker nodes feature AES 256-bit [disk encryption](/docs/openshift?topic=openshift-security#encrypted_disk) by default. If you want to disable encryption, include this option.</td>
+    <td>Worker nodes feature AES 256-bit <a href="/docs/openshift?topic=openshift-security#encrypted_disk">disk encryption</a> by default. If you want to disable encryption, include this option.</td>
     </tr>
     <tr>
     <td><code><strong>--entitlement cloud_pak</strong></code></td>
-    <td>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an {{site.data.keyword.openshiftshort}} entitlement. When you specify the number of workers (<code>--workers</code>) and flavor (<code>--flavor</code>), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After your cluster is created, you are not charged the {{site.data.keyword.openshiftshort}} license fee for the entitled worker nodes in the <code>default</code> worker pool.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></td></tr>
+    <td>Include this flag only if you use this cluster with an <a href="/docs/openshift?topic=openshift-openshift_cloud_paks">IBM Cloud Pak&trade;</a> that has an {{site.data.keyword.openshiftshort}} entitlement. When you specify the number of workers (<code>--workers</code>) and flavor (<code>--flavor</code>), make sure to specify only the number and size of worker nodes that you are entitled to use in <a href="https://www.ibm.com/software/passportadvantage/index.html">IBM Passport Advantage</a>{: external}. After your cluster is created, you are not charged the {{site.data.keyword.openshiftshort}} license fee for the entitled worker nodes in the <code>default</code> worker pool.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></td></tr>
     </tbody></table>
 
 7. Verify that the creation of the cluster was requested. For virtual machines, it can take a few minutes for the worker node machines to be ordered, and for the cluster to be set up and provisioned in your account. Bare metal physical machines are provisioned by manual interaction with IBM Cloud infrastructure, and can take more than one business day to complete.
@@ -607,11 +607,11 @@ Your VPC cluster is created with both a public and a private cloud service endpo
     </tr>
     <tr>
     <td><code>--subnet-id <em>&lt;subnet_ID&gt;</em></code></td>
-    <td>Enter the ID of the VPC subnet that you created earlier. When you create a VPC cluster from the CLI, you can initially create your cluster in one zone with one subnet only. To create a multizone cluster, [add more zones](/docs/openshift?topic=openshift-add_workers) with the subnets that you created earlier to your cluster after the cluster is created. To list the IDs of your subnets in all resource groups, run <code> ibmcloud oc subnets --provider vpc-gen2 --vpc-id &lt,VPC_ID&gt; --zone &lt;subnet_zone&gt; </code>.  </td>
+    <td>Enter the ID of the VPC subnet that you created earlier. When you create a VPC cluster from the CLI, you can initially create your cluster in one zone with one subnet only. To create a multizone cluster, <a href="/docs/containers?topic=containers-add_workers">add more zones</a> with the subnets that you created earlier to your cluster after the cluster is created. To list the IDs of your subnets in all resource groups, run <code> ibmcloud oc subnets --provider vpc-gen2 --vpc-id &lt,VPC_ID&gt; --zone &lt;subnet_zone&gt; </code>.  </td>
     </tr>
     <tr>
     <td><code>--flavor <em>&lt;worker_flavor&gt;</em></code></td>
-    <td>Enter the worker node flavor that you want to use. The flavor determines the amount of virtual CPU, memory, and disk space that is set up in each worker node and made available to your apps. VPC worker nodes can be created as virtual machines on shared infrastructure only. Bare metal or software-defined storage machines are not supported.  For more information, see [Planning your worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes). To view available flavors, first list available VPC zones with <code>ibmcloud oc zone ls --provider vpc-gen2</code>, and then use the zone to list supported flavors by running <code>ibmcloud oc flavors --zone &lt;VPC_zone&gt; --provider vpc-gen2</code>. After you create your cluster, you can add different flavors by adding a worker node or worker pool to the cluster.</td>
+    <td>Enter the worker node flavor that you want to use. The flavor determines the amount of virtual CPU, memory, and disk space that is set up in each worker node and made available to your apps. VPC worker nodes can be created as virtual machines on shared infrastructure only. Bare metal or software-defined storage machines are not supported.  For more information, see <a href="/docs/containers?topic=containers-planning_worker_nodes">Planning your worker node setup</a>. To view available flavors, first list available VPC zones with <code>ibmcloud oc zone ls --provider vpc-gen2</code>, and then use the zone to list supported flavors by running <code>ibmcloud oc flavors --zone &lt;VPC_zone&gt; --provider vpc-gen2</code>. After you create your cluster, you can add different flavors by adding a worker node or worker pool to the cluster.</td>
     </tr>
     <tr>
     <td><code>--version 4.6_openshift</code></td>
@@ -623,7 +623,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
     </tr>
     <tr>
     <td><code>--workers <em>&lt;number&gt;</em></code></td>
-    <td>Specify at least 2 worker nodes to include in the cluster. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster). This value is optional.</td>
+    <td>Specify at least 2 worker nodes to include in the cluster. For more information, see <a href="/docs/openshift?topic=openshift-faqs#smallest_cluster">What is the smallest size cluster that I can make?</a>. This value is optional.</td>
     </tr>
     <tr>
     <td><code>--pod-subnet</code></td>
@@ -633,7 +633,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
     <ul><li><code>172.17.0.0 - 172.17.255.255</code></li>
     <li><code>172.21.0.0 - 172.31.255.255</code></li>
     <li><code>192.168.0.0 - 192.168.254.255</code></li>
-    <li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap. If you use custom-range subnets for your worker nodes, you must [ensure that your worker node subnets do not overlap with your cluster's pod subnet](/docs/openshift?topic=openshift-vpc-subnets#vpc-ip-range).</p></td>
+    <li><code>198.18.0.0 - 198.19.255.255</code></li></ul>Note that the pod and service subnets cannot overlap. If you use custom-range subnets for your worker nodes, you must <a href="/docs/openshift?topic=openshift-vpc-subnets#vpc-ip-range">ensure that your worker node subnets do not overlap with your cluster's pod subnet</a>.</p></td>
     </tr>
     <tr>
     <td><code>--service-subnet</code></td>
@@ -646,7 +646,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
     </tr>
     <tr>
     <td><code>--disable-public-service-endpoint</code></td>
-    <td>Include this option in your command to create your VPC cluster with a private cloud service endpoint only. If you do not include this option, your cluster is set up with a public and a private cloud service endpoint. The service endpoint determines how your {{site.data.keyword.openshiftshort}} master and the worker nodes communicate, how your cluster access other {{site.data.keyword.cloud_notm}} services and apps outside the cluster, and how your users connect to your cluster. For more information, see [Planning your cluster network setup](/docs/openshift?topic=openshift-plan_clusters).<p class="important">If you include this flag, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers.</p></td>
+    <td>Include this option in your command to create your VPC cluster with a private cloud service endpoint only. If you do not include this option, your cluster is set up with a public and a private cloud service endpoint. The service endpoint determines how your {{site.data.keyword.openshiftshort}} master and the worker nodes communicate, how your cluster access other {{site.data.keyword.cloud_notm}} services and apps outside the cluster, and how your users connect to your cluster. For more information, see <a href="/docs/containers?topic=containers-plan_clusters">Planning your cluster network setup</a>.<p class="important">If you include this flag, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers.</p></td>
     </tr>
     </tbody></table>
 6. Verify that the creation of the cluster was requested. It can take a few minutes for the worker node machines to be ordered, and for the cluster to be set up and provisioned in your account.

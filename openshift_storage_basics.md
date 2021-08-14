@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -280,11 +280,11 @@ When you dynamically provision persistent storage by using a storage class, you 
 <tbody>
 <tr>
 <td>Classic File Storage</td>
-<td>You can increase your storage size and assigned IOPS by [modifying your existing volume](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration). </td>
+<td>You can increase your storage size and assigned IOPS by <a href="/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration">modifying your existing volume</a>. </td>
 </tr>
 <tr>
 <td>Classic Block Storage</td>
-<td>You can increase your storage size and assigned IOPS by [modifying your existing volume](/docs/openshift?topic=openshift-block_storage#block_change_storage_configuration). </td>
+<td>You can increase your storage size and assigned IOPS by <a href="/docs/openshift?topic=openshift-block_storage#block_change_storage_configuration">modifying your existing volume</a>. </td>
 </tr>
 <tr>
 <td>{{site.data.keyword.cos_full_notm}}</td>
@@ -292,7 +292,7 @@ When you dynamically provision persistent storage by using a storage class, you 
 </tr>
 <tr>
 <td>Portworx</td>
-<td>You can increase your storage size by [changing your PVC specifications ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/resize-pvc/).</td>
+<td>You can increase your storage size by <a href="https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/resize-pvc/">changing your PVC specifications</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</td>
     </tr>
 </tbody>
 </table>

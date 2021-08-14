@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -374,7 +374,7 @@ To execute a workload on a GPU machine:
     </tr>
     <tr>
     <td><code>resources.limits</code></td>
-    <td>For GPU machines, you must specify the resource limit. The Kubernetes [Device Plug-in ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/) sets the default resource request to match the limit.
+    <td>For GPU machines, you must specify the resource limit. The Kubernetes <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/">Device Plug-in</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> sets the default resource request to match the limit.
     <ul><li>You must specify the key as <code>nvidia.com/gpu</code>.</li>
     <li>Enter the whole number of GPUs that you request, such as <code>2</code>. <strong>Note</strong>: Container pods do not share GPUs and GPUs cannot be overcommitted. For example, if you have only 1 <code>mg1c.16x128</code> machine, then you have only 2 GPUs in that machine and can specify a maximum of <code>2</code>.</li></ul></td>
     </tr>
@@ -510,12 +510,12 @@ For more information about the console, see the [{{site.data.keyword.openshiftsh
     <tr>
     <td>Administrator perspective</td>
     <td>Side navigation menu perspective switcher.</td>
-    <td>From the Administrator perspective, you can manage and set up the components that your team needs to run your apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see [Viewing cluster information](http://docs.openshift.com/container-platform/4.6/web_console/using-dashboard-to-get-cluster-information.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.</td>
+    <td>From the Administrator perspective, you can manage and set up the components that your team needs to run your apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see <a href="http://docs.openshift.com/container-platform/4.6/web_console/using-dashboard-to-get-cluster-information.html">Viewing cluster information</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> in the {{site.data.keyword.openshiftshort}} documentation.</td>
     </tr>
     <tr>
     <td>Developer perspective</td>
     <td>Side navigation menu perspective switcher.</td>
-    <td>From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The <strong>Topology</strong> view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](http://docs.openshift.com/container-platform/4.6/web_console/odc-about-developer-perspective.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.</td>
+    <td>From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The <strong>Topology</strong> view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see <a href="http://docs.openshift.com/container-platform/4.6/web_console/odc-about-developer-perspective.html">Developer perspective</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> in the {{site.data.keyword.openshiftshort}} documentation.</td>
     </tr>
     </tbody>
     </table>
@@ -535,17 +535,17 @@ For more information about the console, see the [{{site.data.keyword.openshiftsh
     <tr>
     <td>Service Catalog</td>
     <td>Dropdown menu in the <strong>OpenShift Container Platform</strong> menu bar.</td>
-    <td>Browse the catalog of built-in services that you can deploy on {{site.data.keyword.openshiftshort}}. For example, if you already have a <code>node.js</code> app that is hosted on GitHub, you can click the <strong>Languages</strong> tab and deploy a <strong>JavaScript</strong> app. The <strong>My Projects</strong> pane provides a quick view of all the projects that you have access to, and clicking on a project takes you to the Application Console. For more information, see the [{{site.data.keyword.openshiftshort}} Web Console Walkthrough](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.</td>
+    <td>Browse the catalog of built-in services that you can deploy on {{site.data.keyword.openshiftshort}}. For example, if you already have a <code>node.js</code> app that is hosted on GitHub, you can click the <strong>Languages</strong> tab and deploy a <strong>JavaScript</strong> app. The <strong>My Projects</strong> pane provides a quick view of all the projects that you have access to, and clicking on a project takes you to the Application Console. For more information, see the <a href="https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html">{{site.data.keyword.openshiftshort}} Web Console Walkthrough</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> in the {{site.data.keyword.openshiftshort}} documentation.</td>
     </tr>
     <tr>
     <td>Application Console</td>
     <td>Dropdown menu in the <strong>OpenShift Container Platform</strong> menu bar.</td>
-    <td>For each project that you have access to, you can manage your {{site.data.keyword.openshiftshort}} resources such as pods, services, routes, builds, images or persistent volume claims. You can also view and analyze logs for these resources, or add services from the catalog to the project. For more information, see the [{{site.data.keyword.openshiftshort}} Web Console Walkthrough](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.</td>
+    <td>For each project that you have access to, you can manage your {{site.data.keyword.openshiftshort}} resources such as pods, services, routes, builds, images or persistent volume claims. You can also view and analyze logs for these resources, or add services from the catalog to the project. For more information, see the <a href="https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html">{{site.data.keyword.openshiftshort}} Web Console Walkthrough</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> in the {{site.data.keyword.openshiftshort}} documentation.</td>
     </tr>
     <tr>
     <td>Cluster Console</td>
     <td>Dropdown menu in the <strong>OpenShift Container Platform</strong> menu bar.</td>
-    <td>For cluster-wide administrators across all the projects in the cluster, you can manage projects, service accounts,RBAC roles, role bindings, and resource quotas. You can also see the status and events for resources within the cluster in a combined view. For more information, see the [{{site.data.keyword.openshiftshort}} Web Console Walkthrough](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.</td>
+    <td>For cluster-wide administrators across all the projects in the cluster, you can manage projects, service accounts,RBAC roles, role bindings, and resource quotas. You can also see the status and events for resources within the cluster in a combined view. For more information, see the <a href="https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html">{{site.data.keyword.openshiftshort}} Web Console Walkthrough</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> in the {{site.data.keyword.openshiftshort}} documentation.</td>
     </tr>
     </tbody>
     </table><p></p>

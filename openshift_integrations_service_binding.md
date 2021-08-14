@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -715,6 +715,5 @@ If you do not want to use an {{site.data.keyword.cloud_notm}} service that you b
         ibmcloud service delete <service_name>
         ```
         {: pre}
-
 
 

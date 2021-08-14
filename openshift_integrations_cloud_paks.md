@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos, cloud pak, cloud pack, cloudpak, cloudpack, icp, cloud paks, cloudpaks, cloud packs, cloudpacks, icd, icp4d, icpa, icp4a
 
 subcollection: openshift
 
 ---
-
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Adding Cloud Paks
 {: #openshift_cloud_paks}
@@ -183,6 +181,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 
 <br />
 
+
 ## Adding IBM Cloud Paks
 {: #oc_cloud_paks_add}
 {: help}
@@ -196,14 +195,14 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 Before you begin:
 * Verify that your account administrator [set up your {{site.data.keyword.cloud_notm}} account with the Cloud Pak entitlement](#oc_cloud_paks_assign).
 * Make sure that you have the [required permissions to create a cluster](/docs/openshift?topic=openshift-clusters#cluster_prepare). These permissions include the following:
-  * The IAM **Administrator** platform access role for {{site.data.keyword.containershort}}.
-  * The IAM **Administrator** platform access role for {{site.data.keyword.registryshort}}.
-  * The IAM **Viewer** platform access role for the resource group if you create the cluster in a resource group other than `default`.
-  * The appropriate infrastructure permissions, such as an API key with the **Super User** role for classic infrastructure.
+    * The IAM **Administrator** platform access role for {{site.data.keyword.containershort}}.
+    * The IAM **Administrator** platform access role for {{site.data.keyword.registryshort}}.
+    * The IAM **Viewer** platform access role for the resource group if you create the cluster in a resource group other than `default`.
+    * The appropriate infrastructure permissions, such as an API key with the **Super User** role for classic infrastructure.
 
 To add a Cloud Pak from the {{site.data.keyword.cloud_notm}} catalog:
 
-1.  Add your Cloud Pak entitlement from [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external} to your {{site.data.keyword.openshiftlong_notm}} cluster.
+1. Add your Cloud Pak entitlement from [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external} to your {{site.data.keyword.openshiftlong_notm}} cluster.
     *  **For new clusters**: [Create a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) with the `--entitlement cloud_pak` option. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use. After your cluster is created, you are not charged the {{site.data.keyword.openshiftshort}} license fee for the entitled worker nodes in the `default` worker pool. If you want to use a different worker pool for your Cloud Pak, follow the steps for existing clusters.
     * **For existing clusters or worker pools other than `default`**: Create a [worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create) with the `--entitlement cloud_pak` option. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use. After creation, your worker pool does not charge you the {{site.data.keyword.openshiftshort}} license fee for your entitled worker nodes.
 
@@ -225,16 +224,16 @@ Now you can run your Cloud Pak on your {{site.data.keyword.openshiftshort}} clus
 To deploy a Cloud Pak to your {{site.data.keyword.openshiftlong_notm}} cluster, your entitlement to the Cloud Pak must be assigned to your {{site.data.keyword.cloud_notm}} account.
 {: shortdesc}
 
-1.  Verify that your Cloud Pak entitlement is in your [**Container software library**](https://myibm.ibm.com/products-services/containerlibrary){: external}. If you do not see the entitlement, the entitlement might be owned by a different user. Verify the user, and if you still have issues, click **Contact IBM** from the container software library page.
-2.  Make sure that the {{site.data.keyword.cloud_notm}} account owner gives you permission to assign entitlements.
-    1.  From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external} menu bar, click **Manage > Access (IAM)**.
-    2.  From the **Users** tab, click the user that you want to assign permissions.
-    3.  Click **Access policies > Assign access +**.
-    4.  Click **Account management**.
-    5.  From the **What type of access do you want to assign?** drop-down menu, select **License and Entitlement**.
-    6.  Select at least the **Editor** platform access role, then click **Add**.
-3.  [Assign the Cloud Pak entitlement to your {{site.data.keyword.cloud_notm}} account](/docs/account?topic=account-software-license).
-4.  Continue to [create the Cloud Pak instance](#oc_cloud_paks_add).
+1. Verify that your Cloud Pak entitlement is in your [**Container software library**](https://myibm.ibm.com/products-services/containerlibrary){: external}. If you do not see the entitlement, the entitlement might be owned by a different user. Verify the user, and if you still have issues, click **Contact IBM** from the container software library page.
+2. Make sure that the {{site.data.keyword.cloud_notm}} account owner gives you permission to assign entitlements.
+    1. From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external} menu bar, click **Manage > Access (IAM)**.
+    2. From the **Users** tab, click the user that you want to assign permissions.
+    3. Click **Access policies > Assign access +**.
+    4. Click **Account management**.
+    5. From the **What type of access do you want to assign?** drop-down menu, select **License and Entitlement**.
+    6. Select at least the **Editor** platform access role, then click **Add**.
+3. [Assign the Cloud Pak entitlement to your {{site.data.keyword.cloud_notm}} account](/docs/account?topic=account-software-license).
+4. Continue to [create the Cloud Pak instance](#oc_cloud_paks_add).
 
 <br />
 
@@ -278,3 +277,5 @@ To see the components of each Cloud Pak, consult the [Cloud Pak's documentation]
 
 When you set up your Cloud Pak, you might need to work with {{site.data.keyword.openshiftshort}}-specific resources, such as security context constraints. Make sure that you use the [`oc` CLI or `kubectl` version 1.12 CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc) to interact with these resources, such as `oc get scc`. The `kubectl` CLI version 1.11 has a bug that yields an error when you run commands against {{site.data.keyword.openshiftshort}}-specific resources, such as `kubectl get scc`.
 {: shortdesc}
+
+

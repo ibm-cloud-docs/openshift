@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc, roks
 
 subcollection: openshift
 
 ---
-
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
@@ -107,6 +106,7 @@ subcollection: openshift
 {:video: .video}
 
 
+
 # Managing your OpenShift Data Foundation deployment
 {: #ocs-manage-deployment}
 
@@ -120,36 +120,38 @@ The ODF add-on supports `n+1` cluster versions. For example, if you have version
 To update the OpenShift Data Foundation in your cluster, disable the add-on and then re-enable the add-on with the following commands.
 
 1. Check the existing version.
-  ```sh
-  ibmcloud oc cluster addon ls --cluster <cluster>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc cluster addon ls --cluster <cluster>
+    ```
+    {: pre}
 
 1. Disable the add-on. Note that you might see a warning that resources or data might be deleted. For the ODF add-on update, PVC creation and app deployment are not disrupted when the add-on is disabled
 
-  **For {{site.data.keyword.openshiftshort}} versions 4.7 and above**
-  ```sh
-  ibmcloud oc cluster addon disable openshift-container-storage --cluster <cluster>
-  ```
-  {: pre}
-  **For {{site.data.keyword.openshiftshort}} versions 4.6 and 4.7**
-  ```sh
-  ibmcloud oc cluster addon disable openshift-container-storage --cluster <cluster>
-  ```
-  {: pre}
+    **For {{site.data.keyword.openshiftshort}} versions 4.7 and above**
+    ```sh
+    ibmcloud oc cluster addon disable openshift-container-storage --cluster <cluster>
+    ```
+    {: pre}
+
+    **For {{site.data.keyword.openshiftshort}} versions 4.6 and 4.7**
+    ```sh
+    ibmcloud oc cluster addon disable openshift-container-storage --cluster <cluster>
+    ```
+    {: pre}
 
 1. Enable the add-on.
 
-  **For {{site.data.keyword.openshiftshort}} versions 4.7 and above**
-  ```sh
-  ibmcloud koc cluster addon enable openshift-container-storage --cluster <version> --version <version>
-  ```
-  {: pre}
-  **For {{site.data.keyword.openshiftshort}} versions 4.6 and 4.7**
-  ```sh
-  ibmcloud koc cluster addon enable openshift-container-storage --cluster <version> --version <version>
-  ```
-  {: pre}
+    **For {{site.data.keyword.openshiftshort}} versions 4.7 and above**
+    ```sh
+    ibmcloud koc cluster addon enable openshift-container-storage --cluster <version> --version <version>
+    ```
+    {: pre}
+
+    **For {{site.data.keyword.openshiftshort}} versions 4.6 and 4.7**
+    ```sh
+    ibmcloud koc cluster addon enable openshift-container-storage --cluster <version> --version <version>
+    ```
+    {: pre}
 
 <br />
 
@@ -182,18 +184,19 @@ You can uninstall the OpenShift Data Foundation add-on from your cluster by usin
 1. **Optional**: To remove the add-on and all ODF resources, first [remove add-on from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-crd).
 
 2. Uninstall the add-on.
-  ```
-  ibmcloud oc cluster addon disable openshift-container-storage -c <cluster_name>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc cluster addon disable openshift-container-storage -c <cluster_name>
+    ```
+    {: pre}
 
 3. Verify that the add-on is removed.
-  ```
-  ibmcloud oc cluster addon ls -c <cluster_name>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc cluster addon ls -c <cluster_name>
+    ```
+    {: pre}
 
 <br />
+
 ## VPC: Updating the ODF operator from your CRD
 {: #ocs-addon-up-vpc}
 
@@ -203,39 +206,39 @@ If you deployed ODF by using a CRD, you can update your ODF deployment by editin
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Get the name of you ODF storage cluster
-  ```sh
-  oc get ocscluster
-  ```
-  {: pre}
+    ```sh
+    oc get ocscluster
+    ```
+    {: pre}
 
-  **Example output**
-  ```sh
-  NAME             AGE
-  ocscluster-vpc   19d
-  ```
-  {: screen}
+    **Example output**
+    ```sh
+    NAME             AGE
+    ocscluster-vpc   19d
+    ```
+    {: screen}
 
 1. Run the following command to edit your `OcsCluster`.
-  ```sh
-  oc edit ocscluster <ocs-cluster-name>
-  ```
-  {: pre}
+    ```sh
+    oc edit ocscluster <ocs-cluster-name>
+    ```
+    {: pre}
 
 1. Edit the ocscluster and set the `OcsUpgrade` parameter to `true`.
-  ```yaml
-  ...
-  spec:
-    billingType: hourly
+    ```yaml
+    ...
+    spec:
+        billingType: hourly
     monSize: 20Gi
     monStorageClassName: ibmc-vpc-block-10iops-tier
     numOfOsd: 1
     ocsUpgrade: true
     osdSize: 100Gi
     osdStorageClassName: ibmc-vpc-block-10iops-tier
-  status:
-    storageClusterStatus: Decreasing the capacity not allowed
-  ```
-  {: codeblock}
+    status:
+        storageClusterStatus: Decreasing the capacity not allowed
+    ```
+    {: codeblock}
 
 1. Save and close the `OcsCluster` to reapply it to your cluster.
 
@@ -253,51 +256,51 @@ If you want to fully remove ODF and all your data, you can [remove your storage 
 {: note}
 
 1. List your PVCs and note the name of the PVC and the corresponding PV that you want to remove.
-   ```sh
-   oc get pvc
-   ```
-   {: pre}
+    ```sh
+    oc get pvc
+    ```
+    {: pre}
 
 2. Remove any pods that mount the PVC.
-   1. List all the pods that currently mount the PVC that you want to delete. If no pods are returned, you don't have any pods that currently use your PVC.
-      ```sh
-      oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
-      ```
-      {: pre}
+    1. List all the pods that currently mount the PVC that you want to delete. If no pods are returned, you don't have any pods that currently use your PVC.
+        ```sh
+        oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
+        ```
+        {: pre}
 
-      Example output:
-      ```
-      app    ocs-storagecluster-cephfs
-      ```
-      {: screen}
+        Example output:
+        ```
+        app    ocs-storagecluster-cephfs
+        ```
+        {: screen}
 
-   2. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
-      ```sh
-      oc delete pod <pod_name>
-      ```
-      {: pre}
+    2. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
+        ```sh
+        oc delete pod <pod_name>
+        ```
+        {: pre}
 
-      ```sh
-      oc delete deployment <deployment_name>
-      ```
-      {: pre}
+        ```sh
+        oc delete deployment <deployment_name>
+        ```
+        {: pre}
 
-   3. Verify that the pod or the deployment is removed.
-      ```sh
-      oc get pods
-      ```
-      {: pre}
+    3. Verify that the pod or the deployment is removed.
+        ```sh
+        oc get pods
+        ```
+        {: pre}
 
-      ```sh
-      oc get deployments
-      ```
-      {: pre}
+        ```sh
+        oc get deployments
+        ```
+        {: pre}
 
 3. **Optional** Delete the PVC. Deleting the PVC deletes your app data from the storage volume.
-   ```sh
-   oc delete pvc <pvc_name>
-   ```
-   {: pre}
+    ```sh
+    oc delete pvc <pvc_name>
+    ```
+    {: pre}
 
 
 
@@ -313,40 +316,40 @@ The following steps result in data loss. Back up the data on your local volumes 
 **What happens when I delete the ODF storage cluster?**
 
 When you delete the `OcsCluster` custom resource from your cluster, the following resources are deleted. Additionally, any apps that require access to the data on your local volumes might experience downtime.
-  - ODF driver pods.
-  - The MON and OSD PVCs.
-  - All data from your volumes. However, if you created PVCs by using the NooBaa storage class, and your apps wrote data to your backing store, the data in your backing store is not deleted.
+    - ODF driver pods.
+    - The MON and OSD PVCs.
+    - All data from your volumes. However, if you created PVCs by using the NooBaa storage class, and your apps wrote data to your backing store, the data in your backing store is not deleted.
 
 1. Get the name of your `OcsCluster` custom resource.
-  ```sh
-  oc get ocscluster
-  ```
-  {: pre}
+    ```sh
+    oc get ocscluster
+    ```
+    {: pre}
 
-  **Example output for a custom resource called `ocscluster-vpc`.**
-  ```sh
-  NAME             AGE
-  ocscluster-vpc   4s
-  ```
-  {: screen}
+    **Example output for a custom resource called `ocscluster-vpc`.**
+    ```sh
+    NAME             AGE
+    ocscluster-vpc   4s
+    ```
+    {: screen}
 
 1. Delete your `OcsCluster` custom resource. Replace `<ocscluster_name>` with the name of your custom resource.
-  ```
-  oc delete ocscluster <ocscluster_name>
-  ```
-  {: pre}
+    ```
+    oc delete ocscluster <ocscluster_name>
+    ```
+    {: pre}
 
-  **Example command for an `OcsCluster` custom resource called `ocscluster-vpc`.**
-  ```
-  oc delete ocscluster ocscluster-vpc
-  ```
-  {: pre}
+    **Example command for an `OcsCluster` custom resource called `ocscluster-vpc`.**
+    ```
+    oc delete ocscluster ocscluster-vpc
+    ```
+    {: pre}
 
 1. Delete any PVCs that you created.
-  ```sh
-  oc get pvc
-  ```
-  {: pre}
+    ```sh
+    oc get pvc
+    ```
+    {: pre}
 
 1. **Optional** If you do not want to reinstall ODF, you can [Remove the ODF add-on from your cluster](#ocs-rm-cleanup-resources).
 
@@ -360,7 +363,7 @@ After you remove ODF from your apps, and remove your ODF storage cluster, you ca
 {: #ocs-cleanup}
 
 1. Copy one of the following clean up scripts based on your ODF deployment.
-  * **VPC or {{site.data.keyword.satelliteshort}} with dynamically provisioned disks** Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
+    * **VPC or {{site.data.keyword.satelliteshort}} with dynamically provisioned disks** Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
     ```sh
     #!/bin/bash
     ocscluster_name=`oc get ocscluster | awk 'NR==2 {print $1}'`
@@ -385,7 +388,7 @@ After you remove ODF from your apps, and remove your ODF storage cluster, you ca
     ```
     {: pre}
 
-  * **Classic clusters or {{site.data.keyword.satelliteshort}} clusters with local disks** Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
+    * **Classic clusters or {{site.data.keyword.satelliteshort}} clusters with local disks** Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
     ```sh
     #!/bin/bash
     ocscluster_name=`oc get ocscluster | awk 'NR==2 {print $1}'`
@@ -416,19 +419,19 @@ After you remove ODF from your apps, and remove your ODF storage cluster, you ca
     {: pre}
 
 1. Run the `cleanup.sh` script.
-  ```sh
-  sh ./cleanup.sh
-  ```
-  {: pre}
+    ```sh
+    sh ./cleanup.sh
+    ```
+    {: pre}
 
 1. ****Classic clusters or {{site.data.keyword.satelliteshort}} clusters with local disks** After you run the cleanup script, log in to each worker node and run the following commands.
-  1. Deploy a debug pod and run `chroot /host`.
+    1. Deploy a debug pod and run `chroot /host`.
     ```sh
     oc debug node/<node_name> -- chroot /host
     ```
     {: pre}
 
-  1. Run the following command to remove any files or directories on the specified paths. Repeat this step for each worker node that you used in your OCS configuration.
+    1. Run the following command to remove any files or directories on the specified paths. Repeat this step for each worker node that you used in your OCS configuration.
     ```sh
     rm -rvf /var/lib/rook /mnt/local-storage
     ```
@@ -454,27 +457,27 @@ After you remove ODF from your apps, and remove your ODF storage cluster, you ca
     {: codeblock}
 
 1. **Optional**: **Classic clusters or {{site.data.keyword.satelliteshort}} clusters with local disks** If you no longer want to use the local volumes that you used in your configuration, you can delete them from the cluster. List the local PVs.
-  ```sh
-  oc get pv
-  ```
-  {: pre}
+    ```sh
+    oc get pv
+    ```
+    {: pre}
 
-  **Example output**:
-  ```sh
-  local-pv-180cfc58   139Gi      RWO            Delete           Available           localfile               11m
-  local-pv-67f21982   139Gi      RWO            Delete           Available           localfile               12m
-  local-pv-80c5166    100Gi      RWO            Delete           Available           localblock              12m
-  local-pv-9b049705   139Gi      RWO            Delete           Available           localfile               12m
-  local-pv-b09e0279   100Gi      RWO            Delete           Available           localblock              12m
-  local-pv-f798e570   100Gi      RWO            Delete           Available           localblock              12m
-  ```
-  {: screen}
+    **Example output**:
+    ```sh
+    local-pv-180cfc58   139Gi      RWO            Delete           Available           localfile               11m
+    local-pv-67f21982   139Gi      RWO            Delete           Available           localfile               12m
+    local-pv-80c5166    100Gi      RWO            Delete           Available           localblock              12m
+    local-pv-9b049705   139Gi      RWO            Delete           Available           localfile               12m
+    local-pv-b09e0279   100Gi      RWO            Delete           Available           localblock              12m
+    local-pv-f798e570   100Gi      RWO            Delete           Available           localblock              12m
+    ```
+    {: screen}
 
 1. Delete the local PVs.
-  ```sh
-  oc delete pv <pv_name> <pv_name> <pv_name>
-  ```
-  {: pre}
+    ```sh
+    oc delete pv <pv_name> <pv_name> <pv_name>
+    ```
+    {: pre}
 
 ## Troubleshooting ODF
 {: #odf-troubleshooting-gather}
@@ -486,4 +489,6 @@ You can use the Rook community toolbox to debug issues with your Ceph cluster. F
 {: tip}
 
 For more information, review the [common troubleshooting topics](/docs/openshift?topic=openshift-sitemap#sitemap_openshift_data_foundation).
+
+
 

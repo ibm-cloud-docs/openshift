@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-14"
 
 keywords: odf, openshift data foundation add-on, changelog
 
@@ -54,7 +54,6 @@ subcollection: openshift, container storage
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -105,8 +104,6 @@ subcollection: openshift, container storage
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
 
 # OpenShift Data Foundation add-on changelog
@@ -137,5 +134,7 @@ Refer to the following tables for a summary of changes for each version of the [
 | 4.6.0 | | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | 4.6 |
 {: caption="Add-on versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the add-on version. The second column indicates the default version. The third column is the version's supported state. The fourth column is the {{site.data.keyword.openshiftshort}} version of your cluster that the add-on version is supported for."}
+
+
 
 

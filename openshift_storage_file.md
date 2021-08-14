@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -414,11 +414,11 @@ To add {{site.data.keyword.filestorage_short}}:
         <td><code>region</code></td>
         <td>Optional: Specify the region where you want to provision your {{site.data.keyword.filestorage_short}}. To connect to your storage, create the storage in the same region that your cluster is in. If you specify the region, you must also specify a zone. If you do not specify a region, or the specified region is not found, the storage is created in the same region as your cluster.
         </br></br>To get the region for your cluster, run <code>ibmcloud oc cluster get --cluster <cluster_name_or_ID></code> and look for the region prefix in the <strong>Master URL</strong>, such as <code>eu-de</code> in <code>https://c2.eu-de.containers.cloud.ibm.com:11111</code>.
-        </br></br><strong>Tip: </strong>Instead of specifying the region and zone in the PVC, you can also specify these values in a [customized storage class](#file_multizone_yaml). Then, use your storage class in the <code>metadata.annotations.volume.beta.kubernetes.io/storage-class</code> section of your PVC. If the region and zone are specified in the storage class and the PVC, the values in the PVC take precedence. </td>
+        </br></br><strong>Tip: </strong>Instead of specifying the region and zone in the PVC, you can also specify these values in a <a href="#file_multizone_yaml">customized storage class</a>. Then, use your storage class in the <code>metadata.annotations.volume.beta.kubernetes.io/storage-class</code> section of your PVC. If the region and zone are specified in the storage class and the PVC, the values in the PVC take precedence. </td>
         </tr>
         <tr>
         <td><code>zone</code></td>
-        <td>Optional: Specify the zone where you want to provision your {{site.data.keyword.filestorage_short}}. To use your storage in an app, create the storage in the same zone that your worker node is in. To view the zone of your worker node, run <code>ibmcloud oc worker ls --cluster &lt;cluster_name_or_ID&gt;</code> and review the <strong>Zone</strong> column of your CLI output. If you specify the zone, you must also specify a region. If you do not specify a zone or the specified zone is not found in a multizone cluster, the zone is selected on a round-robin basis. </br></br><strong>Tip: </strong>Instead of specifying the region and zone in the PVC, you can also specify these values in a [customized storage class](#file_multizone_yaml). Then, use your storage class in the <code>metadata.annotations.volume.beta.kubernetes.io/storage-class</code> section of your PVC. If the region and zone are specified in the storage class and the PVC, the values in the PVC take precedence.
+        <td>Optional: Specify the zone where you want to provision your {{site.data.keyword.filestorage_short}}. To use your storage in an app, create the storage in the same zone that your worker node is in. To view the zone of your worker node, run <code>ibmcloud oc worker ls --cluster &lt;cluster_name_or_ID&gt;</code> and review the <strong>Zone</strong> column of your CLI output. If you specify the zone, you must also specify a region. If you do not specify a zone or the specified zone is not found in a multizone cluster, the zone is selected on a round-robin basis. </br></br><strong>Tip: </strong>Instead of specifying the region and zone in the PVC, you can also specify these values in a <a href="#file_multizone_yaml">customized storage class</a>. Then, use your storage class in the <code>metadata.annotations.volume.beta.kubernetes.io/storage-class</code> section of your PVC. If the region and zone are specified in the storage class and the PVC, the values in the PVC take precedence.
 </td>
         </tr>
         <tr>
@@ -435,7 +435,7 @@ To add {{site.data.keyword.filestorage_short}}:
         </tr>
         <tr>
         <td><code>storageClassName</code></td>
-        <td>The name of the storage class that you want to use to provision {{site.data.keyword.filestorage_short}}. You can choose to use one of the [IBM-provided storage classes](#file_storageclass_reference) or [create your own storage class](#file_custom_storageclass). </br> If you do not specify a storage class, the PV is created with the default storage class <code>ibmc-file-bronze</code>. </br></br><strong>Tip:</strong> Want to set your own default? See [Changing the default storage class](/docs/openshift?topic=openshift-kube_concepts#default_storageclass).</td>
+        <td>The name of the storage class that you want to use to provision {{site.data.keyword.filestorage_short}}. You can choose to use one of the <a href="#file_storageclass_reference">IBM-provided storage classes</a> or <a href="#file_custom_storageclass">create your own storage class</a>. </br> If you do not specify a storage class, the PV is created with the default storage class <code>ibmc-file-bronze</code>. </br></br><strong>Tip:</strong> Want to set your own default? See <a href="/docs/openshift?topic=openshift-kube_concepts#default_storageclass">Changing the default storage class</a>.</td>
         </tr>
         </tbody></table>
 
@@ -536,7 +536,7 @@ To add {{site.data.keyword.filestorage_short}}:
     </tr>
     <tr>
     <td><code>mountPath</code></td>
-    <td>In the container volume mounts section, enter the absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the <code>root</code> directory in your physical {{site.data.keyword.filestorage_short}} instance. If you want to share a volume between different apps, you can specify [volume sub paths ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath) for each of your apps.  </td>
+    <td>In the container volume mounts section, enter the absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the <code>root</code> directory in your physical {{site.data.keyword.filestorage_short}} instance. If you want to share a volume between different apps, you can specify <a href="https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath">volume sub paths</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> for each of your apps.  </td>
     </tr>
     <tr>
     <td><code>name</code></td>
@@ -1033,7 +1033,7 @@ zone=dal10
     </tr>
     <tr>
     <td style="text-align:left"><code>podManagementPolicy</code></td>
-    <td style="text-align:left">Enter the pod management policy that you want to use for your stateful set. Choose between the following options: <ul><li><strong><code>OrderedReady</code></strong>: With this option, stateful set replicas are deployed one after another. For example, if you specified 3 replicas, then Kubernetes creates the PVC for your first replica, waits until the PVC is bound, deploys the stateful set replica, and mounts the PVC to the replica. After the deployment is finished, the second replica is deployed. For more information about this option, see [<code>OrderedReady</code> Pod Management ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#orderedready-pod-management).</li><li><strong>Parallel: </strong>With this option, the deployment of all stateful set replicas is started at the same time. If your app supports parallel deployment of replicas, then use this option to save deployment time for your PVCs and stateful set replicas. </li></ul></td>
+    <td style="text-align:left">Enter the pod management policy that you want to use for your stateful set. Choose between the following options: <ul><li><strong><code>OrderedReady</code></strong>: With this option, stateful set replicas are deployed one after another. For example, if you specified 3 replicas, then Kubernetes creates the PVC for your first replica, waits until the PVC is bound, deploys the stateful set replica, and mounts the PVC to the replica. After the deployment is finished, the second replica is deployed. For more information about this option, see <a href="https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#orderedready-pod-management"><code>OrderedReady</code> Pod Management</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</li><li><strong>Parallel: </strong>With this option, the deployment of all stateful set replicas is started at the same time. If your app supports parallel deployment of replicas, then use this option to save deployment time for your PVCs and stateful set replicas. </li></ul></td>
     </tr>
     <tr>
     <td style="text-align:left"><code>matchLabels</code></td>
@@ -1211,15 +1211,15 @@ For questions about billing and to find the steps for how to use the {{site.data
     </tr>
     <tr>
     <td><code>&lt;new-size&gt;</code></td>
-    <td>Enter the new size in gigabytes (Gi) for your volume. For valid sizes, see [Deciding on the {{site.data.keyword.filestorage_short}} configuration](#file_predefined_storageclass). The size that you enter must be greater than or equal to the current size of your volume. If you do not specify a new size, the current size of the volume is used. </td>
+    <td>Enter the new size in gigabytes (Gi) for your volume. For valid sizes, see <a href="#file_predefined_storageclass">Deciding on the {{site.data.keyword.filestorage_short}} configuration</a>. The size that you enter must be greater than or equal to the current size of your volume. If you do not specify a new size, the current size of the volume is used. </td>
     </tr>
     <tr>
     <td><code>&lt;new-iops&gt;</code></td>
-    <td>For performance storage only. Enter the new number of IOPS that you want. For valid IOPS, see [Deciding on the {{site.data.keyword.filestorage_short}} configuration](#file_predefined_storageclass). If you do not specify the IOPS, the current IOPS is used. <p class="note">If the original IOPS/GB ratio for the volume is less than 0.3, the new IOPS/GB ratio must be less than 0.3. If the original IOPS/GB ratio for the volume is greater than or equal to 0.3, the new IOPS/GB ratio for the volume must be greater than or equal to 0.3.</p> </td>
+    <td>For performance storage only. Enter the new number of IOPS that you want. For valid IOPS, see <a href="#file_predefined_storageclass">Deciding on the {{site.data.keyword.filestorage_short}} configuration</a>. If you do not specify the IOPS, the current IOPS is used. <p class="note">If the original IOPS/GB ratio for the volume is less than 0.3, the new IOPS/GB ratio must be less than 0.3. If the original IOPS/GB ratio for the volume is greater than or equal to 0.3, the new IOPS/GB ratio for the volume must be greater than or equal to 0.3.</p> </td>
     </tr>
     <tr>
     <td><code>&lt;new-tier&gt;</code></td>
-    <td>For endurance storage only. Enter the new number of IOPS per GB that you want. For valid IOPS, see [Deciding on the {{site.data.keyword.filestorage_short}} configuration](#file_predefined_storageclass). If you do not specify the IOPS, the current IOPS is used. <p class="note">If the original IOPS/GB ratio for the volume is less than 0.25, the new IOPS/GB ratio must be less than 0.25. If the original IOPS/GB ratio for the volume is greater than or equal to 0.25, the new IOPS/GB ratio for the volume must be greater than or equal to 0.25.</p> </td>
+    <td>For endurance storage only. Enter the new number of IOPS per GB that you want. For valid IOPS, see <a href="#file_predefined_storageclass">Deciding on the {{site.data.keyword.filestorage_short}} configuration</a>. If you do not specify the IOPS, the current IOPS is used. <p class="note">If the original IOPS/GB ratio for the volume is less than 0.25, the new IOPS/GB ratio must be less than 0.25. If the original IOPS/GB ratio for the volume is greater than or equal to 0.25, the new IOPS/GB ratio for the volume must be greater than or equal to 0.25.</p> </td>
     </tr>
     </tbody>
     </table>

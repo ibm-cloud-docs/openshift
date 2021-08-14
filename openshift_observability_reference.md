@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logging config, monitoring config
 
@@ -184,7 +184,7 @@ ibmcloud ob logging config create --cluster CLUSTER --instance LOGGING_INSTANCE 
 <dd>The {{site.data.keyword.la_short}} ingestion key that you want to use for your configuration. This value is optional. If you do not specify this option, the latest ingestion key is automatically retrieved.   </dd>
 
 <dt><code>--private-endpoint</code><dt>
-<dd>When you add this option to your command, the private cloud service endpoint is used to connect to {{site.data.keyword.la_full_notm}}. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option. For more information, see worker communication to other services and networks in [clusters](/docs/openshift?topic=openshift-plan_clusters#worker-services-onprem). </dd>
+<dd>When you add this option to your command, the private cloud service endpoint is used to connect to {{site.data.keyword.la_full_notm}}. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option. For more information, see worker communication to other services and networks in <a href="/docs/openshift?topic=openshift-plan_clusters#worker-services-onprem">clusters</a>. </dd>
 
 </dl>
 
@@ -201,7 +201,7 @@ Delete a {{site.data.keyword.la_short}} configuration from your cluster.
 {: shortdesc}
 
 
-To remove logging configurations that you manually set up without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you must first make this configuration available to the plug-in by using the [<code>ibmcloud ob logging agent discover</code>](#logging_agent_discover) command.
+To remove logging configurations that you manually set up without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you must first make this configuration available to the plug-in by using the <a href="#logging_agent_discover"><code>ibmcloud ob logging agent discover</code></a> command.
 {: note}
 
 When you delete the logging configuration, the components that are deleted depend on how you created the logging configuration. For logging configurations that were created with the <code>ibmcloud ob logging config create</code> command, the daemon set for the {{site.data.keyword.la_short}} agent, the configmap, and secret are removed from your cluster, and pod logs are no longer sent to your {{site.data.keyword.la_full_notm}} service instance. Logging configurations that you manually created and made visible to the plug-in by using the <code>ibmcloud ob logging agent discover</code> command, only the configmap is removed. Your daemon set, secret, and the {{site.data.keyword.la_short}} agent are still deployed to your cluster and you must manually remove them. Because the configmap is removed, pod logs are no longer sent to your {{site.data.keyword.la_full_notm}} service instance. Independent of how you created the configuration, existing log data is still available in {{site.data.keyword.la_full_notm}} until your selected retention period ends.  
@@ -462,7 +462,7 @@ Delete a {{site.data.keyword.mon_short}} configuration from your cluster.
 {: shortdesc}
 
 
-To remove monitoring configurations that you manually set up without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you must first make this configuration available to the plug-in by using the [<code>ibmcloud ob monitoring agent discover</code>](#monitoring_agent_discover) command.
+To remove monitoring configurations that you manually set up without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you must first make this configuration available to the plug-in by using the <a href="#monitoring_agent_discover"><code>ibmcloud ob monitoring agent discover</code></a> command.
 {: note}
 
 

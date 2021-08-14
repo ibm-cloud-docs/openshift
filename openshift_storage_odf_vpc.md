@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, roks
 
@@ -369,12 +369,12 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     Metadata:
         Creation Timestamp:  2021-03-23T20:56:51Z
     Finalizers:
-        finalizer.ocs.ibm.io
+      finalizer.ocs.ibm.io
     Generation:  1
     Managed Fields:
-        API Version:  ocs.ibm.io/v1
-        Fields Type:  FieldsV1
-        fieldsV1:
+      API Version:  ocs.ibm.io/v1
+      Fields Type:  FieldsV1
+      fieldsV1:
         f:spec:
           .:
           f:billingType:
@@ -384,12 +384,12 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
           f:ocsUpgrade:
           f:osdSize:
           f:osdStorageClassName:
-        Manager:      oc
-        Operation:    Update
-        Time:         2021-03-23T20:56:51Z
-        API Version:  ocs.ibm.io/v1
-        Fields Type:  FieldsV1
-        fieldsV1:
+      Manager:      oc
+      Operation:    Update
+      Time:         2021-03-23T20:56:51Z
+      API Version:  ocs.ibm.io/v1
+      Fields Type:  FieldsV1
+      fieldsV1:
         f:metadata:
           f:finalizers:
             .:
@@ -397,23 +397,23 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
         f:status:
           .:
           f:storageClusterStatus:
-        Manager:         manager
-        Operation:       Update
-        Time:            2021-04-09T23:12:02Z
+      Manager:         manager
+      Operation:       Update
+      Time:            2021-04-09T23:12:02Z
     Resource Version:  11372332
     Self Link:         /apis/ocs.ibm.io/v1/ocsclusters/ocscluster-vpc
     UID:               aa11a1a1-111f-aace-afac-1fa1afe1111a
-    Spec:
-        Billing Type:            hourly
+  Spec:
+    Billing Type:            hourly
     Mon Size:                20Gi
     Mon Storage Class Name:  ibmc-vpc-block-10iops-tier
     Num Of Osd:              1
     Ocs Upgrade:             false
     Osd Size:                100Gi
     Osd Storage Class Name:  ibmc-vpc-block-10iops-tier
-    Status:
-        Storage Cluster Status:  
-    Events:                    <none>
+  Status:
+    Storage Cluster Status:  
+  Events:                    <none>
     ```
     {: codeblock}
 

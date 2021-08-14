@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: autoscaler, add-on, autoscaler changelog
 
@@ -173,7 +173,7 @@ ibmcloud oc addon-versions
 | --- | --- | --- | --- | --- |
 | `1.0.2_267` | <ul>`1.17.4-3`</li><li><code>1.18.3-3</code></li><li><code>1.19.1-3</code></li><li><code>1.20.0-3</code></li></ul> | 10 May 2021 | 4.3 - 4.6 | Includes a bux fix for the `worker replace` command on VPC clusters that caused worker creation to fail. |
 | `1.0.2_256` | <ul>`1.17.4-2`</li><li><code>1.18.3-2</code></li><li><code>1.19.1-2</code></li><li><code>1.20.0-2</code></li></ul> | 19 April 2021 | 4.3 - 4.6</li></ul> | Includes fixes for [CVE-2021-27919](https://nvd.nist.gov/vuln/detail/CVE-2021-27919){: external} and [CVE-2021-27918](https://nvd.nist.gov/vuln/detail/CVE-2021-27918){: external}. |
-| `1.0.2_249` | <ul><li><code>1.16.7-1</code></li><li><code>1.17.4-1</code></li><li><code>1.18.3-1</code></li><li><code>1.19.1-1</code></li><li><code>1.20.0-1</code></li></ul> | 01 April 2021 | 4.3 - 4.6</li></ul> | <ul><li>Includes fixes for [CVE-2021-3114](https://nvd.nist.gov/vuln/detail/CVE-2021-3114){: external} and [CVE-2021-3115](https://nvd.nist.gov/vuln/detail/CVE-2021-3115){: external}.</li><li>Removes the <code>init</code> container. Prior to this update, the cluster autoscaler pods would remain in the <code>initContainer</code> state if the API key that is provided is missing or malformed. This update removes the <code>init</code> container so that if the API key is missing or malformed, the cluster autoscaler pod fails.</li></ul>.  |
+| `1.0.2_249` | <ul><li><code>1.16.7-1</code></li><li><code>1.17.4-1</code></li><li><code>1.18.3-1</code></li><li><code>1.19.1-1</code></li><li><code>1.20.0-1</code></li></ul> | 01 April 2021 | 4.3 - 4.6</li></ul> | <ul><li>Includes fixes for <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-3114">CVE-2021-3114</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> and <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-3115">CVE-2021-3115</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</li><li>Removes the <code>init</code> container. Prior to this update, the cluster autoscaler pods would remain in the <code>initContainer</code> state if the API key that is provided is missing or malformed. This update removes the <code>init</code> container so that if the API key is missing or malformed, the cluster autoscaler pod fails.</li></ul>.  |
 | `1.0.2_224` | <ul><li><code>1.16.7-0</code></li><li><code>1.17.4-0</code></li><li><code>1.18.3-0</code></li><li><code>1.19.1-0</code></li><li><code>1.20.0-0</code></li></ul> | 09 March 2021 | 4.3 - 4.6</li></ul> | Adds support for Kubernetes version 1.20. |
 {: row-headers}
 {: class="comparison-table"}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -125,21 +125,21 @@ The default Block storage plug-in resource requests are not sufficient. The Bloc
 
 ```yaml
 plugin:
-    resources:
-        requests:
-        memory: 100Mi
-        cpu: 50m
+  resources:
+    requests:
+      memory: 100Mi
+      cpu: 50m
     limits:
-        memory: 300Mi
-        cpu: 300m
+      memory: 300Mi
+      cpu: 300m
 driver:
-    resources:
-        requests:
-        memory: 50Mi
-        cpu: 25m
+  resources:
+    requests:
+      memory: 50Mi
+      cpu: 25m
     limits:
-        memory: 200Mi
-        cpu: 100m
+      memory: 200Mi
+      cpu: 100m
 ```
 {: codeblock}
 

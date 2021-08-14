@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -818,7 +818,7 @@ Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs
         </tr>
         <tr>
         <td><code>parameters.secure</code></td>
-        <td>Specify whether you want to encrypt the data in your volume with {{site.data.keyword.keymanagementservicelong_notm}}. Choose between the following options: <ul><li><strong>true</strong>: Enter <code>true</code> to enable encryption for your Portworx volumes. To encrypt volumes, you must have an {{site.data.keyword.keymanagementservicelong_notm}} service instance and a Kubernetes secret that holds your customer root key. For more information about how to set up encryption for Portworx volumes, see [Encrypting your Portworx volumes](#encrypt_volumes). </li><li><strong>false</strong>: When you enter <code>false</code>, your Portworx volumes are not encrypted. </li></ul> If you do not specify this option, your Portworx volumes are not encrypted by default. <strong>Note:</strong> You can choose to enable volume encryption in your PVC, even if you disabled encryption in your storage class. The setting that you make in the PVC take precedence over the settings in the storage class.  </td>
+        <td>Specify whether you want to encrypt the data in your volume with {{site.data.keyword.keymanagementservicelong_notm}}. Choose between the following options: <ul><li><strong>true</strong>: Enter <code>true</code> to enable encryption for your Portworx volumes. To encrypt volumes, you must have an {{site.data.keyword.keymanagementservicelong_notm}} service instance and a Kubernetes secret that holds your customer root key. For more information about how to set up encryption for Portworx volumes, see <a href="#encrypt_volumes">Encrypting your Portworx volumes</a>. </li><li><strong>false</strong>: When you enter <code>false</code>, your Portworx volumes are not encrypted. </li></ul> If you do not specify this option, your Portworx volumes are not encrypted by default. <strong>Note:</strong> You can choose to enable volume encryption in your PVC, even if you disabled encryption in your storage class. The setting that you make in the PVC take precedence over the settings in the storage class.  </td>
         </tr>
         <tr>
         <td><code>parameters.priority_io</code></td>
@@ -875,7 +875,7 @@ Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs
         </tr>
         <tr>
         <td><code>spec.accessModes</code></td>
-        <td>Enter the [Kubernetes access mode ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes) that you want to use. </td>
+        <td>Enter the <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes">Kubernetes access mode</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> that you want to use. </td>
         </tr>
         <tr>
         <td><code>resources.requests.storage</code></td>
@@ -968,7 +968,7 @@ To access the storage from your app, you must mount the PVC to your app.
         </tr>
     <tr>
     <td><code>spec.schedulerName</code></td>
-    <td>Use [Stork ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/stork/) as the scheduler for your Portworx cluster. With Stork, you can co-locate pods with their data, provides seamless migration of pods in case of storage errors and makes it easier to create and restore snapshots of Portworx volumes. </td>
+    <td>Use <a href="https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/stork/">Stork</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> as the scheduler for your Portworx cluster. With Stork, you can co-locate pods with their data, provides seamless migration of pods in case of storage errors and makes it easier to create and restore snapshots of Portworx volumes. </td>
     </tr>
     <tr>
     <td><code>spec.containers.image</code></td>
@@ -980,11 +980,11 @@ To access the storage from your app, you must mount the PVC to your app.
     </tr>
     <tr>
     <td><code>spec.containers.securityContext.fsGroup</code></td>
-    <td>Optional: To access your storage with a non-root user, specify the [security context ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/) for your pod and define the set of users that you want to grant access in the <code>fsGroup</code> section on your deployment YAML. For more information, see [Accessing Portworx volumes with a non-root user ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/access-via-non-root-users/). </td>
+    <td>Optional: To access your storage with a non-root user, specify the <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">security context</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> for your pod and define the set of users that you want to grant access in the <code>fsGroup</code> section on your deployment YAML. For more information, see <a href="https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/access-via-non-root-users/">Accessing Portworx volumes with a non-root user</a> <img src="../icons/launch-glyph.svg" alt="External link icon">. </td>
     </tr>
     <tr>
     <td><code>spec.containers.volumeMounts.mountPath</code></td>
-    <td>The absolute path of the directory to where the volume is mounted inside the container. If you want to share a volume between different apps, you can specify [volume sub paths ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath) for each of your apps.</td>
+    <td>The absolute path of the directory to where the volume is mounted inside the container. If you want to share a volume between different apps, you can specify <a href="https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath">volume sub paths</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> for each of your apps.</td>
     </tr>
     <tr>
     <td><code>spec.containers.volumeMounts.name</code></td>
@@ -1243,9 +1243,9 @@ If a cluster that you want to back up with PX-Backup does not have Portworx Ente
     imagePullPolicy:Always
     resources:
       requests:
-            cpu: '0.1'
-        name: stork
-    serviceAccountName: stork-account  
+         cpu: '0.1'
+      name: stork
+   serviceAccountName: stork-account  
     ```
     {: screen}
 

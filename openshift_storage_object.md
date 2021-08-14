@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -717,7 +717,7 @@ To remove the `ibmc` Helm plugin and the `ibm-object-storage-plugin`:
     </tr>
     <tr>
     <td><code>ibm.io/curl-debug</code></td>
-    <td>Enable the logging of requests that are sent to the {{site.data.keyword.cos_full_notm}} service instance. If enabled, logs are sent to <code>syslog</code> and you can [forward the logs to an external logging server](/docs/containers?topic=containers-health#logging). By default, all storage classes are set to <strong>false</strong> to disable this logging feature. </td>
+    <td>Enable the logging of requests that are sent to the {{site.data.keyword.cos_full_notm}} service instance. If enabled, logs are sent to <code>syslog</code> and you can <a href="/docs/containers?topic=containers-health#logging">forward the logs to an external logging server</a>. By default, all storage classes are set to <strong>false</strong> to disable this logging feature. </td>
     </tr>
     <tr>
     <td><code>ibm.io/debug-level</code></td>
@@ -737,7 +737,7 @@ To remove the `ibmc` Helm plugin and the `ibm-object-storage-plugin`:
     </tr>
     <tr>
     <td><code>ibm.io/object-store-endpoint</code></td>
-    <td>The API endpoint to use to access the bucket in your {{site.data.keyword.cos_full_notm}} service instance. The endpoint is automatically set based on the region of your cluster. <strong>Note</strong>: If you want to access an existing bucket that is located in a different region than the one where your cluster is in, you must create a [custom storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use the API endpoint for your bucket.</td>
+    <td>The API endpoint to use to access the bucket in your {{site.data.keyword.cos_full_notm}} service instance. The endpoint is automatically set based on the region of your cluster. <strong>Note</strong>: If you want to access an existing bucket that is located in a different region than the one where your cluster is in, you must create a <a href="/docs/openshift?topic=openshift-kube_concepts#customized_storageclass">custom storage class</a> and use the API endpoint for your bucket.</td>
     </tr>
     <tr>
     <td><code>ibm.io/object-store-storage-class</code></td>
@@ -757,7 +757,7 @@ To remove the `ibmc` Helm plugin and the `ibm-object-storage-plugin`:
     </tr>
     <tr>
     <td><code>ibm.io/tls-cipher-suite</code></td>
-    <td>The TLS cipher suite that must be used when a connection to {{site.data.keyword.cos_full_notm}} is established via the HTTPS endpoint. The value for the cipher suite must follow the [OpenSSL format ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.openssl.org/docs/man1.0.2/man1/ciphers.html). If your worker nodes run an Ubuntu operating system, your storage classes are set up to use the <strong><code>AESGCM</code></strong> cipher suite by default. For worker nodes that run a Red Hat operating system, the <strong><code>ecdhe_rsa_aes_128_gcm_sha_256</code></strong> cipher suite is used by default.    </td>
+    <td>The TLS cipher suite that must be used when a connection to {{site.data.keyword.cos_full_notm}} is established via the HTTPS endpoint. The value for the cipher suite must follow the <a href="https://www.openssl.org/docs/man1.0.2/man1/ciphers.html">OpenSSL format</a> <img src="../icons/launch-glyph.svg" alt="External link icon">. If your worker nodes run an Ubuntu operating system, your storage classes are set up to use the <strong><code>AESGCM</code></strong> cipher suite by default. For worker nodes that run a Red Hat operating system, the <strong><code>ecdhe_rsa_aes_128_gcm_sha_256</code></strong> cipher suite is used by default.    </td>
     </tr>
     </tbody>
     </table>
@@ -1028,19 +1028,19 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     </tr>
     <tr>
     <td><code>ibm.io/secret-name</code></td>
-    <td>Enter the name of the secret that holds the {{site.data.keyword.cos_full_notm}} credentials that you created earlier. If you add your [{{site.data.keyword.cos_full_notm}} credentials to the default storage classes](#storage_class_custom), you do not need to refer to your secret in the PVC.</td>
+    <td>Enter the name of the secret that holds the {{site.data.keyword.cos_full_notm}} credentials that you created earlier. If you add your <a href="#storage_class_custom">{{site.data.keyword.cos_full_notm}} credentials to the default storage classes</a>, you do not need to refer to your secret in the PVC.</td>
     </tr>
     <tr>
     <td><code>ibm.io/endpoint</code></td>
-    <td>If you created your {{site.data.keyword.cos_full_notm}} service instance in a location that is different from your cluster, enter the private or public cloud service endpoint of your {{site.data.keyword.cos_full_notm}} service instance that you want to use. For an overview of available service endpoints, see [Additional endpoint information](/docs/cloud-object-storage?topic=cloud-object-storage-advanced-endpoints). By default, the <code>ibmc</code> Helm plug-in automatically retrieves your cluster location and creates the storage classes by using the {{site.data.keyword.cos_full_notm}} private cloud service endpoint that matches your cluster location. If your classic cluster is in a multizone metro, such as <code>dal10</code>, the {{site.data.keyword.cos_full_notm}} private cloud service endpoint for the multizone metro, in this case Dallas, is used. To verify that the service endpoint in your storage classes matches the service endpoint of your service instance, run <code>oc describe storageclass <storageclassname></code>. Make sure that you enter your service endpoint in the format <code>https://<s3fs_private_service_endpoint></code> for private cloud service endpoints, or <code>http://<s3fs_public_service_endpoint></code> for public cloud service endpoints. If the service endpoint in your storage class matches the service endpoint of your {{site.data.keyword.cos_full_notm}} service instance, do not include the <code>ibm.io/endpoint</code> option in your PVC YAML file. </td>
+    <td>If you created your {{site.data.keyword.cos_full_notm}} service instance in a location that is different from your cluster, enter the private or public cloud service endpoint of your {{site.data.keyword.cos_full_notm}} service instance that you want to use. For an overview of available service endpoints, see <a href="/docs/cloud-object-storage?topic=cloud-object-storage-advanced-endpoints">Additional endpoint information</a>. By default, the <code>ibmc</code> Helm plug-in automatically retrieves your cluster location and creates the storage classes by using the {{site.data.keyword.cos_full_notm}} private cloud service endpoint that matches your cluster location. If your classic cluster is in a multizone metro, such as <code>dal10</code>, the {{site.data.keyword.cos_full_notm}} private cloud service endpoint for the multizone metro, in this case Dallas, is used. To verify that the service endpoint in your storage classes matches the service endpoint of your service instance, run <code>oc describe storageclass <storageclassname></code>. Make sure that you enter your service endpoint in the format <code>https://<s3fs_private_service_endpoint></code> for private cloud service endpoints, or <code>http://<s3fs_public_service_endpoint></code> for public cloud service endpoints. If the service endpoint in your storage class matches the service endpoint of your {{site.data.keyword.cos_full_notm}} service instance, do not include the <code>ibm.io/endpoint</code> option in your PVC YAML file. </td>
     </tr>
     <tr>
     <td><code>storage</code></td>
-    <td>In the spec resources requests section, enter a fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the [pricing table ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api). </td>
+    <td>In the spec resources requests section, enter a fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the <a href="https://www.ibm.com/cloud/object-storage/pricing/#s3api">pricing table</a> <img src="../icons/launch-glyph.svg" alt="External link icon">. </td>
     </tr>
     <tr>
     <td><code>storageClassName</code></td>
-    <td>Choose between the following options: <ul><li>If <code>ibm.io/auto-create-bucket</code> is set to <strong>true</strong>: Enter the storage class that you want to use for your new bucket. </li><li>If <code>ibm.io/auto-create-bucket</code> is set to <strong>false</strong>: Enter the storage class that you used to create your existing bucket. </br></br>If you manually created the bucket in your {{site.data.keyword.cos_full_notm}} service instance or you cannot remember the storage class that you used, find your service instance in the {{site.data.keyword.cloud_notm}} dashboard and review the <strong>Class</strong> and <strong>Location</strong> of your existing bucket. Then, use the appropriate [storage class](#cos_storageclass_reference).<p class="note">The {{site.data.keyword.cos_full_notm}} API endpoint that is set in your storage class is based on the region that your cluster is in. If you want to access a bucket that is located in a different region than the one where your cluster is in, you must create a [custom storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use the appropriate API endpoint for your bucket.</p></li></ul>  </td>
+    <td>Choose between the following options: <ul><li>If <code>ibm.io/auto-create-bucket</code> is set to <strong>true</strong>: Enter the storage class that you want to use for your new bucket. </li><li>If <code>ibm.io/auto-create-bucket</code> is set to <strong>false</strong>: Enter the storage class that you used to create your existing bucket. </br></br>If you manually created the bucket in your {{site.data.keyword.cos_full_notm}} service instance or you cannot remember the storage class that you used, find your service instance in the {{site.data.keyword.cloud_notm}} dashboard and review the <strong>Class</strong> and <strong>Location</strong> of your existing bucket. Then, use the appropriate <a href="#cos_storageclass_reference">storage class</a>.<p class="note">The {{site.data.keyword.cos_full_notm}} API endpoint that is set in your storage class is based on the region that your cluster is in. If you want to access a bucket that is located in a different region than the one where your cluster is in, you must create a <a href="/docs/openshift?topic=openshift-kube_concepts#customized_storageclass">custom storage class</a> and use the appropriate API endpoint for your bucket.</p></li></ul>  </td>
     </tr>
     </tbody>
     </table>
@@ -1128,7 +1128,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     </tr>
     <tr>
     <td><code>mountPath</code></td>
-    <td>In the spec containers volume mounts section, enter the absolute path of the directory to where the volume is mounted inside the container. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.</td>
+    <td>In the spec containers volume mounts section, enter the absolute path of the directory to where the volume is mounted inside the container. If you want to share a volume between different apps, you can specify <a href="https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath">volume sub paths</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> for each of your apps.</td>
     </tr>
     <tr>
     <td><code>name</code></td>
@@ -1361,7 +1361,7 @@ To deploy a stateful set that uses object storage:
     </tr>
     <tr>
     <td><code>terminationGracePeriodSeconds</code></td>
-    <td>Enter the number of seconds to give the <code>kubelet</code> to gracefully terminate the pod that runs your stateful set replica. For more information, see [Delete Pods ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/run-application/force-delete-stateful-set-pod/#delete-pods). </td>
+    <td>Enter the number of seconds to give the <code>kubelet</code> to gracefully terminate the pod that runs your stateful set replica. For more information, see <a href="https://kubernetes.io/docs/tasks/run-application/force-delete-stateful-set-pod/#delete-pods">Delete Pods</a> <img src="../icons/launch-glyph.svg" alt="External link icon">. </td>
     </tr>
     <tr>
     <td style="text-align:left"><code>name</code></td>
@@ -1381,7 +1381,7 @@ To deploy a stateful set that uses object storage:
     </tr>
     <tr>
     <td><code>ibm.io/secret-name</code></td>
-    <td>In the spec volume claim templates metadata annotations section, enter the name of the secret that holds the {{site.data.keyword.cos_full_notm}} credentials that you created earlier. If you add your [{{site.data.keyword.cos_full_notm}} credentials to the default storage classes](#storage_class_custom), you do not need to refer to your secret in the PVC.</td>
+    <td>In the spec volume claim templates metadata annotations section, enter the name of the secret that holds the {{site.data.keyword.cos_full_notm}} credentials that you created earlier. If you add your <a href="#storage_class_custom">{{site.data.keyword.cos_full_notm}} credentials to the default storage classes</a>, you do not need to refer to your secret in the PVC.</td>
     </tr>
     <tr>
     <td style="text-align:left"><code>kubernetes.io/storage-class</code></td>
@@ -1393,7 +1393,7 @@ To deploy a stateful set that uses object storage:
     </tr>
     <tr>
     <td style="text-align:left"><code>storage</code></td>
-    <td>In the spec volume claim templates spec resource requests section, enter a fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the [pricing table ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api).</td>
+    <td>In the spec volume claim templates spec resource requests section, enter a fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the <a href="https://www.ibm.com/cloud/object-storage/pricing/#s3api">pricing table</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</td>
     </tr>
     </tbody></table>
 
@@ -1449,7 +1449,7 @@ To add a secret to a storage class:
     ...
     parameters:
         ibm.io/secret-name: "<secret_name>" # Enter the name the secret that you created.
-    ...
+      ...
     ```
     {: codeblock}
 
@@ -1500,7 +1500,7 @@ To add a secret to a storage class:
 </tr>
 <tr>
 <td>Default resiliency endpoint</td>
-<td>The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see [Regions and endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints). </td>
+<td>The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see <a href="/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints">Regions and endpoints</a>. </td>
 </tr>
 <tr>
 <td>Chunk size</td>
@@ -1516,7 +1516,7 @@ To add a secret to a storage class:
 </tr>
 <tr>
 <td>Pricing</td>
-<td>[Pricing ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api)</td>
+<td><a href="https://www.ibm.com/cloud/object-storage/pricing/#s3api">Pricing</a> <img src="../icons/launch-glyph.svg" alt="External link icon"></td>
 </tr>
 </tbody>
 </table>
@@ -1539,7 +1539,7 @@ To add a secret to a storage class:
 </tr>
 <tr>
 <td>Default resiliency endpoint</td>
-<td>The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see [Regions and endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints). </td>
+<td>The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see <a href="/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints">Regions and endpoints</a>. </td>
 </tr>
 <tr>
 <td>Chunk size</td>
@@ -1555,7 +1555,7 @@ To add a secret to a storage class:
 </tr>
 <tr>
 <td>Pricing</td>
-<td>[Pricing ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api)</td>
+<td><a href="https://www.ibm.com/cloud/object-storage/pricing/#s3api">Pricing</a> <img src="../icons/launch-glyph.svg" alt="External link icon"></td>
 </tr>
 </tbody>
 </table>
@@ -1576,7 +1576,7 @@ To add a secret to a storage class:
 </tr>
 <tr>
 <td>Default resiliency endpoint</td>
-<td>The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see [Regions and endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints). </td>
+<td>The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see <a href="/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints">Regions and endpoints</a>. </td>
 </tr>
 <tr>
 <td>Chunk size</td>
@@ -1592,7 +1592,7 @@ To add a secret to a storage class:
 </tr>
 <tr>
 <td>Pricing</td>
-<td>[Pricing ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api)</td>
+<td><a href="https://www.ibm.com/cloud/object-storage/pricing/#s3api">Pricing</a> <img src="../icons/launch-glyph.svg" alt="External link icon"></td>
 </tr>
 </tbody>
 </table>
@@ -1613,7 +1613,7 @@ To add a secret to a storage class:
 </tr>
 <tr>
 <td>Default resiliency endpoint</td>
-<td>The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see [Regions and endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints). </td>
+<td>The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see <a href="/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints">Regions and endpoints</a>. </td>
 </tr>
 <tr>
 <td>Chunk size</td>
@@ -1629,7 +1629,7 @@ To add a secret to a storage class:
 </tr>
 <tr>
 <td>Pricing</td>
-<td>[Pricing ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/object-storage/pricing/#s3api)</td>
+<td><a href="https://www.ibm.com/cloud/object-storage/pricing/#s3api">Pricing</a> <img src="../icons/launch-glyph.svg" alt="External link icon"></td>
 </tr>
 </tbody>
 </table>

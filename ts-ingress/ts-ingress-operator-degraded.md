@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-02"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -20,6 +20,7 @@ content-type: troubleshoot
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -53,11 +54,9 @@ content-type: troubleshoot
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -112,8 +111,8 @@ content-type: troubleshoot
 {: #ingress_subdomain}
 
 **Infrastructure provider**:
-  * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {: tsSymptoms}
 You receive an error message similar to one of the following.
@@ -127,8 +126,8 @@ XXX.us-south.containers.appdomain.cloud: Get "http://image-registry-openshift-im
 **Example `nslookup` error**
 ```sh
 # nslookup XXX.XXX.databases.appdomain.cloud
-Server:		XXX.XX.X.XX
-Address:	XXX.XX.X.XX:XX
+Server:        XXX.XX.X.XX
+Address:    XXX.XX.X.XX:XX
 
 Non-authoritative answer:
 *** Can't find XXX.XXX.databases.appdomain.cloud: Parse error
@@ -140,7 +139,6 @@ Non-authoritative answer:
 
 {: tsCauses}
 The fix for [bug 1953097](https://bugzilla.redhat.com/show_bug.cgi?id=1970140){: external} enabled CoreDNS `bufsize` plugin responses of `1232` bytes. Some DNS resolvers can't receive responses greater than `512` bytes. Note that DNS resolvers that retry lookups using TCP, such as Dig, are not impacted. DNS clients that do not require UDP DNS messages to exceed 512 bytes are not impacted.
-
 
 {: tsResolve}
 1. [Update your cluster master](/docs/openshift?topic=openshift-update#master). For 4.6 clusters, update your master to version `4.6.38_openshift` or later. For 4.7 clusters, update your master to version `4.7.19_openshift` or later.
@@ -204,24 +202,26 @@ The fix for [bug 1953097](https://bugzilla.redhat.com/show_bug.cgi?id=1970140){:
 
     ```sh
     / # nslookup XXX.XXX.databases.appdomain.cloud
-    Server:		XXX.XX.X.XX
-    Address:	XXX.XX.X.XX:XX
+    Server:        XXX.XX.X.XX
+    Address:    XXX.XX.X.XX:XX
 
     Non-authoritative answer:
-    XXX.XXX.databases.appdomain.cloud	canonical name = icd-prod-us-south-db-lm0sr.us-south.containers.appdomain.cloud
-    icd-prod-us-south-db-lm0sr.us-south.containers.appdomain.cloud	canonical name = icd-prod-us-south-db-lm0sr.XXX.akadns.net
+    XXX.XXX.databases.appdomain.cloud    canonical name = icd-prod-us-south-db-lm0sr.us-south.containers.appdomain.cloud
+    icd-prod-us-south-db-lm0sr.us-south.containers.appdomain.cloud    canonical name = icd-prod-us-south-db-lm0sr.XXX.akadns.net
 
     Non-authoritative answer:
-    XXX.XXX.databases.appdomain.cloud	canonical name = icd-prod-us-south-db-lm0sr.us-south.containers.appdomain.cloud
-    icd-prod-us-south-db-lm0sr.us-south.containers.appdomain.cloud	canonical name = icd-prod-us-south-db-lm0sr.XXX.akadns.net
-    Name:	icd-prod-us-south-db-lm0sr.XXX.akadns.net
+    XXX.XXX.databases.appdomain.cloud    canonical name = icd-prod-us-south-db-lm0sr.us-south.containers.appdomain.cloud
+    icd-prod-us-south-db-lm0sr.us-south.containers.appdomain.cloud    canonical name = icd-prod-us-south-db-lm0sr.XXX.akadns.net
+    Name:    icd-prod-us-south-db-lm0sr.XXX.akadns.net
     Address: XXX.XX.XXX.XX
-    Name:	icd-prod-us-south-db-lm0sr.XXX.akadns.net
+    Name:    icd-prod-us-south-db-lm0sr.XXX.akadns.net
     Address: XXX.XX.X.XX
-    Name:	icd-prod-us-south-db-lm0sr.XXX.akadns.net
+    Name:    icd-prod-us-south-db-lm0sr.XXX.akadns.net
     Address: XXX.XX.XXX.XXX
     ```
     {: codeblock}
+
+
 
 
 

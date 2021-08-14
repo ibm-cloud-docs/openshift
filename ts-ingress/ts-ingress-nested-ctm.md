@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-14"
 
 keywords: openshift, iks, help, network, dns, health check
 
@@ -55,7 +55,6 @@ content-type: troubleshoot
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -106,9 +105,8 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Ingress health checks fail on Akamai Global Load Balancer (GLB) configurations
 {: #cs_ingress_health_check_ctm}
@@ -117,20 +115,20 @@ content-type: troubleshoot
 * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 * <img src="../images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Satellite
 
-When you try to include Ingress subdomains that have health checks enabled in your Akamai Global Traffic Managment (GTM) configuration, the health checks fail.
 {: tsSymptoms}
+When you try to include Ingress subdomains that have health checks enabled in your Akamai Global Traffic Managment (GTM) configuration, the health checks fail.
 
-
-Akamai Global Traffic Managment (GTM) configurations do not support nested subdomains.
 {: tsCauses}
+Akamai Global Traffic Managment (GTM) configurations do not support nested subdomains.
 
-
-Disable the default health check for the Ingress subdomain. For more information see the `nlb-dns monitor disable` [command reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-disable).
 {: tsResolve}
+Disable the default health check for the Ingress subdomain. For more information see the `nlb-dns monitor disable` [command reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-disable).
 
 ```sh
 ibmcloud oc nlb-dns monitor disable --cluster CLUSTER --nlb-host SUBDOMAIN 
 ```
 {: pre}
+
+
 
 

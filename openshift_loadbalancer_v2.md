@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -234,7 +234,7 @@ To set up an NLB 2.0 in a multizone cluster:
         </tr>
         <tr>
         <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-ipvs-scheduler:</code>
-        <td>Optional: Annotation to specify the scheduling algorithm. Accepted values are <code>"rr"</code> for Round Robin (default) or <code>"sh"</code> for Source Hashing. For more information, see [2.0: Scheduling algorithms](#scheduling).</td>
+        <td>Optional: Annotation to specify the scheduling algorithm. Accepted values are <code>"rr"</code> for Round Robin (default) or <code>"sh"</code> for Source Hashing. For more information, see <a href="#scheduling">2.0: Scheduling algorithms</a>.</td>
         </tr>
         <tr>
         <td><code>selector</code></td>
@@ -394,7 +394,7 @@ To create an NLB 2.0 service in a single-zone cluster:
         </tr>
         <tr>
           <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-ipvs-scheduler:</code>
-          <td>Optional: Annotation to specify a scheduling algorithm. Accepted values are <code>"rr"</code> for Round Robin (default) or <code>"sh"</code> for Source Hashing. For more information, see [2.0: Scheduling algorithms](#scheduling).</td>
+          <td>Optional: Annotation to specify a scheduling algorithm. Accepted values are <code>"rr"</code> for Round Robin (default) or <code>"sh"</code> for Source Hashing. For more information, see <a href="#scheduling">2.0: Scheduling algorithms</a>.</td>
         </tr>
         <tr>
           <td><code>selector</code></td>

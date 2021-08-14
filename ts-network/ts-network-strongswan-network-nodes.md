@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -203,14 +203,12 @@ Update the Helm chart values to reflect the worker node changes.
         </tbody></table>
 
 4. Install the new Helm chart with your updated values.
-
     ```
     helm install <release_name> iks-charts/strongswan -f config.yaml
     ```
     {: pre}
 
 5. Check the chart deployment status. When the chart is ready, the **STATUS** field near the top of the output has a value of `DEPLOYED`.
-
     ```
     helm status <release_name>
     ```
@@ -223,14 +221,12 @@ Update the Helm chart values to reflect the worker node changes.
     * If the VPN connection is initiated by the on-prem gateway (`ipsec.auto` is set to `auto`), start the VPN on the cluster, and then start the VPN on the on-prem gateway.
 
 8. Set the `STRONGSWAN_POD` environment variable.
-
     ```
     export STRONGSWAN_POD=$(oc get pod -l app=strongswan,release=<release_name> -o jsonpath='{ .items[0].metadata.name }')
     ```
     {: pre}
 
 9. Check the status of the VPN.
-
     ```
     oc exec  $STRONGSWAN_POD -- ipsec status
     ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -292,19 +292,19 @@ To access the IBM Cloud infrastructure portfolio, you use an {{site.data.keyword
     <tbody>
         <tr>
         <td><strong>Lite accounts</strong> cannot provision clusters.</td>
-        <td>Upgrade your Lite account to an {{site.data.keyword.cloud_notm}} [Pay-As-You-Go](/docs/account?topic=account-accounts#paygo) or [Subscription](/docs/account?topic=account-accounts#subscription-account) account.</td>
+        <td>Upgrade your Lite account to an {{site.data.keyword.cloud_notm}} <a href="/docs/account?topic=account-accounts#paygo">Pay-As-You-Go</a> or <a href="/docs/account?topic=account-accounts#subscription-account">Subscription</a> account.</td>
     </tr>
     <tr>
         <td><strong>Pay-As-You-Go</strong> accounts come with access to the infrastructure portfolio.</td>
-        <td>You can create standard clusters. Use an API key to set up infrastructure permissions for your clusters. </br></br><p class="tip">To use a different classic infrastructure account for classic clusters, [manually set {{site.data.keyword.cloud_notm}} infrastructure credentials for your {{site.data.keyword.cloud_notm}} account](/docs/openshift?topic=openshift-access-creds#credentials). You cannot set up your {{site.data.keyword.cloud_notm}} account to use the VPC infrastructure of a different account.</p> </td>
+        <td>You can create standard clusters. Use an API key to set up infrastructure permissions for your clusters. </br></br><p class="tip">To use a different classic infrastructure account for classic clusters, <a href="/docs/openshift?topic=openshift-access-creds#credentials">manually set {{site.data.keyword.cloud_notm}} infrastructure credentials for your {{site.data.keyword.cloud_notm}} account</a>. You cannot set up your {{site.data.keyword.cloud_notm}} account to use the VPC infrastructure of a different account.</p> </td>
     </tr>
     <tr>
         <td><strong>Subscription</strong> accounts come with access to the infrastructure portfolio.</td>
-        <td>You can create standard clusters. Use an API key to set up infrastructure permissions for your clusters. </br></br><p class="tip">To use a different classic infrastructure account for classic clusters, [manually set {{site.data.keyword.cloud_notm}} infrastructure credentials for your {{site.data.keyword.cloud_notm}} account](/docs/openshift?topic=openshift-access-creds#credentials). You cannot set up your {{site.data.keyword.cloud_notm}} account to use the VPC infrastructure of a different account.</p> </td>
+        <td>You can create standard clusters. Use an API key to set up infrastructure permissions for your clusters. </br></br><p class="tip">To use a different classic infrastructure account for classic clusters, <a href="/docs/openshift?topic=openshift-access-creds#credentials">manually set {{site.data.keyword.cloud_notm}} infrastructure credentials for your {{site.data.keyword.cloud_notm}} account</a>. You cannot set up your {{site.data.keyword.cloud_notm}} account to use the VPC infrastructure of a different account.</p> </td>
     </tr>
     <tr>
         <td><strong>IBM Cloud infrastructure accounts</strong>, no {{site.data.keyword.cloud_notm}} account</td>
-        <td><p>Create an {{site.data.keyword.cloud_notm}} [Pay-As-You-Go](/docs/account?topic=account-accounts#paygo) or [Subscription](/docs/account?topic=account-accounts#subscription-account) account. You have two separate IBM Cloud infrastructure accounts and billing.</p><p>By default, your new {{site.data.keyword.cloud_notm}} account uses the new infrastructure account. To continue using the previous classic infrastructure account, manually set the credentials. You can manually set credentials for only classic clusters, not VPC clusters.</p></td>
+        <td><p>Create an {{site.data.keyword.cloud_notm}} <a href="/docs/account?topic=account-accounts#paygo">Pay-As-You-Go</a> or <a href="/docs/account?topic=account-accounts#subscription-account">Subscription</a> account. You have two separate IBM Cloud infrastructure accounts and billing.</p><p>By default, your new {{site.data.keyword.cloud_notm}} account uses the new infrastructure account. To continue using the previous classic infrastructure account, manually set the credentials. You can manually set credentials for only classic clusters, not VPC clusters.</p></td>
     </tr>
     </tbody>
     </table>

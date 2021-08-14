@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -183,7 +183,7 @@ Identify and restore the resource that causes the broken webhook.
 
     Example output:
     ```
-        clientConfig:
+      clientConfig:
         caBundle: <redacted>
         service:
             name: <name>

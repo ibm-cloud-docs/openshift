@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-14"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -59,7 +59,6 @@ completion-time: 45m
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -110,9 +109,7 @@ completion-time: 45m
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
- 
+  
 
 
 # Creating an {{site.data.keyword.openshiftshort}} cluster in your Virtual Private Cloud (VPC)
@@ -152,14 +149,15 @@ Complete the following prerequisite steps to set up permissions and the command-
 **Permissions**: If you are the account owner, you already have the required permissions to create a cluster and can continue to the next step. Otherwise, ask the account owner to [set up the API key and assign you the minimum user permissions in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions).
 
 **Command-line tools**: For quick access to your resources from the command line, try the [{{site.data.keyword.cloud-shell_notm}}](https://cloud.ibm.com/shell). Otherwise, set up your local command-line environment by completing the following steps.
-1.  [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc`), and {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)](/docs/openshift?topic=openshift-openshift-cli#cs_cli_install_steps).
-2.  [Install the {{site.data.keyword.openshiftshort}} (`oc`) and Kubernetes (`kubectl`) CLIs](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
-3.  To work with VPC, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
+1. [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc`), and {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)](/docs/openshift?topic=openshift-openshift-cli#cs_cli_install_steps).
+2. [Install the {{site.data.keyword.openshiftshort}} (`oc`) and Kubernetes (`kubectl`) CLIs](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
+3. To work with VPC, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
     ```
     ibmcloud plugin install infrastructure-service
     ```
     {: pre}
-4.  Update your {{site.data.keyword.containershort_notm}} plug-in to the latest version.
+
+4. Update your {{site.data.keyword.containershort_notm}} plug-in to the latest version.
     ```
     ibmcloud plugin update kubernetes-service
     ```
@@ -174,24 +172,26 @@ Complete the following prerequisite steps to set up permissions and the command-
 Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environment. Then, create a {{site.data.keyword.openshiftlong_notm}} cluster on the VPC infrastructure. For more information about VPC, see [Getting Started with Virtual Private Cloud](/docs/vpc?topic=vpc-getting-started).
 {: shortdesc}
 
-1.  Log in to the account, resource group, and {{site.data.keyword.cloud_notm}} region where you want to create your VPC environment. The VPC must be set up in the same multizone metro location where you want to create your cluster. In this tutorial you create a VPC in `us-south`. For other supported regions, see [Multizone metros for VPC clusters](/docs/openshift?topic=openshift-regions-and-zones). If you have a federated ID, include the `--sso` flag.
+1. Log in to the account, resource group, and {{site.data.keyword.cloud_notm}} region where you want to create your VPC environment. The VPC must be set up in the same multizone metro location where you want to create your cluster. In this tutorial you create a VPC in `us-south`. For other supported regions, see [Multizone metros for VPC clusters](/docs/openshift?topic=openshift-regions-and-zones). If you have a federated ID, include the `--sso` flag.
     ```
     ibmcloud login -r us-south [-g <resource_group>] [--sso]
     ```
     {: pre}
 
-2.  Create a VPC for your cluster. For more information, see the docs for creating a VPC in the [console](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console) or [CLI](/docs/vpc?topic=vpc-creating-a-vpc-using-cli).
-    2.  Create a VPC that is called `myvpc` and note the **ID** in the output. VPCs provide an isolated environment for your workloads to run within the public cloud. You can use the same VPC for multiple clusters, such as if you plan to have different clusters host separate microservices that need to communicate with each other. If you want to separate your clusters, such as for different departments, you can create a VPC for each cluster.
+2. Create a VPC for your cluster. For more information, see the docs for creating a VPC in the [console](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console) or [CLI](/docs/vpc?topic=vpc-creating-a-vpc-using-cli).
+    2. Create a VPC that is called `myvpc` and note the **ID** in the output. VPCs provide an isolated environment for your workloads to run within the public cloud. You can use the same VPC for multiple clusters, such as if you plan to have different clusters host separate microservices that need to communicate with each other. If you want to separate your clusters, such as for different departments, you can create a VPC for each cluster.
         ```
         ibmcloud is vpc-create myvpc
         ```
         {: pre}
-    3.  Create a public gateway and note the **ID** in the output. In the next step, you attach the public gateway to a VPC subnet, so that your worker nodes can communicate on the public network. Default {{site.data.keyword.openshiftshort}} components, such as the web console and OperatorHub, require public network access. If you skip this step, you must instead be connected to your VPC private network, such as through a VPN connection, to access the {{site.data.keyword.openshiftshort}} web console or access your cluster with `kubectl` commands.
+
+    3. Create a public gateway and note the **ID** in the output. In the next step, you attach the public gateway to a VPC subnet, so that your worker nodes can communicate on the public network. Default {{site.data.keyword.openshiftshort}} components, such as the web console and OperatorHub, require public network access. If you skip this step, you must instead be connected to your VPC private network, such as through a VPN connection, to access the {{site.data.keyword.openshiftshort}} web console or access your cluster with `kubectl` commands.
         ```
         ibmcloud is public-gateway-create gateway-us-south-1 <vpc_ID> us-south-1
         ```
         {: pre}
-    4.  Create a subnet for your VPC, and note its **ID**. Consider the following information when you create the VPC subnet:
+
+    4. Create a subnet for your VPC, and note its **ID**. Consider the following information when you create the VPC subnet:
         *  **Zones**: You must have one VPC subnet for each zone in your cluster. The available zones depend on the metro location that you created the VPC in. To list available zones in the region, run `ibmcloud is zones`.
         *  **IP addresses**: VPC subnets provide private IP addresses for your worker nodes and load balancer services in your cluster, so make sure to [create a subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IP addresses that a VPC subnet has later.
         *  **Public gateways**: Include the public gateway that you previously created. You must have one public gateway for each zone in your cluster.
@@ -200,34 +200,39 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
         ibmcloud is subnet-create mysubnet1 <vpc_ID> --zone us-south-1 --ipv4-address-count 256 --public-gateway-id <gateway_ID>
         ```
         {: pre}
-3.  Create a standard {{site.data.keyword.cos_full_notm}} instance to back up the internal registry in your cluster. In the output, note the instance **ID**.
+
+3. Create a standard {{site.data.keyword.cos_full_notm}} instance to back up the internal registry in your cluster. In the output, note the instance **ID**.
     ```
     ibmcloud resource service-instance-create myvpc-cos cloud-object-storage standard global
     ```
     {: pre}
-4.  Create a cluster in your VPC in the same zone as the subnet.
+
+4. Create a cluster in your VPC in the same zone as the subnet.
     * The following command creates a version 4.7 cluster in Dallas with the minimum configuration of 2 worker nodes that have at least 4 cores and 16 GB memory so that default {{site.data.keyword.openshiftshort}} components can deploy.
     * By default, your cluster is created with a public and a private cloud service endpoint. You can use the public cloud service endpoint to access the Kubernetes master, such as to run `oc` commands, from your local machine. Your worker nodes communicate with the master on the private cloud service endpoint. For the purposes of this tutorial, do **not** specify the `--disable-public-service-endpoint` flag.
     * For more information about the command options, see the [`cluster create vpc-gen2` CLI reference docs](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2).
-   ```
-   ibmcloud oc cluster create vpc-gen2 --name myvpc-cluster --zone us-south-1 --version 4.7_openshift --flavor bx2.4x16 --workers 2 --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --cos-instance <COS_CRN>
-   ```
-   {: pre}
-5.  List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and router components take about 10 more minutes to deploy and update the cluster domain that you use for the {{site.data.keyword.openshiftshort}} web console and other routes. Before you continue, wait until the cluster is ready by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.</p>
-  ```
-  ibmcloud oc cluster get --cluster myvpc-cluster
-  ```
-  {: pre}
-6.  Add yourself as a user to the {{site.data.keyword.openshiftshort}} cluster by setting the cluster context.
+    ```
+    ibmcloud oc cluster create vpc-gen2 --name myvpc-cluster --zone us-south-1 --version 4.7_openshift --flavor bx2.4x16 --workers 2 --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --cos-instance <COS_CRN>
+    ```
+    {: pre}
+
+5. List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and router components take about 10 more minutes to deploy and update the cluster domain that you use for the {{site.data.keyword.openshiftshort}} web console and other routes. Before you continue, wait until the cluster is ready by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.</p>
+    ```
+    ibmcloud oc cluster get --cluster myvpc-cluster
+    ```
+    {: pre}
+
+6. Add yourself as a user to the {{site.data.keyword.openshiftshort}} cluster by setting the cluster context.
     ```
     ibmcloud oc cluster config --cluster myvpc-cluster --admin
     ```
     {: pre}
-7.  In your browser, navigate to the address of your **Master URL** and append `/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`. If time permits, you can explore the different areas of the {{site.data.keyword.openshiftshort}} web console.
+
+7. In your browser, navigate to the address of your **Master URL** and append `/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`. If time permits, you can explore the different areas of the {{site.data.keyword.openshiftshort}} web console.
     <table aria-describedby="tableSummary-19ecbef4c01853826b42de82471b9035">
     <caption caption-side="top">
-      <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview<br>
-      <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9035">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, and the description of the console area in the third column.</span>
+        <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview<br>
+        <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9035">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, and the description of the console area in the third column.</span>
     </caption>
     <thead>
     <tr>
@@ -240,17 +245,17 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
     <tr>
     <td>Administrator perspective</td>
     <td>Side navigation menu perspective switcher.</td>
-    <td>From the Administrator perspective, you can manage and set up the components that your team needs to run your apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see [Viewing cluster information](http://docs.openshift.com/container-platform/4.6/web_console/using-dashboard-to-get-cluster-information.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.</td>
+    <td>From the Administrator perspective, you can manage and set up the components that your team needs to run your apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see <a href="http://docs.openshift.com/container-platform/4.6/web_console/using-dashboard-to-get-cluster-information.html">Viewing cluster information</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> in the {{site.data.keyword.openshiftshort}} documentation.</td>
     </tr>
     <tr>
     <td>Developer perspective</td>
     <td>Side navigation menu perspective switcher.</td>
-    <td>From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](http://docs.openshift.com/container-platform/4.6/web_console/odc-about-developer-perspective.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.</td>
+    <td>From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The <strong>Topology</strong> view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see <a href="http://docs.openshift.com/container-platform/4.6/web_console/odc-about-developer-perspective.html">Developer perspective</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> in the {{site.data.keyword.openshiftshort}} documentation.</td>
     </tr>
     </tbody>
     </table>
-8.  From the {{site.data.keyword.openshiftshort}} web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.<p class="tip">Save your cluster master URL to access the {{site.data.keyword.openshiftshort}} console later. In future sessions, you can skip the `cluster config` step and copy the login command from the console instead.</p>
-9.  Verify that the `oc` commands run properly with your cluster by checking the version.
+8. From the {{site.data.keyword.openshiftshort}} web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.<p class="tip">Save your cluster master URL to access the {{site.data.keyword.openshiftshort}} console later. In future sessions, you can skip the `cluster config` step and copy the login command from the console instead.</p>
+9. Verify that the `oc` commands run properly with your cluster by checking the version.
     ```
     oc version
     ```
@@ -279,21 +284,21 @@ The components that you deploy by completing this lesson are shown in the follow
 
 ![Deployment setup](images/cs_app_tutorial_mz-components1.png)
 
-1.  Create an {{site.data.keyword.openshiftshort}} project for your Hello World app.
-  ```
-  oc new-project hello-world
-  ```
-  {: pre}
+1. Create an {{site.data.keyword.openshiftshort}} project for your Hello World app.
+    ```
+    oc new-project hello-world
+    ```
+    {: pre}
 
-2.  Build the sample app [from the source code](https://github.com/IBM/container-service-getting-started-wt){: external}. With the {{site.data.keyword.openshiftshort}} `new-app` command, you can refer to a directory in a remote repository that contains the Dockerfile and app code to build your image. The command builds the image, stores the image in the local Docker registry, and creates the app deployment configurations (`dc`) and services (`svc`). For more information about creating new apps, [see the {{site.data.keyword.openshiftshort}} docs](http://docs.openshift.com/container-platform/4.6/applications/application_life_cycle_management/odc-creating-applications-using-developer-perspective.html){: external}.
+2. Build the sample app [from the source code](https://github.com/IBM/container-service-getting-started-wt){: external}. With the {{site.data.keyword.openshiftshort}} `new-app` command, you can refer to a directory in a remote repository that contains the Dockerfile and app code to build your image. The command builds the image, stores the image in the local Docker registry, and creates the app deployment configurations (`dc`) and services (`svc`). For more information about creating new apps, [see the {{site.data.keyword.openshiftshort}} docs](http://docs.openshift.com/container-platform/4.6/applications/application_life_cycle_management/odc-creating-applications-using-developer-perspective.html){: external}.
     ```
     oc new-app --name hello-world https://github.com/IBM/container-service-getting-started-wt --context-dir="Lab 1"
     ```
     {: pre}
 
-3.  Verify that the sample Hello World app components are created.
+3. Verify that the sample Hello World app components are created.
 
-    1.  List the **hello-world** services and note the service name. So far, your app listens for traffic on these internal cluster IP addresses only. In the next lesson, you create a load balancer for the service so that the load balancer can forward external traffic requests to the app.
+    1. List the **hello-world** services and note the service name. So far, your app listens for traffic on these internal cluster IP addresses only. In the next lesson, you create a load balancer for the service so that the load balancer can forward external traffic requests to the app.
         ```
         oc get svc -n hello-world
         ```
@@ -306,7 +311,7 @@ The components that you deploy by completing this lesson are shown in the follow
         ```
         {: screen}
 
-    2.  List the pods. Pods with `build` in the name are jobs that **Completed** as part of the new app build process. Make sure that the **hello-world** pod status is **Running**.
+    2. List the pods. Pods with `build` in the name are jobs that **Completed** as part of the new app build process. Make sure that the **hello-world** pod status is **Running**.
         ```
         oc get pods -n hello-world
         ```
@@ -339,7 +344,7 @@ Interested in using an {{site.data.keyword.openshiftshort}} route to expose your
 
 </br>
 
-1.  Create a Kubernetes `LoadBalancer` service in your cluster to publicly expose the hello world app.
+1. Create a Kubernetes `LoadBalancer` service in your cluster to publicly expose the hello world app.
     ```
     oc expose dc/hello-world --type=LoadBalancer --name=hw-lb-svc  --port=8080 --target-port=8080 -n hello-world
     ```
@@ -374,7 +379,7 @@ Interested in using an {{site.data.keyword.openshiftshort}} route to expose your
     </tr>
     <tr>
     <td><code>--type=LoadBalancer</code></td>
-    <td>The service type to create. In this lesson, you create a `LoadBalancer` service.</td>
+    <td>The service type to create. In this lesson, you create a <code>LoadBalancer</code> service.</td>
     </tr>
     <tr>
     <td><code>--port=<em>&lt;8080&gt;</em></code></td>
@@ -382,7 +387,7 @@ Interested in using an {{site.data.keyword.openshiftshort}} route to expose your
     </tr>
     <tr>
     <td><code>--target-port=<em>&lt;8080&gt;</em></code></td>
-    <td>The port that your app listens on and to which the service directs incoming network traffic. In this example, the `target-port` is the same as the `port`, but other apps that you create might use a different port.</td>
+    <td>The port that your app listens on and to which the service directs incoming network traffic. In this example, the <code>target-port</code> is the same as the <code>port</code>, but other apps that you create might use a different port.</td>
     </tr>
     <tr>
     <td><code>-n <em>hello-world</em></code></td>
@@ -390,7 +395,7 @@ Interested in using an {{site.data.keyword.openshiftshort}} route to expose your
     </tr>
     </tbody></table>
 
-2.  Verify that the Kubernetes `LoadBalancer` service is created successfully in your cluster. When you create the Kubernetes `LoadBalancer` service, a VPC load balancer is automatically created for you. The VPC load balancer assigns a hostname to your Kubernetes `LoadBalancer` service that you can see in the **LoadBalancer Ingress** field of your CLI output. In VPC, services in your cluster are assigned a hostname because the external IP address for the service is not stable.<p class="note">The VPC load balancer takes a few minutes to provision in your VPC. Until the VPC load balancer is ready, you cannot access the Kubernetes `LoadBalancer` service through its hostname.</p>
+2. Verify that the Kubernetes `LoadBalancer` service is created successfully in your cluster. When you create the Kubernetes `LoadBalancer` service, a VPC load balancer is automatically created for you. The VPC load balancer assigns a hostname to your Kubernetes `LoadBalancer` service that you can see in the **LoadBalancer Ingress** field of your CLI output. In VPC, services in your cluster are assigned a hostname because the external IP address for the service is not stable.<p class="note">The VPC load balancer takes a few minutes to provision in your VPC. Until the VPC load balancer is ready, you cannot access the Kubernetes `LoadBalancer` service through its hostname.</p>
 
     ```
     oc describe service hw-lb-svc -n hello-world
@@ -414,17 +419,18 @@ Interested in using an {{site.data.keyword.openshiftshort}} route to expose your
     Session Affinity:         None
     External Traffic Policy:  Cluster
     Events:
-      Type    Reason                Age   From                Message
-      ----    ------                ----  ----                -------
-      Normal  EnsuringLoadBalancer  1m    service-controller  Ensuring load balancer
-      Normal  EnsuredLoadBalancer   1m    service-controller  Ensured load balancer
+        Type    Reason                Age   From                Message
+        ----    ------                ----  ----                -------
+        Normal  EnsuringLoadBalancer  1m    service-controller  Ensuring load balancer
+        Normal  EnsuredLoadBalancer   1m    service-controller  Ensured load balancer
     ```
     {: screen}
 
-3.  Verify that the VPC load balancer is created successfully in your VPC. In the output, verify that the VPC load balancer has a **Provision Status** of `active` and an **Operating Status** of `online`.
+3. Verify that the VPC load balancer is created successfully in your VPC. In the output, verify that the VPC load balancer has a **Provision Status** of `active` and an **Operating Status** of `online`.
 
     The VPC load balancer is named in the format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `kubectl get svc hw-lb-svc -o yaml` and look for the **metadata.uid** field in the output.
     {: tip}
+
     ```
     ibmcloud is load-balancers
     ```
@@ -449,12 +455,13 @@ Interested in using an {{site.data.keyword.openshiftshort}} route to expose your
     ```
     {: screen}
 
-5.  **Optional**: To clean up the resources that you created in this lesson, you can use the labels that are assigned to each app.
-    1.  List all the resources for each app in the `hello-world` project.
+5. **Optional**: To clean up the resources that you created in this lesson, you can use the labels that are assigned to each app.
+    1. List all the resources for each app in the `hello-world` project.
         ```
         oc get all -l app=hello-world -o name -n hello-world
         ```
         {: pre}
+
         Example output:
         ```
         pod/hello-world-1-dh2ff
@@ -467,11 +474,13 @@ Interested in using an {{site.data.keyword.openshiftshort}} route to expose your
         imagestream.image.openshift.io/node
         ```
         {: screen}
-    2.  Delete all the resources that you created.
+
+    2. Delete all the resources that you created.
         ```
         oc delete all -l app=hello-world -n hello-world
         ```
         {: pre}
+
 <br />
 
 ## What's next?
@@ -480,6 +489,7 @@ Interested in using an {{site.data.keyword.openshiftshort}} route to expose your
 Now that you have a VPC cluster, learn more about what you can do.
 {: shortdesc}
 
+
 * [Backing up your internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry)
 * [Overview of the differences between classic and VPC clusters](/docs/openshift?topic=openshift-infrastructure_providers)
 * [VPC cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ks_vpc_gen2_limits)
@@ -487,3 +497,5 @@ Now that you have a VPC cluster, learn more about what you can do.
 
 Need help, have questions, or want to give feedback on VPC clusters? Try posting in the [Slack channel](https://cloud.ibm.com/kubernetes/slack){: external}.
 {: tip}
+
+

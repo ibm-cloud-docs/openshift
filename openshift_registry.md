@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -135,27 +135,27 @@ Your app's images must be stored in a container registry that your cluster can a
         <li>Images can be shared across all projects in the cluster, with access that is controlled through RBAC roles.</li>
         <li>Integrating the internal registry with other Red Hat products like CloudForms for extended features such as vulnerability scanning.</li>
         <li>Option to expose the internal registry with a route so that users can pull images from the registry over the public network.</li>
-        <li>Option to set up the internal registry to [pull](#imagestream_registry) images from or [push](#builds_registry) images to a private registry such as {{site.data.keyword.registrylong_notm}}.</ul>
-        <br>For more information, see [Using the internal registry](#openshift_internal_registry).</td>
+        <li>Option to set up the internal registry to <a href="#imagestream_registry">pull</a> images from or <a href="#builds_registry">push</a> images to a private registry such as {{site.data.keyword.registrylong_notm}}.</ul>
+        <br>For more information, see <a href="#openshift_internal_registry">Using the internal registry</a>.</td>
     </tr>
     <tr>
         <td>Private registry</td>
         <td>Private registries are a good choice to protect your images from being used and changed by unauthorized users. Private registries must be set up by the cluster administrator to make sure that access, storage quotas, image trust and other features work as intended.<br><br>
-        By default, your [{{site.data.keyword.openshiftshort}} clusters are integrated with the private {{site.data.keyword.registrylong_notm}}](#openshift_iccr) through image pull secrets that are set up in the <code>default</code> project. {{site.data.keyword.registrylong_notm}} is a highly available, multi-tenant private registry to store your own images. You can also pull IBM-provided images from the global <code>icr.io</code> registry, and licensed software from the entitled registry. With {{site.data.keyword.registrylong_notm}}, you can manage images for multiple clusters with seamless integration with {{site.data.keyword.cloud_notm}} IAM and billing.<br><br>
+        By default, your <a href="#openshift_iccr">{{site.data.keyword.openshiftshort}} clusters are integrated with the private {{site.data.keyword.registrylong_notm}}</a> through image pull secrets that are set up in the <code>default</code> project. {{site.data.keyword.registrylong_notm}} is a highly available, multi-tenant private registry to store your own images. You can also pull IBM-provided images from the global <code>icr.io</code> registry, and licensed software from the entitled registry. With {{site.data.keyword.registrylong_notm}}, you can manage images for multiple clusters with seamless integration with {{site.data.keyword.cloud_notm}} IAM and billing.<br><br>
         Advantages of using {{site.data.keyword.registrylong_notm}} with the internal registry:<ul>
         <li>Local image caching for faster builds via the internal registry.</li>
         <li>Deployments in other projects can refer to the image stream so that you do not need to copy pull secrets to each project.</li>
         <li>Sharing images across multiple clusters without needing to push images to multiple registries.</li>
-        <li>[Automatically scanning](/docs/Registry?topic=va-va_index) the vulnerability of images.</li>
-        <li>Controlling access through [{{site.data.keyword.cloud_notm}} IAM policies](/docs/Registry?topic=Registry-user) and [separate regional registries](/docs/Registry?topic=Registry-registry_overview#registry_regions).</li>
-        <li>[Retaining images](/docs/Registry?topic=Registry-registry_retention) without requiring storage space in your cluster or an attached storage device. You can also set policies to manage the quantity of images to prevent them from taking up too much space.</li>
+        <li><a href="/docs/Registry?topic=va-va_index">Automatically scanning</a> the vulnerability of images.</li>
+        <li>Controlling access through <a href="/docs/Registry?topic=Registry-user">{{site.data.keyword.cloud_notm}} IAM policies</a> and <a href="/docs/Registry?topic=Registry-registry_overview#registry_regions">separate regional registries</a>.</li>
+        <li><a href="/docs/Registry?topic=Registry-registry_retention">Retaining images</a> without requiring storage space in your cluster or an attached storage device. You can also set policies to manage the quantity of images to prevent them from taking up too much space.</li>
         <li>Version 4 clusters on VPC infrastructure: Using the private registry service endpoint so that clusters that use only a private cloud service endpoint can still access the registry.</li>
-        <li>[Setting storage and image pull traffic quotas](/docs/Registry?topic=Registry-registry_quota) to better control image storage, usage, and billing.</li>
-        <li>Pulling licensed IBM content from the [entitled registry](/docs/openshift?topic=openshift-registry#secret_entitled_software).</li></ul>
+        <li><a href="/docs/Registry?topic=Registry-registry_quota">Setting storage and image pull traffic quotas</a> to better control image storage, usage, and billing.</li>
+        <li>Pulling licensed IBM content from the <a href="/docs/openshift?topic=openshift-registry#secret_entitled_software">entitled registry</a>.</li></ul>
         <br>To get started, see the following topics:<ul>
-        <li>[Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started).</li>
-        <li>[Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](#imagestream_registry)</li>
-        <li>[Using {{site.data.keyword.registrylong_notm}}](#openshift_iccr).</li></ul></td>
+        <li><a href="/docs/Registry?topic=Registry-getting-started">Getting started with {{site.data.keyword.registrylong_notm}}</a>.</li>
+        <li><a href="#imagestream_registry">Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream</a></li>
+        <li><a href="#openshift_iccr">Using {{site.data.keyword.registrylong_notm}}</a>.</li></ul></td>
     </tr>
     <tr>
         <td>Public registry</td>
@@ -163,7 +163,7 @@ Your app's images must be stored in a container registry that your cluster can a
         <li>Pushing and pulling images on the public network.</li>
         <li>Quick testing of a container across multiple cloud providers.</li>
         <li>Do not need enterprise-grade features such as vulnerability scanning or access management.</li></ul>
-        <br>For more information, see the public registry's documentation, such as [Quay ![External link icon](../icons/launch-glyph.svg "External link icon")](https://quay.io/) or [Docker Hub ![External link icon](../icons/launch-glyph.svg "External link icon")](https://hub.docker.com/).</td>
+        <br>For more information, see the public registry's documentation, such as <a href="https://quay.io/">Quay</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> or <a href="https://hub.docker.com/">Docker Hub</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</td>
     </tr>
     </tbody>
 </table>
@@ -544,7 +544,7 @@ Want to learn more about how builds, image streams, and the internal registry wo
     </tr>
     <tr>
     <td><code>--scheduled</code></td>
-    <td>Set this optional flag to set up periodic importing of the image from {{site.data.keyword.registrylong_notm}} into the internal registry. The default frequency is 15 minutes. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.6/openshift_images/image-streams-manage.html#images-imagestreams-import_image-streams-managing){: external}.</td>
+    <td>Set this optional flag to set up periodic importing of the image from {{site.data.keyword.registrylong_notm}} into the internal registry. The default frequency is 15 minutes. For more information, see the <a href="https://docs.openshift.com/container-platform/4.6/openshift_images/image-streams-manage.html#images-imagestreams-import_image-streams-managing">{{site.data.keyword.openshiftshort}} documentation</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</td>
     </tr>
     </tbody></table>
 5. Verify that your image stream is created.
@@ -978,15 +978,15 @@ The following steps create an API key that stores the credentials of an {{site.d
     </tr>
     <tr>
     <td><code>--roles <em>&lt;service_access_role&gt;</em></code></td>
-    <td>Required. Enter the [service access role for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#service_access_roles) that you want to scope the service ID access to. Possible values are <code>Reader</code>, <code>Writer</code>, and <code>Manager</code>.</td>
+    <td>Required. Enter the <a href="/docs/Registry?topic=Registry-iam#service_access_roles">service access role for {{site.data.keyword.registrylong_notm}}</a> that you want to scope the service ID access to. Possible values are <code>Reader</code>, <code>Writer</code>, and <code>Manager</code>.</td>
     </tr>
     <tr>
     <td><code>--region <em>&lt;IAM_region&gt;</em></code></td>
-    <td>Optional. If you want to scope the access policy to certain IAM regions, enter the regions in a comma-separated list. Possible values are <code>global</code> and the [local registry regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local).</td>
+    <td>Optional. If you want to scope the access policy to certain IAM regions, enter the regions in a comma-separated list. Possible values are <code>global</code> and the <a href="/docs/Registry?topic=Registry-registry_overview#registry_regions_local">local registry regions</a>.</td>
     </tr>
     <tr>
     <td><code>--resource-type <em>namespace</em> --resource <em>&lt;registry_namespace&gt;</em></code></td>
-    <td>Optional. If you want to limit access to only images in certain [{{site.data.keyword.registrylong_notm}} namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan), enter <code>namespace</code> for the resource type and specify the <code><registry_namespace></code>. To list registry namespaces, run <code>ibmcloud cr namespaces</code>.</td>
+    <td>Optional. If you want to limit access to only images in certain <a href="/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan">{{site.data.keyword.registrylong_notm}} namespaces</a>, enter <code>namespace</code> for the resource type and specify the <code><registry_namespace></code>. To list registry namespaces, run <code>ibmcloud cr namespaces</code>.</td>
     </tr>
     </tbody></table>
 4. Create an API key for the service ID. Name the API key similar to your service ID, and include the service ID that you previously created, ``<cluster_name>-<kube_namespace>-id`. Be sure to give the API key a description that helps you retrieve the key later.
@@ -1033,7 +1033,7 @@ The following steps create an API key that stores the credentials of an {{site.d
     </tr>
     <tr>
     <td><code>--docker-server <em>&lt;registry_URL&gt;</em></code></td>
-    <td>Required. Set the URL to the image registry where your registry namespace is set up. For available domains, see [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).</td>
+    <td>Required. Set the URL to the image registry where your registry namespace is set up. For available domains, see <a href="/docs/Registry?topic=Registry-registry_overview#registry_regions">Local regions</a>.</td>
     </tr>
     <tr>
     <td><code>--docker-username iamapikey</code></td>

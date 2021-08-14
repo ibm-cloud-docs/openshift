@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -126,7 +126,7 @@ You can use Calico and Kubernetes to create network policies for a cluster. With
 <dd>[Calico network policies ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.projectcalico.org/security/protect-hosts) are a superset of the Kubernetes network policies and are applied by using `calicoctl` commands. Calico policies add the following features.
     <ul><li>Allow or block network traffic on specific network interfaces regardless of the Kubernetes pod source or destination IP address or CIDR.</li>
     <li>Allow or block network traffic for pods across namespaces.</li>
-    <li>[Block inbound traffic to Kubernetes LoadBalancer or NodePort services](#block_ingress).</li></ul></dd>
+    <li><a href="#block_ingress">Block inbound traffic to Kubernetes LoadBalancer or NodePort services</a>.</li></ul></dd>
 </dl>
 
 

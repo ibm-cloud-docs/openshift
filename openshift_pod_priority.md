@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -227,12 +227,12 @@ To use a priority class:
     </tr>
     <tr>
     <td><code>value</code></td>
-    <td>Required: Enter an integer less than or equal to 1 billion (1000000000). The higher the value, the higher the priority. Values are relative to the values of other priority classes in the cluster. Reserve very high numbers for system critical pods that you do not want to be preempted (removed). </br></br>For example, the [default cluster-critical priority classes](#default_priority_class) range in value from 900000000-2000001000, so enter a value less than these numbers for new priority classes so that nothing is prioritized higher than these pods.</td>
+    <td>Required: Enter an integer less than or equal to 1 billion (1000000000). The higher the value, the higher the priority. Values are relative to the values of other priority classes in the cluster. Reserve very high numbers for system critical pods that you do not want to be preempted (removed). </br></br>For example, the <a href="#default_priority_class">default cluster-critical priority classes</a> range in value from 900000000-2000001000, so enter a value less than these numbers for new priority classes so that nothing is prioritized higher than these pods.</td>
     </tr>
     <tr>
     <td><code>globalDefault</code></td>
     <td>Optional: Set the field to <code>true</code> to make this priority class the global default that is applied to every pod that is scheduled without a <code>priorityClassName</code> value. Only one priority class in your cluster can be set as the global default. If there is no global default, pods with no <code>priorityClassName</code> specified have a priority of zero (<code>0</code>).</br></br>
-    The [default priority classes](#default_priority_class) do not set a <code>globalDefault</code>. If you created other priority classes in your cluster, you can check to make sure that they do not set a <code>globalDefault</code> by running <code>oc describe priorityclass <name></code>.</td>
+    The <a href="#default_priority_class">default priority classes</a> do not set a <code>globalDefault</code>. If you created other priority classes in your cluster, you can check to make sure that they do not set a <code>globalDefault</code> by running <code>oc describe priorityclass <name></code>.</td>
     </tr>
     <tr>
     <td><code>description</code></td>
