@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -55,7 +55,6 @@ content-type: troubleshoot
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -106,9 +105,8 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 # Debugging app deployments
 {: #debug_apps}
 
@@ -116,8 +114,8 @@ Review the options that you have to debug your app deployments and find the root
 {: shortdesc}
 
 **Infrastructure provider**:
-  * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+    * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+    * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the namespace where your app is deployed.
 
@@ -136,58 +134,67 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
 3. Check whether the cluster is in the `Critical` state. If the cluster is in a `Critical` state, check the firewall rules and verify that the master can communicate with the worker nodes.
 
 4. Verify that the service is listening on the correct port.
-   1. Get the name of a pod.
-      ```
-      oc get pods
-      ```
-      {: pre}
-   2. Log in to a container.
-      ```
-      oc exec -it <pod_name> -- /bin/bash
-      ```
-      {: pre}
-   3. Curl the app from within the container. If the port is not accessible, the service might not be listening on the correct port or the app might have issues. Update the configuration file for the service with the correct port and redeploy or investigate potential issues with the app.
-      ```
-      curl localhost: <port>
-      ```
-      {: pre}
+    1. Get the name of a pod.
+        ```
+        oc get pods
+        ```
+        {: pre}
+
+    2. Log in to a container.
+        ```
+        oc exec -it <pod_name> -- /bin/bash
+        ```
+        {: pre}
+
+    3. Curl the app from within the container. If the port is not accessible, the service might not be listening on the correct port or the app might have issues. Update the configuration file for the service with the correct port and redeploy or investigate potential issues with the app.
+        ```
+        curl localhost: <port>
+        ```
+        {: pre}
 
 5. Verify that the service is linked correctly to the pods.
-   1. Get the name of a pod.
-      ```
-      oc get pods
-      ```
-      {: pre}
-   2. Log in to a container.
-      ```
-      oc exec -it <pod_name> -- /bin/bash
-      ```
-      {: pre}
-   3. Curl the cluster IP address and port of the service.
-      ```
-      curl <cluster_IP>:<port>
-      ```
-      {: pre}
-   4. If the IP address and port are not accessible, look at the endpoints for the service.
-      * If no endpoints are listed, then the selector for the service does not match the pods. For example, your app deployment might have the label `app=foo`, but the service might have the selector `run=foo`.
-      * If endpoints are listed, then look at the target port field on the service and make sure that the target port is the same as what is being used for the pods. For example, your app might listen on port 9080, but the service might listen on port 80.
+    1. Get the name of a pod.
+        ```
+        oc get pods
+        ```
+        {: pre}
+
+    2. Log in to a container.
+        ```
+        oc exec -it <pod_name> -- /bin/bash
+        ```
+        {: pre}
+
+    3. Curl the cluster IP address and port of the service.
+        ```
+        curl <cluster_IP>:<port>
+        ```
+        {: pre}
+
+    4. If the IP address and port are not accessible, look at the endpoints for the service.
+        * If no endpoints are listed, then the selector for the service does not match the pods. For example, your app deployment might have the label `app=foo`, but the service might have the selector `run=foo`.
+        * If endpoints are listed, then look at the target port field on the service and make sure that the target port is the same as what is being used for the pods. For example, your app might listen on port 9080, but the service might listen on port 80.
 
 6. For Ingress services, verify that the service is accessible from within the cluster.
-   1. Get the name of a pod.
-      ```
-      oc get pods
-      ```
-      {: pre}
-   2. Log in to a container.
-      ```
-      oc exec -it <pod_name> -- /bin/bash
-      ```
-      {: pre}
-   2. Curl the URL specified for the Ingress service. If the URL is not accessible, check for a firewall issue between the cluster and the external endpoint.
-      ```
-      curl <host_name>.<domain>
-      ```
-      {: pre}
+    1. Get the name of a pod.
+        ```
+        oc get pods
+        ```
+        {: pre}
+
+    2. Log in to a container.
+        ```
+        oc exec -it <pod_name> -- /bin/bash
+        ```
+        {: pre}
+
+    2. Curl the URL specified for the Ingress service. If the URL is not accessible, check for a firewall issue between the cluster and the external endpoint.
+        ```
+        curl <host_name>.<domain>
+        ```
+        {: pre}
+
+
 
 
 

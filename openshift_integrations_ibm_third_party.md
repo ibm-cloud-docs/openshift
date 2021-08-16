@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
 subcollection: openshift
 
 ---
-
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
@@ -105,8 +104,6 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
 
 # IBM Cloud services and third-party integrations
@@ -209,5 +206,7 @@ You might use custom resource definitions (CRDs) to extend the {{site.data.keywo
 
 
 For more information, see [Operators](/docs/openshift?topic=openshift-operators).
+
+
 
 

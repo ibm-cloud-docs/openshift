@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Protecting sensitive information in your cluster
 {: #encryption}
@@ -129,20 +127,20 @@ The following image and description outline default and optional data encryption
 
 _Figure: Overview of data encryption in a cluster_
 
-1.  **{{site.data.keyword.openshiftshort}} master control plane startup**: Components in the {{site.data.keyword.openshiftshort}} master, such as etcd, boot up on a LUKS-encrypted drive by using an IBM-managed key. Data in etcd is stored on the local disk of the {{site.data.keyword.openshiftshort}} master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. You can choose to enable encryption for your etcd data on the local disk of your {{site.data.keyword.openshiftshort}} master by bringing your own key to encrypt the cluster.
-2.  **Bring your own key (BYOK), for VPC and classic only**: When you [enable a key management service (KMS) provider](#keyprotect)`*` in your cluster, you can bring your own root key to create data encryption keys (DEKs) that encrypt the secrets in your cluster. The root key is stored in the KMS instance that you control. For example, if you use {{site.data.keyword.keymanagementservicelong_notm}}, the root key is stored in a FIPS 120-3 Level 3 hardware security module (HSM).
-3.  **etcd data**: Etcd is the component of the master that stores the configuration files of your Kubernetes resources, such as deployments and secrets. Data in etcd is stored on the local disk of the Kubernetes master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. When you enable a KMS provider`*`, a wrapped data encryption key (DEK) is stored in etcd. The DEK encrypts the secrets in your cluster that store service credentials and the LUKS key. Because the root key is in your KMS instance, you control access to your encrypted secrets. To unwrap the DEK, the cluster uses the root key from your KMS instance. For more information about how key encryption works, see [Envelope encryption](/docs/key-protect/concepts?topic=key-protect-envelope-encryption#envelope-encryption).
-4.  **Worker node disks**: Attached disks are used to boot your worker node, host the container file system, and store locally pulled images. The encryption and number of disks varies by infrastructure provider.
+1. **{{site.data.keyword.openshiftshort}} master control plane startup**: Components in the {{site.data.keyword.openshiftshort}} master, such as etcd, boot up on a LUKS-encrypted drive by using an IBM-managed key. Data in etcd is stored on the local disk of the {{site.data.keyword.openshiftshort}} master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. You can choose to enable encryption for your etcd data on the local disk of your {{site.data.keyword.openshiftshort}} master by bringing your own key to encrypt the cluster.
+2. **Bring your own key (BYOK), for VPC and classic only**: When you [enable a key management service (KMS) provider](#keyprotect)`*` in your cluster, you can bring your own root key to create data encryption keys (DEKs) that encrypt the secrets in your cluster. The root key is stored in the KMS instance that you control. For example, if you use {{site.data.keyword.keymanagementservicelong_notm}}, the root key is stored in a FIPS 120-3 Level 3 hardware security module (HSM).
+3. **etcd data**: Etcd is the component of the master that stores the configuration files of your Kubernetes resources, such as deployments and secrets. Data in etcd is stored on the local disk of the Kubernetes master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. When you enable a KMS provider`*`, a wrapped data encryption key (DEK) is stored in etcd. The DEK encrypts the secrets in your cluster that store service credentials and the LUKS key. Because the root key is in your KMS instance, you control access to your encrypted secrets. To unwrap the DEK, the cluster uses the root key from your KMS instance. For more information about how key encryption works, see [Envelope encryption](/docs/key-protect/concepts?topic=key-protect-envelope-encryption#envelope-encryption).
+4. **Worker node disks**: Attached disks are used to boot your worker node, host the container file system, and store locally pulled images. The encryption and number of disks varies by infrastructure provider.
     * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC**: The one primary disk is AES-256 bit encrypted at rest by the [underlying VPC infrastructure provider](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption). You cannot manage the encryption on your own with a KMS provider.
     * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic**: The primary disk that contains the kernel images to boot your worker node is unencrypted. The secondary disk that hosts the container file system and locally pulled images is AES 256-bit encrypted with an IBM-managed LUKS encryption key that is unique to the worker node and stored as a secret in etcd. When you reload or update your worker nodes, the LUKS keys are rotated. If you enable a KMS provider for the cluster, the etcd secret that holds the LUKS key is encrypted by the root key and DEK of your KMS provider.
     * <img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **{{site.data.keyword.satelliteshort}}**: The primary mounted disk that contains the kernel images to boot your worker node is unecrypted. The secondary unmounted disk that hosts the container file system and locally pulled images is AES 256-bit encrypted with an IBM-managed LUKS encryption key that is unique to the worker node and stored as a secret in etcd. When you reload or update your worker nodes, the LUKS keys are rotated. Because KMS provider integration is not supported, you cannot manage the encryption of the LUKS key.
-5.  **Cluster secrets**: When you deploy your app, do not store confidential information, such as credentials or keys, in the YAML configuration file, configmaps, or scripts. Instead, use [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/){: external}, which are base64 encoded by default. To manage encryption of the Kubernetes secrets in your cluster, you can enable a KMS provider in VPC or classic clusters. The secrets are encrypted by KMS-provided encryption until their information is used. For example, if you update a Kubernetes pod that mounts a secret, the pod requests the secret values from the master API server. The master API server asks the KMS provider to use the root key to unwrap the DEK and encode its values to base64. Then, the master API server uses the KMS provider DEK that is stored in etcd to read the secret, and sends the secret to the pod by using TLS.
-    
+5. **Cluster secrets**: When you deploy your app, do not store confidential information, such as credentials or keys, in the YAML configuration file, configmaps, or scripts. Instead, use [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/){: external}, which are base64 encoded by default. To manage encryption of the Kubernetes secrets in your cluster, you can enable a KMS provider in VPC or classic clusters. The secrets are encrypted by KMS-provided encryption until their information is used. For example, if you update a Kubernetes pod that mounts a secret, the pod requests the secret values from the master API server. The master API server asks the KMS provider to use the root key to unwrap the DEK and encode its values to base64. Then, the master API server uses the KMS provider DEK that is stored in etcd to read the secret, and sends the secret to the pod by using TLS.
+
     In clusters that run {{site.data.keyword.openshiftshort}} 4 or later, you can [deploy containers from an encrypted image](/docs/openshift?topic=openshift-images#encrypted-images).
     {: tip}
 
-6.  **Persistent storage encryption**: You can choose to store data by [setting up file, block, object, or software-defined Portworx persistent storage](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview). If you store your data on file or block storage, your data is automatically encrypted at rest. If you use object storage, your data is also encrypted during transit. With Portworx, you can choose to [set up volume encryption](/docs/openshift?topic=openshift-portworx#encrypt_volumes) to protect your data during transit and at rest. The IBM Cloud infrastructure storage instances save the data on encrypted disks, so your data at rest is encrypted.
-7.  **Data-in-use encryption**: For select, SGX-enabled classic worker node flavors, you can use [{{site.data.keyword.datashield_short}}](#datashield) to encrypt data-in-use within the worker node.
+6. **Persistent storage encryption**: You can choose to store data by [setting up file, block, object, or software-defined Portworx persistent storage](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview). If you store your data on file or block storage, your data is automatically encrypted at rest. If you use object storage, your data is also encrypted during transit. With Portworx, you can choose to [set up volume encryption](/docs/openshift?topic=openshift-portworx#encrypt_volumes) to protect your data during transit and at rest. The IBM Cloud infrastructure storage instances save the data on encrypted disks, so your data at rest is encrypted.
+7. **Data-in-use encryption**: For select, SGX-enabled classic worker node flavors, you can use [{{site.data.keyword.datashield_short}}](#datashield) to encrypt data-in-use within the worker node.
 
 
 <br />
@@ -188,8 +186,8 @@ ibmcloud oc cluster ls
 {: pre}
 
 To use the additional {{site.data.keyword.keymanagementserviceshort}} features:
-1.  [Update your cluster](/docs/containers?topic=containers-update) to at least version `4.4.16_1513_openshift`.
-2.  [Reenable KMS encryption](#keyprotect) to register your cluster with {{site.data.keyword.keymanagementserviceshort}} again.
+1. [Update your cluster](/docs/containers?topic=containers-update) to at least version `4.4.16_1513_openshift`.
+2. [Reenable KMS encryption](#keyprotect) to register your cluster with {{site.data.keyword.keymanagementserviceshort}} again.
 
 | {{site.data.keyword.keymanagementserviceshort}} feature | Cluster version earlier than `4.4.16_1513_openshift` | Cluster version `4.4.16_1513_openshift` or later |
 | --- | --- | --- |
@@ -214,6 +212,7 @@ To use the additional {{site.data.keyword.keymanagementserviceshort}} features:
 Enable a [key management service (KMS) provider](#kms) such as [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-getting-started-tutorial){: external} to encrypt the Kubernetes secrets and etcd component of your Kubernetes master.
 {: shortdesc}
 
+
 **Clusters that run version 3.11**: To rotate your encryption key, repeat the [CLI](#kms_cli) or [console](#kms_ui) steps to enable KMS provider encryption with a new root key ID. The new root key is added to the cluster configuration along with the previous root key so that existing encrypted data is still protected. To encrypt your existing secrets with the new root key, you must rewrite the secrets. When you rotate a root key, you cannot reuse a previous root key for the same cluster.
 {: note}
 
@@ -223,21 +222,22 @@ Enable a [key management service (KMS) provider](#kms) such as [{{site.data.keyw
 Before you enable a key management service (KMS) provider in your cluster, create a KMS instance and complete the following steps.
 {: shortdesc}
 
-1.  Create a KMS instance, such as [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-provision#provision) or [{{site.data.keyword.hscrypto}}](https://cloud.ibm.com/catalog/services/hyper-protect-crypto-services){: external}.
-2.  Create a customer root key (CRK) in your KMS instance, such as a [{{site.data.keyword.keymanagementserviceshort}} root key](/docs/key-protect?topic=key-protect-create-root-keys#create-root-keys) or [{{site.data.keyword.hscrypto}} root key](/docs/hs-crypto?topic=hs-crypto-create-root-keys). By default, the root key is created without an expiration date.
+1. Create a KMS instance, such as [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-provision#provision) or [{{site.data.keyword.hscrypto}}](https://cloud.ibm.com/catalog/services/hyper-protect-crypto-services){: external}.
+2. Create a customer root key (CRK) in your KMS instance, such as a [{{site.data.keyword.keymanagementserviceshort}} root key](/docs/key-protect?topic=key-protect-create-root-keys#create-root-keys) or [{{site.data.keyword.hscrypto}} root key](/docs/hs-crypto?topic=hs-crypto-create-root-keys). By default, the root key is created without an expiration date.
 
     **{{site.data.keyword.keymanagementserviceshort}}:** Need to set an expiration date to comply with internal security policies? [Create the root key by using the API](/docs/key-protect?topic=key-protect-create-root-keys#create-root-key-api) and include the `expirationDate` parameter. **Important**: Before your root key expires, repeat these steps to update your cluster to use a new root key. When a root key expires, the cluster secrets cannot be decrypted and your cluster becomes unusable. Depending on the cluster version, the time lapse between the root key expiring and the cluster no longer being able to decrypt secrets might be about an hour, or when the master is refreshed.
     {: tip}
 
-3.  Make sure that you have the correct permissions in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to enable KMS in your cluster.
+3. Make sure that you have the correct permissions in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to enable KMS in your cluster.
     *   Ensure that you have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster.
     *   Ensure that the API key owner of the [API key](/docs/openshift?topic=openshift-access-creds#api_key_about) that is set for the region and resource group that your cluster is in has the correct permissions for the KMS provider. For more information on granting access in IAM to the KMS provider, see the [{{site.data.keyword.keymanagementserviceshort}} user access documentation](/docs/key-protect?topic=key-protect-manage-access) or [{{site.data.keyword.hscrypto}} user access documentation](/docs/hs-crypto?topic=hs-crypto-manage-access#platform-mgmt-roles).
         * For example, to create an instance and root key, you need at least the **Editor** platform and **Writer** service access roles for {{site.data.keyword.keymanagementserviceshort}} or for {{site.data.keyword.hscrypto}}.
         * If you plan to use an existing KMS instance and root key, you need at least the **Viewer** platform and **Reader** service access roles for {{site.data.keyword.keymanagementserviceshort}} or for {{site.data.keyword.hscrypto}}.
     * **For clusters that run {{site.data.keyword.openshiftshort}} 4.4.16_1513_openshift or later**: An additional **Reader** [service-to-service authorization policy](/docs/account?topic=account-serviceauth) between {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.keymanagementserviceshort}} is automatically created for your cluster, if the policy does not already exist. Without this policy, your cluster cannot use all the [{{site.data.keyword.keymanagementserviceshort}} features](#kms-keyprotect-features).
     {: note}
-4.  Consider [updating your cluster](/docs/containers?topic=containers-update) to at least version `4.4.16_1513_openshift` to get the latest [{{site.data.keyword.keymanagementserviceshort}} features](#kms-keyprotect-features).
-5.  Enable KMS encryption through the [CLI](#kms_cli) or [console](#kms_ui).
+
+4. Consider [updating your cluster](/docs/containers?topic=containers-update) to at least version `4.4.16_1513_openshift` to get the latest [{{site.data.keyword.keymanagementserviceshort}} features](#kms-keyprotect-features).
+5. Enable KMS encryption through the [CLI](#kms_cli) or [console](#kms_ui).
 
 ### Enabling KMS encryption for the cluster through the CLI
 {: #kms_cli}
@@ -245,23 +245,26 @@ Before you enable a key management service (KMS) provider in your cluster, creat
 You can enable a KMS provider or update the instance or root key that encrypts secrets in the cluster through the CLI.
 {: shortdesc}
 
-1.  Complete the [prerequisite steps](#kms_prereqs) to create a KMS instance and root key.
-2.  Get the ID of the KMS instance that you previously created.
+1. Complete the [prerequisite steps](#kms_prereqs) to create a KMS instance and root key.
+2. Get the ID of the KMS instance that you previously created.
     ```
     ibmcloud oc kms instance ls
     ```
     {: pre}
-3.  Get the **ID** of the root key that you previously created.
+
+3. Get the **ID** of the root key that you previously created.
     ```
     ibmcloud oc kms crk ls --instance-id <KMS_instance_ID>
     ```
     {: pre}
-4.  Enable the KMS provider to encrypt secrets in your cluster. Fill in the flags with the information that you previously retrieved. The KMS provider's private cloud service endpoint is used by default to download the encryption keys. To use the public cloud service endpoint instead, include the `--public-endpoint` flag. The enablement process can take some time to complete.<p class="important">During the enablement, you might not be able to access the Kubernetes master such as to update YAML configurations for deployments.</p>
+
+4. Enable the KMS provider to encrypt secrets in your cluster. Fill in the flags with the information that you previously retrieved. The KMS provider's private cloud service endpoint is used by default to download the encryption keys. To use the public cloud service endpoint instead, include the `--public-endpoint` flag. The enablement process can take some time to complete.<p class="important">During the enablement, you might not be able to access the Kubernetes master such as to update YAML configurations for deployments.</p>
     ```
     ibmcloud oc kms enable -c <cluster_name_or_ID> --instance-id <kms_instance_ID> --crk <root_key_ID> [--public-endpoint]
     ```
     {: pre}
-5.  Verify that the KMS enablement process is finished. The process is finished when that the **Master Status** is **Ready** and **Key management service** is **enabled**.
+
+5. Verify that the KMS enablement process is finished. The process is finished when that the **Master Status** is **Ready** and **Key management service** is **enabled**.
     ```
     ibmcloud oc cluster get -c <cluster_name_or_ID>
     ```
@@ -290,14 +293,15 @@ You can enable a KMS provider or update the instance or root key that encrypts s
     After the KMS provider is enabled in the cluster, data in `etcd` and new secrets that are created in the cluster are automatically encrypted by using your root key.
     {: note}
 
-6.  **Clusters that run version 3.11**: To encrypt existing secrets with the root key, rewrite the secrets.
-    1.  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
-    2.  With `cluster-admin` access, rewrite the secrets.
+6. **Clusters that run version 3.11**: To encrypt existing secrets with the root key, rewrite the secrets.
+    1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+    2. With `cluster-admin` access, rewrite the secrets.
         ```
         kubectl get secrets --all-namespaces -o json | kubectl replace -f -
         ```
         {: pre}
-7.  Optional: [Verify that your secrets are encrypted](#verify_kms).
+
+7. Optional: [Verify that your secrets are encrypted](#verify_kms).
 
 <p class="important">Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered. When you rotate a root key, you cannot reuse a previous root key for the same cluster.<br><br>Similarly, if you disable a root key, operations that rely on reading secrets fail. Unlike deleting a root key, however, you can reenable a disabled key to make your cluster usable again.</p>
 
@@ -307,12 +311,12 @@ You can enable a KMS provider or update the instance or root key that encrypts s
 You can enable a KMS provider or update the instance or root key that encrypts secrets in the cluster through the {{site.data.keyword.cloud_notm}} console.
 {: shortdesc}
 
-1.  Complete the [prerequisite steps](#kms_prereqs) to create a KMS instance and root key.
-2.  From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster that you want to enable encryption for.
-3.  From the **Overview** tab, in the **Summary > Key management service** section, click **Enable**. If you already enabled the KMS provider, click **Update**.
-4.  Select the **Key management service instance** and **Root key** that you want to use for the encryption.<p class="important">During the enablement, you might not be able to access the Kubernetes master such as to update YAML configurations for deployments.</p>
-5.  Click **Enable** (or **Update**).
-6.  Verify that the KMS enablement process is finished. From the **Summary > Master status** section, you can check the progress.
+1. Complete the [prerequisite steps](#kms_prereqs) to create a KMS instance and root key.
+2. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster that you want to enable encryption for.
+3. From the **Overview** tab, in the **Summary > Key management service** section, click **Enable**. If you already enabled the KMS provider, click **Update**.
+4. Select the **Key management service instance** and **Root key** that you want to use for the encryption.<p class="important">During the enablement, you might not be able to access the Kubernetes master such as to update YAML configurations for deployments.</p>
+5. Click **Enable** (or **Update**).
+6. Verify that the KMS enablement process is finished. From the **Summary > Master status** section, you can check the progress.
     Example output when the enablement is in progress:
     ```
     Master status   KMS feature enablement in progress.  
@@ -328,14 +332,15 @@ You can enable a KMS provider or update the instance or root key that encrypts s
     After the KMS provider is enabled in the cluster, data in `etcd` and new secrets that are created in the cluster are automatically encrypted by using your root key.
     {: note}
 
-6.  **Clusters that run version 3.11**: To encrypt existing secrets with the root key, rewrite the secrets.
-    1.  [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
-    2.  With `cluster-admin` access, rewrite the secrets.
+6. **Clusters that run version 3.11**: To encrypt existing secrets with the root key, rewrite the secrets.
+    1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+    2. With `cluster-admin` access, rewrite the secrets.
         ```
         kubectl get secrets --all-namespaces -o json | kubectl replace -f -
         ```
         {: pre}
-7.  Optional: [Verify that your secrets are encrypted](#verify_kms).
+
+7. Optional: [Verify that your secrets are encrypted](#verify_kms).
 
 <p class="important">Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and cannot be recovered. When you rotate a root key, you cannot reuse a previous root key for the same cluster.<br><br>Similarly, if you disable a root key, operations that rely on reading secrets fail. Unlike deleting a root key, however, you can reenable a disabled key to make your cluster usable again.</p>
 
@@ -358,24 +363,26 @@ Before you begin:
 * Make sure that you have the {{site.data.keyword.cloud_notm}} IAM **Administrator** platform and **Manager** service access role for the cluster.
 
 To verify secret encryption by disabling a root key:
-1.  [Enable KMS encryption in your cluster](#keyprotect). To check that KMS encryption is enabled, verify that the **Key Management Service** status is set to `enabled` in the output of the following command.
+1. [Enable KMS encryption in your cluster](#keyprotect). To check that KMS encryption is enabled, verify that the **Key Management Service** status is set to `enabled` in the output of the following command.
     ```
     ibmcloud oc cluster get -c <cluster_name_or_ID>
     ```
     {: pre}
-2.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-3.  Verify that you can list the secrets in your cluster.
+
+2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+3. Verify that you can list the secrets in your cluster.
     ```
     oc get secrets --all-namespaces
     ```
     {: pre}
-4.  In your {{site.data.keyword.keymanagementserviceshort}} instance, [disable the root key](/docs/key-protect?topic=key-protect-disable-keys) that is used to encrypt your cluster.
-5.  Wait for the cluster to detect the change to your root key.
+
+4. In your {{site.data.keyword.keymanagementserviceshort}} instance, [disable the root key](/docs/key-protect?topic=key-protect-disable-keys) that is used to encrypt your cluster.
+5. Wait for the cluster to detect the change to your root key.
 
     In clusters that run a version earlier than `4.5`, you might need to wait for an hour or longer.
     {: note}
 
-6.  Try to list your secrets. You get a timeout error because you can no longer connect to your cluster. If you try to set the context for your cluster by running `ibmcloud oc cluster config`, the command fails.
+6. Try to list your secrets. You get a timeout error because you can no longer connect to your cluster. If you try to set the context for your cluster by running `ibmcloud oc cluster config`, the command fails.
     ```
     oc get secrets --all-namespaces
     ```
@@ -386,12 +393,14 @@ To verify secret encryption by disabling a root key:
     Unable to connect to the server: dial tcp 169.48.110.250:32346: i/o timeout
     ```
     {: screen}
-7.  For clusters that run {{site.data.keyword.openshiftshort}} version `4.5` or later, check that your cluster is in a **warning** state. Your cluster remains in this state and is unusable until you enable your root key again.
+
+7. For clusters that run {{site.data.keyword.openshiftshort}} version `4.5` or later, check that your cluster is in a **warning** state. Your cluster remains in this state and is unusable until you enable your root key again.
     ```
     ibmcloud oc cluster get -c <cluster_name_or_ID>
     ```
     {: pre}
-8.  In your {{site.data.keyword.keymanagementserviceshort}} instance, [enable the root key](/docs/key-protect?topic=key-protect-disable-keys) so that your cluster returns to a **normal** state and becomes usable again.
+
+8. In your {{site.data.keyword.keymanagementserviceshort}} instance, [enable the root key](/docs/key-protect?topic=key-protect-disable-keys) so that your cluster returns to a **normal** state and becomes usable again.
 
 <br />
 
@@ -415,5 +424,7 @@ If you or your company require data sensitivity due to internal policies, govern
 To get started, provision an SGX-enabled bare metal worker cluster with a [supported flavor for {{site.data.keyword.datashield_short}}](/docs/data-shield?topic=data-shield-getting-started).
 
 <br>
+
+
 
 

@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
 subcollection: openshift
 
 ---
-
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Monitoring cluster health
 {: #health-monitor}
@@ -136,10 +134,10 @@ To help understand when to use the built-in {{site.data.keyword.openshiftshort}}
 
 <dt>Built-in {{site.data.keyword.openshiftshort}} monitoring tools</dt>
 <dd><ul>
-<li>Built-in Prometheus and Grafana deployments in `openshift-monitoring` project for cluster metrics.</li>
-<li>At-a-glance, real-time view of how your pods consume cluster resources that can be accessed from the {{site.data.keyword.openshiftshort}} **Cluster Console**.</li>
+<li>Built-in Prometheus and Grafana deployments in <code>openshift-monitoring</code> project for cluster metrics.</li>
+<li>At-a-glance, real-time view of how your pods consume cluster resources that can be accessed from the {{site.data.keyword.openshiftshort}} <strong>Cluster Console</strong>.</li>
 <li>Monitoring is on a per-cluster basis.</li>
-<li>The `openshift-monitoring` project stack is set up in a single zone only. No persistant storage is available to back up or view metric history.</li></ul>
+<li>The <code>openshift-monitoring</code> project stack is set up in a single zone only. No persistant storage is available to back up or view metric history.</li></ul>
 <br>For more information, see [the {{site.data.keyword.openshiftshort}} documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](http://docs.openshift.com/container-platform/4.6/monitoring/understanding-the-monitoring-stack.html).</dd>
 
 </dl>
@@ -163,21 +161,21 @@ Before you begin:
 - Verify that you are assigned the **Editor** platform access role and **Manager** server access role for {{site.data.keyword.mon_full_notm}}.
 - Verify that you are assigned the **Administrator** platform access role and the **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}} to create the monitoring configuration. To view a monitoring configuration or launch the {{site.data.keyword.mon_short}} dashboard after the monitoring configuration is created, users must be assigned the **Administrator** platform access role and the **Manager** service access role for the `ibm-observe` Kubernetes namespace in {{site.data.keyword.containerlong_notm}}.
 - If you want to use the CLI to set up the monitoring configuration:
-  - [Install the {{site.data.keyword.openshiftlong_notm}} observability CLI plug-in (`ibmcloud ob`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
-  - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+    - [Install the {{site.data.keyword.openshiftlong_notm}} observability CLI plug-in (`ibmcloud ob`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
+    - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To set up a monitoring configuration for your cluster:
 
 1. Create an [{{site.data.keyword.mon_full_notm}} service instance](/docs/monitoring?topic=monitoring-provision) and note the name of the instance. The service instance must belong to the same {{site.data.keyword.cloud_notm}} account where you created your cluster, but can be in a different resource group and {{site.data.keyword.cloud_notm}} region than your cluster.
 2. Set up a monitoring configuration for your cluster. When you create the monitoring configuration, an {{site.data.keyword.openshiftshort}} project `ibm-observe` is created and a {{site.data.keyword.mon_short}} agent is deployed as a Kubernetes daemon set to all worker nodes in your cluster. This agent collects cluster and pod metrics, such as the worker node CPU and memory usage, or the amount incoming and outgoing network traffic to your pods.
 
-   - **From the console: **
-     1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to create a {{site.data.keyword.mon_short}} configuration.
-     2. On the cluster **Overview** page, click **Connect**.
-     3. Select the region and the {{site.data.keyword.mon_full_notm}} service instance that you created earlier, and click **Connect**.
+    - **From the console: **
+        1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to create a {{site.data.keyword.mon_short}} configuration.
+        2. On the cluster **Overview** page, click **Connect**.
+        3. Select the region and the {{site.data.keyword.mon_full_notm}} service instance that you created earlier, and click **Connect**.
 
-   - **From the CLI:**
-     1. Create the {{site.data.keyword.mon_short}} configuration. When you create the {{site.data.keyword.mon_short}} configuration, the access key that was last added is retrieved automatically. If you want to use a different access key, add the `--sysdig-access-key <access_key>` option to the command.
+    - **From the CLI:**
+        1. Create the {{site.data.keyword.mon_short}} configuration. When you create the {{site.data.keyword.mon_short}} configuration, the access key that was last added is retrieved automatically. If you want to use a different access key, add the `--sysdig-access-key <access_key>` option to the command.
 
         To use a different service access key after you created the monitoring configuration, use the [`ibmcloud ob monitoring config replace`](/docs/containers?topic=containers-observability_cli#monitoring_config_replace) command.
         {: tip}
@@ -194,7 +192,7 @@ To set up a monitoring configuration for your cluster:
         ```
         {: screen}
 
-     2. Verify that the monitoring configuration was added to your cluster.
+        2. Verify that the monitoring configuration was added to your cluster.
         ```
         ibmcloud ob monitoring config list --cluster <cluster_name_or_ID>
         ```
@@ -211,32 +209,32 @@ To set up a monitoring configuration for your cluster:
         {: screen}
 
 3. Optional: Verify that the {{site.data.keyword.mon_short}} agent was set up successfully.
-   1. If you used the console to create the {{site.data.keyword.mon_short}} configuration, log in to your cluster. For more information, see [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-   2. Verify that the daemon set for the {{site.data.keyword.mon_short}} agent was created and all instances are listed as `AVAILABLE`.
-      ```
-      oc get daemonsets -n ibm-observe
-      ```
-      {: pre}
+    1. If you used the console to create the {{site.data.keyword.mon_short}} configuration, log in to your cluster. For more information, see [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+    2. Verify that the daemon set for the {{site.data.keyword.mon_short}} agent was created and all instances are listed as `AVAILABLE`.
+        ```
+        oc get daemonsets -n ibm-observe
+        ```
+        {: pre}
 
-      Example output:
-      ```
-      NAME           DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
-      sysdig-agent   9         9         9       9            9           <none>          14m
-      ```
-      {: screen}
+        Example output:
+        ```
+        NAME           DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+        sysdig-agent   9         9         9       9            9           <none>          14m
+        ```
+        {: screen}
 
-      The number of daemon set instances that are deployed equals the number of worker nodes in your cluster.
+        The number of daemon set instances that are deployed equals the number of worker nodes in your cluster.
 
-   3. Review the configmap that was created for your {{site.data.keyword.mon_short}} agent.
-      ```
-      oc describe configmap -n ibm-observe
-      ```
-      {: pre}
+    3. Review the configmap that was created for your {{site.data.keyword.mon_short}} agent.
+        ```
+        oc describe configmap -n ibm-observe
+        ```
+        {: pre}
 
 4. Access the metrics for your pods and cluster from the {{site.data.keyword.mon_short}} dashboard.
-   1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster that you configured.
-   2. On the cluster **Overview** page, click **Launch**. The {{site.data.keyword.mon_short}} dashboard opens.
-   3. Review the pod and cluster metrics that the {{site.data.keyword.mon_short}} agent collected from your cluster. It might take a few minutes for your first metrics to show.
+    1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster that you configured.
+    2. On the cluster **Overview** page, click **Launch**. The {{site.data.keyword.mon_short}} dashboard opens.
+    3. Review the pod and cluster metrics that the {{site.data.keyword.mon_short}} agent collected from your cluster. It might take a few minutes for your first metrics to show.
 
 5. Review how you can work with the [{{site.data.keyword.mon_short}} dashboard](/docs/monitoring?topic=monitoring-panels) to further analyze your metrics.
 
@@ -255,69 +253,70 @@ You can review information about the overall cluster, the IBM-managed master, an
 
 You can view the current cluster state by running the `ibmcloud oc cluster ls` command and locating the **State** field.
 {: shortdesc}
+
     <table summary="Every table row should be read left to right, with the cluster state in column one and a description in column two.">
     <caption>Cluster states</caption>
-       <thead>
-       <th>Cluster state</th>
-       <th>Description</th>
-       </thead>
-       <tbody>
+        <thead>
+        <th>Cluster state</th>
+        <th>Description</th>
+        </thead>
+        <tbody>
     <tr>
-       <td>`Aborted`</td>
-       <td>The deletion of the cluster is requested by the user before the Kubernetes master is deployed. After the deletion of the cluster is completed, the cluster is removed from your dashboard. If your cluster is stuck in this state for a long time, open an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).</td>
-       </tr>
-     <tr>
-         <td>`Critical`</td>
-         <td>The Kubernetes master cannot be reached or all worker nodes in the cluster are down. If you enabled {{site.data.keyword.keymanagementservicelong_notm}} in your cluster, the {{site.data.keyword.keymanagementserviceshort}} container might fail to encrypt or decrypt your cluster secrets. If so, you can view an error with more information when you run `oc get secrets`.</td>
+        <td><code>Aborted</code></td>
+        <td>The deletion of the cluster is requested by the user before the Kubernetes master is deployed. After the deletion of the cluster is completed, the cluster is removed from your dashboard. If your cluster is stuck in this state for a long time, open an <a href="/docs/containers?topic=containers-get-help">{{site.data.keyword.cloud_notm}} support case</a>.</td>
         </tr>
-       <tr>
-         <td>`Delete failed`</td>
-         <td>The Kubernetes master or at least one worker node cannot be deleted. List worker nodes by running `ibmcloud oc worker ls --cluster <cluster_name_or_ID>`. If worker nodes are listed, see [Unable to create or delete worker nodes](/docs/containers?topic=containers-worker_infra_errors). If no workers are listed, open an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).</td>
-       </tr>
-       <tr>
-         <td>`Deleted`</td>
-         <td>The cluster is deleted but not yet removed from your dashboard. If your cluster is stuck in this state for a long time, open an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help). </td>
-       </tr>
-       <tr>
-       <td>`Deleting`</td>
-       <td>The cluster is being deleted and cluster infrastructure is being dismantled. You cannot access the cluster.  </td>
-       </tr>
-       <tr>
-         <td>`Deploy failed`</td>
-         <td>The deployment of the Kubernetes master could not be completed. You cannot resolve this state. Contact IBM Cloud support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).</td>
-       </tr>
-         <tr>
-           <td>`Deploying`</td>
-           <td>The Kubernetes master is not fully deployed yet. You cannot access your cluster. Wait until your cluster is fully deployed to review the health of your cluster.</td>
+        <tr>
+            <td><code>Critical</code></td>
+            <td>The Kubernetes master cannot be reached or all worker nodes in the cluster are down. If you enabled {{site.data.keyword.keymanagementservicelong_notm}} in your cluster, the {{site.data.keyword.keymanagementserviceshort}} container might fail to encrypt or decrypt your cluster secrets. If so, you can view an error with more information when you run <code>oc get secrets</code>.</td>
+        </tr>
+        <tr>
+            <td><code>Delete failed</code></td>
+            <td>The Kubernetes master or at least one worker node cannot be deleted. List worker nodes by running <code>ibmcloud oc worker ls --cluster <cluster_name_or_ID></code>. If worker nodes are listed, see <a href="/docs/containers?topic=containers-worker_infra_errors">Unable to create or delete worker nodes</a>. If no workers are listed, open an <a href="/docs/containers?topic=containers-get-help">{{site.data.keyword.cloud_notm}} support case</a>.</td>
+        </tr>
+        <tr>
+            <td><code>Deleted</code></td>
+            <td>The cluster is deleted but not yet removed from your dashboard. If your cluster is stuck in this state for a long time, open an <a href="/docs/containers?topic=containers-get-help">{{site.data.keyword.cloud_notm}} support case</a>. </td>
+        </tr>
+        <tr>
+        <td><code>Deleting</code></td>
+        <td>The cluster is being deleted and cluster infrastructure is being dismantled. You cannot access the cluster.  </td>
+        </tr>
+        <tr>
+            <td><code>Deploy failed</code></td>
+            <td>The deployment of the Kubernetes master could not be completed. You cannot resolve this state. Contact IBM Cloud support by opening an <a href="/docs/containers?topic=containers-get-help">{{site.data.keyword.cloud_notm}} support case</a>.</td>
+        </tr>
+            <tr>
+            <td><code>Deploying</code></td>
+            <td>The Kubernetes master is not fully deployed yet. You cannot access your cluster. Wait until your cluster is fully deployed to review the health of your cluster.</td>
           </tr>
           <tr>
-           <td>`Normal`</td>
-           <td>All worker nodes in a cluster are up and running. You can access the cluster and deploy apps to the cluster. This state is considered healthy and does not require an action from you.<p class="note">Although the worker nodes might be normal, other infrastructure resources, such as [networking](/docs/containers?topic=containers-coredns_lameduck) and [storage](/docs/containers?topic=containers-debug_storage_file), might still need attention. If you just created the cluster, some parts of the cluster that are used by other services such as Ingress secrets or registry image pull secrets, might still be in process.</p></td>
+            <td><code>Normal</code></td>
+            <td>All worker nodes in a cluster are up and running. You can access the cluster and deploy apps to the cluster. This state is considered healthy and does not require an action from you.<p class="note">Although the worker nodes might be normal, other infrastructure resources, such as <a href="/docs/containers?topic=containers-coredns_lameduck">networking</a> and <a href="/docs/containers?topic=containers-debug_storage_file">storage</a>, might still need attention. If you just created the cluster, some parts of the cluster that are used by other services such as Ingress secrets or registry image pull secrets, might still be in process.</p></td>
         </tr>
           <tr>
-           <td>`Pending`</td>
-           <td>The Kubernetes master is deployed. The worker nodes are being provisioned and are not available in the cluster yet. You can access the cluster, but you cannot deploy apps to the cluster.  </td>
-         </tr>
-       <tr>
-         <td>`Requested`</td>
-         <td>A request to create the cluster and order the infrastructure for the Kubernetes master and worker nodes is sent. When the deployment of the cluster starts, the cluster state changes to <code>Deploying</code>. If your cluster is stuck in the <code>Requested</code> state for a long time, open an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help). </td>
-       </tr>
-       <tr>
-         <td>`Updating`</td>
-         <td>The Kubernetes API server that runs in your Kubernetes master is being updated to a new Kubernetes API version. During the update, you cannot access or change the cluster. Worker nodes, apps, and resources that the user deployed are not modified and continue to run. Wait for the update to complete to review the health of your cluster. </td>
-       </tr>
-       <tr>
-        <td>`Unsupported`</td>
-        <td>The [Kubernetes version](/docs/containers?topic=containers-cs_versions#cs_versions) that the cluster runs is no longer supported. Your cluster's health is no longer actively monitored or reported. Additionally, you cannot add or reload worker nodes. To continue receiving important security updates and support, you must update your cluster. Review the [version update preparation actions](/docs/containers?topic=containers-cs_versions#prep-up), then [update your cluster](/docs/containers?topic=containers-update#update) to a supported Kubernetes version.</td>
-       </tr>
+            <td><code>Pending</code></td>
+            <td>The Kubernetes master is deployed. The worker nodes are being provisioned and are not available in the cluster yet. You can access the cluster, but you cannot deploy apps to the cluster.  </td>
+            </tr>
         <tr>
-           <td>`Warning`</td>
-           <td><ul><li>At least one worker node in the cluster is not available, but other worker nodes are available and can take over the workload. Try to [reload](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload) the unavailable worker nodes.</li>
-           <li>Your cluster has zero worker nodes, such as if you created a cluster without any worker nodes or manually removed all the worker nodes from the cluster. [Resize your worker pool](/docs/containers?topic=containers-add_workers#resize_pool) to add worker nodes to recover from a `Warning` state, and then [update the Calico node entries for your worker nodes](/docs/containers?topic=containers-zero_nodes_calico_failure).</li>
-           <li>A control plane operation for your cluster failed. View the cluster in the console or run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>` to [check the **Master Status** for further debugging](/docs/containers?topic=containers-debug_master).</li></ul></td>
+            <td><code>Requested</code></td>
+            <td>A request to create the cluster and order the infrastructure for the Kubernetes master and worker nodes is sent. When the deployment of the cluster starts, the cluster state changes to <code>Deploying</code>. If your cluster is stuck in the <code>Requested</code> state for a long time, open an <a href="/docs/containers?topic=containers-get-help">{{site.data.keyword.cloud_notm}} support case</a>. </td>
         </tr>
-       </tbody>
-     </table>
+        <tr>
+            <td><code>Updating</code></td>
+            <td>The Kubernetes API server that runs in your Kubernetes master is being updated to a new Kubernetes API version. During the update, you cannot access or change the cluster. Worker nodes, apps, and resources that the user deployed are not modified and continue to run. Wait for the update to complete to review the health of your cluster. </td>
+        </tr>
+        <tr>
+        <td><code>Unsupported</code></td>
+        <td>The <a href="/docs/containers?topic=containers-cs_versions#cs_versions">Kubernetes version</a> that the cluster runs is no longer supported. Your cluster's health is no longer actively monitored or reported. Additionally, you cannot add or reload worker nodes. To continue receiving important security updates and support, you must update your cluster. Review the <a href="/docs/containers?topic=containers-cs_versions#prep-up">version update preparation actions</a>, then <a href="/docs/containers?topic=containers-update#update">update your cluster</a> to a supported Kubernetes version.</td>
+        </tr>
+        <tr>
+            <td><code>Warning</code></td>
+            <td><ul><li>At least one worker node in the cluster is not available, but other worker nodes are available and can take over the workload. Try to <a href="/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload">reload</a> the unavailable worker nodes.</li>
+            <li>Your cluster has zero worker nodes, such as if you created a cluster without any worker nodes or manually removed all the worker nodes from the cluster. <a href="/docs/containers?topic=containers-add_workers#resize_pool">Resize your worker pool</a> to add worker nodes to recover from a <code>Warning</code> state, and then <a href="/docs/containers?topic=containers-zero_nodes_calico_failure">update the Calico node entries for your worker nodes</a>.</li>
+            <li>A control plane operation for your cluster failed. View the cluster in the console or run <code>ibmcloud oc cluster get --cluster <cluster_name_or_ID></code> to <a href="/docs/containers?topic=containers-debug_master">check the <strong>Master Status</strong> for further debugging</a>.</li></ul></td>
+        </tr>
+        </tbody>
+        </table>
 
 ### Master states
 {: #states_master}
@@ -355,86 +354,87 @@ The **Master Status** provides details of what operation from the master state i
 
 You can view the current worker node state by running the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and locating the **State** and **Status** fields.
 {: shortdesc}
+
     <table summary="Every table row should be read left to right, with the cluster state in column one and a description in column two.">
     <caption>Worker node states</caption>
-      <thead>
-      <th>Worker node state</th>
-      <th>Description</th>
-      </thead>
-      <tbody>
+        <thead>
+        <th>Worker node state</th>
+        <th>Description</th>
+        </thead>
+        <tbody>
     <tr>
-        <td>`Critical`</td>
+        <td><code>Critical</code></td>
         <td>A worker node can go into a Critical state for many reasons: <ul><li>You initiated a reboot for your worker node without cordoning and draining your worker node. Rebooting a worker node can cause data corruption in <code>containerd</code>, <code>kubelet</code>, <code>kube-proxy</code>, and <code>calico</code>. </li>
-        <li>The pods that are deployed to your worker node do not use proper resource limits for [memory](https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource/){: external} and [CPU](https://kubernetes.io/docs/tasks/configure-pod-container/assign-cpu-resource/){: external}. If you set none or excessive resource limits, pods can consume all available resources, leaving no resources for other pods to run on this worker node. This overcommitment of workload causes the worker node to fail. <ol><li>List the pods that run on your worker node and review the CPU and memory usage, requests and limits. <pre class="codeblock"><code>oc describe node &lt;worker_private_IP&gt;</code></pre></li><li>For pods that consume a lot of memory and CPU resources, check if you set proper resource limits for memory and CPU. <pre class="codeblock"><code>oc get pods &lt;pod_name&gt; -n &lt;namespace&gt; -o json</code></pre></li><li>Optional: Remove the resource-intensive pods to free up compute resources on your worker node. <pre class="codeblock"><code>oc delete pod &lt;pod_name&gt;</code></pre><pre class="codeblock"><code>oc delete deployment &lt;deployment_name&gt;</code></pre></li></ol></li>
+        <li>The pods that are deployed to your worker node do not use proper resource limits for <a href="https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource/">memory</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/assign-cpu-resource/">CPU</a> <img src="../icons/launch-glyph.svg" alt="External link icon">. If you set none or excessive resource limits, pods can consume all available resources, leaving no resources for other pods to run on this worker node. This overcommitment of workload causes the worker node to fail. <ol><li>List the pods that run on your worker node and review the CPU and memory usage, requests and limits. <pre class="codeblock"><code>oc describe node &lt;worker_private_IP&gt;</code></pre></li><li>For pods that consume a lot of memory and CPU resources, check if you set proper resource limits for memory and CPU. <pre class="codeblock"><code>oc get pods &lt;pod_name&gt; -n &lt;namespace&gt; -o json</code></pre></li><li>Optional: Remove the resource-intensive pods to free up compute resources on your worker node. <pre class="codeblock"><code>oc delete pod &lt;pod_name&gt;</code></pre><pre class="codeblock"><code>oc delete deployment &lt;deployment_name&gt;</code></pre></li></ol></li>
         <li><code>containerd</code>, <code>kubelet</code>, or <code>calico</code> went into an unrecoverable state after it ran hundreds or thousands of containers over time. </li>
         <li>You set up a Virtual Router Appliance for your worker node that went down and cut off the communication between your worker node and the Kubernetes master. </li><li> Current networking issues in {{site.data.keyword.containerlong_notm}} or IBM Cloud infrastructure that causes the communication between your worker node and the Kubernetes master to fail.</li>
         <li>Your worker node ran out of capacity. Check the <strong>Status</strong> of the worker node to see whether it shows <strong>Out of disk</strong> or <strong>Out of memory</strong>. If your worker node is out of capacity, consider to either reduce the workload on your worker node or add a worker node to your cluster to help load balance the workload.</li>
-        <li>The device was powered off from the [{{site.data.keyword.cloud_notm}} console resource list](https://cloud.ibm.com/resources){: external}. Open the resource list and find your worker node ID in the **Devices** list. In the action menu, click **Power On**.</li></ul>
-        In many cases, [reloading](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload) your worker node can solve the problem. When you reload your worker node, the latest [patch version](/docs/containers?topic=containers-cs_versions#version_types) is applied to your worker node. The major and minor version is not changed. Before you reload your worker node, make sure to cordon and drain your worker node to ensure that the existing pods are terminated gracefully and rescheduled onto remaining worker nodes. </br></br> If reloading the worker node does not resolve the issue, go to the next step to continue troubleshooting your worker node.
+        <li>The device was powered off from the <a href="https://cloud.ibm.com/resources">{{site.data.keyword.cloud_notm}} console resource list</a> <img src="../icons/launch-glyph.svg" alt="External link icon">. Open the resource list and find your worker node ID in the <strong>Devices</strong> list. In the action menu, click <strong>Power On</strong>.</li></ul>
+        In many cases, <a href="/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload">reloading</a> your worker node can solve the problem. When you reload your worker node, the latest <a href="/docs/containers?topic=containers-cs_versions#version_types">patch version</a> is applied to your worker node. The major and minor version is not changed. Before you reload your worker node, make sure to cordon and drain your worker node to ensure that the existing pods are terminated gracefully and rescheduled onto remaining worker nodes. </br></br> If reloading the worker node does not resolve the issue, go to the next step to continue troubleshooting your worker node.
         </td>
-       </tr>
-       <tr>
-       <td>`Deleting`</td>
-       <td>You requested to delete the worker node, possibly as part of resizing a worker pool or autoscaling the cluster. Other operations cannot be issued against the worker node while the worker node deletes. You cannot reverse the deletion process. When the deletion process completes, you are no longer billed for the worker nodes.</td>
-       </tr>
-       <tr>
-       <td>`Deleted`</td>
-       <td>Your worker node is deleted, and no longer is listed in the cluster or billed. This state cannot be undone. Any data that was stored only on the worker node, such as container images, are also deleted.</td>
-       </tr>
-       <tr>
-       <td>`Deployed`</td>
-       <td>Updates are successfully deployed to your worker node. After updates are deployed, {{site.data.keyword.openshiftlong_notm}} starts a health check on the worker node. After the health check is successful, the worker node goes into a <code>Normal</code> state. Worker nodes in a <code>Deployed</code> state usually are ready to receive workloads, which you can check by running <code>oc get nodes</code> and confirming that the state shows <code>Normal</code>. </td>
-       </tr>
-        <tr>
-          <td>`Deploying`</td>
-          <td>When you update the Kubernetes version of your worker node, your worker node is redeployed to install the updates. If you reload or reboot your worker node, the worker node is redeployed to automatically install the latest patch version. If your worker node is stuck in this state for a long time, check whether a problem occurred during the deployment. </td>
-       </tr>
-       <tr>
-         <td>`Deploy_failed`</td>
-         <td>Your worker node could not be deployed. List the details for the worker node to find the details for the failure by running `ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id>`.</td>
-       </tr>
-          <tr>
-          <td>`Normal`</td>
-          <td>Your worker node is fully provisioned and ready to be used in the cluster. This state is considered healthy and does not require an action from the user. **Note**: Although the worker nodes might be normal, other infrastructure resources, such as [networking](/docs/containers?topic=containers-coredns_lameduck) and [storage](/docs/containers?topic=containers-debug_storage_file), might still need attention.</td>
-       </tr>
-     <tr>
-          <td>`Provisioned`</td>
-          <td>Your worker node completed provisioning and is part of the cluster. Billing for the worker node begins. The worker node state soon reports a regular health state and status, such as `normal` and `ready`.</td>
         </tr>
-     <tr>
-     <tr>
-          <td>`Provisioning`</td>
+        <tr>
+        <td><code>Deleting</code></td>
+        <td>You requested to delete the worker node, possibly as part of resizing a worker pool or autoscaling the cluster. Other operations cannot be issued against the worker node while the worker node deletes. You cannot reverse the deletion process. When the deletion process completes, you are no longer billed for the worker nodes.</td>
+        </tr>
+        <tr>
+        <td><code>Deleted</code></td>
+        <td>Your worker node is deleted, and no longer is listed in the cluster or billed. This state cannot be undone. Any data that was stored only on the worker node, such as container images, are also deleted.</td>
+        </tr>
+        <tr>
+        <td><code>Deployed</code></td>
+        <td>Updates are successfully deployed to your worker node. After updates are deployed, {{site.data.keyword.openshiftlong_notm}} starts a health check on the worker node. After the health check is successful, the worker node goes into a <code>Normal</code> state. Worker nodes in a <code>Deployed</code> state usually are ready to receive workloads, which you can check by running <code>oc get nodes</code> and confirming that the state shows <code>Normal</code>. </td>
+        </tr>
+        <tr>
+          <td><code>Deploying</code></td>
+          <td>When you update the Kubernetes version of your worker node, your worker node is redeployed to install the updates. If you reload or reboot your worker node, the worker node is redeployed to automatically install the latest patch version. If your worker node is stuck in this state for a long time, check whether a problem occurred during the deployment. </td>
+        </tr>
+        <tr>
+            <td><code>Deploy_failed</code></td>
+            <td>Your worker node could not be deployed. List the details for the worker node to find the details for the failure by running <code>ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id></code>.</td>
+        </tr>
+          <tr>
+          <td><code>Normal</code></td>
+          <td>Your worker node is fully provisioned and ready to be used in the cluster. This state is considered healthy and does not require an action from the user. <strong>Note</strong>: Although the worker nodes might be normal, other infrastructure resources, such as <a href="/docs/containers?topic=containers-coredns_lameduck">networking</a> and <a href="/docs/containers?topic=containers-debug_storage_file">storage</a>, might still need attention.</td>
+        </tr>
+        <tr>
+          <td><code>Provisioned</code></td>
+          <td>Your worker node completed provisioning and is part of the cluster. Billing for the worker node begins. The worker node state soon reports a regular health state and status, such as <code>normal</code> and <code>ready</code>.</td>
+        </tr>
+        <tr>
+        <tr>
+          <td><code>Provisioning</code></td>
           <td>Your worker node is being provisioned and is not available in the cluster yet. You can monitor the provisioning process in the <strong>Status</strong> column of your CLI output. If your worker node is stuck in this state for a long time, check whether a problem occurred during the provisioning.</td>
         </tr>
-     <tr>
-          <td>`Provision pending`</td>
-          <td>Another process is completing before the worker node provisioning process starts. You can monitor the other process that must complete first in the <strong>Status</strong> column of your CLI output. For example, in VPC clusters, the `Pending security group creation` indicates that the security group for your worker nodes is creating first before the worker nodes can be provisioned. If your worker node is stuck in this state for a long time, check whether a problem occurred during the other process.</td>
-     </tr>
         <tr>
-          <td>`Provision_failed`</td>
-          <td>Your worker node could not be provisioned. List the details for the worker node to find the details for the failure by running `ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id>`.</td>
+          <td><code>Provision pending</code></td>
+          <td>Another process is completing before the worker node provisioning process starts. You can monitor the other process that must complete first in the <strong>Status</strong> column of your CLI output. For example, in VPC clusters, the <code>Pending security group creation</code> indicates that the security group for your worker nodes is creating first before the worker nodes can be provisioned. If your worker node is stuck in this state for a long time, check whether a problem occurred during the other process.</td>
         </tr>
-     <tr>
-          <td>`Reloading`</td>
+        <tr>
+          <td><code>Provision_failed</code></td>
+          <td>Your worker node could not be provisioned. List the details for the worker node to find the details for the failure by running <code>ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id></code>.</td>
+        </tr>
+        <tr>
+          <td><code>Reloading</code></td>
           <td>Your worker node is being reloaded and is not available in the cluster. You can monitor the reloading process in the <strong>Status</strong> column of your CLI output. If your worker node is stuck in this state for a long time, check whether a problem occurred during the reloading.</td>
-         </tr>
-         <tr>
-          <td>`Reloading_failed`</td>
-          <td>Your worker node could not be reloaded. List the details for the worker node to find the details for the failure by running `ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id>`.</td>
+            </tr>
+            <tr>
+          <td><code>Reloading_failed</code></td>
+          <td>Your worker node could not be reloaded. List the details for the worker node to find the details for the failure by running <code>ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id></code>.</td>
         </tr>
         <tr>
-          <td>`Reload_pending`</td>
+          <td><code>Reload_pending</code></td>
           <td>A request to reload or to update the Kubernetes version of your worker node is sent. When the worker node is being reloaded, the state changes to <code>Reloading</code>. </td>
         </tr>
         <tr>
-         <td>`Unknown`</td>
-         <td>The Kubernetes master is not reachable for one of the following reasons:<ul><li>You requested an update of your Kubernetes master. The state of the worker node cannot be retrieved during the update. If the worker node remains in this state for an extended period of time even after the Kubernetes master is successfully updated, try to [reload](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload) the worker node.</li><li>You might have another firewall that is protecting your worker nodes, or changed firewall settings recently. {{site.data.keyword.openshiftlong_notm}} requires certain IP addresses and ports to be opened to allow communication from the worker node to the Kubernetes master and vice versa. For more information, see [Firewall prevents worker nodes from connecting](/docs/containers?topic=containers-firewall#vyatta_firewall).</li><li>The Kubernetes master is down. Contact {{site.data.keyword.cloud_notm}} support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).</li></ul></td>
+            <td><code>Unknown</code></td>
+            <td>The Kubernetes master is not reachable for one of the following reasons:<ul><li>You requested an update of your Kubernetes master. The state of the worker node cannot be retrieved during the update. If the worker node remains in this state for an extended period of time even after the Kubernetes master is successfully updated, try to <a href="/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload">reload</a> the worker node.</li><li>You might have another firewall that is protecting your worker nodes, or changed firewall settings recently. {{site.data.keyword.openshiftlong_notm}} requires certain IP addresses and ports to be opened to allow communication from the worker node to the Kubernetes master and vice versa. For more information, see <a href="/docs/containers?topic=containers-firewall#vyatta_firewall">Firewall prevents worker nodes from connecting</a>.</li><li>The Kubernetes master is down. Contact {{site.data.keyword.cloud_notm}} support by opening an <a href="/docs/containers?topic=containers-get-help">{{site.data.keyword.cloud_notm}} support case</a>.</li></ul></td>
     </tr>
-       <tr>
-          <td>`Warning`</td>
+        <tr>
+          <td><code>Warning</code></td>
           <td>Your worker node is reaching the limit for memory or disk space. You can either reduce work load on your worker node or add a worker node to your cluster to help load balance the work load.</td>
     </tr>
-      </tbody>
+        </tbody>
     </table>
 
 <br />
@@ -447,7 +447,7 @@ OpenShift Container Platform collects anonymized health reports about your clust
 
 You might want to disable this remote health reporting to comply with privacy laws, organizational standards, or data governance practices. To disable, you must modify the global configuration for the cluster and reload all of the worker nodes.
 
-1.  Check that the telemetry reporting pod runs in your cluster.
+1. Check that the telemetry reporting pod runs in your cluster.
     ```
     oc get pods -n openshift-monitoring
     ```
@@ -460,20 +460,25 @@ You might want to disable this remote health reporting to comply with privacy la
     ...
     ```
     {: screen}
-2.  Follow the {{site.data.keyword.openshiftshort}} instructions to [update the global pull secret in the cluster to disable remote health reporting](https://docs.openshift.com/container-platform/4.6/support/remote_health_monitoring/opting-out-of-remote-health-reporting.html){: external}.
-3.  To pick up the global configuration changes, reload all of the worker nodes in your cluster.
-    1.  Note the **ID** of the worker nodes in your cluster.
+
+2. Follow the {{site.data.keyword.openshiftshort}} instructions to [update the global pull secret in the cluster to disable remote health reporting](https://docs.openshift.com/container-platform/4.6/support/remote_health_monitoring/opting-out-of-remote-health-reporting.html){: external}.
+3. To pick up the global configuration changes, reload all of the worker nodes in your cluster.
+    1. Note the **ID** of the worker nodes in your cluster.
         ```
         ibmcloud oc worker ls -c <cluster_name_or_ID>
         ```
         {: pre}
-    2.  Reload each worker node. You can reload multiple worker nodes by including multiple `-w` flags, but make sure to leave enough worker nodes running at the same time for your apps to avoid an outage.
+
+    2. Reload each worker node. You can reload multiple worker nodes by including multiple `-w` flags, but make sure to leave enough worker nodes running at the same time for your apps to avoid an outage.
         ```
         ibmcloud oc worker reload -c <cluster_name_or_ID> -w <workerID_1> -w <workerID_2>
         ```
         {: pre}
-4.  After the worker nodes are back in a healthy state, verify that the telemetry reporting pod no longer runs in your cluster.
+
+4. After the worker nodes are back in a healthy state, verify that the telemetry reporting pod no longer runs in your cluster.
     ```
     oc get pods -n openshift-monitoring
     ```
     {: pre}
+
+

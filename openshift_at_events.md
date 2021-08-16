@@ -2,14 +2,13 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
 subcollection: openshift
 
 ---
-
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # {{site.data.keyword.at_full_notm}} events
 {: #at_events}
@@ -446,5 +444,6 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 {: #atlocationvpc}
 {: tab-title="Locations for VPC clusters"}
 {: tab-group="at-locations"}
+
 
 

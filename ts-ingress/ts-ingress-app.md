@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -55,7 +55,6 @@ content-type: troubleshoot
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -106,23 +105,20 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 # Classic clusters: Why can't my app connect via Ingress?
 {: #cs_ingress_fails}
 
 **Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
-
-You exposed your app by creating an Ingress resource for your app in your classic cluster.
 {: tsSymptoms}
+You exposed your app by creating an Ingress resource for your app in your classic cluster.
 
 When you tried to connect to your app by using the public IP address or Ingress subdomain, the connection failed or timed out.
 
-
-First, check that your cluster is fully deployed and has at least 2 worker nodes available per zone to ensure high availability for your router for the Ingress controller.
 {: tsResolve}
+First, check that your cluster is fully deployed and has at least 2 worker nodes available per zone to ensure high availability for your router for the Ingress controller.
 
 ```
 ibmcloud oc worker ls --cluster <cluster_name_or_ID>
@@ -133,3 +129,5 @@ In your CLI output, make sure that the **Status** of your worker nodes displays 
 
 * If your standard cluster is fully deployed and has at least 2 worker nodes per zone, but no **Ingress Subdomain** is available, see [Why does no Ingress subdomain exist after cluster creation?](/docs/containers?topic=containers-ingress_subdomain).
 * For other issues, troubleshoot your Ingress setup by following the steps in [Debugging Ingress](/docs/openshift?topic=openshift-ingress-debug-roks4).
+
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -106,7 +106,7 @@ content-type: troubleshoot
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
   
-  
+
 # Checking the status of Ingress components
 {: #ingress-status}
 
@@ -138,6 +138,7 @@ public-crdf253b6025d64944ab99ed63bb4567b6-alb2   healthy   alb
 
 The **Ingress Status** and **Ingress Message** fields are also returned in the output of the `ibmcloud oc cluster get` command. The health of your Ingress components might impact the health of your cluster master. For example,  if your Ingress components are unhealthy, your cluster master might show a `warning` state. However, the health of your Ingress components does not cause your master health to become `critical`.
 {: tip}
+
 
 ## Ingress statuses
 {: #ingress_status}
@@ -180,3 +181,5 @@ The Ingress Message provides details of what operation is in progress or informa
 |`The expiration dates reported by Ingress secrets are out of sync across namespaces.` | To resynchronize the expiration dates, [regenerate the secrets for your Ingress subdomain certificate](/docs/containers?topic=containers-sync_cert_dates).|
 {: caption="Ingress messages"}
 {: summary="Table rows read from left to right, with the Ingress message in column one and a description in column two."}
+
+

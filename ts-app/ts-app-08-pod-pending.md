@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -55,7 +55,6 @@ content-type: troubleshoot
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -106,9 +105,8 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 # Why do pods remain in pending state?
 {: #ts-app-pod-pending}
 
@@ -142,38 +140,41 @@ oc get nodes
 If this cluster is an existing one, check your cluster capacity.
 
 
-1.  From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
-2.  Click **{{site.data.keyword.openshiftshort}} web console**.
 
-3.  Check if you have enough capacity in your cluster to deploy your pod.
+1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
+2. Click **{{site.data.keyword.openshiftshort}} web console**.
 
-4.  If you don't have enough capacity in your cluster, resize your worker pool to add more nodes.
+3. Check if you have enough capacity in your cluster to deploy your pod.
 
-    1.  Review the current sizes and flavors of your worker pools to decide which one to resize.
+4. If you don't have enough capacity in your cluster, resize your worker pool to add more nodes.
+
+    1. Review the current sizes and flavors of your worker pools to decide which one to resize.
 
         ```
         ibmcloud oc worker-pool ls
         ```
         {: pre}
 
-    2.  Resize your worker pools to add more nodes to each zone that the pool spans.
+    2. Resize your worker pools to add more nodes to each zone that the pool spans.
 
         ```
         ibmcloud oc worker-pool resize --worker-pool <worker_pool> --cluster <cluster_name_or_ID> --size-per-zone <workers_per_zone>
         ```
         {: pre}
 
-5.  Optional: Check your pod resource requests.
+5. Optional: Check your pod resource requests.
 
-    1.  Confirm that the `resources.requests` values are not larger than the worker node's capacity. For example, if the pod request `cpu: 4000m`, or 4 cores, but the worker node size is only 2 cores, the pod cannot be deployed.
+    1. Confirm that the `resources.requests` values are not larger than the worker node's capacity. For example, if the pod request `cpu: 4000m`, or 4 cores, but the worker node size is only 2 cores, the pod cannot be deployed.
 
         ```
         oc get pod <pod_name> -o yaml
         ```
         {: pre}
 
-    2.  If the request exceeds the available capacity, [add a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) with worker nodes that can fulfill the request.
+    2. If the request exceeds the available capacity, [add a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) with worker nodes that can fulfill the request.
 
-6.  If your pods still stay in a **pending** state after the worker node is fully deployed, review the [Kubernetes documentation](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-pod-replication-controller/#my-pod-stays-pending){: external} to further troubleshoot the pending state of your pod.
+6. If your pods still stay in a **pending** state after the worker node is fully deployed, review the [Kubernetes documentation](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-pod-replication-controller/#my-pod-stays-pending){: external} to further troubleshoot the pending state of your pod.
+
+
 
 

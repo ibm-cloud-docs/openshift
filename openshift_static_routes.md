@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Adding static routes to worker nodes
 {: #static-routes}
@@ -163,23 +161,23 @@ To get started with static routes in {{site.data.keyword.openshiftlong_notm}}, e
 1. [Target the CLI to your cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
 
 2. Enable the `static-route` add-on.
-  ```
-  ibmcloud oc cluster addon enable static-route --cluster <cluster_name_or_ID>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc cluster addon enable static-route --cluster <cluster_name_or_ID>
+    ```
+    {: pre}
 
 3. Verify that the static route add-on has a status of `Addon Ready`.
-  ```
-  ibmcloud oc cluster addon ls --cluster <cluster_name_or_ID>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc cluster addon ls --cluster <cluster_name_or_ID>
+    ```
+    {: pre}
 
-  Example output:
-  ```
-  Name              Version     Health State   Health Status
-  static-route      1.0.0       normal         Addon Ready
-  ```
-  {: screen}
+    Example output:
+    ```
+    Name              Version     Health State   Health Status
+    static-route      1.0.0       normal         Addon Ready
+    ```
+    {: screen}
 
 <br />
 
@@ -190,38 +188,38 @@ After you [enable the static route add-on](#enable-add-on), you can create and a
 {: shortdesc}
 
 1. Create a YAML file for a static route resource.
-   ```yaml
-   apiVersion: static-route.ibm.com/v1
-   kind: StaticRoute
-   metadata:
-     name: <route_name>
-   spec:
-     subnet: "<subnet_CIDR>"
-     gateway: "<gateway_IP>"
-     selectors:
-       - key: "<label_key>"
-         values:
-           - "<label_value>"
-         operator: In
-   ```
-   {: codeblock}
+    ```yaml
+    apiVersion: static-route.ibm.com/v1
+    kind: StaticRoute
+    metadata:
+      name: <route_name>
+    spec:
+      subnet: "<subnet_CIDR>"
+      gateway: "<gateway_IP>"
+      selectors:
+        - key: "<label_key>"
+          values:
+            - "<label_value>"
+          operator: In
+    ```
+    {: codeblock}
 
-   Example:
-   ```yaml
-   apiVersion: static-route.ibm.com/v1
-   kind: StaticRoute
-   metadata:
-     name: mystaticroute
-   spec:
-     subnet: "192.168.0.0/24"
-     gateway: "10.0.0.1"
-     selectors:
-       - key: "kubernetes.io/arch"
-         values:
-           - "amd64"
-         operator: In
-   ```
-   {: screen}
+    Example:
+    ```yaml
+    apiVersion: static-route.ibm.com/v1
+    kind: StaticRoute
+    metadata:
+      name: mystaticroute
+    spec:
+      subnet: "192.168.0.0/24"
+      gateway: "10.0.0.1"
+      selectors:
+        - key: "kubernetes.io/arch"
+          values:
+            - "amd64"
+          operator: In
+    ```
+    {: screen}
 
     <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
     <caption>Understanding the YAML file components</caption>
@@ -240,37 +238,37 @@ After you [enable the static route add-on](#enable-add-on), you can create and a
     <li><code>172.18.0.0/16</code></li>
     <li><code>172.19.0.0/16</code></li>
     <li><code>172.20.0.0/16</code></li>
-    <li><code>192.168.255.0/24</code> **Note**: The device interconnect range, <code>198.18.0.0/15</code>, is permitted.</li></ul></td>
+    <li><code>192.168.255.0/24</code> <strong>Note</strong>: The device interconnect range, <code>198.18.0.0/15</code>, is permitted.</li></ul></td>
     </tr>
     <tr>
     <td><code>gateway</code></td>
-    <td>If your gateway IP address exists on the same subnet as your worker nodes, specify the gateway IP address.</br>If your gateway IP address exists on another subnet in your IBM Cloud private network, do not include this field. In this case, worker nodes send responses to the private network's backend router, and the router sends the response to the gateway on the other subnet. When the static route is created, the backend router's IP address in the `10.0.0.0/8` range is automatically assigned as a default gateway.</td>
+    <td>If your gateway IP address exists on the same subnet as your worker nodes, specify the gateway IP address.</br>If your gateway IP address exists on another subnet in your IBM Cloud private network, do not include this field. In this case, worker nodes send responses to the private network's backend router, and the router sends the response to the gateway on the other subnet. When the static route is created, the backend router's IP address in the <code>10.0.0.0/8</code> range is automatically assigned as a default gateway.</td>
     </tr>
     <tr>
     <td><code>selectors</code></td>
-    <td>To create the static route only on certain worker nodes based on worker node labels, include the `key` and `values` for the label.</td>
+    <td>To create the static route only on certain worker nodes based on worker node labels, include the <code>key</code> and <code>values</code> for the label.</td>
     </tr>
     </tbody></table>
 
 2. Create the static routes by applying the YAML file to your cluster.
-  ```
-  oc apply -f <route_name>.yaml
-  ```
-  {: pre}
+    ```
+    oc apply -f <route_name>.yaml
+    ```
+    {: pre}
 
 3. Verify that the static route is created. In the output, check the `node_status` for each worker node that the static route is applied to.
-  ```
-  oc get staticroute <route_name> -o yaml
-  ```
-  {: pre}
+    ```
+    oc get staticroute <route_name> -o yaml
+    ```
+    {: pre}
 
-  Example output:
-  ```
-  apiVersion: static-route.ibm.com/v1
-  kind: StaticRoute
-  metadata:
-    annotations:
-      kubectl.kubernetes.io/last-applied-configuration: |
+    Example output:
+    ```
+    apiVersion: static-route.ibm.com/v1
+    kind: StaticRoute
+    metadata:
+        annotations:
+          kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"static-route.ibm.com/v1","kind":"StaticRoute","metadata":{"annotations":{},"name":"mystaticroute"},"spec":{"selectors":[{"key":"kubernetes.io/arch","operator":"In","values":["amd64"]}],"subnet":"10.94.227.46/24"}}
     creationTimestamp: "2020-05-20T16:43:12Z"
     finalizers:
@@ -309,8 +307,10 @@ After you [enable the static route add-on](#enable-add-on), you can create and a
           values:
           - amd64
         subnet: 10.94.227.46/24
-  ```
-  {: screen}
+    ```
+    {: screen}
+
+
 
 
 

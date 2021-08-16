@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Authorizing pods in your cluster to {{site.data.keyword.cloud_notm}} services with IAM trusted profiles
 {: #pod-iam-identity}
@@ -129,8 +127,8 @@ To use {{site.data.keyword.cloud_notm}} IAM identities for pods in your cluster,
 {: shortdesc}
 
 **Supported infrastructure provider**:
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+    * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+    * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
 **Minimum required permissions**: 
 * **Viewer** [platform](/docs/openshift?topic=openshift-access_reference#iam_platform) access role and the **Writer** [service](/docs/openshift?topic=openshift-access_reference#service) access role for the cluster in {{site.data.keyword.cloud_notm}} IAM for **{{site.data.keyword.containershort}}**.
@@ -151,7 +149,7 @@ As an account administrator, create a trusted profile in {{site.data.keyword.clo
 
 **Before you begin**: Verify that you meet the [prerequisites](#iam-identity-prereqs).
 
-1.  Create an [IAM trusted profile](/docs/account?topic=account-create-trusted-profile) in {{site.data.keyword.cloud_notm}} Identity and Access Management. Note the `uuid` (profile ID) in the output.
+1. Create an [IAM trusted profile](/docs/account?topic=account-create-trusted-profile) in {{site.data.keyword.cloud_notm}} Identity and Access Management. Note the `uuid` (profile ID) in the output.
 
     *   Replace `<access_token>` with your {{site.data.keyword.cloud_notm}} token. To get this token from the command line, log in and run `ibmcloud iam oauth-tokens`.
     *   Enter a `<profile_name>` and optional `<description>` for the IAM trusted profile.
@@ -170,8 +168,8 @@ As an account administrator, create a trusted profile in {{site.data.keyword.clo
     ```
     {: codeblock}
 
-2.  Link the IAM trusted profile to a Kubernetes namespace in your {{site.data.keyword.openshiftlong_notm}} cluster.
-    1.  Get your `<profile-id>` from the output of the first step. Or, you can run the following API command.
+2. Link the IAM trusted profile to a Kubernetes namespace in your {{site.data.keyword.openshiftlong_notm}} cluster.
+    1. Get your `<profile-id>` from the output of the first step. Or, you can run the following API command.
         ```
         curl -L -X GET 'https://iam.cloud.ibm.com/v1/profiles/?account_id=<account_id>' \
         -H 'Accept: application/json' \
@@ -179,13 +177,15 @@ As an account administrator, create a trusted profile in {{site.data.keyword.clo
         -H 'Content-Type: application/json' \
         ```
         {: codeblock}
-    2.  Get your cluster name and CRN by running the following API command.
+
+    2. Get your cluster name and CRN by running the following API command.
         ```
         curl --location --request GET 'https://containers.cloud.ibm.com/global/v1/clusters' \
         --header 'Authorization: <access_token>'
         ```
         {: codeblock}
-    3.  Link the IAM trusted profile to your cluster.
+
+    3. Link the IAM trusted profile to your cluster.
 
         * For `<link_name>`, enter a name for the link between the trusted profile and the cluster.
         * Replace `<profile-id>`, `<access_token>`, `<cluster_crn>`, and `<cluster_name>` with the values that you previously retrieved.
@@ -208,7 +208,7 @@ As an account administrator, create a trusted profile in {{site.data.keyword.clo
         ```
         {: codeblock}
 
-3.  [Assign the trusted profile to an access group](/docs/account?topic=account-groups#access_ag_api) with access policies to the {{site.data.keyword.cloud_notm}} services that you want your apps to have access to.
+3. [Assign the trusted profile to an access group](/docs/account?topic=account-groups#access_ag_api) with access policies to the {{site.data.keyword.cloud_notm}} services that you want your apps to have access to.
 
 Your clusters can now establish trust with {{site.data.keyword.cloud_notm}} IAM. Next, your developers can [configure their application pods to exchange the identity token for an IAM token to authenticate requests to {{site.data.keyword.cloud_notm}} services](#iam-identity-pod).
 
@@ -223,12 +223,12 @@ As an account administrator, create a trusted profile in {{site.data.keyword.clo
 
 **Before you begin**: Verify that you meet the [prerequisites](#iam-identity-prereqs).
 
-1.  Log in to the [{{site.data.keyword.cloud_notm}} IAM **Trusted profiles** console](https://cloud.ibm.com/iam/trusted-profiles){: external}.
-2.  Click **Create**.
-3.  Give your trusted profile a name and click **Continue**.
-4.  For trust entity type, select **Compute resources**.
-5.  For compute service, select **Kubernetes**.
-6.  For compute resources, choose among the following options to determine which clusters or resources in the cluster can establish trust.
+1. Log in to the [{{site.data.keyword.cloud_notm}} IAM **Trusted profiles** console](https://cloud.ibm.com/iam/trusted-profiles){: external}.
+2. Click **Create**.
+3. Give your trusted profile a name and click **Continue**.
+4. For trust entity type, select **Compute resources**.
+5. For compute service, select **Kubernetes**.
+6. For compute resources, choose among the following options to determine which clusters or resources in the cluster can establish trust.
     * **All service resources**: Any existing and future clusters. To link the trusted profile only to clusters under certain conditions, you can **Add new condition +**. For example, you might add conditions such as only clusters in a resource group, only clusters with a `prod` Kubernetes namespace, or only clusters with a `trusted-profile` Kubernetes service account.
     * **Specific resources**: A particular cluster. Click **Add another resource +** to select a cluster and fill out conditions such as the Kubernetes namespace or Kubernetes service account that can establish trust.
     * Click **Continue**.
@@ -236,10 +236,10 @@ As an account administrator, create a trusted profile in {{site.data.keyword.clo
     The Kubernetes namespace and service account names that you enter do not have to exist already. Any future namespaces or service accounts with these names can establish trust. To list existing namespaces, log in to your cluster and run `oc get ns`. To list existing service accounts, log in to your cluster and run `oc get sa -n <namespace>`.
     {: note}
 
-7.  Grant the trusted profile any access policies to the **IAM services** and **Account management** that you want pod in your cluster to be able to access.
+7. Grant the trusted profile any access policies to the **IAM services** and **Account management** that you want pod in your cluster to be able to access.
     * For example, you might grant access to **All Identity and Access enabled services** and **All resources** in those services, with the **Editor** platform, **Writer** service, and **Viewer** resource group access roles.
     * Click **Add +** to add the policy to the profile, and continue adding as many policies as you want.
-8.  In the **Summary** pane, review the profile, trust, and access details. Then, click **Create**.
+8. In the **Summary** pane, review the profile, trust, and access details. Then, click **Create**.
 
 Your clusters can now establish trust with {{site.data.keyword.cloud_notm}} IAM. Next, your developers can [configure their application pods to exchange the identity token for an IAM token to authenticate requests to {{site.data.keyword.cloud_notm}} services](#iam-identity-pod).
 
@@ -257,8 +257,8 @@ Before you begin:
 
 To configure your application pods to authenticate with {{site.data.keyword.cloud_notm}} services:
 
-1.  [Design your pod configuration file](/docs/containers?topic=containers-app) to use [service account token volume projection](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#service-account-token-volume-projection){: external}. 
-    1.  In the `containers` section, mount the identity token in the `volumeMounts` section.
+1. [Design your pod configuration file](/docs/containers?topic=containers-app) to use [service account token volume projection](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#service-account-token-volume-projection){: external}. 
+    1. In the `containers` section, mount the identity token in the `volumeMounts` section.
         ```yaml
         ...
             volumeMounts:
@@ -266,11 +266,12 @@ To configure your application pods to authenticate with {{site.data.keyword.clou
               name: vault-token
         ```
         {: codeblock}
-    2.  In the `volumes` section, set up the service account token volume projection.
-        
+
+    2. In the `volumes` section, set up the service account token volume projection.
+
         Modify the `expirationSeconds` field to control how long the token is valid for. If you notice that your app keeps getting authentication errors after a certain timeframe, for example, you might increase the expiration value.
         {: tip}
-        
+
         ```yaml
         ...
         volumes:
@@ -284,7 +285,8 @@ To configure your application pods to authenticate with {{site.data.keyword.clou
         ...
         ```
         {: codeblock}
-2.  Design your app to exchange the service account projected token for an IAM token that you can use for subsequent API calls to {{site.data.keyword.cloud_notm}} services.
+
+2. Design your app to exchange the service account projected token for an IAM token that you can use for subsequent API calls to {{site.data.keyword.cloud_notm}} services.
 
     **Example authentication request**:
 
@@ -292,12 +294,12 @@ To configure your application pods to authenticate with {{site.data.keyword.clou
 
     ```
     curl -s -X POST \
-      -H \"Content-Type: application/x-www-form-urlencoded\" \
-      -H \"Accept: application/json\" \
-      -d grant_type=urn:ibm:params:oauth:grant-type:cr-token \
-      -d cr_token=\$(cat /var/run/secrets/tokens/vault-token) \
-      -d profile_id=${profile_id} \
-      https://iam.cloud.ibm.com/identity/token
+        -H \"Content-Type: application/x-www-form-urlencoded\" \
+        -H \"Accept: application/json\" \
+        -d grant_type=urn:ibm:params:oauth:grant-type:cr-token \
+        -d cr_token=\$(cat /var/run/secrets/tokens/vault-token) \
+        -d profile_id=${profile_id} \
+        https://iam.cloud.ibm.com/identity/token
     ```
     {: codeblock}
 
@@ -332,20 +334,25 @@ To configure your application pods to authenticate with {{site.data.keyword.clou
                   audience: vault
     ```
     {: codeblock}
-3.  Use the exchanged token to authenticate subsequent requests to {{site.data.keyword.cloud_notm}} services, such as by storing the token as a variable that is reused in the rest of your code.
-4.  [Deploy your app](/docs/containers?topic=containers-deploy_app).
-5.  Check that your pod is running.
+
+3. Use the exchanged token to authenticate subsequent requests to {{site.data.keyword.cloud_notm}} services, such as by storing the token as a variable that is reused in the rest of your code.
+4. [Deploy your app](/docs/containers?topic=containers-deploy_app).
+5. Check that your pod is running.
     ```
     oc get pods -n <namespace>
     ```
     {: pre}
-6.  Check the logs of your pod to verify that an `access_token` is successfully returned. If not, look for an `errorCode` with troubleshooting information.
+
+6. Check the logs of your pod to verify that an `access_token` is successfully returned. If not, look for an `errorCode` with troubleshooting information.
     ```
     oc logs <pod>
     ```
     {: pre}
-7.  Optional: Log in to the pod and verify that you get a successful API request from an {{site.data.keyword.cloud_notm}} service by using the `$TOKEN` that you retrieved in the logs. The following example returns a list of classic clusters and requires the **Viewer** platform access role to **Kubernetes Service**.
+
+7. Optional: Log in to the pod and verify that you get a successful API request from an {{site.data.keyword.cloud_notm}} service by using the `$TOKEN` that you retrieved in the logs. The following example returns a list of classic clusters and requires the **Viewer** platform access role to **Kubernetes Service**.
     ```
     curl -X GET https://containers.cloud.ibm.com/global/v2/classic/getClusters -H “authorization: bearer $TOKEN”
     ```
     {: pre}
+
+

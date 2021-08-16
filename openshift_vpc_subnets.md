@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Configuring VPC subnets
 {: #vpc-subnets}
@@ -255,8 +253,8 @@ Use the {{site.data.keyword.cloud_notm}} console to create a VPC subnet for your
 2. Enter a name for your subnet and select the name of the VPC that you created.
 3. Select the location and zone where you want to create the subnet.
 4. Specify the number of IP addresses to create.
-  * VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
-  * If you enter a specific IP range, do not use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
+    * VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
+    * If you enter a specific IP range, do not use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
 5. To run default {{site.data.keyword.openshiftshort}} components such as the web console or OperatorHub, and to allow your cluster to access public endpoints such as a public URL of another app or an {{site.data.keyword.cloud_notm}} service that supports public cloud service endpoints only, you must attach a public gateway to your subnet.
 6. Click **Create subnet**.
 7. Use the subnet to [create a cluster](/docs/openshift?topic=openshift-clusters#clusters_vpcg2_ui), [create a new worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_pool), or [add the subnet to an existing worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_zone).<p class="important">Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.</p>
@@ -269,44 +267,46 @@ Use the {{site.data.keyword.cloud_notm}} CLI to create a VPC subnet for your clu
 
 **Before you begin:**
 1. In your command line, log in to your {{site.data.keyword.cloud_notm}} account and target the {{site.data.keyword.cloud_notm}} region and resource group where you want to create your VPC cluster. For supported regions, see [Creating a VPC in a different region](/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region). The cluster's resource group can differ from the VPC resource group. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted. If you have a federated ID, use the `--sso` flag to log in.
-   ```
-   ibmcloud login -r <region> [-g <resource_group>] [--sso]
-   ```
-   {: pre}
+    ```
+    ibmcloud login -r <region> [-g <resource_group>] [--sso]
+    ```
+    {: pre}
 
 2. [Create a VPC](/docs/vpc?topic=vpc-creating-a-vpc-using-cli#create-a-vpc-cli) in the same region where you want to create the cluster.
 
 **To create a VPC subnet:**
 
 1. Get the ID of the VPC where you want to create the subnet.
-  ```
-  ibmcloud oc vpcs
-  ```
-  {: pre}
+    ```
+    ibmcloud oc vpcs
+    ```
+    {: pre}
 
 2. Create the subnet. For more information about the options in this command, see the [CLI reference](/docs/vpc?topic=vpc-creating-a-vpc-using-cli#create-a-subnet-cli).
-  ```
-  ibmcloud is subnet-create <subnet_name> <vpc_id> --zone <vpc_zone> --ipv4-address-count <number_of_ip_address>
-  ```
-  {: pre}
-    * VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
-    * Do not use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
+    ```
+    ibmcloud is subnet-create <subnet_name> <vpc_id> --zone <vpc_zone> --ipv4-address-count <number_of_ip_address>
+    ```
+    {: pre}
+
+        * VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
+        * Do not use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
 
 3. Check whether you have a public gateway in the zones where you want to create a cluster. Within one VPC, you can create only one public gateway per zone, but that public gateway can be attached to multiple subnets within the zone.
-  ```
-  ibmcloud is public-gateways
-  ```
-  {: pre}
+    ```
+    ibmcloud is public-gateways
+    ```
+    {: pre}
 
-  Example output:
-  ```
-  ID                                     Name                                       VPC                          Zone         Floating IP                  Created                     Status      Resource group
-  26426426-6065-4716-a90b-ac7ed7917c63   test-pgw                                   testvpc(36c8f522-.)          us-south-1   169.xx.xxx.xxx(26466378-.)   2019-09-20T16:27:32-05:00   available   -
-  2ba2ba2b-fffa-4b0c-bdca-7970f09f9b8a   pgw-73b62bc0-b53a-11e9-9838-f3f4efa02374   team3(ff537d43-.)            us-south-2   169.xx.xxx.xxx(2ba9a280-.)   2019-08-02T10:30:29-05:00   available   -
-  ```
-  {: screen}
-  * If you already have a public gateway in each zone, note the **ID**s of the public gateways.
-  * If you do not have a public gateway in each zone, create a public gateway. Consider naming the public gateway in the format `<cluster>-<zone>-gateway`. In the output, note the public gateway's **ID**.
+    Example output:
+    ```
+    ID                                     Name                                       VPC                          Zone         Floating IP                  Created                     Status      Resource group
+    26426426-6065-4716-a90b-ac7ed7917c63   test-pgw                                   testvpc(36c8f522-.)          us-south-1   169.xx.xxx.xxx(26466378-.)   2019-09-20T16:27:32-05:00   available   -
+    2ba2ba2b-fffa-4b0c-bdca-7970f09f9b8a   pgw-73b62bc0-b53a-11e9-9838-f3f4efa02374   team3(ff537d43-.)            us-south-2   169.xx.xxx.xxx(2ba9a280-.)   2019-08-02T10:30:29-05:00   available   -
+    ```
+    {: screen}
+
+    * If you already have a public gateway in each zone, note the **ID**s of the public gateways.
+    * If you do not have a public gateway in each zone, create a public gateway. Consider naming the public gateway in the format `<cluster>-<zone>-gateway`. In the output, note the public gateway's **ID**.
     ```
     ibmcloud is public-gateway-create <gateway_name> <VPC_ID> <zone>
     ```
@@ -326,26 +326,26 @@ Use the {{site.data.keyword.cloud_notm}} CLI to create a VPC subnet for your clu
     {: screen}
 
 4. Using the IDs of the public gateway and the subnet, attach the public gateway to the subnet.
-  ```
-  ibmcloud is subnet-update <subnet_ID> --public-gateway-id <gateway_ID>
-  ```
-  {: pre}
+    ```
+    ibmcloud is subnet-update <subnet_ID> --public-gateway-id <gateway_ID>
+    ```
+    {: pre}
 
-  Example output:
-  ```
-  ID                  91e946b4-7094-46d0-9223-5c2dea2e5023
-  Name                mysubnet1
-  IPv4 CIDR           10.240.xx.xx/24
-  Address available   250
-  Address total       256
-  ACL                 allow-all-network-acl-36c8f522-4f0d-400c-8226-299f0b8198cf(585bc142-5392-45d4-afdd-d9b59ef2d906)
-  Gateway             mycluster-us-south-1-gateway(26466378-6065-4716-a90b-ac7ed7917c63)
-  Created             2019-08-21T09:43:11-05:00
-  Status              available
-  Zone                us-south-1
-  VPC                 myvpc(36c8f522-4f0d-400c-8226-299f0b8198cf)
-  ```
-  {: screen}
+    Example output:
+    ```
+    ID                  91e946b4-7094-46d0-9223-5c2dea2e5023
+    Name                mysubnet1
+    IPv4 CIDR           10.240.xx.xx/24
+    Address available   250
+    Address total       256
+    ACL                 allow-all-network-acl-36c8f522-4f0d-400c-8226-299f0b8198cf(585bc142-5392-45d4-afdd-d9b59ef2d906)
+    Gateway             mycluster-us-south-1-gateway(26466378-6065-4716-a90b-ac7ed7917c63)
+    Created             2019-08-21T09:43:11-05:00
+    Status              available
+    Zone                us-south-1
+    VPC                 myvpc(36c8f522-4f0d-400c-8226-299f0b8198cf)
+    ```
+    {: screen}
 
 
 5. Use the subnet to [create a cluster](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli), [create a new worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_pool), or [add the subnet to an existing worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_zone).<p class="important">Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.</p>
@@ -362,51 +362,51 @@ If you enable classic access when you create your VPC, [classic access default a
 {: #ca_subnet_ui}
 
 1. Create a classic access VPC without default address prefixes.
-  1. From the [Virtual Private Clouds dashboard](https://cloud.ibm.com/vpc/provision/vpc), click **Create**.
-  2. Enter details for the name, resource group, and any tags.
-  3. Select the checkbox for **Enable access to classic resources**, and clear the checkbox for **Create a default prefix for each zone**.
-  4. Select the region for the VPC.
-  5. Click **Create virtual private cloud**.
+    1. From the [Virtual Private Clouds dashboard](https://cloud.ibm.com/vpc/provision/vpc), click **Create**.
+    2. Enter details for the name, resource group, and any tags.
+    3. Select the checkbox for **Enable access to classic resources**, and clear the checkbox for **Create a default prefix for each zone**.
+    4. Select the region for the VPC.
+    5. Click **Create virtual private cloud**.
 2. Create address prefixes in each zone.
-  1. Click the name of your VPC to view its details.
-  2. Click the **Address prefixes** tab and click **Create**.
-  3. For each zone in which you plan to create subnets, create one or more address prefixes. The address prefixes must be within one of the following ranges: `10.0.0.0 - 10.255.255.255`, `172.17.0.0 - 172.17.255.255`, `172.21.0.0 - 172.31.255.255`, `192.168.0.0 - 192.168.254.255`.
+    1. Click the name of your VPC to view its details.
+    2. Click the **Address prefixes** tab and click **Create**.
+    3. For each zone in which you plan to create subnets, create one or more address prefixes. The address prefixes must be within one of the following ranges: `10.0.0.0 - 10.255.255.255`, `172.17.0.0 - 172.17.255.255`, `172.21.0.0 - 172.31.255.255`, `192.168.0.0 - 192.168.254.255`.
 3. Create subnets that use your address prefixes.
-  1. From the [VPC subnet dashboard](https://cloud.ibm.com/vpc/network/subnets), click **Create**.
-  2. Enter a name for your subnet and select the name of your classic access VPC.
-  3. Select the location and zone where you want to create the subnet.
-  4. Select the address prefix that you created for this zone.
-  5. Specify the number of IP addresses to create. VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
-  6. To run default {{site.data.keyword.openshiftshort}} components such as the web console or OperatorHub, and to allow your cluster to access public endpoints such as a public URL of another app or an {{site.data.keyword.cloud_notm}} service that supports public cloud service endpoints only, you must attach a public gateway to your subnet.
-  7. Click **Create subnet**.
+    1. From the [VPC subnet dashboard](https://cloud.ibm.com/vpc/network/subnets), click **Create**.
+    2. Enter a name for your subnet and select the name of your classic access VPC.
+    3. Select the location and zone where you want to create the subnet.
+    4. Select the address prefix that you created for this zone.
+    5. Specify the number of IP addresses to create. VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
+    6. To run default {{site.data.keyword.openshiftshort}} components such as the web console or OperatorHub, and to allow your cluster to access public endpoints such as a public URL of another app or an {{site.data.keyword.cloud_notm}} service that supports public cloud service endpoints only, you must attach a public gateway to your subnet.
+    7. Click **Create subnet**.
 4. Use the subnets to [create a cluster](/docs/openshift?topic=openshift-clusters#clusters_vpcg2_ui).<p class="important">Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.</p>
 
 ### Creating VPC subnets for classic access from the CLI
 {: #ca_subnet_cli}
 
 1. In your command line, log in to your {{site.data.keyword.cloud_notm}} account and target the {{site.data.keyword.cloud_notm}} region and resource group where you want to create your VPC cluster. For supported regions, see [Creating a VPC in a different region](/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region). The cluster's resource group can differ from the VPC resource group. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted. If you have a federated ID, use the `--sso` flag to log in.
-   ```
-   ibmcloud login -r <region> [-g <resource_group>] [--sso]
-   ```
-   {: pre}
+    ```
+    ibmcloud login -r <region> [-g <resource_group>] [--sso]
+    ```
+    {: pre}
 
 2. Create a classic access VPC without default address prefixes. In the output, copy the VPC ID.
-  ```
-  ibmcloud is vpc-create <name> --classic-access --address-prefix-management manual
-  ```
-  {: pre}
+    ```
+    ibmcloud is vpc-create <name> --classic-access --address-prefix-management manual
+    ```
+    {: pre}
 
 3. For each zone in which you plan to create subnets, create one or more address prefixes. The address prefixes must be within one of the following ranges: `10.0.0.0 - 10.255.255.255`, `172.17.0.0 - 172.17.255.255`, `172.21.0.0 - 172.31.255.255`, `192.168.0.0 - 192.168.254.255`.
-  ```
-  ibmcloud is vpc-address-prefix-create <prefix_name> <vpc_id> <zone> <prefix_range>
-  ```
-  {: pre}
+    ```
+    ibmcloud is vpc-address-prefix-create <prefix_name> <vpc_id> <zone> <prefix_range>
+    ```
+    {: pre}
 
 4. Create subnets in each zone that use your address prefixes. For more information about the options in this command, see the [CLI reference](/docs/vpc?topic=vpc-creating-a-vpc-using-cli#create-a-subnet-cli). VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
-  ```
-  ibmcloud is subnet-create <subnet_name> <vpc_id> --zone <vpc_zone> --ipv4-address-count <number_of_ip_address> --ipv4-cidr-block <prefix_range>
-  ```
-  {: pre}
+    ```
+    ibmcloud is subnet-create <subnet_name> <vpc_id> --zone <vpc_zone> --ipv4-address-count <number_of_ip_address> --ipv4-cidr-block <prefix_range>
+    ```
+    {: pre}
 
 5. To run default {{site.data.keyword.openshiftshort}} components such as the web console or OperatorHub, and to allow your cluster to access public endpoints such as a public URL of another app or an {{site.data.keyword.cloud_notm}} service that supports public cloud service endpoints only, you must attach a public gateway to your subnet.
     1. Create a public gateway in each zone. Consider naming the public gateway in the format `<cluster>-<zone>-gateway`. In the output, note the public gateway's **ID**.
@@ -427,27 +427,30 @@ If you enable classic access when you create your VPC, [classic access default a
         Resource group   -
         ```
         {: screen}
-    2. Using the IDs of the public gateway and the subnet, attach the public gateway to the subnet.
-      ```
-      ibmcloud is subnet-update <subnet_ID> --public-gateway-id <gateway_ID>
-      ```
-      {: pre}
 
-      Example output:
-      ```
-      ID                  91e946b4-7094-46d0-9223-5c2dea2e5023
-      Name                mysubnet1
-      IPv4 CIDR           10.240.xx.xx/24
-      Address available   250
-      Address total       256
-      ACL                 allow-all-network-acl-36c8f522-4f0d-400c-8226-299f0b8198cf(585bc142-5392-45d4-afdd-d9b59ef2d906)
-      Gateway             mycluster-us-south-1-gateway(26466378-6065-4716-a90b-ac7ed7917c63)
-      Created             2019-08-21T09:43:11-05:00
-      Status              available
-      Zone                us-south-1
-      VPC                 myvpc(36c8f522-4f0d-400c-8226-299f0b8198cf)
-      ```
-      {: screen}
+    2. Using the IDs of the public gateway and the subnet, attach the public gateway to the subnet.
+        ```
+        ibmcloud is subnet-update <subnet_ID> --public-gateway-id <gateway_ID>
+        ```
+        {: pre}
+
+        Example output:
+        ```
+        ID                  91e946b4-7094-46d0-9223-5c2dea2e5023
+        Name                mysubnet1
+        IPv4 CIDR           10.240.xx.xx/24
+        Address available   250
+        Address total       256
+        ACL                 allow-all-network-acl-36c8f522-4f0d-400c-8226-299f0b8198cf(585bc142-5392-45d4-afdd-d9b59ef2d906)
+        Gateway             mycluster-us-south-1-gateway(26466378-6065-4716-a90b-ac7ed7917c63)
+        Created             2019-08-21T09:43:11-05:00
+        Status              available
+        Zone                us-south-1
+        VPC                 myvpc(36c8f522-4f0d-400c-8226-299f0b8198cf)
+        ```
+        {: screen}
 
 6. Use the subnets to [create a cluster](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli).<p class="important">Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.</p>
+
+
 

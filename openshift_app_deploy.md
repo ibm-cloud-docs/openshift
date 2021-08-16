@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
 subcollection: openshift
 
 ---
-
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Deploying apps in OpenShift clusters
 {: #deploy_app}
@@ -130,12 +128,12 @@ Seeing errors when you deploy your app? {{site.data.keyword.openshiftshort}} has
 You can create apps through various methods in the {{site.data.keyword.openshiftshort}} console by using the **Developer** perspective. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](http://docs.openshift.com/container-platform/4.6/applications/application_life_cycle_management/odc-creating-applications-using-developer-perspective.html){: external}.
 {: shortdesc}
 
-1.  From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
-2.  Click **{{site.data.keyword.openshiftshort}} web console**.
-3.  From the perspective switcher, select **Developer**. The {{site.data.keyword.openshiftshort}} web console switches to the Developer perspective, and the menu now offers items such as **+Add**, **Topology**, and **Builds**.
-4.  Click **+Add**.
-5.  In the **Add** pane menu bar, select the **Project** that you want to create your app in from the drop-down list.
-6.  Click the method that you want to use to add your app, and follow the instructions. For example, click **From Git**.
+1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
+2. Click **{{site.data.keyword.openshiftshort}} web console**.
+3. From the perspective switcher, select **Developer**. The {{site.data.keyword.openshiftshort}} web console switches to the Developer perspective, and the menu now offers items such as **+Add**, **Topology**, and **Builds**.
+4. Click **+Add**.
+5. In the **Add** pane menu bar, select the **Project** that you want to create your app in from the drop-down list.
+6. Click the method that you want to use to add your app, and follow the instructions. For example, click **From Git**.
 
 ### Deploying apps through the CLI
 {: #deploy_apps_cli}
@@ -167,19 +165,19 @@ Before you begin:
 
 To deploy apps to specific worker nodes:
 
-1.  Get the ID of the worker pool that you want to deploy app pods to.
+1. Get the ID of the worker pool that you want to deploy app pods to.
     ```
     ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
-2.  List the worker nodes that are in the worker pool, and note one of the **Private IP** addresses.
+2. List the worker nodes that are in the worker pool, and note one of the **Private IP** addresses.
     ```
     ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID>
     ```
     {: pre}
 
-3.  Describe the worker node. In the **Labels** output, note the worker pool ID label, `ibm-cloud.kubernetes.io/worker-pool-id`.
+3. Describe the worker node. In the **Labels** output, note the worker pool ID label, `ibm-cloud.kubernetes.io/worker-pool-id`.
 
     <p class="tip">The steps in this topic use a worker pool ID to deploy app pods only to worker nodes within that worker pool. To deploy app pods to specific worker nodes by using a different label, note this label instead. For example, to deploy app pods only to worker nodes on a specific private VLAN, use the `privateVLAN=` label.</p>
 
@@ -306,14 +304,14 @@ Before you begin:
 * Create a [cluster](/docs/openshift?topic=openshift-clusters#clusters_standard) or [worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that uses a GPU bare metal flavor. Keep in mind that setting up a bare metal machine can take more than one business day to complete.
 * Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-users#checking-perms) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the cluster.
 * [Install the Node Feature Discovery and NVIDIA GPU operators for you cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){: external}.
-  
-  You must use NVIDIA GPU operator version 1.3.1 or later. When you install the Node Feature Discovery operator, select the update channel that matches your {{site.data.keyword.openshiftshort}} cluster version. Do not install the operators through another method, such as a Helm chart.
-  {: important}
+
+    You must use NVIDIA GPU operator version 1.3.1 or later. When you install the Node Feature Discovery operator, select the update channel that matches your {{site.data.keyword.openshiftshort}} cluster version. Do not install the operators through another method, such as a Helm chart.
+    {: important}
 
 * **Version 4.5 and 4.6 clusters**: Make sure that your worker nodes are updated to at least version `4.5.38_1538_openshift` or `4.6.25_1541_openshift`. When you create an instance of the `ClusterPolicy` for the GPU operator, you must enter `450.80.02` for the **Driver Config** version.
 
 To execute a workload on a GPU machine:
-1.  Create a YAML file. In this example, a `Job` YAML manages batch-like workloads by making a short-lived pod that runs until the command that it is scheduled to complete successfully terminates.
+1. Create a YAML file. In this example, a `Job` YAML manages batch-like workloads by making a short-lived pod that runs until the command that it is scheduled to complete successfully terminates.
 
     For GPU workloads, you must always provide the `resources: limits: nvidia.com/gpu` field in the YAML specification.
     {: note}
@@ -360,7 +358,7 @@ To execute a workload on a GPU machine:
     <tbody>
     <tr>
     <td>Metadata and label names</td>
-    <td>Give a name and a label for the job, and use the same name in both the file's metadata and the `spec template` metadata. For example, `nvidia-smi`.</td>
+    <td>Give a name and a label for the job, and use the same name in both the file's metadata and the <code>spec template</code> metadata. For example, <code>nvidia-smi</code>.</td>
     </tr>
     <tr>
     <td><code>containers.image</code></td>
@@ -376,9 +374,9 @@ To execute a workload on a GPU machine:
     </tr>
     <tr>
     <td><code>resources.limits</code></td>
-    <td>For GPU machines, you must specify the resource limit. The Kubernetes [Device Plug-in ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/) sets the default resource request to match the limit.
+    <td>For GPU machines, you must specify the resource limit. The Kubernetes <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/">Device Plug-in</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> sets the default resource request to match the limit.
     <ul><li>You must specify the key as <code>nvidia.com/gpu</code>.</li>
-    <li>Enter the whole number of GPUs that you request, such as <code>2</code>. <strong>Note</strong>: Container pods do not share GPUs and GPUs cannot be overcommitted. For example, if you have only 1 `mg1c.16x128` machine, then you have only 2 GPUs in that machine and can specify a maximum of `2`.</li></ul></td>
+    <li>Enter the whole number of GPUs that you request, such as <code>2</code>. <strong>Note</strong>: Container pods do not share GPUs and GPUs cannot be overcommitted. For example, if you have only 1 <code>mg1c.16x128</code> machine, then you have only 2 GPUs in that machine and can specify a maximum of <code>2</code>.</li></ul></td>
     </tr>
     <tr>
     <td><code>volumeMounts</code></td>
@@ -390,14 +388,14 @@ To execute a workload on a GPU machine:
     </tr>
     </tbody></table>
 
-2.  Apply the YAML file. For example:
+2. Apply the YAML file. For example:
 
     ```
     oc apply -f nvidia-smi.yaml
     ```
     {: pre}
 
-3.  Check the job pod by filtering your pods by the `nvidia-sim` label. Verify that the **STATUS** is **Completed**.
+3. Check the job pod by filtering your pods by the `nvidia-sim` label. Verify that the **STATUS** is **Completed**.
 
     ```
     oc get pod -a -l 'name in (nvidia-sim)'
@@ -411,7 +409,7 @@ To execute a workload on a GPU machine:
     ```
     {: screen}
 
-4.  Describe the pod to see how the GPU device plug-in scheduled the pod.
+4. Describe the pod to see how the GPU device plug-in scheduled the pod.
     * In the `Limits` and `Requests` fields, see that the resource limit that you specified matches the request that the device plug-in automatically set.
     * In the events, verify that the pod is assigned to your GPU worker node.
 
@@ -426,9 +424,9 @@ To execute a workload on a GPU machine:
     Namespace:      default
     ...
     Limits:
-     nvidia.com/gpu:  2
+        nvidia.com/gpu:  2
     Requests:
-     nvidia.com/gpu:  2
+        nvidia.com/gpu:  2
     ...
     Events:
     Type    Reason                 Age   From                     Message
@@ -438,7 +436,7 @@ To execute a workload on a GPU machine:
     ```
     {: screen}
 
-5.  To verify that the job used the GPU to compute its workload, you can check the logs. The `[ "/usr/test/nvidia-smi" ]` command from the job queried the GPU device state on the GPU worker node.
+5. To verify that the job used the GPU to compute its workload, you can check the logs. The `[ "/usr/test/nvidia-smi" ]` command from the job queried the GPU device state on the GPU worker node.
 
     ```
     oc logs nvidia-sim-ppkd4
@@ -493,13 +491,13 @@ You can use the {{site.data.keyword.openshiftshort}} console to manage your apps
 
 For more information about the console, see the [{{site.data.keyword.openshiftshort}} documentation](http://docs.openshift.com/container-platform/4.6/applications/application_life_cycle_management/odc-creating-applications-using-developer-perspective.html){: external}.
 
-1.  From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your {{site.data.keyword.openshiftshort}} cluster, then click **OpenShift web console**.
-2.  Explore the different areas of the {{site.data.keyword.openshiftshort}} web console, as described in the following tabbed table.
+1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your {{site.data.keyword.openshiftshort}} cluster, then click **OpenShift web console**.
+2. Explore the different areas of the {{site.data.keyword.openshiftshort}} web console, as described in the following tabbed table.
 
     <table class="simple-tab-table" id="console1" tab-title="OCP 4" tab-group="console-version" aria-describedby="tableSummary-19ecbef4c01853826b42de82471b9035">
     <caption caption-side="top">
-      <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview<br>
-      <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9035">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, and the description of the console area in the third column. You can change between {{site.data.keyword.openshiftshort}} console versions by toggling the tabs at the beginning of the table.</span>
+        <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview<br>
+        <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9035">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, and the description of the console area in the third column. You can change between {{site.data.keyword.openshiftshort}} console versions by toggling the tabs at the beginning of the table.</span>
     </caption>
     <thead>
     <tr>
@@ -512,19 +510,19 @@ For more information about the console, see the [{{site.data.keyword.openshiftsh
     <tr>
     <td>Administrator perspective</td>
     <td>Side navigation menu perspective switcher.</td>
-    <td>From the Administrator perspective, you can manage and set up the components that your team needs to run your apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see [Viewing cluster information](http://docs.openshift.com/container-platform/4.6/web_console/using-dashboard-to-get-cluster-information.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.</td>
+    <td>From the Administrator perspective, you can manage and set up the components that your team needs to run your apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see <a href="http://docs.openshift.com/container-platform/4.6/web_console/using-dashboard-to-get-cluster-information.html">Viewing cluster information</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> in the {{site.data.keyword.openshiftshort}} documentation.</td>
     </tr>
     <tr>
     <td>Developer perspective</td>
     <td>Side navigation menu perspective switcher.</td>
-    <td>From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](http://docs.openshift.com/container-platform/4.6/web_console/odc-about-developer-perspective.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.</td>
+    <td>From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The <strong>Topology</strong> view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see <a href="http://docs.openshift.com/container-platform/4.6/web_console/odc-about-developer-perspective.html">Developer perspective</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> in the {{site.data.keyword.openshiftshort}} documentation.</td>
     </tr>
     </tbody>
     </table>
     <table class="simple-tab-table" id="console2" tab-title="OCP 3" tab-group="console-version" aria-describedby="tableSummary-a4edc48da30a2a6943cabb6b3a128df4">
     <caption caption-side="top">
-      <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview<br>
-      <span class="table-summary" id="tableSummary-a4edc48da30a2a6943cabb6b3a128df4">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, and the description of the console area in the third column. You can change between {{site.data.keyword.openshiftshort}} console versions by toggling the tabs at the beginning of the table.</span>
+        <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview<br>
+        <span class="table-summary" id="tableSummary-a4edc48da30a2a6943cabb6b3a128df4">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, and the description of the console area in the third column. You can change between {{site.data.keyword.openshiftshort}} console versions by toggling the tabs at the beginning of the table.</span>
     </caption>
     <thead>
     <tr>
@@ -536,21 +534,23 @@ For more information about the console, see the [{{site.data.keyword.openshiftsh
     <tbody>
     <tr>
     <td>Service Catalog</td>
-    <td>Dropdown menu in the **OpenShift Container Platform** menu bar.</td>
-    <td>Browse the catalog of built-in services that you can deploy on {{site.data.keyword.openshiftshort}}. For example, if you already have a `node.js` app that is hosted on GitHub, you can click the **Languages** tab and deploy a **JavaScript** app. The **My Projects** pane provides a quick view of all the projects that you have access to, and clicking on a project takes you to the Application Console. For more information, see the [{{site.data.keyword.openshiftshort}} Web Console Walkthrough](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.</td>
+    <td>Dropdown menu in the <strong>OpenShift Container Platform</strong> menu bar.</td>
+    <td>Browse the catalog of built-in services that you can deploy on {{site.data.keyword.openshiftshort}}. For example, if you already have a <code>node.js</code> app that is hosted on GitHub, you can click the <strong>Languages</strong> tab and deploy a <strong>JavaScript</strong> app. The <strong>My Projects</strong> pane provides a quick view of all the projects that you have access to, and clicking on a project takes you to the Application Console. For more information, see the <a href="https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html">{{site.data.keyword.openshiftshort}} Web Console Walkthrough</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> in the {{site.data.keyword.openshiftshort}} documentation.</td>
     </tr>
     <tr>
     <td>Application Console</td>
-    <td>Dropdown menu in the **OpenShift Container Platform** menu bar.</td>
-    <td>For each project that you have access to, you can manage your {{site.data.keyword.openshiftshort}} resources such as pods, services, routes, builds, images or persistent volume claims. You can also view and analyze logs for these resources, or add services from the catalog to the project. For more information, see the [{{site.data.keyword.openshiftshort}} Web Console Walkthrough](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.</td>
+    <td>Dropdown menu in the <strong>OpenShift Container Platform</strong> menu bar.</td>
+    <td>For each project that you have access to, you can manage your {{site.data.keyword.openshiftshort}} resources such as pods, services, routes, builds, images or persistent volume claims. You can also view and analyze logs for these resources, or add services from the catalog to the project. For more information, see the <a href="https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html">{{site.data.keyword.openshiftshort}} Web Console Walkthrough</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> in the {{site.data.keyword.openshiftshort}} documentation.</td>
     </tr>
     <tr>
     <td>Cluster Console</td>
-    <td>Dropdown menu in the **OpenShift Container Platform** menu bar.</td>
-    <td>For cluster-wide administrators across all the projects in the cluster, you can manage projects, service accounts,RBAC roles, role bindings, and resource quotas. You can also see the status and events for resources within the cluster in a combined view. For more information, see the [{{site.data.keyword.openshiftshort}} Web Console Walkthrough](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.</td>
+    <td>Dropdown menu in the <strong>OpenShift Container Platform</strong> menu bar.</td>
+    <td>For cluster-wide administrators across all the projects in the cluster, you can manage projects, service accounts,RBAC roles, role bindings, and resource quotas. You can also see the status and events for resources within the cluster in a combined view. For more information, see the <a href="https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html">{{site.data.keyword.openshiftshort}} Web Console Walkthrough</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> in the {{site.data.keyword.openshiftshort}} documentation.</td>
     </tr>
     </tbody>
     </table><p></p>
-3.  To work with your cluster in the CLI, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.
+3. To work with your cluster in the CLI, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.
 
 <br />
+
+

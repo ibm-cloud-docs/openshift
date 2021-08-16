@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos, disaster recovery, dr, ha, hadr
 
 subcollection: openshift
 
 ---
-
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
@@ -105,10 +104,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
-
 
 
 # Understanding high availability and disaster recovery for {{site.data.keyword.openshiftlong_notm}}
@@ -216,5 +212,7 @@ In a stateful app, data plays an important role to keep your app up and running.
 {: shortdesc}
 
 See [Planning highly available data](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
+
+
 
 

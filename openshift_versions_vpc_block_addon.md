@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 # {{site.data.keyword.block_storage_is_short}} add-on changelog
 {: #vpc_bs_changelog}
 
@@ -179,8 +177,8 @@ The following table shows the changes included in version 2.0.3 {{site.data.keyw
 | Patch version | `vpc-block-csi-driver` image tag | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
 | --- | --- | --- | --- | --- |
 | `2.0.3_471` | `v.2.0.9` | 26 January 2021 | 4.3 - 4.6 | Includes fixes for vulnerability scan issues. The `openssl`, `openssl-libs`, `gnutls` packages are updated to fix [CVE-2020-1971](https://nvd.nist.gov/vuln/detail/CVE-2020-1971){: external} and [CVE-2020-24659](https://nvd.nist.gov/vuln/detail/CVE-2020-24659){: external}. |
-| `2.0.3_464` | `v2.0.8` | 10 December 2020 | 4.3 - 4.6 | Updates in this patch:<ul><li>New metro storage classes with the `volumeBindingMode:WaitForFirstConsumer` specification.</li><li>Resources that are deployed by the add-on now contain a label which links the source code URL and the build URL.</li><li>The `v2.0.8` image is signed.</li><li>Updates the Go version from `1.15.2` to `1.15.5`.</li></ul> |
-| `2.0.3_404` | `v2.0.7` | 25 November 2020 | 4.3 - 4.6 | Updates in this patch:<ul><li>`v2.0.7` contains a fix for vulnerability scan issues.</li><li>Updates the base image from `alpine` to `UBI`.</li><li>Pods and containers now run as `non-root` except for the `node-server` pod's containers.</li></ul> |
+| `2.0.3_464` | `v2.0.8` | 10 December 2020 | 4.3 - 4.6 | Updates in this patch:<ul><li>New metro storage classes with the <code>volumeBindingMode:WaitForFirstConsumer</code> specification.</li><li>Resources that are deployed by the add-on now contain a label which links the source code URL and the build URL.</li><li>The <code>v2.0.8</code> image is signed.</li><li>Updates the Go version from <code>1.15.2</code> to <code>1.15.5</code>.</li></ul> |
+| `2.0.3_404` | `v2.0.7` | 25 November 2020 | 4.3 - 4.6 | Updates in this patch:<ul><li><code>v2.0.7</code> contains a fix for vulnerability scan issues.</li><li>Updates the base image from <code>alpine</code> to <code>UBI</code>.</li><li>Pods and containers now run as <code>non-root</code> except for the <code>node-server</code> pod's containers.</li></ul> |
 | `2.0.3_375` | `v2.0.6` | 17 September 2020 | 4.3 - 4.5 | Fixes an issue with volume attachment when replacing workers. |
 | `2.0.3_374+` | `v2.0.5` | 29 August 2020 | 4.3 - 4.5 | Adds the `/var/lib/kubelet` path for CSI driver calls on OCP 4.4. |
 | `2.0.3_365` | `v2.0.4` | 05 August 2020 | 4.3 - 4.5 | <ul><li>Updates sidecar container images.</li><li>Adds liveness probe.</li><li>Enables parallel attachment and detachment of volumes to worker nodes. Previously, worker nodes were attached and detached sequentially.</li></ul> |
@@ -188,3 +186,4 @@ The following table shows the changes included in version 2.0.3 {{site.data.keyw
 {: class="comparison-table"}
 {: caption="Patch updates for version 2.0.3" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the patch version number of the component. The second column contains the image tag the component. The third column contains the release date of the patch. The fourth column contains the supported cluster versions. The fifth column contains a brief description of the change made to the component."}
+

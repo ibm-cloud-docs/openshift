@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
+  
 
- 
- 
 
 # Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters
 {: #vpc-block-storage-driver-unmanaged}
@@ -318,6 +316,7 @@ Select the {{site.data.keyword.block_storage_is_short}} driver configmap that ma
 7. [Deploy a stateful set that uses {{site.data.keyword.block_storage_is_short}}](#vpc-block-stateful-set-deploy).
 
 <br />
+
 ## Deploying a stateful set that uses {{site.data.keyword.block_storage_is_short}}
 {: #vpc-block-stateful-set-deploy}
 
@@ -415,16 +414,16 @@ Removing the {{site.data.keyword.block_storage_is_short}} driver from your clust
 {: important}
 
 1. Delete the `ibm-vpc-block-csi-configmap` configmap from your cluster.
-  ```sh
-  oc rm cm ibm-vpc-block-csi-configmap -n kube-system
-  ```
-  {: pre}
+    ```sh
+    oc rm cm ibm-vpc-block-csi-configmap -n kube-system
+    ```
+    {: pre}
 
 2. Verify that the configmap is removed.
-  ```sh
-  oc get cm -n kube-system | grep ibm-vpc-block-csi-configmap
-  ```
-  {: pre}
+    ```sh
+    oc get cm -n kube-system | grep ibm-vpc-block-csi-configmap
+    ```
+    {: pre}
 
 
 <br />
@@ -2055,4 +2054,6 @@ metadata:
 
 ```
 {: codeblock}
+
+
 

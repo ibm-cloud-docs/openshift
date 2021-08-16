@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
 subcollection: openshift
 
 ---
-
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
@@ -105,8 +104,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
+  
 
 
 # Accessing {{site.data.keyword.openshiftshort}} clusters
@@ -125,10 +123,10 @@ After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin
 3. If your network is protected by a company firewall, [allow access](/docs/openshift?topic=openshift-firewall#corporate) to the {{site.data.keyword.cloud_notm}} and {{site.data.keyword.openshiftlong_notm}} API endpoints and ports. For VPC clusters with only the private cloud service endpoint enabled, you cannot test the connection to your cluster until you [configure a VPC VPN with the cloud service endpoint subnet](#vpc_private_se).
 4. Check that your cluster is in a healthy state by running `ibmcloud oc cluster get -c <cluster_name_or_ID>`. If your cluster is not in a healthy state, review the [Debugging clusters](/docs/openshift?topic=openshift-debug_clusters) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall).
 5. Find your cluster's service endpoint.
-  * **Classic or VPC clusters**: In the output of the cluster details from the previous step, check the **Public** or **Private Service Endpoint** URL of the cluster.
-      *  Public Service Endpoint URL only: Continue with [Accessing clusters through the public cloud service endpoint](#access_public_se).
-      *  Both service endpoint URLs: You can access your cluster either through the [public](#access_public_se) or the [private](#access_private_se) service endpoint.
-  * **{{site.data.keyword.satellitelong_notm}} clusters**: Continue with [Accessing clusters on {{site.data.keyword.satelliteshort}}](#access_cluster_sat).
+    * **Classic or VPC clusters**: In the output of the cluster details from the previous step, check the **Public** or **Private Service Endpoint** URL of the cluster.
+        *  Public Service Endpoint URL only: Continue with [Accessing clusters through the public cloud service endpoint](#access_public_se).
+        *  Both service endpoint URLs: You can access your cluster either through the [public](#access_public_se) or the [private](#access_private_se) service endpoint.
+    * **{{site.data.keyword.satellitelong_notm}} clusters**: Continue with [Accessing clusters on {{site.data.keyword.satelliteshort}}](#access_cluster_sat).
 
 <br />
 
@@ -144,9 +142,9 @@ For {{site.data.keyword.openshiftshort}} clusters with a public cloud service en
 You can quickly access your {{site.data.keyword.openshiftlong_notm}} cluster from the console.
 {: shortdesc}
 
-1.  In the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the cluster that you want to access.
-2.  Click **{{site.data.keyword.openshiftshort}} web console**.
-3.  To continue working in the command line, click your profile name, such as `IAM#name@email.com`, and then click **Copy Login Command**. Depending on your cluster version, log in to your cluster from the command line as follows.
+1. In the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the cluster that you want to access.
+2. Click **{{site.data.keyword.openshiftshort}} web console**.
+3. To continue working in the command line, click your profile name, such as `IAM#name@email.com`, and then click **Copy Login Command**. Depending on your cluster version, log in to your cluster from the command line as follows.
     *  **Version 3.11**: Paste the copied `oc login` command into your command line.
     *  **Version 4**: Click **Display Token**, copy the `oc login` command, and paste the command into your command line.
 
@@ -160,26 +158,29 @@ In most cases, you can use the {{site.data.keyword.openshiftshort}} web console 
 
 Choose from the following options.
 *   **Log in as admin**:
-    1.  Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
-    2.  Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
+    1. Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
+    2. Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
         ```
         ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
         ```
         {: pre}
+
 *   **Log in with an API key**: See [Using an API key to log in to {{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-access_cluster#access_api_key).
 *   **Log in with {{site.data.keyword.cloud_notm}} passcode**:
-    1.  Get the **Master URL** of your cluster in the output of the following command.
+    1. Get the **Master URL** of your cluster in the output of the following command.
         ```
         ibmcloud oc cluster get -c <cluster_name_or_ID>
         ```
         {: pre}
-    2.  In your browser, open the following {{site.data.keyword.cloud_notm}} IAM passcode website.
+
+    2. In your browser, open the following {{site.data.keyword.cloud_notm}} IAM passcode website.
         ```
         https://iam.cloud.ibm.com/identity/passcode
         ```
         {: codeblock}
-    3.  Log in with your IBMid and copy the passcode.
-    4.  Log in to your cluster with the passcode.
+
+    3. Log in with your IBMid and copy the passcode.
+    4. Log in to your cluster with the passcode.
         ```
         oc login -u passcode -p <iam_passcode> --server=<master_URL>
         ```
@@ -208,51 +209,54 @@ If you enabled only the private cloud service endpoint during cluster creation, 
 {: note}
 
 1. Set up your {{site.data.keyword.vpc_short}} VPN and connect to your private network through the VPN.
-  1. [Configure a VPN gateway on your local machine](/docs/vpc?topic=vpc-vpn-onprem-example#configuring-onprem-gateway). For example, you might choose to set up StrongSwan on your machine.
-  2. [Create a VPN gateway in your VPC, and create the connection between the VPC VPN gateway and your local VPN gateway](/docs/vpc?topic=vpc-vpn-create-gateway#vpn-create-ui). In the **New VPN connection for VPC** section, add the `166.8.0.0/14` subnet to the **Local subnets** field. If you have a multizone cluster, repeat this step to configure a VPC gateway on a subnet in each zone where you have worker nodes.
-  3. Verify that you are connected to the private network through your {{site.data.keyword.vpc_short}} VPN connection.
+    1. [Configure a VPN gateway on your local machine](/docs/vpc?topic=vpc-vpn-onprem-example#configuring-onprem-gateway). For example, you might choose to set up StrongSwan on your machine.
+    2. [Create a VPN gateway in your VPC, and create the connection between the VPC VPN gateway and your local VPN gateway](/docs/vpc?topic=vpc-vpn-create-gateway#vpn-create-ui). In the **New VPN connection for VPC** section, add the `166.8.0.0/14` subnet to the **Local subnets** field. If you have a multizone cluster, repeat this step to configure a VPC gateway on a subnet in each zone where you have worker nodes.
+    3. Verify that you are connected to the private network through your {{site.data.keyword.vpc_short}} VPN connection.
 
 2. To log in to your cluster, choose from the following options.
-  * **Log in as admin**:
-      1.  Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
-      2.  Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
+    * **Log in as admin**:
+        1. Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
+        2. Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
           ```
           ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --endpoint private
           ```
           {: pre}
-  * **Log in with an API key**: See [Using an API key to log in to {{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-access_cluster#access_api_key).
-  * **Log in with {{site.data.keyword.cloud_notm}} passcode**:
-      1.  Get the **Private Service Endpoint URL** of your cluster in the output of the following command.
+
+    * **Log in with an API key**: See [Using an API key to log in to {{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-access_cluster#access_api_key).
+    * **Log in with {{site.data.keyword.cloud_notm}} passcode**:
+        1. Get the **Private Service Endpoint URL** of your cluster in the output of the following command.
           ```
           ibmcloud oc cluster get -c <cluster_name_or_ID>
           ```
           {: pre}
-      2.  In your browser, open the following {{site.data.keyword.cloud_notm}} IAM passcode website.
+
+        2. In your browser, open the following {{site.data.keyword.cloud_notm}} IAM passcode website.
           ```
           https://iam.cloud.ibm.com/identity/passcode
           ```
           {: codeblock}
-      3.  Log in with your IBMid and copy the passcode.
-      4.  Log in to your cluster with the passcode.
+
+        3. Log in with your IBMid and copy the passcode.
+        4. Log in to your cluster with the passcode.
           ```
           oc login -u passcode -p <iam_passcode> --server=<private_service_endpoint_URL>
           ```
           {: pre}
 
 3. Verify that the `oc` commands run properly with your cluster through the private cloud service endpoint by checking the version.
-  ```
-  oc version
-  ```
-  {: pre}
+    ```
+    oc version
+    ```
+    {: pre}
 
-  Example output:
+    Example output:
 
-  ```
-  Client Version: 4.5.0-0.okd-2020-09-04-180756
-  Server Version: 4.5.35
-  Kubernetes Version: v1.18.3+cdb0358
-  ```
-  {: screen}
+    ```
+    Client Version: 4.5.0-0.okd-2020-09-04-180756
+    Server Version: 4.5.35
+    Kubernetes Version: v1.18.3+cdb0358
+    ```
+    {: screen}
 
 ### Accessing classic clusters through the private cloud service endpoint
 {: #classic_private_se}
@@ -263,85 +267,87 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
 1. Log in to your [{{site.data.keyword.openshiftshort}} cluster by using the public cloud service endpoint](#access_public_se).
 
 2. Get the private cloud service endpoint URL and port for your cluster.
-  ```
-  ibmcloud oc cluster get -c <cluster_name_or_ID>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc cluster get -c <cluster_name_or_ID>
+    ```
+    {: pre}
 
-  In this example output, the **Private Service Endpoint URL** is `https://c1.private.us-east.containers.cloud.ibm.com:31144`.
-  ```
-  Name:                           setest
-  ID:                             b8dcc56743394fd19c9f3db7b990e5e3
-  State:                          normal
-  Status:                         healthy cluster
-  Created:                        2019-04-25T16:03:34+0000
-  Location:                       wdc04
-  Pod Subnet:                     172.30.0.0/16
-  Service Subnet:                 172.21.0.0/16
-  Master URL:                     https://c1-e.us-east.containers.cloud.ibm.com:31144
-  Public Service Endpoint URL:    https://c1-e.us-east.containers.cloud.ibm.com:31144
-  Private Service Endpoint URL:   https://c1.private.us-east.containers.cloud.ibm.com:31144
-  Master Location:                Washington D.C.
-  ...
-  ```
-  {: screen}
+    In this example output, the **Private Service Endpoint URL** is `https://c1.private.us-east.containers.cloud.ibm.com:31144`.
+    ```
+    Name:                           setest
+    ID:                             b8dcc56743394fd19c9f3db7b990e5e3
+    State:                          normal
+    Status:                         healthy cluster
+    Created:                        2019-04-25T16:03:34+0000
+    Location:                       wdc04
+    Pod Subnet:                     172.30.0.0/16
+    Service Subnet:                 172.21.0.0/16
+    Master URL:                     https://c1-e.us-east.containers.cloud.ibm.com:31144
+    Public Service Endpoint URL:    https://c1-e.us-east.containers.cloud.ibm.com:31144
+    Private Service Endpoint URL:   https://c1.private.us-east.containers.cloud.ibm.com:31144
+    Master Location:                Washington D.C.
+    ...
+    ```
+    {: screen}
 
 3. Create a YAML file that is named `oc-api-via-nlb.yaml`. This YAML creates a private `LoadBalancer` service and exposes the private cloud service endpoint through that NLB. Replace `<private_service_endpoint_port>` with the port you found in the previous step.
-   ```yaml
-   apiVersion: v1
-   kind: Service
-   metadata:
-     name: oc-api-via-nlb
-     annotations:
-       service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: private
-     namespace: default
-   spec:
-     type: LoadBalancer
-     ports:
-     - protocol: TCP
-       port: <private_service_endpoint_port>
-       targetPort: <private_service_endpoint_port>
-   ---
-   kind: Endpoints
-   apiVersion: v1
-   metadata:
-     name: oc-api-via-nlb
-     namespace: default
-   subsets:
-     - addresses:
-         - ip: 172.20.0.1
-       ports:
-         - port: 2040
-   ```
-   {: codeblock}
+    ```yaml
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: oc-api-via-nlb
+      annotations:
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: private
+      namespace: default
+    spec:
+      type: LoadBalancer
+      ports:
+      - protocol: TCP
+        port: <private_service_endpoint_port>
+        targetPort: <private_service_endpoint_port>
+    ---
+    kind: Endpoints
+    apiVersion: v1
+    metadata:
+      name: oc-api-via-nlb
+      namespace: default
+    subsets:
+      - addresses:
+          - ip: 172.20.0.1
+        ports:
+          - port: 2040
+    ```
+    {: codeblock}
 
 4. To create the private NLB and endpoint:
-   1. Apply the configuration file that you previously created.
-      ```
-      oc apply -f oc-api-via-nlb.yaml
-      ```
-      {: pre}
-   2. Verify that the `oc-api-via-nlb` NLB is created. In the output, note the `10.x.x.x` **EXTERNAL-IP** address. This IP address exposes the private cloud service endpoint for the cluster master on the port that you specified in your YAML file.
-      ```
-      oc get svc -o wide
-      ```
-      {: pre}
+    1. Apply the configuration file that you previously created.
+        ```
+        oc apply -f oc-api-via-nlb.yaml
+        ```
+        {: pre}
 
-      In this example output, the IP address for the private cloud service endpoint of the master is `10.186.92.42`.
-      ```
-      NAME                     TYPE           CLUSTER-IP       EXTERNAL-IP      PORT(S)          AGE   SELECTOR
-      oc-api-via-nlb           LoadBalancer   172.21.150.118   10.186.92.42     443:32235/TCP    10m   <none>
-      ...
-      ```
-      {: screen}
+    2. Verify that the `oc-api-via-nlb` NLB is created. In the output, note the `10.x.x.x` **EXTERNAL-IP** address. This IP address exposes the private cloud service endpoint for the cluster master on the port that you specified in your YAML file.
+        ```
+        oc get svc -o wide
+        ```
+        {: pre}
+
+        In this example output, the IP address for the private cloud service endpoint of the master is `10.186.92.42`.
+        ```
+        NAME                     TYPE           CLUSTER-IP       EXTERNAL-IP      PORT(S)          AGE   SELECTOR
+        oc-api-via-nlb           LoadBalancer   172.21.150.118   10.186.92.42     443:32235/TCP    10m   <none>
+        ...
+        ```
+        {: screen}
 
 5. On the client machines where you or your users run `oc` commands, add the NLB IP address and the private cloud service endpoint URL to the `/etc/hosts` file. Do not include any ports in the IP address and URL and do not include `https://` in the URL.
-  * For macOS and Linux users:
+    * For macOS and Linux users:
     ```
     sudo nano /etc/hosts
     ```
     {: pre}
-  * For Windows users:
+
+    * For Windows users:
     ```
     notepad C:\Windows\System32\drivers\etc\hosts
     ```
@@ -359,27 +365,30 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
 6. Verify that you are connected to the private network through a [VPN](/docs/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) connection.
 
 7. Log in to your cluster by choosing from one of the following options.
-  * **Log in as admin**:
-      1.  Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
-      2.  Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
+    * **Log in as admin**:
+        1. Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
+        2. Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
           ```
           ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --endpoint private
           ```
           {: pre}
-  * **Log in with an API key**: See [Using an API key to log in to {{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-access_cluster#access_api_key).
-  * **Log in with {{site.data.keyword.cloud_notm}} passcode**:
-      1.  Get the **Private Service Endpoint URL** of your cluster in the output of the following command.
+
+    * **Log in with an API key**: See [Using an API key to log in to {{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-access_cluster#access_api_key).
+    * **Log in with {{site.data.keyword.cloud_notm}} passcode**:
+        1. Get the **Private Service Endpoint URL** of your cluster in the output of the following command.
           ```
           ibmcloud oc cluster get -c <cluster_name_or_ID>
           ```
           {: pre}
-      2.  In your browser, open the following {{site.data.keyword.cloud_notm}} IAM passcode website.
+
+        2. In your browser, open the following {{site.data.keyword.cloud_notm}} IAM passcode website.
           ```
           https://iam.cloud.ibm.com/identity/passcode
           ```
           {: codeblock}
-      3.  Log in with your IBMid and copy the passcode.
-      4.  Log in to your cluster with the passcode.
+
+        3. Log in with your IBMid and copy the passcode.
+        4. Log in to your cluster with the passcode.
           ```
           oc login -u passcode -p <iam_passcode> --server=<private_service_endpoint_URL>
           ```
@@ -426,22 +435,22 @@ To create a private cloud service endpoint allowlist:
 1. Get the subnets that you want to add to the allowlist. For example, you might get the subnet for the connection through your VPN or {{site.data.keyword.dl_short}} tunnel to your {{site.data.keyword.cloud_notm}} private network.
 
 2. Enable the subnet allowlist feature for a cluster's private cloud service endpoint. Now, access to the cluster via the private cloud service endpoint is blocked for any requests that originate from a subnet that is not in the allowlist. Your worker nodes continue to run and have access to the master.
-  ```
-  ibmcloud oc cluster master private-service-endpoint allowlist enable --cluster <cluster_name_or_ID>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc cluster master private-service-endpoint allowlist enable --cluster <cluster_name_or_ID>
+    ```
+    {: pre}
 
 3. Add subnets from which authorized users can access your private cloud service endpoint to the allowlist.
-  ```
-  ibmcloud oc cluster master private-service-endpoint allowlist add --cluster <cluster_name_or_ID> --subnet <subnet_CIDR> [--subnet <subnet_CIDR> ...]
-  ```
-  {: pre}
+    ```
+    ibmcloud oc cluster master private-service-endpoint allowlist add --cluster <cluster_name_or_ID> --subnet <subnet_CIDR> [--subnet <subnet_CIDR> ...]
+    ```
+    {: pre}
 
 4. Verify that the subnets in your allowlist are correct. The allowlist includes subnets that you manually added and subnets that are automatically added and managed by IBM, such as worker node subnets.
-  ```
-  ibmcloud oc cluster master private-service-endpoint allowlist get --cluster <cluster_name_or_ID>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc cluster master private-service-endpoint allowlist get --cluster <cluster_name_or_ID>
+    ```
+    {: pre}
 
 Your authorized users can now continue with [Accessing {{site.data.keyword.openshiftshort}} clusters through the private cloud service endpoint](#access_private_se).
 
@@ -467,22 +476,23 @@ If your location hosts have private network connectivity only, or if you use Ama
 {: note}
 
 You can quickly access your {{site.data.keyword.openshiftlong_notm}} cluster from the console.
-1.  In the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the cluster that you want to access.
-2.  Click **{{site.data.keyword.openshiftshort}} web console**.
-3.  Click your profile name, such as `IAM#name@email.com`, and then click **Copy Login Command**.
-4.  Click **Display Token**, and copy the `oc login` command.
-5.  Paste the command into your command line.
+1. In the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the cluster that you want to access.
+2. Click **{{site.data.keyword.openshiftshort}} web console**.
+3. Click your profile name, such as `IAM#name@email.com`, and then click **Copy Login Command**.
+4. Click **Display Token**, and copy the `oc login` command.
+5. Paste the command into your command line.
 
 </br>
 
 If you cannot or do not want to open the {{site.data.keyword.openshiftshort}} console, choose among the following options to log in to your {{site.data.keyword.openshiftlong_notm}} cluster by using the CLI.
 *   **Log in as admin**:
-    1.  Make sure that you have the [**Administrator** IAM platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
-    2.  Set your command line context for the cluster and download the TLS certificates and permission files for the administrator. For more information, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config).
+    1. Make sure that you have the [**Administrator** IAM platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
+    2. Set your command line context for the cluster and download the TLS certificates and permission files for the administrator. For more information, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config).
         ```
         ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
         ```
         {: pre}
+
 *   **Log in with an API key**: See [Using an API key to log in to {{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-access_cluster#access_api_key).
 
 ### Accessing clusters from within the {{site.data.keyword.cloud_notm}} private network
@@ -491,8 +501,8 @@ If you cannot or do not want to open the {{site.data.keyword.openshiftshort}} co
 If you are connected to the {{site.data.keyword.cloud_notm}} private network, you can use the {{site.data.keyword.satelliteshort}} Link endpoint that is automatically generated for your cluster. This endpoint allows you to connect through the secured Link tunnel server to the cluster's master in your location control plane. The endpoint consists of the Link tunnel server hostname and a node port, which is formatted such as `c-02.<region>.link.satellite.cloud.ibm.com:<port>`.
 {: shortdesc}
 
-1.  Make sure that you have the [**Administrator** IAM platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
-2.  Set your command line context for the cluster by using the Link endpoint and download the TLS certificates and permission files for the administrator. For more information, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config).
+1. Make sure that you have the [**Administrator** IAM platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
+2. Set your command line context for the cluster by using the Link endpoint and download the TLS certificates and permission files for the administrator. For more information, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config).
     ```
     ibmcloud oc cluster config -c <cluster_name_or_ID> --endpoint link --admin
     ```
@@ -510,41 +520,47 @@ Making your location and cluster subdomains available outside of your hosts' pri
 {: important}
 
 1. Review the location subdomains and check the **Records** for the private IP addresses of the hosts that are registered in the DNS for the subdomain.
-  ```
-  ibmcloud sat location dns ls --location <location_name_or_ID>
-  ```
-  {: pre}
+    ```
+    ibmcloud sat location dns ls --location <location_name_or_ID>
+    ```
+    {: pre}
+
 2. Retrieve the matching public IP addresses of your hosts from your cloud provider.
 3. Update the location subdomain DNS records with the public IP addresses of each host in the control plane.
-  ```
-  ibmcloud sat location dns register --location <location_name_or_ID> --ip <host_IP> --ip <host_IP> --ip <host_IP>
-  ```
-  {: pre}
+    ```
+    ibmcloud sat location dns register --location <location_name_or_ID> --ip <host_IP> --ip <host_IP> --ip <host_IP>
+    ```
+    {: pre}
+
 4. Verify that the public IP addresses are registered with your location DNS records.
-  ```
-  ibmcloud sat location dns ls --location <location_name_or_ID>
-  ```
-  {: pre}
+    ```
+    ibmcloud sat location dns ls --location <location_name_or_ID>
+    ```
+    {: pre}
+
 5. Get the **Hostname** for your cluster in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.upi.containers.appdomain.cloud` and note the private **IP(s)** that were automatically registered.
-  ```
-  ibmcloud oc nlb-dns ls --cluster <cluster_name_or_ID>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc nlb-dns ls --cluster <cluster_name_or_ID>
+    ```
+    {: pre}
+
 6. Add the public IP addresses of the hosts that are assigned as worker nodes to this cluster to your cluster's subdomain. Repeat this command for each host's public IP address.
-  ```
-  ibmcloud oc nlb-dns add --ip <public_IP> --cluster <cluster_name_or_ID> --nlb-host <hostname>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc nlb-dns add --ip <public_IP> --cluster <cluster_name_or_ID> --nlb-host <hostname>
+    ```
+    {: pre}
+
 7. Remove the private IP addresses from your cluster's subdomain. Repeat this command for all private IP addresses that you retrieved earlier.
-  ```
-  ibmcloud oc nlb-dns rm classic --ip <private_IP> --cluster <cluster_name_or_ID> --nlb-host <hostname>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc nlb-dns rm classic --ip <private_IP> --cluster <cluster_name_or_ID> --nlb-host <hostname>
+    ```
+    {: pre}
+
 8. Verify that the public IP addresses are registered with your cluster subdomain.
-  ```
-  ibmcloud oc nlb-dns ls --cluster <cluster_name_or_ID>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc nlb-dns ls --cluster <cluster_name_or_ID>
+    ```
+    {: pre}
 
 <br />
 
@@ -557,204 +573,199 @@ You can use the Wireguard VPN to securely connect to {{site.data.keyword.openshi
 Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}} cluster with a private-only network connection and that the cluster is assigned a private service endpoint.
 
 1. Create a virtual server instance (VSI) that is connected to the same private network that your {{site.data.keyword.openshiftshort}} cluster runs in. This VSI serves as a jumpbox for your cluster. For example, if you have a private VPC cluster, make sure that you create the VSI in the same VPC. For more information about creating the VSI, consult your infrastructure provider's documentation. The VSI must meet the following specifications:
-   - The VSI must have a minimum of 2 vCPUs, 8 GB memory, and 25 GB of disk space.
-   - The VSI must run an operating system that is supported by Wireguard. For example, the steps in this topic were tested on an Ubuntu VSI.
-   - You must create an SSH key that is stored on the VSI so that you can connect to your VSI via SSH.
-   - You must assign a public IP address to your VSI so that your VSI is accessible over the public network.
-   - Your VSI must allow at least the following network traffic. You can optionally open up more network traffic on your VSI if required for the apps that run on your cluster.
-     - Inbound TCP traffic on port 22 for SSH connections
-     - Inbound UDP traffic on port 51820 for the Wireguard server
-     - All outbound traffic
+    - The VSI must have a minimum of 2 vCPUs, 8 GB memory, and 25 GB of disk space.
+    - The VSI must run an operating system that is supported by Wireguard. For example, the steps in this topic were tested on an Ubuntu VSI.
+    - You must create an SSH key that is stored on the VSI so that you can connect to your VSI via SSH.
+    - You must assign a public IP address to your VSI so that your VSI is accessible over the public network.
+    - Your VSI must allow at least the following network traffic. You can optionally open up more network traffic on your VSI if required for the apps that run on your cluster.
+        - Inbound TCP traffic on port 22 for SSH connections
+        - Inbound UDP traffic on port 51820 for the Wireguard server
+        - All outbound traffic
 2. Log in to your VSI by using the public IP address of the VSI.
-   ```
-   ssh -i <filepath_to_sshkey> root@<public_IP>
-   ```
-   {: pre}
+    ```
+    ssh -i <filepath_to_sshkey> root@<public_IP>
+    ```
+    {: pre}
 
 3. Install the Wireguard server.
 
-   The following steps are specific to VSIs that run Ubuntu. If you run a different Linux distribution, refer to the [Wireguard documentation](https://www.wireguard.com/install/){: external}.
-   {: note}
+    The following steps are specific to VSIs that run Ubuntu. If you run a different Linux distribution, refer to the [Wireguard documentation](https://www.wireguard.com/install/){: external}.
+    {: note}
 
-   1. Update the Ubuntu operating system.
-      ```
-      apt update
-      ```
-      {: pre}
-      ```
-      apt upgrade
-      ```
-      {: pre}
+    1. Update the Ubuntu operating system.
+        ```
+        apt update
+        ```
+        {: pre}
 
-   2. Check if your VSI requires a reboot to apply the updates.
-      ```
-      cat /var/run/reboot-required
-      ```
-      {: pre}
+        ```
+        apt upgrade
+        ```
+        {: pre}
 
-      Example output:
-      ```
-      *** System restart required ***
-      ```
-      {: screen}
+    2. Check if your VSI requires a reboot to apply the updates.
+        ```
+        cat /var/run/reboot-required
+        ```
+        {: pre}
 
-   3. If a reboot is required, reboot the VSI.
-      ```
-      reboot
-      ```
-       {: pre}
+        Example output:
+        ```
+        *** System restart required ***
+        ```
+        {: screen}
 
-   4. Wait for the reboot to finish. Then, log in to your VSI again.
-      ```
-      ssh -i <filepath_to_sshkey> root@<public_IP>
-      ```
-      {: pre}
+    3. If a reboot is required, reboot the VSI.
+        ```
+        reboot
+        ```
+        {: pre}
 
-   5. Install the Wireguard server.
-      ```
-      apt install wireguard
-      ```
-      {: pre}
+    4. Wait for the reboot to finish. Then, log in to your VSI again.
+        ```
+        ssh -i <filepath_to_sshkey> root@<public_IP>
+        ```
+        {: pre}
+
+    5. Install the Wireguard server.
+        ```
+        apt install wireguard
+        ```
+        {: pre}
 
 4. Create Wireguard server keys.
-   1. On your VSI, create a new directory to store your keys.
-      ```
-      mkdir -p /etc/wireguard/keys
-      ```
-      {: pre}
+    1. On your VSI, create a new directory to store your keys.
+        ```
+        mkdir -p /etc/wireguard/keys
+        ```
+        {: pre}
 
-   2. Create a private and a public Wireguard server key.
-      ```
-      wg genkey | tee /etc/wireguard/keys/server.key | wg pubkey | tee /etc/wireguard/keys/server.key.pub
-      ```
-      {: pre}
+    2. Create a private and a public Wireguard server key.
+        ```
+        wg genkey | tee /etc/wireguard/keys/server.key | wg pubkey | tee /etc/wireguard/keys/server.key.pub
+        ```
+        {: pre}
 
-   3. Display the public and the private key that you created. </br>
-      **Private key**:
-      ```
-      cat /etc/wireguard/keys/server.key
-      ```
-      {: pre}
+    3. Display the public and the private key that you created. </br>
+        **Private key**:
+        ```
+        cat /etc/wireguard/keys/server.key
+        ```
+        {: pre}
 
-      **Public key**:
-      ```
-      cat /etc/wireguard/keys/server.key.pub
-      ```
-      {: pre}
+        **Public key**:
+        ```
+        cat /etc/wireguard/keys/server.key.pub
+        ```
+        {: pre}
 
 5. Retrieve the network interface that your VSI uses to route traffic.
-   ```
-   ip -o -4 route show to default | awk '{print $5}'
-   ```
-   {: pre}
+    ```
+    ip -o -4 route show to default | awk '{print $5}'
+    ```
+    {: pre}
 
-   Example output:
-   ```
-   ens3
-   ```
-   {: screen}
+    Example output:
+    ```
+    ens3
+    ```
+    {: screen}
 
 6. Create the Wireguard server configuration.
-   1. Open the Wireguard server configuration. The configuration is intially empty.
-      ```
-      nano /etc/wireguard/wg0.conf
-      ```
-      {: pre}
+    1. Open the Wireguard server configuration. The configuration is intially empty.
+        ```
+        nano /etc/wireguard/wg0.conf
+        ```
+        {: pre}
 
-   2. Add the following content to your configuration. In the `Interface` section, enter the private key from your Wireguard server that you created and change `<eth0>` to the network interface that you retrieved earlier. The IP address is a random address within the VPN tunnel that you assign to the Wireguard server.
+    2. Add the following content to your configuration. In the `Interface` section, enter the private key from your Wireguard server that you created and change `<eth0>` to the network interface that you retrieved earlier. The IP address is a random address within the VPN tunnel that you assign to the Wireguard server.
 
-      The server configuration does not yet include the Wireguard client configuration (`Peer`). You add the client configuration after you set up the Wireguard client on your local machine in a later step.
-      {: note}
+        The server configuration does not yet include the Wireguard client configuration (`Peer`). You add the client configuration after you set up the Wireguard client on your local machine in a later step.
+        {: note}
 
-      ```
-      [Interface]
-      PrivateKey = <wireguard_server_private_key>
-      Address = 172.16.0.1/24
-      PostUp = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o <eth0> -j MASQUERADE
-      PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o <eth0> -j MASQUERADE
-      ListenPort = 51820
-      ```
-      {: codeblock}
+        ```
+        [Interface]
+        PrivateKey = <wireguard_server_private_key>
+        Address = 172.16.0.1/24
+        PostUp = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o <eth0> -j MASQUERADE
+        PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o <eth0> -j MASQUERADE
+        ListenPort = 51820
+        ```
+        {: codeblock}
 
-   3. Save your changes and exit the nano editor.
-   4. Change the permissions to your Wireguard configuration and server key file.
-      ```
-      chmod 600 /etc/wireguard/wg0.conf /etc/wireguard/keys/server.key
-      ```
-      {: pre}
+    3. Save your changes and exit the nano editor.
+    4. Change the permissions to your Wireguard configuration and server key file.
+        ```
+        chmod 600 /etc/wireguard/wg0.conf /etc/wireguard/keys/server.key
+        ```
+        {: pre}
 
 7. Start the Wireguard server.
-   1. Start the Wireguard server.
-      ```
-      wg-quick up wg0
-      ```
-      {: pre}
+    1. Start the Wireguard server.
+        ```
+        wg-quick up wg0
+        ```
+        {: pre}
 
-   2. Show the status of your Wireguard server connections. Note that your output only shows an interface section and no peer section as the Wireguard client is not successfully configured yet.
-      ```
-      wg show
-      ```
-      {: pre}
+    2. Show the status of your Wireguard server connections. Note that your output only shows an interface section and no peer section as the Wireguard client is not successfully configured yet.
+        ```
+        wg show
+        ```
+        {: pre}
 
-   3. Change the VSI system settings to automatically start the Wireguard server every time the VSI is booted.
-      ```
-      systemctl enable wg-quick@wg0
-      ```
-      {: pre}
+    3. Change the VSI system settings to automatically start the Wireguard server every time the VSI is booted.
+        ```
+        systemctl enable wg-quick@wg0
+        ```
+        {: pre}
 
 8. Enable IPv4 forwarding on the Wireguard server.
-   1. Open the VSI system and network settings.
-      ```
-      nano /etc/sysctl.conf
-      ```
-      {: pre}
+    1. Open the VSI system and network settings.
+        ```
+        nano /etc/sysctl.conf
+        ```
+        {: pre}
 
-   2. Remove the comment (`#`) from the `net.ipv4.ip_forward=1` line. Your configuration looks similar to the following:
-      ```
-      ...
-      # Uncomment the next line to enable TCP/IP SYN cookies
-      # See http://lwn.net/Articles/277146/
-      # Note: This may impact IPv6 TCP sessions too
-      #net.ipv4.tcp_syncookies=1
+    2. Remove the comment (`#`) from the `net.ipv4.ip_forward=1` line. Your configuration looks similar to the following:
+        ```
+        ...
+        # Uncomment the next line to enable TCP/IP SYN cookies
+        # See http://lwn.net/Articles/277146/
+        # Note: This may impact IPv6 TCP sessions too
+        #net.ipv4.tcp_syncookies=1
 
-      # Uncomment the next line to enable packet forwarding for IPv4
-      net.ipv4.ip_forward=1
-      ...
-      ```
-      {: screen}
-      
-   3. Enable IPv4 forwarding on your VSI. 
-      ```
-      sysctl -p
-      ```
-      {: pre}
+        # Uncomment the next line to enable packet forwarding for IPv4
+        net.ipv4.ip_forward=1
+        ...
+        ```
+        {: screen}
 
 9. Retrieve the list of IP addresses that you need to allow in your Wireguard client configuration so that you can successfully connect to your private {{site.data.keyword.openshiftshort}} cluster.
-   1. Get the details of your cluster and note the **Ingress Subdomain** and the **Private Service Endpoint URL**.
-      ```
-      ibmcloud oc cluster get --cluster <cluster_name_or_ID>
-      ```
-      {: pre}
+    1. Get the details of your cluster and note the **Ingress Subdomain** and the **Private Service Endpoint URL**.
+        ```
+        ibmcloud oc cluster get --cluster <cluster_name_or_ID>
+        ```
+        {: pre}
 
-   2. Retrieve the IP address that is assigned to the Ingress subdomain and your private service endpoint URL.
-      ```
-      nslookup <ingress_subdomain>
-      ```
-      {: pre}
+    2. Retrieve the IP address that is assigned to the Ingress subdomain and your private service endpoint URL.
+        ```
+        nslookup <ingress_subdomain>
+        ```
+        {: pre}
 
-      ```
-      nslookup <private_service_endpoint_URL>
-      ```
-      {: pre}
+        ```
+        nslookup <private_service_endpoint_URL>
+        ```
+        {: pre}
 
-      To successfully run an `nslookup` command on your private service endpoint URL, remove `https://` and the port from your URL. Alternatively, you can note all IP address CIDRs for the region that your cluster master is in as shown in step 3 of [Opening required ports in a private firewall](/docs/containers?topic=containers-firewall#firewall_private).
-      {: tip}
+        To successfully run an `nslookup` command on your private service endpoint URL, remove `https://` and the port from your URL. Alternatively, you can note all IP address CIDRs for the region that your cluster master is in as shown in step 3 of [Opening required ports in a private firewall](/docs/containers?topic=containers-firewall#firewall_private).
+        {: tip}
 
-   3. Get the IP address CIDR of all the VPC subnets, private VLANs, or on-prem networks that your cluster worker nodes are connected to. For example, if you created a VPC cluster in {{site.data.keyword.cloud_notm}}, you can get the subnet CIDR by getting the details for each worker node.  
-      ```
-      ibmcloud oc worker get --worker <worker_ID> --cluster <cluster_name_or_ID>
-      ```
-      {: pre}
+    3. Get the IP address CIDR of all the VPC subnets, private VLANs, or on-prem networks that your cluster worker nodes are connected to. For example, if you created a VPC cluster in {{site.data.keyword.cloud_notm}}, you can get the subnet CIDR by getting the details for each worker node.  
+        ```
+        ibmcloud oc worker get --worker <worker_ID> --cluster <cluster_name_or_ID>
+        ```
+        {: pre}
 
 10. Install, configure, and activate the Wireguard client.
     1. Follow the [instructions](https://www.wireguard.com/install/){: external} to install the Wireguard client on your local machine.
@@ -763,36 +774,36 @@ Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}
     4. Enter a name for your client configuration.
     5. Add the following configuration after the `PrivateKey` that is displayed in the `Interface` section. The CIDR `192.168.3.217/32` is a random CIDR that you assign to the client to use within the VPN tunnel.
 
-       Do not change the `PrivateKey` field, which can alter your Wireguard client private key and make the tunnel that you created unusable.
-       {: important}
+        Do not change the `PrivateKey` field, which can alter your Wireguard client private key and make the tunnel that you created unusable.
+        {: important}
 
-       In the `Peer` section, enter the following information:
-       - `PublicKey`: The Wireguard server public key that you created earlier.
-       - `AllowedIPs`: The IP address CIDRs of worker nodes, Ingress subdomain, the private service endpoint URL, and the Wireguard server that you retrieved earlier, separated by commas.
-       - `Endpoint`: The public IP address of the jumpbox VSI.  
+        In the `Peer` section, enter the following information:
+        - `PublicKey`: The Wireguard server public key that you created earlier.
+        - `AllowedIPs`: The IP address CIDRs of worker nodes, Ingress subdomain, the private service endpoint URL, and the Wireguard server that you retrieved earlier, separated by commas.
+        - `Endpoint`: The public IP address of the jumpbox VSI.  
 
-       ```
-       Address = 192.168.3.217/32
+        ```
+        Address = 192.168.3.217/32
 
-       [Peer]
-       PublicKey = <public_wireguard_server_key>
-       AllowedIPs = <worker_CIDR>,<ingress_subdomain_CIDR>,<private_service_endpoint_URL_CIDR>,<wireguard_server_CIDR>
-       Endpoint = <vsi_public_IP>:51820
-       ```
-       {: codeblock}
+        [Peer]
+        PublicKey = <public_wireguard_server_key>
+        AllowedIPs = <worker_CIDR>,<ingress_subdomain_CIDR>,<private_service_endpoint_URL_CIDR>,<wireguard_server_CIDR>
+        Endpoint = <vsi_public_IP>:51820
+        ```
+        {: codeblock}
 
-       Your final client configuration looks similar to the following:
-       ```
-       [Interface]
-       PrivateKey = aAAA1a1AAAAAaaaaa1aaa1AAAa1AaAAaAaAAAaAaaAa=
-       Address = 192.168.3.217/32
+        Your final client configuration looks similar to the following:
+        ```
+        [Interface]
+        PrivateKey = aAAA1a1AAAAAaaaaa1aaa1AAAa1AaAAaAaAAAaAaaAa=
+        Address = 192.168.3.217/32
 
-       [Peer]
-       PublicKey = Aaaa1A1aaaaaaaaa1aaa1AAAa1AaAAAAAAAAAAaAaaAa=
-       AllowedIPs = 166.9.58.104, 10.241.0.0/24, 172.16.0.1/24
-       Endpoint = 167.63.170.188:51820
-       ```
-       {: codeblock}
+        [Peer]
+        PublicKey = Aaaa1A1aaaaaaaaa1aaa1AAAa1AaAAAAAAAAAAaAaaAa=
+        AllowedIPs = 166.9.58.104, 10.241.0.0/24, 172.16.0.1/24
+        Endpoint = 167.63.170.188:51820
+        ```
+        {: codeblock}
 
     6. Save your configuration.
     7. Click **Activate** to start your Wireguard client. If the client is activated successfully, the status changes to **Active**.
@@ -800,63 +811,63 @@ Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}
 
 10. Finish the Wireguard server configuration.
     1. On your VSI, open the Wireguard server configuration again.
-       ```
-       nano /etc/wireguard/wg0.conf
-       ```
-       {: pre}
+        ```
+        nano /etc/wireguard/wg0.conf
+        ```
+        {: pre}
 
     2. Add the `Peer` section to your Wireguard server configuration to add the Wireguard client. Enter the Wireguard client public key in the `PublicKey` field and the IP address CIDR that you assigned to the client in the `AllowedIPs` field.  
-       ```
-       ...
-       [Peer]
-       PublicKey = <wireguard_client_public_key>
-       AllowedIPs = 192.180.1.160/32
-       ```
-       {: codeblock}
+        ```
+        ...
+        [Peer]
+        PublicKey = <wireguard_client_public_key>
+        AllowedIPs = 192.180.1.160/32
+        ```
+        {: codeblock}
 
-       Your server configuration looks similar to the following:
-       ```
-       [Interface]
-       PrivateKey = <wireguard_server_private_key>
-       Address = 172.16.0.1/24
-       PostUp = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o ens3 -j MASQUERADE
-       PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o ens3 -j MASQUERADE
-       ListenPort = 51820
+        Your server configuration looks similar to the following:
+        ```
+        [Interface]
+        PrivateKey = <wireguard_server_private_key>
+        Address = 172.16.0.1/24
+        PostUp = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o ens3 -j MASQUERADE
+        PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o ens3 -j MASQUERADE
+        ListenPort = 51820
 
-       [Peer]
-       PublicKey = <wireguard_client_public_key>
-       AllowedIPs = 192.180.1.160/32
-       ```
-       {: codeblock}
+        [Peer]
+        PublicKey = <wireguard_client_public_key>
+        AllowedIPs = 192.180.1.160/32
+        ```
+        {: codeblock}
 
     3. Stop the Wireguard server and start it again to apply your changes.
-       ```
-       wg-quick down wg0
-       ```
-       {: pre}
+        ```
+        wg-quick down wg0
+        ```
+        {: pre}
 
-       ```
-       wg-quick up wg0
-       ```
-       {: pre}
+        ```
+        wg-quick up wg0
+        ```
+        {: pre}
 
     4. Show the updated status of your Wireguard server connections. The interface and peer connections are displayed in your CLI output.
-       ```
-       wg show wg0
-       ```
-       {: pre}
+        ```
+        wg show wg0
+        ```
+        {: pre}
 
-       Example output:
-       ```
-       interface: wg0
-       public key: AA11aa1aa/aa1AaA1AaaaAAAaa1AAaaA1aAAAAaaAAA=
-       private key: (hidden)
-       listening port: 51820
+        Example output:
+        ```
+        interface: wg0
+        public key: AA11aa1aa/aa1AaA1AaaaAAAaa1AAaaA1aAAAAaaAAA=
+        private key: (hidden)
+        listening port: 51820
 
-       peer: a11aAaA+AaaaaaaaA1aAAaAA1/1AaAaAaaAA1AAA/aA=
-       allowed ips: 192.180.1.160/32
-       ```
-       {: screen}
+        peer: a11aAaA+AaaaaaaaA1aAAaAA1/1AaAaAaaAA1AAA/aA=
+        allowed ips: 192.180.1.160/32
+        ```
+        {: screen}
 
 11. Check that you can connect to the private {{site.data.keyword.openshiftshort}} cluster from your local machine.
     1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your private cluster that you want to connect to.  
@@ -876,23 +887,26 @@ Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}
 You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the API key to log in to an {{site.data.keyword.openshiftshort}} cluster. With API keys, you can use the credentials of one user or shared account to access a cluster, instead of logging in individually. You might also create an API key for a [service ID](#access_service_id). For more information, see [Understanding API keys](/docs/account?topic=account-manapikey).
 {: shortdesc}
 
-1.  Create an {{site.data.keyword.cloud_notm}} API key.<p class="important">Save your API key in a secure location. You cannot retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.</p>
+1. Create an {{site.data.keyword.cloud_notm}} API key.<p class="important">Save your API key in a secure location. You cannot retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.</p>
     ```
     ibmcloud iam api-key-create <name>
     ```
     {: pre}
-2.  Configure your cluster to add the API key user to your cluster RBAC policies and to set your session context to your cluster server.
-    1.  Log in to {{site.data.keyword.cloud_notm}} with the API key credentials.
+
+2. Configure your cluster to add the API key user to your cluster RBAC policies and to set your session context to your cluster server.
+    1. Log in to {{site.data.keyword.cloud_notm}} with the API key credentials.
         ```
         ibmcloud login --apikey <API_key>
         ```
         {: pre}
-    2.  Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the last file in the `KUBECONFIG` environment variable. **Note**: If you enabled the private cloud service endpoint and want to use it for the cluster context, include the `--endpoint private` flag. To use the private cloud service endpoint to connect to your cluster, you must be in your {{site.data.keyword.cloud_notm}} private network or connected to the private network through a [VPC VPN connection](/docs/vpc?topic=vpc-vpn-onprem-example), or for classic infrastructure, a [classic VPN connection](/docs/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl).
+
+    2. Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the last file in the `KUBECONFIG` environment variable. **Note**: If you enabled the private cloud service endpoint and want to use it for the cluster context, include the `--endpoint private` flag. To use the private cloud service endpoint to connect to your cluster, you must be in your {{site.data.keyword.cloud_notm}} private network or connected to the private network through a [VPC VPN connection](/docs/vpc?topic=vpc-vpn-onprem-example), or for classic infrastructure, a [classic VPN connection](/docs/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl).
         ```
         ibmcloud oc cluster config -c <cluster_name_or_ID> [--endpoint private]
         ```
         {: pre}
-3.  Exchange your {{site.data.keyword.cloud_notm}} IAM API key credentials for an {{site.data.keyword.openshiftshort}} access token. You can log in from the CLI or API. For more information, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.6/authentication/configuring-internal-oauth.html){: external}.
+
+3. Exchange your {{site.data.keyword.cloud_notm}} IAM API key credentials for an {{site.data.keyword.openshiftshort}} access token. You can log in from the CLI or API. For more information, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.6/authentication/configuring-internal-oauth.html){: external}.
 
     **Log in by using the `oc` CLI**:
     Log in to your cluster with the `oc login` command. The username (`-u`) is `apikey` and the password (`-p`) is your {{site.data.keyword.cloud_notm}} IAM API key value. To use the private cloud service endpoint, include the `--server=<private_service_endpoint>` flag.
@@ -904,7 +918,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
     **Log in by running {{site.data.keyword.openshiftshort}} API requests directly against your cluster**:
     Log in to your cluster with the API such as via a curl request.
 
-    1.  Get the **Master URL** of your cluster.
+    1. Get the **Master URL** of your cluster.
         ```
         ibmcloud oc cluster get -c <cluster_name_or_ID>
         ```
@@ -922,7 +936,8 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
 
         ```
         {: screen}
-    2.  <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} version 4 only**: Get the token endpoint of the {{site.data.keyword.openshiftshort}} `oauth` server.
+
+    2. <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} version 4 only**: Get the token endpoint of the {{site.data.keyword.openshiftshort}} `oauth` server.
         ```
         curl <master_URL>/.well-known/oauth-authorization-server | jq -r .token_endpoint
         ```
@@ -932,7 +947,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ```
         <token_endpoint>/oauth/token
         ```
-    3.  Log in to the cluster with the endpoint that you previously retrieved.
+    3. Log in to the cluster with the endpoint that you previously retrieved.
         * <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} version 4**: Replace `<URL>` with the `<token_endpoint>` of the `oauth` server.
         * <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} version 3.11**: Replace `<URL>` with the master URL.
 
@@ -941,7 +956,8 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         curl -u 'apikey:<API_key>' -H "X-CSRF-Token: a" '<URL>/oauth/authorize?client_id=openshift-challenging-client&response_type=token' -vvv
         ```
         {: pre}
-    4.  In the **Location** response, find the `access_token`, such as in the following example.
+
+    4. In the **Location** response, find the `access_token`, such as in the following example.
         ```
         < HTTP/1.1 302 Found
         < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
@@ -952,7 +968,8 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ...
         ```
         {: screen}
-    5.  Use your cluster master URL and the access token to access the {{site.data.keyword.openshiftshort}} API, such as to list all the pods in your cluster. For more information, see the [{{site.data.keyword.openshiftshort}} API documentation](https://docs.openshift.com/container-platform/4.6/rest_api/index.html){: external}.
+
+    5. Use your cluster master URL and the access token to access the {{site.data.keyword.openshiftshort}} API, such as to list all the pods in your cluster. For more information, see the [{{site.data.keyword.openshiftshort}} API documentation](https://docs.openshift.com/container-platform/4.6/rest_api/index.html){: external}.
 
         Example curl request:
         ```
@@ -966,7 +983,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
 You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API key for the service ID, and then use the API key to log in to an {{site.data.keyword.openshiftshort}} cluster. You might use service IDs so that apps that are hosted in other clusters or clouds can access your cluster's services. Because service IDs are not tied to a specific user, your apps can authenticate if individual users leave your account. For more information, see [Creating and working with service IDs](/docs/account?topic=account-serviceids).
 {: shortdesc}
 
-1.  Create an {{site.data.keyword.cloud_notm}} IAM service ID for your cluster that is used for the IAM policies and API key credentials. Be sure to give the service ID a description that helps you retrieve the service ID later, such as including the cluster name.
+1. Create an {{site.data.keyword.cloud_notm}} IAM service ID for your cluster that is used for the IAM policies and API key credentials. Be sure to give the service ID a description that helps you retrieve the service ID later, such as including the cluster name.
     ```
     ibmcloud iam service-id-create <cluster_name>-id --description "Service ID for {{site.data.keyword.openshiftlong_notm}} cluster <cluster_name>"
     ```
@@ -983,11 +1000,13 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     UUID          ServiceId-bbb2b2b2-2bb2-2222-b222-b2b2b2222b22
     ```
     {: screen}
-2.  Create a custom {{site.data.keyword.cloud_notm}} IAM policy for your cluster service ID that grants access to {{site.data.keyword.openshiftlong_notm}}.
+
+2. Create a custom {{site.data.keyword.cloud_notm}} IAM policy for your cluster service ID that grants access to {{site.data.keyword.openshiftlong_notm}}.
     ```
     ibmcloud iam service-policy-create <cluster_service_ID> --service-name containers-kubernetes --roles <service_access_role> --service-instance <cluster_ID>
     ```
     {: pre}
+
     <table summary="The columns are read from left to right. The first column has the parameter of the command. The second column describes the parameter.">
     <caption>Understanding this command's components</caption>
     <col width="25%">
@@ -1002,18 +1021,18 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     </tr>
     <tr>
     <td><code>--service-name <em>containers-kubernetes</em></code></td>
-    <td>Required. Enter `containers-kubernetes` so that the IAM policy is for {{site.data.keyword.openshiftlong_notm}} clusters.</td>
+    <td>Required. Enter <code>containers-kubernetes</code> so that the IAM policy is for {{site.data.keyword.openshiftlong_notm}} clusters.</td>
     </tr>
     <tr>
     <td><code>--roles <em>&lt;service_access_role&gt;</em></code></td>
-    <td>Required. Enter the access role that you want the service ID to have to your {{site.data.keyword.openshiftshort}} cluster. [platform access roles](/docs/openshift?topic=openshift-access_reference#iam_platform) permit cluster management activities such as creating worker nodes. [service access roles](/docs/openshift?topic=openshift-access_reference#service) correspond to RBAC roles that permit {{site.data.keyword.openshiftshort}} management activities within the cluster, such as for Kubernetes resources like pods and namespaces. For multiple roles, include a comma-separated list. Possible values are `Administrator`, `Operator`, `Editor`, and `Viewer` (platform access roles); and `Reader`, `Writer`, and `Manager` (service access roles).</td>
+    <td>Required. Enter the access role that you want the service ID to have to your {{site.data.keyword.openshiftshort}} cluster. <a href="/docs/openshift?topic=openshift-access_reference#iam_platform">platform access roles</a> permit cluster management activities such as creating worker nodes. <a href="/docs/openshift?topic=openshift-access_reference#service">service access roles</a> correspond to RBAC roles that permit {{site.data.keyword.openshiftshort}} management activities within the cluster, such as for Kubernetes resources like pods and namespaces. For multiple roles, include a comma-separated list. Possible values are <code>Administrator</code>, <code>Operator</code>, <code>Editor</code>, and <code>Viewer</code> (platform access roles); and <code>Reader</code>, <code>Writer</code>, and <code>Manager</code> (service access roles).</td>
     </tr>
     <tr>
-      <td><code>--service-instance <em>&lt;cluster_ID&gt;</em></code></td>
-      <td>To restrict the policy to a particular cluster, enter the cluster's ID. To get your cluster ID, run `ibmcloud oc clusters`.<p class="note">If you do not include the service instance, the access policy grants the service ID access to all your clusters, Kubernetes and {{site.data.keyword.openshiftshort}}. You can also scope the access policy to a region (`--region`) or resource group (`--resource-group-name`).</td>
+        <td><code>--service-instance <em>&lt;cluster_ID&gt;</em></code></td>
+        <td>To restrict the policy to a particular cluster, enter the cluster's ID. To get your cluster ID, run <code>ibmcloud oc clusters</code>.<p class="note">If you do not include the service instance, the access policy grants the service ID access to all your clusters, Kubernetes and {{site.data.keyword.openshiftshort}}. You can also scope the access policy to a region (<code>--region</code>) or resource group (<code>--resource-group-name</code>).</td>
     </tr>
     </tbody></table>
-3.  Create an API key for the service ID. Name the API key similar to your service ID, and include the service ID that you previously created, `<cluster_name>-id`. Be sure to give the API key a description that helps you retrieve the key later.<p class="important">Save your API key in a secure location. You cannot retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.</p>
+3. Create an API key for the service ID. Name the API key similar to your service ID, and include the service ID that you previously created, `<cluster_name>-id`. Be sure to give the API key a description that helps you retrieve the key later.<p class="important">Save your API key in a secure location. You cannot retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.</p>
     ```
     ibmcloud iam service-api-key-create <cluster_name>-key <service_ID> --description "API key for service ID <service_ID> in {{site.data.keyword.openshiftshort}} cluster <cluster_name>"
     ```
@@ -1032,23 +1051,27 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     UUID          ApiKey-222nn2n2-o3o3-3o3o-4p44-oo444o44o4o4
     ```
     {: screen}
-4.  Configure your cluster to add the service ID user to your cluster RBAC policies and to set your session context to your cluster server.
-    1.  Log in to {{site.data.keyword.cloud_notm}} with the service ID's API key credentials.
+
+4. Configure your cluster to add the service ID user to your cluster RBAC policies and to set your session context to your cluster server.
+    1. Log in to {{site.data.keyword.cloud_notm}} with the service ID's API key credentials.
         ```
         ibmcloud login --apikey <API_key>
         ```
         {: pre}
-    2.  Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the last file in the `KUBECONFIG` environment variable. **Note**: If you enabled the private cloud service endpoint and want to use it for the cluster context, include the `--endpoint private` flag. To use the private cloud service endpoint to connect to your cluster, you must be in your {{site.data.keyword.cloud_notm}} private network or connected to the private network through a [VPC VPN connection](/docs/vpc?topic=vpc-vpn-onprem-example), or for classic infrastructure, a [classic VPN connection](/docs/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl).
+
+    2. Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the last file in the `KUBECONFIG` environment variable. **Note**: If you enabled the private cloud service endpoint and want to use it for the cluster context, include the `--endpoint private` flag. To use the private cloud service endpoint to connect to your cluster, you must be in your {{site.data.keyword.cloud_notm}} private network or connected to the private network through a [VPC VPN connection](/docs/vpc?topic=vpc-vpn-onprem-example), or for classic infrastructure, a [classic VPN connection](/docs/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl).
         ```
         ibmcloud oc cluster config -c <cluster_name_or_ID> [--endpoint private]
         ```
         {: pre}
-5.  [Use the service ID's API key to log in to your {{site.data.keyword.openshiftshort}} cluster](#access_api_key). The username (`-u`) is `apikey` and the password (`-p`) is your API key value. To use the private cloud service endpoint, include the `--server=<private_service_endpoint>` flag.
+
+5. [Use the service ID's API key to log in to your {{site.data.keyword.openshiftshort}} cluster](#access_api_key). The username (`-u`) is `apikey` and the password (`-p`) is your API key value. To use the private cloud service endpoint, include the `--server=<private_service_endpoint>` flag.
     ```
     oc login -u apikey -p <API_key> [--server=<private_service_endpoint>]
     ```
     {: pre}
-6.  Verify that the service ID can perform the actions that you authorized.
+
+6. Verify that the service ID can perform the actions that you authorized.
 
     Example: If you assigned a `Reader` service access role, the service ID can list pods in your {{site.data.keyword.openshiftshort}} project.
     ```
@@ -1107,3 +1130,5 @@ Many cluster add-ons, plug-ins, and other third-party extensions use admission c
 **I need help with a broken webhook. What can I do?**
 
 See [Cluster cannot update because of broken webhook](/docs/containers?topic=containers-webhooks_update).
+
+

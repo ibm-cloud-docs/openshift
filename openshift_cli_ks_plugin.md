@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
 subcollection: openshift
 
 ---
-
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # {{site.data.keyword.openshiftlong_notm}} CLI
 {: #kubernetes-service-cli}
@@ -166,23 +164,23 @@ ibmcloud oc cluster addon disable debug-tool --cluster CLUSTER [-f]
 <dd>Optional: Force the command to run with no user prompts.</dd>
 </dl>
 
-#### `ibmcloud oc cluster addon disable image-key-synchronizer`
+#### <code>ibmcloud oc cluster addon disable image-key-synchronizer</code>
 {: #cs_cluster_addon_disable_image-key-synchronizer}
 
-Disable the add-on for the [Image Key synchronizer](/docs/openshift?topic=openshift-images#encrypted-images).
+Disable the add-on for the <a href="/docs/openshift?topic=openshift-images#encrypted-images">Image Key synchronizer</a>.
 {: shortdesc}
 
-```sh
+<code></code>`sh
 ibmcloud oc cluster addon Disable image-key-synchronizer --cluster CLUSTER [--version VERSION]
-```
+<code></code>`
 {: pre}
 
-**Supported infrastructure provider**:
+<strong>Supported infrastructure provider</strong>:
 * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-**Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+<strong>Minimum required permissions</strong>: <strong>Administrator</strong> platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-**Command options**:
+<strong>Command options</strong>:
 <dl>
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>Required: The name or ID of the cluster.</dd>
@@ -226,24 +224,24 @@ ibmcloud oc cluster addon disable kube-terminal --cluster CLUSTER [-f]
 <dd>Optional: Force the command to run with no user prompts.</dd>
 </dl>
 
-#### `ibmcloud oc cluster addon disable openshift-container-storage`
+#### <code>ibmcloud oc cluster addon disable openshift-container-storage</code>
 {: #cs_cluster_addon_disable_openshift-container-storage}
 
-Disable the [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc) add-on for {{site.data.keyword.openshiftshort}} version 4.7 or higher.
+Disable the <a href="/docs/openshift?topic=openshift-deploy-odf-vpc">OpenShift Data Foundation</a> add-on for {{site.data.keyword.openshiftshort}} version 4.7 or higher.
 {: shortdesc}
 
-```sh
+<code></code>`sh
 ibmcloud oc cluster addon disable openshift-container-storage --cluster CLUSTER [-f] [-q] 
-```
+<code></code>`
 {: pre}
 
-**Supported infrastructure provider**:
+<strong>Supported infrastructure provider</strong>:
 * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-**Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+<strong>Minimum required permissions</strong>: <strong>Administrator</strong> platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-**Command options**:
+<strong>Command options</strong>:
 <dl>
 <dt><code>-c, --cluster <em>CLUSTER</em></code></dt>
 <dd>Required: The name or ID of the cluster.</dd>
@@ -275,7 +273,7 @@ ibmcloud oc cluster addon disable static-route --cluster CLUSTER
 </br>
 
 
-### `ibmcloud oc cluster addon enable`
+### <code>ibmcloud oc cluster addon enable</code>
 {: #cs_cluster_addon_enable}
 
 Enable a managed add-on in an existing cluster. This command must be combined with one of the following subcommands for the managed add-on that you want to enable.
@@ -308,10 +306,10 @@ ibmcloud oc cluster addon enable debug-tool --cluster CLUSTER [--version VERSION
 </dl>
 
 **Example**:
-  ```
-  ibmcloud oc cluster addon enable debug-tool --cluster my_cluster
-  ```
-  {: pre}
+    ```
+    ibmcloud oc cluster addon enable debug-tool --cluster my_cluster
+    ```
+    {: pre}
 
 #### `ibmcloud oc cluster addon enable image-key-synchronizer`
 {: #cs_cluster_addon_enable_image-key-synchronizer}
@@ -340,10 +338,10 @@ ibmcloud oc cluster addon enable image-key-synchronizer --cluster CLUSTER [--ver
 </dl>
 
 **Example**:
-  ```
-  ibmcloud oc cluster addon enable image-key-synchronizer --cluster my_cluster
-  ```
-  {: pre}
+    ```
+    ibmcloud oc cluster addon enable image-key-synchronizer --cluster my_cluster
+    ```
+    {: pre}
 
 #### `ibmcloud oc cluster addon enable openshift-container-storage`
 {: #cs_cluster_addon_enable_openshift-container-storage}
@@ -441,7 +439,7 @@ ibmcloud oc cluster addon enable static-route --cluster CLUSTER [--version VERSI
 
 **Command options**:
 <dl>
-<dt>`--cluster <em>CLUSTER</em>`</dt>
+<dt><code>--cluster <em>CLUSTER</em></code></dt>
 <dd>Required: The name or ID of the cluster.</dd>
 
 <dt><code>--version <em>VERSION</em></code></dt>
@@ -451,24 +449,24 @@ ibmcloud oc cluster addon enable static-route --cluster CLUSTER [--version VERSI
 </br>
 
 
-### `ibmcloud oc cluster addon get`
+### <code>ibmcloud oc cluster addon get</code>
 {: #cs_cluster_addon_get}
 
 View the details of an installed add-on.
 {: shortdesc}
 
-```sh
+<code></code>`sh
 ibmcloud oc get --addon ADDON --cluster CLUSTER [--output OUTPUT] [-q]
-```
+<code></code>`
 {: pre}
 
-**Supported infrastructure provider**:
+<strong>Supported infrastructure provider</strong>:
 * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-**Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+<strong>Minimum required permissions</strong>: <strong>Viewer</strong> platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-**Command options**:
+<strong>Command options</strong>:
 <dl>
 <dt><code>--addon <em>ADDON</em></code></dt>
 <dd>Required: The name of the addon. To list installed add-ons, run `ibmcloud oc cluster addon ls`.</dd>
@@ -613,10 +611,10 @@ ibmcloud oc cluster addon versions [--addon ADD-ON_NAME] [--output json] [-q]
 
 **Example**:
 
-  ```
-  ibmcloud oc cluster addon versions --addon istio
-  ```
-  {: pre}
+    ```
+    ibmcloud oc cluster addon versions --addon istio
+    ```
+    {: pre}
 
 
 
@@ -764,7 +762,7 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--endpoint ENDPOINT_TYPE
 <dd>Optional: Download the TLS certificates and permission files for the Super User role. You can use the certs to automate tasks in a cluster without having to reauthenticate. The files are downloaded to `<user_home_directory>/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>-admin`.</dd>
 
 <dt><code>--endpoint <em>ENDPOINT_TYPE</em></code></dt>
-<dd>Optional: Specify the type of endpoint to use to connect to the cluster. If you do not specify this flag, the default service endpoint for your cluster is used.<ul><li><code>private</code>: If the private cloud service endpoint is enabled for your cluster, set to `private` to use the private cloud service endpoint for your cluster context. Note you must be in your {{site.data.keyword.cloud_notm}} private network or connected to the private network through a [VPC VPN connection](/docs/vpc?topic=vpc-vpn-onprem-example), or for classic infrastructure, a [classic VPN connection](/docs/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl).</li><li><code>link</code>: To connect to {{site.data.keyword.satellitelong_notm}} clusters from within the {{site.data.keyword.cloud_notm}} private network, set to `link` to use your {{site.data.keyword.satelliteshort}} location's Link endpoint for the cluster context. If you specify this flag, you must also specify the `--admin` flag. If you are not connected to the {{site.data.keyword.cloud_notm}} private network, this flag is not required because the cluster service URL is used.</li></ul></dd>
+<dd>Optional: Specify the type of endpoint to use to connect to the cluster. If you do not specify this flag, the default service endpoint for your cluster is used.<ul><li><code>private</code>: If the private cloud service endpoint is enabled for your cluster, set to <code>private</code> to use the private cloud service endpoint for your cluster context. Note you must be in your {{site.data.keyword.cloud_notm}} private network or connected to the private network through a <a href="/docs/vpc?topic=vpc-vpn-onprem-example">VPC VPN connection</a>, or for classic infrastructure, a <a href="/docs/iaas-vpn?topic=iaas-vpn-getting-started">classic VPN connection</a> or <a href="/docs/dl?topic=dl-get-started-with-ibm-cloud-dl">{{site.data.keyword.dl_full_notm}}</a>.</li><li><code>link</code>: To connect to {{site.data.keyword.satellitelong_notm}} clusters from within the {{site.data.keyword.cloud_notm}} private network, set to <code>link</code> to use your {{site.data.keyword.satelliteshort}} location's Link endpoint for the cluster context. If you specify this flag, you must also specify the <code>--admin</code> flag. If you are not connected to the {{site.data.keyword.cloud_notm}} private network, this flag is not required because the cluster service URL is used.</li></ul></dd>
 
 <dt><code>--network</code></dt>
 <dd>Optional: Download the Calico configuration file, TLS certificates, and permission files that are required to run <code>calicoctl</code> commands in your cluster. **Note**: This option cannot be used with the <code>--yaml</code> option.</dd>
@@ -1080,10 +1078,10 @@ ibmcloud oc cluster image-security disable --cluster CLUSTER [-q]
 </dl>
 
 **Example**:
-  ```
-  ibmcloud oc cluster image-security disable --cluster my_cluster
-  ```
-  {: pre}
+    ```
+    ibmcloud oc cluster image-security disable --cluster my_cluster
+    ```
+    {: pre}
 
 ### `ibmcloud oc cluster image-security enable`
 {: #cs-image-security-enable}
@@ -1115,10 +1113,10 @@ ibmcloud oc cluster image-security enable --cluster CLUSTER [-f] [-q]
 </dl>
 
 **Example**:
-  ```
-  ibmcloud oc cluster image-security enable --cluster my_cluster
-  ```
-  {: pre}
+    ```
+    ibmcloud oc cluster image-security enable --cluster my_cluster
+    ```
+    {: pre}
 
 ### `ibmcloud oc cluster ls`
 {: #cs_clusters}
@@ -2087,32 +2085,34 @@ Rebooting a worker node can cause data corruption on the worker node. Use this c
 Before you reboot your worker node, make sure that you have enough capacity in other worker nodes to reschedule the pods on the worker node. Rescheduling pods helps to avoid downtime for your app or data corruption on your worker node.
 
 1. List all worker nodes in your cluster and note the **name** of the worker node that you want to remove.
-   ```
-   oc get nodes
-   ```
-   {: pre}
+    ```
+    oc get nodes
+    ```
+    {: pre}
 
-   The **name** that is returned in this command is the private IP address that is assigned to your worker node. You can find more information about your worker node when you run the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and look for the worker node with the same **Private IP** address.
+    The **name** that is returned in this command is the private IP address that is assigned to your worker node. You can find more information about your worker node when you run the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and look for the worker node with the same **Private IP** address.
 
 2. Force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster. The worker node is also cordoned, or marked as unavailable for future pod scheduling. Replace `<worker_name>` with the private IP address of the worker node that you previously retrieved.
-  ```
-  oc adm drain <worker_name>
-  ```
-  {: pre}
-  This process can take a few minutes.
+    ```
+    oc adm drain <worker_name>
+    ```
+    {: pre}
+
+    This process can take a few minutes.
 3. Reboot the worker node. Use the worker ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command.
-  ```
-  ibmcloud oc worker reboot --cluster <cluster_name_or_ID> --worker <worker_name_or_ID>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc worker reboot --cluster <cluster_name_or_ID> --worker <worker_name_or_ID>
+    ```
+    {: pre}
+
 4. Wait about 5 minutes before you make your worker node available for pod scheduling to ensure that the reboot is finished. During the reboot, the state of your worker node does not change. The reboot of a worker node is usually completed in a few seconds.
 5. Make your worker node available for pod scheduling. Use the **name** for your worker node that is returned from the `oc get nodes` command.
-  ```
-  oc adm uncordon <worker_name>
-  ```
-  {: pre}
+    ```
+    oc adm uncordon <worker_name>
+    ```
+    {: pre}
 
-  </br>
+    </br>
 
 ```sh
 ibmcloud oc worker reboot [--hard] --cluster CLUSTER --worker WORKER_ID [--skip-master-healthcheck] [-f] [-q]
@@ -2168,18 +2168,19 @@ Reloading a worker node applies patch version updates to your worker node, but n
 Before you reload your worker node, make sure that you have enough capacity in other worker nodes to reschedule the pods on the worker node. Rescheduling pods helps to avoid downtime for your app or data corruption on your worker node.
 
 1. List all worker nodes in your cluster and note the **name** of the worker node that you want to reload.
-   ```sh
-   oc get nodes
-   ```
-   {: pre}
+    ```sh
+    oc get nodes
+    ```
+    {: pre}
 
-   The **name** that is returned in this command is the private IP address that is assigned to your worker node. You can find more information about your worker node when you run the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and look for the worker node with the same **Private IP** address.
+    The **name** that is returned in this command is the private IP address that is assigned to your worker node. You can find more information about your worker node when you run the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and look for the worker node with the same **Private IP** address.
 
 2. Reload the worker node. As part of the reload process, the pods that run on the worker node are drained and rescheduled onto remaining worker nodes in the cluster. The worker node is also cordoned, or marked as unavailable for future pod scheduling. Use the worker node ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command.
     ```
     ibmcloud oc worker reload --cluster <cluster_name_or_ID> --worker <worker_name_or_ID>
     ```
     {: pre}
+
 3. Wait for the reload to complete. When your worker node is in a Normal state, the worker node becomes available for pod scheduling again.
 </br>
 
@@ -2237,23 +2238,24 @@ You can also use this command to update the Kubernetes version of the worker nod
 Before you begin, make sure that your cluster has enough other worker nodes so that your pods can be rescheduled and continue to run.
 
 1. List all worker nodes in your cluster and note the **name** of the worker node that you want to replace.
-   ```sh
-   oc get nodes
-   ```
-   {: pre}
+    ```sh
+    oc get nodes
+    ```
+    {: pre}
 
-   The **name** that is returned in this command is the private IP address that is assigned to your worker node. You can find more information about your worker node when you run the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and look for the worker node with the same **Private IP** address.
+    The **name** that is returned in this command is the private IP address that is assigned to your worker node. You can find more information about your worker node when you run the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and look for the worker node with the same **Private IP** address.
 
 2. Replace the worker node. As part of the replace process, the pods that run on the worker node are drained and rescheduled onto remaining worker nodes in the cluster. The worker node is also cordoned, or marked as unavailable for future pod scheduling. Use the worker node ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command.
-   ```sh
-   ibmcloud oc worker replace --cluster <cluster_name_or_ID> --worker <worker_node_ID>
-   ```
-   {: pre}
+    ```sh
+    ibmcloud oc worker replace --cluster <cluster_name_or_ID> --worker <worker_node_ID>
+    ```
+    {: pre}
+
 3. Verify that the worker node is replaced.
-   ```sh
-   ibmcloud oc worker ls --cluster <cluster_name_or_ID>
-   ```
-   {: pre}
+    ```sh
+    ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+    ```
+    {: pre}
 
 </br>
 ```sh
@@ -2485,32 +2487,32 @@ ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <clu
 
 </dl>
 
-**Example**:
-```sh
+<strong>Example</strong>:
+<code></code>`sh
 ibmcloud oc worker-pool create vpc-gen2 --name my_pool --cluster my_cluster --flavor bx2.4x16 --size-per-zone 3
-```
+<code></code>`
 {: pre}
 
 </br>
 
-### `ibmcloud oc worker-pool get`
+### <code>ibmcloud oc worker-pool get</code>
 {: #cs_worker_pool_get}
 
 View the details of a worker pool.
 {: shortdesc}
 
-```sh
+<code></code>`sh
 ibmcloud oc worker-pool get --worker-pool WORKER_POOL --cluster CLUSTER [--output json] [-q]
-```
+<code></code>`
 {: pre}
 
-**Supported infrastructure provider**:
+<strong>Supported infrastructure provider</strong>:
 * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-**Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+<strong>Minimum required permissions</strong>: <strong>Viewer</strong> platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-**Command options**:
+<strong>Command options</strong>:
 <dl>
 <dt><code>-p, --worker-pool <em>WORKER_POOL</em></code></dt>
 <dd>Required: The name of the worker node pool that you want to view the details of. To list available worker pools, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`.</dd>
@@ -3085,33 +3087,33 @@ ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER --worker-pool WORKER_
 
 **Usage**:
 1. Check the VLANs that are available in your cluster.
-  ```sh
-  ibmcloud oc cluster get --cluster <cluster_name_or_ID> --show-resources
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc cluster get --cluster <cluster_name_or_ID> --show-resources
+    ```
+    {: pre}
 
-  Example output:
-  ```sh
-  Subnet VLANs
-  VLAN ID   Subnet CIDR         Public   User-managed
-  229xxxx   169.xx.xxx.xxx/29   true     false
-  229xxxx   10.xxx.xx.x/29      false    false
-  ```
-  {: screen}
+    Example output:
+    ```sh
+    Subnet VLANs
+    VLAN ID   Subnet CIDR         Public   User-managed
+    229xxxx   169.xx.xxx.xxx/29   true     false
+    229xxxx   10.xxx.xx.x/29      false    false
+    ```
+    {: screen}
 
 2. Check that the public and private VLAN IDs that you want to use are compatible. To be compatible, the **Router** must have the same pod ID. Private VLAN routers always begin with <code>bcr</code> (back-end router) and public VLAN routers always begin with <code>fcr</code> (front-end router). When you create a cluster and specify the public and private VLANs, the number and letter combination after those prefixes must match.
-  ```sh
-  ibmcloud oc vlan ls --zone <zone>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc vlan ls --zone <zone>
+    ```
+    {: pre}
 
-  In the example output, note that **Router** pod IDs match: `01a` and `01a`. If one pod ID was `01a` and the other was `02a`, you cannot set these public and private VLAN IDs for your worker pool.
-  ```sh
-  ID        Name   Number   Type      Router         Supports Virtual Workers
-  229xxxx          1234     private   bcr01a.dal12   true
-  229xxxx          5678     public    fcr01a.dal12   true
-  ```
-  {: screen}
+    In the example output, note that **Router** pod IDs match: `01a` and `01a`. If one pod ID was `01a` and the other was `02a`, you cannot set these public and private VLAN IDs for your worker pool.
+    ```sh
+    ID        Name   Number   Type      Router         Supports Virtual Workers
+    229xxxx          1234     private   bcr01a.dal12   true
+    229xxxx          5678     public    fcr01a.dal12   true
+    ```
+    {: screen}
 
 3. If you do not have any VLANs available, you can [order new VLANs](/docs/vlans?topic=vlans-ordering-premium-vlans#ordering-premium-vlans).
 
@@ -3664,15 +3666,16 @@ ibmcloud oc ingress alb update --cluster CLUSTER [--alb ALB1_ID --alb ALB2_ID ..
 
 **Example commands:**
 * To update all ALB pods in the cluster:
-  ```sh
-  ibmcloud oc ingress alb update -c mycluster --version 0.47.0_1434_iks
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc ingress alb update -c mycluster --version 0.47.0_1434_iks
+    ```
+    {: pre}
+
 * To update the ALB pods for one or more specific ALBs:
-  ```sh
-  ibmcloud oc ingress alb update -c mycluster --version 0.47.0_1434_iks --alb public-crdf253b6025d64944ab99ed63bb4567b6-alb1
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc ingress alb update -c mycluster --version 0.47.0_1434_iks --alb public-crdf253b6025d64944ab99ed63bb4567b6-alb1
+    ```
+    {: pre}
 
 ### `ibmcloud oc ingress alb versions`
 {: #cs_alb_versions}
@@ -5597,8 +5600,8 @@ ibmcloud oc api --endpoint ENDPOINT [--insecure] [--skip-ssl-validation] [--api-
 **Command options**:
 <dl>
 <dt><code>--endpoint <em>ENDPOINT</em></code></dt>
-  <dd>The {{site.data.keyword.containerlong_notm}} API endpoint. <strong>Note</strong>: This endpoint is different than the {{site.data.keyword.cloud_notm}} endpoints. This value is required to set the API endpoint.
-   </dd>
+    <dd>The {{site.data.keyword.containerlong_notm}} API endpoint. <strong>Note</strong>: This endpoint is different than the {{site.data.keyword.cloud_notm}} endpoints. This value is required to set the API endpoint.
+    </dd>
 
 <dt><code>--insecure</code></dt>
 <dd>Allow an insecure HTTP connection. This flag is optional.</dd>
@@ -5684,15 +5687,16 @@ ibmcloud oc init [--host HOST] [--insecure] [-p] [-u] [-q]
 
 **Examples**:
 *  Example to target the US South regional endpoint:
-  ```
-  ibmcloud oc init --host https://us-south.containers.cloud.ibm.com
-  ```
-  {: pre}
+    ```
+    ibmcloud oc init --host https://us-south.containers.cloud.ibm.com
+    ```
+    {: pre}
+
 *  Example to target the global endpoint again:
-  ```
-  ibmcloud oc init --host https://containers.cloud.ibm.com
-  ```
-  {: pre}
+    ```
+    ibmcloud oc init --host https://containers.cloud.ibm.com
+    ```
+    {: pre}
 
 <br />
 
@@ -5736,7 +5740,8 @@ To use this command to prepare your automation scripts for the release of versio
     ibmcloud oc script update ./mytestscript.sh
     ```
     {: pre}
-2.  Review the proposed changes to the script in the difference that is shown in the command line STDOUT. Example output:
+
+2. Review the proposed changes to the script in the difference that is shown in the command line STDOUT. Example output:
     ```
     --- a/script-test-2
     +++ b/script-test-2
@@ -5753,17 +5758,20 @@ To use this command to prepare your automation scripts for the release of versio
     +ibmcloud ks subnets -l sao01
     ```
     {: screen}
+
 3. To rewrite the script with the proposed updates, run the command again with the `--in-place` flag.
     ```
     ibmcloud oc script update ./mytestscript.sh --in-place
     ```
     {: pre}
+
 4. Search for and address any commands that are flagged in the script with `# WARNING` messages. For example, some commands are deprecated and do not have a replacement command.
 5. Within the script or the environment where the script is run, set the `IKS_BETA_VERSION` environment variable to `1.0`.
     ```
     export IKS_BETA_VERSION=1.0
     ```
     {: pre}
+
 6. Test your automation with the updated script. Note that you might incur charges if your automation includes creating clusters.
 7. Update all of your scripts.
 8. Update your CLI plug-in to version 1.0.
@@ -6175,6 +6183,8 @@ ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER --worker-pool WORKER_
 ibmcloud oc zone add satellite --zone myzone2 --cluster my_cluster -w pool1 -w pool2
 ```
 {: pre}
+
+
 
 
 

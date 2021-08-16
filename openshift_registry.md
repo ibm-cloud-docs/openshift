@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
 subcollection: openshift
 
 ---
-
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 
 # Setting up an image registry
@@ -125,8 +123,8 @@ Your app's images must be stored in a container registry that your cluster can a
 <table summary="The rows are read left to right, with the type of registry in column one and the description of the registry in column two.">
     <caption>Choosing an image registry solution</caption>
     <thead>
-      <th>Registry</th>
-      <th>Description</th>
+        <th>Registry</th>
+        <th>Description</th>
     </thead>
     <tbody>
     <tr>
@@ -137,27 +135,27 @@ Your app's images must be stored in a container registry that your cluster can a
         <li>Images can be shared across all projects in the cluster, with access that is controlled through RBAC roles.</li>
         <li>Integrating the internal registry with other Red Hat products like CloudForms for extended features such as vulnerability scanning.</li>
         <li>Option to expose the internal registry with a route so that users can pull images from the registry over the public network.</li>
-        <li>Option to set up the internal registry to [pull](#imagestream_registry) images from or [push](#builds_registry) images to a private registry such as {{site.data.keyword.registrylong_notm}}.</ul>
-        <br>For more information, see [Using the internal registry](#openshift_internal_registry).</td>
+        <li>Option to set up the internal registry to <a href="#imagestream_registry">pull</a> images from or <a href="#builds_registry">push</a> images to a private registry such as {{site.data.keyword.registrylong_notm}}.</ul>
+        <br>For more information, see <a href="#openshift_internal_registry">Using the internal registry</a>.</td>
     </tr>
     <tr>
         <td>Private registry</td>
         <td>Private registries are a good choice to protect your images from being used and changed by unauthorized users. Private registries must be set up by the cluster administrator to make sure that access, storage quotas, image trust and other features work as intended.<br><br>
-        By default, your [{{site.data.keyword.openshiftshort}} clusters are integrated with the private {{site.data.keyword.registrylong_notm}}](#openshift_iccr) through image pull secrets that are set up in the `default` project. {{site.data.keyword.registrylong_notm}} is a highly available, multi-tenant private registry to store your own images. You can also pull IBM-provided images from the global `icr.io` registry, and licensed software from the entitled registry. With {{site.data.keyword.registrylong_notm}}, you can manage images for multiple clusters with seamless integration with {{site.data.keyword.cloud_notm}} IAM and billing.<br><br>
+        By default, your <a href="#openshift_iccr">{{site.data.keyword.openshiftshort}} clusters are integrated with the private {{site.data.keyword.registrylong_notm}}</a> through image pull secrets that are set up in the <code>default</code> project. {{site.data.keyword.registrylong_notm}} is a highly available, multi-tenant private registry to store your own images. You can also pull IBM-provided images from the global <code>icr.io</code> registry, and licensed software from the entitled registry. With {{site.data.keyword.registrylong_notm}}, you can manage images for multiple clusters with seamless integration with {{site.data.keyword.cloud_notm}} IAM and billing.<br><br>
         Advantages of using {{site.data.keyword.registrylong_notm}} with the internal registry:<ul>
         <li>Local image caching for faster builds via the internal registry.</li>
         <li>Deployments in other projects can refer to the image stream so that you do not need to copy pull secrets to each project.</li>
         <li>Sharing images across multiple clusters without needing to push images to multiple registries.</li>
-        <li>[Automatically scanning](/docs/Registry?topic=va-va_index) the vulnerability of images.</li>
-        <li>Controlling access through [{{site.data.keyword.cloud_notm}} IAM policies](/docs/Registry?topic=Registry-user) and [separate regional registries](/docs/Registry?topic=Registry-registry_overview#registry_regions).</li>
-        <li>[Retaining images](/docs/Registry?topic=Registry-registry_retention) without requiring storage space in your cluster or an attached storage device. You can also set policies to manage the quantity of images to prevent them from taking up too much space.</li>
+        <li><a href="/docs/Registry?topic=va-va_index">Automatically scanning</a> the vulnerability of images.</li>
+        <li>Controlling access through <a href="/docs/Registry?topic=Registry-user">{{site.data.keyword.cloud_notm}} IAM policies</a> and <a href="/docs/Registry?topic=Registry-registry_overview#registry_regions">separate regional registries</a>.</li>
+        <li><a href="/docs/Registry?topic=Registry-registry_retention">Retaining images</a> without requiring storage space in your cluster or an attached storage device. You can also set policies to manage the quantity of images to prevent them from taking up too much space.</li>
         <li>Version 4 clusters on VPC infrastructure: Using the private registry service endpoint so that clusters that use only a private cloud service endpoint can still access the registry.</li>
-        <li>[Setting storage and image pull traffic quotas](/docs/Registry?topic=Registry-registry_quota) to better control image storage, usage, and billing.</li>
-        <li>Pulling licensed IBM content from the [entitled registry](/docs/openshift?topic=openshift-registry#secret_entitled_software).</li></ul>
+        <li><a href="/docs/Registry?topic=Registry-registry_quota">Setting storage and image pull traffic quotas</a> to better control image storage, usage, and billing.</li>
+        <li>Pulling licensed IBM content from the <a href="/docs/openshift?topic=openshift-registry#secret_entitled_software">entitled registry</a>.</li></ul>
         <br>To get started, see the following topics:<ul>
-        <li>[Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started).</li>
-        <li>[Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](#imagestream_registry)</li>
-        <li>[Using {{site.data.keyword.registrylong_notm}}](#openshift_iccr).</li></ul></td>
+        <li><a href="/docs/Registry?topic=Registry-getting-started">Getting started with {{site.data.keyword.registrylong_notm}}</a>.</li>
+        <li><a href="#imagestream_registry">Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream</a></li>
+        <li><a href="#openshift_iccr">Using {{site.data.keyword.registrylong_notm}}</a>.</li></ul></td>
     </tr>
     <tr>
         <td>Public registry</td>
@@ -165,7 +163,7 @@ Your app's images must be stored in a container registry that your cluster can a
         <li>Pushing and pulling images on the public network.</li>
         <li>Quick testing of a container across multiple cloud providers.</li>
         <li>Do not need enterprise-grade features such as vulnerability scanning or access management.</li></ul>
-        <br>For more information, see the public registry's documentation, such as [Quay ![External link icon](../icons/launch-glyph.svg "External link icon")](https://quay.io/) or [Docker Hub ![External link icon](../icons/launch-glyph.svg "External link icon")](https://hub.docker.com/).</td>
+        <br>For more information, see the public registry's documentation, such as <a href="https://quay.io/">Quay</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> or <a href="https://hub.docker.com/">Docker Hub</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</td>
     </tr>
     </tbody>
 </table>
@@ -208,6 +206,7 @@ To view volume details including the storage class and size, you can describe th
     oc describe pvc -n openshift-image-registry image-registry-storage
     ```
     {: pre}
+
 *   **Version 3**:
     ```
     oc describe pvc registry-backing -n default
@@ -229,19 +228,21 @@ You might store the internal registry images locally in the `emptyDir` of the wo
 Keep in mind that this data is not persistent, and if the pod or worker node is restarted, the stored data is deleted and unrecoverable.
 {: important}
 
-1.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-2.  [Update the image registry operator configmap](https://docs.openshift.com/container-platform/4.6/registry/configuring_registry_storage/configuring-registry-storage-baremetal.html#installation-registry-storage-non-production_configuring-registry-storage-baremetal){: external} to set the storage to use the `emptyDir` of the worker node.
+1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+2. [Update the image registry operator configmap](https://docs.openshift.com/container-platform/4.6/registry/configuring_registry_storage/configuring-registry-storage-baremetal.html#installation-registry-storage-non-production_configuring-registry-storage-baremetal){: external} to set the storage to use the `emptyDir` of the worker node.
     ```
     oc patch configs.imageregistry.operator.openshift.io/cluster --type merge --patch '{"spec":{"storage":{"emptyDir":{}}}}'
     ```
     {: pre}
-3.  If the [image registry operator management state](https://docs.openshift.com/container-platform/4.6/registry/configuring-registry-operator.html#registry-operator-configuration-resource-overview_configuring-registry-operator){: external} is set to `Unmanaged`, such as in {{site.data.keyword.satelliteshort}} clusters, update the management state to `Managed`. Now, the operator updates the internal registry pod.
+
+3. If the [image registry operator management state](https://docs.openshift.com/container-platform/4.6/registry/configuring-registry-operator.html#registry-operator-configuration-resource-overview_configuring-registry-operator){: external} is set to `Unmanaged`, such as in {{site.data.keyword.satelliteshort}} clusters, update the management state to `Managed`. Now, the operator updates the internal registry pod.
     ```
     oc patch configs.imageregistry.operator.openshift.io/cluster --type merge -p '{"spec":{"managementState":"Managed"}}'
     ```
     {: pre}
-4.  Get the details of the internal registry pod so that you can verify your updates.
-    1.  Check that the `image-registry` pod is running and that a pod runs per worker node in the cluster.
+
+4. Get the details of the internal registry pod so that you can verify your updates.
+    1. Check that the `image-registry` pod is running and that a pod runs per worker node in the cluster.
         ```
         oc get pods -n openshift-image-registry
         ```
@@ -257,7 +258,8 @@ Keep in mind that this data is not persistent, and if the pod or worker node is 
         node-ca-p2d7j                                      1/1     Running   0          113s
         ```
         {: screen}
-    2.  Get the public IP address of the **Node** that the `image-registry` pod runs on.
+
+    2. Get the public IP address of the **Node** that the `image-registry` pod runs on.
         ```
         oc describe pod -n openshift-image-registry <image-registry-pod> | grep Node
         ```
@@ -271,8 +273,8 @@ Keep in mind that this data is not persistent, and if the pod or worker node is 
 
         If the worker node IP address is private, run `ibmcloud oc worker ls -c <cluster> | grep <private_IP>` and note the corresponding public IP address.
         {: tip}
-    
-    3.  Get the **UID** of the `image-registry` pod in the `metadata.uid` section in the pod YAML (not the UID of the replica set in the `metadata.ownerReferences.uid` section).
+
+    3. Get the **UID** of the `image-registry` pod in the `metadata.uid` section in the pod YAML (not the UID of the replica set in the `metadata.ownerReferences.uid` section).
         ```
         oc get pod -n openshift-image-registry <image-registry-pod> -o yaml
         ```
@@ -287,17 +289,20 @@ Keep in mind that this data is not persistent, and if the pod or worker node is 
         ...
         ```
         {: screen}
-5.  Verify that the internal registry stores data to the `emptyDir` of the worker node.
-    1.  [Access the registry directly from the cluster](https://docs.openshift.com/container-platform/4.6/registry/accessing-the-registry.html#registry-accessing-directly_accessing-the-registry){: external}, using the worker node that you previously retrieved. Follow the steps to push a test image to the internal registry.
+
+5. Verify that the internal registry stores data to the `emptyDir` of the worker node.
+    1. [Access the registry directly from the cluster](https://docs.openshift.com/container-platform/4.6/registry/accessing-the-registry.html#registry-accessing-directly_accessing-the-registry){: external}, using the worker node that you previously retrieved. Follow the steps to push a test image to the internal registry.
 
         To complete these steps in the {{site.data.keyword.openshiftshort}} documentation, you need the `podman` CLI tool. Your worker nodes might not have this CLI tool by default. See the [Podman installation guide](https://podman.io/getting-started/installation.html){: external} for RHEL 7.
         {: tip}
-    2.  Navigate to the internal registry pod folder that saves to the `emptyDir`. For `<pod_uid>`, use the pod **UID** that you previously retrieved.
+
+    2. Navigate to the internal registry pod folder that saves to the `emptyDir`. For `<pod_uid>`, use the pod **UID** that you previously retrieved.
         ```
         cd var/lib/kubelet/pods/<pod_uid>/volumes/kubernetes.io~empty-dir/registry-storage/docker/registry/v2/repositories/openshift
         ```
         {: pre}
-    3.  Verify that your image is in repository directory.
+
+    3. Verify that your image is in repository directory.
         ```
         ls
         ```
@@ -328,7 +333,7 @@ Before you begin:
 
 To use the internal registry, set up a public route to access the registry. Then, create an image pull secret that includes the credentials to access the registry so that deployments in other projects can pull images from this registry.
 
-1.  From the `openshift-image-registry` project, make sure that the `image-registry` service exists for the internal registry.
+1. From the `openshift-image-registry` project, make sure that the `image-registry` service exists for the internal registry.
     ```
     oc get svc -n openshift-image-registry
     ```
@@ -341,23 +346,27 @@ To use the internal registry, set up a public route to access the registry. Then
     image-registry-operator   ClusterIP      None             <none>          60000/TCP                     36d
     ```
     {: screen}
-2.  Create a secured route for the `image-registry` service that uses `reencrypt` TLS termination. With re-encryption, the router terminates the TLS connection with a certificate, and then re-encrypts the connection to the internal registry with a different certificate. With this approach, the full path of the connection between the user and the internal registry is encrypted. To provide your own custom domain name, include the `--hostname` flag.
+
+2. Create a secured route for the `image-registry` service that uses `reencrypt` TLS termination. With re-encryption, the router terminates the TLS connection with a certificate, and then re-encrypts the connection to the internal registry with a different certificate. With this approach, the full path of the connection between the user and the internal registry is encrypted. To provide your own custom domain name, include the `--hostname` flag.
     ```
     oc create route reencrypt --service=image-registry -n openshift-image-registry
     ```
     {: pre}
-3.  Retrieve the hostname (**HOST/PORT**) and the **PORT** that were assigned to the `image-registry` route.
+
+3. Retrieve the hostname (**HOST/PORT**) and the **PORT** that were assigned to the `image-registry` route.
     ```
     oc get route image-registry -n openshift-image-registry
     ```
     {: pre}
+
     Example output:
     ```
     NAME              HOST/PORT                                                                                                  PATH      SERVICES          PORT       TERMINATION   WILDCARD
     image-registry   image-registry-openshift-image-registry.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud             image-registry   5000-tcp   reencrypt     None
     ```
     {: screen}
-4.  Edit the route to set the [load balancing strategy](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#load-balancing){: external} to `source` so that the same client IP address reaches the same server, as in a passthrough route setup. You can set the strategy by adding an annotation in the `metadata.annotations` section: `haproxy.router.openshift.io/balance: source`. You can edit the configuration file from the **{{site.data.keyword.openshiftshort}} Application Console** or in your command line by running the following command.
+
+4. Edit the route to set the [load balancing strategy](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#load-balancing){: external} to `source` so that the same client IP address reaches the same server, as in a passthrough route setup. You can set the strategy by adding an annotation in the `metadata.annotations` section: `haproxy.router.openshift.io/balance: source`. You can edit the configuration file from the **{{site.data.keyword.openshiftshort}} Application Console** or in your command line by running the following command.
     ```
     oc edit route image-registry -n openshift-image-registry
     ```
@@ -374,30 +383,34 @@ To use the internal registry, set up a public route to access the registry. Then
     ```
     {: screen}
 
-5.  If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, [allow access to the route subdomain](/docs/openshift?topic=openshift-vpc-firewall#openshift-registry) that you create for the internal registry in the following steps.
+5. If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, [allow access to the route subdomain](/docs/openshift?topic=openshift-vpc-firewall#openshift-registry) that you create for the internal registry in the following steps.
 
-6.  Log in to the internal registry by using the route as the hostname.
+6. Log in to the internal registry by using the route as the hostname.
     ```
     docker login -u $(oc whoami) -p $(oc whoami -t) image-registry-openshift-image-registry.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud
     ```
     {: pre}
-7.  Now that you are logged in, try pushing a sample `hello-world` app to the internal registry.
-    1.  Pull the `hello-world` image from DockerHub, or build an image on your local machine.
+
+7. Now that you are logged in, try pushing a sample `hello-world` app to the internal registry.
+    1. Pull the `hello-world` image from DockerHub, or build an image on your local machine.
         ```
         docker pull hello-world
         ```
         {: pre}
-    2.  Tag the local image with the hostname of your internal registry, the project that you want to deploy the image to, and the image name and tag.
+
+    2. Tag the local image with the hostname of your internal registry, the project that you want to deploy the image to, and the image name and tag.
         ```
         docker tag hello-world:latest image-registry-openshift-image-registry.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud/<project>/<image_name>:<tag>
         ```
         {: pre}
-    3.  Push the image to your cluster's internal registry.
+
+    3. Push the image to your cluster's internal registry.
         ```
         docker push image-registry-openshift-image-registry.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud/<project>/<image_name>:<tag>
         ```
         {: pre}
-    4.  Verify that the image is added to the {{site.data.keyword.openshiftshort}} image stream.
+
+    4. Verify that the image is added to the {{site.data.keyword.openshiftshort}} image stream.
         ```
         oc get imagestream
         ```
@@ -409,26 +422,30 @@ To use the internal registry, set up a public route to access the registry. Then
         hello-world   image-registry-openshift-image-registry.svc:5000/default/hello-world   latest    7 hours ago
         ```
         {: screen}
-8.  To enable deployments in your project to pull images from the internal registry, create an image pull secret in your project that holds the credentials to access your internal registry. Then, add the image pull secret to the default service account for each project.
-    1.  List the image pull secrets that the default service account uses, and note the secret that begins with `default-dockercfg`.
+
+8. To enable deployments in your project to pull images from the internal registry, create an image pull secret in your project that holds the credentials to access your internal registry. Then, add the image pull secret to the default service account for each project.
+    1. List the image pull secrets that the default service account uses, and note the secret that begins with `default-dockercfg`.
         ```
         oc describe sa default
         ```
         {: pre}
+
         Example output:
         ```
         ...
         Image pull secrets:
-                     all-icr-io
-                     default-dockercfg-mpcn4
+all-icr-io
+default-dockercfg-mpcn4
         ...
         ```
         {: screen}
-    2.  Get the encoded secret information from the `data` field of the configuration file.
+
+    2. Get the encoded secret information from the `data` field of the configuration file.
         ```
         oc get secret <default-dockercfg-name> -o yaml
         ```
         {: pre}
+
         Example output:
         ```
         apiVersion: v1
@@ -436,17 +453,20 @@ To use the internal registry, set up a public route to access the registry. Then
           .dockercfg: ey...=
         ```
         {: screen}
-    3.  Decode the value of the `data` field.
+
+    3. Decode the value of the `data` field.
         ```
         echo "<ey...=>" | base64 -D
         ```
         {: pre}
+
         Example output:
         ```
         {"172.21.xxx.xxx:5000":{"username":"serviceaccount","password":"eyJ...
         ```
         {: screen}
-    4.  Create a new image pull secret for the internal registry.
+
+    4. Create a new image pull secret for the internal registry.
         * **secret_name**: Give your image pull secret a name, such as `internal-registry`.
         * **--namespace**: Enter the project to create the image pull secret in, such as `default`.
         * **--docker-server**: Instead of the internal service IP address (`172.21.xxx.xxx:5000`), enter the hostname of the `image-registry` route with the port (`image-registry-openshift-image-registry.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud:5000`).
@@ -458,12 +478,14 @@ To use the internal registry, set up a public route to access the registry. Then
         oc create secret image-registry internal-registry --namespace default --docker-server image-registry-openshift-image-registry.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud:5000 --docker-username serviceaccount --docker-password <eyJ...> --docker-email a@b.c
         ```
         {: pre}
-    5.  Add the image pull secret to the default service account of your project.
+
+    5. Add the image pull secret to the default service account of your project.
         ```
         oc patch -n <namespace_name> serviceaccount/default --type='json' -p='[{"op":"add","path":"/imagePullSecrets/-","value":{"name":"<image_pull_secret_name>"}}]'
         ```
         {: pre}
-    6.  Repeat these steps for each project that you want to pull images from the internal registry.
+
+    6. Repeat these steps for each project that you want to pull images from the internal registry.
 
 Now that you set up the internal registry with an accessible route, you can log in, push, and pull images to the registry. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.6/registry/accessing-the-registry.html){: external}.
 
@@ -481,18 +503,20 @@ If you update your image in {{site.data.keyword.registrylong_notm}}, the image i
 Want to learn more about how builds, image streams, and the internal registry work together? Read the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.6/registry/architecture-component-imageregistry.html){: external}, or check out [this blog on managing container images](https://cloudowski.com/articles/why-managing-container-images-on-openshift-is-better-than-on-kubernetes/){: external}.
 {: tip}
 
-1.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-2.  Switch to the `default` project to pull your image into the image stream. The `default` project is already set up with credentials to access the `icr.io` registries.
+1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+2. Switch to the `default` project to pull your image into the image stream. The `default` project is already set up with credentials to access the `icr.io` registries.
     ```
     oc project default
     ```
     {: pre}
-3.  List the available images in your {{site.data.keyword.registrylong_notm}}. Note the **Repository** and **Tag** of the image that you want to pull into the internal registry of your {{site.data.keyword.openshiftshort}} cluster .
+
+3. List the available images in your {{site.data.keyword.registrylong_notm}}. Note the **Repository** and **Tag** of the image that you want to pull into the internal registry of your {{site.data.keyword.openshiftshort}} cluster .
     ```
     ibmcloud cr images
     ```
     {: pre}
-4.  Tag the image to pull it from your {{site.data.keyword.registrylong_notm}} namespace into the internal registry as an image stream. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.6/openshift_images/image-streams-manage.html){: external} or run `oc tag --help`.
+
+4. Tag the image to pull it from your {{site.data.keyword.registrylong_notm}} namespace into the internal registry as an image stream. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.6/openshift_images/image-streams-manage.html){: external} or run `oc tag --help`.
     ```
     oc tag <region>.icr.io/<namespace>/<image>:<tag> default/<image>:<tag> --reference-policy=local [--scheduled]
     ```
@@ -508,27 +532,28 @@ Want to learn more about how builds, image streams, and the internal registry wo
     <tbody>
     <tr>
     <td><code><em>&lt;region&gt;.icr.io/&lt;namespace&gt;/&lt;image&gt;:&lt;tag&gt;</em></code></td>
-    <td>Use the **Repository** and **Tag** information that you previously retrieved to fill out the {{site.data.keyword.registrylong_notm}} region, namespace, image, and tag name of the image that you want to pull.</td>
+    <td>Use the <strong>Repository</strong> and <strong>Tag</strong> information that you previously retrieved to fill out the {{site.data.keyword.registrylong_notm}} region, namespace, image, and tag name of the image that you want to pull.</td>
     </tr>
     <tr>
     <td><code>default/<em>&lt;image&lt;:&lt;tag&lt;</em></code></td>
-    <td>Enter the information for the internal image stream that you create from the {{site.data.keyword.registrylong_notm}} tagged image. You create this image stream in the `default` project, which is also the project where the image stream is created if you do not specify a project. The values for `<image>:<tag>` typically match the values that you previously retrieved.</td>
+    <td>Enter the information for the internal image stream that you create from the {{site.data.keyword.registrylong_notm}} tagged image. You create this image stream in the <code>default</code> project, which is also the project where the image stream is created if you do not specify a project. The values for <code><image>:<tag></code> typically match the values that you previously retrieved.</td>
     </tr>
     <tr>
     <td><code>--reference-policy=local</code></td>
-    <td>Set this value to `local` so that a copy of the image from {{site.data.keyword.registrylong_notm}} is imported into the local cache of the internal registry and made available to the cluster's projects as an image stream. If you do not include this value, the image stream refers back to {{site.data.keyword.registrylong_notm}} when you use it in your deployments and therefore requires credentials in the project.</td>
+    <td>Set this value to <code>local</code> so that a copy of the image from {{site.data.keyword.registrylong_notm}} is imported into the local cache of the internal registry and made available to the cluster's projects as an image stream. If you do not include this value, the image stream refers back to {{site.data.keyword.registrylong_notm}} when you use it in your deployments and therefore requires credentials in the project.</td>
     </tr>
     <tr>
     <td><code>--scheduled</code></td>
-    <td>Set this optional flag to set up periodic importing of the image from {{site.data.keyword.registrylong_notm}} into the internal registry. The default frequency is 15 minutes. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.6/openshift_images/image-streams-manage.html#images-imagestreams-import_image-streams-managing){: external}.</td>
+    <td>Set this optional flag to set up periodic importing of the image from {{site.data.keyword.registrylong_notm}} into the internal registry. The default frequency is 15 minutes. For more information, see the <a href="https://docs.openshift.com/container-platform/4.6/openshift_images/image-streams-manage.html#images-imagestreams-import_image-streams-managing">{{site.data.keyword.openshiftshort}} documentation</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</td>
     </tr>
     </tbody></table>
-5.  Verify that your image stream is created.
+5. Verify that your image stream is created.
     ```
     oc get imagestreams
     ```
     {: pre}
-6.  Verify that the image stream successfully pulled the image from {{site.data.keyword.registrylong_notm}}. In the output, check that the **latest tagged from** image matches your `* <region>.icr.io/<namespace>/<image>@<digest>` image.
+
+6. Verify that the image stream successfully pulled the image from {{site.data.keyword.registrylong_notm}}. In the output, check that the **latest tagged from** image matches your `* <region>.icr.io/<namespace>/<image>@<digest>` image.
     ```
     oc describe is/<imagestream>
     ```
@@ -536,15 +561,15 @@ Want to learn more about how builds, image streams, and the internal registry wo
 
     Example output:
     ```
-    Name:			<imagestream>
-    Namespace:		default
-    Created:		2 days ago
-    Labels:			<none>
-    Annotations:		openshift.io/image.dockerRepositoryCheck=2020-03-31T09:41:36Z
-    Image Repository:	image-registry.openshift-image-registry.svc:5000/default/ant1
-    Image Lookup:		local=false
-    Unique Images:		1
-    Tags:			    1
+    Name:            <imagestream>
+    Namespace:        default
+    Created:        2 days ago
+    Labels:            <none>
+    Annotations:        openshift.io/image.dockerRepositoryCheck=2020-03-31T09:41:36Z
+    Image Repository:    image-registry.openshift-image-registry.svc:5000/default/ant1
+    Image Lookup:        local=false
+    Unique Images:        1
+    Tags:                1
 
     latest
         tagged from <region>.icr.io/<namespace>/<image>:<tag>
@@ -564,48 +589,56 @@ Now, your developers can [use the image stream in an app deployment](/docs/opens
 When you create a [build](https://docs.openshift.com/container-platform/4.6/builds/understanding-image-builds.html){: external} in your {{site.data.keyword.openshiftlong_notm}} cluster, you can [set up the internal registry to push the image to your external repository](https://docs.openshift.com/container-platform/4.6/builds/creating-build-inputs.html#builds-docker-credentials-private-registries_creating-build-inputs){: external} in {{site.data.keyword.registrylong_notm}}. By default, the image pull secret in the `default` project of your cluster only has read access to pull images from {{site.data.keyword.registrylong_notm}}. To push images, you must add a secret with write access.
 {: shortdesc}
 
-1.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-2.  Switch to the `default` project.
+1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+2. Switch to the `default` project.
     ```
     oc project default
     ```
     {: pre}
-3.  [Follow the steps to set up an {{site.data.keyword.cloud_notm}} IAM API key](/docs/openshift?topic=openshift-registry#other_registry_accounts) with the `Reader` and `Writer` service access roles to pull from and push images to your `icr.io` registries.
+
+3. [Follow the steps to set up an {{site.data.keyword.cloud_notm}} IAM API key](/docs/openshift?topic=openshift-registry#other_registry_accounts) with the `Reader` and `Writer` service access roles to pull from and push images to your `icr.io` registries.
     Keep in mind that any user with access to the project can use this secret to push images to your private registry. You might want to set up [logging and monitoring](/docs/openshift?topic=openshift-health) tools so that you can observe who does what actions in your cluster.
     {: note}
-4.  Repeat the previous step for each `icr.io` region that you want to push images to.
-5.  Add the secret to the build service account and refer to the secrets in the build configuration file. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.6/builds/creating-build-inputs.html#builds-docker-credentials-private-registries_creating-build-inputs){: external}.
-    1.  Add the secret to the build service account by linking the secret that you just created to the `builder` role that all builds in the cluster use.
+
+4. Repeat the previous step for each `icr.io` region that you want to push images to.
+5. Add the secret to the build service account and refer to the secrets in the build configuration file. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.6/builds/creating-build-inputs.html#builds-docker-credentials-private-registries_creating-build-inputs){: external}.
+    1. Add the secret to the build service account by linking the secret that you just created to the `builder` role that all builds in the cluster use.
         ```
         oc secrets link builder <secret_name>
         ```
         {: pre}
-    2.  List the build configurations and note the ones that you want to give push and pull access to {{site.data.keyword.registrylong_notm}}.
+
+    2. List the build configurations and note the ones that you want to give push and pull access to {{site.data.keyword.registrylong_notm}}.
         ```
         oc get bc
         ```
         {: pre}
-    3.  Set the image push secret for the build configuration to use the secret that you just created with `Writer` service access to {{site.data.keyword.registrylong_notm}}.
+
+    3. Set the image push secret for the build configuration to use the secret that you just created with `Writer` service access to {{site.data.keyword.registrylong_notm}}.
         ```
         oc set build-secret --push bc/<build_config_name> <secret_name>
         ```
         {: pre}
-    4.  Set the image pull secret for the build configuration to pull from the registry that you want to pull the initial build image from. For example, you can use the secret that you just created with `Reader` service access to {{site.data.keyword.registrylong_notm}} if the source image is in an {{site.data.keyword.registrylong_notm}} repository.
+
+    4. Set the image pull secret for the build configuration to pull from the registry that you want to pull the initial build image from. For example, you can use the secret that you just created with `Reader` service access to {{site.data.keyword.registrylong_notm}} if the source image is in an {{site.data.keyword.registrylong_notm}} repository.
         ```
         oc set build-secret --pull bc/<build_config_name> <secret_name>
         ```
         {: pre}
-6.  After you update the build service account and build configuration file to push to {{site.data.keyword.registrylong_notm}}, restart your build.
+
+6. After you update the build service account and build configuration file to push to {{site.data.keyword.registrylong_notm}}, restart your build.
     ```
     oc start-build <build_name>
     ```
     {: pre}
-7.  Get the name of your build pod, such as `<build>-2-build`.
+
+7. Get the name of your build pod, such as `<build>-2-build`.
     ```
     oc get pods
     ```
     {: pre}
-8.  Check the logs of the build and note where the image was pushed.
+
+8. Check the logs of the build and note where the image was pushed.
     ```
     oc logs <build_pod>
     ```
@@ -618,7 +651,8 @@ When you create a [build](https://docs.openshift.com/container-platform/4.6/buil
     Push successful
     ```
     {: screen}
-9.  Check your images in your private registry to confirm that the image is created.
+
+9. Check your images in your private registry to confirm that the image is created.
     ```
     ibmcloud cr image list
     ```
@@ -687,8 +721,8 @@ You can check the image pull secrets by [logging in to your cluster](/docs/opens
 
 Yes, you can [edit the existing IAM policy of the service ID](/docs/account?topic=account-serviceids#update_serviceid) that restricts the **Reader** service access role to that regional registry or a registry resource such as a namespace. Before you can customize registry IAM policies, you must [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-user#existing_users).
 
-  Want to make your registry credentials even more secured? Ask your cluster admin to [enable a key management service provider](/docs/openshift?topic=openshift-encryption#keyprotect) in your cluster to encrypt Kubernetes secrets in your cluster, such as the image pull secret that stores your registry credentials.
-  {: tip}
+    Want to make your registry credentials even more secured? Ask your cluster admin to [enable a key management service provider](/docs/openshift?topic=openshift-encryption#keyprotect) in your cluster to encrypt Kubernetes secrets in your cluster, such as the image pull secret that stores your registry credentials.
+    {: tip}
 
 **Can I pull images in a {{site.data.keyword.openshiftshort}} project other than `default`?**
 
@@ -724,8 +758,8 @@ When you set up your {{site.data.keyword.cloud_notm}} account to use service end
 
 **What do I need to do to set up my cluster to use the private connection to `icr.io` registries?**
 
-1.  Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account so that you can use the {{site.data.keyword.registrylong_notm}} private cloud service endpoint. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command.
-2.  [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint).
+1. Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account so that you can use the {{site.data.keyword.registrylong_notm}} private cloud service endpoint. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command.
+2. [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint).
 
 Now, {{site.data.keyword.registrylong_notm}} automatically uses the private cloud service endpoint. You do not need to enable the private cloud service endpoint for your {{site.data.keyword.openshiftlong_notm}} clusters.
 
@@ -749,21 +783,24 @@ New {{site.data.keyword.openshiftlong_notm}} clusters store an API key in [image
         ibmcloud iam user-policy-create <your_user_email> --service-name containers-kubernetes --roles <(Administrator|Operator)>
         ```
         {: pre}
+
     *   {{site.data.keyword.cloud_notm}} IAM **Administrator** platform access role for {{site.data.keyword.registrylong_notm}}, across all regions and resource groups. The policy cannot be scoped to a particular region or resource group. The account owner can give you the role by running:
         ```
         ibmcloud iam user-policy-create <your_user_email> --service-name container-registry --roles Administrator
         ```
         {: pre}
+
     *   If your account [restricts service ID creation](/docs/account?topic=account-restrict-service-id-create), add the **Service ID creator** role to **Identity and Access Management** in the console (`iam-identity` in the API or CLI).</li>
     *   If your account [restricts API key creation](/docs/account?topic=account-allow-api-create), add the **User API key creator** role to **Identity and Access Management** in the console (`iam-identity` in the API or CLI).</li>
 
 **To update your cluster image pull secret in the `default` Kubernetes namespace**:
-1.  Get your cluster ID.
+1. Get your cluster ID.
     ```
     ibmcloud oc cluster ls
     ```
     {: pre}
-2.  Run the following command to create a service ID for the cluster and assign the service ID an IAM **Reader** service access role for {{site.data.keyword.registrylong_notm}}. The command also creates an API key to impersonate the service ID credentials and stores the API key in a Kubernetes image pull secret in the cluster. The image pull secret is in the `default` {{site.data.keyword.openshiftshort}} project.
+
+2. Run the following command to create a service ID for the cluster and assign the service ID an IAM **Reader** service access role for {{site.data.keyword.registrylong_notm}}. The command also creates an API key to impersonate the service ID credentials and stores the API key in a Kubernetes image pull secret in the cluster. The image pull secret is in the `default` {{site.data.keyword.openshiftshort}} project.
     ```
     ibmcloud oc cluster pull-secret apply --cluster <cluster_name_or_ID>
     ```
@@ -772,11 +809,12 @@ New {{site.data.keyword.openshiftlong_notm}} clusters store an API key in [image
     When you run this command, the creation of IAM credentials and image pull secrets is initiated and can take some time to complete. You cannot deploy containers that pull an image from the {{site.data.keyword.registrylong_notm}} `icr.io` domains until the image pull secrets are created.
     {: important}
 
-3.  Verify that the image pull secrets are created in your cluster.
+3. Verify that the image pull secrets are created in your cluster.
     ```
     oc get secrets | grep icr-io
     ```
     {: pre}
+
     Example output:
     ```
     all-icr-io           kubernetes.io/dockerconfigjson        1         16d
@@ -786,14 +824,14 @@ New {{site.data.keyword.openshiftlong_notm}} clusters store an API key in [image
     To maintain backwards compatibility, your {{site.data.keyword.openshiftshort}} 3.11 clusters have a separate image pull secret for each {{site.data.keyword.registrylong_notm}} region. However, you can copy and refer to only the `all-icr-io` image pull secret, which has credentials to the public and private `icr.io` registry domains for all regions.
     {: note}
 
-4.  Update your [container deployments](/docs/openshift?topic=openshift-openshift_apps#image) to pull images from the `icr.io` domain name.
-5.  Optional: If you have a firewall, make sure you [allow outbound network traffic to the registry subnets](/docs/openshift?topic=openshift-firewall#firewall_outbound) for the domains that you use.
+4. Update your [container deployments](/docs/openshift?topic=openshift-openshift_apps#image) to pull images from the `icr.io` domain name.
+5. Optional: If you have a firewall, make sure you [allow outbound network traffic to the registry subnets](/docs/openshift?topic=openshift-firewall#firewall_outbound) for the domains that you use.
 
 **What's next?**
 *   To pull images in {{site.data.keyword.openshiftshort}} projects other than `default` or from other {{site.data.keyword.cloud_notm}} accounts, [copy or create another image pull secret](#other).
 *   To restrict the image pull secret access to particular registry resources such as namespaces or regions:
-    1.  Make sure that [{{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}} are enabled](/docs/Registry?topic=Registry-user#existing_users).
-    2.  [Edit the {{site.data.keyword.cloud_notm}} IAM policies](/docs/account?topic=account-serviceids#update_serviceid) for the service ID, or [create another image pull secret](#other_registry_accounts).
+    1. Make sure that [{{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}} are enabled](/docs/Registry?topic=Registry-user#existing_users).
+    2. [Edit the {{site.data.keyword.cloud_notm}} IAM policies](/docs/account?topic=account-serviceids#update_serviceid) for the service ID, or [create another image pull secret](#other_registry_accounts).
 
 <br />
 
@@ -810,9 +848,9 @@ Image pull secrets are valid only for the {{site.data.keyword.openshiftshort}} p
 
 Before you begin:
 
-1.  [Set up a namespace in {{site.data.keyword.registrylong_notm}} and push images to this namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
-2.  [Create an {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-clusters).
-3.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+1. [Set up a namespace in {{site.data.keyword.registrylong_notm}} and push images to this namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
+2. [Create an {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-clusters).
+3. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 <br/>
 To use your own image pull secret, choose among the following options:
@@ -829,7 +867,7 @@ If you already created an image pull secret in your project that you want to use
 You can copy an image pull secret, such as the one that is automatically created for the `default` {{site.data.keyword.openshiftshort}} project, to other projects in your cluster. If you want to use different {{site.data.keyword.cloud_notm}} IAM API key credentials for this project such as to restrict access to specific projects, or to pull images from other {{site.data.keyword.cloud_notm}} accounts, [create an image pull secret](#other_registry_accounts) instead.
 {: shortdesc}
 
-1.  List available {{site.data.keyword.openshiftshort}} projects in your cluster, or create a project to use.
+1. List available {{site.data.keyword.openshiftshort}} projects in your cluster, or create a project to use.
     ```
     oc get projects
     ```
@@ -850,27 +888,32 @@ You can copy an image pull secret, such as the one that is automatically created
     oc new-project <project_name>
     ```
     {: pre}
-2.  List the existing image pull secrets in the `default` {{site.data.keyword.openshiftshort}} project for {{site.data.keyword.registrylong_notm}}.
+
+2. List the existing image pull secrets in the `default` {{site.data.keyword.openshiftshort}} project for {{site.data.keyword.registrylong_notm}}.
     ```
     oc get secrets -n default | grep icr-io
     ```
     {: pre}
+
     Example output:
     ```
     all-icr-io          kubernetes.io/dockerconfigjson        1         16d
     ```
     {: screen}
-3.  Copy the `all-icr-io` image pull secret from the `default` project to the project of your choice. The new image pull secrets are named `<project_name>-icr-<region>-io`.
+
+3. Copy the `all-icr-io` image pull secret from the `default` project to the project of your choice. The new image pull secrets are named `<project_name>-icr-<region>-io`.
     ```
     oc get secret all-icr-io -n default -o yaml | sed 's/default/<new-project>/g' | oc create -n <new-project> -f -   
     ```
     {: pre}
-4.  Verify that the secrets are created successfully.
+
+4. Verify that the secrets are created successfully.
     ```
     oc get secrets -n <project_name> | grep icr-io
     ```
     {: pre}
-5.  To deploy containers, [add the image pull secret](#use_imagePullSecret) to each deployment or to the service account of the project so that any deployment in the project can pull images from the registry.
+
+5. To deploy containers, [add the image pull secret](#use_imagePullSecret) to each deployment or to the service account of the project so that any deployment in the project can pull images from the registry.
 
 ### Creating an image pull secret with different IAM API key credentials for more control or access to images in other {{site.data.keyword.cloud_notm}} accounts
 {: #other_registry_accounts}
@@ -883,7 +926,7 @@ For example, to access images in other {{site.data.keyword.cloud_notm}} accounts
 The following steps create an API key that stores the credentials of an {{site.data.keyword.cloud_notm}} IAM service ID. Instead of using a service ID, you might want to create an API key for a user ID that has an {{site.data.keyword.cloud_notm}} IAM service access policy to {{site.data.keyword.registrylong_notm}}. However, make sure that the user is a functional ID or have a plan in case the user leaves so that the cluster can still access the registry.
 {: note}
 
-1.  List available {{site.data.keyword.openshiftshort}} projects in your cluster, or create a project to use where you want to deploy containers from your registry images.
+1. List available {{site.data.keyword.openshiftshort}} projects in your cluster, or create a project to use where you want to deploy containers from your registry images.
     ```
     oc get projects
     ```
@@ -904,16 +947,19 @@ The following steps create an API key that stores the credentials of an {{site.d
     oc new-project <project_name>
     ```
     {: pre}
-2.  Create an {{site.data.keyword.cloud_notm}} IAM service ID for your cluster that is used for the IAM policies and API key credentials in the image pull secret. Be sure to give the service ID a description that helps you retrieve the service ID later, such as including both the cluster and project name.
+
+2. Create an {{site.data.keyword.cloud_notm}} IAM service ID for your cluster that is used for the IAM policies and API key credentials in the image pull secret. Be sure to give the service ID a description that helps you retrieve the service ID later, such as including both the cluster and project name.
     ```
     ibmcloud iam service-id-create <cluster_name>-<project>-id --description "Service ID for IBM Cloud Container Registry in {{site.data.keyword.openshiftshort}} cluster <cluster_name> project <project>"
     ```
     {: pre}
-3.  Create a custom {{site.data.keyword.cloud_notm}} IAM policy for your cluster service ID that grants access to {{site.data.keyword.registrylong_notm}}.
+
+3. Create a custom {{site.data.keyword.cloud_notm}} IAM policy for your cluster service ID that grants access to {{site.data.keyword.registrylong_notm}}.
     ```
     ibmcloud iam service-policy-create <cluster_service_ID> --roles <service_access_role> --service-name container-registry [--region <IAM_region>] [--resource-type namespace --resource <registry_namespace>]
     ```
     {: pre}
+
     <table summary="The columns are read from left to right. The first column has the parameter of the command. The second column describes the parameter.">
     <caption>Understanding this command's components</caption>
     <col width="25%">
@@ -924,31 +970,32 @@ The following steps create an API key that stores the credentials of an {{site.d
     <tbody>
     <tr>
     <td><code><em>&lt;cluster_service_ID&gt;</em></code></td>
-    <td>Required. Replace with the `<cluster_name>-<kube_namespace>-id` service ID that you previously created for your Kubernetes cluster.</td>
+    <td>Required. Replace with the <code><cluster_name>-<kube_namespace>-id</code> service ID that you previously created for your Kubernetes cluster.</td>
     </tr>
     <tr>
     <td><code>--service-name <em>container-registry</em></code></td>
-    <td>Required. Enter `container-registry` so that the IAM policy is for {{site.data.keyword.registrylong_notm}}.</td>
+    <td>Required. Enter <code>container-registry</code> so that the IAM policy is for {{site.data.keyword.registrylong_notm}}.</td>
     </tr>
     <tr>
     <td><code>--roles <em>&lt;service_access_role&gt;</em></code></td>
-    <td>Required. Enter the [service access role for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#service_access_roles) that you want to scope the service ID access to. Possible values are `Reader`, `Writer`, and `Manager`.</td>
+    <td>Required. Enter the <a href="/docs/Registry?topic=Registry-iam#service_access_roles">service access role for {{site.data.keyword.registrylong_notm}}</a> that you want to scope the service ID access to. Possible values are <code>Reader</code>, <code>Writer</code>, and <code>Manager</code>.</td>
     </tr>
     <tr>
     <td><code>--region <em>&lt;IAM_region&gt;</em></code></td>
-    <td>Optional. If you want to scope the access policy to certain IAM regions, enter the regions in a comma-separated list. Possible values are `global` and the [local registry regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local).</td>
+    <td>Optional. If you want to scope the access policy to certain IAM regions, enter the regions in a comma-separated list. Possible values are <code>global</code> and the <a href="/docs/Registry?topic=Registry-registry_overview#registry_regions_local">local registry regions</a>.</td>
     </tr>
     <tr>
     <td><code>--resource-type <em>namespace</em> --resource <em>&lt;registry_namespace&gt;</em></code></td>
-    <td>Optional. If you want to limit access to only images in certain [{{site.data.keyword.registrylong_notm}} namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan), enter `namespace` for the resource type and specify the `<registry_namespace>`. To list registry namespaces, run `ibmcloud cr namespaces`.</td>
+    <td>Optional. If you want to limit access to only images in certain <a href="/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan">{{site.data.keyword.registrylong_notm}} namespaces</a>, enter <code>namespace</code> for the resource type and specify the <code><registry_namespace></code>. To list registry namespaces, run <code>ibmcloud cr namespaces</code>.</td>
     </tr>
     </tbody></table>
-4.  Create an API key for the service ID. Name the API key similar to your service ID, and include the service ID that you previously created, ``<cluster_name>-<kube_namespace>-id`. Be sure to give the API key a description that helps you retrieve the key later.
+4. Create an API key for the service ID. Name the API key similar to your service ID, and include the service ID that you previously created, ``<cluster_name>-<kube_namespace>-id`. Be sure to give the API key a description that helps you retrieve the key later.
     ```
     ibmcloud iam service-api-key-create <cluster_name>-<project>-key <cluster_name>-<project>-id --description "API key for service ID <service_id> in {{site.data.keyword.openshiftshort}} cluster <cluster_name> project <project>"
     ```
     {: pre}
-5.  Retrieve your **API Key** value from the output of the previous command.
+
+5. Retrieve your **API Key** value from the output of the previous command.
     ```
     Please preserve the API key! It cannot be retrieved after it's created.
 
@@ -961,7 +1008,8 @@ The following steps create an API key that stores the credentials of an {{site.d
     UUID          ApiKey-222nn2n2-o3o3-3o3o-4p44-oo444o44o4o4   
     ```
     {: screen}
-6.  Create an image pull secret to store the API key credentials in the cluster project. Repeat this step for each project of each cluster for each `icr.io` domain that you want to pull images from.
+
+6. Create an image pull secret to store the API key credentials in the cluster project. Repeat this step for each project of each cluster for each `icr.io` domain that you want to pull images from.
     ```
     oc --namespace <project> create secret docker-registry <secret_name> --docker-server=<registry_URL> --docker-username=iamapikey --docker-password=<api_key_value> --docker-email=<docker_email>
     ```
@@ -985,7 +1033,7 @@ The following steps create an API key that stores the credentials of an {{site.d
     </tr>
     <tr>
     <td><code>--docker-server <em>&lt;registry_URL&gt;</em></code></td>
-    <td>Required. Set the URL to the image registry where your registry namespace is set up. For available domains, see [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).</td>
+    <td>Required. Set the URL to the image registry where your registry namespace is set up. For available domains, see <a href="/docs/Registry?topic=Registry-registry_overview#registry_regions">Local regions</a>.</td>
     </tr>
     <tr>
     <td><code>--docker-username iamapikey</code></td>
@@ -993,20 +1041,21 @@ The following steps create an API key that stores the credentials of an {{site.d
     </tr>
     <tr>
     <td><code>--docker-password <em>&lt;token_value&gt;</em></code></td>
-    <td>Required. Enter the value of your **API Key** that you previously retrieved.</td>
+    <td>Required. Enter the value of your <strong>API Key</strong> that you previously retrieved.</td>
     </tr>
     <tr>
     <td><code>--docker-email <em>&lt;docker-email&gt;</em></code></td>
-    <td>Required. If you have one, enter your Docker email address. If you do not, enter a fictional email address, such as `a@b.c`. This email is required to create a Kubernetes secret, but is not used after creation.</td>
+    <td>Required. If you have one, enter your Docker email address. If you do not, enter a fictional email address, such as <code>a@b.c</code>. This email is required to create a Kubernetes secret, but is not used after creation.</td>
     </tr>
     </tbody></table>
-7.  Verify that the secret was created successfully. Replace <em>&lt;project&gt;</em> with the project where you created the image pull secret.
+7. Verify that the secret was created successfully. Replace <em>&lt;project&gt;</em> with the project where you created the image pull secret.
 
     ```
     oc get secrets --namespace <project>
     ```
     {: pre}
-8.  [Add the image pull secret to a Kubernetes service account so that any pod in the project can use the image pull secret when you deploy a container](#use_imagePullSecret).
+
+8. [Add the image pull secret to a Kubernetes service account so that any pod in the project can use the image pull secret when you deploy a container](#use_imagePullSecret).
 
 ### Accessing images that are stored in other private registries
 {: #private_images}
@@ -1016,12 +1065,12 @@ If you already have a private registry, you must store the registry credentials 
 
 Before you begin:
 
-1.  [Create an {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-clusters).
-2.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+1. [Create an {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-clusters).
+2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To create an image pull secret:
 
-1.  Create the Kubernetes secret to store your private registry credentials.
+1. Create the Kubernetes secret to store your private registry credentials.
 
     ```
     oc --namespace <project> create secret docker-registry <secret_name>  --docker-server=<registry_URL> --docker-username=<docker_username> --docker-password=<docker_password> --docker-email=<docker_email>
@@ -1058,18 +1107,18 @@ To create an image pull secret:
     </tr>
     <tr>
     <td><code>--docker-email <em>&lt;docker-email&gt;</em></code></td>
-    <td>Required. If you have one, enter your Docker email address. If you do not have one, enter a fictional email address, such as `a@b.c`. This email is required to create a Kubernetes secret, but is not used after creation.</td>
+    <td>Required. If you have one, enter your Docker email address. If you do not have one, enter a fictional email address, such as <code>a@b.c</code>. This email is required to create a Kubernetes secret, but is not used after creation.</td>
     </tr>
     </tbody></table>
 
-2.  Verify that the secret was created successfully. Replace <em>&lt;project&gt;</em> with the name of the project where you created the image pull secret.
+2. Verify that the secret was created successfully. Replace <em>&lt;project&gt;</em> with the name of the project where you created the image pull secret.
 
     ```
     oc get secrets --namespace <project>
     ```
     {: pre}
 
-3.  [Create a pod that references the image pull secret](#use_imagePullSecret).
+3. [Create a pod that references the image pull secret](#use_imagePullSecret).
 
 <br />
 
@@ -1090,61 +1139,64 @@ Every {{site.data.keyword.openshiftshort}} project has a Kubernetes service acco
 {: shortdesc}
 
 1. Check if an image pull secret already exists for your default service account.
-   ```
-   oc describe serviceaccount default -n <project_name>
-   ```
-   {: pre}
-   When `<none>` is displayed in the **Image pull secrets** entry, no image pull secret exists.
+    ```
+    oc describe serviceaccount default -n <project_name>
+    ```
+    {: pre}
+
+    When `<none>` is displayed in the **Image pull secrets** entry, no image pull secret exists.
 2. Add the image pull secret to your default service account.
-   - **To add the image pull secret when no image pull secret is defined:**
-       ```
-       oc patch -n <project_name> serviceaccount/default -p '{"imagePullSecrets":[{"name": "<image_pull_secret_name>"}]}'
-       ```
-       {: pre}
-   - **To add the image pull secret when an image pull secret is already defined:**
-       ```
-       oc patch -n <project_name> serviceaccount/default --type='json' -p='[{"op":"add","path":"/imagePullSecrets/-","value":{"name":"<image_pull_secret_name>"}}]'
-       ```
-       {: pre}
+    - **To add the image pull secret when no image pull secret is defined:**
+        ```
+        oc patch -n <project_name> serviceaccount/default -p '{"imagePullSecrets":[{"name": "<image_pull_secret_name>"}]}'
+        ```
+        {: pre}
+
+    - **To add the image pull secret when an image pull secret is already defined:**
+        ```
+        oc patch -n <project_name> serviceaccount/default --type='json' -p='[{"op":"add","path":"/imagePullSecrets/-","value":{"name":"<image_pull_secret_name>"}}]'
+        ```
+        {: pre}
+
 3. Verify that your image pull secret was added to your default service account.
-   ```
-   oc describe serviceaccount default -n <project_name>
-   ```
-   {: pre}
+    ```
+    oc describe serviceaccount default -n <project_name>
+    ```
+    {: pre}
 
-   Example output:
-   ```
-   Name:                default
-   Namespace:           <namespace_name>
-   Labels:              <none>
-   Annotations:         <none>
-   Image pull secrets:  <image_pull_secret_name>
-   Mountable secrets:   default-token-sh2dx
-   Tokens:              default-token-sh2dx
-   Events:              <none>
-   ```
-   {: pre}
+    Example output:
+    ```
+    Name:                default
+    Namespace:           <namespace_name>
+    Labels:              <none>
+    Annotations:         <none>
+    Image pull secrets:  <image_pull_secret_name>
+    Mountable secrets:   default-token-sh2dx
+    Tokens:              default-token-sh2dx
+    Events:              <none>
+    ```
+    {: pre}
 
-   If the **Image pull secrets** says `<secret> (not found)`, verify that the image pull secret exists in the same project as your service account by running `oc get secrets -n project`.
+    If the **Image pull secrets** says `<secret> (not found)`, verify that the image pull secret exists in the same project as your service account by running `oc get secrets -n project`.
 
 4. Create a pod configuration file that is named `mypod.yaml` to deploy a container from an **image** in your registry.
-   ```yaml
-   apiVersion: v1
-   kind: Pod
-   metadata:
-     name: mypod
-   spec:
-     containers:
-       - name: mypod-container
-         image: <region>.icr.io/<project>/<image>:<tag>
-   ```
-   {: codeblock}
+    ```yaml
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: mypod
+    spec:
+      containers:
+        - name: mypod-container
+          image: <region>.icr.io/<project>/<image>:<tag>
+    ```
+    {: codeblock}
 
 5. Create the pod in the cluster by applying the `mypod.yaml` configuration file.
-   ```
-   oc apply -f mypod.yaml
-   ```
-   {: pre}
+    ```
+    oc apply -f mypod.yaml
+    ```
+    {: pre}
 
 <br />
 
@@ -1156,25 +1208,28 @@ You can set up your {{site.data.keyword.openshiftlong_notm}} cluster to pull ent
 
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1.  Get the entitlement key for your entitled software library.
-    1.  Log in to [MyIBM.com](https://myibm.ibm.com){: external} and scroll to the **Container software library** section. Click **View library**.
-    2.  From the **Access your container software > Entitlement keys** page, click **Copy key**. This key authorizes access to all the entitled software in your container software library.
-2.  In the project that you want to deploy your entitled containers, create an image pull secret so that you can access the `cp.icr.io` entitled registry. Use the **entitlement key** that you previously retrieved as the `--docker-password` value. For more information, see [Accessing images that are stored in other private registries](#private_images).
+1. Get the entitlement key for your entitled software library.
+    1. Log in to [MyIBM.com](https://myibm.ibm.com){: external} and scroll to the **Container software library** section. Click **View library**.
+    2. From the **Access your container software > Entitlement keys** page, click **Copy key**. This key authorizes access to all the entitled software in your container software library.
+2. In the project that you want to deploy your entitled containers, create an image pull secret so that you can access the `cp.icr.io` entitled registry. Use the **entitlement key** that you previously retrieved as the `--docker-password` value. For more information, see [Accessing images that are stored in other private registries](#private_images).
     ```
     oc create secret docker-registry entitled-cp-icr-io --docker-server=cp.icr.io --docker-username=cp --docker-password=<entitlement_key> --docker-email=<docker_email> -n <project>
     ```
     {: pre}
-3.  Add the image pull secret to the service account of the namespace so that any container in the project can use the entitlement key to pull entitled images. For more information, see [Using the image pull secret to deploy containers](#use_imagePullSecret).
+
+3. Add the image pull secret to the service account of the namespace so that any container in the project can use the entitlement key to pull entitled images. For more information, see [Using the image pull secret to deploy containers](#use_imagePullSecret).
     ```
     oc patch -n <project> serviceaccount/default --type='json' -p='[{"op":"add","path":"/imagePullSecrets/-","value":{"name":"entitled-cp-icr-io"}}]'
     ```
     {: pre}
-4.  Create a pod in the project that builds a container from an image in the entitled registry.
+
+4. Create a pod in the project that builds a container from an image in the entitled registry.
     ```
     oc run <pod_name> --image=cp.icr.io/<image_name> -n <project> --generator=run-pod/v1
     ```
     {: pre}
-5.  Check that your container was able to successfully build from the entitled image by verifying that the pod is in a **Running** status.
+
+5. Check that your container was able to successfully build from the entitled image by verifying that the pod is in a **Running** status.
     ```
     oc get pod <pod_name> -n <project>
     ```
@@ -1207,11 +1262,12 @@ Before you begin:
 *   [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To add private registries, edit the global `pull-secret` in the `openshift-config` project.
-1.  Create a secret value that holds the credentials to access your private registry and store the decoded secret value in a JSON file. When you create the secret value, the credentials are automatically encoded to base64. By using the `--dry-run` option, the secret value is created only and no secret object is created in your cluster. The decoded secret value is then stored in a JSON file to later use in your global pull secret.
+1. Create a secret value that holds the credentials to access your private registry and store the decoded secret value in a JSON file. When you create the secret value, the credentials are automatically encoded to base64. By using the `--dry-run` option, the secret value is created only and no secret object is created in your cluster. The decoded secret value is then stored in a JSON file to later use in your global pull secret.
     ```
     oc create secret docker-registry <secret_name> --docker-server=<registry_URL> --docker-username=<docker_username> --docker-password=<docker_password> --docker-email=<docker_email> --dry-run=true --output="jsonpath={.data.\.dockerconfigjson}" | base64 --decode > myregistryconfigjson
     ```
     {: pre}
+
     <table summary="The columns are read from left to right. The first column has the parameter of the command. The second column describes the parameter.">
     <caption>Understanding this command's components</caption>
     <col width="25%">
@@ -1242,7 +1298,7 @@ To add private registries, edit the global `pull-secret` in the `openshift-confi
     </tr>
     <tr>
     <td><code>--docker-email <em>&lt;docker-email&gt;</em></code></td>
-    <td>Required. If you have one, enter your Docker email address. If you do not have one, enter a fictional email address, such as`a@b.c`. This email is required to create a Kubernetes secret, but is not used after creation.</td>
+    <td>Required. If you have one, enter your Docker email address. If you do not have one, enter a fictional email address, such as<code>a@b.c</code>. This email is required to create a Kubernetes secret, but is not used after creation.</td>
     </tr>
     <tr>
     <td><code>--dry-run=true</code></td>
@@ -1250,29 +1306,32 @@ To add private registries, edit the global `pull-secret` in the `openshift-confi
     </tr>
     <tr>
     <td><code>--output="jsonpath={.data.\.dockerconfigjson}"</code></td>
-    <td>Get only the `.dockerconfigjson` value from the data section of the Kubernetes secret.</td>
+    <td>Get only the <code>.dockerconfigjson</code> value from the data section of the Kubernetes secret.</td>
     </tr>
     <tr>
     <td><code>| base64 --decode > myregistryconfigjson</code></td>
-    <td>Download the decoded secret data to a local `myregistryconfigjson` file.</td>
+    <td>Download the decoded secret data to a local <code>myregistryconfigjson</code> file.</td>
     </tr>
     </tbody></table>
-2.  Retrieve the decoded secret value of the default global pull secret and store the value in a `dockerconfigjson` file.
+2. Retrieve the decoded secret value of the default global pull secret and store the value in a `dockerconfigjson` file.
     ```
     oc get secret pull-secret -n openshift-config --output="jsonpath={.data.\.dockerconfigjson}" | base64 --decode > dockerconfigjson
     ```
     {: pre}
-3.  Combine the downloaded private registry pull secret `myregistryconfigjson` file with the default global pull secret `dockerconfigjson` file.
+
+3. Combine the downloaded private registry pull secret `myregistryconfigjson` file with the default global pull secret `dockerconfigjson` file.
     ```
     jq -s '.[0] * .[1]' dockerconfigjson myregistryconfigjson > dockerconfigjson-merged
     ```
     {: pre}
-4.  Update the global pull secret with the combined `dockerconfigjson-merged` file.
+
+4. Update the global pull secret with the combined `dockerconfigjson-merged` file.
     ```
     oc set data secret/pull-secret -n openshift-config --from-file=.dockerconfigjson=dockerconfigjson-merged
     ```
     {: pre}
-5.  Verify that the global pull secret is updated. Check that your private registry and each of the default Red Hat registries are in the output of the following command.
+
+5. Verify that the global pull secret is updated. Check that your private registry and each of the default Red Hat registries are in the output of the following command.
     ```
     oc get secret pull-secret -n openshift-config --output="jsonpath={.data.\.dockerconfigjson}" | base64 --decode
     ```
@@ -1308,32 +1367,39 @@ To add private registries, edit the global `pull-secret` in the `openshift-confi
     }
     ```
     {: screen}
-6.  To pick up the global configuration changes, reload all of the worker nodes in your cluster.
-    1.  Note the **ID** of the worker nodes in your cluster.
+
+6. To pick up the global configuration changes, reload all of the worker nodes in your cluster.
+    1. Note the **ID** of the worker nodes in your cluster.
         ```
         ibmcloud oc worker ls -c <cluster_name_or_ID>
         ```
         {: pre}
-    2.  Reload each worker node. You can reload multiple worker nodes by including multiple `-w` flags, but make sure to leave enough worker nodes running at the same time for your apps to avoid an outage.
+
+    2. Reload each worker node. You can reload multiple worker nodes by including multiple `-w` flags, but make sure to leave enough worker nodes running at the same time for your apps to avoid an outage.
         ```
         ibmcloud oc worker reload -c <cluster_name_or_ID> -w <workerID_1> -w <workerID_2>
         ```
         {: pre}
-7.  After the worker nodes are back in a healthy state, verify that the global pull secret is updated on a worker node.
-    1.  Start a debugging pod to log in to a worker node. Use the **Private IP** that you retrieved earlier for the `<node_name>`.
+
+7. After the worker nodes are back in a healthy state, verify that the global pull secret is updated on a worker node.
+    1. Start a debugging pod to log in to a worker node. Use the **Private IP** that you retrieved earlier for the `<node_name>`.
         ```
         oc debug node/<node_name>
         ```
         {: pre}
-    2.  Change the root directory to the host so that you can view files on the worker node.
+
+    2. Change the root directory to the host so that you can view files on the worker node.
         ```
         chroot /host
         ```
         {: pre}
-    3.  Verify that the Docker configuration file has the registry credentials that match the global pull secret that you set.
+
+    3. Verify that the Docker configuration file has the registry credentials that match the global pull secret that you set.
         ```
         vi /.docker/config.json
         ```
         {: pre}
+
+
 
 

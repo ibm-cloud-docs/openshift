@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Planning your cluster for high availability
 {: #ha_clusters}
@@ -211,8 +209,8 @@ To load balance workloads across multiple clusters, you must make your apps avai
 To load balance workloads across your apps, add the public IP addresses of your router services and NLBs to a CIS global load balancer or your own global load balancer.
 
 **To use a CIS global load balancer**:
-1.  Set up [Kubernetes load balancer services](/docs/openshift?topic=openshift-loadbalancer-qs), [routes](/docs/openshift?topic=openshift-openshift_routes), or the [Ingress service](/docs/containers?topic=containers-ingress-types) to expose the apps in your cluster.
-2.  Set up the CIS global load balancer by following steps 1 - 5 in [Getting Started with {{site.data.keyword.cloud_notm}} Internet Services (CIS)](/docs/cis?topic=cis-getting-started#getting-started). These steps walk you through provisioning the service instance, adding your app domain, and configuring your name servers, and creating DNS records. Create a DNS record for each router service or NLB IP address that you collected. These DNS records map your app domain to all of your cluster router services or NLBs, and ensure that requests to your app domain are forwarded to your clusters in a round-robin cycle.
+1. Set up [Kubernetes load balancer services](/docs/openshift?topic=openshift-loadbalancer-qs), [routes](/docs/openshift?topic=openshift-openshift_routes), or the [Ingress service](/docs/containers?topic=containers-ingress-types) to expose the apps in your cluster.
+2. Set up the CIS global load balancer by following steps 1 - 5 in [Getting Started with {{site.data.keyword.cloud_notm}} Internet Services (CIS)](/docs/cis?topic=cis-getting-started#getting-started). These steps walk you through provisioning the service instance, adding your app domain, and configuring your name servers, and creating DNS records. Create a DNS record for each router service or NLB IP address that you collected. These DNS records map your app domain to all of your cluster router services or NLBs, and ensure that requests to your app domain are forwarded to your clusters in a round-robin cycle.
 3. [Add health checks](/docs/cis?topic=cis-configure-glb#add-a-health-check) for the router services or NLBs. You can use the same health check for the router services or NLBs in all of your clusters, or create specific health checks to use for specific clusters.
 4. [Add an origin pool](/docs/cis?topic=cis-configure-glb#add-a-pool) for each cluster by adding the cluster's ALB or NLB IPs. For example, if you have 3 clusters that each have two router services, create three origin pools that each have two router service IP addresses. You can find the NLB or router service IP addresses by running `oc get svc -n <namespace>`. Add a health check to each origin pool that you create.
 4. [Add a global load balancer](/docs/cis?topic=cis-configure-glb).
@@ -225,5 +223,7 @@ To load balance workloads across your apps, add the public IP addresses of your 
 **What if I want to load balance workloads on the private network?**
 
 {{site.data.keyword.cloud_notm}} does not offer a load balancer service on the private network. However, you can connect your cluster to a private load balancer that you host in your on-prem network by using one of the [supported VPN options](/docs/openshift?topic=openshift-vpn). Make sure to expose your apps on the private network by using [Ingress](/docs/openshift?topic=openshift-ingress-about-roks4), [routers](/docs/openshift?topic=openshift-openshift_routes), or [Network Load Balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about), and use the private IP address in your VPN settings to connect your app to your on-prem network.
+
+
 
 

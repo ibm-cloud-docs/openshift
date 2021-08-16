@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Classic: Opening required ports and IP addresses in your firewall
 {: #firewall}
@@ -124,7 +122,7 @@ Review these situations in which you might need to open specific ports and IP ad
 * [Other services or network firewalls](#allowlist_workers): To allow your cluster to access services that run inside or outside {{site.data.keyword.cloud_notm}} or in on-premises networks and that are protected by a firewall, you must add the IP addresses of your worker nodes in that firewall.
 
 
-## Opening ports in a corporate firewall 
+## Opening ports in a corporate firewall
 {: #corporate}
 
 If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, you must allow access to run [`ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands](#firewall_bx), [`oc` commands](#firewall_kubectl), and [`calicoctl` commands](#firewall_calicoctl) from your local system.
@@ -143,7 +141,7 @@ If corporate network policies prevent access from your local system to public en
     ibmcloud login -a https://cloud.ibm.com/
     ```
     {: pre}
-    
+
 3. Allow access to `containers.cloud.ibm.com` on port 443 in your firewall.
 4. Verify your connection. If access is configured correctly, ships are displayed in the output.
 
@@ -155,12 +153,12 @@ If corporate network policies prevent access from your local system to public en
     Example output:
     ```
                                       )___(
-                               _______/__/_
-                      ___     /===========|   ___
-     ____       __   [\\\]___/____________|__[///]   __
-     \   \_____[\\]__/___________________________\__[//]___
-      \                                                    |
-       \                                                  /
+_______/__/_
+___     /===========|   ___
+        ____       __   [\\\]___/____________|__[///]   __
+        \   \_____[\\]__/___________________________\__[//]___
+        \                                                    |
+        \                                                  /
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     ```
@@ -231,7 +229,7 @@ To allow access for a specific cluster:
     {: pre}
 
     Example output:
-    
+
     ```
     ...
     Public Service Endpoint URL:    https://c3.<region>.containers.cloud.ibm.com:30426
@@ -245,66 +243,66 @@ To allow access for a specific cluster:
 7. Verify your connection.
 
     * If the public cloud service endpoint is enabled:
-    
-      ```
-      curl --insecure <public_service_endpoint_URL>/version
-      ```
-     {: pre}
 
-     Example command:
-     
-     ```
-     curl --insecure https://c3.<region>.containers.cloud.ibm.com:31142/version
-     ```
-     {: pre}
+        ```
+        curl --insecure <public_service_endpoint_URL>/version
+        ```
+        {: pre}
 
-     Example output:
-     
-     ```
-     {
-      "major": "1",
-      "minor": "7+",
-      "gitVersion": "v1.7.4-2+eb9172c211dc41",
-      "gitCommit": "eb9172c211dc4108341c0fd5340ee5200f0ec534",
-      "gitTreeState": "clean",
-      "buildDate": "2017-11-16T08:13:08Z",
-      "goVersion": "go1.8.3",
-      "compiler": "gc",
-      "platform": "linux/amd64"
-     }
-     ```
-     {: screen}
+        Example command:
+
+        ```
+        curl --insecure https://c3.<region>.containers.cloud.ibm.com:31142/version
+        ```
+        {: pre}
+
+        Example output:
+
+        ```
+        {
+        "major": "1",
+        "minor": "7+",
+        "gitVersion": "v1.7.4-2+eb9172c211dc41",
+        "gitCommit": "eb9172c211dc4108341c0fd5340ee5200f0ec534",
+        "gitTreeState": "clean",
+        "buildDate": "2017-11-16T08:13:08Z",
+        "goVersion": "go1.8.3",
+        "compiler": "gc",
+        "platform": "linux/amd64"
+        }
+        ```
+        {: screen}
 
     * If the private cloud service endpoint is enabled, you must be in your {{site.data.keyword.cloud_notm}} private network or connect to the private network through a VPN connection to verify your connection to the master. **Note**: You must [expose the master endpoint through a private load balancer](/docs/openshift?topic=openshift-access_cluster#access_private_se) so that users can access the master through a VPN or {{site.data.keyword.BluDirectLink}} connection.
-    
-     ```
-     curl --insecure <private_service_endpoint_URL>/version
-     ```
-     {: pre}
 
-     Example command:
-     
-     ```
-     curl --insecure https://c3-private.<region>.containers.cloud.ibm.com:31142/version
-     ```
-     {: pre}
+        ```
+        curl --insecure <private_service_endpoint_URL>/version
+        ```
+        {: pre}
 
-     Example output:
-     
-     ```
-     {
-      "major": "1",
-      "minor": "7+",
-      "gitVersion": "v1.7.4-2+eb9172c211dc41",
-      "gitCommit": "eb9172c211dc4108341c0fd5340ee5200f0ec534",
-      "gitTreeState": "clean",
-      "buildDate": "2017-11-16T08:13:08Z",
-      "goVersion": "go1.8.3",
-      "compiler": "gc",
-      "platform": "linux/amd64"
-     }
-     ```
-     {: screen}
+        Example command:
+
+        ```
+        curl --insecure https://c3-private.<region>.containers.cloud.ibm.com:31142/version
+        ```
+        {: pre}
+
+        Example output:
+
+        ```
+        {
+        "major": "1",
+        "minor": "7+",
+        "gitVersion": "v1.7.4-2+eb9172c211dc41",
+        "gitCommit": "eb9172c211dc4108341c0fd5340ee5200f0ec534",
+        "gitTreeState": "clean",
+        "buildDate": "2017-11-16T08:13:08Z",
+        "goVersion": "go1.8.3",
+        "compiler": "gc",
+        "platform": "linux/amd64"
+        }
+        ```
+        {: screen}
 
 8. Optional: Repeat these steps for each cluster that you need to expose.
 
@@ -368,8 +366,8 @@ To allow worker nodes to communicate with the cluster master over the public clo
 | UK South (`lon02`, `lon04`, `lon05`, `lon06`) | `141.125.66.26`, `141.125.77.58`, `141.125.91.138`, `158.175.65.170`, `158.175.77.178`, `158.175.111.42`, `158.175.125.194`, `158.175.150.122`, `158.176.71.242`, `158.176.94.26`, `158.176.95.146`, `158.176.123.130`, `158.176.142.26`, `159.122.224.242`, `159.122.242.78` |
 | US East (`mon01`, `tor01`, `wdc04`, `wdc06`, `wdc07`) | `52.117.88.42`, `169.47.162.130`, `169.47.174.106`, `169.53.167.50`, `169.53.171.210`, `169.54.126.219`, `169.54.80.106`, `169.60.100.242`, `169.60.101.42`, `169.60.73.142`, `169.60.92.50`, `169.61.109.34`, `169.61.74.210`, `169.61.83.62`, `169.62.10.162`, `169.62.10.20`, `169.62.9.250`, `169.63.111.82`, `169.63.149.122`, `169.63.158.82`, `169.63.160.13`, `169.63.75.82`, `169.63.88.178`, `169.63.88.186`, `169.63.94.210` |
 | US South (`mex01`, `sao01`, `sjc03`, `sjc04`, `dal10`, `dal12`, `dal13`) | `50.22.129.34`, `52.116.231.210`, `52.116.254.234`, `52.117.197.210`, `52.117.212.34`, `52.117.215.162`, `52.117.232.194`, `52.117.240.106`, `52.117.28.138`, `169.45.67.210`, `169.45.88.98`, `169.46.110.218`, `169.46.111.122`, `169.46.24.210`, `169.46.27.234`, `169.46.68.234`, `169.46.7.238`, `169.46.89.50`, `169.47.109.34`, `169.47.115.18`, `169.47.201.194`, `169.47.209.66`, `169.47.229.90`, `169.47.232.210`, `169.47.239.34`, `169.47.70.10`, `169.47.71.138`, `169.48.110.250`, `169.48.143.218`, `169.48.161.242`, `169.48.230.146`, `169.48.244.66`, `169.57.100.18`, `169.57.13.10`, `169.57.151.10`, `169.57.154.98`, `169.59.219.90`, `169.59.230.98`, `169.60.128.2`, `169.60.170.234`, `169.61.175.106`, `169.61.177.2`, `169.61.228.138`, `169.61.28.66`, `169.61.29.194`, `169.61.60.130`, `169.62.166.98`, `169.62.189.26`, `169.62.206.234`, `169.62.82.197`, `169.62.87.170`, `169.63.39.66`, `169.63.47.250` |
- {: summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the region in column one and IP addresses to match in column two."}
- {: caption="Table 1. IP addresses to open for outgoing traffic" caption-side="top"}
+{: summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the region in column one and IP addresses to match in column two."}
+{: caption="Table 1. IP addresses to open for outgoing traffic" caption-side="top"}
 
 #### Allow worker nodes to communicate with {{site.data.keyword.registrylong_notm}}
 {: #firewall_registry}
@@ -378,7 +376,7 @@ To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm
 
 * `TCP port 443 FROM <each_worker_node_publicIP> TO <registry_subnet>`
 * Replace *<registry_subnet>* with the registry subnet to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images.
-  
+
 | {{site.data.keyword.openshiftlong_notm}} region | Registry address  | Registry public subnets |
 |---------------|-------------|-------------| 
 | Global registry across {{site.data.keyword.openshiftlong_notm}} regions | `icr.io`  Deprecated: `registry.bluemix.net` | `169.62.37.240/29`, `169.60.98.80/29`, `169.63.104.232/29` |
@@ -391,7 +389,7 @@ To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm
 | US East, US South | `us.icr.io` Deprecated: `registry.ng.bluemix.net` | `169.61.234.224/29`, `169.61.135.160/29`, `169.61.46.80/29` |
 {: summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two."}
 {: caption="Table 2. IP addresses to open for Registry traffic" caption-side="top"}
-    
+
 #### Allow outgoing network traffic from worker node to IAM
 {: #firewall-iam}
 
@@ -404,12 +402,12 @@ Allow outgoing network traffic from your worker node to {{site.data.keyword.clou
 {: #firewall-mon-la}
 
 * **{{site.data.keyword.mon_full_notm}}**: 
-     
+
     - `TCP port 443, port 6443 FROM <each_worker_node_public_IP> TO <monitoring_public_IP>`
     - Replace *<monitoring_public_IP>* with the [{{site.data.keyword.mon_short}} IP addresses](/docs/monitoring?topic=monitoring-endpoints).
-        
+
 * **{{site.data.keyword.la_full_notm}}**:
-     
+
     - `TCP port 443, port 80 FROM <each_worker_node_public_IP> TO <logging_public_IP>`
     - Replace *<logging_public_IP>* with the [{{site.data.keyword.la_short}} IP addresses](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_public).
 
@@ -453,7 +451,7 @@ To allow worker nodes to communicate with the cluster master over the private cl
 
 *`TCP/UDP port range 20000-32767, port 443 FROM <each_worker_node_privateIP> TO <private_IPs>`
 * Replace *<private_IPs>* with the private IP addresses of the region where your cluster is located.
-    
+
 | Region | Private IP address  |
 |---------------|-------------|
 | AP North (`che01`, `hkg02`, `seo01`, `sng01`, `tok02`, `tok04`, `tok05`) | `166.9.40.21`, `166.9.40.36`, `166.9.40.39`, `166.9.40.6`, `166.9.40.7`, `166.9.40.8`, `166.9.42.23`, `166.9.42.28`, `166.9.42.55`, `166.9.42.6`, `166.9.42.7`, `166.9.44.15`, `166.9.44.3`, `166.9.44.4`, `166.9.44.47`, `166.9.44.5`, `166.9.46.4`, `166.9.60.2` |
@@ -489,7 +487,7 @@ To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm
 
 * `TCP port 443, port 4443 FROM <each_worker_node_privateIP> TO <registry_subnet>`
 * Replace *<registry_subnet>* with the registry subnet to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images. Port 4443 is required for notary functions, such as [Verifying image signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent). 
-    
+
 | {{site.data.keyword.openshiftlong_notm}} region | Registry address  | Registry private IP addresses |
 |---------------|-------------|-------------|
 | Global registry across {{site.data.keyword.openshiftlong_notm}} regions | `private.icr.io` `cp.icr.io` | `166.9.20.31`, `166.9.22.22`, `166.9.24.16` |
@@ -502,7 +500,7 @@ To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm
 | US East, US South | `private.us.icr.io` | `166.9.12.227`, `166.9.15.116`, `166.9.16.244` |
 {: summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two."}
 {: caption="Table 4. IP addresses to open for Registry traffic" caption-side="top"}
-   
+
 #### Optional: Set up firewall rules for {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} services
 {: #firewall_private_mon_la}
 
@@ -520,14 +518,14 @@ You can allow incoming access to NodePort, load balancer, and Ingress services, 
 
 
 <dl>
-  <dt>NodePort service</dt>
-  <dd>Open the port that you configured when you deployed the service to the public or private IP addresses for all of the worker nodes to allow traffic to. To find the port, run `oc get svc`. The port is in the 20000-32000 range.</dd>
-  <dt>Load balancer service</dt>
-  <dd>Open the port that you configured when you deployed the service to the load balancer service's public or private IP address.</dd>
-  <dt>Ingress</dt>
-  <dd>Open port 80 for HTTP and port 443 for HTTPS to the public or private IP address for the Ingress application load balancer.</dd>
-  <dt>Route</dt>
-  <dd>Open port 80 for HTTP and port 443 for HTTPS to the router's public IP address.</dd>
+    <dt>NodePort service</dt>
+    <dd>Open the port that you configured when you deployed the service to the public or private IP addresses for all of the worker nodes to allow traffic to. To find the port, run `oc get svc`. The port is in the 20000-32000 range.</dd>
+    <dt>Load balancer service</dt>
+    <dd>Open the port that you configured when you deployed the service to the load balancer service's public or private IP address.</dd>
+    <dt>Ingress</dt>
+    <dd>Open port 80 for HTTP and port 443 for HTTPS to the public or private IP address for the Ingress application load balancer.</dd>
+    <dt>Route</dt>
+    <dd>Open port 80 for HTTP and port 443 for HTTPS to the router's public IP address.</dd>
 </dl>
 
 
@@ -556,27 +554,27 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
 
     * **Worker node subnets**: If you anticipate changing the number of worker nodes in your cluster frequently, such as if you enable the [cluster autoscaler](/docs/openshift?topic=openshift-ca#ca), you might not want to update your firewall for each new worker node. Instead, you can add the VLAN subnets that the cluster uses. Keep in mind that the VLAN subnet might be shared by worker nodes in other clusters.
     Note that the **primary public subnets** that {{site.data.keyword.openshiftlong_notm}} provisions for your cluster come with 14 available IP addresses, and can be shared by other clusters on the same VLAN. When you have more than 14 worker nodes, another subnet is ordered, so the subnets that you need to allow can change. To reduce the frequency of change, create worker pools with worker node flavors of higher CPU and memory resources so that you don't need to add worker nodes as often.
-    
-      1. List the worker nodes in your cluster.
-    
-         ```
-         ibmcloud oc worker ls --cluster <cluster_name_or_ID>
-         ```
-         {: pre}
 
-      2. From the output of the previous step, note all the unique network IDs (first three octets) of the **Public IP** for the worker nodes in your cluster. In the following output, the unique network IDs are `169.xx.178` and `169.xx.210`.
-    
-         ```sh
-         ID                                                  Public IP        Private IP     Machine Type        State    Status   Zone    Version   
-         kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w31   169.xx.178.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.20.7   
-         kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w34   169.xx.178.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.20.7  
-         kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w32   169.xx.210.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.20.7   
-         kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w33   169.xx.210.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.20.7  
-         ```
-         {: screen}
+        1. List the worker nodes in your cluster.
 
-      3.  List the VLAN subnets for each unique network ID.
-      
+            ```
+            ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+            ```
+            {: pre}
+
+        2. From the output of the previous step, note all the unique network IDs (first three octets) of the **Public IP** for the worker nodes in your cluster. In the following output, the unique network IDs are `169.xx.178` and `169.xx.210`.
+
+            ```sh
+            ID                                                  Public IP        Private IP     Machine Type        State    Status   Zone    Version   
+            kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w31   169.xx.178.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.20.7   
+            kube-dal10-crb2f60e9735254ac8b20b9c1e38b649a5-w34   169.xx.178.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal10   1.20.7  
+            kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w32   169.xx.210.101   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.20.7   
+            kube-dal12-crb2f60e9735254ac8b20b9c1e38b649a5-w33   169.xx.210.102   10.xxx.xx.xxx   b3c.4x16.encrypted   normal   Ready    dal12   1.20.7  
+            ```
+            {: screen}
+
+        3. List the VLAN subnets for each unique network ID.
+
           ```
           ibmcloud sl subnet list | grep -e <networkID1> -e <networkID2>
           ```
@@ -591,17 +589,17 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
           ```
           {: screen}
 
-      4. Retrieve the subnet address. In the output, find the number of **IPs**. Then, raise `2` to the power of `n` equal to the number of IPs. For example, if the number of IPs is `16`, then `2` is raised to the power of `4` (`n`) to equal `16`. Now get the subnet CIDR by subtracting the value of `n` from `32` bits. For example, when `n` equals `4`, then the CIDR is `28` (from the equation `32 - 4 = 28`). Combine the **identifier** mask with the CIDR value to get the full subnet address. In the previous output, the subnet addresses are:
-      
-         *   `169.xx.210.xxx/28`
-         *   `169.xx.178.xxx/28`
-         
+        4. Retrieve the subnet address. In the output, find the number of **IPs**. Then, raise `2` to the power of `n` equal to the number of IPs. For example, if the number of IPs is `16`, then `2` is raised to the power of `4` (`n`) to equal `16`. Now get the subnet CIDR by subtracting the value of `n` from `32` bits. For example, when `n` equals `4`, then the CIDR is `28` (from the equation `32 - 4 = 28`). Combine the **identifier** mask with the CIDR value to get the full subnet address. In the previous output, the subnet addresses are:
+
+            *   `169.xx.210.xxx/28`
+            *   `169.xx.178.xxx/28`
+            
     * **Individual worker node IP addresses**: If you have a small number of worker nodes that run only one app and do not need to scale, or if you want to add only one worker node, list all the worker nodes in your cluster and note the **Public IP** addresses. If your worker nodes are connected to a private network only and you want to connect to {{site.data.keyword.cloud_notm}} services by using the private cloud service endpoint, note the **Private IP** addresses instead. Only these worker nodes are added. If you delete the worker nodes or add worker nodes to the cluster, you must update your firewall accordingly.
-    
-      ```
-      ibmcloud oc worker ls --cluster <cluster_name_or_ID>
-      ```
-      {: pre}
+
+        ```
+        ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+        ```
+        {: pre}
 
 4. Add the subnet CIDR or IP addresses to your service's firewall for outbound traffic or your on-premises firewall for inbound traffic.
 5. Repeat these steps for each cluster that you want to allow traffic to or from.
@@ -622,7 +620,7 @@ Setting up an IAM allowlist blocks access to the {{site.data.keyword.openshiftsh
 1. Identify what user credentials are used for the cluster's region and resource group infrastructure permissions.
 
     1. Check the API key for a region and resource group of the cluster.
-    
+
         ```
         ibmcloud oc api-key info --cluster <cluster_name_or_ID>
         ```
@@ -636,16 +634,16 @@ Setting up an IAM allowlist blocks access to the {{site.data.keyword.openshiftsh
         <user_name>         <name@email.com>
         ```
         {: screen}
-        
+
     2. Check if the infrastructure account for the region and resource group is manually set to use a different IBM Cloud infrastructure account.
-    
+
         ```
         ibmcloud oc credential get --region <us-south>
         ```
         {: pre}
 
         **Example output if credentials are set to use a different account**. In this case, the user's infrastructure credentials are used for the region and resource group that you targeted, even if a different user's credentials are stored in the API key that you retrieved in the previous step.
-        
+
         ```
         OK
         Infrastructure credentials for user name <1234567_name@email.com> set for resource group <resource_group_name>.
@@ -653,13 +651,13 @@ Setting up an IAM allowlist blocks access to the {{site.data.keyword.openshiftsh
         {: screen}
 
         **Example output if credentials are not set to use a different account**. In this case, the API key owner that you retrieved in the previous step has the infrastructure credentials that are used for the region and resource group.
-        
+
         ```
         FAILED
         No credentials set for resource group <resource_group_name>.: The user credentials could not be found. (E0051)
         ```
         {: screen}
-        
+
 2. Get the CIDRs of the private and public subnets that your worker nodes are attached to.
 
     ```
@@ -668,7 +666,7 @@ Setting up an IAM allowlist blocks access to the {{site.data.keyword.openshiftsh
     {: pre}
 
     Example output:
-    
+
     ```
     Name:                           mycluster
     ID:                             df222b2222d64944ab99ed63bb4567b6
@@ -684,7 +682,7 @@ Setting up an IAM allowlist blocks access to the {{site.data.keyword.openshiftsh
     2294019   169.48.228.72/29   true     false
     ```
     {: screen}
-    
+
 3. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}.
 4. From the menu bar, click **Manage** > **Access (IAM)**, and select **Users**.
 5. Select the user that you found in step 1 from the list.
@@ -692,5 +690,7 @@ Setting up an IAM allowlist blocks access to the {{site.data.keyword.openshiftsh
 7. For **Classic infrastructure**, enter the [CIDRs of the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/iam-firewall-ips){: external}. To find the region that your cluster's zones are location in, see the `README` for the directory.
 8. Enter the CIDRs of the worker node subnets that you found in step 2.
 9. Click **Apply**.
+
+
 
 

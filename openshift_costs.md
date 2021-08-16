@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 # Understanding costs for your clusters
 {: #costs}
 
@@ -249,6 +247,7 @@ The type of load balancer that is automatically created varies depending on the 
 
 To store images in the internal registry, {{site.data.keyword.openshiftlong_notm}} creates a storage instance that varies by infrastructure provider.
 {: shortdesc}
+
 * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters**: A classic {{site.data.keyword.cloud_notm}} File Storage volume is automatically created for you. Your file storage volume is provisioned with an `ibmc-file-gold` storage class of 100 GB capacity at 10 IOPS/GB, and billed at an hourly rate. If you need more image storage capacity, you can [update the volume size](/docs/openshift?topic=openshift-registry#openshift_internal_registry), which modifies the cost. For more information, see [Pricing](https://www.ibm.com/cloud/file-storage/pricing){: external}.
 * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC clusters**: A bucket in an existing {{site.data.keyword.cos_full_notm}} instance is created for you. For more information, see [Billing and pricing in the {{site.data.keyword.cos_short}} documentation](/docs/cloud-object-storage?topic=cloud-object-storage-billing).
 
@@ -310,20 +309,22 @@ Keep in mind that some charges are not reflected in the estimate, such as tiered
 The following steps present a general process to manage costs for your {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
 
-1.  Decide on a cloud platform strategy to manage your resources.
+1. Decide on a cloud platform strategy to manage your resources.
     * See [Best practices for billing and usage](/docs/billing-usage?topic=billing-usage-best-practices).
     * Organize your billing with [resource groups](/docs/account?topic=account-rgs).
     * [Add tags to your clusters](/docs/openshift?topic=openshift-add_workers#cluster_tags) according to your organizational strategy.
-2.  Plan the type of cluster that you need.
+2. Plan the type of cluster that you need.
     * [Size your cluster to support your workloads](/docs/openshift?topic=openshift-strategy#sizing), including the network bandwidth that your workloads need.
     * [Decide the cluster environment that you want](/docs/openshift?topic=openshift-strategy#kube_env).
     * [Consider the availability that you want for your cluster](/docs/openshift?topic=openshift-ha_clusters). For example, a basic high availability setup is one multizone cluster with three worker nodes in each of three zones, for a minimum total of nine worker nodes.
-3.  Check out other {{site.data.keyword.cloud_notm}} services, add-ons, operators, and other third-party software that you might use that can increase your cost. To get an idea of what other costs clusters typically incur, review [Understanding costs for your clusters](#costs-for-clusters).
-4.  [Estimate your costs](/docs/billing-usage?topic=billing-usage-cost#cost) and review detailed pricing information for the service, see [{{site.data.keyword.openshiftlong_notm}} Pricing plans](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift#pricing){: external}.
-5.  Manage the lifecycle of your cluster to control costs.
+3. Check out other {{site.data.keyword.cloud_notm}} services, add-ons, operators, and other third-party software that you might use that can increase your cost. To get an idea of what other costs clusters typically incur, review [Understanding costs for your clusters](#costs-for-clusters).
+4. [Estimate your costs](/docs/billing-usage?topic=billing-usage-cost#cost) and review detailed pricing information for the service, see [{{site.data.keyword.openshiftlong_notm}} Pricing plans](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift#pricing){: external}.
+5. Manage the lifecycle of your cluster to control costs.
     * Consider [enabling the cluster autoscaler](/docs/openshift?topic=openshift-ca) to automatically add or remove worker nodes in response to your cluster workload resource requests.
     * Manually [resize your worker pool](/docs/openshift?topic=openshift-add_workers) to remove worker nodes that you do not need. Keep in mind that you cannot scale a worker pool down to zero worker nodes.
     * Use Kubernetes features such as [horizontal pod autoscaling](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/){: external}, [pod priority](/docs/openshift?topic=openshift-pod_priority), and [resource requests and limits](/docs/containers?topic=containers-app#resourcereq) to control how resources are used within your cluster.
     * Consider setting up a [monitoring tool](/docs/openshift?topic=openshift-health) such as {{site.data.keyword.mon_full_notm}} and creating alerts for your workloads when they need more resources.
-6.  [View your usage](/docs/billing-usage?topic=billing-usage-viewingusage#viewingusage) to continuously refine how you consume {{site.data.keyword.cloud_notm}} services.
-7.  [Set spending notifications](/docs/billing-usage?topic=billing-usage-spending).
+6. [View your usage](/docs/billing-usage?topic=billing-usage-viewingusage#viewingusage) to continuously refine how you consume {{site.data.keyword.cloud_notm}} services.
+7. [Set spending notifications](/docs/billing-usage?topic=billing-usage-spending).
+
+

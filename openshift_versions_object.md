@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-14"
 
 keywords: object storage, plug-in, changelog
 
@@ -54,7 +54,6 @@ subcollection: openshift, object storage
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -105,9 +104,8 @@ subcollection: openshift, object storage
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Object storage plug-in 
 {: #cos_plugin_changelog}
@@ -153,7 +151,7 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | Version | Image tags | Release date | Description |
 | --- | --- | --- | --- |
-| `2.1.1` | `1.8.29` | 03 June 2021 | Updates in this version: <ul><li>Fixes an upgrade issue in version `2.1.0`.</li><li>Includes a new version of the `helm ibmc` plug-in. For more information, see [Updating the {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#update_cos_plugin) plug-in.</li><li>Users can now specify `default` in PVC configurations to use the default TLS cipher suite when a connection to {{site.data.keyword.cos_full_notm}} is established via the HTTPS endpoint. If your worker nodes run an Ubuntu operating system, your storage classes are set up to use the `AESGCM` cipher suite by default. For worker nodes that run a Red Hat operating system, the `ecdhe_rsa_aes_128_gcm_sha_256` cipher suite is used by default. For more information, see [Adding object storage to apps](/docs/openshift?topic=openshift-object_storage#add_cos).</li><li>Fixes [CVE-2020-28851](https://nvd.nist.gov/vuln/detail/CVE-2020-28851){: external}.</li></ul> |
+| `2.1.1` | `1.8.29` | 03 June 2021 | Updates in this version: <ul><li>Fixes an upgrade issue in version <code>2.1.0</code>.</li><li>Includes a new version of the <code>helm ibmc</code> plug-in. For more information, see <a href="/docs/openshift?topic=openshift-object_storage#update_cos_plugin">Updating the {{site.data.keyword.cos_full_notm}}</a> plug-in.</li><li>Users can now specify <code>default</code> in PVC configurations to use the default TLS cipher suite when a connection to {{site.data.keyword.cos_full_notm}} is established via the HTTPS endpoint. If your worker nodes run an Ubuntu operating system, your storage classes are set up to use the <code>AESGCM</code> cipher suite by default. For worker nodes that run a Red Hat operating system, the <code>ecdhe_rsa_aes_128_gcm_sha_256</code> cipher suite is used by default. For more information, see <a href="/docs/openshift?topic=openshift-object_storage#add_cos">Adding object storage to apps</a>.</li><li>Fixes <a href="https://nvd.nist.gov/vuln/detail/CVE-2020-28851">CVE-2020-28851</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</li></ul> |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Object Storage plug-in version 2.1.1" caption-side="top"}
@@ -175,7 +173,7 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | Version | Image tags | Release date | Description |
 | --- | --- | --- | --- |
-| `2.0.9` | `1.8.27` | 10 May 2021 | Updates in this version: <ul><li>Updates the UBI to `8.3-298.1618432845`.</li><li>Replaces the Flex storage classes with Smart Tier storage classes.</li><li>Fixes [CVE-2021-20305](https://nvd.nist.gov/vuln/detail/CVE-2021-20305){: external}.</li><li>Updates IAM Endpoints.</li><li>Updates the `object-store-endpoint`.</li><li>Fixes a PVC mount issue in private-only VPC clusters.</li><li>Updates the `ResourceConfiguration` endpoint.</li></ul> |
+| `2.0.9` | `1.8.27` | 10 May 2021 | Updates in this version: <ul><li>Updates the UBI to <code>8.3-298.1618432845</code>.</li><li>Replaces the Flex storage classes with Smart Tier storage classes.</li><li>Fixes <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-20305">CVE-2021-20305</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</li><li>Updates IAM Endpoints.</li><li>Updates the <code>object-store-endpoint</code>.</li><li>Fixes a PVC mount issue in private-only VPC clusters.</li><li>Updates the <code>ResourceConfiguration</code> endpoint.</li></ul> |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Object Storage plug-in version 2.0.9" caption-side="top"}
@@ -185,7 +183,7 @@ Refer to the following tables for a summary of changes for each version of the [
 {: #0208_object_plugin}
 | Version | Image tags | Release date | Description |
 | --- | --- | --- | --- |
-| `2.0.8` | `1.8.25` | 19 April 2021 | Updates in this version: <ul><li>Updates the Go version to `1.15.9`.</li><li>Updates the UBI from `ubi-minimal:8.3-291` to `ubi-minimal:8.3-298`.</li><li>Fixes [CVE-2021-3449](https://nvd.nist.gov/vuln/detail/CVE-2021-3449){: external}, [CVE-2021-3450](https://nvd.nist.gov/vuln/detail/CVE-2021-3450){: external}, [CVE-2021-27919](https://nvd.nist.gov/vuln/detail/CVE-2021-27919){: external}, and [CVE-2021-27918](https://nvd.nist.gov/vuln/detail/CVE-2021-27918){: external}.</li></ul> |
+| `2.0.8` | `1.8.25` | 19 April 2021 | Updates in this version: <ul><li>Updates the Go version to <code>1.15.9</code>.</li><li>Updates the UBI from <code>ubi-minimal:8.3-291</code> to <code>ubi-minimal:8.3-298</code>.</li><li>Fixes <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-3449">CVE-2021-3449</a> <img src="../icons/launch-glyph.svg" alt="External link icon">, <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-3450">CVE-2021-3450</a> <img src="../icons/launch-glyph.svg" alt="External link icon">, <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-27919">CVE-2021-27919</a> <img src="../icons/launch-glyph.svg" alt="External link icon">, and <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-27918">CVE-2021-27918</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</li></ul> |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Object Storage plug-in version 2.0.8" caption-side="top"}
@@ -196,7 +194,7 @@ Refer to the following tables for a summary of changes for each version of the [
 {: #0207_object_plugin}
 | Version | Image tags | Release date | Description |
 | --- | --- | --- | --- |
-| `2.0.7` | `1.8.24` | 26 March 2021 | Updates in this version: <ul><li>Updates the Go version to `1.15.8`.</li><li>The plug-in now uses a universal base image (UBI).</li><li>Fixes for [CVE-2021-3114](https://nvd.nist.gov/vuln/detail/CVE-2021-3114){: external}, [CVE-2021-3115](https://nvd.nist.gov/vuln/detail/CVE-2021-3115){: external}, [CVE-2020-28852](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28852){: external}, and [CVE-2020-28851](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28851){: external}.</li></ul> |
+| `2.0.7` | `1.8.24` | 26 March 2021 | Updates in this version: <ul><li>Updates the Go version to <code>1.15.8</code>.</li><li>The plug-in now uses a universal base image (UBI).</li><li>Fixes for <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-3114">CVE-2021-3114</a> <img src="../icons/launch-glyph.svg" alt="External link icon">, <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-3115">CVE-2021-3115</a> <img src="../icons/launch-glyph.svg" alt="External link icon">, <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28852">CVE-2020-28852</a> <img src="../icons/launch-glyph.svg" alt="External link icon">, and <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28851">CVE-2020-28851</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</li></ul> |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Object Storage plug-in version 2.0.7" caption-side="top"}
@@ -207,7 +205,7 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | Version | Image tags | Release date | Description |
 | --- | --- | --- | --- |
-| `2.0.6` | `1.8.23` | 18 December 2020 | Updates in this version: <ul><li>The `1.8.23` image is signed.</li><li>Updates the Go version to `1.15.5`.</li><li>Fixes `CVE-2020-28362`, `CVE-2020-28367`, and `CVE-2020-28366`.</li><li>Resources that are deployed by the Object Storage plug-in are now linked with the corresponding source code and build URLs.</li><li>The Object Storage plug-in now pulls the universal base image (UBI) from the proxy image registry.</li></ul> |
+| `2.0.6` | `1.8.23` | 18 December 2020 | Updates in this version: <ul><li>The <code>1.8.23</code> image is signed.</li><li>Updates the Go version to <code>1.15.5</code>.</li><li>Fixes <code>CVE-2020-28362</code>, <code>CVE-2020-28367</code>, and <code>CVE-2020-28366</code>.</li><li>Resources that are deployed by the Object Storage plug-in are now linked with the corresponding source code and build URLs.</li><li>The Object Storage plug-in now pulls the universal base image (UBI) from the proxy image registry.</li></ul> |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Object Storage plug-in version 2.0.6" caption-side="top"}
@@ -215,6 +213,7 @@ Refer to the following tables for a summary of changes for each version of the [
 
 
 <br />
+
 ## Changelog for version 2.0.5
 {: #0205_object_plugin}
 
@@ -228,3 +227,5 @@ The following table shows the changes that are included in version 2.0.5 of the 
 {: class="comparison-table"}
 {: caption="Object Storage plug-in version 2.0.5" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the version of the component. The second column contains the release date of the component. The third column contains a brief description of the change made to the component."}
+
+

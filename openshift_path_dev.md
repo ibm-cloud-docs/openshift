@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 <style>
     <!--
@@ -228,96 +226,96 @@ Following a curated learning path to deploy highly available containerized apps 
 {: shortdesc}
 
 <div class=solutionBoxContainer>
-  <div class="solutionBox">
-    <a href = "#dev_cluster">
-      <div>
+    <div class="solutionBox">
+        <a href = "#dev_cluster">
+        <div>
         <img src="images/desktop.svg" alt="Access icon" style="height:50px; border-style: none"/>
         <h2>Access the cluster</h2>
         <p class="bx--type-caption">Begin working with your cluster by setting up the CLI and accessing the cluster.</p>
-      </div>
+        </div>
     </a>
-  </div>
-  <div class="solutionBox">
-    <a href = "#dev_plan">
-      <div>
+    </div>
+    <div class="solutionBox">
+        <a href = "#dev_plan">
+        <div>
         <img src="images/progress.svg" alt="Plan icon" style="height:50px; border-style: none"/>
         <h2>Plan your deployment</h2>
         <p class="bx--type-caption">Plan your app setup for optimal service integration and high availability.</p>
-      </div>
+        </div>
     </a>
-  </div>
-  <div class="solutionBox">
-    <a href = "#dev_develop">
-      <div>
+    </div>
+    <div class="solutionBox">
+        <a href = "#dev_develop">
+        <div>
         <img src="images/design--and--development--02.svg" alt="Develop icon" style="height:50px; border-style: none"/>
         <h2>Develop your app</h2>
         <p class="bx--type-caption">Configure your app and set up your app versioning and delivery pipeline.</p>
-      </div>
+        </div>
     </a>
-  </div>
-  <div class="solutionBox">
-    <a href = "#dev_deploy">
-      <div>
+    </div>
+    <div class="solutionBox">
+        <a href = "#dev_deploy">
+        <div>
         <img src="images/app--developer.svg" alt="Deploy icon" style="height:50px; border-style: none"/>
         <h2>Deploy your app</h2>
         <p class="bx--type-caption">Deploy your app to the cluster by running your app configuration file.</p>
-      </div>
+        </div>
     </a>
-  </div>
-  <div class="solutionBox">
-    <a href = "#dev_test">
-      <div>
+    </div>
+    <div class="solutionBox">
+        <a href = "#dev_test">
+        <div>
         <img src="images/chart--line.svg" alt="Health icon" style="height:50px; border-style: none"/>
         <h2>Test, log, and monitor</h2>
         <p class="bx--type-caption">Conduct app performance testing and gain visibility into your workload health.</p>
-      </div>
+        </div>
     </a>
-  </div>
-  <div class="solutionBox">
-    <a href = "#dev_update">
-      <div>
+    </div>
+    <div class="solutionBox">
+        <a href = "#dev_update">
+        <div>
         <img src="images/networking--04.svg" alt="Update icon" style="height:50px; border-style: none"/>
         <h2>Update your app</h2>
         <p class="bx--type-caption">Perform rolling updates and rollbacks of apps without downtime for your users.</p>
-      </div>
+        </div>
     </a>
-  </div>
-  <div class="solutionBox">
-    <a href = "#dev_secure">
-      <div>
+    </div>
+    <div class="solutionBox">
+        <a href = "#dev_secure">
+        <div>
         <img src="images/lock--alt.svg" alt="Security icon" style="height:50px; border-style: none"/>
         <h2>Secure your app</h2>
         <p class="bx--type-caption">Encrypt data and store confidential information in Kubernetes secrets.</p>
-      </div>
+        </div>
     </a>
-  </div>
-  <div class="solutionBox">
-    <a href = "#dev_expose">
-      <div>
+    </div>
+    <div class="solutionBox">
+        <a href = "#dev_expose">
+        <div>
         <img src="images/global--network.svg" alt="Network icon" style="height:50px; border-style: none"/>
         <h2>Expose your app</h2>
         <p class="bx--type-caption">Expose an app to users on the internet or on a private network only.</p>
-      </div>
+        </div>
     </a>
-  </div>
-  <div class="solutionBox">
-    <a href = "#dev_storage">
-      <div>
+    </div>
+    <div class="solutionBox">
+        <a href = "#dev_storage">
+        <div>
         <img src="images/data--storage.svg" alt="Storage icon" style="height:50px; border-style: none"/>
         <h2>Add app storage</h2>
         <p class="bx--type-caption">Plan and add highly available persistent storage for your app data.</p>
-      </div>
+        </div>
     </a>
-  </div>
-  <div class="solutionBox">
-    <a href = "#dev_integrate">
-      <div>
+    </div>
+    <div class="solutionBox">
+        <a href = "#dev_integrate">
+        <div>
         <img src="images/connect.svg" alt="Integrations icon" style="height:50px; border-style: none"/>
         <h2>Add integrations</h2>
         <p class="bx--type-caption">Enhance app capabilities by integrating external and catalog services.</p>
-      </div>
+        </div>
     </a>
-  </div>
+    </div>
 </div>
 
 ## Access the cluster
@@ -352,12 +350,12 @@ Configure your app in a YAML file that declares the configuration of the Kuberne
 {: shortdesc}
 
 1. **Develop your app**:
-  1. Review the [basics of Kubernetes-native app deployments](/docs/openshift?topic=openshift-plan_deploy#kube-objects).
-  2. Build app containers from [images in the internal, public, or private registries](/docs/openshift?topic=openshift-images).
-  3. Specify your [app requirements in a YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml), which declares the configuration of the Kubernetes object.
+    1. Review the [basics of Kubernetes-native app deployments](/docs/openshift?topic=openshift-plan_deploy#kube-objects).
+    2. Build app containers from [images in the internal, public, or private registries](/docs/openshift?topic=openshift-images).
+    3. Specify your [app requirements in a YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml), which declares the configuration of the Kubernetes object.
 2. **Version your app**:
-  1. Version 4: To plan customized configurations for more than one environment, such as development, testing, and production environments, [use the Kustomize tool](/docs/openshift?topic=openshift-openshift_apps#kustomize) to manage your configuration YAML file.
-  2. If you want to run your app in multiple clusters, public and private environments, or even multiple cloud providers, [package your application to help automate deployments](/docs/openshift?topic=openshift-plan_deploy#packaging).
+    1. Version 4: To plan customized configurations for more than one environment, such as development, testing, and production environments, [use the Kustomize tool](/docs/openshift?topic=openshift-openshift_apps#kustomize) to manage your configuration YAML file.
+    2. If you want to run your app in multiple clusters, public and private environments, or even multiple cloud providers, [package your application to help automate deployments](/docs/openshift?topic=openshift-plan_deploy#packaging).
 
 </br>Need help? Check out [Troubleshooting apps and integrations](/docs/containers?topic=containers-debug_apps).
 
@@ -402,8 +400,8 @@ Perform rolling updates and rollbacks of apps without downtime for your users.
 
 1. **Update strategy**: [Plan your strategy for keeping your app up-to-date](/docs/openshift?topic=openshift-update_app#updating_apps).
 2. **Set up updates**:
-  * Add a [rolling update to your deployment file](/docs/openshift?topic=openshift-update_app#app_rolling)
-  * Set up [a continuous delivery pipeline for a cluster](/docs/openshift?topic=openshift-cicd).
+    * Add a [rolling update to your deployment file](/docs/openshift?topic=openshift-update_app#app_rolling)
+    * Set up [a continuous delivery pipeline for a cluster](/docs/openshift?topic=openshift-cicd).
 3. **Scaling**: Enable [horizontal pod autoscaling](/docs/openshift?topic=openshift-update_app#app_scaling) to automatically increase or decrease the number of instances of your apps based on CPU.
 
 <br />
@@ -427,18 +425,18 @@ Publicly expose an app in your cluster to the internet or privately expose an ap
 {: shortdesc}
 
 1. **Plan service discovery**:
-  1. Understand the [basics of Kubernetes service discovery](/docs/openshift?topic=openshift-plan_deploy#service_discovery).
-  2. [Choose an app exposure service](/docs/openshift?topic=openshift-cs_network_planning) that fits your requirements for incoming traffic to the app.
+    1. Understand the [basics of Kubernetes service discovery](/docs/openshift?topic=openshift-plan_deploy#service_discovery).
+    2. [Choose an app exposure service](/docs/openshift?topic=openshift-cs_network_planning) that fits your requirements for incoming traffic to the app.
 2. **Expose your app**:
-  * Load balancers:
-    * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic clusters:
+    * Load balancers:
+        * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic clusters:
         1. Create an [NLB 1.0](/docs/openshift?topic=openshift-loadbalancer) or [NLB 2.0](/docs/openshift?topic=openshift-loadbalancer-v2).
         2. [Register a DNS subdomain](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname) for the NLB.
     * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC clusters: Set up a [VPC load balancer](/docs/openshift?topic=openshift-vpc-lbaas).
 
-  * Ingress: Configure Ingress for the [public network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public) or the [private network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private).
+    * Ingress: Configure Ingress for the [public network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public) or the [private network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private).
 
-  * Routes: [Create a route to expose your app on a subdomain.](/docs/openshift?topic=openshift-openshift_routes)
+    * Routes: [Create a route to expose your app on a subdomain.](/docs/openshift?topic=openshift-openshift_routes)
 
 </br>Need help? Check out [Troubleshooting Ingress](/docs/containers?topic=containers-ingress-debug) and [Troubleshooting load balancers](/docs/containers?topic=containers-cs_loadbalancer_fails).
 
@@ -462,14 +460,16 @@ Enhance app capabilities by integrating various external services and catalog se
 {: shortdesc}
 
 1. **Review supported integrations**:
-  * [All supported integrations](/docs/containers?topic=containers-supported_integrations#supported_integrations)
-  * [{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-service-partners)
-  * [{{site.data.keyword.cloud_notm}} services and third-party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations)
-  * [Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks)
-  * [Operators](/docs/openshift?topic=openshift-operators)
+    * [All supported integrations](/docs/containers?topic=containers-supported_integrations#supported_integrations)
+    * [{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-service-partners)
+    * [{{site.data.keyword.cloud_notm}} services and third-party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations)
+    * [Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks)
+    * [Operators](/docs/openshift?topic=openshift-operators)
 2. **Add services to your cluster**: Ask your cluster administrator to [add the integration to your cluster](/docs/openshift?topic=openshift-learning-path-admin#admin_integrate).
 3. **Access services from your app**: Ensure that your app can access the service. For example, to access an IBM Cloud service instance from your app, you must [make the service credentials that are stored in the Kubernetes secret available to your app](/docs/openshift?topic=openshift-service-binding#adding_app).
 
 </br>Need help? Check out [Troubleshooting apps and integrations](/docs/containers?topic=containers-debug_worker_nodes).
+
+
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-07-29"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -20,6 +20,7 @@ content-type: troubleshoot
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -53,11 +54,9 @@ content-type: troubleshoot
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -128,10 +127,11 @@ The OpenVPN server could not be configured because load balancer IP address that
 {: tsResolve}
 Verify that your cluster has available subnets, and that the load balancer setup completed successfully.
 
+
 ## Verifying that your cluster has available subnets
 {: #verify_subnets}
 
-1.  Check that your cluster has a **Subnet CIDR** for public and private subnets. If you set up a private VLAN-only cluster, you might have only a private subnet.
+1. Check that your cluster has a **Subnet CIDR** for public and private subnets. If you set up a private VLAN-only cluster, you might have only a private subnet.
     ```
     ibmcloud oc cluster get --cluster <cluster_name_or_ID> --show-resources
     ```
@@ -148,9 +148,10 @@ Verify that your cluster has available subnets, and that the load balancer setup
     2876543   169.xx.xxx.xxx/29  true     false
     ```
     {: screen}
-2.  If the cluster does not have a subnet, [create a subnet for the cluster](/docs/containers?topic=containers-subnets#request) or [add an existing subnet from your account to the cluster](/docs/containers?topic=containers-subnets#add-existing).
-3.  If the cluster does have a subnet, [check for available portable IP addresses](/docs/containers?topic=containers-subnets#review_ip) and if necessary, [add more portable IP address by adding a subnet](/docs/containers?topic=containers-subnets#adding_ips).
-4.  Refresh the master to restart the OpenVPN setup so that it uses the available subnet.
+
+2. If the cluster does not have a subnet, [create a subnet for the cluster](/docs/containers?topic=containers-subnets#request) or [add an existing subnet from your account to the cluster](/docs/containers?topic=containers-subnets#add-existing).
+3. If the cluster does have a subnet, [check for available portable IP addresses](/docs/containers?topic=containers-subnets#review_ip) and if necessary, [add more portable IP address by adding a subnet](/docs/containers?topic=containers-subnets#adding_ips).
+4. Refresh the master to restart the OpenVPN setup so that it uses the available subnet.
     ```
     ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
     ```
@@ -159,18 +160,22 @@ Verify that your cluster has available subnets, and that the load balancer setup
 ## Verifying that the load balancer setup completed successfully
 {: #verify_nlb}
 
-1.  Check that the `ibm-cloud-provider-ip-*` pods for the load balancer are in a **Running** status.
+1. Check that the `ibm-cloud-provider-ip-*` pods for the load balancer are in a **Running** status.
     ```
     oc get pods -n ibm-system | grep ibm-cloud-provider-ip
     ```
     {: pre}
-2.  If a pod is not running, review the **Events** in the pod details to troubleshoot the issue further.
+
+2. If a pod is not running, review the **Events** in the pod details to troubleshoot the issue further.
     ```
     oc describe pod -n kube-system <pod_name>
     ```
     {: pre}
-3.  After you resolve the load balancer pod issue, refresh the master to restart the NLB setup.
+
+3. After you resolve the load balancer pod issue, refresh the master to restart the NLB setup.
     ```
     ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
     ```
     {: pre}
+
+

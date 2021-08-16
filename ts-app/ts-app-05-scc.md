@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -55,7 +55,6 @@ content-type: troubleshoot
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -106,16 +105,15 @@ content-type: troubleshoot
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 # Why does pod not build with a permission denied error because of security context constraint (SCC)?
 {: #ts-app-scc}
 {: troubleshoot}
 
 **Infrastructure provider**:
-  * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-  * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 {: tsSymptoms}
 A system pod or other pod that uses a security context constraint (SCC) has an operation that keeps retrying but fails with a `permission denied` error. For example, you might log in to the internal `image-registry` pod and try to run `docker push`.
@@ -134,7 +132,7 @@ For example, the internal registry mounts a volume to read and write image data 
 {: tsResolve}
 Change the pod's SCC permissions.
 
-1.  Describe the pod and check the `openshift.io/scc: <scc>` security context constraint in the **Annotations** section.
+1. Describe the pod and check the `openshift.io/scc: <scc>` security context constraint in the **Annotations** section.
     ```
     oc describe pod -n <project> <pod>
     ```
@@ -152,7 +150,8 @@ Change the pod's SCC permissions.
     Annotations:        openshift.io/scc: anyuid
     ```
     {: screen}
-2.  Describe the security context constraint and check the user and groups in the **Access** section.
+
+2. Describe the security context constraint and check the user and groups in the **Access** section.
     ```
     oc describe scc <scc>
     ```
@@ -160,25 +159,30 @@ Change the pod's SCC permissions.
 
     Example output:
     ```
-    Name:						anyuid
-    Priority:					<none>
-    Access:						
-        Users:					<none>
-        Groups:					system:authenticated
+    Name:                        anyuid
+    Priority:                    <none>
+    Access:                        
+        Users:                    <none>
+        Groups:                    system:authenticated
     ```
     {: screen}
-3.  If you do not want the user or group to have the permissions of the SCC, remove the user or group from the SCC. For more information, review the default [{{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-openshift_scc#oc_sccs) and [{{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-openshift_scc#ibm_sccs) SCCs that are set in the cluster.
+
+3. If you do not want the user or group to have the permissions of the SCC, remove the user or group from the SCC. For more information, review the default [{{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-openshift_scc#oc_sccs) and [{{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-openshift_scc#ibm_sccs) SCCs that are set in the cluster.
     ```
     oc adm policy remove-scc-from-group <scc> <(user|group)>
     ```
     {: pre}
-4.  Add the user or group to the SCC with the appropriate permissions.
+
+4. Add the user or group to the SCC with the appropriate permissions.
     ```
     oc adm policy add-scc-to-group <scc> <(user|group)>
     ```
     {: pre}
-5.  Delete the pod so that the pod is rescheduled with the new SCC permissions.
+
+5. Delete the pod so that the pod is rescheduled with the new SCC permissions.
     ```
     oc delete pod -n <project> <pod>
     ```
     {: pre}
+
+

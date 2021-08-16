@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Planning your cluster network setup   
 {: #plan_clusters}
@@ -280,8 +278,8 @@ You can use public Kubernetes networking services, such as creating [`LoadBalanc
 
 <p>
 <figure>
- <img src="images/roks_ov_vpc_pub.png" width="850" style="width:850px; border-style: none" alt="Network setup for a VPC cluster that runs internet-facing app workloads"/>
- <figcaption>Network setup for a VPC cluster that runs internet-facing app workloads</figcaption>
+    <img src="images/roks_ov_vpc_pub.png" width="850" style="width:850px; border-style: none" alt="Network setup for a VPC cluster that runs internet-facing app workloads"/>
+    <figcaption>Network setup for a VPC cluster that runs internet-facing app workloads</figcaption>
 </figure>
 </p>
 
@@ -316,8 +314,8 @@ Ready to get started with a cluster for this scenario? After you plan your [high
 
 <p>
 <figure>
- <img src="images/roks_ov_vpc_priv.png" width="850" style="width:850px; border-style: none" alt="Network setup for a VPC cluster that extends an on-prem data center"/>
- <figcaption>Network setup for a VPC cluster that extends an on-prem data center</figcaption>
+    <img src="images/roks_ov_vpc_priv.png" width="850" style="width:850px; border-style: none" alt="Network setup for a VPC cluster that extends an on-prem data center"/>
+    <figcaption>Network setup for a VPC cluster that extends an on-prem data center</figcaption>
 </figure>
 </p>
 
@@ -473,8 +471,8 @@ Edge worker nodes can improve the security of your cluster by allowing fewer wor
 
 <p>
 <figure>
- <img src="images/cs_clusters_planning_internet.png" alt="Architecture image for a cluster that runs internet-facing workloads"/>
- <figcaption>Network setup for a cluster that runs internet-facing workloads</figcaption>
+    <img src="images/cs_clusters_planning_internet.png" alt="Architecture image for a cluster that runs internet-facing workloads"/>
+    <figcaption>Network setup for a cluster that runs internet-facing workloads</figcaption>
 </figure>
 </p>
 
@@ -521,8 +519,8 @@ To achieve this cluster setup, you can create a firewall by [using a gateway app
 
 <p>
 <figure>
- <img src="images/cs_clusters_planning_gateway.png" width="850" style="width:850px; border-style: none" alt="Architecture image for a cluster that uses a gateway appliance for secure public access"/>
- <figcaption>Network setup for a cluster that uses a gateway appliance for secure public access</figcaption>
+    <img src="images/cs_clusters_planning_gateway.png" width="850" style="width:850px; border-style: none" alt="Architecture image for a cluster that uses a gateway appliance for secure public access"/>
+    <figcaption>Network setup for a cluster that uses a gateway appliance for secure public access</figcaption>
 </figure>
 </p>
 
@@ -545,5 +543,7 @@ To provide private access to an app in your cluster, you can create a private ne
 Ready to get started with a cluster for this scenario? After you plan your [high availability](/docs/openshift?topic=openshift-ha_clusters) and [worker node](/docs/openshift?topic=openshift-planning_worker_nodes) setups, see [Creating clusters](/docs/openshift?topic=openshift-clusters).
 
 <br />
+
+
 
 

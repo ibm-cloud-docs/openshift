@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Tuning performance
 {: #kernel}
@@ -135,8 +133,8 @@ To optimize your worker nodes, consider the following information.
 * **Temporary modifications**: If you log in to a pod or use some other process to modify a worker node setting, the modifications are temporary. Worker node lifecycle operations, such as autorecovery, reloading, updating, or replacing a worker node, change any modifications back to the default settings.
 * **Persistent modifications**: For modifications to persist across worker node lifecycle operations, create a daemon set that uses an init container. For more information, see [Modifying default worker node settings to optimize performance](#worker).
 
-   Modifications to the operating system are not supported. If you modify the default settings, you are responsible for debugging and resolving the issues that might occur.
-   {: important}
+    Modifications to the operating system are not supported. If you modify the default settings, you are responsible for debugging and resolving the issues that might occur.
+    {: important}
 
 ### Hardware changes
 {: #worker-default-hw}
@@ -162,6 +160,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
     Depending on the `systctl` settings that you try to change, you might want to configure the security context. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.6/nodes/containers/nodes-containers-sysctls.html){: external}.
     {: note}
+
     
     ```yaml
     apiVersion: apps/v1
@@ -227,6 +226,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     {: pre}
 
 <br />
+
 To revert your worker nodes' `sysctl` parameters to the default values set by {{site.data.keyword.containerlong_notm}}:
 
 1. Delete the daemon set. The `initContainers` that applied the custom settings are removed.
@@ -323,34 +323,34 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
 {: shortdesc}
 
 1. Edit the `default` Calico installation resource.
-  ```
-  oc edit installation default -n calico-system
-  ```
-  {: pre}
+    ```
+    oc edit installation default -n calico-system
+    ```
+    {: pre}
 
 2. In the `spec.calicoNetwork` section, change the value of the `mtu` field.
-   ```yaml
-   ...
-   spec:
-     calicoNetwork:
-       ipPools:
-       - cidr: 172.30.0.0/16
-         encapsulation: IPIPCrossSubnet
-         natOutgoing: Enabled
-         nodeSelector: all()
-       mtu: 8980
-       nodeAddressAutodetectionV4:
-         interface: (^bond0$|^eth0$|^ens6$|^ens3$)
-     kubernetesProvider: OpenShift
-     registry: registry.ng.bluemix.net/armada-master/
-     variant: Calico
-   status:
-     variant: Calico
-   ```
-   {: screen}
+    ```yaml
+    ...
+    spec:
+        calicoNetwork:
+        ipPools:
+        - cidr: 172.30.0.0/16
+            encapsulation: IPIPCrossSubnet
+            natOutgoing: Enabled
+            nodeSelector: all()
+        mtu: 8980
+        nodeAddressAutodetectionV4:
+            interface: (^bond0$|^eth0$|^ens6$|^ens3$)
+        kubernetesProvider: OpenShift
+        registry: registry.ng.bluemix.net/armada-master/
+        variant: Calico
+    status:
+        variant: Calico
+    ```
+    {: screen}
 
-   To run your {{site.data.keyword.openshiftshort}} cluster, make sure that the MTU is equal to or greater than 1450 bytes.
-   {: important}
+    To run your {{site.data.keyword.openshiftshort}} cluster, make sure that the MTU is equal to or greater than 1450 bytes.
+    {: important}
 
 3. Save and close the file.
 
@@ -364,10 +364,10 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
 
 
 1. Edit the `calico-config` configmap resource.
-  ```
-  oc edit cm calico-config -n kube-system
-  ```
-  {: pre}
+    ```
+    oc edit cm calico-config -n kube-system
+    ```
+    {: pre}
 
 2. In the `data` section, add a `calico_mtu_override: "<new_MTU>"` field and specify the new MTU value for Calico. Note that the quotation marks (`"`) around the new MTU value are required.
 
@@ -427,28 +427,28 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
     {: important} 
 
 3. Apply the MTU changes to your cluster master by refreshing the master API server. It might take several minutes for the master to refresh.
-  ```
-  ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
+    ```
+    {: pre}
 
 4. Verify that the master refresh is completed. When the refresh is complete, the **Master Status** changes to `Ready`.
-  ```
-  ibmcloud oc cluster get --cluster <cluster_name_or_ID>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc cluster get --cluster <cluster_name_or_ID>
+    ```
+    {: pre}
 
 5. In the `data` section of the output, verify that the `veth_mtu` field shows the new MTU value for Calico that you specified in step 2.
-  ```
-  oc get cm -n kube-system calico-config -o yaml
-  ```
-  {: pre}
+    ```
+    oc get cm -n kube-system calico-config -o yaml
+    ```
+    {: pre}
 
-  Example output:
-  ```yaml
-  apiVersion: v1
-  data:
-    ...
+    Example output:
+    ```yaml
+    apiVersion: v1
+    data:
+        ...
     etcd_ca: /calico-secrets/etcd-ca
     etcd_cert: /calico-secrets/etcd-cert
     etcd_endpoints: https://172.20.0.1:2041
@@ -457,8 +457,8 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
     veth_mtu: "8980"
   kind: ConfigMap
   ...
-  ```
-  {: screen}
+    ```
+    {: screen}
 
 6. Apply the MTU changes to your worker nodes by [rebooting all worker nodes in your cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot).
 
@@ -484,32 +484,32 @@ Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.da
 {: shortdesc}
 
 1. Edit the `default` Calico installation resource.
-  ```
-  oc edit installation default -n calico-system
-  ```
-  {: pre}
+    ```
+    oc edit installation default -n calico-system
+    ```
+    {: pre}
 
 2. In the `spec.calicoNetwork` section, change the value of `hostPorts` to `Disabled`.
-   ```yaml
-   ...
-   spec:
-     calicoNetwork:
-       hostPorts: Disabled
-       ipPools:
-       - cidr: 172.30.0.0/16
-         encapsulation: IPIPCrossSubnet
-         natOutgoing: Enabled
-         nodeSelector: all()
-       mtu: 1480
-       nodeAddressAutodetectionV4:
-         interface: (^bond0$|^eth0$|^ens6$|^ens3$)
-     kubernetesProvider: OpenShift
-     registry: registry.ng.bluemix.net/armada-master/
-     variant: Calico
-   status:
-     variant: Calico
-   ```
-   {: screen}
+    ```yaml
+    ...
+    spec:
+        calicoNetwork:
+        hostPorts: Disabled
+        ipPools:
+        - cidr: 172.30.0.0/16
+            encapsulation: IPIPCrossSubnet
+            natOutgoing: Enabled
+            nodeSelector: all()
+        mtu: 1480
+        nodeAddressAutodetectionV4:
+            interface: (^bond0$|^eth0$|^ens6$|^ens3$)
+        kubernetesProvider: OpenShift
+        registry: registry.ng.bluemix.net/armada-master/
+        variant: Calico
+    status:
+        variant: Calico
+    ```
+    {: screen}
 
 3. Save and close the file. Your changes are automatically applied.
 
@@ -520,17 +520,18 @@ Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.da
 {: shortdesc}
 
 
+
 1. Edit the `calico-config` configmap resource.
-  ```
-  oc edit cm calico-config -n kube-system
-  ```
-  {: pre}
+    ```
+    oc edit cm calico-config -n kube-system
+    ```
+    {: pre}
 
 2. In the `data.cni_network_config.plugins` section after the `kubernetes` plug-in, remove the `portmap` plug-in section. After you remove the `portmap` section, the configuration looks like the following:
-  ```yaml
-  apiVersion: v1
-  data:
-    calico_backend: bird
+    ```yaml
+    apiVersion: v1
+    data:
+        calico_backend: bird
     cni_network_config: |-
       {
         "name": "k8s-pod-network",
@@ -561,20 +562,24 @@ Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.da
       }
     etcd_ca: /calico-secrets/etcd-ca
     ...
-  ```
-  {: codeblock}
+    ```
+    {: codeblock}
 
-  Changing any other settings for the Calico plug-in in this configmap is not supported.
-  {: important}
+    Changing any other settings for the Calico plug-in in this configmap is not supported.
+    {: important}
 
 3. Apply the change to your cluster by restarting all `calico-node` pods.
+
     1. Get the names of the `calico-node` pods in your cluster.
-      ```
-      oc get pods -n kube-system | grep calico-node
-      ```
-      {: pre}
+        ```
+        oc get pods -n kube-system | grep calico-node
+        ```
+        {: pre}
+
     2. Restart all `calico-node` pods by manually deleting them. Separate each pod name with one space.
-      ```
-      oc delete pods -n kube-system <pod1> <pod2> ...
-      ```
-      {: pre}
+        ```
+        oc delete pods -n kube-system <pod1> <pod2> ...
+        ```
+        {: pre}
+
+

@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Default service settings for {{site.data.keyword.openshiftshort}} components
 {: #service-settings}
@@ -161,4 +159,6 @@ Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many Open
 *   `OAuth`
 *   `Proxy`
 *   `Scheduler`
+
+
 

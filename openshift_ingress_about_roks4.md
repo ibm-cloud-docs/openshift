@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, ingress operator, router
 
 subcollection: openshift
 
 ---
-
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
@@ -105,8 +104,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
+  
 
 
 # About Ingress
@@ -245,6 +243,7 @@ If you want to customize routing rules for your app, you can use [route-specific
 
 6. When the app returns a response packet, it uses the IP address of the worker node where the router service that forwarded the request exists. The VPC load balancer then sends the response packet to the client.
 
+
 ### VPC cluster with a private cloud service endpoint only
 {: #architecture-vpc_private}
 
@@ -289,3 +288,5 @@ To load balance incoming HTTPS connections to your subdomain, you can configure 
 When you configure the public router, you choose the domain that your apps are accessible through. If you use the IBM-provided domain, such as `mycluster-<hash>-0000.us-south.containers.appdomain.cloud/myapp`, you can use the default TLS certificate that is created for the Ingress subdomain. If you set up a CNAME record to map a custom domain to the IBM-provided domain, you can provide your own TLS certificate for your custom domain.
 
 For more information about TLS certificates, see [Managing TLS certificates and secrets](/docs/openshift?topic=openshift-ingress-roks4#manage_certs).
+
+

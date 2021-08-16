@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade, update
 
 subcollection: openshift
 
 ---
-
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Updating clusters, worker nodes, and cluster components
 {: #update}
@@ -167,33 +165,35 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 
 To update the {{site.data.keyword.openshiftshort}} master _major_ or _minor_ version:
 
-1.  Review the [{{site.data.keyword.openshiftshort}} changes](/docs/openshift?topic=openshift-openshift_versions) and make any updates marked _Update before master_.
-2.  Review any [Kubernetes helpful warnings](https://kubernetes.io/blog/2020/09/03/warnings/){: external}, such as deprecation notices.
-3.  Check the add-ons and plug-ins that are installed in your cluster for any impact that might be caused by updating the cluster version.
+1. Review the [{{site.data.keyword.openshiftshort}} changes](/docs/openshift?topic=openshift-openshift_versions) and make any updates marked _Update before master_.
+2. Review any [Kubernetes helpful warnings](https://kubernetes.io/blog/2020/09/03/warnings/){: external}, such as deprecation notices.
+3. Check the add-ons and plug-ins that are installed in your cluster for any impact that might be caused by updating the cluster version.
 
     * **Checking add-ons**
-      1.  List the add-ons in the cluster.
+        1. List the add-ons in the cluster.
           ```
           ibmcloud oc cluster addon ls --cluster <cluster_name_or_ID>
           ```
           {: pre}
-      2.  Check the supported {{site.data.keyword.openshiftshort}} version for each add-on that is installed.
+
+        2. Check the supported {{site.data.keyword.openshiftshort}} version for each add-on that is installed.
           ```
           ibmcloud oc addon-versions
           ```
           {: pre}
-      3.  If the add-on must be updated to run in the {{site.data.keyword.openshiftshort}} version that you want to update your cluster to, [update the add-on](/docs/openshift?topic=openshift-managed-addons#updating-managed-add-ons).
+
+        3. If the add-on must be updated to run in the {{site.data.keyword.openshiftshort}} version that you want to update your cluster to, [update the add-on](/docs/openshift?topic=openshift-managed-addons#updating-managed-add-ons).
 
     * **Checking plug-ins**
-      1.  In the [Helm catalog](https://cloud.ibm.com/kubernetes/helm){: external}, find the plug-ins that you installed in your cluster.
-      2.  From the side menu, expand the **SOURCES & TAR FILE** section.
-      3.  Download and open the source code.
-      4.  Check the `README.md` or `RELEASENOTES.md` files for supported versions.
-      5.  If the plug-in must be updated to run in the {{site.data.keyword.openshiftshort}} version that you want to update your cluster to, update the plug-in by following the plug-in instructions.
+        1. In the [Helm catalog](https://cloud.ibm.com/kubernetes/helm){: external}, find the plug-ins that you installed in your cluster.
+        2. From the side menu, expand the **SOURCES & TAR FILE** section.
+        3. Download and open the source code.
+        4. Check the `README.md` or `RELEASENOTES.md` files for supported versions.
+        5. If the plug-in must be updated to run in the {{site.data.keyword.openshiftshort}} version that you want to update your cluster to, update the plug-in by following the plug-in instructions.
 
-4.  Update your API server and associated master components by using the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/login) or running the CLI `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update).
-5.  Wait a few minutes, then confirm that the update is complete. Review the API server version on the {{site.data.keyword.cloud_notm}} clusters dashboard or run `ibmcloud oc cluster ls`.
-6.  Install the version of the [`oc cli`](/docs/containers?topic=containers-cs_cli_install#kubectl) that matches the API server version that runs in the master. [Kubernetes does not support](https://kubernetes.io/releases/version-skew-policy/){: external} `oc` client versions that are two or more versions apart from the server version (n +/- 2).
+4. Update your API server and associated master components by using the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/login) or running the CLI `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update).
+5. Wait a few minutes, then confirm that the update is complete. Review the API server version on the {{site.data.keyword.cloud_notm}} clusters dashboard or run `ibmcloud oc cluster ls`.
+6. Install the version of the [`oc cli`](/docs/containers?topic=containers-cs_cli_install#kubectl) that matches the API server version that runs in the master. [Kubernetes does not support](https://kubernetes.io/releases/version-skew-policy/){: external} `oc` client versions that are two or more versions apart from the server version (n +/- 2).
 
 When the master update is complete, you can update your worker nodes, depending on the type of cluster infrastructure provider that you have.
 *  [Updating classic worker nodes](#worker_node).
@@ -252,8 +252,8 @@ Updates to worker nodes can cause downtime for your apps and services. Your work
 Set up a configmap to perform a rolling update of your classic worker nodes.
 {: shortdesc}
 
-1.  Complete the [prerequisite steps](#worker-up-prereqs).
-2.  List available worker nodes and note their private IP address.
+1. Complete the [prerequisite steps](#worker-up-prereqs).
+2. List available worker nodes and note their private IP address.
 
     ```
     ibmcloud oc worker ls --cluster <cluster_name_or_ID>
@@ -261,16 +261,16 @@ Set up a configmap to perform a rolling update of your classic worker nodes.
     {: pre}
 
 3. View the labels of a worker node. You can find the worker node labels in the **Labels** section of your CLI output. Every label consists of a `NodeSelectorKey` and a `NodeSelectorValue`.
-   ```
-   oc describe node <private_worker_IP>
-   ```
-   {: pre}
+    ```
+    oc describe node <private_worker_IP>
+    ```
+    {: pre}
 
-   Example output:
-   ```
-   Name:               10.184.58.3
-   Roles:              <none>
-   Labels:             arch=amd64
+    Example output:
+    ```
+    Name:               10.184.58.3
+    Roles:              <none>
+    Labels:             arch=amd64
                     beta.kubernetes.io/arch=amd64
                     beta.kubernetes.io/os=linux
                     failure-domain.beta.kubernetes.io/region=us-south
@@ -281,27 +281,27 @@ Set up a configmap to perform a rolling update of your classic worker nodes.
                     kubernetes.io/hostname=10.123.45.3
                     privateVLAN=2299001
                     publicVLAN=2299012
-   Annotations:        node.alpha.kubernetes.io/ttl=0
+    Annotations:        node.alpha.kubernetes.io/ttl=0
                     volumes.kubernetes.io/controller-managed-attach-detach=true
-   CreationTimestamp:  Tue, 03 Apr 2018 15:26:17 -0400
-   Taints:             <none>
-   Unschedulable:      false
-   ```
-   {: screen}
+    CreationTimestamp:  Tue, 03 Apr 2018 15:26:17 -0400
+    Taints:             <none>
+    Unschedulable:      false
+    ```
+    {: screen}
 
 4. Create a config map and define the unavailability rules for your worker nodes. The following example shows four checks, the `zonecheck.json`, `regioncheck.json`, `defaultcheck.json`, and a check template. You can use these example checks to define rules for worker nodes in a specific zone (`zonecheck.json`), region (`regioncheck.json`), or for all worker nodes that do not match any of the checks that you defined in the config map (`defaultcheck.json`). Use the check template to create your own check. For every check, to identify a worker node, you must choose one of the worker node labels that you retrieved in the previous step.  
 
-   For every check, you can set only one value for <code>NodeSelectorKey</code> and <code>NodeSelectorValue</code>. If you want to set rules for more than one region, zone, or other worker node labels, create a new check. Define up to 10 checks in a config map. If you add more checks, they are ignored.
-   {: note}
+    For every check, you can set only one value for <code>NodeSelectorKey</code> and <code>NodeSelectorValue</code>. If you want to set rules for more than one region, zone, or other worker node labels, create a new check. Define up to 10 checks in a config map. If you add more checks, they are ignored.
+    {: note}
 
-   Example:
-   ```
-   apiVersion: v1
-   kind: ConfigMap
-   metadata:
-     name: ibm-cluster-update-configuration
-     namespace: kube-system
-   data:
+    Example:
+    ```
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: ibm-cluster-update-configuration
+      namespace: kube-system
+    data:
     drain_timeout_seconds: "120"
     zonecheck.json: |
       {
@@ -325,57 +325,57 @@ Set up a configmap to perform a rolling update of your classic worker nodes.
         "NodeSelectorKey": "<node_selector_key>",
         "NodeSelectorValue": "<node_selector_value>"
       }
-   ```
-   {: codeblock}
+    ```
+    {: codeblock}
 
-   <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the parameter in column one and the description that matches in column two.">
-   <caption>Configmap components</caption>
+    <table summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the parameter in column one and the description that matches in column two.">
+    <caption>Configmap components</caption>
     <thead>
     <col width="25%">
     <th>Component</th>
     <th>Description</th>
     </thead>
     <tbody>
-      <tr>
+        <tr>
         <td><code>drain_timeout_seconds</code></td>
-        <td> Optional: The timeout in seconds to wait for the [drain ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/) to complete. Draining a worker node safely removes all existing pods from the worker node and reschedules the pods onto other worker nodes in the cluster. Accepted values are integers in the range 1 - 180. The default value is 30.</td>
-      </tr>
-      <tr>
+        <td> Optional: The timeout in seconds to wait for the <a href="https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/">drain</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> to complete. Draining a worker node safely removes all existing pods from the worker node and reschedules the pods onto other worker nodes in the cluster. Accepted values are integers in the range 1 - 180. The default value is 30.</td>
+        </tr>
+        <tr>
         <td><code>zonecheck.json</code></br><code>regioncheck.json</code></td>
         <td>Two checks that define a rule for a set of worker nodes that you can identify with the specified <code>NodeSelectorKey</code> and <code>NodeSelectorValue</code>. The <code>zonecheck.json</code> identifies worker nodes based on their zone label, and the <code>regioncheck.json</code> uses the region label that is added to every worker node during provisioning. In the example, 30% of all worker nodes that have <code>dal13</code> as their zone label and 20% of all the worker nodes in <code>us-south</code> can be unavailable during the update.</td>
-      </tr>
-      <tr>
+        </tr>
+        <tr>
         <td><code>defaultcheck.json</code></td>
         <td>If you do not create a config map or the map is configured incorrectly, the Kubernetes default is applied. By default, only 20% of the worker nodes in the cluster can be unavailable at a time. You can override the default value by adding the default check to your config map. In the example, every worker node that is not specified in the zone and region checks (<code>dal13</code> or <code>us-south</code>) can be unavailable during the update. </td>
-      </tr>
-      <tr>
+        </tr>
+        <tr>
         <td><code>MaxUnavailablePercentage</code></td>
         <td>The maximum number of nodes that are allowed to be unavailable for a specified label key and value, which is specified as a percentage. A worker node is unavailable during the deploying, reloading, or provisioning process. The queued worker nodes are blocked from updating if it exceeds any defined maximum unavailable percentages. </td>
-      </tr>
-      <tr>
+        </tr>
+        <tr>
         <td><code>NodeSelectorKey</code></td>
         <td>The label key of the worker node for which you want to set a rule. You can set rules for the default labels that are provided by IBM, as well as on worker node labels that you created. <ul><li>If you want to add a rule for worker nodes that belong to one worker pool, you can use the <code>ibm-cloud.kubernetes.io/machine-type</code> label. </li><li> If you have more than one worker pool with the same machine type, use a custom label. </li></ul></td>
-      </tr>
-      <tr>
+        </tr>
+        <tr>
         <td><code>NodeSelectorValue</code></td>
         <td>The label value that the worker node must have to be considered for the rule that you define. </td>
-      </tr>
+        </tr>
     </tbody>
-   </table>
+    </table>
 
 5. Create the configuration map in your cluster.
-   ```
-   oc apply -f <filepath/configmap.yaml>
-   ```
-   {: pre}
+    ```
+    oc apply -f <filepath/configmap.yaml>
+    ```
+    {: pre}
 
-6.  Verify that the config map is created.
+6. Verify that the config map is created.
     ```
     oc get configmap --namespace kube-system
     ```
     {: pre}
 
-7.  Update the worker nodes.
+7. Update the worker nodes.
 
     ```
     ibmcloud oc worker update --cluster <cluster_name_or_ID> --worker <worker_node1_ID> --worker <worker_node2_ID>
@@ -383,16 +383,16 @@ Set up a configmap to perform a rolling update of your classic worker nodes.
     {: pre}
 
 8. Optional: Verify the events that are triggered by the config map and any validation errors that occur. The events can be reviewed in the  **Events** section of your CLI output.
-   ```
-   oc describe -n kube-system cm ibm-cluster-update-configuration
-   ```
-   {: pre}
+    ```
+    oc describe -n kube-system cm ibm-cluster-update-configuration
+    ```
+    {: pre}
 
 9. Confirm that the update is complete by reviewing the Kubernetes version of your worker nodes.  
-   ```
-   oc get nodes
-   ```
-   {: pre}
+    ```
+    oc get nodes
+    ```
+    {: pre}
 
 10. Verify that you do not have duplicate worker nodes. In some cases, older clusters might list duplicate worker nodes with a **`NotReady`** status after an update. To remove duplicates, see [troubleshooting](/docs/containers?topic=containers-cs_duplicate_nodes).
 
@@ -408,11 +408,11 @@ After you set up the config map for the first time, you can then update worker n
 {: shortdesc}
 
 To update worker nodes from the console:
-1.  Complete the [prerequisite steps](#worker-up-prereqs) and [set up a config map](#worker_node) to control how your worker nodes are updated.
-2.  From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/) menu ![Menu icon](../icons/icon_hamburger.svg "Menu icon"), click **{{site.data.keyword.openshiftshort}}**.
-3.  From the **Clusters** page, click your cluster.
-4.  From the **Worker Nodes** tab, select the checkbox for each worker node that you want to update. An action bar is displayed over the table header row.
-5.  From the action bar, click **Update**.
+1. Complete the [prerequisite steps](#worker-up-prereqs) and [set up a config map](#worker_node) to control how your worker nodes are updated.
+2. From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/) menu ![Menu icon](../icons/icon_hamburger.svg "Menu icon"), click **{{site.data.keyword.openshiftshort}}**.
+3. From the **Clusters** page, click your cluster.
+4. From the **Worker Nodes** tab, select the checkbox for each worker node that you want to update. An action bar is displayed over the table header row.
+5. From the action bar, click **Update**.
 
 If you have Portworx installed in your cluster, you must restart the Portworx pods on updated worker nodes. For more information, see [Portworx limitations](/docs/openshift?topic=openshift-portworx#portworx_limitations).
 
@@ -469,27 +469,29 @@ Updates to worker nodes can cause downtime for your apps and services. Your work
 Before you update your VPC worker nodes, review the prerequisite steps.
 {: shortdesc}
 
-1.  Complete the [prerequisite steps](#vpc_worker_prereqs).
-2.  Optional: Add capacity to your cluster by [resizing the worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool). The pods on the worker node can be rescheduled and continue running on the added worker nodes during the update.
-3.  List the worker nodes in your cluster and note the **ID** and **Primary IP** of the worker node that you want to update.
+1. Complete the [prerequisite steps](#vpc_worker_prereqs).
+2. Optional: Add capacity to your cluster by [resizing the worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool). The pods on the worker node can be rescheduled and continue running on the added worker nodes during the update.
+3. List the worker nodes in your cluster and note the **ID** and **Primary IP** of the worker node that you want to update.
     ```
     ibmcloud oc worker ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
-4.  Replace the worker node to update either the patch version or the `major.minor` version that matches the master version.
+4. Replace the worker node to update either the patch version or the `major.minor` version that matches the master version.
     *  To update the worker node to the same `major.minor` version as the master, include the `--update` flag.
-       ```
-       ibmcloud oc worker replace --cluster <cluster_name_or_ID> --worker <worker_node_ID> --update
-       ```
-       {: pre}
+        ```
+        ibmcloud oc worker replace --cluster <cluster_name_or_ID> --worker <worker_node_ID> --update
+        ```
+        {: pre}
+
     *  To update the worker node to the latest patch version at the same `major.minor` version, do not include the `--update` flag.
-       ```
-       ibmcloud oc worker replace --cluster <cluster_name_or_ID> --worker <worker_node_ID>
-       ```
-       {: pre}
-6.  Repeat these steps for each worker node that you must update.
-7.  Optional: After the replaced worker nodes are in a **Ready** status, [resize the worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) to meet the cluster capacity that you want.
+        ```
+        ibmcloud oc worker replace --cluster <cluster_name_or_ID> --worker <worker_node_ID>
+        ```
+        {: pre}
+
+6. Repeat these steps for each worker node that you must update.
+7. Optional: After the replaced worker nodes are in a **Ready** status, [resize the worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) to meet the cluster capacity that you want.
 
 ### Updating VPC worker nodes in the console
 {: #vpc_worker_ui}
@@ -497,11 +499,11 @@ Before you update your VPC worker nodes, review the prerequisite steps.
 You can update your VPC worker nodes in the console. Before you begin, consider [adding more worker nodes](/docs/openshift?topic=openshift-add_workers) to the cluster to help avoid downtime for your apps.
 {: shortdesc}
 
-1.  Complete the [prerequisite steps](#vpc_worker_prereqs).
-2.  From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/) menu ![Menu icon](../icons/icon_hamburger.svg "Menu icon"), click **{{site.data.keyword.openshiftshort}}**.
-3.  From the **Clusters** page, click your cluster.
-4.  From the **Worker Nodes** tab, select the checkbox for each worker node that you want to update. An action bar is displayed over the table header row.
-5.  From the action bar, click **Update**.
+1. Complete the [prerequisite steps](#vpc_worker_prereqs).
+2. From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/) menu ![Menu icon](../icons/icon_hamburger.svg "Menu icon"), click **{{site.data.keyword.openshiftshort}}**.
+3. From the **Clusters** page, click your cluster.
+4. From the **Worker Nodes** tab, select the checkbox for each worker node that you want to update. An action bar is displayed over the table header row.
+5. From the action bar, click **Update**.
 
 <br />
 
@@ -519,113 +521,115 @@ Before you begin:
 To update flavors:
 
 1. List available worker nodes and note their private IP address.
-   - **For worker nodes in a worker pool**:
-     1. List available worker pools in your cluster.
+    - **For worker nodes in a worker pool**:
+        1. List available worker pools in your cluster.
         ```
         ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
         ```
         {: pre}
 
-     2. List the worker nodes in the worker pool. Note the **ID** and **Private IP**.
+        2. List the worker nodes in the worker pool. Note the **ID** and **Private IP**.
         ```
         ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <pool_name>
         ```
         {: pre}
 
-     3. Get the details for a worker node. In the output, note the zone and either the private and public VLAN ID for classic clusters or the subnet ID for VPC clusters.
+        3. Get the details for a worker node. In the output, note the zone and either the private and public VLAN ID for classic clusters or the subnet ID for VPC clusters.
         ```
         ibmcloud oc worker get --cluster <cluster_name_or_ID> --worker <worker_ID>
         ```
         {: pre}
 
-   - **Deprecated: For stand-alone worker nodes**:
-     1. List available worker nodes. Note the **ID** and **Private IP**.
+    - **Deprecated: For stand-alone worker nodes**:
+        1. List available worker nodes. Note the **ID** and **Private IP**.
         ```
         ibmcloud oc worker ls --cluster <cluster_name_or_ID>
         ```
         {: pre}
 
-     2. Get the details for a worker node and note the zone, the private VLAN ID, and the public VLAN ID.
+        2. Get the details for a worker node and note the zone, the private VLAN ID, and the public VLAN ID.
         ```
         ibmcloud oc worker get --cluster <cluster_name_or_ID> --worker <worker_ID>
         ```
         {: pre}
 
 2. List available flavors in the zone.
-   ```
-   ibmcloud oc flavors --zone <zone>
-   ```
-   {: pre}
+    ```
+    ibmcloud oc flavors --zone <zone>
+    ```
+    {: pre}
 
 3. Create a worker node with the new machine type.
-   - **For worker nodes in a worker pool**:
-     1. Create a worker pool with the number of worker nodes that you want to replace.
+    - **For worker nodes in a worker pool**:
+        1. Create a worker pool with the number of worker nodes that you want to replace.
         * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic clusters:
           ```
           ibmcloud oc worker-pool create classic --name <pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone>
           ```
           {: pre}
+
         * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 clusters:
           ```
           ibmcloud oc worker-pool create vpc-gen2 --name <name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_worker_nodes> --label <key>=<value>
           ```
           {: pre}
 
-     2. Verify that the worker pool is created.
+        2. Verify that the worker pool is created.
         ```
         ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
         ```
         {: pre}
 
-     3. Add the zone to your worker pool that you retrieved earlier. When you add a zone, the worker nodes that are defined in your worker pool are provisioned in the zone and considered for future workload scheduling. If you want to spread your worker nodes across multiple zones, choose a [classic](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) or [VPC](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) multizone location.
-       * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic clusters:
-         ```
-         ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
-         ```
-         {: pre}
-       * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 clusters:
-         ```
-         ibmcloud oc zone add vpc-gen2 --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --subnet-id <vpc_subnet_id>
-         ```
-         {: pre}
+        3. Add the zone to your worker pool that you retrieved earlier. When you add a zone, the worker nodes that are defined in your worker pool are provisioned in the zone and considered for future workload scheduling. If you want to spread your worker nodes across multiple zones, choose a [classic](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) or [VPC](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) multizone location.
+        * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic clusters:
+            ```
+            ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
+            ```
+            {: pre}
 
-   - **Deprecated: For stand-alone worker nodes**:
-       ```
-       ibmcloud oc worker add --cluster <cluster_name> --flavor <flavor> --workers <number_of_worker_nodes> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
-       ```
-       {: pre}
+        * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 clusters:
+            ```
+            ibmcloud oc zone add vpc-gen2 --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --subnet-id <vpc_subnet_id>
+            ```
+            {: pre}
+
+    - **Deprecated: For stand-alone worker nodes**:
+        ```
+        ibmcloud oc worker add --cluster <cluster_name> --flavor <flavor> --workers <number_of_worker_nodes> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
+        ```
+        {: pre}
 
 4. Wait for the worker nodes to be deployed. When the worker node state changes to **Normal**, the deployment is finished.
-   ```
-   ibmcloud oc worker ls --cluster <cluster_name_or_ID>
-   ```
-   {: pre}
+    ```
+    ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+    ```
+    {: pre}
 
 5. Remove the old worker node. **Note**: If you are removing a flavor that is billed monthly (such as bare metal), you are charged for the entire the month.
-   - **For worker nodes in a worker pool**:
-     1. Remove the worker pool with the old machine type. Removing a worker pool removes all worker nodes in the pool in all zones. This process might take a few minutes to complete.
+    - **For worker nodes in a worker pool**:
+        1. Remove the worker pool with the old machine type. Removing a worker pool removes all worker nodes in the pool in all zones. This process might take a few minutes to complete.
         ```
         ibmcloud oc worker-pool rm --worker-pool <pool_name> --cluster <cluster_name_or_ID>
         ```
         {: pre}
 
-     2. Verify that the worker pool is removed.
+        2. Verify that the worker pool is removed.
         ```
         ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
         ```
         {: pre}
 
-   - **Deprecated: For stand-alone worker nodes**:
-      ```
-      ibmcloud oc worker rm --cluster <cluster_name> --worker <worker_node>
-      ```
-      {: pre}
+    - **Deprecated: For stand-alone worker nodes**:
+        ```
+        ibmcloud oc worker rm --cluster <cluster_name> --worker <worker_node>
+        ```
+        {: pre}
 
 6. Verify that the worker nodes are removed from your cluster.
-   ```
-   ibmcloud oc worker ls --cluster <cluster_name_or_ID>
-   ```
-   {: pre}
+    ```
+    ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+    ```
+    {: pre}
 
 7. Repeat these steps to update other worker pools or stand-alone worker nodes to different flavors.
 
@@ -680,6 +684,7 @@ You can manage automatic updates of the Fluentd component in the following ways.
         ibmcloud oc logging autoupdate enable --cluster <cluster_name_or_ID>
         ```
         {: pre}
+
     * Force a one-time update when you use a logging command that includes the `--force-update` option. **Note**: Your pods update to the latest version of the Fluentd component, but Fluentd does not update automatically going forward.
         Example command:
 
@@ -700,6 +705,8 @@ Control when the Ingress application load balancer (ALB) component is updated. F
 {: #addons}
 
 Managed {{site.data.keyword.containerlong_notm}} add-ons are an easy way to enhance your cluster with open-source capabilities, such as Istio. The version of the open-source tool that you add to your cluster is tested by IBM and approved for use in {{site.data.keyword.containerlong_notm}}. To update managed add-ons that you enabled in your cluster to the latest versions, see [Updating managed add-ons](/docs/openshift?topic=openshift-managed-addons#updating-managed-add-ons).
+
+
 
 
 

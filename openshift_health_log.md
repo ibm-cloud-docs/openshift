@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
+  
 
- 
- 
 
 
 # Logging for clusters
@@ -132,7 +130,7 @@ To help understand when to use the built-in {{site.data.keyword.openshiftshort}}
 <li>Historical access to logs that is based on the plan you choose.</li>
 <li>Highly available, scalable, and compliant with industry security standards.</li>
 <li>Integrated with {{site.data.keyword.cloud_notm}} IAM for user access management.</li>
-<li>Flexible plans, including a free `Lite` option.</li></ul>
+<li>Flexible plans, including a free <code>Lite</code> option.</li></ul>
 <br>To get started, see [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](#openshift_logging).</dd>
 
 <dt>Built-in {{site.data.keyword.openshiftshort}} logging tools</dt>
@@ -154,7 +152,7 @@ To help understand when to use the built-in {{site.data.keyword.openshiftshort}}
 <li>Historical access to logs that is based on the plan you choose.</li>
 <li>Highly available, scalable, and compliant with industry security standards.</li>
 <li>Integrated with {{site.data.keyword.cloud_notm}} IAM for user access management.</li>
-<li>Flexible plans, including a free `Lite` option.</li></ul>
+<li>Flexible plans, including a free <code>Lite</code> option.</li></ul>
 <br>To get started, see [Forwarding Kubernetes API audit logs to {{site.data.keyword.la_short}}](/docs/openshift?topic=openshift-health-audit).<p class="note">Forwarding Kubernetes API audit logs to {{site.data.keyword.la_short}} is not supported for version 3.11 clusters.</dd>
 
 <dt>Built-in {{site.data.keyword.openshiftshort}} audit logging tools</dt>
@@ -179,38 +177,38 @@ Before you begin:
 - Verify that you are assigned the **Editor** platform access role and **Manager** server access role for {{site.data.keyword.la_full_notm}}.
 - Verify that you are assigned the **Administrator** platform access role and the **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}} to create the logging configuration. To view a logging configuration or launch the {{site.data.keyword.la_short}} dashboard after the logging configuration is created, users must be assigned the **Administrator** platform access role and the **Manager** service access for the `ibm-observe` Kubernetes namespace in {{site.data.keyword.containerlong_notm}}.
 - If you want to use the CLI to set up the logging configuration:
-  - [Install the {{site.data.keyword.openshiftlong_notm}} observability CLI plug-in (`ibmcloud ob`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
-  - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+    - [Install the {{site.data.keyword.openshiftlong_notm}} observability CLI plug-in (`ibmcloud ob`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
+    - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To set up a logging configuration for your cluster:
 
 1. Create an [{{site.data.keyword.la_full_notm}} service instance](/docs/log-analysis?topic=log-analysis-provision) and note the name of the instance. The service instance must belong to the same {{site.data.keyword.cloud_notm}} account where you created your cluster, but can be in a different resource group and {{site.data.keyword.cloud_notm}} region than your cluster.
 2. Set up a logging configuration for your cluster. When you create the logging configuration, an {{site.data.keyword.openshiftshort}} project `ibm-observe` is created and a {{site.data.keyword.la_short}} agent is deployed as a daemon set to all worker nodes in your cluster. This agent collects logs with the extension `*.log` and extensionless files that are stored in the `/var/log` directory of your pod from all projects, including `kube-system`. The agent then forwards the logs to the {{site.data.keyword.la_full_notm}} service.
 
-   - **From the console:**
-     1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to create a {{site.data.keyword.la_short}} configuration.
-     2. On the cluster **Overview** page, click **Connect**.
-     3. Select the region and the {{site.data.keyword.la_full_notm}} service instance that you created earlier, and click **Connect**.
+    - **From the console:**
+        1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to create a {{site.data.keyword.la_short}} configuration.
+        2. On the cluster **Overview** page, click **Connect**.
+        3. Select the region and the {{site.data.keyword.la_full_notm}} service instance that you created earlier, and click **Connect**.
 
-   - **From the CLI:**
-     1.  Create the {{site.data.keyword.la_short}} configuration. When you create the {{site.data.keyword.la_short}} configuration, the ingestion key that was last added is retrieved automatically. If you want to use a different ingestion key, add the `--logdna-ingestion-key <ingestion_key>` option to the command.
+    - **From the CLI:**
+        1. Create the {{site.data.keyword.la_short}} configuration. When you create the {{site.data.keyword.la_short}} configuration, the ingestion key that was last added is retrieved automatically. If you want to use a different ingestion key, add the `--logdna-ingestion-key <ingestion_key>` option to the command.
 
-         To use a different ingestion key after you created your logging configuration, use the [`ibmcloud ob logging config replace`](/docs/containers?topic=containers-observability_cli#logging_config_replace) command.
-         {: tip}
+            To use a different ingestion key after you created your logging configuration, use the [`ibmcloud ob logging config replace`](/docs/containers?topic=containers-observability_cli#logging_config_replace) command.
+            {: tip}
 
-         ```
-         ibmcloud ob logging config create --cluster <cluster_name_or_ID> --instance <Log_Analysis_instance_name_or_ID>
-         ```
-         {: pre}
+            ```
+            ibmcloud ob logging config create --cluster <cluster_name_or_ID> --instance <Log_Analysis_instance_name_or_ID>
+            ```
+            {: pre}
 
-         Example output:
-         ```
-         Creating configuration...
-         OK
-         ```
-         {: screen}
+            Example output:
+            ```
+            Creating configuration...
+            OK
+            ```
+            {: screen}
 
-     2. Verify that the logging configuration was added to your cluster.
+        2. Verify that the logging configuration was added to your cluster.
         ```
         ibmcloud ob logging config list --cluster <cluster_name_or_ID>
         ```
@@ -227,33 +225,33 @@ To set up a logging configuration for your cluster:
         {: screen}
 
 3. Optional: Verify that the {{site.data.keyword.la_short}} agent was set up successfully.
-   1. If you used the console to create the {{site.data.keyword.la_short}} configuration, log in to your cluster. For more information, see [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster)..
+    1. If you used the console to create the {{site.data.keyword.la_short}} configuration, log in to your cluster. For more information, see [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster)..
 
-   2. Verify that the daemon set for the {{site.data.keyword.la_short}} agent was created and all instances are listed as `AVAILABLE`.
-      ```
-      oc get daemonsets -n ibm-observe
-      ```
-      {: pre}
+    2. Verify that the daemon set for the {{site.data.keyword.la_short}} agent was created and all instances are listed as `AVAILABLE`.
+        ```
+        oc get daemonsets -n ibm-observe
+        ```
+        {: pre}
 
-      Example output:
-      ```
-      NAME           DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
-      logdna-agent   9         9         9       9            9           <none>          14m
-      ```
-      {: screen}
+        Example output:
+        ```
+        NAME           DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+        logdna-agent   9         9         9       9            9           <none>          14m
+        ```
+        {: screen}
 
-      The number of daemon set instances that are deployed equals the number of worker nodes in your cluster.
+        The number of daemon set instances that are deployed equals the number of worker nodes in your cluster.
 
-   3. Review the configmap that was created for your {{site.data.keyword.la_short}} agent.
-      ```
-      oc describe configmap -n ibm-observe
-      ```
-      {: pre}
+    3. Review the configmap that was created for your {{site.data.keyword.la_short}} agent.
+        ```
+        oc describe configmap -n ibm-observe
+        ```
+        {: pre}
 
 4. Access the logs for your pods from the {{site.data.keyword.la_short}} dashboard.
-   1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster that you configured.  
-   2. On the cluster **Overview** page, click **Launch**. The {{site.data.keyword.la_short}} dashboard opens.
-   3. Review the pod logs that the {{site.data.keyword.la_short}} agent collected from your cluster. It might take a few minutes for your first logs to show.
+    1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster that you configured.  
+    2. On the cluster **Overview** page, click **Launch**. The {{site.data.keyword.la_short}} dashboard opens.
+    3. Review the pod logs that the {{site.data.keyword.la_short}} agent collected from your cluster. It might take a few minutes for your first logs to show.
 
 5. Review how you can [search and filter logs in the {{site.data.keyword.la_short}} dashboard](/docs/log-analysis?topic=log-analysis-view_logs).
 
@@ -265,15 +263,15 @@ To set up a logging configuration for your cluster:
 To deploy the OpenShift Container Platform cluster logging operator and stack on your {{site.data.keyword.openshiftlong_notm}} cluster, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.6/logging/cluster-logging.html){: external}. Additionally, you must update the cluster logging instance to use an {{site.data.keyword.cloud_notm}} Block Storage storage class.
 {: shortdesc}
 
-1.  Prepare your worker pool to run the operator.
-    1.  Create a [VPC](/docs/openshift?topic=openshift-add_workers#vpc_pools) or [classic](/docs/openshift?topic=openshift-add_workers#classic_pools) worker pool with a flavor of **at least 4 cores and 32 GB memory** and 3 worker nodes.
-    2.  [Label the worker pool](/docs/openshift?topic=openshift-add_workers#worker_pool_labels).
-    3.  [Taint the worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) so that other workloads cannot run on the worker pool.
-2.  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-3.  From the {{site.data.keyword.openshiftshort}} web console **Administrator** perspective, click **Operators > Installed Operators**.
-4.  Click **Cluster Logging**.
-5.  In the **Provided APIs** section, **Cluster Logging** tile, click **Create Instance**.
-6.  Modify the configuration YAML to change the storage class for the ElasticSearch log storage from `gp2` to one of the following storage classes that vary with your cluster infrastructure provider.
+1. Prepare your worker pool to run the operator.
+    1. Create a [VPC](/docs/openshift?topic=openshift-add_workers#vpc_pools) or [classic](/docs/openshift?topic=openshift-add_workers#classic_pools) worker pool with a flavor of **at least 4 cores and 32 GB memory** and 3 worker nodes.
+    2. [Label the worker pool](/docs/openshift?topic=openshift-add_workers#worker_pool_labels).
+    3. [Taint the worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) so that other workloads cannot run on the worker pool.
+2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+3. From the {{site.data.keyword.openshiftshort}} web console **Administrator** perspective, click **Operators > Installed Operators**.
+4. Click **Cluster Logging**.
+5. In the **Provided APIs** section, **Cluster Logging** tile, click **Create Instance**.
+6. Modify the configuration YAML to change the storage class for the ElasticSearch log storage from `gp2` to one of the following storage classes that vary with your cluster infrastructure provider.
     * **Classic clusters**: `ibmc-block-gold`
     * **VPC clusters**: `ibmc-vpc-block-10iops-tier`
 
@@ -288,10 +286,10 @@ To deploy the OpenShift Container Platform cluster logging operator and stack on
     ...
     ```
     {: copyblock}
-7.  Modify the configuration YAML to include the node selector and toleration for the worker pool label and taint that you previously created. For more information and examples, see the following {{site.data.keyword.openshiftshort}} documents. The examples use a label and toleration of `logging: clo-efk`.
+7. Modify the configuration YAML to include the node selector and toleration for the worker pool label and taint that you previously created. For more information and examples, see the following {{site.data.keyword.openshiftshort}} documents. The examples use a label and toleration of `logging: clo-efk`.
     * [Node selector](https://docs.openshift.com/container-platform/4.6/logging/config/cluster-logging-moving-nodes.html){: external}. Add the node selector to the Elasticsearch (`logstore`)and Kibana (`visualization`), and Fluentd (`collector.logs`) pods.
-      ```
-      spec:
+        ```
+        spec:
         logStore:
           elasticsearch:
             nodeSelector:
@@ -307,11 +305,12 @@ To deploy the OpenShift Container Platform cluster logging operator and stack on
             fluentd:
               nodeSelector:
                 logging: clo-efk
-      ```
-      {: codeblock}
+        ```
+        {: codeblock}
+
     * [Toleration](https://docs.openshift.com/container-platform/4.6/logging/config/cluster-logging-tolerations.html){: external}. Add the node selector to the Elasticsearch (`logstore`)and Kibana (`visualization`), and Fluentd (`collector.logs`) pods.
-      ```
-      spec:
+        ```
+        spec:
         logStore:
           elasticsearch:
             tolerations:
@@ -336,7 +335,10 @@ To deploy the OpenShift Container Platform cluster logging operator and stack on
                 value: clo-efk
                 operator: "Exists"
                 effect: "NoExecute"
-      ```
-      {: codeblock}
-8.  Click **Create**.
-9.  Verify that the operator, Elasticsearch, Fluentd, and Kibana pods are all **Running**.
+        ```
+        {: codeblock}
+
+8. Click **Create**.
+9. Verify that the operator, Elasticsearch, Fluentd, and Kibana pods are all **Running**.
+
+

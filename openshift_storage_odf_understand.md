@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, openshift data foundation, openshift container storage, vpc, roks, satellite
 
 subcollection: openshift
 
 ---
-
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
@@ -105,8 +104,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
+  
 
 # Understanding OpenShift Data Foundation
 {: #ocs-storage-prep}
@@ -157,5 +155,7 @@ Review the following deployment options for your infrastructure provider.
 | Classic | Local disks on the worker nodes | [Deploying OpenShift Data Foundation on Classic clusters](/docs/openshift?topic=openshift-deploy-odf-classic) |
 {: caption="ODF deployment options" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the infrastructure provider. The second column indicates the supported disk type. The third column is a link to the installation instructions."}
+
+
 
 

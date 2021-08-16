@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 <style>
     <!--
@@ -228,87 +226,87 @@ Following a curated learning path through {{site.data.keyword.openshiftlong}} to
 {: shortdesc}
 
 <div class=solutionBoxContainer>
-  <div class="solutionBox">
-    <a href = "#admin_plan">
-      <div>
+    <div class="solutionBox">
+        <a href = "#admin_plan">
+        <div>
         <img src="images/icon-plan.png" alt="Planning icon" style="height:50px; border-style: none"/>
         <p><strong>Plan your environment</strong></p>
         <p class="bx--type-caption">Plan a highly available cluster with capacity for app workloads.</p>
-      </div>
+        </div>
     </a>
-  </div>
-  <div class="solutionBox">
-      <a href = "#admin_cluster">
-      <div>
+    </div>
+    <div class="solutionBox">
+        <a href = "#admin_cluster">
+        <div>
         <img src="images/icon-pictogram-containers.svg" alt="Cluster icon" style="height:50px; border-style: none"/>
         <p><strong>Create a cluster</strong></p>
         <p class="bx--type-caption">Create a cluster according to your planned setup.</p>
-      </div>
+        </div>
     </a>
-  </div>
-  <div class="solutionBox">
-    <a href = "#admin_network">
-      <div>
+    </div>
+    <div class="solutionBox">
+        <a href = "#admin_network">
+        <div>
         <img src="images/network--services.svg" alt="Network icon" style="height:50px; border-style: none"/>
         <p><strong>Manage the network</strong></p>
         <p class="bx--type-caption">Configure cluster connectivity to other networks or manage cluster subnets.</p>
-      </div>
+        </div>
     </a>
-  </div>
-  <div class="solutionBox">
-    <a href = "#admin_secure">
-      <div>
+    </div>
+    <div class="solutionBox">
+        <a href = "#admin_secure">
+        <div>
         <img src="images/lock--alt.svg" alt="Security icon" style="height:50px; border-style: none"/>
         <p><strong>Secure your cluster</strong></p>
         <p class="bx--type-caption">Protect the cluster infrastructure and network and isolate compute resources.</p>
-      </div>
+        </div>
     </a>
-  </div>
-  <div class="solutionBox">
-    <a href = "#admin_health">
-      <div>
+    </div>
+    <div class="solutionBox">
+        <a href = "#admin_health">
+        <div>
         <img src="images/chart--line.svg" alt="Health icon" style="height:50px; border-style: none"/>
         <p><strong>Log and monitor</strong></p>
         <p class="bx--type-caption">Improve your cluster's health and performance with logging and monitoring.</p>
-      </div>
+        </div>
     </a>
-  </div>
-  <div class="solutionBox">
-    <a href = "#admin_registry">
-      <div>
+    </div>
+    <div class="solutionBox">
+        <a href = "#admin_registry">
+        <div>
         <img src="images/path.svg" alt="CI/CD icon" style="height:50px; border-style: none"/>
         <p><strong>Add a registry and CI/CD</strong></p>
         <p class="bx--type-caption">Set up an image registry and a continuous integration and delivery pipeline.</p>
-      </div>
+        </div>
     </a>
-  </div>
-  <div class="solutionBox">
-    <a href = "#admin_storage">
-      <div>
+    </div>
+    <div class="solutionBox">
+        <a href = "#admin_storage">
+        <div>
         <img src="images/data--storage.svg" alt="Storage icon" style="height:50px; border-style: none"/>
         <p><strong>Add storage</strong></p>
         <p class="bx--type-caption">Plan and add highly available persistent storage for your app data.</p>
-      </div>
+        </div>
     </a>
-  </div>
-  <div class="solutionBox">
-    <a href = "#admin_integrate">
-      <div>
+    </div>
+    <div class="solutionBox">
+        <a href = "#admin_integrate">
+        <div>
         <img src="images/connect.svg" alt="Integrations icon" style="height:50px; border-style: none"/>
         <p><strong>Add integrations</strong></p>
         <p class="bx--type-caption">Enhance cluster capabilities by integrating external and catalog services.</p>
-      </div>
+        </div>
     </a>
-  </div>
-  <div class="solutionBox">
-    <a href = "#admin_lifecycle">
-      <div>
+    </div>
+    <div class="solutionBox">
+        <a href = "#admin_lifecycle">
+        <div>
         <img src="images/renew.svg" alt="Lifecycle icon" style="height:50px; border-style: none"/>
         <p><strong>Manage the lifecycle</strong></p>
         <p class="bx--type-caption">Manage your cluster and components through all cluster lifecycle phases.</p>
-      </div>
+        </div>
     </a>
-  </div>
+    </div>
 </div>
 
 ## Plan your environment
@@ -318,14 +316,14 @@ Start by designing a cluster for maximum availability and capacity for your work
 {: shortdesc}
 
 1. **Environment strategy**:
-  1. Define your [Kubernetes strategy](/docs/openshift?topic=openshift-strategy) for the cluster, such as deciding how many clusters to create for your environments.
-  2. Plan your [security strategy](/docs/openshift?topic=openshift-security#network_segmentation), such as ensuring network segmentation and workload isolation.
+    1. Define your [Kubernetes strategy](/docs/openshift?topic=openshift-strategy) for the cluster, such as deciding how many clusters to create for your environments.
+    2. Plan your [security strategy](/docs/openshift?topic=openshift-security#network_segmentation), such as ensuring network segmentation and workload isolation.
 
 2. **Cluster setup**: After you plan your environment, plan the setup for a specific cluster.
-  1. Choose a [supported infrastructure provider](/docs/openshift?topic=openshift-infrastructure_providers).
-  2. Plan your [cluster network setup](/docs/openshift?topic=openshift-plan_clusters).
-  3. Plan your cluster for [high availability](/docs/openshift?topic=openshift-ha_clusters).
-  4. Plan your [worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes).
+    1. Choose a [supported infrastructure provider](/docs/openshift?topic=openshift-infrastructure_providers).
+    2. Plan your [cluster network setup](/docs/openshift?topic=openshift-plan_clusters).
+    3. Plan your cluster for [high availability](/docs/openshift?topic=openshift-ha_clusters).
+    4. Plan your [worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes).
 
 <br />
 
@@ -337,18 +335,18 @@ Create a cluster with infrastructure, network, and availability setups that are 
 
 1. **Firewall**: If you have corporate firewalls, make sure that you [open the required ports and IP addresses](/docs/openshift?topic=openshift-firewall#corporate) to work with {{site.data.keyword.openshiftlong_notm}}.
 2. **CLI and API**:
-  1. [Set up the CLIs](/docs/openshift?topic=openshift-openshift-cli) that are necessary to create and work with clusters. As you work with your cluster, refer to the [command reference](/docs/openshift?topic=openshift-kubernetes-service-cli) and keep track of CLI version updates with the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog).
-  2. Optionally set up [automated deployments with the API](/docs/openshift?topic=openshift-cs_api_install). As you work with your cluster, refer to the [IBM Cloud Kubernetes Service API reference](https://containers.cloud.ibm.com/global/swagger-global-api/#/) and [Community Kubernetes API reference](https://kubernetes.io/docs/reference/).
+    1. [Set up the CLIs](/docs/openshift?topic=openshift-openshift-cli) that are necessary to create and work with clusters. As you work with your cluster, refer to the [command reference](/docs/openshift?topic=openshift-kubernetes-service-cli) and keep track of CLI version updates with the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog).
+    2. Optionally set up [automated deployments with the API](/docs/openshift?topic=openshift-cs_api_install). As you work with your cluster, refer to the [IBM Cloud Kubernetes Service API reference](https://containers.cloud.ibm.com/global/swagger-global-api/#/) and [Community Kubernetes API reference](https://kubernetes.io/docs/reference/).
 3. **Cluster deployment**:
-  1. [Create the cluster](/docs/openshift?topic=openshift-clusters).
-  2. After the cluster is ready, [access your cluster](/docs/containers?topic=containers-access_cluster).
-  3. Spread your cluster across availability zones by [adding worker nodes and zones to your cluster](/docs/openshift?topic=openshift-add_workers).
+    1. [Create the cluster](/docs/openshift?topic=openshift-clusters).
+    2. After the cluster is ready, [access your cluster](/docs/containers?topic=containers-access_cluster).
+    3. Spread your cluster across availability zones by [adding worker nodes and zones to your cluster](/docs/openshift?topic=openshift-add_workers).
 4. **User access**:
-  1. Make sure that your authorized cluster users can now also access the cluster by planning your user access strategy.
-    1. [Pick the right access policy and role for your users](/docs/openshift?topic=openshift-access-overview#access_roles).
+    1. Make sure that your authorized cluster users can now also access the cluster by planning your user access strategy.
+        1. [Pick the right access policy and role for your users](/docs/openshift?topic=openshift-access-overview#access_roles).
     2. [Understand access roles for individual or groups of users in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-access-overview#iam_individuals_groups).
     3. [Choose the scope of user access to cluster instances, {{site.data.keyword.openshiftshort}} project, or resource groups](/docs/openshift?topic=openshift-access-overview#resource_groups).
-  2. Allow users to create apps or audit your cluster activity by [assigning cluster access](/docs/openshift?topic=openshift-users#checking-perms). To see specific permissions and actions that you can grant users, see the [user access permissions reference](/docs/openshift?topic=openshift-access_reference).
+    2. Allow users to create apps or audit your cluster activity by [assigning cluster access](/docs/openshift?topic=openshift-users#checking-perms). To see specific permissions and actions that you can grant users, see the [user access permissions reference](/docs/openshift?topic=openshift-access_reference).
 
 </br>Need help? Check out [Troubleshooting clusters and masters](/docs/containers?topic=containers-debug_clusters) and [Troubleshooting worker nodes](/docs/containers?topic=containers-debug_worker_nodes).
 
@@ -361,10 +359,10 @@ Review the following optional topics to manage the network connectivity of your 
 {: shortdesc}
 
 * **Connections to other networks and workloads**: Set up VPN connectivity between your [classic cluster](/docs/openshift?topic=openshift-vpn) or [VPC cluster](/docs/openshift?topic=openshift-vpc-vpnaas) and remote network environments, other VPCs, and more.
-  * To route responses from your cluster back to your on-premises network in VPN solutions that preserve the request source IP address, add [custom static routes](/docs/openshift?topic=openshift-static-routes) to worker nodes for on-premises subnets.
+    * To route responses from your cluster back to your on-premises network in VPN solutions that preserve the request source IP address, add [custom static routes](/docs/openshift?topic=openshift-static-routes) to worker nodes for on-premises subnets.
 * **Subnets and VLANs**:
-  * Add or change the available subnets and IP addresses for your [classic cluster](/docs/openshift?topic=openshift-subnets) or [VPC cluster](/docs/openshift?topic=openshift-vpc-subnets).
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic clusters: Change the [VLAN connections for your worker nodes](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans).
+    * Add or change the available subnets and IP addresses for your [classic cluster](/docs/openshift?topic=openshift-subnets) or [VPC cluster](/docs/openshift?topic=openshift-vpc-subnets).
+    * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic clusters: Change the [VLAN connections for your worker nodes](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans).
 
 <br />
 
@@ -376,15 +374,15 @@ Use built-in security features to protect your cluster infrastructure and networ
 
 1. **Security strategy**: Start by reviewing all [security options](/docs/openshift?topic=openshift-security) that are available for your cluster.
 2. **Network security**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic clusters:
-    1. To isolate networking workloads, you can restrict network traffic to [edge worker nodes](/docs/openshift?topic=openshift-edge).
+    * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic clusters:
+        1. To isolate networking workloads, you can restrict network traffic to [edge worker nodes](/docs/openshift?topic=openshift-edge).
     2. Set up a firewall by using a [gateway appliance](/docs/openshift?topic=openshift-firewall#vyatta_firewall) or [Calico network policies](/docs/openshift?topic=openshift-network_policies).
-  * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC clusters: Control traffic to and from your cluster with [VPC security groups](/docs/openshift?topic=openshift-vpc-network-policy).
+    * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC clusters: Control traffic to and from your cluster with [VPC security groups](/docs/openshift?topic=openshift-vpc-network-policy).
 3. **Workload security**:
-  1. [Encrypt sensitive information](/docs/openshift?topic=openshift-encryption) in the cluster, such as the master's local disk and secrets.
-  2. Set up a [private image registry](/docs/openshift?topic=openshift-security#images_registry) for your developers, such as the one provided by {{site.data.keyword.registryshort}}, to control access to the registry and the image content that can be pushed.
-  3. [Set pod priority](/docs/openshift?topic=openshift-pod_priority) to indicate the relative priority of the pods that make up your cluster's workload.
-  4. Authorize who can create and update pods by configuring [security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc).
+    1. [Encrypt sensitive information](/docs/openshift?topic=openshift-encryption) in the cluster, such as the master's local disk and secrets.
+    2. Set up a [private image registry](/docs/openshift?topic=openshift-security#images_registry) for your developers, such as the one provided by {{site.data.keyword.registryshort}}, to control access to the registry and the image content that can be pushed.
+    3. [Set pod priority](/docs/openshift?topic=openshift-pod_priority) to indicate the relative priority of the pods that make up your cluster's workload.
+    4. Authorize who can create and update pods by configuring [security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc).
 
 <br />
 
@@ -407,12 +405,12 @@ Set up logging and monitoring to help you troubleshoot issues and improve the he
 Set up an image registry and a continuous integration and delivery (CI/CD) pipeline for your cluster.
 {: shortdesc}
 
-1.  **Registry**: Choose and set up an [image registry](/docs/containers?topic=containers-registry) so that developers can pull images from the registry in their app deployment YAML files. Your cluster comes with the following default configurations that your developers can use.
+1. **Registry**: Choose and set up an [image registry](/docs/containers?topic=containers-registry) so that developers can pull images from the registry in their app deployment YAML files. Your cluster comes with the following default configurations that your developers can use.
     *  **Internal {{site.data.keyword.openshiftshort}} container registry**: The [internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry) is set up by default, with the images stored in an attached storage device. You can also choose to [pull an image from a private registry](/docs/openshift?topic=openshift-registry#imagestream_registry) like {{site.data.keyword.registrylong_notm}} into the image stream of the internal registry so that the image is available locally to all the projects in the cluster.
     * **Private registry**: Your cluster is set up to pull images from [{{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#openshift_iccr) in the `default` project only. To pull images from a private registry in other projects, [create an image pull secret](/docs/containers?topic=containers-registry#other) in the other projects or [import an image from your private registry into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry).
-2.  **CI/CD**:
-  * Review available [options for automating app deployment](/docs/openshift?topic=openshift-cicd).
-  * Set up toolchains with [{{site.data.keyword.deliverypipelinelong}}](/docs/openshift?topic=openshift-cicd#continuous-delivery-pipeline).
+2. **CI/CD**:
+    * Review available [options for automating app deployment](/docs/openshift?topic=openshift-cicd).
+    * Set up toolchains with [{{site.data.keyword.deliverypipelinelong}}](/docs/openshift?topic=openshift-cicd#continuous-delivery-pipeline).
 
 ## Add storage
 {: #admin_storage}
@@ -435,13 +433,13 @@ Enhance cluster capabilities by integrating various external services and catalo
 {: shortdesc}
 
 1. **Review supported integrations**:
-  * [All supported integrations](/docs/containers?topic=containers-supported_integrations)
-  * [{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-service-partners)
-  * [{{site.data.keyword.cloud_notm}} services and third-party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations)
+    * [All supported integrations](/docs/containers?topic=containers-supported_integrations)
+    * [{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-service-partners)
+    * [{{site.data.keyword.cloud_notm}} services and third-party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations)
 2. **Add services to your cluster**:
-  * [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks)
-  * [Adding services by using Operators](/docs/openshift?topic=openshift-operators)
-  * [Adding services by using {{site.data.keyword.cloud_notm}} service binding](/docs/openshift?topic=openshift-service-binding)
+    * [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks)
+    * [Adding services by using Operators](/docs/openshift?topic=openshift-operators)
+    * [Adding services by using {{site.data.keyword.cloud_notm}} service binding](/docs/openshift?topic=openshift-service-binding)
 
 </br>Need help? Check out [Troubleshooting apps and integrations](/docs/containers?topic=containers-debug_worker_nodes).
 
@@ -455,11 +453,13 @@ Manage your cluster and worker nodes through each phase of the cluster lifecycle
 
 * **Autoscaling**: [Automatically increase or decrease the number of worker nodes](/docs/openshift?topic=openshift-ca) based on the sizing needs of your scheduled workloads.
 * **Updating**: Keep your environment up-to-date by frequently [updating clusters, worker nodes, and cluster components](/docs/containers?topic=containers-update). While you update, refer to these version reference pages:
-  * [Version information and update actions](/docs/openshift?topic=openshift-openshift_versions)
-  * [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
-  * [Fluentd and Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog)
+    * [Version information and update actions](/docs/openshift?topic=openshift-openshift_versions)
+    * [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
+    * [Fluentd and Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog)
 * **Removing**: [Remove clusters and clean up related resources](/docs/openshift?topic=openshift-remove).
 
 </br>Need help? Check out troubleshooting [clusters and masters](/docs/containers?topic=containers-debug_clusters), [worker nodes](/docs/containers?topic=containers-debug_worker_nodes), or the [cluster autoscaler](/docs/containers?topic=containers-debug_cluster_autoscaler).
+
+
 
 

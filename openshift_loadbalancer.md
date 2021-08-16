@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Classic: Setting up basic load balancing with an NLB 1.0
 {: #loadbalancer}
@@ -128,16 +126,16 @@ Expose a port and use a portable IP address for a Layer 4 network load balancer 
 * Ensure you have the required number of worker nodes: If you restrict network traffic to edge worker nodes, ensure that at least two [edge worker nodes](/docs/openshift?topic=openshift-edge#edge) are enabled in each zone so that NLBs deploy uniformly.
 
 To set up an NLB 1.0 service in a multizone cluster:
-1.  [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label in the metadata section of your deployment configuration file. This custom label identifies all pods where your app runs to include them in the load balancing.
+1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label in the metadata section of your deployment configuration file. This custom label identifies all pods where your app runs to include them in the load balancing.
 
-2.  Create a load balancer service for the app that you want to expose to the public internet or a private network.
-  1. Create a service configuration file that is named, for example, `myloadbalancer.yaml`.
-  2. Define a load balancer service for the app that you want to expose. You can specify a zone, a VLAN, and an IP address.
+2. Create a load balancer service for the app that you want to expose to the public internet or a private network.
+    1. Create a service configuration file that is named, for example, `myloadbalancer.yaml`.
+    2. Define a load balancer service for the app that you want to expose. You can specify a zone, a VLAN, and an IP address.
 
-      ```yaml
-      apiVersion: v1
-      kind: Service
-      metadata:
+        ```yaml
+        apiVersion: v1
+        kind: Service
+        metadata:
         name: myloadbalancer
         annotations:
           service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: <public_or_private>
@@ -151,49 +149,49 @@ To set up an NLB 1.0 service in a multizone cluster:
          - protocol: TCP
            port: 8080
         loadBalancerIP: <IP_address>
-      ```
-      {: codeblock}
+        ```
+        {: codeblock}
 
-      <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-      <caption>Understanding the YAML file components</caption>
-      <col width="50%">
-      <thead>
-      <th>Parameter</th>
-      <th>Description</th>
-      </thead>
-      <tbody>
-      <tr>
-        <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type`</td>
-        <td>Annotation to specify a <code>private</code> or <code>public</code> load balancer.<p class="note">If you do not specify this annotation and your worker nodes are connected to public VLANs, a public `LoadBalancer` service is created. If your worker nodes are connected to private VLANs only, a private `LoadBalancer` service is created.</p></td>
-      </tr>
-      <tr>
-        <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-zone`</td>
+        <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
+        <caption>Understanding the YAML file components</caption>
+        <col width="50%">
+        <thead>
+        <th>Parameter</th>
+        <th>Description</th>
+        </thead>
+        <tbody>
+        <tr>
+        <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type</code></td>
+        <td>Annotation to specify a <code>private</code> or <code>public</code> load balancer.<p class="note">If you do not specify this annotation and your worker nodes are connected to public VLANs, a public <code>LoadBalancer</code> service is created. If your worker nodes are connected to private VLANs only, a private <code>LoadBalancer</code> service is created.</p></td>
+        </tr>
+        <tr>
+        <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-zone</code></td>
         <td>Annotation to specify the zone that the load balancer service deploys to. To see zones, run <code>ibmcloud oc zone ls</code>.</td>
-      </tr>
-      <tr>
-        <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan`</td>
-        <td>Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run <code>ibmcloud oc vlan ls --zone &lt;zone&gt;</code>.</td>
-      </tr>
-      <tr>
+        </tr>
+        <tr>
+        <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan</code></td>
+        <td>Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run <code>ibmcloud oc vlan ls --zone <zone></code>.</td>
+        </tr>
+        <tr>
         <td><code>selector</code></td>
         <td>The label key (<em>&lt;selector_key&gt;</em>) and value (<em>&lt;selector_value&gt;</em>) that you used in the <code>spec.template.metadata.labels</code> section of your app deployment YAML.</td>
-      </tr>
-      <tr>
+        </tr>
+        <tr>
         <td><code>port</code></td>
         <td>The port that the service listens on.</td>
-      </tr>
-      <tr>
+        </tr>
+        <tr>
         <td><code>loadBalancerIP</code></td>
         <td>Optional: To create a private load balancer or to use a specific portable IP address for a public load balancer, specify the IP address that you want to use. The IP address must be on the VLAN and zone that you specify in the annotations. If you do not specify an IP address:<ul><li>If your cluster is on a public VLAN, a portable public IP address is used. Most clusters are on a public VLAN.</li><li>If your cluster is on a private VLAN only, a portable private IP address is used.</li></ul></td>
-      </tr>
-      </tbody></table>
+        </tr>
+        </tbody></table>
 
-      Example configuration file to create a private NLB 1.0 service that uses a specified IP address on private VLAN `2234945` in `dal12`:
+        Example configuration file to create a private NLB 1.0 service that uses a specified IP address on private VLAN `2234945` in `dal12`:
 
-      ```yaml
-      apiVersion: v1
-      kind: Service
-      metadata:
+        ```yaml
+        apiVersion: v1
+        kind: Service
+        metadata:
         name: myloadbalancer
         annotations:
           service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: private
@@ -207,17 +205,17 @@ To set up an NLB 1.0 service in a multizone cluster:
          - protocol: TCP
            port: 8080
         loadBalancerIP: 172.21.xxx.xxx
-      ```
-      {: codeblock}
+        ```
+        {: codeblock}
 
-  3. Optional: Make your NLB service available to only a limited range of IP addresses by specifying the IPs in the `spec.loadBalancerSourceRanges` field. `loadBalancerSourceRanges` is implemented by `kube-proxy` in your cluster via Iptables rules on worker nodes. For more information, see the [Kubernetes documentation](https://v1-17.docs.kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/){: external}.
+    3. Optional: Make your NLB service available to only a limited range of IP addresses by specifying the IPs in the `spec.loadBalancerSourceRanges` field. `loadBalancerSourceRanges` is implemented by `kube-proxy` in your cluster via Iptables rules on worker nodes. For more information, see the [Kubernetes documentation](https://v1-17.docs.kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/){: external}.
 
-  4. Create the service in your cluster.
+    4. Create the service in your cluster.
 
-      ```
-      oc apply -f myloadbalancer.yaml
-      ```
-      {: pre}
+        ```
+        oc apply -f myloadbalancer.yaml
+        ```
+        {: pre}
 
 3. Verify that the NLB service was created successfully. It might take a few minutes for the service to be created and for the app to be available.
 
@@ -242,16 +240,16 @@ To set up an NLB 1.0 service in a multizone cluster:
     Endpoints:              172.30.xxx.xxx:8080
     Session Affinity:       None
     Events:
-      FirstSeen	LastSeen	Count	From			SubObjectPath	Type	 Reason			          Message
-      ---------	--------	-----	----			-------------	----	 ------			          -------
-      10s		    10s		    1	    {service-controller }	  Normal CreatingLoadBalancer	Creating load balancer
-      10s		    10s		    1	    {service-controller }		Normal CreatedLoadBalancer	Created load balancer
+        FirstSeen    LastSeen    Count    From            SubObjectPath    Type     Reason                      Message
+        ---------    --------    -----    ----            -------------    ----     ------                      -------
+        10s            10s            1        {service-controller }      Normal CreatingLoadBalancer    Creating load balancer
+        10s            10s            1        {service-controller }        Normal CreatedLoadBalancer    Created load balancer
     ```
     {: screen}
 
-4.  If you created a public NLB, access your app from the internet.
-    1.  Open your preferred web browser.
-    2.  Enter the portable public IP address of the NLB and port.
+4. If you created a public NLB, access your app from the internet.
+    1. Open your preferred web browser.
+    2. Enter the portable public IP address of the NLB and port.
 
         ```
         http://169.xx.xxx.xxx:8080
@@ -277,11 +275,11 @@ Next, you can [register an NLB subdomain](/docs/openshift?topic=openshift-loadba
 
 To create an NLB 1.0 service in a single-zone cluster:
 
-1.  [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file. This label is needed to identify all pods where your app runs so that they can be included in the load balancing.
-2.  Create a load balancer service for the app that you want to expose to the public internet or a private network.
-    1.  Create a service configuration file that is named, for example, `myloadbalancer.yaml`.
+1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file. This label is needed to identify all pods where your app runs so that they can be included in the load balancing.
+2. Create a load balancer service for the app that you want to expose to the public internet or a private network.
+    1. Create a service configuration file that is named, for example, `myloadbalancer.yaml`.
 
-    2.  Define a load balancer service for the app that you want to expose.
+    2. Define a load balancer service for the app that you want to expose.
         ```yaml
         apiVersion: v1
         kind: Service
@@ -311,12 +309,12 @@ To create an NLB 1.0 service in a single-zone cluster:
         </thead>
         <tbody>
         <tr>
-          <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type:`
+          <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type:</code>
           <td>Annotation to specify a <code>private</code> or <code>public</code> load balancer.</td>
         </tr>
         <tr>
-          <td>`service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan:`
-          <td>Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run <code>ibmcloud oc vlan ls --zone &lt;zone&gt;</code>.</td>
+          <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan:</code>
+          <td>Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run <code>ibmcloud oc vlan ls --zone <zone></code>.</td>
         </tr>
         <tr>
           <td><code>selector</code></td>
@@ -355,14 +353,14 @@ To create an NLB 1.0 service in a single-zone cluster:
 
     3. Optional: Make your NLB service available to only a limited range of IP addresses by specifying the IPs in the `spec.loadBalancerSourceRanges` field. `loadBalancerSourceRanges` is implemented by `kube-proxy` in your cluster via Iptables rules on worker nodes. For more information, see the [Kubernetes documentation](https://v1-17.docs.kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/){: external}.
 
-    4.  Create the service in your cluster.
+    4. Create the service in your cluster.
 
         ```
         oc apply -f myloadbalancer.yaml
         ```
         {: pre}
 
-3.  Verify that the NLB service was created successfully. It might take a few minutes for the service to be created and for the app to be available.
+3. Verify that the NLB service was created successfully. It might take a few minutes for the service to be created and for the app to be available.
 
     ```
     oc describe service myloadbalancer
@@ -385,18 +383,18 @@ To create an NLB 1.0 service in a single-zone cluster:
     Endpoints:              172.30.xxx.xxx:8080
     Session Affinity:       None
     Events:
-      FirstSeen	LastSeen	Count	From			SubObjectPath	Type	 Reason			          Message
-      ---------	--------	-----	----			-------------	----	 ------			          -------
-      10s		    10s		    1	    {service-controller }	  Normal CreatingLoadBalancer	Creating load balancer
-      10s		    10s		    1	    {service-controller }		Normal CreatedLoadBalancer	Created load balancer
+        FirstSeen    LastSeen    Count    From            SubObjectPath    Type     Reason                      Message
+        ---------    --------    -----    ----            -------------    ----     ------                      -------
+        10s            10s            1        {service-controller }      Normal CreatingLoadBalancer    Creating load balancer
+        10s            10s            1        {service-controller }        Normal CreatedLoadBalancer    Created load balancer
     ```
     {: screen}
 
     The **LoadBalancer Ingress** IP address is the portable IP address that was assigned to your NLB service.
 
-4.  If you created a public NLB, access your app from the internet.
-    1.  Open your preferred web browser.
-    2.  Enter the portable public IP address of the NLB and port.
+4. If you created a public NLB, access your app from the internet.
+    1. Open your preferred web browser.
+    2. Enter the portable public IP address of the NLB and port.
 
         ```
         http://169.xx.xxx.xxx:8080
@@ -575,14 +573,14 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
         Name:                   10.xxx.xx.xxx
         Role:
         Labels:                 arch=amd64
-                                beta.kubernetes.io/arch=amd64
-                                beta.kubernetes.io/os=linux
-                                failure-domain.beta.kubernetes.io/region=us-south
-                                failure-domain.beta.kubernetes.io/zone=dal10
-                                ibm-cloud.kubernetes.io/encrypted-docker-data=true
-                                kubernetes.io/hostname=10.xxx.xx.xxx
-                                privateVLAN=2234945
-                                publicVLAN=2234967
+beta.kubernetes.io/arch=amd64
+beta.kubernetes.io/os=linux
+failure-domain.beta.kubernetes.io/region=us-south
+failure-domain.beta.kubernetes.io/zone=dal10
+ibm-cloud.kubernetes.io/encrypted-docker-data=true
+kubernetes.io/hostname=10.xxx.xx.xxx
+privateVLAN=2234945
+publicVLAN=2234967
         ...
         ```
         {: screen}
@@ -591,3 +589,5 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
 
 </staging components>
+
+

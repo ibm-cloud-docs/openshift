@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,8 +104,7 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
-
+ 
 
 # Deploying OpenShift Data Foundation on Classic clusters
 {: #deploy-odf-classic}
@@ -118,7 +116,7 @@ The OpenShift Data Foundation add-on is available as a technology preview and mi
 {: preview}
 
 **Supported infrastructure provider**:
-  * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+    * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
 ## Planning your setup
 {: #odf-classic-plan}
@@ -193,38 +191,38 @@ Before you install OpenShift Data Foundation in a classic cluster, review the fo
 
 1. Log in to each worker node in your cluster by using the `oc debug` command and complete the following steps.
     * Log in to the worker node. Replace `<worker_node_IP>` with the private IP address of your worker node. To get the private IP addresses of your worker nodes, run the `oc get nodes` command.
-      ```sh
-      oc debug node/<node name> -- chroot /host rm -rvf /var/lib/rook /mnt/local-storage
-      ```
-      {: pre}
+        ```sh
+        oc debug node/<node name> -- chroot /host rm -rvf /var/lib/rook /mnt/local-storage
+        ```
+        {: pre}
 
     * For each disk partition, clear the `xfs` file system that was created with the worker node. If you do not clear the file system, the OSD is not created.
-      ```sh
-      file -sL /dev/<partition>
-      wipefs -a /dev/<partition>
-      ```
-      {: pre}
+        ```sh
+        file -sL /dev/<partition>
+        wipefs -a /dev/<partition>
+        ```
+        {: pre}
 
     * Log out of the worker node
-      ```sh
-      exit
-      ```
+        ```sh
+        exit
+        ```
 
 1. Repeat step 3 for each worker node that you want to use in your ODF deployment.
 
 1. Update the `clusterRole` and `ClusterRoleBindings` for each worker node in your cluster. Edit the `system:node` cluster role to have `get, create, update, delete, list` access for the `volumeattachments.storage.k8s.io` resource.
-  ```sh
-  oc edit clusterrole system:node
-  ```
-  {: pre}
+    ```sh
+    oc edit clusterrole system:node
+    ```
+    {: pre}
 
-  **Example updated `system:node` cluster role configuration file**
-  ```yaml
-  apiVersion: rbac.authorization.k8s.io/v1
-  kind: ClusterRole
-  metadata:
-    annotations:
-      rbac.authorization.kubernetes.io/autoupdate: "true"
+    **Example updated `system:node` cluster role configuration file**
+    ```yaml
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRole
+    metadata:
+        annotations:
+          rbac.authorization.kubernetes.io/autoupdate: "true"
     creationTimestamp: "2020-07-20T18:52:59Z"
     labels:
       kubernetes.io/bootstrapping: rbac-defaults
@@ -243,24 +241,24 @@ Before you install OpenShift Data Foundation in a classic cluster, review the fo
     - update
     - delete
     - list
-  ```
-  {: codeblock}
+    ```
+    {: codeblock}
 
 1. Save and close the file to apply your changes.
 
 1. Edit the cluster role binding `system:node` to add `subjects`.
-  ```sh
-  oc edit clusterrolebinding system:node
-  ```
-  {: pre}
+    ```sh
+    oc edit clusterrolebinding system:node
+    ```
+    {: pre}
 
-  **Example updated `system:node` ClusterRoleBinding configuration file with `subjects`**
-  ```yaml
-  apiVersion: rbac.authorization.k8s.io/v1
-  kind: ClusterRoleBinding
-  metadata:
-    annotations:
-      rbac.authorization.kubernetes.io/autoupdate: "true"
+    **Example updated `system:node` ClusterRoleBinding configuration file with `subjects`**
+    ```yaml
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+        annotations:
+          rbac.authorization.kubernetes.io/autoupdate: "true"
     creationTimestamp: "2020-07-20T18:53:00Z"
     labels:
       kubernetes.io/bootstrapping: rbac-defaults
@@ -276,8 +274,8 @@ Before you install OpenShift Data Foundation in a classic cluster, review the fo
   - apiGroup: rbac.authorization.k8s.io
     kind: Group
     name: system:nodes
-  ```
-  {: codeblock}
+    ```
+    {: codeblock}
 
 1. Save and close the file to apply your changes.
 
@@ -370,52 +368,52 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 1. Review the [parameter reference](#odf-classic-param-ref). When you enable the add-on, you can override the default values by specifying the `--param "key=value"` flag for each parameter that you want to override. Note that for Classic clusters, you must provide the device paths to the local disks that you want to use.
 1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.7.0` of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must specify the `--version` flag when you enable the add-on.
 1. Review the add-on options. Note that add-on options are only available for version `4.7.0` and later.
-  ```sh
-  ibmcloud oc cluster addon options --addon openshift-container-storage
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc cluster addon options --addon openshift-container-storage
+    ```
+    {: pre}
 
-  ```sh
-  Add-on Options
-  Option                Default Value   
-  monStorageClassName   ibmc-vpc-block-metro-10iops-tier   
-  osdSize               250Gi   
-  osdDevicePaths        invalid   
-  workerNodes           all   
-  ocsUpgrade            false   
-  ocsDeploy             false   
-  monSize               20Gi   
-  numOfOsd              1   
-  monDevicePaths        invalid   
-  osdStorageClassName   ibmc-vpc-block-metro-10iops-tier
-  clusterEncryption     false
-  ```
-  {: screen}
+    ```sh
+    Add-on Options
+    Option                Default Value   
+    monStorageClassName   ibmc-vpc-block-metro-10iops-tier   
+    osdSize               250Gi   
+    osdDevicePaths        invalid   
+    workerNodes           all   
+    ocsUpgrade            false   
+    ocsDeploy             false   
+    monSize               20Gi   
+    numOfOsd              1   
+    monDevicePaths        invalid   
+    osdStorageClassName   ibmc-vpc-block-metro-10iops-tier
+    clusterEncryption     false
+    ```
+    {: screen}
 
 1. Enable the `openshift-container-storage` add-on. If you also want to deploy ODF and create your storage cluster from the CLI, you can specify the `"ocsDeploy=true"` flag. If you want to override any of the default parameters, specify the `--param "key=value"` flag for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
 
-  ```sh
-  ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true"
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true"
+    ```
+    {: pre}
 
-  **Example command for overriding the `osdSize` parameter**:
-  ```sh
-  ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true" --param "osdSize=500Gi"
-  ```
-  {: pre}
+    **Example command for overriding the `osdSize` parameter**:
+    ```sh
+    ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true" --param "osdSize=500Gi"
+    ```
+    {: pre}
 
 1. Verify the add-on is in a `Ready` state.
-  ```sh
-  ibmcloud oc cluster addon ls -c <cluster_name>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc cluster addon ls -c <cluster_name>
+    ```
+    {: pre}
 
 1. Verify that the `ibm-ocs-operator-controller-manager-*****` pod is running in the `kube-system` namespace.
-  ```sh
-  oc get pods -A | grep ibm-ocs-operator-controller-manager
-  ```
-  {: pre}
+    ```sh
+    oc get pods -A | grep ibm-ocs-operator-controller-manager
+    ```
+    {: pre}
 
 <br />
 
@@ -443,13 +441,13 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 1. Create a custom resource called `OcsCluster`. Save and edit the following custom resource definition to include the device paths for the local disks [that you retrieved earlier](#odf-classic-get-devices). If you don't specify the optional `workerNodes` parameter, then all worker nodes in your cluster are used for the ODF deployment. Be sure to include the `/dev/disk/by-id/` path when you specify your storage devices.
 
-  **Example custom resource for installing ODF on all worker nodes in a classic cluster**
-  ```yaml
-  apiVersion: ocs.ibm.io/v1
-  kind: OcsCluster
-  metadata:
-    name: ocscluster
-  spec:
+    **Example custom resource for installing ODF on all worker nodes in a classic cluster**
+    ```yaml
+    apiVersion: ocs.ibm.io/v1
+    kind: OcsCluster
+    metadata:
+        name: ocscluster
+      spec:
     monStorageClassName: localfile
     monSize: 20Gi
     osdStorageClassName: localblock
@@ -465,16 +463,16 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
       - <device-by-id> # Example: /dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1
       - <device-by-id> # Example: /dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2
       - <device-by-id> # Example: /dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2
-  ```
-  {: codeblock}
+    ```
+    {: codeblock}
 
-  **Example custom resource for installing ODF only on certain worker nodes in a classic cluster**
-  ```yaml
-  apiVersion: ocs.ibm.io/v1
-  kind: OcsCluster
-  metadata:
-    name: ocscluster
-  spec:
+    **Example custom resource for installing ODF only on certain worker nodes in a classic cluster**
+    ```yaml
+    apiVersion: ocs.ibm.io/v1
+    kind: OcsCluster
+    metadata:
+        name: ocscluster
+      spec:
     monStorageClassName: localfile
     monSize: 20Gi
     osdStorageClassName: localblock
@@ -494,20 +492,20 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
       - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
       - <workerNodes>
       - <workerNodes>
-  ```
-  {: codeblock}
+    ```
+    {: codeblock}
 
 1. Save the file and create the `OcsCluster` custom resource to your cluster.
-  ```sh
-  oc create -f <ocs_cluster_filename>
-  ```
-  {: pre}
+    ```sh
+    oc create -f <ocs_cluster_filename>
+    ```
+    {: pre}
 
 1. Verify that your `OcsCluster` custom resource is running.
-  ```sh
-  oc describe OcsCluster ocscluster
-  ```
-  {: pre}
+    ```sh
+    oc describe OcsCluster ocscluster
+    ```
+    {: pre}
 
 **Next steps**: [Deploy an app that uses ODF](/docs/openshift?topic=openshift-ocs-deploy-app)
 
@@ -534,3 +532,5 @@ Refer to the following OpenShift Data Foundation parameters when you use the add
 | `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
 {: caption="Classic OpenShift Data Foundation parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
+
+

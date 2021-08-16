@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-05-28"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -20,15 +20,19 @@ content-type: troubleshoot
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -41,20 +45,26 @@ content-type: troubleshoot
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -72,8 +82,10 @@ content-type: troubleshoot
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -81,6 +93,7 @@ content-type: troubleshoot
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -105,21 +118,21 @@ content-type: troubleshoot
 When you run `oc get svc -n openshift-ingress`, one or more zones has no public router.
 
 * No `router-default` service is deployed, or the service might not have an external IP address assigned. For example, in a single-zone cluster, you might see the following:
-  ```
-  NAME                                         TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
-  router-default                               LoadBalancer   172.21.47.119   <none>         80:32637/TCP,443:31719/TCP   26m
-  router-internal-default                      ClusterIP      172.21.51.30    <none>         80/TCP,443/TCP,1936/TCP      26m
-  ```
-  {: screen}
+    ```
+    NAME                                         TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
+    router-default                               LoadBalancer   172.21.47.119   <none>         80:32637/TCP,443:31719/TCP   26m
+    router-internal-default                      ClusterIP      172.21.51.30    <none>         80/TCP,443/TCP,1936/TCP      26m
+    ```
+    {: screen}
 
 * If you have a multizone cluster, one zone has no router service. For example, in a multizone cluster that has worker nodes in `dal10`, `dal12`, and `dal13`, you might see a `router-default` service for `dal10` and a `router-dal12` for `dal12`, but no `router-dal13` for `dal13`. Note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`. You might also see that one zone has no router service, but another zone has two or more router services.
-  ```
-  NAME                                         TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
-  router-default                               LoadBalancer   172.21.47.119   169.XX.XX.XX   80:32637/TCP,443:31719/TCP   26m
-  router-dal12                                 LoadBalancer   172.21.47.119   169.XX.XX.XX   80:32637/TCP,443:31719/TCP   26m
-  router-internal-default                      ClusterIP      172.21.51.30    <none>         80/TCP,443/TCP,1936/TCP      26m
-  ```
-  {: screen}
+    ```
+    NAME                                         TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
+    router-default                               LoadBalancer   172.21.47.119   169.XX.XX.XX   80:32637/TCP,443:31719/TCP   26m
+    router-dal12                                 LoadBalancer   172.21.47.119   169.XX.XX.XX   80:32637/TCP,443:31719/TCP   26m
+    router-internal-default                      ClusterIP      172.21.51.30    <none>         80/TCP,443/TCP,1936/TCP      26m
+    ```
+    {: screen}
 
 {: tsCauses}
 Router services might not deploy for one of the following reasons:
@@ -130,6 +143,7 @@ Router services might not deploy for one of the following reasons:
 
 {: tsResolve}
 Resolve VLAN issues for router services that have no IP address, or multizone router service issues for zones with no router services.
+
 
 ## Resolving VLAN issues
 {: #resolve_vlan}
@@ -143,7 +157,7 @@ Option 2: If you have another VLAN that is available, you can [set up VLAN spann
 
 Option 3: If you are not using all the subnets in the VLAN, you can reuse subnets on the VLAN by adding them to your cluster.
 1. Check that the subnet that you want to use is available.
-  <p class="note">The infrastructure account that you use might be shared across multiple {{site.data.keyword.cloud_notm}} accounts. In this case, even if you run the `ibmcloud oc subnets` command to see subnets with **Bound Clusters**, you can see information only for your clusters. Check with the infrastructure account owner to make sure that the subnets are available and not in use by any other account or team.</p>
+    <p class="note">The infrastructure account that you use might be shared across multiple {{site.data.keyword.cloud_notm}} accounts. In this case, even if you run the `ibmcloud oc subnets` command to see subnets with **Bound Clusters**, you can see information only for your clusters. Check with the infrastructure account owner to make sure that the subnets are available and not in use by any other account or team.</p>
 
 2. Use the [`ibmcloud oc cluster subnet add` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_add) to make an existing subnet available to your cluster.
 
@@ -164,8 +178,9 @@ Option 3: If you are not using all the subnets in the VLAN, you can reuse subnet
     {: screen}
 
 4. Verify that the portable IP addresses from the subnet that you added are used for the router in your cluster. It might take several minutes for the services to use the portable IP addresses from the newly-added subnet.
-  * **No Ingress subdomain**: Run `ibmcloud oc cluster get --cluster <cluster>` to verify that the **Ingress Subdomain** is populated.
-  * **A router does not deploy in a zone**: Run `oc get svc -n openshift-ingress` to verify that the missing router is deployed with an external IP address.
+    * **No Ingress subdomain**: Run `ibmcloud oc cluster get --cluster <cluster>` to verify that the **Ingress Subdomain** is populated.
+    * **A router does not deploy in a zone**: Run `oc get svc -n openshift-ingress` to verify that the missing router is deployed with an external IP address.
+
 
 ## Resolving multizone router service deployment issues
 {: #resolve_mzr_router}
@@ -174,53 +189,58 @@ Create a router service in the zone where a router service did not deploy. If a 
 {: shortdesc}
 
 1. Create a YAML for a router service in the zone where a router service did not deploy. Name the router service `router-<zone>`.
-  ```yaml
-   apiVersion: v1
-   kind: Service
-   metadata:
-     annotations:
-       service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: public
-     finalizers:
-     - service.kubernetes.io/load-balancer-cleanup
-     labels:
-       app: router
-       ingresscontroller.operator.openshift.io/owning-ingresscontroller: default
-       router: router-default
-     name: router-<zone>
-     namespace: openshift-ingress
-   spec:
-     externalTrafficPolicy: Cluster
-     selector:
-       ingresscontroller.operator.openshift.io/deployment-ingresscontroller: default
-     sessionAffinity: None
-     type: LoadBalancer
-   ```
-   {: codeblock}
+    ```yaml
+     apiVersion: v1
+     kind: Service
+     metadata:
+       annotations:
+         service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: public
+       finalizers:
+       - service.kubernetes.io/load-balancer-cleanup
+       labels:
+         app: router
+         ingresscontroller.operator.openshift.io/owning-ingresscontroller: default
+         router: router-default
+       name: router-<zone>
+       namespace: openshift-ingress
+     spec:
+       externalTrafficPolicy: Cluster
+       selector:
+         ingresscontroller.operator.openshift.io/deployment-ingresscontroller: default
+       sessionAffinity: None
+       type: LoadBalancer
+    ```
+    {: codeblock}
 
 2. Create the router service in your cluster.
-  ```
-  oc create -f router-<zone>.yaml
-  ```
-  {: pre}
-3. Verify that the router service is created in the correct zone. In the output, get the **EXTERNAL IP** address.
-  ```
-  oc get svc router-<zone> -n openshift-ingress
-  ```
-  {: pre}
+    ```
+    oc create -f router-<zone>.yaml
+    ```
+    {: pre}
 
-  Example output:
-  ```
-  NAME                         TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                      AGE
-  router-dal12                 LoadBalancer   172.21.57.132    169.XX.XX.XX    80/TCP,443/TCP,1940/TCP      3m
-  ```
-  {: screen}
+3. Verify that the router service is created in the correct zone. In the output, get the **EXTERNAL IP** address.
+    ```
+    oc get svc router-<zone> -n openshift-ingress
+    ```
+    {: pre}
+
+    Example output:
+    ```
+    NAME                         TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                      AGE
+    router-dal12                 LoadBalancer   172.21.57.132    169.XX.XX.XX    80/TCP,443/TCP,1940/TCP      3m
+    ```
+    {: screen}
+
 4. Get the subdomain for your default router. In the output, look for the subdomain formatted like `<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
-  ```
-  ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
+    ```
+    {: pre}
+
 5. Register the router service's IP address with your router's subdomain.
-  ```
-  ibmcloud oc nlb-dns add -c <cluster_name_or_ID> --ip <router_svc_ip> --nlb-host <router_subdomain>
-  ```
-  {: pre}
+    ```
+    ibmcloud oc nlb-dns add -c <cluster_name_or_ID> --ip <router_svc_ip> --nlb-host <router_subdomain>
+    ```
+    {: pre}
+
+

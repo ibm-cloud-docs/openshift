@@ -2,13 +2,12 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-16"
 
 keywords: openshift
 subcollection: openshift
 
 ---
-
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
@@ -104,12 +103,13 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Site map
 {: #sitemap}
+
+
 
 
 
@@ -687,13 +687,8 @@ subcollection: openshift
 * [Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge#edge_workloads)
 
 [Classic: Controlling traffic with network policies](/docs/openshift?topic=openshift-network_policies)
-  * [Kubernetes network policies](/docs/openshift?topic=openshift-network_policies#kubernetes-network-policies)
-  * [Calico network policies](/docs/openshift?topic=openshift-network_policies#calico-network-policies)
 * [Default Calico network policies](/docs/openshift?topic=openshift-network_policies#default_policy)
 * [Installing and configuring the Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install)
-* [Installing the Calico CLI, `calicoctl`, according to your operating system.](/docs/openshift?topic=openshift-network_policies#cli_install-calicoctl)
-  * [Linux and OS X](/docs/openshift?topic=openshift-network_policies#cli_install-calicoctl-linux-osx)
-  * [Windows](/docs/openshift?topic=openshift-network_policies#cli_install-calicoctl-windows)
 * [Viewing network policies](/docs/openshift?topic=openshift-network_policies#view_policies)
 * [Adding network policies](/docs/openshift?topic=openshift-network_policies#adding_network_policies)
 * [Controlling inbound traffic to NLB or NodePort services](/docs/openshift?topic=openshift-network_policies#block_ingress)
@@ -1309,6 +1304,17 @@ subcollection: openshift
 * [Limitations](/docs/openshift?topic=openshift-portworx#portworx_limitations)
 
 
+## Understanding OpenShift Data Foundation
+{: #sitemap_understanding_openshift_data_foundation}
+
+
+[Understanding OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep)
+
+* [Architecture overview](/docs/openshift?topic=openshift-ocs-storage-prep#odf-ov)
+
+* [Deploying OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep#odf-deploy-options)
+
+
 ## Deploying OpenShift Data Foundation on VPC clusters
 {: #sitemap_deploying_openshift_data_foundation_on_vpc_clusters}
 
@@ -1570,8 +1576,8 @@ subcollection: openshift
 [{{site.data.keyword.openshiftlong_notm}} CLI](/docs/openshift?topic=openshift-kubernetes-service-cli)
 * [`cluster` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster)
   * [`ibmcloud oc cluster addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable)
-  * [`ibmcloud oc cluster addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable)
-  * [`ibmcloud oc cluster addon get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_get)
+  * [<code>ibmcloud oc cluster addon enable</code>](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable)
+  * [<code>ibmcloud oc cluster addon get</code>](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_get)
   * [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addons)
   * [`ibmcloud oc cluster addon options`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_options)
   * [`ibmcloud oc cluster addon update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_update)
@@ -1613,7 +1619,7 @@ subcollection: openshift
 * [`worker-pool` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool)
   * [`ibmcloud oc worker-pool create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create)
   * [`ibmcloud oc worker-pool create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2)
-  * [`ibmcloud oc worker-pool get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_get)
+  * [<code>ibmcloud oc worker-pool get</code>](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_get)
   * [`ibmcloud oc worker-pool label rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_rm)
   * [`ibmcloud oc worker-pool label set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_set)
   * [`ibmcloud oc worker-pool ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pools)
@@ -1720,7 +1726,7 @@ subcollection: openshift
 * [Logging commands](/docs/openshift?topic=openshift-observability_cli#logging-commands)
   * [`ibmcloud ob logging agent discover`](/docs/openshift?topic=openshift-observability_cli#logging_agent_discover)
   * [`ibmcloud ob logging config create`](/docs/openshift?topic=openshift-observability_cli#logging_config_create)
-  * [`ibmcloud ob logging config delete`](/docs/openshift?topic=openshift-observability_cli#logging_config_delete)
+  * [<code>ibmcloud ob logging config delete</code>](/docs/openshift?topic=openshift-observability_cli#logging_config_delete)
   * [`ibmcloud ob logging config list`](/docs/openshift?topic=openshift-observability_cli#logging_config_list)
   * [`ibmcloud ob logging config enable public-endpoint|private-endpoint`](/docs/openshift?topic=openshift-observability_cli#logging_config_enable)
   * [`ibmcloud ob logging config replace`](/docs/openshift?topic=openshift-observability_cli#logging_config_replace)
@@ -1728,7 +1734,7 @@ subcollection: openshift
 * [Monitoring commands](/docs/openshift?topic=openshift-observability_cli#monitoring-commands)
   * [`ibmcloud ob monitoring agent discover`](/docs/openshift?topic=openshift-observability_cli#monitoring_agent_discover)
   * [`ibmcloud ob monitoring config create`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_create)
-  * [`ibmcloud ob monitoring config delete`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_delete)
+  * [<code>ibmcloud ob monitoring config delete</code>](/docs/openshift?topic=openshift-observability_cli#monitoring_config_delete)
   * [`ibmcloud ob monitoring config list`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_list)
   * [`ibmcloud ob monitoring config enable public-endpoint|private-endpoint`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_enable)
   * [`ibmcloud ob monitoring config replace`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_replace)
@@ -1758,6 +1764,7 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.7 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-47)
+  * [Changelog for worker node fix pack 4.7.23_1528_openshift, released 16 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4723_1528)
   * [Changelog for worker node fix pack 4.7.21_1527_openshift, released 02 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4721_1527)
   * [Changelog for master fix pack 4.7.19_1526_openshift, released 27 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4719_1526)
   * [Changelog for worker node fix pack 4.7.19_1525_openshift, released 19 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4719_1525)
@@ -1767,6 +1774,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.7.13_1521_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4713_1521)
   * [Changelog for master fix pack 4.7.12_1520_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4712_1520)
 * [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
+  * [Changelog for worker node fix pack 4.6.42_1552_openshift, released 16 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4642_1552)
   * [Changelog for worker node fix pack 4.6.40_1551_openshift, released 02 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4640_1551)
   * [Changelog for master fix pack 4.6.38_1550_openshift, released 27 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4638_1550)
   * [Changelog for worker node fix pack 4.6.38_1549_openshift, released 19 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4638_1549)
@@ -1789,6 +1797,7 @@ subcollection: openshift
   * [Changelog for master fix pack 4.6.16_1532_openshift, released 22 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4616_1532)
   * [Changelog for 4.6.16_1530_openshift (master) and 4.6.16_1529_openshift (worker node), released 17 February 2020](/docs/openshift?topic=openshift-openshift_changelog#4616_1530)
 * [Deprecated: Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
+  * [Changelog for worker node fix pack 4.5.41_1548_openshift, released 16 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4541_1548)
   * [Changelog for worker node fix pack 4.5.41_1547_openshift, released 02 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4541_1547)
   * [Changelog for fix pack 4.5.41_1546_openshift, released 27 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4541_1546)
   * [Changelog for worker node fix pack 4.5.41_1545_openshift, released 19 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4541_1545)
@@ -1823,6 +1832,7 @@ subcollection: openshift
   * [Changelog for master fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518)
   * [Changelog for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4513_1515)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for worker node fix pack 3.11.487_1600_openshift, released 16 August 2021](/docs/openshift?topic=openshift-openshift_changelog#311487_1600)
   * [Changelog for worker node fix pack 3.11.465_1599_openshift, released 02 August 2021](/docs/openshift?topic=openshift-openshift_changelog#311465_1599)
   * [Changelog for master fix pack 3.11.439_1598_openshift, released 27 July 2021](/docs/openshift?topic=openshift-openshift_changelog#311439_1598)
   * [Changelog for worker node fix pack 3.11.465_1596_openshift, released 19 July 2021](/docs/openshift?topic=openshift-openshift_changelog#311465_1596)

@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 # Setting Kubernetes API priority and fairness
 {: #kubeapi-priority}
 
@@ -130,13 +128,13 @@ You can create your own flow schema and priorities, but do not modify the defaul
 
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1.  List the flow schemas in your cluster.
+1. List the flow schemas in your cluster.
     ```
     oc get flowschemas
     ```
     {: pre} 
 
-2.  Review the details of a particular flow schema to understand the scope of the flow schema, including which resources can make prioritized API requests, what type of API requests can be made, and what objects the requests can modify.
+2. Review the details of a particular flow schema to understand the scope of the flow schema, including which resources can make prioritized API requests, what type of API requests can be made, and what objects the requests can modify.
     ```
     oc describe flowschema <flow-schema-name>
     ```
@@ -147,4 +145,6 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 * `calico-system-service-accounts`
 * `ibm-system-service-accounts`
 * `tigera-operator-service-accounts`
+
+
 

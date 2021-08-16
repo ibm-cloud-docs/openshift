@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 # Using reservations to reduce classic worker node costs
 {: #reservations}
 
@@ -211,30 +209,31 @@ Create a reservation that you can use to provision worker nodes at a reduced cos
 
 Before you begin, make sure that you have the [**Administrator** platform access role for the service in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#checking-perms).
 
-1.  Log in to the [{{site.data.keyword.openshiftlong_notm}} reservations console](https://cloud.ibm.com/kubernetes/reservations){: external}.
-2.  Click **Create reservation**.
-3.  Select the **Infrastructure** provider to use for your worker nodes.
-4.  Select the **Location** for your reservation. Keep in mind that you cannot change the location later.
+1. Log in to the [{{site.data.keyword.openshiftlong_notm}} reservations console](https://cloud.ibm.com/kubernetes/reservations){: external}.
+2. Click **Create reservation**.
+3. Select the **Infrastructure** provider to use for your worker nodes.
+4. Select the **Location** for your reservation. Keep in mind that you cannot change the location later.
     * **Geography**: The geographic area to filter locations by.
     * **Availability**: Choose single zone or multizone. For multizone areas, you select specific zones for your worker nodes when you create the worker pool.
     * **Metro**: The metro for the location.
-5.  Configure the **Worker nodes** for your reservation.
+5. Configure the **Worker nodes** for your reservation.
     * Click **Change flavor** to edit the CPU, memory, and other operating systems details of the worker nodes. Keep in mind that you cannot change the flavor for the reservation later.
     * Enter the **Number of worker nodes** to create a contract for the initial reservation. You can add contracts for additional worker nodes later.
-6.  Fill out the **Reservation details**. For more information about the discounts, see [Billing and discounts](#ri-about-billing).
+6. Fill out the **Reservation details**. For more information about the discounts, see [Billing and discounts](#ri-about-billing).
     * **Contract length**: Choose between 1 or 3 years for the initial contract duration. You can add contracts for additional durations later.
     * **Start date**: Choose the date that the contract and billing begin, at 00:00 UTC regardless of your timezone. The contract ends 1 or 3 years after the date that you select, such as 15 December 2020 - 15 December 2021. You can select a future date, but you cannot create worker nodes that use the reservation until that date begins.
     * **Reservation name**: Give your reservation a name. This name is used to generate names for all of the associated contracts, which appear in your billing and usage reports. Consider including brief details on the location and flavor to help when selecting the reservation to create worker pools later.
-7.  In the **Summary** pane, review the order summary and then click **Create**. Your reservation is created with the initial contract for worker nodes.
-8.  **Optional**: To add more capacity to your reservation, you can create more contracts.
-    1.  From the [{{site.data.keyword.openshiftlong_notm}} reservations console](https://cloud.ibm.com/kubernetes/reservations){: external}, click your reservation.
-    2.  In the **Contracts** section, click **Add+**.
-    3.  Select the **Number of worker nodes**, **Contract length**, and **Start date** for the contract.
-    4.  In the **Summary** pane, review the order summary and then click **Create**. Your contract is added to the reservation and becomes available to use to provision worker nodes on the start date.
+7. In the **Summary** pane, review the order summary and then click **Create**. Your reservation is created with the initial contract for worker nodes.
+8. **Optional**: To add more capacity to your reservation, you can create more contracts.
+    1. From the [{{site.data.keyword.openshiftlong_notm}} reservations console](https://cloud.ibm.com/kubernetes/reservations){: external}, click your reservation.
+    2. In the **Contracts** section, click **Add+**.
+    3. Select the **Number of worker nodes**, **Contract length**, and **Start date** for the contract.
+    4. In the **Summary** pane, review the order summary and then click **Create**. Your contract is added to the reservation and becomes available to use to provision worker nodes on the start date.
 
 Your reservation is created! Now, [use your reservation to provision worker nodes in your cluster](#ri-use) or [review your reservation usage](#ri-usage-lifecycle).
 
 <br />
+
 ## Using a reservation in a cluster
 {: #ri-use}
 
@@ -249,16 +248,16 @@ Before you begin:
 * [Create](/docs/openshift?topic=openshift-clusters#clusters_standard) or have an existing a classic cluster in the **same metro** as the reservation that you want to use. If you want to use worker nodes only from a reservation, you can create a cluster with zero worker nodes, or remove existing, on-demand worker pools from a cluster.
 
 To use the reservation:
-1.  Log in to the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
-2.  Select the cluster that you want to use.
-3.  From the cluster menu, select **Worker pools**.
-4.  Click **Add+**.
-5.  Fill out the worker pool details.
-    1.  Enter the **Worker pool name**.
-    2.  Select the **Reservation** that you want to use. Keep in mind that the reservation affects the flavor and number of worker nodes that you can provision in this worker pool.
-    3.  Select the **Worker zones** and review the VLAN information.
-    4.  For the **Worker nodes**, increase or decrease the number of worker nodes that you want to create per zone. You can review the percentage of your reservation that creating the worker pool uses. You cannot create a worker pool with more worker nodes than you have in your reservation. To use worker nodes from another reservation, create a different worker pool.
-5.  In the **Summary** pane, notice that your estimated cost is zero, because your worker pool order uses the reservation. To complete the order, click **Create**.
+1. Log in to the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
+2. Select the cluster that you want to use.
+3. From the cluster menu, select **Worker pools**.
+4. Click **Add+**.
+5. Fill out the worker pool details.
+    1. Enter the **Worker pool name**.
+    2. Select the **Reservation** that you want to use. Keep in mind that the reservation affects the flavor and number of worker nodes that you can provision in this worker pool.
+    3. Select the **Worker zones** and review the VLAN information.
+    4. For the **Worker nodes**, increase or decrease the number of worker nodes that you want to create per zone. You can review the percentage of your reservation that creating the worker pool uses. You cannot create a worker pool with more worker nodes than you have in your reservation. To use worker nodes from another reservation, create a different worker pool.
+5. In the **Summary** pane, notice that your estimated cost is zero, because your worker pool order uses the reservation. To complete the order, click **Create**.
 
 <br />
 
@@ -273,15 +272,17 @@ Before you begin, make sure that you have the following roles in {{site.data.key
 * **Viewer** platform access role for **Account Management > Billing** service to view billing details.
 
 **Reservation usage**:
-1.  Log in to the [{{site.data.keyword.openshiftlong_notm}} reservations console](https://cloud.ibm.com/kubernetes/reservations){: external}.
-2.  Review the **Usage** column to see how many worker nodes of the total amount are in use, such as `1 of 3 worker nodes`.
-3.  Review the **Clusters** column to see how many clusters have worker nodes that use the reservation.
+1. Log in to the [{{site.data.keyword.openshiftlong_notm}} reservations console](https://cloud.ibm.com/kubernetes/reservations){: external}.
+2. Review the **Usage** column to see how many worker nodes of the total amount are in use, such as `1 of 3 worker nodes`.
+3. Review the **Clusters** column to see how many clusters have worker nodes that use the reservation.
 
 **Billing details**:
-1.  Log in to the [{{site.data.keyword.cloud_notm}} billing console](https://cloud.ibm.com/billing){: external}.
-2.  From the navigation menu, click **Usage**.
-3.  From the **Services** table, find the **Kubernetes Service** row and click **View plans**.
-4.  From the plans table, find the row for your reservation name and click **View details**.
-5.  Review the details for the reserved worker nodes that are associated with the contracts of your reservation.
+1. Log in to the [{{site.data.keyword.cloud_notm}} billing console](https://cloud.ibm.com/billing){: external}.
+2. From the navigation menu, click **Usage**.
+3. From the **Services** table, find the **Kubernetes Service** row and click **View plans**.
+4. From the plans table, find the row for your reservation name and click **View details**.
+5. Review the details for the reserved worker nodes that are associated with the contracts of your reservation.
+
+
 
 

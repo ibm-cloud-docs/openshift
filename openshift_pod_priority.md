@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-14"
 
 keywords: openshift, roks, rhoks, rhos
 
 subcollection: openshift
 
 ---
-
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 
 # Setting pod priority
 {: #pod_priority}
@@ -137,9 +135,9 @@ To understand how pod priority and {{site.data.keyword.openshiftshort}} controll
 _Figure: Pod priority scenarios_
 <img src="images/pod-priority.png" width="500" alt="Pod priority scenarios" style="width:500px; border-style: none"/>
 
-1.  Three pods with high, medium, and low priority are pending scheduling. The {{site.data.keyword.openshiftshort}} controller finds an available worker node with room for all three pods, and schedules them in order of priority, with the highest priority pod scheduled first.
-2.  Three pods with high, medium, and low priority are pending scheduling. The {{site.data.keyword.openshiftshort}} controller finds an available worker node, but the worker node has only enough resources to support the high and medium priority pods. The low-priority pod is not scheduled and it remains in pending.
-3.  Two pods with high and medium priority are pending scheduling. A third pod with low priority exists on an available worker node. However, the worker node does not have enough resources to schedule any of the pending pods. The {{site.data.keyword.openshiftshort}} controller preempts, or removes, the low-priority pod, which returns the pod to a pending state. Then, the {{site.data.keyword.openshiftshort}} controller tries to schedule the high priority pod. However, the worker node does not have enough resources to schedule the high priority pod, and instead, the {{site.data.keyword.openshiftshort}} controller schedules the medium priority pod.
+1. Three pods with high, medium, and low priority are pending scheduling. The {{site.data.keyword.openshiftshort}} controller finds an available worker node with room for all three pods, and schedules them in order of priority, with the highest priority pod scheduled first.
+2. Three pods with high, medium, and low priority are pending scheduling. The {{site.data.keyword.openshiftshort}} controller finds an available worker node, but the worker node has only enough resources to support the high and medium priority pods. The low-priority pod is not scheduled and it remains in pending.
+3. Two pods with high and medium priority are pending scheduling. A third pod with low priority exists on an available worker node. However, the worker node does not have enough resources to schedule any of the pending pods. The {{site.data.keyword.openshiftshort}} controller preempts, or removes, the low-priority pod, which returns the pod to a pending state. Then, the {{site.data.keyword.openshiftshort}} controller tries to schedule the high priority pod. However, the worker node does not have enough resources to schedule the high priority pod, and instead, the {{site.data.keyword.openshiftshort}} controller schedules the medium priority pod.
 
 **For more information**: See the Kubernetes documentation on [pod priority and preemption](https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/){: external}.
 
@@ -186,23 +184,23 @@ Before you begin:
 
 To use a priority class:
 
-1.  Optional: Use an existing priority class as a template for the new class.
+1. Optional: Use an existing priority class as a template for the new class.
 
-    1.  List existing priority classes.
+    1. List existing priority classes.
 
         ```
         oc get priorityclasses
         ```
         {: pre}
 
-    2.  Choose the priority class that you want to copy and create a local YAML file.
+    2. Choose the priority class that you want to copy and create a local YAML file.
 
         ```
         oc get priorityclass <priority_class> -o yaml > Downloads/priorityclass.yaml
         ```
         {: pre}
 
-2.  Make your priority class YAML file.
+2. Make your priority class YAML file.
 
     ```yaml
     apiVersion: scheduling.k8s.io/v1alpha1
@@ -219,8 +217,8 @@ To use a priority class:
     <caption>Understanding the YAML file components</caption>
     <col width="25%">
     <thead>
-      <th>Component</th>
-      <th>Description</th>
+        <th>Component</th>
+        <th>Description</th>
     </thead>
     <tbody>
     <tr>
@@ -229,26 +227,26 @@ To use a priority class:
     </tr>
     <tr>
     <td><code>value</code></td>
-    <td>Required: Enter an integer less than or equal to 1 billion (1000000000). The higher the value, the higher the priority. Values are relative to the values of other priority classes in the cluster. Reserve very high numbers for system critical pods that you do not want to be preempted (removed). </br></br>For example, the [default cluster-critical priority classes](#default_priority_class) range in value from 900000000-2000001000, so enter a value less than these numbers for new priority classes so that nothing is prioritized higher than these pods.</td>
+    <td>Required: Enter an integer less than or equal to 1 billion (1000000000). The higher the value, the higher the priority. Values are relative to the values of other priority classes in the cluster. Reserve very high numbers for system critical pods that you do not want to be preempted (removed). </br></br>For example, the <a href="#default_priority_class">default cluster-critical priority classes</a> range in value from 900000000-2000001000, so enter a value less than these numbers for new priority classes so that nothing is prioritized higher than these pods.</td>
     </tr>
     <tr>
     <td><code>globalDefault</code></td>
-    <td>Optional: Set the field to `true` to make this priority class the global default that is applied to every pod that is scheduled without a `priorityClassName` value. Only one priority class in your cluster can be set as the global default. If there is no global default, pods with no `priorityClassName` specified have a priority of zero (`0`).</br></br>
-    The [default priority classes](#default_priority_class) do not set a `globalDefault`. If you created other priority classes in your cluster, you can check to make sure that they do not set a `globalDefault` by running `oc describe priorityclass <name>`.</td>
+    <td>Optional: Set the field to <code>true</code> to make this priority class the global default that is applied to every pod that is scheduled without a <code>priorityClassName</code> value. Only one priority class in your cluster can be set as the global default. If there is no global default, pods with no <code>priorityClassName</code> specified have a priority of zero (<code>0</code>).</br></br>
+    The <a href="#default_priority_class">default priority classes</a> do not set a <code>globalDefault</code>. If you created other priority classes in your cluster, you can check to make sure that they do not set a <code>globalDefault</code> by running <code>oc describe priorityclass <name></code>.</td>
     </tr>
     <tr>
     <td><code>description</code></td>
-    <td>Optional: Tell users why to use this priority class. Enclose the string in quotations (`""`).</td>
+    <td>Optional: Tell users why to use this priority class. Enclose the string in quotations (<code>""</code>).</td>
     </tr></tbody></table>
 
-3.  Create the priority class in your cluster.
+3. Create the priority class in your cluster.
 
     ```
     oc apply -f filepath/priorityclass.yaml
     ```
     {: pre}
 
-4.  Verify that the priority class is created.
+4. Verify that the priority class is created.
 
     ```
     oc get priorityclasses
@@ -270,30 +268,30 @@ Before you begin:
 
 To assign priority to your pods:
 
-1.  Check the importance of other deployed pods so that you can choose the right priority class for your pods in relation to what already is deployed.
+1. Check the importance of other deployed pods so that you can choose the right priority class for your pods in relation to what already is deployed.
 
-    1.  View the priority classes that other pods in the namespace use.
+    1. View the priority classes that other pods in the namespace use.
 
         ```
         oc get pods -n <namespace> -o custom-columns=NAME:.metadata.name,PRIORITY:.spec.priorityClassName
         ```
         {: pre}
 
-    2.  Get the details of the priority class and note the **value** number. Pods with higher numbers are prioritized before pods with lower numbers. Repeat this step for each priority class that you want to review.
+    2. Get the details of the priority class and note the **value** number. Pods with higher numbers are prioritized before pods with lower numbers. Repeat this step for each priority class that you want to review.
 
         ```
         oc describe priorityclass <priorityclass_name>
         ```
         {: pre}
 
-2.  Get the priority class that you want to use, or [create your own priority class](#create_priority_class).
+2. Get the priority class that you want to use, or [create your own priority class](#create_priority_class).
 
     ```
     oc get priorityclasses
     ```
     {: pre}
 
-3.  In your pod spec, add the `priorityClassName` field with the name of the priority class that you retrieved in the previous step.
+3. In your pod spec, add the `priorityClassName` field with the name of the priority class that you retrieved in the previous step.
 
     ```yaml
     apiVersion: apps/v1
@@ -319,11 +317,13 @@ To assign priority to your pods:
     ```
     {: codeblock}
 
-4.  Create your prioritized pods in the namespace that you want to deploy them to.
+4. Create your prioritized pods in the namespace that you want to deploy them to.
 
     ```
     oc apply -f filepath/pod-deployment.yaml
     ```
     {: pre}
+
+
 
 

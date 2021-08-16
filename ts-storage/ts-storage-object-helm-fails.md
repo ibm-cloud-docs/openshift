@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-05"
+lastupdated: "2021-08-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -55,7 +55,6 @@ content-type: troubleshoot
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -107,7 +106,7 @@ content-type: troubleshoot
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
   
-  
+
 # Why does installing the Object storage `ibmc` Helm plug-in fail?
 {: #cos_helm_fails}
 
@@ -118,6 +117,7 @@ content-type: troubleshoot
 
 <img src="../images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to {{site.data.keyword.openshiftshort}} clusters that run version 3.11.
 {: note}
+
 
 
 {: tsSymptoms}
@@ -142,40 +142,42 @@ If you see a `permission denied` error, you do not have the required `read`, `wr
 **For symlink errors**:
 
 1. Remove the {{site.data.keyword.cos_full_notm}} Helm plug-in.
-   **Linux**
-   ```
-   rm -rf ~/.helm/plugins/helm-ibmc
-   ```
-   {: pre}
+    **Linux**
+    ```
+    rm -rf ~/.helm/plugins/helm-ibmc
+    ```
+    {: pre}
 
-   **Mac OS**
-   ```
-   rm -rf ~/Library/helm/plugins/helm-ibmc for macOS
-   ```
-   {: pre}
+    **Mac OS**
+    ```
+    rm -rf ~/Library/helm/plugins/helm-ibmc for macOS
+    ```
+    {: pre}
 
 2. Follow the [documentation](/docs/openshift?topic=openshift-object_storage#install_cos) to re-install the `ibmc` Helm plug-in and the {{site.data.keyword.cos_full_notm}} plug-in.
 
 **For permission errors**:
 
 1. Change the permissions for the `ibmc` plug-in.
-   **Linux**
-   ```
-   chmod 755 ~/.helm/plugins/helm-ibmc/ibmc.sh
-   ```
-   {: pre}
+    **Linux**
+    ```
+    chmod 755 ~/.helm/plugins/helm-ibmc/ibmc.sh
+    ```
+    {: pre}
 
-   **Mac OS**
-   ```
-   chmod 755 ~/Library/helm/plugins/helm-ibmc/ibmc.sh
-   ```
+    **Mac OS**
+    ```
+    chmod 755 ~/Library/helm/plugins/helm-ibmc/ibmc.sh
+    ```
 
 2. Try out the `ibm` Helm plug-in.
-   ```
-   helm ibmc --help
-   ```
-   {: pre}
+    ```
+    helm ibmc --help
+    ```
+    {: pre}
 
 3. [Continue installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#install_cos).
+
+
 
 

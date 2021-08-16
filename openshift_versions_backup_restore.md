@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -105,9 +104,8 @@ subcollection: openshift
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
- 
   
+
 # Back up and restore Helm chart 
 {: #backup_restore_changelog}
 
@@ -123,6 +121,7 @@ Refer to the following tables for a summary of changes for each version of the [
 {: summary="The rows are read from left to right. The first column is the back up and restore Helm chart version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the back up and restore Helm chart version is supported for."}
 
 <br />
+
 ## Changelog for 1.0.5
 {: #0105_br_chart}
 
@@ -132,9 +131,11 @@ The following table shows the changes that are included in version 1.0.5 of the 
 
 | Version | Image tag | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
 | --- | --- | --- | --- | --- |
-| `1.0.5` | `v100` | 17 December 2020 | 4.3 - 4.6 | Updates in this release:<ul><li>Images are now signed.</li><li>The `ibmcloud-backup-restore` Helm chart now pulls the universal base image (UBI) from the proxy image registry.</li><li>Resources that are deployed by the `ibmcloud-backup-restore` Helm chart are now linked with the corresponding source code and build URLs.</li></ul> |
+| `1.0.5` | `v100` | 17 December 2020 | 4.3 - 4.6 | Updates in this release:<ul><li>Images are now signed.</li><li>The <code>ibmcloud-backup-restore</code> Helm chart now pulls the universal base image (UBI) from the proxy image registry.</li><li>Resources that are deployed by the <code>ibmcloud-backup-restore</code> Helm chart are now linked with the corresponding source code and build URLs.</li></ul> |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Back up and restore Helm chart version 1.0.5" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the version of the component. The second column lists the images tags of the component. The third column contains the release date of the component. The fourth column contains the supported cluster versions. The fifth column contains a brief description of the change made to the component."}
+
+
 
