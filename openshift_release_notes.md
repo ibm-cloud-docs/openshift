@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-16"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -124,6 +124,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 | Date | Description |
 | ---- | ----------- |
+| 16 August 2021 | **Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}}. For more information, see [Version changelog](/docs/openshift?topic=openshift-openshift_changelog). | 
 | 10 August 2021 | **Ingress changelogs**: Updated the [Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.48.1_1465_iks`, `0.47.0_1480_iks`, and `0.45.0_1482_iks`. **HPCS Router**: Updated version changelog for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog) add-on. **Image key synchronizer**: Updated the version changelog for the [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-on.   |
 | 09 August 2021 | **CLI changelog**: Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.312](/docs/openshift?topic=openshift-cs_cli_changelog). |
 | 02 August 2021 | <ul><li><strong>Ingress changelogs</strong>: Updated the <a href="/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog">Ingress ALB changelog</a> for versions <code>0.47.0_1434_iks</code> and <code>0.45.0_1435_iks</code>. Version <code>0.35.0</code> is now unsupported.</li><li><strong>Worker node versions</strong>: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version <a href="/docs/openshift?topic=openshift-openshift_changelog#4721_1527"><code>4.7.21_1527_openshift</code></a>, <a href="/docs/openshift?topic=openshift-openshift_changelog#4640_1551"><code>4.6.40_1551_openshift</code></a>, <a href="/docs/openshift?topic=openshift-openshift_changelog#4541_1547"><code>4.5.41_1547_openshift</code></a>, and <a href="/docs/openshift?topic=openshift-openshift_changelog#311465_1599"><code>3.11.465_1599_openshift</code></a>.</li></ul> |
