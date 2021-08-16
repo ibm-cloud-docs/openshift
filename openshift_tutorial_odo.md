@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-16"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, odo
 
@@ -274,12 +274,12 @@ You might wonder, how can the microservice be pushed to the cluster without a Do
 Now that you have a microservice running in your cluster, you might wonder what comes next.
 {: shortdesc}
 
-*   **Add more microservices to your app**: You can repeat this process to build out your app by adding microservices.
-*   **Develop your app iteratively**: Whenever you need to make changes to your microservice, rerun the `odo push` command from the app directory to update the microservice in your cluster.
+* **Add more microservices to your app**: You can repeat this process to build out your app by adding microservices.
+* **Develop your app iteratively**: Whenever you need to make changes to your microservice, rerun the `odo push` command from the app directory to update the microservice in your cluster.
 
     Don't want to remember to push each time? Try the `odo watch` command to monitor for local file changes and automatically push the saved updates to your cluster.
     {: tip}
 
-*   **Learn more about OpenShift Do**: Learn more about the features of `odo` by visiting the [{{site.data.keyword.redhat_notm}} {{site.data.keyword.openshiftshort}} Do CLI Documentation](https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_odo/understanding-odo.html){: external}.
+* **Learn more about OpenShift Do**: Learn more about the features of `odo` by visiting the [{{site.data.keyword.redhat_notm}} {{site.data.keyword.openshiftshort}} Do CLI Documentation](https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_odo/understanding-odo.html){: external}.
 
 
