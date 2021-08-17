@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-16"
+lastupdated: "2021-08-17"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, odo
 
@@ -262,6 +262,7 @@ You might wonder, how can the microservice be pushed to the cluster without a Do
     {: pre}
 
 3. In the output of the previous step, copy the route for your microservice that users can access from outside the cluster.
+
 4. In a web browser, open the URL of your NodeJS app. You see your app, or if you used the starter kit, a message similar to the following.
     ```
     Hello from Node.js Starter Application!
