@@ -134,7 +134,7 @@ ibmcloud oc worker ls --cluster <cluster_name_or_id>
 
 Review the **State** and **Status** field for every worker node in your CLI output.
 
-{[states-worker.md]}
+For more information, see [Worker node states](/docs/openshift?topic=openshift-worker-node-state-reference).
 
 ## Step 3: Get the details for each worker node
 {: #worker-debug-get-details}

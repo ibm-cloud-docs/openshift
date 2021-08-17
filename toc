@@ -255,7 +255,6 @@ Red Hat OpenShift on IBM Cloud
     Troubleshooting
         get_help.md
         openshift_ts_debug_tool.md
-        openshift_states_workers.md
 
         {: .topicgroup}
         Clusters and masters
@@ -278,6 +277,7 @@ Red Hat OpenShift on IBM Cloud
         Worker nodes
             ts-worker/ts-worker-debug.md
             ts-worker/ts-worker-debug-kube-api.md
+            openshift_states_workers.md
             ts-worker/ts-worker-common-issues.md
             ts-worker/ts-worker-create-delete.md
             ts-worker/ts-worker-autorebalance.md
