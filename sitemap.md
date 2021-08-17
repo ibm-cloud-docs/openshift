@@ -2254,11 +2254,11 @@ subcollection: openshift
 * [Normal](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-normal)
 * [Provisioned](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provisioned)
 * [Provisioning](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provisioning)
-* [Provision pending](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-pending)
+* [Provision pending](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provision-pending)
 * [Provision_failed](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provision-failed)
 * [Reloading](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reloading)
 * [Reloading_failed](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reloading-failed)
-* [Reload_pending](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-pending)
+* [Reload_pending](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reload-pending)
 * [Unknown](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-unknown)
 * [Warning](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-warning)
 

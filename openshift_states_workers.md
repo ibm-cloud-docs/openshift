@@ -235,7 +235,7 @@ A `Provisioning` state means that your worker node is being provisioned and is n
 
 
 ## Provision pending
-{: #worker-node-pending}
+{: #worker-node-provision-pending}
 
 You can view the current worker node state by running the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and locating the **State** and **Status** fields.
 {: shortdesc}
@@ -273,7 +273,7 @@ You can view the current worker node state by running the `ibmcloud oc worker ls
 A `Reloading_failed` state means that your worker node could not be reloaded. List the details for the worker node to find the details for the failure by running `ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id>`.
 
 ## Reload_pending
-{: #worker-node-pending}
+{: #worker-node-reload-pending}
 
 You can view the current worker node state by running the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and locating the **State** and **Status** fields.
 {: shortdesc}
