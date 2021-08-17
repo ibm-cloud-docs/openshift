@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-16"
+lastupdated: "2021-08-17"
 
 keywords: openshift
 subcollection: openshift
@@ -391,7 +391,7 @@ subcollection: openshift
 {: #sitemap_creating_and_accessing_clusters}
 
 
-[Creating {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-clusters)
+[Creating clusters](/docs/openshift?topic=openshift-clusters)
 * [Sample commands](/docs/openshift?topic=openshift-clusters#cluster_create_samples)
 * [Preparing to create clusters at the account level](/docs/openshift?topic=openshift-clusters#cluster_prepare)
 * [Deciding on your cluster setup](/docs/openshift?topic=openshift-clusters#prepare_cluster_level)
@@ -430,7 +430,7 @@ subcollection: openshift
   * [Accessing clusters through the cluster service URL](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_se)
   * [Accessing clusters from within the {{site.data.keyword.cloud_notm}} private network](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_link)
   * [Accessing clusters from the public network](/docs/openshift?topic=openshift-access_cluster#sat_public_access)
-* [Accessing private clusters by using the Wireguard VPN](/docs/openshift?topic=openshift-access_cluster#access_vpn)
+* [Accessing private clusters by using the Wireguard VPN](/docs/openshift?topic=openshift-access_cluster#access_vpn_openshift)
 * [Accessing clusters from automation tools by using an API key](/docs/openshift?topic=openshift-access_cluster#access_automation)
   * [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key)
   * [Using a service ID to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_service_id)
@@ -2243,6 +2243,24 @@ subcollection: openshift
 * [Step 4: Review the infrastructure provider for the worker node](/docs/openshift?topic=openshift-debug_worker_nodes#worker-debug-rev-infra)
 
 [Debugging worker nodes with Kubernetes API](/docs/openshift?topic=openshift-debug-kube-nodes)
+
+[Worker node states](/docs/openshift?topic=openshift-worker-node-state-reference)
+* [Critical](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-critical)
+* [Deleting](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deleting)
+* [Deleted](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deleted)
+* [Deployed](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deployed)
+* [Deploying](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deploying)
+* [Deploy_failed](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deploy-failed)
+* [Normal](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-normal)
+* [Provisioned](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provisioned)
+* [Provisioning](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provisioning)
+* [Provision pending](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provision-pending)
+* [Provision_failed](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provision-failed)
+* [Reloading](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reloading)
+* [Reloading_failed](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reloading-failed)
+* [Reload_pending](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reload-pending)
+* [Unknown](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-unknown)
+* [Warning](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-warning)
 
 [Common issues with worker nodes](/docs/openshift?topic=openshift-common_worker_nodes_issues)
 * [Account prohibited from ordering](/docs/openshift?topic=openshift-common_worker_nodes_issues#order-prohibit)

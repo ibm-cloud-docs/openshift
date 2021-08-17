@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-17"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -196,7 +196,7 @@ Choose from the following options.
 Allow authorized cluster users to access your [VPC](#vpc_private_se) or [classic](#access_private_se) cluster through the private cloud service endpoint.
 {: shortdesc}
 
-Want to set up a VPN to connect to your cluster from your local machine? Check out [Accessing private clusters by using the Wireguard VPN](/docs/openshift?topic=openshift-access_cluster#access_vpn).
+Want to set up a VPN to connect to your cluster from your local machine? Check out [Accessing private clusters by using the Wireguard VPN](/docs/openshift?topic=openshift-access_cluster#access_vpn_openshift).
 {: tip}
 
 ### Accessing VPC clusters through the private cloud service endpoint
@@ -463,7 +463,7 @@ Your authorized users can now continue with [Accessing {{site.data.keyword.opens
 After you [create an {{site.data.keyword.openshiftshort}} cluster in your {{site.data.keyword.satelliteshort}} location](/docs/openshift?topic=openshift-satellite-clusters), you can begin working with your cluster by accessing the cluster.
 {: shortdesc}
 
-Want to set up a VPN to connect to your cluster from your local machine? Check out [Accessing private clusters by using the Wireguard VPN](/docs/openshift?topic=openshift-access_cluster#access_vpn).
+Want to set up a VPN to connect to your cluster from your local machine? Check out [Accessing private clusters by using the Wireguard VPN](/docs/openshift?topic=openshift-access_cluster#access_vpn_openshift).
 {: tip}
 
 ### Accessing clusters through the cluster service URL
@@ -565,7 +565,7 @@ Making your location and cluster subdomains available outside of your hosts' pri
 <br />
 
 ## Accessing private clusters by using the Wireguard VPN
-{: #access_vpn}
+{: #access_vpn_openshift}
 
 You can use the Wireguard VPN to securely connect to {{site.data.keyword.openshiftshort}} clusters with only a private network connection. Your cluster might run in a private network in {{site.data.keyword.cloud_notm}} or an {{site.data.keyword.satellitelong_notm}} location in another cloud provider or your on-premises data center.
 {: shortdesc}
@@ -597,7 +597,7 @@ Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}
         apt update
         ```
         {: pre}
-
+        
         ```
         apt upgrade
         ```
@@ -739,11 +739,17 @@ Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}
         ...
         ```
         {: screen}
+        
+    3. Enable IPv4 forwarding on your VSI. 
+        ```
+        sysctl -p
+        ```
+        {: pre}
 
 9. Retrieve the list of IP addresses that you need to allow in your Wireguard client configuration so that you can successfully connect to your private {{site.data.keyword.openshiftshort}} cluster.
     1. Get the details of your cluster and note the **Ingress Subdomain** and the **Private Service Endpoint URL**.
         ```
-        ibmcloud oc cluster get --cluster <cluster_name_or_ID>
+        ibmcloud ks cluster get --cluster <cluster_name_or_ID>
         ```
         {: pre}
 
@@ -763,7 +769,7 @@ Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}
 
     3. Get the IP address CIDR of all the VPC subnets, private VLANs, or on-prem networks that your cluster worker nodes are connected to. For example, if you created a VPC cluster in {{site.data.keyword.cloud_notm}}, you can get the subnet CIDR by getting the details for each worker node.  
         ```
-        ibmcloud oc worker get --worker <worker_ID> --cluster <cluster_name_or_ID>
+        ibmcloud ks worker get --worker <worker_ID> --cluster <cluster_name_or_ID>
         ```
         {: pre}
 
@@ -873,7 +879,7 @@ Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}
     1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your private cluster that you want to connect to.  
     2. On the cluster overview page, go to the **Networking** section and copy the **Ingress subdomain**.
     3. Ping the Ingress subdomain to verify that you can connect to your private {{site.data.keyword.openshiftshort}} cluster.
-    4. From the cluster overview page, open the {{site.data.keyword.openshiftshort}} web console.
+    4. From the cluster overview page, open the {{site.data.keyword.openshiftshort}} web console. 
 
 ## Accessing clusters from automation tools by using an API key
 {: #access_automation}

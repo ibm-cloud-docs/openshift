@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-17"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -352,90 +352,7 @@ The **Master Status** provides details of what operation from the master state i
 ### Worker node states
 {: #states_workers}
 
-You can view the current worker node state by running the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and locating the **State** and **Status** fields.
-{: shortdesc}
-
-    <table summary="Every table row should be read left to right, with the cluster state in column one and a description in column two.">
-    <caption>Worker node states</caption>
-        <thead>
-        <th>Worker node state</th>
-        <th>Description</th>
-        </thead>
-        <tbody>
-    <tr>
-        <td><code>Critical</code></td>
-        <td>A worker node can go into a Critical state for many reasons: <ul><li>You initiated a reboot for your worker node without cordoning and draining your worker node. Rebooting a worker node can cause data corruption in <code>containerd</code>, <code>kubelet</code>, <code>kube-proxy</code>, and <code>calico</code>. </li>
-        <li>The pods that are deployed to your worker node do not use proper resource limits for <a href="https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource/">memory</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/assign-cpu-resource/">CPU</a> <img src="../icons/launch-glyph.svg" alt="External link icon">. If you set none or excessive resource limits, pods can consume all available resources, leaving no resources for other pods to run on this worker node. This overcommitment of workload causes the worker node to fail. <ol><li>List the pods that run on your worker node and review the CPU and memory usage, requests and limits. <pre class="codeblock"><code>oc describe node &lt;worker_private_IP&gt;</code></pre></li><li>For pods that consume a lot of memory and CPU resources, check if you set proper resource limits for memory and CPU. <pre class="codeblock"><code>oc get pods &lt;pod_name&gt; -n &lt;namespace&gt; -o json</code></pre></li><li>Optional: Remove the resource-intensive pods to free up compute resources on your worker node. <pre class="codeblock"><code>oc delete pod &lt;pod_name&gt;</code></pre><pre class="codeblock"><code>oc delete deployment &lt;deployment_name&gt;</code></pre></li></ol></li>
-        <li><code>containerd</code>, <code>kubelet</code>, or <code>calico</code> went into an unrecoverable state after it ran hundreds or thousands of containers over time. </li>
-        <li>You set up a Virtual Router Appliance for your worker node that went down and cut off the communication between your worker node and the Kubernetes master. </li><li> Current networking issues in {{site.data.keyword.containerlong_notm}} or IBM Cloud infrastructure that causes the communication between your worker node and the Kubernetes master to fail.</li>
-        <li>Your worker node ran out of capacity. Check the <strong>Status</strong> of the worker node to see whether it shows <strong>Out of disk</strong> or <strong>Out of memory</strong>. If your worker node is out of capacity, consider to either reduce the workload on your worker node or add a worker node to your cluster to help load balance the workload.</li>
-        <li>The device was powered off from the <a href="https://cloud.ibm.com/resources">{{site.data.keyword.cloud_notm}} console resource list</a> <img src="../icons/launch-glyph.svg" alt="External link icon">. Open the resource list and find your worker node ID in the <strong>Devices</strong> list. In the action menu, click <strong>Power On</strong>.</li></ul>
-        In many cases, <a href="/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload">reloading</a> your worker node can solve the problem. When you reload your worker node, the latest <a href="/docs/containers?topic=containers-cs_versions#version_types">patch version</a> is applied to your worker node. The major and minor version is not changed. Before you reload your worker node, make sure to cordon and drain your worker node to ensure that the existing pods are terminated gracefully and rescheduled onto remaining worker nodes. </br></br> If reloading the worker node does not resolve the issue, go to the next step to continue troubleshooting your worker node.
-        </td>
-        </tr>
-        <tr>
-        <td><code>Deleting</code></td>
-        <td>You requested to delete the worker node, possibly as part of resizing a worker pool or autoscaling the cluster. Other operations cannot be issued against the worker node while the worker node deletes. You cannot reverse the deletion process. When the deletion process completes, you are no longer billed for the worker nodes.</td>
-        </tr>
-        <tr>
-        <td><code>Deleted</code></td>
-        <td>Your worker node is deleted, and no longer is listed in the cluster or billed. This state cannot be undone. Any data that was stored only on the worker node, such as container images, are also deleted.</td>
-        </tr>
-        <tr>
-        <td><code>Deployed</code></td>
-        <td>Updates are successfully deployed to your worker node. After updates are deployed, {{site.data.keyword.openshiftlong_notm}} starts a health check on the worker node. After the health check is successful, the worker node goes into a <code>Normal</code> state. Worker nodes in a <code>Deployed</code> state usually are ready to receive workloads, which you can check by running <code>oc get nodes</code> and confirming that the state shows <code>Normal</code>. </td>
-        </tr>
-        <tr>
-          <td><code>Deploying</code></td>
-          <td>When you update the Kubernetes version of your worker node, your worker node is redeployed to install the updates. If you reload or reboot your worker node, the worker node is redeployed to automatically install the latest patch version. If your worker node is stuck in this state for a long time, check whether a problem occurred during the deployment. </td>
-        </tr>
-        <tr>
-            <td><code>Deploy_failed</code></td>
-            <td>Your worker node could not be deployed. List the details for the worker node to find the details for the failure by running <code>ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id></code>.</td>
-        </tr>
-          <tr>
-          <td><code>Normal</code></td>
-          <td>Your worker node is fully provisioned and ready to be used in the cluster. This state is considered healthy and does not require an action from the user. <strong>Note</strong>: Although the worker nodes might be normal, other infrastructure resources, such as <a href="/docs/containers?topic=containers-coredns_lameduck">networking</a> and <a href="/docs/containers?topic=containers-debug_storage_file">storage</a>, might still need attention.</td>
-        </tr>
-        <tr>
-          <td><code>Provisioned</code></td>
-          <td>Your worker node completed provisioning and is part of the cluster. Billing for the worker node begins. The worker node state soon reports a regular health state and status, such as <code>normal</code> and <code>ready</code>.</td>
-        </tr>
-        <tr>
-        <tr>
-          <td><code>Provisioning</code></td>
-          <td>Your worker node is being provisioned and is not available in the cluster yet. You can monitor the provisioning process in the <strong>Status</strong> column of your CLI output. If your worker node is stuck in this state for a long time, check whether a problem occurred during the provisioning.</td>
-        </tr>
-        <tr>
-          <td><code>Provision pending</code></td>
-          <td>Another process is completing before the worker node provisioning process starts. You can monitor the other process that must complete first in the <strong>Status</strong> column of your CLI output. For example, in VPC clusters, the <code>Pending security group creation</code> indicates that the security group for your worker nodes is creating first before the worker nodes can be provisioned. If your worker node is stuck in this state for a long time, check whether a problem occurred during the other process.</td>
-        </tr>
-        <tr>
-          <td><code>Provision_failed</code></td>
-          <td>Your worker node could not be provisioned. List the details for the worker node to find the details for the failure by running <code>ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id></code>.</td>
-        </tr>
-        <tr>
-          <td><code>Reloading</code></td>
-          <td>Your worker node is being reloaded and is not available in the cluster. You can monitor the reloading process in the <strong>Status</strong> column of your CLI output. If your worker node is stuck in this state for a long time, check whether a problem occurred during the reloading.</td>
-            </tr>
-            <tr>
-          <td><code>Reloading_failed</code></td>
-          <td>Your worker node could not be reloaded. List the details for the worker node to find the details for the failure by running <code>ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id></code>.</td>
-        </tr>
-        <tr>
-          <td><code>Reload_pending</code></td>
-          <td>A request to reload or to update the Kubernetes version of your worker node is sent. When the worker node is being reloaded, the state changes to <code>Reloading</code>. </td>
-        </tr>
-        <tr>
-            <td><code>Unknown</code></td>
-            <td>The Kubernetes master is not reachable for one of the following reasons:<ul><li>You requested an update of your Kubernetes master. The state of the worker node cannot be retrieved during the update. If the worker node remains in this state for an extended period of time even after the Kubernetes master is successfully updated, try to <a href="/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload">reload</a> the worker node.</li><li>You might have another firewall that is protecting your worker nodes, or changed firewall settings recently. {{site.data.keyword.openshiftlong_notm}} requires certain IP addresses and ports to be opened to allow communication from the worker node to the Kubernetes master and vice versa. For more information, see <a href="/docs/containers?topic=containers-firewall#vyatta_firewall">Firewall prevents worker nodes from connecting</a>.</li><li>The Kubernetes master is down. Contact {{site.data.keyword.cloud_notm}} support by opening an <a href="/docs/containers?topic=containers-get-help">{{site.data.keyword.cloud_notm}} support case</a>.</li></ul></td>
-    </tr>
-        <tr>
-          <td><code>Warning</code></td>
-          <td>Your worker node is reaching the limit for memory or disk space. You can either reduce work load on your worker node or add a worker node to your cluster to help load balance the work load.</td>
-    </tr>
-        </tbody>
-    </table>
+Review the [Worker node state reference](/docs/openshift?topic=openshift-worker-node-state-reference).
 
 <br />
 

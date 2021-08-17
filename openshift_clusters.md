@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-17"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -107,7 +107,7 @@ subcollection: openshift
   
 
 
-# Creating {{site.data.keyword.openshiftshort}} clusters
+# Creating clusters
 {: #clusters}
 
 Create a cluster in {{site.data.keyword.openshiftlong}}.
@@ -129,6 +129,10 @@ After [getting started](/docs/containers?topic=containers-getting-started), you 
 
 Have you created a cluster before and are just looking for quick example commands? Try these examples.
 {: shortdesc}
+
+
+Looking for a fast way to create a cluster from the UI? Try out [Automating cluster creation with {{site.data.keyword.bpfull_notm}} templates](/docs/containers?topic=containers-templates).
+{: preview}
 
 
 
