@@ -255,6 +255,7 @@ Red Hat OpenShift on IBM Cloud
     Troubleshooting
         get_help.md
         openshift_ts_debug_tool.md
+        openshift_states_workers.md
 
         {: .topicgroup}
         Clusters and masters

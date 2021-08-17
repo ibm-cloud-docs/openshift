@@ -2178,6 +2178,24 @@ subcollection: openshift
 * [Prerequisites](/docs/openshift?topic=openshift-debug-tool#debug-tool-prereqs)
 * [Enabling the Diagnostics and Debug Tool add-on](/docs/openshift?topic=openshift-debug-tool#debug-tool-enable)
 
+[Worker node states](/docs/openshift?topic=openshift-worker-node-state-reference)
+* [Critical](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-critical)
+* [Deleting](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deleting)
+* [Deleted](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deleted)
+* [Deployed](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deployed)
+* [Deploying](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deploying)
+* [Deploy_failed](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deploy-failed)
+* [Normal](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-normal)
+* [Provisioned](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provisioned)
+* [Provisioning](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provisioning)
+* [Provision pending](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-pending)
+* [Provision_failed](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provision-failed)
+* [Reloading](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reloading)
+* [Reloading_failed](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reloading-failed)
+* [Reload_pending](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-pending)
+* [Unknown](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-unknown)
+* [Warning](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-warning)
+
 
 ## Clusters and masters
 {: #sitemap_clusters_and_masters}
