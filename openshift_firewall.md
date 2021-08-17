@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -372,21 +372,22 @@ To allow worker nodes to communicate with the cluster master over the public clo
 #### Allow worker nodes to communicate with {{site.data.keyword.registrylong_notm}}
 {: #firewall_registry}
 
-To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}, allow outgoing network traffic from the worker nodes to [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
+To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}, allow outgoing network traffic from the worker nodes to {{site.data.keyword.registrylong_notm}} regions.
+{: shortdesc}
 
-* `TCP port 443 FROM <each_worker_node_publicIP> TO <registry_subnet>`
-* Replace *<registry_subnet>* with the registry subnet to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images.
+Previously Registry subnets (IP addresses) were published in the following table. As of 17 August 2021, the Registry subnets are no longer published. When you access {{site.data.keyword.registrylong_notm}} over the public internet, you must not have any firewall restrictions that are based on IP addresses in place. If you have any concerns about opening your firewall, you can configure private access to {{site.data.keyword.registrylong_notm}} by using the private IBM Cloud network, see [Securing your connection to Container Registry](/docs/Registry?topic=Registry-registry_private).
+{: important}
 
-| {{site.data.keyword.openshiftlong_notm}} region | Registry address  | Registry public subnets |
-|---------------|-------------|-------------| 
-| Global registry across {{site.data.keyword.openshiftlong_notm}} regions | `icr.io`  Deprecated: `registry.bluemix.net` | `169.62.37.240/29`, `169.60.98.80/29`, `169.63.104.232/29` |
-| AP North | `jp.icr.io` | `161.202.146.80/29`, `128.168.71.64/29`, `165.192.71.216/29` |
-| AP South | `au.icr.io` Deprecated: `registry.au-syd.bluemix.net` | `168.1.1.240/29`, `130.198.88.128/29`, `135.90.66.48/29` |
-| EU Central | `de.icr.io` Deprecated: `registry.eu-de.bluemix.net` | `169.50.58.104/29`, `161.156.93.16/29`, `149.81.79.152/29` |
-| Osaka | `jp2.icr.io` | `163.68.67.32/28`, `163.69.67.0/28`, `163.73.67.64/28` |
-| Toronto | `ca.icr.io` | `158.85.100.0/29`, `163.74.65.192/29`, `163.75.66.88/29` |
-| UK South | `uk.icr.io` Deprecated: `registry.eu-gb.bluemix.net` | `158.175.97.184/29`</br>`158.176.105.64/29`, `141.125.71.136/29` |
-| US East, US South | `us.icr.io` Deprecated: `registry.ng.bluemix.net` | `169.61.234.224/29`, `169.61.135.160/29`, `169.61.46.80/29` |
+| {{site.data.keyword.openshiftlong_notm}} region | Registry address  |
+|---------------|-------------| 
+| Global registry across {{site.data.keyword.openshiftlong_notm}} regions | `icr.io`  Deprecated: `registry.bluemix.net` | 
+| AP North | `jp.icr.io` |
+| AP South | `au.icr.io` Deprecated: `registry.au-syd.bluemix.net` | 
+| EU Central | `de.icr.io` Deprecated: `registry.eu-de.bluemix.net` | 
+| Osaka | `jp2.icr.io` | 
+| Toronto | `ca.icr.io` | 
+| UK South | `uk.icr.io` Deprecated: `registry.eu-gb.bluemix.net` | 
+| US East, US South | `us.icr.io` Deprecated: `registry.ng.bluemix.net` | 
 {: summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two."}
 {: caption="Table 2. IP addresses to open for Registry traffic" caption-side="top"}
 
