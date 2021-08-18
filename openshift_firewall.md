@@ -389,7 +389,7 @@ Previously Registry subnets (IP addresses) were published in the following table
 | UK South | `uk.icr.io` Deprecated: `registry.eu-gb.bluemix.net` | 
 | US East, US South | `us.icr.io` Deprecated: `registry.ng.bluemix.net` | 
 {: summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two."}
-{: caption="Table 2. IP addresses to open for Registry traffic" caption-side="top"}
+{: caption="Table 2. Addresses for Container Registry traffic" caption-side="top"}
 
 #### Allow outgoing network traffic from worker node to IAM
 {: #firewall-iam}
