@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -320,26 +320,31 @@ The number of clusters that you create depends on your workload, company policie
 ### How can I set up my resources within the cluster?
 {: #env_resources}
 
-<dl>
-<dt>Consider your worker node capacity.</dt>
-    <dd>To get the most out of your worker node's performance, consider the following:
-    <ul><li><strong>Keep up your core strength</strong>: Each machine has a certain number of cores. Depending on your app's workload, set a limit for the number of pods per core, such as 10.</li>
-    <li><strong>Avoid node overload</strong>: Similarly, just because a node can contain more than 100 pods doesn't mean that you want it to. Depending on your app's workload, set a limit for the number of pods per node, such as 40.</li>
-    <li><strong>Don't tap out your cluster bandwidth</strong>: Keep in mind that network bandwidth on scaling virtual machines is around 1000 Mbps. If you need hundreds of worker nodes in a cluster, split it up into multiple clusters with fewer nodes, or order bare metal nodes.</li>
-    <li><strong>Sorting out your services</strong>: Plan out how many services that you need for your workload before you deploy. Networking and port forwarding rules are put into Iptables. If you anticipate a larger number of services, such as more than 5,000 services, split up the cluster into multiple clusters.</li></ul></dd>
-<dt>Provision different types of machines for a mix of computing resources.</dt>
-    <dd>Everyone likes choices, right? With {{site.data.keyword.openshiftlong_notm}}, you have [a mix of flavors](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes) that you can deploy: from bare metal for intensive workloads to virtual machines for rapid scaling. Use labels or namespaces to organize deployments to your machines. When you create a deployment, limit it so that your app's pod deploys only on machines with the right mix of resources. For example, you might want to limit a database application to a bare metal machine with a significant amount of local disk storage like the `md1c.28x512.4x4tb`.</dd>
-<dt>Set up multiple namespaces when you have multiple teams and projects that share the cluster.</dt>
-    <dd><p>Namespaces are kind of like a cluster within the cluster. They are a way to divide up cluster resources by using [resource quotas ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/policy/resource-quotas/) and [default limits ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/). When you make new namespaces, be sure to set up proper [RBAC policies](/docs/openshift?topic=openshift-users#rbac) to control access. For more information, see [Share a cluster with namespaces ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/administer-cluster/namespaces/) in the Kubernetes documentation.</p>
-    <p>If you have a small cluster, a couple dozen users, and resources that are similar (such as different versions of the same software), you probably don't need multiple namespaces. You can use labels instead.</p></dd>
-<dt>Set resource quotas so that users in your cluster must use resource requests and limits</dt>
-    <dd>To ensure that every team has the necessary resources to deploy services and run apps in the cluster, you must set up [resource quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/) for every namespace. Resource quotas determine the deployment constraints for a project, such as the number of Kubernetes resources that you can deploy, and the amount of CPU and memory that can be consumed by those resources. After you set a quota, users must include resource requests and limits in their deployments.</dd>
-<dt>Organize your Kubernetes objects with labels</dt>
-    <dd><p>To organize and select your Kubernetes resources such as `pods` or `nodes`, [use Kubernetes labels ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/). By default, {{site.data.keyword.openshiftlong_notm}} applies some labels, including `arch`, `os`, `region`, `zone`, and `machine-type`.</p>
-    <p>Example use cases for labels include [limiting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge), [deploying an app to a GPU machine](/docs/containers?topic=containers-deploy_app#gpu_app), and [restricting your app workloads![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/) to run on worker nodes that meet certain flavor or SDS capabilities, such as bare metal worker nodes. To see what labels are already applied to a resource, use the <code>oc get</code> command with the <code>--show-labels</code> flag. For example:</p>
-    <p><pre class="pre"><code>oc get node &lt;node_ID&gt; --show-labels</code></pre></p>
-    To apply labels to worker nodes, [create your worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) with labels or [update an existing worker pool](/docs/openshift?topic=openshift-add_workers#worker_pool_labels).</dd>
-</dl>
+**Consider your worker node capacity.**
+To get the most out of your worker node's performance, consider the following:
+    - **Keep up your core strength**: Each machine has a certain number of cores. Depending on your app's workload, set a limit for the number of pods per core, such as 10.
+    - **Avoid node overload**: Similarly, just because a node can contain more than 100 pods doesn't mean that you want it to. Depending on your app's workload, set a limit for the number of pods per node, such as 40.
+    - Don't tap out your cluster bandwidth**: Keep in mind that network bandwidth on scaling virtual machines is around 1000 Mbps. If you need hundreds of worker nodes in a cluster, split it up into multiple clusters with fewer nodes, or order bare metal nodes.
+    - **Sorting out your services**: Plan out how many services that you need for your workload before you deploy. Networking and port forwarding rules are put into Iptables. If you anticipate a larger number of services, such as more than 5,000 services, split up the cluster into multiple clusters.
+
+**Provision different types of machines for a mix of computing resources.**
+Everyone likes choices, right? With {{site.data.keyword.openshiftlong_notm}}, you have [a mix of flavors](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes) that you can deploy: from bare metal for intensive workloads to virtual machines for rapid scaling. Use labels or namespaces to organize deployments to your machines. When you create a deployment, limit it so that your app's pod deploys only on machines with the right mix of resources. For example, you might want to limit a database application to a bare metal machine with a significant amount of local disk storage like the `md1c.28x512.4x4tb`.
+
+**Set up multiple namespaces when you have multiple teams and projects that share the cluster.**
+Namespaces are kind of like a cluster within the cluster. They are a way to divide up cluster resources by using [resource quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/){: external} and [default limits](https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/){: external}. When you make new namespaces, be sure to set up proper [RBAC policies](/docs/openshift?topic=openshift-users#rbac) to control access. For more information, see [Share a cluster with namespaces](https://kubernetes.io/docs/tasks/administer-cluster/namespaces/){: external} in the Kubernetes documentation.
+
+If you have a small cluster, a couple dozen users, and resources that are similar (such as different versions of the same software), you probably don't need multiple namespaces. You can use labels instead.
+
+**Set resource quotas so that users in your cluster must use resource requests and limits.**
+To ensure that every team has the necessary resources to deploy services and run apps in the cluster, you must set up [resource quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/) for every namespace. Resource quotas determine the deployment constraints for a project, such as the number of Kubernetes resources that you can deploy, and the amount of CPU and memory that can be consumed by those resources. After you set a quota, users must include resource requests and limits in their deployments.
+
+**Organize your Kubernetes objects with labels**
+To organize and select your Kubernetes resources such as `pods` or `nodes`, [use Kubernetes labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/){: external}. By default, {{site.data.keyword.openshiftlong_notm}} applies some labels, including `arch`, `os`, `region`, `zone`, and `machine-type`.
+
+Example use cases for labels include [limiting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge), [deploying an app to a GPU machine](/docs/containers?topic=containers-deploy_app#gpu_app), and [restricting your app workloads](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external} to run on worker nodes that meet certain flavor or SDS capabilities, such as bare metal worker nodes. To see what labels are already applied to a resource, use the `oc get` command with the `--show-labels` flag.
+
+To apply labels to worker nodes, [create your worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) with labels or [update an existing worker pool](/docs/openshift?topic=openshift-add_workers#worker_pool_labels).
+
 
 ### How can I keep my cluster in a supported state?
 {: #updating_kube}
@@ -364,6 +369,8 @@ Review more information about making resources highly available.
 * [Run containers that are based on images in a cloud-based public registry](/docs/openshift?topic=openshift-images).
 * [Plan data storage](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview). Especially for multizone clusters, consider using a cloud service such as [{{site.data.keyword.cloudant_short_notm}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) or [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
 * For multizone clusters, enable a [load balancer service](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config) or the Ingress [multizone load balancer](/docs/containers?topic=containers-ingress-types) to expose your apps publicly.
+
+
 
 
 
