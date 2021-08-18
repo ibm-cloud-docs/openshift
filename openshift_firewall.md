@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-17"
+lastupdated: "2021-08-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -152,9 +152,9 @@ If corporate network policies prevent access from your local system to public en
 
     Example output:
     ```
-                                      )___(
-_______/__/_
-___     /===========|   ___
+                                         )___(
+                                  _______/__/_
+                         ___     /===========|   ___
         ____       __   [\\\]___/____________|__[///]   __
         \   \_____[\\]__/___________________________\__[//]___
         \                                                    |
@@ -165,7 +165,7 @@ ___     /===========|   ___
     {: screen}
 
 
-5. Allow access to the [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) that you plan to use on port 443 and 4443 in your firewall. The global registry stores IBM-provided public images, and regional registries store your own private or public images. If your firewall is IP-based, you can see which IP addresses are opened when you allow access to the {{site.data.keyword.registrylong_notm}} regional service endpoints by reviewing [this table](#firewall_registry).
+5. Allow access to the [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) that you plan to use on port 443 and 4443 in your firewall. The global registry stores IBM-provided public images, and regional registries store your own private or public images.
 
     * Global registry: `icr.io`
     * AP North: `jp.icr.io`
@@ -372,7 +372,7 @@ To allow worker nodes to communicate with the cluster master over the public clo
 #### Allow worker nodes to communicate with {{site.data.keyword.registrylong_notm}}
 {: #firewall_registry}
 
-To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}, allow outgoing network traffic from the worker nodes to {{site.data.keyword.registrylong_notm}} regions.
+To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}, allow outgoing network traffic from the worker nodes to {{site.data.keyword.registrylong_notm}} [regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 {: shortdesc}
 
 Previously Registry subnets (IP addresses) were published in the following table. As of 17 August 2021, the Registry subnets are no longer published. When you access {{site.data.keyword.registrylong_notm}} over the public internet, you must not have any firewall restrictions that are based on IP addresses in place. If you have any concerns about opening your firewall, you can configure private access to {{site.data.keyword.registrylong_notm}} by using the private IBM Cloud network, see [Securing your connection to Container Registry](/docs/Registry?topic=Registry-registry_private).
