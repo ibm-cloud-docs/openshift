@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-19"
 
 keywords: openshift, storage
 
@@ -14,11 +14,13 @@ content-type: troubleshoot
 # Why is the status of my OpenShift Data Foundation storage cluster stuck at `Progressing`?
 {: #ocs-ts-error-progressing}
 
-{: tsSymptoms}
-When you run `oc describe noobaa` or `oc describe ocscluster <ocscluster_name>`, the status is stuck at `Progressing`. 
 
-{: tsCauses}
+When you run `oc describe noobaa` or `oc describe ocscluster <ocscluster_name>`, the status is stuck at `Progressing`.
+{: tsSymptoms} 
+
+
 To determine why your storage cluster status is stuck, describe your storage cluster resources and review the `Status`.
+{: tsCauses}
 
 1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -47,8 +49,9 @@ To determine why your storage cluster status is stuck, describe your storage clu
     ```
     {: pre}
 
-{: tsResolve}
+
 Review the following common storage cluster error messages for steps to resolve the issue.
+{: tsResolve}
 
 
 

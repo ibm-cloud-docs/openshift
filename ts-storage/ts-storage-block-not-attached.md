@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-19"
 
 keywords: block, debug, help
 
@@ -114,18 +114,22 @@ content-type: troubleshoot
 **Infrastructure provider**:
 * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-{: tsSymptoms}
+
 When you edit a {{site.data.keyword.block_storage_is_short}} and update the `spec.resources.requests.storage` section to expand your volume, you see the following error:
+{: tsSymptoms}
+
 ```sh
 Volume not attached
 ```
 {: screen}
 
-{: tsCauses}
-You tried to expand the volume size of an existing {{site.data.keyword.block_storage_is_short}} PVC that is not mounted by a pod. Only volumes mounted by app pods can be expanded.
 
-{: tsResolve}
+You tried to expand the volume size of an existing {{site.data.keyword.block_storage_is_short}} PVC that is not mounted by a pod. Only volumes mounted by app pods can be expanded.
+{: tsCauses}
+
+
 Verify that your PVC supports volume expansion, then create an app pod that uses your PVC.
+{: tsResolve}
 
 1. Describe your existing PVC. Verify that `allowVolumeExpansion` is set to `true`.
     ```sh

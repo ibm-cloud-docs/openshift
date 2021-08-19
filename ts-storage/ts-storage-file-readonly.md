@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -112,16 +112,20 @@ content-type: troubleshoot
 
 **Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
+
+
+You might see one of the following symptoms {: #stuck_creating_state}:
 {: tsSymptoms}
-{: #stuck_creating_state}
-You might see one of the following symptoms:
+
 - When you run `oc get pods -o wide`, you see that multiple pods that are running on the same worker node are stuck in the `ContainerCreating` state.
 - When you run a `oc describe` command, you see the following error in the **Events** section: `MountVolume.SetUp failed for volume ... read-only file system`.
 
-{: tsCauses}
 The file system on the worker node is read-only.
+{: tsCauses}
 
+Back up your data and reload your worker node.
 {: tsResolve}
+
 1. Back up any data that might be stored on the worker node or in your containers.
 2. For a short-term fix to the existing worker node, reload the worker node.
     ```sh

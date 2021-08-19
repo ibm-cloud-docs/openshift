@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -112,16 +112,18 @@ content-type: troubleshoot
 
 **Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
-{: tsSymptoms}
+
 When you install the Block storage Helm chart, the installation gives a warning similar to the following:
+{: tsSymptoms}
 
 ```sh
 Message: 50% throttling of CPU in namespace kube-system for container ibmcloud-block-storage-driver-container in pod ibmcloud-block-storage-driver-1abab.
 ```
 {: screen}
 
-{: tsCauses}
+
 The default Block storage plug-in resource requests are not sufficient. The Block storage plug-in and driver are installed with the following default resource request and limit values.
+{: tsCauses}
 
 ```yaml
 plugin:
@@ -143,8 +145,9 @@ driver:
 ```
 {: codeblock}
 
-{: tsResolve}
+
 Remove and reinstall the Helm chart with increased resource requests and limits.
+{: tsResolve}
 
 1. Remove the Helm chart.
     ```sh

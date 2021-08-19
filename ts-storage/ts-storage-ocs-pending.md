@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-19"
 
 keywords: openshift, storage
 
@@ -110,11 +110,14 @@ content-type: troubleshoot
 # Why are the ODF pods stuck at `Pending`?
 {: #ts-ocs-pods-pending-status}
 
-{: tsSymptoms}
-When you list pods in the `openshift-storage` namespace with the `oc get pods -n openshift-storage` command, the ODF pods are stuck at `Pending`.
 
+When you list pods in the `openshift-storage` namespace with the `oc get pods -n openshift-storage` command, the ODF pods are stuck at `Pending`.
+{: tsSymptoms}
+
+
+To determine why your storage cluster status is stuck at `Pending`, describe the pods that have the status `Pending`.
 {: tsCauses}
-To determine why your storage cluster status is stuck at `Pending`, describe the pods that have the status `Pending`. 
+
 ```sh 
 oc describe pod <pod> -n openshift-storage
 ```
@@ -127,8 +130,8 @@ In the output, check the `Events` section for the following error:
 {: screen}
 
 This error indicates that that the classic or VPC cluster where your ODF storage cluster is installed is a multizone cluster, but the storage classes specified in the `monStorageClassName` or `osdStorageClassName` fields in your CRD have a `VolumeBindingMode` parameter that is set to `Immediate`. Multizone ODF deployments require storage classes that have the `VolumeBindingMode` parameter set to `WaitForFirstConsumer`.
-
 {: tsResolve}
+
 1. [Create custom storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class) with the `VolumeBindingMode` set to `WaitForFirstConsumer`, or choose a pre-exisiting storage class with the same parameters. 
 
 2. List the name of your ODF storage cluster. 

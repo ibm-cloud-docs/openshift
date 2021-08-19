@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -120,8 +120,9 @@ content-type: troubleshoot
 
 
 
-{: tsSymptoms}
+
 When you create the PVC, you see an error message similar to one of the following:
+{: tsSymptoms}
 
 ```sh
 SignatureDoesNotMatch: The request signature we calculated does not match the signature you provided. Check your AWS Secret Access Key and signing method. For more information, see REST Authentication and SOAP Authentication for details.
@@ -149,10 +150,14 @@ cannot access bucket <bucket_name>: Forbidden: Forbidden
 {: screen}
 
 
-{: tsCauses}
-The {{site.data.keyword.cos_full_notm}} service credentials that you use to access the service instance might be wrong, or allow only read access to your bucket.
 
+The {{site.data.keyword.cos_full_notm}} service credentials that you use to access the service instance might be wrong, or allow only read access to your bucket.
+{: tsCauses}
+
+
+Create a new secret.
 {: tsResolve}
+
 1. In the navigation on the service details page, click **Service Credentials**.
 2. Find your credentials, then click **View credentials**.
 3. In the **iam_role_crn** section, verify that you have the `Writer` or `Manager` role. If you do not have the correct role, you must create new {{site.data.keyword.cos_full_notm}} service credentials with the correct permission.

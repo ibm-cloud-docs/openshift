@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -120,8 +120,9 @@ content-type: troubleshoot
 
 
 
-{: tsSymptoms}
+
 When you create the PVC, the PVC remains in a pending state. After you run the `oc describe pvc <pvc_name>` command, you see one of the following error messages:
+{: tsSymptoms}
 
 ```sh
 Bad value for ibm.io/object-store-endpoint XXXX: scheme is missing. Must be of the form http://<hostname> or https://<hostname>
@@ -133,10 +134,13 @@ Bad value for ibm.io/iam-endpoint XXXX: scheme is missing. Must be of the form h
 ```
 {: screen}
 
-{: tsCauses}
-The s3fs API endpoint for the bucket that you want to use might have the wrong format, or your cluster is deployed in a location that is supported in {{site.data.keyword.openshiftlong_notm}} but is not yet supported by the {{site.data.keyword.cos_full_notm}} plug-in.
 
+The s3fs API endpoint for the bucket that you want to use might have the wrong format, or your cluster is deployed in a location that is supported in {{site.data.keyword.openshiftlong_notm}} but is not yet supported by the {{site.data.keyword.cos_full_notm}} plug-in.
+{: tsCauses}
+
+Complete the following steps:
 {: tsResolve}
+
 1. Check the s3fs API endpoint that was automatically assigned by the `ibmc` Helm plug-in to your storage classes during the {{site.data.keyword.cos_full_notm}} plug-in installation. The endpoint is based on the location that your cluster is deployed to.  
     ```sh
     oc get sc ibmc-s3fs-standard-regional -o yaml | grep object-store-endpoint

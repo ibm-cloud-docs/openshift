@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -117,19 +117,25 @@ content-type: troubleshoot
 ## ODF device set creation fails due to PVC names exceeding the Kubernetes character limit
 {: #ocs-ts-sc-character-limit}
 
-{: tsSymptoms}
+
 When you create your ODF storage cluster and you run `oc describe storagecluster <storage-cluster-name>`, you see an error similar to the following.
+{: tsSymptoms}
 
 ```sh
 ceph-cluster-controller: failed to reconcile. failed to reconcile cluster "ocs-storagecluster-cephcluster": failed to configure local ceph cluster: failed to create cluster: failed to start ceph osds: 3 failures encountered while running osds in namespace openshift-storage: failed to create "provision" job for node "ocs-deviceset-ibmc-vpc-block-metro-retain-10iops-tier-0-datnv6k". Job.batch "rook-ceph-osd-prepare-aaa000aaa111a1a0e10ba1a11aa1a119" is invalid: [spec.template.spec.volumes[8].name: Invalid value: "ocs-deviceset-ibmc-vpc-block-metro-retain-10iops-tier-0-aaaaa1b-bridge": must be no more than 63 characters
 ```
 {: screen}
 
-{: tsCauses}
-Kubernetes PVC names must be fewer than 63 characters. If you a have multizone VPC cluster and create your ODF storage cluster by using a `retain` class like the `ibmc-vpc-block-metro-retain-10iops-tier`, the corresponding ODF device set PVCs that are created by using this storage class are assigned names that exceed the 63 character limit.
 
-{: tsResolve}
+Kubernetes PVC names must be fewer than 63 characters.
+{: tsCauses}
+
+
+If you a have multizone VPC cluster and create your ODF storage cluster by using a `retain` class like the `ibmc-vpc-block-metro-retain-10iops-tier`, the corresponding ODF device set PVCs that are created by using this storage class are assigned names that exceed the 63 character limit.
+
+
 Create a custom storage class that uses the same configuration as the pre-defined storage class that you want to use, but with a name that does not exceed 63 characters.
+{: tsResolve}
 
 1. Get the YAML configuration of the storage class that you want to use in your ODF storage cluster and save it in a file on your local machine.
     ```sh

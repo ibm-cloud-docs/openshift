@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -114,19 +114,22 @@ content-type: troubleshoot
 * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-{: tsSymptoms}
+
 When you create a PVC, you see an error message similar to the following:
+{: tsSymptoms}
 
 ```sh
 Transport endpoint is not connected.
 ```
 {: screen}
 
-{: tsCauses}
-To determine the cause of the issue, gather system logs by deploying an `inspectnode` pod.
 
-{: tsResolve}
+To determine the cause of the issue, gather system logs by deploying an `inspectnode` pod.
+{: tsCauses}
+
+
 Follow the steps to gather logging information.
+{: tsResolve}
 
 1. Create a `debug-pvc.yaml` file and specify the `ibm.io/debug-level: "info"` and `ibm.io/curl-debug: "true"` annotations.
     ```yaml
