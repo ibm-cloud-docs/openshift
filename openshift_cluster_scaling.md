@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-20"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -483,12 +483,12 @@ After you edit the configmap to enable a worker pool, the cluster autoscaler sca
     <tbody>
     <tr>
     <td id="parameter-name" headers="parameter-with-default">`"name": "default"`</td>
-    <td headers="parameter-name parameter-with-description">Replace `"default"` with the name or ID of the worker pool that you want to scale. To list worker pools, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`.<br><br>
+    <td headers="parameter-name parameter-with-description">Replace `"default"` with the name or ID of the worker pool that you want to scale. To list worker pools, run `ibmcloud oc worker-pool ls --cluster &lt;cluster_name_or_ID&gt;`.<br><br>
     To manage more than one worker pool, copy the JSON line to a comma-separated line, such as follows. <pre class="codeblock">[
         {"name": "default","minSize": 1,"maxSize": 2,"enabled":false},
         {"name": "Pool2","minSize": 2,"maxSize": 5,"enabled":true}
     ]</pre><br><br>
-    <p class="note">The cluster autoscaler can scale only worker pools that have the `ibm-cloud.kubernetes.io/worker-pool-id` label. To check whether your worker pool has the required label, run `ibmcloud oc worker-pool get --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> | grep Labels`. If your worker pool does not have the required label, [add a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) and use this worker pool with the cluster autoscaler.</p></td>
+    <p class="note">The cluster autoscaler can scale only worker pools that have the `ibm-cloud.kubernetes.io/worker-pool-id` label. To check whether your worker pool has the required label, run `ibmcloud oc worker-pool get --cluster &lt;cluster_name_or_ID&gt; --worker-pool <worker_pool_name_or_ID> | grep Labels`. If your worker pool does not have the required label, [add a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) and use this worker pool with the cluster autoscaler.</p></td>
     </tr>
     <tr>
     <td id="parameter-minsize" headers="parameter-with-default">`"minSize": 1`</td>
@@ -534,7 +534,7 @@ After you edit the configmap to enable a worker pool, the cluster autoscaler sca
     ```
     {: screen}
 
-<p class="note">If you enable a worker pool for autoscaling and then later add a zone to this worker pool, restart the cluster autoscaler pod so that it picks up this change: `oc delete pod -n kube-system <cluster_autoscaler_pod>`.</p>
+<p class="note">If you enable a worker pool for autoscaling and then later add a zone to this worker pool, restart the cluster autoscaler pod so that it picks up this change: `oc delete pod -n kube-system &lt;cluster_autoscaler_pod&gt;`.</p>
 
 ## Customizing the cluster autoscaler configuration values
 {: #ca_customize}
@@ -1125,12 +1125,12 @@ This table refers to the cluster autoscaler add-on parameters. For Helm chart va
 <tr>
 <td><code>workerPoolsConfig.json</code></td>
 <td>The worker pools that you want to autoscale, including their minimum and maximum number of worker nodes per zone:
-    <ul><li><code>{"name": "<pool_name>","minSize": 1,"maxSize": 2,"enabled":false}</code>.</li>
-    <li><strong><code><pool_name></code></strong>: The name or ID of the worker pool that you want to enable or disable for autoscaling. To list available worker pools, run <code>ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID></code>.</li>
-    <li><strong><code>maxSize: <number_of_workers></code></strong>: Specify the maximum number of worker nodes per zone that the cluster autoscaler can scale up to. The value must be equal to or greater than the value that you set for the <code>minSize: <number_of_workers></code> size.</li>
-    <li><strong><code>min=<number_of_workers></code></strong>: Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be <code>2</code> or greater so that your ALB pods can be spread for high availability. If you <a href="/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure">disabled</a> all public ALBs in each zone of your standard cluster, you can set the value to <code>1</code>.<p class="note">Keep in mind that setting a <code>min</code> size does not automatically trigger a scale-up. The <code>min</code> size is a threshold so that the cluster autoscaler does not scale below this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.</p></li>
+    <ul><li><code>{"name": "&lt;pool_name&gt;","minSize": 1,"maxSize": 2,"enabled":false}</code>.</li>
+    <li><strong><code>&lt;pool_name&gt;</code></strong>: The name or ID of the worker pool that you want to enable or disable for autoscaling. To list available worker pools, run <code>ibmcloud oc worker-pool ls --cluster &lt;cluster_name_or_ID&gt;</code>.</li>
+    <li><strong><code>maxSize: &lt;number_of_workers&gt;</code></strong>: Specify the maximum number of worker nodes per zone that the cluster autoscaler can scale up to. The value must be equal to or greater than the value that you set for the <code>minSize: &lt;number_of_workers&gt;</code> size.</li>
+    <li><strong><code>min=&lt;number_of_workers&gt;</code></strong>: Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be <code>2</code> or greater so that your ALB pods can be spread for high availability. If you <a href="/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure">disabled</a> all public ALBs in each zone of your standard cluster, you can set the value to <code>1</code>.<p class="note">Keep in mind that setting a <code>min</code> size does not automatically trigger a scale-up. The <code>min</code> size is a threshold so that the cluster autoscaler does not scale below this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.</p></li>
     <li><strong><code>enabled=(true|false)</code></strong>: Set the value to <code>true</code> to enable the cluster autoscaler to scale your worker pool. Set the value to <code>false</code> to stop the cluster autoscaler from scaling the worker pool. Later, if you want to <a href="/docs/openshift?topic=openshift-ca#ca_rm">remove the cluster autoscaler</a>, you must first disable each worker pool in the configmap.</li></ul>
-    <p class="note">If you enable a worker pool for autoscaling and then later add a zone to this worker pool, restart the cluster autoscaler pod so that it picks up this change: <code>oc delete pod -n kube-system <cluster_autoscaler_pod></code>.</p>
+    <p class="note">If you enable a worker pool for autoscaling and then later add a zone to this worker pool, restart the cluster autoscaler pod so that it picks up this change: <code>oc delete pod -n kube-system &lt;cluster_autoscaler_pod&gt;</code>.</p>
     <br><br>By default, the <code>default</code> worker pool is <strong>not</strong> enabled, with a <code>max</code> value of <code>2</code> and a <code>min</code> value of <code>1</code>.</td><td>Disabled</td>
 </tbody>
 </table>
@@ -1299,11 +1299,11 @@ This table refers to the cluster autoscaler Helm chart parameters. For add-on va
 <td>The worker pools that you want to autoscale, including their minimum and maximum number of worker nodes per zone. These settings are mirrored in the <a href="#ca_cm">cluster autoscaler config map</a>. To set the worker pool, format the option as follows: <code>--set workerpools[0].&lt;pool_name&gt;.max=&lt;number_of_workers&gt;,workerpools[0].&lt;pool_name&gt;.min=&lt;number_of_workers&gt;,workerpools[0].&lt;pool_name&gt;.enabled=(true|false)</code><br><br>
 Understanding the <code>--set workerpools</code> options:
     <ul><li><strong><code>workerpools[0]</code></strong>: The first worker pool to enable or disable for autoscaling. You must include three parameters for each worker pool for the command to succeed: the maximum number of worker nodes (<code>max</code>), the minimum number of worker nodes (<code>min</code>), and whether you want to enable (<code>true</code>) or disable (<code>false</code>) autoscaling for this worker pool. To include multiple worker pools, include a comma-separated list and increase the number in brackets, such as: <code>workerpools<a href="/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure">0].default...,workerpools[1].pool1...,workerpools[2].pool2...</code>.</li>
-    <li><strong><code><pool_name></code></strong>: The name or ID of the worker pool that you want to enable or disable for autoscaling. To list available worker pools, run <code>ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID></code>.</li>
-    <li><strong><code>max=<number_of_workers></code></strong>: Specify the maximum number of worker nodes per zone that the cluster autoscaler can scale up to. The value must be equal to or greater than the value that you set for the <code>min=<number_of_workers></code> size.</li>
-    <li><strong><code>min=<number_of_workers></code></strong>: Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be <code>2</code> or greater so that your ALB pods can be spread for high availability. If you [disabled</a> all public ALBs in each zone of your standard cluster, you can set the value to <code>1</code>.<p class="note">Keep in mind that setting a <code>min</code> size does not automatically trigger a scale-up. The <code>min</code> size is a threshold so that the cluster autoscaler does not scale below this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.</p></li>
+    <li><strong><code><pool_name></code></strong>: The name or ID of the worker pool that you want to enable or disable for autoscaling. To list available worker pools, run <code>ibmcloud oc worker-pool ls --cluster &lt;cluster_name_or_ID&gt;</code>.</li>
+    <li><strong><code>max=&lt;number_of_workers></code></strong>: Specify the maximum number of worker nodes per zone that the cluster autoscaler can scale up to. The value must be equal to or greater than the value that you set for the <code>min=&lt;number_of_workers&gt;</code> size.</li>
+    <li><strong><code>min=&lt;number_of_workers&gt;</code></strong>: Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be <code>2</code> or greater so that your ALB pods can be spread for high availability. If you [disabled</a> all public ALBs in each zone of your standard cluster, you can set the value to <code>1</code>.<p class="note">Keep in mind that setting a <code>min</code> size does not automatically trigger a scale-up. The <code>min</code> size is a threshold so that the cluster autoscaler does not scale below this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.</p></li>
     <li><strong><code>enabled=(true|false)</code></strong>: Set the value to <code>true</code> to enable the cluster autoscaler to scale your worker pool. Set the value to <code>false</code> to stop the cluster autoscaler from scaling the worker pool. Later, if you want to <a href="/docs/openshift?topic=openshift-ca#ca_rm">remove the cluster autoscaler</a>, you must first disable each worker pool in the configmap.</li></ul>
-    <p class="note">If you enable a worker pool for autoscaling and then later add a zone to this worker pool, restart the cluster autoscaler pod so that it picks up this change: <code>oc delete pod -n kube-system <cluster_autoscaler_pod></code>.</p>
+    <p class="note">If you enable a worker pool for autoscaling and then later add a zone to this worker pool, restart the cluster autoscaler pod so that it picks up this change: <code>oc delete pod -n kube-system &lt;cluster_autoscaler_pod&gt;</code>.</p>
     <br><br>By default, the <code>default</code> worker pool is <strong>not</strong> enabled, with a <code>max</code> value of <code>2</code> and a <code>min</code> value of <code>1</code>.</td><td>Disabled</td>
 </tbody>
 </table>

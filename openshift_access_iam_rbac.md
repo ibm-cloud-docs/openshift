@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-20"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -224,7 +224,7 @@ Grant users access to your {{site.data.keyword.openshiftlong_notm}} clusters by 
         <td>N/A</td>
         <td>You can assign the policy to an individual or group of users. Place this positional argument immediately following the command.
         <ul><li><strong>Individual user</strong>: Enter the email address of the user.</li>
-        <li><strong>Access group</strong>: Enter the name of the access group of users. You can create an access group with the <code>ibmcloud iam access-group-create</code> command. To list available access groups, run <code>ibmcloud iam access-groups</code>. To add a user to an access group, run <code>ibmcloud iam access-group-user-add <access_group_name> <user_email></code>.</li></ul></td>
+        <li><strong>Access group</strong>: Enter the name of the access group of users. You can create an access group with the <code>ibmcloud iam access-group-create</code> command. To list available access groups, run <code>ibmcloud iam access-groups</code>. To add a user to an access group, run <code>ibmcloud iam access-group-user-add &lt;access_group_name&gt; &lt;user_email&gt;</code>.</li></ul></td>
         </tr>
         <tr>
         <td>Resource group</td>
@@ -748,7 +748,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
         </tr>
         <tr>
         <td><code>metadata.labels</code></td>
-        <td>Add a label that matches the cluster role that you want to aggregate to in the format <code>rbac.authorization.k8s.io/aggregate-to-<cluster_role>: "true"</code>. The labels for the predefined cluster roles are as follows.<ul>
+        <td>Add a label that matches the cluster role that you want to aggregate to in the format <code>rbac.authorization.k8s.io/aggregate-to-&lt;cluster_role&gt;: "true"</code>. The labels for the predefined cluster roles are as follows.<ul>
         <li>IAM <strong>Manager</strong> service access role, scoped to a namespace: <code>rbac.authorization.k8s.io/aggregate-to-admin: "true"</code></li>
         <li>IAM <strong>Writer</strong> service access role: <code>rbac.authorization.k8s.io/aggregate-to-edit: "true"</code></li>
         <li>IAM <strong>Reader</strong> service access role: <code>rbac.authorization.k8s.io/aggregate-to-view: "true"</code></li></ul></td>
