@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-05"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -55,7 +55,6 @@ content-type: troubleshoot
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -114,8 +113,10 @@ content-type: troubleshoot
 **Supported infrastructure provider**:
 * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-{: tsSymptoms}
+
 You create a multizone VPC cluster. However, when you run `ibmcloud is load-balancers` to find the VPC load balancer that exposes the router, the VPC subnet for only one zone in your cluster is listed instead of the subnets for all zones in your cluster. In the output, look for the VPC load balancer **Name** that starts with `kube-crtmgr-<cluster_ID>`.
+{: tsSymptoms}
+
 ```
 ID                                          Name                                                         Family        Subnets               Is public   Provision status   Operating status   Resource group
 r006-d044af9b-92bf-4047-8f77-a7b86efcb923   kube-bsaucubd07dhl66e4tgg-1f4f408ce6d2485499bcbdec0fa2d306   Application   mysubnet-us-south-3   true        active             online             default
@@ -123,11 +124,14 @@ r006-d044af9b-92bf-4047-8f77-a7b86efcb923   kube-bsaucubd07dhl66e4tgg-1f4f408ce6
 {: screen}
 
 
-{: tsCauses}
-When you create an {{site.data.keyword.openshiftshort}} cluster on VPC infrastructure in the CLI, the cluster is initially created with worker nodes in one zone only. You then make the cluster multizone by manually adding zones to your worker pools with the `ibmcloud oc zone add vpc-gen2` command. Currently, when you add zones to your cluster, the Ingress controller is not updated with the VPC subnets for the new zones, and does not route requests to apps in the new zones.
 
-{: tsResolve}
+When you create an {{site.data.keyword.openshiftshort}} cluster on VPC infrastructure in the CLI, the cluster is initially created with worker nodes in one zone only.
+{: tsCauses} 
+
+You then make the cluster multizone by manually adding zones to your worker pools with the `ibmcloud oc zone add vpc-gen2` command. Currently, when you add zones to your cluster, the Ingress controller is not updated with the VPC subnets for the new zones, and does not route requests to apps in the new zones.
+
 Restart the Ingress controller so that a new VPC load balancer is created, which registers the router behind a hostname and forwards traffic to the router. Then, update your Ingress subdomain to use the new VPC load balancer hostname.
+{: tsResolve}
 
 1. Delete the `default` Ingress controller. After, the Ingress controller is automatically re-created.
     ```
@@ -181,11 +185,11 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
     ```
     {: pre}
 
-  Example output:
-  ```
-  Ingress Subdomain:              mycluster-35366fb2d3d90fd50548180f69e7d12a-0000.us-south.containers.appdomain.cloud
-  ```
-  {: screen}
+    Example output:
+    ```
+    Ingress Subdomain:              mycluster-35366fb2d3d90fd50548180f69e7d12a-0000.us-south.containers.appdomain.cloud
+    ```
+    {: screen}
 
 6. Update the Ingress subdomain DNS registration to use the new VPC load balancer hostname.
     ```
@@ -205,3 +209,5 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
     mycluster-d84d4d2137685d8446c88eacf59b5038-0000.us-south.containers.appdomain.cloud   1234abcd-us-south.lb.appdomain.cloud   created           cluster-d84d4d2137685d8446c88eacf59b5038-0000   openshift-ingress
     ```
     {: screen}
+
+

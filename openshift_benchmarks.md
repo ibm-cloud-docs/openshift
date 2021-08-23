@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-23"
 
 keywords: openshift, roks
 
@@ -297,14 +297,14 @@ Review the benchmark results for the master node security configuration subsecti
 | 1.2.7 | Ensure that the `--authorization-mode` argument is not set to `AlwaysAllow`. | Scored |  1 | Pass | IBM |
 | 1.2.8 | Ensure that the `--authorization-mode` argument includes `Node`. | Scored | 1 | Pass | IBM |
 | 1.2.9 | Ensure that the `--authorization-mode` argument includes `RBAC`.| Scored | 1 | Pass | IBM |
-| 1.2.10 | Ensure that the admission control plugin `EventRateLimit` is set. | Not Scored | 1 | [Fail](#cis-benchmark-15-remediation) | IBM |
-| 1.2.11 | Ensure that the admission control plugin `AlwaysAdmit` is not set. | Scored |  1 | Pass | IBM |
-| 1.2.12 | Ensure that the admission control plugin `AlwaysPullImages` is set. | Not Scored | 1 | [Fail](#cis-benchmark-15-remediation) | IBM |
-| 1.2.13 | Ensure that the admission control plugin `SecurityContextDeny` is set if `PodSecurityPolicy` is not used. | Not Scored | 1 | [Pass](#cis-benchmark-15-remediation) | IBM |
-| 1.2.14 | Ensure that the admission control plugin `ServiceAccount` is set. | Scored | 1 | Pass | IBM |
-| 1.2.15 | Ensure that the admission control plugin `NamespaceLifecycle` is set. | Scored | 1 | Pass | IBM |
-| 1.2.16 | Ensure that the admission control plugin `PodSecurityPolicy` is set. | Scored | 1 | [Pass](#cis-benchmark-15-remediation) | IBM |
-| 1.2.17 | Ensure that the admission control plugin `NodeRestriction` is set. | Scored | 1 | Pass | IBM |
+| 1.2.10 | Ensure that the admission control plug-in `EventRateLimit` is set. | Not Scored | 1 | [Fail](#cis-benchmark-15-remediation) | IBM |
+| 1.2.11 | Ensure that the admission control plug-in `AlwaysAdmit` is not set. | Scored |  1 | Pass | IBM |
+| 1.2.12 | Ensure that the admission control plug-in `AlwaysPullImages` is set. | Not Scored | 1 | [Fail](#cis-benchmark-15-remediation) | IBM |
+| 1.2.13 | Ensure that the admission control plug-in `SecurityContextDeny` is set if `PodSecurityPolicy` is not used. | Not Scored | 1 | [Pass](#cis-benchmark-15-remediation) | IBM |
+| 1.2.14 | Ensure that the admission control plug-in `ServiceAccount` is set. | Scored | 1 | Pass | IBM |
+| 1.2.15 | Ensure that the admission control plug-in `NamespaceLifecycle` is set. | Scored | 1 | Pass | IBM |
+| 1.2.16 | Ensure that the admission control plug-in `PodSecurityPolicy` is set. | Scored | 1 | [Pass](#cis-benchmark-15-remediation) | IBM |
+| 1.2.17 | Ensure that the admission control plug-in `NodeRestriction` is set. | Scored | 1 | Pass | IBM |
 | 1.2.18 | Ensure that the `--insecure-bind-address` argument is not set. | Scored | 1 | Pass | IBM |
 | 1.2.19 | Ensure that the `--insecure-port` argument is set to `0`. | Scored | 1 | Pass | IBM |
 | 1.2.20 | Ensure that the `--secure-port` argument is not set to `0`. | Scored | 1 | Pass | IBM |
@@ -351,7 +351,7 @@ Review the benchmark results for the master node security configuration subsecti
 {: summary="The rows are read from left to right. The first column is the section number for the benchmark recommendation. The second column is the benchmark recommendation. The third column is the scoring of the recommendation, either scored or not scored. The fourth column is the level of the recommendation, either 1 for basic or 2 for more advanced and performance-impacting. The fifth column contains the result of whether the service passes or fails the recommendation. The sixth column designates the responsibility of passing the recommendation, either IBM or shared between IBM and you."}
 {: caption="Section 1.4 Scheduler benchmark results" caption-side="top"}
 
-### Section 2: Etcd node configuration
+### Section 2: `etcd` node configuration
 {: #cis-benchmark-15-2}
 
 Review the benchmark results for the etcd node configurations.
@@ -367,7 +367,7 @@ Review the benchmark results for the etcd node configurations.
 | 2.6 | Ensure that the `--peer-auto-tls` argument is not set to `true`. | Scored | 1 | Pass | IBM |
 | 2.7 | Ensure that a unique certificate authority is used for etcd. | Not Scored | 2 | Pass | IBM |
 {: summary="The rows are read from left to right. The first column is the section number for the benchmark recommendation. The second column is the benchmark recommendation. The third column is the scoring of the recommendation, either scored or not scored. The fourth column is the level of the recommendation, either 1 for basic or 2 for more advanced and performance-impacting. The fifth column contains the result of whether the service passes or fails the recommendation. The sixth column designates the responsibility of passing the recommendation, either IBM or shared between IBM and you."}
-{: caption="Section 2 Etcd node configuration benchmark results" caption-side="top"}
+{: caption="Section 2 etcd node configuration benchmark results" caption-side="top"}
 
 ### Section 3: Control plane configuration
 {: #cis-benchmark-15-3}
@@ -413,8 +413,8 @@ Review the benchmark results for the worker node security configuration subsecti
 | --- | --- | --- | --- | --- | --- |
 | 4.1.1 | Ensure that the kubelet service file permissions are set to `644` or more restrictive. | Scored | 1 | Pass | IBM |
 | 4.1.2 | Ensure that the kubelet service file ownership is set to `root:root`. | Scored | 1 | Pass | IBM |
-| 4.1.3 | Ensure that the proxy kubeconfig file permissions are set to `644` or more restrictive. | Scored | 1 | Pass | IBM |
-| 4.1.4 | Ensure that the proxy kubeconfig file ownership is set to `root:root`. | Scored | 1 | Pass | IBM |
+| 4.1.3 | Ensure that the proxy `kubeconfig` file permissions are set to `644` or more restrictive. | Scored | 1 | Pass | IBM |
+| 4.1.4 | Ensure that the proxy `kubeconfig` file ownership is set to `root:root`. | Scored | 1 | Pass | IBM |
 | 4.1.5 | Ensure that the kubelet.conf file permissions are set to `644` or more restrictive. | Scored | 1 | Pass | IBM |
 | 4.1.6 | Ensure that the kubelet.conf file ownership is set to `root:root`. | Scored | 1 | Pass | IBM |
 | 4.1.7 | Ensure that the certificate authorities file permissions are set to `644` or more restrictive. | Scored | 1 | Pass | IBM |

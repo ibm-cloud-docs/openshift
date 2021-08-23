@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-23"
 
 keywords: autoscaler, add-on, autoscaler changelog
 
@@ -134,7 +134,6 @@ ibmcloud oc cluster addon versions --addon cluster-autoscaler
 {: summary="The rows are read from left to right. The first column is the cluster autoscaler add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the cluster autoscaler version is supported for."}
 
 
-
 ## Changelog for 1.0.3, released 23 June 2021
 {: #0103_ca_addon}
 
@@ -149,7 +148,7 @@ ibmcloud oc addon-versions
 
 | Patch version | Image tags | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
 | --- | --- | --- | --- | --- |
-| `1.0.3_352` | <ul><li><code>1.17.4-4</code></li><li><code>1.18.3-4</code></li><li><code>1.19.1-4</code></li><li><code>1.20.0-4</code></li><li><code>1.21.0-0</code></li></ul> | 23 June 2021 | >=4.3 | Adds support for Kubernetes 1.21. |
+| `1.0.3_352` | `1.17.4-4`, `1.18.3-4`, `1.19.1-4`, `1.20.0-4`, and `1.21.0-0`. | 23 June 2021 | >=4.3 | Adds support for Kubernetes 1.21. |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Cluster autoscaler 1.0.3" caption-side="top"}

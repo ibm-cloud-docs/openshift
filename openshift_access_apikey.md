@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -510,7 +510,7 @@ To customize classic infrastructure permissions through the CLI:
     ```
     {: pre}
 
-4. List the current classic infrastructure permissions that the user has. Note the **KeyName** of the permission that you want to change.
+4. List the current classic infrastructure permissions that the user has. Note the **`KeyName`** of the permission that you want to change.
     ```
     ibmcloud sl user permissions <user_id>
     ```

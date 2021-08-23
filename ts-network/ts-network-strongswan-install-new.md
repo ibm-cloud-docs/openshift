@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -112,18 +112,22 @@ content-type: troubleshoot
 
 **Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
-{: tsSymptoms}
+
 You modify your strongSwan Helm chart and try to install your new release by running `helm install vpn iks-charts/strongswan -f config.yaml`. However, you see the following error:
+{: tsSymptoms}
 
 ```
 Error: release vpn failed: deployments.extensions "vpn-strongswan" already exists
 ```
 {: screen}
 
-{: tsCauses}
-This error indicates that the previous release of the strongSwan chart was not completely uninstalled.
 
+This error indicates that the previous release of the strongSwan chart was not completely uninstalled.
+{: tsCauses}
+
+Delete and re-install the Helm chart.
 {: tsResolve}
+
 1. Delete the previous chart release.
     ```
     helm uninstall vpn -n <project>

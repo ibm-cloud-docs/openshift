@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -114,15 +114,19 @@ content-type: troubleshoot
 * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-{: tsSymptoms}
+
 You might see the following symptoms:
+{: tsSymptoms}
 - When you run `oc get pods -o wide`, you see that multiple pods on the same worker node are stuck in the `ContainerCreating` or `CrashLoopBackOff` state. All these pods use the same block storage instance.
 - When you run a `oc describe pod` command, you see the following error in the **Events** section: `MountVolume.SetUp failed for volume ... read-only`.
 
-{: tsCauses}
-If a network error occurs while a pod writes to a volume, IBM Cloud infrastructure protects the data on the volume from getting corrupted by changing the volume to a read-only mode. Pods that use this volume cannot continue to write to the volume and fail.
 
+If a network error occurs while a pod writes to a volume, IBM Cloud infrastructure protects the data on the volume from getting corrupted by changing the volume to a read-only mode. Pods that use this volume cannot continue to write to the volume and fail.
+{: tsCauses}
+
+Verify the plugin version, re-create your app, and gracefully reload your worker node.
 {: tsResolve}
+
 1. Check the version of the {{site.data.keyword.cloud_notm}} Block Storage plug-in that is installed in your cluster.
     ```sh
     helm list --all-namespaces

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -112,8 +112,10 @@ content-type: troubleshoot
 
 **Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
-{: tsSymptoms}
+
 When you run `ibmcloud oc cluster get -c <cluster_name_or_ID>`, you see the following error message in the **Master Status** field.
+{: tsSymptoms}
+
 ```
 CAE003: Unable to determine the ingress IP address for the network load balancer.
 ```
@@ -121,11 +123,13 @@ CAE003: Unable to determine the ingress IP address for the network load balancer
 
 Additionally, when you run `ibmcloud oc nlb-dns create` to create a subdomain for a network load balancer (NLB), the command might fail with a message that the cluster is not found, the input parameters are incorrect, or you do not have the required roles.
 
-{: tsCauses}
-The OpenVPN server could not be configured because load balancer IP address that exposes the default router could not be found. The router's load balancer service might not have been assigned an IP address because your cluster does not have a subnet with available portable IP addresses, or the load balancer setup did not complete.
 
-{: tsResolve}
+The OpenVPN server could not be configured because load balancer IP address that exposes the default router could not be found. The router's load balancer service might not have been assigned an IP address because your cluster does not have a subnet with available portable IP addresses, or the load balancer setup did not complete.
+{: tsCauses}
+
+
 Verify that your cluster has available subnets, and that the load balancer setup completed successfully.
+{: tsResolve}
 
 
 ## Verifying that your cluster has available subnets

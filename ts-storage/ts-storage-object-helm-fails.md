@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -120,8 +120,10 @@ content-type: troubleshoot
 
 
 
-{: tsSymptoms}
+
 When you install the {{site.data.keyword.cos_full_notm}} `ibmc` Helm plug-in, the installation fails with one of the following errors:
+{: tsSymptoms}
+
 ```sh
 Error: symlink /Users/iks-charts/ibm-object-storage-plugin/helm-ibmc /Users/ibm/.helm/plugins/helm-ibmc: file exists
 ```
@@ -132,11 +134,16 @@ Error: fork/exec /home/iksadmin/.helm/plugins/helm-ibmc/ibmc.sh: permission deni
 ```
 {: screen}
 
+
+When the `ibmc` Helm plug-in is installed, a symlink is created from the `~/.helm/plugins/helm-ibmc` directory for Linux systems or the `~/Library/helm/plugins/helm-ibmc` directory for Mac OS to the directory where the `ibmc` Helm plug-in is located on your local system, which is usually in `./ibmcloud-object-storage-plugin/helm-ibmc`.
 {: tsCauses}
-When the `ibmc` Helm plug-in is installed, a symlink is created from the `~/.helm/plugins/helm-ibmc` directory for Linux systems or the `~/Library/helm/plugins/helm-ibmc` directory for Mac OS to the directory where the `ibmc` Helm plug-in is located on your local system, which is usually in `./ibmcloud-object-storage-plugin/helm-ibmc`. When you remove the `ibmc` Helm plug-in from your local system, or you move the `ibmc` Helm plug-in directory to a different location, the symlink is not removed.
+
+When you remove the `ibmc` Helm plug-in from your local system, or you move the `ibmc` Helm plug-in directory to a different location, the symlink is not removed.
 
 If you see a `permission denied` error, you do not have the required `read`, `write`, and `execute` permission on the `ibmc.sh` bash file so that you can execute `ibmc` Helm plug-in commands.
 
+
+Review the following steps based on the error type.
 {: tsResolve}
 
 **For symlink errors**:

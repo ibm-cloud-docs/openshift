@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -114,14 +114,17 @@ content-type: troubleshoot
     * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
     * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-{: tsSymptoms}
+
 You cannot access your worker node by using an SSH connection.
+{: tsSymptoms}
 
-{: tsCauses}
+
 SSH by password is unavailable on the worker nodes.
+{: tsCauses}
 
-{: tsResolve}
+
 To run actions on every worker node, use a Kubernetes [`DaemonSet`](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/){: external}, or use jobs for one-time actions.
+{: tsResolve}
 
 To get host access to worker nodes for debugging and troubleshooting purposes, review the following options.
 

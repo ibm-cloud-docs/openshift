@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -115,8 +115,9 @@ content-type: troubleshoot
 * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-{: tsSymptoms}
+
 A system pod or other pod that uses a security context constraint (SCC) has an operation that keeps retrying but fails with a `permission denied` error. For example, you might log in to the internal `image-registry` pod and try to run `docker push`.
+{: tsSymptoms}
 
 Example error message when pushing an image to the internal registry:
 ```
@@ -124,13 +125,17 @@ error: build error: Failed to push image: error copying layers and metadata
 ```
 {: screen}
 
+
+The pod might use an SCC or belong to a system group that uses an SCC without the correct permission. You might have added a system group to an SCC by running `oc adm policy add-scc-to-group <scc> system:<group>`.
 {: tsCauses}
-The pod might use an SCC or belong to a system group that uses an SCC without the correct permission. You might have added a system group to an SCC by running `oc adm policy add-scc-to-group <scc> system:<group>`. If the pod mounts a volume, the pod's permissions that are authorized by the SCC might no longer allow the pod to read or write data to the volume.
+
+If the pod mounts a volume, the pod's permissions that are authorized by the SCC might no longer allow the pod to read or write data to the volume.
 
 For example, the internal registry mounts a volume to read and write image data to a file storage instance. If the `system:authenticated` group that the internal registry belongs to changes the SCC from `restricted` to `anyuid`, then the pod runs with a different UID. The different UID prevents the internal registry pod from pushing or pulling images from the storage device.
 
-{: tsResolve}
+
 Change the pod's SCC permissions.
+{: tsResolve}
 
 1. Describe the pod and check the `openshift.io/scc: <scc>` security context constraint in the **Annotations** section.
     ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-23"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, dev
 
@@ -230,7 +230,7 @@ Following a curated learning path to deploy highly available containerized apps 
         <a href = "#dev_cluster">
         <div>
         <img src="images/desktop.svg" alt="Access icon" style="height:50px; border-style: none"/>
-        <h2>Access the cluster</h2>
+        <p><strong>Access the cluster</strong></p>
         <p class="bx--type-caption">Begin working with your cluster by setting up the CLI and accessing the cluster.</p>
         </div>
     </a>
@@ -239,7 +239,7 @@ Following a curated learning path to deploy highly available containerized apps 
         <a href = "#dev_plan">
         <div>
         <img src="images/progress.svg" alt="Plan icon" style="height:50px; border-style: none"/>
-        <h2>Plan your deployment</h2>
+        <p><strong>Plan your deployment</strong></p>
         <p class="bx--type-caption">Plan your app setup for optimal service integration and high availability.</p>
         </div>
     </a>
@@ -248,7 +248,7 @@ Following a curated learning path to deploy highly available containerized apps 
         <a href = "#dev_develop">
         <div>
         <img src="images/design--and--development--02.svg" alt="Develop icon" style="height:50px; border-style: none"/>
-        <h2>Develop your app</h2>
+        <p><strong>Develop your app</strong></p>
         <p class="bx--type-caption">Configure your app and set up your app versioning and delivery pipeline.</p>
         </div>
     </a>
@@ -257,7 +257,7 @@ Following a curated learning path to deploy highly available containerized apps 
         <a href = "#dev_deploy">
         <div>
         <img src="images/app--developer.svg" alt="Deploy icon" style="height:50px; border-style: none"/>
-        <h2>Deploy your app</h2>
+        <p><strong>Deploy your app</strong></p>
         <p class="bx--type-caption">Deploy your app to the cluster by running your app configuration file.</p>
         </div>
     </a>
@@ -266,7 +266,7 @@ Following a curated learning path to deploy highly available containerized apps 
         <a href = "#dev_test">
         <div>
         <img src="images/chart--line.svg" alt="Health icon" style="height:50px; border-style: none"/>
-        <h2>Test, log, and monitor</h2>
+        <p><strong>Test, log, and monitor</strong></p>
         <p class="bx--type-caption">Conduct app performance testing and gain visibility into your workload health.</p>
         </div>
     </a>
@@ -275,7 +275,7 @@ Following a curated learning path to deploy highly available containerized apps 
         <a href = "#dev_update">
         <div>
         <img src="images/networking--04.svg" alt="Update icon" style="height:50px; border-style: none"/>
-        <h2>Update your app</h2>
+        <p><strong>Update your app</strong></p>
         <p class="bx--type-caption">Perform rolling updates and rollbacks of apps without downtime for your users.</p>
         </div>
     </a>
@@ -284,7 +284,7 @@ Following a curated learning path to deploy highly available containerized apps 
         <a href = "#dev_secure">
         <div>
         <img src="images/lock--alt.svg" alt="Security icon" style="height:50px; border-style: none"/>
-        <h2>Secure your app</h2>
+        <p><strong>Secure your app</strong></p>
         <p class="bx--type-caption">Encrypt data and store confidential information in Kubernetes secrets.</p>
         </div>
     </a>
@@ -293,7 +293,7 @@ Following a curated learning path to deploy highly available containerized apps 
         <a href = "#dev_expose">
         <div>
         <img src="images/global--network.svg" alt="Network icon" style="height:50px; border-style: none"/>
-        <h2>Expose your app</h2>
+        <p><strong>Expose your app</strong></p>
         <p class="bx--type-caption">Expose an app to users on the internet or on a private network only.</p>
         </div>
     </a>
@@ -302,7 +302,7 @@ Following a curated learning path to deploy highly available containerized apps 
         <a href = "#dev_storage">
         <div>
         <img src="images/data--storage.svg" alt="Storage icon" style="height:50px; border-style: none"/>
-        <h2>Add app storage</h2>
+        <p><strong>Add app storage</strong></p>
         <p class="bx--type-caption">Plan and add highly available persistent storage for your app data.</p>
         </div>
     </a>
@@ -311,7 +311,7 @@ Following a curated learning path to deploy highly available containerized apps 
         <a href = "#dev_integrate">
         <div>
         <img src="images/connect.svg" alt="Integrations icon" style="height:50px; border-style: none"/>
-        <h2>Add integrations</h2>
+        <p><strong>Add integrations</strong></p>
         <p class="bx--type-caption">Enhance app capabilities by integrating external and catalog services.</p>
         </div>
     </a>

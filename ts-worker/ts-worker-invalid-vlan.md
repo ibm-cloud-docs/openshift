@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -112,20 +112,22 @@ content-type: troubleshoot
 
 **Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
-{: tsSymptoms}
+
 Your {{site.data.keyword.cloud_notm}} account was suspended, or all worker nodes in your cluster were deleted. After the account is reactivated, you cannot add worker nodes when you try to resize or rebalance your worker pool. You see an error message similar to the following:
+{: tsSymptoms}
 
 ```
 SoftLayerAPIError(SoftLayer_Exception_Public): Could not obtain network VLAN with id #123456.
 ```
 {: screen}
 
-{: tsCauses}
-When an account is suspended, the worker nodes within the account are deleted. If a cluster has no worker nodes, IBM Cloud infrastructure reclaims the associated public and private VLANs. However, the cluster worker pool still has the previous VLAN IDs in its metadata and uses these unavailable IDs when you rebalance or resize the pool. The nodes fail to create because the VLANs are no longer associated with the cluster.
 
-{: tsResolve}
+When an account is suspended, the worker nodes within the account are deleted. If a cluster has no worker nodes, IBM Cloud infrastructure reclaims the associated public and private VLANs. However, the cluster worker pool still has the previous VLAN IDs in its metadata and uses these unavailable IDs when you rebalance or resize the pool. The nodes fail to create because the VLANs are no longer associated with the cluster.
+{: tsCauses}
+
 
 You can [delete your existing worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_rm), then [create a new worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create).
+{: tsResolve}
 
 Alternatively, you can keep your existing worker pool by ordering new VLANs and using these to create new worker nodes in the pool.
 

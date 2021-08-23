@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-23"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -413,28 +413,28 @@ To execute a workload on a GPU machine:
     * In the `Limits` and `Requests` fields, see that the resource limit that you specified matches the request that the device plug-in automatically set.
     * In the events, verify that the pod is assigned to your GPU worker node.
 
-    ```
-    oc describe pod nvidia-smi-ppkd4
-    ```
-    {: pre}
+        ```
+        oc describe pod nvidia-smi-ppkd4
+        ```
+        {: pre}
 
-    Example output:
-    ```
-    Name:           nvidia-smi-ppkd4
-    Namespace:      default
-    ...
-    Limits:
-        nvidia.com/gpu:  2
-    Requests:
-        nvidia.com/gpu:  2
-    ...
-    Events:
-    Type    Reason                 Age   From                     Message
-    ----    ------                 ----  ----                     -------
-    Normal  Scheduled              1m    default-scheduler        Successfully assigned nvidia-smi-ppkd4 to 10.xxx.xx.xxx
-    ...
-    ```
-    {: screen}
+        Example output:
+        ```
+        Name:           nvidia-smi-ppkd4
+        Namespace:      default
+        ...
+        Limits:
+            nvidia.com/gpu:  2
+        Requests:
+            nvidia.com/gpu:  2
+        ...
+        Events:
+        Type    Reason                 Age   From                     Message
+        ----    ------                 ----  ----                     -------
+        Normal  Scheduled              1m    default-scheduler        Successfully assigned nvidia-smi-ppkd4 to 10.xxx.xx.xxx
+        ...
+        ```
+        {: screen}
 
 5. To verify that the job used the GPU to compute its workload, you can check the logs. The `[ "/usr/test/nvidia-smi" ]` command from the job queried the GPU device state on the GPU worker node.
 

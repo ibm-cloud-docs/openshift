@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-23"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -208,9 +208,9 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
 
 1. Create your {{site.data.keyword.cloud_notm}} IAM access token. The body information that is included in your request varies based on the {{site.data.keyword.cloud_notm}} authentication method that you use.
 
-    <code></code>`
+    ```
     POST https://iam.cloud.ibm.com/identity/token
-    <code></code>`
+    ```
     {: codeblock}
 
     <table summary="Input parameters to retrieve IAM tokens with the input parameter in column 1 and the value in column 2.">
@@ -222,7 +222,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
     <tbody>
     <tr>
     <td>Header</td>
-    <td><ul><li>Content-Type: application/x-www-form-urlencoded</li> <li>Authorization: Basic Yng6Yng=<p><strong>Note</strong>: <code>Yng6Yng=</code> equals the URL-encoded authorization for the username <strong>bx</strong> and the password <strong>bx</strong>.</p></li></ul>
+    <td><ul><li><code>Content-Type: application/x-www-form-urlencoded</code></li> <li>Authorization: Basic Yng6Yng=<p><strong>Note</strong>: <code>Yng6Yng=</code> equals the URL-encoded authorization for the username <strong>bx</strong> and the password <strong>bx</strong>.</p></li></ul>
     </td>
     </tr>
     <tr>
@@ -290,7 +290,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
         <tr>
           <td>Headers</td>
         <td><ul><li><code>Content-Type: application/json</code></li>
-        <li><code>Authorization: bearer <iam_access_token></code></li>
+        <li><code>Authorization: bearer &lt;iam_access_token&gt;</code></li>
         <li><code>Accept: application/json</code></li></ul></td>
         </tr>
     </tbody>
@@ -404,7 +404,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
         <tbody>
         <tr>
         <td>Header</td>
-        <td><li><code>Authorization: bearer <iam_token></code></td>
+        <td><li><code>Authorization: bearer &lt;iam_token&gt;</code></td>
         </tr>
         </tbody>
         </table>
@@ -423,7 +423,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
         <tbody>
         <tr>
         <td>Header</td>
-        <td><code>Authorization</code>: Your {{site.data.keyword.cloud_notm}} IAM access token (<code>bearer <iam_token></code>).</td>
+        <td><code>Authorization</code>: Your {{site.data.keyword.cloud_notm}} IAM access token (<code>bearer &lt;iam_token&gt;</code>).</td>
         </tr>
         </tbody>
         </table>
@@ -524,7 +524,7 @@ You can use the command line to [set the cluster context](/docs/containers?topic
 You can use [{{site.data.keyword.cloud_notm}} IAM](https://cloud.ibm.com/iam/overview){: external} to change the default expiration times for your tokens and sessions.
 {: tip}
 
-**Kubeconfig session**: When you start a new CLI session or after the session expires such as after the default of 24 hours, you must reset the cluster context.
+**`Kubeconfig` session**: When you start a new CLI session or after the session expires such as after the default of 24 hours, you must reset the cluster context.
 
 **ID token**: Every IAM ID token that is issued via the CLI expires after a set period of time, such as 20 minutes. When the ID token expires, the refresh token is sent to the token provider to refresh the ID token. Your authentication is refreshed, and you can continue to run commands against your cluster.
 

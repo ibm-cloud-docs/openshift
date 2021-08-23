@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -877,7 +877,7 @@ To create your own storage class:
         </tr>
         <tr>
         <td><code>sizeRange</code></td>
-        <td>In the parameters, enter the size range for your storage in gigabytes (GiB), such as <code><a href="/docs/vpc?topic=vpc-block-storage-profiles">10-2000]GiB</code>. The size range must match the {{site.data.keyword.block_storage_is_short}} profile that you specify in <code>parameters.profile</code>. To find supported storage sizes for a specific profile, see [Tiered IOPS profiles</a>. Any PVC that uses this storage class must specify a size value that is within this range.</td>
+        <td>In the parameters, enter the size range for your storage in gigabytes (GiB), such as <a href="/docs/vpc?topic=vpc-block-storage-profiles"><code>10-2000]GiB</code></a>. The size range must match the {{site.data.keyword.block_storage_is_short}} profile that you specify in <code>parameters.profile</code>. To find supported storage sizes for a specific profile, see [Tiered IOPS profiles</a>. Any PVC that uses this storage class must specify a size value that is within this range.</td>
         </tr>
         <tr>
         <td><code>csi.storage.k8s.io/fstype</code></td>
@@ -1062,7 +1062,7 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
         </tr>
         <tr>
           <td><code>zone</code></td>
-          <td>In the string data section, enter the VPC zone where you want to create the {{site.data.keyword.blockstorageshort}} instance. Make sure that you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run <code>ibmcloud oc cluster get --cluster <cluster_name_or_ID></code> and look at the <strong>Worker Zones</strong> field in your CLI output. If you do not specify a zone, one of the worker node zones is automatically selected for your {{site.data.keyword.blockstorageshort}} instance.</td>
+          <td>In the string data section, enter the VPC zone where you want to create the {{site.data.keyword.blockstorageshort}} instance. Make sure that you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run <code>ibmcloud oc cluster get --cluster &lt;cluster_name_or_ID&gt;</code> and look at the <strong>Worker Zones</strong> field in your CLI output. If you do not specify a zone, one of the worker node zones is automatically selected for your {{site.data.keyword.blockstorageshort}} instance.</td>
         </tr>
         <tr>
           <td><code>tags</code></td>
@@ -1078,7 +1078,7 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
         </tr>
         <tr>
           <td><code>encryptionKey</code></td>
-          <td>In the data section, if you entered <strong>true</strong> for <code>parameters.encrypted</code>, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volumes. To use your root key CRN in a secret, you must first convert it to base64 by running <code>echo  -n "<root_key_CRN>" | base64</code>. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
+          <td>In the data section, if you entered <strong>true</strong> for <code>parameters.encrypted</code>, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volumes. To use your root key CRN in a secret, you must first convert it to base64 by running <code>echo  -n "&lt;root_key_CRN&gt;" | base64</code>. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
         </tr>
         </tbody>
         </table>
@@ -1132,7 +1132,7 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
         </tr>
         <tr>
           <td><code>encryptionKey</code></td>
-          <td>In the data section, if you entered <strong>true</strong> for <code>parameters.encrypted</code>, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volume. To use your root key CRN in a secret, you must first convert it to base 64 by running <code>echo  -n "<root_key_CRN>" | base64</code>. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
+          <td>In the data section, if you entered <strong>true</strong> for <code>parameters.encrypted</code>, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volume. To use your root key CRN in a secret, you must first convert it to base 64 by running <code>echo  -n "&lt;root_key_CRN&gt;" | base64</code>. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
         </tr>
         </tbody>
         </table>

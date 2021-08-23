@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -120,14 +120,21 @@ content-type: troubleshoot
 
 
 
-{: tsSymptoms}
+
 When you create a Portworx service instance from the {{site.data.keyword.cloud_notm}} catalog, the Portworx installation in your cluster fails and the service instance shows a status of **Provision failure**.
+{: tsSymptoms}
 
-{: tsCauses}
-Before Portworx is installed in your cluster, a number of checks are performed to verify the information that you provided on the Portworx service page of the {{site.data.keyword.cloud_notm}} catalog. If one of these checks fails, the status of the Portworx service is changed to **Provision failure**. You cannot see the details of what check failed or what information is missing to complete the installation.
 
+Before Portworx is installed in your cluster, a number of checks are performed to verify the information that you provided on the Portworx service page of the {{site.data.keyword.cloud_notm}} catalog.
+{: tsCauses} 
+
+If one of these checks fails, the status of the Portworx service is changed to **Provision failure**. You cannot see the details of what check failed or what information is missing to complete the installation.
+
+
+Follow this guide to start troubleshooting your Portworx installation and to verify the information that you entered in the {{site.data.keyword.cloud_notm}} catalog.
 {: tsResolve}
-Follow this guide to start troubleshooting your Portworx installation and to verify the information that you entered in the {{site.data.keyword.cloud_notm}} catalog. If you find information that you entered incorrectly or you must change the setup of your cluster, correct the information or the cluster setup. Then, create a new Portworx service instance to restart the installation.
+
+If you find information that you entered incorrectly or you must change the setup of your cluster, correct the information or the cluster setup. Then, create a new Portworx service instance to restart the installation.
 
 ## Step 1: Verifying the {{site.data.keyword.cloud_notm}} catalog information
 {: #px-verify-catalog}

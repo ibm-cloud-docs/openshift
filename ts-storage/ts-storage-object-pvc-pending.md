@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -120,12 +120,15 @@ content-type: troubleshoot
 
 
 
-{: tsSymptoms}
+
 When you create a PVC and you run `oc get pvc <pvc_name>`, your PVC remains in a **Pending** state, even after waiting for some time.
+{: tsSymptoms}
 
-{: tsCauses}
+
 During the PVC creation and binding, many different tasks are executed by the {{site.data.keyword.cos_full_notm}} plug-in. Each task can fail and cause a different error message.
+{: tsCauses}
 
+Describe your PVC and review the common error messages.
 {: tsResolve}
 
 1. Find the root cause for why the PVC remains in a **Pending** state.

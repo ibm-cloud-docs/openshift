@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-23"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -336,7 +336,7 @@ To increase your app's availability, you can control how your app reacts to [dis
 A pod disruption budget can help you plan how your app behaves during voluntary disruptions, such as when you initiate a direct restart by updating the app deployment, or involuntary disruptions, such as a kernel panic.
 * `minAvailable`: You can specify the number or percentage of pods that must still be available after a disruption occurs.
 * `maxUnavailable`: You can specify the number or percentage of pods that can be unavailable after a disruption occurs. The example uses `maxUnavailable: 1`.
-* `selector`: Fill in the label to select the set of pods that the PodDisruptionBudget applies to. Note that if you used this same label in other pod deployments, the pod applies to those as well.
+* `selector`: Fill in the label to select the set of pods that the `PodDisruptionBudget` applies to. Note that if you used this same label in other pod deployments, the pod applies to those as well.
 
 For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/tasks/run-application/configure-pdb/){: external}.
 
@@ -699,7 +699,7 @@ spec:
 ## Packaging apps in version 4 clusters for reuse in multiple environments with Kustomize
 {: #kustomize}
 
-As part of a [twelve-factor](https://12factor.net/){: external}, cloud-native app, you want to maintain dev-to-prod parity by setting up a continuous development and delivery pipeline that uses a common, version-controlled codebase source. In your codebase repositories, you store your Kubernetes resource configuration manifest files, often in YAML format. You can use the Kubernetes project [Kustomize](https://kustomize.io/){: external} both to standardize and customize your deployments across multiple environments.
+As part of a [twelve-factor](https://12factor.net/){: external}, cloud-native app, you want to maintain `dev-to-prod` parity by setting up a continuous development and delivery pipeline that uses a common, version-controlled codebase source. In your codebase repositories, you store your Kubernetes resource configuration manifest files, often in YAML format. You can use the Kubernetes project [Kustomize](https://kustomize.io/){: external} both to standardize and customize your deployments across multiple environments.
 {: shortdesc}
 
 For example, you can set up a base `kustomization` YAML to declare Kubernetes objects such as deployments and PVCs that are shared in your development, testing, and production environments. Next, you can set up separate `kustomization` YAMLs that have customized configurations for each environment, such as more replicas in production than testing. These customized YAMLs can then overlay, or build on, the shared base YAML so that you can manage environments that are mostly identical except for a few overlay configuration differences that you source-control. For more information about Kustomize such as a glossary and FAQs, check out the [Kustomize docs](https://github.com/kubernetes-sigs/kustomize/tree/master/docs){: external}.

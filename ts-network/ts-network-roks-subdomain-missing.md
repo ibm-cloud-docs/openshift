@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -116,8 +116,9 @@ content-type: troubleshoot
 * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-{: tsSymptoms}
+
 When you expose an app through a router subdomain, you get a local subdomain instead of a public route, in the format: `<service_name>-<project_name>.router.default.svc.cluster.local`.
+{: tsSymptoms}
 
 When you try to open the {{site.data.keyword.openshiftshort}} web console or another app route in your browser, you might see an error similar to the following.
 
@@ -127,13 +128,18 @@ The application is currently not serving requests on this endpoint.
 ```
 {: screen}
 
+
+After the cluster is created and enters a **normal** state, the router subdomain networking and load balancing components still take some time to deploy.
 {: tsCauses}
-After the cluster is created and enters a **normal** state, the router subdomain networking and load balancing components still take some time to deploy. If you expose your app before the networking components fully provision, or if the components experience an error, your apps can only be exposed internally with the default router's `svc.cluster.local` domain.
+
+If you expose your app before the networking components fully provision, or if the components experience an error, your apps can only be exposed internally with the default router's `svc.cluster.local` domain.
 
 When the components fully provision, a public router subdomain is available for your apps, in the format `<cluster-name>-<accountID-hashed>-<ssll>.<region>.containers.appdomain.cloud`.
 
-{: tsResolve}
+
 1. After you create a cluster, wait some time before you expose your apps, even after the cluster enters a **normal** state.
+{: tsResolve}
+
 2. Check the **Master Status**. If the **Master Status** is not **Ready**, [review its status](/docs/openshift?topic=openshift-debug_master) and follow any troubleshooting information to resolve the issue.   
     ```
     ibmcloud oc cluster get -c <cluster_name_or_ID>

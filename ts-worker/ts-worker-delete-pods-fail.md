@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -114,19 +114,22 @@ content-type: troubleshoot
     * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
     * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-{: tsSymptoms}
+
 You deleted all worker nodes in your cluster so that zero worker nodes exist. Then, you added one or more worker nodes. When you run the following command, several pods for Kubernetes components are stuck in the `ContainerCreating` status, and the `calico-node` pods are stuck in the `CrashLoopBackOff` status.
+{: tsSymptoms}
 
 ```
 oc -n kube-system get pods
 ```
 {: pre}
 
-{: tsCauses}
-When you delete all worker nodes in your cluster, no worker node exists for the `calico-kube-controllers` pod to run on. The Calico controller pod's data cannot be updated to remove the data of the deleted worker nodes. When the Calico controller pod begins to run again on the new worker nodes, its data is not updated for the new worker nodes, and it does not start the `calico-node` pods.
 
-{: tsResolve}
+When you delete all worker nodes in your cluster, no worker node exists for the `calico-kube-controllers` pod to run on. The Calico controller pod's data cannot be updated to remove the data of the deleted worker nodes. When the Calico controller pod begins to run again on the new worker nodes, its data is not updated for the new worker nodes, and it does not start the `calico-node` pods.
+{: tsCauses}
+
+
 Delete the existing `calico-node` worker node entries so that new pods can be created.
+{: tsResolve}
 
 **Before you begin**: Install the [Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install).
 

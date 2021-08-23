@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-23"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade, update
 
@@ -209,6 +209,9 @@ You notice that an update is available for your worker nodes in a [classic infra
 
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Applies to only classic clusters. Have a VPC cluster? See [Updating VPC worker nodes](#vpc_worker_node) instead.
 {: note}
+
+For the latest security patches and fixes, make sure to update your worker nodes to the latest patch as soon as possible after it is available. For more information about the latest updates, review the [Changelog](/docs/containers?topic=containers-changelog).
+{: tip}
 
 * **Patch**: A worker node patch update includes security fixes. You can update the classic worker node to the latest patch by using the `ibmcloud oc worker reload` or `update` commands. Keep in mind that the `update` command also updates the worker node to the same `major.minor` version as the master and latest patch version, if a `major.minor` version update is also available.
 * **Major.minor**: A `major.minor` update moves up the Kubernetes version of the worker node to the same version as the master. This type of update often includes changes to the Kubernetes API or other behaviors that you must prepare your cluster for. Remember that your worker nodes can only be one version behind the master version (`n-1`). You can update the classic worker node to the same patch by using the `ibmcloud oc worker update` command.
@@ -426,6 +429,9 @@ You notice that an update is available for your worker nodes in a [VPC infrastru
 
 <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/>  Applies to only VPC clusters. Have a classic cluster? See [Updating classic worker nodes](#worker_node) instead.
 {: note}
+
+For the latest security patches and fixes, make sure to update your worker nodes to the latest patch as soon as possible after it is available. For more information about the latest updates, review the [Changelog](/docs/containers?topic=containers-changelog).
+{: tip}
 
 * **Patch**: A worker node patch update includes security fixes. You can update the VPC worker node to the latest patch by using the `ibmcloud oc worker replace` command.
 * **Major.minor**: A `major.minor` update moves up the Kubernetes version of the worker node to the same version as the master. This type of update often includes changes to the Kubernetes API or other behaviors that you must prepare your cluster for. Remember that your worker nodes can only be one version behind the master version (`n-1`). You can update the VPC worker node to the same patch by using the `ibmcloud oc worker replace` command with the `--update` flag.

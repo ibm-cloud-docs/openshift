@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -112,13 +112,15 @@ content-type: troubleshoot
 
 **Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
-{: tsSymptoms}
+
 In a classic cluster, you enabled source IP preservation for a [version 1.0 load balancer](/docs/openshift?topic=openshift-loadbalancer#lb_source_ip) service by changing `externalTrafficPolicy` to `Local` in the service's configuration file.
+{: tsSymptoms}
 
 However, no traffic reaches the back-end service for your app.
 
-{: tsCauses}
+
 When you enable source IP preservation for load balancer services, the source IP address of the client request is preserved.
+{: tsCauses}
 
 The service forwards traffic to app pods on the same worker node only to ensure that the request packet's IP address isn't changed. Typically, load balancer service pods are deployed to the same worker nodes that the app pods are deployed to. However, some situations exist where the service pods and app pods might not be scheduled onto the same worker node. If you use [Kubernetes taints](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external} on worker nodes, any pods that don't have a taint toleration are prevented from running on the tainted worker nodes. Source IP preservation might not be working based on the type of taint you used:
 

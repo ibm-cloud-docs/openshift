@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-19"
 
 keywords: openshift, storage
 
@@ -110,17 +110,22 @@ content-type: troubleshoot
 # Why are no pods listed in the `openshift-storage` namespace?
 {: #ts-ocs-no-pods}
 
-{: tsSymptoms}
+
 There are no pods listed when you run the `oc get pods -n openshift-storage` command. When you view the `ibm-ocs-operator-controller-manager` logs with the `oc logs <ibm-ocs-operator-controller-manager-a1a1a1a> -n kube-system` command, you see the following error message:
+{: tsSymptoms}
+
 ```
 Failed to get StorageCluster","error":"no matches for kind \"StorageCluster\" in version \"ocs.openshift.io/v1\
 ```
 {: screen}
 
-{: tsCauses}
-The catalog source for your ODF storage cluster is unhealthy.
 
+The catalog source for your ODF storage cluster is unhealthy.
+{: tsCauses}
+
+Remove all the catalog sources from your cluster.
 {: tsResolve}
+
 1. Remove all catalog sources from your cluster. A new catalog source and respective pods automatically generate.
     ```sh
     oc -n openshift-marketplace delete catsrc --all

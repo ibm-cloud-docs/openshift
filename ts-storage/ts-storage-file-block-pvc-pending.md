@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -114,15 +114,19 @@ content-type: troubleshoot
 * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-{: tsSymptoms}
+
 When you create a PVC and you run `oc get pvc <pvc_name>`, your PVC remains in a **Pending** state, even after waiting for some time.
+{: tsSymptoms}
 
-{: tsCauses}
+
 During the PVC creation and binding, many different tasks are executed by the file and block storage plug-in. Each task can fail and cause a different error message.
+{: tsCauses}
 
+
+Find the root cause by describing your PVC and reviewing the common error messages.
 {: tsResolve}
 
-1. Find the root cause for why the PVC remains in a **Pending** state.
+1. Describe the PVC and state.
     ```sh
     oc describe pvc <pvc_name> -n <project>
     ```

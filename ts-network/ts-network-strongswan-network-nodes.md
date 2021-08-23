@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -112,15 +112,17 @@ content-type: troubleshoot
 
 **Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
-{: tsSymptoms}
+
 You previously established a working VPN connection by using the strongSwan IPSec VPN service. However, after you added or deleted a worker node on your cluster, you experience one or more of the following symptoms:
+{: tsSymptoms}
 
 * You do not have a VPN status of `ESTABLISHED`
 * You cannot access new worker nodes from your on-prem network
 * You cannot access the remote network from pods that are running on new worker nodes
 
-{: tsCauses}
+
 If you added a worker node to a worker pool:
+{: tsCauses}
 
 * The worker node was provisioned on a new private subnet that is not exposed over the VPN connection by your existing `localSubnetNAT` or `local.subnet` settings.
 * VPN routes cannot be added to the worker node because the worker has taints or labels that are not included in your existing `tolerations` or `nodeSelector` settings.
@@ -130,8 +132,9 @@ If you deleted a worker node:
 
 * That worker node was the only node where a VPN pod was running, due to restrictions on certain taints or labels in your existing `tolerations` or `nodeSelector` settings.
 
-{: tsResolve}
+
 Update the Helm chart values to reflect the worker node changes.
+{: tsResolve}
 
 1. Delete the existing Helm chart.
 

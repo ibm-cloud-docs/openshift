@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -112,14 +112,17 @@ content-type: troubleshoot
 
 **Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
-{: tsSymptoms}
+
 When you check VPN connectivity by running `oc exec $STRONGSWAN_POD -- ipsec status`, you do not see a status of `ESTABLISHED`, or the VPN pod is in an `ERROR` state or continues to crash and restart.
+{: tsSymptoms}
 
-{: tsCauses}
+
 Your Helm chart configuration file has incorrect values, missing values, or syntax errors.
+{: tsCauses}
 
-{: tsResolve}
+
 To establish VPN connectivity with the strongSwan Helm chart, you might need to check for several types of issues and change your configuration file accordingly. To troubleshoot your strongSwan VPN connectivity:
+{: tsResolve}
 
 1. [Test and verify the strongSwan VPN connectivity](/docs/openshift?topic=openshift-vpn#vpn_test) by running the five Helm tests that are included in the strongSwan chart definition.
 

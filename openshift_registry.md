@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-20"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -970,7 +970,7 @@ The following steps create an API key that stores the credentials of an {{site.d
     <tbody>
     <tr>
     <td><code><em>&lt;cluster_service_ID&gt;</em></code></td>
-    <td>Required. Replace with the <code><cluster_name>-<kube_namespace>-id</code> service ID that you previously created for your Kubernetes cluster.</td>
+    <td>Required. Replace with the <code><cluster_name>-&lt;kube_namespace&gt;-id</code> service ID that you previously created for your Kubernetes cluster.</td>
     </tr>
     <tr>
     <td><code>--service-name <em>container-registry</em></code></td>
@@ -986,10 +986,11 @@ The following steps create an API key that stores the credentials of an {{site.d
     </tr>
     <tr>
     <td><code>--resource-type <em>namespace</em> --resource <em>&lt;registry_namespace&gt;</em></code></td>
-    <td>Optional. If you want to limit access to only images in certain <a href="/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan">{{site.data.keyword.registrylong_notm}} namespaces</a>, enter <code>namespace</code> for the resource type and specify the <code><registry_namespace></code>. To list registry namespaces, run <code>ibmcloud cr namespaces</code>.</td>
+    <td>Optional. If you want to limit access to only images in certain <a href="/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan">{{site.data.keyword.registrylong_notm}} namespaces</a>, enter <code>namespace</code> for the resource type and specify the <code>&lt;registry_namespace&gt;</code>. To list registry namespaces, run <code>ibmcloud cr namespaces</code>.</td>
     </tr>
     </tbody></table>
-4. Create an API key for the service ID. Name the API key similar to your service ID, and include the service ID that you previously created, ``<cluster_name>-<kube_namespace>-id`. Be sure to give the API key a description that helps you retrieve the key later.
+4. Create an API key for the service ID. Name the API key similar to your service ID, and include the service ID that you previously created,
+    `<cluster_name>-<kube_namespace>-id`. Be sure to give the API key a description that helps you retrieve the key later.
     ```
     ibmcloud iam service-api-key-create <cluster_name>-<project>-key <cluster_name>-<project>-id --description "API key for service ID <service_id> in {{site.data.keyword.openshiftshort}} cluster <cluster_name> project <project>"
     ```

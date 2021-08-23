@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -114,8 +114,9 @@ content-type: troubleshoot
 * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
-{: tsSymptoms}
+
 You receive an error message similar to one of the following.
+{: tsSymptoms}
 
 **Example error message when installing {{site.data.keyword.icp4dfull_notm}} from the console**
 ```sh
@@ -137,10 +138,13 @@ Non-authoritative answer:
 ```
 {: screen}
 
-{: tsCauses}
-The fix for [bug 1953097](https://bugzilla.redhat.com/show_bug.cgi?id=1970140){: external} enabled CoreDNS `bufsize` plugin responses of `1232` bytes. Some DNS resolvers can't receive responses greater than `512` bytes. Note that DNS resolvers that retry lookups using TCP, such as Dig, are not impacted. DNS clients that do not require UDP DNS messages to exceed 512 bytes are not impacted.
 
+The fix for [bug 1953097](https://bugzilla.redhat.com/show_bug.cgi?id=1970140){: external} enabled CoreDNS `bufsize` plugin responses of `1232` bytes. Some DNS resolvers can't receive responses greater than `512` bytes. Note that DNS resolvers that retry lookups using TCP, such as Dig, are not impacted. DNS clients that do not require UDP DNS messages to exceed 512 bytes are not impacted.
+{: tsCauses}
+
+Update your cluster master and worker nodes.
 {: tsResolve}
+
 1. [Update your cluster master](/docs/openshift?topic=openshift-update#master). For 4.6 clusters, update your master to version `4.6.38_openshift` or later. For 4.7 clusters, update your master to version `4.7.19_openshift` or later.
     ```sh
     ibmcloud oc cluster master update --cluster <clusterID> --version <4.6.38_openshift|4.7.19_openshift>

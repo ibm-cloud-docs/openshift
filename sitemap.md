@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-18"
+lastupdated: "2021-08-23"
 
 keywords: openshift
 subcollection: openshift
@@ -844,11 +844,11 @@ subcollection: openshift
 
 [Monitoring cluster health](/docs/openshift?topic=openshift-health-monitor)
 * [Understanding options for monitoring](/docs/openshift?topic=openshift-health-monitor#oc_logmet_options)
+  * [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor#{{site.data.keyword.mon_full_notm}})
+  * [Built-in {{site.data.keyword.openshiftshort}} monitoring tools](/docs/openshift?topic=openshift-health-monitor#built-in-{{site.data.keyword.openshiftshort}}-monitoring-tools)
 * [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor#openshift_monitoring)
 * [Viewing cluster states](/docs/openshift?topic=openshift-health-monitor#states)
-  * [Cluster states](/docs/openshift?topic=openshift-health-monitor#states_cluster)
   * [Master states](/docs/openshift?topic=openshift-health-monitor#states_master)
-  * [Worker node states](/docs/openshift?topic=openshift-health-monitor#states_workers)
 * [Disabling remote health reporting](/docs/openshift?topic=openshift-health-monitor#oc_disable_telemetry_reports)
 
 [Reviewing service, API server, and worker node logs](/docs/openshift?topic=openshift-health-audit)
@@ -1382,11 +1382,11 @@ subcollection: openshift
 * [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-param-ref)
 
 
-## Deploying an app that uses OpenShift Data Foundation
-{: #sitemap_deploying_an_app_that_uses_openshift_data_foundation}
+## Deploying an app on OpenShift Data Foundation
+{: #sitemap_deploying_an_app_on_openshift_data_foundation}
 
 
-[Deploying an app that uses OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-deploy-app)
+[Deploying an app on OpenShift Data Foundation](/docs/openshift?topic=openshift-odf-deploy-app)
 
 
 ## Managing your OpenShift Data Foundation deployment
@@ -1917,7 +1917,7 @@ subcollection: openshift
 * [Running the worker node CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test)
 * [Benchmark 1.5 results for {{site.data.keyword.openshiftshort}} versions 4.6 and 4.7](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15)
   * [Section 1: Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-1)
-  * [Section 2: Etcd node configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-2)
+  * [Section 2: `etcd` node configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-2)
   * [Section 3: Control plane configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-3)
   * [Section 4: Worker node security configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-4)
   * [Section 5: Kubernetes policies](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-5)
@@ -2201,6 +2201,21 @@ subcollection: openshift
 * [Step 9: Refresh the cluster master](/docs/openshift?topic=openshift-ocp-debug#oc-debug-refresh-master)
 * [Step 10: Retry](/docs/openshift?topic=openshift-ocp-debug#oc-debug-retry)
 
+[Cluster states](/docs/openshift?topic=openshift-cluster-states-reference)
+* [Aborted](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-aborted)
+* [Critical](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-critical)
+* [Delete failed](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-delete-failed)
+* [Deleted](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-deleted)
+* [Deleting](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-deleting)
+* [Deploy failed](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-deploy-failed)
+  * [Deploying](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-deploying)
+  * [Normal](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-normal)
+  * [Pending](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-pending)
+  * [Requested](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-requested)
+  * [Updating](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-updating)
+  * [Unsupported](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-unsupported)
+  * [Warning](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-warning)
+
 [Debugging common CLI issues with clusters](/docs/openshift?topic=openshift-ts_clis)
 * [Firewall prevents running CLI commands](/docs/openshift?topic=openshift-ts_clis#ts_firewall_clis)
 * [`kubectl` or `oc` commands do not work](/docs/openshift?topic=openshift-ts_clis#kubectl_fails)
@@ -2344,7 +2359,6 @@ subcollection: openshift
 
 [Why do images fail to pull from registry with `ImagePullBackOff` or authorization errors?](/docs/openshift?topic=openshift-ts-app-image-pull)
 * [Troubleshooting image pull secrets that use API keys](/docs/openshift?topic=openshift-ts-app-image-pull#img-pull-api-key)
-* [Deprecated: Troubleshooting image pull secrets that use tokens](/docs/openshift?topic=openshift-ts-app-image-pull#img-pull-token)
 
 [Why don't my containers start?](/docs/openshift?topic=openshift-ts-app-container-start)
 * [Fixing registry quota issues](/docs/openshift?topic=openshift-ts-app-container-start#regitry-quota)
