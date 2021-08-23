@@ -27,6 +27,7 @@ Red Hat OpenShift on IBM Cloud
     Learning paths
         openshift_path_admin.md
         openshift_path_dev.md
+    {: .navgroup-end}
 
     {: .navgroup id="tutorial"}
     [Tutorials library for OpenShift](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20)
@@ -185,7 +186,6 @@ Red Hat OpenShift on IBM Cloud
             openshift_storage_odf_classic.md
             openshift_storage_ocs_apps.md
             openshift_storage_ocs_manage.md
-            openshift_storage_noobaa.md
             openshift_storage_ocs_sc_ref.md
         openshift_storage_vpc_block_driver.md
         openshift_storage_br.md

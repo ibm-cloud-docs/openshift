@@ -290,7 +290,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
         <tr>
           <td>Headers</td>
         <td><ul><li><code>Content-Type: application/json</code></li>
-        <li><code>Authorization: bearer <iam_access_token></code></li>
+        <li><code>Authorization: bearer &lt;iam_access_token&gt;</code></li>
         <li><code>Accept: application/json</code></li></ul></td>
         </tr>
     </tbody>
