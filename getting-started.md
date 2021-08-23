@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-23"
 
 keywords: red hat openshift, red hat openshift on ibm cloud, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters, roks, rhoks, rhos
 
@@ -343,7 +343,7 @@ From the {{site.data.keyword.openshiftshort}} console, you can deploy one of the
 7. Click **Node.js**, and then click **Create Application**. Note that you might need to click **Clear All Filters** to display the **Node.js** option. After you select **Node.js**, the **Create Source-to-Image Application** pane opens.
 8. In the **Git** section, click **Try Sample**.
 9. Scroll to confirm that **Deployment** and **Create a route to the application** are selected, and then click **Create**.
-8. Wait a few minutes for the pods to deploy. To check the status of the pods, from the **Topology** pane, click your **nodejs** app and review its sidebar. You must see that the `nodejs` build is complete, and that the `nodejs` pod is in a **Running** state to continue.
+8. Wait a few minutes for the pods to deploy. To check the status of the pods, from the **Topology** pane, click your **`nodejs`** app and review its sidebar. You must see that the `nodejs` build is complete, and that the `nodejs` pod is in a **Running** state to continue.
 9. When the deployment is complete, click the route location URL, which has a format similar to the following.
 
     ```
