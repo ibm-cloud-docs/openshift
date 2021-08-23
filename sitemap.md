@@ -2359,7 +2359,6 @@ subcollection: openshift
 
 [Why do images fail to pull from registry with `ImagePullBackOff` or authorization errors?](/docs/openshift?topic=openshift-ts-app-image-pull)
 * [Troubleshooting image pull secrets that use API keys](/docs/openshift?topic=openshift-ts-app-image-pull#img-pull-api-key)
-* [Deprecated: Troubleshooting image pull secrets that use tokens](/docs/openshift?topic=openshift-ts-app-image-pull#img-pull-token)
 
 [Why don't my containers start?](/docs/openshift?topic=openshift-ts-app-container-start)
 * [Fixing registry quota issues](/docs/openshift?topic=openshift-ts-app-container-start#regitry-quota)

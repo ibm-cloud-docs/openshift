@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-23"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -539,7 +539,5 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     oc get ImagePolicy --all-namespaces
     ```
     {: pre}
-
-
 
 
