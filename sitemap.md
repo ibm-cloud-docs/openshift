@@ -844,11 +844,11 @@ subcollection: openshift
 
 [Monitoring cluster health](/docs/openshift?topic=openshift-health-monitor)
 * [Understanding options for monitoring](/docs/openshift?topic=openshift-health-monitor#oc_logmet_options)
+  * [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor#{{site.data.keyword.mon_full_notm}})
+  * [Built-in {{site.data.keyword.openshiftshort}} monitoring tools](/docs/openshift?topic=openshift-health-monitor#built-in-{{site.data.keyword.openshiftshort}}-monitoring-tools)
 * [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor#openshift_monitoring)
 * [Viewing cluster states](/docs/openshift?topic=openshift-health-monitor#states)
-  * [Cluster states](/docs/openshift?topic=openshift-health-monitor#states_cluster)
   * [Master states](/docs/openshift?topic=openshift-health-monitor#states_master)
-  * [Worker node states](/docs/openshift?topic=openshift-health-monitor#states_workers)
 * [Disabling remote health reporting](/docs/openshift?topic=openshift-health-monitor#oc_disable_telemetry_reports)
 
 [Reviewing service, API server, and worker node logs](/docs/openshift?topic=openshift-health-audit)
@@ -1382,11 +1382,11 @@ subcollection: openshift
 * [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-param-ref)
 
 
-## Deploying an app that uses OpenShift Data Foundation
-{: #sitemap_deploying_an_app_that_uses_openshift_data_foundation}
+## Deploying an app on OpenShift Data Foundation
+{: #sitemap_deploying_an_app_on_openshift_data_foundation}
 
 
-[Deploying an app that uses OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-deploy-app)
+[Deploying an app on OpenShift Data Foundation](/docs/openshift?topic=openshift-odf-deploy-app)
 
 
 ## Managing your OpenShift Data Foundation deployment
@@ -2200,6 +2200,21 @@ subcollection: openshift
 * [Step 8: Check the OpenVPN](/docs/openshift?topic=openshift-ocp-debug#oc-debug-openvpn)
 * [Step 9: Refresh the cluster master](/docs/openshift?topic=openshift-ocp-debug#oc-debug-refresh-master)
 * [Step 10: Retry](/docs/openshift?topic=openshift-ocp-debug#oc-debug-retry)
+
+[Cluster states](/docs/openshift?topic=openshift-cluster-states-reference)
+* [Aborted](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-aborted)
+* [Critical](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-critical)
+* [Delete failed](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-delete-failed)
+* [Deleted](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-deleted)
+* [Deleting](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-deleting)
+* [Deploy failed](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-deploy-failed)
+  * [Deploying](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-deploying)
+  * [Normal](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-normal)
+  * [Pending](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-pending)
+  * [Requested](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-requested)
+  * [Updating](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-updating)
+  * [Unsupported](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-unsupported)
+  * [Warning](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-warning)
 
 [Debugging common CLI issues with clusters](/docs/openshift?topic=openshift-ts_clis)
 * [Firewall prevents running CLI commands](/docs/openshift?topic=openshift-ts_clis#ts_firewall_clis)

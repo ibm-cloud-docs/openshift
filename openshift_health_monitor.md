@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-17"
+lastupdated: "2021-08-23"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -119,30 +119,31 @@ For cluster metrics and app monitoring, {{site.data.keyword.openshiftlong}} clus
 To help understand when to use the built-in {{site.data.keyword.openshiftshort}} tools or {{site.data.keyword.cloud_notm}} integrations, review the following information.
 {: shortdesc}
 
-<dl>
+### {{site.data.keyword.mon_full_notm}}
+Review the following details about {{site.data.keyword.mon_full_notm}}. 
+{: shortdesc}
 
-<dt>{{site.data.keyword.mon_full_notm}}</dt>
-<dd><ul>
-<li>Customizable user interface for a unified look at your cluster metrics, container security, resource usage, alerts, and custom events.</li>
-<li>Quick integration with the cluster via a script.</li>
-<li>Aggregated metrics and container monitoring across clusters and cloud providers.</li>
-<li>Historical access to metrics that is based on the timeline and plan, and ability to capture and download trace files.</li>
-<li>Highly available, scalable, and compliant with industry security standards.</li>
-<li>Integrated with {{site.data.keyword.cloud_notm}} IAM for user access management.</li>
-<li>Free trial to try out the capabilities.</li></ul>
-<br>To get started, see [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](#openshift_monitoring).</dd>
+- Customizable user interface for a unified look at your cluster metrics, container security, resource usage, alerts, and custom events.
+- Quick integration with the cluster via a script.
+- Aggregated metrics and container monitoring across clusters and cloud providers.
+- Historical access to metrics that is based on the timeline and plan, and ability to capture and download trace files.
+- Highly available, scalable, and compliant with industry security standards.
+- Integrated with {{site.data.keyword.cloud_notm}} IAM for user access management.
+- Free trial to try out the capabilities.
+- To get started, see [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](#openshift_monitoring).
 
-<dt>Built-in {{site.data.keyword.openshiftshort}} monitoring tools</dt>
-<dd><ul>
-<li>Built-in Prometheus and Grafana deployments in <code>openshift-monitoring</code> project for cluster metrics.</li>
-<li>At-a-glance, real-time view of how your pods consume cluster resources that can be accessed from the {{site.data.keyword.openshiftshort}} <strong>Cluster Console</strong>.</li>
-<li>Monitoring is on a per-cluster basis.</li>
-<li>The <code>openshift-monitoring</code> project stack is set up in a single zone only. No persistant storage is available to back up or view metric history.</li></ul>
-<br>For more information, see [the {{site.data.keyword.openshiftshort}} documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](http://docs.openshift.com/container-platform/4.6/monitoring/understanding-the-monitoring-stack.html).</dd>
+For more information, see [the {{site.data.keyword.openshiftshort}} documentation](http://docs.openshift.com/container-platform/4.6/monitoring/understanding-the-monitoring-stack.html){: external}.
 
-</dl>
+### Built-in {{site.data.keyword.openshiftshort}} monitoring tools
+Review the following details about built-in monitoring tools for your cluster. 
+{: shortdesc}
 
-<br />
+- Built-in Prometheus and Grafana deployments in the `openshift-monitoring` project for cluster metrics.
+- At-a-glance, real-time view of how your pods consume cluster resources that can be accessed from the {{site.data.keyword.openshiftshort}} **Cluster Console**.
+- Monitoring is on a per-cluster basis.
+- The `openshift-monitoring` project stack is set up in a single zone only. No persistant storage is available to back up or view metric history.</li></ul>
+
+For more information, see [the {{site.data.keyword.openshiftshort}} documentation](http://docs.openshift.com/container-platform/4.6/monitoring/understanding-the-monitoring-stack.html){: external}.
 
 ## Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}
 {: #openshift_monitoring}
@@ -248,75 +249,9 @@ To view information about a specific cluster, such as its zones, service endpoin
 
 You can review information about the overall cluster, the IBM-managed master, and your worker nodes. To troubleshoot your cluster and worker nodes, see [Troubleshooting clusters](/docs/openshift?topic=openshift-debug_clusters).
 
-### Cluster states
-{: #states_cluster}
-
-You can view the current cluster state by running the `ibmcloud oc cluster ls` command and locating the **State** field.
-{: shortdesc}
-
-    <table summary="Every table row should be read left to right, with the cluster state in column one and a description in column two.">
-    <caption>Cluster states</caption>
-        <thead>
-        <th>Cluster state</th>
-        <th>Description</th>
-        </thead>
-        <tbody>
-    <tr>
-        <td><code>Aborted</code></td>
-        <td>The deletion of the cluster is requested by the user before the Kubernetes master is deployed. After the deletion of the cluster is completed, the cluster is removed from your dashboard. If your cluster is stuck in this state for a long time, open an <a href="/docs/containers?topic=containers-get-help">{{site.data.keyword.cloud_notm}} support case</a>.</td>
-        </tr>
-        <tr>
-            <td><code>Critical</code></td>
-            <td>The Kubernetes master cannot be reached or all worker nodes in the cluster are down. If you enabled {{site.data.keyword.keymanagementservicelong_notm}} in your cluster, the {{site.data.keyword.keymanagementserviceshort}} container might fail to encrypt or decrypt your cluster secrets. If so, you can view an error with more information when you run <code>oc get secrets</code>.</td>
-        </tr>
-        <tr>
-            <td><code>Delete failed</code></td>
-            <td>The Kubernetes master or at least one worker node cannot be deleted. List worker nodes by running <code>ibmcloud oc worker ls --cluster <cluster_name_or_ID></code>. If worker nodes are listed, see <a href="/docs/containers?topic=containers-worker_infra_errors">Unable to create or delete worker nodes</a>. If no workers are listed, open an <a href="/docs/containers?topic=containers-get-help">{{site.data.keyword.cloud_notm}} support case</a>.</td>
-        </tr>
-        <tr>
-            <td><code>Deleted</code></td>
-            <td>The cluster is deleted but not yet removed from your dashboard. If your cluster is stuck in this state for a long time, open an <a href="/docs/containers?topic=containers-get-help">{{site.data.keyword.cloud_notm}} support case</a>. </td>
-        </tr>
-        <tr>
-        <td><code>Deleting</code></td>
-        <td>The cluster is being deleted and cluster infrastructure is being dismantled. You cannot access the cluster.  </td>
-        </tr>
-        <tr>
-            <td><code>Deploy failed</code></td>
-            <td>The deployment of the Kubernetes master could not be completed. You cannot resolve this state. Contact IBM Cloud support by opening an <a href="/docs/containers?topic=containers-get-help">{{site.data.keyword.cloud_notm}} support case</a>.</td>
-        </tr>
-            <tr>
-            <td><code>Deploying</code></td>
-            <td>The Kubernetes master is not fully deployed yet. You cannot access your cluster. Wait until your cluster is fully deployed to review the health of your cluster.</td>
-          </tr>
-          <tr>
-            <td><code>Normal</code></td>
-            <td>All worker nodes in a cluster are up and running. You can access the cluster and deploy apps to the cluster. This state is considered healthy and does not require an action from you.<p class="note">Although the worker nodes might be normal, other infrastructure resources, such as <a href="/docs/containers?topic=containers-coredns_lameduck">networking</a> and <a href="/docs/containers?topic=containers-debug_storage_file">storage</a>, might still need attention. If you just created the cluster, some parts of the cluster that are used by other services such as Ingress secrets or registry image pull secrets, might still be in process.</p></td>
-        </tr>
-          <tr>
-            <td><code>Pending</code></td>
-            <td>The Kubernetes master is deployed. The worker nodes are being provisioned and are not available in the cluster yet. You can access the cluster, but you cannot deploy apps to the cluster.  </td>
-            </tr>
-        <tr>
-            <td><code>Requested</code></td>
-            <td>A request to create the cluster and order the infrastructure for the Kubernetes master and worker nodes is sent. When the deployment of the cluster starts, the cluster state changes to <code>Deploying</code>. If your cluster is stuck in the <code>Requested</code> state for a long time, open an <a href="/docs/containers?topic=containers-get-help">{{site.data.keyword.cloud_notm}} support case</a>. </td>
-        </tr>
-        <tr>
-            <td><code>Updating</code></td>
-            <td>The Kubernetes API server that runs in your Kubernetes master is being updated to a new Kubernetes API version. During the update, you cannot access or change the cluster. Worker nodes, apps, and resources that the user deployed are not modified and continue to run. Wait for the update to complete to review the health of your cluster. </td>
-        </tr>
-        <tr>
-        <td><code>Unsupported</code></td>
-        <td>The <a href="/docs/containers?topic=containers-cs_versions#cs_versions">Kubernetes version</a> that the cluster runs is no longer supported. Your cluster's health is no longer actively monitored or reported. Additionally, you cannot add or reload worker nodes. To continue receiving important security updates and support, you must update your cluster. Review the <a href="/docs/containers?topic=containers-cs_versions#prep-up">version update preparation actions</a>, then <a href="/docs/containers?topic=containers-update#update">update your cluster</a> to a supported Kubernetes version.</td>
-        </tr>
-        <tr>
-            <td><code>Warning</code></td>
-            <td><ul><li>At least one worker node in the cluster is not available, but other worker nodes are available and can take over the workload. Try to <a href="/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload">reload</a> the unavailable worker nodes.</li>
-            <li>Your cluster has zero worker nodes, such as if you created a cluster without any worker nodes or manually removed all the worker nodes from the cluster. <a href="/docs/containers?topic=containers-add_workers#resize_pool">Resize your worker pool</a> to add worker nodes to recover from a <code>Warning</code> state, and then <a href="/docs/containers?topic=containers-zero_nodes_calico_failure">update the Calico node entries for your worker nodes</a>.</li>
-            <li>A control plane operation for your cluster failed. View the cluster in the console or run <code>ibmcloud oc cluster get --cluster <cluster_name_or_ID></code> to <a href="/docs/containers?topic=containers-debug_master">check the <strong>Master Status</strong> for further debugging</a>.</li></ul></td>
-        </tr>
-        </tbody>
-        </table>
+For more information about cluster and worker states, see:
+- [Cluster states](/docs/openshift?topic=openshift-cluster-state-reference).
+- [Worker node states](/docs/openshift?topic=openshift-worker-node-state-reference).
 
 ### Master states
 {: #states_master}
@@ -349,12 +284,8 @@ The **Master Status** provides details of what operation from the master state i
 {: caption="Master states"}
 {: summary="Table rows read from left to right, with the master state in column one and a description in column two."}
 
-### Worker node states
-{: #states_workers}
 
-Review the [Worker node state reference](/docs/openshift?topic=openshift-worker-node-state-reference).
 
-<br />
 
 ## Disabling remote health reporting
 {: #oc_disable_telemetry_reports}
