@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-20"
+lastupdated: "2021-08-23"
 
 keywords: openshift
 subcollection: openshift
@@ -1917,7 +1917,7 @@ subcollection: openshift
 * [Running the worker node CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test)
 * [Benchmark 1.5 results for {{site.data.keyword.openshiftshort}} versions 4.6 and 4.7](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15)
   * [Section 1: Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-1)
-  * [Section 2: Etcd node configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-2)
+  * [Section 2: `etcd` node configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-2)
   * [Section 3: Control plane configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-3)
   * [Section 4: Worker node security configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-4)
   * [Section 5: Kubernetes policies](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-5)
