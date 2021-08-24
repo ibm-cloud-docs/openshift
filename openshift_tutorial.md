@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-24"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -213,64 +213,31 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
 {: shortdesc}
 
 1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your {{site.data.keyword.openshiftshort}} cluster, then click **OpenShift web console**.
-2. Explore the different areas of the {{site.data.keyword.openshiftshort}} web console, as described in the following tabbed table.
+2. To work with your cluster in the CLI, click your profile **`IAM#user.name@email.com` > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate by using the CLI.
 
-    <table class="simple-tab-table" id="console1" tab-title="OCP 4" tab-group="console-version" aria-describedby="tableSummary-19ecbef4c01853826b42de82471b9035">
-    <caption caption-side="top">
-        <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview<br>
-        <span class="table-summary" id="tableSummary-19ecbef4c01853826b42de82471b9035">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, and the description of the console area in the third column. You can change between {{site.data.keyword.openshiftshort}} console versions by toggling the tabs at the beginning of the table.</span>
-    </caption>
-    <thead>
-    <tr>
-    <th>Area</th>
-    <th>Location in console</th>
-    <th>Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Administrator perspective</td>
-    <td>Side navigation menu perspective switcher.</td>
-    <td>From the Administrator perspective, you can manage and set up the components that your team needs to run your apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see <a href="http://docs.openshift.com/container-platform/4.6/web_console/using-dashboard-to-get-cluster-information.html">Viewing cluster information</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> in the {{site.data.keyword.openshiftshort}} documentation.</td>
-    </tr>
-    <tr>
-    <td>Developer perspective</td>
-    <td>Side navigation menu perspective switcher.</td>
-    <td>From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The <strong>Topology</strong> view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see <a href="http://docs.openshift.com/container-platform/4.6/web_console/odc-about-developer-perspective.html">Developer perspective</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> in the {{site.data.keyword.openshiftshort}} documentation.</td>
-    </tr>
-    </tbody>
-    </table>
-    <table class="simple-tab-table" id="console2" tab-title="OCP 3" tab-group="console-version" aria-describedby="tableSummary-a4edc48da30a2a6943cabb6b3a128df4">
-    <caption caption-side="top">
-        <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview<br>
-        <span class="table-summary" id="tableSummary-a4edc48da30a2a6943cabb6b3a128df4">The rows are read from left to right. The area of the console is in the first column, the location in the console is in the second column, and the description of the console area in the third column. You can change between {{site.data.keyword.openshiftshort}} console versions by toggling the tabs at the beginning of the table.</span>
-    </caption>
-    <thead>
-    <tr>
-    <th>Area</th>
-    <th>Location in console</th>
-    <th>Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Service Catalog</td>
-    <td>Dropdown menu in the <strong>OpenShift Container Platform</strong> menu bar.</td>
-    <td>Browse the catalog of built-in services that you can deploy on {{site.data.keyword.openshiftshort}}. For example, if you already have a <code>node.js</code> app that is hosted on GitHub, you can click the <strong>Languages</strong> tab and deploy a <strong>JavaScript</strong> app. The <strong>My Projects</strong> pane provides a quick view of all the projects that you have access to, and clicking on a project takes you to the Application Console. For more information, see the <a href="https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html">{{site.data.keyword.openshiftshort}} Web Console Walkthrough</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> in the {{site.data.keyword.openshiftshort}} documentation.</td>
-    </tr>
-    <tr>
-    <td>Application Console</td>
-    <td>Dropdown menu in the <strong>OpenShift Container Platform</strong> menu bar.</td>
-    <td>For each project that you have access to, you can manage your {{site.data.keyword.openshiftshort}} resources such as pods, services, routes, builds, images or persistent volume claims. You can also view and analyze logs for these resources, or add services from the catalog to the project. For more information, see the <a href="https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html">{{site.data.keyword.openshiftshort}} Web Console Walkthrough</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> in the {{site.data.keyword.openshiftshort}} documentation.</td>
-    </tr>
-    <tr>
-    <td>Cluster Console</td>
-    <td>Dropdown menu in the <strong>OpenShift Container Platform</strong> menu bar.</td>
-    <td>For cluster-wide administrators across all the projects in the cluster, you can manage projects, service accounts,RBAC roles, role bindings, and resource quotas. You can also see the status and events for resources within the cluster in a combined view. For more information, see the <a href="https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html">{{site.data.keyword.openshiftshort}} Web Console Walkthrough</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> in the {{site.data.keyword.openshiftshort}} documentation.</td>
-    </tr>
-    </tbody>
-    </table><p></p>
-3. To work with your cluster in the CLI, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.
+You can explore the following areas of the {{site.data.keyword.openshiftshort}} web console,
+
+|  Area | Location in console | Description |
+|-----|-----|-----|
+| Administrator perspective | Side navigation menu perspective switcher.  | From the Administrator perspective, you can manage and set up the components that your team needs to run your apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see [Viewing cluster information](http://docs.openshift.com/container-platform/4.6/web_console/using-dashboard-to-get-cluster-information.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.|
+| Developer perspective | Side navigation menu perspective switcher. |From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](http://docs.openshift.com/container-platform/4.6/web_console/odc-about-developer-perspective.html){: external} in the {{site.data.keyword.openshiftshort}} documentation. |
+{: caption="Table 1. <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview" caption-side="top"}
+{: #console1}
+{: tab-title="OCP 4"}
+{: tab-group="console-version"}
+{: class="simple-tab-table"}
+
+| Area | Location in console | Description |
+|-----|-----|-----|
+| Service Catalog |  Dropdown menu in the **OpenShift Container Platform** menu bar. | Browse the catalog of built-in services that you can deploy on {{site.data.keyword.openshiftshort}}. For example, if you already have a `node.js` app that is hosted on GitHub, you can click the **Languages** tab and deploy a **JavaScript** app. The **My Projects** pane provides a quick view of all the projects that you have access to, and clicking on a project takes you to the Application Console. For more information, see the [{{site.data.keyword.openshiftshort}} Web Console Walkthrough](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external} in the {{site.data.keyword.openshiftshort}} documentation. |
+| Application Console | Dropdown menu in the **OpenShift Container Platform** menu bar. | For each project that you have access to, you can manage your {{site.data.keyword.openshiftshort}} resources such as pods, services, routes, builds, images or persistent volume claims. You can also view and analyze logs for these resources, or add services from the catalog to the project. For more information, see the [{{site.data.keyword.openshiftshort}} Web Console Walkthrough](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external} in the {{site.data.keyword.openshiftshort}} documentation. |
+| Cluster Console | Dropdown menu in the **OpenShift Container Platform** menu bar. | For cluster-wide administrators across all the projects in the cluster, you can manage projects, service accounts,RBAC roles, role bindings, and resource quotas. You can also see the status and events for resources within the cluster in a combined view. For more information, see the [{{site.data.keyword.openshiftshort}} Web Console Walkthrough](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external} in the {{site.data.keyword.openshiftshort}} documentation. |
+{: caption="Table 2. <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview" caption-side="top"}
+{: #console2}
+{: tab-title="OCP 3"}
+{: tab-group="console-version"}
+{: class="simple-tab-table"}
+
 
 <br />
 
