@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-24"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, roks
 
@@ -156,7 +156,7 @@ If you want to override the default parameters when deploying the add-on, you ca
     ```
     {: pre}
 
-**Next steps**: [Deploy an app that uses ODF](/docs/openshift?topic=openshift-ocs-deploy-app)
+**Next steps**: [Deploy an app that uses ODF](/docs/openshift?topic=openshift-odf-deploy-app)
 
 <br />
 
@@ -419,7 +419,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 <br />
 
-**Next steps**: [Deploy an app that uses ODF](/docs/openshift?topic=openshift-ocs-deploy-app)
+**Next steps**: [Deploy an app that uses ODF](/docs/openshift?topic=openshift-odf-deploy-app)
 
 ### Scaling ODF
 {: #odf-scaling}

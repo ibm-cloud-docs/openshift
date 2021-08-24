@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-23"
+lastupdated: "2021-08-24"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -279,14 +279,14 @@ The cluster autoscaler add-on is not supported for baremetal worker nodes.
 ## Installing the cluster autoscaler add-on in your cluster
 {: #ca_addon}
 
-    1. [Prepare your cluster for autoscaling](#ca_prepare_cluster).
+1. [Prepare your cluster for autoscaling](#ca_prepare_cluster).
 
-    2. If you previously installed the cluster autoscaler Helm chart, [make a backup of your configmap, disable autoscaling, and remove the Helm chart](#ca_rm).
+2. If you previously installed the cluster autoscaler Helm chart, [make a backup of your configmap, disable autoscaling, and remove the Helm chart](#ca_rm).
 
     The cluster autoscaler add-on configmap contains different parameters than the cluster autoscaler Helm chart configmap. You can make a backup of your Helm chart configmap to use as reference, but do not apply the backup directly to your cluster with the add-on. Instead, you can update the cluster autoscaler add-on configmap with the values from your Helm chart backup.
     {: note}
 
-    3. Install the cluster autoscaler add-on to your cluster.
+3. Install the cluster autoscaler add-on to your cluster.
 
     **In the console**
         1. From the [{{site.data.keyword.openshiftlong_notm}} cluster dashboard](https://cloud.ibm.com/kubernetes/clusters), select the cluster where you want to enable autoscaling.
@@ -295,34 +295,34 @@ The cluster autoscaler add-on is not supported for baremetal worker nodes.
 
     **In the CLI**
         1. Install the `cluster-autoscaler` add-on.
-        ```
-        ibmcloud oc cluster addon enable cluster-autoscaler —-cluster <cluster_name>
-        ```
-        {: pre}
+            ```
+            ibmcloud oc cluster addon enable cluster-autoscaler —-cluster <cluster_name>
+            ```
+            {: pre}
 
-        **Example output**
-        ```
-        Enabling add-on `cluster-autoscaler` for cluster <cluster_name>...
-        The add-on might take several minutes to deploy and become ready for use.
-        OK
-        ```
-        {: screen}
+            **Example output**
+            ```
+            Enabling add-on `cluster-autoscaler` for cluster <cluster_name>...
+            The add-on might take several minutes to deploy and become ready for use.
+            OK
+            ```
+            {: screen}
 
         2. Verify that the add-on is installed and `Ready`.
-        ```
-        ibmcloud oc cluster addon ls --cluster <cluster_name>
-        ```
-        {: pre}
+            ```
+            ibmcloud oc cluster addon ls --cluster <cluster_name>
+            ```
+            {: pre}
 
-        **Example output**
+            **Example output**
 
-        ```
-        Name                 Version   Health State   Health Status   
-        cluster-autoscaler   1.0.1     normal         Addon Ready
-        ```
-        {: screen}
+            ```
+            Name                 Version   Health State   Health Status   
+            cluster-autoscaler   1.0.1     normal         Addon Ready
+            ```
+            {: screen}
 
-    4. By default, no worker pools are enabled for autoscaling. To enable autoscaling on your worker pools, [update the cluster autoscaler configmap to enable scaling for your worker pools](#ca_cm).
+4. By default, no worker pools are enabled for autoscaling. To enable autoscaling on your worker pools, [update the cluster autoscaler configmap to enable scaling for your worker pools](#ca_cm).
 
 ## Installing the cluster autoscaler Helm chart in your cluster
 {: #ca_helm}
@@ -367,7 +367,8 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     ```
     {: pre}
 
-
+    **Example output**
+    
     ```
     NAME: ibm-iks-cluster-autoscaler
     LAST DEPLOYED: Fri Jan 17 12:20:30 2020
@@ -473,6 +474,7 @@ After you edit the configmap to enable a worker pool, the cluster autoscaler sca
     {: screen}
 
 2. Edit the configmap with the parameters to define how the cluster autoscaler scales your cluster worker pool. **Note:** Unless you [disabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public application load balancers (ALBs) in each zone of your standard cluster, you must change the `minSize` to `2` per zone so that the ALB pods can be spread for high availability.
+     
     <table summary="The columns are read from left to right. The first column has the parameter of the configmap. The second column describes the parameter.">
     <caption>Cluster autoscaler configmap parameters</caption>
     <col width="20%">
@@ -534,7 +536,8 @@ After you edit the configmap to enable a worker pool, the cluster autoscaler sca
     ```
     {: screen}
 
-<p class="note">If you enable a worker pool for autoscaling and then later add a zone to this worker pool, restart the cluster autoscaler pod so that it picks up this change: `oc delete pod -n kube-system &lt;cluster_autoscaler_pod&gt;`.</p>
+If you enable a worker pool for autoscaling and then later add a zone to this worker pool, restart the cluster autoscaler pod so that it picks up this change: `oc delete pod -n kube-system &lt;cluster_autoscaler_pod&gt;`.
+{: note}
 
 ## Customizing the cluster autoscaler configuration values
 {: #ca_customize}
@@ -749,8 +752,8 @@ If you upgrade your cluster to a version that is not supported by the cluster au
 
 The cluster autoscaler has two types of updates.
 
-    - **Patch updates**: Patch updates are delivered automatically by IBM and do not contain any feature updates or changes in the supported add-on and cluster versions.
-    - **Release updates**: Release updates contain new features for the cluster autoscaler or changes in the supported add-on or cluster versions. You must manually apply release updates to your cluster autoscaler add-on.
+- **Patch updates**: Patch updates are delivered automatically by IBM and do not contain any feature updates or changes in the supported add-on and cluster versions.
+- **Release updates**: Release updates contain new features for the cluster autoscaler or changes in the supported add-on or cluster versions. You must manually apply release updates to your cluster autoscaler add-on.
 
 1. Check the version of the cluster autoscaler add-on that is deployed in your cluster. If an update is available, review the [release notes](/docs/openshift?topic=openshift-ca_changelog) for the latest add-on version.
     ```
