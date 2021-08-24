@@ -474,24 +474,40 @@ After you edit the configmap to enable a worker pool, the cluster autoscaler sca
     {: screen}
 
 2. Edit the configmap with the parameters to define how the cluster autoscaler scales your cluster worker pool. **Note:** Unless you [disabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public application load balancers (ALBs) in each zone of your standard cluster, you must change the `minSize` to `2` per zone so that the ALB pods can be spread for high availability.
-    
-    <dl>
-    <dt>`"name": "default"`</dt>
-    <dd>Replace `"default"` with the name or ID of the worker pool that you want to scale. To list worker pools, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`.
-     To manage more than one worker pool, copy the JSON line to a comma-separated line, such as follows.
-     ```
-     [
+     
+    <table summary="The columns are read from left to right. The first column has the parameter of the configmap. The second column describes the parameter.">
+    <caption>Cluster autoscaler configmap parameters</caption>
+    <col width="20%">
+    <thead>
+    <th id="parameter-with-default">Parameter with default value</th>
+    <th id="parameter-with-description">Description</th>
+    </thead>
+    <tbody>
+    <tr>
+    <td id="parameter-name" headers="parameter-with-default">`"name": "default"`</td>
+    <td headers="parameter-name parameter-with-description">Replace `"default"` with the name or ID of the worker pool that you want to scale. To list worker pools, run `ibmcloud oc worker-pool ls --cluster &lt;cluster_name_or_ID&gt;`.<br><br>
+    To manage more than one worker pool, copy the JSON line to a comma-separated line, such as follows. <pre class="codeblock">[
         {"name": "default","minSize": 1,"maxSize": 2,"enabled":false},
         {"name": "Pool2","minSize": 2,"maxSize": 5,"enabled":true}
-     ]
-     ```
-    {: pre
-     
-     The cluster autoscaler can scale only worker pools that have the `ibm-cloud.kubernetes.io/worker-pool-id` label. To check whether your worker pool has the required label, run `ibmcloud oc worker-pool get --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> | grep Labels`. If your worker pool does not have the required label, [add a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) and use this worker pool with the cluster autoscaler.
-     {: note}
-     </dd></dl>
-     
-  
+    ]</pre><br><br>
+    <p class="note">The cluster autoscaler can scale only worker pools that have the `ibm-cloud.kubernetes.io/worker-pool-id` label. To check whether your worker pool has the required label, run `ibmcloud oc worker-pool get --cluster &lt;cluster_name_or_ID&gt; --worker-pool <worker_pool_name_or_ID> | grep Labels`. If your worker pool does not have the required label, [add a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) and use this worker pool with the cluster autoscaler.</p></td>
+    </tr>
+    <tr>
+    <td id="parameter-minsize" headers="parameter-with-default">`"minSize": 1`</td>
+    <td headers="parameter-minsize parameter-with-description">Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down the worker pool to. The value must be `2` or greater so that your ALB pods can be spread for high availability. If you <a href="/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure">disabled</a> all public ALBs in each zone of your standard cluster, you can set the value to `1`.
+    <p class="note">Setting a `minSize` does not automatically trigger a scale-up. The `minSize` is a threshold so that the cluster autoscaler does not scale below a certain number of worker nodes per zone. If your cluster does not yet have that number per zone, the cluster autoscaler does not scale up until you have workload resource requests that require more resources. For example, if you have a worker pool with one worker node per three zones (three total worker nodes) and set the `minSize` to `4` per zone, the cluster autoscaler does not immediately provision an additional three worker nodes per zone (12 worker nodes total). Instead, the scale-up is triggered by resource requests. If you create a workload that requests the resources of 15 worker nodes, the cluster autoscaler scales up the worker pool to meet this request. Now, the `minSize` means that the cluster autoscaler does not scale down below four worker nodes per zone even if you remove the workload that requests the amount. For more information, see the <a href="https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#when-does-cluster-autoscaler-change-the-size-of-a-cluster">Kubernetes docs</a>.</p></td>
+    </tr>
+    <tr>
+    <td id="parameter-maxsize" headers="parameter-with-default">`"maxSize": 2`</td>
+    <td headers="parameter-maxsize parameter-with-description">Specify the maximum number of worker nodes per zone that the cluster autoscaler can scale up the worker pool to. The value must be equal to or greater than the value that you set for the `minSize`.</td>
+    </tr>
+    <tr>
+    <td id="parameter-enabled" headers="parameter-with-default">`"enabled": false`</td>
+    <td headers="parameter-enabled parameter-with-description">Set the value to `true` for the cluster autoscaler to manage scaling for the worker pool. Set the value to `false` to stop the cluster autoscaler from scaling the worker pool.<br><br>
+    Later, if you want to [remove the cluster autoscaler](#ca_rm), you must first disable each worker pool in the configmap.</td>
+    </tr>
+    </tbody>
+    </table>
 
 4. Save the configuration file.
 5. Get your cluster autoscaler pod.
@@ -736,8 +752,8 @@ If you upgrade your cluster to a version that is not supported by the cluster au
 
 The cluster autoscaler has two types of updates.
 
-    - **Patch updates**: Patch updates are delivered automatically by IBM and do not contain any feature updates or changes in the supported add-on and cluster versions.
-    - **Release updates**: Release updates contain new features for the cluster autoscaler or changes in the supported add-on or cluster versions. You must manually apply release updates to your cluster autoscaler add-on.
+- **Patch updates**: Patch updates are delivered automatically by IBM and do not contain any feature updates or changes in the supported add-on and cluster versions.
+- **Release updates**: Release updates contain new features for the cluster autoscaler or changes in the supported add-on or cluster versions. You must manually apply release updates to your cluster autoscaler add-on.
 
 1. Check the version of the cluster autoscaler add-on that is deployed in your cluster. If an update is available, review the [release notes](/docs/openshift?topic=openshift-ca_changelog) for the latest add-on version.
     ```
