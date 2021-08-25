@@ -237,6 +237,8 @@ subcollection: openshift
 * [Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_create_cluster)
 
 * [Navigate the {{site.data.keyword.openshiftshort}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
+    * [<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30pxopenshift_tutorial#openshift_console4_overview)
+    * [<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30pxopenshift_tutorial#openshift_console311_overview)
 
 * [Deploy an app to your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
 
@@ -968,6 +970,8 @@ subcollection: openshift
 * [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app)
 * [Deploying Cloud Paks, licensed software, and other integrations](/docs/openshift?topic=openshift-deploy_app#openshift_app_cloud_paks)
 * [Accessing the {{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-deploy_app#openshift_console)
+  * [<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30pxdeploy_app#openshift_console4_overview)
+  * [<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30pxdeploy_app#openshift_console311_overview)
 
 [Testing access to apps with NodePorts](/docs/openshift?topic=openshift-nodeport)
 * [About NodePorts](/docs/openshift?topic=openshift-nodeport#nodeport_planning)
