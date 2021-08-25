@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-25"
 
 keywords: vpc block, add-on, vpc block changelog
 
@@ -120,7 +120,7 @@ As of 26 July 2021, version 2.0.3 of the Block Storage for VPC add-on is unsuppo
 {: important}
 
 
-To view a list of add-ons and the supported {{site.data.keyword.openshiftshort}} versions, run the following command.
+To view a list of add-ons and the supported cluster versions, run the following command.
 ```sh
 ibmcloud oc cluster addon versions --addon vpc-block-csi-driver
 ```
@@ -129,61 +129,132 @@ ibmcloud oc cluster addon versions --addon vpc-block-csi-driver
 Refer to the following tables for a summary of changes for each version of the {{site.data.keyword.block_storage_is_full}} add-on.
 
 | {{site.data.keyword.block_storage_is_full}} add-on version | Supported? | {{site.data.keyword.openshiftlong_notm}} version support |
-| -------------------- | -----------|--------------------------- |
-| 3.0.1 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | >= 4.3 |
-| 3.0.0 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | >= 4.3 |
-| 2.0.3 | | >=4.3 |
-{: summary="The rows are read from left to right. The first column is the {{site.data.keyword.block_storage_is_full}} add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the {{site.data.keyword.block_storage_is_full}} version is supported for."}
+| --- | --- | --- |
+| 3.0.1 | Yes | >= 4.3 |
+| 3.0.0 | Yes | >= 4.3 |
+| 2.0.3 | No | >=4.3 |
+{: summary="The rows are read from left to right. The first column is the {{site.data.keyword.block_storage_is_full}} add-on version. The second column is the version's supported state. The third column is the cluster version of your cluster that the {{site.data.keyword.block_storage_is_full}} version is supported for."}
 
-## Changelog for version 3.0.1
+## Version 3.0.1
 {: #0301_is_block}
 
-The following table shows the changes in version 3.0.1 {{site.data.keyword.block_storage_is_full}} add-on.
+Review the changes in version `3.0.1` of the {{site.data.keyword.block_storage_is_full}} add-on.
 {: shortdesc}
+
+### Changelog for version 3.0.1, released 15 July 2021
+{: #301_init}
+
+Review the changlog for version `3.0.1` of the {{site.data.keyword.block_storage_is_full}} add-on.
 
 Volume expansion in version `3.0.1` is available in beta for allowlisted accounts. Don't use this feature for production workloads.
 {: beta}
 
-| Patch version | `vpc-block-csi-driver` image tag | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
-| --- | --- | --- | --- | --- |
-| N/A | `v3.0.7` | 15 July 2021 | >=4.3 | Includes beta support for volume expansion on allowlisted accounts and fixes vulnerability [CVE-2021-27219](https://nvd.nist.gov/vuln/detail/CVE-2021-27219){: external}. Version `3.0.1` also includes the `storage-secret-sidecar` container in the {{site.data.keyword.block_storage_is_full}} driver pods. |
-{: row-headers}
-{: class="comparison-table"}
-{: caption="Patch updates for version 3.0.1" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the patch version number of the component. The second column contains the image tag the component. The third column contains the release date of the patch. The fourth column contains the supported cluster versions. The fifth column contains a brief description of the change made to the component."}
+- Image tags: `v3.0.7`  
+- Supported cluster versions >=4.3  
+- Includes beta support for volume expansion on allowlisted accounts.  
+- Fixes vulnerability [CVE-2021-27219](https://nvd.nist.gov/vuln/detail/CVE-2021-27219){: external}.  
+- Includes the `storage-secret-sidecar` container in the {{site.data.keyword.block_storage_is_full}} driver pods.  
 
-
-## Changelog for version 3.0.0
+## Version 3.0.0
 {: #0300_is_block}
 
-The following table shows the changes in version 3.0.0 {{site.data.keyword.block_storage_is_full}} add-on.
+Review the changes in version 3.0.0 of the {{site.data.keyword.block_storage_is_full}} add-on.
 {: shortdesc}
 
-| Patch version | `vpc-block-csi-driver` image tag | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
-| --- | --- | --- | --- | --- |
-| `3.0.0_521` | `v.3.0.1` | 01 April 2021 | >=4.3 | Updates the Golang version from `1.15.5` to `1.15.9`. |
-| N/A | `v.3.0.0` | 26 February 2021 | >=4.3 | The `vpc-block-csi-driver` is now available for both managed clusters and unmanaged clusters. This release contains no functional changes. |
-{: row-headers}
-{: class="comparison-table"}
-{: caption="Patch updates for version 3.0.0" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the patch version number of the component. The second column contains the image tag the component. The third column contains the release date of the patch. The fourth column contains the supported cluster versions. The fifth column contains a brief description of the change made to the component."}
+### Changelog for patch update 3.0.0_521, released 01 April 2021
+{: #3.0.0_521}
 
-## Changelog for version 2.0.3
+Review the changes in version 3.0.0_521 of the {{site.data.keyword.block_storage_is_full}} add-on.
+{: shortdesc}
+
+- Image tags: `v3.0.7`  
+- Supported cluster versions: >=4.3  
+- Updates the Golang version from `1.15.5` to `1.15.9`.  
+
+
+### Changelog for version 3.0.0, released 26 February 2021
+{: #0300_is_block_relnote}
+
+Review the changes in version 3.0.0_521 of the {{site.data.keyword.block_storage_is_full}} add-on.
+{: shortdesc}
+
+- Image tags: `v.3.0.0`   
+- Supported cluster versions: >=4.3  
+- The `vpc-block-csi-driver` is now available for both managed clusters and unmanaged clusters.   
+- No functional changes in this release.  
+
+
+## Version 2.0.3
 {: #0203_is_block}
 
-The following table shows the changes included in version 2.0.3 {{site.data.keyword.block_storage_is_full}} add-on.
+Review the changes in version 3.0.0_521 of the {{site.data.keyword.block_storage_is_full}} add-on.
 {: shortdesc}
 
-| Patch version | `vpc-block-csi-driver` image tag | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
-| --- | --- | --- | --- | --- |
-| `2.0.3_471` | `v.2.0.9` | 26 January 2021 | 4.3 - 4.6 | Includes fixes for vulnerability scan issues. The `openssl`, `openssl-libs`, `gnutls` packages are updated to fix [CVE-2020-1971](https://nvd.nist.gov/vuln/detail/CVE-2020-1971){: external} and [CVE-2020-24659](https://nvd.nist.gov/vuln/detail/CVE-2020-24659){: external}. |
-| `2.0.3_464` | `v2.0.8` | 10 December 2020 | 4.3 - 4.6 | Updates in this patch:<ul><li>New metro storage classes with the <code>volumeBindingMode:WaitForFirstConsumer</code> specification.</li><li>Resources that are deployed by the add-on now contain a label which links the source code URL and the build URL.</li><li>The <code>v2.0.8</code> image is signed.</li><li>Updates the Go version from <code>1.15.2</code> to <code>1.15.5</code>.</li></ul> |
-| `2.0.3_404` | `v2.0.7` | 25 November 2020 | 4.3 - 4.6 | Updates in this patch:<ul><li><code>v2.0.7</code> contains a fix for vulnerability scan issues.</li><li>Updates the base image from <code>alpine</code> to <code>UBI</code>.</li><li>Pods and containers now run as <code>non-root</code> except for the <code>node-server</code> pod's containers.</li></ul> |
-| `2.0.3_375` | `v2.0.6` | 17 September 2020 | 4.3 - 4.5 | Fixes an issue with volume attachment when replacing workers. |
-| `2.0.3_374+` | `v2.0.5` | 29 August 2020 | 4.3 - 4.5 | Adds the `/var/lib/kubelet` path for CSI driver calls on OCP 4.4. |
-| `2.0.3_365` | `v2.0.4` | 05 August 2020 | 4.3 - 4.5 | <ul><li>Updates sidecar container images.</li><li>Adds liveness probe.</li><li>Enables parallel attachment and detachment of volumes to worker nodes. Previously, worker nodes were attached and detached sequentially.</li></ul> |
-{: row-headers}
-{: class="comparison-table"}
-{: caption="Patch updates for version 2.0.3" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the patch version number of the component. The second column contains the image tag the component. The third column contains the release date of the patch. The fourth column contains the supported cluster versions. The fifth column contains a brief description of the change made to the component."}
+### Changelog for patch update 2.0.3_471, released 26 January 2021
+{: #0203471_is_block}
+
+Review the changes in version 3.0.0_521 of the {{site.data.keyword.block_storage_is_full}} add-on.
+{: shortdesc}
+
+- Image tags: `v.2.0.9`  
+- Supported cluster versions: 4.3 - 4.6  
+- Updated he `openssl`, `openssl-libs`, `gnutls` packages to fix [CVE-2020-1971](https://nvd.nist.gov/vuln/detail/CVE-2020-1971){: external} and [CVE-2020-24659](https://nvd.nist.gov/vuln/detail/CVE-2020-24659){: external}.  
+
+### Changelog for patch update 2.0.3_464, released 10 December 2020
+{: #0203464_is_block}
+
+Review the changes in version 3.0.0_521 of the {{site.data.keyword.block_storage_is_full}} add-on.
+{: shortdesc}
+
+- Image tags: `v2.0.8`  
+- Supported cluster versions: 4.3 - 4.6  
+- **New!**: Metro storage classes with the `volumeBindingMode:WaitForFirstConsumer` specification.  
+- Resources that are deployed by the add-on now contain a label which links the source code URL and the build URL.  
+- The `v2.0.8` image is signed.  
+- Updates the Go version from `1.15.2` to `1.15.5`.  
+
+### Changelog for patch update 2.0.3_404, released 25 November 2020
+{: #0203404_is_block}
+
+Review the changes in version 2.0.3_404 of the {{site.data.keyword.block_storage_is_full}} add-on.
+{: shortdesc}
+
+- Image tags: `v2.0.7`  
+- Supported cluster versions: 4.3 - 4.6  
+- Fixes vulnerability scan issues.  
+- Updates the base image from `alpine` to `UBI`.  
+- Pods and containers now run as `non-root` except for the `node-server` pod's containers.  
+
+### Changelog for patch update 2.0.3_375, released 17 September 2020
+{: #0203375_is_block}
+
+Review the changes in version 2.0.3_375 of the {{site.data.keyword.block_storage_is_full}} add-on.
+{: shortdesc}
+
+- Image tags: `v2.0.6`  
+- Supported cluster versions: 4.3 - 4.5  
+- Fixes an issue with volume attachment when replacing workers.  
+
+### Changelog for patch update 2.0.3_374+, released 29 August 2020
+{: #0203374_is_block}
+
+Review the changes in version 2.0.3_374+ of the {{site.data.keyword.block_storage_is_full}} add-on.
+{: shortdesc}
+
+- Image tags: `v2.0.5`  
+- Supported cluster versions: 4.3 - 4.5  
+- Adds the `/var/lib/kubelet` path for CSI driver calls on OCP 4.4.  
+
+### Changelog for patch update 2.0.3_365, released 05 August 2020
+{: #203365_is_block}
+
+Review the changes in version 2.0.3_365 of the {{site.data.keyword.block_storage_is_full}} add-on.
+{: shortdesc}
+
+- Image tags: `v2.0.4`  
+- Supported versions: 4.3 - 4.5  
+- Updates sidecar container images.  
+- Adds liveness probe.  
+- Enables parallel attachment and detachment of volumes to worker nodes. Previously, worker nodes were attached and detached sequentially.  
+
 

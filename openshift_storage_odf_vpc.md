@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-24"
+lastupdated: "2021-08-25"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, roks
 
@@ -115,9 +115,6 @@ OpenShift Data Foundation is a highly available storage solution that you can us
 The OpenShift Data Foundation add-on is available as a technology preview and might change without prior notice. Don't use this add-on for production workloads.
 {: preview}
 
-**Supported infrastructure provider**:
-    * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
-
 **Minimum required permissions**: **Administrator** platform access role and the **Manager** service access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
 ## Quick start for VPC clusters
@@ -130,29 +127,15 @@ If you want to override the default parameters when deploying the add-on, you ca
 
 1. To see the default settings for ODF on VPC clusters, run the `addon options` command.
 
-    **For {{site.data.keyword.openshiftshort}} versions 4.6 and 4.7**
     ```sh
-    ibmcloud oc cluster addon options --addon openshift-container-storage
-    ```
-    {: pre}
-
-    **For {{site.data.keyword.openshiftshort}} versions 4.7 and above**
-    ```sh
-    ibmcloud oc cluster addon options --addon openshift-container-storage
+    ibmcloud oc cluster addon options --addon openshift-data-foundation --version 4.7.0 
     ```
     {: pre}
 
 1. Enable the ODF and specify the `ocsDeploy=True` parameter to deploy ODF with the default configuration parameters. To list the versions and find the current default, run `ibmcloud oc cluster addon versions`. If you have a cluster version other than the default, specify the `--version` flag. The add-on supports `n+1` cluster versions. 
 
-**For {{site.data.keyword.openshiftshort}} versions 4.6 and 4.7**
     ```sh
-    ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true"
-    ```
-    {: pre}
-
-    **For {{site.data.keyword.openshiftshort}} versions 4.7 and above**
-    ```sh
-    ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true"
+    ibmcloud oc cluster addon enable -c <cluster_name> --version 4.7.0 --param "ocsDeploy=true"
     ```
     {: pre}
 
@@ -240,7 +223,7 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
 1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.7.0` of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must specify the `--version` flag when you enable the add-on.
 1. Review the add-on options. Note that add-on options are only available for version `4.7.0` and later.
     ```sh
-    ibmcloud oc cluster addon options --addon openshift-container-storage
+    ibmcloud oc cluster addon options --addon openshift-data-foundation
     ```
     {: pre}
 
@@ -261,16 +244,16 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
     ```
     {: screen}
 
-1. Enable the `openshift-container-storage` add-on. If you also want to deploy ODF and create your storage cluster from the CLI, you can specify the `"ocsDeploy=true"` flag. If you want to override any of the default parameters, specify the `--param "key=value"` flag for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
+1. Enable the `openshift-data-foundation` add-on. If you also want to deploy ODF and create your storage cluster from the CLI, you can specify the `"ocsDeploy=true"` flag. If you want to override any of the default parameters, specify the `--param "key=value"` flag for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
 
     ```sh
-    ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "ocsDeploy=true"
     ```
     {: pre}
 
     **Example command for overriding the `osdSize` parameter**:
     ```sh
-    ibmcloud oc cluster addon enable openshift-container-storage -c <cluster_name> --version <version> --param "ocsDeploy=true" --param "osdSize=500Gi"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "ocsDeploy=true" --param "osdSize=500Gi"
     ```
     {: pre}
 
@@ -403,21 +386,21 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     Resource Version:  11372332
     Self Link:         /apis/ocs.ibm.io/v1/ocsclusters/ocscluster-vpc
     UID:               aa11a1a1-111f-aace-afac-1fa1afe1111a
-  Spec:
-    Billing Type:            hourly
-    Mon Size:                20Gi
-    Mon Storage Class Name:  ibmc-vpc-block-10iops-tier
-    Num Of Osd:              1
-    Ocs Upgrade:             false
-    Osd Size:                100Gi
-    Osd Storage Class Name:  ibmc-vpc-block-10iops-tier
-  Status:
-    Storage Cluster Status:  
-  Events:                    <none>
+    Spec:
+      Billing Type:            hourly
+      Mon Size:                20Gi
+      Mon Storage Class Name:  ibmc-vpc-block-10iops-tier
+      Num Of Osd:              1
+      Ocs Upgrade:             false
+      Osd Size:                100Gi
+      Osd Storage Class Name:  ibmc-vpc-block-10iops-tier
+    Status:
+      Storage Cluster Status:  
+    Events:                    <none>
     ```
     {: codeblock}
 
-<br />
+
 
 **Next steps**: [Deploy an app that uses ODF](/docs/openshift?topic=openshift-odf-deploy-app)
 
