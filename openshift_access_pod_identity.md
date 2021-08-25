@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-23"
+lastupdated: "2021-08-25"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -113,7 +113,7 @@ subcollection: openshift
 Give application pods that run in your {{site.data.keyword.openshiftlong}} cluster access to {{site.data.keyword.cloud_notm}} services by creating a trusted profile in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM).  
 {: shortdesc}
 
-Authorizing pods with IAM trusted profiles is available for new clusters that run {{site.data.keyword.openshiftshort}} version 4.7 or later.
+Authorizing pods with IAM trusted profiles is available for clusters that run {{site.data.keyword.openshiftshort}} version 4.7 or later.
 {: note}
 
 **In IAM**: Start by creating an IAM trusted profile. Then, link the trusted profile with your {{site.data.keyword.openshiftlong_notm}} compute resource by selecting conditions to match with your clusters, including a Kubernetes namespace and service account in the clusters. Finally, assign access policies or add the trusted profile to an access group with the access policies to the {{site.data.keyword.cloud_notm}} services that you want your apps to use.
@@ -128,9 +128,9 @@ To use {{site.data.keyword.cloud_notm}} IAM identities for pods in your cluster,
 
 **Supported infrastructure provider**:
 
-    - <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC  
-    - <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic  
-    
+- <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC  
+- <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic  
+
 
 
 **Minimum required permissions**: 

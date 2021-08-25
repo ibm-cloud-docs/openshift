@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-23"
+lastupdated: "2021-08-25"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -343,20 +343,6 @@ ibmcloud oc cluster addon enable image-key-synchronizer --cluster CLUSTER [--ver
     ```
     {: pre}
 
-#### `ibmcloud oc cluster addon enable openshift-container-storage`
-{: #cs_cluster_addon_enable_openshift-container-storage}
-
-Enable the [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc) add-on for {{site.data.keyword.openshiftshort}} versions 4.6 or 4.7.
-{: shortdesc}
-
-The OpenShift Data Foundation add-on is available as a technology preview and might change without prior notice. Do not use this add-on for production workloads.
-{: preview}
-
-```sh
-ibmcloud oc cluster addon enable openshift-container-storage --cluster CLUSTER [-f] [--param PARAM] [-q] [--version VERSION]
-```
-{: pre}
-
 **Supported infrastructure provider**:
 * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
@@ -380,7 +366,6 @@ ibmcloud oc cluster addon enable openshift-container-storage --cluster CLUSTER [
 <dt><code>--version <em>VERSION</em></code></dt>
 <dd>Optional: Specify the version of the add-on to install. To see available versions, run `ibmcloud oc cluster addon versions`. If no version is specified, the default version is installed.</dd>
 </dl>
-
 
 #### `ibmcloud oc cluster addon enable openshift-container-storage`
 {: #cs_cluster_addon_enable_openshift-container-storage}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-25"
 
 keywords: back up, restore, changelog, roks, openshift
 
@@ -114,28 +114,26 @@ View information for updates to the back up and restore Helm chart in your {{sit
 
 Refer to the following tables for a summary of changes for each version of the [back up and restore Helm chart](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore).
 
-| `ibmcloud-backup-restore` Helm chart version | Supported? | {{site.data.keyword.openshiftshort}} version support |
+| `ibmcloud-backup-restore` Helm chart version | Supported? | Cluster version support |
 | -------------------- | -----------|--------------------------- |
-| 2.0.5 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | {{site.data.keyword.openshiftshort}} 4.3 - 4.6 |
+| 2.0.5 | Yes | 4.3 - 4.6 |
 {: caption="Back up and restore Helm chart versions" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the back up and restore Helm chart version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the back up and restore Helm chart version is supported for."}
+{: summary="The rows are read from left to right. The first column is the back up and restore Helm chart version. The second column is the version's supported state. The third column is the cluster version of your cluster that the back up and restore Helm chart version is supported for."}
 
-<br />
 
-## Changelog for 1.0.5
+## Changelog for 1.0.5, released 17 December 2020
 {: #0105_br_chart}
 
-The following table shows the changes that are included in version 1.0.5 of the `ibmcloud-backup-restore` Helm chart.
+The following table shows the changes that are included in version `1.0.5` of the `ibmcloud-backup-restore` Helm chart.
 {: shortdesc}
 
 
-| Version | Image tag | Release date | Supported {{site.data.keyword.openshiftshort}} versions | Description |
-| --- | --- | --- | --- | --- |
-| `1.0.5` | `v100` | 17 December 2020 | 4.3 - 4.6 | Updates in this release:<ul><li>Images are now signed.</li><li>The <code>ibmcloud-backup-restore</code> Helm chart now pulls the universal base image (UBI) from the proxy image registry.</li><li>Resources that are deployed by the <code>ibmcloud-backup-restore</code> Helm chart are now linked with the corresponding source code and build URLs.</li></ul> |
-{: row-headers}
-{: class="comparison-table"}
-{: caption="Back up and restore Helm chart version 1.0.5" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the version of the component. The second column lists the images tags of the component. The third column contains the release date of the component. The fourth column contains the supported cluster versions. The fifth column contains a brief description of the change made to the component."}
+- Image tags: `v100`  
+- Supported cluster versions: 4.3 - 4.6  
+- Images are now signed.  
+- The `ibmcloud-backup-restore` Helm chart now pulls the universal base image (UBI) from the proxy image registry.  
+- Resources that are deployed by the `ibmcloud-backup-restore` Helm chart are now linked with the corresponding source code and build URLs.  
+
 
 
 

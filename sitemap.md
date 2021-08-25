@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-24"
+lastupdated: "2021-08-25"
 
 keywords: openshift
 subcollection: openshift
@@ -237,6 +237,8 @@ subcollection: openshift
 * [Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_create_cluster)
 
 * [Navigate the {{site.data.keyword.openshiftshort}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
+    * [<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30pxopenshift_tutorial#openshift_console4_overview)
+    * [<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30pxopenshift_tutorial#openshift_console311_overview)
 
 * [Deploy an app to your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
 
@@ -403,6 +405,12 @@ subcollection: openshift
   * [Creating standard VPC clusters from the CLI](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli)
 * [Next steps](/docs/openshift?topic=openshift-clusters#next_steps)
 
+[Creating a cluster by using a {{site.data.keyword.bpfull_notm}} template](/docs/openshift?topic=openshift-templates)
+* [Resources that are created from the template](/docs/openshift?topic=openshift-templates#sch-tf-resources-created)
+* [Creating a secure cluster by using a template from the UI](/docs/openshift?topic=openshift-templates#sch-secure-cluster-ui)
+* [Creating a secure cluster by using a template with the CLI](/docs/openshift?topic=openshift-templates#tf-secure-cluster-cli)
+* [Next steps](/docs/openshift?topic=openshift-templates#sch-tf-whats-next)
+
 [Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters)
 * [Prerequisites](/docs/openshift?topic=openshift-satellite-clusters#satcluster-prereqs)
 * [Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the console](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-console)
@@ -477,6 +485,8 @@ subcollection: openshift
   * [Customizing the cluster autoscaler Helm chart values](/docs/openshift?topic=openshift-ca#ca_chart_values)
 * [Deploying apps to your autoscaled worker pools](/docs/openshift?topic=openshift-ca#ca_limit_pool)
 * [Scaling up worker nodes before the worker pool has insufficient resources](/docs/openshift?topic=openshift-ca#ca_scaleup)
+  * [Pause pods](/docs/openshift?topic=openshift-ca#pause-pods-ca)
+  * [Horizontal pod autoscaling (HPA)](/docs/openshift?topic=openshift-ca#hpca)
 * [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-ca#ca_addon_up)
 * [Rebalancing or resizing autoscaled worker pools](/docs/openshift?topic=openshift-ca#ca_update_worker_node_pool)
 * [Upgrading a cluster autoscaler Helm chart release](/docs/openshift?topic=openshift-ca#ca_helm_up)
@@ -966,6 +976,8 @@ subcollection: openshift
 * [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app)
 * [Deploying Cloud Paks, licensed software, and other integrations](/docs/openshift?topic=openshift-deploy_app#openshift_app_cloud_paks)
 * [Accessing the {{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-deploy_app#openshift_console)
+  * [<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30pxdeploy_app#openshift_console4_overview)
+  * [<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30pxdeploy_app#openshift_console311_overview)
 
 [Testing access to apps with NodePorts](/docs/openshift?topic=openshift-nodeport)
 * [About NodePorts](/docs/openshift?topic=openshift-nodeport#nodeport_planning)
@@ -1764,6 +1776,7 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.7 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-47)
+  * [Changelog for master fix pack 4.7.23_1529_openshift, released 25 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4723_1529)
   * [Changelog for worker node fix pack 4.7.23_1528_openshift, released 16 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4723_1528)
   * [Changelog for worker node fix pack 4.7.21_1527_openshift, released 02 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4721_1527)
   * [Changelog for master fix pack 4.7.19_1526_openshift, released 27 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4719_1526)
@@ -1774,6 +1787,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.7.13_1521_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4713_1521)
   * [Changelog for master fix pack 4.7.12_1520_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4712_1520)
 * [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
+  * [Changelog for master fix pack 4.6.42_1553_openshift, released 25 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4642_1553)
   * [Changelog for worker node fix pack 4.6.42_1552_openshift, released 16 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4642_1552)
   * [Changelog for worker node fix pack 4.6.40_1551_openshift, released 02 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4640_1551)
   * [Changelog for master fix pack 4.6.38_1550_openshift, released 27 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4638_1550)
@@ -1797,6 +1811,7 @@ subcollection: openshift
   * [Changelog for master fix pack 4.6.16_1532_openshift, released 22 February 2021](/docs/openshift?topic=openshift-openshift_changelog#4616_1532)
   * [Changelog for 4.6.16_1530_openshift (master) and 4.6.16_1529_openshift (worker node), released 17 February 2020](/docs/openshift?topic=openshift-openshift_changelog#4616_1530)
 * [Deprecated: Version 4.5 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-45)
+  * [Changelog for master fix pack 4.5.41_1549_openshift, released 25 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4541_1549)
   * [Changelog for worker node fix pack 4.5.41_1548_openshift, released 16 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4541_1548)
   * [Changelog for worker node fix pack 4.5.41_1547_openshift, released 02 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4541_1547)
   * [Changelog for fix pack 4.5.41_1546_openshift, released 27 July 2021](/docs/openshift?topic=openshift-openshift_changelog#4541_1546)
@@ -1832,6 +1847,7 @@ subcollection: openshift
   * [Changelog for master fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518)
   * [Changelog for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4513_1515)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for master fix pack 3.11.487_1601_openshift, released 25 August 2021](/docs/openshift?topic=openshift-openshift_changelog#311487_1601)
   * [Changelog for worker node fix pack 3.11.487_1600_openshift, released 16 August 2021](/docs/openshift?topic=openshift-openshift_changelog#311487_1600)
   * [Changelog for worker node fix pack 3.11.465_1599_openshift, released 02 August 2021](/docs/openshift?topic=openshift-openshift_changelog#311465_1599)
   * [Changelog for master fix pack 3.11.439_1598_openshift, released 27 July 2021](/docs/openshift?topic=openshift-openshift_changelog#311439_1598)
@@ -1924,29 +1940,52 @@ subcollection: openshift
   * [Explanation and remediation](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-remediation)
 
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog)
-* [Changelog for 1.0.3, released 23 June 2021](/docs/openshift?topic=openshift-ca_changelog#0103_ca_addon)
-* [Changelog for 1.0.2, released 08 March 2021](/docs/openshift?topic=openshift-ca_changelog#0102_ca_addon)
-* [Changelog for 1.0.1, released 15 August 2020](/docs/openshift?topic=openshift-ca_changelog#0101_ca_addon)
+* [Version 1.0.3](/docs/openshift?topic=openshift-ca_changelog#0103_ca_addon)
+  * [Changelog for patch update 1.0.3_352, released 23 June 2021](/docs/openshift?topic=openshift-ca_changelog#103352_ca)
+* [Version 1.0.2](/docs/openshift?topic=openshift-ca_changelog#0102_ca_addon)
+  * [Changelog for patch update 1.0.2_267, released 10 May 2021](/docs/openshift?topic=openshift-ca_changelog#102267_ca)
+  * [Changelog for patch update 1.0.2_256, released 19 April 2021](/docs/openshift?topic=openshift-ca_changelog#102256_ca)
+  * [Changelog for patch update 1.0.2_249, released 01 April 2021](/docs/openshift?topic=openshift-ca_changelog#102249_ca)
+  * [Changelog for patch update 1.0.2_224, released 09 March 2021](/docs/openshift?topic=openshift-ca_changelog#10224_ca)
+* [Version 1.0.1](/docs/openshift?topic=openshift-ca_changelog#0101_ca_addon)
+  * [Changelog for patch update 1.0.1_219, released 16 February 2021](/docs/openshift?topic=openshift-ca_changelog#101219_ca)
+  * [Changelog for patch update 1.0.1_210, released 13 January 2021](/docs/openshift?topic=openshift-ca_changelog#101210_ca)
+  * [Changelog for patch update 1.0.1_205, released 15 December 2020](/docs/openshift?topic=openshift-ca_changelog#101205_ca)
+  * [Changelog for patch update 1.0.1_195, released 10 December 2020](/docs/openshift?topic=openshift-ca_changelog#101195_ca)
+  * [Changelog for patch update 1.0.1_146, released 03 December 2020](/docs/openshift?topic=openshift-ca_changelog#101146_ca)
+  * [Changelog for patch update 1.0.1_128, released 27 October 2020](/docs/openshift?topic=openshift-ca_changelog#101128_ca)
+  * [Changelog for patch update 1.0.1_124, released 16 October 2020](/docs/openshift?topic=openshift-ca_changelog#101124_ca)
+  * [Changelog for patch update 1.0.1_114, released 10 September 2020](/docs/openshift?topic=openshift-ca_changelog#101114_ca)
 
 [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog)
-* [Changelog for version 3.0.1](/docs/openshift?topic=openshift-vpc_bs_changelog#0301_is_block)
-* [Changelog for version 3.0.0](/docs/openshift?topic=openshift-vpc_bs_changelog#0300_is_block)
-* [Changelog for version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
+* [Version 3.0.1](/docs/openshift?topic=openshift-vpc_bs_changelog#0301_is_block)
+  * [Changelog for version 3.0.1, released 15 July 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#301_init)
+* [Version 3.0.0](/docs/openshift?topic=openshift-vpc_bs_changelog#0300_is_block)
+  * [Changelog for patch update 3.0.0_521, released 01 April 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#3.0.0_521)
+  * [Changelog for version 3.0.0, released 26 February 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0300_is_block_relnote)
+* [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
+  * [Changelog for patch update 2.0.3_471, released 26 January 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0203471_is_block)
+  * [Changelog for patch update 2.0.3_464, released 10 December 2020](/docs/openshift?topic=openshift-vpc_bs_changelog#0203464_is_block)
+  * [Changelog for patch update 2.0.3_404, released 25 November 2020](/docs/openshift?topic=openshift-vpc_bs_changelog#0203404_is_block)
+  * [Changelog for patch update 2.0.3_375, released 17 September 2020](/docs/openshift?topic=openshift-vpc_bs_changelog#0203375_is_block)
+  * [Changelog for patch update 2.0.3_374+, released 29 August 2020](/docs/openshift?topic=openshift-vpc_bs_changelog#0203374_is_block)
+  * [Changelog for patch update 2.0.3_365, released 05 August 2020](/docs/openshift?topic=openshift-vpc_bs_changelog#203365_is_block)
 
 [Object storage plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog)
-* [Changelog for version 2.1.2](/docs/openshift?topic=openshift-cos_plugin_changelog#0212_object_plugin)
-* [Changelog for version 2.1.1](/docs/openshift?topic=openshift-cos_plugin_changelog#0211_object_plugin)
-* [Changelog for version 2.1.0](/docs/openshift?topic=openshift-cos_plugin_changelog#0210_object_plugin)
-* [Changelog for version 2.0.9](/docs/openshift?topic=openshift-cos_plugin_changelog#0209_object_plugin)
-* [Changelog for version 2.0.8](/docs/openshift?topic=openshift-cos_plugin_changelog#0208_object_plugin)
-* [Changelog for version 2.0.7](/docs/openshift?topic=openshift-cos_plugin_changelog#0207_object_plugin)
-* [Changelog for version 2.0.6](/docs/openshift?topic=openshift-cos_plugin_changelog#0206_object_plugin)
-* [Changelog for version 2.0.5](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_object_plugin)
+* [Changelog for version 2.1.3, released 25 August 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0213_object_plugin)
+* [Changelog for version 2.1.2, released 22 June 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0212_object_plugin)
+* [Changelog for version 2.1.1, released 03 June 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0211_object_plugin)
+* [Changelog for version 2.1.0, released 26 May 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0210_object_plugin)
+* [Changelog for version 2.0.9, 10 May 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0209_object_plugin)
+* [Changelog for version 2.0.8, 19 April 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0208_object_plugin)
+* [Changelog for version 2.0.7, 26 March 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0207_object_plugin)
+* [Changelog for version 2.0.6, 18 December 2020](/docs/openshift?topic=openshift-cos_plugin_changelog#0206_object_plugin)
+* [Changelog for version 2.0.5, released 25 November 2020](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_object_plugin)
 
 [OpenShift Data Foundation add-on changelog](/docs/openshift?topic=openshift-odf_addon_changelog)
 
 [Back up and restore Helm chart](/docs/openshift?topic=openshift-backup_restore_changelog)
-* [Changelog for 1.0.5](/docs/openshift?topic=openshift-backup_restore_changelog#0105_br_chart)
+* [Changelog for 1.0.5, released 17 December 2020](/docs/openshift?topic=openshift-backup_restore_changelog#0105_br_chart)
 
 [{{site.data.keyword.cloud_notm}} HPCS Router add-on changelog](/docs/openshift?topic=openshift-hpcs-router-changelog)
 * [Version 4.6.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0)
