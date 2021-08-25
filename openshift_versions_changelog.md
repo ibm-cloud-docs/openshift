@@ -125,7 +125,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.7 patch updates.
 {: shortdesc}
 
-### Changelog for master fix pack 4.7.23_1529_openshift, released 24 August 2021
+### Changelog for master fix pack 4.7.23_1529_openshift, released 25 August 2021
 {: #4723_1529}
 
 The following table shows the changes that are included in the master fix pack patch update `4.7.23_1529_openshift`. Master patch updates are applied automatically. 
@@ -317,7 +317,7 @@ The following table shows the changes that are included in the master fix pack p
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.6 patch updates.
 {: shortdesc}
 
-### Changelog for master fix pack 4.6.42_1553_openshift, released 24 August 2021
+### Changelog for master fix pack 4.6.42_1553_openshift, released 25 August 2021
 {: #4642_1553}
 
 The following table shows the changes that are included in the master fix pack patch update `4.6.42_1553_openshift`. Master patch updates are applied automatically. 
@@ -720,7 +720,7 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.5 p
 {{site.data.keyword.openshiftshort}} version 4.5 is deprecated, with a tentative unsupported date of 1 September 2021. Update your cluster to at least [version 4.6](/docs/openshift?topic=openshift-openshift_versions#ocp46) as soon as possible.
 {: deprecated}
 
-### Changelog for master fix pack 4.5.41_1549_openshift, released 24 August 2021
+### Changelog for master fix pack 4.5.41_1549_openshift, released 25 August 2021
 {: #4541_1549}
 
 The following table shows the changes that are included in the master fix pack patch update `4.5.41_1549_openshift`. Master patch updates are applied automatically. 
@@ -1331,7 +1331,7 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 3.11 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported on 6 June 2022 (date subject to change).
 {: deprecated}
 
-### Changelog for master fix pack 3.11.487_1601_openshift, released 24 August 2021
+### Changelog for master fix pack 3.11.487_1601_openshift, released 25 August 2021
 {: #311487_1601}
 
 The following table shows the changes that are included in the master fix pack patch update `3.11.487_1601`. Master patch updates are applied automatically. 
