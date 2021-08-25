@@ -59,6 +59,7 @@ Red Hat OpenShift on IBM Cloud
         {: .topicgroup}
         Creating and accessing clusters
             openshift_clusters.md
+            openshift_clusters_template.md
             satellite_clusters.md
             openshift_cluster_access.md
 

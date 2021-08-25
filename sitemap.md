@@ -405,6 +405,12 @@ subcollection: openshift
   * [Creating standard VPC clusters from the CLI](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli)
 * [Next steps](/docs/openshift?topic=openshift-clusters#next_steps)
 
+[Creating a cluster by using a {{site.data.keyword.bpfull_notm}} template](/docs/openshift?topic=openshift-templates)
+* [Resources that are created from the template](/docs/openshift?topic=openshift-templates#sch-tf-resources-created)
+* [Creating a secure cluster by using a template from the UI](/docs/openshift?topic=openshift-templates#sch-secure-cluster-ui)
+* [Creating a secure cluster by using a template with the CLI](/docs/openshift?topic=openshift-templates#tf-secure-cluster-cli)
+* [Next steps](/docs/openshift?topic=openshift-templates#sch-tf-whats-next)
+
 [Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters)
 * [Prerequisites](/docs/openshift?topic=openshift-satellite-clusters#satcluster-prereqs)
 * [Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the console](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-console)
