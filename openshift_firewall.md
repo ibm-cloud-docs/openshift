@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-24"
+lastupdated: "2021-08-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -165,14 +166,7 @@ If corporate network policies prevent access from your local system to public en
     {: screen}
 
 
-5. Allow access to the [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) that you plan to use on port 443 and 4443 in your firewall. The global registry stores IBM-provided public images, and regional registries store your own private or public images.
-
-    * Global registry: `icr.io`
-    * AP North: `jp.icr.io`
-    * AP South: `au.icr.io`
-    * EU Central: `de.icr.io`
-    * UK South: `uk.icr.io`
-    * US East, US South: `us.icr.io`
+5. Allow access to the [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) that you plan to use on port 443 in your firewall. The global registry stores IBM-provided public images, and regional registries store your own private or public images.
 
 6. Verify your connection. The following is an example for the US East and US South regional registry. If access is configured correctly, a message of the day is returned in the output.
 
@@ -378,16 +372,20 @@ To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm
 Previously Registry subnets (IP addresses) were published in the following table. As of 17 August 2021, the Registry subnets are no longer published. When you access {{site.data.keyword.registrylong_notm}} over the public internet, you must not have any firewall restrictions that are based on IP addresses in place. If you have any concerns about opening your firewall, you can configure private access to {{site.data.keyword.registrylong_notm}} by using the private IBM Cloud network, see [Securing your connection to Container Registry](/docs/Registry?topic=Registry-registry_private).
 {: important}
 
+* `TCP port 443 FROM <each_worker_node_publicIP> TO us.icr.io`
+* `TCP port 443 FROM <each_worker_node_publicIP> TO registry.ng.bluemix.net`
+
 | {{site.data.keyword.openshiftlong_notm}} region | Registry address  |
 |---------------|-------------| 
 | Global registry across {{site.data.keyword.openshiftlong_notm}} regions | `icr.io`  Deprecated: `registry.bluemix.net` | 
 | AP North | `jp.icr.io` |
 | AP South | `au.icr.io` Deprecated: `registry.au-syd.bluemix.net` | 
 | EU Central | `de.icr.io` Deprecated: `registry.eu-de.bluemix.net` | 
-| Osaka | `jp2.icr.io` | 
+| Osaka | `jp2.icr.io` |
+| Sao Paolo | `br.icr.io` |
 | Toronto | `ca.icr.io` | 
 | UK South | `uk.icr.io` Deprecated: `registry.eu-gb.bluemix.net` | 
-| US East, US South | `us.icr.io` Deprecated: `registry.ng.bluemix.net` | 
+| US South | `us.icr.io` Deprecated: `registry.ng.bluemix.net` | 
 {: summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two."}
 {: caption="Table 2. Addresses for Container Registry traffic" caption-side="top"}
 
@@ -496,6 +494,7 @@ To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm
 | AP South | `private.au.icr.io` | `166.9.52.20`, `166.9.54.19`, `166.9.56.13` |
 | EU Central | `private.de.icr.io` | `166.9.28.35`, `166.9.30.2`, `166.9.32.2` |
 | Osaka | `private.jp2.icr.io` | `166.9.70.4`, `166.9.71.5`, `166.9.72.6` |
+| Sao Paolo | `private.br.icr.io` | `166.9.82.13`, `166.9.83.13`, `166.9.84.13` |
 | Toronto | `private.ca.icr.io` | `166.9.76.12`, `166.9.77.11`, `166.9.78.11` |
 | UK South | `private.uk.icr.io` | `166.9.36.19`, `166.9.38.14`, `166.9.34.12` |
 | US East, US South | `private.us.icr.io` | `166.9.12.227`, `166.9.15.116`, `166.9.16.244` |

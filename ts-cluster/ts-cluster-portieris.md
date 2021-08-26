@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-26"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -64,6 +64,7 @@ content-type: troubleshoot
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -130,7 +131,7 @@ Your cluster has a conflicting image admission controller already installed, whi
 When you have more than one image admission controller in your cluster, pods might not run.
 
 Potential conflicting image admission controller sources include:
-*   The deprecated [container image security enforcement Helm chart](/docs/Registry?topic=Registry-security_enforce).
+*   The deprecated container image security enforcement Helm chart.
 *   A previous manual installation of the open source [Portieris](https://github.com/IBM/portieris){: external} project.
 
 
@@ -165,8 +166,11 @@ Identify and remove the conflicting image admission controller.
         {: pre}
 
 2. Uninstall the conflicting deployment.
-    *   For container image security enforcement, see the [{{site.data.keyword.registrylong_notm}} documentation](/docs/Registry?topic=Registry-security_enforce#remove).
-    *   For Portieris, see the [open source documentation](https://github.com/IBM/portieris#uninstalling-portieris){: external}.
+    ```sh
+    oc delete deployment <deployment> -n <namespace>
+    ```
+    {: pre}
+    
 3. Confirm that conflicting admission controllers are removed by checking that the cluster no longer has a mutating webhook configuration for an image admission controller.
     ```
     oc get MutatingWebhookConfiguration image-admission-config

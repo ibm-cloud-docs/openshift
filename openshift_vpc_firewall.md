@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-26"
 
 keywords: openshift, roks, rhoks, rhos, firewall, ips
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -141,9 +142,9 @@ If corporate network policies prevent access from your local system to public en
 
     Example output:
     ```
-)___(
+                                     )___(
                               _______/__/_
-___     /===========|   ___
+                     ___     /===========|   ___
     ____       __   [\\\]___/____________|__[///]   __
     \   \_____[\\]__/___________________________\__[//]___
         \                                                    |
@@ -153,13 +154,7 @@ ___     /===========|   ___
     ```
     {: screen}
 
-5. Allow access to the [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) that you plan to use on port 443 and 4443 in your firewall. The global registry stores IBM-provided public images, and regional registries store your own private or public images. If your firewall is IP-based, you can see which IP addresses are opened when you allow access to the {{site.data.keyword.registrylong_notm}} regional service endpoints by reviewing [this table](/docs/openshift?topic=openshift-firewall#firewall_registry).
-    * Global registry: `icr.io`
-    * AP North: `jp.icr.io`
-    * AP South: `au.icr.io`
-    * EU Central: `de.icr.io`
-    * UK South: `uk.icr.io`
-    * US East, US South: `us.icr.io`
+5. Allow access to the [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) that you plan to use on port 443 in your firewall. The global registry stores IBM-provided public images, and regional registries store your own private or public images. If your firewall is IP-based, you can see which IP addresses are opened when you allow access to the {{site.data.keyword.registrylong_notm}} regional service endpoints by reviewing [this table](/docs/openshift?topic=openshift-firewall#firewall_registry).
 
 6. Verify your connection. The following is an example for the US East and US South regional registry. If access is configured correctly, a message of the day is returned in the output.
     ```
