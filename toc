@@ -319,6 +319,7 @@ Red Hat OpenShift on IBM Cloud
             ts-app/ts-app-11-svc-not-found.md
             ts-app/ts-app-12-svc-key.md
             ts-app/ts-app-15-helm-install.md
+            ts-app/ts-app-16-oc-debug-pod.md
 
         {: .topicgroup}
         Managed add-ons

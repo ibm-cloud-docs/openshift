@@ -2421,6 +2421,8 @@ subcollection: openshift
 
 [Why can't I install a Helm chart with updated configuration values?](/docs/openshift?topic=openshift-ts-app-helm-install)
 
+[Why does the `oc debug` command fail with a `container is unable to start error`?](/docs/openshift?topic=openshift-ts-app-oc-debug)
+
 
 ## Managed add-ons
 {: #sitemap_managed_add-ons}
