@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-25"
+lastupdated: "2021-08-26"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -4038,10 +4039,10 @@ ibmcloud oc ingress secret update --cluster CLUSTER --name SECRET_NAME --namespa
 <dd>Required: The name of the secret. To see available secrets, run <code>ibmcloud oc ingress secret ls</code>.</dd>
 
 <dt><code>--namespace <em>NAMESPACE</em></code></dt>
-<dd>Required: The project that the secret is deployed to. To see the secret namespace, run <code>ibmcloud oc ingress secret get --cluster <cluster_name_or_ID> --name secret_name> --namespace <project></code>.</dd>
+<dd>Required: The project that the secret is deployed to. To see the secret namespace, run <code>ibmcloud oc ingress secret get --cluster cluster_name_or_ID&lt; --name secret_name&gt; --namespace &lt;project&gt;</code>.</dd>
 
 <dt><code>--cert-crn <em>CERTIFICATE_CRN</em></code></dt>
-<dd>Optional: The certificate CRN. To see the secret CRN, run <code>ibmcloud oc ingress secret get --cluster <cluster_name_or_ID> --name secret_name> --namespace <project></code>.</dd>
+<dd>Optional: The certificate CRN. To see the secret CRN, run <code>ibmcloud oc ingress secret get --cluster &lt;cluster_name_or_ID&gt; --name secret_name> --namespace &lt;project&gt;</code>.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>

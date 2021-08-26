@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-26"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -1239,7 +1240,7 @@ The IBM-generated certificate for the default Ingress subdomain that exists in y
 To view your {{site.data.keyword.cloudcerts_short}} instance:
 1. Go to your [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources){: external}.
 2. Expand the **Services** row.
-3. Look for a {{site.data.keyword.cloudcerts_short}} instance that is named in the format `kube-crtmgr-<cluster_ID>`. To find your cluster's ID, run `ibmcloud oc cluster ls`.
+3. Look for a {{site.data.keyword.cloudcerts_short}} instance that is named in the format `kube-certmgr-<cluster_ID>`. To find your cluster's ID, run `ibmcloud oc cluster ls`.
 4. Click the instance's name. The **Your certificates** details page opens.
 
 To manage the secrets for TLS certificates in your cluster, you can use the `ibmcloud oc ingress secret` set of commands. For example, you can use the `ibmcloud oc ingress secret create` command to import a certificate from {{site.data.keyword.cloudcerts_short}} to a Kubernetes secret in your cluster, or the `ibmcloud oc ingress secret ls -c <cluster>` command to view all Ingress secrets for TLS certificates in your cluster.
