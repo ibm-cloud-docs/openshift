@@ -664,25 +664,25 @@ Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.op
     apiVersion: v1
     kind: Service
     metadata:
-        name: myloadbalancer
-    annotations:
-      service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"
-      service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: "<public_or_private>"
-      service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector: "<key>=<value>"
-      service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets: "<subnet1_ID,subnet2_ID>"
-      service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"
-  spec:
-    type: LoadBalancer
-    selector:
-      <selector_key>: <selector_value>
-    ports:
-     - name: http
-       protocol: TCP
-       port: 8080
-       targetPort: 8080
-     - name: https
-       protocol: TCP
-       port: 443
+      name: myloadbalancer
+      annotations:
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: "<public_or_private>"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector: "<key>=<value>"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets: "<subnet1_ID,subnet2_ID>"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"
+   spec:
+     type: LoadBalancer
+     selector:
+        <selector_key>: <selector_value>
+     ports:
+       - name: http
+         protocol: TCP
+         port: 8080
+         targetPort: 8080
+       - name: https
+         protocol: TCP
+         port: 443
     ```
     {: codeblock}
 
