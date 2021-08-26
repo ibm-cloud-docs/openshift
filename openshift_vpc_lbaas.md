@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-26"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -270,7 +271,7 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     </tr>
     <tr>
         <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets</code></td>
-    <td>Optional: Annotation to specify one or more subnets in one zone that the VPC NLB deploys to. Values can be specified as VPC subnet IDs, VPC subnet names, or VPC subnet CIDRs. If specified, this annotation takes precedence over the <code>service.kubernetes.io/ibm-load-balancer-cloud-provider-zone</code> annotation. Note that you can specify a different subnet in the same VPC than the subnets that your cluster is attached to. In this case, even though the VPC NLB deploys to a different subnet in the same VPC, the VPC NLB can still route traffic to your worker nodes on the cluster subnets in the same zone. To see subnets in all resource groups, run <code>ibmcloud oc subnets --provider vpc-gen2 --vpc-id <vpc> --zone <zone></code>.</td>
+    <td>Optional: Annotation to specify one or more subnets in one zone that the VPC NLB deploys to. Values can be specified as VPC subnet IDs, VPC subnet names, or VPC subnet CIDRs. If specified, this annotation takes precedence over the <code>service.kubernetes.io/ibm-load-balancer-cloud-provider-zone</code> annotation. Note that you can specify a different subnet in the same VPC than the subnets that your cluster is attached to. In this case, even though the VPC NLB deploys to a different subnet in the same VPC, the VPC NLB can still route traffic to your worker nodes on the cluster subnets in the same zone. To see subnets in all resource groups, run <code>ibmcloud oc subnets --provider vpc-gen2 --vpc-id &lt;vpc&gt; --zone &lt;zone&gt;</code>.</td>
     </tr>
     <tr>
         <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-zone</code></td>
@@ -451,7 +452,7 @@ Expose your app to private network traffic by setting up a Kubernetes `LoadBalan
     </tr>
     <tr>
         <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets</code></td>
-    <td>Required: Annotation to specify the dedicated subnet that the VPC NLB deploys to. The value can be specified as a VPC subnet ID, VPC subnet name, or VPC subnet CIDR. You must specify only one subnet. The subnet must exist in the same VPC as your cluster and in a zone where your cluster has worker nodes, but no worker nodes can be attached to this subnet. The worker nodes that exist in the same zone as this subnet are configured to receive traffic from the VPC NLB. To see subnets in all resource groups, run <code>ibmcloud oc subnets --provider vpc-gen2 --vpc-id <vpc> --zone <zone></code>.</td>
+    <td>Required: Annotation to specify the dedicated subnet that the VPC NLB deploys to. The value can be specified as a VPC subnet ID, VPC subnet name, or VPC subnet CIDR. You must specify only one subnet. The subnet must exist in the same VPC as your cluster and in a zone where your cluster has worker nodes, but no worker nodes can be attached to this subnet. The worker nodes that exist in the same zone as this subnet are configured to receive traffic from the VPC NLB. To see subnets in all resource groups, run <code>ibmcloud oc subnets --provider vpc-gen2 --vpc-id &lt;vpc&gt; --zone &lt;zone&gt;</code>.</td>
     </tr>
     <tr>
         <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector</code></td>
@@ -709,7 +710,7 @@ Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.op
     </tr>
     <tr>
         <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets</code></td>
-    <td>{{site.data.keyword.openshiftshort}} version 4.5 or later: Annotation to specify one or more subnets that the VPC ALB service deploys to. If specified, this annotation takes precedence over the <code>service.kubernetes.io/ibm-load-balancer-cloud-provider-zone</code> annotation. Note that you can specify a different subnet in the same VPC than the subnets that your cluster is attached to. In this case, even though the VPC ALB deploys to a different subnet in the same VPC, the VPC ALB can still route traffic to your worker nodes on the cluster subnets. To see subnets in all resource groups, run <code>ibmcloud oc subnets --provider vpc-gen2 --vpc-id <vpc> --zone <zone></code>.</td>
+    <td>{{site.data.keyword.openshiftshort}} version 4.5 or later: Annotation to specify one or more subnets that the VPC ALB service deploys to. If specified, this annotation takes precedence over the <code>service.kubernetes.io/ibm-load-balancer-cloud-provider-zone</code> annotation. Note that you can specify a different subnet in the same VPC than the subnets that your cluster is attached to. In this case, even though the VPC ALB deploys to a different subnet in the same VPC, the VPC ALB can still route traffic to your worker nodes on the cluster subnets. To see subnets in all resource groups, run <code>ibmcloud oc subnets --provider vpc-gen2 --vpc-id &lt;vpc&gt; --zone &lt;zone&gt;</code>.</td>
     </tr>
     <tr>
         <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-zone</code></td>
