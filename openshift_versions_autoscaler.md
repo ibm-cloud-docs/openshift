@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-25"
+lastupdated: "2021-08-26"
 
 keywords: autoscaler, add-on, autoscaler changelog
 
@@ -63,6 +63,7 @@ subcollection: openshift, cluster autoscaler, add-on, scale
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -145,6 +146,18 @@ To view a list of add-ons and the supported cluster versions, run the following 
 ibmcloud oc addon-versions
 ```
 {: pre}
+
+
+### Changelog for patch update 1.0.3_360, released 26 August 2021
+{: #103360_ca}
+
+Review the changes in version `1.0.3_360` of the cluster autoscaler add-on.
+{: shortdesc}
+
+- Image tags:  `1.17.4-5`, `1.18.3-5`, `1.19.1-5`, `1.20.0-5`, and `1.21.0-1`.  
+- Supported cluster versions: >=4.3  
+- Updates the Golang version to `1.16.6` which includes a fix for `PVR0281096`.  
+- Increases the default resource requests and limits.   
 
 
 
