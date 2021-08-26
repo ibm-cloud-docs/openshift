@@ -211,26 +211,26 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     apiVersion: v1
     kind: Service
     metadata:
-        name: <app_name>-vpc-nlb-<VPC_zone>
-        annotations:
-          service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "nlb"
-          service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: "public"
-          service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector: "<key>=<value>"
-          service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets: "<subnet1_ID,subnet2_ID>"
-          service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"
-  spec:
-    type: LoadBalancer
-    selector:
-      <selector_key>: <selector_value>
-    ports:
-     - name: http
-       protocol: TCP
-       port: 8080
-       targetPort: 8080
-     - name: https
-       protocol: TCP
-       port: 443
-    externalTrafficPolicy: Local
+      name: <app_name>-vpc-nlb-<VPC_zone>
+      annotations:
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "nlb"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: "public"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector: "<key>=<value>"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets: "<subnet1_ID,subnet2_ID>"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"
+    spec:
+      type: LoadBalancer
+      selector:
+        <selector_key>: <selector_value>
+      ports:
+       - name: http
+         protocol: TCP
+         port: 8080
+         targetPort: 8080
+       - name: https
+         protocol: TCP
+         port: 443
+      externalTrafficPolicy: Local
     ```
     {: codeblock}
 
@@ -412,25 +412,25 @@ Expose your app to private network traffic by setting up a Kubernetes `LoadBalan
     apiVersion: v1
     kind: Service
     metadata:
-        name: <app_name>-vpc-nlb-<VPC_zone>
-    annotations:
-      service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "nlb"
-      service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: "private"
-      service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets: "<subnet_ID>"
-      service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector: "<key>=<value>"
-  spec:
-    type: LoadBalancer
-    selector:
-      <selector_key>: <selector_value>
-    ports:
-     - name: http
-       protocol: TCP
-       port: 8080
-       targetPort: 8080
-     - name: https
-       protocol: TCP
-       port: 443
-    externalTrafficPolicy: Local
+      name: <app_name>-vpc-nlb-<VPC_zone>
+      annotations:
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "nlb"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: "private"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets: "<subnet_ID>"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector: "<key>=<value>"
+    spec:
+      type: LoadBalancer
+      selector:
+        <selector_key>: <selector_value>
+      ports:
+       - name: http
+         protocol: TCP
+         port: 8080
+         targetPort: 8080
+       - name: https
+         protocol: TCP
+         port: 443
+      externalTrafficPolicy: Local
     ```
     {: codeblock}
 
