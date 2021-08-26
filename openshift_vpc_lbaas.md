@@ -212,12 +212,12 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     kind: Service
     metadata:
         name: <app_name>-vpc-nlb-<VPC_zone>
-    annotations:
-      service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "nlb"
-      service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: "public"
-      service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector: "<key>=<value>"
-      service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets: "<subnet1_ID,subnet2_ID>"
-      service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"
+        annotations:
+          service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "nlb"
+          service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: "public"
+          service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector: "<key>=<value>"
+          service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets: "<subnet1_ID,subnet2_ID>"
+          service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"
   spec:
     type: LoadBalancer
     selector:
@@ -573,25 +573,34 @@ Before you begin:
 * [Create one VPC NLB](#setup_vpc_nlb) per zone for your app. Ensure that you define an HTTPS port in your Kubernetes `LoadBalancer` service that configures the VPC NLB.
 * To use the SSL certificate to access your app via HTTPS, your app must be able to terminate TLS connections.
 
-To register VPC NLB IP addresses with a DNS subdomain:
+To register VPC NLB IP addresses with a DNS subdomain,
 
-1. Get the **EXTERNAL-IP** addresses for the load balancers that expose the same app.
-    ```
-    oc get svc -o wide
-    ```
-    {: pre}
+#### 1. Get the **EXTERNAL-IP** addresses
+{: #vpc_nlb_dns_externalip}
 
-    Example output:
-    ```
-    NAME                      TYPE           CLUSTER-IP       EXTERNAL-IP       PORT(S)            AGE      SELECTOR
-    ...
-    myapp-vpc-nlb-jp-tok-3    LoadBalancer   172.21.xxx.xxx   169.xx.xxx.xx     8080:30532/TCP     1d       run=webserver
-    ```
-    {: screen}
+Get the **EXTERNAL-IP** addresses for the load balancers that expose the same app.
 
-2. Create a DNS subdomain for the IP addresses.
-    * **IBM-provided subdomain**: Use `nlb-dns` commands to generate a subdomain with an SSL certificate for the IP addresses. {{site.data.keyword.cloud_notm}} takes care of generating and maintaining the wildcard SSL certificate for the subdomain for you.
-        1. Create a DNS subdomain and SSL certificate.
+```
+oc get svc -o wide
+```
+{: pre}
+
+Example output:
+```
+NAME                      TYPE           CLUSTER-IP       EXTERNAL-IP       PORT(S)            AGE      SELECTOR
+...
+myapp-vpc-nlb-jp-tok-3    LoadBalancer   172.21.xxx.xxx   169.xx.xxx.xx     8080:30532/TCP     1d       run=webserver
+```
+{: screen}
+
+#### 2. Create a DNS subdomain
+{: #vpc_nlb_dns_subdomain}
+
+Create a DNS subdomain for the IP addresses.
+
+* **IBM-provided subdomain**: Use `nlb-dns` commands to generate a subdomain with an SSL certificate for the IP addresses. {{site.data.keyword.cloud_notm}} takes care of generating and maintaining the wildcard SSL certificate for the subdomain for you.
+
+    1. Create a DNS subdomain and SSL certificate.
         ```
         ibmcloud oc nlb-dns create vpc-gen2 --type public --cluster <cluster_name_or_id> --ip <vpc_nlb1_ip> --ip <vpc_nlb2_ip> --ip <vpc_nlb3_ip>
         ```
@@ -610,11 +619,15 @@ To register VPC NLB IP addresses with a DNS subdomain:
         ```
         {: screen}
 
-    * **Custom domain**:
-        1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started).
+* **Custom domain**:
+
+    1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started).
     2. Define an alias for your custom domain by specifying the load balancer IP addresses as A records.
 
-3. Open a web browser and enter the URL to access your app through the subdomain.
+#### 3. Open a web browser
+{: #vpc_nlb_dns_web}
+
+Open a web browser and enter the URL to access your app through the subdomain.
 
 To use the SSL certificate to access your app via HTTPS, ensure that you defined an HTTPS port in your [Kubernetes `LoadBalancer` service](#setup_vpc_ks_vpc_lb). You can verify that requests are correctly routing through the HTTPS port by running `curl -v --insecure https://<domain>`. A connection error indicates that no HTTPS port is open on the service. Also, ensure that TLS connections can be terminated by your app. You can verify that your app terminates TLS properly by running `curl -v https://<domain>`. A certificate error indicates that your app is not properly terminating TLS connections.
 {: tip}
