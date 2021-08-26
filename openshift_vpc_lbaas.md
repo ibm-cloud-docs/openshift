@@ -204,6 +204,7 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     {: pre}
 
 </br>**To enable your app to receive public requests:**
+
 1. [Deploy your app to the cluster](/docs/containers?topic=containers-deploy_app#app_cli). Ensure that you add a label in the metadata section of your deployment configuration file. This custom label identifies all pods where your app runs to include them in the load balancing.
 
 2. Create a configuration YAML file for your Kubernetes `LoadBalancer` service. Consider naming the service in the format `<app_name>-vpc-nlb-<VPC_zone>`.
@@ -730,7 +731,8 @@ Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.op
     <td>Annotation to specify a VPC zone that your cluster is attached to. When you specify a zone in this annotation, two processes occur:<ul>
     <li>The VPC ALB is deployed to the same subnet in that zone that your worker nodes are connected to.</li>
     <li>Only worker nodes in your cluster in this zone are configured to receive traffic from the VPC ALB.</li></ul>
-    To see zones, run <code>ibmcloud oc zone ls --provider vpc-gen2</code>.<p class="note">To place the load balancer in a specific zone, you must specify this annotation when you create the load balancer. If you later change this annotation to a different zone, the load balancer itself is not moved to the new zone. However, the load balancer is reconfigured to send traffic to only worker nodes in the new zone.</br></br>If the <code>dedicated: edge</code> label is set on worker nodes and you specify this annotation, then only edge nodes in the specified zone are configured to receive traffic. Edge nodes in other zones and non-edge nodes in the specified zone do not receive traffic from the load balancer.</p></td>
+        <p>To see zones, run <code>ibmcloud oc zone ls --provider vpc-gen2</code>.</p>
+    <p class="note">To place the load balancer in a specific zone, you must specify this annotation when you create the load balancer. If you later change this annotation to a different zone, the load balancer itself is not moved to the new zone. However, the load balancer is reconfigured to send traffic to only worker nodes in the new zone.</br></br>If the <code>dedicated: edge</code> label is set on worker nodes and you specify this annotation, then only edge nodes in the specified zone are configured to receive traffic. Edge nodes in other zones and non-edge nodes in the specified zone do not receive traffic from the load balancer.</p></td>
     </tr>
     <tr>
         <td><code>selector</code></td>
