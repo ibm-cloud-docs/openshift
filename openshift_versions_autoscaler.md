@@ -157,7 +157,24 @@ Review the changes in version `1.0.3_360` of the cluster autoscaler add-on.
 - Image tags:  `1.17.4-5`, `1.18.3-5`, `1.19.1-5`, `1.20.0-5`, and `1.21.0-1`.  
 - Supported cluster versions: >=4.3  
 - Updates the Golang version to `1.16.6` which includes a fix for `PVR0281096`.  
-- Increases the default resource requests and limits.   
+- Increases the default resource requests and limits.
+    - Previous values:
+        ```yaml
+        resourcesLimitsCPU: "600m"	    
+        resourcesLimitsMemory: "600Mi"	     
+        resourcesRequestsCPU: "200m"	      
+        resourcesRequestsMemory: "200Mi"
+        ```
+        {: screen}	
+
+    - Updated values:
+        ```yaml
+        resourcesLimitsCPU: "800m"
+        resourcesLimitsMemory: "1000Mi"
+        resourcesRequestsCPU: "200m"
+        resourcesRequestsMemory: "400Mi"
+        ```
+        {: screen}
 
 
 
