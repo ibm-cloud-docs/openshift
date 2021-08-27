@@ -276,8 +276,8 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     </tr>
     <tr>
         <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-zone</code></td>
-    <td>Optional: Annotation to specify a VPC zone that your cluster is attached to. The VPC NLB is deployed to the same subnet in that zone that your worker nodes are connected to. Because the VPC NLB is single-zone, only worker nodes in your cluster in this zone are configured to receive traffic.</li></ul>
-    To see zones, run <code>ibmcloud oc zone ls --provider vpc-gen2</code>.<p class="note">If you later change this annotation to a different zone, the VPC NLB is not moved to the new zone.</br></br>If you do not specify this annotation or the <code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets</code> annotation, the VPC NLB is deployed to the most optimal zone. For example, the VPC NLB is deployed only to zones in which worker nodes exist and are in the <code>Ready</code> state.</p></td>
+    <td>Optional: Annotation to specify a VPC zone that your cluster is attached to. The VPC NLB is deployed to the same subnet in that zone that your worker nodes are connected to. Because the VPC NLB is single-zone, only worker nodes in your cluster in this zone are configured to receive traffic.
+    <p>To see zones, run <code>ibmcloud oc zone ls --provider vpc-gen2</code>.If you later change this annotation to a different zone, the VPC NLB is not moved to the new zone.</br></br>Note that if you do not specify this annotation or the <code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets</code> annotation, the VPC NLB is deployed to the most optimal zone. For example, the VPC NLB is deployed only to zones in which worker nodes exist and are in the <code>Ready</code> state.</p></td>
     </tr>
     <tr>
         <td><code>selector</code></td>
