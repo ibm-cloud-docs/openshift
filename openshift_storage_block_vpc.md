@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-23"
+lastupdated: "2021-08-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -156,7 +157,7 @@ In this quickstart guide, you create a 10Gi 5IOPS tier {{site.data.keyword.block
         name: my-deployment
     labels:
       app:
-  spec:
+    spec:
     selector:
       matchLabels:
         app: my-app
@@ -166,7 +167,7 @@ In this quickstart guide, you create a 10Gi 5IOPS tier {{site.data.keyword.block
           app: my-app
       spec:
         containers:
-        - image: # Your contanerized app image.
+        - image: # Your containerized app image.
           name: my-container
           volumeMounts:
           - name: my-volume
@@ -202,31 +203,15 @@ Choose your {{site.data.keyword.block_storage_is_short}} profile and create a pe
     All IBM pre-defined storage classes set up {{site.data.keyword.block_storage_is_short}} with an `ext4` file system by default. If you want to use a different file system, such as `xfs` or `ext3`, [create a customized storage class](#vpc-customize-storage-class).
     {: note}
 
-    <table summary="The columns are read from left to right. The first column has the storage profile. The second column describes the corresponding storage class for the profile.">
-    <caption>Overview of {{site.data.keyword.block_storage_is_short}} profiles</caption>
-    <thead>
-        <th>{{site.data.keyword.block_storage_is_short}} profile</th>
-        <th>Corresponding storage class</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td> 10 IOPS/GB </td>
-    <td> <code>ibmc-vpc-block-10iops-tier</code></br><code>ibmc-vpc-block-retain-10iops-tier</code></td>
-    </tr>
-    <tr>
-    <td>5 IOPS/GB </td>
-    <td><code>ibmc-vpc-block-5iops-tier</code></br><code>ibmc-vpc-block-retain-5iops-tier</code></td>
-    </tr>
-    <tr>
-    <td>3 IOPS/GB </td>
-    <td><code>ibmc-vpc-block-general-purpose</code></br><code>ibmc-vpc-block-retain-general-purpose</code></td>
-    </tr>
-    <tr>
-    <td> Custom </td>
-    <td> <code>ibmc-vpc-block-custom</code></br><code>ibmc-vpc-block-retain-custom</code></td>
-    </tr>
-    </tbody>
-    </table>
+    | {{site.data.keyword.block_storage_is_short}} profile | Corresponding storage class |
+    | --- | --- |
+    | 10 IOPS/GB | `ibmc-vpc-block-10iops-tier` or `ibmc-vpc-block-retain-10iops-tier` |
+    | 5 IOPS/GB | `ibmc-vpc-block-5iops-tier` or `ibmc-vpc-block-retain-5iops-tier |
+    | 3 IOPS/GB `ibmc-vpc-block-general-purpose` or `ibmc-vpc-block-retain-general-purpose` |
+    | Custom `ibmc-vpc-block-custom` or `ibmc-vpc-block-retain-custom` |
+    {: caption="{{site.data.keyword.block_storage_is_short}} profile and storage classes"}
+    {: summary="The table shows available {{site.data.keyword.block_storage_is_short}} profile and corresponding storage classes. Rows are to be read from the left to right, with the name of the profile in column one and the corresponding storage class in column two."}
+
 
 3. Decide on your {{site.data.keyword.block_storage_is_short}} configuration.
     1. Choose a size for your storage. Make sure that the size is supported by the {{site.data.keyword.block_storage_is_short}} profile that you chose.
@@ -239,43 +224,16 @@ Choose your {{site.data.keyword.block_storage_is_short}} profile and create a pe
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-      name: <pvc_name>
+      name: <pvc_name> # Enter a name for your PVC.
     spec:
       accessModes:
-      - ReadWriteOnce
+      - ReadWriteOnce # ReadWriteOnce is the only supported access mode. You can mount the PVC to one pod on one worker node in the cluster at a time.
       resources:
         requests:
-          storage: <size>
-      storageClassName: <storage_class>
+          storage: 10Gi # Enter the size. Make sure that the size is supported in the profile that you chose.
+      storageClassName: <storage_class> # Enter the storage class name that you selected earlier.
     ```
     {: codeblock}
-
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the YAML file components</caption>
-    <col width="25%">
-    <thead>
-    <th>Component</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>name</code></td>
-    <td>Enter a name for your PVC.</td>
-    </tr>
-    <tr>
-    <td><code>accessMode</code></td>
-    <td>{{site.data.keyword.block_storage_is_short}} supports a <code>ReadWriteOnce</code> access mode only. You can mount the PVC to one pod on one worker node in the cluster at a time.</td>
-    </tr>
-    <tr>
-    <td><code>storage</code></td>
-    <td>Enter the size of the {{site.data.keyword.block_storage_is_short}} instance, in gigabytes (Gi). Make sure that the size is supported in the {{site.data.keyword.block_storage_is_short}} profile that you chose. For example, if you want 10 gigabyte of {{site.data.keyword.blockstorageshort}}, enter <code>10Gi</code>.  </td>
-    </tr>
-    <tr>
-    <td><code>storageClassName</code></td>
-    <td>Enter the storage class name that you selected earlier.</td>
-    </tr>
-    </tbody>
-    </table>
 
 5. Create the PVC in your cluster.
     ```
@@ -297,8 +255,7 @@ Choose your {{site.data.keyword.block_storage_is_short}} profile and create a pe
     Status:        Bound
     Volume:        
     Labels:        <none>
-    Annotations:   oc.kubernetes.io/last-applied-configuration:
-{"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"name":"csi-block-pvc-good","namespace":"default"},"spec":{...
+    Annotations:   oc.kubernetes.io/last-applied-configuration: {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"name":"csi-block-pvc-good","namespace":"default"},"spec":{...
                 volume.beta.kubernetes.io/storage-provisioner: vpc.block.csi.ibm.io
     Finalizers:    [kubernetes.io/pvc-protection]
     Capacity: 10Gi   
@@ -342,47 +299,18 @@ Choose your {{site.data.keyword.block_storage_is_short}} profile and create a pe
     ```
     {: codeblock}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the YAML file components</caption>
-    <col width="25%">
-    <thead>
-    <th>Component</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>labels.app</code></td>
-    <td>In the metadata section, enter a label for the deployment.</td>
-    </tr>
-    <tr>
-    <td><code>matchLabels.app</code> <br/> <code>labels.app</code></td>
-    <td>In the spec selector and template metadata sections, enter a label for your app.</td>
-    </tr>
-    <tr>
-    <td><code>image</code></td>
-    <td>Specify the name of the container image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run <code>ibmcloud cr image-list</code>.</td>
-    </tr>
-    <tr>
-    <td><code>name</code></td>
-    <td>Specify the name of the container that you want to deploy in your pod.</td>
-    </tr>
-    <tr>
-    <td><code>mountPath</code></td>
-    <td>In the container volume mounts section, specify the absolute path of the directory to where the PVC is mounted inside the container.  </td>
-    </tr>
-    <tr>
-    <td><code>name</code></td>
-    <td>In the container volume mounts section, enter the name of the volume to mount to your pod. You can enter any name that you want. </td>
-    </tr>
-    <tr>
-    <td><code>name</code></td>
-    <td>In the volumes section, enter the name of the volume to mount to your pod. Typically this name is the same as <code>volumeMounts.name</code>.</td>
-    </tr>
-    <tr>
-    <td><code>claimName</code></td>
-    <td>In the volumes persistent volume claim section, enter the name of the PVC that you created earlier. </td>
-    </tr>
-    </tbody></table>
+    | Component | Description |
+    | --- | --- |
+    | `labels.app` | In the metadata section, enter a label for the deployment. |
+    | `matchLabels.app` and `labels.app` | In the spec selector and template metadata sections, enter a label for your app. |
+    | `image` | Specify the name of the container image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`. |
+    | `name` | Specify the name of the container that you want to deploy in your pod. |
+    | `mountPath` | In the container volume mounts section, specify the absolute path of the directory to where the PVC is mounted inside the container.
+    | `name` | In the container volume mounts section, enter the name of the volume to mount to your pod. You can enter any name that you want. 
+    | `name` | In the volumes section, enter the name of the volume to mount to your pod. Typically this name is the same as `volumeMounts.name`. |
+    | `claimName` | In the volumes persistent volume claim section, enter the name of the PVC that you created earlier. |
+    {: caption="Deployment parameters and description"}
+    {: summary="The table shows an example deployment configuration profile. Rows are to be read from the left to right, with the name of the parameter name in column one and a description of the parameter column two."}
 
 8. Create the deployment in your cluster.
     ```
@@ -1048,40 +976,40 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
     <th>Description</th>
     </thead>
     <tbody>
-        <tr>
-            <td><code>name</code></td>
-            <td>Enter a name for your Kubernetes secret. </td>
-        </tr>
-        <tr>
-            <td><code>namespace</code></td>
-            <td>Enter the namespace where you want to create your secret. To reference the secret in your PVC, the PVC must be created in the same namespace. </td>
-        </tr>
-        <tr>
-          <td><code>iops</code></td>
-          <td>In the string data section, enter the range of IOPS that you want to allow for your {{site.data.keyword.blockstorageshort}} instance. The range that you enter must match the {{site.data.keyword.block_storage_is_short}} tier that you plan to use. </td>
-        </tr>
-        <tr>
-          <td><code>zone</code></td>
-          <td>In the string data section, enter the VPC zone where you want to create the {{site.data.keyword.blockstorageshort}} instance. Make sure that you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run <code>ibmcloud oc cluster get --cluster &lt;cluster_name_or_ID&gt;</code> and look at the <strong>Worker Zones</strong> field in your CLI output. If you do not specify a zone, one of the worker node zones is automatically selected for your {{site.data.keyword.blockstorageshort}} instance.</td>
-        </tr>
-        <tr>
-          <td><code>tags</code></td>
-          <td>In the string data section, enter a comma-separated list of tags to use when the PVC is created. Tags can help you find your storage instance more easily after it is created.</td>
-        </tr>
-        <tr>
-          <td><code>resourceGroup</code></td>
-          <td>In the string data section, enter the resource group that you want your {{site.data.keyword.blockstorageshort}} instance to get access to. If you do not enter a resource group, the instance is automatically authorized to access resources of the resource group that your cluster belongs to. </td>
-        </tr>
-        <tr>
-          <td><code>encrypted</code></td>
-          <td>In the string data section, enter <strong>true</strong> to create a secret that sets up encryption for {{site.data.keyword.blockstorageshort}} volumes. If you set this option to <strong>true</strong>, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in <code>parameters.encryptionKey</code>. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
-        </tr>
-        <tr>
-          <td><code>encryptionKey</code></td>
-          <td>In the data section, if you entered <strong>true</strong> for <code>parameters.encrypted</code>, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volumes. To use your root key CRN in a secret, you must first convert it to base64 by running <code>echo  -n "&lt;root_key_CRN&gt;" | base64</code>. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
-        </tr>
-        </tbody>
-        </table>
+    <tr>
+    <td><code>name</code></td>
+    <td>Enter a name for your Kubernetes secret. </td>
+    </tr>
+    <tr>
+    <td><code>namespace</code></td>
+    <td>Enter the namespace where you want to create your secret. To reference the secret in your PVC, the PVC must be created in the same namespace. </td>
+    </tr>
+    <tr>
+    <td><code>iops</code></td>
+    <td>In the string data section, enter the range of IOPS that you want to allow for your {{site.data.keyword.blockstorageshort}} instance. The range that you enter must match the {{site.data.keyword.block_storage_is_short}} tier that you plan to use. </td>
+    </tr>
+    <tr>
+      <td><code>zone</code></td>
+      <td>In the string data section, enter the VPC zone where you want to create the {{site.data.keyword.blockstorageshort}} instance. Make sure that you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run <code>ibmcloud oc cluster get --cluster &lt;cluster_name_or_ID&gt;</code> and look at the <strong>Worker Zones</strong> field in your CLI output. If you do not specify a zone, one of the worker node zones is automatically selected for your {{site.data.keyword.blockstorageshort}} instance.</td>
+    </tr>
+    <tr>
+    <td><code>tags</code></td>
+    <td>In the string data section, enter a comma-separated list of tags to use when the PVC is created. Tags can help you find your storage instance more easily after it is created.</td>
+    </tr>
+    <tr>
+      <td><code>resourceGroup</code></td>
+      <td>In the string data section, enter the resource group that you want your {{site.data.keyword.blockstorageshort}} instance to get access to. If you do not enter a resource group, the instance is automatically authorized to access resources of the resource group that your cluster belongs to. </td>
+    </tr>
+    <tr>
+      <td><code>encrypted</code></td>
+      <td>In the string data section, enter <strong>true</strong> to create a secret that sets up encryption for {{site.data.keyword.blockstorageshort}} volumes. If you set this option to <strong>true</strong>, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in <code>parameters.encryptionKey</code>. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
+    </tr>
+    <tr>
+    <td><code>encryptionKey</code></td>
+    <td>In the data section, if you entered <strong>true</strong> for <code>parameters.encrypted</code>, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volumes. To use your root key CRN in a secret, you must first convert it to base64 by running <code>echo  -n "&lt;root_key_CRN&gt;" | base64</code>. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
+    </tr>
+    </tbody>
+    </table>
 
 3. Create your Kubernetes secret.
     ```
@@ -1118,24 +1046,24 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
     <th>Description</th>
     </thead>
     <tbody>
-        <tr>
-            <td><code>name</code></td>
-            <td>Enter a name for your Kubernetes secret. </td>
-        </tr>
-        <tr>
-            <td><code>namespace</code></td>
-            <td>Enter the namespace where you want to create your secret. To reference the secret in your PVC, the PVC must be created in the same namespace. </td>
-        </tr>
-        <tr>
-          <td><code>encrypted</code></td>
-          <td>In the string data section, enter <strong>true</strong> to create a secret that sets up encryption for {{site.data.keyword.blockstorageshort}} volumes. If you set this option to <strong>true</strong>, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in <code>parameters.encryptionKey</code>. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
-        </tr>
-        <tr>
-          <td><code>encryptionKey</code></td>
-          <td>In the data section, if you entered <strong>true</strong> for <code>parameters.encrypted</code>, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volume. To use your root key CRN in a secret, you must first convert it to base 64 by running <code>echo  -n "&lt;root_key_CRN&gt;" | base64</code>. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
-        </tr>
-        </tbody>
-        </table>
+    <tr>
+    <td><code>name</code></td>
+    <td>Enter a name for your Kubernetes secret. </td>
+    </tr>
+    <tr>
+    <td><code>namespace</code></td>
+    <td>Enter the namespace where you want to create your secret. To reference the secret in your PVC, the PVC must be created in the same namespace. </td>
+    </tr>
+    <tr>
+      <td><code>encrypted</code></td>
+      <td>In the string data section, enter <strong>true</strong> to create a secret that sets up encryption for {{site.data.keyword.blockstorageshort}} volumes. If you set this option to <strong>true</strong>, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in <code>parameters.encryptionKey</code>. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
+    </tr>
+    <tr>
+    <td><code>encryptionKey</code></td>
+    <td>In the data section, if you entered <strong>true</strong> for <code>parameters.encrypted</code>, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volume. To use your root key CRN in a secret, you must first convert it to base 64 by running <code>echo  -n "&lt;root_key_CRN&gt;" | base64</code>. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
+    </tr>
+    </tbody>
+    </table>
 
 2. Create the Kubernetes secret.
     ```
@@ -1189,9 +1117,9 @@ You can only expand volumes that are mounted by an app pod.
     generation: "gc"
     classVersion: "1"
     iops: "<iops>" # Only specify this parameter if you are using a "custom" profile.
-  reclaimPolicy: "<reclaim_policy>"
-  allowVolumeExpansion: true
-  volumeBindingMode: <volume_binding_mode>
+    reclaimPolicy: "<reclaim_policy>"
+    allowVolumeExpansion: true
+    volumeBindingMode: <volume_binding_mode>
     ```
     {: codeblock}
 

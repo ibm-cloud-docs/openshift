@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-27"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -189,22 +190,22 @@ To set up an NLB 2.0 in a multizone cluster:
         apiVersion: v1
         kind: Service
         metadata:
-        name: myloadbalancer
-        annotations:
-          service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: <public_or_private>
-          service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"
-          service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan: "<vlan_id>"
-          service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "ipvs"
-          service.kubernetes.io/ibm-load-balancer-cloud-provider-ipvs-scheduler: "<algorithm>"
-      spec:
-        type: LoadBalancer
-        selector:
-          <selector_key>: <selector_value>
-        ports:
-         - protocol: TCP
-           port: 8080
-        loadBalancerIP: <IP_address>
-        externalTrafficPolicy: Local
+          name: myloadbalancer
+          annotations:
+            service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: <public_or_private>
+            service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"
+            service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan: "<vlan_id>"
+            service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "ipvs"
+            service.kubernetes.io/ibm-load-balancer-cloud-provider-ipvs-scheduler: "<algorithm>"
+       spec:
+         type: LoadBalancer
+         selector:
+           <selector_key>: <selector_value>
+         ports:
+          - protocol: TCP
+            port: 8080
+         loadBalancerIP: <IP_address>
+         externalTrafficPolicy: Local
         ```
         {: codeblock}
 
@@ -226,7 +227,7 @@ To set up an NLB 2.0 in a multizone cluster:
         </tr>
         <tr>
         <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan:</code>
-        <td>Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run <code>ibmcloud oc vlan ls --zone <zone></code>.</td>
+        <td>Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run <code>ibmcloud oc vlan ls --zone &lt;zone&gt;</code>.</td>
         </tr>
         <tr>
         <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "ipvs"</code>
@@ -260,19 +261,19 @@ To set up an NLB 2.0 in a multizone cluster:
         apiVersion: v1
         kind: Service
         metadata:
-        name: myloadbalancer
-        annotations:
-          service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "dal12"
-          service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "ipvs"
-          service.kubernetes.io/ibm-load-balancer-cloud-provider-ipvs-scheduler: "rr"
-      spec:
-        type: LoadBalancer
-        selector:
-          app: nginx
-        ports:
-         - protocol: TCP
-           port: 8080
-        externalTrafficPolicy: Local
+          name: myloadbalancer
+          annotations:
+            service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "dal12"
+            service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "ipvs"
+            service.kubernetes.io/ibm-load-balancer-cloud-provider-ipvs-scheduler: "rr"
+        spec:
+          type: LoadBalancer
+           selector:
+             app: nginx
+           ports:
+            - protocol: TCP
+              port: 8080
+           externalTrafficPolicy: Local
         ```
         {: codeblock}
 
@@ -386,7 +387,7 @@ To create an NLB 2.0 service in a single-zone cluster:
         </tr>
         <tr>
           <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan:</code>
-          <td>Optional: Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run <code>ibmcloud oc vlan ls --zone <zone></code>.</td>
+          <td>Optional: Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run <code>ibmcloud oc vlan ls --zone &lt;zone&gt;</code>.</td>
         </tr>
         <tr>
           <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "ipvs"</code>
@@ -483,7 +484,7 @@ Scheduling algorithms determine how an NLB 2.0 assigns network connections to yo
 <dt>Round Robin (<code>rr</code>)</dt>
 <dd>The NLB cycles through the list of app pods when routing connections to worker nodes, treating each app pod equally. Round Robin is the default scheduling algorithm for version 2.0 NLBs.</dd>
 <dt>Source Hashing (<code>sh</code>)</dt>
-<dd>The NLB generates a hash key based on the source IP address of the client request packet. The NLB then looks up the hash key in a statically assigned hash table, and routes the request to the app pod that handles hashes of that range. This algorithm ensures that requests from a particular client are always directed to the same app pod.</br>**Note**: Kubernetes uses Iptables rules, which cause requests to be sent to a random pod on the worker. To use this scheduling algorithm, you must ensure that no more than one pod of your app is deployed per worker node. For example, if each pod has the label <code>run=&lt;app_name&gt;</code>, add the following anti-affinity rule to the <code>spec</code> section of your app deployment:</br>
+<dd>The NLB generates a hash key based on the source IP address of the client request packet. The NLB then looks up the hash key in a statically assigned hash table, and routes the request to the app pod that handles hashes of that range. This algorithm ensures that requests from a particular client are always directed to the same app pod.</br><strong>Note</strong>: Kubernetes uses Iptables rules, which cause requests to be sent to a random pod on the worker. To use this scheduling algorithm, you must ensure that no more than one pod of your app is deployed per worker node. For example, if each pod has the label <code>run=&lt;app_name&gt;</code>, add the following anti-affinity rule to the <code>spec</code> section of your app deployment:</br>
 <pre class="codeblock">
 <code>
     spec:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-25"
+lastupdated: "2021-08-30"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -124,6 +125,18 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.7 patch updates.
 {: shortdesc}
+
+### Changelog for worker node fix pack 4.7.24_1530_openshift, released 30 August 2021
+{: #4724_1530}
+
+The following table shows the changes that are included in the worker node fix pack patch update `4.7.24_1530_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| OpenShift Container Platform | 4.7.23 | 4.7.24 | See [changelogs](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-43){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.7.23_1528_openshift" caption-side="top"}
 
 ### Changelog for master fix pack 4.7.23_1529_openshift, released 25 August 2021
 {: #4723_1529}
@@ -316,6 +329,18 @@ The following table shows the changes that are included in the master fix pack p
 
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.6 patch updates.
 {: shortdesc}
+
+### Changelog for worker node fix pack 4.6.43_1554_openshift, released 30 August 2021
+{: #4643_1554}
+
+The following table shows the changes that are included in the worker node fix pack patch update `4.6.43_1554_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| OpenShift Container Platform | 4.6.42 | 4.6.43 | See [changelogs](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-43){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.6.42_1552_openshift" caption-side="top"}
 
 ### Changelog for master fix pack 4.6.42_1553_openshift, released 25 August 2021
 {: #4642_1553}
@@ -717,7 +742,7 @@ The following table shows the changes that are included in the version updates f
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.5 patch updates.
 {: shortdesc}
 
-{{site.data.keyword.openshiftshort}} version 4.5 is deprecated, with a tentative unsupported date of 1 September 2021. Update your cluster to at least [version 4.6](/docs/openshift?topic=openshift-openshift_versions#ocp46) as soon as possible.
+{{site.data.keyword.openshiftshort}} version 4.5 is deprecated, with a tentative unsupported date of 30 September 2021. Update your cluster to at least [version 4.6](/docs/openshift?topic=openshift-openshift_versions#ocp46) as soon as possible.
 {: deprecated}
 
 ### Changelog for master fix pack 4.5.41_1549_openshift, released 25 August 2021
@@ -1331,6 +1356,18 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 3.11 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported on 6 June 2022 (date subject to change).
 {: deprecated}
 
+### Changelog for worker node fix pack 3.11.501_1602_openshift, released 30 August 2021
+{: #311501_1602}
+
+The following table shows the changes that are included in the worker node fix pack patch update `3.11.501_1602_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| OpenShift Container Platform | 3.11.487 |	3.11.501 | See [changelogs](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-501){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.487_1600_openshift" caption-side="top"}
+
 ### Changelog for master fix pack 3.11.487_1601_openshift, released 25 August 2021
 {: #311487_1601}
 
@@ -1344,7 +1381,7 @@ The following table shows the changes that are included in the master fix pack p
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1328 | 1510 | Updated image for [CVE-2020-27780](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27780){: external}. |
 | {{site.data.keyword.openshiftshort}} | 3.11.439 | 3.11.487 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-487){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
-{: caption="Changes since version 3.11.439_1598_openshift" caption-side="top"}
+{: caption="Changes since version 3.11.465_1599_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 3.11.487_1600_openshift, released 16 August 2021
 {: #311487_1600}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-26"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc, roks
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -129,7 +130,7 @@ To update the OpenShift Data Foundation in your cluster, disable the add-on and 
 
     **For {{site.data.keyword.openshiftshort}} versions 4.7 and above**
     ```sh
-    ibmcloud oc cluster addon disable openshift-container-storage --cluster <cluster>
+    ibmcloud oc cluster addon disable openshift-data-foundation --cluster <cluster>
     ```
     {: pre}
 
@@ -143,7 +144,7 @@ To update the OpenShift Data Foundation in your cluster, disable the add-on and 
 
     **For {{site.data.keyword.openshiftshort}} versions 4.7 and above**
     ```sh
-    ibmcloud koc cluster addon enable openshift-container-storage --cluster <version> --version <version>
+    ibmcloud koc cluster addon enable openshift-data-foundation --cluster <version> --version <version>
     ```
     {: pre}
 

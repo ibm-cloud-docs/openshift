@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-26"
+lastupdated: "2021-08-27"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -204,6 +204,7 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     {: pre}
 
 </br>**To enable your app to receive public requests:**
+
 1. [Deploy your app to the cluster](/docs/containers?topic=containers-deploy_app#app_cli). Ensure that you add a label in the metadata section of your deployment configuration file. This custom label identifies all pods where your app runs to include them in the load balancing.
 
 2. Create a configuration YAML file for your Kubernetes `LoadBalancer` service. Consider naming the service in the format `<app_name>-vpc-nlb-<VPC_zone>`.
@@ -275,8 +276,8 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     </tr>
     <tr>
         <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-zone</code></td>
-    <td>Optional: Annotation to specify a VPC zone that your cluster is attached to. The VPC NLB is deployed to the same subnet in that zone that your worker nodes are connected to. Because the VPC NLB is single-zone, only worker nodes in your cluster in this zone are configured to receive traffic.</li></ul>
-    To see zones, run <code>ibmcloud oc zone ls --provider vpc-gen2</code>.<p class="note">If you later change this annotation to a different zone, the VPC NLB is not moved to the new zone.</br></br>If you do not specify this annotation or the <code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets</code> annotation, the VPC NLB is deployed to the most optimal zone. For example, the VPC NLB is deployed only to zones in which worker nodes exist and are in the <code>Ready</code> state.</p></td>
+    <td>Optional: Annotation to specify a VPC zone that your cluster is attached to. The VPC NLB is deployed to the same subnet in that zone that your worker nodes are connected to. Because the VPC NLB is single-zone, only worker nodes in your cluster in this zone are configured to receive traffic.
+    <p>To see zones, run <code>ibmcloud oc zone ls --provider vpc-gen2</code>.If you later change this annotation to a different zone, the VPC NLB is not moved to the new zone.</br></br>Note that if you do not specify this annotation or the <code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets</code> annotation, the VPC NLB is deployed to the most optimal zone. For example, the VPC NLB is deployed only to zones in which worker nodes exist and are in the <code>Ready</code> state.</p></td>
     </tr>
     <tr>
         <td><code>selector</code></td>
@@ -664,25 +665,25 @@ Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.op
     apiVersion: v1
     kind: Service
     metadata:
-        name: myloadbalancer
-    annotations:
-      service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"
-      service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: "<public_or_private>"
-      service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector: "<key>=<value>"
-      service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets: "<subnet1_ID,subnet2_ID>"
-      service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"
-  spec:
-    type: LoadBalancer
-    selector:
-      <selector_key>: <selector_value>
-    ports:
-     - name: http
-       protocol: TCP
-       port: 8080
-       targetPort: 8080
-     - name: https
-       protocol: TCP
-       port: 443
+      name: myloadbalancer
+      annotations:
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: "<public_or_private>"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector: "<key>=<value>"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets: "<subnet1_ID,subnet2_ID>"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"
+   spec:
+     type: LoadBalancer
+     selector:
+        <selector_key>: <selector_value>
+     ports:
+       - name: http
+         protocol: TCP
+         port: 8080
+         targetPort: 8080
+       - name: https
+         protocol: TCP
+         port: 443
     ```
     {: codeblock}
 
@@ -728,9 +729,12 @@ Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.op
     <tr>
         <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-zone</code></td>
     <td>Annotation to specify a VPC zone that your cluster is attached to. When you specify a zone in this annotation, two processes occur:<ul>
-    <li>The VPC ALB is deployed to the same subnet in that zone that your worker nodes are connected to.</li>
-    <li>Only worker nodes in your cluster in this zone are configured to receive traffic from the VPC ALB.</li></ul>
-    To see zones, run <code>ibmcloud oc zone ls --provider vpc-gen2</code>.<p class="note">To place the load balancer in a specific zone, you must specify this annotation when you create the load balancer. If you later change this annotation to a different zone, the load balancer itself is not moved to the new zone. However, the load balancer is reconfigured to send traffic to only worker nodes in the new zone.</br></br>If the <code>dedicated: edge</code> label is set on worker nodes and you specify this annotation, then only edge nodes in the specified zone are configured to receive traffic. Edge nodes in other zones and non-edge nodes in the specified zone do not receive traffic from the load balancer.</p></td>
+        <li>The VPC ALB is deployed to the same subnet in that zone that your worker nodes are connected to.</li>
+        <li>Only worker nodes in your cluster in this zone are configured to receive traffic from the VPC ALB.</li></ul>
+        <p>To see zones, run <code>ibmcloud oc zone ls --provider vpc-gen2</code>.</p>    
+        <p>To place the load balancer in a specific zone, you must specify this annotation when you create the load balancer. If you later change this annotation to a different zone, the load balancer itself is not moved to the new zone. However, the load balancer is reconfigured to send traffic to only worker nodes in the new zone.</p>
+        <p>If the <code>dedicated: edge</code> label is set on worker nodes and you specify this annotation, then only edge nodes in the specified zone are configured to receive traffic. Edge nodes in other zones and non-edge nodes in the specified zone do not receive traffic from the load balancer.</p>
+    </td>
     </tr>
     <tr>
         <td><code>selector</code></td>
@@ -745,6 +749,8 @@ Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.op
     <td>The port to which the service directs traffic.</td>
     </tr>
     </tbody></table>
+    
+
 
 3. Create the Kubernetes `LoadBalancer` service in your cluster.
     ```

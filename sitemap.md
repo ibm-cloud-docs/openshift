@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-26"
+lastupdated: "2021-08-30"
 
 keywords: openshift
 subcollection: openshift
@@ -216,6 +216,16 @@ subcollection: openshift
 * [Expose your app](/docs/openshift?topic=openshift-learning-path-dev#dev_expose)
 * [Add app storage](/docs/openshift?topic=openshift-learning-path-dev#dev_storage)
 * [Add integrations](/docs/openshift?topic=openshift-learning-path-dev#dev_integrate)
+
+
+## Release notes
+{: #sitemap_release_notes}
+
+
+[Release notes](/docs/openshift?topic=openshift-rel-notes)
+
+* [August 2021](/docs/openshift?topic=openshift-rel-notes#release-aug-2021)
+    * [30 August 2021](/docs/openshift?topic=openshift-rel-notes#30aug2021)
 
 
 ## Tutorials library for OpenShift
@@ -856,7 +866,7 @@ subcollection: openshift
 [Monitoring cluster health](/docs/openshift?topic=openshift-health-monitor)
 * [Understanding options for monitoring](/docs/openshift?topic=openshift-health-monitor#oc_logmet_options)
   * [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor#{{site.data.keyword.mon_full_notm}})
-  * [Built-in {{site.data.keyword.openshiftshort}} monitoring tools](/docs/openshift?topic=openshift-health-monitor#built-in-{{site.data.keyword.openshiftshort}}-monitoring-tools)
+  * [Built-in {{site.data.keyword.openshiftshort}} monitoring tools](/docs/openshift?topic=openshift-health-monitor#built-in-mon-tools)
 * [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor#openshift_monitoring)
 * [Viewing cluster states](/docs/openshift?topic=openshift-health-monitor#states)
   * [Master states](/docs/openshift?topic=openshift-health-monitor#states_master)
@@ -1368,7 +1378,7 @@ subcollection: openshift
 
 * [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-sat#install-odf-console-sat)
 
-* [Gathering your local block storage device details](/docs/openshift?topic=openshift-deploy-odf-sat#gathering-your-local-block-storage-device-details)
+* [Gathering your local block storage device details](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-gather)
 
 * [Creating your storage cluster](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-deploy-crd)
 
@@ -1424,6 +1434,23 @@ subcollection: openshift
     * [Cleaning up ODF](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-cleanup)
 
 * [Troubleshooting ODF](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-troubleshooting-gather)
+
+
+## Managing the Multi-Cloud Object Gateway
+{: #sitemap_managing_the_multi-cloud_object_gateway}
+
+
+[Managing the Multi-Cloud Object Gateway](/docs/openshift?topic=openshift-odf-manage-NooBaa)
+
+* [Setting up backing stores by using the NooBaa CLI](/docs/openshift?topic=openshift-odf-manage-NooBaa#odf-backingstore)
+
+* [Creating a bucket class that uses two backing stores with a mirror placement policy](/docs/openshift?topic=openshift-odf-manage-NooBaa#odf-bucketclass)
+
+* [Creating a storage class](/docs/openshift?topic=openshift-odf-manage-NooBaa#odf-sc)
+
+* [Creating an Object Bucket Claim](/docs/openshift?topic=openshift-odf-manage-NooBaa#creating-an-object-bucket-claim)
+
+* [Deploying an s3 app in the Multicloud Object Gateway](/docs/openshift?topic=openshift-odf-manage-NooBaa#mcg-deploy-app)
 
 
 ## Storage class reference
@@ -1777,6 +1804,7 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
 * [Version 4.7 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-47)
+  * [Changelog for worker node fix pack 4.7.24_1530_openshift, released 30 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4724_1530)
   * [Changelog for master fix pack 4.7.23_1529_openshift, released 25 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4723_1529)
   * [Changelog for worker node fix pack 4.7.23_1528_openshift, released 16 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4723_1528)
   * [Changelog for worker node fix pack 4.7.21_1527_openshift, released 02 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4721_1527)
@@ -1788,6 +1816,7 @@ subcollection: openshift
   * [Changelog for worker node fix pack 4.7.13_1521_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4713_1521)
   * [Changelog for master fix pack 4.7.12_1520_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4712_1520)
 * [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
+  * [Changelog for worker node fix pack 4.6.43_1554_openshift, released 30 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4643_1554)
   * [Changelog for master fix pack 4.6.42_1553_openshift, released 25 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4642_1553)
   * [Changelog for worker node fix pack 4.6.42_1552_openshift, released 16 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4642_1552)
   * [Changelog for worker node fix pack 4.6.40_1551_openshift, released 02 August 2021](/docs/openshift?topic=openshift-openshift_changelog#4640_1551)
@@ -1848,6 +1877,7 @@ subcollection: openshift
   * [Changelog for master fix pack 4.5.15_1518_openshift, released 26 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4515_1518)
   * [Changelog for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-openshift_changelog#4513_1515)
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+  * [Changelog for worker node fix pack 3.11.501_1602_openshift, released 30 August 2021](/docs/openshift?topic=openshift-openshift_changelog#311501_1602)
   * [Changelog for master fix pack 3.11.487_1601_openshift, released 25 August 2021](/docs/openshift?topic=openshift-openshift_changelog#311487_1601)
   * [Changelog for worker node fix pack 3.11.487_1600_openshift, released 16 August 2021](/docs/openshift?topic=openshift-openshift_changelog#311487_1600)
   * [Changelog for worker node fix pack 3.11.465_1599_openshift, released 02 August 2021](/docs/openshift?topic=openshift-openshift_changelog#311465_1599)
@@ -2420,6 +2450,8 @@ subcollection: openshift
 [Why does binding a service to a cluster results in service does not support service keys error?](/docs/openshift?topic=openshift-ts-app-svc-key)
 
 [Why can't I install a Helm chart with updated configuration values?](/docs/openshift?topic=openshift-ts-app-helm-install)
+
+[Why does the `oc debug` command fail with a `container is unable to start error`?](/docs/openshift?topic=openshift-ts-app-oc-debug)
 
 
 ## Managed add-ons

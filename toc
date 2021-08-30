@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="openshift" category="containers" audience="service" href="/docs/openshift?topic=openshift-getting-started" console-page="/kubernetes/overview?platformType=openshift" product-page="https://www.ibm.com/cloud/openshift" path="openshift"}
+{: .toc subcollection="openshift" version="2" category="containers" audience="service" href="/docs/openshift?topic=openshift-getting-started" console-page="/kubernetes/overview?platformType=openshift" product-page="https://www.ibm.com/cloud/openshift" path="openshift"}
 Red Hat OpenShift on IBM Cloud
 
     {: .navgroup id="learn"}
@@ -27,6 +27,8 @@ Red Hat OpenShift on IBM Cloud
     Learning paths
         openshift_path_admin.md
         openshift_path_dev.md
+
+    openshift_release_notes_2.md
     {: .navgroup-end}
 
     {: .navgroup id="tutorial"}
@@ -319,6 +321,7 @@ Red Hat OpenShift on IBM Cloud
             ts-app/ts-app-11-svc-not-found.md
             ts-app/ts-app-12-svc-key.md
             ts-app/ts-app-15-helm-install.md
+            ts-app/ts-app-16-oc-debug-pod.md
 
         {: .topicgroup}
         Managed add-ons

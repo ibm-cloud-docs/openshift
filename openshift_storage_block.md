@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -864,7 +865,7 @@ To add block storage:
     ```
     {: screen}
 
-4. {: #block_app_volume_mount}To mount the PV to your deployment, create a configuration `.yaml` file and specify the PVC that binds the PV.
+4. To mount the PV to your deployment, create a configuration `.yaml` file and specify the PVC that binds the PV. {: #block_app_volume_mount}
 
     ```yaml
     apiVersion: apps/v1

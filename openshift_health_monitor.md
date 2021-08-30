@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-23"
+lastupdated: "2021-08-30"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -135,6 +136,8 @@ Review the following details about {{site.data.keyword.mon_full_notm}}.
 For more information, see [the {{site.data.keyword.openshiftshort}} documentation](http://docs.openshift.com/container-platform/4.6/monitoring/understanding-the-monitoring-stack.html){: external}.
 
 ### Built-in {{site.data.keyword.openshiftshort}} monitoring tools
+{: #built-in-mon-tools}
+
 Review the following details about built-in monitoring tools for your cluster. 
 {: shortdesc}
 
@@ -250,7 +253,7 @@ To view information about a specific cluster, such as its zones, service endpoin
 You can review information about the overall cluster, the IBM-managed master, and your worker nodes. To troubleshoot your cluster and worker nodes, see [Troubleshooting clusters](/docs/openshift?topic=openshift-debug_clusters).
 
 For more information about cluster and worker states, see:
-- [Cluster states](/docs/openshift?topic=openshift-cluster-state-reference).
+- [Cluster states](/docs/openshift?topic=openshift-cluster-states-reference).
 - [Worker node states](/docs/openshift?topic=openshift-worker-node-state-reference).
 
 ### Master states

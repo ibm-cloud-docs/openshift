@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-20"
+lastupdated: "2021-08-30"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -1066,7 +1067,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
 
 4. Optional: If you plan to access your data with a non-root user, or added files to an existing {{site.data.keyword.cos_full_notm}} bucket by using the console or the API directly, make sure that the [files have the correct permission](/docs/containers?topic=containers-cos_nonroot_access) assigned so that your app can successfully read and update the files as needed.
 
-5. {: #cos_app_volume_mount}To mount the PV to your deployment, create a configuration `.yaml` file and specify the PVC that binds the PV.
+5. To mount the PV to your deployment, create a configuration `.yaml` file and specify the PVC that binds the PV. {: #cos_app_volume_mount}
 
     ```yaml
     apiVersion: apps/v1

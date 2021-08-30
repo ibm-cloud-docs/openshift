@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-25"
+lastupdated: "2021-08-30"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, roks
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -141,7 +142,6 @@ If you want to override the default parameters when deploying the add-on, you ca
 
 **Next steps**: [Deploy an app that uses ODF](/docs/openshift?topic=openshift-odf-deploy-app)
 
-<br />
 
 ## Creating a VPC cluster for OpenShift Data Foundation
 {: #ocs-storage-prep}
@@ -220,7 +220,9 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
 {: shortdesc}
 
 1. Review the [VPC parameter reference](#odf-vpc-param-ref). When you enable the add-on, you can override the default values by specifying the `--param "key=value"` flag for each parameter that you want to override.
+
 1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.7.0` of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must specify the `--version` flag when you enable the add-on.
+
 1. Review the add-on options. Note that add-on options are only available for version `4.7.0` and later.
     ```sh
     ibmcloud oc cluster addon options --addon openshift-data-foundation
@@ -246,12 +248,19 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
 
 1. Enable the `openshift-data-foundation` add-on. If you also want to deploy ODF and create your storage cluster from the CLI, you can specify the `"ocsDeploy=true"` flag. If you want to override any of the default parameters, specify the `--param "key=value"` flag for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
 
+    **Example command for deploying the ODF add-on only**:
+    ```sh
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version>
+    ```
+    {: pre}
+
+    **Example command for deploying the ODF and creating a storage cluster with the default configuration parameters**:
     ```sh
     ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "ocsDeploy=true"
     ```
     {: pre}
 
-    **Example command for overriding the `osdSize` parameter**:
+    **Example command for deploying the ODF and creating a storage cluster while overriding the `osdSize` parameter**:
     ```sh
     ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "ocsDeploy=true" --param "osdSize=500Gi"
     ```
@@ -269,6 +278,8 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
     ```
     {: pre}
 
+1. If you enabled the add-on and didn't create a storage cluster, follow the steps to [create an ODF custom resource](#ocs-vpc-deploy-crd).
+
 ## Installing the OpenShift Data Foundation add-on from the console
 {: #install-odf-console-vpc}
 
@@ -283,7 +294,7 @@ To install ODF in your cluster, complete the following steps.
 ## Creating your ODF custom resource
 {: #ocs-vpc-deploy-crd}
 
-To create an ODF storage cluster in your VPC cluster or your cluster by using dynamic provisioning for your storage volumes, you can create a custom resource that is used to specify storage device details.
+To create an ODF storage cluster in your VPC cluster by using dynamic provisioning for your storage volumes, you can create a custom resource to specify storage device details.
 {: shortdesc}
 
 If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](#odf-create-cos), and created the Kubernetes secret in your cluster. When you create the ODF CRD in your cluster, ODF looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store that uses your {{site.data.keyword.cos_short}} HMAC credentials.
@@ -449,7 +460,7 @@ You can scale your ODF configuration by increasing the `numOfOsd` setting. When 
     ```
     {: pre}
 
-<br />
+
 
 ### Expanding ODF by adding worker nodes to your VPC cluster
 {: #odf-vpc-add-worker-nodes}
@@ -466,7 +477,6 @@ To increase the storage capacity in your storage cluster, add compatible worker 
 
 3. Save the `OcsCluster` custom resource file to reapply it to your cluster.
 
-<br />
 
 ## Limitations
 {: #ocs-limitations}
@@ -480,7 +490,7 @@ Review the following limitations for deploying ODF.
 
 [ODF storage class reference](/docs/openshift?topic=openshift-ocs-sc-ref)
 
-<br />
+
 
 ## Parameter reference
 {: #odf-vpc-param-ref}
@@ -503,7 +513,7 @@ Refer to the following parameters when you use the add-on or operator in VPC clu
 {: caption="ODF parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
 
-<br />
+
 
 
 

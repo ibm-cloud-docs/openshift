@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-25"
+lastupdated: "2021-08-30"
 
 keywords: object storage, plug-in, changelog
 
@@ -63,6 +63,7 @@ subcollection: openshift, object storage
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -119,7 +120,7 @@ Version 2.1.3 includes a new version of the `ibmc` plug-in. To update the `ibmc`
 Refer to the following tables for a summary of changes for each version of the [Object Storage plug-in](/docs/openshift?topic=openshift-object_storage).
 
 | Object Storage plug-in version | Supported? | {{site.data.keyword.openshiftshort}} version support | Supported architecture |
-| -------------------- | -----------|--------------------------- |
+| --- | --- |--- | --- |
 | 2.1.3 | Yes | >= 4.3  | x86 |
 | 2.1.2 | Yes | >= 4.3  | x86 |
 | 2.1.1 | Yes | 4.3 to 4.6 | x86 |

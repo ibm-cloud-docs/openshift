@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -477,7 +478,7 @@ To add {{site.data.keyword.filestorage_short}}:
     ```
     {: screen}
 
-4. {: #file_app_volume_mount}To mount the storage to your deployment, create a configuration `.yaml` file and specify the PVC that binds the PV.
+4. To mount the storage to your deployment, create a configuration `.yaml` file and specify the PVC that binds the PV. {: #file_app_volume_mount}
 
     If you have an app that requires a non-root user to write to the persistent storage, or an app that requires that the mount path is owned by the root user, see [Adding non-root user access to NFS {{site.data.keyword.filestorage_short}}](/docs/containers?topic=containers-nonroot) or [Enabling root permission for NFS {{site.data.keyword.filestorage_short}}](/docs/containers?topic=containers-nonroot).
     {: tip}
@@ -639,7 +640,7 @@ To use existing storage in a different cluster than the one where you provisione
 
 If you want to use existing storage that you provisioned earlier, but never used in your cluster before, you must make the storage available in the same subnet as your worker nodes.
 
-1. {: #external_storage}From the [IBM Cloud infrastructure portal](https://cloud.ibm.com/classic){: external}, click **Storage**.
+1. From the [IBM Cloud infrastructure portal](https://cloud.ibm.com/classic){: external}, click **Storage**. {: #external_storage}
 2. Click **{{site.data.keyword.filestorage_short}}** and from the **Actions** menu, select **Authorize Host**.
 3. Select **Subnets**.
 4. From the drop-down list, select the private VLAN subnet that your worker node is connected to. To find the subnet of your worker node, run `ibmcloud oc worker ls --cluster <cluster_name>` and compare the `Private IP` of your worker node with the subnet that you found in the drop-down list.
@@ -770,7 +771,7 @@ If you want to use existing storage that you provisioned earlier, but never used
     {: screen}
 
 
-You successfully created a PV and bound it to a PVC. Cluster users can now [mount the PVC](#file_app_volume_mount) to their deployments and start reading from and writing to the PV object.
+You successfully created a PV and bound it to a PVC. Cluster users can now [mount the PVC](/docs/openshift?topic=openshift-file_storage#file_app_volume_mount) to their deployments and start reading from and writing to the PV object.
 
 <br />
 

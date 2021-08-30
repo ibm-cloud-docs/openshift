@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -64,6 +64,7 @@ content-type: troubleshoot
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -129,7 +130,7 @@ You might also have issued the `remove` command shortly after the `replace` comm
 {: note}
 
 
-To enable automatical rebalancing, [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) or [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) your worker pool. Now, when you replace a worker node, another worker node is created for you.
+To enable automatic rebalancing, [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) or [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) your worker pool. Now, when you replace a worker node, another worker node is created for you.
 {: tsResolve}
 
 
