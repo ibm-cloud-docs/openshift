@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-30"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, oc, ibmcloud oc
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -274,7 +275,7 @@ Version 0.1 of the CLI plug-in is deprecated. To update to the latest version, s
 
 |Version|Release date|Changes|
 |-------|------------|-------|
-| 0.1.668 | 18 Dec 2018 | <ul><li>Changes the default API endpoint from <code>https://containers.bluemix.net</code> to <code>https://containers.cloud.ibm.com</code>.</li><li>Fixes bug so that command help text and error messages display properly for various languages.</li><li>Displays command help faster.</li></ul> |
+| 0.1.668 | 18 Dec 2018 | <ul><li>Changes the default API endpoint from <code>containers.bluemix.net</code> to <code>containers.cloud.ibm.com</code>.</li><li>Fixes bug so that command help text and error messages display properly for various languages.</li><li>Displays command help faster.</li></ul> |
 | 0.1.654 | 05 Dec 2018 | Updates the help text in various languages. |
 | 0.1.638 | 15 Nov 2018 |<ul><li>Adds the <a href="/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh"><code>ibmcloud oc cluster-refresh</code></a> alias to the <code>apiserver-refresh</code> command.</li><li>Adds the resource group name to the output of <code>ibmcloud oc cluster get</code> and <code>ibmcloud oc cluster ls</code>.</li></ul>|
 | 0.1.635 | 06 Nov 2018 | Adds commands for managing automatic updates of the Ingress ALB cluster add-on:<ul><li><a href="/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_disable"><code>ibmcloud oc alb autoupdate disable</code></a></li><li><a href="/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_enable"><code>ibmcloud oc alb autoupdate enable</code></a></li><li><a href="/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_get"><code>ibmcloud oc alb autoupdate get</code></a></li><li><code>ibmcloud oc alb rollback</code></li><li><a href="/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_update"><code>ibmcloud oc alb-update</code></a></li></ul> |

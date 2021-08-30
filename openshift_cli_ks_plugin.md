@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-26"
+lastupdated: "2021-08-30"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -1971,7 +1971,7 @@ ibmcloud oc worker add --cluster my_cluster --workers 3 --public-vlan my_public_
 ```
 {: pre}
 
-</br>
+
 ### `ibmcloud oc worker get`
 {: #cs_worker_get}
 
@@ -2680,7 +2680,7 @@ ibmcloud oc worker-pool rebalance --cluster my_cluster --worker-pool my_pool
 ```
 {: pre}
 
-</br>
+
 ### `ibmcloud oc worker-pool resize`
 {: #cs_worker_pool_resize}
 
@@ -4363,7 +4363,6 @@ ibmcloud oc nlb-dns monitor configure --cluster mycluster --nlb-host mycluster-a
 ```
 {: pre}
 
-</br>
 ### `ibmcloud oc nlb-dns monitor disable`
 {: #cs_nlb-dns-monitor-disable}
 
@@ -4477,7 +4476,7 @@ ibmcloud oc nlb-dns monitor get --cluster mycluster --nlb-host mycluster-a1b2cde
 ```
 {: pre}
 
-</br>
+
 ### `ibmcloud oc nlb-dns monitor ls`
 {: #cs_nlb-dns-monitor-ls}
 
@@ -5566,6 +5565,7 @@ If you need to list and work with resources from one region only, you can use th
 * Frankfurt (EU Central, eu-de): `https://eu-de.containers.cloud.ibm.com`
 * London (UK South, eu-gb): `https://eu-gb.containers.cloud.ibm.com`
 * Osaka (jp-osa): `https://jp-osa.containers.cloud.ibm.com`
+* São Paulo (br-sao): `https://br-sao.containers.cloud.ibm.com`
 * Sydney (AP South, au-syd): `https://au-syd.containers.cloud.ibm.com`
 * Tokyo (AP North, jp-tok): `https://jp-tok.containers.cloud.ibm.com`
 * Toronto (ca-tor): `https://ca-tor.containers.cloud.ibm.com`
@@ -5635,6 +5635,7 @@ If you need to list and work with resources from one region only, you can use th
 * Frankfurt (EU Central, eu-de): `https://eu-de.containers.cloud.ibm.com`
 * London (UK South, eu-gb): `https://eu-gb.containers.cloud.ibm.com`
 * Osaka (jp-osa): `https://jp-osa.containers.cloud.ibm.com`
+* São Paulo (br-sao): `https://br-sao.containers.cloud.ibm.com`
 * Sydney (AP South, au-syd): `https://au-syd.containers.cloud.ibm.com`
 * Tokyo (AP North, jp-tok): `https://jp-tok.containers.cloud.ibm.com`
 * Toronto (ca-tor): `https://ca-tor.containers.cloud.ibm.com`

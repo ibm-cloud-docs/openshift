@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-25"
+lastupdated: "2021-08-30"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic, roks
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -195,8 +196,11 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 {: note}
 
 1. Review the [parameter reference](#odf-sat-param-ref). When you enable the add-on, you can override the default values by specifying the `--param "key=value"` flag for each parameter that you want to override.
+
 1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.7.0` of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must specify the `--version` flag when you enable the add-on.
-1. Review the add-on options. Note that add-on options are only available for version `4.7.0` and later.
+
+1. Review the add-on options. Note that the default storage classes for `monStorageClassName` and `osdStorageClassName` are {{site.data.keyword.block_storage_is_short}} storage classes. For {{site.data.keyword.satelliteshort}}, you must override these values and specify a storage class that supports dynamic provisioning based on the block storage storage driver in your cluster. If you want to use local volumes on worker nodes instead of dynamically provisioned volumes, you must first [gather your local device information](#odf-sat-gather), then when you enable the add-on, specify `localfile` for `monStorageClassName` and `localblock` for `osdStorageClassName`.
+
     ```sh
     ibmcloud oc cluster addon options --addon openshift-data-foundation
     ```
@@ -221,14 +225,15 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 1. Enable the `openshift-data-foundation` add-on. If you also want to deploy ODF and create your storage cluster from the CLI, you can specify the `"ocsDeploy=true"` flag. If you want to override any of the default parameters, specify the `--param "key=value"` flag for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
 
+    **Example command for deploying the ODF add-on only**:
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "ocsDeploy=true"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version 4.7.0
     ```
     {: pre}
 
-    **Example command for overriding the `osdSize` parameter**:
+    **Example command for deploying the ODF and creating a storage cluster while overriding the default parameter**:
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "ocsDeploy=true" --param "osdSize=500Gi"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "ocsDeploy=true" --param "osdSize=500Gi" --param "monStorageClassName=<provider-storage-class>" --param "monStorageClassName=<provider-storage-class>"
     ```
     {: pre}
 
@@ -243,6 +248,8 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     oc get pods -A | grep ibm-ocs-operator-controller-manager
     ```
     {: pre}
+
+1. If you enabled the add-on and didn't create a storage cluster, follow the steps to [create an ODF custom resource](#ocs-vpc-deploy-crd).
 
 ## Installing the OpenShift Data Foundation add-on from the console
 {: #install-odf-console-sat}
@@ -259,7 +266,7 @@ To install ODF in your cluster, complete the following steps.
 
 
 ## Gathering your local block storage device details
-{: odf-sat}
+{: #odf-sat-gather}
 
 If you want to deploy ODF on a {{site.data.keyword.satelliteshort}} with local block storage devices, you must first gather the device paths to the disks on your worker nodes.
 {: shortdesc}

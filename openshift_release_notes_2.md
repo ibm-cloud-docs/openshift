@@ -4,10 +4,9 @@ copyright:
   years: 2014, 2021
 lastupdated: "2021-08-30"
 
-keywords: openshift, roks, rhoks, rhos
+keywords: openshift, roks, rhos, rhoks
 
 subcollection: openshift
-content-type: troubleshoot
 
 ---
 
@@ -108,31 +107,32 @@ content-type: troubleshoot
 {:video: .video}
   
 
-# VPC: Why doesn't replacing a worker node create a worker node?
-{: #auto-rebalance-off}
 
-**Infrastructure provider**: <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+# Release notes
+{: #rel-notes}
 
-
-When you [replace a worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace) or [update a VPC worker node](/docs/containers?topic=containers-update#vpc_worker_node), a worker node is not automatically added back to your cluster.
-{: tsSymptoms}
+Use the release notes to learn about the latest changes to the {{site.data.keyword.openshiftlong}} documentation that are grouped by month.
+{: shortdesc}
 
 
-By default, your worker pools are set to automatically rebalance when you replace a worker node. However, you might have disabled automatic rebalancing by manually removing a worker node, such as in the following scenario.
-{: tsCauses}
+## August 2021
+{: #release-aug-2021}
 
-1. You have a worker pool that automatically rebalances by default.
-2. You have a troublesome worker node in the worker pool that you removed individually, such as with the `ibmcloud oc worker rm` command.
-3. Now, automatic rebalancing is disabled for your worker pool, and is not reset unless you try to rebalance or resize the worker pool.
-4. You try to replace a worker node with the `ibmcloud oc worker replace` command or update a VPC worker node with the `ibmcloud oc worker replace --update` command. The worker node is removed, but another worker node is not added back to your worker pool.
+Review the release notes for August 2021.
+{: shortdesc}
 
-You might also have issued the `remove` command shortly after the `replace` command. If the `remove` command is processed before the `replace` command, the worker pool automatic rebalancing is still disabled, so your worker node is not replaced.
-{: note}
+### 30 August 2021
+{: #30aug2021}
+{: release-note}
 
+Review the release notes for 30 August 2021.
+{: shortdesc}
 
-To enable automatic rebalancing, [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) or [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) your worker pool. Now, when you replace a worker node, another worker node is created for you.
-{: tsResolve}
+New! Sao Paolo multizone region
+:   You can now create classic or VPC clusters in the Sao Paolo, Brazil [location](/docs/openshift?topic=openshift-regions-and-zones).
 
+{{site.data.keyword.block_storage_is_short}} add-on
+:   Version [4.0.0](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
 
-
-
+Worker node fix pack update
+:   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.43_1554_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4643_1554), [`4.7.24_1530_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4724_1530), and [`3.11.501_1602_openshift`](/docs/openshift?topic=openshift-openshift_changelog##311501_1602).

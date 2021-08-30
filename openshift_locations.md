@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-30"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -113,6 +114,7 @@ subcollection: openshift
 You can deploy {{site.data.keyword.openshiftlong}} clusters worldwide. When you create a cluster, its resources remain in the location that you deploy the cluster to. To work with your cluster, you can access the service via a global API endpoint.
 {: shortdesc}
 
+
 ![{{site.data.keyword.openshiftlong_notm}} locations](images/locations.png){: caption="Figure 1. {{site.data.keyword.openshiftlong_notm}} locations" caption-side="bottom"}
 
 ## {{site.data.keyword.openshiftlong_notm}} locations
@@ -136,7 +138,7 @@ The following image is used as an example to explain how {{site.data.keyword.ope
 
 |Type|Example|Description|
 |--- |--- |--- |
-|Geography|North America (`na`)|An organizational grouping that is based on geographic continents.|
+|Geography |North America (`na`)|An organizational grouping that is based on geographic continents.|
 |Country|Canada (`ca`)|The location's country within the geography.|
 |Metro|Mexico City (`mex-cty`), Dallas (`dal`)|The name of a city where 1 or more data centers are located. A metro might have a multizone region, such as Dallas, or might have a single zone region, such as Mexico City. If you create a cluster in a multizone region, the Kubernetes master and worker nodes can be spread across zones for high availability.|
 |Data center (zone)|Dallas 12 (`dal12`)|A physical location of the compute, network, and storage infrastructure and related cooling and power that host cloud services and applications. In a region, clusters can be spread across data centers, or zones, in an multizone architecture for high availability. Zones are isolated from each other, which ensures no shared single point of failure.|
@@ -222,10 +224,11 @@ Houston (hou02) is deprecated and becomes unsupported later this year. For more 
 | North America | Canada | `†` Toronto | ca-tor | ca-tor-1<br>ca-tor-2<br>ca-tor-3 | Toronto 1<br>Toronto 2<br>Toronto 3|
 | North America | United States | Dallas | us-south | us-south-1<br>us-south-2<br>us-south-3 | Dallas 1<br>Dallas 2<br>Dallas 3|
 | North America | United States | Washington DC | us-east | us-east-1<br>us-east-2<br>us-east-3 | Washington DC 1<br>Washington DC 2<br>Washington DC 3|
+| South America | Brazil | `†` São Paulo | br-sao | br-sao-1<br>br-sao-2<br>br-sao-3 | São Paulo 1<br>São Paulo 2<br>São Paulo 3|
 {: caption="Available multizone metro locations for VPC clusters in {{site.data.keyword.openshiftlong_notm}}." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the IBM Cloud geography of the location. The second column is where the country of the location. The third column is the metro that the location is in. The fourth column is the zone of the location. The fifth column is the name of the location."}
 
-`†` **Toronto multizone region**: Toronto is available as a multizone region for clusters on VPC infrastructure only.
+`†` **Toronto and São Paulo multizone regions**: Toronto and São Paulo are available as multizone regions for clusters on VPC infrastructure only.
 
 ### Resources in a single zone cluster
 {: #regions_single_zone}

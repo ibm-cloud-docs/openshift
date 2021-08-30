@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-25"
+lastupdated: "2021-08-30"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic, roks
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -278,8 +279,6 @@ Before you install OpenShift Data Foundation in a classic cluster, review the fo
 
 1. [Get your local device details](#odf-classic-get-devices).
 
-<br />
-
 ### Getting your device details
 {: #odf-classic-get-devices}
 
@@ -351,7 +350,6 @@ Before you install ODF, get the details of the local disks on your worker nodes.
 
 8. [Install ODF in your cluster](#install-odf-cli-classic).
 
-<br />
 
 ## Installing the add-on from the CLI
 {: #install-odf-cli-classic}
@@ -363,8 +361,19 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 {: note}
 
 1. Review the [parameter reference](#odf-classic-param-ref). When you enable the add-on, you can override the default values by specifying the `--param "key=value"` flag for each parameter that you want to override. Note that for Classic clusters, you must provide the device paths to the local disks that you want to use.
+
+You can install the add-on by using the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable).
+{: shortdesc}
+
+If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](#odf-create-cos), and created the Kubernetes secret in your cluster. When you create the ODF CRD in your cluster, ODF looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store that uses your {{site.data.keyword.cos_short}} HMAC credentials.
+{: note}
+
+1. Review the [parameter reference](#odf-classic-param-ref). When you enable the add-on, you can override the default values by specifying the `--param "key=value"` flag for each parameter that you want to override.
+
 1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.7.0` of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must specify the `--version` flag when you enable the add-on.
-1. Review the add-on options. Note that add-on options are only available for version `4.7.0` and later.
+
+1. Review the add-on options. Note that the default storage classes for `monStorageClassName` and `osdStorageClassName` are {{site.data.keyword.block_storage_is_short}} storage classes. For classic clusters, you must first [gather your local device information](#odf-classic-get-devices), and specify `localfile` for `monStorageClassName` and `localblock` for `osdStorageClassName` when you enable the add-on.
+
     ```sh
     ibmcloud oc cluster addon options --addon openshift-data-foundation
     ```
@@ -389,14 +398,15 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 1. Enable the `openshift-data-foundation` add-on. If you also want to deploy ODF and create your storage cluster from the CLI, you can specify the `"ocsDeploy=true"` flag. If you want to override any of the default parameters, specify the `--param "key=value"` flag for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
 
+    **Example command for deploying the ODF add-on only**:
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "ocsDeploy=true"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version 4.7.0
     ```
     {: pre}
 
-    **Example command for overriding the `osdSize` parameter**:
+    **Example command for deploying the ODF and creating a storage cluster while overriding the default parameter**:
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "ocsDeploy=true" --param "osdSize=500Gi"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "ocsDeploy=true" --param "osdSize=500Gi" --param "monStorageClassName=localfile" --param "monStorageClassName=localblock" --param "osdSize=1"
     ```
     {: pre}
 
@@ -412,7 +422,9 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: pre}
 
-<br />
+1. If you enabled the add-on and didn't create a storage cluster, follow the steps to [create an ODF custom resource](#ocs-vpc-deploy-crd).
+
+
 
 ## Installing the OpenShift Data Foundation add-on from the console
 {: #install-odf-console-classic}

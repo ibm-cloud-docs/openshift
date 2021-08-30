@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-27"
+lastupdated: "2021-08-30"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -132,7 +132,8 @@ Have you created a cluster before and are just looking for quick example command
 {: shortdesc}
 
 
-Looking for a fast way to create a cluster from the UI? Try out [Automating cluster creation with {{site.data.keyword.bpfull_notm}} templates](/docs/containers?topic=containers-templates).
+
+Looking for a fast way to create a cluster from the UI? Try out [Automating cluster creation with {{site.data.keyword.bpfull_notm}} templates](/docs/openshift?topic=openshift-templates).
 {: preview}
 
 

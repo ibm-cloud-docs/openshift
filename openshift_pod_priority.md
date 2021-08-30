@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -123,8 +124,8 @@ By setting pod priority, you can help prevent lower priority workloads from impa
 Make sure that you have [set up proper user access](/docs/openshift?topic=openshift-users#users) to your cluster, and if applicable, [security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc#oc_sccs). Access policies and SCCs can help prevent untrusted users from deploying high priority pods that prevent other pods from scheduling.
 {: tip}
 
-{: #priority_scheduling}
-**How does priority scheduling and preemption work?**
+
+**How does priority scheduling and preemption work?** {: #priority_scheduling}
 
 In general, pending pods that have a higher priority are scheduled before lower prioritized pods. If you do not have enough resources left in your worker nodes, the {{site.data.keyword.openshiftshort}} controller can preempt (remove) pods to free up enough resources for the higher prioritized pods to be scheduled. Preemption is also affected by graceful termination periods, pod disruption budgets, and worker node affinity.
 
