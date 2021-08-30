@@ -27,9 +27,9 @@ Red Hat OpenShift on IBM Cloud
     Learning paths
         openshift_path_admin.md
         openshift_path_dev.md
-    {: .navgroup-end}
 
     openshift_release_notes_2.md
+    {: .navgroup-end}
 
     {: .navgroup id="tutorial"}
     [Tutorials library for OpenShift](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20)

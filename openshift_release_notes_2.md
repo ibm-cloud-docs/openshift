@@ -129,8 +129,7 @@ Review the release notes for 30 August 2021.
 {: shortdesc}
 
 
-{{site.data.keyword.block_storage_is_short}} add-on
-:   Version [4.0.0](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
-
 Worker node fix pack update
 :   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.43_1554_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4643_1554), [`4.7.24_1530_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4724_1530), and [`3.11.501_1602_openshift`](/docs/openshift?topic=openshift-openshift_changelog##311501_1602).
+
+

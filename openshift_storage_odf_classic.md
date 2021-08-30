@@ -422,7 +422,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: pre}
 
-1. If you enabled the add-on and didn't create a storage cluster, follow the steps to [create an ODF custom resource](#ocs-vpc-deploy-crd).
+1. If you enabled the add-on and didn't create a storage cluster, follow the steps to [create an ODF custom resource](#ocs-classic-deploy-crd).
 
 
 

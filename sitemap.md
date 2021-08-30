@@ -218,6 +218,16 @@ subcollection: openshift
 * [Add integrations](/docs/openshift?topic=openshift-learning-path-dev#dev_integrate)
 
 
+## Release notes
+{: #sitemap_release_notes}
+
+
+[Release notes](/docs/openshift?topic=openshift-rel-notes)
+
+* [August 2021](/docs/openshift?topic=openshift-rel-notes#release-aug-2021)
+    * [30 August 2021](/docs/openshift?topic=openshift-rel-notes#30aug2021)
+
+
 ## Tutorials library for OpenShift
 
 [Tutorials library for OpenShift](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20){: external}
@@ -1424,6 +1434,23 @@ subcollection: openshift
     * [Cleaning up ODF](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-cleanup)
 
 * [Troubleshooting ODF](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-troubleshooting-gather)
+
+
+## Managing the Multi-Cloud Object Gateway
+{: #sitemap_managing_the_multi-cloud_object_gateway}
+
+
+[Managing the Multi-Cloud Object Gateway](/docs/openshift?topic=openshift-odf-manage-NooBaa)
+
+* [Setting up backing stores by using the NooBaa CLI](/docs/openshift?topic=openshift-odf-manage-NooBaa#odf-backingstore)
+
+* [Creating a bucket class that uses two backing stores with a mirror placement policy](/docs/openshift?topic=openshift-odf-manage-NooBaa#odf-bucketclass)
+
+* [Creating a storage class](/docs/openshift?topic=openshift-odf-manage-NooBaa#odf-sc)
+
+* [Creating an Object Bucket Claim](/docs/openshift?topic=openshift-odf-manage-NooBaa#creating-an-object-bucket-claim)
+
+* [Deploying an s3 app in the Multicloud Object Gateway](/docs/openshift?topic=openshift-odf-manage-NooBaa#mcg-deploy-app)
 
 
 ## Storage class reference
