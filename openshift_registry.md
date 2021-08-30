@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-20"
+lastupdated: "2021-08-30"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -536,7 +537,7 @@ Want to learn more about how builds, image streams, and the internal registry wo
     </tr>
     <tr>
     <td><code>default/<em>&lt;image&lt;:&lt;tag&lt;</em></code></td>
-    <td>Enter the information for the internal image stream that you create from the {{site.data.keyword.registrylong_notm}} tagged image. You create this image stream in the <code>default</code> project, which is also the project where the image stream is created if you do not specify a project. The values for <code><image>:<tag></code> typically match the values that you previously retrieved.</td>
+    <td>Enter the information for the internal image stream that you create from the {{site.data.keyword.registrylong_notm}} tagged image. You create this image stream in the <code>default</code> project, which is also the project where the image stream is created if you do not specify a project. The values for <code>&lt;image&gt;:&lt;tag&gt;</code> typically match the values that you previously retrieved.</td>
     </tr>
     <tr>
     <td><code>--reference-policy=local</code></td>

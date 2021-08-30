@@ -233,7 +233,7 @@ To use a priority class:
     <tr>
     <td><code>globalDefault</code></td>
     <td>Optional: Set the field to <code>true</code> to make this priority class the global default that is applied to every pod that is scheduled without a <code>priorityClassName</code> value. Only one priority class in your cluster can be set as the global default. If there is no global default, pods with no <code>priorityClassName</code> specified have a priority of zero (<code>0</code>).</br></br>
-    The <a href="#default_priority_class">default priority classes</a> do not set a <code>globalDefault</code>. If you created other priority classes in your cluster, you can check to make sure that they do not set a <code>globalDefault</code> by running <code>oc describe priorityclass <name></code>.</td>
+    The <a href="#default_priority_class">default priority classes</a> do not set a <code>globalDefault</code>. If you created other priority classes in your cluster, you can check to make sure that they do not set a <code>globalDefault</code> by running <code>oc describe priorityclass &lt;name&gt;</code>.</td>
     </tr>
     <tr>
     <td><code>description</code></td>

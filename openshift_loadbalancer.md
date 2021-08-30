@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-30"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -170,7 +171,7 @@ To set up an NLB 1.0 service in a multizone cluster:
         </tr>
         <tr>
         <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan</code></td>
-        <td>Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run <code>ibmcloud oc vlan ls --zone <zone></code>.</td>
+        <td>Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run <code>ibmcloud oc vlan ls --zone &lt;zone&gt;</code>.</td>
         </tr>
         <tr>
         <td><code>selector</code></td>
@@ -314,7 +315,7 @@ To create an NLB 1.0 service in a single-zone cluster:
         </tr>
         <tr>
           <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan:</code>
-          <td>Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run <code>ibmcloud oc vlan ls --zone <zone></code>.</td>
+          <td>Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run <code>ibmcloud oc vlan ls --zone &lt;zone&gt;</code>.</td>
         </tr>
         <tr>
           <td><code>selector</code></td>
