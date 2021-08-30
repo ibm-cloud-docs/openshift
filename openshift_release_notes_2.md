@@ -128,8 +128,6 @@ Review the release notes for August 2021.
 Review the release notes for 30 August 2021.
 {: shortdesc}
 
-New! Sao Paolo multizone region
-:   You can now create classic or VPC clusters in the Sao Paolo, Brazil [location](/docs/openshift?topic=openshift-regions-and-zones).
 
 {{site.data.keyword.block_storage_is_short}} add-on
 :   Version [4.0.0](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
