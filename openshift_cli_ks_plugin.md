@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-08-31"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -916,7 +916,7 @@ Free clusters are not available in VPC.
 {: note}
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--version 4.6_openshift] --cos-instance COS_CRN --workers NUMBER_WORKERS_PER_ZONE [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement cloud_pak] [--skip-advance-permissions-check] [-q]
+ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--version 4.6_openshift] --cos-instance COS_CRN --workers NUMBER_WORKERS_PER_ZONE [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement cloud_pak] --kms-instance KMS_INSTANCE_ID --crk ROOT_KEY_ID][--skip-advance-permissions-check] [-q]
 ```
 {: pre}
 
@@ -984,6 +984,12 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 
 <dt><code><strong>--skip-advance-permissions-check</strong></code></dt>
 <dd>Optional: Skip [the check for infrastructure permissions](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get) before creating the cluster. Note that if you do not have the correct infrastructure permissions, the cluster creation might only partially succeed, such as the master provisioning but the worker nodes unable to provision. You might skip the permissions check if you want to continue an otherwise blocked operation, such as when you use multiple infrastructure accounts and can handle the infrastructure resources separately from the master, if needed later.</dd>
+
+<dt><code>--kms-instance <em>KMS_INSTANCE_ID</em></code></dt>
+<dd>Optional: Include the ID of a key management service (KMS) instance to use to encrypt the local disk on the worker nodes in the <code>default</code> worker pool. To list available KMS instances, run <code>ibmcloud oc kms instance ls</code>. If you include this option, you must also include the <code>--crk</code> option.<p class="note">Before you can use KMS encryption, you must create a KMS instance and set up the required service authorization in IAM. See [Managing encryption for the worker nodes in your cluster](/docs/openshift?topic=openshift-encryption#worker-encryption).</p></dd>
+
+<dt><code>--crk <em>ROOT_KEY</em>/code></dt>
+<dd>Optional: Include the ID of the root key in the KMS instance to use to encrypt the local disk on the worker nodes in the <code>default</code> worker pool. To list available root keys, run <code>ibmcloud oc kms crk ls --instance-id</code>. If you include this option, you must also include the <code>--kms-instance</code> option.<p class="note">Before you can use KMS encryption, you must create a KMS instance and set up the required service authorization in IAM. See [Managing encryption for the worker nodes in your cluster](/docs/openshift?topic=openshift-encryption#worker-encryption).</p></dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -2434,7 +2440,7 @@ Add a worker pool to a VPC cluster. No worker nodes are created until you [add z
 {: shortdesc}
 
 ```sh
-ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> [--vpc-id <VPC ID>] [--label KEY1=VALUE1] [--entitlement cloud_pak] [-q] [--output json]
+ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> [--vpc-id <VPC ID>] [--label KEY1=VALUE1] [--entitlement cloud_pak] [--kms-instance KMS_INSTANCE_ID --crk ROOT_KEY_ID] [-q] [--output json]
 ```
 {: pre}
 
@@ -2465,6 +2471,12 @@ ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <clu
 
 <dt><code><strong>--entitlement cloud_pak</strong></code></dt>
 <dd>Include this flag only if you use this cluster with an [IBM Cloud Pak&trade;](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an {{site.data.keyword.openshiftshort}} entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/index.html). After creation, your worker pool does not charge you the {{site.data.keyword.openshiftshort}} license fee for your entitled worker nodes.<p class="important">Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.</p></dd>
+
+<dt><code>--kms-instance <em>KMS_INSTANCE_ID</em></code></dt>
+<dd>Optional: Include the ID of a key management service (KMS) instance to use to encrypt the local disk on the worker nodes in the <code>default</code> worker pool. To list available KMS instances, run <code>ibmcloud oc kms instance ls</code>. If you include this option, you must also include the <code>--crk</code> option. For more information including steps to create , see [Managing encryption for the worker nodes in your cluster](/docs/openshift?topic=openshift-encryption#worker-encryption).</dd>
+
+<dt><code>--crk <em>ROOT_KEY</em>/code></dt>
+<dd>Optional: Include the ID of the root key in the KMS instance to use to encrypt the local disk on the worker nodes in this worker pool. To list available root keys, run <code>ibmcloud oc kms crk ls --instance-id</code>. If you include this option, you must also include the <code>--kms-instance</code> option.<p class="note">Before you can use KMS encryption, you must create a KMS instance and set up the required service authorization in IAM. See [Managing encryption for the worker nodes in your cluster](/docs/openshift?topic=openshift-encryption#worker-encryption).</p></dd>
 
 <dt><code>-q</code>
 <dd>Optional: Do not show the message of the day or update reminders.</dd>
@@ -5565,6 +5577,7 @@ If you need to list and work with resources from one region only, you can use th
 * Frankfurt (EU Central, eu-de): `https://eu-de.containers.cloud.ibm.com`
 * London (UK South, eu-gb): `https://eu-gb.containers.cloud.ibm.com`
 * Osaka (jp-osa): `https://jp-osa.containers.cloud.ibm.com`
+* São Paulo (br-sao): `https://br-sao.containers.cloud.ibm.com`
 * Sydney (AP South, au-syd): `https://au-syd.containers.cloud.ibm.com`
 * Tokyo (AP North, jp-tok): `https://jp-tok.containers.cloud.ibm.com`
 * Toronto (ca-tor): `https://ca-tor.containers.cloud.ibm.com`
@@ -5634,6 +5647,7 @@ If you need to list and work with resources from one region only, you can use th
 * Frankfurt (EU Central, eu-de): `https://eu-de.containers.cloud.ibm.com`
 * London (UK South, eu-gb): `https://eu-gb.containers.cloud.ibm.com`
 * Osaka (jp-osa): `https://jp-osa.containers.cloud.ibm.com`
+* São Paulo (br-sao): `https://br-sao.containers.cloud.ibm.com`
 * Sydney (AP South, au-syd): `https://au-syd.containers.cloud.ibm.com`
 * Tokyo (AP North, jp-tok): `https://jp-tok.containers.cloud.ibm.com`
 * Toronto (ca-tor): `https://ca-tor.containers.cloud.ibm.com`

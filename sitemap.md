@@ -671,6 +671,10 @@ subcollection: openshift
   * [Enabling KMS encryption for the cluster through the console](/docs/openshift?topic=openshift-encryption#kms_ui)
   * [Rotating the root key for your cluster](/docs/openshift?topic=openshift-encryption#kms_rotate)
 * [Verifying secret encryption](/docs/openshift?topic=openshift-encryption#verify_kms)
+* [Managing encryption for the worker nodes in your cluster](/docs/openshift?topic=openshift-encryption#worker-encryption)
+  * [Classic worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-classic)
+  * [VPC worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-vpc)
+  * [{{site.data.keyword.satelliteshort}} worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-satellite)
 * [Encrypting data in classic clusters by using IBM Cloud Data Shield (beta)](/docs/openshift?topic=openshift-encryption#datashield)
 
 [Configuring security context constraints](/docs/openshift?topic=openshift-openshift_scc)
