@@ -125,11 +125,14 @@ Review the release notes for August 2021.
 {: #31aug2021}
 {: release-note}
 
-Review the release notes for 30 August 2021.
+Review the release notes for 31 August 2021.
 {: shortdesc}
 
+Istio add-on changelog
+:   [Version 1.11.1](/docs/containers?topic=containers-istio-changelog#1111) of the Istio managed add-on is released.
+
 New! Sao Paolo multizone region
-:   You can now create classic or VPC clusters in the Sao Paolo, Brazil [location](/docs/containers?topic=containers-regions-and-zones).
+:   You can now create classic or VPC clusters in the Sao Paolo, Brazil [location](/docs/openshift?topic=openshift-regions-and-zones).
 
 ### 30 August 2021
 {: #30aug2021}
@@ -142,5 +145,4 @@ Review the release notes for 30 August 2021.
 
 Worker node fix pack update
 :   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.43_1554_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4643_1554), [`4.7.24_1530_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4724_1530), and [`3.11.501_1602_openshift`](/docs/openshift?topic=openshift-openshift_changelog##311501_1602).
-
 
