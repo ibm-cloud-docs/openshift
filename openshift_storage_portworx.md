@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-08-31"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -272,7 +273,7 @@ Databases for etcd is a managed etcd service that securely stores and replicates
 1. Make sure that you have the [**Administrator** platform access role in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM)](/docs/account?topic=account-assign-access-resources#assign-new-access) for the Databases for etcd service.  
 
 2. Provision your Databases for etcd service instance.
-    1. Open the [Databases for etcd catalog page](https://cloud.ibm.com/catalog/services/databases-for-etcd)
+    1. Open the [Databases for etcd catalog page](https://cloud.ibm.com/databases/databases-for-etcd/create)
     2. Enter a name for your service instance, such as `px-etcd`.
     3. Select the region where you want to deploy your service instance. For optimal performance, choose the region that your cluster is in.
     4. Select the same resource group that your cluster is in.
