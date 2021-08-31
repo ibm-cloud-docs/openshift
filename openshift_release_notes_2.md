@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-08-31"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -121,12 +121,23 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 Review the release notes for August 2021.
 {: shortdesc}
 
+### 31 August 2021
+{: #31aug2021}
+{: release-note}
+
+Review the release notes for 30 August 2021.
+{: shortdesc}
+
+New! Sao Paolo multizone region
+:   You can now create classic or VPC clusters in the Sao Paolo, Brazil [location](/docs/containers?topic=containers-regions-and-zones).
+
 ### 30 August 2021
 {: #30aug2021}
 {: release-note}
 
 Review the release notes for 30 August 2021.
 {: shortdesc}
+
 
 
 Worker node fix pack update

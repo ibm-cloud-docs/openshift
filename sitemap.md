@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-08-31"
 
 keywords: openshift
 subcollection: openshift
@@ -225,6 +225,7 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-rel-notes)
 
 * [August 2021](/docs/openshift?topic=openshift-rel-notes#release-aug-2021)
+    * [31 August 2021](/docs/openshift?topic=openshift-rel-notes#31aug2021)
     * [30 August 2021](/docs/openshift?topic=openshift-rel-notes#30aug2021)
 
 
@@ -1274,6 +1275,7 @@ subcollection: openshift
 * [Deciding on the object storage configuration](/docs/openshift?topic=openshift-object_storage#configure_cos)
 * [VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#cos_auth_ip)
 * [Adding object storage to apps](/docs/openshift?topic=openshift-object_storage#add_cos)
+  * [Creating a deployment](/docs/openshift?topic=openshift-object_storage#create-cos-deployment-steps)
 * [Using object storage in a stateful set](/docs/openshift?topic=openshift-object_storage#cos_statefulset)
 * [Backing up and restoring data](/docs/openshift?topic=openshift-object_storage#cos_backup_restore)
 * [Adding your {{site.data.keyword.cos_full_notm}} credentials to the default storage classes](/docs/openshift?topic=openshift-object_storage#storage_class_custom)
