@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-17"
+lastupdated: "2021-08-31"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -217,31 +218,31 @@ If you enabled only the private cloud service endpoint during cluster creation, 
     * **Log in as admin**:
         1. Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
         2. Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
-          ```
-          ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --endpoint private
-          ```
-          {: pre}
+            ```
+            ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --endpoint private
+            ```
+            {: pre}
 
     * **Log in with an API key**: See [Using an API key to log in to {{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-access_cluster#access_api_key).
     * **Log in with {{site.data.keyword.cloud_notm}} passcode**:
         1. Get the **Private Service Endpoint URL** of your cluster in the output of the following command.
-          ```
-          ibmcloud oc cluster get -c <cluster_name_or_ID>
-          ```
-          {: pre}
+            ```
+            ibmcloud oc cluster get -c <cluster_name_or_ID>
+            ```
+            {: pre}
 
         2. In your browser, open the following {{site.data.keyword.cloud_notm}} IAM passcode website.
-          ```
-          https://iam.cloud.ibm.com/identity/passcode
-          ```
-          {: codeblock}
+            ```
+            https://iam.cloud.ibm.com/identity/passcode
+            ```
+            {: codeblock}
 
         3. Log in with your IBMid and copy the passcode.
         4. Log in to your cluster with the passcode.
-          ```
-          oc login -u passcode -p <iam_passcode> --server=<private_service_endpoint_URL>
-          ```
-          {: pre}
+            ```
+            oc login -u passcode -p <iam_passcode> --server=<private_service_endpoint_URL>
+            ```
+            {: pre}
 
 3. Verify that the `oc` commands run properly with your cluster through the private cloud service endpoint by checking the version.
     ```
@@ -368,31 +369,31 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
     * **Log in as admin**:
         1. Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
         2. Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
-          ```
-          ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --endpoint private
-          ```
-          {: pre}
+            ```
+            ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --endpoint private
+            ```
+            {: pre}
 
     * **Log in with an API key**: See [Using an API key to log in to {{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-access_cluster#access_api_key).
     * **Log in with {{site.data.keyword.cloud_notm}} passcode**:
         1. Get the **Private Service Endpoint URL** of your cluster in the output of the following command.
-          ```
-          ibmcloud oc cluster get -c <cluster_name_or_ID>
-          ```
-          {: pre}
+            ```
+            ibmcloud oc cluster get -c <cluster_name_or_ID>
+            ```
+            {: pre}
 
         2. In your browser, open the following {{site.data.keyword.cloud_notm}} IAM passcode website.
-          ```
-          https://iam.cloud.ibm.com/identity/passcode
-          ```
-          {: codeblock}
+            ```
+            https://iam.cloud.ibm.com/identity/passcode
+            ```
+            {: codeblock}
 
         3. Log in with your IBMid and copy the passcode.
         4. Log in to your cluster with the passcode.
-          ```
-          oc login -u passcode -p <iam_passcode> --server=<private_service_endpoint_URL>
-          ```
-          {: pre}
+            ```
+            oc login -u passcode -p <iam_passcode> --server=<private_service_endpoint_URL>
+            ```
+            {: pre}
 
 8. Verify that the `oc` commands run properly with your cluster through the private cloud service endpoint by checking the version.
     ```
@@ -525,7 +526,12 @@ Making your location and cluster subdomains available outside of your hosts' pri
     ```
     {: pre}
 
-2. Retrieve the matching public IP addresses of your hosts from your cloud provider.
+2. Retrieve the matching public IP addresses of your hosts
+    ```
+    ibmcloud sat hosts ls --location <location_name_or_ID>
+    ```
+    {: pre}
+
 3. Update the location subdomain DNS records with the public IP addresses of each host in the control plane.
     ```
     ibmcloud sat location dns register --location <location_name_or_ID> --ip <host_IP> --ip <host_IP> --ip <host_IP>
@@ -1136,5 +1142,4 @@ Many cluster add-ons, plug-ins, and other third-party extensions use admission c
 **I need help with a broken webhook. What can I do?**
 
 See [Cluster cannot update because of broken webhook](/docs/containers?topic=containers-webhooks_update).
-
 

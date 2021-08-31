@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-08-31"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -120,7 +120,7 @@ If you want to use {{site.data.keyword.cos_full_notm}} in a private cluster with
 With version 2.0.9, there is a new version of the `ibmc` plug-in. Storage classes created with earlier chart versions are immutable and cannot be upgraded. To remove the storage classes from previous versions and install the latest storage classes in your cluster, uninstall and re-install the {{site.data.keyword.cos_full_notm}} plugin. For more information, see [Updating the {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).
 {: note}
 
-<br />
+
 
 ## Creating your object storage service instance
 {: #create_cos_service}
@@ -132,7 +132,7 @@ The {{site.data.keyword.cos_full_notm}} plug-in is configured to work with any s
 
 Follow these steps to create an {{site.data.keyword.cos_full_notm}} service instance. If you plan to use a local Cloud Object Storage server or a different s3 API endpoint, refer to the provider documentation to set up your Cloud Object Storage instance.
 
-1. Open the [{{site.data.keyword.cos_full_notm}} catalog page](https://cloud.ibm.com/catalog/services/cloud-object-storage).
+1. Open the [{{site.data.keyword.cos_full_notm}} catalog page](https://cloud.ibm.com/objectstorage/create).
 2. Enter a name for your service instance, such as `cos-backup`, and select the same resource group that your cluster is in. To view the resource group of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.   
 3. Review the [plan options](https://www.ibm.com/cloud/object-storage/pricing/#s3api){: external} for pricing information and select a plan.
 4. Click **Create**. The service details page opens.
@@ -153,7 +153,7 @@ Before you begin, [Create your object storage service instance](#create_cos_serv
 8. Make note of the **apikey** to use OAuth2 tokens to authenticate with the {{site.data.keyword.cos_full_notm}} service. For HMAC authentication, in the **cos_hmac_keys** section, note the **access_key_id** and the **secret_access_key**.
 9. [Store your service credentials in a Kubernetes secret inside the cluster](#create_cos_secret) to enable access to your {{site.data.keyword.cos_full_notm}} service instance.
 
-<br />
+
 
 ## Creating a secret for the object storage service credentials
 {: #create_cos_secret}
@@ -237,7 +237,7 @@ To create a secret for your {{site.data.keyword.cos_full_notm}} credentials:
 
 6. **Optional**: [Add your secret to the default storage classes](#storage_class_custom).
 
-<br />
+
 
 
 ## Installing the IBM Cloud Object Storage plug-in
@@ -499,8 +499,8 @@ If you're having trouble installing the {{site.data.keyword.cos_full_notm}} plug
 You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the latest version.
 {: shortdesc}
 
-**Before you begin**:<br>
-Check the name of your {{site.data.keyword.cos_full_notm}} plug-in Helm release and the version of the plug-in that is installed in your cluster.
+
+1. Get the name of your {{site.data.keyword.cos_full_notm}} plug-in Helm release and the version of the plug-in that is installed in your cluster.
     ```
     helm ls -A | grep object
     ```
@@ -513,49 +513,45 @@ Check the name of your {{site.data.keyword.cos_full_notm}} plug-in Helm release 
     ```
     {: screen}
 
-    1. Remove the Helm chart from your cluster.
+1. Remove the Helm chart from your cluster.
     ```
     helm uninstall <release_name> -n <namespace>
     ```
     {: pre}
 
-    1. Follow the steps in [Installing the {{site.data.keyword.cos_full_notm}} plug-in](#install_cos) to install the latest version of the {{site.data.keyword.cos_full_notm}} plug-in.
+1. Follow the steps in [Installing the {{site.data.keyword.cos_full_notm}} plug-in](#install_cos) to install the latest version of the {{site.data.keyword.cos_full_notm}} plug-in.
 
-    1. Update the {{site.data.keyword.cloud_notm}} Helm repo to retrieve the latest version of all Helm charts in this repo.
+1. Update the {{site.data.keyword.cloud_notm}} Helm repo to retrieve the latest version of all Helm charts in this repo.
     ```
     helm repo update
     ```
     {: pre}
 
-    1. Update the {{site.data.keyword.cos_full_notm}} `ibmc` Helm plug-in to the latest version.
+1. Update the {{site.data.keyword.cos_full_notm}} `ibmc` Helm plug-in to the latest version.
     ```
     helm ibmc --update
     ```
     {: pre}
 
-    1. Install the latest version of the `ibm-object-storage-plugin`. </br>
+1. Install the latest version of the `ibm-object-storage-plugin`. </br>
     ```
     helm ibmc upgrade <release_name> ibm-helm/ibm-object-storage-plugin --force --set license=true
     ```
     {: pre}
 
-    4. Verify that the `ibmcloud-object-storage-plugin` is successfully upgraded.  
+1. Verify that the `ibmcloud-object-storage-plugin` is successfully upgraded. The upgrade of the plug-in is successful when you see `deployment "ibmcloud-object-storage-plugin" successfully rolled out` in your CLI output.
     ```
     oc rollout status deployment/ibmcloud-object-storage-plugin -n kube-system
     ```
     {: pre}
 
-    The upgrade of the plug-in is successful when you see `deployment "ibmcloud-object-storage-plugin" successfully rolled out` in your CLI output.
-
-    1. Verify that the `ibmcloud-object-storage-driver` is successfully upgraded.
+1. Verify that the `ibmcloud-object-storage-driver` is successfully upgraded. The upgrade is successful when you see `daemon set "ibmcloud-object-storage-driver" successfully rolled out` in your CLI output.
     ```
     oc rollout status ds/ibmcloud-object-storage-driver -n kube-system
     ```
     {: pre}
 
-    The upgrade is successful when you see `daemon set "ibmcloud-object-storage-driver" successfully rolled out` in your CLI output.
-
-    1. Verify that the {{site.data.keyword.cos_full_notm}} pods are in a `Running` state.
+1. Verify that the {{site.data.keyword.cos_full_notm}} pods are in a `Running` state.
     ```
     oc get pods -n <namespace> -o wide | grep object-storage
     ```
@@ -643,7 +639,6 @@ To remove the `ibmc` Helm plugin and the `ibm-object-storage-plugin`:
 
     The `ibmc` plug-in is removed successfully if the `ibmc` plug-in is not listed in your CLI output.
 
-    <br />
 
 ## Deciding on the object storage configuration
 {: #configure_cos}
@@ -705,63 +700,23 @@ To remove the `ibmc` Helm plugin and the `ibm-object-storage-plugin`:
     ```
     {: screen}
 
-    <table summary="The columns are read from left to right. The first column has the component of the storage class. The second column describes the component.">
-    <caption>Understanding the storage class details</caption>
-    <thead>
-    <th>Component</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>ibm.io/chunk-size-mb</code></td>
-    <td>The size of a data chunk that is read from or written to {{site.data.keyword.cos_full_notm}} in megabytes. Storage classes with <code>perf</code> in their name are set up with 52 megabytes. Storage classes without <code>perf</code> in their name use 16 megabyte chunks. For example, if you want to read a file that is <code>1GB</code>, the plug-in reads this file in multiple 16 or 52-megabyte chunks. </td>
-    </tr>
-    <tr>
-    <td><code>ibm.io/curl-debug</code></td>
-    <td>Enable the logging of requests that are sent to the {{site.data.keyword.cos_full_notm}} service instance. If enabled, logs are sent to <code>syslog</code> and you can <a href="/docs/containers?topic=containers-health#logging">forward the logs to an external logging server</a>. By default, all storage classes are set to <strong>false</strong> to disable this logging feature. </td>
-    </tr>
-    <tr>
-    <td><code>ibm.io/debug-level</code></td>
-    <td>The logging level that is set by the {{site.data.keyword.cos_full_notm}} plug-in. All storage classes are set up with the <strong>WARN</strong> logging level. </td>
-    </tr>
-    <tr>
-    <td><code>ibm.io/iam-endpoint</code></td>
-    <td>The API endpoint for {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). </td>
-    </tr>
-    <tr>
-    <td><code>ibm.io/kernel-cache</code></td>
-    <td>Enable or disable the kernel buffer cache for the volume mount point. If enabled, data that is read from {{site.data.keyword.cos_full_notm}} is stored in the kernel cache to ensure fast read access to your data. If disabled, data is not cached and always read from {{site.data.keyword.cos_full_notm}}. Kernel cache is enabled for <code>standard</code> and <code>flex</code> storage classes, and disabled for <code>cold</code> and <code>vault</code> storage classes. </td>
-    </tr>
-    <tr>
-    <td><code>ibm.io/multireq-max</code></td>
-    <td>The maximum number of parallel requests that can be sent to the {{site.data.keyword.cos_full_notm}} service instance to list files in a single directory. All storage classes are set up with a maximum of 20 parallel requests.  </td>
-    </tr>
-    <tr>
-    <td><code>ibm.io/object-store-endpoint</code></td>
-    <td>The API endpoint to use to access the bucket in your {{site.data.keyword.cos_full_notm}} service instance. The endpoint is automatically set based on the region of your cluster. <strong>Note</strong>: If you want to access an existing bucket that is located in a different region than the one where your cluster is in, you must create a <a href="/docs/openshift?topic=openshift-kube_concepts#customized_storageclass">custom storage class</a> and use the API endpoint for your bucket.</td>
-    </tr>
-    <tr>
-    <td><code>ibm.io/object-store-storage-class</code></td>
-    <td>The name of the storage class. </td>
-    </tr>
-    <tr>
-    <td><code>ibm.io/parallel-count</code></td>
-    <td>The maximum number of parallel requests that can be sent to the {{site.data.keyword.cos_full_notm}} service instance for a single read or write operation. Storage classes with <code>perf</code> in their name are set up with a maximum of 20 parallel requests. Storage classes without <code>perf</code> are set up with two parallel requests by default.  </td>
-    </tr>
-    <tr>
-    <td><code>ibm.io/s3fs-fuse-retry-count</code></td>
-    <td>The maximum number of retries for a read or write operation before the operation is considered unsuccessful. All storage classes are set up with a maximum of five retries.  </td>
-    </tr>
-    <tr>
-    <td><code>ibm.io/stat-cache-size</code></td>
-    <td>The maximum number of records that are kept in the {{site.data.keyword.cos_full_notm}} metadata cache. Every record can take up to 0.5 kilobytes. All storage classes set the maximum number of records to 100000 by default. </td>
-    </tr>
-    <tr>
-    <td><code>ibm.io/tls-cipher-suite</code></td>
-    <td>The TLS cipher suite that must be used when a connection to {{site.data.keyword.cos_full_notm}} is established via the HTTPS endpoint. The value for the cipher suite must follow the <a href="https://www.openssl.org/docs/man1.0.2/man1/ciphers.html">OpenSSL format</a> <img src="../icons/launch-glyph.svg" alt="External link icon">. If your worker nodes run an Ubuntu operating system, your storage classes are set up to use the <strong><code>AESGCM</code></strong> cipher suite by default. For worker nodes that run a Red Hat operating system, the <strong><code>ecdhe_rsa_aes_128_gcm_sha_256</code></strong> cipher suite is used by default.    </td>
-    </tr>
-    </tbody>
-    </table>
+    | Parameter | Description |
+    | --- | --- |
+    | `ibm.io/chunk-size-mb` | The size of a data chunk that is read from or written to {{site.data.keyword.cos_full_notm}} in megabytes. Storage classes with `perf` in their name are set up with 52 megabytes. Storage classes without `perf` in their name use 16 megabyte chunks. For example, if you want to read a file that is `1GB`, the plug-in reads this file in multiple 16 or 52-megabyte chunks. |
+    | `ibm.io/curl-debug` | Enable the logging of requests that are sent to the {{site.data.keyword.cos_full_notm}} service instance. If enabled, logs are sent to `syslog` and you can [forward the logs to an external logging server](/docs/containers?topic=containers-health#logging). By default, all storage classes are set to `false` to disable this logging feature. |
+    | `ibm.io/debug-level` | The logging level that is set by the {{site.data.keyword.cos_full_notm}} plug-in. All storage classes are set up with the `WARN` logging level. |
+    | `ibm.io/iam-endpoint` | The API endpoint for {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). |
+    | `ibm.io/kernel-cache` | Enable or disable the kernel buffer cache for the volume mount point. If enabled, data that is read from {{site.data.keyword.cos_full_notm}} is stored in the kernel cache to ensure fast read access to your data. If disabled, data is not cached and always read from {{site.data.keyword.cos_full_notm}}. Kernel cache is enabled for `standard` and `flex` storage classes, and disabled for `cold` and `vault` storage classes.  |
+    | `ibm.io/multireq-max` | The maximum number of parallel requests that can be sent to the {{site.data.keyword.cos_full_notm}} service instance to list files in a single directory. All storage classes are set up with a maximum of 20 parallel requests. |
+    | `ibm.io/object-store-endpoint` | The API endpoint to use to access the bucket in your {{site.data.keyword.cos_full_notm}} service instance. The endpoint is automatically set based on the region of your cluster. If you want to access an existing bucket that is located in a different region than the one where your cluster is in, you must [create a custom storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use the API endpoint for your bucket. |
+    | `ibm.io/object-store-storage-class` | The name of the storage class. |
+    | `ibm.io/parallel-count` | The maximum number of parallel requests that can be sent to the {{site.data.keyword.cos_full_notm}} service instance for a single read or write operation. Storage classes with `perf` in their name are set up with a maximum of 20 parallel requests. Storage classes without `perf` are set up with two parallel requests by default. |
+    | `ibm.io/s3fs-fuse-retry-count` | The maximum number of retries for a read or write operation before the operation is considered unsuccessful. All storage classes are set up with a maximum of five retries. |
+    | `ibm.io/stat-cache-size` |The maximum number of records that are kept in the {{site.data.keyword.cos_full_notm}} metadata cache. Every record can take up to 0.5 kilobytes. All storage classes set the maximum number of records to 100000 by default. |
+    | `ibm.io/tls-cipher-suite` | The TLS cipher suite that must be used when a connection to {{site.data.keyword.cos_full_notm}} is established via the HTTPS endpoint. The value for the cipher suite must follow the [OpenSSL format](https://www.openssl.org/docs/man1.0.2/man1/ciphers.html){: external}. If your worker nodes run an Ubuntu operating system, your storage classes are set up to use the `AESGCM`cipher suite by default. For worker nodes that run a Red Hat operating system, the `ecdhe_rsa_aes_128_gcm_sha_256` cipher suite is used by default. |
+    {: caption="Storage class parameters"}
+    {: summary="The table shows the {{site.data.keyword.cos_full_notm}} storage class parameters.  Rows are to be read from the left to right, with the parameter name in column one, and a description of the parameter in column two."}
+
 
     For more information about each storage class, see the [storage class reference](#cos_storageclass_reference). If you want to change any of the pre-set values, create your own [customized storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass).
     {: tip}
@@ -775,7 +730,7 @@ To remove the `ibmc` Helm plugin and the `ibm-object-storage-plugin`:
 
 Now that you decided on the configuration that you want, you are ready to [create a PVC](#add_cos) to provision {{site.data.keyword.cos_full_notm}}.
 
-<br />
+
 
 ## VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}
 {: #cos_auth_ip}
@@ -849,14 +804,14 @@ You can authorize your VPC Cloud Service Endpoint source IP addresses to access 
       ibm.io/auto_cache: "true"
       ibm.io/bucket: "<bucket_name>"
       ibm.io/secret-name: "<secret_name>"
-  spec:
-    accessModes:
-      - ReadWriteMany
-    resources:
-      requests:
-        storage: 8Gi
-    storageClassName: ibmc-s3fs-standard-regional
-    volumeMode: Filesystem
+    spec:
+      accessModes:
+        - ReadWriteMany
+      resources:
+        requests:
+          storage: 8Gi
+      storageClassName: ibmc-s3fs-standard-regional
+      volumeMode: Filesystem
     ```
     {: codeblock}
 
@@ -968,17 +923,14 @@ Before you begin:
 
 To add {{site.data.keyword.cos_full_notm}} to your cluster:
 
-1. Create a configuration file to define your persistent volume claim (PVC).
-
-    If you add your [{{site.data.keyword.cos_full_notm}} credentials to the default storage classes](#storage_class_custom), you do not need to refer to your secret in the PVC.
-    {: tip}
+1. Create a configuration file to define your persistent volume claim (PVC). If you add your [{{site.data.keyword.cos_full_notm}} credentials to the default storage classes](#storage_class_custom), you do not need to refer to your secret in the PVC.
 
     ```yaml
     kind: PersistentVolumeClaim
     apiVersion: v1
     metadata:
-      name: <pvc_name>
-      namespace: <namespace>
+      name: <name> # Enter the name of the PVC.
+      namespace: <namespace> # Enter the namespace where you want to create the PVC. The PVC must be created in the same namespace where you created the Kubernetes secret for your service credentials and where you want to run your pod.
       annotations:
         ibm.io/auto-create-bucket: "<true_or_false>"
         ibm.io/auto-delete-bucket: "<true_or_false>"
@@ -1004,14 +956,6 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     <th>Description</th>
     </thead>
     <tbody>
-    <tr>
-    <td><code>name</code></td>
-    <td>Enter the name of the PVC.</td>
-    </tr>
-    <tr>
-    <td><code>namespace</code></td>
-    <td>Enter the namespace where you want to create the PVC. The PVC must be created in the same namespace where you created the Kubernetes secret for your {{site.data.keyword.cos_full_notm}} service credentials and where you want to run your pod. </td>
-    </tr>
     <tr>
     <td><code>ibm.io/auto-create-bucket</code></td>
     <td>Choose between the following options: <ul><li><strong>true</strong>: When you create the PVC, the PV and the bucket in your {{site.data.keyword.cos_full_notm}} service instance are automatically created. Choose this option to create a new bucket in your {{site.data.keyword.cos_full_notm}} service instance. Note that the service credentials you refer to your secret must have <strong>Writer</strong> permissions to automatically create the bucket.</li><li><strong>false</strong>: Choose this option if you want to access data in an existing bucket. When you create the PVC, the PV is automatically created and linked to the bucket that you specify in <code>ibm.io/bucket</code>.</td>
@@ -1046,13 +990,13 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     </tbody>
     </table>
 
-2. Create the PVC.
+1. Create the PVC in your cluster.
     ```
     oc apply -f filepath/pvc.yaml
     ```
     {: pre}
 
-3. Verify that your PVC is created and bound to the PV.
+1. Verify that your PVC is created and bound to the PV.
     ```
     oc get pvc
     ```
@@ -1065,9 +1009,9 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     ```
     {: screen}
 
-4. Optional: If you plan to access your data with a non-root user, or added files to an existing {{site.data.keyword.cos_full_notm}} bucket by using the console or the API directly, make sure that the [files have the correct permission](/docs/containers?topic=containers-cos_nonroot_access) assigned so that your app can successfully read and update the files as needed.
+1. Optional: If you plan to access your data with a non-root user, or added files to an existing {{site.data.keyword.cos_full_notm}} bucket by using the console or the API directly, make sure that the [files have the correct permission](/docs/containers?topic=containers-cos_nonroot_access) assigned so that your app can successfully read and update the files as needed.
 
-5. To mount the PV to your deployment, create a configuration `.yaml` file and specify the PVC that binds the PV. {: #cos_app_volume_mount}
+1. To mount the PV to your deployment, create a configuration `.yaml` file and specify the PVC that binds the PV. {: #cos_app_volume_mount}
 
     ```yaml
     apiVersion: apps/v1
@@ -1100,58 +1044,65 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     ```
     {: codeblock}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the YAML file components</caption>
-    <thead>
-        <th>Component</th>
-        <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>app</code></td>
-    <td>In the metadata section, enter label for the deployment.</td>
-        </tr>
-        <tr>
-        <td><code>matchLabels.app</code> <br/> <code>labels.app</code></td>
-        <td>In the spec selector and in the spec template metadata sections, enter a label for your app.</td>
-        </tr>
-    <tr>
-    <td><code>image</code></td>
-    <td>The name of the container image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run <code>ibmcloud cr image-list</code>.</td>
-    </tr>
-    <tr>
-    <td><code>name</code></td>
-    <td>The name of the container that you want to deploy to your cluster.</td>
-    </tr>
-    <tr>
-    <td><code>runAsUser</code></td>
-    <td>In the spec containers security context section, you can optionally set the run as user value.</td>
-    </tr>
-    <tr>
-    <td><code>mountPath</code></td>
-    <td>In the spec containers volume mounts section, enter the absolute path of the directory to where the volume is mounted inside the container. If you want to share a volume between different apps, you can specify <a href="https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath">volume sub paths</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> for each of your apps.</td>
-    </tr>
-    <tr>
-    <td><code>name</code></td>
-    <td>In the spec containers volume mounts section, enter the name of the volume to mount to your pod.</td>
-    </tr>
-    <tr>
-    <td><code>name</code></td>
-    <td>In the volumes section, enter the name of the volume to mount to your pod. Typically this name is the same as <code>volumeMounts/name</code>.</td>
-    </tr>
-    <tr>
-    <td><code>claimName</code></td>
-    <td>In the volumes persistent volume claim section, enter the name of the PVC that binds the PV that you want to use. </td>
-    </tr>
-    </tbody></table>
+<table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
+<caption>Understanding the YAML file components</caption>
+<thead>
+<th>Component</th>
+<th>Description</th>
+</thead>
+<tbody>
+<tr>
+<td><code>app</code></td>
+<td>In the metadata section, enter label for the deployment.</td>
+</tr>
+<tr>
+<td><code>matchLabels.app</code> <br/> <code>labels.app</code></td>
+<td>In the spec selector and in the spec template metadata sections, enter a label for your app.</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td>The name of the container image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run <code>ibmcloud cr image-list</code>.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>The name of the container that you want to deploy to your cluster.</td>
+</tr>
+<tr>
+<td><code>runAsUser</code></td>
+<td>In the spec containers security context section, you can optionally set the run as user value.</td>
+</tr>
+<tr>
+<td><code>mountPath</code></td>
+<td>In the spec containers volume mounts section, enter the absolute path of the directory to where the volume is mounted inside the container. If you want to share a volume between different apps, you can specify <a href="https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath">volume sub paths</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> for each of your apps.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>In the spec containers volume mounts section, enter the name of the volume to mount to your pod.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>In the volumes section, enter the name of the volume to mount to your pod. Typically this name is the same as <code>volumeMounts/name</code>.</td>
+</tr>
+<tr>
+<td><code>claimName</code></td>
+<td>In the volumes persistent volume claim section, enter the name of the PVC that binds the PV that you want to use. </td>
+</tr>
+</tbody></table>
 
-6. Create the deployment.
+
+### Creating a deployment 
+{: #create-cos-deployment-steps}
+
+After you create PVC and deployment configuration files, create the deployment in your cluster.
+{: shortdesc}
+
+1. Create the deployment.
     ```
     oc apply -f <local_yaml_path>
     ```
     {: pre}
 
-7. Verify that the PV is successfully mounted.
+1. Verify that the PV is successfully mounted.
 
     ```
     oc describe deployment <deployment_name>
@@ -1173,25 +1124,24 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     ```
     {: screen}
 
-8. Verify that you can write data to your {{site.data.keyword.cos_full_notm}} service instance.
-    1. Log in to the pod that mounts your PV.
-        ```
-        oc exec <pod_name> -it bash
-        ```
-        {: pre}
+1. Verify that you can write data to your {{site.data.keyword.cos_full_notm}} service instance by logging in to the app pod and writing data. Log in to the pod that mounts your PV.
+    ```
+    oc exec <pod_name> -it bash
+    ```
+    {: pre}
 
-    2. Navigate to your volume mount path that you defined in your app deployment.
-    3. Create a text file.
-        ```
-        echo "This is a test" > test.txt
-        ```
-        {: pre}
+1. Navigate to your volume mount path that you defined in your app deployment.
+1. Create a text file.
+    ```
+    echo "This is a test" > test.txt
+    ```
+    {: pre}
 
-    4. From the {{site.data.keyword.Bluemix}} dashboard, navigate to your {{site.data.keyword.cos_full_notm}} service instance.
-    5. From the menu, select **Buckets**.
-    6. Open your bucket, and verify that you can see the `test.txt` that you created.
+1. From the {{site.data.keyword.Bluemix}} dashboard, navigate to your {{site.data.keyword.cos_full_notm}} service instance.
+1. From the menu, select **Buckets**.
+1. Open your bucket, and verify that you can see the `test.txt` that you created.
 
-    <br />
+    
 
 ## Using object storage in a stateful set
 {: #cos_statefulset}
@@ -1333,72 +1283,71 @@ To deploy a stateful set that uses object storage:
     {: codeblock}
 
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the stateful set YAML file components</caption>
-    <thead>
-    <th>Component</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td style="text-align:left"><code>name</code></td>
-    <td style="text-align:left">Enter a name for your stateful set. The name that you enter is used to create the name for your PVC in the format: <code>&lt;volume_name&gt;-&lt;statefulset_name&gt;-&lt;replica_number&gt;</code>. </td>
-    </tr>
-    <tr>
-    <td style="text-align:left"><code>serviceName</code></td>
-    <td style="text-align:left">Enter the name of the service that you want to use to expose your stateful set. </td>
-    </tr>
-    <tr>
-    <td style="text-align:left"><code>replicas</code></td>
-    <td style="text-align:left">Enter the number of replicas for your stateful set. </td>
-    </tr>
-    <tr>
-    <td style="text-align:left"><code>matchLabels</code></td>
-    <td style="text-align:left">In the spec selector match labels section, enter all labels that you want to include in your stateful set and your PVC. Labels that you include in the <code>volumeClaimTemplates</code> of your stateful set are not recognized by Kubernetes. Instead, you must define these labels in the <code>spec.selector.matchLabels</code> and <code>spec.template.metadata.labels</code> section of your stateful set YAML. To make sure that all your stateful set replicas are included into the load balancing of your service, include the same label that you used in the <code>spec.selector</code> section of your service YAML. </td>
-    </tr>
-    <tr>
-    <td style="text-align:left"><code>labels</code></td>
-    <td style="text-align:left">In the spec metadata labels section, enter the same labels that you added to the <code>spec.selector.matchLabels</code> section of your stateful set YAML. </td>
-    </tr>
-    <tr>
-    <td><code>terminationGracePeriodSeconds</code></td>
-    <td>Enter the number of seconds to give the <code>kubelet</code> to gracefully terminate the pod that runs your stateful set replica. For more information, see <a href="https://kubernetes.io/docs/tasks/run-application/force-delete-stateful-set-pod/#delete-pods">Delete Pods</a> <img src="../icons/launch-glyph.svg" alt="External link icon">. </td>
-    </tr>
-    <tr>
-    <td style="text-align:left"><code>name</code></td>
-    <td style="text-align:left">In the spec volume claim templates metadata section, enter a name for your volume. Use the same name that you defined in the <code>spec.containers.volumeMount.name</code> section. The name that you enter here is used to create the name for your PVC in the format: <code>&lt;volume_name&gt;-&lt;statefulset_name&gt;-&lt;replica_number&gt;</code>. </td>
-    </tr>
-    <tr>
-    <td><code>ibm.io/auto-create-bucket</code></td>
-    <td>In the spec volume claim templates metadata section, set an annotation to configure how buckets are created. Choose between the following options: <ul><li><strong>true: </strong>Choose this option to automatically create a bucket for each stateful set replica. Note that the service credentials you refer to your secret must have <strong>Writer</strong> permissions to automatically create the bucket.</li><li><strong>false: </strong>Choose this option if you want to share an existing bucket across your stateful set replicas. Make sure to define the name of the bucket in the <code>spec.volumeClaimTemplates.metadata.annotions.ibm.io/bucket</code> section of your stateful set YAML.</li></ul></td>
-    </tr>
-    <tr>
-    <td><code>ibm.io/auto-delete-bucket</code></td>
-    <td>In the spec volume claim templates metadata section, set an annotation to configure how buckets are deleted. Choose between the following options: <ul><li><strong>true: </strong>Your data, the bucket, and the PV is automatically removed when you delete the PVC. Your {{site.data.keyword.cos_full_notm}} service instance remains and is not deleted. If you choose to set this option to true, then you must set <code>ibm.io/auto-create-bucket: true</code> and <code>ibm.io/bucket: ""</code> so that your bucket is automatically created with a name with the format <code>tmp-s3fs-xxxx</code>. </li><li><strong>false: </strong>When you delete the PVC, the PV is deleted automatically, but your data and the bucket in your {{site.data.keyword.cos_full_notm}} service instance remain. To access your data, you must create a new PVC with the name of your existing bucket.</li></ul></td>
-    </tr>
-    <tr>
-    <td><code>ibm.io/bucket</code></td>
-    <td>In the spec volume claim templates metadata section, set an annotation for the bucket details. Choose between the following options: <ul><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to true: </strong>Enter the name of the bucket that you want to create in {{site.data.keyword.cos_full_notm}}. If in addition <code>ibm.io/auto-delete-bucket</code> is set to <strong>true</strong>, you must leave this field blank to automatically assign your bucket a name with the format tmp-s3fs-xxxx. The name must be unique in {{site.data.keyword.cos_full_notm}}.</li><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to false: </strong>Enter the name of the existing bucket that you want to access in the cluster.</li></ul></td>
-    </tr>
-    <tr>
-    <td><code>ibm.io/secret-name</code></td>
-    <td>In the spec volume claim templates metadata annotations section, enter the name of the secret that holds the {{site.data.keyword.cos_full_notm}} credentials that you created earlier. If you add your <a href="#storage_class_custom">{{site.data.keyword.cos_full_notm}} credentials to the default storage classes</a>, you do not need to refer to your secret in the PVC.</td>
-    </tr>
-    <tr>
-    <td style="text-align:left"><code>kubernetes.io/storage-class</code></td>
-    <td style="text-align:left">In the spec volume claim templates metadata annotations section, enter the storage class that you want to use. Choose between the following options: <ul><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to true: </strong>Enter the storage class that you want to use for your new bucket.</li><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to false: </strong>Enter the storage class that you used to create your existing bucket.</li></ul></br>  To list existing storage classes, run <code>oc get storageclasses | grep s3</code>. If you do not specify a storage class, the PVC is created with the default storage class that is set in your cluster. Make sure that the default storage class uses the <code>ibm.io/ibmc-s3fs</code> provisioner so that your stateful set is provisioned with object storage.</td>
-    </tr>
-    <tr>
-    <td style="text-align:left"><code>storageClassName</code></td>
-    <td>In the spec volume claim templates spec section, enter the same storage class that you entered in the <code>spec.volumeClaimTemplates.metadata.annotations.volume.beta.kubernetes.io/storage-class</code> section of your stateful set YAML.  </td>
-    </tr>
-    <tr>
-    <td style="text-align:left"><code>storage</code></td>
-    <td>In the spec volume claim templates spec resource requests section, enter a fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the <a href="https://www.ibm.com/cloud/object-storage/pricing/#s3api">pricing table</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</td>
-    </tr>
-    </tbody></table>
+<table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
+<caption>Understanding the stateful set YAML file components</caption>
+<thead>
+<th>Component</th>
+<th>Description</th>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>name</code></td>
+<td style="text-align:left">Enter a name for your stateful set. The name that you enter is used to create the name for your PVC in the format: <code>&lt;volume_name&gt;-&lt;statefulset_name&gt;-&lt;replica_number&gt;</code>. </td>
+</tr>
+<tr>
+<td style="text-align:left"><code>serviceName</code></td>
+<td style="text-align:left">Enter the name of the service that you want to use to expose your stateful set. </td>
+</tr>
+<tr>
+<td style="text-align:left"><code>replicas</code></td>
+<td style="text-align:left">Enter the number of replicas for your stateful set. </td>
+</tr>
+<tr>
+<td style="text-align:left"><code>matchLabels</code></td>
+<td style="text-align:left">In the spec selector match labels section, enter all labels that you want to include in your stateful set and your PVC. Labels that you include in the <code>volumeClaimTemplates</code> of your stateful set are not recognized by Kubernetes. Instead, you must define these labels in the <code>spec.selector.matchLabels</code> and <code>spec.template.metadata.labels</code> section of your stateful set YAML. To make sure that all your stateful set replicas are included into the load balancing of your service, include the same label that you used in the <code>spec.selector</code> section of your service YAML. </td>
+</tr>
+<tr>
+<td style="text-align:left"><code>labels</code></td>
+<td style="text-align:left">In the spec metadata labels section, enter the same labels that you added to the <code>spec.selector.matchLabels</code> section of your stateful set YAML. </td>
+</tr>
+<tr>
+<td><code>terminationGracePeriodSeconds</code></td>
+<td>Enter the number of seconds to give the <code>kubelet</code> to gracefully terminate the pod that runs your stateful set replica. For more information, see <a href="https://kubernetes.io/docs/tasks/run-application/force-delete-stateful-set-pod/#delete-pods">Delete Pods</a> <img src="../icons/launch-glyph.svg" alt="External link icon">. </td>
+</tr>
+<tr>
+<td style="text-align:left"><code>name</code></td>
+<td style="text-align:left">In the spec volume claim templates metadata section, enter a name for your volume. Use the same name that you defined in the <code>spec.containers.volumeMount.name</code> section. The name that you enter here is used to create the name for your PVC in the format: <code>&lt;volume_name&gt;-&lt;statefulset_name&gt;-&lt;replica_number&gt;</code>. </td>
+</tr>
+<tr>
+<td><code>ibm.io/auto-create-bucket</code></td>
+<td>In the spec volume claim templates metadata section, set an annotation to configure how buckets are created. Choose between the following options: <ul><li><strong>true: </strong>Choose this option to automatically create a bucket for each stateful set replica. Note that the service credentials you refer to your secret must have <strong>Writer</strong> permissions to automatically create the bucket.</li><li><strong>false: </strong>Choose this option if you want to share an existing bucket across your stateful set replicas. Make sure to define the name of the bucket in the <code>spec.volumeClaimTemplates.metadata.annotions.ibm.io/bucket</code> section of your stateful set YAML.</li></ul></td>
+</tr>
+<tr>
+<td><code>ibm.io/auto-delete-bucket</code></td>
+<td>In the spec volume claim templates metadata section, set an annotation to configure how buckets are deleted. Choose between the following options: <ul><li><strong>true: </strong>Your data, the bucket, and the PV is automatically removed when you delete the PVC. Your {{site.data.keyword.cos_full_notm}} service instance remains and is not deleted. If you choose to set this option to true, then you must set <code>ibm.io/auto-create-bucket: true</code> and <code>ibm.io/bucket: ""</code> so that your bucket is automatically created with a name with the format <code>tmp-s3fs-xxxx</code>. </li><li><strong>false: </strong>When you delete the PVC, the PV is deleted automatically, but your data and the bucket in your {{site.data.keyword.cos_full_notm}} service instance remain. To access your data, you must create a new PVC with the name of your existing bucket.</li></ul></td>
+</tr>
+<tr>
+<td><code>ibm.io/bucket</code></td>
+<td>In the spec volume claim templates metadata section, set an annotation for the bucket details. Choose between the following options: <ul><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to true: </strong>Enter the name of the bucket that you want to create in {{site.data.keyword.cos_full_notm}}. If in addition <code>ibm.io/auto-delete-bucket</code> is set to <strong>true</strong>, you must leave this field blank to automatically assign your bucket a name with the format tmp-s3fs-xxxx. The name must be unique in {{site.data.keyword.cos_full_notm}}.</li><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to false: </strong>Enter the name of the existing bucket that you want to access in the cluster.</li></ul></td>
+</tr>
+<tr>
+<td><code>ibm.io/secret-name</code></td>
+<td>In the spec volume claim templates metadata annotations section, enter the name of the secret that holds the {{site.data.keyword.cos_full_notm}} credentials that you created earlier. If you add your <a href="#storage_class_custom">{{site.data.keyword.cos_full_notm}} credentials to the default storage classes</a>, you do not need to refer to your secret in the PVC.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>kubernetes.io/storage-class</code></td>
+<td style="text-align:left">In the spec volume claim templates metadata annotations section, enter the storage class that you want to use. Choose between the following options: <ul><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to true: </strong>Enter the storage class that you want to use for your new bucket.</li><li><strong>If <code>ibm.io/auto-create-bucket</code> is set to false: </strong>Enter the storage class that you used to create your existing bucket.</li></ul></br>  To list existing storage classes, run <code>oc get storageclasses | grep s3</code>. If you do not specify a storage class, the PVC is created with the default storage class that is set in your cluster. Make sure that the default storage class uses the <code>ibm.io/ibmc-s3fs</code> provisioner so that your stateful set is provisioned with object storage.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>storageClassName</code></td>
+<td>In the spec volume claim templates spec section, enter the same storage class that you entered in the <code>spec.volumeClaimTemplates.metadata.annotations.volume.beta.kubernetes.io/storage-class</code> section of your stateful set YAML.  </td>
+</tr>
+<tr>
+<td style="text-align:left"><code>storage</code></td>
+<td>In the spec volume claim templates spec resource requests section, enter a fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the <a href="https://www.ibm.com/cloud/object-storage/pricing/#s3api">pricing table</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</td>
+</tr>
+</tbody></table>
 
-<br />
 
 
 ## Backing up and restoring data
@@ -1410,7 +1359,7 @@ To deploy a stateful set that uses object storage:
 {{site.data.keyword.cos_full_notm}} does not provide a version history for your data. If you need to maintain and access older versions of your data, you must set up your app to manage the history of data or implement alternative backup solutions. For example, you might want to store your {{site.data.keyword.cos_full_notm}} data in your on-prem database or use tapes to archive your data.
 {: note}
 
-<br />
+
 
 ## Adding your {{site.data.keyword.cos_full_notm}} credentials to the default storage classes
 {: #storage_class_custom}
@@ -1465,17 +1414,17 @@ To add a secret to a storage class:
     kind: PersistentVolumeClaim
     apiVersion: v1
     metadata:
-        name: <pvc-name>
+      name: <pvc-name>
     namespace: <namespace>
-    annotations:
-  spec:
-    accessModes:
-      - ReadWriteOnce
-    resources:
-      requests:
-        storage: 10Gi
-    storageClassName: ibmc-s3fs-flex-regional
-    volumeMode: Filesystem
+      annotations:
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Gi
+      storageClassName: ibmc-s3fs-flex-regional
+      volumeMode: Filesystem
     ```
     {: codeblock}
 
