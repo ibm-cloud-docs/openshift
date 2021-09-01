@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-01"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -1299,7 +1299,7 @@ This table refers to the cluster autoscaler Helm chart parameters. For add-on va
 <td><code>workerpools</code> parameter</td>
 <td>The worker pools that you want to autoscale, including their minimum and maximum number of worker nodes per zone. These settings are mirrored in the <a href="#ca_cm">cluster autoscaler config map</a>. To set the worker pool, format the option as follows: <code>--set workerpools[0].&lt;pool_name&gt;.max=&lt;number_of_workers&gt;,workerpools[0].&lt;pool_name&gt;.min=&lt;number_of_workers&gt;,workerpools[0].&lt;pool_name&gt;.enabled=(true|false)</code><br><br>
 Understanding the <code>--set workerpools</code> options:
-    <ul><li><strong><code>workerpools[0]</code></strong>: The first worker pool to enable or disable for autoscaling. You must include three parameters for each worker pool for the command to succeed: the maximum number of worker nodes (<code>max</code>), the minimum number of worker nodes (<code>min</code>), and whether you want to enable (<code>true</code>) or disable (<code>false</code>) autoscaling for this worker pool. To include multiple worker pools, include a comma-separated list and increase the number in brackets, such as: <code>workerpools<a href="/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure">0].default...,workerpools[1].pool1...,workerpools[2].pool2...</code>.</li>
+    <ul><li><strong><code>workerpools[0]</code></strong>: The first worker pool to enable or disable for autoscaling. You must include three parameters for each worker pool for the command to succeed: the maximum number of worker nodes (<code>max</code>), the minimum number of worker nodes (<code>min</code>), and whether you want to enable (<code>true</code>) or disable (<code>false</code>) autoscaling for this worker pool. To include multiple worker pools, include a comma-separated list and increase the number in brackets, such as: <code>workerpools[0].default...,workerpools[1].pool1...,workerpools[2].pool2...</code>.</li>
     <li><strong><code>&lt;pool_name&gt;</code></strong>: The name or ID of the worker pool that you want to enable or disable for autoscaling. To list available worker pools, run <code>ibmcloud oc worker-pool ls --cluster &lt;cluster_name_or_ID&gt;</code>.</li>
     <li><strong><code>max=&lt;number_of_workers></code></strong>: Specify the maximum number of worker nodes per zone that the cluster autoscaler can scale up to. The value must be equal to or greater than the value that you set for the <code>min=&lt;number_of_workers&gt;</code> size.</li>
     <li><strong><code>min=&lt;number_of_workers&gt;</code></strong>: Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be <code>2</code> or greater so that your ALB pods can be spread for high availability. If you [disabled</a> all public ALBs in each zone of your standard cluster, you can set the value to <code>1</code>.<p class="note">Keep in mind that setting a <code>min</code> size does not automatically trigger a scale-up. The <code>min</code> size is a threshold so that the cluster autoscaler does not scale below this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.</p></li>
