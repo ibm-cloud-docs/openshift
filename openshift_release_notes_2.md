@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-31"
+lastupdated: "2021-09-01"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -114,6 +114,25 @@ subcollection: openshift
 Use the release notes to learn about the latest changes to the {{site.data.keyword.openshiftlong}} documentation that are grouped by month.
 {: shortdesc}
 
+## September 2021
+{: #release-sep-2021}
+
+Review the release notes for September 2021.
+{: shortdesc}
+
+### 1 September 2021
+{: #1sep2021}
+{: release-note}
+
+Review the release notes for 1 September 2021.
+{: shortdesc}
+
+{{site.data.keyword.block_storage_is_short}} add-on
+:   Version [`4.0.0`](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
+
+{{site.data.keyword.cos_full_notm}} plug-in 
+:   Version [`2.1.4`](/docs/openshift?topic=openshift-cos_plugin_changelog) is available.
+
 
 ## August 2021
 {: #release-aug-2021}
@@ -132,7 +151,10 @@ Istio add-on changelog
 :   [Version 1.11.1](/docs/containers?topic=containers-istio-changelog#1111) of the Istio managed add-on is released.
 
 New! Sao Paolo multizone region
-:   You can now create classic or VPC clusters in the Sao Paolo, Brazil [location](/docs/openshift?topic=openshift-regions-and-zones).
+:   You can now create VPC clusters in the Sao Paolo, Brazil [location](/docs/openshift?topic=openshift-regions-and-zones).
+
+ VPC disk encryption on worker nodes
+:   Now, you can manage the encryption for the disk on your VPC worker nodes. For more information, see [VPC worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-vpc).
 
 ### 30 August 2021
 {: #30aug2021}
@@ -141,8 +163,5 @@ New! Sao Paolo multizone region
 Review the release notes for 30 August 2021.
 {: shortdesc}
 
-
-
 Worker node fix pack update
 :   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.43_1554_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4643_1554), [`4.7.24_1530_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4724_1530), and [`3.11.501_1602_openshift`](/docs/openshift?topic=openshift-openshift_changelog##311501_1602).
-

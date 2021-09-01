@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-31"
+lastupdated: "2021-09-01"
 
 keywords: openshift
 subcollection: openshift
@@ -223,6 +223,9 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-rel-notes)
+
+* [September 2021](/docs/openshift?topic=openshift-rel-notes#release-sep-2021)
+    * [1 September 2021](/docs/openshift?topic=openshift-rel-notes#1sep2021)
 
 * [August 2021](/docs/openshift?topic=openshift-rel-notes#release-aug-2021)
     * [31 August 2021](/docs/openshift?topic=openshift-rel-notes#31aug2021)
@@ -671,6 +674,10 @@ subcollection: openshift
   * [Enabling KMS encryption for the cluster through the console](/docs/openshift?topic=openshift-encryption#kms_ui)
   * [Rotating the root key for your cluster](/docs/openshift?topic=openshift-encryption#kms_rotate)
 * [Verifying secret encryption](/docs/openshift?topic=openshift-encryption#verify_kms)
+* [Managing encryption for the worker nodes in your cluster](/docs/openshift?topic=openshift-encryption#worker-encryption)
+  * [Classic worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-classic)
+  * [VPC worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-vpc)
+  * [{{site.data.keyword.satelliteshort}} worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-satellite)
 * [Encrypting data in classic clusters by using IBM Cloud Data Shield (beta)](/docs/openshift?topic=openshift-encryption#datashield)
 
 [Configuring security context constraints](/docs/openshift?topic=openshift-openshift_scc)
@@ -1992,6 +1999,8 @@ subcollection: openshift
   * [Changelog for patch update 1.0.1_114, released 10 September 2020](/docs/openshift?topic=openshift-ca_changelog#101114_ca)
 
 [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog)
+* [Version 4.0](/docs/openshift?topic=openshift-vpc_bs_changelog#0400_is_block)
+  * [Changelog for version 4.0, released 1 September 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400_is_block_relnote)
 * [Version 3.0.1](/docs/openshift?topic=openshift-vpc_bs_changelog#0301_is_block)
   * [Changelog for version 3.0.1, released 15 July 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#301_init)
 * [Version 3.0.0](/docs/openshift?topic=openshift-vpc_bs_changelog#0300_is_block)
@@ -2006,6 +2015,7 @@ subcollection: openshift
   * [Changelog for patch update 2.0.3_365, released 05 August 2020](/docs/openshift?topic=openshift-vpc_bs_changelog#203365_is_block)
 
 [Object storage plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog)
+* [Changelog for version 2.1.4, released 1 September 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0214_object_plugin)
 * [Changelog for version 2.1.3, released 25 August 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0213_object_plugin)
 * [Changelog for version 2.1.2, released 22 June 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0212_object_plugin)
 * [Changelog for version 2.1.1, released 03 June 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0211_object_plugin)

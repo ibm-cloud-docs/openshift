@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-08-31"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -542,7 +542,10 @@ Your VPC cluster is created with both a public and a private cloud service endpo
         * **Virtual - shared**: Infrastructure resources, such as the hypervisor and physical hardware, are shared across you and other IBM customers, but each worker node is accessible only by you. Although this option is less expensive and sufficient in most cases, you might want to verify your performance and infrastructure requirements with your company policies. Virtual machines are billed hourly.
         * **Virtual - dedicated**: Your worker nodes are hosted on infrastructure that is devoted to your account. Your physical resources are completely isolated. Virtual machines are billed hourly.
     2. Set how many worker nodes to create per zone, such as **3**. For example, if you selected 2 zones and want to create 3 worker nodes, a total of 6 worker nodes are provisioned in your cluster with 3 worker nodes in each zone. You must set at least 2 worker nodes. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).
-    3. Toggle disk encryption. By default, [worker nodes feature AES 256-bit disk encryption](/docs/openshift?topic=openshift-security#workernodes).
+    3. Select a key management service (KMS) instance and root key to encrypt the local disk for each worker node in the `default` worker pool.
+
+    Before you can use KMS encryption, you must create a KMS instance and set up the required service authorization in IAM. See [Managing encryption for the worker nodes in your cluster](/docs/openshift?topic=openshift-encryption#worker-encryption).
+    {: note}
 9. If you do not have the required infrastructure permissions to create a cluster, the **Infrastructure permissions checker** lists the missing permissions. Ask your account owner to [set up the API key](/docs/openshift?topic=openshift-access-creds) with the required permissions.
 10. Complete the **Resource details** to customize the unique cluster name and any [tags](/docs/account?topic=account-tag) that you want to use to organize your {{site.data.keyword.cloud_notm}} resources, such as the team or billing department.
 11. In the **Summary** pane, review the order summary and then click **Create**. A worker pool is created with the number of workers that you specified. You can see the progress of the worker node deployment in the **Worker nodes** tab.
@@ -587,7 +590,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
     * For more information, see [Overview of VPC networking in {{site.data.keyword.openshiftlong_notm}}: Subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets).
 5. Create the cluster in your VPC. You can use the `ibmcloud oc cluster create vpc-gen2` command to create a single zone cluster in your VPC with worker nodes that are connected to one VPC subnet only. If you want to create a multizone cluster, you can use the {{site.data.keyword.cloud_notm}} console, or [add more zones](/docs/openshift?topic=openshift-add_workers#vpc_add_zone) to your cluster after the cluster is created. The cluster takes a few minutes to provision.
     ```
-    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.6_openshift --cos-instance <COS_CRN> --workers <number_workers_per_zone> [--pod-subnet] [--service-subnet] [--disable-public-service-endpoint] 
+    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.6_openshift --cos-instance <COS_CRN> --workers <number_workers_per_zone> [--pod-subnet] [--service-subnet] [--disable-public-service-endpoint] [--kms-instance <KMS_instance_ID> --crk <root_key_ID>]
     ```
     {: pre}
 
@@ -653,6 +656,14 @@ Your VPC cluster is created with both a public and a private cloud service endpo
     <tr>
     <td><code>--disable-public-service-endpoint</code></td>
     <td>Include this option in your command to create your VPC cluster with a private cloud service endpoint only. If you do not include this option, your cluster is set up with a public and a private cloud service endpoint. The service endpoint determines how your {{site.data.keyword.openshiftshort}} master and the worker nodes communicate, how your cluster access other {{site.data.keyword.cloud_notm}} services and apps outside the cluster, and how your users connect to your cluster. For more information, see <a href="/docs/containers?topic=containers-plan_clusters">Planning your cluster network setup</a>.<p class="important">If you include this flag, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers.</p></td>
+    </tr>
+    <tr>
+    <td><code>--kms-instance &lt;KMS_instance_ID&gt;</code></td>
+    <td>Optional: Include the ID of a key management service (KMS) instance to use to encrypt the local disk on the worker nodes in the <code>default</code> worker pool. To list available KMS instances, run <code>ibmcloud oc kms instance ls</code>. If you include this option, you must also include the <code>--crk</code> option.<p class="note">Before you can use KMS encryption, you must create a KMS instance and set up the required service authorization in IAM. See <a href="/docs/openshift?topic=openshift-encryption#worker-encryption">Managing encryption for the worker nodes in your cluster</a>.</p></td>
+    </tr>
+    <tr>
+    <td><code>--crk &lt;root_key&gt;/code></td>
+    <td>Optional: Include the ID of the root key in the KMS instance to use to encrypt the local disk on the worker nodes in the <code>default</code> worker pool. To list available root keys, run <code>ibmcloud oc kms crk ls --instance-id</code>. If you include this option, you must also include the <code>--kms-instance</code> option.<p class="note">Before you can use KMS encryption, you must create a KMS instance and set up the required service authorization in IAM. See <a href="/docs/openshift?topic=openshift-encryption#worker-encryption">Managing encryption for the worker nodes in your cluster</a>.</p></td>
     </tr>
     </tbody></table>
 6. Verify that the creation of the cluster was requested. It can take a few minutes for the worker node machines to be ordered, and for the cluster to be set up and provisioned in your account.

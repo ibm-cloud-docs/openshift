@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-31"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -121,9 +122,7 @@ For more information about securing your cluster and personal information, see [
 The following image and description outline default and optional data encryption for {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
 
-<img src="images/cs_encrypt_ov_kms.png" width="700" alt="Overview of cluster encryption" style="width:700px; border-style: none"/>
-
-
+<img src="images/cs_encrypt_ov_kms-vpc.png" width="700" alt="Overview of cluster encryption" style="width:700px; border-style: none"/>
 
 _Figure: Overview of data encryption in a cluster_
 
@@ -131,9 +130,9 @@ _Figure: Overview of data encryption in a cluster_
 2. **Bring your own key (BYOK), for VPC and classic only**: When you [enable a key management service (KMS) provider](#keyprotect)`*` in your cluster, you can bring your own root key to create data encryption keys (DEKs) that encrypt the secrets in your cluster. The root key is stored in the KMS instance that you control. For example, if you use {{site.data.keyword.keymanagementservicelong_notm}}, the root key is stored in a FIPS 120-3 Level 3 hardware security module (HSM).
 3. **etcd data**: Etcd is the component of the master that stores the configuration files of your Kubernetes resources, such as deployments and secrets. Data in etcd is stored on the local disk of the Kubernetes master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. When you enable a KMS provider`*`, a wrapped data encryption key (DEK) is stored in etcd. The DEK encrypts the secrets in your cluster that store service credentials and the LUKS key. Because the root key is in your KMS instance, you control access to your encrypted secrets. To unwrap the DEK, the cluster uses the root key from your KMS instance. For more information about how key encryption works, see [Envelope encryption](/docs/key-protect/concepts?topic=key-protect-envelope-encryption#envelope-encryption).
 4. **Worker node disks**: Attached disks are used to boot your worker node, host the container file system, and store locally pulled images. The encryption and number of disks varies by infrastructure provider.
-    * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC**: The one primary disk is AES-256 bit encrypted at rest by the [underlying VPC infrastructure provider](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption). You cannot manage the encryption on your own with a KMS provider.
-    * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic**: The primary disk that contains the kernel images to boot your worker node is unencrypted. The secondary disk that hosts the container file system and locally pulled images is AES 256-bit encrypted with an IBM-managed LUKS encryption key that is unique to the worker node and stored as a secret in etcd. When you reload or update your worker nodes, the LUKS keys are rotated. If you enable a KMS provider for the cluster, the etcd secret that holds the LUKS key is encrypted by the root key and DEK of your KMS provider.
-    * <img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **{{site.data.keyword.satelliteshort}}**: The primary mounted disk that contains the kernel images to boot your worker node is unecrypted. The secondary unmounted disk that hosts the container file system and locally pulled images is AES 256-bit encrypted with an IBM-managed LUKS encryption key that is unique to the worker node and stored as a secret in etcd. When you reload or update your worker nodes, the LUKS keys are rotated. Because KMS provider integration is not supported, you cannot manage the encryption of the LUKS key.
+    * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC**: See [VPC worker nodes](#worker-encryption-vpc).
+    * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic**: See [Classic worker nodes](#worker-encryption-classic).
+    * <img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **{{site.data.keyword.satelliteshort}}**: See [{{site.data.keyword.satelliteshort}} worker nodes](#worker-encryption-satellite).
 5. **Cluster secrets**: When you deploy your app, do not store confidential information, such as credentials or keys, in the YAML configuration file, configmaps, or scripts. Instead, use [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/){: external}, which are base64 encoded by default. To manage encryption of the Kubernetes secrets in your cluster, you can enable a KMS provider in VPC or classic clusters. The secrets are encrypted by KMS-provided encryption until their information is used. For example, if you update a Kubernetes pod that mounts a secret, the pod requests the secret values from the master API server. The master API server asks the KMS provider to use the root key to unwrap the DEK and encode its values to base64. Then, the master API server uses the KMS provider DEK that is stored in etcd to read the secret, and sends the secret to the pod by using TLS.
 
     In clusters that run {{site.data.keyword.openshiftshort}} 4 or later, you can [deploy containers from an encrypted image](/docs/openshift?topic=openshift-images#encrypted-images).
@@ -401,6 +400,88 @@ To verify secret encryption by disabling a root key:
     {: pre}
 
 8. In your {{site.data.keyword.keymanagementserviceshort}} instance, [enable the root key](/docs/key-protect?topic=key-protect-disable-keys) so that your cluster returns to a **normal** state and becomes usable again.
+
+<br />
+
+## Managing encryption for the worker nodes in your cluster
+{: #worker-encryption}
+
+You can manage the encryption of the local disks in your worker nodes by using a [key management service (KMS) provider](#kms) such as [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-getting-started-tutorial){: external}. The way that you manage encryption for worker nodes depends on the infrastructure provider.
+{: shortdesc}
+
+### Classic worker nodes
+{: #worker-encryption-classic}
+
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic infrastructure**: Classic worker nodes have two disks, and you can manage encryption for the second disk.
+{: shortdesc}
+
+* The primary disk has the kernel images to boot your worker node. This disk is unencrypted.
+* The secondary disk has the container file system and locally pulled images. This disk is AES 256-bit encrypted with an IBM-managed LUKS encryption key that is unique to the worker node and stored as a secret in etcd. When you reload or update your worker nodes, the LUKS keys are rotated. To manage encryption with your own KMS provider, you can [enable a KMS provider for the cluster](#keyprotect). Then, the etcd secret that holds the LUKS key is encrypted by the root key and DEK of your KMS provider.
+
+### VPC worker nodes
+{: #worker-encryption-vpc}
+
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC infrastructure**: By default, the one primary disk of VPC worker nodes is AES-256 bit encrypted at rest by the [underlying VPC infrastructure provider](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption).
+{: shortdesc}
+
+You can manage the encryption of the worker nodes by enabling a KMS provider at the worker pool level.
+
+1. Complete the same [prerequisite steps](#kms_prereqs) for enabling a KMS provider at the cluster level, including to create your own KMS instance and root key. You do not have to enable encryption at the cluster level, but you might want to so that you manage the encryption of cluster secrets.
+2. Make sure that you have [service authorization policies in {{site.data.keyword.cloud_notm}} IAM](https://cloud.ibm.com/iam/authorizations){: external} with the following details.
+    *   **Required service access policy for Kubernetes Service and the KMS provider**
+        1. Set the **Source service** to **Kubernetes Service**.
+        2. Set the **Target service** to your KMS provider, such as **Key Protect**.
+        3. Include at least **Reader** service access.
+        4. Enable the authorization to be delegated by the source and dependent services.
+    *   **Required service access policy for Cloud Block Storage and and the KMS provider**
+        1. Set the **Source service** to **Cloud Block Storage**. 
+        2. Set the **Target service** to your KMS provider, such as **Key Protect**.
+        3. Include at least **Reader** service access.
+
+    {{site.data.keyword.openshiftlong_notm}} automatically creates a service-to-service delegation policy for the Cloud Block Storage service in the IBM-managed service account to the KMS provider instance in your user account. This delegation policy is required so that the VPC infrastructure can encrypt the boot volume of the worker nodes in the IBM-managed service account with your customer-provided root key of the KMS provider in your account. 
+    {: note}
+
+3. Create a cluster or worker pool that includes your KMS provider instance and root key. Each worker node in the worker pool then is encrypted by the KMS provider that you manage. Each worker pool in your cluster can use the same KMS instance and root key, the same KMS instance with different root keys, or different instances.
+    *   **Creating a cluster**: Only the `default` worker pool's nodes are encrypted. After you create the cluster, if you create more worker pools, you must enable encryption in each pool separately. For more information, see [Creating clusters](/docs/openshift?topic=openshift-clusters#clusters_vpcg2) or the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2).
+        * **UI**: From the [cluster creation page](https://cloud.ibm.com/kubernetes/catalog/create){: external}, make sure to include the **KMS instance** and **Root key** fields.
+        * **CLI**: Make sure to include the `--kms-instance-id` and `--crk` fields, such as in the following VPC example.
+            ```
+            ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet> --flavor <flavor> --workers <number_of_workers_per_zone> --kms-instance-id <kms_instance_ID> --crk <kms_root_key_ID>
+            ```
+            {: codeblock}
+
+    *   **Creating a worker pool**: For more information, see [Creating VPC worker pools](/docs/openshift?topic=openshift-add_workers#vpc_add_pool) or the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).
+        * **UI**: After selecting your cluster from the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Worker pools > Add**. Then,  make sure to include the **KMS instance** and **Root key** fields.
+        * **CLI**: Make sure to include the `--kms-instance-id` and `--crk` fields, such as in the  following VPC example.
+            ```
+            ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster  <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone>  [--vpc-id <VPC ID> --kms-instance-id <kms_instance_ID> --crk <kms_root_key_ID>
+            ```
+            {: codeblock}
+
+4. Verify that your worker pool is encrypted by reviewing the worker pool details.
+    * **UI**: After selecting your cluster from the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Worker pools**. Then, click your worker pool.
+    * **CLI**: Review the **KMS** and **CRK** fields in the output of the following command.
+        ```
+        ibmcloud oc worker-pool get --name <worker_pool_name> --cluster <cluster_name_or_ID>
+        ```
+        {: codeblock}
+
+5. Optional: [Rotate the root key](/docs/vpc?topic=vpc-vpc-key-rotation) periodically per your company's security compliance guidelines. For more information, see the [Managing encryption topic in the VPC documentation](/docs/vpc?topic=vpc-vpc-encryption-managing).
+
+    Do not delete your KMS instance. You cannot change the KMS instance that is used to encrypt the worker pool. If you disable or delete the root key, your worker nodes enter a `critical` state until you restore the root key and [reboot](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot) the worker nodes.
+    {: important}
+
+The encryption for the disks of the worker nodes in your worker pool are now managed by the root key in your KMS provider. If you created a cluster, the worker pool is the `default` worker pool.
+
+
+### {{site.data.keyword.satelliteshort}} worker nodes
+{: #worker-encryption-satellite}
+
+<img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **{{site.data.keyword.satelliteshort}}**: The primary mounted disk that contains the kernel images to boot your worker node is unecrypted. The secondary unmounted disk that hosts the container file system and locally pulled images is AES 256-bit encrypted with an IBM-managed LUKS encryption key that is unique to the worker node and stored as a secret in etcd. When you reload or update your worker nodes, the LUKS keys are rotated.
+{: shortdesc}
+
+You cannot manage the encryption of the LUKS key with your own KMS provider because KMS provider integration is not supported.
+{: important}
 
 <br />
 
