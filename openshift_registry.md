@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-01"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -971,7 +971,7 @@ The following steps create an API key that stores the credentials of an {{site.d
     <tbody>
     <tr>
     <td><code><em>&lt;cluster_service_ID&gt;</em></code></td>
-    <td>Required. Replace with the <code><cluster_name>-&lt;kube_namespace&gt;-id</code> service ID that you previously created for your Kubernetes cluster.</td>
+    <td>Required. Replace with the <code>&lt;cluster_name&gt;-&lt;kube_namespace&gt;-id</code> service ID that you previously created for your Kubernetes cluster.</td>
     </tr>
     <tr>
     <td><code>--service-name <em>container-registry</em></code></td>
