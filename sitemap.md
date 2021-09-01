@@ -224,6 +224,9 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-rel-notes)
 
+* [September 2021](/docs/openshift?topic=openshift-rel-notes#release-sep-2021)
+    * [1 September 2021](/docs/openshift?topic=openshift-rel-notes#1sep2021)
+
 * [August 2021](/docs/openshift?topic=openshift-rel-notes#release-aug-2021)
     * [31 August 2021](/docs/openshift?topic=openshift-rel-notes#31aug2021)
     * [30 August 2021](/docs/openshift?topic=openshift-rel-notes#30aug2021)
@@ -1996,6 +1999,8 @@ subcollection: openshift
   * [Changelog for patch update 1.0.1_114, released 10 September 2020](/docs/openshift?topic=openshift-ca_changelog#101114_ca)
 
 [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog)
+* [Version 4.0](/docs/openshift?topic=openshift-vpc_bs_changelog#0400_is_block)
+  * [Changelog for version 4.0, released 1 September 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400_is_block_relnote)
 * [Version 3.0.1](/docs/openshift?topic=openshift-vpc_bs_changelog#0301_is_block)
   * [Changelog for version 3.0.1, released 15 July 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#301_init)
 * [Version 3.0.0](/docs/openshift?topic=openshift-vpc_bs_changelog#0300_is_block)
@@ -2010,6 +2015,7 @@ subcollection: openshift
   * [Changelog for patch update 2.0.3_365, released 05 August 2020](/docs/openshift?topic=openshift-vpc_bs_changelog#203365_is_block)
 
 [Object storage plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog)
+* [Changelog for version 2.1.4, released 1 September 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0214_object_plugin)
 * [Changelog for version 2.1.3, released 25 August 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0213_object_plugin)
 * [Changelog for version 2.1.2, released 22 June 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0212_object_plugin)
 * [Changelog for version 2.1.1, released 03 June 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0211_object_plugin)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-27"
+lastupdated: "2021-09-01"
 
 keywords: vpc block, add-on, vpc block changelog
 
@@ -134,10 +134,41 @@ Refer to the following tables for a summary of changes for each version of the {
 
 | {{site.data.keyword.block_storage_is_full}} add-on version | Supported? | {{site.data.keyword.openshiftlong_notm}} version support |
 | --- | --- | --- |
-| 3.0.1 | Yes | >= 4.3 |
-| 3.0.0 | Yes | >= 4.3 |
-| 2.0.3 | No | >=4.3 |
+| 4.0 | Yes | Greater than or equal to 4.3 |
+| 3.0.1 | Yes | Greater than or equal to 4.3 |
+| 3.0.0 | Yes | Greater than or equal to 4.3 |
+| 2.0.3 | No | Greater than or equal to 4.3 |
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.block_storage_is_full}} add-on version. The second column is the version's supported state. The third column is the cluster version of your cluster that the {{site.data.keyword.block_storage_is_full}} version is supported for."}
+
+
+
+## Version 4.0
+{: #0400_is_block}
+
+Review the changes in version `4.0` of the {{site.data.keyword.block_storage_is_full}} add-on.
+{: shortdesc}
+
+### Changelog for version 4.0, released 1 September 2021
+{: #0400_is_block_relnote}
+
+Review the changes in version `4.0.0_764` of the {{site.data.keyword.block_storage_is_full}} add-on.
+{: shortdesc}
+
+- Image tags: `v4.0.0`
+- Resolves [CVE-2021-27218](https://nvd.nist.gov/vuln/detail/CVE-2021-27218).
+- Updates CSI sidecar images to fix [DLA-2542-1](https://www.debian.org/lts/security/2021/dla-2542), [DLA-2509-1](https://www.debian.org/lts/security/2020/dla-2509), and [DLA-2424-1](https://security-tracker.debian.org/tracker/DLA-2424-1).
+- Updates the sidecar images to the following versions.      
+    - `csi-provisioner`: `icr.io/ext/sig-storage/csi-provisioner:v2.2.2`
+    - `csi-resizer`: `icr.io/ext/sig-storage/csi-resizer:v1.2.0`
+    - `csi-attacher`: `icr.io/ext/sig-storage/csi-attacher:v3.2.1`
+    - `liveness-probe`: `icr.io/ext/sig-storage/livenessprobe:v2.3.0
+    - `csi-node-driver-registrar`: `icr.io/ext/sig-storage/csi-node-driver-registrar:v2.2.0`
+- Updates the Golang version from `1.15.12` to `1.16.7`
+- Increases the resources the `csi-attacher`, `csi-resizer`, `csi-provisioner`, `iks-vpc-block-driver`, and `iks-vpc-node-driver` to fix containers crashing due to OOM issues.
+- Improves volume attach/detach performance by increasing the worker thread count for the `csi-attacher` sidecar.
+- Improves error messaging
+- Fixes a bug related to unexpected IAM behavior.
+- Changes the version numbering system to `X.X.Y_YYY` where `X.X` is the major version number and `.Y_YYY` is the patch version number.
 
 
 
@@ -156,7 +187,7 @@ Volume expansion in version `3.0.1` is available in beta for allowlisted account
 {: beta}
 
 - Image tags: `v3.0.7`  
-- Supported cluster versions >=4.3  
+- Supported cluster versions Greater than or equal to 4.3  
 - Includes beta support for volume expansion on allowlisted accounts.  
 - Fixes vulnerability [CVE-2021-27219](https://nvd.nist.gov/vuln/detail/CVE-2021-27219){: external}.  
 - Includes the `storage-secret-sidecar` container in the {{site.data.keyword.block_storage_is_full}} driver pods.  
@@ -174,7 +205,7 @@ Review the changes in version 3.0.0_521 of the {{site.data.keyword.block_storage
 {: shortdesc}
 
 - Image tags: `v3.0.7`  
-- Supported cluster versions: >=4.3  
+- Supported cluster versions: Greater than or equal to 4.3  
 - Updates the Golang version from `1.15.5` to `1.15.9`.  
 
 
@@ -185,7 +216,7 @@ Review the changes in version 3.0.0_521 of the {{site.data.keyword.block_storage
 {: shortdesc}
 
 - Image tags: `v.3.0.0`   
-- Supported cluster versions: >=4.3  
+- Supported cluster versions: Greater than or equal to 4.3  
 - The `vpc-block-csi-driver` is now available for both managed clusters and unmanaged clusters.   
 - No functional changes in this release.  
 
