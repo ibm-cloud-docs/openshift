@@ -14,14 +14,29 @@
         "href": "/docs/openshift?topic=openshift-rel-notes"
       },  
       {
-        "title": "Understanding Red Hat OpenShift on IBM Cloud",
+        "title": "Understand Red Hat OpenShift on IBM Cloud",
         "description": "Learn more about Red Hat OpenShift on IBM Cloud, its capabilities, and the options that are available to you.",
         "href": "/docs/openshift?topic=openshift-roks-overview"
       },
       {
-        "title": "Create an OpenShift cluster in the UI",
-        "description": "Get started using the IBM Cloud console to create a cluster and deploy your first containerized app.",
+        "title": "Get started with OpenShift",
+        "description": "Use the IBM Cloud console to create a cluster and deploy your first containerized app.",
         "href": "/docs/openshift?topic=openshift-getting-started"
+      },
+      {
+        "title": "Plan your environment",
+        "description": "Plan a highly available cluster with capacity for app workloads.",
+        "href": "/docs/openshift?topic=openshift-learning-path-admin#admin_plan"
+      },
+      {
+        "title": "Create a cluster",
+        "description": "Create a cluster according to your planned setup.",
+        "href": "/docs/openshift?topic=openshift-learning-path-admin#admin_cluster"
+      },
+      {
+        "title": "Add storage",
+        "description": "Plan and add highly available persistent storage for your app data.",
+        "href": "/docs/openshift?topic=openshift-learning-path-admin#admin_storage"
       }
     ],
 
@@ -32,4 +47,3 @@
     }
     
   }
-  
