@@ -1,0 +1,35 @@
+{
+    "title": "Red Hat OpenShift on IBM Cloud",
+    "lastupdated": "2021-09-01",
+    "introduction": "Explore the capabilities of Red Hat OpenShift on IBM Cloud and discover how you can deploy apps on highly available OpenShift clusters. ",
+    "section_devtools": {
+      "api": "/apidocs/kubernetes", 
+      "cli": "/docs/openshift?topic=openshift-kubernetes-service-cli", 
+      "terraform": "/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-tutorial-tf-clusters"
+    },
+    "section_recommended": [
+      {
+        "title": "See what's new",
+        "description": "Read about the latest changes to Red Hat Openshift on IBM Cloud. ",
+        "href": "/docs/openshift?topic=openshift-rel-notes"
+      },  
+      {
+        "title": "Understanding Red Hat OpenShift on IBM Cloud",
+        "description": "Learn more about Red Hat OpenShift on IBM Cloud, its capabilities, and the options that are available to you.",
+        "href": "/docs/openshift?topic=openshift-roks-overview"
+      },
+      {
+        "title": "Create an OpenShift cluster in the UI",
+        "description": "Get started using the IBM Cloud console to create a cluster and deploy your first containerized app.",
+        "href": "/docs/openshift?topic=openshift-getting-started"
+      }
+    ],
+
+    "section_learn": {
+      "developer": "https://developer.ibm.com/components/redhat-openshift-ibm-cloud/",
+      "training": "https://www.ibm.com/training/search?query=Red%20Hat%20OpenShift",
+      "community": "https://community.ibm.com/community/user/publiccloud/home"
+    }
+    
+  }
+  
