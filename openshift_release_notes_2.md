@@ -151,7 +151,7 @@ Istio add-on changelog
 :   [Version 1.11.1](/docs/containers?topic=containers-istio-changelog#1111) of the Istio managed add-on is released.
 
 New! Sao Paolo multizone region
-:   You can now create classic or VPC clusters in the Sao Paolo, Brazil [location](/docs/openshift?topic=openshift-regions-and-zones).
+:   You can now create VPC clusters in the Sao Paolo, Brazil [location](/docs/openshift?topic=openshift-regions-and-zones).
 
  VPC disk encryption on worker nodes
 :   Now, you can manage the encryption for the disk on your VPC worker nodes. For more information, see [VPC worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-vpc).
