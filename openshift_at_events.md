@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-02"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -405,7 +405,7 @@ To [view events](/docs/activity-tracker?topic=activity-tracker-view_events) that
 The following table shows the {{site.data.keyword.at_short}} location where your events are sent to. To view your events, make sure that you have an {{site.data.keyword.at_short}} instance in the location that matches your cluster location. Note that clusters in the Montreal, Toronto, and Washington, D.C. locations forward all events to the Dallas {{site.data.keyword.at_short}} location.
 
 | {{site.data.keyword.openshiftlong_notm}} classic location | {{site.data.keyword.at_short}} event location |
-|-----|-----|-----|
+|-----|-----|
 | Dallas (dal10, dal12, dal13) | Dallas |
 | Mexico City (mex01) | Dallas |
 | Montreal (mon01) | Dallas |
@@ -432,8 +432,9 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 {: tab-group="at-locations"}
 
 | {{site.data.keyword.openshiftlong_notm}} VPC location | {{site.data.keyword.at_short}} event location |
-|-----|-----|-----|
+|-----|-----|
 | Dallas (us-south-1, us-south-2, us-south-3) | Dallas |
+| São Paulo (br-sao-1, br-sao-2, br-sao-3) | Dallas |
 | Washington, D.C. (us-east-1, us-east-2, us-east-3) | Washington, D.C. |
 | Toronto (ca-tor-1, ca-tor-2, ca-tor-3) | Washington, D.C. |
 | Frankfurt (eu-de-1, eu-de-2, eu-de-3) | Frankfurt |
