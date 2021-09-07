@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-23"
+lastupdated: "2021-09-07"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -118,10 +119,20 @@ View information for version updates to the [{{site.data.keyword.cloud_notm}} HP
 
 | HPCS Router add-on version | Supported? | {{site.data.keyword.openshiftshort}} version support |
 | -------------------------- | -----------|----------------------------------------------------- |
-| 4.6 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | 4.6 |
-| 4.5 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | 4.5 |
+| 4.7 | Yes | 4.7 |
+| 4.6 | Yes | 4.6 |
+| 4.5 | Yes | 4.5 |
 {: summary="The rows are read from left to right. The first column is the HPCS Router add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the add-on version is supported for."}
-{: caption="Supported HPCS Router add-on versions" caption-side="top"}
+{: caption="Supported HPCS Router add-on versions" caption-side="top"
+
+## Version 4.7.0
+{: #4_7_0}
+
+|Version build|Release date|Changes|
+|-------------|------------|-------|
+| 4.7.0_854 | 7 September 2021 | Updates to address [CVE-2021-3711](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3711){: external} and [CVE-2021-3712](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3712){: external}. |
+{: summary="The rows are read from left to right. The first column is the build of the image version. The second column is the build release date. The third column contains a brief description of the change made in the version build."}
+{: caption="Changelog for version 4.7.0 of the HPCS Router add-on" caption-side="top"}
 
 ## Version 4.6.0
 {: #4_6_0}

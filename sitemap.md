@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-02"
+lastupdated: "2021-09-07"
 
 keywords: openshift
 subcollection: openshift
@@ -2032,6 +2032,7 @@ subcollection: openshift
 * [Changelog for 1.0.5, released 17 December 2020](/docs/openshift?topic=openshift-backup_restore_changelog#0105_br_chart)
 
 [{{site.data.keyword.cloud_notm}} HPCS Router add-on changelog](/docs/openshift?topic=openshift-hpcs-router-changelog)
+* [Version 4.7.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0)
 * [Version 4.6.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0)
 * [Version 4.5.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0)
 
