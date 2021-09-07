@@ -58,7 +58,7 @@ toc:
           label: IBM Developer OpenShift tutorials
           href: https://developer.ibm.com/components/redhat-openshift-ibm-cloud/tutorials/
     - navgroup: 
-      id: id="howto"
+      id: howto
       topics:
       - topicgroup:
         label: Installing the CLI and API
@@ -316,7 +316,7 @@ toc:
                 - ts-worker/ts-worker-ssh-fail.md
             - topicgroup:
               label: Cluster autoscaler
-              topics:   
+              topics:
                 - ts-autoscaler/ts-ca-debug.md
                 - ts-autoscaler/ts-ca-pod-init.md
             - topicgroup:
