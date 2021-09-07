@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-31"
+lastupdated: "2021-09-07"
 
-keywords: openshift, openshift data foundation, openshift container storage, ocs, classic, roks
+keywords: openshift, openshift data foundation, openshift container storage, ocs, satellite
 
 subcollection: openshift
 
@@ -114,7 +114,7 @@ subcollection: openshift
 OpenShift Data Foundation is a highly available storage solution that you can use to manage persistent storage for your containerized workloads in {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
-The OpenShift Data Foundation add-on is available as a technology preview and might change without prior notice. Don't use this add-on for production workloads.
+The OpenShift Data Foundation add-on is available as a technology preview and might change without prior notice. Do not use this add-on for production workloads.
 {: preview}
 
 
@@ -257,12 +257,80 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 To install ODF in your cluster, complete the following steps.
 {: shortdesc}
 
-1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version 4.7.0 of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must install the add-on from the CLI and specify the `--version` flag.
-1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to install the add-on.
-2. On the cluster **Overview** page, click **Add-ons**.
-3. On the OpenShift Data Foundation card, click **Install**.
+On satellite clusters, you can either dynamically provision storage volumes for ODF using a block storage driver in your cluster, or you can statically provision storage devices for ODF by providing the disk IDs of the volumes on your worker nodes. To use static provisioning, you must first [gather your local block storage device details](#odf-sat-gather).
+{: important}
 
-**Next steps** [Create your storage cluster](#odf-sat-deploy-crd).
+1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version 4.7.0 of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must install the add-on from the CLI and specify the `--version` flag.
+1. [Review the parameter reference](#odf-sat-param-ref).
+1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to install the add-on.
+1. On the cluster **Overview** page, on the OpenShift Data Foundation card, click **Install**. The **Install ODF** panel opens.
+1. In the **Install ODF** panel, enter the configuration parameters that you want to use for your ODF deployment.
+    - `ocsDeploy`: Enter `true` to enable the add-on and deploy the ODF resources to your cluster. Enter `false` to only enable the add-on. If you enter `false`, you must create a [CRD to deploy ODF]() later.
+    - `monSize`: Enter the size of the {{site.data.keyword.block_storage_is_short}} devices that you want to provision for the ODF [monitor pods](/docs/openshift?topic=openshift-ocs-storage-prep). The default setting `20Gi`.
+    - `monStorageClassName`:  \n For dynamic provisioning, enter the name of the storage class that you want to use. For {{site.data.keyword.satelliteshort}} clusters, enter the name of the block storage class that you want to use to dynamically provision volumes. The default storage class is `ibmc-vpc-block-metro-10iops-tier`.  \n For static provision with local disks on your worker nodes, enter the storage class `localfile`.
+    - `monDevicePaths`: To dynamically provision disks by using a block storage driver in your cluster, leave this parameter as `invalid`. To use local devices on your worker nodes, enter a comma separated list of device IDs. To gather the device IDs for the disk on your worker nodes, see [Gathering your local block storage device details](#odf-sat-gather).
+    - `osdSize`: Enter the size of the {{site.data.keyword.block_storage_is_short}} devices that you want to provision for the [OSD pods](/docs/openshift?topic=openshift-ocs-storage-prep). The default size is `250Gi`.
+     `osdStorageClassName`:   \n For dynamic provisioning, enter the name of the storage class that you want to use. For {{site.data.keyword.satelliteshort}} clusters, enter the name of the block storage class that you want to use to dynamically provision volumes. The default storage class is `ibmc-vpc-block-metro-10iops-tier`.  \n For static provision with local disks on your worker nodes, enter the storage class `localblock`.
+    - `osdDevicePaths`: To dynamically provision disks by using a block storage driver in your cluster, leave this parameter as `invalid`. To use local devices on your worker nodes, enter a comma separated list of device IDs. To gather the device IDs for the disk on your worker nodes, see [Gathering your local block storage device details](#odf-sat-gather).
+    - `numOfOsd`: Enter the number of block storage device sets that you want to provision for ODF. A `numOfOsd` value of 1 provisions 1 device set which includes 3 block storage devices. The devices are provisioned evenly across your worker nodes. For more information, see [Understanding ODF](/docs/openshift?topic=openshift-ocs-storage-prep).
+    - `workerNodes`: Enter the worker nodes where you want to deploy ODF. You must have at least 3 worker nodes. The default setting is `all`. If you want to deploy ODF only on certain nodes, enter the IP addresses of the worker nodes in a comma-separated list without spaces, for example: `XX.XXX.X.X,XX.XXX.X.X,XX.XXX.X.X`.
+    - `ocsUpgrade`: Enter `true` or `false` to upgrade the ODF operators. For initial deployment, leave this setting as `false`. The default setting is `false`.
+    - `clusterEncryption`: Enter `true` or `false` to enable cluster encryption. The default setting is `false`.
+
+1. After you enter the parameters that you want to use, click **Install**.
+
+1. Wait a few minutes for the add-on deployment to complete. When the deployment is complete, the add-on status is `Normal - Addon Ready`.
+
+1. Verify your installation. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+1. Run the following command to verify the ODF pods are running.
+    ```
+    oc get pods -n openshift-storage
+    ```
+    {: pre}
+
+    Example output
+
+    ```
+    NAME                                                              READY   STATUS      RESTARTS   AGE
+    csi-cephfsplugin-bl4rx                                            3/3     Running     0          172m
+    csi-cephfsplugin-lsd8z                                            3/3     Running     0          172m
+    csi-cephfsplugin-provisioner-5b9b669659-5ktts                     6/6     Running     0          172m
+    csi-cephfsplugin-provisioner-5b9b669659-65zbk                     6/6     Running     0          172m
+    csi-cephfsplugin-xlkc2                                            3/3     Running     0          172m
+    csi-rbdplugin-c7tbj                                               3/3     Running     0          172m
+    csi-rbdplugin-fj7q7                                               3/3     Running     0          172m
+    csi-rbdplugin-provisioner-6f87685d6b-fxrpk                        6/6     Running     0          172m
+    csi-rbdplugin-provisioner-6f87685d6b-vb47x                        6/6     Running     0          172m
+    csi-rbdplugin-tc8hp                                               3/3     Running     0          172m
+    noobaa-core-0                                                     1/1     Running     0          163m
+    noobaa-db-pg-0                                                    1/1     Running     0          163m
+    noobaa-default-backing-store-noobaa-pod-c83e2ade                  1/1     Running     0          161m
+    noobaa-endpoint-5b97994bf7-fxknh                                  1/1     Running     0          161m
+    noobaa-operator-556b5db575-f9zbf                                  1/1     Running     0          172m
+    ocs-metrics-exporter-574784d58b-4mbgr                             1/1     Running     0          172m
+    ocs-operator-789c6d7f95-l7682                                     1/1     Running     0          173m
+    rook-ceph-crashcollector-10.241.0.6-676f9548b7-k44tk              1/1     Running     0          170m
+    rook-ceph-crashcollector-10.241.128.5-55565c8679-hf8h4            1/1     Running     0          167m
+    rook-ceph-crashcollector-10.241.64.9-767bc5776d-42njb             1/1     Running     0          169m
+    rook-ceph-mds-ocs-storagecluster-cephfilesystem-a-85dc5665rfdrh   2/2     Running     0          162m
+    rook-ceph-mds-ocs-storagecluster-cephfilesystem-b-68c779dcfknbp   2/2     Running     0          162m
+    rook-ceph-mgr-a-bc7f4cb94-tzrxx                                   2/2     Running     0          165m
+    rook-ceph-mon-a-6f47c4dd55-7mzbp                                  2/2     Running     0          170m
+    rook-ceph-mon-b-cdf99bf6f-b2pg9                                   2/2     Running     0          169m
+    rook-ceph-mon-c-59994fdd9f-b6t5c                                  2/2     Running     0          167m
+    rook-ceph-operator-bdf98d48b-b5rm6                                1/1     Running     0          173m
+    rook-ceph-osd-0-7659d76ff7-fnftm                                  2/2     Running     0          163m
+    rook-ceph-osd-1-b4c7c9487-kngtr                                   2/2     Running     0          163m
+    rook-ceph-osd-2-6c79647d6c-b5kng                                  2/2     Running     0          163m
+    rook-ceph-osd-prepare-ocs-deviceset-0-data-0tjmb9-r5mkj           0/1     Completed   0          165m
+    rook-ceph-osd-prepare-ocs-deviceset-1-data-0kphrw-jgx86           0/1     Completed   0          165m
+    rook-ceph-osd-prepare-ocs-deviceset-2-data-05d74g-6gvpn           0/1     Completed   0          165m
+    rook-ceph-rgw-ocs-storagecluster-cephobjectstore-a-784c848c8qrp   2/2     Running     0          162m
+    ```
+    {: screen}
+
+1. [Deploy an app that uses ODF](/docs/openshift?topic=openshift-odf-deploy-app).
 
 
 ## Gathering your local block storage device details
@@ -342,117 +410,119 @@ Before you install ODF, get the details of the local disks on your worker nodes.
 ## Creating your storage cluster
 {: #odf-sat-deploy-crd}
 
-To create an ODF storage cluster in your VPC cluster or your {{site.data.keyword.satelliteshort}} cluster by using dynamic provisioning for your storage volumes, you can create a custom resource to specify storage device details.
+To create an ODF storage cluster in your {{site.data.keyword.satelliteshort}} cluster by using dynamic provisioning for your storage volumes, you can create a custom resource to specify storage device details.
 {: shortdesc}
 
 If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](#odf-create-cos-sat), and created the Kubernetes secret in your cluster. When you create the ODF CRD in your cluster, ODF looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store that uses your {{site.data.keyword.cos_short}} HMAC credentials.
 {: note}
 
+If you enabled the add-on from the CLI and did not include the `ocsDeploy=true` parameter, complete the following steps to create a storage cluster CRD to deploy ODF. If you enabled the add-on from the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or from the CLI and set `ocsDeploy=true`, you don't need to create a CRD.
+
 1. Create a custom resource called `OcsCluster`. Save one of the following custom resource definition files on your local machine and edit it to include the name of the custom storage class that you created earlier as the `monStorageClassName` and `osdStorageClassName` parameters. For more information about the `OcsCluster` parameters, see the [parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-param-ref).
 
-    **Example custom resource definition for installing ODF on all worker nodes**
+    Example custom resource definition for installing ODF on all worker nodes.
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
     metadata:
-        name: ocscluster-vpc
-      spec:
-    monStorageClassName: <monStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
-    monSize: <monSize>
-    osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
-    osdSize: <osdSize> # The OSD size is the total storage capacity of your storage cluster
-    numOfOsd: 1
-    billingType: advanced
-    ocsUpgrade: false
+        name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+    spec:
+      monStorageClassName: <monStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+      monSize: <monSize>
+      osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+      osdSize: <osdSize> # The OSD size is the total storage capacity of your storage cluster
+      numOfOsd: 1
+      billingType: advanced
+      ocsUpgrade: false
     ```
     {: codeblock}
 
-    **Example custom resource definition for installing ODF only on specified worker nodes**
+    Example custom resource definition for installing ODF only on specified worker nodes
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
     metadata:
         name: ocscluster-sat
-      spec:
-    monStorageClassName: <monStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
-    monSize: <monSize>
-    osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
-    osdSize: <osdSize> # The OSD size is the total storage capacity of your storage cluster
-    numOfOsd: 1
-    billingType: advanced
-    ocsUpgrade: false
-    workerNodes: # Specify the private IP addresses of the worker nodes that you want to use.
-      - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
-      - <workerNodes>
-      - <workerNodes>
+    spec:
+      monStorageClassName: <monStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+      monSize: <monSize>
+      osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+      osdSize: <osdSize> # The OSD size is the total storage capacity of your storage cluster
+      numOfOsd: 1
+      billingType: advanced
+      ocsUpgrade: false
+      workerNodes: # Specify the private IP addresses of the worker nodes that you want to use.
+        - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
+        - <workerNodes>
+        - <workerNodes>
     ```
     {: codeblock}
 
 
-    **Example custom resource for installing ODF on all worker nodes**
+    Example custom resource for installing ODF on all worker nodes.
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
     metadata:
-        name: ocscluster
-      spec:
-        monStorageClassName: localfile
-        monSize: 20Gi
-        osdStorageClassName: localblock
-        osdSize: "1"
-        numOfOsd: 1
-        billingType: advanced
-        ocsUpgrade: false
-        monDevicePaths:
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part1
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part1
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part1
-        osdDevicePaths:
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2
-          - <device-by-id> # Example: dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part2
+        name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+    spec:
+      monStorageClassName: localfile
+      monSize: 20Gi
+      osdStorageClassName: localblock
+      osdSize: "1"
+      numOfOsd: 1
+      billingType: advanced
+      ocsUpgrade: false
+      monDevicePaths:
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part1
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part1
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part1
+      osdDevicePaths:
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2
+        - <device-by-id> # Example: dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part2
     ```
     {: codeblock}
 
-    **Example custom resource for installing ODF only on certain worker nodes**
+    Example custom resource for installing ODF only on certain worker nodes.
 
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
     metadata:
-        name: ocscluster
-      spec:
-        monStorageClassName: localfile
-        monSize: 20Gi
-        osdStorageClassName: localblock
-        osdSize: "1"
-        numOfOsd: 1
-        billingType: advanced
-        ocsUpgrade: false
-        monDevicePaths:
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part1
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part1
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part1
-        osdDevicePaths:
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2
-          - <device-by-id> # Example: dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part2
-        workerNodes: # Specify the private IP addresses of each worker node where you want to install OCS.
-          - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
-          - <workerNodes>
-          - <workerNodes>
+        name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+    spec:
+      monStorageClassName: localfile
+      monSize: 20Gi
+      osdStorageClassName: localblock
+      osdSize: "1"
+      numOfOsd: 1
+      billingType: advanced
+      ocsUpgrade: false
+      monDevicePaths:
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part1
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part1
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part1
+      osdDevicePaths:
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2
+        - <device-by-id> # Example: dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part2
+      workerNodes: # Specify the private IP addresses of each worker node where you want to install OCS.
+        - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
+        - <workerNodes>
+        - <workerNodes>
     ```
     {: codeblock}
 
-3. Save the file and create the `OcsCluster` custom resource to your cluster.
+1. Save the file and create the `OcsCluster` custom resource to your cluster.
     ```sh
     oc create -f <ocs-cluster-filename>.yaml
     ```
     {: pre}
 
-4. Verify that your `OcsCluster` is running.
+1. Verify that your `OcsCluster` is running.
     ```sh
-    oc describe ocscluster ocscluster-vpc
+    oc describe ocscluster ocscluster
     ```
     {: pre}
 
@@ -464,6 +534,7 @@ Refer to the following parameters when you use the add-on or operator in {{site.
 
 | Parameter | Description | Default value |
 | --- | --- | --- |
+| `name` | Note that Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.` | N/A |
 | `monStorageClassName` | Enter the name of the storage class that you want to use for the monitor pod storage devices. To use the local disks on your worker nodes, enter `localfile`. To dynamically provision disks, enter the name of the storage class that you want to use. For **Multizone clusters**, make sure that you specify a storage class that has the `waitForFirstConsumer` binding mode. For **Single zone clusters**, enter the name of the storage class that you want to use. | N/A |
 | `monDevicePaths` | **Local disks only** If you want to use dynamically provisioned disks in your storage cluster, don't specify the device path parameter. Enter a comma separated list of the disk-by-id paths for the storage devices that you want to use for the monitor (MON) pods. The devices that you specify must have at least `20GiB` of space and must not be formatted or mounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example device path value for a partitioned device: `/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part1`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part1`,`/dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part1`. | N/A |
 | `monSize` | Enter a size for your monitoring storage devices. Example: `20Gi`. | N/A |
@@ -471,15 +542,12 @@ Refer to the following parameters when you use the add-on or operator in {{site.
 | `osdSize` | Enter a size for your OSD block storage devices. Example: `100Gi`. | N/A |
 | `osdDevicePath` | **Local disks only** If you want to use dynamically provisioned disks in your storage cluster, don't specify the device path parameter. Enter a comma separated list of the device paths for the devices that you want to use for the OSD devices. The devices that you specify are used as your application storage in your configuration. Each device must have at least `100GiB` of space and must not be formatted or mounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example device path value for a partitioned device: `/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2`,`/dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2`. |
 | `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the specified number. For example, if you enter `1`, ODF creates 3 OSDs. | `1` |
-| `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your OCS deployment. | `hourly` |
+| `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your OCS deployment. | `advanced` |
 | `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
 | `workerNodes` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
 | `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
-{: caption="Classic OpenShift Data Foundation parameter reference" caption-side="top"}
+{: caption="Parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
-
-
-
 
 
 

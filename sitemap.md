@@ -1277,6 +1277,7 @@ subcollection: openshift
 * [Creating {{site.data.keyword.cos_full_notm}} service credentials](/docs/openshift?topic=openshift-object_storage#service_credentials)
 * [Creating a secret for the object storage service credentials](/docs/openshift?topic=openshift-object_storage#create_cos_secret)
 * [Installing the IBM Cloud Object Storage plug-in](/docs/openshift?topic=openshift-object_storage#install_cos)
+  * [Verifying your installation](/docs/openshift?topic=openshift-object_storage#cos-plugin verify)
   * [Updating the IBM Cloud Object Storage plug-in](/docs/openshift?topic=openshift-object_storage#update_cos_plugin)
   * [Removing the IBM Cloud Object Storage plug-in](/docs/openshift?topic=openshift-object_storage#remove_cos_plugin)
 * [Deciding on the object storage configuration](/docs/openshift?topic=openshift-object_storage#configure_cos)
@@ -1344,6 +1345,8 @@ subcollection: openshift
 
 * [Architecture overview](/docs/openshift?topic=openshift-ocs-storage-prep#odf-ov)
 
+* [Multicloud Object Gateway overview](/docs/openshift?topic=openshift-ocs-storage-prep#understanding-noobaa)
+
 * [Deploying OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep#odf-deploy-options)
 
 
@@ -1355,12 +1358,12 @@ subcollection: openshift
 
 * [Quick start for VPC clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-quickstart)
 
-* [Creating a VPC cluster for OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-storage-prep)
+* [Creating a VPC cluster for OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-storage-vpc)
     * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-create-cos)
 
-* [Installing the add-on from the CLI](/docs/openshift?topic=openshift-deploy-odf-vpc#install-odf-cli-vpc)
-
 * [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-vpc#install-odf-console-vpc)
+
+* [Installing the add-on from the CLI](/docs/openshift?topic=openshift-deploy-odf-vpc#install-odf-cli-vpc)
 
 * [Creating your ODF custom resource](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-vpc-deploy-crd)
     * [Scaling ODF](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-scaling)
@@ -1401,7 +1404,7 @@ subcollection: openshift
 [Deploying OpenShift Data Foundation on Classic clusters](/docs/openshift?topic=openshift-deploy-odf-classic)
 
 * [Planning your setup](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-plan)
-    * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-deploy-odf-classic#odf-create-cos)
+    * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-deploy-odf-classic#odf-create-cos-classic)
     * [Preparing your cluster for an OpenShift Data Foundation installation](/docs/openshift?topic=openshift-deploy-odf-classic#odf-cluster-prepare-classic)
     * [Getting your device details](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-get-devices)
 
@@ -1449,17 +1452,17 @@ subcollection: openshift
 {: #sitemap_managing_the_multi-cloud_object_gateway}
 
 
-[Managing the Multi-Cloud Object Gateway](/docs/openshift?topic=openshift-odf-manage-NooBaa)
+[Managing the Multi-Cloud Object Gateway](/docs/openshift?topic=openshift-odf-manage-noobaa)
 
-* [Setting up backing stores by using the NooBaa CLI](/docs/openshift?topic=openshift-odf-manage-NooBaa#odf-backingstore)
+* [Setting up backing stores by using the NooBaa CLI](/docs/openshift?topic=openshift-odf-manage-noobaa#odf-backingstore)
 
-* [Creating a bucket class that uses two backing stores with a mirror placement policy](/docs/openshift?topic=openshift-odf-manage-NooBaa#odf-bucketclass)
+* [Creating a bucket class that uses two backing stores with a mirror placement policy](/docs/openshift?topic=openshift-odf-manage-noobaa#odf-bucketclass)
 
-* [Creating a storage class](/docs/openshift?topic=openshift-odf-manage-NooBaa#odf-sc)
+* [Creating a storage class](/docs/openshift?topic=openshift-odf-manage-noobaa#odf-sc)
 
-* [Creating an Object Bucket Claim](/docs/openshift?topic=openshift-odf-manage-NooBaa#creating-an-object-bucket-claim)
+* [Creating an Object Bucket Claim](/docs/openshift?topic=openshift-odf-manage-noobaa#creating-an-object-bucket-claim)
 
-* [Deploying an s3 app in the Multicloud Object Gateway](/docs/openshift?topic=openshift-odf-manage-NooBaa#mcg-deploy-app)
+* [Deploying an s3 app in the Multicloud Object Gateway](/docs/openshift?topic=openshift-odf-manage-noobaa#mcg-deploy-app)
 
 
 ## Storage class reference

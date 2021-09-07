@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-31"
+lastupdated: "2021-09-07"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -528,7 +528,7 @@ Making your location and cluster subdomains available outside of your hosts' pri
 
 2. Retrieve the matching public IP addresses of your hosts
     ```
-    ibmcloud sat hosts ls --location <location_name_or_ID>
+    ibmcloud sat host ls --location <location_name_or_ID>
     ```
     {: pre}
 

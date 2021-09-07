@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-07"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -119,6 +119,8 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 Review the release notes for September 2021.
 {: shortdesc}
+
+
 
 ### 1 September 2021
 {: #1sep2021}

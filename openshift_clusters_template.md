@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-25"
+lastupdated: "2021-09-07"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -63,6 +63,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -117,7 +118,9 @@ Creating a cluster by using a template is available as a technical preview only,
 {: preview}
 
 **What do I get when I deploy the secure cluster template?**
-When you create a secure cluster by using the {{site.data.keyword.bpshort}} template, you get a multizone, private-only cluster with logging and monitoring enabled as well as {{site.data.keyword.cloudaccesstraillong_notm}} and {{site.data.keyword.cos_full_notm}} instances. The secure cluster doesn't have public network access, so to access your cluster, you must [set up a VPN connection](/docs/openshift?topic=openshift-access_cluster#access_vpn_openshift). For more information and specifications, see [Resources that are created from the template](#sch-tf-resources-created).
+When you create a secure cluster by using the {{site.data.keyword.bpshort}} template, you get a multizone, private-only cluster with logging and monitoring enabled as well as {{site.data.keyword.cloudaccesstraillong_notm}} and {{site.data.keyword.cos_full_notm}} instances. The secure cluster doesn't have public network access, so to access your cluster, you must [set up a VPN connection](/docs/openshift?topic=openshift-access_cluster#access_vpn_openshift). For more information and specifications, see [Resources that are created from the template](#sch-tf-resources-created). To read an IBM blog about setting up a VPN connection, see [Setting up a VPN](https://cms.ibm.com/cloud/blog/setting-up-a-vpn-between-ibm-cloud-vpc-and-your-home-office){: external}.
+
+
 ## Resources that are created from the template
 {: #sch-tf-resources-created}
 
@@ -213,8 +216,9 @@ With the secure cluster template, you can create a cluster from the CLI with {{s
 The {{site.data.keyword.bpshort}} template helps with the initial creation. After creating the cluster, you are in control for continued cluster management actions, such as [updating the cluster](/docs/containers?topic=containers-update), [adding worker nodes](/docs/containers?topic=containers-add_workers), updating any of your VPC network options, and using the security integrations to monitor your cluster.
 {: shortdesc} 
 
-To fully [remove](/docs/containers?topic=containers-remove) your cluster and the resources created by the secure cluster template, make sure to [destroy your workspace in {{site.data.keyword.bpshort}}](/docs/schematics?topic=schematics-workspace-setup#del-workspace). Removing the cluster and not removing the workspace in {{site.data.keyword.bpshort}} doesn't remove all the resources this template deploys.
+To access your cluter, you must [set up a VPN connection](/docs/openshift?topic=openshift-access_cluster#access_vpn_openshift). To read an IBM blog about setting up a VPN connection, see [Setting up a VPN](https://cms.ibm.com/cloud/blog/setting-up-a-vpn-between-ibm-cloud-vpc-and-your-home-office){: external}.
 
+To fully [remove](/docs/containers?topic=containers-remove) your cluster and the resources created by the secure cluster template, make sure to [destroy your workspace in {{site.data.keyword.bpshort}}](/docs/schematics?topic=schematics-workspace-setup#del-workspace). Removing the cluster and not removing the workspace in {{site.data.keyword.bpshort}} doesn't remove all the resources this template deploys.
 
 
 

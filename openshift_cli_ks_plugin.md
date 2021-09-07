@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-31"
+lastupdated: "2021-09-07"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -4411,7 +4411,8 @@ ibmcloud oc nlb-dns monitor disable --cluster mycluster --nlb-host mycluster-a1b
 ```
 {: pre}
 
-</br>
+
+
 ### `ibmcloud oc nlb-dns monitor enable`
 {: #cs_nlb-dns-monitor-enable}
 
