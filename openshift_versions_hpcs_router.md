@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-08"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -123,7 +123,7 @@ View information for version updates to the [{{site.data.keyword.cloud_notm}} HP
 | 4.6 | Yes | 4.6 |
 | 4.5 | Yes | 4.5 |
 {: summary="The rows are read from left to right. The first column is the HPCS Router add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the add-on version is supported for."}
-{: caption="Supported HPCS Router add-on versions" caption-side="top"
+{: caption="Supported HPCS Router add-on versions" caption-side="top"}
 
 ## Version 4.7.0
 {: #4_7_0}
