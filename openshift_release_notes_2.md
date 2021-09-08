@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-08"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -114,6 +114,12 @@ subcollection: openshift
 Use the release notes to learn about the latest changes to the {{site.data.keyword.openshiftlong}} documentation that are grouped by month.
 {: shortdesc}
 
+For information about releases that occured before August 30th, see [Release notes](/docs/openshift?topic=openshift-iks-release).
+{: note}
+
+Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status){: external}.
+{: note}
+
 ## September 2021
 {: #release-sep-2021}
 
@@ -121,6 +127,16 @@ Review the release notes for September 2021.
 {: shortdesc}
 
 
+ 
+### 8 September 2021
+{: #8sep2021}
+{: release-note}
+
+Review the release notes for 8 September 2021.
+{: shortdesc}
+
+HPCS Router add-on
+:   Updated version changelog for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog) add-on.
 
 ### 1 September 2021
 {: #1sep2021}
