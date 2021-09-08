@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-08"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, satellite
 
@@ -265,7 +265,7 @@ On satellite clusters, you can either dynamically provision storage volumes for 
 1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to install the add-on.
 1. On the cluster **Overview** page, on the OpenShift Data Foundation card, click **Install**. The **Install ODF** panel opens.
 1. In the **Install ODF** panel, enter the configuration parameters that you want to use for your ODF deployment.
-    - `ocsDeploy`: Enter `true` to enable the add-on and deploy the ODF resources to your cluster. Enter `false` to only enable the add-on. If you enter `false`, you must create a [CRD to deploy ODF]() later.
+    - `ocsDeploy`: Enter `true` to enable the add-on and deploy the ODF resources to your cluster. Enter `false` to only enable the add-on. If you enter `false`, you must create a [CRD to deploy ODF](#odf-sat-deploy-crd) later.
     - `monSize`: Enter the size of the {{site.data.keyword.block_storage_is_short}} devices that you want to provision for the ODF [monitor pods](/docs/openshift?topic=openshift-ocs-storage-prep). The default setting `20Gi`.
     - `monStorageClassName`:  \n For dynamic provisioning, enter the name of the storage class that you want to use. For {{site.data.keyword.satelliteshort}} clusters, enter the name of the block storage class that you want to use to dynamically provision volumes. The default storage class is `ibmc-vpc-block-metro-10iops-tier`.  \n For static provision with local disks on your worker nodes, enter the storage class `localfile`.
     - `monDevicePaths`: To dynamically provision disks by using a block storage driver in your cluster, leave this parameter as `invalid`. To use local devices on your worker nodes, enter a comma separated list of device IDs. To gather the device IDs for the disk on your worker nodes, see [Gathering your local block storage device details](#odf-sat-gather).

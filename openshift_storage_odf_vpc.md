@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-08"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, roks
 
@@ -136,7 +136,7 @@ ibmcloud oc cluster addon enable -c <cluster_name> --version 4.7.0 --param "ocsD
 If you want to override the default parameters when deploying the add-on, you can use the `--param "key=value"` format. For more information, see [Installing the add-on from the CLI](#install-odf-cli-vpc).
 {: tip}
 
-## Creating a VPC cluster for OpenShift Data Foundation
+## Creating a VPC cluster for {[odf_long}
 {: #ocs-storage-vpc}
 
 Review the following steps to deploy ODF on your VPC cluster.
@@ -217,7 +217,7 @@ To install ODF in your cluster, complete the following steps.
 1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to install the add-on.
 1. On the cluster **Overview** page, on the OpenShift Data Foundation card, click **Install**. The **Install ODF** panel opens.
 1. In the **Install ODF** panel, enter the configuration parameters that you want to use for your ODF deployment.
-    - `ocsDeploy`: Enter `true` to enable the add-on and deploy the ODF resources to your cluster. Enter `false` to only enable the add-on. If you enter `false`, you must create a [CRD to deploy ODF]() later.
+    - `ocsDeploy`: Enter `true` to enable the add-on and deploy the ODF resources to your cluster. Enter `false` to only enable the add-on. If you enter `false`, you must create a [CRD to deploy ODF](#ocs-vpc-deploy-crd) later.
     - `monSize`: Enter the size of the {{site.data.keyword.block_storage_is_short}} devices that you want to provision for the ODF [monitor pods](/docs/openshift?topic=openshift-ocs-storage-prep). The default setting `20Gi`.
     - `monStorageClassName`: Enter the {{site.data.keyword.block_storage_is_short}} [storage class](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference) that you want to use to dynamically provision storage for the [monitor pods](/docs/openshift?topic=openshift-ocs-storage-prep). The default storage class is `ibmc-vpc-block-metro-10iops-tier`.
     - `monDevicePaths`: `invalid` for VPC clusters. Leave this parameter as-is.
@@ -534,7 +534,7 @@ You can scale your ODF configuration by increasing the `numOfOsd` setting. When 
 To increase the storage capacity in your storage cluster, add compatible worker nodes to your cluster.
 {: shortdesc}
 
-1. Expand the worker pool of the cluster that is used for OCS by [adding worker nodes](/docs/openshift?topic=openshift-add_workers). Ensure that your worker nodes meet the [requirements for ODF](#ocs-storage-prep). If you deployed ODF on all the worker nodes in your cluster, the ODF drivers are installed on the new worker nodes when they are added to your cluster.
+1. Expand the worker pool of the cluster that is used for OCS by [adding worker nodes](/docs/openshift?topic=openshift-add_workers). Ensure that your worker nodes meet the [requirements for ODF](/docs/openshift?topic=openshift-ocs-storage-prep). If you deployed ODF on all the worker nodes in your cluster, the ODF drivers are installed on the new worker nodes when they are added to your cluster.
 2. If you deployed ODF on a subset of worker nodes in your cluster by specifying the private `<workerNodes>` parameters in your `OcsCluster` custom resource, you can add the IP addresses of the new worker nodes to your ODF deployment by editing the custom resource definition.
     ```sh
     oc edit ocscluster ocscluster-vpc
