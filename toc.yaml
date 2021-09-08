@@ -4,7 +4,7 @@ toc:
     category: containers
     audience: service
     href: /docs/openshift
-    path: containers
+    path: openshift
     label: Red Hat OpenShift on IBM Cloud
     version: 2
     console-page: /openshift
