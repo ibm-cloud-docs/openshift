@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-08"
 
 keywords: openshift, openshift data foundation, openshift container storage, vpc, roks, satellite
 
@@ -118,9 +118,9 @@ The OpenShift Data Foundation add-on is available as a technology preview and mi
 
 Supported infrastructure providers.
 
-- <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC  
-- {[icon_sat]} {{site.data.keyword.satelliteshort}} 
-- <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic  
+- VPC  
+- {{site.data.keyword.satelliteshort}}  
+- Classic  
 
 What is OpenShift Data Foundation?
 :   OpenShift Data Foundation is a highly available storage solution that consists of several open source operators and technologies like [Ceph](https://docs.ceph.com/en/latest/start/intro/){: external}, [NooBaa](https://www.noobaa.io/){: external}, and [Rook](https://rook.io/){: external}. These operators allow you to provision and manage File, Block, and Object storage for your containerized workloads in {{site.data.keyword.openshiftlong}} clusters. Unlike other storage solutions where you might need to configure separate drivers and operators for each type of storage, ODF is a unified solution capable of adapting or scaling to your storage needs. You can also deploy ODF on any OCP cluster.
