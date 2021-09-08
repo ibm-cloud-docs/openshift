@@ -136,7 +136,7 @@ ibmcloud oc cluster addon enable -c <cluster_name> --version 4.7.0 --param "ocsD
 If you want to override the default parameters when deploying the add-on, you can use the `--param "key=value"` format. For more information, see [Installing the add-on from the CLI](#install-odf-cli-vpc).
 {: tip}
 
-## Creating a VPC cluster for {[odf_long}
+## Creating a VPC cluster for OpenShift Data Foundation
 {: #ocs-storage-vpc}
 
 Review the following steps to deploy ODF on your VPC cluster.
