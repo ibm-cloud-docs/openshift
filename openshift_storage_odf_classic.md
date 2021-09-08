@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-08"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic, roks
 
@@ -113,7 +113,7 @@ subcollection: openshift
 OpenShift Data Foundation is a highly available storage solution that you can use to manage persistent storage for your containerized workloads in {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
-The OpenShift Data Foundation add-on is available as a technology preview and might change without prior notice. Don't use this add-on for production workloads.
+The OpenShift Data Foundation add-on is available as a technology preview and might change without prior notice. Do not use this add-on for production workloads.
 {: preview}
 
 ## Planning your setup
@@ -126,7 +126,7 @@ Before you install ODF in your cluster, you must make sure that the following pr
 1. [Prepare your classic cluster](#odf-cluster-prepare-classic).
 
 ### Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance
-{: #odf-create-cos}
+{: #odf-create-cos-classic}
 
 If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing store in your storage cluster, create an instance of {{site.data.keyword.cos_full_notm}}. Then, create a set of HMAC credentials and a Kubernetes secret that uses your {{site.data.keyword.cos_short}} HMAC credentials. If you don't specify {{site.data.keyword.cos_full_notm}} credentials during installation, then the default backing store in your storage cluster is created by using the PVs in your cluster. You can set up additional backing stores after deploying ODF, but you cannot change the default backing store.
 
@@ -182,26 +182,27 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
 
 ### Preparing your cluster for an OpenShift Data Foundation installation
 {: #odf-cluster-prepare-classic}
+
 Before you install OpenShift Data Foundation in a classic cluster, review the following steps to prepare your cluster for an ODF installation.
 {: shortdesc}
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Log in to each worker node in your cluster by using the `oc debug` command and complete the following steps.
-    * Log in to the worker node. Replace `<worker_node_IP>` with the private IP address of your worker node. To get the private IP addresses of your worker nodes, run the `oc get nodes` command.
+    - Log in to the worker node. Replace `<worker_node_IP>` with the private IP address of your worker node. To get the private IP addresses of your worker nodes, run the `oc get nodes` command.
         ```sh
         oc debug node/<node name> -- chroot /host rm -rvf /var/lib/rook /mnt/local-storage
         ```
         {: pre}
 
-    * For each disk partition, clear the `xfs` file system that was created with the worker node. If you do not clear the file system, the OSD is not created.
+    - For each disk partition, clear the `xfs` file system that was created with the worker node. If you do not clear the file system, the OSD is not created.
         ```sh
         file -sL /dev/<partition>
         wipefs -a /dev/<partition>
         ```
         {: pre}
 
-    * Log out of the worker node
+    - Log out of the worker node
         ```sh
         exit
         ```
@@ -228,17 +229,17 @@ Before you install OpenShift Data Foundation in a classic cluster, review the fo
     resourceVersion: "60"
     selfLink: /apis/rbac.authorization.k8s.io/v1/clusterroles/system%3Anode
     uid: 1111111a-aa11-1111-1aa1-11a111111a1a
-  rules:
-  - apiGroups:
-    - storage.k8s.io
-    resources:
-    - volumeattachments
-    verbs:
-    - get
-    - create
-    - update
-    - delete
-    - list
+    rules:
+    - apiGroups:
+      - storage.k8s.io
+      resources:
+      - volumeattachments
+      verbs:
+      - get
+      - create
+      - update
+      - delete
+      - list
     ```
     {: codeblock}
 
@@ -255,8 +256,8 @@ Before you install OpenShift Data Foundation in a classic cluster, review the fo
     apiVersion: rbac.authorization.k8s.io/v1
     kind: ClusterRoleBinding
     metadata:
-        annotations:
-          rbac.authorization.kubernetes.io/autoupdate: "true"
+      annotations:
+        rbac.authorization.kubernetes.io/autoupdate: "true"
     creationTimestamp: "2020-07-20T18:53:00Z"
     labels:
       kubernetes.io/bootstrapping: rbac-defaults
@@ -264,14 +265,14 @@ Before you install OpenShift Data Foundation in a classic cluster, review the fo
     resourceVersion: "5202"
     selfLink: /apis/rbac.authorization.k8s.io/v1/clusterrolebindings/system%3Anode
     uid: aaaa1a11-1111-1111-1111-a1a11a111a11
-  roleRef:
-    apiGroup: rbac.authorization.k8s.io
-    kind: ClusterRole
-    name: system:node
-  subjects:
-  - apiGroup: rbac.authorization.k8s.io
-    kind: Group
-    name: system:nodes
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: system:node
+    subjects:
+    - apiGroup: rbac.authorization.k8s.io
+      kind: Group
+      name: system:nodes
     ```
     {: codeblock}
 
@@ -357,15 +358,7 @@ Before you install ODF, get the details of the local disks on your worker nodes.
 You can install the add-on by using the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable).
 {: shortdesc}
 
-If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](#odf-create-cos), and created the Kubernetes secret in your cluster. When you create the ODF CRD in your cluster, ODF looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store by using your {{site.data.keyword.cos_short}} HMAC credentials.
-{: note}
-
-1. Review the [parameter reference](#odf-classic-param-ref). When you enable the add-on, you can override the default values by specifying the `--param "key=value"` flag for each parameter that you want to override. Note that for Classic clusters, you must provide the device paths to the local disks that you want to use.
-
-You can install the add-on by using the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable).
-{: shortdesc}
-
-If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](#odf-create-cos), and created the Kubernetes secret in your cluster. When you create the ODF CRD in your cluster, ODF looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store that uses your {{site.data.keyword.cos_short}} HMAC credentials.
+If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](#odf-create-cos-classic), and created the Kubernetes secret in your cluster. When you create the ODF CRD in your cluster, ODF looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store that uses your {{site.data.keyword.cos_short}} HMAC credentials.
 {: note}
 
 1. Review the [parameter reference](#odf-classic-param-ref). When you enable the add-on, you can override the default values by specifying the `--param "key=value"` flag for each parameter that you want to override.
@@ -398,13 +391,13 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 1. Enable the `openshift-data-foundation` add-on. If you also want to deploy ODF and create your storage cluster from the CLI, you can specify the `"ocsDeploy=true"` flag. If you want to override any of the default parameters, specify the `--param "key=value"` flag for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
 
-    **Example command for deploying the ODF add-on only**:
+    Example command for deploying the ODF add-on only.
     ```sh
     ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version 4.7.0
     ```
     {: pre}
 
-    **Example command for deploying the ODF and creating a storage cluster while overriding the default parameter**:
+    Example command for deploying the ODF and creating a storage cluster while overriding the default parameter.
     ```sh
     ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "ocsDeploy=true" --param "osdSize=500Gi" --param "monStorageClassName=localfile" --param "monStorageClassName=localblock" --param "osdSize=1"
     ```
@@ -422,7 +415,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: pre}
 
-1. If you enabled the add-on and didn't create a storage cluster, follow the steps to [create an ODF custom resource](#ocs-classic-deploy-crd).
+1. If you enabled the add-on and didn't set the `ocsDeploy=true` flag, follow the steps to [create an ODF custom resource](#ocs-classic-deploy-crd).
 
 
 
@@ -432,12 +425,25 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 To install ODF in your cluster, complete the following steps.
 {: shortdesc}
 
-1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version 4.7.0 of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must install the add-on from the CLI and specify the `--version` flag.
-1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to install the add-on.
-2. On the cluster **Overview** page, click **Add-ons**.
-3. On the OpenShift Data Foundation card, click **Install**.
+On classic clusters, you must have disks available on your worker nodes for ODF. When you install ODF, you provide the device paths to those devices. Before installing ODF, [gather your local block storage device details](#odf-classic-get-devices).
+{: important}
 
-**Next steps** [Create your storage cluster](#ocs-classic-deploy-crd).
+1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version 4.7.0 of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must install the add-on from the CLI and specify the `--version` flag.
+1. [Review the parameter reference](#odf-classic-param-ref).
+1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to install the add-on.
+1. On the cluster **Overview** page, on the OpenShift Data Foundation card, click **Install**. The **Install ODF** panel opens.
+1. In the **Install ODF** panel, enter the configuration parameters that you want to use for your ODF deployment.
+    - `ocsDeploy`: Enter `true` to enable the add-on and deploy the ODF resources to your cluster. Enter `false` to only enable the add-on. If you enter `false`, you must create a [CRD to deploy ODF](#ocs-classic-deploy-crd) later.
+    - `monSize`: Enter the size of the {{site.data.keyword.block_storage_is_short}} devices that you want to provision for the ODF [monitor pods](/docs/openshift?topic=openshift-ocs-storage-prep). The default setting `20Gi`.
+    - `monStorageClassName`:  Enter `localfile`.
+    - `monDevicePaths`: Enter a comma separated list of device IDs. To gather the device IDs for the disks on your worker nodes, see [Gathering your local block storage device details](#odf-classic-get-devices).
+    - `osdSize`: Enter `1`.
+     `osdStorageClassName`: Enter `localblock`.
+    - `osdDevicePaths`: Enter a comma separated list of device IDs. To gather the device IDs for the disk on your worker nodes, see [Gathering your local block storage device details](#odf-classic-get-devices).
+    - `numOfOsd`: Enter the number of block storage device sets that you want to provision for ODF. A `numOfOsd` value of 1 provisions 1 device set which includes 3 block storage devices. The devices are provisioned evenly across your worker nodes. For more information, see [Understanding ODF](/docs/openshift?topic=openshift-ocs-storage-prep).
+    - `workerNodes`: Enter the worker nodes where you want to deploy ODF. You must have at least 3 worker nodes. The default setting is `all`. If you want to deploy ODF only on certain nodes, enter the IP addresses of the worker nodes in a comma-separated list without spaces, for example: `XX.XXX.X.X,XX.XXX.X.X,XX.XXX.X.X`.
+    - `ocsUpgrade`: Enter `true` or `false` to upgrade the ODF operators. For initial deployment, leave this setting as `false`. The default setting is `false`.
+    - `clusterEncryption`: Enter `true` or `false` to enable cluster encryption. The default setting is `false`.
 
 ## Creating your storage cluster
 {: #ocs-classic-deploy-crd}
@@ -445,19 +451,19 @@ To install ODF in your cluster, complete the following steps.
 To deploy ODF in your classic cluster, you can create a custom resource definition to specify your storage device details.
 {: shortdesc}
 
-If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](#odf-create-cos), and created the Kubernetes secret in your cluster. When you create the ODF CRD in your cluster, ODF looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store by using your {{site.data.keyword.cos_short}} HMAC credentials.
+If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](#odf-create-cos-classic), and created the Kubernetes secret in your cluster. When you create the ODF CRD in your cluster, ODF looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store by using your {{site.data.keyword.cos_short}} HMAC credentials.
 {: note}
 
 1. Create a custom resource called `OcsCluster`. Save and edit the following custom resource definition to include the device paths for the local disks [that you retrieved earlier](#odf-classic-get-devices). If you don't specify the optional `workerNodes` parameter, then all worker nodes in your cluster are used for the ODF deployment. Be sure to include the `/dev/disk/by-id/` path when you specify your storage devices. 
     - If your worker node has raw disks with partitions, you need one partition for the OSD and one partition for the MON per worker node. As a best practice, and to maximize storage capacity on partitioned disks, you can specify the smaller partition or disk for the MON, and the larger partition or disk for the OSD. Note that the initial storage capacity of your ODF configuration is equal to the size of the disk that you specify as the `osd-device-path` when you create your configuration. 
     - If you devices aren't partitioned, you  must specify one raw disk for the MON and one for the OSD for each worker node that you want to use.
 
-    **Example custom resource for installing ODF on all worker nodes in a classic cluster with partitioned disks**
+    Example custom resource for installing ODF on all worker nodes in a classic cluster with partitioned disks.
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
     metadata:
-        name: ocscluster
+        name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
       spec:
         monStorageClassName: localfile
         monSize: 20Gi
@@ -477,12 +483,12 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: codeblock}
 
-    **Example custom resource for installing ODF only on certain worker nodes in a classic cluster with partitioned disks**
+    Example custom resource for installing ODF only on certain worker nodes in a classic cluster with partitioned disks.
     ```yaml
     apiVersion: ocs.ibm.io/v1
-    kind: OcsCluster
+    kind: OcsCluster 
     metadata:
-        name: ocscluster
+        name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
       spec:
         monStorageClassName: localfile
         monSize: 20Gi
@@ -506,12 +512,12 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: codeblock}
 
-    **Example custom resource for installing ODF on all worker nodes in a classic cluster with non-partitioned disks**
+    Example custom resource for installing ODF on all worker nodes in a classic cluster with non-partitioned disks.
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
     metadata:
-        name: ocscluster
+        name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
       spec:
         monStorageClassName: localfile
         monSize: 20Gi
@@ -531,12 +537,12 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: codeblock}
 
-    **Example custom resource for installing ODF only on certain worker nodes in a classic cluster with non-partitioned disks**
+    Example custom resource for installing ODF only on certain worker nodes in a classic cluster with non-partitioned disks.
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
     metadata:
-        name: ocscluster
+        name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
       spec:
         monStorageClassName: localfile
         monSize: 20Gi
@@ -572,7 +578,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: pre}
 
-**Next steps**: [Deploy an app that uses ODF](/docs/openshift?topic=openshift-odf-deploy-app)
+1. [Deploy an app that uses ODF](/docs/openshift?topic=openshift-odf-deploy-app)
 
 
 ## Parameter reference
@@ -584,18 +590,18 @@ Refer to the following OpenShift Data Foundation parameters when you use the add
 
 | Parameter | Description | Default value |
 | --- | --- | --- |
-| `monStorageClassName` | Enter the name of the storage class that you want to use for your MON devices. For baremetal worker nodes, enter `localfile`. | N/A |
+| `name` | Note that Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.` | N/A |
+| `monStorageClassName` | Enter `localfile`. | N/A |
 | `monDevicePaths` | Enter a comma separated list of the disk-by-id paths for the storage devices that you want to use for the monitor (MON) pods. The devices that you specify must have at least `20GiB` of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example device path value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. | N/A |
 | `monSize` | Enter a size for your monitoring storage devices. Example: `20Gi`. | N/A |
-| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD devices. For baremetal worker nodes, enter `localblock`. | N/A |
-| `osdSize` | Enter a size for your OSD block storage devices. Example: `100Gi`. | N/A |
+| `osdStorageClassName` | Enter `localblock`. | N/A |
+| `osdSize` | Enter `1`. | N/A |
 | `osdDevicePath` | Enter a comma separated list of the device paths for the devices that you want to use for the OSD devices. The devices that you specify are used as your application storage in your configuration. Each device must have at least `100GiB` of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example device path value for a partitioned device: `/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2`,`/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2`. |
 | `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the specified number. For example, if you enter `1`, ODF creates 3 OSDs. | `1` |
-| `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your OCS deployment. | `hourly` |
+| `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your OCS deployment. | `advanced` |
 | `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
 | `workerNodes` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Do not specify this parameter if you want to use all of the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
 | `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
-{: caption="Classic OpenShift Data Foundation parameter reference" caption-side="top"}
+{: caption="Classic parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
-
 

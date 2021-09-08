@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-27"
+lastupdated: "2021-09-08"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -217,7 +217,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 | --- | --- | --- | --- |
 | Supported | 4.7 / 1.20 | 09 Jun 2021 | Jun 2022`†` |
 | Supported | 4.6 / 1.19 | 17 Feb 2021 | Apr 2022 `†` |
-| Supported | 4.5 / 1.18 | 13 Oct 2020 | 30 Sep 2021 `†` |
+| Supported | 4.5 / 1.18 | 13 Oct 2020 | Oct 10 2021 `†` |
 | Not supported | 4.4 / 1.17 | 21 Jul 2020 | 31 May 2021 |
 | Not supported | 4.3 / 1.16 | 20 Apr 2020 | 7 Mar 2021 |
 | Deprecated | 3.11 / 1.11 | 01 Aug 2019 | 06 Jun 2022 `†` |
@@ -281,7 +281,7 @@ The following table shows the actions that you must take before you [update the 
 Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.openshiftshort}} 4.4 to {{site.data.keyword.openshiftshort}} 4.5.
 {: shortdesc}
 
-{{site.data.keyword.openshiftshort}} version 4.5 is deprecated, with a tentative unsupported date of 30 September 2021. Update your cluster to at least [version 4.6](#ocp46) as soon as possible.
+{{site.data.keyword.openshiftshort}} version 4.5 is deprecated, with a tentative unsupported date of 10 October 2021. Update your cluster to at least [version 4.6](#ocp46) as soon as possible.
 {: deprecated}
 
 You cannot update a cluster that runs 3.11 to a version 4 cluster. [Create a cluster](/docs/openshift?topic=openshift-clusters) and [copy your deployments](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) from the outdated cluster to the new cluster.

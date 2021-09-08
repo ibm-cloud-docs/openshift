@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-09-07"
 
 keywords: openshift, storage
 
@@ -64,6 +64,7 @@ content-type: troubleshoot
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -129,6 +130,8 @@ After resetting your API key, you must re-create the {{site.data.keyword.block_s
 oc delete pod -n kube-system ibm-vpc-block-csi-controller-0
 ```
 {: pre}
+
+
 
 
 

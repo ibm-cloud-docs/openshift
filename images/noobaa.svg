@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 892 572" style="enable-background:new 0 0 892 572;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#000000;stroke-width:2;}
+	.st1{font-family:'IBMPlexSansCond';}
+	.st2{font-size:12px;}
+	.st3{fill:#D0E2FF;stroke:#000000;stroke-width:2;}
+	.st4{fill:#E0E0E0;stroke:#000000;stroke-width:2;}
+	.st5{fill:#E0E0E0;stroke:#000000;stroke-width:2.1042;}
+	.st6{fill:#E8DAFF;stroke:#000000;stroke-width:2;}
+	.st7{fill:#E0E0E0;stroke:#000000;stroke-width:2.1324;}
+	.st8{fill:none;}
+	.st9{fill:#E8DAFF;stroke:#000000;stroke-width:2.0991;}
+	.st10{fill:#FFFFFF;}
+	.st11{fill:none;stroke:#000000;stroke-width:1.762;stroke-miterlimit:10;}
+	.st12{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st13{fill:none;stroke:#F1C21B;stroke-width:2;stroke-miterlimit:10;}
+	.st14{fill:#F1C21B;stroke:#F1C21B;stroke-width:2;}
+	.st15{fill:none;stroke:#DA1E28;stroke-width:2;stroke-miterlimit:10;}
+	.st16{fill:#DA1E28;stroke:#DA1E28;stroke-width:2;}
+	.st17{fill:none;stroke:#000000;stroke-width:1.7517;stroke-miterlimit:10;}
+	.st18{fill:#FFFFFF;stroke:#000000;stroke-width:1.5226;}
+	.st19{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:6,6;}
+	.st20{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st21{fill:none;stroke:#000000;stroke-width:2.0388;stroke-miterlimit:10;}
+	.st22{fill:none;stroke:#000000;stroke-width:1.7958;stroke-miterlimit:10;stroke-dasharray:5.3874,5.3874;}
+	.st23{fill:none;stroke:#000000;stroke-width:1.8812;stroke-miterlimit:10;}
+	.st24{fill:none;stroke:#000000;stroke-width:1.8853;stroke-miterlimit:10;stroke-dasharray:5.6559,5.6559;}
+	.st25{fill:#FFFFFF;stroke:#231F20;stroke-width:2;stroke-miterlimit:10;}
+	.st26{fill:#231F20;}
+	.st27{fill:none;stroke:#000000;stroke-width:1.6891;stroke-miterlimit:10;stroke-dasharray:5.0673,5.0673;}
+</style>
+<path pointer-events="all" class="st0" d="M218.7,41.5h655.6c9.5,0,17.2,7.7,17.2,17.2v395.6c0,9.5-7.7,17.2-17.2,17.2H218.7
+	c-9.5,0-17.2-7.7-17.2-17.2V58.7C201.5,49.2,209.2,41.5,218.7,41.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 455.3609 60.5)" class="st1 st2">Multicloud Object Gateway (MCG)</text>
+</g>
+<path pointer-events="all" class="st3" d="M481,201.5h381c10.8,0,19.5,8.7,19.5,19.5v91c0,10.8-8.7,19.5-19.5,19.5H481
+	c-10.8,0-19.5-8.7-19.5-19.5v-91C461.5,210.2,470.2,201.5,481,201.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 634.9783 220.5)" class="st1 st2">Storage class</text>
+</g>
+<path pointer-events="all" class="st4" d="M494.5,71.5h334c9.9,0,18,8.1,18,18v84c0,9.9-8.1,18-18,18h-334c-9.9,0-18-8.1-18-18v-84
+	C476.5,79.6,484.6,71.5,494.5,71.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 624.9783 90.5)" class="st1 st2">Storage class</text>
+</g>
+<path pointer-events="all" class="st0" d="M26,1.5h111c2.5,0,4.5,2,4.5,4.5v21c0,2.5-2,4.5-4.5,4.5H26c-2.5,0-4.5-2-4.5-4.5V6
+	C21.5,3.5,23.5,1.5,26,1.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 54.0624 20.5)" class="st1 st2">Developer</text>
+</g>
+<path pointer-events="all" class="st0" d="M606,1.5h111c2.5,0,4.5,2,4.5,4.5v21c0,2.5-2,4.5-4.5,4.5H606c-2.5,0-4.5-2-4.5-4.5V6
+	C601.5,3.5,603.5,1.5,606,1.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 621.8765 20.5)" class="st1 st2">Storage admin</text>
+</g>
+<path pointer-events="all" class="st5" d="M238.2,101.5h110.7c9.2,0,16.6,6.7,16.6,15v70c0,8.3-7.4,15-16.6,15H238.2
+	c-9.2,0-16.6-6.7-16.6-15v-70C221.6,108.2,229,101.5,238.2,101.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 231.9187 120.5)" class="st1 st2">Object bucket claim</text>
+</g>
+<path pointer-events="all" class="st6" d="M237.2,351.5h627c9.1,0,16.5,7.4,16.5,16.5v77c0,9.1-7.4,16.5-16.5,16.5h-627
+	c-9.1,0-16.5-7.4-16.5-16.5v-77C220.7,358.9,228.1,351.5,237.2,351.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 502.7665 369.8689)" class="st1 st2">NooBaa namespace</text>
+</g>
+<path pointer-events="all" class="st7" d="M34.5,101.5h110.8c7,0,12.7,5,12.7,11.2v52.5c0,6.2-5.7,11.2-12.7,11.2H34.5
+	c-7,0-12.7-5-12.7-11.2v-52.5C21.6,106.5,27.3,101.5,34.5,101.5z"/>
+<rect x="61.5" y="101.5" pointer-events="all" class="st8" width="40" height="20"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 62.7563 115.5)" class="st1 st2">s3 app</text>
+</g>
+<path pointer-events="all" class="st0" d="M32.2,126.5h94c1.7,0,3,1.3,3,3v14c0,1.7-1.3,3-3,3h-94c-1.7,0-3-1.3-3-3v-14
+	C29.2,127.8,30.5,126.5,32.2,126.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 56.0195 140.5)" class="st1 st2">Secret ref</text>
+</g>
+<path pointer-events="all" class="st0" d="M32.6,146.5h94c1.7,0,3,1.3,3,3v14c0,1.7-1.3,3-3,3h-94c-1.7,0-3-1.3-3-3v-14
+	C29.6,147.8,30.9,146.5,32.6,146.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 64.3833 160.5)" class="st1 st2">CM ref</text>
+</g>
+<path pointer-events="all" class="st0" d="M239.5,131.5h94c1.7,0,3,1.3,3,3v14c0,1.7-1.3,3-3,3h-94c-1.7,0-3-1.3-3-3v-14
+	C236.5,132.8,237.8,131.5,239.5,131.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 269.1302 145.5)" class="st1 st2">Secret</text>
+</g>
+<path pointer-events="all" class="st0" d="M239.5,151.5h94c1.7,0,3,1.3,3,3v14c0,1.7-1.3,3-3,3h-94c-1.7,0-3-1.3-3-3v-14
+	C236.5,152.8,237.8,151.5,239.5,151.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 256.4224 165.5)" class="st1 st2">Config map</text>
+</g>
+<path pointer-events="all" class="st0" d="M239.5,171.5h94c1.7,0,3,1.3,3,3v14c0,1.7-1.3,3-3,3h-94c-1.7,0-3-1.3-3-3v-14
+	C236.5,172.8,237.8,171.5,239.5,171.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 248.6344 185.5)" class="st1 st2">Object bucket</text>
+</g>
+<path pointer-events="all" class="st9" d="M16.5,377.5h151.5c6.8,0,12.3,5,12.3,11.2v52.5c0,6.2-5.5,11.2-12.3,11.2H16.5
+	c-6.8,0-12.3-5-12.3-11.2v-52.5C4,382.5,9.5,377.5,16.5,377.5z"/>
+<rect x="61.5" y="376.5" pointer-events="all" class="st8" width="40" height="20"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 78.56 391.55)" class="st1 st2">s3 app</text>
+</g>
+<path pointer-events="all" class="st0" d="M14.5,400.3h134c1.7,0,3,1.3,3,3v14c0,1.7-1.3,3-3,3h-134c-1.7,0-3-1.3-3-3v-14
+	C11.5,401.6,12.8,400.3,14.5,400.3z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 29.6808 414.3)" class="st1 st2">NS bucket access key</text>
+</g>
+<path pointer-events="all" class="st0" d="M14.5,420.3h134c1.7,0,3,1.3,3,3v14c0,1.7-1.3,3-3,3h-134c-1.7,0-3-1.3-3-3v-14
+	C11.5,421.6,12.8,420.3,14.5,420.3z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 30.9408 434.3)" class="st1 st2">NS bucket secret key</text>
+</g>
+<path pointer-events="all" class="st3" d="M236.1,231.5h100.7c8.1,0,14.6,6.6,14.6,14.6v68.2c0,8.1-6.6,14.6-14.6,14.6H236.1
+	c-8.1,0-14.6-6.6-14.6-14.6v-68.2C221.5,238.1,228.1,231.5,236.1,231.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 231.9187 250.5)" class="st1 st2">Object bucket claim</text>
+</g>
+<path pointer-events="all" class="st0" d="M239.5,261.5h94c1.7,0,3,1.3,3,3v14c0,1.7-1.3,3-3,3h-94c-1.7,0-3-1.3-3-3v-14
+	C236.5,262.8,237.8,261.5,239.5,261.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 269.1302 275.5)" class="st1 st2">Secret</text>
+</g>
+<path pointer-events="all" class="st0" d="M239.5,281.5h94c1.7,0,3,1.3,3,3v14c0,1.7-1.3,3-3,3h-94c-1.7,0-3-1.3-3-3v-14
+	C236.5,282.8,237.8,281.5,239.5,281.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 256.4224 295.5)" class="st1 st2">Config map</text>
+</g>
+<path pointer-events="all" class="st0" d="M239.5,301.5h94c1.7,0,3,1.3,3,3v14c0,1.7-1.3,3-3,3h-94c-1.7,0-3-1.3-3-3v-14
+	C236.5,302.8,237.8,301.5,239.5,301.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 248.6344 315.5)" class="st1 st2">Object bucket</text>
+</g>
+<rect x="21.5" y="231.5" pointer-events="all" class="st10" width="120" height="75"/>
+<path pointer-events="stroke" class="st11" d="M159.2,111.2H217"/>
+<path pointer-events="all" class="st12" d="M211.3,115.2l8-4l-8-4"/>
+<path pointer-events="all" class="st0" d="M484.8,231.5h373.4c7.4,0,13.3,6,13.3,13.3v62.1c0,7.4-6,13.3-13.3,13.3H484.8
+	c-7.4,0-13.3-6-13.3-13.3v-62.1C471.5,237.5,477.5,231.5,484.8,231.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 610.1627 250.5)" class="st1 st2">Multi tier bucket class</text>
+</g>
+<path pointer-events="all" class="st0" d="M495.3,260.2h155.3c1.7,0,3,1.3,3,3v14c0,1.7-1.3,3-3,3H495.3c-1.7,0-3-1.3-3-3v-14
+	C492.3,261.6,493.7,260.2,495.3,260.2z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 540.3925 273.5)" class="st1 st2">Backing store</text>
+</g>
+<path pointer-events="all" class="st0" d="M495.3,290.2h155.3c1.7,0,3,1.3,3,3v14c0,1.7-1.3,3-3,3H495.3c-1.7,0-3-1.3-3-3v-14
+	C492.3,291.6,493.7,290.2,495.3,290.2z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 540.3925 303.5)" class="st1 st2">Backing store</text>
+</g>
+<path pointer-events="all" class="st0" d="M695.3,260.2h155.3c1.7,0,3,1.3,3,3v14c0,1.7-1.3,3-3,3H695.3c-1.7,0-3-1.3-3-3v-14
+	C692.3,261.6,693.7,260.2,695.3,260.2z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 740.3925 273.5)" class="st1 st2">Backing store</text>
+</g>
+<path pointer-events="all" class="st0" d="M695.9,290.2h155.3c1.7,0,3,1.3,3,3v14c0,1.7-1.3,3-3,3H695.9c-1.7,0-3-1.3-3-3v-14
+	C692.9,291.6,694.3,290.2,695.9,290.2z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 738.3123 303.5)" class="st10 st1 st2">Backing Store</text>
+</g>
+<path pointer-events="stroke" class="st13" d="M491.4,300.3h-5c-3.3,0-5-3.3-5-10v-10c0-6.7,1.7-10,5-10h5"/>
+<ellipse pointer-events="all" class="st14" cx="494.4" cy="300.2" rx="3" ry="3"/>
+<ellipse pointer-events="all" class="st14" cx="494.4" cy="270.2" rx="3" ry="3"/>
+<path pointer-events="stroke" class="st15" d="M691.4,300.2h-5c-3.3,0-5-3.3-5-10v-10c0-6.7,1.7-10,5-10h5"/>
+<ellipse pointer-events="all" class="st16" cx="694.4" cy="300.2" rx="3" ry="3"/>
+<ellipse pointer-events="all" class="st16" cx="694.4" cy="270.2" rx="3" ry="3"/>
+<path pointer-events="stroke" class="st15" d="M34.5,521.5h47c6.7,0,12.8,0,18.5,0h8.5"/>
+<ellipse pointer-events="all" class="st16" cx="31.5" cy="521.5" rx="3" ry="3"/>
+<ellipse pointer-events="all" class="st16" cx="111.5" cy="521.5" rx="3" ry="3"/>
+<path pointer-events="stroke" class="st13" d="M34.5,501.5h27c6.7,0,13.3,0,20,0h27"/>
+<ellipse pointer-events="all" class="st14" cx="31.5" cy="501.5" rx="3" ry="3"/>
+<ellipse pointer-events="all" class="st14" cx="111.5" cy="501.5" rx="3" ry="3"/>
+<rect x="131.5" y="491.5" pointer-events="all" class="st8" width="170" height="20"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 133.5 505.5)" class="st1 st2">Spread placement policy</text>
+</g>
+<rect x="131.5" y="511.5" pointer-events="all" class="st8" width="170" height="20"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 133.5 525.5)" class="st1 st2">Mirror placement policy</text>
+</g>
+<rect x="131.5" y="531.5" pointer-events="all" class="st8" width="170" height="20"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 133.5 545.5)" class="st1 st2">s3 write</text>
+</g>
+<path pointer-events="stroke" class="st17" d="M178.2,382.5l55.2,0.1"/>
+<path pointer-events="all" class="st12" d="M227.7,386.6l8-4l-8-4"/>
+<path pointer-events="stroke" class="st12" d="M31.5,540.8l75.5,0.4"/>
+<path pointer-events="all" class="st12" d="M101.2,545.2l8-4l-8-4"/>
+<path pointer-events="all" class="st18" d="M245.5,376.1h77c5,0,9,2.3,9,5.2v24.3c0,2.9-4,5.2-9,5.2h-77c-5,0-9-2.3-9-5.2v-24.3
+	C236.5,378.4,240.5,376.1,245.5,376.1z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 246.5021 390.7502)" class="st1 st2">Namespace</text>
+</g>
+<path pointer-events="all" class="st0" d="M406,421.5h141c2.5,0,4.5,2,4.5,4.5v21c0,2.5-2,4.5-4.5,4.5H406c-2.5,0-4.5-2-4.5-4.5v-21
+	C401.5,423.5,403.5,421.5,406,421.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 418.0426 440.5)" class="st1 st2">Namespace resource</text>
+</g>
+<path pointer-events="all" class="st0" d="M565.9,421.5h141c2.5,0,4.5,2,4.5,4.5v21c0,2.5-2,4.5-4.5,4.5h-141c-2.5,0-4.5-2-4.5-4.5
+	v-21C561.4,423.5,563.4,421.5,565.9,421.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 585.5706 440.5)" class="st1 st2">Namespace resource</text>
+</g>
+<path pointer-events="all" class="st0" d="M726,420.6h141c2.5,0,4.5,2,4.5,4.5v21c0,2.5-2,4.5-4.5,4.5H726c-2.5,0-4.5-2-4.5-4.5v-21
+	C721.5,422.6,723.5,420.6,726,420.6z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 745.6705 439.6006)" class="st1 st2">Namespace resource</text>
+</g>
+<rect x="131.5" y="551.5" pointer-events="all" class="st8" width="170" height="20"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 133.5 565.5)" class="st1 st2">s3 read</text>
+</g>
+<path pointer-events="stroke" class="st19" d="M31.5,561.5h80"/>
+<path pointer-events="stroke" class="st19" d="M336.5,399h285c6.7,0,10,0.9,10,2.8v1.4c0,0.9,0.8,1.4,2.5,1.4h1.2
+	c0.8,0,1.2,2.8,1.2,8.5v8.5"/>
+<path pointer-events="stroke" class="st12" d="M331.5,381.5h455c6.7,0,10,3.3,10,10V417"/>
+<path pointer-events="all" class="st12" d="M792.5,411.3l4,8l4-8"/>
+<rect x="261.6" y="405" pointer-events="all" class="st8" width="40" height="20"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 247.498 403.25)" class="st1 st2">bucket</text>
+</g>
+<path pointer-events="stroke" class="st19" d="M476.5,401.5v20"/>
+<path pointer-events="all" class="st0" d="M513.5,101.5h296c6.6,0,12,5.4,12,12v56c0,6.6-5.4,12-12,12h-296c-6.6,0-12-5.4-12-12v-56
+	C501.5,106.9,506.9,101.5,513.5,101.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 597.1628 120.5)" class="st1 st2">Single tier bucket class</text>
+</g>
+<path pointer-events="all" class="st0" d="M516,136.5h131c2.5,0,4.5,2,4.5,4.5v21c0,2.5-2,4.5-4.5,4.5H516c-2.5,0-4.5-2-4.5-4.5v-21
+	C511.5,138.5,513.5,136.5,516,136.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 548.7411 156.6201)" class="st1 st2">Backing store</text>
+</g>
+<path pointer-events="all" class="st0" d="M671,136.5h131c2.5,0,4.5,2,4.5,4.5v21c0,2.5-2,4.5-4.5,4.5H671c-2.5,0-4.5-2-4.5-4.5v-21
+	C666.5,138.5,668.5,136.5,671,136.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 708.4126 156.6201)" class="st1 st2">Backing store</text>
+</g>
+<path pointer-events="stroke" class="st13" d="M578.1,133.5v-1c0-0.7,3.3-1,10-1h138.4c6.7,0,10,0.3,10,1v1"/>
+<ellipse pointer-events="all" class="st14" cx="578.1" cy="136.5" rx="3" ry="3"/>
+<ellipse pointer-events="all" class="st14" cx="736.5" cy="136.5" rx="3" ry="3"/>
+<path pointer-events="all" class="st3" d="M30.9,231.5h97.5c6.2,0,11.2,5,11.2,11.2v52.5c0,6.2-5,11.2-11.2,11.2H30.9
+	c-6.2,0-11.2-5-11.2-11.2v-52.5C19.6,236.5,24.6,231.5,30.9,231.5z"/>
+<rect x="61.5" y="231.5" pointer-events="all" class="st8" width="40" height="20"/>
+<g transform="translate(-0.5 -0.5)">
+	<text id="s3_app" transform="matrix(1 0 0 1 63.7985 245.5)" class="st1 st2">s3 app</text>
+</g>
+<path pointer-events="all" class="st0" d="M32.6,256.5h94c1.7,0,3,1.3,3,3v14c0,1.7-1.3,3-3,3h-94c-1.7,0-3-1.3-3-3v-14
+	C29.6,257.8,30.9,256.5,32.6,256.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 56.4426 270.5)" class="st1 st2">Secret ref</text>
+</g>
+<path pointer-events="all" class="st0" d="M32.6,276.5h94c1.7,0,3,1.3,3,3v14c0,1.7-1.3,3-3,3h-94c-1.7,0-3-1.3-3-3v-14
+	C29.6,277.8,30.9,276.5,32.6,276.5z"/>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 64.3986 290.5)" class="st1 st2">CM ref</text>
+</g>
+<path pointer-events="stroke" class="st19" d="M141.5,255.9l78.3,0.2"/>
+<path pointer-events="stroke" class="st20" d="M301.5,41.5v-15c0-6.7,3.3-10,10-10h290"/>
+<path pointer-events="stroke" class="st20" d="M881.5,41.5v-15c0-6.7-3.3-10-10-10h-150"/>
+<path pointer-events="stroke" class="st20" d="M261.5,41.5v-15c0-6.7-3.3-10-10-10h-110"/>
+<path pointer-events="stroke" class="st21" d="M139.6,241.2H217"/>
+<path pointer-events="all" class="st12" d="M211.3,245.2l8-4l-8-4"/>
+<path pointer-events="stroke" class="st22" d="M158.4,126.5l63.1,0.2"/>
+<path pointer-events="stroke" class="st23" d="M365.2,111.2h105.3"/>
+<path pointer-events="all" class="st12" d="M464.8,115.2l8-4l-8-4"/>
+<path pointer-events="stroke" class="st24" d="M365.2,126.5l109.4-0.4"/>
+<path pointer-events="stroke" class="st12" d="M351.5,241.2l104.7-0.3"/>
+<path pointer-events="all" class="st12" d="M450.4,244.9l8-4l-8-4"/>
+<path pointer-events="stroke" class="st19" d="M351.5,256.5l110-0.1"/>
+<a xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems"  transform="translate(0,-5)">
+</a>
+<g transform="translate(-0.5 -0.5)">
+	<text transform="matrix(1 0 0 1 740.9502 303.7)" class="st1 st2">Backing store</text>
+</g>
+<circle class="st25" cx="528.7" cy="150.9" r="9.6"/>
+<rect x="525.6" y="145.9" class="st8" width="8.2" height="9.8"/>
+<text transform="matrix(1 0 0 1 525.5851 154.8263)" class="st26 st1 st2">1</text>
+<g>
+	<circle class="st25" cx="581.1" cy="115.2" r="9.6"/>
+	<rect x="578" y="110.3" class="st8" width="8.2" height="9.8"/>
+	<text transform="matrix(1 0 0 1 577.9698 119.1763)" class="st26 st1 st2">2</text>
+</g>
+<g>
+	<circle class="st25" cx="610.4" cy="86.8" r="9.6"/>
+	<rect x="607.3" y="81.9" class="st8" width="8.2" height="9.8"/>
+	<text transform="matrix(1 0 0 1 607.2823 90.7663)" class="st26 st1 st2">3</text>
+</g>
+<text transform="matrix(1 0 0 1 607.7979 -71.4214)" class="st2" style="font-family:'MyriadPro-Regular';">Lorem ipsum</text>
+<g>
+	<circle class="st25" cx="349.4" cy="116.8" r="9.6"/>
+	<rect x="346.3" y="111.9" class="st8" width="8.2" height="9.8"/>
+	<text transform="matrix(1 0 0 1 346.2558 120.7912)" class="st26 st1 st2">4</text>
+</g>
+<g>
+	<circle class="st25" cx="350.3" cy="141.5" r="9.6"/>
+	<rect x="347.2" y="136.6" class="st8" width="8.2" height="9.8"/>
+	<text transform="matrix(1 0 0 1 347.2137 145.4763)" class="st26 st1 st2">5</text>
+</g>
+<g>
+	<circle class="st25" cx="350.3" cy="161.5" r="9.6"/>
+	<rect x="347.2" y="156.6" class="st8" width="8.2" height="9.8"/>
+	<text transform="matrix(1 0 0 1 347.2137 165.4763)" class="st26 st1 st2">6</text>
+</g>
+<g>
+	<circle class="st25" cx="350.3" cy="181.9" r="9.6"/>
+	<rect x="347.2" y="177" class="st8" width="8.2" height="9.8"/>
+	<text transform="matrix(1 0 0 1 347.2137 185.8614)" class="st26 st1 st2">7</text>
+</g>
+<g>
+	<circle class="st25" cx="317.3" cy="390.4" r="9.6"/>
+	<rect x="311" y="385.4" class="st8" width="17.3" height="9.8"/>
+	<text transform="matrix(1 0 0 1 310.9799 394.3294)" class="st26 st1 st2">12</text>
+</g>
+<g>
+	<circle class="st25" cx="535.8" cy="437.4" r="9.6"/>
+	<rect x="529.4" y="432.5" class="st8" width="18.9" height="9.8"/>
+	<text transform="matrix(1 0 0 1 529.3752 441.3757)" class="st26 st1 st2">11</text>
+</g>
+<circle class="st25" cx="481.4" cy="365.2" r="9.6"/>
+<rect x="474.9" y="360.3" class="st8" width="16.1" height="9.8"/>
+<text transform="matrix(1 0 0 1 474.8853 369.2253)" class="st26 st1 st2">13</text>
+<g>
+	<circle class="st25" cx="142.5" cy="115.2" r="9.6"/>
+	<rect x="139.4" y="110.3" class="st8" width="8.2" height="9.8"/>
+	<text transform="matrix(1 0 0 1 139.3704 119.1763)" class="st26 st1 st2">8</text>
+</g>
+<g>
+	<circle class="st25" cx="143.5" cy="136.5" r="9.6"/>
+	<rect x="140.3" y="131.6" class="st8" width="8.2" height="9.8"/>
+	<text transform="matrix(1 0 0 1 140.3283 140.4568)" class="st26 st1 st2">9</text>
+</g>
+<g>
+	<circle class="st25" cx="143.5" cy="157.8" r="9.6"/>
+	<rect x="137.3" y="153.2" class="st8" width="15.8" height="9.8"/>
+	<text transform="matrix(1 0 0 1 137.3454 162.098)" class="st26 st1 st2">10</text>
+</g>
+<g>
+	<circle class="st25" cx="163.8" cy="411.5" r="9.6"/>
+	<rect x="160.6" y="406.6" class="st8" width="8.2" height="9.8"/>
+	<text transform="matrix(1 0 0 1 160.6375 415.4753)" class="st26 st1 st2">5</text>
+</g>
+<g>
+	<circle class="st25" cx="163.8" cy="431.6" r="9.6"/>
+	<rect x="160.6" y="426.7" class="st8" width="8.2" height="9.8"/>
+	<text transform="matrix(1 0 0 1 160.6375 435.5994)" class="st26 st1 st2">5</text>
+</g>
+<path pointer-events="stroke" class="st27" d="M180.6,393.3l55.8,0.2"/>
+</svg>

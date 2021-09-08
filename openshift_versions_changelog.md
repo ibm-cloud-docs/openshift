@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-08"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -742,7 +742,7 @@ The following table shows the changes that are included in the version updates f
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.5 patch updates.
 {: shortdesc}
 
-{{site.data.keyword.openshiftshort}} version 4.5 is deprecated, with a tentative unsupported date of 30 September 2021. Update your cluster to at least [version 4.6](/docs/openshift?topic=openshift-openshift_versions#ocp46) as soon as possible.
+{{site.data.keyword.openshiftshort}} version 4.5 is deprecated, with a tentative unsupported date of 10 October 2021. Update your cluster to at least [version 4.6](/docs/openshift?topic=openshift-openshift_versions#ocp46) as soon as possible.
 {: deprecated}
 
 ### Changelog for master fix pack 4.5.41_1549_openshift, released 25 August 2021

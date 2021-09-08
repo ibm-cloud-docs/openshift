@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-31"
+lastupdated: "2021-09-07"
 
 keywords: openshift, noobaa, openshift container storage, openshift data foundation, storage classes
 
@@ -108,7 +108,7 @@ subcollection: openshift
   
 
 # Managing the Multi-Cloud Object Gateway
-{: #odf-manage-NooBaa}
+{: #odf-manage-noobaa}
 
 You can use NooBaa to manage your s3 compatible object storage resources, like IBM {{site.data.keyword.cos_short}}, AWS s3, or Azure Blob storage. With NooBaa, you can also create and manage your object storage consistently across clusters and zones.
 {: shortdesc}
@@ -117,7 +117,7 @@ You can use NooBaa to manage your s3 compatible object storage resources, like I
 ## Setting up backing stores by using the NooBaa CLI
 {: #odf-backingstore}
 
-Backing stores are NooBaa resources for managing your s3 compatible services and buckets. When you create a noobaa backing store, you provide your s3 service credentials like your access key ID, secret access key, and endpoint for your object storage service. After you add backing stores to your cluster, you can [create bucket classes](#odf-bucketclass) which allow you to configure data federation policies for your s3 compatible storage services.
+Backing stores are NooBaa resources for managing your s3 compatible services and buckets. When you create a backing store, you provide your s3 service credentials like your access key ID, secret access key, and endpoint for your object storage service. After you add backing stores to your cluster, you can [create bucket classes](#odf-bucketclass) which allow you to configure data federation policies for your s3 compatible storage services.
 {: shortdesc}
 
 After you deploy ODF, you can configure more backing stores in your storage cluster. You can create a backing store by using any s3 compatible object store such as AWS or {{site.data.keyword.cos_full_notm}}.

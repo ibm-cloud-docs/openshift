@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-07"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -357,6 +357,8 @@ The following table lists the actions related to storage resources and the gener
 | `containers-kubernetes.storage-attachment.delete` | A volume attachment is deleted. |
 | `containers-kubernetes.storage-attachment.list` | Volume attachments are retrieved. |
 | `containers-kubernetes.storage-attachment.read` | A volume attachment is retrieved. |
+| `containers-kubernetes.storage-odf.install` | The OpenShift Data Foundation add-on is enabled. |
+| `containers-kubernetes.storage-odf.uninstall` The OpenShift Data Foundation add-on is disabled or the cluster is deleted. |
 {: caption="Storage events" caption-side="top"}
 {: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
 
@@ -405,7 +407,7 @@ To [view events](/docs/activity-tracker?topic=activity-tracker-view_events) that
 The following table shows the {{site.data.keyword.at_short}} location where your events are sent to. To view your events, make sure that you have an {{site.data.keyword.at_short}} instance in the location that matches your cluster location. Note that clusters in the Montreal, Toronto, and Washington, D.C. locations forward all events to the Dallas {{site.data.keyword.at_short}} location.
 
 | {{site.data.keyword.openshiftlong_notm}} classic location | {{site.data.keyword.at_short}} event location |
-|-----|-----|-----|
+|-----|-----|
 | Dallas (dal10, dal12, dal13) | Dallas |
 | Mexico City (mex01) | Dallas |
 | Montreal (mon01) | Dallas |
@@ -426,25 +428,21 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 | Singapore (sng01) | Tokyo |
 | Tokyo (tok02, tok04, tok05) | Tokyo |
 {: caption="Corresponding {{site.data.keyword.at_short}} instance and {{site.data.keyword.openshiftlong_notm}} cluster locations." caption-side="top"}
-{: class="simple-tab-table"}
-{: #atlocationclassic}
-{: tab-title=" Locations for classic clusters"}
-{: tab-group="at-locations"}
+
+
 
 | {{site.data.keyword.openshiftlong_notm}} VPC location | {{site.data.keyword.at_short}} event location |
-|-----|-----|-----|
+|-----|-----|
 | Dallas (us-south-1, us-south-2, us-south-3) | Dallas |
+| São Paulo (br-sao-1, br-sao-2, br-sao-3) | Dallas |
 | Washington, D.C. (us-east-1, us-east-2, us-east-3) | Washington, D.C. |
 | Toronto (ca-tor-1, ca-tor-2, ca-tor-3) | Washington, D.C. |
 | Frankfurt (eu-de-1, eu-de-2, eu-de-3) | Frankfurt |
 | London (eu-gb-1, eu-gb-2, eu-gb-3) | London |
 | Sydney (au-syd-1, au-syd-2, au-syd-3) | Sydney |
 | Tokyo (jp-tok-1, jp-tok-2, jp-tok-3) | Tokyo |
-{: class="simple-tab-table"}
 {: caption="Corresponding {{site.data.keyword.at_short}} instance and {{site.data.keyword.openshiftlong_notm}} cluster locations." caption-side="top"}
-{: #atlocationvpc}
-{: tab-title="Locations for VPC clusters"}
-{: tab-group="at-locations"}
+
 
 
 

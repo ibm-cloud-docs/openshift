@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-31"
+lastupdated: "2021-09-07"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -116,11 +116,6 @@ subcollection: openshift
 
 If you want to use {{site.data.keyword.cos_full_notm}} in a private cluster without public network access, you must set up your {{site.data.keyword.cos_full_notm}} service instance for HMAC authentication. If you don't want to use HMAC authentication, you must open up all outbound network traffic on port 443 for the plug-in to work properly in a private cluster.
 {: important}
-
-With version 2.0.9, there is a new version of the `ibmc` plug-in. Storage classes created with earlier chart versions are immutable and cannot be upgraded. To remove the storage classes from previous versions and install the latest storage classes in your cluster, uninstall and re-install the {{site.data.keyword.cos_full_notm}} plugin. For more information, see [Updating the {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).
-{: note}
-
-
 
 ## Creating your object storage service instance
 {: #create_cos_service}
@@ -376,78 +371,61 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
         kind: ClusterRole
         apiVersion: rbac.authorization.k8s.io/v1beta1
         metadata:
-        name: ibmcloud-object-storage-secret-reader
-      rules:
-      - apiGroups: [""]
-        resources: ["secrets"]
-        resourceNames: ["<secret_name1>","<secret_name2>"]
-        verbs: ["get"]
+         name: ibmcloud-object-storage-secret-reader
+        rules:
+        - apiGroups: [""]
+          resources: ["secrets"]
+          resourceNames: ["<secret_name1>","<secret_name2>"]
+          verbs: ["get"]
         ```
         {: codeblock}
 
     6. Save your changes and navigate to your working directory.
-    **OS X and Linux**
-        ```
-        cd ../..
-        ```
-        {: pre}
+        **OS X and Linux**
+            ```
+            cd ../..
+            ```
+            {: pre}
 
-    **Windows**
-        ```
-        chdir ../..
-        ```
-        {: pre}
+        **Windows**
+            ```
+            chdir ../..
+            ```
+            {: pre}
 
-9. Install the `ibm-object-storage-plugin` in your cluster. When you install the plug-in, pre-defined storage classes are added to your cluster. If you completed the previous step for limiting the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials and you are still targeting the `templates` directory, change directories to your working directory.
+9. Install the `ibm-object-storage-plugin` in your cluster. When you install the plug-in, pre-defined storage classes are added to your cluster. If you completed the previous step for limiting the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials and you are still targeting the `templates` directory, change directories to your working directory. **VPC clusters only**: To enable authorized IPs on VPC, set the `--set bucketAccessPolicy=true` flag.
 
-    - **For OS X and Linux:**
+**OS X and Linux:**
 
-        **VPC clusters** To enable authorized IPs on VPC, set the `--set bucketAccessPolicy=true` flag.
-        {: note}
+```
+helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set license=true [--set bucketAccessPolicy=false]
+```
+{: pre}
 
-        ```
-        helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set license=true [--set bucketAccessPolicy=false]
-        ```
-        {: pre}
+**Windows:**
 
-    - **For Windows:**
+```
+helm install ibm-object-storage-plugin ./ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --region="${REGION} --set platform="${PLATFORM}" --set license=true [--set bucketAccessPolicy=false]
+```
+{: pre}
 
-        **VPC clusters** To enable authorized IPs on VPC, set the `--set bucketAccessPolicy=true` flag.
-        {: note}
 
-        ```
-        helm install ibm-object-storage-plugin ./ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --region="${REGION} --set platform="${PLATFORM}" --set license=true [--set bucketAccessPolicy=false]
-        ```
-        {: pre}
+| Parameter | Description |
+| --- | --- |
+| `DC_NAME` | The data center where your cluster is deployed. To retrieve the data center, run `oc get cm cluster-info -n kube-system -o jsonpath="{.data.cluster-config\.json}{'\n'}"`. Store the data center value in an environment variable by running `SET DC_NAME=<datacenter>`. Optional: Set the environment variable in Windows PowerShell by running `$env:DC_NAME="<datacenter>"`. |
+| `CLUSTER_PROVIDER` | The infrastructure provider. To retrieve this value, run `oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/iaas-provider}{'\n'}"`. If the output from the previous step contains `softlayer`, then set the `CLUSTER_PROVIDER` to `"IBMC"`. If the output contains `gc`, `ng`, or `g2`, then set the `CLUSTER_PROVIDER` to `"IBMC-VPC"`. Store the infrastructure provider in an environment variable. For example: `SET CLUSTER_PROVIDER="IBMC-VPC"`. |
+| `WORKER_OS` and `PLATFORM` | The operating system of the worker nodes. To retrieve these values, run `oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/os}{'\n'}"`. Store the operating system of the worker nodes in an environment variable. For {{site.data.keyword.openshiftlong_notm}} clusters, run `SET WORKER_OS="redhat"` and `SET PLATFORM="openshift"`. |
+| `REGION` | The region of the worker nodes. To retrieve this value, run `oc get nodes -o yaml | grep 'ibm-cloud\.kubernetes\.io/region'`. Store the region of the worker nodes in an environment variable by running `SET REGION="&lt;region&gt;"`. |
+{: caption="Helm parameters"}
+{: summary="The table shows the Helm parameters. Rows are to be read from the left to right, with the parameter name in column one, and a description of the parameter in column two."}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the command. The second column describes the parameter.">
-    <caption>Understanding the <code>helm install</code> command for Windows.</caption>
-    <col width="30%">
-    <thead>
-    <th>Parameter</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-        <td><code>DC_NAME</code></td>
-        <td>The <code>datacenter</code> where your cluster is deployed. To retrieve the datacenter, run <code>oc get cm cluster-info -n kube-system -o jsonpath="{.data.cluster-config\.json}{'\n'}"</code>. Store the <code>datacenter</code> value in an environment variable by running <code>SET DC_NAME=&lt;datacenter&gt;</code>. <b>Optional</b> Set the environment variable in Windows PowerShell by running <code>$env:DC_NAME="&lt;datacenter&gt;"</code>.</td>
-    </tr>
-    <tr>
-        <td><code>CLUSTER_PROVIDER</code></td>
-        <td>The infrastructure provider. To retrieve this value, run <code>oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/iaas-provider}{'\n'}"</code>. If the output from the previous step contains <code>softlayer</code>, then set the <code>CLUSTER_PROVIDER</code> to <code>"IBMC"</code>. If the output contains <code>gc</code>, <code>ng</code>, or <code>g2</code>, then set the <code>CLUSTER_PROVIDER</code> to <code>"IBMC-VPC"</code>. Store the infrastructure provider in an environment variable. For example: <code>SET CLUSTER_PROVIDER="IBMC-VPC"</code>.</td>
-    </tr>
-    <tr>
-        <td><code>WORKER_OS</code> and <code>PLATFORM</code></td>
-        <td>The operating system of the worker nodes. To retrieve these values, run <code>oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/os}{'\n'}"</code>. Store the operating system of the worker nodes in an environment variable. For {{site.data.keyword.openshiftlong_notm}} clusters, run <code>SET WORKER_OS="redhat"</code> and <code>SET PLATFORM="openshift"</code>.</td>
-    </tr>
-    <tr>
-        <td><code>REGION</code></td>
-        <td>The region of the worker nodes. To retrieve this value, run <code>oc get nodes -o yaml | grep 'ibm-cloud\.kubernetes\.io/region'</code>. Store the region of the worker nodes in an environment variable by running <code>SET REGION="&lt;region&gt;"</code>.</td>
-    </tr>
-    </tbody>
-    </table>
+### Verifying your installation
+{: #cos-plugin verify}
 
-10. Verify that the plug-in is installed correctly.
+Review the pod details to verify that the plug-in installation succeeded.
+{: shortdesc}
+
+1. Verify that the plug-in is installed correctly.
     ```
     oc get pod --all-namespaces -o wide | grep object
     ```
@@ -462,7 +440,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 
     The installation is successful when you see one `ibmcloud-object-storage-plugin` pod and one or more `ibmcloud-object-storage-driver` pods. The number of `ibmcloud-object-storage-driver` pods equals the number of worker nodes in your cluster. All pods must be in a `Running` state for the plug-in to function properly. If the pods fail, run `oc describe pod -n kube-system <pod_name>` to find the root cause for the failure.
 
-11. Verify that the storage classes are created successfully.
+1. Verify that the storage classes are created successfully.
     ```
     oc get storageclass | grep s3
     ```
@@ -488,7 +466,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     If you want to set one of the {{site.data.keyword.cos_full_notm}} storage classes as your default storage class, run `oc patch storageclass <storageclass> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'`. Replace `<storageclass>` with the name of the {{site.data.keyword.cos_full_notm}} storage class.
     {: tip}
 
-12. Follow the instructions to [add object storage to your apps](#add_cos).
+1. Follow the instructions to [add object storage to your apps](#add_cos).
 
 If you're having trouble installing the {{site.data.keyword.cos_full_notm}} plug-in, see [Object storage: Installing the Object storage `ibmc` Helm plug-in fails](/docs/containers?topic=containers-cos_helm_fails) and [Object storage: Installing the Object storage plug-in fails](/docs/containers?topic=containers-cos_plugin_fails).
 {: tip}
