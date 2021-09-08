@@ -1359,7 +1359,7 @@ subcollection: openshift
 
 * [Quick start for VPC clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-quickstart)
 
-* [Creating a VPC cluster for {[odf_long}](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-storage-vpc)
+* [Creating a VPC cluster for OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-storage-vpc)
     * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-create-cos)
 
 * [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-vpc#install-odf-console-vpc)
