@@ -134,7 +134,7 @@ Review the release notes for September 2021.
 {: release-note}
 
 Ingress ALB changelog
-:   Updated the [changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelo) for versions ` 0.48.1_1613_iks`, `0.47.0_1614_iks`, and `0.43.0_1612_iks`.
+:   Updated the [changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions ` 0.48.1_1613_iks`, `0.47.0_1614_iks`, and `0.43.0_1612_iks`.
 
 
 
