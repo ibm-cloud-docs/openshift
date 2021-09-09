@@ -225,6 +225,7 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-rel-notes)
 
 * [September 2021](/docs/openshift?topic=openshift-rel-notes#release-sep-2021)
+    * [9 September 2021](/docs/openshift?topic=openshift-rel-notes#9sep2021)
     * [8 September 2021](/docs/openshift?topic=openshift-rel-notes#8sep2021)
     * [1 September 2021](/docs/openshift?topic=openshift-rel-notes#1sep2021)
 
