@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-09"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -34,7 +34,6 @@ subcollection: openshift
 {:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
 {:generic: data-hd-operatingsystem="generic"}
 {:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
@@ -103,8 +102,9 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
+{:video: .video} -->
+{{site.data.keyword.attribute-definition-list}}
   
 
 
@@ -343,25 +343,25 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
 
 5. On the client machines where you or your users run `oc` commands, add the NLB IP address and the private cloud service endpoint URL to the `/etc/hosts` file. Do not include any ports in the IP address and URL and do not include `https://` in the URL.
     * For macOS and Linux users:
-    ```
-    sudo nano /etc/hosts
-    ```
-    {: pre}
+        ```
+        sudo nano /etc/hosts
+        ```
+        {: pre}
 
     * For Windows users:
-    ```
-    notepad C:\Windows\System32\drivers\etc\hosts
-    ```
-    {: pre}
+        ```
+        notepad C:\Windows\System32\drivers\etc\hosts
+        ```
+        {: pre}
 
-    Depending on your local machine permissions, you might need to run Notepad as an administrator to edit the hosts file.
-    {: tip}
+        Depending on your local machine permissions, you might need to run Notepad as an administrator to edit the hosts file.
+        {: tip}
 
-    Example text to add:
-    ```
-    10.186.92.42      c1.private.us-east.containers.cloud.ibm.com
-    ```
-    {: codeblock}
+        Example text to add:
+        ```
+        10.186.92.42      c1.private.us-east.containers.cloud.ibm.com
+        ```
+        {: codeblock}
 
 6. Verify that you are connected to the private network through a [VPN](/docs/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) connection.
 

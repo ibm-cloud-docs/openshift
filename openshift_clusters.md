@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-31"
+lastupdated: "2021-09-09"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -34,7 +34,6 @@ subcollection: openshift
 {:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
 {:generic: data-hd-operatingsystem="generic"}
 {:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
@@ -103,8 +102,9 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
+{:video: .video} -->
+{{site.data.keyword.attribute-definition-list}}
   
 
 
@@ -123,7 +123,7 @@ After [getting started](/docs/containers?topic=containers-getting-started), you 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported on 6 June 2022 (date subject to change). Instead, you can create a version 4 cluster.
 {: deprecated}
 
-<br />
+
 
 ## Sample commands
 {: #cluster_create_samples}
@@ -140,12 +140,13 @@ Looking for a fast way to create a cluster from the UI? Try out [Automating clus
 
 
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters**:
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters**
+
 *  Classic cluster, shared virtual machine:
-        ```
-        ibmcloud oc cluster create classic --name my_cluster --version 4.6_openshift --zone dal10 --flavor b3c.4x16 --hardware shared --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
-        ```
-        {: pre}
+    ```
+    ibmcloud oc cluster create classic --name my_cluster --version 4.6_openshift --zone dal10 --flavor b3c.4x16 --hardware shared --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+    ```
+    {: pre}
 
 *  Classic cluster, bare metal:
     ```
@@ -167,7 +168,7 @@ Looking for a fast way to create a cluster from the UI? Try out [Automating clus
 
 
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC clusters**:
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC clusters**
 *  <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC cluster:
     ```
     ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.6_openshift --zone us-east-1 --vpc-id <VPC_ID> --subnet-id <VPC_SUBNET_ID> --cos-instance <COS_CRN>--flavor b2.4x16 --workers 3
@@ -181,7 +182,6 @@ Looking for a fast way to create a cluster from the UI? Try out [Automating clus
     {: pre}
 
 
-<br />
 
 ## Preparing to create clusters at the account level
 {: #cluster_prepare}
@@ -213,7 +213,7 @@ Prepare your {{site.data.keyword.cloud_notm}} account for {{site.data.keyword.co
     2. [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint).
     3. Optional: If you want your VPC clusters to communicate with classic clusters over the private network interface, you can choose to set up classic infrastructure access from the VPC that your cluster is in. Note that you can set up classic infrastructure access for only one VPC per region and [Virtual Routing and Forwarding (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) is required in your {{site.data.keyword.cloud_notm}} account. For more information, see [Setting up access to your Classic Infrastructure from VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure).
 
-<br />
+
 
 ## Deciding on your cluster setup
 {: #prepare_cluster_level}
@@ -243,7 +243,7 @@ The following image walks you through choosing the setup that you want for your 
     <area target="" alt="Estimate costs (cluster create page)" title="Estimate costs (cluster create page)" href="https://cloud.ibm.com/kubernetes/catalog/create" coords="248,732,426,776" shape="rect">
 </map>
 
-<br />
+
 
 ## Creating a standard classic cluster
 {: #clusters_standard}
@@ -294,7 +294,7 @@ The following image walks you through choosing the setup that you want for your 
     *  Every worker node is assigned a unique worker node ID and domain name that must not be changed manually after the cluster is created. Changing the ID or domain name prevents the {{site.data.keyword.openshiftshort}} master from managing your cluster.<p class="tip">Is your cluster not in a **Normal** state? Check out the [Debugging clusters](/docs/containers?topic=containers-debug_clusters) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound).</p>
 10. After your cluster is created, you can [begin working with your cluster by configuring your CLI session](/docs/openshift?topic=openshift-access_cluster). For more possibilities, review the [Next steps](/docs/openshift?topic=openshift-clusters#next_steps).
 
-<br />
+
 
 ### Creating a standard classic cluster in the CLI
 {: #clusters_cli_steps}
@@ -484,11 +484,11 @@ The following image walks you through choosing the setup that you want for your 
 
 Your cluster is ready for your workloads! You might also want to [add a tag to your cluster](/docs/openshift?topic=openshift-add_workers#cluster_tags), such as the team or billing department that uses the cluster, to help manage {{site.data.keyword.cloud_notm}} resources. For more ideas of what to do with your cluster, review the [Next steps](/docs/openshift?topic=openshift-clusters#next_steps).
 
-<br />
 
 
 
-<br />
+
+
 
 ## Creating a standard VPC cluster
 {: #clusters_vpcg2}
@@ -730,7 +730,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
 
 Your cluster is ready for your workloads! You might also want to [add a tag to your cluster](/docs/openshift?topic=openshift-add_workers#cluster_tags), such as the team or billing department that uses the cluster, to help manage {{site.data.keyword.cloud_notm}} resources. For more ideas of what to do with your cluster, review the [Next steps](/docs/openshift?topic=openshift-clusters#next_steps).
 
-<br />
+
 
 ## Next steps
 {: #next_steps}

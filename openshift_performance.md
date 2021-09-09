@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-09"
 
 keywords: openshift, rhoks, roks, rhos, kernel
 
@@ -34,7 +34,6 @@ subcollection: openshift
 {:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
 {:generic: data-hd-operatingsystem="generic"}
 {:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
@@ -103,8 +102,9 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
+{:video: .video} -->
+{{site.data.keyword.attribute-definition-list}}
   
 
 
@@ -336,20 +336,20 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
     ```yaml
     ...
     spec:
-        calicoNetwork:
+      calicoNetwork:
         ipPools:
         - cidr: 172.30.0.0/16
-            encapsulation: IPIPCrossSubnet
-            natOutgoing: Enabled
-            nodeSelector: all()
+          encapsulation: IPIPCrossSubnet
+          natOutgoing: Enabled
+          nodeSelector: all()
         mtu: 8980
         nodeAddressAutodetectionV4:
-            interface: (^bond0$|^eth0$|^ens6$|^ens3$)
-        kubernetesProvider: OpenShift
-        registry: registry.ng.bluemix.net/armada-master/
-        variant: Calico
+          interface: (^bond0$|^eth0$|^ens6$|^ens3$)
+      kubernetesProvider: OpenShift
+      registry: registry.ng.bluemix.net/armada-master/
+      variant: Calico
     status:
-        variant: Calico
+      variant: Calico
     ```
     {: screen}
 
@@ -453,15 +453,15 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
     ```yaml
     apiVersion: v1
     data:
-        ...
-    etcd_ca: /calico-secrets/etcd-ca
-    etcd_cert: /calico-secrets/etcd-cert
-    etcd_endpoints: https://172.20.0.1:2041
-    etcd_key: /calico-secrets/etcd-key
-    typha_service_name: none
-    veth_mtu: "8980"
-    kind: ConfigMap
-    ...
+      ...
+      etcd_ca: /calico-secrets/etcd-ca
+      etcd_cert: /calico-secrets/etcd-cert
+      etcd_endpoints: https://172.20.0.1:2041
+      etcd_key: /calico-secrets/etcd-key
+      typha_service_name: none
+      veth_mtu: "8980"
+      kind: ConfigMap
+      ...
     ```
     {: screen}
 
@@ -498,21 +498,21 @@ Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.da
     ```yaml
     ...
     spec:
-        calicoNetwork:
+      calicoNetwork:
         hostPorts: Disabled
         ipPools:
         - cidr: 172.30.0.0/16
-            encapsulation: IPIPCrossSubnet
-            natOutgoing: Enabled
-            nodeSelector: all()
+          encapsulation: IPIPCrossSubnet
+          natOutgoing: Enabled
+          nodeSelector: all()
         mtu: 1480
         nodeAddressAutodetectionV4:
-            interface: (^bond0$|^eth0$|^ens6$|^ens3$)
-        kubernetesProvider: OpenShift
-        registry: registry.ng.bluemix.net/armada-master/
-        variant: Calico
+          interface: (^bond0$|^eth0$|^ens6$|^ens3$)
+      kubernetesProvider: OpenShift
+      registry: registry.ng.bluemix.net/armada-master/
+      variant: Calico
     status:
-        variant: Calico
+      variant: Calico
     ```
     {: screen}
 
@@ -536,37 +536,37 @@ Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.da
     ```yaml
     apiVersion: v1
     data:
-        calico_backend: bird
-    cni_network_config: |-
-      {
-        "name": "k8s-pod-network",
-        "cniVersion": "0.3.1",
-        "plugins": [
-          {
-            "type": "calico",
-            "log_level": "info",
-            "etcd_endpoints": "__ETCD_ENDPOINTS__",
-            "etcd_key_file": "__ETCD_KEY_FILE__",
-            "etcd_cert_file": "__ETCD_CERT_FILE__",
-            "etcd_ca_cert_file": "__ETCD_CA_CERT_FILE__",
-            "mtu": __CNI_MTU__,
-            "ipam": {
-                "type": "calico-ipam"
-            },
-            "container_settings": {
-                "allow_ip_forwarding": true
-            },
-            "policy": {
-                "type": "k8s"
-            },
-            "kubernetes": {
-                "kubeconfig": "__KUBECONFIG_FILEPATH__"
+      calico_backend: bird
+      cni_network_config: |-
+        {
+          "name": "k8s-pod-network",
+          "cniVersion": "0.3.1",
+          "plugins": [
+            {
+              "type": "calico",
+              "log_level": "info",
+              "etcd_endpoints": "__ETCD_ENDPOINTS__",
+              "etcd_key_file": "__ETCD_KEY_FILE__",
+              "etcd_cert_file": "__ETCD_CERT_FILE__",
+              "etcd_ca_cert_file": "__ETCD_CA_CERT_FILE__",
+              "mtu": __CNI_MTU__,
+              "ipam": {
+                  "type": "calico-ipam"
+              },
+              "container_settings": {
+                  "allow_ip_forwarding": true
+              },
+              "policy": {
+                  "type": "k8s"
+              },
+              "kubernetes": {
+                  "kubeconfig": "__KUBECONFIG_FILEPATH__"
+              }
             }
-          }
-        ]
-      }
-    etcd_ca: /calico-secrets/etcd-ca
-    ...
+          ]
+        }
+      etcd_ca: /calico-secrets/etcd-ca
+      ...
     ```
     {: codeblock}
 
