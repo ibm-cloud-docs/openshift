@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-08"
+lastupdated: "2021-09-09"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -34,7 +34,6 @@ subcollection: openshift
 {:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
 {:generic: data-hd-operatingsystem="generic"}
 {:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
@@ -103,8 +102,9 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
+{:video: .video} -->
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -162,7 +162,7 @@ Worker nodes can also run patch versions that are greater than the masters. As u
 
 
 
-<br />
+
 
 ## {{site.data.keyword.openshiftshort}} versions
 {: #version_types}
@@ -213,7 +213,7 @@ Your apps still run, and you can log in to the cluster to manage your {{site.dat
 Dates that are marked with a dagger (`†`) are tentative and subject to change.
 {: important}
 
-| Supported? | {{site.data.keyword.openshiftshort}} | Kubernetes version | {{site.data.keyword.openshiftlong_notm}} release date | {{site.data.keyword.openshiftlong_notm}} unsupported date |
+| Supported? | {{site.data.keyword.openshiftshort}} / Kubernetes version | Release date | Unsupported date |
 | --- | --- | --- | --- |
 | Supported | 4.7 / 1.20 | 09 Jun 2021 | Jun 2022`†` |
 | Supported | 4.6 / 1.19 | 17 Feb 2021 | Apr 2022 `†` |
@@ -247,7 +247,7 @@ The following table shows the actions that you must take before you [update the 
 {: caption="Changes to make before you update the master to {{site.data.keyword.openshiftshort}} 4.7" caption-side="top"}
 {: summary="The rows are read from left to right. The type of update action is in the first column, and a description of the update action type is in the second column."}
 
-<br />
+
 
 ## {{site.data.keyword.openshiftshort}} 4.6
 {: #ocp46}
@@ -271,7 +271,7 @@ The following table shows the actions that you must take before you [update the 
 {: caption="Changes to make before you update the master to {{site.data.keyword.openshiftshort}} 4.6" caption-side="top"}
 {: summary="The rows are read from left to right. The type of update action is in the first column, and a description of the update action type is in the second column."}
 
-<br />
+
 
 ## Deprecated: {{site.data.keyword.openshiftshort}} 4.5
 {: #ocp45}
@@ -317,7 +317,7 @@ The following table shows the actions that you must take after you [update the c
 {: caption="Changes to make after you update the master to {{site.data.keyword.openshiftshort}} 4.5" caption-side="top"}
 {: summary="The rows are read from left to right. The type of update action is in the first column, and a description of the update action type is in the second column."}
 
-<br />
+
 
 ## Archive
 {: #version-archive}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-09"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -34,7 +34,6 @@ subcollection: openshift
 {:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
 {:generic: data-hd-operatingsystem="generic"}
 {:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
@@ -103,8 +102,9 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
+{:video: .video} -->
+{{site.data.keyword.attribute-definition-list}}
   
 
 
@@ -436,7 +436,7 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
     </tr>        
     <tr>
     <td><code>cluster_ID</code></td>
-    <td>The ID of your cluster. You can retrieve your cluster ID by running <code>ibmcloud oc cluster get <cluster_name></code>.</td>
+    <td>The ID of your cluster. You can retrieve your cluster ID by running <code>ibmcloud oc cluster get &lt;cluster_name&gt;</code>.</td>
     </tr>
     </tbody>
     </table>

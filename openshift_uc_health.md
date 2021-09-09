@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-14"
+lastupdated: "2021-09-09"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -34,7 +34,6 @@ subcollection: openshift
 {:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
 {:generic: data-hd-operatingsystem="generic"}
 {:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
@@ -63,6 +62,7 @@ subcollection: openshift
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -102,8 +102,9 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
+{:video: .video} -->
+{{site.data.keyword.attribute-definition-list}}
   
 
 
@@ -230,19 +231,22 @@ Researchers need to affiliate with a regional cluster, and apps ingest, transfor
 1. Syncing the anonymized data across regional clusters or shipping them to a centralized data store
 2. Processing the data, by using ML like PyTorch on bare metal worker nodes that provide GPUs
 
-**INGEST** {{site.data.keyword.cloudant}} is used at each regional cluster that stores researchers’ rich data documents and can be queried and processed as needed. {{site.data.keyword.cloudant}} encrypts data at rest and in transit, which complies with regional data-privacy laws.
+INGEST
+: {{site.data.keyword.cloudant}} is used at each regional cluster that stores researchers’ rich data documents and can be queried and processed as needed. {{site.data.keyword.cloudant}} encrypts data at rest and in transit, which complies with regional data-privacy laws.
 
-{{site.data.keyword.openwhisk}} is used to create processing functions that ingest research data and store them as structured data documents in {{site.data.keyword.cloudant}}. {{site.data.keyword.SecureGatewayfull}} provides an easy way for {{site.data.keyword.openwhisk}} to access on-premises data in a safe and secure manner.
+  {{site.data.keyword.openwhisk}} is used to create processing functions that ingest research data and store them as structured data documents in {{site.data.keyword.cloudant}}. {{site.data.keyword.SecureGatewayfull}} provides an easy way for {{site.data.keyword.openwhisk}} to access on-premises data in a safe and secure manner.
 
-Web apps in the regional clusters are developed in nodeJS for manual data entry of results, schema definition, and research organizations affiliation. IBM Key Protect helps to secure access to {{site.data.keyword.cloudant}} data, and IBM Vulnerability Advisor scans app containers and images for security exploits.
+  Web apps in the regional clusters are developed in nodeJS for manual data entry of results, schema definition, and research organizations affiliation. IBM Key Protect helps to secure access to {{site.data.keyword.cloudant}} data, and IBM Vulnerability Advisor scans app containers and images for security exploits.
 
-**ANONYMIZE** Anytime new data document is stored in {{site.data.keyword.cloudant}}, an event is triggered, and a Cloud Function anonymizes the data and removes SPI from the data document. These anonymized data documents are stored separate from the "raw" data that is ingested and are the only documents that are shared across regions for analysis.
+ANONYMIZE
+: Anytime new data document is stored in {{site.data.keyword.cloudant}}, an event is triggered, and a Cloud Function anonymizes the data and removes SPI from the data document. These anonymized data documents are stored separate from the "raw" data that is ingested and are the only documents that are shared across regions for analysis.
 
-**ANALYZE** Machine learning frameworks are highly compute-intensive, and thus the nonprofit set up a global processing cluster of bare-metal worker nodes. Associated with this global processing cluster is an aggregated {{site.data.keyword.cloudant}} database of the anonymized data. A cron job periodically triggers a Cloud Function to push anonymized data documents from the regional centers to the global processing cluster's {{site.data.keyword.cloudant}} instance.
+ANALYZE
+: Machine learning frameworks are highly compute-intensive, and thus the nonprofit set up a global processing cluster of bare-metal worker nodes. Associated with this global processing cluster is an aggregated {{site.data.keyword.cloudant}} database of the anonymized data. A cron job periodically triggers a Cloud Function to push anonymized data documents from the regional centers to the global processing cluster's {{site.data.keyword.cloudant}} instance.
 
-The compute cluster runs the PyTorch ML framework, and machine learning apps are written in Python to analyze the aggregated data. In addition to ML apps, researchers in the collective group also develop their own apps that can be published and run on the global cluster.
+  The compute cluster runs the PyTorch ML framework, and machine learning apps are written in Python to analyze the aggregated data. In addition to ML apps, researchers in the collective group also develop their own apps that can be published and run on the global cluster.
 
-The nonprofit also provides apps that run on non-bare metal nodes of the global cluster. The apps view and extract the aggregated data and the ML app output. These apps are accessible by a public endpoint, which is secured by the API Gateway to the world. Then, researchers and data analysts from everywhere can download data sets and do their own analysis.
+  The nonprofit also provides apps that run on non-bare metal nodes of the global cluster. The apps view and extract the aggregated data and the ML app output. These apps are accessible by a public endpoint, which is secured by the API Gateway to the world. Then, researchers and data analysts from everywhere can download data sets and do their own analysis.
 
 **Hosting research workloads on {{site.data.keyword.openshiftlong_notm}}**
 

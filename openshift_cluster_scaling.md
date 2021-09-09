@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-09"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -34,7 +34,6 @@ subcollection: openshift
 {:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
 {:generic: data-hd-operatingsystem="generic"}
 {:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
@@ -103,8 +102,9 @@ subcollection: openshift
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
+{:video: .video} -->
+{{site.data.keyword.attribute-definition-list}}
   
 
 
@@ -226,7 +226,7 @@ When the cluster autoscaler is enabled for a worker pool, you cannot [resize](/d
 
 Further, if you do not disable the worker pools before you disable the `cluster-autoscaler` add-on, the worker pools cannot be resized manually. Reinstall the cluster autoscaler, [edit the configmap](#ca_cm) to disable the worker pool, and try again.
 
-<br />
+
 
 ## Preparing your cluster for autoscaling
 {: #ca_prepare_cluster}
@@ -272,7 +272,7 @@ The cluster autoscaler add-on is not supported for baremetal worker nodes.
     You might also install the cluster autoscaler Helm chart, but the Helm chart is deprecated and becomes unsupported tentatively 15 September 2020. You cannot install the add-on and the Helm chart in the same cluster at the same time.
     {: deprecated}
 
-<br />
+
 
 ## Installing the cluster autoscaler add-on in your cluster
 {: #ca_addon}
@@ -298,13 +298,13 @@ The cluster autoscaler add-on is not supported for baremetal worker nodes.
         ```
         {: pre}
 
-        **Example output**
-            ```
-            Enabling add-on `cluster-autoscaler` for cluster <cluster_name>...
-            The add-on might take several minutes to deploy and become ready for use.
-            OK
-            ```
-            {: screen}
+        Example output
+        ```
+        Enabling add-on `cluster-autoscaler` for cluster <cluster_name>...
+        The add-on might take several minutes to deploy and become ready for use.
+        OK
+        ```
+        {: screen}
 
     2. Verify that the add-on is installed and `Ready`.
         ```
@@ -312,13 +312,13 @@ The cluster autoscaler add-on is not supported for baremetal worker nodes.
         ```
         {: pre}
 
-        **Example output**
+        Example output
 
-            ```
-            Name                 Version   Health State   Health Status   
-            cluster-autoscaler   1.0.1     normal         Addon Ready
-            ```
-            {: screen}
+        ```
+        Name                 Version   Health State   Health Status   
+        cluster-autoscaler   1.0.1     normal         Addon Ready
+        ```
+        {: screen}
 
 4. By default, no worker pools are enabled for autoscaling. To enable autoscaling on your worker pools, [update the cluster autoscaler configmap to enable scaling for your worker pools](#ca_cm).
 
@@ -365,7 +365,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     ```
     {: pre}
 
-    **Example output**
+    Example output
     
     ```
     NAME: ibm-iks-cluster-autoscaler
@@ -389,7 +389,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         ibm-iks-cluster-autoscaler-8497bfc968-dbn7w   1/1       Running   0          9m
         ```
@@ -401,7 +401,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         ibm-iks-cluster-autoscaler   ClusterIP   172.21.xxx.xx    <none>        8085/TCP        9m
         ```
@@ -436,7 +436,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
 
 8. Optional: If you did not set any worker pools for autoscaling with the installation, you can [Update the cluster autoscaler configuration](#ca_cm).
 
-<br />
+
 
 ## Updating the cluster autoscaler configmap to enable scaling
 {: #ca_cm}
@@ -459,7 +459,7 @@ After you edit the configmap to enable a worker pool, the cluster autoscaler sca
     ```
     {: pre}
 
-    **Example output**
+    Example output
     ```yaml
     apiVersion: v1
     data:
@@ -507,7 +507,7 @@ After you edit the configmap to enable a worker pool, the cluster autoscaler sca
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
         Name:               ibm-iks-cluster-autoscaler-857c4d9d54-gwvc6
         Namespace:          kube-system
@@ -594,7 +594,7 @@ The cluster autoscaler Helm chart is deprecated. For the latest version of the c
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         ibm-iks-cluster-autoscaler-8497bfc968-dbn7w   1/1       Running   0          9m
         ```
@@ -606,7 +606,7 @@ The cluster autoscaler Helm chart is deprecated. For the latest version of the c
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         ibm-iks-cluster-autoscaler   ClusterIP   172.21.xxx.xx    <none>        8085/TCP        9m
         ```
@@ -622,18 +622,18 @@ The cluster autoscaler Helm chart is deprecated. For the latest version of the c
     ```
     apiVersion: v1
     data:
-        workerPoolsConfig.json: |
-          [{"name": "autoscale", "minSize": 3, "maxSize": 5, "enabled": true }]
-      kind: ConfigMap
-      metadata:
-    annotations:
-      workerPoolsConfigStatus: '{"1:2:default":"SUCCESS"}'
-    creationTimestamp: "2019-08-23T14:26:54Z"
-    name: iks-ca-configmap
-    namespace: kube-system
-    resourceVersion: "12757878"
-    selfLink: /api/v1/namespaces/kube-system/configmaps/iks-ca-configmap
-    uid: bd661f95-35ef-433d-97e0-5d1ac092eafb
+      workerPoolsConfig.json: |
+        [{"name": "autoscale", "minSize": 3, "maxSize": 5, "enabled": true }]
+    kind: ConfigMap
+    metadata:
+      annotations:
+        workerPoolsConfigStatus: '{"1:2:default":"SUCCESS"}'
+      creationTimestamp: "2019-08-23T14:26:54Z"
+      name: iks-ca-configmap
+      namespace: kube-system
+      resourceVersion: "12757878"
+      selfLink: /api/v1/namespaces/kube-system/configmaps/iks-ca-configmap
+      uid: bd661f95-35ef-433d-97e0-5d1ac092eafb
     ```
     {: screen}
 
@@ -706,7 +706,7 @@ For more information, see the following Kubernetes docs:
     ```
     {: pre}
 
-<br />
+
 
 ## Scaling up worker nodes before the worker pool has insufficient resources
 {: #ca_scaleup}
@@ -765,7 +765,7 @@ Release updates
     ```
     {: pre}
 
-    **Example output**
+    Example output
     ```sh
     Data and resources that you created for the add-on might be deleted when the add-on is disabled. Continue? [y/N]>
     ```
@@ -872,7 +872,7 @@ Before you begin, see the [Prerequisites](#ca_helm_up_prereqs).
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     myhelmchart     1           Mon Jan  7 14:47:44 2019    DEPLOYED    ibm-iks-cluster-autoscaler-1.0.1      kube-system
     ```
@@ -890,7 +890,7 @@ Before you begin, see the [Prerequisites](#ca_helm_up_prereqs).
     ```
     {: pre}
 
-    **Example output**
+    Example output
     ```
     Name:         iks-ca-configmap
     Namespace:    kube-system
@@ -929,7 +929,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```yaml
     apiVersion: v1
@@ -981,7 +981,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
         ```
         {: pre}
 
-<br />
+
 
 ## Cluster autoscaler add-on parameter reference
 {: #ca_addon_ref}
