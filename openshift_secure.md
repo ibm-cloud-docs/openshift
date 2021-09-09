@@ -186,6 +186,7 @@ CIS Kubernetes master benchmark
 
 Secure communication via TLS
 : To use {{site.data.keyword.openshiftlong_notm}}, you must authenticate with the service by using your credentials. When you are authenticated, {{site.data.keyword.openshiftlong_notm}} generates TLS certificates that encrypt the communication to and from the {{site.data.keyword.openshiftshort}} API server and etcd data store to ensure a secure end-to-end communication between the worker nodes and the {{site.data.keyword.openshiftshort}} master. These certificates are never shared across clusters or across {{site.data.keyword.openshiftshort}} master components.
+
   Need to revoke existing certificates and create new certificates for your cluster? Check out [Rotating CA certificates in your cluster](#cert-rotate).
   {: tip}
     
@@ -322,6 +323,7 @@ The image does not include components that ensure secure end-to-end communicatio
 
 CIS-compliant RHEL image
 : Every worker node is set up with a Red Hat Enterprise Linux (RHEL) operating system that implements the benchmarks that are published by the Center of Internet Security (CIS). The user or the owner of the machine cannot change this operating system to another operating system. To review the current RHEL version, run `oc get nodes -o wide`. IBM works with internal and external security advisory teams to address potential security compliance vulnerabilities. Security updates and patches for the operating system are made available through {{site.data.keyword.openshiftlong_notm}} and must be installed by the user to keep the worker node secure.
+
   {{site.data.keyword.openshiftlong_notm}} uses a Red Hat Enterprise Linux kernel for worker nodes. You can run containers based on any Linux distribution in {{site.data.keyword.openshiftlong_notm}}. Check with your container image vendor to verify that your container images can run on a Red Hat Enterprise kernel.
   {: important}
 
@@ -338,7 +340,8 @@ Option to deploy bare metal on classic</td>
 : If you create a standard classic cluster, you can choose to provision your worker nodes on bare metal physical servers (instead of virtual server instances). With bare metal machines, you have additional control over the compute host, such as the memory or CPU. This setup eliminates the virtual machine hypervisor that allocates physical resources to virtual machines that run on the host. Instead, all of a bare metal machine's resources are dedicated exclusively to the worker, so you don't need to worry about "noisy neighbors" sharing resources or slowing down performance. Bare metal servers are dedicated to you, with all its resources available for cluster usage.
 
 Encrypted disks {: #encrypted_disk}
-: By default, every worker node is provisioned with two local SSD, AES 256-bit encrypted data partitions. The first partition contains the kernel image that is used to boot the worker node and is not encrypted. The second partition holds the container file system and is unlocked by using LUKS encryption keys. Each worker node in a cluster has its own unique LUKS encryption key, managed by {{site.data.keyword.openshiftlong_notm}}. When you create a cluster or add a worker node to an existing cluster, the keys are pulled securely and then discarded after the encrypted disk is unlocked. 
+: By default, every worker node is provisioned with two local SSD, AES 256-bit encrypted data partitions. The first partition contains the kernel image that is used to boot the worker node and is not encrypted. The second partition holds the container file system and is unlocked by using LUKS encryption keys. Each worker node in a cluster has its own unique LUKS encryption key, managed by {{site.data.keyword.openshiftlong_notm}}. When you create a cluster or add a worker node to an existing cluster, the keys are pulled securely and then discarded after the encrypted disk is unlocked.
+
   Encryption can impact disk I/O performance. For workloads that require high-performance disk I/O, test a cluster with encryption both enabled and disabled to help you decide whether to turn off encryption.
   {: note}
 
@@ -705,6 +708,7 @@ You are responsible for ensuring the security of your personal information in Ku
 
 Use a Kubernetes secret to store personal information
 : Store personal information only in Kubernetes resources that are designed to hold personal information. For example, do not use your name in the name of an {{site.data.keyword.openshiftshort}} project, deployment, service, or config map. For proper protection and encryption, store personal information in [secrets](https://kubernetes.io/docs/concepts/configuration/secret/){: external} instead.
+
   For centralized management of all your secrets across clusters and injection at application runtime, try [{{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-tutorial-kubernetes-secrets).
   {: tip}
 
