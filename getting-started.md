@@ -109,6 +109,7 @@ subcollection: openshift
 
 {[css-tiles.html]}
 
+
 # Getting started with {{site.data.keyword.openshiftlong_notm}}
 {: #getting-started}
 
