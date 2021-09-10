@@ -10,6 +10,7 @@ subcollection: openshift
 
 ---
 
+
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
@@ -372,8 +373,6 @@ From the {{site.data.keyword.openshiftshort}} console, you can deploy one of the
 
 Looking for an overview of all your options in {{site.data.keyword.openshiftlong_notm}}? Check out the curated [learning path for administrators](/docs/openshift?topic=openshift-learning-path-admin) or [learning path for developers](/docs/openshift?topic=openshift-learning-path-dev).
 {: tip}
-
-
 
 
 
