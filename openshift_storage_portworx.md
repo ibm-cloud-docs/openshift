@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1502,8 +1502,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
         ```
         {: pre}
 
-4. Review the log files locally. If you cannot resolve your issue by reviewing the logs, [open a support ticket](/docs/containers?topic=containers-getting-started-with-px-backup#portworx_help) and provide the log information that you collected.
-
+4. Review the log files locally. If you cannot resolve your issue by reviewing the logs, [open a support ticket](/docs/openshift?topic=openshift-portworx#portworx_help_sup) and provide the log information that you collected.
 
 ## Limitations
 {: #portworx_limitations}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-13"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -53,7 +53,7 @@ To use {{site.data.keyword.cloud_notm}} IAM identities for pods in your cluster,
 {: #iam-identity-create-api}
 {: api}
 
-As an account administrator, create a trusted profile in {{site.data.keyword.cloud_notm}} Identity and Access Management. For more information, see the [IAM documentation](/docs/account?topic=account-create-trusted-profile#create-profile-compute).
+As an account administrator, create a trusted profile in {{site.data.keyword.cloud_notm}} Identity and Access Management. For more information, see the [IAM documentation](/docs/account?topic=account-create-trusted-profile&interface=ui).
 {: shortdesc}
 
 **Before you begin**: Verify that you meet the [prerequisites](#iam-identity-prereqs).
@@ -127,7 +127,7 @@ Your clusters can now establish trust with {{site.data.keyword.cloud_notm}} IAM.
 {: #iam-identity-create-ui}
 {: ui}
 
-As an account administrator, create a trusted profile in {{site.data.keyword.cloud_notm}} Identity and Access Management. For more information, see the [IAM documentation](/docs/account?topic=account-create-trusted-profile#create-profile-compute).
+As an account administrator, create a trusted profile in {{site.data.keyword.cloud_notm}} Identity and Access Management. For more information, see the [IAM documentation](/docs/account?topic=account-create-trusted-profile&interface=ui).
 {: shortdesc}
 
 **Before you begin**: Verify that you meet the [prerequisites](#iam-identity-prereqs).

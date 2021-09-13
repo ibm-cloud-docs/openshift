@@ -249,6 +249,7 @@ toc:
         - openshift_versions_autoscaler.md
         - openshift_versions_vpc_block_addon.md
         - openshift_versions_object.md
+        - openshift_versions_static_route.md
         - openshift_versions_ocs_addon.md
         - openshift_versions_backup_restore.md
         - openshift_versions_hpcs_router.md

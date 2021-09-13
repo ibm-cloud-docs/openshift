@@ -231,6 +231,7 @@ Red Hat OpenShift on IBM Cloud
         openshift_versions_vpc_block_addon.md
         openshift_versions_object.md
         openshift_versions_ocs_addon.md
+        openshift_versions_static_route.md
         openshift_versions_backup_restore.md
         openshift_versions_hpcs_router.md
         openshift_versions_image_key_synchronizer.md
