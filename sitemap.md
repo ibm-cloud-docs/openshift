@@ -1943,6 +1943,10 @@ subcollection: openshift
 
 [OpenShift Data Foundation add-on changelog](/docs/openshift?topic=openshift-odf_addon_changelog)
 
+[Static route add-on version changelog](/docs/openshift?topic=openshift-static-route-changelog)
+* [Version 1.0.0](/docs/openshift?topic=openshift-static-route-changelog#v100)
+  * [Changelog for 1.0.0_649, released 8 September 2021](/docs/openshift?topic=openshift-static-route-changelog#100_649)
+
 [Back up and restore Helm chart](/docs/openshift?topic=openshift-backup_restore_changelog)
 * [Changelog for 1.0.5, released 17 December 2020](/docs/openshift?topic=openshift-backup_restore_changelog#0105_br_chart)
 
