@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-14"
 
 keywords: openshift, roks, rhoks, rhos, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
 
@@ -163,23 +163,14 @@ Review the architecture diagrams and then scroll through the following table for
 
 The following diagram shows the components of your cluster and how they interact when both the [public and private cloud service endpoints are enabled](/docs/openshift?topic=openshift-plan_clusters#vpc-workeruser-master). Because both service endpoints are enabled, your VPC creates a public load balancer for each service for inbound traffic.
 
-<p>
-<figure>
-    <img src="/images/arch_roks_vpc.png" alt="{{site.data.keyword.openshiftlong_notm}} on VPC cluster architecture with public and private cloud service endpoints">
-    <figcaption>{{site.data.keyword.openshiftlong_notm}} on VPC cluster architecture when public and private public cloud service endpoints are enabled</figcaption>
-</figure>
-</p>
+![{{site.data.keyword.openshiftlong_notm}} on VPC cluster architecture with public and private cloud service endpoints](/images/arch_roks_vpc.svg)
 
 **Cluster with private cloud service endpoint only**:
 
 The following diagram shows the components of your cluster and how they interact when only the [private cloud service endpoint is enabled](/docs/openshift?topic=openshift-plan_clusters#vpc-workeruser-master). Because only the private cloud service endpoint is enabled, your VPC creates a private load balancer for each service for inbound traffic.
 
-<p>
-<figure>
-    <img src="/images/arch_roks_vpc_private.png" alt="{{site.data.keyword.openshiftlong_notm}} on VPC cluster architecture with the private cloud service endpoint only">
-    <figcaption>{{site.data.keyword.openshiftlong_notm}} on VPC cluster architecture when only the private public cloud service endpoint is enabled</figcaption>
-</figure>
-</p>
+![{{site.data.keyword.openshiftlong_notm}} on VPC cluster architecture with the private cloud service endpoint only](images/arch_roks_vpc_private.svg)
+
 
 [Masters](#service-architecture-4-master) and [worker nodes](#service-architecture-4-workers) include the same components as described in the Classic cluster architecture for version 4 clusters. For more information about the OpenShift Container Platform architecture, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.6/architecture/architecture.html){: external}.
 

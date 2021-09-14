@@ -56,13 +56,30 @@ By default, any router that is created in your cluster is configured to process 
     oc get routes --all-namespaces
     ```
     {: pre}
+    
+2. For each route, add a label for the default router.
+    1. Edit the route configuration.
 
-1. For each route, add a label for the default router.
+        ```sh
+        oc edit route <route_name> -n <project>
+        ```
+        {: pre}
 
-    ```sh
-    oc edit route <route_name> -n <project>
-    ```
-    {: pre}
+    2. In the `metadata.labels` section, add the `router: default` label.
+
+        ```yaml
+        kind: Route
+        apiVersion: route.openshift.io/v1
+        metadata:
+          name: router-default
+          namespace: openshift-ingress
+          labels:
+            ingresscontroller.operator.openshift.io/owning-ingresscontroller: default
+            router: default
+        spec:
+        ...
+        ```
+        {: codeblock}
 
 1. In the `metadata.labels` section, add the `router: default` label.
 
@@ -109,6 +126,7 @@ By default, any router that is created in your cluster is configured to process 
 
 The default router now only processes routes that have the `router: default` label.
 
+
 ## Step 2: Install the {{site.data.keyword.cloud_notm}} HPCS Router operator
 {: #addon-operatorhub}
 
@@ -137,6 +155,7 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to create a router
     * [The `ep11` endpoint URL and port that your service instance uses for key management operations](https://cloud.ibm.com/apidocs/hs-crypto#getinstance)
 
 2. Create a Kubernetes secret named `hpcs-credentials` that contains the values that you retrieved. The HPCS router uses the environment variables in this secret to authenticate with your {{site.data.keyword.hscrypto}} instance.
+
     ```yaml
     kind: Secret
     apiVersion: v1
@@ -150,7 +169,7 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to create a router
       LIBGREP11_IAMAUTH_INSTANCEID: <service_instance_ID>
     type: Opaque
     ```
-    {: codeblock}
+    {: screen}
 
     Example
 
