@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-14"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -51,42 +51,46 @@ Before you deploy the HPCS router into your cluster, set up router sharding to e
 By default, any router that is created in your cluster is configured to process any routes that you create. By using [router sharding](https://docs.openshift.com/container-platform/4.6/networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-ingress-controller.html#nw-ingress-sharding-route-labels_configuring-ingress-cluster-traffic-ingress-controller){: external} you can label routes so that only routers with the matching selector can process traffic for those routes. In the following steps you use router sharding to ensure that the default router processes traffic to routes that have the `router: default` label only. Later, when you create routes that are encrypted with a key that is stored in {{site.data.keyword.hscrypto}}, you use a different route label so that only the HPCS router can process traffic to those routes. The default router in your cluster, which is not integrated with {{site.data.keyword.hscrypto}}, is prevented from processing the encrypted routes.
 
 1. List all existing routes in your cluster.
-    ```
+
+    ```sh
     oc get routes --all-namespaces
     ```
     {: pre}
 
-2. For each route, add a label for the default router.
-    1. Edit the route configuration.
-        ```
-        oc edit route <route_name> -n <project>
-        ```
-        {: pre}
+1. For each route, add a label for the default router.
 
-    2. In the `metadata.labels` section, add the `router: default` label.
-        ```yaml
-        kind: Route
-        apiVersion: route.openshift.io/v1
-        metadata:
-          name: router-default
-          namespace: openshift-ingress
-          labels:
-            ingresscontroller.operator.openshift.io/owning-ingresscontroller: default
-            router: default
-        spec:
-        ...
-        ```
-        {: codeblock}
-
-    3. Save and close the file. Your changes are applied automatically.
-
-3. Edit the configuration for the `IngressController` that manages the default router.
+    ```sh
+    oc edit route <route_name> -n <project>
     ```
+    {: pre}
+
+1. In the `metadata.labels` section, add the `router: default` label.
+
+    ```yaml
+    kind: Route
+    apiVersion: route.openshift.io/v1
+    metadata:
+        name: router-default
+        namespace: openshift-ingress
+        labels:
+        ingresscontroller.operator.openshift.io/owning-ingresscontroller: default
+        router: default
+    spec:
+    ...
+    ```
+    {: codeblock}
+
+1. Save and close the file. Your changes are applied automatically.
+
+1. Edit the configuration for the `IngressController` that manages the default router.
+
+    ```sh
     oc edit IngressController default -n openshift-ingress-operator
     ```
     {: pre}
 
 4. In the `spec` section, add a `routeSelector` section that includes the `router: default` selector.
+
     ```yaml
     apiVersion: operator.openshift.io/v1
     kind: IngressController
@@ -139,16 +143,17 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to create a router
     metadata:
         name: hpcs-credentials
     namespace: openshift-ingress
-  stringData:
-    LIBGREP11_CONNECTION_ADDRESS: <ep11_endpoint_URL>
-    LIBGREP11_CONNECTION_PORT: "<ep11_endpoint_port>"
-    LIBGREP11_IAMAUTH_APIKEY: <service_instance_ID_API_key>
-    LIBGREP11_IAMAUTH_INSTANCEID: <service_instance_ID>
-  type: Opaque
+    stringData:
+      LIBGREP11_CONNECTION_ADDRESS: <ep11_endpoint_URL>
+      LIBGREP11_CONNECTION_PORT: "<ep11_endpoint_port>"
+      LIBGREP11_IAMAUTH_APIKEY: <service_instance_ID_API_key>
+      LIBGREP11_IAMAUTH_INSTANCEID: <service_instance_ID>
+    type: Opaque
     ```
     {: codeblock}
 
-    Example:
+    Example
+
     ```yaml
     kind: Secret
     apiVersion: v1
@@ -165,12 +170,14 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to create a router
     {: screen}
 
 3. Create the secret in the `openshift-ingress` project.
-    ```
+
+    ```sh
     oc create -f hpcs-credentials.yaml -n openshift-ingress
     ```
     {: pre}
 
 4. To create the router, create an `HPCSIngressController` custom resource that contains the `router: hpcs` selector for router sharding. For the router name, consider using the name of your {{site.data.keyword.hscrypto}} instance for easy identification.
+
     ```yaml
     apiVersion: operator.roks.cloud.ibm.com/v1
     kind: HPCSIngressController
@@ -185,27 +192,32 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to create a router
     {: codeblock}
 
 5. Deploy the `HPCSIngressController` custom resource into the `openshift-ingress` project. When this router is deployed, the operator automatically creates a Kubernetes load balancer service to expose the router deployment. In multizone classic clusters, one load balancer is created in every zone. In multizone VPC clusters, one load balancer that process traffic for every zone is created.
-    ```
+
+    ```sh
     oc create -n openshift-ingress -f <router_name>.yaml
     ```
     {: pre}
 
 6. Get the IP address (classic) or hostname (VPC) of each load balancer service that is named in the format `hpcs-router-<router_name>-<zone>`.
-    ```
+
+    ```sh
     oc get svc -n openshift-ingress
     ```
     {: pre}
 
 7. Register the IP address (classic) or hostname (VPC) of each load balancer with a DNS entry by creating a subdomain for your {{site.data.keyword.cloud_notm}} HPCS router.
     * **IBM-provided domain**: If you do not need to use a custom domain, you can generate an IBM-provided subdomain.
+
         * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic:
-        ```
+
+        ```sh
         ibmcloud oc nlb-dns create classic --cluster <cluster_name_or_ID> --ip LB_IP [--ip LB2_IP --ip LB3_IP]
         ```
         {: pre}
 
         * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC:
-        ```
+
+        ```sh
         ibmcloud oc nlb-dns create vpc-gen2 --cluster <cluster_name_or_ID> --lb-host <LB_hostname>
         ```
         {: pre}
@@ -213,12 +225,14 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to create a router
     * **Custom domain**: Create a custom domain with your DNS provider or [{{site.data.keyword.cis_full}}](https://cloud.ibm.com/catalog/services/internet-services), and add the load balancer IP address as an A record (classic) or the load balancer hostname as a CNAME (VPC).
 
 8. Add the domain to the router deployment by editing the `HPCSIngressController` custom resource.
-    ```
+
+    ```sh
     oc edit -n openshift-ingress hpcsingresscontrollers.operator.roks.cloud.ibm.com <router_name>
     ```
     {: pre}
 
 9. In the `spec` section, add the `domain` section and specify your domain.
+
     ```yaml
     apiVersion: operator.roks.cloud.ibm.com/v1
     kind: HPCSIngressController
@@ -243,6 +257,7 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to generate and si
 {: shortdesc}
 
 1. Create a `Certificate` custom resource that specifies details for the CSR, such as the domain that you previously created.
+
     ```yaml
     apiVersion: operator.roks.cloud.ibm.com/v1
     kind: Certificate
@@ -274,7 +289,8 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to generate and si
     {: codeblock}
 
 2. Create the `Certificate` custom resource.
-    ```
+
+    ```sh
     oc create -f <CSR_name>.yaml -n <project>
     ```
     {: pre}
@@ -286,7 +302,8 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to generate and si
         * A secret that contains the signed CSR, the `grep11` reference to the generated private key, and the generated public key is created in the project that you specified in the `Certificate` custom resource.
 
 3. Get the signed CSR from the generated secret. Additionally, note the `grep11` reference to the generated private key, which is used in a later step.
-    ```
+
+    ```sh
     oc get secret <secret_name> -n <project> -o yaml
     ```
     {: pre}
@@ -300,6 +317,7 @@ After you obtain the certificate from your certificate authority, use the certif
 {: shortdesc}
 
 1. Create a `Route` resource. Specify the certificate and the `grep11` reference to the generated private key from the generated CSR secret.
+
     ```yaml
     kind: Route
     apiVersion: route.openshift.io/v1
@@ -310,47 +328,49 @@ After you obtain the certificate from your certificate authority, use the certif
     namespace: <project>
     labels:
       router: hpcs
-  spec:
-    host:
-      # The router domain that you registered
-      <domain>
-    to:
-      kind: Service
-      # The name of the clusterIP service that exposes your app
-      name: <app_service_name>
-      weight: 100
-    port:
-      targetPort: https
-    tls:
-      termination: edge
-      # The contents of the certificate
-      certificate: |-
-        -----BEGIN CERTIFICATE-----
-        <cert>
-        -----END CERTIFICATE-----
-      # The reference to the private key
-      key: |-
-        -----BEGIN PRIVATE KEY-----
-        <grep11_ref_to_private_key>
-        -----END PRIVATE KEY-----
-      # Optional: the CA certificate
-      caCertificate: |-
-        -----BEGIN CERTIFICATE-----
-        <optional_ca_cert>
-        -----END CERTIFICATE-----
-      insecureEdgeTerminationPolicy: Redirect
-    wildcardPolicy: None
+    spec:
+        host:
+        # The router domain that you registered
+        <domain>
+        to:
+        kind: Service
+        # The name of the clusterIP service that exposes your app
+        name: <app_service_name>
+        weight: 100
+        port:
+        targetPort: https
+        tls:
+        termination: edge
+        # The contents of the certificate
+        certificate: |-
+            -----BEGIN CERTIFICATE-----
+            <cert>
+            -----END CERTIFICATE-----
+        # The reference to the private key
+        key: |-
+            -----BEGIN PRIVATE KEY-----
+            <grep11_ref_to_private_key>
+            -----END PRIVATE KEY-----
+        # Optional: the CA certificate
+        caCertificate: |-
+            -----BEGIN CERTIFICATE-----
+            <optional_ca_cert>
+            -----END CERTIFICATE-----
+        insecureEdgeTerminationPolicy: Redirect
+        wildcardPolicy: None
     ```
     {: codeblock}
 
 2. Create the route. Because the route is labeled with `router: hpcs`, only the {{site.data.keyword.cloud_notm}} HPCS Router processes traffic for the route.
-    ```
+
+    ```sh
     oc create -f <route_name>.yaml -n <project>
     ```
     {: pre}
 
 3. Verify that the route for your app is created.
-    ```
+
+    ```sh
     oc get routes
     ```
     {: pre}
