@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-13"
+lastupdated: "2021-09-14"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -45,7 +45,7 @@ Worker node fix pack update
 {: release-note}
 
 Ingress ALB changelog
-:   Updated the [changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions ` 0.48.1_1613_iks`, `0.47.0_1614_iks`, and `0.43.0_1612_iks`.
+:   Updated the [change log](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.48.1_1613_iks`, `0.47.0_1614_iks`, and `0.43.0_1612_iks`.
 
 
 
