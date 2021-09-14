@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-13"
+lastupdated: "2021-09-14"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -25,6 +25,8 @@ For information about releases that occured before August 30th, see [Release not
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status){: external}.
 {: note}
 
+
+
 ## September 2021
 {: #release-sep-2021}
 
@@ -45,7 +47,7 @@ Worker node fix pack update
 {: release-note}
 
 Ingress ALB changelog
-:   Updated the [changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions ` 0.48.1_1613_iks`, `0.47.0_1614_iks`, and `0.43.0_1612_iks`.
+:   Updated the [change log](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.48.1_1613_iks`, `0.47.0_1614_iks`, and `0.43.0_1612_iks`.
 
 
 
@@ -67,7 +69,7 @@ Review the release notes for 1 September 2021.
 {: shortdesc}
 
 {{site.data.keyword.block_storage_is_short}} add-on
-:   Version [`4.0.0`](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
+:   Version [`4.0`](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
 
 {{site.data.keyword.cos_full_notm}} plug-in 
 :   Version [`2.1.4`](/docs/openshift?topic=openshift-cos_plugin_changelog) is available.

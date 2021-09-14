@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-14"
 
 keywords: vpc block, add-on, vpc block changelog
 
@@ -52,6 +52,8 @@ Refer to the following tables for a summary of changes for each version of the {
 
 Review the changes in version `4.0` of the {{site.data.keyword.block_storage_is_full}} add-on.
 {: shortdesc}
+
+
 
 ### Changelog for version 4.0, released 1 September 2021
 {: #0400_is_block_relnote}
