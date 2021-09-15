@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-09-15"
 
 keywords: file, debug, help
 
@@ -10,101 +10,7 @@ content-type: troubleshoot
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
-  
+{{site.data.keyword.attribute-definition-list}}  
 
 
 # Debugging {{site.data.keyword.blockstorageshort}} failures
@@ -122,18 +28,21 @@ Follow the steps to review any error messages related to pod deployment.
 {: shortdesc}
 
 1. List the pods in your cluster. A pod is successfully deployed if the pod shows a status of **Running**.
+
     ```sh
     oc get pods
     ```
     {: pre}
 
 1. Get the details of your pod and review any error messages that are displayed in the **Events** section of your CLI output.
+
     ```sh
     oc describe pod <pod_name>
     ```
     {: pre}
 
 1. Retrieve the logs for your pod and review any error messages.
+
     ```sh
     oc logs <pod_name>
     ```
@@ -154,7 +63,7 @@ Some issues can be resolved by restarting and redeploying your pods. Follow the 
         ```
         {: pre}
 
-        **Example output**:
+        Example output
         ```
         pod "nginx" deleted
         ```
@@ -166,7 +75,7 @@ Some issues can be resolved by restarting and redeploying your pods. Follow the 
         ```
         {: pre}
 
-        **Example output**:
+        Example output
         ```
         pod/nginx created
         ```
@@ -175,20 +84,22 @@ Some issues can be resolved by restarting and redeploying your pods. Follow the 
 1. If restarting your pod does not resolve the issue, [reload your worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
 
 1. Verify that you use the latest {{site.data.keyword.cloud_notm}} and {{site.data.keyword.containerlong_notm}} plug-in version.
-        ```sh
-        ibmcloud update
-        ```
-        {: pre}
 
-        ```sh
-        ibmcloud plugin repo-plugins
-        ```
-        {: pre}
+    ```sh
+    ibmcloud update
+    ```
+    {: pre}
 
-        ```sh
-        ibmcloud plugin update
-        ```
-        {: pre}
+    ```sh
+    ibmcloud plugin repo-plugins
+    ```
+    {: pre}
+
+    ```sh
+    ibmcloud plugin update
+    ```
+    {: pre}
+
 
 ## Verifying that the storage driver and plug-in pods show a status of **Running**
 {: #debug_storage_block_driver_plugin}
@@ -197,25 +108,30 @@ Follow the steps to check the status of your storage driver and plug-in pods and
 {: shortdesc}
 
 1. List the pods in the `kube-system` project.
-        ```sh
-        oc get pods -n kube-system
-        ```
-        {: pre}
 
-1. If the storage driver and plug-in pods do not show a **Running** status, get more details of the pod to find the root cause. Depending on the status of your pod, you might not be able to execute all of the following commands.
+    ```sh
+    oc get pods -n kube-system
+    ```
+    {: pre}
+
+1. If the storage driver and plug-in pods do not show a **Running** status, get more details of the pod to find the root cause. Depending on the status of your pod, the following commands might fail.
+    
     1. Get the names of the containers that run in the driver pod.
+
         ```sh
         kubectl describe pod <pod_name> -n kube-system 
         ```
         {: pre}
 
     2. Export the logs from the driver pod to a `logs.txt` file on your local machine. 
+
         ```sh
         oc logs <pod_name> -n kube-system > logs.txt
         ```
         {: pre}
 
     3. Review the log file.
+
         ```sh
         cat logs.txt
         ```
@@ -252,46 +168,48 @@ Follow the steps to check the status of your PVC and review any error messages.
 {: shortdesc}
 
 1. Check the status of your PVC. A PVC is successfully provisioned if the PVC shows a status of **Bound**.
-        ```sh
-        oc get pvc
-        ```
-        {: pre}
 
-        * If the PVC shows a status of **Bound**, the PVC is successfully provisioned.
-          **Example output**:
-          ```
-          NAME         STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS                AGE
-          silver-pvc   Bound     pvc-4b881a6b-ada8-4a44-b568-fe909107d756   24Gi       RWX            ibmc-file-silver            7m29s
-          ```
-          {: screen}
+    ```sh
+    oc get pvc
+    ```
+    {: pre}
 
-        * If the status of the PVC shows **Pending**, describe the PVC and review the **Events** section of the output for any warnings or error messages. Note that PVCs that reference storage classes with the volume binding mode set to `WaitForFirstConsumer` remain **Pending** until an app pod is deployed that uses the PVC.
+    * If the PVC shows a status of **Bound**, the PVC is successfully provisioned.
+     
+       Example output  
+      ```sh
+      NAME         STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS                AGE
+      silver-pvc   Bound     pvc-4b881a6b-ada8-4a44-b568-fe909107d756   24Gi       RWX            ibmc-file-silver            7m29s
+      ```
+      {: screen}
 
-          ```sh
-          oc describe pvc <pvc_name>
-          ```
-          {: pre}
-          
-          **Example output**:
-          ```
-          Name:          local-pvc
-          Namespace:     default
-          StorageClass:  sat-local-file-gold
-          Status:        Pending
-          Volume:        
-          Labels:        <none>
-          Annotations:   <none>
-          Finalizers:    [kubernetes.io/pvc-protection]
-          Capacity:      
-          Access Modes:  
-          VolumeMode:    Filesystem
-          Mounted By:    <none>
-          Events:
-          Type     Reason              Age                 From                         Message
-          ----     ------              ----                ----                         -------
-          Warning  ProvisioningFailed  60s (x42 over 11m)  persistentvolume-controller  storageclass.storage.k8s.io "sat-local-file-gold" not found
-          ```
-          {: screen}
+    * If the status of the PVC shows **Pending**, describe the PVC and review the **Events** section of the output for any warnings or error messages. Note that PVCs that reference storage classes with the volume binding mode set to `WaitForFirstConsumer` remain **Pending** until an app pod is deployed that uses the PVC.
+
+      ```sh
+      oc describe pvc <pvc_name>
+      ```
+      {: pre}
+      
+      Example output
+      ```sh
+      Name:          local-pvc
+      Namespace:     default
+      StorageClass:  sat-local-file-gold
+      Status:        Pending
+      Volume:        
+      Labels:        <none>
+      Annotations:   <none>
+      Finalizers:    [kubernetes.io/pvc-protection]
+      Capacity:      
+      Access Modes:  
+      VolumeMode:    Filesystem
+      Mounted By:    <none>
+      Events:
+      Type     Reason              Age                 From                         Message
+      ----     ------              ----                ----                         -------
+      Warning  ProvisioningFailed  60s (x42 over 11m)  persistentvolume-controller  storageclass.storage.k8s.io "sat-local-file-gold" not found
+      ```
+      {: screen}
 
 1. [Review the {{site.data.keyword.blockstorageshort}} troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_block_storage).
 

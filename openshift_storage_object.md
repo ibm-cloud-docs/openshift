@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-15"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -755,7 +755,7 @@ You can authorize your VPC Cloud Service Endpoint source IP addresses to access 
     ```
     {: pre}
 
-    **Example output:** In this example, the COS bucket is mounted at `/cos-vpc`.
+    In this example, the COS bucket is mounted at `/cos-vpc`.
     ```sh
     Filesystem        1K-blocks    Used    Available Use% Mounted on
     overlay           102048096 9071556     87786140  10% /

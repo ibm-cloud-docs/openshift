@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-09-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,101 +11,7 @@ content-type: troubleshoot
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
-  
+{{site.data.keyword.attribute-definition-list}}  
 
 # Why can't I add non-root user access to persistent storage?
 {: #cs_storage_nonroot}
@@ -131,12 +37,12 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
 
 1. Select one of the [provided `gid` storage classes](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference) to assign the default group ID `65531` to your non-root user that you want to read and write to your file storage. If you want to assign a custom group ID, create a YAML file for a customized storage class. In your customized storage class YAML file, include the `gidAllocate: "true"` parameter and define the group ID in the `gidFixed` parameter.
 
-    **Example storage classes for assigning the default group ID `65531`**:
+    Example storage classes for assigning the default group ID `65531`.
     - `ibmc-file-bronze-gid`
     - `ibmc-file-silver-gid`
     - `ibmc-file-gold-gid`
 
-    **Example customized storage class to specify a different group ID**:
+    Example customized storage class to specify a different group ID.
     ```yaml
     apiVersion: storage.k8s.io/v1beta1
     kind: StorageClass
@@ -180,6 +86,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     {: codeblock}
 
 4. Create the PVC in your cluster.
+
     ```sh
     kubectl apply -f pvc.yaml
     ```
@@ -193,7 +100,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     ```
     {: pre}
 
-    **Example output**:
+    Example output
     ```sh
     NAME      STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS           AGE
     gid-pvc   Bound    pvc-5e4acab4-9b6f-4278-b53c-22e1d3ffa123   20Gi       RWX            ibmc-file-bronze-gid   2m54s
@@ -202,7 +109,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
 
 6. Create a YAML file for your deployment that mounts the PVC that you created. In the `spec.template.spec.securityContext.runAsUser` field, specify the non-root user ID that you want to use. This user ID is automatically added to the supplemental group ID that is defined in the storage class to gain read and write access to the file storage.
 
-    **Example for creating an `node-hello` deployment**:
+    Example for creating an `node-hello` deployment.
     ```yaml
     apiVersion: apps/v1
     kind: Deployment
@@ -235,18 +142,20 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     {: codeblock}
 
 7. Create the deployment in your cluster.
+
     ```sh
     kubectl apply -f deployment.yaml
     ```
     {: pre}
 
 8. Verify that your pod is in a **Running** status.
+
     ```sh
     kubectl get pods
     ```
     {: pre}
 
-    **Example output**:
+    Example output
     ```sh
     NAME                              READY   STATUS    RESTARTS   AGE
     gid-deployment-5dc86db4c4-5hbts   2/2     Running   0          69s
@@ -254,6 +163,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     {: screen}
 
 9. Log in to your pod.
+
     ```sh
     kubectl exec <pod_name> -it bash
     ```
@@ -261,13 +171,15 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
 
 ## Verifying the read and write permissions for the non-root user
 {: #verify-rw-permissions}
+
 1. List the user ID and group IDs for the current user inside the pod. The setup is correct if your non-root user ID is listed as `uid` and the supplemental group ID that you defined in your storage class is listed under `groups`.
+
     ```sh
     id
     ```
     {: pre}
 
-    **Example output**:
+    Example output
     ```sh
     uid=2020 gid=0(root) groups=0(root), 65531
     ```
@@ -279,7 +191,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     ```
     {: pre}
 
-    **Example output**:
+    Example output
     ```sh
     drwxrwxr-x 2 nobody 65531 4096 Dec 11 07:40 .
     drwxr-xr-x 1 root   root  4096 Dec 11 07:30 ..
@@ -287,18 +199,20 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     {: screen}
 
 3. Create a file in your mount directory.
+
     ```sh
     echo "Able to write to file storage with my non-root user." > /myvol/gidtest.txt
     ```
     {: pre}
 
 4. List the permissions for the files in your volume mount directory.
+
     ```sh
     ls -al /mnt/nfsvol/
     ```
     {: pre}
 
-    **Example output**:
+    Example output
     ```sh
     drwxrwxr-x 2 nobody      65531 4096 Dec 11 07:40 .
     drwxr-xr-x 1 root        root  4096 Dec 11 07:30 ..
@@ -317,7 +231,6 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
 
 If you need to change the ownership of the mount path from `nobody`, see [App fails when a non-root user owns the NFS file storage mount path](/docs/containers?topic=containers-nonroot).
 {: tip}
-
 
 
 

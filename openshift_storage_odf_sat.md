@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-09-15"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, satellite
 
@@ -19,16 +19,21 @@ subcollection: openshift
 OpenShift Data Foundation is a highly available storage solution that you can use to manage persistent storage for your containerized workloads in {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
-The OpenShift Data Foundation add-on is available as a technology preview and might change without prior notice. Do not use this add-on for production workloads.
-{: preview}
+Billing for OpenShift Data Foundation begins 15 October 2021. If you want to try the add-on, but avoid incurring costs, make sure to disable the add-on before 15 October 2021.
+{: important}
+
+Installing OpenShift Data Foundation from OperatorHub is not supported on {{site.data.keyword.satelliteshort}} clusters. To install ODF, complete the following steps to deploy the cluster add-on or the {site.data.keyword.satelliteshort}} configuration template.
+{: important}
 
 
 ## Planning your setup
 {: #odf-sat-plan}
+
 Before you install ODF in your {{site.data.keyword.satelliteshort}} cluster, each cluster must meet the following prerequisite conditions.
 {: shortdesc}
 
-1. [Install the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
+1. [Install](/docs/openshift?topic=openshift-openshift-cli#cli_oc) or [update the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cs_cli_upgrade).
+1. [Create a {{site.data.keyword.satelliteshort}} link endpoint](/docs/satellite?topic=satellite-link-location-cloud#link-about).
 1. [Set up a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 1. [Attach at least 3 hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) that meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs). Additionally, each host must have a minimum of 16 CPUs and 64 GB RAM.
 1. [Create a cluster](/docs/openshift?topic=openshift-clusters) with the hosts that you previously attached to the location.
@@ -91,6 +96,93 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
     ```
     {: pre}
 
+
+## Creating a Kubernetes secret that contains your {{site.data.keyword.satelliteshort}} link credentials
+{: #odf-sat-secret-create}
+
+After you [create a link endpoint](/docs/satellite?topic=satellite-link-location-cloud#link-about) and before you install ODF, create a Kubernetes secret with your link credentials.
+{: shortdesc}
+
+1. Create a `config.toml` file that contains your link endpoint credentials.
+
+    ```sh
+    [Bluemix]
+    iam_url = "https://iam.bluemix.net"
+    iam_client_id = "bx"
+    iam_client_secret = "bx"
+    iam_api_key = "XXXXX" # Enter your IAM API key
+    containers_api_route_private = "XXXXXX" # Enter your link endpoint. Don't include the trailing slash. Example: https://s111faab2f1e11cfc11a1-6b11a1aaa9c111ba51a11125d8aa1111-c000.us-east.satellite.appdomain.cloud:11111
+
+    [VPC]
+    provider_type = "g2"
+    ```
+    {: codeblock}
+
+1. Encode your `config.toml` file to base64.
+
+    ```sh
+    cat ./config.toml | base64
+    ```
+    {: pre}
+
+1. List the secrets in the `kube-system` namespace of your cluster and look for the `storage-secret-store`.
+
+    ```sh
+    oc get secrets -n kube-system | grep storage-secret-store
+    ```
+    {: pre}
+
+1. If the `storage-secret-store` secret doesn't exist, create it.
+
+    1. Create a `secret.yaml` file that has the base64 encoded `config.toml` value that you created earlier.
+
+        ```yaml
+        apiVersion: v1
+        data:
+        slclient.toml: # Enter your base64 encoded config.toml
+        kind: Secret
+        metadata:
+        name: storage-secret-store
+        namespace: kube-system
+        type: Opaque
+        ```
+        {: codeblock}
+
+    1. Create the secret in your cluster.
+
+        ```sh
+        oc create -f secret.yaml -n kube-system
+        ```
+        {: pre}
+
+1. If the `storage-secret-store` secret exists, update it.
+
+    1. Edit the `storage-secret-store` secret.
+
+        ```sh
+        oc edit secret storage-secret-store -n kube-system
+        ```
+        {: pre}
+
+        Example output
+        ```yaml
+        apiVersion: v1
+        data:
+          slclient.toml: XXX # Enter your base64 encoded config.toml
+        kind: Secret
+        metadata:
+          annotations:
+            kubectl.kubernetes.io/last-applied-configuration: |
+        ```
+        {: screen}
+    
+    1. Paste the base64 encoded `config.toml` value that you created earlier in the `data.slclient.toml` field.
+
+    1. Save and close the file to apply the secret to your cluster.
+
+1. Install OpenShift Data Foundation from the [console](#install-odf-console-sat) or the [CLI](#install-odf-cli-sat).
+
+
 ## Installing the add-on from the CLI
 {: #install-odf-cli-sat}
 
@@ -130,25 +222,28 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 1. Enable the `openshift-data-foundation` add-on. If you also want to deploy ODF and create your storage cluster from the CLI, you can specify the `"odfDeploy=true"` flag. If you want to override any of the default parameters, specify the `--param "key=value"` flag for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
 
-    **Example command for deploying the ODF add-on only**:
+    Example command for deploying the ODF add-on only.
     ```sh
     ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version 4.7.0
     ```
     {: pre}
 
-    **Example command for deploying the ODF and creating a storage cluster while overriding the default parameter**:
+    Example command for deploying the ODF and creating a storage cluster while overriding the default parameter.
+
     ```sh
     ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "odfDeploy=true" --param "osdSize=500Gi" --param "monStorageClassName=<provider-storage-class>" --param "monStorageClassName=<provider-storage-class>"
     ```
     {: pre}
 
 1. Verify the add-on is in a `Ready` state.
+
     ```sh
     ibmcloud oc cluster addon ls -c <cluster_name>
     ```
     {: pre}
 
 1. Verify that the `ibm-ocs-operator-controller-manager-*****` pod is running in the `kube-system` namespace.
+
     ```sh
     oc get pods -A | grep ibm-ocs-operator-controller-manager
     ```

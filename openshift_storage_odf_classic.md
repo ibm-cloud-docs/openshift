@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-09-15"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic, roks
 
@@ -18,14 +18,22 @@ subcollection: openshift
 OpenShift Data Foundation is a highly available storage solution that you can use to manage persistent storage for your containerized workloads in {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
-The OpenShift Data Foundation add-on is available as a technology preview and might change without prior notice. Do not use this add-on for production workloads.
-{: preview}
+Billing for OpenShift Data Foundation begins 15 October 2021. If you want to try the add-on, but avoid incurring costs, make sure to disable the add-on before 15 October 2021.
+{: important}
+
+Installing OpenShift Data Foundation from OperatorHub is not supported on {{site.data.keyword.Bluemix_notm}} clusters. To install ODF, complete the following steps to deploy the cluster add-on.
+{: important}
 
 ## Planning your setup
 {: #odf-classic-plan}
 Before you install ODF in your cluster, you must make sure that the following prerequisite conditions are met:
 
-1. [Install the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
+To install OpenShift Data Foundation on classic clusters, you must enable [VRF](/docs/account?topic=account-vrf-service-endpoint#vrf) in your account.
+{: important}
+
+
+1. [Install](/docs/openshift?topic=openshift-openshift-cli#cli_oc) or [update the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cs_cli_upgrade).
+1. If you don't have virtual route forwarding (VRF) enabled in your account, enable [VRF](/docs/account?topic=account-vrf-service-endpoint#vrf).
 1. [Review the SDS worker node flavors](/docs/openshift?topic=openshift-planning_worker_nodes#sds-table).
 1. Create a [classic cluster](/docs/openshift?topic=openshift-clusters) with a minimum of one worker node per zone across three zones. Choose worker nodes of flavor type `mb4c.32x384.3.8tb.ssd` or `mb4c.20x64.2x1.9tb.ssd` that have the required local disks for ODF.
 1. [Prepare your classic cluster](#odf-cluster-prepare-classic).
@@ -120,7 +128,7 @@ Before you install OpenShift Data Foundation in a classic cluster, review the fo
     ```
     {: pre}
 
-    **Example updated `system:node` cluster role configuration file**
+    Example updated `system:node` cluster role configuration file.
     ```yaml
     apiVersion: rbac.authorization.k8s.io/v1
     kind: ClusterRole
@@ -156,7 +164,7 @@ Before you install OpenShift Data Foundation in a classic cluster, review the fo
     ```
     {: pre}
 
-    **Example updated `system:node` ClusterRoleBinding configuration file with `subjects`**
+    Example updated `system:node` ClusterRoleBinding configuration file with `subjects`.
     ```yaml
     apiVersion: rbac.authorization.k8s.io/v1
     kind: ClusterRoleBinding
