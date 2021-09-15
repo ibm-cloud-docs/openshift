@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-15"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -42,7 +42,7 @@ You must [update your cluster](/docs/openshift?topic=openshift-update) by using 
 |Patch|x.x.18_1533|IBM and you|{{site.data.keyword.openshiftshort}} patches, as well as other {{site.data.keyword.cloud_notm}} Provider component updates such as security and operating system patches. IBM updates masters automatically, but you apply patches to worker nodes. See more about patches in the following section.|
 {: caption="Impacts of {{site.data.keyword.openshiftshort}} updates" caption-side="top"}
 
-### Major and minor updates (4.6)
+### Major and minor updates (4.7)
 {: #major_minor_updates}
 
 First, [update your master node](/docs/openshift?topic=openshift-update#master) and then [update the worker nodes](/docs/openshift?topic=openshift-update#worker_node). Worker nodes cannot run an {{site.data.keyword.openshiftshort}} major or minor version that is greater than the masters. Additionally, your worker nodes can be only one version behind the master version (`n-1`).
@@ -52,7 +52,7 @@ If you use an `oc` or `oc` CLI version that does match at least the `major.minor
 {: note}
 
 
-### Patch updates (4.6.28_xxxx_openshift)
+### Patch updates (4.7.29_xxxx_openshift)
 {: #patch_updates_oc}
 
 Changes across patches are documented in the [Version changelog](/docs/openshift?topic=openshift-openshift_versions). Master patches are applied automatically, but you initiate worker node patches updates.
@@ -75,8 +75,8 @@ Worker nodes can also run patch versions that are greater than the masters. As u
 {{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.openshiftshort}}. The worker node operating system is Red Hat Enterprise Linux 7.
 
 **Supported versions**:
-* Latest: 4.7 (Kubernetes 1.20)
-* Default: 4.6 (Kubernetes 1.19)
+* Latest: 4.7 (Kubernetes 1.21)
+* Default: 4.7 (Kubernetes 1.20)
 
 **Deprecated and unsupported versions**:
 * Deprecated: 3.11 (Kubernetes 1.11), 4.5 (Kubernetes 1.18)
@@ -91,9 +91,9 @@ oc version
 
 Example output:
 ```
-Client Version: 4.6.3
-Server Version: 4.6.12
-Kubernetes Version: v1.19.2
+Client Version: 4.7.3
+Server Version: 4.7.12
+Kubernetes Version: v1.20.2
 ```
 {: screen}
 

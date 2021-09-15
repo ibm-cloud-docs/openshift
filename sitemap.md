@@ -1527,7 +1527,7 @@ subcollection: openshift
 
 [IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}
 
-[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.6/rest_api/index.html){: external}
+[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.7/rest_api/index.html){: external}
 
 
 ## CLI plug-in reference
@@ -1708,8 +1708,8 @@ subcollection: openshift
 
 [Version information and update actions](/docs/openshift?topic=openshift-openshift_versions)
 * [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types)
-  * [Major and minor updates (4.6)](/docs/openshift?topic=openshift-openshift_versions#major_minor_updates)
-  * [Patch updates (4.6.28_xxxx_openshift)](/docs/openshift?topic=openshift-openshift_versions#patch_updates_oc)
+  * [Major and minor updates (4.7)](/docs/openshift?topic=openshift-openshift_versions#major_minor_updates)
+  * [Patch updates (4.7.29_xxxx_openshift)](/docs/openshift?topic=openshift-openshift_versions#patch_updates_oc)
 * [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types)
 * [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history)
 * [{{site.data.keyword.openshiftshort}} 4.7](/docs/openshift?topic=openshift-openshift_versions#ocp47)

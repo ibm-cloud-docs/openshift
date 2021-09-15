@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-15"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -38,7 +38,7 @@ Review the following details about {{site.data.keyword.mon_full_notm}}.
 - Free trial to try out the capabilities.
 - To get started, see [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](#openshift_monitoring).
 
-For more information, see [the {{site.data.keyword.openshiftshort}} documentation](http://docs.openshift.com/container-platform/4.6/monitoring/understanding-the-monitoring-stack.html){: external}.
+For more information, see [the {{site.data.keyword.openshiftshort}} documentation](http://docs.openshift.com/container-platform/4.7/monitoring/understanding-the-monitoring-stack.html){: external}.
 
 ### Built-in {{site.data.keyword.openshiftshort}} monitoring tools
 {: #built-in-mon-tools}
@@ -51,7 +51,7 @@ Review the following details about built-in monitoring tools for your cluster.
 - Monitoring is on a per-cluster basis.
 - The `openshift-monitoring` project stack is set up in a single zone only. No persistant storage is available to back up or view metric history.</li></ul>
 
-For more information, see [the {{site.data.keyword.openshiftshort}} documentation](http://docs.openshift.com/container-platform/4.6/monitoring/understanding-the-monitoring-stack.html){: external}.
+For more information, see [the {{site.data.keyword.openshiftshort}} documentation](http://docs.openshift.com/container-platform/4.7/monitoring/understanding-the-monitoring-stack.html){: external}.
 
 ## Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}
 {: #openshift_monitoring}
@@ -198,7 +198,7 @@ The **Master Status** provides details of what operation from the master state i
 ## Disabling remote health reporting
 {: #oc_disable_telemetry_reports}
 
-OpenShift Container Platform collects anonymized health reports about your cluster through a [telemetry component that is enabled by default](https://docs.openshift.com/container-platform/4.6/support/remote_health_monitoring/about-remote-health-monitoring.html){: external} in your {{site.data.keyword.openshiftlong_notm}} cluster.
+OpenShift Container Platform collects anonymized health reports about your cluster through a [telemetry component that is enabled by default](https://docs.openshift.com/container-platform/4.7/support/remote_health_monitoring/about-remote-health-monitoring.html){: external} in your {{site.data.keyword.openshiftlong_notm}} cluster.
 {: shortdesc}
 
 You might want to disable this remote health reporting to comply with privacy laws, organizational standards, or data governance practices. To disable, you must modify the global configuration for the cluster and reload all of the worker nodes.
@@ -217,7 +217,7 @@ You might want to disable this remote health reporting to comply with privacy la
     ```
     {: screen}
 
-2. Follow the {{site.data.keyword.openshiftshort}} instructions to [update the global pull secret in the cluster to disable remote health reporting](https://docs.openshift.com/container-platform/4.6/support/remote_health_monitoring/opting-out-of-remote-health-reporting.html){: external}.
+2. Follow the {{site.data.keyword.openshiftshort}} instructions to [update the global pull secret in the cluster to disable remote health reporting](https://docs.openshift.com/container-platform/4.7/support/remote_health_monitoring/opting-out-of-remote-health-reporting.html){: external}.
 3. To pick up the global configuration changes, reload all of the worker nodes in your cluster.
     1. Note the **ID** of the worker nodes in your cluster.
         ```
