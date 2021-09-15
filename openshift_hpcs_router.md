@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-09-15"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -48,7 +48,7 @@ Before you begin, complete the following {{site.data.keyword.hscrypto}} and {{si
 Before you deploy the HPCS router into your cluster, set up router sharding to ensure that only the HPCS router processes routes that are encrypted with a key that is stored in {{site.data.keyword.hscrypto}}.
 {: shortdesc}
 
-By default, any router that is created in your cluster is configured to process any routes that you create. By using [router sharding](https://docs.openshift.com/container-platform/4.6/networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-ingress-controller.html#nw-ingress-sharding-route-labels_configuring-ingress-cluster-traffic-ingress-controller){: external} you can label routes so that only routers with the matching selector can process traffic for those routes. In the following steps you use router sharding to ensure that the default router processes traffic to routes that have the `router: default` label only. Later, when you create routes that are encrypted with a key that is stored in {{site.data.keyword.hscrypto}}, you use a different route label so that only the HPCS router can process traffic to those routes. The default router in your cluster, which is not integrated with {{site.data.keyword.hscrypto}}, is prevented from processing the encrypted routes.
+By default, any router that is created in your cluster is configured to process any routes that you create. By using [router sharding](https://docs.openshift.com/container-platform/4.7/networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-ingress-controller.html#nw-ingress-sharding-route-labels_configuring-ingress-cluster-traffic-ingress-controller){: external} you can label routes so that only routers with the matching selector can process traffic for those routes. In the following steps you use router sharding to ensure that the default router processes traffic to routes that have the `router: default` label only. Later, when you create routes that are encrypted with a key that is stored in {{site.data.keyword.hscrypto}}, you use a different route label so that only the HPCS router can process traffic to those routes. The default router in your cluster, which is not integrated with {{site.data.keyword.hscrypto}}, is prevented from processing the encrypted routes.
 
 1. List all existing routes in your cluster.
 
@@ -56,13 +56,30 @@ By default, any router that is created in your cluster is configured to process 
     oc get routes --all-namespaces
     ```
     {: pre}
+    
+2. For each route, add a label for the default router.
+    1. Edit the route configuration.
 
-1. For each route, add a label for the default router.
+        ```sh
+        oc edit route <route_name> -n <project>
+        ```
+        {: pre}
 
-    ```sh
-    oc edit route <route_name> -n <project>
-    ```
-    {: pre}
+    2. In the `metadata.labels` section, add the `router: default` label.
+
+        ```yaml
+        kind: Route
+        apiVersion: route.openshift.io/v1
+        metadata:
+          name: router-default
+          namespace: openshift-ingress
+          labels:
+            ingresscontroller.operator.openshift.io/owning-ingresscontroller: default
+            router: default
+        spec:
+        ...
+        ```
+        {: codeblock}
 
 1. In the `metadata.labels` section, add the `router: default` label.
 
@@ -109,6 +126,7 @@ By default, any router that is created in your cluster is configured to process 
 
 The default router now only processes routes that have the `router: default` label.
 
+
 ## Step 2: Install the {{site.data.keyword.cloud_notm}} HPCS Router operator
 {: #addon-operatorhub}
 
@@ -137,6 +155,7 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to create a router
     * [The `ep11` endpoint URL and port that your service instance uses for key management operations](https://cloud.ibm.com/apidocs/hs-crypto#getinstance)
 
 2. Create a Kubernetes secret named `hpcs-credentials` that contains the values that you retrieved. The HPCS router uses the environment variables in this secret to authenticate with your {{site.data.keyword.hscrypto}} instance.
+
     ```yaml
     kind: Secret
     apiVersion: v1
@@ -150,7 +169,7 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to create a router
       LIBGREP11_IAMAUTH_INSTANCEID: <service_instance_ID>
     type: Opaque
     ```
-    {: codeblock}
+    {: screen}
 
     Example
 
@@ -377,7 +396,7 @@ After you obtain the certificate from your certificate authority, use the certif
 
 4. Verify that the TLS session is correctly established by making `https` calls to your app's route.
 
-5. Optional: Customize routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.6/networking/routes/route-configuration.html){: external}. For example, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.6/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}.
+5. Optional: Customize routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.7/networking/routes/route-configuration.html){: external}. For example, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.7/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}.
 
 ## Version history
 {: #hpcs-versions}

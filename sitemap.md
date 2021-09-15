@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-09-15"
 
 keywords: openshift
 subcollection: openshift
@@ -130,6 +130,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-rel-notes)
 
 * [September 2021](/docs/openshift?topic=openshift-rel-notes#release-sep-2021)
+    * [16 September 2021](/docs/openshift?topic=openshift-rel-notes#16sep2021)
+    * [15 September 2021](/docs/openshift?topic=openshift-rel-notes#15sep2021)
     * [13 September 2021](/docs/openshift?topic=openshift-rel-notes#13sep2021)
     * [9 September 2021](/docs/openshift?topic=openshift-rel-notes#9sep2021)
     * [8 September 2021](/docs/openshift?topic=openshift-rel-notes#8sep2021)
@@ -1294,6 +1296,8 @@ subcollection: openshift
 * [Planning your setup](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-plan)
     * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-deploy-odf-sat#odf-create-cos-sat)
 
+* [Creating a Kubernetes secret that contains your {{site.data.keyword.satelliteshort}} link credentials](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-secret-create)
+
 * [Installing the add-on from the CLI](/docs/openshift?topic=openshift-deploy-odf-sat#install-odf-cli-sat)
 
 * [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-sat#install-odf-console-sat)
@@ -1526,7 +1530,7 @@ subcollection: openshift
 
 [IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}
 
-[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.6/rest_api/index.html){: external}
+[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.7/rest_api/index.html){: external}
 
 
 ## CLI plug-in reference
@@ -1707,8 +1711,8 @@ subcollection: openshift
 
 [Version information and update actions](/docs/openshift?topic=openshift-openshift_versions)
 * [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types)
-  * [Major and minor updates (4.6)](/docs/openshift?topic=openshift-openshift_versions#major_minor_updates)
-  * [Patch updates (4.6.28_xxxx_openshift)](/docs/openshift?topic=openshift-openshift_versions#patch_updates_oc)
+  * [Major and minor updates (4.7)](/docs/openshift?topic=openshift-openshift_versions#major_minor_updates)
+  * [Patch updates (4.7.29_xxxx_openshift)](/docs/openshift?topic=openshift-openshift_versions#patch_updates_oc)
 * [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types)
 * [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history)
 * [{{site.data.keyword.openshiftshort}} 4.7](/docs/openshift?topic=openshift-openshift_versions#ocp47)
@@ -2211,13 +2215,13 @@ subcollection: openshift
 * [Deleted](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-deleted)
 * [Deleting](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-deleting)
 * [Deploy failed](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-deploy-failed)
-  * [Deploying](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-deploying)
-  * [Normal](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-normal)
-  * [Pending](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-pending)
-  * [Requested](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-requested)
-  * [Updating](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-updating)
-  * [Unsupported](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-unsupported)
-  * [Warning](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-warning)
+* [Deploying](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-deploying)
+* [Normal](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-normal)
+* [Pending](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-pending)
+* [Requested](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-requested)
+* [Updating](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-updating)
+* [Unsupported](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-unsupported)
+* [Warning](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-warning)
 
 [Debugging common CLI issues with clusters](/docs/openshift?topic=openshift-ts_clis)
 * [Firewall prevents running CLI commands](/docs/openshift?topic=openshift-ts_clis#ts_firewall_clis)

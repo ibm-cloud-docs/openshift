@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-09-15"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -33,6 +33,33 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 Review the release notes for September 2021.
 {: shortdesc}
 
+
+
+### 16 September 2021
+{: #16sep2021}
+{: release-note}
+
+Review the release notes for 16 September 2021.
+{: shortdesc}
+
+
+OpenShift Data Foundation
+:   The OpenShift Data Foundation add-on is now generally available for {{site.data.keyword.openshiftlong}} clusters. The add-on is available for VPC, {{site.data.keyword.satelliteshort}}, and classic clusters. For more information, see [Understanding OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep).
+
+
+
+### 15 September 2021
+{: #15sep2021}
+{: release-note}
+
+Review the release notes for 15 September 2021.
+{: shortdesc}
+
+Ingress ALB version change log
+:   [Version `1.0.0_1645_iks`](/docs/containers?topic=containers-cluster-add-ons-changelog#1_0_0) is now available. Updates for versions [`0.48.1_1613_iks`](/docs/containers?topic=containers-cluster-add-ons-changelog#0_48_0) and [`0.47.0_1614_iks`]((/docs/containers?topic=containers-cluster-add-ons-changelog#0_47_0)) are available in the change log. 
+
+Istio add-on change log
+:   [Version `1.10.4`](/docs/containers?topic=containers-istio-changelog#1104) and [version `1.9.8`](/docs/containers?topic=containers-istio-changelog#198) of the Istio managed add-on is released.
 
 
 ### 13 September 2021

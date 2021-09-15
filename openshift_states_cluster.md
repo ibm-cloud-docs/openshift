@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-15"
 
 keywords: kubernetes, worker nodes, state
 
@@ -66,7 +66,7 @@ Review the following description of the `Deploy failed` cluster state. To view t
 
 The deployment of the Kubernetes master cannot be completed. You cannot resolve this state. Contact {{site.data.keyword.cloud_notm}} support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-get-help).
 
-### Deploying
+## Deploying
 {: #cluster-state-deploying}
 
 Review the following description of the `Deploying` cluster state. To view the state of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
@@ -74,7 +74,7 @@ Review the following description of the `Deploying` cluster state. To view the s
 
 The Kubernetes master is not fully deployed yet. You cannot access your cluster. Wait until your cluster is fully deployed to review the health of your cluster.
 
-### Normal
+## Normal
 {: #cluster-state-normal}
 
 Review the following description of the `Normal` cluster state. To view the state of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
@@ -86,7 +86,7 @@ Although the worker nodes might be normal, other infrastructure resources, such 
 {: note}
 
 
-### Pending
+## Pending
 {: #cluster-state-pending}
 
 Review the following description of the `Pending` cluster state. To view the state of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
@@ -94,7 +94,7 @@ Review the following description of the `Pending` cluster state. To view the sta
 
 The Kubernetes master is deployed. The worker nodes are provisioning and aren't available in the cluster yet. You can access the cluster, but you cannot deploy apps to the cluster.
 
-### Requested
+## Requested
 {: #cluster-state-requested}
 
 Review the following description of the `Requested` cluster state. To view the state of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
@@ -102,7 +102,7 @@ Review the following description of the `Requested` cluster state. To view the s
 
 A request to create the cluster and order the infrastructure for the Kubernetes master and worker nodes is sent. When the deployment of the cluster starts, the cluster state changes to `Deploying`. If your cluster is stuck in the <code>Requested</code> state for a long time, open an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-get-help).
 
-### Updating
+## Updating
 {: #cluster-state-updating}
 
 Review the following description of the `Updating` cluster state. To view the state of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
@@ -110,7 +110,7 @@ Review the following description of the `Updating` cluster state. To view the st
 
 The Kubernetes API server that runs in your Kubernetes master is being updated to a new Kubernetes API version. During the update, you cannot access or change the cluster. Worker nodes, apps, and resources that the user deployed aren't modified and continue to run. Wait for the update to complete to review the health of your cluster.
 
-### Unsupported
+## Unsupported
 {: #cluster-state-unsupported}
 
 Review the following description of the `Unsupported` cluster state. To view the state of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
@@ -118,7 +118,7 @@ Review the following description of the `Unsupported` cluster state. To view the
 
 The <a href="/docs/containers?topic=containers-cs_versions#cs_versions">Kubernetes version</a> that the cluster runs is no longer supported. Your cluster's health is no longer actively monitored or reported. Additionally, you cannot add or reload worker nodes. To continue receiving important security updates and support, you must update your cluster. Review the [version update preparation actions](/docs/containers?topic=containers-cs_versions#prep-up), then [update your cluster](/docs/containers?topic=containers-update#update) to a supported Kubernetes version.
 
-### Warning
+## Warning
 {: #cluster-state-warning}
 
 Review the following description of the `Warning` cluster state. To view the state of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-15"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -49,19 +49,19 @@ Looking for a fast way to create a cluster from the UI? Try out [Automating clus
 
 *  Classic cluster, shared virtual machine:
     ```
-    ibmcloud oc cluster create classic --name my_cluster --version 4.6_openshift --zone dal10 --flavor b3c.4x16 --hardware shared --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+    ibmcloud oc cluster create classic --name my_cluster --version 4.7_openshift --zone dal10 --flavor b3c.4x16 --hardware shared --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
     ```
     {: pre}
 
 *  Classic cluster, bare metal:
     ```
-    ibmcloud oc cluster create classic --name my_cluster --version 4.6_openshift --zone dal10 --flavor mb2c.4x32 --hardware dedicated --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+    ibmcloud oc cluster create classic --name my_cluster --version 4.7_openshift --zone dal10 --flavor mb2c.4x32 --hardware dedicated --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
     ```
     {: pre}
 
 *  Classic cluster with an IBM Cloud&trade; Pak entitlement for a default worker pool of 3 worker nodes with 4 cores and 16 memory each:
     ```
-    ibmcloud oc cluster create classic --name cloud_pak_cluster --version 4.6_openshift --zone dal10 --flavor b3c.4x16 --hardware dedicated --workers 3 --entitlement cloud_pak --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+    ibmcloud oc cluster create classic --name cloud_pak_cluster --version 4.7_openshift --zone dal10 --flavor b3c.4x16 --hardware dedicated --workers 3 --entitlement cloud_pak --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
     ```
     {: pre}
 
@@ -76,7 +76,7 @@ Looking for a fast way to create a cluster from the UI? Try out [Automating clus
 <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC clusters**
 *  <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC cluster:
     ```
-    ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.6_openshift --zone us-east-1 --vpc-id <VPC_ID> --subnet-id <VPC_SUBNET_ID> --cos-instance <COS_CRN>--flavor b2.4x16 --workers 3
+    ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.7_openshift --zone us-east-1 --vpc-id <VPC_ID> --subnet-id <VPC_SUBNET_ID> --cos-instance <COS_CRN>--flavor b2.4x16 --workers 3
     ```
     {: pre}
 
@@ -167,7 +167,7 @@ The following image walks you through choosing the setup that you want for your 
 1. Make sure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level).
 2. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Create cluster**.
 3. Configure your cluster environment.
-    2. From the {{site.data.keyword.openshiftshort}} drop-down list, select the version that you want to use in your cluster, such as 4.6.28.
+    2. From the {{site.data.keyword.openshiftshort}} drop-down list, select the version that you want to use in your cluster, such as 4.7.29.
     3. **Optional**: For the **OCP entitlement** section, you can select an entitlement for a worker pool, if you have one. In most cases, leave the value set to **Purchase additional licenses for this worker pool**. If you have an {{site.data.keyword.cloud_notm}} Pak with an {{site.data.keyword.openshiftshort}} entitlement that you want to use, you can select **Apply my Cloud Pak OCP entitlement to this worker pool**. Later, when you configure the worker pool, make sure to select only the flavor and number of worker nodes that your entitlement permits.
 4. Configure the **Location** details for your cluster.
     1. Select the **Resource group** that you want to create your cluster in.
@@ -360,7 +360,7 @@ The following image walks you through choosing the setup that you want for your 
     When the provisioning of your {{site.data.keyword.openshiftshort}} master is completed, the **State** of your cluster changes to `normal`. After your {{site.data.keyword.openshiftshort}} master is ready, the provisioning of your worker nodes is initiated.
     ```
     Name         ID                         State      Created          Workers    Zone      Version     Resource Group Name   Provider
-    mycluster    blrs3b1d0p0p2f7haq0g       normal   20170201162433   3          dal10     4.6.28_xxxx_openshift      Default             classic
+    mycluster    blrs3b1d0p0p2f7haq0g       normal   20170201162433   3          dal10     4.7.29_xxxx_openshift      Default             classic
     ```
     {: screen}
 
@@ -495,7 +495,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
     * For more information, see [Overview of VPC networking in {{site.data.keyword.openshiftlong_notm}}: Subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets).
 5. Create the cluster in your VPC. You can use the `ibmcloud oc cluster create vpc-gen2` command to create a single zone cluster in your VPC with worker nodes that are connected to one VPC subnet only. If you want to create a multizone cluster, you can use the {{site.data.keyword.cloud_notm}} console, or [add more zones](/docs/openshift?topic=openshift-add_workers#vpc_add_zone) to your cluster after the cluster is created. The cluster takes a few minutes to provision.
     ```
-    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.6_openshift --cos-instance <COS_CRN> --workers <number_workers_per_zone> [--pod-subnet] [--service-subnet] [--disable-public-service-endpoint] [--kms-instance <KMS_instance_ID> --crk <root_key_ID>]
+    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.7_openshift --cos-instance <COS_CRN> --workers <number_workers_per_zone> [--pod-subnet] [--service-subnet] [--disable-public-service-endpoint] [--kms-instance <KMS_instance_ID> --crk <root_key_ID>]
     ```
     {: pre}
 
@@ -528,7 +528,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
     <td>Enter the worker node flavor that you want to use. The flavor determines the amount of virtual CPU, memory, and disk space that is set up in each worker node and made available to your apps. VPC worker nodes can be created as virtual machines on shared infrastructure only. Bare metal or software-defined storage machines are not supported.  For more information, see <a href="/docs/containers?topic=containers-planning_worker_nodes">Planning your worker node setup</a>. To view available flavors, first list available VPC zones with <code>ibmcloud oc zone ls --provider vpc-gen2</code>, and then use the zone to list supported flavors by running <code>ibmcloud oc flavors --zone &lt;VPC_zone&gt; --provider vpc-gen2</code>. After you create your cluster, you can add different flavors by adding a worker node or worker pool to the cluster.</td>
     </tr>
     <tr>
-    <td><code>--version 4.6_openshift</code></td>
+    <td><code>--version 4.7_openshift</code></td>
     <td>VPC clusters are supported for {{site.data.keyword.openshiftshort}} version 4 only.</td>
     </tr>
     <tr>
@@ -580,7 +580,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
     When the provisioning of your {{site.data.keyword.openshiftshort}} master is completed, the state of your cluster changes to **normal**. After the {{site.data.keyword.openshiftshort}} master is ready, your worker nodes are set up.
     ```
     Name         ID                                   State      Created          Workers    Zone      Version     Resource Group Name   Provider
-    mycluster    aaf97a8843a29941b49a598f516da72101   normal   20170201162433   3          Dallas     4.6.28_xxxx_openshift      Default               vpc-gen2
+    mycluster    aaf97a8843a29941b49a598f516da72101   normal   20170201162433   3          Dallas     4.7.29_xxxx_openshift      Default               vpc-gen2
     ```
     {: screen}
 
@@ -596,7 +596,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
     When the worker nodes are ready, the worker node **State** changes to `normal` and the **Status** changes to `Ready`. When the node **Status** changes to `Ready`, you can access the cluster. Note that even if the cluster is ready, some parts of the cluster that are used by other services, such as Ingress secrets or registry image pull secrets, might still be in process.
     ```
     ID                                                     Public IP        Private IP     Flavor              State    Status   Zone    Version
-    kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   b3c.4x16.encrypted  normal   Ready    dal10   4.6.28_xxxx_openshift
+    kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   b3c.4x16.encrypted  normal   Ready    dal10   4.7.29_xxxx_openshift
     ```
     {: screen}
 

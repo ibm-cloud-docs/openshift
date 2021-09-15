@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -40,7 +40,7 @@ However, if an operator or built-in template has a build component that must pul
 Set up the build with access to the image, either by pulling the image from the private registry or by importing the image from the private registry into the internal registry.
 {: tsResolve} 
 
-For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.6/builds/creating-build-inputs.html#builds-docker-credentials-private-registries_creating-build-inputs){: external}.
+For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.7/builds/creating-build-inputs.html#builds-docker-credentials-private-registries_creating-build-inputs){: external}.
 
 1. Check the build configuration file to see what registry the build needs pull access to. For example, if your build is part of an {{site.data.keyword.openshiftshort}} template, the build config `spec.strategy.sourceStrategy.from.name` value refers to the `registry.redhat.io` private registry.
     ```
