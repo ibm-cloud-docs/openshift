@@ -22,7 +22,7 @@ OpenShift Data Foundation is a highly available storage solution that you can us
 Billing for OpenShift Data Foundation begins 15 October 2021. If you want to try the add-on, but avoid incurring costs, make sure to disable the add-on before 15 October 2021.
 {: important}
 
-Installing OpenShift Data Foundation from OperatorHub is not supported on {{site.data.keyword.satelliteshort}} clusters. To install ODF, complete the following steps to deploy the cluster add-on or the {site.data.keyword.satelliteshort}} configuration template.
+Installing OpenShift Data Foundation from OperatorHub is not supported on {{site.data.keyword.satelliteshort}} clusters. To install ODF, complete the following steps to deploy the cluster add-on or the {{site.data.keyword.satelliteshort}} configuration template.
 {: important}
 
 
@@ -139,11 +139,11 @@ After you [create a link endpoint](/docs/satellite?topic=satellite-link-location
         ```yaml
         apiVersion: v1
         data:
-        slclient.toml: # Enter your base64 encoded config.toml
+          slclient.toml: # Enter your base64 encoded config.toml
         kind: Secret
         metadata:
-        name: storage-secret-store
-        namespace: kube-system
+          name: storage-secret-store
+          namespace: kube-system
         type: Opaque
         ```
         {: codeblock}
