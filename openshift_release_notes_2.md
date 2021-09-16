@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-16"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -26,25 +26,19 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: note}
 
 
-
 ## September 2021
 {: #release-sep-2021}
 
 Review the release notes for September 2021.
 {: shortdesc}
 
-
-
 ### 16 September 2021
 {: #16sep2021}
-{: release-note}
 
-Review the release notes for 16 September 2021.
-{: shortdesc}
+{{site.data.keyword.block_storage_is_short}} add-on  
+:   Version [`4.0.0_769`](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
 
 
-OpenShift Data Foundation
-:   The OpenShift Data Foundation add-on is now generally available for {{site.data.keyword.openshiftlong}} clusters. The add-on is available for VPC, {{site.data.keyword.satelliteshort}}, and classic clusters. For more information, see [Understanding OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep).
 
 
 
@@ -52,7 +46,20 @@ OpenShift Data Foundation
 {: #15sep2021}
 {: release-note}
 
-Review the release notes for 15 September 2021.
+Review the release notes for 16 September 2021.
+{: shortdesc}
+
+
+OpenShift Data Foundation  
+:   The OpenShift Data Foundation add-on is now generally available for {{site.data.keyword.openshiftlong}} clusters. The add-on is available for VPC, {{site.data.keyword.satelliteshort}}, and classic clusters. For more information, see [Understanding OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep).
+
+
+
+### 14 September 2021
+{: #14sep2021}
+{: release-note}
+
+Review the release notes for 14 September 2021.
 {: shortdesc}
 
 Ingress ALB version change log

@@ -315,11 +315,7 @@ toc:
               - ts-worker/ts-worker-invalid-vlan.md
               - ts-worker/ts-worker-pod-timeout.md
               - ts-worker/ts-worker-ssh-fail.md
-          - topicgroup:
-            label: Cluster autoscaler
-            topics:
-              - ts-autoscaler/ts-ca-debug.md
-              - ts-autoscaler/ts-ca-pod-init.md
+          - ts-autoscaler/ts-ca-debug.md
           - topicgroup:
             label: Cluster network
             topics:

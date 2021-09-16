@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -48,6 +48,7 @@ In this quickstart guide, you create a 10Gi 5IOPS tier {{site.data.keyword.block
     {: codeblock}
 
 2. Create the PVC in your cluster.
+
     ```sh
     oc apply -f pvc.yaml
     ```
@@ -85,15 +86,17 @@ In this quickstart guide, you create a 10Gi 5IOPS tier {{site.data.keyword.block
     {: codeblock}
 
 3. Create the deployment in your cluster.
+
     ```sh
     oc apply -f deployment.yaml
     ```
     {: pre}
 
-For more information, see:
-    * [Adding {{site.data.keyword.block_storage_is_short}} to apps](#vpc-block-add).
-    * [Storage class reference](#vpc-block-reference).
-    * [Customizing the default storage settings](#vpc-customize-default).
+For more information, see the following links.
+
+* [Adding {{site.data.keyword.block_storage_is_short}} to apps](#vpc-block-add).  
+* [Storage class reference](#vpc-block-reference).  
+* [Customizing the default storage settings](#vpc-customize-default).  
 
 ## Adding {{site.data.keyword.block_storage_is_short}} to your apps
 {: #vpc-block-add}
@@ -107,16 +110,11 @@ Choose your {{site.data.keyword.block_storage_is_short}} profile and create a pe
 
     All IBM pre-defined storage classes set up {{site.data.keyword.block_storage_is_short}} with an `ext4` file system by default. If you want to use a different file system, such as `xfs` or `ext3`, [create a customized storage class](#vpc-customize-storage-class).
     {: note}
-
-    | {{site.data.keyword.block_storage_is_short}} profile | Corresponding storage class |
-    | --- | --- |
-    | 10 IOPS/GB | `ibmc-vpc-block-10iops-tier` or `ibmc-vpc-block-retain-10iops-tier` |
-    | 5 IOPS/GB | `ibmc-vpc-block-5iops-tier` or `ibmc-vpc-block-retain-5iops-tier |
-    | 3 IOPS/GB `ibmc-vpc-block-general-purpose` or `ibmc-vpc-block-retain-general-purpose` |
-    | Custom `ibmc-vpc-block-custom` or `ibmc-vpc-block-retain-custom` |
-    {: caption="{{site.data.keyword.block_storage_is_short}} profile and storage classes"}
-    {: summary="The table shows available {{site.data.keyword.block_storage_is_short}} profile and corresponding storage classes. Rows are to be read from the left to right, with the name of the profile in column one and the corresponding storage class in column two."}
-
+    
+    - 10 IOPS/GB: `ibmc-vpc-block-10iops-tier` or `ibmc-vpc-block-retain-10iops-tier`  
+    - 5 IOPS/GB: `ibmc-vpc-block-5iops-tier` or `ibmc-vpc-block-retain-5iops-tier`  
+    - 3 IOPS/GB: `ibmc-vpc-block-general-purpose` or `ibmc-vpc-block-retain-general-purpose` 
+    - Custom: `ibmc-vpc-block-custom` or `ibmc-vpc-block-retain-custom`  
 
 3. Decide on your {{site.data.keyword.block_storage_is_short}} configuration.
     1. Choose a size for your storage. Make sure that the size is supported by the {{site.data.keyword.block_storage_is_short}} profile that you chose.
@@ -125,6 +123,7 @@ Choose your {{site.data.keyword.block_storage_is_short}} profile and create a pe
         - If you want the PV, the data, and your physical {{site.data.keyword.block_storage_is_short}} device to be deleted when you delete the PVC, choose a storage class without `retain`.
 
 4. Create a configuration file to define your persistent volume claim and save the configuration as a YAML file.
+
     ```yaml
     apiVersion: v1
     kind: PersistentVolumeClaim
@@ -141,19 +140,22 @@ Choose your {{site.data.keyword.block_storage_is_short}} profile and create a pe
     {: codeblock}
 
 5. Create the PVC in your cluster.
-    ```
+
+    ```sh
     oc apply -f pvc.yaml
     ```
     {: pre}
 
 6. Verify that your PVC is created and bound to the PV. This process can take a few minutes.
-    ```
+
+    ```sh
     oc describe pvc <pvc_name>
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+    
+    ```sh
     Name:          mypvv
     Namespace:     default
     StorageClass:  ibmc-vpc-block-5iops-tier
@@ -175,6 +177,7 @@ Choose your {{site.data.keyword.block_storage_is_short}} profile and create a pe
     {: screen}
 
 7. Create a deployment configuration file for your app and mount the PVC to your app.
+
     ```yaml
     apiVersion: apps/v1
     kind: Deployment
@@ -218,7 +221,8 @@ Choose your {{site.data.keyword.block_storage_is_short}} profile and create a pe
     {: summary="The table shows an example deployment configuration profile. Rows are to be read from the left to right, with the name of the parameter name in column one and a description of the parameter column two."}
 
 8. Create the deployment in your cluster.
-    ```
+
+    ```sh
     oc apply -f deployment.yaml
     ```
     {: pre}
@@ -228,13 +232,14 @@ Choose your {{site.data.keyword.block_storage_is_short}} profile and create a pe
     During the deployment of your app, you might see intermittent `Unable to mount volumes` errors in the **Events** section of your CLI output. The {{site.data.keyword.block_storage_is_short}} add-on automatically retries mounting the storage to your apps. Wait a few more minutes for the storage to mount to your app.
     {: tip}
 
-    ```
+    ```sh
     oc describe deployment <deployment_name>
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+    
+    ```sh
     ...
     Volumes:
     myvol:
@@ -256,19 +261,22 @@ You can attach a volume to one worker node only. Make sure that the volume is in
 {: note}
 
 1. Determine the volume that you want to attach to a worker node in your VPC cluster. Note the **volume ID**.
-    ```
+
+    ```sh
     ibmcloud is volumes
     ```
     {: pre}
 
 2. List the details of your volume. Note the **Size**, **Zone**, and **IOPS**. These values are used to create your PV.
-    ```
+
+    ```sh
     ibmcloud is volume <volume_id>
     ```
     {: pre}
 
 3. Retrieve a list of worker nodes in your VPC cluster. Note the **Zone** of the worker node that is in the same zone as your storage volume.
-    ```
+
+    ```sh
     ibmcloud oc worker ls -c <cluster_name>
     ```
     {: pre}
@@ -276,13 +284,15 @@ You can attach a volume to one worker node only. Make sure that the volume is in
 4. Optional: If you provisioned your physical {{site.data.keyword.block_storage_is_short}} instance by using a `retain` storage class, the PV and the physical storage is not removed when you remove the PVC. To use your physical {{site.data.keyword.block_storage_is_short}} device in your cluster, you must remove the existing PV first.  
 
     1. List the PVs in your cluster and look for the PV that belongs to your {{site.data.keyword.block_storage_is_short}} device. The PV is in a `released` state.
-        ```
+    
+        ```sh
         oc get pv
         ```
         {: pre}
 
     2. Remove the PV.
-        ```
+    
+        ```sh
         oc delete pv <pv_name>
         ```
         {: pre}
@@ -340,18 +350,21 @@ You can attach a volume to one worker node only. Make sure that the volume is in
 
 
 6. Create the PV in your cluster.
-    ```
+
+    ```sh
     oc apply -f pv.yaml
     ```
     {: pre}
 
 7. Verify that the PV is created in your cluster.
-    ```
+
+    ```sh
     oc get pv
     ```
     {: pre}
 
 8. Create another configuration file for your PVC. In order for the PVC to match the PV that you created earlier, you must choose the same value for the storage size and access mode. In your storage class field, enter an empty string value to match your PV. If any of these fields do not match the PV, then a new PV and a {{site.data.keyword.blockstorageshort}} instance are created automatically via dynamic provisioning.
+
     ```yaml
     apiVersion: v1
     kind: PersistentVolumeClaim
@@ -368,18 +381,21 @@ You can attach a volume to one worker node only. Make sure that the volume is in
     {: codeblock}
 
 8. Create your PVC.
-    ```
+
+    ```sh
     oc apply -f pvc.yaml
     ```
     {: pre}
 
 9. Verify that your PVC is created and bound to the PV that you created earlier. This process can take a few minutes.
-    ```
+
+    ```sh
     oc describe pvc <pvc_name>
     ```
     {: pre}
 
 10. Create a deployment or a pod that uses your PVC.
+
 
 
 ## Updating the {{site.data.keyword.block_storage_is_short}} add-on
@@ -389,58 +405,67 @@ You can update the {{site.data.keyword.block_storage_is_short}} add-on by disabl
 {: shortdesc}
 
 1. Check to see if an update is available. If an update is available, the plug-in version is flagged with an asterisk and the latest version is shown. Note the latest version as this value is used later.
-    ```
+
+    ```sh
     ibmcloud oc cluster addons --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+    
+    ```sh
     Name                   Version                 Health State   Health Status   
     vpc-block-csi-driver   1.0.0* (2.0.0 latest)   normal         Addon Ready
     ```
     {: screen}
 
 2. Disable the {{site.data.keyword.block_storage_is_short}} add-on.
-    ```
+
+    ```sh
     ibmcloud oc cluster addon disable vpc-block-csi-driver --cluster <cluster_name_or_ID> -f
     ```
     {: pre}
 
-    Example Output
-    ```
+    Example output
+    
+    ```sh
     Disabling add-on vpc-block-csi-driver for cluster <cluster_name_or_ID>...
     OK
     ```
     {: screen}
 
 2. Verify that the add-on is disabled. If the add-on is disabled it does not appear in the list of add-ons in your cluster. The add-on might still display in your list of add-ons for a few minutes after running the `disable` command.
-    ```
+
+    ```sh
     ibmcloud oc cluster addon ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
 3. Re-enable the add-on and specify the latest version that you retrieved earlier.
-    ```
+
+    ```sh
     ibmcloud oc cluster addon enable vpc-block-csi-driver --version <version> --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
-    Example Output
-    ```
+    Example output
+    
+    ```sh
     Enabling add-on vpc-block-csi-driver(2.0.0) for cluster <cluster_name_or_ID>...
     OK
     ```
     {: screen}
 
 4. Verify that the add-on is in the `Addon Ready` state. The add-on might take a few minutes to become ready.
-    ```
+
+    ```sh
     ibmcloud oc cluster addon ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
-    Example Output
-    ```
+    Example output
+    
+    ```sh
     Name                   Version   Health State   Health Status   
     vpc-block-csi-driver   2.0.0     normal         Addon Ready
     ```
@@ -457,21 +482,30 @@ Use {{site.data.keyword.keymanagementservicelong}} to create a private root key 
 2. [Create a root key](/docs/key-protect?topic=key-protect-create-root-keys#create-root-keys). By default, the root key is created without an expiration date.
 
 3. Retrieve the service CRN for your root key.
+
     1. From the {{site.data.keyword.keymanagementserviceshort}} details page, select the **Manage** tab to find the list of your keys.
+    
     2. Find the root key that you created and from the actions menu, click **View CRN**.
+    
     3. Note the CRN of your root key.
 
 4. Authorize {{site.data.keyword.block_storage_is_short}} to access {{site.data.keyword.keymanagementservicelong}}.
+
     1. From the {{site.data.keyword.cloud_notm}} menu, select **Manage** > **Access (IAM)**.
+    
     2. From the menu, select **Authorizations**.
+    
     3. Click **Create**.
     4. Select **Cloud {{site.data.keyword.blockstorageshort}}** as your source service.
+    
     5. Select **Key Protect** as your target service.
+    
     6. Select the **Reader** service access role and click **Authorize**.
+    
 
 5. [Decide if you want to store the {{site.data.keyword.keymanagementserviceshort}} root key CRN in a customized storage class or in a Kubernetes secret](/docs/openshift?topic=openshift-vpc-block#vpc-customize-default). Then, follow the steps to create a customized storage class or a Kubernetes secret.
 
-    **Example customized storage class**:
+    Example customized storage class.
     ```yaml
     apiVersion: storage.k8s.io/v1
     kind: StorageClass
@@ -513,7 +547,7 @@ Use {{site.data.keyword.keymanagementservicelong}} to create a private root key 
     </tbody>
     </table>
 
-    **Example Kubernetes secret**:
+    Example Kubernetes secret.
     ```yaml
     apiVersion: v1
     kind: Secret
@@ -560,42 +594,45 @@ Use {{site.data.keyword.keymanagementservicelong}} to create a private root key 
     Your app might take a few minutes to mount the storage and get into a **Running** state.
     {: note}
 
-7. Verify that your data is encrypted.
-    1. List your {{site.data.keyword.blockstorageshort}} volumes and note the **ID** of the instance that you created. The storage instance **Name** equals the name of the PV that was automatically created when you created the PVC.
-        ```
-        ibmcloud is vols
-        ```
-        {: pre}
+7. Verify that your data is encrypted. List your {{site.data.keyword.blockstorageshort}} volumes and note the **ID** of the instance that you created. The storage instance **Name** equals the name of the PV that was automatically created when you created the PVC.
+    
+    ```sh
+    ibmcloud is vols
+    ```
+    {: pre}
 
-        Example output:
-        ```
-        ID                                     Name                                       Status      Capacity   IOPS   Profile           Attachment type   Created                     Zone         Resource group
-        a395b603-74bf-4703-8fcb-b68e0b4d6960   pvc-479d590f-ca72-4df2-a30a-0941fceeca42   available   10         3000   5iops-tier        data              2019-08-17T12:29:18-05:00   us-south-1   a8a12accd63b437bbd6d58fb6a462ca7
-        ```
-        {: screen}
+    Example output
+    
+    ```sh
+    ID                                     Name                                       Status      Capacity   IOPS   Profile           Attachment type   Created                     Zone         Resource group
+    a395b603-74bf-4703-8fcb-b68e0b4d6960   pvc-479d590f-ca72-4df2-a30a-0941fceeca42   available   10         3000   5iops-tier        data              2019-08-17T12:29:18-05:00   us-south-1   a8a12accd63b437bbd6d58fb6a462ca7
+    ```
+    {: screen}
 
-    2. Using the volume **ID**, list the details for your {{site.data.keyword.blockstorageshort}} instance to ensure that your {{site.data.keyword.keymanagementserviceshort}} root key is stored in the storage instance. You can find the root key in the **Encryption key** field of your CLI output.
-        ```
-        ibmcloud is vol <volume_ID>
-        ```
-        {: codeblock}
+2. Using the volume **ID**, list the details for your {{site.data.keyword.blockstorageshort}} instance to ensure that your {{site.data.keyword.keymanagementserviceshort}} root key is stored in the storage instance. You can find the root key in the **Encryption key** field of your CLI output.
 
-        Example output:
-        ```
-        ID                                     a395b603-74bf-4703-8fcb-b68e0b4d6960   
-        Name                                   pvc-479d590f-ca72-4df2-a30a-0941fceeca42   
-        Status                                 available   
-        Capacity                               10   
-        IOPS                                   3000   
-        Profile                                5iops-tier   
-        Encryption key                         crn:v1:bluemix:public:kms:us-south:a/6ef045fd2b43266cfe8e6388dd2ec098:53369322-958b-421c-911a-c9ae8d5156d1:key:47a985d1-5f5e-4477-93fc-12ce9bae343f   
-        Encryption                             user_managed   
-        Resource group                         a8a12accd63b437bbd6d58fb6a462ca7
-        Created                                2019-08-17T12:29:18-05:00
-        Zone                                   us-south-1   
-        Volume Attachment Instance Reference
-        ```
-        {: screen}
+    ```sh
+    ibmcloud is vol <volume_ID>
+    ```
+    {: codeblock}
+
+    Example output
+    
+    ```sh
+    ID                                     a395b603-74bf-4703-8fcb-b68e0b4d6960   
+    Name                                   pvc-479d590f-ca72-4df2-a30a-0941fceeca42   
+    Status                                 available   
+    Capacity                               10   
+    IOPS                                   3000   
+    Profile                                5iops-tier   
+    Encryption key                         crn:v1:bluemix:public:kms:us-south:a/6ef045fd2b43266cfe8e6388dd2ec098:53369322-958b-421c-911a-c9ae8d5156d1:key:47a985d1-5f5e-4477-93fc-12ce9bae343f   
+    Encryption                             user_managed   
+    Resource group                         a8a12accd63b437bbd6d58fb6a462ca7
+    Created                                2019-08-17T12:29:18-05:00
+    Zone                                   us-south-1   
+    Volume Attachment Instance Reference
+    ```
+    {: screen}
 
         
 
@@ -633,6 +670,7 @@ To create your own storage class:
     {: tip}
 
 2. Create a customized storage class configuration file.
+
     ```yaml
     apiVersion: storage.k8s.io/v1
     kind: StorageClass
@@ -720,18 +758,21 @@ To create your own storage class:
     </table>
 
 4. Create the customized storage class in your cluster.
+
     ```sh
     oc apply -f custom-storageclass.yaml
     ```
     {: pre}
 
 5. Verify that your storage class is available in the cluster.
+
     ```sh
     oc get storageclasses
     ```
     {: pre}
 
-    Example output:
+    Example output
+    
     ```sh
     NAME                                    PROVISIONER            AGE
     ibmc-vpc-block-10iops-tier              vpc.block.csi.ibm.io   4d21h
@@ -763,36 +804,40 @@ You can create a customized storage class to provision {{site.data.keyword.block
     Your app might take a few minutes to mount the storage and get into a **Running** state.
     {: note}
 
-3. Verify that your storage is mounted with the correct file system.
-    1. List the pods in your cluster and note the **Name** of the pod that you used to mount your storage.
-        ```sh
-        oc get pods
-        ```
-        {: pre}
+3. Verify that your storage is mounted with the correct file system. List the pods in your cluster and note the **Name** of the pod that you used to mount your storage.
+    
+    ```sh
+    oc get pods
+    ```
+    {: pre}
 
-    2. Log in to your pod.
-        ```sh
-        oc exec <pod_name> -it bash
-        ```
-        {: pre}
+2. Log in to your pod.
 
-    3. List the mount paths inside your pod.  
-        ```sh
-        mount | grep /dev/xvdg
-        ```
-        {: pre}
+    ```sh
+    oc exec <pod_name> -it bash
+    ```
+    {: pre}
 
-        Example output for `xfs`:
-        ```sh
-        /dev/xvdg on /test type xfs (rw,relatime,attr2,inode64,noquota)
-        ```
-        {: pre}
+3. List the mount paths inside your pod.
+  
+    ```sh
+    mount | grep /dev/xvdg
+    ```
+    {: pre}
 
-    4. Exit your pod.
-        ```sh
-        exit
-        ```
-        {: pre}
+    Example output for `xfs`.
+    
+    ```sh
+    /dev/xvdg on /test type xfs (rw,relatime,attr2,inode64,noquota)
+    ```
+    {: pre}
+
+4. Exit your pod.
+
+    ```sh
+    exit
+    ```
+    {: pre}
 
 ### Storing your custom PVC settings in a Kubernetes secret
 {: #vpc-block-storageclass-secret}
@@ -804,10 +849,10 @@ Specify your PVC settings in a Kubernetes secret and reference this secret in a 
 
 As a cluster admin, you can choose if you want to allow each cluster user to override the default settings of a storage class, or if you want to create one secret that everyone in your cluster must use and that enforces base64 encoding for your {{site.data.keyword.keymanagementserviceshort}} root key CRN.
 
-[Every user can customize the default settings](#customize-with-secret)
+[Every user can customize the default settings](#customize-with-secret)  
 :   In this scenario, the cluster admin creates one customized storage class with the default PVC settings and a reference to a generic Kubernetes secret. Cluster users can override the default settings of the storage class by creating a Kubernetes secret with the PVC settings that they want. In order for the customized settings in the secret to get applied to your {{site.data.keyword.blockstorageshort}} instance, you must create a PVC with the same name as your Kubernetes secret.
 
-[Enforce base64 encoding for the {{site.data.keyword.keymanagementserviceshort}} root key](#static-secret)
+[Enforce base64 encoding for the {{site.data.keyword.keymanagementserviceshort}} root key](#static-secret)  
 :   In this scenario, you create one customized storage class with the default PVC settings and a reference to a static Kubernetes secret that overrides or enhances the default settings of the customized storage class. Your cluster users cannot override the default settings by creating their own Kubernetes secret. Instead, cluster users must provision {{site.data.keyword.block_storage_is_short}} with the configuration that you chose in your customized storage class and secret. The benefit of using this method over creating a [customized storage class](#vpc-customize-storage-class) only is that you can enforce base64 encoding for the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance when you want to encrypt the data in your {{site.data.keyword.blockstorageshort}} instance.  
 
 **What do I need to be aware of before I start using the Kubernetes secret for my PVC settings?**
@@ -818,7 +863,8 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
 {: #customize-with-secret}
 
 1. As the cluster admin, follow the steps to [create a customized storage class](#vpc-customize-storage-class). In the customized storage class YAML file, reference the Kubernetes secret in the `metadata.parameters` section as follows. Make sure to add the code as-is and not to change variables names.
-    ```
+
+    ```sh
     csi.storage.k8s.io/provisioner-secret-name: ${pvc.name}
     csi.storage.k8s.io/provisioner-secret-namespace: ${pvc.namespace}
     ```
@@ -887,7 +933,8 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
     </table>
 
 3. Create your Kubernetes secret.
-    ```
+
+    ```sh
     oc apply -f secret.yaml
     ```
     {: pre}
@@ -898,6 +945,7 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
 {: #static-secret}
 
 1. As the cluster admin, create a Kubernetes secret that includes the base64 encoded value for your {{site.data.keyword.keymanagementserviceshort}} root key CRN. To retrieve the root key CRN, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-encryption).
+
     ```yaml
     apiVersion: v1
     kind: Secret
@@ -908,7 +956,7 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
     stringData:
       encrypted: <true_or_false>
       resourceGroup: "<resource_group>"
-    data
+    data:
       encryptionKey: <encryption_key>
     ```
     {: codeblock}
@@ -941,13 +989,15 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
     </table>
 
 2. Create the Kubernetes secret.
-    ```
+
+    ```sh
     oc apply -f secret.yaml
     ```
     {: pre}
 
 3. Follow the steps to [create a customized storage class](#vpc-customize-storage-class). In the customized storage class YAML file, reference the Kubernetes secret in the `metadata.parameters` section as follows. Make sure to enter the name of the Kubernetes secret that you created earlier and the namespace where you created the secret.
-    ```
+
+    ```sh
     csi.storage.k8s.io/provisioner-secret-name: <secret_name>
     csi.storage.k8s.io/provisioner-secret-namespace: <secret_namespace>
     ```
@@ -960,6 +1010,8 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
 
 ## Setting up volume expansion
 {: #vpc-block-volume-expand}
+
+
 To provision volumes that support expansion, you must first create a custom storage class and set `allowVolumeExpansion` to `true`. 
 {: shortdesc}
 
@@ -999,6 +1051,7 @@ You can only expand volumes that are mounted by an app pod.
     {: codeblock}
 
 1. Create the storage class in your cluster.
+
     ```sh
     oc apply -f sc.yaml
     ```
@@ -1014,24 +1067,26 @@ You can only expand volumes that are mounted by an app pod.
     ```
     {: pre}
 
-1. **Optional:** Verify that your volume is expanded.
-    1. Get the details of your PVC and make a note of the PV name.
+1. **Optional:** Verify that your volume is expanded. Get the details of your PVC and make a note of the PV name.
+    
     ```sh
     oc get pvc <pvc-name>
     ```
     {: pre}
 
-    1. Describe your PV and make a note of the volume ID.
-        ```sh
-        oc describe PV
-        ```
-        {: pre}
+1. Describe your PV and make a note of the volume ID.
 
-    1. Get the details of your {{site.data.keyword.block_storage_is_short}} volume and verify the capacity.
-        ```sh
-        ibmcloud is vol <volume-ID>
-        ```
-        {: pre}
+    ```sh
+    oc describe PV
+    ```
+    {: pre}
+
+1. Get the details of your {{site.data.keyword.block_storage_is_short}} volume and verify the capacity.
+
+    ```sh
+    ibmcloud is vol <volume-ID>
+    ```
+    {: pre}
 
 ### Expanding existing volumes
 {: #expanding-existing-volumes}
@@ -1045,43 +1100,49 @@ Volume expansion is available in beta for allowlisted accounts and is only suppo
 You can only expand volumes that are mounted by an app pod.
 {: note}
 
-1. Get the details of your app and make a note of the PVC name and `mountPath`
+1. Get the details of your app and make a note of the PVC name and `mountPath`.
+
     ```sh
     oc get pod <pod-name> -n <pod-namespace> -o yaml
     ```
     {: pre}
 
 1. Get the details of your PVC and make a note of the PV name.
+
     ```sh
     oc get pvc
     ```
     {: pre}
 
-1. Describe your PV and get the `volumeId`
+1. Describe your PV and get the `volumeId`.
+
     ```sh
     oc describe pv `pv-name` | grep volumeId 
     ```
     {: pre}
 
 1. Resize the volume by using with an API request. Replace `<IAM_TOKEN>` with your IAM token. To retrieve your IAM token, run `ibmcloud iam oauth-tokens`. Replace `<region>` with the region your cluster is in, for example `us-south`. Replace`<volumeId>` the volume ID that you retrieved earlier and replace `<capacity>` with the increased capacity, for example `100Gi`.
+
     ```sh
     curl -sS -X PATCH -H "Authorization: <IAM_TOKEN>" "https://<region>.iaas.cloud.ibm.com/v1/volumes/<volumeId>?generation=2&version=2020-06-16" -d '{"capacity": <capacity>}')
     ```
     {: pre}
 
 1. Log in to your app pod.
+
     ```sh
     oc exec <pod-name> -it bash
     ```
     {: pre}
 
 1. Get the file system details and make a note of the `Filesystem` path that you want to update. You can also `grep` for the mount path as specified in your application pod. `df -h | grep <mount-path>`.
+
     ```sh
     df -h
     ```
     {: pre}
 
-    **Example output**
+    Example output
     ```sh
     Filesystem      Size  Used Avail Use% Mounted on
     overlay          98G   64G   29G  70% /
@@ -1098,18 +1159,21 @@ You can only expand volumes that are mounted by an app pod.
     {: screen}
 
 1. Resize the file system.
+
     ```sh
     resize2fs <filesystem-path>
     ```
     {: pre}
 
-    **Example command**
+    Example command
+    
     ```sh
     resize2fs /dev/vdg
     ```
     {: pre}
 
 1. Verify the file system is resized.
+
     ```sh
     df -h
     ```
@@ -1128,23 +1192,26 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
 To back up or restore data, choose between the following options:
 
-- Copy data from your local machine to a pod in your cluster:
-    ```
-    oc cp <local_filepath>/<filename> <namespace>/<pod>:<pod_filepath>
-    ```
-    {: pre}
+Copy data from your local machine to a pod in your cluster.
 
-- Copy data from a pod in your cluster to your local machine:
-    ```
-    oc cp <namespace>/<pod>:<pod_filepath>/<filename> <local_filepath>/<filename>
-    ```
-    {: pre}
+```sh
+oc cp <local_filepath>/<filename> <namespace>/<pod>:<pod_filepath>
+```
+{: pre}
 
-- Copy data from your local machine to a specific container that runs in a pod in your cluster:
-    ```
-    oc cp <local_filepath>/<filename> <namespace>/<pod>:<pod_filepath> -c <container>
-    ```
-    {: pre}
+Copy data from a pod in your cluster to your local machine.
+
+```sh
+oc cp <namespace>/<pod>:<pod_filepath>/<filename> <local_filepath>/<filename>
+```
+{: pre}
+
+Copy data from your local machine to a specific container that runs in a pod in your cluster.
+
+```sh
+oc cp <local_filepath>/<filename> <namespace>/<pod>:<pod_filepath> -c <container>
+```
+{: pre}
 
     
 
