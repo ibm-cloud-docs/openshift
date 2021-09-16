@@ -861,29 +861,26 @@ Before you can start to mount your existing storage to an app, you must retrieve
 ### Step 2: Creating a persistent volume (PV) and a matching persistent volume claim (PVC)
 {: #existing-block-2}
 
-1. Optional: If you have storage that you provisioned with a `retain` storage class, when you remove the PVC, the PV and the physical storage device are not removed. To reuse the storage in your cluster, you must remove the PV first.
-    1. List existing PVs.
+1. Optional: If you have storage that you provisioned with a `retain` storage class, when you remove the PVC, the PV and the physical storage device are not removed. To reuse the storage in your cluster, you must remove the PV first. List existing PVs and look for the PV that belongs to your persistent storage. The PV is in a `released` state.
 
-        ```sh
-        oc get pv
-        ```
-        {: pre}
+    ```sh
+    oc get pv
+    ```
+    {: pre}
 
-        Look for the PV that belongs to your persistent storage. The PV is in a `released` state.
+2. Remove the PV.
 
-    2. Remove the PV.
+    ```sh
+    oc delete pv <pv_name>
+    ```
+    {: pre}
 
-        ```sh
-        oc delete pv <pv_name>
-        ```
-        {: pre}
+3. Verify that the PV is removed.
 
-    3. Verify that the PV is removed.
-
-        ```sh
-        oc get pv
-        ```
-        {: pre}
+    ```sh
+    oc get pv
+    ```
+    {: pre}
 
 2. Create a configuration file for your PV. Include the block storage `id`, `ip_addr`, `capacity_gb`, the `datacenter`, `username`, and `lunIdID` that you retrieved earlier.
 

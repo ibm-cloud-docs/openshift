@@ -42,17 +42,18 @@ First time using {{site.data.keyword.filestorage_short}} in your cluster? Come b
       billingType: hourly
       region: # Example: us-south
       zone: # Example: dal13
-  spec:
-    accessModes:
-      - ReadWriteMany
-    resources:
-      requests:
-        storage: 24Gi
-    storageClassName: ibmc-file-silver
+     spec:
+      accessModes:
+        - ReadWriteMany
+        resources:
+          requests:
+            storage: 24Gi
+        storageClassName: ibmc-file-silver
     ```
     {: codeblock}
 
 2. Create the PVC in your cluster.
+
     ```sh
     oc apply -f pvc.yaml
     ```
@@ -90,15 +91,17 @@ First time using {{site.data.keyword.filestorage_short}} in your cluster? Come b
     {: codeblock}
 
 3. Create the deployment in your cluster.
+
     ```sh
     oc apply -f deployment.yaml
     ```
     {: pre}
 
-For more information, see:
-    * [Adding {{site.data.keyword.filestorage_short}} to apps](#add_file).
-    * [Storage class reference](#file_storageclass_reference).
-    * [Custom storage classes](#file_custom_storageclass).
+For more information, see the following links
+
+* [Adding {{site.data.keyword.filestorage_short}} to apps](#add_file).
+* [Storage class reference](#file_storageclass_reference).
+* [Custom storage classes](#file_custom_storageclass).
 
 ## Deciding on the {{site.data.keyword.filestorage_short}} configuration
 {: #file_predefined_storageclass}
@@ -116,14 +119,15 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 To decide on a storage configuration:
 
 1. List available storage classes in {{site.data.keyword.containerlong}}.
-    ```
+
+    ```sh
     oc get storageclasses | grep file
     ```
     {: pre}
 
-    Example output:
-    ```
-    $ oc get storageclasses
+    Example output
+    
+    ```sh
     NAME                         TYPE
     ibmc-file-bronze (default)   ibm.io/ibmc-file
     ibmc-file-custom             ibm.io/ibmc-file
@@ -137,7 +141,8 @@ To decide on a storage configuration:
     {: screen}
 
 2. Review the configuration of a storage class.
-    ```
+
+    ```sh
     oc describe storageclass <storageclass_name>
     ```
     {: pre}
@@ -512,7 +517,8 @@ To use existing storage in a different cluster than the one where you provisione
 {: tip}
 
 1. List existing PVs.
-    ```
+
+    ```sh
     oc get pv
     ```
     {: pre}
@@ -520,7 +526,8 @@ To use existing storage in a different cluster than the one where you provisione
     Look for the PV that belongs to your persistent storage. The PV is in a `released` state.
 
 2. Get the details of the PV.
-    ```
+
+    ```sh
     oc describe pv <pv_name>
     ```
     {: pre}
@@ -528,18 +535,21 @@ To use existing storage in a different cluster than the one where you provisione
 3. Note the `CapacityGb`, `storageClass`, `failure-domain.beta.kubernetes.io/region`, `failure-domain.beta.kubernetes.io/zone`, `server`, and `path`.
 
 4. Remove the PV.
-    ```
+
+    ```sh
     oc delete pv <pv_name>
     ```
     {: pre}
 
 5. Verify that the PV is removed.
-    ```
+
+    ```sh
     oc get pv
     ```
     {: pre}
 
-</br>
+
+
 
 **For persistent storage that was provisioned outside the cluster:**
 
@@ -577,24 +587,24 @@ If you want to use existing storage that you provisioned earlier, but never used
     ```
     {: codeblock}
 
-    `name`  
-    :   Enter the name of the PV object to create.  
-    
-    `labels`  
-    :   Enter the region and the zone that you retrieved earlier. You must have at least one worker node in the same region and zone as your persistent storage to mount the storage in your cluster.  
-    
-    `storage`  
+    `name`
+    :   Enter the name of the PV object to create.
+
+    `labels`
+    :   Enter the region and the zone that you retrieved earlier. You must have at least one worker node in the same region and 
+
+    `storage`
     :   Enter the storage size of the existing NFS file share that you retrieved earlier. The storage size must be written in gigabytes, for example, 20Gi (20 GB) or 1000Gi (1 TB), and the size must match the size of the existing file share.  
-    
-    `accessMode`  
-    :   Specify one of the following options:  
-        - **ReadWriteMany**: The PVC can be mounted by multiple pods. All pods can read from and write to the volume.  
-        - **ReadOnlyMany**: The PVC can be mounted by multiple pods. All pods have read-only access.  
-        - **ReadWriteOnce**: The PVC can be mounted by one pod only. This pod can read from and write to the volume.  
-    
+
+    `accessMode`
+    :   Specify one of the following options.
+        - **ReadWriteMany**: The PVC can be mounted by multiple pods. All pods can read from and write to the volume.
+        - **ReadOnlyMany**: The PVC can be mounted by multiple pods. All pods have read-only access.
+        - **ReadWriteOnce**: The PVC can be mounted by one pod only. This pod can read from and write to the volume.
+
     `server`  
     :   Enter the NFS file share server ID that you retrieved earlier.  
-    
+
     `path`  
     :   Enter the path to the NFS file share that you retrieved earlier.  
 

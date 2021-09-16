@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-16"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, satellite
 
@@ -267,10 +267,10 @@ On satellite clusters, you can either dynamically provision storage volumes for 
 1. In the **Install ODF** panel, enter the configuration parameters that you want to use for your ODF deployment.
     - `odfDeploy`: Enter `true` to enable the add-on and deploy the ODF resources to your cluster. Enter `false` to only enable the add-on. If you enter `false`, you must create a [CRD to deploy ODF](#odf-sat-deploy-crd) later.
     - `monSize`: Enter the size of the {{site.data.keyword.block_storage_is_short}} devices that you want to provision for the ODF [monitor pods](/docs/openshift?topic=openshift-ocs-storage-prep). The default setting `20Gi`.
-    - `monStorageClassName`:  \n For dynamic provisioning, enter the name of the storage class that you want to use. For {{site.data.keyword.satelliteshort}} clusters, enter the name of the block storage class that you want to use to dynamically provision volumes. The default storage class is `ibmc-vpc-block-metro-10iops-tier`.  \n For static provision with local disks on your worker nodes, enter the storage class `localfile`.
+    - `monStorageClassName`:  \n - For dynamic provisioning, enter the name of the storage class that you want to use. For {{site.data.keyword.satelliteshort}} clusters, enter the name of the block storage class that you want to use to dynamically provision volumes. The default storage class is `ibmc-vpc-block-metro-10iops-tier`.  \n - For static provision with local disks on your worker nodes, enter the storage class `localfile`.
     - `monDevicePaths`: To dynamically provision disks by using a block storage driver in your cluster, leave this parameter as `invalid`. To use local devices on your worker nodes, enter a comma separated list of device IDs. To gather the device IDs for the disk on your worker nodes, see [Gathering your local block storage device details](#odf-sat-gather).
     - `osdSize`: Enter the size of the {{site.data.keyword.block_storage_is_short}} devices that you want to provision for the [OSD pods](/docs/openshift?topic=openshift-ocs-storage-prep). The default size is `250Gi`.
-     `osdStorageClassName`:   \n For dynamic provisioning, enter the name of the storage class that you want to use. For {{site.data.keyword.satelliteshort}} clusters, enter the name of the block storage class that you want to use to dynamically provision volumes. The default storage class is `ibmc-vpc-block-metro-10iops-tier`.  \n For static provision with local disks on your worker nodes, enter the storage class `localblock`.
+     `osdStorageClassName`:   \n - For dynamic provisioning, enter the name of the storage class that you want to use. For {{site.data.keyword.satelliteshort}} clusters, enter the name of the block storage class that you want to use to dynamically provision volumes. The default storage class is `ibmc-vpc-block-metro-10iops-tier`.  \n - For static provision with local disks on your worker nodes, enter the storage class `localblock`.
     - `osdDevicePaths`: To dynamically provision disks by using a block storage driver in your cluster, leave this parameter as `invalid`. To use local devices on your worker nodes, enter a comma separated list of device IDs. To gather the device IDs for the disk on your worker nodes, see [Gathering your local block storage device details](#odf-sat-gather).
     - `numOfOsd`: Enter the number of block storage device sets that you want to provision for ODF. A `numOfOsd` value of 1 provisions 1 device set which includes 3 block storage devices. The devices are provisioned evenly across your worker nodes. For more information, see [Understanding ODF](/docs/openshift?topic=openshift-ocs-storage-prep).
     - `workerNodes`: Enter the worker nodes where you want to deploy ODF. You must have at least 3 worker nodes. The default setting is `all`. If you want to deploy ODF only on certain nodes, enter the IP addresses of the worker nodes in a comma-separated list without spaces, for example: `XX.XXX.X.X,XX.XXX.X.X,XX.XXX.X.X`.
