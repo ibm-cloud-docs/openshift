@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-09-16"
 
 keywords: vpc block, add-on, vpc block changelog
 
@@ -52,6 +52,27 @@ Refer to the following tables for a summary of changes for each version of the {
 
 Review the changes in version `4.0` of the {{site.data.keyword.block_storage_is_full}} add-on.
 {: shortdesc}
+
+
+
+### Changelog for version 4.0.0_769, released 16 September 2021
+{: #0400769_is_block_relnote}
+
+Review the changes in version `4.0.0_769` of the {{site.data.keyword.block_storage_is_full}} add-on.
+{: shortdesc}
+
+- Image tags: `v4.0.0`
+- Resolves the following CVEs:
+    - [CVE-2021-27218](https://nvd.nist.gov/vuln/detail/CVE-2021-27218){: external}  
+    - [CVE-2021-3520](https://nvd.nist.gov/vuln/detail/CVE-2021-3520){: external}  
+    - [CVE-2021-20271](https://nvd.nist.gov/vuln/detail/CVE-2021-20271){: external}  
+    - [CVE-2021-3516](https://nvd.nist.gov/vuln/detail/CVE-2021-3516){: external}  
+    - [CVE-2021-3517](https://nvd.nist.gov/vuln/detail/CVE-2021-3517){: external}  
+    - [CVE-2021-3518](https://nvd.nist.gov/vuln/detail/CVE-2021-3518){: external}  
+    - [CVE-2021-3537](https://nvd.nist.gov/vuln/detail/CVE-2021-3537){: external}  
+    - [CVE-2021-3541](https://nvd.nist.gov/vuln/detail/CVE-2021-3541){: external}  
+    - [CVE-2021-33910](https://nvd.nist.gov/vuln/detail/CVE-2021-33910){: external}  
+- Updates the `storage-secret-sidecar` image to `v1.1.0`.
 
 
 

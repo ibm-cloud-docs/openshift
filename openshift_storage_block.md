@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -58,7 +58,8 @@ First time using {{site.data.keyword.blockstorageshort}} in your cluster? Come b
     {: codeblock}
 
 2. Create the PVC in your cluster.
-    ```
+
+    ```sh
     oc apply -f pvc.yaml
     ```
     {: pre}
@@ -95,7 +96,8 @@ First time using {{site.data.keyword.blockstorageshort}} in your cluster? Come b
     {: codeblock}
 
 3. Create the deployment in your cluster.
-    ```
+
+    ```sh
     oc apply -f deployment.yaml
     ```
     {: pre}
@@ -120,14 +122,15 @@ Make sure to choose your storage configuration carefully to have enough capacity
 {: important}
 
 1. List available storage classes in {{site.data.keyword.containerlong}}.
-    ```
+
+    ```sh
     oc get storageclasses | grep block
     ```
     {: pre}
 
-    Example output:
-    ```
-    $ oc get storageclasses
+    Example output
+
+    ```sh
     NAME                         TYPE
     ibmc-block-custom            ibm.io/ibmc-block
     ibmc-block-bronze            ibm.io/ibmc-block
@@ -141,7 +144,8 @@ Make sure to choose your storage configuration carefully to have enough capacity
     {: screen}
 
 2. Review the configuration of a storage class.
-    ```
+
+    ```sh
     oc describe storageclass <storageclass_name>
     ```
     {: pre}
@@ -239,7 +243,7 @@ Make sure to choose your storage configuration carefully to have enough capacity
 
 6. Choose if you want to be billed hourly or monthly. Check the [pricing](https://www.ibm.com/cloud/block-storage/pricing){: external} for more information. By default, all block storage devices are provisioned with an hourly billing type.
 
-<br />
+
 
 ## Setting up encryption for {{site.data.keyword.blockstorageshort}}
 {: #block_encryption_setup}
@@ -252,20 +256,21 @@ The following example explains how to create a service ID with the required acce
 You can enable encryption by creating a Kubernetes secret that uses your personal API key as long as you have the **Reader** service access role for your {{site.data.keyword.keymanagementserviceshort}} instance as well as the **Viewer** platform access role and the **Writer** service access role for your cluster.
 {: tip}
 
-    [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+[Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
-    1. Make sure that you are assigned the Editor platform access role and the Writer service access role for {{site.data.keyword.keymanagementserviceshort}} so that you can create your own root key that you use to encrypt your {{site.data.keyword.blockstorageshort}} instance. You can review your IAM access roles in the [IAM console](https://cloud.ibm.com/iam){: external}. For more information about IAM roles, see [IAM access](/docs/account?topic=account-userroles).
-    2. If you do not have a {{site.data.keyword.keymanagementserviceshort}} instance, [provision one](/docs/key-protect?topic=key-protect-provision).
-    3. [Create a root key](/docs/key-protect?topic=key-protect-create-root-keys). By default, the root key is created without an expiration date.
+1. Make sure that you are assigned the Editor platform access role and the Writer service access role for {{site.data.keyword.keymanagementserviceshort}} so that you can create your own root key that you use to encrypt your {{site.data.keyword.blockstorageshort}} instance. You can review your IAM access roles in the [IAM console](https://cloud.ibm.com/iam){: external}. For more information about IAM roles, see [IAM access](/docs/account?topic=account-userroles).
+2. If you do not have a {{site.data.keyword.keymanagementserviceshort}} instance, [provision one](/docs/key-protect?topic=key-protect-provision).
+3. [Create a root key](/docs/key-protect?topic=key-protect-create-root-keys). By default, the root key is created without an expiration date.
+4. Create an IAM service ID. Replace `<service_ID_name>` with the name that you want to assign to your service ID. This service ID is used to access your {{site.data.keyword.keymanagementserviceshort}} instance from your {{site.data.keyword.blockstorageshort}} volume.
 
-    4. Create an IAM service ID. Replace `<service_ID_name>` with the name that you want to assign to your service ID. This service ID is used to access your {{site.data.keyword.keymanagementserviceshort}} instance from your {{site.data.keyword.blockstorageshort}} volume.
-    ```
+    ```sh
     ibmcloud iam service-id-create <service_ID_name>
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     OK
     Service ID test-id is created successfully
 
@@ -278,167 +283,118 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
     ```
     {: screen}
 
-    5. Create an API key for your service ID. Replace `<api-key-name>` with a name for your API key and replace `<service_ID_name>` with the name of the service ID that you created. Be sure to save your API key as it cannot be retrieved later. This API key is stored in a Kubernetes secret in your cluster in a later step.
-    ```
+5. Create an API key for your service ID. Replace `<api-key-name>` with a name for your API key and replace `<service_ID_name>` with the name of the service ID that you created. Be sure to save your API key as it cannot be retrieved later. This API key is stored in a Kubernetes secret in your cluster in a later step.
+
+    ```sh
     ibmcloud iam service-api-key-create <api_key_name> <service_ID_name>
     ```
     {: pre}
 
-    6. Retrieve a list of IAM-enabled services in your account and note the name of the {{site.data.keyword.keymanagementserviceshort}} instance that you created.
-    ```
+6. Retrieve a list of IAM-enabled services in your account and note the name of the {{site.data.keyword.keymanagementserviceshort}} instance that you created.
+
+    ```sh
     ibmcloud resource service-instances
     ```
     {: pre}
 
-    7. Retrieve the GUID of your {{site.data.keyword.keymanagementserviceshort}} instance. The ID is used to create an IAM service policy for your service ID.
-    ```
+7. Retrieve the GUID of your {{site.data.keyword.keymanagementserviceshort}} instance. The ID is used to create an IAM service policy for your service ID.
+
+    ```sh
     ibmcloud resource service-instance "<instance_name>" | grep GUID
     ```
     {: pre}
 
-    8. [Create an IAM service policy](/docs/cli/reference/ibmcloud?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_policy_create) to grant your service ID access to your {{site.data.keyword.keymanagementserviceshort}} instance. The following command grants your service ID `Reader` access to your {{site.data.keyword.keymanagementserviceshort}} instance. The Reader access role is the minimum service access role that your service ID must have to retrieve {{site.data.keyword.keymanagementserviceshort}} keys. For more information, see [Managing user access for {{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-manage-access).
-    ```
+8. [Create an IAM service policy](/docs/cli/reference/ibmcloud?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_policy_create) to grant your service ID access to your {{site.data.keyword.keymanagementserviceshort}} instance. The following command grants your service ID `Reader` access to your {{site.data.keyword.keymanagementserviceshort}} instance. The Reader access role is the minimum service access role that your service ID must have to retrieve {{site.data.keyword.keymanagementserviceshort}} keys. For more information, see [Managing user access for {{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-manage-access).
+
+    ```sh
     ibmcloud iam service-policy-create <service_ID_name> --roles Reader --service-name kms --service-instance <service_instance_GUID>
     ```
-    {: pre}  
+    {: pre}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the command. The second column describes the parameter.">
-    <caption>Understanding the <code>iam service-policy-create</code> command</caption>
-    <col width="25%">
-    <thead>
-    <th>Component</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>service_ID_name</code></td>
-    <td>Enter the name of the service ID that you created earlier.</td>
-    </tr>        
-    <tr>
-    <td><code>service_instance_GUID</code></td>
-    <td>The GUID of your {{site.data.keyword.keymanagementserviceshort}} service instance that you retrieved earlier.</td>
-    </tr>
-    </tbody>
-    </table>
+9. Create another IAM service access policy to give your service ID access to your cluster. The following command grants the **Viewer** platform access role and the **Writer** service access role to your service ID for your cluster. You can retrieve your cluster ID by running `ibmcloud oc cluster get <cluster_name>`.
 
-    9. Create another IAM service access policy to give your service ID access to your cluster. The following command grants the **Viewer** platform access role and the **Writer** service access role to your service ID for your cluster.
-    ```
+    ```sh
     ibmcloud iam service-policy-create <service_ID_name> --roles Writer,Viewer --service-name containers-kubernetes --service-instance <cluster_ID>
     ```
     {: pre}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the command. The second column describes the parameter.">
-    <caption>Understanding the <code>iam service-policy-create</code> command</caption>
-    <col width="25%">
-    <thead>
-    <th>Component</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>service_ID_name</code></td>
-    <td>Enter the name of the service ID that you created earlier.</td>
-    </tr>        
-    <tr>
-    <td><code>cluster_ID</code></td>
-    <td>The ID of your cluster. You can retrieve your cluster ID by running <code>ibmcloud oc cluster get &lt;cluster_name&gt;</code>.</td>
-    </tr>
-    </tbody>
-    </table>
-
-    11. If you already have the `ibmcloud-block-storage-plugin` Helm chart installed, you must remove the Helm chart and install a new version.
+10. If you already have the `ibmcloud-block-storage-plugin` Helm chart installed, you must remove the Helm chart and install a new version.
 
     If you installed the plug-in without using Helm, you must manually remove the block storage plug-in deployment and all associated resources before installing a new version.
     {: note}
 
-    ```
+    ```sh
     helm uninstall <name> <namespace>
     ```
     {: pre}
 
-    12. Install the `ibmcloud-block-storage-plugin` Helm chart.
-    ```
+11. Install the `ibmcloud-block-storage-plugin` Helm chart.
+
+    ```sh
     helm install <name> iks-charts/ibmcloud-block-storage-plugin
     ```
     {: pre}
 
-    12. Create an `ibm-block-secrets` namespace.
-    ```
+12. Create an `ibm-block-secrets` namespace.
+
+    ```sh
     oc create ns ibm-block-secrets
     ```
     {: pre}
 
-    13. Create a role binding in the `ibm-block-secrets` namespace for the block storage plug-in.
+13. Create a role binding in the `ibm-block-secrets` namespace for the block storage plug-in.
+
+    ```sh
+    oc create rolebinding ibmcloud-block-storage-plugin-byok --clusterrole=ibmcloud-block-storage-plugin-byok --serviceaccount=kube-system:ibmcloud-block-storage-plugin --group system:nodes --namespace=ibm-block-secrets
+    ```
+    {: pre}
+
+14. Create a Kubernetes secret that is named `secret.yaml` and that includes the credentials to access your root key in your {{site.data.keyword.keymanagementserviceshort}} service instance.
+    1. Create a configuration file for the secret.
+        ```yaml
+        apiVersion: v1
+        kind: Secret
+        metadata:
+          labels:
+            kmsConfig: kpc-secretLabel
+          name: <secret_name> # Enter a name for your secret. Example: my_secret
+          namespace: <namespace> # Enter the name of the namespace where you want to create the secret. The secret must be in same namespace where your app is deployed. Example: default
+        stringData:
+        config: |-
+            {
+                "api_key":"<service_id_api_key>", # Enter the API key for the service ID that you created. Example: "AA1aAAaA1a21AAaA1aAAaAa-AA-1AAaaA1aA1aAaaaAA"
+                "iam_endpoint":"https://iam.cloud.ibm.com",
+                "key_protect_endpoint":"https://<region>.kms.cloud.ibm.com", # Example: "https://us-east.kms.cloud.ibm.com"
+                "root_key_crn":"<rook_key_crn>", # Example: "crn:v1:bluemix:public:kms:<region>:a/1ab011ab2b11111aaa1a1111aa1aa111:11aa111a-1111-11a1-a111-a11a111aa111:key:11a11111-1a1a-111a-111a-11111a1a1aa1",
+                "version":""
+            }
+        type: ibm.io/kms-config
         ```
-        oc create rolebinding ibmcloud-block-storage-plugin-byok --clusterrole=ibmcloud-block-storage-plugin-byok --serviceaccount=kube-system:ibmcloud-block-storage-plugin --group system:nodes --namespace=ibm-block-secrets
+        {: codeblock}
+
+        `stringData.config.key_protect_endpoint`
+        :   Enter the regional endpoint of your {{site.data.keyword.keymanagementserviceshort}} instance. For a list of Key Protect endpoints, see [Regions and endpoints](/docs/key-protect?topic=key-protect-regions).
+        
+        `stringData.config.root_key_crn`
+        :   Enter the CRN of the root key that you created. To retrieve your root key CRN, complete the following steps.
+            1. Navigate to the resource list in the <a href="https://cloud.ibm.com/resources">{{site.data.keyword.cloud_notm}} console</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.
+            2. Click **Services**, then click your {{site.data.keyword.keymanagementserviceshort}} instance.
+            3. Find your root key on the **Actions Menu**, then click **View CRN**.
+            4. Click the **Copy** button to copy the CRN.
+
+    1. Create the secret in your cluster.
+
+        ```sh
+        oc apply -f secret.yaml
         ```
         {: pre}
 
-    14. Create a Kubernetes secret that is named `secret.yaml` and that includes the credentials to access your root key in your {{site.data.keyword.keymanagementserviceshort}} service instance.
-        1. Create a configuration file for the secret.
-          ```yaml
-          apiVersion: v1
-          kind: Secret
-          metadata:
-            labels:
-              kmsConfig: kpc-secretLabel
-            name: <secret_name> # Example: my_secret
-            namespace: <namespace> # Example: default
-          stringData:
-            config: |-
-                {
-                  "api_key":"<service_id_api_key>", # Example: "AA1aAAaA1a21AAaA1aAAaAa-AA-1AAaaA1aA1aAaaaAA"
-                  "iam_endpoint":"https://iam.cloud.ibm.com",
-                  "key_protect_endpoint":"https://<region>.kms.cloud.ibm.com", # Example: "https://us-east.kms.cloud.ibm.com"
-                  "root_key_crn":"<rook_key_crn>", # Example: "crn:v1:bluemix:public:kms:<region>:a/1ab011ab2b11111aaa1a1111aa1aa111:11aa111a-1111-11a1-a111-a11a111aa111:key:11a11111-1a1a-111a-111a-11111a1a1aa1",
-                  "version":""
-                }
-          type: ibm.io/kms-config
-          ```
-          {: codeblock}
+    1. Verify that your secret was created.
 
-          <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-          <caption>Understanding the YAML file components</caption>
-          <col width="25%">
-          <thead>
-          <th>Component</th>
-          <th>Description</th>
-          </thead>
-          <tbody>
-          <tr>
-          <td><code>metadata.name</code></td>
-          <td>Enter a name for your secret.</td>
-          </tr>
-          <tr>
-          <td><code>metadata.namespace</code></td>
-          <td>Enter the name of the namespace where you want to create the secret. The secret must be in same namespace where your app is deployed.
-          </tr>
-          <tr>
-          <td><code>stringData.config.api_key</code></td>
-          <td>Enter the API key for the service ID that you created.</td>
-          </tr>        
-          <tr>
-          <td><code>stringData.config.key_protect_endpoint</code></td>
-          <td>Enter the regional endpoint of your {{site.data.keyword.keymanagementserviceshort}} instance. For a list of Key Protect endpoints, see <a href="/docs/key-protect?topic=key-protect-regions">Regions and endpoints</a>.</td>
-          </tr>
-          <tr>
-          <td><code>stringData.config.root_key_crn</code></td>
-          <td>Enter the CRN of the root key that you created. To retrieve your root key CRN: <li>Navigate to the resource list in the <a href="https://cloud.ibm.com/resources">{{site.data.keyword.cloud_notm}} console</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</li><li>Click <strong>Services</strong>, then click your {{site.data.keyword.keymanagementserviceshort}} instance.</li><li>Find your root key on the <strong>Actions Menu</strong>, then click <strong>View CRN</strong>.</li><li>Click the <strong>Copy</strong> button to copy the CRN.</li></td>
-          </tr>
-          </tbody>
-          </table>
-
-        2. Create the secret in your cluster.
-          ```
-          oc apply -f secret.yaml
-          ```
-          {: pre}
-
-        3. Verify that your secret was created.
-          ```
-          oc get secrets
-          ```
-          {: pre}
+        ```sh
+        oc get secrets
+        ```
+        {: pre}
 
 **Next steps**
 Choose between the following options to create a {{site.data.keyword.blockstorageshort}} instance that encrypts data with your root key:
@@ -454,14 +410,14 @@ You can deploy apps that use encrypted volumes by first creating a custom storag
 
 The following steps explain how to create a custom, encrypted storage class that you can use to create multiple encrypted block storage instances with the same configuration. If you want to create an encrypted PVC by using one of the IBM-provided storage classes, you can do this by [referencing the {{site.data.keyword.keymanagementserviceshort}} credentials directly in your PVC](#pvc_encrypt_label).
 
-    1. [Decide on a storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass).
+1. [Decide on a storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass).
 
-    2. Create a custom storage class that provisions an encrypted block storage instance by using one of the {{site.data.keyword.IBM_notm}}-provided storage classes as the basis. You can retrieve the details a storage class by running `oc get storageclass <storageclass_name> -o yaml`. The following example is based on the `ibmc-block-retain-bronze` storage class.
+1. Create a custom storage class that provisions an encrypted block storage instance by using one of the {{site.data.keyword.IBM_notm}}-provided storage classes as the basis. You can retrieve the details a storage class by running `oc get storageclass <storageclass_name> -o yaml`. The following example is based on the `ibmc-block-retain-bronze` storage class.
     ```yaml
     apiVersion: storage.k8s.io/v1
     kind: StorageClass
     metadata:
-      name: <name> # Example: my_custom_storageclass
+      name: <name> # Enter the name of the storage class. Example: my_custom_storageclass
     parameters:
       billingType: hourly
       classVersion: "2"
@@ -469,50 +425,25 @@ The following steps explain how to create a custom, encrypted storage class that
       iopsPerGB: "2"
       sizeRange: '[20-12000]Gi'
       type: Endurance
-      encrypted: "true"
-      encryptionKeySecret: <secret_name> # Example: my_secret
-      encryptionKeyNamespace: <namespace> # Example: default
-    provisioner: ibm.io/ibmc-block
-    reclaimPolicy: Delete
-    allowVolumeExpansion: true
+      encrypted: "true" # Enter "true" to enable encryption.
+      encryptionKeySecret: <secret_name> # # #nter the name of the secret that you created earlier.Example: my_secret 
+      encryptionKeyNamespace: <namespace> # # #nter the namespace where you created your secret. Example: default
+      provisioner: ibm.io/ibmc-block
+      reclaimPolicy: Delete
+      allowVolumeExpansion: true
     ```
     {: codeblock}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the YAML file components</caption>
-    <thead>
-    <th>Component</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>name</code></td>
-    <td>Enter the name of the storage class.</td>
-    </tr>
-    <tr>
-    <td><code>encrypted</code></td>
-    <td>In the parameters, enter "true" to enable encryption.</td>
-    </tr>
-    <tr>
-    <td><code>encryptionKeyNamespace</code></td>
-    <td>In the parameters, enter the namespace where you created your secret. Example: <code>default</code>.</td>
-    </tr>
-    <tr>
-    <td><code>encryptionKeySecret</code></td>
-    <td>In the parameters, enter the name of the secret that you created earlier. Example: <code>my_secret</code>.</td>
-    </tr>
-    </tbody>
-    </table>
+1. Create the storage class in your cluster.
 
-    3. Create the storage class in your cluster.
-    ```
+    ```sh
     oc apply -f storageclass.yaml
     ```
     {: pre}
 
-    4. [Add {{site.data.keyword.blockstorageshort}} to your app by using your custom storage class to create a PVC](#add_block).
+1. [Add {{site.data.keyword.blockstorageshort}} to your app by using your custom storage class to create a PVC](#add_block).
 
-    5. [Verify the encryption of your {{site.data.keyword.blockstorageshort}} volumes](#block_encrypt).
+1. [Verify the encryption of your {{site.data.keyword.blockstorageshort}} volumes](#block_encrypt).
 
 ### Create a PVC that references your {{site.data.keyword.blockstorageshort}} secret
 {: #pvc_encrypt_label}
@@ -522,15 +453,17 @@ You can provision encrypted {{site.data.keyword.blockstorageshort}} by creating 
 
 The following steps show how you can reference your {{site.data.keyword.keymanagementserviceshort}} credentials in your PVC to create an encrypted {{site.data.keyword.blockstorageshort}} instance. To create multiple encrypted volumes without specifying the {{site.data.keyword.keymanagementserviceshort}} credentials in each PVC, you can [create a custom, encrypted storage class](#encrypt_custom_sc).
 
-    1. Review the provided [{{site.data.keyword.blockstorageshort}} storage classes](#block_storageclass_reference) to determine which storage class best meets your app requirements. If the provided storage classes do not meet your app requirements, you can create your own [customized storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass).
-    2. Create a PVC configuration file that is named `pvc.yaml` and that references the Kubernetes secret where you stored the {{site.data.keyword.keymanagementserviceshort}} service credentials. To create this secret, see [Setting up encryption for {{site.data.keyword.blockstorageshort}}](#block_encryption_setup).
+1. Review the provided [{{site.data.keyword.blockstorageshort}} storage classes](#block_storageclass_reference) to determine which storage class best meets your app requirements. If the provided storage classes do not meet your app requirements, you can create your own [customized storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass).
+
+2. Create a PVC configuration file that is named `pvc.yaml` and that references the Kubernetes secret where you stored the {{site.data.keyword.keymanagementserviceshort}} service credentials. To create this secret, see [Setting up encryption for {{site.data.keyword.blockstorageshort}}](#block_encryption_setup).
+
     ```yaml
     kind: PersistentVolumeClaim
     apiVersion: v1
     metadata:
       name: <pvc_name> # Enter a name for your PVC.
       annotations:
-        volume.beta.kubernetes.io/storage-class: "<storage_class>" # Enter a storage class. To see a list of storageclasses run `kubectl get storageclasses`.
+      volume.beta.kubernetes.io/storage-class: "<storage_class>" # Enter a storage class. To see a list of storageclasses run `kubectl get storageclasses`.
       labels:
         encrypted: "true"
         encryptionKeyNamespace: <namespace> # Enter the namespace where your secret was created.
@@ -538,53 +471,29 @@ The following steps show how you can reference your {{site.data.keyword.keymanag
     spec:
       accessModes:
         - ReadWriteOnce
-      resources:
+        resources:
         requests:
-          storage: 20Gi
+            storage: 20Gi
     ```
     {: codeblock}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the YAML file components</caption>
-    <thead>
-    <th>Component</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>name</code></td>
-    <td>Enter the name of the PVC.</td>
-    </tr>
-    <tr>
-    <td><code>encrypted</code></td>
-    <td>In the metadata labels section, enter "true" to enable encryption.</td>
-    </tr>
-    <tr>
-    <td><code>encryptionKeyNamespace</code></td>
-    <td>In the metadata labels section, enter the namespace where you created your secret. Example: <code>default</code>.</td>
-    </tr>
-    <tr>
-    <td><code>encryptionKeySecret</code></td>
-    <td>In the metadata labels section, enter the name of the secret that you created earlier. Example: <code>my_secret</code>.</td>
-    </tr>
-    </tbody>
-    </table>
+3. Create the PVC in your cluster.
 
-    3. Create the PVC in your cluster.
-    ```
+    ```sh
     oc apply -f pvc.yaml
     ```
     {: pre}
 
-    4. Check the status of your PVC.
-    ```
+4. Check the status of your PVC.
+
+    ```sh
     oc get pvc
     ```
     {: pre}
 
-    5. Wait for your PVC to bind, then [create a deployment that uses your PVC](#add_block).
+5. Wait for your PVC to bind, then [create a deployment that uses your PVC](#add_block).
 
-    6. [Verify the encryption of your {{site.data.keyword.blockstorageshort}} volumes](#block_encrypt).
+6. [Verify the encryption of your {{site.data.keyword.blockstorageshort}} volumes](#block_encrypt).
 
 
 ### Verifying the encryption of your {{site.data.keyword.blockstorageshort}} volumes
@@ -594,20 +503,24 @@ You can verify the encryption of your volumes by checking the volume mount path.
 {: shortdesc}
 
 1. Log in to your app pod. Replace `<pod_name>` with the name of the pod that mounts your encrypted {{site.data.keyword.blockstorageshort}} volume.
-    ```
+
+    ```sh
     oc exec <pod_name> -it bash
     ```
     {: pre}
 
 2. List the file system of your pod.
-    ```
+
+    ```sh
     df -h
     ```
     {: pre}
 
 3. Review the file system path for your encrypted {{site.data.keyword.blockstorageshort}} volume.
+
     * Encrypted volumes have a path structure of `/dev/mapper/<pvc-ID_encrypted>`. In this example, the encrypted volume is mounted to the `/test` file path in the pod.
-        ```
+
+        ```sh
         Filesystem                                            Size  Used Avail Use% Mounted on
         overlay                                                98G  8.2G   85G   9% /
         tmpfs                                                  64M     0   64M   0% /dev
@@ -617,7 +530,8 @@ You can verify the encryption of your volumes by checking the volume mount path.
         {: screen}
 
     * Unencrypted volumes have a path structure of `dev/mapper/<random_string>`.
-        ```
+
+        ```sh
         Filesystem                                     Size  Used Avail Use% Mounted on
         overlay                                         98G   16G   78G  17% /
         tmpfs                                           64M     0   64M   0% /dev
@@ -707,8 +621,8 @@ To add block storage:
         <td>Enter the name of the PVC.</td>
         </tr>
         <tr>
-            <td><code>billingType</code></td>
-            <td>In the metadata labels section, specify the frequency for which your storage bill is calculated, "monthly" or "hourly". The default is "hourly".</td>
+        <td><code>billingType</code></td>
+        <td>In the metadata labels section, specify the frequency for which your storage bill is calculated, "monthly" or "hourly". The default is "hourly".</td>
         </tr>
         <tr>
         <td><code>region</code></td>
@@ -716,8 +630,8 @@ To add block storage:
         </tr>
         <tr>
         <td><code>zone</code></td>
-            <td>In the metadata labels section, specify the zone where you want to provision your block storage. If you specify the zone, you must also specify a region. If you do not specify a zone or the specified zone is not found in a multizone cluster, the zone is selected on a round-robin basis. <p class="note">This option is supported only with the IBM Cloud Block Storage plug-in version 1.0.1 or higher. For older plug-in versions, if you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones. To specify the zone for your storage, you can create a <a href="#block_multizone_yaml">customized storage class</a> first. Then, create a PVC with your customized storage class.</p></td>
-            </tr>
+        <td>In the metadata labels section, specify the zone where you want to provision your block storage. If you specify the zone, you must also specify a region. If you do not specify a zone or the specified zone is not found in a multizone cluster, the zone is selected on a round-robin basis. <p class="note">This option is supported only with the IBM Cloud Block Storage plug-in version 1.0.1 or higher. For older plug-in versions, if you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones. To specify the zone for your storage, you can create a <a href="#block_multizone_yaml">customized storage class</a> first. Then, create a PVC with your customized storage class.</p></td>
+        </tr>
         <tr>
         <td><code>storage</code></td>
         <td>In the spec resources requests section, enter the size of the block storage, in gigabytes (Gi). After your storage is provisioned, you cannot change the size of your block storage. Make sure to specify a size that matches the amount of data that you want to store. </td>
@@ -737,21 +651,21 @@ To add block storage:
 
 2. Create the PVC.
 
-    ```
+    ```sh
     oc apply -f mypvc.yaml
     ```
     {: pre}
 
 3. Verify that your PVC is created and bound to the PV. This process can take a few minutes.
 
-    ```
+    ```sh
     oc describe pvc mypvc
     ```
     {: pre}
 
-    Example output:
+    Example output
 
-    ```
+    ```yaml
     Name:        mypvc
     Namespace:    default
     StorageClass:    ""
@@ -812,11 +726,11 @@ To add block storage:
     <tr>
     <td><code>app</code></td>
     <td>In the metadata, enter a label for the deployment.</td>
-        </tr>
-        <tr>
-        <td><code>matchLabels.app</code> <br/> <code>labels.app</code></td>
-        <td>In the spec selector and in the template metadata, enter a label for your app.</td>
-        </tr>
+    </tr>
+    <tr>
+    <td><code>matchLabels.app</code> <br/> <code>labels.app</code></td>
+    <td>In the spec selector and in the template metadata, enter a label for your app.</td>
+    </tr>
     <tr>
     <td><code>image</code></td>
     <td>The name of the container image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run <code>ibmcloud cr image-list</code>.</td>
@@ -844,34 +758,35 @@ To add block storage:
     </tbody></table>
 
 5. Create the deployment.
-        ```
-        oc apply -f <local_yaml_path>
-        ```
-        {: pre}
+
+    ```sh
+    oc apply -f <local_yaml_path>
+    ```
+    {: pre}
 
 6. Verify that the PV is successfully mounted.
 
-        ```
-        oc describe deployment <deployment_name>
-        ```
-        {: pre}
+    ```sh
+    oc describe deployment <deployment_name>
+    ```
+    {: pre}
 
-        The mount point is in the **Volume Mounts** field and the volume is in the **Volumes** field.
+    The mount point is in the **Volume Mounts** field and the volume is in the **Volumes** field.
 
-        ```
-        Volume Mounts:
-            /var/run/secrets/kubernetes.io/serviceaccount from default-token-tqp61 (ro)
-            /volumemount from myvol (rw)
-        ...
-        Volumes:
-        myvol:
-            Type:    PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
-            ClaimName:    mypvc
-            ReadOnly:    false
-        ```
-        {: screen}
+    ```sh
+    Volume Mounts:
+        /var/run/secrets/kubernetes.io/serviceaccount from default-token-tqp61 (ro)
+        /volumemount from myvol (rw)
+    ...
+    Volumes:
+    myvol:
+        Type:    PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
+        ClaimName:    mypvc
+        ReadOnly:    false
+    ```
+    {: screen}
 
-<br />
+
 
 
 
@@ -895,7 +810,8 @@ Before you can start to mount your existing storage to an app, you must retrieve
     1. From the **User List** menu, select your user ID.
     2. In the **API Access Information** section, find your **API Username**.
 3. Log in to the IBM Cloud infrastructure CLI plug-in.
-    ```
+
+    ```sh
     ibmcloud sl init
     ```
     {: pre}
@@ -903,12 +819,13 @@ Before you can start to mount your existing storage to an app, you must retrieve
 4. Choose to authenticate by using the username and API key for your IBM Cloud infrastructure account.
 5. Enter the username and API key that you retrieved in the previous steps.
 6. List available block storage devices.
-    ```
+
+    ```sh
     ibmcloud sl block volume-list
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     id         username            datacenter   storage_type              capacity_gb   bytes_used   ip_addr         lunId   active_transactions
     38642141   IBM02SEL1543159-1   dal10        endurance_block_storage   20            -            169.xx.xxx.xxx   170     0
@@ -916,12 +833,13 @@ Before you can start to mount your existing storage to an app, you must retrieve
     {: screen}
 
 7. Retrieve the volume details. Replace `<volume_ID>` with the ID of the Block storage volume that you retrieved in step 6.
+
     ```sh
     ibmcloud sl block volume-detail <volume_ID>
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```sh
     Name                       Value   
     ID                         111111111   
@@ -945,7 +863,8 @@ Before you can start to mount your existing storage to an app, you must retrieve
 
 1. Optional: If you have storage that you provisioned with a `retain` storage class, when you remove the PVC, the PV and the physical storage device are not removed. To reuse the storage in your cluster, you must remove the PV first.
     1. List existing PVs.
-        ```
+
+        ```sh
         oc get pv
         ```
         {: pre}
@@ -953,13 +872,15 @@ Before you can start to mount your existing storage to an app, you must retrieve
         Look for the PV that belongs to your persistent storage. The PV is in a `released` state.
 
     2. Remove the PV.
-        ```
+
+        ```sh
         oc delete pv <pv_name>
         ```
         {: pre}
 
     3. Verify that the PV is removed.
-        ```
+
+        ```sh
         oc get pv
         ```
         {: pre}
@@ -1031,72 +952,61 @@ Before you can start to mount your existing storage to an app, you must retrieve
     </tbody></table>
 
 3. Create the PV in your cluster.
-    ```
+
+    ```sh
     oc apply -f mypv.yaml
     ```
     {: pre}
 
 4. Verify that the PV is created.
-    ```
+
+    ```sh
     oc get pv
     ```
     {: pre}
 
 5. Create another configuration file to create your PVC. In order for the PVC to match the PV that you created earlier, you must choose the same value for `storage` and `accessMode`. The `storage-class` field must be an empty string. If any of these fields do not match the PV, then a new PV is created automatically instead.
 
-        ```yaml
-        kind: PersistentVolumeClaim
-        apiVersion: v1
-        metadata:
-         name: mypvc
-        spec:
-         accessModes:
-        - ReadWriteOnce
-      resources:
-        requests:
-          storage: "<storage_size>"
-      storageClassName: ""
-        ```
-        {: codeblock}
+    ```yaml
+    kind: PersistentVolumeClaim
+    apiVersion: v1
+    metadata:
+      name: mypvc
+    spec:
+      accessModes:
+      - ReadWriteOnce
+    resources:
+    requests:
+        storage: "<storage_size>"
+    storageClassName: ""
+    ```
+    {: codeblock}
 
 6. Create your PVC.
-        ```
-        oc apply -f mypvc.yaml
-        ```
-        {: pre}
+
+    ```sh
+    oc apply -f mypvc.yaml
+    ```
+    {: pre}
 
 7. Verify that your PVC is created and bound to the PV that you created earlier. This process can take a few minutes.
-        ```
-        oc describe pvc mypvc
-        ```
-        {: pre}
 
-        Example output:
+    ```sh
+    oc describe pvc mypvc
+    ```
+    {: pre}
 
-        ```
-        Name:          mypvc
-        Namespace:     default
-        StorageClass:  
-        Status:        Bound
-        Volume:        111111111
-        Labels:        <none>
-        Annotations:   kubectl.kubernetes.io/last-applied-configuration:
-{"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"name":"classic-block","namespace":"default"},"spec":{"acce...
-                    pv.kubernetes.io/bind-completed: yes
-                    pv.kubernetes.io/bound-by-controller: yes
-        Finalizers:    [kubernetes.io/pvc-protection]
-        Capacity:      20Gi
-        Access Modes:  RWO
-        VolumeMode:    Filesystem
-        Mounted By:    <none>
-        Events:        <none>
-        ```
-        {: screen}
+    Example output
+
+    ```sh
+    Name:          mypvc
+    Namespace:     default
+    StorageClass:  
+    Status:        Bound
+    ```
+    {: screen}
 
 You successfully created a PV and bound it to a PVC. Cluster users can now [mount the PVC](#block_app_volume_mount) to their deployments and start reading from and writing to the PV.
-
-<br />
-
 
 ## Using block storage in a stateful set
 {: #block_statefulset}
@@ -1110,6 +1020,7 @@ To add storage to a stateful set, you specify your storage configuration in the 
 
 You cannot deploy two stateful sets at the same time. If you try to create a stateful set before a different one is fully deployed, then the deployment of your stateful set might lead to unexpected results.
 {: important}
+
 
 **How can I create my stateful set in a specific zone?**
 
@@ -1132,43 +1043,48 @@ Use this option if you want to automatically create the PVC when you create the 
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Verify that all existing stateful sets in your cluster are fully deployed. If a stateful set is still being deployed, you cannot start creating your stateful set. You must wait until all stateful sets in your cluster are fully deployed to avoid unexpected results.
+
     1. List existing stateful sets in your cluster.
-        ```
+
+        ```sh
         oc get statefulset --all-namespaces
         ```
         {: pre}
 
-        Example output:
-        ```
+        Example output
+
+        ```sh
         NAME              DESIRED   CURRENT   AGE
         mystatefulset     3         3         6s
         ```
         {: screen}
 
-    2. View the **Pods Status** of each stateful set to ensure that the deployment of the stateful set is finished.  
-        ```
+    2. View the **Pods Status** of each stateful set to ensure that the deployment of the stateful set is finished. 
+
+        ```sh
         oc describe statefulset <statefulset_name>
         ```
         {: pre}
 
-        Example output:
-        ```
+        Example output
+
+        ```sh
         Name:               nginx
         Namespace:          default
         CreationTimestamp:  Fri, 05 Oct 2018 13:22:41 -0400
         Selector:           app=nginx,billingType=hourly,region=us-south,zone=dal10
         Labels:             app=nginx
-billingType=hourly
-region=us-south
-zone=dal10
-        Annotations:        oc.kubernetes.io/last-applied-configuration={"apiVersion":"apps/v1","kind":"StatefulSet","metadata":{"annotations":{},"name":"nginx","namespace":"default"},"spec":{"podManagementPolicy":"Par...
+        billingType=hourly
+        region=us-south
+        zone=dal10
+        Annotations: oc.kubernetes.io/last-applied-configuration={"apiVersion":"apps/v1","kind":"StatefulSet","metadata":{"annotations":{},"name":"nginx","namespace":"default"},"spec":{"podManagementPolicy":"Par..."
         Replicas:           3 desired | 3 total
         Pods Status:        0 Running / 3 Waiting / 0 Succeeded / 0 Failed
         Pod Template:
         Labels:  app=nginx
-billingType=hourly
-region=us-south
-zone=dal10
+        billingType=hourly
+        region=us-south
+        zone=dal10
         ...
         ```
         {: screen}
@@ -1188,56 +1104,56 @@ zone=dal10
          name: nginx
          labels:
         app: nginx
-     spec:
-      ports:
-      - port: 80
-        name: web
-      clusterIP: None
-      selector:
-        app: nginx
-     ---
-     apiVersion: apps/v1
-     kind: StatefulSet
-     metadata:
-      name: nginx
-     spec:
-      serviceName: "nginx"
-      replicas: 3
-      podManagementPolicy: Parallel
-      selector:
-        matchLabels:
+        spec:
+        ports:
+        - port: 80
+            name: web
+        clusterIP: None
+        selector:
+            app: nginx
+        ---
+        apiVersion: apps/v1
+        kind: StatefulSet
+        metadata:
+        name: nginx
+        spec:
+        serviceName: "nginx"
+        replicas: 3
+        podManagementPolicy: Parallel
+        selector:
+          matchLabels:
           app: nginx
           billingType: "hourly"
           region: "us-south"
           zone: "dal10"
-      template:
-        metadata:
-          labels:
-            app: nginx
-            billingType: "hourly"
-            region: "us-south"
-            zone: "dal10"
-        spec:
-          containers:
-          - name: nginx
-            image: k8s.gcr.io/nginx-slim:0.8
-            ports:
-            - containerPort: 80
-              name: web
-            volumeMounts:
-            - name: myvol
-              mountPath: /usr/share/nginx/html
-      volumeClaimTemplates:
-      - metadata:
-          name: myvol
-        spec:
-          accessModes:
-          - ReadWriteOnce
-          resources:
-            requests:
-              storage: 20Gi
-              iops: "300" #required only for performance storage
-         storageClassName: ibmc-block-retain-bronze
+        template:
+            metadata:
+            labels:
+                app: nginx
+                billingType: "hourly"
+                region: "us-south"
+                zone: "dal10"
+            spec:
+            containers:
+            - name: nginx
+                image: k8s.gcr.io/nginx-slim:0.8
+                ports:
+                - containerPort: 80
+                name: web
+                volumeMounts:
+                - name: myvol
+                mountPath: /usr/share/nginx/html
+        volumeClaimTemplates:
+        - metadata:
+            name: myvol
+            spec:
+            accessModes:
+            - ReadWriteOnce
+            resources:
+                requests:
+                storage: 20Gi
+                iops: "300" #required only for performance storage
+            storageClassName: ibmc-block-retain-bronze
         ```
         {: codeblock}
 
@@ -1336,44 +1252,31 @@ zone=dal10
         ```
         {: codeblock}
 
-        <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-        <caption>Understanding the stateful set YAML file components</caption>
-        <thead>
-        <th>Component</th>
-        <th>Description</th>
-    </thead>
-        <tbody>
-        <tr>
-        <td style="text-align:left"><code>name</code></td>
-        <td style="text-align:left">Enter a name for your stateful set. The name that you enter is used to create the name for your PVC in the format: <code>&lt;volume_name&gt;-&lt;statefulset_name&gt;-&lt;replica_number&gt;</code>. </td>
-        </tr>
-        <tr>
-        <td style="text-align:left"><code>serviceName</code></td>
-        <td style="text-align:left">Enter the name of the service that you want to use to expose your stateful set. </td>
-        </tr>
-        <tr>
-        <td style="text-align:left"><code>replicas</code></td>
-        <td style="text-align:left">Enter the number of replicas for your stateful set. </td>
-        </tr>
-        <tr>
-        <td style="text-align:left"><code>podManagementPolicy</code></td>
-        <td style="text-align:left">Enter the pod management policy that you want to use for your stateful set. Choose between the following options: <ul><li><strong><code>OrderedReady</code>: </strong>With this option, stateful set replicas are deployed one after another. For example, if you specified three replicas, then Kubernetes creates the PVC for your first replica, waits until the PVC is bound, deploys the stateful set replica, and mounts the PVC to the replica. After the deployment is finished, the second replica is deployed. For more information about this option, see <a href="https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#orderedready-pod-management"><code>OrderedReady</code> Pod Management</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</li><li><strong>Parallel: </strong>With this option, the deployment of all stateful set replicas is started at the same time. If your app supports parallel deployment of replicas, then use this option to save deployment time for your PVCs and stateful set replicas. </li></ul></td>
-        </tr>
-        <tr>
-        <td style="text-align:left"><code>matchLabels</code></td>
-        <td style="text-align:left">In the spec selector section, enter all labels that you want to include in your stateful set and your PVC. Labels that you include in the <code>volumeClaimTemplates</code> of your stateful set are not recognized by Kubernetes. Sample labels that you might want to include are: <ul><li><code><strong>region</strong></code> and <code><strong>zone</strong></code>: If you want all your stateful set replicas and PVCs to be created in one specific zone, add both labels. You can also specify the zone and region in the storage class that you use. If you do not specify a zone and region and you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones.</li><li><code><strong>billingType</strong></code>: Enter the billing type that you want to use for your PVCs. Choose between <code>hourly</code> or <code>monthly</code>. If you do not specify this label, all PVCs are created with an hourly billing type. </li></ul></td>
-        </tr>
-        <tr>
-        <td style="text-align:left"><code>labels</code></td>
-        <td style="text-align:left">In the spec template metadata section, enter the same labels that you added to the <code>spec.selector.matchLabels</code> section. </td>
-        </tr>
-        <tr>
-        <td style="text-align:left"><code>affinity</code></td>
-        <td style="text-align:left">In the spec template spec section, specify your anti-affinity rule to ensure that your stateful set pods are distributed across worker nodes and zones. The example shows an anti-affinity rule where the stateful set pod prefers not to be scheduled on a worker node where a pod runs that has the `app: nginx` label. The `topologykey: failure-domain.beta.kubernetes.io/zone` restricts this anti-affinity rule even more and prevents the pod to be scheduled on a worker node if the worker node is in the same zone as a pod that has the `app: nginx` label. By using this anti-affinity rule, you can achieve anti-affinity across worker nodes and zones. </td>
-        </tr>
-        <tr>
-        <td style="text-align:left"><code>name</code></td>
-        <td style="text-align:left">In the spec volume claim templates metadata section, enter a name for your volume. Use the same name that you defined in the <code>spec.containers.volumeMount.name</code> section. The name that you enter here is used to create the name for your PVC in the format: <code>&lt;volume_name&gt;-&lt;statefulset_name&gt;-&lt;replica_number&gt;</code>. </td>
+        `name`
+        :   Enter a name for your stateful set. The name that you enter is used to create the name for your PVC in the format: `<volume_name>-<statefulset_name>-<replica_number>`. 
+        
+        `serviceName`
+        :   Enter the name of the service that you want to use to expose your stateful set.
+        
+        `replicas`
+        :   Enter the number of replicas for your stateful set.
+        
+        `podManagementPolicy`
+        :   Enter the pod management policy that you want to use for your stateful set.
+            - **OrderedReady**: With this option, stateful set replicas are deployed one after another. For example, if you specified three replicas, then Kubernetes creates the PVC for your first replica, waits until the PVC is bound, deploys the stateful set replica, and mounts the PVC to the replica. After the deployment is finished, the second replica is deployed. For more information about this option, see [`OrderedReady` Pod Management](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#orderedready-pod-management){: external}
+            - **Parallel**: With this option, the deployment of all stateful set replicas is started at the same time. If your app supports parallel deployment of replicas, then use this option to save deployment time for your PVCs and stateful set replicas. 
+        
+        `matchLabels`
+        :   In the spec selector section, enter all labels that you want to include in your stateful set and your PVC. Labels that you include in the <code>volumeClaimTemplates</code> of your stateful set are not recognized by Kubernetes. Sample labels that you might want to include are: <ul><li><code><strong>region</strong></code> and <code><strong>zone</strong></code>: If you want all your stateful set replicas and PVCs to be created in one specific zone, add both labels. You can also specify the zone and region in the storage class that you use. If you do not specify a zone and region and you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones.</li><li><code><strong>billingType</strong></code>: Enter the billing type that you want to use for your PVCs. Choose between <code>hourly</code> or <code>monthly</code>. If you do not specify this label, all PVCs are created with an hourly billing type.
+        
+        `labels`
+        :   In the spec template metadata section, enter the same labels that you added to the `spec.selector.matchLabels` section. 
+        
+        `affinity`
+        :   In the spec template spec section, specify your anti-affinity rule to ensure that your stateful set pods are distributed across worker nodes and zones. The example shows an anti-affinity rule where the stateful set pod prefers not to be scheduled on a worker node where a pod runs that has the `app: nginx` label. The `topologykey: failure-domain.beta.kubernetes.io/zone` restricts this anti-affinity rule even more and prevents the pod to be scheduled on a worker node if the worker node is in the same zone as a pod that has the `app: nginx` label. By using this anti-affinity rule, you can achieve anti-affinity across worker nodes and zones. 
+        
+        `name`
+        :   In the spec volume claim templates metadata section, enter a name for your volume. Use the same name that you defined in the `spec.containers.volumeMount.name` section. The name that you enter here is used to create the name for your PVC in the format: `<volume_name>-<statefulset_name>-<replica_number></code>. </td>
         </tr>
         <tr>
         <td style="text-align:left"><code>storage</code></td>
@@ -1389,14 +1292,16 @@ zone=dal10
         </tr>
         </tbody></table>
 
-4. Create your stateful set.
-    ```
+3. Create your stateful set.
+
+    ```sh
     oc apply -f statefulset.yaml
     ```
     {: pre}
 
-5. Wait for your stateful set to be deployed.
-    ```
+4. Wait for your stateful set to be deployed.
+
+    ```sh
     oc describe statefulset <statefulset_name>
     ```
     {: pre}
@@ -1415,6 +1320,7 @@ When you [dynamically provision your PVCs when creating the stateful set](#block
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. If you want to pre-provision the PVC for your stateful set before you create the stateful set, follow steps 1-3 in [Adding block storage to apps](#add_block) to create a PVC for each stateful set replica. Make sure that you create your PVC with a name that follows the following format: `<volume_name>-<statefulset_name>-<replica_number>`.
+
     - **`<volume_name>`**: Use the name that you want to specify in the `spec.volumeClaimTemplates.metadata.name` section of your stateful set, such as `nginxvol`.
     - **`<statefulset_name>`**: Use the name that you want to specify in the `metadata.name` section of your stateful set, such as `nginx_statefulset`.
     - **`<replica_number>`**: Enter the number of your replica, starting with 0.
@@ -1432,20 +1338,24 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     {: note}
 
 3. Verify that the PVCs are used in your stateful set replica pods.
+
     1. List the pods in your cluster. Identify the pods that belong to your stateful set.
-        ```
+
+        ```sh
         oc get pods
         ```
         {: pre}
 
     2. Verify that your existing PVC is mounted to your stateful set replica. Review the **`ClaimName`** in the **`Volumes`** section of your CLI output.
-        ```
+
+        ```sh
         oc describe pod <pod_name>
         ```
         {: pre}
 
-        Example output:
-        ```
+        Example output
+
+        ```sh
         Name:           nginx-0
         Namespace:      default
         Node:           10.xxx.xx.xxx/10.xxx.xx.xxx
@@ -1459,7 +1369,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
         ```
         {: screen}
 
-<br />
+
 
 ## Changing the size and IOPS of your existing storage device
 {: #block_change_storage_configuration}
@@ -1472,20 +1382,23 @@ For questions about billing and to find the steps for how to use the {{site.data
 
 
 1. List the PVCs in your cluster and note the name of the associated PV from the **VOLUME** column.
-    ```
+
+    ```sh
     oc get pvc
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     NAME             STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS        AGE
     myvol            Bound     pvc-01ac123a-123b-12c3-abcd-0a1234cb12d3   20Gi       RWO            ibmc-block-bronze    147d
     ```
     {: screen}
 
 2. If you want to change the IOPS and the size for your block storage, edit the IOPS in the `metadata.labels.IOPS` section of your PV first. You can change to a lower or greater IOPS value. Make sure that you enter an IOPS that is supported for the storage type that you have. For example, if you have endurance block storage with 4 IOPS, you can change the IOPS to either 2 or 10. For more supported IOPS values, see [Deciding on your block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass).
-    ```
+
+    ```sh
     oc edit pv <pv_name>
     ```
     {: pre}
@@ -1494,19 +1407,22 @@ For questions about billing and to find the steps for how to use the {{site.data
     {: note}
 
 3. Edit the PVC and add the new size in the `spec.resources.requests.storage` section of your PVC. You can change to a greater size only up to the maximum capacity that is set by your storage class. You cannot downsize your existing storage. To see available sizes for your storage class, see [Deciding on the block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass).
-    ```
+
+    ```sh
     oc edit pvc <pvc_name>
     ```
     {: pre}
 
 4. Verify that the volume expansion is requested. The volume expansion is successfully requested when you see a `FileSystemResizePending` message in the **Conditions** section of your CLI output.
-    ```
+
+    ```sh
     oc describe pvc <pvc_name>
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     ...
     Conditions:
     Type                      Status  LastProbeTime                     LastTransitionTime                Reason  Message
@@ -1516,7 +1432,8 @@ For questions about billing and to find the steps for how to use the {{site.data
     {: screen}
 
 5. List all the pods that mount the PVC. If your PVC is mounted by a pod, the volume expansion is automatically processed. If your PVC is not mounted by a pod, you must mount the PVC to a pod so that the volume expansion can be processed.
-    ```
+
+    ```sh
     oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
     ```
     {: pre}
@@ -1526,17 +1443,19 @@ For questions about billing and to find the steps for how to use the {{site.data
 6. If your PVC is not mounted by a pod, [create a pod or deployment and mount the PVC](/docs/openshift?topic=openshift-block_storage#add_block). If your PVC is mounted by a pod, continue with the next step.
 
 7. Verify that the size and IOPS are changed in the **Labels** section of your CLI output. This process might take a few minutes to complete.
-    ```
+
+    ```sh
     oc describe pv <pv_name>
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     ...
     Labels:       CapacityGb=50
-Datacenter=dal10
-IOPS=500
+    Datacenter=dal10
+    IOPS=500
     ```
     {: screen}
 
@@ -1549,28 +1468,140 @@ Block storage is provisioned into the same location as the worker nodes in your 
 
 Review the following backup and restore options for your block storage:
 
-<dl>
-    <dt>Set up periodic snapshots</dt>
-    <dd><p>You can [set up periodic snapshots for your block storage](/docs/BlockStorage?topic=BlockStorage-snapshots#snapshots), which is a read-only image that captures the state of the instance at a point in time. To store the snapshot, you must request snapshot space on your block storage. Snapshots are stored on the existing storage instance within the same zone. You can restore data from a snapshot if a user accidentally removes important data from the volume.</br></br> <strong>To create a snapshot for your volume: </strong><ol><li>[Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).</li><li>Log in to the <code>ibmcloud sl</code> CLI. <pre class="pre"><code>ibmcloud sl init</code></pre></li><li>List existing PVs in your cluster. <pre class="pre"><code>oc get pv</code></pre></li><li>Get the details for the PV for which you want to create snapshot space and note the volume ID, the size, and the IOPS. <pre class="pre"><code>oc describe pv &lt;pv_name&gt;</code></pre> The size and IOPS are shown in the <strong>Labels</strong> section of your CLI output. To find the volume ID, review the <code>ibm.io/network-storage-id</code> annotation of your CLI output. </li><li>Create the snapshot size for your existing volume with the parameters that you retrieved in the previous step. <pre class="pre"><code>ibmcloud sl block snapshot-order &lt;volume_ID&gt; --size &lt;size&gt; --tier &lt;iops&gt;</code></pre></li><li>Wait for the snapshot size to create. <pre class="pre"><code>ibmcloud sl block volume-detail &lt;volume_ID&gt;</code></pre>The snapshot size is successfully provisioned when the <strong>Snapshot Size (GB)</strong> in your CLI output changes from 0 to the size that you ordered. </li><li>Create the snapshot for your volume and note the ID of the snapshot that is created for you. <pre class="pre"><code>ibmcloud sl block snapshot-create &lt;volume_ID&gt;</code></pre></li><li>Verify that the snapshot is created successfully. <pre class="pre"><code>ibmcloud sl block snapshot-list &lt;volume_ID&gt;</code></pre></li></ol></br><strong>To restore data from a snapshot to an existing volume: </strong><pre class="pre"><code>ibmcloud sl block snapshot-restore &lt;volume_ID&gt; &lt;snapshot_ID&gt;</code></pre></p></dd>
-    <dt>Replicate snapshots to another zone</dt>
-    <dd><p>To protect your data from a zone failure, you can [replicate snapshots](/docs/BlockStorage?topic=BlockStorage-replication#replication) to a block storage instance that is set up in another zone. Data can be replicated from the primary storage to the backup storage only. You cannot mount a replicated block storage instance to a cluster. When your primary storage fails, you can manually set your replicated backup storage to be the primary one. Then, you can mount it to your cluster. After your primary storage is restored, you can restore the data from the backup storage.</p></dd>
-    <dt>Duplicate storage</dt>
-    <dd><p>You can [duplicate your block storage instance](/docs/BlockStorage?topic=BlockStorage-duplicatevolume#duplicatevolume) in the same zone as the original storage instance. A duplicate has the same data as the original storage instance at the point in time that you create the duplicate. Unlike replicas, use the duplicate as an independent storage instance from the original. To duplicate, first set up snapshots for the volume.</p></dd>
-    <dt>Back up data to {{site.data.keyword.cos_full}}</dt>
-    <dd><p>You can use the [**ibm-backup-restore**](/docs/openshift?topic=openshift-utilities#backup-restore-pvc) Helm chart to spin up a backup and restore pod in your cluster. This pod contains a script to run a one-time or periodic backup for any persistent volume claim (PVC) in your cluster. Data is stored in your {{site.data.keyword.cos_full}} instance that you set up in a zone.</p><p class="note">Block storage is mounted with an RWO access mode. This access allows only one pod to be mounted to the block storage at a time. To back up your data, you must unmount the app pod from the storage, mount it to your backup pod, back up the data, and remount the storage to your app pod. </p>
-To make your data even more highly available and protect your app from a zone failure, set up a second {{site.data.keyword.cos_short}} instance and replicate data across zones. If you need to restore data from your {{site.data.keyword.cos_short}} instance, use the restore pod that is provided with the Helm chart.</dd>
-<dt>Copy data to and from pods and containers</dt>
-<dd><p>You can use the `oc cp` [command![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) to copy files and directories to and from pods or specific containers in your cluster.</p>
-<p>Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). If you do not specify a container with <code>-c</code>, the command uses to the first available container in the pod.</p>
-<p>You can use the command in various ways:</p>
-<ul>
-<li>Copy data from your local machine to a pod in your cluster: <pre class="pre"><code>oc cp <var>&lt;local_filepath&gt;/&lt;filename&gt;</var> <var>&lt;namespace&gt;/&lt;pod&gt;:&lt;pod_filepath&gt;</var></code></pre></li>
-<li>Copy data from a pod in your cluster to your local machine: <pre class="pre"><code>oc cp <var>&lt;namespace&gt;/&lt;pod&gt;:&lt;pod_filepath&gt;/&lt;filename&gt;</var> <var>&lt;local_filepath&gt;/&lt;filename&gt;</var></code></pre></li>
-<li>Copy data from your local machine to a specific container that runs in a pod in your cluster: <pre class="pre"><code>oc cp <var>&lt;local_filepath&gt;/&lt;filename&gt;</var> <var>&lt;namespace&gt;/&lt;pod&gt;:&lt;pod_filepath&gt;</var> -c <var>&lt;container&gt;</var></code></pre></li>
-</ul></dd>
-    </dl>
+### Setting up periodic snapshots
+{: #block-snaps}
 
-<br />
+You can [set up periodic snapshots for your block storage](/docs/BlockStorage?topic=BlockStorage-snapshots#snapshots), which is a read-only image that captures the state of the instance at a point in time.
+{: shortdesc}
+
+
+To store the snapshot, you must request snapshot space on your block storage. Snapshots are stored on the existing storage instance within the same zone. You can restore data from a snapshot if a user accidentally removes important data from the volume.</br></br> <strong>To create a snapshot for your volume, complete the following steps.
+
+1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+2. Log in to the `ibmcloud sl` CLI. 
+
+    ```sh
+    ibmcloud sl init
+    ```
+    {: pre}
+
+3. List existing PVs in your cluster.
+    
+    ```sh
+    oc get pv
+    ```
+    {: pre}
+
+4. Get the details for the PV for which you want to create snapshot space and note the volume ID, the size, and the IOPS. The size and IOPS are shown in the **Labels** section of your CLI output.
+    
+    ```sh
+    oc describe pv <pv_name>
+    ```
+    {: pre}
+
+5. To find the volume ID, review the `ibm.io/network-storage-id` annotation of your CLI output.
+
+6. Create the snapshot size for your existing volume with the parameters that you retrieved in the previous step.
+
+    ```sh
+    ibmcloud sl block snapshot-order <volume_ID> --size <size> --tier <iops></code>
+    ```
+    {: pre}
+    
+7. Wait for the snapshot size to create. The snapshot size is successfully provisioned when the **Snapshot Size (GB)** in your CLI output changes from 0 to the size that you ordered.
+
+    ```sh
+    ibmcloud sl block volume-detail <volume_ID>
+    ```
+    {: pre}
+
+8. Create the snapshot for your volume and note the ID of the snapshot that is created for you. 
+
+    ```sh
+    ibmcloud sl block snapshot-create <volume_ID>
+    ```
+    {: pre}
+    
+9. Verify that the snapshot is created successfully.
+
+    ```sh
+    ibmcloud sl block snapshot-list <volume_ID>
+    ```
+    {: pre}
+
+10. To restore data from a snapshot to an existing volume, run the following command.
+    ```sh
+    ibmcloud sl block snapshot-restore <volume_ID> <snapshot_ID>
+    ```
+    {: pre}
+
+### Replicating snapshots to another zone
+{: #block-replicate}
+
+To protect your data from a zone failure, you can [replicate snapshots](/docs/BlockStorage?topic=BlockStorage-replication#replication) to a block storage instance that is set up in another zone.
+{: shortdesc}
+
+Data can be replicated from the primary storage to the backup storage only. You cannot mount a replicated block storage instance to a cluster. When your primary storage fails, you can manually set your replicated backup storage to be the primary one. Then, you can mount it to your cluster. After your primary storage is restored, you can restore the data from the backup storage.
+
+
+### Duplicating storage
+{: #block-dupe}
+
+You can [duplicate your block storage instance](/docs/BlockStorage?topic=BlockStorage-duplicatevolume#duplicatevolume) in the same zone as the original storage instance.
+{: shortdesc}
+
+A duplicate has the same data as the original storage instance at the point in time that you create the duplicate. Unlike replicas, use the duplicate as an independent storage instance from the original. To duplicate, first set up snapshots for the volume.
+
+
+### Backing up data to {{site.data.keyword.cos_full}}
+{: #block-cos-backup}
+
+You can use the [**ibm-backup-restore**](/docs/openshift?topic=openshift-utilities#backup-restore-pvc) Helm chart to spin up a backup and restore pod in your cluster.
+{: shortdesc}
+
+This pod contains a script to run a one-time or periodic backup for any persistent volume claim (PVC) in your cluster. Data is stored in your {{site.data.keyword.cos_full}} instance that you set up in a zone.
+
+Block storage is mounted with an RWO access mode. This access allows only one pod to be mounted to the block storage at a time. To back up your data, you must unmount the app pod from the storage, mount it to your backup pod, back up the data, and remount the storage to your app pod.
+{: note}
+
+To make your data even more highly available and protect your app from a zone failure, set up a second {{site.data.keyword.cos_short}} instance and replicate data across zones. If you need to restore data from your {{site.data.keyword.cos_short}} instance, use the restore pod that is provided with the Helm chart.
+
+
+### Copying data to and from pods and containers
+{: #block-cp}
+
+You can use the `oc cp` [command](https://kubernetes.io/docs/reference/kubectl/overview/#cp){: external} to copy files and directories to and from pods or specific containers in your cluster.
+{: shortdesc}
+
+[Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). 
+
+When you run the `oc cp` command, if you do not specify a container with `-c`, the command uses the first available container in the pod.
+
+Copy data from your local machine to a pod in your cluster.
+
+```sh
+oc cp <local_filepath>/<filename> <namespace>/<pod>:<pod_filepath>
+```
+{: pre}
+
+
+Copy data from a pod in your cluster to your local machine.
+
+```sh
+oc cp <namespace>/<pod>:<pod_filepath>/<filename> <local_filepath>/<filename>
+```
+{: pre}
+
+
+Copy data from your local machine to a specific container that runs in a pod in your cluster.
+
+```sh
+oc cp <local_filepath>/<filename> <namespace>/<pod>:<pod_filepath> -c <container>
+```
+{: pre}
+
+
 
 ## Storage class reference
 {: #block_storageclass_reference}
@@ -1645,7 +1676,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 {: tab-title="Custom"}
 {: tab-group="Block storage class"}
 
-<br />
+
 
 ## Sample customized storage classes
 {: #block_custom_storageclass}
@@ -1737,17 +1768,17 @@ Create the storage class in the same region and zone as your cluster and worker 
     apiVersion: storage.k8s.io/v1
     kind: StorageClass
     metadata:
-        name: ibmc-block-silver-mycustom-storageclass
-    labels:
-      kubernetes.io/cluster-service: "true"
-  provisioner: ibm.io/ibmc-block
-  parameters:
-    zone: "dal12"
-    region: "us-south"
-    type: "Endurance"
-    iopsPerGB: "4"
-    sizeRange: "[20-12000]Gi"
-  reclaimPolicy: "Delete"
+      name: ibmc-block-silver-mycustom-storageclass
+      labels:
+        kubernetes.io/cluster-service: "true"
+    provisioner: ibm.io/ibmc-block
+    parameters:
+      zone: "dal12"
+      region: "us-south"
+      type: "Endurance"
+      iopsPerGB: "4"
+      sizeRange: "[20-12000]Gi"
+    reclaimPolicy: "Delete"
     ```
     {: codeblock}
 
@@ -1759,12 +1790,12 @@ Create the storage class in the same region and zone as your cluster and worker 
         name: ibmc-block-performance-storageclass
     labels:
       kubernetes.io/cluster-service: "true"
-  provisioner: ibm.io/ibmc-block
-  parameters:
-    zone: "dal12"
-    region: "us-south"
-    type: "Performance"
-    sizeIOPSRange: |-
+    provisioner: ibm.io/ibmc-block
+    parameters:
+      zone: "dal12"
+      region: "us-south"
+      type: "Performance"
+      sizeIOPSRange: |-
       "[20-39]Gi:[100-1000]"
       "[40-79]Gi:[100-2000]"
       "[80-99]Gi:[100-4000]"
@@ -1776,7 +1807,7 @@ Create the storage class in the same region and zone as your cluster and worker 
       "[4000-7999]Gi:[300-48000]"
       "[8000-9999]Gi:[500-48000]"
       "[10000-12000]Gi:[1000-48000]"
-  reclaimPolicy: "Delete"
+    reclaimPolicy: "Delete"
     ```
     {: codeblock}
 
@@ -1786,54 +1817,56 @@ Create the storage class in the same region and zone as your cluster and worker 
 The following examples create a storage class that provisions block storage with an `XFS` file system.
 {: shortdesc}
 
-- **Example for Endurance block storage:**
-    ```
-    apiVersion: storage.k8s.io/v1
-    kind: StorageClass
-    metadata:
-        name: ibmc-block-custom-xfs
-    labels:
-      addonmanager.kubernetes.io/mode: Reconcile
-  provisioner: ibm.io/ibmc-block
-  parameters:
-    type: "Endurance"
-    iopsPerGB: "4"
-    sizeRange: "[20-12000]Gi"
-    fsType: "xfs"
-  reclaimPolicy: "Delete"
-    ```
-    {: codeblock}
+Example for Endurance block storage.
 
-- **Example for Performance block storage:**
     ```yaml
     apiVersion: storage.k8s.io/v1
     kind: StorageClass
     metadata:
-        name: ibmc-block-custom-xfs
+      name: ibmc-block-custom-xfs
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
-  provisioner: ibm.io/ibmc-block
-  parameters:
-    classVersion: "2"
-    type: "Performance"
-    sizeIOPSRange: |-
-      [20-39]Gi:[100-1000]
-      [40-79]Gi:[100-2000]
-      [80-99]Gi:[100-4000]
-      [100-499]Gi:[100-6000]
-      [500-999]Gi:[100-10000]
-      [1000-1999]Gi:[100-20000]
-      [2000-2999]Gi:[200-40000]
-      [3000-3999]Gi:[200-48000]
-      [4000-7999]Gi:[300-48000]
-      [8000-9999]Gi:[500-48000]
-      [10000-12000]Gi:[1000-48000]
-    fsType: "xfs"
-  reclaimPolicy: "Delete"
+    provisioner: ibm.io/ibmc-block
+    parameters:
+      type: "Endurance"
+      iopsPerGB: "4"
+      sizeRange: "[20-12000]Gi"
+      fsType: "xfs"
+    reclaimPolicy: "Delete"
     ```
     {: codeblock}
 
-<br />
+
+Example for Performance block storage.
+
+    ```yaml
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      name: ibmc-block-custom-xfs
+      labels:
+        addonmanager.kubernetes.io/mode: Reconcile
+    provisioner: ibm.io/ibmc-block
+    parameters:
+      classVersion: "2"
+      type: "Performance"
+      sizeIOPSRange: |-
+        [20-39]Gi:[100-1000]
+        [40-79]Gi:[100-2000]
+        [80-99]Gi:[100-4000]
+        [100-499]Gi:[100-6000]
+        [500-999]Gi:[100-10000]
+        [1000-1999]Gi:[100-20000]
+        [2000-2999]Gi:[200-40000]
+        [3000-3999]Gi:[200-48000]
+        [4000-7999]Gi:[300-48000]
+        [8000-9999]Gi:[500-48000]
+        [10000-12000]Gi:[1000-48000]
+      fsType: "xfs"
+    reclaimPolicy: "Delete"
+    ```
+    {: codeblock}
+
 
 
 ## Removing persistent storage from a cluster
@@ -1973,15 +2006,16 @@ To clean up persistent data:
     oc get pv
     ```
     {: pre}
-8. List the physical storage instance that your PV pointed to and note the **`id`** of the physical storage instance. {: #sl_delete_storage}
+1. List the physical storage instance that your PV pointed to and note the **`id`** of the physical storage instance. {: #sl_delete_storage}
 
-    ```
+    ```sh
     ibmcloud sl block volume-list --columns id --columns notes | grep <pv_name>
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     12345678   {"plugin":"ibmcloud-block-storage-plugin-689df949d6-4n9qg","region":"us-south","cluster":"aa1a11a1a11b2b2bb22b22222c3c3333","type":"Endurance","ns":"default","pvc":"mypvc","pv":"pvc-d979977d-d79d-77d9-9d7d-d7d97ddd99d7","storageclass":"ibmc-block-silver","reclaim":"Delete"}
     ```
     {: screen}
@@ -1996,19 +2030,19 @@ To clean up persistent data:
     *  **`"pv":"pvc-d979977d-d79d-77d9-9d7d-d7d97ddd99d7"`**: The PV that is associated with the storage instance.
     *  **`"storageclass":"ibmc-file-gold"`**: The type of storage class: bronze, silver, gold, or custom.
 
-9. Remove the physical storage instance.
+1. Remove the physical storage instance.
 
-    ```
+    ```sh
     ibmcloud sl block volume-cancel <classic_block_id>
     ```
     {: pre}
 
-10. Verify that the physical storage instance is removed.
+1. Verify that the physical storage instance is removed.
 
     The deletion process might take up to 72 hours to complete.
     {: important}
 
-    ```
+    ```sh
     ibmcloud sl block volume-list
     ```
     {: pre}

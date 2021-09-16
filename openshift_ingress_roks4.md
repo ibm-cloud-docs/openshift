@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-16"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -115,11 +115,12 @@ Start by deploying your apps and creating Kubernetes services to expose them.
 
 1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods can be included in the Ingress load balancing.
 
-2.     For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
-        ```
-        oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
-        ```
-        {: pre}
+2. For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
+
+    ```sh
+    oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
+    ```
+    {: pre}
 
 ### Step 2: Select an app domain and TLS termination
 {: #ingress-roks4-public-2}
@@ -329,11 +330,12 @@ Start by deploying your apps and creating Kubernetes services to expose them.
 
 1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods can be included in the Ingress load balancing.
 
-2.     For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
-        ```
-        oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
-        ```
-        {: pre}
+2. For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
+
+    ```sh
+    oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
+    ```
+    {: pre}
 
 </br>
 
@@ -665,11 +667,12 @@ Start by deploying your apps and creating Kubernetes services to expose them.
 
 1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods can be included in the Ingress load balancing.
 
-2.     For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
-        ```
-        oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
-        ```
-        {: pre}
+2. For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
+
+    ```sh
+    oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
+    ```
+    {: pre}
 
 </br>
 
@@ -933,11 +936,12 @@ Start by deploying your apps and creating Kubernetes services to expose them.
 
 1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods can be included in the Ingress load balancing.
 
-2.     For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
-        ```
-        oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
-        ```
-        {: pre}
+2. For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
+
+    ```sh
+    oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
+    ```
+    {: pre}
 
 ### Step 2: Select an app domain and TLS termination
 {: #priv-se-priv-controller-2}

@@ -293,11 +293,7 @@ Red Hat OpenShift on IBM Cloud
             ts-worker/ts-worker-invalid-vlan.md
             ts-worker/ts-worker-pod-timeout.md
             ts-worker/ts-worker-ssh-fail.md
-
-        {: .topicgroup}
-        Cluster autoscaler
-            ts-autoscaler/ts-ca-debug.md
-            ts-autoscaler/ts-ca-pod-init.md
+        ts-autoscaler/ts-ca-debug.md
 
         {: .topicgroup}
         Cluster network

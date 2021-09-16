@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-16"
 
 keywords: openshift
 subcollection: openshift
@@ -132,6 +132,7 @@ subcollection: openshift
 * [September 2021](/docs/openshift?topic=openshift-rel-notes#release-sep-2021)
     * [16 September 2021](/docs/openshift?topic=openshift-rel-notes#16sep2021)
     * [15 September 2021](/docs/openshift?topic=openshift-rel-notes#15sep2021)
+    * [14 September 2021](/docs/openshift?topic=openshift-rel-notes#14sep2021)
     * [13 September 2021](/docs/openshift?topic=openshift-rel-notes#13sep2021)
     * [9 September 2021](/docs/openshift?topic=openshift-rel-notes#9sep2021)
     * [8 September 2021](/docs/openshift?topic=openshift-rel-notes#8sep2021)
@@ -1128,6 +1129,11 @@ subcollection: openshift
 * [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration)
 * [Changing the default NFS version](/docs/openshift?topic=openshift-file_storage#nfs_version)
 * [Backing up and restoring data](/docs/openshift?topic=openshift-file_storage#file_backup_restore)
+  * [Setting up periodic snapshots](/docs/openshift?topic=openshift-file_storage#file-snapshots)
+  * [Replicating snapshots to another zone](/docs/openshift?topic=openshift-file_storage#replicating-snapshots-to-another-zone)
+  * [Duplicating storage](/docs/openshift?topic=openshift-file_storage#file-dupe-storage)
+  * [Backing up data to {{site.data.keyword.cos_full}}](/docs/openshift?topic=openshift-file_storage#file-backup-helm)
+  * [Copying data to and from pods and containers](/docs/openshift?topic=openshift-file_storage#file-cp-data)
 * [Storage class reference](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference)
 * [Sample customized storage classes](/docs/openshift?topic=openshift-file_storage#file_custom_storageclass)
   * [Creating topology-aware storage](/docs/openshift?topic=openshift-file_storage#file-topology)
@@ -1153,6 +1159,11 @@ subcollection: openshift
   * [Static provisioning: Using existing PVCs with a stateful set](/docs/openshift?topic=openshift-block_storage#block_static_statefulset)
 * [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-block_storage#block_change_storage_configuration)
 * [Backing up and restoring data](/docs/openshift?topic=openshift-block_storage#block_backup_restore)
+  * [Setting up periodic snapshots](/docs/openshift?topic=openshift-block_storage#block-snaps)
+  * [Replicating snapshots to another zone](/docs/openshift?topic=openshift-block_storage#block-replicate)
+  * [Duplicating storage](/docs/openshift?topic=openshift-block_storage#block-dupe)
+  * [Backing up data to {{site.data.keyword.cos_full}}](/docs/openshift?topic=openshift-block_storage#block-cos-backup)
+  * [Copying data to and from pods and containers](/docs/openshift?topic=openshift-block_storage#block-cp)
 * [Storage class reference](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference)
 * [Sample customized storage classes](/docs/openshift?topic=openshift-block_storage#block_custom_storageclass)
   * [Creating topology-aware storage](/docs/openshift?topic=openshift-block_storage#topology_yaml)
@@ -1919,6 +1930,7 @@ subcollection: openshift
 
 [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog)
 * [Version 4.0](/docs/openshift?topic=openshift-vpc_bs_changelog#0400_is_block)
+  * [Changelog for version 4.0.0_769, released 16 September 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400769_is_block_relnote)
   * [Changelog for version 4.0, released 1 September 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400_is_block_relnote)
 * [Version 3.0.1](/docs/openshift?topic=openshift-vpc_bs_changelog#0301_is_block)
   * [Changelog for version 3.0.1, released 15 July 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#301_init)
@@ -2317,11 +2329,6 @@ subcollection: openshift
 * [Option 2: `kubectl exec`](/docs/openshift?topic=openshift-cs_ssh_worker#kubectl-exec)
 * [Option 3: Create a pod with root SSH access](/docs/openshift?topic=openshift-cs_ssh_worker#pod-ssh)
 
-
-## Cluster autoscaler
-{: #sitemap_cluster_autoscaler}
-
-
 [Debugging the cluster autoscaler](/docs/openshift?topic=openshift-debug_cluster_autoscaler)
 * [Step 1: Check the version](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-version)
 * [Step 2: Check the configuration](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-config)
@@ -2331,8 +2338,6 @@ subcollection: openshift
 * [Step 5: Restart the pod](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-pod-restart)
 * [Step 6: Disable and reenable](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-disable)
 * [Step 8: Check if the issue is resolved](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-more)
-
-[Why does the cluster autoscaler add-on fail with the pod stuck in `Init` state?](/docs/openshift?topic=openshift-ca_ts_secret)
 
 
 ## Cluster network

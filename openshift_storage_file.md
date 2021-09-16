@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-16"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -237,7 +237,7 @@ To decide on a storage configuration:
     If you choose a monthly billing type, when you remove the persistent storage, you still pay the monthly charge for it, even if you used it only for a short amount of time.
     {: note}
 
-<br />
+
 
 
 ## Adding {{site.data.keyword.filestorage_short}} to apps
@@ -486,7 +486,7 @@ To add {{site.data.keyword.filestorage_short}}:
         ```
         {: screen}
 
-<br />
+
 
 ## Using existing {{site.data.keyword.filestorage_short}} in your cluster
 {: #existing_file}
@@ -577,87 +577,75 @@ If you want to use existing storage that you provisioned earlier, but never used
     ```
     {: codeblock}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the YAML file components</caption>
-    <thead>
-        <th>Component</th>
-        <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>name</code></td>
-    <td>Enter the name of the PV object to create.</td>
-    </tr>
-    <tr>
-    <td><code>labels</code></td>
-    <td>Enter the region and the zone that you retrieved earlier. You must have at least one worker node in the same region and zone as your persistent storage to mount the storage in your cluster.
-    </tr>
-    <tr>
-    <td><code>storage</code></td>
-    <td>Enter the storage size of the existing NFS file share that you retrieved earlier. The storage size must be written in gigabytes, for example, 20Gi (20 GB) or 1000Gi (1 TB), and the size must match the size of the existing file share.</td>
-    </tr>
-    <tr>
-    <td><code>accessMode</code></td>
-    <td>Specify one of the following options: <ul><li><strong>ReadWriteMany: </strong>The PVC can be mounted by multiple pods. All pods can read from and write to the volume. </li><li><strong>ReadOnlyMany: </strong>The PVC can be mounted by multiple pods. All pods have read-only access. <li><strong>ReadWriteOnce: </strong>The PVC can be mounted by one pod only. This pod can read from and write to the volume. </li></ul></td>
-    </tr>
-    <tr>
-    <td><code>server</code></td>
-    <td>Enter the NFS file share server ID that you retrieved earlier.</td>
-    </tr>
-    <tr>
-    <td><code>path</code></td>
-    <td>Enter the path to the NFS file share that you retrieved earlier.</td>
-    </tr>
-    </tbody></table>
+    `name`  
+    :   Enter the name of the PV object to create.  
+    
+    `labels`  
+    :   Enter the region and the zone that you retrieved earlier. You must have at least one worker node in the same region and zone as your persistent storage to mount the storage in your cluster.  
+    
+    `storage`  
+    :   Enter the storage size of the existing NFS file share that you retrieved earlier. The storage size must be written in gigabytes, for example, 20Gi (20 GB) or 1000Gi (1 TB), and the size must match the size of the existing file share.  
+    
+    `accessMode`  
+    :   Specify one of the following options:  
+        - **ReadWriteMany**: The PVC can be mounted by multiple pods. All pods can read from and write to the volume.  
+        - **ReadOnlyMany**: The PVC can be mounted by multiple pods. All pods have read-only access.  
+        - **ReadWriteOnce**: The PVC can be mounted by one pod only. This pod can read from and write to the volume.  
+    
+    `server`  
+    :   Enter the NFS file share server ID that you retrieved earlier.  
+    
+    `path`  
+    :   Enter the path to the NFS file share that you retrieved earlier.  
 
-3. Create the PV in your cluster.
+2. Create the PV in your cluster.
 
-    ```
+    ```sh
     oc apply -f mypv.yaml
     ```
     {: pre}
 
-4. Verify that the PV is created.
+3. Verify that the PV is created.
 
-    ```
+    ```sh
     oc get pv
     ```
     {: pre}
 
-5. Create another configuration file to create your PVC. In order for the PVC to match the PV that you created earlier, you must choose the same value for `storage` and `accessMode`. The `storage-class` field must be an empty string. If any of these fields do not match the PV, then a new PV, and a new physical storage instance is [dynamically provisioned](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning).
+4. Create another configuration file to create your PVC. In order for the PVC to match the PV that you created earlier, you must choose the same value for `storage` and `accessMode`. The `storage-class` field must be an empty string. If any of these fields do not match the PV, then a new PV, and a new physical storage instance is [dynamically provisioned](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning).
 
     ```yaml
     kind: PersistentVolumeClaim
     apiVersion: v1
     metadata:
-     name: mypvc
+      name: mypvc
     spec:
-     accessModes:
+      accessModes:
        - ReadWriteMany
-     resources:
-       requests:
-         storage: "<size>"
-     storageClassName: ""
+      resources:
+        requests:
+          storage: "<size>"
+      storageClassName: ""
     ```
     {: codeblock}
 
-6. Create your PVC.
+5. Create your PVC.
 
-    ```
+    ```sh
     oc apply -f mypvc.yaml
     ```
     {: pre}
 
-7. Verify that your PVC is created and bound to the PV. This process can take a few minutes.
+6. Verify that your PVC is created and bound to the PV. This process can take a few minutes.
 
-    ```
+    ```sh
     oc describe pvc mypvc
     ```
     {: pre}
 
-    Example output:
+    Example output
 
-    ```
+    ```sh
     Name: mypvc
     Namespace: default
     StorageClass:    ""
@@ -678,7 +666,7 @@ If you want to use existing storage that you provisioned earlier, but never used
 
 You successfully created a PV and bound it to a PVC. Cluster users can now [mount the PVC](/docs/openshift?topic=openshift-file_storage#file_app_volume_mount) to their deployments and start reading from and writing to the PV object.
 
-<br />
+
 
 
 ## Using {{site.data.keyword.filestorage_short}} in a stateful set
@@ -714,55 +702,56 @@ Use this option if you want to automatically create the PVC when you create the 
 
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1. Verify that all existing stateful sets in your cluster are fully deployed. If a stateful set is still being deployed, you cannot start creating your stateful set. You must wait until all stateful sets in your cluster are fully deployed to avoid unexpected results.
-    1. List existing stateful sets in your cluster.
-        ```
-        oc get statefulset --all-namespaces
-        ```
-        {: pre}
+1. Verify that all existing stateful sets in your cluster are fully deployed. If a stateful set is still being deployed, you cannot start creating your stateful set. You must wait until all stateful sets in your cluster are fully deployed to avoid unexpected results. List existing stateful sets in your cluster.
 
-        Example output:
-        ```
-        NAME              DESIRED   CURRENT   AGE
-        mystatefulset     3         3         6s
-        ```
-        {: screen}
+    ```sh
+    oc get statefulset --all-namespaces
+    ```
+    {: pre}
 
-    2. View the **Pods Status** of each stateful set to ensure that the deployment of the stateful set is finished.  
-        ```
-        oc describe statefulset <statefulset_name>
-        ```
-        {: pre}
+    Example output
 
-        Example output:
-        ```
-        Name:               nginx
-        Namespace:          default
-        CreationTimestamp:  Fri, 05 Oct 2018 13:22:41 -0400
-        Selector:           app=nginx,billingType=hourly,region=us-south,zone=dal10
-        Labels:             app=nginx
-billingType=hourly
-region=us-south
-zone=dal10
-        Annotations:        oc.kubernetes.io/last-applied-configuration={"apiVersion":"apps/v1","kind":"StatefulSet","metadata":{"annotations":{},"name":"nginx","namespace":"default"},"spec":{"podManagementPolicy":"Par...
-        Replicas:           3 desired | 3 total
-        Pods Status:        0 Running / 3 Waiting / 0 Succeeded / 0 Failed
-        Pod Template:
-        Labels:  app=nginx
-billingType=hourly
-region=us-south
-zone=dal10
-        ...
-        ```
-        {: screen}
+    ```sh
+    NAME              DESIRED   CURRENT   AGE
+    mystatefulset     3         3         6s
+    ```
+    {: screen}
 
-        A stateful set is fully deployed when the number of replicas that you find in the **Replicas** section of your CLI output equals the number of **Running** pods in the **Pods Status** section. If a stateful set is not fully deployed yet, wait until the deployment is finished before you proceed.
+2. View the **Pods Status** of each stateful set to ensure that the deployment of the stateful set is finished. 
 
-2. Create a configuration file for your stateful set and the service that you use to expose the stateful set.
+    ```sh
+    oc describe statefulset <statefulset_name>
+    ```
+    {: pre}
 
-    - **Example stateful set that specifies a zone:**
+    Example output
 
-    The following example shows how to deploy NGINX as a stateful set with 3 replicas. For each replica, a 20 gigabyte {{site.data.keyword.filestorage_short}} device is provisioned based on the specifications in the `ibmc-file-retain-bronze` storage class. All storage devices are provisioned in the `dal10` zone. Because {{site.data.keyword.filestorage_short}} cannot be accessed from other zones, all replicas of the stateful set are also deployed onto worker nodes that are located in `dal10`.
+    ```sh
+    Name:               nginx
+    Namespace:          default
+    CreationTimestamp:  Fri, 05 Oct 2018 13:22:41 -0400
+    Selector:           app=nginx,billingType=hourly,region=us-south,zone=dal10
+    Labels:             app=nginx
+    billingType=hourly
+    region=us-south
+    zone=dal10
+    Annotations:        oc.kubernetes.io/last-applied-configuration={"apiVersion":"apps/v1","kind":"StatefulSet","metadata":{"annotations":{},"name":"nginx","namespace":"default"},"spec":{"podManagementPolicy":"Par..."
+    Replicas:           3 desired | 3 total
+    Pods Status:        0 Running / 3 Waiting / 0 Succeeded / 0 Failed
+    Pod Template:
+    Labels:  app=nginx
+    billingType=hourly
+    region=us-south
+    zone=dal10
+    ...
+    ```
+    {: screen}
+
+    A stateful set is fully deployed when the number of replicas that you find in the **Replicas** section of your CLI output equals the number of **Running** pods in the **Pods Status** section. If a stateful set is not fully deployed yet, wait until the deployment is finished before you proceed.
+
+3. Create a configuration file for your stateful set and the service that you use to expose the stateful set.
+
+    - **Example stateful set that specifies a zone:** The following example shows how to deploy NGINX as a stateful set with 3 replicas. For each replica, a 20 gigabyte {{site.data.keyword.filestorage_short}} device is provisioned based on the specifications in the `ibmc-file-retain-bronze` storage class. All storage devices are provisioned in the `dal10` zone. Because {{site.data.keyword.filestorage_short}} cannot be accessed from other zones, all replicas of the stateful set are also deployed onto worker nodes that are located in `dal10`.
 
     ```yaml
     apiVersion: v1
@@ -824,9 +813,7 @@ zone=dal10
     ```
     {: codeblock}
 
-    - **Example stateful set with anti-affinity rule and delayed {{site.data.keyword.filestorage_short}} creation:**
-
-    The following example shows how to deploy NGINX as a stateful set with 3 replicas. The stateful set does not specify the region and zone where the {{site.data.keyword.filestorage_short}} is created. Instead, the stateful set uses an anti-affinity rule to ensure that the pods are spread across worker nodes and zones. Worker node anti-affinity is achieved by defining the `app: nginx` label. This label instructs the Kubernetes scheduler to not schedule a pod on a worker node if a pod with the same label already runs on this worker node. The `topologykey: failure-domain.beta.kubernetes.io/zone` label restricts this anti-affinity rule even more and prevents the pod to be scheduled on a worker node that is located in the same zone as a worker node that already runs a pod with the `app: nginx` label. For each stateful set pod, two PVCs are created as defined in the `volumeClaimTemplates` section, but the creation of the {{site.data.keyword.filestorage_short}} instances is delayed until a stateful set pod that uses the storage is scheduled. This setup is referred to as [topology-aware volume scheduling](https://kubernetes.io/blog/2018/10/11/topology-aware-volume-provisioning-in-kubernetes/).
+    - **Example stateful set with anti-affinity rule and delayed {{site.data.keyword.filestorage_short}} creation:** The following example shows how to deploy NGINX as a stateful set with 3 replicas. The stateful set does not specify the region and zone where the {{site.data.keyword.filestorage_short}} is created. Instead, the stateful set uses an anti-affinity rule to ensure that the pods are spread across worker nodes and zones. Worker node anti-affinity is achieved by defining the `app: nginx` label. This label instructs the Kubernetes scheduler to not schedule a pod on a worker node if a pod with the same label already runs on this worker node. The `topologykey: failure-domain.beta.kubernetes.io/zone` label restricts this anti-affinity rule even more and prevents the pod to be scheduled on a worker node that is located in the same zone as a worker node that already runs a pod with the `app: nginx` label. For each stateful set pod, two PVCs are created as defined in the `volumeClaimTemplates` section, but the creation of the {{site.data.keyword.filestorage_short}} instances is delayed until a stateful set pod that uses the storage is scheduled. This setup is referred to as [topology-aware volume scheduling](https://kubernetes.io/blog/2018/10/11/topology-aware-volume-provisioning-in-kubernetes/).
 
     ```yaml
     apiVersion: storage.k8s.io/v1
@@ -972,16 +959,19 @@ zone=dal10
     </tbody></table>
 
 4. Create your stateful set.
-    ```
+
+    ```sh
     oc apply -f statefulset.yaml
     ```
     {: pre}
 
 5. Wait for your stateful set to be deployed.
-    ```
+
+    ```sh
     oc describe statefulset <statefulset_name>
     ```
     {: pre}
+
 
     To see the current status of your PVCs, run `oc get pvc`. The name of your PVC is formatted as `<volume_name>-<statefulset_name>-<replica_number>`.
     {: tip}
@@ -1014,35 +1004,37 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     If your PVCs are in different zones, do not include a region or zone label in your stateful set.
     {: note}
 
-3. Verify that the PVCs are used in your stateful set replica pods.
-    1. List the pods in your cluster. Identify the pods that belong to your stateful set.
-        ```
-        oc get pods
-        ```
-        {: pre}
+3. Verify that the PVCs are used in your stateful set replica pods by listing the pods in your cluster and identifying the pods that belong to your stateful set.
 
-    2. Verify that your existing PVC is mounted to your stateful set replica. Review the **`ClaimName`** in the **`Volumes`** section of your CLI output.
-        ```
-        oc describe pod <pod_name>
-        ```
-        {: pre}
+    ```sh
+    oc get pods
+    ```
+    {: pre}
 
-        Example output:
-        ```
-        Name:           nginx-0
-        Namespace:      default
-        Node:           10.xxx.xx.xxx/10.xxx.xx.xxx
-        Start Time:     Fri, 05 Oct 2018 13:24:59 -0400
-        ...
-        Volumes:
-        myvol:
-          Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
-          ClaimName:  myvol-nginx-0
-        ...
-        ```
-        {: screen}
+2. Verify that your existing PVC is mounted to your stateful set replica. Review the **`ClaimName`** in the **`Volumes`** section of your CLI output.
 
-<br />
+    ```sh
+    oc describe pod <pod_name>
+    ```
+    {: pre}
+
+    Example output
+
+    ```sh
+    Name:           nginx-0
+    Namespace:      default
+    Node:           10.xxx.xx.xxx/10.xxx.xx.xxx
+    Start Time:     Fri, 05 Oct 2018 13:24:59 -0400
+    ...
+    Volumes:
+    myvol:
+        Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
+        ClaimName:  myvol-nginx-0
+    ...
+    ```
+    {: screen}
+
+
 
 ## Changing the size and IOPS of your existing storage device
 {: #file_change_storage_configuration}
@@ -1054,26 +1046,30 @@ For questions about billing and to find the steps for how to use the {{site.data
 {: tip}
 
 1. List the PVCs in your cluster and note the name of the associated PV from the **VOLUME** column.
-    ```
+
+    ```sh
     oc get pvc
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     NAME             STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS        AGE
     myvol            Bound     pvc-01ac123a-123b-12c3-abcd-0a1234cb12d3   20Gi       RWX            ibmc-file-bronze    147d
     ```
     {: screen}
 
 2. Retrieve the **`StorageType`**, **`volumeId`**, and the **`server`** of the physical {{site.data.keyword.filestorage_short}} that is associated with your PVC by listing the details of the PV that your PVC is bound to. Replace `<pv_name>` with the name of the PV that you retrieved in the previous step. The storage type, volume ID, and the server name are shown in the **`Labels`** section of your CLI output.
-    ```
+
+    ```sh
     oc describe pv <pv_name>
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     Name:            pvc-4b62c704-5f77-11e8-8a75-b229c11ba64a
     Labels:          CapacityGb=20
                     Datacenter=dal10
@@ -1092,46 +1088,35 @@ For questions about billing and to find the steps for how to use the {{site.data
 
 3. Modify the size or IOPS of your volume in your IBM Cloud infrastructure account.
 
-    Example for performance storage:
-    ```
+    Example for performance storage.
+
+    ```sh
     ibmcloud sl file volume-modify <volume_ID> --new-size <size> --new-iops <iops>
     ```
     {: pre}
 
-    Example for endurance storage:
-    ```
+    Example for endurance storage.
+
+    ```sh
     ibmcloud sl file volume-modify <volume_ID> --new-size <size> --new-tier <iops>
     ```
     {: pre}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the command components</caption>
-    <thead>
-        <th>Component</th>
-        <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>&lt;volume_ID&gt;</code></td>
-    <td>Enter the ID of the volume that you retrieved earlier.</td>
-    </tr>
-    <tr>
-    <td><code>&lt;new-size&gt;</code></td>
-    <td>Enter the new size in gigabytes (Gi) for your volume. For valid sizes, see <a href="#file_predefined_storageclass">Deciding on the {{site.data.keyword.filestorage_short}} configuration</a>. The size that you enter must be greater than or equal to the current size of your volume. If you do not specify a new size, the current size of the volume is used. </td>
-    </tr>
-    <tr>
-    <td><code>&lt;new-iops&gt;</code></td>
-    <td>For performance storage only. Enter the new number of IOPS that you want. For valid IOPS, see <a href="#file_predefined_storageclass">Deciding on the {{site.data.keyword.filestorage_short}} configuration</a>. If you do not specify the IOPS, the current IOPS is used. <p class="note">If the original IOPS/GB ratio for the volume is less than 0.3, the new IOPS/GB ratio must be less than 0.3. If the original IOPS/GB ratio for the volume is greater than or equal to 0.3, the new IOPS/GB ratio for the volume must be greater than or equal to 0.3.</p> </td>
-    </tr>
-    <tr>
-    <td><code>&lt;new-tier&gt;</code></td>
-    <td>For endurance storage only. Enter the new number of IOPS per GB that you want. For valid IOPS, see <a href="#file_predefined_storageclass">Deciding on the {{site.data.keyword.filestorage_short}} configuration</a>. If you do not specify the IOPS, the current IOPS is used. <p class="note">If the original IOPS/GB ratio for the volume is less than 0.25, the new IOPS/GB ratio must be less than 0.25. If the original IOPS/GB ratio for the volume is greater than or equal to 0.25, the new IOPS/GB ratio for the volume must be greater than or equal to 0.25.</p> </td>
-    </tr>
-    </tbody>
-    </table>
+    `volume_ID`  
+    :   Enter the ID of the volume that you retrieved earlier.  
+    
+    `new-size`  
+    :   Enter the new size in gigabytes (Gi) for your volume. For valid sizes, see [Deciding on the {{site.data.keyword.filestorage_short}} configuration](#file_predefined_storageclass). The size that you enter must be greater than or equal to the current size of your volume. If you do not specify a new size, the current size of the volume is used.  
+    
+    `new-iops`  
+    :   For performance storage only. Enter the new number of IOPS that you want. For valid IOPS, see [Deciding on the {{site.data.keyword.filestorage_short}} configuration](#file_predefined_storageclass). If you do not specify the IOPS, the current IOPS is used. If the original IOPS/GB ratio for the volume is less than 0.3, the new IOPS/GB ratio must be less than 0.3. If the original IOPS/GB ratio for the volume is greater than or equal to 0.3, the new IOPS/GB ratio for the volume must be greater than or equal to 0.3.  
+    
+    `new-tier`  
+    :   For endurance storage only. Enter the new number of IOPS per GB that you want. For valid IOPS, see [Deciding on the {{site.data.keyword.filestorage_short}} configuration](#file_predefined_storageclass). If you do not specify the IOPS, the current IOPS is used. If the original IOPS/GB ratio for the volume is less than 0.25, the new IOPS/GB ratio must be less than 0.25. If the original IOPS/GB ratio for the volume is greater than or equal to 0.25, the new IOPS/GB ratio for the volume must be greater than or equal to 0.25.  
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     Order 31020713 was placed successfully!.
     > Storage as a Service
 
@@ -1145,38 +1130,42 @@ For questions about billing and to find the steps for how to use the {{site.data
     ```
     {: screen}
 
-4. If you changed the size of your volume and you use the volume in a pod, log in to your pod to verify the new size.
-    1. List all the pods that use PVC.
-        ```
-        oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
-        ```
-        {: pre}
+4. If you changed the size of your volume and you use the volume in a pod, log in to your pod to verify the new size. List all the pods that use PVC. Pods are returned in the format: `<pod_name>: <pvc_name>`.
 
-        Pods are returned in the format: `<pod_name>: <pvc_name>`.
-    2. Log in to your pod.
-        ```
-        oc exec -it <pod_name> bash
-        ```
-        {: pre}
+    ```sh
+    oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
+    ```
+    {: pre}
 
-    3. Show the disk usage statistics and find the server path for your volume that you retrieved earlier.
-        ```
-        df -h
-        ```
-        {: pre}
+        
+5. Log in to your pod.
 
-        Example output:
-        ```
-        Filesystem                                                      Size  Used Avail Use% Mounted on
-        overlay                                                          99G  4.8G   89G   6% /
-        tmpfs                                                            64M     0   64M   0% /dev
-        tmpfs                                                           7.9G     0  7.9G   0% /sys/fs/cgroup
-        fsf-dal1001g-fz.adn.networklayer.com:/IBM01SEV1234567_6/data01   40G     0   40G   0% /myvol
-        ```
-        {: screen}
+    ```sh
+    oc exec -it <pod_name> bash
+    ```
+    {: pre}
 
-    Although the size and IOPS of your physical storage changed, these values are not reflected in your PV or PVC. If you describe your PV or PVC, the old size and IOPS continue to display. You have the option to manually update the size and IOPS in your PV by using the `oc patch pv` command. However, this command cannot be used to change the size or IOPS in the PVC. To prevent having different sizes and IOPS in your PVC and PV, leave both your PVC and PV as-is.
-    {: important}
+6. Show the disk usage statistics and find the server path for your volume that you retrieved earlier.
+
+    ```sh
+    df -h
+    ```
+    {: pre}
+
+    Example output
+
+    ```sh
+    Filesystem                                                      Size  Used Avail Use% Mounted on
+    overlay                                                          99G  4.8G   89G   6% /
+    tmpfs                                                            64M     0   64M   0% /dev
+    tmpfs                                                           7.9G     0  7.9G   0% /sys/fs/cgroup
+    fsf-dal1001g-fz.adn.networklayer.com:/IBM01SEV1234567_6/data01   40G     0   40G   0% /myvol
+    ```
+    {: screen}
+
+
+Although the size and IOPS of your physical storage changed, these values are not reflected in your PV or PVC. If you describe your PV or PVC, the old size and IOPS continue to display. You have the option to manually update the size and IOPS in your PV by using the `oc patch pv` command. However, this command cannot be used to change the size or IOPS in the PVC. To prevent having different sizes and IOPS in your PVC and PV, leave both your PVC and PV as-is.
+{: important}
 
 ## Changing the default NFS version
 {: #nfs_version}
@@ -1190,15 +1179,19 @@ To apply the latest security updates and for a better performance, use the defau
 {: important}
 
 **To create a customized storage class with a specific NFS version:**
+
 1. Create a [customized storage class](#nfs_version_class) with the NFS version that you want to provision.
+
 2. Create the storage class in your cluster.
-    ```
+
+    ```sh
     oc apply -f nfsversion_storageclass.yaml
     ```
     {: pre}
 
 3. Verify that the customized storage class was created.
-    ```
+
+    ```sh
     oc get storageclasses
     ```
     {: pre}
@@ -1208,63 +1201,71 @@ To apply the latest security updates and for a better performance, use the defau
 **To change your existing PV to use a different NFS version:**
 
 1. Get the PV of the {{site.data.keyword.filestorage_short}} where you want to change the NFS version and note the name of the PV.
-    ```
+
+    ```sh
     oc get pv
     ```
     {: pre}
 
 2. Add an annotation to your PV. Replace `<version_number>` with the NFS version that you want to use. For example, to change to NFS version 3.0, enter **3**.  
-    ```
+
+    ```sh
     oc patch pv <pv_name> -p '{"metadata": {"annotations":{"volume.beta.kubernetes.io/mount-options":"vers=<version_number>"}}}'
     ```
     {: pre}
 
 3. Delete the pod that uses the {{site.data.keyword.filestorage_short}} and re-create the pod.
+
     1. Save the pod YAML to your local machine.
-        ```
+
+        ```sh
         kubect get pod <pod_name> -o yaml > <filepath/pod.yaml>
         ```
         {: pre}
 
     2. Delete the pod.
-        ```
+
+        ```sh
         oc deleted pod <pod_name>
         ```
         {: pre}
 
     3. Re-create the pod.
-        ```
+
+        ```sh
         oc apply -f pod.yaml
         ```
         {: pre}
 
-4. Wait for the pod to deploy.
-    ```
+4. Wait for the pod to deploy. The pod is fully deployed when the status changes to `Running`.
+
+    ```sh
     oc get pods
     ```
     {: pre}
 
-    The pod is fully deployed when the status changes to `Running`.
-
 5. Log in to your pod.
-    ```
+
+    ```sh
     oc exec -it <pod_name> sh
     ```
     {: pre}
 
 6. Verify that the {{site.data.keyword.filestorage_short}} was mounted with the NFS version that you specified earlier.
-    ```
+
+    ```sh
     mount | grep "nfs" | awk -F" |," '{ print $5, $8 }'
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     nfs vers=3.0
     ```
     {: screen}
 
-<br />
+
 
 
 
@@ -1274,30 +1275,131 @@ To apply the latest security updates and for a better performance, use the defau
 {{site.data.keyword.filestorage_short}} is provisioned into the same location as the worker nodes in your cluster. The storage is hosted on clustered servers by IBM to provide availability in case a server goes down. However, {{site.data.keyword.filestorage_short}} is not backed up automatically and might be inaccessible if the entire location fails. To protect your data from being lost or damaged, you can set up periodic backups that you can use to restore your data when needed.
 {: shortdesc}
 
-Review the following backup and restore options for your {{site.data.keyword.filestorage_short}}:
+Review the following backup and restore options for your {{site.data.keyword.filestorage_short}}.
 
-<dl>
-    <dt>Set up periodic snapshots</dt>
-    <dd><p>You can [set up periodic snapshots for your {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-snapshots), which is a read-only image that captures the state of the instance at a point in time. To store the snapshot, you must request snapshot space on your {{site.data.keyword.filestorage_short}}. Snapshots are stored on the existing storage instance within the same zone. You can restore data from a snapshot if a user accidentally removes important data from the volume.</br> <strong>To create a snapshot for your volume: </strong><ol><li>[Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).</li><li>Log in to the <code>ibmcloud sl</code> CLI. <pre class="pre"><code>ibmcloud sl init</code></pre></li><li>List existing PVs in your cluster. <pre class="pre"><code>oc get pv</code></pre></li><li>Get the details for the PV for which you want to create snapshot space and note the volume ID, the size and the IOPS. <pre class="pre"><code>oc describe pv &lt;pv_name&gt;</code></pre> The volume ID, the size and the IOPS can be found in the <strong>Labels</strong> section of your CLI output. </li><li>Create the snapshot size for your existing volume with the parameters that you retrieved in the previous step. <pre class="pre"><code>ibmcloud sl file snapshot-order &lt;volume_ID&gt; --size &lt;size&gt; --tier &lt;iops&gt;</code></pre></li><li>Wait for the snapshot size to create. <pre class="pre"><code>ibmcloud sl file volume-detail &lt;volume_ID&gt;</code></pre>The snapshot size is successfully provisioned when the <strong>Snapshot Size (GB)</strong> in your CLI output changes from 0 to the size that you ordered. </li><li>Create the snapshot for your volume and note the ID of the snapshot that is created for you. <pre class="pre"><code>ibmcloud sl file snapshot-create &lt;volume_ID&gt;</code></pre></li><li>Verify that the snapshot is created successfully. <pre class="pre"><code>ibmcloud sl file snapshot-list &lt;volume_ID&gt;</code></pre></li></ol></br><strong>To restore data from a snapshot to an existing volume: </strong><pre class="pre"><code>ibmcloud sl file snapshot-restore &lt;volume_ID&gt; &lt;snapshot_ID&gt;</code></pre></p></dd>
-    <dt>Replicate snapshots to another zone</dt>
-    <dd><p>To protect your data from a zone failure, you can [replicate snapshots](/docs/FileStorage?topic=FileStorage-replication#replication) to a {{site.data.keyword.filestorage_short}} instance that is set up in another zone. Data can be replicated from the primary storage to the backup storage only. You cannot mount a replicated {{site.data.keyword.filestorage_short}} instance to a cluster. When your primary storage fails, you can manually set your replicated backup storage to be the primary one. Then, you can mount it to your cluster. After your primary storage is restored, you can restore the data from the backup storage.</p></dd>
-    <dt>Duplicate storage</dt>
-    <dd><p>You can [duplicate your {{site.data.keyword.filestorage_short}} instance](/docs/FileStorage?topic=FileStorage-duplicatevolume#duplicatevolume) in the same zone as the original storage instance. A duplicate has the same data as the original storage instance at the point in time that you create the duplicate. Unlike replicas, use the duplicate as an independent storage instance from the original. To duplicate, first [set up snapshots for the volume](/docs/FileStorage?topic=FileStorage-snapshots).</p></dd>
-    <dt>Back up data to {{site.data.keyword.cos_full}}</dt>
-    <dd><p>You can use the [<code>ibm-backup-restore</code> Helm chart](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore) to spin up a backup and restore pod in your cluster. This pod contains a script to run a one-time or periodic backup for any persistent volume claim (PVC) in your cluster. Data is stored in your {{site.data.keyword.cos_full}} instance that you set up in a zone.</p>
-    <p>To make your data even more highly available and protect your app from a zone failure, set up a second {{site.data.keyword.cos_full}} instance and replicate data across zones. If you need to restore data from your {{site.data.keyword.cos_full}} instance, use the restore script that is provided with the Helm chart.</p></dd>
-<dt>Copy data to and from pods and containers</dt>
-<dd><p>You can use the `oc cp` [command![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) to copy files and directories to and from pods or specific containers in your cluster.</p>
-<p>Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). If you do not specify a container with <code>-c</code>, the command uses the first available container in the pod.</p>
-<p>You can use the command in various ways:</p>
-<ul>
-<li>Copy data from your local machine to a pod in your cluster: <pre class="pre"><code>oc cp <var>&lt;local_filepath&gt;/&lt;filename&gt;</var> <var>&lt;namespace&gt;/&lt;pod&gt;:&lt;pod_filepath&gt;</var></code></pre></li>
-<li>Copy data from a pod in your cluster to your local machine: <pre class="pre"><code>oc cp <var>&lt;namespace&gt;/&lt;pod&gt;:&lt;pod_filepath&gt;/&lt;filename&gt;</var> <var>&lt;local_filepath&gt;/&lt;filename&gt;</var></code></pre></li>
-<li>Copy data from your local machine to a specific container that runs in a pod in your cluster: <pre class="pre"><code>oc cp <var>&lt;local_filepath&gt;/&lt;filename&gt;</var> <var>&lt;namespace&gt;/&lt;pod&gt;:&lt;pod_filepath&gt;</var> -c <var>&lt;container></var></code></pre></li>
-</ul></dd>
-    </dl>
+### Setting up periodic snapshots
+{: #file-snapshots}
 
-<br />
+You can [set up periodic snapshots for your {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-snapshots), which is a read-only image that captures the state of the instance at a point in time. To store the snapshot, you must request snapshot space on your {{site.data.keyword.filestorage_short}}. Snapshots are stored on the existing storage instance within the same zone. You can restore data from a snapshot if a user accidentally removes important data from the volume.
+{: shortdesc}
+
+Complete the following steps to create a snapshot for your volume.
+
+1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+2. Log in to the `ibmcloud sl</code> CLI`. 
+
+    ```sh
+    ibmcloud sl init
+    ```
+    {: pre}
+    
+3. List existing PVs in your cluster. 
+
+    ```sh
+    oc get pv
+    ```
+    {: pre}
+
+4. Get the details for the PV for which you want to create snapshot space and note the volume ID, the size and the IOPS. The volume ID, the size and the IOPS can be found in the **Labels** section of your CLI output.
+
+    ```sh
+    oc describe pv <pv_name>
+    ```
+    {: pre}  
+    
+5. Create the snapshot size for your existing volume with the parameters that you retrieved in the previous step. 
+
+    ```sh
+    ibmcloud sl file snapshot-order <volume_ID> --size <size> --tier <iops>
+    ```
+    {: pre}
+    
+6. Wait for the snapshot size to create. The snapshot size is successfully provisioned when the **Snapshot Size (GB)**in your CLI output changes from 0 to the size that you ordered.
+
+    ```sh
+    ibmcloud sl file volume-detail &lt;volume_ID>
+    ```
+    {: pre}
+
+7. Create the snapshot for your volume and note the ID of the snapshot that is created for you. 
+
+    ```sh
+    ibmcloud sl file snapshot-create <volume_ID>
+    ```
+    {: pre}
+    
+8. Verify that the snapshot is created successfully. 
+
+    ```sh
+    ibmcloud sl file snapshot-list <volume_ID>
+    ```
+    {: pre}
+
+9. To restore data from a snapshot to an existing volume, run the following command.
+    ```sh
+    ibmcloud sl file snapshot-restore <volume_ID> <snapshot_ID>
+    ```
+    {: pre}
+
+
+### Replicating snapshots to another zone
+To protect your data from a zone failure, you can [replicate snapshots](/docs/FileStorage?topic=FileStorage-replication#replication) to a {{site.data.keyword.filestorage_short}} instance that is set up in another zone. 
+{: shortdesc}
+
+Data can be replicated from the primary storage to the backup storage only. You cannot mount a replicated {{site.data.keyword.filestorage_short}} instance to a cluster. When your primary storage fails, you can manually set your replicated backup storage to be the primary one. Then, you can mount it to your cluster. After your primary storage is restored, you can restore the data from the backup storage.
+
+### Duplicating storage
+{: #file-dupe-storage}
+
+You can [duplicate your {{site.data.keyword.filestorage_short}} instance](/docs/FileStorage?topic=FileStorage-duplicatevolume#duplicatevolume) in the same zone as the original storage instance.
+{: shortdesc}
+
+A duplicate has the same data as the original storage instance at the point in time that you create the duplicate. Unlike replicas, use the duplicate as an independent storage instance from the original. To duplicate, first [set up snapshots for the volume](/docs/FileStorage?topic=FileStorage-snapshots).
+
+
+### Backing up data to {{site.data.keyword.cos_full}}
+{: #file-backup-helm}
+
+You can use the [<code>ibm-backup-restore</code> Helm chart](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore) to spin up a backup and restore pod in your cluster.
+{: shortdesc}
+
+This pod contains a script to run a one-time or periodic backup for any persistent volume claim (PVC) in your cluster. Data is stored in your {{site.data.keyword.cos_full}} instance that you set up in a zone.
+
+To make your data even more highly available and protect your app from a zone failure, set up a second {{site.data.keyword.cos_full}} instance and replicate data across zones. If you need to restore data from your {{site.data.keyword.cos_full}} instance, use the restore script that is provided with the Helm chart.
+
+### Copying data to and from pods and containers
+{: #file-cp-data}
+
+You can use the `oc cp` [command](https://kubernetes.io/docs/reference/kubectl/overview/#cp){: external} to copy files and directories to and from pods or specific containers in your cluster.
+{: shortdesc}
+
+Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). If you do not specify a container with `-c`, the command uses the first available container in the pod.
+
+Copy data from your local machine to a pod in your cluster.
+
+```sh
+oc cp <local_filepath>/<filename> <namespace>/<pod>:<pod_filepath>
+```
+{: pre}
+
+
+Copy data from a pod in your cluster to your local machine.
+
+```sh
+oc cp <namespace>/<pod>:<pod_filepath>/<filename></var> <local_filepath>/<filename>
+```
+{: pre}
+
+
+Copy data from your local machine to a specific container that runs in a pod in your cluster.
+
+```sh
+oc cp <local_filepath>/<filename> <namespace>/<pod>:<pod_filepath> -c <container>
+```
+{: pre}
+
+
+
 
 ## Storage class reference
 {: #file_storageclass_reference}
@@ -1375,7 +1477,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 {: tab-title="Custom"}
 {: tab-group="{{site.data.keyword.filestorage_short}} class"}
 
-<br />
+
 
 ## Sample customized storage classes
 {: #file_custom_storageclass}
@@ -1456,7 +1558,7 @@ Use the customized storage class if you want to [statically provision {{site.dat
 
 When you create the customized storage class, specify the same region and zone that your cluster and worker nodes are in. To get the region of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>` and look for the region prefix in the **Master URL**, such as `eu-de` in `https://c2.eu-de.containers.cloud.ibm.com:11111`. To get the zone of your worker node, run `ibmcloud oc worker ls --cluster <cluster_name_or_ID>`.
 
-- **Example for Endurance {{site.data.keyword.filestorage_short}}:**
+- Example for Endurance {{site.data.keyword.filestorage_short}}.
     ```yaml
     apiVersion: storage.k8s.io/v1
     kind: StorageClass
@@ -1478,7 +1580,7 @@ When you create the customized storage class, specify the same region and zone t
     ```
     {: codeblock}
 
-- **Example for Performance {{site.data.keyword.filestorage_short}}:**
+- Example for Performance {{site.data.keyword.filestorage_short}}.
     ```yaml
     apiVersion: storage.k8s.io/v1
     kind: StorageClass
@@ -1516,7 +1618,7 @@ When you create the customized storage class, specify the same region and zone t
 The following customized storage class lets you define the NFS version that you want to provision. For example, to provision NFS version 3.0, replace `<nfs_version>` with **3.0**.
 {: shortdesc}
 
-- **Example for Endurance {{site.data.keyword.filestorage_short}}:**
+- Example for Endurance {{site.data.keyword.filestorage_short}}.
     ```yaml
     apiVersion: storage.k8s.io/v1
     kind: StorageClass
@@ -1535,7 +1637,7 @@ The following customized storage class lets you define the NFS version that you 
     ```
     {: codeblock}
 
-- **Example for Performance {{site.data.keyword.filestorage_short}}:**
+- Example for Performance {{site.data.keyword.filestorage_short}}.
     ```yaml
     apiVersion: storage.k8s.io/v1
     kind: StorageClass
@@ -1701,13 +1803,15 @@ To clean up persistent data:
     ```
     {: pre}
 8. List the physical storage instance that your PV pointed to and note the **`id`** of the physical storage instance. {: #sl_delete_storage}
-    ```
+
+    ```sh
     ibmcloud sl file volume-list --columns id  --columns notes | grep <pv_name>
     ```
     {: pre}
 
-    Example output for {{site.data.keyword.filestorage_short}}:
-    ```
+    Example output for {{site.data.keyword.filestorage_short}}.
+
+    ```sh
     id         notes   
     12345678   {"plugin":"ibm-file-plugin-5b55b7b77b-55bb7","region":"us-south","cluster":"aa1a11a1a11b2b2bb22b22222c3c3333","type":"Endurance","ns":"default","pvc":"mypvc","pv":"pvc-d979977d-d79d-77d9-9d7d-d7d97ddd99d7","storageclass":"ibmc-file-gold"}
     ```
@@ -1725,7 +1829,7 @@ To clean up persistent data:
 
 9. Remove the physical storage instance.
 
-    ```
+    ```sh
     ibmcloud sl file volume-cancel <classic_file_id>
     ```
     {: pre}
@@ -1735,10 +1839,12 @@ To clean up persistent data:
     The deletion process might take up to 72 hours to complete.
     {: important}
 
-    ```
+    ```sh
     ibmcloud sl file volume-list
     ```
     {: pre}
+
+
 
 
 
