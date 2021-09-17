@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-09-17"
 
 keywords: openshift
 subcollection: openshift
@@ -820,6 +820,7 @@ subcollection: openshift
   * [Default image pull secret setup](/docs/openshift?topic=openshift-registry#cluster_registry_auth_default)
   * [Private network connection to `icr.io` registries](/docs/openshift?topic=openshift-registry#cluster_registry_auth_private)
 * [Updating existing clusters to use the API key image pull secret](/docs/openshift?topic=openshift-registry#imagePullSecret_migrate_api_key)
+  * [Updating your image pull secret](/docs/openshift?topic=openshift-registry#update-pull-secret)
 * [Using an image pull secret to access images in other {{site.data.keyword.cloud_notm}} accounts or external private registries from non-default {{site.data.keyword.openshiftshort}} projects](/docs/openshift?topic=openshift-registry#other)
   * [Copying an existing image pull secret](/docs/openshift?topic=openshift-registry#copy_imagePullSecret)
   * [Creating an image pull secret with different IAM API key credentials for more control or access to images in other {{site.data.keyword.cloud_notm}} accounts](/docs/openshift?topic=openshift-registry#other_registry_accounts)
@@ -1119,6 +1120,10 @@ subcollection: openshift
 [Storing data on classic IBM Cloud {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage)
 * [Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_qs)
 * [Deciding on the {{site.data.keyword.filestorage_short}} configuration](/docs/openshift?topic=openshift-file_storage#file_predefined_storageclass)
+  * [File storage types](/docs/openshift?topic=openshift-file_storage#file-types)
+  * [IOPS](/docs/openshift?topic=openshift-file_storage#file-iops)
+  * [Reclaim policy](/docs/openshift?topic=openshift-file_storage#reclaim-policy)
+  * [Billing type](/docs/openshift?topic=openshift-file_storage#file-billing)
 * [Adding {{site.data.keyword.filestorage_short}} to apps](/docs/openshift?topic=openshift-file_storage#add_file)
 * [Using existing {{site.data.keyword.filestorage_short}} in your cluster](/docs/openshift?topic=openshift-file_storage#existing_file)
   * [Step 1: Preparing your existing storage.](/docs/openshift?topic=openshift-file_storage#existing-file-1)
@@ -2325,9 +2330,12 @@ subcollection: openshift
 [Classic: Why do I see a timeout error when I try to log in to a pod on a new worker node?](/docs/openshift?topic=openshift-cs_nodes_duplicate_ip)
 
 [Why can't I SSH into my worker node?](/docs/openshift?topic=openshift-cs_ssh_worker)
-* [Option 1: `oc debug`](/docs/openshift?topic=openshift-cs_ssh_worker#oc-debug)
-* [Option 2: `kubectl exec`](/docs/openshift?topic=openshift-cs_ssh_worker#kubectl-exec)
-* [Option 3: Create a pod with root SSH access](/docs/openshift?topic=openshift-cs_ssh_worker#pod-ssh)
+* [Debugging by using `oc debug`](/docs/openshift?topic=openshift-cs_ssh_worker#oc-debug)
+* [Debugging by using `kubectl exec`](/docs/openshift?topic=openshift-cs_ssh_worker#kubectl-exec)
+* [Debugging by creating a pod with root SSH access](/docs/openshift?topic=openshift-cs_ssh_worker#pod-ssh)
+  * [Private network](/docs/openshift?topic=openshift-cs_ssh_worker#ssh-private-network)
+  * [Public network classic clusters that are connected to a public VLAN only](/docs/openshift?topic=openshift-cs_ssh_worker#public-network-only-classic-debug)
+  * [Cleaning up after debugging](/docs/openshift?topic=openshift-cs_ssh_worker#ssh-debug-cleanup)
 
 [Debugging the cluster autoscaler](/docs/openshift?topic=openshift-debug_cluster_autoscaler)
 * [Step 1: Check the version](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-version)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-09-17"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, satellite
 
@@ -267,10 +267,10 @@ On satellite clusters, you can either dynamically provision storage volumes for 
 1. In the **Install ODF** panel, enter the configuration parameters that you want to use for your ODF deployment.
     - `odfDeploy`: Enter `true` to enable the add-on and deploy the ODF resources to your cluster. Enter `false` to only enable the add-on. If you enter `false`, you must create a [CRD to deploy ODF](#odf-sat-deploy-crd) later.
     - `monSize`: Enter the size of the {{site.data.keyword.block_storage_is_short}} devices that you want to provision for the ODF [monitor pods](/docs/openshift?topic=openshift-ocs-storage-prep). The default setting `20Gi`.
-    - `monStorageClassName`:  \n - For dynamic provisioning, enter the name of the storage class that you want to use. For {{site.data.keyword.satelliteshort}} clusters, enter the name of the block storage class that you want to use to dynamically provision volumes. The default storage class is `ibmc-vpc-block-metro-10iops-tier`.  \n - For static provision with local disks on your worker nodes, enter the storage class `localfile`.
+    - `monStorageClassName`: **For dynamic provisioning**, enter the name of the storage class that you want to use. For {{site.data.keyword.satelliteshort}} clusters, enter the name of the block storage class that you want to use to dynamically provision volumes. The default storage class is `ibmc-vpc-block-metro-10iops-tier`. For **static provisioning** with local disks on your worker nodes, enter the storage class `localfile`.
     - `monDevicePaths`: To dynamically provision disks by using a block storage driver in your cluster, leave this parameter as `invalid`. To use local devices on your worker nodes, enter a comma separated list of device IDs. To gather the device IDs for the disk on your worker nodes, see [Gathering your local block storage device details](#odf-sat-gather).
     - `osdSize`: Enter the size of the {{site.data.keyword.block_storage_is_short}} devices that you want to provision for the [OSD pods](/docs/openshift?topic=openshift-ocs-storage-prep). The default size is `250Gi`.
-     `osdStorageClassName`:   \n - For dynamic provisioning, enter the name of the storage class that you want to use. For {{site.data.keyword.satelliteshort}} clusters, enter the name of the block storage class that you want to use to dynamically provision volumes. The default storage class is `ibmc-vpc-block-metro-10iops-tier`.  \n - For static provision with local disks on your worker nodes, enter the storage class `localblock`.
+     `osdStorageClassName`:  For **dynamic provisioning**, enter the name of the storage class that you want to use. For {{site.data.keyword.satelliteshort}} clusters, enter the name of the block storage class that you want to use to dynamically provision volumes. The default storage class is `ibmc-vpc-block-metro-10iops-tier`. For **static provisioning** with local disks on your worker nodes, enter the storage class `localblock`.
     - `osdDevicePaths`: To dynamically provision disks by using a block storage driver in your cluster, leave this parameter as `invalid`. To use local devices on your worker nodes, enter a comma separated list of device IDs. To gather the device IDs for the disk on your worker nodes, see [Gathering your local block storage device details](#odf-sat-gather).
     - `numOfOsd`: Enter the number of block storage device sets that you want to provision for ODF. A `numOfOsd` value of 1 provisions 1 device set which includes 3 block storage devices. The devices are provisioned evenly across your worker nodes. For more information, see [Understanding ODF](/docs/openshift?topic=openshift-ocs-storage-prep).
     - `workerNodes`: Enter the worker nodes where you want to deploy ODF. You must have at least 3 worker nodes. The default setting is `all`. If you want to deploy ODF only on certain nodes, enter the IP addresses of the worker nodes in a comma-separated list without spaces, for example: `XX.XXX.X.X,XX.XXX.X.X,XX.XXX.X.X`.
@@ -284,14 +284,15 @@ On satellite clusters, you can either dynamically provision storage volumes for 
 1. Verify your installation. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Run the following command to verify the ODF pods are running.
-    ```
+
+    ```sh
     oc get pods -n openshift-storage
     ```
     {: pre}
 
     Example output
 
-    ```
+    ```sh
     NAME                                                              READY   STATUS      RESTARTS   AGE
     csi-cephfsplugin-bl4rx                                            3/3     Running     0          172m
     csi-cephfsplugin-lsd8z                                            3/3     Running     0          172m
@@ -421,6 +422,7 @@ If you enabled the add-on from the CLI and did not include the `odfDeploy=true` 
 1. Create a custom resource called `OcsCluster`. Save one of the following custom resource definition files on your local machine and edit it to include the name of the custom storage class that you created earlier as the `monStorageClassName` and `osdStorageClassName` parameters. For more information about the `OcsCluster` parameters, see the [parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-param-ref).
 
     Example custom resource definition for installing ODF on all worker nodes.
+    
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
@@ -437,7 +439,8 @@ If you enabled the add-on from the CLI and did not include the `odfDeploy=true` 
     ```
     {: codeblock}
 
-    Example custom resource definition for installing ODF only on specified worker nodes
+    Example custom resource definition for installing ODF only on specified worker nodes.
+    
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
@@ -460,6 +463,7 @@ If you enabled the add-on from the CLI and did not include the `odfDeploy=true` 
 
 
     Example custom resource for installing ODF on all worker nodes.
+    
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
@@ -485,6 +489,7 @@ If you enabled the add-on from the CLI and did not include the `odfDeploy=true` 
     {: codeblock}
 
     Example custom resource for installing ODF only on certain worker nodes.
+    
 
     ```yaml
     apiVersion: ocs.ibm.io/v1
@@ -515,12 +520,14 @@ If you enabled the add-on from the CLI and did not include the `odfDeploy=true` 
     {: codeblock}
 
 1. Save the file and create the `OcsCluster` custom resource to your cluster.
+
     ```sh
     oc create -f <ocs-cluster-filename>.yaml
     ```
     {: pre}
 
 1. Verify that your `OcsCluster` is running.
+
     ```sh
     oc describe ocscluster ocscluster
     ```
