@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-17"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, roks
 
@@ -138,14 +138,15 @@ To install ODF in your cluster, complete the following steps.
     - `ocsUpgrade`: Enter `true` or `false` to upgrade the ODF operators. For initial deployment, leave this setting as `false`. The default setting is `false`.
     - `clusterEncryption`: Enter `true` or `false` to enable cluster encryption. The default setting is `false`.
 
-1. After you enter the paramters that you want to use, click **Install**
+1. After you enter the parameters that you want to use, click **Install**
 
 1. Wait a few minutes for the add-on deployment to complete. When the deployment is complete, the add-on status is `Normal - Addon Ready`.
 
 1. Verify your installation. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Run the following command to verify the ODF pods are running.
-    ```
+
+    ```sh
     oc get pods -n openshift-storage
     ```
     {: pre}
@@ -207,6 +208,7 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
 1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.7.0` of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must specify the `--version` flag when you enable the add-on.
 
 1. Review the add-on options. Note that add-on options are only available for version `4.7.0` and later.
+
     ```sh
     ibmcloud oc cluster addon options --addon openshift-data-foundation
     ```
@@ -232,30 +234,35 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
 1. Enable the `openshift-data-foundation` add-on. If you also want to deploy ODF and create your storage cluster from the CLI, you can specify the `"odfDeploy=true"` flag. If you want to override any of the default parameters, specify the `--param "key=value"` flag for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
 
     Example command for deploying the ODF add-on only.
+    
     ```sh
     ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version>
     ```
     {: pre}
 
     Example command for deploying the ODF and creating a storage cluster with the default configuration parameters.
+    
     ```sh
     ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "odfDeploy=true"
     ```
     {: pre}
 
     Example command for deploying the ODF and creating a storage cluster while overriding the `osdSize` parameter.
+    
     ```sh
     ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "odfDeploy=true" --param "osdSize=500Gi"
     ```
     {: pre}
 
 1. Verify the add-on is in a `Ready` state.
+
     ```sh
     ibmcloud oc cluster addon ls -c <cluster_name>
     ```
     {: pre}
 
 1. Verify that the `ibm-ocs-operator-controller-manager-*****` pod is running in the `kube-system` namespace.
+
     ```sh
     oc get pods -A | grep ibm-ocs-operator-controller-manager
     ```
@@ -315,12 +322,14 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     {: codeblock}
 
 3. Save the file and create the `OcsCluster` custom resource to your cluster.
+
     ```sh
     oc create -f <ocs-cluster-filename>.yaml
     ```
     {: pre}
 
 4. Verify that your `OcsCluster` is running.
+
     ```sh
     oc describe ocscluster ocscluster-vpc
     ```
@@ -412,24 +421,28 @@ You can scale your ODF configuration by increasing the `numOfOsd` setting. When 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Get the name of your `OcsCluster` custom resource.
+
     ```sh
     oc get ocscluster
     ```
     {: pre}
 
 1. Save your `OcsCluster` custom resource YAML file to your local machine as `ocscluster.yaml`.
+
     ```sh
     oc get ocscluster ocscluster-vpc -o yaml
     ```
     {: pre}
 
 1. Increase the `numOfOsd` parameter and reapply the `ocscluster` CRD to your cluster.
+
     ```sh
     oc apply -f ocscluster.yaml
     ```
     {: pre}
 
 1. Verify that the additional OSDs are created.
+
     ```sh
     oc get pv
     ```
@@ -445,6 +458,7 @@ To increase the storage capacity in your storage cluster, add compatible worker 
 
 1. Expand the worker pool of the cluster that is used for OCS by [adding worker nodes](/docs/openshift?topic=openshift-add_workers). Ensure that your worker nodes meet the [requirements for ODF](/docs/openshift?topic=openshift-ocs-storage-prep). If you deployed ODF on all the worker nodes in your cluster, the ODF drivers are installed on the new worker nodes when they are added to your cluster.
 2. If you deployed ODF on a subset of worker nodes in your cluster by specifying the private `<workerNodes>` parameters in your `OcsCluster` custom resource, you can add the IP addresses of the new worker nodes to your ODF deployment by editing the custom resource definition.
+
     ```sh
     oc edit ocscluster ocscluster-vpc
     ```
