@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-09-17"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1281,6 +1281,8 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 {: tab-title="General purpose"}
 {: tab-group="{{site.data.keyword.block_storage_is_short}} class"}
 
+
+
 ## Removing persistent storage from a cluster
 {: #cleanup}
 
@@ -1341,13 +1343,15 @@ Before you begin:
 To clean up persistent data:
 
 1. List the PVCs in your cluster and note the **`NAME`** of the PVC, the **`STORAGECLASS`**, and the name of the PV that is bound to the PVC and shown as **`VOLUME`**.
-    ```
+
+    ```sh
     oc get pvc
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+    
+    ```sh
     NAME                  STATUS    VOLUME                                     CAPACITY   ACCESSMODES   STORAGECLASS            AGE
     claim1-block-bronze   Bound     pvc-06886b77-102b-11e8-968a-f6612bb731fb   20Gi       RWO           ibmc-block-bronze       78d
     claim-file-bronze     Bound     pvc-457a2b96-fafc-11e7-8ff9-b6c8f770356c   4Gi        RWX           ibmc-file-bronze-retain 105d
@@ -1356,7 +1360,8 @@ To clean up persistent data:
     {: screen}
 
 2. Review the **`ReclaimPolicy`** and **`billingType`** for the storage class.
-    ```
+
+    ```sh
     oc describe storageclass <storageclass_name>
     ```
     {: pre}
@@ -1366,58 +1371,61 @@ To clean up persistent data:
     If your storage is charged monthly, you still get charged for the entire month, even if you remove the storage before the end of the billing cycle.
     {: important}
 
-3. Remove any pods that mount the PVC.
-    1. List the pods that mount the PVC.
-        ```
-        oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
-        ```
-        {: pre}
+3. Remove any pods that mount the PVC. List the pods that mount the PVC. If no pod is returned in your CLI output, you do not have a pod that uses the PVC.
 
-        Example output:
-        ```
-        blockdepl-12345-prz7b:    claim1-block-bronze  
-        ```
-        {: screen}
+    ```sh
+    oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
+    ```
+    {: pre}
 
-        If no pod is returned in your CLI output, you do not have a pod that uses the PVC.
+    Example output
+    ```
+    blockdepl-12345-prz7b:    claim1-block-bronze  
+    ```
+    {: screen}
 
-    2. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
-        ```
-        oc delete pod <pod_name>
-        ```
-        {: pre}
+2. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
 
-    3. Verify that the pod is removed.
-        ```
-        oc get pods
-        ```
-        {: pre}
+    ```sh
+    oc delete pod <pod_name>
+    ```
+    {: pre}
+
+3. Verify that the pod is removed.
+
+    ```sh
+    oc get pods
+    ```
+    {: pre}
 
 4. Remove the PVC.
-    ```
+
+    ```sh
     oc delete pvc <pvc_name>
     ```
     {: pre}
 
-5. Review the status of your PV. Use the name of the PV that you retrieved earlier as **`VOLUME`**.
-    ```
+5. Review the status of your PV. Use the name of the PV that you retrieved earlier as **`VOLUME`**. When you remove the PVC, the PV that is bound to the PVC is released. Depending on how you provisioned your storage, your PV goes into a `Deleting` state if the PV is deleted automatically, or into a `Released` state, if you must manually delete the PV. **Note**: For PVs that are automatically deleted, the status might briefly say `Released` before it is deleted. Rerun the command after a few minutes to see whether the PV is removed.
+
+    ```sh
     oc get pv <pv_name>
     ```
     {: pre}
 
-    When you remove the PVC, the PV that is bound to the PVC is released. Depending on how you provisioned your storage, your PV goes into a `Deleting` state if the PV is deleted automatically, or into a `Released` state, if you must manually delete the PV. **Note**: For PVs that are automatically deleted, the status might briefly say `Released` before it is deleted. Rerun the command after a few minutes to see whether the PV is removed.
-
 6. If your PV is not deleted, manually remove the PV.
-    ```
+
+    ```sh
     oc delete pv <pv_name>
     ```
     {: pre}
 
 7. Verify that the PV is removed.
-    ```
+
+    ```sh
     oc get pv
     ```
     {: pre}
+    
 
 
 
