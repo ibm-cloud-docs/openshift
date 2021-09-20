@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-20"
 
 keywords: openshift, roks, rhoks, logmet, logs, metrics, audit, events
 
@@ -141,7 +141,7 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
 
 7. Create the audit webhook to collect Kubernetes API server event logs. Add the `http://` prefix to the **CLUSTER_IP**.
     ```
-    ibmcloud oc cluster master audit-webhook set --cluster <cluster_name_or_ID> --remote-server http://172.21.xxx.xxx
+    ibmcloud oc cluster master audit-webhook set --cluster <cluster_name_or_ID> --remote-server http://172.21.xxx.xxx 
     ```
     {: pre}
 
