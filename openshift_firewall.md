@@ -478,19 +478,19 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
 
         3. List the VLAN subnets for each unique network ID.
 
-          ```
-          ibmcloud sl subnet list | grep -e <networkID1> -e <networkID2>
-          ```
-          {: pre}
+            ```
+            ibmcloud sl subnet list | grep -e <networkID1> -e <networkID2>
+            ```
+            {: pre}
 
-          Example output:
+            Example output:
           
-          ```
-          ID        identifier       type                 network_space   datacenter   vlan_id   IPs   hardware   virtual_servers
-          1234567   169.xx.210.xxx   ADDITIONAL_PRIMARY   PUBLIC          dal12        1122334   16    0          5   
-          7654321   169.xx.178.xxx   ADDITIONAL_PRIMARY   PUBLIC          dal10        4332211   16    0          6    
-          ```
-          {: screen}
+            ```
+            ID        identifier       type                 network_space   datacenter   vlan_id   IPs   hardware   virtual_servers
+            1234567   169.xx.210.xxx   ADDITIONAL_PRIMARY   PUBLIC          dal12        1122334   16    0          5   
+            7654321   169.xx.178.xxx   ADDITIONAL_PRIMARY   PUBLIC          dal10        4332211   16    0          6    
+            ```
+            {: screen}
 
         4. Retrieve the subnet address. In the output, find the number of **IPs**. Then, raise `2` to the power of `n` equal to the number of IPs. For example, if the number of IPs is `16`, then `2` is raised to the power of `4` (`n`) to equal `16`. Now get the subnet CIDR by subtracting the value of `n` from `32` bits. For example, when `n` equals `4`, then the CIDR is `28` (from the equation `32 - 4 = 28`). Combine the **identifier** mask with the CIDR value to get the full subnet address. In the previous output, the subnet addresses are:
 
