@@ -694,7 +694,7 @@ If you are an administrator for the region and resource group, you might want to
 {: tip}
 
 #### Checking infrastructure roles from the UI
-{: #checking-infra}
+{: #checking-infra-ui}
 
 1. Log in to the [{{site.data.keyword.cloud_notm}} IAM console](https://cloud.ibm.com/iam){: external}.
 2. From the navigation menu, click the **Users** tab.
@@ -710,7 +710,7 @@ If you are an administrator for the region and resource group, you might want to
 7. To change or assign new access policies, see [Customizing infrastructure permissions](/docs/openshift?topic=openshift-access-creds#infra_access).
 
 #### Checking infrastructure roles with the CLI
-{: #checking-infra}
+{: #checking-infra-cli}
 
 1. Log in to your {{site.data.keyword.cloud_notm}} account. If you have a federated ID, include the `--sso` flag.
     ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-09-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -198,7 +198,7 @@ Choose the size and IOPS for your {{site.data.keyword.filestorage_short}}. The s
 
 
 ### Reclaim policy
-{: file-reclaim} 
+{: #file-reclaim} 
 
 Choose if you want to keep your data after the cluster or the persistent volume claim (PVC) is deleted.
 {: shortdesc}

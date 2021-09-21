@@ -353,7 +353,7 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
 
 To allow worker nodes to communicate with the cluster master over the private cloud service endpoint, allow outgoing network traffic from the source *<each_worker_node_privateIP>* to the destination TCP/UDP port range 20000-32767 and port 443, and the following IP addresses and network groups.
 
-*`TCP/UDP port range 20000-32767, port 443 FROM <each_worker_node_privateIP> TO <private_IPs>`
+* `TCP/UDP port range 20000-32767, port 443 FROM <each_worker_node_privateIP> TO <private_IPs>`
 * Replace *<private_IPs>* with the private IP addresses of the region where your cluster is located.
 
 | Region | Private IP address  |
