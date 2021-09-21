@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-21"
 
 keywords: openshift, roks, rhos, rhoks, vpn, on-prem, gateway, static
 
@@ -33,10 +33,10 @@ In this case, you can create a static route so that when a request's source IP a
 * Response packets are not dropped due to RPF, because a routing rule that points to the on-premises IP address exists.
 * Response packets are successfully routed first through the VPN gateway IP address, and then re-routed to your on-premises IP address.
 
-The static route cluster add-on can be used to apply and manage static routes only. You are responsible for separately configuring and managing your own VPN, gateway appliance, or {{site.data.keyword.BluDirectLink}} connection.
+The static route cluster add-on can be used to apply and manage static routes only. You are responsible for configuring and managing your own VPN, gateway appliance, or {{site.data.keyword.BluDirectLink}} connection.
 {: note}
 
-<br />
+
 
 ## Enabling the static route add-on
 {: #enable-add-on}
@@ -48,44 +48,46 @@ To get started with static routes in {{site.data.keyword.openshiftlong_notm}}, e
 * Ensure that you have the [**Administrator** IAM platform access role for the cluster in {{site.data.keyword.containerlong_notm}}](/docs/openshift?topic=openshift-users#checking-perms).
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-</br>
+
+
 **To use the {{site.data.keyword.cloud_notm}} console:**
 
 1. In your [cluster dashboard](https://cloud.ibm.com/kubernetes/clusters){: external}, click the name of the cluster where you want to install the static route add-on.
-
 2. Click the **Add-ons** tab.
-
 3. On the **Static Route** card, click **Install**.
-
 4. Click **Install** again.
-
 5. On the **Static Route** card, verify that the add-on is listed.
 
-</br>
+
+
+
 **To use the CLI:**
 
 1. [Target the CLI to your cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
 
 2. Enable the `static-route` add-on.
-    ```
+
+    ```sh
     ibmcloud oc cluster addon enable static-route --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
 3. Verify that the static route add-on has a status of `Addon Ready`.
-    ```
+
+    ```sh
     ibmcloud oc cluster addon ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+    
+    ```sh
     Name              Version     Health State   Health Status
     static-route      1.0.0       normal         Addon Ready
     ```
     {: screen}
 
-<br />
+
 
 ## Creating static routes
 {: #create-route-resources}
@@ -94,6 +96,7 @@ After you [enable the static route add-on](#enable-add-on), you can create and a
 {: shortdesc}
 
 1. Create a YAML file for a static route resource.
+
     ```yaml
     apiVersion: static-route.ibm.com/v1
     kind: StaticRoute
@@ -110,7 +113,8 @@ After you [enable the static route add-on](#enable-add-on), you can create and a
     ```
     {: codeblock}
 
-    Example:
+    Example
+    
     ```yaml
     apiVersion: static-route.ibm.com/v1
     kind: StaticRoute
@@ -127,49 +131,39 @@ After you [enable the static route add-on](#enable-add-on), you can create and a
     ```
     {: screen}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the YAML file components</caption>
-    <col width="25%">
-    <col width="75%">
-    <thead>
-    <th>Component</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>subnet</code></td>
-    <td>Specify the CIDR of the external subnet from which requests to the worker nodes are sent, such as a subnet in an on-premises network.</br></br>The external subnet cannot be in the following reserved ranges:
-    <ul><li><code>10.0.0.0/8</code></li>
-    <li><code>172.16.0.0/16</code></li>
-    <li><code>172.18.0.0/16</code></li>
-    <li><code>172.19.0.0/16</code></li>
-    <li><code>172.20.0.0/16</code></li>
-    <li><code>192.168.255.0/24</code> <strong>Note</strong>: The device interconnect range, <code>198.18.0.0/15</code>, is permitted.</li></ul></td>
-    </tr>
-    <tr>
-    <td><code>gateway</code></td>
-    <td>If your gateway IP address exists on the same subnet as your worker nodes, specify the gateway IP address.</br>If your gateway IP address exists on another subnet in your IBM Cloud private network, do not include this field. In this case, worker nodes send responses to the private network's backend router, and the router sends the response to the gateway on the other subnet. When the static route is created, the backend router's IP address in the <code>10.0.0.0/8</code> range is automatically assigned as a default gateway.</td>
-    </tr>
-    <tr>
-    <td><code>selectors</code></td>
-    <td>To create the static route only on certain worker nodes based on worker node labels, include the <code>key</code> and <code>values</code> for the label.</td>
-    </tr>
-    </tbody></table>
+    `subnet`
+    :   Specify the CIDR of the external subnet from which requests to the worker nodes are sent, such as a subnet in an on-premises network. The external subnet cannot be in the following reserved ranges. The device interconnect range, `198.18.0.0/15`, is permitted.
+        - `10.0.0.0/8`
+        - `172.16.0.0/16`
+        - `172.18.0.0/16`
+        - `172.19.0.0/16`
+        - `172.20.0.0/16`
+        - `192.168.255.0/24`
+        
+    `gateway`
+    :   If your gateway IP address exists on the same subnet as your worker nodes, specify the gateway IP address. If your gateway IP address exists on another subnet in your IBM Cloud private network, do not include this field. In this case, worker nodes send responses to the private network's backend router, and the router sends the response to the gateway on the other subnet. When the static route is created, the backend router's IP address in the `10.0.0.0/8` range is automatically assigned as a default gateway.
+    
+    `selectors`
+    :   To create the static route only on certain worker nodes based on worker node labels, include the `key` and `values` for the label.
+
 
 2. Create the static routes by applying the YAML file to your cluster.
-    ```
+
+    ```sh
     oc apply -f <route_name>.yaml
     ```
     {: pre}
 
-3. Verify that the static route is created. In the output, check the `node_status` for each worker node that the static route is applied to.
-    ```
+3. Verify that the static route is created. In the output, check the `node_status` for each worker node where you create the static route.
+
+    ```sh
     oc get staticroute <route_name> -o yaml
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+    
+    ```sh
     apiVersion: static-route.ibm.com/v1
     kind: StaticRoute
     metadata:
@@ -184,37 +178,39 @@ After you [enable the static route add-on](#enable-add-on), you can create and a
     resourceVersion: "3753886"
     selfLink: /apis/static-route.ibm.com/v1/staticroutes/mystaticroute
     uid: f284359f-9d13-4e27-9d3a-8fb38cbc7a5c
-  spec:
-    selectors:
-    - key: kubernetes.io/arch
-      operator: In
-      values:
-      - amd64
-    subnet: 10.94.227.46/24
-  status:
-    nodeStatus:
-    - error: ""
-      hostname: 10.94.227.19
-      state:
-        gateway: 10.94.227.1
+      spec:
         selectors:
         - key: kubernetes.io/arch
           operator: In
           values:
           - amd64
         subnet: 10.94.227.46/24
-    - error: ""
-      hostname: 10.94.227.22
-      state:
-        gateway: 10.94.227.1
-        selectors:
-        - key: kubernetes.io/arch
-          operator: In
-          values:
-          - amd64
-        subnet: 10.94.227.46/24
+      status:
+        nodeStatus:
+        - error: ""
+          hostname: 10.94.227.19
+          state:
+            gateway: 10.94.227.1
+            selectors:
+            - key: kubernetes.io/arch
+              operator: In
+              values:
+              - amd64
+            subnet: 10.94.227.46/24
+        - error: ""
+          hostname: 10.94.227.22
+          state:
+            gateway: 10.94.227.1
+            selectors:
+            - key: kubernetes.io/arch
+              operator: In
+              values:
+              - amd64
+            subnet: 10.94.227.46/24
     ```
     {: screen}
+
+
 
 
 

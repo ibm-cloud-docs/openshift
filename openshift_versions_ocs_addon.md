@@ -24,15 +24,15 @@ Note that the add-on supports`n+1` cluster versions.
 To view a list of add-ons and the supported {{site.data.keyword.openshiftshort}} versions, run the following command.
 
 ```sh
-ibmcloud oc cluster addon versions --addon openshift-container-storage
+ibmcloud oc cluster addon versions --addon openshift-data-foundation
 ```
 {: pre}
 
-Refer to the following table for a summary of changes for each version of the [OpenShift Data Foundation} add-on](/docs/openshift?topic=openshift-deploy-odf-vpc).
+Refer to the following table for a summary of changes for each version of the [OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-deploy-odf-vpc).
 
-Refer to the following tables for a summary of changes for each version of the [OpenShift Data Foundation} add-on.
+Refer to the following tables for a summary of changes for each version of the [OpenShift Data Foundation add-on.
 
-| OpenShift Data Foundation add-on | Is default? | Supported? | {{site.data.keyword.openshiftshort}} version support |
+| Add-on version | Is default? | Supported? | {{site.data.keyword.openshiftshort}} version support |
 | --- | --- | --- | --- |
 | 4.7.0 | Yes | Yes | 4.7 |
 {: caption="Add-on versions" caption-side="top"}
