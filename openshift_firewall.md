@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -421,19 +421,17 @@ To send logging and metric data, set up firewall rules for your {{site.data.keyw
 You can allow incoming access to NodePort, load balancer, and Ingress services, and {{site.data.keyword.openshiftshort}} routes.
 {: shortdesc}
 
+NodePort service
+: Open the port that you configured when you deployed the service to the public or private IP addresses for all of the worker nodes to allow traffic to. To find the port, run `oc get svc`. The port is in the 20000-32000 range.
 
-<dl>
-    <dt>NodePort service</dt>
-    <dd>Open the port that you configured when you deployed the service to the public or private IP addresses for all of the worker nodes to allow traffic to. To find the port, run `oc get svc`. The port is in the 20000-32000 range.</dd>
-    <dt>Load balancer service</dt>
-    <dd>Open the port that you configured when you deployed the service to the load balancer service's public or private IP address.</dd>
-    <dt>Ingress</dt>
-    <dd>Open port 80 for HTTP and port 443 for HTTPS to the public or private IP address for the Ingress application load balancer.</dd>
-    <dt>Route</dt>
-    <dd>Open port 80 for HTTP and port 443 for HTTPS to the router's public IP address.</dd>
-</dl>
+Load balancer service
+: Open the port that you configured when you deployed the service to the load balancer service's public or private IP address.
 
+Ingress
+: Open port 80 for HTTP and port 443 for HTTPS to the public or private IP address for the Ingress application load balancer.
 
+Route
+: Open port 80 for HTTP and port 443 for HTTPS to the router's public IP address.
 
 
 ## Allowing the cluster to access resources through Calico network policies

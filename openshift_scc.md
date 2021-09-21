@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-21"
 
 keywords: openshift, roks, rhoks, rhos, scc, security context constraint, psp
 
@@ -57,7 +57,6 @@ No. [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/polic
 
 The default {{site.data.keyword.openshiftshort}} SCCs are stricter than the default PSPs in community Kubernetes clusters. As such, app deployments that run in community Kubernetes clusters might need to be modified to run in {{site.data.keyword.openshiftshort}}.
 
-<br />
 
 ## Customizing security context constraints
 {: #customize_sccs}
@@ -68,7 +67,6 @@ To create, edit, list, delete, and otherwise manage security context constraints
 Make sure that you use the [`oc` CLI or `kubectl` version 1.12 CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc) to interact with these resources, such as `oc get scc`. The `kubectl` CLI version 1.11 CLI has a bug that yields an error when you run commands against {{site.data.keyword.openshiftshort}}-specific resources, such as `kubectl get scc`.
 {: important}
 
-<br />
 
 ## Default {{site.data.keyword.openshiftshort}} security context constraints
 {: #oc_sccs}
@@ -91,7 +89,6 @@ Do not edit existing {{site.data.keyword.openshiftshort}} or IBM SCCs settings, 
 | `restricted`| Denies access to all host features and requires that pods are run with a UID and SELinux context that are allocated to the namespace. This is the most restrictive SCC, and it is used by default for authenticated users.|
 {: caption="Default {{site.data.keyword.openshiftshort}} security context constraints" caption-side="top"}
 
-<br />
 
 ## Default IBM security context constraints
 {: #ibm_sccs}

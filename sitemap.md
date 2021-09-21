@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-20"
+lastupdated: "2021-09-21"
 
 keywords: openshift
 subcollection: openshift
@@ -549,7 +549,9 @@ subcollection: openshift
 [Controlling user access with {{site.data.keyword.cloud_notm}} IAM and Kubernetes RBAC](/docs/openshift?topic=openshift-users)
 * [Example cluster use cases and IAM roles](/docs/openshift?topic=openshift-users#example-iam)
 * [Assigning {{site.data.keyword.cloud_notm}} IAM roles with the console](/docs/openshift?topic=openshift-users#add_users)
-* [Assigning {{site.data.keyword.cloud_notm}} IAM roles with the CLI](/docs/openshift?topic=openshift-users#add_users_cli)
+* [Assign {{site.data.keyword.cloud_notm}} IAM roles with the CLI](/docs/openshift?topic=openshift-users#add_users_cli)
+  * [Assigning {{site.data.keyword.cloud_notm}} IAM _platform_ roles from the CLI](/docs/openshift?topic=openshift-users#add_users_cli_platform)
+  * [Assigning {{site.data.keyword.cloud_notm}} IAM _service_ roles from the CLI:**](/docs/openshift?topic=openshift-users#add_users_cli_service)
 * [Understanding RBAC permissions](/docs/openshift?topic=openshift-users#understand-rbac)
 * [Creating custom RBAC permissions for users, groups, or service accounts](/docs/openshift?topic=openshift-users#rbac)
 * [Extending existing permissions by aggregating cluster roles](/docs/openshift?topic=openshift-users#rbac_aggregate)
