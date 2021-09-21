@@ -80,12 +80,12 @@ Do not edit existing {{site.data.keyword.openshiftshort}} or IBM SCCs settings, 
 |SCC name | Description |
 |---------|-------------|
 | `anyuid`| Denies access similar to the `restricted` SCC, but allows users to run with any UID and any GID.|
-| `hostaccess`| Allows access to all host namespaces, but still requires that pods are run with a UID and SELinux context that are allocated to the namespace.<p class="important">Grant this SCC for only trusted pods that require host access to namespaces, file systems, and process IDs.</p>|
-| `hostmount-anyuid` | Denies access similar to the `restricted` SCC, but allows host mounts and any UID by a pod. This SCC is primarily used by the persistent volume recycler.<p class="important">Grant this SCC for only pods that require host file system access as any UID, including UID 0.</p>|
-| `hostnetwork`| Allows the usage of host networking and host ports, but still requires that pods are run with a UID and SELinux context that are allocated to the namespace.<p class="important">Grant this SCC for only pods that require host network access.</p>|
+| `hostaccess`| Allows access to all host namespaces, but still requires that pods are run with a UID and SELinux context that are allocated to the namespace. \n  \n **Important**: Grant this SCC for only trusted pods that require host access to namespaces, file systems, and process IDs. |
+| `hostmount-anyuid` | Denies access similar to the `restricted` SCC, but allows host mounts and any UID by a pod. This SCC is primarily used by the persistent volume recycler. \n  \n **Important**: Grant this SCC for only pods that require host file system access as any UID, including UID 0. |
+| `hostnetwork`| Allows the usage of host networking and host ports, but still requires that pods are run with a UID and SELinux context that are allocated to the namespace. \n  \n **Important**: Grant this SCC for only pods that require host network access. |
 | `node-exporter`| Gives the appropriate access for the built-in Prometheus node exporter. |
 | `nonroot`| Denies access similar to the `restricted` SCC, but allows users to run with any non-root UID. Either the user or the manifest of the container runtime must specify the UID.|
-| `privileged`| Allows access to all privileged and host features and the ability to run as any user, any group, any fsGroup, and with any SELinux context.<p class="important">Grant this SCC for only cluster administration that requires the most access possible.</p>|
+| `privileged`| Allows access to all privileged and host features and the ability to run as any user, any group, any fsGroup, and with any SELinux context. \n  \n **Important**: Grant this SCC for only cluster administration that requires the most access possible. |
 | `restricted`| Denies access to all host features and requires that pods are run with a UID and SELinux context that are allocated to the namespace. This is the most restrictive SCC, and it is used by default for authenticated users.|
 {: caption="Default {{site.data.keyword.openshiftshort}} security context constraints" caption-side="top"}
 
@@ -101,10 +101,10 @@ Do not edit existing {{site.data.keyword.openshiftshort}} or IBM SCCs settings, 
 
 |SCC name | Description |
 |---------|-------------|
-| `ibm-anyuid-hostaccess-scc`| Allows pods to run with any UID and GID, any volume, and full access to the host.<p class="important">Grant this SCC for only pods that require full access to the host and network.</p>|
-| `ibm-anyuid-hostpath-scc`| Allows pods to run with any UID and GID and any volume, including the host path.<p class="important">Grant this SCC for only pods that require access to `hostPath` volumes.</p>|
+| `ibm-anyuid-hostaccess-scc`| Allows pods to run with any UID and GID, any volume, and full access to the host. \n  \n **Important**: Grant this SCC for only pods that require full access to the host and network. |
+| `ibm-anyuid-hostpath-scc`| Allows pods to run with any UID and GID and any volume, including the host path. \n  \n **Important**: Grant this SCC for only pods that require access to `hostPath` volumes. |
 | `ibm-anyuid-scc` | Allows pods to run with any UID and GID, but prevents access to the host.|
-| `ibm-privileged-scc`| Grants access to all privileged host features, and allows a pod to run with any UID and GID and any volume.<p class="important">Grant this SCC for only cluster administration that requires the most access possible.</p> |
+| `ibm-privileged-scc`| Grants access to all privileged host features, and allows a pod to run with any UID and GID and any volume. \n  \n **Important**: Grant this SCC for only cluster administration that requires the most access possible. |
 | `ibm-restricted-scc` | Denies access to all host features and requires that pods are run with a UID and SELinux context that are allocated to the namespace. This SCC is the most restrictive IBM SCC.|
 {: caption="Default IBM security context constraints" caption-side="top"}
 
