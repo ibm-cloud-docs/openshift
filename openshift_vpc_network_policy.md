@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-21"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -52,16 +52,16 @@ Although you can use either VPC ACLs or VPC security groups to control inbound t
 {: shortdesc}
 
 Review the following advantages of security groups over ACLs:
-* As opposed to ACLs, security group rules are stateful. When you create a rule to allow traffic in one direction, reverse traffic in response to allowed traffic is automatically permitted without the need for another rule. Fewer rules are required to set up your security group than to set up an ACL.
-* An ACL must be created for each subnet that your cluster is attached to, but only one security group must be modified for all worker nodes in your cluster.
-* ACLs are applied at the level of the VPC subnet. If one cluster uses multiple subnets, rules are required to ensure that the subnets can communicate with each other. If you create multiple clusters that use the same subnets in one VPC, you cannot use ACLs to control traffic between the clusters because they share the same subnets.
+- As opposed to ACLs, security group rules are stateful. When you create a rule to allow traffic in one direction, reverse traffic in response to allowed traffic is automatically permitted without the need for another rule. Fewer rules are required to set up your security group than to set up an ACL.
+- An ACL must be created for each subnet that your cluster is attached to, but only one security group must be modified for all worker nodes in your cluster.
+- ACLs are applied at the level of the VPC subnet. If one cluster uses multiple subnets, rules are required to ensure that the subnets can communicate with each other. If you create multiple clusters that use the same subnets in one VPC, you cannot use ACLs to control traffic between the clusters because they share the same subnets.
 
 Regardless of which security option you choose, be sure to follow the instructions for [security groups](#security_groups) or [ACLs](#acls) to allow the subnets and ports that are required for necessary traffic to reach your cluster.
 
 To simplify your VPC security setup, configure inbound and outbound rules either only at the security group level or only at the ACL level. If you configure rules in both ACLs for your subnets and in the default security group for your worker nodes, you might inadvertently block the subnets and ports that are required for necessary traffic to reach your cluster.
 {: tip}
 
-<br />
+
 
 ## Controlling traffic with the default security group
 {: #security_groups}
@@ -105,81 +105,24 @@ Use the {{site.data.keyword.cloud_notm}} console to add inbound and outbound rul
     3. Click **Save**.
     4. If you require VPC VPN access or classic infrastructure access into this cluster, repeat these steps to add a rule that uses the **UDP** protocol, `30000` for the **Port min**, `32767` for the **Port max**, and the **Any** source type.
 4. To create new rules to control inbound traffic to your worker nodes, in the **Inbound rules** section, click **Create**. Keep in mind that in addition to any rules that you create, the rules in the following table are required to allow necessary inbound traffic to your cluster.
-    <table summary="The columns are read from left to right. The first column describes the purpose of the inbound rule. The second column states is the protocol type. The third column is the range of ports to allow traffic through. The fourth column is the type of source.">
-    <caption>Required inbound rules</caption>
-    <col width="25%">
-    <thead>
-    <th>Rule purpose</th>
-    <th>Protocol</th>
-    <th>Port or Value</th>
-    <th>Source type</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Allow all worker nodes in this cluster to communicate with each other.</td>
-    <td>ALL</td>
-    <td> - </td>
-    <td>Security group <code><SG_name></code></td>
-    </tr>
-    <tr>
-    <td>Allow incoming ICMP packets (pings).</td>
-    <td>ICMP</td>
-    <td>Type <code>8</code></td>
-    <td>Any</td>
-    </tr>
-    <tr>
-    <td>{{site.data.keyword.openshiftshort}} version < 4.5: Allow incoming traffic requests to apps that run on your worker nodes.</td>
-    <td>TCP</td>
-    <td><code>30000</code> - <code>32767</code></td>
-    <td>Any</td>
-    </tr>
-    <tr>
-    <td>{{site.data.keyword.openshiftshort}} version < 4.5: If you require VPC VPN access or classic infrastructure access into this cluster, allow incoming traffic requests to apps that run on your worker nodes.</td>
-    <td>UDP</td>
-    <td><code>30000</code> - <code>32767</code></td>
-    <td>Any</td>
-    </tr>
-    <tr>
-    <td><code>*</code> Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each <a href="https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips">control plane CIDR for the region where your cluster is located</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</td>
-    <td>TCP</td>
-    <td><code>80</code></td>
-    <td>Each <a href="https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips">control plane CIDR for the region where your cluster is located</a> <img src="../icons/launch-glyph.svg" alt="External link icon"></td>
-    </tr>
-    </tbody>
-    </table>
-    <p>`*` Alternatively, to allow the inbound traffic for router healthchecks, you can create a single rule to allow all incoming traffic on port 80.</p>
+    | Rule purpose | Protocol | Port or Value | Source type |
+    | --- | --- | --- | --- |
+    | Allow all worker nodes in this cluster to communicate with each other. | ALL | - | Security group `<SG_name>` |
+    | Allow incoming ICMP packets (pings). | ICMP | Type `8` | Any |
+    | {{site.data.keyword.openshiftshort}} version < 4.5: Allow incoming traffic requests to apps that run on your worker nodes. | TCP | `30000` - `32767` | Any |
+    | {{site.data.keyword.openshiftshort}} version < 4.5: If you require VPC VPN access or classic infrastructure access into this cluster, allow incoming traffic requests to apps that run on your worker nodes. | UDP | `30000` - `32767` | Any |
+    | `*` Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. | TCP | `80` | Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. |
+    {: caption="Table 2. Required inbound rules" caption-side="top"}
+
+    `*` Alternatively, to allow the inbound traffic for router healthchecks, you can create a single rule to allow all incoming traffic on port 80.
 5. To create new rules to control outbound traffic to your worker nodes, in the **Outbound rules** section, delete the default rule that allows all outbound traffic.
 6. In the **Outbound rules** section, click **Create**. Keep in mind that in addition to any rules that you create, the rules in the following table are required to allow necessary outbound traffic from your cluster.
-    <table summary="The columns are read from left to right. The first column describes the purpose of the outbound rule. The second column states is the protocol type. The third column is the range of ports to allow traffic through. The fourth column is the type of source.">
-    <caption>Required outbound rules</caption>
-    <col width="25%">
-    <thead>
-    <th>Rule purpose</th>
-    <th>Protocol</th>
-    <th>Port or Value</th>
-    <th>Destination type</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Allow worker nodes to be created in your cluster.</td>
-    <td>ALL</td>
-    <td> - </td>
-    <td>CIDR block <code>161.26.0.0/16</code></td>
-    </tr>
-    <tr>
-    <td>Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint.</td>
-    <td>ALL</td>
-    <td> - </td>
-    <td>CIDR block <code>166.8.0.0/14</code></td>
-    </tr>
-    <tr>
-    <td>Allow all worker nodes in this cluster to communicate with each other.</td>
-    <td>ALL</td>
-    <td> - </td>
-    <td>Security group <code><SG_name></code></td>
-    </tr>
-    </tbody>
-    </table>
+    | Rule purpose | Protocol | Port or Value | Source type |
+    | --- | --- | --- | --- |
+    | Allow worker nodes to be created in your cluster. | ALL | - | CIDR block `161.26.0.0/16` |
+    | Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint. | ALL | - | CIDR block `166.8.0.0/14` |
+    | Allow all worker nodes in this cluster to communicate with each other. | ALL | - | Security group `<SG_name>` |
+    {: caption="Table 2. Required outbound rules" caption-side="top"}
 
 To simplify your VPC security setup, leave your default ACL for the VPC as-is. If you configure rules in both ACLs for your subnets and in the default security group for your worker nodes, you might inadvertently block the subnets and ports that are required for necessary traffic to reach your cluster.
 {: tip}
@@ -190,7 +133,7 @@ To simplify your VPC security setup, leave your default ACL for the VPC as-is. I
 Use the {{site.data.keyword.cloud_notm}} CLI to add inbound and outbound rules to the default security group for your cluster.
 {: shortdesc}
 
-Before you begin:
+Before you begin
 1. Install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
     ```
     ibmcloud plugin install infrastructure-service
@@ -257,49 +200,17 @@ To create rules in your default security group:
     {: pre}
 
     Keep in mind that in addition to any rules that you create, the rules in the following table are required to allow necessary inbound traffic to your cluster.
-    <table summary="The columns are read from left to right. The first column describes the purpose of the inbound rule. The second column states is the protocol type. The third column is the range of ports to allow traffic through. The fourth column is the type of source.">
-    <caption>Required inbound rules</caption>
-    <col width="25%">
-    <thead>
-    <th>Rule purpose</th>
-    <th>Protocol</th>
-    <th>Port or Value</th>
-    <th>Source type</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Allow all worker nodes in this cluster to communicate with each other.</td>
-    <td>ALL</td>
-    <td> - </td>
-    <td>Security group <code>kube-<cluster_ID></code></td>
-    </tr>
-    <tr>
-    <td>Allow incoming ICMP packets (pings).</td>
-    <td>ICMP</td>
-    <td>Type <code>8</code></td>
-    <td>Any</td>
-    </tr>
-    <tr>
-    <td>{{site.data.keyword.openshiftshort}} version < 4.5: Allow incoming traffic requests to apps that run on your worker nodes.</td>
-    <td>TCP</td>
-    <td><code>30000</code> - <code>32767</code></td>
-    <td>Any</td>
-    </tr>
-    <tr>
-    <td>{{site.data.keyword.openshiftshort}} version < 4.5: If you require VPC VPN access or classic infrastructure access into this cluster, allow incoming traffic requests to apps that run on your worker nodes.</td>
-    <td>UDP</td>
-    <td><code>30000</code> - <code>32767</code></td>
-    <td>Any</td>
-    </tr>
-    <tr>
-    <td><code>*</code> Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each <a href="https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips">control plane CIDR for the region where your cluster is located</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</td>
-    <td>TCP</td>
-    <td><code>80</code></td>
-    <td>Each <a href="https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips">control plane CIDR for the region where your cluster is located</a> <img src="../icons/launch-glyph.svg" alt="External link icon"></td>
-    </tr>
-    </tbody>
-    </table>
-    <p>`*` Alternatively, to allow the inbound traffic for router healthchecks, you can create a single rule to allow all incoming traffic on port 80.</p>
+    
+    | Rule purpose | Protocol | Port or Value | Source type |
+    | --- | --- | --- | --- |
+    | Allow all worker nodes in this cluster to communicate with each other. | ALL | - | Security group `kube-<cluster_ID>` |
+    | Allow incoming ICMP packets (pings). | ICMP | Type `B` | Any |
+    | {{site.data.keyword.openshiftshort}} version < 4.5: Allow incoming traffic requests to apps that run on your worker nodes. | TCP | `3000` - `32767` | Any |
+    | {{site.data.keyword.openshiftshort}} version < 4.5: If you require VPC VPN access or classic infrastructure access into this cluster, allow incoming traffic requests to apps that run on your worker nodes. | UDP | `3000` - `32767` | Any |
+    | `*` Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. | TCP | `80` | Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. |
+    {: caption="Table 3. Required inbound rules" caption-side="top"}
+    
+    `*` Alternatively, to allow the inbound traffic for router healthchecks, you can create a single rule to allow all incoming traffic on port 80.
 
 6. To create new rules to control outbound traffic to your worker nodes, get the ID of the default rule that allows all outbound traffic.
     ```
@@ -334,36 +245,13 @@ To create rules in your default security group:
     {: pre}
 
     Keep in mind that in addition to any rules that you create, the rules in the following table are required to allow necessary outbound traffic from your cluster.
-    <table summary="The columns are read from left to right. The first column describes the purpose of the outbound rule. The second column states is the protocol type. The third column is the range of ports to allow traffic through. The fourth column is the type of source.">
-    <caption>Required outbound rules</caption>
-    <col width="25%">
-    <thead>
-    <th>Rule purpose</th>
-    <th>Protocol</th>
-    <th>Port or Value</th>
-    <th>Destination type</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Allow worker nodes to be created in your cluster.</td>
-    <td>ALL</td>
-    <td> - </td>
-    <td>CIDR block <code>161.26.0.0/16</code></td>
-    </tr>
-    <tr>
-    <td>Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint.</td>
-    <td>ALL</td>
-    <td> - </td>
-    <td>CIDR block <code>166.8.0.0/14</code></td>
-    </tr>
-    <tr>
-    <td>Allow all worker nodes in this cluster to communicate with each other.</td>
-    <td>ALL</td>
-    <td> - </td>
-    <td>Security group <code>kube-<cluster_ID></code></td>
-    </tr>
-    </tbody>
-    </table>
+    
+    | Rule purpose | Protocol | Port or Value | Source type |
+    | --- | --- | --- | --- |
+    | Allow worker nodes to be created in your cluster. | ALL | - | CIDR block `161.26.0.0/16` |
+    | Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint. | ALL | - | CIDR block `166.8.0.0/14` |
+    | Allow all worker nodes in this cluster to communicate with each other. | ALL | - | Security group `kube-<cluster_ID>` |
+    {: caption="Table 3. Required outbound rules" caption-side="top"}
 
 9. Verify that your security group rules are created and that all required rules exist in your security group.
     ```
@@ -374,7 +262,6 @@ To create rules in your default security group:
 To simplify your VPC security setup, leave your default ACL for the VPC as-is. If you configure rules in both ACLs for your subnets and in the default security group for your worker nodes, you might inadvertently block the subnets and ports that are required for necessary traffic to reach your cluster.
 {: tip}
 
-<br />
 
 ## Controlling traffic with ACLs
 {: #acls}
@@ -413,186 +300,38 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
 4. In the **Rules** section, delete the default inbound rule and outbound rule that allow all inbound and outbound traffic.
 5. In the **Inbound rules** section, create the following rules by clicking **Create**.
 
-    <p class="note">ACL rules are applied to traffic in a specific order. If you must create custom rules to allow other traffic to or from your worker nodes on this subnet, be sure to set the custom rules' **Priority** before final the rule that denies all traffic. If you add a rule after the deny rule, your rule is ignored, because the packet matches the deny rule and is blocked and removed before it can reach your rule.</p>
+    ACL rules are applied to traffic in a specific order. If you must create custom rules to allow other traffic to or from your worker nodes on this subnet, be sure to set the custom rules' **Priority** before final the rule that denies all traffic. If you add a rule after the deny rule, your rule is ignored, because the packet matches the deny rule and is blocked and removed before it can reach your rule.
+    {: note}
+    
+    | Rule purpose | Allow/Deny | Protocol | Source IP or CIDR | Source Port | Destination IP or CIDR | Destination Port | Priority |
+    | --- | --- | --- | --- | --- | --- | --- | -- |
+    | Allow worker nodes to be created in your cluster.  | Allow | All | `161.26.0.0/16` | - | Any | - | Set to top |
+    | Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint.  | Allow | All | `166.8.0.0/14` | - | Any | - | After 1 |
+    | Multizone clusters: Allow worker nodes in one subnet to communicate with the worker nodes in other subnets within the cluster. Create one rule for each subnet that you want to connect to.  | Allow | All | Other subnet's CIDR | - | Any | - | After 2 |
+    | Allow incoming traffic requests to apps that run on your worker nodes.  | Allow | TCP | Any | - | Any | `30000 - 32767` | After 3 |
+    | To expose apps by using load balancers or Ingress, allow traffic through VPC load balancers.  | Allow | Any | - | Any | 443 | After 4 |
+    | `*` Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}  | Allow | TCP | Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external} | - | Any | `80` | After 5 |
+    | Deny all other traffic that does not match the previous rules.  | Deny | All | Any | - | Any | - | Set to bottom |
+    {: caption="Table 4. Required inbound rules" caption-side="top"}
 
-    <table summary="The columns are read from left to right. The first column describes the purpose of the inbound rule. The second column states whether to allow or deny. The third column is the source IP or CIDR. The fourth column is the source port minimum and maximum. The fifth column is the destination IP or CIDR. The sixth column is the destination port minimum and maximum. The seventh column is the priority for the inbound rule.">
-    <caption>Required inbound rules</caption>
-    <col width="25%">
-    <thead>
-    <th>Rule purpose</th>
-    <th>Allow/Deny</th>
-    <th>Protocol</th>
-    <th>Source IP or CIDR</th>
-    <th>Source Port</th>
-    <th>Destination IP or CIDR</th>
-    <th>Destination Port</th>
-    <th>Priority</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Allow worker nodes to be created in your cluster.</td>
-    <td>Allow</td>
-    <td>ALL</td>
-    <td>161.26.0.0/16</td>
-    <td>-</td>
-    <td>Any</td>
-    <td>-</td>
-    <td>Set to top</td>
-    </tr>
-    <tr>
-    <td>Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint.</td>
-    <td>Allow</td>
-    <td>ALL</td>
-    <td>166.8.0.0/14</td>
-    <td>-</td>
-    <td>Any</td>
-    <td>-</td>
-    <td>After 1</td>
-    </tr>
-    <tr>
-    <td>Multizone clusters: Allow worker nodes in one subnet to communicate with the worker nodes in other subnets within the cluster. Create one rule for each subnet that you want to connect to.</td>
-    <td>Allow</td>
-    <td>ALL</td>
-    <td>Other subnet's CIDR</td>
-    <td>-</td>
-    <td>Any</td>
-    <td>-</td>
-    <td>After 2</td>
-    </tr>
-    <tr>
-    <td>Allow incoming traffic requests to apps that run on your worker nodes.</td>
-    <td>Allow</td>
-    <td>TCP</td>
-    <td>Any</td>
-    <td>-</td>
-    <td>Any</td>
-    <td>30000 - 32767</td>
-    <td>After 3</td>
-    </tr>
-    <tr>
-    <td>To expose apps by using load balancers or Ingress, allow traffic through VPC load balancers.</td>
-    <td>Allow</td>
-    <td>TCP</td>
-    <td>Any</td>
-    <td>-</td>
-    <td>Any</td>
-    <td>443</td>
-    <td>After 4</td>
-    </tr>
-    <tr>
-    <td><code>*</code> Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each <a href="https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips">control plane CIDR for the region where your cluster is located</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</td>
-    <td>Allow</td>
-    <td>TCP</td>
-    <td>Each <a href="https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips">control plane CIDR for the region where your cluster is located</a> <img src="../icons/launch-glyph.svg" alt="External link icon"></td>
-    <td>-</td>
-    <td>Any</td>
-    <td>80</td>
-    <td>After 5</td>
-    </tr>
-    <tr>
-    <td>Deny all other traffic that does not match the previous rules.</td>
-    <td>Deny</td>
-    <td>ALL</td>
-    <td>Any</td>
-    <td>-</td>
-    <td>Any</td>
-    <td>-</td>
-    <td>Set to bottom</td>
-    </tr>
-    </tbody>
-    </table>
-    <p>`*` Alternatively, to allow the inbound traffic for router healthchecks, you can create a single inbound rule and outbound rule to allow all incoming and outgoing traffic on port 80.</p>
+    `*` Alternatively, to allow the inbound traffic for router healthchecks, you can create a single inbound rule and outbound rule to allow all incoming and outgoing traffic on port 80.
 6. In the **Outbound rules** section, create the following rules by clicking **Create**.
 
-    <p class="note">ACL rules are applied to traffic in a specific order. If you must create custom rules to allow other traffic to or from your worker nodes on this subnet, be sure to set the custom rules' **Priority** before final the rule that denies all traffic. If you add a rule after the deny rule, your rule is ignored, because the packet matches the deny rule and is blocked and removed before it can reach your rule.</p>
+    ACL rules are applied to traffic in a specific order. If you must create custom rules to allow other traffic to or from your worker nodes on this subnet, be sure to set the custom rules' **Priority** before final the rule that denies all traffic. If you add a rule after the deny rule, your rule is ignored, because the packet matches the deny rule and is blocked and removed before it can reach your rule.
+   {: note}
+   
+    | Rule purpose | Allow/Deny | Protocol | Source IP or CIDR | Source Port | Destination IP or CIDR | Destination Port | Priority |
+    | --- | --- | --- | --- | --- | --- | --- | -- |
+    | Allow worker nodes to be created in your cluster. | Allow | ALL | All | - | `161.26.0.0/16` | - | Set to top |
+    | Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint. | Allow | ALL | Any | - | `166.8.0.0/14` | - | After 1 |
+    | Multizone clusters: Allow worker nodes in one subnet to communicate with the worker nodes in all other subnets within the cluster. Create one rule for each subnet that you want to connect to.  | Allow | ALL | Any | - | Other subnet's CIDR | - | After 2 |
+    | Allow incoming traffic requests to apps that run on your worker nodes. | Allow | TCP | Any | `30000 - 32767` | Any | - | After 3 |
+    | To expose apps by using load balancers or Ingress, allow traffic through VPC load balancers.  | Allow | TCP | Any | `443` | Any | - | After 4 |
+    | `*` Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. | Allow | TCP | Any | `80` | Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. | - | After 5 |
+    | Deny all other traffic that does not match the previous rules.  | Deny | ALL | Any | - | Any | - | Set to bottom |
+    {: caption="Table 6. Required outbound rules" caption-side="top"}
 
-    <table summary="The columns are read from left to right. The first column describes the purpose of the outbound rule. The second column states whether to allow or deny. The third column is the source IP or CIDR. The fourth column is the source port minimum and maximum. The fifth column is the destination IP or CIDR. The sixth column is the destination port minimum and maximum. The seventh column is the priority for the outbound rule.">
-    <caption>Required outbound rules</caption>
-    <col width="25%">
-    <thead>
-    <th>Rule purpose</th>
-    <th>Allow/Deny</th>
-    <th>Protocol</th>
-    <th>Source IP or CIDR</th>
-    <th>Source Port</th>
-    <th>Destination IP or CIDR</th>
-    <th>Destination Port</th>
-    <th>Priority</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Allow worker nodes to be created in your cluster.</td>
-    <td>Allow</td>
-    <td>ALL</td>
-    <td>ALL</td>
-    <td>-</td>
-    <td>161.26.0.0/16</td>
-    <td>-</td>
-    <td>Set to top</td>
-    </tr>
-    <tr>
-    <td>Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint.</td>
-    <td>Allow</td>
-    <td>ALL</td>
-    <td>Any</td>
-    <td>-</td>
-    <td>166.8.0.0/14</td>
-    <td>-</td>
-    <td>After 1</td>
-    </tr>
-    <tr>
-    <td>Multizone clusters: Allow worker nodes in one subnet to communicate with the worker nodes in all other subnets within the cluster. Create one rule for each subnet that you want to connect to.</td>
-    <td>Allow</td>
-    <td>ALL</td>
-    <td>Any</td>
-    <td>-</td>
-    <td>Other subnet's CIDR</td>
-    <td>-</td>
-    <td>After 2</td>
-    </tr>
-    <tr>
-    <td>Allow incoming traffic requests to apps that run on your worker nodes.</td>
-    <td>Allow</td>
-    <td>TCP</td>
-    <td>Any</td>
-    <td>30000 - 32767</td>
-    <td>Any</td>
-    <td>-</td>
-    <td>After 3</td>
-    </tr>
-    <tr>
-    <td>To expose apps by using load balancers or Ingress, allow traffic through VPC load balancers.</td>
-    <td>Allow</td>
-    <td>TCP</td>
-    <td>Any</td>
-    <td>443</td>
-    <td>Any</td>
-    <td>-</td>
-    <td>After 4</td>
-    </tr>
-    <tr>
-    <td><code>*</code> Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each <a href="https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips">control plane CIDR for the region where your cluster is located</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</td>
-    <td>Allow</td>
-    <td>TCP</td>
-    <td>Any</td>
-    <td>80</td>
-    <td>Each <a href="https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips">control plane CIDR for the region where your cluster is located</a> <img src="../icons/launch-glyph.svg" alt="External link icon"></td>
-    <td>-</td>
-    <td>After 5</td>
-    </tr>
-    <tr>
-    <td>Deny all other traffic that does not match the previous rules.</td>
-    <td>Deny</td>
-    <td>ALL</td>
-    <td>Any</td>
-    <td>-</td>
-    <td>Any</td>
-    <td>-</td>
-    <td>Set to bottom</td>
-    </tr>
-    </tbody>
-    </table>
-    <p>`*` Alternatively, to allow the inbound traffic for router healthchecks, you can create a single inbound rule and outbound rule to allow all incoming and outgoing traffic on port 80.</p>
+    `*` Alternatively, to allow the inbound traffic for router healthchecks, you can create a single inbound rule and outbound rule to allow all incoming and outgoing traffic on port 80.
 7. In the **Attach subnets** section, choose the name of the subnet for which you created this ACL.
 
 8. Click **Create access control list**.
@@ -624,7 +363,8 @@ Before you begin:
 To create an ACL for each subnet that your cluster is attached to:
 1. List your VPC subnets. For each subnet that your cluster is attached to, get the **ID** and **Subnet CIDR**.
 
-    <p class="tip">If you can't remember which subnets your cluster is attached to, you can run `ibmcloud oc worker get -c <cluster_name_or_ID> -w <worker_node_ID>` for one worker node in each zone of your cluster, and get the **ID** and **CIDR** of the subnet that the worker is attached to.</p>
+    If you can't remember which subnets your cluster is attached to, you can run `ibmcloud oc worker get -c <cluster_name_or_ID> -w <worker_node_ID>` for one worker node in each zone of your cluster, and get the **ID** and **CIDR** of the subnet that the worker is attached to.
+    {: tip}
 
     ```
     ibmcloud is subnets
@@ -645,7 +385,7 @@ To create an ACL for each subnet that your cluster is attached to:
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     Creating network ACL mycluster-mysubnet1-acl under account Account as user user@email.com...
 
@@ -695,7 +435,8 @@ To create an ACL for each subnet that your cluster is attached to:
 
 6. Create rules to allow inbound traffic from and outbound traffic to the `161.26.0.0/16` and `166.8.0.0/14` {{site.data.keyword.cloud_notm}} private subnets. The `161.26.0.0/16` rules allow you to create worker nodes in your cluster. The `166.8.0.0/14` rules allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint.
 
-    <p class="tip">Need to connect your worker nodes to {{site.data.keyword.cloud_notm}} services that support only public cloud service endpoints? [Attach a public gateway to the subnet ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/clusters) so that worker nodes can connect to a public endpoint outside of your cluster. Then, create inbound and outbound rules to allow ingress from and egress to the services' public cloud service endpoints.</p>
+    Need to connect your worker nodes to {{site.data.keyword.cloud_notm}} services that support only public cloud service endpoints? [Attach a public gateway to the subnet ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/clusters) so that worker nodes can connect to a public endpoint outside of your cluster. Then, create inbound and outbound rules to allow ingress from and egress to the services' public cloud service endpoints.
+    {: tip}
 
     ```
     ibmcloud is network-acl-rule-add $acl_id allow outbound all 0.0.0.0/0 161.26.0.0/16 --name allow-ibm-private-network-outbound1
@@ -723,7 +464,8 @@ To create an ACL for each subnet that your cluster is attached to:
 
 9. Optional: If you must allow other traffic to or from your worker nodes on this subnet, add rules for that traffic.
 
-    <p class="note">When you refer to the VPC subnet that your worker nodes are on, you must use `0.0.0.0/0`. For more tips on how to create your rule, see the [VPC CLI reference documentation](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#network-acl-rule-add).</p>
+    When you refer to the VPC subnet that your worker nodes are on, you must use `0.0.0.0/0`. For more tips on how to create your rule, see the [VPC CLI reference documentation](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#network-acl-rule-add).
+    {: note}
 
     ```
     ibmcloud is network-acl-rule-add $acl_id <allow|deny> <inbound|outbound> <protocol> <source_CIDR> <destination_CIDR> --name <new_rule_name>
@@ -750,7 +492,7 @@ To create an ACL for each subnet that your cluster is attached to:
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     ID                  a1b2c3d4-f560-471b-b6ce-20067ac93439
     Name                mysubnet1
@@ -773,7 +515,6 @@ To create an ACL for each subnet that your cluster is attached to:
 ACL rules are applied to traffic in a specific order. If you want to add a rule after you complete these steps, ensure that you add the rule before the `deny-all-inbound` or `deny-all-outbound` rule. If you add a rule after these rules, your rule is ignored, because the packet matches the `deny-all-inbound` and `deny-all-outbound` rules and is blocked and removed before it can reach your rule. Create your rule in the proper order by including the `--before-rule-name deny-all-(inbound|outbound)` flag.
 {: note}
 
-<br />
 
 ## Controlling traffic between pods with Kubernetes policies
 {: #kubernetes_policies}
@@ -800,7 +541,7 @@ The following scenario demonstrates how to manage traffic between app microservi
 
 An Accounts team deploys multiple app services in one namespace, but they need isolation to permit only necessary communication between the microservices over the public network. For the app `Srv1`, the team has front end, back end, and database services. They label each service with the `app: Srv1` label and the `tier: frontend`, `tier: backend`, or `tier: db` label.
 
-<img src="images/cs_network_policy_single_ns.png" width="200" alt="Use a network policy to manage cross-namespace traffic." style="width:200px; border-style: none"/>
+![Use a network policy to manage cross-namespace traffic.](images/cs_network_policy_single_ns.png "Use a network policy to manage cross-namespace traffic"){: caption="Figure 1. Use a network policy to manage cross-namespace traffic" caption-side="bottom"}
 
 The Accounts team wants to allow traffic from the front end to the back end, and from the back end to the database. They use labels in their network policies to designate which traffic flows are permitted between microservices.
 
@@ -860,7 +601,7 @@ The following scenario demonstrates how to manage traffic between app microservi
 
 Services that are owned by different subteams need to communicate, but the services are deployed in different namespaces within the same cluster. The Accounts team deploys front end, back end, and database services for the app Srv1 in the accounts namespace. The Finance team deploys front end, back end, and database services for the app Srv2 in the finance namespace. Both teams label each service with the `app: Srv1` or `app: Srv2` label and the `tier: frontend`, `tier: backend`, or `tier: db` label. They also label the namespaces with the `usage: accounts` or `usage: finance` label.
 
-![Use a network policy to manage cross-namepsace traffic.](images/cs_network_policy_multi_ns.png)
+![Use a network policy to manage cross-namepspace traffic.](images/cs_network_policy_multi_ns.png) "Use a network policy to manage cross-namespace traffic"){: caption="Figure 1. Use a network policy to manage cross-namespace traffic" caption-side="bottom"}
 
 The Finance team's Srv2 needs to call information from the Accounts team's Srv1 back end. So the Accounts team creates a Kubernetes network policy that uses labels to allow all traffic from the finance namespace to the Srv1 back end in the accounts namespace. The team also specifies the port 3111 to isolate access through that port only.
 

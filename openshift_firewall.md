@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-21"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -353,7 +353,7 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
 
 To allow worker nodes to communicate with the cluster master over the private cloud service endpoint, allow outgoing network traffic from the source *<each_worker_node_privateIP>* to the destination TCP/UDP port range 20000-32767 and port 443, and the following IP addresses and network groups.
 
-*`TCP/UDP port range 20000-32767, port 443 FROM <each_worker_node_privateIP> TO <private_IPs>`
+* `TCP/UDP port range 20000-32767, port 443 FROM <each_worker_node_privateIP> TO <private_IPs>`
 * Replace *<private_IPs>* with the private IP addresses of the region where your cluster is located.
 
 | Region | Private IP address  |
@@ -421,19 +421,17 @@ To send logging and metric data, set up firewall rules for your {{site.data.keyw
 You can allow incoming access to NodePort, load balancer, and Ingress services, and {{site.data.keyword.openshiftshort}} routes.
 {: shortdesc}
 
+NodePort service
+: Open the port that you configured when you deployed the service to the public or private IP addresses for all of the worker nodes to allow traffic to. To find the port, run `oc get svc`. The port is in the 20000-32000 range.
 
-<dl>
-    <dt>NodePort service</dt>
-    <dd>Open the port that you configured when you deployed the service to the public or private IP addresses for all of the worker nodes to allow traffic to. To find the port, run `oc get svc`. The port is in the 20000-32000 range.</dd>
-    <dt>Load balancer service</dt>
-    <dd>Open the port that you configured when you deployed the service to the load balancer service's public or private IP address.</dd>
-    <dt>Ingress</dt>
-    <dd>Open port 80 for HTTP and port 443 for HTTPS to the public or private IP address for the Ingress application load balancer.</dd>
-    <dt>Route</dt>
-    <dd>Open port 80 for HTTP and port 443 for HTTPS to the router's public IP address.</dd>
-</dl>
+Load balancer service
+: Open the port that you configured when you deployed the service to the load balancer service's public or private IP address.
 
+Ingress
+: Open port 80 for HTTP and port 443 for HTTPS to the public or private IP address for the Ingress application load balancer.
 
+Route
+: Open port 80 for HTTP and port 443 for HTTPS to the router's public IP address.
 
 
 ## Allowing the cluster to access resources through Calico network policies
@@ -480,19 +478,19 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
 
         3. List the VLAN subnets for each unique network ID.
 
-          ```
-          ibmcloud sl subnet list | grep -e <networkID1> -e <networkID2>
-          ```
-          {: pre}
+            ```
+            ibmcloud sl subnet list | grep -e <networkID1> -e <networkID2>
+            ```
+            {: pre}
 
-          Example output:
+            Example output:
           
-          ```
-          ID        identifier       type                 network_space   datacenter   vlan_id   IPs   hardware   virtual_servers
-          1234567   169.xx.210.xxx   ADDITIONAL_PRIMARY   PUBLIC          dal12        1122334   16    0          5   
-          7654321   169.xx.178.xxx   ADDITIONAL_PRIMARY   PUBLIC          dal10        4332211   16    0          6    
-          ```
-          {: screen}
+            ```
+            ID        identifier       type                 network_space   datacenter   vlan_id   IPs   hardware   virtual_servers
+            1234567   169.xx.210.xxx   ADDITIONAL_PRIMARY   PUBLIC          dal12        1122334   16    0          5   
+            7654321   169.xx.178.xxx   ADDITIONAL_PRIMARY   PUBLIC          dal10        4332211   16    0          6    
+            ```
+            {: screen}
 
         4. Retrieve the subnet address. In the output, find the number of **IPs**. Then, raise `2` to the power of `n` equal to the number of IPs. For example, if the number of IPs is `16`, then `2` is raised to the power of `4` (`n`) to equal `16`. Now get the subnet CIDR by subtracting the value of `n` from `32` bits. For example, when `n` equals `4`, then the CIDR is `28` (from the equation `32 - 4 = 28`). Combine the **identifier** mask with the CIDR value to get the full subnet address. In the previous output, the subnet addresses are:
 

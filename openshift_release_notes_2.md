@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-09-20"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -31,6 +31,21 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 Review the release notes for September 2021.
 {: shortdesc}
+
+
+
+
+
+### 21 September 2021
+{: #21sep2021}
+{: release-note}
+
+Review the release notes for 21 September 2021.
+{: shortdesc}
+
+HPCS Router add-on
+:   Version `4.5.0_861` and `4.6.0_860` of the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog) add-on are available.
+
 
 ### 16 September 2021
 {: #16sep2021}
