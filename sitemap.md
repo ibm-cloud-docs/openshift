@@ -130,6 +130,7 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-rel-notes)
 
 * [September 2021](/docs/openshift?topic=openshift-rel-notes#release-sep-2021)
+    * [22 September 2021](/docs/openshift?topic=openshift-rel-notes#22sep2021)
     * [21 September 2021](/docs/openshift?topic=openshift-rel-notes#21sep2021)
     * [16 September 2021](/docs/openshift?topic=openshift-rel-notes#16sep2021)
     * [15 September 2021](/docs/openshift?topic=openshift-rel-notes#15sep2021)
