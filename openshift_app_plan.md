@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-22"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -61,7 +61,6 @@ Check out the [Twelve-Factor App](https://12factor.net/){: external}, a language
 
 You can take some general steps to containerize your app as follows.
 {: shortdesc}
-
 {: help}
 {: support}
 
@@ -73,12 +72,12 @@ You can take some general steps to containerize your app as follows.
     {: tip}
 
 4. Review the [common app modification scenarios](#openshift_move_apps_scenarios).
-4. Instead of relying on local storage, plan to use persistent storage or cloud database-as-a-service solutions to back up your app's data.
-5. Over time, refactor your app processes into microservices.
+5. Instead of relying on local storage, plan to use persistent storage or cloud database-as-a-service solutions to back up your app's data.
+6. Over time, refactor your app processes into microservices.
 
-For more, see the following tutorials:
-*  [Migrating an app from Cloud Foundry to a cluster](/docs/containers?topic=containers-cf_tutorial#cf_tutorial)
-*  [Moving a VM-based app to Kubernetes](/docs/solution-tutorials?topic=solution-tutorials-vm-to-containers-and-kubernetes)
+For more, see the following tutorials.
+* [Migrating an app from Cloud Foundry to a cluster](/docs/containers?topic=containers-cf_tutorial#cf_tutorial).
+* [Moving a VM-based app to Kubernetes](/docs/solution-tutorials?topic=solution-tutorials-vm-to-containers-and-kubernetes).
 
 
 
@@ -132,10 +131,10 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     {: pre}
 
 5. In your deployment configuration file, refer to the privileged service account and set the security context to privileged.
-    *   In `spec.template.spec`, add `serviceAccount: <sa_name>`.
-    *   In `spec.template.spec.containers`, add `securityContext: privileged: true`.
+    * In `spec.template.spec`, add `serviceAccount: <sa_name>`.
+    * In `spec.template.spec.containers`, add `securityContext: privileged: true`.
 
-    Example:
+    Example
     ```
     apiVersion: apps/v1
     kind: Deployment
@@ -184,9 +183,11 @@ With Kubernetes, you declare many types of objects in YAML configuration files s
 A [pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/){: external} is the smallest deployable unit that Kubernetes can manage. You put your container (or a group of containers) into a pod and use the pod configuration file to tell the pod how to run the container and share resources with other pods. All containers that you put into a pod run in a shared context, which means that they share the same virtual or physical machine.
 {: shortdesc}
 
-**What to put in a container**: As you think about your application's components, consider whether they have significantly different resource requirements for things like CPU and memory. Could some components run at a best effort, where going down for a little while to divert resources to other areas is acceptable? Is another component customer-facing, so it's critical for it to stay up? Split them up into separate containers. You can always deploy them to the same pod so that they run together in sync.
+What to put in a container
+:    As you think about your application's components, consider whether they have significantly different resource requirements for things like CPU and memory. Could some components run at a best effort, where going down for a little while to divert resources to other areas is acceptable? Is another component customer-facing, so it's critical for it to stay up? Split them up into separate containers. You can always deploy them to the same pod so that they run together in sync.
 
-**What to put in a pod**: The containers for your app don't always have to be in the same pod. In fact, if you have a component that is stateful and difficult to scale, such as a database service, put it in a different pod that you can schedule on a worker node with more resources to handle the workload. If your containers work correctly if they run on different worker nodes, then use multiple pods. If they need to be on the same machine and scale together, group the containers into the same pod.
+What to put in a pod
+:   The containers for your app don't always have to be in the same pod. In fact, if you have a component that is stateful and difficult to scale, such as a database service, put it in a different pod that you can schedule on a worker node with more resources to handle the workload. If your containers work correctly if they run on different worker nodes, then use multiple pods. If they need to be on the same machine and scale together, group the containers into the same pod.
 
 ### So if I can just use a pod, why do I need all these different types of objects?
 {: #deploy_objects}
@@ -336,42 +337,40 @@ You can also [connect multiple clusters in different regions with a global load 
 Consider the following options to increase availability of your app.
 {: shortdesc}
 
-<dl>
-    <dt>Use deployments and replica sets to deploy your app and its dependencies</dt>
-        <dd><p>A deployment is a Kubernetes resource that you can use to declare all of the components of your app and its dependencies. With deployments, you don't have to write down all of the steps and instead can focus on your app.</p>
-    <p>When you deploy more than one pod, a replica set is automatically created for your deployments that monitors the pods and assures that the specified number of pods is up and running at all times. When a pod goes down, the replica set replaces the unresponsive pod with a new one.</p>
-    <p>You can use a deployment to define update strategies for your app, including the number of pods that you want to add during a rolling update and the number of pods that can be unavailable at a time. When you perform a rolling update, the deployment checks whether or not the revision is working and stops the rollout when failures are detected.</p>
-    <p>With deployments, you can concurrently deploy multiple revisions with different flags. For example, you can test a deployment first before you decide to push it to production.</p>
-    <p>By using Deployments, you can track any deployed revisions. You can use this history to roll back to a previous version if you encounter that your updates are not working as expected.</p></dd>
-    <dt>Include enough replicas for your app's workload, plus two</dt>
-        <dd>To make your app even more highly available and more resilient to failure, consider including extra replicas than the minimum to handle the expected workload. Extra replicas can handle the workload in case a pod crashes and the replica set did not yet recover the crashed pod. For protection against two simultaneous failures, include two extra replicas. This setup is an N+2 pattern, where N is the number of replicas to handle the incoming workload and +2 is an extra two replicas. As long as your cluster has enough space, you can have as many pods as you want.</dd>
-    <dt>Spread pods across multiple nodes (anti-affinity)</dt>
-        <dd><p>When you create your deployment, each pod can be deployed to the same worker node. This is known as affinity, or co-location. To protect your app against worker node failure, you can configure your deployment to spread your pods across multiple worker nodes by using the <code>podAntiAffinity</code> option with your standard clusters. You can define two types of pod anti-affinity: preferred or required.
-        <p>For more information, see the Kubernetes documentation on [Assigning Pods to Nodes ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/).</p>
-        <p>For an example of affinity in an app deployment, see [Making your app deployment YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml).</p>
-        </dd>
-    </dd>
-<dt>Distribute pods across multiple zones or regions</dt>
-    <dd><p>To protect your app from a zone failure, you can create multiple clusters in separate zones or add zones to a worker pool in a multizone cluster. Multizone clusters are available only in certain [classic](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) or [VPC](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) multizones, such as Dallas. If you create multiple clusters in separate zones, you must [set up a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple_clusters).</p>
-    <p>When you use a replica set and specify pod anti-affinity, Kubernetes spreads your app pods across the nodes. If your nodes are in multiple zones, the pods are spread across the zones, increasing the availability of your app. If you want to limit your apps to run only in one zone, you can configure pod affinity, or create and label a worker pool in one zone. For more information, see [High availability for multizone clusters](/docs/openshift?topic=openshift-ha_clusters#ha_clusters).</p>
-    <p>**In a multizone cluster deployment, are my app pods distributed evenly across the nodes?**</p>
-    <p>The pods are evenly distributed across zones, but not always across nodes. For example, if you have a cluster with one node in each of three zones and deploy a replica set of six pods, then each node gets two pods. However, if you have a cluster with two nodes in each of three zones and deploy a replica set of six pods, each zone schedules two pods, and might schedule one pod per node or might not. For more control over scheduling, you can [set pod affinity ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/).</p>
-    <p>**If a zone goes down, how are pods rescheduled onto the remaining nodes in the other zones?**</p>
-    <p>It depends on your scheduling policy that you used in the deployment. If you included [node-specific pod affinity ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/), your pods are not rescheduled. If you did not, pods are created on available worker nodes in other zones, but they might not be balanced. For example, the two pods might be spread across the two available nodes, or they might both be scheduled onto one node with available capacity. Similarly, when the unavailable zone returns, pods are not automatically deleted and rebalanced across nodes. If you want the pods to be rebalanced across zones after the zone is back up, consider using the [Kubernetes descheduler ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes-sigs/descheduler).</p>
-    <p>**Tip**: In multizone clusters, try to keep your worker node capacity at 50% per zone so that enough capacity is left to protect your cluster against a zonal failure.</p>
-    <p>**What if I want to spread my app across regions?**</p>
-    <p>To protect your app from a region failure, create a second cluster in another region, [set up a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple_clusters) to connect your clusters, and use a deployment YAML to deploy a duplicate replica set with [pod anti-affinity ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/) for your app.</p>
-    <p>**What if my apps need persistent storage?**</p>
-    <p>Use a cloud service such as [{{site.data.keyword.cloudant_short_notm}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) or [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).</p></dd>
-</dl>
+Use deployments and replica sets to deploy your app and its dependencies
+:   A deployment is a Kubernetes resource that you can use to declare all of the components of your app and its dependencies. With deployments, you don't have to write down all of the steps and instead can focus on your app.
+    When you deploy more than one pod, a replica set is automatically created for your deployments that monitors the pods and assures that the specified number of pods is up and running at all times. When a pod goes down, the replica set replaces the unresponsive pod with a new one.
+    You can use a deployment to define update strategies for your app, including the number of pods that you want to add during a rolling update and the number of pods that can be unavailable at a time. When you perform a rolling update, the deployment checks whether or not the revision is working and stops the rollout when failures are detected.
+    With deployments, you can concurrently deploy multiple revisions with different flags. For example, you can test a deployment first before you decide to push it to production.
+    By using Deployments, you can track any deployed revisions. You can use this history to roll back to a previous version if you encounter that your updates are not working as expected.
+
+Include enough replicas for your app's workload, plus two
+:   To make your app even more highly available and more resilient to failure, consider including extra replicas than the minimum to handle the expected workload. Extra replicas can handle the workload in case a pod crashes and the replica set did not yet recover the crashed pod. For protection against two simultaneous failures, include two extra replicas. This setup is an N+2 pattern, where N is the number of replicas to handle the incoming workload and +2 is an extra two replicas. As long as your cluster has enough space, you can have as many pods as you want.
+
+Spread pods across multiple nodes (anti-affinity)
+:   When you create your deployment, each pod can be deployed to the same worker node. This is known as affinity, or co-location. To protect your app against worker node failure, you can configure your deployment to spread your pods across multiple worker nodes by using the `podAntiAffinity` option with your standard clusters. You can define two types of pod anti-affinity: preferred or required.
+    For more information, see the Kubernetes documentation on [Assigning Pods to Nodes](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}.</p>
+    For an example of affinity in an app deployment, see [Making your app deployment YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml).
+
+Distribute pods across multiple zones or regions</dt>
+:   To protect your app from a zone failure, you can create multiple clusters in separate zones or add zones to a worker pool in a multizone cluster. Multizone clusters are available only in certain [classic](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) or [VPC](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) multizones, such as Dallas. If you create multiple clusters in separate zones, you must [set up a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple_clusters).
+    When you use a replica set and specify pod anti-affinity, Kubernetes spreads your app pods across the nodes. If your nodes are in multiple zones, the pods are spread across the zones, increasing the availability of your app. If you want to limit your apps to run only in one zone, you can configure pod affinity, or create and label a worker pool in one zone. For more information, see [High availability for multizone clusters](/docs/openshift?topic=openshift-ha_clusters#ha_clusters).
+    **In a multizone cluster deployment, are my app pods distributed evenly across the nodes?**
+    The pods are evenly distributed across zones, but not always across nodes. For example, if you have a cluster with one node in each of three zones and deploy a replica set of six pods, then each node gets two pods. However, if you have a cluster with two nodes in each of three zones and deploy a replica set of six pods, each zone schedules two pods, and might schedule one pod per node or might not. For more control over scheduling, you can [set pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}.
+    **If a zone goes down, how are pods rescheduled onto the remaining nodes in the other zones?**
+    It depends on your scheduling policy that you used in the deployment. If you included [node-specific pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}, your pods are not rescheduled. If you did not, pods are created on available worker nodes in other zones, but they might not be balanced. For example, the two pods might be spread across the two available nodes, or they might both be scheduled onto one node with available capacity. Similarly, when the unavailable zone returns, pods are not automatically deleted and rebalanced across nodes. If you want the pods to be rebalanced across zones after the zone is back up, consider using the [Kubernetes descheduler](https://github.com/kubernetes-sigs/descheduler){: shortdesc}.
+    In multizone clusters, try to keep your worker node capacity at 50% per zone so that enough capacity is left to protect your cluster against a zonal failure.
+    {: tip}
+    **What if I want to spread my app across regions?**
+    To protect your app from a region failure, create a second cluster in another region, [set up a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple_clusters) to connect your clusters, and use a deployment YAML to deploy a duplicate replica set with [pod anti-affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external} for your app.
+    **What if my apps need persistent storage?**
+    Use a cloud service such as [{{site.data.keyword.cloudant_short_notm}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) or [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
 
 ### How can I scale my app?
 {: #scale}
 
 If you want to dynamically add and remove apps in response to workload usage, see [Scaling apps](/docs/openshift?topic=openshift-update_app#app_scaling) for steps to enable horizontal pod autoscaling.
 {: shortdesc}
-
-
 
 ## Versioning and updating apps
 {: #updating}
@@ -384,9 +383,9 @@ You put in a lot of effort preparing for the next version of your app. You can u
 
 Now that you have a good idea of what to include in your deployment, you might wonder how are you going to manage all these different YAML files? Not to mention the objects that they create in your Kubernetes environment!
 
-A few tips for organizing deployment YAML files:
-*  Use a version-control system, such as Git.
-*  Group closely related Kubernetes objects within a single YAML file. For example, if you are creating a `deployment`, you might also add the `service` file to the YAML. Separate objects with `---` such as follows:
+The following tips can help you organize your deployment YAML files.
+* Use a version-control system, such as Git.
+* Group closely related Kubernetes objects within a single YAML file. For example, if you are creating a `deployment`, you might also add the `service` file to the YAML. Separate objects with `---` such as in the following example.
     ```yaml
     apiVersion: apps/v1
     kind: Deployment
@@ -400,17 +399,19 @@ A few tips for organizing deployment YAML files:
     ```
     {: codeblock}
 
-*  You can use the `oc apply -f` command to apply to an entire directory, not just a single file.
-*  Try out the [`kustomize` project](/docs/openshift?topic=openshift-openshift_apps#kustomize) that you can use to help write, customize, and reuse your Kubernetes resource YAML configurations.
+* You can use the `oc apply -f` command to apply to an entire directory, not just a single file.
+* Try out the [`kustomize` project](/docs/openshift?topic=openshift-openshift_apps#kustomize) that you can use to help write, customize, and reuse your Kubernetes resource YAML configurations.
 
 Within the YAML file, you can use labels or annotations as metadata to manage your deployments.
 
-**Labels**: [Labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/){: external} are `key:value` pairs that can be attached to Kubernetes objects such as pods and deployments. They can be whatever you want, and are useful for selecting objects based on the label information. Labels provide the foundation for grouping objects. Some ideas for labels:
-* `app: nginx`
-* `version: v1`
-* `env: dev`
+Labels
+:   [Labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/){: external} are `key:value` pairs that can be attached to Kubernetes objects such as pods and deployments. They can be whatever you want, and are useful for selecting objects based on the label information. Labels provide the foundation for grouping objects. See the following examples for ideas for labels.
+    * `app: nginx`
+    * `version: v1`
+    * `env: dev`
 
-**Annotations**: [Annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/){: external} are similar to labels in that they are also `key:value` pairs. They are better for non-identifying information that can be leveraged by tools or libraries, such as holding extra information about where an object came from, how to use the object, pointers to related tracking repos, or a policy about the object. You don't select objects based on annotations.
+Annotations
+:   [Annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/){: external} are similar to labels in that they are also `key:value` pairs. They are better for non-identifying information that can be leveraged by tools or libraries, such as holding extra information about where an object came from, how to use the object, pointers to related tracking repos, or a policy about the object. You don't select objects based on annotations.
 
 ### What app update strategies can I use?
 {: #updating_apps_strategy}
@@ -466,9 +467,9 @@ You can create three types of services for external networking: NodePort, LoadBa
 {: shortdesc}
 
 You have different options that depend on your cluster type. For more information, see [Planning networking services](/docs/containers?topic=containers-cs_network_planning#external).
-*  **Standard cluster**: You can expose your app by using a [NodePort, load balancer, or Ingress service](/docs/containers?topic=containers-cs_network_planning#external).
-*  **Cluster that is made private by using Calico**: You can expose your app by using a [NodePort, load balancer, or Ingress service](/docs/containers?topic=containers-cs_network_planning#private_both_vlans). You also must use a Calico preDNAT network policy to block the public node ports.
-*  **Private VLAN-only standard cluster**: You can expose your app by using a [NodePort, load balancer, or Ingress service](/docs/containers?topic=containers-cs_network_planning#plan_private_vlan). You also must open the port for the service's private IP address in your firewall.
+- **Standard cluster**: You can expose your app by using a [NodePort, load balancer, or Ingress service](/docs/containers?topic=containers-cs_network_planning#external).
+- **Cluster that is made private by using Calico**: You can expose your app by using a [NodePort, load balancer, or Ingress service](/docs/containers?topic=containers-cs_network_planning#private_both_vlans). You also must use a Calico preDNAT network policy to block the public node ports.
+- **Private VLAN-only standard cluster**: You can expose your app by using a [NodePort, load balancer, or Ingress service](/docs/containers?topic=containers-cs_network_planning#plan_private_vlan). You also must open the port for the service's private IP address in your firewall.
 
 As you plan how many `Service` objects you need in your cluster, keep in mind that Kubernetes uses `iptables` to handle networking and port forwarding rules. If you run a large number of services in your cluster, such as 5000, performance might be impacted.
 

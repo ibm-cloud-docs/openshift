@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-22"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -68,7 +68,7 @@ Before you begin, make sure that you have the **Manager** [service access role](
     ```
     {: pre}
 
-    Example output with completed scan pods:
+    Example output with completed scan pods
     ```
     NAME                                             READY   STATUS      RESTARTS   AGE
     aggregator-pod-roks-cis-node-worker              0/1     Completed   0          53s
@@ -88,7 +88,7 @@ Before you begin, make sure that you have the **Manager** [service access role](
     ```
     {: pre}
 
-    Example results:
+    Example results
     ```
     NAME                                                  STATUS   SEVERITY
     roks-cis-node-worker-etcd-unique-ca                   SKIP     medium
@@ -100,11 +100,11 @@ Before you begin, make sure that you have the **Manager** [service access role](
     {: screen}
 
 8. Interpret the scan **STATUS** results. For more details, review the upstream project documentation in the [What's next?](#comp-op-next) section.
-    *   **PASS**: Your worker nodes passed the check and no action is required.
-    *   **SKIP**: The benchmark check is not applicable to worker nodes. For more information, check the `rationale` for the check in the `roks-cis-node` tailored profile.
-    *   **FAIL**: Your worker nodes did not pass the check. An application or other resource in your cluster possibly modified the default system configuration. Consider the following actions:
-        * Review the details in the `roks-cis-node` tailored profile for the check that fails. Then, review the resources that you deployed in the cluster to see if any might have modified the default system configuration for the check.
-        * Reload the worker node and see if the check passes on the next scan.
+    - **PASS**: Your worker nodes passed the check and no action is required.
+    - **SKIP**: The benchmark check is not applicable to worker nodes. For more information, check the `rationale` for the check in the `roks-cis-node` tailored profile.
+    - **FAIL**: Your worker nodes did not pass the check. An application or other resource in your cluster possibly modified the default system configuration. Consider the following actions:
+        - Review the details in the `roks-cis-node` tailored profile for the check that fails. Then, review the resources that you deployed in the cluster to see if any might have modified the default system configuration for the check.
+        - Reload the worker node and see if the check passes on the next scan.
 
 
 ## What's next?
@@ -114,8 +114,8 @@ Now, you set up the compliance operator to scan your worker nodes against the {{
 {: external}
 
 For more ways to use the compliance operator, review the OpenShift Container Platform documentation, such as the following resources.
-* [Understanding the compliance operator](https://docs.openshift.com/container-platform/4.7/security/compliance_operator/compliance-operator-understanding.html){: external} documentation set.
-* [Self-paced compliance operator workshop in GitHub](https://github.com/openshift/compliance-operator/tree/master/doc/tutorials){: external}.
-* How does the compliance operator work? [Part 1](https://cloud.redhat.com/blog/how-does-compliance-operator-work-for-openshift-part-1){: external} and [Part 2](https://cloud.redhat.com/blog/how-does-compliance-operator-work-for-openshift-part-2){: external} blogs.
+- [Understanding the compliance operator](https://docs.openshift.com/container-platform/4.7/security/compliance_operator/compliance-operator-understanding.html){: external} documentation set.
+- [Self-paced compliance operator workshop in GitHub](https://github.com/openshift/compliance-operator/tree/master/doc/tutorials){: external}.
+- How does the compliance operator work? [Part 1](https://cloud.redhat.com/blog/how-does-compliance-operator-work-for-openshift-part-1){: external} and [Part 2](https://cloud.redhat.com/blog/how-does-compliance-operator-work-for-openshift-part-2){: external} blogs.
 
 

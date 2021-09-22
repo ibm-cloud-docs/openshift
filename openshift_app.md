@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-22"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -19,15 +19,13 @@ subcollection: openshift
 Develop a configuration to deploy your app workload to {{site.data.keyword.openshiftlong}}. Because Kubernetes is an extensible container orchestration platform that does not mandate a specific language or app, you can run various workloads such as stateless, stateful, and data-processing apps that are written in the language of your choice.
 {: shortdesc}
 
-<br>
-
 ## Specifying your app requirements in your YAML file
 {: #app_yaml}
 
 In Kubernetes, you describe your app in a YAML file that declares the configuration of the Kubernetes object. The Kubernetes API server then processes the YAML file and stores the configuration and required state of the object in the etcd data store. The Kubernetes scheduler schedules your workloads onto the worker nodes within your cluster, taking into account the specification in your YAML file, any cluster policies that the admin sets, and available cluster capacity.
 {: shortdesc}
 
-Review a copy of the [complete YAML file](https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/deploy-apps-clusters/deploy_wasliberty.yaml). Then, review the following sections to understand how you can enhance your app deployment.
+Review a copy of the [complete YAML file](https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/deploy-apps-clusters/deploy_wasliberty.yaml){: external}. Then, review the following sections to understand how you can enhance your app deployment.
 
 Want more information about how Kubernetes objects work together for your deployment? Check out [Understanding Kubernetes objects for apps](/docs/openshift?topic=openshift-plan_deploy#kube-objects).
 {: tip}
@@ -94,11 +92,16 @@ Specify affinity (co-location) when you want more control over which worker node
 
 For more information, see the [Kubernetes documentation on Assigning Pods to Nodes](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}.
 
-* **Required anti-affinity**: You can deploy only the number of replicas that you have worker nodes for. For example, if you have three worker nodes in your cluster but you define five replicas in your YAML file, then only three replicas deploy. Each replica lives on a different worker node. The leftover two replicas remain pending. If you add another worker node to your cluster, then one of the leftover replicas deploys to the new worker node automatically. If a worker node fails, the pod does not reschedule because the affinity policy is required. For an example YAML with required, see [Liberty app with required pod anti-affinity](https://github.com/IBM-Cloud/kube-samples/blob/master/deploy-apps-clusters/liberty_requiredAntiAffinity.yaml){: external}.
-* **Preferred anti-affinity**: You can deploy your pods to nodes with available capacity, which provides more flexibility for your workload. When possible, the pods are scheduled on different worker nodes. For example, if you have three worker nodes with enough capacity in your cluster, it can schedule the five replica pods across the nodes. However, if you add two more worker nodes to your cluster, the affinity rule does not force the two extra pods that are running on the existing nodes to reschedule onto the free node.
-* **Worker node affinity**: You can configure your deployment to run on only certain worker nodes, such as bare metal. For more information, see [Deploying apps to specific worker nodes by using labels](/docs/openshift?topic=openshift-deploy_app#node_affinity).
+Required anti-affinity
+:   You can deploy only the number of replicas that you have worker nodes for. For example, if you have three worker nodes in your cluster but you define five replicas in your YAML file, then only three replicas deploy. Each replica lives on a different worker node. The leftover two replicas remain pending. If you add another worker node to your cluster, then one of the leftover replicas deploys to the new worker node automatically. If a worker node fails, the pod does not reschedule because the affinity policy is required. For an example YAML with required, see [Liberty app with required pod anti-affinity](https://github.com/IBM-Cloud/kube-samples/blob/master/deploy-apps-clusters/liberty_requiredAntiAffinity.yaml){: external}.
 
-Example for preferred anti-affinity:
+Preferred anti-affinity
+:   You can deploy your pods to nodes with available capacity, which provides more flexibility for your workload. When possible, the pods are scheduled on different worker nodes. For example, if you have three worker nodes with enough capacity in your cluster, it can schedule the five replica pods across the nodes. However, if you add two more worker nodes to your cluster, the affinity rule does not force the two extra pods that are running on the existing nodes to reschedule onto the free node.
+
+Worker node affinity
+:   You can configure your deployment to run on only certain worker nodes, such as bare metal. For more information, see [Deploying apps to specific worker nodes by using labels](/docs/openshift?topic=openshift-deploy_app#node_affinity).
+
+Example for preferred anti-affinity
 ```yaml
 spec:
   affinity:
@@ -186,9 +189,11 @@ Even if no resource quota is set, you can include resource requests and limits i
 If a container exceeds its limit, the container might be restarted or fail. If a container exceeds a request, its pod might be evicted if the worker node runs out of that resource that is exceeded. For more information about troubleshooting, see [Pods repeatedly fail to restart or are unexpectedly removed](/docs/containers?topic=containers-ts-app-pod-fail).
 {: note}
 
-**Request**: The minimum amount of the resource that the scheduler reserves for the container to use. If the amount is equal to the limit, the request is guaranteed. If the amount is less than the limit, the request is still guaranteed, but the scheduler can use the difference between the request and the limit to fulfill the resources of other containers.
+Request
+:   The minimum amount of the resource that the scheduler reserves for the container to use. If the amount is equal to the limit, the request is guaranteed. If the amount is less than the limit, the request is still guaranteed, but the scheduler can use the difference between the request and the limit to fulfill the resources of other containers.
 
-**Limit**: The maximum amount of the resource that the container can consume. If the total amount of resources that is used across the containers exceeds the amount available on the worker node, containers can be evicted to free up space. To prevent eviction, set the resource request equal to the limit of the container. If no limit is specified, the default is the worker node's capacity.
+Limit
+:   The maximum amount of the resource that the container can consume. If the total amount of resources that is used across the containers exceeds the amount available on the worker node, containers can be evicted to free up space. To prevent eviction, set the resource request equal to the limit of the container. If no limit is specified, the default is the worker node's capacity.
 
 For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/){: external}.
 
@@ -211,9 +216,11 @@ By default, Kubernetes sends traffic to your app pods after all containers in th
 
 For example, your app might have a startup delay. The app processes might begin before the entire app is completely ready, which can affect responses especially when scaling up across many instances. With health checks, you can let your system can know whether your app is running and ready to receive requests. By setting these probes, you can also help prevent downtime when you perform a [rolling update](/docs/openshift?topic=openshift-update_app#app_rolling) of your app. You can set two types of health checks: liveness and readiness probes.
 
-**Liveness probe**: Set up a liveness probe to check whether the container is running. If the probe fails, the container is restarted. If the container does not specify a liveness probe, the probe succeeds because it assumes that the container is alive when the container is in a **Running** status.
+Liveness probe
+:   Set up a liveness probe to check whether the container is running. If the probe fails, the container is restarted. If the container does not specify a liveness probe, the probe succeeds because it assumes that the container is alive when the container is in a **Running** status.
 
-**Readiness probe**: Set up a readiness probe to check whether the container is ready to receive requests and external traffic. If the probe fails, the pod's IP address is removed as a usable IP address for services that match the pod, but the container is not restarted. Setting a readiness probe with an initial delay is especially important if your app takes a while to start up. Before the initial delay, the probe does not start, giving your container time to come up. If the container does not provide a readiness probe, the probe succeeds because it assumes that the container is alive when the container is in a **Running** status.
+Readiness probe
+:   Set up a readiness probe to check whether the container is ready to receive requests and external traffic. If the probe fails, the pod's IP address is removed as a usable IP address for services that match the pod, but the container is not restarted. Setting a readiness probe with an initial delay is especially important if your app takes a while to start up. Before the initial delay, the probe does not start, giving your container time to come up. If the container does not provide a readiness probe, the probe succeeds because it assumes that the container is alive when the container is in a **Running** status.
 
 You can set up the probes as commands, HTTP requests, or TCP sockets. The example uses HTTP requests. Give the liveness probe more time than the readiness probe. For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/){: external}.
 
@@ -240,9 +247,14 @@ To increase your app's availability, you can control how your app reacts to [dis
 {: shortdesc}
 
 A pod disruption budget can help you plan how your app behaves during voluntary disruptions, such as when you initiate a direct restart by updating the app deployment, or involuntary disruptions, such as a kernel panic.
-* `minAvailable`: You can specify the number or percentage of pods that must still be available after a disruption occurs.
-* `maxUnavailable`: You can specify the number or percentage of pods that can be unavailable after a disruption occurs. The example uses `maxUnavailable: 1`.
-* `selector`: Fill in the label to select the set of pods that the `PodDisruptionBudget` applies to. Note that if you used this same label in other pod deployments, the pod applies to those as well.
+`minAvailable`
+:   You can specify the number or percentage of pods that must still be available after a disruption occurs.
+
+`maxUnavailable`
+:   You can specify the number or percentage of pods that can be unavailable after a disruption occurs. The example uses `maxUnavailable: 1`.
+
+`selector`
+:   Fill in the label to select the set of pods that the `PodDisruptionBudget` applies to. Note that if you used this same label in other pod deployments, the pod applies to those as well.
 
 For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/tasks/run-application/configure-pdb/){: external}.
 
@@ -449,14 +461,14 @@ spec:
 The following example is a copy of the deployment YAML that is [discussed section-by-section previously](#app_yaml). You can also [download the YAML from GitHub](https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/deploy-apps-clusters/deploy_wasliberty.yaml){: external}.
 {: shortdesc}
 
-To apply the YAML:
+To apply the YAML,
 
 ```
 oc apply -f file.yaml [-n <namespace>]
 ```
 {: pre}
 
-Example YAML:
+Example YAML
 
 ```yaml
 apiVersion: apps/v1
@@ -600,8 +612,6 @@ spec:
 ```
 {: codeblock}
 
-<br />
-
 ## Packaging apps in version 4 clusters for reuse in multiple environments with Kustomize
 {: #kustomize}
 
@@ -617,13 +627,13 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
 To set up configuration files with Kustomize:
 1. [Install the `kustomize` tool](https://github.com/kubernetes-sigs/kustomize/blob/master/docs/INSTALL.md){: external}.
-    *   For macOS, you can use the `brew` package manager.
+    - For macOS, you can use the `brew` package manager.
         ```
         brew install kustomize
         ```
         {: pre}
 
-    *   For Windows, you can use the `chocolatey` package manager.
+    - For Windows, you can use the `chocolatey` package manager.
         ```
         choco install kustomize
         ```
@@ -644,7 +654,7 @@ To set up configuration files with Kustomize:
     ```
     {: pre}
 
-    Example repo structure:
+    Example repo structure
     ```
     .
     ├── base
@@ -706,40 +716,17 @@ To set up configuration files with Kustomize:
         - new_staging_resource.yaml
         ```
         {: codeblock}
+        
+        | Component | Description |
+        | ----- | ---------- |
+        | `namePrefix` | Specify a prefix to attach to the name of each resource that you want to create with your staging `kustomization` file, such as `staging-`. |
+        | `commonLabels` | Add labels that are unique to the staging objects, such as the staging environment and responsible team. |
+        | `bases` | Add a relative path to a directory or URL to a remote repo that contains a base `kustomization` file. In this example, the relative path points to the base `kustomization` file in the `base` repo that you previously created. This field is required for an overlay `kustomization`. |
+        | `patchesStrategicMerge` | List the resource configuration YAML files that you want to merge to the base `kustomization`. You must also add these files to the same repo as the `kustomization` file, such as `overlay/staging`. These resource configuration files can contain small changes that are merged to the base configuration files of the same name as a patch. The resource gets all the components that are in the `base` configuration file, plus any additional components that you specify in the `overlay` configuration file. If the configuration is a new file that is not in the base, you must also add the file name to the `resources` field. |
+        | `resources` | List any resource configuration YAML files that are unique to the staging repo and not included in the base repo. Include these files in the `patchesStrategicMerge` field also, and add them to the same repo as the `kustomization` file, such as `overlay/staging`. |
+        | Other possible configurations | For more configurations that you might add to your file, see the [Make a `kustomization` file](https://github.com/kubernetes-sigs/kustomize#1-make-a-kustomization-file){: external}. |
+        {: caption="Table 1. Understanding YAML components" caption-side="top"}
 
-        <table summary="A table that describes in Column 1 the YAML file fields and in Column 2 how to fill out those fields.">
-        <caption>YAML components</caption>
-        <thead>
-        <col width="25%">
-        <th>Component</th>
-        <th>Description</th>
-        </thead>
-        <tbody>
-        <tr>
-        <td><code>namePrefix</code></td>
-        <td>Specify a prefix to attach to the name of each resource that you want to create with your staging <code>kustomization</code> file, such as <code>staging-</code>.</td>
-        </tr>
-        <tr>
-        <td><code>commonLabels</code></td>
-        <td>Add labels that are unique to the staging objects, such as the staging environment and responsible team.</td>
-        </tr>
-        <tr>
-        <td><code>bases</code></td>
-        <td>Add a relative path to a directory or URL to a remote repo that contains a base <code>kustomization</code> file. In this example, the relative path points to the base <code>kustomization</code> file in the <code>base</code> repo that you previously created. This field is required for an overlay <code>kustomization</code>.</td>
-        </tr>
-        <tr>
-        <td><code>patchesStrategicMerge</code></td>
-        <td>List the resource configuration YAML files that you want to merge to the base <code>kustomization</code>. You must also add these files to the same repo as the <code>kustomization</code> file, such as <code>overlay/staging</code>. These resource configuration files can contain small changes that are merged to the base configuration files of the same name as a patch. The resource gets all the components that are in the <code>base</code> configuration file, plus any additional components that you specify in the <code>overlay</code> configuration file.<br><br>If the configuration is a new file that is not in the base, you must also add the file name to the <code>resources</code> field.</td>
-        </tr>
-        <tr>
-        <td><code>resources</code></td>
-        <td>List any resource configuration YAML files that are unique to the staging repo and not included in the base repo. Include these files in the <code>patchesStrategicMerge</code> field also, and add them to the same repo as the <code>kustomization</code> file, such as <code>overlay/staging</code>.</td>
-        </tr>
-        <tr>
-        <td>Other possible configurations</td>
-        <td>For more configurations that you might add to your file, see the <a href="https://github.com/kubernetes-sigs/kustomize#1-make-a-kustomization-file">Make a <code>kustomization</code> file</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</td>
-        </tr>
-        </tbody></table>
     2. Build your staging overlay configuration files.
         ```
         kustomize build overlay/staging
@@ -781,7 +768,7 @@ To set up configuration files with Kustomize:
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         configmap/staging-kustomtest-configmap-v2 created
         secret/staging-kustomtest-secret-v2 created
@@ -796,7 +783,7 @@ To set up configuration files with Kustomize:
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         NAME                                        DATA   AGE
         configmap/staging-kustomtest-configmap-v2   2      90s
@@ -825,7 +812,7 @@ To set up configuration files with Kustomize:
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     configmap "staging-kustomtest-configmap-v2" deleted
     secret "staging-kustomtest-secret-v2" deleted
@@ -836,7 +823,6 @@ To set up configuration files with Kustomize:
     ```
     {: screen}
 
-<br />
 
 
 

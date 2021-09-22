@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -692,7 +692,7 @@ Yes, if you [sign your images for trusted content](/docs/Registry?topic=Registry
 New {{site.data.keyword.openshiftlong_notm}} clusters store an API key in [image pull secrets to authorize access to {{site.data.keyword.registrylong_notm}}](#cluster_registry_auth). With these image pull secrets, you can deploy containers from images that are stored in the `icr.io` registry domains. You can add the image pull secrets to your cluster if your cluster was not created with the secrets.
 {: shortdesc}
 
-**Before you begin**:
+**Before you begin**
 1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 2. Make sure that you have the following permissions: {{site.data.keyword.cloud_notm}} IAM **Operator or Administrator** platform access role for {{site.data.keyword.openshiftlong_notm}}. The account owner can give you the role by running the following command.
 
@@ -756,8 +756,8 @@ To update your cluster image pull secret in the `default` Kubernetes namespace.
 5. Optional: If you have a firewall, make sure you [allow outbound network traffic to the registry subnets](/docs/openshift?topic=openshift-firewall#firewall_outbound) for the domains that you use.
 
 **What's next?**
-*   To pull images in {{site.data.keyword.openshiftshort}} projects other than `default` or from other {{site.data.keyword.cloud_notm}} accounts, [copy or create another image pull secret](#other).
-*   To restrict the image pull secret access to particular registry resources such as namespaces or regions:
+* To pull images in {{site.data.keyword.openshiftshort}} projects other than `default` or from other {{site.data.keyword.cloud_notm}} accounts, [copy or create another image pull secret](#other).
+* To restrict the image pull secret access to particular registry resources such as namespaces or regions:
     1. Make sure that [{{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}} are enabled](/docs/Registry?topic=Registry-user#existing_users).
     2. [Edit the {{site.data.keyword.cloud_notm}} IAM policies](/docs/account?topic=account-serviceids#update_serviceid) for the service ID, or [create another image pull secret](#other_registry_accounts).
 
@@ -1030,7 +1030,8 @@ To create an image pull secret:
 You can define an image pull secret in your pod deployment or store the image pull secret in your Kubernetes service account so that it is available for all deployments that do not specify a Kubernetes service account in the project.
 {: shortdesc}
 
-To plan how image pull secrets are used in your cluster, choose between the following options:
+To plan how image pull secrets are used in your cluster, choose between the following options.
+
 * Referring to the image pull secret in your pod deployment: Use this option if you do not want to grant access to your registry for all pods in your project by default. Developers can [include the image pull secret in each pod deployment](/docs/openshift?topic=openshift-images#pod_imagePullSecret) that must access your registry.
 * Storing the image pull secret in the Kubernetes service account: Use this option to grant access to images in your registry for all deployments in the selected {{site.data.keyword.openshiftshort}} projects. To store an image pull secret in the Kubernetes service account, use the [following steps](#store_imagePullSecret).
 

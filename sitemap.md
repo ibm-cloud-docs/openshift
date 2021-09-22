@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: openshift
 subcollection: openshift
@@ -130,6 +130,7 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-rel-notes)
 
 * [September 2021](/docs/openshift?topic=openshift-rel-notes#release-sep-2021)
+    * [22 September 2021](/docs/openshift?topic=openshift-rel-notes#22sep2021)
     * [21 September 2021](/docs/openshift?topic=openshift-rel-notes#21sep2021)
     * [16 September 2021](/docs/openshift?topic=openshift-rel-notes#16sep2021)
     * [15 September 2021](/docs/openshift?topic=openshift-rel-notes#15sep2021)
@@ -701,6 +702,7 @@ subcollection: openshift
 * [Overview of classic networking in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-subnets#basics)
   * [VLANs](/docs/openshift?topic=openshift-subnets#basics_vlans)
   * [Subnets and IP addresses](/docs/openshift?topic=openshift-subnets#basics_subnets)
+  * [Finding subnets provisioned in your account](/docs/openshift?topic=openshift-subnets#finding_subnets_account)
   * [Network segmentation](/docs/openshift?topic=openshift-subnets#basics_segmentation)
 * [Using existing subnets to create a cluster](/docs/openshift?topic=openshift-subnets#subnets_custom)
 * [Managing existing portable IP addresses](/docs/openshift?topic=openshift-subnets#managing_ips)
@@ -717,6 +719,7 @@ subcollection: openshift
 [Changing service endpoints or VLAN connections in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-cs_network_cluster)
 * [Setting up the private cloud service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-private-se)
 * [Setting up the public cloud service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se)
+  * [Steps to enable the public cloud service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#steps-set-up-public)
 * [Changing your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans)
 
 [Setting up classic VPN connectivity](/docs/openshift?topic=openshift-vpn)
@@ -744,6 +747,8 @@ subcollection: openshift
 [Adding static routes to worker nodes](/docs/openshift?topic=openshift-static-routes)
 * [About static routes](/docs/openshift?topic=openshift-static-routes#about-static-routes)
 * [Enabling the static route add-on](/docs/openshift?topic=openshift-static-routes#enable-add-on)
+  * [Enabling the static route add-on from the console](/docs/openshift?topic=openshift-static-routes#enable-add-on-console)
+  * [Enabling the static route add-on with the CLI](/docs/openshift?topic=openshift-static-routes#enable-add-on-cli)
 * [Creating static routes](/docs/openshift?topic=openshift-static-routes#create-route-resources)
 
 
@@ -767,12 +772,20 @@ subcollection: openshift
 
 [Setting up VPC VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas)
 * [Communication with resources in on-premises data centers](/docs/openshift?topic=openshift-vpc-vpnaas#onprem)
+  * [{{site.data.keyword.vpc_short}} VPN](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-vpn-def)
+  * [{{site.data.keyword.dl_short}}](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-directlink-def)
 * [Communication with resources in other VPCs](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-vpc)
+  * [{{site.data.keyword.vpc_short}} VPN](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-vpn-other)
+  * [{{site.data.keyword.tg_full_notm}}](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-transit-def)
 * [Communication with {{site.data.keyword.cloud_notm}} classic resources](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-classic)
+  * [Create a classic-access VPC](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-create-classic)
+  * [Use {{site.data.keyword.tg_full_notm}}](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-use-transit-gw)
 
 [Adding static routes to worker nodes](/docs/openshift?topic=openshift-static-routes)
 * [About static routes](/docs/openshift?topic=openshift-static-routes#about-static-routes)
 * [Enabling the static route add-on](/docs/openshift?topic=openshift-static-routes#enable-add-on)
+  * [Enabling the static route add-on from the console](/docs/openshift?topic=openshift-static-routes#enable-add-on-console)
+  * [Enabling the static route add-on with the CLI](/docs/openshift?topic=openshift-static-routes#enable-add-on-cli)
 * [Creating static routes](/docs/openshift?topic=openshift-static-routes#create-route-resources)
 
 

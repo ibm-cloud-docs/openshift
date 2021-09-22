@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-22"
 
 keywords: openshift, roks, rhos, rhoks, vlan
 
@@ -53,16 +53,18 @@ The private cloud service endpoint makes your Kubernetes master privately access
 5. [Create a configmap](/docs/containers?topic=containers-update#worker-up-configmap) to control the maximum number of worker nodes that can be unavailable at a time in your cluster. When you update your worker nodes, the configmap helps prevent downtime for your apps as the apps are rescheduled orderly onto available worker nodes.
 6. Update all the worker nodes in your cluster to pick up the private cloud service endpoint configuration.
 
-    <p class="important">By issuing the update command, the worker nodes are reloaded to pick up the service endpoint configuration. If no worker update is available, you must [reload the worker nodes manually](/docs/openshift?topic=openshift-kubernetes-service-cli). If you reload, be sure to cordon, drain, and manage the order to control the maximum number of worker nodes that are unavailable at a time.</p>
+    By issuing the update command, the worker nodes are reloaded to pick up the service endpoint configuration. If no worker update is available, you must [reload the worker nodes manually](/docs/openshift?topic=openshift-kubernetes-service-cli). If you reload, be sure to cordon, drain, and manage the order to control the maximum number of worker nodes that are unavailable at a time.
+    {: important}
+    
     ```
     ibmcloud oc worker update --cluster <cluster_name_or_ID> --worker <worker1,worker2>
     ```
     {: pre}
 
 7. If the cluster is in an environment behind a firewall:
-    * [Allow your authorized cluster users to run `kubectl` commands to access the master through the private cloud service endpoint.](/docs/openshift?topic=openshift-firewall#firewall_kubectl)
-    * [Allow outbound network traffic to the private IPs](/docs/openshift?topic=openshift-firewall#firewall_outbound) for infrastructure resources and for the {{site.data.keyword.cloud_notm}} services that you plan to use.
-<br />
+    - [Allow your authorized cluster users to run `kubectl` commands to access the master through the private cloud service endpoint.](/docs/openshift?topic=openshift-firewall#firewall_kubectl)
+    - [Allow outbound network traffic to the private IPs](/docs/openshift?topic=openshift-firewall#firewall_outbound) for infrastructure resources and for the {{site.data.keyword.cloud_notm}} services that you plan to use.
+
 
 ## Setting up the public cloud service endpoint
 {: #set-up-public-se}
@@ -75,7 +77,8 @@ Your cluster must have a public cloud service endpoint on classic infrastructre.
 
 The public cloud service endpoint makes your Kubernetes master publicly accessible. Your worker nodes and your authorized cluster users can securely communicate with the Kubernetes master over the public network. For more information, see [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_clusters#internet-facing).
 
-**Steps to enable**
+### Steps to enable the public cloud service endpoint
+{: #steps-set-up-public}
 
 If you previously disabled the public endpoint, you can re-enable it.
 1. Enable the public cloud service endpoint.
@@ -97,7 +100,7 @@ If you previously disabled the public endpoint, you can re-enable it.
     ```
     {: pre}
 
-    </br>
+
 
 
 ## Changing your worker node VLAN connections
@@ -112,9 +115,9 @@ Trying to change the service endpoint for master-worker communication instead? C
 
 
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-To change the VLANs that a worker pool uses to provision worker nodes:
+To change the VLANs that a worker pool uses to provision worker nodes.
 
 1. List the names of the worker pools in your cluster.
     ```
@@ -154,9 +157,9 @@ To change the VLANs that a worker pool uses to provision worker nodes:
 
 4. Set up a worker pool with the new VLAN network metadata for each zone. You can create a new worker pool, or modify an existing worker pool.
 
-    * **Create a new worker pool**: See [adding worker nodes by creating a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool).
+    - **Create a new worker pool**: See [adding worker nodes by creating a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool).
 
-    * **Modify an existing worker pool**: Set the worker pool's network metadata to use the VLAN for each zone. Worker nodes that were already created in the pool continue to use the previous VLANs, but new worker nodes in the pool use new VLAN metadata that you set.
+    - **Modify an existing worker pool**: Set the worker pool's network metadata to use the VLAN for each zone. Worker nodes that were already created in the pool continue to use the previous VLANs, but new worker nodes in the pool use new VLAN metadata that you set.
         ```
         ibmcloud oc zone network-set --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --private-vlan <private_vlan_id> --public-vlan <public_vlan_id>
         ```
@@ -200,8 +203,8 @@ To change the VLANs that a worker pool uses to provision worker nodes:
 8. Optional: You can repeat steps 2 - 7 for each worker pool in your cluster. After you complete these steps, all worker nodes in your cluster are set up with the new VLANs.
 
 9. Move networking services to the new VLANs. The networking services in your cluster are still bound to the old VLAN because their IP addresses are from a subnet on that VLAN.
-    * Routers: Because routers cannot be moved across VLANs, you can instead [create router services on the new VLANs and delete router services on the old VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan).
-    * Ingress ALBs ({{site.data.keyword.openshiftshort}} version 3.11 only): Because ALBs cannot be moved across VLANs, you can instead [create ALBs on the new VLANs and disable ALBs on the old VLANs](/docs/containers?topic=containers-ingress-types#migrate-alb-vlan).
+    - Routers: Because routers cannot be moved across VLANs, you can instead [create router services on the new VLANs and delete router services on the old VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan).
+    - Ingress ALBs ({{site.data.keyword.openshiftshort}} version 3.11 only): Because ALBs cannot be moved across VLANs, you can instead [create ALBs on the new VLANs and disable ALBs on the old VLANs](/docs/containers?topic=containers-ingress-types#migrate-alb-vlan).
 
 10. Optional: If you no longer need the subnets on the old VLANs, you can [remove them](/docs/openshift?topic=openshift-subnets#remove-subnets).
 

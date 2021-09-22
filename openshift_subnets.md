@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-22"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -36,12 +36,12 @@ Understand the basic concepts of classic networking in {{site.data.keyword.opens
 When you create a cluster, the cluster's worker nodes are connected automatically to a VLAN. A VLAN configures a group of worker nodes and pods as if they were attached to the same physical wire and provides a channel for connectivity among the workers and pods.
 {: shortdesc}
 
-<dl>
-<dt>VLANs for free clusters</dt>
-<dd>In free clusters, the cluster's worker nodes are connected to an IBM-owned public VLAN and private VLAN by default. Because IBM controls the VLANs, subnets, and IP addresses, you cannot create multizone clusters or add subnets to your cluster, and can use only NodePort services to expose your app.</dd>
-<dt>VLANs for standard clusters</dt>
-<dd>In standard clusters, the first time that you create a cluster in a zone, a public VLAN and a private VLAN in that zone are automatically provisioned for you in your IBM Cloud infrastructure account. For every subsequent cluster that you create in that zone, you must specify the VLAN pair that you want to use in that zone. You can reuse the same public and private VLANs that were created for you because multiple clusters can share VLANs.</br>
-</br>You can either connect your worker nodes to both a public VLAN and the private VLAN, or to the private VLAN only. If you want to connect your worker nodes to a private VLAN only, you can use the ID of an existing private VLAN or [create a private VLAN](/docs/cli/reference/ibmcloud?topic=cli-manage-classic-vlans#sl_vlan_create) and use the ID during cluster creation.</dd></dl>
+VLANs for free clusters</dt>
+: In free clusters, the cluster's worker nodes are connected to an IBM-owned public VLAN and private VLAN by default. Because IBM controls the VLANs, subnets, and IP addresses, you cannot create multizone clusters or add subnets to your cluster, and can use only NodePort services to expose your app.
+
+VLANs for standard clusters
+: In standard clusters, the first time that you create a cluster in a zone, a public VLAN and a private VLAN in that zone are automatically provisioned for you in your IBM Cloud infrastructure account. For every subsequent cluster that you create in that zone, you must specify the VLAN pair that you want to use in that zone. You can reuse the same public and private VLANs that were created for you because multiple clusters can share VLANs.
+  You can either connect your worker nodes to both a public VLAN and the private VLAN, or to the private VLAN only. If you want to connect your worker nodes to a private VLAN only, you can use the ID of an existing private VLAN or [create a private VLAN](/docs/cli/reference/ibmcloud?topic=cli-manage-classic-vlans#sl_vlan_create) and use the ID during cluster creation.
 
 To see the VLANs that are provisioned in each zone for your account, run `ibmcloud oc vlan ls --zone <zone>.` To see the VLANs that one cluster is provisioned on, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID> --show-resources` and look for the **Subnet VLANs** section.
 
@@ -58,15 +58,22 @@ You can change your VLAN setup by modifying the worker pools in your cluster. Fo
 In addition to worker nodes and pods, subnets are also automatically provisioned onto VLANs. Subnets provide network connectivity to your cluster components by assigning IP addresses to them.
 {: shortdesc}
 
-The following subnets are automatically provisioned on the default public and private VLANs:
+The following subnets are automatically provisioned on the default public and private VLANs.
 
-**Public VLAN subnets**
-* The primary public subnet determines the public IP addresses that are assigned to worker nodes during cluster creation. Multiple clusters on the same VLAN can share one primary public subnet.
-* The portable public subnet is bound to one cluster only and provides the cluster with 8 public IP addresses. 3 IPs are reserved for IBM Cloud infrastructure functions. 1 IP is used by the default public Ingress ALB and 4 IPs can be used to create public network load balancer (NLB) services or more public ALBs. Portable public IPs are permanent, fixed IP addresses that can be used to access NLBs or ALBs over the internet. If you need more than 4 IPs for NLBs or ALBs, see [Adding portable IP addresses](/docs/openshift?topic=openshift-subnets#adding_ips). Note that these IP addresses are intended for use in {{site.data.keyword.openshiftlong_notm}}. Do not use these IP addresses for other purposes outside of {{site.data.keyword.openshiftlong_notm}}.
+#### Public VLAN subnets
+{: #basics_subnets_public_vlan}
 
-**Private VLAN subnets**
-* The primary private subnet determines the private IP addresses that are assigned to worker nodes during cluster creation. Multiple clusters on the same VLAN can share one primary private subnet.
-* The portable private subnet is bound to one cluster only and provides the cluster with 8 private IP addresses. 3 IPs are reserved for IBM Cloud infrastructure functions. 1 IP is used by the default private Ingress ALB and 4 IPs can be used to create private network load balancer (NLB) services or more private ALBs. Portable private IPs are permanent, fixed IP addresses that can be used to access NLBs or ALBs over a private network. If you need more than 4 IPs for private NLBs or ALBs, see [Adding portable IP addresses](/docs/openshift?topic=openshift-subnets#adding_ips). Note that these IP addresses are intended for use in {{site.data.keyword.openshiftlong_notm}}. Do not use these IP addresses for other purposes outside of {{site.data.keyword.openshiftlong_notm}}.
+- The primary public subnet determines the public IP addresses that are assigned to worker nodes during cluster creation. Multiple clusters on the same VLAN can share one primary public subnet.
+- The portable public subnet is bound to one cluster only and provides the cluster with 8 public IP addresses. 3 IPs are reserved for IBM Cloud infrastructure functions. 1 IP is used by the default public Ingress ALB and 4 IPs can be used to create public network load balancer (NLB) services or more public ALBs. Portable public IPs are permanent, fixed IP addresses that can be used to access NLBs or ALBs over the internet. If you need more than 4 IPs for NLBs or ALBs, see [Adding portable IP addresses](/docs/openshift?topic=openshift-subnets#adding_ips). Note that these IP addresses are intended for use in {{site.data.keyword.openshiftlong_notm}}. Do not use these IP addresses for other purposes outside of {{site.data.keyword.openshiftlong_notm}}.
+
+#### Private VLAN subnets
+{: #basics_subnets_private_vlan}
+
+- The primary private subnet determines the private IP addresses that are assigned to worker nodes during cluster creation. Multiple clusters on the same VLAN can share one primary private subnet.
+- The portable private subnet is bound to one cluster only and provides the cluster with 8 private IP addresses. 3 IPs are reserved for IBM Cloud infrastructure functions. 1 IP is used by the default private Ingress ALB and 4 IPs can be used to create private network load balancer (NLB) services or more private ALBs. Portable private IPs are permanent, fixed IP addresses that can be used to access NLBs or ALBs over a private network. If you need more than 4 IPs for private NLBs or ALBs, see [Adding portable IP addresses](/docs/openshift?topic=openshift-subnets#adding_ips). Note that these IP addresses are intended for use in {{site.data.keyword.openshiftlong_notm}}. Do not use these IP addresses for other purposes outside of {{site.data.keyword.openshiftlong_notm}}.
+
+### Finding subnets provisioned in your account
+{: #finding_subnets_account}
 
 To see all of the subnets provisioned in all resource groups of your account, run `ibmcloud oc subnets --provider classic`. To see the portable public and portable private subnets that are bound to one cluster, you can run `ibmcloud oc cluster get --cluster <cluster_name_or_ID> --show-resources` and look for the **Subnet VLANs** section.
 
@@ -83,25 +90,39 @@ If you plan to connect your cluster to on-premises networks through {{site.data.
 
 To specify custom pod and service subnets during cluster creation, use the `--pod-subnet` and `--service-subnet` flags in the `ibmcloud oc cluster create` CLI command.
 
-**Pods**:
-* Default range: All services that are deployed to the cluster are assigned a private IP address in the `172.30.0.0/16` range by default.
-* Size requirements: When you specify a custom subnet, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least `/23`, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use `/22` to have enough pod IP addresses for eight worker nodes, `/21` to have enough pod IP addresses for 16 worker nodes, and so on.
-* Range requirements: The pod and service subnets cannot overlap each other, and the pod subnet cannot overlap the subnets for your worker nodes. The subnet that you choose must be within one of the following ranges:
-    * `172.17.0.0 - 172.17.255.255`
-    * `172.21.0.0 - 172.31.255.255`
-    * `192.168.0.0 - 192.168.254.255`
-    * `198.18.0.0 - 198.19.255.255`
-* The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
+#### Pods
+{: #subnets_pods}
 
-**Services**:
-* Default range: All services that are deployed to the cluster are assigned a private IP address in the `172.21.0.0/16` range by default.
-* Size requirements: When you specify a custom subnet, the subnet must be specified in CIDR format with a size of at least `/24`, which allows a maximum of 255 services in the cluster, or larger.
-* Range requirements: The pod and service subnets cannot overlap each other. The subnet that you choose must be within one of the following ranges:
-    * `172.17.0.0 - 172.17.255.255`
-    * `172.21.0.0 - 172.31.255.255`
-    * `192.168.0.0 - 192.168.254.255`
-    * `198.18.0.0 - 198.19.255.255`
-* The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
+Default range
+: All services that are deployed to the cluster are assigned a private IP address in the `172.30.0.0/16` range by default.
+
+Size requirements
+: When you specify a custom subnet, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least `/23`, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use `/22` to have enough pod IP addresses for eight worker nodes, `/21` to have enough pod IP addresses for 16 worker nodes, and so on.
+
+Range requirements
+: The pod and service subnets cannot overlap each other, and the pod subnet cannot overlap the subnets for your worker nodes. The subnet that you choose must be within one of the following ranges.
+      - `172.17.0.0 - 172.17.255.255`
+      - `172.21.0.0 - 172.31.255.255`
+      - `192.168.0.0 - 192.168.254.255`
+      - `198.18.0.0 - 198.19.255.255`
+  The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
+
+#### Services
+{: #subnets_services}
+
+Default range
+: All services that are deployed to the cluster are assigned a private IP address in the `172.21.0.0/16` range by default.
+
+Size requirements
+: When you specify a custom subnet, the subnet must be specified in CIDR format with a size of at least `/24`, which allows a maximum of 255 services in the cluster, or larger.
+
+Range requirements
+: The pod and service subnets cannot overlap each other. The subnet that you choose must be within one of the following ranges:
+      - `172.17.0.0 - 172.17.255.255`
+      - `172.21.0.0 - 172.31.255.255`
+      - `192.168.0.0 - 192.168.254.255`
+      - `198.18.0.0 - 198.19.255.255`
+  The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
 
 ### Network segmentation
 {: #basics_segmentation}
@@ -113,20 +134,17 @@ However, in several situations, components in your cluster must be permitted to 
 
 **What are Virtual Router Functions (VRF) and VLAN spanning?**
 
+Virtual Router Function (VRF)
+: A VRF enables all the VLANs and subnets in your infrastructure account to communicate with each other. Additionally, a VRF is required to allow your workers and master to communicate over the private cloud service endpoint. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. Note that VRF eliminates the VLAN spanning option for your account, because all VLANs are able to communicate unless you configure a gateway appliance to manage traffic.
 
-<dl>
-<dt>Virtual Router Function (VRF)</dt>
-<dd>A VRF enables all the VLANs and subnets in your infrastructure account to communicate with each other. Additionally, a VRF is required to allow your workers and master to communicate over the private cloud service endpoint. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. Note that VRF eliminates the VLAN spanning option for your account, because all VLANs are able to communicate unless you configure a gateway appliance to manage traffic.</dd>
-<dt>VLAN spanning</dt>
-<dd>If you cannot or do not want to enable VRF, [enable VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-access-creds#infra_access), or you can request the account owner to enable it. To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get). Note that you cannot enable the private cloud service endpoint if you choose to enable VLAN spanning instead of a VRF.</dd>
-</dl>
+VLAN spanning
+: If you cannot or do not want to enable VRF, [enable VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-access-creds#infra_access), or you can request the account owner to enable it. To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get). Note that you cannot enable the private cloud service endpoint if you choose to enable VLAN spanning instead of a VRF.
 
 **How does VRF or VLAN spanning affect network segmentation?**
 
 
 When VRF or VLAN spanning is enabled, any system that is connected to any of the private VLANs in the same {{site.data.keyword.cloud_notm}} account can communicate with workers. You can isolate your cluster from other systems on the private network by applying [Calico private network policies](/docs/openshift?topic=openshift-network_policies#isolate_workers). {{site.data.keyword.openshiftlong_notm}} is also compatible with all [IBM Cloud infrastructure firewall offerings](https://www.ibm.com/cloud/network-security){: external}. You can set up a firewall, such as a [Virtual Router Appliance](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra), with custom network policies to provide dedicated network security for your standard cluster and to detect and remediate network intrusion.
 
-<br />
 
 
 ## Using existing subnets to create a cluster
@@ -140,7 +158,7 @@ Use this option to retain stable static IP addresses across cluster removals and
 All subnets that were automatically ordered during cluster creation are immediately marked for deletion after you delete a cluster, and you cannot reuse the subnets to create a new cluster.
 {: note}
 
-Before you begin:
+Before you begin
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - To reuse user-managed private subnets from a cluster that you no longer need, delete the unneeded cluster.
     ```
@@ -150,7 +168,7 @@ Before you begin:
 
 - The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` subnet ranges are prohibited.
 
-</br>To create a cluster by using existing subnets:
+To create a cluster by using existing subnets:
 
 1. Get the subnet ID and the ID of the VLAN that the subnet is on.
 
@@ -224,7 +242,6 @@ Before you begin:
 
 7. **Important**: To enable communication between workers that are on different subnets on the same VLAN, you must [enable routing between subnets on the same VLAN](#subnet-routing).
 
-<br />
 
 
 ## Managing existing portable IP addresses
@@ -246,11 +263,11 @@ oc get cm ibm-cloud-provider-vlan-ip-config -n kube-system -o yaml
 
 To list only portable public IP addresses that are available to create public NLBs or more public ALBs, you can use the following steps:
 
-Before you begin:
+Before you begin
 -  Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the `default` namespace.
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-To list available portable public IP addresses:
+To list available portable public IP addresses,
 
 1. Create a Kubernetes service configuration file that is named `myservice.yaml` and define a service of type `LoadBalancer` with a dummy NLB IP address. The following example uses the IP address 1.1.1.1 as the NLB IP address. Replace `<zone>` with the zone where you want to check for available IPs.
 
@@ -298,7 +315,6 @@ To list available portable public IP addresses:
     ```
     {: screen}
 
-<br />
 
 ### Freeing up used IP addresses
 {: #free}
@@ -306,11 +322,11 @@ To list available portable public IP addresses:
 You can free up a used portable IP address by deleting the network load balancer (NLB) service or disabling the Ingress application load balancer (ALB) that is using the portable IP address.
 {: shortdesc}
 
-Before you begin:
--  Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the `default` namespace.
+Before you begin
+- Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the `default` namespace.
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-To delete an NLB or disable an ALB:
+To delete an NLB or disable an ALB,
 
 1. List available services in your cluster.
     ```
@@ -319,19 +335,18 @@ To delete an NLB or disable an ALB:
     {: pre}
 
 2. Remove the load balancer service or disable the ALB that uses a public or private IP address.
-    * Delete an NLB:
-    ```
-    oc delete service <service_name>
-    ```
-    {: pre}
+    - Delete an NLB:
+        ```
+        oc delete service <service_name>
+        ```
+        {: pre}
 
-    * Disable an ALB:
-    ```
-    ibmcloud oc ingress alb disable --alb <ALB_ID> -c <cluster_name_or_ID>
-    ```
-    {: pre}
+    - Disable an ALB:
+        ```
+        ibmcloud oc ingress alb disable --alb <ALB_ID> -c <cluster_name_or_ID>
+        ```
+        {: pre}
 
-<br />
 
 ## Adding portable IP addresses
 {: #adding_ips}
@@ -351,11 +366,11 @@ You can get more portable IPs for NLB services by creating a new subnet in an IB
 Portable public IP addresses are charged monthly. If you remove portable public IP addresses after your subnet is provisioned, you still must pay the monthly charge, even if you used them only for a short amount of time.
 {: note}
 
-Before you begin:
--  Ensure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster.
+Before you begin
+- Ensure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster.
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-To order a subnet:
+To order a subnet,
 
 1. Provision a new subnet.
 
@@ -363,29 +378,13 @@ To order a subnet:
     ibmcloud oc cluster subnet create --cluster <cluster_name_or_id> --size <subnet_size> --vlan <VLAN_ID>
     ```
     {: pre}
-
-    <table summary="The columns are read from left to right. The first column has the parameter of the command. The second column describes the parameter.">
-    <caption>Understanding this command's components</caption>
-    <col style="width:30%">
-        <col style="width:70%">
-        <thead>
-          <th>Parameter</th>
-          <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code><em>&lt;cluster_name_or_id&gt;</em></code></td>
-    <td>Replace <code>&lt;cluster_name_or_id&gt;</code> with the name or ID of the cluster.</td>
-    </tr>
-    <tr>
-    <td><code><em>&lt;subnet_size&gt;</em></code></td>
-    <td>Replace <code>&lt;subnet_size&gt;</code> with the number of IP addresses that you want to create in the portable subnet. Accepted values are 8, 16, 32, or 64. <p class="note"> When you add portable IP addresses for your subnet, three IP addresses are used to establish cluster-internal networking. You cannot use these three IP addresses for your Ingress application load balancers (ALBs) or to create network load balancer (NLB) services. For example, if you request eight portable public IP addresses, you can use five of them to expose your apps to the public.</p> </td>
-    </tr>
-    <tr>
-    <td><code><em>&lt;VLAN_ID&gt;</em></code></td>
-    <td>Replace <code>&lt;VLAN_ID&gt;</code> with the ID of the public or private VLAN on which you want to allocate the portable public or private IP addresses. You must select a public or private VLAN that an existing worker node is connected to. To review the public or private VLANs that your worker nodes are connected to, run <code>ibmcloud oc cluster get --cluster &lt;cluster&gt; --show-resources</code> and look for the <strong>Subnet VLANs</strong> section in the output. The subnet is provisioned in the same zone that the VLAN is in.</td>
-    </tr>
-    </tbody></table>
+    
+    | Parameter | Description |
+    | ----- | ------|
+    | *`<cluster_name_or_id>`* | Replace `<cluster_name_or_id>` with the name or ID of the cluster. |
+    | *`<subnet_size>`* | Replace `<subnet_size>` with the number of IP addresses that you want to create in the portable subnet. Accepted values are 8, 16, 32, or 64. Note that when you add portable IP addresses for your subnet, three IP addresses are used to establish cluster-internal networking. You cannot use these three IP addresses for your Ingress application load balancers (ALBs) or to create network load balancer (NLB) services. For example, if you request eight portable public IP addresses, you can use five of them to expose your apps to the public. |
+    | *`<VLAN_ID>`* | Replace `<VLAN_ID>` with the ID of the public or private VLAN on which you want to allocate the portable public or private IP addresses. You must select a public or private VLAN that an existing worker node is connected to. To review the public or private VLANs that your worker nodes are connected to, run `ibmcloud oc cluster get --cluster <cluster> --show-resources` and look for the **Subnet VLANs** section in the output. The subnet is provisioned in the same zone that the VLAN is in. |
+    {: caption="Table 1. Parameters for a subnet" caption-side="top"}
 
 2. Verify that the subnet was successfully created and added to your cluster. The subnet CIDR is listed in the **Subnet VLANs** section.
 
@@ -394,7 +393,7 @@ To order a subnet:
     ```
     {: pre}
 
-    In this example output, a second subnet was added to the `2234945` public VLAN:
+    In this example output, a second subnet was added to the `2234945` public VLAN.
     ```
     Subnet VLANs
     VLAN ID   Subnet CIDR          Public   User-managed
@@ -412,11 +411,11 @@ To order a subnet:
 You can get more portable IPs for NLB services by making an existing subnet in an IBM Cloud infrastructure account available to your cluster.
 {: shortdesc}
 
-Before you begin:
--  Ensure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster.
+Before you begin
+- Ensure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster.
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-To make a subnet available to your cluster:
+To make a subnet available to your cluster,
 
 1. Review the IDs of the public or private VLANs on which you want to allocate the portable public or private IP addresses. You must select a public or private VLAN that an existing worker node is connected to.
     ```
@@ -424,7 +423,7 @@ To make a subnet available to your cluster:
     ```
     {: pre}
 
-    In the output, look for **VLAN ID**s in the **Subnet VLANs** section. Example output:
+    In the output, look for **VLAN ID**s in the **Subnet VLANs** section.
     ```
     Subnet VLANs
     VLAN ID   Subnet CIDR          Public   User-managed
@@ -439,7 +438,7 @@ To make a subnet available to your cluster:
     ```
     {: pre}
 
-    In this example output, the subnet ID is `1602829`, which is on the VLAN ID `2234945`:
+    In this example output, the subnet ID is `1602829`, which is on the VLAN ID `2234945`.
     ```
     Getting subnet list...
     OK
@@ -461,7 +460,7 @@ To make a subnet available to your cluster:
     ```
     {: pre}
 
-    In this example output, a second subnet was added to the `2234945` public VLAN:
+    In this example output, a second subnet was added to the `2234945` public VLAN.
     ```
     Subnet VLANs
     VLAN ID   Subnet CIDR          Public   User-managed
@@ -473,7 +472,6 @@ To make a subnet available to your cluster:
 
 5. **Important**: To enable communication between workers that are on different subnets on the same VLAN, you must [enable routing between subnets on the same VLAN](#subnet-routing).
 
-<br />
 
 ## Managing subnet routing
 {: #subnet-routing}
@@ -506,8 +504,6 @@ When you create a cluster, a portable public and a portable private subnet are o
 
 However, if you have an existing router appliance, such as a [Virtual Router Appliance (VRA)](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra#about-the-vra), the newly added portable subnets from those VLANs that the cluster is connected to are not configured on the router. To use NLBs or Ingress ALBs, you must ensure that network devices can route between different subnets on the same VLAN by enabling a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-access-creds#infra_access), or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).
 
-<br />
-
 
 ## Removing subnets from a cluster
 {: #remove-subnets}
@@ -515,10 +511,10 @@ However, if you have an existing router appliance, such as a [Virtual Router App
 If you no longer need subnets, you can remove them from your cluster. After you remove the subnet, it is no longer available to your cluster, but it still exists in your IBM Cloud infrastructure account.
 {: shortdesc}
 
-**Before you begin**, review the following considerations:
-* Subnets can only be detached from a cluster if none of the IP addresses derived from that subnet range are in use in your cluster.
-* Portable public IP addresses are charged monthly. If you remove the subnet, you still must pay the monthly charge for the IP addresses, even if you used them only for a short amount of time.
-* If your worker nodes previously used the subnet that you want to detach, but no workers are currently attached to any subnets on this subnet's VLAN, then the subnet is not visible to the cluster. You can instead cancel the subnet directly in the [{{site.data.keyword.cloud_notm}} Classic Infrastructure console](https://cloud.ibm.com/gen1/infrastructure/devices){: external}.
+**Before you begin**, review the following considerations.
+- Subnets can only be detached from a cluster if none of the IP addresses derived from that subnet range are in use in your cluster.
+- Portable public IP addresses are charged monthly. If you remove the subnet, you still must pay the monthly charge for the IP addresses, even if you used them only for a short amount of time.
+- If your worker nodes previously used the subnet that you want to detach, but no workers are currently attached to any subnets on this subnet's VLAN, then the subnet is not visible to the cluster. You can instead cancel the subnet directly in the [{{site.data.keyword.cloud_notm}} Classic Infrastructure console](https://cloud.ibm.com/gen1/infrastructure/devices){: external}.
 
 1. Find the CIDR for the subnet that you want to remove.
     ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-22"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -56,18 +56,16 @@ oc new-app --name <app_name> https://github.com/<path_to_app_repo> [--context-di
 
 The `new-app` command creates a build configuration and app image from the source code, a deployment configuration to deploy the container to pods in your cluster, and a service to expose the app within the cluster. For more information about the build process and other sources besides Git, see the [{{site.data.keyword.openshiftshort}} documentation](http://docs.openshift.com/container-platform/4.7/applications/application_life_cycle_management/creating-applications-using-cli.html){: external}.
 
-<br />
-
 ## Deploying apps to specific worker nodes by using labels
 {: #node_affinity}
 
 When you deploy an app, the app pods indiscriminately deploy to various worker nodes in your cluster. In some cases, you might want to restrict the worker nodes that the app pods to deploy to. For example, you might want app pods to deploy to only worker nodes in a certain worker pool because those worker nodes are on bare metal machines. To designate the worker nodes that app pods must deploy to, add an affinity rule to your app deployment.
 {: shortdesc}
 
-Before you begin:
-*   [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-*   Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-users#checking-perms) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the {{site.data.keyword.openshiftshort}} project.
-*  **Optional**: [Set a label for the worker pool](/docs/openshift?topic=openshift-add_workers#worker_pool_labels) that you want to run the app on.
+Before you begin
+* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+* Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-users#checking-perms) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the {{site.data.keyword.openshiftshort}} project.
+* **Optional**: [Set a label for the worker pool](/docs/openshift?topic=openshift-add_workers#worker_pool_labels) that you want to run the app on.
 
 To deploy apps to specific worker nodes:
 
@@ -85,14 +83,15 @@ To deploy apps to specific worker nodes:
 
 3. Describe the worker node. In the **Labels** output, note the worker pool ID label, `ibm-cloud.kubernetes.io/worker-pool-id`.
 
-    <p class="tip">The steps in this topic use a worker pool ID to deploy app pods only to worker nodes within that worker pool. To deploy app pods to specific worker nodes by using a different label, note this label instead. For example, to deploy app pods only to worker nodes on a specific private VLAN, use the `privateVLAN=` label.</p>
+    The steps in this topic use a worker pool ID to deploy app pods only to worker nodes within that worker pool. To deploy app pods to specific worker nodes by using a different label, note this label instead. For example, to deploy app pods only to worker nodes on a specific private VLAN, use the `privateVLAN=` label.
+    {: tip}
 
     ```
     oc describe node <worker_node_private_IP>
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     Name:               10.xxx.xx.xxx
     Roles:              <none>
@@ -119,7 +118,7 @@ To deploy apps to specific worker nodes:
 
 4. [Add an affinity rule](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external} for the worker pool ID label to the app deployment.
 
-    Example YAML:
+    Example YAML
 
     ```yaml
     apiVersion: apps/v1
@@ -158,7 +157,7 @@ To deploy apps to specific worker nodes:
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         NAME                   READY     STATUS              RESTARTS   AGE       IP               NODE
         cf-py-d7b7d94db-vp8pq  1/1       Running             0          15d       172.30.xxx.xxx   10.176.48.78
@@ -176,7 +175,7 @@ To deploy apps to specific worker nodes:
         ```
         {: pre}
 
-        Example output:
+        Example output
 
         ```
         ID                                                 Public IP       Private IP     Machine Type      State    Status  Zone    Version
@@ -191,10 +190,6 @@ To deploy apps to specific worker nodes:
 
     4. In the output, verify that the worker node with the private IP address that you identified in the previous step is deployed in this worker pool.
 
-<br />
-
-
-
 ## Deploying an app on a GPU machine
 {: #gpu_app}
 
@@ -206,17 +201,18 @@ In the following steps, you learn how to deploy workloads that require the GPU. 
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> GPU machines are available only for clusters that run {{site.data.keyword.openshiftshort}} version 4 on classic infrastructure.
 {: note}
 
-Before you begin:
-* Create a [cluster](/docs/openshift?topic=openshift-clusters#clusters_standard) or [worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that uses a GPU bare metal flavor. Keep in mind that setting up a bare metal machine can take more than one business day to complete.
-* Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-users#checking-perms) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the cluster.
-* [Install the Node Feature Discovery and NVIDIA GPU operators for you cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){: external}.
+Before you begin
+- Create a [cluster](/docs/openshift?topic=openshift-clusters#clusters_standard) or [worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that uses a GPU bare metal flavor. Keep in mind that setting up a bare metal machine can take more than one business day to complete.
+- Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-users#checking-perms) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the cluster.
+- [Install the Node Feature Discovery and NVIDIA GPU operators for you cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){: external}.
 
     You must use NVIDIA GPU operator version 1.3.1 or later. When you install the Node Feature Discovery operator, select the update channel that matches your {{site.data.keyword.openshiftshort}} cluster version. Do not install the operators through another method, such as a Helm chart.
     {: important}
 
-* **Version 4.5 and 4.6 clusters**: Make sure that your worker nodes are updated to at least version `4.5.38_1538_openshift` or `4.6.25_1541_openshift`. When you create an instance of the `ClusterPolicy` for the GPU operator, you must enter `450.80.02` for the **Driver Config** version.
+- **Version 4.5 and 4.6 clusters**: Make sure that your worker nodes are updated to at least version `4.5.38_1538_openshift` or `4.6.25_1541_openshift`. When you create an instance of the `ClusterPolicy` for the GPU operator, you must enter `450.80.02` for the **Driver Config** version.
 
-To execute a workload on a GPU machine:
+To run a workload on a GPU machine,
+
 1. Create a YAML file. In this example, a `Job` YAML manages batch-like workloads by making a short-lived pod that runs until the command that it is scheduled to complete successfully terminates.
 
     For GPU workloads, you must always provide the `resources: limits: nvidia.com/gpu` field in the YAML specification.
@@ -253,46 +249,17 @@ To execute a workload on a GPU machine:
           restartPolicy: Never
     ```
     {: codeblock}
-
-    <table summary="A table that describes in Column 1 the YAML file fields and in Column 2 how to fill out those fields.">
-    <caption>YAML components</caption>
-    <thead>
-    <col width="25%">
-    <th>Component</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Metadata and label names</td>
-    <td>Give a name and a label for the job, and use the same name in both the file's metadata and the <code>spec template</code> metadata. For example, <code>nvidia-smi</code>.</td>
-    </tr>
-    <tr>
-    <td><code>containers.image</code></td>
-    <td>Provide the image that the container is a running instance of. In this example, the value is set to use the DockerHub CUDA image:<code>nvidia/cuda:9.1-base-ubuntu16.04</code></td>
-    </tr>
-    <tr>
-    <td><code>containers.command</code></td>
-    <td>Specify a command to run in the container. In this example, the <code>[ "/usr/test/nvidia-smi" ]</code>command refers to a binary file that is on the GPU machine, so you must also set up a volume mount.</td>
-    </tr>
-    <tr>
-    <td><code>containers.imagePullPolicy</code></td>
-    <td>To pull a new image only if the image is not currently on the worker node, specify <code>IfNotPresent</code>.</td>
-    </tr>
-    <tr>
-    <td><code>resources.limits</code></td>
-    <td>For GPU machines, you must specify the resource limit. The Kubernetes <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/">Device Plug-in</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> sets the default resource request to match the limit.
-    <ul><li>You must specify the key as <code>nvidia.com/gpu</code>.</li>
-    <li>Enter the whole number of GPUs that you request, such as <code>2</code>. <strong>Note</strong>: Container pods do not share GPUs and GPUs cannot be overcommitted. For example, if you have only 1 <code>mg1c.16x128</code> machine, then you have only 2 GPUs in that machine and can specify a maximum of <code>2</code>.</li></ul></td>
-    </tr>
-    <tr>
-    <td><code>volumeMounts</code></td>
-    <td>Name the volume that is mounted onto the container, such as <code>nvidia0</code>. Specify the <code>mountPath</code> on the container for the volume. In this example, the path <code>/usr/test</code> matches the path that is used in the job container command.</td>
-    </tr>
-    <tr>
-    <td><code>volumes</code></td>
-    <td>Name the job volume, such as <code>nvidia0</code>. In the GPU worker node's <code>hostPath</code>, specify the volume's <code>path</code> on the host, in this example, <code>/usr/bin</code>. The container <code>mountPath</code> is mapped to the host volume <code>path</code>, which gives this job access to the NVIDIA binaries on the GPU worker node for the container command to run.</td>
-    </tr>
-    </tbody></table>
+    
+    | Component | Description |
+    | ---- | ------- |
+    | Metadata and label names | Enter a name and a label for the job, and use the same name in both the file's metadata and the `spec template` metadata. For example, `nvidia-smi`. |
+    | `containers.image` | Provide the image that the container is a running instance of. In this example, the value is set to use the DockerHub CUDA image:`nvidia/cuda:9.1-base-ubuntu16.04`. |
+    | `containers.command` | Specify a command to run in the container. In this example, the `[ "/usr/test/nvidia-smi" ]` command refers to a binary file that is on the GPU machine, so you must also set up a volume mount. |
+    | `containers.imagePullPolicy` | To pull a new image only if the image is not currently on the worker node, specify `IfNotPresent`. |
+    | `resources.limits` | For GPU machines, you must specify the resource limit. The Kubernetes [Device Plug-in](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/){: external} sets the default resource request to match the limit. \n * You must specify the key as `nvidia.com/gpu`. \n * Enter the whole number of GPUs that you request, such as `2`. Note that container pods do not share GPUs and GPUs cannot be overcommitted. For example, if you have only 1 `mg1c.16x128` machine, then you have only 2 GPUs in that machine and can specify a maximum of `2`. |
+    | `volumeMounts` | Name the volume that is mounted onto the container, such as `nvidia0`. Specify the `mountPath` on the container for the volume. In this example, the path `/usr/test` matches the path that is used in the job container command. |
+    | `volumes` | Name the job volume, such as `nvidia0`. In the GPU worker node's `hostPath`, specify the volume's `path` on the host, in this example, `/usr/bin`. The container `mountPath` is mapped to the host volume `path`, which gives this job access to the NVIDIA binaries on the GPU worker node for the container command to run. |
+    {: caption="Table 1. Understanding your YAML components" caption-side="top"}
 
 2. Apply the YAML file. For example:
 
@@ -308,7 +275,7 @@ To execute a workload on a GPU machine:
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     NAME                  READY     STATUS      RESTARTS   AGE
     nvidia-smi-ppkd4      0/1       Completed   0          36s
@@ -324,7 +291,7 @@ To execute a workload on a GPU machine:
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         Name:           nvidia-smi-ppkd4
         Namespace:      default
@@ -349,7 +316,7 @@ To execute a workload on a GPU machine:
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     +-----------------------------------------------------------------------------+
     | NVIDIA-SMI 390.12                 Driver Version: 390.12                    |
@@ -378,16 +345,11 @@ To execute a workload on a GPU machine:
 Now that you deployed a test GPU workload, you might want to set up your cluster to run a tool that relies on GPU processing, such as [IBM Maximo Visual Inspection](https://www.ibm.com/products/maximo/remote-monitoring){: external}.
 
 
-
-<br />
-
 ## Deploying Cloud Paks, licensed software, and other integrations
 {: #openshift_app_cloud_paks}
 
 You can deploy IBM Cloud Paks&trade;, licensed software, and other 3rd party integrations to {{site.data.keyword.openshiftlong_notm}} clusters. You have various tools to deploy integrations, such as {{site.data.keyword.cloud_notm}} service binding, managed add-ons, Helm charts, and more. After you install an integration, follow that product's documentation for configuration settings and other instructions to integrate with your apps. For more information, see [Enhancing cluster capabilities with integrations](/docs/openshift?topic=openshift-supported_integrations).
 {: shortdesc}
-
-<br />
 
 ## Accessing the {{site.data.keyword.openshiftshort}} web console
 {: #openshift_console}
@@ -432,9 +394,5 @@ The Application console is available from the dropdown menu in the **OpenShift C
 {: #openshift_console311_cluster_console}
 
 The Cluster console is available from the dropdown menu in the **OpenShift Container Platform** menu bar. For cluster-wide administrators across all the projects in the cluster, you can manage projects, service accounts,RBAC roles, role bindings, and resource quotas. You can also see the status and events for resources within the cluster in a combined view. For more information, see the [{{site.data.keyword.openshiftshort}} Web Console Walkthrough](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.
-
-
-
-<br />
 
 

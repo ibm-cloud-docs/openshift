@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-20"
+lastupdated: "2021-09-22"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -31,6 +31,19 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 Review the release notes for September 2021.
 {: shortdesc}
+
+
+
+
+### 22 September 2021
+{: #22sep2021}
+{: release-note}
+
+Review the release notes for 22 September 2021.
+{: shortdesc}
+
+Ingress ALB version change log
+:   [Version `1.0.0_1699_iks`](/docs/containers?topic=containers-cluster-add-ons-changelog#1_0_0) is now available. Updates for versions [`0.48.1_1698_iks`](/docs/containers?topic=containers-cluster-add-ons-changelog#0_48_0) and [`0.43.0_1697_iks`](/docs/containers?topic=containers-cluster-add-ons-changelog#0_47_0) are available in the change log. 
 
 
 

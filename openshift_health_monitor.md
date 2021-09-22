@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-22"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -49,7 +49,7 @@ Review the following details about built-in monitoring tools for your cluster.
 - Built-in Prometheus and Grafana deployments in the `openshift-monitoring` project for cluster metrics.
 - At-a-glance, real-time view of how your pods consume cluster resources that can be accessed from the {{site.data.keyword.openshiftshort}} **Cluster Console**.
 - Monitoring is on a per-cluster basis.
-- The `openshift-monitoring` project stack is set up in a single zone only. No persistant storage is available to back up or view metric history.</li></ul>
+- The `openshift-monitoring` project stack is set up in a single zone only. No persistant storage is available to back up or view metric history.
 
 For more information, see [the {{site.data.keyword.openshiftshort}} documentation](http://docs.openshift.com/container-platform/4.7/monitoring/understanding-the-monitoring-stack.html){: external}.
 
@@ -62,9 +62,9 @@ Use the {{site.data.keyword.openshiftlong_notm}} observability plug-in to create
 With {{site.data.keyword.mon_full_notm}}, you can collect cluster and pod metrics, such as the CPU and memory usage of your worker nodes, incoming and outgoing HTTP traffic for your pods, and data about several infrastructure components. In addition, the agent can collect custom application metrics by using either a Prometheus-compatible scraper or a StatsD facade.
 
 Considerations for using the {{site.data.keyword.openshiftlong_notm}} observability plug-in:
-* You can have only one monitoring configuration for {{site.data.keyword.mon_full_notm}} in your cluster at a time. If you want to use a different {{site.data.keyword.mon_full_notm}} service instance to send metrics to, use the [`ibmcloud ob monitoring config replace`](/docs/containers?topic=containers-observability_cli#monitoring_config_replace) command.
-* {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}} cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI to enable monitoring for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy monitoring agents to your cluster to forward metrics to {{site.data.keyword.mon_short}}.
-* If you created a {{site.data.keyword.mon_short}} configuration in your cluster without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you can use the [`ibmcloud ob monitoring agent discover`](/docs/containers?topic=containers-observability_cli#monitoring_agent_discover) command to make the configuration visible to the plug-in. Then, you can use the observability plug-in commands and functionality in the {{site.data.keyword.cloud_notm}} console to manage the configuration.
+- You can have only one monitoring configuration for {{site.data.keyword.mon_full_notm}} in your cluster at a time. If you want to use a different {{site.data.keyword.mon_full_notm}} service instance to send metrics to, use the [`ibmcloud ob monitoring config replace`](/docs/containers?topic=containers-observability_cli#monitoring_config_replace) command.
+- {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}} cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI to enable monitoring for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy monitoring agents to your cluster to forward metrics to {{site.data.keyword.mon_short}}.
+- If you created a {{site.data.keyword.mon_short}} configuration in your cluster without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you can use the [`ibmcloud ob monitoring agent discover`](/docs/containers?topic=containers-observability_cli#monitoring_agent_discover) command to make the configuration visible to the plug-in. Then, you can use the observability plug-in commands and functionality in the {{site.data.keyword.cloud_notm}} console to manage the configuration.
 
 Before you begin:
 - Verify that you are assigned the **Editor** platform access role and **Manager** server access role for {{site.data.keyword.mon_full_notm}}.
@@ -78,44 +78,44 @@ To set up a monitoring configuration for your cluster:
 1. Create an [{{site.data.keyword.mon_full_notm}} service instance](/docs/monitoring?topic=monitoring-provision) and note the name of the instance. The service instance must belong to the same {{site.data.keyword.cloud_notm}} account where you created your cluster, but can be in a different resource group and {{site.data.keyword.cloud_notm}} region than your cluster.
 2. Set up a monitoring configuration for your cluster. When you create the monitoring configuration, an {{site.data.keyword.openshiftshort}} project `ibm-observe` is created and a {{site.data.keyword.mon_short}} agent is deployed as a Kubernetes daemon set to all worker nodes in your cluster. This agent collects cluster and pod metrics, such as the worker node CPU and memory usage, or the amount incoming and outgoing network traffic to your pods.
 
-    - **From the console: **
+    - **From the console**
         1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to create a {{site.data.keyword.mon_short}} configuration.
         2. On the cluster **Overview** page, click **Connect**.
         3. Select the region and the {{site.data.keyword.mon_full_notm}} service instance that you created earlier, and click **Connect**.
 
-    - **From the CLI:**
+    - **From the CLI**
         1. Create the {{site.data.keyword.mon_short}} configuration. When you create the {{site.data.keyword.mon_short}} configuration, the access key that was last added is retrieved automatically. If you want to use a different access key, add the `--sysdig-access-key <access_key>` option to the command.
 
-        To use a different service access key after you created the monitoring configuration, use the [`ibmcloud ob monitoring config replace`](/docs/containers?topic=containers-observability_cli#monitoring_config_replace) command.
-        {: tip}
+            To use a different service access key after you created the monitoring configuration, use the [`ibmcloud ob monitoring config replace`](/docs/containers?topic=containers-observability_cli#monitoring_config_replace) command.
+            {: tip}
 
-        ```
-        ibmcloud ob monitoring config create --cluster <cluster_name_or_ID> --instance <Monitoring_instance_name_or_ID>
-        ```
-        {: pre}
+            ```
+            ibmcloud ob monitoring config create --cluster <cluster_name_or_ID> --instance <Monitoring_instance_name_or_ID>
+            ```
+            {: pre}
 
-        Example output:
-        ```
-        Creating configuration...
-        OK
-        ```
-        {: screen}
+            Example output
+            ```
+            Creating configuration...
+            OK
+            ```
+            {: screen}
 
         2. Verify that the monitoring configuration was added to your cluster.
-        ```
-        ibmcloud ob monitoring config list --cluster <cluster_name_or_ID>
-        ```
-        {: pre}
+            ```
+            ibmcloud ob monitoring config list --cluster <cluster_name_or_ID>
+            ```
+            {: pre}
 
-        Example output:
-        ```
-        Listing configurations...
+            Example output
+            ```
+            Listing configurations...
 
-        OK
-        Instance Name                Instance ID                            CRN   
-        IBM Cloud Monitoring-aaa     1a111a1a-1111-11a1-a1aa-aaa11111a11a   crn:v1:prod:public:sysdig:us-south:a/a11111a1aaaaa11a111aa11a1aa1111a:1a111a1a-1111-11a1-a1aa-aaa11111a11a::  
-        ```
-        {: screen}
+            OK
+            Instance Name                Instance ID                            CRN   
+            IBM Cloud Monitoring-aaa     1a111a1a-1111-11a1-a1aa-aaa11111a11a   crn:v1:prod:public:sysdig:us-south:a/a11111a1aaaaa11a111aa11a1aa1111a:1a111a1a-1111-11a1-a1aa-aaa11111a11a::  
+            ```
+            {: screen}
 
 3. Optional: Verify that the {{site.data.keyword.mon_short}} agent was set up successfully.
     1. If you used the console to create the {{site.data.keyword.mon_short}} configuration, log in to your cluster. For more information, see [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -125,7 +125,7 @@ To set up a monitoring configuration for your cluster:
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         NAME           DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
         sysdig-agent   9         9         9       9            9           <none>          14m
@@ -169,11 +169,11 @@ Your {{site.data.keyword.openshiftlong_notm}} cluster includes an IBM-managed ma
 
 **Master Health**
 
-The **Master Health** reflects the state of master components and notifies you if something needs your attention. The health might be one of the following:
-*   `error`: The master is not operational. IBM is automatically notified and takes action to resolve this issue. You can continue monitoring the health until the master is `normal`. You can also [open an {{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).
-*   `normal`: The master is operational and healthy. No action is required.
-*   `unavailable`: The master might not be accessible, which means some actions such as resizing a worker pool are temporarily unavailable. IBM is automatically notified and takes action to resolve this issue. You can continue monitoring the health until the master is `normal`.
-*   `unsupported`: The master runs an unsupported version of Kubernetes. You must [update your cluster](/docs/containers?topic=containers-update) to return the master to `normal` health.
+The **Master Health** reflects the state of master components and notifies you if something needs your attention. The health might be one of the following states.
+- `error`: The master is not operational. IBM is automatically notified and takes action to resolve this issue. You can continue monitoring the health until the master is `normal`. You can also [open an {{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).
+- `normal`: The master is operational and healthy. No action is required.
+- `unavailable`: The master might not be accessible, which means some actions such as resizing a worker pool are temporarily unavailable. IBM is automatically notified and takes action to resolve this issue. You can continue monitoring the health until the master is `normal`.
+- `unsupported`: The master runs an unsupported version of Kubernetes. You must [update your cluster](/docs/containers?topic=containers-update) to return the master to `normal` health.
 
 **Master Status and State**
 
@@ -192,9 +192,6 @@ The **Master Status** provides details of what operation from the master state i
 {: caption="Master states"}
 {: summary="Table rows read from left to right, with the master state in column one and a description in column two."}
 
-
-
-
 ## Disabling remote health reporting
 {: #oc_disable_telemetry_reports}
 
@@ -209,7 +206,7 @@ You might want to disable this remote health reporting to comply with privacy la
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     NAME                              READY   STATUS      RESTARTS   AGE
     telemeter-client-7cfd7cb85-lm9dt  3/3     Running     0          4d13h
