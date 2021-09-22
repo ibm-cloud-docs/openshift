@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: openshift, roks, rhos, rhoks, vpn, on-prem, gateway, static
 
@@ -44,13 +44,14 @@ The static route cluster add-on can be used to apply and manage static routes on
 To get started with static routes in {{site.data.keyword.openshiftlong_notm}}, enable the static route add-on.
 {: shortdesc}
 
-**Before you begin**:
+**Before you begin**
 * Ensure that you have the [**Administrator** IAM platform access role for the cluster in {{site.data.keyword.containerlong_notm}}](/docs/openshift?topic=openshift-users#checking-perms).
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
+### Enabling the static route add-on from the console
+{: #enable-add-on-console}
 
-
-**To use the {{site.data.keyword.cloud_notm}} console:**
+To use the {{site.data.keyword.cloud_notm}} console, follow these steps.
 
 1. In your [cluster dashboard](https://cloud.ibm.com/kubernetes/clusters){: external}, click the name of the cluster where you want to install the static route add-on.
 2. Click the **Add-ons** tab.
@@ -59,9 +60,10 @@ To get started with static routes in {{site.data.keyword.openshiftlong_notm}}, e
 5. On the **Static Route** card, verify that the add-on is listed.
 
 
+### Enabling the static route add-on with the CLI
+{: #enable-add-on-cli}
 
-
-**To use the CLI:**
+To use the CLI, follow these steps.
 
 1. [Target the CLI to your cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
 

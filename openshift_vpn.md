@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-22"
 
 keywords: openshift, roks, rhos, rhoks, strongswan, ipsec, on-prem
 
@@ -30,7 +30,11 @@ To connect your worker nodes and apps to an on-premises data center, you can con
 
 - **Virtual Router Appliance (VRA) or Fortigate Security Appliance (FSA)**: You might choose to set up a [VRA (Vyatta)](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra) or [FSA](/docs/vmwaresolutions/services?topic=vmwaresolutions-fsa_considerations) to configure an IPSec VPN endpoint. This option is useful when you have a larger cluster, want to access multiple clusters over a single VPN, or need a route-based VPN. To configure a VRA, see [Setting up VPN connectivity with VRA](#vyatta).
 
-<p class="tip">If you plan to connect your cluster to on-premises networks, check out the following helpful features:<br><br>You might have subnet conflicts with the IBM-provided default 172.30.0.0/16 range for pods and 172.21.0.0/16 range for services. You can avoid subnet conflicts when you [create a cluster from the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) by specifying a custom subnet CIDR for pods in the `--pod-subnet` flag and a custom subnet CIDR for services in the `--service-subnet` flag.<br><br>If your VPN solution preserves the source IP addresses of requests, you can [create custom static routes](/docs/openshift?topic=openshift-static-routes) to ensure that your worker nodes can route responses from your cluster back to your on-premises network.</p>
+If you plan to connect your cluster to on-premises networks, check out the following helpful features.
+
+- You might have subnet conflicts with the IBM-provided default 172.30.0.0/16 range for pods and 172.21.0.0/16 range for services. You can avoid subnet conflicts when you [create a cluster from the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) by specifying a custom subnet CIDR for pods in the `--pod-subnet` flag and a custom subnet CIDR for services in the `--service-subnet` flag.
+
+- If your VPN solution preserves the source IP addresses of requests, you can [create custom static routes](/docs/openshift?topic=openshift-static-routes) to ensure that your worker nodes can route responses from your cluster back to your on-premises network.</p>
 
 The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` subnet ranges are prohibited because they are reserved for {{site.data.keyword.openshiftlong_notm}} control plane functionality.
 {: note}
@@ -41,9 +45,9 @@ The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` subne
 Use a Helm chart to configure and deploy the strongSwan IPSec VPN service inside of a Kubernetes pod.
 {: shortdesc}
 
-Because strongSwan is integrated within your cluster, you don't need an external gateway appliance. When VPN connectivity is established, routes are automatically configured on all of the worker nodes in the cluster. These routes allow two-way connectivity through the VPN tunnel between pods on any worker node and the remote system. For example, the following diagram shows how an app in {{site.data.keyword.openshiftlong_notm}} can communicate with an on-premises server via a strongSwan VPN connection:
+Because strongSwan is integrated within your cluster, you don't need an external gateway appliance. When VPN connectivity is established, routes are automatically configured on all of the worker nodes in the cluster. These routes allow two-way connectivity through the VPN tunnel between pods on any worker node and the remote system. For example, the following diagram shows how an app in {{site.data.keyword.openshiftlong_notm}} can communicate with an on-premises server via a strongSwan VPN connection.
 
-<img src="images/cs_vpn_strongswan.png" width="700" alt="Flow of traffic between your cluster and an on-premises data center through the strongSwan VPN service" style="width:700px; border-style: none"/>
+![Flow of traffic between your cluster and an on-premises data center through the strongSwan VPN service.](images/cs_vpn_strongswan.png "Flow of traffic through the strongSwan VPN service"){: caption="Figure 1. Flow of traffic through the strongSwan VPN service" caption-side="bottom"}
 
 1. An app in your cluster, `myapp`, receives a request from an Ingress or LoadBalancer service and needs to securely connect to data in your on-premises network.
 
@@ -61,20 +65,19 @@ Because strongSwan is integrated within your cluster, you don't need an external
 Before using the strongSwan Helm chart, review the following considerations and limitations.
 {: shortdesc}
 
-* The strongSwan Helm chart is supported only for classic clusters, and is not supported for VPC clusters. For VPN information for VPC clusters, see [Setting up VPC VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas).
-* The strongSwan Helm chart requires NAT traversal to be enabled by the remote VPN endpoint. NAT traversal requires UDP port 4500 in addition to the default IPSec UDP port of 500. Both UDP ports need to be allowed through any firewall that is configured.
-* The strongSwan Helm chart does not support route-based IPSec VPNs.
-* The strongSwan Helm chart supports IPSec VPNs that use preshared keys, but does not support IPSec VPNs that require certificates.
-* The strongSwan Helm chart does not allow multiple clusters and other IaaS resources to share a single VPN connection.
-* The strongSwan Helm chart runs as a Kubernetes pod inside of the cluster. The VPN performance is affected by the memory and network usage of Kubernetes and other pods that are running in the cluster. If you have a performance-critical environment, consider using a VPN solution that runs outside of the cluster on dedicated hardware.
-* The strongSwan Helm chart runs a single VPN pod as the IPSec tunnel endpoint. If the pod fails, the cluster restarts the pod. However, you might experience a short down time while the new pod starts and the VPN connection is re-established. If you require faster error recovery or a more elaborate high availability solution, consider using a VPN solution that runs outside of the cluster on dedicated hardware.
-* The strongSwan Helm chart does not provide metrics or monitoring of the network traffic flowing over the VPN connection. For a list of supported monitoring tools, see [Logging and monitoring services](/docs/openshift?topic=openshift-health).
-* Only strongSwan Helm chart versions that were released in the last 6 months are supported. Ensure that you consistently [upgrade your strongSwan Helm chart](/docs/openshift?topic=openshift-vpn#vpn_upgrade) for the latest features and security fixes.
+- The strongSwan Helm chart is supported only for classic clusters, and is not supported for VPC clusters. For VPN information for VPC clusters, see [Setting up VPC VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas).
+- The strongSwan Helm chart requires NAT traversal to be enabled by the remote VPN endpoint. NAT traversal requires UDP port 4500 in addition to the default IPSec UDP port of 500. Both UDP ports need to be allowed through any firewall that is configured.
+- The strongSwan Helm chart does not support route-based IPSec VPNs.
+- The strongSwan Helm chart supports IPSec VPNs that use preshared keys, but does not support IPSec VPNs that require certificates.
+- The strongSwan Helm chart does not allow multiple clusters and other IaaS resources to share a single VPN connection.
+- The strongSwan Helm chart runs as a Kubernetes pod inside of the cluster. The VPN performance is affected by the memory and network usage of Kubernetes and other pods that are running in the cluster. If you have a performance-critical environment, consider using a VPN solution that runs outside of the cluster on dedicated hardware.
+- The strongSwan Helm chart runs a single VPN pod as the IPSec tunnel endpoint. If the pod fails, the cluster restarts the pod. However, you might experience a short down time while the new pod starts and the VPN connection is re-established. If you require faster error recovery or a more elaborate high availability solution, consider using a VPN solution that runs outside of the cluster on dedicated hardware.
+- The strongSwan Helm chart does not provide metrics or monitoring of the network traffic flowing over the VPN connection. For a list of supported monitoring tools, see [Logging and monitoring services](/docs/openshift?topic=openshift-health).
+- Only strongSwan Helm chart versions that were released in the last 6 months are supported. Ensure that you consistently [upgrade your strongSwan Helm chart](/docs/openshift?topic=openshift-vpn#vpn_upgrade) for the latest features and security fixes.
 
 Your cluster users can use the strongSwan VPN service to connect to your Kubernetes master through the private cloud service endpoint. However, communication with the Kubernetes master over the private cloud service endpoint must go through the <code>166.X.X.X</code> IP address range, which is not routable from a VPN connection. You can expose the private cloud service endpoint of the master for your cluster users by [using a private network load balancer (NLB)](/docs/openshift?topic=openshift-access_cluster#access_private_se). The private NLB exposes the private cloud service endpoint of the master as an internal `172.21.x.x` cluster IP address that the strongSwan VPN pod can access. If you enable only the private cloud service endpoint, you can use the Kubernetes dashboard or temporarily enable the public cloud service endpoint to create the private NLB.
 {: tip}
 
-<br />
 
 ## Configuring the strongSwan VPN in a multizone cluster
 {: #vpn_multizone}
@@ -82,15 +85,17 @@ Your cluster users can use the strongSwan VPN service to connect to your Kuberne
 Multizone clusters provide high availability for apps in the event of an outage by making app instances available on worker nodes in multiple zones. However, configuring the strongSwan VPN service in a multizone cluster is more complex than configuring strongSwan in a single-zone cluster.
 {: shortdesc}
 
-Before you configure strongSwan in a multizone cluster, first try to deploy a strongSwan Helm chart into a single-zone cluster. When you first establish a VPN connection between a single-zone cluster and an on-premises network, you can more easily determine remote network firewall settings that are important for a multizone strongSwan configuration:
-* Some remote VPN endpoints have settings such as `leftid` or `rightid` in the `ipsec.conf` file. If you have these settings, check whether you must set the `leftid` to the IP address of the VPN IPSec tunnel.
-*    If the connection is inbound to the cluster from the remote network, check whether the remote VPN endpoint can re-establish the VPN connection to a different IP address in case of load balancer failure in one zone.
+Before you configure strongSwan in a multizone cluster, first try to deploy a strongSwan Helm chart into a single-zone cluster. When you first establish a VPN connection between a single-zone cluster and an on-premises network, you can more easily determine remote network firewall settings that are important for a multizone strongSwan configuration.
+
+- Some remote VPN endpoints have settings such as `leftid` or `rightid` in the `ipsec.conf` file. If you have these settings, check whether you must set the `leftid` to the IP address of the VPN IPSec tunnel.
+- If the connection is inbound to the cluster from the remote network, check whether the remote VPN endpoint can re-establish the VPN connection to a different IP address in case of load balancer failure in one zone.
 
 To get started with strongSwan in a multizone cluster, choose one of the following options.
-* If you can use an outbound VPN connection, you can choose to configure only one strongSwan VPN deployment. See [Configuring one outbound VPN connection from a multizone cluster](#multizone_one_outbound).
-* If you require an inbound VPN connection, the configuration settings you can use vary depending on whether the remote VPN endpoint can be configured to re-establish the VPN connection to a different public load balancer IP when an outage is detected.
-    * If the remote VPN endpoint can automatically re-establish the VPN connection to a different IP, you can choose to configure only one strongSwan VPN deployment. See [Configuring one inbound VPN connection to a multizone cluster](#multizone_one_inbound).
-    * If the remote VPN endpoint cannot automatically re-establish the VPN connection to a different IP, you must deploy a separate inbound strongSwan VPN service in each zone. See [Configuring a VPN connection in each zone of a multizone cluster](#multizone_multiple).
+
+- If you can use an outbound VPN connection, you can choose to configure only one strongSwan VPN deployment. See [Configuring one outbound VPN connection from a multizone cluster](#multizone_one_outbound).
+- If you require an inbound VPN connection, the configuration settings you can use vary depending on whether the remote VPN endpoint can be configured to re-establish the VPN connection to a different public load balancer IP when an outage is detected.
+    - If the remote VPN endpoint can automatically re-establish the VPN connection to a different IP, you can choose to configure only one strongSwan VPN deployment. See [Configuring one inbound VPN connection to a multizone cluster](#multizone_one_inbound).
+    - If the remote VPN endpoint cannot automatically re-establish the VPN connection to a different IP, you must deploy a separate inbound strongSwan VPN service in each zone. See [Configuring a VPN connection in each zone of a multizone cluster](#multizone_multiple).
 
 Try to set up your environment so that you need only one strongSwan VPN deployment for an outbound or inbound VPN connection to your multizone cluster. If you must set up separate strongSwan VPNs in each zone, make sure that you plan how to manage this added complexity and increased resource usage.
 {: note}
@@ -103,7 +108,7 @@ The simplest solution for configuring the strongSwan VPN service in a multizone 
 
 When the VPN connection is outbound from the multizone cluster, only one strongSwan deployment is required. If a worker node is removed or experiences downtime, `kubelet` reschedules the VPN pod onto a new worker node. If an availability zone experiences an outage, `kubelet` reschedules the VPN pod onto a new worker node in a different zone.
 
-1. [Configure one strongSwan VPN Helm chart](/docs/openshift?topic=openshift-vpn#vpn_configure). When you follow the steps in that section, ensure that you specify the following settings:
+1. [Configure one strongSwan VPN Helm chart](/docs/openshift?topic=openshift-vpn#vpn_configure). When you follow the steps in that section, ensure that you specify the following settings.
     - `ipsec.auto`: Change to `start`. Connections are outbound from the cluster.
     - `loadBalancerIP`: Do not specify an IP address. Leave this setting blank.
     - `zoneLoadBalancer`: Specify a public load balancer IP address for each zone where you have worker nodes. [You can check to see your available public IP addresses](/docs/openshift?topic=openshift-subnets#review_ip) or [free up a used IP address](/docs/openshift?topic=openshift-subnets#free). Because the strongSwan VPN pod can be scheduled to a worker node in any zone, this list of IPs ensures that a load balancer IP can be used in any zone where the VPN pod is scheduled.
@@ -123,7 +128,7 @@ When you require incoming VPN connections and the remote VPN endpoint can automa
 
 The remote VPN endpoint can establish the VPN connection to any of the strongSwan load balancers in any of the zones. The incoming request is sent to the VPN pod regardless of which zone the VPN pod is in. Responses from the VPN pod are sent back through the original load balancer to the remote VPN endpoint. This option ensures high availability because `kubelet` reschedules the VPN pod onto a new worker node if a worker node is removed or experiences downtime. Additionally, if an availability zone experiences an outage, the remote VPN endpoint can re-establish the VPN connection to the load balancer IP address in a different zone so that the VPN pod can still be reached.
 
-1. [Configure one strongSwan VPN Helm chart](/docs/openshift?topic=openshift-vpn#vpn_configure). When you follow the steps in that section, ensure that you specify the following settings:
+1. [Configure one strongSwan VPN Helm chart](/docs/openshift?topic=openshift-vpn#vpn_configure). When you follow the steps in that section, ensure that you specify the following settings.
     - `ipsec.auto`: Change to `add`. Connections are inbound to the cluster.
     - `loadBalancerIP`: Do not specify an IP address. Leave this setting blank.
     - `zoneLoadBalancer`: Specify a public load balancer IP address for each zone where you have worker nodes. [You can check to see your available public IP addresses](/docs/openshift?topic=openshift-subnets#review_ip) or [free up a used IP address](/docs/openshift?topic=openshift-subnets#free).
@@ -147,16 +152,15 @@ After you deploy each Helm chart, each strongSwan VPN deployment starts up as a 
     - Additional settings, such as `zoneSpecificRoutes`, `remoteSubnetNAT`, `localSubnetNAT`, or `enableSingleSourceIP`, might be required depending on which resources must be accessible over the VPN. See the next step for more details.
 
 2. Configure zone-specific settings on both sides of the VPN tunnel to ensure that each VPN connection is unique. Depending on which resources must be accessible over the VPN, you have two options for making the connections distinguishable:
-    * If pods in the cluster must access services on the remote on-premises network:
+    * If pods in the cluster must access services on the remote on-premises network,
         - `zoneSpecificRoutes`: Set to `true`. This setting restricts the VPN connection to a single zone in the cluster. Pods in a specific zone use only the VPN connection that is set up for that specific zone. This solution reduces the number of strongSwan pods that are required to support multiple VPNs in a multizone cluster, improves VPN performance because the VPN traffic only flows to worker nodes located in the current zone, and ensures that VPN connectivity for each zone is unaffected by VPN connectivity, crashed pods, or zone outages in other zones. Note that you do not need to configure `remoteSubnetNAT`. Multiple VPNs that use the `zoneSpecificRoutes` setting can have the same `remote.subnet` because the routing is setup on a per-zone basis.
         - `enableSingleSourceIP`: Set to `true` and set the `local.subnet` to a single /32 IP address. This combination of settings hides all of the cluster private IP addresses behind a single /32 IP address. This unique /32 IP address allows the remote on-premises network to send replies back over the correct VPN connection to the correct pod in the cluster that initiated the request. Note that the single /32 IP address that is configured for the `local.subnet` option must be unique in each strongSwan VPN configuration.
-    * If applications in the remote on-premises network must access services in the cluster:
+    * If applications in the remote on-premises network must access services in the cluster,
         - `localSubnetNAT`: Ensure that an application in the on-premises remote network can select a specific VPN connection to send and receive traffic to the cluster. In each strongSwan Helm configuration, use `localSubnetNAT` to uniquely identify the cluster resources that can be accessed by the remote on-premises application. Because multiple VPNs are established from the remote on-premises network to the cluster, you must add logic to the application on the on-premise network so that it can select which VPN to use when it accesses services in the cluster. Note that the services in the cluster are accessible through multiple different subnets depending on what you configured for `localSubnetNAT` in each strongSwan VPN configuration.
         - `remoteSubnetNAT`: Ensure that a pod in your cluster uses the same VPN connection to return traffic to the remote network. In each strongSwan deployment file, map the remote on-premises subnet to a unique subnet using the `remoteSubnetNAT` setting. Traffic that is received by a pod in the cluster from a VPN-specific `remoteSubnetNAT` is sent back to that same VPN-specific `remoteSubnetNAT` and then over that same VPN connection.
 
 3. Configure the remote VPN endpoint software to establish a separate VPN connection to the load balancer IP in each zone.
 
-<br />
 
 ## Configuring the strongSwan Helm chart
 {: #vpn_configure}
@@ -164,11 +168,12 @@ After you deploy each Helm chart, each strongSwan VPN deployment starts up as a 
 Before you install the strongSwan Helm chart, you must decide on your strongSwan configuration.
 {: shortdesc}
 
-Before you begin:
-* Install an IPSec VPN gateway in your on-premises data center.
-* Ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the `default` namespace.
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-    * **Note**: All strongSwan configurations are permitted in standard clusters. If you use a free cluster, you can choose only an outbound VPN connection in [Step 3](#strongswan_3). Inbound VPN connections require a load balancer in the cluster, and load balancers are not available for free clusters.
+Before you begin
+- Install an IPSec VPN gateway in your on-premises data center.
+- Ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the `default` namespace.
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+    All strongSwan configurations are permitted in standard clusters. If you use a free cluster, you can choose only an outbound VPN connection in [Step 3](#strongswan_3). Inbound VPN connections require a load balancer in the cluster, and load balancers are not available for free clusters.
+    {: note}
 
 ### Step 1: Get the strongSwan Helm chart
 {: #strongswan_1}
@@ -198,13 +203,13 @@ For more information about each setting, read the documentation provided within 
 
 1. If your on-premises VPN tunnel endpoint does not support `ikev2` as a protocol for initializing the connection, change the value of `ipsec.keyexchange` to `ikev1`.
 2. Set `ipsec.esp` to a list of ESP encryption and authentication algorithms that your on-premises VPN tunnel endpoint uses for the connection.
-    * If `ipsec.keyexchange` is set to `ikev1`, this setting must be specified.
-    * If `ipsec.keyexchange` is set to `ikev2`, this setting is optional.
-    * If you leave this setting blank, the default strongSwan algorithms `aes128-sha1,3des-sha1` are used for the connection.
+    - If `ipsec.keyexchange` is set to `ikev1`, this setting must be specified.
+    - If `ipsec.keyexchange` is set to `ikev2`, this setting is optional.
+    - If you leave this setting blank, the default strongSwan algorithms `aes128-sha1,3des-sha1` are used for the connection.
 3. Set `ipsec.ike` to a list of IKE/ISAKMP SA encryption and authentication algorithms that your on-premises VPN tunnel endpoint uses for the connection. The algorithms must be specific in the format `encryption-integrity[-prf]-dhgroup`.
-    * If `ipsec.keyexchange` is set to `ikev1`, this setting must be specified.
-    * If `ipsec.keyexchange` is set to `ikev2`, this setting is optional.
-    * If you leave this setting blank, the default strongSwan algorithms `aes128-sha1-modp2048,3des-sha1-modp1536` are used for the connection.
+    - If `ipsec.keyexchange` is set to `ikev1`, this setting must be specified.
+    - If `ipsec.keyexchange` is set to `ikev2`, this setting is optional.
+    - If you leave this setting blank, the default strongSwan algorithms `aes128-sha1-modp2048,3des-sha1-modp1536` are used for the connection.
 4. Change the value of `local.id` to any string that you want to use to identify the local {{site.data.keyword.openshiftshort}} cluster side that your VPN tunnel endpoint uses. The default is `ibm-cloud`. Some VPN implementations require that you use the public IP address for the local endpoint.
 5. Change the value of `remote.id` to any string that you want to use to identify the remote on-premises side that your VPN tunnel endpoint uses. The default is `on-prem`. Some VPN implementations require that you use the public IP address for the remote endpoint.
 6. Change the value of `preshared.secret` to the pre-shared secret that your on-premises VPN tunnel endpoint gateway uses for the connection. This value is stored in `ipsec.secrets`.
@@ -216,35 +221,36 @@ For more information about each setting, read the documentation provided within 
 When you configure a strongSwan VPN connection, you choose whether the VPN connection is inbound to the cluster or outbound from the cluster.
 {: shortdesc}
 
-<dl>
-<dt>Inbound</dt>
-<dd>The on-premises VPN endpoint from the remote network initiates the VPN connection, and the cluster listens for the connection.</dd>
-<dt>Outbound</dt>
-<dd>The cluster initiates the VPN connection, and the on-premises VPN endpoint from the remote network listens for the connection.</dd>
-</dl>
+Inbound
+: The on-premises VPN endpoint from the remote network initiates the VPN connection, and the cluster listens for the connection.
+
+Outbound
+: The cluster initiates the VPN connection, and the on-premises VPN endpoint from the remote network listens for the connection.
 
 If you use a free cluster, you can choose only an outbound VPN connection. Inbound VPN connections require a load balancer in the cluster, and load balancers are not available for free clusters.
 
-To establish an inbound VPN connection, modify the following settings:
+To establish an inbound VPN connection, modify the following settings.
+
 1. Verify that `ipsec.auto` is set to `add`.
 2. Optional: Set `loadBalancerIP` to a portable public IP address for the strongSwan VPN service. Specifying an IP address is useful when you need a stable IP address, such as when you must designate which IP addresses are permitted through an on-premises firewall. The cluster must have at least one available public load balancer IP address. [You can check to see your available public IP addresses](/docs/openshift?topic=openshift-subnets#review_ip) or [free up a used IP address](/docs/openshift?topic=openshift-subnets#free).
-    * If you leave this setting blank, one of the available portable public IP addresses is used.
-    * You must also configure the public IP address that you select for or the public IP address that is assigned to the cluster VPN endpoint on the on-premises VPN endpoint.
+    - If you leave this setting blank, one of the available portable public IP addresses is used.
+    - You must also configure the public IP address that you select for or the public IP address that is assigned to the cluster VPN endpoint on the on-premises VPN endpoint.
 
-To establish an outbound VPN connection, modify the following settings:
+To establish an outbound VPN connection, modify the following settings.
+
 1. Change `ipsec.auto` to `start`.
 2. Set `remote.gateway` to the public IP address for the on-premises VPN endpoint in the remote network.
 3. Choose one of the following options for the IP address for the cluster VPN endpoint:
-    * **Public IP address of the cluster's private gateway**: If your worker nodes are connected to a private VLAN only, then the outbound VPN request is routed through the private gateway in order to reach the internet. The public IP address of the private gateway is used for the VPN connection.
-    * **Public IP address of the worker node where the strongSwan pod runs**: If the worker node where the strongSwan pod runs is connected to a public VLAN, then the worker node's public IP address is used for the VPN connection.
-        <br>
-        * If the strongSwan pod is deleted and rescheduled onto a different worker node in the cluster, then the public IP address of the VPN changes. The on-premises VPN endpoint of the remote network must allow the VPN connection to be established from the public IP address of any of the cluster worker nodes.
-        * If the remote VPN endpoint cannot handle VPN connections from multiple public IP addresses, limit the nodes that the strongSwan VPN pod deploys to. Set `nodeSelector` to the IP addresses of specific worker nodes or a worker node label. For example, the value `kubernetes.io/hostname: 10.232.xx.xx` allows the VPN pod to deploy to that worker node only. The value `strongswan: vpn` restricts the VPN pod to running on any worker nodes with that label. You can use any worker node label. To allow different worker nodes to be used with different helm chart deployments, use `strongswan: <release_name>`. For high availability, select at least two worker nodes.
-    * **Public IP address of the strongSwan service**: To establish connection by using the IP address of the strongSwan VPN service, set `connectUsingLoadBalancerIP` to `true`. The strongSwan service IP address is either a portable public IP address you can specify in the `loadBalancerIP` setting, or an available portable public IP address that is automatically assigned to the service.
-        <br>
-        * If you choose to select an IP address using the `loadBalancerIP` setting, the cluster must have at least one available public load balancer IP address. [You can check to see your available public IP addresses](/docs/openshift?topic=openshift-subnets#review_ip) or [free up a used IP address](/docs/openshift?topic=openshift-subnets#free).
-        * All of the cluster worker nodes must be on the same public VLAN. Otherwise, you must use the `nodeSelector` setting to ensure that the VPN pod deploys to a worker node on the same public VLAN as the `loadBalancerIP`.
-        * If `connectUsingLoadBalancerIP` is set to `true` and `ipsec.keyexchange` is set to `ikev1`, you must set `enableServiceSourceIP` to `true`.
+    - **Public IP address of the cluster's private gateway**: If your worker nodes are connected to a private VLAN only, then the outbound VPN request is routed through the private gateway in order to reach the internet. The public IP address of the private gateway is used for the VPN connection.
+    - **Public IP address of the worker node where the strongSwan pod runs**: If the worker node where the strongSwan pod runs is connected to a public VLAN, then the worker node's public IP address is used for the VPN connection.
+        
+        - If the strongSwan pod is deleted and rescheduled onto a different worker node in the cluster, then the public IP address of the VPN changes. The on-premises VPN endpoint of the remote network must allow the VPN connection to be established from the public IP address of any of the cluster worker nodes.
+        - If the remote VPN endpoint cannot handle VPN connections from multiple public IP addresses, limit the nodes that the strongSwan VPN pod deploys to. Set `nodeSelector` to the IP addresses of specific worker nodes or a worker node label. For example, the value `kubernetes.io/hostname: 10.232.xx.xx` allows the VPN pod to deploy to that worker node only. The value `strongswan: vpn` restricts the VPN pod to running on any worker nodes with that label. You can use any worker node label. To allow different worker nodes to be used with different helm chart deployments, use `strongswan: <release_name>`. For high availability, select at least two worker nodes.
+    - **Public IP address of the strongSwan service**: To establish connection by using the IP address of the strongSwan VPN service, set `connectUsingLoadBalancerIP` to `true`. The strongSwan service IP address is either a portable public IP address you can specify in the `loadBalancerIP` setting, or an available portable public IP address that is automatically assigned to the service.
+        
+        - If you choose to select an IP address using the `loadBalancerIP` setting, the cluster must have at least one available public load balancer IP address. [You can check to see your available public IP addresses](/docs/openshift?topic=openshift-subnets#review_ip) or [free up a used IP address](/docs/openshift?topic=openshift-subnets#free).
+        - All of the cluster worker nodes must be on the same public VLAN. Otherwise, you must use the `nodeSelector` setting to ensure that the VPN pod deploys to a worker node on the same public VLAN as the `loadBalancerIP`.
+        - If `connectUsingLoadBalancerIP` is set to `true` and `ipsec.keyexchange` is set to `ikev1`, you must set `enableServiceSourceIP` to `true`.
 
 ### Step 4: Access cluster resources over the VPN connection
 {: #strongswan_4}
@@ -252,26 +258,26 @@ To establish an outbound VPN connection, modify the following settings:
 Determine which cluster resources must be accessible by the remote network over the VPN connection.
 {: shortdesc}
 
-1. Add the CIDRs of one or more cluster subnets to the `local.subnet` setting. You must configure the local subnet CIDRs on the on-premises VPN endpoint. This list can include the following subnets:
-    * The Kubernetes pod subnet CIDR: `172.30.0.0/16`. Bidirectional communication is enabled between all cluster pods and any of the hosts in the remote network subnets that you list in the `remote.subnet` setting. If you must prevent any `remote.subnet` hosts from accessing cluster pods for security reasons, do not add the Kubernetes pod subnet to the `local.subnet` setting.
-    * The Kubernetes service subnet CIDR: `172.21.0.0/16`. Service IP addresses provide a way to expose multiple app pods that are deployed on several worker nodes behind a single IP.
-    * If your apps are exposed by a NodePort service on the private network or a private Ingress ALB, add the worker node's private subnet CIDR. Retrieve the first three octets of your worker's private IP address by running `ibmcloud oc worker <cluster_name>`. For example, if it is `10.176.48.xx` then note `10.176.48`. Next, get the worker private subnet CIDR by running the following command, replacing `<xxx.yyy.zz>` with the octet that you previously retrieved: `ibmcloud sl subnet list | grep <xxx.yyy.zzz>`. **Note**: If a worker node is added on a new private subnet, you must add the new private subnet CIDR to the `local.subnet` setting and the on-premises VPN endpoint. Then, the VPN connection must be restarted.
-    * If you have apps that are exposed by LoadBalancer services on the private network, add the cluster's private user-managed subnet CIDRs. To find these values, run `ibmcloud oc cluster get --cluster <cluster_name> --show-resources`. In the **VLANs** section, look for CIDRs that have a **Public** value of `false`. **Note**: If `ipsec.keyexchange` is set to `ikev1`, you can specify only one subnet. However, you can use the `localSubnetNAT` setting to combine multiple cluster subnets into a single subnet.
+1. Add the CIDRs of one or more cluster subnets to the `local.subnet` setting. You must configure the local subnet CIDRs on the on-premises VPN endpoint. This list can include the following subnets.
+    - The Kubernetes pod subnet CIDR: `172.30.0.0/16`. Bidirectional communication is enabled between all cluster pods and any of the hosts in the remote network subnets that you list in the `remote.subnet` setting. If you must prevent any `remote.subnet` hosts from accessing cluster pods for security reasons, do not add the Kubernetes pod subnet to the `local.subnet` setting.
+    - The Kubernetes service subnet CIDR: `172.21.0.0/16`. Service IP addresses provide a way to expose multiple app pods that are deployed on several worker nodes behind a single IP.
+    - If your apps are exposed by a NodePort service on the private network or a private Ingress ALB, add the worker node's private subnet CIDR. Retrieve the first three octets of your worker's private IP address by running `ibmcloud oc worker <cluster_name>`. For example, if it is `10.176.48.xx` then note `10.176.48`. Next, get the worker private subnet CIDR by running the following command, replacing `<xxx.yyy.zz>` with the octet that you previously retrieved: `ibmcloud sl subnet list | grep <xxx.yyy.zzz>`. **Note**: If a worker node is added on a new private subnet, you must add the new private subnet CIDR to the `local.subnet` setting and the on-premises VPN endpoint. Then, the VPN connection must be restarted.
+    - If you have apps that are exposed by LoadBalancer services on the private network, add the cluster's private user-managed subnet CIDRs. To find these values, run `ibmcloud oc cluster get --cluster <cluster_name> --show-resources`. In the **VLANs** section, look for CIDRs that have a **Public** value of `false`. **Note**: If `ipsec.keyexchange` is set to `ikev1`, you can specify only one subnet. However, you can use the `localSubnetNAT` setting to combine multiple cluster subnets into a single subnet.
 
 2. Optional: Remap cluster subnets by using the `localSubnetNAT` setting. Network Address Translation (NAT) for subnets provides a workaround for subnet conflicts between the cluster network and on-premises remote network. You can use NAT to remap the cluster's private local IP subnets, the pod subnet (172.30.0.0/16), or the pod service subnet (172.21.0.0/16) to a different private subnet. The VPN tunnel sees remapped IP subnets instead of the original subnets. Remapping happens before the packets are sent over the VPN tunnel as well as after the packets arrive from the VPN tunnel. You can expose both remapped and non-remapped subnets at the same time over the VPN. To enable NAT, you can either add an entire subnet or individual IP addresses.
-    * If you add an entire subnet in the format `10.171.42.0/24=10.10.10.0/24`, remapping is 1-to-1: all of the IP addresses in the internal network subnet are mapped over to external network subnet and vice versa.
-    * If you add individual IP addresses in the format `10.171.42.17/32=10.10.10.2/32,10.171.42.29/32=10.10.10.3/32`, only those internal IP addresses are mapped to the specified external IP addresses.
+    - If you add an entire subnet in the format `10.171.42.0/24=10.10.10.0/24`, remapping is 1-to-1: all of the IP addresses in the internal network subnet are mapped over to external network subnet and vice versa.
+    - If you add individual IP addresses in the format `10.171.42.17/32=10.10.10.2/32,10.171.42.29/32=10.10.10.3/32`, only those internal IP addresses are mapped to the specified external IP addresses.
 
 3. Optional for version 2.2.0 and later strongSwan Helm charts: Hide all of the cluster IP addresses behind a single IP address by setting `enableSingleSourceIP` to `true`. This option provides one of the most secure configurations for the VPN connection because no connections from the remote network back into the cluster are permitted.
-    <br>
-    * This setting requires that all data flow over the VPN connection must be outbound regardless of whether the VPN connection is established from the cluster or from the remote network.
-    * If you install strongSwan into a single-zone cluster, you must set `local.subnet` to only one IP address as a /32 subnet. If you install strongSwan in a multizone cluster, you can set `local.subnet` to the `%zoneSubnet` variable, and use the `local.zoneSubnet` to specify an IP address as a /32 subnet for each zone of the cluster.
+    
+    - This setting requires that all data flow over the VPN connection must be outbound regardless of whether the VPN connection is established from the cluster or from the remote network.
+    - If you install strongSwan into a single-zone cluster, you must set `local.subnet` to only one IP address as a /32 subnet. If you install strongSwan in a multizone cluster, you can set `local.subnet` to the `%zoneSubnet` variable, and use the `local.zoneSubnet` to specify an IP address as a /32 subnet for each zone of the cluster.
 
 4. Optional for version 2.2.0 and later strongSwan Helm charts: Enable the strongSwan service to route incoming requests from the remote network to a service that exists outside of the cluster by using the `localNonClusterSubnet` setting.
-    <br>
-    * The non-cluster service must exist on the same private network or on a private network that is reachable by the worker nodes.
-    * The non-cluster worker node cannot initiate traffic to the remote network through the VPN connection, but the non-cluster node can be the target of incoming requests from the remote network.
-    * You must list the CIDRs of the non-cluster subnets in the `local.subnet` setting.
+    
+    - The non-cluster service must exist on the same private network or on a private network that is reachable by the worker nodes.
+    - The non-cluster worker node cannot initiate traffic to the remote network through the VPN connection, but the non-cluster node can be the target of incoming requests from the remote network.
+    - You must list the CIDRs of the non-cluster subnets in the `local.subnet` setting.
 
 ### Step 5: Access remote network resources over the VPN connection
 {: #strongswan_5}
@@ -345,7 +351,7 @@ Deploy the strongSwan Helm chart in your cluster with the configurations that yo
     ```
     {: pre}
 
-6. Once the chart is deployed, verify that the updated settings in the `config.yaml` file were used.
+6. After the chart is deployed, verify that the updated settings in the `config.yaml` file were used.
 
     ```
     helm get values vpn
@@ -355,7 +361,6 @@ Deploy the strongSwan Helm chart in your cluster with the configurations that yo
 Only strongSwan Helm chart versions that were released in the last 6 months are supported. Ensure that you consistently [upgrade your strongSwan Helm chart](/docs/openshift?topic=openshift-vpn#vpn_upgrade) for the latest features and security fixes.
 {: important}
 
-<br />
 
 ## Testing and verifying strongSwan VPN connectivity
 {: #vpn_test}
@@ -379,7 +384,7 @@ After you deploy your Helm chart, test the VPN connectivity.
     ```
     {: pre}
 
-    Example output:
+    Example output
 
     ```
     Security Associations (1 up, 0 connecting):
@@ -389,13 +394,13 @@ After you deploy your Helm chart, test the VPN connectivity.
     ```
     {: screen}
 
-    * When you try to establish VPN connectivity with the strongSwan Helm chart, it is likely that the VPN status is not `ESTABLISHED` the first time. You might need to check the on-premises VPN endpoint settings and change the configuration file several times before the connection is successful:
+    - When you try to establish VPN connectivity with the strongSwan Helm chart, it is likely that the VPN status is not `ESTABLISHED` the first time. You might need to check the on-premises VPN endpoint settings and change the configuration file several times before the connection is successful.
         1. Run `helm uninstall <release_name> -n <namespace>`
         2. Fix the incorrect values in the configuration file.
         3. Run `helm install vpn iks-charts/strongswan -f config.yaml`
         You can also run more checks in the next step.
 
-    * If the VPN pod is in an `ERROR` state or continues to crash and restart, it might be due to parameter validation of the `ipsec.conf` settings in the chart's configmap.
+    - If the VPN pod is in an `ERROR` state or continues to crash and restart, it might be due to parameter validation of the `ipsec.conf` settings in the chart's configmap.
         1. Check for any validation errors in the strongSwan pod logs by running `oc logs $STRONGSWAN_POD`.
         2. If validation errors exist, run `helm uninstall <release_name> -n <namespace>`
         3. Fix the incorrect values in the configuration file.
@@ -408,8 +413,8 @@ After you deploy your Helm chart, test the VPN connectivity.
     ```
     {: pre}
 
-    * If all of the tests pass, your strongSwan VPN connection is successfully set up.
-    * If any of the tests fail, continue to the next step.
+    - If all of the tests pass, your strongSwan VPN connection is successfully set up.
+    - If any of the tests fail, continue to the next step.
 
 5. View the output of a failed test by looking at the logs of the test pod.
 
@@ -422,35 +427,14 @@ After you deploy your Helm chart, test the VPN connectivity.
     {: note}
 
     {: #vpn_tests_table}
-    <table summary="The columns are read from left to right. The first column has the parameter of the connectivity test. The second column describes the parameter.">
-    <caption>Understanding the Helm VPN connectivity tests</caption>
-    <col width="25%">
-    <thead>
-    <th>Parameter</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>vpn-strongswan-check-config</code></td>
-    <td>Validates the syntax of the <code>ipsec.conf</code> file that is generated from the <code>config.yaml</code> file. This test might fail due to incorrect values in the <code>config.yaml</code> file.</td>
-    </tr>
-    <tr>
-    <td><code>vpn-strongswan-check-state</code></td>
-    <td>Checks that the VPN connection has a status of <code>ESTABLISHED</code>. This test might fail for the following reasons:<ul><li>Differences between the values in the <code>config.yaml</code> file and the on-premises VPN endpoint settings.</li><li>If the cluster is in "listen" mode (<code>ipsec.auto</code> is set to <code>add</code>), the connection is not established on the on-premises side.</li></ul></td>
-    </tr>
-    <tr>
-    <td><code>vpn-strongswan-ping-remote-gw</code></td>
-    <td>Pings the <code>remote.gateway</code> public IP address that you configured in the <code>config.yaml</code> file. If the VPN connection has the <code>ESTABLISHED</code> status, you can ignore the result of this test. If the VPN connection does not have the <code>ESTABLISHED</code> status, this test might fail for the following reasons:<ul><li>You did not specify an on-premises VPN gateway IP address. If <code>ipsec.auto</code> is set to <code>start</code>, the <code>remote.gateway</code> IP address is required.</li><li>ICMP (ping) packets are being blocked by a firewall.</li></ul></td>
-    </tr>
-    <tr>
-    <td><code>vpn-strongswan-ping-remote-ip-1</code></td>
-    <td>Pings the <code>remote.privateIPtoPing</code> private IP address of the on-premises VPN gateway from the VPN pod in the cluster. This test might fail for the following reasons:<ul><li>You did not specify a <code>remote.privateIPtoPing</code> IP address. If you intentionally did not specify an IP address, this failure is acceptable.</li><li>You did not specify the cluster pod subnet CIDR, <code>172.30.0.0/16</code>, in the <code>local.subnet</code> list.</li></ul></td>
-    </tr>
-    <tr>
-    <td><code>vpn-strongswan-ping-remote-ip-2</code></td>
-    <td>Pings the <code>remote.privateIPtoPing</code> private IP address of the on-premises VPN gateway from the worker node in the cluster. This test might fail for the following reasons:<ul><li>You did not specify a <code>remote.privateIPtoPing</code> IP address. If you intentionally did not specify an IP address, this failure is acceptable.</li><li>You did not specify the cluster worker node private subnet CIDR in the <code>local.subnet</code> list.</li></ul></td>
-    </tr>
-    </tbody></table>
+    | Parameter | Description |
+    | --- | --- |
+    | `vpn-strongswan-check-config` | Validates the syntax of the `ipsec.conf` file that is generated from the `config.yaml` file. This test might fail due to incorrect values in the `config.yaml` file. |
+    | `vpn-strongswan-check-state` | Checks that the VPN connection has a status of `ESTABLISHED`. This test might fail for the following reasons. \n - Differences between the values in the `config.yaml` file and the on-premises VPN endpoint settings. \n - If the cluster is in "listen" mode (`ipsec.auto` is set to `add`), the connection is not established on the on-premises side. |
+    | `vpn-strongswan-ping-remote-gw` | Pings the `remote.gateway` public IP address that you configured in the `config.yaml` file. If the VPN connection has the `ESTABLISHED` status, you can ignore the result of this test. If the VPN connection does not have the `ESTABLISHED` status, this test might fail for the following reasons. \n - You did not specify an on-premises VPN gateway IP address. If `ipsec.auto` is set to `start`, the `remote.gateway` IP address is required. \n - ICMP (ping) packets are being blocked by a firewall. |
+    | `vpn-strongswan-ping-remote-ip-1` | Pings the `remote.privateIPtoPing` private IP address of the on-premises VPN gateway from the VPN pod in the cluster. This test might fail for the following reasons. \n - You did not specify a `remote.privateIPtoPing` IP address. If you intentionally did not specify an IP address, this failure is acceptable. \n - You did not specify the cluster pod subnet CIDR, `172.30.0.0/16`, in the `local.subnet` list. |
+    | `vpn-strongswan-ping-remote-ip-2` | Pings the `remote.privateIPtoPing` private IP address of the on-premises VPN gateway from the worker node in the cluster. This test might fail for the following reasons. \n - You did not specify a `remote.privateIPtoPing` IP address. If you intentionally did not specify an IP address, this failure is acceptable. \n - You did not specify the cluster worker node private subnet CIDR in the `local.subnet` list. |
+    {: caption="Table 1. Understanding the Helm VPN connectivity tests" caption-side="top"}
 
 6. Delete the current Helm chart.
 
@@ -477,7 +461,7 @@ After you deploy your Helm chart, test the VPN connectivity.
     ```
     {: pre}
 
-11. Once the chart is deployed, verify that the updated settings in the `config.yaml` file were used.
+11. After the chart is deployed, verify that the updated settings in the `config.yaml` file were used.
 
     ```
     helm get values vpn
@@ -503,7 +487,6 @@ After you deploy your Helm chart, test the VPN connectivity.
     ```
     {: pre}
 
-<br />
 
 ## Limiting strongSwan VPN traffic by namespace or worker node
 {: #limit}
@@ -520,15 +503,17 @@ When you have a single-tenant or multi-tenant cluster, you can limit VPN traffic
 For example, say that you want pods in only a specific namespace, `my-secure-namespace`, to send and receive data over the VPN. You do not want pods in other namespaces, such as `kube-system`, `ibm-system`, or `default`, to access your on-premises network. To limit the VPN traffic to only `my-secure-namespace`, you can create Calico global network policies.
 
 Before you use this solution, review the following considerations and limitations.
-* You do not need to deploy the strongSwan Helm chart into the specified namespace. The strongSwan VPN pod and the routes daemon set can be deployed into `kube-system` or any other namespace. If the strongSwan VPN is not deployed into the specified namespace, then the `vpn-strongswan-ping-remote-ip-1` Helm test fails. This failure is expected and acceptable. The test pings the `remote.privateIPtoPing` private IP address of the on-premises VPN gateway from a pod which is not in the namespace that has direct access to the remote subnet. However, the VPN pod is still able to forward traffic to pods in the namespaces that do have routes to the remote subnet, and traffic can still flow correctly. The VPN state is still `ESTABLISHED` and pods in the specified namespace can connect over the VPN.
 
-* The Calico global network policies in the following steps do not prevent Kubernetes pods that use host networking from sending and receiving data over the VPN. When a pod is configured with host networking, the app running in the pod can listen on the network interfaces of the worker node that it is on. These host networking pods can exist in any namespace. To determine which pods have host networking, run `oc get pods --all-namespaces -o wide` and look for any pods that do not have a `172.30.0.0/16` pod IP address. If you want to prevent host networking pods from sending and receiving data over the VPN, you can set the following options in your `values.yaml` deployment file: `local.subnet: 172.30.0.0/16` and `enablePodSNAT: false`. These configuration settings expose all of the Kubernetes pods over the VPN connection to the remote network. However, only the pods that are located in the specified secure namespace are reachable over the VPN.
+- You do not need to deploy the strongSwan Helm chart into the specified namespace. The strongSwan VPN pod and the routes daemon set can be deployed into `kube-system` or any other namespace. If the strongSwan VPN is not deployed into the specified namespace, then the `vpn-strongswan-ping-remote-ip-1` Helm test fails. This failure is expected and acceptable. The test pings the `remote.privateIPtoPing` private IP address of the on-premises VPN gateway from a pod which is not in the namespace that has direct access to the remote subnet. However, the VPN pod is still able to forward traffic to pods in the namespaces that do have routes to the remote subnet, and traffic can still flow correctly. The VPN state is still `ESTABLISHED` and pods in the specified namespace can connect over the VPN.
 
-Before you begin:
-* [Deploy the strongSwan Helm chart](#vpn_configure) and [ensure that VPN connectivity is working correctly](#vpn_test).
-* [Install and configure the Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install).
+- The Calico global network policies in the following steps do not prevent Kubernetes pods that use host networking from sending and receiving data over the VPN. When a pod is configured with host networking, the app running in the pod can listen on the network interfaces of the worker node that it is on. These host networking pods can exist in any namespace. To determine which pods have host networking, run `oc get pods --all-namespaces -o wide` and look for any pods that do not have a `172.30.0.0/16` pod IP address. If you want to prevent host networking pods from sending and receiving data over the VPN, you can set the following options in your `values.yaml` deployment file: `local.subnet: 172.30.0.0/16` and `enablePodSNAT: false`. These configuration settings expose all of the Kubernetes pods over the VPN connection to the remote network. However, only the pods that are located in the specified secure namespace are reachable over the VPN.
 
-To limit VPN traffic to a certain namespace:
+Before you begin
+
+- [Deploy the strongSwan Helm chart](#vpn_configure) and [ensure that VPN connectivity is working correctly](#vpn_test).
+- [Install and configure the Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install).
+
+To limit VPN traffic to a certain namespace,
 
 1. Create a Calico global network policy named `allow-non-vpn-outbound.yaml`. This policy allows all namespaces to continue to send outbound traffic to all destinations, except to the remote subnet that the strongSwan VPN accesses. Replace `<remote.subnet>` with the `remote.subnet` that you specified in the Helm `values.yaml` configuration file. To specify multiple remote subnets, see the [Calico documentation](https://docs.projectcalico.org/reference/resources/globalnetworkpolicy){: external}.
     ```yaml
@@ -569,8 +554,8 @@ To limit VPN traffic to a certain namespace:
         destination:
           nets:
           - <remote.subnet>
-      order: 900
-      types:
+    order: 900
+    types:
       - Egress
     ```
     {: codeblock}
@@ -599,41 +584,43 @@ When you deploy a strongSwan Helm chart, a strongSwan VPN deployment is created.
 Routes are not configured on tainted nodes unless you specify the taint in the `tolerations` setting in the `value.yaml` file. By tainting worker nodes, you can prevent any VPN routes from being configured on those workers. Then, you can specify the taint in the `tolerations` setting for only the VPN deployment that you do want to permit on the tainted workers. In this way, the strongSwan VPN pods for one tenant's Helm chart deployment only use the routes on that tenant's worker nodes to forward traffic over the VPN connection to the remote subnet.
 
 Before you use this solution, review the following considerations and limitations.
-* By default, Kubernetes places app pods onto any untainted worker nodes that are available. To make sure that this solution works correctly, each tenant must first ensure that they deploy their app pods only to workers that are tainted for the correct tenant. Additionally, each tainted worker node must also have a toleration to allow the app pods to be placed on the node. For more information about taints and tolerations, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external}.
-* Cluster resources might not be optimally utilized because neither tenant can place app pods on the shared non-tainted nodes.
 
-The following steps for limiting strongSwan VPN traffic by worker node use this example scenario: Say that you have a multi-tenant {{site.data.keyword.openshiftlong_notm}} cluster with six worker nodes. The cluster supports tenant A and tenant B. You taint the worker nodes in the following ways:
-* Two worker nodes are tainted so that only tenant A pods are scheduled on the workers.
-* Two worker nodes are tainted so that only tenant B pods are scheduled on the workers.
-* Two worker nodes are not tainted because at least 2 worker nodes are required for the strongSwan VPN pods and the load balancer IP to run on.
+- By default, Kubernetes places app pods onto any untainted worker nodes that are available. To make sure that this solution works correctly, each tenant must first ensure that they deploy their app pods only to workers that are tainted for the correct tenant. Additionally, each tainted worker node must also have a toleration to allow the app pods to be placed on the node. For more information about taints and tolerations, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external}.
+- Cluster resources might not be optimally utilized because neither tenant can place app pods on the shared non-tainted nodes.
 
-To limit VPN traffic to tainted nodes for each tenant:
+The following steps for limiting strongSwan VPN traffic by worker node use this example scenario: Say that you have a multi-tenant {{site.data.keyword.openshiftlong_notm}} cluster with six worker nodes. The cluster supports tenant A and tenant B. You taint the worker nodes in the following ways.
 
-1. To limit the VPN traffic to only workers dedicated to tenant A in this example, you specify the following `toleration` in the `values.yaml` file for the tenant A strongSwan Helm chart:
+- Two worker nodes are tainted so that only tenant A pods are scheduled on the workers.
+- Two worker nodes are tainted so that only tenant B pods are scheduled on the workers.
+- Two worker nodes are not tainted because at least 2 worker nodes are required for the strongSwan VPN pods and the load balancer IP to run on.
+
+To limit VPN traffic to tainted nodes for each tenant.
+
+1. To limit the VPN traffic to only workers dedicated to tenant A in this example, you specify the following `toleration` in the `values.yaml` file for the tenant A strongSwan Helm chart.
     ```yaml
     tolerations:
         - key: dedicated
-        operator: "Equal"
-        value: "tenantA"
-        effect: "NoSchedule"
+    operator: "Equal"
+    value: "tenantA"
+    effect: "NoSchedule"
     ```
     {: codeblock}
 
     This toleration allows the route daemon set to run on the two worker nodes that have the `dedicated="tenantA"` taint and on the two untainted worker nodes. The strongSwan VPN pods for this deployment run on the two untainted worker nodes.
 
-2. To limit the VPN traffic to only workers dedicated to tenant B in this example, you specify the following `toleration` in the `values.yaml` file for the tenant B strongSwan Helm chart:
+2. To limit the VPN traffic to only workers dedicated to tenant B in this example, you specify the following `toleration` in the `values.yaml` file for the tenant B strongSwan Helm chart.
     ```yaml
     tolerations:
         - key: dedicated
-        operator: "Equal"
-        value: "tenantB"
-        effect: "NoSchedule"
+    operator: "Equal"
+    value: "tenantB"
+    effect: "NoSchedule"
     ```
     {: codeblock}
 
     This toleration allows the route daemon set to run on the two worker nodes that have the `dedicated="tenantB"` taint and on the two untainted worker nodes. The strongSwan VPN pods for this deployment also run on the two untainted worker nodes.
 
-<br />
+
 
 ## Upgrading or disabling the strongSwan Helm chart
 {: #vpn_upgrade}
@@ -642,9 +629,9 @@ Ensure that you consistently upgrade your strongSwan Helm chart for the latest f
 {: shortdesc}
 
 Review the supported versions of the strongSwan Helm chart. Typically, a chart version becomes deprecated 6 months after its release date.
-* **Supported**: 2.7.2, 2.7.1, 2.7.0, 2.6.9, 2.6.8, 2.6.7
-* **Deprecated**: 2.6.6, 2.6.5, 2.6.4, 2.6.3
-* **Unsupported**: 2.6.2 and earlier
+- **Supported**: 2.7.2, 2.7.1, 2.7.0, 2.6.9, 2.6.8, 2.6.7
+- **Deprecated**: 2.6.6, 2.6.5, 2.6.4, 2.6.3
+- **Unsupported**: 2.6.2 and earlier
 
 For release dates and changelogs for each strongSwan Helm chart version, run `helm show readme iks-charts/strongswan` and look for the `Version History` section.
 
@@ -662,7 +649,6 @@ You can disable the VPN connection by deleting the Helm chart.
     ```
     {: pre}
 
-<br />
 
 ## Using a Virtual Router Appliance
 {: #vyatta}
@@ -672,7 +658,7 @@ The [Virtual Router Appliance (VRA)](/docs/virtual-router-appliance?topic=virtua
 
 All public and private network traffic that enters or exits the cluster VLANs is routed through a VRA. You can use the VRA as a VPN endpoint to create an encrypted IPSec tunnel between servers in IBM Cloud infrastructure and on-premises resources. For example, the following diagram shows how an app on a worker node in {{site.data.keyword.openshiftlong_notm}} can communicate with an on-premises server via a VRA VPN connection on the private VLAN:
 
-<img src="images/cs_vpn_vyatta.png" width="725" alt="Expose an app in {{site.data.keyword.openshiftlong_notm}} by using a load balancer" style="width:725px; border-style: none"/>
+![Expose an app in {{site.data.keyword.openshiftlong_notm}} by using a load balancer.](images/cs_vpn_vyatta.png "Expose an app in {{site.data.keyword.openshiftlong_notm}} by using a load balancer"){: caption="Figure 2. Expose an app in {{site.data.keyword.openshiftlong_notm}} by using a load balancer" caption-side="bottom"}
 
 1. An app in your cluster, `myapp2`, receives a request from an Ingress or LoadBalancer service and needs to securely connect to data in your on-premises network.
 
@@ -684,7 +670,7 @@ All public and private network traffic that enters or exits the cluster VLANs is
 
 5. The VPN tunnel endpoint (router) forwards the request to the on-premises server or mainframe, depending on the destination IP address that was specified in step 2. The necessary data is sent back over the VPN connection to `myapp2` through the same process.
 
-To set up a Virtual Router Appliance:
+To set up a Virtual Router Appliance,
 
 1. [Order a VRA](/docs/virtual-router-appliance?topic=virtual-router-appliance-getting-started).
 

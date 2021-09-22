@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-22"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}  
-
 
 
 # Logging for clusters
@@ -26,47 +25,46 @@ For cluster and app logs, {{site.data.keyword.openshiftlong}} clusters include b
 To help understand when to use the built-in {{site.data.keyword.openshiftshort}} tools or {{site.data.keyword.cloud_notm}} integrations, review the following information.
 {: shortdesc}
 
-<dl>
+{{site.data.keyword.la_full_notm}}
+: - Customizable user interface for live streaming of log tailing, real-time troubleshooting issue alerts, and log archiving.
+  - Quick integration with the cluster via a script.
+  - Aggregated logs across clusters and cloud providers.
+  - Historical access to logs that is based on the plan you choose.
+  - Highly available, scalable, and compliant with industry security standards.
+  - Integrated with {{site.data.keyword.cloud_notm}} IAM for user access management.
+  - Flexible plans, including a free `Lite` option.
+  
+  To get started, see [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](#openshift_logging).
 
-<dt>{{site.data.keyword.la_full_notm}}</dt>
-<dd><ul>
-<li>Customizable user interface for live streaming of log tailing, real-time troubleshooting issue alerts, and log archiving.</li>
-<li>Quick integration with the cluster via a script.</li>
-<li>Aggregated logs across clusters and cloud providers.</li>
-<li>Historical access to logs that is based on the plan you choose.</li>
-<li>Highly available, scalable, and compliant with industry security standards.</li>
-<li>Integrated with {{site.data.keyword.cloud_notm}} IAM for user access management.</li>
-<li>Flexible plans, including a free <code>Lite</code> option.</li></ul>
-<br>To get started, see [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](#openshift_logging).</dd>
+Built-in {{site.data.keyword.openshiftshort}} logging tools
+: - Built-in view of pod logs in the {{site.data.keyword.openshiftshort}} web console.
+  - Built-in pod logs are not configured with persistent storage. You must integrate with a cloud database to back up the logging data and make it highly available, and manage the logs yourself.
+  
+  <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 3.11**: You cannot run the Ansible playbook to deploy the [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana EFK stack](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html){: external} because you cannot modify the default configuration of the {{site.data.keyword.openshiftlong_notm}} cluster.
+  {: note}
+  
+  <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 4**: To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana EFK stack](https://docs.openshift.com/container-platform/4.7/logging/cluster-logging.html){: external}, see [installing the cluster logging operator](#oc_logging_operator). Keep in mind that your worker nodes must have at least 4 cores and GB memory to run the cluster logging stack.
+  {: note}
 
-<dt>Built-in {{site.data.keyword.openshiftshort}} logging tools</dt>
-<dd><ul>
-<li>Built-in view of pod logs in the {{site.data.keyword.openshiftshort}} web console.</li>
-<li>Built-in pod logs are not configured with persistent storage. You must integrate with a cloud database to back up the logging data and make it highly available, and manage the logs yourself.</li></ul>
-<p class="note"><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 3.11**: You cannot run the Ansible playbook to deploy the [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana EFK stack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html) because you cannot modify the default configuration of the {{site.data.keyword.openshiftlong_notm}} cluster.</p>
-<p class="note"><img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 4**: To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana EFK stack ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.7/logging/cluster-logging.html), see [installing the cluster logging operator](#oc_logging_operator). Keep in mind that your worker nodes must have at least 4 cores and GB memory to run the cluster logging stack.</p>
-</dd>
+Service logs: {{site.data.keyword.at_full}}
+: Use {{site.data.keyword.at_full_notm}} to view cluster management events that are generated by the {{site.data.keyword.openshiftlong_notm}} API. To access these logs, [provision an instance of {{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started). For more information about the types of {{site.data.keyword.containerlong_notm}} events that you can track, see [Activity Tracker events](/docs/openshift?topic=openshift-at_events).
 
-<dt>Service logs: {{site.data.keyword.at_full}}</dt>
-<dd>Use {{site.data.keyword.at_full_notm}} to view cluster management events that are generated by the {{site.data.keyword.openshiftlong_notm}} API. To access these logs, [provision an instance of {{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started). For more information about the types of {{site.data.keyword.containerlong_notm}} events that you can track, see [Activity Tracker events](/docs/openshift?topic=openshift-at_events).</dd>
+API server logs: {{site.data.keyword.la_full_notm}}
+: - Customizable user interface for live streaming of log tailing, real-time troubleshooting issue alerts, and log archiving.
+  - Quick integration with the cluster via a script.
+  - Aggregated logs across clusters and cloud providers.
+  - Historical access to logs that is based on the plan you choose.
+  - Highly available, scalable, and compliant with industry security standards.
+  - Integrated with {{site.data.keyword.cloud_notm}} IAM for user access management.
+  - Flexible plans, including a free <code>Lite</code> option.
+  
+  To get started, see [Forwarding Kubernetes API audit logs to {{site.data.keyword.la_short}}](/docs/openshift?topic=openshift-health-audit).  
+  Forwarding Kubernetes API audit logs to {{site.data.keyword.la_short}} is not supported for version 3.11 clusters.
+  {: note}
+  
+Built-in {{site.data.keyword.openshiftshort}} audit logging tools
+: API audit logging to monitor user-initiated activities is currently not supported.
 
-<dt>API server logs: {{site.data.keyword.la_full_notm}}</dt>
-<dd><ul>
-<li>Customizable user interface for live streaming of log tailing, real-time troubleshooting issue alerts, and log archiving.</li>
-<li>Quick integration with the cluster via a script.</li>
-<li>Aggregated logs across clusters and cloud providers.</li>
-<li>Historical access to logs that is based on the plan you choose.</li>
-<li>Highly available, scalable, and compliant with industry security standards.</li>
-<li>Integrated with {{site.data.keyword.cloud_notm}} IAM for user access management.</li>
-<li>Flexible plans, including a free <code>Lite</code> option.</li></ul>
-<br>To get started, see [Forwarding Kubernetes API audit logs to {{site.data.keyword.la_short}}](/docs/openshift?topic=openshift-health-audit).<p class="note">Forwarding Kubernetes API audit logs to {{site.data.keyword.la_short}} is not supported for version 3.11 clusters.</dd>
-
-<dt>Built-in {{site.data.keyword.openshiftshort}} audit logging tools</dt>
-<dd>API audit logging to monitor user-initiated activities is currently not supported.</dd>
-
-</dl>
-
-<br />
 
 ## Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}
 {: #openshift_logging}
@@ -79,14 +77,14 @@ Considerations for using the {{site.data.keyword.openshiftlong_notm}} observabil
 * {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}} cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI to enable logging for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy logging agents to your cluster to forward logs to {{site.data.keyword.la_short}}.
 * If you created a {{site.data.keyword.la_short}} configuration in your cluster without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you can use the [`ibmcloud ob logging agent discover`](/docs/containers?topic=containers-observability_cli#logging_agent_discover) command to make the configuration visible to the plug-in. Then, you can use the observability plug-in commands and functionality in the {{site.data.keyword.cloud_notm}} console to manage the configuration.
 
-Before you begin:
+Before you begin
 - Verify that you are assigned the **Editor** platform access role and **Manager** server access role for {{site.data.keyword.la_full_notm}}.
 - Verify that you are assigned the **Administrator** platform access role and the **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}} to create the logging configuration. To view a logging configuration or launch the {{site.data.keyword.la_short}} dashboard after the logging configuration is created, users must be assigned the **Administrator** platform access role and the **Manager** service access for the `ibm-observe` Kubernetes namespace in {{site.data.keyword.containerlong_notm}}.
 - If you want to use the CLI to set up the logging configuration:
     - [Install the {{site.data.keyword.openshiftlong_notm}} observability CLI plug-in (`ibmcloud ob`)](/docs/containers?topic=containers-cs_cli_install#cs_cli_install_steps).
     - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-To set up a logging configuration for your cluster:
+To set up a logging configuration for your cluster,
 
 1. Create an [{{site.data.keyword.la_full_notm}} service instance](/docs/log-analysis?topic=log-analysis-provision) and note the name of the instance. The service instance must belong to the same {{site.data.keyword.cloud_notm}} account where you created your cluster, but can be in a different resource group and {{site.data.keyword.cloud_notm}} region than your cluster.
 2. Set up a logging configuration for your cluster. When you create the logging configuration, an {{site.data.keyword.openshiftshort}} project `ibm-observe` is created and a {{site.data.keyword.la_short}} agent is deployed as a daemon set to all worker nodes in your cluster. This agent collects logs with the extension `*.log` and extensionless files that are stored in the `/var/log` directory of your pod from all projects, including `kube-system`. The agent then forwards the logs to the {{site.data.keyword.la_full_notm}} service.
@@ -115,20 +113,20 @@ To set up a logging configuration for your cluster:
             {: screen}
 
         2. Verify that the logging configuration was added to your cluster.
-        ```
-        ibmcloud ob logging config list --cluster <cluster_name_or_ID>
-        ```
-        {: pre}
+            ```
+            ibmcloud ob logging config list --cluster <cluster_name_or_ID>
+            ```
+            {: pre}
 
-        Example output:
-        ```
-        Listing configurations...
+            Example output:
+            ```
+            Listing configurations...
 
-        OK
-        Instance Name                Instance ID                            CRN   
-        IBM Cloud Log Analysis-opm   1a111a1a-1111-11a1-a1aa-aaa11111a11a   crn:v1:prod:public:logdna:us-south:a/a11111a1aaaaa11a111aa11a1aa1111a:1a111a1a-1111-11a1-a1aa-aaa11111a11a::  
-        ```
-        {: screen}
+            OK
+            Instance Name                Instance ID                            CRN   
+            IBM Cloud Log Analysis-opm   1a111a1a-1111-11a1-a1aa-aaa11111a11a   crn:v1:prod:public:logdna:us-south:a/a11111a1aaaaa11a111aa11a1aa1111a:1a111a1a-1111-11a1-a1aa-aaa11111a11a::  
+            ```
+            {: screen}
 
 3. Optional: Verify that the {{site.data.keyword.la_short}} agent was set up successfully.
     1. If you used the console to create the {{site.data.keyword.la_short}} configuration, log in to your cluster. For more information, see [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster)..
@@ -161,7 +159,6 @@ To set up a logging configuration for your cluster:
 
 5. Review how you can [search and filter logs in the {{site.data.keyword.la_short}} dashboard](/docs/log-analysis?topic=log-analysis-view_logs).
 
-<br />
 
 ## Using the cluster logging operator
 {: #oc_logging_operator}
@@ -191,7 +188,8 @@ To deploy the OpenShift Container Platform cluster logging operator and stack on
             size: 200G
     ...
     ```
-    {: copyblock}
+    {: codeblock}
+    
 7. Modify the configuration YAML to include the node selector and toleration for the worker pool label and taint that you previously created. For more information and examples, see the following {{site.data.keyword.openshiftshort}} documents. The examples use a label and toleration of `logging: clo-efk`.
     * [Node selector](https://docs.openshift.com/container-platform/4.7/logging/config/cluster-logging-moving-nodes.html){: external}. Add the node selector to the Elasticsearch (`logstore`)and Kibana (`visualization`), and Fluentd (`collector.logs`) pods.
         ```

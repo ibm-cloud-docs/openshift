@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: openshift, roks, rhoks, logmet, logs, metrics, audit, events
 
@@ -119,7 +119,7 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     NAME                                             READY   STATUS             RESTARTS   AGE
     ibmcloud-kube-audit-c75cb84c5-qtzqd              1/1     Running   0          21s
@@ -132,7 +132,7 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     NAME                          TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
     ibmcloud-kube-audit-service   ClusterIP   172.21.xxx.xxx   <none>        80/TCP           1m
@@ -151,7 +151,7 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     OK
     Server:            http://172.21.xxx.xxx
@@ -177,7 +177,7 @@ After you set up the audit webhook in your cluster, you can monitor version upda
 Forward audit logs to a resource other than {{site.data.keyword.la_short}} that is outside of your cluster and accessible in the {{site.data.keyword.cloud_notm}} private network.
 {: shortdesc}
 
-**Before you begin**: Ensure that you reviewed the [considerations and prerequisites](#prereqs-apiserver-logs).
+Before you begin, ensure that you reviewed the [considerations and prerequisites](#prereqs-apiserver-logs).
 
 1. Create a configuration file that is named `kube-audit-remote-private-ip.yaml`. This configuration file creates an endpoint and service for the IP address of the resource that your cluster sends logs to through the {{site.data.keyword.cloud_notm}} private network. Do not include a selector in the service.
     ```yaml
@@ -215,7 +215,7 @@ Forward audit logs to a resource other than {{site.data.keyword.la_short}} that 
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     NAME                          TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
     ...
@@ -235,7 +235,7 @@ Forward audit logs to a resource other than {{site.data.keyword.la_short}} that 
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     OK
     Server:            http://172.21.xxx.xxx
@@ -251,8 +251,6 @@ Forward audit logs to a resource other than {{site.data.keyword.la_short}} that 
 After the master refresh completes, your logs are sent to the private IP address of your logging resource.
 
 
-
-<br />
 
 
 
@@ -283,8 +281,6 @@ Auditd collects logs on various events, including the following:
 
 See [Forwarding logs to an {{site.data.keyword.la_full_notm}} instance](/docs/containers?topic=containers-health#logging).
 {: shortdesc}
-
-<br />
 
 
 

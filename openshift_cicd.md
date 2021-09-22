@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-22"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -29,24 +29,34 @@ For a deep dive into the benefits and specifics of automating continuous integra
 To automate your CI/CD pipeline, check out the following supported integrations and tools.
 {: shortdesc}
 
-<dl>
-<dt>Codeship</dt>
-<dd>You can use [Codeship ![External link icon](../icons/launch-glyph.svg "External link icon")](https://codeship.com) for the continuous integration and delivery of containers. For more information, see [Using Codeship Pro To Deploy Workloads to {{site.data.keyword.containerlong_notm}} ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/using-codeship-pro-deploy-workloads-ibm-container-service).</dd>
-<dt>Grafeas</dt>
-<dd>[Grafeas ![External link icon](../icons/launch-glyph.svg "External link icon")](https://grafeas.io) is an open source CI/CD service that provides a common way for how to retrieve, store, and exchange metadata during the software supply chain process. For example, if you integrate Grafeas into your app build process, Grafeas can store information about the initiator of the build request, vulnerability scan results, and quality assurance sign-off so that you can make an informed decision if an app can be deployed to production. You can use this metadata in audits or to prove compliance for your software supply chain.</dd>
-<dt>{{site.data.keyword.deliverypipelinelong}}</dt>
-<dd>With your app configuration files organized in a source control management system such as Git, you can build your pipeline to test and deploy code to different environments, such as `test` and `prod`. {{site.data.keyword.contdelivery_full}} allows you to automate your app builds and container deployments to Kubernetes clusters by using a toolchain. To get started, see [Setting up a continuous delivery pipeline for a cluster](#continuous-delivery-pipeline). You can also check out [this tutorial on Continuous Deployment to Kubernetes](/docs/solution-tutorials?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes).</dd>
-<dt>Helm</dt>
-<dd>[Helm ![External link icon](../icons/launch-glyph.svg "External link icon")](https://helm.sh) is a Kubernetes package manager. You can create new Helm charts or use preexisting Helm charts to define, install, and upgrade complex Kubernetes applications that run in {{site.data.keyword.containerlong_notm}} clusters. For example, you can specify all Kubernetes resources that your app requires in a Helm chart. Then, you can use Helm to create the YAML configuration files and deploy these files in your cluster..<p class="tip">In {{site.data.keyword.openshiftshort}} clusters that run version 4, use [Operators](/docs/openshift?topic=openshift-operators) instead of Helm charts. If you have custom Helm charts, you can create a [Helm-based Operator ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.openshift.com/container-platform/4.7/operators/operator_sdk/osdk-helm.html) instead.</p></dd>
-<dt>Kustomize</dt>
-<dd>Use the Kubernetes project [Kustomize ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes-sigs/kustomize) to package your apps by both standardizing and customizing your deployments across multiple environments. Kustomize helps you write, customize, and reuse your Kubernetes resource YAML configurations. To get started, see [Packaging apps for reuse in multiple environments with Kustomize](/docs/openshift?topic=openshift-openshift_apps#kustomize).<p class="note">Kustomize is not supported for {{site.data.keyword.openshiftshort}} clusters that run version 3.11.</p></dd>
-<dt>Operators</dt>
-<dd>With operators, you can manage the lifecycle of the apps in your cluster, including third-party software and services that you integrate into your cluster from the [OperatorHub ![External link icon](../icons/launch-glyph.svg "External link icon")](https://operatorhub.io/). You can consistently install, update, and monitor system components by using operators or by making operators available to developers that work in specific projects or across projects. To set up operators, see [Using Operators in version 4 clusters](/docs/openshift?topic=openshift-operators#operators_4) or [Using Operators in 3.11 clusters](/docs/openshift?topic=openshift-operators#operators_311).</dd>
-<dt>Razee</dt>
-<dd>[Razee ![External link icon](../icons/launch-glyph.svg "External link icon")](https://razee.io/) is an open-source project that automates and manages the deployment of Kubernetes resources across clusters, environments, and cloud providers, and helps you to visualize deployment information for your resources so that you can monitor the rollout process and find deployment issues more quickly. For more information about Razee and how to set up Razee in your cluster to automate your deployment process, see the [Razee documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/razee-io/Razee).</dd>
-</dl>
+Codeship
+:   You can use [Codeship](https://codeship.com){: external} for the continuous integration and delivery of containers. For more information, see [Using Codeship Pro To Deploy Workloads to {{site.data.keyword.containerlong_notm}}](https://www.ibm.com/cloud/blog/using-codeship-pro-deploy-workloads-ibm-container-service){: external}.
 
-<br />
+Grafeas
+:   [Grafeas](https://grafeas.io){: external} is an open source CI/CD service that provides a common way for how to retrieve, store, and exchange metadata during the software supply chain process. For example, if you integrate Grafeas into your app build process, Grafeas can store information about the initiator of the build request, vulnerability scan results, and quality assurance sign-off so that you can make an informed decision if an app can be deployed to production. You can use this metadata in audits or to prove compliance for your software supply chain.
+
+{{site.data.keyword.deliverypipelinelong}}
+:   With your app configuration files organized in a source control management system such as Git, you can build your pipeline to test and deploy code to different environments, such as `test` and `prod`. {{site.data.keyword.contdelivery_full}} allows you to automate your app builds and container deployments to Kubernetes clusters by using a toolchain. To get started, see [Setting up a continuous delivery pipeline for a cluster](#continuous-delivery-pipeline). You can also check out [this tutorial on Continuous Deployment to Kubernetes](/docs/solution-tutorials?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes).
+
+Helm
+:   [Helm](https://helm.sh) is a Kubernetes package manager. You can create new Helm charts or use preexisting Helm charts to define, install, and upgrade complex Kubernetes applications that run in {{site.data.keyword.containerlong_notm}} clusters. For example, you can specify all Kubernetes resources that your app requires in a Helm chart. Then, you can use Helm to create the YAML configuration files and deploy these files in your cluster..
+
+    In {{site.data.keyword.openshiftshort}} clusters that run version 4, use [Operators](/docs/openshift?topic=openshift-operators) instead of Helm charts. If you have custom Helm charts, you can create a [Helm-based Operator](https://docs.openshift.com/container-platform/4.7/operators/operator_sdk/osdk-helm.html){: external} instead.
+    {: tip}
+
+
+Kustomize
+:   Use the Kubernetes project [Kustomize ](https://github.com/kubernetes-sigs/kustomize){: external} to package your apps by both standardizing and customizing your deployments across multiple environments. Kustomize helps you write, customize, and reuse your Kubernetes resource YAML configurations. To get started, see [Packaging apps for reuse in multiple environments with Kustomize](/docs/openshift?topic=openshift-openshift_apps#kustomize).
+    Kustomize is not supported for {{site.data.keyword.openshiftshort}} clusters that run version 3.11.
+    {: note}
+    
+    
+Operators
+:   With operators, you can manage the lifecycle of the apps in your cluster, including third-party software and services that you integrate into your cluster from the [OperatorHub](https://operatorhub.io/){: external}. You can consistently install, update, and monitor system components by using operators or by making operators available to developers that work in specific projects or across projects. To set up operators, see [Using Operators in version 4 clusters](/docs/openshift?topic=openshift-operators#operators_4) or [Using Operators in 3.11 clusters](/docs/openshift?topic=openshift-operators#operators_311).
+
+Razee
+:   [Razee](https://razee.io/){: external} is an open-source project that automates and manages the deployment of Kubernetes resources across clusters, environments, and cloud providers, and helps you to visualize deployment information for your resources so that you can monitor the rollout process and find deployment issues more quickly. For more information about Razee and how to set up Razee in your cluster to automate your deployment process, see the [Razee documentation](https://github.com/razee-io/Razee){: external}.
+
 
 ## Setting up a continuous delivery pipeline for a cluster
 {: #continuous-delivery-pipeline}
@@ -58,11 +68,11 @@ Want a more detailed walkthrough? Check out the [Developing a Kubernetes app too
 {: tip}
 
 Before you begin, make sure that you have at least the following permissions in {{site.data.keyword.cloud_notm}} IAM:
-*  **Editor** platform access role and **Writer** service access role to the **Kubernetes Service** cluster. For more information, see [User access permissions](/docs/openshift?topic=openshift-access_reference).
-*  **Viewer** platform access role to the resource group of the cluster where you want to create the toolchain.
-*  **Editor** platform access role to the **Toolchain** service (note that this service is separate than **Continuous Delivery**).
+- **Editor** platform access role and **Writer** service access role to the **Kubernetes Service** cluster. For more information, see [User access permissions](/docs/openshift?topic=openshift-access_reference).
+- **Viewer** platform access role to the resource group of the cluster where you want to create the toolchain.
+- **Editor** platform access role to the **Toolchain** service (note that this service is separate than **Continuous Delivery**).
 
-To add a continuous delivery pipeline to your cluster:
+To add a continuous delivery pipeline to your cluster,
 
 1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to set up a continuous delivery pipeline.
 2. Select the **DevOps** tab.
