@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-23"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -586,8 +586,8 @@ spec:
         matchLabels:
           app: Srv1
           Tier: backend
-  ```
-  {: codeblock}
+```
+{: codeblock}
 
 The `spec.podSelector.matchLabels` section lists the labels for the Srv1 database service so that the policy applies only _to_ those pods. The `spec.ingress.from.podSelector.matchLabels` section lists the labels for the Srv1 back-end service so that ingress is permitted only _from_ those pods.
 

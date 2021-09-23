@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-23"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -32,8 +32,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 Review the release notes for September 2021.
 {: shortdesc}
 
+### 23 September 2021
+{: #23sep2021}
+{: release-note}
 
+Review the release notes for 23 September 2021.
+{: shortdesc}
 
+Istio add-on change log
+:   [Version `1.11.2`](/docs/containers?topic=containers-istio-changelog#1112) of the Istio managed add-on is released.
 
 ### 22 September 2021
 {: #22sep2021}

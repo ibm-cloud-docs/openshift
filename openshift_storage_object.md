@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-09-23"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -1247,7 +1247,7 @@ Enter a name for your stateful set. The name that you enter is used to create th
 ## Backing up and restoring data
 {: #cos_backup_restore}
 
-{{site.data.keyword.cos_full_notm}} is set up to provide high durability for your data so that your data is protected from being lost. You can find the SLA in the [{{site.data.keyword.cos_full_notm}} service terms](https://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-7857-03){: external}.
+{{site.data.keyword.cos_full_notm}} is set up to provide high durability for your data so that your data is protected from being lost. You can find the SLA in the [{{site.data.keyword.cos_full_notm}} service terms](https://www.ibm.com/;www-03.ibm.com//software/sla/sladb.nsf/sla/bm-7857-03){: external}.
 {: shortdesc}
 
 {{site.data.keyword.cos_full_notm}} does not provide a version history for your data. If you need to maintain and access older versions of your data, you must set up your app to manage the history of data or implement alternative backup solutions. For example, you might want to store your {{site.data.keyword.cos_full_notm}} data in your on-prem database or use tapes to archive your data.

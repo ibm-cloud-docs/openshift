@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-13"
+lastupdated: "2021-09-23"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -39,7 +39,7 @@ The following table shows the changes that are included in the worker node fix p
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| OpenShift Container Platform | 4.7.24 | 4.7.29 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-6-release-notes.html#ocp-4-7-29){: external}. |
+| OpenShift Container Platform | 4.7.24 | 4.7.29 | See the [{{site.data.keyword.openshiftshort}} release notes](http://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html){: external}. |
 | RHEL 7 Packages | 3.10.0-1160.36.2.el7 | 3.10.0-1160.42.2.el7 | Updated worker node image package updates for[CVE-2021-25214](https://nvd.nist.gov/vuln/detail/CVE-2021-25214){: external}, [CVE-2020-27777](https://nvd.nist.gov/vuln/detail/CVE-2020-27777){: external}, [CVE-2021-22555](https://nvd.nist.gov/vuln/detail/CVE-2021-22555){: external}, [CVE-2021-29154](https://nvd.nist.gov/vuln/detail/CVE-2021-29154){: external}, [CVE-2021-29650](https://nvd.nist.gov/vuln/detail/CVE-2021-29650){: external}, [CVE-2021-32399](https://nvd.nist.gov/vuln/detail/CVE-2021-32399){: external}, [CVE-2021-3715](https://nvd.nist.gov/vuln/detail/CVE-2021-3715){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.24_1530_openshift" caption-side="top"}

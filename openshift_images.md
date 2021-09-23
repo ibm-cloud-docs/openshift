@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-23"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -137,7 +137,7 @@ To deploy a container into the **default** project of your cluster:
 Deploy containers from an encrypted image to your cluster by using the Image Key Synchronizer cluster add-on.
 {: shortdesc}
 
-In clusters that run {{site.data.keyword.openshiftshort}} 4.5 or later, [the CRI-O container runtime supports using encrypted container images](https://github.com/cri-o/cri-o/blob/master/tutorials/decryption.md){: external}. Encrypted container images are Open Container Initiative (OCI) images that contain encrypted layer contents. Instead of securing an image for individual developers, such as a developer using image pull secrets to pull images from a registry, you can enable image encryption for a specific cluster. In this way, you can ensure that encrypted images are run only in those specific clusters that have the image decryption key.
+In clusters that run {{site.data.keyword.openshiftshort}} 4.5 or later, [the CRI-O container runtime supports using encrypted container images](https://github.com/cri-o/cri-o/blob/main/tutorials/decryption.md){: external}. Encrypted container images are Open Container Initiative (OCI) images that contain encrypted layer contents. Instead of securing an image for individual developers, such as a developer using image pull secrets to pull images from a registry, you can enable image encryption for a specific cluster. In this way, you can ensure that encrypted images are run only in those specific clusters that have the image decryption key.
 
 To run an app by using an encrypted image, you must share the key for decrypting the image with the container runtime on the worker nodes in the cluster. When you enable the Image Key Synchronizer add-on in your cluster, the synchronizer daemon set is deployed in the `image-key-synchronizer` project. You can then create Kubernetes secrets that contain the image decryption keys in that project. The add-on adds the keys to a specific directory on the worker nodes where the container runtime can access and use the keys to decrypt container images. Note that the Image Key Synchronizer add-on also supports private keys that are first [wrapped by a root key that is stored in an {{site.data.keyword.keymanagementservicelong}} instance](/docs/key-protect?topic=key-protect-envelope-encryption).
 
