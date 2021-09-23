@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-23"
 
 keywords: openshift
 subcollection: openshift
@@ -130,6 +130,7 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-rel-notes)
 
 * [September 2021](/docs/openshift?topic=openshift-rel-notes#release-sep-2021)
+    * [23 September 2021](/docs/openshift?topic=openshift-rel-notes#23sep2021)
     * [22 September 2021](/docs/openshift?topic=openshift-rel-notes#22sep2021)
     * [21 September 2021](/docs/openshift?topic=openshift-rel-notes#21sep2021)
     * [16 September 2021](/docs/openshift?topic=openshift-rel-notes#16sep2021)
