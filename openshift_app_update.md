@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-23"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, update, upgrade
 
@@ -24,14 +24,14 @@ Use Kubernetes-native and third-party tools to perform rolling updates and rollb
 
 To update your app, you can choose from various strategies such as the following. You might start with a rolling deployment or instantaneous switch before you progress to a more complicated canary deployment.
 
-<dl>
-<dt>Rolling deployment</dt>
-    <dd>You can use Kubernetes-native functionality to create a `v2` deployment and to gradually replace your previous `v1` deployment. This approach requires that apps are backwards-compatible so that users who are served the `v2` app version do not experience any breaking changes. For more information, see [Managing rolling deployments to update your apps](/docs/openshift?topic=openshift-update_app#app_rolling).</dd>
-<dt>Instantaneous switch</dt>
-    <dd>Also referred to as a blue-green deployment, an instantaneous switch requires double the compute resources to have two versions of an app running at once. With this approach, you can switch your users to the newer version in near real time. Make sure that you use service label selectors (such as `version: green` and `version: blue`) to make sure that requests are sent to the right app version. You can create the new `version: green` deployment, wait until it is ready, and then delete the `version: blue` deployment. Or you can perform a [rolling update](/docs/openshift?topic=openshift-update_app#app_rolling), but set the `maxUnavailable` parameter to `0%` and the `maxSurge` parameter to `100%`.</dd>
-<dt>Canary or A/B deployment</dt>
-    <dd>A more complex update strategy, a canary deployment is when you pick a percentage of users such as 5% and send them to the new app version. You collect metrics in your logging and monitoring tools on how the new app version performs, do A/B testing, and then roll out the update to more users. As with all deployments, labeling the app (such as `version: stable` and `version: canary`) is critical. To manage canary deployments, you might [install the managed Istio add-on service mesh](/docs/containers?topic=containers-istio), [set up {{site.data.keyword.mon_short}} for your cluster](/docs/monitoring?topic=monitoring-kubernetes_cluster#kubernetes_cluster), and then use the Istio service mesh for A/B testing as described [in this blog post ![External link icon](../icons/launch-glyph.svg "External link icon")](https://sysdig.com/blog/monitor-istio/).</dd>
-</dl>
+Rolling deployment</dt>
+:   You can use Kubernetes-native functionality to create a `v2` deployment and to gradually replace your previous `v1` deployment. This approach requires that apps are backwards-compatible so that users who are served the `v2` app version do not experience any breaking changes. For more information, see [Managing rolling deployments to update your apps](/docs/openshift?topic=openshift-update_app#app_rolling).
+
+Instantaneous switch
+:   Also referred to as a blue-green deployment, an instantaneous switch requires double the compute resources to have two versions of an app running at once. With this approach, you can switch your users to the newer version in near real time. Make sure that you use service label selectors (such as `version: green` and `version: blue`) to make sure that requests are sent to the right app version. You can create the new `version: green` deployment, wait until it is ready, and then delete the `version: blue` deployment. Or you can perform a [rolling update](/docs/openshift?topic=openshift-update_app#app_rolling), but set the `maxUnavailable` parameter to `0%` and the `maxSurge` parameter to `100%`.
+
+Canary or A/B deployment
+:   A more complex update strategy, a canary deployment is when you pick a percentage of users such as 5% and send them to the new app version. You collect metrics in your logging and monitoring tools on how the new app version performs, do A/B testing, and then roll out the update to more users. As with all deployments, labeling the app (such as `version: stable` and `version: canary`) is critical. To manage canary deployments, you might [install the managed Istio add-on service mesh](/docs/containers?topic=containers-istio), [set up {{site.data.keyword.mon_short}} for your cluster](/docs/monitoring?topic=monitoring-kubernetes_cluster#kubernetes_cluster), and then use the Istio service mesh for A/B testing as described [in this blog post](https://sysdig.com/blog/monitor-istio/){: external}.
 
 
 ## Scaling apps
@@ -43,11 +43,11 @@ With Kubernetes, you can enable [horizontal pod autoscaling](https://kubernetes.
 Want to scale your worker nodes instead of your pods? Check out the [cluster autoscaler](/docs/openshift?topic=openshift-ca#ca).
 {: tip}
 
-Before you begin:
+Before you begin
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-users#checking-perms) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
 
-Steps:
+To scale your apps,
 
 1. Deploy your app to a cluster from the CLI. For more complex deployments, you might need to create a [configuration file](/docs/containers?topic=containers-deploy_app#app_cli).
     ```
@@ -67,32 +67,14 @@ Steps:
     oc autoscale deployment <deployment_name> --cpu-percent=<percentage> --min=<min_value> --max=<max_value>
     ```
     {: pre}
-
-    <table summary="A table that describes in Column 1 the oc command options and in Column 2 how to fill out those options.">
-    <caption>Command components for `oc autoscale`</caption>
-    <thead>
-    <col width="25%">
-    <th>Component</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>--cpu-percent</code></td>
-    <td>The average CPU utilization that is maintained by the Horizontal Pod Autoscaler, which is specified as a percentage.</td>
-    </tr>
-    <tr>
-    <td><code>--min</code></td>
-    <td>The minimum number of deployed pods that are used to maintain the specified CPU utilization percentage.</td>
-    </tr>
-    <tr>
-    <td><code>--max</code></td>
-    <td>The maximum number of deployed pods that are used to maintain the specified CPU utilization percentage.</td>
-    </tr>
-    </tbody></table>
-
-
-<br />
-
+    
+    | Options | Description |
+    | ----- | --------- |
+    | `--cpu-percent` | The average CPU utilization that is maintained by the Horizontal Pod Autoscaler, which is specified as a percentage. |
+    | `--min` | The minimum number of deployed pods that are used to maintain the specified CPU utilization percentage. |
+    | `--max` | The maximum number of deployed pods that are used to maintain the specified CPU utilization percentage. |
+    {: caption="Table 2. Understanding your command options" caption-side="top"}
+    
 ## Managing rolling deployments to update your apps
 {: #app_rolling}
 
@@ -102,12 +84,13 @@ You can manage the rollout of your app changes in an automated and controlled fa
 Want to prevent downtime during your rolling update? Be sure to specify a [readiness probe in your deployment](/docs/openshift?topic=openshift-openshift_apps#probe) so that the rollout proceeds to the next app pod after the most recently updated pod is ready.
 {: tip}
 
-Before you begin:
-*   [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-*   Create a [deployment](/docs/containers?topic=containers-deploy_app#app_cli).
-*   Make sure that you have a [service access role](/docs/openshift?topic=openshift-users#checking-perms) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
+Before you begin
+* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+* Create a [deployment](/docs/containers?topic=containers-deploy_app#app_cli).
+* Make sure that you have a [service access role](/docs/openshift?topic=openshift-users#checking-perms) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
 
-To manage rolling updates to your apps:
+To manage rolling updates to your apps,
+
 1. To make sure that your deployments are marked as ready only when the container is running and ready to service requests, add [liveness and readiness probes to your deployment](/docs/openshift?topic=openshift-openshift_apps#probe).
 
 2. Update your deployment to include a rolling update strategy that specifies the maximum surge and unavailable pods or percentage of pods during the update.
@@ -115,7 +98,7 @@ To manage rolling updates to your apps:
     ```yaml
     apiVersion: apps/v1
     kind: Deployment
-    metadata:  
+    metadata:
       name: nginx-test
     spec:
       replicas: 10
@@ -124,44 +107,33 @@ To manage rolling updates to your apps:
           service: http-server
       minReadySeconds: 5
       progressDeadlineSeconds: 600
-      strategy: 
-        type: RollingUpdate  
-        rollingUpdate:    
+      strategy:
+        type: RollingUpdate
+        rollingUpdate:
           maxUnavailable: 50%
           maxSurge: 2
     ...
     ```
     {: codeblock}
+    
 
-    <table summary="A table that describes in Column 1 the YAML file fields and in Column 2 how to fill out those fields.">
-    <caption>YAML components</caption>
-    <thead>
-    <col width="25%">
-    <th>Component</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>spec.minReadySeconds</code></td>
-    <td>By default, deployments wait until the pod is marked as <code>ready</code> to continue with the rollout. If you notice that the deployment continues to create pods even though your app in the most recent pod is not yet ready, use this field to slow down the deployment rollout. For example, if you specify <code>5</code>, the deployment waits for 5 seconds after the pod is <code>ready</code> before it creates the next pod.</td>
-    </tr>
-    <tr>
-    <td><code>spec.progressDeadlineSeconds</code></td>
-    <td>Set a timeout in seconds before a deployment is considered failed. For example, without a timeout, if your new app version has a bug and hangs immediately, the rollout cannot continue because the pod never reaches a <code>ready</code> state. If you set this timeout to <code>600</code> seconds, then if any phase of the rollout fails to progress for 10 minutes, the deployment is marked as failed and the rollout stops.</td>
-    </tr>
-    <tr>
-    <td><code>spec.strategy.type</code></td>
-    <td>Specify the <code>RollingUpdate</code> strategy type.</td>
-    </tr>
-    <tr>
-    <td><code>spec.strategy.rollingUpdate.maxUnavailable</code></td>
-    <td>Set the maximum number of pods that can be unavailable during an update, as a number (<code>2</code>) or percentage (<code>50%</code>). Generally, use a percentage so that if you change the number of replicas later you don't have to remember to update the number here, unless you want to limit the rollout to allow only one pod to be down at a time. If you never want to fall below 100% capacity, set this value to <code>0%</code> and specify the <code>spec.strategy.type.rollingUpdate.maxSurge</code> parameter.</td>
-    </tr>
-    <tr>
-    <td><code>spec.strategy.rollingUpdate.maxSurge</code></td>
-    <td>Set how many extra resources the deployment can use during the rollout, as a number (<code>2</code>) or percentage (<code>50%</code>). For example, if your deployment specifies <code>10</code> replicas and you set the <code>maxSurge</code> to <code>2</code>, then during the rollout, two new replicas are created. You now have 12 replicas (10 existing, 2 new). After the two new replicas are ready, the deployment scales down the old replicas to 8 to meet the specified 10 replicas. This process continues until the rollout is complete and all 10 replicas run the new version.<p class="tip">If you want to perform a blue-green instantaneous switch style update, set the <code>maxSurge</code> to <code>100%</code>. The deployment creates all the new required replicas, then scales down the old version replicas to 0.</p></td>
-    </tr>
-    </tbody></table>
+    `spec.minReadySeconds`
+    :   By default, deployments wait until the pod is marked as `ready` to continue with the rollout. If you notice that the deployment continues to create pods even though your app in the most recent pod is not yet ready, use this field to slow down the deployment rollout. For example, if you specify `5`, the deployment waits for 5 seconds after the pod is `ready` before it creates the next pod.</td>
+
+    `spec.progressDeadlineSeconds`
+    :   Set a timeout in seconds before a deployment is considered failed. For example, without a timeout, if your new app version has a bug and hangs immediately, the rollout cannot continue because the pod never reaches a `ready` state. If you set this timeout to `600` seconds, then if any phase of the rollout fails to progress for 10 minutes, the deployment is marked as failed and the rollout stops.</td>
+
+    `spec.strategy.type``
+    :   Specify the `RollingUpdate` strategy type.</td>
+
+    `spec.strategy.rollingUpdate.maxUnavailable`
+    :   Set the maximum number of pods that can be unavailable during an update, as a number (`2`) or percentage (`50%`). Generally, use a percentage so that if you change the number of replicas later you don't have to remember to update the number here, unless you want to limit the rollout to allow only one pod to be down at a time. If you never want to fall below 100% capacity, set this value to `0%` and specify the `spec.strategy.type.rollingUpdate.maxSurge` parameter.
+
+    `spec.strategy.rollingUpdate.maxSurge`
+    :   Set how many extra resources the deployment can use during the rollout, as a number (`2`) or percentage (`50%`). For example, if your deployment specifies `10` replicas and you set the `maxSurge` to `2`, then during the rollout, two new replicas are created. You now have 12 replicas (10 existing, 2 new). After the two new replicas are ready, the deployment scales down the old replicas to 8 to meet the specified 10 replicas. This process continues until the rollout is complete and all 10 replicas run the new version.
+    
+    If you want to perform a blue-green instantaneous switch style update, set the `maxSurge` to `100%`. The deployment creates all the new required replicas, then scales down the old version replicas to 0.
+    {: tip}
 
 3. [Roll out](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#updating-a-deployment){: external} a change. For example, you might want to change the image that you used in your initial deployment.
 
@@ -236,7 +208,6 @@ To manage rolling updates to your apps:
         ```
         {: pre}
 
-<br />
 
 ## Setting up continuous integration and delivery
 {: #app_cicd}
@@ -246,7 +217,6 @@ With {{site.data.keyword.cloud_notm}} and other open source tools, you can set u
 
 To see a list of supported integrations and steps for setting up a continuous delivery pipeline, see [Setting up continuous integration and delivery](/docs/openshift?topic=openshift-cicd).
 
-<br />
 
 ## Copying deployments to another cluster
 {: #copy_apps_cluster}
@@ -263,7 +233,7 @@ Before you begin, you need two clusters and the **Manager** [service access role
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     NAME                                   READY   STATUS             RESTARTS   AGE
     pod/java-web-6955bdbcdf-l756b          1/1     Running            0          59d
@@ -293,7 +263,7 @@ Before you begin, you need two clusters and the **Manager** [service access role
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     pod/java-web-6955bdbcdf-l756b created
     service/java-web created
