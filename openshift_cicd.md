@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-23"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -41,7 +41,7 @@ Grafeas
 Helm
 :   [Helm](https://helm.sh) is a Kubernetes package manager. You can create new Helm charts or use preexisting Helm charts to define, install, and upgrade complex Kubernetes applications that run in {{site.data.keyword.containerlong_notm}} clusters. For example, you can specify all Kubernetes resources that your app requires in a Helm chart. Then, you can use Helm to create the YAML configuration files and deploy these files in your cluster..
 
-    In {{site.data.keyword.openshiftshort}} clusters that run version 4, use [Operators](/docs/openshift?topic=openshift-operators) instead of Helm charts. If you have custom Helm charts, you can create a [Helm-based Operator](https://docs.openshift.com/container-platform/4.7/operators/operator_sdk/osdk-helm.html){: external} instead.
+    In {{site.data.keyword.openshiftshort}} clusters that run version 4, use [Operators](/docs/openshift?topic=openshift-operators) instead of Helm charts. If you have custom Helm charts, you can create a [Helm-based Operator](https://docs.openshift.com/container-platform/4.7/operators/operator_sdk/){: external} instead.
     {: tip}
 
 
