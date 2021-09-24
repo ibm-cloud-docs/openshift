@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-24"
 
 keywords: odf, openshift data foundation add-on, changelog
 
@@ -37,6 +37,10 @@ Refer to the following tables for a summary of changes for each version of the [
 | 4.7.0 | Yes | Yes | 4.7 |
 {: caption="Add-on versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the add-on version. The second column indicates the default version. The third column is the version's supported state. The fourth column is the {{site.data.keyword.openshiftshort}} version of your cluster that the add-on version is supported for."}
+
+
+
+
 
 
 

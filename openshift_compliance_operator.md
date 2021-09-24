@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -117,5 +117,9 @@ For more ways to use the compliance operator, review the OpenShift Container Pla
 - [Understanding the compliance operator](https://docs.openshift.com/container-platform/4.7/security/compliance_operator/compliance-operator-understanding.html){: external} documentation set.
 - [Self-paced compliance operator workshop in GitHub](https://github.com/openshift/compliance-operator/tree/master/doc/tutorials){: external}.
 - How does the compliance operator work? [Part 1](https://cloud.redhat.com/blog/how-does-compliance-operator-work-for-openshift-part-1){: external} and [Part 2](https://cloud.redhat.com/blog/how-does-compliance-operator-work-for-openshift-part-2){: external} blogs.
+
+
+
+
 
 

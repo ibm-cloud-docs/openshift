@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks
 
@@ -10,7 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Setting Kubernetes API priority and fairness
 {: #kubeapi-priority}
@@ -51,6 +53,8 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 * `calico-system-service-accounts`
 * `ibm-system-service-accounts`
 * `tigera-operator-service-accounts`
+
+
 
 
 

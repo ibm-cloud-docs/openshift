@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -10,8 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
 
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Adding services by using IBM Cloud service binding
 {: #service-binding}
@@ -621,5 +622,7 @@ If you do not want to use an {{site.data.keyword.cloud_notm}} service that you b
         ibmcloud service delete <service_name>
         ```
         {: pre}
+
+
 
 

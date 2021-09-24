@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -189,5 +189,9 @@ If you want to access an app in your {{site.data.keyword.satelliteshort}} cluste
 2. Follow the steps in [Creating `location` endpoints to connect to resources in a location](/docs/satellite?topic=satellite-link-location-cloud#link-location) to create a {{site.data.keyword.satelliteshort}} Link endpoint for your app's private route.
 
 3. Optional: To allow access to the endpoint from only the specific resource in {{site.data.keyword.cloud_notm}}, [add the resource to your endpoint's source list](/docs/satellite?topic=satellite-link-location-cloud#link-sources).
+
+
+
+
 
 

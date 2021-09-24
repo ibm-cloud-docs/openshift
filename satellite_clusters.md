@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-24"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -340,5 +340,9 @@ When you remove {{site.data.keyword.openshiftshort}} clusters or worker nodes in
 
 See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits).
 {: shortdesc}
+
+
+
+
 
 

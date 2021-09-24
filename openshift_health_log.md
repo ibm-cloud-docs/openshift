@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-24"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -244,5 +244,9 @@ To deploy the OpenShift Container Platform cluster logging operator and stack on
 
 8. Click **Create**.
 9. Verify that the operator, Elasticsearch, Fluentd, and Kibana pods are all **Running**.
+
+
+
+
 
 

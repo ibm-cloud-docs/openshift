@@ -1,16 +1,18 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
-keywords: autoscaler, add-on, autoscaler changelog
+keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
-subcollection: openshift, cluster autoscaler, add-on, scale
+subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Cluster autoscaler add-on changelog
 {: #ca_changelog}
@@ -249,4 +251,7 @@ Review the changes in version `1.0.1_114` of the cluster autoscaler add-on.
 - Supported cluster versions: 4.3 - 4.5  
 - Includes fixes for `CVE-5188` and `CVE-3180`.  
 - Unlike the previous Helm chart, you can modify all of the add-on configuration settings via a single configmap.  
+
+
+
 

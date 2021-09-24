@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-24"
 
 keywords: openshift, rhoks, roks, rhos, kernel
 
@@ -10,8 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
 
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Tuning performance
 {: #kernel}
@@ -491,5 +492,7 @@ Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.da
         oc delete pods -n kube-system <pod1> <pod2> ...
         ```
         {: pre}
+
+
 
 

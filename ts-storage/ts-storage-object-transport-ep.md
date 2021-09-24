@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,7 +11,9 @@ content-type: troubleshoot
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Why is the transport endpoint not connected?
 {: cos_transport_ts_connect}
@@ -156,6 +158,8 @@ Follow the steps to gather logging information.
     oc delete daemonset ibm-inspectnode
     ```
     {: pre}
+
+
 
 
 

@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -10,8 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
 
+
+{{site.data.keyword.attribute-definition-list}}
 
 <style>
     <!--
@@ -254,7 +255,7 @@ Create a cluster with infrastructure, network, and availability setups that are 
     3. [Choose the scope of user access to cluster instances, {{site.data.keyword.openshiftshort}} project, or resource groups](/docs/openshift?topic=openshift-access-overview#resource_groups).
     2. Allow users to create apps or audit your cluster activity by [assigning cluster access](/docs/openshift?topic=openshift-users#checking-perms). To see specific permissions and actions that you can grant users, see the [user access permissions reference](/docs/openshift?topic=openshift-access_reference).
 
-</br>Need help? Check out [Troubleshooting clusters and masters](/docs/containers?topic=containers-debug_clusters) and [Troubleshooting worker nodes](/docs/containers?topic=containers-debug_worker_nodes).
+</br>Need help? Check out [Troubleshooting clusters and masters](/docs/openshift?topic=openshift-debug_clusters) and [Troubleshooting worker nodes](/docs/openshift?topic=openshift-debug_worker_nodes).
 
 <br />
 
@@ -347,7 +348,7 @@ Enhance cluster capabilities by integrating various external services and catalo
     * [Adding services by using Operators](/docs/openshift?topic=openshift-operators)
     * [Adding services by using {{site.data.keyword.cloud_notm}} service binding](/docs/openshift?topic=openshift-service-binding)
 
-</br>Need help? Check out [Troubleshooting apps and integrations](/docs/containers?topic=containers-debug_worker_nodes).
+</br>Need help? Check out [Troubleshooting apps and integrations](/docs/openshift?topic=openshift-debug_worker_nodes).
 
 <br />
 
@@ -364,7 +365,7 @@ Manage your cluster and worker nodes through each phase of the cluster lifecycle
     * [Fluentd and Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog)
 * **Removing**: [Remove clusters and clean up related resources](/docs/openshift?topic=openshift-remove).
 
-</br>Need help? Check out troubleshooting [clusters and masters](/docs/containers?topic=containers-debug_clusters), [worker nodes](/docs/containers?topic=containers-debug_worker_nodes), or the [cluster autoscaler](/docs/containers?topic=containers-debug_cluster_autoscaler).
+</br>Need help? Check out troubleshooting [clusters and masters](/docs/openshift?topic=openshift-debug_clusters), [worker nodes](/docs/openshift?topic=openshift-debug_worker_nodes), or the [cluster autoscaler](/docs/openshift?topic=openshift-debug_cluster_autoscaler).
 
 
 

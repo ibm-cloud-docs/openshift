@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -10,7 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Using reservations to reduce classic worker node costs
 {: #reservations}
@@ -188,6 +190,8 @@ Before you begin, make sure that you have the following roles in {{site.data.key
 3. From the **Services** table, find the **Kubernetes Service** row and click **View plans**.
 4. From the plans table, find the row for your reservation name and click **View details**.
 5. Review the details for the reserved worker nodes that are associated with the contracts of your reservation.
+
+
 
 
 

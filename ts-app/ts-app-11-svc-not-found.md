@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,7 +11,9 @@ content-type: troubleshoot
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Why does binding a service to a cluster results in service not found error?
 {: #ts-app-svc-bind-not-found}
@@ -85,6 +87,9 @@ In addition, you must have the {{site.data.keyword.cloud_notm}} IAM Editor platf
         ibmcloud service show <service_name> --guid
         ```
         {: pre}
+
+
+
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-23"
+lastupdated: "2021-09-24"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -216,5 +216,9 @@ The catalog services and related [templates](https://docs.openshift.com/containe
 {: note}
 
 <br />
+
+
+
+
 
 

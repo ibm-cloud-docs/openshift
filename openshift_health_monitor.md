@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-24"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -233,5 +233,9 @@ You might want to disable this remote health reporting to comply with privacy la
     oc get pods -n openshift-monitoring
     ```
     {: pre}
+
+
+
+
 
 

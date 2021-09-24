@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -10,7 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
 
 # IBM Cloud services and third-party integrations
 {: #ibm-3rd-party-integrations}
@@ -112,6 +114,7 @@ You might use custom resource definitions (CRDs) to extend the {{site.data.keywo
 
 
 For more information, see [Operators](/docs/openshift?topic=openshift-operators).
+
 
 
 

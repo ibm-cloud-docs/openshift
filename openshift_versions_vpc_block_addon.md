@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-09-24"
 
 keywords: vpc block, add-on, vpc block changelog
 
@@ -10,7 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
 
 # {{site.data.keyword.block_storage_is_short}} add-on changelog
 {: #vpc_bs_changelog}
@@ -221,5 +223,8 @@ Review the changes in version 2.0.3_365 of the {{site.data.keyword.block_storage
 - Updates sidecar container images.  
 - Adds liveness probe.  
 - Enables parallel attachment and detachment of volumes to worker nodes. Previously, worker nodes were attached and detached sequentially.  
+
+
+
 
 

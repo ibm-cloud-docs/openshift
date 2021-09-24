@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-23"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -10,8 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
 
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Building images for your apps
 {: #images}
@@ -445,5 +446,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     oc get ImagePolicy --all-namespaces
     ```
     {: pre}
+
+
 
 

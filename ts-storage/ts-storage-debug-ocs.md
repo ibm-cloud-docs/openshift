@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-24"
 
 keywords: file, debug, help
 
@@ -99,7 +99,6 @@ Some issues can be resolved by restarting and redeploying your pods. Follow the 
     ibmcloud plugin update
     ```
     {: pre}
-
 
 ## Verifying that the storage driver and plug-in pods show a status of **Running**
 {: #debug_storage_ocs_driver_plugin}
@@ -230,6 +229,10 @@ Describe your ODF resources and review the command outputs for any error message
     {: pre}
 
 1. [Review the ODF trouble shooting documentation for steps to solve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_openshift_data_foundation). 
+
+
+
+
 
 
 

@@ -1,7 +1,8 @@
 ---
-copyright:
+
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-24"
 
 keywords: file, debug, help
 
@@ -10,8 +11,9 @@ content-type: troubleshoot
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
 
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Debugging {{site.data.keyword.blockstorageshort}} failures
 {: #debug_storage_block}
@@ -99,7 +101,6 @@ Some issues can be resolved by restarting and redeploying your pods. Follow the 
     ibmcloud plugin update
     ```
     {: pre}
-
 
 ## Verifying that the storage driver and plug-in pods show a status of **Running**
 {: #debug_storage_block_driver_plugin}

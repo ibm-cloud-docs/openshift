@@ -1,21 +1,19 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-24"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, odo
 
 subcollection: openshift
-
 content-type: tutorial
-services: containers, openshift
-account-plan:
-completion-time: 10m
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Developing in clusters with the OpenShift Do CLI
 {: #odo-tutorial}
@@ -188,5 +186,7 @@ Now that you have a microservice running in your cluster, you might wonder what 
     {: tip}
 
 * **Learn more about OpenShift Do**: Learn more about the features of `odo` by visiting the [{{site.data.keyword.redhat_notm}} {{site.data.keyword.openshiftshort}} Do CLI Documentation](https://docs.openshift.com/container-platform/4.7/cli_reference/developer_cli_odo/understanding-odo.html){: external}.
+
+
 
 

@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,7 +11,9 @@ content-type: troubleshoot
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Why do pods repeatedly fail to restart or are unexpectedly removed?
 {: #ts-app-pod-fail}
@@ -111,6 +113,9 @@ To see if your pod is being replaced by higher priority pods:
 7. Repeat steps 1 to 3 for other pods in the cluster, to check what priority class they are using. If those other pods' priority class is higher than your pod, your pod is not provisioned unless there is enough resources for your pod and every pod with higher priority.
 
 8. Contact your cluster admin to add more capacity to your cluster and confirm that the right priority classes are assigned.
+
+
+
 
 
 

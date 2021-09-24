@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,8 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
 
+
+{{site.data.keyword.attribute-definition-list}}
 
 # IAM and {{site.data.keyword.cloudaccesstrailshort}} action by API method
 {: #api-at-iam}
@@ -390,5 +391,7 @@ Review the following worker node and worker pool API methods, their correspondin
 | `PUT​/v1​/clusters​/{idOrName}​/workers​/{workerId}` | Reboot, reload, or update a worker node for a cluster. | containers-kubernetes.cluster.operate | containers-kubernetes.worker.update  |
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Worker node and worker pool API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
+
+
 
 

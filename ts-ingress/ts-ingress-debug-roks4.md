@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -282,5 +282,9 @@ Check the availability of the public IP addresses of the Ingress controller's ro
         www.my-domain.com has address 169.XX.XX.XXX
         ```
         {: screen}
+
+
+
+
 
 

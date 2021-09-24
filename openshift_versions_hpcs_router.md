@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-20"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -73,5 +73,9 @@ View information for version updates to the [{{site.data.keyword.cloud_notm}} HP
 |4.5.0_647|30 Mar 2021|Updates the Go version to 1.15.10 for [CVE-2021-3114](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3114){: external} and [CVE-2021-3115](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3115){: external}.|
 {: summary="The rows are read from left to right. The first column is the build of the image version. The second column is the build release date. The third column contains a brief description of the change made in the version build."}
 {: caption="Changelog for version 4.5.0 of the HPCS Router add-on" caption-side="top"}
+
+
+
+
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc, roks
 
@@ -134,5 +134,9 @@ After you install the OpenShift Data Foundation add-on for your {{site.data.keyw
 
 
 <br />
+
+
+
+
 
 

@@ -1,17 +1,18 @@
 ---
 
-copyright:
-  years: 2021, 2021
-lastupdated: "2021-09-13"
+copyright: 
+  years: 2014, 2021
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, static route, add-on
 
-subcollection: containers
+subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}
 
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Static route add-on version changelog
 {: #static-route-changelog}
@@ -38,3 +39,7 @@ Review the supported versions of the static route add-on. In the CLI, you can ru
 **Previous version:** 1.0.0_572 **Current version:** 1.0.0_649
 **Updates in this version:**
 - Uses `apiextensions.k8s.io/v1` instead of `apiextensions.k8s.io/v1beta1`.
+
+
+
+

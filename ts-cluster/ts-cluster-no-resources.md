@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -38,5 +38,9 @@ Your {{site.data.keyword.openshiftshort}} token is expired. {{site.data.keyword.
 
 Re-authenticate with the {{site.data.keyword.openshiftshort}} token by [copying the `oc login` command from the web console](/docs/openshift?topic=openshift-access_cluster#access_public_se) or [creating an API key](/docs/openshift?topic=openshift-access_cluster#access_api_key).
 {: tsResolve}
+
+
+
+
 
 

@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,8 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
 
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Default service settings for {{site.data.keyword.openshiftshort}} components
 {: #service-settings}
@@ -65,6 +66,9 @@ Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many Open
 *   `OAuth`
 *   `Proxy`
 *   `Scheduler`
+
+
+
 
 
 

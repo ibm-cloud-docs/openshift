@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -702,5 +702,9 @@ Note that even though you create an Ingress controller in the following steps, t
     {: pre}
 
 8. Optional: If you no longer need the subnets on the old VLANs, you can [remove them](/docs/openshift?topic=openshift-subnets#remove-subnets).
+
+
+
+
 
 

@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -10,8 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
 
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Classic: About network load balancers (NLBs)
 {: #loadbalancer-about}
@@ -134,5 +135,5 @@ The following diagram shows how version 2.0 NLBs in each zone direct traffic fro
 6. Worker 10.73.14.26 then uses the source IP address from the original request packet, the client IP, to return the app pod's response packet directly to the client.
 
 
-</staging components>
+
 

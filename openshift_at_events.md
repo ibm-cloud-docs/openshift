@@ -1,8 +1,8 @@
 ---
 
-copyright:
-  years: 2017, 2021
-lastupdated: "2021-09-10"
+copyright: 
+  years: 2014, 2021
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -10,8 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
 
+
+{{site.data.keyword.attribute-definition-list}}
 
 # {{site.data.keyword.at_full_notm}} events
 {: #at_events}
@@ -347,6 +348,7 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 | Sydney (au-syd-1, au-syd-2, au-syd-3) | Sydney |
 | Tokyo (jp-tok-1, jp-tok-2, jp-tok-3) | Tokyo |
 {: caption="Corresponding {{site.data.keyword.at_short}} instance and {{site.data.keyword.openshiftlong_notm}} cluster locations." caption-side="top"}
+
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-09-24"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, roks
 
@@ -502,6 +502,10 @@ Refer to the following parameters when you use the add-on or operator in VPC clu
 | `clusterEncryption` | Enter `true` or `false` to enable encryption. |
 {: caption="ODF parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
+
+
+
+
 
 
 

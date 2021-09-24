@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -65,5 +65,9 @@ Various use cases show the strengths of {{site.data.keyword.openshiftlong}} and 
         </tr>
     </tbody>
     </table>
+
+
+
+
 
 
