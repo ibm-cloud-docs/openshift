@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -12,8 +12,10 @@ content-type: troubleshoot
 ---
 
 
+
 {{site.data.keyword.attribute-definition-list}}
   
+
 
 # Why are pods in a `CrashLoopBackOff` status?
 {: #ts-app-pod-crashloop}
@@ -21,8 +23,8 @@ content-type: troubleshoot
 {: support}
 
 **Infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 
 Your pods are in a `CrashLoopBackOff` status.

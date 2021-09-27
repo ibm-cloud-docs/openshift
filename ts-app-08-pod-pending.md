@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -15,13 +15,12 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-
 # Why do pods remain in pending state?
 {: #ts-app-pod-pending}
 
 **Infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 
 When you run `oc get pods`, you can see pods that remain in a **Pending** state.
@@ -36,7 +35,7 @@ If this cluster is an existing one:
 *  The pod might have exceeded a resource request or limit.
 
 
-This task requires the {{site.data.keyword.cloud_notm}} IAM [**Administrator** platform access role](/docs/containers?topic=containers-users#checking-perms) for the cluster and the [**Manager** service access role](/docs/containers?topic=containers-users#checking-perms) for all namespaces.
+This task requires the {{site.data.keyword.cloud_notm}} IAM [**Administrator** platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster and the [**Manager** service access role](/docs/openshift?topic=openshift-users#checking-perms) for all namespaces.
 {: tsResolve}
 
 If you just created the {{site.data.keyword.openshiftshort}} cluster, run the following command and wait for the worker nodes to initialize.
@@ -80,7 +79,7 @@ If this cluster is an existing one, check your cluster capacity.
         ```
         {: pre}
 
-    2. If the request exceeds the available capacity, [add a new worker pool](/docs/containers?topic=containers-add_workers#add_pool) with worker nodes that can fulfill the request.
+    2. If the request exceeds the available capacity, [add a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) with worker nodes that can fulfill the request.
 
 6. If your pods still stay in a **pending** state after the worker node is fully deployed, review the [Kubernetes documentation](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-pod-replication-controller/#my-pod-stays-pending){: external} to further troubleshoot the pending state of your pod.
 
