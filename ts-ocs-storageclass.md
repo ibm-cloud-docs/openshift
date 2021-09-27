@@ -11,7 +11,11 @@ content-type: troubleshoot
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
+  
+
 
 # Why is the status of my OpenShift Data Foundation storage cluster stuck at `Failed to reconcile`.
 {: #ts-ocs-roks-debug}

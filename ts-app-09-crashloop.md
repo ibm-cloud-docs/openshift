@@ -11,7 +11,11 @@ content-type: troubleshoot
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
+  
+
 
 # Why are pods in a `CrashLoopBackOff` status?
 {: #ts-app-pod-crashloop}

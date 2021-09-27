@@ -11,7 +11,11 @@ content-type: troubleshoot
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
+  
+
 
 # Why can't I push images to the internal registry from outside the VPC network?
 {: #ts-app-ocr-vpc-push}

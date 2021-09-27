@@ -11,7 +11,11 @@ content-type: troubleshoot
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
+  
+
 
 # Why does the DNS Operator show a `RouteHealthDegraded` or `cannot marshal DNS message` error?
 {: #ingress_subdomain}

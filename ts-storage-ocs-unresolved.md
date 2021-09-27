@@ -11,6 +11,7 @@ content-type: troubleshoot
 
 ---
 
+
 {{site.data.keyword.attribute-definition-list}}
 
 # What if my OpenShift Data Foundation issue is still unresolved?

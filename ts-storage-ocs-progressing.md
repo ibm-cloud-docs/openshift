@@ -11,6 +11,7 @@ content-type: troubleshoot
 
 ---
 
+
 # Why is the status of my OpenShift Data Foundation storage cluster stuck at `Progressing`?
 {: #ocs-ts-error-progressing}
 

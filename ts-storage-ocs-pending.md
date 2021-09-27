@@ -11,6 +11,7 @@ content-type: troubleshoot
 
 ---
 
+
 {{site.data.keyword.attribute-definition-list}}
 
 # Why are the ODF pods stuck at `Pending`?
