@@ -1,16 +1,18 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, logmet, logs, metrics, audit, events
 
-subcollection: containers
+subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Reviewing service, API server, and worker node logs
 {: #health-audit}
@@ -288,5 +290,7 @@ See [Forwarding logs to an {{site.data.keyword.la_full_notm}} instance](/docs/co
 {: #audit-service}
 
 By default, {{site.data.keyword.openshiftlong_notm}} generates and sends events to {{site.data.keyword.at_full_notm}}. To see these events, you must create an {{site.data.keyword.at_full_notm}} instance. For more information, see [{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events).
+
+
 
 

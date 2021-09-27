@@ -1,17 +1,19 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
-keywords: openshift, roks, rhoks, rhos
+keywords: openshift
 
 subcollection: openshift
 content-type: troubleshoot
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Why can't I install a Helm chart with updated configuration values?
 {: #ts-app-helm-install}
@@ -58,6 +60,9 @@ To troubleshoot your Helm chart:
 Now, you can follow the instructions in the Helm chart `README` to install the Helm chart in your cluster.
 
 <br />
+
+
+
 
 
 

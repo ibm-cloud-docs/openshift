@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-27"
 
 keywords: openshift, roks, rhoks, rhos, scc, security context constraint, psp
 
@@ -10,7 +10,8 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+{{site.data.keyword.attribute-definition-list}}
+  
 
 # Configuring security context constraints
 {: #openshift_scc}
@@ -107,5 +108,9 @@ Do not edit existing {{site.data.keyword.openshiftshort}} or IBM SCCs settings, 
 | `ibm-privileged-scc`| Grants access to all privileged host features, and allows a pod to run with any UID and GID and any volume. \n  \n **Important**: Grant this SCC for only cluster administration that requires the most access possible. |
 | `ibm-restricted-scc` | Denies access to all host features and requires that pods are run with a UID and SELinux context that are allocated to the namespace. This SCC is the most restrictive IBM SCC.|
 {: caption="Default IBM security context constraints" caption-side="top"}
+
+
+
+
 
 

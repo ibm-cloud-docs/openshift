@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -10,7 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Understanding costs for your clusters
 {: #costs}
@@ -232,5 +234,7 @@ The following steps present a general process to manage costs for your {{site.da
     * Consider setting up a [monitoring tool](/docs/openshift?topic=openshift-health) such as {{site.data.keyword.mon_full_notm}} and creating alerts for your workloads when they need more resources.
 6. [View your usage](/docs/billing-usage?topic=billing-usage-viewingusage#viewingusage) to continuously refine how you consume {{site.data.keyword.cloud_notm}} services.
 7. [Set spending notifications](/docs/billing-usage?topic=billing-usage-spending).
+
+
 
 

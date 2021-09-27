@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,8 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
 
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Understanding access control for clusters
 {: #access-overview}
@@ -205,4 +206,7 @@ Resource group
   - All {{site.data.keyword.cloud_notm}} IAM services in the resource group, including all clusters in {{site.data.keyword.openshiftlong_notm}} and images in {{site.data.keyword.registrylong_notm}}.</li>
   - All instances within a service in the resource group, such as all the clusters in {{site.data.keyword.openshiftlong_notm}}.</li>
   - All instances within a region of a service in the resource group, such as all the clusters in the <strong>US South</strong> region of {{site.data.keyword.openshiftlong_notm}}.
+
+
+
 

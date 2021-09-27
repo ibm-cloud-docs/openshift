@@ -1,14 +1,16 @@
 ---
 
-copyright:
-  years: 2021, 2021
-lastupdated: "2021-09-13"
+copyright: 
+  years: 2014, 2021
+lastupdated: "2021-09-27"
 
 keywords: openshift, roks, static route, add-on
 
-subcollection: containers
+subcollection: openshift
 
 ---
+
+
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -16,10 +18,10 @@ subcollection: containers
 # Static route add-on version changelog
 {: #static-route-changelog}
 
-For deployment steps, see the [managed static route add-on](/docs/openshift?topic=openshift-static-routes) docs.
+For deployment steps, see the [managed static route add-on](/docs/containers?topic=containers-static-routes) docs.
 {: shortdesc}
 
-For steps on updating the static route add-on, see [Updating managed add-ons](/docs/openshift?topic=openshift-managed-addons#updating-managed-add-ons).
+For steps on updating the static route add-on, see [Updating managed add-ons](/docs/containers?topic=containers-managed-addons#updating-managed-add-ons).
 
 Review the supported versions of the static route add-on. In the CLI, you can run `ibmcloud oc cluster addon versions --addon static-route`.
 
@@ -38,3 +40,7 @@ Review the supported versions of the static route add-on. In the CLI, you can ru
 **Previous version:** 1.0.0_572 **Current version:** 1.0.0_649
 **Updates in this version:**
 - Uses `apiextensions.k8s.io/v1` instead of `apiextensions.k8s.io/v1beta1`.
+
+
+
+

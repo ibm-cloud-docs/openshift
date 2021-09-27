@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: openshift, debug
 
@@ -52,6 +52,10 @@ To resolve this issue, pull an `ocp-release` image from `quay.io` and push it to
     oc debug node/<node-name> --image=icr.io/<namespace>/<image>:<tag>
     ```
     {: pre}
+
+
+
+
 
 
 

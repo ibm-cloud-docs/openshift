@@ -1,16 +1,18 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-27"
 
 keywords: object storage, plug-in, changelog
 
-subcollection: openshift, object storage
+subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Object storage plug-in 
@@ -19,10 +21,10 @@ subcollection: openshift, object storage
 View information for updates to the {{site.data.keyword.cos_full_notm}} plug-in in your {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
-Version 2.1.3 includes a new version of the `ibmc` plug-in. To update the `ibmc` plug-in, uninstall and re-install the {{site.data.keyword.cos_full_notm}} plug-in. For more information, see [Updating the {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#update_cos_plugin) plug-in.
+Version 2.1.3 includes a new version of the `ibmc` plug-in. To update the `ibmc` plug-in, uninstall and re-install the {{site.data.keyword.cos_full_notm}} plug-in. For more information, see [Updating the {{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-object_storage#update_cos_plugin) plug-in.
 {: note}
 
-Refer to the following tables for a summary of changes for each version of the [Object Storage plug-in](/docs/openshift?topic=openshift-object_storage).
+Refer to the following tables for a summary of changes for each version of the [Object Storage plug-in](/docs/containers?topic=containers-object_storage).
 
 | Object Storage plug-in version | Supported? | {{site.data.keyword.openshiftshort}} version support | Supported architecture |
 | --- | --- |--- | --- |
@@ -80,8 +82,8 @@ Refer to the following tables for a summary of changes for each version of the [
 
 - Image tags: `1.8.29`  
 - Fixes an upgrade issue in version `2.1.0`.  
-- Includes a new version of the `helm ibmc` plug-in. For more information, see [Updating the {{site.data.keyword.cos_full_notm}} plug-in.](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).  
-- Users can now specify <code>default</code> in PVC configurations to use the default TLS cipher suite when a connection to {{site.data.keyword.cos_full_notm}} is established via the HTTPS endpoint. If your worker nodes run an Ubuntu operating system, your storage classes are set up to use the `AESGCM` cipher suite by default. For worker nodes that run a Red Hat operating system, the `ecdhe_rsa_aes_128_gcm_sha_256` cipher suite is used by default. For more information, see [Adding object storage to apps](/docs/openshift?topic=openshift-object_storage#add_cos).  
+- Includes a new version of the `helm ibmc` plug-in. For more information, see [Updating the {{site.data.keyword.cos_full_notm}} plug-in.](/docs/containers?topic=containers-object_storage#update_cos_plugin).  
+- Users can now specify <code>default</code> in PVC configurations to use the default TLS cipher suite when a connection to {{site.data.keyword.cos_full_notm}} is established via the HTTPS endpoint. If your worker nodes run an Ubuntu operating system, your storage classes are set up to use the `AESGCM` cipher suite by default. For worker nodes that run a Red Hat operating system, the `ecdhe_rsa_aes_128_gcm_sha_256` cipher suite is used by default. For more information, see [Adding object storage to apps](/docs/containers?topic=containers-object_storage#add_cos).  
 - Fixes [CVE-2020-28851](https://nvd.nist.gov/vuln/detail/CVE-2020-28851){: external}.  
 
 
@@ -146,5 +148,7 @@ Review the changes that are included in version 2.0.5 of the Object Storage plug
 
 - Fixes a `NilPointer` error.  
 - Resolves the following CVEs: `CVE-2018-20843`, `CVE-2019-13050`, `CVE-2019-13627`, `CVE-2019-14889`, `CVE-2019-1551`, `CVE-2019-15903`, `,CVE-2019-16168`, `CVE-2019-16935`, `CVE-2019-19221`, `CVE-2019-19906`, `CVE-2019-19956`, `CVE-2019-20218`, `CVE-2019-20386`, `CVE-2019-20387`, `CVE-2019-20388`, `CVE-2019-20454`, `CVE-2019-20907`, `CVE-2019-5018`, `CVE-2020-10029`, `CVE-2020-13630`, `CVE-2020-13631`, `CVE-2020-13632`, `CVE-2020-14422`, `CVE-2020-1730`, `CVE-2020-1751`, `CVE-2020-1752`, `CVE-2020-6405`, `CVE-2020-7595`, and `CVE-2020-8177`.   
+
+
 
 

@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,7 +11,9 @@ content-type: troubleshoot
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Why does my app fail when a non-root user owns the NFS file storage mount path?
 {: #nonroot}
@@ -246,6 +248,8 @@ The init container starts before your app container starts. The init container c
     {: screen}
 
     This output shows that the GID and UID from your Dockerfile (in this example, `1000` and `1000`) own the mount path inside the container.
+
+
 
 
 

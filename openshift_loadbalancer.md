@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -10,8 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
 
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Classic: Setting up basic load balancing with an NLB 1.0
 {: #loadbalancer}
@@ -494,6 +495,5 @@ publicVLAN=2234967
     4. In the **Labels** section of the output, verify that the public or private VLAN is the VLAN that you designated in previous steps.
 
 
-</staging components>
 
 

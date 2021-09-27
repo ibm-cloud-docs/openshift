@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -80,5 +80,9 @@ Manually set up your cluster to back up the internal registry to an {{site.data.
     4. From the [{{site.data.keyword.cloud_notm}} console resource list](https://cloud.ibm.com/resources), select your **Cloud Object Storage** instance.
     5. From the menu, click **Buckets**, then click the bucket that you used for your {{site.data.keyword.openshiftlong_notm}} cluster.
     6. Review the recent **Objects** to see your backed up images from the internal registry of your {{site.data.keyword.openshiftlong_notm}} cluster.
+
+
+
+
 
 

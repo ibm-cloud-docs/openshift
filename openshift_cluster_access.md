@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-27"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -10,7 +10,8 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+{{site.data.keyword.attribute-definition-list}}
+  
 
 
 # Accessing {{site.data.keyword.openshiftshort}} clusters
@@ -1047,4 +1048,8 @@ Many cluster add-ons, plug-ins, and other third-party extensions use admission c
 **I need help with a broken webhook. What can I do?**
 
 See [Cluster cannot update because of broken webhook](/docs/containers?topic=containers-webhooks_update).
+
+
+
+
 

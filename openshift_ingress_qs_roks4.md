@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-27"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -10,7 +10,8 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+{{site.data.keyword.attribute-definition-list}}
+  
 
 
 # Quick start for Ingress
@@ -94,5 +95,9 @@ Quickly expose your app to the Internet by creating an Ingress resource.
     http://<ingress_subdomain>/<app_path>
     ```
     {: codeblock}
+
+
+
+
 
 

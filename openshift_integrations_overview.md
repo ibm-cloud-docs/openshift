@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-27"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -10,7 +10,8 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+{{site.data.keyword.attribute-definition-list}}
+  
 
 # Supported IBM Cloud and third-party integrations
 {: #supported_integrations}
@@ -37,5 +38,9 @@ Learn more about the following {{site.data.keyword.IBM}}, {{site.data.keyword.cl
 {: summary="The rows are read from left to right. The first column is the service that you might integrate with your cluster. The second column is the description of the service."}
 {: caption="{{site.data.keyword.cloud_notm}} and third-party integrations for {{site.data.keyword.openshiftlong}} clusters"}
 {: summary=""}
+
+
+
+
 
 

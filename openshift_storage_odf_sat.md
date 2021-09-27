@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-09-27"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, satellite
 
@@ -10,7 +10,8 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}} 
+{{site.data.keyword.attribute-definition-list}}
+ 
 
 
 # Deploying OpenShift Data Foundation on {{site.data.keyword.satelliteshort}} clusters
@@ -555,6 +556,10 @@ Refer to the following parameters when you use the add-on or operator in {{site.
 | `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
 {: caption="Parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
+
+
+
+
 
 
 

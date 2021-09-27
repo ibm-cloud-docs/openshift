@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,7 +11,9 @@ content-type: troubleshoot
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Debugging common CLI issues with clusters
 {: #ts_clis}
@@ -137,6 +139,8 @@ You need to download the `admin` configuration files for your cluster in order t
 
 Run `ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin` and try again.
 {: tsResolve}
+
+
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-27"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -10,7 +10,8 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+{{site.data.keyword.attribute-definition-list}}
+  
 
 # Encrypting routes with keys stored in {{site.data.keyword.hscrypto}}
 {: #hpcs-router}
@@ -402,5 +403,9 @@ After you obtain the certificate from your certificate authority, use the certif
 {: #hpcs-versions}
 
 For the list of changes for each {{site.data.keyword.cloud_notm}} HPCS Router add-on version, see the [{{site.data.keyword.cloud_notm}} HPCS Router add-on changelog](/docs/openshift?topic=openshift-hpcs-router-changelog).
+
+
+
+
 
 

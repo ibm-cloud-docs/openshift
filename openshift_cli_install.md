@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-27"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -10,7 +10,8 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+{{site.data.keyword.attribute-definition-list}}
+  
 
 
 # Installing the OpenShift CLI
@@ -359,5 +360,9 @@ To launch and use the {{site.data.keyword.cloud-shell_notm}}:
     2. In the **Actions...** drop-down list, select **Connect via CLI**.
     3. Follow the instructions.
     <p class="note">If you cannot or do not want to open the {{site.data.keyword.openshiftshort}} console, you can set the cluster context with the `--admin` flag through the CLI.<p class="pre"><code>ibmcloud oc cluster config -c <cluster_name_or_ID> --admin</code></p></p>
+
+
+
+
 
 

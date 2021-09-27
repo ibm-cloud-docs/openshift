@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-27"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -10,7 +10,8 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+{{site.data.keyword.attribute-definition-list}}
+  
 
 
 # Developing apps to run on OpenShift
@@ -822,6 +823,9 @@ To set up configuration files with Kustomize:
     persistentvolumeclaim "staging-kustomtest-pvc-v2" deleted
     ```
     {: screen}
+
+
+
 
 
 

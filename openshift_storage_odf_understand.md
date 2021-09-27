@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-09-27"
 
 keywords: openshift, openshift data foundation, openshift container storage, vpc, roks, satellite
 
@@ -10,7 +10,8 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+{{site.data.keyword.attribute-definition-list}}
+  
 
 # Understanding OpenShift Data Foundation
 {: #ocs-storage-prep}
@@ -102,6 +103,10 @@ Virtual Private Cloud (VPC) clusters
 
 Classic clusters
 :   You can deploy ODF by using local disks on your bare metal worker nodes. For more information, see [Deploying OpenShift Data Foundation on Classic clusters](/docs/openshift?topic=openshift-deploy-odf-classic).
+
+
+
+
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-27"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -10,7 +10,8 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}} 
+{{site.data.keyword.attribute-definition-list}}
+ 
 
 # Setting up the {{site.data.keyword.redhat_notm}} Marketplace
 {: #rh-marketplace}
@@ -77,4 +78,8 @@ With [{{site.data.keyword.redhat_full}} Marketplace](https://marketplace.redhat.
 4. After your worker nodes are reloaded, verify that your cluster is listed in your [{{site.data.keyword.redhat_notm}} Marketplace workspace](https://marketplace.redhat.com/en-us/workspace/clusters){: external}.
 
 Now, you can install and manage software from {{site.data.keyword.redhat_notm}} Marketplace in your cluster. For more information, see the [{{site.data.keyword.redhat_notm}} Marketplace documentation](https://marketplace.redhat.com/en-us/documentation/){: external}.
+
+
+
+
 

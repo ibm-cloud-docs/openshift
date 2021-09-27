@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhos, rhoks, strongswan, ipsec, on-prem
 
@@ -10,8 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
 
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Setting up classic VPN connectivity
 {: #vpn}
@@ -680,5 +681,7 @@ To set up a Virtual Router Appliance,
 
 If you have an existing router appliance and then add a cluster, the new portable subnets that are ordered for the cluster are not configured on the router appliance. In order to use networking services, you must enable routing between the subnets on the same VLAN by [enabling VLAN spanning or VRF](/docs/openshift?topic=openshift-plan_clusters#worker-worker).
 {: important}
+
+
 
 

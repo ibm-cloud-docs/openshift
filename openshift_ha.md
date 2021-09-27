@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos, disaster recovery, dr, ha, hadr
 
@@ -10,8 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
 
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Understanding high availability and disaster recovery for {{site.data.keyword.openshiftlong_notm}}
 {: #ha}

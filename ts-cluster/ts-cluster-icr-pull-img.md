@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,7 +11,9 @@ content-type: troubleshoot
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Why can't the cluster pull images from {{site.data.keyword.registrylong_notm}} during creation?
 {: #ts_image_pull_create}
@@ -47,6 +49,8 @@ Steps:
     {: pre}
 
 2. [Use the `ibmcloud oc cluster pull-secret apply` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_pull_secret_apply) to re-create an image pull secret with the appropriate registry credentials.
+
+
 
 
 

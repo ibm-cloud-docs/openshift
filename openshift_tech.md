@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-27"
 
 keywords: openshift, roks, rhoks, rhos, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
 
@@ -10,7 +10,8 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+{{site.data.keyword.attribute-definition-list}}
+  
 
 # Architecture and dependencies of the service
 {: #service-arch}
@@ -275,5 +276,9 @@ Review the list of 3rd party services that {{site.data.keyword.openshiftlong_not
 | Let's Encrypt | This service is used as the Certificate authority to generate SSL certificates for customer owned public endpoints. All generated certificates are managed in {{site.data.keyword.cloudcerts_short}}.|
 {: caption="{{site.data.keyword.openshiftlong_notm}} dependencies to third-party services." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the service. The second column is a description of the service."}
+
+
+
+
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-27"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc, roks
 
@@ -10,7 +10,8 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+{{site.data.keyword.attribute-definition-list}}
+  
 
 # Deploying an app on OpenShift Data Foundation
 {: #odf-deploy-app}
@@ -134,5 +135,9 @@ After you install the OpenShift Data Foundation add-on for your {{site.data.keyw
 
 
 <br />
+
+
+
+
 
 

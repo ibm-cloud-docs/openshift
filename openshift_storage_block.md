@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,8 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
 
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Storing data on classic IBM Cloud {{site.data.keyword.blockstorageshort}}
 {: #block_storage}
@@ -2077,8 +2078,6 @@ The deletion process might take up to 72 hours to complete.
 ibmcloud sl block volume-list
 ```
 {: pre}
-
-
 
 
 

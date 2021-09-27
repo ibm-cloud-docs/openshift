@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-27"
 
 keywords: openshift, noobaa, openshift container storage, openshift data foundation, storage classes
 
@@ -10,7 +10,8 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+{{site.data.keyword.attribute-definition-list}}
+  
 
 # Managing the Multi-Cloud Object Gateway
 {: #odf-manage-noobaa}
@@ -226,6 +227,10 @@ After you create backing stores and a bucket class, you can create an object buc
     oc get pods
     ```
     {: pre}
+
+
+
+
 
 
 

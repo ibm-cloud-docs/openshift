@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-27"
 
 keywords: openshift, openshift data foundation, openshift container storage, storage classes
 
@@ -10,7 +10,8 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+{{site.data.keyword.attribute-definition-list}}
+  
 
 # Storage class reference
 {: #ocs-sc-ref}
@@ -68,6 +69,10 @@ The ODF storage classes all support dynamic provisioning and are multizone capab
 {: tab-group="sc_ref"}
 {: class="simple-tab-table"}
 {: summary="The first column contains a feature of the storage class. The second column contains a brief description of the feature."}
+
+
+
+
 
 
 

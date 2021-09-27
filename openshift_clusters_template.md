@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-27"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -10,7 +10,8 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+{{site.data.keyword.attribute-definition-list}}
+  
 
 
 # Creating a cluster by using a {{site.data.keyword.bpfull_notm}} template
@@ -124,6 +125,10 @@ The {{site.data.keyword.bpshort}} template helps with the initial creation. Afte
 To access your cluter, you must [set up a VPN connection](/docs/openshift?topic=openshift-access_cluster#access_vpn_openshift). To read an IBM blog about setting up a VPN connection, see [Setting up a VPN](https://cms.ibm.com/cloud/blog/setting-up-a-vpn-between-ibm-cloud-vpc-and-your-home-office){: external}.
 
 To fully [remove](/docs/containers?topic=containers-remove) your cluster and the resources created by the secure cluster template, make sure to [destroy your workspace in {{site.data.keyword.bpshort}}](/docs/schematics?topic=schematics-workspace-setup#del-workspace). Removing the cluster and not removing the workspace in {{site.data.keyword.bpshort}} doesn't remove all the resources this template deploys.
+
+
+
+
 
 
 

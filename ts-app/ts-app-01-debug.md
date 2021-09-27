@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,7 +11,9 @@ content-type: troubleshoot
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Debugging app deployments
 {: #debug_apps}
@@ -35,7 +37,7 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
     ```
     {: pre}
 
-2. [Check whether the containers are stuck in the `ContainerCreating` state](/docs/containers?topic=containers-readonly_nodes).
+2. [Check whether the containers are stuck in the `ContainerCreating` state](/docs/openshift?topic=openshift-readonly_nodes).
 
 3. Check whether the cluster is in the `Critical` state. If the cluster is in a `Critical` state, check the firewall rules and verify that the master can communicate with the worker nodes.
 
@@ -99,6 +101,8 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
         curl <host_name>.<domain>
         ```
         {: pre}
+
+
 
 
 

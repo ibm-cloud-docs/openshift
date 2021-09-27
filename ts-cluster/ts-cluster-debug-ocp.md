@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -236,5 +236,9 @@ ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
 Try to use the {{site.data.keyword.openshiftshort}} component again.
 
 If the error still exists, see [Feedback, questions, and support](/docs/openshift?topic=openshift-get-help).
+
+
+
+
 
 

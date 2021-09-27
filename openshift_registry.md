@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-27"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -10,7 +10,8 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+{{site.data.keyword.attribute-definition-list}}
+  
 
 
 
@@ -1308,6 +1309,9 @@ To add private registries, edit the global `pull-secret` in the `openshift-confi
         vi /.docker/config.json
         ```
         {: pre}
+
+
+
 
 
 

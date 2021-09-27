@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-27"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -10,7 +10,8 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+{{site.data.keyword.attribute-definition-list}}
+  
 
 
 # Deploying apps in OpenShift clusters
@@ -344,7 +345,6 @@ To run a workload on a GPU machine,
 
 Now that you deployed a test GPU workload, you might want to set up your cluster to run a tool that relies on GPU processing, such as [IBM Maximo Visual Inspection](https://www.ibm.com/products/maximo/remote-monitoring){: external}.
 
-
 ## Deploying Cloud Paks, licensed software, and other integrations
 {: #openshift_app_cloud_paks}
 
@@ -394,5 +394,7 @@ The Application console is available from the dropdown menu in the **OpenShift C
 {: #openshift_console311_cluster_console}
 
 The Cluster console is available from the dropdown menu in the **OpenShift Container Platform** menu bar. For cluster-wide administrators across all the projects in the cluster, you can manage projects, service accounts,RBAC roles, role bindings, and resource quotas. You can also see the status and events for resources within the cluster in a combined view. For more information, see the [{{site.data.keyword.openshiftshort}} Web Console Walkthrough](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.
+
+
 
 

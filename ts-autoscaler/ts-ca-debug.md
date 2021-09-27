@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,7 +11,9 @@ content-type: troubleshoot
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Debugging the cluster autoscaler
 {: #debug_cluster_autoscaler}
@@ -230,6 +232,8 @@ Optional: If you completed the debugging steps and your cluster still does not s
 {: #ca-debug-more}
 
 Monitor the cluster autoscaler activities in your cluster to see if the issue is resolved. If you still experience issues, see [Feedback, questions, and support](/docs/openshift?topic=openshift-get-help).
+
+
 
 
 

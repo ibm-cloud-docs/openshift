@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-27"
 
 keywords: back up, restore, changelog, roks, openshift
 
@@ -10,7 +10,10 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
+
 
 # Back up and restore Helm chart 
 {: #backup_restore_changelog}
@@ -18,7 +21,7 @@ subcollection: openshift
 View information for updates to the back up and restore Helm chart in your {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
-Refer to the following tables for a summary of changes for each version of the [back up and restore Helm chart](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore).
+Refer to the following tables for a summary of changes for each version of the [back up and restore Helm chart](/docs/containers?topic=containers-utilities#ibmcloud-backup-restore).
 
 | `ibmcloud-backup-restore` Helm chart version | Supported? | Cluster version support |
 | -------------------- | -----------|--------------------------- |
@@ -39,6 +42,9 @@ The following table shows the changes that are included in version `1.0.5` of th
 - Images are now signed.  
 - The `ibmcloud-backup-restore` Helm chart now pulls the universal base image (UBI) from the proxy image registry.  
 - Resources that are deployed by the `ibmcloud-backup-restore` Helm chart are now linked with the corresponding source code and build URLs.  
+
+
+
 
 
 

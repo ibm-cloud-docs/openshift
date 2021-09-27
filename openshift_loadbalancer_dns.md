@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -10,8 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
 
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Classic: Registering a DNS subdomain for an NLB
 {: #loadbalancer_hostname}
@@ -314,6 +315,5 @@ ibmcloud oc nlb-dns monitor enable --cluster <cluster_name_or_id> --nlb-host <ho
 {: pre}
 
 
-</staging components>
 
 

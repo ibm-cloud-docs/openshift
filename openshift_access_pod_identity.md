@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,8 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
 
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Authorizing pods in your cluster to {{site.data.keyword.cloud_notm}} services with IAM trusted profiles
 {: #pod-iam-identity}
@@ -266,5 +267,7 @@ To configure your application pods to authenticate with {{site.data.keyword.clou
     curl -X GET https://containers.cloud.ibm.com/global/v2/classic/getClusters -H “authorization: bearer $TOKEN”
     ```
     {: pre}
+
+
 
 

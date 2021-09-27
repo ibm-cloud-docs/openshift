@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,7 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Managing security and compliance with {{site.data.keyword.openshiftshort}}
 {: #manage-security-compliance}
@@ -49,6 +51,9 @@ Review the following goals for {{site.data.keyword.openshiftlong_notm}}.
 - **Check whether {{site.data.keyword.openshiftshort}} clusters are enabled with {{site.data.keyword.la_full_notm}}.** For more information, see [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging).
 - **Check whether {{site.data.keyword.openshiftshort}} Ingress is configured only with TLS v1.2 for all inbound traffic.** For more information, see [About Ingress](/docs/openshift?topic=openshift-ingress-about-roks4).
 - **Check whether the {{site.data.keyword.openshiftshort}} version is up-to-date.** You can review the cluster version by selecting your cluster in the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or in the command line by running `ibmcloud oc cluster get -c <cluster_name_or_ID>`. For more information, see the [Version information and update actions](/docs/openshift?topic=openshift-openshift_versions).
+
+
+
 
 
 

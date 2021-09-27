@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-23"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -10,8 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
 
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Release notes
 {: #rel-notes}
@@ -175,3 +176,7 @@ Review the release notes for 30 August 2021.
 
 Worker node fix pack update
 :   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.43_1554_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4643_1554), [`4.7.24_1530_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4724_1530), and [`3.11.501_1602_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311501_1602).
+
+
+
+

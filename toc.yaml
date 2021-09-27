@@ -17,10 +17,10 @@ toc:
         - topicgroup:
             label: About
             topics: 
-              - openshift_overview.md
+              - overview.md
               - openshift_why.md
-              - openshift_providers.md
-              - openshift_responsibilities.md
+              - providers.md
+              - responsibilities.md
         - topicgroup:
             label: Use cases
             topics:
@@ -33,9 +33,9 @@ toc:
         - topicgroup:
             label: Learning paths
             topics:
-              - openshift_path_admin.md
-              - openshift_path_dev.md
-        - openshift_release_notes_2.md
+              - path-admin.md
+              - path-dev.md
+        - release_notes_2.md
   - navgroup: 
       id: tutorial
       topics:
@@ -64,18 +64,18 @@ toc:
           label: Installing the CLI and API
           topics:
             - openshift_cli_install.md
-            - openshift_api_install.md
+            - api-install.md
       - topicgroup:
           label: Planning your cluster environment
           topics:
-            - openshift_kube_strategy.md
-            - openshift_cluster_plan_network.md
-            - openshift_cluster_plan_ha.md
+            - kube-strategy.md
+            - cluster-plan-network.md
+            - cluster-plan-ha.md
             - openshift_worker_plan.md
       - topicgroup: 
           label: Creating and accessing clusters
           topics:
-            - openshift_clusters.md
+            - cluster-create.md
             - openshift_clusters_template.md
             - satellite_clusters.md
             - openshift_cluster_access.md
@@ -83,43 +83,43 @@ toc:
           label: Managing the cluster and worker node lifecycle
           topics:
             - openshift_worker_add.md
-            - openshift_cluster_scaling.md
+            - cluster-scaling.md
             - openshift_cluster_update.md
-            - openshift_performance.md
-            - openshift_cluster_remove.md
+            - performance.md
+            - cluster-remove.md
       - topicgroup: 
           label: Managing cluster costs
           topics:
-            - openshift_costs.md
-            - openshift_costs_reserved.md
+            - costs.md
+            - costs-reserved.md
       - topicgroup:
           label: Enhancing security
           topics:
-            - openshift_secure.md
+            - secure.md
             - openshift_tech.md
       - topicgroup:
           label: Managing access control
           topics:
-            - openshift_access_overview.md
-            - openshift_access_apikey.md
-            - openshift_access_iam_rbac.md
-            - openshift_access_pod_identity.md
+            - access-overview.md
+            - access-apikey.md
+            - access-iam-rbac.md
+            - access-pod-identity.md
       - topicgroup:
           label: Securing cluster workloads
           topics:
-            - openshift_encrypt.md
+            - encrypt.md
             - openshift_scc.md
-            - openshift_pod_priority.md
-            - openshift_kubeapi_priority.md
+            - pod-priority.md
+            - kubeapi-priority.md
       - topicgroup: 
           label: Securing the cluster network
           topics:
-          - openshift_firewall.md
-          - openshift_edge.md
-          - openshift_network_policy.md
-          - openshift_vpc_network_policy.md
-          - openshift_vpc_firewall.md
-      - openshift_manage_scc.md
+          - firewall.md
+          - edge.md
+          - network-policy.md
+          - vpc-policy.md
+          - vpc-firewall.md
+      - manage-scc.md
       - openshift_compliance_operator.md
       - topicgroup:
           label: Managing the cluster network
@@ -127,36 +127,36 @@ toc:
           - topicgroup:
               label: Classic clusters
               topics:
-                - openshift_subnets.md
-                - openshift_network_cluster.md
-                - openshift_vpn.md
-                - openshift_static_routes.md
+                - subnets.md
+                - network-cluster.md
+                - vpn.md
+                - static-routes.md
           - topicgroup:
               label: VPC clusters
               topics:
-                - openshift_vpc_subnets.md
-                - openshift_vpc_vpn.md
+                - vpc-subnets.md
+                - vpc-vpn.md
                 - openshift_static_routes.md
       - topicgroup: 
           label: Logging and monitoring
           topics:
             - openshift_health_log.md
             - openshift_health_monitor.md
-            - openshift_health_audit.md
+            - health-audit.md
       - topicgroup: 
           label: Setting up an image build pipeline
           topics:
             - openshift_registry.md
-            - openshift_cicd.md
+            - cicd.md
       - topicgroup:
           label: Developing and deploying apps
           topics:
-            - openshift_app_plan.md
-            - openshift_images.md
+            - app-plan.md
+            - images.md
             - openshift_app.md
             - openshift_app_deploy.md
-            - openshift_nodeport.md
-            - openshift_app_update.md
+            - nodeport.md
+            - app-update.md
       - topicgroup:
           label: Exposing apps
           topics:
@@ -170,12 +170,12 @@ toc:
             - topicgroup:
                 label: Exposing apps with load balancers
                 topics: 
-                  - openshift_loadbalancer_qs.md
-                  - openshift_vpc_lbaas.md
-                  - openshift_loadbalancer_about.md
-                  - openshift_loadbalancer.md
-                  - openshift_loadbalancer_v2.md
-                  - openshift_loadbalancer_dns.md
+                  - lb-qs.md
+                  - vpc-lbaas.md
+                  - lb-about.md
+                  - lb.md
+                  - lb-v2.md
+                  - lb-dns.md
             - topicgroup:
                 label: Exposing apps with Ingress
                 topics:
@@ -186,13 +186,14 @@ toc:
       - topicgroup:
           label: Storing data on persistent storage
           topics: 
-            - openshift_storage_plan.md
-            - openshift_storage_basics.md
-            - openshift_storage_file.md
-            - openshift_storage_block.md
-            - openshift_storage_block_vpc.md
-            - openshift_storage_object.md
-            - openshift_storage_portworx.md
+            - storage-plan.md
+            - storage-basics.md
+            - storage-file.md
+            - storage-block.md
+            - storage-block-vpc.md
+            - storage-object.md
+            - storage-portworx.md
+            - storage-vpc-block-driver.md
             - topicgroup:
                 label: Storing data on OpenShift Data Foundation
                 topics:
@@ -205,20 +206,20 @@ toc:
                   - openshift_storage_noobaa.md
                   - openshift_storage_ocs_sc_ref.md
                   - openshift_storage_vpc_block_driver.md
-                  - openshift_storage_br.md
-                  - openshift_storage_utilities.md
+            - storage-utilities.md
+            - storage-br.md
       - topicgroup:
           label: Enhancing your cluster with Cloud Paks, Operators, and integrations
           topics:
-            - openshift_integrations_partnerships.md
-            - openshift_integrations_ibm_third_party.md
+            - integrations-partnerships.md
+            - integrations-ibm-third-party.md
             - openshift_integrations_cloud_paks.md
             - openshift_integrations_operators.md
             - openshift_integrations_rh_marketplace.md
-            - openshift_integrations_addons.md
-            - openshift_integrations_helm.md
-            - openshift_integrations_service_binding.md
-      - openshift_ha.md
+            - integrations-addons.md
+            - integrations-helm.md
+            - integrations-svcbind.md
+      - ha.md
   - navgroup: 
       id: reference
       topics:
@@ -237,15 +238,15 @@ toc:
       - topicgroup:
           label: CLI plug-in reference
           topics:
-            - openshift_cli_ks_plugin.md
-            - openshift_cli_changelog.md
-            - openshift_observability_reference.md
+            - cli-ks-plugin.md
+            - cli-changelog.md
+            - observability-reference.md
       - topicgroup:
           label: Version history
           topics:
             - openshift_versions.md
             - openshift_versions_changelog.md
-            - openshift_benchmarks.md
+            - benchmarks.md
             - openshift_versions_autoscaler.md
             - openshift_versions_vpc_block_addon.md
             - openshift_versions_object.md
@@ -259,11 +260,11 @@ toc:
           label: IAM and Activity Tracker events
           topics:
             - openshift_users_access_ref.md
-            - openshift_at_events.md
-            - openshift_api_at_iam.md
-      - openshift_locations.md
+            - at-events.md
+            - api-at-iam.md
+      - locations.md
       - openshift_integrations_overview.md
-      - openshift_service_settings.md
+      - service-settings.md
       - topicgroup:
           label: Related links
           topics:
@@ -276,165 +277,163 @@ toc:
   - navgroup:
       id: help
       topics:
-        - faqs.md
+        - .md
         - topicgroup:
             label: Troubleshooting
             topics:
-              - get_help.md
-              - openshift_ts_debug_tool.md
+              - get-help.md
+              - ts-debug-tool.md
               - topicgroup:
                   label: Clusters and masters
                   topics:
-                    - ts-cluster/ts-cluster-debug.md
-                    - ts-cluster/ts-cluster-master.md
-                    - ts-cluster/ts-cluster-debug-ocp.md
-                    - openshift_states_cluster.md
-                    - ts-cluster/ts-cluster-cli.md
-                    - ts-cluster/ts-cluster-create-delete.md
-                    - ts-cluster/ts-cluster-cos-bucket.md
-                    - ts-cluster/ts-cluster-no-resources.md
-                    - ts-cluster/ts-cluster-vpn.md
-                    - ts-cluster/ts-cluster-no-vpc.md
-                    - ts-cluster/ts-cluster-icr-pull-img.md
-                    - ts-cluster/ts-cluster-webhook.md
-                    - ts-cluster/ts-cluster-portieris.md
-                    - ts-cluster/ts-cluster-pending.md
-                    - ts-cluster/ts-cluster-view-work.md
+                    - ts-cluster-debug.md
+                    - ts-cluster-master.md
+                    - ts-cluster-debug-ocp.md
+                    - states-cluster.md
+                    - ts-cluster-cli.md
+                    - ts-cluster-create-delete.md
+                    - ts-cluster-cos-bucket.md
+                    - ts-cluster-no-resources.md
+                    - ts-cluster-vpn.md
+                    - ts-cluster-no-vpc.md
+                    - ts-cluster-icr-pull-img.md
+                    - ts-cluster-webhook.md
+                    - ts-cluster-portieris.md
+                    - ts-cluster-pending.md
+                    - ts-cluster-view-work.md
               - topicgroup:
                   label: Worker nodes
                   topics:
-                    - ts-worker/ts-worker-debug.md
-                    - ts-worker/ts-worker-debug-kube-api.md
-                    - openshift_states_workers.md
-                    - ts-worker/ts-worker-common-issues.md
-                    - ts-worker/ts-worker-create-delete.md
-                    - ts-worker/ts-worker-autorebalance.md
-                    - ts-worker/ts-worker-bm-instance-id.md
-                    - ts-worker/ts-worker-delete-pods-fail.md
-                    - ts-worker/ts-worker-dupe-nodes.md
-                    - ts-worker/ts-worker-invalid-vlan.md
-                    - ts-worker/ts-worker-pod-timeout.md
-                    - ts-worker/ts-worker-ssh-fail.md
-              - ts-autoscaler/ts-ca-debug.md
+                    - ts-worker-debug.md
+                    - ts-worker-debug-kube-api.md
+                    - states-workers.md
+                    - ts-worker-common-issues.md
+                    - ts-worker-create-delete.md
+                    - ts-worker-autorebalance.md
+                    - ts-worker-bm-instance-id.md
+                    - ts-worker-delete-pods-fail.md
+                    - ts-worker-dupe-nodes.md
+                    - ts-worker-invalid-vlan.md
+                    - ts-worker-pod-timeout.md
+                    - ts-worker-ssh-fail.md
+              - ts-ca-debug.md
               - topicgroup:
                   label: Cluster network
                   topics:
-                    - ts-network/ts-network-roks-subdomain-missing.md
-                    - ts-network/ts-network-strongswan-vpn.md
-                    - ts-network/ts-network-strongswan-install-new.md
-                    - ts-network/ts-network-strongswan-network-nodes.md
+                    - ts-network-roks-subdomain-missing.md
+                    - ts-network-strongswan-vpn.md
+                    - ts-network-strongswan-install-new.md
+                    - ts-network-strongswan-network-nodes.md
               - topicgroup:
                   label: Apps and services
                   topics:
-                    - ts-app/ts-app-01-debug.md
-                    - ts-app/ts-app-02-build.md
-                    - ts-app/ts-app-03-docker-pull.md
-                    - ts-app/ts-app-04-timeout-build.md
-                    - ts-app/ts-app-14-ocr-vpc.md
-                    - ts-app/ts-app-05-scc.md
-                    - ts-app/ts-app-06-imgpull.md
-                    - ts-app/ts-app-07-container-start.md
-                    - ts-app/ts-app-08-pod-pending.md
-                    - ts-app/ts-app-09-crashloop.md
-                    - ts-app/ts-app-10-pod-fail.md
-                    - ts-app/ts-app-11-svc-not-found.md
-                    - ts-app/ts-app-12-svc-key.md
-                    - ts-app/ts-app-15-helm-install.md
-                    - ts-app/ts-app-16-oc-debug-pod.md
+                    - ts-app-01-debug.md
+                    - ts-app-02-build.md
+                    - ts-app-03-docker-pull.md
+                    - ts-app-04-timeout-build.md
+                    - ts-app-14-ocr-vpc.md
+                    - ts-app-05-scc.md
+                    - ts-app-06-imgpull.md
+                    - ts-app-07-container-start.md
+                    - ts-app-08-pod-pending.md
+                    - ts-app-09-crashloop.md
+                    - ts-app-10-pod-fail.md
+                    - ts-app-11-svc-not-found.md
+                    - ts-app-12-svc-key.md
+                    - ts-app-15-helm-install.md
+                    - ts-app-16-oc-debug-pod.md
               - topicgroup:
                   label: Managed add-ons
                   topics:
-                    - ts-addons/ts-addon-debug.md
+                    - ts-addon-debug.md
               - topicgroup:
                   label: Load balancers
                   topics: 
-                    - ts-lbs/ts-lb-app.md
-                    - ts-lbs/ts-lb-deploy.md
-                    - ts-lbs/ts-lb-openvpn.md
-                    - ts-lbs/ts-lb-tainted-nodes.md
-                    - ts-lbs/ts-lb-roks-vpc-status.md
-                    - ts-lbs/ts-lb-vpc-app.md
-                    - ts-lbs/ts-lb-vpc-no-ips.md
+                    - ts-lb-app.md
+                    - ts-lb-deploy.md
+                    - ts-lb-openvpn.md
+                    - ts-lb-tainted-nodes.md
+                    - ts-lb-roks-vpc-status.md
+                    - ts-lb-vpc-app.md
+                    - ts-lb-vpc-no-ips.md
               - topicgroup:
                   label: Ingress and routers
                   topics:
-                    - ts-ingress/ts-ingress-status.md
-                    - ts-ingress/ts-ingress-debug-roks4.md
-                    - ts-ingress/ts-ingress-app.md
-                    - ts-ingress/ts-ingress-vpc-app.md
-                    - ts-ingress/ts-ingress-roks-no-subdomain-create.md
-                    - ts-ingress/ts-ingress-subdomain-dupe-name.md
-                    - ts-ingress/ts-ingress-no-secret.md
-                    - ts-ingress/ts-ingress-secret-expiry.md
-                    - ts-ingress/ts-ingress-vpc-router-zone.md
-                    - ts-ingress/ts-ingress-router-zone.md
-                    - ts-ingress/ts-ingress-nested-ctm.md
-                    - ts-ingress/ts-ingress-operator-degraded.md
+                    - ts-ingress-status.md
+                    - ts-ingress-debug-roks4.md
+                    - ts-ingress-app.md
+                    - ts-ingress-vpc-app.md
+                    - ts-ingress-roks-no-subdomain-create.md
+                    - ts-ingress-subdomain-dupe-name.md
+                    - ts-ingress-no-secret.md
+                    - ts-ingress-secret-expiry.md
+                    - ts-ingress-vpc-router-zone.md
+                    - ts-ingress-router-zone.md
+                    - nested-ctm.md
+                    - ts-ingress-operator-degraded.md
               - topicgroup:
                   label: File Storage
                   topics:
-                    - ts-storage/ts-storage-debug-file.md
-                    - ts-storage/ts-storage-pvc-fail-permissions.md
-                    - ts-storage/ts-storage-file-block-pvc-pending.md
-                    - ts-storage/ts-storage-file-app.md
-                    - ts-storage/ts-storage-file-group-id-fail.md
-                    - ts-storage/ts-storage-file-nonroot-nfs-mount.md
-                    - ts-storage/ts-storage-file-nonroot.md
-                    - ts-storage/ts-storage-file-readonly.md
-                    - ts-storage/ts-storage-feedback.md
+                    - ts-storage-debug-file.md
+                    - ts-storage-pvc-fail-permissions.md
+                    - ts-storage-file-block-pvc-pending.md
+                    - ts-storage-file-app.md
+                    - ts-storage-file-group-id-fail.md
+                    - ts-storage-file-nonroot-nfs-mount.md
+                    - ts-storage-file-nonroot.md
+                    - ts-storage-file-readonly.md
+                    - ts-storage-feedback.md
               - topicgroup:
                   label: Block Storage
                   topics:
-                    - ts-storage/ts-storage-debug-block.md
-                    - link:
-                        label: What permissions do I need to manage storage and create PVCs?
-                        href: https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions
-                    - ts-storage/ts-storage-block-app-pvc.md
-                    - ts-storage/ts-storage-block-mount-wrong-fs.md
-                    - ts-storage/ts-storage-block-read-only.md
-                    - ts-storage/ts-storage-block-throttling.md
-                    - ts-storage/ts-storage-vpc-block-api-key.md
-                    - ts-storage/ts-storage-block-not-attached.md
+                    - ts-storage-debug-block.md
+                    - ts-storage-block-app-pvc.md
+                    - ts-storage-block-mount-wrong-fs.md
+                    - ts-storage-block-read-only.md
+                    - ts-storage-block-throttling.md
+                    - ts-storage-vpc-block-api-key.md
+                    - ts-storage-block-not-attached.md
               - topicgroup:
                   label: Object Storage
                   topics:
-                    - ts-storage/ts-storage-debug-cos.md
-                    - link:
-                        label: What permissions do I need to manage storage and create PVCs?
-                        href: https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions)
-                    - ts-storage/ts-storage-object-access-bucket.md
-                    - ts-storage/ts-storage-object-helm-fails.md
-                    - ts-storage/ts-storage-object-nonroot.md
-                    - ts-storage/ts-storage-object-op-not-permitted.md
-                    - ts-storage/ts-storage-object-ownership-mountpath.md
-                    - ts-storage/ts-storage-object-plugin-fails.md
-                    - ts-storage/ts-storage-object-pvc-fails.md
-                    - ts-storage/ts-storage-object-pvc-fails-s3fs-iam-ep.md
-                    - ts-storage/ts-storage-object-pvc-pending.md
-                    - ts-storage/ts-storage-object-pvc-pod-fail-secret.md
-                    - ts-storage/ts-storage-object-transport-ep.md
+                    - ts-storage-debug-cos.md
+                    - ts-storage-object-access-bucket.md
+                    - ts-storage-object-helm-fails.md
+                    - ts-storage-object-nonroot.md
+                    - ts-storage-object-op-not-permitted.md
+                    - ts-storage-object-ownership-mountpath.md
+                    - ts-storage-object-plugin-fails.md
+                    - ts-storage-object-pvc-fails.md
+                    - ts-storage-object-pvc-fails-s3fs-iam-ep.md
+                    - ts-storage-object-pvc-pending.md
+                    - ts-storage-object-pvc-pod-fail-secret.md
+                    - ts-storage-object-transport-ep.md
               - topicgroup:
                   label: Portworx Storage
                   topics:
-                  - ts-storage/ts-storage-debug-portworx.md
+                  - ts-storage-debug-portworx.md
                   - link:
                       label: What permissions do I need to manage storage and create PVCs?
                       href: https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions
-                  - ts-storage/ts-storage-px-debug.md
-                  - ts-storage/ts-storage-px-encryption-fails.md
+                  - ts-storage-px-debug.md
+                  - ts-storage-px-encryption-fails.md
               - topicgroup:
                   label: OpenShift Data Foundation
                   topics:
-                  - ts-storage/ts-storage-debug-ocs.md
+                  - ts-storage-debug-ocs.md
                   - link:
                       label: What permissions do I need to manage storage and create PVCs?
                       href: https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions
-                  - ts-storage/ts-ocs-storageclass.md
-                  - ts-storage/ts-storage-ocs-install.md
-                  - ts-storage/ts-storage-ocs-pending.md
-                  - ts-storage/ts-storage-ocs-progressing.md
-                  - ts-storage/ts-storage-ocs-missing-pods.md
-                  - ts-storage/ts-storage-ocs-unresolved.md
-        - openshift_release_notes.md
-        - openshift_limitations.md
+                  - ts-ocs-storageclass.md
+                  - ts-storage-ocs-install.md
+                  - ts-storage-ocs-pending.md
+                  - ts-storage-ocs-progressing.md
+                  - ts-storage-ocs-missing-pods.md
+                  - ts-storage-ocs-unresolved.md
+        - release-notes.md
+        - limitations.md
         - sitemap.md
+
+
+
+

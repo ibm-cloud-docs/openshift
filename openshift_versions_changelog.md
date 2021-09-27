@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-23"
+lastupdated: "2021-09-27"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -10,7 +10,8 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+{{site.data.keyword.attribute-definition-list}}
+  
 
 # Version changelog
 {: #openshift_changelog}
@@ -30,6 +31,45 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.7 patch updates.
 {: shortdesc}
+
+### Changelog for worker node fix pack 4.7.31_1533_openshift, released 27 September 2021
+{: #4731_1533}
+
+The following table shows the changes that are included in the worker node fix pack patch update `4.7.31_1533_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Disk identification | NA | NA | Enhanced the disk identification logic to handle the case of 2+ partitions. |
+| Haproxy | 9c98dc5 | 07f1e9 | Updated image with fixes for [CVE-2021-22922](https://nvd.nist.gov/vuln/detail/CVE-2021-22922), [CVE-2021-22923](https://nvd.nist.gov/vuln/detail/CVE-2021-22923), [CVE-2021-22924](https://nvd.nist.gov/vuln/detail/CVE-2021-22924), [CVE-2021-36222](https://nvd.nist.gov/vuln/detail/CVE-2021-36222), and [CVE-2021-37750](https://nvd.nist.gov/vuln/detail/CVE-2021-37750). |
+|OpenShift Container Platform| 4.7.29 | 4.7.31 | See [changelogs](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-6-release-notes.html#ocp-4-7-31). |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.7.29_1531_openshift" caption-side="top"}
+
+### Changelog for master fix pack 4.7.30_1532_openshift, released 27 September 2021
+{: #4730_1532}
+
+The following table shows the changes that are included in the master fix pack patch update `4.7.30_1532_openshift`. Master patch updates are applied automatically. 
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Calico | v3.19.1 | v3.19.3 | See the [Calico release notes](https://docs.projectcalico.org/releases). |
+| Calico Operator | v1.17.3 | v1.17.8 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.17.8). |
+| Gateway-enabled cluster controller | 1444 | 1510 | Updated image for [CVE-2021-3711](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3711) and [CVE-2021-3712](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3712). |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} plug-in and driver | v2.0.9 | v2.1.1 | Updated to use `Go` version `1.16.7`. Updated universal base image (UBI) to the latest `8.4-208` version to resolve CVEs. |
+| IBM Cloud Controller Manager | v1.20.10-1 | v1.20.11-1 | Updated to support the Kubernetes `1.20.11` release. Fixed a bug that may cause node initialization to fail when a new node reuses the name of a deleted node. |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} plug-in and monitor | 398 | 400 | Updated to use `Go` version `1.16.7`. Updated universal base image (UBI) to the latest `8.4-208` version to resolve CVEs. |
+| IBM Cloud RBAC Operator | 945df65 | e3cb629 | Updated to use `Go` version `1.16.7`. |
+| Load balancer and load balancer monitor for IBM Cloud Provider | 1510 | 1547 | Updated image for [CVE-2021-3711](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3711) and [CVE-2021-3712](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3712). |
+|OpenShift Container Platform| 4.7.23 | 4.7.30 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-30). |
+|OpenShift Container PlatformControl Plane Operator | v4.7.0-20210816 | v4.7.0-20210917 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20210917). |
+| {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.7.0-20210816 | v4.7.0-20210917 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20210917). |
+| {{site.data.keyword.openshiftlong_notm}} toolkit | 4.7.0+20210816 | 4.7.0+20210917 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20210917). |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.7.23_1529_openshift" caption-side="top"}
+
+
 
 ### Changelog for worker node fix pack 4.7.29_1531_openshift, released 13 September 2021
 {: #4729_1531}
@@ -247,6 +287,45 @@ The following table shows the changes that are included in the master fix pack p
 
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.6 patch updates.
 {: shortdesc}
+
+### Changelog for worker node fix pack 4.6.45_1557_openshift, released 27 September 2021
+{: #4645_1557}
+
+The following table shows the changes that are included in the worker node fix pack patch update `4.6.45_1557_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Disk identification | NA | NA | Enhanced the disk identification logic to handle the case of 2+ partitions. |
+| Haproxy | 9c98dc5 | 07f1e9 | Updated image with fixes for [CVE-2021-22922](https://nvd.nist.gov/vuln/detail/CVE-2021-22922), [CVE-2021-22923](https://nvd.nist.gov/vuln/detail/CVE-2021-22923), [CVE-2021-22924](https://nvd.nist.gov/vuln/detail/CVE-2021-22924), [CVE-2021-36222](https://nvd.nist.gov/vuln/detail/CVE-2021-36222), and [CVE-2021-37750](https://nvd.nist.gov/vuln/detail/CVE-2021-37750). |
+|OpenShift Container Platform| 4.6.44 | 4.6.45 | See [changelogs](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-45). |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.6.44_1555_openshift" caption-side="top"}
+
+### Changelog for master fix pack 4.6.44_1556_openshift, released 27 September 2021
+{: #4644_1556}
+
+The following table shows the changes that are included in the master fix pack patch update `4.6.44_1556_openshift`. Master patch updates are applied automatically. 
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Calico | v3.17.2 | v3.17.5 | See the [Calico release notes](https://docs.projectcalico.org/releases). |
+| Calico Operator | v1.13.4 | v1.13.9 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.13.9). |
+| Gateway-enabled cluster controller | 1444 | 1510 | Updated image for [CVE-2021-3711](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3711) and [CVE-2021-3712](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3712). |
+| IBM Cloud Block Storage plug-in and driver | v2.0.9 | v2.1.1 | Updated to use `Go` version `1.16.7`. Updated universal base image (UBI) to the latest `8.4-208` version to resolve CVEs. |
+| IBM Cloud Controller Manager | v1.19.14-1 | v1.19.15-1 | Updated to support the Kubernetes `1.19.15` release. Fixed a bug that may cause node initialization to fail when a new node reuses the name of a deleted node. |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} plug-in and monitor | 398 | 400 | Updated to use `Go` version `1.16.7`. Updated universal base image (UBI) to the latest `8.4-208` version to resolve CVEs. |
+| IBM Cloud RBAC Operator | 945df65 | e3cb629 | Updated to use `Go` version `1.16.7`. |
+| Load balancer and load balancer monitor for IBM Cloud Provider | 1510 | 1550 | Updated image for [CVE-2021-3711](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3711) and [CVE-2021-3712](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3712). |
+|OpenShift Container Platform| 4.6.42 | 4.6.44 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-44). |
+|OpenShift Container PlatformControl Plane Operator | v4.6.0-20210816 | v4.6.0-20210917 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20210917). |
+| {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.6.0-20210816 | v4.6.0-20210917 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20210917). |
+| {{site.data.keyword.openshiftlong_notm}} toolkit | 4.6.0+20210816 | 4.6.0+20210917 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20210917). |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.6.42_1553_openshift" caption-side="top"}
+
+
 
 ### Changelog for worker node fix pack 4.6.44_1555_openshift, released 13 September 2021
 {: #4644_1555}
@@ -676,6 +755,41 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.5 p
 {{site.data.keyword.openshiftshort}} version 4.5 is deprecated, with a tentative unsupported date of 10 October 2021. Update your cluster to at least [version 4.6](/docs/openshift?topic=openshift-openshift_versions#ocp46) as soon as possible.
 {: deprecated}
 
+### Changelog for worker node fix pack 4.5.41_1553_openshift, released 27 September 2021
+{: #4541_1553}
+
+The following table shows the changes that are included in the worker node fix pack patch update `4.5.41_1553_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Disk identification | NA | NA | Enhanced the disk identification logic to handle the case of 2+ partitions. |
+| Haproxy | 9c98dc5 | 07f1e9 | Updated image with fixes for [CVE-2021-22922](https://nvd.nist.gov/vuln/detail/CVE-2021-22922), [CVE-2021-22923](https://nvd.nist.gov/vuln/detail/CVE-2021-22923), [CVE-2021-22924](https://nvd.nist.gov/vuln/detail/CVE-2021-22924), [CVE-2021-36222](https://nvd.nist.gov/vuln/detail/CVE-2021-36222), and [CVE-2021-37750](https://nvd.nist.gov/vuln/detail/CVE-2021-37750). |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.5.41_1551_openshift" caption-side="top"}
+
+### Changelog for master fix pack 4.5.41_1552_openshift, released 27 September 2021
+{: #4541_1552}
+
+The following table shows the changes that are included in the master fix pack patch update `4.5.41_1552_openshift`. Master patch updates are applied automatically. 
+{: shortdesc}
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Gateway-enabled cluster controller | 1444 | 1510 | Updated image for [CVE-2021-3711](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3711) and [CVE-2021-3712](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3712). |
+| IBM Cloud Block Storage plug-in and driver | v2.0.9 | v2.1.1 | Updated to use `Go` version `1.16.7`. Updated universal base image (UBI) to the latest `8.4-208` version to resolve CVEs. |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} plug-in and monitor | 398 | 400 | Updated to use `Go` version `1.16.7`. Updated universal base image (UBI) to the latest `8.4-208` version to resolve CVEs. |
+| IBM Cloud RBAC Operator | 945df65 | e3cb629 | Updated to use `Go` version `1.16.7`. |
+| Load balancer and load balancer monitor for IBM Cloud Provider | 1510 | 1550 | Updated image for [CVE-2021-3711](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3711) and [CVE-2021-3712](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3712). |
+|OpenShift Container PlatformControl Plane Operator | v4.5.0-20210816 | v4.5.0-20210830 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20210830). |
+| {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.5.0-20210816 | v4.5.0-20210830 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20210830). |
+| {{site.data.keyword.openshiftlong_notm}} toolkit | 4.5.0+20210816 | 4.5.0+20210830 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20210830). |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.5.41_1549_openshift" caption-side="top"}
+
+
+
 ### Changelog for worker node fix pack 4.5.41_1551_openshift, released 13 September 2021
 {: #4541_1551}
 
@@ -699,8 +813,8 @@ The following table shows the changes that are included in the master fix pack p
 | Cluster health image | v1.2.14 | v1.2.15 | Updated to use `Go` version `1.15.15`. Updated universal base image (UBI) to the latest `8.4` version to resolve CVEs. |
 | Gateway-enabled cluster controller | 1348 | 1444 | Updated image for [CVE-2021-36159](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36159){: external}. |
 | IBM Calico extension | 747 | 763 | Updated to use `Go` version `1.16.6`. Updated universal base image (UBI) to the latest `8.4-205` version to resolve CVEs. |
-| IBM Cloud Block Storage plug-in and driver | v2.0.8 | v2.0.9 | Updated to use `Go` version `1.16.6`. Updated image for [CVE-2021-33910](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33910){: external}. |
-| IBM Cloud File Storage plug-in and monitor | 395 | 398 | Updated to use `Go` version `1.16.6`. Updated image for [CVE-2021-33910](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33910){: external}. |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} plug-in and driver | v2.0.8 | v2.0.9 | Updated to use `Go` version `1.16.6`. Updated image for [CVE-2021-33910](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33910){: external}. |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} plug-in and monitor | 395 | 398 | Updated to use `Go` version `1.16.6`. Updated image for [CVE-2021-33910](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33910){: external}. |
 | Key Management Service provider | v2.3.6 | v2.3.7 | Updated to use `Go` version `1.15.15`. Updated UBI to the latest `8.4` version to resolve CVEs. |
 | Load balancer and load balancer monitor for IBM Cloud Provider | 1328 | 1510 | Updated image for [CVE-2020-27780](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27780){: external}. |
 | {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.5.0-20210630 | v4.5.0-20210816 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20210816){: external}. |
@@ -905,7 +1019,7 @@ The following table shows the changes that are included in the master fix pack p
 | --- | --- | --- | --- |
 | Cluster health image | v1.2.9 | v1.2.11 | Fixed {{site.data.keyword.openshiftshort}} version check for unsupported add-ons. Updated to use `Go` version 1.15.11. Updated image to implement additional IBM security controls and for [CVE-2021-3449](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3449){: external}, [CVE-2021-3450](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3450){: external}, and [CVE-2021-20305](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20305){: external}. |
 | Cluster master operations | N/A | N/A | Resolved an {{site.data.keyword.openshiftshort}} API server target down alert on clusters that are updated from version 4.4 or earlier. |
-| IBM Cloud Block Storage driver and plug-in | v2.0.1 | v2.0.3 | Updated to use `Go` version 1.15.9 and for [CVE-2020-28851](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28851){: external}. |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} driver and plug-in | v2.0.1 | v2.0.3 | Updated to use `Go` version 1.15.9 and for [CVE-2020-28851](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28851){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.18.17-1 | v1.18.18-1 | Updated to support the Kubernetes 1.18.18 release. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 389 | 390 | Updated to use `Go` version 1.15.9 and for [CVE-2020-28851](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28851){: external}, and [CVE-2021-3121](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3121){: external}. |
 |{{site.data.keyword.cloud_notm}} RBAC Operator | 3dd6bbc | b6a694b | Updated image for [CVE-2021-3449](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3449){: external} and [CVE-2021-3450](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3450){: external}. |
@@ -1298,6 +1412,36 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 3.11 
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported on 6 June 2022 (date subject to change).
 {: deprecated}
+
+### Changelog for worker node fix pack 3.11.521_1605_openshift, released 27 September 2021
+{: #4731_1533}
+
+The following table shows the changes that are included in the worker node fix pack patch update `3.11.521_1605_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Disk identification | NA | NA | Enhanced the disk identification logic to handle the case of 2+ partitions. |
+| Haproxy | 9c98dc5 | 07f1e9 | Updated image with fixes for [CVE-2021-22922](https://nvd.nist.gov/vuln/detail/CVE-2021-22922), [CVE-2021-22923](https://nvd.nist.gov/vuln/detail/CVE-2021-22923), [CVE-2021-22924](https://nvd.nist.gov/vuln/detail/CVE-2021-22924), [CVE-2021-36222](https://nvd.nist.gov/vuln/detail/CVE-2021-36222), and [CVE-2021-37750](https://nvd.nist.gov/vuln/detail/CVE-2021-37750). |
+|OpenShift Container Platform| 3.11.501 | 3.11.521 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-521). |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.501_1603_openshift" caption-side="top"}
+
+### Changelog for master fix pack 3.11.521_1604_openshift, released 27 September 2021
+{: 311521_1604}
+
+The following table shows the changes that are included in the worker node fix pack patch update `3.11.521_1604_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} plug-in and monitor | 398 | 400 | Updated to use `Go` version `1.16.7`. Updated universal base image (UBI) to the latest `8.4-208` version to resolve CVEs. |
+| Load balancer and load balancer monitor for IBM Cloud Provider | 1510 | 1550 | Updated image for [CVE-2021-3711](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3711) and [CVE-2021-3712](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3712). |
+|OpenShift Container Platform| 3.11.487 | 3.11.521 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-521). |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.487_1601_openshift" caption-side="top"}
+
+
 ### Changelog for worker node fix pack 3.11.501_1603_openshift, released 13 September 2021
 {: #311501_1603}
 
@@ -2439,4 +2583,8 @@ The following table shows the changes that are included in the patch `3.11.129_1
 | Cluster router configuration| N/A | N/A | Fixed bugs that might cause cluster master operations, such as `refresh` or `update`, to fail when the router configuration is updated. These fixes also improve master availability during such operations. |
 {: caption="Changes since version 3.11.129_1515" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+
+
+
+
 

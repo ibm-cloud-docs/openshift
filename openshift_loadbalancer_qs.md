@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos, nlb, lbaas
 
@@ -10,8 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
 
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Quick start for load balancers
 {: #loadbalancer-qs}
@@ -93,5 +94,7 @@ For more information, see:
 3. In a web browser, enter the hostname that is created.
 
 For more information, see [VPC: Exposing apps with VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas).
+
+
 
 

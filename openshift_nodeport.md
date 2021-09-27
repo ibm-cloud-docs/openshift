@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-23"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos, app access
 
@@ -10,8 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
 
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Testing access to apps with NodePorts
 {: #nodeport}
@@ -148,5 +149,7 @@ To use a NodePort,
     3. Form the URL with one of the worker node IP addresses and the NodePort. Example: `http://192.0.2.23:30872`.
         For VPC clusters, you must be connected to the private network, such as through a VPN connection, to access the worker node private IP address and NodePort.
         {: note}
+
+
 
 

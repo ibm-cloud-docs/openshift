@@ -1,16 +1,19 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-27"
 
-keywords: autoscaler, add-on, autoscaler changelog
+keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
-subcollection: openshift, cluster autoscaler, add-on, scale
+subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
+
 
 # Cluster autoscaler add-on changelog
 {: #ca_changelog}
@@ -22,9 +25,9 @@ Patch updates
 :   Patch updates are delivered automatically by IBM and do not contain any feature updates or changes in the supported add-on and cluster versions.
 
 Release updates
-:   Release updates contain new features for the cluster autoscaler or changes in the supported add-on or cluster versions. You must manually apply release updates to your cluster autoscaler add-on. To update your cluster autoscaler add-on, see [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-ca#ca_addon_up).
+:   Release updates contain new features for the cluster autoscaler or changes in the supported add-on or cluster versions. You must manually apply release updates to your cluster autoscaler add-on. To update your cluster autoscaler add-on, see [Updating the cluster autoscaler add-on](/docs/containers?topic=containers-ca#ca_addon_up).
 
-Refer to the following tables for a summary of changes for each version of the [cluster autoscaler add-on](/docs/openshift?topic=openshift-ca).
+Refer to the following tables for a summary of changes for each version of the [cluster autoscaler add-on](/docs/containers?topic=containers-ca).
 
 As of 23 June 2021, version `1.0.2` of the cluster autoscaler add-on is deprecated and becomes unsupported on 23 July 2021. Version `1.0.3`, which adds support for Kubernetes 1.21 is now available. If you have a deprecated or unsupported version of the add-on installed in your cluster, update the add-on to version `1.0.3`. To update the add-on in your cluster, disable the add-on and then re-enable the add-on. You might see a warning that resources or data might be deleted. For the cluster autoscaler update, any autoscaling operations that are in process when you disable the add-on fail. When you re-enable the add-on, autoscaling operations are restarted for you. Existing cluster autoscaler resources like the `iks-ca-configmap` are retained even after you disable the add-on. Your worker nodes are not deleted because of disabling the add-on.
 {: important}
@@ -249,4 +252,7 @@ Review the changes in version `1.0.1_114` of the cluster autoscaler add-on.
 - Supported cluster versions: 4.3 - 4.5  
 - Includes fixes for `CVE-5188` and `CVE-3180`.  
 - Unlike the previous Helm chart, you can modify all of the add-on configuration settings via a single configmap.  
+
+
+
 

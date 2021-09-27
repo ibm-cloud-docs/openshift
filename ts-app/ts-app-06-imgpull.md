@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,7 +11,9 @@ content-type: troubleshoot
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Why do images fail to pull from registry with `ImagePullBackOff` or authorization errors?
 {: #ts-app-image-pull}
@@ -198,6 +200,9 @@ The following steps assume that the API key stores the credentials of a service 
         {: pre}
 
     7. Check that the pull secret is either referenced directly from the deployment or from the service account that the deployment uses. If you still can't resolve the issue, [contact support](/docs/openshift?topic=openshift-get-help).
+
+
+
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-27"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc, roks
 
@@ -11,6 +11,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Managing your OpenShift Data Foundation deployment
@@ -395,5 +396,9 @@ You can use the Rook community toolbox to debug issues with your Ceph cluster. F
 {: tip}
 
 For more information, review the [common troubleshooting topics](/docs/openshift?topic=openshift-sitemap#sitemap_openshift_data_foundation).
+
+
+
+
 
 

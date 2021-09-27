@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-27"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,7 +10,9 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+
+
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Transportation use cases for {{site.data.keyword.cloud_notm}}
@@ -30,8 +32,8 @@ An IT Exec has worldwide shipping routing and scheduling systems that partners i
 Why {{site.data.keyword.cloud_notm}}: {{site.data.keyword.openshiftlong_notm}} scales containerized apps with five 9s of availability to meet growing demands. App deployments occur 40 times daily when Developers experiment easily, pushing changes to Development and Test systems quickly. The IoT Platform makes access to IoT data easy.
 
 Key technologies:    
-* [Multi-regions for business partner ecosystem ](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones)
-* [Horizontal scaling](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps)
+* [Multi-regions for business partner ecosystem ](/docs/containers?topic=containers-regions-and-zones#regions-and-zones)
+* [Horizontal scaling](/docs/containers?topic=containers-plan_deploy#highly_available_apps)
 * [Open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/)
 * [Cloud services for innovation](https://www.ibm.com/cloud/products#analytics)
 * [{{site.data.keyword.messagehub_full}} to feed event data to apps](/docs/EventStreams?topic=EventStreams-about#about)
@@ -119,7 +121,7 @@ An HR Exec (CHRO) needs a new HR benefits site with an innovative chatbot, but c
 Why {{site.data.keyword.cloud_notm}}: {{site.data.keyword.openshiftlong_notm}} provides easy spin-up of compute. Then, Developers can experiment easily, pushing changes to Development and Test systems quickly with open toolchains. Their traditional software development tools get a boost when they add on IBM {{site.data.keyword.watson}} Assistant. The new benefits site was created in less than 3 weeks.
 
 Key technologies:    
-* [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
+* [Clusters that fit varied CPU, RAM, storage needs](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes)
 * [Chatbot service powered by {{site.data.keyword.watson}}](https://developer.ibm.com/patterns/create-cognitive-banking-chatbot/)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/)
 * [SDK for Node.js](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-node)
@@ -181,6 +183,7 @@ With {{site.data.keyword.openshiftlong_notm}}, they went from over-built hardwar
 * Authenticity with personalization in the site addressed the changing expectations of the airline’s workforce today.
 * Last-minute updates to the HR site, including ones that driven by the employees chatbot conversations, went live quickly because Developers were pushing changes at least 10 times daily.
 * With infrastructure management taken care of by IBM, the Development team was freed up to deliver the site in only 3 weeks.
+
 
 
 

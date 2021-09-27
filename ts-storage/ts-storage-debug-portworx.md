@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-24"
 
 keywords: file, debug, help
 
@@ -11,8 +11,9 @@ content-type: troubleshoot
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
 
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Debugging Portworx failures
 {: #debug_storage_px}
@@ -101,7 +102,6 @@ Some issues can be resolved by restarting and redeploying your pods. Follow the 
     ```
     {: pre}
 
-
 ## Verifying that the Portworx storage driver and plug-in pods show a status of **Running**
 {: #debug_storage_px_driver_plugin}
 
@@ -187,6 +187,7 @@ If you use a `oc` CLI version that does not match at least the major.minor versi
 
 
 3. If a more recent version is available, install the new version. For instructions, see [Updating Portworx in your cluster](/docs/openshift?topic=openshift-portworx#update_portworx)(/docs/openshift?topic=openshift-portworx#update_portworx).
+
 
 
 
