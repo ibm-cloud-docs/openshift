@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,15 +11,14 @@ content-type: troubleshoot
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}
-  
+{{site.data.keyword.attribute-definition-list}}  
 
 # Classic clusters: Why doesn't the router for the Ingress controller deploy in a zone?
 {: #cs_subnet_limit_43}
 
 **Infrastructure provider and version**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 4
+* <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="../images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 4
 
 
 When you run `oc get svc -n openshift-ingress`, one or more zones has no public router.

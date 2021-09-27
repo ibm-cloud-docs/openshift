@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,8 +11,7 @@ content-type: troubleshoot
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}
-  
+{{site.data.keyword.attribute-definition-list}}  
 
 # Why is my cluster missing the public `containers.appdomain.cloud` subdomain?
 {: #roks_ts_subdomain}
@@ -20,8 +19,8 @@ content-type: troubleshoot
 {: support}
 
 **Infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 
 When you expose an app through a router subdomain, you get a local subdomain instead of a public route, in the format: `<service_name>-<project_name>.router.default.svc.cluster.local`.
@@ -54,8 +53,8 @@ When the components fully provision, a public router subdomain is available for 
     {: pre}
 
 3. Check that your cluster has public connectivity so that the networking components can talk to the master as they deploy.
-    * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC clusters with public and private cloud service endpoints enabled: [Ensure that a public gateway is enabled on each subnet](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet) that your cluster is attached to. Public gateway are required for default components such as the web console and OperatorHub to use a secure, public connection to complete actions such as pulling images from remote, private registries. Note that if only the private service endpoint is enabled for your cluster, no public gateway is required because the private cloud service endpoint is used by default to access OpenShift components such as the OpenShift web console or OperatorHub.
-    * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic clusters:
+    * <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC clusters with public and private cloud service endpoints enabled: [Ensure that a public gateway is enabled on each subnet](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet) that your cluster is attached to. Public gateway are required for default components such as the web console and OperatorHub to use a secure, public connection to complete actions such as pulling images from remote, private registries. Note that if only the private service endpoint is enabled for your cluster, no public gateway is required because the private cloud service endpoint is used by default to access OpenShift components such as the OpenShift web console or OperatorHub.
+    * <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic clusters:
         * In the output of Step 2, check that your cluster has a **Public Service Endpoint URL**. If your cluster does not have a public cloud service endpoint, [enable it](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se).
         * Check that at least some of the worker nodes in your cluster have a **Public IP** address. If no worker node does, you must [set up public VLANs for at least one worker pool](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans).
           ```

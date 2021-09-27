@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-24"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,13 +11,12 @@ content-type: troubleshoot
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}
-  
+{{site.data.keyword.attribute-definition-list}}  
 
 # Why do I get an error about a cloud object storage bucket when I create a cluster?
 {: #ts_cos_bucket_cluster_create}
 
-**Infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC 
+**Infrastructure provider**: <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC 
 
 
 When you create a cluster, you see an error message similar to the following.
