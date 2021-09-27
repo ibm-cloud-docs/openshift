@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-24"
+lastupdated: "2021-09-27"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, satellite
 
@@ -10,7 +10,8 @@ subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}} 
+{{site.data.keyword.attribute-definition-list}}
+ 
 
 
 # Deploying OpenShift Data Foundation on {{site.data.keyword.satelliteshort}} clusters

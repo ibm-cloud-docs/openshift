@@ -14,13 +14,14 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Back up and restore Helm chart 
 {: #backup_restore_changelog}
 
 View information for updates to the back up and restore Helm chart in your {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
-Refer to the following tables for a summary of changes for each version of the [back up and restore Helm chart](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore).
+Refer to the following tables for a summary of changes for each version of the [back up and restore Helm chart](/docs/containers?topic=containers-utilities#ibmcloud-backup-restore).
 
 | `ibmcloud-backup-restore` Helm chart version | Supported? | Cluster version support |
 | -------------------- | -----------|--------------------------- |

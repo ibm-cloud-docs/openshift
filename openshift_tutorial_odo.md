@@ -15,6 +15,7 @@ content-type: tutorial
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Developing in clusters with the OpenShift Do CLI
 {: #odo-tutorial}
 {: toc-content-type="tutorial"}

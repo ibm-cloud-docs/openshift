@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-24"
+lastupdated: "2021-09-27"
 
 keywords: odf, openshift data foundation add-on, changelog
 
@@ -10,7 +10,8 @@ subcollection: openshift, container storage
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+{{site.data.keyword.attribute-definition-list}}
+  
 
 # OpenShift Data Foundation add-on changelog
 {: #odf_addon_changelog}

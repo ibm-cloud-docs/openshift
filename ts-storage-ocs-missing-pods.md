@@ -13,6 +13,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Why are no pods listed in the `openshift-storage` namespace?
 {: #ts-ocs-no-pods}
 

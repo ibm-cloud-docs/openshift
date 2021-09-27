@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-24"
+lastupdated: "2021-09-27"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -14,13 +14,14 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Release notes
 {: #rel-notes}
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.openshiftlong}} documentation that are grouped by month.
 {: shortdesc}
 
-For information about releases that occured before August 30th, see [Release notes](/docs/openshift?topic=openshift-iks-release).
+For information about releases that occured before August 30th, see [Release notes](/docs/containers?topic=containers-iks-release).
 {: note}
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status){: external}.
@@ -32,6 +33,17 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 Review the release notes for September 2021.
 {: shortdesc}
+
+### 27 September 2021
+{: #27sep2021}
+{: release-note}
+
+Master fix pack update
+:   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.7.30_1532_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4730_1532),[`4.6.44_1556_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4644_1556), [`4.5.41_1552_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4541_1552), and [`3.11.521_1604_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311521_1604).
+
+
+Worker node fix pack update
+:   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.5.41_1553_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4541_1553),[`4.6.45_1557_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4645_1557_openshift), [`4.7.31_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4731_1533_openshift), and [`3.11.521_1605_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311521_1605_openshift).
 
 ### 23 September 2021
 {: #23sep2021}
@@ -72,7 +84,7 @@ HPCS Router add-on
 {: #16sep2021}
 
 {{site.data.keyword.block_storage_is_short}} add-on  
-:   Version [`4.0.0_769`](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
+:   Version [`4.0.0_769`](/docs/containers?topic=containers-vpc_bs_changelog) is available.
 
 
 
@@ -139,10 +151,10 @@ Review the release notes for 1 September 2021.
 {: shortdesc}
 
 {{site.data.keyword.block_storage_is_short}} add-on
-:   Version [`4.0`](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
+:   Version [`4.0`](/docs/containers?topic=containers-vpc_bs_changelog) is available.
 
 {{site.data.keyword.cos_full_notm}} plug-in 
-:   Version [`2.1.4`](/docs/openshift?topic=openshift-cos_plugin_changelog) is available.
+:   Version [`2.1.4`](/docs/containers?topic=containers-cos_plugin_changelog) is available.
 
 
 ## August 2021
@@ -162,10 +174,10 @@ Istio add-on changelog
 :   [Version 1.11.1](/docs/containers?topic=containers-istio-changelog#1111) of the Istio managed add-on is released.
 
 New! Sao Paolo multizone region
-:   You can now create VPC clusters in the Sao Paolo, Brazil [location](/docs/openshift?topic=openshift-regions-and-zones).
+:   You can now create VPC clusters in the Sao Paolo, Brazil [location](/docs/containers?topic=containers-regions-and-zones).
 
  VPC disk encryption on worker nodes
-:   Now, you can manage the encryption for the disk on your VPC worker nodes. For more information, see [VPC worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-vpc).
+:   Now, you can manage the encryption for the disk on your VPC worker nodes. For more information, see [VPC worker nodes](/docs/containers?topic=containers-encryption#worker-encryption-vpc).
 
 ### 30 August 2021
 {: #30aug2021}

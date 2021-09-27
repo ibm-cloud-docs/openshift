@@ -11,7 +11,8 @@ content-type: troubleshoot
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+{{site.data.keyword.attribute-definition-list}}
+  
 
 # VPC clusters: Why does the VPC load balancer for router only route to one zone?
 {: #router-mzr-error}

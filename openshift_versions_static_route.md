@@ -14,13 +14,14 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Static route add-on version changelog
 {: #static-route-changelog}
 
-For deployment steps, see the [managed static route add-on](/docs/openshift?topic=openshift-static-routes) docs.
+For deployment steps, see the [managed static route add-on](/docs/containers?topic=containers-static-routes) docs.
 {: shortdesc}
 
-For steps on updating the static route add-on, see [Updating managed add-ons](/docs/openshift?topic=openshift-managed-addons#updating-managed-add-ons).
+For steps on updating the static route add-on, see [Updating managed add-ons](/docs/containers?topic=containers-managed-addons#updating-managed-add-ons).
 
 Review the supported versions of the static route add-on. In the CLI, you can run `ibmcloud oc cluster addon versions --addon static-route`.
 

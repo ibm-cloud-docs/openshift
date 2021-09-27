@@ -11,7 +11,8 @@ content-type: troubleshoot
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+{{site.data.keyword.attribute-definition-list}}
+  
 
 # Why does the `oc debug` command fail with a `container is unable to start error`?
 {: #ts-app-oc-debug}

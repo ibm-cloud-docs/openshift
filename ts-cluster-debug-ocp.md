@@ -11,7 +11,8 @@ content-type: troubleshoot
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}  
+{{site.data.keyword.attribute-definition-list}}
+  
 
 # Debugging {{site.data.keyword.openshiftshort}} web console, OperatorHub, internal registry, and other components
 {: #ocp-debug}
