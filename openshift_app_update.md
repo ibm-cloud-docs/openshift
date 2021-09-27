@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-24"
+lastupdated: "2021-09-27"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, update, upgrade
 
