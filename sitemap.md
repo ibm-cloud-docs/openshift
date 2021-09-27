@@ -176,6 +176,43 @@ subcollection: openshift
 * [Add integrations](/docs/openshift?topic=openshift-learning-path-dev#dev_integrate)
 
 
+## Release notes
+{: #sitemap_release_notes}
+
+
+[Release notes](/docs/openshift?topic=openshift-rel-notes#rel-notes)
+
+[September 2021](/docs/openshift?topic=openshift-rel-notes#release-sep-2021)
+
+* [27 September 2021](/docs/openshift?topic=openshift-rel-notes#27sep2021)
+
+* [23 September 2021](/docs/openshift?topic=openshift-rel-notes#23sep2021)
+
+* [22 September 2021](/docs/openshift?topic=openshift-rel-notes#22sep2021)
+
+* [21 September 2021](/docs/openshift?topic=openshift-rel-notes#21sep2021)
+
+* [16 September 2021](/docs/openshift?topic=openshift-rel-notes#16sep2021)
+
+* [15 September 2021](/docs/openshift?topic=openshift-rel-notes#15sep2021)
+
+* [14 September 2021](/docs/openshift?topic=openshift-rel-notes#14sep2021)
+
+* [13 September 2021](/docs/openshift?topic=openshift-rel-notes#13sep2021)
+
+* [9 September 2021](/docs/openshift?topic=openshift-rel-notes#9sep2021)
+
+* [8 September 2021](/docs/openshift?topic=openshift-rel-notes#8sep2021)
+
+* [1 September 2021](/docs/openshift?topic=openshift-rel-notes#1sep2021)
+
+[August 2021](/docs/openshift?topic=openshift-rel-notes#release-aug-2021)
+
+* [31 August 2021](/docs/openshift?topic=openshift-rel-notes#31aug2021)
+
+* [30 August 2021](/docs/openshift?topic=openshift-rel-notes#30aug2021)
+
+
 ## Tutorials library for OpenShift
 
 [Tutorials library for OpenShift](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20){: new_window}{: external}
