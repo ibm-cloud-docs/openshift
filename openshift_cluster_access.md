@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -36,7 +36,7 @@ After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin
         *  Both service endpoint URLs: You can access your cluster either through the [public](#access_public_se) or the [private](#access_private_se) service endpoint.
     * **{{site.data.keyword.satellitelong_notm}} clusters**: Continue with [Accessing clusters on {{site.data.keyword.satelliteshort}}](#access_cluster_sat).
 
-<br />
+
 
 ## Accessing clusters through the public cloud service endpoint
 {: #access_public_se}
@@ -96,7 +96,7 @@ Choose from the following options.
 
 **What's next?** Try [Deploying apps through the CLI](/docs/openshift?topic=openshift-deploy_app#deploy_apps_cli).
 
-<br />
+
 
 ## Accessing clusters through the private cloud service endpoint
 {: #access_private_se}
@@ -362,7 +362,7 @@ To create a private cloud service endpoint allowlist:
 
 Your authorized users can now continue with [Accessing {{site.data.keyword.openshiftshort}} clusters through the private cloud service endpoint](#access_private_se).
 
-<br />
+
 
 
 ## Accessing {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}}
@@ -475,7 +475,7 @@ Making your location and cluster subdomains available outside of your hosts' pri
     ```
     {: pre}
 
-<br />
+
 
 ## Accessing private clusters by using the Wireguard VPN
 {: #access_vpn_openshift}
@@ -1012,7 +1012,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     ```
     {: screen}
 
-<br />
+
 
 ## Accessing the cluster master via admission controllers and webhooks
 {: #access_webhooks}

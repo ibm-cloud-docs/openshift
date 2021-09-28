@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-24"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -13,14 +13,16 @@ content-type: troubleshoot
 
 
 
+
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Why do images fail to pull from registry with `ImagePullBackOff` or authorization errors?
 {: #ts-app-image-pull}
 
 **Infrastructure provider**:
-* <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 
 When you deploy a workload that pulls an image from {{site.data.keyword.registrylong_notm}}, your pods fail with an **`ImagePullBackOff`** status.
@@ -105,7 +107,7 @@ By default, new clusters have image pull secrets that use API keys so that the c
     * If the secret has `icr` in the name, you use an API key to authenticate with the `icr.io` domain names. Continue with [Troubleshooting image pull secrets that use API keys](#img-pull-api-key).
     * If you have both types of secrets, then you use both authentication methods. Going forward, use the `icr.io` domain names in your deployment YAMLs for the container image. Continue with [Troubleshooting image pull secrets that use API keys](#img-pull-api-key).
 
-<br />
+
 
 ## Troubleshooting image pull secrets that use API keys
 {: #img-pull-api-key}
@@ -191,7 +193,7 @@ The following steps assume that the API key stores the credentials of a service 
             ```
             {: pre}
 
-        2. Re-create your deployment in the `default` {{site.data.keyword.openshiftshort}} project. If you still see an authorization error message, repeat Steps 1-5 with the new image pull secrets. If you still cannot log in, [open an {{site.data.keyword.cloud_notm}} Support case](/docs/openshift?topic=openshift-get-help).
+        2. Re-create your deployment in the `default` {{site.data.keyword.openshiftshort}} project. If you still see an authorization error message, repeat Steps 1-5 with the new image pull secrets. If you still cannot log in, [open an {{site.data.keyword.cloud_notm}} Support case](/docs/containers?topic=containers-get-help).
 
     6. If the login succeeds, pull an image locally. If the command fails with an `access denied` error, the registry account is in a different {{site.data.keyword.cloud_notm}} account than the one your cluster is in. [Create an image pull secret to access images in the other account](/docs/containers?topic=containers-registry#other_registry_accounts). If you can pull an image to your local machine, then your API key has the right permissions, but the API setup in your cluster is not correct. 
         ```
@@ -199,7 +201,7 @@ The following steps assume that the API key stores the credentials of a service 
         ```
         {: pre}
 
-    7. Check that the pull secret is either referenced directly from the deployment or from the service account that the deployment uses. If you still can't resolve the issue, [contact support](/docs/openshift?topic=openshift-get-help).
+    7. Check that the pull secret is either referenced directly from the deployment or from the service account that the deployment uses. If you still can't resolve the issue, [contact support](/docs/containers?topic=containers-get-help).
 
 
 

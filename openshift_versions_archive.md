@@ -2,7 +2,7 @@
 
 copyright:
  years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: roks
 
@@ -577,7 +577,7 @@ The following table shows the changes that are included in the `4.4.11_1511_open
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the location of the component, in the master, worker node, or both. The third column is the previous version number of the component. The fourth column is the current version number of the component. The fifth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.3.28_1532_openshift" caption-side="top"}
 
-<br />
+
 
 ## Version 4.3 changelog (unsupported as of 7 March 2021)
 {: #version-43}

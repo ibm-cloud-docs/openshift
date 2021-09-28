@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -173,7 +173,7 @@ To set up an NLB 1.0 service in a multizone cluster:
 
 Next, you can [register an NLB subdomain](/docs/containers?topic=containers-loadbalancer_hostname).
 
-<br />
+
 
 ## Setting up an NLB 1.0 in a single-zone cluster
 {: #lb_config}
@@ -316,7 +316,7 @@ To create an NLB 1.0 service in a single-zone cluster:
 
 Next, you can [register an NLB subdomain](/docs/containers?topic=containers-loadbalancer_hostname#loadbalancer_hostname).
 
-<br />
+
 
 ## Enabling source IP preservation
 {: #lb_source_ip}

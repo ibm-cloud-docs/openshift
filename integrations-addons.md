@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -64,7 +64,7 @@ The versions of each managed add-on are tested by {{site.data.keyword.cloud_notm
 3. Select the **Add-ons** tab.
 4. From the actions menu, select **Update** to start updating the managed add-on. When the update is installed, the latest version of the managed add-on is listed on the cluster add-on page.
 
-<br />
+
 
 ## Reviewing add-on states and statuses
 {: #debug_addons_review}

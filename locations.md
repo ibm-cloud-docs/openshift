@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -171,7 +171,7 @@ In a multizone cluster, your cluster's resources are spread across multiple zone
 3. When you initiate cluster management actions, such as using [`ibmcloud oc` commands](/docs/containers?topic=containers-kubernetes-service-cli), basic information about the cluster (such as name, ID, user, the command) is routed through the global endpoint.
 
 
-<br />
+
 
 ## Accessing the global endpoint
 {: #endpoint}
@@ -250,7 +250,7 @@ GET https://containers.cloud.ibm.com/global/v1/clusters
 
 If you need to specify a region in an API call, remove the `/global` parameter from the path and pass the region name in the `X-Region` header. To list available regions, review the [Previous region](#zones-mz) column in the {{site.data.keyword.openshiftlong_notm}} locations table.
 
-<br />
+
 
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -63,7 +63,7 @@ Review the following account API methods, their corresponding actions in {{site.
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Account API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
-<br />
+
 
 ## Cluster
 {: #ks-cluster}
@@ -128,7 +128,7 @@ Review the following cluster API methods, their corresponding actions in {{site.
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Cluster API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
-<br />
+
 
 ## Ingress
 {: #ks-ingress}
@@ -148,7 +148,7 @@ Review the following Ingress API methods, their corresponding actions in {{site.
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Ingress API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
-<br />
+
 
 ## Ingress ALB
 {: #ks-alb}
@@ -186,7 +186,7 @@ Review the following Ingress application load balancer (ALB) API methods, their 
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="ALB API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
-<br />
+
 
 ## Fluentd logging
 {: #ks-logging}
@@ -218,7 +218,7 @@ Review the following Fluentd logging configuration API methods, their correspond
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Logging API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
-<br />
+
 
 ## NLB DNS
 {: #ks-nlb-dns}
@@ -246,7 +246,7 @@ Review the following network load balancer (NLB) domain name system (DNS) API me
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="NLB DNS API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
-<br />
+
 
 ## Observability: {{site.data.keyword.la_short}}
 {: #ks-observability-logging}
@@ -265,7 +265,7 @@ Review the following observability logging API methods, their corresponding acti
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Observability logging API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
-<br />
+
 
 ## Observability: {{site.data.keyword.mon_short}}
 {: #ks-observability-monitoring}
@@ -284,7 +284,7 @@ Review the following observability monitoring API methods, their corresponding a
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Observability monitoring API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
-<br />
+
 
 ## Private service endpoint allowlist
 {: #ks-acl}
@@ -302,7 +302,7 @@ Review the following access control list (ACL) API methods, their corresponding 
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="ACL API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
-<br />
+
 
 ## Satellite
 {: #sat-api}
@@ -328,7 +328,7 @@ Review the following API methods, their corresponding actions in {{site.data.key
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="{{site.data.keyword.satelliteshort}} API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
-<br />
+
 
 ## Storage
 {: #ks-storage}
@@ -347,7 +347,7 @@ Review the following storage API methods, their corresponding actions in {{site.
 {: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Storage API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
-<br />
+
 
 ## Worker nodes and worker pools
 {: #ks-workers}

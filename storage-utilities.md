@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -188,7 +188,7 @@ If you do not want to provision and use the {{site.data.keyword.cloud_notm}} Blo
 
     The removal of the storage class is successful if no storage class is displayed in your CLI output.
 
-    <br />
+    
 
 
 
@@ -288,7 +288,7 @@ Use this option if you want to add different block storage configurations, add b
 
 8. [Attach the block storage devices to your worker nodes](#attach_block).
 
-<br />
+
 
 
 ## Classic: Attaching raw block storage to non-SDS worker nodes
@@ -450,7 +450,7 @@ To attach the block storage device to a non-SDS worker node, you must create a p
 If you want to detach a volume, delete the PV. Detached volumes are still authorized to be accessed by a specific worker node and are attached again when you create a new PV with the {{site.data.keyword.cloud_notm}} Block Volume Attacher storage class to attach a different volume to the same worker node. To avoid attaching the old detached volume again, unauthorize the worker node to access the detached volume by using the `ibmcloud sl block access-revoke` command. Detaching the volume does not remove the volume from your IBM Cloud infrastructure account. To cancel the billing for your volume, you must manually [remove the storage from your IBM Cloud infrastructure account](/docs/containers?topic=containers-block_storage#cleanup).
 {: note}
 
-<br />
+
 
 
 
@@ -734,7 +734,7 @@ You can use a `GET` request to retrieve volume attachment details for a VPC work
 </tbody>
 </table>
 
-<br />
+
 
 ## VPC: Attaching raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes by using the CLI
 {: #vpc_cli_attach}

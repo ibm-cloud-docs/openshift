@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller, ingress operator, router
 
@@ -87,7 +87,7 @@ For more information, see [Planning networking for single or multiple projects](
 If you want to customize routing rules for your app, you can use [route-specific HAProxy annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4) that manages traffic for your app. These supported annotations are in the format `haproxy.router.openshift.io/<annotation>`  or `router.openshift.io/<annotation>`. Note that {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in {{site.data.keyword.openshiftshort}} version 4.
 {: important}
 
-<br />
+
 
 ## How does a request get to my app in a classic cluster?
 {: #roks4-flow}
@@ -172,7 +172,7 @@ If you want to customize routing rules for your app, you can use [route-specific
 
 6. When the app returns a response packet, it uses the IP address of the worker node where the router that forwarded the client request exists. The router then sends the response packet through the VPC load balancer to the client.
 
-<br />
+
 
 ## How can I customize routing?
 {: #custom-routing}
@@ -185,7 +185,7 @@ These supported annotations are in the format `haproxy.router.openshift.io/<anno
 
 To get started, see [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4).
 
-<br />
+
 
 ## How can I enable TLS certificates?
 {: #certs}

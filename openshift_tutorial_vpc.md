@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -71,7 +71,7 @@ Complete the following prerequisite steps to set up permissions and the command-
     ```
     {: pre}
 
-<br />
+
 
 ## Create a cluster in a VPC
 {: #vpc_rh_create_vpc_cluster}
@@ -180,7 +180,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
     If you cannot perform operations that require Administrator permissions, such as listing all the worker nodes or pods in a cluster, download the TLS certificates and permission files for the cluster administrator by running the `ibmcloud oc cluster config --cluster myvpc-cluster --admin` command.
     {: tip}
 
-<br />
+
 
 ## Deploy an app to your cluster
 {: #vpc_rh_app}
@@ -235,7 +235,7 @@ The components that you deploy by completing this lesson are shown in the follow
         ```
         {: screen}
 
-<br />
+
 
 ## Set up a VPC load balancer to expose your app publicly
 {: #vpc_rh_vpc_lb}
@@ -390,7 +390,7 @@ Interested in using an {{site.data.keyword.openshiftshort}} route to expose your
         ```
         {: pre}
 
-<br />
+
 
 ## What's next?
 {: #vpc_rh_next}

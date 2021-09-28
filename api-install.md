@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -91,7 +91,7 @@ You can use the version two (`v2`) API to manage both classic and VPC clusters. 
 </table>
 
 
-<br />
+
 
 ## Automating cluster deployments with the API
 {: #cs_api}
@@ -341,7 +341,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
 When you use the API for automation, be sure to rely on the responses from the API, not files within those responses. For example, the Kubernetes configuration file for your cluster context is subject to change, so do not build automation based on specific contents of this file when you use the `GET /v1/clusters/{idOrName}/config` call.
 {: note}
 
-<br />
+
 
 
 
@@ -421,7 +421,7 @@ Use the following steps if you want to create an {{site.data.keyword.cloud_notm}
 
 2. Continue working with the [{{site.data.keyword.openshiftlong_notm}} API documentation](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external} by using the token from the previous step.
 
-<br />
+
 
 ## Refreshing {{site.data.keyword.cloud_notm}} IAM access tokens and obtaining new refresh tokens with the CLI
 {: #cs_cli_refresh}

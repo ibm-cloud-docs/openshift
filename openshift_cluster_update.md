@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade, update
 
@@ -107,7 +107,7 @@ When the master update is complete, you can update your worker nodes, depending 
 * [Updating classic worker nodes](#worker_node).
 * [Updating VPC worker nodes](#vpc_worker_node).
 
-<br />
+
 
 ## Updating classic worker nodes
 {: #worker_node}

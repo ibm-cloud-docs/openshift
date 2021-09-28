@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -27,7 +27,7 @@ Not sure whether to use {{site.data.keyword.openshiftshort}} routes or Ingress? 
 {: tip}
 
 ## Overview
-{: #routes-overview}
+{: #routes-overview-311}
 
 A router is deployed by default to your cluster and functions as the ingress point for external network traffic.
 {: shortdesc}
@@ -72,7 +72,7 @@ If you have a multizone cluster, one router is deployed to your cluster, and a r
 
 5. When the app returns a response packet, it uses the IP address of the worker node where the router that forwarded the client request exists. The router then sends the response packet through the load balancer service to the client.
 
-<br />
+
 
 ## Route types and TLS termination
 {: #route-types}
@@ -90,7 +90,6 @@ If you have a multizone cluster, one router is deployed to your cluster, and a r
 
 If you do not need to use a custom domain, you can use an IBM-provided route hostname in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
 
-<br />
 
 ## Setting up public routes
 {: #routes-setup}
@@ -153,7 +152,7 @@ To set up routes to publicly expose apps:
 
 5. Optional: Customize default routing rules with [optional configurations](https://docs.openshift.com/container-platform/3.11/install_config/router/default_haproxy_router.html){: external}. For example, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html#route-specific-annotations){: external}.
 
-<br />
+
 
 ## Setting up private routes
 {: #private-routes}

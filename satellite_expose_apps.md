@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -95,7 +95,7 @@ To create routes for your apps:
 
 5. Optional: Customize default routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.7/networking/routes/route-configuration.html){: external}. For example, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.7/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}.
 
-<br />
+
 
 ## Setting up a third-party load balancer in front of the {{site.data.keyword.openshiftshort}} router
 {: #sat-expose-byolb}
@@ -148,7 +148,7 @@ After you create a load balancer in front of your router, you can use the router
 
 7. Continue with the steps in [Exposing apps with {{site.data.keyword.openshiftshort}} routes](#sat-expose-routes) to create routes for your apps.
 
-<br />
+
 
 ## Exposing apps with NodePorts
 {: #sat-expose-np}
@@ -178,7 +178,7 @@ If you cannot use the {{site.data.keyword.openshiftshort}} router to expose an a
 
 5. Optional: If you do not want to access the NodePort directly, or if you must expose your apps on a specific port such as 443, you can set up your own third-party, layer 4 load balancer that is connected to your hosts' private network and forwards traffic to the NodePort. For example, you might deploy a load balancer from your hosts' cloud provider, or deploy an F5 load balancer to your on-premises network. The load balancer must be able to forward TCP and UDP traffic for ports 30000 - 32767.
 
-<br />
+
 
 ## Exposing apps with routes and Link endpoints for traffic from {{site.data.keyword.cloud_notm}}
 {: #sat-expose-cloud}

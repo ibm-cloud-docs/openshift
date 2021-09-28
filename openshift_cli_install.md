@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -94,7 +94,7 @@ For reference information about these CLIs, see the documentation for those tool
 -   [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli)
 -   [`ibmcloud cr` commands](/docs/Registry?topic=container-registry-cli-plugin-containerregcli)
 
-<br />
+
 
 
 
@@ -206,7 +206,7 @@ Next, start [Creating a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/
 For more information about the `oc` CLI, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.7/cli_reference/openshift_cli/getting-started-cli.html){: external}.
 {: note}
 
-<br />
+
 
 
 
@@ -281,7 +281,7 @@ To update the CLIs:
 
         The registry plug-in is displayed in the results as `container-registry`.
 
-<br />
+
 
 ## Installing the `odo` CLI for developers
 {: #cli-odo-install}
@@ -289,7 +289,7 @@ To update the CLIs:
 Looking to develop apps without using `kubectl` system admin commands or YAML configuration files? Check out the [Developing on clusters with the {{site.data.keyword.openshiftshort}} Do CLI](/docs/containers?topic=containers-odo-tutorial) tutorial.
 {: shortdesc}
 
-<br />
+
 
 ## Uninstalling the CLI
 {: #cs_cli_uninstall}
@@ -336,7 +336,7 @@ To uninstall the CLIs:
     ```
     {: pre}
 
-<br />
+
 
 ## Using the {{site.data.keyword.cloud-shell_notm}} in your web browser
 {: #cloud-shell}

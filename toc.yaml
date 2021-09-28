@@ -18,7 +18,7 @@ toc:
             label: About
             topics: 
               - overview.md
-              - openshift_why.md
+              - why-benefits.md
               - providers.md
               - responsibilities.md
         - topicgroup:
@@ -28,7 +28,7 @@ toc:
               - openshift_uc_finance.md
               - openshift_uc_health.md
               - openshift_uc_retail.md
-              - openshift_uc_transport.md
+              - uc-transport.md
               - openshift_uc_gov.md
         - topicgroup:
             label: Learning paths
@@ -44,7 +44,7 @@ toc:
             href: https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20
         - openshift_tutorial.md
         - openshift_tutorial_vpc.md
-        - openshift_tutorial_odo.md
+        - tutorial-odo.md
         - link:
             label: Scalable web application on OpenShift
             href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift#scalable-webapp-openshift
@@ -71,7 +71,7 @@ toc:
             - kube-strategy.md
             - cluster-plan-network.md
             - cluster-plan-ha.md
-            - openshift_worker_plan.md
+            - worker-plan.md
       - topicgroup: 
           label: Creating and accessing clusters
           topics:
@@ -82,7 +82,7 @@ toc:
       - topicgroup:
           label: Managing the cluster and worker node lifecycle
           topics:
-            - openshift_worker_add.md
+            - worker-add.md
             - cluster-scaling.md
             - openshift_cluster_update.md
             - performance.md
@@ -245,21 +245,21 @@ toc:
           label: Version history
           topics:
             - openshift_versions.md
-            - openshift_versions_changelog.md
+            - versions-changelog.md
             - benchmarks.md
             - openshift_versions_autoscaler.md
-            - openshift_versions_vpc_block_addon.md
-            - openshift_versions_object.md
-            - openshift_versions_static_route.md
+            - versions-vpc-block-addon.md
+            - versions-object.md
+            - versions-static-route.md
             - openshift_versions_ocs_addon.md
-            - openshift_versions_backup_restore.md
+            - versions-backup-restore.md
             - openshift_versions_hpcs_router.md
             - openshift_versions_image_key_synchronizer.md
             - openshift_versions_archive.md
       - topicgroup:
           label: IAM and Activity Tracker events
           topics:
-            - openshift_users_access_ref.md
+            - users-access_ref.md
             - at-events.md
             - api-at-iam.md
       - locations.md
@@ -334,10 +334,10 @@ toc:
                     - ts-app-14-ocr-vpc.md
                     - ts-app-05-scc.md
                     - ts-app-06-imgpull.md
-                    - ts-app-07-container-start.md
+                    - ts-app-container-start.md
                     - ts-app-08-pod-pending.md
                     - ts-app-09-crashloop.md
-                    - ts-app-10-pod-fail.md
+                    - ts-app-pod-fail.md
                     - ts-app-11-svc-not-found.md
                     - ts-app-12-svc-key.md
                     - ts-app-15-helm-install.md
@@ -374,6 +374,7 @@ toc:
               - topicgroup:
                   label: File Storage
                   topics:
+                    - ts-storage-debug.md
                     - ts-storage-debug-file.md
                     - ts-storage-pvc-fail-permissions.md
                     - ts-storage-file-block-pvc-pending.md

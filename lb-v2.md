@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -74,7 +74,7 @@ Before you create an NLB 2.0, you must complete the following prerequisite steps
 
 Next, you can follow the steps in [Setting up an NLB 2.0 in a multizone cluster](#ipvs_multi_zone_config) or [in a single-zone cluster](#ipvs_single_zone_config).
 
-<br />
+
 
 ## Setting up an NLB 2.0 in a multizone cluster
 {: #ipvs_multi_zone_config}
@@ -241,7 +241,7 @@ To set up an NLB 2.0 in a multizone cluster:
 
 Next, you can [register an NLB subdomain](/docs/containers?topic=containers-loadbalancer_hostname).
 
-<br />
+
 
 ## Setting up an NLB 2.0 in a single-zone cluster
 {: #ipvs_single_zone_config}
@@ -377,7 +377,7 @@ To create an NLB 2.0 service in a single-zone cluster:
 
 Next, you can [register an NLB subdomain](/docs/containers?topic=containers-loadbalancer_hostname).
 
-<br />
+
 
 ## Scheduling algorithms
 {: #scheduling}

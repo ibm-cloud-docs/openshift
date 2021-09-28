@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhoks, rhos, responsibilities, incident, operations, change, security, regulation, disaster recovery, management, RACI
 
@@ -75,7 +75,7 @@ You and IBM share responsibilities for the set up and maintenance of your {{site
 {: summary="The rows are read from left to right. The resource area of comparing responsibilities is in the first column, with the responsibilities of IBM in the second column and your responsibilities in the third column."}
 {: caption="Table 2. Responsibilities for incident and operations management" caption-side="top"}
 
-<br />
+
 
 ### Change management
 {: #change-management}
@@ -90,7 +90,7 @@ You and IBM share responsibilities for keeping your clusters at the latest conta
 {: summary="The rows are read from left to right. The resource area of comparing responsibilities is in the first column, with the responsibilities of IBM in the second column and your responsibilities in the third column."}
 {: caption="Table 3. Responsibilities for change management" caption-side="top"}
 
-<br />
+
 
 ### Identity and access management
 {: #iam-responsibilities}
@@ -104,7 +104,7 @@ You and IBM share responsibilities for controlling access to your {{site.data.ke
 {: summary="The rows are read from left to right. The resource area of comparing responsibilities is in the first column, with the responsibilities of IBM in the second column and your responsibilities in the third column."}
 {: caption="Table 4. Responsibilities for identity and access management" caption-side="top"}
 
-<br />
+
 
 ### Security and regulation compliance
 {: #security-compliance}
@@ -118,7 +118,7 @@ IBM is responsible for the security and compliance of {{site.data.keyword.opensh
 {: summary="The rows are read from left to right. The resource area of comparing responsibilities is in the first column, with the responsibilities of IBM in the second column and your responsibilities in the third column."}
 {: caption="Table 5. Responsibilities for security and regulation compliance" caption-side="top"}
 
-<br />
+
 
 ### Disaster recovery
 {: #disaster-recovery}

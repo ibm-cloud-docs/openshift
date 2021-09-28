@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -40,7 +40,7 @@ For more information about how to create and use PVCs, PVs, and the physical sto
 - [Dynamic provisioning](#dynamic_provisioning)
 - [Static provisioning](#static_provisioning)
 
-<br />
+
 
 ## Dynamic provisioning
 {: #dynamic_provisioning}
@@ -78,7 +78,7 @@ For more information about how to dynamically provision persistent storage, see:
 - [{{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-object_storage#add_cos)
 - [Portworx](/docs/containers?topic=containers-portworx#add_portworx_storage)
 
-<br />
+
 
 ## Static provisioning
 {: #static_provisioning}
@@ -117,7 +117,7 @@ For more information about how to statically provision storage, see:
 - [{{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-object_storage#add_cos)
 - [Portworx](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/using-preprovisioned-volumes/#using-the-portworx-volume){: external}
 
-<br />
+
 
 ## Storage classes
 {: #storageclasses}

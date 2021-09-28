@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-24"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -13,7 +13,9 @@ content-type: troubleshoot
 
 
 
+
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Debugging common CLI issues with clusters
 {: #ts_clis}
@@ -24,8 +26,8 @@ Review the following common reasons for CLI connection issues or command failure
 {: shortdesc}
 
 **Infrastructure provider**:
-* <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 ## Firewall prevents running CLI commands
 {: #ts_firewall_clis}
@@ -39,12 +41,12 @@ You might have corporate network policies that prevent access from your local sy
 {: tsCauses}
 
 
-[Allow TCP access for the CLI commands to work](/docs/openshift?topic=openshift-firewall#firewall_bx).
+[Allow TCP access for the CLI commands to work](/docs/containers?topic=containers-firewall#firewall_bx).
 {: tsResolve}
 
-This task requires the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster.
+This task requires the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/containers?topic=containers-users#checking-perms) for the cluster.
 
-<br />
+
 
 ## `kubectl` or `oc` commands do not work
 {: #kubectl_fails}
@@ -83,7 +85,7 @@ To check your client `kubectl` version against the cluster server version, run `
 
 If you have multiple clusters at different Kubernetes versions or different container platforms such as {{site.data.keyword.openshiftshort}}, download each `kubectl` version binary file to a separate directory. Then, you can set up an alias in your local command-line interface (CLI) profile to point to the `kubectl` binary file directory that matches the `kubectl` version of the cluster that you want to work with, or you might be able to use a tool such as `brew switch kubernetes-cli <major.minor>`.
 
-<br />
+
 
 
 
@@ -120,8 +122,8 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 {: support}
 
 **Infrastructure provider**:
-* <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
+* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC Generation 2 compute
 
 
 You do not see all the projects that you have access to. When you try to run `oc` or `kubectl` commands, you see an error similar to the following.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -30,7 +30,7 @@ Before you can create clusters on your own infrastructure, you must set up an {{
 2. [Set up the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
 3. [Attach at least 3 hosts to your location](/docs/satellite?topic=satellite-hosts#attach-hosts) to use as the worker nodes for your {{site.data.keyword.openshiftlong_notm}} cluster.
 
-<br />
+
 
 ## Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the console
 {: #satcluster-create-console}
@@ -62,7 +62,7 @@ Use the {{site.data.keyword.cloud_notm}} console to create your {{site.data.keyw
 
 13. Optional: [Set up the internal container image registry](#satcluster-internal-registry).
 
-<br />
+
 
 ## Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the CLI
 {: #satcluster-create-cli}
@@ -152,7 +152,7 @@ To create the cluster in a {{site.data.keyword.satelliteshort}} location, you mu
 After you [access your cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat) and run `oc get nodes` or `oc describe node <worker_node>`, you might see that the worker nodes have `master,worker` roles. In OpenShift Container Platform clusters, operators use the master role as a `nodeSelector` so that OCP can deploy default components that are controlled by operators, such as the internal registry, in your cluster. The {{site.data.keyword.satelliteshort}} hosts that you assigned to your cluster function as worker nodes only, and no master node processes, such as the API server or Kubernetes scheduler, run on your worker nodes.
 {: note}
 
-<br />
+
 
 ## Accessing and working with your {{site.data.keyword.openshiftshort}} clusters
 {: #satcluster-access}
@@ -165,7 +165,7 @@ Review common tasks that you might be interested in:
 - [Accessing {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat)
 - [Assigning cluster access](/docs/openshift?topic=openshift-users)
 
-<br />
+
 
 ## Setting up the internal container image registry
 {: #satcluster-internal-registry}
@@ -179,7 +179,7 @@ By default, the internal registry does not run in your {{site.data.keyword.satel
 By default, the [image registry operator management state](https://docs.openshift.com/container-platform/4.7/registry/configuring-registry-operator.html#registry-operator-configuration-resource-overview_configuring-registry-operator){: external} is set to `Unmanaged`. After you change the storage section in the configmap to use a different solution such as the `emptyDir`, you must update the management state to `Managed`. Then, the operator creates the internal registry pod. Use the following command: `oc patch configs.imageregistry.operator.openshift.io/cluster --type merge -p '{"spec":{"managementState":"Managed"}}'`
 {: note}
 
-<br />
+
 
 ## Managing {{site.data.keyword.satelliteshort}} worker pools
 {: #satcluster-worker-pools}
@@ -276,7 +276,7 @@ You can add zones to a worker pool. Available {{site.data.keyword.satelliteshort
 When you remove a worker pool, all of the worker nodes in the cluster are removed. The hosts that the worker nodes ran on are unassigned from the cluster, and become unusable by but still attached to the {{site.data.keyword.satelliteshort}} location. For more information, see [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/satellite?topic=openshift-satellite-clusters#satcluster-rm).
 {: shortdesc}
 
-<br />
+
 
 ## Exposing apps
 {: #satcluster-expose-apps}
@@ -296,7 +296,7 @@ Unlike standard {{site.data.keyword.openshiftshort}} clusters that are created o
 *  Manually set up a storage operator that uses a backing storage provider in your cluster. For more information, see the storage operator provider documentation.
 *  Use local storage on the host, such as the [local storage operator](https://docs.openshift.com/container-platform/4.7/storage/persistent_storage/persistent-storage-local.html){: external}.
 
-<br />
+
 
 ## Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters
 {: #satcluster-rm}
@@ -335,7 +335,7 @@ When you remove {{site.data.keyword.openshiftshort}} clusters or worker nodes in
     *  Reload the host operating system so that you can re-attach and re-assign the host to other {{site.data.keyword.satelliteshort}} resources such as the location control plane or other clusters. For more information, see the update process in [Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-location).
     *  Delete the hosts from your underlying infrastructure provider. For more information, refer to the infrastructure provider documentation.
 
-<br />   
+   
 
 ## Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}
 {: #satcluster-limitations}

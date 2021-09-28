@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -109,7 +109,7 @@ Consider the following example. You create a contract on 15 December 2020 for 12
 
 No, you cannot modify the terms of the contract, such as the duration, number of worker nodes, or flavor. You can remove any unneeded worker nodes from your clusters, but you cannot get a refund for unused capacity in your reservation.
 
-<br />
+
 
 ## Creating a reservation
 {: #ri-create}
@@ -142,7 +142,7 @@ Before you begin, make sure that you have the [**Administrator** platform access
 
 Your reservation is created! Now, [use your reservation to provision worker nodes in your cluster](#ri-use) or [review your reservation usage](#ri-usage-lifecycle).
 
-<br />
+
 
 ## Using a reservation in a cluster
 {: #ri-use}
@@ -169,7 +169,7 @@ To use the reservation:
     4. For the **Worker nodes**, increase or decrease the number of worker nodes that you want to create per zone. You can review the percentage of your reservation that creating the worker pool uses. You cannot create a worker pool with more worker nodes than you have in your reservation. To use worker nodes from another reservation, create a different worker pool.
 5. In the **Summary** pane, notice that your estimated cost is zero, because your worker pool order uses the reservation. To complete the order, click **Create**.
 
-<br />
+
 
 ## Reviewing reservation usage
 {: #ri-review}

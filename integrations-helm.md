@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -47,7 +47,7 @@ For an overview of available Helm charts, see the [Helm charts catalog](https://
 
 Helm charts from the **iks-charts**, **ibm-charts**, and, if licensed, **entitled** repositories are fully integrated into the {{site.data.keyword.cloud_notm}} support organization. If you have a question or an issue with using these Helm charts, you can use one of the {{site.data.keyword.openshiftlong_notm}} support channels. For more information, see [Getting help and support](/docs/containers?topic=containers-get-help). [Install the latest release of Helm v3](#install_v3).
 
-<br />
+
 
 ## Installing Helm v3 in your cluster
 {: #install_v3}
