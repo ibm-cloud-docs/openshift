@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -35,10 +35,10 @@ When you expose an app with an NLB service, your app is automatically made avail
 **Kubernetes 1.20 and later**: Although the Kubernetes [SCTP protocol](https://kubernetes.io/docs/concepts/services-networking/service/#sctp){: external} and [application protocol](https://kubernetes.io/docs/concepts/services-networking/service/#application-protocol){: external} features are generally available in the community release, creating load balancers that use these protocols is not supported in {{site.data.keyword.containerlong_notm}} clusters.
 {: note}
 
-<br />
+
 
 ## Comparison of basic and DSR load balancing in version 1.0 and 2.0 NLBs
-{: #comparison}
+{: #comparison-lbs}
 
 When you create an NLB, you can choose a version 1.0 NLB, which performs basic load balancing, or version 2.0 NLB, which performs direct server return (DSR) load balancing.
 {: shortdesc}
@@ -53,7 +53,7 @@ When a client sends a request to your app, the NLB routes request packets to the
 
 As opposed to version 1.0 NLBs, version 2.0 NLBs don't use NAT when forwarding requests to app pods on other workers. When an NLB 2.0 routes a client request, it uses IP over IP (IPIP) to encapsulate the original request packet into another packet. This encapsulating IPIP packet has a source IP of the worker node where the load balancer pod is, which allows the original request packet to preserve the client IP as its source IP address. The worker node then uses direct server return (DSR) to send the app response packet to the client IP. The response packet skips the NLB and is sent directly to the client, decreasing the amount of traffic that the NLB must handle. For more information about DSR load balancing with version 2.0 NLBs, see [Components and architecture of an NLB 2.0](#planning_ipvs).
 
-<br />
+
 
 ## Components and architecture of an NLB 1.0
 {: #v1_planning}
@@ -91,7 +91,7 @@ The following diagram shows how a network load balancer (NLB) 1.0 directs commun
 
 4. When the app returns a response packet, it uses the IP address of the worker node where the NLB that forwarded the client request exists. The NLB then sends the response packet to the client.
 
-<br />
+
 
 ## Components and architecture of an NLB 2.0
 {: #planning_ipvs}

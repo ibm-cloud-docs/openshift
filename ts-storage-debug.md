@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-24"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -13,7 +13,9 @@ content-type: troubleshoot
 
 
 
+
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Debugging persistent storage failures
 {: #debug_storage}
@@ -59,7 +61,7 @@ Review the options to debug persistent storage and find the root causes for fail
     ```
     {: pre}
 
-3. If restarting your pod does not resolve the issue, [reload your worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
+3. If restarting your pod does not resolve the issue, [reload your worker node](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload).
 
 4. Verify that you use the latest {{site.data.keyword.cloud_notm}} and {{site.data.keyword.containerlong_notm}} plug-in version.
     ```sh
@@ -133,13 +135,13 @@ Review the options to debug persistent storage and find the root causes for fail
     {: pre}
 
 3. Review common errors that can occur during the PVC creation.
-    - [File storage and classic block storage: PVC remains in a pending state](/docs/openshift?topic=openshift-file_pvc_pending)
-    - [Object storage: PVC remains in a pending state](/docs/openshift?topic=openshift-cos_pvc_pending)
+    - [File storage and classic block storage: PVC remains in a pending state](/docs/containers?topic=containers-file_pvc_pending)
+    - [Object storage: PVC remains in a pending state](/docs/containers?topic=containers-cos_pvc_pending)
 
 4. Review common errors that can occur when you mount a PVC to your app.
-    - [File storage: App cannot access or write to PVC](/docs/openshift?topic=openshift-file_app_failures)
-    - [Classic Block storage: App cannot access or write to PVC](/docs/openshift?topic=openshift-block_app_failures)
-    - [Object storage: Accessing files with a non-root user fails](/docs/openshift?topic=openshift-cos_nonroot_access)
+    - [File storage: App cannot access or write to PVC](/docs/containers?topic=containers-file_app_failures)
+    - [Classic Block storage: App cannot access or write to PVC](/docs/containers?topic=containers-block_app_failures)
+    - [Object storage: Accessing files with a non-root user fails](/docs/containers?topic=containers-cos_nonroot_access)
 
 7. Verify that the `kubectl` CLI version that you run on your local machine matches the Kubernetes version that is installed in your cluster. If you use a `kubectl` CLI version that does not match at least the major.minor version of your cluster, you might experience unexpected results. For example, [Kubernetes does not support ![External link icon](../icons/launch-glyph.svg “External link icon”)](https://kubernetes.io/releases/version-skew-policy/) `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2).
     1. Show the `kubectl` CLI version that is installed in your cluster and your local machine.
@@ -159,7 +161,7 @@ Review the options to debug persistent storage and find the root causes for fail
     2. If the `kubectl` CLI versions on your local machine and your cluster do not match, either [update your cluster](/docs/containers?topic=containers-update) or [install a different CLI version on your local machine](/docs/containers?topic=containers-cs_cli_install#kubectl).
 
 
-8. For {{site.data.keyword.block_storage_is_short}}, [verify that you have the latest version of the add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).
+8. For {{site.data.keyword.block_storage_is_short}}, [verify that you have the latest version of the add-on](/docs/containers?topic=containers-vpc-block#vpc-addon-update).
 
 9. For classic block storage, object storage, and Portworx only: Make sure that you installed the latest Helm chart version for the plug-in.
 
@@ -203,7 +205,7 @@ Review the options to debug persistent storage and find the root causes for fail
         ```
         {: pre}
 
-    4. If a more recent version is available, install this version. For instructions, see [Updating the {{site.data.keyword.cloud_notm}} Block Storage plug-in](/docs/containers?topic=containers-block_storage#update_block) and [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).
+    4. If a more recent version is available, install this version. For instructions, see [Updating the {{site.data.keyword.cloud_notm}} Block Storage plug-in](/docs/containers?topic=containers-block_storage#update_block) and [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-object_storage#update_cos_plugin).
 
 ## Portworx
 {: #ts-portworx-helm}
@@ -216,7 +218,7 @@ Review the options to debug persistent storage and find the root causes for fail
         ```
         {: pre}
 
-    3. If a more recent version is available, install this version. For instructions, see [Updating Portworx in your cluster](/docs/openshift?topic=openshift-portworx#update_portworx).
+    3. If a more recent version is available, install this version. For instructions, see [Updating Portworx in your cluster](/docs/containers?topic=containers-portworx#update_portworx).
 
 
 ## OpenShift Data Foundation 

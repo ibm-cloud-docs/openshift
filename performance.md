@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, rhoks, roks, rhos, kernel
 
@@ -134,7 +134,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     ```
     {: pre}
 
-<br />
+
 
 To revert your worker nodes' `sysctl` parameters to the default values set by {{site.data.keyword.containerlong_notm}}:
 
@@ -146,7 +146,7 @@ To revert your worker nodes' `sysctl` parameters to the default values set by {{
 
 2. [Reboot all worker nodes in the cluster](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reboot). The worker nodes come back online with the default values applied.
 
-<br />
+
 
 
 

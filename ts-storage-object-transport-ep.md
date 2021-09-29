@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-24"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -15,12 +15,13 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Why is the transport endpoint not connected?
 {: cos_transport_ts_connect}
 
 **Infrastructure provider**:
-* <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 
 When you create a PVC, you see an error message similar to the following:
@@ -150,7 +151,7 @@ Follow the steps to gather logging information.
     ```
     {: pre}
 
-8. Review the `syslog` and the `s3fslog` for information about the `Transport endpoint` error. [Open a support ticket](/docs/openshift?topic=openshift-get-help#help-support) and share the log files that you gathered.
+8. Review the `syslog` and the `s3fslog` for information about the `Transport endpoint` error. [Open a support ticket](/docs/containers?topic=containers-get-help#help-support) and share the log files that you gathered.
 
 9. Delete the `ibm-inspectnode` daemonset that you deployed.
 

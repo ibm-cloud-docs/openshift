@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2021
-lastupdated: "2021-09-24"
+lastupdated: "2021-09-29"
 
 keywords: openshift, storage
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # What if my OpenShift Data Foundation issue is still unresolved?
 {: #ocs-error-unresolved}

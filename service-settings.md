@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -37,8 +37,15 @@ Review the feature gates that are applied to all master and worker node componen
 | 4.5 | <ul><li><code>ExperimentalCriticalPodAnnotation=true</code></li><li><code>LocalStorageCapacityIsolation=false</code></li></ul>|
 | 4.4 | <ul><li><code>ExperimentalCriticalPodAnnotation=true</code></li><li><code>LocalStorageCapacityIsolation=false</code></li></ul>|
 | 4.3 | <ul><li><code>ExperimentalCriticalPodAnnotation=true</code></li><li><code>LocalStorageCapacityIsolation=false</code></li></ul>|
+| 1.22 | <code>ServiceLBNodePortControl=false</code>
+| 1.21 | <ul><li><code>CustomCPUCFSQuotaPeriod=true</code></li><li><code>IPv6DualStack=false</code></li></ul>|
+| 1.20 | <ul><li><code>AllowInsecureBackendProxy=false</code></li><li><code>CustomCPUCFSQuotaPeriod=true</code></li></ul>|
+| 1.19 | <ul><li><code>RuntimeClass=false</code></li><li><code>CustomCPUCFSQuotaPeriod=true</code></li><li><code>AllowInsecureBackendProxy=false</code></li><li><code>SCTPSupport=false</code></li><li><code>ServiceAppProtocol=false</code></li></ul>|
+| 1.18 | <ul><li><code>RuntimeClass=false</code></li><li><code>CustomCPUCFSQuotaPeriod=true</code></li><li><code>AllowInsecureBackendProxy=false</code></li></ul>|
 {: caption="Overview of feature gates" caption-side="top"}
 {: summary="The rows are read from left to right. The version is in the first column, with the default feature gates in the second column."}
+
+
 
 
 
@@ -68,7 +75,6 @@ Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many Open
 *   `OAuth`
 *   `Proxy`
 *   `Scheduler`
-
 
 
 

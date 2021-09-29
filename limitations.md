@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-29"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
@@ -61,7 +61,7 @@ To view quota limits on cluster-related resources in your {{site.data.keyword.cl
 {: summary="This table contains information on general {{site.data.keyword.openshiftlong_notm}} limitations. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="{{site.data.keyword.openshiftlong_notm}} limitations"}
 
-<br />
+
 
 
 
@@ -135,7 +135,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 {: summary="This table contains information on storage limitations for classic clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="Classic cluster storage limitations"}
 
-<br />
+
 
 ## VPC cluster limitations
 {: #ks_vpc_gen2_limits}

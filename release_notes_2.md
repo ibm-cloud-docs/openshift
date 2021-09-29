@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-29"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -34,6 +34,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 Review the release notes for September 2021.
 {: shortdesc}
+
+
+
 
 ### 27 September 2021
 {: #27sep2021}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -70,7 +70,7 @@ Review the following default Calico host policies that are automatically applied
 {: caption="Default Calico host policies for each cluster"}
 {: summary="The first row in the table spans both columns. Read the rest of the rows from left to right, with the Calico policy in column one and the description in column two."}
 
-<br />
+
 
 ## Installing and configuring the Calico CLI
 {: #cli_install}

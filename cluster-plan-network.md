@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-29"
 
 keywords: openshift, rhoks, roks, rhos, multi az, multi-az, szr, mzr
 
@@ -171,7 +171,7 @@ To make your apps accessible from the public internet, you can use public networ
 
 You can use public Kubernetes networking services, such as creating [`LoadBalancer` services](/docs/containers?topic=containers-vpc-lbaas). For example, when you create a Kubernetes `LoadBalancer` service in your cluster, a load balancer for VPC is automatically created in your VPC outside of your cluster. The VPC load balancer is multizonal and routes requests for your app through the private NodePorts that are automatically opened on your worker nodes. You can then modify the default security group for your cluster to allow inbound network traffic requests from specified sources to your worker nodes.
 
-<br />
+
 
 ## Example scenarios for VPC cluster network setups
 {: #vpc-scenarios}
@@ -212,7 +212,7 @@ After you test your app, you can expose it to the internet by creating a public 
 
 Ready to get started with a cluster for this scenario? After you plan your [high availability](/docs/containers?topic=containers-ha_clusters) and [worker node](/docs/containers?topic=containers-planning_worker_nodes) setups, see [Creating VPC clusters](/docs/containers?topic=containers-clusters).
 
-<br />
+
 
 
 ### Scenario: Extend your on-premises data center to a VPC cluster
@@ -248,7 +248,7 @@ After you test your app, you can expose it to the private network by creating a 
 
 Ready to get started with a cluster for this scenario? After you plan your [high availability](/docs/containers?topic=containers-ha_clusters) and [worker node](/docs/containers?topic=containers-planning_worker_nodes) setups, see [Creating VPC clusters](/docs/containers?topic=containers-clusters).
 
-<br />
+
 
 ## Understanding network basics of classic clusters
 {: #plan_basics}
@@ -364,7 +364,7 @@ To make your apps externally accessible from the public internet, you can create
 
 Edge worker nodes can improve the security of your cluster by allowing fewer worker nodes that are connected to public VLANs to be accessed externally and by isolating the networking workload. When you [label worker nodes as edge nodes](/docs/containers?topic=containers-edge#edge_nodes), NLB and ALB pods are deployed to only those specified worker nodes. Router pods remain deployed to the non-edge worker nodes. To also prevent other workloads from running on edge nodes, you can [taint the edge nodes](/docs/containers?topic=containers-edge#edge_workloads). Then, you can deploy both public and private NLBs and ALBs to edge nodes.
 
-<br />
+
 
 ## Example scenarios for classic cluster network setups
 {: #classic-scenarios}
@@ -410,7 +410,7 @@ To expose an app in your cluster to the internet, you can create a public networ
 
 Ready to get started with a cluster for this scenario? After you plan your [high availability](/docs/containers?topic=containers-ha_clusters) and [worker node](/docs/containers?topic=containers-planning_worker_nodes) setups, see [Creating clusters](/docs/containers?topic=containers-clusters).
 
-<br />
+
 
 ### Scenario: Extend your on-premises data center to a classic cluster and add limited public access
 {: #limited-public}
@@ -451,7 +451,7 @@ To provide private access to an app in your cluster, you can create a private ne
 
 Ready to get started with a cluster for this scenario? After you plan your [high availability](/docs/containers?topic=containers-ha_clusters) and [worker node](/docs/containers?topic=containers-planning_worker_nodes) setups, see [Creating clusters](/docs/containers?topic=containers-clusters).
 
-<br />
+
 
 
 

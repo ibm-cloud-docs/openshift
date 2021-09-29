@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, vpc, block storage
 
@@ -143,7 +143,7 @@ To create the Kubernetes secret that is used in the {{site.data.keyword.block_st
     ```
     {: pre}
 
-<br />
+
 
 ## Creating the image pull secret in your cluster
 {: #vpc-block-create-storage-secret}
@@ -224,7 +224,7 @@ Select the {{site.data.keyword.block_storage_is_short}} driver configmap that ma
 
 7. [Deploy a stateful set that uses {{site.data.keyword.block_storage_is_short}}](#vpc-block-stateful-set-deploy).
 
-<br />
+
 
 ## Deploying a stateful set that uses {{site.data.keyword.block_storage_is_short}}
 {: #vpc-block-stateful-set-deploy}
@@ -312,7 +312,7 @@ After you deploy the {{site.data.keyword.block_storage_is_short}} driver, you ca
     {: screen}
 
 
-<br />
+
 
 ## Removing the {{site.data.keyword.block_storage_is_short}} driver
 {: #removing-the-block-storage-for-vpc-driver}
@@ -335,7 +335,7 @@ Removing the {{site.data.keyword.block_storage_is_short}} driver from your clust
     {: pre}
 
 
-<br />
+
 
 ## Config map reference
 {: #vpc-block-um-cm-ref}

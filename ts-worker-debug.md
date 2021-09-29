@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-24"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -13,7 +13,9 @@ content-type: troubleshoot
 
 
 
+
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Debugging worker nodes
 {: #debug_worker_nodes}
@@ -24,8 +26,8 @@ Review the options to debug your worker nodes and find the root causes for failu
 {: shortdesc}
 
 **Infrastructure provider**:
-* <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 ## Step 1: Get the worker node state
 {: #worker-debug-get-state}
@@ -47,7 +49,7 @@ For more information, see [Worker node states](/docs/openshift?topic=openshift-w
 ## Step 3: Get the details for each worker node
 {: #worker-debug-get-details}
 
-Get the details for the worker node. If the details include an error message, review the list of [common error messages for worker nodes](/docs/openshift?topic=openshift-common_worker_nodes_issues) to learn how to resolve the problem.
+Get the details for the worker node. If the details include an error message, review the list of [common error messages for worker nodes](/docs/containers?topic=containers-common_worker_nodes_issues) to learn how to resolve the problem.
 
 ```
 ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id>

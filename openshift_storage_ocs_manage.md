@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc, roks
 
@@ -61,7 +61,7 @@ To update the OpenShift Data Foundation in your cluster, disable the add-on and 
     ```
     {: pre}
 
-<br />
+
 
 ## Removing the OpenShift Data Foundation add-on from your cluster
 {: #ocs-addon-rm}
@@ -103,7 +103,7 @@ You can uninstall the OpenShift Data Foundation add-on from your cluster by usin
     ```
     {: pre}
 
-<br />
+
 
 ## VPC: Updating the ODF operator from your CRD
 {: #ocs-addon-up-vpc}
@@ -151,7 +151,7 @@ If you deployed ODF by using a CRD, you can update your ODF deployment by editin
 1. Save and close the `OcsCluster` to reapply it to your cluster.
 
 
-<br />
+
 
 
 ## Removing ODF from your apps

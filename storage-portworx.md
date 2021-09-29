@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -90,7 +90,7 @@ Yes. To install Portworx in a private cluster, your {{site.data.keyword.cloud_no
 
 All set? Let's start with [creating a cluster with an SDS worker pool of at least three worker nodes](/docs/containers?topic=containers-clusters). If you want to include non-SDS worker nodes into your Portworx cluster, [add raw block storage](#create_block_storage) to each worker node. After your cluster is prepared, [install Portworx](#install_portworx) in your cluster and create your first hyper-converged storage cluster.
 
-<br />
+
 
 ## Planning your Portworx setup
 {: #portworx_planning}
@@ -138,7 +138,7 @@ Keep in mind that the networking of non-SDS worker nodes in classic clusters is 
 1. Follow the [steps](/docs/containers?topic=containers-utilities#vpc_cli_attach) to create the {{site.data.keyword.block_storage_is_short}} instances and attach these to each worker node that you want to add to the Portworx storage layer. For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.  
 2. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](#portworx_database).
 
-<br />
+
 
 
 
@@ -262,7 +262,7 @@ Databases for etcd is a managed etcd service that securely stores and replicates
 
 6. Choose if you want to [set up encryption for your volumes with {{site.data.keyword.keymanagementservicelong_notm}}](#encrypt_volumes). If you don't want to set up {{site.data.keyword.keymanagementservicelong_notm}} encryption for your volumes, continue with [installing Portworx in your cluster](#install_portworx).
 
-<br />
+
 
 ## Optional: Setting up volume encryption
 {: #encrypt_volumes}
@@ -523,7 +523,7 @@ Follow these steps to set up encryption for your Portworx volumes.
 Check out how to [encrypt the secrets in your cluster](/docs/containers?topic=containers-encryption#keyprotect), including the secret where you stored your {{site.data.keyword.keymanagementserviceshort}} CRK for your Portworx storage cluster.
 {: tip}
 
-<br />
+
 
 ## Installing Portworx in your cluster
 {: #install_portworx}
@@ -675,7 +675,7 @@ You can upgrade Portworx to the latest version.
     ```
     {: pre}
 
-<br />
+
 
 ## Creating a Portworx volume
 {: #add_portworx_storage}
@@ -809,7 +809,7 @@ Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs
         ```
         {: pre}
 
-        <br />
+        
 
 ## Mounting the volume to your app
 {: #mount_pvc}
@@ -955,7 +955,7 @@ To access the storage from your app, you must mount the PVC to your app.
         ```
         {: pre}
 
-        <br />
+        
 
 
 
@@ -1245,7 +1245,7 @@ To include your cluster in a Portworx disaster recovery configuration:
     <dd>[Lighthouse ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/reference/lighthouse/) is an intuitive, graphical tool to help you manage and monitor your Portworx clusters and volume snapshots. With Lighthouse, you can view the health of your Portworx cluster, including the number of available storage nodes, volumes and available capacity, and analyze your data in Prometheus, Grafana, or Kibana. </dd>
 </dl>
 
-<br />
+
 
 ## Cleaning up your Portworx volumes and cluster
 {: #portworx_cleanup}
@@ -1388,7 +1388,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     ```
     {: pre}
 
-<br />
+
 
 ### Removing Portworx from your cluster
 {: #remove_portworx}
@@ -1461,7 +1461,7 @@ The following commands result in data loss.
 To stop billing for Portworx, you must remove the Portworx Helm installation from your cluster and remove the Portworx service instance from your {{site.data.keyword.cloud_notm}} account.
 {: important}
 
-<br />
+
 
 ## Getting help and support
 {: #portworx_help_sup}

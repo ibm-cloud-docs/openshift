@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -78,7 +78,7 @@ Before you can decide what type of storage is the right solution for your {{site
 
 8. [Review available persistent storage solutions](#persistent_storage_overview) and pick the solution that best fits your app and data requirements.
 
-<br />
+
 
 
 ## Comparison of non-persistent storage options
@@ -177,7 +177,7 @@ The following image shows available non-persistent data storage options in {{sit
 </tbody>
 </table>
 
-<br />
+
 
 
 ## Comparison of persistent storage options for single zone clusters
@@ -290,7 +290,7 @@ The following image shows the options that you have in {{site.data.keyword.opens
 </tbody>
 </table>
 
-<br />
+
 
 
 

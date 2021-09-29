@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -60,7 +60,7 @@ Complete the following prerequisite steps to set up permissions and the command-
 1. [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc`), and {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)](/docs/openshift?topic=openshift-openshift-cli#cs_cli_install_steps).
 2. [Install the {{site.data.keyword.openshiftshort}} (`oc`) and Kubernetes (`kubectl`) CLIs](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
 
-<br />
+
 
 ## Create a {{site.data.keyword.openshiftlong_notm}} cluster
 {: #openshift_create_cluster}
@@ -111,7 +111,7 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
     If you cannot perform operations that require Administrator permissions, such as listing all the worker nodes or pods in a cluster, download the TLS certificates and permission files for the cluster administrator by running the `ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin` command.
     {: tip}
 
-<br />
+
 
 ## Navigate the {{site.data.keyword.openshiftshort}} console
 {: #openshift_oc_console}
@@ -156,7 +156,7 @@ The Application console is available from the dropdown menu in the **OpenShift C
 
 The Cluster console is available from the dropdown menu in the **OpenShift Container Platform** menu bar. For cluster-wide administrators across all the projects in the cluster, you can manage projects, service accounts,RBAC roles, role bindings, and resource quotas. You can also see the status and events for resources within the cluster in a combined view. For more information, see the [{{site.data.keyword.openshiftshort}} Web Console Walkthrough](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external} in the {{site.data.keyword.openshiftshort}} documentation.
 
-<br />
+
 
 ## Deploy an app to your {{site.data.keyword.openshiftshort}} cluster
 {: #openshift_deploy_app}
@@ -270,7 +270,7 @@ If you took a break from the last lesson and started a new command line, make su
 
 
 
-<br />
+
 
 ## What's next?
 {: #openshift_next}

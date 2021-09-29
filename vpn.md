@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-24"
+lastupdated: "2021-09-29"
 
 keywords: openshift, roks, rhos, rhoks, strongswan, ipsec, on-prem
 
@@ -12,12 +12,14 @@ subcollection: openshift
 
 
 
+
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Setting up classic VPN connectivity
 {: #vpn}
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This VPN information is specific to classic clusters. For VPN information for VPC clusters, see [Setting up VPC VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas).
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This VPN information is specific to classic clusters. For VPN information for VPC clusters, see [Setting up VPC VPN connectivity](/docs/containers?topic=containers-vpc-vpnaas).
 {: note}
 
 With VPN connectivity, you can securely connect apps in a {{site.data.keyword.openshiftshort}} cluster on {{site.data.keyword.openshiftlong}} to an on-premises network. You can also connect apps that are external to your cluster to an app that runs inside your cluster.
@@ -33,9 +35,9 @@ To connect your worker nodes and apps to an on-premises data center, you can con
 
 If you plan to connect your cluster to on-premises networks, check out the following helpful features.
 
-- You might have subnet conflicts with the IBM-provided default 172.30.0.0/16 range for pods and 172.21.0.0/16 range for services. You can avoid subnet conflicts when you [create a cluster from the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) by specifying a custom subnet CIDR for pods in the `--pod-subnet` flag and a custom subnet CIDR for services in the `--service-subnet` flag.
+- You might have subnet conflicts with the IBM-provided default 172.30.0.0/16 range for pods and 172.21.0.0/16 range for services. You can avoid subnet conflicts when you [create a cluster from the CLI](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_create) by specifying a custom subnet CIDR for pods in the `--pod-subnet` flag and a custom subnet CIDR for services in the `--service-subnet` flag.
 
-- If your VPN solution preserves the source IP addresses of requests, you can [create custom static routes](/docs/openshift?topic=openshift-static-routes) to ensure that your worker nodes can route responses from your cluster back to your on-premises network.</p>
+- If your VPN solution preserves the source IP addresses of requests, you can [create custom static routes](/docs/containers?topic=containers-static-routes) to ensure that your worker nodes can route responses from your cluster back to your on-premises network.</p>
 
 The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` subnet ranges are prohibited because they are reserved for {{site.data.keyword.openshiftlong_notm}} control plane functionality.
 {: note}
@@ -66,7 +68,7 @@ Because strongSwan is integrated within your cluster, you don't need an external
 Before using the strongSwan Helm chart, review the following considerations and limitations.
 {: shortdesc}
 
-- The strongSwan Helm chart is supported only for classic clusters, and is not supported for VPC clusters. For VPN information for VPC clusters, see [Setting up VPC VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas).
+- The strongSwan Helm chart is supported only for classic clusters, and is not supported for VPC clusters. For VPN information for VPC clusters, see [Setting up VPC VPN connectivity](/docs/containers?topic=containers-vpc-vpnaas).
 - The strongSwan Helm chart requires NAT traversal to be enabled by the remote VPN endpoint. NAT traversal requires UDP port 4500 in addition to the default IPSec UDP port of 500. Both UDP ports need to be allowed through any firewall that is configured.
 - The strongSwan Helm chart does not support route-based IPSec VPNs.
 - The strongSwan Helm chart supports IPSec VPNs that use preshared keys, but does not support IPSec VPNs that require certificates.
@@ -74,7 +76,7 @@ Before using the strongSwan Helm chart, review the following considerations and 
 - The strongSwan Helm chart runs as a Kubernetes pod inside of the cluster. The VPN performance is affected by the memory and network usage of Kubernetes and other pods that are running in the cluster. If you have a performance-critical environment, consider using a VPN solution that runs outside of the cluster on dedicated hardware.
 - The strongSwan Helm chart runs a single VPN pod as the IPSec tunnel endpoint. If the pod fails, the cluster restarts the pod. However, you might experience a short down time while the new pod starts and the VPN connection is re-established. If you require faster error recovery or a more elaborate high availability solution, consider using a VPN solution that runs outside of the cluster on dedicated hardware.
 - The strongSwan Helm chart does not provide metrics or monitoring of the network traffic flowing over the VPN connection. For a list of supported monitoring tools, see [Logging and monitoring services](/docs/openshift?topic=openshift-health).
-- Only strongSwan Helm chart versions that were released in the last 6 months are supported. Ensure that you consistently [upgrade your strongSwan Helm chart](/docs/openshift?topic=openshift-vpn#vpn_upgrade) for the latest features and security fixes.
+- Only strongSwan Helm chart versions that were released in the last 6 months are supported. Ensure that you consistently [upgrade your strongSwan Helm chart](/docs/containers?topic=containers-vpn#vpn_upgrade) for the latest features and security fixes.
 
 Your cluster users can use the strongSwan VPN service to connect to your Kubernetes master through the private cloud service endpoint. However, communication with the Kubernetes master over the private cloud service endpoint must go through the <code>166.X.X.X</code> IP address range, which is not routable from a VPN connection. You can expose the private cloud service endpoint of the master for your cluster users by [using a private network load balancer (NLB)](/docs/openshift?topic=openshift-access_cluster#access_private_se). The private NLB exposes the private cloud service endpoint of the master as an internal `172.21.x.x` cluster IP address that the strongSwan VPN pod can access. If you enable only the private cloud service endpoint, you can use the Kubernetes dashboard or temporarily enable the public cloud service endpoint to create the private NLB.
 {: tip}
@@ -109,10 +111,10 @@ The simplest solution for configuring the strongSwan VPN service in a multizone 
 
 When the VPN connection is outbound from the multizone cluster, only one strongSwan deployment is required. If a worker node is removed or experiences downtime, `kubelet` reschedules the VPN pod onto a new worker node. If an availability zone experiences an outage, `kubelet` reschedules the VPN pod onto a new worker node in a different zone.
 
-1. [Configure one strongSwan VPN Helm chart](/docs/openshift?topic=openshift-vpn#vpn_configure). When you follow the steps in that section, ensure that you specify the following settings.
+1. [Configure one strongSwan VPN Helm chart](/docs/containers?topic=containers-vpn#vpn_configure). When you follow the steps in that section, ensure that you specify the following settings.
     - `ipsec.auto`: Change to `start`. Connections are outbound from the cluster.
     - `loadBalancerIP`: Do not specify an IP address. Leave this setting blank.
-    - `zoneLoadBalancer`: Specify a public load balancer IP address for each zone where you have worker nodes. [You can check to see your available public IP addresses](/docs/openshift?topic=openshift-subnets#review_ip) or [free up a used IP address](/docs/openshift?topic=openshift-subnets#free). Because the strongSwan VPN pod can be scheduled to a worker node in any zone, this list of IPs ensures that a load balancer IP can be used in any zone where the VPN pod is scheduled.
+    - `zoneLoadBalancer`: Specify a public load balancer IP address for each zone where you have worker nodes. [You can check to see your available public IP addresses](/docs/containers?topic=containers-subnets#review_ip) or [free up a used IP address](/docs/containers?topic=containers-subnets#free). Because the strongSwan VPN pod can be scheduled to a worker node in any zone, this list of IPs ensures that a load balancer IP can be used in any zone where the VPN pod is scheduled.
     - `connectUsingLoadBalancerIP`: Set to `true`. When the strongSwan VPN pod is scheduled onto a worker node, the strongSwan service selects the load balancer IP address that is in the same zone and uses this IP to establish the outbound connection.
     - `local.id`: Specify a fixed value that is supported by your remote VPN endpoint. If the remote VPN endpoint requires you to set the `local.id` option (`leftid` value in `ipsec.conf`) to the public IP address of the VPN IPSec tunnel, set `local.id` to `%loadBalancerIP`. This value automatically configures the `leftid` value in `ipsec.conf` to the load balancer IP address that is used for the connection.
     - Optional: Hide all of the cluster IP addresses behind a single IP address in each zone by setting `enableSingleSourceIP` to `true`. This option provides one of the most secure configurations for the VPN connection because no connections from the remote network back into the cluster are permitted. You must also set `local.subnet` to the `%zoneSubnet` variable, and use the `local.zoneSubnet` to specify an IP address as a /32 subnet for each zone of the cluster.
@@ -129,10 +131,10 @@ When you require incoming VPN connections and the remote VPN endpoint can automa
 
 The remote VPN endpoint can establish the VPN connection to any of the strongSwan load balancers in any of the zones. The incoming request is sent to the VPN pod regardless of which zone the VPN pod is in. Responses from the VPN pod are sent back through the original load balancer to the remote VPN endpoint. This option ensures high availability because `kubelet` reschedules the VPN pod onto a new worker node if a worker node is removed or experiences downtime. Additionally, if an availability zone experiences an outage, the remote VPN endpoint can re-establish the VPN connection to the load balancer IP address in a different zone so that the VPN pod can still be reached.
 
-1. [Configure one strongSwan VPN Helm chart](/docs/openshift?topic=openshift-vpn#vpn_configure). When you follow the steps in that section, ensure that you specify the following settings.
+1. [Configure one strongSwan VPN Helm chart](/docs/containers?topic=containers-vpn#vpn_configure). When you follow the steps in that section, ensure that you specify the following settings.
     - `ipsec.auto`: Change to `add`. Connections are inbound to the cluster.
     - `loadBalancerIP`: Do not specify an IP address. Leave this setting blank.
-    - `zoneLoadBalancer`: Specify a public load balancer IP address for each zone where you have worker nodes. [You can check to see your available public IP addresses](/docs/openshift?topic=openshift-subnets#review_ip) or [free up a used IP address](/docs/openshift?topic=openshift-subnets#free).
+    - `zoneLoadBalancer`: Specify a public load balancer IP address for each zone where you have worker nodes. [You can check to see your available public IP addresses](/docs/containers?topic=containers-subnets#review_ip) or [free up a used IP address](/docs/containers?topic=containers-subnets#free).
     - `local.id`: If the remote VPN endpoint requires you to set the `local.id` option (`leftid` value in `ipsec.conf`) to the public IP address of the VPN IPSec tunnel, set `local.id` to `%loadBalancerIP`. This value automatically configures the `leftid` value in `ipsec.conf` to the load balancer IP address that is used for the connection.
 
 2. In your remote network firewall, allow outgoing IPSec VPN connections to the public IP addresses you listed in the `zoneLoadBalancer` setting.
@@ -147,8 +149,8 @@ The remote VPN endpoint must be updated to establish a separate VPN connection t
 
 After you deploy each Helm chart, each strongSwan VPN deployment starts up as a Kubernetes load balancer service in the correct zone. Incoming requests to that public IP are forwarded to the VPN pod that is also allocated in the same zone. If the zone experiences an outage, the VPN connections that are established in the other zones are unaffected.
 
-1. [Configure a strongSwan VPN Helm chart](/docs/openshift?topic=openshift-vpn#vpn_configure) for each zone. When you follow the steps in that section, ensure that you specify the following settings:
-    - `loadBalancerIP`: Specify an available public load balancer IP address that is in the zone where you deploy this strongSwan service. [You can check to see your available public IP addresses](/docs/openshift?topic=openshift-subnets#review_ip) or [free up a used IP address](/docs/openshift?topic=openshift-subnets#free).
+1. [Configure a strongSwan VPN Helm chart](/docs/containers?topic=containers-vpn#vpn_configure) for each zone. When you follow the steps in that section, ensure that you specify the following settings:
+    - `loadBalancerIP`: Specify an available public load balancer IP address that is in the zone where you deploy this strongSwan service. [You can check to see your available public IP addresses](/docs/containers?topic=containers-subnets#review_ip) or [free up a used IP address](/docs/containers?topic=containers-subnets#free).
     - `zoneSelector`: Specify the zone where you want the VPN pod to be scheduled.
     - Additional settings, such as `zoneSpecificRoutes`, `remoteSubnetNAT`, `localSubnetNAT`, or `enableSingleSourceIP`, might be required depending on which resources must be accessible over the VPN. See the next step for more details.
 
@@ -171,7 +173,7 @@ Before you install the strongSwan Helm chart, you must decide on your strongSwan
 
 Before you begin
 - Install an IPSec VPN gateway in your on-premises data center.
-- Ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the `default` namespace.
+- Ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/containers?topic=containers-users#checking-perms) for the `default` namespace.
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
     All strongSwan configurations are permitted in standard clusters. If you use a free cluster, you can choose only an outbound VPN connection in [Step 3](#strongswan_3). Inbound VPN connections require a load balancer in the cluster, and load balancers are not available for free clusters.
     {: note}
@@ -182,7 +184,7 @@ Before you begin
 Install Helm and get the strongSwan Helm chart to view possible configurations.
 {: shortdesc}
 
-1. [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the version 3 Helm client on your local machine.
+1. [Follow the instructions](/docs/containers?topic=containers-helm#install_v3) to install the version 3 Helm client on your local machine.
 
 2. Save the default configuration settings for the strongSwan Helm chart in a local YAML file.
 
@@ -233,7 +235,7 @@ If you use a free cluster, you can choose only an outbound VPN connection. Inbou
 To establish an inbound VPN connection, modify the following settings.
 
 1. Verify that `ipsec.auto` is set to `add`.
-2. Optional: Set `loadBalancerIP` to a portable public IP address for the strongSwan VPN service. Specifying an IP address is useful when you need a stable IP address, such as when you must designate which IP addresses are permitted through an on-premises firewall. The cluster must have at least one available public load balancer IP address. [You can check to see your available public IP addresses](/docs/openshift?topic=openshift-subnets#review_ip) or [free up a used IP address](/docs/openshift?topic=openshift-subnets#free).
+2. Optional: Set `loadBalancerIP` to a portable public IP address for the strongSwan VPN service. Specifying an IP address is useful when you need a stable IP address, such as when you must designate which IP addresses are permitted through an on-premises firewall. The cluster must have at least one available public load balancer IP address. [You can check to see your available public IP addresses](/docs/containers?topic=containers-subnets#review_ip) or [free up a used IP address](/docs/containers?topic=containers-subnets#free).
     - If you leave this setting blank, one of the available portable public IP addresses is used.
     - You must also configure the public IP address that you select for or the public IP address that is assigned to the cluster VPN endpoint on the on-premises VPN endpoint.
 
@@ -249,7 +251,7 @@ To establish an outbound VPN connection, modify the following settings.
         - If the remote VPN endpoint cannot handle VPN connections from multiple public IP addresses, limit the nodes that the strongSwan VPN pod deploys to. Set `nodeSelector` to the IP addresses of specific worker nodes or a worker node label. For example, the value `kubernetes.io/hostname: 10.232.xx.xx` allows the VPN pod to deploy to that worker node only. The value `strongswan: vpn` restricts the VPN pod to running on any worker nodes with that label. You can use any worker node label. To allow different worker nodes to be used with different helm chart deployments, use `strongswan: <release_name>`. For high availability, select at least two worker nodes.
     - **Public IP address of the strongSwan service**: To establish connection by using the IP address of the strongSwan VPN service, set `connectUsingLoadBalancerIP` to `true`. The strongSwan service IP address is either a portable public IP address you can specify in the `loadBalancerIP` setting, or an available portable public IP address that is automatically assigned to the service.
         
-        - If you choose to select an IP address using the `loadBalancerIP` setting, the cluster must have at least one available public load balancer IP address. [You can check to see your available public IP addresses](/docs/openshift?topic=openshift-subnets#review_ip) or [free up a used IP address](/docs/openshift?topic=openshift-subnets#free).
+        - If you choose to select an IP address using the `loadBalancerIP` setting, the cluster must have at least one available public load balancer IP address. [You can check to see your available public IP addresses](/docs/containers?topic=containers-subnets#review_ip) or [free up a used IP address](/docs/containers?topic=containers-subnets#free).
         - All of the cluster worker nodes must be on the same public VLAN. Otherwise, you must use the `nodeSelector` setting to ensure that the VPN pod deploys to a worker node on the same public VLAN as the `loadBalancerIP`.
         - If `connectUsingLoadBalancerIP` is set to `true` and `ipsec.keyexchange` is set to `ikev1`, you must set `enableServiceSourceIP` to `true`.
 
@@ -359,7 +361,7 @@ Deploy the strongSwan Helm chart in your cluster with the configurations that yo
     ```
     {: pre}
 
-Only strongSwan Helm chart versions that were released in the last 6 months are supported. Ensure that you consistently [upgrade your strongSwan Helm chart](/docs/openshift?topic=openshift-vpn#vpn_upgrade) for the latest features and security fixes.
+Only strongSwan Helm chart versions that were released in the last 6 months are supported. Ensure that you consistently [upgrade your strongSwan Helm chart](/docs/containers?topic=containers-vpn#vpn_upgrade) for the latest features and security fixes.
 {: important}
 
 
@@ -512,7 +514,7 @@ Before you use this solution, review the following considerations and limitation
 Before you begin
 
 - [Deploy the strongSwan Helm chart](#vpn_configure) and [ensure that VPN connectivity is working correctly](#vpn_test).
-- [Install and configure the Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install).
+- [Install and configure the Calico CLI](/docs/containers?topic=containers-network_policies#cli_install).
 
 To limit VPN traffic to a certain namespace,
 
@@ -679,7 +681,7 @@ To set up a Virtual Router Appliance,
 
 3. To enable a VPN connection by using the VRA, [configure VRRP on the VRA](/docs/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#high-availability-vpn-with-vrrp).
 
-If you have an existing router appliance and then add a cluster, the new portable subnets that are ordered for the cluster are not configured on the router appliance. In order to use networking services, you must enable routing between the subnets on the same VLAN by [enabling VLAN spanning or VRF](/docs/openshift?topic=openshift-plan_clusters#worker-worker).
+If you have an existing router appliance and then add a cluster, the new portable subnets that are ordered for the cluster are not configured on the router appliance. In order to use networking services, you must enable routing between the subnets on the same VLAN by [enabling VLAN spanning or VRF](/docs/containers?topic=containers-plan_clusters#worker-worker).
 {: important}
 
 

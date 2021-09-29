@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-24"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -13,7 +13,9 @@ content-type: troubleshoot
 
 
 
+
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Why can't I create or delete worker nodes?
 {: #worker_infra_errors}
@@ -158,13 +160,13 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
         ```
         {: screen}
 
-    3. If the worker node is not removed, review that [**State** and **Status** fields](/docs/openshift?topic=openshift-debug_worker_nodes) and the [common issues with worker nodes](/docs/openshift?topic=openshift-common_worker_nodes_issues) to continue debugging.
+    3. If the worker node is not removed, review that [**State** and **Status** fields](/docs/containers?topic=containers-debug_worker_nodes) and the [common issues with worker nodes](/docs/containers?topic=containers-common_worker_nodes_issues) to continue debugging.
     4. If you manually set credentials and still cannot see the cluster's worker nodes in your infrastructure account, you might check whether the [cluster is orphaned](#orphaned).
 
 ## Unable to create or delete worker nodes due to incorrect account error
 {: #orphaned}
 
-**Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
 
 You cannot manage worker nodes for your cluster, or view the cluster worker nodes in your classic IBM Cloud infrastructure account. However, you can update and manage other clusters in the account.
@@ -223,7 +225,7 @@ Before you begin: Log in to the [{{site.data.keyword.openshiftshort}} clusters c
         If you no longer have access to the infrastructure credentials, you can open an {{site.data.keyword.cloud_notm}} support case to determine an email address for the administrator of the other infrastructure account. However, {{site.data.keyword.cloud_notm}} Support cannot remove the orphaned cluster for you, and you must contact the administrator of the other account to get the infrastructure credentials.
         {: note}
 
-    *   **If the infrastructure accounts match**: Check the rest of the worker nodes in the cluster and see if any has a different infrastructure account. Make sure that you checked the worker nodes in the cluster that has the credentials issue. Review other [common infrastructure credential issues](/docs/openshift?topic=openshift-worker_infra_errors).
+    *   **If the infrastructure accounts match**: Check the rest of the worker nodes in the cluster and see if any has a different infrastructure account. Make sure that you checked the worker nodes in the cluster that has the credentials issue. Review other [common infrastructure credential issues](/docs/containers?topic=containers-worker_infra_errors).
 4. Now that the infrastructure credentials are updated, retry the blocked action, such as updating or deleting a worker node, and verify that the action succeeds.
 5. If you have other clusters in the same region and resource that require the previous infrastructure credentials, repeat Step 3 to reset the infrastructure credentials to the previous account. Note that if you created clusters with a different infrastructure account than the account that you switch to, you might orphan those clusters.
 
@@ -233,7 +235,7 @@ Before you begin: Log in to the [{{site.data.keyword.openshiftshort}} clusters c
 ## Unable to create or delete worker nodes due to endpoints error
 {: #vpe-ts}
 
-**Infrastructure provider**: <img src="../images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC {{site.data.keyword.openshiftshort}} version 4.6 or later
+**Infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC {{site.data.keyword.openshiftshort}} version 4.6 or later
 
 
 You cannot manage worker nodes for your cluster, and you receive an error message similar to one of the following.
@@ -295,7 +297,7 @@ Re-establish the VPE connection between your worker nodes and Kubernetes master.
 ## Unable to create or delete worker nodes due to paid account or one time password error
 {: #cs_totp}
 
-**Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
 
 You cannot manage worker nodes for your cluster, and you receive an error message similar to one of the following.

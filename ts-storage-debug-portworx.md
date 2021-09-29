@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-24"
+lastupdated: "2021-09-28"
 
 keywords: file, debug, help
 
@@ -13,7 +13,9 @@ content-type: troubleshoot
 
 
 
+
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Debugging Portworx failures
 {: #debug_storage_px}
@@ -186,7 +188,7 @@ If you use a `oc` CLI version that does not match at least the major.minor versi
 
 
 
-3. If a more recent version is available, install the new version. For instructions, see [Updating Portworx in your cluster](/docs/openshift?topic=openshift-portworx#update_portworx)(/docs/openshift?topic=openshift-portworx#update_portworx).
+3. If a more recent version is available, install the new version. For instructions, see [Updating Portworx in your cluster](/docs/containers?topic=containers-portworx#update_portworx)(/docs/openshift?topic=openshift-portworx#update_portworx).
 
 
 

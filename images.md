@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -51,7 +51,7 @@ You can deploy an app from an existing [image stream](https://docs.openshift.com
 4. Select `default` **Project**, `<image>` **ImageStreams**, and `<tag>` **Tag** of the image stream that you previously created.
 5. Review the rest of the application details, and click **Create**.
 
-<br />
+
 
 
 
@@ -132,7 +132,7 @@ To deploy a container into the **default** project of your cluster:
     ```
     {: pre}
 
-<br />
+
 
 ## Deploying containers from an encrypted image
 {: #encrypted-images}
@@ -277,7 +277,7 @@ If you later decide to disable the add-on, the `addon-image-key-syncrhonizer` da
 For the list of changes for each Image Key Synchronizer add-on version, see the [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
 {: tip}
 
-<br />
+
 
 
 
@@ -363,7 +363,7 @@ Steps:
     ```
     {: pre}
 
-<br />
+
 
 ## Pushing images to {{site.data.keyword.registrylong_notm}}
 {: #push-images}
@@ -373,7 +373,7 @@ After the cluster administrator [sets up an image registry with {{site.data.keyw
 
 For example, you might pull an image from any private or public registry source, and then tag it for later use in {{site.data.keyword.registrylong_notm}}. Or, you might push a Docker image that you work with to your namespace so that other users can access the image. To get started, see [Adding images to your namespace](/docs/Registry?topic=Registry-registry_images_).
 
-<br />
+
 
 ## Managing security of images in {{site.data.keyword.registrylong_notm}} with Vulnerability Advisor
 {: #va-images}
@@ -383,7 +383,7 @@ Vulnerability Advisor checks the security status of container images that are pr
 
 When you add an image to a namespace, the image is automatically scanned by Vulnerability Advisor to detect security issues and potential vulnerabilities. If security issues are found, instructions are provided to help fix the reported vulnerability. To get started, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).
 
-<br />
+
 
 ## Setting up trusted content for container images
 {: #trusted_images}
@@ -397,7 +397,7 @@ You can build containers from trusted images that are signed and stored in {{sit
     1. [Deploy to the `default` Kubernetes namespace](/docs/containers?topic=containers-images#namespace).
     2. [Deploy to a different Kubernetes namespace, or from a different {{site.data.keyword.cloud_notm}} region or account](/docs/containers?topic=containers-registry#other).
 
-<br />
+
 
 ## Enabling image security enforcement in your cluster
 {: #portieris-image-sec}

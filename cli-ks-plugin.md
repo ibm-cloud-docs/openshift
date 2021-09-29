@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-29"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -1823,7 +1823,7 @@ ibmcloud oc cluster user-subnet rm --cluster my_cluster --subnet-cidr 169.xx.xxx
 ```
 {: pre}
 
-<br />
+
 
 ## `worker` commands
 {: #worker_node_commands}
@@ -2277,7 +2277,7 @@ ibmcloud oc worker update --cluster my_cluster -w kube-dal10-cr18a61a63a6a94b658
 ```
 {: pre}
 
-<br />
+
 
 ## `worker-pool` commands
 {: #worker-pool}
@@ -2808,7 +2808,7 @@ ibmcloud oc worker-pool zones --cluster my_cluster --worker-pool pool1
 ```
 {: pre}
 
-<br />
+
 
 ## `zone` commands
 {: #zone}
@@ -3077,7 +3077,7 @@ ibmcloud oc zone rm --zone dal10 --cluster my_cluster
 ```
 {: pre}
 
-<br />
+
 
 ## `ingress` commands
 {: #alb-commands}
@@ -4015,7 +4015,7 @@ ibmcloud oc ingress status --cluster mycluster
 
 </br>
 
-<br />
+
 
 ## `nlb-dns` commands
 {: #nlb-dns}
@@ -4649,7 +4649,7 @@ ibmcloud oc nlb-dns secret rm --cluster mycluster --nlb-subdomain mycluster-a1b2
 
 </br>
 
-<br />
+
 
 ## `webhook-create` command
 {: #cs_webhook_create}
@@ -4693,7 +4693,7 @@ ibmcloud oc webhook-create --cluster my_cluster --level Normal --type slack --ur
 ```
 {: pre}
 
-<br />
+
 
 ## `api-key` commands
 {: #api_key-commands}
@@ -4783,7 +4783,7 @@ ibmcloud oc api-key reset --region us-south
 ```
 {: pre}
 
-<br />
+
 
 ## `credential` commands
 {: #credential}
@@ -4907,7 +4907,7 @@ ibmcloud oc credential unset --region us-south
 ```
 {: pre}
 
-<br />
+
 
 ## `infra-permissions` commands
 {: #infra-commands}
@@ -4996,7 +4996,7 @@ Manage Storage    required
 ```
 {: screen}
 
-<br />
+
 
 ## `kms` commands
 {: #ks_kms}
@@ -5119,7 +5119,7 @@ ibmcloud oc kms instance ls
 ```
 {: pre}
 
-<br />
+
 
 ## `quota` commands
 {: #cs_quota}
@@ -5158,7 +5158,7 @@ ibmcloud oc quota ls
 
 </br>
 
-<br />
+
 
 ## `subnets` command
 {: #cs_subnets}
@@ -5290,7 +5290,7 @@ ibmcloud oc vlan spanning get --region us-south
 ```
 {: pre}
 
-<br />
+
 
 
 ## `vpcs` command
@@ -5327,7 +5327,7 @@ ibmcloud oc vpcs
 ```
 {: pre}
 
-<br />
+
 
 ## `flavors` command
 {: #cs_machine_types}
@@ -5384,7 +5384,7 @@ ibmcloud oc flavors --zone us-south-1 --provider vpc-gen2
 {: pre}
 
 
-<br />
+
 
 ## `messages` command
 {: #cs_messages}
@@ -5405,7 +5405,7 @@ ibmcloud oc messages
 
 **Command options**: None
 
-<br />
+
 
 ## locations command
 {: #cs_supported-locations}
@@ -5430,7 +5430,7 @@ ibmcloud oc locations [--output json]
 <dd>Optional: Prints the command output in JSON format.</dd>
 </dl>
 
-<br />
+
 
 ## `versions` command
 {: #cs_versions_command}
@@ -5470,7 +5470,7 @@ ibmcloud oc versions
 ```
 {: pre}
 
-<br />
+
 
 ## `api` command
 {: #cs_cli_api}
@@ -5539,7 +5539,7 @@ Region:                us-south
 ```
 {: screen}
 
-<br />
+
 
 ## `init` command
 {: #cs_init}
@@ -5607,7 +5607,7 @@ ibmcloud oc init [--host HOST] [--insecure] [-p] [-u] [-q]
     ```
     {: pre}
 
-<br />
+
 
 ## `script` commands
 {: #script}
@@ -5689,7 +5689,7 @@ To use this command to prepare your automation scripts for the release of versio
     ```
     {: pre}
 
-<br />
+
 
 ## Beta: `storage` commands
 {: #cs_storage}

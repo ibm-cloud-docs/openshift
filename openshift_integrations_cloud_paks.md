@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-29"
 
 keywords: openshift, roks, rhoks, rhos, cloud pak, cloud pack, cloudpak, cloudpack, icp, cloud paks, cloudpaks, cloud packs, cloudpacks, icd, icp4d, icpa, icp4a
 
@@ -87,7 +87,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 {: tab-title="Management"}
 {: tab-group="cloudpak"}
 
-<br />
+
 
 
 ## Adding IBM Cloud Paks
@@ -124,7 +124,7 @@ To add a Cloud Pak from the {{site.data.keyword.cloud_notm}} catalog:
 
 Now you can run your Cloud Pak on your {{site.data.keyword.openshiftshort}} cluster!
 
-<br />
+
 
 ## Assigning a Cloud Pak entitlement to your {{site.data.keyword.cloud_notm}} account
 {: #oc_cloud_paks_assign}
@@ -143,7 +143,7 @@ To deploy a Cloud Pak to your {{site.data.keyword.openshiftlong_notm}} cluster, 
 3. [Assign the Cloud Pak entitlement to your {{site.data.keyword.cloud_notm}} account](/docs/account?topic=account-software-license).
 4. Continue to [create the Cloud Pak instance](#oc_cloud_paks_add).
 
-<br />
+
 
 ## FAQs for Cloud Pak on {{site.data.keyword.openshiftlong_notm}}
 {: #faq_cloud_paks}

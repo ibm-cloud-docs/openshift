@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-24"
+lastupdated: "2021-09-28"
 
 keywords: file, debug, help
 
@@ -11,10 +11,8 @@ content-type: troubleshoot
 ---
 
 
-
 {{site.data.keyword.attribute-definition-list}}
   
-
 
 
 # Debugging OpenShift Data Foundation failures

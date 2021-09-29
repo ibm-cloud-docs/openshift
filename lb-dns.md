@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -118,7 +118,7 @@ The first and second characters, `00`, indicate a public subdomain. The third an
 |`containers.appdomain.cloud`|The subdomain for {{site.data.keyword.openshiftlong_notm}} subdomains.|
 {: caption="Understanding the NLB subdomain format"}
 
-<br />
+
 
 ## Enable health checks on a subdomain by creating a health monitor
 {: #loadbalancer_hostname_monitor}

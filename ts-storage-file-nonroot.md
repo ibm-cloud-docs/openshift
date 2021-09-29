@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-24"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -15,13 +15,14 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Why can't I add non-root user access to persistent storage?
 {: #cs_storage_nonroot}
 
-**Infrastructure provider**: <img src="../images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
 
-After you [add non-root user access to persistent storage](/docs/openshift?topic=openshift-nonroot) or deploy a Helm chart with a non-root user ID specified, the user cannot write to the mounted storage.
+After you [add non-root user access to persistent storage](/docs/containers?topic=containers-nonroot) or deploy a Helm chart with a non-root user ID specified, the user cannot write to the mounted storage.
 {: tsSymptoms}
 
 
@@ -32,12 +33,12 @@ Your app deployment or Helm chart configuration specifies the [security context]
 To allow a non-root user read and write access to a file storage device, you must allocate a [supplemental group ID](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#users-and-groups){: external} in a storage class, refer to this storage class in the PVC, and set the pod's security context with a `runAsUser` value that is automatically added to the supplemental group ID. When you grant the supplemental group ID read and write access to the file storage, any non-root user that belongs to the group ID, including your pod, is granted access to the file storage.
 {: tsResolve}
 
-You can use one of the provided [`gid` storage classes](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference) or create a custom storage class to define your own supplemental group ID.
+You can use one of the provided [`gid` storage classes](/docs/containers?topic=containers-file_storage#file_storageclass_reference) or create a custom storage class to define your own supplemental group ID.
 
 Allocating a supplemental group ID for a non-root user of a file storage device is supported for single zone clusters only, and cannot be used in multizone clusters.
 {: note}
 
-1. Select one of the [provided `gid` storage classes](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference) to assign the default group ID `65531` to your non-root user that you want to read and write to your file storage. If you want to assign a custom group ID, create a YAML file for a customized storage class. In your customized storage class YAML file, include the `gidAllocate: "true"` parameter and define the group ID in the `gidFixed` parameter.
+1. Select one of the [provided `gid` storage classes](/docs/containers?topic=containers-file_storage#file_storageclass_reference) to assign the default group ID `65531` to your non-root user that you want to read and write to your file storage. If you want to assign a custom group ID, create a YAML file for a customized storage class. In your customized storage class YAML file, include the `gidAllocate: "true"` parameter and define the group ID in the `gidFixed` parameter.
 
     Example storage classes for assigning the default group ID `65531`.
     - `ibmc-file-bronze-gid`
@@ -231,7 +232,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     {: pre}
 
 
-If you need to change the ownership of the mount path from `nobody`, see [App fails when a non-root user owns the NFS file storage mount path](/docs/openshift?topic=openshift-nonroot).
+If you need to change the ownership of the mount path from `nobody`, see [App fails when a non-root user owns the NFS file storage mount path](/docs/containers?topic=containers-nonroot).
 {: tip}
 
 

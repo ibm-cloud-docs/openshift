@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-09-28"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -40,7 +40,7 @@ Before you get started with Ingress, review the following prerequisites.
 * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC multizone clusters: If you created a cluster in the CLI and later manually added zones to your worker pools with the `ibmcloud oc zone add vpc-gen2` command, you must [update the VPC load balancer that exposes the router](/docs/openshift?topic=openshift-router-mzr-error) to include subnets for all zones in your cluster.
 * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic clusters: Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the Ingress controller can route packets to various subnets in the account.
 
-<br />
+
 
 ## Planning networking for single or multiple projects
 {: #multiple_projects}
@@ -97,7 +97,7 @@ Within an individual project, you can use one domain to access all the apps in t
 The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`, is registered by default for your cluster. The IBM-provided TLS certificate is a wildcard certificate and can be used for the wildcard subdomain. If you want to use a wildcard custom domain, you must register the custom domain as a wildcard domain such as `*.custom_domain.net`, and to use TLS, you must get a wildcard certificate.
 {: note}
 
-<br />
+
 
 ## Publicly exposing apps in classic clusters or in VPC clusters with a public cloud service endpoint
 {: #ingress-roks4-public}
@@ -312,7 +312,7 @@ http://<subdomain2>.<domain>/<app1_path>
 
 <p class="tip">Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/openshift?topic=openshift-ingress-status).</p>
 
-<br />
+
 
 ## Publicly exposing apps in VPC clusters with a private cloud service endpoint only
 {: #priv-se-pub-controller}
@@ -573,7 +573,7 @@ http://<subdomain2>.<domain>/<app1_path>
 
 <p class="tip">Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/openshift?topic=openshift-ingress-status).</p>
 
-<br />
+
 
 ## Publicly exposing apps that are outside your cluster
 {: #ingress-roks4-external}
@@ -649,7 +649,7 @@ To expose apps that are outside of your cluster to the public:
 
 5. Continue with the second step in [Exposing apps to the public in classic clusters or in VPC clusters with a public cloud service endpoint](#ingress-roks4-public-2) or [Exposing apps to the public in VPC clusters with a private cloud service endpoint only](#priv-se-pub-controller-2).
 
-<br />
+
 
 ## Privately exposing apps in classic clusters or in VPC clusters with a public cloud service endpoint
 {: #ingress-roks4-private}
@@ -918,7 +918,7 @@ http://<subdomain2>.<domain>/<app1_path>
 
 <p class="tip">Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/openshift?topic=openshift-ingress-status).</p>
 
-<br />
+
 
 ## Privately exposing apps in VPC clusters with a private cloud service endpoint only
 {: #priv-se-priv-controller}
@@ -1134,7 +1134,7 @@ http://<subdomain2>.<domain>/<app1_path>
 
 <p class="tip">Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/openshift?topic=openshift-ingress-status).</p>
 
-<br />
+
 
 ## Managing TLS certificates and secrets
 {: #manage_certs}
@@ -1219,7 +1219,7 @@ By storing custom TLS certificates in {{site.data.keyword.cloudcerts_long_notm}}
     ```
     {: pre}
 
-<br />
+
 
 ## Customizing Ingress routing with annotations
 {: #annotations-roks4}
