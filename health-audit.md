@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-29"
 
 keywords: openshift, roks, rhoks, logmet, logs, metrics, audit, events
 
@@ -174,6 +174,7 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
 
 After you set up the audit webhook in your cluster, you can monitor version updates to the `kube-audit-to-logdna` image by running `ibmcloud cr image-list --include-ibm | grep ibmcloud-kube-audit`. To see the version of the image that currently runs in your cluster, run `oc get pods | grep ibmcloud-kube-audit` to find the audit pod name, and run `kubectl describe pod <pod_name>` to see the image version.
 {: tip}
+
 
 ### Forwarding Kubernetes API audit logs to a resource in the {{site.data.keyword.cloud_notm}} private network
 {: #audit-api-server-priv}

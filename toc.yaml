@@ -324,6 +324,7 @@ toc:
                     - ts-network-strongswan-vpn.md
                     - ts-network-strongswan-install-new.md
                     - ts-network-strongswan-network-nodes.md
+                    - ts-letsencrypt.md
               - topicgroup:
                   label: Apps and services
                   topics:

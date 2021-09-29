@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-29"
 
 keywords: openshift
 subcollection: openshift
@@ -184,6 +184,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-rel-notes#rel-notes)
 
 [September 2021](/docs/openshift?topic=openshift-rel-notes#release-sep-2021)
+
+* [29 September 2021](/docs/openshift?topic=openshift-rel-notes#29sep2021)
 
 * [27 September 2021](/docs/openshift?topic=openshift-rel-notes#27sep2021)
 
@@ -2220,6 +2222,12 @@ subcollection: openshift
 
     * [Removing raw {{site.data.keyword.blockstorageshort}} from VPC worker nodes by using the CLI](/docs/openshift?topic=openshift-utilities#storage-util-rm-vpc-cli)
 
+* [Backing up and restoring PVC data for file and block storage](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore)
+
+    * [Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-utilities#backup_restore_setup_object_storage)
+
+    * [Using {{site.data.keyword.cos_full_notm}} to back up and restore PVC data](/docs/openshift?topic=openshift-utilities#backup-restore-pvc)
+
 * [Setting up {{site.data.keyword.mon_full_notm}} for storage volumes](/docs/openshift?topic=openshift-utilities#monitor_storage)
 
     * [Troubleshooting persistent storage when a {{site.data.keyword.mon_full_notm}} alert is triggered](/docs/openshift?topic=openshift-utilities#monitor_storage_ts)
@@ -3357,6 +3365,8 @@ subcollection: openshift
 [Why can't I install a new strongSwan Helm chart release?](/docs/openshift?topic=openshift-cs_strongswan_release#cs_strongswan_release)
 
 [Why does strongSwan VPN connectivity fail after I add or delete worker nodes?](/docs/openshift?topic=openshift-cs_vpn_fails_worker_add#cs_vpn_fails_worker_add)
+
+[Why do OpenSSL connections to Let's Encrypt fail after 30 September 2021?](/docs/openshift?topic=openshift-ts-letsencrypt#ts-letsencrypt)
 
 
 ### Apps and services

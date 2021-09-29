@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -808,6 +808,7 @@ You can remove storage from your worker node by using the `ibmcloud oc storage a
     OK
     ID                                          Name                Status     Type   Volume ID                                   Volume Name                          Worker ID   
     0111-1a111aaa-1111-1111-111a-aaa1a1a11a11   volume-attachment   attached   boot   a001-f11ed1e1-1aa1-11dc-b11d-a0dc111b1111  dissuade-anointer-errand-handbrake   kube-aa1111aa11aaaaa11aa1-cluster-name-default-00000110
+    ```
     {: screen}
 
 1. Remove the storage attachment.
