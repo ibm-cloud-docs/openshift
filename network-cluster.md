@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-09-30"
 
 keywords: openshift, roks, rhos, rhoks, vlan
 
@@ -14,6 +14,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Changing service endpoints or VLAN connections in {{site.data.keyword.openshiftshort}} 3.11

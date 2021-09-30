@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-09-30"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -14,6 +14,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # {{site.data.keyword.openshiftlong_notm}} CLI
@@ -958,7 +959,7 @@ ibmcloud oc cluster get --cluster my_cluster --show-resources
 Disable [image security enforcement](/docs/containers?topic=containers-images#portieris-image-sec). When you disable the feature, the underlying `ClusterImagePolicy` CRD is removed, which removes all of the default image policies and any custom images policies that you created.
 {: shortdesc}
 
-```
+```sh
 ibmcloud oc cluster image-security disable --cluster CLUSTER [-q]
 ```
 {: pre}
@@ -990,7 +991,7 @@ ibmcloud oc cluster image-security disable --cluster CLUSTER [-q]
 Enable [image security enforcement](/docs/containers?topic=containers-images#portieris-image-sec) by installing the Portieris Kubernetes admission controller and the associated default image policies in your cluster.
 {: shortdesc}
 
-```
+```sh
 ibmcloud oc cluster image-security enable --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
@@ -5684,7 +5685,7 @@ To use this command to prepare your automation scripts for the release of versio
 6. Test your automation with the updated script. Note that you might incur charges if your automation includes creating clusters.
 7. Update all of your scripts.
 8. Update your CLI plug-in to version 1.0.
-    ```
+    ```sh
     ibmcloud plugin update kubernetes-service
     ```
     {: pre}

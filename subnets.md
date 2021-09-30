@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -14,6 +14,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Configuring classic subnets and IP addresses
@@ -259,7 +260,7 @@ By default, 4 portable public and 4 portable private IP addresses can be used to
 To list all of the portable IP addresses in your cluster, both used and available, you can run the following command.
 {: shortdesc}
 
-```
+```sh
 oc get cm ibm-cloud-provider-vlan-ip-config -n kube-system -o yaml
 ```
 {: pre}

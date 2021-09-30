@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-30"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, odo
 
@@ -15,6 +15,7 @@ content-type: tutorial
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Developing in clusters with the OpenShift Do CLI

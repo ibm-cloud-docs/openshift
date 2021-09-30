@@ -11,6 +11,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
   
 
 
@@ -1038,6 +1039,24 @@ subcollection: openshift
 
     * [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-network-policy#services_across_ns)
 
+[VPC: Opening required ports and IP addresses in other network firewalls](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall)
+
+* [Opening ports in a corporate firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-corporate)
+
+    * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_bx)
+
+    * [Running `oc` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_kubectl)
+
+    * [Running `calicoctl` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_calicoctl)
+
+    * [Allowing access to the {{site.data.keyword.openshiftshort}} image registry in a firewall](/docs/openshift?topic=openshift-vpc-firewall#openshift-registry)
+
+* [Allowing traffic from your cluster in other services' firewalls or in on-premises firewalls](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers)
+
+    * [Allowing ingress from a cluster to another service](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers_ingress)
+
+    * [Allowing egress to a cluster from another service](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers_egress)
+
 
 ## Managing security and compliance with {{site.data.keyword.openshiftshort}}
 {: #sitemap_managing_security_and_compliance_with_}
@@ -1172,6 +1191,52 @@ subcollection: openshift
 ### VPC clusters
 {: #sitemap_vpc_clusters}
 
+
+[Configuring VPC subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc-subnets)
+
+* [Overview of VPC networking in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics)
+
+    * [Subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets)
+
+    * [Public gateways](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_pgw)
+
+    * [Virtual private endpoints (VPE)](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_vpe)
+
+    * [Network segmentation](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_segmentation)
+
+    * [VPC networking limitations](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_limitations)
+
+* [Creating a VPC subnet and attaching a public gateway](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet)
+
+    * [Creating a VPC subnet in the console](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet_ui)
+
+    * [Creating a VPC subnet in the CLI](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet_cli)
+
+* [Creating VPC subnets for classic access](/docs/openshift?topic=openshift-vpc-subnets#classic_access_subnets)
+
+    * [Creating VPC subnets for classic access in the console](/docs/openshift?topic=openshift-vpc-subnets#ca_subnet_ui)
+
+    * [Creating VPC subnets for classic access from the CLI](/docs/openshift?topic=openshift-vpc-subnets#ca_subnet_cli)
+
+[Setting up VPC VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-vpnaas)
+
+* [Communication with resources in on-premises data centers](/docs/openshift?topic=openshift-vpc-vpnaas#onprem)
+
+    * [{{site.data.keyword.vpc_short}} VPN](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-vpn-def)
+
+    * [{{site.data.keyword.dl_short}}](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-directlink-def)
+
+* [Communication with resources in other VPCs](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-vpc)
+
+    * [{{site.data.keyword.vpc_short}} VPN](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-vpn-other)
+
+    * [{{site.data.keyword.tg_full_notm}}](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-transit-def)
+
+* [Communication with {{site.data.keyword.cloud_notm}} classic resources](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-classic)
+
+    * [Create a classic-access VPC](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-create-classic)
+
+    * [Use {{site.data.keyword.tg_full_notm}}](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-use-transit-gw)
 
 
 ## Logging and monitoring
@@ -1528,30 +1593,6 @@ subcollection: openshift
 ### Exposing apps with load balancers
 {: #sitemap_exposing_apps_with_load_balancers}
 
-
-[VPC: Exposing apps with load balancers for VPC](/docs/openshift?topic=openshift-vpc-lbaas#vpc-lbaas)
-
-* [About VPC load balancing in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_about)
-
-    * [Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#nlb_vpc)
-
-    * [Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#lb_vpc)
-
-* [Setting up a Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb)
-
-    * [Setting up a public VPC NLB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb_pub)
-
-    * [Setting up a private VPC NLB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb_priv)
-
-    * [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_nlb_dns)
-
-* [Setting up an Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb)
-
-    * [Setting up a public or private VPC ALB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_alb_pub_priv)
-
-    * [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
-
-* [Limitations](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_limitations)
 
 [Classic: About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about#loadbalancer-about)
 

@@ -17,6 +17,7 @@ completion-time: 45m
 
 
 {{site.data.keyword.attribute-definition-list}}
+
   
 
 
@@ -60,13 +61,13 @@ Complete the following prerequisite steps to set up permissions and the command-
 1. [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc`), and {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)](/docs/openshift?topic=openshift-openshift-cli#cs_cli_install_steps).
 2. [Install the {{site.data.keyword.openshiftshort}} (`oc`) and Kubernetes (`kubectl`) CLIs](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
 3. To work with VPC, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
-    ```
+    ```sh
     ibmcloud plugin install infrastructure-service
     ```
     {: pre}
 
 4. Update your {{site.data.keyword.containershort_notm}} plug-in to the latest version.
-    ```
+    ```sh
     ibmcloud plugin update kubernetes-service
     ```
     {: pre}
@@ -81,7 +82,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
 {: shortdesc}
 
 1. Log in to the account, resource group, and {{site.data.keyword.cloud_notm}} region where you want to create your VPC environment. The VPC must be set up in the same multizone metro location where you want to create your cluster. In this tutorial you create a VPC in `us-south`. For other supported regions, see [Multizone metros for VPC clusters](/docs/openshift?topic=openshift-regions-and-zones). If you have a federated ID, include the `--sso` flag.
-    ```
+    ```sh
     ibmcloud login -r us-south [-g <resource_group>] [--sso]
     ```
     {: pre}
@@ -110,7 +111,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
             {: pre}
 
 3. Create a standard {{site.data.keyword.cos_full_notm}} instance to back up the internal registry in your cluster. In the output, note the instance **ID**.
-    ```
+    ```sh
     ibmcloud resource service-instance-create myvpc-cos cloud-object-storage standard global
     ```
     {: pre}

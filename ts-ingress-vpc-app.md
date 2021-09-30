@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -15,6 +15,7 @@ content-type: troubleshoot
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # VPC clusters: Why can't my app connect via Ingress?
@@ -42,7 +43,7 @@ Verify that no VPC security groups are blocking traffic to your cluster and that
 {: tsResolve}
 
 1. Install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
-    ```
+    ```sh
     ibmcloud plugin install infrastructure-service
     ```
     {: pre}

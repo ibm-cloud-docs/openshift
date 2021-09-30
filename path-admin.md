@@ -16,6 +16,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 <style>
     <!--
         #tutorials { /* hide the page header */
@@ -127,6 +128,7 @@ subcollection: openshift
         }
     -->
     </style>
+
 
 # Learning path for administrators
 {: #learning-path-admin}

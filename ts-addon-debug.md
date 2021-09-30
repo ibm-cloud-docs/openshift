@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -17,6 +17,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Debugging cluster add-ons
 {: #debug_addons}
 
@@ -28,7 +29,7 @@ As you use {{site.data.keyword.openshiftlong}}, consider these techniques for tr
 * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 You can check the health state and status of a cluster add-on by running the following command:
-```
+```sh
 ibmcloud oc cluster addon ls -c <cluster_name_or_ID>
 ```
 {: pre}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-30"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -12,6 +12,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
   
 
 
@@ -807,7 +808,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
 {: shortdesc}
 
 1. Create an {{site.data.keyword.cloud_notm}} API key.<p class="important">Save your API key in a secure location. You cannot retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.</p>
-    ```
+    ```sh
     ibmcloud iam api-key-create <name>
     ```
     {: pre}
@@ -903,7 +904,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
 {: shortdesc}
 
 1. Create an {{site.data.keyword.cloud_notm}} IAM service ID for your cluster that is used for the IAM policies and API key credentials. Be sure to give the service ID a description that helps you retrieve the service ID later, such as including the cluster name.
-    ```
+    ```sh
     ibmcloud iam service-id-create <cluster_name>-id --description "Service ID for {{site.data.keyword.openshiftlong_notm}} cluster <cluster_name>"
     ```
     {: pre}
@@ -921,7 +922,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     {: screen}
 
 2. Create a custom {{site.data.keyword.cloud_notm}} IAM policy for your cluster service ID that grants access to {{site.data.keyword.openshiftlong_notm}}.
-    ```
+    ```sh
     ibmcloud iam service-policy-create <cluster_service_ID> --service-name containers-kubernetes --roles <service_access_role> --service-instance <cluster_ID>
     ```
     {: pre}
@@ -952,7 +953,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     </tr>
     </tbody></table>
 3. Create an API key for the service ID. Name the API key similar to your service ID, and include the service ID that you previously created, `<cluster_name>-id`. Be sure to give the API key a description that helps you retrieve the key later.<p class="important">Save your API key in a secure location. You cannot retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.</p>
-    ```
+    ```sh
     ibmcloud iam service-api-key-create <cluster_name>-key <service_ID> --description "API key for service ID <service_ID> in {{site.data.keyword.openshiftshort}} cluster <cluster_name>"
     ```
     {: pre}

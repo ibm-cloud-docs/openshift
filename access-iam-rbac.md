@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-09-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -14,6 +14,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Controlling user access with {{site.data.keyword.cloud_notm}} IAM and Kubernetes RBAC
@@ -578,19 +579,19 @@ Check your access policies that are assigned by IAM platform and service access 
 {: #checking-iam-cli}
 
 1. Log in to your {{site.data.keyword.cloud_notm}} account. If you have a federated ID, include the `--sso` flag.
-    ```
+    ```sh
     ibmcloud login -r [--sso]
     ```
     {: pre}
 
 2. Find the **User ID** of the user whose permissions you want to check.
-    ```
+    ```sh
     ibmcloud account users
     ```
     {: pre}
 
 3. Check the IAM access policies of the user.
-    ```
+    ```sh
     ibmcloud iam user-policies <user_id>
     ```
     {: pre}
@@ -716,7 +717,7 @@ If you are an administrator for the region and resource group, you might want to
 {: #checking-infra-cli}
 
 1. Log in to your {{site.data.keyword.cloud_notm}} account. If you have a federated ID, include the `--sso` flag.
-    ```
+    ```sh
     ibmcloud login -r [--sso]
     ```
     {: pre}
@@ -768,7 +769,7 @@ To avoid this issue for future users, consider using a functional ID user for th
 {: tip}
 
 1. Target your CLI context to a region and resource group where you have clusters.
-    ```
+    ```sh
     ibmcloud target -g <resource_group_name> -r <region>
     ```
     {: pre}

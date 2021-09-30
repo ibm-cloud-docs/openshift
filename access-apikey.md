@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -14,6 +14,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Setting up API key credentials so the service can access the infrastructure and other cloud services
@@ -36,13 +37,13 @@ The quickest way to set up the API key is to ask the account owner, who already 
 1. As the account owner, [invite a functional ID](/docs/account?topic=account-iamuserinv) to your {{site.data.keyword.cloud_notm}} account to use to set the API key infrastructure credentials, instead of a personal user.
 2. [Assign the functional ID the correct permissions](#owner_permissions).
 3. Log in as the functional ID.
-    ```
+    ```sh
     ibmcloud login
     ```
     {: pre}
 
 4. Target the resource group where you want to set the API key. If you do not target a resource group, the API key is set for the default resource group. To list available resource groups, run `ibmcloud resource groups`.
-    ```
+    ```sh
     ibmcloud target -g <resource_group_name>
     ```
     {: pre}
@@ -97,7 +98,7 @@ The API key is used to authorize underlying actions in the following {{site.data
 
 You have a different API key for each region and resource group where you use {{site.data.keyword.openshiftlong_notm}}. To check if an API key is already set up for the region and resource group, run the following command.
 
-```
+```sh
 ibmcloud oc api-key info --cluster <cluster_name_or_ID>
 ```
 {: pre}
@@ -398,25 +399,25 @@ To customize classic infrastructure permissions through the CLI:
     {: tip}
 
 3. List the users in your classic infrastructure account and note the **id** of the user whose credentials are set manually or by the API key.
-    ```
+    ```sh
     ibmcloud sl user list
     ```
     {: pre}
 
 4. List the current classic infrastructure permissions that the user has. Note the **`KeyName`** of the permission that you want to change.
-    ```
+    ```sh
     ibmcloud sl user permissions <user_id>
     ```
     {: pre}
 
 5. Edit the permission of the user. For the `--enable` flag, enter `true` to assign the permission or `false` to remove the permission.
-    ```
+    ```sh
     ibmcloud sl user permission-edit <user_id> --permission <permission_keyname> --enable (true|false)
     ```
     {: pre}
 
     To assign or remove user access to all permissions:
-    ```
+    ```sh
     ibmcloud sl user permission-edit <user_id> --permission ALL --enable (true|false)
     ```
     {: pre}

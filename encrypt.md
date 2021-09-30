@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-09-30"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -14,6 +14,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Protecting sensitive information in your cluster
@@ -85,7 +86,7 @@ Review the following known limitations:
 Additionally, your cluster version impacts the functionality of the KMS provider. To see what {{site.data.keyword.keymanagementserviceshort}} features are available for different cluster versions of {{site.data.keyword.openshiftlong_notm}}, review the following table.
 
 To check your cluster version, run the following command.
-```
+```sh
 ibmcloud oc cluster ls
 ```
 {: pre}

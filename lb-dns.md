@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-30"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -14,6 +14,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Classic: Registering a DNS subdomain for an NLB
@@ -35,7 +36,7 @@ After you set up network load balancers (NLBs), you can create DNS entries for t
 </dl>
 
 You can see all subdomains that are registered for NLB IPs in your cluster by running the following command.
-```
+```sh
 ibmcloud oc nlb-dns ls --cluster <cluster_name_or_id>
 ```
 {: pre}
@@ -283,13 +284,13 @@ You can add and remove NLB IP addresses from subdomains that you have generated.
 **NLB IPs**
 
 If you later add more NLBs in other zones of your cluster to expose the same app, you can add the NLB IPs to the existing subdomain.
-```
+```sh
 ibmcloud oc nlb-dns add --cluster <cluster_name_or_id> --ip <NLB_IP> --ip <NLB2_IP> ... --nlb-host <host_name>
 ```
 {: pre}
 
 You can also remove IP addresses of NLBs that you no longer want to be registered with a subdomain. Note that you must run the following command for each IP address that you want to remove. If you remove all IPs from a subdomain, the subdomain still exists but no IPs are associated with it.
-```
+```sh
 ibmcloud oc nlb-dns rm classic --cluster <cluster_name_or_id> --ip <ip> --nlb-host <host_name>
 ```
 {: pre}
@@ -299,19 +300,19 @@ ibmcloud oc nlb-dns rm classic --cluster <cluster_name_or_id> --ip <ip> --nlb-ho
 **Health check monitors**
 
 If you need to change your health monitor configuration, you can change specific settings. Include only the flags for the settings that you want to change.
-```
+```sh
 ibmcloud oc nlb-dns monitor configure --cluster <cluster_name_or_id> --nlb-host <host_name> --description <description> --type <type> --method <method> --path <path> --timeout <timeout> --retries <retries> --interval <interval> --port <port> --header <header> --expected-body <expected-body> --expected-codes <expected-codes> --follows-redirects <true> --allows-insecure <true>
 ```
 {: pre}
 
 You can disable the health check monitor for a subdomain at any time by running the following command:
-```
+```sh
 ibmcloud oc nlb-dns monitor disable --cluster <cluster_name_or_id> --nlb-host <host_name>
 ```
 {: pre}
 
 To re-enable a monitor for a subdomain, run the following command:
-```
+```sh
 ibmcloud oc nlb-dns monitor enable --cluster <cluster_name_or_id> --nlb-host <host_name>
 ```
 {: pre}

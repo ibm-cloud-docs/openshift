@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-30"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -12,6 +12,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
   
 
 
@@ -66,7 +67,7 @@ With [labels](/docs/openshift?topic=openshift-plan_deploy#deploy_organize), you 
 
 You can retrieve objects that are labeled in your cluster, such as to see `staging` or `production` components. For example, list all resources with an `env: production` label across all namespaces in the cluster. **Note:** You need access to all namespaces to run this command.
 
-```
+```sh
 oc get all -l env=production --all-namespaces
 ```
 {: pre}
@@ -467,7 +468,7 @@ The following example is a copy of the deployment YAML that is [discussed sectio
 
 To apply the YAML,
 
-```
+```sh
 oc apply -f file.yaml [-n <namespace>]
 ```
 {: pre}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -15,6 +15,7 @@ content-type: troubleshoot
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Why does binding a service to a cluster results in service not found error?
@@ -48,19 +49,19 @@ In addition, you must have the {{site.data.keyword.cloud_notm}} IAM Editor platf
 {: tsResolve}
 
 1. Log in to {{site.data.keyword.cloud_notm}}.
-    ```
+    ```sh
     ibmcloud login
     ```
     {: pre}
 
 2. Target the org and the space where the service instance is provisioned.
-    ```
+    ```sh
     ibmcloud target -o <org> -s <space>
     ```
     {: pre}
 
 3. Verify that you are in the right space by listing your service instances.
-    ```
+    ```sh
     ibmcloud service list
     ```
     {: pre}

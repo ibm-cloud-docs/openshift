@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-09-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -15,6 +15,7 @@ content-type: troubleshoot
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Checking the status of Ingress components
@@ -30,7 +31,7 @@ content-type: troubleshoot
 To check the overall health and status of your cluster's Ingress components:
 {: shortdesc}
 
-```
+```sh
 ibmcloud oc ingress status -c <cluster_name_or_ID>
 ```
 {: pre}

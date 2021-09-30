@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -14,6 +14,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Setting pod priority
@@ -74,7 +75,7 @@ The following table describes the priority classes that are in your cluster by d
 
 You can check which pods use the priority classes by running the following command.
 
-```
+```sh
 oc get pods --all-namespaces -o custom-columns=NAME:.metadata.name,PRIORITY:.spec.priorityClassName
 ```
 {: pre}

@@ -16,6 +16,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Release notes
 {: #rel-notes}
 

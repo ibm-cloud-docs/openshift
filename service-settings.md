@@ -16,6 +16,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Default service settings for {{site.data.keyword.openshiftshort}} components
 {: #service-settings}
 

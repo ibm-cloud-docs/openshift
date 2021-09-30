@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 
 
 {{site.data.keyword.attribute-definition-list}}
+
   
 
 # Debugging {{site.data.keyword.openshiftshort}} web console, OperatorHub, internal registry, and other components
@@ -226,7 +227,7 @@ Check that the OpenVPN in the cluster is set up properly.
 {: #oc-debug-refresh-master}
 
 Refresh the cluster master to set up the default {{site.data.keyword.openshiftshort}} components. After you refresh the cluster, wait a few minutes to allow the operation to complete.
-```
+```sh
 ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
 ```
 {: pre}

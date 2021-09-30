@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -15,6 +15,7 @@ content-type: troubleshoot
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # VPC: Why is no VPC available when I create a cluster in the console?
@@ -40,13 +41,13 @@ To set an API key for the `default` resource group, use the {{site.data.keyword.
 {: tsResolve}
 
 1. Log in to the command line as the account owner. If you want a different user than the account owner to set the API key, first [ensure that the API key owner has the correct permissions](/docs/containers?topic=containers-access-creds#owner_permissions).
-    ```
+    ```sh
     ibmcloud login [--sso]
     ```
     {: pre}
 
 2. Target the `default` resource group.
-    ```
+    ```sh
     ibmcloud target -g default
     ```
     {: pre}

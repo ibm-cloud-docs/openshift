@@ -15,6 +15,7 @@ subcollection: openshift
 
 
 
+
 # Version information and update actions
 {: #openshift_versions}
 

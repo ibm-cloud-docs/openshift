@@ -17,6 +17,7 @@ completion-time: 45m
 
 
 {{site.data.keyword.attribute-definition-list}}
+
   
 
 
@@ -70,7 +71,7 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
 {: shortdesc}
 
 1. Log in to the account and resource group where you want to create {{site.data.keyword.openshiftshort}} clusters. If you have a federated account, include the `--sso` flag.
-    ```
+    ```sh
     ibmcloud login [-g <resource_group>] [--sso]
     ```
     {: pre}

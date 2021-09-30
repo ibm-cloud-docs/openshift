@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-30"
 
 keywords: openshift, roks, rhoks, rhos, oc
 
@@ -12,6 +12,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
   
 
 
@@ -45,7 +46,7 @@ To install the CLIs:
     {: tip}
 
 2. Log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted.
-    ```
+    ```sh
     ibmcloud login
     ```
     {: pre}
@@ -54,25 +55,25 @@ To install the CLIs:
     {: tip}
 
 4. Install the {{site.data.keyword.cloud_notm}} plug-in for {{site.data.keyword.openshiftlong_notm}} (`ibmcloud oc`). Use this plug-in to create and manage {{site.data.keyword.openshiftlong_notm}} resources such as clusters, worker nodes, or network load balancers.
-    ```
+    ```sh
     ibmcloud plugin install container-service
     ```
     {: pre}
 
 5. Install the {{site.data.keyword.cloud_notm}} plug-in for {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`). Use this plug-in to set up your own namespace in a multi-tenant, highly available, and scalable private image registry that is hosted by IBM, and to store and share Docker images with other users. Docker images are required to deploy containers into a cluster.
-    ```
+    ```sh
     ibmcloud plugin install container-registry
     ```
     {: pre}
 
 6. To create a logging configuration for {{site.data.keyword.la_full_notm}} or a monitoring configuration for {{site.data.keyword.mon_full_notm}} for your cluster, install the {{site.data.keyword.containerlong_notm}} observability plug-in (`ibmcloud ob`).
-    ```
+    ```sh
     ibmcloud plugin install observe-service
     ```
     {: pre}
 
 7. Verify that the plug-ins are installed correctly.
-    ```
+    ```sh
     ibmcloud plugin list
     ```
     {: pre}
@@ -230,7 +231,7 @@ To update the CLIs:
 
 2. Log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted.
 
-    ```
+    ```sh
     ibmcloud login
     ```
     {: pre}
@@ -307,21 +308,21 @@ To uninstall the CLIs:
 
 1. Uninstall the {{site.data.keyword.openshiftlong_notm}} plug-in.
 
-    ```
+    ```sh
     ibmcloud plugin uninstall kubernetes-service
     ```
     {: pre}
 
 2. Uninstall the {{site.data.keyword.registrylong_notm}} plug-in.
 
-    ```
+    ```sh
     ibmcloud plugin uninstall container-registry
     ```
     {: pre}
 
 4. Verify the plug-ins were uninstalled by running the following command and checking the list of the plug-ins that are installed.
 
-    ```
+    ```sh
     ibmcloud plugin list
     ```
     {: pre}

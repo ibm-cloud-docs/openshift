@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-30"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -14,6 +14,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Cluster autoscaler add-on changelog
@@ -164,7 +165,7 @@ Review the changes that are included in version 1.0.1 of the managed cluster aut
 {: shortdesc}
 
 To view a list of add-ons and the supported cluster versions, run the following command.
-```
+```sh
 ibmcloud oc addon-versions
 ```
 {: pre}

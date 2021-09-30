@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-09-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -14,6 +14,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # IBM Cloud storage utilities
@@ -212,19 +213,19 @@ Use this option if you want to add different block storage configurations, add b
 3. Create the block storage device in the same zone that your non-SDS worker node is in.
 
     **Example for provisioning 20 GB endurance block storage with two IOPS per GB:**
-    ```
+    ```sh
     ibmcloud sl block volume-order --storage-type endurance --size 20 --tier 2 --os-type LINUX --datacenter dal10
     ```
     {: pre}
 
     **Example for provisioning 20 GB performance block storage with 100 IOPS:**
-    ```
+    ```sh
     ibmcloud sl block volume-order --storage-type performance --size 20 --iops 100 --os-type LINUX --datacenter dal10
     ```
     {: pre}
 
 4. Verify that the block storage device is created and note the **`id`** of the volume. **Note:** If you do not see your block storage device right away, wait a few minutes. Then, run this command again.
-    ```
+    ```sh
     ibmcloud sl block volume-list
     ```
     {: pre}
@@ -237,7 +238,7 @@ Use this option if you want to add different block storage configurations, add b
     {: screen}
 
 5. Review the details for your volume and note the **`Target IP`** and **`LUN Id`**.
-    ```
+    ```sh
     ibmcloud sl block volume-detail <volume_ID>
     ```
     {: pre}
@@ -260,7 +261,7 @@ Use this option if you want to add different block storage configurations, add b
 
 6. Authorize the non-SDS worker node to access the block storage device. Replace `<volume_ID>` with the volume ID of your block storage device that you retrieved earlier, and `<private_worker_IP>` with the private IP address of the non-SDS worker node where you want to attach the device.
 
-    ```
+    ```sh
     ibmcloud sl block access-authorize <volume_ID> -p <private_worker_IP>
     ```
     {: pre}
@@ -272,7 +273,7 @@ Use this option if you want to add different block storage configurations, add b
     {: screen}
 
 7. Verify that your non-SDS worker node is successfully authorized and note the **`host_iqn`**, **`username`**, and **`password`**.
-    ```
+    ```sh
     ibmcloud sl block access-list <volume_ID>
     ```
     {: pre}
@@ -486,7 +487,7 @@ Before you begin:
 
 3. Retrieve your IAM token.
 
-    ```
+    ```sh
     ibmcloud iam oauth-tokens
     ```
     {: pre}

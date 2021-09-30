@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-30"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
@@ -12,6 +12,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
   
 
 
@@ -1170,13 +1171,13 @@ IBM-provided TLS certificates are signed by LetsEncrypt and are fully managed by
 The TLS certificate is stored as an `Ingress secret` in the `openshift-ingress` project.
 
 To get the secret name:
-```
+```sh
 ibmcloud oc cluster get -c <cluster> | grep Ingress
 ```
 {: pre}
 
 To see the secret details:
-```
+```sh
 ibmcloud oc ingress secret get -c <cluster> --name <secret_name> --namespace openshift-ingress
 ```
 {: pre}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -15,6 +15,7 @@ content-type: troubleshoot
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Why do pods remain in pending state?
@@ -42,7 +43,7 @@ This task requires the {{site.data.keyword.cloud_notm}} IAM [**Administrator** p
 
 If you just created the {{site.data.keyword.openshiftshort}} cluster, run the following command and wait for the worker nodes to initialize.
 
-```
+```sh
 oc get nodes
 ```
 {: pre}

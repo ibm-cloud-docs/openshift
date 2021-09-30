@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-09-30"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -14,6 +14,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Adding services by using managed add-ons
@@ -70,7 +71,7 @@ The versions of each managed add-on are tested by {{site.data.keyword.cloud_notm
 {: #debug_addons_review}
 
 You can check the health state and status of a cluster add-on by running the following command:
-```
+```sh
 ibmcloud oc cluster addon ls -c <cluster_name_or_ID>
 ```
 {: pre}
