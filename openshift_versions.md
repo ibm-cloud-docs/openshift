@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-09-30"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -22,6 +22,7 @@ Review information about the supported {{site.data.keyword.openshiftshort}} vers
 {: shortdesc}
 
 For more information about the {{site.data.keyword.openshiftshort}} and Kubernetes project versions, review the following information.
+* [{{site.data.keyword.openshiftshort}} 4.8 release notes overview](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html){: external}
 * [{{site.data.keyword.openshiftshort}} 4.7 release notes overview](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html){: external}
 * [{{site.data.keyword.openshiftshort}} 4.6 release notes overview](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html){: external}
 * Deprecated: [{{site.data.keyword.openshiftshort}} 4.5 release notes overview](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html){: external}
@@ -77,7 +78,7 @@ Worker nodes can also run patch versions that are greater than the masters. As u
 {{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.openshiftshort}}. The worker node operating system is Red Hat Enterprise Linux 7.
 
 **Supported versions**:
-* Latest: 4.7 (Kubernetes 1.21)
+* Latest: 4.8 (Kubernetes 1.21)
 * Default: 4.7 (Kubernetes 1.20)
 
 **Deprecated and unsupported versions**:
@@ -122,8 +123,9 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 | Supported? | {{site.data.keyword.openshiftshort}} / Kubernetes version | Release date | Unsupported date |
 | --- | --- | --- | --- |
-| Supported | 4.7 / 1.20 | 09 Jun 2021 | Jun 2022`†` |
-| Supported | 4.6 / 1.19 | 17 Feb 2021 | Apr 2022 `†` |
+| Supported | 4.8 / 1.21 | 29 Sep 2021 | Sep 2022`†` |
+| Supported | 4.7 / 1.20 | 09 Jun 2021 | Jul 2022`†` |
+| Supported | 4.6 / 1.19 | 17 Feb 2021 | May 2022 `†` |
 | Supported | 4.5 / 1.18 | 13 Oct 2020 | Oct 10 2021 `†` |
 | Not supported | 4.4 / 1.17 | 21 Jul 2020 | 31 May 2021 |
 | Not supported | 4.3 / 1.16 | 20 Apr 2020 | 7 Mar 2021 |
@@ -131,7 +133,27 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 {: caption="Release history for {{site.data.keyword.openshiftlong_notm}}." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the supported status, the second column is OpenShift and Kubernetes version number. The third column is the release date. The fourth column is the unsupported date."}
 
+## {{site.data.keyword.openshiftshort}} 4.8
+{: #ocp48}
 
+There is a known issue when updating a cluster from {{site.data.keyword.openshiftshort}} 4.7 to {{site.data.keyword.openshiftshort}} 4.8. Do not upgrade your cluster to from version 4.7 to version 4.8 if it has image security enforcement enabled. 
+{: important}
+
+<img src="images/certified_kubernetes_1x21.png" style="padding-right: 10px;" align="left" alt="This badge indicates Kubernetes version 1.21 certification for {{site.data.keyword.openshiftlong_notm}}."/> {{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.20 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
+
+Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.openshiftshort}} 4.7 to {{site.data.keyword.openshiftshort}} 4.8.
+{: shortdesc}
+
+### Update before master
+{: #48_before}
+
+The following table shows the actions that you must take before you [update the cluster master](/docs/openshift?topic=openshift-update#master).
+{: shortdesc}
+
+| Type | Description |
+| ---- | ----------- |
+| **Unsupported:** Deprecated and removed OpenShift features | For more information, review [OpenShift version 4.8 deprecated and removed features](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-deprecated-removed-features){: external}. |
+| Container runtime default security context capabilities | The container runtime (i.e. CRI-O) default security context capabilities have been changed to match Red Hat OpenShift Container Platform (OCP). `NET_RAW` and `SYS_CHROOT` have been removed. This brings the security behavior of containers in line with OCP. If your app requires either of these capabilities and does not list list them in the container or pod `securityContext`, then the app must be changed to include these capabilities. Applications developed for OCP should already have the necessary changes. |
 
 ## {{site.data.keyword.openshiftshort}} 4.7
 {: #ocp47}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-09-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -32,7 +32,8 @@ Review the feature gates that are applied to all master and worker node componen
 
 | {{site.data.keyword.openshiftshort}} version | Default feature gates |
 |---|---|
-| 4.7 | <li><code>LegacyNodeRoleBehavior=false</code></li><li><code>RemoveSelfLink=false</code></li></ul>|
+| 4.8 | <ul><li><code>DownwardAPIHugePages=true</code></li></ul>|
+| 4.7 | <ul><li><code>LegacyNodeRoleBehavior=false</code></li><li><code>RemoveSelfLink=false</code></li></ul>|
 | 4.6 | <ul><li><code>APIPriorityAndFairness=true</code></li><li><code>LegacyNodeRoleBehavior=false</code></li><li><code>SCTPSupport=false</code></li><li><code>ServiceAppProtocol=false</code></li></ul>|
 | 4.5 | <ul><li><code>ExperimentalCriticalPodAnnotation=true</code></li><li><code>LocalStorageCapacityIsolation=false</code></li></ul>|
 | 4.4 | <ul><li><code>ExperimentalCriticalPodAnnotation=true</code></li><li><code>LocalStorageCapacityIsolation=false</code></li></ul>|

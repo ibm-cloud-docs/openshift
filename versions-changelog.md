@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-09-30"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -26,6 +26,30 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
+
+
+### Change log for fix pack 4.8.11_1526_openshift (master) and 4.8.12_1527_openshift (worker node), released 29 Sept 2021
+{: #4811_1526_and_4812_1527}
+
+The following table shows the changes that are included in the master fix pack `4.8.11_1526_openshift` and the worker node fix pack patch update `4.8.12_1527_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Calico | v3.19.3 | v3.20.0 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. |
+| Calico Operator | v1.17.8 | v1.20.1 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.20.1){: external}. Updated to use the `system-cluster-critical` priority class. |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} plug-in and driver | N/A | N/A | Updated to use the `system-cluster-critical` and `system-node-critical` priority classes respectively. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.20.11-1 | v1.21.5-1 | Updated to support the Kubernetes `1.21.5` release. |
+| {{site.data.keyword.openshiftshort}} (master) | 4.7.30 | 4.8.11 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-11){: external}. |
+| {{site.data.keyword.openshiftshort}} (worker node) | 4.7.30 | 4.8.12 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-12){: external}. |
+| {{site.data.keyword.openshiftshort}} configuration | N/A | N/A | Updated the [feature gate configuration](https://cloud.ibm.com/docs/openshift?topic=openshift-service-settings#feature-gates){: external}. |
+| {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.7.0-20210917 | v4.8.0-20210917 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20210917){: external}. |
+| Pause container image | 3.2 | 3.5 | See the [pause container image release notes](https://github.com/kubernetes/kubernetes/blob/master/build/pause/CHANGELOG.md){: external}. |
+| Portieris admission controller | v0.10.3 | v0.11.0 | See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.11.0){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.7.0-20210917 | v4.8.0-20210917 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20210917){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} toolkit | 4.7.0+20210917 | 4.8.0+20210917 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20210917){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.7.30_1532_openshift master and 4.7.31_1533 worker node" caption-side="top"}
 
 ## Version 4.7 changelog
 {: #version-47}
@@ -2587,7 +2611,6 @@ The following table shows the changes that are included in the patch `3.11.129_1
 | Cluster router configuration| N/A | N/A | Fixed bugs that might cause cluster master operations, such as `refresh` or `update`, to fail when the router configuration is updated. These fixes also improve master availability during such operations. |
 {: caption="Changes since version 3.11.129_1515" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
-
 
 
 

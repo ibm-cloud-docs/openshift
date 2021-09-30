@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-09-30"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -35,6 +35,18 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 Review the release notes for September 2021.
 {: shortdesc}
 
+### 29 September 2021
+{: #29sep2021}
+{: release-note}
+
+New! OpenShift 4.8
+:   You can create or [update clusters to OpenShift version 4.8](/docs/openshift?topic=openshift-openshift_versions#ocp48). With OpenShift 4.8, you get the latest OpenShift features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}. For more information, [see the blog announcement](https://www.ibm.com/cloud/blog/announcements/openshift-version-48-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.
+
+Deprecated and unsupported OpenShift versions
+:   With the release of OpenShift 4.8, clusters that run version 4.5 remain deprecated, with a tentative unsupported date of 10 Oct 2021. Clusters that run versions 4.3 or 4.4 are unsupported. Update your cluster to at least [version 4.6](/docs/openshift?topic=openshift-openshift_versions#ocp46) as soon as possible.
+
+Master fix pack and worker node fix pack update
+:   Change log documentation is available for OpenShift version [`4.8.11_1526_openshift` and `4.8.12_1527_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4811_1526_and_4812_1527).
 
 
 
