@@ -1842,9 +1842,9 @@ subcollection: openshift
 
 * [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-file_storage#cleanup)
 
-    * [Understanding your storage removal options](/docs/openshift?topic=openshift-file_storage#storage_delete_options)
+    * [Understanding your storage removal options](/docs/openshift?topic=openshift-file_storage#storage_delete_options_file)
 
-    * [Cleaning up persistent storage](/docs/openshift?topic=openshift-file_storage#storage_remove)
+    * [Cleaning up persistent storage](/docs/openshift?topic=openshift-file_storage#storage_remove_file)
 
 [Storing data on classic IBM Cloud {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_storage)
 
@@ -1900,9 +1900,9 @@ subcollection: openshift
 
 * [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-block_storage#cleanup)
 
-    * [Understanding your storage removal options](/docs/openshift?topic=openshift-block_storage#storage_delete_options)
+    * [Understanding your storage removal options](/docs/openshift?topic=openshift-block_storage#storage_delete_options_block)
 
-    * [Cleaning up persistent storage](/docs/openshift?topic=openshift-block_storage#storage_remove)
+    * [Cleaning up persistent storage](/docs/openshift?topic=openshift-block_storage#storage_remove_block)
 
 [Storing data on {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block)
 
@@ -1938,9 +1938,9 @@ subcollection: openshift
 
 * [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-vpc-block#cleanup)
 
-    * [Understanding your storage removal options](/docs/openshift?topic=openshift-vpc-block#storage_delete_options)
+    * [Understanding your storage removal options](/docs/openshift?topic=openshift-vpc-block#storage_delete_options_block_vpc)
 
-    * [Cleaning up persistent storage](/docs/openshift?topic=openshift-vpc-block#storage_remove)
+    * [Cleaning up persistent storage](/docs/openshift?topic=openshift-vpc-block#storage_remove_block_vpc)
 
 [Storing data on IBM Cloud Object Storage](/docs/openshift?topic=openshift-object_storage#object_storage)
 

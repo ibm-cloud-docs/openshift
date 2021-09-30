@@ -1286,7 +1286,6 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 {: tab-group="{{site.data.keyword.block_storage_is_short}} class"}
 
 
-
 ## Removing persistent storage from a cluster
 {: #cleanup}
 
@@ -1294,7 +1293,7 @@ When you set up persistent storage in your cluster, you have three main componen
 {: shortdesc}
 
 ### Understanding your storage removal options
-{: #storage_delete_options}
+{: #storage_delete_options_block_vpc}
 
 Removing persistent storage from your {{site.data.keyword.cloud_notm}} account varies depending on how you provisioned the storage and what components you already removed.
 {: shortdesc}
@@ -1334,8 +1333,13 @@ When you clean up persistent storage, you delete all the data that is stored in 
 After you remove persistent storage, it can take up to 72 hours for the removal to be fully processed and for the storage to disappear from your {{site.data.keyword.cloud_notm}} console or CLI.
 
 
+
+
+
+
 ### Cleaning up persistent storage
-{: #storage_remove}
+{: #storage_remove_block_vpc}
+
 
 Remove the PVC, PV, and the storage instance from your {{site.data.keyword.cloud_notm}} account to avoid further charges for your persistent storage.
 {: shortdesc}
