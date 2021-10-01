@@ -1273,52 +1273,6 @@ subcollection: openshift
 {: #sitemap_setting_up_an_image_build_pipeline}
 
 
-[Setting up an image registry](/docs/openshift?topic=openshift-registry#registry)
-
-* [Choosing an image registry solution](/docs/openshift?topic=openshift-registry#openshift_registry_options)
-
-* [Storing images in the internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry)
-
-    * [VPC: Backing up your {{site.data.keyword.openshiftshort}} internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry)
-
-    * [Classic: Storing images in the internal registry](/docs/openshift?topic=openshift-registry#storage_internal_registry)
-
-    * [Storing images in the worker node empty directory](/docs/openshift?topic=openshift-registry#emptydir_internal_registry)
-
-* [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-registry#route_internal_registry)
-
-* [Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry)
-
-* [Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#builds_registry)
-
-* [Using {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#openshift_iccr)
-
-* [Understanding how to authorize your cluster to pull images from a private registry](/docs/openshift?topic=openshift-registry#cluster_registry_auth)
-
-    * [Default image pull secret setup](/docs/openshift?topic=openshift-registry#cluster_registry_auth_default)
-
-    * [Private network connection to `icr.io` registries](/docs/openshift?topic=openshift-registry#cluster_registry_auth_private)
-
-* [Updating existing clusters to use the API key image pull secret](/docs/openshift?topic=openshift-registry#imagePullSecret_migrate_api_key)
-
-    * [Updating your image pull secret](/docs/openshift?topic=openshift-registry#update-pull-secret)
-
-* [Using an image pull secret to access images in other {{site.data.keyword.cloud_notm}} accounts or external private registries from non-default {{site.data.keyword.openshiftshort}} projects](/docs/openshift?topic=openshift-registry#other)
-
-    * [Copying an existing image pull secret](/docs/openshift?topic=openshift-registry#copy_imagePullSecret)
-
-    * [Creating an image pull secret with different IAM API key credentials for more control or access to images in other {{site.data.keyword.cloud_notm}} accounts](/docs/openshift?topic=openshift-registry#other_registry_accounts)
-
-    * [Accessing images that are stored in other private registries](/docs/openshift?topic=openshift-registry#private_images)
-
-* [Using the image pull secret to deploy containers](/docs/openshift?topic=openshift-registry#use_imagePullSecret)
-
-    * [Storing the image pull secret in the Kubernetes service account for the selected project](/docs/openshift?topic=openshift-registry#store_imagePullSecret)
-
-* [Setting up a cluster to pull entitled software](/docs/openshift?topic=openshift-registry#secret_entitled_software)
-
-* [Adding a private registry to the global pull secret](/docs/openshift?topic=openshift-registry#cluster_global_pull_secret)
-
 [Setting up continuous integration and delivery](/docs/openshift?topic=openshift-cicd#cicd)
 
 * [Supported automation tools](/docs/openshift?topic=openshift-cicd#cicd_strategy)
