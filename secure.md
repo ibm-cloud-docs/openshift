@@ -96,35 +96,35 @@ CIS Kubernetes master benchmark
 Secure communication via TLS
 : To use {{site.data.keyword.openshiftlong_notm}}, you must authenticate with the service by using your credentials. When you are authenticated, {{site.data.keyword.openshiftlong_notm}} generates TLS certificates that encrypt the communication to and from the {{site.data.keyword.openshiftshort}} API server and etcd data store to ensure a secure end-to-end communication between the worker nodes and the {{site.data.keyword.openshiftshort}} master. These certificates are never shared across clusters or across {{site.data.keyword.openshiftshort}} master components.
 
-  Need to revoke existing certificates and create new certificates for your cluster? Check out [Rotating CA certificates in your cluster](#cert-rotate).
-  {: tip}
+    Need to revoke existing certificates and create new certificates for your cluster? Check out [Rotating CA certificates in your cluster](#cert-rotate).
+    {: tip}
     
 OpenVPN ({{site.data.keyword.openshiftshort}} version 4.7 or earlier) or Konnectivity ({{site.data.keyword.openshiftshort}} version 4.8 or later) connectivity to worker nodes
-: Although Kubernetes secures the communication between the master and worker nodes by using the `https` protocol, no authentication is provided on the worker node by default. To secure this communication, {{site.data.keyword.openshiftlong_notm}} automatically sets up an OpenVPN connection between the {{site.data.keyword.openshiftshort}} master and the worker node when the cluster is created.
+:   Although Kubernetes secures the communication between the master and worker nodes by using the `https` protocol, no authentication is provided on the worker node by default. To secure this communication, {{site.data.keyword.openshiftlong_notm}} automatically sets up an OpenVPN connection between the {{site.data.keyword.openshiftshort}} master and the worker node when the cluster is created.
 
 Fine-grained access control
-: As the account administrator you can [grant access to other users for {{site.data.keyword.openshiftlong_notm}}](/docs/containers?topic=containers-users#users) by using {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). {{site.data.keyword.cloud_notm}} IAM provides secure authentication with the {{site.data.keyword.cloud_notm}} platform, {{site.data.keyword.openshiftlong_notm}}, and all the resources in your account. Setting up proper user roles and permissions is key to limiting who can access your resources and to limiting the damage that a user can do when legitimate permissions are misused.
-  You can select from the following pre-defined user roles that determine the set of actions that the user can perform: 
-  - **Platform access roles:** Determine the cluster and worker node management-related actions that a user can perform in {{site.data.keyword.openshiftlong_notm}}. Platform access roles also assign users the `basic-users` and `self-provisioners` RBAC role. With these RBAC roles, you can create an {{site.data.keyword.openshiftshort}} project in the cluster, in which you can deploy apps and other Kubernetes resources. As the creator of the project, you are automatically assigned the `admin` RBAC role for the project so that you can fully control what you want to deploy and run in your project. However, these RBAC roles do not grant access to other {{site.data.keyword.openshiftshort}} projects. To view and access other {{site.data.keyword.openshiftshort}} projects, you must be assigned the appropriate service access role in IAM.  
-  - **Service access roles:** Determine the [Kubernetes RBAC role](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) that is assigned to the user and the actions that a user can run against the {{site.data.keyword.openshiftshort}} API server. While the `basic-users` and `self-provisioners` RBAC role that is assigned with a platform access role lets you create and manage your own {{site.data.keyword.openshiftshort}} projects, you cannot view, access, or work with other {{site.data.keyword.openshiftshort}} projects until you are assigned a service access role. For more information about the corresponding RBAC roles that are assigned to a user and associated permissions, see [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/containers?topic=containers-access_reference#service). 
-  - **Classic infrastructure:** Enables access to your classic {{site.data.keyword.cloud_notm}} infrastructure resources. Example actions that are permitted by classic infrastructure roles are viewing the details of cluster worker node machines or editing networking and storage resources.
-  - **VPC infrastructure:** Enables access to VPC infrastructure resources. Example actions that are permitted by VPC infrastructure roles are creating a VPC, adding subnets, changing floating IP addresses, and creating VPC Block Storage instances.
-  
-  For more information about access control in a cluster, see [Assigning cluster access](/docs/openshift?topic=openshift-users).
+:   As the account administrator you can [grant access to other users for {{site.data.keyword.openshiftlong_notm}}](/docs/containers?topic=containers-users#users) by using {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). {{site.data.keyword.cloud_notm}} IAM provides secure authentication with the {{site.data.keyword.cloud_notm}} platform, {{site.data.keyword.openshiftlong_notm}}, and all the resources in your account. Setting up proper user roles and permissions is key to limiting who can access your resources and to limiting the damage that a user can do when legitimate permissions are misused. You can select from the following pre-defined user roles that determine the set of actions that the user can perform: 
+    
+    - **Platform access roles:** Determine the cluster and worker node management-related actions that a user can perform in {{site.data.keyword.openshiftlong_notm}}. Platform access roles also assign users the `basic-users` and `self-provisioners` RBAC role. With these RBAC roles, you can create an {{site.data.keyword.openshiftshort}} project in the cluster, in which you can deploy apps and other Kubernetes resources. As the creator of the project, you are automatically assigned the `admin` RBAC role for the project so that you can fully control what you want to deploy and run in your project. However, these RBAC roles do not grant access to other {{site.data.keyword.openshiftshort}} projects. To view and access other {{site.data.keyword.openshiftshort}} projects, you must be assigned the appropriate service access role in IAM.  
+    - **Service access roles:** Determine the [Kubernetes RBAC role](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) that is assigned to the user and the actions that a user can run against the {{site.data.keyword.openshiftshort}} API server. While the `basic-users` and `self-provisioners` RBAC role that is assigned with a platform access role lets you create and manage your own {{site.data.keyword.openshiftshort}} projects, you cannot view, access, or work with other {{site.data.keyword.openshiftshort}} projects until you are assigned a service access role. For more information about the corresponding RBAC roles that are assigned to a user and associated permissions, see [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/containers?topic=containers-access_reference#service). 
+    - **Classic infrastructure:** Enables access to your classic {{site.data.keyword.cloud_notm}} infrastructure resources. Example actions that are permitted by classic infrastructure roles are viewing the details of cluster worker node machines or editing networking and storage resources.
+    - **VPC infrastructure:** Enables access to VPC infrastructure resources. Example actions that are permitted by VPC infrastructure roles are creating a VPC, adding subnets, changing floating IP addresses, and creating VPC Block Storage instances.
+
+    For more information about access control in a cluster, see [Assigning cluster access](/docs/openshift?topic=openshift-users).
 
 Admission controllers
-: Admission controllers are implemented for specific features in Kubernetes and {{site.data.keyword.openshiftlong_notm}}. With admission controllers, you can set up policies in your cluster that determine whether a particular action in the cluster is allowed or not. In the policy, you can specify conditions when a user cannot perform an action, even if this action is part of the general permissions that you assigned the user by using RBAC roles. Therefore, admission controllers can provide an extra layer of security for your cluster before an API request is processed by the {{site.data.keyword.openshiftshort}} API server.
+:   Admission controllers are implemented for specific features in Kubernetes and {{site.data.keyword.openshiftlong_notm}}. With admission controllers, you can set up policies in your cluster that determine whether a particular action in the cluster is allowed or not. In the policy, you can specify conditions when a user cannot perform an action, even if this action is part of the general permissions that you assigned the user by using RBAC roles. Therefore, admission controllers can provide an extra layer of security for your cluster before an API request is processed by the {{site.data.keyword.openshiftshort}} API server.
   
-  When you create a cluster, {{site.data.keyword.openshiftlong_notm}} automatically installs the default [Kubernetes admission controllers](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/){: external} in a particular order in the {{site.data.keyword.openshiftshort}} master, which cannot be changed by the user. Review the order of default admission controllers by cluster version in the [`kube-apiserver` component reference information](/docs/containers?topic=containers-service-settings#kube-apiserver).
-  
-  You can [install your own admission controllers in the cluster](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/#admission-webhooks){: external} or choose an optional admission controller, such as [Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec). With Portieris, you can block container deployments from unsigned images. 
-  
-  If you manually installed admission controllers and you do not want to use them anymore, make sure to remove them entirely. If admission controllers are not entirely removed, they might block all actions that you want to perform on the cluster.
-  {: note}
+When you create a cluster, {{site.data.keyword.openshiftlong_notm}} automatically installs the default [Kubernetes admission controllers](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/){: external} in a particular order in the {{site.data.keyword.openshiftshort}} master, which cannot be changed by the user. Review the order of default admission controllers by cluster version in the [`kube-apiserver` component reference information](/docs/containers?topic=containers-service-settings#kube-apiserver).
+
+You can [install your own admission controllers in the cluster](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/#admission-webhooks){: external} or choose an optional admission controller, such as [Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec). With Portieris, you can block container deployments from unsigned images. 
+
+If you manually installed admission controllers and you do not want to use them anymore, make sure to remove them entirely. If admission controllers are not entirely removed, they might block all actions that you want to perform on the cluster.
+{: note}
 
 **What else can I do to secure my {{site.data.keyword.openshiftshort}} API server?**
 
-You can decide how you want your master and worker nodes to communicate and how your cluster users can access the {{site.data.keyword.openshiftshort}} API server by enabling the private cloud service endpoint only, the public cloud service endpoint only, or the public and private cloud service endpoints. Note that your options for service endpoints vary based on your cluster's {{site.data.keyword.openshiftshort}} version and infrastructure provider. For more information about service endpoints, see worker-to-master and user-to-master communication in [classic clusters](/docs/containers?topic=containers-plan_clusters#workeruser-master) and [VPC clusters](/docs/containers?topic=containers-plan_clusters#vpc-workeruser-master).
+You can restrict connections to the master nodes by enabling the private cloud service endpoint, and creating a subnet allowlist. This combination provides the greatest degree of isolation.. Note that your options for service endpoints vary based on your cluster's {{site.data.keyword.openshiftshort}} version and infrastructure provider. For more information about service endpoints, see worker-to-master and user-to-master communication in [classic clusters](/docs/containers?topic=containers-plan_clusters#workeruser-master) and [VPC clusters](/docs/containers?topic=containers-plan_clusters#vpc-workeruser-master).
 
 If you enable the private cloud service endpoint, you can create a subnet allowlist. Only authorized requests to your cluster master that originate from subnets in the allowlist are permitted through the cluster's private cloud service endpoint. For more information, see [Creating an allowlist for the private cloud service endpoint](/docs/containers?topic=containers-access_cluster#private-se-allowlist).
 
@@ -139,12 +139,14 @@ By default, certificate authority (CA) certificates are administered to secure a
 To rotate the CA certificates for your cluster:
 
 1. Create a CA for your cluster. Certificates that are signed by this new CA are issued for the cluster master components, and the API server is refreshed.
+
     ```sh
     ibmcloud oc cluster ca create -c <cluster_name_or_ID>
     ```
     {: pre}
 
 2. Ensure that your cluster's master health is normal, the API server refresh is complete, and any master updates are complete. It might take several minutes for the master API server to refresh.
+
     ```sh
     ibmcloud oc cluster get --cluster <cluster_name_or_ID>
     ```
@@ -165,6 +167,7 @@ To rotate the CA certificates for your cluster:
     {: screen}
 
 4. Download the updated Kubernetes configuration data and certificates in your cluster's `kubeconfig` file.
+
     ```sh
     ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --network
     ```
@@ -179,18 +182,21 @@ To rotate the CA certificates for your cluster:
 7. [Reload your classic worker nodes](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload) or [replace your VPC worker nodes](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace) to pick up the certificates that are signed by the new CA.
 
 8. Rotate the old certificates with the new certificates. The old CA certificates in your cluster are removed.
+
     ```sh
     ibmcloud oc cluster ca rotate -c <cluster_name_or_ID>
     ```
     {: pre}
 
 9. Check the status of the CA certificate rotation.
+
     ```sh
     ibmcloud oc cluster ca status -c <cluster_name_or_ID>
     ```
     {: pre}
 
     Example output
+    
     ```
     Status:             CA certificate rotation complete.
     Action Started:     2020-08-30T16:37:56+0000
