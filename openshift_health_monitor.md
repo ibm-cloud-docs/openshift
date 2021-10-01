@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
 subcollection: openshift
 
 ---
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -123,13 +122,13 @@ To set up a monitoring configuration for your cluster:
 3. Optional: Verify that the {{site.data.keyword.mon_short}} agent was set up successfully.
     1. If you used the console to create the {{site.data.keyword.mon_short}} configuration, log in to your cluster. For more information, see [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
     2. Verify that the daemon set for the {{site.data.keyword.mon_short}} agent was created and all instances are listed as `AVAILABLE`.
-        ```
+        ```sh
         oc get daemonsets -n ibm-observe
         ```
         {: pre}
 
         Example output
-        ```
+        ```sh
         NAME           DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
         sysdig-agent   9         9         9       9            9           <none>          14m
         ```
@@ -138,7 +137,7 @@ To set up a monitoring configuration for your cluster:
         The number of daemon set instances that are deployed equals the number of worker nodes in your cluster.
 
     3. Review the configmap that was created for your {{site.data.keyword.mon_short}} agent.
-        ```
+        ```sh
         oc describe configmap -n ibm-observe
         ```
         {: pre}
@@ -204,13 +203,14 @@ OpenShift Container Platform collects anonymized health reports about your clust
 You might want to disable this remote health reporting to comply with privacy laws, organizational standards, or data governance practices. To disable, you must modify the global configuration for the cluster and reload all of the worker nodes.
 
 1. Check that the telemetry reporting pod runs in your cluster.
-    ```
+    ```sh
     oc get pods -n openshift-monitoring
     ```
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     NAME                              READY   STATUS      RESTARTS   AGE
     telemeter-client-7cfd7cb85-lm9dt  3/3     Running     0          4d13h
     ...
@@ -220,19 +220,19 @@ You might want to disable this remote health reporting to comply with privacy la
 2. Follow the {{site.data.keyword.openshiftshort}} instructions to [update the global pull secret in the cluster to disable remote health reporting](https://docs.openshift.com/container-platform/4.7/support/remote_health_monitoring/opting-out-of-remote-health-reporting.html){: external}.
 3. To pick up the global configuration changes, reload all of the worker nodes in your cluster.
     1. Note the **ID** of the worker nodes in your cluster.
-        ```
+        ```sh
         ibmcloud oc worker ls -c <cluster_name_or_ID>
         ```
         {: pre}
 
     2. Reload each worker node. You can reload multiple worker nodes by including multiple `-w` flags, but make sure to leave enough worker nodes running at the same time for your apps to avoid an outage.
-        ```
+        ```sh
         ibmcloud oc worker reload -c <cluster_name_or_ID> -w <workerID_1> -w <workerID_2>
         ```
         {: pre}
 
 4. After the worker nodes are back in a healthy state, verify that the telemetry reporting pod no longer runs in your cluster.
-    ```
+    ```sh
     oc get pods -n openshift-monitoring
     ```
     {: pre}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,7 +10,6 @@ subcollection: openshift
 content-type: troubleshoot
 
 ---
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -49,15 +48,15 @@ Start by checking for errors in your app deployment and the Ingress resource dep
 1. Before you debug Ingress, first check out [Debugging app deployments](/docs/openshift?topic=openshift-debug_apps). Ingress issues are often caused by underlying issues in your app deployment or in the `ClusterIP` service that exposes your app. For example, your app label and service selector might not match, or your app and service target ports might not match.
 
 2. Check your Ingress resource deployment and look for warnings or error messages.
-    ```
+    ```sh
     oc describe ingress <ingress_resource_name>
     ```
     {: pre}
 
     In the **Events** section of the output, you might see warning messages about invalid values in your Ingress resource or in certain annotations that you used. Check the [Ingress resource configuration documentation](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-3). For annotations, note that the {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in {{site.data.keyword.openshiftshort}} version 4. If you want to customize routing rules for apps in a cluster that runs {{site.data.keyword.openshiftshort}} version 4, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.7/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}, which are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.
 
-    ```
-    Name:             myingress
+    ```sh
+    NAME:             myingress
     Namespace:        default
     Address:          169.xx.xxx.xxx,169.xx.xxx.xxx
     Default backend:  default-http-backend:80 (<none>)
@@ -81,7 +80,7 @@ Start by checking for errors in your app deployment and the Ingress resource dep
     {: screen}
 
 3. Check the Ingress resource configuration file.
-    ```
+    ```sh
     oc get ingress -o yaml
     ```
     {: pre}
@@ -93,7 +92,7 @@ Start by checking for errors in your app deployment and the Ingress resource dep
     3. Make sure that your app listens on the same path that is configured in the **path** section of your Ingress.
 
     4. Edit your resource configuration YAML as needed. When you close the editor, your changes are saved and automatically applied.
-        ```
+        ```sh
         oc edit ingress <myingressresource>
         ```
         {: pre}
@@ -130,7 +129,7 @@ Verify that the Ingress operator and the Ingress controller's router are healthy
 
 1. Check the status of your Ingress operator pods.
     1. Get the Ingress operator pods that are running in your cluster.
-        ```
+        ```sh
         oc get pods -n openshift-ingress-operator
         ```
         {: pre}
@@ -138,20 +137,20 @@ Verify that the Ingress operator and the Ingress controller's router are healthy
     2. Make sure that all pods are running by checking the **STATUS** column.
 
     3. If a pod does not have a `Running` status, you can delete the pod to restart it.
-        ```
+        ```sh
         oc delete pod <pod> -n openshift-ingress-operator
         ```
         {: pre}
 
     4. Get the logs for the Ingress controller and look for error messages in the logs.
-        ```
+        ```sh
         oc logs deployments/ingress-operator -n openshift-ingress-operator -c ingress-operator
         ```
         {: pre}
 
 2. Check the status and logs of your Ingress controller's router pods.
     1. Get the Ingress controller's router pods that are running in your cluster.
-        ```
+        ```sh
         oc get pods -n openshift-ingress
         ```
         {: pre}
@@ -159,26 +158,26 @@ Verify that the Ingress operator and the Ingress controller's router are healthy
     2. Make sure that all `router-default` pods and pods for routers in any other zone are running by checking the **STATUS** column. If you have a multizone cluster, note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`.
 
     3. If a pod does not have a `Running` status, you can delete the pod to restart it.
-        ```
+        ```sh
         oc delete pod <pod> -n openshift-ingress
         ```
         {: pre}
 
     4. Get the logs for each pod and look for error messages in the logs. 
-        ```
+        ```sh
         oc logs <pod> -n openshift-ingress
         ```
         {: pre}
 
 3. Check for events and errors on each router service.
     1. List the services in the `openshift-ingress` namespace.
-        ```
+        ```sh
         oc get svc -n openshift-ingress
         ```
         {: pre}
 
         Example output for a multizone cluster with worker nodes in `dal10` and `dal13`:
-        ```
+        ```sh
         NAME                                         TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
         router-dal13                                 LoadBalancer   172.21.47.119   169.XX.XX.XX   80:32318/TCP,443:30915/TCP   26d
         router-default                               LoadBalancer   172.21.47.119   169.XX.XX.XX   80:32637/TCP,443:31719/TCP   26d
@@ -187,7 +186,7 @@ Verify that the Ingress operator and the Ingress controller's router are healthy
         {: screen}
 
     2. Describe each router service and check for messages in the `Events` section of the output.
-        ```
+        ```sh
         oc describe svc router-default -n openshift-ingress
         ```
         {: pre}
@@ -205,13 +204,13 @@ Check the availability of the public IP addresses of the Ingress controller's ro
     * **VPC**: If you set up [VPC security groups](/docs/openshift?topic=openshift-vpc-network-policy#security_groups) or [VPC access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-network-policy#acls) to secure your cluster network, ensure that you create the rules to allow the necessary traffic from the {{site.data.keyword.openshiftshort}} control plane IP addresses. Alternatively, to allow the inbound traffic for router healthchecks, you can create one rule to allow all incoming traffic on port 80.
 
 2. Get the external IP addresses that the router services are listening on. If you have a multizone cluster, note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`. In VPC clusters, the external IP addresses are behind a hostname that is assigned by the VPC load balancer, such as `aabb1122-us-south.lb.appdomain.cloud`.
-    ```
+    ```sh
     oc get svc -n openshift-ingress
     ```
     {: pre}
 
     Example output for a classic multizone cluster with worker nodes in `dal10` and `dal13`:
-    ```
+    ```sh
     NAME                                         TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
     router-dal13                                 LoadBalancer   172.21.47.119   169.XX.XX.XX   80:32318/TCP,443:30915/TCP   26d
     router-default                               LoadBalancer   172.21.47.119   169.XX.XX.XX   80:32637/TCP,443:31719/TCP   26d
@@ -225,7 +224,7 @@ Check the availability of the public IP addresses of the Ingress controller's ro
 3. Check the health of your router pods (classic) or hostname (VPC).
     - Classic clusters: [Check the status of your router pods](#errors-43).
     - VPC clusters: Router services in multizone clusters are created with a `/healthz` path so that you can check the health of each service IP address. The following HTTP cURL command uses the `/healthz` path, which returns the `ok` status for a healthy IP.
-    ```
+    ```sh
     curl -X GET http://<router_svc_IP_or_hostname>/healthz -H "Host:router-default.<ingress_subdomain>"
     ```
     {: pre}
@@ -233,13 +232,14 @@ Check the availability of the public IP addresses of the Ingress controller's ro
     If one or more of the IP addresses does not return `ok`, [check the status of your router pods](#errors-43).
 
 4. Get the IBM-provided Ingress subdomain.
-    ```
+    ```sh
     ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     Ingress Subdomain:      mycluster-<hash>-0000.us-south.containers.appdomain.cloud
     Ingress Secret:         mycluster-<hash>-0000
     ```
@@ -251,8 +251,9 @@ Check the availability of the public IP addresses of the Ingress controller's ro
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     mycluster-<hash>-0000.us-south.containers.appdomain.cloud has address 169.XX.XX.XXX
     mycluster-<hash>-0000.us-south.containers.appdomain.cloud has address 169.XX.XXX.XX
     ```
@@ -265,7 +266,7 @@ Check the availability of the public IP addresses of the Ingress controller's ro
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         www.my-domain.com is an alias for mycluster-<hash>-0000.us-south.containers.appdomain.cloud
         mycluster-<hash>-0000.us-south.containers.appdomain.cloud has address 169.XX.XX.XXX
@@ -279,7 +280,7 @@ Check the availability of the public IP addresses of the Ingress controller's ro
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         www.my-domain.com has address 169.XX.XX.XXX
         www.my-domain.com has address 169.XX.XX.XXX

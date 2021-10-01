@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
 
   
@@ -43,7 +42,6 @@ You are notified in the {{site.data.keyword.cloud_notm}} console and CLI when up
 Your worker nodes cannot run a later `major.minor` Kubernetes version than the master. Additionally, your worker nodes can only be one version behind the master version (`n-1`). First, [update your master](#update_master) to the latest Kubernetes version. Then, [update the worker nodes](#worker_node) in your cluster.
 
 Worker nodes can run later patch versions than the master, such as patch versions that are specific to worker nodes for security updates.
-<br>
 
 **How are patch updates applied?**
 
@@ -179,6 +177,7 @@ Set up a configmap to perform a rolling update of your classic worker nodes.
     {: pre}
 
     Example output
+
     ```sh
     NAME:               10.184.58.3
     Roles:              <none>

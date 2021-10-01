@@ -10,9 +10,6 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -376,7 +373,7 @@ After you deploy your Helm chart, test the VPN connectivity.
 
 2. Set the `STRONGSWAN_POD` environment variable.
 
-    ```
+    ```sh
     export STRONGSWAN_POD=$(oc get pod -l app=strongswan,release=vpn -o jsonpath='{ .items[0].metadata.name }')
     ```
     {: pre}

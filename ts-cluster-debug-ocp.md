@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,7 +10,6 @@ subcollection: openshift
 content-type: troubleshoot
 
 ---
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -49,7 +48,7 @@ VPC clusters only, with public and private cloud service endpoints enabled: Chec
 1. Use the {{site.data.keyword.cloud_notm}} console or CLI to [ensure that a public gateway is enabled on each subnet](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet) that your cluster is attached to.
 2. Restart the components for the **Developer catalog** in the web console.
     1. Edit the configmap for the samples operator.
-        ```
+        ```sh
         oc edit configs.samples.operator.openshift.io/cluster
         ```
         {: pre}
@@ -72,7 +71,7 @@ Check any firewalls or network policies to verify that you do not block any ingr
 
 Check that your cluster is set up properly. If you just created your cluster, wait awhile for your cluster components to fully provision.
 1. Get the details of your cluster.
-    ```
+    ```sh
     ibmcloud oc cluster get -c <cluster_name_or_ID>
     ```
     {: pre}
@@ -82,19 +81,19 @@ Check that your cluster is set up properly. If you just created your cluster, wa
     *  If your cluster does have a subdomain, continue to the next step.
 3. Verify that your cluster runs the latest patch **Version**. If your cluster does not run the latest patch version, update the cluster and worker nodes.
     1. [Update the cluster master](/docs/openshift?topic=openshift-update#master) to the latest patch version for your cluster major and minor version.
-        ```
+        ```sh
         ibmcloud oc cluster master update -c <cluster_name_or_ID> --version <major.minor>_openshift-f
         ```
         {: pre}
 
     2. List your worker nodes.
-        ```
+        ```sh
         ibmcloud oc worker ls -c <cluster_name_or_ID>
         ```
         {: pre}
 
     3. [Update the worker nodes](/docs/openshift?topic=openshift-update#worker_node) to matchthe cluster master version.
-        ```
+        ```sh
         ibmcloud oc worker update -c <cluster_name_or_ID> -w <worker1_ID> -w <worker2_ID> -w<worker3_ID>
         ```
         {: pre}
@@ -102,7 +101,7 @@ Check that your cluster is set up properly. If you just created your cluster, wa
 4. Check the cluster **State**. If the state is not **normal**, see [Debugging clusters(#debug_clusters).
 5. Check the **Master health**. If the state is not **normal**, see [Reviewing master health(#debug_master).
 6. Check the worker nodes that the {{site.data.keyword.openshiftshort}} components might run on. If the state is not **normal**, see [Debugging worker nodes](/docs/containers?topic=containers-debug_worker_nodes).
-    ```
+    ```sh
     ibmcloud oc worker ls -c <cluster_name_or_ID>
     ```
     {: pre}
@@ -120,25 +119,25 @@ VPC only: If you enabled the private cloud service endpoint, you must be [connec
 
 Check the health of the {{site.data.keyword.openshiftshort}} component pods that do not work.
 1. Check the status of the pod.
-    ```
+    ```sh
     oc get pods -n <project>
     ```
     {: pre}
 
 2. If a pod is not in a **Running** status, describe the pod and check for the events. For example, you might see an error that the pod cannot be scheduled because of a lack of CPU or memory resources, which is common if you have a cluster with less than 3 worker nodes. [Resize your worker pool](/docs/openshift?topic=openshift-add_workers) and try again.
-    ```
+    ```sh
     oc describe pod -n <project> <pod>
     ```
     {: pre}
 
 3. If you do not see any helpful information in the events section, check the pod logs for any error messages or other troubleshooting information.
-    ```
+    ```sh
     oc logs pod -n <project> <pod>
     ```
     {: pre}
 
 4. Restart the pod and check if it reaches a **Running** status.
-    ```
+    ```sh
     oc delete pod -n <project> <pod>
     ```
     {: pre}
@@ -152,13 +151,13 @@ For example, the OperatorHub has a set of images that are stored in external reg
 
 
 1. Check for pending pods.
-    ```
+    ```sh
     oc get pods --all-namespaces | grep Pending
     ```
     {: pre}
 
 2. Describe the pods and check for the **Events**.
-    ```
+    ```sh
     oc describe pod -n <project_name> <pod_name>
     ```
     {: pre}
@@ -169,7 +168,7 @@ For example, the OperatorHub has a set of images that are stored in external reg
     * A message that images cannot be stored because the file storage device is full. [Resize the storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration) and restart the pod.
     * A `Pull image still failed due to error: unauthorized: authentication required` error message because the internal registry cannot pull images from an external registry. Check that [the image pull secrets](/docs/openshift?topic=openshift-registry#cluster_registry_auth) are set for the project and restart the pod.
 3. Check the **Node** that the failing pods run on. If all the pods run on the same worker node, the worker node might have a network connectivity issue. Reload the worker node.
-    ```
+    ```sh
     ibmcloud oc worker reload -c <cluster_name_or_ID> -w <worker_node_ID>
     ```
     {: pre}
@@ -181,44 +180,44 @@ For example, the OperatorHub has a set of images that are stored in external reg
 
 Check that the OpenVPN in the cluster is set up properly.
 1. Check that the OpenVPN pod is **Running**.
-    ```
+    ```sh
     oc get pods -n kube-system -l app=vpn
     ```
     {: pre}
 
 2. Check the OpenVPN logs, and check for an `ERROR` message such as `WORKERIP:<port>`, such as`WORKERIP:10250`, that indicates that the VPN tunnel does not work.
-    ```
+    ```sh
     oc logs -n kube-system <vpn_pod> --tail 10
     ```
     {: pre}
 
 3. If you see the worker IP error, check if worker-to-worker communication is broken. Log in to a `calico-node` pod in the `calico-system` project, and check for the same `WORKERIP:10250` error.
-    ```
+    ```sh
     oc exec -n calico-system <calico-node_pod> -- date
     ```
     {: pre}
 
 4. If the worker-to-worker communication is broken, make sure that you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-subnets#basics_segmentation).
 5. If you see a different error from either the OpenVPN or `calico-node` pod, restart the OpenVPN pod.
-    ```
+    ```sh
     oc delete pod -n kube-system <vpn_pod>
     ```
     {: pre}
 
 6. If the OpenVPN still fails, check the worker node that the pod runs on.
-    ```
+    ```sh
     oc describe pod -n kube-system <vpn_pod> | grep "Node:"
     ```
     {: pre}
 
 7. Cordon the worker node so that the OpenVPN pod is rescheduled to a different worker node.
-    ```
+    ```sh
     oc cordon <worker_node>
     ```
     {: pre}
 
 8. Check the OpenVPN pod logs again. If the pod no longer has an error, the worker node might have a network connectivity issue. Reload the worker node.
-    ```
+    ```sh
     ibmcloud oc worker reload -c <cluster_name_or_ID> -w <worker_node_ID>
     ```
     {: pre}

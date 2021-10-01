@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc, roks
 
 subcollection: openshift
 
 ---
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -93,13 +92,13 @@ You can uninstall the OpenShift Data Foundation add-on from your cluster by usin
 1. **Optional**: To remove the add-on and all ODF resources, first [remove add-on from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-crd).
 
 2. Uninstall the add-on.
-    ```
+    ```sh
     ibmcloud oc cluster addon disable openshift-container-storage -c <cluster_name>
     ```
     {: pre}
 
 3. Verify that the add-on is removed.
-    ```
+    ```sh
     ibmcloud oc cluster addon ls -c <cluster_name>
     ```
     {: pre}
@@ -177,7 +176,7 @@ If you want to fully remove ODF and all your data, you can [remove your storage 
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         app    ocs-storagecluster-cephfs
         ```
@@ -243,13 +242,13 @@ When you delete the `OcsCluster` custom resource from your cluster, the followin
     {: screen}
 
 1. Delete your `OcsCluster` custom resource. Replace `<ocscluster_name>` with the name of your custom resource.
-    ```
+    ```sh
     oc delete ocscluster <ocscluster_name>
     ```
     {: pre}
 
     **Example command for an `OcsCluster` custom resource called `ocscluster-vpc`.**
-    ```
+    ```sh
     oc delete ocscluster ocscluster-vpc
     ```
     {: pre}

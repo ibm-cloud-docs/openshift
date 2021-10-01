@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,7 +10,6 @@ subcollection: openshift
 content-type: troubleshoot
 
 ---
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -50,7 +49,7 @@ When the components fully provision, a public router subdomain is available for 
 {: tsResolve}
 
 2. Check the **Master Status**. If the **Master Status** is not **Ready**, [review its status](/docs/openshift?topic=openshift-debug_master) and follow any troubleshooting information to resolve the issue.   
-    ```
+    ```sh
     ibmcloud oc cluster get -c <cluster_name_or_ID>
     ```
     {: pre}
@@ -67,7 +66,7 @@ When the components fully provision, a public router subdomain is available for 
 
 4. In the output of Step 2, check that the **Ingress Subdomain** is available. The Ingress components in your cluster must provision before the router components can be created. If the **Ingress Subdomain** and **Ingress Secret** are not available, see [Why does no Ingress subdomain exist after cluster creation?](/docs/openshift?topic=openshift-ingress_subdomain).
 5. Check that the **Hostname** of the router subdomain is in the format: `<cluster-name>-<accountID-hashed>-<ssll>.<region>.containers.appdomain.cloud`.
-    ```
+    ```sh
     ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
     ```
     {: pre}

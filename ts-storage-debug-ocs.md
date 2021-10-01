@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: file, debug, help
 
@@ -9,7 +9,6 @@ subcollection: containers
 content-type: troubleshoot
 
 ---
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -177,7 +176,7 @@ Describe your ODF resources and review the command outputs for any error message
     {: pre}
 
     **Example output**:
-    ```
+    ```sh
     NAME             AGE
     ocscluster-vpc   71d
     ```
@@ -196,7 +195,7 @@ Describe your ODF resources and review the command outputs for any error message
     {: pre}
 
     **Example output**
-    ```
+    ```sh
     NAME                                                   READY   STATUS    RESTARTS   AGE
     ibm-keepalived-watcher-5g2gs                           1/1     Running   0          7d21h
     ibm-keepalived-watcher-8l4ld                           1/1     Running   0          7d21h

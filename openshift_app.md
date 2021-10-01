@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
 
   
@@ -676,14 +675,14 @@ To set up configuration files with Kustomize:
 
 4. Set up the `base` repo.
     1. Navigate to the base repo.
-        ```
+        ```sh
         cd ~/<my_app>/base
         ```
         {: pre}
 
     2. Create an initial set of Kubernetes configuration YAML files for your app deployment. You might use the `wasliberty` [YAML example](#yaml-example) to create a deployment, service, config map, and persistent volume claim.
     3. Create a [`kustomization` file](https://github.com/kubernetes-sigs/kustomize#1-make-a-kustomization-file) that specifies the base configuration to be applied across environments. The `kustomization` file must include the list of Kubernetes resource configuration YAMLs that are stored in the same `base` repo. In the `kustomization` file, you can also add configurations that apply to all the resource YAMLs in the base repo, such as a prefix or suffix that is appended to all the resource names, a label, the existing namespace all the resources are created in, secrets, configmaps, and more.
-        ```
+        ```yaml
         apiVersion: kustomize.config.k8s.io/v1beta1
         kind: Kustomization
         namespace: wasliberty
@@ -710,7 +709,7 @@ To set up configuration files with Kustomize:
 
 5. Set up your overlay repo with unique `kustomization` YAML files for each of your environments, such as staging and prod.
     1. In the staging repo, create a `kustomization.yaml` file. Add any configurations that are unique to staging, such as a label, image tag, or YAML for a new component that you want to test out.
-        ```
+        ```yaml
         apiVersion: kustomize.config.k8s.io/v1beta1
         kind: Kustomization
         namePrefix: staging-
@@ -767,7 +766,7 @@ To set up configuration files with Kustomize:
 
 6. Apply the Kubernetes resources for the environment that you want to deploy. The following example uses the staging repo.
     1. Navigate to the staging overlay directory. If you did not build your resources in the previous step, create them now.
-        ```
+        ```sh
         cd overlay/staging && kustomize build
         ```
         {: pre}
@@ -823,7 +822,8 @@ To set up configuration files with Kustomize:
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     configmap "staging-kustomtest-configmap-v2" deleted
     secret "staging-kustomtest-secret-v2" deleted
     service "staging-kustomtest-service-v2" deleted

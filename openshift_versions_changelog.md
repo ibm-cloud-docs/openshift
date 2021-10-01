@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
 subcollection: openshift
 
 ---
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -27,6 +26,13 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
+
+## Version 4.8 changelog
+{: #version-48}
+
+
+Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.7 patch updates.
+{: shortdesc}
 
 
 ### Change log for fix pack 4.8.11_1526_openshift (master) and 4.8.12_1527_openshift (worker node), released 29 Sept 2021

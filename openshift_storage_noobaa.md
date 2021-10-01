@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, noobaa, openshift container storage, openshift data foundation, storage classes
 
 subcollection: openshift
 
 ---
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -175,7 +174,7 @@ After you create backing stores and a bucket class, you can create an object buc
     {: pre}
 
 1. List the secrets and config maps in your cluster and verify that the corresponding secret and config map for your OBC are created.
-    ```
+    ```sh
     oc get secrets | grep <obc-name> && oc get cm | grep <obc-name>
     ```
     {: pre}

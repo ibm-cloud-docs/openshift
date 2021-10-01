@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
 subcollection: openshift
 
 ---
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -88,12 +87,12 @@ Worker nodes can also run patch versions that are greater than the masters. As u
 
 To check the Kubernetes server version of a cluster, log in to the cluster and run the following command.
 
-```
+```sh
 oc version
 ```
 {: pre}
 
-Example output:
+Example output
 ```
 Client Version: 4.7.3
 Server Version: 4.7.12

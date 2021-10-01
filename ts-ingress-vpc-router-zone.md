@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,7 +10,6 @@ subcollection: openshift
 content-type: troubleshoot
 
 ---
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -43,19 +42,20 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
 {: tsResolve}
 
 1. Delete the `default` Ingress controller. After, the Ingress controller is automatically re-created.
-    ```
+    ```sh
     oc delete ingresscontroller default -n openshift-ingress-operator
     ```
     {: pre}
 
 2. Verify that the `default` Ingress controller is re-created.
-    ```
+    ```sh
     oc get ingresscontroller -n openshift-ingress-operator
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     NAME      AGE
     default   2m38s
     ```
@@ -75,13 +75,14 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
     {: screen}
 
 4. For the `router-default` service, copy the hostname that is assigned by the new VPC load balancer in the **EXTERNAL-IP** field.
-    ```
+    ```sh
     oc get svc -n openshift-ingress
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     NAME                       TYPE           CLUSTER-IP      EXTERNAL-IP                            PORT(S)                      AGE
     router-default             LoadBalancer   172.21.47.119   1234abcd-us-south.lb.appdomain.cloud   80:32637/TCP,443:31719/TCP   2m
     router-internal-default    ClusterIP      172.21.51.30    <none>                                 80/TCP,443/TCP,1936/TCP      2m
@@ -89,31 +90,33 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
     {: screen}
 
 5. Get the Ingress subdomain for your cluster.
-    ```
+    ```sh
     ibmcloud oc cluster get -c <cluster_name_or_ID> | grep 'Ingress Subdomain'
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     Ingress Subdomain:              mycluster-35366fb2d3d90fd50548180f69e7d12a-0000.us-south.containers.appdomain.cloud
     ```
     {: screen}
 
 6. Update the Ingress subdomain DNS registration to use the new VPC load balancer hostname.
-    ```
+    ```sh
     ibmcloud oc nlb-dns replace --cluster <cluster_name_or_ID> --nlb-subdomain <Ingress_subdomain> --lb-host <vpc_lb_hostname>
     ```
     {: pre}
 
 7. Verify that the ingress subdomain DNS registration is updated to include the new VPC load balancer hostname for your router.
-    ```
+    ```sh
     ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     Subdomain                                                                             Load Balancer Hostname                 SSL Cert Status   SSL Cert Secret Name                            Secret Namespace   
     mycluster-d84d4d2137685d8446c88eacf59b5038-0000.us-south.containers.appdomain.cloud   1234abcd-us-south.lb.appdomain.cloud   created           cluster-d84d4d2137685d8446c88eacf59b5038-0000   openshift-ingress
     ```

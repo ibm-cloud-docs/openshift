@@ -10,9 +10,6 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -376,7 +373,8 @@ To create an ACL for each subnet that your cluster is attached to:
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     ID                                          Name          Status      Subnet CIDR        Addresses   ACL                                                  Public Gateway                            VPC       Zone         Resource group
     0717-2224d664-d435-425e-b5ec-f324af2df445   mysubnet1     available   10.240.0.0/28      11/16       armored-never-chitchat-gangly-skylight-prototype     -                                  myvpc     us-south-1   default
     0717-1eff410a-a47e-4bc2-b4a3-5f742f320008   mysubnet2     available   10.240.1.0/24      251/256     armored-never-chitchat-gangly-skylight-prototype     pgw-ed8f6970-9b71-11ea-b94a-956de1af1ccd        myvpc     us-south-2   default
@@ -390,7 +388,8 @@ To create an ACL for each subnet that your cluster is attached to:
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     Creating network ACL mycluster-mysubnet1-acl under account Account as user user@email.com...
 
     ID        740b07cb-4e69-4ef2-b667-42ed27d8b29e
@@ -410,7 +409,7 @@ To create an ACL for each subnet that your cluster is attached to:
     {: screen}
 
 3. Export the ACL ID as an environment variable.
-    ```
+    ```sh
     export ACL_ID=<acl_id>
     ```
     {: pre}
@@ -497,7 +496,8 @@ To create an ACL for each subnet that your cluster is attached to:
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     ID                  a1b2c3d4-f560-471b-b6ce-20067ac93439
     Name                mysubnet1
     IPv*                ipv4

@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, nginx, ingress controller
 
 subcollection: openshift
 
 ---
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -26,19 +25,20 @@ Quickly expose your app to the Internet by creating an Ingress resource.
 {: note}
 
 1. Create a Kubernetes `ClusterIP` service for your app so that it can be included in the router load balancing.
-    ```
+    ```sh
     oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <project>
     ```
     {: pre}
 
 2. Get the Ingress subdomain for your cluster.
-    ```
+    ```sh
     ibmcloud oc cluster get -c <cluster_name_or_ID> | grep 'Ingress Subdomain'
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     Ingress Subdomain:      mycluster-a1b2cdef345678g9hi012j3kl4567890-0000.us-south.containers.appdomain.cloud
     ```
     {: screen}
@@ -87,7 +87,7 @@ Quickly expose your app to the Internet by creating an Ingress resource.
         {: codeblock}
 
 4. Create the Ingress resource in the same project as your app service.
-    ```
+    ```sh
     oc apply -f myingressresource.yaml -n <project>
     ```
     {: pre}

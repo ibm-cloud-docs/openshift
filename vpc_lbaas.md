@@ -10,9 +10,6 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -721,7 +718,8 @@ Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.op
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     Hello world from hello-world-deployment-5fd7787c79-sl9hn! Your app is up and running in a cluster!
     ```
     {: screen}
@@ -756,6 +754,7 @@ After you create a DNS subdomain for a VPC ALB hostname, you cannot use `nlb-dns
     {: pre}
 
     Example output
+
     ```sh
     NAME            TYPE           CLUSTER-IP       EXTERNAL-IP                            PORT(S)     AGE       SELECTOR
     ...

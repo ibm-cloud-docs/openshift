@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, scc, security context constraint, psp
 
 subcollection: openshift
 
 ---
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -39,7 +38,7 @@ By default, {{site.data.keyword.openshiftlong_notm}} clusters include a standard
 
 If you do not specify a security context, the {{site.data.keyword.openshiftshort}} `restricted` security context constraint is applied by default. To check a pod's security context, describe the pod and look for the SCC annotation, such as in the following example.
 
-```
+```sh
 oc describe pod <pod_name>
 ```
 {: pre}

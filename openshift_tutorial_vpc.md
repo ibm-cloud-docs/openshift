@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -14,7 +14,6 @@ account-plan:
 completion-time: 45m
 
 ---
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -120,19 +119,19 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
     * The following command creates a version 4.8 cluster in Dallas with the minimum configuration of 2 worker nodes that have at least 4 cores and 16 GB memory so that default {{site.data.keyword.openshiftshort}} components can deploy.
     * By default, your cluster is created with a public and a private cloud service endpoint. You can use the public cloud service endpoint to access the Kubernetes master, such as to run `oc` commands, from your local machine. Your worker nodes communicate with the master on the private cloud service endpoint. For the purposes of this tutorial, do **not** specify the `--disable-public-service-endpoint` flag.
     * For more information about the command options, see the [`cluster create vpc-gen2` CLI reference docs](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2).
-    ```
+    ```sh
     ibmcloud oc cluster create vpc-gen2 --name myvpc-cluster --zone us-south-1 --version 4.8_openshift --flavor bx2.4x16 --workers 2 --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --cos-instance <COS_CRN>
     ```
     {: pre}
 
 5. List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and router components take about 10 more minutes to deploy and update the cluster domain that you use for the {{site.data.keyword.openshiftshort}} web console and other routes. Before you continue, wait until the cluster is ready by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.</p>
-    ```
+    ```sh
     ibmcloud oc cluster get --cluster myvpc-cluster
     ```
     {: pre}
 
 6. Add yourself as a user to the {{site.data.keyword.openshiftshort}} cluster by setting the cluster context.
-    ```
+    ```sh
     ibmcloud oc cluster config --cluster myvpc-cluster --admin
     ```
     {: pre}
@@ -166,13 +165,14 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
     
 8. From the {{site.data.keyword.openshiftshort}} web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.<p class="tip">Save your cluster master URL to access the {{site.data.keyword.openshiftshort}} console later. In future sessions, you can skip the `cluster config` step and copy the login command from the console instead.</p>
 9. Verify that the `oc` commands run properly with your cluster by checking the version.
-    ```
+    ```sh
     oc version
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     Client Version: v4.8.0
     Kubernetes Version: v1.21.2
     ```
@@ -195,13 +195,13 @@ The components that you deploy by completing this lesson are shown in the follow
 ![Deployment setup](images/cs_app_tutorial_mz-components1.png)
 
 1. Create an {{site.data.keyword.openshiftshort}} project for your Hello World app.
-    ```
+    ```sh
     oc new-project hello-world
     ```
     {: pre}
 
 2. Build the sample app [from the source code](https://github.com/IBM/container-service-getting-started-wt){: external}. With the {{site.data.keyword.openshiftshort}} `new-app` command, you can refer to a directory in a remote repository that contains the Dockerfile and app code to build your image. The command builds the image, stores the image in the local Docker registry, and creates the app deployment configurations (`dc`) and services (`svc`). For more information about creating new apps, [see the {{site.data.keyword.openshiftshort}} docs](http://docs.openshift.com/container-platform/4.7/applications/application_life_cycle_management/odc-creating-applications-using-developer-perspective.html){: external}.
-    ```
+    ```sh
     oc new-app --name hello-world https://github.com/IBM/container-service-getting-started-wt --context-dir="Lab 1"
     ```
     {: pre}
@@ -209,26 +209,26 @@ The components that you deploy by completing this lesson are shown in the follow
 3. Verify that the sample Hello World app components are created.
 
     1. List the **hello-world** services and note the service name. So far, your app listens for traffic on these internal cluster IP addresses only. In the next lesson, you create a load balancer for the service so that the load balancer can forward external traffic requests to the app.
-        ```
+        ```sh
         oc get svc -n hello-world
         ```
         {: pre}
 
-        Example output:
-        ```
+        Example output
+        ```sh
         NAME          TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
         hello-world   ClusterIP   172.21.xxx.xxx   <none>       8080/TCP   31m
         ```
         {: screen}
 
     2. List the pods. Pods with `build` in the name are jobs that **Completed** as part of the new app build process. Make sure that the **hello-world** pod status is **Running**.
-        ```
+        ```sh
         oc get pods -n hello-world
         ```
         {: pre}
 
-        Example output:
-        ```
+        Example output
+        ```sh
         NAME                  READY     STATUS             RESTARTS   AGE
         hello-world-1-9cv7d   1/1       Running            0          30m
         hello-world-1-build   0/1       Completed          0          31m
@@ -255,12 +255,12 @@ Interested in using an {{site.data.keyword.openshiftshort}} route to expose your
 </br>
 
 1. Create a Kubernetes `LoadBalancer` service in your cluster to publicly expose the hello world app.
-    ```
+    ```sh
     oc expose dc/hello-world --type=LoadBalancer --name=hw-lb-svc  --port=8080 --target-port=8080 -n hello-world
     ```
     {: pre}
 
-    Example output:
+    Example output
 
     ```
     service "hw-lb-svc" exposed
@@ -307,14 +307,14 @@ Interested in using an {{site.data.keyword.openshiftshort}} route to expose your
 
 2. Verify that the Kubernetes `LoadBalancer` service is created successfully in your cluster. When you create the Kubernetes `LoadBalancer` service, a VPC load balancer is automatically created for you. The VPC load balancer assigns a hostname to your Kubernetes `LoadBalancer` service that you can see in the **LoadBalancer Ingress** field of your CLI output. In VPC, services in your cluster are assigned a hostname because the external IP address for the service is not stable.<p class="note">The VPC load balancer takes a few minutes to provision in your VPC. Until the VPC load balancer is ready, you cannot access the Kubernetes `LoadBalancer` service through its hostname.</p>
 
-    ```
+    ```sh
     oc describe service hw-lb-svc -n hello-world
     ```
     {: pre}
 
     Example CLI output:
-    ```
-    Name:                     hw-lb-svc
+    ```sh
+    NAME:                     hw-lb-svc
     Namespace:                default
     Labels:                   app=hello-world-deployment
     Annotations:              <none>
@@ -354,25 +354,26 @@ Interested in using an {{site.data.keyword.openshiftshort}} route to expose your
     {: screen}
 
 4. Send a request to your app by curling the hostname and port of the Kubernetes `LoadBalancer` service that is assigned by the VPC load balancer that you found in step 2. Example:
-    ```
+    ```sh
     curl 1234abcd-us-south.lb.appdomain.cloud:8080
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     Hello world from hello-world-deployment-5fd7787c79-sl9hn! Your app is up and running in a cluster!
     ```
     {: screen}
 
 5. **Optional**: To clean up the resources that you created in this lesson, you can use the labels that are assigned to each app.
     1. List all the resources for each app in the `hello-world` project.
-        ```
+        ```sh
         oc get all -l app=hello-world -o name -n hello-world
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         pod/hello-world-1-dh2ff
         replicationcontroller/hello-world-1
@@ -386,7 +387,7 @@ Interested in using an {{site.data.keyword.openshiftshort}} route to expose your
         {: screen}
 
     2. Delete all the resources that you created.
-        ```
+        ```sh
         oc delete all -l app=hello-world -n hello-world
         ```
         {: pre}

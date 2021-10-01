@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
 subcollection: openshift
 
 ---
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -37,12 +36,12 @@ With [{{site.data.keyword.redhat_full}} Marketplace](https://marketplace.redhat.
 *   Register for a [{{site.data.keyword.redhat_notm}} Marketplace account](https://marketplace.redhat.com/en-us/registration/redhat-marketplace){: external}.
 *   [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 *   Make sure that the Operator Lifecycle Manager (OLM) pods in the `openshift-operator-lifecycle-manager` project and marketplace pods in the `openshift-marketplace` project are ready and running. You might have to restart a pod to return the pod to a healthy state.
-    ```
+    ```sh
     oc get pods -n openshift-operator-lifecycle-manager
     ```
     {: pre}
 
-    ```
+    ```sh
     oc get pods -n openshift-marketplace
     ```
     {: pre}
@@ -51,14 +50,14 @@ With [{{site.data.keyword.redhat_full}} Marketplace](https://marketplace.redhat.
 1. Follow the [{{site.data.keyword.redhat_notm}} Marketplace instructions](https://marketplace.redhat.com/en-us/workspace/clusters/add/register){: external} to create a namespace, operator, and global pull secret for the {{site.data.keyword.redhat_notm}} Marketplace.
 
 2. Verify that the global pull secret for the cluster is updated with the `registry.marketplace.redhat.com` secret.
-    ```
+    ```sh
     oc get secret pull-secret -n openshift-config --output="jsonpath={.data.\.dockerconfigjson}" | base64 --decode | grep "marketplace" -A4
     ```
     {: pre}
 
 3. To pick up the global configuration changes, reload all of the worker nodes in your cluster.
     1. Note the **ID** of the worker nodes in your cluster.
-        ```
+        ```sh
         ibmcloud oc worker ls -c <cluster_name_or_ID>
         ```
         {: pre}
@@ -66,13 +65,13 @@ With [{{site.data.keyword.redhat_full}} Marketplace](https://marketplace.redhat.
     2. Reload each classic worker node, or replace each VPC worker node. You can reload or replace multiple worker nodes by including multiple `-w` flags, but make sure to leave enough worker nodes running at the same time for your apps to avoid an outage because they are reloaded concurrently.
 
         **Classic**: Reload worker nodes.
-        ```
+        ```sh
         ibmcloud oc worker reload -c <cluster_name_or_ID> -w <workerID_1> -w <workerID_2>
         ```
         {: pre}
 
         **VPC**: Replace worker nodes.
-        ```
+        ```sh
         ibmcloud oc worker replace -c <cluster_name_or_ID> -w <workerID_1> -w <workerID_2>
         ```
         {: pre}

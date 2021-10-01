@@ -9,9 +9,6 @@ keywords: openshift, roks, rhoks, rhos, ips, vlans, networking, public gateway
 subcollection: openshift
 
 ---
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -223,7 +220,8 @@ To create a VPC subnet, follow these steps.
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     ID                                     Name                                       VPC                          Zone         Floating IP                  Created                     Status      Resource group
     26426426-6065-4716-a90b-ac7ed7917c63   test-pgw                                   testvpc(36c8f522-.)          us-south-1   169.xx.xxx.xxx(26466378-.)   2019-09-20T16:27:32-05:00   available   -
     2ba2ba2b-fffa-4b0c-bdca-7970f09f9b8a   pgw-73b62bc0-b53a-11e9-9838-f3f4efa02374   team3(ff537d43-.)            us-south-2   169.xx.xxx.xxx(2ba9a280-.)   2019-08-02T10:30:29-05:00   available   -
@@ -238,7 +236,8 @@ To create a VPC subnet, follow these steps.
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     ID               26466378-6065-4716-a90b-ac7ed7917c63
     Name             mycluster-us-south-1-gateway
     Floating IP      169.xx.xx.xxx(26466378-6065-4716-a90b-ac7ed7917c63)
@@ -257,7 +256,8 @@ To create a VPC subnet, follow these steps.
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     ID                  91e946b4-7094-46d0-9223-5c2dea2e5023
     Name                mysubnet1
     IPv4 CIDR           10.240.xx.xx/24

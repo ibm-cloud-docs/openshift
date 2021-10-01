@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,7 +10,6 @@ subcollection: openshift
 content-type: troubleshoot
 
 ---
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -57,19 +56,20 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 {: tsResolve}
 
 1. [Log in to your cluster](/docs/openshift?topic=openshift-access_cluster). Because the subdomain is not available, the {{site.data.keyword.openshiftshort}} console cannot open. Instead, you can set the cluster context with the `--admin` flag through the CLI.
-    ```
+    ```sh
     ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
     ```
     {: pre}
 
 2. Verify that the worker nodes have a **State** of `normal` and a **Status** of `Ready`. After you create the cluster, it can take up to 20 minutes for the worker nodes to be ready.
-    ```
+    ```sh
     ibmcloud oc worker ls -c <cluster_name_or_ID>
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     ID                                                     Public IP         Private IP      Flavor              State     Status   Zone    Version
     kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx    10.xxx.xx.xxx   u3c.2x4.encrypted   deployed   Ready    dal10   1.20.7
     ```
@@ -77,7 +77,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 
 3. Verify that the prerequisite steps for your ALB creation are completed.
     * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters**: Get the details of the `ibm-cloud-provider-vlan-ip-config` config map.
-    ```
+    ```sh
     oc describe cm ibm-cloud-provider-vlan-ip-config -n kube-system
     ```
     {: pre}
@@ -86,8 +86,8 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
     * If the **Events** section shows a warning message similar to `ErrorSubnetLimitReached: There are already the maximum number of subnets permitted in this VLAN`, see the [VLAN capacity troubleshooting topic](/docs/openshift?topic=openshift-cs_subnet_limit_43).
 
     Example output of a config map populated with IP addresses:
-    ```
-    Name:         ibm-cloud-provider-vlan-ip-config
+    ```sh
+    NAME:         ibm-cloud-provider-vlan-ip-config
     Namespace:    kube-system
     Labels:       <none>
     Annotations:  <none>
@@ -174,13 +174,13 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
         * If a router deployment is listed, continue to the next step.
         * If no router deployment is created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
 
-        ```
+        ```sh
         oc get deployment -n openshift-ingress
         ```
         {: pre}
 
-        Example output:
-        ```
+        Example output
+        ```sh
         NAME             READY   UP-TO-DATE   AVAILABLE   AGE
         router-default   2/2     2            2           26m
         ```
@@ -190,13 +190,13 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
         * If a service that is named `router-default` is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
         * If no `router-default` service is created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
 
-        ```
+        ```sh
         oc get svc -n openshift-ingress
         ```
         {: pre}
 
-        Example output:
-        ```
+        Example output
+        ```sh
         NAME                      TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
         router-default            LoadBalancer   172.21.47.119   169.XX.XX.XX   80:31182/TCP,443:31154/TCP   27m
         router-internal-default   ClusterIP      172.21.51.30    <none>         80/TCP,443/TCP,1936/TCP      26m
@@ -204,7 +204,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
         {: screen}
 
 5. Check again whether the Ingress subdomain and secret are created. If they are not available, but you verified that all of the components in steps 1 - 3 exist, [review ways to get help](/docs/openshift?topic=openshift-get-help).
-    ```
+    ```sh
     ibmcloud oc cluster get -c <cluster_name_or_ID>
     ```
     {: pre}

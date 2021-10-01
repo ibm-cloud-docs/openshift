@@ -10,9 +10,6 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -50,7 +47,8 @@ If corporate network policies prevent access from your local system to public en
     {: pre}
 
     Example output
-    ```
+
+    ```sh
                                      )___(
                               _______/__/_
                      ___     /===========|   ___
@@ -113,7 +111,8 @@ To allow access for a specific cluster:
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     ...
     Public Service Endpoint URL:    https://c3.<region>.containers.cloud.ibm.com:30426
     Private Service Endpoint URL:   https://c3-private.<region>.containers.cloud.ibm.com:31140
@@ -245,7 +244,8 @@ To permit ingress from your cluster to another service, modify that service's fi
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     ...
     Worker Zones:                   us-south-1, us-south-2, us-south-3
     Ingress Subdomain:              vpc-prod.us-south.containers.appdomain.cloud
@@ -268,7 +268,8 @@ To permit ingress from your cluster to another service, modify that service's fi
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     ID                                     Name                                       Status      Floating IP      VPC              Zone
     5d308ea5-9f32-43b3-aaae-194d5723a3e5   pgw-b9d45630-c053-11e9-b2f8-79328ce05e7e   available   169.XX.XXX.XX    test-vpc         us-south-1
     f8b95e43-a408-4dc8-a489-ed649fc4cfec   pgw-18a3ebb0-b539-11e9-9838-f3f4efa02374   available   169.XX.XXX.XX    prod             us-south-1

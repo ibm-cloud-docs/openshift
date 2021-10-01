@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,7 +10,6 @@ subcollection: openshift
 content-type: troubleshoot
 
 ---
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -28,7 +27,7 @@ When you run `oc get svc -n openshift-ingress`, one or more zones has no public 
 {: tsSymptoms}
 
 * No `router-default` service is deployed, or the service might not have an external IP address assigned. For example, in a single-zone cluster, you might see the following:
-    ```
+    ```sh
     NAME                                         TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
     router-default                               LoadBalancer   172.21.47.119   <none>         80:32637/TCP,443:31719/TCP   26m
     router-internal-default                      ClusterIP      172.21.51.30    <none>         80/TCP,443/TCP,1936/TCP      26m
@@ -36,7 +35,7 @@ When you run `oc get svc -n openshift-ingress`, one or more zones has no public 
     {: screen}
 
 * If you have a multizone cluster, one zone has no router service. For example, in a multizone cluster that has worker nodes in `dal10`, `dal12`, and `dal13`, you might see a `router-default` service for `dal10` and a `router-dal12` for `dal12`, but no `router-dal13` for `dal13`. Note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`. You might also see that one zone has no router service, but another zone has two or more router services.
-    ```
+    ```sh
     NAME                                         TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
     router-default                               LoadBalancer   172.21.47.119   169.XX.XX.XX   80:32637/TCP,443:31719/TCP   26m
     router-dal12                                 LoadBalancer   172.21.47.119   169.XX.XX.XX   80:32637/TCP,443:31719/TCP   26m
@@ -73,7 +72,7 @@ Option 3: If you are not using all the subnets in the VLAN, you can reuse subnet
 2. Use the [`ibmcloud oc cluster subnet add` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_add) to make an existing subnet available to your cluster.
 
 3. Verify that the subnet was successfully created and added to your cluster. The subnet CIDR is listed in the **Subnet VLANs** section.
-    ```
+    ```sh
     ibmcloud oc cluster get --cluster <cluster_name> --show-resources
     ```
     {: pre}
@@ -124,32 +123,33 @@ Create a router service in the zone where a router service did not deploy. If a 
     {: codeblock}
 
 2. Create the router service in your cluster.
-    ```
+    ```sh
     oc create -f router-<zone>.yaml
     ```
     {: pre}
 
 3. Verify that the router service is created in the correct zone. In the output, get the **EXTERNAL IP** address.
-    ```
+    ```sh
     oc get svc router-<zone> -n openshift-ingress
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     NAME                         TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                      AGE
     router-dal12                 LoadBalancer   172.21.57.132    169.XX.XX.XX    80/TCP,443/TCP,1940/TCP      3m
     ```
     {: screen}
 
 4. Get the subdomain for your default router. In the output, look for the subdomain formatted like `<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
-    ```
+    ```sh
     ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
     ```
     {: pre}
 
 5. Register the router service's IP address with your router's subdomain.
-    ```
+    ```sh
     ibmcloud oc nlb-dns add -c <cluster_name_or_ID> --ip <router_svc_ip> --nlb-host <router_subdomain>
     ```
     {: pre}

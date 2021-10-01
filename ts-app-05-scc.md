@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,7 +10,6 @@ subcollection: openshift
 content-type: troubleshoot
 
 ---
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -47,14 +46,15 @@ Change the pod's SCC permissions.
 {: tsResolve}
 
 1. Describe the pod and check the `openshift.io/scc: <scc>` security context constraint in the **Annotations** section.
-    ```
+    ```sh
     oc describe pod -n <project> <pod>
     ```
     {: pre}
 
-    Example output:
-    ```
-    Name:               image-registry-1234567
+    Example output
+
+    ```sh
+    NAME:               image-registry-1234567
     Namespace:          openshift-image-registry
     Priority:           2000000000
     PriorityClassName:  system-cluster-critical
@@ -66,14 +66,15 @@ Change the pod's SCC permissions.
     {: screen}
 
 2. Describe the security context constraint and check the user and groups in the **Access** section.
-    ```
+    ```sh
     oc describe scc <scc>
     ```
     {: pre}
 
-    Example output:
-    ```
-    Name:                        anyuid
+    Example output
+
+    ```sh
+    NAME:                        anyuid
     Priority:                    <none>
     Access:                        
         Users:                    <none>
@@ -82,19 +83,19 @@ Change the pod's SCC permissions.
     {: screen}
 
 3. If you do not want the user or group to have the permissions of the SCC, remove the user or group from the SCC. For more information, review the default [{{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-openshift_scc#oc_sccs) and [{{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-openshift_scc#ibm_sccs) SCCs that are set in the cluster.
-    ```
+    ```sh
     oc adm policy remove-scc-from-group <scc> <(user|group)>
     ```
     {: pre}
 
 4. Add the user or group to the SCC with the appropriate permissions.
-    ```
+    ```sh
     oc adm policy add-scc-to-group <scc> <(user|group)>
     ```
     {: pre}
 
 5. Delete the pod so that the pod is rescheduled with the new SCC permissions.
-    ```
+    ```sh
     oc delete pod -n <project> <pod>
     ```
     {: pre}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, storage
 
@@ -10,7 +10,6 @@ subcollection: openshift
 content-type: troubleshoot
 
 ---
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -50,7 +49,7 @@ This error indicates that that the classic or VPC cluster where your ODF storage
     {: pre}
 
     **Example output**:
-    ```
+    ```sh
     NAME             AGE
     ocscluster-vpc   71d
     ```
