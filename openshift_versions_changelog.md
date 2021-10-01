@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -10,8 +10,8 @@ subcollection: openshift
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
+
   
 
 # Version changelog
@@ -26,6 +26,13 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
+
+## Version 4.8 changelog
+{: #version-48}
+
+
+Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.7 patch updates.
+{: shortdesc}
 
 
 ### Change log for fix pack 4.8.11_1526_openshift (master) and 4.8.12_1527_openshift (worker node), released 29 Sept 2021
@@ -71,7 +78,7 @@ The following table shows the changes that are included in the worker node fix p
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.29_1531_openshift" caption-side="top"}
 
-### Changelog for master fix pack 4.7.30_1532_openshift, released 27 September 2021
+### Changelog for master fix pack 4.7.30_1532_openshift, released 28 September 2021
 {: #4730_1532}
 
 The following table shows the changes that are included in the master fix pack patch update `4.7.30_1532_openshift`. Master patch updates are applied automatically. 
@@ -86,7 +93,7 @@ The following table shows the changes that are included in the master fix pack p
 | IBM Cloud Controller Manager | v1.20.10-1 | v1.20.11-1 | Updated to support the Kubernetes `1.20.11` release. Fixed a bug that may cause node initialization to fail when a new node reuses the name of a deleted node. |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} plug-in and monitor | 398 | 400 | Updated to use `Go` version `1.16.7`. Updated universal base image (UBI) to the latest `8.4-208` version to resolve CVEs. |
 | IBM Cloud RBAC Operator | 945df65 | e3cb629 | Updated to use `Go` version `1.16.7`. |
-| Kubernetes API server auditing configuration | N/A | N/A| Updated to support `verbose` [Kubernetes API server auditing](https://cloud.ibm.com/docs/openshift?topic=openshift-health-audit#audit-api-server){: external}. |
+| Kubernetes API server auditing configuration | N/A | N/A| Updated to support `verbose` [Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#audit-api-server). |
 | Load balancer and load balancer monitor for IBM Cloud Provider | 1510 | 1547 | Updated image for [CVE-2021-3711](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3711) and [CVE-2021-3712](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3712). |
 |OpenShift Container Platform| 4.7.23 | 4.7.30 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-30). |
 |OpenShift Container PlatformControl Plane Operator | v4.7.0-20210816 | v4.7.0-20210917 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20210917). |
@@ -328,7 +335,7 @@ The following table shows the changes that are included in the worker node fix p
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.44_1555_openshift" caption-side="top"}
 
-### Changelog for master fix pack 4.6.44_1556_openshift, released 27 September 2021
+### Changelog for master fix pack 4.6.44_1556_openshift, released 28 September 2021
 {: #4644_1556}
 
 The following table shows the changes that are included in the master fix pack patch update `4.6.44_1556_openshift`. Master patch updates are applied automatically. 
@@ -343,7 +350,7 @@ The following table shows the changes that are included in the master fix pack p
 | IBM Cloud Controller Manager | v1.19.14-1 | v1.19.15-1 | Updated to support the Kubernetes `1.19.15` release. Fixed a bug that may cause node initialization to fail when a new node reuses the name of a deleted node. |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} plug-in and monitor | 398 | 400 | Updated to use `Go` version `1.16.7`. Updated universal base image (UBI) to the latest `8.4-208` version to resolve CVEs. |
 | IBM Cloud RBAC Operator | 945df65 | e3cb629 | Updated to use `Go` version `1.16.7`. |
-| Kubernetes API server auditing configuration | N/A | N/A| Updated to support `verbose` [Kubernetes API server auditing](https://cloud.ibm.com/docs/openshift?topic=openshift-health-audit#audit-api-server){: external}. |
+| Kubernetes API server auditing configuration | N/A | N/A| Updated to support `verbose` [Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#audit-api-server). |
 | Load balancer and load balancer monitor for IBM Cloud Provider | 1510 | 1550 | Updated image for [CVE-2021-3711](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3711) and [CVE-2021-3712](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3712). |
 |OpenShift Container Platform| 4.6.42 | 4.6.44 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-44). |
 |OpenShift Container PlatformControl Plane Operator | v4.6.0-20210816 | v4.6.0-20210917 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20210917). |
@@ -795,7 +802,7 @@ The following table shows the changes that are included in the worker node fix p
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.5.41_1551_openshift" caption-side="top"}
 
-### Changelog for master fix pack 4.5.41_1552_openshift, released 27 September 2021
+### Changelog for master fix pack 4.5.41_1552_openshift, released 28 September 2021
 {: #4541_1552}
 
 The following table shows the changes that are included in the master fix pack patch update `4.5.41_1552_openshift`. Master patch updates are applied automatically. 
@@ -809,7 +816,7 @@ The following table shows the changes that are included in the master fix pack p
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} plug-in and monitor | 398 | 400 | Updated to use `Go` version `1.16.7`. Updated universal base image (UBI) to the latest `8.4-208` version to resolve CVEs. |
 | IBM Cloud RBAC Operator | 945df65 | e3cb629 | Updated to use `Go` version `1.16.7`. |
 | Load balancer and load balancer monitor for IBM Cloud Provider | 1510 | 1550 | Updated image for [CVE-2021-3711](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3711) and [CVE-2021-3712](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3712). |
-| Kubernetes API server auditing configuration | N/A | N/A| Updated to support `verbose` [Kubernetes API server auditing](https://cloud.ibm.com/docs/openshift?topic=openshift-health-audit#audit-api-server){: external}. |
+| Kubernetes API server auditing configuration | N/A | N/A| Updated to support `verbose` [Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#audit-api-server). |
 |OpenShift Container PlatformControl Plane Operator | v4.5.0-20210816 | v4.5.0-20210830 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20210830). |
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.5.0-20210816 | v4.5.0-20210830 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20210830). |
 | {{site.data.keyword.openshiftlong_notm}} toolkit | 4.5.0+20210816 | 4.5.0+20210830 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20210830). |
@@ -1455,7 +1462,7 @@ The following table shows the changes that are included in the worker node fix p
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.501_1603_openshift" caption-side="top"}
 
-### Changelog for master fix pack 3.11.521_1604_openshift, released 27 September 2021
+### Changelog for master fix pack 3.11.521_1604_openshift, released 28 September 2021
 {: 311521_1604}
 
 The following table shows the changes that are included in the worker node fix pack patch update `3.11.521_1604_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.

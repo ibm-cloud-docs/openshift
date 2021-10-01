@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,8 +11,8 @@ content-type: troubleshoot
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
+
   
 
 # Why can't I push images to the internal registry from outside the VPC network?
@@ -42,7 +42,7 @@ Modify the custom resource of the internal image registry operator to proxy cont
 
 Run the following command to patch the `configs.imageregistry.operator.openshift.io/cluster` resource to set the `disableRedirect` property to `true`. 
 
-```
+```sh
 oc patch configs.imageregistry.operator.openshift.io/cluster --patch '{"spec":{"disableRedirect":true}}' --type=merge
 ```
 {: pre}

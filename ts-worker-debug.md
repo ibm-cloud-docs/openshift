@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,10 +11,8 @@ content-type: troubleshoot
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Debugging worker nodes
@@ -34,7 +32,7 @@ Review the options to debug your worker nodes and find the root causes for failu
 
 If your cluster is in a **Critical**, **Delete failed**, or **Warning** state, or is stuck in the **Pending** state for a long time, review the state of your worker nodes.
 
-```
+```sh
 ibmcloud oc worker ls --cluster <cluster_name_or_id>
 ```
 {: pre}
@@ -51,7 +49,7 @@ For more information, see [Worker node states](/docs/openshift?topic=openshift-w
 
 Get the details for the worker node. If the details include an error message, review the list of [common error messages for worker nodes](/docs/containers?topic=containers-common_worker_nodes_issues) to learn how to resolve the problem.
 
-```
+```sh
 ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id>
 ```
 {: pre}

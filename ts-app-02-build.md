@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,8 +11,8 @@ content-type: troubleshoot
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
+
   
 
 # Why does my build error due to image pull authentication?
@@ -45,13 +45,14 @@ Set up the build with access to the image, either by pulling the image from the 
 For more information, see the [{{site.data.keyword.openshiftshort}} documentation](http://docs.openshift.com/container-platform/4.7/cicd/builds/creating-build-inputs.html){: external}.
 
 1. Check the build configuration file to see what registry the build needs pull access to. For example, if your build is part of an {{site.data.keyword.openshiftshort}} template, the build config `spec.strategy.sourceStrategy.from.name` value refers to the `registry.redhat.io` private registry.
-    ```
+    ```sh
     oc -n openshift get template react-web-app-example -o yaml
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     strategy:
       sourceStrategy:
         from:
@@ -69,7 +70,7 @@ For more information, see the [{{site.data.keyword.openshiftshort}} documentatio
         2. [Add the secret to the builder service account](/docs/openshift?topic=openshift-registry#store_imagePullSecret) or [specify the image pull secret in the build configuration file](/docs/openshift?topic=openshift-images#pod_imagePullSecret).
 
             Example to link the secret to the builder service account in a project.
-            ```
+            ```sh
             oc secrets link builder <pull-secret>
             ```
             {: pre}

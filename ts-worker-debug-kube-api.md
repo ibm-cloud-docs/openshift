@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,10 +11,8 @@ content-type: troubleshoot
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Debugging worker nodes with Kubernetes API
@@ -27,7 +25,7 @@ Before you begin, make sure that you have the **Manager** service access role in
 
 1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 2. List the worker nodes in your cluster and note the **NAME** of the worker nodes that are not in a `Ready` **STATUS**. Note that the **NAME** is the private IP address of the worker node.
-    ```
+    ```sh
     oc get nodes
     ```
     {: pre}
@@ -36,7 +34,7 @@ Before you begin, make sure that you have the **Manager** service access role in
     * `Type`: The type of condition that might affect the worker node, such as memory or disk pressure.
     * `LastTransitionTime`: The most recent time that the status was updated. Use this time to identify when the issue with your worker node began, which can help you further troubleshoot the issue.
 
-    ```
+    ```sh
     oc describe node <name>
     ```
     {: pre}
@@ -45,12 +43,12 @@ Before you begin, make sure that you have the **Manager** service access role in
     1. In the `Allocated resources` output of the previous command, review the workloads that use the worker node's CPU and memory resources. You might notice that some pods do not set resource limits, and are consuming more resources than you expected. If so, adjust the resource usage of the pods.
     2. Review the percentage of usage of CPU and memory across the worker nodes in your cluster. If the usage is consistently over 80%, [add more worker nodes](/docs/containers?topic=containers-add_workers) to the cluster to support the workloads.
 5. Check for custom admission controllers that are installed in your cluster. Admission controllers often block required pods from running, which might make your worker nodes enter a critical state. If you have custom admission controllers, try removing them with `oc delete`. Then, check if the worker node issue resolves.
-    ```
+    ```sh
     kubectl get mutatingwebhookconfigurations --all-namespaces
     ```
     {: pre}
 
-    ```
+    ```sh
     kubectl get validatingwebhookconfigurations --all-namespaces
     ```
     {: pre}
@@ -66,7 +64,7 @@ Before you begin, make sure that you have the **Manager** service access role in
 
 7. Check that a workload deployment does not cause the worker node issue.
     1. Taint the worker node with the issue.
-        ```
+        ```sh
         oc taint node NODEIP ibm-cloud-debug-isolate-customer-workload=true:NoExecute
         ```
         {: pre}

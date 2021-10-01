@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: kubernetes, worker nodes, state
 
@@ -10,14 +10,13 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Cluster states
 {: #cluster-states-reference}
+
 You can view the current cluster state by running the `ibmcloud oc cluster ls` command and locating the **State** field.
 {: shortdesc}
 

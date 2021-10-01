@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,10 +11,8 @@ content-type: troubleshoot
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # After deleting all worker nodes, why don't my pods start on new worker nodes?
@@ -28,7 +26,7 @@ content-type: troubleshoot
 You deleted all worker nodes in your cluster so that zero worker nodes exist. Then, you added one or more worker nodes. When you run the following command, several pods for Kubernetes components are stuck in the `ContainerCreating` status, and the `calico-node` pods are stuck in the `CrashLoopBackOff` status.
 {: tsSymptoms}
 
-```
+```sh
 oc -n kube-system get pods
 ```
 {: pre}
@@ -44,19 +42,19 @@ Delete the existing `calico-node` worker node entries so that new pods can be cr
 **Before you begin**: Install the [Calico CLI](/docs/containers?topic=containers-network_policies#cli_install).
 
 1. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. The `--admin` option downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. The `--network` option downloads the Calico configuration file to run all Calico commands.
-    ```
+    ```sh
     ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
     ```
     {: pre}
 
 2. For the `calico-node` pods that are stuck in the `CrashLoopBackOff` status, note the `NODE` IP addresses.
-    ```
+    ```sh
     oc -n kube-system get pods -o wide
     ```
     {: pre}
 
     In this example output, the `calico-node` pod cannot start on worker node `10.176.48.106`.
-    ```
+    ```sh
     NAME                                           READY   STATUS              RESTARTS   AGE     IP              NODE            NOMINATED NODE   READINESS GATES
     ...
     calico-kube-controllers-656c5785dd-kc9x2       1/1     Running             0          25h     10.176.48.107   10.176.48.107   <none>           <none>
@@ -78,7 +76,7 @@ Delete the existing `calico-node` worker node entries so that new pods can be cr
     {: pre}
 
 5. Verify that the Kubernetes component pods, including the `calico-node` pods, are now running. It might take a few minutes for the `calico-node` pods to be scheduled and for new component pods to be created.
-    ```
+    ```sh
     oc -n kube-system get pods
     ```
     {: pre}

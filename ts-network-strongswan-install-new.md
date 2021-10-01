@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,10 +11,8 @@ content-type: troubleshoot
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Why can't I install a new strongSwan Helm chart release?
@@ -39,25 +37,25 @@ Delete and re-install the Helm chart.
 {: tsResolve}
 
 1. Delete the previous chart release.
-    ```
+    ```sh
     helm uninstall vpn -n <project>
     ```
     {: pre}
 
 2. Delete the deployment for the previous release. Deletion of the deployment and associated pod takes up to 1 minute.
-    ```
+    ```sh
     oc delete deploy vpn-strongswan
     ```
     {: pre}
 
 3. Verify that the deployment has been deleted. The deployment `vpn-strongswan` does not appear in the list.
-    ```
+    ```sh
     oc get deployments
     ```
     {: pre}
 
 4. Re-install the updated strongSwan Helm chart with a new release name.
-    ```
+    ```sh
     helm install vpn iks-charts/strongswan -f config.yaml
     ```
     {: pre}

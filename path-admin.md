@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -10,10 +10,8 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 <style>
@@ -127,6 +125,7 @@ subcollection: openshift
         }
     -->
     </style>
+
 
 # Learning path for administrators
 {: #learning-path-admin}
@@ -252,12 +251,14 @@ Create a cluster with infrastructure, network, and availability setups that are 
     3. Spread your cluster across availability zones by [adding worker nodes and zones to your cluster](/docs/containers?topic=containers-add_workers).
 4. **User access**:
     1. Make sure that your authorized cluster users can now also access the cluster by planning your user access strategy.
-        1. [Pick the right access policy and role for your users](/docs/containers?topic=containers-access-overview#access_roles).
-    2. [Understand access roles for individual or groups of users in {{site.data.keyword.cloud_notm}} IAM](/docs/containers?topic=containers-access-overview#iam_individuals_groups).
-    3. [Choose the scope of user access to cluster instances, {{site.data.keyword.openshiftshort}} project, or resource groups](/docs/containers?topic=containers-access-overview#resource_groups).
-    2. Allow users to create apps or audit your cluster activity by [assigning cluster access](/docs/containers?topic=containers-users#checking-perms). To see specific permissions and actions that you can grant users, see the [user access permissions reference](/docs/containers?topic=containers-access_reference).
+    2. [Pick the right access policy and role for your users](/docs/containers?topic=containers-access-overview#access_roles).
+    3. [Understand access roles for individual or groups of users in {{site.data.keyword.cloud_notm}} IAM](/docs/containers?topic=containers-access-overview#iam_individuals_groups).
+    4. [Choose the scope of user access to cluster instances, {{site.data.keyword.openshiftshort}} project, or resource groups](/docs/containers?topic=containers-access-overview#resource_groups).
+    5. Allow users to create apps or audit your cluster activity by [assigning cluster access](/docs/containers?topic=containers-users#checking-perms). To see specific permissions and actions that you can grant users, see the [user access permissions reference](/docs/containers?topic=containers-access_reference).
 
-</br>Need help? Check out [Troubleshooting clusters and masters](/docs/containers?topic=containers-debug_clusters) and [Troubleshooting worker nodes](/docs/containers?topic=containers-debug_worker_nodes).
+
+
+Need help? Check out [Troubleshooting clusters and masters](/docs/containers?topic=containers-debug_clusters) and [Troubleshooting worker nodes](/docs/containers?topic=containers-debug_worker_nodes).
 
 
 
@@ -285,7 +286,7 @@ Use built-in security features to protect your cluster infrastructure and networ
 2. **Network security**:
     * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic clusters:
         1. To isolate networking workloads, you can restrict network traffic to [edge worker nodes](/docs/containers?topic=containers-edge).
-    2. Set up a firewall by using a [gateway appliance](/docs/containers?topic=containers-firewall#vyatta_firewall) or [Calico network policies](/docs/containers?topic=containers-network_policies).
+        2. Set up a firewall by using a [gateway appliance](/docs/containers?topic=containers-firewall#vyatta_firewall) or [Calico network policies](/docs/containers?topic=containers-network_policies).
     * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC clusters: Control traffic to and from your cluster with [VPC security groups](/docs/containers?topic=containers-vpc-network-policy).
 3. **Workload security**:
     1. [Encrypt sensitive information](/docs/containers?topic=containers-encryption) in the cluster, such as the master's local disk and secrets.
@@ -302,8 +303,12 @@ Set up logging and monitoring to help you troubleshoot issues and improve the he
 {: shortdesc}
 
 
+
+
 1. **Understand options**: [Choose solutions for app and cluster logging, audit logging, and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options) based on your needs.
 2. **{{site.data.keyword.la_short}} and {{site.data.keyword.mon_short}}**: To monitor cluster health, forward logs to [{{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging) and metrics to [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor).
+
+
 
 
 
@@ -331,7 +336,7 @@ Plan and add highly available persistent storage based on your app requirements,
 2. **Requirements**: Determine your [requirements for a storage solution](/docs/containers?topic=containers-storage_planning).
 3. **Choose a solution**: Using your storage requirements, choose a storage solution by comparing [non-persistent](/docs/containers?topic=containers-storage_planning#non_persistent_overview), [single-zone persistent](/docs/containers?topic=containers-storage_planning#single_zone_persistent_storage), or [multizone persistent](/docs/containers?topic=containers-storage_planning#persistent_storage_overview) storage.
 
-</br>Need help? Check out the troubleshooting page for your persistent storage solution.
+Need help? Check out the troubleshooting page for your persistent storage solution.
 
 
 
@@ -350,7 +355,7 @@ Enhance cluster capabilities by integrating various external services and catalo
     * [Adding services by using Operators](/docs/openshift?topic=openshift-operators)
     * [Adding services by using {{site.data.keyword.cloud_notm}} service binding](/docs/containers?topic=containers-service-binding)
 
-</br>Need help? Check out [Troubleshooting apps and integrations](/docs/containers?topic=containers-debug_worker_nodes).
+Need help? Check out [Troubleshooting apps and integrations](/docs/containers?topic=containers-debug_worker_nodes).
 
 
 
@@ -367,7 +372,9 @@ Manage your cluster and worker nodes through each phase of the cluster lifecycle
     * [Fluentd and Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog)
 * **Removing**: [Remove clusters and clean up related resources](/docs/containers?topic=containers-remove).
 
-</br>Need help? Check out troubleshooting [clusters and masters](/docs/containers?topic=containers-debug_clusters), [worker nodes](/docs/containers?topic=containers-debug_worker_nodes), or the [cluster autoscaler](/docs/containers?topic=containers-debug_cluster_autoscaler).
+
+
+Need help? Check out troubleshooting [clusters and masters](/docs/containers?topic=containers-debug_clusters), [worker nodes](/docs/containers?topic=containers-debug_worker_nodes), or the [cluster autoscaler](/docs/containers?topic=containers-debug_cluster_autoscaler).
 
 
 

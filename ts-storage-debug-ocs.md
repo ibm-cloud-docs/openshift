@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: file, debug, help
 
@@ -10,8 +10,8 @@ content-type: troubleshoot
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
+
   
 
 
@@ -154,8 +154,8 @@ If you use a `oc` CLI version that does not match at least the major.minor versi
 
     **Example output**:
     ```
-    Client Version: version.Info{Major:"1", Minor:"1.20", GitVersion:"v1.20.7", GitCommit:"641856db18352033a0d96dbc99153fa3b27298e5", GitTreeState:"clean", BuildDate:"2019-03-25T15:53:57Z", GoVersion:"go1.12.1", Compiler:"gc", Platform:"darwin/amd64"}
-    Server Version: version.Info{Major:"1", Minor:"1.20", GitVersion:"v1.20.7+IKS", GitCommit:"e15454c2216a73b59e9a059fd2def4e6712a7cf0", GitTreeState:"clean", BuildDate:"2019-04-01T10:08:07Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
+    Client Version: version.Info{Major:"1", Minor:"1.20", GitVersion:"v1.21.5", GitCommit:"641856db18352033a0d96dbc99153fa3b27298e5", GitTreeState:"clean", BuildDate:"2019-03-25T15:53:57Z", GoVersion:"go1.12.1", Compiler:"gc", Platform:"darwin/amd64"}
+    Server Version: version.Info{Major:"1", Minor:"1.20", GitVersion:"v1.21.5+IKS", GitCommit:"e15454c2216a73b59e9a059fd2def4e6712a7cf0", GitTreeState:"clean", BuildDate:"2019-04-01T10:08:07Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
     ```   
     {: screen}
 
@@ -176,7 +176,7 @@ Describe your ODF resources and review the command outputs for any error message
     {: pre}
 
     **Example output**:
-    ```
+    ```sh
     NAME             AGE
     ocscluster-vpc   71d
     ```
@@ -195,7 +195,7 @@ Describe your ODF resources and review the command outputs for any error message
     {: pre}
 
     **Example output**
-    ```
+    ```sh
     NAME                                                   READY   STATUS    RESTARTS   AGE
     ibm-keepalived-watcher-5g2gs                           1/1     Running   0          7d21h
     ibm-keepalived-watcher-8l4ld                           1/1     Running   0          7d21h

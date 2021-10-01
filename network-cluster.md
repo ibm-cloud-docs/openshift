@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhos, rhoks, vlan
 
@@ -10,10 +10,8 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Changing service endpoints or VLAN connections in {{site.data.keyword.openshiftshort}} 3.11
@@ -42,13 +40,13 @@ The private cloud service endpoint makes your Kubernetes master privately access
 1. Enable [VRF](/docs/account?topic=account-vrf-service-endpoint#vrf) in your IBM Cloud infrastructure account. To check whether a VRF is already enabled, use the `ibmcloud account show` command.
 2. [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint).
 3. Enable the private cloud service endpoint.
-    ```
+    ```sh
     ibmcloud oc cluster master private-service-endpoint enable --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
 4. Refresh the Kubernetes master API server to use the private cloud service endpoint. You can follow the prompt in the CLI, or manually run the following command. It might take several minutes for the master to refresh.
-    ```
+    ```sh
     ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
     ```
     {: pre}
@@ -59,7 +57,7 @@ The private cloud service endpoint makes your Kubernetes master privately access
     By issuing the update command, the worker nodes are reloaded to pick up the service endpoint configuration. If no worker update is available, you must [reload the worker nodes manually](/docs/containers?topic=containers-kubernetes-service-cli). If you reload, be sure to cordon, drain, and manage the order to control the maximum number of worker nodes that are unavailable at a time.
     {: important}
     
-    ```
+    ```sh
     ibmcloud oc worker update --cluster <cluster_name_or_ID> --worker <worker1,worker2>
     ```
     {: pre}
@@ -85,20 +83,20 @@ The public cloud service endpoint makes your Kubernetes master publicly accessib
 
 If you previously disabled the public endpoint, you can re-enable it.
 1. Enable the public cloud service endpoint.
-    ```
+    ```sh
     ibmcloud oc cluster master public-service-endpoint enable --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
 2. Refresh the Kubernetes master API server to use the public cloud service endpoint. You can follow the prompt in the CLI, or manually run the following command. It might take several minutes for the master to refresh.
-    ```
+    ```sh
     ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
 3. [Create a configmap](/docs/containers?topic=containers-update#worker-up-configmap) to control the maximum number of worker nodes that can be unavailable at a time in your cluster. When you update your worker nodes, the configmap helps prevent downtime for your apps as the apps are rescheduled orderly onto available worker nodes.
 4. Update all the worker nodes in your cluster to remove the public cloud service endpoint configuration.<p class="important">By issuing the update command, the worker nodes are reloaded to pick up the service endpoint configuration. If no worker update is available, you must reload the worker nodes manually with the `ibmcloud oc worker reload` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload). If you reload, be sure to cordon, drain, and manage the order to control the maximum number of worker nodes that are unavailable at a time.</p>
-    ```
+    ```sh
     ibmcloud oc worker update --cluster <cluster_name_or_ID> --worker <worker1,worker2>
     ```
     {: pre}
@@ -123,13 +121,13 @@ Before you begin [Access your {{site.data.keyword.openshiftshort}} cluster](/doc
 To change the VLANs that a worker pool uses to provision worker nodes.
 
 1. List the names of the worker pools in your cluster.
-    ```
+    ```sh
     ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
 2. Determine the zones for one of the worker pools. In the output, look for the **Zones** field.
-    ```
+    ```sh
     ibmcloud oc worker-pool get --cluster <cluster_name_or_ID> --worker-pool <pool_name>
     ```
     {: pre}
@@ -137,7 +135,7 @@ To change the VLANs that a worker pool uses to provision worker nodes.
 3. For each zone that you found in the previous step, get an available public and private VLAN that are compatible with each other.
 
     1. Check the available public and private VLANs that are listed under **Type** in the output.
-        ```
+        ```sh
         ibmcloud oc vlan ls --zone <zone>
         ```
         {: pre}
@@ -151,7 +149,7 @@ To change the VLANs that a worker pool uses to provision worker nodes.
         {: screen}
 
     3. If you need to order a new public or private VLAN for the zone, you can order in the [{{site.data.keyword.cloud_notm}} console](/docs/vlans?topic=vlans-ordering-premium-vlans#ordering-premium-vlans), or use the following command. Remember that the VLANs must be compatible, with matching **Router** pod IDs as in the previous step. If you are creating a pair of new public and private VLANs, they must be compatible with each other.
-        ```
+        ```sh
         ibmcloud sl vlan create -t [public|private] -d <zone> -r <compatible_router>
         ```
         {: pre}
@@ -163,13 +161,13 @@ To change the VLANs that a worker pool uses to provision worker nodes.
     - **Create a new worker pool**: See [adding worker nodes by creating a new worker pool](/docs/containers?topic=containers-add_workers#add_pool).
 
     - **Modify an existing worker pool**: Set the worker pool's network metadata to use the VLAN for each zone. Worker nodes that were already created in the pool continue to use the previous VLANs, but new worker nodes in the pool use new VLAN metadata that you set.
-        ```
+        ```sh
         ibmcloud oc zone network-set --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --private-vlan <private_vlan_id> --public-vlan <public_vlan_id>
         ```
         {: pre}
 
 5. Add worker nodes to the worker pool by resizing the pool.
-    ```
+    ```sh
     ibmcloud oc worker-pool resize --cluster <cluster_name_or_ID> --worker-pool <pool_name> --size-per-zone <number_of_workers_per_zone>
     ```
     {: pre}
@@ -178,7 +176,7 @@ To change the VLANs that a worker pool uses to provision worker nodes.
     {: tip}
 
 6. Verify that new worker nodes are created with **Public IP** and **Private IP** addresses in the output.
-    ```
+    ```sh
     ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <pool_name>
     ```
     {: pre}
@@ -186,19 +184,19 @@ To change the VLANs that a worker pool uses to provision worker nodes.
 7. Optional: Remove the worker nodes with the previous network metadata from the worker pool.
     1. In the output of the previous step, note the **ID** of the worker nodes that you want to remove from the worker pool.
     2. Remove the worker node.
-        ```
+        ```sh
         ibmcloud oc worker rm --cluster <cluster_name_or_ID> --worker <worker_name_or_ID>
         ```
         {: pre}
 
     3. Verify that the worker node is removed.
-        ```
+        ```sh
         ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <pool_name>
         ```
         {: pre}
 
     4. Rebalance the worker pool.
-        ```
+        ```sh
         ibmcloud oc worker-pool rebalance --cluster <cluster_name_or_ID> --worker-pool <pool_name>
         ```
         {: pre}

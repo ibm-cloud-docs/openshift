@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-30"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -17,6 +17,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Why do images fail to pull from registry with `ImagePullBackOff` or authorization errors?
 {: #ts-app-image-pull}
 
@@ -28,7 +29,7 @@ content-type: troubleshoot
 When you deploy a workload that pulls an image from {{site.data.keyword.registrylong_notm}}, your pods fail with an **`ImagePullBackOff`** status.
 {: tsSymptoms}
 
-```
+```sh
 oc get pods
 ```
 {: pre}
@@ -41,7 +42,7 @@ NAME         READY     STATUS             RESTARTS   AGE
 
 When you describe the pod, you see authentication errors similar to the following.
 
-```
+```sh
 oc describe pod <pod_name>
 ```
 {: pre}
@@ -119,7 +120,7 @@ The following steps assume that the API key stores the credentials of a service 
 {: note}
 
 1. Find the service ID that API key uses for the image pull secret by reviewing the **Description**. The service ID that is created with the cluster is named `cluster-<cluster_ID>` and is used in the `default` {{site.data.keyword.openshiftshort}} project. If you created another service ID such as to access a different {{site.data.keyword.openshiftshort}} project or to modify {{site.data.keyword.cloud_notm}} IAM permissions, you customized the description.
-    ```
+    ```sh
     ibmcloud iam service-ids
     ```
     {: pre}
@@ -133,7 +134,7 @@ The following steps assume that the API key stores the credentials of a service 
     {: screen}
 
 2. Verify that the service ID is assigned at least an {{site.data.keyword.cloud_notm}} IAM **Reader** [service access role policy for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-user#create). If the service ID does not have the **Reader** service access role, [edit the IAM policies](/docs/account?topic=account-serviceids#update_serviceid). If the policies are correct, continue with the next step to see if the credentials are valid.
-    ```
+    ```sh
     ibmcloud iam service-policies <service_ID_name>
     ```
     {: pre}

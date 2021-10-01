@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -10,10 +10,8 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Planning your worker node setup
@@ -87,20 +85,21 @@ When you create a worker pool, you choose the flavor, which describes the operat
 You can also log in to your cluster to check the operating system of the worker nodes.
 1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 2. List your worker nodes.
-    ```
+    ```sh
     oc get nodes
     ```
     {: pre}
 
 3. Describe your worker node and check for the operating system label that IBM applies, or the **OS Image** and **Operating System** fields in the **System Info** section.
-    ```
+    ```sh
     oc describe node <node>
     ```
     {: pre}
 
-    Example output:
-    ```
-    Name:               10.xxx.xx.xxx
+    Example output
+
+    ```sh
+    NAME:               10.xxx.xx.xxx
     Roles:              <none>
     Labels:             arch=amd64
                         ...

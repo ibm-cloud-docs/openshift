@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,10 +11,8 @@ content-type: troubleshoot
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Checking the status of Ingress components
@@ -30,14 +28,14 @@ content-type: troubleshoot
 To check the overall health and status of your cluster's Ingress components:
 {: shortdesc}
 
-```
+```sh
 ibmcloud oc ingress status -c <cluster_name_or_ID>
 ```
 {: pre}
 
-The state of the Ingress components are reported in an **Ingress Status** and **Ingress Message**. Example output:
-```
-Ingress Status:   healthy
+The state of the Ingress components are reported in an **Ingress Status** and **Ingress Message**. Example output
+```sh
+ingress Status:   healthy
 Message:          All Ingress components are healthy
 
 Component                                        Status    Type

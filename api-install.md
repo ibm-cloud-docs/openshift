@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -10,10 +10,8 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Setting up the API
@@ -183,7 +181,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
 
 2. Retrieve the ID of the {{site.data.keyword.cloud_notm}} account that you want to work with. Replace `<iam_access_token>` with the {{site.data.keyword.cloud_notm}} IAM token that you retrieved from the **access_token** field of your API output in the previous step. In your API output, you can find the ID of your {{site.data.keyword.cloud_notm}} account in the **resources.metadata.guid** field.
 
-    ```
+    ```sh
     GET https://accounts.cloud.ibm.com/coe/v2/accounts
     ```
     {: codeblock}
@@ -204,9 +202,9 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
     </tbody>
     </table>
 
-    Example output:
+    Example output
 
-    ```
+    ```sh
     {
     "next_url": null,
     "total_results": 5,
@@ -221,7 +219,6 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
             },
             "entity": {
                 "name": "<account_name>",
-    ...
     ```
     {: screen}
 
@@ -280,9 +277,9 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
     </tbody>
     </table>
 
-    Example output:
+    Example output
 
-    ```
+    ```json
     {
         "access_token": "<iam_token>",
         "refresh_token": "<iam_refresh_token>",
@@ -298,7 +295,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
 
 4. List all classic or VPC clusters in your account.
     * **Classic**:
-        ```
+        ```sh
         GET https://containers.cloud.ibm.com/global/v2/classic/getClusters
         ```
         {: codeblock}
@@ -317,7 +314,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
         </tbody>
         </table>
     * **VPC**:
-        ```
+        ```sh
         GET https://containers.cloud.ibm.com/global/v2/vpc/getClusters?provider=vpc-gen2
         ```
         {: codeblock}
@@ -358,8 +355,8 @@ Before you begin, make sure that you have an {{site.data.keyword.cloud_notm}} IA
     2. Click the **Users** page and then select yourself.
     3. In the **API keys** pane, click **Create an IBM Cloud API key**.
     4. Enter a **Name** and **Description** for your API key and click **Create**.
-    4. Click **Show** to see the API key that was generated for you.
-    5. Copy the API key so that you can use it to retrieve your new {{site.data.keyword.cloud_notm}} IAM access token.
+    5. Click **Show** to see the API key that was generated for you.
+    6. Copy the API key so that you can use it to retrieve your new {{site.data.keyword.cloud_notm}} IAM access token.
 
 Use the following steps if you want to create an {{site.data.keyword.cloud_notm}} IAM token or if you want to obtain a new refresh token.
 

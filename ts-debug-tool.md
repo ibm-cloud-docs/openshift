@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,10 +11,8 @@ content-type: troubleshoot
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Running tests with the Diagnostics and Debug Tool
@@ -34,25 +32,26 @@ While you troubleshoot, you can use the {{site.data.keyword.containerlong_notm}}
 
 If you previously installed the debug tool by using Helm, first uninstall the `ibmcloud-iks-debug` Helm chart.
 1. Find the installation name of your Helm chart.
-    ```
+    ```sh
     helm list -n <project> | grep ibmcloud-iks-debug
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     <helm_chart_name> 1 Thu Sep 13 16:41:44 2019 DEPLOYED ibmcloud-iks-debug-1.0.0 default
     ```
     {: screen}
 
 2. Uninstall the debug tool installation by deleting the Helm chart.
-    ```
+    ```sh
     helm uninstall <helm_chart_name> -n <project>
     ```
     {: pre}
 
 3. Verify that the debug tool pods are removed. When the uninstallation is complete, no pods are returned by the following command.
-    ```
+    ```sh
     oc get pod --all-namespaces | grep ibmcloud-iks-debug
     ```
     {: pre}

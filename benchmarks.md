@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks
 
@@ -10,10 +10,8 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # CIS Kubernetes Benchmark
@@ -81,7 +79,7 @@ These steps apply to clusters that run {{site.data.keyword.openshiftshort}} vers
 Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
 1. Create a project for the resources to run the benchmark.
-    ```
+    ```sh
     oc create ns ibm-kube-bench-test
     ```
     {: pre}
@@ -91,38 +89,40 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
         * [`config` file](https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/cis-kube-benchmark/cis-1.5/ibm/config.yaml){: external}
         * [`node` file](https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/cis-kube-benchmark/cis-1.5/ibm/node.yaml){: external}
     2. Create the configmap by using the `--from-file` flag to specify the `ibm` directory where your downloaded the configuration files.
-        ```
+        ```sh
         oc create cm kube-bench-node -n ibm-kube-bench-test --from-file ibm
         ```
         {: pre}
 
 3. Create a job to run the benchmark test based on the configurations that you previously created.
-    ```
+    ```sh
     oc apply -n ibm-kube-bench-test -f https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/cis-kube-benchmark/cis-1.5/ibm/job-node.yaml
     ```
     {: pre}
 
 4. Check that the job successfully completed.
-    ```
+    ```sh
     oc get pods -n ibm-kube-bench-test -l job-name=kube-bench-node
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     NAME                    READY   STATUS      RESTARTS   AGE
     kube-bench-node-hlvhc   0/1     Completed   0          23s
     ```
     {: screen}
 
 5. Review the CIS Kubernetes benchmark results for your worker nodes by checking the pod logs.
-    ```
+    ```sh
     oc logs -n ibm-kube-bench-test -l job-name=kube-bench-node --tail=-1
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     == Summary ==
     20 checks PASS
     2 checks FAIL
@@ -132,7 +132,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
     {: screen}
 
 6. Optional: When you are done reviewing results, delete the resources that you created.
-    ```
+    ```sh
     oc delete ns ibm-kube-bench-test
     ```
     {: pre}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,10 +11,8 @@ content-type: troubleshoot
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Debugging clusters
@@ -31,7 +29,7 @@ Review the options to debug your clusters and find the root causes for failures.
 
 1. List your cluster and find the `State` of the cluster.
 
-    ```
+    ```sh
     ibmcloud oc cluster ls
     ```
     {: pre}

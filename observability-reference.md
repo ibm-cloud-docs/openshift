@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logging config, monitoring config
 
@@ -10,10 +10,8 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Observability plug-in CLI
@@ -33,7 +31,7 @@ Looking for `ibmcloud oc` commands? See the [{{site.data.keyword.openshiftlong_n
 Discover {{site.data.keyword.la_short}} agents that you manually installed in your cluster without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, and make this logging configuration visible to the plug-in so that you can use the observability plug-in commands and functionality in the {{site.data.keyword.cloud_notm}} console to manage this configuration.
 {: shortdesc}
 
-```
+```sh
 ibmcloud ob logging agent discover --cluster CLUSTER [--instance LOGGING_INSTANCE]
 ```
 {: pre}
@@ -68,7 +66,7 @@ Create a logging configuration for your cluster to automatically collect pod log
 
 This command deploys a {{site.data.keyword.la_short}} agent as a Kubernetes daemon set in your cluster. The agent collects logs with the extension `*.log` and extensionless files that are stored in the `/var/log` directory of your pod from all projects, including `kube-system`. For more information, see [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging). For more information about {{site.data.keyword.la_full_notm}}, see [Securing your data](/docs/log-analysis?topic=log-analysis-mng-data).   
 
-```
+```sh
 ibmcloud ob logging config create --cluster CLUSTER --instance LOGGING_INSTANCE [--logdna-ingestion-key INGESTION_KEY] [--private-endpoint]  
 ```
 {: pre}
@@ -141,7 +139,7 @@ ibmcloud ob logging config delete --cluster CLUSTER --instance LOGGING_INSTANCE
 </dl>
 
 **Example**:
-```
+```sh
 ibmcloud ob logging config delete --cluster mycluster --instance mylogginginstance
 ```
 {: pre}
@@ -156,7 +154,7 @@ List all {{site.data.keyword.la_short}} configurations that were created for you
 To list logging configurations that you manually set up without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you must first make this configuration available to the plug-in by using the [`ibmcloud ob logging agent discover`](#logging_agent_discover) command.
 {: note}
 
-```
+```sh
 ibmcloud ob logging config list --cluster CLUSTER
 ```
 {: pre}
@@ -187,7 +185,7 @@ Use the public or private cloud service endpoint to send data from your cluster 
 To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option.
 {: important}
 
-```
+```sh
 ibmcloud ob logging config enable public-endpoint|private-endpoint --cluster CLUSTER --instance LOGGING_INSTANCE
 ```
 {: pre}
@@ -221,13 +219,13 @@ Replace the {{site.data.keyword.la_full_notm}} service instance or ingestion key
 {: shortdesc}
 
 **Replace the ingestion key of an existing {{site.data.keyword.la_full_notm}} service instance**:
-```
+```sh
 ibmcloud ob logging config replace --cluster CLUSTER --instance LOGGING_INSTANCE --logdna-ingestion-key INGESTION_KEY
 ```
 {: pre}
 
 **Replace the {{site.data.keyword.la_full_notm}} service instance**:
-```
+```sh
 ibmcloud ob logging config replace --cluster CLUSTER --instance LOGGING_INSTANCE  --new-instance LOGGING_INSTANCE_NEW [--logdna-ingestion-key INGESTION_KEY]
 ```
 {: pre}
@@ -265,7 +263,7 @@ Show the details of a {{site.data.keyword.la_short}} configuration.
 To show the details of logging configurations that you manually set up without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you must first make this configuration available to the plug-in by using the [`ibmcloud ob logging agent discover`](#logging_agent_discover) command.
 {: note}
 
-```
+```sh
 ibmcloud ob logging config show --cluster CLUSTER --instance LOGGING_INSTANCE
 ```
 {: pre}
@@ -297,7 +295,7 @@ ibmcloud ob logging config show --cluster CLUSTER --instance LOGGING_INSTANCE
 Discover {{site.data.keyword.mon_short}} agents that you manually installed in your cluster without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, and make this monitoring configuration visible to the plug-in so that you can use the observability plug-in commands and functionality in the {{site.data.keyword.cloud_notm}} console to manage this configuration.
 {: shortdesc}
 
-```
+```sh
 ibmcloud ob monitoring agent discover --cluster CLUSTER [--instance MONITORING_INSTANCE]
 ```
 {: pre}
@@ -329,7 +327,7 @@ Create a monitoring configuration for your cluster to automatically collect clus
 
 This command deploys a {{site.data.keyword.mon_short}} agent as a Kubernetes daemon set in your cluster. The agent collects cluster and pod metrics, such as the worker node CPU and memory usage, and the amount of incoming and outgoing network traffic for your pods. For more information, see [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor#openshift_monitoring).
 
-```
+```sh
 ibmcloud ob monitoring config create --cluster CLUSTER --instance MONITORING_INSTANCE [--sysdig-access-key ACCESS_KEY] [--private-endpoint]
 ```
 {: pre}
@@ -402,7 +400,7 @@ ibmcloud ob monitoring config delete --cluster CLUSTER --instance MONITORING_INS
 </dl>
 
 **Example**:
-```
+```sh
 ibmcloud ob monitoring config delete --cluster mycluster --instance mymonitoringinstance
 ```
 {: pre}
@@ -417,7 +415,7 @@ List all {{site.data.keyword.mon_short}} configurations that were created for yo
 To list monitoring configurations that you manually set up without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you must first make this configuration available to the plug-in by using the [`ibmcloud ob monitoring agent discover`](#monitoring_agent_discover) command.
 {: note}
 
-```
+```sh
 ibmcloud ob monitoring config list --cluster CLUSTER
 ```
 {: pre}
@@ -447,7 +445,7 @@ Use the public or private cloud service endpoint to send metrics from your clust
 To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option.
 {: important}
 
-```
+```sh
 ibmcloud ob monitoring config enable public-endpoint|private-endpoint --cluster CLUSTER --instance MONITORING_INSTANCE
 ```
 {: pre}
@@ -481,13 +479,13 @@ Replace the {{site.data.keyword.mon_full_notm}} service instance or service acce
 {: shortdesc}
 
 **Replace the service access key of an existing {{site.data.keyword.mon_full_notm}} service instance**:
-```
+```sh
 ibmcloud ob logging config replace --cluster CLUSTER --instance MONITORING_INSTANCE --sysdig-access-key ACCESS_KEY
 ```
 {: pre}
 
 **Replace the {{site.data.keyword.mon_full_notm}} service instance**:
-```
+```sh
 ibmcloud ob logging config replace --cluster CLUSTER --instance MONITORING_INSTANCE  --new-instance MONITORING_INSTANCE_NEW [--sysdig-access-key ACCESS_KEY]
 ```
 {: pre}
@@ -525,7 +523,7 @@ Show the details of a {{site.data.keyword.mon_short}} configuration.
 To show the details of monitoring configurations that you manually set up without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you must first make this configuration available to the plug-in by using the [`ibmcloud ob monitoring agent discover`](#monitoring_agent_discover) command.
 {: note}
 
-```
+```sh
 ibmcloud ob monitoring config show --cluster CLUSTER --instance MONITORING_INSTANCE
 ```
 {: pre}

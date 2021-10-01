@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-10-01"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -10,10 +10,8 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Adding services by using Helm charts
@@ -64,59 +62,59 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
     If you enabled [VRF](/docs/account?topic=account-vrf-service-endpoint#vrf) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) in your {{site.data.keyword.cloud_notm}} account, you can use the private {{site.data.keyword.cloud_notm}} Helm repository to keep your image pull traffic on the private network. If you cannot enable VRF or service endpoints in your account, use the public registry domain: `helm repo add iks-charts https://icr.io/helm/iks-charts`.
     {: note}
 
-    ```
+    ```sh
     helm repo add iks-charts https://private.icr.io/helm/iks-charts
     ```
     {: pre}
 
-    ```
+    ```sh
     helm repo add ibm-charts https://raw.githubusercontent.com/IBM/charts/master/repo/stable
     ```
     {: pre}
 
-    ```
+    ```sh
     helm repo add ibm-community https://raw.githubusercontent.com/IBM/charts/master/repo/community
     ```
     {: pre}
 
-    ```
+    ```sh
     helm repo add entitled https://raw.githubusercontent.com/IBM/charts/master/repo/entitled
     ```
     {: pre}
 
-    ```
+    ```sh
     helm repo add ibm-helm https://raw.githubusercontent.com/IBM/charts/master/repo/ibm-helm
     ```
     {: pre}
 
 3. Update the repos to retrieve the latest versions of all Helm charts.
-    ```
+    ```sh
     helm repo update
     ```
     {: pre}
 
 4. List the Helm charts that are currently available in the {{site.data.keyword.cloud_notm}} repositories.
-    ```
+    ```sh
     helm search repo iks-charts
     ```
     {: pre}
 
-    ```
+    ```sh
     helm search repo ibm-charts
     ```
     {: pre}
 
-    ```
+    ```sh
     helm search repo ibm-community
     ```
     {: pre}
 
-    ```
+    ```sh
     helm search repo entitled
     ```
     {: pre}
 
-    ```
+    ```sh
     helm search repo ibm-helm
     ```
     {: pre}

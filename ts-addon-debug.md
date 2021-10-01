@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,10 +11,8 @@ content-type: troubleshoot
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Debugging cluster add-ons
@@ -28,13 +26,13 @@ As you use {{site.data.keyword.openshiftlong}}, consider these techniques for tr
 * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 You can check the health state and status of a cluster add-on by running the following command:
-```
+```sh
 ibmcloud oc cluster addon ls -c <cluster_name_or_ID>
 ```
 {: pre}
 
-Example output:
-```
+Example output
+```sh
 Name            Version   Health State   Health Status
 debug-tool      2.0.0     normal         Addon Ready
 kube-terminal   1.0.0     normal         Addon Ready
@@ -53,7 +51,9 @@ The **Health State** reflects the lifecycle of the add-on components. The **Heal
 {: caption="Add-on health states"}
 {: summary="Table rows read from left to right, with the add-on state in column one and a description in column two."}
 
-</br>
+
+
+
 
 |Status code|Add-on health status|Description|
 |--- |--- |--- |
@@ -66,6 +66,7 @@ The **Health State** reflects the lifecycle of the add-on components. The **Heal
 |H1512|`Addon daemonset may not be available on all Ready nodes.`|For the static route add-on: The static route operator `DaemonSet` is not available on any worker nodes, which prevents you from applying static route resources. Your worker nodes cannot run the static route operator `DaemonSet` for the following reasons:<ul><li>One or more worker nodes reached their <a href="/docs/containers?topic=containers-debug_worker_nodes">resource limits</a>.</li><li>One or more worker nodes are running the <a href="/docs/openshift?topic=openshift-openshift_limitations#classic_limits">maximum number of pods per worker node</a>.</li></ul>|
 {: caption="Add-on health statuses"}
 {: summary="Table rows read from left to right, with the add-on status in column one and a description in column two."}
+
 
 
 

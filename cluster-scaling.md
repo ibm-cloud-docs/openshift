@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -10,10 +10,8 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Autoscaling clusters
@@ -39,7 +37,7 @@ Scanning and scaling up and down happens at regular intervals over time, and dep
 The cluster autoscaler adjusts the number of worker nodes by considering the [resource requests](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/){: external} that you define for your deployments, not actual worker node usage. If your pods and deployments don't request appropriate amounts of resources, you must adjust their configuration files. The cluster autoscaler can't adjust them for you. Also, keep in mind that worker nodes use some of their compute resources for basic cluster functionality, default and custom [add-ons](/docs/containers?topic=containers-update#addons), and [resource reserves](/docs/containers?topic=containers-planning_worker_nodes#resource_limit_node).
 {: note}
 
-<br>
+
 
 **What does scaling up and down look like?**
 
@@ -51,22 +49,26 @@ In general, the cluster autoscaler calculates the number of worker nodes that yo
 
 For more information, see the Kubernetes Cluster Autoscaler FAQs for [How does scale-up work?](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-scale-up-work){: external} and [How does scale-down work?](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-scale-down-work){: external}.
 
-<br>
+
 
 **Can I change how scale-up and scale-down work?**
 
 You can customize settings or use other Kubernetes resources to affect how scaling up and down work.
 
-* **Scale-up**: [Customize the cluster autoscaler configmap values](#ca_customize) such as `scanInterval`, `expander`, `skipNodes`, or `maxNodeProvisionTime`. Review ways to [overprovision worker nodes](#ca_scaleup) so that you can scale up worker nodes before a worker pool runs out of resources. You can also [set up Kubernetes pod budget disruptions and pod priority cutoffs](#scalable-practices-apps) to affect how scaling up works.
-* **Scale-down**: [Customize the cluster autoscaler configmap values](#ca_customize) such as `scaleDownUnneededTime`, `scaleDownDelayAfterAdd`, `scaleDownDelayAfterDelete`, or `scaleDownUtilizationThreshold`.
+Scale-up
+:   [Customize the cluster autoscaler configmap values](#ca_customize) such as `scanInterval`, `expander`, `skipNodes`, or `maxNodeProvisionTime`. Review ways to [overprovision worker nodes](#ca_scaleup) so that you can scale up worker nodes before a worker pool runs out of resources. You can also [set up Kubernetes pod budget disruptions and pod priority cutoffs](#scalable-practices-apps) to affect how scaling up works.
+Scale-down
+:   [Customize the cluster autoscaler configmap values](#ca_customize) such as `scaleDownUnneededTime`, `scaleDownDelayAfterAdd`, `scaleDownDelayAfterDelete`, or `scaleDownUtilizationThreshold`.
 
-<br>
+
+
 
 **Can I increase the minimum size per zone to trigger a scale up my cluster to that size?**
 
 No, setting a `minSize` does not automatically trigger a scale-up. The `minSize` is a threshold so that the cluster autoscaler does not scale below a certain number of worker nodes per zone. If your cluster does not yet have that number per zone, the cluster autoscaler does not scale up until you have workload resource requests that require more resources. For example, if you have a worker pool with one worker node per three zones (three total worker nodes) and set the `minSize` to `4` per zone, the cluster autoscaler does not immediately provision an additional three worker nodes per zone (12 worker nodes total). Instead, the scale-up is triggered by resource requests. If you create a workload that requests the resources of 15 worker nodes, the cluster autoscaler scales up the worker pool to meet this request. Now, the `minSize` means that the cluster autoscaler does not scale down below four worker nodes per zone even if you remove the workload that requests the amount.
 
-<br>
+
+
 
 **How is this behavior different from worker pools that are not managed by the cluster autoscaler?**
 
@@ -85,6 +87,8 @@ Make the most out of the cluster autoscaler by using the following strategies fo
 
 ### Can I autoscale multiple worker pools at once?
 {: #scalable-practices-multiple}
+
+
 Yes, after you install the cluster autoscaler, you can choose which worker pools within the cluster to autoscale [in the configmap](#ca_cm). You can run only one autoscaler per cluster. Create and enable autoscaling on worker pools other than the default worker pool, because the default worker pool has system components that can prevent automatically scaling down.
 {: shortdesc}
 
@@ -162,13 +166,15 @@ The cluster autoscaler add-on is not supported for baremetal worker nodes.
     * Create a [VPC](/docs/containers?topic=containers-add_workers#vpc_pools) or [classic](/docs/containers?topic=containers-add_workers#classic_pools) worker pool other than the `default` worker pool with the label that you want to use with the workloads to run on the autoscaled worker pool.
     * [Add the label to an existing worker pool](/docs/containers?topic=containers-add_workers#worker_pool_labels) other than the `default` worker pool.
 6. Confirm that your worker pool has the necessary labels for autoscaling. In the output, you see the required `ibm-cloud.kubernetes.io/worker-pool-id` label and the label that you previously created for node affinity. If you do not see these labels, [add a new worker pool](/docs/containers?topic=containers-add_workers#add_pool), and then [add your label for node affinity](/docs/containers?topic=containers-add_workers#worker_pool_labels).
+
     ```sh
     ibmcloud oc worker-pool get --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> | grep Labels
     ```
     {: pre}
 
-    Example output of a worker pool with the label:
-    ```
+    Example output of a worker pool with the label.
+    
+    ```sh
     Labels:             ibm-cloud.kubernetes.io/worker-pool-id=a1aa111111b22b22cc3c3cc444444d44-4d555e5
     ```
     {: screen}
@@ -194,20 +200,24 @@ The cluster autoscaler add-on is not supported for baremetal worker nodes.
 
 3. Install the cluster autoscaler add-on to your cluster.
 
-    **In the console**
+4. To install from the console, complete the following steps.
+    
     1. From the [{{site.data.keyword.openshiftlong_notm}} cluster dashboard](https://cloud.ibm.com/kubernetes/clusters), select the cluster where you want to enable autoscaling.
     2. On the **Overview** page, click **Add-ons**.
     3. On the **Add-ons** page, locate the Cluster Autoscaler add-on and click **Install**
 
-    **In the CLI**
+5. To install from the the CLI, complete the following steps.
+    
     1. Install the `cluster-autoscaler` add-on.
-        ```
+    
+        ```sh
         ibmcloud oc cluster addon enable cluster-autoscaler —-cluster <cluster_name>
         ```
         {: pre}
 
         Example output
-        ```
+        
+        ```sh
         Enabling add-on `cluster-autoscaler` for cluster <cluster_name>...
         The add-on might take several minutes to deploy and become ready for use.
         OK
@@ -215,20 +225,21 @@ The cluster autoscaler add-on is not supported for baremetal worker nodes.
         {: screen}
 
     2. Verify that the add-on is installed and `Ready`.
-        ```
+    
+        ```sh
         ibmcloud oc cluster addon ls --cluster <cluster_name>
         ```
         {: pre}
 
         Example output
 
-        ```
-        Name                 Version   Health State   Health Status   
+        ```sh
+        NAME                 Version   Health State   Health Status   
         cluster-autoscaler   1.0.1     normal         Addon Ready
         ```
         {: screen}
 
-4. By default, no worker pools are enabled for autoscaling. To enable autoscaling on your worker pools, [update the cluster autoscaler configmap to enable scaling for your worker pools](#ca_cm).
+6. By default, no worker pools are enabled for autoscaling. To enable autoscaling on your worker pools, [update the cluster autoscaler configmap to enable scaling for your worker pools](#ca_cm).
 
 ## Installing the cluster autoscaler Helm chart in your cluster
 {: #ca_helm}
@@ -244,38 +255,49 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
 1. [Prepare your cluster for autoscaling](#ca_prepare_cluster).
 2. [Follow the instructions](/docs/containers?topic=containers-helm#install_v3) to install the **Helm version 3** client on your local machine.
 3. Add and update the Helm repo where the cluster autoscaler Helm chart is.
-    ```
+
+    ```sh
     helm repo add iks-charts https://icr.io/helm/iks-charts
     ```
     {: pre}
 
-    ```
+    ```sh
     helm repo update
     ```
     {: pre}
 
 4. Decide if you want to [customize the cluster autoscaler settings](#ca_chart_values), such as the worker pools that are autoscaled, or the amount of time that the cluster autoscaler waits before scaling worker nodes up or down. You can customize your settings by using the `--set` flag in the `helm install` command. Depending on the settings that you want to customize, you might need to prepare multiple `--set` flags before you can install the Helm chart. For example, you might want to autoscale your default worker pool by preparing the following `--set` flag. Note: If your default command line shell is `zsh`, start a `bash` session before running the following command.
-    ```
+    ```sh
     --set workerpools[0].<pool_name>.max=<number_of_workers>,workerpools[0].<pool_name>.min=<number_of_workers>,workerpools[0].<pool_name>.enabled=(true|false)
     ```
     {: codeblock}
 
-    Understanding the `--set workerpools` options:
-    * **`workerpools[0]`**: The first worker pool to enable or disable for autoscaling. You must include three parameters for each worker pool for the command to succeed: the maximum number of worker nodes (`max`), the minimum number of worker nodes (`min`), and whether you want to enable (`true`) or disable (`false`) autoscaling for this worker pool. To include multiple worker pools, include a comma-separated list and increase the number in brackets, such as: `workerpools[0].default...,workerpools[1].pool1...,workerpools[2].pool2...`.
-    * **`<pool_name>`**: The name or ID of the worker pool that you want to enable or disable for autoscaling. To list available worker pools, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`.
-    * **`max=<number_of_workers>`**: Specify the maximum number of worker nodes per zone that the cluster autoscaler can scale up to. The value must be equal to or greater than the value that you set for the `min=<number_of_workers>` size.
-    * **`min=<number_of_workers>`**: Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be `2` or greater so that your ALB pods can be spread for high availability. If you [disabled](/docs/containers?topic=containers-kubernetes-service-cli#cs_alb_configure) all public ALBs in each zone of your standard cluster, you can set the value to `1`. Keep in mind that setting a `min` size does not automatically trigger a scale-up. The `min` size is a threshold so that the cluster autoscaler does not scale below this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.
-    * **`enabled=(true|false)`**: Set the value to `true` to enable the cluster autoscaler to scale your worker pool. Set the value to `false` to stop the cluster autoscaler from scaling the worker pool. Later, if you want to [remove the cluster autoscaler](/docs/containers?topic=containers-ca#ca_rm), you must first disable each worker pool in the configmap.
+    
+    `workerpools[0]`
+    :   The first worker pool to enable or disable for autoscaling. You must include three parameters for each worker pool for the command to succeed: the maximum number of worker nodes (`max`), the minimum number of worker nodes (`min`), and whether you want to enable (`true`) or disable (`false`) autoscaling for this worker pool. To include multiple worker pools, include a comma-separated list and increase the number in brackets, such as: `workerpools[0].default...,workerpools[1].pool1...,workerpools[2].pool2...`.
+    
+    `<pool_name>`
+    :   The name or ID of the worker pool that you want to enable or disable for autoscaling. To list available worker pools, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`.
+    
+    `max=<number_of_workers>`
+    :   Specify the maximum number of worker nodes per zone that the cluster autoscaler can scale up to. The value must be equal to or greater than the value that you set for the `min=<number_of_workers>` size.
+    
+    `min=<number_of_workers>`
+    :   Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be `2` or greater so that your ALB pods can be spread for high availability. If you [disabled](/docs/containers?topic=containers-kubernetes-service-cli#cs_alb_configure) all public ALBs in each zone of your standard cluster, you can set the value to `1`. Keep in mind that setting a `min` size does not automatically trigger a scale-up. The `min` size is a threshold so that the cluster autoscaler does not scale below this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.
+    
+    `enabled=(true|false)`
+    :   Set the value to `true` to enable the cluster autoscaler to scale your worker pool. Set the value to `false` to stop the cluster autoscaler from scaling the worker pool. Later, if you want to [remove the cluster autoscaler](/docs/containers?topic=containers-ca#ca_rm), you must first disable each worker pool in the configmap.
 
 5. Install the cluster autoscaler Helm chart in the `kube-system` namespace of your cluster. In the example command, the `autoscale` worker pool is enabled for autoscaling with the Helm chart installation. The worker pool details are added to the cluster autoscaler config map.
-    ```
+
+    ```sh
     helm install ibm-iks-cluster-autoscaler iks-charts/ibm-iks-cluster-autoscaler --namespace kube-system --set workerpools[0].default.max=5,workerpools[0].autoscale.min=2,workerpools[0].default.enabled=true
     ```
     {: pre}
 
     Example output
     
-    ```
+    ```sh
     NAME: ibm-iks-cluster-autoscaler
     LAST DEPLOYED: Fri Jan 17 12:20:30 2020
     NAMESPACE: kube-system
@@ -292,37 +314,39 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
 6. Verify that the installation is successful.
 
     1. Check that the cluster autoscaler pod is in a **Running** state.
-        ```
+        ```sh
         oc get pods --namespace=kube-system | grep ibm-iks-cluster-autoscaler
         ```
         {: pre}
 
         Example output
-        ```
+        
+        ```sh
         ibm-iks-cluster-autoscaler-8497bfc968-dbn7w   1/1       Running   0          9m
         ```
         {: screen}
 
     2. Check that the cluster autoscaler service is created.
-        ```
+        ```sh
         oc get service --namespace=kube-system | grep ibm-iks-cluster-autoscaler
         ```
         {: pre}
 
         Example output
-        ```
+        
+        ```sh
         ibm-iks-cluster-autoscaler   ClusterIP   172.21.xxx.xx    <none>        8085/TCP        9m
         ```
         {: screen}
 
     3. Optional: If you enabled autoscaling for a worker pool during the Helm chart installation, verify that the config map is correct by checking that the `workerPoolsConfig.json` field is updated and that the `workerPoolsConfigStatus` field shows a `SUCCESS` message.
-        ```
+        ```sh
         oc get cm iks-ca-configmap -n kube-system -o yaml
         ```
         {: pre}
 
         Example output where the default worker pool is enabled for autoscaling:
-        ```
+        ```yaml
         apiVersion: v1
         data:
           workerPoolsConfig.json: |
@@ -362,12 +386,13 @@ After you edit the configmap to enable a worker pool, the cluster autoscaler sca
 **To update the cluster autoscaler configmap and values**:
 
 1. Edit the cluster autoscaler configmap YAML file.
-    ```
+    ```sh
     oc edit cm iks-ca-configmap -n kube-system -o yaml
     ```
     {: pre}
 
     Example output
+
     ```yaml
     apiVersion: v1
     data:
@@ -382,7 +407,8 @@ After you edit the configmap to enable a worker pool, the cluster autoscaler sca
 2. Edit the configmap with the parameters to define how the cluster autoscaler scales your cluster worker pool. **Note:** Unless you [disabled](/docs/containers?topic=containers-kubernetes-service-cli#cs_alb_configure) all public application load balancers (ALBs) in each zone of your standard cluster, you must change the `minSize` to `2` per zone so that the ALB pods can be spread for high availability.
 
     - `"name": "default"`: Replace `"default"` with the name or ID of the worker pool that you want to scale. To list worker pools, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`. To manage more than one worker pool, copy the JSON line to a comma-separated line, such as follows.
-        ```
+    
+        ```sh
         [
         {"name": "default","minSize": 1,"maxSize": 2,"enabled":false},
         {"name": "Pool2","minSize": 2,"maxSize": 5,"enabled":true}
@@ -401,22 +427,25 @@ After you edit the configmap to enable a worker pool, the cluster autoscaler sca
     - `"maxSize": 2`: Specify the maximum number of worker nodes per zone that the cluster autoscaler can scale up the worker pool to. The value must be equal to or greater than the value that you set for the `minSize`.
     - `"enabled": false`: Set the value to `true` for the cluster autoscaler to manage scaling for the worker pool. Set the value to `false` to stop the cluster autoscaler from scaling the worker pool. Later, if you want to [remove the cluster autoscaler](#ca_rm), you must first disable each worker pool in the configmap.
 
-4. Save the configuration file.
-5. Get your cluster autoscaler pod.
-    ```
+3. Save the configuration file.
+
+4. Get your cluster autoscaler pod.
+
+    ```sh
     oc get pods -n kube-system
     ```
     {: pre}
 
-6. Review the **`Events`** section of the cluster autoscaler pod for a **`ConfigUpdated`** event to verify that the configmap is successfully updated. The event message for your configmap is in the following format: `minSize:maxSize:PoolName:<SUCCESS|FAILED>:error message`.
+5. Review the **`Events`** section of the cluster autoscaler pod for a **`ConfigUpdated`** event to verify that the configmap is successfully updated. The event message for your configmap is in the following format: `minSize:maxSize:PoolName:<SUCCESS|FAILED>:error message`.
 
-    ```
+    ```sh
     oc describe pod -n kube-system <cluster_autoscaler_pod>
     ```
     {: pre}
 
     Example output
-    ```
+
+    ```sh
         Name:               ibm-iks-cluster-autoscaler-857c4d9d54-gwvc6
         Namespace:          kube-system
         ...
@@ -434,6 +463,8 @@ If you enable a worker pool for autoscaling and then later add a zone to this wo
 
 ## Customizing the cluster autoscaler configuration values
 {: #ca_customize}
+
+
 Customize the cluster autoscaler settings such as the amount of time it waits before scaling worker nodes up or down.
 {: shortdesc}
 
@@ -450,7 +481,8 @@ When you modify a configmap parameter other than the worker pool `minSize`, `max
 1. Review the default parameters for the [cluster autoscaler configmap](#ca_addon_ref).
 
 2. Download the cluster autoscaler add-on configmap and review the parameters.
-    ```
+
+    ```sh
     oc get cm iks-ca-configmap -n kube-system -o yaml > configmap.yaml
     ```
     {: pre}
@@ -458,13 +490,15 @@ When you modify a configmap parameter other than the worker pool `minSize`, `max
 3. Open the `configmap.yaml` file and update the settings that you want to change.
 
 4. Reapply the cluster autoscaler add-on configmap.
-    ```
+
+    ```sh
     oc apply -f configmap.yaml
     ```
     {: pre}
 
 5. Verify that the pods are restarted successfully.
-    ```
+
+    ```sh
     oc get pods -n kube-system | grep autoscaler
     ```
     {: pre}
@@ -476,58 +510,61 @@ The cluster autoscaler Helm chart is deprecated. For the latest version of the c
 {: deprecated}
 
 1. To change any of the cluster autoscaler configuration values, update the config map or the Helm chart with the new values. Include the `--recreate-pods` flag so that any existing cluster autoscaler pods are re-created to pick up the custom setting changes. The following example command changes the scan interval to `2m` and enables autoscaling for the `autoscale` worker pool, with a maximum of `5` and minimum of `3` worker nodes per zone.
-    ```
+
+    ```sh
     helm upgrade --set scanInterval=2m --set workerpools[0].default.max=5,workerpools[0].autoscale.min=3,workerpools[0].default.enabled=true ibm-iks-cluster-autoscaler iks-charts/ibm-iks-cluster-autoscaler -i --recreate-pods --namespace kube-system
     ```
     {: pre}
 
     To reset the Helm chart to the default values:
-    ```
+    ```sh
     helm upgrade --reset-values ibm-iks-cluster-autoscaler iks-charts/ibm-iks-cluster-autoscaler --recreate-pods
     ```
     {: pre}
 
-2. Verify your changes.
-    1. Review the Helm chart values again.
-        ```
-        helm get values ibm-iks-cluster-autoscaler -a
-        ```
-        {: pre}
-
-3. Verify that the installation is successful.
-
-    1. Check that the cluster autoscaler pod is in a **Running** state.
-        ```
-        oc get pods --namespace=kube-system | grep ibm-iks-cluster-autoscaler
-        ```
-        {: pre}
-
-        Example output
-        ```
-        ibm-iks-cluster-autoscaler-8497bfc968-dbn7w   1/1       Running   0          9m
-        ```
-        {: screen}
-
-    2. Check that the cluster autoscaler service is created.
-        ```
-        oc get service --namespace=kube-system | grep ibm-iks-cluster-autoscaler
-        ```
-        {: pre}
-
-        Example output
-        ```
-        ibm-iks-cluster-autoscaler   ClusterIP   172.21.xxx.xx    <none>        8085/TCP        9m
-        ```
-        {: screen}
-
-2. Verify that the config map is correct by checking that the `workerPoolsConfig.json` field is updated and that the `workerPoolsConfigStatus` field shows a `SUCCESS` message.
+2. Verify your changes. Review the Helm chart values again.
+    
+    ```sh
+    helm get values ibm-iks-cluster-autoscaler -a
     ```
+    {: pre}
+
+3. Verify that the installation is successful. Check that the cluster autoscaler pod is in a **Running** state.
+
+    ```sh
+    oc get pods --namespace=kube-system | grep ibm-iks-cluster-autoscaler
+    ```
+    {: pre}
+
+    Example output
+    ```sh
+    ibm-iks-cluster-autoscaler-8497bfc968-dbn7w   1/1       Running   0          9m
+    ```
+    {: screen}
+
+4. Check that the cluster autoscaler service is created.
+
+    ```sh
+    oc get service --namespace=kube-system | grep ibm-iks-cluster-autoscaler
+    ```
+    {: pre}
+
+    Example output
+    
+    ```sh
+    ibm-iks-cluster-autoscaler   ClusterIP   172.21.xxx.xx    <none>        8085/TCP        9m
+    ```
+    {: screen}
+
+5. Verify that the config map is correct by checking that the `workerPoolsConfig.json` field is updated and that the `workerPoolsConfigStatus` field shows a `SUCCESS` message.
+
+    ```sh
     oc get cm iks-ca-configmap -n kube-system -o yaml
     ```
     {: pre}
 
     Example output where the `autoscale` worker pool is enabled for autoscaling:
-    ```
+    ```yaml
     apiVersion: v1
     data:
       workerPoolsConfig.json: |
@@ -609,7 +646,7 @@ For more information, see the following Kubernetes docs:
     {: codeblock}
 
 4. Deploy the pod. Because of the matching label, the pod is scheduled onto a worker node that is in the labeled worker pool. Because of the matching toleration, the pod can run on the tainted worker pool.
-    ```
+    ```sh
     oc apply -f pod.yaml
     ```
     {: pre}
@@ -655,38 +692,42 @@ If you upgrade your cluster to a version that is not supported by the cluster au
 The cluster autoscaler has two types of updates.
 
 Patch updates
-: Patch updates are delivered automatically by IBM and do not contain any feature updates or changes in the supported add-on and cluster versions.
+:   Patch updates are delivered automatically by IBM and do not contain any feature updates or changes in the supported add-on and cluster versions.
 
 Release updates
 :   Release updates contain new features for the cluster autoscaler or changes in the supported add-on or cluster versions. You must manually apply release updates to your cluster autoscaler add-on.
 
 
 1. Check the version of the cluster autoscaler add-on that is deployed in your cluster. If an update is available, review the [release notes](/docs/containers?topic=containers-ca_changelog) for the latest add-on version.
-    ```
+    ```sh
     ibmcloud oc cluster addon ls --cluster <cluster_name>
     ```
     {: pre}
 
 2. Disable the cluster autoscaler add-on. You might see a warning that resources or data might be deleted. For the cluster autoscaler update, any autoscaling operations that are in process when you disable fail. When you re-enable the add-on, the autoscaling operation is restarted for you. Existing cluster autoscaler resources like the `iks-ca-configmap` are retained even after you disable the add-on. Your worker nodes are not deleted because of disabling the add-on.
-    ```
+
+    ```sh
     ibmcloud oc cluster addon disable cluster-autoscaler --cluster <cluster_name>
     ```
     {: pre}
 
     Example output
+
     ```sh
     Data and resources that you created for the add-on might be deleted when the add-on is disabled. Continue? [y/N]>
     ```
     {: screen}
 
 3. Enable the add-on to install the latest version.
+
     ```sh
     ibmcloud oc cluster addon enable cluster-autoscaler --cluster <cluster_name>
     ```
     {: pre}
 
-3. Verify the add-on is successfully updated and `Ready`.
-    ```
+4. Verify the add-on is successfully updated and `Ready`.
+
+    ```sh
     ibmcloud oc cluster addon ls --cluster <cluster_name>
     ```
     {: pre}
@@ -698,30 +739,31 @@ Before you can rebalance or resize your worker pool, you must remove the worker 
 {: shortdesc}
 
 1. Edit `iks-ca-configmap` and disable the worker pool that you want to resize or rebalance by removing it from the `workerPoolsConfigStatus` section.
+
     ```sh
     oc edit cm -n kube-system iks-ca-configmap
     ```
     {: pre}
 
-    **Example `workerPoolsConfigStatus` section with no worker pools enabled**
+    Example `workerPoolsConfigStatus` section with no worker pools enabled.
     ```yaml
     workerPoolsConfigStatus: '{}'
     ```
     {: screen}
 
-3. Save the `iks-ca-configmap`.
+2. Save the `iks-ca-configmap`.
 
-4. [Resize](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/containers?topic=containers-kubernetes-service-cli#cs_rebalance) your worker pool.
+3. [Resize](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/containers?topic=containers-kubernetes-service-cli#cs_rebalance) your worker pool.
 
-5. **Optional** [Update your VPC worker nodes](/docs/containers?topic=containers-update#vpc_worker_node).
+4. **Optional** [Update your VPC worker nodes](/docs/containers?topic=containers-update#vpc_worker_node).
 
-6. Add the worker pool to the `iks-ca-configmap`.
+5. Add the worker pool to the `iks-ca-configmap`.
     ```sh
     oc edit cm -n kube-system iks-ca-configmap
     ```
     {: pre}
 
-    **Example**
+    Example
     ```yaml
     workerPoolsConfigStatus: '{"name": "<worker_pool>","minSize": 1,"maxSize": 3,"enabled":true}'
     ```
@@ -763,44 +805,51 @@ To upgrade your cluster autoscaler release, you can update the Helm chart repo a
 Before you begin, see the [Prerequisites](#ca_helm_up_prereqs).
 
 1. Update the Helm repo to retrieve the latest version of all Helm charts in this repo.
-    ```
+
+    ```sh
     helm repo update
     ```
     {: pre}
 
 2. Optional: Download the latest Helm chart to your local machine. Then, extract the package and review the `release.md` file to find the latest release information.
-    ```
+
+    ```sh
     helm pull iks-charts/ibm-iks-cluster-autoscaler
     ```
     {: pre}
 
 3. Find the name of the cluster autoscaler release that you installed in your cluster.
-    ```
+
+    ```sh
     helm list -n <namespace> | grep cluster-autoscaler
     ```
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     myhelmchart     1           Mon Jan  7 14:47:44 2019    DEPLOYED    ibm-iks-cluster-autoscaler-1.0.1      kube-system
     ```
     {: screen}
 
 4. Upgrade the cluster autoscaler release to the latest version.
-    ```
+
+    ```sh
     helm upgrade --force --recreate-pods <helm_chart_name>  iks-charts/ibm-iks-cluster-autoscaler
     ```
     {: pre}
 
 5. Verify that the [cluster autoscaler configmap](#ca_cm) `workerPoolsConfig.json` section is set to `"enabled": true` for the worker pools that you want to scale.
-    ```
+
+    ```sh
     oc describe cm iks-ca-configmap -n kube-system
     ```
     {: pre}
 
     Example output
-    ```
-    Name:         iks-ca-configmap
+
+    ```sh
+    NAME:         iks-ca-configmap
     Namespace:    kube-system
     Labels:       <none>
     Annotations:  kubectl.kubernetes.io/last-applied-configuration={"apiVersion":"v1","data":{"workerPoolsConfig.json":"[\n {\"name\": \"docs\",\"minSize\": 1,\"maxSize\": 3,\"enabled\":true}\n]\n"},"kind":"ConfigMap",...
@@ -826,13 +875,14 @@ If you do not want to automatically scale your worker pools, you can uninstall t
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Optional: To refer to your autoscaling settings later, make a backup of your configmap.
-    ```
+
+    ```sh
     oc get cm iks-ca-configmap -o yaml > backup_configmap.yaml
     ```
     {: pre}
 
-1. In the [cluster autoscaler configmap](#ca_cm), remove the worker pool by setting the `"enabled"` value to `false`.
-    ```
+2. In the [cluster autoscaler configmap](#ca_cm), remove the worker pool by setting the `"enabled"` value to `false`.
+    ```sh
     oc edit cm iks-ca-configmap -n kube-system
     ```
     {: pre}
@@ -861,33 +911,36 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     If you already deleted the Helm chart and see a message such as `iks-ca-configmap not found`, [redeploy the cluster autoscaler Helm chart](#ca_helm) to your cluster and try to remove it again.
     {: tip}
 
-2. Disable the add-on or uninstall the Helm chart.
+3. Disable the add-on or uninstall the Helm chart.
 
-    **Add-on**
-    1. Disable the add-on.
-    ```
+1. **Add-on** Disable the add-on.
+
+    ```sh
     ibmcloud oc cluster addon disable cluster-autoscaler --cluster <cluster_name>
     ```
     {: pre}
 
-    2. Verify the add-on is disabled.
-    ```
+2. Verify the add-on is disabled.
+
+    ```sh
     ibmcloud oc cluster addon ls --cluster <cluster_name>
     ```
     {: pre}
 
-    **Helm chart**
-    1. List your existing Helm charts and note the name of the cluster autoscaler.
-        ```
-        helm list --all-namespaces
-        ```
-        {: pre}
 
-    2. Remove the existing Helm chart from your cluster.
-        ```
-        helm uninstall ibm-iks-cluster-autoscaler -n <namespace>
-        ```
-        {: pre}
+1. **Helm chart** List your existing Helm charts and note the name of the cluster autoscaler.
+
+    ```sh
+    helm list --all-namespaces
+    ```
+    {: pre}
+
+2. Remove the existing Helm chart from your cluster.
+
+    ```sh
+    helm uninstall ibm-iks-cluster-autoscaler -n <namespace>
+    ```
+    {: pre}
 
 
 
@@ -897,152 +950,37 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 This table refers to the cluster autoscaler add-on parameters. For Helm chart values, see [Cluster autoscaler Helm chart parameter reference](#ca_helm_ref)
 {: note}
 
-<table summary="The columns are read from left to right. The first column has the parameter of the configuration values. The second column describes the parameter. The third column includes the default value of the parameter.">
-<caption>Cluster autoscaler configuration values</caption>
-<col width="25%">
-<thead>
-<th>Parameter</th>
-<th>Description</th>
-<th>Default value</th>
-</thead>
-<tbody>
-<tr>
-<td><code>expander</code></td>
-<td>Specify how the cluster autoscaler determines which worker pool to scale if you have multiple worker pools. Possible values are:
-<ul><li><code>random</code>: Selects randomly between <code>most-pods</code> and <code>least-waste</code>.</li>
-<li><code>most-pods</code>: Selects the worker pool that is able to schedule the most pods when scaling up. Use this method if you are using <code>nodeSelector</code> to make sure that pods land on specific worker nodes.</li>
-<li><code>least-waste</code>: Selects the worker pool that has the least unused CPU after scaling up. If two worker pools use the same amount of CPU resources after scaling up, the worker pool with the least unused memory is selected.</li></ul></td>
-<td>random</td>
-</tr>
-<tr>
-<td><code>ignoreDaemonSetsUtilization</code></td>
-<td>When set to <code>true</code>, the cluster autoscaler ignores DaemonSet pods when it calculates resource utilization for scale-down.</td>
-<td><code>false</code></td>
-</tr>
-<tr>
-<td><code>imagePullPolicy</code></td>
-<td>Specify when to pull the Docker image. Possible values are:
-<ul><li><code>Always</code>: Pulls the image every time that the pod is started.</li>
-<li><code>IfNotPresent</code>: Pulls the image only if the image is not already present locally.</li>
-<li><code>Never</code>: Assumes that the image exists locally and never pulls the image.</li></ul></td>
-<td><code>Always</code></td>
-</tr>
-<tr>
-<td><code>livenessProbeFailureThreshold</code></td>
-<td>Specify the number of times that the <code>kubelet</code> retries a liveness probe after the pod starts and the first liveness probe fails. After the failure threshold is reached, the container is restarted and the pod is marked <code>Unready</code> for a readiness probe, if applicable.</td>
-<td><code>3</code></td>
-</tr>
-<tr>
-<td><code>livenessProbePeriodSeconds</code></td>
-<td>Specify the interval in seconds that the <code>kubelet</code> performs a liveness probe.</td>
-<td><code>10</code></td>
-</tr>
-<tr>
-<td><code>livenessProbeTimeoutSeconds</code></td>
-<td>Specify the time in seconds after which the liveness probe times out.</td>
-<td><code>10</code></td>
-</tr>
-<tr>
-<tr>
-<td><code>maxBulkSoftTaintCount</code></td>
-<td>Set the maximum number of worker nodes that can be tainted or untainted with <code>PreferNoSchedule</code> at the same time. To disable this feature, set to <code>0</code>.</td>
-<td><code>0</code></td>
-</tr>
-<tr>
-<td><code>maxBulkSoftTaintTime</code></td>
-<td>Set the maximum amount of time that worker nodes can be tainted or untainted with <code>PreferNoSchedule</code> at the same time.</td>
-<td><code>10m</code></td>
-</tr>
-<tr>
-<tr>
-<td><code>maxFailingTime</code></td>
-<td>Set the maximum time in minutes that the cluster autoscaler pod runs without a successfully completed action before the pod is automatically restarted.</td>
-<td><code>15m</code></td>
-</tr>
-<td><code>maxInactivity</code></td>
-<td>Set the maximum time in minutes that the cluster autoscaler pod runs without any recorded activity before the pod is automatically restarted.</td>
-<td><code>10m</code></td>
-</tr>
-<tr>
-<td><code>maxNodeProvisionTime</code></td>
-<td>Set the maximum amount of time in minutes that a worker node can take to begin provisioning before the cluster autoscaler cancels the scale-up request.</td>
-<td><code>120m</code></td>
-</tr>
-<tr>
-<td><code>maxRetryGap</code></td>
-<td>Set the maximum time in seconds to retry after failing to connect to the service API. Use this parameter and the <code>retryAttempts</code> parameter to adjust the retry window for the cluster autoscaler.</td>
-<td>60</td>
-</tr>
-<tr>
-<td><code>resourcesLimitsCPU</code></td>
-<td>Set the maximum amount of worker node CPU that the <code>ibm-iks-cluster-autoscaler</code> pod can consume.</td>
-<td><code>600m</code></td>
-</tr>
-<tr>
-<td><code>resourcesLimitsMemory</code></td>
-<td>Set the maximum amount of worker node memory that the <code>ibm-iks-cluster-autoscaler</code> pod can consume.</td>
-<td><code>600Mi</code></td>
-</tr>
-<tr>
-<td><code>resourcesRequestsCPU</code></td>
-<td>Set the minimum amount of worker node CPU that the <code>ibm-iks-cluster-autoscaler</code> pod starts with.</td>
-<td><code>200m</code></td>
-</tr>
-<tr>
-<td><code>resourcesRequestsMemory</code></td>
-<td>Set the minimum amount of worker node memory that the <code>ibm-iks-cluster-autoscaler</code> pod starts with.</td>
-<td><code>200Mi</code></td>
-</tr>
-<tr>
-<td><code>retryAttempts</code></td>
-<td>Set the maximum number of attempts to retry after failing to connect to the service API. Use this parameter and the <code>maxRetryGap</code> parameter to adjust the retry window for the cluster autoscaler.</td>
-<td>64</td>
-</tr>
-<tr>
-<td><code>scaleDownDelayAfterAdd</code></td>
-<td>Set the amount of time after scale up that scale down evaluation resumes. The default value for <code>scaleDownDelayAfterAdd</code> is 10 minutes.</td>
-<td><code>10m</code></td>
-<td><code>scaleDownDelayAfterDelete</code></td>
-<td>Set the amount of time after node deletion that scale down evaluation resumes. The default value for <code>scaleDownDelayAfterDelete</code> is the same as the <code>scan-interval</code> which is <code>1m</code>.</td>
-<td><code>1m</code></td>
-</tr>
-<tr>
-<td><code>scaleDownUnneededTime</code></td>
-<td>Set the amount of time in minutes that a worker node must be unnecessary before it can be scaled down.</td>
-<td><code>10m</code></td>
-</tr>
-<tr>
-<td><code>scaleDownUtilizationThreshold</code></td>
-<td>Set the worker node utilization threshold. If the worker node utilization goes below the threshold, the worker node is considered to be scaled down. Worker node utilization is calculated as the sum of the CPU and memory resources that are requested by all pods that run on the worker node, divided by the worker node resource capacity.</td>
-<td><code>0.5</code></td>
-</tr>
-<tr>
-<td><code>scanInterval</code></td>
-<td>Set how often in minutes that the cluster autoscaler scans for workload usage that triggers scaling up or down.</td>
-<td><code>1m</code></td>
-</tr>
-<tr>
-<td><code>skipNodesWithLocalStorage</code></td>
-<td>When set to <code>true</code>, worker nodes that have pods that are saving data to local storage are not scaled down.</td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td><code>skipNodesWithSystemPods</code></td>
-<td>When set to <code>true</code>, worker nodes that have <code>kube-system</code> pods are not scaled down. Do not set the value to <code>false</code> because scaling down <code>kube-system</code> pods might have unexpected results.</td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td><code>workerPoolsConfig.json</code></td>
-<td>The worker pools that you want to autoscale, including their minimum and maximum number of worker nodes per zone:
-    <ul><li><code>{"name": "&lt;pool_name&gt;","minSize": 1,"maxSize": 2,"enabled":false}</code>.</li>
-    <li><strong><code>&lt;pool_name&gt;</code></strong>: The name or ID of the worker pool that you want to enable or disable for autoscaling. To list available worker pools, run <code>ibmcloud oc worker-pool ls --cluster &lt;cluster_name_or_ID&gt;</code>.</li>
-    <li><strong><code>maxSize: &lt;number_of_workers&gt;</code></strong>: Specify the maximum number of worker nodes per zone that the cluster autoscaler can scale up to. The value must be equal to or greater than the value that you set for the <code>minSize: &lt;number_of_workers&gt;</code> size.</li>
-    <li><strong><code>min=&lt;number_of_workers&gt;</code></strong>: Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be <code>2</code> or greater so that your ALB pods can be spread for high availability. If you <a href="/docs/containers?topic=containers-kubernetes-service-cli#cs_alb_configure">disabled</a> all public ALBs in each zone of your standard cluster, you can set the value to <code>1</code>.<p class="note">Keep in mind that setting a <code>min</code> size does not automatically trigger a scale-up. The <code>min</code> size is a threshold so that the cluster autoscaler does not scale below this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.</p></li>
-    <li><strong><code>enabled=(true|false)</code></strong>: Set the value to <code>true</code> to enable the cluster autoscaler to scale your worker pool. Set the value to <code>false</code> to stop the cluster autoscaler from scaling the worker pool. Later, if you want to <a href="/docs/containers?topic=containers-ca#ca_rm">remove the cluster autoscaler</a>, you must first disable each worker pool in the configmap.</li></ul>
-    <p class="note">If you enable a worker pool for autoscaling and then later add a zone to this worker pool, restart the cluster autoscaler pod so that it picks up this change: <code>oc delete pod -n kube-system &lt;cluster_autoscaler_pod&gt;</code>.</p>
-    <br><br>By default, the <code>default</code> worker pool is <strong>not</strong> enabled, with a <code>max</code> value of <code>2</code> and a <code>min</code> value of <code>1</code>.</td><td>Disabled</td>
-</tbody>
-</table>
+
+| `expander`|  Specify how the cluster autoscaler determines which worker pool to scale if you have multiple worker pools. Possible values are:  \n - `random`: Selects randomly between `most-pods` and `least-waste`.  \n - `most-pods`: Selects the worker pool that is able to schedule the most pods when scaling up. Use this method if you are using `nodeSelector` to make sure that pods land on specific worker nodes.  \n - `least-waste`: Selects the worker pool that has the least unused CPU after scaling up. If two worker pools use the same amount of CPU resources after scaling up, the worker pool with the least unused memory is selected. | random|
+| `ignoreDaemonSetsUtilization`| When set to `true`, the cluster autoscaler ignores DaemonSet pods when it calculates resource utilization for scale-down.| `false`|
+| `imagePullPolicy`|  Specify when to pull the Docker image. Possible values are:  \n - `Always`: Pulls the image every time that the pod is started.  \n - `IfNotPresent`: Pulls the image only if the image is not already present locally.  \n - `Never`: Assumes that the image exists locally and never pulls the image.| `Always`|
+| `livenessProbeFailureThreshold`|  Specify the number of times that the `kubelet` retries a liveness probe after the pod starts and the first liveness probe fails. After the failure threshold is reached, the container is restarted and the pod is marked `Unready` for a readiness probe, if applicable.|  `3`|
+| `livenessProbePeriodSeconds`| Specify the interval in seconds that the `kubelet` performs a liveness probe.|  `10`|
+| `livenessProbeTimeoutSeconds`| Specify the time in seconds after which the liveness probe times out.| `10`| 
+| `maxBulkSoftTaintCount`|  Set the maximum number of worker nodes that can be tainted or untainted with `PreferNoSchedule` at the same time. To disable this feature, set to `0`.| `0`|
+| `maxBulkSoftTaintTime`| Set the maximum amount of time that worker nodes can be tainted or untainted with `PreferNoSchedule` at the same time.| `10m`| 
+| `maxFailingTime`|  Set the maximum time in minutes that the cluster autoscaler pod runs without a successfully completed action before the pod is automatically restarted.| `15m`| 
+| `maxInactivity`|  Set the maximum time in minutes that the cluster autoscaler pod runs without any recorded activity before the pod is automatically restarted.| `10m`|
+| `maxNodeProvisionTime`| Set the maximum amount of time in minutes that a worker node can take to begin provisioning before the cluster autoscaler cancels the scale-up request.| `120m`|
+| `maxRetryGap`|  Set the maximum time in seconds to retry after failing to connect to the service API. Use this parameter and the `retryAttempts` parameter to adjust the retry window for the cluster autoscaler.| 60|
+| `resourcesLimitsCPU`|  Set the maximum amount of worker node CPU that the `ibm-iks-cluster-autoscaler` pod can consume.|  `600m`|
+| `resourcesLimitsMemory`|  Set the maximum amount of worker node memory that the `ibm-iks-cluster-autoscaler` pod can consume.|  `600Mi`|
+| `resourcesRequestsCPU`| Set the minimum amount of worker node CPU that the `ibm-iks-cluster-autoscaler` pod starts with.|  `200m`|
+| `resourcesRequestsMemory`|  Set the minimum amount of worker node memory that the `ibm-iks-cluster-autoscaler` pod starts with.|  `200Mi`|
+| `retryAttempts`|  Set the maximum number of attempts to retry after failing to connect to the service API. Use this parameter and the `maxRetryGap` parameter to adjust the retry window for the cluster autoscaler.|  64|
+| `scaleDownDelayAfterAdd`|  Set the amount of time after scale up that scale down evaluation resumes. The default value for `scaleDownDelayAfterAdd` is 10 minutes.| `10m`| 
+| `scaleDownDelayAfterDelete`|  Set the amount of time after node deletion that scale down evaluation resumes. The default value for `scaleDownDelayAfterDelete` is the same as the `scan-interval` which is `1m`.| `1m`|
+| `scaleDownUnneededTime`|  Set the amount of time in minutes that a worker node must be unnecessary before it can be scaled down.|  `10m`|
+| `scaleDownUtilizationThreshold`|  Set the worker node utilization threshold. If the worker node utilization goes below the threshold, the worker node is considered to be scaled down. Worker node utilization is calculated as the sum of the CPU and memory resources that are requested by all pods that run on the worker node, divided by the worker node resource capacity.|  `0.5`|
+| `scanInterval`|  Set how often in minutes that the cluster autoscaler scans for workload usage that triggers scaling up or down.|  `1m`|
+| `skipNodesWithLocalStorage`| When set to `true`, worker nodes that have pods that are saving data to local storage are not scaled down.|  `true`|
+| `skipNodesWithSystemPods`|  When set to `true`, worker nodes that have `kube-system` pods are not scaled down. Do not set the value to `false` because scaling down `kube-system` pods might have unexpected results.| `true`|
+| `workerPoolsConfig.json`|  The worker pools that you want to autoscale, including their minimum and maximum number of worker nodes per zone:  \n - `{"name": "&lt;pool_name>","minSize": 1,"maxSize": 2,"enabled":false}`.  \n - **`&lt;pool_name>`**: The name or ID of the worker pool that you want to enable or disable for autoscaling. To list available worker pools, run `ibmcloud oc worker-pool ls --cluster &lt;cluster_name_or_ID>`.  \n - **`maxSize: &lt;number_of_workers>`**: Specify the maximum number of worker nodes per zone that the cluster autoscaler can scale up to. The value must be equal to or greater than the value that you set for the `minSize: &lt;number_of_workers>` size.  \n - **`min=&lt;number_of_workers>`**: Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be `2` or greater so that your ALB pods can be spread for high availability. If you <a href="/docs/containers?topic=containers-kubernetes-service-cli#cs_alb_configure">disabled</a> all public ALBs in each zone of your standard cluster, you can set the value to `1`.<p class="note">Keep in mind that setting a `min` size does not automatically trigger a scale-up. The `min` size is a threshold so that the cluster autoscaler does not scale below this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.</p>  \n - **`enabled=(true|false)`**: Set the value to `true` to enable the cluster autoscaler to scale your worker pool. Set the value to `false` to stop the cluster autoscaler from scaling the worker pool. Later, if you want to [remove the cluster autoscaler](/docs/containers?topic=containers-ca#ca_rm), you must first disable each worker pool in the configmap. If you enable a worker pool for autoscaling and then later add a zone to this worker pool, restart the cluster autoscaler pod so that it picks up this change: `oc delete pod -n kube-system &lt;cluster_autoscaler_pod>`. By default, the `default` worker pool is **not** enabled, with a `max` value of `2` and a `min` value of `1`.|  Disabled|
+{: summary="The columns are read from left to right. The first column has the parameter of the configuration values. The second column describes the parameter. The third column includes the default value of the parameter."}
+{: caption="Cluster autoscaler configuration values"}
+
+
+
 
 ## Cluster autoscaler Helm chart parameter reference
 {: #ca_helm_ref}
@@ -1050,172 +988,40 @@ This table refers to the cluster autoscaler add-on parameters. For Helm chart va
 This table refers to the cluster autoscaler Helm chart parameters. For add-on values, see [Cluster autoscaler add-on parameter reference](#ca_addon_ref)
 {: note}
 
-<table summary="The columns are read from left to right. The first column has the parameter of the configuration. The second column describes the parameter. The third column has the default vale of the parameter.">
-<caption>Cluster autoscaler configuration values</caption>
-<col width="25%">
-<thead>
-<th>Parameter</th>
-<th>Description</th>
-<th>Default value</th>
-</thead>
-<tbody>
-<tr>
-<td><code>api_route</code> parameter</td>
-<td>Set the <a href="/docs/containers?topic=containers-kubernetes-service-cli#cs_cli_api">{{site.data.keyword.openshiftlong_notm}} API endpoint</a> for the region that your cluster is in.</td>
-<td>No default; uses the targeted region that your cluster is in.</td>
-</tr>
-<tr>
-<td><code>resources.limits.cpu</code> parameter</td>
-<td>Set the maximum amount of worker node CPU that the <code>ibm-iks-cluster-autoscaler</code> pod can consume.</td>
-<td><code>300m</code></td>
-</tr>
-<tr>
-<td><code>resources.limits.memory</code> parameter</td>
-<td>Set the maximum amount of worker node memory that the <code>ibm-iks-cluster-autoscaler</code> pod can consume.</td>
-<td><code>300Mi</code></td>
-</tr>
-<tr>
-<td><code>resources.requests.cpu</code> parameter</td>
-<td>Set the minimum amount of worker node CPU that the <code>ibm-iks-cluster-autoscaler</code> pod starts with.</td>
-<td><code>100m</code></td>
-</tr>
-<tr>
-<td><code>resources.requests.memory</code> parameter</td>
-<td>Set the minimum amount of worker node memory that the <code>ibm-iks-cluster-autoscaler</code> pod starts with.</td>
-<td><code>100Mi</code></td>
-</tr>
-<tr>
-<td><code>maxNodeProvisionTime</code> parameter</td>
-<td>Set the maximum amount of time in minutes that a worker node can take to begin provisioning before the cluster autoscaler cancels the scale-up request.</td>
-<td><code>120m</code></td>
-</tr>
-<tr>
-<td><code>scaleDownUnneededTime</code> parameter</td>
-<td>Set the amount of time in minutes that a worker node must be unnecessary before it can be scaled down.</td>
-<td><code>10m</code></td>
-</tr>
-<tr>
-<td><code>scaleDownDelayAfterAdd</code></td>
-<td>Set the amount of time after scale up that scale down evaluation resumes. The default value for <code>scaleDownDelayAfterAdd</code> is 10 minutes.</td>
-<td><code>10m</code></td>
-<td><code>scaleDownDelayAfterDelete</code></td>
-<td>Set the amount of time after node deletion that scale down evaluation resumes. The default value for <code>scaleDownDelayAfterDelete</code> is the same as the <code>scan-interval</code> which is <code>1m</code>.</td>
-<td><code>1m</code></td>
-</tr>
-<tr>
-<td><code>scaleDownUtilizationThreshold</code> parameter</td>
-<td>Set the worker node utilization threshold. If the worker node utilization goes below the threshold, the worker node is considered to be scaled down. Worker node utilization is calculated as the sum of the CPU and memory resources that are requested by all pods that run on the worker node, divided by the worker node resource capacity.</td>
-<td><code>0.5</code></td>
-</tr>
-<tr>
-<td><code>scanInterval</code> parameter</td>
-<td>Set how often in minutes that the cluster autoscaler scans for workload usage that triggers scaling up or down.</td>
-<td><code>1m</code></td>
-</tr>
-<tr>
-<td><code>expander</code> parameter</td>
-<td>Specify how the cluster autoscaler determines which worker pool to scale if you have multiple worker pools. Possible values are:
-<ul><li><code>random</code>: Selects randomly between <code>most-pods</code> and <code>least-waste</code>.</li>
-<li><code>most-pods</code>: Selects the worker pool that is able to schedule the most pods when scaling up. Use this method if you are using <code>nodeSelector</code> to make sure that pods land on specific worker nodes.</li>
-<li><code>least-waste</code>: Selects the worker pool that has the least unused CPU after scaling up. If two worker pools use the same amount of CPU resources after scaling up, the worker pool with the least unused memory is selected.</li></ul></td>
-<td>random</td>
-</tr>
-<tr>
-<td><code>ignoreDaemonSetsUtilization</code></td>
-<td>When set to <code>true</code>, the cluster autoscaler ignores DaemonSet pods when it calculates resource utilization for scale-down.</td>
-<td><code>false</code></td>
-</tr>
-<tr>
-<td><code>maxBulkSoftTaintCount</code></td>
-<td>Set the maximum number of worker nodes that can be tainted or untainted with <code>PreferNoSchedule</code> at the same time. To disable this feature, set to <code>0</code>.</td>
-<td><code>0</code></td>
-</tr>
-<tr>
-<td><code>maxBulkSoftTaintTime</code> </td>
-<td>Set the maximum amount of time that worker nodes can be tainted or untainted with <code>PreferNoSchedule</code> at the same time.</td>
-<td><code>10m</code></td>
-</tr>
-<tr>
-<td><code>skipNodes.withLocalStorage</code> parameter</td>
-<td>When set to <code>true</code>, worker nodes that have pods that are saving data to local storage are not scaled down.</td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td><code>skipNodes.withSystemPods</code> parameter</td>
-<td>When set to <code>true</code>, worker nodes that have <code>kube-system</code> pods are not scaled down. Do not set the value to <code>false</code> because scaling down <code>kube-system</code> pods might have unexpected results.</td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td><code>image.repository</code> parameter</td>
-<td>Specify the cluster autoscaler Docker image to use. To get a list of cluster autoscaler images, target the global {{site.data.keyword.registrylong_notm}} API by running <code>ibmcloud cr region-set global</code>. Then, list the available cluster autoscaler images by running <code>ibmcloud cr images --include-ibm | grep cluster-autoscaler</code>. To review the supported Kubernetes versions for each cluster autoscaler image version, <a href="https://cloud.ibm.com/kubernetes/helm/iks-charts/ibm-iks-cluster-autoscaler">download the source code <code>tar</code> file</a> and open the <code>RELEASENOTES.MD</code> file.</td>
-<td><code>icr.io/iks-charts/ibm-iks-cluster-autoscaler</code></td>
-</tr>
-<tr>
-<td><code>image.pullPolicy</code> parameter</td>
-<td>Specify when to pull the Docker image. Possible values are:
-<ul><li><code>Always</code>: Pulls the image every time that the pod is started.</li>
-<li><code>IfNotPresent</code>: Pulls the image only if the image is not already present locally.</li>
-<li><code>Never</code>: Assumes that the image exists locally and never pulls the image.</li></ul></td>
-<td><code>IfNotPreset</code></td>
-</tr>
-<tr>
-    <td><code>livenessProbe.periodSeconds</code></td>
-    <td>Specify the interval in seconds that the <code>kubelet</code> performs a liveness probe.</td>
-    <td><code>10</code></td>
-</tr>
-<tr>
-    <td><code>livenessProbe.failureThreshold</code></td>
-    <td>Specify the number of times that the <code>kubelet</code> retries a liveness probe after the pod starts and the first liveness probe fails. After the failure threshold is reached, the container is restarted and the pod is marked <code>Unready</code> for a readiness probe, if applicable.</td>
-    <td><code>3</code></td>
-</tr>
-<tr>
-    <td><code>livenessProbe.successThreshold</code></td>
-    <td>Specify the minimum, consecutive number of times that the liveness probe must be successful after a previous failure before the pod is marked <code>Ready</code>. If you set a liveness probe, you must set this value to at least <code>1</code>.</td>
-    <td><code>1</code></td>
-</tr>
-<tr>
-    <td><code>livenessProbe.timeoutSeconds</code></td>
-    <td>Specify the time in seconds after which the liveness probe times out.</td>
-    <td><code>10</code></td>
-</tr>
-<tr>
-    <td><code>max-inactivity</code></td>
-    <td>Set the maximum time in minutes that the cluster autoscaler pod runs without any recorded activity before the pod is automatically restarted.</td>
-    <td><code>10m</code></td>
-</tr>
-<tr>
-    <td><code>max-failing-time</code></td>
-    <td>Set the maximum time in minutes that the cluster autoscaler pod runs without a successfully completed action before the pod is automatically restarted.</td>
-    <td><code>15m</code></td>
-</tr>
-<tr>
-<td><code>customImageVersion</code></td>
-<td>To override the default installation version, specify the version of the cluster autoscaler Helm chart that you want to install.</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td><code>maxRetryGap</code></td>
-<td>Set the maximum time in seconds to retry after failing to connect to the service API. Use this parameter and the <code>retryAttempts</code> parameter to adjust the retry window for the cluster autoscaler.</td>
-<td>60</td>
-</tr>
-<tr>
-<td><code>retryAttempts</code></td>
-<td>Set the maximum number of attempts to retry after failing to connect to the service API. Use this parameter and the <code>maxRetryGap</code> parameter to adjust the retry window for the cluster autoscaler.</td>
-<td>32</td>
-</tr>
-<tr>
-<td><code>workerpools</code> parameter</td>
-<td>The worker pools that you want to autoscale, including their minimum and maximum number of worker nodes per zone. These settings are mirrored in the <a href="#ca_cm">cluster autoscaler config map</a>. To set the worker pool, format the option as follows: <code>--set workerpools[0].&lt;pool_name&gt;.max=&lt;number_of_workers&gt;,workerpools[0].&lt;pool_name&gt;.min=&lt;number_of_workers&gt;,workerpools[0].&lt;pool_name&gt;.enabled=(true|false)</code><br><br>
-Understanding the <code>--set workerpools</code> options:
-    <ul><li><strong><code>workerpools[0]</code></strong>: The first worker pool to enable or disable for autoscaling. You must include three parameters for each worker pool for the command to succeed: the maximum number of worker nodes (<code>max</code>), the minimum number of worker nodes (<code>min</code>), and whether you want to enable (<code>true</code>) or disable (<code>false</code>) autoscaling for this worker pool. To include multiple worker pools, include a comma-separated list and increase the number in brackets, such as: <code>workerpools[0].default...,workerpools[1].pool1...,workerpools[2].pool2...</code>.</li>
-    <li><strong><code>&lt;pool_name&gt;</code></strong>: The name or ID of the worker pool that you want to enable or disable for autoscaling. To list available worker pools, run <code>ibmcloud oc worker-pool ls --cluster &lt;cluster_name_or_ID&gt;</code>.</li>
-    <li><strong><code>max=&lt;number_of_workers></code></strong>: Specify the maximum number of worker nodes per zone that the cluster autoscaler can scale up to. The value must be equal to or greater than the value that you set for the <code>min=&lt;number_of_workers&gt;</code> size.</li>
-    <li><strong><code>min=&lt;number_of_workers&gt;</code></strong>: Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be <code>2</code> or greater so that your ALB pods can be spread for high availability. If you [disabled</a> all public ALBs in each zone of your standard cluster, you can set the value to <code>1</code>.<p class="note">Keep in mind that setting a <code>min</code> size does not automatically trigger a scale-up. The <code>min</code> size is a threshold so that the cluster autoscaler does not scale below this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.</p></li>
-    <li><strong><code>enabled=(true|false)</code></strong>: Set the value to <code>true</code> to enable the cluster autoscaler to scale your worker pool. Set the value to <code>false</code> to stop the cluster autoscaler from scaling the worker pool. Later, if you want to <a href="/docs/containers?topic=containers-ca#ca_rm">remove the cluster autoscaler</a>, you must first disable each worker pool in the configmap.</li></ul>
-    <p class="note">If you enable a worker pool for autoscaling and then later add a zone to this worker pool, restart the cluster autoscaler pod so that it picks up this change: <code>oc delete pod -n kube-system &lt;cluster_autoscaler_pod&gt;</code>.</p>
-    <br><br>By default, the <code>default</code> worker pool is <strong>not</strong> enabled, with a <code>max</code> value of <code>2</code> and a <code>min</code> value of <code>1</code>.</td><td>Disabled</td>
-</tbody>
-</table>
+
+| Parameter | Description | Default value |
+| --- | --- | --- |
+| `api_route` | Set the {{site.data.keyword.openshiftlong_notm}} API [endpoint](/docs/containers?topic=containers-kubernetes-service-cli#cs_cli_api) for the region that your cluster is in.| No default; uses the targeted region that your cluster is in.|
+| `resources.limits.cpu`| Set the maximum amount of worker node CPU that the `ibm-iks-cluster-autoscaler` pod can consume.| `300m`|
+| `resources.limits.memory` | Set the maximum amount of worker node memory that the `ibm-iks-cluster-autoscaler` pod can consume.| `300Mi`|
+| `resources.requests.cpu` | Set the minimum amount of worker node CPU that the `ibm-iks-cluster-autoscaler` pod starts with.| `100m`|
+| `resources.requests.memory` | Set the minimum amount of worker node memory that the `ibm-iks-cluster-autoscaler` pod starts with.|  `100Mi`|
+| `maxNodeProvisionTime` | Set the maximum amount of time in minutes that a worker node can take to begin provisioning before the cluster autoscaler cancels the scale-up request.| `120m`|
+| `scaleDownUnneededTime` | Set the amount of time in minutes that a worker node must be unnecessary before it can be scaled down.| `10m`|
+| `scaleDownDelayAfterAdd`|  Set the amount of time after scale up that scale down evaluation resumes. The default value for `scaleDownDelayAfterAdd` is 10 minutes.| `10m`| 
+| `scaleDownDelayAfterDelete`| Set the amount of time after node deletion that scale down evaluation resumes. The default value for `scaleDownDelayAfterDelete` is the same as the `scan-interval` which is `1m`.| `1m`|
+| `scaleDownUtilizationThreshold` | Set the worker node utilization threshold. If the worker node utilization goes below the threshold, the worker node is considered to be scaled down. Worker node utilization is calculated as the sum of the CPU and memory resources that are requested by all pods that run on the worker node, divided by the worker node resource capacity.| `0.5`|
+| `scanInterval` | Set how often in minutes that the cluster autoscaler scans for workload usage that triggers scaling up or down.|  `1m`|
+| `expander` | Specify how the cluster autoscaler determines which worker pool to scale if you have multiple worker pools. Possible values are:  \n - `random`: Selects randomly between `most-pods` and `least-waste`.  \n - `most-pods`: Selects the worker pool that is able to schedule the most pods when scaling up. Use this method if you are using `nodeSelector` to make sure that pods land on specific worker nodes.  \n - `least-waste`: Selects the worker pool that has the least unused CPU after scaling up. If two worker pools use the same amount of CPU resources after scaling up, the worker pool with the least unused memory is selected.| 
+| random|
+| `ignoreDaemonSetsUtilization`| When set to `true`, the cluster autoscaler ignores DaemonSet pods when it calculates resource utilization for scale-down.| `false`|
+| `maxBulkSoftTaintCount`|  Set the maximum number of worker nodes that can be tainted or untainted with `PreferNoSchedule` at the same time. To disable this feature, set to `0`.|  `0`|
+| `maxBulkSoftTaintTime` |  Set the maximum amount of time that worker nodes can be tainted or untainted with `PreferNoSchedule` at the same time.| `10m`|
+| `skipNodes.withLocalStorage` | When set to `true`, worker nodes that have pods that are saving data to local storage are not scaled down.|  `true`|
+| `skipNodes.withSystemPods` | When set to `true`, worker nodes that have `kube-system` pods are not scaled down. Do not set the value to `false` because scaling down `kube-system` pods might have unexpected results.| `true`|
+| `image.repository` | Specify the cluster autoscaler Docker image to use. To get a list of cluster autoscaler images, target the global {{site.data.keyword.registrylong_notm}} API by running `ibmcloud cr region-set global`. Then, list the available cluster autoscaler images by running `ibmcloud cr images --include-ibm | grep cluster-autoscaler`. To review the supported Kubernetes versions for each cluster autoscaler image version, [download the source code `tar` [file](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibm-iks-cluster-autoscaler) and open the `RELEASENOTES.MD` file.|  `icr.io/iks-charts/ibm-iks-cluster-autoscaler`|
+| `image.pullPolicy` | Specify when to pull the Docker image. Possible values are:  \n - `Always`: Pulls the image every time that the pod is started.  \n - `IfNotPresent`: Pulls the image only if the image is not already present locally.  \n - `Never`: Assumes that the image exists locally and never pulls the image.| `IfNotPreset`| 
+| `livenessProbe.periodSeconds`|  Specify the interval in seconds that the `kubelet` performs a liveness probe.|  `10`| 
+| `livenessProbe.failureThreshold`|  Specify the number of times that the `kubelet` retries a liveness probe after the pod starts and the first liveness probe fails. After the failure threshold is reached, the container is restarted and the pod is marked `Unready` for a readiness probe, if applicable.|  `3`| 
+| `livenessProbe.successThreshold`|  Specify the minimum, consecutive number of times that the liveness probe must be successful after a previous failure before the pod is marked `Ready`. If you set a liveness probe, you must set this value to at least `1`.|  `1`| 
+| `livenessProbe.timeoutSeconds`|  Specify the time in seconds after which the liveness probe times out.|  `10`|
+| `max-inactivity`|  Set the maximum time in minutes that the cluster autoscaler pod runs without any recorded activity before the pod is automatically restarted.|  `10m`| 
+| `max-failing-time`|  Set the maximum time in minutes that the cluster autoscaler pod runs without a successfully completed action before the pod is automatically restarted.|  `15m`|
+| `customImageVersion`|  To override the default installation version, specify the version of the cluster autoscaler Helm chart that you want to install.|  N/A|
+| `maxRetryGap`| Set the maximum time in seconds to retry after failing to connect to the service API. Use this parameter and the `retryAttempts` parameter to adjust the retry window for the cluster autoscaler.|  60|
+| `retryAttempts`|  Set the maximum number of attempts to retry after failing to connect to the service API. Use this parameter and the `maxRetryGap` parameter to adjust the retry window for the cluster autoscaler.| 32|
+| `workerpools` | The worker pools that you want to autoscale, including their minimum and maximum number of worker nodes per zone. These settings are mirrored in the [cluster autoscaler](#ca_cm) config map. To set the worker pool, format the option as follows: `--set workerpools[0].&lt;pool_name>.max=&lt;number_of_workers>,workerpools[0].&lt;pool_name>.min=&lt;number_of_workers>,workerpools[0].&lt;pool_name>.enabled=(true|false)` Understanding the `--set workerpools` options:  \n - **`workerpools[0]`**: The first worker pool to enable or disable for autoscaling. You must include three parameters for each worker pool for the command to succeed: the maximum number of worker nodes (`max`), the minimum number of worker nodes (`min`), and whether you want to enable (`true`) or disable (`false`) autoscaling for this worker pool. To include multiple worker pools, include a comma-separated list and increase the number in brackets, such as: `workerpools[0].default...,workerpools[1].pool1...,workerpools[2].pool2...`.  \n - **`&lt;pool_name>`**: The name or ID of the worker pool that you want to enable or disable for autoscaling. To list available worker pools, run `ibmcloud oc worker-pool ls --cluster &lt;cluster_name_or_ID>`.  \n - **`max=&lt;number_of_workers>`**: Specify the maximum number of worker nodes per zone that the cluster autoscaler can scale up to. The value must be equal to or greater than the value that you set for the `min=&lt;number_of_workers>` size.  \n - **`min=&lt;number_of_workers>`**: Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be `2` or greater so that your ALB pods can be spread for high availability. If you disabled all public ALBs in each zone of your standard cluster, you can set the value to `1`. Keep in mind that setting a `min` size does not automatically trigger a scale-up. The `min` size is a threshold so that the cluster autoscaler does not scale below this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.  \n - **`enabled=(true|false)`**: Set the value to `true` to enable the cluster autoscaler to scale your worker pool. Set the value to `false` to stop the cluster autoscaler from scaling the worker pool. Later, if you want to [remove the cluster autoscaler](/docs/containers?topic=containers-ca#ca_rm), you must first disable each worker pool in the configmap. If you enable a worker pool for autoscaling and then later add a zone to this worker pool, restart the cluster autoscaler pod so that it picks up this change: `oc delete pod -n kube-system &lt;cluster_autoscaler_pod>`. By default, the `default` worker pool is **not** enabled, with a `max` value of `2` and a `min` value of `1`.| Disabled| 
+
 
 
 

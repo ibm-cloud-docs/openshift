@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,8 +11,8 @@ content-type: troubleshoot
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
+
   
 
 # Classic clusters: Why does the master status have an ingress IP address for NLB error?
@@ -44,14 +44,15 @@ Verify that your cluster has available subnets, and that the load balancer setup
 {: #verify_subnets}
 
 1. Check that your cluster has a **Subnet CIDR** for public and private subnets. If you set up a private VLAN-only cluster, you might have only a private subnet.
-    ```
+    ```sh
     ibmcloud oc cluster get --cluster <cluster_name_or_ID> --show-resources
     ```
     {: pre}
 
-    Example output:
-    ```
-    Name:                           <cluster_name>   
+    Example output
+
+    ```sh
+    NAME:                           <cluster_name>   
     ...
 
     Subnet VLANs
@@ -64,7 +65,7 @@ Verify that your cluster has available subnets, and that the load balancer setup
 2. If the cluster does not have a subnet, [create a subnet for the cluster](/docs/containers?topic=containers-subnets#request) or [add an existing subnet from your account to the cluster](/docs/containers?topic=containers-subnets#add-existing).
 3. If the cluster does have a subnet, [check for available portable IP addresses](/docs/containers?topic=containers-subnets#review_ip) and if necessary, [add more portable IP address by adding a subnet](/docs/containers?topic=containers-subnets#adding_ips).
 4. Refresh the master to restart the OpenVPN setup so that it uses the available subnet.
-    ```
+    ```sh
     ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
     ```
     {: pre}
@@ -73,19 +74,19 @@ Verify that your cluster has available subnets, and that the load balancer setup
 {: #verify_nlb}
 
 1. Check that the `ibm-cloud-provider-ip-*` pods for the load balancer are in a **Running** status.
-    ```
+    ```sh
     oc get pods -n ibm-system | grep ibm-cloud-provider-ip
     ```
     {: pre}
 
 2. If a pod is not running, review the **Events** in the pod details to troubleshoot the issue further.
-    ```
+    ```sh
     oc describe pod -n kube-system <pod_name>
     ```
     {: pre}
 
 3. After you resolve the load balancer pod issue, refresh the master to restart the NLB setup.
-    ```
+    ```sh
     ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
     ```
     {: pre}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, logmet, logs, metrics, audit, events
 
@@ -10,10 +10,8 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Reviewing service, API server, and worker node logs
@@ -112,58 +110,61 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
     {: codeblock}
 
 4. Create the deployment in the `default` namespace of your cluster.
-    ```
+    ```sh
     kubectl create -f ibmcloud-kube-audit.yaml
     ```
     {: pre}
 
 5. Verify that the `ibmcloud-kube-audit-service` pod has a **STATUS** of `Running`.
-    ```
+    ```sh
     kubectl get pods -l app=ibmcloud-kube-audit
     ```
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     NAME                                             READY   STATUS             RESTARTS   AGE
     ibmcloud-kube-audit-c75cb84c5-qtzqd              1/1     Running   0          21s
     ```
     {: screen}
 
 6. Verify that the `ibmcloud-kube-audit-service` service is deployed in your cluster. In the output, note the **CLUSTER_IP**.
-    ```
+    ```sh
     kubectl get svc -l app=ibmcloud-kube-audit
     ```
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     NAME                          TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
     ibmcloud-kube-audit-service   ClusterIP   172.21.xxx.xxx   <none>        80/TCP           1m
     ```
     {: screen}
 
 7. Create the audit webhook to collect Kubernetes API server event logs. Add the `http://` prefix to the **CLUSTER_IP**.
-    ```
+    ```sh
     ibmcloud oc cluster master audit-webhook set --cluster <cluster_name_or_ID> --remote-server http://172.21.xxx.xxx 
     ```
     {: pre}
 
 8. Verify that the audit webhook is created in your cluster.
-    ```
+    ```sh
     ibmcloud oc cluster master audit-webhook get --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     OK
     Server:            http://172.21.xxx.xxx
     ```
     {: screen}
 
 9. Apply the webhook to your Kubernetes API server by refreshing the cluster master. It might take several minutes for the master to refresh.
-    ```
+    ```sh
     ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
     ```
     {: pre}
@@ -209,19 +210,20 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
     {: codeblock}
 
 2. Create the endpoint and service.
-    ```
+    ```sh
     kubectl create -f kube-audit-remote-private-ip.yaml
     ```
     {: pre}
 
 3. Verify that the `kube-audit-remote-private-ip` service is deployed in your cluster. In the output, note the **CLUSTER-IP**.
-    ```
+    ```sh
     kubectl get svc
     ```
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     NAME                          TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
     ...
     kube-audit-remote-private-ip  ClusterIP   172.21.xxx.xxx   <none>        80/TCP           1m
@@ -229,26 +231,27 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
     {: screen}
 
 4. Create the audit webhook to collect Kubernetes API server event logs. Add the `http://` prefix to the `CLUSTER-IP` of the service that you previously retrieved.
-    ```
+    ```sh
     ibmcloud oc cluster master audit-webhook set --cluster <cluster_name_or_ID> --remote-server http://172.21.xxx.xxx
     ```
     {: pre}
 
 5. Verify that the audit webhook is created in your cluster.
-    ```
+    ```sh
     ibmcloud oc cluster master audit-webhook get --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     OK
     Server:            http://172.21.xxx.xxx
     ```
     {: screen}
 
 6. Apply the webhook to your Kubernetes API server by refreshing the cluster master. The master might take several minutes to refresh.
-    ```
+    ```sh
     ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
     ```
     {: pre}

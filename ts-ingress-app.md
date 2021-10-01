@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,10 +11,8 @@ content-type: troubleshoot
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Classic clusters: Why can't my app connect via Ingress?
@@ -33,7 +31,7 @@ When you tried to connect to your app by using the public IP address or Ingress 
 First, check that your cluster is fully deployed and has at least 2 worker nodes available per zone to ensure high availability for your router for the Ingress controller.
 {: tsResolve}
 
-```
+```sh
 ibmcloud oc worker ls --cluster <cluster_name_or_ID>
 ```
 {: pre}

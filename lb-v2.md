@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -10,10 +10,8 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Classic: Setting up DSR load balancing with an NLB 2.0
@@ -46,7 +44,7 @@ Before you create an NLB 2.0, you must complete the following prerequisite steps
 2. Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the NLB 2.0 can route packets to various subnets in the account.
 
 3. If you use [Calico pre-DNAT network policies](/docs/containers?topic=containers-network_policies#block_ingress) to manage traffic to an NLB 2.0, you must add the `applyOnForward: true` and `doNotTrack: true` fields to and remove the `preDNAT: true` from the `spec` section in the policies. `applyOnForward: true` ensures that the Calico policy is applied to the traffic as it is encapsulated and forwarded. `doNotTrack: true` ensures that the worker nodes can use DSR to return a response packet directly to the client without needing the connection to be tracked. For example, if you use a Calico policy to allow traffic from only specific IP addresses to your NLB IP address, the policy looks similar to the following:
-    ```
+    ```yaml
     apiVersion: projectcalico.org/v3
     kind: GlobalNetworkPolicy
     metadata:
@@ -189,22 +187,22 @@ To set up an NLB 2.0 in a multizone cluster:
 
     4. Create the service in your cluster.
 
-        ```
+        ```sh
         oc apply -f myloadbalancer.yaml
         ```
         {: pre}
 
 3. Verify that the NLB service was created successfully. It might take a few minutes for the NLB service to be created properly and for the app to be available.
 
-    ```
+    ```sh
     oc describe service myloadbalancer
     ```
     {: pre}
 
     Example CLI output:
 
-    ```
-    Name:                   myloadbalancer
+    ```sh
+    NAME:                   myloadbalancer
     Namespace:              default
     Labels:                 <none>
     Selector:               app=liberty
@@ -230,7 +228,7 @@ To set up an NLB 2.0 in a multizone cluster:
     1. Open your preferred web browser.
     2. Enter the portable public IP address of the NLB and port.
 
-        ```
+        ```sh
         http://169.xx.xxx.xxx:8080
         ```
         {: codeblock}
@@ -327,22 +325,22 @@ To create an NLB 2.0 service in a single-zone cluster:
 
     4. Create the service in your cluster.
 
-        ```
+        ```sh
         oc apply -f myloadbalancer.yaml
         ```
         {: pre}
 
 3. Verify that the NLB service was created successfully. It might take a few minutes for the service to be created and for the app to be available.
 
-    ```
+    ```sh
     oc describe service myloadbalancer
     ```
     {: pre}
 
     Example CLI output:
 
-    ```
-    Name:                   myloadbalancer
+    ```sh
+    NAME:                   myloadbalancer
     Namespace:              default
     Labels:                 <none>
     Selector:               app=liberty
@@ -368,7 +366,7 @@ To create an NLB 2.0 service in a single-zone cluster:
     1. Open your preferred web browser.
     2. Enter the portable public IP address of the NLB and port.
 
-        ```
+        ```sh
         http://169.xx.xxx.xxx:8080
         ```
         {: codeblock}

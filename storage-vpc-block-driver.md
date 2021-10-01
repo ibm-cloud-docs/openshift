@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, vpc, block storage
 
@@ -10,10 +10,8 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters
@@ -201,7 +199,7 @@ Select the {{site.data.keyword.block_storage_is_short}} driver configmap that ma
     {: scree}
 
 6. Verify that the storage classes are created.
-    ```
+    ```sh
     oc get sc
     ```
     {: pre}

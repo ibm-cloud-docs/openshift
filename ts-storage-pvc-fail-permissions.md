@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,10 +10,8 @@ subcollection: openshift
 content-type: troubleshoot
 
 ---
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # What permissions do I need to manage storage and create PVCs?
@@ -45,7 +43,8 @@ The IAM API key or the IBM Cloud infrastructure API key that is stored in the `s
     ```
     {: pre}
 
-    Example output:
+    Example output
+
     ```sh
     [Bluemix]
     iam_url = "https://iam.bluemix.net"

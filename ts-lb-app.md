@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,10 +11,8 @@ content-type: troubleshoot
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Classic clusters: Why can't my app connect via a network load balancer (NLB) service?
@@ -42,7 +40,7 @@ Check that you set up a standard cluster that is fully deployed and has at least
 1. List your worker nodes. In your CLI output, make sure that the **Status** of your worker nodes displays **Ready** and that the **Machine Type** shows a flavor other than **free**.
 
 
-    ```
+    ```sh
     ibmcloud oc worker ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
@@ -51,7 +49,7 @@ Check that you set up a standard cluster that is fully deployed and has at least
 
 3. Check the accuracy of the configuration file for your NLB service.
     * Version 2.0 NLBs:
-        ```
+        ```yaml
         apiVersion: v1
         kind: Service
         metadata:
@@ -76,7 +74,7 @@ Check that you set up a standard cluster that is fully deployed and has at least
         5. Check that you set `externalTrafficPolicy` to `Local`.
 
     * Version 1.0 NLBs:
-        ```
+        ```yaml
         apiVersion: v1
         kind: Service
         metadata:
@@ -97,7 +95,7 @@ Check that you set up a standard cluster that is fully deployed and has at least
 
 3. Check your NLB service and review the **Events** section to find potential errors.
 
-    ```
+    ```sh
     oc describe service <myservice>
     ```
     {: pre}
@@ -114,7 +112,7 @@ Check that you set up a standard cluster that is fully deployed and has at least
 
 4. If you use a custom domain to connect to your NLB service, make sure that your custom domain is mapped to the public IP address of your NLB service.
     1. Find the public IP address of your NLB service.
-        ```
+        ```sh
         oc describe service <service_name> | grep "LoadBalancer Ingress"
         ```
         {: pre}

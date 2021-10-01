@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -10,10 +10,8 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Locations
@@ -35,7 +33,7 @@ You can deploy {{site.data.keyword.openshiftlong}} clusters worldwide. When you 
 {{site.data.keyword.cloud_notm}} resources are organized into a hierarchy of geographic locations. {{site.data.keyword.openshiftlong_notm}} is available in a subset of these locations, including worldwide multizone regions and single zone regions. Other {{site.data.keyword.cloud_notm}} services might be available globally or within a specific location.
 {: shortdesc}
 
-```
+```sh
 ibmcloud oc locations
 ```
 {: pre}
@@ -109,10 +107,8 @@ The following image is used as an example to explain how {{site.data.keyword.ope
 
 
 
-<br>
 
 **Deprecated data centers**
-<br>
 
 Oslo (osl01) is deprecated and becomes unsupported later this year. To prevent any interruption of service, [redeploy all of your cluster workloads](/docs/containers?topic=containers-update_app#copy_apps_cluster) to a [supported data center](/docs/containers?topic=containers-regions-and-zones#zones-mz) and remove your `osl01` clusters by **1 August 2021**. Before the unsupported date, you are blocked from adding new worker nodes and clusters starting on **1 July 2021**. For more information, see [Data center closures in 2021](/docs/get-support?topic=get-support-dc-closure).
 {: deprecated}
@@ -186,7 +182,7 @@ When you log in to the {{site.data.keyword.cloud_notm}} (`ibmcloud`) command lin
 {: shortdesc}
 
 To log in to the {{site.data.keyword.cloud_notm}} global API endpoint and target the resource group that your cluster is in:
-```
+```sh
 ibmcloud login -a https://cloud.ibm.com -g <nondefault_resource_group_name>
 ```
 {: pre}
@@ -205,12 +201,7 @@ When you log in to {{site.data.keyword.cloud_notm}}, you can access the {{site.d
 When you use the new global functionality in the {{site.data.keyword.openshiftlong_notm}} CLI, consider the following changes from the legacy region-based functionality.
 
 * Listing resources:
-    * When you list resources, such as with the `ibmcloud oc cluster ls`, `ibmcloud oc subnets`, or `ibmcloud oc zone ls` commands, resources in all locations are returned. To filter resources by a specific location, certain commands include a `--location` flag. For example, if you filter clusters for the `wdc` metro, multizone clusters in that metro and single-zone clusters in data centers (zones) within that metro are returned. If you filter clusters for the `wdc06` data center (zone), multizone clusters that have a worker node in that zone and single-zone clusters in that zone are returned.
-        Example to filter by location:
-    ```
-    ibmcloud oc cluster ls -l dal -l seo
-    ```
-    {: pre}
+    * When you list resources, such as with the `ibmcloud oc cluster ls`, `ibmcloud oc subnets`, or `ibmcloud oc zone ls` commands, resources in all locations are returned. To filter resources by a specific location, certain commands include a `--location` flag. For example, if you filter clusters for the `wdc` metro, multizone clusters in that metro and single-zone clusters in data centers (zones) within that metro are returned. If you filter clusters for the `wdc06` data center (zone), multizone clusters that have a worker node in that zone and single-zone clusters in that zone are returned. `ibmcloud oc cluster ls -l dal -l seo`.
 
     * Other commands do not return resources in all locations. To run `credential set/unset/get`, `api-key reset`, and `vlan spanning get` commands, you must specify a region in the `--region`.
 
@@ -219,20 +210,21 @@ When you use the new global functionality in the {{site.data.keyword.openshiftlo
     * If you have clusters with the same name in different regions, use the cluster ID when you run commands or set a region with the `ibmcloud oc init` command and use the cluster name when you run commands.
 
 * Legacy functionality:
-    * If you need to list and work with resources from one region only, you can use the `ibmcloud oc init` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_init) to target a regional endpoint instead of the global endpoint.
-        Example to target the US South regional endpoint:
-    ```
-    ibmcloud oc init --host https://us-south.containers.cloud.ibm.com
-    ```
-    {: pre}
+    * If you need to list and work with resources from one region only, you can use the `ibmcloud oc init` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_init) to target a regional endpoint instead of the global endpoint. Example to target the US South regional endpoint:
+        ```sh
+        ibmcloud oc init --host https://us-south.containers.cloud.ibm.com
+        ```
+        {: pre}
 
     * To use the global functionality, you can use the `ibmcloud oc init` command again to target the global endpoint. Example to target the global endpoint again:
-    ```
-    ibmcloud oc init --host https://containers.cloud.ibm.com
-    ```
-    {: pre}
+        ```sh
+        ibmcloud oc init --host https://containers.cloud.ibm.com
+        ```
+        {: pre}
 
-</br></br>
+
+
+
 **{{site.data.keyword.openshiftlong_notm}} API**:
 * [Get started with the API](/docs/containers?topic=containers-cs_api_install#cs_api).
 * [View documentation on the API commands](https://containers.cloud.ibm.com/global/swagger-global-api/#/).
@@ -241,12 +233,12 @@ When you use the new global functionality in the {{site.data.keyword.openshiftlo
 To interact with the global {{site.data.keyword.openshiftlong_notm}} API, enter the command type and append `global/v1/command` to the endpoint.
 
 Example of `GET /clusters` global API:
-```
+```sh
 GET https://containers.cloud.ibm.com/global/v1/clusters
 ```
 {: codeblock}
 
-</br>
+
 
 If you need to specify a region in an API call, remove the `/global` parameter from the path and pass the region name in the `X-Region` header. To list available regions, review the [Previous region](#zones-mz) column in the {{site.data.keyword.openshiftlong_notm}} locations table.
 

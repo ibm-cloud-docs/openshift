@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-10-01"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -10,8 +10,8 @@ subcollection: openshift
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
+
   
 
 # Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}
@@ -82,8 +82,9 @@ To create the cluster in a {{site.data.keyword.satelliteshort}} location, you mu
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     Retrieving locations...
     OK
     Name         ID                     Status            Ready   Created      Hosts (used/total)   Managed From   
@@ -97,13 +98,14 @@ To create the cluster in a {{site.data.keyword.satelliteshort}} location, you mu
     * To enable cluster admin access for {{site.data.keyword.satelliteshort}} Config, include the `--enable-admin-agent` flag. If you do not grant {{site.data.keyword.satelliteshort}} Config access, you cannot later use the {{site.data.keyword.satelliteshort}} Config functionality to view or deploy Kubernetes resources for your clusters. If you want to enable access later, you can [create custom RBAC roles for {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-access).
     * For more information about this command's options, see the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).
 
-    ```
+    ```sh
     ibmcloud oc cluster create satellite --location <location_name_or_ID> --name <cluster_name> --pull-secret <secret> --version 4.7_openshift [--enable-admin-agent] [--host-label LABEL ...] [--pod-subnet SUBNET] [-q] [--service-subnet SUBNET] [--workers <workers_per_zone>] [--zone <zone_name>]
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     Creating cluster...
     OK
     Cluster created with ID brkhsd220b6ktv7sjl50
@@ -111,13 +113,14 @@ To create the cluster in a {{site.data.keyword.satelliteshort}} location, you mu
     {: screen}
 
 4. Wait for the cluster to reach a **Warning** state. The **Warning** state indicates that the cluster master is fully deployed, but no worker nodes could be detected in the cluster.
-    ```
+    ```sh
     ibmcloud oc cluster ls
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     OK
     Name                ID                     State     Created          Workers   Location           Version                 Resource Group Name   Provider   
     satcluster          brkhsd220b6ktv7sjl50   warning   12 minutes ago   0         mylocation         4.5.23_1525_openshift   Default               satellite  
@@ -129,13 +132,14 @@ To create the cluster in a {{site.data.keyword.satelliteshort}} location, you mu
     * **Manual assignment**: [Assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-hosts#host-assign-cli). After the hosts successfully bootstrap, the hosts function as the worker nodes for your cluster to run {{site.data.keyword.openshiftshort}} workloads. Generally, assign at least 3 hosts as worker nodes in your cluster.
 
 6. Verify that your cluster reaches a **normal** state.
-    ```
+    ```sh
     ibmcloud oc cluster ls
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     OK
     Name         ID                     State    Created        Workers   Location     Version                 Resource Group Name   Provider   
     satcluster   brkhsd220b6ktv7sjl50   normal   2 hours ago    3         mylocation   4.3.23_1525_openshift   Default               satellite   
@@ -182,7 +186,7 @@ By default, the [image registry operator management state](https://docs.openshif
 
 
 ## Managing {{site.data.keyword.satelliteshort}} worker pools
-{: #satcluster-worker-pools}
+{: #satcluster-worker-pools-sat}
 
 Review the following differences from classic {{site.data.keyword.openshiftlong_notm}} clusters when you manage the worker pool life cycle of clusters that are in a {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
@@ -199,13 +203,13 @@ Create a worker pool in your {{site.data.keyword.satelliteshort}} cluster with h
 
 **To create a worker pool in a {{site.data.keyword.satelliteshort}} cluster**:
 1. List the {{site.data.keyword.satelliteshort}} clusters in your account.
-    ```
+    ```sh
     ibmcloud oc cluster ls --provider satellite
     ```
     {: pre}
 
 2. Get the details of the cluster that you want to create the worker pool in. Note the **Worker Zones**.
-    ```
+    ```sh
     ibmcloud oc cluster get -c <cluster_name_or_ID>
     ```
     {: pre}
@@ -218,7 +222,7 @@ Create a worker pool in your {{site.data.keyword.satelliteshort}} cluster with h
     * `--zone`: Select the initial zone in your {{site.data.keyword.satelliteshort}} location to create the worker pool in, that you retrieved from your cluster details. You can add more zones later.
     * `--host-label`: Add labels to match the requested capacity of the worker pool with the available hosts in the {{site.data.keyword.satelliteshort}} location. You can use just the `cpu=number` host label because {{site.data.keyword.satelliteshort}} hosts automatically get this host label. You can also add a custom host label like `env=prod`. **Important**: You cannot update host labels on the worker pool later, so make sure to configure the labels properly. You can change the labels on {{site.data.keyword.satelliteshort}} hosts, if needed.
 
-    ```
+    ```sh
     ibmcloud oc worker-pool create satellite --cluster <cluster_name_or_ID> --name <pool_name> --size-per-zone <number> --zone <satellite_zone> --host-label <cpu=number> --host-label <memory=number> [--host-label <key=value>]
     ```
     {: pre}
@@ -305,7 +309,7 @@ When you remove {{site.data.keyword.openshiftshort}} clusters or worker nodes in
 {: shortdesc}
 
 1. Back up any data that runs in the worker node or cluster that you want to save. For example, you might save a copy of all the data in your cluster and upload these files to a persistent storage solution, such as {{site.data.keyword.cos_full_notm}}.
-    ```
+    ```sh
     oc get all --all-namespaces -o yaml
     ```
     {: pre}
@@ -316,8 +320,9 @@ When you remove {{site.data.keyword.openshiftshort}} clusters or worker nodes in
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     Retrieving hosts...
     OK
     Name              ID                     State      Status   Cluster          Worker ID                                                 Worker IP       

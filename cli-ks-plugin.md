@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-10-01"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -10,10 +10,8 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # {{site.data.keyword.openshiftlong_notm}} CLI
@@ -215,7 +213,7 @@ ibmcloud oc cluster addon enable debug-tool --cluster CLUSTER [--version VERSION
 </dl>
 
 **Example**:
-    ```
+    ```sh
     ibmcloud oc cluster addon enable debug-tool --cluster my_cluster
     ```
     {: pre}
@@ -247,7 +245,7 @@ ibmcloud oc cluster addon enable image-key-synchronizer --cluster CLUSTER [--ver
 </dl>
 
 **Example**:
-    ```
+    ```sh
     ibmcloud oc cluster addon enable image-key-synchronizer --cluster my_cluster
     ```
     {: pre}
@@ -506,7 +504,7 @@ ibmcloud oc cluster addon versions [--addon ADD-ON_NAME] [--output json] [-q]
 
 **Example**:
 
-    ```
+    ```sh
     ibmcloud oc cluster addon versions --addon istio
     ```
     {: pre}
@@ -958,7 +956,7 @@ ibmcloud oc cluster get --cluster my_cluster --show-resources
 Disable [image security enforcement](/docs/containers?topic=containers-images#portieris-image-sec). When you disable the feature, the underlying `ClusterImagePolicy` CRD is removed, which removes all of the default image policies and any custom images policies that you created.
 {: shortdesc}
 
-```
+```sh
 ibmcloud oc cluster image-security disable --cluster CLUSTER [-q]
 ```
 {: pre}
@@ -979,7 +977,7 @@ ibmcloud oc cluster image-security disable --cluster CLUSTER [-q]
 </dl>
 
 **Example**:
-    ```
+    ```sh
     ibmcloud oc cluster image-security disable --cluster my_cluster
     ```
     {: pre}
@@ -990,7 +988,7 @@ ibmcloud oc cluster image-security disable --cluster CLUSTER [-q]
 Enable [image security enforcement](/docs/containers?topic=containers-images#portieris-image-sec) by installing the Portieris Kubernetes admission controller and the associated default image policies in your cluster.
 {: shortdesc}
 
-```
+```sh
 ibmcloud oc cluster image-security enable --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
@@ -1014,7 +1012,7 @@ ibmcloud oc cluster image-security enable --cluster CLUSTER [-f] [-q]
 </dl>
 
 **Example**:
-    ```
+    ```sh
     ibmcloud oc cluster image-security enable --cluster my_cluster
     ```
     {: pre}
@@ -1986,7 +1984,7 @@ Rebooting a worker node can cause data corruption on the worker node. Use this c
 Before you reboot your worker node, make sure that you have enough capacity in other worker nodes to reschedule the pods on the worker node. Rescheduling pods helps to avoid downtime for your app or data corruption on your worker node.
 
 1. List all worker nodes in your cluster and note the **name** of the worker node that you want to remove.
-    ```
+    ```sh
     oc get nodes
     ```
     {: pre}
@@ -1994,21 +1992,21 @@ Before you reboot your worker node, make sure that you have enough capacity in o
     The **name** that is returned in this command is the private IP address that is assigned to your worker node. You can find more information about your worker node when you run the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and look for the worker node with the same **Private IP** address.
 
 2. Force pods to be removed from your worker node and rescheduled onto remaining worker nodes in the cluster. The worker node is also cordoned, or marked as unavailable for future pod scheduling. Replace `<worker_name>` with the private IP address of the worker node that you previously retrieved.
-    ```
+    ```sh
     oc adm drain <worker_name>
     ```
     {: pre}
 
     This process can take a few minutes.
 3. Reboot the worker node. Use the worker ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command.
-    ```
+    ```sh
     ibmcloud oc worker reboot --cluster <cluster_name_or_ID> --worker <worker_name_or_ID>
     ```
     {: pre}
 
 4. Wait about 5 minutes before you make your worker node available for pod scheduling to ensure that the reboot is finished. During the reboot, the state of your worker node does not change. The reboot of a worker node is usually completed in a few seconds.
 5. Make your worker node available for pod scheduling. Use the **name** for your worker node that is returned from the `oc get nodes` command.
-    ```
+    ```sh
     oc adm uncordon <worker_name>
     ```
     {: pre}
@@ -2077,7 +2075,7 @@ Before you reload your worker node, make sure that you have enough capacity in o
     The **name** that is returned in this command is the private IP address that is assigned to your worker node. You can find more information about your worker node when you run the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and look for the worker node with the same **Private IP** address.
 
 2. Reload the worker node. As part of the reload process, the pods that run on the worker node are drained and rescheduled onto remaining worker nodes in the cluster. The worker node is also cordoned, or marked as unavailable for future pod scheduling. Use the worker node ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command.
-    ```
+    ```sh
     ibmcloud oc worker reload --cluster <cluster_name_or_ID> --worker <worker_name_or_ID>
     ```
     {: pre}
@@ -2999,7 +2997,8 @@ ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER --worker-pool WORKER_
     ```
     {: pre}
 
-    Example output:
+    Example output
+
     ```sh
     Subnet VLANs
     VLAN ID   Subnet CIDR         Public   User-managed
@@ -4973,7 +4972,7 @@ ibmcloud oc infra-permissions get --region us-south
 ```
 {: pre}
 
-Example output:
+Example output
 ```
 Missing Virtual Worker Permissions
 
@@ -5596,13 +5595,13 @@ ibmcloud oc init [--host HOST] [--insecure] [-p] [-u] [-q]
 
 **Examples**:
 *  Example to target the US South regional endpoint:
-    ```
+    ```sh
     ibmcloud oc init --host https://us-south.containers.cloud.ibm.com
     ```
     {: pre}
 
 *  Example to target the global endpoint again:
-    ```
+    ```sh
     ibmcloud oc init --host https://containers.cloud.ibm.com
     ```
     {: pre}
@@ -5645,12 +5644,12 @@ ibmcloud oc script update [--in-place] FILE [FILE ...]
 
 To use this command to prepare your automation scripts for the release of version 1.0 of the {{site.data.keyword.openshiftlong_notm}} plug-in:
 1. Run the command on a test script without the `--in-place` flag.
-    ```
+    ```sh
     ibmcloud oc script update ./mytestscript.sh
     ```
     {: pre}
 
-2. Review the proposed changes to the script in the difference that is shown in the command line STDOUT. Example output:
+2. Review the proposed changes to the script in the difference that is shown in the command line STDOUT. Example output
     ```
     --- a/script-test-2
     +++ b/script-test-2
@@ -5669,14 +5668,14 @@ To use this command to prepare your automation scripts for the release of versio
     {: screen}
 
 3. To rewrite the script with the proposed updates, run the command again with the `--in-place` flag.
-    ```
+    ```sh
     ibmcloud oc script update ./mytestscript.sh --in-place
     ```
     {: pre}
 
 4. Search for and address any commands that are flagged in the script with `# WARNING` messages. For example, some commands are deprecated and do not have a replacement command.
 5. Within the script or the environment where the script is run, set the `IKS_BETA_VERSION` environment variable to `1.0`.
-    ```
+    ```sh
     export IKS_BETA_VERSION=1.0
     ```
     {: pre}
@@ -5684,7 +5683,7 @@ To use this command to prepare your automation scripts for the release of versio
 6. Test your automation with the updated script. Note that you might incur charges if your automation includes creating clusters.
 7. Update all of your scripts.
 8. Update your CLI plug-in to version 1.0.
-    ```
+    ```sh
     ibmcloud plugin update kubernetes-service
     ```
     {: pre}

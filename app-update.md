@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, update, upgrade
 
@@ -10,10 +10,8 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Managing the app lifecycle
@@ -53,20 +51,20 @@ Before you begin
 To scale your apps,
 
 1. Deploy your app to a cluster from the CLI. For more complex deployments, you might need to create a [configuration file](/docs/containers?topic=containers-deploy_app#app_cli).
-    ```
+    ```sh
     oc create deployment <app_name> --image=<image>
     ```
     {: pre}
 
 2. Set CPU resource limits in millicores for the containers that run in your deployment, such as `100m`. You can also set memory limits, but the horizontal pod autoscaler only considers CPU resource limits for scaling purposes. For more information, see the [`kubectl set resources` documentation](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-resources-em-){: external}.
-    ```
+    ```sh
     oc set resources deployment <app_name> --limits=cpu=100m
     ```
     {: pre}
 
 3. Create a horizontal pod autoscaler and define your policy. For more information, see the [`kubectl autoscale` documentation](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#autoscale){: external}.
 
-    ```
+    ```sh
     oc autoscale deployment <deployment_name> --cpu-percent=<percentage> --min=<min_value> --max=<max_value>
     ```
     {: pre}
@@ -142,28 +140,28 @@ To manage rolling updates to your apps,
 
     1. Get the deployment name.
 
-        ```
+        ```sh
         oc get deployments
         ```
         {: pre}
 
     2. Get the pod name.
 
-        ```
+        ```sh
         oc get pods
         ```
         {: pre}
 
     3. Get the name of the container that runs in the pod.
 
-        ```
+        ```sh
         oc describe pod <pod_name>
         ```
         {: pre}
 
     4. Set the new image for the deployment to use.
 
-        ```
+        ```sh
         oc set image deployment/<deployment_name><container_name>=<image_name>
         ```
         {: pre}
@@ -172,19 +170,19 @@ To manage rolling updates to your apps,
 
 4. Check the status of your deployment.
 
-    ```
+    ```sh
     oc rollout status deployments/<deployment_name>
     ```
     {: pre}
 
     If you notice something in the status that you want time to follow up on, you can pause and resume your rollout with the following commands.
 
-    ```
+    ```sh
     oc rollout pause deployment <deployment_name>
     ```
     {: pre}
 
-    ```
+    ```sh
     oc rollout resume deployment <deployment_name>
     ```
     {: pre}
@@ -192,21 +190,21 @@ To manage rolling updates to your apps,
 5. Roll back a change.
     1. View the roll-out history for the deployment and identify the revision number of your last deployment.
 
-        ```
+        ```sh
         oc rollout history deployment/<deployment_name>
         ```
         {: pre}
 
         **Tip:** To see the details for a specific revision, include the revision number.
 
-        ```
+        ```sh
         oc rollout history deployment/<deployment_name> --revision=<number>
         ```
         {: pre}
 
     2. Roll back to the previous version, or specify a revision. To roll back to the previous version, use the following command.
 
-        ```
+        ```sh
         oc rollout undo deployment/<depoyment_name> --to-revision=<number>
         ```
         {: pre}
@@ -231,13 +229,14 @@ Before you begin, you need two clusters and the **Manager** [service access role
 
 1. [Target](/docs/openshift?topic=openshift-access_cluster) the cluster that you want to copy resources from.
 2. List all the configuration files in your cluster and verify that you want to copy these configurations.
-    ```
+    ```sh
     oc get all
     ```
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     NAME                                   READY   STATUS             RESTARTS   AGE
     pod/java-web-6955bdbcdf-l756b          1/1     Running            0          59d
 
@@ -253,7 +252,7 @@ Before you begin, you need two clusters and the **Manager** [service access role
     {: screen}
 
 3. Copy the configuration files in your cluster to a local directory. The `--export` flag removes cluster-specific information from the configuration files.
-    ```
+    ```sh
     oc get all -o yaml --export > myconfigs.yaml
     ```
     {: pre}
@@ -261,13 +260,14 @@ Before you begin, you need two clusters and the **Manager** [service access role
 4. [Target](/docs/openshift?topic=openshift-access_cluster) the cluster that you want to copy the resources to, such as a production-ready standard cluster.
 5. Optional: If your  cluster used multiple projects, create the same projects in the standard cluster and [copy the image pull secret to each project](/docs/containers?topic=containers-registry#copy_imagePullSecret).
 6. Deploy the copied configuration files to your cluster. If a configuration file has specific information that cannot be applied, you might need to update the configuration file and reapply.
-    ```
+    ```sh
     oc apply -f myconfigs.yaml
     ```
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     pod/java-web-6955bdbcdf-l756b created
     service/java-web created
     deployment.apps/java-web created
@@ -276,7 +276,7 @@ Before you begin, you need two clusters and the **Manager** [service access role
     {: screen}
 
 7. Verify that your configuration files are applied.
-    ```
+    ```sh
     oc get all
     ```
     {: pre}

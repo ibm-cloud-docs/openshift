@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -10,8 +10,8 @@ subcollection: openshift
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
+
   
 
 
@@ -91,26 +91,26 @@ To set up a monitoring configuration for your cluster:
             To use a different service access key after you created the monitoring configuration, use the [`ibmcloud ob monitoring config replace`](/docs/containers?topic=containers-observability_cli#monitoring_config_replace) command.
             {: tip}
 
-            ```
+            ```sh
             ibmcloud ob monitoring config create --cluster <cluster_name_or_ID> --instance <Monitoring_instance_name_or_ID>
             ```
             {: pre}
 
             Example output
-            ```
+            ```sh
             Creating configuration...
             OK
             ```
             {: screen}
 
         2. Verify that the monitoring configuration was added to your cluster.
-            ```
+            ```sh
             ibmcloud ob monitoring config list --cluster <cluster_name_or_ID>
             ```
             {: pre}
 
             Example output
-            ```
+            ```sh
             Listing configurations...
 
             OK
@@ -122,13 +122,13 @@ To set up a monitoring configuration for your cluster:
 3. Optional: Verify that the {{site.data.keyword.mon_short}} agent was set up successfully.
     1. If you used the console to create the {{site.data.keyword.mon_short}} configuration, log in to your cluster. For more information, see [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
     2. Verify that the daemon set for the {{site.data.keyword.mon_short}} agent was created and all instances are listed as `AVAILABLE`.
-        ```
+        ```sh
         oc get daemonsets -n ibm-observe
         ```
         {: pre}
 
         Example output
-        ```
+        ```sh
         NAME           DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
         sysdig-agent   9         9         9       9            9           <none>          14m
         ```
@@ -137,7 +137,7 @@ To set up a monitoring configuration for your cluster:
         The number of daemon set instances that are deployed equals the number of worker nodes in your cluster.
 
     3. Review the configmap that was created for your {{site.data.keyword.mon_short}} agent.
-        ```
+        ```sh
         oc describe configmap -n ibm-observe
         ```
         {: pre}
@@ -169,15 +169,11 @@ For more information about cluster and worker states, see:
 Your {{site.data.keyword.openshiftlong_notm}} cluster includes an IBM-managed master with highly available replicas, automatic security patch updates applied for you, and automation in place to recover in case of an incident. You can check the health, status, and state of the cluster master by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 {: shortdesc}
 
-**Master Health**
-
 The **Master Health** reflects the state of master components and notifies you if something needs your attention. The health might be one of the following states.
 - `error`: The master is not operational. IBM is automatically notified and takes action to resolve this issue. You can continue monitoring the health until the master is `normal`. You can also [open an {{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).
 - `normal`: The master is operational and healthy. No action is required.
 - `unavailable`: The master might not be accessible, which means some actions such as resizing a worker pool are temporarily unavailable. IBM is automatically notified and takes action to resolve this issue. You can continue monitoring the health until the master is `normal`.
 - `unsupported`: The master runs an unsupported version of Kubernetes. You must [update your cluster](/docs/containers?topic=containers-update) to return the master to `normal` health.
-
-**Master Status and State**
 
 The **Master Status** provides details of what operation from the master state is in progress. The status includes a timestamp of how long the master has been in the same state, such as `Ready (1 month ago)`. The **Master State** reflects the lifecycle of possible operations that can be performed on the master, such as deploying, updating, and deleting. Each state is described in the following table.
 
@@ -189,10 +185,11 @@ The **Master Status** provides details of what operation from the master state i
 |`deleting`|The master is currently deleting because you deleted the cluster. You cannot undo a deletion. After the cluster is deleted, you can no longer check the master state because the cluster is completely removed.|
 |`delete_failed`|The master failed to delete. IBM Support is notified and works to resolve the issue. You cannot resolve the issue by trying to delete the cluster again. Instead, check the **Master Status** field for more information, or wait for the cluster to delete. You can also [open an {{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).|
 |`updating`|The master is updating its Kubernetes version. The update might be a patch update that is automatically applied, or a minor or major version that you applied by updating the cluster. During the update, your highly available master can continue processing requests, and your app workloads and worker nodes continue to run. After the master update is complete, you can [update your worker nodes](/docs/containers?topic=containers-update#worker_node).</br></br>If the update is unsuccessful, the master returns to a `deployed` state and continues running the previous version. IBM Support is notified and works to resolve the issue. You can check if the update failed in the **Master Status** field.|
-|`update_cancelled`|The master update is canceled because the cluster was not in a healthy state at the time of the update. Your master remains in this state until your cluster is healthy and you manually update the master. To update the master, use the `ibmcloud oc cluster master update` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_update). If you do not want to update the master to the default `major.minor` version during the update, include the `--version` flag and specify the latest patch version that is available for the `major.minor` version that you want, such as `1.20.7`. To list available versions, run `ibmcloud oc versions`.|
+|`update_cancelled`|The master update is canceled because the cluster was not in a healthy state at the time of the update. Your master remains in this state until your cluster is healthy and you manually update the master. To update the master, use the `ibmcloud oc cluster master update` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_update). If you do not want to update the master to the default `major.minor` version during the update, include the `--version` flag and specify the latest patch version that is available for the `major.minor` version that you want, such as `1.21.5`. To list available versions, run `ibmcloud oc versions`.|
 |`update_failed`|The master update failed. IBM Support is notified and works to resolve the issue. You can continue to monitor the health of the master until the master reaches a normal state. If the master remains in this state for more than 1 day, [open an {{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help). IBM Support might identify other issues in your cluster that you must fix before the master can be updated.|
 {: caption="Master states"}
 {: summary="Table rows read from left to right, with the master state in column one and a description in column two."}
+
 
 ## Disabling remote health reporting
 {: #oc_disable_telemetry_reports}
@@ -203,13 +200,14 @@ OpenShift Container Platform collects anonymized health reports about your clust
 You might want to disable this remote health reporting to comply with privacy laws, organizational standards, or data governance practices. To disable, you must modify the global configuration for the cluster and reload all of the worker nodes.
 
 1. Check that the telemetry reporting pod runs in your cluster.
-    ```
+    ```sh
     oc get pods -n openshift-monitoring
     ```
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     NAME                              READY   STATUS      RESTARTS   AGE
     telemeter-client-7cfd7cb85-lm9dt  3/3     Running     0          4d13h
     ...
@@ -219,19 +217,19 @@ You might want to disable this remote health reporting to comply with privacy la
 2. Follow the {{site.data.keyword.openshiftshort}} instructions to [update the global pull secret in the cluster to disable remote health reporting](https://docs.openshift.com/container-platform/4.7/support/remote_health_monitoring/opting-out-of-remote-health-reporting.html){: external}.
 3. To pick up the global configuration changes, reload all of the worker nodes in your cluster.
     1. Note the **ID** of the worker nodes in your cluster.
-        ```
+        ```sh
         ibmcloud oc worker ls -c <cluster_name_or_ID>
         ```
         {: pre}
 
     2. Reload each worker node. You can reload multiple worker nodes by including multiple `-w` flags, but make sure to leave enough worker nodes running at the same time for your apps to avoid an outage.
-        ```
+        ```sh
         ibmcloud oc worker reload -c <cluster_name_or_ID> -w <workerID_1> -w <workerID_2>
         ```
         {: pre}
 
 4. After the worker nodes are back in a healthy state, verify that the telemetry reporting pod no longer runs in your cluster.
-    ```
+    ```sh
     oc get pods -n openshift-monitoring
     ```
     {: pre}

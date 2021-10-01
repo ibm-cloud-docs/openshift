@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,10 +10,8 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Storing data on {{site.data.keyword.block_storage_is_short}}
@@ -1146,6 +1144,7 @@ You can only expand volumes that are mounted by an app pod.
     {: pre}
 
     Example output
+
     ```sh
     Filesystem      Size  Used Avail Use% Mounted on
     overlay          98G   64G   29G  70% /
@@ -1285,15 +1284,14 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 {: tab-group="{{site.data.keyword.block_storage_is_short}} class"}
 
 
-
 ## Removing persistent storage from a cluster
-{: #cleanup}
+{: #cleanup_block_vpc}
 
 When you set up persistent storage in your cluster, you have three main components: the Kubernetes persistent volume claim (PVC) that requests storage, the Kubernetes persistent volume (PV) that is mounted to a pod and described in the PVC, and the IBM Cloud infrastructure instance, such as classic file or block storage. Depending on how you created your storage, you might need to delete all three components separately. 
 {: shortdesc}
 
 ### Understanding your storage removal options
-{: #storage_delete_options}
+{: #storage_delete_options_block_vpc}
 
 Removing persistent storage from your {{site.data.keyword.cloud_notm}} account varies depending on how you provisioned the storage and what components you already removed.
 {: shortdesc}
@@ -1333,8 +1331,13 @@ When you clean up persistent storage, you delete all the data that is stored in 
 After you remove persistent storage, it can take up to 72 hours for the removal to be fully processed and for the storage to disappear from your {{site.data.keyword.cloud_notm}} console or CLI.
 
 
+
+
+
+
 ### Cleaning up persistent storage
-{: #storage_remove}
+{: #storage_remove_block_vpc}
+
 
 Remove the PVC, PV, and the storage instance from your {{site.data.keyword.cloud_notm}} account to avoid further charges for your persistent storage.
 {: shortdesc}
@@ -1382,47 +1385,48 @@ To clean up persistent data:
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     blockdepl-12345-prz7b:    claim1-block-bronze  
     ```
     {: screen}
 
-2. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
+4. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
 
     ```sh
     oc delete pod <pod_name>
     ```
     {: pre}
 
-3. Verify that the pod is removed.
+5. Verify that the pod is removed.
 
     ```sh
     oc get pods
     ```
     {: pre}
 
-4. Remove the PVC.
+6. Remove the PVC.
 
     ```sh
     oc delete pvc <pvc_name>
     ```
     {: pre}
 
-5. Review the status of your PV. Use the name of the PV that you retrieved earlier as **`VOLUME`**. When you remove the PVC, the PV that is bound to the PVC is released. Depending on how you provisioned your storage, your PV goes into a `Deleting` state if the PV is deleted automatically, or into a `Released` state, if you must manually delete the PV. **Note**: For PVs that are automatically deleted, the status might briefly say `Released` before it is deleted. Rerun the command after a few minutes to see whether the PV is removed.
+7. Review the status of your PV. Use the name of the PV that you retrieved earlier as **`VOLUME`**. When you remove the PVC, the PV that is bound to the PVC is released. Depending on how you provisioned your storage, your PV goes into a `Deleting` state if the PV is deleted automatically, or into a `Released` state, if you must manually delete the PV. **Note**: For PVs that are automatically deleted, the status might briefly say `Released` before it is deleted. Rerun the command after a few minutes to see whether the PV is removed.
 
     ```sh
     oc get pv <pv_name>
     ```
     {: pre}
 
-6. If your PV is not deleted, manually remove the PV.
+8. If your PV is not deleted, manually remove the PV.
 
     ```sh
     oc delete pv <pv_name>
     ```
     {: pre}
 
-7. Verify that the PV is removed.
+9. Verify that the PV is removed.
 
     ```sh
     oc get pv

@@ -2,25 +2,31 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
-keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
+keywords: openshift, registry, pull secret, secrets
 
 subcollection: openshift
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
+
   
-
-
 
 # Setting up an image registry
 {: #registry}
 
+
+
+
+
 {{site.data.keyword.openshiftlong}} clusters include an internal registry to build, deploy, and manage container images locally. For a private registry to manage and control access to images across your enterprise, you can also set up your cluster to use {{site.data.keyword.registrylong}}.
 {: shortdesc}
+
+
+
+<openshift-chunk>
 
 ## Choosing an image registry solution
 {: #openshift_registry_options}
@@ -125,13 +131,13 @@ Keep in mind that this data is not persistent, and if the pod or worker node is 
 
 1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 2. [Update the image registry operator configmap](https://docs.openshift.com/container-platform/4.7/registry/configuring_registry_storage/configuring-registry-storage-baremetal.html#installation-registry-storage-non-production_configuring-registry-storage-baremetal){: external} to set the storage to use the `emptyDir` of the worker node.
-    ```
+    ```sh
     oc patch configs.imageregistry.operator.openshift.io/cluster --type merge --patch '{"spec":{"storage":{"emptyDir":{}}}}'
     ```
     {: pre}
 
 3. If the [image registry operator management state](https://docs.openshift.com/container-platform/4.7/registry/configuring-registry-operator.html#registry-operator-configuration-resource-overview_configuring-registry-operator){: external} is set to `Unmanaged`, such as in {{site.data.keyword.satelliteshort}} clusters, update the management state to `Managed`. Now, the operator updates the internal registry pod.
-    ```
+    ```sh
     oc patch configs.imageregistry.operator.openshift.io/cluster --type merge -p '{"spec":{"managementState":"Managed"}}'
     ```
     {: pre}
@@ -198,7 +204,7 @@ Keep in mind that this data is not persistent, and if the pod or worker node is 
         {: tip}
 
     2. Navigate to the internal registry pod folder that saves to the `emptyDir`. For `<pod_uid>`, use the pod **UID** that you retrieved earlier.
-        ```
+        ```sh
         cd var/lib/kubelet/pods/<pod_uid>/volumes/kubernetes.io~empty-dir/registry-storage/docker/registry/v2/repositories/openshift
         ```
         {: pre}
@@ -302,7 +308,7 @@ To use the internal registry, set up a public route to access the registry. Then
 7. Now that you are logged in, try pushing a sample `hello-world` app to the internal registry.
     1. Pull the `hello-world` image from DockerHub, or build an image on your local machine.
 
-        ```
+        ```sh
         docker pull hello-world
         ```
         {: pre}
@@ -467,8 +473,9 @@ Want to learn more about how builds, image streams, and the internal registry wo
     {: pre}
 
     Example output
+
     ```sh
-    Name:            <imagestream>
+    NAME:            <imagestream>
     Namespace:        default
     Created:        2 days ago
     Labels:            <none>
@@ -601,6 +608,9 @@ By default, your {{site.data.keyword.openshiftlong_notm}} cluster is set up to p
 * [Copying the `all-icr-io` secret](#copy_imagePullSecret) from the `default` project to the project that you want to pull images from.
 * [Creating your own image pull secret](#other_registry_accounts).
 * [Adding the image pull secret](#use_imagePullSecret) to your deployment configuration or to the project service account.
+
+
+</openshift-chunk>
 
 
 
@@ -1310,9 +1320,4 @@ To add private registries, edit the global `pull-secret` in the `openshift-confi
         vi /.docker/config.json
         ```
         {: pre}
-
-
-
-
-
 

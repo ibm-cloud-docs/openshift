@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,10 +10,8 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Moving your environment to {{site.data.keyword.openshiftlong_notm}}
@@ -159,13 +157,13 @@ Now that you have a good estimate of your app size and the worker nodes that you
 2. Review what compute resources your cluster uses by default and calculate the remaining cluster capacity that you can use for your workloads.
     1. With the {{site.data.keyword.cloud_notm}} IAM **Manager** service access role for the cluster in all namespaces: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
     2. Find the CPU and memory usage across all worker nodes. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, you can also click your cluster and review the **Cluster Insights** card.
-        ```
+        ```sh
         oc top nodes
         ```
         {: pre}
 
-        Example output:
-        ```
+        Example output
+        ```sh
         NAME            CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
         10.xxx.xx.xxx   149m         7%     2402Mi          84%       
         10.xxx.xx.xxx   122m         6%     2395Mi          83%       
@@ -180,13 +178,13 @@ Now that you have a good estimate of your app size and the worker nodes that you
 5. Review what compute resources your workloads consume and calculate the remaining cluster capacity to deploy additional apps or scale existing apps.
     1. With at least the {{site.data.keyword.cloud_notm}} IAM **Reader** service access role for the cluster in all namespaces: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
     2. List the pods that run in your cluster.
-        ```
+        ```sh
         oc get pods --all-namespaces
         ```
         {: pre}
 
     3. Get the details of a pod. Note the **limits** and **request** map of the CPU and memory.
-        ```
+        ```sh
         oc get pod -n <project> <pod> -o=jsonpath='{range .spec.containers[*]}  {.name}:{.resources}{"\n"}{end}'
         ```
         {: pre}

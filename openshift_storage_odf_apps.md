@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc, roks
 
@@ -10,8 +10,8 @@ subcollection: openshift
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
+
   
 
 # Deploying an app on OpenShift Data Foundation
@@ -97,7 +97,8 @@ After you install the OpenShift Data Foundation add-on for your {{site.data.keyw
     ```
     {: pre}
 
-    Example output:
+    Example output
+
     ```sh
     NAME                                READY   STATUS    RESTARTS   AGE
     app                                 1/1     Running   0          2m58s
@@ -117,7 +118,7 @@ After you install the OpenShift Data Foundation add-on for your {{site.data.keyw
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```sh
         Tue Mar 2 20:09:19 UTC 2021
         Tue Mar 2 20:09:25 UTC 2021

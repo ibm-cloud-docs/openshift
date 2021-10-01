@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,8 +11,8 @@ content-type: troubleshoot
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
+
   
 
 # Why do I get an error about a cloud object storage bucket when I create a cluster?
@@ -70,7 +70,7 @@ Manually set up your cluster to back up the internal registry to an {{site.data.
     * [Create a standard {{site.data.keyword.cos_full_notm}} service, at least one bucket, and HMAC service credentials](/docs/openshift?topic=openshift-object_storage#create_cos_service).
     * To use an existing instance, make sure that you and the API key that is set for the region have permissions to the instance.
 4. Create a cluster with your {{site.data.keyword.cos_full_notm}} instance ID. For more information, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2).
-    ```
+    ```sh
     ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR --cos-instance COS_CRN --workers 3
     ```
     {: pre}

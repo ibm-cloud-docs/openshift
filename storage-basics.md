@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,10 +10,8 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Understanding Kubernetes storage basics
@@ -151,13 +149,13 @@ If you cannot use one of the provided storage classes, you can create your own c
         - [Classic Block Storage](/docs/containers?topic=containers-block_storage#block_custom_storageclass)
 
 2. Create the customized storage class.
-    ```
+    ```sh
     oc apply -f <local_file_path>
     ```
     {: pre}
 
 3. Verify that the customized storage class is created.
-    ```
+    ```sh
     oc get storageclasses                                                        
     ```
     {: pre}
@@ -169,7 +167,7 @@ If you cannot use one of the provided storage classes, you can create your own c
     - [Portworx](/docs/containers?topic=containers-portworx#add_portworx_storage)
 
 5. Verify that your PVC is created and bound to a persistent volume (PV). This process might take a few minutes to complete.
-    ```
+    ```sh
     oc get pvc
     ```
     {: pre}
@@ -214,25 +212,25 @@ The default storage class is `ibmc-file-gold`. You can change the default storag
 
 1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 2. List available storage classes. Note the name of the storage class that you want to make the default, and the current default storage class that has `(default)` in the **Name**.
-    ```
+    ```sh
     oc get storageclasses
     ```
     {: pre}
 
 3. Create a default storage class, replacing `<storageclass>` with the storage class that you want to use.
-    ```
+    ```sh
     oc patch storageclass <storageclass> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
     ```
     {: pre}
 
 4. Remove the previous default storage class.
-    ```
+    ```sh
     oc patch storageclass <previous_default_storageclass> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
     ```
     {: pre}
 
 5. Verify that the default storage class is set.
-    ```
+    ```sh
     oc get storageclasses | grep "(default)"
     ```
     {: pre}

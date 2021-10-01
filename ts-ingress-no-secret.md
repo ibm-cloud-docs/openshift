@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,10 +11,8 @@ content-type: troubleshoot
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Why does no Ingress secret exist after cluster creation?
@@ -58,7 +56,7 @@ Also, if you used the same cluster name repeatedly, you might have a rate limiti
 1. Check the ID of the user or functional user who sets the API key for this cluster.
 {: tsResolve}
 
-    ```
+    ```sh
     ibmcloud oc api-key info -c <cluster_name_or_ID>
     ```
     {: pre}
@@ -78,7 +76,7 @@ Also, if you used the same cluster name repeatedly, you might have a rate limiti
     3. Look for a {{site.data.keyword.cloudcerts_short}} instance that is named in the format `kube-crtmgr-<cluster_ID>`. To find your cluster's ID, run `ibmcloud oc cluster ls`.
     4. Click the instance's name. The **Your certificates** details page opens.
 6. Verify that the TLS secret for your cluster's Ingress subdomain is created and listed in your cluster.
-    ```
+    ```sh
     ibmcloud oc ingress secret ls -c <cluster_name_or_ID>
     ```
     {: pre}

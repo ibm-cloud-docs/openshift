@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,10 +11,8 @@ content-type: troubleshoot
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Why can't I view or work with my cluster?
@@ -46,7 +44,7 @@ To check your user access permissions:
 {: tsResolve}
 
 1. List all of your user permissions.
-    ```
+    ```sh
     ibmcloud iam user-policies <your_user_name>
     ```
     {: pre}
@@ -113,7 +111,7 @@ Resource
 4. Depending on your access policies, choose one of the following options.
     * If you have access to the cluster and to the resource group that the cluster is in:
         1. Target the resource group. **Note**: You can't work with clusters in other resource groups until you untarget this resource group.
-          ```
+          ```sh
           ibmcloud target -g <resource_group>
           ```
           {: pre}
@@ -126,13 +124,13 @@ Resource
 
     * If you have access to the cluster but not to the resource group that the cluster is in:
         1. Do not target a resource group. If you already targeted a resource group, untarget it:
-        ```
+        ```sh
         ibmcloud target --unset-resource-group
         ```
         {: pre}
 
         2. Target the cluster.
-        ```
+        ```sh
         ibmcloud oc cluster config --cluster <cluster_name_or_ID>
         ```
         {: pre}
@@ -140,7 +138,7 @@ Resource
     * If you do not have access to the cluster:
         1. Ask your account owner to assign an [{{site.data.keyword.cloud_notm}} IAM platform access role](/docs/containers?topic=containers-users#checking-perms) to you for that cluster.
         2. Do not target a resource group. If you already targeted a resource group, untarget it:
-          ```
+          ```sh
           ibmcloud target --unset-resource-group
           ```
           {: pre}

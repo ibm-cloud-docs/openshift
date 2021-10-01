@@ -2,18 +2,15 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, ips, vlans, networking, public gateway
 
 subcollection: openshift
 
 ---
-
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Configuring VPC subnets
@@ -160,6 +157,7 @@ When you create VPC subnets for your clusters, keep in mind the following featur
 
 
 
+
 ## Creating a VPC subnet and attaching a public gateway
 {: #create_vpc_subnet}
 
@@ -191,7 +189,7 @@ Use the {{site.data.keyword.cloud_notm}} CLI to create a VPC subnet for your clu
 Before you begin
 
 1. In your command line, log in to your {{site.data.keyword.cloud_notm}} account and target the {{site.data.keyword.cloud_notm}} region and resource group where you want to create your VPC cluster. For supported regions, see [Creating a VPC in a different region](/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region). The cluster's resource group can differ from the VPC resource group. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted. If you have a federated ID, use the `--sso` flag to log in.
-    ```
+    ```sh
     ibmcloud login -r <region> [-g <resource_group>] [--sso]
     ```
     {: pre}
@@ -201,7 +199,7 @@ Before you begin
 To create a VPC subnet, follow these steps.
 
 1. Get the ID of the VPC where you want to create the subnet.
-    ```
+    ```sh
     ibmcloud oc vpcs
     ```
     {: pre}
@@ -222,7 +220,8 @@ To create a VPC subnet, follow these steps.
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     ID                                     Name                                       VPC                          Zone         Floating IP                  Created                     Status      Resource group
     26426426-6065-4716-a90b-ac7ed7917c63   test-pgw                                   testvpc(36c8f522-.)          us-south-1   169.xx.xxx.xxx(26466378-.)   2019-09-20T16:27:32-05:00   available   -
     2ba2ba2b-fffa-4b0c-bdca-7970f09f9b8a   pgw-73b62bc0-b53a-11e9-9838-f3f4efa02374   team3(ff537d43-.)            us-south-2   169.xx.xxx.xxx(2ba9a280-.)   2019-08-02T10:30:29-05:00   available   -
@@ -237,7 +236,8 @@ To create a VPC subnet, follow these steps.
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     ID               26466378-6065-4716-a90b-ac7ed7917c63
     Name             mycluster-us-south-1-gateway
     Floating IP      169.xx.xx.xxx(26466378-6065-4716-a90b-ac7ed7917c63)
@@ -256,7 +256,8 @@ To create a VPC subnet, follow these steps.
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     ID                  91e946b4-7094-46d0-9223-5c2dea2e5023
     Name                mysubnet1
     IPv4 CIDR           10.240.xx.xx/24
@@ -310,7 +311,7 @@ If you enable classic access when you create your VPC, [classic access default a
 {: #ca_subnet_cli}
 
 1. In your command line, log in to your {{site.data.keyword.cloud_notm}} account and target the {{site.data.keyword.cloud_notm}} region and resource group where you want to create your VPC cluster. For supported regions, see [Creating a VPC in a different region](/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region). The cluster's resource group can differ from the VPC resource group. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted. If you have a federated ID, use the `--sso` flag to log in.
-    ```
+    ```sh
     ibmcloud login -r <region> [-g <resource_group>] [--sso]
     ```
     {: pre}

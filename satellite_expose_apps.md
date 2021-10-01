@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -10,8 +10,8 @@ subcollection: openshift
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
+
   
 
 # Exposing apps in {{site.data.keyword.satelliteshort}} clusters
@@ -41,7 +41,7 @@ Before you begin with routes, review the following considerations.
 To create routes for your apps:
 
 1. Create a Kubernetes `ClusterIP` service for your app deployment. The service provides an internal IP address for the app that the router can send traffic to.
-    ```
+    ```sh
     oc expose deploy <app_deployment_name> --name my-app-svc
     ```
     {: pre}
@@ -50,7 +50,7 @@ To create routes for your apps:
     * **IBM-provided domain**: If you do not need to use a custom domain, a route hostname is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.upi.containers.appdomain.cloud`. Continue to the next step.
     * **Custom domain**: Work with your DNS provider to create a custom domain. Note that if you previously set up a third-party load balancer in front of your router, work with your DNS provider to create a custom domain for the load balancer instead.
         1. Get the IP addresses for the router service in the **EXTERNAL-IP** column.
-        ```
+        ```sh
         oc get svc router-external-default -n openshift-ingress
         ```
         {: pre}
@@ -63,32 +63,32 @@ To create routes for your apps:
 
 3. Set up a route that is based on the [type of TLS termination that your app requires](/docs/openshift?topic=openshift-openshift_routes#route-types). If you do not have a custom domain, do not include the `--hostname` flag so that a route hostname is generated for you. If you registered a wildcard subdomain, specify a unique subdomain in each route that you create. For example, you might specify `--hostname svc1.example.com` in this route, and `--hostname svc2.example.com` in another route.
     * Simple:
-        ```
+        ```sh
         oc expose service <app_service_name> [--hostname <subdomain>]
         ```
         {: pre}
 
     * Passthrough:
-        ```
+        ```sh
         oc create route passthrough --service <app_service_name> [--hostname <subdomain>]
         ```
         {: pre}
 
         <p class="tip">Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.</p>
     * Edge: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [{{site.data.keyword.openshiftshort}} edge route documentation](https://docs.openshift.com/container-platform/4.7/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
-        ```
+        ```sh
         oc create route edge --service <app_service_name> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
         ```
         {: pre}
 
     * Re-encrypt: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [{{site.data.keyword.openshiftshort}} re-encrypt route documentation](https://docs.openshift.com/container-platform/4.7/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
-        ```
+        ```sh
         oc create route reencrypt --service <app_service_name> --dest-ca-cert <destca.crt> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
         ```
         {: pre}
 
 4. Verify that the route for your app service is created.
-    ```
+    ```sh
     oc get routes
     ```
     {: pre}
@@ -108,13 +108,13 @@ For example, if you remove a host that was assigned to your cluster from your lo
 After you create a load balancer in front of your router, you can use the router to create routes for your app. When a request is sent to the route for your app, the request is first received by your load balancer before being forwarded to your router, which then forwards the request to your app.
 
 1. List the details of the default router for your cluster. In the **EXTERNAL-IP** column of the output, get the worker node IP addresses that are registered for your cluster's router. In the **PORT(S)** column of the output, depending on whether you want to create a public or private load balancer, get the node port that the router service currently exposes for public or private network traffic.
-    ```
+    ```sh
     oc get svc router-external-default -n openshift-ingress
     ```
     {: pre}
 
     In the following example output, node port `30783` is exposed for public traffic (80).
-    ```
+    ```sh
     NAME                      TYPE           CLUSTER-IP      EXTERNAL-IP                            PORT(S)                      AGE
     router-external-default   LoadBalancer   172.21.84.172   169.xx.xxx.xxx, 169.xx.xxx.xxx         80:30783/TCP,443:30413/TCP   24h
     ```
@@ -123,25 +123,25 @@ After you create a load balancer in front of your router, you can use the router
 2. Using these IP addresses and the node port, create a layer 4 load balancer that is connected to your hosts' private network. For example, you might deploy a load balancer from your hosts' cloud provider, or deploy an F5 load balancer to your on-premises network. To create public routes, the load balancer must have public network connectivity and must be able to forward TCP and UDP traffic to the port for public traffic that you found in the previous step. To create private routes, the load balancer must be able to forward TCP and UDP traffic to the port for private traffic that you found in the previous step.
 
 3. Get the **Hostname** for your cluster. This subdomain in the format `<cluster_name>-<random_hash>-0000.upi.containers.appdomain.cloud` is registered with your cluster's router.
-    ```
+    ```sh
     ibmcloud oc nlb-dns ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
 4. Add the public IP addresses of your load balancer to your cluster's subdomain. Repeat this command for all public IP addresses that you want to add.
-    ```
+    ```sh
     ibmcloud oc nlb-dns add --ip <public_IP> --cluster <cluster_name_or_ID> --nlb-host <hostname>
     ```
     {: pre}
 
 5. Remove the worker node IP addresses from your cluster's subdomain. Repeat this command for all IP addresses that you retrieved earlier.
-    ```
+    ```sh
     ibmcloud oc nlb-dns rm classic --ip <private_IP> --cluster <cluster_name_or_ID> --nlb-host <hostname>
     ```
     {: pre}
 
 6. Verify that the public IP addresses for your load balancer are now registered with your cluster subdomain.
-    ```
+    ```sh
     ibmcloud oc nlb-dns ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
@@ -157,19 +157,19 @@ If you cannot use the {{site.data.keyword.openshiftshort}} router to expose an a
 {: shortdesc}
 
 1. Create a NodePort for your app. A NodePort in the range of 30000 - 32767 and an internal cluster IP address is assigned to your app.
-    ```
+    ```sh
     oc expose deployment <deployment_name> --type=NodePort --name=<nodeport_svc_name>
     ```
     {: pre}
 
 2. Get the NodePort that was assigned to your app.
-    ```
+    ```sh
     oc describe svc <nodeport_svc_name>
     ```
     {: pre}
 
 3. Get the **Hostname** for your cluster in the format `<cluster_name>-<random_hash>-0000.upi.containers.appdomain.cloud`.
-    ```
+    ```sh
     ibmcloud oc nlb-dns ls --cluster <cluster_name_or_ID>
     ```
     {: pre}

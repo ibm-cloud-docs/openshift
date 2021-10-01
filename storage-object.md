@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-10-01"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -10,10 +10,8 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Storing data on IBM Cloud Object Storage
@@ -75,7 +73,7 @@ To create a secret for your {{site.data.keyword.cos_full_notm}} credentials:
 1. Retrieve the **apikey**, or the **access_key_id** and the **secret_access_key** of your [{{site.data.keyword.cos_full_notm}} service credentials](#service_credentials). Note that the service credentials that you refer to in your secret must be sufficient for the bucket operations that your app needs to perform. For example, if your app reads data from a bucket, the service credentials you refer to in your secret must have **Reader** permissions at minimum.
 
 2. Get the **GUID** of your {{site.data.keyword.cos_full_notm}} service instance.
-    ```
+    ```sh
     ibmcloud resource service-instance <service_name> | grep GUID
     ```
     {: pre}
@@ -83,13 +81,13 @@ To create a secret for your {{site.data.keyword.cos_full_notm}} credentials:
 3. Create a Kubernetes secret to store your service credentials. When you create your secret, all values are automatically encoded to base64. In the following example the secret name is `cos-write-access`.
 
     **Example for using the API key:**
-    ```
+    ```sh
     oc create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=api-key=<api_key> --from-literal=service-instance-id=<service_instance_guid>
     ```
     {: pre}
 
     **Example for HMAC authentication:**
-    ```
+    ```sh
     oc create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=access-key=<access_key_ID> --from-literal=secret-key=<secret_access_key>    
     ```
     {: pre}
@@ -121,13 +119,14 @@ To create a secret for your {{site.data.keyword.cos_full_notm}} credentials:
     </table>
 
 4. Verify that the secret is created in your namespace.
-    ```
+    ```sh
     oc get secret
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
     NAME                  TYPE                                  DATA   AGE
     cos-write-access      ibm/ibmc-s3fs                         2      7d19h
     default-au-icr-io     kubernetes.io/dockerconfigjson        1      55d
@@ -165,16 +164,16 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     {: note}
 
     1. List the current patch version of your worker nodes.
-        ```
+        ```sh
         ibmcloud oc worker ls --cluster <cluster_name_or_ID>
         ```
         {: pre}
 
-        Example output:
-        ```
+        Example output
+        ```sh
         OK
         ID                                                  Public IP        Private IP     Machine Type           State    Status   Zone    Version
-        kube-dal10-crb1a23b456789ac1b20b2nc1e12b345ab-w26   169.xx.xxx.xxx    10.xxx.xx.xxx   b3c.4x16.encrypted     normal   Ready    dal10   1.20.7_1523*
+        kube-dal10-crb1a23b456789ac1b20b2nc1e12b345ab-w26   169.xx.xxx.xxx    10.xxx.xx.xxx   b3c.4x16.encrypted     normal   Ready    dal10   1.21.5_1523*
         ```
         {: screen}
 
@@ -191,26 +190,26 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 
 3. Add the {{site.data.keyword.cloud_notm}} Helm repo to your cluster.
 
-    ```
+    ```sh
     helm repo add ibm-helm https://raw.githubusercontent.com/IBM/charts/master/repo/ibm-helm
     ```
     {: pre}
 
 4. Update the Helm repo to retrieve the latest version of all Helm charts in this repo.
-    ```
+    ```sh
     helm repo update
     ```
     {: pre}
 
 5. If you previously installed the {{site.data.keyword.cos_full_notm}} Helm plug-in, remove the `ibmc` plug-in.
-    ```
+    ```sh
     helm plugin uninstall ibmc
     ```
     {: pre}
 
 6. Download the Helm charts and unpack the charts in your current directory.
 
-    ```
+    ```sh
     helm fetch --untar ibm-helm/ibm-object-storage-plugin
     ```
     {: pre}
@@ -220,13 +219,13 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 
 7. If you use OS X or a Linux distribution, install the {{site.data.keyword.cos_full_notm}} Helm plug-in `ibmc`. The plug-in is used to automatically retrieve your cluster location and to set the API endpoint for your {{site.data.keyword.cos_full_notm}} buckets in your storage classes. If you use Windows as your operating system, continue with the next step.
     1. Install the Helm plug-in.
-    ```
+    ```sh
     helm plugin install ./ibm-object-storage-plugin/helm-ibmc
     ```
     {: pre}
 
     2. Verify that the `ibmc` plug-in is installed successfully.
-    ```
+    ```sh
     helm ibmc --help
     ```
     {: pre}
@@ -234,9 +233,10 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     If the output shows the error `Error: fork/exec /home/iksadmin/.helm/plugins/helm-ibmc/ibmc.sh: permission denied`, run `chmod 755 /Users/<user_name>/Library/helm/plugins/helm-ibmc/ibmc.sh`. Then, rerun `helm ibmc --help`.
     {: tip}
 
-    Example output:
-    ```
-    Helm version: v3.2.4+g0ad800e
+    Example output
+
+    ```sh
+    helm version: v3.2.4+g0ad800e
     Install or upgrade Helm charts in IBM K8S Service(IKS) and IBM Cloud Private(ICP)
     Usage:
         helm ibmc [command]

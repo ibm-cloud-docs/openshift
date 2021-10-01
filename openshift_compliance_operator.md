@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,8 +10,8 @@ subcollection: openshift
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
+
   
 
 
@@ -47,31 +47,31 @@ Before you begin, make sure that you have the **Manager** [service access role](
     4. On the Operator Installation page, confirm the default configurations to install the operator with automatic updates for your cluster version and create an `openshift-compliance` namespace. Then, click **Install**.
     5. Wait for the operator to be ready to use.
 3. Create a scan setting in the `openshift-compliance` namespace by using the configuration file from the [`kube-samples` GitHub repository](https://github.com/IBM-Cloud/kube-samples/tree/master/roks-compliance-operator){: external}. The scan setting defines how often and which objects the compliance operator scans. By default, the scan runs hourly on worker nodes. You can modify the scan settings, such as changing the frequency of the scan by updating the `schedule: "0 */1 * * *"` field.
-    ```
+    ```sh
     oc apply -n openshift-compliance -f https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/roks-compliance-operator/scansetting.yaml
     ```
     {: pre}
 
 4. Create the tailored profile for {{site.data.keyword.openshiftlong_notm}} by using the configuration file from the [`kube-samples` GitHub repository](https://github.com/IBM-Cloud/kube-samples/tree/master/roks-compliance-operator){: external}. The target profile sets and disables certain rules based on their relevance to the managed offering, and explains the rationale for the rules.
-    ```
+    ```sh
     oc apply -n openshift-compliance -f https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/roks-compliance-operator/tailoredprofile.yaml
     ```
     {: pre}
 
 5. To begin the compliance scans, create a binding for the scan setting by using the configuration file from the [`kube-samples` GitHub repository](https://github.com/IBM-Cloud/kube-samples/tree/master/roks-compliance-operator){: external}.
-    ```
+    ```sh
     oc apply -n openshift-compliance -f https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/roks-compliance-operator/scansettingbinding.yaml
     ```
     {: pre}
 
 6. Wait for the scan pods to reach a **Completed** status on each worker node. By default, the scans run hourly.
-    ```
+    ```sh
     oc get pods -n openshift-compliance
     ```
     {: pre}
 
     Example output with completed scan pods
-    ```
+    ```sh
     NAME                                             READY   STATUS      RESTARTS   AGE
     aggregator-pod-roks-cis-node-worker              0/1     Completed   0          53s
     compliance-operator-68965986bb-f4k5m             1/1     Running     0          17m
@@ -85,13 +85,13 @@ Before you begin, make sure that you have the **Manager** [service access role](
     {: screen}
 
 7. Check the compliance scan results.
-    ```
+    ```sh
     oc -n openshift-compliance get compliancecheckresults
     ```
     {: pre}
 
     Example results
-    ```
+    ```sh
     NAME                                                  STATUS   SEVERITY
     roks-cis-node-worker-etcd-unique-ca                   SKIP     medium
     roks-cis-node-worker-file-groupowner-cni-conf         PASS     medium

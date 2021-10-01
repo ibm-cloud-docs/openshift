@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, firewall, ips
 
@@ -10,10 +10,8 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # VPC: Opening required ports and IP addresses in other network firewalls
@@ -36,20 +34,21 @@ If corporate network policies prevent access from your local system to public en
 
 1. Allow access to `cloud.ibm.com` on port 443 in your firewall.
 2. Verify your connection by logging in to {{site.data.keyword.cloud_notm}} through this API endpoint.
-    ```
+    ```sh
     ibmcloud login -a https://cloud.ibm.com/
     ```
     {: pre}
 
 3. Allow access to `containers.cloud.ibm.com` on port 443 in your firewall.
 4. Verify your connection. If access is configured correctly, ships are displayed in the output.
-    ```
+    ```sh
     curl https://containers.cloud.ibm.com/v1/
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
                                      )___(
                               _______/__/_
                      ___     /===========|   ___
@@ -65,7 +64,7 @@ If corporate network policies prevent access from your local system to public en
 5. Allow access to the [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) that you plan to use on port 443 in your firewall. The global registry stores IBM-provided public images, and regional registries store your own private or public images. If your firewall is IP-based, you can see which IP addresses are opened when you allow access to the {{site.data.keyword.registrylong_notm}} regional service endpoints by reviewing [this table](/docs/containers?topic=containers-firewall#firewall_registry).
 
 6. Verify your connection. The following is an example for the US East and US South regional registry. If access is configured correctly, a message of the day is returned in the output.
-    ```
+    ```sh
     curl https://us.icr.io/api/v1/messages
     ```
     {: pre}
@@ -84,20 +83,20 @@ To allow access for a specific cluster:
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted. If you have a federated account, include the `--sso` option.
 
-    ```
+    ```sh
     ibmcloud login [--sso]
     ```
     {: pre}
 
 2. If the cluster is in a resource group other than `default`, target that resource group. To see the resource group that each cluster belongs to, run `ibmcloud oc cluster ls`. **Note**: You must have at least the [**Viewer** role](/docs/containers?topic=containers-users#checking-perms) for the resource group.
-    ```
+    ```sh
     ibmcloud target -g <resource_group_name>
     ```
     {: pre}
 
 4. Get the name of your cluster.
 
-    ```
+    ```sh
     ibmcloud oc cluster ls
     ```
     {: pre}
@@ -106,13 +105,14 @@ To allow access for a specific cluster:
     * If only the **Private Service Endpoint URL** is populated, get this URL. Your authorized cluster users can access the master through this endpoint on the private network.
     * If both the **Public Service Endpoint URL** and **Private Service Endpoint URL** are populated, get both URLs. Your authorized cluster users can access the master through the public endpoint on the public network or the private endpoint on the private network.
 
-    ```
+    ```sh
     ibmcloud oc cluster get --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     ...
     Public Service Endpoint URL:    https://c3.<region>.containers.cloud.ibm.com:30426
     Private Service Endpoint URL:   https://c3-private.<region>.containers.cloud.ibm.com:31140
@@ -124,13 +124,13 @@ To allow access for a specific cluster:
 
 7. Verify your connection.
     * If the public cloud service endpoint is enabled:
-        ```
+        ```sh
         curl --insecure <public_service_endpoint_URL>/version
         ```
         {: pre}
 
         Example command
-        ```
+        ```sh
         curl --insecure https://c3.<region>.containers.cloud.ibm.com:31142/version
         ```
         {: pre}
@@ -152,13 +152,13 @@ To allow access for a specific cluster:
         {: screen}
 
     * If only the private cloud service endpoint is enabled, you must be in your {{site.data.keyword.cloud_notm}} private network or connect to the private network through a VPN connection to verify your connection to the master. **Note**: You must [expose the master endpoint through a private load balancer](/docs/openshift?topic=openshift-access_cluster#access_private_se) so that users can access the master through a VPN or {{site.data.keyword.BluDirectLink}} connection.
-        ```
+        ```sh
         curl --insecure <private_service_endpoint_URL>/version
         ```
         {: pre}
 
         Example command
-        ```
+        ```sh
         curl --insecure https://c3-private.<region>.containers.cloud.ibm.com:31142/version
         ```
         {: pre}
@@ -193,7 +193,7 @@ Before you begin, allow access to run [`ibmcloud` commands](#vpc-firewall_bx) an
 
 2. Get the port for etcd.
 
-    ```
+    ```sh
     oc get cm -n kube-system cluster-info -o yaml | grep etcd_host
     ```
     {: pre}
@@ -226,7 +226,7 @@ If you want to permit egress from your firewall-protected services to your clust
 Before you begin
 1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 2. Install the `infrastructure-service` CLI plug-in. The prefix for running VPC infrastructure commands is `ibmcloud is`.
-    ```
+    ```sh
     ibmcloud plugin install infrastructure-service
     ```
     {: pre}
@@ -238,13 +238,14 @@ To permit ingress from your cluster to another service, modify that service's fi
 {: shortdesc}
 
 1. Get the **Worker Zones** and **VPCs** that your cluster is created in.
-    ```
+    ```sh
     ibmcloud oc cluster get -c <cluster>
     ```
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     ...
     Worker Zones:                   us-south-1, us-south-2, us-south-3
     Ingress Subdomain:              vpc-prod.us-south.containers.appdomain.cloud
@@ -267,7 +268,8 @@ To permit ingress from your cluster to another service, modify that service's fi
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     ID                                     Name                                       Status      Floating IP      VPC              Zone
     5d308ea5-9f32-43b3-aaae-194d5723a3e5   pgw-b9d45630-c053-11e9-b2f8-79328ce05e7e   available   169.XX.XXX.XX    test-vpc         us-south-1
     f8b95e43-a408-4dc8-a489-ed649fc4cfec   pgw-18a3ebb0-b539-11e9-9838-f3f4efa02374   available   169.XX.XXX.XX    prod             us-south-1
@@ -324,7 +326,7 @@ To permit egress to your cluster from another service, modify that service's fir
             {: screen}
 
     * **Individual worker node IP addresses**: If you have a small number of worker nodes that run only one app and do not need to scale, or if you want to add only one worker node, list all the worker nodes in your cluster and note the **Primary IP** addresses. Only these worker nodes are added. If you delete the worker nodes or add worker nodes to the cluster, you must update your firewall accordingly.
-        ```
+        ```sh
         ibmcloud oc worker ls --cluster <cluster_name_or_ID>
         ```
         {: pre}

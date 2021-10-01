@@ -25,11 +25,11 @@ toc:
             label: Use cases
             topics:
               - openshift_uc_intro.md
-              - openshift_uc_finance.md
-              - openshift_uc_health.md
-              - openshift_uc_retail.md
+              - uc-finance.md
+              - uc-health.md
+              - uc-retail.md
               - uc-transport.md
-              - openshift_uc_gov.md
+              - uc-gov.md
         - topicgroup:
             label: Learning paths
             topics:
@@ -118,7 +118,7 @@ toc:
           - edge.md
           - network-policy.md
           - vpc-policy.md
-          - vpc_firewall.md
+          - vpc-firewall.md
       - manage-scc.md
       - openshift_compliance_operator.md
       - topicgroup:
@@ -130,13 +130,12 @@ toc:
                 - subnets.md
                 - network-cluster.md
                 - vpn.md
-                - static-routes.md
           - topicgroup:
               label: VPC clusters
               topics:
-                - vpc_subnets.md
-                - vpc_vpn.md
-                - openshift_static_routes.md
+                - vpc-subnets.md
+                - vpc-vpn.md
+          - static-routes.md
       - topicgroup: 
           label: Logging and monitoring
           topics:
@@ -146,7 +145,7 @@ toc:
       - topicgroup: 
           label: Setting up an image build pipeline
           topics:
-            - openshift_registry.md
+            - registry.md
             - cicd.md
       - topicgroup:
           label: Developing and deploying apps
@@ -171,7 +170,7 @@ toc:
                 label: Exposing apps with load balancers
                 topics: 
                   - lb-qs.md
-                  - vpc_lbaas.md
+                  - vpc-lbaas.md
                   - lb-about.md
                   - lb.md
                   - lb-v2.md
@@ -245,7 +244,7 @@ toc:
           label: Version history
           topics:
             - openshift_versions.md
-            - versions-changelog.md
+            - openshift_versions_changelog.md
             - benchmarks.md
             - openshift_versions_autoscaler.md
             - versions-vpc-block-addon.md
@@ -301,6 +300,7 @@ toc:
                     - ts-cluster-portieris.md
                     - ts-cluster-pending.md
                     - ts-cluster-view-work.md
+                    - ts-kubectl-exec-timeout.md
               - topicgroup:
                   label: Worker nodes
                   topics:
@@ -334,14 +334,14 @@ toc:
                     - ts-app-04-timeout-build.md
                     - ts-app-14-ocr-vpc.md
                     - ts-app-05-scc.md
-                    - ts-app-06-imgpull.md
+                    - ts-app-02-imgpull.md
                     - ts-app-container-start.md
-                    - ts-app-08-pod-pending.md
+                    - ts-app-pod-pending.md
                     - ts-app-09-crashloop.md
                     - ts-app-pod-fail.md
-                    - ts-app-11-svc-not-found.md
-                    - ts-app-12-svc-key.md
-                    - ts-app-15-helm-install.md
+                    - ts-app-svc-not-found.md
+                    - ts-app-svc-key.md
+                    - ts-app-helm-install.md
                     - ts-app-16-oc-debug-pod.md
               - topicgroup:
                   label: Managed add-ons
@@ -435,7 +435,4 @@ toc:
         - release-notes.md
         - limitations.md
         - sitemap.md
-
-
-
 

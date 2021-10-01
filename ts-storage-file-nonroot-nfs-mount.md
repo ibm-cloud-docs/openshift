@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,10 +10,8 @@ subcollection: openshift
 content-type: troubleshoot
 
 ---
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Why does my app fail when a non-root user owns the NFS file storage mount path?
@@ -190,7 +188,8 @@ The init container starts before your app container starts. The init container c
     {: pre}
 
     Example output
-    ```yaml
+
+    ```shyaml
     Name:       mypod-123456789
     Namespace:    default
     ...

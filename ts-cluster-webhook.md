@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,10 +11,8 @@ content-type: troubleshoot
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Why do cluster operations fail due to a broken webhook?
@@ -50,7 +48,7 @@ Identify and restore the resource that causes the broken webhook.
 {: tsResolve}
 
 1. Create a test pod to get an error that identifies the broken webhook. The error message might have the name of the broken webhook.
-    ```
+    ```sh
     oc run webhook-test --generator=run-pod/v1 --image pause:latest
     ```
     {: pre}
@@ -63,36 +61,37 @@ Identify and restore the resource that causes the broken webhook.
 
 2. Get the name of the broken webhook.
     *   If the error message has a broken webhook, replace `trust.hooks.securityenforcement.admission.cloud.ibm.com` with the broken webhook that you previously identified.
-        ```
+        ```sh
         oc get mutatingwebhookconfigurations,validatingwebhookconfigurations -o jsonpath='{.items[?(@.webhooks[*].name=="trust.hooks.securityenforcement.admission.cloud.ibm.com")].metadata.name}{"\n"}'
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         image-admission-config
         ```
         {: pre}
 
     *   If the error does not have a broken webhook, list all the webhooks in your cluster and check their configurations in the following steps.
-        ```
+        ```sh
         oc get mutatingwebhookconfigurations,validatingwebhookconfigurations
         ```
         {: pre}  
             
 3. Review the service and location details of the mutating or validating webhook configuration in the `clientConfig` section in the output of the following command. Replace `image-admission-config` with the name that you previously identified. If the webhook exists outside the cluster, contact the cluster owner to check the webhook status.
-    ```
+    ```sh
     oc get mutatingwebhookconfiguration image-admission-config -o yaml
     ```
     {: pre}
 
-    ```
+    ```sh
     oc get validatingwebhookconfigurations image-admission-config -o yaml
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+
+    ```sh
       clientConfig:
         caBundle: <redacted>
         service:
@@ -104,37 +103,37 @@ Identify and restore the resource that causes the broken webhook.
     {: screen}
 
 4. **Optional**: Back up the webhooks, especially if you do not know how to reinstall the webhook.
-    ```
+    ```sh
     oc get mutatingwebhookconfiguration <name> -o yaml > mutatingwebhook-backup.yaml
     ```
     {: pre}
 
-    ```
+    ```sh
     oc get validatingwebhookconfiguration <name> -o yaml > validatingwebhook-backup.yaml
     ```
     {: pre}
 
 5. Check the status of the related service and pods for the webhook.
     1. Check the service **Type**, **Selector**, and **Endpoint** fields.
-        ```
+        ```sh
         oc describe service -n <namespace> <service_name>
         ```
         {: pre}
 
     2. If the service type is **ClusterIP**, check that the pod for OpenVPN is in a **Running** status so that the webhook can connect securely to the Kubernetes API in the cluster master. If the pod is not healthy, check the pod events, logs, worker node health, and other components to troubleshoot.
-        ```
+        ```sh
         oc describe pods -n kube-system -l app=vpn
         ```
         {: pre}
 
     3. If the service does not have an endpoint, check the health of the backing resources, such as a deployment or pod. If the resource is not healthy, check the pod events, logs, worker node health, and other components to troubleshoot. For more information, see [Debugging app deployments](/docs/containers?topic=containers-debug_apps).
-        ```
+        ```sh
         oc get all -n my-service-namespace -l <key=value>
         ```
         {: pre}
 
     4. If the service does not have any backing resources, or if troubleshooting the pods does not resolve the issue, remove the webhook.
-        ```
+        ```sh
         oc delete mutatingwebhook <name>
         ```
         {: pre}
