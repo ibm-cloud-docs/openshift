@@ -2765,7 +2765,7 @@ subcollection: openshift
 
     * [Changelog for worker node fix pack 4.7.31_1533_openshift, released 27 September 2021](/docs/openshift?topic=openshift-openshift_changelog#4731_1533)
 
-    * [Changelog for master fix pack 4.7.30_1532_openshift, released 27 September 2021](/docs/openshift?topic=openshift-openshift_changelog#4730_1532)
+    * [Changelog for master fix pack 4.7.30_1532_openshift, released 28 September 2021](/docs/openshift?topic=openshift-openshift_changelog#4730_1532)
 
     * [Changelog for worker node fix pack 4.7.29_1531_openshift, released 13 September 2021](/docs/openshift?topic=openshift-openshift_changelog#4729_1531)
 
@@ -2795,7 +2795,7 @@ subcollection: openshift
 
     * [Changelog for worker node fix pack 4.6.45_1557_openshift, released 27 September 2021](/docs/openshift?topic=openshift-openshift_changelog#4645_1557)
 
-    * [Changelog for master fix pack 4.6.44_1556_openshift, released 27 September 2021](/docs/openshift?topic=openshift-openshift_changelog#4644_1556)
+    * [Changelog for master fix pack 4.6.44_1556_openshift, released 28 September 2021](/docs/openshift?topic=openshift-openshift_changelog#4644_1556)
 
     * [Changelog for worker node fix pack 4.6.44_1555_openshift, released 13 September 2021](/docs/openshift?topic=openshift-openshift_changelog#4644_1555)
 
@@ -2851,7 +2851,7 @@ subcollection: openshift
 
     * [Changelog for worker node fix pack 4.5.41_1553_openshift, released 27 September 2021](/docs/openshift?topic=openshift-openshift_changelog#4541_1553)
 
-    * [Changelog for master fix pack 4.5.41_1552_openshift, released 27 September 2021](/docs/openshift?topic=openshift-openshift_changelog#4541_1552)
+    * [Changelog for master fix pack 4.5.41_1552_openshift, released 28 September 2021](/docs/openshift?topic=openshift-openshift_changelog#4541_1552)
 
     * [Changelog for worker node fix pack 4.5.41_1551_openshift, released 13 September 2021](/docs/openshift?topic=openshift-openshift_changelog#4541_1551)
 
@@ -2929,7 +2929,7 @@ subcollection: openshift
 
     * [Changelog for worker node fix pack 3.11.521_1605_openshift, released 27 September 2021](/docs/openshift?topic=openshift-openshift_changelog#4731_1533)
 
-    * [Changelog for master fix pack 3.11.521_1604_openshift, released 27 September 2021](/docs/openshift?topic=openshift-openshift_changelog#changelog-for-master-fix-pack-311521_1604_openshift,-released-27-september-2021)
+    * [Changelog for master fix pack 3.11.521_1604_openshift, released 28 September 2021](/docs/openshift?topic=openshift-openshift_changelog#changelog-for-master-fix-pack-311521_1604_openshift,-released-28-september-2021)
 
     * [Changelog for worker node fix pack 3.11.501_1603_openshift, released 13 September 2021](/docs/openshift?topic=openshift-openshift_changelog#311501_1603)
 

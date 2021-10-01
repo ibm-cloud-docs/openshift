@@ -78,7 +78,7 @@ The following table shows the changes that are included in the worker node fix p
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.29_1531_openshift" caption-side="top"}
 
-### Changelog for master fix pack 4.7.30_1532_openshift, released 27 September 2021
+### Changelog for master fix pack 4.7.30_1532_openshift, released 28 September 2021
 {: #4730_1532}
 
 The following table shows the changes that are included in the master fix pack patch update `4.7.30_1532_openshift`. Master patch updates are applied automatically. 
@@ -335,7 +335,7 @@ The following table shows the changes that are included in the worker node fix p
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.44_1555_openshift" caption-side="top"}
 
-### Changelog for master fix pack 4.6.44_1556_openshift, released 27 September 2021
+### Changelog for master fix pack 4.6.44_1556_openshift, released 28 September 2021
 {: #4644_1556}
 
 The following table shows the changes that are included in the master fix pack patch update `4.6.44_1556_openshift`. Master patch updates are applied automatically. 
@@ -802,7 +802,7 @@ The following table shows the changes that are included in the worker node fix p
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.5.41_1551_openshift" caption-side="top"}
 
-### Changelog for master fix pack 4.5.41_1552_openshift, released 27 September 2021
+### Changelog for master fix pack 4.5.41_1552_openshift, released 28 September 2021
 {: #4541_1552}
 
 The following table shows the changes that are included in the master fix pack patch update `4.5.41_1552_openshift`. Master patch updates are applied automatically. 
@@ -1462,7 +1462,7 @@ The following table shows the changes that are included in the worker node fix p
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.501_1603_openshift" caption-side="top"}
 
-### Changelog for master fix pack 3.11.521_1604_openshift, released 27 September 2021
+### Changelog for master fix pack 3.11.521_1604_openshift, released 28 September 2021
 {: 311521_1604}
 
 The following table shows the changes that are included in the worker node fix pack patch update `3.11.521_1604_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
