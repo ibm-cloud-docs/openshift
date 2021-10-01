@@ -10,9 +10,6 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -359,6 +356,7 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
     {: pre}
 
     Example output
+
     ```yaml
     apiVersion: v1
     data:

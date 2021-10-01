@@ -10,9 +10,6 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -42,6 +39,7 @@ First time setting up a load balancer? Check out [Classic: Setting up basic load
     {: pre}
 
     Example output
+
     ```sh
     NAME        TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)        AGE
     my-lb-svc   LoadBalancer   172.XX.XXX.XX   169.XX.XXX.XX   80:31224/TCP   23s
@@ -88,6 +86,7 @@ For more information, see:
     {: pre}
 
     Example output
+
     ```sh
     NAME        TYPE           CLUSTER-IP      EXTERNAL-IP                            PORT(S)        AGE
     my-lb-svc   LoadBalancer   172.XX.XXX.XX   1234abcd-us-south.lb.appdomain.cloud   80:31224/TCP   23s

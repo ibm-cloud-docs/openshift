@@ -11,9 +11,6 @@ content-type: tutorial
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -69,7 +66,8 @@ After you complete the [prerequisites](#odo-prereqs) install the CLI and select 
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     ✓  Project 'nodejs-test' is ready for use
     ✓  New project created and now using project: nodejs-test
     ```
@@ -138,7 +136,8 @@ You might wonder, how can the microservice be pushed to the cluster without a Do
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     Validation
     ✓  Validating the devfile [710378ns]
 

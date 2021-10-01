@@ -10,9 +10,6 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -334,7 +331,8 @@ Follow these steps to set up encryption for your Portworx volumes.
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     Retrieving service instance <name> in resource group default under account IBM as <user>...
     OK
 
@@ -477,7 +475,7 @@ Follow these steps to set up encryption for your Portworx volumes.
         {: pre}
 
     4. Navigate in to the `pwx` directory.
-        ```
+        ```sh
         cd etc/pwx
         ```
         {: pre}
@@ -1172,7 +1170,8 @@ If a cluster that you want to back up with PX-Backup does not have Portworx Ente
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     stork                3/3   3      3      7d20h
     ```
     {: screen}
@@ -1267,6 +1266,7 @@ When you added storage from your Portworx cluster to your app, you have three ma
     {: pre}
 
     Example output
+
     ```sh
     NAME                  STATUS    VOLUME                                     CAPACITY   ACCESSMODES   STORAGECLASS            AGE
     px-pvc          Bound     pvc-06886b77-102b-11e8-968a-f6612bb731fb   20Gi       RWO           px-high                 78d
@@ -1416,6 +1416,7 @@ The following commands result in data loss.
     {: pre}
 
     Example output
+
     ```sh
     NAME             NAMESPACE      REVISION    UPDATED                                 STATUS       CHART                                  APP VERSION
     <release_name>     <namespace>        1     2020-01-27 09:18:33.046018 -0500 EST    deployed  portworx-1.0.0     default     

@@ -8,10 +8,7 @@ keywords: openshift, roks, rhoks, rhos
 
 subcollection: openshift
 
----
-
-
-{{site.data.keyword.attribute-definition-list}}
+---{{site.data.keyword.attribute-definition-list}}
 
 
 # Healthcare use cases for {{site.data.keyword.cloud_notm}}

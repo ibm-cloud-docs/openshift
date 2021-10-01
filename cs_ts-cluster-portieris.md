@@ -11,9 +11,6 @@ content-type: troubleshoot
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -88,7 +85,8 @@ Identify and remove the conflicting image admission controller.
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     Error from server (NotFound): mutatingwebhookconfigurations.admissionregistration.k8s.io "image-admission-config" not found
     ```
     {: pre}

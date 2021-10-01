@@ -10,9 +10,6 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -1733,7 +1730,8 @@ To clean up persistent data:
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     blockdepl-12345-prz7b:    claim1-block-bronze  
     ```
     {: screen}

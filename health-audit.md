@@ -10,9 +10,6 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -125,6 +122,7 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
     {: pre}
 
     Example output
+
     ```sh
     NAME                                             READY   STATUS             RESTARTS   AGE
     ibmcloud-kube-audit-c75cb84c5-qtzqd              1/1     Running   0          21s
@@ -138,6 +136,7 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
     {: pre}
 
     Example output
+
     ```sh
     NAME                          TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
     ibmcloud-kube-audit-service   ClusterIP   172.21.xxx.xxx   <none>        80/TCP           1m
@@ -157,7 +156,8 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     OK
     Server:            http://172.21.xxx.xxx
     ```
@@ -222,6 +222,7 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
     {: pre}
 
     Example output
+
     ```sh
     NAME                          TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
     ...
@@ -242,7 +243,8 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     OK
     Server:            http://172.21.xxx.xxx
     ```

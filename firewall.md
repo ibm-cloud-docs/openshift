@@ -10,9 +10,6 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -61,7 +58,8 @@ If corporate network policies prevent access from your local system to public en
     {: pre}
 
     Example output
-    ```
+
+    ```sh
                                          )___(
                                   _______/__/_
                          ___     /===========|   ___

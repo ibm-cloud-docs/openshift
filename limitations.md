@@ -2,16 +2,13 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, http2, quota
 
 subcollection: openshift
 
 ---
-
-
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -23,7 +20,6 @@ subcollection: openshift
 {{site.data.keyword.openshiftlong}} and the {{site.data.keyword.openshiftshort}} open source project come with default service settings and limitations to ensure security, convenience, and basic functionality. Some of the limitations you might be able to change where noted.
 {: shortdesc}
 
-<br>
 
 If you anticipate reaching any of the following {{site.data.keyword.openshiftlong_notm}} limitations, [contact IBM Support](/docs/get-support?topic=get-support-using-avatar) and provide the cluster ID, the new quota limit, and the region in your support ticket.
 {: tip}

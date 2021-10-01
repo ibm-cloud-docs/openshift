@@ -10,9 +10,6 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -128,6 +125,7 @@ To create a secret for your {{site.data.keyword.cos_full_notm}} credentials:
     {: pre}
 
     Example output
+
     ```sh
     NAME                  TYPE                                  DATA   AGE
     cos-write-access      ibm/ibmc-s3fs                         2      7d19h
@@ -236,6 +234,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     {: tip}
 
     Example output
+
     ```sh
     helm version: v3.2.4+g0ad800e
     Install or upgrade Helm charts in IBM K8S Service(IKS) and IBM Cloud Private(ICP)

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,9 +10,6 @@ subcollection: openshift
 content-type: troubleshoot
 
 ---
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -105,6 +102,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     {: pre}
 
     Example output
+
     ```sh
     NAME      STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS           AGE
     gid-pvc   Bound    pvc-5e4acab4-9b6f-4278-b53c-22e1d3ffa123   20Gi       RWX            ibmc-file-bronze-gid   2m54s
@@ -160,6 +158,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     {: pre}
 
     Example output
+
     ```sh
     NAME                              READY   STATUS    RESTARTS   AGE
     gid-deployment-5dc86db4c4-5hbts   2/2     Running   0          69s
@@ -184,6 +183,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     {: pre}
 
     Example output
+
     ```sh
     uid=2020 gid=0(root) groups=0(root), 65531
     ```
@@ -196,6 +196,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     {: pre}
 
     Example output
+
     ```sh
     drwxrwxr-x 2 nobody 65531 4096 Dec 11 07:40 .
     drwxr-xr-x 1 root   root  4096 Dec 11 07:30 ..
@@ -217,6 +218,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     {: pre}
 
     Example output
+
     ```sh
     drwxrwxr-x 2 nobody      65531 4096 Dec 11 07:40 .
     drwxr-xr-x 1 root        root  4096 Dec 11 07:30 ..

@@ -11,9 +11,6 @@ content-type: troubleshoot
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -87,7 +84,8 @@ By default, new clusters have image pull secrets that use API keys so that the c
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     ...
     imagePullSecrets:
     - name: all-icr-io
@@ -126,7 +124,8 @@ The following steps assume that the API key stores the credentials of a service 
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     UUID                Name               Created At              Last Updated            Description                                                                                                                                                                                         Locked
     ServiceId-aa11...   <service_ID_name>  2019-02-01T19:01+0000   2019-02-01T19:01+0000   ID for <cluster_name>                                                                                                                                         false
     ServiceId-bb22...   <service_ID_name>  2019-02-01T19:01+0000   2019-02-01T19:01+0000   Service ID for IBM Cloud Container Registry in Kubernetes cluster <cluster_name> namespace <project>                                                                                                                                         false
@@ -140,7 +139,8 @@ The following steps assume that the API key stores the credentials of a service 
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     Policy ID:   a111a111-b22b-333c-d4dd-e555555555e5
     Roles:       Reader
     Resources:
@@ -160,7 +160,7 @@ The following steps assume that the API key stores the credentials of a service 
         {: pre}
 
     2. In the output, copy the base64 encoded value of the `.dockerconfigjson` field.
-        ```
+        ```yaml
         apiVersion: v1
         kind: Secret
         data:

@@ -10,9 +10,6 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -1147,6 +1144,7 @@ You can only expand volumes that are mounted by an app pod.
     {: pre}
 
     Example output
+
     ```sh
     Filesystem      Size  Used Avail Use% Mounted on
     overlay          98G   64G   29G  70% /
@@ -1387,7 +1385,8 @@ To clean up persistent data:
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     blockdepl-12345-prz7b:    claim1-block-bronze  
     ```
     {: screen}

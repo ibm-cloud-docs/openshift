@@ -11,9 +11,6 @@ content-type: troubleshoot
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 

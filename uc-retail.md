@@ -9,9 +9,6 @@ keywords: openshift, roks, rhoks, rhos
 subcollection: openshift
 
 ---
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 

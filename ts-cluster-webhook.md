@@ -11,9 +11,6 @@ content-type: troubleshoot
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -93,7 +90,8 @@ Identify and restore the resource that causes the broken webhook.
     {: pre}
 
     Example output
-    ```
+
+    ```sh
       clientConfig:
         caBundle: <redacted>
         service:

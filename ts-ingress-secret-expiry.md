@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,9 +10,6 @@ subcollection: openshift
 content-type: troubleshoot
 
 ---
-
-
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -67,6 +64,7 @@ To resynchronize the expiration dates, you can regenerate the secrets for your I
     {: pre}
 
     Example output
+
     ```sh
     Name                                              Namespace        CRN                                                                                                                                                           Expires On                 Domain                                                                                  Status
     mycluster-35366fb2d3d90fd50548180f69e7d12a-0000   default          crn:v1:bluemix:public:cloudcerts:eu-de:a/6ef045fd2b43266cfe8e6388dd2ec098:4ebc1d51-8a74-4675-8c4c-b2922ceba2d4:certificate:70f08c8a0fc1eed1f147b28443ba6dcd   2020-12-10T18:00:58+0000   mycluster-35366fb2d3d90fd50548180f69e7d12a-0000.eu-de.containers.appdomain.cloud     created

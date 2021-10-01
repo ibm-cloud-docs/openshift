@@ -7,10 +7,7 @@ lastupdated: "2021-10-01"
 keywords: openshift
 subcollection: openshift
 
----
-
-
-{{site.data.keyword.attribute-definition-list}}
+---{{site.data.keyword.attribute-definition-list}}
 
   
 

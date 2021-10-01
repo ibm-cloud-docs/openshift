@@ -10,9 +10,6 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -54,6 +51,7 @@ Looking for instructions for how to update or remove the {{site.data.keyword.clo
     {: pre}
 
     Example output
+
     ```sh
     NAME:   block-volume-attacher
     LAST DEPLOYED: Thu Sep 13 22:48:18 2018
@@ -96,6 +94,7 @@ Looking for instructions for how to update or remove the {{site.data.keyword.clo
     {: pre}
 
     Example output
+
     ```sh
     ibmcloud-block-storage-attacher-z7cv6           1/1       Running            0          19m
     ```
@@ -770,6 +769,7 @@ You can remove storage from your worker node by using the `ibmcloud oc storage a
     {: pre}
 
     Example output
+
     ```sh                                      
     Volume Attachment Instance Reference   Attachment type   Instance ID                                 Instance name                                        Auto delete   Attachment ID                               Attachment name      
                                         data              0727_e18c10d7-7f18-48aa-b5ef-5ed163e54198   kube-bsaucubd07dhl66e4tgg-cluster-default-00000a19   false         0727-3bfe90b0-dc2d-498a-946b-8837a5dad7bc   volume-attachment
@@ -1078,7 +1078,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
             :   The name of the container that you want to deploy to your cluster.
             
             `spec.containers.volumeMounts.mountPath`
-            The absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the root directory in your physical block storage instance. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.
+            :   The absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the root directory in your physical block storage instance. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.
             
             `spec.containers.volumeMounts.name`
             :   The name of the volume to mount to your pod.

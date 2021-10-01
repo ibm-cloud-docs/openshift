@@ -10,9 +10,6 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -131,6 +128,7 @@ To view, manage, and add Calico policies, install and configure the Calico CLI.
     {: pre}
 
     Example output
+
     ```sh
     NAME
     10.176.48.106

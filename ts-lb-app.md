@@ -11,9 +11,6 @@ content-type: troubleshoot
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -52,7 +49,7 @@ Check that you set up a standard cluster that is fully deployed and has at least
 
 3. Check the accuracy of the configuration file for your NLB service.
     * Version 2.0 NLBs:
-        ```
+        ```yaml
         apiVersion: v1
         kind: Service
         metadata:
@@ -77,7 +74,7 @@ Check that you set up a standard cluster that is fully deployed and has at least
         5. Check that you set `externalTrafficPolicy` to `Local`.
 
     * Version 1.0 NLBs:
-        ```
+        ```yaml
         apiVersion: v1
         kind: Service
         metadata:

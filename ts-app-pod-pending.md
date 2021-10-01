@@ -9,10 +9,7 @@ keywords: openshift, roks, rhoks, rhos
 subcollection: openshift
 content-type: troubleshoot
 
----
-
-
-{{site.data.keyword.attribute-definition-list}}
+---{{site.data.keyword.attribute-definition-list}}
 
 
 

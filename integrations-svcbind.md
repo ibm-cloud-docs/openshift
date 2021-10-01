@@ -10,9 +10,6 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -151,6 +148,7 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
     When the creation of the service credentials is successful, a Kubernetes secret with the name `binding-<service_instance_name>` is created.  
 
     Example output
+
     ```sh
     ibmcloud oc cluster service bind --cluster mycluster --namespace myproject --service cleardb
     Binding service instance to namespace...
@@ -168,7 +166,7 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
         {: pre}
 
         Example output
-        ```
+        ```yaml
         apiVersion: v1
         data:
         binding: <binding>
@@ -231,6 +229,7 @@ When you mount the secret as a volume to your pod, a file that is named `binding
     {: pre}
 
     Example output
+
     ```sh
     NAME                              TYPE            DATA      AGE
     binding-<service_instance_name>   Opaque          1         3m
@@ -323,7 +322,7 @@ When you mount the secret as a volume to your pod, a file that is named `binding
         {: pre}
 
     2. Navigate to your volume mount path that you defined earlier and list the files in your volume mount path.
-        ```
+        ```sh
         cd <volume_mountpath> && ls
         ```
         {: pre}
@@ -363,6 +362,7 @@ You can add the service credentials and other key value pairs from your Kubernet
     {: pre}
 
     Example output
+
     ```sh
     NAME                              TYPE            DATA      AGE
     binding-<service_instance_name>   Opaque          1         3m
@@ -376,7 +376,8 @@ You can add the service credentials and other key value pairs from your Kubernet
     {: pre}
 
     Example output
-    ```
+
+    ```yaml
     apiVersion: v1
     data:
       binding: <binding>
@@ -527,7 +528,8 @@ If you do not want to use an {{site.data.keyword.cloud_notm}} service that you b
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     OK
     Service   Instance GUID                          Key                                                                  Namespace   
     myservice 12345ab1-1234-1abc-a12b-12abc12a12ab   kube-a1a12abcd12a123abc1a12ab1a1234ab7.abcdefg0p1abcd123lgg.default   default  
@@ -541,7 +543,8 @@ If you do not want to use an {{site.data.keyword.cloud_notm}} service that you b
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     binding-myservice   Opaque     1      3d23h
     ```
     {: screen}

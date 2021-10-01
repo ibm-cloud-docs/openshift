@@ -11,9 +11,6 @@ content-type: troubleshoot
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -41,7 +38,8 @@ If you previously installed the debug tool by using Helm, first uninstall the `i
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     <helm_chart_name> 1 Thu Sep 13 16:41:44 2019 DEPLOYED ibmcloud-iks-debug-1.0.0 default
     ```
     {: screen}

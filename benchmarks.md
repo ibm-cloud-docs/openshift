@@ -10,9 +10,6 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -110,6 +107,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
     {: pre}
 
     Example output
+
     ```sh
     NAME                    READY   STATUS      RESTARTS   AGE
     kube-bench-node-hlvhc   0/1     Completed   0          23s
@@ -123,7 +121,8 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     == Summary ==
     20 checks PASS
     2 checks FAIL

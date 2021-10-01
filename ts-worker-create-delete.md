@@ -11,9 +11,6 @@ content-type: troubleshoot
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -194,7 +191,6 @@ Consider the following example scenario to understand how clusters might become 
 6. You follow the resolution steps in the following section, but do not set your infrastructure credentials back to your team account. You can delete `Cluster1`, but now `Cluster2` is orphaned.
 7. You change your infrastructure credentials back to the team account that created `Cluster2`. Now, you no longer have an orphaned cluster!
 
-<br>
 
 
 
@@ -349,7 +345,8 @@ The {{site.data.keyword.cloud_notm}} account owner or an account administrator m
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     Infrastructure credentials for user name user@email.com set for resource group default.
     ```
     {: screen}

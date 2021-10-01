@@ -10,9 +10,6 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -832,7 +829,8 @@ Before you can start to mount your existing storage to an app, you must retrieve
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     id         username            datacenter   storage_type              capacity_gb   bytes_used   ip_addr         lunId   active_transactions
     38642141   IBM02SEL1543159-1   dal10        endurance_block_storage   20            -            169.xx.xxx.xxx   170     0
     ```
@@ -846,6 +844,7 @@ Before you can start to mount your existing storage to an app, you must retrieve
     {: pre}
 
     Example output
+
     ```sh
     Name                       Value   
     ID                         111111111   
@@ -1983,7 +1982,8 @@ To clean up persistent data:
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     blockdepl-12345-prz7b:    claim1-block-bronze  
     ```
     {: screen}

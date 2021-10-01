@@ -2,16 +2,13 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, oc, ibmcloud oc
 
 subcollection: openshift
 
 ---
-
-
-
 
 {{site.data.keyword.attribute-definition-list}}
 

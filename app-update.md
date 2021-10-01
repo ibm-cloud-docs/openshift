@@ -10,9 +10,6 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -238,6 +235,7 @@ Before you begin, you need two clusters and the **Manager** [service access role
     {: pre}
 
     Example output
+
     ```sh
     NAME                                   READY   STATUS             RESTARTS   AGE
     pod/java-web-6955bdbcdf-l756b          1/1     Running            0          59d
@@ -268,7 +266,8 @@ Before you begin, you need two clusters and the **Manager** [service access role
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     pod/java-web-6955bdbcdf-l756b created
     service/java-web created
     deployment.apps/java-web created

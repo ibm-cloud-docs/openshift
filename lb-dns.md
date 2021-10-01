@@ -10,9 +10,6 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -84,6 +81,7 @@ To create a subdomain for one or more NLB IP addresses:
     {: pre}
 
     Example output
+
     ```sh
     Hostname                                                                                IP(s)              Health Monitor   SSL Cert Status           SSL Cert Secret Name
     mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud     ["168.2.4.5"]      None             created                   <certificate>
@@ -136,6 +134,7 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
     {: pre}
 
     Example output
+
     ```sh
     Hostname                                                                                   Status         Type    Port   Path
     mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud        Unconfigured   N/A     0      N/A
@@ -236,7 +235,8 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     Created On:         2019-04-24 09:01:59.781392 +0000 UTC
     Modified On:        2020-02-26 15:39:05.273217 +0000 UTC
     Type:               https
@@ -267,6 +267,7 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
     {: pre}
 
     Example output
+
     ```sh
     Hostname                                                                                Status      Type    Port   Path
     mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud     Healthy     https   443    /alive

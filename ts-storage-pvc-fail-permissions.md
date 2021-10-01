@@ -10,9 +10,6 @@ subcollection: openshift
 content-type: troubleshoot
 
 ---
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -47,6 +44,7 @@ The IAM API key or the IBM Cloud infrastructure API key that is stored in the `s
     {: pre}
 
     Example output
+
     ```sh
     [Bluemix]
     iam_url = "https://iam.bluemix.net"

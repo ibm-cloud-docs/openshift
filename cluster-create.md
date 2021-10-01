@@ -10,9 +10,6 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -215,7 +212,6 @@ The following image walks you through choosing the setup that you want for your 
 * Ensure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level). Keep in mind that you need a cluster with a minimum of 2 worker nodes of the `4x16` flavor so that default {{site.data.keyword.openshiftshort}} components can deploy.
 * Install the {{site.data.keyword.cloud_notm}} CLI and the [{{site.data.keyword.openshiftlong_notm}} plug-in](/docs/openshift?topic=openshift-openshift-cli).
 
-<br>
 
 **To create a classic cluster from the CLI**:
 
@@ -262,7 +258,8 @@ The following image walks you through choosing the setup that you want for your 
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     ID        Name   Number   Type      Router
     1519999   vlan   1355     private   bcr02a.dal10
     1519898   vlan   1357     private   bcr02a.dal10
@@ -479,7 +476,6 @@ Your VPC cluster is created with both a public and a private cloud service endpo
 * Install the {{site.data.keyword.cloud_notm}} CLI and the [{{site.data.keyword.openshiftlong_notm}} plug-in](/docs/containers?topic=containers-cs_cli_install#cs_cli_install).
 * Install the [VPC CLI plug-in](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#cli-ref-prereqs).
 
-<br>
 
 **To create a VPC cluster from the CLI**:
 

@@ -11,9 +11,6 @@ content-type: troubleshoot
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -135,7 +132,7 @@ Update the Helm chart values to reflect the worker node changes.
     * If the VPN connection is initiated by the on-prem gateway (`ipsec.auto` is set to `auto`), start the VPN on the cluster, and then start the VPN on the on-prem gateway.
 
 8. Set the `STRONGSWAN_POD` environment variable.
-    ```
+    ```sh
     export STRONGSWAN_POD=$(oc get pod -l app=strongswan,release=<release_name> -o jsonpath='{ .items[0].metadata.name }')
     ```
     {: pre}

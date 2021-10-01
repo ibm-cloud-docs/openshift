@@ -10,9 +10,6 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -139,7 +136,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     * In `spec.template.spec.containers`, add `securityContext: privileged: true`.
 
     Example
-    ```
+    ```yaml
     apiVersion: apps/v1
     kind: Deployment
     metadata:
