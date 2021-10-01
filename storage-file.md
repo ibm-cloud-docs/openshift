@@ -1736,42 +1736,42 @@ To clean up persistent data:
     ```
     {: screen}
 
-2. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
+4. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
 
     ```sh
     oc delete pod <pod_name>
     ```
     {: pre}
 
-3. Verify that the pod is removed.
+5. Verify that the pod is removed.
 
     ```sh
     oc get pods
     ```
     {: pre}
 
-4. Remove the PVC.
+6. Remove the PVC.
 
     ```sh
     oc delete pvc <pvc_name>
     ```
     {: pre}
 
-5. Review the status of your PV. Use the name of the PV that you retrieved earlier as **`VOLUME`**. When you remove the PVC, the PV that is bound to the PVC is released. Depending on how you provisioned your storage, your PV goes into a `Deleting` state if the PV is deleted automatically, or into a `Released` state, if you must manually delete the PV. **Note**: For PVs that are automatically deleted, the status might briefly say `Released` before it is deleted. Rerun the command after a few minutes to see whether the PV is removed.
+7. Review the status of your PV. Use the name of the PV that you retrieved earlier as **`VOLUME`**. When you remove the PVC, the PV that is bound to the PVC is released. Depending on how you provisioned your storage, your PV goes into a `Deleting` state if the PV is deleted automatically, or into a `Released` state, if you must manually delete the PV. **Note**: For PVs that are automatically deleted, the status might briefly say `Released` before it is deleted. Rerun the command after a few minutes to see whether the PV is removed.
 
     ```sh
     oc get pv <pv_name>
     ```
     {: pre}
 
-6. If your PV is not deleted, manually remove the PV.
+8. If your PV is not deleted, manually remove the PV.
 
     ```sh
     oc delete pv <pv_name>
     ```
     {: pre}
 
-7. Verify that the PV is removed.
+9. Verify that the PV is removed.
 
     ```sh
     oc get pv

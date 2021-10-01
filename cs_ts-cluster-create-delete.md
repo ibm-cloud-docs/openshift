@@ -37,7 +37,7 @@ Review the error messages in the following sections to troubleshoot infrastructu
 You cannot manage worker nodes for your cluster, and you receive an error message similar to one of the following.
 {: tsSymptoms}
 
-```
+```sh
 We were unable to connect to your IBM Cloud infrastructure account.
 Creating a standard cluster requires that you have either a
 Pay-As-You-Go account that is linked to an IBM Cloud infrastructure
@@ -46,33 +46,33 @@ CLI to set your {{site.data.keyword.cloud_notm}} Infrastructure API keys.
 ```
 {: screen}
 
-```
+```sh
 'Item' must be ordered with permission.
 ```
 {: screen}
 
-```
+```sh
 The worker node instance '<ID>' cannot be found. Review '<provider>' infrastructure user permissions.
 ```
 {: screen}
 
-```
+```sh
 The worker node instance cannot be found. Review '<provider>' infrastructure user permissions.
 ```
 {: screen}
 
-```
+```sh
 The worker node instance cannot be identified. Review '<provider>' infrastructure user permissions.
 ```
 {: screen}
 
-```
+```sh
 The IAM token exchange request failed with the message: <message>
 IAM token exchange request failed: <message>
 ```
 {: screen}
 
-```
+```sh
 The cluster could not be configured with the registry. Make sure that you have the Administrator role for {{site.data.keyword.registrylong_notm}}.
 ```
 {: screen}
@@ -98,7 +98,7 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
         {: pre}
 
         Example output
-        ```
+        ```sh
         Getting information about the API key owner for cluster <cluster_name>...
         OK
         Name                Email
@@ -113,14 +113,14 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
         {: pre}
 
         **Example output if credentials are set to use a different classic account**. In this case, the user's infrastructure credentials are used for the region and resource group that you targeted, even if a different user's credentials are stored in the API key that you retrieved in the previous step.
-        ```
+        ```sh
         OK
         Infrastructure credentials for user name <1234567_name@email.com> set for resource group <resource_group_name>.
         ```
         {: screen}
 
         **Example output if credentials are not set to use a different classic account**. In this case, the API key owner that you retrieved in the previous step has the infrastructure credentials that are used for the region and resource group.
-        ```
+        ```sh
         FAILED
         No credentials set for resource group <resource_group_name>.: The user credentials could not be found. (E0051)
         ```
@@ -152,7 +152,7 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
         {: pre}
 
         Example output if the worker node removal is successful. The `worker get` operation fails because the worker node is deleted. The infrastructure permissions are correctly set up.
-        ```
+        ```sh
         FAILED
         The specified worker node could not be found. (E0011)
         ```
@@ -204,7 +204,7 @@ Before you begin: Log in to the [{{site.data.keyword.openshiftshort}} clusters c
     {: pre}
 
     If you see a message similar to the following, then the account uses the default, linked infrastructure account.
-    ```
+    ```sh
     No credentials set for resource group <resource group>.: The user credentials could not be found.
     ```
     {: screen}
@@ -238,12 +238,12 @@ Before you begin: Log in to the [{{site.data.keyword.openshiftshort}} clusters c
 You cannot manage worker nodes for your cluster, and you receive an error message similar to one of the following.
 {: tsSymptoms}
 
-```
+```sh
 Worker deploy failed due to network communications failing to master or registry endpoints. Please verify your network setup is allowing traffic from this subnet then attempt a worker replace on this worker
 ```
 {: screen}
 
-```
+```sh
 Pending endpoint gateway creation
 ```
 {: screen}
@@ -300,12 +300,12 @@ Re-establish the VPE connection between your worker nodes and Kubernetes master.
 You cannot manage worker nodes for your cluster, and you receive an error message similar to one of the following.
 {: tsSymptoms}
 
-```
+```sh
 Unable to connect to the IBM Cloud account. Ensure that you have a paid account.
 ```
 {: screen}
 
-```
+```sh
 Cannot authenticate the infrastructure user: Time-based One Time Password authentication is required to log in with this user.
 ```
 {: screen}

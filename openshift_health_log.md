@@ -102,7 +102,7 @@ To set up a logging configuration for your cluster,
             To use a different ingestion key after you created your logging configuration, use the [`ibmcloud ob logging config replace`](/docs/containers?topic=containers-observability_cli#logging_config_replace) command.
             {: tip}
 
-            ```
+            ```sh
             ibmcloud ob logging config create --cluster <cluster_name_or_ID> --instance <Log_Analysis_instance_name_or_ID>
             ```
             {: pre}
@@ -115,7 +115,7 @@ To set up a logging configuration for your cluster,
             {: screen}
 
         2. Verify that the logging configuration was added to your cluster.
-            ```
+            ```sh
             ibmcloud ob logging config list --cluster <cluster_name_or_ID>
             ```
             {: pre}

@@ -145,7 +145,7 @@ toc:
       - topicgroup: 
           label: Setting up an image build pipeline
           topics:
-            - openshift_registry.md
+            - registry.md
             - cicd.md
       - topicgroup:
           label: Developing and deploying apps

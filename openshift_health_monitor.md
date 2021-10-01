@@ -91,26 +91,26 @@ To set up a monitoring configuration for your cluster:
             To use a different service access key after you created the monitoring configuration, use the [`ibmcloud ob monitoring config replace`](/docs/containers?topic=containers-observability_cli#monitoring_config_replace) command.
             {: tip}
 
-            ```
+            ```sh
             ibmcloud ob monitoring config create --cluster <cluster_name_or_ID> --instance <Monitoring_instance_name_or_ID>
             ```
             {: pre}
 
             Example output
-            ```
+            ```sh
             Creating configuration...
             OK
             ```
             {: screen}
 
         2. Verify that the monitoring configuration was added to your cluster.
-            ```
+            ```sh
             ibmcloud ob monitoring config list --cluster <cluster_name_or_ID>
             ```
             {: pre}
 
             Example output
-            ```
+            ```sh
             Listing configurations...
 
             OK
@@ -169,15 +169,11 @@ For more information about cluster and worker states, see:
 Your {{site.data.keyword.openshiftlong_notm}} cluster includes an IBM-managed master with highly available replicas, automatic security patch updates applied for you, and automation in place to recover in case of an incident. You can check the health, status, and state of the cluster master by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 {: shortdesc}
 
-**Master Health**
-
 The **Master Health** reflects the state of master components and notifies you if something needs your attention. The health might be one of the following states.
 - `error`: The master is not operational. IBM is automatically notified and takes action to resolve this issue. You can continue monitoring the health until the master is `normal`. You can also [open an {{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).
 - `normal`: The master is operational and healthy. No action is required.
 - `unavailable`: The master might not be accessible, which means some actions such as resizing a worker pool are temporarily unavailable. IBM is automatically notified and takes action to resolve this issue. You can continue monitoring the health until the master is `normal`.
 - `unsupported`: The master runs an unsupported version of Kubernetes. You must [update your cluster](/docs/containers?topic=containers-update) to return the master to `normal` health.
-
-**Master Status and State**
 
 The **Master Status** provides details of what operation from the master state is in progress. The status includes a timestamp of how long the master has been in the same state, such as `Ready (1 month ago)`. The **Master State** reflects the lifecycle of possible operations that can be performed on the master, such as deploying, updating, and deleting. Each state is described in the following table.
 
@@ -193,6 +189,7 @@ The **Master Status** provides details of what operation from the master state i
 |`update_failed`|The master update failed. IBM Support is notified and works to resolve the issue. You can continue to monitor the health of the master until the master reaches a normal state. If the master remains in this state for more than 1 day, [open an {{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help). IBM Support might identify other issues in your cluster that you must fix before the master can be updated.|
 {: caption="Master states"}
 {: summary="Table rows read from left to right, with the master state in column one and a description in column two."}
+
 
 ## Disabling remote health reporting
 {: #oc_disable_telemetry_reports}

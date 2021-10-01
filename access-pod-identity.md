@@ -35,23 +35,22 @@ In your cluster
 To use {{site.data.keyword.cloud_notm}} IAM identities for pods in your cluster, verify that you meet the prerequisites.
 {: shortdesc}
 
-**Supported infrastructure provider**
+Supported infrastructure providers
 
 - <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC  
 - <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic  
 
 
 
-**Minimum required permissions**
-* **Viewer** [platform](/docs/containers?topic=containers-access_reference#iam_platform) access role and the **Writer** [service](/docs/containers?topic=containers-access_reference#service) access role for the cluster in {{site.data.keyword.cloud_notm}} IAM for **{{site.data.keyword.containershort}}**.
+Minimum required permissions
+- **Viewer** [platform](/docs/containers?topic=containers-access_reference#iam_platform) access role and the **Writer** [service](/docs/containers?topic=containers-access_reference#service) access role for the cluster in {{site.data.keyword.cloud_notm}} IAM for **{{site.data.keyword.containershort}}**.
 * The `iam-identity.profile.create` and `iam-identity.profile.linkToResource` actions for the [IAM identity service](/docs/account?topic=account-iam-service-roles-actions#iam-identity-service).
 
-**Supported version**
+Supported versions
+
 * The cluster must be [created](/docs/containers?topic=containers-clusters) at {{site.data.keyword.openshiftshort}} version 4.7 or later.
 * To use a cluster that was updated to this version from a previous version, [contact support](/docs/containers?topic=containers-get-help#help-support). Title the request `Enable pod identity` and include the cluster ID, version, and region.
 
-**Log in to the cluster** 
-[Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 ## Creating an IAM trusted profile for your cluster in the API
 {: #iam-identity-create-api}
@@ -61,6 +60,8 @@ As an account administrator, create a trusted profile in {{site.data.keyword.clo
 {: shortdesc}
 
 **Before you begin**: Verify that you meet the [prerequisites](#iam-identity-prereqs).
+
+[Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Create an [IAM trusted profile](/docs/account?topic=account-create-trusted-profile) in {{site.data.keyword.cloud_notm}} Identity and Access Management. Note the `uuid` (profile ID) in the output.
 

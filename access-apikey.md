@@ -188,18 +188,19 @@ Lite accounts
 : Lite accounts cannot provision clusters. To create a standard cluster, upgrade your Lite account to an {{site.data.keyword.cloud_notm}} [Pay-As-You-Go](/docs/account?topic=account-accounts#paygo) or [Subscription](/docs/account?topic=account-accounts#subscription-account) account.
 
 Pay-As-You-Go
-: You can create standard clusters. Use an API key to set up infrastructure permissions for your clusters.
-  To use a different classic infrastructure account for classic clusters, [manually set {{site.data.keyword.cloud_notm}} infrastructure credentials for your {{site.data.keyword.cloud_notm}} account](/docs/containers?topic=containers-access-creds#credentials). You cannot set up your {{site.data.keyword.cloud_notm}} account to use the VPC infrastructure of a different account.
-  {: tip}
+:   You can create standard clusters. Use an API key to set up infrastructure permissions for your clusters.
+
+To use a different classic infrastructure account for classic clusters, [manually set {{site.data.keyword.cloud_notm}} infrastructure credentials for your {{site.data.keyword.cloud_notm}} account](/docs/containers?topic=containers-access-creds#credentials). You cannot set up your {{site.data.keyword.cloud_notm}} account to use the VPC infrastructure of a different account.
+{: tip}
 
 Subscription
-: Subscription accounts come with access to the infrastructure portfolio. You can create standard clusters. Use an API key to set up infrastructure permissions for your clusters. 
-  To use a different classic infrastructure account for classic clusters, <a href="/docs/containers?topic=containers-access-creds#credentials">manually set {{site.data.keyword.cloud_notm}} infrastructure credentials for your {{site.data.keyword.cloud_notm}} account</a>. You cannot set up your {{site.data.keyword.cloud_notm}} account to use the VPC infrastructure of a different account.
-  {: tip}
+:   Subscription accounts come with access to the infrastructure portfolio. You can create standard clusters. Use an API key to set up infrastructure permissions for your clusters. 
+
+To use a different classic infrastructure account for classic clusters, [manually set](/docs/containers?topic=containers-access-creds#credentials) {{site.data.keyword.cloud_notm}} infrastructure credentials for your {{site.data.keyword.cloud_notm}} account. You cannot set up your {{site.data.keyword.cloud_notm}} account to use the VPC infrastructure of a different account.
+{: tip}
 
 IBM Cloud infrastructure accounts
-: If you have a IBM Cloud infrastructure without a {{site.data.keyword.cloud_notm}} account, create an {{site.data.keyword.cloud_notm}} [Pay-As-You-Go](/docs/account?topic=account-accounts#paygo) or [Subscription](/docs/account?topic=account-accounts#subscription-account) account. You have two separate IBM Cloud infrastructure accounts and billing.
-  By default, your new {{site.data.keyword.cloud_notm}} account uses the new infrastructure account. To continue using the previous classic infrastructure account, manually set the credentials. You can manually set credentials for only classic clusters, not VPC clusters.
+:   If you have a IBM Cloud infrastructure without a {{site.data.keyword.cloud_notm}} account, create an {{site.data.keyword.cloud_notm}} [Pay-As-You-Go](/docs/account?topic=account-accounts#paygo) or [Subscription](/docs/account?topic=account-accounts#subscription-account) account. You have two separate IBM Cloud infrastructure accounts and billing. By default, your new {{site.data.keyword.cloud_notm}} account uses the new infrastructure account. To continue using the previous classic infrastructure account, manually set the credentials. You can manually set credentials for only classic clusters, not VPC clusters.
 
 
 ## Accessing the infrastructure portfolio with your {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account
@@ -228,13 +229,13 @@ To set up the API key to access the IBM Cloud infrastructure portfolio:
         ```
         {: pre}
 
-    4. Set up the API key that has the user's permissions for the region.
+    3. Set up the API key that has the user's permissions for the region.
         ```sh
         ibmcloud oc api-key reset --region <region>
         ```
         {: pre}    
 
-    5. Verify that the API key is set up.
+    4. Verify that the API key is set up.
         ```sh
         ibmcloud oc api-key info --cluster <cluster_name_or_ID>
         ```
@@ -284,7 +285,7 @@ To set infrastructure account credentials to access the IBM Cloud infrastructure
         {: pre}
 
         Example output
-        ```
+        ```sh
         Infrastructure credentials for user name user@email.com set for resource group default.
         ```
         {: screen}
@@ -366,13 +367,13 @@ To customize classic infrastructure permissions through the CLI:
     {: pre}
 
     Example output if classic infrastructure access is based on an API key.
-    ```
+    ```sh
     ...with infrastructure access set up by linked account API key.
     ```
     {: screen}
 
     Example output if classic infrastructure access is based on manually-set credentials.
-    ```
+    ```sh
     ...with infrastructure access set up by manually-set IaaS credentials.
     ```
     {: screen}

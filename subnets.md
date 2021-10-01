@@ -179,8 +179,8 @@ To create a cluster by using existing subnets:
     {: pre}
 
     In this example output, the subnet ID is `1602829` and the VLAN ID is `2234945`:
-    ```
-    Getting subnet list...
+    ```sh
+    GETting subnet list...
     OK
     ID        Network             Gateway          VLAN ID   Type      Bound Cluster
     1550165   10.xxx.xx.xxx/26    10.xxx.xx.xxx    2234947   private
@@ -440,8 +440,8 @@ To make a subnet available to your cluster,
     {: pre}
 
     In this example output, the subnet ID is `1602829`, which is on the VLAN ID `2234945`.
-    ```
-    Getting subnet list...
+    ```sh
+    GETting subnet list...
     OK
     ID        Network             Gateway          VLAN ID   Type      Bound Cluster
     1550165   10.xxx.xx.xxx/26    10.xxx.xx.xxx    2234947   private

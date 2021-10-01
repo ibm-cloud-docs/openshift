@@ -424,7 +424,8 @@ Create a worker pool in your {{site.data.keyword.satelliteshort}} cluster with h
 
 **To create a worker pool in a {{site.data.keyword.satelliteshort}} cluster**:
 1. List the {{site.data.keyword.satelliteshort}} clusters in your account.
- cluster ls --provider satellite
+    ```sh
+    ibmcloud oc cluster ls --provider satellite
     ```
     {: pre}
 

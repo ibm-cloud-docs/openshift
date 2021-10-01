@@ -63,7 +63,7 @@ Before you begin, verify that you're assigned the **Administrator** platform acc
         1. In the left navigation, click the **Users** page, and then click the name of the user that you want to set permissions for. If the user isn't shown, click **Invite users** to add them to the account.
         2. Click the **Access policies** tab, and then click **Assign access**. Now, the breadcrumbs on the page are **Users / Manage User**.
         3. Optional: Add the user to an access group that has access to {{site.data.keyword.openshiftlong_notm}}.
-   - To assign roles to multiple users in an access group
+    - To assign roles to multiple users in an access group
         1. In the left navigation, click the **Access groups** page.
         2. Click **Create** and give your group a **Name** and **Description**. Click **Create**.
         3. Click **Add users** to add people to your access group. A list of users that have access to your account is shown.
@@ -101,7 +101,7 @@ Before you begin, verify that you're assigned the **Administrator** platform acc
 Grant users access to your {{site.data.keyword.openshiftlong_notm}} clusters by assigning {{site.data.keyword.cloud_notm}} IAM platform access and service access roles with the CLI.
 {: shortdesc}
 
-**Before you begin**
+Before you begin, complete the following steps.
 
 - Verify that you're assigned the `cluster-admin` {{site.data.keyword.cloud_notm}} IAM platform access role for the {{site.data.keyword.cloud_notm}} account in which you're working.
 - Verify that the user is added to the account. If the user is not, invite the user to your account by running `ibmcloud account user-invite <user@email.com>`.
@@ -117,29 +117,29 @@ Grant users access to your {{site.data.keyword.openshiftlong_notm}} clusters by 
 Create an {{site.data.keyword.cloud_notm}} IAM access policy to set permissions for {{site.data.keyword.openshiftlong_notm}} (**`--service-name containers-kubernetes`**). Scope the access policy based on what you want to assign access to with the following options.
 
 User
-: CLI option: N/A
-: You can assign the policy to an individual or group of users. Place this positional argument immediately following the command.
+:   CLI option: N/A
+:   You can assign the policy to an individual or group of users. Place this positional argument immediately following the command.
 
-  - Individual user: Enter the email address of the user.
-  - Access group: Enter the name of the access group of users. You can create an access group with the `ibmcloud iam access-group-create` command. To list available access groups, run `ibmcloud iam access-groups`. To add a user to an access group, run `ibmcloud iam access-group-user-add <access_group_name> <user_email>`.
+- Individual user: Enter the email address of the user.
+- Access group: Enter the name of the access group of users. You can create an access group with the `ibmcloud iam access-group-create` command. To list available access groups, run `ibmcloud iam access-groups`. To add a user to an access group, run `ibmcloud iam access-group-user-add <access_group_name> <user_email>`.
 
 Resource group
-: ClI option: `--resource-group-name`
-: You can grant a policy for a resource group. If you do not specify a resource group or a specific cluster ID, the policy applies to all clusters for all resource groups. To list available resource groups, run `ibmcloud resource groups`.
+:   ClI option: `--resource-group-name`
+:   You can grant a policy for a resource group. If you do not specify a resource group or a specific cluster ID, the policy applies to all clusters for all resource groups. To list available resource groups, run `ibmcloud resource groups`.
 
 Cluster
-: ClI option: `--service-instance`
-: You can limit the policy to a single cluster. To list your cluster IDs, run `ibmcloud oc cluster ls`. Note that if you assign a user the **Administrator** platform access role for only one cluster, you must also assign the user the <strong>Viewer</strong> platform access role for all clusters in the region within the resource group.
+:   ClI option: `--service-instance`
+:   You can limit the policy to a single cluster. To list your cluster IDs, run `ibmcloud oc cluster ls`. Note that if you assign a user the **Administrator** platform access role for only one cluster, you must also assign the user the <strong>Viewer</strong> platform access role for all clusters in the region within the resource group.
 
 Region
-: ClI option: `--region`
-: You can scope the policy to apply to clusters within a particular region. If you do not specify a region or specific cluster ID, the policy applies to all clusters for all regions. To list available regions, review the [previous region](/docs/containers?topic=containers-regions-and-zones#zones-mz) column in the {{site.data.keyword.openshiftlong_notm}} locations table.
+:   ClI option: `--region`
+:   You can scope the policy to apply to clusters within a particular region. If you do not specify a region or specific cluster ID, the policy applies to all clusters for all regions. To list available regions, review the [previous region](/docs/containers?topic=containers-regions-and-zones#zones-mz) column in the {{site.data.keyword.openshiftlong_notm}} locations table.
 
 
 
 Role
-: ClI option: `--role`
-: Choose the [platform access role](/docs/containers?topic=containers-access_reference#iam_platform) that you want to assign. Possible values are: `Administrator`, `Operator`, `Editor`, or `Viewer`. 
+:   ClI option: `--role`
+:   Choose the [platform access role](/docs/containers?topic=containers-access_reference#iam_platform) that you want to assign. Possible values are: `Administrator`, `Operator`, `Editor`, or `Viewer`. 
 
 1. Assign the platform access for the user.
 
@@ -148,8 +148,7 @@ Role
         ibmcloud iam user-policy-create user@email.com --resource-group-name default --service-name containers-kubernetes --region us-east --service-instance clusterID-1111aa2b2bb22bb3333c3c4444dd4ee5 --roles Viewer
         ```
         {: pre}
-
-
+        
     *  Assign an individual user **Administrator** platform access to all clusters in a `HR` resource group:
         ```sh
         ibmcloud iam user-policy-create user@email.com --resource-group-name HR --service-name containers-kubernetes [--region <region>] --roles Administrator
@@ -266,7 +265,7 @@ You cannot scope {{site.data.keyword.cloud_notm}} IAM service access roles to an
 
 3. Apply the {{site.data.keyword.cloud_notm}} IAM policy to an individual user.
     * For individual users:
-          ```
+          ```sh
           ibmcloud iam user-policy-create <user@email.com> --file <filepath>/policy.json
           ```
           {: pre}
@@ -496,7 +495,7 @@ Review [the operations that each default RBAC cluster role permits](/docs/contai
 
 If your users in the same cluster role encounter errors similar to the following for the same type of operation, you might want to extend the cluster role to include this operation.
 
-```
+```sh
 Error from server (Forbidden): pods.metrics.k8s.io is forbidden: User "IAM#myname@example.com" cannot list resource "pods" in API group "metrics.k8s.io" in the namespace "mynamespace"
 ```
 {: screen}
@@ -613,13 +612,13 @@ Verify your custom RBAC or synchronized IAM service access to RBAC roles in your
 
 1. Log in to the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
 2. Click the cluster with the RBAC roles that you want to check.
-3. Click the **{{site.data.keyword.openshiftshort}} web console**.
+5. Click the **{{site.data.keyword.openshiftshort}} web console**.
 
     If you have a private network only cluster, you might not be able to open the dashboard unless you are on a VPN. See [Accessing clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#access_private_se) or for {{site.data.keyword.satelliteshort}}, [Accessing {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
     {: note}
 
-4. From the **Administrator** perspective, click **User Management > Users**.
-5. Click the user that you want to check, then click **Role Bindings**.
+6. From the **Administrator** perspective, click **User Management > Users**.
+7. Click the user that you want to check, then click **Role Bindings**.
 
 #### Checking RBAC roles with the CLI
 {: #checking-rbac-cli}
@@ -720,13 +719,13 @@ If you are an administrator for the region and resource group, you might want to
     {: pre}
 
 2. List the users in your classic infrastructure account and note the **id** of the user whose credentials are set manually or by the API key.
-    ```
+    ```sh
     ibmcloud sl user list
     ```
     {: pre}
 
 3. List the current classic infrastructure permissions that the user has.
-    ```
+    ```sh
     ibmcloud sl user permissions <user_id>
     ```
     {: pre}
@@ -826,7 +825,11 @@ If a user in your account is leaving your organization, you must remove permissi
 1. [Check that the user's infrastructure credentials are not used](#removing_check_infra) for any {{site.data.keyword.openshiftlong_notm}} resources.
 2. If you have other service instances in your {{site.data.keyword.cloud_notm}} account that the user might have provisioned, check the documentation for those services for any steps that you must complete before you remove the user from the account.
 3. [Remove the user from the {{site.data.keyword.cloud_notm}} account](/docs/account?topic=account-remove). When you remove a user, the user's assigned {{site.data.keyword.cloud_notm}} IAM platform access roles, Cloud Foundry roles, and IBM Cloud infrastructure roles are automatically removed.
-4. When {{site.data.keyword.cloud_notm}} IAM platform permissions are removed, the user's permissions are also automatically removed from the associated predefined RBAC roles. However, if you created custom RBAC roles or cluster roles, [remove the user from those RBAC role bindings or cluster role bindings](#remove_custom_rbac).<p class="note">The {{site.data.keyword.cloud_notm}} IAM permission removal process is asynchronous and can take some time to complete.</p>
+4. When {{site.data.keyword.cloud_notm}} IAM platform permissions are removed, the user's permissions are also automatically removed from the associated predefined RBAC roles. However, if you created custom RBAC roles or cluster roles, [remove the user from those RBAC role bindings or cluster role bindings](#remove_custom_rbac).
+
+    The {{site.data.keyword.cloud_notm}} IAM permission removal process is asynchronous and can take some time to complete.
+    {: note}
+
 5. Optional: If the user had admin access to your cluster, you can [rotate your cluster's certificate authority (CA) certificates](/docs/containers?topic=containers-security#cert-rotate).
 
 ### Removing specific permissions
@@ -848,7 +851,7 @@ Before you begin, [check that the user's infrastructure credentials are not used
 1. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}. From the menu bar, select **Manage > Access (IAM)**.
 2. Click the **Users** page, and then click the name of the user that you want to remove permissions from.
 3. In the table entry for the user, click the **Actions menu** ![Action menu icon](../icons/action-menu-icon.svg "Action menu icon") **> Remove user**.
-5. When {{site.data.keyword.cloud_notm}} IAM platform permissions are removed, the user's permissions are also automatically removed from the associated predefined RBAC roles. To update the RBAC roles with the changes, run `ibmcloud oc cluster config`. However, if you created [custom RBAC roles or cluster roles](#rbac), you must remove the user from the `.yaml` files for those RBAC role bindings or cluster role bindings. See steps to remove custom RBAC permissions in the next section.
+4. When {{site.data.keyword.cloud_notm}} IAM platform permissions are removed, the user's permissions are also automatically removed from the associated predefined RBAC roles. To update the RBAC roles with the changes, run `ibmcloud oc cluster config`. However, if you created [custom RBAC roles or cluster roles](#rbac), you must remove the user from the `.yaml` files for those RBAC role bindings or cluster role bindings. See steps to remove custom RBAC permissions in the next section.
 
 #### Remove custom RBAC permissions
 {: #remove_custom_rbac}
@@ -882,9 +885,9 @@ To remove all of a user's Cloud Foundry permissions, you can remove the user's o
         5. Click **Save role**.
     * To remove the user's organization role
         1. In the table entry for the organization role, click the actions menu and select **Edit organization role**.
-        3. Delete a role by clicking the close button.
-        4. To remove all organization roles, select **No organization role** in the drop-down list.
-        5. Click **Save role**.
+        2. Delete a role by clicking the close button.
+        3. To remove all organization roles, select **No organization role** in the drop-down list.
+        4. Click **Save role**.
 
 #### Remove classic infrastructure permissions
 {: #remove_infra}
