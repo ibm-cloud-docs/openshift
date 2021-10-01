@@ -102,7 +102,7 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
 
 2. Check the type of service that you created and make note of the service instance **Name**.
     - **Cloud Foundry services:**
-        ```
+        ```sh
         ibmcloud service list
         ```
         {: pre}
@@ -115,7 +115,7 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
         {: screen}
 
     - **{{site.data.keyword.cloud_notm}} IAM-enabled services:**
-        ```
+        ```sh
         ibmcloud resource service-instances
         ```
         {: pre}
@@ -618,13 +618,13 @@ If you do not want to use an {{site.data.keyword.cloud_notm}} service that you b
 
 7. Optional. Remove the {{site.data.keyword.cloud_notm}} service instance.
     - **{{site.data.keyword.cloud_notm}} IAM-enabled services:**
-        ```
+        ```sh
         ibmcloud resource service-instance-delete <service_name>
         ```
         {: pre}
 
     - **Cloud Foundry services:**
-        ```
+        ```sh
         ibmcloud service delete <service_name>
         ```
         {: pre}

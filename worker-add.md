@@ -10,9 +10,6 @@ subcollection: openshift
 
 ---
 
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -97,7 +94,8 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     ...
     VPC ID:        <VPC_ID>
     ...
@@ -156,7 +154,8 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     ID                                                     Primary IP     Flavor   State          Status                                        Zone       Version   
     kube-<ID_string>-<cluster_name>-<pool_name>-00000002   10.xxx.xx.xxx   c2.2x4   provisioning   Infrastructure instance status is 'pending'   us-south-1   -   
     kube-<ID_string>-<cluster_name>-<pool_name>-00000003   10.xxx.xx.xxx   c2.2x4   normal   Ready   us-south-1   1.20.7_1511   
@@ -182,7 +181,8 @@ If you have multiple worker pools in your cluster, add the zone to all of them s
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     ...
     VPC ID:        <VPC_ID>
     Workers:       3
@@ -227,7 +227,8 @@ If you have multiple worker pools in your cluster, add the zone to all of them s
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     Workers:       9
     Worker Zones:  us-south-1, us-south-2, us-south-3
     ```
@@ -262,7 +263,8 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     ...
     Worker Zones: dal10, dal12, dal13
     ```
@@ -311,7 +313,8 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
     {: pre}
 
     Example output
-    ```
+
+    ```sh
     ID                                                 Public IP        Private IP      Machine Type      State    Status  Zone    Version
     kube-dal10-crb20b637238ea471f8d4a8b881aae4962-w7   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          provision_pending   Ready   dal10   1.20.7
     kube-dal10-crb20b637238ea471f8d4a8b881aae4962-w8   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          provision_pending   Ready   dal10   1.20.7
@@ -375,6 +378,7 @@ To add a zone with worker nodes to your worker pool:
     {: pre}
 
     Example output
+
     ```sh
     NAME:                           mycluster
     ID:                             df253b6025d64944ab99ed63bb4567b6
@@ -420,13 +424,12 @@ Create a worker pool in your {{site.data.keyword.satelliteshort}} cluster with h
 
 **To create a worker pool in a {{site.data.keyword.satelliteshort}} cluster**:
 1. List the {{site.data.keyword.satelliteshort}} clusters in your account.
-    ```
-    ibmcloud oc cluster ls --provider satellite
+ cluster ls --provider satellite
     ```
     {: pre}
 
 2. Get the details of the cluster that you want to create the worker pool in. Note the **Worker Zones**.
-    ```
+    ```sh
     ibmcloud oc cluster get -c <cluster_name_or_ID>
     ```
     {: pre}
@@ -439,7 +442,7 @@ Create a worker pool in your {{site.data.keyword.satelliteshort}} cluster with h
     * `--zone`: Select the initial zone in your {{site.data.keyword.satelliteshort}} location to create the worker pool in, that you retrieved from your cluster details. You can add more zones later.
     * `--host-label`: Add labels to match the requested capacity of the worker pool with the available hosts in the {{site.data.keyword.satelliteshort}} location. You can use just the `cpu=number` host label because {{site.data.keyword.satelliteshort}} hosts automatically get this host label. You can also add a custom host label like `env=prod`. **Important**: You cannot update host labels on the worker pool later, so make sure to configure the labels properly. You can change the labels on {{site.data.keyword.satelliteshort}} hosts, if needed.
 
-    ```
+    ```sh
     ibmcloud oc worker-pool create satellite --cluster <cluster_name_or_ID> --name <pool_name> --size-per-zone <number> --zone <satellite_zone> --host-label <cpu=number> --host-label <memory=number> [--host-label <key=value>]
     ```
     {: pre}

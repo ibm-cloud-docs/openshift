@@ -223,7 +223,7 @@ To set up the API key to access the IBM Cloud infrastructure portfolio:
 1. Create an API key for the region and resource group that the cluster is in.
     1. Log in to the command line with the user whose infrastructure permissions you want to use.
     2. Target the resource group where you want to set the API key. If you do not target a resource group, the API key is set for the default resource group.
-        ```
+        ```sh
         ibmcloud target -g <resource_group_name>
         ```
         {: pre}

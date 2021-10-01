@@ -8,7 +8,9 @@ keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
 subcollection: openshift
 
----{{site.data.keyword.attribute-definition-list}}
+---
+
+{{site.data.keyword.attribute-definition-list}}
 
 
 

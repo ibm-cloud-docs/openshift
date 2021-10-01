@@ -8,7 +8,9 @@ keywords: openshift, roks
 
 subcollection: openshift
 
----{{site.data.keyword.attribute-definition-list}}
+---
+
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Setting Kubernetes API priority and fairness

@@ -83,7 +83,7 @@ In addition, you must have the {{site.data.keyword.cloud_notm}} IAM Editor platf
         {: pre}
 
     2. Retrieve the service instance ID.
-        ```
+        ```sh
         ibmcloud service show <service_name> --guid
         ```
         {: pre}

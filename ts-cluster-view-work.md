@@ -124,7 +124,7 @@ Resource
 
     * If you have access to the cluster but not to the resource group that the cluster is in:
         1. Do not target a resource group. If you already targeted a resource group, untarget it:
-        ```
+        ```sh
         ibmcloud target --unset-resource-group
         ```
         {: pre}

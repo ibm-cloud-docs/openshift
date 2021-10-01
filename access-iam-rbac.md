@@ -144,46 +144,46 @@ Role
 1. Assign the platform access for the user.
 
     * Assign an individual user the **Viewer** platform access role to one cluster in the default resource group and US East region:
-        ```
+        ```sh
         ibmcloud iam user-policy-create user@email.com --resource-group-name default --service-name containers-kubernetes --region us-east --service-instance clusterID-1111aa2b2bb22bb3333c3c4444dd4ee5 --roles Viewer
         ```
         {: pre}
 
 
     *  Assign an individual user **Administrator** platform access to all clusters in a `HR` resource group:
-        ```
+        ```sh
         ibmcloud iam user-policy-create user@email.com --resource-group-name HR --service-name containers-kubernetes [--region <region>] --roles Administrator
         ```
         {: pre}
 
     *  Assign an `auditors` group of users the **Viewer** platform access role to all clusters in all resource groups:
-        ```
+        ```sh
         ibmcloud iam access-group-policy-create auditors --service-name containers-kubernetes --roles Viewer
         ```
         {: pre}
 
 2. Assign the users **Viewer** access to the resource group so that they can work with clusters in resource groups other than default. Note that users must have access to the resource group to create clusters. You can find the resource group ID by running `ibmcloud resource group <resource_group_name> --id`.
     * For individual users:
-        ```
+        ```sh
         ibmcloud iam user-policy-create <user@email.com> --resource-type resource-group --resource <resource_group_ID> --roles Viewer
         ```
         {: pre}
 
     * For access groups:
-        ```
+        ```sh
         ibmcloud iam access-group-policy-create <access_group> --resource-type resource-group --resource <resource_group_ID> --roles Viewer
         ```
         {: pre}
 
 3. Verify that the user or access group has the assigned platform access role.
     * For individual users:
-        ```
+        ```sh
         ibmcloud iam user-policies <user@email.com>
         ```
         {: pre}
 
     * For access groups:
-        ```
+        ```sh
         ibmcloud iam access-group-policies <access_group>
         ```
         {: pre}
@@ -201,13 +201,13 @@ You cannot scope {{site.data.keyword.cloud_notm}} IAM service access roles to an
 1. Get the user information for the individual user that you want to assign the service access role to.
 
     1. Get your **Account ID**.
-        ```
+        ```sh
         ibmcloud account show
         ```
         {: pre}
 
     2. For individual users, get the user's **`userID`** and **`ibmUniqueId`**.
-        ```
+        ```sh
         ibmcloud account users --account-id <account_ID> --output JSON
         ```
         {: pre}
@@ -788,7 +788,7 @@ To avoid this issue for future users, consider using a functional ID user for th
     1. [Invite a functional ID user](/docs/account?topic=account-iamuserinv) to your {{site.data.keyword.cloud_notm}} account to use to set the API key infrastructure credentials, instead of a personal user. In case a person leaves the team, the functional ID user remains the API key owner.
     2. [Ensure that the functional ID user who sets the API key has the correct permissions](/docs/containers?topic=containers-access-creds#owner_permissions).
     3. Log in as the functional ID.
-        ```
+        ```sh
         ibmcloud login
         ```
         {: pre}

@@ -7,7 +7,9 @@ lastupdated: "2021-10-01"
 keywords: openshift
 subcollection: openshift
 
----{{site.data.keyword.attribute-definition-list}}
+---
+
+{{site.data.keyword.attribute-definition-list}}
 
   
 
@@ -542,18 +544,6 @@ subcollection: openshift
 * [Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/openshift?topic=openshift-add_workers#satcluster-worker-pools)
 
     * [Creating {{site.data.keyword.satelliteshort}} worker pools with host labels for autoassignment](/docs/openshift?topic=openshift-add_workers#sat-pool-create-labels)
-
-    * [Maintaining {{site.data.keyword.satelliteshort}} worker pools](/docs/openshift?topic=openshift-add_workers#sat-pool-maintenance)
-
-* [Deprecated: Adding stand-alone worker nodes](/docs/openshift?topic=openshift-add_workers#standalone)
-
-* [Installing SGX drivers and platform software on SGX-capable worker nodes](/docs/openshift?topic=openshift-add_workers#install-sgx)
-
-    * [Installing with a script](/docs/openshift?topic=openshift-add_workers#intel-sgx-script)
-
-* [Adding tags to existing clusters](/docs/openshift?topic=openshift-add_workers#cluster_tags)
-
-* [Adding labels to existing worker pools](/docs/openshift?topic=openshift-add_workers#worker_pool_labels)
 
 [Autoscaling clusters](/docs/openshift?topic=openshift-ca#ca)
 
