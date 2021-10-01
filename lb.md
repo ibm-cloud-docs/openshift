@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -122,22 +122,22 @@ To set up an NLB 1.0 service in a multizone cluster:
 
     4. Create the service in your cluster.
 
-        ```
+        ```sh
         oc apply -f myloadbalancer.yaml
         ```
         {: pre}
 
 3. Verify that the NLB service was created successfully. It might take a few minutes for the service to be created and for the app to be available.
 
-    ```
+    ```sh
     oc describe service myloadbalancer
     ```
     {: pre}
 
     In the output, the **LoadBalancer Ingress** IP address is the portable IP address that was assigned to your NLB service:
 
-    ```
-    Name:                   myloadbalancer
+    ```sh
+    NAME:                   myloadbalancer
     Namespace:              default
     Labels:                 <none>
     Selector:               app=liberty
@@ -161,7 +161,7 @@ To set up an NLB 1.0 service in a multizone cluster:
     1. Open your preferred web browser.
     2. Enter the portable public IP address of the NLB and port.
 
-        ```
+        ```sh
         http://169.xx.xxx.xxx:8080
         ```
         {: codeblock}
@@ -265,22 +265,22 @@ To create an NLB 1.0 service in a single-zone cluster:
 
     4. Create the service in your cluster.
 
-        ```
+        ```sh
         oc apply -f myloadbalancer.yaml
         ```
         {: pre}
 
 3. Verify that the NLB service was created successfully. It might take a few minutes for the service to be created and for the app to be available.
 
-    ```
+    ```sh
     oc describe service myloadbalancer
     ```
     {: pre}
 
     Example CLI output:
 
-    ```
-    Name:                   myloadbalancer
+    ```sh
+    NAME:                   myloadbalancer
     Namespace:              default
     Labels:                 <none>
     Selector:               app=liberty
@@ -306,7 +306,7 @@ To create an NLB 1.0 service in a single-zone cluster:
     1. Open your preferred web browser.
     2. Enter the portable public IP address of the NLB and port.
 
-        ```
+        ```sh
         http://169.xx.xxx.xxx:8080
         ```
         {: codeblock}
@@ -387,7 +387,7 @@ When source IP is enabled, schedule app pods on worker nodes that are the same V
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Get the IP address of the NLB service. Look for the IP address in the **LoadBalancer Ingress** field.
-    ```
+    ```sh
     oc describe service <loadbalancer_service_name>
     ```
     {: pre}
@@ -395,12 +395,12 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 2. Retrieve the VLAN ID that your NLB service is connected to.
 
     1. List portable public VLANs for your cluster.
-        ```
+        ```sh
         ibmcloud oc cluster get --cluster <cluster_name_or_ID> --show-resources
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         ...
 
@@ -446,7 +446,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     In the example YAML, the **affinity** section has `publicVLAN` as the `key` and `"2234945"` as the `value`.
 
 4. Apply the updated deployment configuration file.
-    ```
+    ```sh
     oc apply -f with-node-affinity.yaml
     ```
     {: pre}
@@ -454,13 +454,13 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 5. Verify that the app pods deployed to worker nodes connected to the designated VLAN.
 
     1. List the pods in your cluster. Replace `<selector>` with the label that you used for the app.
-        ```
+        ```sh
         oc get pods -o wide app=<selector>
         ```
         {: pre}
 
-        Example output:
-        ```
+        Example output
+        ```sh
         NAME                   READY     STATUS              RESTARTS   AGE       IP               NODE
         cf-py-d7b7d94db-vp8pq  1/1       Running             0          10d       172.30.xxx.xxx   10.176.48.78
         ```
@@ -472,15 +472,15 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
     3. List the details for the worker node.
 
-        ```
+        ```sh
         oc describe node <worker_node_ID>
         ```
         {: pre}
 
-        Example output:
+        Example output
 
-        ```
-        Name:                   10.xxx.xx.xxx
+        ```sh
+        NAME:                   10.xxx.xx.xxx
         Role:
         Labels:                 arch=amd64
 beta.kubernetes.io/arch=amd64

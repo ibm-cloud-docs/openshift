@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -205,7 +205,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
     </tbody>
     </table>
 
-    Example output:
+    Example output
 
     ```
     {
@@ -281,7 +281,7 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
     </tbody>
     </table>
 
-    Example output:
+    Example output
 
     ```
     {

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -139,19 +139,19 @@ By default, certificate authority (CA) certificates are administered to secure a
 To rotate the CA certificates for your cluster:
 
 1. Create a CA for your cluster. Certificates that are signed by this new CA are issued for the cluster master components, and the API server is refreshed.
-    ```
+    ```sh
     ibmcloud oc cluster ca create -c <cluster_name_or_ID>
     ```
     {: pre}
 
 2. Ensure that your cluster's master health is normal, the API server refresh is complete, and any master updates are complete. It might take several minutes for the master API server to refresh.
-    ```
+    ```sh
     ibmcloud oc cluster get --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
 3. Check the status of the CA creation. In the output, note the timestamp in the **Action Completed** field.
-    ```
+    ```sh
     ibmcloud oc cluster ca status -c <cluster_name_or_ID>
     ```
     {: pre}
@@ -165,7 +165,7 @@ To rotate the CA certificates for your cluster:
     {: screen}
 
 4. Download the updated Kubernetes configuration data and certificates in your cluster's `kubeconfig` file.
-    ```
+    ```sh
     ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --network
     ```
     {: pre}
@@ -179,13 +179,13 @@ To rotate the CA certificates for your cluster:
 7. [Reload your classic worker nodes](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload) or [replace your VPC worker nodes](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace) to pick up the certificates that are signed by the new CA.
 
 8. Rotate the old certificates with the new certificates. The old CA certificates in your cluster are removed.
-    ```
+    ```sh
     ibmcloud oc cluster ca rotate -c <cluster_name_or_ID>
     ```
     {: pre}
 
 9. Check the status of the CA certificate rotation.
-    ```
+    ```sh
     ibmcloud oc cluster ca status -c <cluster_name_or_ID>
     ```
     {: pre}

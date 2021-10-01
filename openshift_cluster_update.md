@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, version, upgrade, update
 
@@ -167,20 +167,20 @@ Set up a configmap to perform a rolling update of your classic worker nodes.
 1. Complete the [prerequisite steps](#worker-up-prereqs).
 2. List available worker nodes and note their private IP address.
 
-    ```
+    ```sh
     ibmcloud oc worker ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
 3. View the labels of a worker node. You can find the worker node labels in the **Labels** section of your CLI output. Every label consists of a `NodeSelectorKey` and a `NodeSelectorValue`.
-    ```
+    ```sh
     oc describe node <private_worker_IP>
     ```
     {: pre}
 
-    Example output:
-    ```
-    Name:               10.184.58.3
+    Example output
+    ```sh
+    NAME:               10.184.58.3
     Roles:              <none>
     Labels:             arch=amd64
                     beta.kubernetes.io/arch=amd64
@@ -276,32 +276,32 @@ Set up a configmap to perform a rolling update of your classic worker nodes.
     </table>
 
 5. Create the configuration map in your cluster.
-    ```
+    ```sh
     oc apply -f <filepath/configmap.yaml>
     ```
     {: pre}
 
 6. Verify that the config map is created.
-    ```
+    ```sh
     oc get configmap --namespace kube-system
     ```
     {: pre}
 
 7. Update the worker nodes.
 
-    ```
+    ```sh
     ibmcloud oc worker update --cluster <cluster_name_or_ID> --worker <worker_node1_ID> --worker <worker_node2_ID>
     ```
     {: pre}
 
 8. Optional: Verify the events that are triggered by the config map and any validation errors that occur. The events can be reviewed in the  **Events** section of your CLI output.
-    ```
+    ```sh
     oc describe -n kube-system cm ibm-cluster-update-configuration
     ```
     {: pre}
 
 9. Confirm that the update is complete by reviewing the Kubernetes version of your worker nodes.  
-    ```
+    ```sh
     oc get nodes
     ```
     {: pre}
@@ -387,20 +387,20 @@ Before you update your VPC worker nodes, review the prerequisite steps.
 1. Complete the [prerequisite steps](#vpc_worker_prereqs).
 2. Optional: Add capacity to your cluster by [resizing the worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool). The pods on the worker node can be rescheduled and continue running on the added worker nodes during the update.
 3. List the worker nodes in your cluster and note the **ID** and **Primary IP** of the worker node that you want to update.
-    ```
+    ```sh
     ibmcloud oc worker ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
 4. Replace the worker node to update either the patch version or the `major.minor` version that matches the master version.
     *  To update the worker node to the same `major.minor` version as the master, include the `--update` flag.
-        ```
+        ```sh
         ibmcloud oc worker replace --cluster <cluster_name_or_ID> --worker <worker_node_ID> --update
         ```
         {: pre}
 
     *  To update the worker node to the latest patch version at the same `major.minor` version, do not include the `--update` flag.
-        ```
+        ```sh
         ibmcloud oc worker replace --cluster <cluster_name_or_ID> --worker <worker_node_ID>
         ```
         {: pre}
@@ -469,7 +469,7 @@ To update flavors:
             {: pre}
 
 2. List available flavors in the zone.
-    ```
+    ```sh
     ibmcloud oc flavors --zone <zone>
     ```
     {: pre}
@@ -509,13 +509,13 @@ To update flavors:
             {: pre}
 
     - **Deprecated: For stand-alone worker nodes**:
-        ```
+        ```sh
         ibmcloud oc worker add --cluster <cluster_name> --flavor <flavor> --workers <number_of_worker_nodes> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
         ```
         {: pre}
 
 4. Wait for the worker nodes to be deployed. When the worker node state changes to **Normal**, the deployment is finished.
-    ```
+    ```sh
     ibmcloud oc worker ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
@@ -535,13 +535,13 @@ To update flavors:
             {: pre}
 
     - **Deprecated: For stand-alone worker nodes**:
-        ```
+        ```sh
         ibmcloud oc worker rm --cluster <cluster_name> --worker <worker_node>
         ```
         {: pre}
 
 6. Verify that the worker nodes are removed from your cluster.
-    ```
+    ```sh
     ibmcloud oc worker ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
@@ -595,7 +595,7 @@ You can manage automatic updates of the Fluentd component in the following ways.
 * Disable automatic updates by running the `ibmcloud oc logging autoupdate disable` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_log_autoupdate_disable).
 * If automatic updates are disabled, but you need to change your configuration, you have two options:
     * Turn on automatic updates for your Fluentd pods.
-        ```
+        ```sh
         ibmcloud oc logging autoupdate enable --cluster <cluster_name_or_ID>
         ```
         {: pre}
@@ -603,7 +603,7 @@ You can manage automatic updates of the Fluentd component in the following ways.
     * Force a one-time update when you use a logging command that includes the `--force-update` option. **Note**: Your pods update to the latest version of the Fluentd component, but Fluentd does not update automatically going forward.
         Example command
 
-        ```
+        ```sh
         ibmcloud oc logging config update --cluster <cluster_name_or_ID> --id <log_config_ID> --type <log_type> --force-update
         ```
         {: pre}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, ips, vlans, networking, public gateway
 
@@ -202,7 +202,7 @@ Before you begin
 To create a VPC subnet, follow these steps.
 
 1. Get the ID of the VPC where you want to create the subnet.
-    ```
+    ```sh
     ibmcloud oc vpcs
     ```
     {: pre}

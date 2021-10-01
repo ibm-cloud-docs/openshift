@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -55,12 +55,12 @@ If corporate network policies prevent access from your local system to public en
 3. Allow access to `containers.cloud.ibm.com` on port 443 in your firewall.
 4. Verify your connection. If access is configured correctly, ships are displayed in the output.
 
-    ```
+    ```sh
     curl https://containers.cloud.ibm.com/v1/
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
                                          )___(
                                   _______/__/_
@@ -79,7 +79,7 @@ If corporate network policies prevent access from your local system to public en
 
 6. Verify your connection. The following is an example for the US East and US South regional registry. If access is configured correctly, a message of the day is returned in the output.
 
-    ```
+    ```sh
     curl https://us.icr.io/api/v1/messages
     ```
     {: pre}
@@ -115,7 +115,7 @@ To allow access for a specific cluster:
 
 4. Get the name of your cluster.
 
-    ```
+    ```sh
     ibmcloud oc cluster ls
     ```
     {: pre}
@@ -126,12 +126,12 @@ To allow access for a specific cluster:
     * If only the **Private Service Endpoint URL** is populated, get this URL. Your authorized cluster users can access the master through this endpoint on the private network.
     * If both the **Public Service Endpoint URL** and **Private Service Endpoint URL** are populated, get both URLs. Your authorized cluster users can access the master through the public endpoint on the public network or the private endpoint on the private network.
 
-    ```
+    ```sh
     ibmcloud oc cluster get --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
-    Example output:
+    Example output
 
     ```
     ...
@@ -147,19 +147,19 @@ To allow access for a specific cluster:
 
     * If the public cloud service endpoint is enabled:
 
-        ```
+        ```sh
         curl --insecure <public_service_endpoint_URL>/version
         ```
         {: pre}
 
         Example command:
 
-        ```
+        ```sh
         curl --insecure https://c3.<region>.containers.cloud.ibm.com:31142/version
         ```
         {: pre}
 
-        Example output:
+        Example output
 
         ```
         {
@@ -178,19 +178,19 @@ To allow access for a specific cluster:
 
     * If the private cloud service endpoint is enabled, you must be in your {{site.data.keyword.cloud_notm}} private network or connect to the private network through a VPN connection to verify your connection to the master. **Note**: You must [expose the master endpoint through a private load balancer](/docs/openshift?topic=openshift-access_cluster#access_private_se) so that users can access the master through a VPN or {{site.data.keyword.BluDirectLink}} connection.
 
-        ```
+        ```sh
         curl --insecure <private_service_endpoint_URL>/version
         ```
         {: pre}
 
         Example command:
 
-        ```
+        ```sh
         curl --insecure https://c3-private.<region>.containers.cloud.ibm.com:31142/version
         ```
         {: pre}
 
-        Example output:
+        Example output
 
         ```
         {
@@ -223,7 +223,7 @@ Before you begin, allow access to run [`ibmcloud` commands](#firewall_bx) and [`
 
 2. Get the port for etcd.
 
-    ```
+    ```sh
     oc get cm -n kube-system cluster-info -o yaml | grep etcd_host
     ```
     {: pre}
@@ -347,7 +347,7 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
 
 2. Note the private IP address for each worker node in the cluster.
 
-    ```
+    ```sh
     ibmcloud oc worker ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
@@ -487,7 +487,7 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
             ```
             {: pre}
 
-            Example output:
+            Example output
           
             ```
             ID        identifier       type                 network_space   datacenter   vlan_id   IPs   hardware   virtual_servers
@@ -503,7 +503,7 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
             
     * **Individual worker node IP addresses**: If you have a small number of worker nodes that run only one app and do not need to scale, or if you want to add only one worker node, list all the worker nodes in your cluster and note the **Public IP** addresses. If your worker nodes are connected to a private network only and you want to connect to {{site.data.keyword.cloud_notm}} services by using the private cloud service endpoint, note the **Private IP** addresses instead. Only these worker nodes are added. If you delete the worker nodes or add worker nodes to the cluster, you must update your firewall accordingly.
 
-        ```
+        ```sh
         ibmcloud oc worker ls --cluster <cluster_name_or_ID>
         ```
         {: pre}
@@ -528,12 +528,12 @@ Setting up an IAM allowlist blocks access to the {{site.data.keyword.openshiftsh
 
     1. Check the API key for a region and resource group of the cluster.
 
-        ```
+        ```sh
         ibmcloud oc api-key info --cluster <cluster_name_or_ID>
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         Getting information about the API key owner for cluster <cluster_name>...
         OK
@@ -544,7 +544,7 @@ Setting up an IAM allowlist blocks access to the {{site.data.keyword.openshiftsh
 
     2. Check if the infrastructure account for the region and resource group is manually set to use a different IBM Cloud infrastructure account.
 
-        ```
+        ```sh
         ibmcloud oc credential get --region <us-south>
         ```
         {: pre}
@@ -567,15 +567,15 @@ Setting up an IAM allowlist blocks access to the {{site.data.keyword.openshiftsh
 
 2. Get the CIDRs of the private and public subnets that your worker nodes are attached to.
 
-    ```
+    ```sh
     ibmcloud oc cluster get -c <cluster_name_or_ID> --show-resources
     ```
     {: pre}
 
-    Example output:
+    Example output
 
-    ```
-    Name:                           mycluster
+    ```sh
+    NAME:                           mycluster
     ID:                             df222b2222d64944ab99ed63bb4567b6
     State:                          normal
     Status:                         All Workers

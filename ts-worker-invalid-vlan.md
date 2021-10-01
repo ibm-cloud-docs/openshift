@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -46,7 +46,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 
 1. To get the zones that you need new VLAN IDs for, note the **Location** in the following command output. **Note**: If your cluster is a multizone, you need VLAN IDs for each zone.
 
-    ```
+    ```sh
     ibmcloud oc cluster ls
     ```
     {: pre}
@@ -57,14 +57,14 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 
 4. Note the name of your worker pools.
 
-    ```
+    ```sh
     ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
 5. Use the `zone network-set` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_network_set) to change the worker pool network metadata.
 
-    ```
+    ```sh
     ibmcloud oc zone network-set --zone <zone> --cluster <cluster_name_or_ID> -- worker-pool ls <worker-pool> --private-vlan <private_vlan_ID> --public-vlan <public_vlan_ID>
     ```
     {: pre}
@@ -73,14 +73,14 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 
 7. Rebalance or resize your worker pool to add worker nodes that use the new VLAN IDs. For example:
 
-    ```
+    ```sh
     ibmcloud oc worker-pool resize --cluster <cluster_name_or_ID> --worker-pool <worker_pool> --size-per-zone <number_of_workers_per_zone>
     ```
     {: pre}
 
 8. Verify that your worker nodes are created.
 
-    ```
+    ```sh
     ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <worker_pool>
     ```
     {: pre}

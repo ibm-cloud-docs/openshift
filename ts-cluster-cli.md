@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -62,7 +62,7 @@ Error from server (NotAcceptable): unknown (get nodes)
 ```
 {: screen}
 
-```
+```sh
 invalid object doesn't have additional properties
 ```
 {: screen}
@@ -112,7 +112,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
 1. Check if a cluster and worker node updates are available by viewing your cluster and worker node details in the console or a `cluster ls` or `worker ls` command. If so, [update your cluster and worker nodes to the latest version](/docs/openshift?topic=openshift-update).
 2. Restart the OpenVPN pod by deleting it. Another VPN pod is scheduled. When its **STATUS** is **Running**, try to connect the pod that you previously could not connect to.
-    ```
+    ```sh
     oc delete pod -n kube-system -l app=vpn
     ```
     {: pre}

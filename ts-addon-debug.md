@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -34,7 +34,7 @@ ibmcloud oc cluster addon ls -c <cluster_name_or_ID>
 ```
 {: pre}
 
-Example output:
+Example output
 ```
 Name            Version   Health State   Health Status
 debug-tool      2.0.0     normal         Addon Ready

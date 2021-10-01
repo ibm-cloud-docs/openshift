@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -46,19 +46,19 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 To resize the worker pool, change the number of worker nodes that the worker pool deploys in each zone:
 
 1. Get the name of the worker pool that you want to resize.
-    ```
+    ```sh
     ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
 2. Resize the worker pool by designating the number of worker nodes that you want to deploy in each zone. The minimum value is 2. For more information, see [What is the smallest size cluster that I can make?](/docs/containers?topic=containers-faqs#smallest_cluster).
-    ```
+    ```sh
     ibmcloud oc worker-pool resize --cluster <cluster_name_or_ID> --worker-pool <pool_name>  --size-per-zone <number_of_workers_per_zone>
     ```
     {: pre}
 
 3. Verify that the worker pool is resized.
-    ```
+    ```sh
     ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <pool_name>
     ```
     {: pre}
@@ -91,12 +91,12 @@ To resize the worker pool, change the number of worker nodes that the worker poo
 Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users).
 
 1. Retrieve the **VPC ID** and **Worker Zones** of your cluster and choose the zone where you want to deploy the worker nodes in your worker pool. You can choose any of the existing **Worker Zones** of your cluster, or add one of the [multizone locations](/docs/containers?topic=containers-regions-and-zones#zones-vpc) for the region that your cluster is in. You can list available zones by running `ibmcloud oc zone ls --provider vpc-gen2`.
-    ```
+    ```sh
     ibmcloud oc cluster get --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     ...
     VPC ID:        <VPC_ID>
@@ -106,13 +106,13 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
     {: screen}
 
 2. For each zone, note the ID of VPC subnet that you want to use for the worker pool. If you do not have a VPC subnet in the zone, [create a VPC subnet](/docs/vpc?topic=vpc-creating-a-vpc-using-cli#create-a-subnet-cli). VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/containers?topic=containers-vpc-subnets#vpc_basics_subnets), such as 256.
-    ```
+    ```sh
     ibmcloud oc subnets --zone <zone> --provider vpc-gen2 --vpc-id <VPC_ID>
     ```
     {: pre}
 
 3. For each zone, review the [available flavors for worker nodes](/docs/containers?topic=containers-planning_worker_nodes#vm).
-    ```
+    ```sh
     ibmcloud oc flavors --zone <zone> --provider vpc-gen2
     ```
     {: pre}
@@ -120,42 +120,42 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 4. Optional: To encrypt the local disk of each worker node in the worker pool, get the details of your key management service (KMS) provider.
     1. Complete the steps in [VPC worker nodes](/docs/containers?topic=containers-encryption#worker-encryption-vpc) to create your KMS instance and a service authorization in IAM. 
     2. List available KMS instances and note the **ID**.
-        ```
+        ```sh
         ibmcloud oc kms instance ls
         ```
         {: pre}
 
     3. List the available root keys for the KMS instance that you want to use and note the **ID**.
-        ```
+        ```sh
         ibmcloud oc kms crk ls --instance-id <KMS_instance_ID>
         ```
         {: pre}
 
 4. Create a worker pool. Include the `--label` option to automatically label worker nodes that are in the pool with the label `key=value`. Include the `--vpc-id` option if the worker pool is the first in the cluster.Optionally include the `--kms-instance` and `--crk` flags with the values you previously retrieved. For more options, see the [CLI documentation](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2). Note that the new worker nodes run the same `major.minor` version as the cluster master, but the latest worker node patch of that `major.minor` version.
-    ```
+    ```sh
     ibmcloud oc worker-pool create vpc-gen2 --name <name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_worker_nodes_min_2> [--label <key>=<value>] [--vpc-id] [--kms-instance <KMS_instance_ID> --crk <root_key_ID>]
     ```
     {: pre}
 
 5. Verify that the worker pool is created.
-    ```
+    ```sh
     ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
 6. By default, adding a worker pool creates a pool with no zones. To deploy worker nodes in a zone, you must add the zones that you previously retrieved to the worker pool. If you want to spread your worker nodes across multiple zones, repeat this command for each zone.
-    ```
+    ```sh
     ibmcloud oc zone add vpc-gen2 --zone <zone> --subnet-id <subnet_id> --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name>
     ```
     {: pre}
 
 7. Verify that worker nodes provision in the zone that you added. Your worker nodes are ready when the **State** changes from `provisioning` to `normal`.
-    ```
+    ```sh
     ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <pool_name>
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     ID                                                     Primary IP     Flavor   State          Status                                        Zone       Version   
     kube-<ID_string>-<cluster_name>-<pool_name>-00000002   10.xxx.xx.xxx   c2.2x4   provisioning   Infrastructure instance status is 'pending'   us-south-1   -   
@@ -176,12 +176,12 @@ If you have multiple worker pools in your cluster, add the zone to all of them s
 **Before you begin**: Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users).
 
 1. Get the **Location** of your cluster, and note the existing **Worker Zones** and **VPC ID**.
-    ```
+    ```sh
     ibmcloud oc cluster get --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     ...
     VPC ID:        <VPC_ID>
@@ -193,19 +193,19 @@ If you have multiple worker pools in your cluster, add the zone to all of them s
     {: screen}
 
 2. List available zones for your cluster's location to see what other zones you can add.
-    ```
+    ```sh
     ibmcloud oc zone ls --provider vpc-gen2 | grep <location>
     ```
     {: pre}
 
 3. List available VPC subnets for each zone that you want to add. If you do not have a VPC subnet in the zone, [create a VPC subnet](/docs/vpc?topic=vpc-creating-a-vpc-using-cli#create-a-subnet-cli). VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/containers?topic=containers-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IP addresses that a VPC subnet has later.
-    ```
+    ```sh
     ibmcloud oc subnets --zone <zone> --provider vpc-gen2 --vpc-id <VPC_ID>
     ```
     {: pre}
 
 4. List the worker pools in your cluster and note their names.
-    ```
+    ```sh
     ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
@@ -215,18 +215,18 @@ If you have multiple worker pools in your cluster, add the zone to all of them s
     If you want to use different VPC subnets for different worker pools, repeat this command for each subnet and its corresponding worker pools. Any new worker nodes are added to the VPC subnets that you specify, but the VPC subnets for any existing worker nodes are not changed.
     {: tip}
 
-    ```
+    ```sh
     ibmcloud oc zone add vpc-gen2 --zone <zone> --subnet-id <subnet_id> --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name>
     ```
     {: pre}
 
 6. Verify that the zone is added to your cluster. Look for the added zone in the **Worker Zones** field of the output. Note that the total number of workers in the **Workers** field has increased as new worker nodes are provisioned in the added zone.
-    ```
+    ```sh
     ibmcloud oc cluster get --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     Workers:       9
     Worker Zones:  us-south-1, us-south-2, us-south-3
@@ -256,12 +256,12 @@ If you have multiple worker pools in your cluster, add the zone to all of them s
 Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users).
 
 1. Retrieve the **Worker Zones** of your cluster and choose the zone where you want to deploy the worker nodes in your worker pool. If you have a single zone cluster, you must use the zone that you see in the **Worker Zones** field. For multizone clusters, you can choose any of the existing **Worker Zones** of your cluster, or add one of the [multizone locations](/docs/containers?topic=containers-regions-and-zones#zones-mz) for the region that your cluster is in. You can list available zones by running `ibmcloud oc zone ls`.
-    ```
+    ```sh
     ibmcloud oc cluster get --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     ...
     Worker Zones: dal10, dal12, dal13
@@ -269,14 +269,14 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
     {: screen}
 
 2. For each zone, list available private and public VLANs. Note the private and the public VLAN that you want to use. If you do not have a private or a public VLAN, the VLAN is automatically created for you when you add a zone to your worker pool.
-    ```
+    ```sh
     ibmcloud oc vlan ls --zone <zone>
     ```
     {: pre}
 
 3. For each zone, review the [available flavors for worker nodes](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes).
 
-    ```
+    ```sh
     ibmcloud oc flavors --zone <zone>
     ```
     {: pre}
@@ -287,30 +287,30 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
     * If you provision a bare metal or dedicated VM worker pool, specify `--hardware dedicated`.
     * The new worker nodes run the same `major.minor` version as the cluster master, but the latest worker node patch of that `major.minor` version.
 
-    ```
+    ```sh
     ibmcloud oc worker-pool create classic --name <pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone_min_2> [--label key=value]
     ```
     {: pre}
 
 5. Verify that the worker pool is created.
-    ```
+    ```sh
     ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
 6. By default, adding a worker pool creates a pool with no zones. To deploy worker nodes in a zone, you must add the zones that you previously retrieved to the worker pool. If you want to spread your worker nodes across multiple zones, repeat this command for each zone.
-    ```
+    ```sh
     ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
     ```
     {: pre}
 
 7. Verify that worker nodes provision in the zone that you added. Your worker nodes are ready when the status changes from **provision_pending** to **normal**.
-    ```
+    ```sh
     ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <pool_name>
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     ID                                                 Public IP        Private IP      Machine Type      State    Status  Zone    Version
     kube-dal10-crb20b637238ea471f8d4a8b881aae4962-w7   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          provision_pending   Ready   dal10   1.20.7
@@ -338,19 +338,19 @@ Before you begin:
 To add a zone with worker nodes to your worker pool:
 
 1. List available zones and pick the zone that you want to add to your worker pool. The zone that you choose must be a multizone-capable zone.
-    ```
+    ```sh
     ibmcloud oc zone ls
     ```
     {: pre}
 
 2. List available VLANs in that zone. If you do not have a private or a public VLAN, the VLAN is automatically created for you when you add a zone to your worker pool.
-    ```
+    ```sh
     ibmcloud oc vlan ls --zone <zone>
     ```
     {: pre}
 
 3. List the worker pools in your cluster and note their names.
-    ```
+    ```sh
     ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
@@ -363,20 +363,20 @@ To add a zone with worker nodes to your worker pool:
     If you want to use different VLANs for different worker pools, repeat this command for each VLAN and its corresponding worker pools. Any new worker nodes are added to the VLANs that you specify, but the VLANs for any existing worker nodes are not changed.
     {: tip}
 
-    ```
+    ```sh
     ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> -w <pool_name> [-w <pool2_name>] --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
     ```
     {: pre}
 
 5. Verify that the zone is added to your cluster. Look for the added zone in the **Worker zones** field of the output. Note that the total number of workers in the **Workers** field has increased as new worker nodes are provisioned in the added zone.
-    ```
+    ```sh
     ibmcloud oc cluster get --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
-    Example output:
-    ```
-    Name:                           mycluster
+    Example output
+    ```sh
+    NAME:                           mycluster
     ID:                             df253b6025d64944ab99ed63bb4567b6
     State:                          normal
     Status:                         healthy cluster
@@ -510,31 +510,31 @@ If you have a cluster that was created after worker pools were introduced, you c
 {: note}
 
 1. List available zones and pick the zone where you want to add worker nodes.
-    ```
+    ```sh
     ibmcloud oc zone ls
     ```
     {: pre}
 
 2. List available VLANs in that zone and note their ID.
-    ```
+    ```sh
     ibmcloud oc vlan ls --zone <zone>
     ```
     {: pre}
 
 3. List available flavors in that zone.
-    ```
+    ```sh
     ibmcloud oc flavors --zone <zone>
     ```
     {: pre}
 
 4. Add stand-alone worker nodes to the cluster. For bare metal flavors, specify `dedicated`.
-    ```
+    ```sh
     ibmcloud oc worker add --cluster <cluster_name_or_ID> --workers <number_of_worker_nodes> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --flavor <flavor> --hardware <shared_or_dedicated>
     ```
     {: pre}
 
 5. Verify that the worker nodes are created.
-    ```
+    ```sh
     ibmcloud oc worker ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
@@ -565,7 +565,7 @@ Before you begin, [create a worker pool](/docs/containers?topic=containers-add_w
 
 2. Create an `sgx-admin` project with a privileged security context constraint that is added to the project service account so that the drivers and platform software can pull and run the required images.
 
-    ```
+    ```sh
     curl -fssl https://raw.githubusercontent.com/ibm-cloud-security/data-shield-reference-apps/master/scripts/sgx-driver-psw/config_openshift/create_openshift_config.sh | bash
     ```
     {: codeblock}
@@ -579,27 +579,27 @@ Before you begin, [create a worker pool](/docs/containers?topic=containers-add_w
 
 4. Verify that the drivers and platform software were installed by running the following command to check for a pod that begins with `sgx-installer`.
 
-    ```
+    ```sh
     oc get pods
     ```
     {: codeblock}
 
 5. Get the logs for your `sgx-installer` pod to verify that you see the messages `SGX driver installed` and `PSW installed`.
 
-    ```
+    ```sh
     oc logs <name_of_SGX_installer_pod>
     ```
 
 6. Now that the drivers and platform software are installed, remove the daemon set.
 
-    ```
+    ```sh
     oc delete daemonset sgx-installer
     ```
     {: codeblock}
 
 7. Delete the security context and service account that you created.
 
-    ```
+    ```sh
     oc delete scc sgx-admin
     oc delete serviceaccount sgx-admin
     ```
@@ -664,13 +664,13 @@ Do not include personal information in your labels. Learn more about [securing y
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. List the worker pools in your cluster.
-    ```
+    ```sh
     ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
 2. List the existing custom labels on worker nodes in the worker pool that you want to label.
-    ```
+    ```sh
     ibmcloud oc worker-pool get -c <cluster_name_or_ID> --worker-pool <pool>
     ```
     {: pre}
@@ -680,20 +680,20 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     You can also rename an existing label by assigning the same key a new value. However, do not modify the worker pool or worker node labels that are provided by default because these labels are required for worker pools to function properly. Modify only custom labels that you previously added.
     {: important}
 
-    ```
+    ```sh
     ibmcloud oc worker-pool label set <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> --label <key=value>
     ```
     {: pre}
 
     Example to set `<key>: <value>` as a new custom label in a worker pool with existing labels `team: DevOps` and `app: test`:
-    ```
+    ```sh
     ibmcloud oc worker-pool label set <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> --label <key=value> --label team=DevOps --label app=test
     ```
     {: pre}
 
 4. Verify that the worker pool and worker node have the `key=value` label that you assigned.
     *   To check worker pools:
-        ```
+        ```sh
         ibmcloud oc worker-pool get --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID>
         ```
         {: pre}
@@ -706,7 +706,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
             {: pre}
 
         2. Review the **Labels** field of the output.
-            ```
+            ```sh
             oc describe node <worker_node_private_IP>
             ```
             {: pre}
@@ -732,13 +732,13 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     {: important}
 
     Example to keep only the `team: DevOps` and `app: test` labels and remove all other custom labels from a worker pool:
-    ```
+    ```sh
     ibmcloud oc worker-pool label set <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> --label team=DevOps --label app=test
     ```
     {: pre}
 
     Example to remove all custom label from a worker pool:
-    ```
+    ```sh
     ibmcloud oc worker-pool label rm <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID>
     ```
     {: pre}

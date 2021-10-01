@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: file, debug, help
 
@@ -258,7 +258,7 @@ If you use a `oc` CLI version that does not match at least the major.minor versi
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```sh
         iks-charts-stage/ibmcloud-block-storage-plugin    1.5.0                                                        A Helm chart for installing ibmcloud block storage plugin   
         iks-charts/ibmcloud-block-storage-plugin          1.5.0                                                        A Helm chart for installing ibmcloud block storage plugin   

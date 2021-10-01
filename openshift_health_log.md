@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -108,7 +108,7 @@ To set up a logging configuration for your cluster,
             ```
             {: pre}
 
-            Example output:
+            Example output
             ```
             Creating configuration...
             OK
@@ -121,7 +121,7 @@ To set up a logging configuration for your cluster,
             ```
             {: pre}
 
-            Example output:
+            Example output
             ```
             Listing configurations...
 
@@ -135,13 +135,13 @@ To set up a logging configuration for your cluster,
     1. If you used the console to create the {{site.data.keyword.la_short}} configuration, log in to your cluster. For more information, see [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster)..
 
     2. Verify that the daemon set for the {{site.data.keyword.la_short}} agent was created and all instances are listed as `AVAILABLE`.
-        ```
+        ```sh
         oc get daemonsets -n ibm-observe
         ```
         {: pre}
 
-        Example output:
-        ```
+        Example output
+        ```sh
         NAME           DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
         logdna-agent   9         9         9       9            9           <none>          14m
         ```
@@ -150,7 +150,7 @@ To set up a logging configuration for your cluster,
         The number of daemon set instances that are deployed equals the number of worker nodes in your cluster.
 
     3. Review the configmap that was created for your {{site.data.keyword.la_short}} agent.
-        ```
+        ```sh
         oc describe configmap -n ibm-observe
         ```
         {: pre}

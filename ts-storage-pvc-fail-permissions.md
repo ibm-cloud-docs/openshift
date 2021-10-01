@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -46,7 +46,7 @@ The IAM API key or the IBM Cloud infrastructure API key that is stored in the `s
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```sh
     [Bluemix]
     iam_url = "https://iam.bluemix.net"

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -49,20 +49,20 @@ Resolve the issue by choosing one of the following options:
 If you complete one of the above options but the `keepalived` pods are still not scheduled, you can get more information about the `keepalived` pods:
 
 1. Get the `keepalived` pods.
-    ```
+    ```sh
     oc get pods -n ibm-system
     ```
     {: pre}
 
 2. In the output, look for `ibm-cloud-provider-ip` pods that have a **Status** of `Pending`. Example:
-    ```
+    ```sh
     ibm-cloud-provider-ip-169-61-XX-XX-55967b5b8c-7zv9t     0/1       Pending   0          2m        <none>          <none>
     ibm-cloud-provider-ip-169-61-XX-XX-55967b5b8c-8ptvg     0/1       Pending   0          2m        <none>          <none>
     ```
     {: screen}
 
 3. Describe each `keepalived` pod and look for the **Events** section. Address any error or warning messages that are listed.
-    ```
+    ```sh
     oc describe pod ibm-cloud-provider-ip-169-61-XX-XX-55967b5b8c-7zv9t -n ibm-system
     ```
     {: pre}

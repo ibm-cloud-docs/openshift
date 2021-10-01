@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -190,22 +190,22 @@ To set up an NLB 2.0 in a multizone cluster:
 
     4. Create the service in your cluster.
 
-        ```
+        ```sh
         oc apply -f myloadbalancer.yaml
         ```
         {: pre}
 
 3. Verify that the NLB service was created successfully. It might take a few minutes for the NLB service to be created properly and for the app to be available.
 
-    ```
+    ```sh
     oc describe service myloadbalancer
     ```
     {: pre}
 
     Example CLI output:
 
-    ```
-    Name:                   myloadbalancer
+    ```sh
+    NAME:                   myloadbalancer
     Namespace:              default
     Labels:                 <none>
     Selector:               app=liberty
@@ -231,7 +231,7 @@ To set up an NLB 2.0 in a multizone cluster:
     1. Open your preferred web browser.
     2. Enter the portable public IP address of the NLB and port.
 
-        ```
+        ```sh
         http://169.xx.xxx.xxx:8080
         ```
         {: codeblock}
@@ -328,22 +328,22 @@ To create an NLB 2.0 service in a single-zone cluster:
 
     4. Create the service in your cluster.
 
-        ```
+        ```sh
         oc apply -f myloadbalancer.yaml
         ```
         {: pre}
 
 3. Verify that the NLB service was created successfully. It might take a few minutes for the service to be created and for the app to be available.
 
-    ```
+    ```sh
     oc describe service myloadbalancer
     ```
     {: pre}
 
     Example CLI output:
 
-    ```
-    Name:                   myloadbalancer
+    ```sh
+    NAME:                   myloadbalancer
     Namespace:              default
     Labels:                 <none>
     Selector:               app=liberty
@@ -369,7 +369,7 @@ To create an NLB 2.0 service in a single-zone cluster:
     1. Open your preferred web browser.
     2. Enter the portable public IP address of the NLB and port.
 
-        ```
+        ```sh
         http://169.xx.xxx.xxx:8080
         ```
         {: codeblock}

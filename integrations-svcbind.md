@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -110,9 +110,9 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
         ```
         {: pre}
 
-        Example output:
-        ```
-        name                         service           plan    bound apps   last operation
+        Example output
+        ```sh
+        NAME                         service           plan    bound apps   last operation
         <cf_service_instance_name>   <service_name>    spark                create succeeded
         ```
         {: screen}
@@ -123,9 +123,9 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
         ```
         {: pre}
 
-        Example output:
-        ```
-        Name                          Location   State    Type               Tags
+        Example output
+        ```sh
+        NAME                          Location   State    Type               Tags
         <iam_service_instance_name>   <region>   active   service_instance
         ```
         {: screen}
@@ -133,7 +133,7 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
     You can also see the different service types in your {{site.data.keyword.cloud_notm}} dashboard as **Cloud Foundry Services** and **Services**.
 
 3. Identify the cluster project that you want to use to add your service.
-    ```
+    ```sh
     oc get namespaces
     ```
     {: pre}
@@ -143,15 +143,15 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
     If your service supports private cloud service endpoints, you can manually create the service credentials with the private cloud service endpoint, and then use the `--key` flag to specify the name of your credentials.
     {: tip}
 
-    ```
+    ```sh
     ibmcloud oc cluster service bind --cluster <cluster_name_or_ID> --namespace <project> --service <service_instance_name> [--key <service_instance_key>] [--role <IAM_service_role>]
     ```
     {: pre}
 
     When the creation of the service credentials is successful, a Kubernetes secret with the name `binding-<service_instance_name>` is created.  
 
-    Example output:
-    ```
+    Example output
+    ```sh
     ibmcloud oc cluster service bind --cluster mycluster --namespace myproject --service cleardb
     Binding service instance to namespace...
     OK
@@ -162,12 +162,12 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
 
 5. Verify the service credentials in your Kubernetes secret.
     1. Get the details of the secret and note the **binding** value. The **binding** value is base64 encoded and holds the credentials for your service instance in JSON format.
-        ```
+        ```sh
         oc get secrets binding-<service_instance_name> --namespace=<project> -o yaml
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         apiVersion: v1
         data:
@@ -193,7 +193,7 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         {"apikey":"<API_key>","host":"<ID_string>-bluemix.cloudant.com","iam_apikey_description":"Auto generated apikey during resource-key operation for Instance - crn:v1:bluemix:public:cloudantnosqldb:us-south:a/<ID_string>::","iam_apikey_name":"auto-generated-apikey-<ID_string>","iam_role_crn":"crn:v1:bluemix:public:iam::::serviceRole:Writer","iam_serviceid_crn":"crn:v1:bluemix:public:iam-identity::a/1234567890brasge5htn2ec098::serviceid:ServiceId-<ID_string>","password":"<ID_string>","port":443,"url":"https://<ID_string>-bluemix.cloudant.com","username":"123b45da-9ce1-4c24-ab12-rinwnwub1294-bluemix"}
         ```
@@ -225,13 +225,13 @@ When you mount the secret as a volume to your pod, a file that is named `binding
 {: shortdesc}
 
 1. List available secrets in your cluster and note the **name** of your secret. Look for a secret of type **Opaque**. If multiple secrets exist, contact your cluster administrator to identify the correct service secret.
-    ```
+    ```sh
     oc get secrets
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+    ```sh
     NAME                              TYPE            DATA      AGE
     binding-<service_instance_name>   Opaque          1         3m
     ```
@@ -296,20 +296,20 @@ When you mount the secret as a volume to your pod, a file that is named `binding
     </tr></tbody></table>
 
 3. Create the pod and mount the secret as a volume.
-    ```
+    ```sh
     oc apply -f secret-test.yaml
     ```
     {: pre}
 
 4. Verify that the pod is created.
-    ```
+    ```sh
     oc get pods
     ```
     {: pre}
 
     Example CLI output:
 
-    ```
+    ```sh
     NAME                           READY     STATUS    RESTARTS   AGE
     secret-test-1111454598-gfx32   1/1       Running   0          1m
     ```
@@ -317,7 +317,7 @@ When you mount the secret as a volume to your pod, a file that is named `binding
 
 5. Access the service credentials.
     1. Log in to your pod.
-        ```
+        ```sh
         oc exec <pod_name> -it bash
         ```
         {: pre}
@@ -328,7 +328,7 @@ When you mount the secret as a volume to your pod, a file that is named `binding
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         binding
         ```
@@ -342,7 +342,7 @@ When you mount the secret as a volume to your pod, a file that is named `binding
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         {"apikey":"<API_key>","host":"<ID_string>-bluemix.cloudant.com","iam_apikey_description":"Auto generated apikey during resource-key operation for Instance - crn:v1:bluemix:public:cloudantnosqldb:us-south:a/<ID_string>:<ID_string>::","iam_apikey_name":"auto-generated-apikey-<ID_string>","iam_role_crn":"crn:v1:bluemix:public:iam::::serviceRole:Writer","iam_serviceid_crn":"crn:v1:bluemix:public:iam-identity::a/<ID_string>::serviceid:ServiceId-<ID_string>","password":"<ID_string>","port":443,"url":"https://<ID_string>-bluemix.cloudant.com","username":"123b45da-9ce1-4c24-ab12-rinwnwub1294-bluemix"}
         ```
@@ -357,25 +357,25 @@ You can add the service credentials and other key value pairs from your Kubernet
 {: shortdesc}
 
 1. List available secrets in your cluster and note the **name** of your secret. Look for a secret of type **Opaque**. If multiple secrets exist, contact your cluster administrator to identify the correct service secret.
-    ```
+    ```sh
     oc get secrets
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+    ```sh
     NAME                              TYPE            DATA      AGE
     binding-<service_instance_name>   Opaque          1         3m
     ```
     {: screen}
 
 2. Get the details of your secret to find potential key value pairs that you can reference as environment variables in your pod. The service credentials are stored in the `binding` key of your secret.
-    ```
+    ```sh
     oc get secrets binding-<service_instance_name> --namespace=<project> -o yaml
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     apiVersion: v1
     data:
@@ -449,19 +449,19 @@ You can add the service credentials and other key value pairs from your Kubernet
         </tbody></table>
 
 4. Create the pod that references the `binding` key of your secret as an environment variable.
-    ```
+    ```sh
     oc apply -f secret-test.yaml
     ```
     {: pre}
 
 5. Verify that the pod is created.
-    ```
+    ```sh
     oc get pods
     ```
     {: pre}
 
     Example CLI output:
-    ```
+    ```sh
     NAME                           READY     STATUS    RESTARTS   AGE
     secret-test-1111454598-gfx32   1/1       Running   0          1m
     ```
@@ -469,7 +469,7 @@ You can add the service credentials and other key value pairs from your Kubernet
 
 6. Verify that the environment variable is set correctly.
     1. Log in to your pod.
-        ```
+        ```sh
         oc exec <pod_name> -it bash
         ```
         {: pre}
@@ -480,7 +480,7 @@ You can add the service credentials and other key value pairs from your Kubernet
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         BINDING={"apikey":"<API_key>","host":"<ID_string>-bluemix.cloudant.com","iam_apikey_description":"Auto generated apikey during resource-key operation for Instance - crn:v1:bluemix:public:cloudantnosqldb:us-south:a/<ID_string>::","iam_apikey_name":"auto-generated-apikey-<ID_string>","iam_role_crn":"crn:v1:bluemix:public:iam::::serviceRole:Writer","iam_serviceid_crn":"crn:v1:bluemix:public:iam-identity::a/1234567890brasge5htn2ec098::serviceid:ServiceId-<ID_string>","password":"<password>","port":443,"url":"https://<ID_string>-bluemix.cloudant.com","username":"<ID_string>-bluemix"}
         ```
@@ -521,12 +521,12 @@ If you do not want to use an {{site.data.keyword.cloud_notm}} service that you b
 {: shortdesc}
 
 1. List the services that are bound to your cluster and note the name of your service and the project that the service is bound to.
-    ```
+    ```sh
     ibmcloud oc cluster service ls --cluster
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     OK
     Service   Instance GUID                          Key                                                                  Namespace   
@@ -535,19 +535,19 @@ If you do not want to use an {{site.data.keyword.cloud_notm}} service that you b
     {: screen}
 
 2. List the Kubernetes secrets in the project that your service is bound to and look for the secret with a name that follows the `binding-<service_name>` format.
-    ```
+    ```sh
     oc get secrets -n <project> | grep Opaque
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     binding-myservice   Opaque     1      3d23h
     ```
     {: screen}
 
 3. Retrieve all the pods that access the secret.
-    ```
+    ```sh
     oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.secret.secretName}{" "}{end}{end}' | grep "<secret_name>"
     ```
     {: pre}
@@ -556,59 +556,59 @@ If you do not want to use an {{site.data.keyword.cloud_notm}} service that you b
 
 4. If you have pods that mount the secret, either remove the pod or the deployment that manages the pod, or update the pod and deployment YAML to use a different secret instead.
     - **To remove a pod or deployment**:
-        ```
+        ```sh
         oc delete pod <pod_name> -n <project>
         ```
         {: pre}
 
-        ```
+        ```sh
         oc delete deployment <deployment_name> -n <project>
         ```
         {: pre}
 
     - **To update an existing pod or deployment**:
         1. Get the pod or deployment YAML file.
-        ```
+        ```sh
         oc get pod <pod_name> -o yaml
         ```
         {: pre}
 
-        ```
+        ```sh
         oc get deployment <deployment_name> -o yaml
         ```
         {: pre}
 
         2. Copy the YAML file and in the `spec.volumes` section, change the name of the secret that you want to use.
         3. Apply the change in your cluster.
-        ```
+        ```sh
         oc apply -f pod.yaml
         ```
         {: pre}
 
-        ```
+        ```sh
         oc apply -f deployment.yaml
         ```
         {: pre}
 
         4. Verify that a new pod is created with the updated volume specification.
-        ```
+        ```sh
         oc get pods
         ```
         {: pre}
 
-        ```
+        ```sh
         oc describe pod <pod_name>
         ```
         {: pre}
 
 5. Remove the secret.
-    ```
+    ```sh
     oc delete secret <secret_name> -n <project>
     ```
     {: pre}
 
 6. Verify that your secret is removed.
-    ```
+    ```sh
     oc get secrets -n <project>
     ```
     {: pre}

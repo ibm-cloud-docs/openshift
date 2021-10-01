@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -49,14 +49,14 @@ Update the Helm chart values to reflect the worker node changes.
 
 1. Delete the existing Helm chart.
 
-    ```
+    ```sh
     helm uninstall <release_name> -n <project>
     ```
     {: pre}
 
 2. Open the configuration file for your strongSwan VPN service.
 
-    ```
+    ```sh
     helm show values ibm/strongswan > config.yaml
     ```
     {: pre}
@@ -117,13 +117,13 @@ Update the Helm chart values to reflect the worker node changes.
         </tbody></table>
 
 4. Install the new Helm chart with your updated values.
-    ```
+    ```sh
     helm install <release_name> iks-charts/strongswan -f config.yaml
     ```
     {: pre}
 
 5. Check the chart deployment status. When the chart is ready, the **STATUS** field near the top of the output has a value of `DEPLOYED`.
-    ```
+    ```sh
     helm status <release_name>
     ```
     {: pre}
@@ -141,7 +141,7 @@ Update the Helm chart values to reflect the worker node changes.
     {: pre}
 
 9. Check the status of the VPN.
-    ```
+    ```sh
     oc exec  $STRONGSWAN_POD -- ipsec status
     ```
     {: pre}

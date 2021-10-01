@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -151,7 +151,7 @@ Before you begin
     {: pre}
 
 3. Get your cluster's **ID**.
-    ```
+    ```sh
     ibmcloud oc cluster get -c <cluster_name>
     ```
     {: pre}
@@ -375,7 +375,7 @@ To create an ACL for each subnet that your cluster is attached to:
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     ID                                          Name          Status      Subnet CIDR        Addresses   ACL                                                  Public Gateway                            VPC       Zone         Resource group
     0717-2224d664-d435-425e-b5ec-f324af2df445   mysubnet1     available   10.240.0.0/28      11/16       armored-never-chitchat-gangly-skylight-prototype     -                                  myvpc     us-south-1   default

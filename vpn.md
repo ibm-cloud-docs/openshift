@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhos, rhoks, strongswan, ipsec, on-prem
 
@@ -189,7 +189,7 @@ Install Helm and get the strongSwan Helm chart to view possible configurations.
 
 2. Save the default configuration settings for the strongSwan Helm chart in a local YAML file.
 
-    ```
+    ```sh
     helm show values iks-charts/strongswan > config.yaml
     ```
     {: pre}
@@ -315,7 +315,7 @@ To monitor the status of the strongSwan VPN, you can set up a webhook to automat
     {: screen}
 
 7. To verify that the Slack webhook is installed, send a test message to your webhook URL by running the following command:
-    ```
+    ```sh
     curl -X POST -H 'Content-type: application/json' -d '{"text":"VPN test message"}' <webhook_URL>
     ```
     {: pre}
@@ -343,21 +343,21 @@ Deploy the strongSwan Helm chart in your cluster with the configurations that yo
     If you have multiple VPN deployments in a single cluster, you can avoid naming conflicts and differentiate between your deployments by choosing more descriptive release names than `vpn`. To avoid the truncation of the release name, limit the release name to 35 characters or less.
     {: tip}
 
-    ```
+    ```sh
     helm install vpn iks-charts/strongswan -f config.yaml
     ```
     {: pre}
 
 5. Check the chart deployment status. When the chart is ready, the **STATUS** field near the top of the output has a value of `DEPLOYED`.
 
-    ```
+    ```sh
     helm status vpn
     ```
     {: pre}
 
 6. After the chart is deployed, verify that the updated settings in the `config.yaml` file were used.
 
-    ```
+    ```sh
     helm get values vpn
     ```
     {: pre}
@@ -383,7 +383,7 @@ After you deploy your Helm chart, test the VPN connectivity.
 
 3. Check the status of the VPN. A status of `ESTABLISHED` means that the VPN connection was successful.
 
-    ```
+    ```sh
     oc exec $STRONGSWAN_POD -- sudo ipsec status
     ```
     {: pre}
@@ -412,7 +412,7 @@ After you deploy your Helm chart, test the VPN connectivity.
 
 4. You can further test the VPN connectivity by running the five Helm tests that are included in the strongSwan chart definition.
 
-    ```
+    ```sh
     helm test vpn
     ```
     {: pre}
@@ -422,7 +422,7 @@ After you deploy your Helm chart, test the VPN connectivity.
 
 5. View the output of a failed test by looking at the logs of the test pod.
 
-    ```
+    ```sh
     oc logs <test_program>
     ```
     {: pre}
@@ -442,7 +442,7 @@ After you deploy your Helm chart, test the VPN connectivity.
 
 6. Delete the current Helm chart.
 
-    ```
+    ```sh
     helm uninstall vpn -n <namespace>
     ```
     {: pre}
@@ -453,40 +453,40 @@ After you deploy your Helm chart, test the VPN connectivity.
 
 9. Install the Helm chart to your cluster with the updated `config.yaml` file. The updated properties are stored in a configmap for your chart.
 
-    ```
+    ```sh
     helm install vpn iks-charts/strongswan -f config.yaml
     ```
     {: pre}
 
 10. Check the chart deployment status. When the chart is ready, the **STATUS** field near the top of the output has a value of `DEPLOYED`.
 
-    ```
+    ```sh
     helm status vpn
     ```
     {: pre}
 
 11. After the chart is deployed, verify that the updated settings in the `config.yaml` file were used.
 
-    ```
+    ```sh
     helm get values vpn
     ```
     {: pre}
 
 12. Clean up the current test pods.
 
-    ```
+    ```sh
     oc get pods -a -l app=strongswan-test
     ```
     {: pre}
 
-    ```
+    ```sh
     oc delete pods -l app=strongswan-test
     ```
     {: pre}
 
 13. Run the tests again.
 
-    ```
+    ```sh
     helm test vpn
     ```
     {: pre}
@@ -641,14 +641,14 @@ For release dates and changelogs for each strongSwan Helm chart version, run `he
 
 To upgrade your strongSwan Helm chart to the latest version:
 
-    ```
+    ```sh
     helm upgrade -f config.yaml <release_name> ibm/strongswan
     ```
     {: pre}
 
 You can disable the VPN connection by deleting the Helm chart.
 
-    ```
+    ```sh
     helm uninstall <release_name> -n <namespace>
     ```
     {: pre}

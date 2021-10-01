@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, nlb, lbaas
 
@@ -30,37 +30,37 @@ First time setting up a load balancer? Check out [Classic: Setting up basic load
 {: #lb_qs_classic}
 
 1. Expose your app by creating a version 1.0 network load balancer (NLB 1.0).
-    ```
+    ```sh
     oc expose deploy my-app --port=80 --target-port=8080 --type=LoadBalancer --name my-lb-svc
     ```
     {: pre}
 
 2. Get the NLB 1.0 **EXTERNAL-IP** address.
-    ```
+    ```sh
     oc get svc my-lb-svc
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+    ```sh
     NAME        TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)        AGE
     my-lb-svc   LoadBalancer   172.XX.XXX.XX   169.XX.XXX.XX   80:31224/TCP   23s
     ```
     {: screen}
 
 3. Curl your app's IP address.
-    ```
+    ```sh
     curl <external-ip>
     ```
     {: pre}
 
 4. Optional: Create a hostname for your app.
-    ```
+    ```sh
     ibmcloud oc nlb-dns create classic -c <cluster_name_or_id> --ip <NLB_IP>
     ```
     {: pre}
 
-    In a web browser, enter the hostname that is created. Example output:
+    In a web browser, enter the hostname that is created. Example output
     ```
     NLB hostname was created as mycluster-35366fb2d3d90fd50548180f69e7d12a-0001.us-south.containers.appdomain.cloud
     ```
@@ -76,19 +76,19 @@ For more information, see:
 {: #lb_qs_vpc}
 
 1. Expose your app by creating a Kubernetes `LoadBalancer` service.
-    ```
+    ```sh
     oc expose deploy my-app --port=80 --target-port=8080 --type=LoadBalancer --name my-lb-svc
     ```
     {: pre}
 
 2. Get the service's hostname that is listed in the **EXTERNAL-IP** column. The VPC load balancer that assigns the hostname takes a few minutes to provision in your VPC. You cannot access your app by using the hostname of your Kubernetes `LoadBalancer` service until the VPC load balancer is fully provisioned.
-    ```
+    ```sh
     oc get svc my-lb-svc
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+    ```sh
     NAME        TYPE           CLUSTER-IP      EXTERNAL-IP                            PORT(S)        AGE
     my-lb-svc   LoadBalancer   172.XX.XXX.XX   1234abcd-us-south.lb.appdomain.cloud   80:31224/TCP   23s
     ```

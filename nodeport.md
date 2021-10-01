@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, app access
 
@@ -106,7 +106,7 @@ To use a NodePort,
 
     1. Get the public IP address for a worker node in the cluster. If you want to access the worker node on a private network or have a VPC cluster, get the private IP address instead.
 
-        ```
+        ```sh
         ibmcloud oc worker ls --cluster <cluster_name>
         ```
         {: pre}
@@ -122,15 +122,15 @@ To use a NodePort,
 
     2. If a random NodePort was assigned, find out which one was assigned.
 
-        ```
+        ```sh
         oc describe service <service_name>
         ```
         {: pre}
 
         Output
 
-        ```
-        Name:                   <service_name>
+        ```sh
+        NAME:                   <service_name>
         Namespace:              default
         Labels:                 run=<deployment_name>
         Selector:               run=<deployment_name>

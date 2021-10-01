@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhos, rhoks, clusters, delete, remove
 
@@ -48,7 +48,7 @@ When you delete your cluster, the default {{site.data.keyword.cloudcerts_short}}
 **To remove a cluster**:
 
 1. Optional: From the CLI, save a copy of all data in your cluster to a local YAML file.
-    ```
+    ```sh
     oc get all --all-namespaces -o yaml
     ```
     {: pre}
@@ -60,14 +60,14 @@ When you delete your cluster, the default {{site.data.keyword.cloudcerts_short}}
     - From the {{site.data.keyword.cloud_notm}} CLI
         1. List the available clusters.
 
-        ```
+        ```sh
         ibmcloud oc cluster ls
         ```
         {: pre}
 
     2. Delete the cluster.
 
-        ```
+        ```sh
         ibmcloud oc cluster rm --cluster <cluster_name_or_ID>
         ```
         {: pre}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -38,7 +38,7 @@ Check that your cluster runs the latest version of the cluster autoscaler Helm c
     {: pre}
 
     **Example output**
-    ```
+    ```sh
     NAME                          REVISION    UPDATED                     STATUS  CHART                               APP VERSION    NAMESPACE  
     ibm-iks-cluster-autoscaler    1           Wed Aug 28 16:38:23 2019    DEPLOYEDibm-iks-cluster-autoscaler-1.0.8                   kube-system
     ```

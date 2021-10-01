@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -46,19 +46,19 @@ See the following sections:
 {: #pod-fail-resource-limits}
 
 1. Get the name of your pod. If you used a label, you can include it to filter your results.
-    ```
+    ```sh
     oc get pods --selector='app=wasliberty'
     ```
     {: pre}
 
 2. Describe the pod and look for the **Restart Count**.
-    ```
+    ```sh
     oc describe pod
     ```
     {: pre}
 
 3. If the pod restarted many times in a short period of time, fetch its status.
-    ```
+    ```sh
     oc get pod <pod_name> -n <namespace> -o go-template='{{range.status.containerStatuses}}{{"Container Name: "}}{{.name}}{{"\r\nLastState: "}}{{.lastState}}{{end}}'
     ```
 4. Review the reason. For example, `OOM Killed` means "out of memory," indicating that the container is crashing because of a resource limit.
@@ -72,14 +72,14 @@ See the following sections:
 To see if your pod is being replaced by higher priority pods:
 1. Get the name of your pod.
 
-    ```
+    ```sh
     oc get pods
     ```
     {: pre}
 
 2. Describe your pod YAML.
 
-    ```
+    ```sh
     oc get pod <pod_name> -o yaml
     ```
     {: pre}
@@ -90,7 +90,7 @@ To see if your pod is being replaced by higher priority pods:
 
     2. If there is a `priorityClassName` field value, get the priority class.
 
-        ```
+        ```sh
         oc get priorityclass <priority_class_name> -o yaml
         ```
         {: pre}
@@ -99,14 +99,14 @@ To see if your pod is being replaced by higher priority pods:
 
 4. List existing priority classes in the cluster.
 
-    ```
+    ```sh
     oc get priorityclasses
     ```
     {: pre}
 
 5. For each priority class, get the YAML file and note the `value` field.
 
-    ```
+    ```sh
     oc get priorityclass <priority_class_name> -o yaml
     ```
     {: pre}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -40,13 +40,13 @@ To establish VPN connectivity with the strongSwan Helm chart, you might need to 
 2. If you are unable to establish VPN connectivity after running the Helm tests, you can run the VPN debugging tool that is packaged inside of the VPN pod image.
 
     1. Set the `STRONGSWAN_POD` environment variable.
-        ```
+        ```sh
         export STRONGSWAN_POD=$(oc get pod -l app=strongswan,release=vpn -o jsonpath='{ .items[0].metadata.name }')
         ```
         {: pre}
 
     2. Run the debugging tool.
-        ```
+        ```sh
         oc exec $STRONGSWAN_POD -- vpnDebug
         ```
         {: pre}

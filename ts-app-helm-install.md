@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift
 
@@ -47,13 +47,13 @@ To troubleshoot your Helm chart:
 {: tsResolve}
 
 1. List the {{site.data.keyword.cloud_notm}} Helm repositories currently available in your Helm instance.
-    ```
+    ```sh
     helm repo list
     ```
     {: pre}
 
 2. Remove the {{site.data.keyword.cloud_notm}} Helm repositories.
-    ```
+    ```sh
     helm repo remove <helm_repo>
     ```
     {: pre}

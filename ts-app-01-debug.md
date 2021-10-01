@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -35,7 +35,7 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
 1. Make sure that you review the [common scenarios where you might need to modify your apps](/docs/openshift?topic=openshift-plan_deploy#openshift_move_apps_scenarios) so that you can deploy them on {{site.data.keyword.openshiftshort}} clusters.
 
 1. Look for abnormalities in the service or deployment resources by running the `describe` command.
-    ```
+    ```sh
     oc describe service <service_name>
     ```
     {: pre}
@@ -46,38 +46,38 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
 
 4. Verify that the service is listening on the correct port.
     1. Get the name of a pod.
-        ```
+        ```sh
         oc get pods
         ```
         {: pre}
 
     2. Log in to a container.
-        ```
+        ```sh
         oc exec -it <pod_name> -- /bin/bash
         ```
         {: pre}
 
     3. Curl the app from within the container. If the port is not accessible, the service might not be listening on the correct port or the app might have issues. Update the configuration file for the service with the correct port and redeploy or investigate potential issues with the app.
-        ```
+        ```sh
         curl localhost: <port>
         ```
         {: pre}
 
 5. Verify that the service is linked correctly to the pods.
     1. Get the name of a pod.
-        ```
+        ```sh
         oc get pods
         ```
         {: pre}
 
     2. Log in to a container.
-        ```
+        ```sh
         oc exec -it <pod_name> -- /bin/bash
         ```
         {: pre}
 
     3. Curl the cluster IP address and port of the service.
-        ```
+        ```sh
         curl <cluster_IP>:<port>
         ```
         {: pre}
@@ -88,19 +88,19 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
 
 6. For Ingress services, verify that the service is accessible from within the cluster.
     1. Get the name of a pod.
-        ```
+        ```sh
         oc get pods
         ```
         {: pre}
 
     2. Log in to a container.
-        ```
+        ```sh
         oc exec -it <pod_name> -- /bin/bash
         ```
         {: pre}
 
     2. Curl the URL specified for the Ingress service. If the URL is not accessible, check for a firewall issue between the cluster and the external endpoint.
-        ```
+        ```sh
         curl <host_name>.<domain>
         ```
         {: pre}

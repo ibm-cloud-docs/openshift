@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -36,9 +36,9 @@ ibmcloud oc ingress status -c <cluster_name_or_ID>
 ```
 {: pre}
 
-The state of the Ingress components are reported in an **Ingress Status** and **Ingress Message**. Example output:
-```
-Ingress Status:   healthy
+The state of the Ingress components are reported in an **Ingress Status** and **Ingress Message**. Example output
+```sh
+ingress Status:   healthy
 Message:          All Ingress components are healthy
 
 Component                                        Status    Type

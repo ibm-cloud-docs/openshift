@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -389,20 +389,20 @@ To create custom RBAC permissions,
 
     2. Create the role or cluster role in your cluster.
 
-        ```
+        ```sh
         oc apply -f my_role.yaml
         ```
         {: pre}
 
     3. Verify that the role or cluster role is created.
         * Role:
-            ```
+            ```sh
             oc get roles -n <namespace>
             ```
             {: pre}
 
         * Cluster role:
-            ```
+            ```sh
             oc get clusterroles
             ```
             {: pre}
@@ -451,33 +451,33 @@ To create custom RBAC permissions,
 
     2. Create the role binding or cluster role binding resource in your cluster.
 
-        ```
+        ```sh
         oc apply -f my_role_binding.yaml
         ```
         {: pre}
 
     3. Verify that the binding is created.
 
-        ```
+        ```sh
         oc get rolebinding -n <namespace>
         ```
         {: pre}
 
 3. Optional: To enforce the same level of user access in other namespaces, you can copy the role bindings for those roles or cluster roles to other namespaces.
     1. Copy the role binding from one namespace to another namespace.
-        ```
+        ```sh
         oc get rolebinding <role_binding_name> -o yaml | sed 's/<namespace_1>/<namespace_2>/g' | oc -n <namespace_2> create -f -
         ```
         {: pre}
 
         For example, copy the `custom-role` role binding from the `default` namespace to the `testns` namespace.
-        ```
+        ```sh
         oc get rolebinding custom-role -o yaml | sed 's/default/testns/g' | oc -n testns create -f -
         ```
         {: pre}
 
     2. Verify that the role binding is copied. If you added an {{site.data.keyword.cloud_notm}} IAM access group to the role binding, each user in that group is added individually, not as an access group ID.
-        ```
+        ```sh
         oc get rolebinding -n <namespace_2>
         ```
         {: pre}
@@ -536,7 +536,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     {: caption="Table 4. Understanding the YAML parameters" caption-side="top"}
 
 2. Create the cluster role in your cluster. Any users that have a role binding to the `admin` cluster role now have the additional permissions from the `view-pod-metrics` cluster role.
-    ```
+    ```sh
     oc apply -f <cluster_role_file.yaml>
     ```
     {: pre}
@@ -634,25 +634,25 @@ Verify your custom RBAC or synchronized IAM service access to RBAC roles in your
     {: note}
 
     * Reader:
-        ```
+        ```sh
         oc get rolebinding ibm-view -o yaml -n <namespace>
         ```
         {: pre}
 
     * Writer:
-        ```
+        ```sh
         oc get rolebinding ibm-edit -o yaml -n <namespace>
         ```
         {: pre}
 
     * Manager, scoped to a namespace:
-        ```
+        ```sh
         oc get rolebinding ibm-operate -o yaml -n <namespace>
         ```
         {: pre}
 
     * Manager, all namespaces:
-        ```
+        ```sh
         oc get clusterrolebinding ibm-admin -o yaml
         ```
         {: pre}
@@ -776,13 +776,13 @@ To avoid this issue for future users, consider using a functional ID user for th
 
 2. Check the owner of the API key or infrastructure credentials set for that region and resource group.
     * If you use the [API key to access the IBM Cloud infrastructure portfolio](/docs/containers?topic=containers-access-creds#default_account):
-        ```
+        ```sh
         ibmcloud oc api-key info --cluster <cluster_name_or_id>
         ```
         {: pre}
 
     * If you set [infrastructure credentials to access the IBM Cloud infrastructure portfolio](/docs/containers?topic=containers-access-creds#credentials):
-        ```
+        ```sh
         ibmcloud oc credential get --region <region>
         ```
         {: pre}
@@ -797,13 +797,13 @@ To avoid this issue for future users, consider using a functional ID user for th
         {: pre}
 
     4. Change the infrastructure credentials to the functional ID user.
-        ```
+        ```sh
         ibmcloud oc api-key reset --region <region>
         ```
         {: pre}
 
     5. Refresh the clusters in the region to pick up on the new API key configuration.
-        ```
+        ```sh
         ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
         ```
         {: pre}
@@ -863,7 +863,7 @@ If you do not need custom RBAC permissions anymore, you can remove them.
 2. In the `subjects` section, remove the section for the user.
 3. Save the file.
 4. Apply the changes in the role binding or cluster role binding resource in your cluster.
-    ```
+    ```sh
     oc apply -f my_role_binding.yaml
     ```
     {: pre}

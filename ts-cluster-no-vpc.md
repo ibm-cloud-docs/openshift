@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -53,7 +53,7 @@ To set an API key for the `default` resource group, use the {{site.data.keyword.
     {: pre}
 
 3. Set the API key for the region and resource group.
-    ```
+    ```sh
     ibmcloud oc api-key reset --region <region>
     ```
     {: pre}

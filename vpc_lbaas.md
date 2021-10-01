@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -207,7 +207,7 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     </tbody></table>
 
 3. Create the Kubernetes `LoadBalancer` service in your cluster.
-    ```
+    ```sh
     oc apply -f <filename>.yaml -n <namespace>
     ```
     {: pre}
@@ -217,14 +217,14 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     **The VPC NLB takes a few minutes to provision in your VPC.** The external IP address of your Kubernetes `LoadBalancer` service might be `pending` until the VPC NLB is fully provisioned.
     {: note}
 
-    ```
+    ```sh
     oc describe svc myloadbalancer -n <namespace>
     ```
     {: pre}
 
     Example CLI output for a public `LoadBalancer` service:
-    ```
-    Name:                     myvpcnlb
+    ```sh
+    NAME:                     myvpcnlb
     Namespace:                default
     Labels:                   <none>
     Annotations:              service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: nlb
@@ -403,7 +403,7 @@ Expose your app to private network traffic by setting up a Kubernetes `LoadBalan
     </tbody></table>
 
 5. Create the Kubernetes `LoadBalancer` service in your cluster.
-    ```
+    ```sh
     oc apply -f <filename>.yaml -n <namespace>
     ```
     {: pre}
@@ -413,14 +413,14 @@ Expose your app to private network traffic by setting up a Kubernetes `LoadBalan
     **The VPC NLB takes a few minutes to provision in your VPC.** The external IP address of your Kubernetes `LoadBalancer` service might be `pending` until the VPC NLB is fully provisioned.
     {: note}
 
-    ```
+    ```sh
     oc describe svc myloadbalancer -n <namespace>
     ```
     {: pre}
 
     Example CLI output for a private `LoadBalancer` service:
-    ```
-    Name:                     myvpcnlb
+    ```sh
+    NAME:                     myvpcnlb
     Namespace:                default
     Labels:                   <none>
     Annotations:              service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: nlb
@@ -493,7 +493,7 @@ oc get svc -o wide
 ```
 {: pre}
 
-Example output:
+Example output
 ```
 NAME                      TYPE           CLUSTER-IP       EXTERNAL-IP       PORT(S)            AGE      SELECTOR
 ...
@@ -520,8 +520,8 @@ myapp-vpc-nlb-jp-tok-3    LoadBalancer   172.21.xxx.xxx   169.xx.xxx.xx     8080
             ```
             {: pre}
 
-            Example output:
-            ```
+            Example output
+            ```sh
             Subdomain                                                                               IP(s)                                        Health Monitor   SSL Cert Status           SSL Cert Secret Name
             mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud     169.46.xx.x,169.48.xxx.xx,169.48.xxx.xx      None             created                   <certificate>
             ```
@@ -652,7 +652,7 @@ Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.op
 
 
 3. Create the Kubernetes `LoadBalancer` service in your cluster.
-    ```
+    ```sh
     oc apply -f myloadbalancer.yaml -n <namespace>
     ```
     {: pre}
@@ -662,14 +662,14 @@ Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.op
     **The VPC ALB takes a few minutes to provision in your VPC.** You cannot access your app by using the hostname of your Kubernetes `LoadBalancer` service until the VPC ALB is fully provisioned.
     {: note}
 
-    ```
+    ```sh
     oc describe svc myloadbalancer -n <namespace>
     ```
     {: pre}
 
     Example CLI output for a public `LoadBalancer` service:
-    ```
-    Name:                     myvpcalb
+    ```sh
+    NAME:                     myvpcalb
     Namespace:                default
     Labels:                   <none>
     Annotations:              
@@ -715,12 +715,12 @@ Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.op
 
 6. If you created a public `LoadBalancer` service, curl the hostname of the Kubernetes `LoadBalancer` service that is assigned by the VPC ALB that you found in step 4.
     Example:
-    ```
+    ```sh
     curl 06496f64-us-south.lb.appdomain.cloud:8080
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     Hello world from hello-world-deployment-5fd7787c79-sl9hn! Your app is up and running in a cluster!
     ```
@@ -750,13 +750,13 @@ After you create a DNS subdomain for a VPC ALB hostname, you cannot use `nlb-dns
 **To register a VPC ALB hostname with a DNS subdomain:**
 
 1. Retrieve the hostname for your VPC ALB by running the `get svc` command. In the output, look for the hostname in the **EXTERNAL-IP** column.
-    ```
+    ```sh
     oc get svc -o wide
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+    ```sh
     NAME            TYPE           CLUSTER-IP       EXTERNAL-IP                            PORT(S)     AGE       SELECTOR
     ...
     webserver-lb    LoadBalancer   172.21.xxx.xxx   1234abcd-us-south.lb.appdomain.cloud   8080:30532/TCP     1d       run=webserver
@@ -780,8 +780,8 @@ After you create a DNS subdomain for a VPC ALB hostname, you cannot use `nlb-dns
             ```
             {: pre}
 
-            Example output:
-            ```
+            Example output
+            ```sh
             Subdomain                                                                               Load Balancer Hostname                        Health Monitor   SSL Cert Status           SSL Cert Secret Name
             mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud     ["1234abcd-us-south.lb.appdomain.cloud"]      None             created                   <certificate>
             ```

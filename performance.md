@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, rhoks, roks, rhos, kernel
 
@@ -130,7 +130,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     {: codeblock}
 
 2. Apply the daemon set to your worker nodes. The changes are applied immediately.
-    ```
+    ```sh
     oc apply -f worker-node-kernel-settings.yaml
     ```
     {: pre}
@@ -140,7 +140,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 To revert your worker nodes' `sysctl` parameters to the default values set by {{site.data.keyword.containerlong_notm}}:
 
 1. Delete the daemon set. The `initContainers` that applied the custom settings are removed.
-    ```
+    ```sh
     oc delete ds kernel-optimization
     ```
     {: pre}
@@ -236,7 +236,7 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
 {: shortdesc}
 
 1. Edit the `default` Calico installation resource.
-    ```
+    ```sh
     oc edit installation default -n calico-system
     ```
     {: pre}
@@ -278,7 +278,7 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
 
 
 1. Edit the `calico-config` configmap resource.
-    ```
+    ```sh
     oc edit cm calico-config -n kube-system
     ```
     {: pre}
@@ -341,24 +341,24 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
     {: important} 
 
 3. Apply the MTU changes to your cluster master by refreshing the master API server. It might take several minutes for the master to refresh.
-    ```
+    ```sh
     ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
 4. Verify that the master refresh is completed. When the refresh is complete, the **Master Status** changes to `Ready`.
-    ```
+    ```sh
     ibmcloud oc cluster get --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
 5. In the `data` section of the output, verify that the `veth_mtu` field shows the new MTU value for Calico that you specified in step 2.
-    ```
+    ```sh
     oc get cm -n kube-system calico-config -o yaml
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```yaml
     apiVersion: v1
     data:
@@ -398,7 +398,7 @@ Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.da
 {: shortdesc}
 
 1. Edit the `default` Calico installation resource.
-    ```
+    ```sh
     oc edit installation default -n calico-system
     ```
     {: pre}
@@ -436,7 +436,7 @@ Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.da
 
 
 1. Edit the `calico-config` configmap resource.
-    ```
+    ```sh
     oc edit cm calico-config -n kube-system
     ```
     {: pre}
@@ -485,13 +485,13 @@ Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.da
 3. Apply the change to your cluster by restarting all `calico-node` pods.
 
     1. Get the names of the `calico-node` pods in your cluster.
-        ```
+        ```sh
         oc get pods -n kube-system | grep calico-node
         ```
         {: pre}
 
     2. Restart all `calico-node` pods by manually deleting them. Separate each pod name with one space.
-        ```
+        ```sh
         oc delete pods -n kube-system <pod1> <pod2> ...
         ```
         {: pre}

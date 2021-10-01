@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -47,7 +47,7 @@ To check your user access permissions:
 {: tsResolve}
 
 1. List all of your user permissions.
-    ```
+    ```sh
     ibmcloud iam user-policies <your_user_name>
     ```
     {: pre}
@@ -133,7 +133,7 @@ Resource
         {: pre}
 
         2. Target the cluster.
-        ```
+        ```sh
         ibmcloud oc cluster config --cluster <cluster_name_or_ID>
         ```
         {: pre}

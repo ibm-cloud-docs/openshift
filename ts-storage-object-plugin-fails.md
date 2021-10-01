@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -44,13 +44,13 @@ Delete the resource that is display in the error message and retry the installat
 {: tsResolve}
 
 1. Delete the resource that is displayed in the error message.
-    ```
+    ```sh
     oc delete <resource_kind> <resource_name>
     ```
     {: pre}
 
     Example for deleting a storage class resource:
-    ```
+    ```sh
     oc delete storageclass <storage_class_name>
     ```
     {: pre}

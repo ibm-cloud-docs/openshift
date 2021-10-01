@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -34,13 +34,13 @@ You can deploy an app from an existing [image stream](https://docs.openshift.com
 **Using an image stream from the CLI**:
 1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 2. List the available image streams in a project. If you know the project, name, and tag of the image stream, you can use local image streams in other projects without setting up image pull stream credentials.
-    ```
+    ```sh
     oc get is -n <project>
     ```
     {: pre}
 
 3. Create your app from the image stream.
-    ```
+    ```sh
     oc new-app --image-stream="<project>/<imagestream>:<tag>"
     ```
     {: pre}
@@ -128,7 +128,7 @@ To deploy a container into the **default** project of your cluster:
 
 3. Create the deployment in your cluster.
 
-    ```
+    ```sh
     oc apply -f <deployment>.yaml
     ```
     {: pre}
@@ -183,13 +183,13 @@ To run an app by using an encrypted image, you must share the key for decrypting
 To deploy containers that use encrypted images:
 
 1. Enable the Image Key Synchronizer add-on.
-    ```
+    ```sh
     ibmcloud oc cluster addon enable image-key-synchronizer -c <cluster_name_or_ID>
     ```
     {: pre}
 
 2. Verify that the `addon-image-key-syncrhonizer` daemon set was successfully created in the `image-key-synchronizer` project in your cluster.
-    ```
+    ```sh
     oc get ds addon-image-key-syncrhonizer -n image-key-synchronizer
     ```
     {: pre}
@@ -203,7 +203,7 @@ To deploy containers that use encrypted images:
 
 4. Provide the private key directly in a secret, or first wrap the private key by using a {{site.data.keyword.keymanagementserviceshort}} root key. After you create the secret in the `image-key-synchronizer` project, the Image Key Synchronizer add-on automatically copies the private key to the `/etc/crio/keys/synced` directory on your worker nodes.
     * **To provide the private key directly**: Save the private key as a Kubernetes secret in the `image-key-synchronizer` project.
-        ```
+        ```sh
         oc create -n image-key-synchronizer secret generic --type=key --from-file=myprivatekey.pem <secret_name>
         ```
         {: codeblock}
@@ -236,7 +236,7 @@ To deploy containers that use encrypted images:
             {: pre}
 
         4. Create the secret.
-            ```
+            ```sh
             oc apply -n image-key-synchronizer -f <secret_name>.yaml
             ```
             {: pre}
@@ -255,7 +255,7 @@ To deploy containers that use encrypted images:
 
 7. Optional: To locally verify that the image is encrypted, you can try to decrypt the image with an incorrect key.
     1. Generate a new private key.
-        ```
+        ```sh
         openssl genrsa -out wrongkey.pem 1024
         ```
         {: pre}
@@ -359,7 +359,7 @@ Steps:
 
 3. Save your changes.
 4. Create the deployment in your cluster.
-    ```
+    ```sh
     oc apply -f mypod.yaml
     ```
     {: pre}
@@ -439,13 +439,13 @@ When you enable image security enforcement, {{site.data.keyword.openshiftlong_no
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. List the image policies that apply globally to the cluster. For an example configuration, see the [Portieris policy documentation](https://github.com/IBM/portieris/blob/master/helm/portieris/templates/policies.yaml#L66){: external}.
-    ```
+    ```sh
     oc get ClusterImagePolicy
     ```
     {: pre}
 
 2. List the image policies that apply to particular namespaces within the cluster. For an example configuration, see the [Portieris policy documentation](https://github.com/IBM/portieris/blob/master/helm/portieris/templates/policies.yaml#L14){: external}.
-    ```
+    ```sh
     oc get ImagePolicy --all-namespaces
     ```
     {: pre}

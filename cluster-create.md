@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -52,25 +52,25 @@ Looking for a fast way to create a cluster from the UI? Try out [Automating clus
 <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters**
 
 *  Classic cluster, shared virtual machine:
-    ```
+    ```sh
     ibmcloud oc cluster create classic --name my_cluster --version 4.7_openshift --zone dal10 --flavor b3c.4x16 --hardware shared --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
     ```
     {: pre}
 
 *  Classic cluster, bare metal:
-    ```
+    ```sh
     ibmcloud oc cluster create classic --name my_cluster --version 4.7_openshift --zone dal10 --flavor mb2c.4x32 --hardware dedicated --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
     ```
     {: pre}
 
 *  Classic cluster with an IBM Cloud&trade; Pak entitlement for a default worker pool of 3 worker nodes with 4 cores and 16 memory each:
-    ```
+    ```sh
     ibmcloud oc cluster create classic --name cloud_pak_cluster --version 4.7_openshift --zone dal10 --flavor b3c.4x16 --hardware dedicated --workers 3 --entitlement cloud_pak --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
     ```
     {: pre}
 
 *  For a classic multizone cluster, after you created the cluster in a [multizone metro](/docs/containers?topic=containers-regions-and-zones#zones-mz), [add zones](/docs/containers?topic=containers-add_workers#add_zone):
-    ```
+    ```sh
     ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
     ```
     {: pre}
@@ -79,13 +79,13 @@ Looking for a fast way to create a cluster from the UI? Try out [Automating clus
 
 <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC clusters**
 *  <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC cluster:
-    ```
+    ```sh
     ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.7_openshift --zone us-east-1 --vpc-id <VPC_ID> --subnet-id <VPC_SUBNET_ID> --cos-instance <COS_CRN>--flavor b2.4x16 --workers 3
     ```
     {: pre}
 
 *  For a VPC multizone cluster, after you created the cluster in a [multizone metro](/docs/containers?topic=containers-regions-and-zones#zones-vpc), [add zones](/docs/containers?topic=containers-add_workers#vpc_add_zone):
-    ```
+    ```sh
     ibmcloud oc zone add vpc-gen2 --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --subnet-id <VPC_SUBNET_ID>
     ```
     {: pre}
@@ -237,7 +237,7 @@ The following image walks you through choosing the setup that you want for your 
         {: pre} 
 
 3. Review the zones where you can create your cluster. In the output of the following command, zones have a **Location Type** of `dc`. To span your cluster across zones, you must create the cluster in a [multizone-capable zone](/docs/containers?topic=containers-regions-and-zones#zones-mz). Multizone-capable zones have a metro value in the **Multizone Metro** column. If you want to create a multizone cluster, you can use the {{site.data.keyword.cloud_notm}} console, or [add more zones](/docs/containers?topic=containers-add_workers#add_zone) to your cluster after the cluster is created.
-    ```
+    ```sh
     ibmcloud oc locations
     ```
     {: pre}
@@ -250,18 +250,18 @@ The following image walks you through choosing the setup that you want for your 
     Before you create a bare metal machine, be sure that you want to provision one. Bare metal machines are billed monthly. If you order a bare metal machine by mistake, you are charged for the entire month, even if you cancel the machine immediately.  
     {: tip}
 
-    ```
+    ```sh
     ibmcloud oc flavors --zone <zone>
     ```
     {: pre}
 
 5. Check if you have existing VLANs in the zones that you want to include in your cluster, and note the ID of the VLAN. If you do not have a public or private VLAN in one of the zones that you want to use in your cluster, {{site.data.keyword.containerlong_notm}} automatically creates these VLANs for you when you create the cluster.
-    ```
+    ```sh
     ibmcloud oc vlan ls --zone <zone>
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     ID        Name   Number   Type      Router
     1519999   vlan   1355     private   bcr02a.dal10
@@ -274,7 +274,7 @@ The following image walks you through choosing the setup that you want for your 
     If a public and private VLAN already exist, note the matching routers. Private VLAN routers always begin with <code>bcr</code> (back-end router) and public VLAN routers always begin with <code>fcr</code> (front-end router). When you create a cluster and specify the public and private VLANs, the number and letter combination after those prefixes must match. In the example output, any private VLAN can be used with any public VLAN because the routers all include `02a.dal10`.
 
 6. Create your standard cluster.
-    ```
+    ```sh
     ibmcloud oc cluster create classic --zone <zone> --flavor <flavor> --hardware <shared_or_dedicated> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --workers <number> --name <cluster_name> --version <major.minor.patch>_openshift --public-service-endpoint [--private-service-endpoint] [--pod-subnet] [--service-subnet] [--disable-disk-encrypt]
     ```
     {: pre}
@@ -356,14 +356,14 @@ The following image walks you through choosing the setup that you want for your 
     </tbody></table>
 
 7. Verify that the creation of the cluster was requested. For virtual machines, it can take a few minutes for the worker node machines to be ordered, and for the cluster to be set up and provisioned in your account. Bare metal physical machines are provisioned by manual interaction with IBM Cloud infrastructure, and can take more than one business day to complete.
-    ```
+    ```sh
     ibmcloud oc cluster ls
     ```
     {: pre}
 
     When the provisioning of your {{site.data.keyword.openshiftshort}} master is completed, the **State** of your cluster changes to `normal`. After your {{site.data.keyword.openshiftshort}} master is ready, the provisioning of your worker nodes is initiated.
-    ```
-    Name         ID                         State      Created          Workers    Zone      Version     Resource Group Name   Provider
+    ```sh
+    NAME         ID                         State      Created          Workers    Zone      Version     Resource Group Name   Provider
     mycluster    blrs3b1d0p0p2f7haq0g       normal   20170201162433   3          dal10     4.7.29_xxxx_openshift      Default             classic
     ```
     {: screen}
@@ -372,7 +372,7 @@ The following image walks you through choosing the setup that you want for your 
     {: tip}
 
 8. Check the status of the worker nodes.
-    ```
+    ```sh
     ibmcloud oc worker ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
@@ -498,7 +498,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
     * **Important**: Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
     * For more information, see [Overview of VPC networking in {{site.data.keyword.openshiftlong_notm}}: Subnets](/docs/containers?topic=containers-vpc-subnets#vpc_basics_subnets).
 5. Create the cluster in your VPC. You can use the `ibmcloud oc cluster create vpc-gen2` command to create a single zone cluster in your VPC with worker nodes that are connected to one VPC subnet only. If you want to create a multizone cluster, you can use the {{site.data.keyword.cloud_notm}} console, or [add more zones](/docs/containers?topic=containers-add_workers#vpc_add_zone) to your cluster after the cluster is created. The cluster takes a few minutes to provision.
-    ```
+    ```sh
     ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.7_openshift --cos-instance <COS_CRN> --workers <number_workers_per_zone> [--pod-subnet] [--service-subnet] [--disable-public-service-endpoint] [--kms-instance <KMS_instance_ID> --crk <root_key_ID>]
     ```
     {: pre}
@@ -576,14 +576,14 @@ Your VPC cluster is created with both a public and a private cloud service endpo
     </tr>
     </tbody></table>
 6. Verify that the creation of the cluster was requested. It can take a few minutes for the worker node machines to be ordered, and for the cluster to be set up and provisioned in your account.
-    ```
+    ```sh
     ibmcloud oc cluster ls
     ```
     {: pre}
 
     When the provisioning of your {{site.data.keyword.openshiftshort}} master is completed, the state of your cluster changes to **normal**. After the {{site.data.keyword.openshiftshort}} master is ready, your worker nodes are set up.
-    ```
-    Name         ID                                   State      Created          Workers    Zone      Version     Resource Group Name   Provider
+    ```sh
+    NAME         ID                                   State      Created          Workers    Zone      Version     Resource Group Name   Provider
     mycluster    aaf97a8843a29941b49a598f516da72101   normal   20170201162433   3          Dallas     4.7.29_xxxx_openshift      Default               vpc-gen2
     ```
     {: screen}
@@ -592,7 +592,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
     {: tip}
 
 7. Check the status of the worker nodes.
-    ```
+    ```sh
     ibmcloud oc worker ls --cluster <cluster_name_or_ID>
     ```
     {: pre}

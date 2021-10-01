@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -95,12 +95,12 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
 
 1. Identify what user credentials are used for the region and resource group's infrastructure permissions.
     1. Check the API key for a region and resource group of the cluster.
-        ```
+        ```sh
         ibmcloud oc api-key info --cluster <cluster_name_or_ID>
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         Getting information about the API key owner for cluster <cluster_name>...
         OK
@@ -110,7 +110,7 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
         {: screen}
 
     2. Check if the classic infrastructure account for the region and resource group is manually set to use a different IBM Cloud infrastructure account.
-        ```
+        ```sh
         ibmcloud oc credential get --region <us-south>
         ```
         {: pre}
@@ -131,7 +131,7 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
 
 2. Validate the infrastructure permissions that the user has.
     1. List the suggested and required infrastructure permissions for the region and resource group.
-        ```
+        ```sh
         ibmcloud oc infra-permissions get --region <region>
         ```
         {: pre}
@@ -143,13 +143,13 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
     3. If necessary, you can change the [API key](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset) or [manually-set](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set) infrastructure credentials owner for the region and resource group.
 3. Test that the changed permissions permit authorized users to perform infrastructure operations for the cluster.
     1. For example, you might try to a delete a worker node.
-        ```
+        ```sh
         ibmcloud oc worker rm --cluster <cluster_name_or_ID> --worker <worker_node_ID>
         ```
         {: pre}
 
     2. Check to see if the worker node is removed.
-        ```
+        ```sh
         ibmcloud oc worker get --cluster <cluster_name_or_ID> --worker <worker_node_ID>
         ```
         {: pre}
@@ -176,8 +176,8 @@ You cannot manage worker nodes for your cluster, or view the cluster worker node
 Further, you verified that you have the [proper infrastructure credentials](#cs_credentials).
 
 You might receive an error message in your worker node status similar to the following.
-```
-Incorrect account for worker - The 'classic' infrastructure user credentials changed and no longer match the worker node instance infrastructure account.
+```sh
+incorrect account for worker - The 'classic' infrastructure user credentials changed and no longer match the worker node instance infrastructure account.
 ```
 {: screen}
 
@@ -267,7 +267,7 @@ Re-establish the VPE connection between your worker nodes and Kubernetes master.
     * If the gateway for your cluster is listed and its status is `Stable`, you might have firewall or security group rules that are blocking worker node communication to the cluster master. [Configure your security group rules to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-vpc-network-policy#security_groups).
 
 2. Refresh the cluster master. If the VPE gateway did not exist in your VPC, it is created, and connectivity to the reserved IP addresses on the subnets that your worker nodes are connected to is re-established. After you refresh the cluster, wait a few minutes to allow the operation to complete.
-    ```
+    ```sh
     ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
     ```
     {: pre}
@@ -337,18 +337,18 @@ The {{site.data.keyword.cloud_notm}} account owner or an account administrator m
 1. From the [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/){: external} console, select **Manage** > **Access (IAM)** > **Users** and click the name of the account owner. **Note**: If you do not use the account owner's credentials, first [ensure that the user whose credentials you use has the correct permissions](/docs/openshift?topic=openshift-access-creds#owner_permissions).
 2. In the **API Keys** section, find or create a classic infrastructure API key.
 3. Use the infrastructure API key to set the infrastructure API credentials for {{site.data.keyword.containerlong_notm}}. Repeat this command for each region where you create clusters.
-    ```
+    ```sh
     ibmcloud oc credential set classic --infrastructure-username <infrastructure_API_username> --infrastructure-api-key <infrastructure_API_authentication_key> --region <region>
     ```
     {: pre}
 
 4. Verify that the correct credentials are set.
-    ```
+    ```sh
     ibmcloud oc credential get --region <region>
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     Infrastructure credentials for user name user@email.com set for resource group default.
     ```

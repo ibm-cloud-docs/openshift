@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -37,7 +37,7 @@ Manually update the reference of the private IP address to point to the correct 
 
 1. Confirm that you have two worker nodes with the same **Private IP** address. Note the **Private IP** and **ID** of the deleted worker.
 
-    ```
+    ```sh
     ibmcloud oc worker ls --cluster <cluster_name_or_id>
     ```
     {: pre}
@@ -57,7 +57,7 @@ Manually update the reference of the private IP address to point to the correct 
     ```
     {: pre}
 
-    ```
+    ```sh
     NAME
     kube-dal10-cr9b7371a7faaa46d08e04f046d5e6d8b4-w1
     kube-dal10-cr9b7371a7faaa46d08e04f046d5e6d8b4-w2
@@ -73,7 +73,7 @@ Manually update the reference of the private IP address to point to the correct 
 
 5. Reboot the worker node that was not deleted.
 
-    ```
+    ```sh
     ibmcloud oc worker reboot --cluster <cluster_name_or_id> --worker <worker_id>
     ```
     {: pre}

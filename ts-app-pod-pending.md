@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -10,8 +10,6 @@ subcollection: openshift
 content-type: troubleshoot
 
 ---
-
-
 
 
 {{site.data.keyword.attribute-definition-list}}
@@ -61,14 +59,14 @@ If this cluster is an existing one, check your cluster capacity.
 
     1. Review the current sizes and flavors of your worker pools to decide which one to resize.
 
-        ```
+        ```sh
         ibmcloud oc worker-pool ls
         ```
         {: pre}
 
     2. Resize your worker pools to add more nodes to each zone that the pool spans.
 
-        ```
+        ```sh
         ibmcloud oc worker-pool resize --worker-pool <worker_pool> --cluster <cluster_name_or_ID> --size-per-zone <workers_per_zone>
         ```
         {: pre}
@@ -77,7 +75,7 @@ If this cluster is an existing one, check your cluster capacity.
 
     1. Confirm that the `resources.requests` values are not larger than the worker node's capacity. For example, if the pod request `cpu: 4000m`, or 4 cores, but the worker node size is only 2 cores, the pod cannot be deployed.
 
-        ```
+        ```sh
         oc get pod <pod_name> -o yaml
         ```
         {: pre}

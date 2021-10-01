@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -58,13 +58,13 @@ Before you begin:
 To create a subdomain for one or more NLB IP addresses:
 
 1. Get the **EXTERNAL-IP** address for your NLB. If you have NLBs in each zone of a multizone cluster that expose one app, get the IPs for each NLB.
-    ```
+    ```sh
     oc get svc
     ```
     {: pre}
 
     In the following example output, the NLB **EXTERNAL-IPs** are `168.2.4.5` and `88.2.4.5`.
-    ```
+    ```sh
     NAME             TYPE           CLUSTER-IP       EXTERNAL-IP       PORT(S)                AGE
     lb-myapp-dal10   LoadBalancer   172.21.xxx.xxx   168.2.4.5         1883:30303/TCP         6d
     lb-myapp-dal12   LoadBalancer   172.21.xxx.xxx   88.2.4.5          1883:31303/TCP         6d
@@ -72,19 +72,19 @@ To create a subdomain for one or more NLB IP addresses:
     {: screen}
 
 2. Register the IP by creating a DNS subdomain. To specify multiple IP addresses, use multiple `--ip` flags.
-    ```
+    ```sh
     ibmcloud oc nlb-dns create classic --cluster <cluster_name_or_id> --ip <NLB_IP> --ip <NLB2_IP> ...
     ```
     {: pre}
 
 3. Verify that the subdomain is created.
-    ```
+    ```sh
     ibmcloud oc nlb-dns ls --cluster <cluster_name_or_id>
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+    ```sh
     Hostname                                                                                IP(s)              Health Monitor   SSL Cert Status           SSL Cert Secret Name
     mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud     ["168.2.4.5"]      None             created                   <certificate>
     ```
@@ -130,20 +130,20 @@ Enable health checks on the NLB IP addresses behind a single subdomain to determ
 Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname_dns).
 
 1. Get the name of your subdomain. In the output, note that the host has a monitor **Status** of `Unconfigured`.
-    ```
+    ```sh
     ibmcloud oc nlb-dns monitor ls --cluster <cluster_name_or_id>
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+    ```sh
     Hostname                                                                                   Status         Type    Port   Path
     mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud        Unconfigured   N/A     0      N/A
     ```
     {: screen}
 
 2. Create a health check monitor for the subdomain. If you do not include a configuration parameter, the default value is used.
-    ```
+    ```sh
     ibmcloud oc nlb-dns monitor configure --cluster <cluster_name_or_id> --nlb-host <host_name> --enable --description <description> --type <type> --method <method> --path <path> --timeout <timeout> --retries <retries> --interval <interval> --port <port> --header <header> --expected-body <expected-body> --expected-codes <expected-codes> --follows-redirects <true> --allows-insecure <true>
     ```
     {: pre}
@@ -224,18 +224,18 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
     </table>
 
     Example command:
-    ```
+    ```sh
     ibmcloud oc nlb-dns monitor configure --cluster mycluster --nlb-host mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud --enable --description "Login page monitor" --type HTTPS --method GET --path / --timeout 5 --retries 2 --interval 60 --header Host=example.com --header Origin=https://akamai.com --expected-body "healthy" --expected-codes 2xx --follows-redirects true
     ```
     {: pre}
 
 3. Verify that the health check monitor is configured with the correct settings.
-    ```
+    ```sh
     ibmcloud oc nlb-dns monitor get --cluster <cluster_name_or_id> --nlb-host <host_name>
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     Created On:         2019-04-24 09:01:59.781392 +0000 UTC
     Modified On:        2020-02-26 15:39:05.273217 +0000 UTC
@@ -261,13 +261,13 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
     {: screen}
 
 4. View the health check status of your subdomain.
-    ```
+    ```sh
     ibmcloud oc nlb-dns monitor ls --cluster <cluster_name_or_id>
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+    ```sh
     Hostname                                                                                Status      Type    Port   Path
     mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud     Healthy     https   443    /alive
     ```

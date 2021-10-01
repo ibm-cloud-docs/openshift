@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -176,13 +176,13 @@ Cluster administrators make sure that teams that share a cluster don't take up m
 {: shortdesc}
 
 1. Check whether a resource quota is set for a namespace.
-    ```
+    ```sh
     oc get quota --namespace=<namespace>
     ```
     {: pre}
 
 2. See what the quota limits are.
-    ```
+    ```sh
     oc describe quota <quota_name> --namespace=<namespace>
     ```
     {: pre}
@@ -650,7 +650,7 @@ To set up configuration files with Kustomize:
         {: pre}
 
 2. Create a directory for your app in a version control system, such as Git.
-    ```
+    ```sh
     git init ~/<my_app>
     ```
     {: pre}
@@ -773,7 +773,7 @@ To set up configuration files with Kustomize:
         {: pre}
 
     2. Apply the Kubernetes resources to your cluster. Include the `-k` flag and the directory where the `kustomization` file is located. For example, if you are already in the staging directory, include `../staging` to mark the path to the directory.
-        ```
+        ```sh
         oc apply -k ../staging
         ```
         {: pre}
@@ -788,13 +788,13 @@ To set up configuration files with Kustomize:
         persistentvolumeclaim/staging-kustomtest-pvc-v2 created
         ```
     3. Check to make sure that the staging-unique changes are applied. For example, if you added a `staging-` prefix, the pods and other resources that are created include this prefix in their name.
-        ```
+        ```sh
         oc get -k ../staging
         ```
         {: pre}
 
         Example output
-        ```
+        ```sh
         NAME                                        DATA   AGE
         configmap/staging-kustomtest-configmap-v2   2      90s
 
@@ -817,7 +817,7 @@ To set up configuration files with Kustomize:
 
     4. Repeat these steps for each environment that you want to build.
 7. **Optional**: Clean up your environment by removing all the resources that you applied with Kustomize.
-    ```
+    ```sh
     oc delete -k <directory>
     ```
     {: pre}

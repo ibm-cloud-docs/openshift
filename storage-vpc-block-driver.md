@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, vpc, block storage
 
@@ -202,7 +202,7 @@ Select the {{site.data.keyword.block_storage_is_short}} driver configmap that ma
     {: scree}
 
 6. Verify that the storage classes are created.
-    ```
+    ```sh
     oc get sc
     ```
     {: pre}

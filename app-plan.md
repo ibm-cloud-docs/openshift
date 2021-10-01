@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -111,25 +111,25 @@ If you have an app that runs with root permissions, you must modify your deploym
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. As a cluster administrator, create a project.
-    ```
+    ```sh
     oc adm new-project <project_name>
     ```
     {: pre}
 
 2. Target the project so that the subsequent resources that you create are in the project namespace.
-    ```
+    ```sh
     oc project <project_name>
     ```
     {: pre}
 
 3. Create a service account for the project.
-    ```
+    ```sh
     oc create serviceaccount <sa_name>
     ```
     {: pre}
 
 4. Add a privileged security context constraint to the service account for the project.<p class="note">If you want to check what policies are included in the `privileged` SCC, run `oc describe scc privileged`. For more information about SCCs, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.7/authentication/managing-security-context-constraints.html){: external}.</p>
-    ```
+    ```sh
     oc adm policy add-scc-to-user privileged -n <project_name> -z <sa_name>
     ```
     {: pre}
@@ -160,13 +160,13 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     {: screen}
 
 6. Deploy your app configuration file.
-    ```
+    ```sh
     oc apply -f <filepath/deployment.yaml>
     ```
     {: pre}
 
 7. Verify that the pod is in a **Running** status. If your pod shows an error status or is stuck in one status for a long time, describe the pod and review the **Events** section to start troubleshooting your deployment.
-    ```
+    ```sh
     oc get pods
     ```
     {: pre}
