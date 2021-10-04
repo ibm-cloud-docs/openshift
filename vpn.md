@@ -17,7 +17,7 @@ subcollection: openshift
 # Setting up classic VPN connectivity
 {: #vpn}
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This VPN information is specific to classic clusters. For VPN information for VPC clusters, see [Setting up VPC VPN connectivity](/docs/containers?topic=containers-vpc-vpnaas).
+![Classic infrastructure provider icon.](images/icon-classic-2.png) This VPN information is specific to classic clusters. For VPN information for VPC clusters, see [Setting up VPC VPN connectivity](/docs/containers?topic=containers-vpc-vpnaas).
 {: note}
 
 With VPN connectivity, you can securely connect apps in a {{site.data.keyword.openshiftshort}} cluster on {{site.data.keyword.openshiftlong}} to an on-premises network. You can also connect apps that are external to your cluster to an app that runs inside your cluster.

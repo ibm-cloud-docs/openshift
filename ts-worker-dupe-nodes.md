@@ -19,8 +19,8 @@ content-type: troubleshoot
 {: #cs_duplicate_nodes}
 
 **Infrastructure provider**:
-    * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-    * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+    * ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
+    * ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
 
 
 When you run `oc get nodes`, you see duplicate worker nodes with the status **`NotReady`**. The worker nodes with **`NotReady`** have public IP addresses, while the worker nodes with **`Ready`** have private IP addresses.

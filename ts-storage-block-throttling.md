@@ -18,7 +18,7 @@ content-type: troubleshoot
 # Why does the Block storage plug-in Helm chart give CPU throttling warnings?
 {: #block_helm_cpu}
 
-**Infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
 
 
 When you install the Block storage Helm chart, the installation gives a warning similar to the following:

@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: #block_not_attached_vpc}
 
 **Infrastructure provider**:
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
 
 
 When you edit a {{site.data.keyword.block_storage_is_short}} and update the `spec.resources.requests.storage` section to expand your volume, you see the following error:

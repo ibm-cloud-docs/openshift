@@ -22,8 +22,8 @@ Review the options that you have to debug your app deployments and find the root
 {: shortdesc}
 
 **Infrastructure provider**:
-    * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-    * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+    * ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
+    * ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
 
 Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/containers?topic=containers-users#checking-perms) for the namespace where your app is deployed.
 

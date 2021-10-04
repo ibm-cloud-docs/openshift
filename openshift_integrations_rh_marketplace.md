@@ -21,8 +21,8 @@ With [{{site.data.keyword.redhat_full}} Marketplace](https://marketplace.redhat.
 {: shortdesc}
 
 **Supported infrastructure providers**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
 * <img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> {{site.data.keyword.satelliteshort}}
 
 **Required permissions**:

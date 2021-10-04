@@ -19,8 +19,8 @@ content-type: troubleshoot
 {: #ts-app-pod-fail}
 
 **Infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
 
 
 Your pod was healthy but unexpectedly gets removed or gets stuck in a restart loop.

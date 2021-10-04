@@ -17,7 +17,7 @@ content-type: troubleshoot
 # Why can't I add non-root user access to persistent storage?
 {: #cs_storage_nonroot}
 
-**Infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
 
 
 After you [add non-root user access to persistent storage](/docs/containers?topic=containers-nonroot) or deploy a Helm chart with a non-root user ID specified, the user cannot write to the mounted storage.

@@ -17,7 +17,7 @@ content-type: troubleshoot
 # Why are the file systems for worker nodes changed to read-only?
 {: #readonly_nodes}
 
-**Infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
 
 
 

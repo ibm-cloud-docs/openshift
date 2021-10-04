@@ -18,7 +18,7 @@ content-type: troubleshoot
 # Classic clusters: Why can't I deploy a load balancer?
 {: #cs_subnet_limit_lb}
 
-**Infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
 
 When you describe the `ibm-cloud-provider-vlan-ip-config` configmap in your classic cluster, you might see an error message similar to the following example output.
 {: tsSymptoms}

@@ -18,7 +18,7 @@ content-type: troubleshoot
 # VPC clusters: Why can't my app connect via load balancer?
 {: #vpc_ts_lb}
 
-**Infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+**Infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
 
 You exposed your app by creating a Kubernetes `LoadBalancer` service in your VPC cluster. When you try to connect to your app by using the hostname that is assigned to the Kubernetes `LoadBalancer`, the connection fails or times out.
 {: tsSymptoms}

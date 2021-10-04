@@ -41,7 +41,7 @@ If you have a multizone cluster, one router is deployed to your cluster, and a r
 ### Traffic flow in a classic single-zone cluster
 {: #route_single}
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> The following diagram shows how a router directs network traffic from the internet to an app in a single-zone, classic cluster.
+![Classic infrastructure provider icon.](images/icon-classic-2.png) The following diagram shows how a router directs network traffic from the internet to an app in a single-zone, classic cluster.
 {: shortdesc}
 
 <img src="images/roks-router.png" alt="Expose an app in a single-zone {{site.data.keyword.openshiftshort}} cluster by using a router" width="550" style="width:550px; border-style: none"/>
@@ -57,7 +57,7 @@ If you have a multizone cluster, one router is deployed to your cluster, and a r
 ### Traffic flow in a classic multizone cluster
 {: #route_multi}
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> The following diagram shows how a router directs network traffic from the internet to an app in a multizone, classic cluster.
+![Classic infrastructure provider icon.](images/icon-classic-2.png) The following diagram shows how a router directs network traffic from the internet to an app in a multizone, classic cluster.
 {: shortdesc}
 
 <img src="images/roks-router-multi.png" alt="Expose an app in a multizone {{site.data.keyword.openshiftshort}} cluster by using a router" width="700" style="width:700px; border-style: none"/>

@@ -20,7 +20,7 @@ content-type: troubleshoot
 {: troubleshoot}
 
 **Infrastructure provider and applicable versions**:
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
 * {{site.data.keyword.openshiftshort}} 4.4 or later
 
 

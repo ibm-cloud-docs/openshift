@@ -19,8 +19,8 @@ content-type: troubleshoot
 {: #ts_image_pull_create}
 
 **Infrastructure provider**:
-    * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-    * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+    * ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
+    * ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
 
 
 When you created a cluster, you received an error message similar to the following.

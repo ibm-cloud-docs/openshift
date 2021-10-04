@@ -21,8 +21,8 @@ content-type: troubleshoot
 {: support}
 
 **Infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
 
 
 You cannot push or pull Docker images from your local machine to the cluster's built-in Docker registry.

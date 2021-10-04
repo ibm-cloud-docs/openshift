@@ -46,14 +46,14 @@ After you install the OpenShift Data Foundation add-on for your {{site.data.keyw
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-        name: ocs-pvc
-      spec:
-    accessModes:
-    - ReadWriteOnce
-    resources:
-      requests:
-        storage: 10Gi
-    storageClassName: ocs-storagecluster-cephfs
+      name: odf-pvc
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Gi
+      storageClassName: ocs-storagecluster-cephfs
     ```
     {: codeblock}
 
@@ -81,7 +81,7 @@ After you install the OpenShift Data Foundation add-on for your {{site.data.keyw
       volumes:
       - name: persistent-storage
         persistentVolumeClaim:
-          claimName: ocs-pvc
+          claimName: odf-pvc
     ```
     {: codeblock}
 

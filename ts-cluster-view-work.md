@@ -19,8 +19,8 @@ content-type: troubleshoot
 {: #cs_cluster_access}
 
 **Infrastructure provider**:
-    * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-    * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+    * ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
+    * ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
 
 You are not able to find a cluster. When you run `ibmcloud oc cluster ls`, the cluster is not listed in the output.
 {: tsSymptoms}

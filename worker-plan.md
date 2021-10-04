@@ -144,8 +144,8 @@ Every VM comes with an attached disk for storage of information that the VM need
 
     Additionally, classic and VPC infrastructure differ in the disk setup.
 
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic VMs**: Classic VMs have two attached disks. The primary storage disk has 25 GB for the OS file system, and the secondary storage disk has 100 GB for data such as the container runtime and the `kubelet`. For reliability, the primary and secondary storage volumes are local disks instead of storage area networking (SAN). Reliability benefits include higher throughput when serializing bytes to the local disk and reduced file system degradation due to network failures. The secondary disk is encrypted by default.
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC compute VMs**: VPC VMs have one primary disk that is a block storage volume that is attached via the network. The storage layer is not separated from the other networking layers, and both network and storage traffic are routed on the same network. To account for network latency, the storage disks have a maximum of up to 3000 IOPS. The primary storage disk is used for storing data such as the OS file system, container runtime, and `kubelet`, and is [encrypted by default](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption).
+* ![Classic infrastructure provider icon.](images/icon-classic-2.png) **Classic VMs**: Classic VMs have two attached disks. The primary storage disk has 25 GB for the OS file system, and the secondary storage disk has 100 GB for data such as the container runtime and the `kubelet`. For reliability, the primary and secondary storage volumes are local disks instead of storage area networking (SAN). Reliability benefits include higher throughput when serializing bytes to the local disk and reduced file system degradation due to network failures. The secondary disk is encrypted by default.
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.png) **VPC compute VMs**: VPC VMs have one primary disk that is a block storage volume that is attached via the network. The storage layer is not separated from the other networking layers, and both network and storage traffic are routed on the same network. To account for network latency, the storage disks have a maximum of up to 3000 IOPS. The primary storage disk is used for storing data such as the OS file system, container runtime, and `kubelet`, and is [encrypted by default](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption).
 * To prevent default pod evictions, 10% of the Kubernetes data disk (secondary disk in classic, primary boot disk in VPC) is reserved for system components.
 
 ### Available flavors for VMs
@@ -208,7 +208,7 @@ Ubuntu 16 `x1c` or `x2c` worker node flavors are deprecated and no longer receiv
 You can provision your worker node as a single-tenant physical server, also referred to as bare metal.
 {: shortdesc}
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Physical machines are available for classic clusters only and are not supported in VPC clusters.
+![Classic infrastructure provider icon.](images/icon-classic-2.png) Physical machines are available for classic clusters only and are not supported in VPC clusters.
 {: note}
 
 ### Planning considerations for bare metal
@@ -269,7 +269,7 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 Software-defined storage (SDS) flavors are physical machines that are provisioned with additional raw disks for physical local storage. Unlike the primary and secondary local disk, these raw disks are not wiped during a worker node update or reload. Because data is co-located with the compute node, SDS machines are suited for high-performance workloads.
 {: shortdesc}
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Software-defined storage flavor are available for classic clusters only and are not supported in VPC clusters.
+![Classic infrastructure provider icon.](images/icon-classic-2.png) Software-defined storage flavor are available for classic clusters only and are not supported in VPC clusters.
 {: note}
 
 ### Planning considerations for SDS

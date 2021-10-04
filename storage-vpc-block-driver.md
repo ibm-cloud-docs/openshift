@@ -21,7 +21,7 @@ The following documentation covers the steps to deploy the {{site.data.keyword.b
 {: important}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
 
 Want to use {{site.data.keyword.block_storage_is_short}} in an {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong_notm}} cluster? See [Storing data on Block Storage for VPC](/docs/containers?topic=containers-vpc-block) for more information.
 {: tip}

@@ -34,7 +34,7 @@ Your users are less likely to experience downtime when you distribute your apps 
 Single zone clusters can be created in one of the supported [single zone locations](/docs/containers?topic=containers-regions-and-zones#zones-sz). To improve availability for your app and to allow failover for the case that one worker node is not available in your cluster, add additional worker nodes to your single zone cluster.
 {: shortdesc}
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC clusters are supported only in [multizone metro locations](/docs/containers?topic=containers-regions-and-zones#zones-vpc). If your cluster must reside in one of the single zone cities, create a classic cluster instead.
+![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC clusters are supported only in [multizone metro locations](/docs/containers?topic=containers-regions-and-zones#zones-vpc). If your cluster must reside in one of the single zone cities, create a classic cluster instead.
 {: note}
 
 <img src="images/cluster_singlezone.png" alt="High availability for clusters in a single zone" width="230" style="width:230px; border-style: none"/>
