@@ -247,7 +247,7 @@ Federated ID
         {: codeblock}
 
         Header
-        :     `Authorization: bearer <iam_token>`
+        :    - `Authorization: bearer <iam_token>`
 
     * **VPC**
     
@@ -257,7 +257,7 @@ Federated ID
         {: codeblock}
 
         Header
-        :     `Authorization`: Your {{site.data.keyword.cloud_notm}} IAM access token (`bearer <iam_token>`).
+        :    - `Authorization`: Your {{site.data.keyword.cloud_notm}} IAM access token (`bearer <iam_token>`).
 
 5. Review the [{{site.data.keyword.openshiftlong_notm}} API documentation](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external} to find a list of supported APIs.
 
@@ -291,33 +291,33 @@ Use the following steps if you want to create an {{site.data.keyword.cloud_notm}
     {: codeblock}
 
     Header
-    :     - `Content-Type: application/x-www-form-urlencoded`
-          - `Authorization: Basic Yng6Yng=`
-              `Yng6Yng=` equals the URL-encoded authorization for the username **bx** and the password **bx**.
-              {: note}
+    :    - `Content-Type: application/x-www-form-urlencoded`
+         - `Authorization: Basic Yng6Yng=`
+             `Yng6Yng=` equals the URL-encoded authorization for the username **bx** and the password **bx**.
+             {: note}
     
     Body when using the refresh token
-    :     - `grant_type: refresh_token`
-          - `response_type: cloud_iam uaa`
-          - `refresh_token:` Your {{site.data.keyword.cloud_notm}} IAM refresh token.
-          - `uaa_client_ID: cf`
-          - `uaa_client_secret:`
-          - `bss_account:` Your {{site.data.keyword.cloud_notm}} account ID.
-              Add the `uaa_client_secret` key with no value specified.
-              {: note}
+    :    - `grant_type: refresh_token`
+         - `response_type: cloud_iam uaa`
+         - `refresh_token:` Your {{site.data.keyword.cloud_notm}} IAM refresh token.
+         - `uaa_client_ID: cf`
+         - `uaa_client_secret:`
+         - `bss_account:` Your {{site.data.keyword.cloud_notm}} account ID.
+             Add the `uaa_client_secret` key with no value specified.
+             {: note}
           
     Body when using the {{site.data.keyword.cloud_notm}} API key
-    :     - `grant_type: urn:ibm:params:oauth:grant-type:apikey`
-          - `response_type: cloud_iam uaa`
-          - `apikey:` Your {{site.data.keyword.cloud_notm}} API key.
-          - `uaa_client_ID: cf`
-          - `uaa_client_secret:`
-              Add the `uaa_client_secret` key with no value specified.
-              {: note}
+    :    - `grant_type: urn:ibm:params:oauth:grant-type:apikey`
+         - `response_type: cloud_iam uaa`
+         - `apikey:` Your {{site.data.keyword.cloud_notm}} API key.
+         - `uaa_client_ID: cf`
+         - `uaa_client_secret:`
+             Add the `uaa_client_secret` key with no value specified.
+             {: note}
 
     The following example shows the output of the previous API request.
 
-    ```
+    ```sh
     {
         "access_token": "<iam_token>",
         "refresh_token": "<iam_refresh_token>",
