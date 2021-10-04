@@ -643,7 +643,7 @@ You can authorize your VPC Cloud Service Endpoint source IP addresses to access 
     * **Writer** service access role for the {{site.data.keyword.cos_full_notm}} service.
 
 **Supported infrastructure provider**:
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 1. [Follow the instructions to install the `ibmc` Helm plugin](#install_cos). Make sure to install the `ibm-object-storage-plugin` and set the `bucketAccessPolicy` flag to `true`.
 

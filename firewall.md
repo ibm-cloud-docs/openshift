@@ -17,7 +17,7 @@ subcollection: openshift
 # Classic: Opening required ports and IP addresses in your firewall
 {: #firewall}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.png) This firewall information is specific to classic clusters. For VPC clusters, see [Opening required ports and IP addresses in your firewall for VPC clusters](/docs/containers?topic=containers-vpc-firewall).
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) This firewall information is specific to classic clusters. For VPC clusters, see [Opening required ports and IP addresses in your firewall for VPC clusters](/docs/containers?topic=containers-vpc-firewall).
 {: note}
 
 Review these situations in which you might need to open specific ports and IP addresses in your firewalls for your {{site.data.keyword.openshiftlong}} clusters.

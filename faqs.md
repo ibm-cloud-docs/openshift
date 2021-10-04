@@ -152,7 +152,7 @@ Your cluster must have at least 2 worker nodes to run default Kubernetes and Ope
 Keep in mind that some services such as Ingress might require multiple worker nodes for high availability, and you might not be able to run these services or your apps in the smallest size cluster possible.
 {: important}
 
-`*` ![Classic infrastructure provider icon.](images/icon-classic-2.png) **Classic clusters only**: Initially, you can create a classic cluster with only 1 worker node. This operation is allowed for multizone clusters, so that you are not forced to create 2 worker nodes per zone. If you have a single zone cluster, resize the worker pool to 2. Also, note that after resizing a worker pool to 2, you cannot later resize back down to 1 worker node.
+`*` ![Classic infrastructure provider icon.](images/icon-classic-2.svg) **Classic clusters only**: Initially, you can create a classic cluster with only 1 worker node. This operation is allowed for multizone clusters, so that you are not forced to create 2 worker nodes per zone. If you have a single zone cluster, resize the worker pool to 2. Also, note that after resizing a worker pool to 2, you cannot later resize back down to 1 worker node.
 {: note}
 
 ## Which Kubernetes versions does the service support?
@@ -198,7 +198,7 @@ For the latest HA service level agreement terms, refer to the [{{site.data.keywo
 
 To view detailed system requirements, you can run a [software product compatibility report for {{site.data.keyword.openshiftlong_notm}}](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=4440E450C2C811E6A98AAE81A233E762){: external}. Note that compliance depends on the underlying [infrastructure provider](/docs/containers?topic=containers-infrastructure_providers) for the cluster worker nodes, networking, and storage resources.
 
-![Classic infrastructure provider icon.](images/icon-classic-2.png) **Classic infrastructure**: {{site.data.keyword.openshiftlong_notm}} implements controls commensurate with the following security standards:
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) **Classic infrastructure**: {{site.data.keyword.openshiftlong_notm}} implements controls commensurate with the following security standards:
 - EU-US Privacy Shield and Swiss-US Privacy Shield Framework
 - Health Insurance Portability and Accountability Act (HIPAA)
 - Service Organization Control standards (SOC 1 Type 2, SOC 2 Type 2)
@@ -206,7 +206,7 @@ To view detailed system requirements, you can run a [software product compatibil
 - International Organization for Standardization (ISO 27001, ISO 27017, ISO 27018)
 - Payment Card Industry Data Security Standard (PCI DSS)
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.png) **VPC infrastructure**: {{site.data.keyword.openshiftlong_notm}} implements controls commensurate with the following security standards:
+![VPC infrastructure provider icon.](images/icon-vpc-2.svg) **VPC infrastructure**: {{site.data.keyword.openshiftlong_notm}} implements controls commensurate with the following security standards:
 - EU-US Privacy Shield and Swiss-US Privacy Shield Framework
 - Health Insurance Portability and Accountability Act (HIPAA)
 - International Standard on Assurance Engagements 3402 (ISAE 3402), Assurance Reports on Controls at a Service Organization

@@ -201,7 +201,7 @@ If you have a [bare metal graphics processing unit (GPU) machine type](/docs/ope
 
 In the following steps, you learn how to deploy workloads that require the GPU. You can also deploy apps that don't need to process their workloads across both the GPU and CPU. After, you might find it useful to play around with mathematically intensive workloads such as the [TensorFlow](https://www.tensorflow.org/){: external} machine learning framework with [this Kubernetes demo](https://github.com/pachyderm/pachyderm/tree/master/examples/ml/tensorflow){: external}.
 
-![Classic infrastructure provider icon.](images/icon-classic-2.png) <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> GPU machines are available only for clusters that run {{site.data.keyword.openshiftshort}} version 4 on classic infrastructure.
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> GPU machines are available only for clusters that run {{site.data.keyword.openshiftshort}} version 4 on classic infrastructure.
 {: note}
 
 Before you begin

@@ -20,7 +20,7 @@ subcollection: openshift
 Change the pool of available portable public or private IP addresses by adding subnets to your {{site.data.keyword.openshiftlong}} cluster.
 {: shortdesc}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.png) The content on this page is specific to classic clusters. For information about VPC clusters, see [Configuring subnets and IP addresses for VPC clusters](/docs/containers?topic=containers-vpc-subnets).
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) The content on this page is specific to classic clusters. For information about VPC clusters, see [Configuring subnets and IP addresses for VPC clusters](/docs/containers?topic=containers-vpc-subnets).
 {: note}
 
 

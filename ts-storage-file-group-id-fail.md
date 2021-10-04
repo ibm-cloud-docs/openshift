@@ -17,7 +17,7 @@ content-type: troubleshoot
 # Why does my app fail with a group ID error for NFS file storage permissions?
 {: #root}
 
-**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
+**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 
 After you [create](/docs/containers?topic=containers-file_storage#add_file) or [add existing](/docs/containers?topic=containers-file_storage#existing_file) NFS storage to your cluster, your app's container deployment fails. You see group ID (GID) error messages.

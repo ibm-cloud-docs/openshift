@@ -18,7 +18,7 @@ content-type: troubleshoot
 # VPC: Why doesn't replacing a worker node create a worker node?
 {: #auto-rebalance-off}
 
-**Infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
+**Infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 
 When you [replace a worker node](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace) or [update a VPC worker node](/docs/containers?topic=containers-update#vpc_worker_node), a worker node is not automatically added back to your cluster.

@@ -19,8 +19,8 @@ content-type: troubleshoot
 {: #zero_nodes_calico_failure}
 
 **Infrastructure provider**:
-    * ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
-    * ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
+    * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+    * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 
 You deleted all worker nodes in your cluster so that zero worker nodes exist. Then, you added one or more worker nodes. When you run the following command, several pods for Kubernetes components are stuck in the `ContainerCreating` status, and the `calico-node` pods are stuck in the `CrashLoopBackOff` status.

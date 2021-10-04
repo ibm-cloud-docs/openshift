@@ -20,7 +20,7 @@ subcollection: openshift
 When you have consistent computing needs over a time period of at least one year, create a reservation to reduce the costs of worker nodes in your {{site.data.keyword.openshiftlong}} clusters. With a reservation, you reserve virtual worker node instances in a contract for a fixed, predictable, and lower price than on-demand instances.
 {: shortdesc}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.png) Reservations are available for classic infrastructure worker nodes only.
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) Reservations are available for classic infrastructure worker nodes only.
 {: note}
 
 ## Understanding reservations

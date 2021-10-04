@@ -24,8 +24,8 @@ Review your cluster master health.
 {: shortdesc}
 
 **Infrastructure provider**:
-    * ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
-    * ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
+    * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+    * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 ## Reviewing master health, status, and states
 {: #review-master-health}

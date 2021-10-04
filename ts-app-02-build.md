@@ -20,8 +20,8 @@ content-type: troubleshoot
 {: troubleshoot}
 
 **Infrastructure provider**:
-    * ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
-    * ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
+    * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+    * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 
 When a build such as from Operator Hub or the built-in developer content catalog tries to pull an image from a Red Hat registry, the build might fail with an authentication error similar to the following.

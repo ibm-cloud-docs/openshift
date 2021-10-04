@@ -49,8 +49,8 @@ If you see either of the IP address-related messages that are listed in the symp
 {: tsResolve}
 
 **Infrastructure provider**:
-* ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 To fix registry quota issues, [free up storage in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup).
 {: shortdesc}
@@ -62,8 +62,8 @@ To fix IP address issues, release individual and blocks of IP addresses that wer
 {: shortdesc}
 
 **Infrastructure provider and versions**:
-* ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 Your cluster must run a [supported version](/docs/openshift?topic=openshift-openshift_versions#version_types). If you cluster runs a deprecated or unsupported version, first [update your cluster](/docs/containers?topic=containers-update).
 

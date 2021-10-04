@@ -18,7 +18,7 @@ content-type: troubleshoot
 # VPC clusters: Why does a Kubernetes `LoadBalancer` service fail with no IPs?
 {: #vpc_no_lb}
 
-**Infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
+**Infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 You exposed your app by creating a Kubernetes `LoadBalancer` service in your VPC cluster.
 {: tsSymptoms}

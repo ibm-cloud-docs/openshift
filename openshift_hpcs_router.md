@@ -229,14 +229,14 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to create a router
 7. Register the IP address (classic) or hostname (VPC) of each load balancer with a DNS entry by creating a subdomain for your {{site.data.keyword.cloud_notm}} HPCS router.
     * **IBM-provided domain**: If you do not need to use a custom domain, you can generate an IBM-provided subdomain.
 
-        * ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic:
+        * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic:
 
         ```sh
         ibmcloud oc nlb-dns create classic --cluster <cluster_name_or_ID> --ip LB_IP [--ip LB2_IP --ip LB3_IP]
         ```
         {: pre}
 
-        * ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC:
+        * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC:
 
         ```sh
         ibmcloud oc nlb-dns create vpc-gen2 --cluster <cluster_name_or_ID> --lb-host <LB_hostname>

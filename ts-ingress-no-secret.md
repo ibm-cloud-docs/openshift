@@ -19,8 +19,8 @@ content-type: troubleshoot
 {: #ingress_secret}
 
 **Infrastructure provider**:
-* ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 
 When you run `ibmcloud oc ingress status -c <cluster_name_or_ID>`, one of the following messages continues to be displayed:

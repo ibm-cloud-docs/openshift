@@ -37,8 +37,8 @@ To use {{site.data.keyword.cloud_notm}} IAM identities for pods in your cluster,
 
 Supported infrastructure providers
 
-- ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC  
-- ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic  
+- ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC  
+- ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic  
 
 
 

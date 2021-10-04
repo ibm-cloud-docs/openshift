@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: #vpc_lb_healthcheck}
 
 **Supported infrastructure provider and versions**:
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 * <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 4 clusters
 
 

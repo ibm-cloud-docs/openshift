@@ -18,7 +18,7 @@ content-type: troubleshoot
 # VPC: Why is no VPC available when I create a cluster in the console?
 {: #ts_no_vpc}
 
-**Infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
+**Infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 You try to create a VPC cluster by using the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/catalog/create){: external}.
 {: tsSymptoms} 

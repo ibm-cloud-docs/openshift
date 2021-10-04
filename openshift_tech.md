@@ -23,7 +23,7 @@ Review sample architectures, components, and dependencies for your {{site.data.k
 ## Classic cluster service architecture
 {: #service-architecture}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.png) The following architectural overviews are specific to the classic infrastructure provider. For an architectural overview for the VPC infrastructure provider, see [VPC cluster service architecture](#service-architecture_vpc).
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) The following architectural overviews are specific to the classic infrastructure provider. For an architectural overview for the VPC infrastructure provider, see [VPC cluster service architecture](#service-architecture_vpc).
 {: note}
 
 
@@ -155,7 +155,7 @@ In OpenShift Container Platform 4, many components are configured by a correspon
 ## VPC cluster service architecture
 {: #service-architecture_vpc}
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.png) <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> The following architectural overviews are specific to the VPC infrastructure provider, which is available for clusters that run version 4 only. For an architectural overview for the classic infrastructure provider, see [Classic cluster service architecture](#service-architecture).
+![VPC infrastructure provider icon.](images/icon-vpc-2.svg) <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> The following architectural overviews are specific to the VPC infrastructure provider, which is available for clusters that run version 4 only. For an architectural overview for the classic infrastructure provider, see [Classic cluster service architecture](#service-architecture).
 {: note}
 
 Review the architecture diagrams and then scroll through the following table for a description of master and worker node components in {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 on virtual private cloud (VPC) compute infrastructure.

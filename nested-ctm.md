@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: #cs_ingress_health_check_ctm}
 
 **Supported infrastructure provider**:
-* ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 * <img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Satellite
 
 

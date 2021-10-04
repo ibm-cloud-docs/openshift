@@ -18,7 +18,7 @@ content-type: troubleshoot
 # Classic clusters: Why does the master status have an ingress IP address for NLB error?
 {: #rhoks_ts_openvpn_subnet}
 
-**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
+**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 
 When you run `ibmcloud oc cluster get -c <cluster_name_or_ID>`, you see the following error message in the **Master Status** field.

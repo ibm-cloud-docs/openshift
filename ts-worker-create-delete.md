@@ -164,7 +164,7 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
 ## Unable to create or delete worker nodes due to incorrect account error
 {: #orphaned}
 
-**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
+**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 
 You cannot manage worker nodes for your cluster, or view the cluster worker nodes in your classic IBM Cloud infrastructure account. However, you can update and manage other clusters in the account.
@@ -232,7 +232,7 @@ Before you begin: Log in to the [{{site.data.keyword.openshiftshort}} clusters c
 ## Unable to create or delete worker nodes due to endpoints error
 {: #vpe-ts}
 
-**Infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC {{site.data.keyword.openshiftshort}} version 4.6 or later
+**Infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC {{site.data.keyword.openshiftshort}} version 4.6 or later
 
 
 You cannot manage worker nodes for your cluster, and you receive an error message similar to one of the following.
@@ -294,7 +294,7 @@ Re-establish the VPE connection between your worker nodes and Kubernetes master.
 ## Unable to create or delete worker nodes due to paid account or one time password error
 {: #cs_totp}
 
-**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
+**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 
 You cannot manage worker nodes for your cluster, and you receive an error message similar to one of the following.

@@ -24,8 +24,8 @@ Review the options to debug your worker nodes and find the root causes for failu
 {: shortdesc}
 
 **Infrastructure provider**:
-* ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 ## Step 1: Get the worker node state
 {: #worker-debug-get-state}

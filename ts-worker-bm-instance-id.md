@@ -18,7 +18,7 @@ content-type: troubleshoot
 # Classic: Why is the bare metal instance ID inconsistent with worker records?
 {: #bm_machine_id}
 
-**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
+**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 
 When you use `ibmcloud oc worker` commands with your bare metal worker node, you see a message similar to the following.

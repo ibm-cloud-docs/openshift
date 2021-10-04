@@ -24,8 +24,8 @@ Review the options to debug your clusters and find the root causes for failures.
 {: shortdesc}
 
 **Infrastructure provider**:
-    * ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
-    * ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
+    * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+    * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 1. List your cluster and find the `State` of the cluster.
 

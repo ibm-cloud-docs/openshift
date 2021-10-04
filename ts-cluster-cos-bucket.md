@@ -18,7 +18,7 @@ content-type: troubleshoot
 # Why do I get an error about a cloud object storage bucket when I create a cluster?
 {: #ts_cos_bucket_cluster_create}
 
-**Infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC 
+**Infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC 
 
 
 When you create a cluster, you see an error message similar to the following.

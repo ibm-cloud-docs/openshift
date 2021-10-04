@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: #cs_subnet_limit_43}
 
 **Infrastructure provider and version**:
-* ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 * <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 4
 
 

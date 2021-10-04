@@ -17,7 +17,7 @@ subcollection: openshift
 # Classic: About network load balancers (NLBs)
 {: #loadbalancer-about}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.png) Network load balancers can be created in classic clusters only. To load balance in VPC clusters, see [Exposing apps with load balancers for VPC](/docs/containers?topic=containers-vpc-lbaas).
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) Network load balancers can be created in classic clusters only. To load balance in VPC clusters, see [Exposing apps with load balancers for VPC](/docs/containers?topic=containers-vpc-lbaas).
 {: note}
 
 When you create a standard cluster, {{site.data.keyword.openshiftlong}} automatically provisions a portable public subnet and a portable private subnet.

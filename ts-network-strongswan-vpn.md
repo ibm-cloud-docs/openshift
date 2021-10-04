@@ -18,7 +18,7 @@ content-type: troubleshoot
 # Why can't I establish VPN connectivity with the strongSwan Helm chart?
 {: #cs_vpn_fails}
 
-**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
+**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 
 When you check VPN connectivity by running `oc exec $STRONGSWAN_POD -- ipsec status`, you do not see a status of `ESTABLISHED`, or the VPN pod is in an `ERROR` state or continues to crash and restart.

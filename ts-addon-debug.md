@@ -22,8 +22,8 @@ As you use {{site.data.keyword.openshiftlong}}, consider these techniques for tr
 {: shortdesc}
 
 **Infrastructure provider**:
-* ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 You can check the health state and status of a cluster add-on by running the following command:
 ```sh

@@ -18,7 +18,7 @@ content-type: troubleshoot
 # Classic clusters: Why can't my app connect via a network load balancer (NLB) service?
 {: #cs_loadbalancer_fails}
 
-**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
+**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 You exposed your app by creating an NLB service in your classic cluster.
 {: tsSymptoms} 

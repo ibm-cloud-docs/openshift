@@ -18,7 +18,7 @@ content-type: troubleshoot
 {: #vpc-block-api-key-reset-ts}
 
 **Infrastructure provider**:
-![VPC infrastructure provider icon.](images/icon-vpc-2.png) VPC
+![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 
 After you reset your API key, {{site.data.keyword.block_storage_is_short}} PVC creation fails with an IAM permission error.

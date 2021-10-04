@@ -18,7 +18,7 @@ content-type: troubleshoot
 # Why does strongSwan VPN connectivity fail after I add or delete worker nodes?
 {: #cs_vpn_fails_worker_add}
 
-**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.png) Classic
+**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 
 You previously established a working VPN connection by using the strongSwan IPSec VPN service. However, after you added or deleted a worker node on your cluster, you experience one or more of the following symptoms:

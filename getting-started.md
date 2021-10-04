@@ -142,7 +142,7 @@ To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {
     <div class="solutionBox">
     <a href = "#clusters_gs">
     <div>
-            <p><strong>![Classic infrastructure provider icon.](images/icon-classic-2.png) Create a classic cluster</strong></p>
+            <p><strong>![Classic infrastructure provider icon.](images/icon-classic-2.svg) Create a classic cluster</strong></p>
             <p class="bx--type-caption">Create an {{site.data.keyword.openshiftshort}} cluster on {{site.data.keyword.cloud_notm}} classic workers nodes, subnets, and VLAN networking. Choose from a variety of virtual, bare metal, or software-defined storage flavors.</p>
     </div>
     </a>
@@ -150,7 +150,7 @@ To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {
     <div class="solutionBox">
         <a href = "#vpc-gen2-gs">
         <div>
-            <p><strong>![VPC infrastructure provider icon.](images/icon-vpc-2.png) Create a VPC cluster</strong></p>
+            <p><strong>![VPC infrastructure provider icon.](images/icon-vpc-2.svg) Create a VPC cluster</strong></p>
             <p class="bx--type-caption">Create your cluster on the second generation of compute resources in a Virtual Private Cloud (VPC) that gives you the security of a private cloud with the scalability of a public cloud.</p>
         </div>
     </a>
@@ -170,7 +170,7 @@ To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {
 ## Creating a classic {{site.data.keyword.openshiftshort}} cluster
 {: #clusters_gs}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.png) Create a {{site.data.keyword.openshiftlong_notm}} cluster on classic {{site.data.keyword.cloud_notm}} infrastructure in the {{site.data.keyword.cloud_notm}} console. To get started, create a cluster that runs OpenShift Container Platform version 4.7. The operating system is Red Hat Enterprise Linux 7.
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) Create a {{site.data.keyword.openshiftlong_notm}} cluster on classic {{site.data.keyword.cloud_notm}} infrastructure in the {{site.data.keyword.cloud_notm}} console. To get started, create a cluster that runs OpenShift Container Platform version 4.7. The operating system is Red Hat Enterprise Linux 7.
 {: shortdesc}
 
 Want to learn more about customizing your cluster setup with the CLI? Check out [Creating an {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-clusters).
@@ -202,7 +202,7 @@ Now that your cluster is ready, [deploying your first app](#deploy-app)!
 ## Creating a VPC cluster
 {: #vpc-gen2-gs}
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.png) Create a VPC cluster by using the {{site.data.keyword.cloud_notm}} console. VPC {{site.data.keyword.openshiftshort}} clusters run version 4.7, which includes Kubernetes version 1.20. The operating system is Red Hat Enterprise Linux 7.
+![VPC infrastructure provider icon.](images/icon-vpc-2.svg) Create a VPC cluster by using the {{site.data.keyword.cloud_notm}} console. VPC {{site.data.keyword.openshiftshort}} clusters run version 4.7, which includes Kubernetes version 1.20. The operating system is Red Hat Enterprise Linux 7.
 {: shortdesc}
 
 Want to learn more about customizing your cluster setup with the CLI? Check out [Creating a VPC cluster](/docs/openshift?topic=openshift-clusters#clusters_vpcg2).
