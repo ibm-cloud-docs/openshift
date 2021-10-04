@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -73,8 +73,8 @@ Public registry
 {{site.data.keyword.openshiftshort}} clusters have an internal registry by default. The images in the internal registry are backed up, but vary depending on the infrastructure provider of your {{site.data.keyword.openshiftlong_notm}} cluster.
 {: shortdesc}
 
-- <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **Classic clusters**: Your {{site.data.keyword.openshiftshort}} cluster is set up by default with an internal registry that uses classic {{site.data.keyword.cloud_notm}} File Storage as the backing storage. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone {{site.data.keyword.openshiftshort}} container registry (OCR) cluster. For more information, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.7/registry/architecture-component-imageregistry.html){: external}.
-- <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **VPC clusters (version 4 only)**: The internal registry of your {{site.data.keyword.openshiftshort}} cluster backs up your images to a bucket that is automatically created in an {{site.data.keyword.cos_full_notm}} instance in your account. Any data that is stored in the object storage bucket remains even if you delete the cluster.
+- ![Classic infrastructure provider icon.](images/icon-classic-2.svg) <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **Classic clusters**: Your {{site.data.keyword.openshiftshort}} cluster is set up by default with an internal registry that uses classic {{site.data.keyword.cloud_notm}} File Storage as the backing storage. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone {{site.data.keyword.openshiftshort}} container registry (OCR) cluster. For more information, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.7/registry/architecture-component-imageregistry.html){: external}.
+- ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **VPC clusters (version 4 only)**: The internal registry of your {{site.data.keyword.openshiftshort}} cluster backs up your images to a bucket that is automatically created in an {{site.data.keyword.cos_full_notm}} instance in your account. Any data that is stored in the object storage bucket remains even if you delete the cluster.
 - **Classic, VPC, or {{site.data.keyword.satelliteshort}} clusters**: You can optionally choose to set up the internal registry to store data in the `emptyDir` of the worker node where the internal registry pod runs. Keep in mind that this data is not persistent, and if the pod or worker node is restarted, the stored data is deleted and unrecoverable. You might store the images locally in the `emptyDir` to increase performance if you build containers from large images regularly.
 
 ### VPC: Backing up your {{site.data.keyword.openshiftshort}} internal image registry to {{site.data.keyword.cos_full_notm}}
@@ -83,7 +83,7 @@ Public registry
 Your images in your {{site.data.keyword.openshiftshort}} cluster internal registry are automatically backed up to an {{site.data.keyword.cos_full_notm}} bucket. Any data that is stored in the object storage bucket remains even if you delete the cluster.
 {: shortdesc}
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> The internal registry is backed up to {{site.data.keyword.cos_full_notm}} only for {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 on VPC infrastructure.
+![VPC infrastructure provider icon.](images/icon-vpc-2.svg) <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> The internal registry is backed up to {{site.data.keyword.cos_full_notm}} only for {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 on VPC infrastructure.
 {: note}
 
 However, if the bucket fails to create when you create your cluster, you must manually create a bucket and set up your cluster to use the bucket. In the meantime, the internal registry uses an `emptyDir` Kubernetes volume that stores your container images on the secondary disk of your worker node. The `emptyDir` volumes are not considered persistent highly available storage, and if you delete the pods that use the image, the image is automatically deleted.
@@ -93,7 +93,7 @@ To manually create a bucket for your internal registry, see [Cluster create erro
 ### Classic: Storing images in the internal registry
 {: #storage_internal_registry}
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> By default, your {{site.data.keyword.openshiftshort}} cluster's internal registry uses an [{{site.data.keyword.cloud_notm}} File Storage](/docs/openshift?topic=openshift-file_storage) volume to store the registry images. You can review the default size of the storage volume, or update the volume size.
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) By default, your {{site.data.keyword.openshiftshort}} cluster's internal registry uses an [{{site.data.keyword.cloud_notm}} File Storage](/docs/openshift?topic=openshift-file_storage) volume to store the registry images. You can review the default size of the storage volume, or update the volume size.
 {: shortdesc}
 
 **Viewing volume details**
@@ -1168,8 +1168,6 @@ Wondering what to do next? You can [set up the **entitled** Helm chart repositor
 
 
 
-
-
 ## Adding a private registry to the global pull secret
 {: #cluster_global_pull_secret}
 
@@ -1320,4 +1318,11 @@ To add private registries, edit the global `pull-secret` in the `openshift-confi
         vi /.docker/config.json
         ```
         {: pre}
+
+
+
+## Updating your cluster's containerd registry host configuration
+{: #update_containerd_registry_config}
+
+You can configure a daemonset to update the containerd registry host configurations across all nodes in a cluster. To get started, see the [example daemonset](https://github.com/IBM-Cloud/kube-samples/blob/master/containerd-registry-daemonset-example){: external} to configure a dockerhub registry config file. For more information on containerd registry configurations, see the [containerd documentation](https://github.com/containerd/containerd/blob/v1.5.6/docs/hosts.md).
 

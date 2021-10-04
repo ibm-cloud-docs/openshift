@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift, roks
 
@@ -139,10 +139,10 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 
 
 
-## Benchmark 1.5 results for {{site.data.keyword.openshiftshort}} versions 4.6 and 4.7
+## Benchmark 1.5 results for {{site.data.keyword.openshiftshort}} versions 4.6 - 4.8
 {: #cis-benchmark-15}
 
-Review how {{site.data.keyword.openshiftlong_notm}} complies with the version 1.5 CIS Kubernetes benchmark for clusters that run {{site.data.keyword.openshiftshort}} versions 4.6 and 4.7. For help understanding the benchmark, see [Using the benchmark](#cis-benchmark-use).
+Review how {{site.data.keyword.openshiftlong_notm}} complies with the version 1.5 CIS Kubernetes benchmark for clusters that run {{site.data.keyword.openshiftshort}} versions 4.6 - 4.8. For help understanding the benchmark, see [Using the benchmark](#cis-benchmark-use).
 {: shortdesc}
 
 * [Section 1: Master node security configuration](#cis-benchmark-15-1)
@@ -212,7 +212,7 @@ Review the benchmark results for the master node security configuration subsecti
 | 1.2.13 | Ensure that the admission control plug-in `SecurityContextDeny` is set if `PodSecurityPolicy` is not used. | Not Scored | 1 | [Pass](#cis-benchmark-15-remediation) | IBM |
 | 1.2.14 | Ensure that the admission control plug-in `ServiceAccount` is set. | Scored | 1 | Pass | IBM |
 | 1.2.15 | Ensure that the admission control plug-in `NamespaceLifecycle` is set. | Scored | 1 | Pass | IBM |
-| 1.2.16 | Ensure that the admission control plug-in `PodSecurityPolicy` is set. | Scored | 1 | [Pass](#cis-benchmark-15-remediation) | IBM |
+| 1.2.16 | Ensure that the admission control plug-in `PodSecurityPolicy` is set. | Scored | 1 | [Fail](#cis-benchmark-15-remediation) | IBM |
 | 1.2.17 | Ensure that the admission control plug-in `NodeRestriction` is set. | Scored | 1 | Pass | IBM |
 | 1.2.18 | Ensure that the `--insecure-bind-address` argument is not set. | Scored | 1 | Pass | IBM |
 | 1.2.19 | Ensure that the `--insecure-port` argument is set to `0`. | Scored | 1 | Pass | IBM |

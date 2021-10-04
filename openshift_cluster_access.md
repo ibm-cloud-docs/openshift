@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -125,7 +125,7 @@ If you enabled only the private cloud service endpoint during cluster creation, 
     * **Log in as admin**:
         1. Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
         2. Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
-            ```
+            ```sh
             ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --endpoint private
             ```
             {: pre}
@@ -133,7 +133,7 @@ If you enabled only the private cloud service endpoint during cluster creation, 
     * **Log in with an API key**: See [Using an API key to log in to {{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-access_cluster#access_api_key).
     * **Log in with {{site.data.keyword.cloud_notm}} passcode**:
         1. Get the **Private Service Endpoint URL** of your cluster in the output of the following command.
-            ```
+            ```sh
             ibmcloud oc cluster get -c <cluster_name_or_ID>
             ```
             {: pre}
@@ -276,7 +276,7 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
     * **Log in as admin**:
         1. Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
         2. Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
-            ```
+            ```sh
             ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --endpoint private
             ```
             {: pre}
@@ -284,7 +284,7 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
     * **Log in with an API key**: See [Using an API key to log in to {{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-access_cluster#access_api_key).
     * **Log in with {{site.data.keyword.cloud_notm}} passcode**:
         1. Get the **Private Service Endpoint URL** of your cluster in the output of the following command.
-            ```
+            ```sh
             ibmcloud oc cluster get -c <cluster_name_or_ID>
             ```
             {: pre}

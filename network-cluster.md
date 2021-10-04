@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift, roks, rhos, rhoks, vlan
 
@@ -20,7 +20,7 @@ subcollection: openshift
 After you initially set up your network when you [create a cluster](/docs/containers?topic=containers-clusters), you can change the service endpoints that your cluster master is accessible through or change the VLAN connections for your worker nodes.
 {: shortdesc}
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> The content on this page is specific to **classic clusters only**. For information about VPC clusters, see [Understanding network basics of VPC clusters](/docs/containers?topic=containers-vpc-subnets).
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) The content on this page is specific to **classic clusters only**. For information about VPC clusters, see [Understanding network basics of VPC clusters](/docs/containers?topic=containers-vpc-subnets).
 {: note}
 
 

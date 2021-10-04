@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-04"
 
 keywords: openshift, roks, rhoks, rhos
 
 subcollection: openshift
 
 ---
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -29,7 +28,7 @@ Review the supported versions of {{site.data.keyword.openshiftlong_notm}} for ea
 
 | Image Key Synchronizer add-on version | Supported? | {{site.data.keyword.openshiftshort}} version support |
 | -------------------------- | -----------|----------------------------------------------------- |
-| 1.0.0 | <img src="images/icon-checkmark-confirm.svg" width="32" alt="Supported" style="width:32px;" /> | 4.6, 4.5, 4.4 |
+| 1.0.0 | Yes | 4.6, 4.5, 4.4 |
 {: summary="The rows are read from left to right. The first column is the Image Key Synchronizer add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the add-on version is supported for."}
 {: caption="Supported Image Key Synchronizer add-on versions" caption-side="top"}
 

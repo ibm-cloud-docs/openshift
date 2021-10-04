@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -37,8 +37,8 @@ To use {{site.data.keyword.cloud_notm}} IAM identities for pods in your cluster,
 
 Supported infrastructure providers
 
-- <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC  
-- <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic  
+- ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC  
+- ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic  
 
 
 
@@ -193,7 +193,7 @@ To configure your application pods to authenticate with {{site.data.keyword.clou
               - serviceAccountToken:
                   path: sa-token
                   expirationSeconds: 3600
-                  audience: vault
+                  audience: iam
         ...
         ```
         {: codeblock}

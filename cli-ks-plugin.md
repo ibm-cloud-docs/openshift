@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -57,8 +57,8 @@ ibmcloud oc cluster addon disable debug-tool --cluster CLUSTER [-f]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -83,7 +83,7 @@ ibmcloud oc cluster addon Disable image-key-synchronizer --cluster CLUSTER [--ve
 {: pre}
 
 <strong>Supported infrastructure provider</strong>:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 <strong>Minimum required permissions</strong>: <strong>Administrator</strong> platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -117,8 +117,8 @@ ibmcloud oc cluster addon disable kube-terminal --cluster CLUSTER [-f]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -143,8 +143,8 @@ ibmcloud oc cluster addon disable openshift-data-foundation --cluster CLUSTER [-
 {: pre}
 
 <strong>Supported infrastructure provider</strong>:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 <strong>Minimum required permissions</strong>: <strong>Administrator</strong> platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -172,8 +172,8 @@ ibmcloud oc cluster addon disable static-route --cluster CLUSTER
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -198,8 +198,8 @@ ibmcloud oc cluster addon enable debug-tool --cluster CLUSTER [--version VERSION
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -230,8 +230,8 @@ ibmcloud oc cluster addon enable image-key-synchronizer --cluster CLUSTER [--ver
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic  
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic  
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -251,8 +251,8 @@ ibmcloud oc cluster addon enable image-key-synchronizer --cluster CLUSTER [--ver
     {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -290,8 +290,8 @@ ibmcloud oc cluster addon enable openshift-data-foundation --cluster CLUSTER [-f
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -325,8 +325,8 @@ ibmcloud oc cluster addon enable static-route --cluster CLUSTER [--version VERSI
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -354,8 +354,8 @@ ibmcloud oc get --addon ADDON --cluster CLUSTER [--output OUTPUT] [-q]
 {: pre}
 
 <strong>Supported infrastructure provider</strong>:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 <strong>Minimum required permissions</strong>: <strong>Viewer</strong> platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -388,8 +388,8 @@ ibmcloud oc cluster addon ls --cluster CLUSTER
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -414,8 +414,8 @@ ibmcloud oc cluster addon options --addon ADDON [--output OUTPUT] [-q] [--versio
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -448,8 +448,8 @@ ibmcloud oc cluster addon update --addon ADD-ON_NAME --cluster CLUSTER [-f] [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: None
 
@@ -485,8 +485,8 @@ ibmcloud oc cluster addon versions [--addon ADD-ON_NAME] [--output json] [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: None
 
@@ -526,8 +526,8 @@ ibmcloud oc cluster ca create --cluster CLUSTER [-f] [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -566,8 +566,8 @@ ibmcloud oc cluster ca rotate --cluster CLUSTER [-f] [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -603,8 +603,8 @@ ibmcloud oc cluster ca status --cluster CLUSTER [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -639,8 +639,8 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--endpoint ENDPOINT_TYPE
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** or **Reader** {{site.data.keyword.cloud_notm}} IAM service access role for the cluster in {{site.data.keyword.containerlong_notm}}. Further, if you have only a platform access role or only a service access role, additional constraints apply.
 * **Platform**: If you have only a platform access role, you can perform this command, but you need a [service access role](/docs/containers?topic=containers-users#checking-perms) or a [custom RBAC policy](/docs/containers?topic=containers-access-overview#role-binding) to perform Kubernetes actions in the cluster.
@@ -689,7 +689,7 @@ ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FL
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic. To create a VPC cluster, use the [`ibmcloud oc cluster create vpc-gen2` command](#cli_cluster-create-vpc-gen2) instead.
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic. To create a VPC cluster, use the [`ibmcloud oc cluster create vpc-gen2` command](#cli_cluster-create-vpc-gen2) instead.
 
 **Minimum required permissions**:
 * **Administrator** platform access role for {{site.data.keyword.containerlong_notm}} at the account level
@@ -826,7 +826,7 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+**Supported infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**:
 * [**Administrator** platform access role for VPC Infrastructure](/docs/vpc?topic=vpc-iam-getting-started).
@@ -922,8 +922,8 @@ ibmcloud oc cluster get --cluster CLUSTER [--show-resources] [--output json] [-q
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -962,8 +962,8 @@ ibmcloud oc cluster image-security disable --cluster CLUSTER [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -994,8 +994,8 @@ ibmcloud oc cluster image-security enable --cluster CLUSTER [-f] [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1031,8 +1031,8 @@ ibmcloud oc cluster ls [--provider (classic | vpc-gen2)] [--location LOCATION] [
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1081,8 +1081,8 @@ ibmcloud oc cluster master private-service-endpoint allowlist add --cluster CLUS
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1118,8 +1118,8 @@ ibmcloud oc cluster master private-service-endpoint allowlist disable --cluster 
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1155,8 +1155,8 @@ ibmcloud oc cluster master private-service-endpoint allowlist enable --cluster C
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1192,8 +1192,8 @@ ibmcloud oc cluster master private-service-endpoint allowlist get --cluster CLUS
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1226,8 +1226,8 @@ ibmcloud oc cluster master private-service-endpoint allowlist rm --cluster CLUST
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1272,7 +1272,7 @@ ibmcloud oc cluster master private-service-endpoint enable --cluster CLUSTER [-q
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic. The private cloud service endpoint is permanently enabled by default for VPC clusters.
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic. The private cloud service endpoint is permanently enabled by default for VPC clusters.
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1310,8 +1310,8 @@ ibmcloud oc cluster master public-service-endpoint enable --cluster CLUSTER [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1350,8 +1350,8 @@ ibmcloud oc cluster master refresh --cluster CLUSTER [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1383,8 +1383,8 @@ ibmcloud oc cluster master update --cluster CLUSTER [--version MAJOR.MINOR.PATCH
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1432,8 +1432,8 @@ ibmcloud oc cluster pull-secret apply --cluster CLUSTER
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**:
 *  **Operator or Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
@@ -1460,8 +1460,8 @@ ibmcloud oc cluster rm --cluster CLUSTER [--force-delete-storage] [--skip-advanc
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1505,8 +1505,8 @@ ibmcloud oc cluster service bind --cluster CLUSTER --namespace KUBERNETES_NAMESP
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}} and **Developer** Cloud Foundry role
 
@@ -1552,8 +1552,8 @@ ibmcloud oc cluster service ls --cluster CLUSTER [--namespace KUBERNETES_NAMESPA
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1598,8 +1598,8 @@ ibmcloud oc cluster service unbind --cluster CLUSTER --namespace KUBERNETES_NAME
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}} and **Developer** Cloud Foundry role
 
@@ -1640,7 +1640,7 @@ ibmcloud oc cluster subnet add --cluster CLUSTER --subnet-id SUBNET [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1679,7 +1679,7 @@ ibmcloud oc cluster subnet create --cluster CLUSTER --size SIZE --vlan VLAN_ID [
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1717,7 +1717,7 @@ ibmcloud oc cluster subnet detach --cluster CLUSTER --subnet-id SUBNET_ID [-f] [
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1761,7 +1761,7 @@ ibmcloud oc cluster user-subnet add --cluster CLUSTER --subnet-cidr SUBNET_CIDR 
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1799,7 +1799,7 @@ ibmcloud oc cluster user-subnet rm --cluster CLUSTER --subnet-cidr SUBNET_CIDR -
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1844,8 +1844,8 @@ ibmcloud oc worker add --cluster CLUSTER [--hardware HARDWARE] --flavor FLAVOR -
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1896,8 +1896,8 @@ ibmcloud oc worker get --cluster CLUSTER_NAME_OR_ID --worker WORKER_NODE_ID [--o
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1936,8 +1936,8 @@ ibmcloud oc worker ls --cluster CLUSTER [--worker-pool POOL] [--show-pools] [--s
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2019,8 +2019,8 @@ ibmcloud oc worker reboot [--hard] --cluster CLUSTER --worker WORKER_ID [--skip-
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2088,7 +2088,7 @@ ibmcloud oc worker reload --cluster CLUSTER --worker WORKER_ID [--skip-master-he
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic. To reload a worker node in a VPC cluster, use the [`ibmcloud oc worker replace` command](#cli_worker_replace) instead.
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic. To reload a worker node in a VPC cluster, use the [`ibmcloud oc worker replace` command](#cli_worker_replace) instead.
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2163,8 +2163,8 @@ ibmcloud oc worker replace --cluster CLUSTER_NAME_OR_ID --worker WORKER_ID [--up
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
@@ -2206,8 +2206,8 @@ ibmcloud oc worker rm --cluster CLUSTER --worker WORKER [-f] [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2250,7 +2250,7 @@ ibmcloud oc worker update --cluster CLUSTER --worker WORKER_ID [-f] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic. To update a worker node in a VPC cluster, use the [`ibmcloud oc worker replace` command](#cli_worker_replace) instead.
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic. To update a worker node in a VPC cluster, use the [`ibmcloud oc worker replace` command](#cli_worker_replace) instead.
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2294,7 +2294,7 @@ ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flav
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic. To create a worker pool in a VPC cluster, use the [`ibmcloud oc worker-pool create vpc-gen2` command](#cli_worker_pool_create_vpc_gen2).
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic. To create a worker pool in a VPC cluster, use the [`ibmcloud oc worker-pool create vpc-gen2` command](#cli_worker_pool_create_vpc_gen2).
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2350,7 +2350,7 @@ ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <clu
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+**Supported infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
@@ -2412,8 +2412,8 @@ ibmcloud oc worker-pool get --worker-pool WORKER_POOL --cluster CLUSTER [--outpu
 {: pre}
 
 <strong>Supported infrastructure provider</strong>:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 <strong>Minimum required permissions</strong>: <strong>Viewer</strong> platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2455,8 +2455,8 @@ ibmcloud oc worker-pool label rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2495,8 +2495,8 @@ ibmcloud oc worker-pool label set --cluster CLUSTER --label LABEL [--label LABEL
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2538,8 +2538,8 @@ ibmcloud oc worker-pool ls --cluster CLUSTER [--output json] [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2575,8 +2575,8 @@ ibmcloud oc worker-pool rebalance --cluster CLUSTER --worker-pool WORKER_POOL [-
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2611,8 +2611,8 @@ ibmcloud oc worker-pool resize --cluster CLUSTER --worker-pool WORKER_POOL --siz
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2652,8 +2652,8 @@ ibmcloud oc worker-pool rm --worker-pool WORKER_POOL --cluster CLUSTER [-q] [-f]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2701,8 +2701,8 @@ ibmcloud oc worker-pool taint set --worker-pool WORKER_POOL --cluster CLUSTER --
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2744,8 +2744,8 @@ ibmcloud oc worker-pool taint rm --worker-pool WORKER_POOL --cluster CLUSTER [-f
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2780,8 +2780,8 @@ ibmcloud oc worker-pool zones --worker-pool WORKER_POOL --cluster CLUSTER [-q] [
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2822,7 +2822,7 @@ ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER --worker-pool WORKER_
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic. To add a zone to worker pools in a VPC cluster, use the [`ibmcloud oc zone add vpc-gen2` command](#cli_zone-add-vpc-gen2).
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic. To add a zone to worker pools in a VPC cluster, use the [`ibmcloud oc zone add vpc-gen2` command](#cli_zone-add-vpc-gen2).
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2874,7 +2874,7 @@ ibmcloud oc zone add vpc-gen2 --zone ZONE --subnet-id VPC_SUBNET_ID --cluster CL
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+**Supported infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2913,7 +2913,7 @@ ibmcloud oc zone add vpc-gen2 --zone us-south-3 --cluster my_cluster -w pool1 -w
 View a list of available zones that you can create a cluster in.
 {: shortdesc}
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This command works for both classic and VPC clusters.
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) This command works for both classic and VPC clusters.
 
 The `locations` alias for this command is deprecated.
 {: note}
@@ -2962,7 +2962,7 @@ ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER --worker-pool WORKER_
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3047,8 +3047,8 @@ ibmcloud oc zone rm --cluster CLUSTER --zone ZONE [--worker-pool WORKER_POOL] [-
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3103,8 +3103,8 @@ ibmcloud oc ingress alb autoupdate disable --cluster CLUSTER [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3139,8 +3139,8 @@ ibmcloud oc ingress alb autoupdate enable --cluster CLUSTER [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3167,8 +3167,8 @@ ibmcloud oc ingress alb autoupdate get --cluster CLUSTER [--output json] [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3197,7 +3197,7 @@ ibmcloud oc ingress alb create classic --cluster CLUSTER --type (PUBLIC|PRIVATE)
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3248,8 +3248,8 @@ ibmcloud oc ingress alb disable --alb ALB_ID --cluster CLUSTER [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3291,7 +3291,7 @@ ibmcloud oc ingress alb enable classic --alb ALB_ID --cluster CLUSTER [--ip IP_A
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic.
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic.
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3333,8 +3333,8 @@ ibmcloud oc ingress alb get --alb ALB_ID --cluster CLUSTER [--output json] [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3376,8 +3376,8 @@ ibmcloud oc ingress alb ls --cluster CLUSTER [--output json] [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3413,8 +3413,8 @@ ibmcloud oc ingress alb migrate clean --cluster CLUSTER [--generated-resources] 
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3468,8 +3468,8 @@ ibmcloud oc ingress alb migrate start --cluster CLUSTER --type (test | test-with
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3508,8 +3508,8 @@ ibmcloud oc ingress alb migrate status --cluster CLUSTER [--output json] [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3547,8 +3547,8 @@ ibmcloud oc ingress alb update --cluster CLUSTER [--alb ALB1_ID --alb ALB2_ID ..
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3599,8 +3599,8 @@ ibmcloud oc ingress alb versions [--output json] [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role for {{site.data.keyword.containerlong_notm}}
 
@@ -3629,8 +3629,8 @@ ibmcloud oc ingress lb get --cluster CLUSTER [--output OUTPUT] [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3670,7 +3670,7 @@ ibmcloud oc ingress lb proxy-protocol disable --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+**Supported infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3712,7 +3712,7 @@ ibmcloud oc ingress lb proxy-protocol enable --cluster CLUSTER [--cidr CIDR ...]
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+**Supported infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3759,8 +3759,8 @@ ibmcloud oc ingress secret create --cert-crn CERTIFICATE_CRN --cluster CLUSTER -
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3809,8 +3809,8 @@ ibmcloud oc ingress secret get --cluster CLUSTER --name SECRET_NAME --namespace 
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3856,8 +3856,8 @@ ibmcloud oc ingress secret ls --cluster CLUSTER [--show-deleted] [--output json]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3900,8 +3900,8 @@ ibmcloud oc ingress secret rm --cluster CLUSTER --name SECRET_NAME --namespace N
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3944,8 +3944,8 @@ ibmcloud oc ingress secret update --cluster CLUSTER --name SECRET_NAME --namespa
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3989,8 +3989,8 @@ ibmcloud oc ingress status --cluster CLUSTER [--output json] [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4035,7 +4035,7 @@ ibmcloud oc nlb-dns add --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP2 --ip NLB3_I
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4076,7 +4076,7 @@ ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP -
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4125,7 +4125,7 @@ ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER (--lb-host VPC_ALB_HOSTNAM
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+**Supported infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4174,8 +4174,8 @@ ibmcloud oc nlb-dns ls --cluster CLUSTER [--output json] [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4215,7 +4215,7 @@ ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host SUBDOMAIN [--
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4293,7 +4293,7 @@ ibmcloud oc nlb-dns monitor disable --cluster CLUSTER --nlb-host SUBDOMAIN [--ou
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4333,7 +4333,7 @@ ibmcloud oc nlb-dns monitor enable --cluster CLUSTER --nlb-host SUBDOMAIN [--out
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4371,7 +4371,7 @@ ibmcloud oc nlb-dns monitor get --cluster CLUSTER --nlb-host SUBDOMAIN [--output
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4408,7 +4408,7 @@ ibmcloud oc nlb-dns monitor ls --cluster CLUSTER [--output json] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4443,7 +4443,7 @@ ibmcloud oc nlb-dns replace --cluster CLUSTER --lb-host NEW_LB_HOSTNAME --nlb-su
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+**Supported infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4484,7 +4484,7 @@ ibmcloud oc nlb-dns rm classic --cluster CLUSTER --ip IP --nlb-host SUBDOMAIN [-
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4527,7 +4527,7 @@ ibmcloud oc nlb-dns rm vpc-gen2 --cluster CLUSTER --nlb-subdomain SUBDOMAIN [ --
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+**Supported infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4575,8 +4575,8 @@ ibmcloud oc nlb-dns secret regenerate --cluster CLUSTER --nlb-subdomain SUBDOMAI
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4617,8 +4617,8 @@ ibmcloud oc nlb-dns secret rm --cluster CLUSTER --nlb-subdomain SUBDOMAIN [-f] [
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4662,8 +4662,8 @@ ibmcloud oc webhook-create --cluster CLUSTER --level LEVEL --type slack --url UR
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
@@ -4717,8 +4717,8 @@ ibmcloud oc api-key info --cluster CLUSTER [--output json] [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4762,8 +4762,8 @@ ibmcloud oc api-key reset --region REGION [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4790,7 +4790,7 @@ ibmcloud oc api-key reset --region us-south
 Set and unset credentials that allow you to access the classic IBM Cloud infrastructure portfolio through your {{site.data.keyword.cloud_notm}} account.
 {: shortdesc}
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> You can manually set infrastructure credentials to a different account only for classic clusters, not for VPC clusters.
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) You can manually set infrastructure credentials to a different account only for classic clusters, not for VPC clusters.
 
 ### `ibmcloud oc credential get`
 {: #cs_credential_get}
@@ -4803,7 +4803,7 @@ ibmcloud oc credential get --region REGION [-q] [--output json]
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4847,7 +4847,7 @@ ibmcloud oc credential set classic --infrastructure-api-key API_KEY --infrastruc
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4887,7 +4887,7 @@ ibmcloud oc credential unset --region REGION [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4950,7 +4950,7 @@ ibmcloud oc infra-permissions get --region REGION [--output json] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -5018,8 +5018,8 @@ ibmcloud oc kms crk ls --instance-id KMS_INSTANCE_ID [--output json] [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role in {{site.data.keyword.containerlong_notm}}
 
@@ -5056,8 +5056,8 @@ ibmcloud oc kms enable --cluster CLUSTER_NAME_OR_ID --instance-id KMS_INSTANCE_I
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -5097,8 +5097,8 @@ ibmcloud oc kms instance ls [--output json] [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role in {{site.data.keyword.containerlong_notm}}
 
@@ -5135,8 +5135,8 @@ ibmcloud oc quota ls [--provider PROVIDER] [--output json]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role for {{site.data.keyword.containerlong_notm}}
 
@@ -5171,8 +5171,8 @@ ibmcloud oc subnets [--provider (classic | vpc-gen2)] [--vpc-id <VPC_ID> --zone 
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role for {{site.data.keyword.containerlong_notm}}
 
@@ -5211,7 +5211,7 @@ ibmcloud oc subnets -l ams03 -l wdc -l ap
 List public and private VLANs for a zone and view the VLAN spanning status.
 {: shortdesc}
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This group of commands is for classic clusters only.
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) This group of commands is for classic clusters only.
 
 ### `ibmcloud oc vlan ls`
 {: #cs_vlans}
@@ -5224,7 +5224,7 @@ ibmcloud oc vlan ls --zone ZONE [--all] [--output json] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 **Minimum required permissions**:
 * To view the VLANs that the cluster is connected to in a zone: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
@@ -5267,7 +5267,7 @@ ibmcloud oc vlan spanning get --region REGION [--output json] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Supported infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 **Minimum required permissions**: **Viewer** platform access role for {{site.data.keyword.containerlong_notm}}
 
@@ -5303,7 +5303,7 @@ ibmcloud oc vpcs [--provider vpc-gen2] [--output json] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider** <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+**Supported infrastructure provider** ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**:
 * **Viewer** platform access role for {{site.data.keyword.containerlong_notm}}
@@ -5347,8 +5347,8 @@ ibmcloud oc flavors --zone ZONE --provider (classic | vpc-gen2) [--show-storage]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: None
 
@@ -5397,8 +5397,8 @@ ibmcloud oc messages
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: None
 
@@ -5418,8 +5418,8 @@ ibmcloud oc locations [--output json]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: None
 
@@ -5446,8 +5446,8 @@ ibmcloud oc versions [--show-version (KUBERNETES|OPENSHIFT)] [--output json] [-q
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: None
 
@@ -5499,8 +5499,8 @@ ibmcloud oc api --endpoint ENDPOINT [--insecure] [--skip-ssl-validation] [--api-
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: None
 
@@ -5569,8 +5569,8 @@ ibmcloud oc init [--host HOST] [--insecure] [-p] [-u] [-q]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: None
 
@@ -5625,8 +5625,8 @@ ibmcloud oc script update [--in-place] FILE [FILE ...]
 {: pre}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: None
 
@@ -5700,8 +5700,8 @@ The `storage` commands are available in beta.
 {: beta}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 ### `ibmcloud oc storage attachment create`
 {: #cs_storage_att_cr}
@@ -5711,7 +5711,7 @@ Attach a storage volume to a worker node in your cluster.
 
 **Supported infrastructure provider**:
 
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -5749,7 +5749,7 @@ ibmcloud oc storage attachment create --cluster aa1111aa11aaaaa11aa1 --volume 11
 Get the details of a storage volume attachment in your cluster.
 {: shortdesc}
 
-**Supported infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+**Supported infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -5785,7 +5785,7 @@ ibmcloud oc storage attachment get --cluster aa1111aa11aaaaa11aa1 --attachment 0
 List the storage volume attachments for a worker node in your cluster.
 {: shortdesc}
 
-**Supported infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+**Supported infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -5819,7 +5819,7 @@ ibmcloud oc storage attachment ls --cluster aa1111aa11aaaaa11aa1 --worker kube-a
 Remove a storage volume from a worker node in your cluster.
 {: shortdesc}
 
-**Supported infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+**Supported infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -5858,8 +5858,8 @@ List storage volumes for your classic clusters.
 {: shortdesc}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -5893,8 +5893,8 @@ Get a list of storage volumes.
 {: shortdesc}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 

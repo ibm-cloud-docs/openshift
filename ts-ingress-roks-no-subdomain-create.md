@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -19,8 +19,8 @@ content-type: troubleshoot
 {: #ingress_subdomain}
 
 **Infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 
 You create a cluster and run `ibmcloud oc cluster get --cluster <cluster>` to check its status. The cluster **State** is `normal`, but the **Ingress Subdomain** and **Ingress Secret** are not available.
@@ -30,7 +30,7 @@ You create a cluster and run `ibmcloud oc cluster get --cluster <cluster>` to ch
 Even if the cluster is in a `normal` state, the Ingress subdomain and secret might still be in progress. The Ingress subdomain and secret creation follows a process that might take more than 15 minutes to complete:
 {: tsCauses}
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters**:
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) **Classic clusters**:
 
 1. When worker nodes are fully deployed and ready on the VLANs, a portable public and a portable private subnet for the VLANs are ordered.
 2. After the portable subnet orders are successfully fulfilled, the `ibm-cloud-provider-vlan-ip-config` config map is updated with the portable public and portable private IP addresses.
@@ -41,7 +41,7 @@ Even if the cluster is in a `normal` state, the Ingress subdomain and secret mig
 If you create a classic cluster that is connected to private VLANs only, or if you create a free cluster, no Ingress subdomain or secret are created.
 {: note}
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC clusters**:
+![VPC infrastructure provider icon.](images/icon-vpc-2.svg) **VPC clusters**:
 
 1. When you create a VPC cluster, one public and one private VPC load balancer are automatically created outside of your cluster in your VPC.
 2. One public router per zone is triggered for creation.
@@ -76,7 +76,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
     {: screen}
 
 3. Verify that the prerequisite steps for your ALB creation are completed.
-    * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters**: Get the details of the `ibm-cloud-provider-vlan-ip-config` config map.
+    * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) **Classic clusters**: Get the details of the `ibm-cloud-provider-vlan-ip-config` config map.
     ```sh
     oc describe cm ibm-cloud-provider-vlan-ip-config -n kube-system
     ```
@@ -161,7 +161,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
     ```
     {: screen}
 
-    * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC clusters**: Verify that the VPC load balancer for your routers exists. In the output, look for the VPC load balancer **Name** that starts with `kube-<cluster_ID>`. If you did not install the `infrastructure-service` plug-in, install it by running `ibmcloud plugin install infrastructure-service`.
+    * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) **VPC clusters**: Verify that the VPC load balancer for your routers exists. In the output, look for the VPC load balancer **Name** that starts with `kube-<cluster_ID>`. If you did not install the `infrastructure-service` plug-in, install it by running `ibmcloud plugin install infrastructure-service`.
     ```
     ibmcloud is load-balancers
     ```

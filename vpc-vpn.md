@@ -2,16 +2,13 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-04"
 
 keywords: openshift, roks, rhoks, rhos, strongswan, ipsec, on-prem, vpnaas, direct link
 
 subcollection: openshift
 
 ---
-
-
-
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -19,7 +16,7 @@ subcollection: openshift
 # Setting up VPC VPN connectivity
 {: #vpc-vpnaas}
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This VPN information is specific to VPC clusters. For VPN information for classic clusters, see [Setting up VPN connectivity](/docs/containers?topic=containers-vpn).
+![VPC infrastructure provider icon.](images/icon-vpc-2.svg) This VPN information is specific to VPC clusters. For VPN information for classic clusters, see [Setting up VPN connectivity](/docs/containers?topic=containers-vpn).
 {: note}
 
 Securely connect apps and services in a VPC cluster in {{site.data.keyword.openshiftlong}} to on-premises networks, other VPCs, and {{site.data.keyword.cloud_notm}} classic infrastructure resources. You can also connect apps that are external to your cluster to an app that runs inside your cluster.
@@ -29,9 +26,9 @@ The following table compares the connection options that are available based on 
 
 | Destination | {{site.data.keyword.vpc_short}} VPN | {{site.data.keyword.tg_short}} | {{site.data.keyword.dl_short}} | Classic-access VPC |
 |---|---|---|---|---|
-| [On-premises networks](#onprem) |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />||<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />||
-| [Other VPCs](#vpc-vpc) |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|||
-| [Classic infrastructure resources](#vpc-classic) ||<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />||<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| [On-premises networks](#onprem) |Yes||Yes||
+| [Other VPCs](#vpc-vpc) |Yes|Yes|||
+| [Classic infrastructure resources](#vpc-classic) ||Yes||Yes|
 {: caption="Comparison of connection options based on destination type" caption-side="top"}
 
 ## Communication with resources in on-premises data centers

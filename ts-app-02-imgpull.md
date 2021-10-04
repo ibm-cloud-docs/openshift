@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -19,8 +19,8 @@ content-type: troubleshoot
 {: #ts-app-image-pull}
 
 **Infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 
 When you deploy a workload that pulls an image from {{site.data.keyword.registrylong_notm}}, your pods fail with an **`ImagePullBackOff`** status.
@@ -31,7 +31,7 @@ oc get pods
 ```
 {: pre}
 
-```
+```sh
 NAME         READY     STATUS             RESTARTS   AGE
 <pod_name>   0/1       ImagePullBackOff   0          2m
 ```
@@ -44,13 +44,13 @@ oc describe pod <pod_name>
 ```
 {: pre}
 
-```
+```sh
 Failed to pull image "<region>.icr.io/<namespace>/<image>:<tag>" ... unauthorized: authentication required
 Failed to pull image "<region>.icr.io/<namespace>/<image>:<tag>" ... 401 Unauthorized
 ```
 {: screen}
 
-```
+```sh
 Failed to pull image "registry.ng.bluemix.net/<namespace>/<image>:<tag>" ... unauthorized: authentication required
 Failed to pull image "registry.ng.bluemix.net/<namespace>/<image>:<tag>" ... 401 Unauthorized
 ```
@@ -66,13 +66,13 @@ By default, new clusters have image pull secrets that use API keys so that the c
 1. Verify that you use the correct name and tag of the image in your deployment YAML file.
 {: tsResolve}
 
-    ```
+    ```sh
     ibmcloud cr images
     ```
     {: pre}
 
 2. Check your [pull traffic and storage quota](/docs/Registry?topic=Registry-registry_quota). If the limit is reached, free up used storage or ask your registry administrator to increase the quota.
-    ```
+    ```sh
     ibmcloud cr quota
     ```
     {: pre}
@@ -170,13 +170,13 @@ The following steps assume that the API key stores the credentials of a service 
         {: screen}
 
     3. Decode the base64 string. For example, on OS X you can run the following command.
-        ```
+        ```sh
         echo -n "<base64_string>" | base64 --decode
         ```
         {: pre}
 
         Example output
-        ```
+        ```sh
         {"auths":{"<region>.icr.io":{"username":"iamapikey","password":"<password_string>","email":"<name@abc.com>","auth":"<auth_string>"}}}
         ```
         {: screen}
@@ -189,7 +189,7 @@ The following steps assume that the API key stores the credentials of a service 
         {: pre}
 
         1. Re-create the cluster service ID, {{site.data.keyword.cloud_notm}} IAM policies, API key, and image pull secrets for containers that run in the `default` {{site.data.keyword.openshiftshort}} project.
-            ```
+            ```sh
             ibmcloud oc cluster pull-secret apply --cluster <cluster_name_or_ID>
             ```
             {: pre}

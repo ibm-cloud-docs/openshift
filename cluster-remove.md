@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift, roks, rhos, rhoks, clusters, delete, remove
 
@@ -78,8 +78,8 @@ When you delete your cluster, the default {{site.data.keyword.cloudcerts_short}}
 
 Next steps:
 - After it is no longer listed in the available clusters list when you run the `ibmcloud oc cluster ls` command, you can reuse the name of a removed cluster.
-- <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters only**: If you kept the subnets, you can [reuse them in a new cluster](/docs/containers?topic=containers-subnets#subnets_custom) or manually delete them later from your IBM Cloud infrastructure portfolio.
-- <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC clusters only**: If you have infrastructure resources that you no longer want to use, such as the VPC or subnets, remove these resources in the VPC portal.
+- ![Classic infrastructure provider icon.](images/icon-classic-2.svg) **Classic clusters only**: If you kept the subnets, you can [reuse them in a new cluster](/docs/containers?topic=containers-subnets#subnets_custom) or manually delete them later from your IBM Cloud infrastructure portfolio.
+- ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) **VPC clusters only**: If you have infrastructure resources that you no longer want to use, such as the VPC or subnets, remove these resources in the VPC portal.
 - If you kept the persistent storage, you can delete your storage later through the {{site.data.keyword.cloud_notm}} console for the corresponding storage service.
 
 

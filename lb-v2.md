@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -17,7 +17,7 @@ subcollection: openshift
 # Classic: Setting up DSR load balancing with an NLB 2.0
 {: #loadbalancer-v2}
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Version 2.0 NLBs can be created in classic clusters only, and cannot be created in VPC clusters. To load balance in VPC clusters, see [Exposing apps with load balancers for VPC](/docs/containers?topic=containers-vpc-lbaas).
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) Version 2.0 NLBs can be created in classic clusters only, and cannot be created in VPC clusters. To load balance in VPC clusters, see [Exposing apps with load balancers for VPC](/docs/containers?topic=containers-vpc-lbaas).
 {: note}
 
 Expose a port and use a portable IP address for a Layer 4 network load balancer (NLB) to expose a containerized app. For more information about version 2.0 NLBs, see [Components and architecture of an NLB 2.0](/docs/containers?topic=containers-loadbalancer-about#planning_ipvs).

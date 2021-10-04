@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -23,14 +23,16 @@ You notice one or more of the following issues:
 {: tsSymptoms}
 
 * Worker nodes are unable to create new pods. The pods deploy successfully to worker nodes, but the containers are stuck in the `ContainerCreating` state.
-* When you run `oc describe pod <pod>` for a pod in the `ContainerCreating` state, you see an event similar to the following:
-    ```
+* When you run `oc describe pod <pod>` for a pod in the `ContainerCreating` state, you see an event similar to the following.
+
+    ```sh
     Failed to create pod sandbox: rpc error: code = Unknown desc = failed to setup network for sandbox "XXX": failed to request 1 IPv4 addresses. IPAM allocated only 0
     ```
     {: screen}
 
-* One or more of the `calico-node` pods fail to start on a worker node and are in the `CrashLoopBackOff` state. When you run `kubectl logs -n kube-system <calico-node_pod>`, the last lines of the logs contain the following:
-    ```
+* One or more of the `calico-node` pods fail to start on a worker node and are in the `CrashLoopBackOff` state. When you run `kubectl logs -n kube-system <calico-node_pod>`, the last lines of the logs contain the following message.
+
+    ```sh
     Unable to autoassign an address - pools are likely exhausted. type="ipipTunnelAddress"
     ```
     {: screen}
@@ -47,8 +49,8 @@ If you see either of the IP address-related messages that are listed in the symp
 {: tsResolve}
 
 **Infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 To fix registry quota issues, [free up storage in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup).
 {: shortdesc}
@@ -56,13 +58,15 @@ To fix registry quota issues, [free up storage in {{site.data.keyword.registrylo
 ## Fixing IP address issues
 {: #calico-ips}
 
-**Infrastructure provider and versions**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
-* Your cluster must run a [supported version](/docs/openshift?topic=openshift-openshift_versions#version_types). If you cluster runs a deprecated or unsupported version, first [update your cluster](/docs/containers?topic=containers-update).
-
 To fix IP address issues, release individual and blocks of IP addresses that were not cleanly removed from the Calico IPAM records so that they can be reused by pods in your cluster.
 {: shortdesc}
+
+**Infrastructure provider and versions**:
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+
+Your cluster must run a [supported version](/docs/openshift?topic=openshift-openshift_versions#version_types). If you cluster runs a deprecated or unsupported version, first [update your cluster](/docs/containers?topic=containers-update).
+
 
 ### Step 1: Releasing individual IP addresses
 {: #individual-ips}
@@ -73,14 +77,14 @@ First, check for and release individual IP addresses that were not cleanly remov
 1. Follow the steps in [Installing and configuring the Calico CLI](/docs/containers?topic=containers-network_policies#cli_install) to download version 3.18 or later of the `calicoctl` client, use the correct Calico configuration for your cluster, and verify that the Calico configuration is working correctly for your targeted cluster. Note that even if you cluster runs an older version of Calico, you can still use `calicoctl` version 3.18 to run the commands in the following steps.
 
 2. Check for any IP addresses that are incorrectly detected as in use by the Calico IPAM.
-    ```
+    ```sh
     calicoctl ipam check
     ```
     {: pre}
 
-3. In the output, look for the section that contains the line `Scanning for IPs that are allocated but not actually in use...`. If IP addresses are allocated in IPAM but are not actually in use, continue to the next step to release them.
-    In this example output, 181 IP addresses can be released.
-    ```
+3. In the output, look for the section that contains the line `Scanning for IPs that are allocated but not actually in use...`. If IP addresses are allocated in IPAM but are not actually in use, continue to the next step to release them. In this example output, 181 IP addresses can be released.
+
+    ```sh
     ...
     Scanning for IPs that are allocated but not actually in use...
     Found 181 IPs that are allocated in IPAM but not actually in use.
@@ -95,60 +99,61 @@ First, check for and release individual IP addresses that were not cleanly remov
 4. Release IP addresses from the Calico IPAM that were previously assigned to a pod endpoint. Note that after you lock the data store in the following steps, existing pods continue to run, but any pods that are created remain in the `ContainerCreating` state and cannot start until you unlock the data store. This data store lock ensures that the IPAM records are not modified while you release IP addresses. For more information, see the [Calico open source documentation](https://docs.projectcalico.org/reference/calicoctl/ipam/check){: external}.
 
     1. Lock the data store for the Calico IPAM records.
-    ```sh
-    calicoctl datastore migrate lock
-    ```
-    {: pre}
+        ```sh
+        calicoctl datastore migrate lock
+        ```
+        {: pre}
 
     2. Save the IPAM check results.
-    ```sh
-    calicoctl ipam check -o report.json
-    ```
-    {: pre}
+        ```sh
+        calicoctl ipam check -o report.json
+        ```
+        {: pre}
 
     3. Release unused IP addresses. This process can run for up to 20 minutes depending on how many IP addresses must be released.
-    ```sh
-    calicoctl ipam release --from-report=report.json
-    ```
-    {: pre}
+        ```sh
+        calicoctl ipam release --from-report=report.json
+        ```
+        {: pre}
 
     4. Unlock the data store.
-    ```sh
-    calicoctl datastore migrate unlock
-    ```
-    {: pre}
+        ```sh
+        calicoctl datastore migrate unlock
+        ```
+        {: pre}
 
     5. Verify that all unused IP addresses are released.
-    ```sh
-    calicoctl ipam check
-    ```
-    {: pre}
+        ```sh
+        calicoctl ipam check
+        ```
+        {: pre}
 
-    Example output
+        Example output
 
-    ```sh
-    Check complete; found 0 problems.
-    ```
-    {: screen}
+        ```sh
+        Check complete; found 0 problems.
+        ```
+        {: screen}
 
 5. Optional: To verify that the data store was successfully unlocked and that IP addresses are now available for assignment, create a pod and check that it starts correctly.
+
     1. For example, create a simple NGNINX pod.
-    ```sh
-    oc run test --image=nginx --generator=run-pod/v1
-    ```
-    {: pre}
+        ```sh
+        oc run test --image=nginx --generator=run-pod/v1
+        ```
+        {: pre}
 
     2. Verify that the pod has an IP address and is running successfully.
-    ```sh
-    oc get po test
-    ```
-    {: pre}
+        ```sh
+        oc get po test
+        ```
+        {: pre}
 
     3. Delete the test pod.
-    ```sh
-    oc delete pod test
-    ```
-    {: pre}
+        ```sh
+        oc delete pod test
+        ```
+        {: pre}
 
 6. Continue to the next section to check for unused IP address blocks.
 
@@ -173,13 +178,13 @@ Ensuring that IP blocks are free is especially important for all classic cluster
     {: pre}
 
 3. List the Calico IPAM records. In the output, look for blocks that have 0 `IPS IN USE`, which indicates that the block is not used by its assigned worker node.
-    ```
+    ```sh
     calicoctl ipam show --show-blocks
     ```
     {: pre}
 
     In this example output, the `172.24.10.64/26` block has no IP addresses in use.
-    ```
+    ```sh
     ...
     Block    | 172.24.10.64/26  |        64 | 0 (0%)     | 64 (100%)  |
     ...
@@ -189,42 +194,40 @@ Ensuring that IP blocks are free is especially important for all classic cluster
 4. For each of these blocks, complete the following steps to release the block.
 
     1. Verify that no pods currently use an IP address from the block.
-    ```sh
-    oc get pods -A
-    ```
-    {: pre}
+        ```sh
+        oc get pods -A
+        ```
+        {: pre}
 
     2. Get the `BlockAffinity` for the block. Replace the periods and forward slash in the block with hyphens (-). For example, for the block `172.24.10.64/26`, the format for the following command is `172-24-10-64-26`.
-    ```sh
-    oc get blockaffinity | grep <block>
-    ```
-    {: pre}
+        ```sh
+        oc get blockaffinity | grep <block>
+        ```
+        {: pre}
 
     3. Delete the `BlockAffinity`.
-    ```sh
-    oc delete blockaffinity <block_affinity>
-    ```
-    {: pre}
+        ```sh
+        oc delete blockaffinity <block_affinity>
+        ```
+        {: pre}
 
     4. Get the `IPAMBlock` for the block. Replace the periods and forward slash in the block with hyphens (-). For example, for the block `172.24.10.64/26`, the format for the following command is `172-24-10-64-26`.
-    ```sh
-    oc get ipamblock | grep <block>
-    ```
-    {: pre}
+        ```sh
+        oc get ipamblock | grep <block>
+        ```
+        {: pre}
 
     5. Delete the `IPAMBlock`.
-    ```sh
-    oc delete ipamblock <ipam_block>
-    ```
-    {: pre}
+        ```sh
+        oc delete ipamblock <ipam_block>
+        ```
+        {: pre}
 
-    6. If you did not lock the data store in step 2: Check that no pods were created directly before you deleted the `BlockAffinity` and `IPAMBlock`.
-    ```sh
-    oc get pods -A
-    ```
-    {: pre}
-
-    * If pods were created, you must delete the `BlockAffinity` and `IPAMBlock` for this block again. Then, delete any pods that use an IP address in this block by running `oc delete pod <pod>` so the pod is recreated with an IP address from a different block.
+    6. If you did not lock the data store in step 2: Check that no pods were created directly before you deleted the `BlockAffinity` and `IPAMBlock`. If pods were created, you must delete the `BlockAffinity` and `IPAMBlock` for this block again. Then, delete any pods that use an IP address in this block by running `oc delete pod <pod>` so the pod is recreated with an IP address from a different block.
+        ```sh
+        oc get pods -A
+        ```
+        {: pre}
 
     7. Repeat these steps for any other blocks that that have 0 `IPS IN USE`.
 

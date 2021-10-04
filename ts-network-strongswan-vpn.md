@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -18,7 +18,7 @@ content-type: troubleshoot
 # Why can't I establish VPN connectivity with the strongSwan Helm chart?
 {: #cs_vpn_fails}
 
-**Infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 
 When you check VPN connectivity by running `oc exec $STRONGSWAN_POD -- ipsec status`, you do not see a status of `ESTABLISHED`, or the VPN pod is in an `ERROR` state or continues to crash and restart.

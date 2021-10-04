@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -186,7 +186,7 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
         {: screen}
 
     2. Decode the binding value.
-        ```
+        ```sh
         echo "<binding>" | base64 -D
         ```
         {: pre}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -20,7 +20,7 @@ content-type: troubleshoot
 {: troubleshoot}
 
 **Infrastructure provider and applicable versions**:
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 * {{site.data.keyword.openshiftshort}} 4.4 or later
 
 

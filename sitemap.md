@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift
 subcollection: openshift
@@ -1339,6 +1339,8 @@ subcollection: openshift
 
 * [Adding a private registry to the global pull secret](/docs/openshift?topic=openshift-registry#cluster_global_pull_secret)
 
+* [Updating your cluster's containerd registry host configuration](/docs/openshift?topic=openshift-registry#update_containerd_registry_config)
+
 [Setting up continuous integration and delivery](/docs/openshift?topic=openshift-cicd#cicd)
 
 * [Supported automation tools](/docs/openshift?topic=openshift-cicd#cicd_strategy)
@@ -2670,6 +2672,52 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version 1.0.312](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10312)
+
+* [Version 1.0.300](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10300)
+
+* [Version 1.0.295](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10295)
+
+* [Version 1.0.275](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10275)
+
+* [Version 1.0.258](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10258)
+
+* [Version 1.0.233](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10233)
+
+* [Version 1.0.231](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10231)
+
+* [Version 1.0.223](/docs/openshift?topic=openshift-cs_cli_changelog#cli-102238)
+
+* [Version 1.0.208](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10208)
+
+* [Version 1.0.206](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10206)
+
+* [Version 1.0.197](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10197)
+
+* [Version 1.0.178](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10178)
+
+* [Version 1.0.171](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10171)
+
+* [Version 1.0.157](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10157)
+
+* [Version 1.0.143](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10143)
+
+* [Version 1.0.118](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10118)
+
+* [Version 1.0.99](/docs/openshift?topic=openshift-cs_cli_changelog#cli-1099)
+
+* [Version 1.0.94](/docs/openshift?topic=openshift-cs_cli_changelog#cli-1094)
+
+* [Version 1.0.84](/docs/openshift?topic=openshift-cs_cli_changelog#cli-1084)
+
+* [Version 1.0.57](/docs/openshift?topic=openshift-cs_cli_changelog#cli-1057)
+
+* [Version 1.0.28](/docs/openshift?topic=openshift-cs_cli_changelog#cli-1028)
+
+* [Version 1.0.15](/docs/openshift?topic=openshift-cs_cli_changelog#cli-1015)
+
+* [Version 1.0.0](/docs/openshift?topic=openshift-cs_cli_changelog#cli-100)
+
 * [Deprecated versions](/docs/openshift?topic=openshift-cs_cli_changelog#deprecated)
 
     * [Updating to version 1.0 of the plug-in](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta)
@@ -3101,7 +3149,7 @@ subcollection: openshift
 
 * [Running the worker node CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test)
 
-* [Benchmark 1.5 results for {{site.data.keyword.openshiftshort}} versions 4.6 and 4.7](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15)
+* [Benchmark 1.5 results for {{site.data.keyword.openshiftshort}} versions 4.6 - 4.8](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15)
 
     * [Section 1: Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-1)
 
@@ -3347,6 +3395,22 @@ subcollection: openshift
 ## IAM and Activity Tracker events
 {: #sitemap_iam_and_activity_tracker_events}
 
+
+[User access permissions](/docs/openshift?topic=openshift-access_reference#access_reference)
+
+* [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions)
+
+* [{{site.data.keyword.cloud_notm}} IAM platform access roles](/docs/openshift?topic=openshift-access_reference#iam_platform)
+
+* [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-access_reference#service)
+
+* [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-access_reference#rbac_ref)
+
+* [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-access_reference#iam_issuer_users)
+
+* [Cloud Foundry roles](/docs/openshift?topic=openshift-access_reference#cloud-foundry)
+
+* [Classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra)
 
 [{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events#at_events)
 

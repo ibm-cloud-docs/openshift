@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift, roks, rhoks, rhos, app access
 
@@ -59,7 +59,7 @@ If you do not already have an app ready, you can use a Kubernetes example app ca
 Before you begin
 
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC clusters: [Allow traffic requests that are routed to node ports on your worker nodes](/docs/containers?topic=containers-vpc-network-policy#security_groups).
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC clusters: [Allow traffic requests that are routed to node ports on your worker nodes](/docs/containers?topic=containers-vpc-network-policy#security_groups).
 
 To use a NodePort,
 

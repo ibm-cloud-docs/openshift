@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: kubernetes, iks, oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -29,7 +29,7 @@ completion-time: 45m
 Create an {{site.data.keyword.openshiftlong}} cluster in your Virtual Private Cloud (VPC).
 {: shortdesc}
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> With **{{site.data.keyword.openshiftlong_notm}} clusters on VPC**, you can create your cluster in the next generation of the {{site.data.keyword.cloud_notm}} platform, in your [Virtual Private Cloud](/docs/vpc?topic=vpc-about-vpc).
+![VPC infrastructure provider icon.](images/icon-vpc-2.svg) With **{{site.data.keyword.openshiftlong_notm}} clusters on VPC**, you can create your cluster in the next generation of the {{site.data.keyword.cloud_notm}} platform, in your [Virtual Private Cloud](/docs/vpc?topic=vpc-about-vpc).
 
 * {{site.data.keyword.openshiftlong_notm}} gives you all the [advantages of a managed offering](/docs/openshift?topic=openshift-cs_ov) for your cluster infrastructure environment, while using the [{{site.data.keyword.openshiftshort}} tooling and catalog](https://docs.openshift.com/container-platform/4.7/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments.
 * VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud. VPC uses the next version of {{site.data.keyword.openshiftlong_notm}} [infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers#infrastructure_providers), with a select group of v2 API, CLI, and console functionality.
@@ -88,13 +88,13 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
 
 2. Create a VPC for your cluster. For more information, see the docs for creating a VPC in the [console](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console) or [CLI](/docs/vpc?topic=vpc-creating-a-vpc-using-cli).
     1. Create a VPC that is called `myvpc` and note the **ID** in the output. VPCs provide an isolated environment for your workloads to run within the public cloud. You can use the same VPC for multiple clusters, such as if you plan to have different clusters host separate microservices that need to communicate with each other. If you want to separate your clusters, such as for different departments, you can create a VPC for each cluster.
-        ```
+        ```sh
         ibmcloud is vpc-create myvpc
         ```
         {: pre}
 
     2. Create a public gateway and note the **ID** in the output. In the next step, you attach the public gateway to a VPC subnet, so that your worker nodes can communicate on the public network. Default {{site.data.keyword.openshiftshort}} components, such as the web console and OperatorHub, require public network access. If you skip this step, you must instead be connected to your VPC private network, such as through a VPN connection, to access the {{site.data.keyword.openshiftshort}} web console or access your cluster with `kubectl` commands.
-        ```
+        ```sh
         ibmcloud is public-gateway-create gateway-us-south-1 <vpc_ID> us-south-1
         ```
         {: pre}
@@ -174,7 +174,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
 
     ```sh
     Client Version: v4.8.0
-    Kubernetes Version: v1.22.2
+    Kubernetes Version: v1.21.2
     ```
     {: screen}
 

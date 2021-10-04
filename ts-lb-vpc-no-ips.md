@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -18,7 +18,7 @@ content-type: troubleshoot
 # VPC clusters: Why does a Kubernetes `LoadBalancer` service fail with no IPs?
 {: #vpc_no_lb}
 
-**Infrastructure provider**: <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+**Infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 You exposed your app by creating a Kubernetes `LoadBalancer` service in your VPC cluster.
 {: tsSymptoms}

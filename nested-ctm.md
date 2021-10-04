@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift, iks, help, network, dns, health check
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: #cs_ingress_health_check_ctm}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 * <img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Satellite
 
 

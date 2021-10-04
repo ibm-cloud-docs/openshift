@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -21,8 +21,8 @@ subcollection: openshift
 {: shortdesc}
 
 **Supported infrastructure provider**:
-* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 
 ## About Portworx
@@ -125,14 +125,14 @@ Portworx supports block storage only. Worker nodes that mount file or object sto
 Keep in mind that the networking of non-SDS worker nodes in classic clusters is not optimized for Portworx and might not offer the performance benefits that your app requires.
 {: note}
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters:**
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) **Classic clusters:**
 
 1. [Install the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in](/docs/containers?topic=containers-utilities#block_storage_attacher).
 2. To add block storage with a different configuration, add block storage to a subset of worker nodes only, or to have more control over the provisioning process, [manually add block storage](/docs/containers?topic=containers-utilities#manual_block). For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.
 3. [Attach the block storage](/docs/containers?topic=containers-utilities#attach_block) to your worker nodes.
 4. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](#portworx_database).</br>
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC clusters:**
+![VPC infrastructure provider icon.](images/icon-vpc-2.svg) **VPC clusters:**
 1. Follow the [steps](/docs/containers?topic=containers-utilities#vpc_cli_attach) to create the {{site.data.keyword.block_storage_is_short}} instances and attach these to each worker node that you want to add to the Portworx storage layer. For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.  
 2. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](#portworx_database).
 
@@ -369,14 +369,14 @@ Follow these steps to set up encryption for your Portworx volumes.
     ```
     {: pre}
 
-10. Create a project in your cluster that is called `portworx`. 
+2. Create a project in your cluster that is called `portworx`. 
 
     ```sh
     oc project portworx
     ```
     {: pre}
 
-11. Create a Kubernetes secret that is named `px-ibm` in the `portworx` project of your cluster to store your {{site.data.keyword.keymanagementservicelong_notm}} information.
+3. Create a Kubernetes secret that is named `px-ibm` in the `portworx` project of your cluster to store your {{site.data.keyword.keymanagementservicelong_notm}} information.
     1. Create a configuration file for your Kubernetes secret with the following content.
         ```yaml
         apiVersion: v1
@@ -393,37 +393,21 @@ Follow these steps to set up encryption for your Portworx volumes.
         ```
         {: codeblock}
 
-        <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-        <caption>Understanding the YAML file components</caption>
-        <col style="width:30%">
-        <col style="width:70%">
-        <thead>
-        <th>Parameter</th>
-        <th>Description</th>
-        </thead>
-        <tbody>
-        <tr>
-        <td><code>metadata.name</code></td>
-        <td>Enter <code>px-ibm</code> as the name for your Kubernetes secret. If you use a different name, Portworx does not recognize the secret during installation. </td>
-        </tr>
-        <tr>
-        <td><code>data.IBM_SERVICE_API_KEY</code></td>
-        <td>Enter the base64 encoded {{site.data.keyword.keymanagementservicelong_notm}} or {{site.data.keyword.hscrypto}} API key that you retrieved earlier.  </td>
-        </tr>
-        <tr>
-        <td><code>data.IBM_INSTANCE_ID</code></td>
-        <td>Enter the base64 encoded service instance GUID that you retrieved earlier. </td>
-        </tr>
-        <tr>
-        <td><code>data.IBM_CUSTOMER_ROOT_KEY</code></td>
-        <td>Enter the base64 encoded root key that you retrieved earlier. </td>
-        </tr>
-        <tr>
-        <td><code>data.IBM_BASE_URL</code></td>
-        <td><ul><li><b>{{site.data.keyword.keymanagementservicelong_notm}}</b>: Enter the base64 encoded API endpoint of your service instance.</li><li><b>{{site.data.keyword.hscrypto}}</b>: Enter the base64 encoded Key Management public endpoint.</li></ul></td>
-        </tr>
-        </tbody>
-        </table>
+        `metadata.name`
+        :   Enter `px-ibm` as the name for your Kubernetes secret. If you use a different name, Portworx does not recognize the secret during installation.
+        
+        `data.IBM_SERVICE_API_KEY`
+        :   Enter the base64 encoded {{site.data.keyword.keymanagementservicelong_notm}} or {{site.data.keyword.hscrypto}} API key that you retrieved earlier.
+        
+        `data.IBM_INSTANCE_ID`
+        :   Enter the base64 encoded service instance GUID that you retrieved earlier.
+        
+        `data.IBM_CUSTOMER_ROOT_KEY`
+        :   Enter the base64 encoded root key that you retrieved earlier.
+        
+        `data.IBM_BASE_URL`
+        :   {{site.data.keyword.keymanagementservicelong_notm}}: Enter the base64 encoded API endpoint of your service instance.
+        :   {{site.data.keyword.hscrypto}}: Enter the base64 encoded Key Management public endpoint.
 
     2. Create the secret in the `portworx` project of your cluster.
         ```sh
@@ -437,15 +421,15 @@ Follow these steps to set up encryption for your Portworx volumes.
         ```
         {: pre}
 
-12. If you set up encryption before your installed Portworx, you can now [install Portworx in your cluster](#add_portworx_storage). To add encryption to your cluster after you installed Portworx, update the Portworx daemon set to add `"-secret_type"` and `"ibm-kp"` as additional arguments to the Portworx container definition.
+4. If you set up encryption before your installed Portworx, you can now [install Portworx in your cluster](#add_portworx_storage). To add encryption to your cluster after you installed Portworx, update the Portworx daemon set to add `"-secret_type"` and `"ibm-kp"` as additional arguments to the Portworx container definition.
     1. Update the Portworx daemon set.
         ```sh
         oc edit daemonset portworx -n kube-system
         ```
         {: pre}
 
-        Example updated daemon set:
-        ```
+        Example updated daemon set
+        ```sh
         containers:
         - args:
         - -c
@@ -481,13 +465,13 @@ Follow these steps to set up encryption for your Portworx volumes.
         {: pre}
 
     5. Review the `config.json` file to verify that `"secret_type": "ibm-kp"` is added to the **secret** section of your CLI output.
-        ```
+        ```sh
         cat config.json
         ```
         {: pre}
 
         Example output
-        ```
+        ```sh
         {
         "alertingurl": "",
         "clusterid": "px-kp-test",
@@ -573,7 +557,7 @@ To install Portworx:
         {: pre}
 
         Example output
-        ```
+        ```sh
         portworx-594rw                          1/1       Running     0          20h
         portworx-rn6wk                          1/1       Running     0          20h
         portworx-rx9vf                          1/1       Running     0          20h
@@ -593,7 +577,7 @@ To install Portworx:
         {: pre}
 
         Example output
-        ```
+        ```sh
         Status: PX is operational
         License: Trial (expires in 30 days)
         Node ID: 10.176.48.67
@@ -634,7 +618,8 @@ To install Portworx:
         {: pre}
 
         Example output
-        ```
+        
+        ```sh
         NODE        NODE STATUS    POOL    POOL STATUS    IO_PRIORITY    SIZE    AVAILABLE    USED    PROVISIONED    RESERVEFACTOR    ZONE    REGION        RACK
         10.184.58.11    Up        0    Online        LOW        20 GiB    17 GiB        3.0 GiB    0 B        0        dal12    us-south    default
         10.176.48.67    Up        0    Online        LOW        20 GiB    17 GiB        3.0 GiB    0 B        0        dal10    us-south    default
@@ -650,25 +635,25 @@ You can upgrade Portworx to the latest version.
 
 1. [Follow the instructions](/docs/containers?topic=containers-helm#install_v3) to install the Helm version 3 client on your local machine.
 
-1. Update your Helm repos.
+2. Update your Helm repos.
     ```sh
     helm repo update
     ```
     {: pre}
 
-2. Find release name of your Portworx Helm chart.
+3. Find release name of your Portworx Helm chart.
     ```sh
     helm list -A | grep portworx
     ```
     {: pre}
 
-    **Example output**
-    ```
+    Example output
+    ```sh
     <release_name>      default      1    2020-06-10 16:05:31.86058777 +0000 UTC    deployed    portworx-1.0.18         2.5.1    
     ```
     {: screen}
 
-3. Update your Portworx release with the latest version of the Helm chart.
+4. Update your Portworx release with the latest version of the Helm chart.
     ```sh
     helm upgrade <release_name> ibm-community/portworx/
     ```
@@ -698,46 +683,33 @@ Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs
         apiVersion: storage.k8s.io/v1
         metadata:
         name: <storageclass_name>
-      provisioner: kubernetes.io/portworx-volume
-      parameters:
-        repl: "<replication_factor>"
-        secure: "<true_or_false>"
-        priority_io: "<io_priority>"
-        shared: "<true_or_false>"
+        provisioner: kubernetes.io/portworx-volume
+        parameters:
+          repl: "<replication_factor>"
+          secure: "<true_or_false>"
+          priority_io: "<io_priority>"
+          shared: "<true_or_false>"
         ```
         {: codeblock}
 
-        <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-        <caption>Understanding the YAML file components</caption>
-        <col style="width:30%">
-        <col style="width:70%">
-        <thead>
-          <th>Parameter</th>
-          <th>Description</th>
-        </thead>
-        <tbody>
-        <tr>
-        <td><code>metadata.name</code></td>
-        <td>Enter a name for your storage class. </td>
-        </tr>
-        <tr>
-        <td><code>parameters.repl</code></td>
-        <td>Enter the number of replicas for your data that you want to store across different worker nodes. Allowed numbers are <code>1</code>,<code>2</code>, or <code>3</code>. For example, if you enter <code>3</code>, then your data is replicated across three different worker nodes in your Portworx cluster. To store your data highly available, use a multizone cluster and replicate your data across three worker nodes in different zones. <strong>Note: </strong>You must have enough worker nodes to fulfill your replication requirement. For example, if you have two worker nodes, but you specify three replicas, then the creation of the PVC with this storage class fails. </td>
-        </tr>
-        <tr>
-        <td><code>parameters.secure</code></td>
-        <td>Specify whether you want to encrypt the data in your volume with {{site.data.keyword.keymanagementservicelong_notm}}. Choose between the following options: <ul><li><strong>true</strong>: Enter <code>true</code> to enable encryption for your Portworx volumes. To encrypt volumes, you must have an {{site.data.keyword.keymanagementservicelong_notm}} service instance and a Kubernetes secret that holds your customer root key. For more information about how to set up encryption for Portworx volumes, see <a href="#encrypt_volumes">Encrypting your Portworx volumes</a>. </li><li><strong>false</strong>: When you enter <code>false</code>, your Portworx volumes are not encrypted. </li></ul> If you do not specify this option, your Portworx volumes are not encrypted by default. <strong>Note:</strong> You can choose to enable volume encryption in your PVC, even if you disabled encryption in your storage class. The setting that you make in the PVC take precedence over the settings in the storage class.  </td>
-        </tr>
-        <tr>
-        <td><code>parameters.priority_io</code></td>
-        <td>Enter the Portworx I/O priority that you want to request for your data. Available options are <code>high</code>, <code>medium</code>, and <code>low</code>. During the setup of your Portworx cluster, every disk is inspected to determine the performance profile of the device. The profile classification depends on the network bandwidth of your worker node and the type of storage device that you have. Disks of SDS worker nodes are classified as <code>high</code>. If you manually attach disks to a virtual worker node, then these disks are classified as <code>low</code> due to the lower network speed that comes with virtual worker nodes. </br><br> When you create a PVC with a storage class, the number of replicas that you specify in <code>parameters/repl</code> takes precedence over the I/O priority. For example, when you specify three replicas that you want to store on high-speed disks, but you have only one worker node with a high-speed disk in your cluster, then your PVC creation still succeeds. Your data is replicated across both high and low speed disks. </td>
-        </tr>
-        <tr>
-        <td><code>parameters.shared</code></td>
-        <td>Define whether you want to allow multiple pods to access the same volume. Choose between the following options: <ul><li><strong>True: </strong>If you set this option to <code>true</code>, then you can access the same volume by multiple pods that are distributed across worker nodes in different zones. </li><li><strong>False: </strong>If you set this option to <code>false</code>, you can access the volume from multiple pods only if the pods are deployed onto the worker node that attaches the physical disk that backs the volume. If your pod is deployed onto a different worker node, the pod cannot access the volume.</li></ul></td>
-        </tr>
-        </tbody>
-        </table>
+        `metadata.name`
+        :   Enter a name for your storage class.
+        
+        `parameters.repl`
+        :   Enter the number of replicas for your data that you want to store across different worker nodes. Allowed numbers are `1`,`2`, or `3`. For example, if you enter `3`, then your data is replicated across three different worker nodes in your Portworx cluster. To store your data highly available, use a multizone cluster and replicate your data across three worker nodes in different zones. <strong>Note: </strong>You must have enough worker nodes to fulfill your replication requirement. For example, if you have two worker nodes, but you specify three replicas, then the creation of the PVC with this storage class fails.
+        
+        `parameters.secure`
+        :   Specify whether you want to encrypt the data in your volume with {{site.data.keyword.keymanagementservicelong_notm}}. Choose between the following options.
+            - `true`: Enter `true` to enable encryption for your Portworx volumes. To encrypt volumes, you must have an {{site.data.keyword.keymanagementservicelong_notm}} service instance and a Kubernetes secret that holds your customer root key. For more information about how to set up encryption for Portworx volumes, see [Encrypting your Portworx volumes](#encrypt_volumes). 
+            - `false`: When you enter `false`, your Portworx volumes are not encrypted. If you do not specify this option, your Portworx volumes are not encrypted by default. You can choose to enable volume encryption in your PVC, even if you disabled encryption in your storage class. The setting that you make in the PVC take precedence over the settings in the storage class.
+
+        `parameters.priority_io`
+        :   Enter the Portworx I/O priority that you want to request for your data. Available options are `high`, `medium`, and `low`. During the setup of your Portworx cluster, every disk is inspected to determine the performance profile of the device. The profile classification depends on the network bandwidth of your worker node and the type of storage device that you have. Disks of SDS worker nodes are classified as `high`. If you manually attach disks to a virtual worker node, then these disks are classified as `low` due to the lower network speed that comes with virtual worker nodes. </br><br> When you create a PVC with a storage class, the number of replicas that you specify in `parameters/repl` takes precedence over the I/O priority. For example, when you specify three replicas that you want to store on high-speed disks, but you have only one worker node with a high-speed disk in your cluster, then your PVC creation still succeeds. Your data is replicated across both high and low speed disks.
+        
+        `parameters.shared`
+        :   Define whether you want to allow multiple pods to access the same volume. Choose between the following options:
+            - True: If you set this option to `true`, then you can access the same volume by multiple pods that are distributed across worker nodes in different zones.
+            - False: If you set this option to `false`, you can access the volume from multiple pods only if the pods are deployed onto the worker node that attaches the physical disk that backs the volume. If your pod is deployed onto a different worker node, the pod cannot access the volume.
 
     2. Create the storage class.
         ```sh
@@ -751,50 +723,34 @@ Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs
         ```
         {: pre}
 
-2. Create a persistent volume claim (PVC).
+3. Create a persistent volume claim (PVC).
     1. Create a configuration file for your PVC.
         ```yaml
         kind: PersistentVolumeClaim
         apiVersion: v1
         metadata:
         name: mypvc
-      spec:
-        accessModes:
-          - <access_mode>
-        resources:
-          requests:
-            storage: <size>
-        storageClassName: portworx-shared-sc
+        spec:
+          accessModes:
+            - <access_mode>
+          resources:
+            requests:
+              storage: <size>
+          storageClassName: portworx-shared-sc
         ```
         {: codeblock}
 
-        <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-        <caption>Understanding the YAML file components</caption>
-        <col style="width:30%">
-    <col style="width:70%">
-        <thead>
-          <th>Parameter</th>
-          <th>Description</th>
-        </thead>
-        <tbody>
-        <tr>
-        <td><code>metadata.name</code></td>
-        <td>Enter a name for your PVC, such as <code>mypvc</code>. </td>
-        </tr>
-        <tr>
-        <td><code>spec.accessModes</code></td>
-        <td>Enter the <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes">Kubernetes access mode</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> that you want to use. </td>
-        </tr>
-        <tr>
-        <td><code>resources.requests.storage</code></td>
-        <td>Enter the amount of storage in gigabytes that you want to assign from your Portworx cluster. For example, to assign 2 gigabytes from your Portworx cluster, enter <code>2Gi</code>. The amount of storage that you can specify is limited by the amount of storage that is available in your Portworx cluster. If you specified a replication factor in your storage class that is higher than 1, then the amount of storage that you specify in your PVC is reserved on multiple worker nodes.   </td>
-        </tr>
-        <tr>
-        <td><code>spec.storageClassName</code></td>
-        <td>Enter the name of the storage class that you chose or created earlier and that you want to use to provision your PV. The example YAML file uses the <code>portworx-shared-sc</code> storage class. </td>
-        </tr>
-        </tbody>
-        </table>
+        `metadata.name`
+        :   Enter a name for your PVC, such as `mypvc`.
+        
+        `spec.accessModes`
+        :   Enter the [Kubernetes access mode](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes) that you want to use.
+        
+        `resources.requests.storage`
+        :   Enter the amount of storage in gigabytes that you want to assign from your Portworx cluster. For example, to assign 2 gigabytes from your Portworx cluster, enter `2Gi`. The amount of storage that you can specify is limited by the amount of storage that is available in your Portworx cluster. If you specified a replication factor in your storage class that is higher than 1, then the amount of storage that you specify in your PVC is reserved on multiple worker nodes.
+        
+        `spec.storageClassName`
+        :   Enter the name of the storage class that you chose or created earlier and that you want to use to provision your PV. The example YAML file uses the `portworx-shared-sc` storage class.
 
     2. Create your PVC.
         ```sh
@@ -853,60 +809,38 @@ To access the storage from your app, you must mount the PVC to your app.
     ```
     {: codeblock}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the YAML file components</caption>
-    <col style="width:30%">
-    <col style="width:70%">
-        <thead>
-          <th>Parameter</th>
-          <th>Description</th>
-    </thead>
-    <tbody>
-        <tr>
-    <td><code>metadata.labels.app</code></td>
-    <td>A label for the deployment.</td>
-        </tr>
-        <tr>
-        <td><code>spec.selector.matchLabels.app</code> <br/> <code>spec.template.metadata.labels.app</code></td>
-        <td>A label for your app.</td>
-        </tr>
-    <tr>
-    <td><code>template.metadata.labels.app</code></td>
-    <td>A label for the deployment.</td>
-        </tr>
-    <tr>
-    <td><code>spec.schedulerName</code></td>
-    <td>Use <a href="https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/stork/">Stork</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> as the scheduler for your Portworx cluster. With Stork, you can co-locate pods with their data, provides seamless migration of pods in case of storage errors and makes it easier to create and restore snapshots of Portworx volumes. </td>
-    </tr>
-    <tr>
-    <td><code>spec.containers.image</code></td>
-    <td>The name of the image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run <code>ibmcloud cr image-list</code>.</td>
-    </tr>
-    <tr>
-    <td><code>spec.containers.name</code></td>
-    <td>The name of the container that you want to deploy to your cluster.</td>
-    </tr>
-    <tr>
-    <td><code>spec.containers.securityContext.fsGroup</code></td>
-    <td>Optional: To access your storage with a non-root user, specify the <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">security context</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> for your pod and define the set of users that you want to grant access in the <code>fsGroup</code> section on your deployment YAML. For more information, see <a href="https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/access-via-non-root-users/">Accessing Portworx volumes with a non-root user</a> <img src="../icons/launch-glyph.svg" alt="External link icon">. </td>
-    </tr>
-    <tr>
-    <td><code>spec.containers.volumeMounts.mountPath</code></td>
-    <td>The absolute path of the directory to where the volume is mounted inside the container. If you want to share a volume between different apps, you can specify <a href="https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath">volume sub paths</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> for each of your apps.</td>
-    </tr>
-    <tr>
-    <td><code>spec.containers.volumeMounts.name</code></td>
-    <td>The name of the volume to mount to your pod.</td>
-    </tr>
-    <tr>
-    <td><code>volumes.name</code></td>
-    <td>The name of the volume to mount to your pod. Typically this name is the same as <code>volumeMounts/name</code>.</td>
-    </tr>
-    <tr>
-    <td><code>volumes.persistentVolumeClaim.claimName</code></td>
-    <td>The name of the PVC that binds the PV that you want to use. </td>
-    </tr>
-    </tbody></table>
+    `metadata.labels.app`
+    :   A label for the deployment.
+    
+    `spec.selector.matchLabels.app` and `spec.template.metadata.labels.app`
+    :   A label for your app.
+    
+    `template.metadata.labels.app`
+    :   A label for the deployment.
+    
+    `spec.schedulerName`</td>
+    :   Use [Stork](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/stork/){: external} as the scheduler for your Portworx cluster. With Stork, you can co-locate pods with their data, provides seamless migration of pods in case of storage errors and makes it easier to create and restore snapshots of Portworx volumes.
+    
+    `spec.containers.image`
+    :   The name of the image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`.
+    
+    `spec.containers.name`
+    :   The name of the container that you want to deploy to your cluster.
+    
+    `spec.containers.securityContext.fsGroup`
+    :   Optional: To access your storage with a non-root user, specify the [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external} for your pod and define the set of users that you want to grant access in the `fsGroup` section on your deployment YAML. For more information, see [Accessing Portworx volumes with a non-root user](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/access-via-non-root-users/){: external}.
+    
+    `spec.containers.volumeMounts.mountPath`
+    :   The absolute path of the directory to where the volume is mounted inside the container. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.
+    
+    `spec.containers.volumeMounts.name`
+    :   The name of the volume to mount to your pod.
+    
+    `volumes.name`
+    :   The name of the volume to mount to your pod. Typically this name is the same as `volumeMounts/name`.
+    
+    `volumes.persistentVolumeClaim.claimName`
+    :   The name of the PVC that binds the PV that you want to use.
 
 2. Create your deployment.
     ```sh
@@ -921,7 +855,7 @@ To access the storage from your app, you must mount the PVC to your app.
     {: pre}
 
     The mount point is in the **Volume Mounts** field and the volume is in the **Volumes** field.
-    ```
+    ```sh
     Volume Mounts:
             /var/run/secrets/kubernetes.io/serviceaccount from default-token-tqp61 (ro)
             /volumemount from myvol (rw)
@@ -943,13 +877,13 @@ To access the storage from your app, you must mount the PVC to your app.
 
     2. Navigate to your volume mount path that you defined in your app deployment.
     3. Create a text file.
-        ```
+        ```sh
         echo "This is a test" > test.txt
         ```
         {: pre}
 
     4. Read the file that you created.
-        ```
+        ```sh
         cat test.txt
         ```
         {: pre}
@@ -987,14 +921,14 @@ If you are installing PX-Backup in a newly-provisioned cluster, [you must log in
 1. Open the PX-Backup service from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/px-backup-for-kubernetes){: external}.
 2. Select the same location where the  cluster you want to install PX-Backup on is located. You can find the location of your cluster from the {{site.data.keyword.openshiftlong_notm}} dashboard.
 3. Enter the name for your PX-Backup service in the **Service name** field.
-3. Select the resource group where you want to create the PX-Backup service.
-4. In the **Tag** field, enter the name of the cluster where you want to install PX-Backup. After you complete the installation, you cannot see the name of the cluster where you installed PX-Backup. To find the cluster more easily later, make sure that you enter the cluster name and any additional information as tags.
-5. Enter your {{site.data.keyword.cloud_notm}} API key. After you enter the API key, the **Kubernetes or OpenShift cluster name** field appears. If you do not have an {{site.data.keyword.cloud_notm}} API key, see [Creating an API key](/docs/account?topic=account-userapikey#create_user_key) to create one.
-6. In the **Kubernetes or OpenShift cluster name** field, select the cluster where you want to install PX-Backup.
-7. Enter the name of the {{site.data.keyword.openshiftshort}} project where you want to install your PX-Backup service components. Do not use the `kube-system` or `default` namespace. If the {{site.data.keyword.openshiftshort}} project that you enter does not already exist in your cluster, it is automatically created during the installation.
-8. Select an existing storage class in your cluster to provision persistent volumes for the PX-Backup service. The service uses this storage to store service metadata and is not used to back up your apps and data. [Your apps and data are backed up to an {{site.data.keyword.cos_full_notm}} service instance](#px-backup-storage).
-9. Click **Create** to begin the PX-Backup installation. The installation may take a few minutes to complete.
-10. [Verify that your PX-Backup service is installed corrrectly](#px-backup-verify).
+4. Select the resource group where you want to create the PX-Backup service.
+5. In the **Tag** field, enter the name of the cluster where you want to install PX-Backup. After you complete the installation, you cannot see the name of the cluster where you installed PX-Backup. To find the cluster more easily later, make sure that you enter the cluster name and any additional information as tags.
+6. Enter your {{site.data.keyword.cloud_notm}} API key. After you enter the API key, the **Kubernetes or OpenShift cluster name** field appears. If you do not have an {{site.data.keyword.cloud_notm}} API key, see [Creating an API key](/docs/account?topic=account-userapikey#create_user_key) to create one.
+7. In the **Kubernetes or OpenShift cluster name** field, select the cluster where you want to install PX-Backup.
+8. Enter the name of the {{site.data.keyword.openshiftshort}} project where you want to install your PX-Backup service components. Do not use the `kube-system` or `default` namespace. If the {{site.data.keyword.openshiftshort}} project that you enter does not already exist in your cluster, it is automatically created during the installation.
+9. Select an existing storage class in your cluster to provision persistent volumes for the PX-Backup service. The service uses this storage to store service metadata and is not used to back up your apps and data. [Your apps and data are backed up to an {{site.data.keyword.cos_full_notm}} service instance](#px-backup-storage).
+10. Click **Create** to begin the PX-Backup installation. The installation may take a few minutes to complete.
+11. [Verify that your PX-Backup service is installed corrrectly](#px-backup-verify).
 
 
 ### Verifying your PX-Backup installation
@@ -1004,23 +938,23 @@ Verify that PX-Backup is correctly installed on your cluster.
 {: shortdesc}
 
 
-**From the console**
+From the console
 
 1. From the {{site.data.keyword.cloud_notm}} [Resource list](https://cloud.ibm.com/resources){: external}, find the PX-Backup service that you created.
 2. Review the **Status** column to see if the installation succeeded or failed. The status might take a few minutes to update.
 3. If the status changes to **Active**, verify that the PX-Backup pods, services and jobs are running in your cluster.
     1. From the {{site.data.keyword.cloud_notm}} [Resource list](https://cloud.ibm.com/resources){: external}, select the cluster where you installed PX-Backup.
     2. Open the {{site.data.keyword.openshiftshort}} web console.
-    3. Click on **Projects**.
-    4. Select the namespace where you installed the PX-Backup service components.
-    5. In the **Inventory** section, select the option to display your pods.
-    6. In the **Pods** table, verify that the status of each pod is **Running**.
-    7. Click on **Networking>Routes**.
-    8. Find the **px-backup-ui** route and verify that a URL is listed in the **Location** column.
-    4. Click **Workloads>Jobs**.
-    5. Verify that the **pxcentral-post-install-hook** job is complete.
+    10. Click on **Projects**.
+    11. Select the namespace where you installed the PX-Backup service components.
+    12. In the **Inventory** section, select the option to display your pods.
+    13. In the **Pods** table, verify that the status of each pod is **Running**.
+    14. Click on **Networking>Routes**.
+    15. Find the **px-backup-ui** route and verify that a URL is listed in the **Location** column.
+    16. Click **Workloads>Jobs**.
+    17. Verify that the **pxcentral-post-install-hook** job is complete.
 
-**From the CLI**
+From the CLI
 
 1. From the {{site.data.keyword.cloud_notm}} [Resource list](https://cloud.ibm.com/resources){: external}, find the PX-Backup service you created.
 2. Review the **Status** column to see if the installation succeeded or failed. The status might take a few minutes to update.
@@ -1046,25 +980,27 @@ Verify that PX-Backup is correctly installed on your cluster.
 Access the PX-Backup console through the URL supplied in the {{site.data.keyword.openshiftlong_notm}} dashboard for the cluster where you installed the service.
 {: shortdesc}
 
-**For VPC clusters**
+For VPC clusters
+
 1. From the {{site.data.keyword.cloud_notm}} [Resource list](https://cloud.ibm.com/resources){: external}, select the cluster where you installed PX-Backup.
 2. Open the {{site.data.keyword.openshiftshort}} web console .
-3. Click on **Networking>Routes**.
-4. Find the **px-backup-ui** route and click on the URL that is listed in the **Location** column to open the PX-Backup console.
+5. Click on **Networking>Routes**.
+6. Find the **px-backup-ui** route and click on the URL that is listed in the **Location** column to open the PX-Backup console.
 7. Log in to the PX-Backup console. If you are the first user to access the console, you must log in in with the username `admin` and the password `admin`. You are redirected to a registration page to set a unique username and password. Subsequent users must register a new account to access the console.
 
 
-**For public classic clusters**
+For public classic clusters
+
 1. From the {{site.data.keyword.cloud_notm}} [Resource list](https://cloud.ibm.com/resources){: external}, select the cluster where you installed PX-Backup.
 2. Open the {{site.data.keyword.openshiftshort}} web console .
-3. Click on **Networking>Routes**.
-4. Find the **px-backup-ui** route and note the IP address and node port listed in the **Locations** column.
-5. Copy and paste the IP address and node port into your web browser to open the PX-Backup console.
-7. Log in to the PX-Backup console. If you are the first user to access the console, you must log in in with the username `admin` and the password `admin`. You are redirected to a registration page to set a unique username and password. Subsequent users must register a new account to access the console.
+6. Click on **Networking>Routes**.
+7. Find the **px-backup-ui** route and note the IP address and node port listed in the **Locations** column.
+8. Copy and paste the IP address and node port into your web browser to open the PX-Backup console.
+9. Log in to the PX-Backup console. If you are the first user to access the console, you must log in in with the username `admin` and the password `admin`. You are redirected to a registration page to set a unique username and password. Subsequent users must register a new account to access the console.
 
 
-**For private classic clusters**
-- [Expose the **px-backup-ui** service on your private cluster to access the PX-Backup console](/docs/containers?topic=containers-ingress-types#alb-comm-create-private).
+For private classic clusters, [expose the **px-backup-ui** service on your private cluster to access the PX-Backup console](/docs/containers?topic=containers-ingress-types#alb-comm-create-private).
+{: note}
 
 ### Adding a backup location to your PX-Backup service
 {: #px-backup-storage}
@@ -1144,7 +1080,7 @@ If a cluster that you want to back up with PX-Backup does not have Portworx Ente
 3. Copy the URL in the command and enter it in to your web browser to open the YAML file for the Stork installation.
 4. Copy and paste the entire YAML file into a new file in your text editor.
 5. If the cluster you want to add is a private cluster, find the **image** field and replace `openstorage/stork:<version_number>` with `icr.io/ext/portworx/stork:<version_numer>`. To find the latest available version of Stork, see the [Stork releases](https://github.com/libopenstorage/stork/releases){: external}.
-    ```
+    ```sh
     - --health-monitor-interval=120
     - --webhook-controller=false
     image: openstore/stork:2.6.2
@@ -1157,13 +1093,13 @@ If a cluster that you want to back up with PX-Backup does not have Portworx Ente
     ```
     {: screen}
 
-7. Save the file and run the command to apply the file to your cluster and install Stork.
+6. Save the file and run the command to apply the file to your cluster and install Stork.
     ```sh
     oc apply -f <file_name>.yaml
     ```
     {: pre}
 
-8. Verify that Stork is successfully installed on your cluster and that all pods are running.
+7. Verify that Stork is successfully installed on your cluster and that all pods are running.
     ```sh
     oc get deployment -n kube-system | grep stork
     ```
@@ -1232,18 +1168,21 @@ To include your cluster in a Portworx disaster recovery configuration:
 ## Exploring other Portworx features
 {: #features}
 
-<dl>
-<dt>Using existing Portworx volumes</dt>
-<dd>If you have an existing Portworx volume that you created manually or that was not automatically deleted when you deleted the PVC, you can statically provision the corresponding PV and PVC and use this volume with your app. For more information, see [Using existing volumes ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/using-preprovisioned-volumes/#using-the-portworx-volume). </dd>
-<dt>Running stateful sets on Portworx</dt>
-<dd>If you have a stateful app that you want to deploy as a stateful set into your cluster, you can set up your stateful set to use storage from your Portworx cluster. For more information, see [Create a MySQL StatefulSet ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/application-install-with-kubernetes/cassandra/#create-a-mysql-statefulset). </dd>
-<dt>Running your pods hyperconverged</dt>
-<dd>You can configure your Portworx cluster to schedule pods on the same worker node where the pod's volume resides. This setup is also referred to as `hyperconverged` and can improve the data storage performance. For more information, see [Run pods on same host as a volume ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/hyperconvergence/).</dd>
-<dt>Creating snapshots of your Portworx volumes</dt>
-<dd>You can save the current state of a volume and its data by creating a Portworx snapshot. Snapshots can be stored on your local Portworx cluster or in the Cloud. For more information, see [Create and use local snapshots ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/). </dd>
-    <dt>Monitoring and managing your Portworx cluster with Lighthouse</dt>
-    <dd>[Lighthouse ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/reference/lighthouse/) is an intuitive, graphical tool to help you manage and monitor your Portworx clusters and volume snapshots. With Lighthouse, you can view the health of your Portworx cluster, including the number of available storage nodes, volumes and available capacity, and analyze your data in Prometheus, Grafana, or Kibana. </dd>
-</dl>
+
+Using existing Portworx volumes
+:   If you have an existing Portworx volume that you created manually or that was not automatically deleted when you deleted the PVC, you can statically provision the corresponding PV and PVC and use this volume with your app. For more information, see [Using existing volumes](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/using-preprovisioned-volumes/#using-the-portworx-volume){: external}.
+
+Running stateful sets on Portworx
+:   If you have a stateful app that you want to deploy as a stateful set into your cluster, you can set up your stateful set to use storage from your Portworx cluster. For more information, see [Create a MySQL StatefulSet ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/application-install-with-kubernetes/cassandra/#create-a-mysql-statefulset).
+
+Running your pods hyperconverged
+:   You can configure your Portworx cluster to schedule pods on the same worker node where the pod's volume resides. This setup is also referred to as `hyperconverged` and can improve the data storage performance. For more information, see [Run pods on same host as a volume ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/hyperconvergence/).
+
+Creating snapshots of your Portworx volumes
+:   You can save the current state of a volume and its data by creating a Portworx snapshot. Snapshots can be stored on your local Portworx cluster or in the Cloud. For more information, see [Create and use local snapshots ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/).
+
+Monitoring and managing your Portworx cluster with Lighthouse
+:   [Lighthouse ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/reference/lighthouse/) is an intuitive, graphical tool to help you manage and monitor your Portworx clusters and volume snapshots. With Lighthouse, you can view the health of your Portworx cluster, including the number of available storage nodes, volumes and available capacity, and analyze your data in Prometheus, Grafana, or Kibana.
 
 
 
@@ -1289,7 +1228,7 @@ When you added storage from your Portworx cluster to your app, you have three ma
         {: pre}
 
         Example output
-        ```
+        ```sh
         blockdepl-12345-prz7b:    claim1-block-bronze  
         ```
         {: screen}
@@ -1455,7 +1394,7 @@ The following commands result in data loss.
     ```
     {: pre}
 
-7. Remove the Portworx service instance from your {{site.data.keyword.cloud_notm}} account.
+8. Remove the Portworx service instance from your {{site.data.keyword.cloud_notm}} account.
     1. From the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources), find the Portworx service that you created.
     2. From the actions menu, click **Delete**.
     3. Confirm the deletion of the service instance by clicking **Delete**.
