@@ -193,7 +193,7 @@ To configure your application pods to authenticate with {{site.data.keyword.clou
               - serviceAccountToken:
                   path: sa-token
                   expirationSeconds: 3600
-                  audience: vault
+                  audience: iam
         ...
         ```
         {: codeblock}
