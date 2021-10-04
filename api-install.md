@@ -28,75 +28,50 @@ The {{site.data.keyword.openshiftlong_notm}} API automates the provisioning and 
 
 The API is versioned to support the different infrastructure providers that are available for you to create clusters. For more information, see [Overview of Classic and VPC infrastructure providers](/docs/containers?topic=containers-infrastructure_providers).
 
-You can use the version two (`v2`) API to manage both classic and VPC clusters. The `v2` API is designed to avoid breaking existing functionality when possible. However, make sure that you review the following differences between the `v1` and `v2` API.
+You can use the version two (`v2`) API to manage both classic and VPC clusters. The `v2` API is designed to avoid breaking existing functionality when possible. However, make sure that you review the following differences between the `v1` and `v2` API.    
 
-<table summary="The rows are read from left to right, with the area of comparison in column one, version 1 API in column two, and version 2 API in column three.">
-<caption>{{site.data.keyword.openshiftlong_notm}} API versions</caption>
-<col width="20%">
-<col width="40%">
-<col width="40%">
-    <thead>
-    <th>Area</th>
-    <th>v1 API</th>
-    <th>v2 API</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td>API endpoint prefix</td>
-    <td><code>https://containers.cloud.ibm.com/global/v1</code></td>
-    <td><code>https://containers.cloud.ibm.com/global/v2</code></td>
-    </tr>
-    <tr>
-    <td>API reference docs</td>
-    <td><a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/"><code>https://containers.cloud.ibm.com/global/swagger-global-api/</code></a> <img src="../icons/launch-glyph.svg" alt="External link icon"></td>
-    <td><a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/"><code>https://containers.cloud.ibm.com/global/swagger-global-api/</code></a> <img src="../icons/launch-glyph.svg" alt="External link icon"></td>
-    </tr>
-    <tr>
-    <td>API architectural style</td>
-    <td>Representational state transfer (REST) that focuses on resources that you interact with through HTTP methods such as <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>PATCH</code>, and <code>DELETE</code>.</td>
-    <td>Remote procedure calls (RPC) that focus on actions through only <code>GET</code> and <code>POST</code> HTTP methods.</td>
-    </tr>
-    <tr>
-    <td>Supported container platforms</td>
-    <td>Use the {{site.data.keyword.openshiftlong_notm}} API to manage your {{site.data.keyword.cloud_notm}} infrastructure resources, such as worker nodes, for <strong>both community Kubernetes and {{site.data.keyword.openshiftshort}} clusters</strong>.</td>
-    <td>Use the {{site.data.keyword.openshiftlong_notm}} <code>v2</code> API to manage your {{site.data.keyword.cloud_notm}} infrastructure resources, such as worker nodes, for <strong>both community Kubernetes and {{site.data.keyword.openshiftshort}} VPC clusters</strong>.</td>
-    </tr>
-    <tr>
-    <td>{{site.data.keyword.openshiftshort}} API</td>
-    <td>To use the {{site.data.keyword.openshiftshort}} API to manage {{site.data.keyword.openshiftshort}} and Kubernetes resources within the cluster, such as pods or namespaces, you must log in by exchanging an {{site.data.keyword.cloud_notm}} API key for an {{site.data.keyword.openshiftshort}} access token. See <a href="/docs/openshift?topic=openshift-access_cluster#access_api_key">Using an API key to log in to clusters</a>.</td>
-    <td>Same as <code>v1</code>; see <a href="/docs/openshift?topic=openshift-access_cluster#access_api_key">Using an API key to log in to clusters</a>.</td>
-    </tr>
-    <tr>
-    <td>Supported infrastructure providers</td>
-    <td><code>classic</code></td>
-    <td><code>vpc</code> and <code>classic</code><ul>
-    <li>The <code>vpc</code> provider is designed to support multiple VPC subproviders. The supported VPC subprovider is <code>vpc-gen2</code>, which corresponds to a VPC cluster for Generation 2 compute resources.</li>
-    <li>Provider-specific requests have a path parameter in the URL, such as <code>v2/vpc/createCluster</code>. Some APIs are only available to a particular provider, such as <code>GET vlan</code> for classic or <code>GET vpcs</code> for VPC.</li>
-    <li>Provider-neutral requests can include a provider-specific body parameter that you specify, usually in JSON, such as <code>{"provider": "vpc"}</code>, if you want to return responses for only the specified provider.</li></ul></td>
-    </tr>
-    <tr>
-    <td><code>GET</code> responses</td>
-    <td>The <code>GET</code> method for a collection of resources (such as <code>GET v1/clusters</code>) returns the same details for each resource in the list as a <code>GET</code> method for an individual resource (such as <code>GET v1/clusters/{idOrName}</code>).</td>
-    <td>To return responses faster, the v2 <code>GET</code> method for a collection of resources (such as <code>GET v2/clusters</code>) returns only a subset of information that is detailed in a <code>GET</code> method for an individual resource (such as <code>GET v2/clusters/{idOrName}</code>).
-    <br><br>Some list responses include a providers property to identify whether the returned item applies to classic or VPC infrastructure. For example, the <code>GET zones</code> list returns some results such as <code>mon01</code> that are available only in the classic infrastructure provider, while other results such as <code>us-south-01</code> are available only in the VPC infrastructure provider.</td>
-    </tr>
-    <tr>
-    <td>Cluster, worker node, and worker-pool responses</td>
-    <td>Responses include only information that is specific to the classic infrastructure provider, such as the VLANs in <code>GET</code> cluster and worker responses.</td>
-    <td>The information that is returned varies depending on the infrastructure provider. For such provider-specific responses, you can specify the provider in your request. For example, VPC clusters do not return VLAN information since they do not have VLANs. Instead, they return subnet and CIDR network information.</td>
-    </tr>
-</tbody>
-</table>
+API endpoint prefix
+:    v1 API: `https://containers.cloud.ibm.com/global/v1`
+:    v2 API: `https://containers.cloud.ibm.com/global/v2`
 
+API reference docs
+:    v1 API: [`https://containers.cloud.ibm.com/global/swagger-global-api/`](https://containers.cloud.ibm.com/global/swagger-global-api/#/)
+:    v2 API: [`https://containers.cloud.ibm.com/global/swagger-global-api/`](https://containers.cloud.ibm.com/global/swagger-global-api/#/).
 
+API architectural style
+:    v1 API: Representational state transfer (REST) that focuses on resources that you interact with through HTTP methods such as `GET`, `POST`, `PUT`, `PATCH`, and `DELETE`.
+:    v2 API: Remote procedure calls (RPC) that focus on actions through only `GET` and `POST` HTTP methods.
 
+Supported container platforms
+:    v1 API: Use the {{site.data.keyword.openshiftlong_notm}} API to manage your {{site.data.keyword.cloud_notm}} infrastructure resources, such as worker nodes, for **both community Kubernetes and {{site.data.keyword.openshiftshort}} clusters**.
+:    v2 API: Use the {{site.data.keyword.openshiftlong_notm}} `v2` API to manage your {{site.data.keyword.cloud_notm}} infrastructure resources, such as worker nodes, for **both community Kubernetes and {{site.data.keyword.openshiftshort}} VPC clusters**.
+
+  
+{{site.data.keyword.openshiftshort}} API
+:    v1 API: To use the {{site.data.keyword.openshiftshort}} API to manage {{site.data.keyword.openshiftshort}} and Kubernetes resources within the cluster, such as pods or namespaces, you must log in by exchanging an {{site.data.keyword.cloud_notm}} API key for an {{site.data.keyword.openshiftshort}} access token. See [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key).
+:    v2 API: Same as `v1`; see [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key).
+
+Supported infrastructure providers
+:    v1 API: `classic`
+:    v2 API: `vpc` and `classic`
+     - The `vpc` provider is designed to support multiple VPC subproviders. The supported VPC subprovider is `vpc-gen2`, which corresponds to a VPC cluster for Generation 2 compute resources.
+     - Provider-specific requests have a path parameter in the URL, such as `v2/vpc/createCluster`. Some APIs are only available to a particular provider, such as `GET vlan` for classic or `GET vpcs` for VPC.
+     - Provider-neutral requests can include a provider-specific body parameter that you specify, usually in JSON, such as `{"provider": "vpc"}`, if you want to return responses for only the specified provider.
+
+`GET` responses
+:    v1 API: The `GET` method for a collection of resources (such as `GET v1/clusters`) returns the same details for each resource in the list as a `GET` method for an individual resource (such as `GET v1/clusters/{idOrName}`).
+:    v2 API: To return responses faster, the v2 `GET` method for a collection of resources (such as `GET v2/clusters`) returns only a subset of information that is detailed in a `GET` method for an individual resource (such as `GET v2/clusters/{idOrName}`).
+     Some list responses include a providers property to identify whether the returned item applies to classic or VPC infrastructure. For example, the `GET zones` list returns some results such as `mon01` that are available only in the classic infrastructure provider, while other results such as `us-south-01` are available only in the VPC infrastructure provider.
+
+Cluster, worker node, and worker-pool responses
+:    v1 API: Responses include only information that is specific to the classic infrastructure provider, such as the VLANs in `GET` cluster and worker responses.
+:    v2 API: The information that is returned varies depending on the infrastructure provider. For such provider-specific responses, you can specify the provider in your request. For example, VPC clusters do not return VLAN information since they do not have VLANs. Instead, they return subnet and CIDR network information.
 
 ## Automating cluster deployments with the API
 {: #cs_api}
 
 You can use the {{site.data.keyword.openshiftlong_notm}} API to automate the creation, deployment, and management of your {{site.data.keyword.openshiftshort}} clusters.
 {: shortdesc}
-
 
 The {{site.data.keyword.openshiftlong_notm}} API requires header information that you must provide in your API request and that can vary depending on the API that you want to use. To determine what header information is needed for your API, see the [{{site.data.keyword.openshiftlong_notm}} API documentation](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external}.
 
@@ -105,62 +80,57 @@ To authenticate with {{site.data.keyword.openshiftlong_notm}}, you must provide 
 You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external} to generate a client that can interact with the API as part of your automation work.
 {: tip}
 
-|{{site.data.keyword.cloud_notm}} ID|My options|
-|-----------------------------------|----------|
-|Unfederated ID|<ul><li><strong>Generate an {{site.data.keyword.cloud_notm}} API key:</strong> As an alternative to using the {{site.data.keyword.cloud_notm}} username and password, you can <a href="/docs/account?topic=account-userapikey#create_user_key">use {{site.data.keyword.cloud_notm}} API keys</a> <img src="../icons/launch-glyph.svg" alt="External link icon">. {{site.data.keyword.cloud_notm}} API keys are dependent on the {{site.data.keyword.cloud_notm}} account they are generated for. You cannot combine your {{site.data.keyword.cloud_notm}} API key with a different account ID in the same {{site.data.keyword.cloud_notm}} IAM token. To access clusters that were created with an account other than the one your {{site.data.keyword.cloud_notm}} API key is based on, you must log in to the account to generate a new API key.</li><li><strong>{{site.data.keyword.cloud_notm}} username and password:</strong> You can follow the steps in this topic to fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM access token.</li></ul>|
-|Federated ID|<ul><li><strong>Generate an {{site.data.keyword.cloud_notm}} API key:</strong> <a href="/docs/account?topic=account-userapikey#create_user_key">{{site.data.keyword.cloud_notm}} API keys</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> are dependent on the {{site.data.keyword.cloud_notm}} account they are generated for. You cannot combine your {{site.data.keyword.cloud_notm}} API key with a different account ID in the same {{site.data.keyword.cloud_notm}} IAM token. To access clusters that were created with an account other than the one your {{site.data.keyword.cloud_notm}} API key is based on, you must log in to the account to generate a new API key.</li><li><strong>Use a one-time passcode: </strong> If you authenticate with {{site.data.keyword.cloud_notm}} by using a one-time passcode, you cannot fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM token because the retrieval of your one-time passcode requires a manual interaction with your web browser. To fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM token, you must create an {{site.data.keyword.cloud_notm}} API key instead.</ul>|
-{: caption="ID types and options" caption-side="top"}
-{: summary="ID types and options with the input parameter in column 1 and the value in column 2."}
+Unfederated ID
+:    - **Generate an {{site.data.keyword.cloud_notm}} API key:** As an alternative to using the {{site.data.keyword.cloud_notm}} username and password, you can [use {{site.data.keyword.cloud_notm}} API keys](/docs/account?topic=account-userapikey#create_user_key). {{site.data.keyword.cloud_notm}} API keys are dependent on the {{site.data.keyword.cloud_notm}} account they are generated for. You cannot combine your {{site.data.keyword.cloud_notm}} API key with a different account ID in the same {{site.data.keyword.cloud_notm}} IAM token. To access clusters that were created with an account other than the one your {{site.data.keyword.cloud_notm}} API key is based on, you must log in to the account to generate a new API key.
+     - **{{site.data.keyword.cloud_notm}} username and password:** You can follow the steps in this topic to fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM access token.
+     
+Federated ID
+:    - **Generate an {{site.data.keyword.cloud_notm}} API key:** [{{site.data.keyword.cloud_notm}} API keys](/docs/account?topic=account-userapikey#create_user_key) are dependent on the {{site.data.keyword.cloud_notm}} account they are generated for. You cannot combine your {{site.data.keyword.cloud_notm}} API key with a different account ID in the same {{site.data.keyword.cloud_notm}} IAM token. To access clusters that were created with an account other than the one your {{site.data.keyword.cloud_notm}} API key is based on, you must log in to the account to generate a new API key.
+     - **Use a one-time passcode:** If you authenticate with {{site.data.keyword.cloud_notm}} by using a one-time passcode, you cannot fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM token because the retrieval of your one-time passcode requires a manual interaction with your web browser. To fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM token, you must create an {{site.data.keyword.cloud_notm}} API key instead.
+
 
 1. Create your {{site.data.keyword.cloud_notm}} IAM access token. The body information that is included in your request varies based on the {{site.data.keyword.cloud_notm}} authentication method that you use.
 
-    ```
+    ```sh
     POST https://iam.cloud.ibm.com/identity/token
     ```
     {: codeblock}
+    
+    Header 
+    :    - `Content-Type: application/x-www-form-urlencoded` 
+         - Authorization: Basic `Yng6Yng=`
+             `Yng6Yng=` equals the URL-encoded authorization for the username **bx** and the password **bx**.
+             {: note}
+         
+    Body for {{site.data.keyword.cloud_notm}} username and password
+    :    - `grant_type: password` 
+         - `response_type: cloud_iam uaa`
+         - `username`: Your {{site.data.keyword.cloud_notm}} username.
+         - `password`: Your {{site.data.keyword.cloud_notm}} password. 
+         - `uaa_client_id: cf`
+         - `uaa_client_secret:`
+             Add the `uaa_client_secret` key with no value specified.
+             {: note}
+         
+    Body for {{site.data.keyword.cloud_notm}} API keys 
+    :    - `grant_type: urn:ibm:params:oauth:grant-type:apikey` 
+         - `response_type: cloud_iam uaa` 
+         - `apikey`: Your {{site.data.keyword.cloud_notm}} API key 
+         - `uaa_client_id: cf`
+         - `uaa_client_secret:`
+             Add the `uaa_client_secret` key with no value specified.
+             {: note}
+         
+    Body for {{site.data.keyword.cloud_notm}} one-time passcode
+    :    - `grant_type: urn:ibm:params:oauth:grant-type:passcode` 
+         - `response_type: cloud_iam uaa` 
+         - `passcode`: Your {{site.data.keyword.cloud_notm}} one-time passcode. Run `ibmcloud login --sso` and follow the instructions in your CLI output to retrieve your one-time passcode by using your web browser. 
+         - `uaa_client_id: cf` 
+         - `uaa_client_secret:`
+             Add the `uaa_client_secret` key with no value specified.
+             {: note}
 
-    <table summary="Input parameters to retrieve IAM tokens with the input parameter in column 1 and the value in column 2.">
-    <caption>Input parameters to get IAM tokens.</caption>
-    <thead>
-        <th>Input parameters</th>
-        <th>Values</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Header</td>
-    <td><ul><li><code>Content-Type: application/x-www-form-urlencoded</code></li> <li>Authorization: Basic Yng6Yng=<p><strong>Note</strong>: <code>Yng6Yng=</code> equals the URL-encoded authorization for the username <strong>bx</strong> and the password <strong>bx</strong>.</p></li></ul>
-    </td>
-    </tr>
-    <tr>
-    <td>Body for {{site.data.keyword.cloud_notm}} username and password</td>
-    <td><ul><li><code>grant_type: password</code></li>
-    <li><code>response_type: cloud_iam uaa</code></li>
-    <li><code>username</code>: Your {{site.data.keyword.cloud_notm}} username.</li>
-    <li><code>password</code>: Your {{site.data.keyword.cloud_notm}} password.</li>
-    <li><code>uaa_client_id: cf</code></li>
-    <li><code>uaa_client_secret:</code></br><strong>Note</strong>: Add the <code>uaa_client_secret</code> key with no value specified.</li></ul></td>
-    </tr>
-    <tr>
-    <td>Body for {{site.data.keyword.cloud_notm}} API keys</td>
-    <td><ul><li><code>grant_type: urn:ibm:params:oauth:grant-type:apikey</code></li>
-    <li><code>response_type: cloud_iam uaa</code></li>
-    <li><code>apikey</code>: Your {{site.data.keyword.cloud_notm}} API key</li>
-    <li><code>uaa_client_id: cf</code></li>
-    <li><code>uaa_client_secret:</code> </br><strong>Note</strong>: Add the <code>uaa_client_secret</code> key with no value specified.</li></ul></td>
-    </tr>
-    <tr>
-    <td>Body for {{site.data.keyword.cloud_notm}} one-time passcode</td>
-        <td><ul><li><code>grant_type: urn:ibm:params:oauth:grant-type:passcode</code></li>
-    <li><code>response_type: cloud_iam uaa</code></li>
-    <li><code>passcode</code>: Your {{site.data.keyword.cloud_notm}} one-time passcode. Run <code>ibmcloud login --sso</code> and follow the instructions in your CLI output to retrieve your one-time passcode by using your web browser.</li>
-    <li><code>uaa_client_id: cf</code></li>
-    <li><code>uaa_client_secret:</code> </br><strong>Note</strong>: Add the <code>uaa_client_secret</code> key with no value specified.</li></ul>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-
-    Example output for using an API key:
+    The following example shows output for the previous request.
 
     ```
     {
@@ -185,24 +155,13 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
     GET https://accounts.cloud.ibm.com/coe/v2/accounts
     ```
     {: codeblock}
+    
+    Header
+    :    - `Content-Type: application/json`
+         - `Authorization: bearer <iam_access_token>`
+         - `Accept: application/json`
 
-    <table summary="Input parameters to get {{site.data.keyword.cloud_notm}} account ID with the input parameter in column 1 and the value in column 2.">
-    <caption>Input parameters to get an {{site.data.keyword.cloud_notm}} account ID.</caption>
-    <thead>
-        <th>Input parameters</th>
-        <th>Values</th>
-    </thead>
-    <tbody>
-        <tr>
-          <td>Headers</td>
-        <td><ul><li><code>Content-Type: application/json</code></li>
-        <li><code>Authorization: bearer &lt;iam_access_token&gt;</code></li>
-        <li><code>Accept: application/json</code></li></ul></td>
-        </tr>
-    </tbody>
-    </table>
-
-    Example output
+    The following example shows the output of the previous request.
 
     ```sh
     {
@@ -227,57 +186,43 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
     If you use an {{site.data.keyword.cloud_notm}} API key, you must use the {{site.data.keyword.cloud_notm}} account ID the API key was created for. To access clusters in other accounts, log into this account and create an {{site.data.keyword.cloud_notm}} API key that is based on this account.
     {: note}
 
-    ```
+    ```sh
     POST https://iam.cloud.ibm.com/identity/token
     ```
     {: codeblock}
+    
+    Header
+    :    - `Content-Type: application/x-www-form-urlencoded`
+         - `Authorization: Basic Yng6Yng=`
+             `Yng6Yng=` equals the URL-encoded authorization for the username **bx** and the password **bx**.
+             {: note}
+         
+    Body for {{site.data.keyword.cloud_notm}} username and password
+    :    - `grant_type: password`
+         - `response_type: cloud_iam uaa`
+         - `username`: Your {{site.data.keyword.cloud_notm}} username.
+         - `password`: Your {{site.data.keyword.cloud_notm}} password.
+         - `uaa_client_ID: cf`
+         - `uaa_client_secret:`
+             Add the `uaa_client_secret` key with no value specified.
+             {: note}
+         - `bss_account`: The {{site.data.keyword.cloud_notm}} account ID that you retrieved in the previous step.
+         
+    Body for {{site.data.keyword.cloud_notm}} API keys
+    :    - `grant_type: urn:ibm:params:oauth:grant-type:apikey`
+         - `response_type: cloud_iam uaa` 
+         - `apikey`: Your {{site.data.keyword.cloud_notm}} API key. 
+         - `uaa_client_ID: cf` \n - `uaa_client_secret:`
+             Add the `uaa_client_secret` key with no value specified.
+             {: note}
+         - `bss_account`: The {{site.data.keyword.cloud_notm}} account ID that you retrieved in the previous step.
+         
+    Body for {{site.data.keyword.cloud_notm}} one-time passcode
+    :    - `grant_type: urn:ibm:params:oauth:grant-type:passcode` \n 
+    - `response_type: cloud_iam uaa` \n - `passcode`: Your {{site.data.keyword.cloud_notm}} passcode. \n - `uaa_client_ID: cf` \n - `uaa_client_secret:` \n - `bss_account`: The {{site.data.keyword.cloud_notm}} account ID that you retrieved in the previous step. \n **Note**: Add the `uaa_client_secret` key with no value specified.
+    {: caption="Table 2. Input parameters for API request." caption-side="top"}
 
-    <table summary="Input parameters to retrieve IAM tokens with the input parameter in column 1 and the value in column 2.">
-    <caption>Input parameters to get IAM tokens.</caption>
-    <thead>
-        <th>Input parameters</th>
-        <th>Values</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Header</td>
-    <td><ul><li><code>Content-Type: application/x-www-form-urlencoded</code></li> <li><code>Authorization: Basic Yng6Yng=</code><p><strong>Note</strong>: <code>Yng6Yng=</code> equals the URL-encoded authorization for the username <strong>bx</strong> and the password <strong>bx</strong>.</p></li></ul>
-    </td>
-    </tr>
-    <tr>
-    <td>Body for {{site.data.keyword.cloud_notm}} username and password</td>
-    <td><ul><li><code>grant_type: password</code></li>
-    <li><code>response_type: cloud_iam uaa</code></li>
-    <li><code>username</code>: Your {{site.data.keyword.cloud_notm}} username. </li>
-    <li><code>password</code>: Your {{site.data.keyword.cloud_notm}} password. </li>
-    <li><code>uaa_client_ID: cf</code></li>
-    <li><code>uaa_client_secret:</code> </br><strong>Note</strong>: Add the <code>uaa_client_secret</code> key with no value specified.</li>
-    <li><code>bss_account</code>: The {{site.data.keyword.cloud_notm}} account ID that you retrieved in the previous step.</li></ul>
-    </td>
-    </tr>
-    <tr>
-    <td>Body for {{site.data.keyword.cloud_notm}} API keys</td>
-    <td><ul><li><code>grant_type: urn:ibm:params:oauth:grant-type:apikey</code></li>
-    <li><code>response_type: cloud_iam uaa</code></li>
-    <li><code>apikey</code>: Your {{site.data.keyword.cloud_notm}} API key.</li>
-    <li><code>uaa_client_ID: cf</code></li>
-    <li><code>uaa_client_secret:</code> </br><strong>Note</strong>: Add the <code>uaa_client_secret</code> key with no value specified.</li>
-    <li><code>bss_account</code>: The {{site.data.keyword.cloud_notm}} account ID that you retrieved in the previous step.</li></ul>
-        </td>
-    </tr>
-    <tr>
-    <td>Body for {{site.data.keyword.cloud_notm}} one-time passcode</td>
-    <td><ul><li><code>grant_type: urn:ibm:params:oauth:grant-type:passcode</code></li>
-    <li><code>response_type: cloud_iam uaa</code></li>
-    <li><code>passcode</code>: Your {{site.data.keyword.cloud_notm}} passcode. </li>
-    <li><code>uaa_client_ID: cf</code></li>
-    <li><code>uaa_client_secret:</code> </br><strong>Note</strong>: Add the <code>uaa_client_secret</code> key with no value specified.</li>
-    <li><code>bss_account</code>: The {{site.data.keyword.cloud_notm}} account ID that you retrieved in the previous step.</li></ul></td>
-    </tr>
-    </tbody>
-    </table>
-
-    Example output
+    The following example shows output for the API request.
 
     ```json
     {
@@ -294,51 +239,30 @@ You can also use the [API swagger JSON file](https://containers.cloud.ibm.com/gl
     You can find the {{site.data.keyword.cloud_notm}} IAM token in the **access_token** and the refresh token in the **refresh_token** field of your API output.
 
 4. List all classic or VPC clusters in your account.
-    * **Classic**:
+    * **Classic**
+    
         ```sh
         GET https://containers.cloud.ibm.com/global/v2/classic/getClusters
         ```
         {: codeblock}
 
-        <table summary="Input parameters to work with the {{site.data.keyword.openshiftlong_notm}} API with the input parameter in column 1 and the value in column 2.">
-        <caption>Input parameters to work with the {{site.data.keyword.openshiftlong_notm}} API.</caption>
-        <thead>
-        <th>Input parameters</th>
-        <th>Values</th>
-        </thead>
-        <tbody>
-        <tr>
-        <td>Header</td>
-        <td><li><code>Authorization: bearer &lt;iam_token&gt;</code></td>
-        </tr>
-        </tbody>
-        </table>
-    * **VPC**:
+        Header
+        :     `Authorization: bearer <iam_token>`
+
+    * **VPC**
+    
         ```sh
         GET https://containers.cloud.ibm.com/global/v2/vpc/getClusters?provider=vpc-gen2
         ```
         {: codeblock}
 
-        <table summary="Input parameters to work with the {{site.data.keyword.openshiftlong_notm}} API with the input parameter in column 1 and the value in column 2.">
-        <caption>Input parameters to work with the {{site.data.keyword.openshiftlong_notm}} API.</caption>
-        <thead>
-        <th>Input parameters</th>
-        <th>Values</th>
-        </thead>
-        <tbody>
-        <tr>
-        <td>Header</td>
-        <td><code>Authorization</code>: Your {{site.data.keyword.cloud_notm}} IAM access token (<code>bearer &lt;iam_token&gt;</code>).</td>
-        </tr>
-        </tbody>
-        </table>
+        Header
+        :     `Authorization`: Your {{site.data.keyword.cloud_notm}} IAM access token (`bearer <iam_token>`).
 
 5. Review the [{{site.data.keyword.openshiftlong_notm}} API documentation](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external} to find a list of supported APIs.
 
 When you use the API for automation, be sure to rely on the responses from the API, not files within those responses. For example, the Kubernetes configuration file for your cluster context is subject to change, so do not build automation based on specific contents of this file when you use the `GET /v1/clusters/{idOrName}/config` call.
 {: note}
-
-
 
 
 
@@ -361,44 +285,37 @@ Before you begin, make sure that you have an {{site.data.keyword.cloud_notm}} IA
 Use the following steps if you want to create an {{site.data.keyword.cloud_notm}} IAM token or if you want to obtain a new refresh token.
 
 1. Generate a new {{site.data.keyword.cloud_notm}} IAM access token by using the refresh token or the {{site.data.keyword.cloud_notm}} API key.
-    ```
+    ```sh
     POST https://iam.cloud.ibm.com/identity/token
     ```
     {: codeblock}
 
-    <table summary="Input parameters for new IAM token with the input parameter in column 1 and the value in column 2.">
-    <caption>Input parameters for a new {{site.data.keyword.cloud_notm}} IAM token</caption>
-    <thead>
-    <th>Input parameters</th>
-    <th>Values</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td>Header</td>
-    <td><ul><li><code>Content-Type: application/x-www-form-urlencoded</code></li>
-        <li><code>Authorization: Basic Yng6Yng=</code></br></br><strong>Note:</strong> <code>Yng6Yng=</code> equals the URL-encoded authorization for the username <strong>bx</strong> and the password <strong>bx</strong>.</li></ul></td>
-    </tr>
-    <tr>
-    <td>Body when using the refresh token</td>
-    <td><ul><li><code>grant_type: refresh_token</code></li>
-    <li><code>response_type: cloud_iam uaa</code></li>
-    <li><code>refresh_token:</code> Your {{site.data.keyword.cloud_notm}} IAM refresh token. </li>
-    <li><code>uaa_client_ID: cf</code></li>
-    <li><code>uaa_client_secret:</code></li>
-    <li><code>bss_account:</code> Your {{site.data.keyword.cloud_notm}} account ID. </li></ul><strong>Note</strong>: Add the <code>uaa_client_secret</code> key with no value specified.</td>
-    </tr>
-    <tr>
-        <td>Body when using the {{site.data.keyword.cloud_notm}} API key</td>
-        <td><ul><li><code>grant_type: urn:ibm:params:oauth:grant-type:apikey</code></li>
-    <li><code>response_type: cloud_iam uaa</code></li>
-    <li><code>apikey:</code> Your {{site.data.keyword.cloud_notm}} API key. </li>
-    <li><code>uaa_client_ID: cf</code></li>
-        <li><code>uaa_client_secret:</code></li></ul><strong>Note:</strong> Add the <code>uaa_client_secret</code> key with no value specified.</td>
-    </tr>
-    </tbody>
-    </table>
+    Header
+    :     - `Content-Type: application/x-www-form-urlencoded`
+          - `Authorization: Basic Yng6Yng=`
+              `Yng6Yng=` equals the URL-encoded authorization for the username **bx** and the password **bx**.
+              {: note}
+    
+    Body when using the refresh token
+    :     - `grant_type: refresh_token`
+          - `response_type: cloud_iam uaa`
+          - `refresh_token:` Your {{site.data.keyword.cloud_notm}} IAM refresh token.
+          - `uaa_client_ID: cf`
+          - `uaa_client_secret:`
+          - `bss_account:` Your {{site.data.keyword.cloud_notm}} account ID.
+              Add the `uaa_client_secret` key with no value specified.
+              {: note}
+          
+    Body when using the {{site.data.keyword.cloud_notm}} API key
+    :     - `grant_type: urn:ibm:params:oauth:grant-type:apikey`
+          - `response_type: cloud_iam uaa`
+          - `apikey:` Your {{site.data.keyword.cloud_notm}} API key.
+          - `uaa_client_ID: cf`
+          - `uaa_client_secret:`
+              Add the `uaa_client_secret` key with no value specified.
+              {: note}
 
-    Example API output:
+    The following example shows the output of the previous API request.
 
     ```
     {
@@ -429,12 +346,11 @@ You can use the command line to [set the cluster context](/docs/containers?topic
 You can use [{{site.data.keyword.cloud_notm}} IAM](https://cloud.ibm.com/iam/overview){: external} to change the default expiration times for your tokens and sessions.
 {: tip}
 
-**`Kubeconfig` session**: When you start a new CLI session or after the session expires such as after the default of 24 hours, you must reset the cluster context.
+`Kubeconfig` session
+:    When you start a new CLI session or after the session expires such as after the default of 24 hours, you must reset the cluster context.
 
-**ID token**: Every IAM ID token that is issued via the CLI expires after a set period of time, such as 20 minutes. When the ID token expires, the refresh token is sent to the token provider to refresh the ID token. Your authentication is refreshed, and you can continue to run commands against your cluster.
+ID token
+:    Every IAM ID token that is issued via the CLI expires after a set period of time, such as 20 minutes. When the ID token expires, the refresh token is sent to the token provider to refresh the ID token. Your authentication is refreshed, and you can continue to run commands against your cluster.
 
-**Refresh token**: Refresh tokens expire after a set period of time, such as 30 days, or if the administrator revokes the token. If the refresh token is expired, the ID token cannot be refreshed, and you are not able to continue running commands in the CLI. You can get a new refresh token by running `ibmcloud oc cluster config --cluster <cluster_name>`. This command also refreshes your ID token.
-
-
-
-
+Refresh token
+:    Refresh tokens expire after a set period of time, such as 30 days, or if the administrator revokes the token. If the refresh token is expired, the ID token cannot be refreshed, and you are not able to continue running commands in the CLI. You can get a new refresh token by running `ibmcloud oc cluster config --cluster <cluster_name>`. This command also refreshes your ID token.

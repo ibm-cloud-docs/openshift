@@ -2672,6 +2672,52 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version 1.0.312](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10312)
+
+* [Version 1.0.300](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10300)
+
+* [Version 1.0.295](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10295)
+
+* [Version 1.0.275](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10275)
+
+* [Version 1.0.258](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10258)
+
+* [Version 1.0.233](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10233)
+
+* [Version 1.0.231](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10231)
+
+* [Version 1.0.223](/docs/openshift?topic=openshift-cs_cli_changelog#cli-102238)
+
+* [Version 1.0.208](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10208)
+
+* [Version 1.0.206](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10206)
+
+* [Version 1.0.197](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10197)
+
+* [Version 1.0.178](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10178)
+
+* [Version 1.0.171](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10171)
+
+* [Version 1.0.157](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10157)
+
+* [Version 1.0.143](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10143)
+
+* [Version 1.0.118](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10118)
+
+* [Version 1.0.99](/docs/openshift?topic=openshift-cs_cli_changelog#cli-1099)
+
+* [Version 1.0.94](/docs/openshift?topic=openshift-cs_cli_changelog#cli-1094)
+
+* [Version 1.0.84](/docs/openshift?topic=openshift-cs_cli_changelog#cli-1084)
+
+* [Version 1.0.57](/docs/openshift?topic=openshift-cs_cli_changelog#cli-1057)
+
+* [Version 1.0.28](/docs/openshift?topic=openshift-cs_cli_changelog#cli-1028)
+
+* [Version 1.0.15](/docs/openshift?topic=openshift-cs_cli_changelog#cli-1015)
+
+* [Version 1.0.0](/docs/openshift?topic=openshift-cs_cli_changelog#cli-100)
+
 * [Deprecated versions](/docs/openshift?topic=openshift-cs_cli_changelog#deprecated)
 
     * [Updating to version 1.0 of the plug-in](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta)
