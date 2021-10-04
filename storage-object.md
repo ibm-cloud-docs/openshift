@@ -92,31 +92,17 @@ To create a secret for your {{site.data.keyword.cos_full_notm}} credentials:
     ```
     {: pre}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the command. The second column describes the parameter.">
-    <caption>Understanding the command components</caption>
-    <thead>
-        <th>Component</th>
-        <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>api-key</code></td>
-    <td>Enter the API key that you retrieved from your {{site.data.keyword.cos_full_notm}} service credentials earlier. If you want to use HMAC authentication, specify the <code>access-key</code> and <code>secret-key</code> instead.  </td>
-    </tr>
-    <tr>
-    <td><code>access-key</code></td>
-    <td>Enter the access key ID that you retrieved from your {{site.data.keyword.cos_full_notm}} service credentials earlier. If you want to use OAuth2 authentication, specify the <code>api-key</code> instead.  </td>
-    </tr>
-    <tr>
-    <td><code>secret-key</code></td>
-    <td>Enter the secret access key that you retrieved from your {{site.data.keyword.cos_full_notm}} service credentials earlier. If you want to use OAuth2 authentication, specify the <code>api-key</code> instead.</td>
-    </tr>
-    <tr>
-    <td><code>service-instance-id</code></td>
-    <td>Enter the GUID of your {{site.data.keyword.cos_full_notm}} service instance that you retrieved earlier. </td>
-    </tr>
-    </tbody>
-    </table>
+    `api-key`
+    :   Enter the API key that you retrieved from your {{site.data.keyword.cos_full_notm}} service credentials earlier. If you want to use HMAC authentication, specify the `access-key` and `secret-key` instead.
+    
+    `access-key`
+    :   Enter the access key ID that you retrieved from your {{site.data.keyword.cos_full_notm}} service credentials earlier. If you want to use OAuth2 authentication, specify the `api-key` instead.
+    
+    `secret-key`
+    :   Enter the secret access key that you retrieved from your {{site.data.keyword.cos_full_notm}} service credentials earlier. If you want to use OAuth2 authentication, specify the `api-key` instead.
+    
+    `service-instance-id`
+    :   Enter the GUID of your {{site.data.keyword.cos_full_notm}} service instance that you retrieved earlier.
 
 4. Verify that the secret is created in your namespace.
     ```sh
@@ -219,41 +205,41 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 
 7. If you use OS X or a Linux distribution, install the {{site.data.keyword.cos_full_notm}} Helm plug-in `ibmc`. The plug-in is used to automatically retrieve your cluster location and to set the API endpoint for your {{site.data.keyword.cos_full_notm}} buckets in your storage classes. If you use Windows as your operating system, continue with the next step.
     1. Install the Helm plug-in.
-    ```sh
-    helm plugin install ./ibm-object-storage-plugin/helm-ibmc
-    ```
-    {: pre}
+        ```sh
+        helm plugin install ./ibm-object-storage-plugin/helm-ibmc
+        ```
+        {: pre}
 
     2. Verify that the `ibmc` plug-in is installed successfully.
-    ```sh
-    helm ibmc --help
-    ```
-    {: pre}
+        ```sh
+        helm ibmc --help
+        ```
+        {: pre}
 
-    If the output shows the error `Error: fork/exec /home/iksadmin/.helm/plugins/helm-ibmc/ibmc.sh: permission denied`, run `chmod 755 /Users/<user_name>/Library/helm/plugins/helm-ibmc/ibmc.sh`. Then, rerun `helm ibmc --help`.
-    {: tip}
+        If the output shows the error `Error: fork/exec /home/iksadmin/.helm/plugins/helm-ibmc/ibmc.sh: permission denied`, run `chmod 755 /Users/<user_name>/Library/helm/plugins/helm-ibmc/ibmc.sh`. Then, rerun `helm ibmc --help`.
+        {: tip}
 
-    Example output
+        Example output
 
-    ```sh
-    helm version: v3.2.4+g0ad800e
-    Install or upgrade Helm charts in IBM K8S Service(IKS) and IBM Cloud Private(ICP)
-    Usage:
-        helm ibmc [command]
-    Available Commands:
-        install           Install a Helm chart
-        upgrade           Upgrade the release to a new version of the Helm chart
-    Available Flags:
-        -h, --help        (Optional) This text.
-        -u, --update      (Optional) Update this plugin to the latest version
-    Example Usage:
-        Install: helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin
-        Upgrade: helm ibmc upgrade [RELEASE] ibm-helm/ibm-object-storage-plugin
-    Note:
-        1. It is always recommended to install latest version of ibm-object-storage-plugin chart.
-        2. It is always recommended to have 'kubectl' client up-to-date.
-    ```
-    {: screen}
+        ```sh
+        helm version: v3.2.4+g0ad800e
+        Install or upgrade Helm charts in IBM K8S Service(IKS) and IBM Cloud Private(ICP)
+        Usage:
+            helm ibmc [command]
+        Available Commands:
+            install           Install a Helm chart
+            upgrade           Upgrade the release to a new version of the Helm chart
+        Available Flags:
+            -h, --help        (Optional) This text.
+            -u, --update      (Optional) Update this plugin to the latest version
+        Example Usage:
+            Install: helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin
+            Upgrade: helm ibmc upgrade [RELEASE] ibm-helm/ibm-object-storage-plugin
+        Note:
+            1. It is always recommended to install latest version of ibm-object-storage-plugin chart.
+            2. It is always recommended to have 'kubectl' client up-to-date.
+        ```
+        {: screen}
 
 8. Optional: Limit the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials. By default, the plug-in is authorized to access all Kubernetes secrets in your cluster.
     1. [Create your {{site.data.keyword.cos_full_notm}} service instance](#create_cos_service).
@@ -261,17 +247,17 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     3. From the `ibm-object-storage-plugin`, navigate to the `templates` directory and list available files.
         **OS X and Linux**
 
-            ```sh
-            cd templates && ls
-            ```
-            {: pre}
+        ```sh
+        cd templates && ls
+        ```
+        {: pre}
 
         **Windows**
 
-            ```sh
-            chdir templates && dir
-            ```
-            {: pre}
+        ```sh
+        chdir templates && dir
+        ```
+        {: pre}
 
     4. Open the `provisioner-sa.yaml` file and look for the `ibmcloud-object-storage-secret-reader` `ClusterRole` definition.
     5. Add the name of the secret that you created earlier to the list of secrets that the plug-in is authorized to access in the `resourceNames` section.
@@ -307,14 +293,19 @@ helm install ibm-object-storage-plugin ./ibm-object-storage-plugin --set dcname=
 {: pre}
 
 
-| Parameter | Description |
-| --- | --- |
-| `DC_NAME` | The data center where your cluster is deployed. To retrieve the data center, run `oc get cm cluster-info -n kube-system -o jsonpath="{.data.cluster-config\.json}{'\n'}"`. Store the data center value in an environment variable by running `SET DC_NAME=<datacenter>`. Optional: Set the environment variable in Windows PowerShell by running `$env:DC_NAME="<datacenter>"`. |
-| `CLUSTER_PROVIDER` | The infrastructure provider. To retrieve this value, run `oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/iaas-provider}{'\n'}"`. If the output from the previous step contains `softlayer`, then set the `CLUSTER_PROVIDER` to `"IBMC"`. If the output contains `gc`, `ng`, or `g2`, then set the `CLUSTER_PROVIDER` to `"IBMC-VPC"`. Store the infrastructure provider in an environment variable. For example: `SET CLUSTER_PROVIDER="IBMC-VPC"`. |
-| `WORKER_OS` and `PLATFORM` | The operating system of the worker nodes. To retrieve these values, run `oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/os}{'\n'}"`. Store the operating system of the worker nodes in an environment variable. For {{site.data.keyword.openshiftlong_notm}} clusters, run `SET WORKER_OS="redhat"` and `SET PLATFORM="openshift"`. |
-| `REGION` | The region of the worker nodes. To retrieve this value, run `oc get nodes -o yaml | grep 'ibm-cloud\.kubernetes\.io/region'`. Store the region of the worker nodes in an environment variable by running `SET REGION="&lt;region&gt;"`. |
-{: caption="Helm parameters"}
-{: summary="The table shows the Helm parameters. Rows are to be read from the left to right, with the parameter name in column one, and a description of the parameter in column two."}
+
+`DC_NAME`
+:   The data center where your cluster is deployed. To retrieve the data center, run `oc get cm cluster-info -n kube-system -o jsonpath="{.data.cluster-config\.json}{'\n'}"`. Store the data center value in an environment variable by running `SET DC_NAME=<datacenter>`. Optional: Set the environment variable in Windows PowerShell by running `$env:DC_NAME="<datacenter>"`.
+
+`CLUSTER_PROVIDER`
+:   The infrastructure provider. To retrieve this value, run `oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/iaas-provider}{'\n'}"`. If the output from the previous step contains `softlayer`, then set the `CLUSTER_PROVIDER` to `"IBMC"`. If the output contains `gc`, `ng`, or `g2`, then set the `CLUSTER_PROVIDER` to `"IBMC-VPC"`. Store the infrastructure provider in an environment variable. For example: `SET CLUSTER_PROVIDER="IBMC-VPC"`.
+
+`WORKER_OS` and `PLATFORM`
+:   The operating system of the worker nodes. To retrieve these values, run `oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/os}{'\n'}"`. Store the operating system of the worker nodes in an environment variable. For {{site.data.keyword.openshiftlong_notm}} clusters, run `SET WORKER_OS="redhat"` and `SET PLATFORM="openshift"`. 
+
+`REGION`
+:   The region of the worker nodes. To retrieve this value, run `oc get nodes -o yaml | grep 'ibm-cloud\.kubernetes\.io/region'`. Store the region of the worker nodes in an environment variable by running `SET REGION="< region>"`. |
+
 
 ### Verifying your installation
 {: #cos-plugin verify}
@@ -518,7 +509,7 @@ To remove the `ibmc` Helm plugin and the `ibm-object-storage-plugin`:
         ```
         {: pre}
 
-    Example output
+        Example output
 
         ```sh
         NAME    VERSION    DESCRIPTION
@@ -589,22 +580,42 @@ To remove the `ibmc` Helm plugin and the `ibm-object-storage-plugin`:
     ```
     {: screen}
 
-    | Parameter | Description |
-    | --- | --- |
-    | `ibm.io/chunk-size-mb` | The size of a data chunk that is read from or written to {{site.data.keyword.cos_full_notm}} in megabytes. Storage classes with `perf` in their name are set up with 52 megabytes. Storage classes without `perf` in their name use 16 megabyte chunks. For example, if you want to read a file that is `1GB`, the plug-in reads this file in multiple 16 or 52-megabyte chunks. |
-    | `ibm.io/curl-debug` | Enable the logging of requests that are sent to the {{site.data.keyword.cos_full_notm}} service instance. If enabled, logs are sent to `syslog` and you can [forward the logs to an external logging server](/docs/containers?topic=containers-health#logging). By default, all storage classes are set to `false` to disable this logging feature. |
-    | `ibm.io/debug-level` | The logging level that is set by the {{site.data.keyword.cos_full_notm}} plug-in. All storage classes are set up with the `WARN` logging level. |
-    | `ibm.io/iam-endpoint` | The API endpoint for {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). |
-    | `ibm.io/kernel-cache` | Enable or disable the kernel buffer cache for the volume mount point. If enabled, data that is read from {{site.data.keyword.cos_full_notm}} is stored in the kernel cache to ensure fast read access to your data. If disabled, data is not cached and always read from {{site.data.keyword.cos_full_notm}}. Kernel cache is enabled for `standard` and `flex` storage classes, and disabled for `cold` and `vault` storage classes.  |
-    | `ibm.io/multireq-max` | The maximum number of parallel requests that can be sent to the {{site.data.keyword.cos_full_notm}} service instance to list files in a single directory. All storage classes are set up with a maximum of 20 parallel requests. |
-    | `ibm.io/object-store-endpoint` | The API endpoint to use to access the bucket in your {{site.data.keyword.cos_full_notm}} service instance. The endpoint is automatically set based on the region of your cluster. If you want to access an existing bucket that is located in a different region than the one where your cluster is in, you must [create a custom storage class](/docs/containers?topic=containers-kube_concepts#customized_storageclass) and use the API endpoint for your bucket. |
-    | `ibm.io/object-store-storage-class` | The name of the storage class. |
-    | `ibm.io/parallel-count` | The maximum number of parallel requests that can be sent to the {{site.data.keyword.cos_full_notm}} service instance for a single read or write operation. Storage classes with `perf` in their name are set up with a maximum of 20 parallel requests. Storage classes without `perf` are set up with two parallel requests by default. |
-    | `ibm.io/s3fs-fuse-retry-count` | The maximum number of retries for a read or write operation before the operation is considered unsuccessful. All storage classes are set up with a maximum of five retries. |
-    | `ibm.io/stat-cache-size` |The maximum number of records that are kept in the {{site.data.keyword.cos_full_notm}} metadata cache. Every record can take up to 0.5 kilobytes. All storage classes set the maximum number of records to 100000 by default. |
-    | `ibm.io/tls-cipher-suite` | The TLS cipher suite that must be used when a connection to {{site.data.keyword.cos_full_notm}} is established via the HTTPS endpoint. The value for the cipher suite must follow the [OpenSSL format](https://www.openssl.org/docs/man1.0.2/man1/ciphers.html){: external}. If your worker nodes run an Ubuntu operating system, your storage classes are set up to use the `AESGCM`cipher suite by default. For worker nodes that run a Red Hat operating system, the `ecdhe_rsa_aes_128_gcm_sha_256` cipher suite is used by default. |
-    {: caption="Storage class parameters"}
-    {: summary="The table shows the {{site.data.keyword.cos_full_notm}} storage class parameters.  Rows are to be read from the left to right, with the parameter name in column one, and a description of the parameter in column two."}
+
+    `ibm.io/chunk-size-mb`
+    :   The size of a data chunk that is read from or written to {{site.data.keyword.cos_full_notm}} in megabytes. Storage classes with `perf` in their name are set up with 52 megabytes. Storage classes without `perf` in their name use 16 megabyte chunks. For example, if you want to read a file that is `1GB`, the plug-in reads this file in multiple 16 or 52-megabyte chunks.
+    
+    `ibm.io/curl-debug`
+    :   Enable the logging of requests that are sent to the {{site.data.keyword.cos_full_notm}} service instance. If enabled, logs are sent to `syslog` and you can [forward the logs to an external logging server](/docs/containers?topic=containers-health#logging). By default, all storage classes are set to `false` to disable this logging feature.
+    
+    `ibm.io/debug-level`
+    :   The logging level that is set by the {{site.data.keyword.cos_full_notm}} plug-in. All storage classes are set up with the `WARN` logging level.
+    
+    `ibm.io/iam-endpoint`
+    :   The API endpoint for {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). 
+    
+    `ibm.io/kernel-cache`
+    :   Enable or disable the kernel buffer cache for the volume mount point. If enabled, data that is read from {{site.data.keyword.cos_full_notm}} is stored in the kernel cache to ensure fast read access to your data. If disabled, data is not cached and always read from {{site.data.keyword.cos_full_notm}}. Kernel cache is enabled for `standard` and `flex` storage classes, and disabled for `cold` and `vault` storage classes. 
+    
+    `ibm.io/multireq-max`
+    :   The maximum number of parallel requests that can be sent to the {{site.data.keyword.cos_full_notm}} service instance to list files in a single directory. All storage classes are set up with a maximum of 20 parallel requests.
+    
+    `ibm.io/object-store-endpoint`
+    :   The API endpoint to use to access the bucket in your {{site.data.keyword.cos_full_notm}} service instance. The endpoint is automatically set based on the region of your cluster. If you want to access an existing bucket that is located in a different region than the one where your cluster is in, you must [create a custom storage class](/docs/containers?topic=containers-kube_concepts#customized_storageclass) and use the API endpoint for your bucket.
+    
+    `ibm.io/object-store-storage-class`
+    :   The name of the storage class.
+    
+    `ibm.io/parallel-count`
+    :   The maximum number of parallel requests that can be sent to the {{site.data.keyword.cos_full_notm}} service instance for a single read or write operation. Storage classes with `perf` in their name are set up with a maximum of 20 parallel requests. Storage classes without `perf` are set up with two parallel requests by default.
+    
+    `ibm.io/s3fs-fuse-retry-count`
+    :   The maximum number of retries for a read or write operation before the operation is considered unsuccessful. All storage classes are set up with a maximum of five retries.
+    
+    `ibm.io/stat-cache-size`
+    :   The maximum number of records that are kept in the {{site.data.keyword.cos_full_notm}} metadata cache. Every record can take up to 0.5 kilobytes. All storage classes set the maximum number of records to 100000 by default.
+    
+    `ibm.io/tls-cipher-suite`
+    :   The TLS cipher suite that must be used when a connection to {{site.data.keyword.cos_full_notm}} is established via the HTTPS endpoint. The value for the cipher suite must follow the [OpenSSL format](https://www.openssl.org/docs/man1.0.2/man1/ciphers.html){: external}. If your worker nodes run an Ubuntu operating system, your storage classes are set up to use the `AESGCM`cipher suite by default. For worker nodes that run a Red Hat operating system, the `ecdhe_rsa_aes_128_gcm_sha_256` cipher suite is used by default.
 
 
     For more information about each storage class, see the [storage class reference](#cos_storageclass_reference). If you want to change any of the pre-set values, create your own [customized storage class](/docs/containers?topic=containers-kube_concepts#customized_storageclass).
@@ -632,7 +643,7 @@ You can authorize your VPC Cloud Service Endpoint source IP addresses to access 
     * **Writer** service access role for the {{site.data.keyword.cos_full_notm}} service.
 
 **Supported infrastructure provider**:
-* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+* ![VPC infrastructure provider icon.](images/icon-vpc.png) VPC
 
 1. [Follow the instructions to install the `ibmc` Helm plugin](#install_cos). Make sure to install the `ibm-object-storage-plugin` and set the `bucketAccessPolicy` flag to `true`.
 
@@ -723,7 +734,7 @@ You can authorize your VPC Cloud Service Endpoint source IP addresses to access 
         ```
         {: pre}
 
-        **Example output**
+        Example output
         
         ```sh                                              
         ...                                              
@@ -862,35 +873,35 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     </thead>
     <tbody>
     <tr>
-    <td><code>ibm.io/auto-create-bucket</code></td>
-    <td>Choose between the following options: <ul><li><strong>true</strong>: When you create the PVC, the PV and the bucket in your {{site.data.keyword.cos_full_notm}} service instance are automatically created. Choose this option to create a new bucket in your {{site.data.keyword.cos_full_notm}} service instance. Note that the service credentials you refer to your secret must have <strong>Writer</strong> permissions to automatically create the bucket.</li><li><strong>false</strong>: Choose this option if you want to access data in an existing bucket. When you create the PVC, the PV is automatically created and linked to the bucket that you specify in <code>ibm.io/bucket</code>.</td>
+    <td>`ibm.io/auto-create-bucket`</td>
+    <td>Choose between the following options: <ul><li><strong>true</strong>: When you create the PVC, the PV and the bucket in your {{site.data.keyword.cos_full_notm}} service instance are automatically created. Choose this option to create a new bucket in your {{site.data.keyword.cos_full_notm}} service instance. Note that the service credentials you refer to your secret must have <strong>Writer</strong> permissions to automatically create the bucket.</li><li><strong>false</strong>: Choose this option if you want to access data in an existing bucket. When you create the PVC, the PV is automatically created and linked to the bucket that you specify in `ibm.io/bucket`.</td>
     </tr>
     <tr>
-    <td><code>ibm.io/auto-delete-bucket</code></td>
-    <td>Choose between the following options: <ul><li><strong>true</strong>: Your data, the bucket, and the PV is automatically removed when you delete the PVC. Your {{site.data.keyword.cos_full_notm}} service instance remains and is not deleted. If you choose to set this option to <strong>true</strong>, then you must set <code>ibm.io/auto-create-bucket: true</code> and <code>ibm.io/bucket: ""</code> so that your bucket is automatically created with a name with the format <code>tmp-s3fs-xxxx</code>. </li><li><strong>false</strong>: When you delete the PVC, the PV is deleted automatically, but your data and the bucket in your {{site.data.keyword.cos_full_notm}} service instance remain. To access your data, you must create a new PVC with the name of your existing bucket. </li></ul>
+    <td>`ibm.io/auto-delete-bucket`</td>
+    <td>Choose between the following options: <ul><li><strong>true</strong>: Your data, the bucket, and the PV is automatically removed when you delete the PVC. Your {{site.data.keyword.cos_full_notm}} service instance remains and is not deleted. If you choose to set this option to <strong>true</strong>, then you must set `ibm.io/auto-create-bucket: true` and `ibm.io/bucket: ""` so that your bucket is automatically created with a name with the format `tmp-s3fs-xxxx`. </li><li><strong>false</strong>: When you delete the PVC, the PV is deleted automatically, but your data and the bucket in your {{site.data.keyword.cos_full_notm}} service instance remain. To access your data, you must create a new PVC with the name of your existing bucket. </li></ul>
     <tr>
-    <td><code>ibm.io/bucket</code></td>
-    <td>Choose between the following options: <ul><li>If <code>ibm.io/auto-create-bucket</code> is set to <strong>true</strong>: Enter the name of the bucket that you want to create in {{site.data.keyword.cos_full_notm}}. If in addition <code>ibm.io/auto-delete-bucket</code> is set to <strong>true</strong>, you must leave this field blank to automatically assign your bucket a name with the format <code>tmp-s3fs-xxxx</code>. The name must be unique in {{site.data.keyword.cos_full_notm}}. </li><li>If <code>ibm.io/auto-create-bucket</code> is set to <strong>false</strong>: Enter the name of the existing bucket that you want to access in the cluster. </li></ul> </td>
+    <td>`ibm.io/bucket`</td>
+    <td>Choose between the following options: <ul><li>If `ibm.io/auto-create-bucket` is set to <strong>true</strong>: Enter the name of the bucket that you want to create in {{site.data.keyword.cos_full_notm}}. If in addition `ibm.io/auto-delete-bucket` is set to <strong>true</strong>, you must leave this field blank to automatically assign your bucket a name with the format `tmp-s3fs-xxxx`. The name must be unique in {{site.data.keyword.cos_full_notm}}. </li><li>If `ibm.io/auto-create-bucket` is set to <strong>false</strong>: Enter the name of the existing bucket that you want to access in the cluster. </li></ul> </td>
     </tr>
     <tr>
-    <td><code>ibm.io/object-path</code></td>
-    <td>Optional: Enter the name of the existing subdirectory in your bucket that you want to mount. Use this option if you want to mount a subdirectory only and not the entire bucket. To mount a subdirectory, you must set <code>ibm.io/auto-create-bucket: "false"</code> and provide the name of the bucket in <code>ibm.io/bucket</code>. </li></ul> </td>
+    <td>`ibm.io/object-path`</td>
+    <td>Optional: Enter the name of the existing subdirectory in your bucket that you want to mount. Use this option if you want to mount a subdirectory only and not the entire bucket. To mount a subdirectory, you must set `ibm.io/auto-create-bucket: "false"` and provide the name of the bucket in `ibm.io/bucket`. </li></ul> </td>
     </tr>
     <tr>
-    <td><code>ibm.io/secret-name</code></td>
+    <td>`ibm.io/secret-name`</td>
     <td>Enter the name of the secret that holds the {{site.data.keyword.cos_full_notm}} credentials that you created earlier. If you add your <a href="#storage_class_custom">{{site.data.keyword.cos_full_notm}} credentials to the default storage classes</a>, you do not need to refer to your secret in the PVC.</td>
     </tr>
     <tr>
-    <td><code>ibm.io/endpoint</code></td>
-    <td>If you created your {{site.data.keyword.cos_full_notm}} service instance in a location that is different from your cluster, enter the private or public cloud service endpoint of your {{site.data.keyword.cos_full_notm}} service instance that you want to use. For an overview of available service endpoints, see <a href="/docs/cloud-object-storage?topic=cloud-object-storage-advanced-endpoints">Additional endpoint information</a>. By default, the <code>ibmc</code> Helm plug-in automatically retrieves your cluster location and creates the storage classes by using the {{site.data.keyword.cos_full_notm}} private cloud service endpoint that matches your cluster location. If your classic cluster is in a multizone metro, such as <code>dal10</code>, the {{site.data.keyword.cos_full_notm}} private cloud service endpoint for the multizone metro, in this case Dallas, is used. To verify that the service endpoint in your storage classes matches the service endpoint of your service instance, run <code>oc describe storageclass &lt;storageclassname&gt;</code>. Make sure that you enter your service endpoint in the format <code>https://&lt;s3fs_private_service_endpoint&gt;</code> for private cloud service endpoints, or <code>http://&lt;s3fs_public_service_endpoint&gt;</code> for public cloud service endpoints. If the service endpoint in your storage class matches the service endpoint of your {{site.data.keyword.cos_full_notm}} service instance, do not include the <code>ibm.io/endpoint</code> option in your PVC YAML file. </td>
+    <td>`ibm.io/endpoint`</td>
+    <td>If you created your {{site.data.keyword.cos_full_notm}} service instance in a location that is different from your cluster, enter the private or public cloud service endpoint of your {{site.data.keyword.cos_full_notm}} service instance that you want to use. For an overview of available service endpoints, see <a href="/docs/cloud-object-storage?topic=cloud-object-storage-advanced-endpoints">Additional endpoint information</a>. By default, the `ibmc` Helm plug-in automatically retrieves your cluster location and creates the storage classes by using the {{site.data.keyword.cos_full_notm}} private cloud service endpoint that matches your cluster location. If your classic cluster is in a multizone metro, such as `dal10`, the {{site.data.keyword.cos_full_notm}} private cloud service endpoint for the multizone metro, in this case Dallas, is used. To verify that the service endpoint in your storage classes matches the service endpoint of your service instance, run `oc describe storageclass < storageclassname>`. Make sure that you enter your service endpoint in the format `https://< s3fs_private_service_endpoint>` for private cloud service endpoints, or `http://< s3fs_public_service_endpoint>` for public cloud service endpoints. If the service endpoint in your storage class matches the service endpoint of your {{site.data.keyword.cos_full_notm}} service instance, do not include the `ibm.io/endpoint` option in your PVC YAML file. </td>
     </tr>
     <tr>
-    <td><code>storage</code></td>
+    <td>`storage`</td>
     <td>In the spec resources requests section, enter a fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the <a href="https://www.ibm.com/cloud/object-storage/pricing/#s3api">pricing table</a> <img src="../icons/launch-glyph.svg" alt="External link icon">. </td>
     </tr>
     <tr>
-    <td><code>storageClassName</code></td>
-    <td>Choose between the following options: <ul><li>If <code>ibm.io/auto-create-bucket</code> is set to <strong>true</strong>: Enter the storage class that you want to use for your new bucket. </li><li>If <code>ibm.io/auto-create-bucket</code> is set to <strong>false</strong>: Enter the storage class that you used to create your existing bucket. </br></br>If you manually created the bucket in your {{site.data.keyword.cos_full_notm}} service instance or you cannot remember the storage class that you used, find your service instance in the {{site.data.keyword.cloud_notm}} dashboard and review the <strong>Class</strong> and <strong>Location</strong> of your existing bucket. Then, use the appropriate <a href="#cos_storageclass_reference">storage class</a>.<p class="note">The {{site.data.keyword.cos_full_notm}} API endpoint that is set in your storage class is based on the region that your cluster is in. If you want to access a bucket that is located in a different region than the one where your cluster is in, you must create a <a href="/docs/containers?topic=containers-kube_concepts#customized_storageclass">custom storage class</a> and use the appropriate API endpoint for your bucket.</p></li></ul>  </td>
+    <td>`storageClassName`</td>
+    <td>Choose between the following options: <ul><li>If `ibm.io/auto-create-bucket` is set to <strong>true</strong>: Enter the storage class that you want to use for your new bucket. </li><li>If `ibm.io/auto-create-bucket` is set to <strong>false</strong>: Enter the storage class that you used to create your existing bucket. </br></br>If you manually created the bucket in your {{site.data.keyword.cos_full_notm}} service instance or you cannot remember the storage class that you used, find your service instance in the {{site.data.keyword.cloud_notm}} dashboard and review the <strong>Class</strong> and <strong>Location</strong> of your existing bucket. Then, use the appropriate <a href="#cos_storageclass_reference">storage class</a>.<p class="note">The {{site.data.keyword.cos_full_notm}} API endpoint that is set in your storage class is based on the region that your cluster is in. If you want to access a bucket that is located in a different region than the one where your cluster is in, you must create a <a href="/docs/containers?topic=containers-kube_concepts#customized_storageclass">custom storage class</a> and use the appropriate API endpoint for your bucket.</p></li></ul>  </td>
     </tr>
     </tbody>
     </table>
@@ -960,39 +971,39 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
 </thead>
 <tbody>
 <tr>
-<td><code>app</code></td>
+<td>`app`</td>
 <td>In the metadata section, enter label for the deployment.</td>
 </tr>
 <tr>
-<td><code>matchLabels.app</code> <br/> <code>labels.app</code></td>
+<td>`matchLabels.app` <br/> `labels.app`</td>
 <td>In the spec selector and in the spec template metadata sections, enter a label for your app.</td>
 </tr>
 <tr>
-<td><code>image</code></td>
-<td>The name of the container image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run <code>ibmcloud cr image-list</code>.</td>
+<td>`image`</td>
+<td>The name of the container image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`.</td>
 </tr>
 <tr>
-<td><code>name</code></td>
+<td>`name`</td>
 <td>The name of the container that you want to deploy to your cluster.</td>
 </tr>
 <tr>
-<td><code>runAsUser</code></td>
+<td>`runAsUser`</td>
 <td>In the spec containers security context section, you can optionally set the run as user value.</td>
 </tr>
 <tr>
-<td><code>mountPath</code></td>
+<td>`mountPath`</td>
 <td>In the spec containers volume mounts section, enter the absolute path of the directory to where the volume is mounted inside the container. If you want to share a volume between different apps, you can specify <a href="https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath">volume sub paths</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> for each of your apps.</td>
 </tr>
 <tr>
-<td><code>name</code></td>
+<td>`name`</td>
 <td>In the spec containers volume mounts section, enter the name of the volume to mount to your pod.</td>
 </tr>
 <tr>
-<td><code>name</code></td>
-<td>In the volumes section, enter the name of the volume to mount to your pod. Typically this name is the same as <code>volumeMounts/name</code>.</td>
+<td>`name`</td>
+<td>In the volumes section, enter the name of the volume to mount to your pod. Typically this name is the same as `volumeMounts/name`.</td>
 </tr>
 <tr>
-<td><code>claimName</code></td>
+<td>`claimName`</td>
 <td>In the volumes persistent volume claim section, enter the name of the PVC that binds the PV that you want to use. </td>
 </tr>
 </tbody></table>
@@ -1069,7 +1080,7 @@ To deploy a stateful set that uses object storage:
 
 1. Create a configuration file for your stateful set and the service that you use to expose the stateful set. The following examples show how to deploy NGINX as a stateful set with three replicas, each replica with a separate bucket or sharing the same bucket.
 
-    **Example to create a stateful set with three replicas, with each replica using a separate bucket**:
+    Example to create a stateful set with three replicas, with each replica using a separate bucket.
     ```yaml
     apiVersion: v1
     kind: Service
@@ -1131,7 +1142,7 @@ To deploy a stateful set that uses object storage:
     ```
     {: codeblock}
 
-    **Example to create a stateful set with three replicas that share the same bucket `mybucket`**:
+    Example to create a stateful set with three replicas that share the same bucket `mybucket`.
     ```yaml
     apiVersion: v1
     kind: Service
@@ -1195,7 +1206,7 @@ To deploy a stateful set that uses object storage:
 
 
 `name`
-Enter a name for your stateful set. The name that you enter is used to create the name for your PVC in the format: <code>&lt;volume_name&gt;-&lt;statefulset_name&gt;-&lt;replica_number&gt;.
+:   Enter a name for your stateful set. The name that you enter is used to create the name for your PVC in the format: `<volume_name>-< statefulset_name>-<replica_number>`.
 
 `serviceName`
 :   Enter the name of the service that you want to use to expose your stateful set.
@@ -1334,152 +1345,105 @@ To add a secret to a storage class:
 ### Standard
 {: #standard}
 
-<table summary="The columns are read from left to right. The first column has the characteristic of the storage class. The second column has the setting for the characteristic.">
-<caption>Object storage class: standard</caption>
-<thead>
-<th>Characteristics</th>
-<th>Setting</th>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td><code>ibmc-s3fs-standard-cross-region</code></br><code>ibmc-s3fs-standard-perf-cross-region</code></br><code>ibmc-s3fs-standard-regional</code></br><code>ibmc-s3fs-standard-perf-regional</code></td>
-</tr>
-<tr>
-<td>Default resiliency endpoint</td>
-<td>The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see <a href="/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints">Regions and endpoints</a>. </td>
-</tr>
-<tr>
-<td>Chunk size</td>
-<td>Storage classes without <code>perf</code>: 16 MB</br>Storage classes with <code>perf</code>: 52 MB</td>
-</tr>
-<tr>
-<td>Kernel cache</td>
-<td>Enabled</td>
-</tr>
-<tr>
-<td>Billing</td>
-<td>Monthly</td>
-</tr>
-<tr>
-<td>Pricing</td>
-<td><a href="https://www.ibm.com/cloud/object-storage/pricing/#s3api">Pricing</a> <img src="../icons/launch-glyph.svg" alt="External link icon"></td>
-</tr>
-</tbody>
-</table>
 
+
+`Name`
+:   `ibmc-s3fs-standard-cross-region`
+:   `ibmc-s3fs-standard-perf-cross-region`
+:   ibmc-s3fs-standard-regional
+:   ibmc-s3fs-standard-perf-regional
+
+
+Default resiliency endpoint
+:   The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see [Regions and endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints).
+
+Chunk size
+:   Storage classes without `perf`: 16 MB. Storage classes with `perf`: 52 MB
+
+
+Kernel cache
+:   Enabled
+
+Billing
+:   Monthly
+
+Pricing
+:   Review the [pricing documentation](https://www.ibm.com/cloud/object-storage/pricing/#s3api){: external}.
 
 
 ### Vault
 {: #Vault}
 
-<table summary="The columns are read from left to right. The first column has the characteristic of the storage class. The second column has the setting for the characteristic.">
-<caption>Object storage class: vault</caption>
-<thead>
-<th>Characteristics</th>
-<th>Setting</th>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td><code>ibmc-s3fs-vault-cross-region</code></br><code>ibmc-s3fs-vault-regional</code></td>
-</tr>
-<tr>
-<td>Default resiliency endpoint</td>
-<td>The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see <a href="/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints">Regions and endpoints</a>. </td>
-</tr>
-<tr>
-<td>Chunk size</td>
-<td>16 MB</td>
-</tr>
-<tr>
-<td>Kernel cache</td>
-<td>Disabled</td>
-</tr>
-<tr>
-<td>Billing</td>
-<td>Monthly</td>
-</tr>
-<tr>
-<td>Pricing</td>
-<td><a href="https://www.ibm.com/cloud/object-storage/pricing/#s3api">Pricing</a> <img src="../icons/launch-glyph.svg" alt="External link icon"></td>
-</tr>
-</tbody>
-</table>
+
+
+Name
+:   `ibmc-s3fs-vault-cross-region`
+:   `ibmc-s3fs-vault-regional`
+
+Default resiliency endpoint
+:   The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see [Regions and endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints).
+
+Chunk size
+:   16 MB
+
+Kernel cache
+:   Disabled
+
+Billing
+:   Monthly
+
+Pricing
+:   Review the [pricing documentation](https://www.ibm.com/cloud/object-storage/pricing/#s3api){: external}.
 
 ### Cold
 {: #cold}
 
-<table summary="The columns are read from left to right. The first column has the characteristic of the storage class. The second column has the setting for the characteristic.">
-<caption>Object storage class: cold</caption>
-<thead>
-<th>Characteristics</th>
-<th>Setting</th>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td><code>ibmc-s3fs-cold-cross-region</code></br><code>ibmc-s3fs-cold-perf-cross-region</code></br><code>ibmc-s3fs-cold-regional</code></br><code>ibmc-s3fs-cold-perf-regional</code></td>
-</tr>
-<tr>
-<td>Default resiliency endpoint</td>
-<td>The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see <a href="/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints">Regions and endpoints</a>. </td>
-</tr>
-<tr>
-<td>Chunk size</td>
-<td>16 MB</td>
-</tr>
-<tr>
-<td>Kernel cache</td>
-<td>Disabled</td>
-</tr>
-<tr>
-<td>Billing</td>
-<td>Monthly</td>
-</tr>
-<tr>
-<td>Pricing</td>
-<td><a href="https://www.ibm.com/cloud/object-storage/pricing/#s3api">Pricing</a> <img src="../icons/launch-glyph.svg" alt="External link icon"></td>
-</tr>
-</tbody>
-</table>
+
+Name
+:   `ibmc-s3fs-cold-cross-region`
+:   `ibmc-s3fs-cold-perf-cross-region`
+:   `ibmc-s3fs-cold-regional`
+:   `ibmc-s3fs-cold-perf-regional`
+
+Default resiliency endpoint
+:   The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see [Regions and endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints).
+
+Chunk size
+:   16 MB
+
+Kernel cache
+:   Disabled
+
+Billing
+:   Monthly
+
+Pricing
+:   Review the [pricing documentation](https://www.ibm.com/cloud/object-storage/pricing/#s3api){: external}.
 
 ### Flex
 {: #flex}
 
-<table summary="The columns are read from left to right. The first column has the characteristic of the storage class. The second column has the setting for the characteristic.">
-<caption>Object storage class: flex</caption>
-<thead>
-<th>Characteristics</th>
-<th>Setting</th>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td><code>ibmc-s3fs-flex-cross-region</code></br><code>ibmc-s3fs-flex-perf-cross-region</code></br><code>ibmc-s3fs-flex-regional</code></br><code>ibmc-s3fs-flex-perf-regional</code></td>
-</tr>
-<tr>
-<td>Default resiliency endpoint</td>
-<td>The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see <a href="/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints">Regions and endpoints</a>. </td>
-</tr>
-<tr>
-<td>Chunk size</td>
-<td>Storage classes without <code>perf</code>: 16 MB</br>Storage classes with <code>perf</code>: 52 MB</td>
-</tr>
-<tr>
-<td>Kernel cache</td>
-<td>Enabled</td>
-</tr>
-<tr>
-<td>Billing</td>
-<td>Monthly</td>
-</tr>
-<tr>
-<td>Pricing</td>
-<td><a href="https://www.ibm.com/cloud/object-storage/pricing/#s3api">Pricing</a> <img src="../icons/launch-glyph.svg" alt="External link icon"></td>
-</tr>
-</tbody>
-</table>
+
+Name
+:   `ibmc-s3fs-flex-cross-region`
+:   `ibmc-s3fs-flex-perf-cross-region`
+:   `ibmc-s3fs-flex-regional`
+:   `ibmc-s3fs-flex-perf-regional`
+
+Default resiliency endpoint
+:   The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see [Regions and endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints).
+
+Chunk size
+:   Storage classes without `perf`: 16 MB</br>Storage classes with `perf`: 52 MB.
+
+Kernel cache
+:   Disabled
+
+Billing
+:   Monthly
+
+Pricing
+:  Review the [pricing documentation](https://www.ibm.com/cloud/object-storage/pricing/#s3api){: external}.
 
 ## Limitations
 {: #cos_limitations}

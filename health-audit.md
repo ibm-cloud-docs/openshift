@@ -53,13 +53,13 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
 **Before you begin**: Ensure that you reviewed the [considerations and prerequisites](#prereqs-apiserver-logs) and that you have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/account?topic=account-userroles) for {{site.data.keyword.la_full_notm}}.
 
 1. Target the global container registry for public {{site.data.keyword.cloud_notm}} images.
-    ```
+    ```sh
     ibmcloud cr region-set global
     ```
     {: pre}
 
 2. Optional: For more information about the `kube-audit` image, inspect `icr.io/ibm/ibmcloud-kube-audit-to-logdna`.
-    ```
+    ```sh
     ibmcloud cr image-inspect icr.io/ibm/ibmcloud-kube-audit-to-logdna
     ```
     {: pre}

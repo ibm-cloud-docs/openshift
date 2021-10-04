@@ -17,7 +17,7 @@ subcollection: openshift
 # VPC: Opening required ports and IP addresses in other network firewalls
 {: #vpc-firewall}
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This firewall information is specific to VPC clusters. For firewall information for classic clusters, see [Opening required ports and IP addresses in your firewall for classic clusters](/docs/containers?topic=containers-firewall).
+![VPC infrastructure provider icon.](images/icon-vpc.png) This firewall information is specific to VPC clusters. For firewall information for classic clusters, see [Opening required ports and IP addresses in your firewall for classic clusters](/docs/containers?topic=containers-firewall).
 {: note}
 
 ## Opening ports in a corporate firewall
@@ -290,7 +290,7 @@ To permit egress to your cluster from another service, modify that service's fir
 1. Get the worker node subnets or the worker node IP addresses.
     * **Worker node subnet CIDRs**: If you anticipate changing the number of worker nodes in your cluster frequently, such as if you enable the [cluster autoscaler](/docs/containers?topic=containers-ca), you might not want to update your firewall for each new worker node. Instead, you can add the VPC subnets that the cluster uses. Keep in mind that the VPC subnet might be shared by worker nodes in other clusters.
         1. Get the **Worker Zones** and **VPCs** that your cluster is created in.
-            ```
+            ```sh
             ibmcloud oc cluster get -c <cluster>
             ```
             {: pre}

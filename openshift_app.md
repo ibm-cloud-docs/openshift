@@ -132,13 +132,13 @@ Avoid using the latest tag for production workloads. You might not have tested y
 
 For example, to list the tags of public IBM images:
 1. Switch to the global registry region.
-    ```
+    ```sh
     ibmcloud cr region-set global
     ```
     {: pre}
 
 2. List the IBM images.
-    ```
+    ```sh
     ibmcloud cr images --include-ibm
     ```
     {: pre}

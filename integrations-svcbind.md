@@ -186,7 +186,7 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
         {: screen}
 
     2. Decode the binding value.
-        ```
+        ```sh
         echo "<binding>" | base64 -D
         ```
         {: pre}

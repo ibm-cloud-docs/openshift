@@ -18,7 +18,7 @@ content-type: troubleshoot
 # Classic: Why do I see a timeout error when I try to log in to a pod on a new worker node?
 {: #cs_nodes_duplicate_ip}
 
-**Infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic.png) Classic
 
 
 You deleted a worker node in your cluster and then added a worker node. When you deployed a pod or Kubernetes service, the resource cannot access the newly created worker node, and the connection times out.
@@ -49,7 +49,7 @@ Manually update the reference of the private IP address to point to the correct 
 2. Install the [Calico CLI](/docs/containers?topic=containers-network_policies#cli_install).
 3. List the available worker nodes in Calico. Replace <path_to_file> with the local path to the Calico configuration file.
 
-    ```
+    ```sh
     calicoctl get nodes --config=filepath/calicoctl.cfg
     ```
     {: pre}
@@ -63,7 +63,7 @@ Manually update the reference of the private IP address to point to the correct 
 
 4. Delete the duplicate worker node in Calico. Replace NODE_ID with the worker node ID.
 
-    ```
+    ```sh
     calicoctl delete node NODE_ID --config=<path_to_file>/calicoctl.cfg
     ```
     {: pre}

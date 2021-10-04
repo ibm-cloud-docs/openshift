@@ -19,8 +19,8 @@ content-type: troubleshoot
 {: #zero_nodes_calico_failure}
 
 **Infrastructure provider**:
-    * <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
-    * <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
+    * ![Classic infrastructure provider icon.](images/icon-classic.png) Classic
+    * ![VPC infrastructure provider icon.](images/icon-vpc.png) VPC
 
 
 You deleted all worker nodes in your cluster so that zero worker nodes exist. Then, you added one or more worker nodes. When you run the following command, several pods for Kubernetes components are stuck in the `ContainerCreating` status, and the `calico-node` pods are stuck in the `CrashLoopBackOff` status.
@@ -64,13 +64,13 @@ Delete the existing `calico-node` worker node entries so that new pods can be cr
     {: screen}
 
 3. Get the IDs of the `calico-node` worker node entries. Copy the IDs for **only** the worker node IP addresses that you retrieved in the previous step.
-    ```
+    ```sh
     calicoctl get nodes -o wide
     ```
     {: pre}
 
 4. Use the IDs to delete the worker node entries. After you delete the worker node entries, the Calico controller reschedules the `calico-node` pods on the new worker nodes.
-    ```
+    ```sh
     calicoctl delete node <node_ID>
     ```
     {: pre}
