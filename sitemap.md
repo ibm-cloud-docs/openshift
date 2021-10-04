@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift
 subcollection: openshift
@@ -3347,6 +3347,22 @@ subcollection: openshift
 ## IAM and Activity Tracker events
 {: #sitemap_iam_and_activity_tracker_events}
 
+
+[User access permissions](/docs/openshift?topic=openshift-access_reference#access_reference)
+
+* [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions)
+
+* [{{site.data.keyword.cloud_notm}} IAM platform access roles](/docs/openshift?topic=openshift-access_reference#iam_platform)
+
+* [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-access_reference#service)
+
+* [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-access_reference#rbac_ref)
+
+* [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-access_reference#iam_issuer_users)
+
+* [Cloud Foundry roles](/docs/openshift?topic=openshift-access_reference#cloud-foundry)
+
+* [Classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra)
 
 [{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events#at_events)
 

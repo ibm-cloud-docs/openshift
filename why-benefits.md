@@ -2,16 +2,13 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-04"
 
 keywords: openshift, roks, rhoks, rhos
 
 subcollection: openshift
 
 ---
-
-
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -32,23 +29,57 @@ Check out the following [videos and product tours](https://www.ibm.com/demos/col
 ## Benefits of using the service
 {: #benefits}
 
+
+
 With {{site.data.keyword.openshiftlong_notm}}, your developers have a fast and secure way to containerize and deploy enterprise workloads in Kubernetes clusters. {{site.data.keyword.openshiftshort}} clusters build on Kubernetes container orchestration that offers consistency and flexibility for your development lifecycle operations.
 
 Your {{site.data.keyword.openshiftshort}} workloads can scale across IBM’s global footprint of data centers and multizone regions. At the same time, you’re able to uniformly monitor, log, and secure apps. Because IBM manages the service, you can focus on innovating with high-value {{site.data.keyword.cloud_notm}} services and middleware, such as AI and analytics. You also have access to Red Hat packaged open-source tools, including your favorite app runtimes, frameworks, databases, and more.
 
 Ready to get started? Try out the [creating a {{site.data.keyword.openshiftlong_notm}} cluster tutorial](/docs/openshift?topic=openshift-openshift_tutorial).
 
-|Benefit|Description|
-|-------|-----------|
-|Choice of container platform provider | <ul><li>Deploy clusters with <strong>{{site.data.keyword.openshiftshort}}</strong> or community <strong>Kubernetes</strong> installed as the container platform orchestrator.</li><li>Choose the developer experience that fits your company, or run workloads across both {{site.data.keyword.openshiftshort}} or community Kubernetes clusters.</li><li>Built-in integrations from the {{site.data.keyword.cloud_notm}} console to the Kubernetes dashboard or {{site.data.keyword.openshiftshort}} web console.</li><li>Single view and management experience of all your {{site.data.keyword.openshiftshort}} or community Kubernetes clusters from {{site.data.keyword.cloud_notm}}.</li><li>For more information, see <a href="#openshift_kubernetes">Comparison between {{site.data.keyword.openshiftshort}} and community Kubernetes clusters</a>.</li></ul>|
-|Single-tenant Kubernetes clusters with compute, network, and storage infrastructure isolation|<ul><li>Create your own customized infrastructure that meets the requirements of your organization.</li><li>Choose between <a href="/docs/containers?topic=containers-infrastructure_providers">{{site.data.keyword.cloud_notm}} Classic or VPC infrastructure providers</a>.</li><li>Provision a dedicated and secured {{site.data.keyword.openshiftshort}} master, worker nodes, virtual networks, and storage by using the resources provided by IBM Cloud infrastructure.</li><li>Fully managed Kubernetes master that is continuously monitored and updated by {{site.data.keyword.IBM_notm}} to keep your cluster available.</li><li>Option to provision worker nodes as bare metal servers for compute-intensive workloads such as data, GPU, and AI.</li><li>Store persistent data, share data between Kubernetes pods, and restore data when needed with the integrated and secure volume service.</li><li>Benefit from full support for all native Kubernetes APIs.</li></ul>|
-| Multizone clusters to increase high availability | <ul><li>Easily manage worker nodes of the same flavor (CPU, memory, virtual or physical) with worker pools.</li><li>Guard against zone failure by spreading nodes evenly across select multizones and by using anti-affinity pod deployments for your apps.</li><li>Decrease your costs by using multizone clusters instead of duplicating the resources in a separate cluster.</li><li>Benefit from automatic load balancing across apps with the multizone load balancer (MZLB) that is set up automatically for you in each zone of the cluster.</li></ul>|
-| Highly available masters | <ul><li>Reduce cluster downtime such as during master updates with highly available masters that are provisioned automatically when you create a cluster.</li><li>Spread your masters across zones in a <a href="/docs/containers?topic=containers-ha_clusters#multizone">multizone cluster</a> to protect your cluster from zonal failures.</li></ul> |
-|Image security compliance with Vulnerability Advisor|<ul><li>Set up your own repo in our secured Docker private image registry where images are stored and shared by all users in the organization.</li><li>Benefit from automatic scanning of images in your private {{site.data.keyword.cloud_notm}} registry.</li><li>Review recommendations specific to the operating system used in the image to fix potential vulnerabilities.</li></ul>|
-|Continuous monitoring of the cluster health|<ul><li>Use the cluster dashboard to quickly see and manage the health of your cluster, worker nodes, and container deployments.</li><li>Find detailed consumption metrics by using {{site.data.keyword.mon_full}} and quickly expand your cluster to meet work loads.</li><li>Review logging information by using {{site.data.keyword.la_full}} to see detailed cluster activities.</li></ul>|
-|Secure exposure of apps to the public|<ul><li>Choose between a public IP address, an {{site.data.keyword.IBM_notm}} provided route, or your own custom domain to access services in your cluster from the internet.</li></ul>|
-|{{site.data.keyword.cloud_notm}} service integration|<ul><li>Add extra capabilities to your app through the integration of {{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.watson}} APIs, Blockchain, data services, or Internet of Things.</li></ul>|
-{: caption="Benefits of the {{site.data.keyword.containerlong_notm}}" caption-side="top"}
+
+Choice of container platform provider
+:   Deploy clusters with **{{site.data.keyword.openshiftshort}}** or community **Kubernetes** installed as the container platform orchestrator.
+:   Choose the developer experience that fits your company, or run workloads across both {{site.data.keyword.openshiftshort}} or community Kubernetes clusters.
+:   Built-in integrations from the {{site.data.keyword.cloud_notm}} console to the Kubernetes dashboard or {{site.data.keyword.openshiftshort}} web console.
+:   Single view and management experience of all your {{site.data.keyword.openshiftshort}} or community Kubernetes clusters from {{site.data.keyword.cloud_notm}}. For more information, see Comparison between [{{site.data.keyword.openshiftshort}}](#openshift_kubernetes) and community Kubernetes clusters.
+
+
+Single-tenant Kubernetes clusters with compute, network, and storage infrastructure isolation
+:  Create your own customized infrastructure that meets the requirements of your organization.
+:  Choose between [{{site.data.keyword.cloud_notm}} Classic or VPC infrastructure providers](/docs/containers?topic=containers-infrastructure_providers).
+:   Provision a dedicated and secured {{site.data.keyword.openshiftshort}} master, worker nodes, virtual networks, and storage by using the resources provided by IBM Cloud infrastructure.
+:   Fully managed Kubernetes master that is continuously monitored and updated by {{site.data.keyword.IBM_notm}} to keep your cluster available.
+:   Option to provision worker nodes as bare metal servers for compute-intensive workloads such as data, GPU, and AI.
+:   Store persistent data, share data between Kubernetes pods, and restore data when needed with the integrated and secure volume service.
+:   Benefit from full support for all native Kubernetes APIs.
+
+Multizone clusters to increase high availability
+:   Easily manage worker nodes of the same flavor (CPU, memory, virtual or physical) with worker pools.
+:   Guard against zone failure by spreading nodes evenly across select multizones and by using anti-affinity pod deployments for your apps.
+:   Decrease your costs by using multizone clusters instead of duplicating the resources in a separate cluster.
+:   Benefit from automatic load balancing across apps with the multizone load balancer (MZLB) that is set up automatically for you in each zone of the cluster.
+
+
+Highly available masters
+:   Reduce cluster downtime such as during master updates with highly available masters that are provisioned automatically when you create a cluster.
+:   Spread your masters across zones in a [multizone cluster](/docs/containers?topic=containers-ha_clusters#multizone) to protect your cluster from zonal failures.
+
+Image security compliance with Vulnerability Advisor
+:   Set up your own repo in our secured Docker private image registry where images are stored and shared by all users in the organization.
+:   Benefit from automatic scanning of images in your private {{site.data.keyword.cloud_notm}} registry.
+:   Review recommendations specific to the operating system used in the image to fix potential vulnerabilities.
+
+Continuous monitoring of the cluster health
+:   Use the cluster dashboard to quickly see and manage the health of your cluster, worker nodes, and container deployments.
+:   Find detailed consumption metrics by using {{site.data.keyword.mon_full}} and quickly expand your cluster to meet work loads.
+:   Review logging information by using {{site.data.keyword.la_full}} to see detailed cluster activities.
+
+Secure exposure of apps to the public
+:   Choose between a public IP address, an {{site.data.keyword.IBM_notm}} provided route, or your own custom domain to access services in your cluster from the internet.
+
+{{site.data.keyword.cloud_notm}} service integration
+:   Add extra capabilities to your app through the integration of {{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.watson}} APIs, Blockchain, data services, or Internet of Things.
 
 
 
@@ -62,25 +93,25 @@ Both {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.containerl
 
 |Characteristics|Community Kubernetes clusters|{{site.data.keyword.openshiftshort}} clusters|
 |---------------|-------------|-----------------|
-|Complete cluster management experience through the {{site.data.keyword.containerlong_notm}} automation tools (API, CLI, console)|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|Worldwide availability in single and multizones|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|Consistent container orchestration across hybrid cloud providers|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|Access to {{site.data.keyword.cloud_notm}} services such as AI|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|Software-defined storage Portworx solution available for multizone data use cases|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|Create a cluster in an IBM Virtual Private Cloud (VPC)|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|Ability to create free clusters|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| |
-|Latest community Kubernetes distribution|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| |
-|Scope {{site.data.keyword.cloud_notm}} IAM access policies to access groups for service access roles that sync to cluster RBAC |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| |
-|Classic infrastructure cluster on only the private network|<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />| |
-| GPU bare metal worker nodes | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-|Integrated IBM Cloud Paks and middleware| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|Built-in container image streams, builds, and tooling ([read more](https://cloudowski.com/articles/why-managing-container-images-on-openshift-is-better-than-on-kubernetes/){: external})| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|Integrated CI/CD with Jenkins| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|Stricter app security context set up by default| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-|Simplified Kubernetes developer experience, with an app console that is suited for beginners| |<img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+|Complete cluster management experience through the {{site.data.keyword.containerlong_notm}} automation tools (API, CLI, console)|Yes|Yes|
+|Worldwide availability in single and multizones|Yes|Yes|
+|Consistent container orchestration across hybrid cloud providers|Yes|Yes|
+|Access to {{site.data.keyword.cloud_notm}} services such as AI|Yes|Yes|
+|Software-defined storage Portworx solution available for multizone data use cases|Yes|Yes|
+|Create a cluster in an IBM Virtual Private Cloud (VPC)|Yes|Yes|
+|Ability to create free clusters|Yes| |
+|Latest community Kubernetes distribution|Yes| |
+|Scope {{site.data.keyword.cloud_notm}} IAM access policies to access groups for service access roles that sync to cluster RBAC |Yes| |
+|Classic infrastructure cluster on only the private network|Yes| |
+| GPU bare metal worker nodes | Yes | Yes |
+|Integrated IBM Cloud Paks and middleware| |Yes|
+|Built-in container image streams, builds, and tooling ([read more](https://cloudowski.com/articles/why-managing-container-images-on-openshift-is-better-than-on-kubernetes/){: external})| |Yes|
+|Integrated CI/CD with Jenkins| |Yes|
+|Stricter app security context set up by default| |Yes|
+|Simplified Kubernetes developer experience, with an app console that is suited for beginners| |Yes|
 |Supported operating system| Ubuntu 18.04 x86_64, 16.04 x86_64 (deprecated) |Red Hat Enterprise Linux 7|
 |Preferred external traffic networking| Ingress | Router |
-|Secured routes encrypted with {{site.data.keyword.hscrypto}} | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+|Secured routes encrypted with {{site.data.keyword.hscrypto}} | | Yes |
 {: caption="Characteristics of community Kubernetes and {{site.data.keyword.openshiftshort}} clusters" caption-side="top"}
 
 
@@ -142,20 +173,20 @@ You cannot update from an {{site.data.keyword.openshiftshort}} 3.11 to 4 cluster
 | CRI-O runtime version | 1.11 | 1.16 |
 | Worker node DNS | `dnsmasq` daemon set | `openshift-dns` operator (CoreDNS) |
 | App service integration tool | Service catalog | Operators |
-| Virtual private cloud (VPC) support | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Managed {{site.data.keyword.openshiftshort}} master | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Provided version and security patch updates | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Encryption with {{site.data.keyword.keymanagementservicelong_notm}} | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
+| Virtual private cloud (VPC) support | | Yes |
+| Managed {{site.data.keyword.openshiftshort}} master | Yes | Yes |
+| Provided version and security patch updates | Yes | Yes |
+| Encryption with {{site.data.keyword.keymanagementservicelong_notm}} | Yes | |
 | Istio | | [Service mesh operator](https://docs.openshift.com/container-platform/4.7/service_mesh/v1x/servicemesh-release-notes.html){: external} |
-| Debug tool | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Cluster autoscaler | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Classic File Storage | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Classic Block Storage | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| {{site.data.keyword.cos_full_notm}} | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Portworx | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Debug tool | Yes | Yes |
+| Cluster autoscaler | Yes | Yes |
+| Classic File Storage | Yes | Yes |
+| Classic Block Storage | Yes | Yes |
+| {{site.data.keyword.cos_full_notm}} | Yes | Yes |
+| Portworx | Yes | Yes |
 | Subdomains for ingress | Separate subdomains for `Ingress` and `Route` resources | Same subdomain for both `Ingress` and `Router` resources |
-| Ingress resources with {{site.data.keyword.openshiftlong_notm}} ALBs | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
-| Ingress resources with {{site.data.keyword.openshiftshort}} Ingress controllers | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Ingress resources with {{site.data.keyword.openshiftlong_notm}} ALBs | Yes | |
+| Ingress resources with {{site.data.keyword.openshiftshort}} Ingress controllers | | Yes |
 {: caption="Supported features in {{site.data.keyword.openshiftshort}} 3.11 and 4 clusters" caption-side="top"}
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift, roks, rhos, rhoks, strongswan, ipsec, on-prem
 
@@ -306,7 +306,7 @@ To monitor the status of the strongSwan VPN, you can set up a webhook to automat
 5. Choose a Slack channel or create a new channel to send the VPN messages to.
 
 6. Copy the webhook URL that is generated. The URL format looks similar to the following:
-    ```
+    ```sh
     https://hooks.slack.com/services/A1AA11A1A/AAA1AAA1A/a1aaaaAAAaAaAAAaaaaaAaAA
     ```
     {: screen}
@@ -333,9 +333,9 @@ Deploy the strongSwan Helm chart in your cluster with the configurations that yo
 
 1. If you need to configure more advanced settings, follow the documentation provided for each setting in the Helm chart.
 
-3. Save the updated `config.yaml` file.
+2. Save the updated `config.yaml` file.
 
-4. Install the Helm chart to your cluster with the updated `config.yaml` file.
+3. Install the Helm chart to your cluster with the updated `config.yaml` file.
 
     If you have multiple VPN deployments in a single cluster, you can avoid naming conflicts and differentiate between your deployments by choosing more descriptive release names than `vpn`. To avoid the truncation of the release name, limit the release name to 35 characters or less.
     {: tip}
@@ -345,14 +345,14 @@ Deploy the strongSwan Helm chart in your cluster with the configurations that yo
     ```
     {: pre}
 
-5. Check the chart deployment status. When the chart is ready, the **STATUS** field near the top of the output has a value of `DEPLOYED`.
+4. Check the chart deployment status. When the chart is ready, the **STATUS** field near the top of the output has a value of `DEPLOYED`.
 
     ```sh
     helm status vpn
     ```
     {: pre}
 
-6. After the chart is deployed, verify that the updated settings in the `config.yaml` file were used.
+5. After the chart is deployed, verify that the updated settings in the `config.yaml` file were used.
 
     ```sh
     helm get values vpn
@@ -387,7 +387,7 @@ After you deploy your Helm chart, test the VPN connectivity.
 
     Example output
 
-    ```
+    ```sh
     Security Associations (1 up, 0 connecting):
     k8s-conn[1]: ESTABLISHED 17 minutes ago, 172.30.xxx.xxx[ibm-cloud]...192.xxx.xxx.xxx[on-premises]
     k8s-conn{2}: INSTALLED, TUNNEL, reqid 12, ESP in UDP SPIs: c78cb6b1_i c5d0d1c3_o
@@ -427,14 +427,25 @@ After you deploy your Helm chart, test the VPN connectivity.
     Some of the tests have requirements that are optional settings in the VPN configuration. If some of the tests fail, the failures might be acceptable depending on whether you specified these optional settings. Refer to the following table for information about each test and why it might fail.
     {: note}
 
-    {: #vpn_tests_table}
-    | Parameter | Description |
-    | --- | --- |
-    | `vpn-strongswan-check-config` | Validates the syntax of the `ipsec.conf` file that is generated from the `config.yaml` file. This test might fail due to incorrect values in the `config.yaml` file. |
-    | `vpn-strongswan-check-state` | Checks that the VPN connection has a status of `ESTABLISHED`. This test might fail for the following reasons. \n - Differences between the values in the `config.yaml` file and the on-premises VPN endpoint settings. \n - If the cluster is in "listen" mode (`ipsec.auto` is set to `add`), the connection is not established on the on-premises side. |
-    | `vpn-strongswan-ping-remote-gw` | Pings the `remote.gateway` public IP address that you configured in the `config.yaml` file. If the VPN connection has the `ESTABLISHED` status, you can ignore the result of this test. If the VPN connection does not have the `ESTABLISHED` status, this test might fail for the following reasons. \n - You did not specify an on-premises VPN gateway IP address. If `ipsec.auto` is set to `start`, the `remote.gateway` IP address is required. \n - ICMP (ping) packets are being blocked by a firewall. |
-    | `vpn-strongswan-ping-remote-ip-1` | Pings the `remote.privateIPtoPing` private IP address of the on-premises VPN gateway from the VPN pod in the cluster. This test might fail for the following reasons. \n - You did not specify a `remote.privateIPtoPing` IP address. If you intentionally did not specify an IP address, this failure is acceptable. \n - You did not specify the cluster pod subnet CIDR, `172.30.0.0/16`, in the `local.subnet` list. |
-    | `vpn-strongswan-ping-remote-ip-2` | Pings the `remote.privateIPtoPing` private IP address of the on-premises VPN gateway from the worker node in the cluster. This test might fail for the following reasons. \n - You did not specify a `remote.privateIPtoPing` IP address. If you intentionally did not specify an IP address, this failure is acceptable. \n - You did not specify the cluster worker node private subnet CIDR in the `local.subnet` list. |
+
+    `vpn-strongswan-check-config`
+    :   Validates the syntax of the `ipsec.conf` file that is generated from the `config.yaml` file. This test might fail due to incorrect values in the `config.yaml` file.
+    
+    `vpn-strongswan-check-state`
+    :   Checks that the VPN connection has a status of `ESTABLISHED`. This test might fail for the following reasons.
+        - Differences between the values in the `config.yaml` file and the on-premises VPN endpoint settings.
+        - If the cluster is in "listen" mode (`ipsec.auto` is set to `add`), the connection is not established on the on-premises side.
+    
+    `vpn-strongswan-ping-remote-gw`
+    :   Pings the `remote.gateway` public IP address that you configured in the `config.yaml` file. If the VPN connection has the `ESTABLISHED` status, you can ignore the result of this test. If the VPN connection does not have the `ESTABLISHED` status, this test might fail for the following reasons. 
+        - You did not specify an on-premises VPN gateway IP address. If `ipsec.auto` is set to `start`, the `remote.gateway` IP address is required.
+        - ICMP (ping) packets are being blocked by a firewall.
+    
+    `vpn-strongswan-ping-remote-ip-1`
+    :   Pings the `remote.privateIPtoPing` private IP address of the on-premises VPN gateway from the VPN pod in the cluster. This test might fail for the following reasons. \n - You did not specify a `remote.privateIPtoPing` IP address. If you intentionally did not specify an IP address, this failure is acceptable. \n - You did not specify the cluster pod subnet CIDR, `172.30.0.0/16`, in the `local.subnet` list.
+    
+    `vpn-strongswan-ping-remote-ip-2`
+    :   Pings the `remote.privateIPtoPing` private IP address of the on-premises VPN gateway from the worker node in the cluster. This test might fail for the following reasons. \n - You did not specify a `remote.privateIPtoPing` IP address. If you intentionally did not specify an IP address, this failure is acceptable. \n - You did not specify the cluster worker node private subnet CIDR in the `local.subnet` list. |
     {: caption="Table 1. Understanding the Helm VPN connectivity tests" caption-side="top"}
 
 6. Delete the current Helm chart.
@@ -537,7 +548,7 @@ To limit VPN traffic to a certain namespace,
 
 2. Apply the policy.
 
-    ```
+    ```sh
     calicoctl apply -f allow-non-vpn-outbound.yaml --config=filepath/calicoctl.cfg
     ```
     {: pre}
@@ -563,13 +574,13 @@ To limit VPN traffic to a certain namespace,
 
 4. Apply the policy.
 
-    ```
+    ```sh
     calicoctl apply -f allow-vpn-from-namespace.yaml --config=filepath/calicoctl.cfg
     ```
     {: pre}
 
 5. Verify that the global network policies are created in your cluster.
-    ```
+    ```sh
     calicoctl get GlobalNetworkPolicy -o wide --config=filepath/calicoctl.cfg
     ```
     {: pre}
@@ -638,17 +649,17 @@ For release dates and changelogs for each strongSwan Helm chart version, run `he
 
 To upgrade your strongSwan Helm chart to the latest version:
 
-    ```sh
-    helm upgrade -f config.yaml <release_name> ibm/strongswan
-    ```
-    {: pre}
+```sh
+helm upgrade -f config.yaml <release_name> ibm/strongswan
+```
+{: pre}
 
 You can disable the VPN connection by deleting the Helm chart.
 
-    ```sh
-    helm uninstall <release_name> -n <namespace>
-    ```
-    {: pre}
+```sh
+helm uninstall <release_name> -n <namespace>
+```
+{: pre}
 
 
 ## Using a Virtual Router Appliance

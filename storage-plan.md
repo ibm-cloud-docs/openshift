@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -86,94 +86,28 @@ You can use non-persistent storage options if your data is not required to be pe
 {: shortdesc}
 
 The following image shows available non-persistent data storage options in {{site.data.keyword.openshiftlong_notm}}. These options are available for free and standard clusters.
-<p>
-<img src="images/cs_storage_nonpersistent.png" alt="Non-persistent data storage options" width="550" style="width: 550px; border-style: none"/></p>
 
-<table summary="The columns are read from left to right. The first column has the characteristic of the non-persistent storage option. The second column says whether the non-persistent storage is inside the container. The third column says whether the non-persistent storage is on the worker node disk.">
-<caption>Non-persistent storage options.</caption>
-<thead>
-<th style="text-align:left">Characteristics</th>
-<th style="text-align:left">Inside the container</th>
-<th style="text-align:left">On the worker node's primary or secondary disk</th>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Multizone capable</td>
-<td style="text-align:left">No</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Supported in VPC clusters</td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">No</td>
-</tr>
-<tr>
-<td style="text-align:left">Supported OpenShift versions</td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">3.11</li><li style="margin:0px; padding:0px">4.3 - 4.6</li></ul></td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">3.11</li><li style="margin:0px; padding:0px">4.3 - 4.6</li></ul></td>
-</tr>
-<tr>
-<td style="text-align:left">Data types</td>
-<td style="text-align:left">All</td>
-<td style="text-align:left">All</td>
-</tr>
-<tr>
-<td style="text-align:left">Capacity</td>
-<td style="text-align:left">Limited to the worker node's available secondary disk. To limit the amount of secondary storage that is consumed by your pod, use resource requests and limits for [ephemeral storage ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#local-ephemeral-storage).</td>
-<td style="text-align:left">Limited to the worker node's available space on the primary (`hostPath`) or secondary disk (`emptyDir`). To limit the amount of secondary storage that is consumed by your pod, use resource requests and limits for [ephemeral storage ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#local-ephemeral-storage).</td>
-</tr>
-<tr>
-<td style="text-align:left">Data access pattern</td>
-<td style="text-align:left">Read and write operations of any frequency</td>
-<td style="text-align:left">Read and write operations of any frequency</td>
-</tr>
-<tr>
-<td style="text-align:left">Access</td>
-<td style="text-align:left">Via the container's local file system</td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Via [Kubernetes <code>hostPath</code> volume ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath) for access to worker node primary storage. </li><li style="margin:0px; padding:0px">Via [Kubernetes <code>emptyDir</code> volume ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir) for access to worker node secondary storage.</li></ul></td>
-</tr>
-<tr>
-<td style="text-align:left">Performance</td>
-<td style="text-align:left">High</td>
-<td style="text-align:left">High with lower latency when you use SSD</td>
-</tr>
-<tr>
-<td style="text-align:left">Consistency</td>
-<td style="text-align:left">Strong</td>
-<td style="text-align:left">Strong</td>
-</tr>
-<tr>
-<td style="text-align:left">Resiliency</td>
-<td style="text-align:left">Low</td>
-<td style="text-align:left">Low</td>
-</tr>
-<tr>
-<td style="text-align:left">Availability</td>
-<td style="text-align:left">Specific to the container</td>
-<td style="text-align:left">Specific to the worker node</td>
-</tr>
-<tr>
-<td style="text-align:left">Scalability</td>
-<td style="text-align:left">Difficult to extend as limited to the worker node's secondary disk capacity</td>
-<td style="text-align:left">Difficult to extend as limited to the worker node's primary and secondary disk capacity</td>
-</tr>
-<tr>
-<td style="text-align:left">Durability</td>
-<td style="text-align:left">Data is lost when the container crashes or is removed. </td>
-<td style="text-align:left">Data in <code>hostPath</code> or <code>emptyDir</code> volumes is lost when: <ul><li>The worker node is deleted.</li><li>The worker node is reloaded or updated.</li><li>The cluster is deleted.</li><li>The {{site.data.keyword.cloud_notm}} account reaches a suspended state. </li></ul></p><p>In addition, data in an <code>emptyDir</code> volume is removed when: <ul><li>The assigned pod is permanently deleted from the worker node.</li><li>The assigned pod is scheduled on another worker node.</li></ul>
-</tr>
-<tr>
-<td style="text-align:left">Common use cases</td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Local image cache</li><li style="margin:0px; padding:0px">Container logs</li></ul></td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">High-performance local cache</li><li style="margin:0px; padding:0px">Access files from the worker node file system</li><li style="margin:0px; padding:0px">Unit tests</li></ul></td>
-</tr>
-<tr>
-<td style="text-align:left">Non-ideal use cases</td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Persistent data storage</li><li style="margin:0px; padding:0px">Sharing data between containers</li></ul></td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Persistent data storage</li></ul></td>
-</tr>
-</tbody>
-</table>
+![Non-persistent data storage options](images/cs_storage_nonpersistent.png)
+
+
+| Characteristics | Inside the container | On the worker node's primary or secondary disk |
+| --- | --- | --- |
+| Multizone capable | No | No | 
+| Supported in VPC clusters | Yes | No |
+| Supported OpenShift versions | 3.11, 4.3 - 4.6 | 3.11, 4.3 - 4.6 |
+| Data types | All | All |
+| Capacity| Limited to the worker node's available secondary disk. To limit the amount of secondary storage that is consumed by your pod, use resource requests and limits for [ephemeral storage](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#local-ephemeral-storage){: external}. | Limited to the worker node's available space on the primary (`hostPath`) or secondary disk (`emptyDir`). To limit the amount of secondary storage that is consumed by your pod, use resource requests and limits for [ephemeral storage](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#local-ephemeral-storage){: external}. | 
+| Data access pattern | Read and write operations of any frequency| Read and write operations of any frequency |
+| Access | Via the container's local file system | Via [Kubernetes `hostPath`](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath){: external} for access to worker node primary storage. Via [Kubernetes `emptyDir` volume](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir){: exteral} for access to worker node secondary storage. | 
+| Performance | High | High with lower latency when you use SSD | Consistency | Strong | Strong |
+| Resiliency | Low | Low |
+| Availability | Specific to the container | Specific to the worker node |
+| Scalability | Difficult to extend as limited to the worker node's secondary disk capacity| Difficult to extend as limited to the worker node's primary and secondary disk capacity | 
+| Durability | Data is lost when the container crashes or is removed. | Data in `hostPath` or `emptyDir` volumes is lost when the worker node is deleted, the worker node is reloaded or updated, the cluster is deleted, the {{site.data.keyword.cloud_notm}} account reaches a suspended state. In addition, data in an `emptyDir` volume is removed when the assigned pod is permanently deleted from the worker node, the assigned pod is scheduled on another worker node. |
+| Common use cases | Local image cache or container logs | Setting up a high-performance local cache, accessing files from the worker node file system, or running unit tests. | 
+| Non-ideal use cases | Persistent data storage or sharing data between containers | Persistent data storage |
+{: summary="The columns are read from left to right. The first column has the characteristic of the non-persistent storage option. The second column says whether the non-persistent storage is inside the container. The third column says whether the non-persistent storage is on the worker node disk."}
+{: caption="Non-persistent storage options"}
 
 
 
@@ -189,104 +123,30 @@ Persistent data storage options are available for standard clusters only.
 
 The following image shows the options that you have in {{site.data.keyword.openshiftlong_notm}} to permanently store your data in a single cluster.
 
-<img src="images/cs_storage_single_zone.png" alt="Persistent storage options for single zone cluster"  width="300" style="width: 300px; border-style: none"/>
+![Persistent storage options for single zone cluster](images/cs_storage_single_zone.png)
 
-<table summary="The columns are read from left to right. The first column has the characteristic of the single-zone persistent storage option. The second column describes the characteristic for file storage. The third column describes the characteristic for block storage.">
-<caption>Persistent storage options for single zone clusters.</caption>
-<thead>
-<th style="text-align:left">Characteristics</th>
-<th style="text-align:left">Classic File Storage</th>
-<th style="text-align:left">Classic Block Storage / VPC Block Storage</th>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Multizone-capable</td>
-<td style="text-align:left">No, as specific to a data center. Data cannot be shared across zones, unless you implement your own data replication.</td>
-<td style="text-align:left">No, as specific to a data center. Data cannot be shared across zones, unless you implement your own data replication.</td>
-</tr>
-<tr>
-<td style="text-align:left">Supported in VPC clusters</td>
-<td style="text-align:left">No</td>
-<td style="text-align:left">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left">Supported OpenShift versions</td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">3.11</li><li style="margin:0px; padding:0px">4.3 - 4.6</li></ul></td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">3.11</li><li style="margin:0px; padding:0px">4.3 - 4.6</li></ul></td>
-</tr>
-<tr>
-<td style="text-align:left">Ideal data types</td>
-<td style="text-align:left">All</td>
-<td style="text-align:left">All</td>
-</tr>
-<tr>
-<td style="text-align:left">Data usage pattern</td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Random read-write operations</li><li style="margin:0px; padding:0px">Sequential read-write operations</li></ul></td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Random read-write operations</li><li style="margin:0px; padding:0px">Write-intensive workloads</li></ul></td>
-</tr>
-<tr>
-<td style="text-align:left">Access</td>
-<td style="text-align:left">Via file system on mounted volume</td>
-<td style="text-align:left">Via file system on mounted volume</td>
-</tr>
-<tr>
-<td style="text-align:left">Supported Kubernetes access writes</td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">ReadWriteMany (RWX)</li><li style="margin:0px; padding:0px"> ReadOnlyMany (ROX)</li><li style="margin:0px; padding:0px">ReadWriteOnce (RWO)</li></ul></td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">ReadWriteOnce (RWO)</li></ul></td>
-</tr>
-<tr>
-<td style="text-align:left">Performance</td>
-<td style="text-align:left">Predictable due to assigned IOPS and size. IOPS are shared between the pods that access the volume.</td>
-<td style="text-align:left">Predictable due to assigned IOPS and size. IOPS are not shared between pods. </td>
-</tr>
-<tr>
-<td style="text-align:left">Consistency</td>
-<td style="text-align:left">Strong</td>
-<td style="text-align:left">Strong</td>
-</tr>
-<tr>
-<td style="text-align:left">Durability</td>
-<td style="text-align:left">High</td>
-<td style="text-align:left">High</td>
-</tr>
-<tr>
-<td style="text-align:left">Resiliency</td>
-<td style="text-align:left">Medium as specific to a data center. File storage server is clustered by IBM with redundant networking.</td>
-<td style="text-align:left">Medium as specific to a data center. Block storage server is clustered by IBM with redundant networking.</td>
-</tr>
-<tr>
-<td style="text-align:left">Availability</td>
-<td style="text-align:left">Medium as specific to a data center.</td>
-<td style="text-align:left">Medium as specific to a data center.</td>
-</tr>
-<tr>
-<td style="text-align:left">Scalability</td>
-<td style="text-align:left">Difficult to extend beyond the data center. You cannot change an existing storage tier. </td>
-<td style="text-align:left">Difficult to extend beyond the data center. You cannot change an existing storage tier.</td>
-</tr>
-<tr>
-<td style="text-align:left">Encryption</td>
-<td style="text-align:left">At rest</td>
-<td style="text-align:left"><strong>Classic Block Storage</strong>: Encryption at rest.</br><strong>VPC Block Storage</strong>: Encryption in transit with Key Protect.</td>
-</tr>
-<tr>
-<td style="text-align:left">Backup and recovery</td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Set up periodic snapshots</li><li style="margin:0px; padding:0px">Replicate snapshots</li><li style="margin:0px; padding:0px">Duplicate storage</li><li style="margin:0px; padding:0px">Back up data to {{site.data.keyword.cos_full_notm}}</li><li style="margin:0px; padding:0px">Copy data to and from pod and containers ([oc cp ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command)</li></ul></td>
-    <td style="text-align:left"><strong>Classic Block Storage</strong>: <ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Set up periodic snapshots</li><li style="margin:0px; padding:0px">Replicate snapshots</li><li style="margin:0px; padding:0px">Duplicate storage</li><li style="margin:0px; padding:0px">Back up data to {{site.data.keyword.cos_full_notm}}</li><li style="margin:0px; padding:0px">Copy data to and from pod and containers ([oc cp ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command)</li></ul>
-<p><strong>VPC Block Storage</strong>: Kubernetes [`oc cp` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command</p></td>
-</tr>
-<tr>
-<td style="text-align:left">Common use cases</td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Mass or single file storage</li><li style="margin:0px; padding:0px">File sharing across a single zone cluster</li></ul></td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Stateful sets</li><li style="margin:0px; padding:0px">Backing storage when you run your own database</li><li style="margin:0px; padding:0px">High-performance access for single pods</li></ul></td>
-</tr>
-<tr>
-<td style="text-align:left">Non-ideal use cases</td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Multizone clusters</li><li style="margin:0px; padding:0px">Geographically distributed data</li></ul></td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Multizone clusters</li><li style="margin:0px; padding:0px">Geographically distributed data</li><li style="margin:0px; padding:0px">Sharing data across multiple app instances</li></ul></td>
-</tr>
-</tbody>
-</table>
+
+| Characteristics | Classic File Storage | Classic Block Storage / VPC Block Storage
+| --- | --- | --- |
+| Multizone-capable | No, as specific to a data center. Data cannot be shared across zones, unless you implement your own data replication. |No, as specific to a data center. Data cannot be shared across zones, unless you implement your own data replication. | 
+| Supported in VPC clusters | No | Yes |
+| Supported OpenShift versions | 3.11, 4.3 - 4.6 | 3.11, 4.3 - 4.6 |
+| Ideal data types | All | All | 
+| Data usage pattern | Random read-write operations, sequential read-write operations, random read-write operations, or write-intensive workloads | 
+| Access | Via file system on mounted volume | Via file system on mounted volume|
+| Supported Kubernetes access writes | ReadWriteMany (RWX), ReadOnlyMany (ROX), ReadWriteOnce (RWO) | ReadWriteOnce (RWO) | 
+| Performance | Predictable due to assigned IOPS and size. IOPS are shared between the pods that access the volume.| Predictable due to assigned IOPS and size. IOPS are not shared between pods. | 
+| Consistency| Strong| Strong | 
+| Durability | High | High | 
+| Resiliency| Medium as specific to a data center. File storage server is clustered by IBM with redundant networking.| Medium as specific to a data center. Block storage server is clustered by IBM with redundant networking. | 
+| Availability | Medium as specific to a data center. | Medium as specific to a data center. |
+| Scalability | Difficult to extend beyond the data center. You cannot change an existing storage tier. | Difficult to extend beyond the data center. You cannot change an existing storage tier. |
+| Encryption | At rest |   \n **Classic Block Storage**: Encryption at rest.   \n - **VPC Block Storage**: Encryption in transit with Key Protect.|
+| Backup and recovery | Set up periodic snapshots, replicate snapshots, duplicate storage, back up data to {{site.data.keyword.cos_full_notm}}, or copy data to and from pod and containers. |   \n **Classic Block Storage**: Set up periodic snapshots, replicate snapshots, duplicate storage, back up data to {{site.data.keyword.cos_full_notm}}, or copy data to and from pod and containers.  \n - **VPC Block Storage**: Kubernetes [`oc cp`](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command. |
+| Common use cases | Mass or single file storage or file sharing across a single zone cluster. | Stateful sets, backing storage when you run your own database, or high-performance access for single pods. | 
+| Non-ideal use cases| Multizone clusters or geographically distributed data | Multizone clusters, geographically distributed data, or sharing data across multiple app instances. | 
+{: summary="The columns are read from left to right. The first column has the characteristic of the single-zone persistent storage option. The second column describes the characteristic for file storage. The third column describes the characteristic for block storage."}
+{: caption="Persistent storage options for single zone clusters"}
 
 
 
@@ -305,122 +165,32 @@ Looking to connect your cluster to an on-prem database instead? See [Setting up 
 
 The following image shows the options that you have in {{site.data.keyword.openshiftlong_notm}} to permanently store your data in a multizone cluster and make your data highly available. You can use these options in a single zone cluster, but you might not get the high availability benefits that your app requires.
 
-<img src="images/cs_storage_options_multizone.png" alt="High availability options for persistent storage in a multizone cluster"/>
+![High availability options for persistent storage in a multizone cluster](images/cs_storage_options_multizone.png)
 
-<table summary="The columns are read from left to right. The first column has the characteristic of the multizone persistent storage option. The second column describes the characteristic for object storage. The third column describes the characteristic for SDS Portworx storage. The fourth column describes the characteristic for database-as-a-service storage.">
-<caption>Persistent storage options for multizone clusters.</caption>
-<thead>
-<th style="text-align:left">Characteristics</th>
-<th style="text-align:left">Object Storage</th>
-<th style="text-align:left">SDS (Portworx)</th>
-<th style="text-align:left">{{site.data.keyword.cloud_notm}} Databases</th>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Multizone-capable</td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left">Supported in VPC clusters</td>
-<td style="text-align:left">Yes</td>
-    <td style="text-align:left">Yes</td>
-<td style="text-align:left">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left">Supported OpenShift versions</td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">3.11</li><li style="margin:0px; padding:0px">4.3 - 4.6</li></ul></td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">3.11</li><li style="margin:0px; padding:0px">4.3 - 4.6</li></ul></td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">3.11</li><li style="margin:0px; padding:0px">4.3 - 4.6</li></ul></td>
-</tr>
-<tr>
-<td style="text-align:left">Ideal data types</td>
-<td style="text-align:left">Semi-structured and unstructured data</td>
-<td style="text-align:left">All</td>
-<td style="text-align:left">Depends on the DBaaS</td>
-</tr>
-<tr>
-<td style="text-align:left">Data usage pattern</td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Read-intensive workloads</li><li style="margin:0px; padding:0px">Few or no write operations</li></ul></td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Write-intensive workloads</li><li style="margin:0px; padding:0px">Random read and write operation</li><li style="margin:0px; padding:0px">Sequential read and write operations</li></ul></td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Read-write-intensive workloads</li></ul></td>
-</tr>
-<tr>
-<td style="text-align:left">Access</td>
-<td style="text-align:left">Via file system on mounted volume (plug-in) or via REST API from your app</td>
-<td style="text-align:left">Via file system on mounted volume or NFS client access to the volume</td>
-<td style="text-align:left">Via REST API from your app</td>
-</tr>
-<tr>
-<td style="text-align:left">Supported Kubernetes access writes</td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">ReadWriteMany (RWX)</li><li style="margin:0px; padding:0px"> ReadOnlyMany (ROX)</li><li style="margin:0px; padding:0px">ReadWriteOnce (RWO)</li></ul></td>
-    <td style="text-align:left">All</td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">N/A as accessed from the app directly</li></ul></td>
-</tr>
-<tr>
-<td style="text-align:left">Performance</td>
-<td style="text-align:left">High for read operations. Predictable due to assigned IOPS and size when you use non-SDS machines.</td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Close to bare metal performance for sequential read and write operations when you use SDS machines. </li><li style="margin:0px; padding:0px">Provides [profiles ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/dynamic-provisioning/#using-dynamic-provisioning) to run high-performance databases</li><li style="margin:0px; padding:0px">Possibility to create a storage layer with different performance profiles that your app can choose from.</li></ul> </td>
-<td style="text-align:left">High if deployed to the same data center as your app.</td>
-</tr>
-<tr>
-<td style="text-align:left">Consistency</td>
-<td style="text-align:left">Eventual</td>
-    <td style="text-align:left">Strong</td>
-<td style="text-align:left">Depends on the DBaaS</td>
-</tr>
-<tr>
-<td style="text-align:left">Durability</td>
-<td style="text-align:left">Very high as data slices are dispersed across a cluster of storage
-nodes. Every node stores only a part of the data. </td>
-<td style="text-align:left">Very high as three copies of your data are maintained at all times.</td>
-<td style="text-align:left">High</td>
-</tr>
-<tr>
-<td style="text-align:left">Resiliency</td>
-<td style="text-align:left">High as data slices are dispersed across three zones or regions. Medium, when set up in a single zone only.</td>
-<td style="text-align:left">High when set up with replication across three zones. Medium, when you store data in a single zone only.</td>
-<td style="text-align:left">Depends on the DBaaS and your setup. </td>
-</tr>
-<tr>
-<td style="text-align:left">Availability</td>
-<td style="text-align:left">High due to the distribution across zones or regions. </td>
-<td style="text-align:left">High when you replicate data across three worker nodes in different zones.</td>
-<td style="text-align:left">High if you set up multiple instances. </td>
-</tr>
-<tr>
-<td style="text-align:left">Scalability</td>
-<td style="text-align:left">Scales automatically</td>
-<td style="text-align:left">Increase volume capacity by resizing the volume. To increase overall storage layer capacity, you must add worker nodes or remote block storage. Both scenarios require monitoring of capacity by the user. </td>
-<td style="text-align:left">Scales automatically</td>
-</tr>
-<tr>
-<td style="text-align:left">Encryption</td>
-<td style="text-align:left">In transit and at rest</td>
-<td style="text-align:left">Bring your own key to protect your data in transit and at rest with {{site.data.keyword.keymanagementservicelong_notm}}. </td>
-<td style="text-align:left">At rest</td>
-</tr>
-<tr>
-<td style="text-align:left">Backup and recovery</td>
-<td style="text-align:left">Data is automatically replicated across multiple nodes for high durability. For more information, see the SLA in the [{{site.data.keyword.cos_full_notm}} service terms ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/;www-03.ibm.com//software/sla/sladb.nsf/sla/bm-7857-03).  You can also use the  Kubernetes [`oc cp` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command to copy data to and from pod and containers.</td>
-<td style="text-align:left">Use local or cloud snapshots to save the current state of a volume. For more information, see [Create and use local snapshots ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/). You can also use the  Kubernetes [`oc cp` ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command to copy data to and from pod and containers.</td>
-<td style="text-align:left">Depends on the DBaaS</td>
-</tr>
-<tr>
-<td style="text-align:left">Common use cases</td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Multizone clusters</li><li style="margin:0px; padding:0px">Geographically distributed data</li><li style="margin:0px; padding:0px">Static big data</li><li style="margin:0px; padding:0px">Static multimedia content</li><li style="margin:0px; padding:0px">Web apps</li><li style="margin:0px; padding:0px">Backups</li><li style="margin:0px; padding:0px">Archives</li></ul></td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Stateful sets</li><li style="margin:0px; padding:0px">Geographically distributed data</li><li style="margin:0px; padding:0px">Common storage solution when you run apps across multiple cloud providers</li><li style="margin:0px; padding:0px">Backing storage when you run your own database</li><li style="margin:0px; padding:0px">High-performance access for single pods</li><li style="margin:0px; padding:0px">Shared storage access across multiple pods and worker nodes</li></ul></td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Multizone clusters</li><li style="margin:0px; padding:0px">Relational and non-relational databases</li><li style="margin:0px; padding:0px">Geographically distributed data</li></ul></td>
-</tr>
-<tr>
-<td style="text-align:left">Non-ideal use cases</td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">Write-intensive workloads</li><li style="margin:0px; padding:0px">Random write operations</li><li style="margin:0px; padding:0px">Incremental data updates</li><li style="margin:0px; padding:0px">Transaction databases</li></ul></td>
-    <td style="text-align:left">N/A</td>
-<td style="text-align:left"><ul style="margin:0px 0px 0px 20px; padding:0px"><li style="margin:0px; padding:0px">App that is designed to write to a file system</li></ul></td>
-</tr>
-</tbody>
-</table>
+
+| Characteristics | Object Storage | SDS (Portworx) | {{site.data.keyword.cloud_notm}} Databases|
+| --- | --- | --- | --- |
+| Multizone-capable | Yes | Yes | Yes |
+| Supported in VPC clusters| Yes | Yes | Yes |
+| Supported OpenShift versions |  3.11, 4.3 - 4.6 |  3.11, 4.3 - 4.6 |  3.11, 4.3 - 4.6 |
+| Ideal data types | Semi-structured and unstructured data | All | Depends on the DBaaS |
+| Data usage pattern | Read-intensive workloads. Few or no write operations. | Write-intensive workloads. Random read and write operation. Sequential read and write operations | Read-write-intensive workloads |
+| Access | Via file system on mounted volume (plug-in) or via REST API from your app | Via file system on mounted volume or NFS client access to the volume. | Via REST API from your app. | 
+| Supported Kubernetes access writes |  \n - ReadWriteMany (RWX)  \n - ReadOnlyMany (ROX)  \n - ReadWriteOnce (RWO) | All | N/A as accessed from the app directly. | 
+| Performance | High for read operations. Predictable due to assigned IOPS and size when you use non-SDS machines. |Close to bare metal performance for sequential read and write operations when you use SDS machines. Provides [profiles](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/dynamic-provisioning/#using-dynamic-provisioning){: external} to run high-performance databases. Possibility to create a storage layer with different performance profiles that your app can choose from.| High if deployed to the same data center as your app. |
+| Consistency| Eventual | Strong | Depends on the DBaaS | 
+| Durability | Very high as data slices are dispersed across a cluster of storage
+nodes. Every node stores only a part of the data. | Very high as three copies of your data are maintained at all times. | High | 
+| Resiliency | High as data slices are dispersed across three zones or regions. Medium, when set up in a single zone only. | High when set up with replication across three zones. Medium, when you store data in a single zone only. | Depends on the DBaaS and your setup. |
+| Availability | High due to the distribution across zones or regions. | High when you replicate data across three worker nodes in different zones. | High if you set up multiple instances. |
+| Scalability | Scales automatically | Increase volume capacity by resizing the volume. To increase overall storage layer capacity, you must add worker nodes or remote block storage. Both scenarios require monitoring of capacity by the user. | Scales automatically | 
+| Encryption | In transit and at rest | Bring your own key to protect your data in transit and at rest with {{site.data.keyword.keymanagementservicelong_notm}}. | At rest |
+| Backup and recovery| Data is automatically replicated across multiple nodes for high durability. For more information, see the SLA in the [{{site.data.keyword.cos_full_notm}} service terms](https://www.ibm.com/;www-03.ibm.com//software/sla/sladb.nsf/sla/bm-7857-03){: external}.  You can also use the  Kubernetes [`oc cp`](https://kubernetes.io/docs/reference/kubectl/overview/#cp){: external} command to copy data to and from pod and containers. | Use local or cloud snapshots to save the current state of a volume. For more information, see [Create and use local snapshots](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/){: external}. You can also use the  Kubernetes [`oc cp`](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command to copy data to and from pod and containers. | Depends on the DBaaS | 
+| Common use cases | Multizone clusters. Geographically distributed data. Static big data. Static multimedia content | Web apps | Backups | Archives | Stateful sets. Geographically distributed data. Common storage solution when you run apps across multiple cloud providers. Backing storage when you run your own database. High-performance access for single pods. Shared storage access across multiple pods and worker nodes. | Multizone clusters, relational and non-relational databases, or geographically distributed data. | 
+| Non-ideal use cases | Write-intensive workloads, random write operations, incremental data updates, or transaction databases. | N/A | App that is designed to write to a file system. | 
+{: caption: Persistent storage options for multizone clusters"}
+{: summary="The columns are read from left to right. The first column has the characteristic of the multizone persistent storage option. The second column describes the characteristic for object storage. The third column describes the characteristic for SDS Portworx storage. The fourth column describes the characteristic for database-as-a-service storage."}
+
 
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -41,16 +41,16 @@ With {{site.data.keyword.cloud_notm}}, you have flexibility to create {{site.dat
 
 | Workload | {{site.data.keyword.containershort_notm}} off-prem | on-prem |
 | --- | --- | --- |
-| DevOps enablement tools | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
-| Developing and testing apps | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
-| Apps have major shifts in demand and need to scale rapidly | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
-| Business apps such as CRM, HCM, ERP, and E-commerce | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
-| Collaboration and social tools such as email | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
-| RHEL workloads | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
-| Bare metal and GPU compute resources | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| PCI and HIPAA-compliant workloads | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Legacy apps with platform and infrastructure constraints and dependencies | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Proprietary apps with strict designs, licensing, or heavy regulations | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| DevOps enablement tools | Yes | |
+| Developing and testing apps | Yes | |
+| Apps have major shifts in demand and need to scale rapidly | Yes | |
+| Business apps such as CRM, HCM, ERP, and E-commerce | Yes | |
+| Collaboration and social tools such as email | Yes | |
+| RHEL workloads | Yes | |
+| Bare metal and GPU compute resources | Yes | Yes |
+| PCI and HIPAA-compliant workloads | Yes | Yes |
+| Legacy apps with platform and infrastructure constraints and dependencies | | Yes |
+| Proprietary apps with strict designs, licensing, or heavy regulations | | Yes |
 {: caption="{{site.data.keyword.cloud_notm}} implementations support your workloads" caption-side="top"}
 
 **Ready to run workloads off-premises in {{site.data.keyword.openshiftlong_notm}}?**

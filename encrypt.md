@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -94,14 +94,14 @@ To use the additional {{site.data.keyword.keymanagementserviceshort}} features:
 
 | {{site.data.keyword.keymanagementserviceshort}} feature | Cluster version earlier than `4.4.16_1513_openshift` | Cluster version `4.4.16_1513_openshift` or later |
 | --- | --- | --- |
-| You can enable the cluster to use {{site.data.keyword.keymanagementserviceshort}} root keys to encrypt secrets. | 3.11 and 4.4 only (not 4.3) | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| You must rewrite cluster secrets manually after rotating root keys in {{site.data.keyword.keymanagementserviceshort}}.  | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |
-| Cluster secrets are automatically updated after rotating root keys in {{site.data.keyword.keymanagementserviceshort}}. | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| You can view clusters that use the root key from the {{site.data.keyword.keymanagementserviceshort}} interface. | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Clusters automatically respond if you disable, enable, or restore root keys in {{site.data.keyword.keymanagementserviceshort}}. | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Disabling a root key restricts cluster functionality until you reenable the key. | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Deleting a root key makes the cluster unusable and unrecoverable. | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Root keys cannot be deleted if the key is used by a cluster. | | <img src="images/confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| You can enable the cluster to use {{site.data.keyword.keymanagementserviceshort}} root keys to encrypt secrets. | 3.11 and 4.4 only (not 4.3) | Yes |
+| You must rewrite cluster secrets manually after rotating root keys in {{site.data.keyword.keymanagementserviceshort}}.  | Yes | |
+| Cluster secrets are automatically updated after rotating root keys in {{site.data.keyword.keymanagementserviceshort}}. | | Yes |
+| You can view clusters that use the root key from the {{site.data.keyword.keymanagementserviceshort}} interface. | | Yes |
+| Clusters automatically respond if you disable, enable, or restore root keys in {{site.data.keyword.keymanagementserviceshort}}. | | Yes |
+| Disabling a root key restricts cluster functionality until you reenable the key. | Yes | Yes |
+| Deleting a root key makes the cluster unusable and unrecoverable. | Yes | Yes |
+| Root keys cannot be deleted if the key is used by a cluster. | | Yes |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="{{site.data.keyword.keymanagementserviceshort}} features by cluster version." caption-side="top"}
