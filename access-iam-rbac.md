@@ -78,7 +78,7 @@ Before you begin, verify that you're assigned the **Administrator** platform acc
     3. **Optional**: To scope the access policy to a resource group, select the resource group from the resource group drop-down list. If you want to scope the policy to a Kubernetes namespace, make sure to clear the resource group drop-down list. You cannot scope an access policy to both a Kubernetes namespace and a resource group at the same time.
     4. From the **Region** list, select one or all regions.
     5. From the **Cluster** `string equals` drop-down list, select the cluster that you want to scope the access policy to. To scope the policy to all clusters, clear or leave the field blank.
-    6. From the **Namespace** `string equals` field, enter the Kubernetes namespace that you want to scope the access policy to.<p class="note">You cannot scope an access policy to a namespace if you also scope the access policy to a resource group. Additionally, if you scope an access policy to a namespace, you must assign only a **service access** role. Do not assign a **platform access** role at the same time as you assign a service access role. Assign a platform access role separately.</p>
+    6. From the **Namespace** `string equals` field, enter the Kubernetes namespace that you want to scope the access policy to. Note that you cannot scope an access policy to a namespace if you also scope the access policy to a resource group. Additionally, if you scope an access policy to a namespace, you must assign only a **service access** role. Do not assign a **platform access** role at the same time as you assign a service access role. Assign a platform access role separately.
     7. Select roles for the access policy.
         - **Platform access role**: Grants access to {{site.data.keyword.openshiftlong_notm}} so that users can manage infrastructure resources such as clusters, worker nodes, worker pools, Ingress application load balancers, and storage. To find a list of supported actions per role, see [platform access roles reference page](/docs/containers?topic=containers-access_reference#iam_platform). Note that if you assign a user the **Administrator** platform access role for only one cluster, you must also assign the user the **Viewer** platform access role for all clusters in that region in the resource group.
         - **Service access role**: Grants access to the Kubernetes API from within a cluster so that users can manage Kubernetes resources such as pods, deployments, services, and namespaces. To find a list of supported actions per role, see [service access roles reference page](/docs/containers?topic=containers-access_reference#service). Do not assign a platform access role at the same time as you assign a service access role. If you also want the user to have a platform access role, repeat these steps but leave the namespace field blank and assign only a platform access role (do not assign a service access role again).
@@ -129,7 +129,7 @@ Resource group
 
 Cluster
 :   ClI option: `--service-instance`
-:   You can limit the policy to a single cluster. To list your cluster IDs, run `ibmcloud oc cluster ls`. Note that if you assign a user the **Administrator** platform access role for only one cluster, you must also assign the user the <strong>Viewer</strong> platform access role for all clusters in the region within the resource group.
+:   You can limit the policy to a single cluster. To list your cluster IDs, run `ibmcloud oc cluster ls`. Note that if you assign a user the **Administrator** platform access role for only one cluster, you must also assign the user the **Viewer** platform access role for all clusters in the region within the resource group.
 
 Region
 :   ClI option: `--region`
@@ -264,7 +264,7 @@ You cannot scope {{site.data.keyword.cloud_notm}} IAM service access roles to an
     {: caption="Table 1. Understanding options for service access role policy" caption-side="top"}
 
 3. Apply the {{site.data.keyword.cloud_notm}} IAM policy to an individual user.
-    * For individual users:
+    * For individual users
           ```sh
           ibmcloud iam user-policy-create <user@email.com> --file <filepath>/policy.json
           ```
@@ -684,10 +684,10 @@ subjects:
 ### Checking infrastructure roles
 {: #checking-infra}
 
-<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Check your {{site.data.keyword.cloud_notm}} classic infrastructure roles. For more information, see [Understanding access to the infrastructure portfolio](/docs/containers?topic=containers-access-creds#understand_infra).
+![Classic infrastructure provider icon.](images/icon-classic.png) Check your {{site.data.keyword.cloud_notm}} classic infrastructure roles. For more information, see [Understanding access to the infrastructure portfolio](/docs/containers?topic=containers-access-creds#understand_infra).
 {: shortdesc}
 
-<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC infrastructure permissions are managed with [IAM platform and service access roles](#checking-iam).
+![VPC infrastructure provider icon.](images/icon-vpc.png) VPC infrastructure permissions are managed with [IAM platform and service access roles](#checking-iam).
 {: note}
 
 If you are an administrator for the region and resource group, you might want to [check if the user's credentials are used for infrastructure permissions](#removing_check_infra), especially before removing the user.
