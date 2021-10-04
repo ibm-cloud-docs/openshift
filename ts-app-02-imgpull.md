@@ -19,8 +19,8 @@ content-type: troubleshoot
 {: #ts-app-image-pull}
 
 **Infrastructure provider**:
-* ![Classic infrastructure provider icon.](images/icon-classic.png) Classic
-* ![VPC infrastructure provider icon.](images/icon-vpc.png) VPC
+* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 
 When you deploy a workload that pulls an image from {{site.data.keyword.registrylong_notm}}, your pods fail with an **`ImagePullBackOff`** status.

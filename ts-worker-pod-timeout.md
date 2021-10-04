@@ -18,7 +18,7 @@ content-type: troubleshoot
 # Classic: Why do I see a timeout error when I try to log in to a pod on a new worker node?
 {: #cs_nodes_duplicate_ip}
 
-**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic.png) Classic
+**Infrastructure provider**: <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
 
 
 You deleted a worker node in your cluster and then added a worker node. When you deployed a pod or Kubernetes service, the resource cannot access the newly created worker node, and the connection times out.

@@ -44,7 +44,7 @@ Looking for a fast way to create a cluster from the UI? Try out [Automating clus
 
 
 
-![Classic infrastructure provider icon.](images/icon-classic.png) **Classic clusters**
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters**
 
 Classic cluster, shared virtual machine
 
@@ -79,7 +79,7 @@ ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> --work
 
 
 
-![VPC infrastructure provider icon.](images/icon-vpc.png) **VPC clusters**
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC clusters**
 
 VPC cluster.
 
@@ -119,9 +119,9 @@ Prepare your {{site.data.keyword.cloud_notm}} account for {{site.data.keyword.co
     * If you need to use the `ibmcloud oc cluster service bind` [command](/docs/containers-cli-plugin?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_service_bind) to [integrate with an {{site.data.keyword.cloud_notm}} service](/docs/containers?topic=containers-service-binding#bind-services), that service must be in the same resource group as the cluster. Services that do not use resource groups like {{site.data.keyword.registrylong_notm}} or that do not need service binding like {{site.data.keyword.la_full_notm}} work even if the cluster is in a different resource group.
     * Consider giving clusters unique names across resource groups and regions in your account to avoid naming conflicts. You cannot rename a cluster.
 
-4. ![Classic infrastructure provider icon.](images/icon-classic.png) **Classic clusters only**: Consider [creating a reservation](/docs/containers?topic=containers-reservations) to lock in a discount over 1 or 3 year terms for your worker nodes. After you create the cluster, add worker pools that use the reserved instances. Typical savings range between 30-50% compared to on-demand worker node costs.
+4. <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Classic clusters only**: Consider [creating a reservation](/docs/containers?topic=containers-reservations) to lock in a discount over 1 or 3 year terms for your worker nodes. After you create the cluster, add worker pools that use the reserved instances. Typical savings range between 30-50% compared to on-demand worker node costs.
 
-5. ![VPC infrastructure provider icon.](images/icon-vpc.png) **VPC clusters only**: Set up your IBM Cloud infrastructure networking to allow worker-to-master and user-to-master communication. Your VPC clusters are created with a public and a private cloud service endpoint by default.
+5. <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **VPC clusters only**: Set up your IBM Cloud infrastructure networking to allow worker-to-master and user-to-master communication. Your VPC clusters are created with a public and a private cloud service endpoint by default.
         1. Enable [VRF](/docs/account?topic=account-vrf-service-endpoint#vrf) in your IBM Cloud account.
         2. [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint).
         3. Optional: If you want your VPC clusters to communicate with classic clusters over the private network interface, you can choose to set up classic infrastructure access from the VPC that your cluster is in. Note that you can set up classic infrastructure access for only one VPC per region and [Virtual Routing and Forwarding (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) is required in your {{site.data.keyword.cloud_notm}} account. For more information, see [Setting up access to your Classic Infrastructure from VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure).
@@ -166,7 +166,7 @@ The following image walks you through choosing the setup that you want for your 
 ## Creating a standard classic cluster
 {: #clusters_standard}
 
-![Classic infrastructure provider icon.](images/icon-classic.png) Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console to create a fully-customizable standard cluster with your choice of hardware isolation and access to features like multiple worker nodes for a highly available environment.
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console to create a fully-customizable standard cluster with your choice of hardware isolation and access to features like multiple worker nodes for a highly available environment.
 {: shortdesc}
 
 
@@ -174,7 +174,7 @@ The following image walks you through choosing the setup that you want for your 
 ### Creating a standard classic cluster in the console
 {: #clusters_ui}
 
-![Classic infrastructure provider icon.](images/icon-classic.png) Create your single zone or multizone classic {{site.data.keyword.openshiftshort}} cluster by using the {{site.data.keyword.cloud_notm}} console.
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Create your single zone or multizone classic {{site.data.keyword.openshiftshort}} cluster by using the {{site.data.keyword.cloud_notm}} console.
 {: shortdesc}
 
 1. Make sure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level).
@@ -223,7 +223,7 @@ The following image walks you through choosing the setup that you want for your 
 ### Creating a standard classic cluster in the CLI
 {: #clusters_cli_steps}
 
-![Classic infrastructure provider icon.](images/icon-classic.png) Create your single zone or multizone classic cluster by using the {{site.data.keyword.cloud_notm}} CLI.
+<img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Create your single zone or multizone classic cluster by using the {{site.data.keyword.cloud_notm}} CLI.
 {: shortdesc}
 
 **Before you begin**:
@@ -399,13 +399,13 @@ Your cluster is ready for your workloads! You might also want to [add a tag to y
 ## Creating a standard VPC cluster
 {: #clusters_vpcg2}
 
-![VPC infrastructure provider icon.](images/icon-vpc.png) Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console to create a standard VPC cluster, and customize your cluster to meet the high availability and security requirements of your apps.
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console to create a standard VPC cluster, and customize your cluster to meet the high availability and security requirements of your apps.
 {: shortdesc}
 
 ### Creating a standard VPC cluster in the console
 {: #clusters_vpcg2_ui}
 
-![VPC infrastructure provider icon.](images/icon-vpc.png) Create your single zone or multizone VPC cluster by using the {{site.data.keyword.cloud_notm}} console.
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Create your single zone or multizone VPC cluster by using the {{site.data.keyword.cloud_notm}} console.
 {: shortdesc}
 
 Your VPC cluster is created with both a public and a private cloud service endpoint. Want to create a VPC cluster with no public cloud service endpoint and only a private cloud service endpoint? Create the cluster [in the CLI](#cluster_vpcg2_cli) instead, and include the `--disable-public-service-endpoint` flag.
@@ -472,7 +472,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
 ### Creating standard VPC clusters from the CLI
 {: #cluster_vpcg2_cli}
 
-![VPC infrastructure provider icon.](images/icon-vpc.png) Create your single zone or multizone VPC cluster by using the {{site.data.keyword.cloud_notm}} CLI.
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Create your single zone or multizone VPC cluster by using the {{site.data.keyword.cloud_notm}} CLI.
 {: shortdesc}
 
 **Before you begin**:
@@ -637,12 +637,12 @@ When the cluster is up and running, you can check out the following cluster admi
 - Control who can create pods in your cluster with [pod security policies](/docs/containers?topic=containers-psp).
 
 Then, you can check out the following network configuration steps for your cluster setup:
-* ![Classic infrastructure provider icon.](images/icon-classic.png) Classic clusters:
+* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic clusters:
     * Isolate networking workloads to edge worker nodes [in classic clusters without a gateway](/docs/containers?topic=containers-edge).
     * Expose your apps with [public networking services](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers) or [private networking services](/docs/openshift?topic=openshift-cs_network_planning#private_access).
     * Connect your cluster with services in private networks outside of your {{site.data.keyword.cloud_notm}} account by setting up [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) or the [strongSwan IPSec VPN service](/docs/containers?topic=containers-vpn).
     * Create Calico host network policies to isolate your cluster on the [public network](/docs/containers?topic=containers-network_policies#isolate_workers_public) and on the [private network](/docs/containers?topic=containers-network_policies#isolate_workers).
-* ![VPC infrastructure provider icon.](images/icon-vpc.png) VPC clusters:
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC clusters:
     * [Back up your internal image registry to {{site.data.keyword.cos_full_notm}}.](/docs/openshift?topic=openshift-registry#cos_image_registry)
     * Expose your apps with [public networking services](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers) or [private networking services](/docs/openshift?topic=openshift-cs_network_planning#private_access).
     * Connect your cluster with services in private networks outside of your {{site.data.keyword.cloud_notm}} account or with resources in other VPCs by [setting up the {{site.data.keyword.vpc_short}} VPN](/docs/containers?topic=containers-vpc-vpnaas).

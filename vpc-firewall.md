@@ -17,7 +17,7 @@ subcollection: openshift
 # VPC: Opening required ports and IP addresses in other network firewalls
 {: #vpc-firewall}
 
-![VPC infrastructure provider icon.](images/icon-vpc.png) This firewall information is specific to VPC clusters. For firewall information for classic clusters, see [Opening required ports and IP addresses in your firewall for classic clusters](/docs/containers?topic=containers-firewall).
+<img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> This firewall information is specific to VPC clusters. For firewall information for classic clusters, see [Opening required ports and IP addresses in your firewall for classic clusters](/docs/containers?topic=containers-firewall).
 {: note}
 
 ## Opening ports in a corporate firewall

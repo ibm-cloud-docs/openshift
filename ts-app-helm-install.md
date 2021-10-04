@@ -19,8 +19,8 @@ content-type: troubleshoot
 {: #ts-app-helm-install}
 
 **Infrastructure provider**:
-* ![Classic infrastructure provider icon.](images/icon-classic.png) Classic
-* ![VPC infrastructure provider icon.](images/icon-vpc.png) VPC
+* <img src="images/icon-classic.png" alt="Classic infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Classic
+* <img src="images/icon-vpc.png" alt="VPC infrastructure provider icon" width="15" style="width:15px; border-style: none"/> VPC
 
 
 When you try to install an updated Helm chart by running `helm install <release_name> <helm_repo>/<chart_name> -f config.yaml`, you get the following error message.
