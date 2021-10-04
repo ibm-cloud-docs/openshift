@@ -1339,6 +1339,8 @@ subcollection: openshift
 
 * [Adding a private registry to the global pull secret](/docs/openshift?topic=openshift-registry#cluster_global_pull_secret)
 
+* [Updating your cluster's containerd registry host configuration](/docs/openshift?topic=openshift-registry#update_containerd_registry_config)
+
 [Setting up continuous integration and delivery](/docs/openshift?topic=openshift-cicd#cicd)
 
 * [Supported automation tools](/docs/openshift?topic=openshift-cicd#cicd_strategy)
@@ -3101,7 +3103,7 @@ subcollection: openshift
 
 * [Running the worker node CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test)
 
-* [Benchmark 1.5 results for {{site.data.keyword.openshiftshort}} versions 4.6 and 4.7](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15)
+* [Benchmark 1.5 results for {{site.data.keyword.openshiftshort}} versions 4.6 - 4.8](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15)
 
     * [Section 1: Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-1)
 

@@ -1168,8 +1168,6 @@ Wondering what to do next? You can [set up the **entitled** Helm chart repositor
 
 
 
-
-
 ## Adding a private registry to the global pull secret
 {: #cluster_global_pull_secret}
 
@@ -1320,4 +1318,11 @@ To add private registries, edit the global `pull-secret` in the `openshift-confi
         vi /.docker/config.json
         ```
         {: pre}
+
+
+
+## Updating your cluster's containerd registry host configuration
+{: #update_containerd_registry_config}
+
+You can configure a daemonset to update the containerd registry host configurations across all nodes in a cluster. To get started, see the [example daemonset](https://github.com/IBM-Cloud/kube-samples/blob/master/containerd-registry-daemonset-example){: external} to configure a dockerhub registry config file. For more information on containerd registry configurations, see the [containerd documentation](https://github.com/containerd/containerd/blob/v1.5.6/docs/hosts.md).
 

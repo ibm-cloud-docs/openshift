@@ -166,7 +166,7 @@ Keep in mind that some services such as Ingress might require multiple worker no
 {{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.openshiftshort}}. The worker node operating system is Red Hat Enterprise Linux 7.
 
 **Supported versions**:
-* Latest: 4.8 (Kubernetes 1.22)
+* Latest: 4.8 (Kubernetes 1.21)
 * Default: 4.7 (Kubernetes 1.20)
 
 **Deprecated and unsupported versions**:
