@@ -258,7 +258,7 @@ toc:
       - topicgroup:
           label: IAM and Activity Tracker events
           topics:
-            - users-access_ref.md
+            - users-access-ref.md
             - at-events.md
             - api-at-iam.md
       - locations.md
