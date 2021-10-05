@@ -963,10 +963,10 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
 `matchLabels.app` and `labels.app`
 :   In the spec selector and in the spec template metadata sections, enter a label for your app.
 
-:   `image`
+`image`
 :   The name of the container image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`.
 
-:   `name`
+`name`
 :   The name of the container that you want to deploy to your cluster.
 
 `runAsUser`
@@ -975,10 +975,10 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
 `mountPath`
 :   In the spec containers volume mounts section, enter the absolute path of the directory to where the volume is mounted inside the container. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.
 
-`name`
+`volumeMounts.name`
 :   In the spec containers volume mounts section, enter the name of the volume to mount to your pod.
 
-`name`
+`volumes.name`
 :   In the volumes section, enter the name of the volume to mount to your pod. Typically this name is the same as `volumeMounts/name`.
 
 `claimName`
