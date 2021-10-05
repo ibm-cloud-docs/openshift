@@ -42,7 +42,7 @@ Refer to the following tables for a summary of changes for each version of the [
 {: summary="The rows are read from left to right. The first column is the Object Storage plug-in version. The second column is the version's supported state. The third column is the version of your cluster that the Object Storage plug-in version is supported for."}
 
 
-## Changelog for version 2.1.5, released 4 October 2021
+## Changelog for version 2.1.5, released 5 October 2021
 {: #0215_object_plugin}
 
 Review the changes in version 2.1.5 of the {{site.data.keyword.cos_full_notm}} plug-in.

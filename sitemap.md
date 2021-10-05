@@ -185,9 +185,7 @@ subcollection: openshift
 
 [October 2021](/docs/openshift?topic=openshift-rel-notes#release-oct-2021)
 
-* [6 October 2021](/docs/openshift?topic=openshift-rel-notes#6oct2021)
-
-* [4 October 2021](/docs/openshift?topic=openshift-rel-notes#4oct2021)
+* [5 October 2021](/docs/openshift?topic=openshift-rel-notes#5oct2021)
 
 [September 2021](/docs/openshift?topic=openshift-rel-notes#release-sep-2021)
 
@@ -3239,7 +3237,7 @@ subcollection: openshift
 
 [Object storage plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 
-* [Changelog for version 2.1.5, released 4 October 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0215_object_plugin)
+* [Changelog for version 2.1.5, released 5 October 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0215_object_plugin)
 
 * [Changelog for version 2.1.4, released 1 September 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0214_object_plugin)
 
