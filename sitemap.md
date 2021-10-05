@@ -3167,6 +3167,42 @@ subcollection: openshift
 
     * [Explanation and remediation](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-remediation)
 
+[Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
+
+* [Version 1.0.3](/docs/openshift?topic=openshift-ca_changelog#0103_ca_addon)
+
+    * [Changelog for patch update 1.0.3_360, released 26 August 2021](/docs/openshift?topic=openshift-ca_changelog#103360_ca)
+
+    * [Changelog for patch update 1.0.3_352, released 23 June 2021](/docs/openshift?topic=openshift-ca_changelog#103352_ca)
+
+* [Version 1.0.2](/docs/openshift?topic=openshift-ca_changelog#0102_ca_addon)
+
+    * [Changelog for patch update 1.0.2_267, released 10 May 2021](/docs/openshift?topic=openshift-ca_changelog#102267_ca)
+
+    * [Changelog for patch update 1.0.2_256, released 19 April 2021](/docs/openshift?topic=openshift-ca_changelog#102256_ca)
+
+    * [Changelog for patch update 1.0.2_249, released 01 April 2021](/docs/openshift?topic=openshift-ca_changelog#102249_ca)
+
+    * [Changelog for patch update 1.0.2_224, released 09 March 2021](/docs/openshift?topic=openshift-ca_changelog#10224_ca)
+
+* [Version 1.0.1](/docs/openshift?topic=openshift-ca_changelog#0101_ca_addon)
+
+    * [Changelog for patch update 1.0.1_219, released 16 February 2021](/docs/openshift?topic=openshift-ca_changelog#101219_ca)
+
+    * [Changelog for patch update 1.0.1_210, released 13 January 2021](/docs/openshift?topic=openshift-ca_changelog#101210_ca)
+
+    * [Changelog for patch update 1.0.1_205, released 15 December 2020](/docs/openshift?topic=openshift-ca_changelog#101205_ca)
+
+    * [Changelog for patch update 1.0.1_195, released 10 December 2020](/docs/openshift?topic=openshift-ca_changelog#101195_ca)
+
+    * [Changelog for patch update 1.0.1_146, released 03 December 2020](/docs/openshift?topic=openshift-ca_changelog#101146_ca)
+
+    * [Changelog for patch update 1.0.1_128, released 27 October 2020](/docs/openshift?topic=openshift-ca_changelog#101128_ca)
+
+    * [Changelog for patch update 1.0.1_124, released 16 October 2020](/docs/openshift?topic=openshift-ca_changelog#101124_ca)
+
+    * [Changelog for patch update 1.0.1_114, released 10 September 2020](/docs/openshift?topic=openshift-ca_changelog#101114_ca)
+
 [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog#vpc_bs_changelog)
 
 * [Version 4.0](/docs/openshift?topic=openshift-vpc_bs_changelog#0400_is_block)

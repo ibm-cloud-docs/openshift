@@ -26,8 +26,15 @@ For information about releases that occured before August 30th, see [Release not
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status){: external}.
 {: note}
 
+
+
 ## October 2021
 {: #release-oct-2021}
+
+Review the release notes for October 2021.
+{: shortdesc}
+
+
 
 ### 4 October 2021
 {: #4oct2021}

@@ -246,7 +246,7 @@ toc:
             - openshift_versions.md
             - openshift_versions_changelog.md
             - benchmarks.md
-            - openshift_versions_autoscaler.md
+            - versions-autoscaler.md
             - versions-vpc-block-addon.md
             - versions-object.md
             - versions-static-route.md
