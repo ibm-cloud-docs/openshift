@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-05"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -25,6 +25,15 @@ For information about releases that occured before August 30th, see [Release not
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status){: external}.
 {: note}
+
+## October 2021
+{: #release-oct-2021}
+
+### 4 October 2021
+{: #4oct2021}
+
+{{site.data.keyword.cos_full_notm}} plug-in.
+:   [Version 2.1.5](/docs/containers?topic=containers-cos_plugin_changelog) is released.
 
 
 ## September 2021
