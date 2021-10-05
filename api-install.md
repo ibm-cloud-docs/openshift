@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-05"
 
 keywords: openshift, roks, rhoks, rhos, api
 
@@ -212,15 +212,21 @@ Federated ID
     :    - `grant_type: urn:ibm:params:oauth:grant-type:apikey`
          - `response_type: cloud_iam uaa` 
          - `apikey`: Your {{site.data.keyword.cloud_notm}} API key. 
-         - `uaa_client_ID: cf` \n - `uaa_client_secret:`
+         - `uaa_client_ID: cf` 
+         - `uaa_client_secret:`
              Add the `uaa_client_secret` key with no value specified.
              {: note}
          - `bss_account`: The {{site.data.keyword.cloud_notm}} account ID that you retrieved in the previous step.
          
     Body for {{site.data.keyword.cloud_notm}} one-time passcode
-    :    - `grant_type: urn:ibm:params:oauth:grant-type:passcode` \n 
-    - `response_type: cloud_iam uaa` \n - `passcode`: Your {{site.data.keyword.cloud_notm}} passcode. \n - `uaa_client_ID: cf` \n - `uaa_client_secret:` \n - `bss_account`: The {{site.data.keyword.cloud_notm}} account ID that you retrieved in the previous step. \n **Note**: Add the `uaa_client_secret` key with no value specified.
-    {: caption="Table 2. Input parameters for API request." caption-side="top"}
+    :    - `grant_type: urn:ibm:params:oauth:grant-type:passcode`
+         - `response_type: cloud_iam uaa`
+         - `passcode`: Your {{site.data.keyword.cloud_notm}} passcode. 
+         - `uaa_client_ID: cf` 
+         - `uaa_client_secret:` 
+         - `bss_account`: The {{site.data.keyword.cloud_notm}} account ID that you retrieved in the previous step. 
+             Add the `uaa_client_secret` key with no value specified.
+             {: note}
 
     The following example shows output for the API request.
 

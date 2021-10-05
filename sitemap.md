@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-05"
 
 keywords: openshift
 subcollection: openshift
@@ -2396,9 +2396,9 @@ subcollection: openshift
 
     * [`ibmcloud oc cluster addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable)
 
-    * [<code>ibmcloud oc cluster addon enable</code>](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable)
+    * [`ibmcloud oc cluster addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable)
 
-    * [<code>ibmcloud oc cluster addon get</code>](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_get)
+    * [`ibmcloud oc cluster addon get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_get)
 
     * [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addons)
 
@@ -2482,7 +2482,7 @@ subcollection: openshift
 
     * [`ibmcloud oc worker-pool create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2)
 
-    * [<code>ibmcloud oc worker-pool get</code>](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_get)
+    * [`ibmcloud oc worker-pool get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_get)
 
     * [`ibmcloud oc worker-pool label rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_rm)
 
