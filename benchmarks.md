@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-05"
 
 keywords: openshift, roks
 
@@ -212,7 +212,7 @@ Review the benchmark results for the master node security configuration subsecti
 | 1.2.13 | Ensure that the admission control plug-in `SecurityContextDeny` is set if `PodSecurityPolicy` is not used. | Not Scored | 1 | [Pass](#cis-benchmark-15-remediation) | IBM |
 | 1.2.14 | Ensure that the admission control plug-in `ServiceAccount` is set. | Scored | 1 | Pass | IBM |
 | 1.2.15 | Ensure that the admission control plug-in `NamespaceLifecycle` is set. | Scored | 1 | Pass | IBM |
-| 1.2.16 | Ensure that the admission control plug-in `PodSecurityPolicy` is set. | Scored | 1 | [Fail](#cis-benchmark-15-remediation) | IBM |
+| 1.2.16 | Ensure that the admission control plug-in `PodSecurityPolicy` is set. | Scored | 1 | [Pass](#cis-benchmark-15-remediation) | IBM |
 | 1.2.17 | Ensure that the admission control plug-in `NodeRestriction` is set. | Scored | 1 | Pass | IBM |
 | 1.2.18 | Ensure that the `--insecure-bind-address` argument is not set. | Scored | 1 | Pass | IBM |
 | 1.2.19 | Ensure that the `--insecure-port` argument is set to `0`. | Scored | 1 | Pass | IBM |

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-05"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -45,17 +45,15 @@ ibmcloud oc cluster addon versions --addon cluster-autoscaler
 {: summary="The rows are read from left to right. The first column is the cluster autoscaler add-on version. The second column is the version's supported state. The third column is the cluster version of your cluster that the cluster autoscaler version is supported for."}
 
 
+
+
+
 ## Version 1.0.3
 {: #0103_ca_addon}
 
 Review the changes included in version 1.0.3 of the managed cluster autoscaler add-on.
 {: shortdesc}
 
-To view a list of add-ons and the supported cluster versions, run the following command.
-```sh
-ibmcloud oc addon-versions
-```
-{: pre}
 
 
 ### Changelog for patch update 1.0.3_360, released 26 August 2021
@@ -107,11 +105,7 @@ Review the changes in version `1.0.3_352` of the cluster autoscaler add-on.
 Review the changes that are included in version 1.0.2 of the managed cluster autoscaler add-on.
 {: shortdesc}
 
-To view a list of add-ons and the supported cluster versions, run the following command.
-```sh
-ibmcloud oc addon-versions
-```
-{: pre}
+
 
 ### Changelog for patch update 1.0.2_267, released 10 May 2021
 {: #102267_ca}
@@ -161,11 +155,7 @@ Review the changes in version `1.0.2_224` of the cluster autoscaler add-on.
 Review the changes that are included in version 1.0.1 of the managed cluster autoscaler add-on.  
 {: shortdesc}
 
-To view a list of add-ons and the supported cluster versions, run the following command.
-```sh
-ibmcloud oc addon-versions
-```
-{: pre}
+
 
 ### Changelog for patch update 1.0.1_219, released 16 February 2021
 {: #101219_ca}

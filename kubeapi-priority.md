@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-05"
 
 keywords: openshift, roks
 
@@ -29,6 +29,8 @@ The Kubernetes API priority and feature gate is enabled in clusters that run {{s
 
 {{site.data.keyword.openshiftlong_notm}} sets certain default flow schema and priority levels in addition to the default settings from Kubernetes.
 {: shortdesc}
+
+
 
 You can create your own flow schema and priorities, but do not modify the default settings. Unexpected results might occur in your cluster when you modify API request priorities.
 {: important}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-05"
 
 keywords: openshift
 subcollection: openshift
@@ -182,6 +182,10 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-rel-notes#rel-notes)
+
+[October 2021](/docs/openshift?topic=openshift-rel-notes#release-oct-2021)
+
+* [5 October 2021](/docs/openshift?topic=openshift-rel-notes#5oct2021)
 
 [September 2021](/docs/openshift?topic=openshift-rel-notes#release-sep-2021)
 
@@ -2396,9 +2400,9 @@ subcollection: openshift
 
     * [`ibmcloud oc cluster addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable)
 
-    * [<code>ibmcloud oc cluster addon enable</code>](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable)
+    * [`ibmcloud oc cluster addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable)
 
-    * [<code>ibmcloud oc cluster addon get</code>](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_get)
+    * [`ibmcloud oc cluster addon get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_get)
 
     * [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addons)
 
@@ -2482,7 +2486,7 @@ subcollection: openshift
 
     * [`ibmcloud oc worker-pool create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2)
 
-    * [<code>ibmcloud oc worker-pool get</code>](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_get)
+    * [`ibmcloud oc worker-pool get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_get)
 
     * [`ibmcloud oc worker-pool label rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_rm)
 
@@ -3163,6 +3167,42 @@ subcollection: openshift
 
     * [Explanation and remediation](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-remediation)
 
+[Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
+
+* [Version 1.0.3](/docs/openshift?topic=openshift-ca_changelog#0103_ca_addon)
+
+    * [Changelog for patch update 1.0.3_360, released 26 August 2021](/docs/openshift?topic=openshift-ca_changelog#103360_ca)
+
+    * [Changelog for patch update 1.0.3_352, released 23 June 2021](/docs/openshift?topic=openshift-ca_changelog#103352_ca)
+
+* [Version 1.0.2](/docs/openshift?topic=openshift-ca_changelog#0102_ca_addon)
+
+    * [Changelog for patch update 1.0.2_267, released 10 May 2021](/docs/openshift?topic=openshift-ca_changelog#102267_ca)
+
+    * [Changelog for patch update 1.0.2_256, released 19 April 2021](/docs/openshift?topic=openshift-ca_changelog#102256_ca)
+
+    * [Changelog for patch update 1.0.2_249, released 01 April 2021](/docs/openshift?topic=openshift-ca_changelog#102249_ca)
+
+    * [Changelog for patch update 1.0.2_224, released 09 March 2021](/docs/openshift?topic=openshift-ca_changelog#10224_ca)
+
+* [Version 1.0.1](/docs/openshift?topic=openshift-ca_changelog#0101_ca_addon)
+
+    * [Changelog for patch update 1.0.1_219, released 16 February 2021](/docs/openshift?topic=openshift-ca_changelog#101219_ca)
+
+    * [Changelog for patch update 1.0.1_210, released 13 January 2021](/docs/openshift?topic=openshift-ca_changelog#101210_ca)
+
+    * [Changelog for patch update 1.0.1_205, released 15 December 2020](/docs/openshift?topic=openshift-ca_changelog#101205_ca)
+
+    * [Changelog for patch update 1.0.1_195, released 10 December 2020](/docs/openshift?topic=openshift-ca_changelog#101195_ca)
+
+    * [Changelog for patch update 1.0.1_146, released 03 December 2020](/docs/openshift?topic=openshift-ca_changelog#101146_ca)
+
+    * [Changelog for patch update 1.0.1_128, released 27 October 2020](/docs/openshift?topic=openshift-ca_changelog#101128_ca)
+
+    * [Changelog for patch update 1.0.1_124, released 16 October 2020](/docs/openshift?topic=openshift-ca_changelog#101124_ca)
+
+    * [Changelog for patch update 1.0.1_114, released 10 September 2020](/docs/openshift?topic=openshift-ca_changelog#101114_ca)
+
 [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog#vpc_bs_changelog)
 
 * [Version 4.0](/docs/openshift?topic=openshift-vpc_bs_changelog#0400_is_block)
@@ -3196,6 +3236,8 @@ subcollection: openshift
     * [Changelog for patch update 2.0.3_365, released 05 August 2020](/docs/openshift?topic=openshift-vpc_bs_changelog#203365_is_block)
 
 [Object storage plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Changelog for version 2.1.5, released 5 October 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0215_object_plugin)
 
 * [Changelog for version 2.1.4, released 1 September 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0214_object_plugin)
 
@@ -3240,6 +3282,26 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0)
+
+* [Changelog for version 1.0.0_690, released 6 October 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0690)
+
+* [Changelog for version 1.0.0_627, released 23 August 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0627)
+
+* [Changelog for version 1.0.0_614, released 10 August 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0614)
+
+* [Changelog for version 1.0.0_575, released 23 July 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0575)
+
+* [Changelog for version 1.0.0_549, released 17 June 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0549)
+
+* [Changelog for version 1.0.0_529, released 2 June 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0529)
+
+* [Changelog for version 1.0.0_485, released 28 April 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0485)
+
+* [Changelog for version 1.0.0_473, released 19 April 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0473)
+
+* [Changelog for version 1.0.0_461, released 14 April 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0461)
+
+* [Changelog for version 1.0.0_438, released 30 March 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0438)
 
 [Archived {{site.data.keyword.openshiftshort}} version changelogs](/docs/openshift?topic=openshift-changelog_archive#changelog_archive)
 

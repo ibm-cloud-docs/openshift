@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-05"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -25,6 +25,29 @@ For information about releases that occured before August 30th, see [Release not
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status){: external}.
 {: note}
+
+
+
+## October 2021
+{: #release-oct-2021}
+
+Review the release notes for October 2021.
+{: shortdesc}
+
+
+
+### 5 October 2021
+{: #5oct2021}
+
+Updated supported, deprecated, and unsupported versions for strongSwan Helm chart.
+:   [Upgrading or disabling the strongSwan Helm chart](/docs/containers?topic=containers-vpn#vpn_upgrade)
+
+
+{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog.
+:   [Version 1.0.0_690](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0690) is released.
+
+{{site.data.keyword.cos_full_notm}} plug-in.
+:   [Version 2.1.5](/docs/containers?topic=containers-cos_plugin_changelog) is released.
 
 
 ## September 2021
@@ -202,7 +225,4 @@ Review the release notes for 30 August 2021.
 
 Worker node fix pack update
 :   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.43_1554_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4643_1554), [`4.7.24_1530_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4724_1530), and [`3.11.501_1602_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311501_1602).
-
-
-
 

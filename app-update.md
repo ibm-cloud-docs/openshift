@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-05"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, update, upgrade
 
@@ -125,7 +125,7 @@ To manage rolling updates to your apps,
     :   Set a timeout in seconds before a deployment is considered failed. For example, without a timeout, if your new app version has a bug and hangs immediately, the rollout cannot continue because the pod never reaches a `ready` state. If you set this timeout to `600` seconds, then if any phase of the rollout fails to progress for 10 minutes, the deployment is marked as failed and the rollout stops.</td>
 
     `spec.strategy.type``
-    :   Specify the `RollingUpdate` strategy type.</td>
+    :   Specify the `RollingUpdate` strategy type.
 
     `spec.strategy.rollingUpdate.maxUnavailable`
     :   Set the maximum number of pods that can be unavailable during an update, as a number (`2`) or percentage (`50%`). Generally, use a percentage so that if you change the number of replicas later you don't have to remember to update the number here, unless you want to limit the rollout to allow only one pod to be down at a time. If you never want to fall below 100% capacity, set this value to `0%` and specify the `spec.strategy.type.rollingUpdate.maxSurge` parameter.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-05"
 
 keywords: openshift, roks, rhoks, rhos, responsibilities, incident, operations, change, security, regulation, disaster recovery, management, RACI
 
@@ -142,7 +142,5 @@ You are completely responsible for the applications, workloads, and data that yo
 | Data | <ul><li>Maintain <a href="/docs/overview?topic=overview-security">platform-level standards</a> so that your data can be stored with controls commensurate to leading international security compliance standards.</li><li>Provision clusters with {{site.data.keyword.openshiftshort}} components installed so that you can access the {{site.data.keyword.openshiftshort}} API to help manage your app data, such as with secrets and configmaps.</li><li>Integrate with {{site.data.keyword.cloud_notm}} services that you can use to store and manage your data, such as {{site.data.keyword.cloud_notm}} Databases or {{site.data.keyword.cos_short}}.</li><li>Integrate with {{site.data.keyword.ibmwatson_notm}} services that you can use to maximize the insights and use of your data with the latest artificial intelligence technology.</li></ul>| <ul><li>Maintain responsibility for your data and how your apps consume the data.</li></ul>
 {: summary="The rows are read from left to right. The resource area of comparing responsibilities is in the first column, with the responsibilities of IBM in the second column and your responsibilities in the third column."}
 {: caption="Table 7. Applications and data" caption-side="top"}
-
-
 
 

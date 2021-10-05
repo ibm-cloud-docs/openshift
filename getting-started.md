@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-05"
 
 keywords: red hat openshift, red hat openshift on ibm cloud, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters, roks, rhoks, rhos
 
@@ -142,7 +142,7 @@ To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {
     <div class="solutionBox">
     <a href = "#clusters_gs">
     <div>
-            <p><strong>![Classic infrastructure provider icon.](images/icon-classic-2.svg) Create a classic cluster</strong></p>
+            <p><strong>Create a classic cluster</strong></p>
             <p class="bx--type-caption">Create an {{site.data.keyword.openshiftshort}} cluster on {{site.data.keyword.cloud_notm}} classic workers nodes, subnets, and VLAN networking. Choose from a variety of virtual, bare metal, or software-defined storage flavors.</p>
     </div>
     </a>
@@ -150,7 +150,7 @@ To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {
     <div class="solutionBox">
         <a href = "#vpc-gen2-gs">
         <div>
-            <p><strong>![VPC infrastructure provider icon.](images/icon-vpc-2.svg) Create a VPC cluster</strong></p>
+            <p><strong>Create a VPC cluster</strong></p>
             <p class="bx--type-caption">Create your cluster on the second generation of compute resources in a Virtual Private Cloud (VPC) that gives you the security of a private cloud with the scalability of a public cloud.</p>
         </div>
     </a>
@@ -158,7 +158,7 @@ To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {
     <div class="solutionBox">
     <a href = "#deploy-app">
     <div>
-            <p><strong><img src="images/icon-containers-bw.svg" alt="{{site.data.keyword.openshiftshort}} Container icon" width="15" style="width:15px; border-style: none"/> Deploy and expose an app</strong></p>
+            <p><strong>Deploy and expose an app</strong></p>
             <p class="bx--type-caption">In your {{site.data.keyword.openshiftshort}} cluster, deploy a sample app from a container image that is stored in Docker Hub. Then, expose it with a router to get an IP address for quick testing of your first app.</p>
     </div>
     </a>

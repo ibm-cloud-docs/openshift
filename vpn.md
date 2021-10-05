@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-05"
 
 keywords: openshift, roks, rhos, rhoks, strongswan, ipsec, on-prem
 
@@ -74,7 +74,7 @@ Before using the strongSwan Helm chart, review the following considerations and 
 - The strongSwan Helm chart runs as a Kubernetes pod inside of the cluster. The VPN performance is affected by the memory and network usage of Kubernetes and other pods that are running in the cluster. If you have a performance-critical environment, consider using a VPN solution that runs outside of the cluster on dedicated hardware.
 - The strongSwan Helm chart runs a single VPN pod as the IPSec tunnel endpoint. If the pod fails, the cluster restarts the pod. However, you might experience a short down time while the new pod starts and the VPN connection is re-established. If you require faster error recovery or a more elaborate high availability solution, consider using a VPN solution that runs outside of the cluster on dedicated hardware.
 - The strongSwan Helm chart does not provide metrics or monitoring of the network traffic flowing over the VPN connection. For a list of supported monitoring tools, see [Logging and monitoring services](/docs/openshift?topic=openshift-health).
-- Only strongSwan Helm chart versions that were released in the last 6 months are supported. Ensure that you consistently [upgrade your strongSwan Helm chart](/docs/containers?topic=containers-vpn#vpn_upgrade) for the latest features and security fixes.
+- Only strongSwan Helm chart versions that were released in the last 6 months are supported. Ensure that you consistently [upgrade your strongSwan Helm chart](#vpn_upgrade) for the latest features and security fixes.
 
 Your cluster users can use the strongSwan VPN service to connect to your Kubernetes master through the private cloud service endpoint. However, communication with the Kubernetes master over the private cloud service endpoint must go through the <code>166.X.X.X</code> IP address range, which is not routable from a VPN connection. You can expose the private cloud service endpoint of the master for your cluster users by [using a private network load balancer (NLB)](/docs/openshift?topic=openshift-access_cluster#access_private_se). The private NLB exposes the private cloud service endpoint of the master as an internal `172.21.x.x` cluster IP address that the strongSwan VPN pod can access. If you enable only the private cloud service endpoint, you can use the Kubernetes dashboard or temporarily enable the public cloud service endpoint to create the private NLB.
 {: tip}
@@ -359,7 +359,7 @@ Deploy the strongSwan Helm chart in your cluster with the configurations that yo
     ```
     {: pre}
 
-Only strongSwan Helm chart versions that were released in the last 6 months are supported. Ensure that you consistently [upgrade your strongSwan Helm chart](/docs/containers?topic=containers-vpn#vpn_upgrade) for the latest features and security fixes.
+Only strongSwan Helm chart versions that were released in the last 6 months are supported. Ensure that you consistently [upgrade your strongSwan Helm chart](#vpn_upgrade) for the latest features and security fixes.
 {: important}
 
 
@@ -641,16 +641,16 @@ Ensure that you consistently upgrade your strongSwan Helm chart for the latest f
 {: shortdesc}
 
 Review the supported versions of the strongSwan Helm chart. Typically, a chart version becomes deprecated 6 months after its release date.
-- **Supported**: 2.7.2, 2.7.1, 2.7.0, 2.6.9, 2.6.8, 2.6.7
-- **Deprecated**: 2.6.6, 2.6.5, 2.6.4, 2.6.3
-- **Unsupported**: 2.6.2 and earlier
+- **Supported**: 2.7.9, 2.7.8, 2.7.7, 2.7.6, 2.7.5, 2.7.4, 2.7.3, 2.7.2
+- **Deprecated**: 2.7.1, 2.7.0, 2.6.9, 2.6.8, 2.6.7
+- **Unsupported**: 2.6.6 and earlier
 
 For release dates and changelogs for each strongSwan Helm chart version, run `helm show readme iks-charts/strongswan` and look for the `Version History` section.
 
-To upgrade your strongSwan Helm chart to the latest version:
+To upgrade your strongSwan Helm chart to the latest version, use the **`helm upgrade`** command.
 
 ```sh
-helm upgrade -f config.yaml <release_name> ibm/strongswan
+helm upgrade -f config.yaml <release_name> iks-charts/strongswan
 ```
 {: pre}
 

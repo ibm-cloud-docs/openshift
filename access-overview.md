@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-05"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -52,12 +52,16 @@ For more information about setting up your account and resources, try out this t
 Besides {{site.data.keyword.cloud_notm}} IAM access control policies that you set up, you might explore the additional ways to control how your cluster can be accessed.
 {: shortdesc}
 
-**Cluster network setup**
+#### Cluster network setup
+{: #access-checklist-other-network}
+
 - Cloud service endpoints: You might consider creating a cluster with only a private cloud service endpoint for communication to the cluster's API server. You can also [create an allowlist for the private cloud service endpoint](/docs/containers?topic=containers-access_cluster#private-se-allowlist) to limit access to your cluster from only the allowed subnets. For more information, see the different service architecture setups for [classic](/docs/containers?topic=containers-service-arch#architecture_classic) or [VPC](/docs/containers?topic=containers-service-arch#architecture_vpc) clusters.
 - Classic network: See [Network segmentation and privacy for classic clusters](/docs/containers?topic=containers-security#network_segmentation).
 - VPC network: See [Network segmentation and privacy for VPC clusters](/docs/containers?topic=containers-security#network_segmentation_vpc).
 
-**Kubernetes resources within the cluster**
+#### Kubernetes resources within the cluster
+{: #access-checklist-other-kube}
+
 - Pod-to-pod network traffic control: Consider using [Kubernetes network policies and Calico](/docs/containers?topic=containers-network_policies).
 - {{site.data.keyword.openshiftshort}} resources for pod-level control: See [Configuring security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc#oc_sccs).
 
@@ -79,7 +83,6 @@ You must define access policies for every user that works with {{site.data.keywo
 The following image shows the different types of permissions and roles, the actions a role can perform, and how the roles relate to each other.
 
 ![In {{site.data.keyword.cloud_notm}}, you can assign IAM platform, IAM service, Cloud Foundry, and infrastructure roles.](images/user_access.png "Assign IAM platform, IAM service, Cloud Foundry, and infrastructure roles"){: caption="Figure 1.Aassign IAM platform, IAM service, Cloud Foundry, and infrastructure roles" caption-side="bottom"}
-<img src="images/user_access.png" alt="In {{site.data.keyword.cloud_notm}}, you can assign IAM platform, IAM service, Cloud Foundry, and infrastructure roles." style="border-style: none"/>
 
 To see the specific {{site.data.keyword.openshiftlong_notm}} permissions that can be performed with each role, check out the [User access permissions](/docs/openshift?topic=openshift-access_reference) reference topic.
 {: tip}

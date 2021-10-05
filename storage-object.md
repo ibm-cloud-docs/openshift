@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-05"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -159,7 +159,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
         ```sh
         OK
         ID                                                  Public IP        Private IP     Machine Type           State    Status   Zone    Version
-        kube-dal10-crb1a23b456789ac1b20b2nc1e12b345ab-w26   169.xx.xxx.xxx    10.xxx.xx.xxx   b3c.4x16.encrypted     normal   Ready    dal10   1.21.5_1523*
+        kube-dal10-crb1a23b456789ac1b20b2nc1e12b345ab-w26   169.xx.xxx.xxx    10.xxx.xx.xxx   b3c.4x16.encrypted     normal   Ready    dal10   1.20.11_1523*
         ```
         {: screen}
 
@@ -865,46 +865,40 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     ```
     {: codeblock}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the YAML file components</caption>
-    <thead>
-    <th>Component</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td>`ibm.io/auto-create-bucket`</td>
-    <td>Choose between the following options: <ul><li><strong>true</strong>: When you create the PVC, the PV and the bucket in your {{site.data.keyword.cos_full_notm}} service instance are automatically created. Choose this option to create a new bucket in your {{site.data.keyword.cos_full_notm}} service instance. Note that the service credentials you refer to your secret must have <strong>Writer</strong> permissions to automatically create the bucket.</li><li><strong>false</strong>: Choose this option if you want to access data in an existing bucket. When you create the PVC, the PV is automatically created and linked to the bucket that you specify in `ibm.io/bucket`.</td>
-    </tr>
-    <tr>
-    <td>`ibm.io/auto-delete-bucket`</td>
-    <td>Choose between the following options: <ul><li><strong>true</strong>: Your data, the bucket, and the PV is automatically removed when you delete the PVC. Your {{site.data.keyword.cos_full_notm}} service instance remains and is not deleted. If you choose to set this option to <strong>true</strong>, then you must set `ibm.io/auto-create-bucket: true` and `ibm.io/bucket: ""` so that your bucket is automatically created with a name with the format `tmp-s3fs-xxxx`. </li><li><strong>false</strong>: When you delete the PVC, the PV is deleted automatically, but your data and the bucket in your {{site.data.keyword.cos_full_notm}} service instance remain. To access your data, you must create a new PVC with the name of your existing bucket. </li></ul>
-    <tr>
-    <td>`ibm.io/bucket`</td>
-    <td>Choose between the following options: <ul><li>If `ibm.io/auto-create-bucket` is set to <strong>true</strong>: Enter the name of the bucket that you want to create in {{site.data.keyword.cos_full_notm}}. If in addition `ibm.io/auto-delete-bucket` is set to <strong>true</strong>, you must leave this field blank to automatically assign your bucket a name with the format `tmp-s3fs-xxxx`. The name must be unique in {{site.data.keyword.cos_full_notm}}. </li><li>If `ibm.io/auto-create-bucket` is set to <strong>false</strong>: Enter the name of the existing bucket that you want to access in the cluster. </li></ul> </td>
-    </tr>
-    <tr>
-    <td>`ibm.io/object-path`</td>
-    <td>Optional: Enter the name of the existing subdirectory in your bucket that you want to mount. Use this option if you want to mount a subdirectory only and not the entire bucket. To mount a subdirectory, you must set `ibm.io/auto-create-bucket: "false"` and provide the name of the bucket in `ibm.io/bucket`. </li></ul> </td>
-    </tr>
-    <tr>
-    <td>`ibm.io/secret-name`</td>
-    <td>Enter the name of the secret that holds the {{site.data.keyword.cos_full_notm}} credentials that you created earlier. If you add your <a href="#storage_class_custom">{{site.data.keyword.cos_full_notm}} credentials to the default storage classes</a>, you do not need to refer to your secret in the PVC.</td>
-    </tr>
-    <tr>
-    <td>`ibm.io/endpoint`</td>
-    <td>If you created your {{site.data.keyword.cos_full_notm}} service instance in a location that is different from your cluster, enter the private or public cloud service endpoint of your {{site.data.keyword.cos_full_notm}} service instance that you want to use. For an overview of available service endpoints, see <a href="/docs/cloud-object-storage?topic=cloud-object-storage-advanced-endpoints">Additional endpoint information</a>. By default, the `ibmc` Helm plug-in automatically retrieves your cluster location and creates the storage classes by using the {{site.data.keyword.cos_full_notm}} private cloud service endpoint that matches your cluster location. If your classic cluster is in a multizone metro, such as `dal10`, the {{site.data.keyword.cos_full_notm}} private cloud service endpoint for the multizone metro, in this case Dallas, is used. To verify that the service endpoint in your storage classes matches the service endpoint of your service instance, run `oc describe storageclass < storageclassname>`. Make sure that you enter your service endpoint in the format `https://< s3fs_private_service_endpoint>` for private cloud service endpoints, or `http://< s3fs_public_service_endpoint>` for public cloud service endpoints. If the service endpoint in your storage class matches the service endpoint of your {{site.data.keyword.cos_full_notm}} service instance, do not include the `ibm.io/endpoint` option in your PVC YAML file. </td>
-    </tr>
-    <tr>
-    <td>`storage`</td>
-    <td>In the spec resources requests section, enter a fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the <a href="https://www.ibm.com/cloud/object-storage/pricing/#s3api">pricing table</a> <img src="../icons/launch-glyph.svg" alt="External link icon">. </td>
-    </tr>
-    <tr>
-    <td>`storageClassName`</td>
-    <td>Choose between the following options: <ul><li>If `ibm.io/auto-create-bucket` is set to <strong>true</strong>: Enter the storage class that you want to use for your new bucket. </li><li>If `ibm.io/auto-create-bucket` is set to <strong>false</strong>: Enter the storage class that you used to create your existing bucket. </br></br>If you manually created the bucket in your {{site.data.keyword.cos_full_notm}} service instance or you cannot remember the storage class that you used, find your service instance in the {{site.data.keyword.cloud_notm}} dashboard and review the <strong>Class</strong> and <strong>Location</strong> of your existing bucket. Then, use the appropriate <a href="#cos_storageclass_reference">storage class</a>.<p class="note">The {{site.data.keyword.cos_full_notm}} API endpoint that is set in your storage class is based on the region that your cluster is in. If you want to access a bucket that is located in a different region than the one where your cluster is in, you must create a <a href="/docs/containers?topic=containers-kube_concepts#customized_storageclass">custom storage class</a> and use the appropriate API endpoint for your bucket.</p></li></ul>  </td>
-    </tr>
-    </tbody>
-    </table>
+    `ibm.io/auto-create-bucket`
+    :   Choose between the following options. 
+    :   `true`: When you create the PVC, the PV and the bucket in your {{site.data.keyword.cos_full_notm}} service instance are automatically created. Choose this option to create a new bucket in your {{site.data.keyword.cos_full_notm}} service instance. Note that the service credentials you refer to your secret must have **Writer** permissions to automatically create the bucket.
+    :   `false`: Choose this option if you want to access data in an existing bucket. When you create the PVC, the PV is automatically created and linked to the bucket that you specify in `ibm.io/bucket`.
+
+    `ibm.io/auto-delete-bucket`
+    :   Choose between the following options.
+    :   `true`: Your data, the bucket, and the PV is automatically removed when you delete the PVC. Your {{site.data.keyword.cos_full_notm}} service instance remains and is not deleted. If you choose to set this option to `true`, then you must set `ibm.io/auto-create-bucket: true` and `ibm.io/bucket: ""` so that your bucket is automatically created with a name with the format `tmp-s3fs-xxxx`.
+    :   `false`: When you delete the PVC, the PV is deleted automatically, but your data and the bucket in your {{site.data.keyword.cos_full_notm}} service instance remain. To access your data, you must create a new PVC with the name of your existing bucket.
+    
+    `ibm.io/bucket`
+    :   Choose between the following options.
+    :   If `ibm.io/auto-create-bucket` is set to `true`: Enter the name of the bucket that you want to create in {{site.data.keyword.cos_full_notm}}. If in addition `ibm.io/auto-delete-bucket` is set to `true`, you must leave this field blank to automatically assign your bucket a name with the format `tmp-s3fs-xxxx`. The name must be unique in {{site.data.keyword.cos_full_notm}}.
+    :   If `ibm.io/auto-create-bucket` is set to `false`: Enter the name of the existing bucket that you want to access in the cluster. 
+    
+    `ibm.io/object-path`
+    :   Optional: Enter the name of the existing subdirectory in your bucket that you want to mount. Use this option if you want to mount a subdirectory only and not the entire bucket. To mount a subdirectory, you must set `ibm.io/auto-create-bucket: "false"` and provide the name of the bucket in `ibm.io/bucket`.
+    
+    `ibm.io/secret-name`
+    :   Enter the name of the secret that holds the {{site.data.keyword.cos_full_notm}} credentials that you created earlier. If you add your [{{site.data.keyword.cos_full_notm}} credentials](#storage_class_custom") to the default storage classes, you do not need to refer to your secret in the PVC.
+    
+    `ibm.io/endpoint`
+    :   If you created your {{site.data.keyword.cos_full_notm}} service instance in a location that is different from your cluster, enter the private or public cloud service endpoint of your {{site.data.keyword.cos_full_notm}} service instance that you want to use. For an overview of available service endpoints, [Additional endpoint information](/docs/cloud-object-storage?topic=cloud-object-storage-advanced-endpoints). By default, the `ibmc` Helm plug-in automatically retrieves your cluster location and creates the storage classes by using the {{site.data.keyword.cos_full_notm}} private cloud service endpoint that matches your cluster location. If your classic cluster is in a multizone metro, such as `dal10`, the {{site.data.keyword.cos_full_notm}} private cloud service endpoint for the multizone metro, in this case Dallas, is used. To verify that the service endpoint in your storage classes matches the service endpoint of your service instance, run `oc describe storageclass < storageclassname>`. Make sure that you enter your service endpoint in the format `https://< s3fs_private_service_endpoint>` for private cloud service endpoints, or `http://< s3fs_public_service_endpoint>` for public cloud service endpoints. If the service endpoint in your storage class matches the service endpoint of your {{site.data.keyword.cos_full_notm}} service instance, do not include the `ibm.io/endpoint` option in your PVC YAML file. 
+    
+    `storage`
+    :   In the spec resources requests section, enter a fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the [pricing table](https://www.ibm.com/cloud/object-storage/pricing/#s3api){: external}.
+    
+    `storageClassName`
+    :   Choose between the following options.
+    :   If `ibm.io/auto-create-bucket` is set to `true`: Enter the storage class that you want to use for your new bucket.
+    :   If `ibm.io/auto-create-bucket` is set to `false`: Enter the storage class that you used to create your existing bucket. 
+    :   If you manually created the bucket in your {{site.data.keyword.cos_full_notm}} service instance or you cannot remember the storage class that you used, find your service instance in the {{site.data.keyword.cloud_notm}} dashboard and review the **Class** and **Location** of your existing bucket. Then, use the appropriate [storage class](#cos_storageclass_reference).
+        The {{site.data.keyword.cos_full_notm}} API endpoint that is set in your storage class is based on the region that your cluster is in. If you want to access a bucket that is located in a different region than the one where your cluster is in, you must create a [custom storage class](/docs/containers?topic=containers-kube_concepts#customized_storageclass) and use the appropriate API endpoint for your bucket.
+        {: note}
 
 1. Create the PVC in your cluster.
 
@@ -963,50 +957,32 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     ```
     {: codeblock}
 
-<table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-<caption>Understanding the YAML file components</caption>
-<thead>
-<th>Component</th>
-<th>Description</th>
-</thead>
-<tbody>
-<tr>
-<td>`app`</td>
-<td>In the metadata section, enter label for the deployment.</td>
-</tr>
-<tr>
-<td>`matchLabels.app` <br/> `labels.app`</td>
-<td>In the spec selector and in the spec template metadata sections, enter a label for your app.</td>
-</tr>
-<tr>
-<td>`image`</td>
-<td>The name of the container image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`.</td>
-</tr>
-<tr>
-<td>`name`</td>
-<td>The name of the container that you want to deploy to your cluster.</td>
-</tr>
-<tr>
-<td>`runAsUser`</td>
-<td>In the spec containers security context section, you can optionally set the run as user value.</td>
-</tr>
-<tr>
-<td>`mountPath`</td>
-<td>In the spec containers volume mounts section, enter the absolute path of the directory to where the volume is mounted inside the container. If you want to share a volume between different apps, you can specify <a href="https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath">volume sub paths</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> for each of your apps.</td>
-</tr>
-<tr>
-<td>`name`</td>
-<td>In the spec containers volume mounts section, enter the name of the volume to mount to your pod.</td>
-</tr>
-<tr>
-<td>`name`</td>
-<td>In the volumes section, enter the name of the volume to mount to your pod. Typically this name is the same as `volumeMounts/name`.</td>
-</tr>
-<tr>
-<td>`claimName`</td>
-<td>In the volumes persistent volume claim section, enter the name of the PVC that binds the PV that you want to use. </td>
-</tr>
-</tbody></table>
+`app`
+:   In the metadata section, enter label for the deployment.
+
+`matchLabels.app` and `labels.app`
+:   In the spec selector and in the spec template metadata sections, enter a label for your app.
+
+`image`
+:   The name of the container image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`.
+
+`name`
+:   The name of the container that you want to deploy to your cluster.
+
+`runAsUser`
+:   In the spec containers security context section, you can optionally set the run as user value.
+
+`mountPath`
+:   In the spec containers volume mounts section, enter the absolute path of the directory to where the volume is mounted inside the container. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.
+
+`volumeMounts.name`
+:   In the spec containers volume mounts section, enter the name of the volume to mount to your pod.
+
+`volumes.name`
+:   In the volumes section, enter the name of the volume to mount to your pod. Typically this name is the same as `volumeMounts/name`.
+
+`claimName`
+:   In the volumes persistent volume claim section, enter the name of the PVC that binds the PV that you want to use.
 
 
 ### Creating a deployment 
@@ -1281,7 +1257,7 @@ Before you begin:
 
 To add a secret to a storage class:
 
-1. Create a [Kubernetes secret with your {{site.data.keyword.cos_full_notm}} credentials](#create_cos_secret). Note that your secret and app pods must be in the same namespace. Note that the service credentials you refer to your secret must have at least <strong>Writer</strong> permission to use the `auto-create-bucket` dynamic provisioning feature.
+1. Create a [Kubernetes secret with your {{site.data.keyword.cos_full_notm}} credentials](#create_cos_secret). Note that your secret and app pods must be in the same namespace. Note that the service credentials you refer to your secret must have at least **Writer** permission to use the `auto-create-bucket` dynamic provisioning feature.
 
 2. List the default storage classes that are installed when you deploy the `ibm-object-storage-plugin`.
     ```sh
@@ -1350,8 +1326,8 @@ To add a secret to a storage class:
 `Name`
 :   `ibmc-s3fs-standard-cross-region`
 :   `ibmc-s3fs-standard-perf-cross-region`
-:   ibmc-s3fs-standard-regional
-:   ibmc-s3fs-standard-perf-regional
+:   `ibmc-s3fs-standard-regional`
+:   `ibmc-s3fs-standard-perf-regional`
 
 
 Default resiliency endpoint
@@ -1434,7 +1410,8 @@ Default resiliency endpoint
 :   The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see [Regions and endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints).
 
 Chunk size
-:   Storage classes without `perf`: 16 MB</br>Storage classes with `perf`: 52 MB.
+:   Storage classes without `perf`: 16 MB
+:   Storage classes with `perf`: 52 MB.
 
 Kernel cache
 :   Disabled

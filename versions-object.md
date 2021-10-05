@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-05"
 
 keywords: object storage, plug-in, changelog
 
@@ -27,6 +27,7 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | Object Storage plug-in version | Supported? | {{site.data.keyword.openshiftshort}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.1.5 | Yes | Greater than or equal to 4.3  | x86 |
 | 2.1.4 | Yes | Greater than or equal to 4.3  | x86 |
 | 2.1.3 | Yes | Greater than or equal to 4.3  | x86 |
 | 2.1.2 | Yes | Greater than or equal to 4.3  | x86 |
@@ -40,18 +41,41 @@ Refer to the following tables for a summary of changes for each version of the [
 {: caption="Object Storage plug-in versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the Object Storage plug-in version. The second column is the version's supported state. The third column is the version of your cluster that the Object Storage plug-in version is supported for."}
 
+
+## Changelog for version 2.1.5, released 5 October 2021
+{: #0215_object_plugin}
+
+Review the changes in version 2.1.5 of the {{site.data.keyword.cos_full_notm}} plug-in.
+{: shortdesc}
+
+- Image tags: `1.8.34`
+- Resovles [CVE-2021-36221](https://nvd.nist.gov/vuln/detail/CVE-2021-36221){: external}, [CVE-2021-29923](https://nvd.nist.gov/vuln/detail/CVE-2021-29923){: external}, and [CVE-2021-33196](https://nvd.nist.gov/vuln/detail/CVE-2021-33196){: external}.
+- Updates the UBI to `8.4-210`.
+- Includes the `ibmc` plug-in version `2.0.7`.
+- Pulls the Golang base image from artifactory.
+- Includes endpoint updates for `jp-tok` and `uk-south`. 
+- Updates location constraints for Sao Paulo 01. New constraints are `br-sao-standard`, `br-sao-vault`, `br-sao-cold`, and `br-sao-smart`. For more information, see [Storage classes](docs/cloud-object-storage?topic=cloud-object-storage-classes).
+- Allows deployments to the `kube-system` namespace when `bucketAccessPolicy` is enabled.
+- Supports dynamic provisioning for non-default regions in AWS s3 instance.
+
 ## Changelog for version 2.1.4, released 1 September 2021
 {: #0214_object_plugin}
 
+Review the changes in version 2.1.4 of the {{site.data.keyword.cos_full_notm}} plug-in.
+{: shortdesc}
+
 - Image tags: `1.8.33`
 - Fixes a `timeoutSeconds` issue in the `livenessProbe` and `readinessProbe`.
-- Updates the GoLang version to `v1.17`
-- Updates the UBI image to 8.4-208
+- Updates the GoLang version to `v1.17`.
+- Updates the UBI image to `8.4-208`.
 - Resolves [CVE-2021-36221](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36221){: external}, [CVE-2021-29923](https://nvd.nist.gov/vuln/detail/CVE-2021-29923){: external}, and [CVE-2021-33196](https://nvd.nist.gov/vuln/detail/CVE-2021-33196){: external}.
 
 
 ## Changelog for version 2.1.3, released 25 August 2021
 {: #0213_object_plugin}
+
+Review the changes in version 2.1.3 of the {{site.data.keyword.cos_full_notm}} plug-in.
+{: shortdesc}
 
 - Image tags: `1.8.32`
 - Addresses the following CVEs: [CVE-2021-3520](https://nvd.nist.gov/vuln/detail/CVE-2021-3520){: external}, [CVE-2021-3516](https://nvd.nist.gov/vuln/detail/CVE-2021-3516){: external}, [CVE-2021-3517](https://nvd.nist.gov/vuln/detail/CVE-2021-3517){: external}, [CVE-2021-3518](https://nvd.nist.gov/vuln/detail/CVE-2021-3518){: external}, [CVE-2021-3537](https://nvd.nist.gov/vuln/detail/CVE-2021-3537){: external}, [CVE-2021-3541](https://nvd.nist.gov/vuln/detail/CVE-2021-3541){: external}, [CVE-2021-33195](https://nvd.nist.gov/vuln/detail/CVE-2021-33195){: external}, [CVE-2021-33196](https://nvd.nist.gov/vuln/detail/CVE-2021-33196){: external}, [CVE-2021-33198](https://nvd.nist.gov/vuln/detail/CVE-2021-33198){: external}, [CVE-2021-33197](https://nvd.nist.gov/vuln/detail/CVE-2021-33197){: external}, and [CVE-2021-34558](https://nvd.nist.gov/vuln/detail/CVE-2021-34558){: external}.  
@@ -71,6 +95,9 @@ Refer to the following tables for a summary of changes for each version of the [
 ## Changelog for version 2.1.2, released 22 June 2021 
 {: #0212_object_plugin}
 
+Review the changes in version 2.1.2 of the {{site.data.keyword.cos_full_notm}} plug-in.
+{: shortdesc}
+
 - Image tags: `1.8.30`  
 - Updates in this version: Version `v2.0.5` of the `helm-ibmc` plug-in is available.  
 - Fixes [`CVE-2021-31525`](https://nvd.nist.gov/vuln/detail/CVE-2021-31525){: external},[`CVE-2021-33194`](https://nvd.nist.gov/vuln/detail/CVE-2021-33194){: external}, and [`CVE-2021-27219`](https://nvd.nist.gov/vuln/detail/CVE-2021-27219){: external}.  
@@ -78,6 +105,9 @@ Refer to the following tables for a summary of changes for each version of the [
 
 ## Changelog for version 2.1.1, released 03 June 2021
 {: #0211_object_plugin}
+
+Review the changes in version 2.1.1 of the {{site.data.keyword.cos_full_notm}} plug-in.
+{: shortdesc}
 
 - Image tags: `1.8.29`  
 - Fixes an upgrade issue in version `2.1.0`.  
@@ -89,12 +119,18 @@ Refer to the following tables for a summary of changes for each version of the [
 ## Changelog for version 2.1.0, released 26 May 2021
 {: #0210_object_plugin}
 
+Review the changes in version 2.1.0 of the {{site.data.keyword.cos_full_notm}} plug-in.
+{: shortdesc}
+
 - Image tags: `1.8.28`  
 - Updates the UBI to `8.4-200`.  
 
 
 ## Changelog for version 2.0.9, 10 May 2021
 {: #0209_object_plugin}
+
+Review the changes in version 2.0.9 of the {{site.data.keyword.cos_full_notm}} plug-in.
+{: shortdesc}
 
 - Image tags: `1.8.27`  
 - Updates the UBI to `8.3-298.1618432845`.  
@@ -109,6 +145,9 @@ Refer to the following tables for a summary of changes for each version of the [
 ## Changelog for version 2.0.8, 19 April 2021
 {: #0208_object_plugin}
 
+Review the changes in version 2.0.8 of the {{site.data.keyword.cos_full_notm}} plug-in.
+{: shortdesc}
+
 - Image tags: `1.8.25`  
 - Updates the Go version to `1.15.9`.  
 - Updates the UBI from `ubi-minimal:8.3-291` to `ubi-minimal:8.3-298`.  
@@ -119,6 +158,9 @@ Refer to the following tables for a summary of changes for each version of the [
 ## Changelog for version 2.0.7, 26 March 2021
 {: #0207_object_plugin}
 
+Review the changes in version 2.0.7 of the {{site.data.keyword.cos_full_notm}} plug-in.
+{: shortdesc}
+
 - Image tags: `1.8.24`  
 - Updates the Go version to `1.15.8`.  
 - The plug-in now uses a universal base image (UBI).  
@@ -128,6 +170,8 @@ Refer to the following tables for a summary of changes for each version of the [
 ## Changelog for version 2.0.6, 18 December 2020
 {: #0206_object_plugin}
 
+Review the changes in version 2.0.6 of the {{site.data.keyword.cos_full_notm}} plug-in.
+{: shortdesc}
 
 - Image tags: `1.8.23`  
 - The `1.8.23` image is signed.  
