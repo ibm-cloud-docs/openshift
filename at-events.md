@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-05"
 
 keywords: openshift, roks, rhoks, rhos, audit
 
@@ -235,7 +235,7 @@ The following table lists the actions related to access control lists (ACLs) and
 
 | Action  | Description  |
 |---------|--------------|
-| `containers-kubernetes.network.acl.delete ` | The private cloud service endpoint allowlist feature for a cluster is disabled. |
+| `containers-kubernetes.network.acl.delete` | The private cloud service endpoint allowlist feature for a cluster is disabled. |
 | `containers-kubernetes.network.acl.get` | The subnet allowlist for the private cloud service endpoint of a cluster is requested.  |
 | `containers-kubernetes.network.acl.update` | The private cloud service endpoint allowlist feature for a cluster is enabled, subnets are added to the allowlist, or subnets are removed from the allowlist. |
 {: caption="ACL events" caption-side="top"}

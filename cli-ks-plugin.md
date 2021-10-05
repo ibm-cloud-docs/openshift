@@ -498,10 +498,10 @@ ibmcloud oc cluster addon versions [--addon ADD-ON_NAME] [--output json] [-q]
 
 **Example**:
 
-    ```sh
-    ibmcloud oc cluster addon versions --addon istio
-    ```
-    {: pre}
+```sh
+ibmcloud oc cluster addon versions --addon istio
+```
+{: pre}
 
 
 
@@ -688,7 +688,7 @@ ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FL
 * **Administrator** platform access role for {{site.data.keyword.registrylong_notm}} at the account level
 * **Super User** role for IBM Cloud infrastructure
 
-**Command options**
+**Command options**:
 
 `--hardware HARDWARE`
 :    The level of hardware isolation for your worker node. Use `dedicated` so that available physical resources are dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. The default is `shared`. This value is optional for VM standard clusters and is not available for free clusters. For bare metal flavors, specify `dedicated`.
@@ -816,7 +816,7 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 * [**Writer** or **Manager** service access role](/docs/containers?topic=containers-users#checking-perms) for {{site.data.keyword.containerlong_notm}}.
 * [**Administrator** platform access role](/docs/containers?topic=containers-users#checking-perms) for {{site.data.keyword.registrylong_notm}} at the account level.
 
-**Command options**
+**Command options**:
 
 
 `--name NAME`
@@ -2140,7 +2140,7 @@ ibmcloud oc worker replace --cluster CLUSTER_NAME_OR_ID --worker WORKER_ID [--up
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-**Command options**
+**Command options**:
 
 `-c, --cluster CLUSTER`
 :    Required: The name or ID of the cluster.
@@ -2325,7 +2325,7 @@ ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <clu
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-**Command options**
+**Command options**:
 
 
 `--name NAME`
@@ -3590,8 +3590,7 @@ ibmcloud oc ingress lb get --cluster CLUSTER [--output OUTPUT] [-q]
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-**Command options**
-
+**Command options**:
 
 
 `-c, --cluster CLUSTER`
@@ -3628,7 +3627,7 @@ ibmcloud oc ingress lb proxy-protocol disable --cluster CLUSTER [-f] [-q]
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-**Command options**
+**Command options**:
 
 
 
@@ -3669,7 +3668,7 @@ ibmcloud oc ingress lb proxy-protocol enable --cluster CLUSTER [--cidr CIDR ...]
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-**Command options**
+**Command options**:
 
 
 
@@ -3716,7 +3715,7 @@ ibmcloud oc ingress secret create --cert-crn CERTIFICATE_CRN --cluster CLUSTER -
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-**Command options**
+**Command options**:
 
 
 `--cert-crn CERTIFICATE_CRN`
@@ -3765,7 +3764,7 @@ ibmcloud oc ingress secret get --cluster CLUSTER --name SECRET_NAME --namespace 
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-**Command options**
+**Command options**:
 
 
 `-c, --cluster CLUSTER`
@@ -3811,7 +3810,7 @@ ibmcloud oc ingress secret ls --cluster CLUSTER [--show-deleted] [--output json]
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-**Command options**
+**Command options**:
 
 
 `-c, --cluster CLUSTER`
@@ -3854,7 +3853,7 @@ ibmcloud oc ingress secret rm --cluster CLUSTER --name SECRET_NAME --namespace N
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-**Command options**
+**Command options**:
 
 
 `-c, --cluster CLUSTER`
@@ -3897,7 +3896,7 @@ ibmcloud oc ingress secret update --cluster CLUSTER --name SECRET_NAME --namespa
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-**Command options**
+**Command options**:
 
 
 `-c, --cluster CLUSTER`
@@ -4904,7 +4903,7 @@ ibmcloud oc infra-permissions get --region us-south
 {: pre}
 
 Example output
-```
+```sh
 Missing Virtual Worker Permissions
 
 Add Server                    suggested
@@ -5458,7 +5457,7 @@ ibmcloud oc api
 ```
 {: pre}
 
-```
+```sh
 API Endpoint:          https://containers.cloud.ibm.com
 API Version:           v1
 Skip SSL Validation:   false
@@ -5577,7 +5576,7 @@ To use this command to prepare your automation scripts for the release of versio
     {: pre}
 
 2. Review the proposed changes to the script in the difference that is shown in the command line STDOUT. Example output
-    ```
+    ```sh
     --- a/script-test-2
     +++ b/script-test-2
     @@ -1,5 +1,5 @@

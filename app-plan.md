@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-05"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -66,15 +66,16 @@ You can take some general steps to containerize your app as follows.
 {: support}
 
 1. Use the [Twelve-Factor App](https://12factor.net/){: external} as a guide for isolating dependencies, separating processes into separate services, and reducing the statefulness of your app as much as possible.
-2. Find an appropriate base image to use. You can use publicly available images from [Docker Hub](https://hub.docker.com/){: external}, [public IBM images](/docs/Registry?topic=Registry-public_images#public_images), or build and manage your own in your private {{site.data.keyword.registrylong_notm}}.
-3. Add to your Docker image only what is necessary to run the app.
+1. Find an appropriate base image to use. You can use publicly available images from [Docker Hub](https://hub.docker.com/){: external}, [public IBM images](/docs/Registry?topic=Registry-public_images#public_images), or build and manage your own in your private {{site.data.keyword.registrylong_notm}}.
+1. Add to your Docker image only what is necessary to run the app.
 
     Don't want to make a Dockerfile yourself? Try out the [`ibmcloud dev enable` command](/docs/cli?topic=cli-idt-cli#enable), which detects your app's programming language and builds a Dockerfile and containerization components for you.
     {: tip}
+    
 
-4. Review the [common app modification scenarios](#openshift_move_apps_scenarios).
-5. Instead of relying on local storage, plan to use persistent storage or cloud database-as-a-service solutions to back up your app's data.
-6. Over time, refactor your app processes into microservices.
+1. Review the [common app modification scenarios](#openshift_move_apps_scenarios).
+1. Instead of relying on local storage, plan to use persistent storage or cloud database-as-a-service solutions to back up your app's data.
+1. Over time, refactor your app processes into microservices.
 
 For more, see the following tutorials.
 * [Migrating an app from Cloud Foundry to a cluster](/docs/containers?topic=containers-cf_tutorial#cf_tutorial).
@@ -356,15 +357,19 @@ Spread pods across multiple nodes (anti-affinity)
 Distribute pods across multiple zones or regions</dt>
 :   To protect your app from a zone failure, you can create multiple clusters in separate zones or add zones to a worker pool in a multizone cluster. Multizone clusters are available only in certain [classic](/docs/containers?topic=containers-regions-and-zones#zones-mz) or [VPC](/docs/containers?topic=containers-regions-and-zones#zones-vpc) multizones, such as Dallas. If you create multiple clusters in separate zones, you must [set up a global load balancer](/docs/containers?topic=containers-ha_clusters#multiple_clusters).
     When you use a replica set and specify pod anti-affinity, Kubernetes spreads your app pods across the nodes. If your nodes are in multiple zones, the pods are spread across the zones, increasing the availability of your app. If you want to limit your apps to run only in one zone, you can configure pod affinity, or create and label a worker pool in one zone. For more information, see [High availability for multizone clusters](/docs/containers?topic=containers-ha_clusters#ha_clusters).
-    **In a multizone cluster deployment, are my app pods distributed evenly across the nodes?**
+    
+:   **In a multizone cluster deployment, are my app pods distributed evenly across the nodes?**
     The pods are evenly distributed across zones, but not always across nodes. For example, if you have a cluster with one node in each of three zones and deploy a replica set of six pods, then each node gets two pods. However, if you have a cluster with two nodes in each of three zones and deploy a replica set of six pods, each zone schedules two pods, and might schedule one pod per node or might not. For more control over scheduling, you can [set pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}.
-    **If a zone goes down, how are pods rescheduled onto the remaining nodes in the other zones?**
+    
+:   **If a zone goes down, how are pods rescheduled onto the remaining nodes in the other zones?**
     It depends on your scheduling policy that you used in the deployment. If you included [node-specific pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}, your pods are not rescheduled. If you did not, pods are created on available worker nodes in other zones, but they might not be balanced. For example, the two pods might be spread across the two available nodes, or they might both be scheduled onto one node with available capacity. Similarly, when the unavailable zone returns, pods are not automatically deleted and rebalanced across nodes. If you want the pods to be rebalanced across zones after the zone is back up, consider using the [Kubernetes descheduler](https://github.com/kubernetes-sigs/descheduler){: shortdesc}.
     In multizone clusters, try to keep your worker node capacity at 50% per zone so that enough capacity is left to protect your cluster against a zonal failure.
     {: tip}
-    **What if I want to spread my app across regions?**
+    
+:   **What if I want to spread my app across regions?**
     To protect your app from a region failure, create a second cluster in another region, [set up a global load balancer](/docs/containers?topic=containers-ha_clusters#multiple_clusters) to connect your clusters, and use a deployment YAML to deploy a duplicate replica set with [pod anti-affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external} for your app.
-    **What if my apps need persistent storage?**
+    
+:   **What if my apps need persistent storage?**
     Use a cloud service such as [{{site.data.keyword.cloudant_short_notm}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) or [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
 
 ### How can I scale my app?
