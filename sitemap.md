@@ -185,6 +185,8 @@ subcollection: openshift
 
 [October 2021](/docs/openshift?topic=openshift-rel-notes#release-oct-2021)
 
+* [6 October 2021](/docs/openshift?topic=openshift-rel-notes#6oct2021)
+
 * [4 October 2021](/docs/openshift?topic=openshift-rel-notes#4oct2021)
 
 [September 2021](/docs/openshift?topic=openshift-rel-notes#release-sep-2021)
@@ -3282,6 +3284,26 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0)
+
+* [Changelog for version 1.0.0_690, released 6 October 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0690)
+
+* [Changelog for version 1.0.0_627, released 23 August 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0627)
+
+* [Changelog for version 1.0.0_614, released 10 August 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0614)
+
+* [Changelog for version 1.0.0_575, released 23 July 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0575)
+
+* [Changelog for version 1.0.0_549, released 17 June 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0549)
+
+* [Changelog for version 1.0.0_529, released 2 June 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0529)
+
+* [Changelog for version 1.0.0_485, released 28 April 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0485)
+
+* [Changelog for version 1.0.0_473, released 19 April 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0473)
+
+* [Changelog for version 1.0.0_461, released 14 April 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0461)
+
+* [Changelog for version 1.0.0_438, released 30 March 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0438)
 
 [Archived {{site.data.keyword.openshiftshort}} version changelogs](/docs/openshift?topic=openshift-changelog_archive#changelog_archive)
 

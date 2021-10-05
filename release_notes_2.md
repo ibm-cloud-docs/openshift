@@ -31,6 +31,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## October 2021
 {: #release-oct-2021}
 
+
+### 6 October 2021
+{: #6oct2021}
+
+{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog.
+:   [Version 1.0.0_690](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0690) is released.
+
 Review the release notes for October 2021.
 {: shortdesc}
 
