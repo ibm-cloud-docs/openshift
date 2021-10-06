@@ -139,7 +139,8 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 There is a known issue when updating a cluster from {{site.data.keyword.openshiftshort}} 4.7 to {{site.data.keyword.openshiftshort}} 4.8. Do not upgrade your cluster to from version 4.7 to version 4.8 if it has image security enforcement enabled. 
 {: important}
 
-<img src="images/certified_kubernetes_1x21.png" style="padding-right: 10px;" align="left" alt="This badge indicates Kubernetes version 1.21 certification for {{site.data.keyword.openshiftlong_notm}}."/> {{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.21 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
+![This badge indicates Kubernetes version 1.21 certification for {{site.data.keyword.containerlong_notm}}](images/certified_kubernetes_1x21.svg)
+{{site.data.keyword.containerlong_notm}} is a Certified Kubernetes product for version 1.21 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
 Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.openshiftshort}} 4.7 to {{site.data.keyword.openshiftshort}} 4.8.
 {: shortdesc}
@@ -158,7 +159,8 @@ The following table shows the actions that you must take before you [update the 
 ## {{site.data.keyword.openshiftshort}} 4.7
 {: #ocp47}
 
-<img src="images/certified_kubernetes_1x20.png" style="padding-right: 10px;" align="left" alt="This badge indicates Kubernetes version 1.20 certification for {{site.data.keyword.openshiftlong_notm}}."/> {{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.20 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
+![This badge indicates Kubernetes version 1.20 certification for {{site.data.keyword.containerlong_notm}}](images/certified_kubernetes_1x20.svg)
+{{site.data.keyword.containerlong_notm}} is a Certified Kubernetes product for version 1.20 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
 Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.openshiftshort}} 4.6 to {{site.data.keyword.openshiftshort}} 4.7.
 {: shortdesc}
@@ -181,7 +183,8 @@ The following table shows the actions that you must take before you [update the 
 ## {{site.data.keyword.openshiftshort}} 4.6
 {: #ocp46}
 
-<img src="images/certified_kubernetes_1x19.png" style="padding-right: 10px;" align="left" alt="This badge indicates Kubernetes version 1.19 certification for {{site.data.keyword.openshiftlong_notm}}."/> {{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.19 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
+![This badge indicates Kubernetes version 1.19 certification for {{site.data.keyword.containerlong_notm}}](images/certified_kubernetes_1x19.svg)
+{{site.data.keyword.containerlong_notm}} is a Certified Kubernetes product for version 1.19 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
 Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.openshiftshort}} 4.5 to {{site.data.keyword.openshiftshort}} 4.6.
 {: shortdesc}
@@ -205,7 +208,8 @@ The following table shows the actions that you must take before you [update the 
 ## Deprecated: {{site.data.keyword.openshiftshort}} 4.5
 {: #ocp45}
 
-<img src="images/certified_kubernetes_1x18.png" style="padding-right: 10px;" align="left" alt="This badge indicates Kubernetes version 1.18 certification for {{site.data.keyword.openshiftlong_notm}}."/> {{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.18 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
+![This badge indicates Kubernetes version 1.18 certification for {{site.data.keyword.containerlong_notm}}](images/certified_kubernetes_1x18.svg)
+{{site.data.keyword.containerlong_notm}} is a Certified Kubernetes product for version 1.18 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
 Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.openshiftshort}} 4.4 to {{site.data.keyword.openshiftshort}} 4.5.
 {: shortdesc}
