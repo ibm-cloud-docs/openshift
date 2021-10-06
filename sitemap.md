@@ -185,6 +185,8 @@ subcollection: openshift
 
 [October 2021](/docs/openshift?topic=openshift-rel-notes#release-oct-2021)
 
+* [6 October 2021](/docs/openshift?topic=openshift-rel-notes#6oct2021)
+
 * [5 October 2021](/docs/openshift?topic=openshift-rel-notes#5oct2021)
 
 [September 2021](/docs/openshift?topic=openshift-rel-notes#release-sep-2021)
@@ -1602,6 +1604,30 @@ subcollection: openshift
 ### Exposing apps with load balancers
 {: #sitemap_exposing_apps_with_load_balancers}
 
+
+[VPC: Exposing apps with load balancers for VPC](/docs/openshift?topic=openshift-vpc-lbaas#vpc-lbaas)
+
+* [About VPC load balancing in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_about)
+
+    * [Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#nlb_vpc)
+
+    * [Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#lb_vpc)
+
+* [Setting up a Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb)
+
+    * [Setting up a public VPC NLB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb_pub)
+
+    * [Setting up a private VPC NLB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb_priv)
+
+    * [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_nlb_dns)
+
+* [Setting up an Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb)
+
+    * [Setting up a public or private VPC ALB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_alb_pub_priv)
+
+    * [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
+
+* [Limitations](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_limitations)
 
 [Classic: About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about#loadbalancer-about)
 
@@ -3215,7 +3241,7 @@ subcollection: openshift
 
 * [Version 4.0](/docs/openshift?topic=openshift-vpc_bs_changelog#0400_is_block)
 
-    * [Changelog for version 4.0.1_780, released 07 October 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400780_is_block_relnote)
+    * [Changelog for version 4.0.1_780, released 06 October 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400780_is_block_relnote)
 
     * [Changelog for version 4.0.0_769, released 16 September 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400769_is_block_relnote)
 

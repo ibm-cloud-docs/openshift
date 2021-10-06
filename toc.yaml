@@ -170,7 +170,7 @@ toc:
                 label: Exposing apps with load balancers
                 topics: 
                   - lb-qs.md
-                  - vpc-lbaas.md
+                  - vpc_lbaas.md
                   - lb-about.md
                   - lb.md
                   - lb-v2.md

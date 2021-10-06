@@ -319,7 +319,7 @@ After you deploy the {{site.data.keyword.block_storage_is_short}} driver, you ca
 If you no longer want to use the {{site.data.keyword.block_storage_is_short}} driver in your cluster, you can remove the configmap to remove the driver pods.
 {: shortdesc}
 
-Removing the {{site.data.keyword.block_storage_is_short}} driver from your cluster does not remove the data in your storage volumes. If you want to fully remove your PVs and PVCs, see [Cleaning up persistent storage](/docs/openshift?topic=openshift-vpc-block#storage_remove).
+Removing the {{site.data.keyword.block_storage_is_short}} driver from your cluster does not remove the data in your storage volumes. If you want to fully remove your PVs and PVCs, see [Cleaning up persistent storage](/docs/openshift?topic=openshift-vpc-block#storage_remove_block_vpc).
 {: important}
 
 1. Delete the `ibm-vpc-block-csi-configmap` configmap from your cluster.

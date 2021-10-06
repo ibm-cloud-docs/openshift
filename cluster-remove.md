@@ -36,9 +36,9 @@ When you delete your cluster, the default {{site.data.keyword.cloudcerts_short}}
 * Note your cluster ID. You might need the cluster ID to investigate and remove related IBM Cloud infrastructure resources that are not automatically deleted with your cluster.
 * Make sure that you have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/containers?topic=containers-users#checking-perms).
 * If you want to delete the data in your persistent storage, review the delete options for the type of storage that you use.
-    * [File storage](/docs/containers?topic=containers-file_storage#storage_delete_options)
-    * [Block storage](/docs/containers?topic=containers-block_storage#cleanup) for classic clusters
-    * [Block storage](/docs/containers?topic=containers-vpc-block#cleanup) for VPC clusters
+    * [File storage](/docs/containers?topic=containers-file_storage#storage_delete_options_file)
+    * [Block storage](/docs/containers?topic=containers-block_storage#cleanup_block) for classic clusters
+    * [Block storage](/docs/containers?topic=containers-vpc-block#cleanup_block_vpc) for VPC clusters
     * [Object storage](/docs/cloud-object-storage?topic=cloud-object-storage-deleting-multiple-objects-patterns)
     * [Portworx](/docs/containers?topic=containers-portworx#portworx_cleanup)
 

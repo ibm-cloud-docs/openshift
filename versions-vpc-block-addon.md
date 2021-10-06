@@ -56,7 +56,7 @@ Review the changes in version `4.0` of the {{site.data.keyword.block_storage_is_
 {: shortdesc}
 
 
-### Changelog for version 4.0.1_780, released 07 October 2021
+### Changelog for version 4.0.1_780, released 06 October 2021
 {: #0400780_is_block_relnote}
 
 Review the changes in version `4.0.1_780` of the {{site.data.keyword.block_storage_is_full}} add-on.
