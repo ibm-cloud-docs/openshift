@@ -28,6 +28,7 @@ Want to use {{site.data.keyword.block_storage_is_short}} in an {{site.data.keywo
  
 ## Prerequisites
 {: #vpc-block-um-prereq}
+
 To use the {{site.data.keyword.block_storage_is_short}} driver, complete the following tasks: 
 {: shortdesc}
 
@@ -38,6 +39,7 @@ To use the {{site.data.keyword.block_storage_is_short}} driver, complete the fol
 
 ### Labelling your worker nodes
 {: #vpc-block-label-um}
+
 Before you can deploy the {{site.data.keyword.block_storage_is_short}} driver, you must prepare your worker nodes by adding the required labels.
 {: shortdesc}
 

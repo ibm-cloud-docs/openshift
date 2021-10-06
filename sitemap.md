@@ -1945,6 +1945,14 @@ subcollection: openshift
 
 * [Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference)
 
+    * [10 IOPs tier](/docs/openshift?topic=openshift-vpc-block#10iops-sc-vpc-block)
+
+    * [5 IOPs tier](/docs/openshift?topic=openshift-vpc-block#5iops-sc-vpc-block)
+
+    * [Custom](/docs/openshift?topic=openshift-vpc-block#custom-sc-vpc-block)
+
+    * [General purpose](/docs/openshift?topic=openshift-vpc-block#gen-purp-sc-vpc-block)
+
 * [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-vpc-block#cleanup_block_vpc)
 
     * [Understanding your storage removal options](/docs/openshift?topic=openshift-vpc-block#storage_delete_options_block_vpc)
@@ -3206,6 +3214,8 @@ subcollection: openshift
 [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog#vpc_bs_changelog)
 
 * [Version 4.0](/docs/openshift?topic=openshift-vpc_bs_changelog#0400_is_block)
+
+    * [Changelog for version 4.0.1_780, released 07 October 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400780_is_block_relnote)
 
     * [Changelog for version 4.0.0_769, released 16 September 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400769_is_block_relnote)
 
