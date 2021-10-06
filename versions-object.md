@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-05"
+lastupdated: "2021-10-06"
 
 keywords: object storage, plug-in, changelog
 

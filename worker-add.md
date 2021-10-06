@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-05"
+lastupdated: "2021-10-06"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
@@ -245,7 +245,7 @@ If you have multiple worker pools in your cluster, add the zone to all of them s
 ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Add worker nodes to your classic cluster.
 {: shortdesc}
 
-{[icon_classic]} Want to save on your classic worker node costs? [Create a reservation](/docs/containers?topic=containers-reservations) to lock in a discount over 1 or 3 year terms! Then, create your worker pool by using the reserved instances.
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) Want to save on your classic worker node costs? [Create a reservation](/docs/containers?topic=containers-reservations) to lock in a discount over 1 or 3 year terms! Then, create your worker pool by using the reserved instances.
 {: tip}
 
 ### Creating a new worker pool
