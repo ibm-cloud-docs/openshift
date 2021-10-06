@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-05"
+lastupdated: "2021-10-06"
 
 keywords: object storage, plug-in, changelog
 
@@ -54,7 +54,7 @@ Review the changes in version 2.1.5 of the {{site.data.keyword.cos_full_notm}} p
 - Includes the `ibmc` plug-in version `2.0.7`.
 - Pulls the Golang base image from artifactory.
 - Includes endpoint updates for `jp-tok` and `uk-south`. 
-- Updates location constraints for Sao Paulo 01. New constraints are `br-sao-standard`, `br-sao-vault`, `br-sao-cold`, and `br-sao-smart`. For more information, see [Storage classes](docs/cloud-object-storage?topic=cloud-object-storage-classes).
+- Updates location constraints for Sao Paulo 01. New constraints are `br-sao-standard`, `br-sao-vault`, `br-sao-cold`, and `br-sao-smart`. For more information, see [Storage classes](/docs/cloud-object-storage?topic=cloud-object-storage-classes).
 - Allows deployments to the `kube-system` namespace when `bucketAccessPolicy` is enabled.
 - Supports dynamic provisioning for non-default regions in AWS s3 instance.
 

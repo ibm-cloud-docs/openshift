@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-06"
 
 keywords: vpc block, add-on, vpc block changelog
 
@@ -54,6 +54,28 @@ Refer to the following tables for a summary of changes for each version of the {
 
 Review the changes in version `4.0` of the {{site.data.keyword.block_storage_is_full}} add-on.
 {: shortdesc}
+
+
+### Changelog for version 4.0.1_780, released 06 October 2021
+{: #0400780_is_block_relnote}
+
+Review the changes in version `4.0.1_780` of the {{site.data.keyword.block_storage_is_full}} add-on.
+{: shortdesc}
+
+Image tags: `v4.0.1`
+- Resolves the following CVEs: 
+    - [CVE-2021-22922](https://nvd.nist.gov/vuln/detail/CVE-2021-22922){: external}
+    - [CVE-2021-22923](https://nvd.nist.gov/vuln/detail/CVE-2021-22923){: external}
+    - [CVE-2021-22924](https://nvd.nist.gov/vuln/detail/CVE-2021-22924){: external}
+    - [CVE-2021-36222](https://nvd.nist.gov/vuln/detail/CVE-2021-36222){: external})
+    - [CVE-2021-37750](https://nvd.nist.gov/vuln/detail/CVE-2021-37750){: external}
+- Updates the `storage-secret-sidecar` image to `v1.1.2`.
+- Improves error messaging if `iks_token_exchange_endpoint_private_url` is invalid or unreachable.
+- Adds [new storage classes for OpenShift Data Foundation](/docs/containers?topic=containers-vpc-block#vpc-block-reference).
+- Updates to improve the volume attach/detach performance by avoiding unnecessary retries.
+- Fixes an issue where mounting failed with "already mounted" error.
+- Improves logging when the device path for a volume is not present on worker node.
+- Adds the image label `compliance.owner="ibm-armada-storage"`. 
 
 
 

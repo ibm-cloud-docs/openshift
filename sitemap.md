@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-05"
+lastupdated: "2021-10-06"
 
 keywords: openshift
 subcollection: openshift
@@ -184,6 +184,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-rel-notes#rel-notes)
 
 [October 2021](/docs/openshift?topic=openshift-rel-notes#release-oct-2021)
+
+* [6 October 2021](/docs/openshift?topic=openshift-rel-notes#6oct2021)
 
 * [5 October 2021](/docs/openshift?topic=openshift-rel-notes#5oct2021)
 
@@ -1603,6 +1605,30 @@ subcollection: openshift
 {: #sitemap_exposing_apps_with_load_balancers}
 
 
+[VPC: Exposing apps with load balancers for VPC](/docs/openshift?topic=openshift-vpc-lbaas#vpc-lbaas)
+
+* [About VPC load balancing in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_about)
+
+    * [Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#nlb_vpc)
+
+    * [Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#lb_vpc)
+
+* [Setting up a Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb)
+
+    * [Setting up a public VPC NLB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb_pub)
+
+    * [Setting up a private VPC NLB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb_priv)
+
+    * [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_nlb_dns)
+
+* [Setting up an Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb)
+
+    * [Setting up a public or private VPC ALB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_alb_pub_priv)
+
+    * [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
+
+* [Limitations](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_limitations)
+
 [Classic: About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about#loadbalancer-about)
 
 * [Comparison of basic and DSR load balancing in version 1.0 and 2.0 NLBs](/docs/openshift?topic=openshift-loadbalancer-about#comparison-lbs)
@@ -1944,6 +1970,14 @@ subcollection: openshift
 * [Backing up and restoring data](/docs/openshift?topic=openshift-vpc-block#vpc-block-backup-restore)
 
 * [Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference)
+
+    * [10 IOPs tier](/docs/openshift?topic=openshift-vpc-block#10iops-sc-vpc-block)
+
+    * [5 IOPs tier](/docs/openshift?topic=openshift-vpc-block#5iops-sc-vpc-block)
+
+    * [Custom](/docs/openshift?topic=openshift-vpc-block#custom-sc-vpc-block)
+
+    * [General purpose](/docs/openshift?topic=openshift-vpc-block#gen-purp-sc-vpc-block)
 
 * [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-vpc-block#cleanup_block_vpc)
 
@@ -2979,7 +3013,7 @@ subcollection: openshift
 
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
 
-    * [Changelog for worker node fix pack 3.11.521_1605_openshift, released 27 September 2021](/docs/openshift?topic=openshift-openshift_changelog#4731_1533)
+    * [Changelog for worker node fix pack 3.11.521_1605_openshift, released 27 September 2021](/docs/openshift?topic=openshift-openshift_changelog#311521_1605)
 
     * [Changelog for master fix pack 3.11.521_1604_openshift, released 28 September 2021](/docs/openshift?topic=openshift-openshift_changelog#changelog-for-master-fix-pack-311521_1604_openshift,-released-28-september-2021)
 
@@ -3206,6 +3240,8 @@ subcollection: openshift
 [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog#vpc_bs_changelog)
 
 * [Version 4.0](/docs/openshift?topic=openshift-vpc_bs_changelog#0400_is_block)
+
+    * [Changelog for version 4.0.1_780, released 06 October 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400780_is_block_relnote)
 
     * [Changelog for version 4.0.0_769, released 16 September 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400769_is_block_relnote)
 

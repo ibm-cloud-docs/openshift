@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-05"
+lastupdated: "2021-10-06"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -34,6 +34,14 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 Review the release notes for October 2021.
 {: shortdesc}
 
+
+
+
+### 6 October 2021
+{: #6oct2021}
+
+{{site.data.keyword.block_storage_is_full}} add-on.
+:   [Version 4.0.1_780](https://cloud.ibm.com/docs/containers?topic=containers-vpc_bs_changelog) is released.
 
 
 ### 5 October 2021

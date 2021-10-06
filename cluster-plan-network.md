@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-06"
 
 keywords: openshift, rhoks, roks, rhos, multi az, multi-az, szr, mzr
 
@@ -21,8 +21,8 @@ Design a network setup for your {{site.data.keyword.openshiftlong}} cluster that
 {: shortdesc}
 
 Get started by planning your setup for a VPC or a classic cluster.
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) With [{{site.data.keyword.openshiftlong_notm}} clusters in VPC](#plan_vpc_basics), you can create your cluster in the next generation of the {{site.data.keyword.cloud_notm}} platform, in [Virtual Private Cloud](/docs/vpc?topic=vpc-about-vpc) for Generation 2 compute resources. VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud.
-* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) With [{{site.data.keyword.openshiftlong_notm}} classic clusters](#plan_basics), you can create your cluster on classic infrastructure. Classic clusters include all of the {{site.data.keyword.openshiftlong_notm}} mature and robust features for compute, networking, and storage.
+- ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) With [{{site.data.keyword.openshiftlong_notm}} clusters in VPC](#plan_vpc_basics), you can create your cluster in the next generation of the {{site.data.keyword.cloud_notm}} platform, in [Virtual Private Cloud](/docs/vpc?topic=vpc-about-vpc) for Generation 2 compute resources. VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud.
+- ![Classic infrastructure provider icon.](images/icon-classic-2.svg) With [{{site.data.keyword.openshiftlong_notm}} classic clusters](#plan_basics), you can create your cluster on classic infrastructure. Classic clusters include all of the {{site.data.keyword.openshiftlong_notm}} mature and robust features for compute, networking, and storage.
 
 First time creating a cluster? First, try out the [tutorial for creating a VPC cluster](/docs/openshift?topic=openshift-vpc_rh_tutorial) or the [tutorial for creating {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-openshift_tutorial). Then, come back here when you’re ready to plan out your production-ready clusters.
 {: tip}
@@ -186,12 +186,8 @@ You can use public Kubernetes networking services, such as creating [`LoadBalanc
 ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) In this scenario, you run workloads in a VPC cluster that are accessible to requests from the Internet. Public access is controlled by security groups so that end users can access your apps while unwanted public requests to your apps are denied. Additionally, your workers have automatic access to any {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints.
 {: shortdesc}
 
-<p>
-<figure>
-    <img src="images/roks_ov_vpc_pub.png" width="850" style="width:850px; border-style: none" alt="Network setup for a VPC cluster that runs internet-facing app workloads"/>
-    <figcaption>Network setup for a VPC cluster that runs internet-facing app workloads</figcaption>
-</figure>
-</p>
+
+![Network setup for a VPC cluster that runs internet-facing app workloads.](images/roks_ov_vpc_pub.png){: caption="Figure 1. Network setup for a VPC cluster that runs internet-facing app workloads" caption-side="bottom"}
 
 **Worker-to-worker communication**
 
@@ -222,12 +218,7 @@ Ready to get started with a cluster for this scenario? After you plan your [high
 ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) In this scenario, you run workloads in a VPC cluster. However, you want these workloads to be accessible only to services, databases, or other resources in your private networks in an on-premises data center. Your cluster workloads might need to access a few other {{site.data.keyword.cloud_notm}} services that support communication over the private network.
 {: shortdesc}
 
-<p>
-<figure>
-    <img src="images/roks_ov_vpc_priv.png" width="850" style="width:850px; border-style: none" alt="Network setup for a VPC cluster that extends an on-prem data center"/>
-    <figcaption>Network setup for a VPC cluster that extends an on-prem data center</figcaption>
-</figure>
-</p>
+![Network setup for a VPC cluster that extends an on-prem data center.](images/roks_ov_vpc_priv.png){: caption="Figure 1.Network setup for a VPC cluster that extends an on-prem data center" caption-side="bottom"}
 
 **Worker-to-worker communication**
 
@@ -257,10 +248,10 @@ Ready to get started with a cluster for this scenario? After you plan your [high
 ![Classic infrastructure provider icon.](images/icon-classic-2.svg) When you create a classic cluster, you must choose a networking setup so that certain cluster components can communicate with each other and with networks or services outside of the cluster.
 {: shortdesc}
 
-* [Worker-to-worker communication](#worker-worker): All worker nodes must be able to communicate with each other on the private network. In many cases, communication must be permitted across multiple private VLANs to allow workers on different VLANs and in different zones to connect with each other.
-* [Worker-to-master and user-to-master communication](#workeruser-master): Your worker nodes and your authorized cluster users can communicate with the Kubernetes master securely over the public network with TLS or over the private network through private cloud service endpoints.
-* [Worker communication to other {{site.data.keyword.cloud_notm}} services or on-premises networks](#worker-services-onprem): Allow your worker nodes to securely communicate with other {{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.registrylong}}, and to an on-premises network.
-* [External communication to apps that run on worker nodes](#external-workers): Allow public or private requests into the cluster as well as requests out of the cluster to a public endpoint.
+- [Worker-to-worker communication](#worker-worker): All worker nodes must be able to communicate with each other on the private network. In many cases, communication must be permitted across multiple private VLANs to allow workers on different VLANs and in different zones to connect with each other.
+- [Worker-to-master and user-to-master communication](#workeruser-master): Your worker nodes and your authorized cluster users can communicate with the Kubernetes master securely over the public network with TLS or over the private network through private cloud service endpoints.
+- [Worker communication to other {{site.data.keyword.cloud_notm}} services or on-premises networks](#worker-services-onprem): Allow your worker nodes to securely communicate with other {{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.registrylong}}, and to an on-premises network.
+- [External communication to apps that run on worker nodes](#external-workers): Allow public or private requests into the cluster as well as requests out of the cluster to a public endpoint.
 
 ### Worker-to-worker communication: classic VLANs and subnets
 {: #worker-worker}
@@ -379,12 +370,7 @@ Edge worker nodes can improve the security of your cluster by allowing fewer wor
 ![Classic infrastructure provider icon.](images/icon-classic-2.svg) In this scenario, you want to run workloads in a classic cluster that are accessible to requests from the Internet so that end users can access your apps. You want the option of isolating public access in your cluster and of controlling what public requests are permitted to your cluster. Additionally, your workers have automatic access to any {{site.data.keyword.cloud_notm}} services that you want to connect with your cluster.
 {: shortdesc}
 
-<p>
-<figure>
-    <img src="images/cs_clusters_planning_internet.png" alt="Architecture image for a cluster that runs internet-facing workloads"/>
-    <figcaption>Network setup for a cluster that runs internet-facing workloads</figcaption>
-</figure>
-</p>
+![Architecture image for a cluster that runs internet-facing workloads.](images/cs_clusters_planning_internet.png){: caption="Figure 1. Network setup for a cluster that runs internet-facing workloads" caption-side="bottom"}
 
 **Worker-to-worker communication**
 
@@ -427,12 +413,7 @@ To achieve this cluster setup, you can create a firewall by [using a gateway app
 ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Allow limited public connectivity to your classic cluster by configuring a gateway appliance, such as a Virtual Router Appliance (Vyatta), as a public gateway and firewall.
 {: shortdesc}
 
-<p>
-<figure>
-    <img src="images/cs_clusters_planning_gateway.png" width="850" style="width:850px; border-style: none" alt="Architecture image for a cluster that uses a gateway appliance for secure public access"/>
-    <figcaption>Network setup for a cluster that uses a gateway appliance for secure public access</figcaption>
-</figure>
-</p>
+![Architecture image for a cluster that uses a gateway appliance for secure public access.](images/cs_clusters_planning_gateway.png){: caption="Figure 1. Network setup for a cluster that uses a gateway appliance for secure public access" caption-side="bottom"}
 
 **Worker-to-worker communication, worker-to-master and user-to-master communication**
 

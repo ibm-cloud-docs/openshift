@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-06"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -86,7 +86,7 @@ In this quickstart guide, you create a 10Gi 5IOPS tier {{site.data.keyword.block
     ```
     {: codeblock}
 
-3. Create the deployment in your cluster.
+4. Create the deployment in your cluster.
 
     ```sh
     oc apply -f deployment.yaml
@@ -208,18 +208,31 @@ Choose your {{site.data.keyword.block_storage_is_short}} profile and create a pe
     ```
     {: codeblock}
 
-    | Component | Description |
-    | --- | --- |
-    | `labels.app` | In the metadata section, enter a label for the deployment. |
-    | `matchLabels.app` and `labels.app` | In the spec selector and template metadata sections, enter a label for your app. |
-    | `image` | Specify the name of the container image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`. |
-    | `name` | Specify the name of the container that you want to deploy in your pod. |
-    | `mountPath` | In the container volume mounts section, specify the absolute path of the directory to where the PVC is mounted inside the container.
-    | `name` | In the container volume mounts section, enter the name of the volume to mount to your pod. You can enter any name that you want. 
-    | `name` | In the volumes section, enter the name of the volume to mount to your pod. Typically this name is the same as `volumeMounts.name`. |
-    | `claimName` | In the volumes persistent volume claim section, enter the name of the PVC that you created earlier. |
-    {: caption="Deployment parameters and description"}
-    {: summary="The table shows an example deployment configuration profile. Rows are to be read from the left to right, with the name of the parameter name in column one and a description of the parameter column two."}
+
+    `labels.app`
+    :   In the metadata section, enter a label for the deployment. 
+    
+    `matchLabels.app` and `labels.app`
+    :   In the spec selector and template metadata sections, enter a label for your app.
+    
+    `image`
+    :   Specify the name of the container image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`.
+    
+    `name`
+    :   Specify the name of the container that you want to deploy in your pod.
+    
+    `mountPath`
+    :   In the container volume mounts section, specify the absolute path of the directory to where the PVC is mounted inside the container.
+    
+    `name`
+    :   In the container volume mounts section, enter the name of the volume to mount to your pod. You can enter any name that you want. 
+    
+    `name`
+    :   In the volumes section, enter the name of the volume to mount to your pod. Typically this name is the same as `volumeMounts.name`.
+    
+    `claimName`
+    :   In the volumes persistent volume claim section, enter the name of the PVC that you created earlier.
+
 
 8. Create the deployment in your cluster.
 
@@ -336,18 +349,30 @@ You can attach a volume to one worker node only. Make sure that the volume is in
     ```
     {: codeblock}
 
-    | Parameter | Description |
-    | --- | --- |
-    | `name` | In the metadata section, enter a name for your PV. |
-    | `storage` | In the spec capacity section, enter the size of your {{site.data.keyword.blockstorageshort}} volume in gigabytes (Gi) that you retrieved earlier. For example, if the size of your device is 100 GB, enter `100Gi`. |
-    | `iops` | In the spec CSI volume attributes section, enter the Max IOPS of the {{site.data.keyword.blockstorageshort}} volume that you retrieved earlier. |
-    | `zone` | In the spec CSI volume attributes section, enter the VPC block zone that matches the location that you retrieved earlier. For example, if your location is `Washington DC-1`, then use `us-east-1` as your zone. To list available zones, run `ibmcloud is zones`. To find an overview of available VPC zones and locations, see [Creating a VPC in a different region](/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region). |
-    | `volumeId` and `spec.csi.volumeHandle` | In the spec CSI volume attributes section, enter the ID of the {{site.data.keyword.blockstorageshort}} volume that you retrieved earlier. |
-    | `storageClassName` | For the spec storage class name, enter an empty string. |
-    | `matchExpressions` | In the spec node affinity section, enter the node selector terms to match the zone. For the key, enter `failure-domain.beta.kubernetes.io/zone`. For the value, enter the zone of your worker node where you want to attach storage. |
-    | `matchExpressions` | In the spec node affinity section, enter the node selector terms to match the region. For the key, enter `failure-domain.beta.kubernetes.io/region`. For the value, enter the region of the worker node where you want to attach storage. |
-    {: caption="PVC example" caption-side="top"}
-    {: summary="This table reads from left. The first column contains the PVC parameter name. The second column contains a brief description of the parameter."}
+    `name`
+    :   In the metadata section, enter a name for your PV.
+    
+    `storage`
+    :   In the spec capacity section, enter the size of your {{site.data.keyword.blockstorageshort}} volume in gigabytes (Gi) that you retrieved earlier. For example, if the size of your device is 100 GB, enter `100Gi`.
+    
+    `iops`
+    :   In the spec CSI volume attributes section, enter the Max IOPS of the {{site.data.keyword.blockstorageshort}} volume that you retrieved earlier.
+    
+    `zone`
+    :   In the spec CSI volume attributes section, enter the VPC block zone that matches the location that you retrieved earlier. For example, if your location is `Washington DC-1`, then use `us-east-1` as your zone. To list available zones, run `ibmcloud is zones`. To find an overview of available VPC zones and locations, see [Creating a VPC in a different region](/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region).
+    
+    `volumeId` and `spec.csi.volumeHandle`
+    :   In the spec CSI volume attributes section, enter the ID of the {{site.data.keyword.blockstorageshort}} volume that you retrieved earlier.
+    
+    `storageClassName`
+    :   For the spec storage class name, enter an empty string.
+    
+    `matchExpressions`
+    :   In the spec node affinity section, enter the node selector terms to match the zone. For the key, enter `failure-domain.beta.kubernetes.io/zone`. For the value, enter the zone of your worker node where you want to attach storage.
+    
+    `matchExpressions`
+    :   In the spec node affinity section, enter the node selector terms to match the region. For the key, enter `failure-domain.beta.kubernetes.io/region`. For the value, enter the region of the worker node where you want to attach storage. 
+
 
 
 6. Create the PV in your cluster.
@@ -381,21 +406,21 @@ You can attach a volume to one worker node only. Make sure that the volume is in
     ```
     {: codeblock}
 
-8. Create your PVC.
+9. Create your PVC.
 
     ```sh
     oc apply -f pvc.yaml
     ```
     {: pre}
 
-9. Verify that your PVC is created and bound to the PV that you created earlier. This process can take a few minutes.
+10. Verify that your PVC is created and bound to the PV that you created earlier. This process can take a few minutes.
 
     ```sh
     oc describe pvc <pvc_name>
     ```
     {: pre}
 
-10. Create a deployment or a pod that uses your PVC.
+11. Create a deployment or a pod that uses your PVC.
 
 
 
@@ -435,14 +460,14 @@ You can update the {{site.data.keyword.block_storage_is_short}} add-on by disabl
     ```
     {: screen}
 
-2. Verify that the add-on is disabled. If the add-on is disabled it does not appear in the list of add-ons in your cluster. The add-on might still display in your list of add-ons for a few minutes after running the `disable` command.
+3. Verify that the add-on is disabled. If the add-on is disabled it does not appear in the list of add-ons in your cluster. The add-on might still display in your list of add-ons for a few minutes after running the `disable` command.
 
     ```sh
     ibmcloud oc cluster addon ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
-3. Re-enable the add-on and specify the latest version that you retrieved earlier.
+4. Re-enable the add-on and specify the latest version that you retrieved earlier.
 
     ```sh
     ibmcloud oc cluster addon enable vpc-block-csi-driver --version <version> --cluster <cluster_name_or_ID>
@@ -457,7 +482,7 @@ You can update the {{site.data.keyword.block_storage_is_short}} add-on by disabl
     ```
     {: screen}
 
-4. Verify that the add-on is in the `Addon Ready` state. The add-on might take a few minutes to become ready.
+5. Verify that the add-on is in the `Addon Ready` state. The add-on might take a few minutes to become ready.
 
     ```sh
     ibmcloud oc cluster addon ls --cluster <cluster_name_or_ID>
@@ -529,24 +554,12 @@ Use {{site.data.keyword.keymanagementservicelong}} to create a private root key 
     ```
     {: codeblock}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the YAML file components</caption>
-    <col width="25%">
-    <thead>
-    <th>Component</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>encrypted</code></td>
-    <td>In the parameters, enter <strong>true</strong> to create a storage class that sets up encryption for your {{site.data.keyword.blockstorageshort}} volumes. If you set this option to <strong>true</strong>, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in <code>parameters.encryptionKey</code>.</td>
-    </tr>
-    <tr>
-    <td><code>encryptionKey</code></td>
-    <td>In the parameters, enter the root key CRN that you retrieved earlier.</td>
-    </tr>
-    </tbody>
-    </table>
+
+    `encrypted`
+    :   In the parameters, enter **true** to create a storage class that sets up encryption for your {{site.data.keyword.blockstorageshort}} volumes. If you set this option to **true**, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in `parameters.encryptionKey`.
+
+    `encryptionKey`
+    :   In the parameters, enter the root key CRN that you retrieved earlier.
 
     Example Kubernetes secret.
     ```yaml
@@ -563,32 +576,18 @@ Use {{site.data.keyword.keymanagementservicelong}} to create a private root key 
     ```
     {: codeblock}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the YAML file components</caption>
-    <col width="25%">
-    <thead>
-    <th>Component</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>name</code></td>
-    <td>Enter a name for your secret.</td>
-    </tr>
-    <tr>
-    <td><code>namespace</code></td>
-    <td>Enter the namespace where you want to create your secret.</td>
-    </tr>
-    <tr>
-    <td><code>encrypted</code></td>
-    <td>In the parameters, enter <strong>true</strong> to set up encryption for your {{site.data.keyword.blockstorageshort}} volumes. </td>
-    </tr>
-    <tr>
-    <td><code>encryptionKey</code></td>
-    <td>In the parameters, enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volume. To use your root key CRN in a secret, you must first convert it to base64 by running <code>echo  -n "<root_key_CRN>" | base64</code>. </td>
-    </tr>
-    </tbody>
-    </table>
+    `name`
+    :   Enter a name for your secret.
+
+    `namespace`
+    :   Enter the namespace where you want to create your secret.
+
+    `encrypted`
+    :   In the parameters, enter **true** to set up encryption for your {{site.data.keyword.blockstorageshort}} volumes. 
+
+    `encryptionKey`
+    :   In the parameters, enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volume. To use your root key CRN in a secret, you must first convert it to base64 by running `echo  -n "<root_key_CRN>" | base64`. 
+
 
 6. Follow steps 4-9 in [Adding {{site.data.keyword.block_storage_is_short}} to your apps](#vpc-block-add) to create a PVC with your customized storage class to provision {{site.data.keyword.block_storage_is_short}} that is configured for encryption with your {{site.data.keyword.keymanagementserviceshort}} root key. Then, mount this storage to an app pod.
 
@@ -610,7 +609,7 @@ Use {{site.data.keyword.keymanagementservicelong}} to create a private root key 
     ```
     {: screen}
 
-2. Using the volume **ID**, list the details for your {{site.data.keyword.blockstorageshort}} instance to ensure that your {{site.data.keyword.keymanagementserviceshort}} root key is stored in the storage instance. You can find the root key in the **Encryption key** field of your CLI output.
+8. Using the volume **ID**, list the details for your {{site.data.keyword.blockstorageshort}} instance to ensure that your {{site.data.keyword.keymanagementserviceshort}} root key is stored in the storage instance. You can find the root key in the **Encryption key** field of your CLI output.
 
     ```sh
     ibmcloud is vol <volume_ID>
@@ -699,73 +698,54 @@ To create your own storage class:
     ```
     {: codeblock}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the YAML file components</caption>
-    <col width="25%">
-    <thead>
-    <th>Component</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-        <tr>
-        <td><code>name</code></td>
-        <td>Enter a name for your storage class.</td>
-        </tr>
-        <tr>
-        <td><code>profile</code></td>
-        <td>Enter the profile that you selected in the previous step, or enter <code>custom</code> to use a custom IOPs value.</td>
-        </tr>
-        <tr>
-        <td><code>sizeRange</code></td>
-        <td>In the parameters, enter the size range for your storage in gigabytes (GiB), such as <a href="/docs/vpc?topic=vpc-block-storage-profiles"><code>10-2000]GiB</code></a>. The size range must match the {{site.data.keyword.block_storage_is_short}} profile that you specify in <code>parameters.profile</code>. To find supported storage sizes for a specific profile, see [Tiered IOPS profiles</a>. Any PVC that uses this storage class must specify a size value that is within this range.</td>
-        </tr>
-        <tr>
-        <td><code>csi.storage.k8s.io/fstype</code></td>
-        <td>In the parameters, enter the file system for your {{site.data.keyword.blockstorageshort}} instance. Choose <code>xfs</code>, <code>ext3</code>, or <code>ext4</code>. The default value is <code>ext4</code> and is used if you do not specify a file system.</td>
-        </tr>
-        <tr>
-        <td><code>encrypted</code></td>
-        <td>In the parameters, enter <strong>true</strong> to create a storage class that sets up encryption for your {{site.data.keyword.blockstorageshort}} volume. If you set this option to <strong>true</strong>, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in <code>parameterencryptionKey</code>. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
-        </tr>
-        <tr>
-        <td><code>encryptionKey</code></td>
-        <td>If you entered <strong>true</strong> for <code>parameters.encrypted</code>, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volume. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
-        </tr>
-        <tr>
-        <td><code>zone</code></td>
-        <td>In the parameters, enter the VPC zone where you want to create the {{site.data.keyword.block_storage_is_short}} instance. Make sure that you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run <code>ibmcloud oc cluster get --cluster &lt;cluster_name_or_ID&gt;</code> and look at the <strong>Worker Zones</strong> field in your CLI output. If you do not specify a zone, one of the worker node zones is automatically selected for your {{site.data.keyword.block_storage_is_short}} instance.</td>
-        </tr>
-        <tr>
-        <td><code>tags</code></td>
-        <td>In the parameters, enter a comma-separated list of tags to apply to your {{site.data.keyword.block_storage_is_short}} instance. Tags can help you find instances more easily or group your instances based on common characteristics, such as the app or the environment that it is used for. </td>
-        </tr>
-        <tr>
-        <td><code>iops</code></td>
-        <td>If you entered <code>custom</code> for the <code>profile</code>, enter a value for the IOPs that you want your {{site.data.keyword.block_storage_is_short}} to use. Refer to the <a href="/docs/vpc?topic=vpc-block-storage-profiles#custom">{{site.data.keyword.block_storage_is_short}} custom IOPs profile</a> table for a list of supported IOPs ranges by volume size.</td>
-        </tr>
-        <tr>
-        <td><code>reclaimPolicy</code></td>
-        <td>Enter the reclaim policy for your storage class. If you want to keep the PV, the physical storage device and your data when you remove the PVC, enter <code>Retain</code>. If you want to delete the PV, the physical storage device and your data when you remove the PVC, enter <code>Delete</code>.</td>
-        </tr>
-        <tr>
-        <td><code>allowVolumeExpansion</code></td>
-        <td>Enter the volume expansion policy for your storage class. If you want to allow volume expansion, enter <code>true</code>. If you don't want to allow volume expansion, enter <code>false</code>.</td>
-        </tr>
-        <tr>
-        <td><code>volumeBindingMode</code></td>
-        <td>Choose if you want to delay the creation of the {{site.data.keyword.block_storage_is_short}} instance until the first pod that uses this storage is ready to be scheduled. To delay the creation, enter <code>WaitForFirstConsumer</code>. To create the instance when you create the PVC, enter <code>Immediate</code>.</td>
-        </tr>
-    </tbody>
-    </table>
+    `name`
+    :   Enter a name for your storage class.
+    
+    
+    `profile`
+    :   Enter the profile that you selected in the previous step, or enter `custom` to use a custom IOPs value.
+        
+    `sizeRange`
+    :   In the parameters, enter the size range for your storage in gigabytes (GiB), such as [`10-2000GiB`](/docs/vpc?topic=vpc-block-storage-profiles). The size range must match the {{site.data.keyword.block_storage_is_short}} profile that you specify in `parameters.profile`. To find supported storage sizes for a specific profile, see [Tiered IOPS profile. Any PVC that uses this storage class must specify a size value that is within this range.
+        
+        
+    `csi.storage.k8s.io/fstype`
+        :   In the parameters, enter the file system for your {{site.data.keyword.blockstorageshort}} instance. Choose `xfs`, `ext3`, or `ext4`. The default value is `ext4` and is used if you do not specify a file system.
 
-4. Create the customized storage class in your cluster.
+    `encrypted`
+    :   In the parameters, enter **true** to create a storage class that sets up encryption for your {{site.data.keyword.blockstorageshort}} volume. If you set this option to **true**, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in `parameterencryptionKey`. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).
+
+    
+    `encryptionKey`
+    :   If you entered **true** for `parameters.encrypted`, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volume. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).
+
+    `zone`
+    :   In the parameters, enter the VPC zone where you want to create the {{site.data.keyword.block_storage_is_short}} instance. Make sure that you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run `ibmcloud oc cluster get --cluster &lt;cluster_name_or_ID&gt;` and look at the **Worker Zones** field in your CLI output. If you do not specify a zone, one of the worker node zones is automatically selected for your {{site.data.keyword.block_storage_is_short}} instance.
+
+    `tags`
+    :   In the parameters, enter a comma-separated list of tags to apply to your {{site.data.keyword.block_storage_is_short}} instance. Tags can help you find instances more easily or group your instances based on common characteristics, such as the app or the environment that it is used for. 
+
+    `iops`
+    :   If you entered `custom` for the `profile`, enter a value for the IOPs that you want your {{site.data.keyword.block_storage_is_short}} to use. Refer to the [{{site.data.keyword.block_storage_is_short}} custom IOPs profile](/docs/vpc?topic=vpc-block-storage-profiles#custom) table for a list of supported IOPs ranges by volume size.
+
+    `reclaimPolicy`
+    :   Enter the reclaim policy for your storage class. If you want to keep the PV, the physical storage device and your data when you remove the PVC, enter `Retain`. If you want to delete the PV, the physical storage device and your data when you remove the PVC, enter `Delete`.
+
+    `allowVolumeExpansion`
+    :   Enter the volume expansion policy for your storage class. If you want to allow volume expansion, enter `true`. If you don't want to allow volume expansion, enter `false`.
+
+    `volumeBindingMode`
+    :   Choose if you want to delay the creation of the {{site.data.keyword.block_storage_is_short}} instance until the first pod that uses this storage is ready to be scheduled. To delay the creation, enter `WaitForFirstConsumer`. To create the instance when you create the PVC, enter `Immediate`.
+
+
+3. Create the customized storage class in your cluster.
 
     ```sh
     oc apply -f custom-storageclass.yaml
     ```
     {: pre}
 
-5. Verify that your storage class is available in the cluster.
+4. Verify that your storage class is available in the cluster.
 
     ```sh
     oc get storageclasses
@@ -788,9 +768,9 @@ To create your own storage class:
     ```
     {: screen}
 
-6. Follow the steps in [Adding {{site.data.keyword.block_storage_is_short}} to your apps](#vpc-block-add) to create a PVC with your customized storage class to provision {{site.data.keyword.block_storage_is_short}}. Then, mount this storage to a sample app.
+5. Follow the steps in [Adding {{site.data.keyword.block_storage_is_short}} to your apps](#vpc-block-add) to create a PVC with your customized storage class to provision {{site.data.keyword.block_storage_is_short}}. Then, mount this storage to a sample app.
 
-7. **Optional**: [Verify your {{site.data.keyword.block_storage_is_short}} file system type](#vpc-block-fs-verify).
+6. **Optional**: [Verify your {{site.data.keyword.block_storage_is_short}} file system type](#vpc-block-fs-verify).
 
 ### Verifying your {{site.data.keyword.block_storage_is_short}} file system
 {: #vpc-block-fs-verify}
@@ -812,14 +792,14 @@ You can create a customized storage class to provision {{site.data.keyword.block
     ```
     {: pre}
 
-2. Log in to your pod.
+4. Log in to your pod.
 
     ```sh
     oc exec <pod_name> -it bash
     ```
     {: pre}
 
-3. List the mount paths inside your pod.
+5. List the mount paths inside your pod.
   
     ```sh
     mount | grep /dev/xvdg
@@ -833,7 +813,7 @@ You can create a customized storage class to provision {{site.data.keyword.block
     ```
     {: pre}
 
-4. Exit your pod.
+6. Exit your pod.
 
     ```sh
     exit
@@ -890,48 +870,30 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
     ```
     {: codeblock}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the YAML file components</caption>
-    <col width="25%">
-    <thead>
-    <th>Component</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>name</code></td>
-    <td>Enter a name for your Kubernetes secret. </td>
-    </tr>
-    <tr>
-    <td><code>namespace</code></td>
-    <td>Enter the namespace where you want to create your secret. To reference the secret in your PVC, the PVC must be created in the same namespace. </td>
-    </tr>
-    <tr>
-    <td><code>iops</code></td>
-    <td>In the string data section, enter the range of IOPS that you want to allow for your {{site.data.keyword.blockstorageshort}} instance. The range that you enter must match the {{site.data.keyword.block_storage_is_short}} tier that you plan to use. </td>
-    </tr>
-    <tr>
-      <td><code>zone</code></td>
-      <td>In the string data section, enter the VPC zone where you want to create the {{site.data.keyword.blockstorageshort}} instance. Make sure that you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run <code>ibmcloud oc cluster get --cluster &lt;cluster_name_or_ID&gt;</code> and look at the <strong>Worker Zones</strong> field in your CLI output. If you do not specify a zone, one of the worker node zones is automatically selected for your {{site.data.keyword.blockstorageshort}} instance.</td>
-    </tr>
-    <tr>
-    <td><code>tags</code></td>
-    <td>In the string data section, enter a comma-separated list of tags to use when the PVC is created. Tags can help you find your storage instance more easily after it is created.</td>
-    </tr>
-    <tr>
-      <td><code>resourceGroup</code></td>
-      <td>In the string data section, enter the resource group that you want your {{site.data.keyword.blockstorageshort}} instance to get access to. If you do not enter a resource group, the instance is automatically authorized to access resources of the resource group that your cluster belongs to. </td>
-    </tr>
-    <tr>
-      <td><code>encrypted</code></td>
-      <td>In the string data section, enter <strong>true</strong> to create a secret that sets up encryption for {{site.data.keyword.blockstorageshort}} volumes. If you set this option to <strong>true</strong>, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in <code>parameters.encryptionKey</code>. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
-    </tr>
-    <tr>
-    <td><code>encryptionKey</code></td>
-    <td>In the data section, if you entered <strong>true</strong> for <code>parameters.encrypted</code>, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volumes. To use your root key CRN in a secret, you must first convert it to base64 by running <code>echo  -n "&lt;root_key_CRN&gt;" | base64</code>. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
-    </tr>
-    </tbody>
-    </table>
+    `name`
+    :   Enter a name for your Kubernetes secret. 
+    
+    `namespace`
+    :   Enter the namespace where you want to create your secret. To reference the secret in your PVC, the PVC must be created in the same namespace. 
+    
+    `iops`
+    :   In the string data section, enter the range of IOPS that you want to allow for your {{site.data.keyword.blockstorageshort}} instance. The range that you enter must match the {{site.data.keyword.block_storage_is_short}} tier that you plan to use. 
+    
+    `zone`
+    :   In the string data section, enter the VPC zone where you want to create the {{site.data.keyword.blockstorageshort}} instance. Make sure that you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>` and look at the **Worker Zones** field in your CLI output. If you do not specify a zone, one of the worker node zones is automatically selected for your {{site.data.keyword.blockstorageshort}} instance.
+    
+    `tags`
+    :   In the string data section, enter a comma-separated list of tags to use when the PVC is created. Tags can help you find your storage instance more easily after it is created.
+    
+    `resourceGroup`
+    :   In the string data section, enter the resource group that you want your {{site.data.keyword.blockstorageshort}} instance to get access to. If you do not enter a resource group, the instance is automatically authorized to access resources of the resource group that your cluster belongs to. 
+    
+    `encrypted`
+    :   In the string data section, enter **true** to create a secret that sets up encryption for {{site.data.keyword.blockstorageshort}} volumes. If you set this option to **true**, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in `parameters.encryptionKey`. For more information about encrypting your data, see [Setting up encryption](#vpc-block-encryption) for your {{site.data.keyword.block_storage_is_short}}.
+    
+    
+    `encryptionKey`
+    :   In the data section, if you entered `true` for `parameters.encrypted`, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volumes. To use your root key CRN in a secret, you must first convert it to base64 by running `echo  -n "<root_key_CRN>" | base64`. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).
 
 3. Create your Kubernetes secret.
 
@@ -962,32 +924,17 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
     ```
     {: codeblock}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the YAML file components</caption>
-    <col width="25%">
-    <thead>
-    <th>Component</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>name</code></td>
-    <td>Enter a name for your Kubernetes secret. </td>
-    </tr>
-    <tr>
-    <td><code>namespace</code></td>
-    <td>Enter the namespace where you want to create your secret. To reference the secret in your PVC, the PVC must be created in the same namespace. </td>
-    </tr>
-    <tr>
-      <td><code>encrypted</code></td>
-      <td>In the string data section, enter <strong>true</strong> to create a secret that sets up encryption for {{site.data.keyword.blockstorageshort}} volumes. If you set this option to <strong>true</strong>, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in <code>parameters.encryptionKey</code>. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
-    </tr>
-    <tr>
-    <td><code>encryptionKey</code></td>
-    <td>In the data section, if you entered <strong>true</strong> for <code>parameters.encrypted</code>, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volume. To use your root key CRN in a secret, you must first convert it to base 64 by running <code>echo  -n "&lt;root_key_CRN&gt;" | base64</code>. For more information about encrypting your data, see <a href="#vpc-block-encryption">Setting up encryption for your {{site.data.keyword.block_storage_is_short}}</a>.</td>
-    </tr>
-    </tbody>
-    </table>
+    `name`
+    :   Enter a name for your Kubernetes secret. 
+    
+    `namespace`
+    :   Enter the namespace where you want to create your secret. To reference the secret in your PVC, the PVC must be created in the same namespace.
+    
+    `encrypted`
+    :   In the string data section, enter **true** to create a secret that sets up encryption for {{site.data.keyword.blockstorageshort}} volumes. If you set this option to **true**, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in `parameters.encryptionKey`. For more information about encrypting your data, see [Setting up encryption](#vpc-block-encryption) for your {{site.data.keyword.block_storage_is_short}}.
+      
+    `encryptionKey`
+    :   In the data section, if you entered **true**for `parameters.encrypted`, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volume. To use your root key CRN in a secret, you must first convert it to base 64 by running `echo  -n "<root_key_CRN>" | base64`. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).
 
 2. Create the Kubernetes secret.
 
@@ -1121,13 +1068,32 @@ You can only expand volumes that are mounted by an app pod.
     oc describe pv `pv-name` | grep volumeId 
     ```
     {: pre}
+    
+    Example output for a volume ID of `r011-a1aaa1f1-3aaa-4a73-84aa-0aa32e11a1a1`.
+    
+    ```sh
+    volumeId=r011-a1aaa1f1-3aaa-4a73-84aa-0aa32e11a1a1
+    ```
+    {: screen}
 
-1. Resize the volume by using with an API request. Replace `<IAM_TOKEN>` with your IAM token. To retrieve your IAM token, run `ibmcloud iam oauth-tokens`. Replace `<region>` with the region your cluster is in, for example `us-south`. Replace`<volumeId>` the volume ID that you retrieved earlier and replace `<capacity>` with the increased capacity, for example `100Gi`.
+1. Resize the volume by using a PATCH request.
 
     ```sh
-    curl -sS -X PATCH -H "Authorization: <IAM_TOKEN>" "https://<region>.iaas.cloud.ibm.com/v1/volumes/<volumeId>?generation=2&version=2020-06-16" -d '{"capacity": <capacity>}')
+    curl -sS -X PATCH -H "Authorization: <iam_token>" "https://<region>.iaas.cloud.ibm.com/v1/volumes/<volumeId>?generation=2&version=2020-06-16" -d '{"capacity": <capacity>}'
     ```
     {: pre}
+    
+    `<iam_token>`
+    :   Your IAM token. To retrieve your IAM token, run `ibmcloud iam oauth-tokens`.
+    
+    `<region>`
+    : The region your cluster is in, for example `us-south`.
+    
+    `<volumeId>`
+    :   The volume ID that you retrieved earlier. For example `r011-a1aaa1f1-3aaa-4a73-84aa-0aa32e11a1a1`.
+    
+    `<capacity>`
+    :   The increased capacity, for example `100Gi`.
 
 1. Log in to your app pod.
 
@@ -1220,68 +1186,160 @@ oc cp <local_filepath>/<filename> <namespace>/<pod>:<pod_filepath> -c <container
 ## Storage class reference
 {: #vpc-block-reference}
 
+For more information about pricing, see [Pricing information](https://www.ibm.com/cloud/vpc/pricing).
+{: shortdesc}
+
 Storage classes that have `retain` in the title have a reclaim policy of **Retain**. Example: `ibmc-file-retain-bronze`. Storage classes that do not have `retain` in the title have a reclaim policy of **Delete**. Example: `ibmc-file-bronze`.
 {: tip}
 
-| Characteristics | Setting|
-|:-----------------|:-----------------|
-| Name | `ibmc-vpc-block-10iops-tier`, `ibmc-vpc-block-retain-10iops-tier`, `ibmc-vpc-block-metro-10iops-tier`, and `ibmc-vpc-block-metro-retain-10iops-tier` |
-| File system | `ext4` |
-| Corresponding {{site.data.keyword.block_storage_is_short}} tier | [10 IOPS/GB](/docs/vpc?topic=vpc-block-storage-profiles#tiers) |
-| Volume binding mode | `ibmc-vpc-block-10iops-tier`: Immediate  \n `ibmc-vpc-block-retain-10iops-tier`: Immediate  \n `ibmc-vpc-block-metro-10iops-tier`: WaitForFirstConsumer \n `ibmc-vpc-block-metro-retain-10iops-tier`: WaitForFirstConsumer |
-| Reclaim policy | `ibmc-vpc-block-10iops-tier`: Delete  \n `ibmc-vpc-block-retain-10iops-tier`: Retain \n `ibmc-vpc-block-metro-10iops-tier`: Delete  \n `ibmc-vpc-block-metro-retain-10iops-tier`: Retain |
-| Billing | Hourly |
-| Pricing | [Pricing information](https://www.ibm.com/cloud/vpc/pricing)|
-{: class="simple-tab-table"}
-{: caption="{{site.data.keyword.block_storage_is_short}} class: 10 IOPS-tier" caption-side="top"}
-{: #vpc-block-10iops}
-{: tab-title="10 IOPS-tier"}
-{: tab-group="{{site.data.keyword.block_storage_is_short}} class"}
 
-| Characteristics | Setting|
-|:-----------------|:-----------------|
-| Name | `ibmc-vpc-block-5iops-tier` and `ibmc-vpc-block-retain-5iops-tier` |
-| File system | `ext4` |
-| Corresponding {{site.data.keyword.block_storage_is_short}} tier | [5 IOPS/GB](/docs/vpc?topic=vpc-block-storage-profiles#tiers) |
-| Volume binding mode | `ibmc-vpc-block-5iops-tier`: Immediate`ibmc-vpc-block-retain-5iops-tier`: Immediate`ibmc-vpc-block-metro-5iops-tier`: WaitforFirstConsumer`ibmc-vpc-block-metro-retain-5iops-tier`: WaitForFirstConsumer |
-| Reclaim policy | `ibmc-vpc-block-5iops-tier`: Delete`ibmc-vpc-block-retain-5iops-tier`: Retain`ibmc-vpc-block-metro-5iops-tier`: Delete`ibmc-vpc-block-metro-retain-5iops-tier`: Retain |
-| Billing | Hourly |
-| Pricing | [Pricing information](https://www.ibm.com/cloud/vpc/pricing)|
-{: class="simple-tab-table"}
-{: caption="{{site.data.keyword.block_storage_is_short}} class: 5 IOPS-tier" caption-side="top"}
-{: #vpc-block-5iops}
-{: tab-title="5 IOPS-tier"}
-{: tab-group="{{site.data.keyword.block_storage_is_short}} class"}
+### 10 IOPs tier
+{: #10iops-sc-vpc-block}
 
-| Characteristics | Setting|
-|:-----------------|:-----------------|
-| Name | `ibmc-vpc-block-custom` and `ibmc-vpc-block-retain-custom` |
-| File system | `ext4` |
-| Corresponding {{site.data.keyword.block_storage_is_short}} tier | [Custom](/docs/vpc?topic=vpc-block-storage-profiles#custom) |
-| Volume binding mode | `ibmc-vpc-block-custom`: Immediate  \n `ibmc-vpc-block-retain-custom`: Immediate`ibmc-vpc-block-metro-custom`: WaitforFirstConsumer`ibmc-vpc-block-metro-retain-custom`: WaitForFirstConsumer |
-| Reclaim policy | `ibmc-vpc-block-custom`: Delete`ibmc-vpc-block-retain-custom`: Retain`ibmc-vpc-block-metro-custom`: Delete`ibmc-vpc-block-metro-retain-custom`: Retain |
-| Billing | Hourly |
-| Pricing | [Pricing information](https://www.ibm.com/cloud/vpc/pricing)|
-{: class="simple-tab-table"}
-{: caption="{{site.data.keyword.block_storage_is_short}} class: custom" caption-side="top"}
-{: #vpc-block-custom}
-{: tab-title="Custom"}
-{: tab-group="{{site.data.keyword.block_storage_is_short}} class"}
+Name
+:   `ibmc-vpc-block-10iops-tier`
+:   `ibmc-vpc-block-retain-10iops-tier`
+:   `ibmc-vpc-block-metro-10iops-tier`
+:   `ibmc-vpc-block-metro-retain-10iops-tier`
+:   `ibmc-vpcblock-odf-10iops`
+:   `ibmc-vpcblock-odf-ret-10iops`
 
-| Characteristics | Setting|
-|:-----------------|:-----------------|
-| Name | `ibmc-vpc-block-general-purpose`, `ibmc-vpc-block-retain-general-purpose`, `ibmc-vpc-block-metro-general-purpose`, and `ibmc-vpc-block-metro-retain-general-purpose` |
-| File system | `ext4` |
-| Corresponding {{site.data.keyword.block_storage_is_short}} tier | [3 IOPS/GB](/docs/vpc?topic=vpc-block-storage-profiles#tiers) |
-| Volume binding mode | `ibmc-vpc-block-general-purpose`: Immediate  \n `ibmc-vpc-block-retain-general-purpose`: Immediate  \n `ibmc-vpc-block-metro-general-purpose`: WaitforFirstConsumer  \n `ibmc-vpc-block-metro-retain-general-purpose`: WaitForFirstConsumer |
-| Reclaim policy | `ibmc-vpc-block-general-purpose`: Delete  \n `ibmc-vpc-block-retain-general-purpose`: Retain \n `ibmc-vpc-block-metro-general-purpose`: Delete  \n `ibmc-vpc-block-metro-retain-general-purpose`: Retain |
-| Billing | Hourly |
-| Pricing | [Pricing information](https://www.ibm.com/cloud/vpc/pricing)|
-{: class="simple-tab-table"}
-{: caption="{{site.data.keyword.block_storage_is_short}} class: 3 IOPS-tier" caption-side="top"}
-{: #vpc-block-3iops}
-{: tab-title="General purpose"}
-{: tab-group="{{site.data.keyword.block_storage_is_short}} class"}
+File system
+:   `ext4`
+
+Corresponding {{site.data.keyword.block_storage_is_short}} tier
+:   [10 IOPS/GB](/docs/vpc?topic=vpc-block-storage-profiles#tiers)
+
+Volume binding mode
+:   `ibmc-vpc-block-10iops-tier`: Immediate
+:   `ibmc-vpc-block-retain-10iops-tier`: Immediate
+:   `ibmc-vpc-block-metro-10iops-tier`: WaitForFirstConsumer
+:   `ibmc-vpc-block-metro-retain-10iops-tier`: WaitForFirstConsumer
+:   `ibmc-vpcblock-odf-10iops`: WaitForFirstConsumer
+:   `ibmc-vpcblock-odf-ret-10iops`: WaitForFirstConsumer
+
+
+Reclaim policy
+:   `ibmc-vpc-block-10iops-tier`: Delete
+:   `ibmc-vpc-block-retain-10iops-tier`: Retain
+:   `ibmc-vpc-block-metro-10iops-tier`: Delete
+:   `ibmc-vpc-block-metro-retain-10iops-tier`: Retain
+:   `ibmc-vpcblock-odf-10iops`: Delete
+:   `ibmc-vpcblock-odf-ret-10iops`: Retain
+
+Billing
+:   Hourly
+
+
+
+### 5 IOPs tier
+{: #5iops-sc-vpc-block}
+
+Name
+:   `ibmc-vpc-block-5iops-tier`
+:   `ibmc-vpc-block-retain-5iops-tier`
+:   `ibmc-vpcblock-odf-5iops`
+:   `ibmc-vpcblock-odf-ret-5iops created`
+
+File system
+:   `ext4` 
+
+Corresponding {{site.data.keyword.block_storage_is_short}} tier
+:   [5 IOPS/GB](/docs/vpc?topic=vpc-block-storage-profiles#tiers)
+
+Volume binding mode
+:   `ibmc-vpc-block-5iops-tier`: Immediate
+:   `ibmc-vpc-block-retain-5iops-tier`: Immediate
+:   `ibmc-vpc-block-metro-5iops-tier`: WaitforFirstConsumer
+:   `ibmc-vpc-block-metro-retain-5iops-tier`: WaitForFirstConsumer
+:   `ibmc-vpcblock-odf-5iops`: WaitForFirstConsumer
+:   `ibmc-vpcblock-odf-ret-5iops created`: WaitForFirstConsumer
+
+Reclaim policy
+:   `ibmc-vpc-block-5iops-tier`: Delete
+:   `ibmc-vpc-block-retain-5iops-tier`: Retain
+:   `ibmc-vpc-block-metro-5iops-tier`: Delete
+:   `ibmc-vpc-block-metro-retain-5iops-tier`: Retain 
+:   `ibmc-vpcblock-odf-5iops`: Delete
+:   `ibmc-vpcblock-odf-ret-5iops created`: Retain
+
+Billing
+:   Hourly
+
+
+
+### Custom
+{: #custom-sc-vpc-block}
+
+Name
+:   `ibmc-vpc-block-custom`
+:   `ibmc-vpc-block-retain-custom`
+:   `ibmc-vpcblock-odf-custom`
+:   `ibmc-vpcblock-odf-ret-custom`
+
+File system
+:   `ext4`
+
+:   Corresponding {{site.data.keyword.block_storage_is_short}} tier
+:   [Custom](/docs/vpc?topic=vpc-block-storage-profiles#custom)
+
+Volume binding mode
+:   `ibmc-vpc-block-custom`: Immediate
+:   `ibmc-vpc-block-retain-custom`: Immediate
+:   `ibmc-vpc-block-metro-custom`: WaitforFirstConsumer
+:   `ibmc-vpc-block-metro-retain-custom`: WaitForFirstConsumer
+:   `ibmc-vpcblock-odf-custom`: WaitForFirstConsumer
+:   `ibmc-vpcblock-odf-ret-custom`: WaitForFirstConsumer
+
+Reclaim policy
+:   `ibmc-vpc-block-custom`: Delete
+:   `ibmc-vpc-block-retain-custom`: Retain
+:   `ibmc-vpc-block-metro-custom`: Delete
+:   `ibmc-vpc-block-metro-retain-custom`: Retain
+:   `ibmc-vpcblock-odf-custom`: Delete
+:   `ibmc-vpcblock-odf-ret-custom`: Retain
+
+Billing
+:   Hourly
+
+
+
+### General purpose
+{: #gen-purp-sc-vpc-block}
+
+Name
+:   `ibmc-vpc-block-general-purpose`
+:   `ibmc-vpc-block-retain-general-purpose`
+:   `ibmc-vpc-block-metro-general-purpose`
+:   `ibmc-vpc-block-metro-retain-general-purpose` 
+:   `ibmc-vpcblock-odf-ret-general`
+:   `ibmc-vpcblock-odf-general`
+
+File system
+:   `ext4`
+
+Corresponding {{site.data.keyword.block_storage_is_short}} tier
+:   [3 IOPS/GB](/docs/vpc?topic=vpc-block-storage-profiles#tiers)
+
+Volume binding mode
+:   `ibmc-vpc-block-general-purpose`: Immediate
+:   `ibmc-vpc-block-retain-general-purpose`: Immediate
+:   `ibmc-vpc-block-metro-general-purpose`: WaitforFirstConsumer
+:   `ibmc-vpc-block-metro-retain-general-purpose`: WaitForFirstConsumer
+:   `ibmc-vpcblock-odf-ret-general`: WaitForFirstConsumer
+:   `ibmc-vpcblock-odf-general`: WaitForFirstConsumer
+
+Reclaim policy
+:   `ibmc-vpc-block-general-purpose`: Delete
+:   `ibmc-vpc-block-retain-general-purpose`: Retain
+:   `ibmc-vpc-block-metro-general-purpose`: Delete
+:   `ibmc-vpc-block-metro-retain-general-purpose`: Retain 
+:   `ibmc-vpcblock-odf-ret-general`: Retain
+:   `ibmc-vpcblock-odf-general`: Delete
+
+Billing
+:   Hourly
+
 
 
 ## Removing persistent storage from a cluster
