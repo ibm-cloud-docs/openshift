@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-07"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -38,11 +38,11 @@ When you create a cluster, the cluster's worker nodes are connected automaticall
 {: shortdesc}
 
 VLANs for free clusters</dt>
-: In free clusters, the cluster's worker nodes are connected to an IBM-owned public VLAN and private VLAN by default. Because IBM controls the VLANs, subnets, and IP addresses, you cannot create multizone clusters or add subnets to your cluster, and can use only NodePort services to expose your app.
+:   In free clusters, the cluster's worker nodes are connected to an IBM-owned public VLAN and private VLAN by default. Because IBM controls the VLANs, subnets, and IP addresses, you cannot create multizone clusters or add subnets to your cluster, and can use only NodePort services to expose your app.
 
 VLANs for standard clusters
-: In standard clusters, the first time that you create a cluster in a zone, a public VLAN and a private VLAN in that zone are automatically provisioned for you in your IBM Cloud infrastructure account. For every subsequent cluster that you create in that zone, you must specify the VLAN pair that you want to use in that zone. You can reuse the same public and private VLANs that were created for you because multiple clusters can share VLANs.
-  You can either connect your worker nodes to both a public VLAN and the private VLAN, or to the private VLAN only. If you want to connect your worker nodes to a private VLAN only, you can use the ID of an existing private VLAN or [create a private VLAN](/docs/cli/reference/ibmcloud?topic=cli-manage-classic-vlans#sl_vlan_create) and use the ID during cluster creation.
+:   In standard clusters, the first time that you create a cluster in a zone, a public VLAN and a private VLAN in that zone are automatically provisioned for you in your IBM Cloud infrastructure account. For every subsequent cluster that you create in that zone, you must specify the VLAN pair that you want to use in that zone. You can reuse the same public and private VLANs that were created for you because multiple clusters can share VLANs.
+    You can either connect your worker nodes to both a public VLAN and the private VLAN, or to the private VLAN only. If you want to connect your worker nodes to a private VLAN only, you can use the ID of an existing private VLAN or [create a private VLAN](/docs/cli/reference/ibmcloud?topic=cli-manage-classic-vlans#sl_vlan_create) and use the ID during cluster creation.
 
 To see the VLANs that are provisioned in each zone for your account, run `ibmcloud oc vlan ls --zone <zone>.` To see the VLANs that one cluster is provisioned on, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID> --show-resources` and look for the **Subnet VLANs** section.
 
@@ -95,35 +95,35 @@ To specify custom pod and service subnets during cluster creation, use the `--po
 {: #subnets_pods}
 
 Default range
-: All services that are deployed to the cluster are assigned a private IP address in the `172.30.0.0/16` range by default.
+:   All services that are deployed to the cluster are assigned a private IP address in the `172.30.0.0/16` range by default.
 
 Size requirements
-: When you specify a custom subnet, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least `/23`, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use `/22` to have enough pod IP addresses for eight worker nodes, `/21` to have enough pod IP addresses for 16 worker nodes, and so on.
+:   When you specify a custom subnet, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least `/23`, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use `/22` to have enough pod IP addresses for eight worker nodes, `/21` to have enough pod IP addresses for 16 worker nodes, and so on.
 
 Range requirements
-: The pod and service subnets cannot overlap each other, and the pod subnet cannot overlap the subnets for your worker nodes. The subnet that you choose must be within one of the following ranges.
+:   The pod and service subnets cannot overlap each other, and the pod subnet cannot overlap the subnets for your worker nodes. The subnet that you choose must be within one of the following ranges.
       - `172.17.0.0 - 172.17.255.255`
       - `172.21.0.0 - 172.31.255.255`
       - `192.168.0.0 - 192.168.254.255`
       - `198.18.0.0 - 198.19.255.255`
-  The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
+    The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited, if you are running Red Hat OpenShift 4.7 or earlier.
 
 #### Services
 {: #subnets_services}
 
 Default range
-: All services that are deployed to the cluster are assigned a private IP address in the `172.21.0.0/16` range by default.
+:   All services that are deployed to the cluster are assigned a private IP address in the `172.21.0.0/16` range by default.
 
 Size requirements
-: When you specify a custom subnet, the subnet must be specified in CIDR format with a size of at least `/24`, which allows a maximum of 255 services in the cluster, or larger.
+:   When you specify a custom subnet, the subnet must be specified in CIDR format with a size of at least `/24`, which allows a maximum of 255 services in the cluster, or larger.
 
 Range requirements
-: The pod and service subnets cannot overlap each other. The subnet that you choose must be within one of the following ranges:
+:   The pod and service subnets cannot overlap each other. The subnet that you choose must be within one of the following ranges:
       - `172.17.0.0 - 172.17.255.255`
       - `172.21.0.0 - 172.31.255.255`
       - `192.168.0.0 - 192.168.254.255`
       - `198.18.0.0 - 198.19.255.255`
-  The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
+    The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited, if you are running Red Hat OpenShift 4.7 or earlier.
 
 ### Network segmentation
 {: #basics_segmentation}
@@ -136,10 +136,10 @@ However, in several situations, components in your cluster must be permitted to 
 **What are Virtual Router Functions (VRF) and VLAN spanning?**
 
 Virtual Router Function (VRF)
-: A VRF enables all the VLANs and subnets in your infrastructure account to communicate with each other. Additionally, a VRF is required to allow your workers and master to communicate over the private cloud service endpoint. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. Note that VRF eliminates the VLAN spanning option for your account, because all VLANs are able to communicate unless you configure a gateway appliance to manage traffic.
+:   A VRF enables all the VLANs and subnets in your infrastructure account to communicate with each other. Additionally, a VRF is required to allow your workers and master to communicate over the private cloud service endpoint. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. Note that VRF eliminates the VLAN spanning option for your account, because all VLANs are able to communicate unless you configure a gateway appliance to manage traffic.
 
 VLAN spanning
-: If you cannot or do not want to enable VRF, [enable VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/containers?topic=containers-access-creds#infra_access), or you can request the account owner to enable it. To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_vlan_spanning_get). Note that you cannot enable the private cloud service endpoint if you choose to enable VLAN spanning instead of a VRF.
+:   If you cannot or do not want to enable VRF, [enable VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/containers?topic=containers-access-creds#infra_access), or you can request the account owner to enable it. To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_vlan_spanning_get). Note that you cannot enable the private cloud service endpoint if you choose to enable VLAN spanning instead of a VRF.
 
 **How does VRF or VLAN spanning affect network segmentation?**
 
@@ -167,7 +167,7 @@ Before you begin
     ```
     {: pre}
 
-- The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` subnet ranges are prohibited.
+- The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` subnet ranges are prohibited, if you are running Red Hat OpenShift 4.7 or earlier.
 
 To create a cluster by using existing subnets:
 
@@ -222,7 +222,7 @@ To create a cluster by using existing subnets:
 
     Before continuing to the next step, the worker nodes must be ready. The **State** changes to `normal` and the **Status** is `Ready`.
 
-    ```
+    ```sh
     ID                                                  Public IP        Private IP     Machine Type   State      Status   Zone     Version
     prod-dal10-pa8dfcc5223804439c87489886dbbc9c07-w1    169.xx.xxx.xxx   10.xxx.xx.xxx  free           normal     Ready    dal10      1.20.11
     ```
@@ -311,7 +311,7 @@ To list available portable public IP addresses,
 
     The creation of this service fails because the Kubernetes master cannot find the specified NLB IP address in the Kubernetes configmap. When you run this command, you can see the error message and a list of available public IP addresses for the cluster.
 
-    ```
+    ```sh
     Error on cloud load balancer a8bfa26552e8511e7bee4324285f6a4a for service default/myservice with UID 8bfa2655-2e85-11e7-bee4-324285f6a4af: Requested cloud provider IP 1.1.1.1 is not available. The following cloud provider IP addresses are available: <list_of_IP_addresses>
     ```
     {: screen}
@@ -395,7 +395,7 @@ To order a subnet,
     {: pre}
 
     In this example output, a second subnet was added to the `2234945` public VLAN.
-    ```
+    ```sh
     Subnet VLANs
     VLAN ID   Subnet CIDR          Public   User-managed
     2234947   10.xxx.xx.xxx/29     false    false
@@ -425,7 +425,7 @@ To make a subnet available to your cluster,
     {: pre}
 
     In the output, look for **VLAN ID**s in the **Subnet VLANs** section.
-    ```
+    ```sh
     Subnet VLANs
     VLAN ID   Subnet CIDR          Public   User-managed
     2234947   10.xxx.xx.xxx/29     false    false
@@ -462,7 +462,7 @@ To make a subnet available to your cluster,
     {: pre}
 
     In this example output, a second subnet was added to the `2234945` public VLAN.
-    ```
+    ```sh
     Subnet VLANs
     VLAN ID   Subnet CIDR          Public   User-managed
     2234947   10.xxx.xx.xxx/29     false    false
@@ -524,7 +524,7 @@ If you no longer need subnets, you can remove them from your cluster. After you 
     {: pre}
 
     In this example output, the CIDR of the subnet to be removed is `169.1.1.1/29`.
-    ```
+    ```sh
     Subnet VLANs
     VLAN ID   Subnet CIDR          Public   User-managed
     2234947   10.xxx.xx.xxx/29     false    false
@@ -540,7 +540,7 @@ If you no longer need subnets, you can remove them from your cluster. After you 
     {: pre}
 
     In this example output, the subnet with the `169.1.1.1/29` CIDR has the ID `1602829`.
-    ```
+    ```sh
     ID        Network             Gateway          VLAN ID   Type      Bound Cluster
     ...
     1602829   169.1.1.1/29        169.1.1.2        2234945   public    df253b6025d64944ab99ed63bb4567b6
@@ -560,14 +560,11 @@ If you no longer need subnets, you can remove them from your cluster. After you 
     {: pre}
 
     In this example output, the subnet with the `169.1.1.1/29` CIDR is removed.
-    ```
+    ```sh
     Subnet VLANs
     VLAN ID   Subnet CIDR          Public   User-managed
     2234947   10.xxx.xx.xxx/29     false    false
     2234945   169.xx.xxx.xxx/29    true     false
     ```
     {: screen}
-
-
-
 
