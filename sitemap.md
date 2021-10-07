@@ -185,6 +185,8 @@ subcollection: openshift
 
 [October 2021](/docs/openshift?topic=openshift-rel-notes#release-oct-2021)
 
+* [7 October 2021](/docs/openshift?topic=openshift-rel-notes#7oct2021)
+
 * [6 October 2021](/docs/openshift?topic=openshift-rel-notes#6oct2021)
 
 * [5 October 2021](/docs/openshift?topic=openshift-rel-notes#5oct2021)
@@ -3202,6 +3204,10 @@ subcollection: openshift
     * [Explanation and remediation](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-remediation)
 
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
+
+* [Version 1.0.4](/docs/openshift?topic=openshift-ca_changelog#0104_ca_addon)
+
+    * [Changelog for patch update 1.0.4_374, released 7 October 2021](/docs/openshift?topic=openshift-ca_changelog#104374_ca)
 
 * [Version 1.0.3](/docs/openshift?topic=openshift-ca_changelog#0103_ca_addon)
 

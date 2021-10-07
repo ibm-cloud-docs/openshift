@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-07"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -39,11 +39,30 @@ ibmcloud oc cluster addon versions --addon cluster-autoscaler
 
 | Cluster autoscaler add-on version | Supported? | Cluster version support |
 | -------------------- | -----------|--------------------------- |
+| 1.0.4 | Yes | >=4.3 |
 | 1.0.3 | Yes | >=4.3 |
 | 1.0.2 | Yes | 4.3 - 4.6 |
 | 1.0.1 | No | 4.3 - 4.6 |
 {: summary="The rows are read from left to right. The first column is the cluster autoscaler add-on version. The second column is the version's supported state. The third column is the cluster version of your cluster that the cluster autoscaler version is supported for."}
 
+
+
+## Version 1.0.4
+{: #0104_ca_addon}
+
+Review the changes included in version 1.0.3 of the managed cluster autoscaler add-on.
+{: shortdesc}
+
+### Changelog for patch update 1.0.4_374, released 7 October 2021
+{: #104374_ca}
+
+Review the changes in version `1.0.4_374` of the cluster autoscaler add-on.
+{: shortdesc}
+
+- Image tags: `1.19.1-6`, `1.20.0-6`, `1.21.0-2`, and `1.22.0-1`.
+- Adds support for Kubernetes version 1.22
+- Pulls the base Golang image from a proxy registry.
+- Adds an owner label to the `cluster-autoscaler` images.
 
 
 

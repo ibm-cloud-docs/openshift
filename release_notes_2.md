@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-07"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -35,6 +35,17 @@ Review the release notes for October 2021.
 {: shortdesc}
 
 
+### 7 October 2021
+{: #7oct2021}
+{: release-note}
+
+Istio add-on change log
+:   [Version `1.11.3`](/docs/containers?topic=containers-istio-changelog#1113) of the Istio managed add-on is released.
+
+Cluster autoscaler add-on.
+:   [Version 1.0.4](/docs/containers?topic=containers-ca_changelog) is released.
+
+</staging>
 
 
 ### 6 October 2021
@@ -46,6 +57,7 @@ Review the release notes for October 2021.
 
 ### 5 October 2021
 {: #5oct2021}
+{: release-note}
 
 Updated supported, deprecated, and unsupported versions for strongSwan Helm chart.
 :   [Upgrading or disabling the strongSwan Helm chart](/docs/containers?topic=containers-vpn#vpn_upgrade)
@@ -233,4 +245,3 @@ Review the release notes for 30 August 2021.
 
 Worker node fix pack update
 :   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.43_1554_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4643_1554), [`4.7.24_1530_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4724_1530), and [`3.11.501_1602_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311501_1602).
-
