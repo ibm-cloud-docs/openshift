@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-07"
 
 keywords: file, debug, help
 
@@ -49,6 +49,7 @@ Follow the steps to review any error messages related to pod deployment.
     oc logs <pod_name>
     ```
     {: pre}
+    
 
 1. [Review the {{site.data.keyword.filestorage_short}} troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_file_storage).  
 
@@ -66,7 +67,7 @@ Some issues can be resolved by restarting and redeploying your pods. Follow the 
         {: pre}
 
         Example output
-        ```
+        ```sh
         pod "nginx" deleted
         ```
         {: screen}
@@ -78,7 +79,7 @@ Some issues can be resolved by restarting and redeploying your pods. Follow the 
         {: pre}
 
         Example output
-        ```
+        ```sh
         pod/nginx created
         ```
         {: pre}
@@ -101,6 +102,7 @@ Some issues can be resolved by restarting and redeploying your pods. Follow the 
     ibmcloud plugin update
     ```
     {: pre}
+    
 
 ## Verifying that the storage driver and plug-in pods show a status of **Running**
 {: #debug_storage_file_driver_plugin}
@@ -137,6 +139,7 @@ Follow the steps to check the status of your storage driver and plug-in pods and
         cat logs.txt
         ```
         {: pre}
+        
 
 1. Check the latest logs for any error messages. [Review the {{site.data.keyword.filestorage_short}} troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_file_storage).
 
@@ -189,6 +192,7 @@ Follow the steps to check the status of your PVC and review any error messages.
       Warning  ProvisioningFailed  60s (x42 over 11m)  persistentvolume-controller  storageclass.storage.k8s.io "sat-local-file-gold" not found
       ```
       {: screen}
+      
 
 1. [Review the {{site.data.keyword.filestorage_short}} troubleshooting documentation for steps to resolve common {{site.data.keyword.filestorage_short}} PVC errors](/docs/openshift?topic=openshift-sitemap#sitemap_file_storage).
 
@@ -205,7 +209,7 @@ If you use a `oc` CLI version that does not match at least the major.minor versi
     {: pre}
 
     **Example output**:
-    ```
+    ```sh
     Client Version: version.Info{Major:"1", Minor:"1.20", GitVersion:"v1.20.11", GitCommit:"641856db18352033a0d96dbc99153fa3b27298e5", GitTreeState:"clean", BuildDate:"2019-03-25T15:53:57Z", GoVersion:"go1.12.1", Compiler:"gc", Platform:"darwin/amd64"}
     Server Version: version.Info{Major:"1", Minor:"1.20", GitVersion:"v1.20.11+IKS", GitCommit:"e15454c2216a73b59e9a059fd2def4e6712a7cf0", GitTreeState:"clean", BuildDate:"2019-04-01T10:08:07Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
     ```   

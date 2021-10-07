@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-07"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -637,13 +637,13 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 To set up configuration files with Kustomize:
 1. [Install the `kustomize` tool](https://github.com/kubernetes-sigs/kustomize/blob/master/docs/INSTALL.md){: external}.
     - For macOS, you can use the `brew` package manager.
-        ```
+        ```sh
         brew install kustomize
         ```
         {: pre}
 
     - For Windows, you can use the `chocolatey` package manager.
-        ```
+        ```sh
         choco install kustomize
         ```
         {: pre}
@@ -655,7 +655,7 @@ To set up configuration files with Kustomize:
     {: pre}
 
 3. Create your repo structure for your `kustomize` [`base`](https://github.com/kubernetes-sigs/kustomize/blob/master/docs/glossary.md#base){: external} directory, [`overlay`](https://github.com/kubernetes-sigs/kustomize/blob/master/docs/glossary.md#overlay){: external} directory, and environment directories such as staging and production. In the subsequent steps, you set up these repos for use with `kustomize`.
-    ```
+    ```sh
     mkdir -p ~/<my_app>/base &&
     mkdir -p ~/<my_app>/overlay &&
     mkdir -p ~/<my_app>/overlay/staging &&
@@ -664,7 +664,7 @@ To set up configuration files with Kustomize:
     {: pre}
 
     Example repo structure
-    ```
+    ```sh
     .
     ├── base
     └── overlay
@@ -702,7 +702,7 @@ To set up configuration files with Kustomize:
         The names of the `resources` YAMLs must match the names of the other files in the `base` repo. You might include multiple configurations in the same file, but in the example, the configurations are separate files such as `deployment.yaml`, `service.yaml`, and `pvc.yaml`.
 
     4. Build your resource YAML files with the configurations that you defined in the `kustomization` base YAML file. The resources are built by combining the configurations in the `kustomization` and resource YAMLs together. The combined YAML files are returned in `stdout` in the output. Use this same command to build any subsequent changes that you make to the `kustomization` YAML, such adding a label.
-        ```
+        ```sh
         kustomize build
         ```
         {: pre}
@@ -737,14 +737,14 @@ To set up configuration files with Kustomize:
         {: caption="Table 1. Understanding YAML components" caption-side="top"}
 
     2. Build your staging overlay configuration files.
-        ```
+        ```sh
         kustomize build overlay/staging
         ```
         {: pre}
 
     3. Repeat these steps to create your prod overlay `kustomization` and other configuration YAML files. For example, you might increase the number of replicas in your `deployment.yaml` so that your prod environment can handle more user requests.
     4. Review your `kustomize` repo structure to make sure that it includes all the YAML configuration files that you need. The structure might look similar to the following example.
-        ```
+        ```sh
         ├── base
         │   ├── configmap.yaml
         │   ├── deployment.yaml
@@ -778,7 +778,7 @@ To set up configuration files with Kustomize:
         {: pre}
 
         Example output
-        ```
+        ```sh
         configmap/staging-kustomtest-configmap-v2 created
         secret/staging-kustomtest-secret-v2 created
         service/staging-kustomtest-service-v2 created
@@ -832,6 +832,7 @@ To set up configuration files with Kustomize:
     persistentvolumeclaim "staging-kustomtest-pvc-v2" deleted
     ```
     {: screen}
+    
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-07"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -108,7 +108,7 @@ To set up a logging configuration for your cluster,
             {: pre}
 
             Example output
-            ```
+            ```sh
             Creating configuration...
             OK
             ```
@@ -121,7 +121,7 @@ To set up a logging configuration for your cluster,
             {: pre}
 
             Example output
-            ```
+            ```sh
             Listing configurations...
 
             OK

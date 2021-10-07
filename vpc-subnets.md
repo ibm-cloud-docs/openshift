@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-07"
 
 keywords: openshift, roks, rhoks, rhos, ips, vlans, networking, public gateway
 
@@ -79,10 +79,10 @@ Default range
 : In the first cluster that you create in a VPC, the default pod subnet is `172.17.0.0/18`. In the second cluster that you create in that VPC, the default pod subnet is `172.17.64.0/18`. In each subsequent cluster, the pod subnet range is the next available, non-overlapping `/18` subnet.
 
 Size requirements
-: When you specify a custom subnet, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least `/23`, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use `/22` to have enough pod IP addresses for eight worker nodes, `/21` to have enough pod IP addresses for 16 worker nodes, and so on.
+:   When you specify a custom subnet, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least `/23`, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use `/22` to have enough pod IP addresses for eight worker nodes, `/21` to have enough pod IP addresses for 16 worker nodes, and so on.
 
 Range requirements
-: The pod and service subnets cannot overlap each other, and the pod subnet cannot overlap the VPC subnets for your worker nodes. The subnet that you choose must be within one of the following ranges.
+:   The pod and service subnets cannot overlap each other, and the pod subnet cannot overlap the VPC subnets for your worker nodes. The subnet that you choose must be within one of the following ranges.
     - `172.17.0.0 - 172.17.255.255`
     - `172.21.0.0 - 172.31.255.255`
     - `192.168.0.0 - 192.168.254.255`
@@ -92,13 +92,13 @@ Range requirements
 {: #vpc_basics_subnets_services}
 
 Default range
-: All services that are deployed to the cluster are assigned a private IP address in the `172.21.0.0/16` range by default.
+:   All services that are deployed to the cluster are assigned a private IP address in the `172.21.0.0/16` range by default.
 
 Size requirements
-: When you specify a custom subnet, the subnet must be specified in CIDR format with a size of at least `/24`, which allows a maximum of 255 services in the cluster, or larger.
+:   When you specify a custom subnet, the subnet must be specified in CIDR format with a size of at least `/24`, which allows a maximum of 255 services in the cluster, or larger.
 
 Range requirements
-: The pod and service subnets cannot overlap each other. The subnet that you choose must be within one of the following ranges.
+:   The pod and service subnets cannot overlap each other. The subnet that you choose must be within one of the following ranges.
     - `172.17.0.0 - 172.17.255.255`
     - `172.21.0.0 - 172.31.255.255`
     - `192.168.0.0 - 192.168.254.255`
@@ -151,7 +151,7 @@ When you create VPC subnets for your clusters, keep in mind the following featur
 - VPC subnets are bound to a single zone and cannot span multiple zones or regions.
 - After you create a subnet, you cannot move it to a different zone, region, or VPC.
 - If you have worker nodes that are attached to an existing subnet in a zone, you cannot change the subnet for that zone in the cluster.
-- The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
+- The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited, if you are running Red Hat OpenShift 4.7 or earlier.
 - Within one VPC, you can create only one public gateway per zone, but that public gateway can be attached to multiple subnets within the zone.
 - The [classic access default address prefixes](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure#classic-access-default-address-prefixes) conflict with the subnets for the {{site.data.keyword.openshiftlong_notm}} control plane. You must [create the VPC without the automatic default address prefixes, and then create your own address prefixes and subnets within those ranges for you cluster](#classic_access_subnets).
 
@@ -175,10 +175,12 @@ Use the {{site.data.keyword.cloud_notm}} console to create a VPC subnet for your
 3. Select the location and zone where you want to create the subnet.
 4. Specify the number of IP addresses to create.
     - VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/containers?topic=containers-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
-    - If you enter a specific IP range, do not use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
+    - If you enter a specific IP range and running Red Hat OpenShift 4.7 or earlier., do not use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
 5. To run default {{site.data.keyword.openshiftshort}} components such as the web console or OperatorHub, and to allow your cluster to access public endpoints such as a public URL of another app or an {{site.data.keyword.cloud_notm}} service that supports public cloud service endpoints only, you must attach a public gateway to your subnet.
 6. Click **Create subnet**.
-7. Use the subnet to [create a cluster](/docs/containers?topic=containers-clusters#clusters_vpcg2_ui), [create a new worker pool](/docs/containers?topic=containers-add_workers#vpc_add_pool), or [add the subnet to an existing worker pool](/docs/containers?topic=containers-add_workers#vpc_add_zone).<p class="important">Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.</p>
+7. Use the subnet to [create a cluster](/docs/containers?topic=containers-clusters#clusters_vpcg2_ui), [create a new worker pool](/docs/containers?topic=containers-add_workers#vpc_add_pool), or [add the subnet to an existing worker pool](/docs/containers?topic=containers-add_workers#vpc_add_zone).>
+    Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
+    {: important}
 
 ### Creating a VPC subnet in the CLI
 {: #create_vpc_subnet_cli}
@@ -205,16 +207,16 @@ To create a VPC subnet, follow these steps.
     {: pre}
 
 2. Create the subnet. For more information about the options in this command, see the [CLI reference](/docs/vpc?topic=vpc-creating-a-vpc-using-cli#create-a-subnet-cli).
-    ```
+    ```sh
     ibmcloud is subnet-create <subnet_name> <vpc_id> --zone <vpc_zone> --ipv4-address-count <number_of_ip_address>
     ```
     {: pre}
 
     - VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/containers?topic=containers-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
-    - Do not use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
+    - If you are running Red Hat OpenShift 4.7 or earlier, do not use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
 
 3. Check whether you have a public gateway in the zones where you want to create a cluster. Within one VPC, you can create only one public gateway per zone, but that public gateway can be attached to multiple subnets within the zone.
-    ```
+    ```sh
     ibmcloud is public-gateways
     ```
     {: pre}
@@ -230,7 +232,7 @@ To create a VPC subnet, follow these steps.
 
     - If you already have a public gateway in each zone, note the **ID**s of the public gateways.
     - If you do not have a public gateway in each zone, create a public gateway. Consider naming the public gateway in the format `<cluster>-<zone>-gateway`. In the output, note the public gateway's **ID**.
-    ```
+    ```sh
     ibmcloud is public-gateway-create <gateway_name> <VPC_ID> <zone>
     ```
     {: pre}
@@ -250,7 +252,7 @@ To create a VPC subnet, follow these steps.
     {: screen}
 
 4. Using the IDs of the public gateway and the subnet, attach the public gateway to the subnet.
-    ```
+    ```sh
     ibmcloud is subnet-update <subnet_ID> --public-gateway-id <gateway_ID>
     ```
     {: pre}
@@ -305,7 +307,9 @@ If you enable classic access when you create your VPC, [classic access default a
     5. Specify the number of IP addresses to create. VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/containers?topic=containers-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
     6. To run default {{site.data.keyword.openshiftshort}} components such as the web console or OperatorHub, and to allow your cluster to access public endpoints such as a public URL of another app or an {{site.data.keyword.cloud_notm}} service that supports public cloud service endpoints only, you must attach a public gateway to your subnet.
     7. Click **Create subnet**.
-4. Use the subnets to [create a cluster](/docs/containers?topic=containers-clusters#clusters_vpcg2_ui).<p class="important">Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.</p>
+4. Use the subnets to [create a cluster](/docs/containers?topic=containers-clusters#clusters_vpcg2_ui).
+     Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
+     {: important}
 
 ### Creating VPC subnets for classic access from the CLI
 {: #ca_subnet_cli}
@@ -317,19 +321,19 @@ If you enable classic access when you create your VPC, [classic access default a
     {: pre}
 
 2. Create a classic access VPC without default address prefixes. In the output, copy the VPC ID.
-    ```
+    ```sh
     ibmcloud is vpc-create <name> --classic-access --address-prefix-management manual
     ```
     {: pre}
 
 3. For each zone in which you plan to create subnets, create one or more address prefixes. The address prefixes must be within one of the following ranges: `10.0.0.0 - 10.255.255.255`, `172.17.0.0 - 172.17.255.255`, `172.21.0.0 - 172.31.255.255`, `192.168.0.0 - 192.168.254.255`.
-    ```
+    ```sh
     ibmcloud is vpc-address-prefix-create <prefix_name> <vpc_id> <zone> <prefix_range>
     ```
     {: pre}
 
 4. Create subnets in each zone that use your address prefixes. For more information about the options in this command, see the [CLI reference](/docs/vpc?topic=vpc-creating-a-vpc-using-cli#create-a-subnet-cli). VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/containers?topic=containers-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
-    ```
+    ```sh
     ibmcloud is subnet-create <subnet_name> <vpc_id> --zone <vpc_zone> --ipv4-address-count <number_of_ip_address> --ipv4-cidr-block <prefix_range>
     ```
     {: pre}
@@ -342,7 +346,7 @@ If you enable classic access when you create your VPC, [classic access default a
         {: pre}
 
         Example output
-        ```
+        ```sh
         ID               26466378-6065-4716-a90b-ac7ed7917c63
         Name             mycluster-us-south-1-gateway
         Floating IP      169.xx.xx.xxx(26466378-6065-4716-a90b-ac7ed7917c63)
@@ -361,7 +365,7 @@ If you enable classic access when you create your VPC, [classic access default a
         {: pre}
 
         Example output
-        ```
+        ```sh
         ID                  91e946b4-7094-46d0-9223-5c2dea2e5023
         Name                mysubnet1
         IPv4 CIDR           10.240.xx.xx/24
@@ -381,7 +385,4 @@ If you enable classic access when you create your VPC, [classic access default a
     {: important}
     
  
-
-
-
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-07"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -28,7 +28,7 @@ During a master operation such as updating your cluster version, the cluster had
 
 Now, master operations cannot complete. You see an error similar to the following:
 
-```
+```sh
 Cannot complete cluster master operations because the cluster has a broken webhook application. For more information, see the troubleshooting docs: 'https://ibm.biz/master_webhook'
 ```
 {: screen}
@@ -54,7 +54,7 @@ Identify and restore the resource that causes the broken webhook.
     {: pre}
 
     In the following example, the webhook is `trust.hooks.securityenforcement.admission.cloud.ibm.com`.
-    ```
+    ```sh
     Error from server (InternalError): Internal error occurred: failed calling webhook "trust.hooks.securityenforcementadmission.cloud.ibm.com": Post https://ibmcloud-image-enforcement.ibm-system.svc:443/mutating-pods?timeout=30s: dialtcp 172.21.xxx.xxx:443: connect: connection timed out
     ```
     {: screen}
@@ -67,7 +67,7 @@ Identify and restore the resource that causes the broken webhook.
         {: pre}
 
         Example output
-        ```
+        ```sh
         image-admission-config
         ```
         {: pre}

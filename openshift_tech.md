@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-07"
 
 keywords: openshift, roks, rhoks, rhos, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
 
@@ -201,7 +201,7 @@ For each cluster that you create with {{site.data.keyword.openshiftlong_notm}}, 
 |Information type|Data|
 |-------|----------|
 |Personal information|The email address of the {{site.data.keyword.cloud_notm}} account that created the cluster.|
-|Sensitive information|<ul><li>The TLS certificate and secret that is used for the assigned Ingress subdomain. </li><li>The certificate authority that is used for the TLS certificate. </li><li>The certificate authority, private keys, and TLS certificates for the {{site.data.keyword.openshiftshort}} master components, including the {{site.data.keyword.openshiftshort}} API server, etcd data store, and VPN.</li><li>A customer root key in {{site.data.keyword.keymanagementservicelong_notm}} for each {{site.data.keyword.cloud_notm}} account that is used to encrypt personal and sensitive information.</li></ul>|
+|Sensitive information|  - The TLS certificate and secret that is used for the assigned Ingress subdomain.  \n - The certificate authority that is used for the TLS certificate.  \n - The certificate authority, private keys, and TLS certificates for the {{site.data.keyword.openshiftshort}} master components, including the {{site.data.keyword.openshiftshort}} API server, etcd data store, and VPN.  \n - A customer root key in {{site.data.keyword.keymanagementservicelong_notm}} for each {{site.data.keyword.cloud_notm}} account that is used to encrypt personal and sensitive information.|
 
 
 ### How is my information stored and encrypted?
@@ -264,6 +264,8 @@ Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.op
 | Virtual Private Cloud (VPC) | {{site.data.keyword.containerlong_notm}} uses the VPC API to provision, manage, and show information about VPC infrastructure resources of the cluster, such as worker nodes, subnets, or storage instances. |
 {: caption="{{site.data.keyword.openshiftlong_notm}} dependencies to {{site.data.keyword.cloud_notm}} services." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the service. The second column is a description of the service."}
+
+
 
 ## Dependencies to 3rd party services
 {: #dependencies-3rd-party}

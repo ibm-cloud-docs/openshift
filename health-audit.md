@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-07"
 
 keywords: openshift, roks, rhoks, logmet, logs, metrics, audit, events
 
@@ -142,14 +142,40 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
     ibmcloud-kube-audit-service   ClusterIP   172.21.xxx.xxx   <none>        80/TCP           1m
     ```
     {: screen}
-
-7. Create the audit webhook to collect Kubernetes API server event logs. Add the `http://` prefix to the **CLUSTER_IP**.
+    
+7. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) Make sure to specify the `--admin` flag.
     ```sh
-    ibmcloud oc cluster master audit-webhook set --cluster <cluster_name_or_ID> --remote-server http://172.21.xxx.xxx 
+    ibmcloud oc cluster config --cluster <cluster> --admin
+    ```
+    {: pre}
+    
+8. View your current config by running the `kubectl config view` command and review the output for the `certificate-authority`, `client-certificate`, and `client-key`.
+    ```sh
+    oc config view --minify
+    ```
+    {: pre}
+    
+    Example output
+    
+    ```sh
+    clusters:
+    - cluster:
+        certificate-authority: /Users/user/.bluemix/plugins/container-service/clusters/cluster-name-a111a11a11aa1aa11a11-admin/ca-aaa00-id-cluster.pem
+        ...
+        ...
+        client-certificate: /Users/user/.bluemix/plugins/container-service/clusters/cluster-name-a111a11a11aa1aa11a11-admin/admin.pem
+        client-key: /Users/user/.bluemix/plugins/container-service/clusters/cluster-name-a111a11a11aa1aa11a11-admin/admin-key.pem
+    ```
+    {: screen}
+    
+
+9. Configure the audit webhook and specify the `certificate-authority`, `client-certificate`, and `client-key` that you retreived in the previous step.
+    ```sh
+    ibmcloud oc cluster master audit-webhook set --cluster <cluster> --remote-server https://127.0.0.1:2040/api/v1/namespaces/default/services/ibmcloud-kube-audit-service/proxy/post --ca-cert <certificate-authority> --client-cert <client-certificate> --client-key <client-key>
     ```
     {: pre}
 
-8. Verify that the audit webhook is created in your cluster.
+10. Verify that the audit webhook is created in your cluster.
     ```sh
     ibmcloud oc cluster master audit-webhook get --cluster <cluster_name_or_ID>
     ```
@@ -163,15 +189,15 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
     ```
     {: screen}
 
-9. Apply the webhook to your Kubernetes API server by refreshing the cluster master. It might take several minutes for the master to refresh.
+11. Apply the webhook to your Kubernetes API server by refreshing the cluster master. It might take several minutes for the master to refresh.
     ```sh
     ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
-10. While the master refreshes, [provision an instance of {{site.data.keyword.la_full_notm}} and deploy a logging agent to every worker node in your cluster](/docs/log-analysis?topic=log-analysis-tutorial-use-logdna). The logging agent is required to forward logs from inside your cluster to the {{site.data.keyword.la_full_notm}} service. If you already set up logging agents in your cluster, you can skip this step.
+12. While the master refreshes, [provision an instance of {{site.data.keyword.la_full_notm}} and deploy a logging agent to every worker node in your cluster](/docs/log-analysis?topic=log-analysis-tutorial-use-logdna). The logging agent is required to forward logs from inside your cluster to the {{site.data.keyword.la_full_notm}} service. If you already set up logging agents in your cluster, you can skip this step.
 
-11. After the master refresh completes and the logging agents are running on your worker nodes, you can [view your Kubernetes API audit logs in {{site.data.keyword.la_full_notm}}](/docs/log-analysis?topic=log-analysis-tutorial-use-logdna).
+13. After the master refresh completes and the logging agents are running on your worker nodes, you can [view your Kubernetes API audit logs in {{site.data.keyword.la_full_notm}}](/docs/log-analysis?topic=log-analysis-tutorial-use-logdna).
 
 After you set up the audit webhook in your cluster, you can monitor version updates to the `kube-audit-to-logdna` image by running `ibmcloud cr image-list --include-ibm | grep ibmcloud-kube-audit`. To see the version of the image that currently runs in your cluster, run `oc get pods | grep ibmcloud-kube-audit` to find the audit pod name, and run `kubectl describe pod <pod_name>` to see the image version.
 {: tip}
