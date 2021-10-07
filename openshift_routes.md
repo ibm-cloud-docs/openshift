@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-07"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -53,7 +53,7 @@ In your VPC infrastructure dashboard, the VPC load balancer reports as healthy o
 ![Classic infrastructure provider icon.](images/icon-classic-2.svg) The following diagram shows how a router directs network traffic from the internet to an app in a single-zone, classic cluster.
 {: shortdesc}
 
-<img src="images/roks-router.png" alt="Expose an app in a single-zone {{site.data.keyword.openshiftshort}} cluster by using a router" width="550" style="width:550px; border-style: none"/>
+![Expose an app in a single-zone {{site.data.keyword.openshiftshort}} cluster by using a router](images/roks-router.png)
 
 1. A request to your app uses the route hostname that you set up for your app.
 
@@ -69,7 +69,7 @@ In your VPC infrastructure dashboard, the VPC load balancer reports as healthy o
 ![Classic infrastructure provider icon.](images/icon-classic-2.svg) The following diagram shows how a router directs network traffic from the internet to an app in a multizone, classic cluster.
 {: shortdesc}
 
-<img src="images/roks-router-multi.png" alt="Expose an app in a multizone {{site.data.keyword.openshiftshort}} cluster by using a router" width="700" style="width:700px; border-style: none"/>
+![Expose an app in a multizone {{site.data.keyword.openshiftshort}} cluster by using a router](images/roks-router-multi.png)
 
 1. A request to your app uses the route hostname that you set up for your app.
 
