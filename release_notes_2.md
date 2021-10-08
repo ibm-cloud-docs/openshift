@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-07"
+lastupdated: "2021-10-08"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -45,7 +45,7 @@ Istio add-on change log
 Cluster autoscaler add-on.
 :   [Version 1.0.4](/docs/containers?topic=containers-ca_changelog) is released.
 
-</staging>
+
 
 
 ### 6 October 2021
