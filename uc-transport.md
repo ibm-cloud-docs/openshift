@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -120,7 +120,7 @@ Why {{site.data.keyword.cloud_notm}}: {{site.data.keyword.openshiftlong_notm}} p
 
 Key technologies:    
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes)
-* [Chatbot service powered by {{site.data.keyword.watson}}](https://developer.ibm.com/patterns/create-cognitive-banking-chatbot/)
+* [Chatbot service powered by {{site.data.keyword.watson}}](https://developer.ibm.com/components/watson-assistant/)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/)
 * [SDK for Node.js](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-node)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-08"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -80,6 +80,7 @@ Worker nodes can also run patch versions that are greater than the masters. As u
 **Supported versions**:
 * Latest: 4.8 (Kubernetes 1.21)
 * Default: 4.7 (Kubernetes 1.20)
+* 4.6 (Kubernetes 1.19)
 
 **Deprecated and unsupported versions**:
 * Deprecated: 3.11 (Kubernetes 1.11), 4.5 (Kubernetes 1.18)
@@ -93,7 +94,7 @@ oc version
 {: pre}
 
 Example output
-```
+```sh
 Client Version: 4.7.3
 Server Version: 4.7.12
 Kubernetes Version: v1.20.2
@@ -136,7 +137,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 ## {{site.data.keyword.openshiftshort}} 4.8
 {: #ocp48}
 
-There is a known issue when updating a cluster from {{site.data.keyword.openshiftshort}} 4.7 to {{site.data.keyword.openshiftshort}} 4.8. Do not upgrade your cluster to from version 4.7 to version 4.8 if it has image security enforcement enabled. 
+There is a [known issue](https://github.com/IBM/portieris/issues/350){: external} when updating a cluster from {{site.data.keyword.openshiftshort}} 4.7 to {{site.data.keyword.openshiftshort}} 4.8. Do not upgrade your cluster to from version 4.7 to version 4.8 if it has image security enforcement enabled. 
 {: important}
 
 ![This badge indicates Kubernetes version 1.21 certification for {{site.data.keyword.containerlong_notm}}](images/certified_kubernetes_1x21.svg)
@@ -154,7 +155,7 @@ The following table shows the actions that you must take before you [update the 
 | Type | Description |
 | ---- | ----------- |
 | **Unsupported:** Deprecated and removed OpenShift features | For more information, review [OpenShift version 4.8 deprecated and removed features](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-deprecated-removed-features){: external}. |
-| Container runtime default security context capabilities | The container runtime (i.e. CRI-O) default security context capabilities have been changed to match Red Hat OpenShift Container Platform (OCP). `NET_RAW` and `SYS_CHROOT` have been removed. This brings the security behavior of containers in line with OCP. If your app requires either of these capabilities and does not list list them in the container or pod `securityContext`, then the app must be changed to include these capabilities. Applications developed for OCP should already have the necessary changes. |
+| Container runtime default security context capabilities | The container runtime (i.e. CRI-O) default security context capabilities have been changed to match Red Hat OpenShift Container Platform (OCP). `NET_RAW` and `SYS_CHROOT` have been removed. This brings the security behavior of containers in line with OCP. If your app requires either of these capabilities and does not list them in the container or pod `securityContext`, then the app must be changed to include these capabilities. Applications developed for OCP should already have the necessary changes. |
 
 ## {{site.data.keyword.openshiftshort}} 4.7
 {: #ocp47}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-07"
+lastupdated: "2021-10-08"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -47,9 +47,9 @@ Potential causes for broken webhooks include:
 Identify and restore the resource that causes the broken webhook.
 {: tsResolve}
 
-1. Create a test pod to get an error that identifies the broken webhook. The error message might have the name of the broken webhook.
+1. Create a test pod to get an error that identifies the broken webhook. The error message might have the name of the broken webhook. If the webhook test passes, then the failure may have been temporary and can be retried.
     ```sh
-    oc run webhook-test --generator=run-pod/v1 --image pause:latest
+    oc run webhook-test --generator=run-pod/v1 --image registry.ng.bluemix.net/armada-master/pause:3.2 -n ibm-system
     ```
     {: pre}
 
