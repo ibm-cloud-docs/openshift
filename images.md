@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-08"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -404,6 +404,9 @@ When you enable image security enforcement in your cluster, you install the open
 {: shortdesc}
 
 For more information, see the [Portieris documentation](https://github.com/IBM/portieris){: external}.
+
+There is a [known issue](https://github.com/IBM/portieris/issues/350){: external} when updating a cluster from {{site.data.keyword.openshiftshort}} 4.7 to {{site.data.keyword.openshiftshort}} 4.8. Do not upgrade your cluster to from version 4.7 to version 4.8 if it has image security enforcement enabled. 
+{: important}
 
 **Mutated images**: By default, Portieris uses the `MutatingAdmissionWebhook` admission controller to mutate your image to refer to the image by a digest instead of a tag. However, you might have some deployment technology that rejects a mutated image. If so, you can use the [image mutation option](https://github.com/IBM/portieris/blob/master/README.md#image-mutation-option){: external} and [policy](https://github.com/IBM/portieris/blob/master/POLICIES.md#image-mutation-option){: external} to change the default behavior.
 {: note}

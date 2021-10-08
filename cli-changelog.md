@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-07"
+lastupdated: "2021-10-08"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, oc, ibmcloud oc
 
@@ -104,7 +104,7 @@ Version 1.0.231 of the CLI was released on 25 February 2021.
 - Updates the help text in various languages.
 
 ## Version 1.0.223
-{: #cli-102238
+{: #cli-102238}
 
 Version 1.0.223 of the CLI was released on 8 February 2021.
 
