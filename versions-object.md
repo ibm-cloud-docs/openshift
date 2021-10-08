@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-07"
+lastupdated: "2021-10-08"
 
 keywords: object storage, plug-in, changelog
 
@@ -66,6 +66,7 @@ Review the changes in version 2.1.4 of the {{site.data.keyword.cos_full_notm}} p
 - Fixes a `timeoutSeconds` issue in the `livenessProbe` and `readinessProbe`.
 - Updates the GoLang version to `v1.17`.
 - Updates the UBI image to `8.4-208`.
+- Migrates the image from from `ibmcom` public repository to `icr.io/cpopen` repo.
 - Resolves [CVE-2021-36221](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36221){: external}, [CVE-2021-29923](https://nvd.nist.gov/vuln/detail/CVE-2021-29923){: external}, and [CVE-2021-33196](https://nvd.nist.gov/vuln/detail/CVE-2021-33196){: external}.
 
 
