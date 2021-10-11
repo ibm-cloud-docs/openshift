@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-11"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -48,50 +48,37 @@ To set up an NLB 1.0 service in a multizone cluster:
           service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: <public_or_private>
           service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"
           service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan: "<vlan_id>"
-      spec:
-        type: LoadBalancer
-        selector:
-          <selector_key>: <selector_value>
-        ports:
-         - protocol: TCP
-           port: 8080
-        loadBalancerIP: <IP_address>
+        spec:
+          type: LoadBalancer
+          selector:
+            <selector_key>: <selector_value>
+          ports:
+           - protocol: TCP
+             port: 8080
+          loadBalancerIP: <IP_address>
         ```
         {: codeblock}
 
-        <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-        <caption>Understanding the YAML file components</caption>
-        <col width="50%">
-        <thead>
-        <th>Parameter</th>
-        <th>Description</th>
-        </thead>
-        <tbody>
-        <tr>
-        <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type</code></td>
-        <td>Annotation to specify a <code>private</code> or <code>public</code> load balancer.<p class="note">If you do not specify this annotation and your worker nodes are connected to public VLANs, a public <code>LoadBalancer</code> service is created. If your worker nodes are connected to private VLANs only, a private <code>LoadBalancer</code> service is created.</p></td>
-        </tr>
-        <tr>
-        <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-zone</code></td>
-        <td>Annotation to specify the zone that the load balancer service deploys to. To see zones, run <code>ibmcloud oc zone ls</code>.</td>
-        </tr>
-        <tr>
-        <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan</code></td>
-        <td>Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run <code>ibmcloud oc vlan ls --zone &lt;zone&gt;</code>.</td>
-        </tr>
-        <tr>
-        <td><code>selector</code></td>
-        <td>The label key (<em>&lt;selector_key&gt;</em>) and value (<em>&lt;selector_value&gt;</em>) that you used in the <code>spec.template.metadata.labels</code> section of your app deployment YAML.</td>
-        </tr>
-        <tr>
-        <td><code>port</code></td>
-        <td>The port that the service listens on.</td>
-        </tr>
-        <tr>
-        <td><code>loadBalancerIP</code></td>
-        <td>Optional: To create a private load balancer or to use a specific portable IP address for a public load balancer, specify the IP address that you want to use. The IP address must be on the VLAN and zone that you specify in the annotations. If you do not specify an IP address:<ul><li>If your cluster is on a public VLAN, a portable public IP address is used. Most clusters are on a public VLAN.</li><li>If your cluster is on a private VLAN only, a portable private IP address is used.</li></ul></td>
-        </tr>
-        </tbody></table>
+
+        `service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type`
+        :   Annotation to specify a `private` or `public` load balancer. If you do not specify this annotation and your worker nodes are connected to public VLANs, a public `LoadBalancer` service is created. If your worker nodes are connected to private VLANs only, a private `LoadBalancer` service is created.
+        
+        `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone`
+        :   Annotation to specify the zone that the load balancer service deploys to. To see zones, run `ibmcloud oc zone ls`.
+        
+        `service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan`
+        :   Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run `ibmcloud oc vlan ls --zone &lt;zone&gt;`.
+        
+        `selector`
+        :   The label key (<selector_key>) and value (<selector_value>) that you used in the `spec.template.metadata.labels` section of your app deployment YAML.
+        
+        `port`
+        :   The port that the service listens on.
+        
+        `loadBalancerIP`
+        :   Optional: To create a private load balancer or to use a specific portable IP address for a public load balancer, specify the IP address that you want to use. The IP address must be on the VLAN and zone that you specify in the annotations. If you do not specify an IP address:
+        :   If your cluster is on a public VLAN, a portable public IP address is used. Most clusters are on a public VLAN.
+        :   If your cluster is on a private VLAN only, a portable private IP address is used.
 
         Example configuration file to create a private NLB 1.0 service that uses a specified IP address on private VLAN `2234945` in `dal12`:
 
@@ -104,14 +91,14 @@ To set up an NLB 1.0 service in a multizone cluster:
           service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: private
           service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "dal12"
           service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan: "2234945"
-      spec:
-        type: LoadBalancer
-        selector:
-          app: nginx
-        ports:
-         - protocol: TCP
-           port: 8080
-        loadBalancerIP: 172.21.xxx.xxx
+        spec:
+          type: LoadBalancer
+          selector:
+            app: nginx
+          ports:
+           - protocol: TCP
+             port: 8080
+          loadBalancerIP: 172.21.xxx.xxx
         ```
         {: codeblock}
 
@@ -206,36 +193,20 @@ To create an NLB 1.0 service in a single-zone cluster:
         ```
         {: codeblock}
 
-        <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-        <caption>Understanding the YAML file components</caption>
-        <col width="50%">
-        <thead>
-        <col width="25%">
-        <th>Component</th>
-        <th>Description</th>
-        </thead>
-        <tbody>
-        <tr>
-          <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type:</code>
-          <td>Annotation to specify a <code>private</code> or <code>public</code> load balancer.</td>
-        </tr>
-        <tr>
-          <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan:</code>
-          <td>Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run <code>ibmcloud oc vlan ls --zone &lt;zone&gt;</code>.</td>
-        </tr>
-        <tr>
-          <td><code>selector</code></td>
-          <td>The label key (<em>&lt;selector_key&gt;</em>) and value (<em>&lt;selector_value&gt;</em>) that you used in the <code>spec.template.metadata.labels</code> section of your app deployment YAML.</td>
-        </tr>
-        <tr>
-          <td><code>port</code></td>
-          <td>The port that the service listens on.</td>
-        </tr>
-        <tr>
-          <td><code>loadBalancerIP</code></td>
-          <td>Optional: To create a private load balancer or to use a specific portable IP address for a public load balancer, specify the IP address that you want to use. The IP address must be on the VLAN that you specify in the annotations. If you do not specify an IP address:<ul><li>If your cluster is on a public VLAN, a portable public IP address is used. Most clusters are on a public VLAN.</li><li>If your cluster is on a private VLAN only, a portable private IP address is used.</li></ul></td>
-        </tr>
-        </tbody></table>
+        `service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type:`
+        :   Annotation to specify a `private` or `public` load balancer.
+        `service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan:`
+        :   Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run `ibmcloud oc vlan ls --zone &lt;zone&gt;`.
+        `selector`
+        :   The label key (<selector_key>) and value (<selector_value>) that you used in the `spec.template.metadata.labels` section of your app deployment YAML.
+        
+        `port`
+        :   The port that the service listens on.
+        
+        `loadBalancerIP`
+        :   Optional: To create a private load balancer or to use a specific portable IP address for a public load balancer, specify the IP address that you want to use. The IP address must be on the VLAN that you specify in the annotations. If you do not specify an IP address:
+        :   If your cluster is on a public VLAN, a portable public IP address is used. Most clusters are on a public VLAN.
+        :   If your cluster is on a private VLAN only, a portable private IP address is used.
 
         Example configuration file to create a private NLB 1.0 service that uses a specified IP address on private VLAN `2234945`:
 
@@ -398,7 +369,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
         {: pre}
 
         Example output
-        ```
+        ```sh
         ...
 
         Subnet VLANs
@@ -480,14 +451,14 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
         NAME:                   10.xxx.xx.xxx
         Role:
         Labels:                 arch=amd64
-beta.kubernetes.io/arch=amd64
-beta.kubernetes.io/os=linux
-failure-domain.beta.kubernetes.io/region=us-south
-failure-domain.beta.kubernetes.io/zone=dal10
-ibm-cloud.kubernetes.io/encrypted-docker-data=true
-kubernetes.io/hostname=10.xxx.xx.xxx
-privateVLAN=2234945
-publicVLAN=2234967
+        beta.kubernetes.io/arch=amd64
+        beta.kubernetes.io/os=linux
+        failure-domain.beta.kubernetes.io/region=us-south
+        failure-domain.beta.kubernetes.io/zone=dal10
+        ibm-cloud.kubernetes.io/encrypted-docker-data=true
+        kubernetes.io/hostname=10.xxx.xx.xxx
+        privateVLAN=2234945
+        publicVLAN=2234967
         ...
         ```
         {: screen}

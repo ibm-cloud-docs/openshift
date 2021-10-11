@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-11"
 
 keywords: openshift, roks, rhoks, rhos, disaster recovery, dr, ha, hadr
 
@@ -57,7 +57,7 @@ The {{site.data.keyword.openshiftlong_notm}} architecture and infrastructure is 
 
 {{site.data.keyword.openshiftlong_notm}} provides several approaches to add more availability to your cluster by adding redundancy and anti-affinity. Review the following image to learn about potential points of failure and how to eliminate them.
 
-<img src="images/cs_failure_ov.png" alt="Overview of fault domains in a high availability cluster within an {{site.data.keyword.cloud_notm}} region." width="250" style="width:250px; border-style: none"/>
+![Overview of fault domains in a high availability cluster within an {{site.data.keyword.cloud_notm}} region.](images/cs_failure_ov.png)
 
 
 ### 1. Container or pod availability

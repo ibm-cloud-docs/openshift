@@ -2119,6 +2119,8 @@ subcollection: openshift
 
     * [Backing up and restoring cluster data with PX-Backup](/docs/openshift?topic=openshift-portworx#px-backup-and-restore)
 
+    * [Upgrading PX-Backup](/docs/openshift?topic=openshift-portworx#px-backup-upgrade)
+
 * [Setting up disaster recovery with Portworx](/docs/openshift?topic=openshift-portworx#px-dr)
 
 * [Exploring other Portworx features](/docs/openshift?topic=openshift-portworx#features)
@@ -2879,9 +2881,13 @@ subcollection: openshift
 
 * [Version 4.8 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-48)
 
+    * [Changelog for worker node fix pack 4.8.13_1528_openshift, released 11 October 2021](/docs/openshift?topic=openshift-openshift_changelog#48131528_openshift)
+
     * [Change log for fix pack 4.8.11_1526_openshift (master) and 4.8.12_1527_openshift (worker node), released 29 Sept 2021](/docs/openshift?topic=openshift-openshift_changelog#4811_1526_and_4812_1527)
 
 * [Version 4.7 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-47)
+
+    * [Changelog for worker node fix pack 4.7.32_1534_openshift, released 11 October 2021](/docs/openshift?topic=openshift-openshift_changelog#4732_1534_openshift)
 
     * [Changelog for worker node fix pack 4.7.31_1533_openshift, released 27 September 2021](/docs/openshift?topic=openshift-openshift_changelog#4731_1533)
 
@@ -2912,6 +2918,8 @@ subcollection: openshift
     * [Changelog for master fix pack 4.7.12_1520_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4712_1520)
 
 * [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
+
+    * [Changelog for worker node fix pack 4.6.46_1558_openshift, released 11 October 2021](/docs/openshift?topic=openshift-openshift_changelog#4646_1558_openshift)
 
     * [Changelog for worker node fix pack 4.6.45_1557_openshift, released 27 September 2021](/docs/openshift?topic=openshift-openshift_changelog#4645_1557)
 
@@ -2968,6 +2976,8 @@ subcollection: openshift
     * [Changelog for 4.6.16_1530_openshift (master) and 4.6.16_1529_openshift (worker node), released 17 February 2020](/docs/openshift?topic=openshift-openshift_changelog#4616_1530)
 
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+
+    * [Changelog for worker node fix pack 3.11.524_1606_openshift, released 11 October 2021](/docs/openshift?topic=openshift-openshift_changelog#311524_1606_openshift)
 
     * [Changelog for worker node fix pack 3.11.521_1605_openshift, released 27 September 2021](/docs/openshift?topic=openshift-openshift_changelog#311521_1605)
 
@@ -3145,17 +3155,43 @@ subcollection: openshift
 
 * [Benchmark 1.5 results for {{site.data.keyword.openshiftshort}} versions 4.6 - 4.8](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15)
 
-    * [Section 1: Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-1)
+    * [1.1 Master Node Configuration Files](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-1-1)
 
-    * [Section 2: `etcd` node configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-2)
+    * [1.2 API Server](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-1-2)
 
-    * [Section 3: Control plane configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-3)
+    * [1.3 Controller Manager](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-1-3)
 
-    * [Section 4: Worker node security configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-4)
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-1-4)
 
-    * [Section 5: Kubernetes policies](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-5)
+* [2 Etcd Node Configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-2)
 
-    * [Explanation and remediation](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-remediation)
+* [3 Control Plane Configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-3)
+
+    * [3.1 Authentication and Authorization](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-3-1)
+
+    * [3.2 Logging](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-3-2)
+
+* [4 Worker Node Security Configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-4)
+
+    * [4.1 Worker Node Configuration Files](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-4-1)
+
+    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-4-2)
+
+* [5 Kubernetes Policies](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-5)
+
+    * [5.1 RBAC and Service Accounts](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-5-1)
+
+    * [5.2 Pod Security Policies](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-5-2)
+
+    * [5.3 Network Policies and CNI](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-5-3)
+
+    * [5.4 Secrets Management](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-5-4)
+
+    * [5.5 Extensible Admission Control](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-5-5)
+
+    * [5.6 General Policies](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-5-6)
+
+    * [IBM Remediations and Explanations](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-remediation)
 
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 

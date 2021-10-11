@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1127,6 +1127,12 @@ You can back up an entire cluster namespace, single apps, and the data that is s
 **Restore any backup that you created to another cluster**: </br>
 You can restore an entire namespace, your apps, or your data to any cluster that you added to the PX-Backup service. Use this PX-Backup capability if you want to migrate apps and data from one cluster to another. For more information, see the [PX-Backup documentation](https://backup.docs.portworx.com/use-px-backup/backup-restore/restore-backup/){: external}.
 
+### Upgrading PX-Backup
+{: #px-backup-upgrade}
+
+Follow the Portworx documentation to [upgrade PX-backup](https://1.2.backup.docs.portworx.com/use-px-backup/upgrade/){: external}
+{: shortdesc}
+
 
 
 ## Setting up disaster recovery with Portworx
@@ -1427,7 +1433,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
 2. Navigate to the `px_logcollector` directory.
     ```sh
-    cd ibmcloud-storage-utilities/px_logcollector/
+    cd ibmcloud-storage-utilities/px_utils/px_logcollector/ 
     ```
     {: pre}
 
@@ -1461,7 +1467,6 @@ Review the following Portworx limitations.
 | Private clusters | To install Portworx in a cluster that doesn't have VRF or access to private CSEs, you must create a rule in the default security group to allow inbound and outbound traffic for the following IP addresses: `166.9.24.81`, `166.9.22.100`, and `166.9.20.178`. For more information, see [Updating the default security group](/docs/vpc?topic=vpc-updating-the-default-security-group#updating-the-default-security-group). |
 {: summary="This table contains information on limitations for Portworx on {{site.data.keyword.openshiftlong_notm}} clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="Portworx limitations"}
-
 
 
 

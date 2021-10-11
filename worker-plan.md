@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-11"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -33,7 +33,7 @@ Trying to plan how many worker nodes your need in your cluster? Check out [Sizin
 The worker node flavors and isolation levels that are available to you depend on your container platform, cluster type, the infrastructure provider that you want to use, and the {{site.data.keyword.openshiftlong_notm}} location where you want to create your cluster.
 {: shortdesc}
 
-<img src="images/cs_clusters_hardware.png" width="700" alt="Hardware options for worker nodes in a standard cluster" style="width:700px; border-style: none"/>
+![Hardware options for worker nodes in a standard cluster](images/cs_clusters_hardware.png)
 
 **What flavors are available to me?**
 
@@ -324,7 +324,7 @@ The resources that are reserved on your worker node depend on the amount of PIDs
 To review how much compute resources are currently used on your worker node, run [`oc top node`](https://kubernetes.io/docs/reference/kubectl/overview/#top){: external}.
 {: tip}
 
-| Memory tier | % or amount reserved | <code>b3c.4x16</code> worker node (16 GB) example | <code>mg1c.28x256</code> worker node (256 GB) example|
+| Memory tier | % or amount reserved | `b3c.4x16` worker node (16 GB) example | `mg1c.28x256` worker node (256 GB) example|
 |:-----------------|:-----------------|:-----------------|:-----------------|
 | First 4 GB (0 - 4 GB) | 25% of memory | 1 GB | 1 GB|
 | Next 4 GB (5 - 8 GB) | 20% of memory | 0.8 GB | 0.8 GB|
@@ -339,7 +339,7 @@ To review how much compute resources are currently used on your worker node, run
 {: tab-title="Worker node memory reserves by tier"}
 {: tab-group="Worker Node"}
 
-| CPU tier | % or amount reserved | <code>b3c.4x16</code> worker node (four cores) example | <code>mg1c.28x256</code> worker node (28 cores) example|
+| CPU tier | % or amount reserved | `b3c.4x16` worker node (four cores) example | `mg1c.28x256` worker node (28 cores) example|
 |:-----------------|:-----------------|:-----------------|:-----------------|
 | First core (Core 1) | 6% cores | 0.06 cores | 0.06 cores|
 | Next two cores (Cores 2 - 3) | 1% cores | 0.02 cores | 0.02 cores|
@@ -357,8 +357,8 @@ To review how much compute resources are currently used on your worker node, run
 | < 200,000 | 20% PIDs | 35% PIDs |
 | 200,000 - 499,999 | 10% PIDs  | 40% PIDs |
 | ≥ 500,000 | 5% PIDs  | 45% PIDs  |
-| <code>b3c.4x16</code> worker node: 126,878 PIDs | 25,376 PIDs (20%) | 44,407 PIDS (35%)  |
-| <code>mg1c.28x256</code> worker node: 2,062,400 PIDs| 103,120 PIDs (5%) | 928,085 PIDs (45%) |
+| `b3c.4x16` worker node: 126,878 PIDs | 25,376 PIDs (20%) | 44,407 PIDS (35%)  |
+| `mg1c.28x256` worker node: 2,062,400 PIDs| 103,120 PIDs (5%) | 928,085 PIDs (45%) |
 {: class="simple-tab-table"}
 {: caption="Worker node PID reserves by tier" caption-side="top"}
 {: #worker-pid-reserves}
@@ -375,7 +375,8 @@ To review how much compute resources are currently used on your worker node, run
 {: tab-title="Worker node disk reserves"}
 {: tab-group="Worker Node"}
 
-<p class="note">Worker node PID reserves are for {{site.data.keyword.openshiftshort}} version 4.</br></br>Sample worker node values are provided for example only. Your actual usage might vary slightly.</p>
+Worker node PID reserves are for {{site.data.keyword.openshiftshort}} version 4. Sample worker node values are provided for example only. Your actual usage might vary slightly.
+{: note}
 
 
 
