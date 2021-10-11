@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-11"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -65,11 +65,11 @@ When you deploy an app, the app pods indiscriminately deploy to various worker n
 {: shortdesc}
 
 Before you begin
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-* Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-users#checking-perms) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the {{site.data.keyword.openshiftshort}} project.
-* **Optional**: [Set a label for the worker pool](/docs/openshift?topic=openshift-add_workers#worker_pool_labels) that you want to run the app on.
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-users#checking-perms) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the {{site.data.keyword.openshiftshort}} project.
+- **Optional**: [Set a label for the worker pool](/docs/openshift?topic=openshift-add_workers#worker_pool_labels) that you want to run the app on.
 
-To deploy apps to specific worker nodes:
+To deploy apps to specific worker nodes,
 
 1. Get the ID of the worker pool that you want to deploy app pods to.
     ```sh
@@ -180,7 +180,7 @@ To deploy apps to specific worker nodes:
 
         Example output
 
-        ```
+        ```sh
         ID                                                 Public IP       Private IP     Machine Type      State    Status  Zone    Version
         kube-dal10-crb20b637238bb471f8b4b8b881bbb4962-w7   169.xx.xxx.xxx  10.176.48.78   b3c.4x16          normal   Ready   dal10   1.8.6_1504
         kube-dal10-crb20b637238bb471f8b4b8b881bbb4962-w8   169.xx.xxx.xxx  10.176.48.83   b3c.4x16          normal   Ready   dal10   1.8.6_1504
@@ -287,8 +287,8 @@ To run a workload on a GPU machine,
     {: screen}
 
 4. Describe the pod to see how the GPU device plug-in scheduled the pod.
-    * In the `Limits` and `Requests` fields, see that the resource limit that you specified matches the request that the device plug-in automatically set.
-    * In the events, verify that the pod is assigned to your GPU worker node.
+    - In the `Limits` and `Requests` fields, see that the resource limit that you specified matches the request that the device plug-in automatically set.
+    - In the events, verify that the pod is assigned to your GPU worker node.
 
         ```sh
         oc describe pod nvidia-smi-ppkd4

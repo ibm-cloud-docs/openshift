@@ -1444,7 +1444,7 @@ subcollection: openshift
 
 * [Deploying containers from an existing image stream in the internal registry](/docs/openshift?topic=openshift-images#oc_imagestream_deploy)
 
-    * [Using an image stream from the CLI](/docs/openshift?topic=openshift-images#oc_imagestream_deploy_cli)
+    * [Using an image stream with the CLI](/docs/openshift?topic=openshift-images#oc_imagestream_deploy_cli)
 
     * [Using an image stream from the {{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-images#oc_imagestream_deploy-ui)
 

@@ -26,9 +26,10 @@ An image is created from a Dockerfile, which is a file that contains instruction
 {: #build_images}
 
 You can build your images in several ways, including the following {{site.data.keyword.cloud_notm}} services.
+{: shortdesc}
 
 {{site.data.keyword.codeenginefull_notm}}
-:    {{site.data.keyword.codeengineshort}} supports building images from a Dockerfile and Cloud Native Buildpacks and automatically push the images to {{site.data.keyword.registrylong}}. For more information, see [Planning your build](/docs/codeengine?topic=codeengine-plan-build).
+:    {{site.data.keyword.codeengineshort}} supports building images from a Dockerfile and Cloud Native Buildpacks and automatically pushing the images to {{site.data.keyword.registrylong}}. For more information, see [Planning your build](/docs/codeengine?topic=codeengine-plan-build).
 
 Tekton pipelines
 :    The {{site.data.keyword.contdelivery_short}} service includes several Tekton tasks that you can reference within your pipelines to build  images. For more information, see [Tekton pipelines](https://cloud.ibm.com/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images).
@@ -39,7 +40,7 @@ Tekton pipelines
 You can deploy an app from an existing [image stream](https://docs.openshift.com/container-platform/4.7/openshift_images/image-streams-manage.html){: external} that your cluster administrator set up in the internal registry of your {{site.data.keyword.openshiftshort}} cluster. For example, your cluster administrator might have [set up the image stream to import an image from an external private registry](/docs/openshift?topic=openshift-registry#imagestream_registry), such as {{site.data.keyword.registrylong_notm}}.
 {: shortdesc}
 
-### Using an image stream from the CLI
+### Using an image stream with the CLI
 {: #oc_imagestream_deploy_cli}
 
 1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -106,39 +107,15 @@ To deploy a container into the **default** project of your cluster:
             image: <region>.icr.io/<project>/<image>:<tag>
     ```
     {: codeblock}
-
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the YAML file components</caption>
-    <col width="20%">
-    <thead>
-    <th>Parameter</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code><em>&lt;deployment&gt;</em></code></td>
-    <td>Give your deployment a name.</td>
-    </tr>
-    <tr>
-    <td><code><em>&lt;number_of_replicas&gt;</em></code></td>
-    <td>Enter the number of replica pods that the deployment creates.</td>
-    </tr>
-    <tr>
-    <td><code>app: <em>&lt;app_name&gt;</em></code></td>
-    <td>Use the name of your app as a label for the container.</td>
-    </tr>
-    <tr>
-    <td><code>name: <em>&lt;app_name&gt;</em></code></td>
-    <td>Give your container a name, such as the name of your <code>app</code> label.</td>
-    </tr>
-    <tr>
-    <td><code>image: <em>&lt;region&gt;</em>.icr.io/<em>&lt;project&gt;</em>/<em>&lt;image&gt;</em>:<em>&lt;tag&gt;</em></code></td>
-    <td>Replace the image URL variables with the information for your image:
-        <ul><li><strong><code>&lt;region&gt;</code></strong>: The regional {{site.data.keyword.registrylong_notm}} API endpoint for the registry domain. To list the domain for the region that you are logged in to, run <code>ibmcloud cr api</code>.</li>
-        <li><strong><code>&lt;namespace&gt;</code></strong>: The registry namespace. To get your namespace information, run <code>ibmcloud cr namespace-list</code>.</li>
-        <li><strong><code>&lt;image&gt;:&lt;tag&gt;</code></strong>: The image and tag that you want to use for your container. To list the images that are available in your registry namespace, run <code>ibmcloud cr images</code>.</li></ul></td>
-    </tr>
-    </tbody></table>
+    
+    | Parameter | Description |
+    | -------------- | -------------- |
+    | `<deployment>` | Give your deployment a name. |
+    | `<number_of_replicas>` | Enter the number of replica pods that the deployment creates. |
+    | `app: <app_name>` | Use the name of your app as a label for the container. |
+    | `name: <app_name>` | Give your container a name, such as the name of your `app` label. |
+    | `image: <region>.icr.io/<project>/<image>:<tag>` | Enter your image URL variable. \n - `<region>`: The regional {{site.data.keyword.registrylong_notm}} API endpoint for the registry domain. To list the domain for the region that you are logged in to, run `ibmcloud cr api`. \n - `<namespace>`: The registry namespace. To get your namespace information, run `ibmcloud cr namespace-list`. \n - `<image>:<tag>`: The image and tag that you want to use for your container. To list the images that are available in your registry namespace, run `ibmcloud cr images`. |
+    {: caption="Table 1. Understanding the YAML file components" caption-side="bottom"}
 
 3. Create the deployment in your cluster.
 
@@ -159,12 +136,12 @@ In clusters that run {{site.data.keyword.openshiftshort}} 4.5 or later, [the CRI
 
 To run an app by using an encrypted image, you must share the key for decrypting the image with the container runtime on the worker nodes in the cluster. When you enable the Image Key Synchronizer add-on in your cluster, the synchronizer daemon set is deployed in the `image-key-synchronizer` project. You can then create Kubernetes secrets that contain the image decryption keys in that project. The add-on adds the keys to a specific directory on the worker nodes where the container runtime can access and use the keys to decrypt container images. Note that the Image Key Synchronizer add-on also supports private keys that are first [wrapped by a root key that is stored in an {{site.data.keyword.keymanagementservicelong}} instance](/docs/key-protect?topic=key-protect-envelope-encryption).
 
-**Before you begin:**
+Before you begin
 
 1. Download and install the CLI clients for the following open source tools:
-    * [OpenSSL](https://www.openssl.org/source/){: external}, to generate an RSA key pair.
-    * [Docker Engine CLI](https://www.docker.com/products/container-runtime#/download){: external}, to locally pull images from an image registry.
-    * [Skopeo](https://github.com/containers/skopeo/blob/main/install.md){: external}, to encrypt OCI container images.
+    - [OpenSSL](https://www.openssl.org/source/){: external}, to generate an RSA key pair.
+    - [Docker Engine CLI](https://www.docker.com/products/container-runtime#/download){: external}, to locally pull images from an image registry.
+    - [Skopeo](https://github.com/containers/skopeo/blob/main/install.md){: external}, to encrypt OCI container images.
 
 2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that encrypted images are supported only for {{site.data.keyword.openshiftshort}} version 4.5 and later.
 
@@ -173,10 +150,11 @@ To run an app by using an encrypted image, you must share the key for decrypting
     2. [Create a {{site.data.keyword.keymanagementserviceshort}} service instance](/docs/key-protect?topic=key-protect-provision#provision).
     3. [Create a {{site.data.keyword.keymanagementserviceshort}} root key](/docs/key-protect?topic=key-protect-create-root-keys#create-root-keys).
     4. Get the following values for your {{site.data.keyword.keymanagementserviceshort}} instance:
-        * [The service instance ID](/docs/key-protect?topic=key-protect-retrieve-instance-ID).
-        * [The API key for the service instance ID](/docs/account?topic=account-serviceidapikeys#create_service_key).
-        * [The service endpoint URL](/docs/key-protect?topic=key-protect-regions#service-endpoints).
+        - [The service instance ID](/docs/key-protect?topic=key-protect-retrieve-instance-ID).
+        - [The API key for the service instance ID](/docs/account?topic=account-serviceidapikeys#create_service_key).
+        - [The service endpoint URL](/docs/key-protect?topic=key-protect-regions#service-endpoints).
     5. Create a Kubernetes secret named `keyprotect-config` that contains the values that you retrieved. The Image Key Synchronizer add-on uses the environment variables in this secret to authenticate with your {{site.data.keyword.keymanagementserviceshort}} instance.
+    
         ```yaml
         apiVersion: v1
         kind: Secret
@@ -197,45 +175,51 @@ To run an app by using an encrypted image, you must share the key for decrypting
 To deploy containers that use encrypted images:
 
 1. Enable the Image Key Synchronizer add-on.
+
     ```sh
     ibmcloud oc cluster addon enable image-key-synchronizer -c <cluster_name_or_ID>
     ```
     {: pre}
 
 2. Verify that the `addon-image-key-syncrhonizer` daemon set was successfully created in the `image-key-synchronizer` project in your cluster.
+
     ```sh
     oc get ds addon-image-key-syncrhonizer -n image-key-synchronizer
     ```
     {: pre}
 
 3. Use `openssl` to generate a private and public RSA key pair.
-    ```
+
+    ```sh
     openssl genrsa --out myprivatekey.pem
     openssl rsa -in myprivatekey.pem -pubout -out mypubkey.pem
     ```
     {: pre}
 
 4. Provide the private key directly in a secret, or first wrap the private key by using a {{site.data.keyword.keymanagementserviceshort}} root key. After you create the secret in the `image-key-synchronizer` project, the Image Key Synchronizer add-on automatically copies the private key to the `/etc/crio/keys/synced` directory on your worker nodes.
-    * **To provide the private key directly**: Save the private key as a Kubernetes secret in the `image-key-synchronizer` project.
+    - **To provide the private key directly**: Save the private key as a Kubernetes secret in the `image-key-synchronizer` project.
         ```sh
         oc create -n image-key-synchronizer secret generic --type=key --from-file=myprivatekey.pem <secret_name>
         ```
         {: codeblock}
 
-    * **To wrap the private key by using a {{site.data.keyword.keymanagementserviceshort}} root key**:
+    - **To wrap the private key by using a {{site.data.keyword.keymanagementserviceshort}} root key**:
         1. Encode your private key in base64, and copy the output.
-            ```
+        
+            ```sh
             cat myprivatekey.pem | base64
             ```
             {: pre}
 
         2. Use the {{site.data.keyword.keymanagementserviceshort}} CLI plug-in to wrap the base64-encoded private key with your root key. In the output, copy the ciphertext of the wrapped private key.
-            ```
+        
+            ```sh
             ibmcloud kp key wrap <root_key_ID> -p <base64_encoded_private_key>
             ```
             {: pre}
 
         3. Save the wrapped private key as a Kubernetes secret in the `image-key-synchronizer` project.
+        
             ```yaml
             apiVersion: v1
             kind: Secret
@@ -250,32 +234,37 @@ To deploy containers that use encrypted images:
             {: pre}
 
         4. Create the secret.
+        
             ```sh
             oc apply -n image-key-synchronizer -f <secret_name>.yaml
             ```
             {: pre}
 
 5. Use `docker` to locally pull an OCI image. Replace `<source_image>` with the repository of the image and `<tag>` with the tag of the image that you want to use, such as `latest`.
-    ```
+
+    ```sh
     docker pull <source_image>:<tag>
     ```
     {: pre}
 
 6. Use `skopeo` to encrypt the local image. This command copies the OCI image that you previously pulled, uses your public key to encrypt the image, and saves the encrypted image to a different local file. Consider naming the encrypted image `<source_image>_encrypted` for easy identification.
-    ```
+
+    ```sh
     skopeo copy --encryption-key jwe:./mypubkey.pem <source_image>:<tag> <source_image>_encrypted:<tag>
     ```
     {: pre}
 
 7. Optional: To locally verify that the image is encrypted, you can try to decrypt the image with an incorrect key.
     1. Generate a new private key.
+    
         ```sh
         openssl genrsa -out wrongkey.pem 1024
         ```
         {: pre}
 
     2. Attempt to use this new key to decrypt the image. The decryption command fails because the incorrect private key was specified.
-        ```
+    
+        ```sh
         skopeo copy --decryption-key ./wrongkey.pem <source_image>_encrypted:<tag> <source_image>_decrypted:<tag>
         ```
         {: pre}
@@ -302,16 +291,16 @@ For the list of changes for each Image Key Synchronizer add-on version, see the 
 If the cluster administrator did not [store the image pull secret in the Kubernetes service account](/docs/containers?topic=containers-registry#use_imagePullSecret), all deployments that do not specify a service account cannot use the image pull secret to deploy containers. Instead, you can define an image pull secret in your pod deployment. When you refer to the image pull secret in a pod deployment, the image pull secret is valid for this pod only and cannot be shared across pods in the {{site.data.keyword.openshiftshort}} project.
 {: shortdesc}
 
-Before you begin:
-* [Create an image pull secret](/docs/containers?topic=containers-registry#other) to access images in other registries or {{site.data.keyword.openshiftshort}} projects other than `default`.
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin
+- [Create an image pull secret](/docs/containers?topic=containers-registry#other) to access images in other registries or {{site.data.keyword.openshiftshort}} projects other than `default`.
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-Steps:
+To refer to the image pull secret in your pod deployment,
 
 1. Create a pod configuration file that is named `mypod.yaml`.
 2. Define the pod and the image pull secret to access images in {{site.data.keyword.registrylong_notm}}.
 
-    To access a private image:
+    To access a private image,
     ```yaml
     apiVersion: v1
     kind: Pod
@@ -326,7 +315,7 @@ Steps:
     ```
     {: codeblock}
 
-    To access an {{site.data.keyword.cloud_notm}} public image:
+    To access an {{site.data.keyword.cloud_notm}} public image,
     ```yaml
     apiVersion: v1
     kind: Pod
@@ -340,39 +329,19 @@ Steps:
         - name: <secret_name>
     ```
     {: codeblock}
-
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the YAML file components</caption>
-    <col width="20%">
-    <thead>
-    <th>Parameter</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code><em>&lt;container_name&gt;</em></code></td>
-    <td>The name of the container to deploy to your cluster.</td>
-    </tr>
-    <tr>
-    <td><code><em>&lt;namespace_name&gt;</em></code></td>
-    <td>The registry namespace where the image is stored. To list available namespaces, run <code>ibmcloud cr namespace-list</code>.</td>
-    </tr>
-    <tr>
-    <td><code><em>&lt;image_name&gt;</em></code></td>
-    <td>The name of the image to use. To list available images in an {{site.data.keyword.cloud_notm}} account, run <code>ibmcloud cr image-list</code>.</td>
-    </tr>
-    <tr>
-    <td><code><em>&lt;tag&gt;</em></code></td>
-    <td>The version of the image that you want to use. If no tag is specified, the image that is tagged <strong>latest</strong> is used by default.</td>
-    </tr>
-    <tr>
-    <td><code><em>&lt;secret_name&gt;</em></code></td>
-    <td>The name of the image pull secret that you created earlier.</td>
-    </tr>
-    </tbody></table>
+    
+    | Parameter | Description |
+    | -------------- | -------------- |
+    | `<container_name>` | The name of the container to deploy to your cluster. |
+    | `<namespace_name>` | The registry namespace where the image is stored. To list available namespaces, run <code>ibmcloud cr namespace-list</code>. |
+    | `<image_name>` | The name of the image to use. To list available images in an {{site.data.keyword.cloud_notm}} account, run `ibmcloud cr image-list`. |
+    | `<tag>` | The version of the image that you want to use. If no tag is specified, the image that is tagged `latest` is used by default. |
+    | `<secret_name>` | The name of the image pull secret that you created earlier. |
+    {: caption="Table 1. Understanding the YAML file components" caption-side="bottom"}
 
 3. Save your changes.
 4. Create the deployment in your cluster.
+
     ```sh
     oc apply -f mypod.yaml
     ```
@@ -434,11 +403,16 @@ There is a [known issue](https://github.com/IBM/portieris/issues/350){: external
 **{{site.data.keyword.openshiftshort}} version 4.5 or later**: You can enable or disable image security enforcement for your cluster from the CLI or console. For earlier versions, see the [Portieris documentation](https://github.com/IBM/portieris){: external}.
 {: shortdesc}
 
-**CLI**: See the following commands.
-* [`ibmcloud oc cluster image-security enable`](/docs/containers?topic=containers-kubernetes-service-cli#cs-image-security-enable)
-* [`ibmcloud oc cluster image-security disable`](/docs/containers?topic=containers-kubernetes-service-cli#cs-image-security-disable)
+#### Enabling or disabling image security enforcement with the CLI
+{: #portieris-enable-cli}
 
-**Console**:
+See the following commands.
+- [`ibmcloud oc cluster image-security enable`](/docs/containers?topic=containers-kubernetes-service-cli#cs-image-security-enable)
+- [`ibmcloud oc cluster image-security disable`](/docs/containers?topic=containers-kubernetes-service-cli#cs-image-security-disable)
+
+#### Enabling or disabling image security enforcement from the console
+{: #portieris-enable-ui}
+
 1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
 2. From the **Overview** tab, in the **Summary** pane, find the **Image security enforcement** field and click **Enable** or **Disable**.
 
@@ -448,20 +422,24 @@ There is a [known issue](https://github.com/IBM/portieris/issues/350){: external
 When you enable image security enforcement, {{site.data.keyword.openshiftlong_notm}} automatically creates certain image policies in your cluster. When you disable the feature, the underlying `ClusterImagePolicy` CRD is removed, which removes all of the default image policies and any custom images policies that you created.
 {: shortdesc}
 
-* Image policies with the name `ibm-signed-image-enforcement` restrict the images that are run in the project to {{site.data.keyword.openshiftlong_notm}} images only. Do not modify these image policies. Any changes that you make are overwritten within a few minutes.
-* Other image policies, such as `default` or `default-allow-all`, permit images that are not restricted by another image policy. You can modify these image policies and your changes are preserved, but do not rename the image policy. If you rename the policy, more policies with the default name and settings are created.
+- Image policies with the name `ibm-signed-image-enforcement` restrict the images that are run in the project to {{site.data.keyword.openshiftlong_notm}} images only. Do not modify these image policies. Any changes that you make are overwritten within a few minutes.
+- Other image policies, such as `default` or `default-allow-all`, permit images that are not restricted by another image policy. You can modify these image policies and your changes are preserved, but do not rename the image policy. If you rename the policy, more policies with the default name and settings are created.
 
-**To review the image policies in your cluster**:
+To review the image policies in your cluster,
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin
+
+[Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. List the image policies that apply globally to the cluster. For an example configuration, see the [Portieris policy documentation](https://github.com/IBM/portieris/blob/master/helm/portieris/templates/policies.yaml#L66){: external}.
+
     ```sh
     oc get ClusterImagePolicy
     ```
     {: pre}
 
 2. List the image policies that apply to particular namespaces within the cluster. For an example configuration, see the [Portieris policy documentation](https://github.com/IBM/portieris/blob/master/helm/portieris/templates/policies.yaml#L14){: external}.
+
     ```sh
     oc get ImagePolicy --all-namespaces
     ```
