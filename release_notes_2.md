@@ -58,7 +58,7 @@ Cluster autoscaler add-on.
 {: #6oct2021}
 
 {{site.data.keyword.block_storage_is_full}} add-on.
-:   [Version 4.0.1_780](https://cloud.ibm.com/docs/containers?topic=containers-vpc_bs_changelog) is released.
+:   [Version 4.0.1_780](/docs/containers?topic=containers-vpc_bs_changelog) is released.
 
 
 ### 5 October 2021

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-11"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -500,7 +500,7 @@ Now, your developers can [use the image stream in an app deployment](/docs/opens
 ## Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}
 {: #builds_registry}
 
-When you create a [build](https://docs.openshift.com/container-platform/4.7/builds/understanding-image-builds.html){: external} in your {{site.data.keyword.openshiftlong_notm}} cluster, you can [set up the internal registry to push the image to your external repository](http://docs.openshift.com/container-platform/4.7/cicd/builds/creating-build-inputs.html){: external} in {{site.data.keyword.registrylong_notm}}. By default, the image pull secret in the `default` project of your cluster only has read access to pull images from {{site.data.keyword.registrylong_notm}}. To push images, you must add a secret with write access.
+When you create a [build](https://docs.openshift.com/container-platform/4.7/cicd/builds/understanding-image-builds.html){: external} in your {{site.data.keyword.openshiftlong_notm}} cluster, you can [set up the internal registry to push the image to your external repository](http://docs.openshift.com/container-platform/4.7/cicd/builds/creating-build-inputs.html){: external} in {{site.data.keyword.registrylong_notm}}. By default, the image pull secret in the `default` project of your cluster only has read access to pull images from {{site.data.keyword.registrylong_notm}}. To push images, you must add a secret with write access.
 {: shortdesc}
 
 1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
