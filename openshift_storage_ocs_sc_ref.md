@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-11"
 
 keywords: openshift, openshift data foundation, openshift container storage, storage classes
 
@@ -41,7 +41,7 @@ The ODF storage classes all support dynamic provisioning and are multizone capab
 
 | Feature | Description |
 |-----|-----|
-| Supported access | rwx |
+| Supported access | rwo |
 | Volume mode | Block |
 | Performance | High |
 | Consistency | Strong |

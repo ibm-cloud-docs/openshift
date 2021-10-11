@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-11"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -34,6 +34,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 Review the release notes for October 2021.
 {: shortdesc}
 
+### 11 October 2021
+{: #11oct2021}
+
+
+
+Unsupported {{site.data.keyword.openshiftshort} version 4.5
+:   {{site.data.keyword.openshiftshort} version 4.5 is unsupported. To continue receiving important security updates and support, you must [update your cluster to a supported version](/docs/openshift?topic=openshift-openshift_versions#version_types) immediately.
+
+Worker node fix pack update
+:   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.8.13_1528_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4813_1528_openshift),[`4.7.32_1534_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4732_1534_openshift), [`4.6.46_1558_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4646_1558_openshift), and [`3.11.524_1606_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311524_1606_openshift).
 
 ### 7 October 2021
 {: #7oct2021}
@@ -47,12 +57,11 @@ Cluster autoscaler add-on.
 
 
 
-
 ### 6 October 2021
 {: #6oct2021}
 
 {{site.data.keyword.block_storage_is_full}} add-on.
-:   [Version 4.0.1_780](https://cloud.ibm.com/docs/containers?topic=containers-vpc_bs_changelog) is released.
+:   [Version 4.0.1_780](/docs/containers?topic=containers-vpc_bs_changelog) is released.
 
 
 ### 5 October 2021

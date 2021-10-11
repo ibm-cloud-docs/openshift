@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -91,7 +91,7 @@ If corporate network policies prevent access from your local system to public en
 If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, to run `oc` commands, you must allow TCP access for the cluster.
 {: shortdesc}
 
-When a cluster is created, the port in the service endpoint URLs is randomly assigned from within 20000-32767. You can either choose to open port range 20000-32767 for any cluster that might get created or you can choose to allow access for a specific existing cluster.
+When a cluster is created, the port in the service endpoint URLs is randomly assigned from within 30000-32767. You can either choose to open port range 30000-32767 for any cluster that might get created or you can choose to allow access for a specific existing cluster.
 
 Before you begin, allow access to [run `ibmcloud oc` commands](#firewall_bx).
 
@@ -253,9 +253,9 @@ ibmcloud oc worker ls --cluster <cluster_name_or_ID>
 #### Allow worker notes to communicate with cluster master
 {: #master_ips}
 
-To allow worker nodes to communicate with the cluster master over the public cloud service endpoint, allow outgoing network traffic from the source *<each_worker_node_publicIP>* to the destination TCP/UDP port range 20000-32767 and port 443, and the following IP addresses and network groups. Additionally, if you plan to use Ingress or routes to expose apps in your cluster, allow incoming network traffic through these ports to your worker node IP addresses as well so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers.
+To allow worker nodes to communicate with the cluster master over the public cloud service endpoint, allow outgoing network traffic from the source *<each_worker_node_publicIP>* to the destination TCP/UDP port range 30000-32767 and port 443, and the following IP addresses and network groups. Additionally, if you plan to use Ingress or routes to expose apps in your cluster, allow incoming network traffic through these ports to your worker node IP addresses as well so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers.
 
-* `TCP/UDP port range 20000-32767, port 443 FROM <each_worker_node_publicIP> TO <public_IPs>`
+* `TCP/UDP port range 30000-32767, port 443 FROM <each_worker_node_publicIP> TO <public_IPs>`
 * Replace *<public_IPs>* with the public IP addresses of the region that your cluster is located.
 
 | Region             | Public IP address  | 
@@ -324,7 +324,7 @@ If you use load balancer services, ensure that all traffic that uses the VRRP pr
 
 If you use Ingress or routes to expose apps in your cluster, allow incoming network traffic from [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} on port 80 to the IP addresses of your router services so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers.
 
-From 07 to 31 July 2021, the DNS provider is changed from Cloudflare to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains for all clusters in {{site.data.keyword.openshiftlong_notm}}. If you currently allow inbound traffic to your classic cluster from the Cloudflare source IP addresses, you must also allow inbound traffic from the [Akamai source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} before 07 July. After the migration completes on 31 July, you can remove the Cloudflare IP address rules. For more information, see the [announcement](https://cloud.ibm.com/notifications?selected=1621697674798){: external}.
+From 07 to 31 July 2021, the DNS provider is changed from Cloudflare to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains for all clusters in {{site.data.keyword.openshiftlong_notm}}. Review the following actions that you must make to your Ingress setup.<ul><li>If you currently allow inbound traffic to your classic cluster from the Cloudflare source IP addresses, you must also allow inbound traffic from the [Akamai source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} before 07 July. After the migration completes on 31 July, you can remove the Cloudflare IP address rules.</li><li>The Akamai health check does not support verification of the body of the health check response. Update any custom health check rules that you configured for Cloudflare that use verification of the body of the health check responses.</li><li>Cluster subdomains that were health checked in Cloudflare are now registered in the Akamai DNS as CNAME records. These CNAME records point to an Akamai Global Traffic Management domain that health checks the subdomains. When a client runs a DNS query for a health checked subdomain, a CNAME record is returned to the client, as opposed to Cloudflare, in which an A record was returned. If your client expects an A record for a subdomain that was health checked in Cloudflare, update your logic to accept a CNAME record.</li><li>During the migration, an Akamai Global Traffic Management (GTM) health check was automatically created for any subdomains that had a Cloudflare health check. If you previously created a Cloudflare health check for a subdomain, and you create an Akamai health check for the subdomain after the migration, the two Akamai health checks might conflict. Note that Akamai GTM configurations do not support nested subdomains. In these cases, you can use the `ibmcloud oc nlb-dns monitor disable` command to disable the Akamai health check that the migration automatically configured for your subdomain.</li></ul>.
 {: important}
 
 
@@ -353,9 +353,9 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
 #### Allow worker nodes to communicate with cluster master
 {: #firewall_private_worker}
 
-To allow worker nodes to communicate with the cluster master over the private cloud service endpoint, allow outgoing network traffic from the source *<each_worker_node_privateIP>* to the destination TCP/UDP port range 20000-32767 and port 443, and the following IP addresses and network groups.
+To allow worker nodes to communicate with the cluster master over the private cloud service endpoint, allow outgoing network traffic from the source *<each_worker_node_privateIP>* to the destination TCP/UDP port range 30000-32767 and port 443, and the following IP addresses and network groups.
 
-* `TCP/UDP port range 20000-32767, port 443 FROM <each_worker_node_privateIP> TO <private_IPs>`
+* `TCP/UDP port range 30000-32767, port 443 FROM <each_worker_node_privateIP> TO <private_IPs>`
 * Replace *<private_IPs>* with the private IP addresses of the region where your cluster is located.
 
 | Region | Private IP address  |

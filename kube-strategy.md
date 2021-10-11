@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-11"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -73,7 +73,13 @@ You can use the open source [Terraform](/docs/ibm-cloud-provider-for-terraform?t
 
 Your containerized app must be able to run on the supported operating system, RHEL 7. You also want to consider the statefulness of your app. For more information about the kinds of apps that can run in {{site.data.keyword.openshiftlong_notm}}, see [Planning app deployments](/docs/containers?topic=containers-plan_deploy#app_types).
 
-If you already have an app, you can [migrate it to {{site.data.keyword.openshiftlong_notm}}](/docs/containers?topic=containers-plan_deploy#migrate_containerize). If you want to develop a new app, check out the [guidelines for developing stateless, cloud-native apps](/docs/containers?topic=containers-plan_deploy#12factor)
+If you already have an app, you can [migrate it to {{site.data.keyword.openshiftlong_notm}}](/docs/containers?topic=containers-plan_deploy#migrate_containerize). If you want to develop a new app, check out the [guidelines for developing stateless, cloud-native apps](/docs/containers?topic=containers-plan_deploy#12factor).
+
+### What about serverless apps?
+{: #apps_serverless}
+
+You can run serverless apps and jobs through the [{{site.data.keyword.codeenginefull_notm}}](/docs/codeengine?topic=codeengine-getting-started) service. {{site.data.keyword.codeengineshort}} can also build your images for you. 
+{: shortdesc}
 
 ### What knowledge and technical skills are good to have before I move my apps to {{site.data.keyword.openshiftlong_notm}}?
 {: #knowledge}
@@ -285,8 +291,6 @@ Review more information about making resources highly available.
 * [Run containers that are based on images in a cloud-based public registry](/docs/containers?topic=containers-images).
 * [Plan data storage](/docs/containers?topic=containers-storage_planning#persistent_storage_overview). Especially for multizone clusters, consider using a cloud service such as [{{site.data.keyword.cloudant_short_notm}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) or [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
 * For multizone clusters, enable a [load balancer service](/docs/containers?topic=containers-loadbalancer#multi_zone_config) or the Ingress [multizone load balancer](/docs/containers?topic=containers-ingress-types) to expose your apps publicly.
-
-
 
 
 
