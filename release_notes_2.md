@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-11"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -34,6 +34,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 Review the release notes for October 2021.
 {: shortdesc}
 
+### 10 October 2021
+{: #10oct2021}
+
+
+
+Unsupported {{site.data.keyword.openshiftshort} version 4.5
+:   {{site.data.keyword.openshiftshort} version 4.5 is unsupported. To continue receiving important security updates and support, you must [update your cluster to a supported version](/docs/openshift?topic=openshift-openshift_versions#version_types) immediately.
 
 ### 7 October 2021
 {: #7oct2021}
@@ -44,7 +51,6 @@ Istio add-on change log
 
 Cluster autoscaler add-on.
 :   [Version 1.0.4](/docs/containers?topic=containers-ca_changelog) is released.
-
 
 
 

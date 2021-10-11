@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-11"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -204,59 +204,16 @@ The following table shows the actions that you must take before you [update the 
 {: caption="Changes to make before you update the master to {{site.data.keyword.openshiftshort}} 4.6" caption-side="top"}
 {: summary="The rows are read from left to right. The type of update action is in the first column, and a description of the update action type is in the second column."}
 
-
-
-## Deprecated: {{site.data.keyword.openshiftshort}} 4.5
-{: #ocp45}
-
-![This badge indicates Kubernetes version 1.18 certification for {{site.data.keyword.containerlong_notm}}](images/certified_kubernetes_1x18.svg)
-{{site.data.keyword.containerlong_notm}} is a Certified Kubernetes product for version 1.18 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
-
-Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.openshiftshort}} 4.4 to {{site.data.keyword.openshiftshort}} 4.5.
-{: shortdesc}
-
-{{site.data.keyword.openshiftshort}} version 4.5 is deprecated, with a tentative unsupported date of 10 October 2021. Update your cluster to at least [version 4.6](#ocp46) as soon as possible.
-{: deprecated}
-
-You cannot update a cluster that runs 3.11 to a version 4 cluster. [Create a cluster](/docs/openshift?topic=openshift-clusters) and [copy your deployments](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) from the outdated cluster to the new cluster.
-{: important}
-
-### Update before master
-{: #45_before}
-
-The following table shows the actions that you must take before you [update the cluster master](/docs/openshift?topic=openshift-update#master).
-{: shortdesc}
-
-| Type | Description |
-| ---- | ----------- |
-| {{site.data.keyword.openshiftshort}} update requirements | {{site.data.keyword.openshiftlong_notm}} cluster master updates require worker nodes to be at most 1 minor version behind the cluster master version (`n-1`). Additionally, for cluster master updates to version 4.5, all worker nodes in the cluster must run at least version `4.4.23`. Ensure your workers nodes are running the latest patch version before updating your cluster master. |
-| **Unsupported:** Deprecated and removed {{site.data.keyword.openshiftshort}} features | For more information, review the [OpenShift version 4.5 deprecated and removed features](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html#ocp-4-5-deprecated-removed-features){: external}. |
-{: caption="Changes to make before you update the master to {{site.data.keyword.openshiftshort}} 4.5" caption-side="top"}
-{: summary="The rows are read from left to right. The type of update action is in the first column, and a description of the update action type is in the second column."}
-
-### Update after master
-{: #45_after}
-
-The following table shows the actions that you must take after you [update the cluster master](/docs/openshift?topic=openshift-update#master).
-{: shortdesc}
-
-| Type | Description |
-| ---- | ----------- |
-| Elasticsearch version upgrade for cluster logging | For more information, see the Elasticsearch version upgrade notes in the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html#ocp-4-5-elasticsearch-6){: external}. |
-| Image registry configuration | New version 4.5 clusters that run on the VPC infrastructure provider and use {{site.data.keyword.cos_full_notm}} now proxy container image traffic through the internal registry pods directly to the {{site.data.keyword.cos_short}} endpoints. To configure this proxying for version 4.5 clusters that were updated from a previous version, see [the troubleshooting topic](/docs/openshift?topic=openshift-ts-app-ocr-vpc-push). |
-| **Unsupported**: `kubelet` statistics | The `kubelet` statistics that were available via the `/stats` endpoint are unsupported and removed. The cluster insights panel in the cluster console no longer reports statistics from this endpoint. |
-| Temporary `oc` and `kubectl` latency | RBAC operations are now performed asynchronously. After you run `ibmcloud oc cluster config` for the first time after the update, `oc` and `kubectl` commands might fail for a few seconds while RBAC synchronizes for the first time. Afterward, `oc` and `kubectl` commands perform as expected. If you use automation to access the cluster with `oc` and `kubectl` commands, add retry logic for `oc` and `kubectl` commands after a `kubeconfig` file is successfully retrieved. |
-| `oc adm policy` | The `oc adm policy` commands now manage role-based access control (RBAC) resources rather than modifying security context constraints (SCCs) directly for managing permissions within the cluster. Update any components that rely on direct changes to SCCs to use RBAC to manage permissions. |
-| `oc new-app` | For more information, see the `oc new-app` deployment resources notes in the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html#ocp-4-5-oc-new-app-deployment-resources){: external}. |
-{: caption="Changes to make after you update the master to {{site.data.keyword.openshiftshort}} 4.5" caption-side="top"}
-{: summary="The rows are read from left to right. The type of update action is in the first column, and a description of the update action type is in the second column."}
-
-
-
 ## Archive
 {: #version-archive}
 
 Review unsupported versions of {{site.data.keyword.openshiftlong_notm}}.
+{: shortdesc}
+
+### {{site.data.keyword.openshiftshort}} 4.5 (Unsupported)
+{: #ocp45}
+
+As of 10 October 2021, {{site.data.keyword.openshiftlong_notm}} clusters that run [version 4.5](/docs/openshift?topic=openshift-changelog_archive) are unsupported.
 {: shortdesc}
 
 ### {{site.data.keyword.openshiftshort}} 4.4 (Unsupported)
