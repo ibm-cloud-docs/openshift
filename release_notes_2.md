@@ -34,8 +34,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 Review the release notes for October 2021.
 {: shortdesc}
 
-### 10 October 2021
-{: #10oct2021}
+### 11 October 2021
+{: #11oct2021}
 
 
 
