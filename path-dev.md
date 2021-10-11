@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-11"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, dev
 
@@ -249,7 +249,8 @@ Before you deploy an app, decide how you want to set up your app so that your ap
 1. **Kubernetes-native**: [Plan your strategy for developing a Kubernetes-native app](/docs/containers?topic=containers-plan_deploy).
 2. **Highly available**: [Plan your strategy for a highly available deployment](/docs/containers?topic=containers-plan_deploy#highly_available_apps).
 
-
+Looking for serverless? Try [{{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-getting-started).
+{: tip}
 
 ## Develop your app
 {: #dev_develop}
@@ -276,12 +277,12 @@ Deploy your app to the cluster by running your app configuration file.
 {: shortdesc}
 
 
-* [Deploying apps through the console](/docs/openshift?topic=openshift-deploy_app#deploy_apps_ui)
-* [Deploying apps through the CLI](/docs/openshift?topic=openshift-deploy_app#deploy_apps_cli)
-* [Deploying apps to specific worker nodes by using labels](/docs/openshift?topic=openshift-deploy_app#node_affinity)
+* [Deploying apps through the console](/docs/openshift?topic=openshift-deploy_app#deploy_apps_ui).
+* [Deploying apps through the CLI](/docs/openshift?topic=openshift-deploy_app#deploy_apps_cli).
+* [Deploying apps to specific worker nodes by using labels](/docs/openshift?topic=openshift-deploy_app#node_affinity).
 
 
-</br>Need help? Check out [Troubleshooting apps and integrations](/docs/containers?topic=containers-debug_apps).
+Need help? Check out [Troubleshooting apps and integrations](/docs/containers?topic=containers-debug_apps).
 
 
 
@@ -377,7 +378,6 @@ Enhance app capabilities by integrating various external services and catalog se
 3. **Access services from your app**: Ensure that your app can access the service. For example, to access an IBM Cloud service instance from your app, you must [make the service credentials that are stored in the Kubernetes secret available to your app](/docs/containers?topic=containers-service-binding#adding_app).
 
 </br>Need help? Check out [Troubleshooting apps and integrations](/docs/containers?topic=containers-debug_worker_nodes).
-
 
 
 

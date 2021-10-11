@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-11"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -21,6 +21,17 @@ A Docker image is the basis for every container that you create with {{site.data
 {: shortdesc}
 
 An image is created from a Dockerfile, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the app's configuration, and its dependencies.
+  
+## Building images
+{: #build_images}
+
+You can build your images in several ways, including the following {{site.data.keyword.cloud_notm}} services.
+
+{{site.data.keyword.codeenginefull_notm}}
+:    {{site.data.keyword.codeengineshort}} supports building images from a Dockerfile and Cloud Native Buildpacks and automatically push the images to {{site.data.keyword.registrylong}}. For more information, see [Planning your build](/docs/codeengine?topic=codeengine-plan-build).
+
+Tekton pipelines
+:    The {{site.data.keyword.contdelivery_short}} service includes several Tekton tasks that you can reference within your pipelines to build  images. For more information, see [Tekton pipelines](https://cloud.ibm.com/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images).
 
 ## Deploying containers from an existing image stream in the internal registry
 {: #oc_imagestream_deploy}
@@ -28,21 +39,27 @@ An image is created from a Dockerfile, which is a file that contains instruction
 You can deploy an app from an existing [image stream](https://docs.openshift.com/container-platform/4.7/openshift_images/image-streams-manage.html){: external} that your cluster administrator set up in the internal registry of your {{site.data.keyword.openshiftshort}} cluster. For example, your cluster administrator might have [set up the image stream to import an image from an external private registry](/docs/openshift?topic=openshift-registry#imagestream_registry), such as {{site.data.keyword.registrylong_notm}}.
 {: shortdesc}
 
-**Using an image stream from the CLI**:
+### Using an image stream from the CLI
+{: #oc_imagestream_deploy_cli}
+
 1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 2. List the available image streams in a project. If you know the project, name, and tag of the image stream, you can use local image streams in other projects without setting up image pull stream credentials.
+
     ```sh
     oc get is -n <project>
     ```
     {: pre}
 
 3. Create your app from the image stream.
+
     ```sh
     oc new-app --image-stream="<project>/<imagestream>:<tag>"
     ```
     {: pre}
 
-**Using an image stream from the {{site.data.keyword.openshiftshort}} web console**:
+### Using an image stream from the {{site.data.keyword.openshiftshort}} web console
+{: #oc_imagestream_deploy-ui}
+
 1. From the [{{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-deploy_app#deploy_apps_ui), switch to the **Developer** perspective and click **+Add**.
 2. In the **Add** pane menu bar, select a **Project** that is not `default` to create your app in, and click **Container Image**.
 3. In the **Image** section, select **Image name from internal registry**.

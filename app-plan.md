@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-11"
 
 keywords: openshift, roks, rhoks, rhos, deploy
 
@@ -56,6 +56,12 @@ Check out the [Twelve-Factor App](https://12factor.net/){: external}, a language
 10. **Dev-to-prod parity**: Set up a [continuous integration](https://www.ibm.com/garage/method/practices/code/practice_continuous_integration) and [continuous delivery](https://www.ibm.com/garage/method/practices/deliver/practice_continuous_delivery) pipeline for your app, with minimal difference between the app in development and the app in prod.
 11. **Logs**: Treat logs as event streams: the outer or hosting environment processes and routes log files. **Important**: In {{site.data.keyword.openshiftlong_notm}}, logs are not turned on by default. To enable, see [Configuring log forwarding](/docs/containers?topic=containers-health).
 12. **Admin processes**: Keep any one-time admin scripts with your app and run them as a [Kubernetes Job object](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/){: external} to ensure that the admin scripts run with the same environment as the app itself. For orchestration of larger packages that you want to run in your Kubernetes clusters, consider using a package manager such as [Helm](https://helm.sh/){: external}.
+
+### What about serverless apps?
+{: #apps_serverless}
+
+You can run serverless apps and jobs through the [{{site.data.keyword.codeenginefull_notm}}](/docs/codeengine?topic=codeengine-getting-started) service. {{site.data.keyword.codeengineshort}} can also build your images for you. 
+{: shortdesc}
 
 ### I already have an app. How can I migrate it to {{site.data.keyword.openshiftlong_notm}}?
 {: #migrate_containerize}
@@ -525,7 +531,5 @@ Want to control access at the application level? To create a sign-on flow that y
 
 You can set up {{site.data.keyword.cloud_notm}} [logging and monitoring](/docs/containers?topic=containers-health) for your cluster.
 {: shortdesc}
-
-
 
 

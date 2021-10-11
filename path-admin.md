@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-11"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, admin
 
@@ -233,7 +233,8 @@ Start by designing a cluster for maximum availability and capacity for your work
     3. Plan your cluster for [high availability](/docs/containers?topic=containers-ha_clusters).
     4. Plan your [worker node setup](/docs/containers?topic=containers-planning_worker_nodes).
 
-
+Looking for serverless? Try [{{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-getting-started).
+{: tip}
 
 ## Create a cluster
 {: #admin_cluster}
@@ -375,7 +376,6 @@ Manage your cluster and worker nodes through each phase of the cluster lifecycle
 
 
 Need help? Check out troubleshooting [clusters and masters](/docs/containers?topic=containers-debug_clusters), [worker nodes](/docs/containers?topic=containers-debug_worker_nodes), or the [cluster autoscaler](/docs/containers?topic=containers-debug_cluster_autoscaler).
-
 
 
 

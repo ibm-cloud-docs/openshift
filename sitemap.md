@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-11"
 
 keywords: openshift
 subcollection: openshift
@@ -370,6 +370,8 @@ subcollection: openshift
     * [Can I automate my infrastructure deployments?](/docs/openshift?topic=openshift-strategy#infra_packaging)
 
     * [What kind of apps can I run? Can I move existing apps, or do I need to develop new apps?](/docs/openshift?topic=openshift-strategy#app_kinds)
+
+    * [What about serverless apps?](/docs/openshift?topic=openshift-strategy#apps_serverless)
 
     * [What knowledge and technical skills are good to have before I move my apps to {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-strategy#knowledge)
 
@@ -1382,6 +1384,8 @@ subcollection: openshift
 
     * [What are some guidelines for developing stateless, cloud-native apps?](/docs/openshift?topic=openshift-plan_deploy#12factor)
 
+    * [What about serverless apps?](/docs/openshift?topic=openshift-plan_deploy#apps_serverless)
+
     * [I already have an app. How can I migrate it to {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-plan_deploy#migrate_containerize)
 
 * [Common app modification scenarios](/docs/openshift?topic=openshift-plan_deploy#openshift_move_apps_scenarios)
@@ -1434,7 +1438,13 @@ subcollection: openshift
 
 [Building images for your apps](/docs/openshift?topic=openshift-images#images)
 
+* [Building images](/docs/openshift?topic=openshift-images#build_images)
+
 * [Deploying containers from an existing image stream in the internal registry](/docs/openshift?topic=openshift-images#oc_imagestream_deploy)
+
+    * [Using an image stream from the CLI](/docs/openshift?topic=openshift-images#oc_imagestream_deploy_cli)
+
+    * [Using an image stream from the {{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-images#oc_imagestream_deploy-ui)
 
 * [Deploying containers from an {{site.data.keyword.registrylong_notm}} image to the `default` {{site.data.keyword.openshiftshort}} project](/docs/openshift?topic=openshift-images#namespace)
 
