@@ -39,7 +39,7 @@ Review the release notes for October 2021.
 
 
 
-Unsupported {{site.data.keyword.openshiftshort} version 4.5
+Unsupported {{site.data.keyword.openshiftshort}} version 4.5
 :   {{site.data.keyword.openshiftshort} version 4.5 is unsupported. To continue receiving important security updates and support, you must [update your cluster to a supported version](/docs/openshift?topic=openshift-openshift_versions#version_types) immediately.
 
 Worker node fix pack update
@@ -60,7 +60,7 @@ Cluster autoscaler add-on.
 ### 6 October 2021
 {: #6oct2021}
 
-{{site.data.keyword.block_storage_is_full}} add-on.
+{{site.data.keyword.block_storage_is_short}} add-on.
 :   [Version 4.0.1_780](/docs/containers?topic=containers-vpc_bs_changelog) is released.
 
 
