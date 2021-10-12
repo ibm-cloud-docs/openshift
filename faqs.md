@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-12"
 
 keywords: openshift, roks, rhoks, rhos, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, roks pricing, iks pricing, openshift charges, ocp charges, openshift price, ocp price, roks price, openshift billing, ocp billing, roks billing, openshift costs, ocp costs, roks costs,
 
@@ -170,8 +170,8 @@ Keep in mind that some services such as Ingress might require multiple worker no
 * Default: 4.7 (Kubernetes 1.20)
 
 **Deprecated and unsupported versions**:
-* Deprecated: 3.11 (Kubernetes 1.11), 4.5 (Kubernetes 1.18)
-* Unsupported: 4.3 (Kubernetes 1.16), 4.4 (Kubernetes 1.17)
+* Deprecated: 3.11 (Kubernetes 1.11)
+* Unsupported: 4.3 (Kubernetes 1.16), 4.4 (Kubernetes 1.17), 4.5 (Kubernetes 1.18)
 
 
 ## Where is the service available?
