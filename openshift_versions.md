@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-11"
+lastupdated: "2021-10-12"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
@@ -25,7 +25,6 @@ For more information about the {{site.data.keyword.openshiftshort}} and Kubernet
 * [{{site.data.keyword.openshiftshort}} 4.8 release notes overview](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html){: external}
 * [{{site.data.keyword.openshiftshort}} 4.7 release notes overview](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html){: external}
 * [{{site.data.keyword.openshiftshort}} 4.6 release notes overview](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html){: external}
-* Deprecated: [{{site.data.keyword.openshiftshort}} 4.5 release notes overview](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html){: external}
 * Deprecated: [{{site.data.keyword.openshiftshort}} 3.11 release notes overview](https://docs.openshift.com/container-platform/3.11/release_notes/index.html){: external}
 * [Kubernetes changelog](https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG){: external}
 
@@ -83,8 +82,8 @@ Worker nodes can also run patch versions that are greater than the masters. As u
 * 4.6 (Kubernetes 1.19)
 
 **Deprecated and unsupported versions**:
-* Deprecated: 3.11 (Kubernetes 1.11), 4.5 (Kubernetes 1.18)
-* Unsupported: 4.3 (Kubernetes 1.16), 4.4 (Kubernetes 1.17)
+* Deprecated: 3.11 (Kubernetes 1.11)
+* Unsupported: 4.3 (Kubernetes 1.16), 4.4 (Kubernetes 1.17), 4.5 (Kubernetes 1.18)
 
 To check the Kubernetes server version of a cluster, log in to the cluster and run the following command.
 
@@ -127,7 +126,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 | Supported | 4.8 / 1.21 | 29 Sep 2021 | Sep 2022`†` |
 | Supported | 4.7 / 1.20 | 09 Jun 2021 | Jul 2022`†` |
 | Supported | 4.6 / 1.19 | 17 Feb 2021 | May 2022 `†` |
-| Supported | 4.5 / 1.18 | 13 Oct 2020 | Oct 10 2021 `†` |
+| Not supported | 4.5 / 1.18 | 13 Oct 2020 | Oct 10 2021 `†` |
 | Not supported | 4.4 / 1.17 | 21 Jul 2020 | 31 May 2021 |
 | Not supported | 4.3 / 1.16 | 20 Apr 2020 | 7 Mar 2021 |
 | Deprecated | 3.11 / 1.11 | 01 Aug 2019 | 06 Jun 2022 `†` |
@@ -216,13 +215,15 @@ Review unsupported versions of {{site.data.keyword.openshiftlong_notm}}.
 As of 10 October 2021, {{site.data.keyword.openshiftlong_notm}} clusters that run [version 4.5](/docs/openshift?topic=openshift-changelog_archive) are unsupported.
 {: shortdesc}
 
+Unsupported clusters are not provided with security and patch updates and are not supported by {{site.data.keyword.cloud_notm}} Support. Although your cluster and apps might continue to run for a time, you can no longer create, reload, or take other corrective actions on your cluster master or worker nodes when an issue occurs. You can still delete the cluster or worker nodes, or update the cluster to the next version. Review the potential impacts and immediately [update the cluster](/docs/containers?topic=containers-update#update) to continue receiving important security updates and support.
+
 ### {{site.data.keyword.openshiftshort}} 4.4 (Unsupported)
 {: #ocp44}
 
 As of 31 May 2021, {{site.data.keyword.openshiftlong_notm}} clusters that run [version 4.4](/docs/openshift?topic=openshift-changelog_archive) are unsupported.
 {: shortdesc}
 
-Unsupported clusters are not provided with security and patch updates and are not supported by {{site.data.keyword.cloud_notm}} Support. Although your cluster and apps might continue to run for a time, you can no longer create, reload, or take other corrective actions on your cluster master or worker nodes when an issue occurs. You can still delete the cluster or worker nodes, or update the cluster to the next version. Review the potential impacts and immediately [update the cluster](/docs/containers?topic=containers-update#update) to continue receiving important security updates and support.
+Unsupported clusters are not provided with security and patch updates and are not supported by {{site.data.keyword.cloud_notm}} Support. Although your cluster and apps might continue to run for a time, you can no longer create, reload, or take other corrective actions on your cluster master or worker nodes when an issue occurs. You can still delete the cluster or worker nodes. To continue running your apps in {{site.data.keyword.openshiftlong_notm}}, [make a new cluster](/docs/containers?topic=containers-clusters#clusters) and [deploy your apps](/docs/containers?topic=containers-app#app) to the new cluster.
 
 ### {{site.data.keyword.openshiftshort}} 4.3 (Unsupported)
 {: #ocp43}

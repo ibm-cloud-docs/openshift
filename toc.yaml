@@ -276,7 +276,7 @@ toc:
   - navgroup:
       id: help
       topics:
-        - .md
+        - faqs.md
         - topicgroup:
             label: Troubleshooting
             topics:

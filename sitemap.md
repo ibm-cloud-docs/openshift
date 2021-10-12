@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-11"
+lastupdated: "2021-10-12"
 
 keywords: openshift
 subcollection: openshift
@@ -3691,6 +3691,49 @@ subcollection: openshift
 [OpenShift Container Platform documentation](https://docs.openshift.com/){: new_window}{: external}
 
 [IBM Developer - Red Hat OpenShift on IBM Cloud](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/){: new_window}{: external}
+
+
+## FAQs
+{: #sitemap_faqs}
+
+
+[FAQs](/docs/openshift?topic=openshift-faqs#faqs)
+
+[How does {{site.data.keyword.openshiftlong_notm}} work?](/docs/openshift?topic=openshift-faqs#kubernetes_service)
+
+[Why should I use {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-faqs#faq_benefits)
+
+[Can I get a free cluster?](/docs/openshift?topic=openshift-faqs#faq_free)
+
+[What container platforms are available for my cluster?](/docs/openshift?topic=openshift-faqs#container_platforms)
+
+[Does the service come with a managed {{site.data.keyword.openshiftshort}} master and worker nodes?](/docs/openshift?topic=openshift-faqs#managed_master_worker)
+
+[Are the master and worker nodes highly available?](/docs/openshift?topic=openshift-faqs#faq_ha)
+
+[What options do I have to secure my cluster?](/docs/openshift?topic=openshift-faqs#secure_cluster)
+
+[What access policies do I give my cluster users?](/docs/openshift?topic=openshift-faqs#faq_access)
+
+[Where can I find a list of security bulletins that affect my cluster?](/docs/openshift?topic=openshift-faqs#faq_security_bulletins)
+
+[Does the service offer support for bare metal and GPU?](/docs/openshift?topic=openshift-faqs#bare_metal_gpu)
+
+[What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster)
+
+[Which Kubernetes versions does the service support?](/docs/openshift?topic=openshift-faqs#supported_kube_versions)
+
+[Where is the service available?](/docs/openshift?topic=openshift-faqs#supported_regions)
+
+[Is the service highly available?](/docs/openshift?topic=openshift-faqs#ha_sla)
+
+[What compliance standards does the service meet?](/docs/openshift?topic=openshift-faqs#standards)
+
+[Can I use IBM Cloud and other services with my cluster?](/docs/openshift?topic=openshift-faqs#faq_integrations)
+
+[Does IBM support third-party and open source tools that I use with my cluster?](/docs/openshift?topic=openshift-faqs#faq_thirdparty_oss)
+
+[What am I charged for? Can I estimate and control costs in my cluster?](/docs/openshift?topic=openshift-faqs#charges)
 
 
 ## Troubleshooting

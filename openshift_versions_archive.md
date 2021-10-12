@@ -2,7 +2,7 @@
 
 copyright:
  years: 2014, 2021
-lastupdated: "2021-10-11"
+lastupdated: "2021-10-12"
 
 keywords: roks
 
@@ -21,7 +21,7 @@ subcollection: openshift
 The following versions are no longer supported for {{site.data.keyword.openshiftlong}}. You can review the archive of the changelogs.
 {: shortdesc}
 
-Unsupported versions: 4.3 (Kubernetes 1.16), 4.4 (Kubernetes 1.17)
+Unsupported versions: 4.3 (Kubernetes 1.16), 4.4 (Kubernetes 1.17), 4.5 (Kubernetes 1.18)
 
 Looking for the changelogs of supported versions? See [{{site.data.keyword.openshiftshort}} version changelog](/docs/openshift?topic=openshift-openshift_changelog).
 {: tip}
