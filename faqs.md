@@ -18,6 +18,8 @@ content-type: faq
 # FAQs
 {: #faqs}
 
+
+
 Review frequently asked questions (FAQs) for using {{site.data.keyword.openshiftlong}}.
 {: shortdesc}
 
