@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-13"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, oc, ibmcloud oc
 
@@ -31,6 +31,14 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
 
+
+## Version 1.0.331
+{: #cli-10331}
+
+Version 1.0.331 of the CLI was released on 12 October 2021.
+{: shortdesc}
+
+- Adds the `--policy` flag to the `ibmcloud oc master audit-webhook set` command. You can now configure the amount of information included in your cluster audits by specifying the `default` or `verbose` audit policy type.
 
 ## Version 1.0.312
 {: #cli-10312}

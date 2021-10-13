@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-10-13"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -48,7 +48,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 | Date | Description |
 | ---- | ----------- |
 | 27 July 2021 | <ul><li><strong>New! IAM trusted profile support</strong>: Link your cluster to a trusted profile in IAM so that the pods in your cluster can authenticate with IAM to use other {{site.data.keyword.cloud_notm}} services.</li><li><strong>Master versions</strong>: Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version <a href="/docs/openshift?topic=openshift-openshift_changelog#4719_1526"><code>4.7.19_1526_openshift</code></a>, <a href="/docs/openshift?topic=openshift-openshift_changelog#4638_1550"><code>4.6.38_1550_openshift</code></a>, <a href="/docs/openshift?topic=openshift-openshift_changelog#4541_1546"><code>4.5.41_1546_openshift</code></a>, and <a href="/docs/openshift?topic=openshift-openshift_changelog#311439_1598"><code>3.11.439_1598_openshift</code></a>.</li></ul> |
-| 26 July 2021 | <ul><li><strong>HPCS Router</strong>: Updated version changelog for the <a href="/docs/openshift?topic=openshift-hpcs-router-changelog">HPCS Router</a> add-on.</li><li>For centralized management of all your secrets across clusters and injection at application runtime, try <a href="/docs/secrets-manager?topic=secrets-manager-tutorial-kubernetes-secrets">{{site.data.keyword.secrets-manager_full_notm}}</a>.</li><li><strong>{{site.data.keyword.block_storage_is_short}} add-on</strong>: <a href="/docs/containers?topic=containers-vpc_bs_changelog">Version <code>3.0.1</code></a> of the {{site.data.keyword.block_storage_is_short}} add-on is available.</li></ul> |
+| 26 July 2021 | <ul><li><strong>HPCS Router</strong>: Updated version changelog for the <a href="/docs/openshift?topic=openshift-hpcs-router-changelog">HPCS Router</a> add-on.</li><li>For centralized management of all your secrets across clusters and also injection at application runtime, try <a href="/docs/secrets-manager?topic=secrets-manager-tutorial-kubernetes-secrets">{{site.data.keyword.secrets-manager_full_notm}}</a>.</li><li><strong>{{site.data.keyword.block_storage_is_short}} add-on</strong>: <a href="/docs/containers?topic=containers-vpc_bs_changelog">Version <code>3.0.1</code></a> of the {{site.data.keyword.block_storage_is_short}} add-on is available.</li></ul> |
 | 23 July 2021 | **Image key synchronizer**: Updated the version changelog for the [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-on. |
 | 19 July 2021 | **Worker node versions**: Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.7.19_1525_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4719_1525), [`4.6.38_1549_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4638_1549), [`4.5.41_1545_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4541_1545), and [`3.11.465_1596_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311465_1596).
 | 15 July 2021 |  |

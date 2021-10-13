@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-11"
+lastupdated: "2021-10-13"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -34,13 +34,19 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 Review the release notes for October 2021.
 {: shortdesc}
 
+### 13 October 2021
+{: #13oct2021}
+
+CLI change log
+:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.331. 
+
 ### 11 October 2021
 {: #11oct2021}
 
 
 
 Unsupported {{site.data.keyword.openshiftshort}} version 4.5
-:   {{site.data.keyword.openshiftshort} version 4.5 is unsupported. To continue receiving important security updates and support, you must [update your cluster to a supported version](/docs/openshift?topic=openshift-openshift_versions#version_types) immediately.
+:   {{site.data.keyword.openshiftshort}} version 4.5 is unsupported. To continue receiving important security updates and support, you must [update your cluster to a supported version](/docs/openshift?topic=openshift-openshift_versions#version_types) immediately.
 
 Worker node fix pack update
 :   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.8.13_1528_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4813_1528_openshift),[`4.7.32_1534_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4732_1534_openshift), [`4.6.46_1558_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4646_1558_openshift), and [`3.11.524_1606_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311524_1606_openshift).
@@ -105,11 +111,11 @@ Master fix pack and worker node fix pack update
 {: release-note}
 
 Master fix pack update
-:   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.7.30_1532_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4730_1532),[`4.6.44_1556_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4644_1556), [`4.5.41_1552_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4541_1552), and [`3.11.521_1604_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311521_1604).
+:   Change log documentation is available for {{site.data.keyword.openshiftshort}} version [`4.7.30_1532_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4730_1532),[`4.6.44_1556_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4644_1556), [`4.5.41_1552_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4541_1552), and [`3.11.521_1604_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311521_1604).
 
 
 Worker node fix pack update
-:   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.5.41_1553_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4541_1553),[`4.6.45_1557_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4645_1557_openshift), [`4.7.31_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4731_1533_openshift), and [`3.11.521_1605_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311521_1605_openshift).
+:   Change log documentation is available for {{site.data.keyword.openshiftshort}} version [`4.5.41_1553_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4541_1553),[`4.6.45_1557_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4645_1557_openshift), [`4.7.31_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4731_1533_openshift), and [`3.11.521_1605_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311521_1605_openshift).
 
 ### 23 September 2021
 {: #23sep2021}
@@ -188,7 +194,7 @@ Istio add-on change log
 {: release-note}
 
 Worker node fix pack update
-:   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.5.41_1551_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4541_1551),[`4.6.44_1555_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4644_1555), [`4.7.29_1531_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4729_1531), and [`3.11.501_1603_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311501_1603).
+:   Change log documentation is available for {{site.data.keyword.openshiftshort}} version [`4.5.41_1551_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4541_1551),[`4.6.44_1555_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4644_1555), [`4.7.29_1531_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4729_1531), and [`3.11.501_1603_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311501_1603).
 
 ### 9 September 2021
 {: #9sep2021}

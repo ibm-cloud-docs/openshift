@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-10-13"
 
 keywords: openshift
 subcollection: openshift
@@ -198,6 +198,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-rel-notes#rel-notes)
 
 [October 2021](/docs/openshift?topic=openshift-rel-notes#release-oct-2021)
+
+* [13 October 2021](/docs/openshift?topic=openshift-rel-notes#13oct2021)
 
 * [11 October 2021](/docs/openshift?topic=openshift-rel-notes#11oct2021)
 
@@ -2750,6 +2752,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version 1.0.331](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10331)
+
 * [Version 1.0.312](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10312)
 
 * [Version 1.0.300](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10300)
@@ -3191,7 +3195,7 @@ subcollection: openshift
 
     * [5.6 General Policies](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-5-6)
 
-    * [IBM Remediations and Explanations](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-remediation)
+    * [IBM Remediations and Explanations](/docs/openshift?topic=openshift-cis-benchmark#ibm-remediations-and-explanations)
 
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 
@@ -3253,19 +3257,9 @@ subcollection: openshift
 
     * [Changelog for version 3.0.0, released 26 February 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0300_is_block_relnote)
 
-* [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
+* [Archive](/docs/openshift?topic=openshift-vpc_bs_changelog#unsupported_versions)
 
-    * [Changelog for patch update 2.0.3_471, released 26 January 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0203471_is_block)
-
-    * [Changelog for patch update 2.0.3_464, released 10 December 2020](/docs/openshift?topic=openshift-vpc_bs_changelog#0203464_is_block)
-
-    * [Changelog for patch update 2.0.3_404, released 25 November 2020](/docs/openshift?topic=openshift-vpc_bs_changelog#0203404_is_block)
-
-    * [Changelog for patch update 2.0.3_375, released 17 September 2020](/docs/openshift?topic=openshift-vpc_bs_changelog#0203375_is_block)
-
-    * [Changelog for patch update 2.0.3_374+, released 29 August 2020](/docs/openshift?topic=openshift-vpc_bs_changelog#0203374_is_block)
-
-    * [Changelog for patch update 2.0.3_365, released 05 August 2020](/docs/openshift?topic=openshift-vpc_bs_changelog#203365_is_block)
+    * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [Object storage plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 
