@@ -199,6 +199,8 @@ subcollection: openshift
 
 [October 2021](/docs/openshift?topic=openshift-rel-notes#release-oct-2021)
 
+* [13 October 2021](/docs/openshift?topic=openshift-rel-notes#13oct2021)
+
 * [11 October 2021](/docs/openshift?topic=openshift-rel-notes#11oct2021)
 
 * [7 October 2021](/docs/openshift?topic=openshift-rel-notes#7oct2021)
@@ -2749,6 +2751,8 @@ subcollection: openshift
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version 1.0.331](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10331)
 
 * [Version 1.0.312](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10312)
 
