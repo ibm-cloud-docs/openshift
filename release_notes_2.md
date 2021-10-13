@@ -111,11 +111,11 @@ Master fix pack and worker node fix pack update
 {: release-note}
 
 Master fix pack update
-:   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.7.30_1532_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4730_1532),[`4.6.44_1556_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4644_1556), [`4.5.41_1552_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4541_1552), and [`3.11.521_1604_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311521_1604).
+:   Change log documentation is available for {{site.data.keyword.openshiftshort}} version [`4.7.30_1532_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4730_1532),[`4.6.44_1556_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4644_1556), [`4.5.41_1552_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4541_1552), and [`3.11.521_1604_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311521_1604).
 
 
 Worker node fix pack update
-:   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.5.41_1553_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4541_1553),[`4.6.45_1557_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4645_1557_openshift), [`4.7.31_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4731_1533_openshift), and [`3.11.521_1605_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311521_1605_openshift).
+:   Change log documentation is available for {{site.data.keyword.openshiftshort}} version [`4.5.41_1553_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4541_1553),[`4.6.45_1557_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4645_1557_openshift), [`4.7.31_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4731_1533_openshift), and [`3.11.521_1605_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311521_1605_openshift).
 
 ### 23 September 2021
 {: #23sep2021}
@@ -194,7 +194,7 @@ Istio add-on change log
 {: release-note}
 
 Worker node fix pack update
-:   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.5.41_1551_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4541_1551),[`4.6.44_1555_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4644_1555), [`4.7.29_1531_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4729_1531), and [`3.11.501_1603_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311501_1603).
+:   Change log documentation is available for {{site.data.keyword.openshiftshort}} version [`4.5.41_1551_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4541_1551),[`4.6.44_1555_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4644_1555), [`4.7.29_1531_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4729_1531), and [`3.11.501_1603_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311501_1603).
 
 ### 9 September 2021
 {: #9sep2021}

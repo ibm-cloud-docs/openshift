@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-11"
+lastupdated: "2021-10-13"
 
 keywords: openshift, roks
 
@@ -402,7 +402,7 @@ Review how {{site.data.keyword.openshiftlong_notm}} complies with the version 1.
 {: caption="Explanation and remediation" caption-side="top"}
 
 ### IBM Remediations and Explanations
-{: #cis-benchmark-15-remediation}
+{: #ibm-remediations-and-explanations}
 
 
 | # | Explanation and remediation |

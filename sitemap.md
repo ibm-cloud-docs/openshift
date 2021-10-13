@@ -3195,7 +3195,7 @@ subcollection: openshift
 
     * [5.6 General Policies](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-5-6)
 
-    * [IBM Remediations and Explanations](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-remediation)
+    * [IBM Remediations and Explanations](/docs/openshift?topic=openshift-cis-benchmark#ibm-remediations-and-explanations)
 
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 
