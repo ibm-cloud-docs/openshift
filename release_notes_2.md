@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-11"
+lastupdated: "2021-10-13"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -40,7 +40,7 @@ Review the release notes for October 2021.
 
 
 Unsupported {{site.data.keyword.openshiftshort}} version 4.5
-:   {{site.data.keyword.openshiftshort} version 4.5 is unsupported. To continue receiving important security updates and support, you must [update your cluster to a supported version](/docs/openshift?topic=openshift-openshift_versions#version_types) immediately.
+:   {{site.data.keyword.openshiftshort}} version 4.5 is unsupported. To continue receiving important security updates and support, you must [update your cluster to a supported version](/docs/openshift?topic=openshift-openshift_versions#version_types) immediately.
 
 Worker node fix pack update
 :   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.8.13_1528_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4813_1528_openshift),[`4.7.32_1534_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4732_1534_openshift), [`4.6.46_1558_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4646_1558_openshift), and [`3.11.524_1606_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311524_1606_openshift).
