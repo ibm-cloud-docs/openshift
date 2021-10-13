@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-11"
+lastupdated: "2021-10-13"
 
 keywords: vpc block, add-on, vpc block changelog
 
@@ -21,13 +21,12 @@ View information for patch updates to the {{site.data.keyword.block_storage_is_s
 {: shortdesc}
 
 Patch updates
-: Patch updates are delivered automatically by IBM and do not contain any feature updates or changes in the supported add-on and cluster versions.
+:   Patch updates are delivered automatically by IBM and do not contain any feature updates or changes in the supported add-on and cluster versions.
 
 Release updates
-: Release updates contain new features for the {{site.data.keyword.block_storage_is_short}} or changes in the supported add-on or cluster versions. You must manually apply release updates to your {{site.data.keyword.block_storage_is_short}} add-on. To update your {{site.data.keyword.block_storage_is_short}} add-on, see [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/containers?topic=containers-vpc-block#vpc-addon-update).
+:   Release updates contain new features for the {{site.data.keyword.block_storage_is_short}} or changes in the supported add-on or cluster versions. You must manually apply release updates to your {{site.data.keyword.block_storage_is_short}} add-on. To update your {{site.data.keyword.block_storage_is_short}} add-on, see [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/containers?topic=containers-vpc-block#vpc-addon-update).
 
-
-As of 26 July 2021, version 2.0.3 of the Block Storage for VPC add-on is unsupported. Version 3.0.0 is deprecated and becomes unsupported on or after 26 August 2021. Version 3.0.1, which adds beta support for volume expansion is now available. If you have a deprecated or unsupported version of the add-on installed in your cluster, update the add-on to version 3.0.1. If you have a deprecated or unsupported version of the add-on installed in your cluster, update the add-on to version 3.0.1. To update the Block Storage for VPC add-on in your cluster, disable the add-on and then re-enable the add-on. You might see a warning that resources or data might be deleted. For the {{site.data.keyword.block_storage_is_short}} add-on update, PVC creation and app deployment are not disrupted when the add-on is disabled and existing volumes are not impacted.
+As of 26 July 2021, version 2.0.3 of the Block Storage for VPC add-on is unsupported. Version 3.0.0 is deprecated and becomes unsupported on or after 26 August 2021. If you have a deprecated or unsupported version of the add-on installed in your cluster, update the add-on to version 3.0.1 or 4.0. To update the Block Storage for VPC add-on in your cluster, disable the add-on and then re-enable it. You might see a warning that resources or data might be deleted, however, note that existing volumes and data are not impacted. For more information, see [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/containers?topic=containers-vpc-block#vpc-addon-update).
 {: important}
 
 
@@ -39,13 +38,13 @@ ibmcloud oc cluster addon versions --addon vpc-block-csi-driver
 
 Refer to the following tables for a summary of changes for each version of the {{site.data.keyword.block_storage_is_short}} add-on.
 
-| {{site.data.keyword.block_storage_is_short}} add-on version | Supported? | {{site.data.keyword.openshiftlong_notm}} version support |
-| --- | --- | --- |
-| 4.0 | Yes | Greater than or equal to 4.3 |
-| 3.0.1 | Yes | Greater than or equal to 4.3 |
-| 3.0.0 | Yes | Greater than or equal to 4.3 |
-| 2.0.3 | No | Greater than or equal to 4.3 |
-{: summary="The rows are read from left to right. The first column is the {{site.data.keyword.block_storage_is_short}} add-on version. The second column is the version's supported state. The third column is the cluster version of your cluster that the {{site.data.keyword.block_storage_is_short}} version is supported for."}
+| {{site.data.keyword.block_storage_is_short}} add-on version | {{site.data.keyword.openshiftlong_notm}} version support |
+| --- | --- |
+| 4.0 (default) | All supported versions of {{site.data.keyword.openshiftlong_notm}} and unsupported versions that are version 4.3 or higher. |
+| 3.0.1 | All supported versions of {{site.data.keyword.openshiftlong_notm}} and unsupported versions that are version 4.3 or higher. |
+| 3.0.0 | All supported versions of {{site.data.keyword.openshiftlong_notm}} and unsupported versions that are version 4.3 or higher. |
+| 2.0.3 | Unsupported as of Kubernetes version 1.20. |
+{: summary="The rows are read from left to right. The first column is the {{site.data.keyword.block_storage_is_short}} add-on version. The second column is the version of your cluster that the {{site.data.keyword.block_storage_is_short}} version is supported for."}
 
 
 
@@ -63,17 +62,17 @@ Review the changes in version `4.0.1_780` of the {{site.data.keyword.block_stora
 {: shortdesc}
 
 Image tags: `v4.0.1`
-- Resolves the following CVEs: 
+- Resolves the following CVEs.
     - [CVE-2021-22922](https://nvd.nist.gov/vuln/detail/CVE-2021-22922){: external}
     - [CVE-2021-22923](https://nvd.nist.gov/vuln/detail/CVE-2021-22923){: external}
     - [CVE-2021-22924](https://nvd.nist.gov/vuln/detail/CVE-2021-22924){: external}
-    - [CVE-2021-36222](https://nvd.nist.gov/vuln/detail/CVE-2021-36222){: external})
+    - [CVE-2021-36222](https://nvd.nist.gov/vuln/detail/CVE-2021-36222){: external}
     - [CVE-2021-37750](https://nvd.nist.gov/vuln/detail/CVE-2021-37750){: external}
 - Updates the `storage-secret-sidecar` image to `v1.1.2`.
 - Improves error messaging if `iks_token_exchange_endpoint_private_url` is invalid or unreachable.
 - Adds [new storage classes for OpenShift Data Foundation](/docs/containers?topic=containers-vpc-block#vpc-block-reference).
 - Updates to improve the volume attach/detach performance by avoiding unnecessary retries.
-- Fixes an issue where mounting failed with "already mounted" error.
+- Fixes an issue where mounting failed with `already mounted` error.
 - Improves logging when the device path for a volume is not present on worker node.
 - Adds the image label `compliance.owner="ibm-armada-storage"`. 
 
@@ -139,7 +138,6 @@ Volume expansion in version `3.0.1` is available in beta for allowlisted account
 {: beta}
 
 - Image tags: `v3.0.7`  
-- Supported cluster versions Greater than or equal to 4.3  
 - Includes beta support for volume expansion on allowlisted accounts.  
 - Fixes vulnerability [CVE-2021-27219](https://nvd.nist.gov/vuln/detail/CVE-2021-27219){: external}.  
 - Includes the `storage-secret-sidecar` container in the {{site.data.keyword.block_storage_is_short}} driver pods.  
@@ -157,7 +155,6 @@ Review the changes in version 3.0.0_521 of the {{site.data.keyword.block_storage
 {: shortdesc}
 
 - Image tags: `v3.0.7`  
-- Supported cluster versions: Greater than or equal to 4.3  
 - Updates the Golang version from `1.15.5` to `1.15.9`.  
 
 
@@ -168,84 +165,84 @@ Review the changes in version 3.0.0_521 of the {{site.data.keyword.block_storage
 {: shortdesc}
 
 - Image tags: `v.3.0.0`   
-- Supported cluster versions: Greater than or equal to 4.3  
 - The `vpc-block-csi-driver` is now available for both managed clusters and unmanaged clusters.   
 - No functional changes in this release.  
 
+## Archive
+{: #unsupported_versions}
 
-## Version 2.0.3
+Find an overview of {{site.data.keyword.block_storage_is_short}} add-ons that are unsupported in IBM Cloud Kubernetes Service.
+
+### Version 2.0.3
 {: #0203_is_block}
 
-Review the changes in version 3.0.0_521 of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changes in version 2.0.3 of the {{site.data.keyword.block_storage_is_short}} add-on.
 {: shortdesc}
 
-### Changelog for patch update 2.0.3_471, released 26 January 2021
+Version 2.0.3 is unsupported.
+{: important}
+
+#### Changelog for patch update 2.0.3_471, released 26 January 2021
 {: #0203471_is_block}
 
-Review the changes in version 3.0.0_521 of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changes in version 2.0.3_471 of the {{site.data.keyword.block_storage_is_short}} add-on.
 {: shortdesc}
 
 - Image tags: `v.2.0.9`  
 - Supported cluster versions: 4.3 - 4.6  
 - Updated he `openssl`, `openssl-libs`, `gnutls` packages to fix [CVE-2020-1971](https://nvd.nist.gov/vuln/detail/CVE-2020-1971){: external} and [CVE-2020-24659](https://nvd.nist.gov/vuln/detail/CVE-2020-24659){: external}.  
 
-### Changelog for patch update 2.0.3_464, released 10 December 2020
+#### Changelog for patch update 2.0.3_464, released 10 December 2020
 {: #0203464_is_block}
 
-Review the changes in version 3.0.0_521 of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changes in version 2.0.3_464 of the {{site.data.keyword.block_storage_is_short}} add-on.
 {: shortdesc}
 
 - Image tags: `v2.0.8`  
-- Supported cluster versions: 4.3 - 4.6  
 - **New!**: Metro storage classes with the `volumeBindingMode:WaitForFirstConsumer` specification.  
 - Resources that are deployed by the add-on now contain a label which links the source code URL and the build URL.  
 - The `v2.0.8` image is signed.  
 - Updates the Go version from `1.15.2` to `1.15.5`.  
 
-### Changelog for patch update 2.0.3_404, released 25 November 2020
+#### Changelog for patch update 2.0.3_404, released 25 November 2020
 {: #0203404_is_block}
 
 Review the changes in version 2.0.3_404 of the {{site.data.keyword.block_storage_is_short}} add-on.
 {: shortdesc}
 
-- Image tags: `v2.0.7`  
-- Supported cluster versions: 4.3 - 4.6  
+- Image tags: `v2.0.7`   
 - Fixes vulnerability scan issues.  
 - Updates the base image from `alpine` to `UBI`.  
 - Pods and containers now run as `non-root` except for the `node-server` pod's containers.  
 
-### Changelog for patch update 2.0.3_375, released 17 September 2020
+#### Changelog for patch update 2.0.3_375, released 17 September 2020
 {: #0203375_is_block}
 
 Review the changes in version 2.0.3_375 of the {{site.data.keyword.block_storage_is_short}} add-on.
 {: shortdesc}
 
-- Image tags: `v2.0.6`  
-- Supported cluster versions: 4.3 - 4.5  
+- Image tags: `v2.0.6`   
 - Fixes an issue with volume attachment when replacing workers.  
 
-### Changelog for patch update 2.0.3_374+, released 29 August 2020
+#### Changelog for patch update 2.0.3_374+, released 29 August 2020
 {: #0203374_is_block}
 
 Review the changes in version 2.0.3_374+ of the {{site.data.keyword.block_storage_is_short}} add-on.
 {: shortdesc}
 
-- Image tags: `v2.0.5`  
-- Supported cluster versions: 4.3 - 4.5  
+- Image tags: `v2.0.5`   
 - Adds the `/var/lib/kubelet` path for CSI driver calls on OCP 4.4.  
 
-### Changelog for patch update 2.0.3_365, released 05 August 2020
+#### Changelog for patch update 2.0.3_365, released 05 August 2020
 {: #203365_is_block}
 
 Review the changes in version 2.0.3_365 of the {{site.data.keyword.block_storage_is_short}} add-on.
 {: shortdesc}
 
-- Image tags: `v2.0.4`  
-- Supported versions: 4.3 - 4.5  
+- Image tags: `v2.0.4`   
 - Updates sidecar container images.  
 - Adds liveness probe.  
 - Enables parallel attachment and detachment of volumes to worker nodes. Previously, worker nodes were attached and detached sequentially.  
-
 
 
 
