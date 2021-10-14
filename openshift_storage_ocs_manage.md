@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-14"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc, roks
 
@@ -18,7 +18,12 @@ subcollection: openshift
 # Managing your OpenShift Data Foundation deployment
 {: #ocs-manage-deployment}
 
+
+
 Review the following topics to manage your OpenShift Data Foundation deployment.
+{: shortdesc}
+
+
 ## Updating the add-on
 {: #odf-addon-update}
 
@@ -177,7 +182,7 @@ If you want to fully remove ODF and all your data, you can [remove your storage 
         {: pre}
 
         Example output
-        ```
+        ```sh
         app    ocs-storagecluster-cephfs
         ```
         {: screen}
@@ -272,59 +277,59 @@ After you remove ODF from your apps, and remove your ODF storage cluster, you ca
 
 1. Copy one of the following clean up scripts based on your ODF deployment.
     * **VPC or {{site.data.keyword.satelliteshort}} with dynamically provisioned disks** Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
-    ```sh
-    #!/bin/bash
-    ocscluster_name=`oc get ocscluster | awk 'NR==2 {print $1}'`
-    oc delete ocscluster --all --wait=false
-    kubectl patch ocscluster/$ocscluster_name -p '{"metadata":{"finalizers":[]}}' --type=merge
-    oc delete ns openshift-storage --wait=false
-    sleep 20
-    kubectl -n openshift-storage patch persistentvolumeclaim/db-noobaa-db-0 -p '{"metadata":{"finalizers":[]}}' --type=merge
-    kubectl -n openshift-storage patch cephblockpool.ceph.rook.io/ocs-storagecluster-cephblockpool -p '{"metadata":{"finalizers":[]}}' --type=merge
-    kubectl -n openshift-storage patch cephcluster.ceph.rook.io/ocs-storagecluster-cephcluster -p '{"metadata":{"finalizers":[]}}' --type=merge
-    kubectl -n openshift-storage patch cephfilesystem.ceph.rook.io/ocs-storagecluster-cephfilesystem -p '{"metadata":{"finalizers":[]}}' --type=merge
-    kubectl -n openshift-storage patch cephobjectstore.ceph.rook.io/ocs-storagecluster-cephobjectstore -p '{"metadata":{"finalizers":[]}}' --type=merge
-    kubectl -n openshift-storage patch cephobjectstoreuser.ceph.rook.io/noobaa-ceph-objectstore-user -p '{"metadata":{"finalizers":[]}}' --type=merge
-    kubectl -n openshift-storage patch cephobjectstoreuser.ceph.rook.io/ocs-storagecluster-cephobjectstoreuser -p '{"metadata":{"finalizers":[]}}' --type=merge
-    kubectl -n openshift-storage patch noobaa/noobaa -p '{"metadata":{"finalizers":[]}}' --type=merge
-    kubectl -n openshift-storage patch backingstores.noobaa.io/noobaa-default-backing-store -p '{"metadata":{"finalizers":[]}}' --type=merge
-    kubectl -n openshift-storage patch bucketclasses.noobaa.io/noobaa-default-bucket-class -p '{"metadata":{"finalizers":[]}}' --type=merge
-    kubectl -n openshift-storage patch storagecluster.ocs.openshift.io/ocs-storagecluster -p '{"metadata":{"finalizers":[]}}' --type=merge
-    sleep 20
-    oc delete pods -n openshift-storage --all --force --grace-period=0
-    sleep 20
-    ```
-    {: pre}
+        ```sh
+        #!/bin/bash
+        ocscluster_name=`oc get ocscluster | awk 'NR==2 {print $1}'`
+        oc delete ocscluster --all --wait=false
+        kubectl patch ocscluster/$ocscluster_name -p '{"metadata":{"finalizers":[]}}' --type=merge
+        oc delete ns openshift-storage --wait=false
+        sleep 20
+        kubectl -n openshift-storage patch persistentvolumeclaim/db-noobaa-db-0 -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch cephblockpool.ceph.rook.io/ocs-storagecluster-cephblockpool -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch cephcluster.ceph.rook.io/ocs-storagecluster-cephcluster -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch cephfilesystem.ceph.rook.io/ocs-storagecluster-cephfilesystem -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch cephobjectstore.ceph.rook.io/ocs-storagecluster-cephobjectstore -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch cephobjectstoreuser.ceph.rook.io/noobaa-ceph-objectstore-user -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch cephobjectstoreuser.ceph.rook.io/ocs-storagecluster-cephobjectstoreuser -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch noobaa/noobaa -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch backingstores.noobaa.io/noobaa-default-backing-store -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch bucketclasses.noobaa.io/noobaa-default-bucket-class -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch storagecluster.ocs.openshift.io/ocs-storagecluster -p '{"metadata":{"finalizers":[]}}' --type=merge
+        sleep 20
+        oc delete pods -n openshift-storage --all --force --grace-period=0
+        sleep 20
+        ```
+        {: pre}
 
     * **Classic clusters or {{site.data.keyword.satelliteshort}} clusters with local disks** Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
-    ```sh
-    #!/bin/bash
-    ocscluster_name=`oc get ocscluster | awk 'NR==2 {print $1}'`
-    oc delete ocscluster --all --wait=false
-    kubectl patch ocscluster/$ocscluster_name -p '{"metadata":{"finalizers":[]}}' --type=merge
-    oc delete ns openshift-storage --wait=false
-    sleep 20
-    kubectl -n openshift-storage patch persistentvolumeclaim/db-noobaa-db-0 -p '{"metadata":{"finalizers":[]}}' --type=merge
-    kubectl -n openshift-storage patch cephblockpool.ceph.rook.io/ocs-storagecluster-cephblockpool -p '{"metadata":{"finalizers":[]}}' --type=merge
-    kubectl -n openshift-storage patch cephcluster.ceph.rook.io/ocs-storagecluster-cephcluster -p '{"metadata":{"finalizers":[]}}' --type=merge
-    kubectl -n openshift-storage patch cephfilesystem.ceph.rook.io/ocs-storagecluster-cephfilesystem -p '{"metadata":{"finalizers":[]}}' --type=merge
-    kubectl -n openshift-storage patch cephobjectstore.ceph.rook.io/ocs-storagecluster-cephobjectstore -p '{"metadata":{"finalizers":[]}}' --type=merge
-    kubectl -n openshift-storage patch cephobjectstoreuser.ceph.rook.io/noobaa-ceph-objectstore-user -p '{"metadata":{"finalizers":[]}}' --type=merge
-    kubectl -n openshift-storage patch cephobjectstoreuser.ceph.rook.io/ocs-storagecluster-cephobjectstoreuser -p '{"metadata":{"finalizers":[]}}' --type=merge
-    kubectl -n openshift-storage patch noobaa/noobaa -p '{"metadata":{"finalizers":[]}}' --type=merge
-    kubectl -n openshift-storage patch backingstores.noobaa.io/noobaa-default-backing-store -p '{"metadata":{"finalizers":[]}}' --type=merge
-    kubectl -n openshift-storage patch bucketclasses.noobaa.io/noobaa-default-bucket-class -p '{"metadata":{"finalizers":[]}}' --type=merge
-    kubectl -n openshift-storage patch storagecluster.ocs.openshift.io/ocs-storagecluster -p '{"metadata":{"finalizers":[]}}' --type=merge
-    sleep 20
-    oc delete pods -n openshift-storage --all --force --grace-period=0
-    oc delete ns local-storage --wait=false
-    sleep 20
-    kubectl -n local-storage patch localvolume.local.storage.openshift.io/local-block -p '{"metadata":{"finalizers":[]}}' --type=merge
-    kubectl -n local-storage patch localvolume.local.storage.openshift.io/local-file -p '{"metadata":{"finalizers":[]}}' --type=merge
-    sleep 20
-    oc delete pods -n local-storage --all --force --grace-period=0
-    ```
-    {: pre}
+        ```sh
+        #!/bin/bash
+        ocscluster_name=`oc get ocscluster | awk 'NR==2 {print $1}'`
+        oc delete ocscluster --all --wait=false
+        kubectl patch ocscluster/$ocscluster_name -p '{"metadata":{"finalizers":[]}}' --type=merge
+        oc delete ns openshift-storage --wait=false
+        sleep 20
+        kubectl -n openshift-storage patch persistentvolumeclaim/db-noobaa-db-0 -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch cephblockpool.ceph.rook.io/ocs-storagecluster-cephblockpool -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch cephcluster.ceph.rook.io/ocs-storagecluster-cephcluster -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch cephfilesystem.ceph.rook.io/ocs-storagecluster-cephfilesystem -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch cephobjectstore.ceph.rook.io/ocs-storagecluster-cephobjectstore -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch cephobjectstoreuser.ceph.rook.io/noobaa-ceph-objectstore-user -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch cephobjectstoreuser.ceph.rook.io/ocs-storagecluster-cephobjectstoreuser -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch noobaa/noobaa -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch backingstores.noobaa.io/noobaa-default-backing-store -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch bucketclasses.noobaa.io/noobaa-default-bucket-class -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch storagecluster.ocs.openshift.io/ocs-storagecluster -p '{"metadata":{"finalizers":[]}}' --type=merge
+        sleep 20
+        oc delete pods -n openshift-storage --all --force --grace-period=0
+        oc delete ns local-storage --wait=false
+        sleep 20
+        kubectl -n local-storage patch localvolume.local.storage.openshift.io/local-block -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n local-storage patch localvolume.local.storage.openshift.io/local-file -p '{"metadata":{"finalizers":[]}}' --type=merge
+        sleep 20
+        oc delete pods -n local-storage --all --force --grace-period=0
+        ```
+        {: pre}
 
 1. Run the `cleanup.sh` script.
     ```sh
@@ -334,35 +339,35 @@ After you remove ODF from your apps, and remove your ODF storage cluster, you ca
 
 1. ****Classic clusters or {{site.data.keyword.satelliteshort}} clusters with local disks** After you run the cleanup script, log in to each worker node and run the following commands.
     1. Deploy a debug pod and run `chroot /host`.
-    ```sh
-    oc debug node/<node_name> -- chroot /host
-    ```
-    {: pre}
+        ```sh
+        oc debug node/<node_name> -- chroot /host
+        ```
+        {: pre}
 
     1. Run the following command to remove any files or directories on the specified paths. Repeat this step for each worker node that you used in your OCS configuration.
-    ```sh
-    rm -rvf /var/lib/rook /mnt/local-storage
-    ```
-    {: codeblock}
+        ```sh
+        rm -rvf /var/lib/rook /mnt/local-storage
+        ```
+        {: codeblock}
 
-    **Example output**:
-    ```sh
-    removed '/var/lib/rook/openshift-storage/log/ocs-deviceset-0-data-0-6fgp6/ceph-volume.log'
-    removed directory: '/var/lib/rook/openshift-storage/log/ocs-deviceset-0-data-0-6fgp6'
-    removed directory: '/var/lib/rook/openshift-storage/log'
-    removed directory: '/var/lib/rook/openshift-storage/crash/posted'
-    removed directory: '/var/lib/rook/openshift-storage/crash'
-    removed '/var/lib/rook/openshift-storage/client.admin.keyring'
-    removed '/var/lib/rook/openshift-storage/openshift-storage.config'
-    removed directory: '/var/lib/rook/openshift-storage'
-    removed directory: '/var/lib/rook'
-    removed '/mnt/local-storage/localblock/nvme3n1'
-    removed directory: '/mnt/local-storage/localblock'
-    removed '/mnt/local-storage/localfile/nvme2n1'
-    removed directory: '/mnt/local-storage/localfile'
-    removed directory: '/mnt/local-storage'
-    ```
-    {: codeblock}
+        **Example output**:
+        ```sh
+        removed '/var/lib/rook/openshift-storage/log/ocs-deviceset-0-data-0-6fgp6/ceph-volume.log'
+        removed directory: '/var/lib/rook/openshift-storage/log/ocs-deviceset-0-data-0-6fgp6'
+        removed directory: '/var/lib/rook/openshift-storage/log'
+        removed directory: '/var/lib/rook/openshift-storage/crash/posted'
+        removed directory: '/var/lib/rook/openshift-storage/crash'
+        removed '/var/lib/rook/openshift-storage/client.admin.keyring'
+        removed '/var/lib/rook/openshift-storage/openshift-storage.config'
+        removed directory: '/var/lib/rook/openshift-storage'
+        removed directory: '/var/lib/rook'
+        removed '/mnt/local-storage/localblock/nvme3n1'
+        removed directory: '/mnt/local-storage/localblock'
+        removed '/mnt/local-storage/localfile/nvme2n1'
+        removed directory: '/mnt/local-storage/localfile'
+        removed directory: '/mnt/local-storage'
+        ```
+        {: codeblock}
 
 1. **Optional**: **Classic clusters or {{site.data.keyword.satelliteshort}} clusters with local disks** If you no longer want to use the local volumes that you used in your configuration, you can delete them from the cluster. List the local PVs.
     ```sh

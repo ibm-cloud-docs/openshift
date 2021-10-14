@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-11"
+lastupdated: "2021-10-14"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -1267,16 +1267,16 @@ To add a secret to a storage class:
 
 3. Export the details for the default storage class that you want to edit in `YAML` form, or use `oc edit` to edit the storage class in your command line.
     * Edit the storage class in your command line
-    ```sh
-    oc edit sc ibmc-s3fs-flex-regional
-    ```
-    {: pre}
+        ```sh
+        oc edit sc ibmc-s3fs-flex-regional
+        ```
+        {: pre}
 
     * Export the storage class details to `YAML` and save them in a file.
-    ```sh
-    oc get sc ibmc-s3fs-flex-regional -o yaml
-    ```
-    {: pre}
+        ```sh
+        oc get sc ibmc-s3fs-flex-regional -o yaml
+        ```
+        {: pre}
 
 4. Add the `ibm.io/secret-name: "<secret_name>"` parameter to the `parameters` field of the storage class.
     ```yaml

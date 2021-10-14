@@ -300,7 +300,6 @@ toc:
                     - ts-cluster-portieris.md
                     - ts-cluster-pending.md
                     - ts-cluster-view-work.md
-                    - ts-kubectl-exec-timeout.md
               - topicgroup:
                   label: Worker nodes
                   topics:

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-14"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -58,7 +58,7 @@ When you create a Kubernetes `LoadBalancer` service for an app in your cluster a
 
 The following diagram illustrates how a user accesses an app from the internet through the VPC NLB.
 
-<img src="images/vpc_tutorial_lesson4_lb.png" alt="VPC load balancing for a cluster"/>
+<img src="images/vpc_tutorial_lesson4_lb.png" alt="VPC load balancing for a cluster through the VPC NLB"/>
 
 1. A request to your app uses the external IP address that is assigned to the Kubernetes `LoadBalancer` service by the VPC NLB.
 2. The request is automatically forwarded by the VPC NLB to one of the node ports on the worker node, and then to the private IP address of the app pod.
@@ -79,7 +79,7 @@ By default, when you create a Kubernetes `LoadBalancer` service for an app in yo
 
 The following diagram illustrates how a user accesses an app from the internet through the VPC ALB.
 
-<img src="images/vpc_alb.png" alt="VPC load balancing for a cluster"/>
+<img src="images/vpc_alb.png" alt="VPC load balancing for a cluster through the VPC ALB"/>
 
 1. A request to your app uses the hostname that is assigned to the Kubernetes `LoadBalancer` service by the VPC ALB, such as `1234abcd-<region>.lb.appdomain.cloud`.
 2. The request is automatically forwarded by the VPC ALB to one of the node ports on the worker node, and then to the private IP address of the app pod.
