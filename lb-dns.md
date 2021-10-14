@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-14"
 
 keywords: openshift, roks, rhos, rhoks, lb2.0, nlb
 
@@ -23,14 +23,14 @@ subcollection: openshift
 After you set up network load balancers (NLBs), you can create DNS entries for the NLB IPs by creating subdomains. You can also set up TCP/HTTP(S) monitors to health check the NLB IP addresses behind each subdomain.
 {: shortdesc}
 
-<dl>
-<dt>Subdomain</dt>
-<dd>When you create a public NLB in a single-zone or multizone cluster, you can expose your app to the internet by creating a subdomain for the NLB IP address. Additionally, {{site.data.keyword.cloud_notm}} takes care of generating and maintaining the wildcard SSL certificate for the subdomain for you.
-<p>In multizone clusters, you can create a subdomain and add the NLB IP address in each zone to that subdomain DNS entry. For example, if you deployed NLBs for your app in three zones in US-South, you can create the subdomain `mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud` for the three NLB IP addresses. When a user accesses your app subdomain, the client accesses one of these IPs at random, and the request is sent to that NLB.</p>
-<p class="note">You currently cannot create subdomains for private NLBs.</p></dd>
-<dt>Health check monitor</dt>
-<dd>Enable health checks on the NLB IP addresses behind a single subdomain to determine whether they are available or not. When you enable a monitor for your subdomain, the monitor health checks each NLB IP and keeps the DNS lookup results updated based on these health checks. For example, if your NLBs have IP addresses `1.1.1.1`, `2.2.2.2`, and `3.3.3.3`, a normal operation DNS lookup of your subdomain returns all 3 IPs, 1 of which the client accesses at random. If the NLB with IP address `3.3.3.3` becomes unavailable for any reason, such as due to zone failure, then the health check for that IP fails, the monitor removes the failed IP from the subdomain, and the DNS lookup returns only the healthy `1.1.1.1` and `2.2.2.2` IPs.</dd>
-</dl>
+Subdomain
+:   When you create a public NLB in a single-zone or multizone cluster, you can expose your app to the internet by creating a subdomain for the NLB IP address. Additionally, {{site.data.keyword.cloud_notm}} takes care of generating and maintaining the wildcard SSL certificate for the subdomain for you. In multizone clusters, you can create a subdomain and add the NLB IP address in each zone to that subdomain DNS entry. For example, if you deployed NLBs for your app in three zones in US-South, you can create the subdomain `mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud` for the three NLB IP addresses. When a user accesses your app subdomain, the client accesses one of these IPs at random, and the request is sent to that NLB.
+
+You currently cannot create subdomains for private NLBs.
+{: note}
+
+Health check monitor
+:   Enable health checks on the NLB IP addresses behind a single subdomain to determine whether they are available or not. When you enable a monitor for your subdomain, the monitor health checks each NLB IP and keeps the DNS lookup results updated based on these health checks. For example, if your NLBs have IP addresses `1.1.1.1`, `2.2.2.2`, and `3.3.3.3`, a normal operation DNS lookup of your subdomain returns all 3 IPs, 1 of which the client accesses at random. If the NLB with IP address `3.3.3.3` becomes unavailable for any reason, such as due to zone failure, then the health check for that IP fails, the monitor removes the failed IP from the subdomain, and the DNS lookup returns only the healthy `1.1.1.1` and `2.2.2.2` IPs.
 
 You can see all subdomains that are registered for NLB IPs in your cluster by running the following command.
 ```sh
@@ -38,7 +38,6 @@ ibmcloud oc nlb-dns ls --cluster <cluster_name_or_id>
 ```
 {: pre}
 
-</br>
 
 ## Registering NLB IPs with a DNS subdomain
 {: #loadbalancer_hostname_dns}
@@ -96,7 +95,7 @@ To create a subdomain for one or more NLB IP addresses:
 
 Next, you can [enable health checks on the subdomain by creating a health monitor](#loadbalancer_hostname_monitor).
 
-</br>
+
 
 ## Understanding the subdomain format
 {: #loadbalancer_hostname_format}
@@ -109,9 +108,9 @@ For example, a subdomain that you create for an NLB might look like `mycluster-a
 |NLB subdomain component|Description|
 |----|----|
 |`*`|The wildcard for the subdomain is registered by default for your cluster.|
-|`<cluster_name>`|The name of your cluster.<ul><li>If the cluster name is 26 characters or fewer and the cluster name is unique in this region, the entire cluster name is included and is not modified: <code>myclustername</code>.</li><li>If the cluster name is 26 characters or fewer and there is an existing cluster of the same name in this region, the entire cluster name is included and a dash with six random characters is added: <code>myclustername-ABC123</code>.</li><li>If the cluster name is 26 characters or greater and the cluster name is unique in this region, only the first 24 characters of the cluster name are used: <code>myveryverylongclusternam</code>.</li><li>If the cluster name is 26 characters or greater and there is an existing cluster of the same name in this region, only the first 17 characters of the cluster name are used and a dash with six random characters is added: <code>myveryverylongclu-ABC123</code>.</li></ul>|
+|`<cluster_name>`|The name of your cluster.<ul><li>If the cluster name is 26 characters or fewer and the cluster name is unique in this region, the entire cluster name is included and is not modified: `myclustername`.</li><li>If the cluster name is 26 characters or fewer and there is an existing cluster of the same name in this region, the entire cluster name is included and a dash with six random characters is added: `myclustername-ABC123`.</li><li>If the cluster name is 26 characters or greater and the cluster name is unique in this region, only the first 24 characters of the cluster name are used: `myveryverylongclusternam`.</li><li>If the cluster name is 26 characters or greater and there is an existing cluster of the same name in this region, only the first 17 characters of the cluster name are used and a dash with six random characters is added: `myveryverylongclu-ABC123`.</li></ul>|
 |`<globally_unique_account_HASH>`|A globally unique HASH is created for your {{site.data.keyword.cloud_notm}} account. All subdomains that you create for NLBs in clusters in your account use this globally unique HASH.|
-|`0001`|The first and second characters indicate a public or a private (internal) subdomain.<ul><li><code>00</code> indicates a subdomain that has a public DNS entry.</li><li><code>i0</code> indicates a subdomain that has a private DNS entry.</li></ul>
+|`0001`|The first and second characters indicate a public or a private (internal) subdomain.<ul><li>`00` indicates a subdomain that has a public DNS entry.</li><li>`i0` indicates a subdomain that has a private DNS entry.</li></ul>
 The first and second characters, `00`, indicate a public subdomain. The third and fourth characters, such as `01` or another number, act as a counter for each subdomain that you create.|
 |`<region>`|The region that the cluster is created in.|
 |`containers.appdomain.cloud`|The subdomain for {{site.data.keyword.openshiftlong_notm}} subdomains.|
@@ -147,80 +146,61 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
     ```
     {: pre}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the command. The second column describes the parameter.">
-    <caption>Understanding this command's components</caption>
-    <col width="25%">
-    <thead>
-    <th>Parameter</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>-c, --cluster &lt;cluster_name_or_ID&gt;</code></td>
-    <td>Required: The name or ID of the cluster where the subdomain is registered.</td>
-    </tr>
-    <tr>
-    <td><code>--nlb-host &lt;host_name&gt;</code></td>
-    <td>Required: The subdomain to enable a health check monitor for.</td>
-    </tr>
-    <tr>
-    <td><code>--enable</code></td>
-    <td>Required: Enable the health check monitor for the subdomain.</td>
-    </tr>
-    <tr>
-    <td><code>--description &lt;description&gt;</code></td>
-    <td>A description of the health monitor.</td>
-    </tr>
-    <tr>
-    <td><code>--type &lt;type&gt;</code></td>
-    <td>The protocol to use for the health check: <code>HTTP</code>, <code>HTTPS</code>, or <code>TCP</code>. Default: <code>HTTP</code></td>
-    </tr>
-    <tr>
-    <td><code>--method &lt;method&gt;</code></td>
-    <td>The method to use for the health check. Default for <code>type</code> <code>HTTP</code> and <code>HTTPS</code>: <code>GET</code>. Default for <code>type</code> <code>TCP</code>: <code>connection_established</code></td>
-    </tr>
-    <tr>
-    <td><code>--path &lt;path&gt;</code></td>
-    <td>When <code>type</code> is <code>HTTPS</code>: The endpoint path to health check against. Default: <code>/</code></td>
-    </tr>
-    <tr>
-    <td><code>--timeout &lt;timeout&gt;</code></td>
-    <td>The timeout, in seconds, before the IP is considered unhealthy. Default: <code>5</code></td>
-    </tr>
-    <tr>
-    <td><code>--retries &lt;retries&gt;</code></td>
-    <td>When a timeout occurs, the number of retries to attempt before the IP is considered unhealthy. Retries are attempted immediately. Default: <code>2</code></td>
-    </tr>
-    <tr>
-    <td><code>--interval &lt;interval&gt;</code></td>
-    <td>The interval, in seconds, between each health check. Short intervals might improve failover time, but increase load on the IPs. Default: <code>60</code></td>
-    </tr>
-    <tr>
-    <td><code>--port &lt;port&gt;</code></td>
-    <td>The port number to connect to for the health check. When <code>type</code> is <code>TCP</code>, this parameter is required. When <code>type</code> is <code>HTTP</code> or <code>HTTPS</code>, define the port only if you use a port other than 80 for HTTP or 443 for HTTPS. Default for TCP: <code>0</code>. Default for HTTP: <code>80</code>. Default for HTTPS: <code>443</code>.</td>
-    </tr>
-    <tr>
-    <td><code>--header &lt;header&gt;</code></td>
-    <td>When <code>type</code> is <code>HTTP</code> or <code>HTTPS</code>: The HTTP request headers to send in the health check, such as a Host header. The User-Agent header cannot be overridden. To add more than one header to the requests, specify this flag multiple times. This flag accepts values in the following format: <code>--header Header-Name=value</code>. When updating a monitor, the existing headers are replaced by the ones that you specify. To delete all existing headers, specify the flag with an empty value (<code>--header ""</code>).</td>
-    </tr>
-    <tr>
-    <td><code>--expected-body &lt;expected-body&gt;</code></td>
-    <td>When <code>type</code> is <code>HTTP</code> or <code>HTTPS</code>: A case-insensitive substring that the health check looks for in the response body. If this string is not found, the IP is considered unhealthy.</td>
-    </tr>
-    <tr>
-    <td><code>--expected-codes &lt;expected-codes&gt;</code></td>
-    <td>When <code>type</code> is <code>HTTP</code> or <code>HTTPS</code>: HTTP codes that the health check looks for in the response. If the HTTP code is not found, the IP is considered unhealthy. Default: <code>2xx</code></td>
-    </tr>
-    <tr>
-    <td><code>--allows-insecure &lt;true&gt;</code></td>
-    <td>When <code>type</code> is <code>HTTP</code> or <code>HTTPS</code>: Set to <code>true</code> to not validate the certificate.</td>
-    </tr>
-    <tr>
-    <td><code>--follows-redirects &lt;true&gt;</code></td>
-    <td>When <code>type</code> is <code>HTTP</code> or <code>HTTPS</code>: Set to <code>true</code> to follow any redirects that are returned by the IP.</td>
-    </tr>
-    </tbody>
-    </table>
+    `-c, --cluster <cluster_name_or_ID>`
+    :   Required: The name or ID of the cluster where the subdomain is registered.
+
+    `--nlb-host <host_name>`
+    :   Required: The subdomain to enable a health check monitor for.
+
+    `--enable`
+    :   Required: Enable the health check monitor for the subdomain.
+
+    `--description <description>`
+    :   A description of the health monitor.
+
+    `--type <type>`
+    :   The protocol to use for the health check: `HTTP`, `HTTPS`, or `TCP`. Default: `HTTP`.
+
+
+    `--method <method>`
+    :   The method to use for the health check. Default for `type` `HTTP` and `HTTPS`: `GET`. Default for `type` `TCP`: `connection_established`
+
+
+    `--path <path>`
+    :   When `type` is `HTTPS`: The endpoint path to health check against. Default: `/`
+
+
+    `--timeout <timeout>`
+    :   The timeout, in seconds, before the IP is considered unhealthy. Default: `5`.
+
+
+    `--retries <retries>`
+    :   When a timeout occurs, the number of retries to attempt before the IP is considered unhealthy. Retries are attempted immediately. Default: `2`.
+
+
+    `--interval <interval>`
+    :   The interval, in seconds, between each health check. Short intervals might improve failover time, but increase load on the IPs. Default: `60`.
+
+
+    `--port <port>`
+    :   The port number to connect to for the health check. When `type` is `TCP`, this parameter is required. When `type` is `HTTP` or `HTTPS`, define the port only if you use a port other than 80 for HTTP or 443 for HTTPS. Default for TCP: `0`. Default for HTTP: `80`. Default for HTTPS: `443`.
+
+    `--header <header>`
+    :   When `type` is `HTTP` or `HTTPS`: The HTTP request headers to send in the health check, such as a Host header. The User-Agent header cannot be overridden. To add more than one header to the requests, specify this flag multiple times. This flag accepts values in the following format: `--header Header-Name=value`. When updating a monitor, the existing headers are replaced by the ones that you specify. To delete all existing headers, specify the flag with an empty value (`--header ""`).
+
+    `--expected-body <expected-body>`
+    :   When `type` is `HTTP` or `HTTPS`: A case-insensitive substring that the health check looks for in the response body. If this string is not found, the IP is considered unhealthy.
+
+    `--expected-codes <expected-codes>`
+    :   When `type` is `HTTP` or `HTTPS`: HTTP codes that the health check looks for in the response. If the HTTP code is not found, the IP is considered unhealthy. Default: `2xx`.
+
+
+    `--allows-insecure <true>`
+    :   When `type` is `HTTP` or `HTTPS`: Set to `true` to not validate the certificate.
+
+    `--follows-redirects <true>`
+    :   When `type` is `HTTP` or `HTTPS`: Set to `true` to follow any redirects that are returned by the IP.
+
 
     Example command:
     ```sh
@@ -274,7 +254,8 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
     ```
     {: screen}
 
-</br>
+
+
 
 ### Updating and removing IPs and monitors from subdomains
 {: #loadbalancer_hostname_delete}
@@ -296,7 +277,7 @@ ibmcloud oc nlb-dns rm classic --cluster <cluster_name_or_id> --ip <ip> --nlb-ho
 ```
 {: pre}
 
-</br>
+
 
 **Health check monitors**
 

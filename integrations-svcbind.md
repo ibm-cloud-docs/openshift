@@ -47,7 +47,7 @@ Want to make your secrets even more secured? Ask your cluster admin to [enable a
 Yes, you can use services that meet naming requirements and reuse the service credentials.
 
 * **Naming**: Make sure that the service name is in the following regex format. Example permitted names are `myservice` or `example.com`. Unallowed characters include spaces and underscores.
-    ```
+    ```sh
     [a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*
     ```
     {: screen}
@@ -192,7 +192,7 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
         {: pre}
 
         Example output
-        ```
+        ```sh
         {"apikey":"<API_key>","host":"<ID_string>-bluemix.cloudant.com","iam_apikey_description":"Auto generated apikey during resource-key operation for Instance - crn:v1:bluemix:public:cloudantnosqldb:us-south:a/<ID_string>::","iam_apikey_name":"auto-generated-apikey-<ID_string>","iam_role_crn":"crn:v1:bluemix:public:iam::::serviceRole:Writer","iam_serviceid_crn":"crn:v1:bluemix:public:iam-identity::a/1234567890brasge5htn2ec098::serviceid:ServiceId-<ID_string>","password":"<ID_string>","port":443,"url":"https://<ID_string>-bluemix.cloudant.com","username":"123b45da-9ce1-4c24-ab12-rinwnwub1294-bluemix"}
         ```
         {: screen}
@@ -269,30 +269,17 @@ When you mount the secret as a volume to your pod, a file that is named `binding
     ```
     {: codeblock}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the YAML file components</caption>
-    <col width="25%">
-    <thead>
-    <th>Parameter</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>volumeMounts.mountPath</code></td>
-    <td>The absolute path of the directory to where the volume is mounted inside the container.</td>
-    </tr>
-    <tr>
-    <td><code>volumeMounts.name</code></br><code>volumes.name</code></td>
-    <td>The name of the volume to mount to your pod.</td>
-    </tr>
-    <tr>
-    <td><code>secret.defaultMode</code></td>
-    <td>The read and write permissions on the secret. Use <code>420</code> to set read-only permissions. </td>
-    </tr>
-    <tr>
-    <td><code>secret.secretName</code></td>
-    <td>The name of the secret that you noted in the previous step.</td>
-    </tr></tbody></table>
+    `volumeMounts.mountPath`
+    :   The absolute path of the directory to where the volume is mounted inside the container.
+    
+    `volumeMounts.name` and `volumes.name`
+    :   The name of the volume to mount to your pod.
+    
+    `secret.defaultMode`
+    :   The read and write permissions on the secret. Use `420` to set read-only permissions.
+    
+    `secret.secretName`
+    :   The name of the secret that you noted in the previous step.
 
 3. Create the pod and mount the secret as a volume.
     ```sh
@@ -328,26 +315,26 @@ When you mount the secret as a volume to your pod, a file that is named `binding
         {: pre}
 
         Example output
-        ```
+        ```sh
         binding
         ```
         {: screen}
 
         The `binding` file includes the service credentials that you stored in the Kubernetes secret.
 
-    4. View the service credentials. The credentials are stored as key value pairs in JSON format.
-        ```
+    3. View the service credentials. The credentials are stored as key value pairs in JSON format.
+        ```sh
         cat binding
         ```
         {: pre}
 
         Example output
-        ```
+        ```sh
         {"apikey":"<API_key>","host":"<ID_string>-bluemix.cloudant.com","iam_apikey_description":"Auto generated apikey during resource-key operation for Instance - crn:v1:bluemix:public:cloudantnosqldb:us-south:a/<ID_string>:<ID_string>::","iam_apikey_name":"auto-generated-apikey-<ID_string>","iam_role_crn":"crn:v1:bluemix:public:iam::::serviceRole:Writer","iam_serviceid_crn":"crn:v1:bluemix:public:iam-identity::a/<ID_string>::serviceid:ServiceId-<ID_string>","password":"<ID_string>","port":443,"url":"https://<ID_string>-bluemix.cloudant.com","username":"123b45da-9ce1-4c24-ab12-rinwnwub1294-bluemix"}
         ```
         {: screen}
 
-    5. Configure your app to parse the JSON content and retrieve the information that you need to access your service.
+    4. Configure your app to parse the JSON content and retrieve the information that you need to access your service.
 
 ### Referencing the secret in environment variables
 {: #reference_secret}
@@ -427,27 +414,14 @@ You can add the service credentials and other key value pairs from your Kubernet
     ```
     {: codeblock}
 
-        <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-        <caption>Understanding the YAML file components</caption>
-        <col width="25%">
-        <thead>
-        <th>Parameter</th>
-        <th>Description</th>
-        </thead>
-        <tbody>
-        <tr>
-        <td><code>containers.env.name</code></td>
-        <td>The name of your environment variable.</td>
-        </tr>
-        <tr>
-        <td><code>env.valueFrom.secretKeyRef.name</code></td>
-        <td>The name of the secret that you noted in the previous step.</td>
-        </tr>
-        <tr>
-        <td><code>env.valueFrom.secretKeyRef.key</code></td>
-        <td>The key that is part of your secret and that you want to reference in your environment variable. To reference the service credentials, you must use the <strong>binding</strong> key.  </td>
-        </tr>
-        </tbody></table>
+    `containers.env.name`
+    :   The name of your environment variable.
+    
+    `env.valueFrom.secretKeyRef.name`
+    :   The name of the secret that you noted in the previous step.
+    
+    `env.valueFrom.secretKeyRef.key`
+    :   The key that is part of your secret and that you want to reference in your environment variable. To reference the service credentials, you must use the **binding** key.
 
 4. Create the pod that references the `binding` key of your secret as an environment variable.
     ```sh
@@ -476,13 +450,13 @@ You can add the service credentials and other key value pairs from your Kubernet
         {: pre}
 
     2. List all environment variables in the pod.
-        ```
+        ```sh
         env
         ```
         {: pre}
 
         Example output
-        ```
+        ```sh
         BINDING={"apikey":"<API_key>","host":"<ID_string>-bluemix.cloudant.com","iam_apikey_description":"Auto generated apikey during resource-key operation for Instance - crn:v1:bluemix:public:cloudantnosqldb:us-south:a/<ID_string>::","iam_apikey_name":"auto-generated-apikey-<ID_string>","iam_role_crn":"crn:v1:bluemix:public:iam::::serviceRole:Writer","iam_serviceid_crn":"crn:v1:bluemix:public:iam-identity::a/1234567890brasge5htn2ec098::serviceid:ServiceId-<ID_string>","password":"<password>","port":443,"url":"https://<ID_string>-bluemix.cloudant.com","username":"<ID_string>-bluemix"}
         ```
         {: screen}
@@ -571,38 +545,38 @@ If you do not want to use an {{site.data.keyword.cloud_notm}} service that you b
 
     - **To update an existing pod or deployment**:
         1. Get the pod or deployment YAML file.
-        ```sh
-        oc get pod <pod_name> -o yaml
-        ```
-        {: pre}
+            ```sh
+            oc get pod <pod_name> -o yaml
+            ```
+            {: pre}
 
-        ```sh
-        oc get deployment <deployment_name> -o yaml
-        ```
-        {: pre}
+            ```sh
+            oc get deployment <deployment_name> -o yaml
+            ```
+            {: pre}
 
         2. Copy the YAML file and in the `spec.volumes` section, change the name of the secret that you want to use.
         3. Apply the change in your cluster.
-        ```sh
-        oc apply -f pod.yaml
-        ```
-        {: pre}
+            ```sh
+            oc apply -f pod.yaml
+            ```
+            {: pre}
 
-        ```sh
-        oc apply -f deployment.yaml
-        ```
-        {: pre}
+            ```sh
+            oc apply -f deployment.yaml
+            ```
+            {: pre}
 
         4. Verify that a new pod is created with the updated volume specification.
-        ```sh
-        oc get pods
-        ```
-        {: pre}
+            ```sh
+            oc get pods
+            ```
+            {: pre}
 
-        ```sh
-        oc describe pod <pod_name>
-        ```
-        {: pre}
+            ```sh
+            oc describe pod <pod_name>
+            ```
+            {: pre}
 
 5. Remove the secret.
     ```sh

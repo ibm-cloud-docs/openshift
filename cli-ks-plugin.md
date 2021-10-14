@@ -33,6 +33,7 @@ The following image depicts the structure and grouping of the `ibmcloud oc` comm
 
 ![Image of the structure and groupings of commands in {{site.data.keyword.openshiftlong_notm}} plug-in.](images/cs_cli_ref_imagemap.svg "Image of the structure and groupings of commands in {{site.data.keyword.openshiftlong_notm}} plug-in"){: caption="Image of the structure and groupings of commands in {{site.data.keyword.openshiftlong_notm}} plug-in" caption-side="bottom"}
 
+
 ## `cluster` commands
 {: #cluster}
 

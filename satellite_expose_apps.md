@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-14"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -50,16 +50,16 @@ To create routes for your apps:
     * **IBM-provided domain**: If you do not need to use a custom domain, a route hostname is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.upi.containers.appdomain.cloud`. Continue to the next step.
     * **Custom domain**: Work with your DNS provider to create a custom domain. Note that if you previously set up a third-party load balancer in front of your router, work with your DNS provider to create a custom domain for the load balancer instead.
         1. Get the IP addresses for the router service in the **EXTERNAL-IP** column.
-        ```sh
-        oc get svc router-external-default -n openshift-ingress
-        ```
-        {: pre}
+            ```sh
+            oc get svc router-external-default -n openshift-ingress
+            ```
+            {: pre}
 
-    2. Create a custom domain with your DNS provider.
-        If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.
-        {: tip}
+        2. Create a custom domain with your DNS provider.
+            If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.
+            {: tip}
 
-    3. Map your custom domain to the router's IP addresses by adding the IP addresses as A records.
+        3. Map your custom domain to the router's IP addresses by adding the IP addresses as A records.
 
 3. Set up a route that is based on the [type of TLS termination that your app requires](/docs/openshift?topic=openshift-openshift_routes#route-types). If you do not have a custom domain, do not include the `--hostname` flag so that a route hostname is generated for you. If you registered a wildcard subdomain, specify a unique subdomain in each route that you create. For example, you might specify `--hostname svc1.example.com` in this route, and `--hostname svc2.example.com` in another route.
     * Simple:
