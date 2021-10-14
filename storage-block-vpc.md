@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-11"
+lastupdated: "2021-10-14"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -429,6 +429,9 @@ You can attach a volume to one worker node only. Make sure that the volume is in
 
 You can update the {{site.data.keyword.block_storage_is_short}} add-on by disabling and re-enabling the add-on in your cluster. When you disable the add-on, PVC creation and app deployment are not disrupted. Existing volumes and data are not impacted.
 {: shortdesc}
+
+As of 26 July 2021, version 2.0.3 of the Block Storage for VPC add-on is unsupported. Version 3.0.0 is deprecated and becomes unsupported on or after 26 August 2021. If you have a deprecated or unsupported version of the add-on installed in your cluster, update the add-on to version 3.0.1 or 4.0. To update the Block Storage for VPC add-on in your cluster, disable the add-on and then re-enable it. You might see a warning that resources or data might be deleted, however, note that existing volumes and data are not impacted. For more information, see [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/containers?topic=containers-vpc-block#vpc-addon-update).
+{: important}
 
 1. Check to see if an update is available. If an update is available, the plug-in version is flagged with an asterisk and the latest version is shown. Note the latest version as this value is used later.
 

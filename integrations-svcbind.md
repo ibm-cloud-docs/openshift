@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-14"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -170,18 +170,18 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
         apiVersion: v1
         data:
         binding: <binding>
-      kind: Secret
-      metadata:
-        annotations:
-          service-instance-id: 1111aaaa-a1aa-1aa1-1a11-111aa111aa11
-          service-key-id: 2b22bb2b-222b-2bb2-2b22-b22222bb2222
-        creationTimestamp: 2018-08-07T20:47:14Z
-        name: binding-<service_instance_name>
-        namespace: <project>
-        resourceVersion: "6145900"
-        selfLink: /api/v1/namespaces/default/secrets/binding-mycloudant
-        uid: 33333c33-3c33-33c3-cc33-cc33333333c
-      type: Opaque
+        kind: Secret
+        metadata:
+          annotations:
+            service-instance-id: 1111aaaa-a1aa-1aa1-1a11-111aa111aa11
+            service-key-id: 2b22bb2b-222b-2bb2-2b22-b22222bb2222
+          creationTimestamp: 2018-08-07T20:47:14Z
+          name: binding-<service_instance_name>
+          namespace: <project>
+          resourceVersion: "6145900"
+          selfLink: /api/v1/namespaces/default/secrets/binding-mycloudant
+          uid: 33333c33-3c33-33c3-cc33-cc33333333c
+        type: Opaque
         ```
         {: screen}
 
