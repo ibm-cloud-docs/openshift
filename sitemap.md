@@ -3301,9 +3301,47 @@ subcollection: openshift
 
 * [Version 4.7.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0)
 
+    * [Version 4.7.0_854](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0854)
+
 * [Version 4.6.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0)
 
-* [Version 4.5.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0)
+    * [Version 4.6.0_860](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0860)
+
+    * [Version 4.6.0_838](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0838)
+
+    * [Version 4.6.0_796](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0796)
+
+    * [Version 4.6.0_750](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0750)
+
+    * [Version 4.6.0_696](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0696)
+
+    * [Version 4.6.0_678](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0678)
+
+    * [Version 4.6.0_663](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0663)
+
+    * [Version 4.6.0_654](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0654)
+
+    * [Version 4.6.0_646](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0646)
+
+* [Version 4.5.0 (Deprecated)](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0)
+
+    * [Version 4.5.0_861](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0861)
+
+    * [Version 4.5.0_837](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0837)
+
+    * [Version 4.5.0_790](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0790)
+
+    * [Version 4.5.0_749](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0749)
+
+    * [Version 4.5.0_694](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0694)
+
+    * [Version 4.5.0_679](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0679)
+
+    * [Version 4.5.0_662](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0662)
+
+    * [Version 4.5.0_655](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0655)
+
+    * [Version 4.5.0_647](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0647)
 
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
