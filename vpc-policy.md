@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -156,13 +156,13 @@ Before you begin
 To create rules in your default security group:
 
 1. List your security groups and note the **ID** of the default security group for your **VPC**. Note that the default security group uses a randomly generated name, and does **not** use the name in the format `kube-<cluster_ID>`.
-    ```
+    ```sh
     ibmcloud is sgs
     ```
     {: pre}
 
     Example output with the default security group for the VPC of a randomly generated name, `chamomile-dislodge-showier-unfilled`:
-    ```
+    ```sh
     ID                                          Name                                       Rules   Network interfaces   VPC          Resource group
     1a111a1a-a111-11a1-a111-111111111111        chamomile-dislodge-showier-unfilled        5       2                    events-vpc   default
     2b222b2b-b222-22b2-b222-222222222222        kube-df253b6025d64744ab99ed63bb4567b6      5       3                    gen2-vpn     default
@@ -170,32 +170,32 @@ To create rules in your default security group:
     {: screen}
 
 2. Store the security group ID as an environment variable.
-    ```
+    ```sh
     sg=<security_group_ID>
     ```
     {: pre}
 
 3. Optional: Check out the default rules for the security group.
-    ```
+    ```sh
     ibmcloud is sg $sg
     ```
     {: pre}
 
 4. {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: Allow incoming traffic requests through the `30000 - 32767` node port range.
     1. Add a rule to allow inbound TCP traffic on ports 30000-32767.
-    ```
-    ibmcloud is security-group-rule-add $sg inbound tcp --port-min 30000 --port-max 32767
-    ```
-    {: pre}
+        ```sh
+        ibmcloud is security-group-rule-add $sg inbound tcp --port-min 30000 --port-max 32767
+        ```
+        {: pre}
 
     2. If you require VPC VPN access or classic infrastructure access into this cluster, add a rule to allow inbound UDP traffic on ports 30000-32767.
-    ```
-    ibmcloud is security-group-rule-add $sg inbound udp --port-min 30000 --port-max 32767
-    ```
-    {: pre}
+        ```sh
+        ibmcloud is security-group-rule-add $sg inbound udp --port-min 30000 --port-max 32767
+        ```
+        {: pre}
 
 5. To create new rules to control inbound traffic to your worker nodes, use the [`ibmcloud is security-group-rule-add` command](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#security-group-rule-add).
-    ```
+    ```sh
     ibmcloud is security-group-rule-add $sg inbound <protocol> [--remote <remote_address> | <CIDR_block> | <security_group_ID>] [--icmp-type <icmp_type> [--icmp-code <icmp_code>]] [--port-min <port_min>] [--port-max <port_max>]
     ```
     {: pre}
@@ -214,13 +214,13 @@ To create rules in your default security group:
     `*` Alternatively, to allow the inbound traffic for router healthchecks, you can create a single rule to allow all incoming traffic on port 80.
 
 6. To create new rules to control outbound traffic to your worker nodes, get the ID of the default rule that allows all outbound traffic.
-    ```
+    ```sh
     ibmcloud is sg $sg
     ```
     {: pre}
 
     In this example output, the outbound rule that allows all outbound traffic to all destinations (`0.0.0.0/0`) is `r010-93ae3092-cce1-4b89-894c-204e628cf8f3`.
-    ```
+    ```sh
     ...
     Rules
     ID                                          Direction   IP version   Protocol                        Remote
@@ -234,13 +234,13 @@ To create rules in your default security group:
     {: screen}
 
 7. Delete the default rule that allows all outbound traffic.
-    ```
+    ```sh
     ibmcloud is security-group-rule-delete $sg <rule_ID>
     ```
     {: pre}
 
 8. Create new rules to control outbound traffic from your worker nodes.
-    ```
+    ```sh
     ibmcloud is security-group-rule-add $sg outbound <protocol> [--remote <remote_address> | <CIDR_block> | <security_group_ID>] [--icmp-type <icmp_type> [--icmp-code <icmp_code>]] [--port-min <port_min>] [--port-max <port_max>]
     ```
     {: pre}
@@ -255,7 +255,7 @@ To create rules in your default security group:
     {: caption="Table 3. Required outbound rules" caption-side="top"}
 
 9. Verify that your security group rules are created and that all required rules exist in your security group.
-    ```
+    ```sh
     ibmcloud is sg $sg
     ```
     {: pre}
@@ -367,7 +367,7 @@ To create an ACL for each subnet that your cluster is attached to:
     If you can't remember which subnets your cluster is attached to, you can run `ibmcloud oc worker get -c <cluster_name_or_ID> -w <worker_node_ID>` for one worker node in each zone of your cluster, and get the **ID** and **CIDR** of the subnet that the worker is attached to.
     {: tip}
 
-    ```
+    ```sh
     ibmcloud is subnets
     ```
     {: pre}
@@ -382,7 +382,7 @@ To create an ACL for each subnet that your cluster is attached to:
     {: screen}
 
 2. Create an ACL. After you create the ACL, you can add rules to your ACL and apply the ACL to one subnet. Because the rules that you add to your ACL are specific to one subnet, consider naming the ACL in the format `<cluster>-<subnet>-acl`, such as `mycluster-mysubnet1-acl`, for easy identification. When you create the ACL, two rules are automatically created that allow all inbound and all outbound network traffic. In the output, note the ACL ID and the IDs of the two default rules.
-    ```
+    ```sh
     ibmcloud is network-acl-create <cluster>-<subnet>-acl
     ```
     {: pre}
@@ -415,23 +415,23 @@ To create an ACL for each subnet that your cluster is attached to:
     {: pre}
 
 4. Delete the default rules that allow all inbound and outbound traffic. After, your ACL still exists, but does not contain any networking rules.
-    ```
+    ```sh
     ibmcloud is network-acl-rule-delete $acl_id <default_inbound_rule_ID> -f
     ```
     {: pre}
 
-    ```
+    ```sh
     ibmcloud is network-acl-rule-delete $acl_id <default_outbound_rule_ID> -f
     ```
     {: pre}
 
 5. Multizone clusters: Add rules to your ACL to allow worker nodes in one subnet to communicate with the worker nodes in all other subnets within the cluster. The subnet for which you create the ACL rule is defined as `0.0.0.0/0` and you use the CIDRs of the other subnets as your destination CIDR. Make sure to create one inbound and one outbound rule for each of the subnets that you want to connect to.
-    ```
+    ```sh
     ibmcloud is network-acl-rule-add $acl_id allow outbound all 0.0.0.0/0 <other_zone_subnet_CIDR> --name allow-workers-outbound
     ```
     {: pre}
 
-    ```
+    ```sh
     ibmcloud is network-acl-rule-add $acl_id allow inbound all <other_zone_subnet_CIDR> 0.0.0.0/0 --name allow-workers-inbound
     ```
     {: pre}
@@ -441,7 +441,7 @@ To create an ACL for each subnet that your cluster is attached to:
     Need to connect your worker nodes to {{site.data.keyword.cloud_notm}} services that support only public cloud service endpoints? [Attach a public gateway to the subnet ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/clusters) so that worker nodes can connect to a public endpoint outside of your cluster. Then, create inbound and outbound rules to allow ingress from and egress to the services' public cloud service endpoints.
     {: tip}
 
-    ```
+    ```sh
     ibmcloud is network-acl-rule-add $acl_id allow outbound all 0.0.0.0/0 161.26.0.0/16 --name allow-ibm-private-network-outbound1
     ibmcloud is network-acl-rule-add $acl_id allow outbound all 0.0.0.0/0 166.8.0.0/14 --name allow-ibm-private-network-outbound2
     ibmcloud is network-acl-rule-add $acl_id allow inbound all 161.26.0.0/16 0.0.0.0/0 --name allow-ibm-private-network-inbound1
@@ -450,7 +450,7 @@ To create an ACL for each subnet that your cluster is attached to:
     {: pre}
 
 7. To allow incoming traffic requests to apps that run on your worker nodes through router services or load balancers, allow traffic to the VPC load balancer on port `443` and to worker nodes on ports `30000 - 32767`.
-    ```
+    ```sh
     ibmcloud is network-acl-rule-add $acl_id allow outbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-lb-outbound --source-port-min 443 --source-port-max 443
     ibmcloud is network-acl-rule-add $acl_id allow inbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-lb-inbound --destination-port-min 443 --destination-port-max 443
     ibmcloud is network-acl-rule-add $acl_id allow outbound tcp 0.0.0.0/0 0.0.0.0/0 --name allow-ingress-outbound --source-port-min 30000 --source-port-max 32767
@@ -459,7 +459,7 @@ To create an ACL for each subnet that your cluster is attached to:
     {: pre}
 
 8. Optional: Allow access to and from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one inbound and one outbound rule for each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. Alternatively, you can create a single inbound rule and outbound rule to allow all incoming and outgoing traffic on port 80.
-    ```
+    ```sh
     ibmcloud is network-acl-rule-add $acl_id allow outbound tcp 0.0.0.0/0 <IP_address> --name allow-hc-outbound --source-port-min 80 --source-port-max 80
     ibmcloud is network-acl-rule-add $acl_id allow inbound tcp <IP_address> 0.0.0.0/0 --name allow-hc-inbound --destination-port-min 80 --destination-port-max 80
     ```
@@ -470,27 +470,27 @@ To create an ACL for each subnet that your cluster is attached to:
     When you refer to the VPC subnet that your worker nodes are on, you must use `0.0.0.0/0`. For more tips on how to create your rule, see the [VPC CLI reference documentation](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#network-acl-rule-add).
     {: note}
 
-    ```
+    ```sh
     ibmcloud is network-acl-rule-add $acl_id <allow|deny> <inbound|outbound> <protocol> <source_CIDR> <destination_CIDR> --name <new_rule_name>
     ```
     {: pre}
 
     For example, say that you want your worker nodes to communicate with a subnet in your organization's network, `207.42.8.0/24`. Your worker nodes must be able to both send and receive information from devices or services on this subnet. You can create an outbound rule for traffic to and an inbound rule for traffic from your organization's subnet:
-    ```
+    ```sh
     ibmcloud is network-acl-rule-add $acl_id allow outbound all 0.0.0.0/0 207.42.8.0/24 --name corporate-network-outbound
     ibmcloud is network-acl-rule-add $acl_id allow inbound all 207.42.8.0/24 0.0.0.0/0 --name corporate-network-inbound
     ```
     {: screen}
 
 10. Create rules to deny all other egress from and ingress to worker nodes that is not permitted by the previous rules that you created. Because these rules are created last in the chain of rules, they deny an incoming or outgoing connection only if the connection does not match any other rule that is earlier in the rule chain.
-    ```
+    ```sh
     ibmcloud is network-acl-rule-add $acl_id deny outbound all 0.0.0.0/0 0.0.0.0/0 --name deny-all-outbound
     ibmcloud is network-acl-rule-add $acl_id deny inbound all 0.0.0.0/0 0.0.0.0/0 --name deny-all-inbound
     ```
     {: pre}
 
 11. Apply this ACL to the subnet. When you apply this ACL, the rules that you defined are immediately applied to the worker nodes on the subnet.
-    ```
+    ```sh
     ibmcloud is subnet-update <subnet_ID> --network-acl-id $acl_id
     ```
     {: pre}
