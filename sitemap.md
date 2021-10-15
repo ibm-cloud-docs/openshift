@@ -199,6 +199,8 @@ subcollection: openshift
 
 [October 2021](/docs/openshift?topic=openshift-rel-notes#release-oct-2021)
 
+* [18 October 2021](/docs/openshift?topic=openshift-rel-notes#18oct2021)
+
 * [13 October 2021](/docs/openshift?topic=openshift-rel-notes#13oct2021)
 
 * [11 October 2021](/docs/openshift?topic=openshift-rel-notes#11oct2021)
@@ -3888,6 +3890,8 @@ subcollection: openshift
 [Why does my cluster stay in a pending state?](/docs/openshift?topic=openshift-cs_cluster_pending#cs_cluster_pending)
 
 [Why can't I view or work with my cluster?](/docs/openshift?topic=openshift-cs_cluster_access#cs_cluster_access)
+
+[Why does my cluster master status say it is approaching its resource limit?](/docs/openshift?topic=openshift-master_resource_limit#master_resource_limit)
 
 
 ### Worker nodes
