@@ -1054,15 +1054,15 @@ subcollection: openshift
 
 * [Controlling traffic with the default security group](/docs/openshift?topic=openshift-vpc-network-policy#security_groups)
 
-    * [Creating security group rules in the console](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_ui)
+    * [Creating security group rules from the console](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_ui)
 
-    * [Creating security group rules from the CLI](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_cli)
+    * [Creating security group rules with the CLI](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_cli)
 
 * [Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-network-policy#acls)
 
-    * [Creating ACLs in the console](/docs/openshift?topic=openshift-vpc-network-policy#acls_ui)
+    * [Creating ACLs from the console](/docs/openshift?topic=openshift-vpc-network-policy#acls_ui)
 
-    * [Creating ACLs from the CLI](/docs/openshift?topic=openshift-vpc-network-policy#acls_cli)
+    * [Creating ACLs with the CLI](/docs/openshift?topic=openshift-vpc-network-policy#acls_cli)
 
 * [Controlling traffic between pods with Kubernetes policies](/docs/openshift?topic=openshift-vpc-network-policy#kubernetes_policies)
 
