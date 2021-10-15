@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: block, debug, help
 
@@ -12,7 +12,6 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Why do I get a `Volume not attached` error when trying to expand a {{site.data.keyword.block_storage_is_short}} volume?

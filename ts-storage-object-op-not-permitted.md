@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,7 +11,6 @@ content-type: troubleshoot
 
 ---
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Why does my app pod fail with an `Operation not permitted` error?
@@ -37,7 +36,7 @@ IAM has introduced a `refresh_token_expiration` key which causes an issue with t
 This issue is resolved in the [community repo](https://github.com/s3fs-fuse/s3fs-fuse/pull/1421) and in the {{site.data.keyword.cos_full_notm}} plug-in.
 
 
-Complete the steps to [update your {{site.data.keyword.cos_full_notm}} plug-in to the latest version](/docs/containers?topic=containers-object_storage#update_cos_plugin).
+Complete the steps to [update your {{site.data.keyword.cos_full_notm}} plug-in to the latest version](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).
 {: tsResolve}
 
 

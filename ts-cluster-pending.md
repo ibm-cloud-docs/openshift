@@ -14,7 +14,6 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
-
 # Why does my cluster stay in a pending state?
 {: #cs_cluster_pending}
 

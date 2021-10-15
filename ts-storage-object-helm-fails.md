@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,7 +11,6 @@ content-type: troubleshoot
 
 ---
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Why does installing the Object storage `ibmc` Helm plug-in fail?
@@ -68,7 +67,7 @@ Review the following steps based on the error type.
     ```
     {: pre}
 
-2. Follow the [documentation](/docs/containers?topic=containers-object_storage#install_cos) to re-install the `ibmc` Helm plug-in and the {{site.data.keyword.cos_full_notm}} plug-in.
+2. Follow the [documentation](/docs/openshift?topic=openshift-object_storage#install_cos) to re-install the `ibmc` Helm plug-in and the {{site.data.keyword.cos_full_notm}} plug-in.
 
 **For permission errors**:
 
@@ -90,7 +89,7 @@ Review the following steps based on the error type.
     ```
     {: pre}
 
-3. [Continue installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-object_storage#install_cos).
+3. [Continue installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#install_cos).
 
 
 

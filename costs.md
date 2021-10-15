@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Understanding costs for your clusters
@@ -58,7 +57,7 @@ Worker nodes begin to incur charges after they successfully complete the `provis
     ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) <strong>VPC Generation 2 only</strong>: Prices vary by region where the underlying worker node infrastructure resides, and you can get sustained usage discounts. For more information, see [What are the regional uplift charges and sustained usage discounts for VPC worker nodes?](#charges_vpc_gen2).
     {: note}
 
-For more information about worker node specifications, see [Available hardware for worker nodes](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes).
+For more information about worker node specifications, see [Available hardware for worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes).
 
 
 
@@ -134,7 +133,7 @@ Review the following factors that impact public bandwidth charges:
 Subnets for {{site.data.keyword.openshiftlong_notm}} clusters vary by infrastructure provider.
 {: shortdesc}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) **Classic clusters**: When you create a standard cluster, a portable public subnet with 8 public IP addresses is ordered and charged to your account monthly. For pricing information, see the [Subnets and IPs](/docs/subnets?topic=subnets-pricing-for-ibm-cloud-subnets) documentation or estimate your costs in the [classic subnets console)](https://cloud.ibm.com/classic/network/subnet/provision){: external}.</p><p>If you already have available portable public subnets in your infrastructure account, you can use these subnets instead. Create the cluster with the `--no-subnets` [flag](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_create), and then [reuse your subnets](/docs/containers?topic=containers-subnets#subnets_custom).
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) **Classic clusters**: When you create a standard cluster, a portable public subnet with 8 public IP addresses is ordered and charged to your account monthly. For pricing information, see the [Subnets and IPs](/docs/subnets?topic=subnets-pricing-for-ibm-cloud-subnets) documentation or estimate your costs in the [classic subnets console)](https://cloud.ibm.com/classic/network/subnet/provision){: external}.</p><p>If you already have available portable public subnets in your infrastructure account, you can use these subnets instead. Create the cluster with the `--no-subnets` [flag](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create), and then [reuse your subnets](/docs/openshift?topic=openshift-subnets#subnets_custom).
 
 ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) **VPC clusters**: For more information about charges for floating IPs and other networking costs, see [Pricing for VPC](https://www.ibm.com/cloud/vpc/pricing){: external}.
 
@@ -167,7 +166,7 @@ To store images in the internal registry, {{site.data.keyword.openshiftlong_notm
 When you provision storage, you can choose the storage type and storage class that is right for your use case. Charges vary depending on the type of storage, the location, and the specs of the storage instance. Some storage solutions, such as file and block storage offer hourly and monthly rates that you can choose from.
 {: shortdesc}
 
-To choose the right storage solution, see [Planning highly available persistent storage](/docs/containers?topic=containers-storage_planning#storage_planning). For more information, see:
+To choose the right storage solution, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning). For more information, see:
 * [NFS file storage pricing](https://www.ibm.com/cloud/file-storage/pricing){: external}
 * [Block storage pricing](https://www.ibm.com/cloud/block-storage/pricing){: external}
 * [Object storage plans](https://www.ibm.com/cloud/object-storage/pricing/#s3api){: external}
@@ -196,7 +195,7 @@ Pricing for VPC infrastructure varies based on regional location and sustained u
 
 **Regional uplift charges**
 
-When you create a cluster on VPC infrastructure, the worker nodes might incur an uplift charge that varies by the [multizone location](/docs/containers?topic=containers-regions-and-zones#zones-vpc) that you create the cluster in. The uplift charge is a percentage (`%`) of the hourly rate (`r`), and is added to the hourly rate of the worker node. The total hourly rate cost for a worker node can be calculated as `r + (r × %)`. In the [{{site.data.keyword.openshiftshort}} cluster creation console](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift){: external}, this uplift is reflected in the pricing calculator as you configure your cluster details. The following table describes the pricing uplift by region.
+When you create a cluster on VPC infrastructure, the worker nodes might incur an uplift charge that varies by the [multizone location](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) that you create the cluster in. The uplift charge is a percentage (`%`) of the hourly rate (`r`), and is added to the hourly rate of the worker node. The total hourly rate cost for a worker node can be calculated as `r + (r × %)`. In the [{{site.data.keyword.openshiftshort}} cluster creation console](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift){: external}, this uplift is reflected in the pricing calculator as you configure your cluster details. The following table describes the pricing uplift by region.
 
 For a table that describes the pricing uplift by region, see [Regional pricing for VPC](https://www.ibm.com/cloud/vpc/pricing){: external}.
 
@@ -220,10 +219,10 @@ The following steps present a general process to manage costs for your {{site.da
 1. Decide on a cloud platform strategy to manage your resources.
     * See [Best practices for billing and usage](/docs/billing-usage?topic=billing-usage-best-practices).
     * Organize your billing with [resource groups](/docs/account?topic=account-rgs).
-    * [Add tags to your clusters](/docs/containers?topic=containers-add_workers#cluster_tags) according to your organizational strategy.
+    * [Add tags to your clusters](/docs/openshift?topic=openshift-add_workers#cluster_tags) according to your organizational strategy.
 2. Plan the type of cluster that you need.
-    * [Size your cluster to support your workloads](/docs/containers?topic=containers-strategy#sizing), including the network bandwidth that your workloads need.
-    * [Decide the cluster environment that you want](/docs/containers?topic=containers-strategy#kube_env).
+    * [Size your cluster to support your workloads](/docs/openshift?topic=openshift-strategy#sizing), including the network bandwidth that your workloads need.
+    * [Decide the cluster environment that you want](/docs/openshift?topic=openshift-strategy#kube_env).
     * [Consider the availability that you want for your cluster](/docs/containers?topic=containers-ha_clusters). For example, a basic high availability setup is one multizone cluster with three worker nodes in each of three zones, for a minimum total of nine worker nodes.
 3. Check out other {{site.data.keyword.cloud_notm}} services, add-ons, operators, and other third-party software that you might use that can increase your cost. To get an idea of what other costs clusters typically incur, review [Understanding costs for your clusters](#costs-for-clusters).
 4. [Estimate your costs](/docs/billing-usage?topic=billing-usage-cost#cost) and review detailed pricing information for the service, see [{{site.data.keyword.openshiftlong_notm}} Pricing plans](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift#pricing){: external}.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Classic: Restricting network traffic to edge worker nodes
@@ -35,16 +34,16 @@ Add the `dedicated=edge` label to worker nodes on each public or private VLAN in
 
 Before you begin
 
-* Ensure that you have the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/containers?topic=containers-users#checking-perms):
+* Ensure that you have the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-users#checking-perms):
     * Any platform access role for the cluster
     * **Writer** or **Manager** service access role for all namespaces
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To create an edge node worker pool,
 
-1. [Create a worker pool](/docs/containers?topic=containers-add_workers#add_pool) that spans all zones in your cluster and has at least two workers per zone if you use NLBs or for version 3.11 clusters, 3 or more workers per zone if you use ALBs. In the `ibmcloud oc worker-pool create` command, include the `--label dedicated=edge` flag to label all worker nodes in the pool. All worker nodes in this pool, including any worker nodes that you add later, are labeled as edge nodes.
+1. [Create a worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that spans all zones in your cluster and has at least two workers per zone if you use NLBs or for version 3.11 clusters, 3 or more workers per zone if you use ALBs. In the `ibmcloud oc worker-pool create` command, include the `--label dedicated=edge` flag to label all worker nodes in the pool. All worker nodes in this pool, including any worker nodes that you add later, are labeled as edge nodes.
 
-    If you want to use an existing worker pool, the pool must span all zones in your cluster and have at least two worker nodes per zone. You can label the worker pool with `dedicated=edge` by using the [`ibmcloud oc worker-pool label set` command](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_label_set).
+    If you want to use an existing worker pool, the pool must span all zones in your cluster and have at least two worker nodes per zone. You can label the worker pool with `dedicated=edge` by using the [`ibmcloud oc worker-pool label set` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_set).
     {: tip}
 
     Version 3.11 clusters: To ensure that ALB pods are always scheduled to edge worker nodes if they are present and not scheduled to non-edge worker nodes, you must create or use an existing worker pool that has at least three edge worker nodes per zone. During the update of an ALB pod, a new ALB pod rolls out to replace an existing ALB pod. However, ALB pods have anti-affinity rules that do not permit a pod to deploy to a worker node where another ALB pod already exists. If you have only two edge nodes per zone, both ALB pod replicas already exist on those edge nodes, so the new ALB pod must be scheduled on a non-edge worker node. When three edge nodes are present in a zone, the new ALB pod can be scheduled to the third edge node. Then, the old ALB pod is removed.
@@ -167,7 +166,7 @@ To create an edge node worker pool,
         {: screen}
 
 
-You labeled worker nodes in a worker pool with `dedicated=edge` and redeployed all of the existing ALBs and NLBs to the edge nodes. All subsequent ALBs and NLBs that are added to the cluster are also deployed to an edge node in your edge worker pool. Next, prevent other [workloads from running on edge worker nodes](#edge_workloads) and [block inbound traffic to NodePorts on worker nodes](/docs/containers?topic=containers-network_policies#block_ingress).
+You labeled worker nodes in a worker pool with `dedicated=edge` and redeployed all of the existing ALBs and NLBs to the edge nodes. All subsequent ALBs and NLBs that are added to the cluster are also deployed to an edge node in your edge worker pool. Next, prevent other [workloads from running on edge worker nodes](#edge_workloads) and [block inbound traffic to NodePorts on worker nodes](/docs/openshift?topic=openshift-network_policies#block_ingress).
 
 
 ## Preventing app workloads from running on edge worker nodes
@@ -181,7 +180,7 @@ Using the `dedicated=edge` toleration means that all network load balancer (NLB)
 
 
 Before you begin
-- Ensure you that have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service access role for all namespaces](/docs/containers?topic=containers-users#checking-perms).
+- Ensure you that have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service access role for all namespaces](/docs/openshift?topic=openshift-users#checking-perms).
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To prevent other workloads from running on edge worker nodes,
@@ -218,7 +217,7 @@ To prevent other workloads from running on edge worker nodes,
     ```
     {: screen}
 
-3. If you choose to [enable source IP preservation for an NLB 1.0 service](/docs/containers?topic=containers-loadbalancer#lb_source_ip), ensure that app pods are scheduled onto the edge worker nodes by [adding edge node affinity to app pods](/docs/containers?topic=containers-loadbalancer#lb_edge_nodes). App pods must be scheduled onto edge nodes to receive incoming requests.
+3. If you choose to [enable source IP preservation for an NLB 1.0 service](/docs/openshift?topic=openshift-loadbalancer#lb_source_ip), ensure that app pods are scheduled onto the edge worker nodes by [adding edge node affinity to app pods](/docs/openshift?topic=openshift-loadbalancer#lb_edge_nodes). App pods must be scheduled onto edge nodes to receive incoming requests.
 
 4. Optional: You can remove a taint from the worker nodes.
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: kubernetes, worker nodes, state
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Worker node states
@@ -58,7 +57,7 @@ A worker node can go into a `Critical` state for many reasons:
 - Current networking issues in {{site.data.keyword.containerlong_notm}} or IBM Cloud infrastructure that causes the communication between your worker node and the Kubernetes master to fail.
 - Your worker node ran out of capacity. Check the **Status** of the worker node to see whether it shows **Out of disk** or **Out of memory**. If your worker node is out of capacity, consider to either reduce the workload on your worker node or add a worker node to your cluster to help load balance the workload.
 - The device was powered off from the [{{site.data.keyword.cloud_notm}} console resource list](https://cloud.ibm.com/resources){: external}. Open the resource list and find your worker node ID in the **Devices** list. In the action menu, click **Power On**.
-- In many cases, [reloading](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload) your worker node can solve the problem. When you reload your worker node, the latest [patch version](/docs/containers?topic=containers-cs_versions#version_types) is applied to your worker node. The major and minor version is not changed. Before you reload your worker node, make sure to cordon and drain your worker node to ensure that the existing pods are terminated gracefully and rescheduled onto remaining worker nodes. If reloading the worker node does not resolve the issue, go to the next step to continue troubleshooting your worker node.
+- In many cases, [reloading](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) your worker node can solve the problem. When you reload your worker node, the latest [patch version](/docs/containers?topic=containers-cs_versions#version_types) is applied to your worker node. The major and minor version is not changed. Before you reload your worker node, make sure to cordon and drain your worker node to ensure that the existing pods are terminated gracefully and rescheduled onto remaining worker nodes. If reloading the worker node does not resolve the issue, go to the next step to continue troubleshooting your worker node.
         
 
 
@@ -194,8 +193,8 @@ You can view the current worker node state by running the `ibmcloud oc worker ls
 {: shortdesc}
 
 An `Unknown` state means that the Kubernetes master is not reachable for one of the following reasons:
-- You requested an update of your Kubernetes master. The state of the worker node cannot be retrieved during the update. If the worker node remains in this state for an extended period of time even after the Kubernetes master is successfully updated, try to [reload the worker node](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload).
-- You might have another firewall that is protecting your worker nodes, or changed firewall settings recently. {{site.data.keyword.openshiftlong_notm}} requires certain IP addresses and ports to be opened to allow communication from the worker node to the Kubernetes master and vice versa. For more information, see [Firewall prevents worker nodes from connecting](/docs/containers?topic=containers-firewall#vyatta_firewall).
+- You requested an update of your Kubernetes master. The state of the worker node cannot be retrieved during the update. If the worker node remains in this state for an extended period of time even after the Kubernetes master is successfully updated, try to [reload the worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
+- You might have another firewall that is protecting your worker nodes, or changed firewall settings recently. {{site.data.keyword.openshiftlong_notm}} requires certain IP addresses and ports to be opened to allow communication from the worker node to the Kubernetes master and vice versa. For more information, see [Firewall prevents worker nodes from connecting](/docs/openshift?topic=openshift-firewall#vyatta_firewall).
 - The Kubernetes master is down. Contact {{site.data.keyword.cloud_notm}} support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).
 
 ## Warning

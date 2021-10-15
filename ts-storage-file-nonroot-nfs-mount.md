@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -13,14 +13,13 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
-
 # Why does my app fail when a non-root user owns the NFS file storage mount path?
 {: #nonroot}
 
 **Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 
-After you [add NFS storage](/docs/containers?topic=containers-file_storage#file_app_volume_mount) to your deployment, the deployment of your container fails. When you retrieve the logs for your container, you might see errors such as the following. The pod fails and is stuck in a reload cycle.
+After you [add NFS storage](/docs/openshift?topic=openshift-file_storage#file_app_volume_mount) to your deployment, the deployment of your container fails. When you retrieve the logs for your container, you might see errors such as the following. The pod fails and is stuck in a reload cycle.
 {: tsSymptoms}
 
 ```sh

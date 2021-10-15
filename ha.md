@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-11"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos, disaster recovery, dr, ha, hadr
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Understanding high availability and disaster recovery for {{site.data.keyword.openshiftlong_notm}}
@@ -43,7 +42,7 @@ See [Overview of potential points of failure in {{site.data.keyword.openshiftlon
 
 **Where is the service located?**
 
-See [Locations](/docs/containers?topic=containers-regions-and-zones#regions-and-zones).
+See [Locations](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones).
 
 **What am I responsible to configure disaster recovery options for?**
 
@@ -66,7 +65,7 @@ The {{site.data.keyword.openshiftlong_notm}} architecture and infrastructure is 
 Containers and pods are, by design, short-lived and can fail unexpectedly. For example, a container or pod might crash if an error occurs in your app. To make your app highly available, you must ensure that you have enough instances of your app to handle the workload plus additional instances in the case of a failure. Ideally, these instances are distributed across multiple worker nodes to protect your app from a worker node failure.
 {: shortdesc}
 
-See [Deploying highly available apps](/docs/containers?topic=containers-plan_deploy#highly_available_apps).
+See [Deploying highly available apps](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps).
 
 ### 2. Worker node availability
 {: #ha-worker}
@@ -74,9 +73,9 @@ See [Deploying highly available apps](/docs/containers?topic=containers-plan_dep
 A worker node is a VM that runs on top of physical hardware. Worker node failures include hardware outages, such as power, cooling, or networking, and issues on the VM itself. You can account for a worker node failure by setting up multiple worker nodes in your cluster.
 {: shortdesc}
 
-See [Creating clusters with multiple worker nodes](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_create).
+See [Creating clusters with multiple worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create).
 
-Worker nodes in one zone are not guaranteed to be on separate physical compute hosts. For example, you might have a cluster with three worker nodes, but all three worker nodes were created on the same physical compute host in the IBM zone. If this physical compute host goes down, all your worker nodes are down. To protect against this failure, you must [set up a multizone cluster to spread worker nodes across three zones, or create multiple single zone clusters](/docs/containers?topic=containers-ha_clusters#ha_clusters) in different zones.
+Worker nodes in one zone are not guaranteed to be on separate physical compute hosts. For example, you might have a cluster with three worker nodes, but all three worker nodes were created on the same physical compute host in the IBM zone. If this physical compute host goes down, all your worker nodes are down. To protect against this failure, you must [set up a multizone cluster to spread worker nodes across three zones, or create multiple single zone clusters](/docs/openshift?topic=openshift-ha_clusters#ha_clusters) in different zones.
 {: note}
 
 ### 3. Cluster availability
@@ -91,10 +90,10 @@ Do not restart or reboot a worker node during a master outage. This action remov
 The cluster masters are highly available and include replicas for your Kubernetes API server, etcd, scheduler, and controller manager on separate hosts to protect against an outage such as during a master update.
 
 To protect your cluster master from a zone failure, you can:
-* Create a cluster in a [classic](/docs/containers?topic=containers-regions-and-zones#zones-mz) or [VPC](/docs/containers?topic=containers-regions-and-zones#zones-vpc) multizone location, which spreads the master across zones.
+* Create a cluster in a [classic](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) or [VPC](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) multizone location, which spreads the master across zones.
 * Set up a second cluster in another zone.
 
-See [Setting up highly available clusters](/docs/containers?topic=containers-ha_clusters#ha_clusters).
+See [Setting up highly available clusters](/docs/openshift?topic=openshift-ha_clusters#ha_clusters).
 
 ### 4. Zone availability
 {: #ha-zone}
@@ -102,14 +101,14 @@ See [Setting up highly available clusters](/docs/containers?topic=containers-ha_
 A zone failure affects all physical compute hosts and NFS storage. Failures include power, cooling, networking, or storage outages, and natural disasters, like flooding, earthquakes, and hurricanes. To protect against a zone failure, you must have clusters in two different zones that are load balanced by an external load balancer.
 {: shortdesc}
 
-See [Setting up highly available clusters](/docs/containers?topic=containers-ha_clusters#ha_clusters).
+See [Setting up highly available clusters](/docs/openshift?topic=openshift-ha_clusters#ha_clusters).
 
 ### 5. Region availability
 {: #ha-region}
 
 Every region is set up with a highly available load balancer that is accessible from the region-specific API endpoint. The load balancer routes incoming and outgoing requests to clusters in the regional zones. The likelihood of a full regional failure is low. However, to account for this failure, you can set up multiple clusters in different regions and connect them by using an external load balancer. If an entire region fails, the cluster in the other region can take over the work load.
 
-See [Setting up highly available clusters](/docs/containers?topic=containers-ha_clusters#ha_clusters).
+See [Setting up highly available clusters](/docs/openshift?topic=openshift-ha_clusters#ha_clusters).
 
 A multi-region cluster requires several Cloud resources, and depending on your app, can be complex and expensive. Check whether you need a multi-region setup or if you can accommodate a potential service disruption. If you want to set up a multi-region cluster, ensure that your app and the data can be hosted in another region, and that your app can handle global data replication.
 {: note}
@@ -120,7 +119,7 @@ A multi-region cluster requires several Cloud resources, and depending on your a
 In a stateful app, data plays an important role to keep your app up and running. Make sure that your data is highly available so that you can recover from a potential failure. In {{site.data.keyword.openshiftlong_notm}}, you can choose from several options to persist your data. For example, you can provision NFS storage by using Kubernetes native persistent volumes, or store your data by using an {{site.data.keyword.cloud_notm}} database service.
 {: shortdesc}
 
-See [Planning highly available data](/docs/containers?topic=containers-storage_planning#persistent_storage_overview).
+See [Planning highly available data](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 
 
 

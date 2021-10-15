@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: storage, back up, restore
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Backing up and restoring storage data
@@ -23,10 +22,10 @@ Depending on the storage solution that you use for your {{site.data.keyword.open
 If you have not provisioned storage, review the [Kubernetes storage basics](/docs/containers?topic=containers-storage_planning) to understand your storage options for single zone and multizone clusters.
 
 * [{{site.data.keyword.filestorage_short}}](/docs/containers?topic=containers-file_storage)
-* [Block Storage](/docs/containers?topic=containers-block_storage#block_backup_restore)
-* [{{site.data.keyword.block_storage_is_short}}](/docs/containers?topic=containers-vpc-block#vpc-block-backup-restore)
-* [{{site.data.keyword.cos_short}}](/docs/containers?topic=containers-object_storage#cos_backup_restore)
-* [Portworx disaster recovery](/docs/containers?topic=containers-portworx#px-dr)
+* [Block Storage](/docs/openshift?topic=openshift-block_storage#block_backup_restore)
+* [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-backup-restore)
+* [{{site.data.keyword.cos_short}}](/docs/openshift?topic=openshift-object_storage#cos_backup_restore)
+* [Portworx disaster recovery](/docs/openshift?topic=openshift-portworx#px-dr)
 
 
 

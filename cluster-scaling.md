@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -13,14 +13,13 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-
 # Autoscaling clusters
 {: #ca}
 
 With the `cluster-autoscaler` add-on, you can scale the worker pools in your {{site.data.keyword.openshiftlong}} classic or VPC cluster automatically to increase or decrease the number of worker nodes in the worker pool based on the sizing needs of your scheduled workloads. The `cluster-autoscaler` add-on is based on the [Kubernetes Cluster-Autoscaler project](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler).
 {: shortdesc}
 
-Want to autoscale your pods instead? Check out [Scaling apps](/docs/containers?topic=containers-update_app#app_scaling).
+Want to autoscale your pods instead? Check out [Scaling apps](/docs/openshift?topic=openshift-update_app#app_scaling).
 {: tip}
 
 ## Understanding scale-up and scale-down
@@ -30,11 +29,11 @@ The cluster autoscaler periodically scans the cluster to adjust the number of wo
 {: shortdesc}
 
 * **Pending pods to scale up**: A pod is considered pending when insufficient compute resources exist to schedule the pod on a worker node. When the cluster autoscaler detects pending pods, the autoscaler scales up your worker nodes evenly across zones to meet the workload resource requests.
-* **Underutilized worker nodes to scale down**: By default, worker nodes that run with less than 50% of the total compute resources that are requested for 10 minutes or more and that can reschedule their workloads onto other worker nodes are considered underutilized. If the cluster autoscaler detects underutilized worker nodes, it scales down your worker nodes one at a time so that you have only the compute resources that you need. If you want, you can [customize](/docs/containers?topic=containers-ca#ca_chart_values) the default scale-down utilization threshold of 50% for 10 minutes.
+* **Underutilized worker nodes to scale down**: By default, worker nodes that run with less than 50% of the total compute resources that are requested for 10 minutes or more and that can reschedule their workloads onto other worker nodes are considered underutilized. If the cluster autoscaler detects underutilized worker nodes, it scales down your worker nodes one at a time so that you have only the compute resources that you need. If you want, you can [customize](/docs/openshift?topic=openshift-ca#ca_chart_values) the default scale-down utilization threshold of 50% for 10 minutes.
 
 Scanning and scaling up and down happens at regular intervals over time, and depending on the number of worker nodes might take a longer period of time to complete, such as 30 minutes.
 
-The cluster autoscaler adjusts the number of worker nodes by considering the [resource requests](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/){: external} that you define for your deployments, not actual worker node usage. If your pods and deployments don't request appropriate amounts of resources, you must adjust their configuration files. The cluster autoscaler can't adjust them for you. Also, keep in mind that worker nodes use some of their compute resources for basic cluster functionality, default and custom [add-ons](/docs/containers?topic=containers-update#addons), and [resource reserves](/docs/containers?topic=containers-planning_worker_nodes#resource_limit_node).
+The cluster autoscaler adjusts the number of worker nodes by considering the [resource requests](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/){: external} that you define for your deployments, not actual worker node usage. If your pods and deployments don't request appropriate amounts of resources, you must adjust their configuration files. The cluster autoscaler can't adjust them for you. Also, keep in mind that worker nodes use some of their compute resources for basic cluster functionality, default and custom [add-ons](/docs/containers?topic=containers-update#addons), and [resource reserves](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node).
 {: note}
 
 
@@ -44,7 +43,7 @@ The cluster autoscaler adjusts the number of worker nodes by considering the [re
 In general, the cluster autoscaler calculates the number of worker nodes that your cluster needs to run its workload. Scaling the cluster up or down depends on many factors, including the following.
 *   The minimum and maximum worker node size per zone that you set.
 *   Your pending pod resource requests and certain metadata that you associate with the workload, such as anti-affinity, labels to place pods only on certain flavors, or [pod disruption budgets](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/){: external}.
-*   The worker pools that the cluster autoscaler manages, potentially across zones in a [multizone cluster](/docs/containers?topic=containers-ha_clusters#multizone).
+*   The worker pools that the cluster autoscaler manages, potentially across zones in a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone).
 *   The [custom Helm chart values](#ca_chart_values) that are set, such as skipping worker nodes for deletion if they use local storage.
 
 For more information, see the Kubernetes Cluster Autoscaler FAQs for [How does scale-up work?](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-scale-up-work){: external} and [How does scale-down work?](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-scale-down-work){: external}.
@@ -72,7 +71,7 @@ No, setting a `minSize` does not automatically trigger a scale-up. The `minSize`
 
 **How is this behavior different from worker pools that are not managed by the cluster autoscaler?**
 
-When you [create a worker pool](/docs/containers?topic=containers-add_workers#add_pool), you specify how many worker nodes per zone it has. The worker pool maintains that number of worker nodes until you [resize](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/containers?topic=containers-kubernetes-service-cli#cs_rebalance) it. The worker pool does not add or remove worker nodes for you. If you have more pods than can be scheduled, the pods remain in pending state until you resize the worker pool.
+When you [create a worker pool](/docs/openshift?topic=openshift-add_workers#add_pool), you specify how many worker nodes per zone it has. The worker pool maintains that number of worker nodes until you [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) it. The worker pool does not add or remove worker nodes for you. If you have more pods than can be scheduled, the pods remain in pending state until you resize the worker pool.
 
 When you enable the cluster autoscaler for a worker pool, worker nodes are scaled up or down in response to your pod spec settings and resource requests. You don't need to resize or rebalance the worker pool manually.
 
@@ -101,10 +100,10 @@ The cluster autoscaler scales your cluster in response to your workload [resourc
 ### Can I scale down a worker pool to zero (0) nodes?
 {: #scalable-practices-zero}
 
-No, you cannot set the cluster autoscaler `minSize` to `0`. Additionally, unless you [disable](/docs/containers?topic=containers-kubernetes-service-cli#cs_alb_configure) all public application load balancers (ALBs) in each zone of your cluster, you must change the `minSize` to `2` worker nodes per zone so that the ALB pods can be spread for high availability. Additionally, you can [taint](/docs/containers?topic=containers-kubernetes-service-cli#worker_pool_taint) your worker pool to achieve a scale to down a minimum of `1`.
+No, you cannot set the cluster autoscaler `minSize` to `0`. Additionally, unless you [disable](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public application load balancers (ALBs) in each zone of your cluster, you must change the `minSize` to `2` worker nodes per zone so that the ALB pods can be spread for high availability. Additionally, you can [taint](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) your worker pool to achieve a scale to down a minimum of `1`.
 {: shortdesc}
 
-If your worker pool has zero (0) worker nodes, the worker pool cannot be scaled. [Disable cluster autoscaling](/docs/containers?topic=containers-ca#ca_cm) for the worker pool, [manually resize the worker pool](/docs/containers?topic=containers-add_workers#resize_pool) to at least one, and [re-enable cluster autoscaling](/docs/containers?topic=containers-ca#ca_cm).
+If your worker pool has zero (0) worker nodes, the worker pool cannot be scaled. [Disable cluster autoscaling](/docs/openshift?topic=openshift-ca#ca_cm) for the worker pool, [manually resize the worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) to at least one, and [re-enable cluster autoscaling](/docs/openshift?topic=openshift-ca#ca_cm).
 
 ### Can I optimize my deployments for autoscaling?
 {: #scalable-practices-apps}
@@ -112,28 +111,28 @@ If your worker pool has zero (0) worker nodes, the worker pool cannot be scaled.
 Yes, you can add several Kubernetes features to your deployment to adjust how the cluster autoscaler considers your resource requests for scaling.
 {: shortdesc}
 
-* [Taint your worker pool](/docs/containers?topic=containers-kubernetes-service-cli#worker_pool_taint) to allow only the deployments or pods with the matching toleration to be deployed to your worker pool.
-* [Add a label](/docs/containers?topic=containers-add_workers#worker_pool_labels) to your worker pool other than the default worker pool. This label is used in your deployment configuration to specify `nodeAffinity` or `nodeSelector` which limits the workloads that can be deployed on the worker nodes in the labeled worker pool.
+* [Taint your worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) to allow only the deployments or pods with the matching toleration to be deployed to your worker pool.
+* [Add a label](/docs/openshift?topic=openshift-add_workers#worker_pool_labels) to your worker pool other than the default worker pool. This label is used in your deployment configuration to specify `nodeAffinity` or `nodeSelector` which limits the workloads that can be deployed on the worker nodes in the labeled worker pool.
 * Use [pod disruption budgets](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/){: external} to prevent abrupt rescheduling or deletions of your pods.
 * If you're using pod priority, you can [edit the priority cutoff](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-cluster-autoscaler-work-with-pod-priority-and-preemption){: external} to change what types of priority trigger scaling up. By default, the priority cutoff is zero (`0`).
 
 ### Can I use taints and tolerations with autoscaled worker pools?
 {: #scalable-practices-taints}
 
-Yes, but make sure to [apply taints at the worker pool level](/docs/containers?topic=containers-kubernetes-service-cli#worker_pool_taint) so that all existing and future worker nodes get the same taint. Then, you must include a [matching toleration in your workload configuration](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external} so that these workloads are scheduled onto your autoscaled worker pool with the matching taint. Keep in mind that if you deploy a workload that is not tolerated by the tainted worker pool, the worker nodes are not considered for scale-up and more worker nodes might be ordered even if the cluster has sufficient capacity. However, the tainted worker pool is still identified as underutilized if they have less than the threshold (by default 50%) of their resources utilized and thus are considered for scale-down.
+Yes, but make sure to [apply taints at the worker pool level](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) so that all existing and future worker nodes get the same taint. Then, you must include a [matching toleration in your workload configuration](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external} so that these workloads are scheduled onto your autoscaled worker pool with the matching taint. Keep in mind that if you deploy a workload that is not tolerated by the tainted worker pool, the worker nodes are not considered for scale-up and more worker nodes might be ordered even if the cluster has sufficient capacity. However, the tainted worker pool is still identified as underutilized if they have less than the threshold (by default 50%) of their resources utilized and thus are considered for scale-down.
 {: shortdesc}
 
 ### Why are my autoscaled worker pools unbalanced?
 {: #scalable-practices-unbalanced}
 
-During a scale-up, the cluster autoscaler balances nodes across zones, with a permitted difference of plus or minus one (+/- 1) worker node. Your pending workloads might not request enough capacity to make each zone balanced. In this case, if you want to manually balance the worker pools, [update your cluster autoscaler configmap](#ca_cm) to remove the unbalanced worker pool. Then run the `ibmcloud oc worker-pool rebalance` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_rebalance), and add the worker pool back to the cluster autoscaler configmap.
+During a scale-up, the cluster autoscaler balances nodes across zones, with a permitted difference of plus or minus one (+/- 1) worker node. Your pending workloads might not request enough capacity to make each zone balanced. In this case, if you want to manually balance the worker pools, [update your cluster autoscaler configmap](#ca_cm) to remove the unbalanced worker pool. Then run the `ibmcloud oc worker-pool rebalance` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance), and add the worker pool back to the cluster autoscaler configmap.
 {: shortdesc}
 
 
 ### Why can't I resize or rebalance my worker pool?
 {: #scalable-practices-resize}
 
-When the cluster autoscaler is enabled for a worker pool, you cannot [resize](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/containers?topic=containers-kubernetes-service-cli#cs_rebalance) your worker pools. You must [edit the configmap](#ca_cm) to change the worker pool minimum or maximum sizes, or disable cluster autoscaling for that worker pool. Don't use the `ibmcloud oc worker rm` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_rm) to remove individual worker nodes from your worker pool, which can unbalance the worker pool. For more information, see [Resizing or rebalancing autoscaled worker pools](#ca_update_worker_node_pool).
+When the cluster autoscaler is enabled for a worker pool, you cannot [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) your worker pools. You must [edit the configmap](#ca_cm) to change the worker pool minimum or maximum sizes, or disable cluster autoscaling for that worker pool. Don't use the `ibmcloud oc worker rm` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_rm) to remove individual worker nodes from your worker pool, which can unbalance the worker pool. For more information, see [Resizing or rebalancing autoscaled worker pools](#ca_update_worker_node_pool).
 {: shortdesc}
 
 Further, if you do not disable the worker pools before you disable the `cluster-autoscaler` add-on, the worker pools cannot be resized manually. Reinstall the cluster autoscaler, [edit the configmap](#ca_cm) to disable the worker pool, and try again.
@@ -163,9 +162,9 @@ The cluster autoscaler add-on is not supported for baremetal worker nodes.
     {: pre}
 
 5. Plan to autoscale a worker pool other than the `default` worker pool, because the `default` worker pool has system components that can prevent automatically scaling down. Include a label for the worker pool so that you can set [node affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#node-affinity){: external} for the workloads that you want to deploy to the worker pool that has autoscaling enabled. For example, your label might be `app: nginx`. Choose from the following options:
-    * Create a [VPC](/docs/containers?topic=containers-add_workers#vpc_pools) or [classic](/docs/containers?topic=containers-add_workers#classic_pools) worker pool other than the `default` worker pool with the label that you want to use with the workloads to run on the autoscaled worker pool.
-    * [Add the label to an existing worker pool](/docs/containers?topic=containers-add_workers#worker_pool_labels) other than the `default` worker pool.
-6. Confirm that your worker pool has the necessary labels for autoscaling. In the output, you see the required `ibm-cloud.kubernetes.io/worker-pool-id` label and the label that you previously created for node affinity. If you do not see these labels, [add a new worker pool](/docs/containers?topic=containers-add_workers#add_pool), and then [add your label for node affinity](/docs/containers?topic=containers-add_workers#worker_pool_labels).
+    * Create a [VPC](/docs/openshift?topic=openshift-add_workers#vpc_pools) or [classic](/docs/openshift?topic=openshift-add_workers#classic_pools) worker pool other than the `default` worker pool with the label that you want to use with the workloads to run on the autoscaled worker pool.
+    * [Add the label to an existing worker pool](/docs/openshift?topic=openshift-add_workers#worker_pool_labels) other than the `default` worker pool.
+6. Confirm that your worker pool has the necessary labels for autoscaling. In the output, you see the required `ibm-cloud.kubernetes.io/worker-pool-id` label and the label that you previously created for node affinity. If you do not see these labels, [add a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool), and then [add your label for node affinity](/docs/openshift?topic=openshift-add_workers#worker_pool_labels).
 
     ```sh
     ibmcloud oc worker-pool get --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> | grep Labels
@@ -179,7 +178,7 @@ The cluster autoscaler add-on is not supported for baremetal worker nodes.
     ```
     {: screen}
 
-7. [Taint the worker pools](/docs/containers?topic=containers-kubernetes-service-cli#worker_pool_taint) that you want to autoscale so that the worker pool does not accept workloads except the ones that you want to run on the autoscaled worker pool. You can learn more about taints and tolerations in the [community Kubernetes documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/). As an example, you might set a taint of `use=autoscale:NoExecute`. In this example, the `NoExecute` taint evicts pods that do not have the toleration corresponding to this taint.
+7. [Taint the worker pools](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) that you want to autoscale so that the worker pool does not accept workloads except the ones that you want to run on the autoscaled worker pool. You can learn more about taints and tolerations in the [community Kubernetes documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/). As an example, you might set a taint of `use=autoscale:NoExecute`. In this example, the `NoExecute` taint evicts pods that do not have the toleration corresponding to this taint.
 
 8. [Install the cluster autoscaler add-on](#ca_addon).
 
@@ -253,7 +252,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
 {: shortdesc}
 
 1. [Prepare your cluster for autoscaling](#ca_prepare_cluster).
-2. [Follow the instructions](/docs/containers?topic=containers-helm#install_v3) to install the **Helm version 3** client on your local machine.
+2. [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the **Helm version 3** client on your local machine.
 3. Add and update the Helm repo where the cluster autoscaler Helm chart is.
 
     ```sh
@@ -283,10 +282,10 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     :   Specify the maximum number of worker nodes per zone that the cluster autoscaler can scale up to. The value must be equal to or greater than the value that you set for the `min=<number_of_workers>` size.
     
     `min=<number_of_workers>`
-    :   Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be `2` or greater so that your ALB pods can be spread for high availability. If you [disabled](/docs/containers?topic=containers-kubernetes-service-cli#cs_alb_configure) all public ALBs in each zone of your standard cluster, you can set the value to `1`. Keep in mind that setting a `min` size does not automatically trigger a scale-up. The `min` size is a threshold so that the cluster autoscaler does not scale below this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.
+    :   Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be `2` or greater so that your ALB pods can be spread for high availability. If you [disabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public ALBs in each zone of your standard cluster, you can set the value to `1`. Keep in mind that setting a `min` size does not automatically trigger a scale-up. The `min` size is a threshold so that the cluster autoscaler does not scale below this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.
     
     `enabled=(true|false)`
-    :   Set the value to `true` to enable the cluster autoscaler to scale your worker pool. Set the value to `false` to stop the cluster autoscaler from scaling the worker pool. Later, if you want to [remove the cluster autoscaler](/docs/containers?topic=containers-ca#ca_rm), you must first disable each worker pool in the configmap.
+    :   Set the value to `true` to enable the cluster autoscaler to scale your worker pool. Set the value to `false` to stop the cluster autoscaler from scaling the worker pool. Later, if you want to [remove the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca_rm), you must first disable each worker pool in the configmap.
 
 5. Install the cluster autoscaler Helm chart in the `kube-system` namespace of your cluster. In the example command, the `autoscale` worker pool is enabled for autoscaling with the Helm chart installation. The worker pool details are added to the cluster autoscaler config map.
 
@@ -376,7 +375,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
 Update the cluster autoscaler configmap to enable automatically scaling worker nodes in your worker pools based on the minimum and maximum values that you set.
 {: shortdesc}
 
-After you edit the configmap to enable a worker pool, the cluster autoscaler scales your cluster in response to your workload requests. As such, you cannot [resize](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/containers?topic=containers-kubernetes-service-cli#cs_rebalance) your worker pools. Scanning and scaling up and down happens at regular intervals over time, and depending on the number of worker nodes might take a longer period of time to complete, such as 30 minutes. Later, if you want to [remove the cluster autoscaler](#ca_rm), you must first disable each worker pool in the configmap.
+After you edit the configmap to enable a worker pool, the cluster autoscaler scales your cluster in response to your workload requests. As such, you cannot [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) your worker pools. Scanning and scaling up and down happens at regular intervals over time, and depending on the number of worker nodes might take a longer period of time to complete, such as 30 minutes. Later, if you want to [remove the cluster autoscaler](#ca_rm), you must first disable each worker pool in the configmap.
 {: note}
 
 **Before you begin**:
@@ -404,7 +403,7 @@ After you edit the configmap to enable a worker pool, the cluster autoscaler sca
     ```
     {: screen}
 
-2. Edit the configmap with the parameters to define how the cluster autoscaler scales your cluster worker pool. **Note:** Unless you [disabled](/docs/containers?topic=containers-kubernetes-service-cli#cs_alb_configure) all public application load balancers (ALBs) in each zone of your standard cluster, you must change the `minSize` to `2` per zone so that the ALB pods can be spread for high availability.
+2. Edit the configmap with the parameters to define how the cluster autoscaler scales your cluster worker pool. **Note:** Unless you [disabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public application load balancers (ALBs) in each zone of your standard cluster, you must change the `minSize` to `2` per zone so that the ALB pods can be spread for high availability.
 
     - `"name": "default"`: Replace `"default"` with the name or ID of the worker pool that you want to scale. To list worker pools, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`. To manage more than one worker pool, copy the JSON line to a comma-separated line, such as follows.
     
@@ -416,10 +415,10 @@ After you edit the configmap to enable a worker pool, the cluster autoscaler sca
         ```
         {: codeblock}
         
-        The cluster autoscaler can scale only worker pools that have the `ibm-cloud.kubernetes.io/worker-pool-id` label. To check whether your worker pool has the required label, run `ibmcloud oc worker-pool get --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> | grep Labels`. If your worker pool does not have the required label, [add a new worker pool](/docs/containers?topic=containers-add_workers#add_pool) and use this worker pool with the cluster autoscaler.
+        The cluster autoscaler can scale only worker pools that have the `ibm-cloud.kubernetes.io/worker-pool-id` label. To check whether your worker pool has the required label, run `ibmcloud oc worker-pool get --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> | grep Labels`. If your worker pool does not have the required label, [add a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) and use this worker pool with the cluster autoscaler.
         {: note}
 
-    - `"minSize": 1`: Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down the worker pool to. The value must be `2` or greater so that your ALB pods can be spread for high availability. If you [disabled](/docs/containers?topic=containers-kubernetes-service-cli#cs_alb_configure) all public ALBs in each zone of your standard cluster, you can set the value to `1`.
+    - `"minSize": 1`: Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down the worker pool to. The value must be `2` or greater so that your ALB pods can be spread for high availability. If you [disabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public ALBs in each zone of your standard cluster, you can set the value to `1`.
 
         Setting a `minSize` does not automatically trigger a scale-up. The `minSize` is a threshold so that the cluster autoscaler does not scale below a certain number of worker nodes per zone. If your cluster does not yet have that number per zone, the cluster autoscaler does not scale up until you have workload resource requests that require more resources. For example, if you have a worker pool with one worker node per three zones (three total worker nodes) and set the `minSize` to `4` per zone, the cluster autoscaler does not immediately provision an additional three worker nodes per zone (12 worker nodes total). Instead, the scale-up is triggered by resource requests. If you create a workload that requests the resources of 15 worker nodes, the cluster autoscaler scales up the worker pool to meet this request. Now, the `minSize` means that the cluster autoscaler does not scale down below four worker nodes per zone even if you remove the workload that requests the amount. For more information, see the [Kubernetes docs](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#when-does-cluster-autoscaler-change-the-size-of-a-cluster){: external}.
         {: note}
@@ -753,7 +752,7 @@ Before you can rebalance or resize your worker pool, you must remove the worker 
 
 2. Save the `iks-ca-configmap`.
 
-3. [Resize](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/containers?topic=containers-kubernetes-service-cli#cs_rebalance) your worker pool.
+3. [Resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) your worker pool.
 
 4. **Optional** [Update your VPC worker nodes](/docs/containers?topic=containers-update#vpc_worker_node).
 
@@ -869,7 +868,7 @@ Before you begin, see the [Prerequisites](#ca_helm_up_prereqs).
 ## Removing the cluster autoscaler
 {: #ca_rm}
 
-If you do not want to automatically scale your worker pools, you can uninstall the cluster autoscaler Helm chart. After the removal, you must [resize](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/containers?topic=containers-kubernetes-service-cli#cs_rebalance) your worker pools manually.
+If you do not want to automatically scale your worker pools, you can uninstall the cluster autoscaler Helm chart. After the removal, you must [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) your worker pools manually.
 {: shortdesc}
 
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -1033,8 +1032,8 @@ This table refers to the cluster autoscaler add-on parameters. For Helm chart va
 :   `{"name": "&lt;pool_name>","minSize": 1,"maxSize": 2,"enabled":false}`.
 :   `&lt;pool_name>`: The name or ID of the worker pool that you want to enable or disable for autoscaling. To list available worker pools, run `ibmcloud oc worker-pool ls --cluster &lt;cluster_name_or_ID>`.
 :   `maxSize: &lt;number_of_workers>`: Specify the maximum number of worker nodes per zone that the cluster autoscaler can scale up to. The value must be equal to or greater than the value that you set for the `minSize: &lt;number_of_workers>` size.
-:   `min=&lt;number_of_workers>`: Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be `2` or greater so that your ALB pods can be spread for high availability. If you [disabled](/docs/containers?topic=containers-kubernetes-service-cli#cs_alb_configure) all public ALBs in each zone of your standard cluster, you can set the value to `1`. Keep in mind that setting a `min` size does not automatically trigger a scale-up. The `min` size is a threshold so that the cluster autoscaler does not scale below this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.
-:   `enabled=(true|false)`: Set the value to `true` to enable the cluster autoscaler to scale your worker pool. Set the value to `false` to stop the cluster autoscaler from scaling the worker pool. Later, if you want to [remove the cluster autoscaler](/docs/containers?topic=containers-ca#ca_rm), you must first disable each worker pool in the configmap. If you enable a worker pool for autoscaling and then later add a zone to this worker pool, restart the cluster autoscaler pod so that it picks up this change: `oc delete pod -n kube-system &lt;cluster_autoscaler_pod>`. By default, the `default` worker pool is **not** enabled, with a `max` value of `2` and a `min` value of `1`.
+:   `min=&lt;number_of_workers>`: Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be `2` or greater so that your ALB pods can be spread for high availability. If you [disabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public ALBs in each zone of your standard cluster, you can set the value to `1`. Keep in mind that setting a `min` size does not automatically trigger a scale-up. The `min` size is a threshold so that the cluster autoscaler does not scale below this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.
+:   `enabled=(true|false)`: Set the value to `true` to enable the cluster autoscaler to scale your worker pool. Set the value to `false` to stop the cluster autoscaler from scaling the worker pool. Later, if you want to [remove the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca_rm), you must first disable each worker pool in the configmap. If you enable a worker pool for autoscaling and then later add a zone to this worker pool, restart the cluster autoscaler pod so that it picks up this change: `oc delete pod -n kube-system &lt;cluster_autoscaler_pod>`. By default, the `default` worker pool is **not** enabled, with a `max` value of `2` and a `min` value of `1`.
 
 
 
@@ -1048,7 +1047,7 @@ This table refers to the cluster autoscaler Helm chart parameters. For add-on va
 
 
 `api_route`
-:   Set the {{site.data.keyword.openshiftlong_notm}} API [endpoint](/docs/containers?topic=containers-kubernetes-service-cli#cs_cli_api) for the region that your cluster is in. No default; uses the targeted region that your cluster is in.
+:   Set the {{site.data.keyword.openshiftlong_notm}} API [endpoint](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cli_api) for the region that your cluster is in. No default; uses the targeted region that your cluster is in.
 
 `resources.limits.cpu`
 :   Set the maximum amount of worker node CPU that the `ibm-iks-cluster-autoscaler` pod can consume. The default value is `300m`.
@@ -1130,7 +1129,7 @@ This table refers to the cluster autoscaler Helm chart parameters. For add-on va
 :   Set the maximum time in minutes that the cluster autoscaler pod runs without a successfully completed action before the pod is automatically restarted. The default value is `15m`.
 
 `customImageVersion`
-:   To override the default installation version, specify the version of the cluster autoscaler Helm chart that you want to install. There is no default value for this paramter.
+:   To override the default installation version, specify the version of the cluster autoscaler Helm chart that you want to install. There is no default value for this parameter.
 
 `maxRetryGap`
 :   Set the maximum time in seconds to retry after failing to connect to the service API. Use this parameter and the `retryAttempts` parameter to adjust the retry window for the cluster autoscaler. The default value is `60`.
@@ -1144,7 +1143,7 @@ This table refers to the cluster autoscaler Helm chart parameters. For add-on va
 :   `&lt;pool_name>`: The name or ID of the worker pool that you want to enable or disable for autoscaling. To list available worker pools, run `ibmcloud oc worker-pool ls --cluster &lt;cluster_name_or_ID>`.
 :   `max=&lt;number_of_workers>`: Specify the maximum number of worker nodes per zone that the cluster autoscaler can scale up to. The value must be equal to or greater than the value that you set for the `min=&lt;number_of_workers>` size.
 :   `min=&lt;number_of_workers>`: Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be `2` or greater so that your ALB pods can be spread for high availability. If you disabled all public ALBs in each zone of your standard cluster, you can set the value to `1`. Keep in mind that setting a `min` size does not automatically trigger a scale-up. The `min` size is a threshold so that the cluster autoscaler does not scale below this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.
-:   `enabled=(true|false)`: Set the value to `true` to enable the cluster autoscaler to scale your worker pool. Set the value to `false` to stop the cluster autoscaler from scaling the worker pool. Later, if you want to [remove the cluster autoscaler](/docs/containers?topic=containers-ca#ca_rm), you must first disable each worker pool in the configmap. If you enable a worker pool for autoscaling and then later add a zone to this worker pool, restart the cluster autoscaler pod so that it picks up this change: `oc delete pod -n kube-system &lt;cluster_autoscaler_pod>`. By default, the `default` worker pool is **not** enabled, with a `max` value of `2` and a `min` value of `1`. The default value is `false`
+:   `enabled=(true|false)`: Set the value to `true` to enable the cluster autoscaler to scale your worker pool. Set the value to `false` to stop the cluster autoscaler from scaling the worker pool. Later, if you want to [remove the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca_rm), you must first disable each worker pool in the configmap. If you enable a worker pool for autoscaling and then later add a zone to this worker pool, restart the cluster autoscaler pod so that it picks up this change: `oc delete pod -n kube-system &lt;cluster_autoscaler_pod>`. By default, the `default` worker pool is **not** enabled, with a `max` value of `2` and a `min` value of `1`. The default value is `false`
 
 
 

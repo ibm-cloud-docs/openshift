@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhos, rhoks, clusters, delete, remove
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Removing clusters
@@ -34,13 +33,13 @@ When you delete your cluster, the default {{site.data.keyword.cloudcerts_short}}
 
 **Before you begin**:
 * Note your cluster ID. You might need the cluster ID to investigate and remove related IBM Cloud infrastructure resources that are not automatically deleted with your cluster.
-* Make sure that you have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/containers?topic=containers-users#checking-perms).
+* Make sure that you have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms).
 * If you want to delete the data in your persistent storage, review the delete options for the type of storage that you use.
-    * [File storage](/docs/containers?topic=containers-file_storage#storage_delete_options_file)
-    * [Block storage](/docs/containers?topic=containers-block_storage#cleanup_block) for classic clusters
-    * [Block storage](/docs/containers?topic=containers-vpc-block#cleanup_block_vpc) for VPC clusters
+    * [File storage](/docs/openshift?topic=openshift-file_storage#storage_delete_options_file)
+    * [Block storage](/docs/openshift?topic=openshift-block_storage#cleanup_block) for classic clusters
+    * [Block storage](/docs/openshift?topic=openshift-vpc-block#cleanup_block_vpc) for VPC clusters
     * [Object storage](/docs/cloud-object-storage?topic=cloud-object-storage-deleting-multiple-objects-patterns)
-    * [Portworx](/docs/containers?topic=containers-portworx#portworx_cleanup)
+    * [Portworx](/docs/openshift?topic=openshift-portworx#portworx_cleanup)
 
 **To remove a cluster**:
 
@@ -70,15 +69,15 @@ When you delete your cluster, the default {{site.data.keyword.cloudcerts_short}}
             {: pre}
 
 3. Follow the prompts and choose whether to delete cluster resources, which include containers, pods, bound services, persistent storage, and secrets.
-    - **Persistent storage**: If you [dynamically provisioned](/docs/containers?topic=containers-kube_concepts#dynamic_provisioning) storage with a storage class that sets `reclaimPolicy: Delete`, your persistent volume claim (PVC), persistent volume (PV), and the storage instance are automatically deleted when you delete the cluster. However, depending on when you delete the cluster, you might still see your storage instance in the {{site.data.keyword.cloud_notm}} console for up to 72 hours or until the new billing cycle begins. 
+    - **Persistent storage**: If you [dynamically provisioned](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning) storage with a storage class that sets `reclaimPolicy: Delete`, your persistent volume claim (PVC), persistent volume (PV), and the storage instance are automatically deleted when you delete the cluster. However, depending on when you delete the cluster, you might still see your storage instance in the {{site.data.keyword.cloud_notm}} console for up to 72 hours or until the new billing cycle begins. 
 
-      For storage that was [statically provisioned](/docs/containers?topic=containers-kube_concepts#static_provisioning), or storage that you provisioned with a storage class that sets `reclaimPolicy: Retain`, the PVC and the PV are removed when you delete the cluster, but your storage instance and your data remain. You are still charged for your storage instance.
+      For storage that was [statically provisioned](/docs/openshift?topic=openshift-kube_concepts#static_provisioning), or storage that you provisioned with a storage class that sets `reclaimPolicy: Retain`, the PVC and the PV are removed when you delete the cluster, but your storage instance and your data remain. You are still charged for your storage instance.
 
       To manually remove the storage and find frequently asked questions about storage removal, review the documentation for each storage type in the links in the **Before you begin** section.
 
 Next steps:
 - After it is no longer listed in the available clusters list when you run the `ibmcloud oc cluster ls` command, you can reuse the name of a removed cluster.
-- ![Classic infrastructure provider icon.](images/icon-classic-2.svg) **Classic clusters only**: If you kept the subnets, you can [reuse them in a new cluster](/docs/containers?topic=containers-subnets#subnets_custom) or manually delete them later from your IBM Cloud infrastructure portfolio.
+- ![Classic infrastructure provider icon.](images/icon-classic-2.svg) **Classic clusters only**: If you kept the subnets, you can [reuse them in a new cluster](/docs/openshift?topic=openshift-subnets#subnets_custom) or manually delete them later from your IBM Cloud infrastructure portfolio.
 - ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) **VPC clusters only**: If you have infrastructure resources that you no longer want to use, such as the VPC or subnets, remove these resources in the VPC portal.
 - If you kept the persistent storage, you can delete your storage later through the {{site.data.keyword.cloud_notm}} console for the corresponding storage service.
 

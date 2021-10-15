@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-14"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -12,7 +12,6 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # VPC clusters: Why can't my app connect via load balancer?
@@ -49,7 +48,7 @@ Requests cannot be routed to your app in the following situations:
 Verify that no VPC security groups are blocking traffic to your cluster and that the VPC load balancer is available.
 {: tsResolve}
 
-1. {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: [Allow traffic requests that are routed by the VPC load balancer to node ports on your worker nodes](/docs/containers?topic=containers-vpc-network-policy#security_groups).
+1. {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: [Allow traffic requests that are routed by the VPC load balancer to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-network-policy#security_groups).
 
 2. Verify that the VPC load balancer for the Kubernetes `LoadBalancer` service exists. In the output, look for the VPC load balancer that is formatted `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. You can get the Kubernetes `LoadBalancer` service UID by running `oc get svc <service_name> -o yaml`.
     ```sh

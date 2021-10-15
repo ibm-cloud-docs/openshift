@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: file, debug, help
 
@@ -12,7 +12,6 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Debugging {{site.data.keyword.cos_full_notm}} failures

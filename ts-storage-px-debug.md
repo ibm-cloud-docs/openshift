@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,7 +11,6 @@ content-type: troubleshoot
 
 ---
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Debugging your Portworx installation
@@ -57,7 +56,7 @@ Start by verifying that the information that you entered in the {{site.data.keyw
 
 2. Verify that the {{site.data.keyword.cloud_notm}} API key that you entered has sufficient permissions to work with your cluster. You must be assigned the **Editor** platform access role and the **Manager** service access role for {{site.data.keyword.openshiftlong_notm}}. For more information, see [User access permissions](/docs/containers?topic=containers-access_reference).
 3. Verify that you entered the `etcd` API endpoint for your Databases for etcd service instance in the correct format.  
-    1. [Retrieve the Databases for etcd endpoint](/docs/containers?topic=containers-portworx#databases_credentials).
+    1. [Retrieve the Databases for etcd endpoint](/docs/openshift?topic=openshift-portworx#databases_credentials).
     2. Add the etcd endpoint in the format `etcd:<etcd_endpoint1>;etcd:<etcd_endpoint2>`. If you have more than one endpoint, include all endpoints and separate them with a semicolon (;).
 
         Example endpoint:
@@ -66,7 +65,7 @@ Start by verifying that the information that you entered in the {{site.data.keyw
         ```
         {: screen}
 
-4. Verify that you stored the credentials to access your Databases for etcd service instance in a Kubernetes secret in your cluster. For more information, see [Setting up a Databases for etcd service instance for Portworx metadata](/docs/containers?topic=containers-portworx#portworx_database).
+4. Verify that you stored the credentials to access your Databases for etcd service instance in a Kubernetes secret in your cluster. For more information, see [Setting up a Databases for etcd service instance for Portworx metadata](/docs/openshift?topic=openshift-portworx#portworx_database).
     1. Review steps 4-6 and verify that you retrieved the correct username, password, and certificate.
     2. List the secrets in your cluster and look for the secret that holds the credentials of your Databases for etcd service instance.
         ```sh
@@ -76,7 +75,7 @@ Start by verifying that the information that you entered in the {{site.data.keyw
 
     3. Make sure that the username, password, and certificate are stored as a base64 encoded value in your Kubernetes secret.
     4. Verify that you entered the correct name of the secret in the {{site.data.keyword.cloud_notm}} catalog.
-5. If you chose to set up volume encryption with {{site.data.keyword.keymanagementservicelong_notm}}, make sure that you created an instance of {{site.data.keyword.keymanagementservicelong_notm}} in your {{site.data.keyword.cloud_notm}} account and that you stored the credentials to access your instance in a Kubernetes secret in the `portworx` project of your cluster. For more information, see [Enabling per-volume encryption for your Portworx volumes](/docs/containers?topic=containers-portworx#setup_encryption).
+5. If you chose to set up volume encryption with {{site.data.keyword.keymanagementservicelong_notm}}, make sure that you created an instance of {{site.data.keyword.keymanagementservicelong_notm}} in your {{site.data.keyword.cloud_notm}} account and that you stored the credentials to access your instance in a Kubernetes secret in the `portworx` project of your cluster. For more information, see [Enabling per-volume encryption for your Portworx volumes](/docs/openshift?topic=openshift-portworx#setup_encryption).
     1. Make sure that the API key of your service ID, and the {{site.data.keyword.keymanagementservicelong_notm}} instance ID, root key, and API endpoint are stored as base64 values in the Kubernetes secret of your cluster.
     2. Make sure that you named your secret `px-ibm`.
     3. Make sure that you created the secret in the `portworx` project of your cluster.
@@ -88,8 +87,8 @@ If you entered the correct information on the {{site.data.keyword.cloud_notm}} c
 {: shortdesc}
 
 1. Verify that the cluster that you want to use meets the [minimum hardware requirements for Portworx](https://docs.portworx.com/start-here-installation/){: external}.
-2. If you want to use a virtual machine cluster, make sure that you [added raw, unformatted, and unmounted block storage](/docs/containers?topic=containers-portworx#create_block_storage) to your cluster so that Portworx can include the disks into the Portworx storage layer.
-3. Verify that your cluster is set up with public network connectivity. For more information, see [Understanding network basics of classic clusters](/docs/containers?topic=containers-plan_clusters#plan_basics).
+2. If you want to use a virtual machine cluster, make sure that you [added raw, unformatted, and unmounted block storage](/docs/openshift?topic=openshift-portworx#create_block_storage) to your cluster so that Portworx can include the disks into the Portworx storage layer.
+3. Verify that your cluster is set up with public network connectivity. For more information, see [Understanding network basics of classic clusters](/docs/openshift?topic=openshift-plan_clusters#plan_basics).
 
 
 

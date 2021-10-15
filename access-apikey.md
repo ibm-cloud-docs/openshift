@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Setting up API key credentials so the service can access the infrastructure and other cloud services
@@ -59,7 +58,7 @@ The quickest way to set up the API key is to ask the account owner, who already 
 
 7. Repeat these steps for each region and resource group that you want to create clusters in.
 
-Now that the API key is set up for the region and resource group, you can [assign users {{site.data.keyword.cloud_notm}} IAM platform access roles](/docs/containers?topic=containers-users#checking-perms) to restrict what cluster infrastructure actions they can perform.
+Now that the API key is set up for the region and resource group, you can [assign users {{site.data.keyword.cloud_notm}} IAM platform access roles](/docs/openshift?topic=openshift-users#checking-perms) to restrict what cluster infrastructure actions they can perform.
 
 
 ## Understanding other options than the API key
@@ -84,7 +83,7 @@ For different ways to access the IBM Cloud infrastructure portfolio, check out t
 
 The API key is used to authorize underlying actions in the following {{site.data.keyword.cloud_notm}} services.
 - **Infrastructure**, such as classic or VPC compute, networking, and storage resources for your cluster.
-- **{{site.data.keyword.keymanagementserviceshort}}** or **{{site.data.keyword.hscrypto}}**, if you [enable a key management service provider](/docs/containers?topic=containers-encryption#kms) in your cluster.
+- **{{site.data.keyword.keymanagementserviceshort}}** or **{{site.data.keyword.hscrypto}}**, if you [enable a key management service provider](/docs/openshift?topic=openshift-encryption#kms) in your cluster.
 - **{{site.data.keyword.cloudcerts_short}}**, for managing the Ingress certificates for your cluster.
 - **{{site.data.keyword.registryshort}}**, for setting up default access to pull images from the registry to your cluster.
 - **{{site.data.keyword.la_short}}**, if you [enable the logging service](/docs/containers?topic=containers-health).
@@ -106,7 +105,7 @@ To enable all users to access the infrastructure portfolio or other services, th
 
 **What permissions does the user who sets the API key need? How do I give the user these permissions?**
 
-See [Permissions to create a cluster](/docs/containers?topic=containers-access_reference#cluster_create_permissions) and [Ensuring that the API key or infrastructure credentials owner has the correct permissions](#owner_permissions).
+See [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions) and [Ensuring that the API key or infrastructure credentials owner has the correct permissions](#owner_permissions).
 
 To check a user's permissions, review the access policies and access groups of the user in the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/iam/users){: external}, or use the `ibmcloud iam user-policies <user>` command.
 
@@ -119,7 +118,7 @@ To see the {{site.data.keyword.cloud_notm}} IAM token for a CLI session, you can
 
 **If users have access to the portfolio through an {{site.data.keyword.cloud_notm}} IAM token, how do I limit which commands a user can run?**
 
-After you set up access to the portfolio for users in your account, you can then control which infrastructure actions the users can perform by assigning the appropriate [platform access role](/docs/containers?topic=containers-users#checking-perms). By assigning {{site.data.keyword.cloud_notm}} IAM roles to users, they are limited in which commands they can run against a cluster. For example, because the API key owner has all the required infrastructure roles, all infrastructure-related commands can be run in a cluster. But, depending on the {{site.data.keyword.cloud_notm}} IAM role that is assigned to a user, the user can run only some of those infrastructure-related commands.
+After you set up access to the portfolio for users in your account, you can then control which infrastructure actions the users can perform by assigning the appropriate [platform access role](/docs/openshift?topic=openshift-users#checking-perms). By assigning {{site.data.keyword.cloud_notm}} IAM roles to users, they are limited in which commands they can run against a cluster. For example, because the API key owner has all the required infrastructure roles, all infrastructure-related commands can be run in a cluster. But, depending on the {{site.data.keyword.cloud_notm}} IAM role that is assigned to a user, the user can run only some of those infrastructure-related commands.
 
 For example, if you want to create a cluster in a new region, make sure that the first cluster is created by a user with the **Super User** infrastructure role, such as the account owner. After verification, you can invite individual users or users in {{site.data.keyword.cloud_notm}} IAM access groups to that region by setting platform access policies for them in that region. A user with a **Viewer** platform access role isn't authorized to add a worker node. Therefore, the `worker-add` action fails, even though the API key has the correct infrastructure permissions. If you change the user's platform access role to **Operator**, the user is authorized to add a worker node. The `worker-add` action succeeds because the user is authorized and the API key is set correctly. You don't need to edit the user's IBM Cloud infrastructure permissions.
 
@@ -132,13 +131,13 @@ For compliance, security, or billing reasons, you might not want to give the **S
 
 **What happens if the user who set up the API key for a region and resource group leaves the company?**
 
-If the user is leaving your organization, the {{site.data.keyword.cloud_notm}} account owner can remove that user's permissions. However, before you remove a user's specific access permissions or remove a user from your account completely, you must reset the API key with another user's infrastructure credentials. Otherwise, the other users in the account might lose access to the IBM Cloud infrastructure portal and infrastructure-related commands might fail. For more information, see [Removing user permissions](/docs/containers?topic=containers-users#removing).
+If the user is leaving your organization, the {{site.data.keyword.cloud_notm}} account owner can remove that user's permissions. However, before you remove a user's specific access permissions or remove a user from your account completely, you must reset the API key with another user's infrastructure credentials. Otherwise, the other users in the account might lose access to the IBM Cloud infrastructure portal and infrastructure-related commands might fail. For more information, see [Removing user permissions](/docs/openshift?topic=openshift-users#removing).
 
 Consider using a functional ID user for the API key owner instead of a personal user. In case the person leaves the team, the functional ID user remains the API key owner. Keep in mind that you cannot use a service ID to set the API key.
 
 **How can I lock down my cluster if my API key becomes compromised?**
 
-If an API key that is set for a region and resource group in your cluster is compromised, [delete it](/docs/account?topic=account-userapikey#delete_user_key) so that no further calls can be made by using the API key as authentication. For more information about securing access to the Kubernetes API server, see the [Kubernetes API server and etcd](/docs/containers?topic=containers-security#apiserver) security topic.
+If an API key that is set for a region and resource group in your cluster is compromised, [delete it](/docs/account?topic=account-userapikey#delete_user_key) so that no further calls can be made by using the API key as authentication. For more information about securing access to the Kubernetes API server, see the [Kubernetes API server and etcd](/docs/openshift?topic=openshift-security#apiserver) security topic.
 
 ## Ensuring that the API key or infrastructure credentials owner has the correct permissions
 {: #owner_permissions}
@@ -151,7 +150,7 @@ To ensure that all infrastructure-related actions can be successfully completed 
 2. To make sure that all account-related actions can be successfully performed, verify that the user has the correct {{site.data.keyword.cloud_notm}} IAM platform access roles.
     1. From the menu bar, select **Manage > Access (IAM)**, and then click the **Users** page.
     2. Click the name of the user who you want to set the API key for or whose credentials you want to set for the API key, and then click the **Access policies** tab.
-    3. [Assign the user](/docs/containers?topic=containers-users#checking-perms) the [minimum permissions that are needed to create and manage clusters](/docs/containers?topic=containers-access_reference#cluster_create_permissions).
+    3. [Assign the user](/docs/openshift?topic=openshift-users#checking-perms) the [minimum permissions that are needed to create and manage clusters](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions).
 
 3. To make sure that all infrastructure-related actions in your cluster can be successfully performed, verify that the user has the correct infrastructure access policies.
     1. From the menu bar, select **Manage > Access (IAM)**.
@@ -159,7 +158,7 @@ To ensure that all infrastructure-related actions can be successfully completed 
         - For classic clusters
             1. In the **API keys** pane, verify that the user has a **Classic infrastructure API key**, or click **Create an IBM Cloud API key**. For more information, see [Managing classic infrastructure API keys](/docs/account?topic=account-classic_keys#classic_keys).
             2. Click the **Classic infrastructure** tab and then click the **Permissions** tab.
-            3. If the user doesn't have each category checked, you can use the **Permission sets** drop-down list to assign the **Super User** role. Or you can expand each category and give the user the required [infrastructure permissions](/docs/containers?topic=containers-access_reference#infra).
+            3. If the user doesn't have each category checked, you can use the **Permission sets** drop-down list to assign the **Super User** role. Or you can expand each category and give the user the required [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra).
         - For VPC clusters, assign the user the [**Administrator** platform access role for VPC Infrastructure](/docs/vpc?topic=vpc-iam-getting-started).
 
 
@@ -171,7 +170,7 @@ Determine whether your account has access to the IBM Cloud infrastructure portfo
 
 **Does the classic or VPC infrastructure provider for my cluster affect what access I need to the portfolio?**
 
-Access to {{site.data.keyword.cloud_notm}} infrastructure works differently in classic and VPC clusters. Infrastructure resources for classic clusters are created in a separate {{site.data.keyword.cloud_notm}} infrastructure account. In most cases, your Pay-As-You-Go or Subscription account is linked to the {{site.data.keyword.cloud_notm}} infrastructure account so that account owners can access classic {{site.data.keyword.cloud_notm}} infrastructure automatically. To authorize other users to access classic compute, storage, and networking resources, you must assign [classic infrastructure roles](/docs/containers?topic=containers-access_reference#infra).
+Access to {{site.data.keyword.cloud_notm}} infrastructure works differently in classic and VPC clusters. Infrastructure resources for classic clusters are created in a separate {{site.data.keyword.cloud_notm}} infrastructure account. In most cases, your Pay-As-You-Go or Subscription account is linked to the {{site.data.keyword.cloud_notm}} infrastructure account so that account owners can access classic {{site.data.keyword.cloud_notm}} infrastructure automatically. To authorize other users to access classic compute, storage, and networking resources, you must assign [classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra).
 
 VPC infrastructure resources are integrated into IAM and as such, you must have the {{site.data.keyword.cloud_notm}} IAM **Administrator** platform access role to the [**VPC Infrastructure** service](/docs/vpc?topic=vpc-iam-getting-started) to create and list VPC resources.
 
@@ -190,13 +189,13 @@ Lite accounts
 Pay-As-You-Go
 :   You can create standard clusters. Use an API key to set up infrastructure permissions for your clusters.
 
-To use a different classic infrastructure account for classic clusters, [manually set {{site.data.keyword.cloud_notm}} infrastructure credentials for your {{site.data.keyword.cloud_notm}} account](/docs/containers?topic=containers-access-creds#credentials). You cannot set up your {{site.data.keyword.cloud_notm}} account to use the VPC infrastructure of a different account.
+To use a different classic infrastructure account for classic clusters, [manually set {{site.data.keyword.cloud_notm}} infrastructure credentials for your {{site.data.keyword.cloud_notm}} account](/docs/openshift?topic=openshift-access-creds#credentials). You cannot set up your {{site.data.keyword.cloud_notm}} account to use the VPC infrastructure of a different account.
 {: tip}
 
 Subscription
 :   Subscription accounts come with access to the infrastructure portfolio. You can create standard clusters. Use an API key to set up infrastructure permissions for your clusters. 
 
-To use a different classic infrastructure account for classic clusters, [manually set](/docs/containers?topic=containers-access-creds#credentials) {{site.data.keyword.cloud_notm}} infrastructure credentials for your {{site.data.keyword.cloud_notm}} account. You cannot set up your {{site.data.keyword.cloud_notm}} account to use the VPC infrastructure of a different account.
+To use a different classic infrastructure account for classic clusters, [manually set](/docs/openshift?topic=openshift-access-creds#credentials) {{site.data.keyword.cloud_notm}} infrastructure credentials for your {{site.data.keyword.cloud_notm}} account. You cannot set up your {{site.data.keyword.cloud_notm}} account to use the VPC infrastructure of a different account.
 {: tip}
 
 IBM Cloud infrastructure accounts
@@ -209,7 +208,7 @@ IBM Cloud infrastructure accounts
 {{site.data.keyword.cloud_notm}} Pay-As-You-Go and Subscription accounts are automatically set up with an IBM Cloud infrastructure account that allows access to classic infrastructure resources. The API key that you set is used to order infrastructure resources from this infrastructure account, such as new worker nodes or VLANs.
 {: shortdec}
 
-You can find the current API key owner by running [`ibmcloud oc api-key info --cluster <cluster>`](/docs/containers?topic=containers-kubernetes-service-cli#cs_api_key_info). If you find that you need to update the API key that is stored for a region, you can do so by running the [`ibmcloud oc api-key reset --region <region>`](/docs/containers?topic=containers-kubernetes-service-cli#cs_api_key_reset) command. This command requires the {{site.data.keyword.openshiftlong_notm}} admin access policy and stores the API key of the user that executes this command in the account.
+You can find the current API key owner by running [`ibmcloud oc api-key info --cluster <cluster>`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_info). If you find that you need to update the API key that is stored for a region, you can do so by running the [`ibmcloud oc api-key reset --region <region>`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset) command. This command requires the {{site.data.keyword.openshiftlong_notm}} admin access policy and stores the API key of the user that executes this command in the account.
 
 Be sure that you want to reset the key and understand the impact to your app. The key is used in several different places and can cause breaking changes if it's unnecessarily changed.
 {: note}
@@ -247,13 +246,13 @@ To set up the API key to access the IBM Cloud infrastructure portfolio:
 ## Accessing a different classic infrastructure account
 {: #credentials}
 
-Instead of using the default linked IBM Cloud infrastructure account to order infrastructure for clusters within a region, you might want to use a different IBM Cloud infrastructure account that you already have. You can link this infrastructure account to your {{site.data.keyword.cloud_notm}} account by using the [`ibmcloud oc credential set`](/docs/containers?topic=containers-kubernetes-service-cli#cs_credentials_set) command. The IBM Cloud infrastructure credentials are used instead of the default Pay-As-You-Go or Subscription account's credentials that are stored for the region.
+Instead of using the default linked IBM Cloud infrastructure account to order infrastructure for clusters within a region, you might want to use a different IBM Cloud infrastructure account that you already have. You can link this infrastructure account to your {{site.data.keyword.cloud_notm}} account by using the [`ibmcloud oc credential set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set) command. The IBM Cloud infrastructure credentials are used instead of the default Pay-As-You-Go or Subscription account's credentials that are stored for the region.
 {: shortdesc}
 
 You can manually set infrastructure credentials to a different account only for classic clusters, not for VPC clusters.
 {: note}
 
-The IBM Cloud infrastructure credentials that are set by the `ibmcloud oc credential set` command persist after your session ends. If you remove IBM Cloud infrastructure credentials that were manually set with the [`ibmcloud oc credential unset --region <region>`](/docs/containers?topic=containers-kubernetes-service-cli#cs_credentials_unset) command, the credentials of the Pay-As-You-Go or Subscription account are used instead. However, this change in infrastructure account credentials might cause [orphaned clusters](/docs/containers?topic=containers-worker_infra_errors#orphaned).
+The IBM Cloud infrastructure credentials that are set by the `ibmcloud oc credential set` command persist after your session ends. If you remove IBM Cloud infrastructure credentials that were manually set with the [`ibmcloud oc credential unset --region <region>`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_unset) command, the credentials of the Pay-As-You-Go or Subscription account are used instead. However, this change in infrastructure account credentials might cause [orphaned clusters](/docs/openshift?topic=openshift-worker_infra_errors#orphaned).
 {: important}
 
 **Before you begin**:
@@ -301,7 +300,7 @@ To set infrastructure account credentials to access the IBM Cloud infrastructure
 ## Customizing classic infrastructure permissions
 {: #infra_access}
 
-When you assign the **Super User** infrastructure role to the admin or functional ID that sets the API key or whose infrastructure credentials are set, other users within the account share the API key or credentials for performing infrastructure actions. You can then control which infrastructure actions the users can perform by assigning the appropriate [{{site.data.keyword.cloud_notm}} IAM platform access role](/docs/containers?topic=containers-users#checking-perms). You don't need to edit the user's IBM Cloud infrastructure permissions.
+When you assign the **Super User** infrastructure role to the admin or functional ID that sets the API key or whose infrastructure credentials are set, other users within the account share the API key or credentials for performing infrastructure actions. You can then control which infrastructure actions the users can perform by assigning the appropriate [{{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms). You don't need to edit the user's IBM Cloud infrastructure permissions.
 {: shortdesc}
 
 Classic infrastructure permissions apply only to classic clusters. For VPC clusters, see [Granting user permissions for VPC resources](/docs/vpc?topic=vpc-managing-user-permissions-for-vpc-resources).
@@ -309,7 +308,7 @@ Classic infrastructure permissions apply only to classic clusters. For VPC clust
 
 For compliance, security, or billing reasons, you might not want to give the **Super User** infrastructure role to the user who sets the API key or whose credentials are set with the `ibmcloud oc credential set` command. However, if this user doesn't have the **Super User** role, then infrastructure-related actions, such as creating a cluster or reloading a worker node, can fail. Instead of using {{site.data.keyword.cloud_notm}} IAM platform access roles to control users' infrastructure access, you must set specific IBM Cloud infrastructure permissions for users.
 
-For example, if your account is not VRF-enabled, your IBM Cloud infrastructure account owner must turn on VLAN spanning. The account owner can also assign a user the **Network > Manage Network VLAN Spanning** permission so that the user can enable VLAN spanning. For more information, see [VLAN spanning for cross-VLAN communication](/docs/containers?topic=containers-subnets#basics_segmentation).
+For example, if your account is not VRF-enabled, your IBM Cloud infrastructure account owner must turn on VLAN spanning. The account owner can also assign a user the **Network > Manage Network VLAN Spanning** permission so that the user can enable VLAN spanning. For more information, see [VLAN spanning for cross-VLAN communication](/docs/openshift?topic=openshift-subnets#basics_segmentation).
 
 ### Assigning infrastructure access through the console
 {: #infra_console}
@@ -319,7 +318,7 @@ Classic infrastructure permissions apply only to classic clusters. For VPC clust
 
 Before you begin:
 - Make sure that you have the **Super User** role and all device access. You can't grant a user access that you don't have.
-- Review the [required and suggested classic infrastructure permissions](/docs/containers?topic=containers-access_reference#infra) to know what to assign the personal user or functional ID.
+- Review the [required and suggested classic infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra) to know what to assign the personal user or functional ID.
 
 To customize classic infrastructure permissions through the console:
 
@@ -331,10 +330,10 @@ To customize classic infrastructure permissions through the console:
         - **View Only** gives the user permissions to view infrastructure details only.
         - **Basic User** gives the user some, but not all, infrastructure permissions.
         - **Super User** gives the user all infrastructure permissions.
-    - Select individual permissions for each category. To review permissions that are needed to perform common tasks in {{site.data.keyword.openshiftlong_notm}}, see [User access permissions](/docs/containers?topic=containers-access_reference#infra).
+    - Select individual permissions for each category. To review permissions that are needed to perform common tasks in {{site.data.keyword.openshiftlong_notm}}, see [User access permissions](/docs/openshift?topic=openshift-access_reference#infra).
 5. Click **Save**.
 6. In the **Device** tab, select the devices to grant access to.
-    - In the **Select type** group, you can grant access to all bare metal, dedicated, and virtual servers so that users can work with all [flavors for worker nodes](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes).
+    - In the **Select type** group, you can grant access to all bare metal, dedicated, and virtual servers so that users can work with all [flavors for worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes).
     - In the **Enable future access** group, you can grant the user access to all future bare metal, dedicated, and virtual servers.
     - In the table of devices, make sure that the appropriate devices are selected.
 7. To save your changes, click **Set**.
@@ -356,7 +355,7 @@ Classic infrastructure permissions apply only to classic clusters. For VPC clust
 
 Before you begin:
 * Make sure that you are the account owner or have **Super User** and all device access. You can't grant a user access that you don't have.
-* Review the [required and suggested classic infrastructure permissions](/docs/containers?topic=containers-access_reference#infra).
+* Review the [required and suggested classic infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra).
 
 To customize classic infrastructure permissions through the CLI:
 
@@ -391,7 +390,7 @@ To customize classic infrastructure permissions through the CLI:
         ```
         {: pre}
 
-    Need to change the infrastructure credential owner? Check out the `ibmcloud oc api-key reset` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_api_key_reset) or the `ibmcloud oc credential set` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_credentials_set).
+    Need to change the infrastructure credential owner? Check out the `ibmcloud oc api-key reset` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset) or the `ibmcloud oc credential set` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set).
     {: tip}
 
 3. List the users in your classic infrastructure account and note the **id** of the user whose credentials are set manually or by the API key.
@@ -418,7 +417,7 @@ To customize classic infrastructure permissions through the CLI:
     ```
     {: pre}
 
-6. For individual required or suggested permissions, see the [Infrastructure roles](/docs/containers?topic=containers-access_reference#infra) table.
+6. For individual required or suggested permissions, see the [Infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra) table.
 
 
 

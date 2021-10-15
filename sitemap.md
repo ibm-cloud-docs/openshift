@@ -92,20 +92,6 @@ subcollection: openshift
 
     * [Applications and data](/docs/openshift?topic=openshift-responsibilities_iks#applications-and-data)
 
-* [Tasks for IBM responsibilities by area](/docs/openshift?topic=openshift-responsibilities_iks#task-responsibilities)
-
-    * [Incident and operations management](/docs/openshift?topic=openshift-responsibilities_iks#incident-and-ops-ibm)
-
-    * [Change management](/docs/openshift?topic=openshift-responsibilities_iks#change-management-ibm)
-
-    * [Identity and access management](/docs/openshift?topic=openshift-responsibilities_iks#iam-responsibilities-ibm)
-
-    * [Security and regulation compliance](/docs/openshift?topic=openshift-responsibilities_iks#security-compliance-ibm)
-
-    * [Disaster recovery](/docs/openshift?topic=openshift-responsibilities_iks#disaster-recovery-ibm)
-
-    * [Applications and data](/docs/openshift?topic=openshift-responsibilities_iks#applications-and-data-ibm)
-
 
 ## Use cases
 {: #sitemap_use_cases}
@@ -2107,8 +2093,6 @@ subcollection: openshift
 
 * [Mounting the volume to your app](/docs/openshift?topic=openshift-portworx#mount_pvc)
 
-* [VPC: Updating worker nodes with Portworx volumes](/docs/openshift?topic=openshift-portworx#portworx_vpc_up)
-
 * [Backing up and restoring apps and data with PX-Backup](/docs/openshift?topic=openshift-portworx#px-backup)
 
     * [Installing PX-Backup on a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-portworx#px-backup-install)
@@ -2287,8 +2271,6 @@ subcollection: openshift
     * [Updating the IBM Cloud Block Storage Attacher plug-in](/docs/openshift?topic=openshift-utilities#update_block_attacher)
 
     * [Removing the IBM Cloud Block Volume Attacher plug-in](/docs/openshift?topic=openshift-utilities#remove_block_attacher)
-
-* [Classic: Automatically provisioning unformatted block storage and authorizing your worker nodes to access the storage](/docs/openshift?topic=openshift-utilities#automatic_block)
 
 * [Classic: Manually adding block storage to specific worker nodes](/docs/openshift?topic=openshift-utilities#manual_block)
 
@@ -2483,12 +2465,6 @@ subcollection: openshift
     * [`ibmcloud oc cluster addon update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_update)
 
     * [`ibmcloud oc cluster addon versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_addon_versions)
-
-    * [`ibmcloud oc cluster autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_autoupdate_disable)
-
-    * [`ibmcloud oc cluster autoupdate enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_autoupdate_enable)
-
-    * [`ibmcloud oc cluster autoupdate get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_autoupdate_get)
 
     * [`ibmcloud oc cluster ca create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_create)
 
@@ -4334,15 +4310,11 @@ subcollection: openshift
 
 [Why is the status of my OpenShift Data Foundation storage cluster stuck at `Progressing`?](/docs/openshift?topic=openshift-ocs-ts-error-progressing#ocs-ts-error-progressing)
 
-* [AWS access key errors](/docs/openshift?topic=openshift-ocs-ts-error-progressing#ts-storage-ocs-aws-errors)
-
 * [Error: Cloud credentials secret "ibm-cloud-cos-creds" is not ready yet](/docs/openshift?topic=openshift-ocs-ts-error-progressing#ts-storage-ocs-cos-cred)
 
 [Why are no pods listed in the `openshift-storage` namespace?](/docs/openshift?topic=openshift-ts-ocs-no-pods#ts-ocs-no-pods)
 
 [What if my OpenShift Data Foundation issue is still unresolved?](/docs/openshift?topic=openshift-ocs-error-unresolved#ocs-error-unresolved)
-
-* [Escalation policy](/docs/openshift?topic=openshift-ocs-error-unresolved#ocs-support-ecalation-policy)
 
 
 ## Release notes

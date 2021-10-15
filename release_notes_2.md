@@ -12,8 +12,6 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-
-
 # Release notes
 {: #rel-notes}
 
@@ -84,7 +82,7 @@ Cluster autoscaler add-on.
 {: release-note}
 
 Updated supported, deprecated, and unsupported versions for strongSwan Helm chart.
-:   [Upgrading or disabling the strongSwan Helm chart](/docs/containers?topic=containers-vpn#vpn_upgrade)
+:   [Upgrading or disabling the strongSwan Helm chart](/docs/openshift?topic=openshift-vpn#vpn_upgrade)
 
 
 {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog.
@@ -258,7 +256,7 @@ New! Sao Paolo multizone region
 :   You can now create VPC clusters in the Sao Paolo, Brazil [location](/docs/containers?topic=containers-regions-and-zones).
 
  VPC disk encryption on worker nodes
-:   Now, you can manage the encryption for the disk on your VPC worker nodes. For more information, see [VPC worker nodes](/docs/containers?topic=containers-encryption#worker-encryption-vpc).
+:   Now, you can manage the encryption for the disk on your VPC worker nodes. For more information, see [VPC worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-vpc).
 
 ### 30 August 2021
 {: #30aug2021}

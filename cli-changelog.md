@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-13"
+lastupdated: "2021-10-15"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, oc, ibmcloud oc
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # CLI changelog
@@ -116,7 +115,7 @@ Version 1.0.231 of the CLI was released on 25 February 2021.
 
 Version 1.0.223 of the CLI was released on 8 February 2021.
 
-- Adds the [`ibmcloud oc worker-pool label set`](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_label_set) and [`ibmcloud oc worker-pool label rm`](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_label_rm) commands to set and remove custom Kubernetes labels for all worker nodes in a worker pool.
+- Adds the [`ibmcloud oc worker-pool label set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_set) and [`ibmcloud oc worker-pool label rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_rm) commands to set and remove custom Kubernetes labels for all worker nodes in a worker pool.
 - [Adds several commands and command changes for managing {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 ## Version 1.0.208
@@ -131,7 +130,7 @@ Version 1.0.208 of the CLI was released on 18 December 2020.
 
 Version 1.0.206 of the CLI was released on 10 December 2020.
 
-- Adds the `ibmcloud oc ingress lb get`, `ibmcloud oc ingress lb proxy-protocol disable`, and `ibmcloud oc ingress lb proxy-protocol disable` [beta commands](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_enable) to manage the configuration of load balancers that expose Ingress ALBs in your cluster. For example, you can enable the NGINX PROXY protocol so that client connection information is passed in request headers to ALBs. 
+- Adds the `ibmcloud oc ingress lb get`, `ibmcloud oc ingress lb proxy-protocol disable`, and `ibmcloud oc ingress lb proxy-protocol disable` [beta commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_enable) to manage the configuration of load balancers that expose Ingress ALBs in your cluster. For example, you can enable the NGINX PROXY protocol so that client connection information is passed in request headers to ALBs. 
 - Adds the optional `--endpoint` flag to the `ibmcloud oc cluster config` command to specify a type of endpoint for the cluster context, such as the cluster's private cloud service endpoint. 
 - Updates the help text in various languages. 
 - Updates the Go version to 1.15.6.
@@ -160,7 +159,7 @@ Version 1.0.178 of the CLI was released on 6 October 2020.
 
 Version 1.0.171 of the CLI was released on 24 September 2020.
 
-- Shifts all existing `ibmcloud oc cluster feature` commands into the [`ibmcloud oc cluster master`](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_master_pse_enable) subcategory. 
+- Shifts all existing `ibmcloud oc cluster feature` commands into the [`ibmcloud oc cluster master`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_enable) subcategory. 
 - Adds the cluster `Status`, the `Pod Subnet`, and the `Service Subnet` fields to the output of the `ibmcloud oc cluster get` command. 
 - Updates the help text in various languages.
 
@@ -170,14 +169,14 @@ Version 1.0.171 of the CLI was released on 24 September 2020.
 Version 1.0.157 of the CLI was released on 24 August 2020.
 
 **Added commands**: The following commands are added. 
-- Adds the [`ibmcloud oc cluster ca create`](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_ca_create), [`ibmcloud oc cluster ca rotate`](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_ca_rotate), and [`ibmcloud oc cluster ca status`](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_ca_status) commands to manage the rotation of certificate authority (CA) certificates for your cluster components. 
-- Adds the [`ibmcloud oc ingress secret`](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_secret_create) set of beta commands to manage Ingress secrets in your cluster, such as creating secrets for TLS certificates that are stored in {{site.data.keyword.cloudcerts_long_notm}}. 
-- Adds the [`ibmcloud oc ingress alb migrate`](/docs/containers?topic=containers-kubernetes-service-cli#cs_alb_migrate_start) set of beta commands to migrate resources that are formatted for ALBs that run the {{site.data.keyword.openshiftlong_notm}} Ingress image to resources that are formatted for ALBs that run the Kubernetes Ingress image. 
-- Adds the [`ibmcloud oc ingress alb enable`](/docs/containers?topic=containers-kubernetes-service-cli#cs_alb_configure) and [`ibmcloud oc ingress alb disable`](/docs/containers?topic=containers-kubernetes-service-cli#cs_alb_disable) commands. 
+- Adds the [`ibmcloud oc cluster ca create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_create), [`ibmcloud oc cluster ca rotate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_rotate), and [`ibmcloud oc cluster ca status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_status) commands to manage the rotation of certificate authority (CA) certificates for your cluster components. 
+- Adds the [`ibmcloud oc ingress secret`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_create) set of beta commands to manage Ingress secrets in your cluster, such as creating secrets for TLS certificates that are stored in {{site.data.keyword.cloudcerts_long_notm}}. 
+- Adds the [`ibmcloud oc ingress alb migrate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_migrate_start) set of beta commands to migrate resources that are formatted for ALBs that run the {{site.data.keyword.openshiftlong_notm}} Ingress image to resources that are formatted for ALBs that run the Kubernetes Ingress image. 
+- Adds the [`ibmcloud oc ingress alb enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) and [`ibmcloud oc ingress alb disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_disable) commands. 
 - Adds the optional `--version` flag to the `ibmcloud oc ingress alb create` command to specify the {{site.data.keyword.openshiftlong_notm}} Ingress image version or Kubernetes Ingress image version for the ALB.
 
 **Renamed commands**: The following commands are shifted to new naming categories. 
-- Shifts all existing `ibmcloud oc alb` commands into the [`ibmcloud oc ingress alb`](/docs/containers?topic=containers-kubernetes-service-cli#alb-commands) subcategory. 
+- Shifts all existing `ibmcloud oc alb` commands into the [`ibmcloud oc ingress alb`](/docs/openshift?topic=openshift-kubernetes-service-cli#alb-commands) subcategory. 
 - Changes the names of the following flags in the relevant `ibmcloud oc ingress alb` commands: `--alb-id` to `--alb`, `--secret-name` to `--name`, and `--user-ip` to `--ip`.
 
 **Deprecated commands**: The following commands are deprecated in favor of the new commands. 
@@ -190,7 +189,7 @@ Version 1.0.157 of the CLI was released on 24 August 2020.
 
 Version 1.0.143 of the CLI was released on 6 August 2020.
 
-- Adds the [`ibmcloud oc quota ls`](/docs/containers?topic=containers-kubernetes-service-cli#cs_quota_ls) command to list all quota and limits for cluster-related resources in your {{site.data.keyword.cloud_notm}} account. 
+- Adds the [`ibmcloud oc quota ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_quota_ls) command to list all quota and limits for cluster-related resources in your {{site.data.keyword.cloud_notm}} account. 
 - Deprecates the `--json` flag. To print a command output in JSON format, use the `--output json` flag instead. 
 - Deprecates the `-s` flag. To not show the message of the day or update reminders in command output, use the `-q` flag instead. 
 - Updates `ibmcloud oc cluster ls` command so that if you include the `--ouput json` flag but do not include the `--provider` flag, only classic clusters are returned. 
@@ -224,9 +223,9 @@ Version 1.0.99 of the CLI was released on 15 June 2020.
 
 Version 1.0.94 of the CLI was released on 9 June 2020.
 
-- Adds the [`ibmcloud oc cluster addon enable static-route`](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_addon_enable_static-route) and [`ibmcloud oc cluster addon disable static-route`](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_addon_disable_static-route) commands to manage the Static Route add-on for your cluster. 
-- Adds the [`ibmcloud oc worker-pool taint set`](/docs/containers?topic=containers-kubernetes-service-cli#worker_pool_taint_set) and [`ibmcloud oc worker-pool taint rm`](/docs/containers?topic=containers-kubernetes-service-cli#worker_pool_taint_rm) commands to set and remove Kubernetes taints on worker nodes in a worker pool. 
-- Beta: Adds the [`ibmcloud oc storage`](/docs/containers?topic=containers-kubernetes-service-cli#cs_storage) set of commands to view and modify storage resources in your cluster. 
+- Adds the [`ibmcloud oc cluster addon enable static-route`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable_static-route) and [`ibmcloud oc cluster addon disable static-route`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable_static-route) commands to manage the Static Route add-on for your cluster. 
+- Adds the [`ibmcloud oc worker-pool taint set`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint_set) and [`ibmcloud oc worker-pool taint rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint_rm) commands to set and remove Kubernetes taints on worker nodes in a worker pool. 
+- Beta: Adds the [`ibmcloud oc storage`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage) set of commands to view and modify storage resources in your cluster. 
 - Moves the `ibmcloud oc locations` command to the `Informational Commands` group in the help output of `ibmcloud oc`. 
 - Updates the help text for options in the `ibmcloud oc nlb-dns monitor configure` command. 
 - Updates the help text in various languages.
@@ -243,11 +242,11 @@ Version 1.0.84 of the CLI was released on 26 May 2020.
 - Adds commands for creating and managing VPC clusters.
     - [`alb configure vpc-gen2`](/docs/containers?topic=containers-kubernetes-service-cli#cli_alb_configure_vpc_gen2)
     - [`alb create vpc-gen2`](/docs/containers?topic=containers-kubernetes-service-cli#cli_alb-create-vpc-gen2)
-    - [`cluster create vpc-gen2`](/docs/containers?topic=containers-kubernetes-service-cli#cli_cluster-create-vpc-gen2)
-    - [`nlb-dns create vpc-gen2`](/docs/containers?topic=containers-kubernetes-service-cli#cs_nlb-dns-create-vpc-gen2)
-    - [`nlb-dns rm vpc-gen2`](/docs/containers?topic=containers-kubernetes-service-cli#cs_nlb-dns-rm-vpc-gen2)
-    - [`worker-pool create vpc-gen2`](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2)
-    - [`zone add vpc-gen2`](/docs/containers?topic=containers-kubernetes-service-cli#cli_zone-add-vpc-gen2)
+    - [`cluster create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2)
+    - [`nlb-dns create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-create-vpc-gen2)
+    - [`nlb-dns rm vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm-vpc-gen2)
+    - [`worker-pool create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2)
+    - [`zone add vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_zone-add-vpc-gen2)
 - Adds the **Ingress Status** and **Ingress Message** fields to the output of the `ibmcloud oc cluster get` command. For more information about these fields, see [Checking the status of Ingress components](/docs/containers?topic=containers-ingress-status).
 - Adds the ALB ID to the output of the `ibmcloud oc alb create` command. 
 - Adds the supported `Auth version` to the output of the `ibmcloud oc alb versions` command. 
@@ -272,7 +271,7 @@ Version 1.0.57 of the CLI was released on 7 May 2020.
 Version 1.0.28 of the CLI was released on 6 April 2020.
 
 - Adds the optional `--alb-id` flag to `ibmcloud oc alb update` so that you can specify IDs of individual ALBs to update. 
-- Adds the optional `--show-storage` flag to `ibmcloud oc flavors` to show additional raw disks that are available for [SDS worker node flavors](/docs/containers?topic=containers-planning_worker_nodes#sds). 
+- Adds the optional `--show-storage` flag to `ibmcloud oc flavors` to show additional raw disks that are available for [SDS worker node flavors](/docs/openshift?topic=openshift-planning_worker_nodes#sds). 
 - Adds a message to the output of `ibmcloud oc pull-secret apply` about the amount of time it takes for the pull secrets to be applied to your cluster.
 
 ## Version 1.0.15
@@ -280,7 +279,7 @@ Version 1.0.28 of the CLI was released on 6 April 2020.
 
 Version 1.0.15 of the CLI was released on 24 March 2020.
 
-- Adds the [`ibmcloud oc nlb-dns secret regenerate`](/docs/containers?topic=containers-kubernetes-service-cli#cs_nlb-dns-secret-regenerate) and [`ibmcloud oc nlb-dns secret rm`](/docs/containers?topic=containers-kubernetes-service-cli#cs_nlb-dns-secret-rm) commands to help you manage secrets for NLB subdomains. 
+- Adds the [`ibmcloud oc nlb-dns secret regenerate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-regenerate) and [`ibmcloud oc nlb-dns secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-rm) commands to help you manage secrets for NLB subdomains. 
 - Adds the optional `--worker-pool WORKER_POOL` flag to `ibmcloud oc zone rm`. 
 - Deprecates the option to specify a YAML file in the `--file` flag of the `ibmcloud oc cluster create` and `ibmcloud oc worker add` commands. Instead, specify values for your cluster in the supported flags for these commands. 
 - Fixes the following bugs: 
@@ -306,7 +305,7 @@ All versions of the CLI plug-in that are earlier than version 1.0 are no longer 
 
 Version 1.0 of the CLI plug-in was released on 16 March 2020. This version contains permanent syntax and behavior changes that are not compatible with earlier versions.
 
-To maintain all CLI functionality, update and test any automation before you update to 1.0 by checking out the [`ibmcloud oc script update` command](/docs/containers?topic=containers-kubernetes-service-cli#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in.
+To maintain all CLI functionality, update and test any automation before you update to 1.0 by checking out the [`ibmcloud oc script update` command](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) and setting your `IKS_BETA_VERSION` environment variable to `1.0`. After you update your scripts, update your CLI to version `1.0` of the plug-in.
 {: important}
 
 Check out the following syntax and behavior changes between each version of the CLI plug-in:
@@ -352,12 +351,12 @@ Version 0.4.90 of the CLI was released on 19 February 2020.
 
 - Updates the Go version to 1.13.5 and removes `xgo`. 
 - **Command updates**: 
-    - Adds the `--provider` flag to the [`ibmcloud oc flavors`](/docs/containers?topic=containers-kubernetes-service-cli#cs_machine_types) command. 
+    - Adds the `--provider` flag to the [`ibmcloud oc flavors`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_machine_types) command. 
     - Accepts newer flag names like `--flavor` instead of `--machine-type` across various commands.
     - Deprecates the `--disable-deployment` flag of the `ibmcloud oc alb configure vpc-classic` command. 
 - **VPC-specific command updates**: 
-    - Fixes the [`ibmcloud oc zone rm`](/docs/containers?topic=containers-kubernetes-service-cli#cs_zone_rm) command for VPC multizone clusters. 
-    - For the [`ibmcloud oc vpcs`](/docs/containers?topic=containers-kubernetes-service-cli#cs_vpcs) command, defaults to list only generation 1 (`vpc-classic`) VPCs. 
+    - Fixes the [`ibmcloud oc zone rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_rm) command for VPC multizone clusters. 
+    - For the [`ibmcloud oc vpcs`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vpcs) command, defaults to list only generation 1 (`vpc-classic`) VPCs. 
     - Revises the `ibmcloud oc worker-pool create vpc-classic` command to remove the `--disable-disk-encrypt` flag and to hide the `--hardware` flag because it only accepts one value. 
 - **Help documentation updates**: 
     - Add deprecation warnings to encourage you to use the newer `classic` subcommands. For example, use `ibmcloud oc cluster create classic` instead of `ibmcloud oc cluster create`.
@@ -432,7 +431,7 @@ Version 0.4.31 of the CLI was released on 24 September 2019.
 
 - Removes the deprecated `region get`, `region set`, and `region ls` commands from help output. 
 - Updates command structure to the new spaced format in help output. 
-- Adds a warning to the output of legacy `cluster config` behavior. For more information, see the [version 1.0 plug-in documentation](/docs/containers?topic=containers-cs_cli_changelog#changelog_beta). 
+- Adds a warning to the output of legacy `cluster config` behavior. For more information, see the [version 1.0 plug-in documentation](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta). 
 - Fixes a bug so that `worker reload` and `messages` commands now fail if the command errors. 
 - Updates the help text in various languages.
 
@@ -460,7 +459,7 @@ Version 0.4.3 of the CLI was released on 4 September 2019.
 
 Version 0.4.1 of the CLI was released on 3 April 2019.
 
-- Sets the {{site.data.keyword.openshiftlong_notm}} plug-in to the redesigned format by default. This redesigned version includes changes such as categorical lists instead of an alphabetical list of commands in the output of `ibmcloud oc help`, spaced-structured commands instead of hyphenated-structure commands, repeated flags instead of multiple values in comma-separated lists, and more. For a full list of the changes between version `0.3` and `0.4`, see the comparison table in [Using the beta {{site.data.keyword.openshiftlong_notm}} plug-in](/docs/containers?topic=containers-cs_cli_changelog#changelog_beta). 
+- Sets the {{site.data.keyword.openshiftlong_notm}} plug-in to the redesigned format by default. This redesigned version includes changes such as categorical lists instead of an alphabetical list of commands in the output of `ibmcloud oc help`, spaced-structured commands instead of hyphenated-structure commands, repeated flags instead of multiple values in comma-separated lists, and more. For a full list of the changes between version `0.3` and `0.4`, see the comparison table in [Using the beta {{site.data.keyword.openshiftlong_notm}} plug-in](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta). 
 - Adds the [`ibmcloud oc script update`](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) command to rewrite scripts that call `ibmcloud oc` commands. 
 - Improves error handling for `ibmcloud oc cluster ls`. 
 - Updates help text.
@@ -481,7 +480,7 @@ Version 0.3 of the CLI plug-in is deprecated. To update to the latest version, s
 
 Version 0.3.112 of the CLI was released on 19 August 2019.
 
-- With the release of the [{{site.data.keyword.containerlong_notm}} version 2 API](/docs/containers?topic=containers-cs_api_install#api_about), the {{site.data.keyword.cloud_notm}} CLI `kubernetes-service` plug-in supports both classic and VPC infrastructure providers. Some `ibmcloud oc` commands support only one type of infrastructure, whereas other commands include additional names or options. 
+- With the release of the [{{site.data.keyword.containerlong_notm}} version 2 API](/docs/openshift?topic=openshift-cs_api_install#api_about), the {{site.data.keyword.cloud_notm}} CLI `kubernetes-service` plug-in supports both classic and VPC infrastructure providers. Some `ibmcloud oc` commands support only one type of infrastructure, whereas other commands include additional names or options. 
 - Adds the `--pod-subnet` and `--service-subnet` flags to the `ibmcloud oc cluster create classic` commands for standard clusters that run Kubernetes 1.15 or later. If you plan to connect your cluster to on-premises networks, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your pods and subnets. 
 - Enhances the `ibmcloud oc nlb-dns create` and `ibmcloud oc nlb-dns add` commands so that you can add more than one IP address at a time. For example, to create a DNS entry for multiple network load balancer IP addresses, use multiple flags such as `ibmcloud oc nlb-dns create --cluster mycluster --ip IP1 --ip IP2`.
 
@@ -556,7 +555,7 @@ Adds support for creating {{site.data.keyword.openshiftlong_notm}} clusters:
 Version 0.3.33 of the CLI was released on 30 May 2019.
 
 - Adds the `--powershell` flag to the `cluster config` command to retrieve Kubernetes environment variables in Windows PowerShell format. 
-- Deprecates the `region get`, `region set`, and `region ls` commands. For more information, see [global endpoint functionality](/docs/containers?topic=containers-regions-and-zones#endpoint).
+- Deprecates the `region get`, `region set`, and `region ls` commands. For more information, see [global endpoint functionality](/docs/openshift?topic=openshift-regions-and-zones#endpoint).
 
 #### Version 0.3.28
 {: #cli-0328}
@@ -575,7 +574,7 @@ Version 0.3.28 of the CLI was released on 23 May 2019.
 
 Version 0.3.8 of the CLI was released on 30 April 2019.
 
-- Adds support for [global endpoint functionality](/docs/containers?topic=containers-regions-and-zones#endpoint) in version `0.3`. By default, you can now view and manage all of your {{site.data.keyword.containerlong_notm}} resources in all locations. You are not required to target a region to work with resources. 
+- Adds support for [global endpoint functionality](/docs/openshift?topic=openshift-regions-and-zones#endpoint) in version `0.3`. By default, you can now view and manage all of your {{site.data.keyword.containerlong_notm}} resources in all locations. You are not required to target a region to work with resources. 
 - Adds the [`ibmcloud oc locations`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_supported-locations) command to list all locations that {{site.data.keyword.containerlong_notm}} supports. 
 - Adds the `--location` flag to the `cluster ls` and `zone ls` commands to filter resources by one or more locations. - Adds the `--region` flag to the `credential set/unset/get`, `api-key reset`, and `vlan spanning get` commands. To run these commands, you must specify a region in the `--region` flag.
 
@@ -594,7 +593,7 @@ Version 0.2 of the CLI plug-in is deprecated. To update to the latest version, s
 
 Version 0.2.102 of the CLI was released on 15 April 2019.
 
-- Adds the [`ibmcloud oc nlb-dns` group of commands](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns) for registering and managing a subdomain for network load balancer (NLB) IP addresses, and the [`ibmcloud oc nlb-dns monitor` group of commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-configure) for creating and modifying health check monitors for NLB subdomains. For more information, see [Registering NLB IPs with a DNS subdomain](/docs/containers?topic=containers-loadbalancer_hostname#loadbalancer_hostname_dns).
+- Adds the [`ibmcloud oc nlb-dns` group of commands](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns) for registering and managing a subdomain for network load balancer (NLB) IP addresses, and the [`ibmcloud oc nlb-dns monitor` group of commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-configure) for creating and modifying health check monitors for NLB subdomains. For more information, see [Registering NLB IPs with a DNS subdomain](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_dns).
 
 #### Version 0.2.99
 {: #cli-0299}
@@ -622,7 +621,7 @@ Version 0.2.95 of the CLI was released on 3 April 2019.
 
 Version 0.2.80 of the CLI was released on 19 March 2019.
 
-- Adds support for enabling [master-to-worker communication with service endpoints](/docs/containers?topic=containers-plan_clusters#workeruser-master) in standard clusters in [VRF-enabled accounts](/docs/account?topic=account-vrf-service-endpoint#vrf). 
+- Adds support for enabling [master-to-worker communication with service endpoints](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) in standard clusters in [VRF-enabled accounts](/docs/account?topic=account-vrf-service-endpoint#vrf). 
 - Adds the `--private-service-endpoint` and `--public-service-endpoint` flags to the [`ibmcloud oc cluster-create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) command. 
 - Adds the **Public Service Endpoint URL** and **Private Service Endpoint URL** fields to the output of `ibmcloud oc cluster get`. 
 - Adds the [`ibmcloud oc cluster master private-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_enable) command. 
@@ -645,7 +644,7 @@ Version 0.2.75 of the CLI was released on 14 March 2019.
 
 Version 0.2.61 of the CLI was released on 26 February 2019.
 
-- Adds the `cluster pull-secret apply` command, which creates an IAM service ID for the cluster, policies, API key, and image pull secrets so that containers that run in the `default` Kubernetes namespace can pull images from IBM Cloud Container Registry. For new clusters, image pull secrets that use IAM credentials are created by default. Use this command to update existing clusters or if your cluster has an image pull secret error during creation. For more information, see [the doc](/docs/containers?topic=containers-registry#cluster_registry_auth). 
+- Adds the `cluster pull-secret apply` command, which creates an IAM service ID for the cluster, policies, API key, and image pull secrets so that containers that run in the `default` Kubernetes namespace can pull images from IBM Cloud Container Registry. For new clusters, image pull secrets that use IAM credentials are created by default. Use this command to update existing clusters or if your cluster has an image pull secret error during creation. For more information, see [the doc](/docs/openshift?topic=openshift-registry#cluster_registry_auth). 
 - Fixes a bug where `ibmcloud oc init` failures caused help output to be printed.
 
 #### Version 0.2.53
@@ -662,7 +661,7 @@ Version 0.2.53 of the CLI was released on 19 February 2019.
 
 Version 0.2.44 of the CLI was released on 8 February 2019.
 
-- Adds `--skip-rbac` option to the `ibmcloud oc cluster config` command to skip adding user Kubernetes RBAC roles based on the {{site.data.keyword.cloud_notm}} IAM service access roles to the cluster configuration. Include this option only if you [manage your own Kubernetes RBAC roles](/docs/containers?topic=containers-users#rbac). If you use [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/containers?topic=containers-access_reference#service) to manage all your RBAC users, do not include this option. - Updates the Go version to 1.11.5.
+- Adds `--skip-rbac` option to the `ibmcloud oc cluster config` command to skip adding user Kubernetes RBAC roles based on the {{site.data.keyword.cloud_notm}} IAM service access roles to the cluster configuration. Include this option only if you [manage your own Kubernetes RBAC roles](/docs/openshift?topic=openshift-users#rbac). If you use [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-access_reference#service) to manage all your RBAC users, do not include this option. - Updates the Go version to 1.11.5.
 
 #### Version 0.2.40
 {: #cli-0240}
@@ -684,7 +683,7 @@ Version 0.2.30 of the CLI was released on 31 January 2019.
 
 Version 0.2.19 of the CLI was released on 16 January 2019.
 
-- Adds the `IKS_BETA_VERSION` environment variable to enable the redesigned beta version of the {{site.data.keyword.openshiftlong_notm}} plug-in CLI. To try out the redesigned version, see [Using the beta command structure](/docs/containers?topic=containers-cs_cli_changelog#changelog_beta). 
+- Adds the `IKS_BETA_VERSION` environment variable to enable the redesigned beta version of the {{site.data.keyword.openshiftlong_notm}} plug-in CLI. To try out the redesigned version, see [Using the beta command structure](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta). 
 - Increases the default timeout value for `ibmcloud oc subnets` to `60s`. 
 - Fixes a minor bug and updates the help text in various languages.
 
@@ -751,14 +750,14 @@ Version 0.1.621 of the CLI was released on 30 October 2018.
 Version 0.1.593 of the CLI was released on 10 October 2018.
 
 - Adds the resource group ID to the output of `ibmcloud oc cluster get`. 
-- When [{{site.data.keyword.keymanagementserviceshort}} is enabled](/docs/containers?topic=containers-encryption#keyprotect) as a key management service (KMS) provider in your cluster, adds the KMS enabled field in the output of `ibmcloud oc cluster get`.
+- When [{{site.data.keyword.keymanagementserviceshort}} is enabled](/docs/openshift?topic=openshift-encryption#keyprotect) as a key management service (KMS) provider in your cluster, adds the KMS enabled field in the output of `ibmcloud oc cluster get`.
 
 #### Version 0.1.591
 {: #cli-01591}
 
 Version 0.1.591 of the CLI was released on 2 October 2018.
 
-- Adds support for [resource groups](/docs/containers?topic=containers-clusters#cluster_prepare).
+- Adds support for [resource groups](/docs/openshift?topic=openshift-clusters#cluster_prepare).
 
 #### Version 0.1.590
 {: #cli-01590}
@@ -766,7 +765,7 @@ Version 0.1.591 of the CLI was released on 2 October 2018.
 Version 0.1.590 of the CLI was released on 1 October 2018.
 
 
-- Adds the [`ibmcloud oc key-protect-enable` command](/docs/containers?topic=containers-kubernetes-service-cli#ks_kms) to enable {{site.data.keyword.keymanagementserviceshort}} as a key management service (KMS) provider in your cluster. 
+- Adds the [`ibmcloud oc key-protect-enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#ks_kms) to enable {{site.data.keyword.keymanagementserviceshort}} as a key management service (KMS) provider in your cluster. 
 - Adds the `--skip-master-health` flag to the [ibmcloud oc worker reboot](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot) and [ibmcloud oc worker reload](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot) commands to skip the master health check before initiating the reboot or reload. 
 - Renames `Owner Email` to `Owner` in the output of `ibmcloud oc cluster get`.
   

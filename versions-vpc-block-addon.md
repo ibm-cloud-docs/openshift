@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-13"
+lastupdated: "2021-10-15"
 
 keywords: vpc block, add-on, vpc block changelog
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # {{site.data.keyword.block_storage_is_short}} add-on changelog
@@ -24,9 +23,9 @@ Patch updates
 :   Patch updates are delivered automatically by IBM and do not contain any feature updates or changes in the supported add-on and cluster versions.
 
 Release updates
-:   Release updates contain new features for the {{site.data.keyword.block_storage_is_short}} or changes in the supported add-on or cluster versions. You must manually apply release updates to your {{site.data.keyword.block_storage_is_short}} add-on. To update your {{site.data.keyword.block_storage_is_short}} add-on, see [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/containers?topic=containers-vpc-block#vpc-addon-update).
+:   Release updates contain new features for the {{site.data.keyword.block_storage_is_short}} or changes in the supported add-on or cluster versions. You must manually apply release updates to your {{site.data.keyword.block_storage_is_short}} add-on. To update your {{site.data.keyword.block_storage_is_short}} add-on, see [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).
 
-As of 26 July 2021, version 2.0.3 of the Block Storage for VPC add-on is unsupported. Version 3.0.0 is deprecated and becomes unsupported on or after 26 August 2021. If you have a deprecated or unsupported version of the add-on installed in your cluster, update the add-on to version 3.0.1 or 4.0. To update the Block Storage for VPC add-on in your cluster, disable the add-on and then re-enable it. You might see a warning that resources or data might be deleted, however, note that existing volumes and data are not impacted. For more information, see [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/containers?topic=containers-vpc-block#vpc-addon-update).
+As of 26 July 2021, version 2.0.3 of the Block Storage for VPC add-on is unsupported. Version 3.0.0 is deprecated and becomes unsupported on or after 26 August 2021. If you have a deprecated or unsupported version of the add-on installed in your cluster, update the add-on to version 3.0.1 or 4.0. To update the Block Storage for VPC add-on in your cluster, disable the add-on and then re-enable it. You might see a warning that resources or data might be deleted, however, note that existing volumes and data are not impacted. For more information, see [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).
 {: important}
 
 
@@ -70,7 +69,7 @@ Image tags: `v4.0.1`
     - [CVE-2021-37750](https://nvd.nist.gov/vuln/detail/CVE-2021-37750){: external}
 - Updates the `storage-secret-sidecar` image to `v1.1.2`.
 - Improves error messaging if `iks_token_exchange_endpoint_private_url` is invalid or unreachable.
-- Adds [new storage classes for OpenShift Data Foundation](/docs/containers?topic=containers-vpc-block#vpc-block-reference).
+- Adds [new storage classes for OpenShift Data Foundation](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference).
 - Updates to improve the volume attach/detach performance by avoiding unnecessary retries.
 - Fixes an issue where mounting failed with `already mounted` error.
 - Improves logging when the device path for a volume is not present on worker node.

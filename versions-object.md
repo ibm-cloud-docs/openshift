@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: object storage, plug-in, changelog
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Object storage plug-in 
@@ -110,8 +109,8 @@ Review the changes in version 2.1.1 of the {{site.data.keyword.cos_full_notm}} p
 
 - Image tags: `1.8.29`  
 - Fixes an upgrade issue in version `2.1.0`.  
-- Includes a new version of the `helm ibmc` plug-in. For more information, see [Updating the {{site.data.keyword.cos_full_notm}} plug-in.](/docs/containers?topic=containers-object_storage#update_cos_plugin).  
-- Users can now specify <code>default</code> in PVC configurations to use the default TLS cipher suite when a connection to {{site.data.keyword.cos_full_notm}} is established via the HTTPS endpoint. If your worker nodes run an Ubuntu operating system, your storage classes are set up to use the `AESGCM` cipher suite by default. For worker nodes that run a Red Hat operating system, the `ecdhe_rsa_aes_128_gcm_sha_256` cipher suite is used by default. For more information, see [Adding object storage to apps](/docs/containers?topic=containers-object_storage#add_cos).  
+- Includes a new version of the `helm ibmc` plug-in. For more information, see [Updating the {{site.data.keyword.cos_full_notm}} plug-in.](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).  
+- Users can now specify <code>default</code> in PVC configurations to use the default TLS cipher suite when a connection to {{site.data.keyword.cos_full_notm}} is established via the HTTPS endpoint. If your worker nodes run an Ubuntu operating system, your storage classes are set up to use the `AESGCM` cipher suite by default. For worker nodes that run a Red Hat operating system, the `ecdhe_rsa_aes_128_gcm_sha_256` cipher suite is used by default. For more information, see [Adding object storage to apps](/docs/openshift?topic=openshift-object_storage#add_cos).  
 - Fixes [CVE-2020-28851](https://nvd.nist.gov/vuln/detail/CVE-2020-28851){: external}.  
 
 

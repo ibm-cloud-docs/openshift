@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-14"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # VPC: Exposing apps with load balancers for VPC
@@ -101,7 +100,7 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
 
 **Before you begin**:
 * VPC NLBs can be created only in VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later.
-* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/containers?topic=containers-users#checking-perms) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC NLB.
+* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC NLB.
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 * To view VPC NLBs, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
     ```sh
@@ -281,7 +280,7 @@ Expose your app to private network traffic by setting up a Kubernetes `LoadBalan
 
 **Before you begin**:
 * VPC NLBs can be created only in VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later.
-* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/containers?topic=containers-users#checking-perms) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC NLB.
+* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC NLB.
 * Connect to your VPC private network, such as through a [VPC VPN connection](/docs/containers?topic=containers-vpc-vpnaas).
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 * To view VPC NLBs, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
@@ -511,7 +510,7 @@ myapp-vpc-nlb-jp-tok-3    LoadBalancer   172.21.xxx.xxx   169.xx.xxx.xx     8080
             ibmcloud oc nlb-dns create vpc-gen2 --type public --cluster <cluster_name_or_id> --ip <vpc_nlb1_ip> --ip <vpc_nlb2_ip> --ip <vpc_nlb3_ip>
             ```
             {: pre}
-        2. Verify that the subdomain is created. For more information, see [Understanding the subdomain format](/docs/containers?topic=containers-loadbalancer_hostname#loadbalancer_hostname_format).
+        2. Verify that the subdomain is created. For more information, see [Understanding the subdomain format](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_format).
             ```sh
             ibmcloud oc nlb-dns ls --cluster <cluster_name_or_id>
             ```
@@ -544,9 +543,9 @@ Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.op
 {: #setup_vpc_alb_pub_priv}
 
 **Before you begin**:
-* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/containers?topic=containers-users#checking-perms) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC NLB.
+* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC NLB.
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: [Allow traffic requests that are routed by the VPC ALB to node ports on your worker nodes](/docs/containers?topic=containers-vpc-network-policy#security_groups).
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: [Allow traffic requests that are routed by the VPC ALB to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-network-policy#security_groups).
 * To view VPC ALBs, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
     ```sh
     ibmcloud plugin install infrastructure-service
@@ -773,7 +772,7 @@ After you create a DNS subdomain for a VPC ALB hostname, you cannot use `nlb-dns
             ibmcloud oc nlb-dns create vpc-gen2 --cluster <cluster_name_or_id> --lb-host <vpc_lb_hostname> --type (public|private)
             ```
             {: pre}
-        2. Verify that the subdomain is created. For more information, see [Understanding the subdomain format](/docs/containers?topic=containers-loadbalancer_hostname#loadbalancer_hostname_format).
+        2. Verify that the subdomain is created. For more information, see [Understanding the subdomain format](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_format).
             ```sh
             ibmcloud oc nlb-dns ls --cluster <cluster_name_or_id>
             ```

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,7 +11,6 @@ content-type: troubleshoot
 
 ---
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Why does installing the Object storage plug-in fail?
@@ -52,7 +51,7 @@ Delete the resource that is display in the error message and retry the installat
     ```
     {: pre}
 
-2. [Retry the installation](/docs/containers?topic=containers-object_storage#install_cos).
+2. [Retry the installation](/docs/openshift?topic=openshift-object_storage#install_cos).
 
 3. If you continue to see the same error, get a list of the resources that are installed when the plug-in is installed. Get a list of storage classes that are created by the `ibmcloud-object-storage-plugin`.
     ```sh
@@ -128,7 +127,7 @@ Delete the resource that is display in the error message and retry the installat
 
 4. Delete the conflicting resources.
 
-5. After you delete the conflicting resources, [retry the installation](/docs/containers?topic=containers-object_storage#install_cos).
+5. After you delete the conflicting resources, [retry the installation](/docs/openshift?topic=openshift-object_storage#install_cos).
 
 
 

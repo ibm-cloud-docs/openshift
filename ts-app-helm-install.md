@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift
 
@@ -12,7 +12,6 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Why can't I install a Helm chart with updated configuration values?
@@ -55,7 +54,7 @@ To troubleshoot your Helm chart:
     ```
     {: pre}
 
-3. Reinstall the Helm version that matches a supported version of the Helm chart that you want to install. As part of the reinstallation, you add and update the {{site.data.keyword.cloud_notm}} Helm repositories. For more information, see [Installing Helm v3 in your cluster](/docs/containers?topic=containers-helm#install_v3).
+3. Reinstall the Helm version that matches a supported version of the Helm chart that you want to install. As part of the reinstallation, you add and update the {{site.data.keyword.cloud_notm}} Helm repositories. For more information, see [Installing Helm v3 in your cluster](/docs/openshift?topic=openshift-helm#install_v3).
 
 Now, you can follow the instructions in the Helm chart `README` to install the Helm chart in your cluster.
 

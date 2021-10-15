@@ -13,7 +13,6 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-
 # Classic: Controlling traffic with network policies
 {: #network_policies}
 
@@ -82,7 +81,7 @@ To view, manage, and add Calico policies, install and configure the Calico CLI.
         ```
         {: pre}
 
-2. If corporate network policies use proxies or firewalls to prevent access from your local system to public endpoints, [allow TCP access for Calico commands](/docs/containers?topic=containers-firewall#firewall).
+2. If corporate network policies use proxies or firewalls to prevent access from your local system to public endpoints, [allow TCP access for Calico commands](/docs/openshift?topic=openshift-firewall#firewall).
 
 3. Install the Calico CLI, `calicoctl`, according to your operating system.
     * Linux and OS X
@@ -139,7 +138,7 @@ To view, manage, and add Calico policies, install and configure the Calico CLI.
     ```
     {: screen}
 
-Changing the Calico plug-in, components, or default Calico settings is not supported. For example, do not deploy a new Calico plug-in version, or modify the daemon sets or deployments for the Calico components, default `IPPool` resources, or Calico nodes. Instead, you can follow the documentation to [change the Calico MTU](/docs/containers?topic=containers-kernel#calico-mtu) or to [disable the port map plug-in for the Calico CNI](/docs/containers?topic=containers-kernel#calico-portmap) if necessary.
+Changing the Calico plug-in, components, or default Calico settings is not supported. For example, do not deploy a new Calico plug-in version, or modify the daemon sets or deployments for the Calico components, default `IPPool` resources, or Calico nodes. Instead, you can follow the documentation to [change the Calico MTU](/docs/openshift?topic=openshift-kernel#calico-mtu) or to [disable the port map plug-in for the Calico CNI](/docs/openshift?topic=openshift-kernel#calico-portmap) if necessary.
 {: important}
 
 
@@ -215,7 +214,7 @@ Default Kubernetes and Calico policies are difficult to apply to protecting Kube
 Some common uses for Calico pre-DNAT network policies:
 
 - Block traffic to public node ports of a private network load balancer (NLB) service: An NLB service makes your app available over the NLB IP address and port and makes your app available over the service's node ports. Node ports are accessible on every IP address (public and private) for every node within the cluster.
-- Block traffic to public node ports on clusters that are running [edge worker nodes](/docs/containers?topic=containers-edge#edge): Blocking node ports ensures that the edge worker nodes are the only worker nodes that handle incoming traffic.
+- Block traffic to public node ports on clusters that are running [edge worker nodes](/docs/openshift?topic=openshift-edge#edge): Blocking node ports ensures that the edge worker nodes are the only worker nodes that handle incoming traffic.
 - Block traffic from certain source IP addresses or CIDRs
 - Allow traffic from only certain source IP addresses or CIDRs, and block all other traffic
 
@@ -372,7 +371,7 @@ Before you begin, [install and configure the Calico CLI, and set the context for
 You can isolate your cluster from other systems on the private network by applying [Calico private network policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/private-network-isolation/calico-v3){: external}.
 {: shortdesc}
 
-This set of Calico policies and host endpoints can isolate the private network traffic of a cluster from other resources in the account's private network, while allowing communication on the private network that is necessary for the cluster to function. For example, when you enable [VRF or VLAN spanning](/docs/containers?topic=containers-plan_clusters#worker-worker) to allow worker nodes to communicate with each other on the private network, any instance that is connected to any of the private VLANs in the same {{site.data.keyword.cloud_notm}} account can communicate with your worker nodes.
+This set of Calico policies and host endpoints can isolate the private network traffic of a cluster from other resources in the account's private network, while allowing communication on the private network that is necessary for the cluster to function. For example, when you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-plan_clusters#worker-worker) to allow worker nodes to communicate with each other on the private network, any instance that is connected to any of the private VLANs in the same {{site.data.keyword.cloud_notm}} account can communicate with your worker nodes.
 
 To see a list of the ports that are opened by these policies and a list of the policies that are included, see the [README for the Calico private network policies](https://github.com/IBM-Cloud/kube-samples/blob/master/calico-policies/private-network-isolation/README.md){: external}.
 
@@ -441,7 +440,7 @@ Before you begin, [install and configure the Calico CLI, and set the context for
     ```
     {: pre}
 
-    You can further control access to networking services by creating [Calico pre-DNAT policies](/docs/containers?topic=containers-network_policies#block_ingress). In the pre-DNAT policy, ensure that you use `selector: ibm.role=='worker_private'` to apply the policy to the workers' private host endpoints.
+    You can further control access to networking services by creating [Calico pre-DNAT policies](/docs/openshift?topic=openshift-network_policies#block_ingress). In the pre-DNAT policy, ensure that you use `selector: ibm.role=='worker_private'` to apply the policy to the workers' private host endpoints.
     {: tip}
 
 8. Verify that the policies are applied.

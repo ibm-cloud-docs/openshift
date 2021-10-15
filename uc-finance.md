@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Financial services use cases for {{site.data.keyword.cloud_notm}}
@@ -30,10 +29,10 @@ A Risk Management VP for a residential mortgage company processes 70 million rec
 Why {{site.data.keyword.cloud_notm}}: To improve risk analysis, the company looked to {{site.data.keyword.openshiftlong_notm}} and IBM Cloud Analytic services to reduce costs, increase worldwide availability, and ultimately accelerate regulatory compliance. With {{site.data.keyword.openshiftlong_notm}} in multiple regions, their analysis apps can be containerized and deployed across the globe, improving availability and addressing local regulations. Those deployments are accelerated with familiar open source tools, already part of {{site.data.keyword.openshiftlong_notm}}.
 
 {{site.data.keyword.openshiftlong_notm}} and key technologies:
-* [Horizontal scaling](/docs/containers?topic=containers-plan_deploy#highly_available_apps)
-* [Multiple regions for high availability](/docs/containers?topic=containers-regions-and-zones#regions-and-zones)
-* [Clusters that fit varied CPU, RAM, storage needs](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes)
-* [Container security and isolation](/docs/containers?topic=containers-security#security)
+* [Horizontal scaling](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps)
+* [Multiple regions for high availability](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones)
+* [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
+* [Container security and isolation](/docs/openshift?topic=openshift-security#security)
 * [{{site.data.keyword.cloudant}} to persist and sync data across apps](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant)
 * [SDK for Node.js](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-node)
 
@@ -101,7 +100,7 @@ Why {{site.data.keyword.cloud_notm}}: {{site.data.keyword.openshiftlong_notm}} p
 Then, Developers can experiment easily, pushing changes to Development and Test systems quickly with open toolchains. Their  application development tools get a new face when they add on AI cloud services to apps with a click.
 
 Key technologies:
-* [Clusters that fit varied CPU, RAM, storage needs](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes)
+* [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/)
 * [IBM Cloud Pak for Applications](https://www.ibm.com/cloud/cloud-pak-for-applications)
 * [Fraud prevention with {{site.data.keyword.watson}} AI](https://www.ibm.com/cloud/watson-studio)

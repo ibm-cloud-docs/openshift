@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -13,14 +13,13 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
-
 # Why does my app fail with a group ID error for NFS file storage permissions?
 {: #root}
 
 **Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 
-After you [create](/docs/containers?topic=containers-file_storage#add_file) or [add existing](/docs/containers?topic=containers-file_storage#existing_file) NFS storage to your cluster, your app's container deployment fails. You see group ID (GID) error messages.
+After you [create](/docs/openshift?topic=openshift-file_storage#add_file) or [add existing](/docs/openshift?topic=openshift-file_storage#existing_file) NFS storage to your cluster, your app's container deployment fails. You see group ID (GID) error messages.
 {: tsSymptoms}
 
 
@@ -41,7 +40,7 @@ While the daemon set is running, new worker nodes that are added to the cluster 
 
 Before you begin:
 
-* [Create persistent storage](/docs/containers?topic=containers-file_storage#add_file).
+* [Create persistent storage](/docs/openshift?topic=openshift-file_storage#add_file).
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 Steps:

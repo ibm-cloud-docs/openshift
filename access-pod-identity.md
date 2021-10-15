@@ -13,7 +13,6 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-
 # Authorizing pods in your cluster to {{site.data.keyword.cloud_notm}} services with IAM trusted profiles
 {: #pod-iam-identity}
 
@@ -43,13 +42,13 @@ Supported infrastructure providers
 
 
 Minimum required permissions
-- **Viewer** [platform](/docs/containers?topic=containers-access_reference#iam_platform) access role and the **Writer** [service](/docs/containers?topic=containers-access_reference#service) access role for the cluster in {{site.data.keyword.cloud_notm}} IAM for **{{site.data.keyword.containershort}}**.
+- **Viewer** [platform](/docs/openshift?topic=openshift-access_reference#iam_platform) access role and the **Writer** [service](/docs/openshift?topic=openshift-access_reference#service) access role for the cluster in {{site.data.keyword.cloud_notm}} IAM for **{{site.data.keyword.containershort}}**.
 * The `iam-identity.profile.create` and `iam-identity.profile.linkToResource` actions for the [IAM identity service](/docs/account?topic=account-iam-service-roles-actions#iam-identity-service).
 
 Supported versions
 
 * The cluster must be [created](/docs/containers?topic=containers-clusters) at {{site.data.keyword.openshiftshort}} version 4.7 or later.
-* To use a cluster that was updated to this version from a previous version, [contact support](/docs/containers?topic=containers-get-help#help-support). Title the request `Enable pod identity` and include the cluster ID, version, and region.
+* To use a cluster that was updated to this version from a previous version, [contact support](/docs/openshift?topic=openshift-get-help#help-support). Title the request `Enable pod identity` and include the cluster ID, version, and region.
 
 
 ## Creating an IAM trusted profile for your cluster in the API

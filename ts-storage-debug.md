@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -12,7 +12,6 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Debugging persistent storage failures
@@ -59,7 +58,7 @@ Review the options to debug persistent storage and find the root causes for fail
     ```
     {: pre}
 
-3. If restarting your pod does not resolve the issue, [reload your worker node](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload).
+3. If restarting your pod does not resolve the issue, [reload your worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
 
 4. Verify that you use the latest {{site.data.keyword.cloud_notm}} and {{site.data.keyword.containerlong_notm}} plug-in version.
     ```sh
@@ -159,7 +158,7 @@ Review the options to debug persistent storage and find the root causes for fail
     2. If the `kubectl` CLI versions on your local machine and your cluster do not match, either [update your cluster](/docs/containers?topic=containers-update) or [install a different CLI version on your local machine](/docs/containers?topic=containers-cs_cli_install#kubectl).
 
 
-8. For {{site.data.keyword.block_storage_is_short}}, [verify that you have the latest version of the add-on](/docs/containers?topic=containers-vpc-block#vpc-addon-update).
+8. For {{site.data.keyword.block_storage_is_short}}, [verify that you have the latest version of the add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).
 
 9. For classic block storage, object storage, and Portworx only: Make sure that you installed the latest Helm chart version for the plug-in.
 
@@ -203,7 +202,7 @@ Review the options to debug persistent storage and find the root causes for fail
         ```
         {: pre}
 
-    4. If a more recent version is available, install this version. For instructions, see [Updating the {{site.data.keyword.cloud_notm}} Block Storage plug-in](/docs/containers?topic=containers-block_storage#update_block) and [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-object_storage#update_cos_plugin).
+    4. If a more recent version is available, install this version. For instructions, see [Updating the {{site.data.keyword.cloud_notm}} Block Storage plug-in](/docs/containers?topic=containers-block_storage#update_block) and [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).
 
 ## Portworx
 {: #ts-portworx-helm}
@@ -216,7 +215,7 @@ Review the options to debug persistent storage and find the root causes for fail
         ```
         {: pre}
 
-    3. If a more recent version is available, install this version. For instructions, see [Updating Portworx in your cluster](/docs/containers?topic=containers-portworx#update_portworx).
+    3. If a more recent version is available, install this version. For instructions, see [Updating Portworx in your cluster](/docs/openshift?topic=openshift-portworx#update_portworx).
 
 
 ## OpenShift Data Foundation 

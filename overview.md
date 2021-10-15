@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Overview
@@ -41,7 +40,7 @@ Containers provide a standard way to package your application's code, configurat
 
 **What is {{site.data.keyword.openshiftshort}}?**
 
-{{site.data.keyword.openshiftshort}} is a Kubernetes container platform that provides a trusted environment to run enterprise workloads. It extends the Kubernetes platform with built-in software to enhance app lifecycle development, operations, and security. With {{site.data.keyword.openshiftshort}}, you can consistently deploy your workloads across hybrid cloud providers and environments. For more information about the differences between the community Kubernetes and {{site.data.keyword.openshiftshort}} cluster offerings, see the [comparison table](/docs/containers?topic=containers-cs_ov#openshift_kubernetes).
+{{site.data.keyword.openshiftshort}} is a Kubernetes container platform that provides a trusted environment to run enterprise workloads. It extends the Kubernetes platform with built-in software to enhance app lifecycle development, operations, and security. With {{site.data.keyword.openshiftshort}}, you can consistently deploy your workloads across hybrid cloud providers and environments. For more information about the differences between the community Kubernetes and {{site.data.keyword.openshiftshort}} cluster offerings, see the [comparison table](/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes).
 
 **What compute host infrastructure does the service offer?**
 
@@ -145,7 +144,7 @@ Deployment
 
   Define update strategies for your app, including the number of pods that you want to add during a rolling update and the number of pods that can be unavailable at a time. When you perform a rolling update, the deployment checks whether the update is working and stops the rollout when failures are detected.
 
-  A deployment is just one type of workload controller that you can use to manage pods. For help choosing among your options, see [What type of Kubernetes objects can I make for my app?](/docs/containers?topic=containers-plan_deploy#object). For more information about deployments, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/){: external}.
+  A deployment is just one type of workload controller that you can use to manage pods. For help choosing among your options, see [What type of Kubernetes objects can I make for my app?](/docs/openshift?topic=openshift-plan_deploy#object). For more information about deployments, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/){: external}.
   
 Pod
 : Every containerized app that is deployed into a cluster is deployed, run, and managed by a Kubernetes resource that is called a pod. Pods represent small deployable units in a Kubernetes cluster and are used to group the containers that must be treated as a single unit. In most cases, each container is deployed in its own pod. However, an app might require a container and other helper containers to be deployed into one pod so that those containers can be addressed by using the same private IP address. For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/pods/){: external}.

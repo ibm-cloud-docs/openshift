@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -12,7 +12,6 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Common issues with worker nodes
@@ -123,7 +122,7 @@ Worker unable to talk to {{site.data.keyword.containerlong_notm}} servers. Pleas
 
 **Description and resolution**:
 
-If you have a firewall, [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/containers?topic=containers-firewall#firewall_outbound).
+If you have a firewall, [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound).
 
 
 
@@ -172,7 +171,7 @@ As the **user**, follow these steps:
 4. Contact the owner of the {{site.data.keyword.cloud_notm}} account and report that the API key owner has insufficient permissions in IBM Cloud infrastructure or might be pending to be deleted.
 
 As the **account owner**, follow these steps:
-1. Review the [required classic permissions in IBM Cloud infrastructure](/docs/containers?topic=containers-access-creds#infra_access) to perform the action that previously failed. For the VPC infrastructure provider, the API key owner must have the **Administrator** platform access role.
+1. Review the [required classic permissions in IBM Cloud infrastructure](/docs/openshift?topic=openshift-access-creds#infra_access) to perform the action that previously failed. For the VPC infrastructure provider, the API key owner must have the **Administrator** platform access role.
 2. Fix the permissions of the API key owner or create a new API key by using the [`ibmcloud oc api-key reset --region <region>`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset) command.
 3. If you or another account admin manually set IBM Cloud infrastructure credentials in your account, run [`ibmcloud oc credential unset --region <region>`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_unset) to remove the credentials from your account.
 

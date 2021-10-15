@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-14"
+lastupdated: "2021-10-15"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Storing data on IBM Cloud Object Storage
@@ -167,9 +166,9 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 
     2. Review the [version changelog](/docs/containers?topic=containers-changelog) to find the changes that are included in the latest patch version.
 
-    3. Apply the latest patch version by reloading your worker node. Follow the instructions in the [ibmcloud oc worker reload command](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload) to gracefully reschedule any running pods on your worker node before you reload your worker node. Note that during the reload, your worker node machine is updated with the latest image and data is deleted if not [stored outside the worker node](/docs/containers?topic=containers-storage_planning#persistent_storage_overview).
+    3. Apply the latest patch version by reloading your worker node. Follow the instructions in the [ibmcloud oc worker reload command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) to gracefully reschedule any running pods on your worker node before you reload your worker node. Note that during the reload, your worker node machine is updated with the latest image and data is deleted if not [stored outside the worker node](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 1. Review the changelog and verify that your [cluster version and architecture are supported](/docs/containers?topic=containers-cos_plugin_changelog).
-2. [Follow the instructions](/docs/containers?topic=containers-helm#install_v3) to install the version 3 Helm client on your local machine..
+2. [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the version 3 Helm client on your local machine..
 
     If you enabled [VRF](/docs/account?topic=account-vrf-service-endpoint#vrf) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) in your {{site.data.keyword.cloud_notm}} account, you can use the private {{site.data.keyword.cloud_notm}} Helm repository to keep your image pull traffic on the private network. If you cannot enable VRF or service endpoints in your account, use the public Helm repository.
     {: note}
@@ -600,7 +599,7 @@ To remove the `ibmc` Helm plugin and the `ibm-object-storage-plugin`:
     :   The maximum number of parallel requests that can be sent to the {{site.data.keyword.cos_full_notm}} service instance to list files in a single directory. All storage classes are set up with a maximum of 20 parallel requests.
     
     `ibm.io/object-store-endpoint`
-    :   The API endpoint to use to access the bucket in your {{site.data.keyword.cos_full_notm}} service instance. The endpoint is automatically set based on the region of your cluster. If you want to access an existing bucket that is located in a different region than the one where your cluster is in, you must [create a custom storage class](/docs/containers?topic=containers-kube_concepts#customized_storageclass) and use the API endpoint for your bucket.
+    :   The API endpoint to use to access the bucket in your {{site.data.keyword.cos_full_notm}} service instance. The endpoint is automatically set based on the region of your cluster. If you want to access an existing bucket that is located in a different region than the one where your cluster is in, you must [create a custom storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use the API endpoint for your bucket.
     
     `ibm.io/object-store-storage-class`
     :   The name of the storage class.
@@ -618,7 +617,7 @@ To remove the `ibmc` Helm plugin and the `ibm-object-storage-plugin`:
     :   The TLS cipher suite that must be used when a connection to {{site.data.keyword.cos_full_notm}} is established via the HTTPS endpoint. The value for the cipher suite must follow the [OpenSSL format](https://www.openssl.org/docs/man1.0.2/man1/ciphers.html){: external}. If your worker nodes run an Ubuntu operating system, your storage classes are set up to use the `AESGCM`cipher suite by default. For worker nodes that run a Red Hat operating system, the `ecdhe_rsa_aes_128_gcm_sha_256` cipher suite is used by default.
 
 
-    For more information about each storage class, see the [storage class reference](#cos_storageclass_reference). If you want to change any of the pre-set values, create your own [customized storage class](/docs/containers?topic=containers-kube_concepts#customized_storageclass).
+    For more information about each storage class, see the [storage class reference](#cos_storageclass_reference). If you want to change any of the pre-set values, create your own [customized storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass).
     {: tip}
 
 5. Decide on a name for your bucket. The name of a bucket must be unique in {{site.data.keyword.cos_full_notm}}. You can also choose to automatically create a name for your bucket by the {{site.data.keyword.cos_full_notm}} plug-in. To organize data in a bucket, you can create subdirectories.
@@ -829,8 +828,8 @@ Create a persistent volume claim (PVC) to provision {{site.data.keyword.cos_full
 {: shortdesc}
 
 Depending on the settings that you choose in your PVC, you can provision {{site.data.keyword.cos_full_notm}} in the following ways:
-- [Dynamic provisioning](/docs/containers?topic=containers-kube_concepts#dynamic_provisioning): When you create the PVC, the matching persistent volume (PV) and the bucket in your {{site.data.keyword.cos_full_notm}} service instance are automatically created.
-- [Static provisioning](/docs/containers?topic=containers-kube_concepts#static_provisioning): You can reference an existing bucket in your {{site.data.keyword.cos_full_notm}} service instance in your PVC. When you create the PVC, only the matching PV is automatically created and linked to your existing bucket in {{site.data.keyword.cos_full_notm}}.
+- [Dynamic provisioning](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning): When you create the PVC, the matching persistent volume (PV) and the bucket in your {{site.data.keyword.cos_full_notm}} service instance are automatically created.
+- [Static provisioning](/docs/openshift?topic=openshift-kube_concepts#static_provisioning): You can reference an existing bucket in your {{site.data.keyword.cos_full_notm}} service instance in your PVC. When you create the PVC, only the matching PV is automatically created and linked to your existing bucket in {{site.data.keyword.cos_full_notm}}.
 
 Before you begin:
 - [Create and prepare your {{site.data.keyword.cos_full_notm}} service instance](#create_cos_service).
@@ -897,7 +896,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     :   If `ibm.io/auto-create-bucket` is set to `true`: Enter the storage class that you want to use for your new bucket.
     :   If `ibm.io/auto-create-bucket` is set to `false`: Enter the storage class that you used to create your existing bucket. 
     :   If you manually created the bucket in your {{site.data.keyword.cos_full_notm}} service instance or you cannot remember the storage class that you used, find your service instance in the {{site.data.keyword.cloud_notm}} dashboard and review the **Class** and **Location** of your existing bucket. Then, use the appropriate [storage class](#cos_storageclass_reference).
-        The {{site.data.keyword.cos_full_notm}} API endpoint that is set in your storage class is based on the region that your cluster is in. If you want to access a bucket that is located in a different region than the one where your cluster is in, you must create a [custom storage class](/docs/containers?topic=containers-kube_concepts#customized_storageclass) and use the appropriate API endpoint for your bucket.
+        The {{site.data.keyword.cos_full_notm}} API endpoint that is set in your storage class is based on the region that your cluster is in. If you want to access a bucket that is located in a different region than the one where your cluster is in, you must create a [custom storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use the appropriate API endpoint for your bucket.
         {: note}
 
 1. Create the PVC in your cluster.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -12,7 +12,6 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Why don't my containers start?
@@ -74,7 +73,7 @@ Your cluster must run a [supported version](/docs/openshift?topic=openshift-open
 First, check for and release individual IP addresses that were not cleanly removed from the Calico IPAM records so that they can be reused by pods in your cluster.
 {: shortdesc}
 
-1. Follow the steps in [Installing and configuring the Calico CLI](/docs/containers?topic=containers-network_policies#cli_install) to download version 3.18 or later of the `calicoctl` client, use the correct Calico configuration for your cluster, and verify that the Calico configuration is working correctly for your targeted cluster. Note that even if you cluster runs an older version of Calico, you can still use `calicoctl` version 3.18 to run the commands in the following steps.
+1. Follow the steps in [Installing and configuring the Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install) to download version 3.18 or later of the `calicoctl` client, use the correct Calico configuration for your cluster, and verify that the Calico configuration is working correctly for your targeted cluster. Note that even if you cluster runs an older version of Calico, you can still use `calicoctl` version 3.18 to run the commands in the following steps.
 
 2. Check for any IP addresses that are incorrectly detected as in use by the Calico IPAM.
     ```sh

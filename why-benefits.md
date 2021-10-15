@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Benefits and service offerings
@@ -63,7 +62,7 @@ Multizone clusters to increase high availability
 
 Highly available masters
 :   Reduce cluster downtime such as during master updates with highly available masters that are provisioned automatically when you create a cluster.
-:   Spread your masters across zones in a [multizone cluster](/docs/containers?topic=containers-ha_clusters#multizone) to protect your cluster from zonal failures.
+:   Spread your masters across zones in a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone) to protect your cluster from zonal failures.
 
 Image security compliance with Vulnerability Advisor
 :   Set up your own repo in our secured Docker private image registry where images are stored and shared by all users in the organization.

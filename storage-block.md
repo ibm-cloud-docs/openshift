@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -13,11 +13,10 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-
 # Storing data on classic IBM Cloud {{site.data.keyword.blockstorageshort}}
 {: #block_storage}
 
-{{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} is persistent, high-performance iSCSI storage that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out whether {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} is the right storage option for you, see [Choosing a storage solution](/docs/containers?topic=containers-storage_planning#choose_storage_solution). For more information about pricing, see [Pricing](https://www.ibm.com/cloud/block-storage/pricing).
+{{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} is persistent, high-performance iSCSI storage that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out whether {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution). For more information about pricing, see [Pricing](https://www.ibm.com/cloud/block-storage/pricing).
 {: shortdesc}
 
 Keep in mind the following requirements when you use the {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} plug-in.
@@ -26,7 +25,7 @@ Keep in mind the following requirements when you use the {{site.data.keyword.clo
 {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} plug-in is available only for standard {{site.data.keyword.openshiftlong_notm}} clusters that are provisioned on classic infrastructure.
 
 
-{{site.data.keyword.blockstorageshort}} instances are specific to a single zone. If you have a multizone cluster, consider [multizone persistent storage options](/docs/containers?topic=containers-storage_planning#persistent_storage_overview).
+{{site.data.keyword.blockstorageshort}} instances are specific to a single zone. If you have a multizone cluster, consider [multizone persistent storage options](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 
 **Supported infrastructure**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic clusters only
 
@@ -126,7 +125,7 @@ For more information, see the following links:
 
 Every storage class specifies the type of block storage that you provision, including available size, IOPS, file system, and the retention policy.  
 
-Make sure to choose your storage configuration carefully to have enough capacity to store your data. After you provision a specific type of storage by using a storage class, you cannot change the type or retention policy for the storage device. However, you can [change the size and the IOPS](#block_change_storage_configuration) if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must [create a new storage instance and copy the data](/docs/containers?topic=containers-kube_concepts#update_storageclass) from the old storage instance to your new one.
+Make sure to choose your storage configuration carefully to have enough capacity to store your data. After you provision a specific type of storage by using a storage class, you cannot change the type or retention policy for the storage device. However, you can [change the size and the IOPS](#block_change_storage_configuration) if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must [create a new storage instance and copy the data](/docs/openshift?topic=openshift-kube_concepts#update_storageclass) from the old storage instance to your new one.
 {: important}
 
 1. List available storage classes in {{site.data.keyword.containerlong}}.
@@ -367,7 +366,7 @@ You can deploy apps that use encrypted volumes by first creating a custom storag
 
 The following steps explain how to create a custom, encrypted storage class that you can use to create multiple encrypted block storage instances with the same configuration. If you want to create an encrypted PVC by using one of the IBM-provided storage classes, you can do this by [referencing the {{site.data.keyword.keymanagementserviceshort}} credentials directly in your PVC](#pvc_encrypt_label).
 
-1. [Decide on a storage configuration](/docs/containers?topic=containers-block_storage#block_predefined_storageclass).
+1. [Decide on a storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass).
 
 1. Create a custom storage class that provisions an encrypted block storage instance by using one of the {{site.data.keyword.IBM_notm}}-provided storage classes as the basis. You can retrieve the details a storage class by running `oc get storageclass <storageclass_name> -o yaml`. The following example is based on the `ibmc-block-retain-bronze` storage class.
     ```yaml
@@ -410,7 +409,7 @@ You can provision encrypted {{site.data.keyword.blockstorageshort}} by creating 
 
 The following steps show how you can reference your {{site.data.keyword.keymanagementserviceshort}} credentials in your PVC to create an encrypted {{site.data.keyword.blockstorageshort}} instance. To create multiple encrypted volumes without specifying the {{site.data.keyword.keymanagementserviceshort}} credentials in each PVC, you can [create a custom, encrypted storage class](#encrypt_custom_sc).
 
-1. Review the provided [{{site.data.keyword.blockstorageshort}} storage classes](#block_storageclass_reference) to determine which storage class best meets your app requirements. If the provided storage classes do not meet your app requirements, you can create your own [customized storage class](/docs/containers?topic=containers-kube_concepts#customized_storageclass).
+1. Review the provided [{{site.data.keyword.blockstorageshort}} storage classes](#block_storageclass_reference) to determine which storage class best meets your app requirements. If the provided storage classes do not meet your app requirements, you can create your own [customized storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass).
 
 2. Create a PVC configuration file that is named `pvc.yaml` and that references the Kubernetes secret where you stored the {{site.data.keyword.keymanagementserviceshort}} service credentials. To create this secret, see [Setting up encryption for {{site.data.keyword.blockstorageshort}}](#block_encryption_setup).
 
@@ -504,14 +503,14 @@ Removing your Kubernetes secret does not revoke access to the volume data. If yo
 ## Adding block storage to apps
 {: #add_block}
 
-Create a persistent volume claim (PVC) to [dynamically provision](/docs/containers?topic=containers-kube_concepts#dynamic_provisioning) block storage for your cluster. Dynamic provisioning automatically creates the matching persistent volume (PV) and orders the actual storage device in your IBM Cloud infrastructure account.
+Create a persistent volume claim (PVC) to [dynamically provision](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning) block storage for your cluster. Dynamic provisioning automatically creates the matching persistent volume (PV) and orders the actual storage device in your IBM Cloud infrastructure account.
 {: shortdesc}
 
 Block storage comes with a `ReadWriteOnce` access mode. You can mount it to only one pod on one worker node in the cluster at a time.
 {: note}
 
 Before you begin:
-- If you have a firewall, [allow egress access](/docs/containers?topic=containers-firewall#vyatta_firewall) for the IBM Cloud infrastructure IP ranges of the zones that your clusters are in so that you can create PVCs.
+- If you have a firewall, [allow egress access](/docs/openshift?topic=openshift-firewall#vyatta_firewall) for the IBM Cloud infrastructure IP ranges of the zones that your clusters are in so that you can create PVCs.
 - [Decide on a pre-defined storage class](#block_predefined_storageclass) or create a [customized storage class](#block_custom_storageclass).
 
 Looking to deploy block storage in a stateful set? For more information, see [Using block storage in a stateful set](#block_statefulset).
@@ -588,7 +587,7 @@ To add block storage:
         `storageClassName`
         :   In the spec section, enter the name of the storage class that you want to use to provision block storage. You can choose to use one of the [IBM-provided storage classes](#block_storageclass_reference) or [create your own storage class](#block_custom_storageclass). If you do not specify a storage class, the PV is created with the default storage class `ibmc-file-bronze`.
 
-    If you want to use a customized storage class, create your PVC with the corresponding storage class name, a valid IOPS, and size. Want to set your own default? See [Changing the default storage class](/docs/containers?topic=containers-kube_concepts#default_storageclass).  
+    If you want to use a customized storage class, create your PVC with the corresponding storage class name, a valid IOPS, and size. Want to set your own default? See [Changing the default storage class](/docs/openshift?topic=openshift-kube_concepts#default_storageclass).  
     {: tip}
 
 2. Create the PVC.
@@ -719,7 +718,7 @@ To add block storage:
 ## Using existing block storage in your cluster
 {: #existing_block}
 
-If you have an existing physical storage device that you want to use in your cluster, you can manually create the PV and PVC to [statically provision](/docs/containers?topic=containers-kube_concepts#static_provisioning) the storage.
+If you have an existing physical storage device that you want to use in your cluster, you can manually create the PV and PVC to [statically provision](/docs/openshift?topic=openshift-kube_concepts#static_provisioning) the storage.
 {: shortdesc}
 
 Before you can start to mount your existing storage to an app, you must retrieve all necessary information for your PV.  
@@ -933,7 +932,7 @@ You cannot deploy two stateful sets at the same time. If you try to create a sta
 
 **How can I create my stateful set in a specific zone?**
 
-In a multizone cluster, you can specify the zone and region where you want to create your stateful set in the `spec.selector.matchLabels` and `spec.template.metadata.labels` section of your stateful set YAML. Alternatively, you can add those labels to a [customized storage class](/docs/containers?topic=containers-kube_concepts#customized_storageclass) and use this storage class in the `volumeClaimTemplates` section of your stateful set.
+In a multizone cluster, you can specify the zone and region where you want to create your stateful set in the `spec.selector.matchLabels` and `spec.template.metadata.labels` section of your stateful set YAML. Alternatively, you can add those labels to a [customized storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use this storage class in the `volumeClaimTemplates` section of your stateful set.
 
 **Can I delay binding of a PV to my stateful pod until the pod is ready?**
 
@@ -1312,7 +1311,7 @@ For questions about billing and to find the steps for how to use the {{site.data
     ```
     {: screen}
 
-2. If you want to change the IOPS and the size for your block storage, edit the IOPS in the `metadata.labels.IOPS` section of your PV first. You can change to a lower or greater IOPS value. Make sure that you enter an IOPS that is supported for the storage type that you have. For example, if you have endurance block storage with 4 IOPS, you can change the IOPS to either 2 or 10. For more supported IOPS values, see [Deciding on your block storage configuration](/docs/containers?topic=containers-block_storage#block_predefined_storageclass).
+2. If you want to change the IOPS and the size for your block storage, edit the IOPS in the `metadata.labels.IOPS` section of your PV first. You can change to a lower or greater IOPS value. Make sure that you enter an IOPS that is supported for the storage type that you have. For example, if you have endurance block storage with 4 IOPS, you can change the IOPS to either 2 or 10. For more supported IOPS values, see [Deciding on your block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass).
 
     ```sh
     oc edit pv <pv_name>
@@ -1322,7 +1321,7 @@ For questions about billing and to find the steps for how to use the {{site.data
     To change the IOPS from the CLI, you must also change the size of your block storage. If you want to change only the IOPS, but not the size, you must [request the IOPS change from the console](/docs/BlockStorage?topic=BlockStorage-adjustingIOPS).
     {: note}
 
-3. Edit the PVC and add the new size in the `spec.resources.requests.storage` section of your PVC. You can change to a greater size only up to the maximum capacity that is set by your storage class. You cannot downsize your existing storage. To see available sizes for your storage class, see [Deciding on the block storage configuration](/docs/containers?topic=containers-block_storage#block_predefined_storageclass).
+3. Edit the PVC and add the new size in the `spec.resources.requests.storage` section of your PVC. You can change to a greater size only up to the maximum capacity that is set by your storage class. You cannot downsize your existing storage. To see available sizes for your storage class, see [Deciding on the block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass).
 
     ```sh
     oc edit pvc <pvc_name>
@@ -1356,7 +1355,7 @@ For questions about billing and to find the steps for how to use the {{site.data
 
     Mounted pods are returned in the format: `<pod_name>: <pvc_name>`.
 
-6. If your PVC is not mounted by a pod, [create a pod or deployment and mount the PVC](/docs/containers?topic=containers-block_storage#add_block). If your PVC is mounted by a pod, continue with the next step.
+6. If your PVC is not mounted by a pod, [create a pod or deployment and mount the PVC](/docs/openshift?topic=openshift-block_storage#add_block). If your PVC is mounted by a pod, continue with the next step.
 
 7. Verify that the size and IOPS are changed in the **Labels** section of your CLI output. This process might take a few minutes to complete.
 
@@ -1473,7 +1472,7 @@ A duplicate has the same data as the original storage instance at the point in t
 ### Backing up data to {{site.data.keyword.cos_full}}
 {: #block-cos-backup}
 
-You can use the [**ibm-backup-restore**](/docs/containers?topic=containers-utilities#backup-restore-pvc) Helm chart to spin up a backup and restore pod in your cluster.
+You can use the [**ibm-backup-restore**](/docs/openshift?topic=openshift-utilities#backup-restore-pvc) Helm chart to spin up a backup and restore pod in your cluster.
 {: shortdesc}
 
 This pod contains a script to run a one-time or periodic backup for any persistent volume claim (PVC) in your cluster. Data is stored in your {{site.data.keyword.cos_full}} instance that you set up in a zone.
@@ -1602,7 +1601,7 @@ You can create a customized storage class and use the storage class in your PVC.
 
 {{site.data.keyword.openshiftlong_notm}} provides [pre-defined storage classes](#block_storageclass_reference) to provision block storage with a particular tier and configuration. In some cases, you might want to provision storage with a different configuration that is not covered in the pre-defined storage classes. You can use the examples in this topic to find sample customized storage classes.
 
-To create your customized storage class, see [Customizing a storage class](/docs/containers?topic=containers-kube_concepts#customized_storageclass). Then, [use your customized storage class in your PVC](#add_block).
+To create your customized storage class, see [Customizing a storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass). Then, [use your customized storage class in your PVC](#add_block).
 
 ### Creating topology-aware storage
 {: #topology_yaml}

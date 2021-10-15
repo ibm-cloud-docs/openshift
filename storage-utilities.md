@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # IBM Cloud storage utilities
@@ -33,7 +32,7 @@ The {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in creates pods 
 Looking for instructions for how to update or remove the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in? See [Updating the plug-in](#update_block_attacher) and [Removing the plug-in](#remove_block_attacher).
 {: tip}
 
-1. [Follow the instructions](/docs/containers?topic=containers-helm#install_v3) to install the Helm client version 3 on your local machine.
+1. [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the Helm client version 3 on your local machine.
 
 2. Update the Helm repo to retrieve the latest version of all Helm charts in this repo.
 
@@ -222,7 +221,7 @@ Use this option if you want to add different block storage configurations, add b
     ```
     {: pre}
 
-2. Review step 3 and 4 in [Deciding on your block storage configuration](/docs/containers?topic=containers-block_storage#block_predefined_storageclass) to choose the type, size, and number of IOPS for the block storage device that you want to add to your non-SDS worker node.    
+2. Review step 3 and 4 in [Deciding on your block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass) to choose the type, size, and number of IOPS for the block storage device that you want to add to your non-SDS worker node.    
 
 3. Create the block storage device in the same zone that your non-SDS worker node is in.
 
@@ -457,7 +456,7 @@ To attach the block storage device to a non-SDS worker node, you must create a p
 
     The block storage device is successfully attached when the **ibm.io/dm** is set to a device ID, such as `/dev/dm/1`, and you can see **ibm.io/attachstatus=attached** in the **Annotations** section of your CLI output.
 
-If you want to detach a volume, delete the PV. Detached volumes are still authorized to be accessed by a specific worker node and are attached again when you create a new PV with the {{site.data.keyword.cloud_notm}} Block Volume Attacher storage class to attach a different volume to the same worker node. To avoid attaching the old detached volume again, unauthorize the worker node to access the detached volume by using the `ibmcloud sl block access-revoke` command. Detaching the volume does not remove the volume from your IBM Cloud infrastructure account. To cancel the billing for your volume, you must manually [remove the storage from your IBM Cloud infrastructure account](/docs/containers?topic=containers-block_storage#cleanup_block).
+If you want to detach a volume, delete the PV. Detached volumes are still authorized to be accessed by a specific worker node and are attached again when you create a new PV with the {{site.data.keyword.cloud_notm}} Block Volume Attacher storage class to attach a different volume to the same worker node. To avoid attaching the old detached volume again, unauthorize the worker node to access the detached volume by using the `ibmcloud sl block access-revoke` command. Detaching the volume does not remove the volume from your IBM Cloud infrastructure account. To cancel the billing for your volume, you must manually [remove the storage from your IBM Cloud infrastructure account](/docs/openshift?topic=openshift-block_storage#cleanup_block).
 {: note}
 
 
@@ -473,7 +472,7 @@ If you want to detach a volume, delete the PV. Detached volumes are still author
 You can attach a volume to one worker node only. Make sure that the volume is in the same zone as the worker node for the attachment to succeed.
 {: note}
 
-You can also attach, detach, and list the volume attachments of your worker nodes by using the CLI. For more information, see the [storage CLI reference](/docs/containers?topic=containers-kubernetes-service-cli#cs_storage).
+You can also attach, detach, and list the volume attachments of your worker nodes by using the CLI. For more information, see the [storage CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage).
 {: tip}
 
 The instructions in this topic are available for VPC worker nodes only. If you want to attach raw, unformatted block storage to a classic worker node, you must install the [{{site.data.keyword.cloud_notm}} Block Storage attacher plug-in](#block_storage_attacher).
@@ -831,8 +830,8 @@ To back up or restore data to {{site.data.keyword.cos_full_notm}}, you must [set
 Create and configure an {{site.data.keyword.cos_full_notm}} service instance to serve as the repository for the data that you want to back up.
 {: shortdesc}
 
-1. Create an [{{site.data.keyword.cos_full_notm}} service instance](/docs/containers?topic=containers-object_storage#create_cos_service) that uses HMAC credentials.
-2. Store your [{{site.data.keyword.cos_full_notm}} credentials in a Kubernetes secret](/docs/containers?topic=containers-object_storage#create_cos_secret).
+1. Create an [{{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-object_storage#create_cos_service) that uses HMAC credentials.
+2. Store your [{{site.data.keyword.cos_full_notm}} credentials in a Kubernetes secret](/docs/openshift?topic=openshift-object_storage#create_cos_secret).
 3. Create your first {{site.data.keyword.cos_full_notm}} bucket.
     1. In the navigation on the service details page, click **Buckets**.
     2. Click **Create bucket**. A dialog box is displayed.
@@ -854,7 +853,7 @@ You can use the {{site.data.keyword.cloud_notm}} Backup Restore Helm chart to ba
 {: shortdesc}
 
 Before you begin:
-- Make sure that you have a PVC that you can back up or restore data to. For more information about how to create a PVC, see [Adding file storage to apps](/docs/containers?topic=containers-file_storage#add_file) and [Adding block storage to apps](/docs/containers?topic=containers-block_storage#add_block).
+- Make sure that you have a PVC that you can back up or restore data to. For more information about how to create a PVC, see [Adding file storage to apps](/docs/openshift?topic=openshift-file_storage#add_file) and [Adding block storage to apps](/docs/openshift?topic=openshift-block_storage#add_block).
 - If you want to back up a block storage PVC, make sure that your PVC is not mounted to an app. Block storage is mounted with a RWO access mode. This access allows only one pod to be mounted to the block storage at a time. To back up your data, you must remove the app pod that mounts the storage. To check whether a pod is mounted to your PVC, run the following command.
 
     ```sh
@@ -863,7 +862,7 @@ Before you begin:
     {: pre}
 
 - [Retrieve your {{site.data.keyword.cos_full_notm}} service credentials, the bucket name, and the bucket hostname](#backup_restore_setup_object_storage).
-- [Follow the instructions](/docs/containers?topic=containers-helm#install_v3) to install the Helm client on your local machine and set up the {{site.data.keyword.cloud_notm}} Helm chart repositories.
+- [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the Helm client on your local machine and set up the {{site.data.keyword.cloud_notm}} Helm chart repositories.
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 You can deploy the `ibm-storage-backup` pod or the `ibm-storage-restore` pod by either editing and applying the `values.yaml` file of the Helm chart, or by running the `helm install` command from the CLI.
@@ -1204,7 +1203,7 @@ When an alert is triggered, review the alert details in {{site.data.keyword.mon_
 
 
 * [Troubleshooting persistent storage volumes](/docs/containers?topic=containers-debug_storage_file).
-* [Troubleshooting worker nodes](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload).
+* [Troubleshooting worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
 * [Troubleshooting apps](/docs/containers?topic=containers-debug_apps).
 * [Troubleshooting clusters](/docs/containers?topic=containers-debug_clusters).
 * [Open a support case](/docs/get-support?topic=get-support-using-avatar).

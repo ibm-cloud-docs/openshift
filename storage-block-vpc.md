@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-14"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -13,16 +13,15 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-
 # Storing data on {{site.data.keyword.block_storage_is_short}}
 {: #vpc-block}
 
 [{{site.data.keyword.block_storage_is_short}}](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption) provides hypervisor-mounted, high-performance data storage for your virtual server instances that you can provision within a VPC.
 {: shortdesc}
 
-You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.block_storage_is_short}} is the right storage option for you, see [Choosing a storage solution](/docs/containers?topic=containers-storage_planning#choose_storage_solution). For pricing information, see [Pricing for {{site.data.keyword.block_storage_is_short}}](https://www.ibm.com/cloud/vpc/pricing).
+You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.block_storage_is_short}} is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution). For pricing information, see [Pricing for {{site.data.keyword.block_storage_is_short}}](https://www.ibm.com/cloud/vpc/pricing).
 
-The {{site.data.keyword.block_storage_is_short}} add-on is installed and enabled by default on VPC clusters. Later, you can disable or reenable the add-on by using the [`addon disable`](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_addon_disable) or [`addon enable`](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_addon_enable) command in the CLI. PVC creation and app deployment are not disrupted when the add-on is disabled. Existing volumes and data are not impacted.
+The {{site.data.keyword.block_storage_is_short}} add-on is installed and enabled by default on VPC clusters. Later, you can disable or reenable the add-on by using the [`addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable) or [`addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable) command in the CLI. PVC creation and app deployment are not disrupted when the add-on is disabled. Existing volumes and data are not impacted.
 {: note}
 
 ## Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.block_storage_is_short}}
@@ -430,7 +429,7 @@ You can attach a volume to one worker node only. Make sure that the volume is in
 You can update the {{site.data.keyword.block_storage_is_short}} add-on by disabling and re-enabling the add-on in your cluster. When you disable the add-on, PVC creation and app deployment are not disrupted. Existing volumes and data are not impacted.
 {: shortdesc}
 
-As of 26 July 2021, version 2.0.3 of the Block Storage for VPC add-on is unsupported. Version 3.0.0 is deprecated and becomes unsupported on or after 26 August 2021. If you have a deprecated or unsupported version of the add-on installed in your cluster, update the add-on to version 3.0.1 or 4.0. To update the Block Storage for VPC add-on in your cluster, disable the add-on and then re-enable it. You might see a warning that resources or data might be deleted, however, note that existing volumes and data are not impacted. For more information, see [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/containers?topic=containers-vpc-block#vpc-addon-update).
+As of 26 July 2021, version 2.0.3 of the Block Storage for VPC add-on is unsupported. Version 3.0.0 is deprecated and becomes unsupported on or after 26 August 2021. If you have a deprecated or unsupported version of the add-on installed in your cluster, update the add-on to version 3.0.1 or 4.0. To update the Block Storage for VPC add-on in your cluster, disable the add-on and then re-enable it. You might see a warning that resources or data might be deleted, however, note that existing volumes and data are not impacted. For more information, see [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).
 {: important}
 
 1. Check to see if an update is available. If an update is available, the plug-in version is flagged with an asterisk and the latest version is shown. Note the latest version as this value is used later.
@@ -532,7 +531,7 @@ Use {{site.data.keyword.keymanagementservicelong}} to create a private root key 
     6. Select the **Reader** service access role and click **Authorize**.
     
 
-5. [Decide if you want to store the {{site.data.keyword.keymanagementserviceshort}} root key CRN in a customized storage class or in a Kubernetes secret](/docs/containers?topic=containers-vpc-block#vpc-customize-default). Then, follow the steps to create a customized storage class or a Kubernetes secret.
+5. [Decide if you want to store the {{site.data.keyword.keymanagementserviceshort}} root key CRN in a customized storage class or in a Kubernetes secret](/docs/openshift?topic=openshift-vpc-block#vpc-customize-default). Then, follow the steps to create a customized storage class or a Kubernetes secret.
 
     Example customized storage class.
     ```yaml
@@ -910,7 +909,7 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
 ### Enforcing base64 encoding for the {{site.data.keyword.keymanagementserviceshort}} root key CRN
 {: #static-secret}
 
-1. As the cluster admin, create a Kubernetes secret that includes the base64 encoded value for your {{site.data.keyword.keymanagementserviceshort}} root key CRN. To retrieve the root key CRN, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](/docs/containers?topic=containers-vpc-block#vpc-block-encryption).
+1. As the cluster admin, create a Kubernetes secret that includes the base64 encoded value for your {{site.data.keyword.keymanagementserviceshort}} root key CRN. To retrieve the root key CRN, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-encryption).
 
     ```yaml
     apiVersion: v1
