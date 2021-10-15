@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-14"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos, networking
 
@@ -60,8 +60,8 @@ Because routes and Ingress offer similar capabilities, both load balancing solut
 
 The following table compares the features of each app exposure method.
 
-|Characteristics|NodePort|LoadBalancer (Classic - NLB)|LoadBalancer (VPC load balancer)|Ingress controller|Route|
-|---------------|------|--------|---|-----------|
+|Characteristics| NodePort | LoadBalancer (Classic - NLB)| LoadBalancer (VPC load balancer) |Ingress controller|Route|
+| --- | --- | --- | --- | --- | --- |
 |Stable external IP| |Yes| |Yes|Yes|
 |External hostname| |Yes|Yes|Yes|Yes|
 |SSL termination| |Yes*|Yes*|Yes|Yes|
