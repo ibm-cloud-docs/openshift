@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-18"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, satellite
 
@@ -213,7 +213,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     osdDevicePaths        invalid   
     workerNodes           all   
     ocsUpgrade            false   
-    odfDeploy             false   
+    odfDeploy             true   
     monSize               20Gi   
     numOfOsd              1   
     monDevicePaths        invalid   
@@ -222,18 +222,18 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: screen}
 
-1. Enable the `openshift-data-foundation` add-on. If you also want to deploy ODF and create your storage cluster from the CLI, you can specify the `"odfDeploy=true"` flag. If you want to override any of the default parameters, specify the `--param "key=value"` flag for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
+1. Enable the `openshift-data-foundation` add-on. If you want to override any of the default parameters, specify the `--param "key=value"` flag for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
 
     Example command for deploying the ODF add-on only.
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version 4.7.0
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version 4.7.0 --param "odfDeploy=false"
     ```
     {: pre}
 
     Example command for deploying the ODF and creating a storage cluster while overriding the default parameter.
 
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "odfDeploy=true" --param "osdSize=500Gi" --param "monStorageClassName=<provider-storage-class>" --param "monStorageClassName=<provider-storage-class>"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "osdSize=500Gi" --param "monStorageClassName=<provider-storage-class>" --param "monStorageClassName=<provider-storage-class>"
     ```
     {: pre}
 
@@ -419,7 +419,7 @@ To create an ODF storage cluster in your {{site.data.keyword.satelliteshort}} cl
 If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](#odf-create-cos-sat), and created the Kubernetes secret in your cluster. When you create the ODF CRD in your cluster, ODF looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store that uses your {{site.data.keyword.cos_short}} HMAC credentials.
 {: note}
 
-If you enabled the add-on from the CLI and did not include the `odfDeploy=true` parameter, complete the following steps to create a storage cluster CRD to deploy ODF. If you enabled the add-on from the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or from the CLI and set `odfDeploy=true`, you don't need to create a CRD.
+If you enabled the add-on from the CLI and set the `odfDeploy=false` parameter, complete the following steps to create a storage cluster CRD to deploy ODF. If you enabled the add-on from the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or from the CLI and did not set `odfDeploy=false`, you don't need to create a CRD.
 
 1. Create a custom resource called `OcsCluster`. Save one of the following custom resource definition files on your local machine and edit it to include the name of the custom storage class that you created earlier as the `monStorageClassName` and `osdStorageClassName` parameters. For more information about the `OcsCluster` parameters, see the [parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-param-ref).
 

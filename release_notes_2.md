@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-15"
+lastupdated: "2021-10-18"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -40,6 +40,12 @@ New troubleshooting topic
 
 {{site.data.keyword.cloud_notm}} HPCS Router add-on
 :   The [{{site.data.keyword.cloud_notm}} HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) version 4.5 is deprecated.
+
+
+OpenShift Data Foundation
+:   The default behavior for the [ODF add-on](/docs/openshift?topic=openshift-ocs-storage-prep) has changed. Previously, when you deployed the add-on by using the CLI, the default value of the `odfDeploy` parameter was `false` and so only the add-on was installed. However, now the default value of `odfDeploy` is `true`, so when you enable the add-on, the add-on automatically creates storage resources in your cluster. 
+
+
 
 ### 13 October 2021
 {: #13oct2021}
