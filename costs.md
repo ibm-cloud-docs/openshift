@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-15"
+lastupdated: "2021-10-18"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -223,7 +223,7 @@ The following steps present a general process to manage costs for your {{site.da
 2. Plan the type of cluster that you need.
     * [Size your cluster to support your workloads](/docs/openshift?topic=openshift-strategy#sizing), including the network bandwidth that your workloads need.
     * [Decide the cluster environment that you want](/docs/openshift?topic=openshift-strategy#kube_env).
-    * [Consider the availability that you want for your cluster](/docs/containers?topic=containers-ha_clusters). For example, a basic high availability setup is one multizone cluster with three worker nodes in each of three zones, for a minimum total of nine worker nodes.
+    * [Consider the availability that you want for your cluster](/docs/containers?topic=containers-ha_clusters). For example, a basic high availability setup is one multizone cluster with two worker nodes in each of three zones, for a minimum total of 6 worker nodes.
 3. Check out other {{site.data.keyword.cloud_notm}} services, add-ons, operators, and other third-party software that you might use that can increase your cost. To get an idea of what other costs clusters typically incur, review [Understanding costs for your clusters](#costs-for-clusters).
 4. [Estimate your costs](/docs/billing-usage?topic=billing-usage-cost#cost) and review detailed pricing information for the service, see [{{site.data.keyword.openshiftlong_notm}} Pricing plans](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift#pricing){: external}.
 5. Manage the lifecycle of your cluster to control costs.

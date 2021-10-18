@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -62,7 +62,7 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
     {: screen}
 
 3. Verify that the new VPC load balancer that exposes the router has **Provision status** of `active` and an **Operating status** of `online`. Also, verify that the **Subnets** list now includes subnets for each zone of your cluster.
-    ```
+    ```sh
     ibmcloud is load-balancers
     ```
     {: pre}

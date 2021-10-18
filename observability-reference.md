@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-15"
+lastupdated: "2021-10-18"
 
 keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logging config, monitoring config
 
@@ -44,14 +44,11 @@ ibmcloud ob logging agent discover --cluster CLUSTER [--instance LOGGING_INSTANC
 - **Viewer** platform access role for {{site.data.keyword.la_full_notm}}
 
 **Command options**:
-<dl>
-<dt><code>--cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster where you manually created a {{site.data.keyword.la_short}} configuration without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.</dd>
+`--cluster CLUSTER`
+:   The name or ID of the cluster where you manually created a {{site.data.keyword.la_short}} configuration without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.
 
-<dt><code>--instance <em>LOGGING_INSTANCE</em></code></dt>
-<dd>The ID or name of the {{site.data.keyword.la_full_notm}} service instance that you use in your logging configuration. This value is optional. If you do not provide this value, the {{site.data.keyword.la_full_notm}} service instance is automatically retrieved.</dd>
-
-</dl>
+`--instance LOGGING_INSTANCE`
+:   The ID or name of the {{site.data.keyword.la_full_notm}} service instance that you use in your logging configuration. This value is optional. If you do not provide this value, the {{site.data.keyword.la_full_notm}} service instance is automatically retrieved.
 
 
 
@@ -79,65 +76,65 @@ ibmcloud ob logging config create --cluster CLUSTER --instance LOGGING_INSTANCE 
 - **Editor** platform access role and **Manager** server access role for {{site.data.keyword.la_full_notm}}
 
 **Command options**:
-<dl>
-<dt><code>--cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster for which you want to create a logging configuration for {{site.data.keyword.la_full_notm}}. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.</dd>
 
-<dt><code>--instance <em>LOGGING_INSTANCE</em></code></dt>
-<dd>The ID or name of the {{site.data.keyword.la_full_notm}} service instance that you want to use to create the logging configuration. The service instance must be in the same {{site.data.keyword.cloud_notm}} account as your cluster, but can be in a different resource group or region than your cluster. To create a service instance, follow the steps in [Provision an instance](/docs/log-analysis?topic=log-analysis-provision). This value is required.</dd>
+`--cluster CLUSTER`
+:   The name or ID of the cluster for which you want to create a logging configuration for {{site.data.keyword.la_full_notm}}. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.
 
-<dt><code>--logdna-ingestion-key <em>INGESTION_KEY</em></code></dt>
-<dd>The {{site.data.keyword.la_short}} ingestion key that you want to use for your configuration. This value is optional. If you do not specify this option, the latest ingestion key is automatically retrieved.   </dd>
+`--instance LOGGING_INSTANCE`
+:   The ID or name of the {{site.data.keyword.la_full_notm}} service instance that you want to use to create the logging configuration. The service instance must be in the same {{site.data.keyword.cloud_notm}} account as your cluster, but can be in a different resource group or region than your cluster. To create a service instance, follow the steps in [Provision an instance](/docs/log-analysis?topic=log-analysis-provision). This value is required.
 
-<dt><code>--private-endpoint</code><dt>
-<dd>When you add this option to your command, the private cloud service endpoint is used to connect to {{site.data.keyword.la_full_notm}}. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option. For more information, see worker communication to other services and networks in <a href="/docs/openshift?topic=openshift-plan_clusters#worker-services-onprem">clusters</a>. </dd>
+`--logdna-ingestion-key INGESTION_KEY`
+:   The {{site.data.keyword.la_short}} ingestion key that you want to use for your configuration. This value is optional. If you do not specify this option, the latest ingestion key is automatically retrieved.   
 
-</dl>
+`--private-endpoint
+:   When you add this option to your command, the private cloud service endpoint is used to connect to {{site.data.keyword.la_full_notm}}. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option. For more information, see worker communication to other services and networks in [clusters](/docs/openshift?topic=openshift-plan_clusters#worker-services-onprem). 
 
-<strong>Example</strong>:
-<code></code>`
+
+
+Example command
+```sh
 ibmcloud ob logging config create --cluster mycluster --instance mylogna
-<code></code>`
+```
 {: pre}
 
-### <code>ibmcloud ob logging config delete</code>
+### `ibmcloud ob logging config delete`
 {: #logging_config_delete}
 
 Delete a {{site.data.keyword.la_short}} configuration from your cluster.
 {: shortdesc}
 
 
-To remove logging configurations that you manually set up without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you must first make this configuration available to the plug-in by using the <a href="#logging_agent_discover"><code>ibmcloud ob logging agent discover</code></a> command.
+To remove logging configurations that you manually set up without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you must first make this configuration available to the plug-in by using the `ibmcloud ob logging agent discover` [command](#logging_agent_discover).
 {: note}
 
-When you delete the logging configuration, the components that are deleted depend on how you created the logging configuration. For logging configurations that were created with the <code>ibmcloud ob logging config create</code> command, the daemon set for the {{site.data.keyword.la_short}} agent, the configmap, and secret are removed from your cluster, and pod logs are no longer sent to your {{site.data.keyword.la_full_notm}} service instance. Logging configurations that you manually created and made visible to the plug-in by using the <code>ibmcloud ob logging agent discover</code> command, only the configmap is removed. Your daemon set, secret, and the {{site.data.keyword.la_short}} agent are still deployed to your cluster and you must manually remove them. Because the configmap is removed, pod logs are no longer sent to your {{site.data.keyword.la_full_notm}} service instance. Independent of how you created the configuration, existing log data is still available in {{site.data.keyword.la_full_notm}} until your selected retention period ends.  
+When you delete the logging configuration, the components that are deleted depend on how you created the logging configuration. For logging configurations that were created with the `ibmcloud ob logging config create` command, the daemon set for the {{site.data.keyword.la_short}} agent, the configmap, and secret are removed from your cluster, and pod logs are no longer sent to your {{site.data.keyword.la_full_notm}} service instance. Logging configurations that you manually created and made visible to the plug-in by using the `ibmcloud ob logging agent discover` command, only the configmap is removed. Your daemon set, secret, and the {{site.data.keyword.la_short}} agent are still deployed to your cluster and you must manually remove them. Because the configmap is removed, pod logs are no longer sent to your {{site.data.keyword.la_full_notm}} service instance. Independent of how you created the configuration, existing log data is still available in {{site.data.keyword.la_full_notm}} until your selected retention period ends.  
 {: important}
 
 
-<code></code>`
+```sh
 ibmcloud ob logging config delete --cluster CLUSTER --instance LOGGING_INSTANCE
-<code></code>`
+```
 {: pre}
 
-<strong>Supported infrastructure provider</strong>:
+**Supported infrastructure provider**:
 * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
-<strong>Minimum required permissions</strong>:
-- <strong>Administrator</strong> platform access role and <strong>Manager</strong> service access role for the <code>ibm-observe</code> Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
-- <strong>Viewer</strong> platform access role for {{site.data.keyword.la_full_notm}}
+**Minimum required permissions**:
+- **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
+- **Viewer** platform access role for {{site.data.keyword.la_full_notm}}
 
-<strong>Command options</strong>:
-<dl>
-<dt><code>--cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster for which you want to delete an existing {{site.data.keyword.la_short}} configurations. To retrieve the cluster name or ID, run `ibmcloud oc clusters`. This value is required.</dd>
+**Command options**:
 
-<dt><code>--instance <em>LOGGING_INSTANCE</em></code></dt>
-<dd>The ID or name of the {{site.data.keyword.la_full_notm}} service instance that you used in your logging configuration. To retrieve the service instance name, run `ibmcloud resource service-instances`. This value is required. </dd>
+`--cluster CLUSTER`
+:   The name or ID of the cluster for which you want to delete an existing {{site.data.keyword.la_short}} configurations. To retrieve the cluster name or ID, run `ibmcloud oc clusters`. This value is required.
 
-</dl>
+`--instance LOGGING_INSTANCE`
+:   The ID or name of the {{site.data.keyword.la_full_notm}} service instance that you used in your logging configuration. To retrieve the service instance name, run `ibmcloud resource service-instances`. This value is required. 
 
-**Example**:
+
+
+Example command
 ```sh
 ibmcloud ob logging config delete --cluster mycluster --instance mylogginginstance
 ```
@@ -167,11 +164,11 @@ ibmcloud ob logging config list --cluster CLUSTER
 - **Viewer** platform access role for {{site.data.keyword.la_full_notm}}
 
 **Command options**:
-<dl>
-<dt><code>--cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster for which you want to list existing {{site.data.keyword.la_short}} configurations. This value is required.</dd>
 
-</dl>
+`--cluster CLUSTER`
+:   The name or ID of the cluster for which you want to list existing {{site.data.keyword.la_short}} configurations. This value is required.
+
+
 
 
 
@@ -198,18 +195,18 @@ ibmcloud ob logging config enable public-endpoint|private-endpoint --cluster CLU
 - **Editor** platform access role and **Manager** server access role for {{site.data.keyword.la_full_notm}}
 
 **Command options**:
-<dl>
 
-<dt><code>public-endpoint|private-endpoint</code></dt>
-<dd>Enter <code>public-endpoint</code> to use the public cloud service endpoint of your {{site.data.keyword.la_full_notm}} service instance, or <code>private-endpoint</code> to use the private cloud service endpoint to send logs from your cluster. This value is required. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option.  </dd>
 
-<dt><code>--cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster for which you want to enable the private or public cloud service endpoint to connect to your {{site.data.keyword.la_short}} service instance. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.</dd>
+`public-endpoint|private-endpoint`
+:   Enter `public-endpoint` to use the public cloud service endpoint of your {{site.data.keyword.la_full_notm}} service instance, or `private-endpoint` to use the private cloud service endpoint to send logs from your cluster. This value is required. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option.  
 
-<dt><code>--instance <em>LOGGING_INSTANCE</em></code></dt>
-<dd>The ID or name of the {{site.data.keyword.la_full_notm}} service instance to which you want to connect by using the public or private cloud service endpoint. To retrieve the name, run `ibmcloud resource service-instances`. This value is required.</dd>
+`--cluster CLUSTER`
+:   The name or ID of the cluster for which you want to enable the private or public cloud service endpoint to connect to your {{site.data.keyword.la_short}} service instance. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.
 
-</dl>
+`--instance LOGGING_INSTANCE`
+:   The ID or name of the {{site.data.keyword.la_full_notm}} service instance to which you want to connect by using the public or private cloud service endpoint. To retrieve the name, run `ibmcloud resource service-instances`. This value is required.
+
+
 
 ### `ibmcloud ob logging config replace`
 {: #logging_config_replace}
@@ -238,20 +235,20 @@ ibmcloud ob logging config replace --cluster CLUSTER --instance LOGGING_INSTANCE
 - **Editor** platform access role and **Manager** server access role for {{site.data.keyword.la_full_notm}}
 
 **Command options**:
-<dl>
-<dt><code>--cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster for which you want to change the {{site.data.keyword.la_full_notm}} ingestion key or service instance that you use in your {{site.data.keyword.la_short}} configuration. This value is required.</dd>
 
-<dt><code>--instance <em>LOGGING_INSTANCE</em></code></dt>
-<dd>The ID or name of the {{site.data.keyword.la_full_notm}} service instance for which you want to change the ingestion key, or the {{site.data.keyword.la_full_notm}} service instance that you want to replace. To retrieve the name, run `ibmcloud ob logging config list --cluster <cluster_name_or_ID>`. This value is required.</dd>
+`--cluster CLUSTER`
+:   The name or ID of the cluster for which you want to change the {{site.data.keyword.la_full_notm}} ingestion key or service instance that you use in your {{site.data.keyword.la_short}} configuration. This value is required.
 
-<dt><code>--new-instance <em>LOGGING_INSTANCE_NEW</em></code></dt>
-<dd>If you want to replace the {{site.data.keyword.la_full_notm}} service instance that you use in your {{site.data.keyword.la_short}} configuration, enter the ID or name of the new {{site.data.keyword.la_full_notm}} service instance that you want to use. This value is required if you want to replace the {{site.data.keyword.la_full_notm}} service instance. If you want to replace the ingestion key, do not include this command option.</dd>
+`--instance LOGGING_INSTANCE`
+:   The ID or name of the {{site.data.keyword.la_full_notm}} service instance for which you want to change the ingestion key, or the {{site.data.keyword.la_full_notm}} service instance that you want to replace. To retrieve the name, run `ibmcloud ob logging config list --cluster <cluster_name_or_ID>`. This value is required.
 
-<dt><code>--logdna-ingestion-key <em>INGESTION_KEY</em></code></dt>
-<dd>The {{site.data.keyword.la_short}} ingestion key that you want to use for your configuration. For information about how to retrieve the ingestion key, see [Get the ingestion key through the {{site.data.keyword.cloud_notm}} UI](/docs/log-analysis?topic=log-analysis-ingestion_key#ibm_cloud_ui). This value is required if you want to replace the ingestion key, and optional if you want to replace the {{site.data.keyword.la_full_notm}} service instance. If you do not provide the ingestion key when replacing the {{site.data.keyword.la_full_notm}} service instance, the ingestion key that was last added is retrieved automatically.</dd>
+`--new-instance LOGGING_INSTANCE_NEW`
+:   If you want to replace the {{site.data.keyword.la_full_notm}} service instance that you use in your {{site.data.keyword.la_short}} configuration, enter the ID or name of the new {{site.data.keyword.la_full_notm}} service instance that you want to use. This value is required if you want to replace the {{site.data.keyword.la_full_notm}} service instance. If you want to replace the ingestion key, do not include this command option.
 
-</dl>
+`--logdna-ingestion-key INGESTION_KEY`
+:   The {{site.data.keyword.la_short}} ingestion key that you want to use for your configuration. For information about how to retrieve the ingestion key, see [Get the ingestion key through the {{site.data.keyword.cloud_notm}} UI](/docs/log-analysis?topic=log-analysis-ingestion_key#ibm_cloud_ui). This value is required if you want to replace the ingestion key, and optional if you want to replace the {{site.data.keyword.la_full_notm}} service instance. If you do not provide the ingestion key when replacing the {{site.data.keyword.la_full_notm}} service instance, the ingestion key that was last added is retrieved automatically.
+
+
 
 ### `ibmcloud ob logging config show`
 {: #logging_config_show}
@@ -276,14 +273,14 @@ ibmcloud ob logging config show --cluster CLUSTER --instance LOGGING_INSTANCE
 - **Viewer** platform access role for {{site.data.keyword.la_full_notm}}
 
 **Command options**:
-<dl>
-<dt><code>--cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster for which you want to list existing {{site.data.keyword.la_short}} configurations. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.</dd>
 
-<dt><code>--instance <em>LOGGING_INSTANCE</em></code></dt>
-<dd>The ID or name of the {{site.data.keyword.la_full_notm}} service instance for which you want to show the logging configuration. To retrieve the name, run `ibmcloud resource service-instances`. This value is required.</dd>
+`--cluster CLUSTER`
+:   The name or ID of the cluster for which you want to list existing {{site.data.keyword.la_short}} configurations. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.
 
-</dl>
+`--instance LOGGING_INSTANCE`
+:   The ID or name of the {{site.data.keyword.la_full_notm}} service instance for which you want to show the logging configuration. To retrieve the name, run `ibmcloud resource service-instances`. This value is required.
+
+
 
 ## Monitoring commands
 
@@ -308,14 +305,14 @@ ibmcloud ob monitoring agent discover --cluster CLUSTER [--instance MONITORING_I
 - **Viewer** platform access role for {{site.data.keyword.mon_full_notm}}
 
 **Command options**:
-<dl>
-<dt><code>--cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster where you manually created a {{site.data.keyword.mon_short}} configuration without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.</dd>
 
-<dt><code>--instance <em>MONITORING_INSTANCE</em></code></dt>
-<dd>The ID or name of the {{site.data.keyword.mon_full_notm}} service instance that you use in your monitoring configuration. This value is optional. If you do not provide this value, the {{site.data.keyword.mon_full_notm}} service instance is automatically retrieved</dd>
+`--cluster CLUSTER`
+:   The name or ID of the cluster where you manually created a {{site.data.keyword.mon_short}} configuration without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.
 
-</dl>
+`--instance MONITORING_INSTANCE`
+:   The ID or name of the {{site.data.keyword.mon_full_notm}} service instance that you use in your monitoring configuration. This value is optional. If you do not provide this value, the {{site.data.keyword.mon_full_notm}} service instance is automatically retrieved
+
+
 
 
 ### `ibmcloud ob monitoring config create`
@@ -340,65 +337,65 @@ ibmcloud ob monitoring config create --cluster CLUSTER --instance MONITORING_INS
 - **Editor** platform access role and **Manager** server access role for {{site.data.keyword.mon_full_notm}}
 
 **Command options**:
-<dl>
-<dt><code>--cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster for which you want to create a monitoring configuration for {{site.data.keyword.mon_full_notm}}. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.</dd>
 
-<dt><code>--instance <em>MONITORING_INSTANCE</em></code></dt>
-<dd>The ID or name of the {{site.data.keyword.mon_full_notm}} service instance that you want to use to create the monitoring configuration. The service instance must be in the same {{site.data.keyword.cloud_notm}} account as your cluster, but can be in a different resource group or region than you cluster. To create a service instance, follow the steps in [Provision an instance](/docs/monitoring?topic=monitoring-provision). This value is required.</dd>
+`--cluster CLUSTER`
+:   The name or ID of the cluster for which you want to create a monitoring configuration for {{site.data.keyword.mon_full_notm}}. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.
 
-<dt><code>--sysdig-access-key <em>ACCESS_KEY</em></code></dt>
-<dd>The {{site.data.keyword.mon_short}} access key that you want to use for your configuration. This value is optional. If you do not specify this option, the latest access key is used for your configuration. </dd>
+`--instance MONITORING_INSTANCE`
+:   The ID or name of the {{site.data.keyword.mon_full_notm}} service instance that you want to use to create the monitoring configuration. The service instance must be in the same {{site.data.keyword.cloud_notm}} account as your cluster, but can be in a different resource group or region than you cluster. To create a service instance, follow the steps in [Provision an instance](/docs/monitoring?topic=monitoring-provision). This value is required.
 
-<dt><code>--private-endpoint</code><dt>
-<dd>When you add this option to your command, the private cloud service endpoint is used to connect to {{site.data.keyword.mon_full_notm}}. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option. </dd>
+`--sysdig-access-key ACCESS_KEY`
+:   The {{site.data.keyword.mon_short}} access key that you want to use for your configuration. This value is optional. If you do not specify this option, the latest access key is used for your configuration. 
 
-</dl>
+`--private-endpoint
+:   When you add this option to your command, the private cloud service endpoint is used to connect to {{site.data.keyword.mon_full_notm}}. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option. 
 
-<strong>Example</strong>:
-<code></code>`
+
+
+Example command
+```sh
 ibmcloud ob monitoring config create --cluster mycluster --instance mymonitoringinstance
-<code></code>`
+```
 {: pre}
 
-### <code>ibmcloud ob monitoring config delete</code>
+### `ibmcloud ob monitoring config delete`
 {: #monitoring_config_delete}
 
 Delete a {{site.data.keyword.mon_short}} configuration from your cluster.
 {: shortdesc}
 
 
-To remove monitoring configurations that you manually set up without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you must first make this configuration available to the plug-in by using the <a href="#monitoring_agent_discover"><code>ibmcloud ob monitoring agent discover</code></a> command.
+To remove monitoring configurations that you manually set up without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you must first make this configuration available to the plug-in by using the ibmcloud ob monitoring agent discover` [command](#monitoring_agent_discover).
 {: note}
 
 
-When you delete the monitoring configuration, the components that are deleted depend on how you created the monitoring configuration. For monitoring configurations that were created with the <code>ibmcloud ob monitoring config create</code> command, the daemon set for the {{site.data.keyword.mon_short}} agent, the configmap, and secret are removed from your cluster, and metrics are no longer sent to your {{site.data.keyword.mon_full_notm}} service instance. Monitoring configurations that you manually created and made visible to the plug-in by using the <code>ibmcloud ob monitoring agent discover</code> command, only the configmap is removed. Your daemon set, secret, and the {{site.data.keyword.mon_short}} agent are still deployed to your cluster and you must manually remove them. Because the configmap is removed, metrics are no longer sent to your {{site.data.keyword.mon_full_notm}} service instance. Independent of how you created the configuration, existing metrics are still available in {{site.data.keyword.mon_full_notm}} until your selected retention period ends.  
+When you delete the monitoring configuration, the components that are deleted depend on how you created the monitoring configuration. For monitoring configurations that were created with the `ibmcloud ob monitoring config create` command, the daemon set for the {{site.data.keyword.mon_short}} agent, the configmap, and secret are removed from your cluster, and metrics are no longer sent to your {{site.data.keyword.mon_full_notm}} service instance. Monitoring configurations that you manually created and made visible to the plug-in by using the `ibmcloud ob monitoring agent discover` command, only the configmap is removed. Your daemon set, secret, and the {{site.data.keyword.mon_short}} agent are still deployed to your cluster and you must manually remove them. Because the configmap is removed, metrics are no longer sent to your {{site.data.keyword.mon_full_notm}} service instance. Independent of how you created the configuration, existing metrics are still available in {{site.data.keyword.mon_full_notm}} until your selected retention period ends.  
 {: important}
 
-<code></code>`
+```sh
 ibmcloud ob monitoring config delete --cluster CLUSTER --instance MONITORING_INSTANCE
-<code></code>`
+```
 {: pre}
 
-<strong>Supported infrastructure provider</strong>:
+**Supported infrastructure provider**:
 * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
-<strong>Minimum required permissions</strong>:
-- <strong>Administrator</strong> platform access role and <strong>Manager</strong> service access role for the <code>ibm-observe</code> Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
-- <strong>Viewer</strong> platform access role for {{site.data.keyword.mon_full_notm}}
+**Minimum required permissions**:
+- **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
+- **Viewer** platform access role for {{site.data.keyword.mon_full_notm}}
 
-<strong>Command options</strong>:
-<dl>
-<dt><code>--cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster for which you want to delete an existing {{site.data.keyword.mon_short}} configuration. To retrieve the cluster name or ID, run `ibmcloud oc cluster ls`. This value is required.</dd>
+**Command options**:
 
-<dt><code>--instance <em>MONITORING_INSTANCE</em></code></dt>
-<dd>The ID or name of the {{site.data.keyword.mon_full_notm}} service instance that you used in your monitoring configuration. To retrieve the service instance name, run `ibmcloud resource service-instances`. This value is required. </dd>
+`--cluster CLUSTER`
+:   The name or ID of the cluster for which you want to delete an existing {{site.data.keyword.mon_short}} configuration. To retrieve the cluster name or ID, run `ibmcloud oc cluster ls`. This value is required.
 
-</dl>
+`--instance MONITORING_INSTANCE`
+:   The ID or name of the {{site.data.keyword.mon_full_notm}} service instance that you used in your monitoring configuration. To retrieve the service instance name, run `ibmcloud resource service-instances`. This value is required. 
 
-**Example**:
+
+
+Example command
 ```sh
 ibmcloud ob monitoring config delete --cluster mycluster --instance mymonitoringinstance
 ```
@@ -428,11 +425,11 @@ ibmcloud ob monitoring config list --cluster CLUSTER
 - **Viewer** platform access role for {{site.data.keyword.mon_full_notm}}
 
 **Command options**:
-<dl>
-<dt><code>--cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster for which you want to list existing {{site.data.keyword.mon_short}} configurations. This value is required.</dd>
 
-</dl>
+`--cluster CLUSTER`
+:   The name or ID of the cluster for which you want to list existing {{site.data.keyword.mon_short}} configurations. This value is required.
+
+
 
 
 ### `ibmcloud ob monitoring config enable public-endpoint|private-endpoint`
@@ -458,18 +455,18 @@ ibmcloud ob monitoring config enable public-endpoint|private-endpoint --cluster 
 - **Editor** platform access role and **Manager** server access role for {{site.data.keyword.mon_full_notm}}
 
 **Command options**:
-<dl>
 
-<dt><code>public-endpoint|private-endpoint</code></dt>
-<dd>Enter <code>public-endpoint</code> to use the public cloud service endpoint of your {{site.data.keyword.mon_full_notm}} service instance, or <code>private-endpoint</code> to use the private cloud service endpoint to send metrics from your cluster. This value is required. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option.  </dd>
 
-<dt><code>--cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster for which you want to enable the private or public cloud service endpoint to connect to your {{site.data.keyword.mon_short}} service instance. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.</dd>
+`public-endpoint|private-endpoint`
+:   Enter `public-endpoint` to use the public cloud service endpoint of your {{site.data.keyword.mon_full_notm}} service instance, or `private-endpoint` to use the private cloud service endpoint to send metrics from your cluster. This value is required. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option.  
 
-<dt><code>--instance <em>MONITORING_INSTANCE</em></code></dt>
-<dd>The ID or name of the {{site.data.keyword.mon_full_notm}} service instance to which you want to connect by using the public or private cloud service endpoint. To retrieve the name, run `ibmcloud resource service-instances`. This value is required.</dd>
+`--cluster CLUSTER`
+:   The name or ID of the cluster for which you want to enable the private or public cloud service endpoint to connect to your {{site.data.keyword.mon_short}} service instance. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.
 
-</dl>
+`--instance MONITORING_INSTANCE`
+:   The ID or name of the {{site.data.keyword.mon_full_notm}} service instance to which you want to connect by using the public or private cloud service endpoint. To retrieve the name, run `ibmcloud resource service-instances`. This value is required.
+
+
 
 ### `ibmcloud ob monitoring config replace`
 {: #monitoring_config_replace}
@@ -498,20 +495,20 @@ ibmcloud ob logging config replace --cluster CLUSTER --instance MONITORING_INSTA
 - **Editor** platform access role and **Manager** server access role for {{site.data.keyword.mon_full_notm}}
 
 **Command options**:
-<dl>
-<dt><code>--cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster for which you want to change the {{site.data.keyword.mon_full_notm}} service access key or service instance that you use in your {{site.data.keyword.mon_short}} configuration. This value is required.</dd>
 
-<dt><code>--instance <em>MONITORING_INSTANCE</em></code></dt>
-<dd>The ID or name of the {{site.data.keyword.mon_full_notm}} service instance for which you want to change the service access key, or the {{site.data.keyword.mon_full_notm}} service instance that you want to replace. To retrieve the name, run `ibmcloud ob monitoring config list --cluster <cluster_name_or_ID>`. This value is required.</dd>
+`--cluster CLUSTER`
+:   The name or ID of the cluster for which you want to change the {{site.data.keyword.mon_full_notm}} service access key or service instance that you use in your {{site.data.keyword.mon_short}} configuration. This value is required.
 
-<dt><code>--new-instance <em>MONITORING_INSTANCE_NEW</em></code></dt>
-<dd>If you want to replace the {{site.data.keyword.mon_full_notm}} service instance that you use in your {{site.data.keyword.mon_short}} configuration, enter the ID or name of the new {{site.data.keyword.mon_full_notm}} service instance that you want to use. This value is required if you want to replace the {{site.data.keyword.mon_full_notm}} service instance. If you want to replace the service access key, do not include this command option.</dd>
+`--instance MONITORING_INSTANCE`
+:   The ID or name of the {{site.data.keyword.mon_full_notm}} service instance for which you want to change the service access key, or the {{site.data.keyword.mon_full_notm}} service instance that you want to replace. To retrieve the name, run `ibmcloud ob monitoring config list --cluster <cluster_name_or_ID>`. This value is required.
 
-<dt><code>--sysdig-access-key <em>ACCESS_KEY</em></code></dt>
-<dd>The {{site.data.keyword.mon_short}} service access key that you want to use for your configuration. For information about how to retrieve the service access key, see [Getting the access key through the {{site.data.keyword.cloud_notm}} UI](/docs/monitoring?topic=monitoring-access_key#access_key_ibm_cloud_ui). This value is required if you want to replace the service access key, and optional if you want to replace the {{site.data.keyword.mon_full_notm}} service instance. If you do not provide the service access key when replacing the {{site.data.keyword.mon_full_notm}} service instance, the service access key that was last added is retrieved automatically.</dd>
+`--new-instance MONITORING_INSTANCE_NEW`
+:   If you want to replace the {{site.data.keyword.mon_full_notm}} service instance that you use in your {{site.data.keyword.mon_short}} configuration, enter the ID or name of the new {{site.data.keyword.mon_full_notm}} service instance that you want to use. This value is required if you want to replace the {{site.data.keyword.mon_full_notm}} service instance. If you want to replace the service access key, do not include this command option.
 
-</dl>
+`--sysdig-access-key ACCESS_KEY`
+:   The {{site.data.keyword.mon_short}} service access key that you want to use for your configuration. For information about how to retrieve the service access key, see [Getting the access key through the {{site.data.keyword.cloud_notm}} UI](/docs/monitoring?topic=monitoring-access_key#access_key_ibm_cloud_ui). This value is required if you want to replace the service access key, and optional if you want to replace the {{site.data.keyword.mon_full_notm}} service instance. If you do not provide the service access key when replacing the {{site.data.keyword.mon_full_notm}} service instance, the service access key that was last added is retrieved automatically.
+
+
 
 ### `ibmcloud ob monitoring config show`
 {: #monitoring_config_show}
@@ -536,14 +533,14 @@ ibmcloud ob monitoring config show --cluster CLUSTER --instance MONITORING_INSTA
 - **Viewer** platform access role for {{site.data.keyword.la_full_notm}}
 
 **Command options**:
-<dl>
-<dt><code>--cluster <em>CLUSTER</em></code></dt>
-<dd>The name or ID of the cluster for which you want to list existing {{site.data.keyword.mon_short}} configurations. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.</dd>
 
-<dt><code>--instance <em>LOGGING_INSTANCE</em></code></dt>
-<dd>The ID or name of the {{site.data.keyword.mon_full_notm}} service instance for which you want to show the monitoring configuration. To retrieve the name, run `ibmcloud resource service-instances`. This value is required.</dd>
+`--cluster CLUSTER`
+:   The name or ID of the cluster for which you want to list existing {{site.data.keyword.mon_short}} configurations. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.
 
-</dl>
+`--instance LOGGING_INSTANCE`
+:   The ID or name of the {{site.data.keyword.mon_full_notm}} service instance for which you want to show the monitoring configuration. To retrieve the name, run `ibmcloud resource service-instances`. This value is required.
+
+
 
 
 

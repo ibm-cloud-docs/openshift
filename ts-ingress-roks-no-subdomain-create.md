@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -162,7 +162,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
     {: screen}
 
     * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) **VPC clusters**: Verify that the VPC load balancer for your routers exists. In the output, look for the VPC load balancer **Name** that starts with `kube-<cluster_ID>`. If you did not install the `infrastructure-service` plug-in, install it by running `ibmcloud plugin install infrastructure-service`.
-    ```
+    ```sh
     ibmcloud is load-balancers
     ```
     {: pre}

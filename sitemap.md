@@ -2798,7 +2798,7 @@ subcollection: openshift
 
     * [`ibmcloud ob logging config create`](/docs/openshift?topic=openshift-observability_cli#logging_config_create)
 
-    * [<code>ibmcloud ob logging config delete</code>](/docs/openshift?topic=openshift-observability_cli#logging_config_delete)
+    * [`ibmcloud ob logging config delete`](/docs/openshift?topic=openshift-observability_cli#logging_config_delete)
 
     * [`ibmcloud ob logging config list`](/docs/openshift?topic=openshift-observability_cli#logging_config_list)
 
@@ -2812,7 +2812,7 @@ subcollection: openshift
 
     * [`ibmcloud ob monitoring config create`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_create)
 
-    * [<code>ibmcloud ob monitoring config delete</code>](/docs/openshift?topic=openshift-observability_cli#monitoring_config_delete)
+    * [`ibmcloud ob monitoring config delete`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_delete)
 
     * [`ibmcloud ob monitoring config list`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_list)
 

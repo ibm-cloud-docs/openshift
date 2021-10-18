@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-15"
+lastupdated: "2021-10-18"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -788,7 +788,7 @@ Before you can start to mount your existing storage to an app, you must retrieve
 ### Step 2: Creating a persistent volume (PV) and a matching persistent volume claim (PVC)
 {: #existing-block-2}
 
-1. Optional: If you have storage that you provisioned with a `retain` storage class, when you remove the PVC, the PV and the physical storage device are not removed. To reuse the storage in your cluster, you must remove the PV first. List existing PVs and look for the PV that belongs to your persistent storage. The PV is in a `released` state.
+1. **Optional**: If you have storage that you provisioned with a `retain` storage class, when you remove the PVC, the PV and the physical storage device are not removed. To reuse the storage in your cluster, you must remove the PV first. List existing PVs and look for the PV that belongs to your persistent storage. The PV is in a `released` state.
 
     ```sh
     oc get pv
@@ -815,7 +815,7 @@ Before you can start to mount your existing storage to an app, you must retrieve
     apiVersion: v1
     kind: PersistentVolume
     metadata:
-      name: "<name>"
+      name: "<name>" # Enter a name for your PV
       labels:
          failure-domain.beta.kubernetes.io/region: <region>
          failure-domain.beta.kubernetes.io/zone: <zone>
@@ -839,25 +839,25 @@ Before you can start to mount your existing storage to an app, you must retrieve
     :   Enter the name of the PV that you want to create.
     
     `labels`
-    :   Enter the region and the zone that you retrieved earlier. You must have at least one worker node in the same region and zone as your persistent storage to mount the storage in your cluster.
+    :   Enter the region and the zone that you retrieved earlier. You must have at least one worker node in the same region and zone as your persistent storage to mount the storage in your cluster. To retrieve your volume details, run `ibmcloud sl block volume-list` to get the volume ID, then run `ibmcloud sl block volume-detail <volume_ID>` to get the details of your volume.
     
     `storage`
-    :   In the spec capacity section, enter the storage size of the existing block storage that you retrieved in the previous step as `capacity-gb`. The storage size must be written in gigabytes, for example, 20Gi (20 GB) or 1000Gi (1 TB).
+    :   In the spec capacity section, enter the storage size of the existing block storage that you retrieved in the previous step as `capacity-gb`. The storage size must be written in gigabytes, for example, 20Gi (20 GB) or 1000Gi (1 TB). To retrieve your volume details, run `ibmcloud sl block volume-list` to get the volume ID, then run `ibmcloud sl block volume-detail <volume_ID>` to get the details of your volume.
     
     `fsType`
-    :   In the spec flex volume section, enter the file system type that is configured for your existing block storage. Choose between `ext4` or `xfs`. If you do not specify this option, the PV defaults to `ext4`. When the wrong `fsType` is defined, then the PV creation succeeds, but the mounting of the PV to a pod fails.      
+    :   In the spec flex volume section, enter the file system type that is configured for your existing block storage. Choose between `ext4` or `xfs`. If you do not specify this option, the PV defaults to `ext4`. When the wrong `fsType` is defined, then the PV creation succeeds, but the mounting of the PV to a pod fails. To retrieve your volume details, run `ibmcloud sl block volume-list` to get the volume ID, then run `ibmcloud sl block volume-detail <volume_ID>` to get the details of your volume.
     
     `Lun`
-    :   In the spec flex volume options section, enter the lun ID for your block storage that you retrieved earlier as `lunId`.
+    :   In the spec flex volume options section, enter the lun ID for your block storage that you retrieved earlier as `lunId`. To retrieve your volume details, run `ibmcloud sl block volume-list` to get the volume ID, then run `ibmcloud sl block volume-detail <volume_ID>` to get the details of your volume.
     
     `TargetPortal`
-    :   In the spec flex volume options section, enter the IP address of your block storage that you retrieved earlier as `ip_addr`. 
+    :   In the spec flex volume options section, enter the IP address of your block storage that you retrieved earlier as `ip_addr`. To retrieve your volume details, run `ibmcloud sl block volume-list` to get the volume ID, then run `ibmcloud sl block volume-detail <volume_ID>` to get the details of your volume.
     
     `VolumeId`
-    :   In the spec flex volume options section, enter the ID of your block storage that you retrieved earlier as `id`. Example: "11111111".
+    :   In the spec flex volume options section, enter the ID of your block storage that you retrieved earlier as `id`. Example: "11111111". To retrieve your volume details, run `ibmcloud sl block volume-list` to get the volume ID, then run `ibmcloud sl block volume-detail <volume_ID>` to get the details of your volume.
     
     `volumeName`
-    :   In the spec flex volume options section, enter the `username` of your {{site.data.keyword.blockstorageshort}} volume. Example: "IBM02SEL1111111-111".
+    :   In the spec flex volume options section, enter the `username` of your {{site.data.keyword.blockstorageshort}} volume. Example: "IBM02SEL1111111-111". To retrieve your volume details, run `ibmcloud sl block volume-list` to get the volume ID, then run `ibmcloud sl block volume-detail <volume_ID>` to get the details of your volume.
 
 5. Create the PV in your cluster.
 
