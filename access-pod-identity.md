@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Authorizing pods in your cluster to {{site.data.keyword.cloud_notm}} services with IAM trusted profiles
@@ -24,10 +23,10 @@ Authorizing pods with IAM trusted profiles is available for clusters that run {{
 {: note}
 
 In IAM
-: Start by creating an IAM trusted profile. Then, link the trusted profile with your {{site.data.keyword.openshiftlong_notm}} compute resource by selecting conditions to match with your clusters, including a Kubernetes namespace and service account in the clusters. Finally, assign access policies to the {{site.data.keyword.cloud_notm}} services that you want your apps to use.
+:   Start by creating an IAM trusted profile. Then, link the trusted profile with your {{site.data.keyword.openshiftlong_notm}} compute resource by selecting conditions to match with your clusters, including a Kubernetes namespace and service account in the clusters. Finally, assign access policies to the {{site.data.keyword.cloud_notm}} services that you want your apps to use.
 
 In your cluster
-: Through [Kubernetes service account token volume projection](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#service-account-token-volume-projection){: external}, the apps that run in your linked cluster's [Kubernetes namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/){: external} and use the namespace's service account can exchange the service account public key to get an {{site.data.keyword.cloud_notm}} IAM access token. Your app can use this access token to authenticate API requests to {{site.data.keyword.cloud_notm}} services, such as databases, {{site.data.keyword.watson}}, or VPC infrastructure. Through the access policies of the trusted profile, you control what actions the token lets the app perform.
+:   Through [Kubernetes service account token volume projection](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#service-account-token-volume-projection){: external}, the apps that run in your linked cluster's [Kubernetes namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/){: external} and use the namespace's service account can exchange the service account public key to get an {{site.data.keyword.cloud_notm}} IAM access token. Your app can use this access token to authenticate API requests to {{site.data.keyword.cloud_notm}} services, such as databases, {{site.data.keyword.watson}}, or VPC infrastructure. Through the access policies of the trusted profile, you control what actions the token lets the app perform.
 
 ## Prerequisites
 {: #iam-identity-prereqs}
@@ -43,13 +42,13 @@ Supported infrastructure providers
 
 
 Minimum required permissions
-- **Viewer** [platform](/docs/containers?topic=containers-access_reference#iam_platform) access role and the **Writer** [service](/docs/containers?topic=containers-access_reference#service) access role for the cluster in {{site.data.keyword.cloud_notm}} IAM for **{{site.data.keyword.containershort}}**.
+- **Viewer** [platform](/docs/openshift?topic=openshift-access_reference#iam_platform) access role and the **Writer** [service](/docs/openshift?topic=openshift-access_reference#service) access role for the cluster in {{site.data.keyword.cloud_notm}} IAM for **{{site.data.keyword.containershort}}**.
 * The `iam-identity.profile.create` and `iam-identity.profile.linkToResource` actions for the [IAM identity service](/docs/account?topic=account-iam-service-roles-actions#iam-identity-service).
 
 Supported versions
 
 * The cluster must be [created](/docs/containers?topic=containers-clusters) at {{site.data.keyword.openshiftshort}} version 4.7 or later.
-* To use a cluster that was updated to this version from a previous version, [contact support](/docs/containers?topic=containers-get-help#help-support). Title the request `Enable pod identity` and include the cluster ID, version, and region.
+* To use a cluster that was updated to this version from a previous version, [contact support](/docs/openshift?topic=openshift-get-help#help-support). Title the request `Enable pod identity` and include the cluster ID, version, and region.
 
 
 ## Creating an IAM trusted profile for your cluster in the API
@@ -69,18 +68,18 @@ As an account administrator, create a trusted profile in {{site.data.keyword.clo
     * Enter a `<profile_name>` and optional `<description>` for the IAM trusted profile.
     * Replace `<account_id>` with the ID of your {{site.data.keyword.cloud_notm}} account. To get this ID from the command line, run `ibmcloud account show`.
 
-    ```sh
-    curl -L -X POST 'https://iam.cloud.ibm.com/v1/profiles' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer <access_token>' \
-    -H 'Content-Type: application/json' \
-    --data-raw '{
-        "name": "<profile_name>",
-        "description": "<description>",
-        "account_id": "<account_id>"
-    }'
-    ```
-    {: codeblock}
+        ```sh
+        curl -L -X POST 'https://iam.cloud.ibm.com/v1/profiles' \
+        -H 'Accept: application/json' \
+        -H 'Authorization: Bearer <access_token>' \
+        -H 'Content-Type: application/json' \
+        --data-raw '{
+            "name": "<profile_name>",
+            "description": "<description>",
+            "account_id": "<account_id>"
+        }'
+        ```
+        {: codeblock}
 
 2. Link the IAM trusted profile to a Kubernetes namespace in your {{site.data.keyword.openshiftlong_notm}} cluster.
     1. Get your `<profile-id>` from the output of the first step. Or, you can run the following API command.
@@ -105,22 +104,22 @@ As an account administrator, create a trusted profile in {{site.data.keyword.clo
         * Replace `<profile-id>`, `<access_token>`, `<cluster_crn>`, and `<cluster_name>` with the values that you previously retrieved.
         * For `<ns>`, enter the namespace in your cluster. You can list namespaces by logging in to the cluster and running `oc get ns`. The Kubernetes namespace that you enter does not have to exist already. Any future namespace with this name can establish trust.
 
-        ```sh
-        curl -L -X POST 'https://iam.cloud.ibm.com/v1/profiles/<profile-id>/links' \
-        -H 'Accept: application/json' \
-        -H 'Authorization: Bearer <access_token>' \
-        -H 'Content-Type: application/json' \
-        --data-raw '{
-            "name": "<link_name>",
-            "cr_type": "ROKS_SA",
-            "link": {
-                "crn": "<cluster_crn>",
-                "namespace": "<ns>",
-                "name": "<cluster_name>"
-            }
-        }'
-        ```
-        {: codeblock}
+            ```sh
+            curl -L -X POST 'https://iam.cloud.ibm.com/v1/profiles/<profile-id>/links' \
+            -H 'Accept: application/json' \
+            -H 'Authorization: Bearer <access_token>' \
+            -H 'Content-Type: application/json' \
+            --data-raw '{
+                "name": "<link_name>",
+                "cr_type": "ROKS_SA",
+                "link": {
+                    "crn": "<cluster_crn>",
+                    "namespace": "<ns>",
+                    "name": "<cluster_name>"
+                }
+            }'
+            ```
+            {: codeblock}
 
 3. [Assign the trusted profile to an access group](/docs/account?topic=account-groups#access_ag_api) with access policies to the {{site.data.keyword.cloud_notm}} services that you want your apps to have access to.
 
@@ -198,11 +197,7 @@ To configure your application pods to authenticate with {{site.data.keyword.clou
         ```
         {: codeblock}
 
-2. Design your app to exchange the service account projected token for an IAM token that you can use for subsequent API calls to {{site.data.keyword.cloud_notm}} services.
-
-    Example authentication request
-
-    * `${profile_id}`: Replace with the ID of the trusted profile that the cluster is linked to. To list available profile IDs, you or the account administrator can use the `GET 'https://iam.cloud.ibm.com/v1/profiles/?account_id=<account_id>'` API or view the trusted profiles in the [IAM console](https://cloud.ibm.com/iam/trusted-profiles/){: external}.
+2. Design your app to exchange the service account projected token for an IAM token that you can use for subsequent API calls to {{site.data.keyword.cloud_notm}} services. Review the following example authentication request. Replace `${profile_id}`: Replace with the ID of the trusted profile that the cluster is linked to. To list available profile IDs, you or the account administrator can use the `GET 'https://iam.cloud.ibm.com/v1/profiles/?account_id=<account_id>'` API or view the trusted profiles in the [IAM console](https://cloud.ibm.com/iam/trusted-profiles/){: external}.
 
     ```sh
     curl -s -X POST \

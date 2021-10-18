@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -12,7 +12,6 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Why does block storage change to read-only?
@@ -68,7 +67,7 @@ Verify the plugin version, re-create your app, and gracefully reload your worker
         ```
         {: pre}
 
-    3. Gracefully [reload the worker node](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload).
+    3. Gracefully [reload the worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
 
 
 

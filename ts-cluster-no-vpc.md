@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -12,7 +12,6 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # VPC: Why is no VPC available when I create a cluster in the console?
@@ -37,7 +36,7 @@ If no API key is set for the `default` resource group, no VPCs are listed in the
 To set an API key for the `default` resource group, use the {{site.data.keyword.openshiftlong_notm}} CLI.
 {: tsResolve}
 
-1. Log in to the command line as the account owner. If you want a different user than the account owner to set the API key, first [ensure that the API key owner has the correct permissions](/docs/containers?topic=containers-access-creds#owner_permissions).
+1. Log in to the command line as the account owner. If you want a different user than the account owner to set the API key, first [ensure that the API key owner has the correct permissions](/docs/openshift?topic=openshift-access-creds#owner_permissions).
     ```sh
     ibmcloud login [--sso]
     ```

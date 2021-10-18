@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-18"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic, roks
 
@@ -304,11 +304,11 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: screen}
 
-1. Enable the `openshift-data-foundation` add-on. If you also want to deploy ODF and create your storage cluster from the CLI, you can specify the `"odfDeploy=true"` flag. If you want to override any of the default parameters, specify the `--param "key=value"` flag for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
+1. Enable the `openshift-data-foundation` add-on. If you also want to deploy the ODF add-on only, you can specify the `"odfDeploy=false"` flag. If you want to override any of the default parameters, specify the `--param "key=value"` flag for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
 
-    Example command for deploying the ODF add-on only.
+    Example command for deploying the ODF add-on only and not creating a storage cluster.
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version 4.7.0
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version 4.7.0 --param "odfDeploy=false"
     ```
     {: pre}
 
@@ -330,7 +330,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: pre}
 
-1. If you enabled the add-on and didn't set the `odfDeploy=true` flag, follow the steps to [create an ODF custom resource](#ocs-classic-deploy-crd).
+1. If you enabled the add-on and set the `odfDeploy=false` flag, follow the steps to [create an ODF custom resource](#ocs-classic-deploy-crd).
 
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, logmet, logs, metrics, audit, events
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Reviewing service, API server, and worker node logs
@@ -38,7 +37,7 @@ Before you set up a Kubernetes API audit configuration, review the following inf
 
 * For Kubernetes audit logs and verbosity, see the [Kubernetes documentation](https://kubernetes.io/docs/tasks/debug-application-cluster/audit/){: external}.
 * Only one audit webhook can be created in a cluster.
-* You must have the  [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/containers?topic=containers-users#checking-perms) for the {{site.data.keyword.openshiftlong_notm}} cluster.
+* You must have the  [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the {{site.data.keyword.openshiftlong_notm}} cluster.
 
 To get started, follow the instructions to send Kubernetes API audit logs [to {{site.data.keyword.la_full_notm}}](#audit-api-server-la)or [to a resource in the {{site.data.keyword.cloud_notm}} private network](#audit-api-server-priv).
 

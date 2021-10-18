@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,7 +11,6 @@ content-type: troubleshoot
 
 ---
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Why can't my PVC access an existing bucket?
@@ -47,7 +46,7 @@ Verify your bucket details and storage class and recreate your PVC.
 1. From the [{{site.data.keyword.cloud_notm}} dashboard](https://cloud.ibm.com/){: external}, select your {{site.data.keyword.cos_full_notm}} service instance.
 2. Select **Buckets**.
 3. Review the **Class** and **Location** information for your existing bucket.
-4. Choose the appropriate [storage class](/docs/containers?topic=containers-object_storage#cos_storageclass_reference).
+4. Choose the appropriate [storage class](/docs/openshift?topic=openshift-object_storage#cos_storageclass_reference).
 5. Make sure that you provide the correct name of your existing bucket.
 
 

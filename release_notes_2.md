@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-13"
+lastupdated: "2021-10-18"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -11,8 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
 
 # Release notes
 {: #rel-notes}
@@ -34,11 +32,26 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 Review the release notes for October 2021.
 {: shortdesc}
 
+### 18 October 2021
+{: #18oct2021}
+
+New troubleshooting topic
+:   See [Why does my cluster master status say it is approaching its resource limit?](/docs/containers?topic=containers-master_resource_limit). 
+
+{{site.data.keyword.cloud_notm}} HPCS Router add-on
+:   The [{{site.data.keyword.cloud_notm}} HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) version 4.5 is deprecated.
+
+
+OpenShift Data Foundation
+:   The default behavior for the [ODF add-on](/docs/openshift?topic=openshift-ocs-storage-prep) has changed. Previously, when you deployed the add-on by using the CLI, the default value of the `odfDeploy` parameter was `false` and so only the add-on was installed. However, now the default value of `odfDeploy` is `true`, so when you enable the add-on, the add-on automatically creates storage resources in your cluster. 
+
+
+
 ### 13 October 2021
 {: #13oct2021}
 
-CLI change log
-:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.331. 
+CLI changelog
+:   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.331. 
 
 ### 11 October 2021
 {: #11oct2021}
@@ -75,7 +88,7 @@ Cluster autoscaler add-on.
 {: release-note}
 
 Updated supported, deprecated, and unsupported versions for strongSwan Helm chart.
-:   [Upgrading or disabling the strongSwan Helm chart](/docs/containers?topic=containers-vpn#vpn_upgrade)
+:   [Upgrading or disabling the strongSwan Helm chart](/docs/openshift?topic=openshift-vpn#vpn_upgrade)
 
 
 {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog.
@@ -249,7 +262,7 @@ New! Sao Paolo multizone region
 :   You can now create VPC clusters in the Sao Paolo, Brazil [location](/docs/containers?topic=containers-regions-and-zones).
 
  VPC disk encryption on worker nodes
-:   Now, you can manage the encryption for the disk on your VPC worker nodes. For more information, see [VPC worker nodes](/docs/containers?topic=containers-encryption#worker-encryption-vpc).
+:   Now, you can manage the encryption for the disk on your VPC worker nodes. For more information, see [VPC worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-vpc).
 
 ### 30 August 2021
 {: #30aug2021}

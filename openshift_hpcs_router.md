@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos, route, router
 
@@ -83,7 +83,7 @@ By default, any router that is created in your cluster is configured to process 
         ```
         {: codeblock}
 
-1. In the `metadata.labels` section, add the `router: default` label.
+3. In the `metadata.labels` section, add the `router: default` label.
 
     ```yaml
     kind: Route
@@ -99,16 +99,16 @@ By default, any router that is created in your cluster is configured to process 
     ```
     {: codeblock}
 
-1. Save and close the file. Your changes are applied automatically.
+4. Save and close the file. Your changes are applied automatically.
 
-1. Edit the configuration for the `IngressController` that manages the default router.
+5. Edit the configuration for the `IngressController` that manages the default router.
 
     ```sh
     oc edit IngressController default -n openshift-ingress-operator
     ```
     {: pre}
 
-4. In the `spec` section, add a `routeSelector` section that includes the `router: default` selector.
+6. In the `spec` section, add a `routeSelector` section that includes the `router: default` selector.
 
     ```yaml
     apiVersion: operator.openshift.io/v1
@@ -231,17 +231,17 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to create a router
 
         * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic:
 
-        ```sh
-        ibmcloud oc nlb-dns create classic --cluster <cluster_name_or_ID> --ip LB_IP [--ip LB2_IP --ip LB3_IP]
-        ```
-        {: pre}
+            ```sh
+            ibmcloud oc nlb-dns create classic --cluster <cluster_name_or_ID> --ip LB_IP [--ip LB2_IP --ip LB3_IP]
+            ```
+            {: pre}
 
         * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC:
 
-        ```sh
-        ibmcloud oc nlb-dns create vpc-gen2 --cluster <cluster_name_or_ID> --lb-host <LB_hostname>
-        ```
-        {: pre}
+            ```sh
+            ibmcloud oc nlb-dns create vpc-gen2 --cluster <cluster_name_or_ID> --lb-host <LB_hostname>
+            ```
+            {: pre}
 
     * **Custom domain**: Create a custom domain with your DNS provider or [{{site.data.keyword.cis_full}}](https://cloud.ibm.com/catalog/services/internet-services), and add the load balancer IP address as an A record (classic) or the load balancer hostname as a CNAME (VPC).
 

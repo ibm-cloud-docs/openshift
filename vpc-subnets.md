@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos, ips, vlans, networking, public gateway
 
@@ -10,7 +10,6 @@ subcollection: openshift
 
 ---
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Configuring VPC subnets
@@ -124,7 +123,7 @@ In clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later, 
 
 A VPE is a virtual IP address that is bound to an endpoint gateway. One VPE gateway resource is created per cluster in your VPC. One IP address from one subnet in each zone where your cluster has worker nodes is automatically used for the VPE gateway, and the worker nodes in this zone use this IP address to communicate with the Kubernetes master. To view the VPE gateway details for your cluster, open the [Virtual private endpoint gateways for VPC dashboard](https://cloud.ibm.com/vpc-ext/network/endpointGateways){: external} and look for the VPE gateway in the format `iks-<cluster_ID>`.
 
-Note that your worker nodes automatically use the VPE that is created by default in your VPC. However, if you enabled the [public cloud service endpoint for your cluster](/docs/containers?topic=containers-plan_clusters#vpc-workeruser-master), worker-to-master traffic is established half over the public endpoint and half over the VPE for protection from potential outages of the public or private network.
+Note that your worker nodes automatically use the VPE that is created by default in your VPC. However, if you enabled the [public cloud service endpoint for your cluster](/docs/openshift?topic=openshift-plan_clusters#vpc-workeruser-master), worker-to-master traffic is established half over the public endpoint and half over the VPE for protection from potential outages of the public or private network.
 
 Do not delete any IP addresses on your subnets that are used for VPEs.
 {: important}
@@ -132,7 +131,7 @@ Do not delete any IP addresses on your subnets that are used for VPEs.
 ### Network segmentation
 {: #vpc_basics_segmentation}
 
-Network segmentation describes the approach to divide a network into multiple sub-networks. Apps that run in one sub-network cannot see or access apps in another sub-network. For more information about network segmentation options for VPC subnets, see [this cluster security topic](/docs/containers?topic=containers-security#network_segmentation_vpc).
+Network segmentation describes the approach to divide a network into multiple sub-networks. Apps that run in one sub-network cannot see or access apps in another sub-network. For more information about network segmentation options for VPC subnets, see [this cluster security topic](/docs/openshift?topic=openshift-security#network_segmentation_vpc).
 {: shortdesc}
 
 Subnets provide a channel for connectivity among the worker nodes within the cluster. Additionally, any system that is connected to any of the private subnets in the same VPC can communicate with workers. For example, all subnets in one VPC can communicate through private layer 3 routing with a built-in VPC router.
@@ -174,11 +173,11 @@ Use the {{site.data.keyword.cloud_notm}} console to create a VPC subnet for your
 2. Enter a name for your subnet and select the name of the VPC that you created.
 3. Select the location and zone where you want to create the subnet.
 4. Specify the number of IP addresses to create.
-    - VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/containers?topic=containers-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
+    - VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
     - If you enter a specific IP range and running Red Hat OpenShift 4.7 or earlier., do not use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
 5. To run default {{site.data.keyword.openshiftshort}} components such as the web console or OperatorHub, and to allow your cluster to access public endpoints such as a public URL of another app or an {{site.data.keyword.cloud_notm}} service that supports public cloud service endpoints only, you must attach a public gateway to your subnet.
 6. Click **Create subnet**.
-7. Use the subnet to [create a cluster](/docs/containers?topic=containers-clusters#clusters_vpcg2_ui), [create a new worker pool](/docs/containers?topic=containers-add_workers#vpc_add_pool), or [add the subnet to an existing worker pool](/docs/containers?topic=containers-add_workers#vpc_add_zone).>
+7. Use the subnet to [create a cluster](/docs/openshift?topic=openshift-clusters#clusters_vpcg2_ui), [create a new worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_pool), or [add the subnet to an existing worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_zone).>
     Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
     {: important}
 
@@ -212,7 +211,7 @@ To create a VPC subnet, follow these steps.
     ```
     {: pre}
 
-    - VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/containers?topic=containers-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
+    - VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
     - If you are running Red Hat OpenShift 4.7 or earlier, do not use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
 
 3. Check whether you have a public gateway in the zones where you want to create a cluster. Within one VPC, you can create only one public gateway per zone, but that public gateway can be attached to multiple subnets within the zone.
@@ -275,7 +274,7 @@ To create a VPC subnet, follow these steps.
     {: screen}
 
 
-5. Use the subnet to [create a cluster](/docs/containers?topic=containers-clusters#cluster_vpcg2_cli), [create a new worker pool](/docs/containers?topic=containers-add_workers#vpc_add_pool), or [add the subnet to an existing worker pool](/docs/containers?topic=containers-add_workers#vpc_add_zone).
+5. Use the subnet to [create a cluster](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli), [create a new worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_pool), or [add the subnet to an existing worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_zone).
     Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
     {: important}
 
@@ -304,10 +303,10 @@ If you enable classic access when you create your VPC, [classic access default a
     2. Enter a name for your subnet and select the name of your classic access VPC.
     3. Select the location and zone where you want to create the subnet.
     4. Select the address prefix that you created for this zone.
-    5. Specify the number of IP addresses to create. VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/containers?topic=containers-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
+    5. Specify the number of IP addresses to create. VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
     6. To run default {{site.data.keyword.openshiftshort}} components such as the web console or OperatorHub, and to allow your cluster to access public endpoints such as a public URL of another app or an {{site.data.keyword.cloud_notm}} service that supports public cloud service endpoints only, you must attach a public gateway to your subnet.
     7. Click **Create subnet**.
-4. Use the subnets to [create a cluster](/docs/containers?topic=containers-clusters#clusters_vpcg2_ui).
+4. Use the subnets to [create a cluster](/docs/openshift?topic=openshift-clusters#clusters_vpcg2_ui).
      Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
      {: important}
 
@@ -332,7 +331,7 @@ If you enable classic access when you create your VPC, [classic access default a
     ```
     {: pre}
 
-4. Create subnets in each zone that use your address prefixes. For more information about the options in this command, see the [CLI reference](/docs/vpc?topic=vpc-creating-a-vpc-using-cli#create-a-subnet-cli). VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/containers?topic=containers-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
+4. Create subnets in each zone that use your address prefixes. For more information about the options in this command, see the [CLI reference](/docs/vpc?topic=vpc-creating-a-vpc-using-cli#create-a-subnet-cli). VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You cannot change the number of IPs that a VPC subnet has later.
     ```sh
     ibmcloud is subnet-create <subnet_name> <vpc_id> --zone <vpc_zone> --ipv4-address-count <number_of_ip_address> --ipv4-cidr-block <prefix_range>
     ```
@@ -380,7 +379,7 @@ If you enable classic access when you create your VPC, [classic access default a
         ```
         {: screen}
 
-6. Use the subnets to [create a cluster](/docs/containers?topic=containers-clusters#cluster_vpcg2_cli).
+6. Use the subnets to [create a cluster](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli).
     Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
     {: important}
     

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-11"
+lastupdated: "2021-10-15"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -12,7 +12,6 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-  
 
 # Setting up an image registry
 {: #registry}

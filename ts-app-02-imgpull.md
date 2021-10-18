@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -12,7 +12,6 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Why do images fail to pull from registry with `ImagePullBackOff` or authorization errors?
@@ -57,7 +56,7 @@ Failed to pull image "registry.ng.bluemix.net/<namespace>/<image>:<tag>" ... 401
 {: screen}
 
 
-Your cluster uses an API key that is stored in an [image pull secret](/docs/containers?topic=containers-registry#cluster_registry_auth) to authorize the cluster to pull images from {{site.data.keyword.registrylong_notm}}.
+Your cluster uses an API key that is stored in an [image pull secret](/docs/openshift?topic=openshift-registry#cluster_registry_auth) to authorize the cluster to pull images from {{site.data.keyword.registrylong_notm}}.
 {: tsCauses}
 
 By default, new clusters have image pull secrets that use API keys so that the cluster can pull images from any regional `icr.io` registry for containers that are deployed to the `default` {{site.data.keyword.openshiftshort}} project.
@@ -94,14 +93,14 @@ By default, new clusters have image pull secrets that use API keys so that the c
     {: screen}
 
 4. If no image pull secrets are listed, set up the image pull secret in your project.
-    1. Verify that the `default` project has `icr-io` image pull secrets for each regional registry that you want to use. If no `icr-io` secrets are listed in the project, [use the `ibmcloud oc cluster pull-secret apply --cluster <cluster_name_or_ID>` command](/docs/containers?topic=containers-registry#imagePullSecret_migrate_api_key) to create the image pull secrets in the `default` project.
+    1. Verify that the `default` project has `icr-io` image pull secrets for each regional registry that you want to use. If no `icr-io` secrets are listed in the project, [use the `ibmcloud oc cluster pull-secret apply --cluster <cluster_name_or_ID>` command](/docs/openshift?topic=openshift-registry#imagePullSecret_migrate_api_key) to create the image pull secrets in the `default` project.
         ```sh
         oc get secrets -n default | grep "icr-io"
         ```
         {: pre}
 
-    2. [Copy the `all-icr-io` image pull secret from the `default` {{site.data.keyword.openshiftshort}} project to the project where you want to deploy your workload](/docs/containers?topic=containers-registry#copy_imagePullSecret).
-    3. [Add the image pull secret to the service account for this {{site.data.keyword.openshiftshort}} project](/docs/containers?topic=containers-registry#store_imagePullSecret) so that all pods in the project can use the image pull secret credentials.
+    2. [Copy the `all-icr-io` image pull secret from the `default` {{site.data.keyword.openshiftshort}} project to the project where you want to deploy your workload](/docs/openshift?topic=openshift-registry#copy_imagePullSecret).
+    3. [Add the image pull secret to the service account for this {{site.data.keyword.openshiftshort}} project](/docs/openshift?topic=openshift-registry#store_imagePullSecret) so that all pods in the project can use the image pull secret credentials.
 5. If image pull secrets are listed in the pod, determine what type of credentials you use to access {{site.data.keyword.registrylong_notm}}.
     * If the secret has `icr` in the name, you use an API key to authenticate with the `icr.io` domain names. Continue with [Troubleshooting image pull secrets that use API keys](#img-pull-api-key).
     * If you have both types of secrets, then you use both authentication methods. Going forward, use the `icr.io` domain names in your deployment YAMLs for the container image. Continue with [Troubleshooting image pull secrets that use API keys](#img-pull-api-key).
@@ -181,7 +180,7 @@ The following steps assume that the API key stores the credentials of a service 
         ```
         {: screen}
 
-    4. Compare the image pull secret regional registry domain name with the domain name that you specified in the container image. By default, new clusters have image pull secrets for each regional registry domain name for containers that run in the `default` {{site.data.keyword.openshiftshort}} project. However, if you modified the default settings or are using a different {{site.data.keyword.openshiftshort}} project, you might not have an image pull secret for the regional registry. [Copy an image pull secret](/docs/containers?topic=containers-registry#copy_imagePullSecret) for the regional registry domain name.
+    4. Compare the image pull secret regional registry domain name with the domain name that you specified in the container image. By default, new clusters have image pull secrets for each regional registry domain name for containers that run in the `default` {{site.data.keyword.openshiftshort}} project. However, if you modified the default settings or are using a different {{site.data.keyword.openshiftshort}} project, you might not have an image pull secret for the regional registry. [Copy an image pull secret](/docs/openshift?topic=openshift-registry#copy_imagePullSecret) for the regional registry domain name.
     5. Log in to the registry from your local machine by using the `username` and `password` from your image pull secret. If you cannot log in, you might need to fix the service ID.
         ```sh
         docker login -u iamapikey -p <password_string> <region>.icr.io
@@ -196,7 +195,7 @@ The following steps assume that the API key stores the credentials of a service 
 
         2. Re-create your deployment in the `default` {{site.data.keyword.openshiftshort}} project. If you still see an authorization error message, repeat Steps 1-5 with the new image pull secrets. If you still cannot log in, [open an {{site.data.keyword.cloud_notm}} Support case](/docs/containers?topic=containers-get-help).
 
-    6. If the login succeeds, pull an image locally. If the command fails with an `access denied` error, the registry account is in a different {{site.data.keyword.cloud_notm}} account than the one your cluster is in. [Create an image pull secret to access images in the other account](/docs/containers?topic=containers-registry#other_registry_accounts). If you can pull an image to your local machine, then your API key has the right permissions, but the API setup in your cluster is not correct. 
+    6. If the login succeeds, pull an image locally. If the command fails with an `access denied` error, the registry account is in a different {{site.data.keyword.cloud_notm}} account than the one your cluster is in. [Create an image pull secret to access images in the other account](/docs/openshift?topic=openshift-registry#other_registry_accounts). If you can pull an image to your local machine, then your API key has the right permissions, but the API setup in your cluster is not correct. 
         ```sh
         docker pull <region>icr.io/<namespace>/<image>:<tag>
         ```

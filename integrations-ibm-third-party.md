@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # IBM Cloud services and third-party integrations
@@ -45,9 +44,9 @@ Because {{site.data.keyword.openshiftlong_notm}} lets you create a cluster on {{
 Supported persistent storage solutions, such as {{site.data.keyword.cloud_notm}} File Storage, {{site.data.keyword.cloud_notm}} Block Storage, or {{site.data.keyword.cos_full}} are integrated as Kubernetes flex drivers and can be set up by using [Helm charts](/docs/containers?topic=containers-helm). The Helm chart automatically sets up Kubernetes storage classes, the storage provider, and the storage driver in your cluster. You can use the storage classes to provision persistent storage by using persistent volume claims (PVCs). For more information, see [Planning highly available persistent storage](/docs/containers?topic=containers-storage_planning).
 
 To secure your cluster network or connect to an on-prem data center, you can configure one of the following options:
-- [strongSwan IPSec VPN Service](/docs/containers?topic=containers-vpn#vpn-setup)
+- [strongSwan IPSec VPN Service](/docs/openshift?topic=openshift-vpn#vpn-setup)
 - [{{site.data.keyword.BluDirectLink}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl)
-- [Virtual Router Appliance (VRA)](/docs/containers?topic=containers-vpn#vyatta)
+- [Virtual Router Appliance (VRA)](/docs/openshift?topic=openshift-vpn#vyatta)
 - [Fortigate Security Appliance (FSA)](/docs/vmwaresolutions/services?topic=vmwaresolutions-fsa_considerations)
 
 

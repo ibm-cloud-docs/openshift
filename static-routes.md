@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhos, rhoks, vpn, on-prem, gateway, static
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Adding static routes to worker nodes
@@ -46,7 +45,7 @@ To get started with static routes in {{site.data.keyword.openshiftlong_notm}}, e
 {: shortdesc}
 
 **Before you begin**
-* Ensure that you have the [**Administrator** IAM platform access role for the cluster in {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-users#checking-perms).
+* Ensure that you have the [**Administrator** IAM platform access role for the cluster in {{site.data.keyword.containerlong_notm}}](/docs/openshift?topic=openshift-users#checking-perms).
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 ### Enabling the static route add-on from the console

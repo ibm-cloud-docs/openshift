@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -11,7 +11,6 @@ content-type: troubleshoot
 
 ---
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Why does PVC or pod creation fail due to not finding the Kubernetes secret?
@@ -50,7 +49,7 @@ The Kubernetes secret that you created is not referenced correctly in your deplo
 {: tsCauses}
 
 
-This task requires [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/containers?topic=containers-users#checking-perms) for all projects.
+This task requires [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for all projects.
 {: tsResolve}
 
 1. List the secrets in your cluster and review the secret type. The secret must show `ibm/ibmc-s3fs` as the **Type**.
@@ -60,7 +59,7 @@ This task requires [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} I
     ```
     {: pre}
 
-2. If your secret does not show `ibm/ibmc-s3fs` as the **Type**, [re-create your secret](/docs/containers?topic=containers-object_storage#create_cos_secret).
+2. If your secret does not show `ibm/ibmc-s3fs` as the **Type**, [re-create your secret](/docs/openshift?topic=openshift-object_storage#create_cos_secret).
 
 3. Check your YAML configuration file for your PVC and pod to verify that you used the correct secret.
 

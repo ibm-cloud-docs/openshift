@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-11"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos, app access
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Testing access to apps with NodePorts
@@ -59,7 +58,7 @@ If you do not already have an app ready, you can use a Kubernetes example app ca
 Before you begin
 
 * [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC clusters: [Allow traffic requests that are routed to node ports on your worker nodes](/docs/containers?topic=containers-vpc-network-policy#security_groups).
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC clusters: [Allow traffic requests that are routed to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-network-policy#security_groups).
 
 To use a NodePort,
 
@@ -90,7 +89,7 @@ To use a NodePort,
     
     | Component | Description |
     | ----- | -------- |
-    | `name` | Replace `<my-nodeport-service>` with a name for your NodePort service. Learn more about [securing your personal information](/docs/containers?topic=containers-security#pi) when you work with Kubernetes resources. |
+    | `name` | Replace `<my-nodeport-service>` with a name for your NodePort service. Learn more about [securing your personal information](/docs/openshift?topic=openshift-security#pi) when you work with Kubernetes resources. |
     | `labels` | Replace `<my-label-key>` and `<my-label-value>` with the label that you want to use for your service. |
     | `selector` | Replace `<my-selector-key>` and `<my-selector-value>` with the key/value pair that you used in the `spec.template.metadata.labels` section of your deployment YAML. To associate the service with the deployment, the selector must match the deployment labels. |
     | `port` | Replace `<8081>` with the port that your service listens on. |

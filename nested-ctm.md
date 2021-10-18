@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, iks, help, network, dns, health check
 
@@ -12,7 +12,6 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Ingress health checks fail on Akamai Global Load Balancer (GLB) configurations
@@ -30,7 +29,7 @@ When you try to include Ingress subdomains that have health checks enabled in yo
 Akamai Global Traffic Managment (GTM) configurations do not support nested subdomains.
 {: tsCauses}
 
-Disable the default health check for the Ingress subdomain. For more information see the `nlb-dns monitor disable` [command reference](/docs/containers?topic=containers-kubernetes-service-cli#cs_nlb-dns-monitor-disable).
+Disable the default health check for the Ingress subdomain. For more information see the `nlb-dns monitor disable` [command reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-disable).
 {: tsResolve}
 
 ```sh

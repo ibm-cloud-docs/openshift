@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-10-18"
 
 keywords: openshift, roks, rhoks, rhos, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, roks pricing, iks pricing, openshift charges, ocp charges, openshift price, ocp price, roks price, openshift billing, ocp billing, roks billing, openshift costs, ocp costs, roks costs,
 
@@ -19,7 +19,6 @@ content-type: faq
 {: #faqs}
 
 
-
 Review frequently asked questions (FAQs) for using {{site.data.keyword.openshiftlong}}.
 {: shortdesc}
 
@@ -30,7 +29,7 @@ Review frequently asked questions (FAQs) for using {{site.data.keyword.openshift
 {: faq}
 {: support}
 
-With {{site.data.keyword.openshiftlong_notm}}, you can create your own {{site.data.keyword.openshiftshort}} cluster to deploy and manage containerized apps on {{site.data.keyword.cloud_notm}}. Your containerized apps are hosted on IBM Cloud infrastructure compute hosts that are called worker nodes. You can choose to provision your compute hosts as [virtual machines](/docs/containers?topic=containers-planning_worker_nodes#vm) with shared or dedicated resources, or as [bare metal machines](/docs/containers?topic=containers-planning_worker_nodes#bm) that can be optimized for GPU and software-defined storage (SDS) usage. Your worker nodes are controlled by a highly available {{site.data.keyword.openshiftshort}} master that is configured, monitored, and managed by IBM. You can use the {{site.data.keyword.containerlong_notm}} API or CLI to work with your cluster infrastructure resources and the Kubernetes API or CLI to manage your deployments and services.
+With {{site.data.keyword.openshiftlong_notm}}, you can create your own {{site.data.keyword.openshiftshort}} cluster to deploy and manage containerized apps on {{site.data.keyword.cloud_notm}}. Your containerized apps are hosted on IBM Cloud infrastructure compute hosts that are called worker nodes. You can choose to provision your compute hosts as [virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#vm) with shared or dedicated resources, or as [bare metal machines](/docs/openshift?topic=openshift-planning_worker_nodes#bm) that can be optimized for GPU and software-defined storage (SDS) usage. Your worker nodes are controlled by a highly available {{site.data.keyword.openshiftshort}} master that is configured, monitored, and managed by IBM. You can use the {{site.data.keyword.containerlong_notm}} API or CLI to work with your cluster infrastructure resources and the Kubernetes API or CLI to manage your deployments and services.
 
 For more information about how your cluster resources are set up, see the [Service architecture](/docs/containers?topic=containers-service-arch). To find a list of capabilities and benefits, see [Benefits and service offerings](/docs/containers?topic=containers-cs_ov).
 
@@ -40,7 +39,7 @@ For more information about how your cluster resources are set up, see the [Servi
 
 {{site.data.keyword.openshiftlong_notm}} is a managed {{site.data.keyword.openshiftshort}} offering that delivers powerful tools, an intuitive user experience, and built-in security for rapid delivery of apps that you can bind to cloud services that are related to {{site.data.keyword.ibmwatson}}, AI, IoT, DevOps, security, and data analytics. As a certified Kubernetes provider, {{site.data.keyword.openshiftlong_notm}} provides intelligent scheduling, self-healing, horizontal scaling, service discovery and load balancing, automated rollouts and rollbacks, and secret and configuration management. The service also has advanced capabilities around simplified cluster management, container security and isolation policies, the ability to design your own cluster, and integrated operational tools for consistency in deployment.
 
-For a detailed overview of capabilities and benefits, see [Benefits of using the service](/docs/containers?topic=containers-cs_ov#benefits).
+For a detailed overview of capabilities and benefits, see [Benefits of using the service](/docs/openshift?topic=openshift-cs_ov#benefits).
 
 ## Can I get a free cluster?
 {: #faq_free}
@@ -58,16 +57,13 @@ You can create only standard {{site.data.keyword.openshiftshort}} clusters. If y
 
 With {{site.data.keyword.cloud_notm}}, you can create clusters for your containerized workloads from two different container management platforms: the IBM version of community Kubernetes and {{site.data.keyword.openshiftlong_notm}}. The container platform that you select is installed on your cluster master and worker nodes. Later, you can [update the version](/docs/containers?topic=containers-update#update) but cannot roll back to a previous version or switch to a different container platform. If you want to use multiple container platforms, create a separate cluster for each.
 
-For more information, see [Comparison between {{site.data.keyword.openshiftshort}} and community Kubernetes clusters](/docs/containers?topic=containers-cs_ov#openshift_kubernetes).
+For more information, see [Comparison between {{site.data.keyword.openshiftshort}} and community Kubernetes clusters](/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes).
 
-<dl>
-    <dt>Kubernetes</dt>
-        <dd>[Kubernetes ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/) is a production-grade, open source container orchestration platform that you can use to automate, scale, and manage your containerized apps that run on an Ubuntu operating system. With the [{{site.data.keyword.containerlong_notm}} version](/docs/containers?topic=containers-cs_versions#cs_versions), you get access to community Kubernetes API features that are considered **beta** or higher by the community. Kubernetes **alpha** features, which are subject to change, are generally not enabled by default. With Kubernetes, you can combine various resources such as secrets, deployments, and services to securely create and manage highly available, containerized apps.<br><br>
-    To get started, [create a Kubernetes cluster](/docs/containers?topic=containers-cs_cluster_tutorial#cs_cluster_tutorial).</dd>
-    <dt>{{site.data.keyword.openshiftshort}}</dt>
-        <dd>{{site.data.keyword.openshiftlong_notm}} is a Kubernetes-based platform that is designed especially to accelerate your containerized app delivery processes that run on a Red Hat Enterprise Linux 7 operating system. You can orchestrate and scale your existing {{site.data.keyword.openshiftshort}} workloads across on-prem and off-prem clouds for a portable, hybrid solution that works the same in multicloud scenarios. <br><br>
-    To get started, try out the [{{site.data.keyword.openshiftlong_notm}} tutorial](/docs/openshift?topic=openshift-openshift_tutorial).</dd>
-</dl>
+Kubernetes
+:   [Kubernetes ![External link icon](../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/) is a production-grade, open source container orchestration platform that you can use to automate, scale, and manage your containerized apps that run on an Ubuntu operating system. With the [{{site.data.keyword.containerlong_notm}} version](/docs/containers?topic=containers-cs_versions#cs_versions), you get access to community Kubernetes API features that are considered **beta** or higher by the community. Kubernetes **alpha** features, which are subject to change, are generally not enabled by default. With Kubernetes, you can combine various resources such as secrets, deployments, and services to securely create and manage highly available, containerized apps. To get started, [create a Kubernetes cluster](/docs/containers?topic=containers-cs_cluster_tutorial#cs_cluster_tutorial).
+
+{{site.data.keyword.openshiftshort}}
+:   {{site.data.keyword.openshiftlong_notm}} is a Kubernetes-based platform that is designed especially to accelerate your containerized app delivery processes that run on a Red Hat Enterprise Linux 7 operating system. You can orchestrate and scale your existing {{site.data.keyword.openshiftshort}} workloads across on-prem and off-prem clouds for a portable, hybrid solution that works the same in multicloud scenarios. To get started, try out the [{{site.data.keyword.openshiftlong_notm}} tutorial](/docs/openshift?topic=openshift-openshift_tutorial).
 
 ## Does the service come with a managed {{site.data.keyword.openshiftshort}} master and worker nodes?
 {: #managed_master_worker}
@@ -85,13 +81,13 @@ Worker nodes in standard clusters are provisioned in to your {{site.data.keyword
 
 The {{site.data.keyword.openshiftlong_notm}} architecture and infrastructure is designed to ensure reliability, low processing latency, and a maximum uptime of the service. By default, every cluster in {{site.data.keyword.openshiftlong_notm}} is set up with multiple {{site.data.keyword.openshiftshort}} master instances to ensure availability and accessibility of your cluster resources, even if one or more instances of your {{site.data.keyword.openshiftshort}} master are unavailable.
 
-You can make your cluster even more highly available and protect your app from a downtime by spreading your workloads across multiple worker nodes in multiple zones of a region. This setup is called a [multizone cluster](/docs/containers?topic=containers-ha_clusters#multizone) and ensures that your app is accessible, even if a worker node or an entire zone is not available.
+You can make your cluster even more highly available and protect your app from a downtime by spreading your workloads across multiple worker nodes in multiple zones of a region. This setup is called a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone) and ensures that your app is accessible, even if a worker node or an entire zone is not available.
 
-To protect against an entire region failure, create [multiple clusters and spread them across {{site.data.keyword.cloud_notm}} regions](/docs/containers?topic=containers-ha_clusters#multiple_clusters). By setting up a network load balancer (NLB) for your clusters, you can achieve cross-region load balancing and cross-region networking for your clusters.
+To protect against an entire region failure, create [multiple clusters and spread them across {{site.data.keyword.cloud_notm}} regions](/docs/openshift?topic=openshift-ha_clusters#multiple_clusters). By setting up a network load balancer (NLB) for your clusters, you can achieve cross-region load balancing and cross-region networking for your clusters.
 
-If you have data that must be available, even if an outage occurs, make sure to store your data on [persistent storage](/docs/containers?topic=containers-storage_planning#storage_planning).
+If you have data that must be available, even if an outage occurs, make sure to store your data on [persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning).
 
-For more information about how to achieve high availability for your cluster, see [High availability for {{site.data.keyword.openshiftlong_notm}}](/docs/containers?topic=containers-ha#ha).
+For more information about how to achieve high availability for your cluster, see [High availability for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha#ha).
 
 ## What options do I have to secure my cluster?
 {: #secure_cluster}
@@ -100,27 +96,27 @@ For more information about how to achieve high availability for your cluster, se
 
 You can use built-in security features in {{site.data.keyword.openshiftlong_notm}} to protect the components in your cluster, your data, and app deployments to ensure security compliance and data integrity. Use these features to secure your {{site.data.keyword.openshiftshort}} API server, etcd data store, worker node, network, storage, images, and deployments against malicious attacks. You can also leverage built-in logging and monitoring tools to detect malicious attacks and suspicious usage patterns.
 
-For more information about the components of your cluster and how you can meet security standards for each component, see [Security for {{site.data.keyword.openshiftlong_notm}}](/docs/containers?topic=containers-security#security).
+For more information about the components of your cluster and how you can meet security standards for each component, see [Security for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-security#security).
 
 ## What access policies do I give my cluster users?
 {: #faq_access}
 {: faq}
 {: support}
 
-{{site.data.keyword.openshiftlong_notm}} uses {{site.data.keyword.iamshort}} (IAM) to grant access to cluster resources through IAM platform access roles and Kubernetes role-based access control (RBAC) policies through IAM service access roles. For more information about types of access policies, see [Pick the right access policy and role for your users](/docs/containers?topic=containers-access-overview#access_roles).
+{{site.data.keyword.openshiftlong_notm}} uses {{site.data.keyword.iamshort}} (IAM) to grant access to cluster resources through IAM platform access roles and Kubernetes role-based access control (RBAC) policies through IAM service access roles. For more information about types of access policies, see [Pick the right access policy and role for your users](/docs/openshift?topic=openshift-access-overview#access_roles).
 {: shortdesc}
 
-The access policies that you assign users vary depending on what you want your users to be able to do. You can find more information about what roles authorize which types of actions on the [User access reference page](/docs/containers?topic=containers-access_reference) or in the following table's links. For steps to assign policies, see [Granting users access to your cluster through {{site.data.keyword.cloud_notm}} IAM](/docs/containers?topic=containers-users#checking-perms).
+The access policies that you assign users vary depending on what you want your users to be able to do. You can find more information about what roles authorize which types of actions on the [User access reference page](/docs/containers?topic=containers-access_reference) or in the following table's links. For steps to assign policies, see [Granting users access to your cluster through {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#checking-perms).
 
 | Use case | Example roles and scope |
 | --- | --- |
-| App auditor | [Viewer platform access role for a cluster, region, or resource group](/docs/containers?topic=containers-access_reference#iam_platform), [Reader service access role for a cluster, region, or resource group](/docs/containers?topic=containers-access_reference#service). |
-| App developers | [Editor platform access role for a cluster](/docs/containers?topic=containers-access_reference#iam_platform), [Writer service access role scoped to a namespace](/docs/containers?topic=containers-access_reference#service), [Cloud Foundry developer space role](/docs/containers?topic=containers-access_reference#cloud-foundry). |
-| Billing | [Viewer platform access role for a cluster, region, or resource group](/docs/containers?topic=containers-access_reference#iam_platform). |
-| Create a cluster | See [Permissions to create a cluster](/docs/containers?topic=containers-access_reference#cluster_create_permissions).|
-| Cluster administrator | [Administrator platform access role for a cluster](/docs/containers?topic=containers-access_reference#iam_platform), [Manager service access role not scoped to a namespace (for the whole cluster)](/docs/containers?topic=containers-access_reference#service).|
-| DevOps operator | [Operator platform access role for a cluster](/docs/containers?topic=containers-access_reference#iam_platform), [Writer service access role not scoped to a namespace (for the whole cluster)](/docs/containers?topic=containers-access_reference#service), [Cloud Foundry developer space role](/docs/containers?topic=containers-access_reference#cloud-foundry).  |
-| Operator or site reliability engineer | [Administrator platform access role for a cluster, region, or resource group](/docs/containers?topic=containers-access_reference#iam_platform), [Reader service access role for a cluster or region](/docs/containers?topic=containers-access_reference#service) or [Manager service access role for all cluster namespaces](/docs/containers?topic=containers-access_reference#service) to be able to use `kubectl top nodes,pods` commands. |
+| App auditor | [Viewer platform access role for a cluster, region, or resource group](/docs/openshift?topic=openshift-access_reference#iam_platform), [Reader service access role for a cluster, region, or resource group](/docs/openshift?topic=openshift-access_reference#service). |
+| App developers | [Editor platform access role for a cluster](/docs/openshift?topic=openshift-access_reference#iam_platform), [Writer service access role scoped to a namespace](/docs/openshift?topic=openshift-access_reference#service), [Cloud Foundry developer space role](/docs/openshift?topic=openshift-access_reference#cloud-foundry). |
+| Billing | [Viewer platform access role for a cluster, region, or resource group](/docs/openshift?topic=openshift-access_reference#iam_platform). |
+| Create a cluster | See [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions).|
+| Cluster administrator | [Administrator platform access role for a cluster](/docs/openshift?topic=openshift-access_reference#iam_platform), [Manager service access role not scoped to a namespace (for the whole cluster)](/docs/openshift?topic=openshift-access_reference#service).|
+| DevOps operator | [Operator platform access role for a cluster](/docs/openshift?topic=openshift-access_reference#iam_platform), [Writer service access role not scoped to a namespace (for the whole cluster)](/docs/openshift?topic=openshift-access_reference#service), [Cloud Foundry developer space role](/docs/openshift?topic=openshift-access_reference#cloud-foundry).  |
+| Operator or site reliability engineer | [Administrator platform access role for a cluster, region, or resource group](/docs/openshift?topic=openshift-access_reference#iam_platform), [Reader service access role for a cluster or region](/docs/openshift?topic=openshift-access_reference#service) or [Manager service access role for all cluster namespaces](/docs/openshift?topic=openshift-access_reference#service) to be able to use `kubectl top nodes,pods` commands. |
 {: summary="The first column contains the use case, which is typically the role of a user. The second column is the example role and scope of the role that you assign the user in {{site.data.keyword.cloud_notm}} IAM."}
 {: caption="Types of roles you might assign to meet different use cases." caption-side="top"}
 
@@ -139,7 +135,7 @@ Some CVEs require the latest patch update for a version that you can install as 
 
 Yes, you can provision your worker node as a single-tenant physical bare metal server. Bare metal servers come with high-performance benefits for workloads such as data, GPU, and AI. Additionally, all the hardware resources are dedicated to your workloads, so you don't have to worry about "noisy neighbors".
 
-For more information about available bare metal flavors and how bare metal is different from virtual machines, see [Physical machines (bare metal)](/docs/containers?topic=containers-planning_worker_nodes#bm).
+For more information about available bare metal flavors and how bare metal is different from virtual machines, see [Physical machines (bare metal)](/docs/openshift?topic=openshift-planning_worker_nodes#bm).
 
 ## What is the smallest size cluster that I can make?
 {: #smallest_cluster}
@@ -148,7 +144,7 @@ For more information about available bare metal flavors and how bare metal is di
 Your cluster must have at least 2 worker nodes to run default Kubernetes and OpenShift Container Platform components. You cannot have a cluster with 0 worker nodes, and you cannot power off or suspend billing for your worker nodes. Additionally, the type of cluster and the number of worker pools that you have can impact the size of your cluster.
 
 * **Single zone clusters`*`**: [Create a cluster](/docs/containers?topic=containers-clusters) with 2 worker nodes in the default worker pool.
-* **Multizone clusters`*`**: You must [create a cluster](/docs/containers?topic=containers-clusters) with 1 worker node per zone in the worker pool. Later, you can [remove zones](/docs/containers?topic=containers-kubernetes-service-cli#cs_zone_rm) from the worker pool or [remove individual worker nodes](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_rm) so that your cluster size reduces to the minimum size of 2.
+* **Multizone clusters`*`**: You must [create a cluster](/docs/containers?topic=containers-clusters) with 1 worker node per zone in the worker pool. Later, you can [remove zones](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_rm) from the worker pool or [remove individual worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_rm) so that your cluster size reduces to the minimum size of 2.
 * **Worker pools**: For any type of cluster, each worker pool must have at least 1 worker node at all times. For the smallest size cluster possible, you can have only 1 worker pool.
 
 Keep in mind that some services such as Ingress might require multiple worker nodes for high availability, and you might not be able to run these services or your apps in the smallest size cluster possible.
@@ -182,7 +178,7 @@ Keep in mind that some services such as Ingress might require multiple worker no
 
 {{site.data.keyword.openshiftlong_notm}} is available worldwide. You can create standard clusters in every supported {{site.data.keyword.openshiftlong_notm}} region. Free clusters are available only in select regions.
 
-For more information about supported regions, see [Locations](/docs/containers?topic=containers-regions-and-zones#regions-and-zones).
+For more information about supported regions, see [Locations](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones).
 
 ## Is the service highly available?
 {: #ha_sla}
@@ -190,7 +186,7 @@ For more information about supported regions, see [Locations](/docs/containers?t
 
 Yes. By default, {{site.data.keyword.openshiftlong_notm}} sets up many components such as the cluster master with replicas, anti-affinity, and other options to increase the high availability (HA) of the service. You can increase the redundancy and failure toleration of your cluster worker nodes, storage, networking, and workloads by configuring them in a highly available architecture. For an overview of the default setup and your options to increase HA, see [High availability for {{site.data.keyword.openshiftlong_notm}}](/docs/containers?topic=containers-ha).
 
-For the latest HA service level agreement terms, refer to the [{{site.data.keyword.cloud_notm}} terms of service](/docs/overview?topic=overview-slas). Generally, the SLA availability terms require that when you configure your infrastructure resources in an HA architecture, you must distribute them evenly across three different availability zones. For example, to receive full HA coverage under the SLA terms, you must [set up a multizone cluster](/docs/containers?topic=containers-ha_clusters#multizone) with a total of at least 9 worker nodes, three worker nodes per zone that are evenly spread across three zones.
+For the latest HA service level agreement terms, refer to the [{{site.data.keyword.cloud_notm}} terms of service](/docs/overview?topic=overview-slas). Generally, the SLA availability terms require that when you configure your infrastructure resources in an HA architecture, you must distribute them evenly across three different availability zones. For example, to receive full HA coverage under the SLA terms, you must [set up a multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone) with a total of at least 6 worker nodes, two worker nodes per zone that are evenly spread across three zones.
 
 ## What compliance standards does the service meet?
 {: #standards}

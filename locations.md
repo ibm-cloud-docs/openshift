@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Locations
@@ -110,10 +109,10 @@ The following image is used as an example to explain how {{site.data.keyword.ope
 
 **Deprecated data centers**
 
-Oslo (osl01) is deprecated and becomes unsupported later this year. To prevent any interruption of service, [redeploy all of your cluster workloads](/docs/containers?topic=containers-update_app#copy_apps_cluster) to a [supported data center](/docs/containers?topic=containers-regions-and-zones#zones-mz) and remove your `osl01` clusters by **1 August 2021**. Before the unsupported date, you are blocked from adding new worker nodes and clusters starting on **1 July 2021**. For more information, see [Data center closures in 2021](/docs/get-support?topic=get-support-dc-closure).
+Oslo (osl01) is deprecated and becomes unsupported later this year. To prevent any interruption of service, [redeploy all of your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your `osl01` clusters by **1 August 2021**. Before the unsupported date, you are blocked from adding new worker nodes and clusters starting on **1 July 2021**. For more information, see [Data center closures in 2021](/docs/get-support?topic=get-support-dc-closure).
 {: deprecated}
 
-Houston (hou02) is deprecated and becomes unsupported later this year. For more information, see [Data center closures in 2021](/docs/get-support?topic=get-support-dc-closure). To prevent any interruption of service, [redeploy all of your cluster workloads](/docs/containers?topic=containers-update_app#copy_apps_cluster) to a [supported data center](/docs/containers?topic=containers-regions-and-zones#zones-mz) and remove your `hou02` clusters by **1 August 2021**. Houston supports free clusters that are created in US South, and is not available for standard, production clusters.
+Houston (hou02) is deprecated and becomes unsupported later this year. For more information, see [Data center closures in 2021](/docs/get-support?topic=get-support-dc-closure). To prevent any interruption of service, [redeploy all of your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your `hou02` clusters by **1 August 2021**. Houston supports free clusters that are created in US South, and is not available for standard, production clusters.
 {: deprecated}
 
 ### VPC multizone regions
@@ -159,8 +158,8 @@ In a multizone cluster, your cluster's resources are spread across multiple zone
 1. Worker nodes are spread across multiple zones in the metro location to provide more availability for your cluster. The Kubernetes master replicas are also spread across zones. When you initiate local container orchestration actions, such as `oc` commands, the information is exchanged between your master and worker nodes through the global endpoint.
 
 2. Other cluster resources, such as storage, networking, compute, or apps running in pods, vary in how they deploy to the zones in your multizone cluster. For more information, review these topics:
-    *   Setting up [file storage](/docs/containers?topic=containers-file_storage#add_file) and [block storage](/docs/containers?topic=containers-block_storage#add_block) in multizone clusters, or [choosing a multizone persistent storage solution](/docs/containers?topic=containers-storage_planning#persistent_storage_overview).
-    *   [Enabling public or private access to an app by using a network load balancer (NLB) service in a multizone cluster](/docs/containers?topic=containers-loadbalancer#multi_zone_config).
+    *   Setting up [file storage](/docs/openshift?topic=openshift-file_storage#add_file) and [block storage](/docs/openshift?topic=openshift-block_storage#add_block) in multizone clusters, or [choosing a multizone persistent storage solution](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
+    *   [Enabling public or private access to an app by using a network load balancer (NLB) service in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config).
     *   [Managing network traffic by using Ingress](/docs/containers?topic=containers-ingress-about).
     *   [Increasing the availability of your app](/docs/openshift?topic=openshift-openshift_apps).
 
@@ -210,7 +209,7 @@ When you use the new global functionality in the {{site.data.keyword.openshiftlo
     * If you have clusters with the same name in different regions, use the cluster ID when you run commands or set a region with the `ibmcloud oc init` command and use the cluster name when you run commands.
 
 * Legacy functionality:
-    * If you need to list and work with resources from one region only, you can use the `ibmcloud oc init` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_init) to target a regional endpoint instead of the global endpoint. Example to target the US South regional endpoint:
+    * If you need to list and work with resources from one region only, you can use the `ibmcloud oc init` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_init) to target a regional endpoint instead of the global endpoint. Example to target the US South regional endpoint:
         ```sh
         ibmcloud oc init --host https://us-south.containers.cloud.ibm.com
         ```
@@ -226,7 +225,7 @@ When you use the new global functionality in the {{site.data.keyword.openshiftlo
 
 
 **{{site.data.keyword.openshiftlong_notm}} API**:
-* [Get started with the API](/docs/containers?topic=containers-cs_api_install#cs_api).
+* [Get started with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api).
 * [View documentation on the API commands](https://containers.cloud.ibm.com/global/swagger-global-api/#/).
 * Generate a client of the API to use in automation by using the [`swagger.json` API](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json).
 

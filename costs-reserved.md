@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -11,7 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Using reservations to reduce classic worker node costs
@@ -59,7 +58,7 @@ Reserving worker nodes does not guarantee compute capacity whenever you want to 
 
 **How do I know how many reserved worker nodes I need?**
 
-See [Sizing your Kubernetes cluster to support your workload](/docs/containers?topic=containers-strategy#sizing).
+See [Sizing your Kubernetes cluster to support your workload](/docs/openshift?topic=openshift-strategy#sizing).
 
 **What kind of workloads are best suited for reservations?**
 
@@ -115,7 +114,7 @@ No, you cannot modify the terms of the contract, such as the duration, number of
 Create a reservation that you can use to provision worker nodes at a reduced cost by committing to a 1 or 3 year term.
 {: shortdesc}
 
-Before you begin, make sure that you have the [**Administrator** platform access role for the service in {{site.data.keyword.cloud_notm}} IAM](/docs/containers?topic=containers-users#checking-perms).
+Before you begin, make sure that you have the [**Administrator** platform access role for the service in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#checking-perms).
 
 1. Log in to the [{{site.data.keyword.openshiftlong_notm}} reservations console](https://cloud.ibm.com/kubernetes/reservations){: external}.
 2. Click **Create reservation**.
@@ -153,7 +152,7 @@ If you do not have enough capacity in your reservation to complete a worker pool
 
 Before you begin:
 * In {{site.data.keyword.cloud_notm}} IAM, make sure that you have the **Operator** platform access role for **Kubernetes Service** for the cluster to create worker pools.
-* [Create](/docs/containers?topic=containers-clusters#clusters_standard) or have an existing a classic cluster in the **same metro** as the reservation that you want to use. If you want to use worker nodes only from a reservation, you can create a cluster with zero worker nodes, or remove existing, on-demand worker pools from a cluster.
+* [Create](/docs/openshift?topic=openshift-clusters#clusters_standard) or have an existing a classic cluster in the **same metro** as the reservation that you want to use. If you want to use worker nodes only from a reservation, you can create a cluster with zero worker nodes, or remove existing, on-demand worker pools from a cluster.
 
 To use the reservation:
 1. Log in to the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.

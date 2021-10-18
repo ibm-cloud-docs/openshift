@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -12,7 +12,6 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Debugging common CLI issues with clusters
@@ -39,10 +38,10 @@ You might have corporate network policies that prevent access from your local sy
 {: tsCauses}
 
 
-[Allow TCP access for the CLI commands to work](/docs/containers?topic=containers-firewall#firewall_bx).
+[Allow TCP access for the CLI commands to work](/docs/openshift?topic=openshift-firewall#firewall_bx).
 {: tsResolve}
 
-This task requires the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/containers?topic=containers-users#checking-perms) for the cluster.
+This task requires the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster.
 
 
 

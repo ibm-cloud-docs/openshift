@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -12,7 +12,6 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Debugging the cluster autoscaler
@@ -57,7 +56,7 @@ Check that the cluster autoscaler is configured correctly.
 2. In the `data.workerPoolsConfig.json` field, check that the correct worker pools are enabled with the minimum and maximum size per worker pool.
 
     *  **`"name": "<worker_pool_name>"`**: The name of your worker pool in the configmap must be exactly the same as the name of the worker pool in your cluster. Multiple worker pools must be comma-separated. To check the name of your cluster worker pools, run `ibmcloud oc worker-pool ls -c <cluster_name_or_ID>`.
-    *  **`"minSize": 2`**: In general, the `minSize` must be `2` or greater. Remember that the`minSize` value cannot be `0`, and you can only have a `minSize` of 1 if you [disable the public ALBs](/docs/containers?topic=containers-kubernetes-service-cli#cs_alb_configure).
+    *  **`"minSize": 2`**: In general, the `minSize` must be `2` or greater. Remember that the`minSize` value cannot be `0`, and you can only have a `minSize` of 1 if you [disable the public ALBs](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure).
     * **`"maxSize": 3`**: The `maxSize` must be equal to or greater than the `minSize`.
     * **`"enabled": true`**: Set the value to `true` to enable autoscaling the worker pool.
 
@@ -138,7 +137,7 @@ Check the health of the cluster autoscaler pod.
     ```
     {: pre}
 
-3. Review the **Command** section to check that the [custom cluster autoscaler configuration](/docs/containers?topic=containers-ca#ca_chart_values) matches what you expect, such as the`scale-down-delay-after-add` value.
+3. Review the **Command** section to check that the [custom cluster autoscaler configuration](/docs/openshift?topic=openshift-ca#ca_chart_values) matches what you expect, such as the`scale-down-delay-after-add` value.
     ```sh
     Command:
         ./cluster-autoscaler

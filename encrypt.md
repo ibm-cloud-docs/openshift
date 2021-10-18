@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, encrypt, security, kms, root key, crk
 
@@ -13,14 +13,13 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-
 # Protecting sensitive information in your cluster
 {: #encryption}
 
 Protect sensitive information in your {{site.data.keyword.openshiftlong}} cluster to ensure data integrity and to prevent your data from being exposed to unauthorized users.
 {: shortdesc}
 
-For more information about securing your cluster and personal information, see [Security for {{site.data.keyword.openshiftlong_notm}}](/docs/containers?topic=containers-security#security) and [Storing personal information](/docs/containers?topic=containers-security#pi).
+For more information about securing your cluster and personal information, see [Security for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-security#security) and [Storing personal information](/docs/openshift?topic=openshift-security#pi).
 
 ## Overview of cluster encryption
 {: #encrypt_ov}
@@ -42,7 +41,7 @@ The following image and description outline default and optional data encryption
     In clusters that run {{site.data.keyword.openshiftshort}} 4 or later, you can [deploy containers from an encrypted image](/docs/openshift?topic=openshift-images#encrypted-images).
     {: tip}
 
-6. **Persistent storage encryption**: You can choose to store data by [setting up file, block, object, or software-defined Portworx persistent storage](/docs/containers?topic=containers-storage_planning#persistent_storage_overview). If you store your data on file or block storage, your data is automatically encrypted at rest. If you use object storage, your data is also encrypted during transit. With Portworx, you can choose to [set up volume encryption](/docs/containers?topic=containers-portworx#encrypt_volumes) to protect your data during transit and at rest. The IBM Cloud infrastructure storage instances save the data on encrypted disks, so your data at rest is encrypted.
+6. **Persistent storage encryption**: You can choose to store data by [setting up file, block, object, or software-defined Portworx persistent storage](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview). If you store your data on file or block storage, your data is automatically encrypted at rest. If you use object storage, your data is also encrypted during transit. With Portworx, you can choose to [set up volume encryption](/docs/openshift?topic=openshift-portworx#encrypt_volumes) to protect your data during transit and at rest. The IBM Cloud infrastructure storage instances save the data on encrypted disks, so your data at rest is encrypted.
 7. **Data-in-use encryption**: For select, SGX-enabled classic worker node flavors, you can use [{{site.data.keyword.datashield_short}}](#datashield) to encrypt data-in-use within the worker node.
 
 
@@ -131,8 +130,8 @@ Before you enable a key management service (KMS) provider in your cluster, creat
     {: tip}
 
 3. Make sure that you have the correct permissions in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to enable KMS in your cluster.
-    * Ensure that you have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/containers?topic=containers-users#checking-perms) for the cluster.
-    * Ensure that the API key owner of the [API key](/docs/containers?topic=containers-access-creds#api_key_about) that is set for the region and resource group that your cluster is in has the correct permissions for the KMS provider. For more information on granting access in IAM to the KMS provider, see the [{{site.data.keyword.keymanagementserviceshort}} user access documentation](/docs/key-protect?topic=key-protect-manage-access) or [{{site.data.keyword.hscrypto}} user access documentation](/docs/hs-crypto?topic=hs-crypto-manage-access#platform-mgmt-roles).
+    * Ensure that you have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster.
+    * Ensure that the API key owner of the [API key](/docs/openshift?topic=openshift-access-creds#api_key_about) that is set for the region and resource group that your cluster is in has the correct permissions for the KMS provider. For more information on granting access in IAM to the KMS provider, see the [{{site.data.keyword.keymanagementserviceshort}} user access documentation](/docs/key-protect?topic=key-protect-manage-access) or [{{site.data.keyword.hscrypto}} user access documentation](/docs/hs-crypto?topic=hs-crypto-manage-access#platform-mgmt-roles).
         * For example, to create an instance and root key, you need at least the **Editor** platform and **Writer** service access roles for {{site.data.keyword.keymanagementserviceshort}} or for {{site.data.keyword.hscrypto}}.
         * If you plan to use an existing KMS instance and root key, you need at least the **Viewer** platform and **Reader** service access roles for {{site.data.keyword.keymanagementserviceshort}} or for {{site.data.keyword.hscrypto}}.
     * **For clusters that run {{site.data.keyword.openshiftshort}} 4.4.16_1513_openshift or later**: An additional **Reader** [service-to-service authorization policy](/docs/account?topic=account-serviceauth) between {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.keymanagementserviceshort}} is automatically created for your cluster, if the policy does not already exist. Without this policy, your cluster cannot use all the [{{site.data.keyword.keymanagementserviceshort}} features](#kms-keyprotect-features).
@@ -348,7 +347,7 @@ You can manage the encryption of the worker nodes by enabling a KMS provider at 
     {: note}
 
 3. Create a cluster or worker pool that includes your KMS provider instance and root key. Each worker node in the worker pool then is encrypted by the KMS provider that you manage. Each worker pool in your cluster can use the same KMS instance and root key, the same KMS instance with different root keys, or different instances.
-    - **Creating a cluster**: Only the `default` worker pool's nodes are encrypted. After you create the cluster, if you create more worker pools, you must enable encryption in each pool separately. For more information, see [Creating clusters](/docs/containers?topic=containers-clusters#clusters_vpcg2) or the [CLI reference documentation](/docs/containers?topic=containers-kubernetes-service-cli#cli_cluster-create-vpc-gen2).
+    - **Creating a cluster**: Only the `default` worker pool's nodes are encrypted. After you create the cluster, if you create more worker pools, you must enable encryption in each pool separately. For more information, see [Creating clusters](/docs/openshift?topic=openshift-clusters#clusters_vpcg2) or the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2).
         - **UI**: From the [cluster creation page](https://cloud.ibm.com/kubernetes/catalog/create){: external}, make sure to include the **KMS instance** and **Root key** fields.
         - **CLI**: Make sure to include the `--kms-instance-id` and `--crk` fields, such as in the following VPC example.
             ```sh
@@ -356,7 +355,7 @@ You can manage the encryption of the worker nodes by enabling a KMS provider at 
             ```
             {: codeblock}
 
-    - **Creating a worker pool**: For more information, see [Creating VPC worker pools](/docs/containers?topic=containers-add_workers#vpc_add_pool) or the [CLI reference documentation](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).
+    - **Creating a worker pool**: For more information, see [Creating VPC worker pools](/docs/openshift?topic=openshift-add_workers#vpc_add_pool) or the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).
         - **UI**: After selecting your cluster from the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Worker pools > Add**. Then,  make sure to include the **KMS instance** and **Root key** fields.
         - **CLI**: Make sure to include the `--kms-instance-id` and `--crk` fields, such as in the  following VPC example.
             ```sh
@@ -374,7 +373,7 @@ You can manage the encryption of the worker nodes by enabling a KMS provider at 
 
 5. Optional: [Rotate the root key](/docs/vpc?topic=vpc-vpc-key-rotation) periodically per your company's security compliance guidelines. For more information, see the [Managing encryption topic in the VPC documentation](/docs/vpc?topic=vpc-vpc-encryption-managing).
 
-    Do not delete your KMS instance. You cannot change the KMS instance that is used to encrypt the worker pool. If you disable or delete the root key, your worker nodes enter a `critical` state until you restore the root key and [reboot](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reboot) the worker nodes.
+    Do not delete your KMS instance. You cannot change the KMS instance that is used to encrypt the worker pool. If you disable or delete the root key, your worker nodes enter a `critical` state until you restore the root key and [reboot](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot) the worker nodes.
     {: important}
 
 The encryption for the disks of the worker nodes in your worker pool are now managed by the root key in your KMS provider. If you created a cluster, the worker pool is the `default` worker pool.

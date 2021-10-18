@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-14"
+lastupdated: "2021-10-18"
 
 keywords: openshift
 subcollection: openshift
@@ -91,20 +91,6 @@ subcollection: openshift
     * [Disaster recovery](/docs/openshift?topic=openshift-responsibilities_iks#disaster-recovery)
 
     * [Applications and data](/docs/openshift?topic=openshift-responsibilities_iks#applications-and-data)
-
-* [Tasks for IBM responsibilities by area](/docs/openshift?topic=openshift-responsibilities_iks#task-responsibilities)
-
-    * [Incident and operations management](/docs/openshift?topic=openshift-responsibilities_iks#incident-and-ops-ibm)
-
-    * [Change management](/docs/openshift?topic=openshift-responsibilities_iks#change-management-ibm)
-
-    * [Identity and access management](/docs/openshift?topic=openshift-responsibilities_iks#iam-responsibilities-ibm)
-
-    * [Security and regulation compliance](/docs/openshift?topic=openshift-responsibilities_iks#security-compliance-ibm)
-
-    * [Disaster recovery](/docs/openshift?topic=openshift-responsibilities_iks#disaster-recovery-ibm)
-
-    * [Applications and data](/docs/openshift?topic=openshift-responsibilities_iks#applications-and-data-ibm)
 
 
 ## Use cases
@@ -198,6 +184,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-rel-notes#rel-notes)
 
 [October 2021](/docs/openshift?topic=openshift-rel-notes#release-oct-2021)
+
+* [18 October 2021](/docs/openshift?topic=openshift-rel-notes#18oct2021)
 
 * [13 October 2021](/docs/openshift?topic=openshift-rel-notes#13oct2021)
 
@@ -1054,15 +1042,15 @@ subcollection: openshift
 
 * [Controlling traffic with the default security group](/docs/openshift?topic=openshift-vpc-network-policy#security_groups)
 
-    * [Creating security group rules in the console](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_ui)
+    * [Creating security group rules from the console](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_ui)
 
-    * [Creating security group rules from the CLI](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_cli)
+    * [Creating security group rules with the CLI](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_cli)
 
 * [Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-network-policy#acls)
 
-    * [Creating ACLs in the console](/docs/openshift?topic=openshift-vpc-network-policy#acls_ui)
+    * [Creating ACLs from the console](/docs/openshift?topic=openshift-vpc-network-policy#acls_ui)
 
-    * [Creating ACLs from the CLI](/docs/openshift?topic=openshift-vpc-network-policy#acls_cli)
+    * [Creating ACLs with the CLI](/docs/openshift?topic=openshift-vpc-network-policy#acls_cli)
 
 * [Controlling traffic between pods with Kubernetes policies](/docs/openshift?topic=openshift-vpc-network-policy#kubernetes_policies)
 
@@ -2105,8 +2093,6 @@ subcollection: openshift
 
 * [Mounting the volume to your app](/docs/openshift?topic=openshift-portworx#mount_pvc)
 
-* [VPC: Updating worker nodes with Portworx volumes](/docs/openshift?topic=openshift-portworx#portworx_vpc_up)
-
 * [Backing up and restoring apps and data with PX-Backup](/docs/openshift?topic=openshift-portworx#px-backup)
 
     * [Installing PX-Backup on a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-portworx#px-backup-install)
@@ -2285,8 +2271,6 @@ subcollection: openshift
     * [Updating the IBM Cloud Block Storage Attacher plug-in](/docs/openshift?topic=openshift-utilities#update_block_attacher)
 
     * [Removing the IBM Cloud Block Volume Attacher plug-in](/docs/openshift?topic=openshift-utilities#remove_block_attacher)
-
-* [Classic: Automatically provisioning unformatted block storage and authorizing your worker nodes to access the storage](/docs/openshift?topic=openshift-utilities#automatic_block)
 
 * [Classic: Manually adding block storage to specific worker nodes](/docs/openshift?topic=openshift-utilities#manual_block)
 
@@ -2481,12 +2465,6 @@ subcollection: openshift
     * [`ibmcloud oc cluster addon update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_update)
 
     * [`ibmcloud oc cluster addon versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_addon_versions)
-
-    * [`ibmcloud oc cluster autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_autoupdate_disable)
-
-    * [`ibmcloud oc cluster autoupdate enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_autoupdate_enable)
-
-    * [`ibmcloud oc cluster autoupdate get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_autoupdate_get)
 
     * [`ibmcloud oc cluster ca create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_create)
 
@@ -2820,7 +2798,7 @@ subcollection: openshift
 
     * [`ibmcloud ob logging config create`](/docs/openshift?topic=openshift-observability_cli#logging_config_create)
 
-    * [<code>ibmcloud ob logging config delete</code>](/docs/openshift?topic=openshift-observability_cli#logging_config_delete)
+    * [`ibmcloud ob logging config delete`](/docs/openshift?topic=openshift-observability_cli#logging_config_delete)
 
     * [`ibmcloud ob logging config list`](/docs/openshift?topic=openshift-observability_cli#logging_config_list)
 
@@ -2834,7 +2812,7 @@ subcollection: openshift
 
     * [`ibmcloud ob monitoring config create`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_create)
 
-    * [<code>ibmcloud ob monitoring config delete</code>](/docs/openshift?topic=openshift-observability_cli#monitoring_config_delete)
+    * [`ibmcloud ob monitoring config delete`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_delete)
 
     * [`ibmcloud ob monitoring config list`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_list)
 
@@ -3301,9 +3279,47 @@ subcollection: openshift
 
 * [Version 4.7.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0)
 
+    * [Version 4.7.0_854](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0854)
+
 * [Version 4.6.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0)
 
-* [Version 4.5.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0)
+    * [Version 4.6.0_860](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0860)
+
+    * [Version 4.6.0_838](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0838)
+
+    * [Version 4.6.0_796](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0796)
+
+    * [Version 4.6.0_750](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0750)
+
+    * [Version 4.6.0_696](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0696)
+
+    * [Version 4.6.0_678](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0678)
+
+    * [Version 4.6.0_663](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0663)
+
+    * [Version 4.6.0_654](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0654)
+
+    * [Version 4.6.0_646](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0646)
+
+* [Version 4.5.0 (Deprecated)](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0)
+
+    * [Version 4.5.0_861](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0861)
+
+    * [Version 4.5.0_837](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0837)
+
+    * [Version 4.5.0_790](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0790)
+
+    * [Version 4.5.0_749](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0749)
+
+    * [Version 4.5.0_694](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0694)
+
+    * [Version 4.5.0_679](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0679)
+
+    * [Version 4.5.0_662](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0662)
+
+    * [Version 4.5.0_655](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0655)
+
+    * [Version 4.5.0_647](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0647)
 
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
@@ -3851,6 +3867,8 @@ subcollection: openshift
 
 [Why can't I view or work with my cluster?](/docs/openshift?topic=openshift-cs_cluster_access#cs_cluster_access)
 
+[Why does my cluster master status say it is approaching its resource limit?](/docs/openshift?topic=openshift-master_resource_limit#master_resource_limit)
+
 
 ### Worker nodes
 {: #sitemap_worker_nodes}
@@ -4292,15 +4310,11 @@ subcollection: openshift
 
 [Why is the status of my OpenShift Data Foundation storage cluster stuck at `Progressing`?](/docs/openshift?topic=openshift-ocs-ts-error-progressing#ocs-ts-error-progressing)
 
-* [AWS access key errors](/docs/openshift?topic=openshift-ocs-ts-error-progressing#ts-storage-ocs-aws-errors)
-
 * [Error: Cloud credentials secret "ibm-cloud-cos-creds" is not ready yet](/docs/openshift?topic=openshift-ocs-ts-error-progressing#ts-storage-ocs-cos-cred)
 
 [Why are no pods listed in the `openshift-storage` namespace?](/docs/openshift?topic=openshift-ts-ocs-no-pods#ts-ocs-no-pods)
 
 [What if my OpenShift Data Foundation issue is still unresolved?](/docs/openshift?topic=openshift-ocs-error-unresolved#ocs-error-unresolved)
-
-* [Escalation policy](/docs/openshift?topic=openshift-ocs-error-unresolved#ocs-support-ecalation-policy)
 
 
 ## Release notes

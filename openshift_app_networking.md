@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos, networking
 
@@ -60,8 +60,8 @@ Because routes and Ingress offer similar capabilities, both load balancing solut
 
 The following table compares the features of each app exposure method.
 
-|Characteristics|NodePort|LoadBalancer (Classic - NLB)|LoadBalancer (VPC load balancer)|Ingress controller|Route|
-|---------------|------|--------|---|-----------|
+|Characteristics| NodePort | LoadBalancer (Classic - NLB)| LoadBalancer (VPC load balancer) |Ingress controller|Route|
+| --- | --- | --- | --- | --- | --- |
 |Stable external IP| |Yes| |Yes|Yes|
 |External hostname| |Yes|Yes|Yes|Yes|
 |SSL termination| |Yes*|Yes*|Yes|Yes|
@@ -70,11 +70,10 @@ The following table compares the features of each app exposure method.
 |Multiple apps per route or service| | | |Yes|Yes|
 |{{site.data.keyword.cloud_notm}} extensions like {{site.data.keyword.appid_short}}| | | |Yes| |
 |Consistent hybrid multicloud deployment| | | | |Yes|
-{: class="simple-tab-table"}
 {: caption="Comparison of external networking for apps in {{site.data.keyword.openshiftshort}} version 4 clusters." caption-side="top"}
 {: #roks-net-compare-43}
-{: tab-title="{{site.data.keyword.openshiftshort}} 4"}
-{: tab-group="openshift-network-compare"}
+
+
 
 |Characteristics|NodePort|NLB|Ingress ALB|Route|
 |---------------|--------|---|-----------|-----|
@@ -86,11 +85,10 @@ The following table compares the features of each app exposure method.
 |Multiple apps per route or service| | |Yes|Yes|
 |{{site.data.keyword.cloud_notm}} extensions like {{site.data.keyword.appid_short}}| | |Yes| |
 |Consistent hybrid multicloud deployment| | | |Yes|
-{: class="simple-tab-table"}
 {: caption="Comparison of external networking for apps in {{site.data.keyword.openshiftshort}} version 3.11 clusters." caption-side="top"}
 {: #roks-net-compare-311}
-{: tab-title="{{site.data.keyword.openshiftshort}} 3.11"}
-{: tab-group="openshift-network-compare"}
+
+
 
 `*` SSL termination is provided by `ibmcloud oc nlb-dns` commands. In classic clusters, these commands are supported for public NLBs only.
 {: note}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-14"
+lastupdated: "2021-10-15"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -14,13 +14,12 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
-
 # Why can't I view or work with my cluster?
 {: #cs_cluster_access}
 
 **Infrastructure provider**:
-    * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
-    * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 You are not able to find a cluster. When you run `ibmcloud oc cluster ls`, the cluster is not listed in the output.
 {: tsSymptoms}
@@ -137,7 +136,7 @@ To check your user access permissions:
             {: pre}
 
     - If you do not have access to the cluster:
-        1. Ask your account owner to assign an [{{site.data.keyword.cloud_notm}} IAM platform access role](/docs/containers?topic=containers-users#checking-perms) to you for that cluster.
+        1. Ask your account owner to assign an [{{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) to you for that cluster.
         2. Do not target a resource group. If you already targeted a resource group, untarget it:
             ```sh
             ibmcloud target --unset-resource-group

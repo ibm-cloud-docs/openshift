@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-18"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, roks
 
@@ -31,13 +31,13 @@ Installing OpenShift Data Foundation from OperatorHub is not supported on {{site
 ## Quick start for VPC clusters
 {: #odf-quickstart}
 
-The following steps walk you through deploying ODF with the default settings. You can deploy ODF on VPC clusters with the default configuration settings by running the `addon enable` command and specifying the `"odfDeploy=true"` flag. Before enabling the add-on make sure that you have a [VPC cluster](/docs/openshift?topic=openshift-clusters) with at least three worker nodes. For high availability, create a cluster with at least one worker node per zone across three zones. Each worker node must have a minimum of 16 CPUs and 64 GB RAM.
+The following steps walk you through deploying ODF with the default settings. Before enabling the add-on make sure that you have a [VPC cluster](/docs/openshift?topic=openshift-clusters) with at least three worker nodes. For high availability, create a cluster with at least one worker node per zone across three zones. Each worker node must have a minimum of 16 CPUs and 64 GB RAM.
 {: shortdesc}
 
-Enable the ODF and specify the `odfDeploy=True` parameter to deploy ODF with the default configuration parameters. To list the versions and find the current default, run `ibmcloud oc cluster addon versions`. If you have a cluster version other than the default, specify the `--version` flag. The add-on supports `n+1` cluster versions. 
+To list the versions and find the current default, run `ibmcloud oc cluster addon versions`. If you have a cluster version other than the default, specify the `--version` flag. The add-on supports `n+1` cluster versions. Enable the add-on by running the following command.
 
 ```sh
-ibmcloud oc cluster addon enable -c <cluster_name> --version 4.7.0 --param "odfDeploy=true"
+ibmcloud oc cluster addon enable -c <cluster_name> --version 4.7.0
 ```
 {: pre}
 
@@ -224,7 +224,7 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
     osdDevicePaths        invalid   
     workerNodes           all   
     ocsUpgrade            false   
-    odfDeploy             false   
+    odfDeploy             true   
     monSize               20Gi   
     numOfOsd              1   
     monDevicePaths        invalid   
@@ -233,26 +233,26 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
     ```
     {: screen}
 
-1. Enable the `openshift-data-foundation` add-on. If you also want to deploy ODF and create your storage cluster from the CLI, you can specify the `"odfDeploy=true"` flag. If you want to override any of the default parameters, specify the `--param "key=value"` flag for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
+1. Enable the `openshift-data-foundation` add-on. If you want to override any of the default parameters, specify the `--param "key=value"` flag for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
 
     Example command for deploying the ODF add-on only.
     
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version>
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "odfDeploy=false"
     ```
     {: pre}
 
     Example command for deploying the ODF and creating a storage cluster with the default configuration parameters.
     
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "odfDeploy=true"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> 
     ```
     {: pre}
 
     Example command for deploying the ODF and creating a storage cluster while overriding the `osdSize` parameter.
     
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "odfDeploy=true" --param "osdSize=500Gi"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "osdSize=500Gi"
     ```
     {: pre}
 
