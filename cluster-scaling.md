@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-15"
+lastupdated: "2021-10-19"
 
 keywords: openshift, roks, rhoks, rhos, node scaling, ca, autoscaler
 
@@ -876,7 +876,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 1. Optional: To refer to your autoscaling settings later, make a backup of your configmap.
 
     ```sh
-    oc get cm iks-ca-configmap -o yaml > backup_configmap.yaml
+    oc get cm iks-ca-configmap -n kube-system -o yaml > backup_configmap.yaml
     ```
     {: pre}
 

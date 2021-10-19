@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-18"
+lastupdated: "2021-10-19"
 
 keywords: openshift, roks, rhoks, rhos, firewall, ips
 

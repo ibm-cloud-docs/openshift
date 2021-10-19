@@ -46,7 +46,7 @@ To add a backing store to your storage cluster by using the NooBaa CLI:
     Create backing store
 
     Available Commands:
-        aws-s3               Create aws-s3 backing store
+    aws-s3               Create aws-s3 backing store
     azure-blob           Create azure-blob backing store
     google-cloud-storage Create google-cloud-storage backing store
     ibm-cos              Create ibm-cos backing store

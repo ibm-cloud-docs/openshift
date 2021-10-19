@@ -41,7 +41,7 @@ The following table shows the changes that are included in the worker node fix p
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Openshift | 4.8.12 | 4.8.13 | See the [change logs](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-6-release-notes.html#ocp-4-8-13){: external}. |
+| Openshift | 4.8.12 | 4.8.13 | See the [change logs](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-13){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.8.12_1527_openshift" caption-side="top"}
 
@@ -62,7 +62,7 @@ The following table shows the changes that are included in the master fix pack `
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.20.11-1 | v1.21.5-1 | Updated to support the Kubernetes `1.21.5` release. |
 | {{site.data.keyword.openshiftshort}} (master) | 4.7.30 | 4.8.11 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-11){: external}. |
 | {{site.data.keyword.openshiftshort}} (worker node) | 4.7.30 | 4.8.12 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-12){: external}. |
-| {{site.data.keyword.openshiftshort}} configuration | N/A | N/A | Updated the [feature gate configuration](https://cloud.ibm.com/docs/openshift?topic=openshift-service-settings#feature-gates){: external}. |
+| {{site.data.keyword.openshiftshort}} configuration | N/A | N/A | Updated the [feature gate configuration](/docs/openshift?topic=openshift-service-settings#feature-gates). |
 | {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.7.0-20210917 | v4.8.0-20210917 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20210917){: external}. |
 | Pause container image | 3.2 | 3.5 | See the [pause container image release notes](https://github.com/kubernetes/kubernetes/blob/master/build/pause/CHANGELOG.md){: external}. |
 | Portieris admission controller | v0.10.3 | v0.11.0 | See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.11.0){: external}. |
@@ -86,7 +86,7 @@ The following table shows the changes that are included in the worker node fix p
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Openshift | 4.7.31 | 4.7.32 | See the [change logs](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-6-release-notes.html#ocp-4-7-32){: external}. |
+| Openshift | 4.7.31 | 4.7.32 | See the [change logs](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-32){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.31_1533_openshift" caption-side="top"}
 
@@ -100,7 +100,7 @@ The following table shows the changes that are included in the worker node fix p
 | --- | --- | --- | --- |
 | Disk identification | NA | NA | Enhanced the disk identification logic to handle the case of 2+ partitions. |
 | Haproxy | 9c98dc5 | 07f1e9 | Updated image with fixes for [CVE-2021-22922](https://nvd.nist.gov/vuln/detail/CVE-2021-22922){: external}, [CVE-2021-22923](https://nvd.nist.gov/vuln/detail/CVE-2021-22923){: external}, [CVE-2021-22924](https://nvd.nist.gov/vuln/detail/CVE-2021-22924){: external}, [CVE-2021-36222](https://nvd.nist.gov/vuln/detail/CVE-2021-36222){: external}, and [CVE-2021-37750](https://nvd.nist.gov/vuln/detail/CVE-2021-37750){: external}. |
-|OpenShift Container Platform| 4.7.29 | 4.7.31 | See [changelogs](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-6-release-notes.html#ocp-4-7-31){: external}. |
+|OpenShift Container Platform| 4.7.29 | 4.7.31 | See [changelogs](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-31){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.29_1531_openshift" caption-side="top"}
 

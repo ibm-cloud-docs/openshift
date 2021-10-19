@@ -183,6 +183,8 @@ subcollection: openshift
 
 [October 2021](/docs/openshift?topic=openshift-rel-notes#release-oct-2021)
 
+* [19 October 2021](/docs/openshift?topic=openshift-rel-notes#19oct2021)
+
 * [18 October 2021](/docs/openshift?topic=openshift-rel-notes#18oct2021)
 
 * [13 October 2021](/docs/openshift?topic=openshift-rel-notes#13oct2021)

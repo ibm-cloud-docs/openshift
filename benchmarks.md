@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-15"
+lastupdated: "2021-10-19"
 
 keywords: openshift, roks
 
@@ -412,14 +412,14 @@ Review how {{site.data.keyword.openshiftlong_notm}} complies with the version 1.
 | 1.2.13 | ROKS supports [pod security context constraints](/docs/openshift?topic=openshift-openshift_scc) which are similar to Kubernetes pod security policies. |
 | 1.2.16 | ROKS supports [pod security context constraints](/docs/openshift?topic=openshift-openshift_scc) which are similar to Kubernetes pod security policies. |
 | 1.2.21 | ROKS enables [profiling](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/) for cluster administrator troubleshooting purposes. |
-| 1.2.22 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
-| 1.2.23 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
-| 1.2.24 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
-| 1.2.25 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
+| 1.2.22 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#audit-api-server). |
+| 1.2.23 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#audit-api-server). |
+| 1.2.24 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#audit-api-server). |
+| 1.2.25 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#audit-api-server). |
 | 1.2.33 | ROKS can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
 | 1.2.34 | ROKS can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
-| 3.2.1 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
-| 3.2.2 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
+| 3.2.1 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#audit-api-server). |
+| 3.2.2 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#audit-api-server). |
 | 4.2.6 | ROKS does not protect kernel defaults in order to allow customers to tune kernel parameters. |
 | 4.2.8 | ROKS ensures that the hostname matches the name issued by the infrastructure. |
 | 5.1.2 | ROKS deploys some system components that could have their Kubernetes secret access further restricted. |
