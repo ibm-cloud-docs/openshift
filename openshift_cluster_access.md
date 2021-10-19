@@ -137,7 +137,7 @@ If you enabled only the private cloud service endpoint during cluster creation, 
             {: pre}
 
         2. In your browser, open the following {{site.data.keyword.cloud_notm}} IAM passcode website.
-            ```
+            ```sh
             https://iam.cloud.ibm.com/identity/passcode
             ```
             {: codeblock}
@@ -157,7 +157,7 @@ If you enabled only the private cloud service endpoint during cluster creation, 
 
     Example output
 
-    ```
+    ```sh
     Client Version: 4.5.0-0.okd-2020-09-04-180756
     Server Version: 4.5.35
     Kubernetes Version: v1.18.3+cdb0358
@@ -248,13 +248,13 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
 
 5. On the client machines where you or your users run `oc` commands, add the NLB IP address and the private cloud service endpoint URL to the `/etc/hosts` file. Do not include any ports in the IP address and URL and do not include `https://` in the URL.
     * For macOS and Linux users:
-        ```
+        ```sh
         sudo nano /etc/hosts
         ```
         {: pre}
 
     * For Windows users:
-        ```
+        ```sh
         notepad C:\Windows\System32\drivers\etc\hosts
         ```
         {: pre}
@@ -263,7 +263,7 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
         {: tip}
 
         Example text to add:
-        ```
+        ```sh
         10.186.92.42      c1.private.us-east.containers.cloud.ibm.com
         ```
         {: codeblock}
@@ -288,7 +288,7 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
             {: pre}
 
         2. In your browser, open the following {{site.data.keyword.cloud_notm}} IAM passcode website.
-            ```
+            ```sh
             https://iam.cloud.ibm.com/identity/passcode
             ```
             {: codeblock}
@@ -308,7 +308,7 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
 
     Example output
 
-    ```
+    ```sh
     Client Version: 4.5.0-0.okd-2020-09-04-180756
     Server Version: 4.5.35
     Kubernetes Version: v1.18.3+cdb0358
@@ -426,7 +426,7 @@ Making your location and cluster subdomains available outside of your hosts' pri
 {: important}
 
 1. Review the location subdomains and check the **Records** for the private IP addresses of the hosts that are registered in the DNS for the subdomain.
-    ```
+    ```sh
     ibmcloud sat location dns ls --location <location_name_or_ID>
     ```
     {: pre}
@@ -438,13 +438,13 @@ Making your location and cluster subdomains available outside of your hosts' pri
     {: pre}
 
 3. Update the location subdomain DNS records with the public IP addresses of each host in the control plane.
-    ```
+    ```sh
     ibmcloud sat location dns register --location <location_name_or_ID> --ip <host_IP> --ip <host_IP> --ip <host_IP>
     ```
     {: pre}
 
 4. Verify that the public IP addresses are registered with your location DNS records.
-    ```
+    ```sh
     ibmcloud sat location dns ls --location <location_name_or_ID>
     ```
     {: pre}
@@ -806,7 +806,10 @@ Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}
 You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the API key to log in to an {{site.data.keyword.openshiftshort}} cluster. With API keys, you can use the credentials of one user or shared account to access a cluster, instead of logging in individually. You might also create an API key for a [service ID](#access_service_id). For more information, see [Understanding API keys](/docs/account?topic=account-manapikey).
 {: shortdesc}
 
-1. Create an {{site.data.keyword.cloud_notm}} API key.<p class="important">Save your API key in a secure location. You cannot retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.</p>
+1. Create an {{site.data.keyword.cloud_notm}} API key.
+Save your API key in a secure location. You cannot retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.
+{: important}
+
     ```sh
     ibmcloud iam api-key-create <name>
     ```
@@ -863,7 +866,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         {: pre}
 
         Example output
-        ```
+        ```sh
         <token_endpoint>/oauth/token
         ```
     3. Log in to the cluster with the endpoint that you previously retrieved.
@@ -877,7 +880,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         {: pre}
 
     4. In the **Location** response, find the `access_token`, such as in the following example.
-        ```
+        ```sh
         < HTTP/1.1 302 Found
         < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
         < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
