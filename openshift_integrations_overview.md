@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-19"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -11,8 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-  
 
 # Supported IBM Cloud and third-party integrations
 {: #supported_integrations}

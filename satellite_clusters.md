@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-19"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -11,8 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-  
 
 # Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}
 {: #satellite-clusters}

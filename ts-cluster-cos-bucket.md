@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -12,8 +12,6 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-  
 
 # Why do I get an error about a cloud object storage bucket when I create a cluster?
 {: #ts_cos_bucket_cluster_create}

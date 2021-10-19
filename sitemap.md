@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-18"
+lastupdated: "2021-10-19"
 
 keywords: openshift
 subcollection: openshift
@@ -10,8 +10,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-  
 
 
 # Site map

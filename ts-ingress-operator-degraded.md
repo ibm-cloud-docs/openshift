@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-19"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -12,8 +12,6 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-  
 
 # Why does the DNS Operator show a `RouteHealthDegraded` or `cannot marshal DNS message` error?
 {: #ingress_subdomain}

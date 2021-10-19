@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-19"
 
 keywords: openshift, noobaa, openshift container storage, openshift data foundation, storage classes
 
@@ -11,8 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-  
 
 # Managing the Multi-Cloud Object Gateway
 {: #odf-manage-noobaa}
