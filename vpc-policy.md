@@ -8,6 +8,7 @@ keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list
 
 subcollection: openshift
 
+
 ---
 
 {{site.data.keyword.attribute-definition-list}}
