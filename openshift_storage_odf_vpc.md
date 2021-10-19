@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-18"
+lastupdated: "2021-10-19"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, roks
 
@@ -11,8 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-  
 
 # Deploying OpenShift Data Foundation on VPC clusters
 {: #deploy-odf-vpc}

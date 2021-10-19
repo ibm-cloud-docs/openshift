@@ -2,11 +2,12 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-15"
+lastupdated: "2021-10-19"
 
 keywords: openshift, roks
 
 subcollection: openshift
+
 
 ---
 
@@ -190,14 +191,14 @@ Review how {{site.data.keyword.openshiftlong_notm}} complies with the version 1.
 | 1.2.7 | Ensure that the `--authorization-mode option` is not set to AlwaysAllow | Scored | 1 | Pass | IBM |
 | 1.2.8 | Ensure that the `--authorization-mode` option includes Node | Scored | 1 | Pass | IBM |
 | 1.2.9 | Ensure that the `--authorization-mode` option includes RBAC | Scored | 1 | Pass | IBM |
-| 1.2.10 | Ensure that the admission control plugin EventRateLimit is set | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations) | IBM |
-| 1.2.11 | Ensure that the admission control plugin AlwaysAdmit is not set | Scored | 1 | Pass | IBM |
-| 1.2.12 | Ensure that the admission control plugin AlwaysPullImages is set | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations) | IBM |
-| 1.2.13 | Ensure that the admission control plugin SecurityContextDeny is set if PodSecurityPolicy is not used | Not Scored | 1 | [Pass](#ibm-remediations-and-explanations) | IBM |
-| 1.2.14 | Ensure that the admission control plugin ServiceAccount is set | Scored | 1 | Pass | IBM |
-| 1.2.15 | Ensure that the admission control plugin NamespaceLifecycle is set | Scored | 1 | Pass | IBM |
-| 1.2.16 | Ensure that the admission control plugin PodSecurityPolicy is set | Scored | 1 | [Pass](#ibm-remediations-and-explanations) | IBM |
-| 1.2.17 | Ensure that the admission control plugin NodeRestriction is set | Scored | 1 | Pass | IBM |
+| 1.2.10 | Ensure that the admission control plugin `EventRateLimit` is set | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations) | IBM |
+| 1.2.11 | Ensure that the admission control plugin `AlwaysAdmit` is not set | Scored | 1 | Pass | IBM |
+| 1.2.12 | Ensure that the admission control plugin `AlwaysPullImages` is set | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations) | IBM |
+| 1.2.13 | Ensure that the admission control plugin `SecurityContextDeny` is set if PodSecurityPolicy is not used | Not Scored | 1 | [Pass](#ibm-remediations-and-explanations) | IBM |
+| 1.2.14 | Ensure that the admission control plugin `ServiceAccount` is set | Scored | 1 | Pass | IBM |
+| 1.2.15 | Ensure that the admission control plugin `NamespaceLifecycle` is set | Scored | 1 | Pass | IBM |
+| 1.2.16 | Ensure that the admission control plugin `PodSecurityPolicy` is set | Scored | 1 | [Pass](#ibm-remediations-and-explanations) | IBM |
+| 1.2.17 | Ensure that the admission control plugin `NodeRestriction` is set | Scored | 1 | Pass | IBM |
 | 1.2.18 | Ensure that the `--insecure-bind-address` option is not set | Scored | 1 | Pass | IBM |
 | 1.2.19 | Ensure that the `--insecure-port` option is set to 0 | Scored | 1 | Pass | IBM |
 | 1.2.20 | Ensure that the `--secure-port` option is not set to 0 | Scored | 1 | Pass | IBM |
@@ -239,8 +240,8 @@ Review how {{site.data.keyword.openshiftlong_notm}} complies with the version 1.
 
 | # | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
-| 1.4.1 | Ensure that the `--profiling option is set to false | Scored | 1 | Pass | IBM |
-| 1.4.2 | Ensure that the `--bind-address option is set to 127.0.0.1 | Scored | 1 | Pass | IBM |
+| 1.4.1 | Ensure that the `--profiling option` is set to false | Scored | 1 | Pass | IBM |
+| 1.4.2 | Ensure that the `--bind-address` option is set to 127.0.0.1 | Scored | 1 | Pass | IBM |
 {: summary="The rows are read from left to right. The first column is the section number for the benchmark recommendation. The second column is the benchmark recommendation. The third column is the scoring of the recommendation, either scored or not scored. The fourth column is the level of the recommendation, either 1 for basic or 2 for more advanced and performance-impacting. The fifth column contains the result of whether the service passes or fails the recommendation. The sixth column designates the responsibility of passing the recommendation, either IBM or shared between IBM and you."}
 {: caption="Section 1.4 Scheduler benchmark results" caption-side="top"}
 
@@ -249,7 +250,7 @@ Review how {{site.data.keyword.openshiftlong_notm}} complies with the version 1.
 
 | # | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
-| 2.1 | Ensure that the `--cert-file and --key-file options are set as appropriate | Scored | 1 | Pass | IBM |
+| 2.1 | Ensure that the `--cert-file` and `--key-file` options are set as appropriate | Scored | 1 | Pass | IBM |
 | 2.2 | Ensure that the `--client-cert-auth` option is set to true | Scored | 1 | Pass | IBM |
 | 2.3 | Ensure that the `--auto-tls option` is not set to true | Scored | 1 | Pass | IBM |
 | 2.4 | Ensure that the `--peer-cert-file` and `--peer-key-file` options are set as appropriate | Scored | 1 | Pass | IBM |
@@ -412,14 +413,14 @@ Review how {{site.data.keyword.openshiftlong_notm}} complies with the version 1.
 | 1.2.13 | ROKS supports [pod security context constraints](/docs/openshift?topic=openshift-openshift_scc) which are similar to Kubernetes pod security policies. |
 | 1.2.16 | ROKS supports [pod security context constraints](/docs/openshift?topic=openshift-openshift_scc) which are similar to Kubernetes pod security policies. |
 | 1.2.21 | ROKS enables [profiling](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/) for cluster administrator troubleshooting purposes. |
-| 1.2.22 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
-| 1.2.23 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
-| 1.2.24 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
-| 1.2.25 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
+| 1.2.22 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#audit-api-server). |
+| 1.2.23 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#audit-api-server). |
+| 1.2.24 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#audit-api-server). |
+| 1.2.25 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#audit-api-server). |
 | 1.2.33 | ROKS can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
 | 1.2.34 | ROKS can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
-| 3.2.1 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
-| 3.2.2 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
+| 3.2.1 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#audit-api-server). |
+| 3.2.2 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#audit-api-server). |
 | 4.2.6 | ROKS does not protect kernel defaults in order to allow customers to tune kernel parameters. |
 | 4.2.8 | ROKS ensures that the hostname matches the name issued by the infrastructure. |
 | 5.1.2 | ROKS deploys some system components that could have their Kubernetes secret access further restricted. |

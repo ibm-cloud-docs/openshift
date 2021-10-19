@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-19"
 
 keywords: openshift, noobaa, openshift container storage, openshift data foundation, storage classes
 
@@ -11,8 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-  
 
 # Managing the Multi-Cloud Object Gateway
 {: #odf-manage-noobaa}
@@ -48,7 +46,7 @@ To add a backing store to your storage cluster by using the NooBaa CLI:
     Create backing store
 
     Available Commands:
-        aws-s3               Create aws-s3 backing store
+    aws-s3               Create aws-s3 backing store
     azure-blob           Create azure-blob backing store
     google-cloud-storage Create google-cloud-storage backing store
     ibm-cos              Create ibm-cos backing store
@@ -125,9 +123,9 @@ After you create backing stores and a bucket class, create a storage class to ma
         name: <name>-noobaa.noobaa.io
       parameters:
     bucketclass: <bucket-class-name>
-  provisioner: openshift-storage.noobaa.io/obc
-  reclaimPolicy: Delete
-  volumeBindingMode: Immediate
+    provisioner: openshift-storage.noobaa.io/obc
+    reclaimPolicy: Delete
+    volumeBindingMode: Immediate
     ```
     {: codeblock}
 
@@ -190,30 +188,30 @@ After you create backing stores and a bucket class, you can create an object buc
         name: app
     labels:
       app: app
-  spec:
-    containers:
-    - name: app
-      envFrom:
-      - secretRef:
-          name: <secret-name>
-      - configMapRef:
-          name: <config-map-name>
-      image: banst/awscli
-      command:
-      - sh
-      - "-c"
-      - |
-        echo "----> Configuring S3 endpoint ...";
-        pip install awscli-plugin-endpoint;
-        aws configure set plugins.endpoint awscli_plugin_endpoint;
-        aws configure set s3.endpoint_url https://s3.openshift-storage.svc;
-        echo "----> Configuring certificates ...";
-        aws configure set ca_bundle /var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt;
-        echo "----> Copying files ...";
-        aws s3 cp --recursive /etc s3://$BUCKET_NAME;
-        echo "----> List files ...";
-        aws s3 ls $BUCKET_NAME;
-        echo "----> Done.";
+    spec:
+        containers:
+        - name: app
+        envFrom:
+        - secretRef:
+            name: <secret-name>
+        - configMapRef:
+            name: <config-map-name>
+        image: banst/awscli
+        command:
+            - sh
+            - "-c"
+            - |
+                echo "----> Configuring S3 endpoint ...";
+                pip install awscli-plugin-endpoint;
+                aws configure set plugins.endpoint awscli_plugin_endpoint;
+                aws configure set s3.endpoint_url https://s3.openshift-storage.svc;
+                echo "----> Configuring certificates ...";
+                aws configure set ca_bundle /var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt;
+                echo "----> Copying files ...";
+                aws s3 cp --recursive /etc s3://$BUCKET_NAME;
+                echo "----> List files ...";
+                aws s3 ls $BUCKET_NAME;
+                echo "----> Done.";
     ```
     {: codeblock}
 

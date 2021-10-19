@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-15"
+lastupdated: "2021-10-19"
 
 keywords: openshift, roks, rhoks, rhos, registry, pull secret, secrets
 
@@ -31,7 +31,7 @@ You can build your images in several ways, including the following {{site.data.k
 :    {{site.data.keyword.codeengineshort}} supports building images from a Dockerfile and Cloud Native Buildpacks and automatically pushing the images to {{site.data.keyword.registrylong}}. For more information, see [Planning your build](/docs/codeengine?topic=codeengine-plan-build).
 
 Tekton pipelines
-:    The {{site.data.keyword.contdelivery_short}} service includes several Tekton tasks that you can reference within your pipelines to build  images. For more information, see [Tekton pipelines](https://cloud.ibm.com/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images).
+:    The {{site.data.keyword.contdelivery_short}} service includes several Tekton tasks that you can reference within your pipelines to build  images. For more information, see [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images).
 
 ## Deploying containers from an existing image stream in the internal registry
 {: #oc_imagestream_deploy}

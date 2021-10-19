@@ -2,11 +2,12 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-15"
+lastupdated: "2021-10-19"
 
 keywords: openshift, roks, rhoks, rhos
 
 subcollection: openshift
+
 
 ---
 
@@ -22,10 +23,10 @@ subcollection: openshift
 Review these situations in which you might need to open specific ports and IP addresses in your firewalls for your {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
-* [Corporate firewalls](#corporate): If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, you must allow access to run `ibmcloud`, `ibmcloud oc`, `ibmcloud cr`, `oc`, and `calicoctl` commands from your local system.
-* [Gateway appliance firewalls](#vyatta_firewall): If you have firewalls set up on the public or private network in your IBM Cloud infrastructure account, such as a VRA, you must open IP ranges, ports, and protocols to allow worker nodes to communicate with the master, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services. You can also open ports to allow incoming traffic to services exposing apps in your cluster.
-* [Calico network policies](#firewall_calico_egress): If you use Calico network policies to act as a firewall to restrict all worker node egress, you must allow your worker nodes to access the resources that are required for the cluster to function.
-* [Other services or network firewalls](#allowlist_workers): To allow your cluster to access services that run inside or outside {{site.data.keyword.cloud_notm}} or in on-premises networks and that are protected by a firewall, you must add the IP addresses of your worker nodes in that firewall.
+- [Corporate firewalls](#corporate): If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, you must allow access to run `ibmcloud`, `ibmcloud oc`, `ibmcloud cr`, `oc`, and `calicoctl` commands from your local system.
+- [Gateway appliance firewalls](#vyatta_firewall): If you have firewalls set up on the public or private network in your IBM Cloud infrastructure account, such as a VRA, you must open IP ranges, ports, and protocols to allow worker nodes to communicate with the master, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services. You can also open ports to allow incoming traffic to services exposing apps in your cluster.
+- [Calico network policies](#firewall_calico_egress): If you use Calico network policies to act as a firewall to restrict all worker node egress, you must allow your worker nodes to access the resources that are required for the cluster to function.
+- [Other services or network firewalls](#allowlist_workers): To allow your cluster to access services that run inside or outside {{site.data.keyword.cloud_notm}} or in on-premises networks and that are protected by a firewall, you must add the IP addresses of your worker nodes in that firewall.
 
 
 ## Opening ports in a corporate firewall
@@ -110,18 +111,18 @@ To allow access for a specific cluster:
     ```
     {: pre}
 
-4. Get the name of your cluster.
+3. Get the name of your cluster.
 
     ```sh
     ibmcloud oc cluster ls
     ```
     {: pre}
 
-5. Retrieve the service endpoint URLs for your cluster.
+4. Retrieve the service endpoint URLs for your cluster.
 
-    * If only the **Public Service Endpoint URL** is populated, get this URL. Your authorized cluster users can access the master through this endpoint on the public network.
-    * If only the **Private Service Endpoint URL** is populated, get this URL. Your authorized cluster users can access the master through this endpoint on the private network.
-    * If both the **Public Service Endpoint URL** and **Private Service Endpoint URL** are populated, get both URLs. Your authorized cluster users can access the master through the public endpoint on the public network or the private endpoint on the private network.
+    - If only the **Public Service Endpoint URL** is populated, get this URL. Your authorized cluster users can access the master through this endpoint on the public network.
+    - If only the **Private Service Endpoint URL** is populated, get this URL. Your authorized cluster users can access the master through this endpoint on the private network.
+    - If both the **Public Service Endpoint URL** and **Private Service Endpoint URL** are populated, get both URLs. Your authorized cluster users can access the master through the public endpoint on the public network or the private endpoint on the private network.
 
     ```sh
     ibmcloud oc cluster get --cluster <cluster_name_or_ID>
@@ -130,7 +131,7 @@ To allow access for a specific cluster:
 
     Example output
 
-    ```
+    ```sh
     ...
     Public Service Endpoint URL:    https://c3.<region>.containers.cloud.ibm.com:30426
     Private Service Endpoint URL:   https://c3-private.<region>.containers.cloud.ibm.com:31140
@@ -138,11 +139,11 @@ To allow access for a specific cluster:
     ```
     {: screen}
 
-6. Allow access to the service endpoint URLs and ports that you got in the previous step. If your firewall is IP-based, you can see which IP addresses are opened when you allow access to the service endpoint URLs by reviewing [this table](#master_ips).
+5. Allow access to the service endpoint URLs and ports that you got in the previous step. If your firewall is IP-based, you can see which IP addresses are opened when you allow access to the service endpoint URLs by reviewing [this table](#master_ips).
 
-7. Verify your connection.
+6. Verify your connection.
 
-    * If the public cloud service endpoint is enabled:
+    - If the public cloud service endpoint is enabled:
 
         ```sh
         curl --insecure <public_service_endpoint_URL>/version
@@ -158,7 +159,7 @@ To allow access for a specific cluster:
 
         Example output
 
-        ```
+        ```sh
         {
         "major": "1",
         "minor": "7+",
@@ -173,7 +174,7 @@ To allow access for a specific cluster:
         ```
         {: screen}
 
-    * If the private cloud service endpoint is enabled, you must be in your {{site.data.keyword.cloud_notm}} private network or connect to the private network through a VPN connection to verify your connection to the master. **Note**: You must [expose the master endpoint through a private load balancer](/docs/openshift?topic=openshift-access_cluster#access_private_se) so that users can access the master through a VPN or {{site.data.keyword.BluDirectLink}} connection.
+    - If the private cloud service endpoint is enabled, you must be in your {{site.data.keyword.cloud_notm}} private network or connect to the private network through a VPN connection to verify your connection to the master. **Note**: You must [expose the master endpoint through a private load balancer](/docs/openshift?topic=openshift-access_cluster#access_private_se) so that users can access the master through a VPN or {{site.data.keyword.BluDirectLink}} connection.
 
         ```sh
         curl --insecure <private_service_endpoint_URL>/version
@@ -189,7 +190,7 @@ To allow access for a specific cluster:
 
         Example output
 
-        ```
+        ```sh
         {
         "major": "1",
         "minor": "7+",
@@ -204,7 +205,7 @@ To allow access for a specific cluster:
         ```
         {: screen}
 
-8. Optional: Repeat these steps for each cluster that you need to expose.
+7. Optional: Repeat these steps for each cluster that you need to expose.
 
 
 
@@ -254,15 +255,15 @@ ibmcloud oc worker ls --cluster <cluster_name_or_ID>
 
 To allow worker nodes to communicate with the cluster master over the public cloud service endpoint, allow outgoing network traffic from the source *<each_worker_node_publicIP>* to the destination TCP/UDP port range 30000-32767 and port 443, and the following IP addresses and network groups. Additionally, if you plan to use Ingress or routes to expose apps in your cluster, allow incoming network traffic through these ports to your worker node IP addresses as well so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers.
 
-* `TCP/UDP port range 30000-32767, port 443 FROM <each_worker_node_publicIP> TO <public_IPs>`
-* Replace *<public_IPs>* with the public IP addresses of the region that your cluster is located.
+- `TCP/UDP port range 30000-32767, port 443 FROM <each_worker_node_publicIP> TO <public_IPs>`
+- Replace *<public_IPs>* with the public IP addresses of the region that your cluster is located.
 
 | Region             | Public IP address  | 
 |--------------------|------------------|
 | AP North (`che01`, `hkg02`, `seo01`, `sng01`, `tok02`, `tok04`, `tok05`) | `119.81.222.210`, `128.168.71.117`, `128.168.75.194`, `128.168.85.154`, `135.90.69.66`, `135.90.69.82`, `161.202.126.210`, `161.202.186.226`, `161.202.56.10`, `161.202.57.34`, `165.192.69.69`, `165.192.80.146`, `165.192.95.90`, `169.38.70.10`, `169.38.79.170`, `169.56.1.162`, `169.56.132.234`, `169.56.48.114`, `169.56.69.242`, `169.56.96.42` | 
 | AP South (`syd01`, `syd04`, `syd05`) | `130.198.64.19`, `130.198.66.26`, `130.198.79.170`, `130.198.83.34`, `130.198.102.82`, `135.90.66.2`, `135.90.69.82`, `135.90.68.114`, `135.90.89.234`, `168.1.6.106`, `168.1.8.195`, `168.1.12.98`, `168.1.39.34`, `168.1.58.66` | 
 | EU Central (`ams03`, `mil01`, `osl01`, `par01`, `fra02`, `fra04`, `fra05`) | `149.81.103.98`, `149.81.104.122`, `149.81.113.154`, `149.81.123.18`, `149.81.142.90`, `149.81.180.114`, `149.81.180.122`, `149.81.78.114`, `158.177.107.50`, `158.177.112.146`, `158.177.138.138`, `158.177.151.2`, `158.177.156.178`, `158.177.198.138`, `158.177.79.34`, `159.122.141.69`, `159.122.150.2`, `159.8.79.250`, `159.8.86.149`, `161.156.115.138`, `161.156.12.82`, `161.156.120.74`, `161.156.183.218`, `161.156.187.226`, `161.156.65.42`, `161.156.65.82`, `161.156.79.26`, `169.50.146.82`, `169.50.169.110`, `169.50.184.18`, `169.50.56.174`, `169.51.73.50`, `169.51.91.162` |
-| Osaka (`osa21`, `osa22`,` osa23`) | `163.68.69.114`, `163.68.69.122`, `163.69.65.114`, `163.69.65.122`, `163.73.64.250`, `163.73.65.194` | 
+| Osaka (`osa21`, `osa22`, `osa23`) | `163.68.69.114`, `163.68.69.122`, `163.69.65.114`, `163.69.65.122`, `163.73.64.250`, `163.73.65.194` | 
 | UK South (`lon02`, `lon04`, `lon05`, `lon06`) | `141.125.66.26`, `141.125.77.58`, `141.125.91.138`, `158.175.65.170`, `158.175.77.178`, `158.175.111.42`, `158.175.125.194`, `158.175.150.122`, `158.176.71.242`, `158.176.94.26`, `158.176.95.146`, `158.176.123.130`, `158.176.142.26`, `159.122.224.242`, `159.122.242.78` |
 | US East (`mon01`, `tor01`, `wdc04`, `wdc06`, `wdc07`) | `52.117.88.42`, `169.47.162.130`, `169.47.174.106`, `169.53.167.50`, `169.53.171.210`, `169.54.126.219`, `169.54.80.106`, `169.60.100.242`, `169.60.101.42`, `169.60.73.142`, `169.60.92.50`, `169.61.109.34`, `169.61.74.210`, `169.61.83.62`, `169.62.10.162`, `169.62.10.20`, `169.62.9.250`, `169.63.111.82`, `169.63.149.122`, `169.63.158.82`, `169.63.160.13`, `169.63.75.82`, `169.63.88.178`, `169.63.88.186`, `169.63.94.210` |
 | US South (`mex01`, `sao01`, `sjc03`, `sjc04`, `dal10`, `dal12`, `dal13`) | `50.22.129.34`, `52.116.231.210`, `52.116.254.234`, `52.117.197.210`, `52.117.212.34`, `52.117.215.162`, `52.117.232.194`, `52.117.240.106`, `52.117.28.138`, `67.228.97.210`, `169.45.67.210`, `169.45.88.98`, `169.46.110.218`, `169.46.111.122`, `169.46.24.210`, `169.46.27.234`, `169.46.68.234`, `169.46.7.238`, `169.46.89.50`, `169.47.109.34`, `169.47.115.18`, `169.47.201.194`, `169.47.209.66`, `169.47.229.90`, `169.47.232.210`, `169.47.239.34`, `169.47.242.242`, `169.47.70.10`, `169.47.71.138`, `169.48.110.250`, `169.48.143.218`, `169.48.161.242`, `169.48.226.2`, `169.48.230.146`, `169.48.244.66`, `169.57.100.18`, `169.57.13.10`, `169.57.151.10`, `169.57.154.98`, `169.59.219.90`, `169.59.230.98`, `169.60.128.2`, `169.60.170.234`, `169.61.175.106`, `169.61.177.2`, `169.61.228.138`, `169.61.28.66`, `169.61.29.194`, `169.61.60.130`, `169.62.166.98`, `169.62.189.26`, `169.62.206.234`, `169.62.82.197`, `169.62.87.170`, `169.63.39.66`, `169.63.47.250` |
@@ -278,8 +279,8 @@ To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm
 Previously Registry subnets (IP addresses) were published in the following table. As of 17 August 2021, the Registry subnets are no longer published. When you access {{site.data.keyword.registrylong_notm}} over the public internet, you must not have any firewall restrictions that are based on IP addresses in place. If you have any concerns about opening your firewall, you can configure private access to {{site.data.keyword.registrylong_notm}} by using the private IBM Cloud network, see [Securing your connection to Container Registry](/docs/Registry?topic=Registry-registry_private).
 {: important}
 
-* `TCP port 443 FROM <each_worker_node_publicIP> TO us.icr.io`
-* `TCP port 443 FROM <each_worker_node_publicIP> TO registry.ng.bluemix.net`
+- `TCP port 443 FROM <each_worker_node_publicIP> TO us.icr.io`
+- `TCP port 443 FROM <each_worker_node_publicIP> TO registry.ng.bluemix.net`
 
 | {{site.data.keyword.openshiftlong_notm}} region | Registry address  |
 |---------------|-------------| 
@@ -300,18 +301,18 @@ Previously Registry subnets (IP addresses) were published in the following table
 
 Allow outgoing network traffic from your worker node to {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). Your firewall must be Layer 7 to allow the IAM domain name. IAM does not have specific IP addresses that you can allow. If your firewall does not support Layer 7, you can allow all HTTPS network traffic on port 443.
 
-* `TCP port 443 FROM <each_worker_node_publicIP> TO https://iam.bluemix.net`
-* `TCP port 443 FROM <each_worker_node_publicIP> TO https://iam.cloud.ibm.com`
+- `TCP port 443 FROM <each_worker_node_publicIP> TO https://iam.bluemix.net`
+- `TCP port 443 FROM <each_worker_node_publicIP> TO https://iam.cloud.ibm.com`
 
 #### Optional: Allow outgoing network traffic from the worker nodes to {{site.data.keyword.mon_short}} and {{site.data.keyword.la_short}} services
 {: #firewall-mon-la}
 
-* **{{site.data.keyword.mon_full_notm}}**: 
+- **{{site.data.keyword.mon_full_notm}}**: 
 
     - `TCP port 443, port 6443 FROM <each_worker_node_public_IP> TO <monitoring_public_IP>`
     - Replace *<monitoring_public_IP>* with the [{{site.data.keyword.mon_short}} IP addresses](/docs/monitoring?topic=monitoring-endpoints).
 
-* **{{site.data.keyword.la_full_notm}}**:
+- **{{site.data.keyword.la_full_notm}}**:
 
     - `TCP port 443, port 80 FROM <each_worker_node_public_IP> TO <logging_public_IP>`
     - Replace *<logging_public_IP>* with the [{{site.data.keyword.la_short}} IP addresses](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_public).
@@ -344,12 +345,12 @@ From 07 to 31 July 2021, the DNS provider is changed from Cloudflare to Akamai f
 If you have a firewall on the private network in your IBM Cloud infrastructure account, such as a Virtual Router Appliance (Vyatta), you must open IP ranges, ports, and protocols in your firewall to allow worker nodes to communicate with the master, with each other, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services.
 {: shortdesc}
 
-**Before you begin**
+Before you begin
 
 1. Allow the IBM Cloud infrastructure private IP ranges so that you can create worker nodes in your cluster.
 
-    1. Allow the appropriate IBM Cloud infrastructure private IP ranges. See [Backend (private) Network](/docs/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#back-end-private-network).
-    2. Allow the IBM Cloud infrastructure private IP ranges for all of the [zones](/docs/openshift?topic=openshift-regions-and-zones#locations) that you are using. **Note**: You must add the `166.8.0.0/14` and `161.26.0.0/16` IP ranges, the IP ranges for the `dal01`, `dal10`, `wdc04` zones, and if your cluster is in the Europe geography, the `ams01` zone. See [Service Network (on backend/private network)](/docs/hardware-firewall-dedicated?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#service-network-on-back-end-private-network-).
+    1. Allow the appropriate IBM Cloud infrastructure private IP ranges. See [Backend (private) Network](/docs/hardware-firewall-shared?topic=hardware-firewall-shared-ibm-cloud-ip-ranges#back-end-private-network).
+    2. Allow the IBM Cloud infrastructure private IP ranges for all of the [zones](/docs/openshift?topic=openshift-regions-and-zones#locations) that you are using. **Note**: You must add the `166.8.0.0/14` and `161.26.0.0/16` IP ranges, the IP ranges for the `dal01`, `dal10`, `wdc04` zones, and if your cluster is in the Europe geography, the `ams01` zone. See [Service Network (on backend/private network)](/docs/hardware-firewall-shared?topic=hardware-firewall-shared-ibm-cloud-ip-ranges#service-network-on-back-endprivate-network).
 
 2. Note the private IP address for each worker node in the cluster.
 
@@ -363,8 +364,8 @@ If you have a firewall on the private network in your IBM Cloud infrastructure a
 
 To allow worker nodes to communicate with the cluster master over the private cloud service endpoint, allow outgoing network traffic from the source *<each_worker_node_privateIP>* to the destination TCP/UDP port range 30000-32767 and port 443, and the following IP addresses and network groups.
 
-* `TCP/UDP port range 30000-32767, port 443 FROM <each_worker_node_privateIP> TO <private_IPs>`
-* Replace *<private_IPs>* with the private IP addresses of the region where your cluster is located.
+- `TCP/UDP port range 30000-32767, port 443 FROM <each_worker_node_privateIP> TO <private_IPs>`
+- Replace *<private_IPs>* with the private IP addresses of the region where your cluster is located.
 
 | Region | Private IP address  |
 |---------------|-------------|
@@ -372,8 +373,8 @@ To allow worker nodes to communicate with the cluster master over the private cl
 | AP South (`syd01`, `syd04`, `syd05`) | `166.9.52.14`, `166.9.52.15`, `166.9.52.23`, `166.9.52.30`, `166.9.52.31`, `166.9.54.11`, `166.9.54.12`, `166.9.54.13`, `166.9.54.21`, `166.9.54.32`, `166.9.54.33`, `166.9.56.10`, `166.9.56.11`, `166.9.56.16`, `166.9.56.24`, `166.9.56.36` |
 | EU Central (`ams03`, `mil01`, `osl01`, `par01`, `fra02`, `fra04`, `fra05`) | `166.9.28.107`, `166.9.28.17`, `166.9.28.19`, `166.9.28.20`, `166.9.28.22`, `166.9.28.23`, `166.9.28.24`, `166.9.28.43`, `166.9.28.64`, `166.9.28.84`, `166.9.28.87`, `166.9.28.91`, `166.9.28.94`, `166.9.28.95`, `166.9.30.100`, `166.9.30.11`, `166.9.30.12`, `166.9.30.13`, `166.9.30.22`, `166.9.30.41`, `166.9.30.54`, `166.9.30.56`, `166.9.30.9`, `166.9.30.92`, `166.9.32.101`, `166.9.32.20`, `166.9.32.26`, `166.9.32.27`, `166.9.32.28`, `166.9.32.44`, `166.9.32.54`, `166.9.32.56`, `166.9.32.8`, `166.9.32.84`, `166.9.32.88`, `166.9.32.9` |
 | Osaka (`osa21`, `osa22`, `osa23`) | `166.9.70.6`, `166.9.70.8`, `166.9.71.8`, `166.9.71.10`, `166.9.72.9`, `166.9.72.10` | 
-| UK South (`lon02`,` lon04`, `lon05`, `lon06`) | `166.9.34.17`, `166.9.34.42`, `166.9.34.45`, `166.9.34.5`, `166.9.34.50`, `166.9.34.6`, `166.9.36.10`, `166.9.36.11`, `166.9.36.12`, `166.9.36.13`, `166.9.36.23`, `166.9.36.30`, `166.9.36.54`, `166.9.36.65`, `166.9.38.18`, `166.9.38.28`, `166.9.38.47`, `166.9.38.54`, `166.9.38.6`, `166.9.38.7` |
-| US East (`mon01`, `tor01`, `wdc04`, `wdc06`,` wdc07`) | `166.9.20.11`, `166.9.20.117`, `166.9.20.12`, `166.9.20.13`, `166.9.20.187`, `166.9.20.38`, `166.9.20.42`, `166.9.20.63`, `166.9.20.80`, `166.9.22.10`, `166.9.22.109`, `166.9.22.26`, `166.9.22.43`, `166.9.22.51`, `166.9.22.52`, `166.9.22.8`, `166.9.22.9`, `166.9.24.19`, `166.9.24.22`, `166.9.24.35`, `166.9.24.4`, `166.9.24.45`, `166.9.24.47`, `166.9.24.5`, `166.9.24.90` |
+| UK South (`lon02`,`lon04`, `lon05`, `lon06`) | `166.9.34.17`, `166.9.34.42`, `166.9.34.45`, `166.9.34.5`, `166.9.34.50`, `166.9.34.6`, `166.9.36.10`, `166.9.36.11`, `166.9.36.12`, `166.9.36.13`, `166.9.36.23`, `166.9.36.30`, `166.9.36.54`, `166.9.36.65`, `166.9.38.18`, `166.9.38.28`, `166.9.38.47`, `166.9.38.54`, `166.9.38.6`, `166.9.38.7` |
+| US East (`mon01`, `tor01`, `wdc04`, `wdc06`, `wdc07`) | `166.9.20.11`, `166.9.20.117`, `166.9.20.12`, `166.9.20.13`, `166.9.20.187`, `166.9.20.38`, `166.9.20.42`, `166.9.20.63`, `166.9.20.80`, `166.9.22.10`, `166.9.22.109`, `166.9.22.26`, `166.9.22.43`, `166.9.22.51`, `166.9.22.52`, `166.9.22.8`, `166.9.22.9`, `166.9.24.19`, `166.9.24.22`, `166.9.24.35`, `166.9.24.4`, `166.9.24.45`, `166.9.24.47`, `166.9.24.5`, `166.9.24.90` |
 | US South (`mex01`, `sao01`, `sjc03`, `sjc04`, `dal10`, `dal12`, `dal13`) | `166.9.12.140`, `166.9.12.141`, `166.9.12.142`, `166.9.12.143`, `166.9.12.144`, `166.9.12.151`, `166.9.12.193`, `166.9.12.196`, `166.9.12.26`, `166.9.12.99`, `166.9.13.31`, `166.9.13.93`, `166.9.13.94`, `166.9.14.122`, `166.9.14.125`, `166.9.14.202`, `166.9.14.204`, `166.9.14.205`, `166.9.14.95`, `166.9.15.130`, `166.9.15.69`, `166.9.15.70`, `166.9.15.71`, `166.9.15.72`, `166.9.15.73`, `166.9.15.74`, `166.9.15.75`, `166.9.15.76`, `166.9.16.113`, `166.9.16.137`, `166.9.16.149`, `166.9.16.183`, `166.9.16.184`, `166.9.16.185`, `166.9.16.38`, `166.9.16.39`, `166.9.16.5`, `166.9.17.2`, `166.9.17.35`, `166.9.17.37`, `166.9.17.39`, `166.9.48.35`, `166.9.48.124`, `166.9.48.171`, `166.9.48.175`, `166.9.48.50`, `166.9.48.76`, `166.9.51.104`, `166.9.51.106`, `166.9.51.16`, `166.9.51.54`, `166.9.51.74`, `166.9.58.104`, `166.9.58.11`, `166.9.58.16`, `166.9.58.170`, `166.9.58.65`, `166.9.58.210`, `166.9.88.21` |
 {: summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the region in column one and IP addresses to match in column three."}
 {: caption="Table 3. IP addresses to open for outgoing traffic" caption-side="top"}
@@ -383,11 +384,11 @@ To allow worker nodes to communicate with the cluster master over the private cl
 
 Open the following ports that are necessary for worker nodes to function properly.
 
-* Allow outbound TCP and UDP connections from the workers to ports 80 and 443 to allow worker node updates and reloads.
-* Allow outbound TCP and UDP to port 2049 to allow mounting file storage as volumes.
-* Allow outbound TCP and UDP to port 3260 for communication to block storage.
-* Allow inbound TCP and UDP connections to port 10250 for the {{site.data.keyword.openshiftshort}} dashboard and commands such as `oc logs` and `oc exec`.
-* Allow inbound and outbound connections to TCP and UDP port 53 and port 5353 for DNS access.
+- Allow outbound TCP and UDP connections from the workers to ports 80 and 443 to allow worker node updates and reloads.
+- Allow outbound TCP and UDP to port 2049 to allow mounting file storage as volumes.
+- Allow outbound TCP and UDP to port 3260 for communication to block storage.
+- Allow inbound TCP and UDP connections to port 10250 for the {{site.data.keyword.openshiftshort}} dashboard and commands such as `oc logs` and `oc exec`.
+- Allow inbound and outbound connections to TCP and UDP port 53 and port 5353 for DNS access.
 
 #### Enable worker-to-worker communication
 {: #firewall_private_worker2worker}
@@ -399,8 +400,8 @@ Enable worker-to-worker communication by allowing all TCP, UDP, VRRP, and IPEnca
 
 To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}, allow outgoing network traffic from the worker nodes to [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions):
 
-* `TCP port 443, port 4443 FROM <each_worker_node_privateIP> TO <registry_subnet>`
-* Replace *<registry_subnet>* with the registry subnet to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images. Port 4443 is required for notary functions, such as [Verifying image signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent). 
+- `TCP port 443, port 4443 FROM <each_worker_node_privateIP> TO <registry_subnet>`
+- Replace *<registry_subnet>* with the registry subnet to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images. Port 4443 is required for notary functions, such as [Verifying image signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent). 
 
 | {{site.data.keyword.openshiftlong_notm}} region | Registry address  | Registry private IP addresses |
 |---------------|-------------|-------------|
@@ -421,9 +422,8 @@ To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm
 
 To send logging and metric data, set up firewall rules for your {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} services.
 
-* [{{site.data.keyword.la_short}} private endpoints](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_private)
-* [{{site.data.keyword.mon_short}} private endpoints](/docs/monitoring?topic=monitoring-endpoints#endpoints_monitoring)
-
+- [{{site.data.keyword.la_short}} private endpoints](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_private)
+- [{{site.data.keyword.mon_short}} private endpoints](/docs/monitoring?topic=monitoring-endpoints#endpoints_monitoring)
 
 ### Opening ports in a public or private firewall for inbound traffic to NodePort, load balancer, and Ingress services, and {{site.data.keyword.openshiftshort}} routes
 {: #firewall_inbound}
@@ -432,16 +432,16 @@ You can allow incoming access to NodePort, load balancer, and Ingress services, 
 {: shortdesc}
 
 NodePort service
-: Open the port that you configured when you deployed the service to the public or private IP addresses for all of the worker nodes to allow traffic to. To find the port, run `oc get svc`. The port is in the 20000-32000 range.
+:   Open the port that you configured when you deployed the service to the public or private IP addresses for all of the worker nodes to allow traffic to. To find the port, run `oc get svc`. The port is in the 20000-32000 range.
 
 Load balancer service
-: Open the port that you configured when you deployed the service to the load balancer service's public or private IP address.
+:   Open the port that you configured when you deployed the service to the load balancer service's public or private IP address.
 
 Ingress
-: Open port 80 for HTTP and port 443 for HTTPS to the public or private IP address for the Ingress application load balancer.
+:   Open port 80 for HTTP and port 443 for HTTPS to the public or private IP address for the Ingress application load balancer.
 
 Route
-: Open port 80 for HTTP and port 443 for HTTPS to the router's public IP address.
+:   Open port 80 for HTTP and port 443 for HTTPS to the router's public IP address.
 
 
 ## Allowing the cluster to access resources through Calico network policies
@@ -450,8 +450,8 @@ Route
 Instead of setting up a gateway firewall device, you can choose to use [Calico network policies](/docs/openshift?topic=openshift-network_policies) to act as a cluster firewall on the public or private network. For more information, see the following topics.
 {: shortdesc}
 
-* [Isolating clusters on the public network](/docs/openshift?topic=openshift-network_policies#isolate_workers_public).
-* [Isolating clusters on the private network](/docs/openshift?topic=openshift-network_policies#isolate_workers).
+- [Isolating clusters on the public network](/docs/openshift?topic=openshift-network_policies#isolate_workers_public).
+- [Isolating clusters on the private network](/docs/openshift?topic=openshift-network_policies#isolate_workers).
 
 
 
@@ -465,8 +465,8 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
 
 2. Get the worker node subnets or the worker node IP addresses.
 
-    * **Worker node subnets**: If you anticipate changing the number of worker nodes in your cluster frequently, such as if you enable the [cluster autoscaler](/docs/openshift?topic=openshift-ca#ca), you might not want to update your firewall for each new worker node. Instead, you can add the VLAN subnets that the cluster uses. Keep in mind that the VLAN subnet might be shared by worker nodes in other clusters.
-    Note that the **primary public subnets** that {{site.data.keyword.openshiftlong_notm}} provisions for your cluster come with 14 available IP addresses, and can be shared by other clusters on the same VLAN. When you have more than 14 worker nodes, another subnet is ordered, so the subnets that you need to allow can change. To reduce the frequency of change, create worker pools with worker node flavors of higher CPU and memory resources so that you don't need to add worker nodes as often.
+    - **Worker node subnets**: If you anticipate changing the number of worker nodes in your cluster frequently, such as if you enable the [cluster autoscaler](/docs/openshift?topic=openshift-ca#ca), you might not want to update your firewall for each new worker node. Instead, you can add the VLAN subnets that the cluster uses. Keep in mind that the VLAN subnet might be shared by worker nodes in other clusters.
+        Note that the **primary public subnets** that {{site.data.keyword.openshiftlong_notm}} provisions for your cluster come with 14 available IP addresses, and can be shared by other clusters on the same VLAN. When you have more than 14 worker nodes, another subnet is ordered, so the subnets that you need to allow can change. To reduce the frequency of change, create worker pools with worker node flavors of higher CPU and memory resources so that you don't need to add worker nodes as often.
 
         1. List the worker nodes in your cluster.
 
@@ -488,14 +488,14 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
 
         3. List the VLAN subnets for each unique network ID.
 
-            ```
+            ```sh
             ibmcloud sl subnet list | grep -e <networkID1> -e <networkID2>
             ```
             {: pre}
 
             Example output
           
-            ```
+            ```sh
             ID        identifier       type                 network_space   datacenter   vlan_id   IPs   hardware   virtual_servers
             1234567   169.xx.210.xxx   ADDITIONAL_PRIMARY   PUBLIC          dal12        1122334   16    0          5   
             7654321   169.xx.178.xxx   ADDITIONAL_PRIMARY   PUBLIC          dal10        4332211   16    0          6    
@@ -507,15 +507,15 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
             *   `169.xx.210.xxx/28`
             *   `169.xx.178.xxx/28`
             
-    * **Individual worker node IP addresses**: If you have a small number of worker nodes that run only one app and do not need to scale, or if you want to add only one worker node, list all the worker nodes in your cluster and note the **Public IP** addresses. If your worker nodes are connected to a private network only and you want to connect to {{site.data.keyword.cloud_notm}} services by using the private cloud service endpoint, note the **Private IP** addresses instead. Only these worker nodes are added. If you delete the worker nodes or add worker nodes to the cluster, you must update your firewall accordingly.
+    - **Individual worker node IP addresses**: If you have a small number of worker nodes that run only one app and do not need to scale, or if you want to add only one worker node, list all the worker nodes in your cluster and note the **Public IP** addresses. If your worker nodes are connected to a private network only and you want to connect to {{site.data.keyword.cloud_notm}} services by using the private cloud service endpoint, note the **Private IP** addresses instead. Only these worker nodes are added. If you delete the worker nodes or add worker nodes to the cluster, you must update your firewall accordingly.
 
         ```sh
         ibmcloud oc worker ls --cluster <cluster_name_or_ID>
         ```
         {: pre}
 
-4. Add the subnet CIDR or IP addresses to your service's firewall for outbound traffic or your on-premises firewall for inbound traffic.
-5. Repeat these steps for each cluster that you want to allow traffic to or from.
+3. Add the subnet CIDR or IP addresses to your service's firewall for outbound traffic or your on-premises firewall for inbound traffic.
+4. Repeat these steps for each cluster that you want to allow traffic to or from.
 
 
 
@@ -528,7 +528,7 @@ By default, all IP addresses can be used to log in to the {{site.data.keyword.cl
 Setting up an IAM allowlist blocks access to the {{site.data.keyword.openshiftshort}} web console. Do not use an IAM allowlist if you must access the {{site.data.keyword.openshiftshort}} web console for your cluster.
 {: important}
 
-**Before you begin**: The following steps require you to change the IAM allowlist for the user whose credentials are used for the cluster's region and resource group infrastructure permissions. If you are the credentials owner, you can change your own IAM allowlist settings. If you are not the credentials owner, but you are assigned the **Editor** or **Administrator** IBM Cloud IAM platform access role for the [User Management service](/docs/account?topic=account-account-services), you can update the restricted IP addresses for the credentials owner.
+Before you begin, the following steps require you to change the IAM allowlist for the user whose credentials are used for the cluster's region and resource group infrastructure permissions. If you are the credentials owner, you can change your own IAM allowlist settings. If you are not the credentials owner, but you are assigned the **Editor** or **Administrator** IBM Cloud IAM platform access role for the [User Management service](/docs/account?topic=account-account-services), you can update the restricted IP addresses for the credentials owner.
 
 1. Identify what user credentials are used for the cluster's region and resource group infrastructure permissions.
 
@@ -540,7 +540,7 @@ Setting up an IAM allowlist blocks access to the {{site.data.keyword.openshiftsh
         {: pre}
 
         Example output
-        ```
+        ```sh
         Getting information about the API key owner for cluster <cluster_name>...
         OK
         Name                Email   
@@ -557,7 +557,7 @@ Setting up an IAM allowlist blocks access to the {{site.data.keyword.openshiftsh
 
         **Example output if credentials are set to use a different account**. In this case, the user's infrastructure credentials are used for the region and resource group that you targeted, even if a different user's credentials are stored in the API key that you retrieved in the previous step.
 
-        ```
+        ```sh
         OK
         Infrastructure credentials for user name <1234567_name@email.com> set for resource group <resource_group_name>.
         ```
@@ -565,7 +565,7 @@ Setting up an IAM allowlist blocks access to the {{site.data.keyword.openshiftsh
 
         **Example output if credentials are not set to use a different account**. In this case, the API key owner that you retrieved in the previous step has the infrastructure credentials that are used for the region and resource group.
 
-        ```
+        ```sh
         FAILED
         No credentials set for resource group <resource_group_name>.: The user credentials could not be found. (E0051)
         ```
@@ -600,7 +600,7 @@ Setting up an IAM allowlist blocks access to the {{site.data.keyword.openshiftsh
 4. From the menu bar, click **Manage** > **Access (IAM)**, and select **Users**.
 5. Select the user that you found in step 1 from the list.
 6. From the **User details** page, go to the **IP address restrictions** section.
-7. For **Classic infrastructure**, enter the [CIDRs of the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/iam-firewall-ips){: external}. To find the region that your cluster's zones are location in, see the `README` for the directory.
+7. For **Classic infrastructure**, enter the [CIDRs of the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/iam-firewall-ips){: external}. For VPC infrastructure, enter the CIDRs of the zones in the region where your cluster is located in your security group of ALB. To find the region that your cluster's zones are location in, see the `README` for the directory.
 8. Enter the CIDRs of the worker node subnets that you found in step 2.
 9. Click **Apply**.
 

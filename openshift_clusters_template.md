@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-19"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -11,8 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-  
 
 
 # Creating a cluster by using a {{site.data.keyword.bpfull_notm}} template
@@ -66,6 +64,7 @@ With the secure cluster template, you can create a cluster from the UI with {{si
 
         For the **OCP entitlement**, you can select an entitlement for a worker pool, if you have one. In most cases, leave the value set to **Purchase additional licenses for this worker pool**. If you have an {{site.data.keyword.cloud_notm}} Pak with an {{site.data.keyword.openshiftshort}} entitlement that you want to use, you can select **Apply my Cloud Pak OCP entitlement to this worker pool**. Later, when you configure the worker pool, make sure to select only the flavor and number of worker nodes that your entitlement permits.
         {: note}
+
     - **VPC**: Review the subnet IP range for your location. 
 
     - **Resource details**: Review the resource prefix that is automatically added to each {{site.data.keyword.cloud_notm}} resource that is created. You can also optionally provide your own {{site.data.keyword.cloud_notm}} IAM API key if you do not need a new API key generated for you.

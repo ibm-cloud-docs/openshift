@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-10-19"
 
 keywords: kubernetes, openshift, roks, rhoks, rhos
 
@@ -33,7 +33,7 @@ In {{site.data.keyword.openshiftshort}} clusters that run version 4, operators a
     - [Deleting Operators from a cluster](https://docs.openshift.com/container-platform/4.7/operators/admin/olm-deleting-operators-from-cluster.html){: external}
     - [Creating applications from installed Operators](https://docs.openshift.com/container-platform/4.7/operators/user/olm-creating-apps-from-installed-operators.html){: external}
     - [Making your own custom Operator](https://github.com/operator-framework/community-operators/blob/master/docs/testing-operators.md#testing-operator-deployment-on-openshift){: external}.
-        - For help creating custom Operators, see the [Operator SDK](https://docs.openshift.com/container-platform/4.7/operators/operator_sdk/osdk-getting-started.html){: external} documentation, which includes a guide to build an operator that is based on a [Helm chart](https://docs.openshift.com/container-platform/4.7/operators/operator_sdk/){: external}.
+        - For help creating custom Operators, see the [Operator SDK](https://docs.openshift.com/container-platform/4.7/operators/operator_sdk/osdk-about.html){: external} documentation, which includes a guide to build an operator that is based on a [Helm chart](https://docs.openshift.com/container-platform/4.7/operators/operator_sdk/){: external}.
         - To manage your custom Operator, see the [Operator Lifecycle Manager](http://docs.openshift.com/container-platform/4.7/operators/understanding/olm/olm-understanding-olm.html){: external} documentation.
 2. Review any custom steps to install an operator in your cluster.
     - To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/4.7/logging/cluster-logging.html){: external}, see [installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator).

@@ -2,16 +2,15 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-18"
+lastupdated: "2021-10-19"
 
 keywords: openshift
 subcollection: openshift
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}
 
-  
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Site map
@@ -184,6 +183,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-rel-notes#rel-notes)
 
 [October 2021](/docs/openshift?topic=openshift-rel-notes#release-oct-2021)
+
+* [19 October 2021](/docs/openshift?topic=openshift-rel-notes#19oct2021)
 
 * [18 October 2021](/docs/openshift?topic=openshift-rel-notes#18oct2021)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-15"
+lastupdated: "2021-10-19"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -20,8 +20,9 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: shortdesc}
 
 
-This page has moved. For the latest release note information, see [Release notes](/docs/containers?topic=containers-rel-notes).
+This page has moved. For the latest release note information, see [Release notes](/docs/openshift?topic=openshift-rel-notes).
 {: important}
+
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status){: external}.
 {: note}
@@ -378,7 +379,7 @@ From 07 to 31 July 2021, the DNS provider is changed from Cloudflare to Akamai f
 | ---- | ----------- |
 | 30 January 2020 | **Ingress ALB changelog**: Updated the [`nginx-ingress` image build to 625](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog). |
 | 27 January 2020 | <ul><li><strong>Back up and restore File and Block storage</strong>: Added steps for deploying the <a href="/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore"><code>ibmcloud-backup-restore</code> Helm chart</a>.</li></ul> |
-| 22 January 2020 | <ul><li><strong>Changing VLANs</strong>: After you <a href="/docs/openshift?topic=openshift-cs_network_cluster#change-vlans">change your worker node VLAN connections</a>, you can now <a href="/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan">move router services across VLANs</a>.</li><li><strong>Storage utilities</strong>: <a href="/docs/openshift?topic=openshift-utilities">IBM Cloud storage utilities</a> are now available for {{site.data.keyword.openshiftshort}} clusters.</li></ul> |
+| 22 January 2020 | <ul><li><strong>Changing VLANs</strong>: After you <a href="/docs/openshift?topic=openshift-cs_network_cluster#change-vlans">change your worker node VLAN connections</a>, you can now <a href="/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-classic">move router services across VLANs</a>.</li><li><strong>Storage utilities</strong>: <a href="/docs/openshift?topic=openshift-utilities">IBM Cloud storage utilities</a> are now available for {{site.data.keyword.openshiftshort}} clusters.</li></ul> |
 | 20 January 2020 | <ul><li><strong>Helm version 3</strong>: Updated <a href="/docs/containers?topic=containers-helm">Adding services by using Helm charts</a> to include steps for installing Helm v3 in your cluster. Migrate to Helm v3 today for several advantages over Helm v2, such as the removal of the Helm server, Tiller.</li><li><strong>Ingress ALB changelog</strong>: Updated the <a href="/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog"><code>nginx-ingress</code> image build to 621</a>.</li><li><strong>Version changelog</strong>: Patch updates are available for {{site.data.keyword.openshiftshort}} <a href="/docs/openshift?topic=openshift-openshift_changelog#311161_1538">3.11.161_1538_openshift</a>.</li></ul> |
 | 06 January 2020 | **Ingress ALB changelog**: Updated the [`ingress-auth` image to build 373](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).|
 | 03 January 2020 | **Version changelog**: Worker node patch updates are available for {{site.data.keyword.openshiftshort}} [3.11.157_1537_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1536).|
