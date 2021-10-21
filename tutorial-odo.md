@@ -2,11 +2,12 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-15"
+lastupdated: "2021-10-21"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, odo
 
 subcollection: openshift
+
 content-type: tutorial
 
 ---

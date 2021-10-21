@@ -2,13 +2,16 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-10-21"
 
 keywords: openshift, roks, rhoks, rhos, strongswan, ipsec, on-prem, vpnaas, direct link
 
 subcollection: openshift
 
+
 ---
+
+
 {{site.data.keyword.attribute-definition-list}}
 
 

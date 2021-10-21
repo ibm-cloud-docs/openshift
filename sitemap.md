@@ -2094,6 +2094,8 @@ subcollection: openshift
 
 * [Mounting the volume to your app](/docs/openshift?topic=openshift-portworx#mount_pvc)
 
+* [VPC: Updating worker nodes with Portworx volumes](/docs/openshift?topic=openshift-portworx#portworx_vpc_up)
+
 * [Backing up and restoring apps and data with PX-Backup](/docs/openshift?topic=openshift-portworx#px-backup)
 
     * [Installing PX-Backup on a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-portworx#px-backup-install)
