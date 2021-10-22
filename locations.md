@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-10-22"
 
 keywords: openshift, roks, rhoks, rhos, mzr, szr, multizone, multi az
 
