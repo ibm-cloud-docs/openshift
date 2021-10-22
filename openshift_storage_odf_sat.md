@@ -2,13 +2,14 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-18"
+lastupdated: "2021-10-22"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, satellite
 
 subcollection: openshift
 
 ---
+
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -35,7 +36,6 @@ Before you install ODF in your {{site.data.keyword.satelliteshort}} cluster, eac
 {: shortdesc}
 
 1. [Install](/docs/openshift?topic=openshift-openshift-cli#cli_oc) or [update the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cs_cli_upgrade).
-1. [Create a {{site.data.keyword.satelliteshort}} link endpoint](/docs/satellite?topic=satellite-link-location-cloud#link-about).
 1. [Set up a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 1. [Attach at least 3 hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) that meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs). Additionally, each host must have a minimum of 16 CPUs and 64 GB RAM.
 1. [Create a cluster](/docs/openshift?topic=openshift-clusters) with the hosts that you previously attached to the location.
@@ -105,28 +105,10 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
 After you [create a link endpoint](/docs/satellite?topic=satellite-link-location-cloud#link-about) and before you install ODF, create a Kubernetes secret with your link credentials.
 {: shortdesc}
 
-1. Create a `config.toml` file that contains your link endpoint credentials.
-
-    ```sh
-    [Bluemix]
-    iam_url = "https://iam.bluemix.net"
-    iam_client_id = "bx"
-    iam_client_secret = "bx"
-    iam_api_key = "XXXXX" # Enter your IAM API key
-    containers_api_route_private = "XXXXXX" # Enter your link endpoint. Don't include the trailing slash. Example: https://s111faab2f1e11cfc11a1-6b11a1aaa9c111ba51a11125d8aa1111-c000.us-east.satellite.appdomain.cloud:11111
-
-    [VPC]
-    provider_type = "g2"
-    ```
-    {: codeblock}
-
-1. Encode your `config.toml` file to base64.
-
-    ```sh
-    cat ./config.toml | base64
-    ```
-    {: pre}
-
+1. Get the details of your `satellite-containersApi` endpoint.
+    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} select the location where you want to deploy ODF.
+    2. Click **Link endpoints**, then click the `satellite-containersApi` endpoint.
+    3. On the endpoint details page, copy the endpoint.
 1. List the secrets in the `kube-system` namespace of your cluster and look for the `storage-secret-store`.
 
     ```sh
@@ -136,21 +118,29 @@ After you [create a link endpoint](/docs/satellite?topic=satellite-link-location
 
 1. If the `storage-secret-store` secret doesn't exist, create it.
 
-    1. Create a `secret.yaml` file that has the base64 encoded `config.toml` value that you created earlier.
+    1. Create a `secret.yaml` file that has your IAM API key and the link endpoint you retrieved earlier.
 
         ```yaml
         apiVersion: v1
-        data:
-          slclient.toml: # Enter your base64 encoded config.toml
         kind: Secret
         metadata:
           name: storage-secret-store
           namespace: kube-system
         type: Opaque
+        stringData:
+          slclient.toml: |-
+            [Bluemix]
+              iam_url = "https://iam.cloud.ibm.com"
+              iam_client_id = "bx"
+              iam_client_secret = "bx"
+              iam_api_key = "<iam_api_key>" # Enter your IAM API key
+              containers_api_route_private = "<link_endpoint>" # Enter the link endpoint that you retrieved earlier.
+            [VPC]
+              provider_type = "g2"
         ```
         {: codeblock}
 
-    1. Create the secret in your cluster.
+    1. Create the secret in your cluster. 
 
         ```sh
         oc create -f secret.yaml -n kube-system
@@ -166,19 +156,25 @@ After you [create a link endpoint](/docs/satellite?topic=satellite-link-location
         ```
         {: pre}
 
-        Example output
         ```yaml
         apiVersion: v1
-        data:
-          slclient.toml: XXX # Enter your base64 encoded config.toml
         kind: Secret
         metadata:
-          annotations:
-            kubectl.kubernetes.io/last-applied-configuration: |
+          name: storage-secret-store
+          namespace: kube-system
+        type: Opaque
+        stringData:
+          slclient.toml: |-
+            [Bluemix]
+              iam_url = "https://iam.cloud.ibm.com"
+              iam_client_id = "bx"
+              iam_client_secret = "bx"
+              iam_api_key = "<iam_api_key>" # Enter your IAM API key
+              containers_api_route_private = "<link_endpoint>" # Enter the link endpoint that you created earlier.
+            [VPC]
+              provider_type = "g2"
         ```
-        {: screen}
-    
-    1. Paste the base64 encoded `config.toml` value that you created earlier in the `data.slclient.toml` field.
+        {: codeblock}
 
     1. Save and close the file to apply the secret to your cluster.
 

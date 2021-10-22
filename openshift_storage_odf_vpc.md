@@ -2,13 +2,14 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-10-22"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, roks
 
 subcollection: openshift
 
 ---
+
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -35,7 +36,7 @@ The following steps walk you through deploying ODF with the default settings. Be
 To list the versions and find the current default, run `ibmcloud oc cluster addon versions`. If you have a cluster version other than the default, specify the `--version` flag. The add-on supports `n+1` cluster versions. Enable the add-on by running the following command.
 
 ```sh
-ibmcloud oc cluster addon enable -c <cluster_name> --version 4.7.0
+ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version 4.7.0
 ```
 {: pre}
 
@@ -60,6 +61,7 @@ For high availability, make sure that your VPC cluster has at least 3 worker nod
 
 ### Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance
 {: #odf-create-cos}
+
 Complete the following steps to create a {{site.data.keyword.cos_full_notm}} instance which you can use as the default backing store in your ODF deployment. If you don't want to set up {{site.data.keyword.cos_full_notm}}, you can skip this step and [install the add-on](#install-odf-cli-vpc).
 {: shortdesc}
 
@@ -321,14 +323,14 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: codeblock}
 
-3. Save the file and create the `OcsCluster` custom resource to your cluster.
+2. Save the file and create the `OcsCluster` custom resource to your cluster.
 
     ```sh
     oc create -f <ocs-cluster-filename>.yaml
     ```
     {: pre}
 
-4. Verify that your `OcsCluster` is running.
+3. Verify that your `OcsCluster` is running.
 
     ```sh
     oc describe ocscluster ocscluster-vpc
@@ -397,7 +399,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 
 
-1. [Deploy an app that uses ODF](/docs/openshift?topic=openshift-odf-deploy-app).
+4. [Deploy an app that uses ODF](/docs/openshift?topic=openshift-odf-deploy-app).
 
 ### Scaling ODF
 {: #odf-scaling}
