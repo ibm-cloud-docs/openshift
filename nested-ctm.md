@@ -2,11 +2,12 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-10-21"
 
 keywords: openshift, iks, help, network, dns, health check
 
 subcollection: openshift
+
 content-type: troubleshoot
 
 ---

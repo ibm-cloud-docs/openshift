@@ -2,13 +2,14 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-10-21"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
 subcollection: openshift
 
 ---
+
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -53,6 +54,9 @@ You can quickly access your {{site.data.keyword.openshiftlong_notm}} cluster fro
 3. To continue working in the command line, click your profile name, such as `IAM#name@email.com`, and then click **Copy Login Command**. Depending on your cluster version, log in to your cluster from the command line as follows.
     *  **Version 3.11**: Paste the copied `oc login` command into your command line.
     *  **Version 4**: Click **Display Token**, copy the `oc login` command, and paste the command into your command line.
+
+For security reasons, first log out of the {{site.data.keyword.cloud_notm}} console and then log out of the {{site.data.keyword.openshiftshort}} web console before you close your browser. You must complete both steps in the specified order to successfully log out of the {{site.data.keyword.openshiftshort}} web console.
+{: note}   
 
 **What's next?** Try [Deploying apps through the console](/docs/openshift?topic=openshift-deploy_app#deploy_apps_ui).
 
@@ -388,7 +392,8 @@ You can quickly access your {{site.data.keyword.openshiftlong_notm}} cluster fro
 4. Click **Display Token**, and copy the `oc login` command.
 5. Paste the command into your command line.
 
-</br>
+For security reasons, first log out of the {{site.data.keyword.cloud_notm}} console and then log out of the {{site.data.keyword.openshiftshort}} web console before you close your browser. You must complete both steps in the specified order to successfully log out of the {{site.data.keyword.openshiftshort}} web console.
+{: note} 
 
 If you cannot or do not want to open the {{site.data.keyword.openshiftshort}} console, choose among the following options to log in to your {{site.data.keyword.openshiftlong_notm}} cluster by using the CLI.
 *   **Log in as admin**:
@@ -1056,8 +1061,6 @@ See [Cluster cannot update because of broken webhook](/docs/containers?topic=con
 
 
  
-
-
 
 
 

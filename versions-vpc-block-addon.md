@@ -2,11 +2,12 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-10-21"
 
 keywords: vpc block, add-on, vpc block changelog
 
 subcollection: openshift
+
 
 ---
 
@@ -114,7 +115,7 @@ Review the changes in version `4.0.0_764` of the {{site.data.keyword.block_stora
     - `liveness-probe`: `icr.io/ext/sig-storage/livenessprobe:v2.3.0
     - `csi-node-driver-registrar`: `icr.io/ext/sig-storage/csi-node-driver-registrar:v2.2.0`
 - Updates the Golang version from `1.15.12` to `1.16.7`
-- Increases the resources the `csi-attacher`, `csi-resizer`, `csi-provisioner`, `iks-vpc-block-driver`, and `iks-vpc-node-driver` to fix containers crashing due to OOM issues.
+- Increases the resources to the `csi-attacher`, `csi-resizer`, `csi-provisioner`, `ibm-vpc-block-csi-controller`, and `ibm-vpc-block-csi-node` plug-ins to fix containers crashing due to OOM issues.
 - Improves volume attach/detach performance by increasing the worker thread count for the `csi-attacher` sidecar.
 - Improves error messaging
 - Fixes a bug related to unexpected IAM behavior.

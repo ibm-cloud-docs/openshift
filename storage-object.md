@@ -2,11 +2,12 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-10-21"
 
 keywords: openshift, rhoks, roks, rhos
 
 subcollection: openshift
+
 
 ---
 
@@ -1322,7 +1323,7 @@ To add a secret to a storage class:
 
 
 
-`Name`
+Name
 :   `ibmc-s3fs-standard-cross-region`
 :   `ibmc-s3fs-standard-perf-cross-region`
 :   `ibmc-s3fs-standard-regional`

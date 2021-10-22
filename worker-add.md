@@ -2,11 +2,12 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-10-21"
 
 keywords: openshift, roks, rhoks, rhos, clusters, worker nodes, worker pools, delete
 
 subcollection: openshift
+
 
 ---
 
@@ -115,7 +116,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
     {: pre}
 
 4. Optional: To encrypt the local disk of each worker node in the worker pool, get the details of your key management service (KMS) provider.
-    1. Complete the steps in [VPC worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-vpc) to create your KMS instance and a service authorization in IAM. 
+    1. Complete the steps in [VPC worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-vpc) to create your KMS instance and to authorize your service in IAM. 
     2. List available KMS instances and note the **ID**.
         ```sh
         ibmcloud oc kms instance ls

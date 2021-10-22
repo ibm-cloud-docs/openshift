@@ -2,13 +2,14 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-10-21"
 
 keywords: openshift, roks, rhoks, rhos, version, rhel, update, upgrade
 
 subcollection: openshift
 
 ---
+
 
 {{site.data.keyword.attribute-definition-list}}
 

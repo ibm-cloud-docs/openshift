@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-10-22"
 
 keywords: openshift
 subcollection: openshift
@@ -183,6 +183,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-rel-notes#rel-notes)
 
 [October 2021](/docs/openshift?topic=openshift-rel-notes#release-oct-2021)
+
+* [22 October 2021](/docs/openshift?topic=openshift-rel-notes#22oct2021)
 
 * [19 October 2021](/docs/openshift?topic=openshift-rel-notes#19oct2021)
 
@@ -2094,6 +2096,8 @@ subcollection: openshift
 
 * [Mounting the volume to your app](/docs/openshift?topic=openshift-portworx#mount_pvc)
 
+* [VPC: Updating worker nodes with Portworx volumes](/docs/openshift?topic=openshift-portworx#portworx_vpc_up)
+
 * [Backing up and restoring apps and data with PX-Backup](/docs/openshift?topic=openshift-portworx#px-backup)
 
     * [Installing PX-Backup on a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-portworx#px-backup-install)
@@ -3146,7 +3150,7 @@ subcollection: openshift
 
     * [1.4 Scheduler](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-1-4)
 
-* [2 Etcd Node Configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-2)
+* [2 `etcd` Node Configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-2)
 
 * [3 Control Plane Configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-3)
 
@@ -3174,7 +3178,7 @@ subcollection: openshift
 
     * [5.6 General Policies](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-5-6)
 
-    * [IBM Remediations and Explanations](/docs/openshift?topic=openshift-cis-benchmark#ibm-remediations-and-explanations)
+    * [{{site.data.keyword.IBM_notm}} Remediations and Explanations](/docs/openshift?topic=openshift-cis-benchmark#ibm-remediations-and-explanations)
 
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 
@@ -3241,6 +3245,8 @@ subcollection: openshift
     * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [Object storage plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Changelog for version 2.1.6, released 22 October 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0216_object_plugin)
 
 * [Changelog for version 2.1.5, released 5 October 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0215_object_plugin)
 

@@ -2,11 +2,12 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-10-22"
 
 keywords: openshift, roks, rhoks, rhos
 
 subcollection: openshift
+
 
 ---
 
@@ -81,7 +82,7 @@ You must define access policies for every user that works with {{site.data.keywo
 
 The following image shows the different types of permissions and roles, the actions a role can perform, and how the roles relate to each other.
 
-![In {{site.data.keyword.cloud_notm}}, you can assign IAM platform, IAM service, Cloud Foundry, and infrastructure roles.](images/user_access.png "Assign IAM platform, IAM service, Cloud Foundry, and infrastructure roles"){: caption="Figure 1.Aassign IAM platform, IAM service, Cloud Foundry, and infrastructure roles" caption-side="bottom"}
+![In {{site.data.keyword.cloud_notm}}, you can assign IAM platform, IAM service, Cloud Foundry, and infrastructure roles.](images/user_access.png "Assign IAM platform, IAM service, Cloud Foundry, and infrastructure roles"){: caption="Figure 1. Assign IAM platform, IAM service, Cloud Foundry, and infrastructure roles" caption-side="bottom"}
 
 To see the specific {{site.data.keyword.openshiftlong_notm}} permissions that can be performed with each role, check out the [User access permissions](/docs/openshift?topic=openshift-access_reference) reference topic.
 {: tip}
@@ -216,7 +217,6 @@ Resource group
     - All {{site.data.keyword.cloud_notm}} IAM services in the resource group, including all clusters in {{site.data.keyword.openshiftlong_notm}} and images in {{site.data.keyword.registrylong_notm}}.</li>
     - All instances within a service in the resource group, such as all the clusters in {{site.data.keyword.openshiftlong_notm}}.</li>
     - All instances within a region of a service in the resource group, such as all the clusters in the <strong>US South</strong> region of {{site.data.keyword.openshiftlong_notm}}.
-
 
 
 

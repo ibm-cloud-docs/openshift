@@ -2,11 +2,12 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-10-22"
 
 keywords: object storage, plug-in, changelog
 
 subcollection: openshift
+
 
 ---
 
@@ -24,7 +25,8 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | Object Storage plug-in version | Supported? | {{site.data.keyword.openshiftshort}} version support | Supported architecture |
 | --- | --- |--- | --- |
-| 2.1.5 | Yes | Greater than or equal to 4.3  | x86 |
+| 2.1.6 | Yes | Greater than or equal to 4.3 | x86 |
+| 2.1.5 | Deprecated | Greater than or equal to 4.3  | x86 |
 | 2.1.4 | Deprecated | Greater than or equal to 4.3  | x86 |
 | 2.1.3 | Deprecated | Greater than or equal to 4.3  | x86 |
 | 2.1.2 | Deprecated | Greater than or equal to 4.3  | x86 |
@@ -37,6 +39,17 @@ Refer to the following tables for a summary of changes for each version of the [
 | 2.0.5 | Deprecated | 4.3 to 4.6 | x86 |
 {: caption="Object Storage plug-in versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the Object Storage plug-in version. The second column is the version's supported state. The third column is the version of your cluster that the Object Storage plug-in version is supported for."}
+
+
+## Changelog for version 2.1.6, released 22 October 2021
+{: #0216_object_plugin}
+
+Review the changes in version 2.1.6 of the {{site.data.keyword.cos_full_notm}} plug-in.
+{: shortdesc}
+
+- Image tags: `1.8.36`
+- Updates s3fs fuse to version 1.90
+- Updates dependencies
 
 
 ## Changelog for version 2.1.5, released 5 October 2021
@@ -79,7 +92,7 @@ Review the changes in version 2.1.3 of the {{site.data.keyword.cos_full_notm}} p
 - Addresses the following CVEs: [CVE-2021-3520](https://nvd.nist.gov/vuln/detail/CVE-2021-3520){: external}, [CVE-2021-3516](https://nvd.nist.gov/vuln/detail/CVE-2021-3516){: external}, [CVE-2021-3517](https://nvd.nist.gov/vuln/detail/CVE-2021-3517){: external}, [CVE-2021-3518](https://nvd.nist.gov/vuln/detail/CVE-2021-3518){: external}, [CVE-2021-3537](https://nvd.nist.gov/vuln/detail/CVE-2021-3537){: external}, [CVE-2021-3541](https://nvd.nist.gov/vuln/detail/CVE-2021-3541){: external}, [CVE-2021-33195](https://nvd.nist.gov/vuln/detail/CVE-2021-33195){: external}, [CVE-2021-33196](https://nvd.nist.gov/vuln/detail/CVE-2021-33196){: external}, [CVE-2021-33198](https://nvd.nist.gov/vuln/detail/CVE-2021-33198){: external}, [CVE-2021-33197](https://nvd.nist.gov/vuln/detail/CVE-2021-33197){: external}, and [CVE-2021-34558](https://nvd.nist.gov/vuln/detail/CVE-2021-34558){: external}.  
 - Includes a new version of the `ibmc` Helm plug-in. 
 - Adds support for Satellite clusters.   
-- Adds support static provisioning s3fs on AWS clusters.  
+- Adds support for static provisioning of s3fs on AWS clusters.  
 - Adds support for installing the `ibm-object-storage-plugin` in air-gapped environments.   
 - Changes the default installation namespace from the `kube-system` namespace to the `ibm-object-s3fs` namespace.  
 - Enables `ReadOnlyRootFilesystem` for the plug-in and driver pods.  

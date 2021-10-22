@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-21"
 
 keywords: odf, openshift data foundation add-on, changelog
 
@@ -12,7 +12,6 @@ subcollection: openshift, container storage
 
 {{site.data.keyword.attribute-definition-list}}
 
-  
 
 # OpenShift Data Foundation add-on changelog
 {: #odf_addon_changelog}
@@ -38,7 +37,8 @@ Refer to the following tables for a summary of changes for each version of the [
 | --- | --- | --- | --- |
 | 4.7.0 | Yes | Yes | 4.7 |
 {: caption="Add-on versions" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the add-on version. The second column indicates the default version. The third column is the version's supported state. The fourth column is the {{site.data.keyword.openshiftshort}} version of your cluster that the add-on version is supported for."}
+{: summary="The rows are read from left to right. The first column is the add-on version. The second column indicates the default version. The third column is the version's supported state. The fourth column is the version of your cluster that the add-on version is supported for."}
+
 
 
 
