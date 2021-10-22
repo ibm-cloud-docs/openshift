@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-10-22"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, oc, ibmcloud oc
 
@@ -409,7 +409,7 @@ Version 0.4.51 of the CLI was released on 7 November 2019.
 #### Version 0.4.42
 {: #cli-0442}
 
-Version 0.4.42 of the CLI was released on 24 Octo er 2019.
+Version 0.4.42 of the CLI was released on 24 October 2019.
 
 - Adds the cluster ID to the output of `ibmcloud oc cluster create`. 
 - Updates the Go version to 1.12.10 to fix `golang` vulnerabilities for [CVE-2019-16276](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-16276){: external}.
@@ -417,7 +417,7 @@ Version 0.4.42 of the CLI was released on 24 Octo er 2019.
 #### Version 0.4.38
 {: #cli-0438}
 
-Version 0.4.38 of the CLI was released on 14 Octoer 2019.
+Version 0.4.38 of the CLI was released on 14 October 2019.
 
 
 - Adds the `--secret-namespace` flag to the `ibmcloud oc nlb-dns create classic` and `ibmcloud oc nlb-dns create vpc-classic` commands to specify the Kubernetes namespace that you want the SSL secret for the DNS subdomain to be created in. 

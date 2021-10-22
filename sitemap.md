@@ -3150,7 +3150,7 @@ subcollection: openshift
 
     * [1.4 Scheduler](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-1-4)
 
-* [2 Etcd Node Configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-2)
+* [2 `etcd` Node Configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-2)
 
 * [3 Control Plane Configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-3)
 
@@ -3178,7 +3178,7 @@ subcollection: openshift
 
     * [5.6 General Policies](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-5-6)
 
-    * [IBM Remediations and Explanations](/docs/openshift?topic=openshift-cis-benchmark#ibm-remediations-and-explanations)
+    * [{{site.data.keyword.IBM_notm}} Remediations and Explanations](/docs/openshift?topic=openshift-cis-benchmark#ibm-remediations-and-explanations)
 
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 
