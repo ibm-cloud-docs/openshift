@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-22"
+lastupdated: "2021-10-25"
 
 keywords: openshift
 subcollection: openshift
@@ -2006,7 +2006,7 @@ subcollection: openshift
 
     * [Cleaning up persistent storage](/docs/openshift?topic=openshift-vpc-block#storage_remove_block_vpc)
 
-[Storing data on IBM Cloud Object Storage](/docs/openshift?topic=openshift-object_storage#object_storage)
+[Storing data on {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#object_storage)
 
 * [Creating your object storage service instance](/docs/openshift?topic=openshift-object_storage#create_cos_service)
 
