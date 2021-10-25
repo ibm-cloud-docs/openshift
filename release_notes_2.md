@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-22"
+lastupdated: "2021-10-25"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -33,6 +33,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 Review the release notes for October 2021.
 {: shortdesc}
+
+### 25 October 2021
+{: #25oct2021}
+{: release-note}
+
+Worker node fix pack update
+:   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.8.15_1532_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4815_1532),[`4.7.34_1537_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4734_1537), [`4.6.48_1561_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4648_1561), and [`3.11.524_1609_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311524_1609).
 
 ### 22 October 2021
 {: #22oct2021}

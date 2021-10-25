@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-10-25"
 
 keywords: kubernetes, worker nodes, state
 
@@ -119,8 +119,10 @@ A `Deploy_failed` state means that your worker node could not be deployed. List 
 You can view the current worker node state by running the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and locating the **State** and **Status** fields.
 {: shortdesc}
 
-A `Normal` state means that your worker node is fully provisioned and ready to be used in the cluster. This state is considered healthy and does not require an action from the user. **Note**: Although the worker nodes might be normal, other infrastructure resources, such as <a href="/docs/containers?topic=containers-coredns_lameduck">networking</a> and <a href="/docs/containers?topic=containers-debug_storage_file">storage</a>, might still need attention.
+A `Normal` state means that your worker node is fully provisioned and ready to be used in the cluster. This state is considered healthy and does not require an action from the user. 
 
+Although the worker nodes might be normal, other infrastructure resources, such as [networking](/docs/containers?topic=containers-coredns_lameduck) and [storage](/docs/containers?topic=containers-debug_storage_file), might still need attention.
+{: note}
 
 ## Provisioned
 {: #worker-node-provisioned}
@@ -128,7 +130,7 @@ A `Normal` state means that your worker node is fully provisioned and ready to b
 You can view the current worker node state by running the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and locating the **State** and **Status** fields.
 {: shortdesc}
 
-A `Provisioned` state means that your worker node completed provisioning and is part of the cluster. Billing for the worker node begins. The worker node state soon reports a regular health state and state, such as `normal` and `ready`.
+A `Provisioned` state means that your worker node completed provisioning and is part of the cluster. Billing for the worker node begins. The worker node state soon reports a regular health state and status, such as `normal` and `ready`.
 
 
 ## Provisioning
