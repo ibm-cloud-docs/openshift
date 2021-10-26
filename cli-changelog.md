@@ -21,7 +21,7 @@ In the command line, you are notified when updates to the `ibmcloud` CLI and plu
 {: shortdesc}
 
 
-Refer to the following tables for a summary of changes for each version of the [{{site.data.keyword.openshiftlong_notm}} plug-in](/docs/openshift?topic=openshift-openshift-cli), which uses the `ibmcloud oc` alias.
+Refer to the following changelogs for a summary of changes for each version of the [{{site.data.keyword.openshiftlong_notm}} plug-in](/docs/openshift?topic=openshift-openshift-cli), which uses the `ibmcloud oc` alias.
 
 
 ## Version 1.0
@@ -30,7 +30,14 @@ Refer to the following tables for a summary of changes for each version of the [
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
+## Version 1.0.334
+{: #cli-10334}
 
+Version 1.0.334 of the CLI was released on 26 October 2021.
+{: shortdesc}
+
+- Adds the `ibmcloud oc cluster master private-service-endpoint disable` command. You can now disable private service endpoints to remove private accessibility to your cluster master. 
+- Updates the help text in various languages. 
 
 ## Version 1.0.331
 {: #cli-10331}
