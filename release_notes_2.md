@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-25"
+lastupdated: "2021-10-26"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -33,6 +33,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 Review the release notes for October 2021.
 {: shortdesc}
+
+### 26 October 2021
+{: #26oct2021}
+{: release-note}
+
+CLI changelog
+:   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.334. 
 
 ### 25 October 2021
 {: #25oct2021}

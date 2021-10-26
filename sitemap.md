@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-25"
+lastupdated: "2021-10-26"
 
 keywords: openshift
 subcollection: openshift
@@ -183,6 +183,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-rel-notes#rel-notes)
 
 [October 2021](/docs/openshift?topic=openshift-rel-notes#release-oct-2021)
+
+* [26 October 2021](/docs/openshift?topic=openshift-rel-notes#26oct2021)
 
 * [25 October 2021](/docs/openshift?topic=openshift-rel-notes#25oct2021)
 
@@ -2495,6 +2497,8 @@ subcollection: openshift
 
     * [`ibmcloud oc cluster master private-service-endpoint allowlist`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist)
 
+    * [`ibmcloud oc cluster master private-service-endpoint disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_disable)
+
     * [`ibmcloud oc cluster master private-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_enable)
 
     * [`ibmcloud oc cluster master public-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pub_se_enable)
@@ -2736,6 +2740,8 @@ subcollection: openshift
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version 1.0.334](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10334)
 
 * [Version 1.0.331](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10331)
 

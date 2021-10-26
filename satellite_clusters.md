@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-10-25"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -26,8 +26,15 @@ Before you can create clusters on your own infrastructure, you must set up an {{
 {: shortdesc}
 
 1. [Create an {{site.data.keyword.satellitelong_notm}} location](/docs/satellite?topic=satellite-locations#location-create).
-2. [Set up the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
-3. [Attach at least 3 hosts to your location](/docs/satellite?topic=satellite-hosts#attach-hosts) to use as the worker nodes for your {{site.data.keyword.openshiftlong_notm}} cluster.
+2. In addition to the [host network requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network), make sure that you allow the following outbound access for your hosts.
+    | Description | Source IP | Destination IP | Protocol and ports |
+    | --- | --- | --- | --- |
+    | Allow your hosts to access the LaunchDarkly service | All hosts | `app.launchdarkly.com` | . |
+    {: caption="Required outbound connectivity for hosts on the primary network interface for {{site.data.keyword.satelliteshort}} services" caption-side="top"}
+    {: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
+    
+3. [Set up the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
+4. [Attach at least 3 hosts to your location](/docs/satellite?topic=satellite-hosts#attach-hosts) to use as the worker nodes for your {{site.data.keyword.openshiftlong_notm}} cluster.
 
 
 
