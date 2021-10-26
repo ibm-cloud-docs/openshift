@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-10-26"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -1239,7 +1239,6 @@ ibmcloud oc cluster master private-service-endpoint allowlist rm --cluster CLUST
 ibmcloud oc cluster master private-service-endpoint allowlist rm --cluster mycluster --subnet 1.1.1.1/16
 ```
 {: pre}
-
 
 ### `ibmcloud oc cluster master private-service-endpoint enable`
 {: #cs_cluster_master_pse_enable}
