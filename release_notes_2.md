@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-10-28"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -26,13 +26,18 @@ For information about releases that occured before August 30th, see [Release not
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status){: external}.
 {: note}
 
-
-
 ## October 2021
 {: #release-oct-2021}
 
 Review the release notes for October 2021.
 {: shortdesc}
+
+### 28 October 2021
+{: #28oct2021}
+{: release-note}
+
+Istio add-on change log
+:   [Version `1.10.5`](/docs/containers?topic=containers-istio-changelog#1105) of the Istio managed add-on is released.
 
 ### 26 October 2021
 {: #26oct2021}
