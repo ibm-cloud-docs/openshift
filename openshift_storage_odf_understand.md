@@ -2,13 +2,14 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-10-28"
 
 keywords: openshift, openshift data foundation, openshift container storage, vpc, roks, satellite
 
 subcollection: openshift
 
 ---
+
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -32,7 +33,7 @@ How does OpenShift Data Foundation work?
     - For VPC clusters the storage volumes are dynamically provisioned {{site.data.keyword.block_storage_is_short}} devices.
     - For bare metal Classic clusters, the storage volumes are local disks on your bare metal worker nodes.
     - For {{site.data.keyword.satelliteshort}} clusters, the storage volumes are either local disks on your worker nodes, or you can dynamically provision disks by using a compatible block storage driver.
-:   ODF uses these devices to create a virtualized storage layer, where your app data is replicated for high availability. Because ODF abstracts your underlying storage, you can create use ODF to create File, Block, or Object storage claims all from the same underlying raw block storage.
+:   ODF uses these devices to create a virtualized storage layer, where your app data is replicated for high availability. Because ODF abstracts your underlying storage, you can use ODF to create File, Block, or Object storage claims from the same underlying raw block storage.
 
 For a full overview of the features and benefits, see [OpenShift Data Foundation](https://www.redhat.com/en/technologies/cloud-computing/openshift-data-foundation){: external}.
 
