@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-10-28"
 
 keywords: openshift, roks, rhoks, rhos, multi az, multi-az, szr, mzr
 
@@ -192,6 +192,8 @@ Ubuntu 16 `x1c` or `x2c` worker node flavors are deprecated and no longer receiv
 | **Virtual, mx2.16x128**: Use this flavor when you want a 1:8 ratio of CPU and memory resources from the worker node for mid to large-sized workloads that require more memory. | 16 / 128 GB | 100 GB | 1000 Mbps |
 | **Virtual, mx2.32x256**: Use this flavor when you want a 1:8 ratio of CPU and memory resources from the worker node for large-sized workloads that require more memory. | 32 / 256 GB | 100 GB | 1000 Mbps |
 | **Virtual, mx2.48x384**: Use this flavor when you want a 1:8 ratio of CPU and memory resources from the worker node for large-sized workloads that require more memory. | 48 / 384 GB | 100 GB | 1000 Mbps |
+| **Virtual, mx2.64x512**: Use this flavor when you want a 1:8 ratio of CPU and memory resources from the worker node for large-sized workloads that require more memory. | 64 / 512 GB | 100 GB | 1000 Mbps |
+| **Virtual, mx2.128x1024**: Use this flavor when you want a 1:8 ratio of CPU and memory resources from the worker node for large-sized workloads that require more memory. | 128 / 1024 GB | 100 GB | 1000 Mbps |
 {: class="simple-tab-table"}
 {: caption="Available worker node flavors for VPC clusters" caption-side="top"}
 {: #vpc-gen2-worker-vm-flavors}
