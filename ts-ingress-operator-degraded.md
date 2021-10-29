@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-10-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -45,7 +45,7 @@ Non-authoritative answer:
 {: screen}
 
 
-The fix for [bug 1953097](https://bugzilla.redhat.com/show_bug.cgi?id=1970140){: external} enabled CoreDNS `bufsize` plugin responses of `1232` bytes. Some DNS resolvers can't receive responses greater than `512` bytes. Note that DNS resolvers that retry lookups using TCP, such as Dig, are not impacted. DNS clients that do not require UDP DNS messages to exceed 512 bytes are not impacted.
+The fix for [bug 1953097](https://bugzilla.redhat.com/show_bug.cgi?id=1970140){: external} enabled CoreDNS `bufsize` plug-in responses of `1232` bytes. Some DNS resolvers can't receive responses greater than `512` bytes. Note that DNS resolvers that retry lookups using TCP, such as Dig, are not impacted. DNS clients that do not require UDP DNS messages to exceed 512 bytes are not impacted.
 {: tsCauses}
 
 Update your cluster master and worker nodes.

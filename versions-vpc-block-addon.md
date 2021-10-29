@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-10-29"
 
 keywords: vpc block, add-on, vpc block changelog
 
@@ -132,7 +132,7 @@ Review the changes in version `3.0.1` of the {{site.data.keyword.block_storage_i
 ### Changelog for version 3.0.1, released 15 July 2021
 {: #301_init}
 
-Review the changlog for version `3.0.1` of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changelog for version `3.0.1` of the {{site.data.keyword.block_storage_is_short}} add-on.
 
 Volume expansion in version `3.0.1` is available in beta for allowlisted accounts. Don't use this feature for production workloads.
 {: beta}

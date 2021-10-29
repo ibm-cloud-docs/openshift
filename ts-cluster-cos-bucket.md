@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-10-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -53,7 +53,7 @@ When you create a {{site.data.keyword.openshiftlong_notm}} version 4 cluster on 
 
 However, the bucket might not create for several reasons such as:
 * {{site.data.keyword.cos_full_notm}} is temporarily unavailable.
-* No standard {{site.data.keyword.cos_full_notm}} instance exists in your account, or the person whose API key is set for the region and resouce group does not have permissions to view the instance.
+* No standard {{site.data.keyword.cos_full_notm}} instance exists in your account, or the person whose API key is set for the region and resource group does not have permissions to view the instance.
 * The person who created your cluster did not have the **Administrator** platform access role to {{site.data.keyword.cos_full_notm}} in IAM.
 * The service failed to set up service key access to the object storage instance, such as if the API key lacks permissions or {{site.data.keyword.cloud_notm}} IAM is unavailable.
 * Other conflicts, such as naming conflicts that exhaust the preset number of retries or saving the bucket and service key data in the backend service.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-29"
 
 keywords: openshift, storage
 
@@ -40,7 +40,7 @@ In the output, check the `Events` section for the following error:
 This error indicates that that the classic or VPC cluster where your ODF storage cluster is installed is a multizone cluster, but the storage classes specified in the `monStorageClassName` or `osdStorageClassName` fields in your CRD have a `VolumeBindingMode` parameter that is set to `Immediate`. Multizone ODF deployments require storage classes that have the `VolumeBindingMode` parameter set to `WaitForFirstConsumer`.
 {: tsResolve}
 
-1. [Create custom storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class) with the `VolumeBindingMode` set to `WaitForFirstConsumer`, or choose a pre-exisiting storage class with the same parameters. 
+1. [Create custom storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class) with the `VolumeBindingMode` set to `WaitForFirstConsumer`, or choose a pre-existing storage class with the same parameters. 
 
 2. List the name of your ODF storage cluster. 
     ```sh

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-10-29"
 
 keywords: openshift, roks, rhoks, rhos, firewall, acl, acls, access control list, rules, security group
 
@@ -57,7 +57,7 @@ Review the following advantages of security groups over ACLs:
 - As opposed to ACLs, security group rules are stateful. When you create a rule to allow traffic in one direction, reverse traffic in response to allowed traffic is automatically permitted without the need for another rule. Fewer rules are required to set up your security group than to set up an ACL.
 - An ACL must be created for each subnet that your cluster is attached to, but only one security group must be modified for all worker nodes in your cluster.
 - ACLs are applied at the level of the VPC subnet. If one cluster uses multiple subnets, rules are required to ensure that the subnets can communicate with each other. If you create multiple clusters that use the same subnets in one VPC, you cannot use ACLs to control traffic between the clusters because they share the same subnets.
-- With an ACL, you must explicitly allow traffic in both directions for a connection to suceed.
+- With an ACL, you must explicitly allow traffic in both directions for a connection to succeed.
 
 Regardless of which security option you choose, be sure to follow the instructions for [security groups](#security_groups) or [ACLs](#acls) to allow the subnets and ports that are required for necessary traffic to reach your cluster.
 
@@ -117,7 +117,7 @@ Use the {{site.data.keyword.cloud_notm}} console to add inbound and outbound rul
     | `*` For Classic clusters, allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. For VPC clusters, if you use your own security group to the LBaaS for Ingress, set port 80 to allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses. | TCP | `80` | Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. |
     {: caption="Table 2. Required inbound rules" caption-side="top"}
 
-    `*` Alternatively, to allow the inbound traffic for router healthchecks, you can create a single rule to allow all incoming traffic on port 80.
+    `*` Alternatively, to allow the inbound traffic for router health checks, you can create a single rule to allow all incoming traffic on port 80.
 5. To create new rules to control outbound traffic to your worker nodes, in the **Outbound rules** section, delete the default rule that allows all outbound traffic.
 6. In the **Outbound rules** section, click **Create**. Keep in mind that in addition to any rules that you create, the rules in the following table are required to allow necessary outbound traffic from your cluster.
     | Rule purpose | Protocol | Port or Value | Source type |
@@ -213,7 +213,7 @@ To create rules in your default security group:
     | `*` Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. | TCP | `80` | Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. |
     {: caption="Table 3. Required inbound rules" caption-side="top"}
     
-    `*` Alternatively, to allow the inbound traffic for router healthchecks, you can create a single rule to allow all incoming traffic on port 80.
+    `*` Alternatively, to allow the inbound traffic for router health checks, you can create a single rule to allow all incoming traffic on port 80.
 
 6. To create new rules to control outbound traffic to your worker nodes, get the ID of the default rule that allows all outbound traffic.
     ```sh
@@ -312,15 +312,15 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
     | Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint.  | Allow | ALL | `166.8.0.0/14` | - | Any | - | After 1 |
     | Multizone clusters: Allow worker nodes in one subnet to communicate with the worker nodes in other subnets within the cluster. Create one rule for each subnet that you want to connect to.  | Allow | ALL | Other subnet's CIDR | - | Any | - | After 2 |
     | Allow incoming traffic requests to apps that run on your worker nodes.  | Allow | TCP | Any | Any | Any | `30000 - 32767` | After 3 |
-    | To expose apps by using load balancers or Ingress, allow traffic through VPC load balancers. For exmaple, for Ingress listening on `TCP/443`)  | Allow | TCP | Any | Any | Any | 443 | After 4 |
+    | To expose apps by using load balancers or Ingress, allow traffic through VPC load balancers. For example, for Ingress listening on `TCP/443`)  | Allow | TCP | Any | Any | Any | 443 | After 4 |
     | `**` For clusters with public and private service endpoints, allow {{site.data.keyword.openshiftshort}} Console pods to contact the master | Allow |  ALL |  Master IPs | - | Any | - | After 5 |
     | `*` Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}  | Allow | TCP | Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external} | - | Any | `80` | After 6 |
     | Deny all other traffic that does not match the previous rules.  | Deny | ALL | Any | - | Any | - | Set to bottom |
     {: caption="Table 4. Required inbound rules" caption-side="top"}
 
-    `**` Master IPs can be found by looking at the `server:` entry in the cluster's kubeconfig file (`kubectl config view`) and then running the *`nslookup`* or *`dig`* command to determine which IPs that it resolves to. The Master IP can be from 1 to 3 different IPs depending on the region and the control plane cluster.
+    `**` Master IPs can be found by looking at the `server:` entry in the cluster's `kubeconfig` file (`kubectl config view`) and then running the *`nslookup`* or *`dig`* command to determine which IPs that it resolves to. The Master IP can be from 1 to 3 different IPs depending on the region and the control plane cluster.
     
-    `*` Alternatively, to allow the inbound traffic for router healthchecks, you can create a single inbound rule and outbound rule to allow all incoming and outgoing traffic on port 80.
+    `*` Alternatively, to allow the inbound traffic for router health checks, you can create a single inbound rule and outbound rule to allow all incoming and outgoing traffic on port 80.
     
 6. In the **Outbound rules** section, create the following rules by clicking **Create**.
 
@@ -339,9 +339,9 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
     | Deny all other traffic that does not match the previous rules.  | Deny | ALL | Any | - | Any | - | Set to bottom |
     {: caption="Table 6. Required outbound rules" caption-side="top"}
 
-    `**` Master IPs can be found by looking at the `server:` entry in the cluster's kubeconfig file (`kubectl config view`) and then running the *`nslookup`* or *`dig`* command to determine which IPs that it resolves to. The Master IP can be from 1 to 3 different IPs depending on the region and the control plane cluster.
+    `**` Master IPs can be found by looking at the `server:` entry in the cluster's `kubeconfig` file (`kubectl config view`) and then running the *`nslookup`* or *`dig`* command to determine which IPs that it resolves to. The Master IP can be from 1 to 3 different IPs depending on the region and the control plane cluster.
     
-    `*` Alternatively, to allow the inbound traffic for router healthchecks, you can create a single inbound rule and outbound rule to allow all incoming and outgoing traffic on port 80.
+    `*` Alternatively, to allow the inbound traffic for router health checks, you can create a single inbound rule and outbound rule to allow all incoming and outgoing traffic on port 80.
     
 7. In the **Attach subnets** section, choose the name of the subnet for which you created this ACL.
 

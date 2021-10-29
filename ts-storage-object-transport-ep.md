@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-10-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -90,7 +90,7 @@ Follow the steps to gather logging information.
     ```
     {: codeblock}
 
-4. Save the following daemonset configuration file as `inspectnode-ds.yaml`. After you deploy an app that references the PVC that you created earlier, deploy the daemonset when the `Transport endpoint is not connected.` error occurs to gather the logs.
+4. Save the following DaemonSet configuration file as `inspectnode-ds.yaml`. After you deploy an app that references the PVC that you created earlier, deploy the DaemonSet when the `Transport endpoint is not connected.` error occurs to gather the logs.
     ```yaml
     apiVersion: apps/v1
     kind: DaemonSet
@@ -130,7 +130,7 @@ Follow the steps to gather logging information.
     ```
     {: codeblock}
 
-5. Create the deamonset in your cluster when the `Transport endpoint is not connected.` error occurs.
+5. Create the DaemonSet in your cluster when the `Transport endpoint is not connected.` error occurs.
 
     ```sh
     oc create -f ./inspectnode-ds.yaml
@@ -153,7 +153,7 @@ Follow the steps to gather logging information.
 
 8. Review the `syslog` and the `s3fslog` for information about the `Transport endpoint` error. [Open a support ticket](/docs/openshift?topic=openshift-get-help#help-support) and share the log files that you gathered.
 
-9. Delete the `ibm-inspectnode` daemonset that you deployed.
+9. Delete the `ibm-inspectnode` DaemonSet that you deployed.
 
     ```sh
     oc delete daemonset ibm-inspectnode

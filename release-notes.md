@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-10-29"
 
 keywords: openshift, roks, rhos, rhoks
 

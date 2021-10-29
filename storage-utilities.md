@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-10-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -1195,7 +1195,7 @@ When a storage volume is down, your app pods that are using storage have a low f
     10. Test the alert that you created by editing the threshold that you configured to manually trigger the alert. For example, if you set a pod availability alert for when the number of available pods is less than 3 for 5 minutes, edit your alert threshold to be less than 4 pods for 5 minutes and select the `at least once` option.
     11. Verify that the alert is triggered after 5 minutes. Once you have verified the alert, reset the values to the values you configured earlier.
 
-### Troubleshooting persistent storage when a {{site.data.keyword.mon_full_notm}} alert is triggered
+### Troubleshooting persistent storage when an {{site.data.keyword.mon_full_notm}} alert is triggered
 {: #monitor_storage_ts}
 
 

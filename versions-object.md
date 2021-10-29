@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-10-29"
 
 keywords: object storage, plug-in, changelog
 
@@ -59,7 +59,7 @@ Review the changes in version 2.1.5 of the {{site.data.keyword.cos_full_notm}} p
 {: shortdesc}
 
 - Image tags: `1.8.34`
-- Resovles [CVE-2021-36221](https://nvd.nist.gov/vuln/detail/CVE-2021-36221){: external}, [CVE-2021-29923](https://nvd.nist.gov/vuln/detail/CVE-2021-29923){: external}, and [CVE-2021-33196](https://nvd.nist.gov/vuln/detail/CVE-2021-33196){: external}.
+- Resolves [CVE-2021-36221](https://nvd.nist.gov/vuln/detail/CVE-2021-36221){: external}, [CVE-2021-29923](https://nvd.nist.gov/vuln/detail/CVE-2021-29923){: external}, and [CVE-2021-33196](https://nvd.nist.gov/vuln/detail/CVE-2021-33196){: external}.
 - Updates the UBI to `8.4-210`.
 - Includes the `ibmc` plug-in version `2.0.7`.
 - Pulls the Golang base image from artifactory.
@@ -76,7 +76,7 @@ Review the changes in version 2.1.4 of the {{site.data.keyword.cos_full_notm}} p
 
 - Image tags: `1.8.33`
 - Fixes a `timeoutSeconds` issue in the `livenessProbe` and `readinessProbe`.
-- Updates the GoLang version to `v1.17`.
+- Updates the Golang version to `v1.17`.
 - Updates the UBI image to `8.4-208`.
 - Migrates the image from the `ibmcom` public registry to the `icr.io/cpopen` registry.
 - Resolves [CVE-2021-36221](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36221){: external}, [CVE-2021-29923](https://nvd.nist.gov/vuln/detail/CVE-2021-29923){: external}, and [CVE-2021-33196](https://nvd.nist.gov/vuln/detail/CVE-2021-33196){: external}.
@@ -96,7 +96,7 @@ Review the changes in version 2.1.3 of the {{site.data.keyword.cos_full_notm}} p
 - Adds support for installing the `ibm-object-storage-plugin` in air-gapped environments.   
 - Changes the default installation namespace from the `kube-system` namespace to the `ibm-object-s3fs` namespace.  
 - Enables `ReadOnlyRootFilesystem` for the plug-in and driver pods.  
-- Updates the GoLang version to `v1.16.6`. 
+- Updates the Golang version to `v1.16.6`. 
 
 **Notes:**
 * The `ibm-object-s3fs` namespace is created during installation. Dynamic creation of namespaces is supported for Helm versions 3.2.0 and later. Before upgrading to version 2.1.3 of the `ibm-object-storage-plugin`, upgrade to Helm 3.2.0 or later.

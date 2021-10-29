@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-10-29"
 
 keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logging config, monitoring config
 
@@ -25,6 +25,7 @@ Looking for `ibmcloud oc` commands? See the [{{site.data.keyword.openshiftlong_n
 
 ## Logging commands
 {: #logging-commands}
+
 ### `ibmcloud ob logging agent discover`
 {: #logging_agent_discover}
 
@@ -284,7 +285,7 @@ ibmcloud ob logging config show --cluster CLUSTER --instance LOGGING_INSTANCE
 
 
 ## Monitoring commands
-
+{: #monitoring_commands_top}
 
 ### `ibmcloud ob monitoring agent discover`
 {: #monitoring_agent_discover}
@@ -422,7 +423,7 @@ ibmcloud ob monitoring config list --cluster CLUSTER
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 **Minimum required permissions**: 
-- **Administratorr** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
+- **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
 - **Viewer** platform access role for {{site.data.keyword.mon_full_notm}}
 
 **Command options**:

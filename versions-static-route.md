@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-10-29"
 
 keywords: openshift, roks, static route, add-on
 
@@ -28,7 +28,7 @@ Review the supported versions of the static route add-on. In the CLI, you can ru
 | --- | --- | --- |
 | 1.00 | Yes | 4.5, 4.6, 4.7 |
 {: summary="The rows are read from left to right. The first column is the static route add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the static route add-on version is supported for."}
-{: caption="Supported static route addon versions" caption-side="top"}
+{: caption="Supported static route add-on versions" caption-side="top"}
 
 ## Version 1.0.0
 {: #v100}
