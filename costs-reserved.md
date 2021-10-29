@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-10-29"
 
 keywords: oks, iro, openshift, red hat, red hat openshift, rhos, roks, rhoks
 
@@ -31,8 +31,7 @@ A reservation is a type of {{site.data.keyword.cloud_notm}} resource that you se
 
 Review the following diagram for an example scenario of how you might set up your reservation and contracts to use across clusters.
 
-<img src="/images/reservations-ov.png" alt="Overview of reservations for {{site.data.keyword.openshiftlong_notm}}" style="height:600px; border-style: none"/>
-<figcaption>Figure 1. An example scenario of using a reservation for worker nodes in your clusters.</figcaption>
+![Overview of reservations for {{site.data.keyword.openshiftlong_notm}}.](images/reservations-ov.png "Overview of reservations for {{site.data.keyword.openshiftlong_notm}}"){: caption="Figure 1. An example scenario of using a reservation for worker nodes in your clusters." caption-side="bottom"}
 
 **Reservation**: The reservation contains details such as the container platform, worker node flavor, location, and infrastructure provider.
 
@@ -129,7 +128,7 @@ Before you begin, make sure that you have the [**Administrator** platform access
     * Enter the **Number of worker nodes** to create a contract for the initial reservation. You can add contracts for additional worker nodes later.
 6. Fill out the **Reservation details**. For more information about the discounts, see [Billing and discounts](#ri-about-billing).
     * **Contract length**: Choose between 1 or 3 years for the initial contract duration. You can add contracts for additional durations later.
-    * **Start date**: Choose the date that the contract and billing begin, at 00:00 UTC regardless of your timezone. The contract ends 1 or 3 years after the date that you select, such as 15 December 2020 - 15 December 2021. You can select a future date, but you cannot create worker nodes that use the reservation until that date begins.
+    * **Start date**: Choose the date that the contract and billing begin, at 00:00 UTC regardless of your time zone. The contract ends 1 or 3 years after the date that you select, such as 15 December 2020 - 15 December 2021. You can select a future date, but you cannot create worker nodes that use the reservation until that date begins.
     * **Reservation name**: Give your reservation a name. This name is used to generate names for all of the associated contracts, which appear in your billing and usage reports. Consider including brief details on the location and flavor to help when selecting the reservation to create worker pools later.
 7. In the **Summary** pane, review the order summary and then click **Create**. Your reservation is created with the initial contract for worker nodes.
 8. **Optional**: To add more capacity to your reservation, you can create more contracts.
@@ -165,7 +164,7 @@ To use the reservation:
     2. Select the **Reservation** that you want to use. Keep in mind that the reservation affects the flavor and number of worker nodes that you can provision in this worker pool.
     3. Select the **Worker zones** and review the VLAN information.
     4. For the **Worker nodes**, increase or decrease the number of worker nodes that you want to create per zone. You can review the percentage of your reservation that creating the worker pool uses. You cannot create a worker pool with more worker nodes than you have in your reservation. To use worker nodes from another reservation, create a different worker pool.
-5. In the **Summary** pane, notice that your estimated cost is zero, because your worker pool order uses the reservation. To complete the order, click **Create**.
+6. In the **Summary** pane, notice that your estimated cost is zero, because your worker pool order uses the reservation. To complete the order, click **Create**.
 
 
 

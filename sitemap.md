@@ -1637,6 +1637,12 @@ subcollection: openshift
 {: #sitemap_exposing_apps_with_load_balancers}
 
 
+[Quick start for load balancers](/docs/openshift?topic=openshift-loadbalancer-qs#loadbalancer-qs)
+
+* [Exposing an app by using an NLB in a classic cluster](/docs/openshift?topic=openshift-loadbalancer-qs#lb_qs_classic)
+
+* [Exposing an app by using a VPC load balancer in a VPC cluster](/docs/openshift?topic=openshift-loadbalancer-qs#lb_qs_vpc)
+
 [VPC: Exposing apps with load balancers for VPC](/docs/openshift?topic=openshift-vpc-lbaas#vpc-lbaas)
 
 * [About VPC load balancing in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_about)
@@ -2085,7 +2091,7 @@ subcollection: openshift
 
 * [Setting up a key-value store for Portworx metadata](/docs/openshift?topic=openshift-portworx#portworx_database)
 
-    * [Using the Portworx KVDB](/docs/openshift?topic=openshift-portworx#portworx-kvdb)
+    * [Using the Portworx key-value database](/docs/openshift?topic=openshift-portworx#portworx-kvdb)
 
     * [Optional: Setting up a Databases for etcd service instance](/docs/openshift?topic=openshift-portworx#databases-for-etcd)
 
@@ -2135,7 +2141,7 @@ subcollection: openshift
 
     * [Removing a worker node from your Portworx cluster or the entire Portworx cluster](/docs/openshift?topic=openshift-portworx#remove_storage_node_cluster-px)
 
-    * [Removing the Portworx daemon set](/docs/openshift?topic=openshift-portworx#remove_px_daemonset)
+    * [Removing the Portworx DaemonSet](/docs/openshift?topic=openshift-portworx#remove_px_daemonset)
 
     * [Removing Portworx from your cluster](/docs/openshift?topic=openshift-portworx#remove_portworx)
 
@@ -2310,7 +2316,7 @@ subcollection: openshift
 
 * [Setting up {{site.data.keyword.mon_full_notm}} for storage volumes](/docs/openshift?topic=openshift-utilities#monitor_storage)
 
-    * [Troubleshooting persistent storage when a {{site.data.keyword.mon_full_notm}} alert is triggered](/docs/openshift?topic=openshift-utilities#monitor_storage_ts)
+    * [Troubleshooting persistent storage when an {{site.data.keyword.mon_full_notm}} alert is triggered](/docs/openshift?topic=openshift-utilities#monitor_storage_ts)
 
 [Backing up and restoring storage data](/docs/openshift?topic=openshift-storage_br#storage_br)
 
@@ -2827,6 +2833,8 @@ subcollection: openshift
     * [`ibmcloud ob logging config replace`](/docs/openshift?topic=openshift-observability_cli#logging_config_replace)
 
     * [`ibmcloud ob logging config show`](/docs/openshift?topic=openshift-observability_cli#logging_config_show)
+
+* [Monitoring commands](/docs/openshift?topic=openshift-observability_cli#monitoring_commands_top)
 
     * [`ibmcloud ob monitoring agent discover`](/docs/openshift?topic=openshift-observability_cli#monitoring_agent_discover)
 

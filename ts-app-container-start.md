@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-10-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -137,7 +137,7 @@ First, check for and release individual IP addresses that were not cleanly remov
 
 5. Optional: To verify that the data store was successfully unlocked and that IP addresses are now available for assignment, create a pod and check that it starts correctly.
 
-    1. For example, create a simple NGNINX pod.
+    1. For example, create a simple NGINX pod.
         ```sh
         oc run test --image=nginx --generator=run-pod/v1
         ```

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-10-29"
 
 keywords: openshift, red hat, red hat openshift, rhos, roks, rhoks, odo
 
@@ -29,7 +29,7 @@ Designed to improve the developer experience, the `odo` CLI has a simple syntax 
 ## Objectives
 {: #odo-objectives}
 
-- Create and deploy a NodeJS app to a Kubernetes cluster by using the `odo` command line.
+- Create and deploy a Node.js app to a Kubernetes cluster by using the `odo` command line.
 - Use the iterative development capabilities of `odo` to push code changes to your cluster in real time.  
 - View deployment information and verify that your app is up and running.
 
@@ -59,7 +59,7 @@ After you complete the [prerequisites](#odo-prereqs) install the CLI and select 
     ```
     {: pre}
 
-3. Create a project for your NodeJS application. An application, or _app_, is a program that is designed for your users. The app represents the overall experience, not an individual microservice. As such, the app might consist of many microservices, each microserivce referred to as a _component_ in `odo`.
+3. Create a project for your Node.js application. An application, or _app_, is a program that is designed for your users. The app represents the overall experience, not an individual microservice. As such, the app might consist of many microservices, each microservice referred to as a _component_ in `odo`.
     ```
     odo project create nodejs-test
     ```
@@ -73,9 +73,9 @@ After you complete the [prerequisites](#odo-prereqs) install the CLI and select 
     ```
     {: screen}
 
-4. In your command line, create or change directories to the path where your NodeJS app files are stored, or where you want to store the app files.
+4. In your command line, create or change directories to the path where your Node.js app files are stored, or where you want to store the app files.
 
-    If you do not have an existing NodeJS app and want to download a start kit in a later step, the directory must be empty.
+    If you do not have an existing Node.js app and want to download a start kit in a later step, the directory must be empty.
     {: note}
 
     ```sh
@@ -83,7 +83,7 @@ After you complete the [prerequisites](#odo-prereqs) install the CLI and select 
     ```
     {: pre}
 
-5. Create the NodeJS component in your project. The `odo` CLI prompts you to select the language, name, and project for your new component.
+5. Create the Node.js component in your project. The `odo` CLI prompts you to select the language, name, and project for your new component.
     ```
     odo create
     ```
@@ -114,7 +114,7 @@ After you complete the [prerequisites](#odo-prereqs) install the CLI and select 
         ```
         {: screen}
 
-    4. Optional: If you do not have an existing NodeJS app in your directory, you can download a starter kit, as shown in the following example. You can confirm the files are downloaded by running `ls` from the directory.
+    4. Optional: If you do not have an existing Node.js app in your directory, you can download a starter kit, as shown in the following example. You can confirm the files are downloaded by running `ls` from the directory.
         ```
         ? Do you want to download a starter project Yes
         ```
@@ -124,12 +124,12 @@ After you complete the [prerequisites](#odo-prereqs) install the CLI and select 
 {: #odo-push-microservice}
 {: step}
 
-Now that you have a NodeJS component that is based on your local code, you can push the NodeJS component to your cluster.
+Now that you have a Node.js component that is based on your local code, you can push the Node.js component to your cluster.
 {: shortdesc}
 
 You might wonder, how can the microservice be pushed to the cluster without a Dockerfile to describe the image, a YAML file to describe the Kubernetes resource, a Helm chart, or other similar configuration file? The `odo` command line uses the [{{site.data.keyword.openshiftshort}} `source-to-image`](https://github.com/openshift/source-to-image){: external} capability to generate all the configuration files that are needed to deploy the microservice to the Kubernetes cluster.
 
-1. Push the NodeJS component to your cluster. The `odo` CLI validates the NodeJS component and packages the component as a deployable container.
+1. Push the Node.js component to your cluster. The `odo` CLI validates the Node.js component and packages the component as a deployable container.
     ```
     odo push
     ```
@@ -169,7 +169,7 @@ You might wonder, how can the microservice be pushed to the cluster without a Do
 
 3. In the output of the previous step, copy the route for your microservice that users can access from outside the cluster.
 
-4. In a web browser, open the URL of your NodeJS app. You see your app, or if you used the starter kit, a message similar to the following.
+4. In a web browser, open the URL of your Node.js app. You see your app, or if you used the starter kit, a message similar to the following.
     ```
     Hello from Node.js Starter Application!
     ```

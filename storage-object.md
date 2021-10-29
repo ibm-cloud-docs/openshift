@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-10-29"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -435,7 +435,7 @@ If you're having trouble updating the {{site.data.keyword.cos_full_notm}} plug-i
 ### Removing the IBM Cloud Object Storage plug-in
 {: #remove_cos_plugin}
 
-If you do not want to provision and use {{site.data.keyword.cos_full_notm}} in your cluster, you can uninstall the `ibm-object-storage-plugin` and the `ibmc` Helm plugin.
+If you do not want to provision and use {{site.data.keyword.cos_full_notm}} in your cluster, you can uninstall the `ibm-object-storage-plugin` and the `ibmc` Helm plug-in.
 {: shortdesc}
 
 Removing the `ibmc` Helm plug-in or the `ibm-object-storage-plugin` does not remove existing PVCs, PVs, data. When you remove the `ibm-object-storage-plugin`, all the related pods and daemon sets are removed from your cluster. You cannot provision new {{site.data.keyword.cos_full_notm}} for your cluster or use existing PVCs and PVs after you remove the plug-in, unless you configure your app to use the {{site.data.keyword.cos_full_notm}} API directly.
@@ -446,7 +446,7 @@ Before you begin:
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - Make sure that you do not have any PVCs or PVs in your cluster that use {{site.data.keyword.cos_full_notm}}. To list all pods that mount a specific PVC, run `oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"`.
 
-To remove the `ibmc` Helm plugin and the `ibm-object-storage-plugin`:
+To remove the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 
 1. Get the name of your `ibm-object-storage-plugin` Helm installation.
 
@@ -645,7 +645,7 @@ You can authorize your VPC Cloud Service Endpoint source IP addresses to access 
 **Supported infrastructure provider**:
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
-1. [Follow the instructions to install the `ibmc` Helm plugin](#install_cos). Make sure to install the `ibm-object-storage-plugin` and set the `bucketAccessPolicy` flag to `true`.
+1. [Follow the instructions to install the `ibmc` Helm plug-in](#install_cos). Make sure to install the `ibm-object-storage-plugin` and set the `bucketAccessPolicy` flag to `true`.
 
 2. Create one `Manager` HMAC service credential and one `Writer` HMAC service credential for your {{site.data.keyword.cos_full_notm}} instance.
     * [Creating HMAC credentials from the console](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main).
@@ -1214,7 +1214,7 @@ To deploy a stateful set that uses object storage:
 
 `ibm.io/bucket`
 :   In the spec volume claim templates metadata section, set an annotation for the bucket details. Choose between the following options:
-    - If `ibm.io/auto-create-bucket` is set to **true**: Enter the name of the bucket that you want to create in {{site.data.keyword.cos_full_notm}}. If in addition `ibm.io/auto-delete-bucket` is set to `true`, you must leave this field blank to automatically assign your bucket a name with the format tmp-s3fs-xxxx. The name must be unique in {{site.data.keyword.cos_full_notm}}.
+    - If `ibm.io/auto-create-bucket` is set to **true**: Enter the name of the bucket that you want to create in {{site.data.keyword.cos_full_notm}}. If in addition `ibm.io/auto-delete-bucket` is set to `true`, you must leave this field blank to automatically assign your bucket a name with the format `tmp-s3fs-xxxx`. The name must be unique in {{site.data.keyword.cos_full_notm}}.
     - If `ibm.io/auto-create-bucket` is set to **false**: Enter the name of the existing bucket that you want to access in the cluster.
 
 `ibm.io/secret-name`

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-10-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -32,7 +32,7 @@ You might see the following symptoms:
 If a network error occurs while a pod writes to a volume, IBM Cloud infrastructure protects the data on the volume from getting corrupted by changing the volume to a read-only mode. Pods that use this volume cannot continue to write to the volume and fail.
 {: tsCauses}
 
-Verify the plugin version, re-create your app, and gracefully reload your worker node.
+Verify the plug-in version, re-create your app, and gracefully reload your worker node.
 {: tsResolve}
 
 1. Check the version of the {{site.data.keyword.cloud_notm}} Block Storage plug-in that is installed in your cluster.

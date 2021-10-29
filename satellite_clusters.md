@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-25"
+lastupdated: "2021-10-29"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -252,7 +252,7 @@ You can maintain your worker pools by using the same worker pool lifecycle opera
 Resize your worker pool to request more compute capacity in your cluster.
 {: shortdesc}
 
-* When host autoassignment is enabled, {{site.data.keyword.satelliteshort}} automatically assigns availabe hosts to the worker pool, as long as the host labels match the host labels of the worker pool. If no hosts are available, [attach more hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) with matching labels to the {{site.data.keyword.satelliteshort}} location.
+* When host autoassignment is enabled, {{site.data.keyword.satelliteshort}} automatically assigns available hosts to the worker pool, as long as the host labels match the host labels of the worker pool. If no hosts are available, [attach more hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) with matching labels to the {{site.data.keyword.satelliteshort}} location.
 * If host autoassignment is disabled, resizing the worker pool enables autoassignment again.
 
 For more information, see [Adding worker nodes by resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool).

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-10-29"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -199,7 +199,7 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     </tr>
     <tr>
         <td><code>externalTrafficPolicy: Local</code></td>
-    <td><ul><li>Set to <code>Local</code> to preserve the source IP address of client requests to your apps. You must ensure that an app pod exists on each worker node in the zone that the VPC NLB deploys to, such as by using a daemonset.</li><li>If <code>Cluster</code> is set, DSR is implemented only from the worker node that the VPC NLB initially forwards the incoming request to. Once the incoming request arrives, the request is forwarded to a worker node that contains the app pod. The response from the app pod is sent to the original worker node, and that worker node uses DSR to send the response directly back to the client, bypassing the VPC NLB.</li></ul></td>
+    <td><ul><li>Set to <code>Local</code> to preserve the source IP address of client requests to your apps. You must ensure that an app pod exists on each worker node in the zone that the VPC NLB deploys to, such as by using a DaemonSet.</li><li>If <code>Cluster</code> is set, DSR is implemented only from the worker node that the VPC NLB initially forwards the incoming request to. Once the incoming request arrives, the request is forwarded to a worker node that contains the app pod. The response from the app pod is sent to the original worker node, and that worker node uses DSR to send the response directly back to the client, bypassing the VPC NLB.</li></ul></td>
     </tr>
     </tbody></table>
 
@@ -395,7 +395,7 @@ Expose your app to private network traffic by setting up a Kubernetes `LoadBalan
     </tr>
     <tr>
         <td><code>externalTrafficPolicy: Local</code></td>
-    <td><ul><li>Set to <code>Local</code> to preserve the source IP address of client requests to your apps. You must ensure that an app pod exists on each worker node in the zone that the VPC NLB deploys to, such as by using a daemonset, and the source of requests to your apps must exist outside of the cluster.</li><li>If <code>Cluster</code> is set, DSR is implemented only from the worker node that the VPC NLB initially forwards the incoming request to. Once the incoming request arrives, the request is forwarded to a worker node that contains the app pod. The response from the app pod is sent to the original worker node, and that worker node uses DSR to send the response directly back to the client, bypassing the VPC NLB.</li></ul></td>
+    <td><ul><li>Set to <code>Local</code> to preserve the source IP address of client requests to your apps. You must ensure that an app pod exists on each worker node in the zone that the VPC NLB deploys to, such as by using a DaemonSet, and the source of requests to your apps must exist outside of the cluster.</li><li>If <code>Cluster</code> is set, DSR is implemented only from the worker node that the VPC NLB initially forwards the incoming request to. Once the incoming request arrives, the request is forwarded to a worker node that contains the app pod. The response from the app pod is sent to the original worker node, and that worker node uses DSR to send the response directly back to the client, bypassing the VPC NLB.</li></ul></td>
     </tr>
     </tbody></table>
 

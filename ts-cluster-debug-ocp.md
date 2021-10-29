@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-10-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -90,7 +90,7 @@ Check that your cluster is set up properly. If you just created your cluster, wa
         ```
         {: pre}
 
-    3. [Update the worker nodes](/docs/openshift?topic=openshift-update#worker_node) to matchthe cluster master version.
+    3. [Update the worker nodes](/docs/openshift?topic=openshift-update#worker_node) to match the cluster master version.
         ```sh
         ibmcloud oc worker update -c <cluster_name_or_ID> -w <worker1_ID> -w <worker2_ID> -w<worker3_ID>
         ```
