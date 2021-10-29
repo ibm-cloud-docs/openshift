@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-10-29"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -345,6 +345,7 @@ Before you begin, [install and configure the Calico CLI, and set the context for
     calicoctl apply -f allow-ibm-ports-public.yaml
     calicoctl apply -f allow-public-service-endpoint.yaml
     calicoctl apply -f deny-all-outbound-public.yaml
+    calicoctl apply -f allow-openshift-console.yaml
     ```
     {: pre}
 
