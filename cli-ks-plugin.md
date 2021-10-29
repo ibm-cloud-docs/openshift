@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-10-29"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -10,6 +10,7 @@ subcollection: openshift
 
 
 ---
+
 
 {{site.data.keyword.attribute-definition-list}}
 
