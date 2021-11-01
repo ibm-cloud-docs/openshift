@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-29"
+lastupdated: "2021-11-01"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -328,7 +328,7 @@ Review the pod details to verify that the plug-in installation succeeded.
     ```
     {: screen}
 
-    The installation is successful when you see one `ibmcloud-object-storage-plugin` pod and one or more `ibmcloud-object-storage-driver` pods. The number of `ibmcloud-object-storage-driver` pods equals the number of worker nodes in your cluster. All pods must be in a `Running` state for the plug-in to function properly. If the pods fail, run `oc describe pod -n kube-system <pod_name>` to find the root cause for the failure.
+    The installation is successful when you see one `ibmcloud-object-storage-plugin` pod and one or more `ibmcloud-object-storage-driver` pods. The number of `ibmcloud-object-storage-driver` pods equals the number of worker nodes in your cluster. All pods must be in a `Running` state for the plug-in to function properly. If the pods fail, run `oc describe pod -n ibm-object-s3fs <pod_name>` to find the root cause for the failure.
 
 1. Verify that the storage classes are created successfully.
 
@@ -355,7 +355,7 @@ Review the pod details to verify that the plug-in installation succeeded.
     ```
     {: screen}
 
-    If you want to set one of the {{site.data.keyword.cos_full_notm}} storage classes as your default storage class, run `oc patch storageclass <storageclass> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'`. Replace `<storageclass>` with the name of the {{site.data.keyword.cos_full_notm}} storage class.
+    If you want to set one of the {{site.data.keyword.cos_full_notm}} storage classes as your default storage class, run `oc patch storage class <storageclass> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'`. Replace `<storageclass>` with the name of the {{site.data.keyword.cos_full_notm}} storage class.
     {: tip}
 
 1. Follow the instructions to [add object storage to your apps](#add_cos).
@@ -404,21 +404,21 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
 1. Install the latest version of the `ibm-object-storage-plugin`.
 
     ```sh
-    helm ibmc upgrade <release_name> ibm-helm/ibm-object-storage-plugin --force --set license=true
+    helm ibmc upgrade <release_name> ibm-helm/ibm-object-storage-plugin --force --set license=true -n ibm-object-s3fs
     ```
     {: pre}
 
 1. Verify that the `ibmcloud-object-storage-plugin` is successfully upgraded. The upgrade of the plug-in is successful when you see `deployment "ibmcloud-object-storage-plugin" successfully rolled out` in your CLI output.
 
     ```sh
-    oc rollout status deployment/ibmcloud-object-storage-plugin -n kube-system
+    oc rollout status deployment/ibmcloud-object-storage-plugin -n ibm-object-s3fs
     ```
     {: pre}
 
 1. Verify that the `ibmcloud-object-storage-driver` is successfully upgraded. The upgrade is successful when you see `daemon set "ibmcloud-object-storage-driver" successfully rolled out` in your CLI output.
 
     ```sh
-    oc rollout status ds/ibmcloud-object-storage-driver -n kube-system
+    oc rollout status ds/ibmcloud-object-storage-driver -n ibm-object-s3fs
     ```
     {: pre}
 
