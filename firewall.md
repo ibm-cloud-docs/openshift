@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-11-01"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -402,8 +402,8 @@ Enable worker-to-worker communication by allowing all TCP, UDP, VRRP, and IPEnca
 
 To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}, allow outgoing network traffic from the worker nodes to [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions):
 
-- `TCP port 443, port 4443 FROM <each_worker_node_privateIP> TO <registry_subnet>`
-- Replace *<registry_subnet>* with the registry subnet to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images. Port 4443 is required for notary functions, such as [Verifying image signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent). 
+- `TCP port 443 FROM <each_worker_node_privateIP> TO <registry_subnet>`
+- Replace *<registry_subnet>* with the registry subnet to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images. 
 
 | {{site.data.keyword.openshiftlong_notm}} region | Registry address  | Registry private IP addresses |
 |---------------|-------------|-------------|

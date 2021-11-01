@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-11-01"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -483,19 +483,19 @@ Making your location and cluster subdomains available outside of your hosts' pri
 ## Accessing private clusters by using the Wireguard VPN
 {: #access_vpn_openshift}
 
-You can use the Wireguard VPN to securely connect to {{site.data.keyword.openshiftshort}} clusters with only a private network connection. Your cluster might run in a private network in {{site.data.keyword.cloud_notm}} or an {{site.data.keyword.satellitelong_notm}} location in another cloud provider or your on-premises data center.
+You can use the WireGuard VPN to securely connect to {{site.data.keyword.openshiftshort}} clusters with only a private network connection. Your cluster might run in a private network in {{site.data.keyword.cloud_notm}} or an {{site.data.keyword.satellitelong_notm}} location in another cloud provider or your on-premises data center.
 {: shortdesc}
 
 Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}} cluster with a private-only network connection and that the cluster is assigned a private service endpoint.
 
 1. Create a virtual server instance (VSI) that is connected to the same private network that your {{site.data.keyword.openshiftshort}} cluster runs in. This VSI serves as a jumpbox for your cluster. For example, if you have a private VPC cluster, make sure that you create the VSI in the same VPC. For more information about creating the VSI, consult your infrastructure provider's documentation. The VSI must meet the following specifications:
     - The VSI must have a minimum of 2 vCPUs, 8 GB memory, and 25 GB of disk space.
-    - The VSI must run an operating system that is supported by Wireguard. For example, the steps in this topic were tested on an Ubuntu VSI.
+    - The VSI must run an operating system that is supported by WireGuard. For example, the steps in this topic were tested on an Ubuntu VSI.
     - You must create an SSH key that is stored on the VSI so that you can connect to your VSI via SSH.
     - You must assign a public IP address to your VSI so that your VSI is accessible over the public network.
     - Your VSI must allow at least the following network traffic. You can optionally open up more network traffic on your VSI if required for the apps that run on your cluster.
         - Inbound TCP traffic on port 22 for SSH connections
-        - Inbound UDP traffic on port 51820 for the Wireguard server
+        - Inbound UDP traffic on port 51820 for the WireGuard server
         - All outbound traffic
 2. Log in to your VSI by using the public IP address of the VSI.
     ```sh
@@ -503,9 +503,9 @@ Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}
     ```
     {: pre}
 
-3. Install the Wireguard server.
+3. Install the WireGuard server.
 
-    The following steps are specific to VSIs that run Ubuntu. If you run a different Linux distribution, refer to the [Wireguard documentation](https://www.wireguard.com/install/){: external}.
+    The following steps are specific to VSIs that run Ubuntu. If you run a different Linux distribution, refer to the [WireGuard documentation](https://www.wireguard.com/install/){: external}.
     {: note}
 
     1. Update the Ubuntu operating system.
@@ -543,20 +543,20 @@ Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}
         ```
         {: pre}
 
-    5. Install the Wireguard server.
+    5. Install the WireGuard server.
         ```sh
         apt install wireguard
         ```
         {: pre}
 
-4. Create Wireguard server keys.
+4. Create WireGuard server keys.
     1. On your VSI, create a new directory to store your keys.
         ```sh
         mkdir -p /etc/wireguard/keys
         ```
         {: pre}
 
-    2. Create a private and a public Wireguard server key.
+    2. Create a private and a public WireGuard server key.
         ```sh
         wg genkey | tee /etc/wireguard/keys/server.key | wg pubkey | tee /etc/wireguard/keys/server.key.pub
         ```
@@ -588,16 +588,16 @@ Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}
     ```
     {: screen}
 
-6. Create the Wireguard server configuration.
-    1. Open the Wireguard server configuration. The configuration is intially empty.
+6. Create the WireGuard server configuration.
+    1. Open the WireGuard server configuration. The configuration is intially empty.
         ```sh
         nano /etc/wireguard/wg0.conf
         ```
         {: pre}
 
-    2. Add the following content to your configuration. In the `Interface` section, enter the private key from your Wireguard server that you created and change `<eth0>` to the network interface that you retrieved earlier. The IP address is a random address within the VPN tunnel that you assign to the Wireguard server.
+    2. Add the following content to your configuration. In the `Interface` section, enter the private key from your WireGuard server that you created and change `<eth0>` to the network interface that you retrieved earlier. The IP address is a random address within the VPN tunnel that you assign to the WireGuard server.
 
-        The server configuration does not yet include the Wireguard client configuration (`Peer`). You add the client configuration after you set up the Wireguard client on your local machine in a later step.
+        The server configuration does not yet include the WireGuard client configuration (`Peer`). You add the client configuration after you set up the WireGuard client on your local machine in a later step.
         {: note}
 
         ```sh
@@ -611,32 +611,32 @@ Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}
         {: codeblock}
 
     3. Save your changes and exit the nano editor.
-    4. Change the permissions to your Wireguard configuration and server key file.
+    4. Change the permissions to your WireGuard configuration and server key file.
         ```sh
         chmod 600 /etc/wireguard/wg0.conf /etc/wireguard/keys/server.key
         ```
         {: pre}
 
-7. Start the Wireguard server.
-    1. Start the Wireguard server.
+7. Start the WireGuard server.
+    1. Start the WireGuard server.
         ```sh
         wg-quick up wg0
         ```
         {: pre}
 
-    2. Show the status of your Wireguard server connections. Note that your output only shows an interface section and no peer section as the Wireguard client is not successfully configured yet.
+    2. Show the status of your WireGuard server connections. Note that your output only shows an interface section and no peer section as the WireGuard client is not successfully configured yet.
         ```sh
         wg show
         ```
         {: pre}
 
-    3. Change the VSI system settings to automatically start the Wireguard server every time the VSI is booted.
+    3. Change the VSI system settings to automatically start the WireGuard server every time the VSI is booted.
         ```sh
         systemctl enable wg-quick@wg0
         ```
         {: pre}
 
-8. Enable IPv4 forwarding on the Wireguard server.
+8. Enable IPv4 forwarding on the WireGuard server.
     1. Open the VSI system and network settings.
         ```sh
         nano /etc/sysctl.conf
@@ -663,7 +663,7 @@ Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}
         ```
         {: pre}
 
-9. Retrieve the list of IP addresses that you need to allow in your Wireguard client configuration so that you can successfully connect to your private {{site.data.keyword.openshiftshort}} cluster.
+9. Retrieve the list of IP addresses that you need to allow in your WireGuard client configuration so that you can successfully connect to your private {{site.data.keyword.openshiftshort}} cluster.
     1. Get the details of your cluster and note the **Ingress Subdomain** and the **Private Service Endpoint URL**.
         ```sh
         ibmcloud ks cluster get --cluster <cluster_name_or_ID>
@@ -690,19 +690,19 @@ Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}
         ```
         {: pre}
 
-10. Install, configure, and activate the Wireguard client.
-    1. Follow the [instructions](https://www.wireguard.com/install/){: external} to install the Wireguard client on your local machine.
+10. Install, configure, and activate the WireGuard client.
+    1. Follow the [instructions](https://www.wireguard.com/install/){: external} to install the WireGuard client on your local machine.
     2. Open the client.
-    3. Click `+` to create an empty VPN tunnel. A Wireguard private and public key is automatically created for you and displayed in the client configuration.
+    3. Click `+` to create an empty VPN tunnel. A WireGuard private and public key is automatically created for you and displayed in the client configuration.
     4. Enter a name for your client configuration.
     5. Add the following configuration after the `PrivateKey` that is displayed in the `Interface` section. The CIDR `192.168.3.217/32` is a random CIDR that you assign to the client to use within the VPN tunnel.
 
-        Do not change the `PrivateKey` field, which can alter your Wireguard client private key and make the tunnel that you created unusable.
+        Do not change the `PrivateKey` field, which can alter your WireGuard client private key and make the tunnel that you created unusable.
         {: important}
 
         In the `Peer` section, enter the following information:
-        - `PublicKey`: The Wireguard server public key that you created earlier.
-        - `AllowedIPs`: The IP address CIDRs of worker nodes, Ingress subdomain, the private service endpoint URL, and the Wireguard server that you retrieved earlier, separated by commas.
+        - `PublicKey`: The WireGuard server public key that you created earlier.
+        - `AllowedIPs`: The IP address CIDRs of worker nodes, Ingress subdomain, the private service endpoint URL, and the WireGuard server that you retrieved earlier, separated by commas.
         - `Endpoint`: The public IP address of the jumpbox VSI.  
 
         ```sh
@@ -730,17 +730,17 @@ Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}
         {: codeblock}
 
     6. Save your configuration.
-    7. Click **Activate** to start your Wireguard client. If the client is activated successfully, the status changes to **Active**.
-    8. Copy the Wireguard client public key.
+    7. Click **Activate** to start your WireGuard client. If the client is activated successfully, the status changes to **Active**.
+    8. Copy the WireGuard client public key.
 
-11. Finish the Wireguard server configuration.
-    1. On your VSI, open the Wireguard server configuration again.
+11. Finish the WireGuard server configuration.
+    1. On your VSI, open the WireGuard server configuration again.
         ```sh
         nano /etc/wireguard/wg0.conf
         ```
         {: pre}
 
-    2. Add the `Peer` section to your Wireguard server configuration to add the Wireguard client. Enter the Wireguard client public key in the `PublicKey` field and the IP address CIDR that you assigned to the client in the `AllowedIPs` field.  
+    2. Add the `Peer` section to your WireGuard server configuration to add the WireGuard client. Enter the WireGuard client public key in the `PublicKey` field and the IP address CIDR that you assigned to the client in the `AllowedIPs` field.  
         ```sh
         ...
         [Peer]
@@ -764,7 +764,7 @@ Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}
         ```
         {: codeblock}
 
-    3. Stop the Wireguard server and start it again to apply your changes.
+    3. Stop the WireGuard server and start it again to apply your changes.
         ```sh
         wg-quick down wg0
         ```
@@ -775,7 +775,7 @@ Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}
         ```
         {: pre}
 
-    4. Show the updated status of your Wireguard server connections. The interface and peer connections are displayed in your CLI output.
+    4. Show the updated status of your WireGuard server connections. The interface and peer connections are displayed in your CLI output.
         ```sh
         wg show wg0
         ```
