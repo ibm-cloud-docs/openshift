@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-11-01"
+lastupdated: "2021-11-02"
 
 keywords: openshift
 subcollection: openshift
@@ -181,6 +181,10 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-rel-notes#rel-notes)
+
+* [November 2021](/docs/openshift?topic=openshift-rel-notes#release-nov-2021)
+
+    * [2 November 2021](/docs/openshift?topic=openshift-rel-notes#2nov2021)
 
 * [October 2021](/docs/openshift?topic=openshift-rel-notes#release-oct-2021)
 
@@ -419,7 +423,7 @@ subcollection: openshift
 
     * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_clusters#vpc-worker-services-onprem)
 
-    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_clusters#vpc-worker-services-onprem)
+    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_clusters#vpc-external-workers)
 
 * [Example scenarios for VPC cluster network setups](/docs/openshift?topic=openshift-plan_clusters#vpc-scenarios)
 

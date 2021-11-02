@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-01"
+lastupdated: "2021-11-02"
 
 keywords: openshift, rhoks, roks, rhos, multi az, multi-az, szr, mzr
 
@@ -165,7 +165,7 @@ If you need to connect your cluster to resources in your {{site.data.keyword.clo
 
 
 ### External communication to apps that run on worker nodes
-{: #vpc-worker-services-onprem}
+{: #vpc-external-workers}
 
 ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) Allow private or public traffic requests from outside the cluster to your apps that run on worker nodes.
 {: shortdesc}
