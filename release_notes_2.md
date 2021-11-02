@@ -26,6 +26,20 @@ For information about releases that occurred before August 30th, see [Release no
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status){: external}.
 {: note}
 
+## November 2021
+{: #release-nov-2021}
+
+Review the release notes for November 2021.
+{: shortdesc}
+
+### 2 November 2021
+{: #2nov2021}
+{: release-note}
+
+Istio add-on change log
+:   [Version `1.11.4`](/docs/containers?topic=containers-istio-changelog#1114) of the Istio managed add-on is released.
+
+
 ## October 2021
 {: #release-oct-2021}
 
