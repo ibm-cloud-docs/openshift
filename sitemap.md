@@ -423,7 +423,7 @@ subcollection: openshift
 
     * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_clusters#vpc-worker-services-onprem)
 
-    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_clusters#vpc-worker-services-onprem)
+    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_clusters#vpc-external-workers)
 
 * [Example scenarios for VPC cluster network setups](/docs/openshift?topic=openshift-plan_clusters#vpc-scenarios)
 
