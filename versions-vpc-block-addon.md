@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-02"
+lastupdated: "2021-11-03"
 
-keywords: vpc block, add-on, vpc block changelog
+keywords: block, add-on, changelog
 
 subcollection: openshift
 
