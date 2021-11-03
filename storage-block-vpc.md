@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-02"
+lastupdated: "2021-11-03"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -37,14 +37,14 @@ In this quickstart guide, you create a 10Gi 5IOPS tier {{site.data.keyword.block
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-        name: my-pvc
-      spec:
-    accessModes:
-    - ReadWriteOnce
-    resources:
-      requests:
-        storage: 10Gi
-    storageClassName: ibmc-vpc-block-5iops-tier
+      name: my-pvc
+    spec:
+      storageClassName: ibmc-vpc-block-5iops-tier
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Gi
     ```
     {: codeblock}
 
