@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-02"
+lastupdated: "2021-11-04"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -20,8 +20,11 @@ subcollection: openshift
 Give application pods that run in your {{site.data.keyword.openshiftlong}} cluster access to {{site.data.keyword.cloud_notm}} services by creating a trusted profile in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM).  
 {: shortdesc}
 
-Authorizing pods with IAM trusted profiles is available for clusters that run {{site.data.keyword.openshiftshort}} version 4.7 or later.
+Authorizing pods with IAM trusted profiles is available for clusters that run {{site.data.keyword.openshiftshort}} version 4.7 and later.
 {: note}
+
+- Clusters that are running version 4.7 or later and were created after July 2021: Authorizing pods with IAM trusted profiles is enabled automatically.
+- Clusters that are running version 4.7 or later and were created before July 2021: You can enable IAM trusted profiles by running the [`ibmcloud oc cluster master refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh) command. Note that if you have refreshed your cluster master after July 2021, IAM trusted profiles are enabled.
 
 In IAM
 :   Start by creating an IAM trusted profile. Then, link the trusted profile with your {{site.data.keyword.openshiftlong_notm}} compute resource by selecting conditions to match with your clusters, including a Kubernetes namespace and service account in the clusters. Finally, assign access policies to the {{site.data.keyword.cloud_notm}} services that you want your apps to use.
@@ -39,7 +42,7 @@ Supported infrastructure providers
 
 - ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC  
 - ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic  
-
+- <img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> {{site.data.keyword.satelliteshort}}
 
 
 Minimum required permissions
@@ -48,8 +51,9 @@ Minimum required permissions
 
 Supported versions
 
-* The cluster must be [created](/docs/containers?topic=containers-clusters) at {{site.data.keyword.openshiftshort}} version 4.7 or later.
-* To use a cluster that was updated to this version from a previous version, [contact support](/docs/openshift?topic=openshift-get-help#help-support). Title the request `Enable pod identity` and include the cluster ID, version, and region.
+- The cluster must be [created](/docs/containers?topic=containers-clusters) at {{site.data.keyword.openshiftshort}} version 4.7 or later.
+- For new clusters, authorizing pods with IAM trusted profiles is enabled automatically. You can enable IAM trusted profiles on existing clusters by running [`ibmcloud oc cluster master refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh).
+
 
 
 ## Creating an IAM trusted profile for your cluster in the API
@@ -264,7 +268,6 @@ To configure your application pods to authenticate with {{site.data.keyword.clou
     curl -X GET https://containers.cloud.ibm.com/global/v2/classic/getClusters -H "Authorization: Bearer $TOKEN"
     ```
     {: pre}
-
 
 
 

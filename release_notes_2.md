@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-02"
+lastupdated: "2021-11-04"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Release notes
 {: #rel-notes}
@@ -32,12 +33,21 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 Review the release notes for November 2021.
 {: shortdesc}
 
+### 4 November 2021
+{: #4nov2021}
+{: release-note}
+
+IAM trusted profiles for pod authorization
+:   Updates for pod authorization with IAM trusted profiles. Authorizing pods with IAM trusted profiles is available for clusters that run {{site.data.keyword.openshiftshort}} version 4.7 or later. Note that for new clusters, authorizing pods with IAM trusted profiles is enabled automatically. You can enable IAM trusted profiles on existing clusters by running [`ibmcloud oc cluster master refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh). For more information, see [Authorizing pods in your cluster to IBM Cloud services with IAM trusted profiles](/docs/containers?topic=containers-pod-iam-identity).
+
+
 ### 2 November 2021
 {: #2nov2021}
 {: release-note}
 
 Istio add-on change log
 :   [Version `1.11.4`](/docs/containers?topic=containers-istio-changelog#1114) of the Istio managed add-on is released.
+
 
 
 ## October 2021
