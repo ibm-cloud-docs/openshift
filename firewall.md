@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-04"
+lastupdated: "2021-11-05"
 
 keywords: openshift, roks, rhoks, rhos
 
@@ -250,7 +250,7 @@ ibmcloud oc worker ls --cluster <cluster_name_or_ID>
 ```
 {: pre}
 
-#### Allow worker notes to communicate with cluster master
+#### Allow worker nodes to communicate with cluster master
 {: #master_ips}
 
 To allow worker nodes to communicate with the cluster master over the public cloud service endpoint, allow outgoing network traffic from the source *<each_worker_node_publicIP>* to the destination TCP/UDP port range 30000-32767 and port 443, and the following IP addresses and network groups. Additionally, if you plan to use Ingress or routes to expose apps in your cluster, allow incoming network traffic through these ports to your worker node IP addresses as well so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers.

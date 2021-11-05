@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-02"
+lastupdated: "2021-11-05"
 
 keywords: openshift, roks, rhoks, rhos, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -30,7 +30,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: #version-48}
 
 
-Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.7 patch updates.
+Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.8 patch updates.
 {: shortdesc}
 
 ### Changelog for worker node fix pack 4.8.15_1532_openshift, released 25 October 2021
