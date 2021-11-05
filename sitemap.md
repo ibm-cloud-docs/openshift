@@ -2103,7 +2103,7 @@ subcollection: openshift
 
     * [Optional: Setting up a Databases for etcd service instance](/docs/openshift?topic=openshift-portworx#databases-for-etcd)
 
-* [Optional: Setting up volume encryption](/docs/openshift?topic=openshift-portworx#encrypt_volumes)
+* [Setting up volume encryption](/docs/openshift?topic=openshift-portworx#encrypt_volumes)
 
     * [Portworx per-volume encryption workflow](/docs/openshift?topic=openshift-portworx#px_encryption)
 
