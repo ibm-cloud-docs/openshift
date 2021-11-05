@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-11-04"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -1321,8 +1321,71 @@ To add private registries, edit the global `pull-secret` in the `openshift-confi
 
 
 
-## Updating your cluster's containerd registry host configuration
+## Updating an {{site.data.keyword.containerlong_notm}} containerd custom registry configuration
 {: #update_containerd_registry_config}
 
-You can configure a daemonset to update the containerd registry host configurations across all nodes in a cluster. To get started, see the [example daemonset](https://github.com/IBM-Cloud/kube-samples/blob/master/containerd-registry-daemonset-example){: external} to configure a dockerhub registry config file. For more information on containerd registry configurations, see the [containerd documentation](https://github.com/containerd/containerd/blob/v1.5.6/docs/hosts.md).
+With Kubernetes version 1.22 or later, you can use containerd configuration files on worker nodes to configure pulling from a container registry. You can use a daemonset to update the configurations across all nodes in a cluster, which prevents configurations from being wiped when worker nodes reload or restart. 
 
+### Example daemonset to update a containerd custom registry configuration 
+{: #ds-example-registry}
+
+Use the example YAML file to define a daemonset that runs on all worker nodes to set or update a containerd registry host configuration and mount to the corresponding containerd registry path.
+
+The example sets the following registry host configuration. The init container initializes `hosts.toml` on every worker node after deployment and after worker nodes reload or restart. 
+
+```sh
+server = "https://docker.io"
+[host."https://registry-1.docker.io"]
+capabilities = ["pull", "resolve"]
+```
+{: screen}
+
+
+**Example YAML file**:
+
+```yaml
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+labels:
+    name: containerd-dockerhub-registry-config
+name: containerd-dockerhub-registry-config
+namespace: kube-system
+spec:
+selector:
+    matchLabels:
+    name: containerd-dockerhub-registry-config
+template:
+    metadata:
+    labels:
+        name: containerd-dockerhub-registry-config
+    spec:
+    initContainers:
+    - image: alpine:3.13.6
+        name: containerd-dockerhub-registry-config
+        command:
+        - /bin/sh
+        - -c
+        - |
+            #!/bin/sh
+            set -uo pipefail
+            cat << EOF > /etc/containerd/certs.d/docker.io/hosts.toml
+            server = "https://docker.io"
+            [host."https://registry-1.docker.io"]
+            capabilities = ["pull", "resolve"]
+            EOF
+        volumeMounts:
+        - mountPath: /etc/containerd/certs.d/docker.io/
+        name: dockerhub-registry-config
+    containers:
+    - name: pause
+        image: "us.icr.io/armada-master/pause:3.5"
+        imagePullPolicy: IfNotPresent
+    volumes:
+    - name: dockerhub-registry-config
+        hostPath:
+        path: /etc/containerd/certs.d/docker.io/
+```
+{: pre}
+
+For more information on updating a containerd registry host configuration, see the [containerd documentation](https://github.com/containerd/containerd/blob/v1.5.6/docs/hosts.md){: external}.
