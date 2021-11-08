@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-05"
+lastupdated: "2021-11-08"
 
 keywords: openshift, rhoks, roks, rhos
 
@@ -707,6 +707,7 @@ You can authorize your VPC Cloud Service Endpoint source IP addresses to access 
       ibm.io/auto_cache: "true"
       ibm.io/bucket: "<bucket_name>"
       ibm.io/secret-name: "<secret_name>"
+      ibm.io/secret-namespace: "<secret-namespace>" # By default, the COS plug-in searches for your secret in the same namespace where you create the PVC. If you created your secret in a namespace other than the namespace where you want to create your PVC, enter the namespace where you created your secret.
     spec:
       accessModes:
         - ReadWriteMany
@@ -855,6 +856,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
         ibm.io/secret-name: "<secret_name>"
         ibm.io/endpoint: "https://<s3fs_service_endpoint>"
         ibm.io/tls-cipher-suite: "default"
+        ibm.io/secret-namespace: "<secret-namespace>" # By default, the COS plug-in searches for your secret in the same namespace where you create the PVC. If you created your secret in a namespace other than the namespace where you want to create your PVC, enter the namespace where you created your secret.
     spec:
       accessModes:
         - ReadWriteOnce
@@ -899,6 +901,9 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     :   If you manually created the bucket in your {{site.data.keyword.cos_full_notm}} service instance or you cannot remember the storage class that you used, find your service instance in the {{site.data.keyword.cloud_notm}} dashboard and review the **Class** and **Location** of your existing bucket. Then, use the appropriate [storage class](#cos_storageclass_reference).
         The {{site.data.keyword.cos_full_notm}} API endpoint that is set in your storage class is based on the region that your cluster is in. If you want to access a bucket that is located in a different region than the one where your cluster is in, you must create a [custom storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use the appropriate API endpoint for your bucket.
         {: note}
+        
+    `secret-namespace`
+    :   By default, the COS plug-in searches for your secret in the same namespace where you create the PVC. If you created your secret in a namespace other than the namespace where you want to create your PVC, enter the namespace where you created your secret.
 
 1. Create the PVC in your cluster.
 
