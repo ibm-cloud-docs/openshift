@@ -184,6 +184,8 @@ subcollection: openshift
 
 * [November 2021](/docs/openshift?topic=openshift-rel-notes#release-nov-2021)
 
+    * [8 November 2021](/docs/openshift?topic=openshift-rel-notes#8nov2021)
+
     * [4 November 2021](/docs/openshift?topic=openshift-rel-notes#4nov2021)
 
     * [2 November 2021](/docs/openshift?topic=openshift-rel-notes#2nov2021)

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-05"
+lastupdated: "2021-11-08"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -678,6 +678,9 @@ ibmcloud oc cluster config --cluster my_cluster
 Create a cluster with worker nodes on classic infrastructure. For free clusters, you specify the cluster name; everything else is set to a default value. A free cluster is automatically deleted after 30 days. You can have one free cluster at a time. To take advantage of the full capabilities of Kubernetes, create a standard cluster.
 {: shortdesc}
 
+{{site.data.keyword.openshiftlong_notm}} clusters are created with a public only or both a public and private service endpoint. Public service endpoints cannot be disabled, and therefore, you cannot convert a public {{site.data.keyword.openshiftshort}} cluster to a private one. If you want your cluster to remain private, see [Planning your cluster network setup](/docs/containers?topic=containers-plan_clusters#vpc-pgw).
+{: important}
+
 ```sh
 ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FLAVOR --name NAME [--version MAJOR.MINOR.PATCH] [--no-subnet] [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN]  [--private-service-endpoint] [--public-service-endpoint] --workers WORKER [--disable-disk-encrypt] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--skip-advance-permissions-check] [--entitlement cloud_pak][-q]
 ```
@@ -804,6 +807,11 @@ Create a Virtual Private Cloud (VPC) cluster with worker nodes on Generation 2 i
 
 Free clusters are not available in VPC.
 {: note}
+
+
+
+Your VPC cluster is created with both a public and a private cloud service endpoint. Public service endpoints cannot later be disabled, and therefore, you cannot convert a public cluster to a private cluster. If you want to create a VPC cluster with no public cloud service endpoint and only a private cloud service endpoint, you must create the cluster [in the CLI](#cluster_vpcg2_cli) and include the `--disable-public-service-endpoint` flag.
+{: important}
 
 ```sh
 ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--version 4.7_openshift] --cos-instance COS_CRN --workers NUMBER_WORKERS_PER_ZONE [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement cloud_pak] --kms-instance KMS_INSTANCE_ID --crk ROOT_KEY_ID][--skip-advance-permissions-check] [-q]
@@ -1325,6 +1333,10 @@ ibmcloud oc cluster master private-service-endpoint enable --cluster my_cluster
 
 Enable the [public cloud service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) to make your cluster master publicly accessible.
 {: shortdesc}
+
+For {{site.data.keyword.openshiftlong_notm}} clusters, public service endpoints cannot be disabled. If you enable a public service endpoint in a {{site.data.keyword.openshiftshort}} cluster, you cannot later convert the cluster from public to private. 
+{: important}
+
 
 After you run this command, you must refresh the API server to use the service endpoint by following the prompt in the CLI.
 
