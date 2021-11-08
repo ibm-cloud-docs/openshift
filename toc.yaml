@@ -204,7 +204,7 @@ toc:
                   - openshift_storage_ocs_manage.md
                   - openshift_storage_noobaa.md
                   - openshift_storage_ocs_sc_ref.md
-                  - openshift_storage_vpc_block_driver.md
+                  - storage_vpc_block_driver.md
             - storage-utilities.md
             - storage-br.md
       - topicgroup:
@@ -427,7 +427,6 @@ toc:
                       label: What permissions do I need to manage storage and create PVCs?
                       href: https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions
                   - ts-ocs-storageclass.md
-                  - ts-storage-ocs-install.md
                   - ts-storage-ocs-pending.md
                   - ts-storage-ocs-progressing.md
                   - ts-storage-ocs-missing-pods.md
