@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-05"
+lastupdated: "2021-11-08"
 
 keywords: openshift, roks, rhoks, rhos, clusters
 
@@ -175,6 +175,9 @@ The following image walks you through choosing the setup that you want for your 
 
 ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Create your single zone or multizone classic {{site.data.keyword.openshiftshort}} cluster by using the {{site.data.keyword.cloud_notm}} console.
 {: shortdesc}
+
+{{site.data.keyword.openshiftlong_notm}} clusters are created with a public only or both a public and private service endpoint. Public service endpoints cannot be disabled, and therefore, you cannot convert a public {{site.data.keyword.openshiftshort}} cluster to a private one. If you want your cluster to remain private, see [Planning your cluster network setup](/docs/containers?topic=containers-plan_clusters#vpc-pgw).
+{: important}
 
 1. Make sure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level).
 2. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Create cluster**.
@@ -410,8 +413,8 @@ Your cluster is ready for your workloads! You might also want to [add a tag to y
 {: shortdesc}
 
 
-Your VPC cluster is created with both a public and a private cloud service endpoint. Want to create a VPC cluster with no public cloud service endpoint and only a private cloud service endpoint? Create the cluster [in the CLI](#cluster_vpcg2_cli) instead, and include the `--disable-public-service-endpoint` flag.
-{: tip}
+Your VPC cluster is created with both a public and a private cloud service endpoint. Public service endpoints cannot later be disabled, and therefore, you cannot convert a public cluster to a private cluster. If you want to create a VPC cluster with no public cloud service endpoint and only a private cloud service endpoint, you must create the cluster [in the CLI](#cluster_vpcg2_cli) and include the `--disable-public-service-endpoint` flag.
+{: important}
 
 
 1. Make sure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level).

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-05"
+lastupdated: "2021-11-08"
 
 keywords: openshift, roks, rhos, rhoks
 
@@ -32,6 +32,14 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 Review the release notes for November 2021.
 {: shortdesc}
+
+### 8 November 2021
+{: #8nov2021}
+{: release-note}
+
+Update commands to use `docker build`
+:   Updates commands that use `cr build` to use `docker build` instead. 
+
 
 ### 4 November 2021
 {: #4nov2021}
