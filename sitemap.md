@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-11-08"
+lastupdated: "2021-11-09"
 
 keywords: openshift
 subcollection: openshift
@@ -994,6 +994,8 @@ subcollection: openshift
 [Setting Kubernetes API priority and fairness](/docs/openshift?topic=openshift-kubeapi-priority#kubeapi-priority)
 
 * [Reviewing default flow schema and priority levels](/docs/openshift?topic=openshift-kubeapi-priority#kubeapi-default-priority)
+
+    * [Viewing {{site.data.keyword.openshiftlong_notm}} created priority level configurations](/docs/openshift?topic=openshift-kubeapi-priority#kube-api-prioritylevelconfig)
 
 
 ## Securing the cluster network
