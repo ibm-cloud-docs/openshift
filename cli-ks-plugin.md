@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-08"
+lastupdated: "2021-11-09"
 
 keywords: openshift, rhoks, roks, rhos, ibmcloud, ic, oc, ibmcloud oc
 
@@ -810,7 +810,7 @@ Free clusters are not available in VPC.
 
 
 
-Your VPC cluster is created with both a public and a private cloud service endpoint. Public service endpoints cannot later be disabled, and therefore, you cannot convert a public cluster to a private cluster. If you want to create a VPC cluster with no public cloud service endpoint and only a private cloud service endpoint, you must create the cluster [in the CLI](#cluster_vpcg2_cli) and include the `--disable-public-service-endpoint` flag.
+Your VPC cluster is created with both a public and a private cloud service endpoint. Public service endpoints cannot later be disabled, and therefore, you cannot convert a public cluster to a private cluster. If you want to create a VPC cluster with no public cloud service endpoint and only a private cloud service endpoint, you must create the cluster [in the CLI](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli) and include the `--disable-public-service-endpoint` flag.
 {: important}
 
 ```sh
