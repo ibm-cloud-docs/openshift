@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-01"
+lastupdated: "2021-11-10"
 
-keywords: openshift, roks, rhoks, rhos, audit
+keywords: openshift, audit
 
 subcollection: openshift
 

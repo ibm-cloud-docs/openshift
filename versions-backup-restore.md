@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-05"
+lastupdated: "2021-11-10"
 
-keywords: back up, restore, changelog, roks, openshift
+keywords: back up, restore, changelog, openshift
 
 subcollection: openshift
 
