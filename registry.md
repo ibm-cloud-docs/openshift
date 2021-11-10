@@ -1386,6 +1386,6 @@ template:
         hostPath:
         path: /etc/containerd/certs.d/docker.io/
 ```
-{: pre}
+{: codeblock}
 
 For more information on updating a containerd registry host configuration, see the [containerd documentation](https://github.com/containerd/containerd/blob/v1.5.6/docs/hosts.md){: external}.
