@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-11-10"
 
-keywords: openshift, roks, vpc, block storage
+keywords: openshift, vpc, block storage
 
 subcollection: openshift
 

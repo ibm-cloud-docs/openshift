@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2014, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-11-10"
 
-keywords: file, debug, help
+keywords: openshift, file, debug, help
 
 subcollection: containers
 content-type: troubleshoot

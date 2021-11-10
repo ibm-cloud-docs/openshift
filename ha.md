@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-05"
+lastupdated: "2021-11-10"
 
-keywords: openshift, roks, rhoks, rhos, disaster recovery, dr, ha, hadr
+keywords: openshift, disaster recovery, dr, ha, hadr
 
 subcollection: openshift
 
