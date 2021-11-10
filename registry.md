@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-04"
+lastupdated: "2021-11-10"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -1324,14 +1324,14 @@ To add private registries, edit the global `pull-secret` in the `openshift-confi
 ## Updating an {{site.data.keyword.containerlong_notm}} containerd custom registry configuration
 {: #update_containerd_registry_config}
 
-With Kubernetes version 1.22 or later, you can use containerd configuration files on worker nodes to configure pulling from a container registry. You can use a daemonset to update the configurations across all nodes in a cluster, which prevents configurations from being wiped when worker nodes reload or restart. 
+With Kubernetes version 1.22 or later, you can use containerd configuration files on worker nodes to configure pulling from a container registry. You can use a daemonset to update the configurations across all nodes in a cluster, which prevents configurations from being wiped when worker nodes reload or when new workers are added. 
 
 ### Example daemonset to update a containerd custom registry configuration 
 {: #ds-example-registry}
 
 Use the example YAML file to define a daemonset that runs on all worker nodes to set or update a containerd registry host configuration and mount to the corresponding containerd registry path.
 
-The example sets the following registry host configuration. The init container initializes `hosts.toml` on every worker node after deployment and after worker nodes reload or restart. 
+The example sets the following registry host configuration for dockerhub. This registry host configuration is already provided and automatically configured during the worker provisioning phase. The init container initializes `hosts.toml` on every worker node after deployment and after worker nodes reload or restart. 
 
 ```sh
 server = "https://docker.io"
