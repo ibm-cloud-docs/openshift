@@ -91,7 +91,8 @@ Before you begin, make sure that you have the **Manager** service access role in
           key: ibm-cloud-debug-isolate-customer-workload
           operator: Exists
         ```
-        {: copyblock}
+        {: pre}
+        
     6. After you identify the workload that causes the issue, continue with [Debugging app deployments](/docs/containers?topic=containers-debug_apps).
 
 
