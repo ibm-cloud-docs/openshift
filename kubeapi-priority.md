@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-11"
 
 keywords: openshift
 
@@ -65,15 +65,15 @@ Follow the steps to review the flow schemas and priority levels set by {{site.da
 
 Use the following commands to view details about the configuration. 
 
-a. ```sh
-    oc get prioritylevelconfiguration apiserver-health
-    ```
-    {: pre}
-
-b. ```sh
-    oc describe prioritylevelconfiguration apiserver-health
-    ```
-    {: pre}
+```sh
+oc get prioritylevelconfiguration apiserver-health
+```
+{: pre}
+ 
+```sh
+oc describe prioritylevelconfiguration apiserver-health
+```
+{: pre}
 
 
 
