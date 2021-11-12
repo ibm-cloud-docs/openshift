@@ -93,7 +93,7 @@ The following table shows the changes that are included in the worker node fix p
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Openshift | 4.8.12 | 4.8.13 | See the [change logs](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-13){: external}. |
+| OpenShift | 4.8.12 | 4.8.13 | See the [change logs](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-13){: external}. The update resolves CVE-2021-25741 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6515606){: external}).|
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.8.12_1527_openshift" caption-side="top"}
 
@@ -185,7 +185,7 @@ The following table shows the changes that are included in the worker node fix p
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Openshift | 4.7.31 | 4.7.32 | See the [change logs](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-32){: external}. |
+| OpenShift | 4.7.31 | 4.7.32 | See the [change logs](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-32){: external}. The update resolves CVE-2021-25741 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6515606){: external}). |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.31_1533_openshift" caption-side="top"}
 
@@ -505,7 +505,7 @@ The following table shows the changes that are included in the worker node fix p
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Openshift | 4.6.45 | 4.6.46 | See the [change logs](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-46){: external}. |
+| OpenShift | 4.6.45 | 4.6.46 | See the [change logs](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-46){: external}. The update resolves CVE-2021-25741 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6515606){: external}). |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.45_1557_openshift" caption-side="top"}
 
@@ -1029,7 +1029,7 @@ The following table shows the changes that are included in the worker node fix p
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| OpenShift Container Platform node | 3.11.521 | 3.11.524 | See the [OpenShift Container Platform release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-524){: external} |
+| OpenShift Container Platform node | 3.11.521 | 3.11.524 | See the [OpenShift Container Platform release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-524){: external}. The update resolves CVE-2021-25741 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6515606){: external}). |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.521_1605_openshift" caption-side="top"}
 
