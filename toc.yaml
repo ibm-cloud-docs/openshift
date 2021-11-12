@@ -35,7 +35,7 @@ toc:
             topics:
               - path-admin.md
               - path-dev.md
-        - release_notes_2.md
+        - release-notes.md
   - navgroup: 
       id: tutorial
       topics:
@@ -431,7 +431,6 @@ toc:
                   - ts-storage-ocs-progressing.md
                   - ts-storage-ocs-missing-pods.md
                   - ts-storage-ocs-unresolved.md
-        - release-notes.md
         - limitations.md
         - sitemap.md
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-12"
 
 keywords: openshift, route, router
 
@@ -27,7 +27,7 @@ View information for version updates to the [{{site.data.keyword.cloud_notm}} HP
 | -------------------------- | -----------|----------------------------------------------------- |
 | 4.7 | Yes | 4.7 |
 | 4.6 | Yes | 4.6 |
-| 4.5 | Deprecated | 4.5 |
+| 4.5 | No | 4.5 |
 {: summary="The rows are read from left to right. The first column is the HPCS Router add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the add-on version is supported for."}
 {: caption="Supported HPCS Router add-on versions" caption-side="top"}
 
@@ -59,7 +59,7 @@ Updates to address
 ### Version 4.6.0_838
 {: #4_6_0838}
 
-Version 4.6.0_838 of the CLI was released on23 August 2021.
+Version 4.6.0_838 of the CLI was released on 23 August 2021.
 
 Updates to address
 - [CVE-2021-36221](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-36221){: external}
@@ -174,7 +174,7 @@ Updates the Go version to 1.15.10
 - [CVE-2021-3114](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3114){: external}
 - [CVE-2021-3115](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3115){: external}
 
-## Version 4.5.0 (Deprecated)
+## Version 4.5.0 (Unsupported)
 {: #4_5_0}
 
 Version 4.5.0 is deprecated.
