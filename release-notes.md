@@ -29,17 +29,19 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 Review the release notes for November 2021.
 {: shortdesc}
 
+### 12 November 2021
+{: #12nov2021}
+{: release-note}
+
+Master fix pack updates
+:   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.8.14_1531_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4814_1531),[`4.7.33_1536_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4733_1536), [`4.6.47_1560_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4647_1560), and [3.11.524_1608_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311524_1608).
+
 ### 10 November 2021
 {: #10nov2021}
 {: release-note}
 
 Worker node fix pack update
 :   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.8.18_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4818_1533),[`4.7.36_1538_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4736_1538), [`4.6.49_1562_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4649_1562), and [3.11.542_1610_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311542_1610).
-
-
-
-
-
 
 ### 8 November 2021
 {: #8nov2021}
