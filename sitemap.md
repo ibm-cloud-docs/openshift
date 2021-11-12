@@ -3929,7 +3929,7 @@ subcollection: openshift
 
     * [Version 4.6.0_646](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0646)
 
-* [Version 4.5.0 (Deprecated)](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0)
+* [Version 4.5.0 (Unsupported)](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0)
 
     * [Version 4.5.0_861](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0861)
 
