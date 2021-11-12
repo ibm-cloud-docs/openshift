@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-12"
 
 keywords: openshift
 subcollection: openshift
@@ -180,73 +180,613 @@ subcollection: openshift
 {: #sitemap_release_notes}
 
 
-[Release notes](/docs/openshift?topic=openshift-rel-notes#rel-notes)
+[Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
-* [November 2021](/docs/openshift?topic=openshift-rel-notes#release-nov-2021)
+* [November 2021](/docs/openshift?topic=openshift-iks-release#release-nov-2021)
 
-    * [10 November 2021](/docs/openshift?topic=openshift-rel-notes#10nov2021)
+    * [10 November 2021](/docs/openshift?topic=openshift-iks-release#10nov2021)
 
-    * [8 November 2021](/docs/openshift?topic=openshift-rel-notes#8nov2021)
+    * [8 November 2021](/docs/openshift?topic=openshift-iks-release#8nov2021)
 
-    * [4 November 2021](/docs/openshift?topic=openshift-rel-notes#4nov2021)
+    * [4 November 2021](/docs/openshift?topic=openshift-iks-release#4nov2021)
 
-    * [2 November 2021](/docs/openshift?topic=openshift-rel-notes#2nov2021)
+    * [2 November 2021](/docs/openshift?topic=openshift-iks-release#2nov2021)
 
-* [October 2021](/docs/openshift?topic=openshift-rel-notes#release-oct-2021)
+* [October 2021](/docs/openshift?topic=openshift-iks-release#release-oct-2021)
 
-    * [28 October 2021](/docs/openshift?topic=openshift-rel-notes#28oct2021)
+    * [28 October 2021](/docs/openshift?topic=openshift-iks-release#28oct2021)
 
-    * [26 October 2021](/docs/openshift?topic=openshift-rel-notes#26oct2021)
+    * [26 October 2021](/docs/openshift?topic=openshift-iks-release#26oct2021)
 
-    * [25 October 2021](/docs/openshift?topic=openshift-rel-notes#25oct2021)
+    * [25 October 2021](/docs/openshift?topic=openshift-iks-release#25oct2021)
 
-    * [22 October 2021](/docs/openshift?topic=openshift-rel-notes#22oct2021)
+    * [22 October 2021](/docs/openshift?topic=openshift-iks-release#22oct2021)
 
-    * [19 October 2021](/docs/openshift?topic=openshift-rel-notes#19oct2021)
+    * [19 October 2021](/docs/openshift?topic=openshift-iks-release#19oct2021)
 
-    * [18 October 2021](/docs/openshift?topic=openshift-rel-notes#18oct2021)
+    * [18 October 2021](/docs/openshift?topic=openshift-iks-release#18oct2021)
 
-    * [13 October 2021](/docs/openshift?topic=openshift-rel-notes#13oct2021)
+    * [13 October 2021](/docs/openshift?topic=openshift-iks-release#13oct2021)
 
-    * [11 October 2021](/docs/openshift?topic=openshift-rel-notes#11oct2021)
+    * [11 October 2021](/docs/openshift?topic=openshift-iks-release#11oct2021)
 
-    * [7 October 2021](/docs/openshift?topic=openshift-rel-notes#7oct2021)
+    * [7 October 2021](/docs/openshift?topic=openshift-iks-release#7oct2021)
 
-    * [6 October 2021](/docs/openshift?topic=openshift-rel-notes#6oct2021)
+    * [6 October 2021](/docs/openshift?topic=openshift-iks-release#6oct2021)
 
-    * [5 October 2021](/docs/openshift?topic=openshift-rel-notes#5oct2021)
+    * [5 October 2021](/docs/openshift?topic=openshift-iks-release#5oct2021)
 
-* [September 2021](/docs/openshift?topic=openshift-rel-notes#release-sep-2021)
+* [September 2021](/docs/openshift?topic=openshift-iks-release#release-sep-2021)
 
-    * [29 September 2021](/docs/openshift?topic=openshift-rel-notes#29sep2021)
+    * [29 September 2021](/docs/openshift?topic=openshift-iks-release#29sep2021)
 
-    * [27 September 2021](/docs/openshift?topic=openshift-rel-notes#27sep2021)
+    * [27 September 2021](/docs/openshift?topic=openshift-iks-release#27sep2021)
 
-    * [23 September 2021](/docs/openshift?topic=openshift-rel-notes#23sep2021)
+    * [23 September 2021](/docs/openshift?topic=openshift-iks-release#23sep2021)
 
-    * [22 September 2021](/docs/openshift?topic=openshift-rel-notes#22sep2021)
+    * [22 September 2021](/docs/openshift?topic=openshift-iks-release#22sep2021)
 
-    * [21 September 2021](/docs/openshift?topic=openshift-rel-notes#21sep2021)
+    * [21 September 2021](/docs/openshift?topic=openshift-iks-release#21sep2021)
 
-    * [16 September 2021](/docs/openshift?topic=openshift-rel-notes#16sep2021)
+    * [16 September 2021](/docs/openshift?topic=openshift-iks-release#16sep2021)
 
-    * [15 September 2021](/docs/openshift?topic=openshift-rel-notes#15sep2021)
+    * [15 September 2021](/docs/openshift?topic=openshift-iks-release#15sep2021)
 
-    * [14 September 2021](/docs/openshift?topic=openshift-rel-notes#14sep2021)
+    * [14 September 2021](/docs/openshift?topic=openshift-iks-release#14sep2021)
 
-    * [13 September 2021](/docs/openshift?topic=openshift-rel-notes#13sep2021)
+    * [13 September 2021](/docs/openshift?topic=openshift-iks-release#13sep2021)
 
-    * [9 September 2021](/docs/openshift?topic=openshift-rel-notes#9sep2021)
+    * [9 September 2021](/docs/openshift?topic=openshift-iks-release#9sep2021)
 
-    * [8 September 2021](/docs/openshift?topic=openshift-rel-notes#8sep2021)
+    * [8 September 2021](/docs/openshift?topic=openshift-iks-release#8sep2021)
 
-    * [1 September 2021](/docs/openshift?topic=openshift-rel-notes#1sep2021)
+    * [1 September 2021](/docs/openshift?topic=openshift-iks-release#1sep2021)
 
-* [August 2021](/docs/openshift?topic=openshift-rel-notes#release-aug-2021)
+* [August 2021](/docs/openshift?topic=openshift-iks-release#aug21)
 
-    * [31 August 2021](/docs/openshift?topic=openshift-rel-notes#31aug2021)
+    * [31 August 2021](/docs/openshift?topic=openshift-iks-release#31aug2021)
 
-    * [30 August 2021](/docs/openshift?topic=openshift-rel-notes#30aug2021)
+    * [30 August 2021](/docs/openshift?topic=openshift-iks-release#30aug2021)
+
+    * [25 August 2021](/docs/openshift?topic=openshift-iks-release#26aug2021)
+
+    * [23 August 2021](/docs/openshift?topic=openshift-iks-release#23aug2021)
+
+    * [16 August 2021](/docs/openshift?topic=openshift-iks-release#16aug2021)
+
+    * [10 August 2021](/docs/openshift?topic=openshift-iks-release#10aug2021)
+
+    * [9 August 2021](/docs/openshift?topic=openshift-iks-release#09aug2021)
+
+    * [2 August 2021](/docs/openshift?topic=openshift-iks-release#02aug2021)
+
+* [July 2021](/docs/openshift?topic=openshift-iks-release#jul21)
+
+    * [27 July 2021](/docs/openshift?topic=openshift-iks-release#27july2021)
+
+    * [26 July 2021](/docs/openshift?topic=openshift-iks-release#26july2021)
+
+    * [23 July 2021](/docs/openshift?topic=openshift-iks-release#23july2021)
+
+    * [19 July 2021](/docs/openshift?topic=openshift-iks-release#19july2021)
+
+    * [12 July 2021](/docs/openshift?topic=openshift-iks-release#12july2021)
+
+    * [07 July 2021](/docs/openshift?topic=openshift-iks-release#07july2021)
+
+    * [6 July 2021](/docs/openshift?topic=openshift-iks-release#06july2021)
+
+    * [2 July 2021](/docs/openshift?topic=openshift-iks-release#02july2021)
+
+* [June 2021](/docs/openshift?topic=openshift-iks-release#jun21)
+
+    * [28 June 2021](/docs/openshift?topic=openshift-iks-release#28june2021)
+
+    * [24 June 2021](/docs/openshift?topic=openshift-iks-release#24june2021)
+
+    * [23 June 2021](/docs/openshift?topic=openshift-iks-release#23june2021)
+
+    * [22 June 2021](/docs/openshift?topic=openshift-iks-release#22june2021)
+
+    * [21 June 2021](/docs/openshift?topic=openshift-iks-release#21june2021)
+
+    * [17 June 2021](/docs/openshift?topic=openshift-iks-release#17june2021)
+
+    * [15 June 2021](/docs/openshift?topic=openshift-iks-release#15june2021)
+
+    * [9 June 2021](/docs/openshift?topic=openshift-iks-release#09june2021)
+
+    * [07 June 2021](/docs/openshift?topic=openshift-iks-release#07june2021)
+
+    * [3 June 2021](/docs/openshift?topic=openshift-iks-release#03june2021)
+
+    * [2 June 2021](/docs/openshift?topic=openshift-iks-release#02june2021)
+
+    * [1 June 2021](/docs/openshift?topic=openshift-iks-release#01june2021)
+
+* [May 2021](/docs/openshift?topic=openshift-iks-release#may21)
+
+    * [26 May 2021](/docs/openshift?topic=openshift-iks-release#26may2021)
+
+    * [24 May 2021](/docs/openshift?topic=openshift-iks-release#24may2021)
+
+    * [17 May 2021](/docs/openshift?topic=openshift-iks-release#17may2021)
+
+    * [11 May 2021](/docs/openshift?topic=openshift-iks-release#11may2021)
+
+    * [10 May 2021](/docs/openshift?topic=openshift-iks-release#10may2021)
+
+    * [4 May 2021](/docs/openshift?topic=openshift-iks-release#04may2021)
+
+* [April 2021](/docs/openshift?topic=openshift-iks-release#apr21)
+
+    * [30 April 2021](/docs/openshift?topic=openshift-iks-release#30april2021)
+
+    * [28 April 2021](/docs/openshift?topic=openshift-iks-release#28april2021)
+
+    * [27 April 2021](/docs/openshift?topic=openshift-iks-release#27april2021)
+
+    * [26 April 2021](/docs/openshift?topic=openshift-iks-release#26april2021)
+
+    * [22 April 2021](/docs/openshift?topic=openshift-iks-release#22april2021)
+
+    * [20 April 2021](/docs/openshift?topic=openshift-iks-release#20april2021)
+
+    * [19 April 2021](/docs/openshift?topic=openshift-iks-release#19april2021)
+
+    * [16 April 2021](/docs/openshift?topic=openshift-iks-release#16april2021)
+
+    * [15 April 2021](/docs/openshift?topic=openshift-iks-release#15april2021)
+
+    * [14 April 2021](/docs/openshift?topic=openshift-iks-release#14april2021)
+
+    * [12 April 2021](/docs/openshift?topic=openshift-iks-release#12april2021)
+
+    * [5 April 2021](/docs/openshift?topic=openshift-iks-release#05april2021)
+
+    * [2 April 2021](/docs/openshift?topic=openshift-iks-release#02april2021)
+
+    * [1 April 2021](/docs/openshift?topic=openshift-iks-release#01april2021)
+
+* [March 2021](/docs/openshift?topic=openshift-iks-release#mar21)
+
+    * [31 March 2021](/docs/openshift?topic=openshift-iks-release#31march2021)
+
+    * [30 March 2021](/docs/openshift?topic=openshift-iks-release#30march2021)
+
+    * [29 March 2021](/docs/openshift?topic=openshift-iks-release#29march2021)
+
+    * [25 March 2021](/docs/openshift?topic=openshift-iks-release#25march2021)
+
+    * [22 March 2021](/docs/openshift?topic=openshift-iks-release#22march2021)
+
+    * [17 March 2021](/docs/openshift?topic=openshift-iks-release#deprecated-at-events)
+
+    * [16 March 2021](/docs/openshift?topic=openshift-iks-release#16march2021)
+
+    * [12 March 2021](/docs/openshift?topic=openshift-iks-release#12march2021)
+
+    * [9 March 2021](/docs/openshift?topic=openshift-iks-release#09march2021)
+
+    * [7 March 2021](/docs/openshift?topic=openshift-iks-release#07march2021)
+
+    * [5 March 2021](/docs/openshift?topic=openshift-iks-release#05march2021)
+
+    * [1 March 2021](/docs/openshift?topic=openshift-iks-release#01march2021)
+
+* [February 2021](/docs/openshift?topic=openshift-iks-release#feb21)
+
+    * [27 February 2021](/docs/openshift?topic=openshift-iks-release#27feb2021)
+
+    * [26 February 2021](/docs/openshift?topic=openshift-iks-release#26feb2021)
+
+    * [25 February 2021](/docs/openshift?topic=openshift-iks-release#25feb2021)
+
+    * [23 February 2021](/docs/openshift?topic=openshift-iks-release#23feb2021)
+
+    * [22 February 2021](/docs/openshift?topic=openshift-iks-release#22feb2021)
+
+    * [20 February 2021](/docs/openshift?topic=openshift-iks-release#20feb2021)
+
+    * [17 February 2021](/docs/openshift?topic=openshift-iks-release#17feb2021)
+
+    * [15 February 2021](/docs/openshift?topic=openshift-iks-release#15feb2021)
+
+    * [12 February 2021](/docs/openshift?topic=openshift-iks-release#12feb2021)
+
+    * [10 February 2021](/docs/openshift?topic=openshift-iks-release#10feb2021)
+
+    * [8 February 2021](/docs/openshift?topic=openshift-iks-release#08feb2021)
+
+    * [4 February 2021](/docs/openshift?topic=openshift-iks-release#04feb2021)
+
+    * [1 February 2021](/docs/openshift?topic=openshift-iks-release#01feb2021)
+
+* [January 2021](/docs/openshift?topic=openshift-iks-release#jan21)
+
+    * [27 January 2021](/docs/openshift?topic=openshift-iks-release#27jan2021)
+
+    * [25 January 2021](/docs/openshift?topic=openshift-iks-release#25jan2021)
+
+    * [19 January 2021](/docs/openshift?topic=openshift-iks-release#19jan2021)
+
+    * [18 January 2021](/docs/openshift?topic=openshift-iks-release#18jan2021)
+
+    * [14 January 2021](/docs/openshift?topic=openshift-iks-release#14jan2021)
+
+    * [12 January 2021](/docs/openshift?topic=openshift-iks-release#12jan2021)
+
+    * [6 January 2021](/docs/openshift?topic=openshift-iks-release#06jan2021)
+
+* [December 2020](/docs/openshift?topic=openshift-iks-release#dec20)
+
+    * [21 December 2020](/docs/openshift?topic=openshift-iks-release#21dec2020)
+
+    * [18 December 2020](/docs/openshift?topic=openshift-iks-release#18dec2020)
+
+    * [17 December 2020](/docs/openshift?topic=openshift-iks-release#17dec2020)
+
+    * [15 December 2020](/docs/openshift?topic=openshift-iks-release#15dec2020)
+
+    * [14 December 2020](/docs/openshift?topic=openshift-iks-release#14dec2020)
+
+    * [11 December 2020](/docs/openshift?topic=openshift-iks-release#11dec2020)
+
+    * [9 December 2020](/docs/openshift?topic=openshift-iks-release#09dec2020)
+
+    * [7 December 2020](/docs/openshift?topic=openshift-iks-release#07dec2020)
+
+    * [3 December 2020](/docs/openshift?topic=openshift-iks-release#03dec2020)
+
+    * [2 December 2020](/docs/openshift?topic=openshift-iks-release#02dec2020)
+
+* [November 2020](/docs/openshift?topic=openshift-iks-release#nov20)
+
+    * [25 November 2020](/docs/openshift?topic=openshift-iks-release#25nov2020)
+
+    * [24 November 2020](/docs/openshift?topic=openshift-iks-release#24nov2020)
+
+    * [23 November 2020](/docs/openshift?topic=openshift-iks-release#23nov2020)
+
+    * [20 November 2020](/docs/openshift?topic=openshift-iks-release#20nov2020)
+
+    * [19 November 2020](/docs/openshift?topic=openshift-iks-release#19nov2020)
+
+    * [18 November 2020](/docs/openshift?topic=openshift-iks-release#18nov2020)
+
+    * [16 November 2020](/docs/openshift?topic=openshift-iks-release#16nov2020)
+
+    * [13 November 2020](/docs/openshift?topic=openshift-iks-release#13nov2020)
+
+    * [9 November 2020](/docs/openshift?topic=openshift-iks-release#09nov2020)
+
+    * [5 November 2020](/docs/openshift?topic=openshift-iks-release#05nov2020)
+
+    * [2 November 2020](/docs/openshift?topic=openshift-iks-release#02nov2020)
+
+* [October 2020](/docs/openshift?topic=openshift-iks-release#oct20)
+
+    * [26 October 2020](/docs/openshift?topic=openshift-iks-release#26oct2020)
+
+    * [22 October 2020](/docs/openshift?topic=openshift-iks-release#22oct2020)
+
+    * [16 October 2020](/docs/openshift?topic=openshift-iks-release#16oct2020)
+
+    * [13 October 2020](/docs/openshift?topic=openshift-iks-release#13oct2020)
+
+    * [12 October 2020](/docs/openshift?topic=openshift-iks-release#12oct2020)
+
+    * [8 October 2020](/docs/openshift?topic=openshift-iks-release#08oct2020)
+
+    * [6 October 2020](/docs/openshift?topic=openshift-iks-release#06oct2020)
+
+    * [1 October 2020](/docs/openshift?topic=openshift-iks-release#01oct2020)
+
+* [September 2020](/docs/openshift?topic=openshift-iks-release#sep20)
+
+    * [30 September 2020](/docs/openshift?topic=openshift-iks-release#30sept2020)
+
+    * [29 September 2020](/docs/openshift?topic=openshift-iks-release#29sept2020)
+
+    * [26 September 2020](/docs/openshift?topic=openshift-iks-release#26sept2020)
+
+    * [24 September 2020](/docs/openshift?topic=openshift-iks-release#24sept2020)
+
+    * [23 September 2020](/docs/openshift?topic=openshift-iks-release#23sept2020)
+
+    * [22 September 2020](/docs/openshift?topic=openshift-iks-release#22sept2020)
+
+    * [21 September 2020](/docs/openshift?topic=openshift-iks-release#21sept2020)
+
+    * [14 September 2020](/docs/openshift?topic=openshift-iks-release#14sept2020)
+
+    * [3 September 2020](/docs/openshift?topic=openshift-iks-release#03sept2020)
+
+* [August 2020](/docs/openshift?topic=openshift-iks-release#aug20)
+
+    * [31 August 2020](/docs/openshift?topic=openshift-iks-release#31aug2020)
+
+    * [27 August 2020](/docs/openshift?topic=openshift-iks-release#27aug2020)
+
+    * [24 August 2020](/docs/openshift?topic=openshift-iks-release#24aug2020)
+
+    * [21 August 2020](/docs/openshift?topic=openshift-iks-release#21aug2020)
+
+    * [18 August 2020](/docs/openshift?topic=openshift-iks-release#18aug2020)
+
+    * [17 August 2020](/docs/openshift?topic=openshift-iks-release#17aug2020)
+
+    * [6 August 2020](/docs/openshift?topic=openshift-iks-release#06aug2020)
+
+    * [5 August 2020](/docs/openshift?topic=openshift-iks-release#05aug2020)
+
+    * [3 August 2020](/docs/openshift?topic=openshift-iks-release#03aug2020)
+
+* [July 2020](/docs/openshift?topic=openshift-iks-release#july20)
+
+    * [31 July 2020](/docs/openshift?topic=openshift-iks-release#31july2020)
+
+    * [28 July 2020](/docs/openshift?topic=openshift-iks-release#28july2020)
+
+    * [24 July 2020](/docs/openshift?topic=openshift-iks-release#24july2020)
+
+    * [21 July 2020](/docs/openshift?topic=openshift-iks-release#21july2020)
+
+    * [20 July 2020](/docs/openshift?topic=openshift-iks-release#20july2020)
+
+    * [16 July 2020](/docs/openshift?topic=openshift-iks-release#16july2020)
+
+    * [7 July 2020](/docs/openshift?topic=openshift-iks-release#07july2020)
+
+    * [6 July 2020](/docs/openshift?topic=openshift-iks-release#06july2020)
+
+    * [2 July 2020](/docs/openshift?topic=openshift-iks-release#02july2020)
+
+* [June 2020](/docs/openshift?topic=openshift-iks-release#june20)
+
+    * [24 June 2020](/docs/openshift?topic=openshift-iks-release#24june2020)
+
+    * [23 June 2020](/docs/openshift?topic=openshift-iks-release#23june2020)
+
+    * [22 June 2020](/docs/openshift?topic=openshift-iks-release#22june2020)
+
+    * [18 June 2020](/docs/openshift?topic=openshift-iks-release#18june2020)
+
+    * [16 June 2020](/docs/openshift?topic=openshift-iks-release#16june2020)
+
+    * [9 June 2020](/docs/openshift?topic=openshift-iks-release#09june2020)
+
+    * [8 June 2020](/docs/openshift?topic=openshift-iks-release#08june2020)
+
+    * [4 June 2020](/docs/openshift?topic=openshift-iks-release#04june2020)
+
+    * [1 June 2020](/docs/openshift?topic=openshift-iks-release#01june2020)
+
+* [May 2020](/docs/openshift?topic=openshift-iks-release#may20)
+
+    * [27 May 2020](/docs/openshift?topic=openshift-iks-release#27may2020)
+
+    * [26 May 2020](/docs/openshift?topic=openshift-iks-release#26may2020)
+
+    * [18 May 2020](/docs/openshift?topic=openshift-iks-release#18may2020)
+
+    * [15 May 2020](/docs/openshift?topic=openshift-iks-release#15may2020)
+
+    * [13 May 2020](/docs/openshift?topic=openshift-iks-release#13may2020)
+
+    * [12 May 2020](/docs/openshift?topic=openshift-iks-release#12may2020)
+
+    * [11 May 2020](/docs/openshift?topic=openshift-iks-release#11may2020)
+
+    * [8 May 2020](/docs/openshift?topic=openshift-iks-release#08may2020)
+
+    * [4 May 2020](/docs/openshift?topic=openshift-iks-release#04may2020)
+
+* [April 2020](/docs/openshift?topic=openshift-iks-release#apr20)
+
+    * [30 April 2020](/docs/openshift?topic=openshift-iks-release#30april2020)
+
+    * [29 April 2020](/docs/openshift?topic=openshift-iks-release#29april2020)
+
+    * [27 April 2020](/docs/openshift?topic=openshift-iks-release#27april2020)
+
+    * [24 April 2020](/docs/openshift?topic=openshift-iks-release#24april2020)
+
+    * [23 April 2020](/docs/openshift?topic=openshift-iks-release#23april2020)
+
+    * [22 April 2020](/docs/openshift?topic=openshift-iks-release#22april2020)
+
+    * [20 April 2020](/docs/openshift?topic=openshift-iks-release#20april2020)
+
+    * [16 April 2020](/docs/openshift?topic=openshift-iks-release#16april2020)
+
+    * [13 April 2020](/docs/openshift?topic=openshift-iks-release#13april2020)
+
+    * [6 April 2020](/docs/openshift?topic=openshift-iks-release#06april2020)
+
+* [March 2020](/docs/openshift?topic=openshift-iks-release#mar20)
+
+    * [30 March 2020](/docs/openshift?topic=openshift-iks-release#30mar2020)
+
+    * [27 March 2020](/docs/openshift?topic=openshift-iks-release#27mar2020)
+
+    * [25 March 2020](/docs/openshift?topic=openshift-iks-release#25mar2020)
+
+    * [24 March 2020](/docs/openshift?topic=openshift-iks-release#24mar2020)
+
+    * [18 March 2020](/docs/openshift?topic=openshift-iks-release#18mar2020)
+
+    * [16 March 2020](/docs/openshift?topic=openshift-iks-release#16mar2020)
+
+    * [12 March 2020](/docs/openshift?topic=openshift-iks-release#12mar2020)
+
+    * [9 March 2020](/docs/openshift?topic=openshift-iks-release#09mar2020)
+
+    * [4 March 2020](/docs/openshift?topic=openshift-iks-release#04mar2020)
+
+    * [2 March 2020](/docs/openshift?topic=openshift-iks-release#02mar2020)
+
+* [February 2020](/docs/openshift?topic=openshift-iks-release#feb20)
+
+    * [19 February 2020](/docs/openshift?topic=openshift-iks-release#19feb2020)
+
+    * [18 February 2020](/docs/openshift?topic=openshift-iks-release#18feb2020)
+
+    * [17 February 2020](/docs/openshift?topic=openshift-iks-release#17feb2020)
+
+    * [10 February 2020](/docs/openshift?topic=openshift-iks-release#10feb2020)
+
+    * [6 February 2020](/docs/openshift?topic=openshift-iks-release#06feb2020)
+
+    * [3 February 2020](/docs/openshift?topic=openshift-iks-release#03feb2020)
+
+* [January 2020](/docs/openshift?topic=openshift-iks-release#jan20)
+
+    * [30 January 2020](/docs/openshift?topic=openshift-iks-release#30jan2020)
+
+    * [27 January 2020](/docs/openshift?topic=openshift-iks-release#27jan2020)
+
+    * [22 January 2020](/docs/openshift?topic=openshift-iks-release#22jan2020)
+
+    * [20 January 2020](/docs/openshift?topic=openshift-iks-release#20jan2020)
+
+    * [6 January 2020](/docs/openshift?topic=openshift-iks-release#06jan2020)
+
+    * [3 January 2020](/docs/openshift?topic=openshift-iks-release#03jan2020)
+
+* [December 2019](/docs/openshift?topic=openshift-iks-release#dec19)
+
+    * [18 December 2019](/docs/openshift?topic=openshift-iks-release#18dec2019)
+
+    * [17 December 2019](/docs/openshift?topic=openshift-iks-release#17dec2019)
+
+    * [11 December 2019](/docs/openshift?topic=openshift-iks-release#11dec2019)
+
+    * [9 December 2019](/docs/openshift?topic=openshift-iks-release#09dec2019)
+
+    * [4 December 2019](/docs/openshift?topic=openshift-iks-release#04dec2019)
+
+* [November 2019](/docs/openshift?topic=openshift-iks-release#nov19)
+
+    * [26 November 2019](/docs/openshift?topic=openshift-iks-release#26nov2019)
+
+    * [22 November 2019](/docs/openshift?topic=openshift-iks-release#22nov2019)
+
+    * [21 November 2019](/docs/openshift?topic=openshift-iks-release#21nov2019)
+
+    * [19 November 2019](/docs/openshift?topic=openshift-iks-release#19nov2019)
+
+    * [15 November 2019](/docs/openshift?topic=openshift-iks-release#15nov2019)
+
+    * [11 November 2019](/docs/openshift?topic=openshift-iks-release#11nov2019)
+
+    * [7 November 2019](/docs/openshift?topic=openshift-iks-release#07nov2019)
+
+    * [1 November 2019](/docs/openshift?topic=openshift-iks-release#01nov2019)
+
+* [October 2019](/docs/openshift?topic=openshift-iks-release#oct19)
+
+    * [31 October 2019](/docs/openshift?topic=openshift-iks-release#31oct2019)
+
+    * [28 October 2019](/docs/openshift?topic=openshift-iks-release#28oct2019)
+
+    * [24 October 2019](/docs/openshift?topic=openshift-iks-release#24oct2019)
+
+    * [23 October 2019](/docs/openshift?topic=openshift-iks-release#23oct2019)
+
+    * [22 October 2019](/docs/openshift?topic=openshift-iks-release#22oct2019)
+
+    * [14 October 2019](/docs/openshift?topic=openshift-iks-release#14oct2019)
+
+    * [4 October 2019](/docs/openshift?topic=openshift-iks-release#04oct2019)
+
+    * [3 October 2019](/docs/openshift?topic=openshift-iks-release#03oct2019)
+
+    * [1 October 2019](/docs/openshift?topic=openshift-iks-release#01oct2019)
+
+* [September 2019](/docs/openshift?topic=openshift-iks-release#sept19)
+
+    * [24 September 2019](/docs/openshift?topic=openshift-iks-release#24sept2019)
+
+    * [19 September 2019](/docs/openshift?topic=openshift-iks-release#19sept2019)
+
+    * [17 September 2019](/docs/openshift?topic=openshift-iks-release#17sept2019)
+
+    * [16 September 2019](/docs/openshift?topic=openshift-iks-release#16sept2019)
+
+    * [13 September 2019](/docs/openshift?topic=openshift-iks-release#13sept2019)
+
+    * [12 September 2019](/docs/openshift?topic=openshift-iks-release#12sept2019)
+
+    * [6 September 2019](/docs/openshift?topic=openshift-iks-release#06sept2019)
+
+    * [5 September 2019](/docs/openshift?topic=openshift-iks-release#05sept2019)
+
+    * [4 September 2019](/docs/openshift?topic=openshift-iks-release#04sept2019)
+
+    * [3 September 2019](/docs/openshift?topic=openshift-iks-release#03sept2019)
+
+* [August 2019](/docs/openshift?topic=openshift-iks-release#aug19)
+
+    * [30 August 2019](/docs/openshift?topic=openshift-iks-release#30aug2019)
+
+    * [29 August 2019](/docs/openshift?topic=openshift-iks-release#29aug2019)
+
+    * [28 August 2019](/docs/openshift?topic=openshift-iks-release#28aug2019)
+
+    * [26 August 2019](/docs/openshift?topic=openshift-iks-release#26aug2019)
+
+    * [23 August 2019](/docs/openshift?topic=openshift-iks-release#23aug2019)
+
+    * [20 August 2019](/docs/openshift?topic=openshift-iks-release#20aug2019)
+
+    * [17 August 2019](/docs/openshift?topic=openshift-iks-release#17aug2019)
+
+    * [15 August 2019](/docs/openshift?topic=openshift-iks-release#15aug2019)
+
+    * [12 August 2019](/docs/openshift?topic=openshift-iks-release#12aug2019)
+
+    * [5 August 2019](/docs/openshift?topic=openshift-iks-release#05aug2019)
+
+    * [2 August 2019](/docs/openshift?topic=openshift-iks-release#02aug2019)
+
+    * [1 August 2019](/docs/openshift?topic=openshift-iks-release#01aug2019)
+
+* [July 2019](/docs/openshift?topic=openshift-iks-release#jul19)
+
+    * [30 July 2019](/docs/openshift?topic=openshift-iks-release#30july2019)
+
+    * [26 July 2019](/docs/openshift?topic=openshift-iks-release#26july2019)
+
+    * [23 July 2019](/docs/openshift?topic=openshift-iks-release#23july2019)
+
+    * [19 July 2019](/docs/openshift?topic=openshift-iks-release#19july2019)
+
+    * [17 July 2019](/docs/openshift?topic=openshift-iks-release#17july2019)
+
+    * [15 July 2019](/docs/openshift?topic=openshift-iks-release#15july2019)
+
+    * [2 July 2019](/docs/openshift?topic=openshift-iks-release#02july2019)
+
+    * [1 July 2019](/docs/openshift?topic=openshift-iks-release#01july2019)
+
+* [June 2019](/docs/openshift?topic=openshift-iks-release#jun19)
+
+    * [24 June 2019](/docs/openshift?topic=openshift-iks-release#24june2019)
+
+    * [21 June 2019](/docs/openshift?topic=openshift-iks-release#21june2019)
+
+    * [18 June 2019](/docs/openshift?topic=openshift-iks-release#18june2019)
+
+    * [14 June 2019](/docs/openshift?topic=openshift-iks-release#14june2019)
+
+    * [12 June 2019](/docs/openshift?topic=openshift-iks-release#12june2019)
+
+    * [7 June 2019](/docs/openshift?topic=openshift-iks-release#07june2019)
+
+    * [6 June 2019](/docs/openshift?topic=openshift-iks-release#06june2019)
+
+    * [5 June 2019](/docs/openshift?topic=openshift-iks-release#05june2019)
 
 
 ## Tutorials library for OpenShift
@@ -4389,67 +4929,6 @@ subcollection: openshift
 [Why are no pods listed in the `openshift-storage` namespace?](/docs/openshift?topic=openshift-ts-ocs-no-pods#ts-ocs-no-pods)
 
 [What if my OpenShift Data Foundation issue is still unresolved?](/docs/openshift?topic=openshift-ocs-error-unresolved#ocs-error-unresolved)
-
-
-## Release notes
-{: #sitemap_release_notes1}
-
-
-[Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
-
-* [August 2021](/docs/openshift?topic=openshift-iks-release#aug21)
-
-* [July 2021](/docs/openshift?topic=openshift-iks-release#jul21)
-
-* [June 2021](/docs/openshift?topic=openshift-iks-release#jun21)
-
-* [May 2021](/docs/openshift?topic=openshift-iks-release#may21)
-
-* [April 2021](/docs/openshift?topic=openshift-iks-release#apr21)
-
-* [March 2021](/docs/openshift?topic=openshift-iks-release#mar21)
-
-* [February 2021](/docs/openshift?topic=openshift-iks-release#feb21)
-
-* [January 2021](/docs/openshift?topic=openshift-iks-release#jan21)
-
-* [December 2020](/docs/openshift?topic=openshift-iks-release#dec20)
-
-* [November 2020](/docs/openshift?topic=openshift-iks-release#nov20)
-
-* [October 2020](/docs/openshift?topic=openshift-iks-release#oct20)
-
-* [September 2020](/docs/openshift?topic=openshift-iks-release#sep20)
-
-* [August 2020](/docs/openshift?topic=openshift-iks-release#aug20)
-
-* [July 2020](/docs/openshift?topic=openshift-iks-release#july20)
-
-* [June 2020](/docs/openshift?topic=openshift-iks-release#june20)
-
-* [May 2020](/docs/openshift?topic=openshift-iks-release#may20)
-
-* [April 2020](/docs/openshift?topic=openshift-iks-release#apr20)
-
-* [March 2020](/docs/openshift?topic=openshift-iks-release#mar20)
-
-* [February 2020](/docs/openshift?topic=openshift-iks-release#feb20)
-
-* [January 2020](/docs/openshift?topic=openshift-iks-release#jan20)
-
-* [December 2019](/docs/openshift?topic=openshift-iks-release#dec19)
-
-* [November 2019](/docs/openshift?topic=openshift-iks-release#nov19)
-
-* [October 2019](/docs/openshift?topic=openshift-iks-release#oct19)
-
-* [September 2019](/docs/openshift?topic=openshift-iks-release#sept19)
-
-* [August 2019](/docs/openshift?topic=openshift-iks-release#aug19)
-
-* [July 2019](/docs/openshift?topic=openshift-iks-release#jul19)
-
-* [June 2019](/docs/openshift?topic=openshift-iks-release#jun19)
 
 
 ## Service limitations
