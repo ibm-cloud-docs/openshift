@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-15"
 
 keywords: openshift
 subcollection: openshift
@@ -794,7 +794,7 @@ subcollection: openshift
 ## Tutorials library for OpenShift
 {: #sitemap_tutorials-library-for-openshift}
 
-[Tutorials library for OpenShift](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20){: new_window}{: external}
+[Tutorials library for OpenShift](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20){: external}
 
 
 ## Creating {{site.data.keyword.openshiftlong_notm}} clusters
@@ -865,25 +865,25 @@ subcollection: openshift
 ## Scalable web application on OpenShift
 {: #sitemap_scalable-web-application-on-openshift}
 
-[Scalable web application on OpenShift](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift#scalable-webapp-openshift){: new_window}{: external}
+[Scalable web application on OpenShift](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift#scalable-webapp-openshift){: external}
 
 
 ## OpenShift interactive learning portal
 {: #sitemap_openshift-interactive-learning-portal}
 
-[OpenShift interactive learning portal](https://learn.openshift.com/){: new_window}{: external}
+[OpenShift interactive learning portal](https://learn.openshift.com/){: external}
 
 
 ## Katacoda interactive OpenShift tutorials
 {: #sitemap_katacoda-interactive-openshift-tutorials}
 
-[Katacoda interactive OpenShift tutorials](https://www.katacoda.com/openshift){: new_window}{: external}
+[Katacoda interactive OpenShift tutorials](https://www.katacoda.com/openshift){: external}
 
 
 ## IBM Developer OpenShift tutorials
 {: #sitemap_ibm-developer-openshift-tutorials}
 
-[IBM Developer OpenShift tutorials](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/tutorials/){: new_window}{: external}
+[IBM Developer OpenShift tutorials](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/tutorials/){: external}
 
 
 ## Installing the CLI and API
@@ -3015,11 +3015,11 @@ subcollection: openshift
 {: #sitemap_api_reference}
 
 
-[IBM Cloud Kubernetes Service API](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: new_window}{: external}
+[IBM Cloud Kubernetes Service API](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external}
 
-[IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: new_window}{: external}
+[IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}
 
-[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.7/rest_api/index.html){: new_window}{: external}
+[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.7/rest_api/index.html){: external}
 
 
 ## CLI plug-in reference
@@ -4326,9 +4326,9 @@ subcollection: openshift
 {: #sitemap_related_links}
 
 
-[OpenShift Container Platform documentation](https://docs.openshift.com/){: new_window}{: external}
+[OpenShift Container Platform documentation](https://docs.openshift.com/){: external}
 
-[IBM Developer - Red Hat OpenShift on IBM Cloud](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/){: new_window}{: external}
+[IBM Developer - Red Hat OpenShift on IBM Cloud](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/){: external}
 
 
 ## FAQs
