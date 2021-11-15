@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-15"
 
 keywords: openshift, disaster recovery, dr, ha, hadr
 
