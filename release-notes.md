@@ -29,6 +29,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 Review the release notes for November 2021.
 {: shortdesc}
 
+### 15 November 2021
+{: #15nov2021}
+{: release-note}
+
+CLI changelog
+:   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.344. 
+
 ### 12 November 2021
 {: #12nov2021}
 {: release-note}

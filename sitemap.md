@@ -184,6 +184,8 @@ subcollection: openshift
 
 * [November 2021](/docs/openshift?topic=openshift-iks-release#release-nov-2021)
 
+    * [15 November 2021](/docs/openshift?topic=openshift-iks-release#15nov2021)
+
     * [12 November 2021](/docs/openshift?topic=openshift-iks-release#12nov2021)
 
     * [10 November 2021](/docs/openshift?topic=openshift-iks-release#10nov2021)
@@ -3096,24 +3098,6 @@ subcollection: openshift
 
     * [Deprecated: `ibmcloud oc cluster user-subnet rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_user_subnet_rm)
 
-* [`dedicated` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_commands)
-
-    * [`ibmcloud oc dedicated host create`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_create)
-
-    * [`ibmcloud oc dedicated host get`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_get)
-
-    * [`ibmcloud oc dedicated host ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_ls)
-
-    * [`ibmcloud oc dedicated host rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_rm)
-
-    * [`ibmcloud oc dedicated pool create`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_pool_create)
-
-    * [`ibmcloud oc dedicated pool get`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_pool_get)
-
-    * [`ibmcloud oc dedicated pool ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicate_pool_ls)
-
-    * [`ibmcloud oc dedicated pool rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_pool_rm)
-
 * [`worker` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_node_commands)
 
     * [Deprecated: `ibmcloud oc worker add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_add)
@@ -3327,6 +3311,8 @@ subcollection: openshift
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version 1.0.344](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10344)
 
 * [Version 1.0.334](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10334)
 

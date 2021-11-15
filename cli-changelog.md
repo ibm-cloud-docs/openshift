@@ -30,6 +30,13 @@ Refer to the following changelogs for a summary of changes for each version of t
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
+## Version 1.0.344
+{: #cli-10344}
+
+Version 1.0.344 of the CLI was released on 15 November 2021.
+
+:   Includes a Go version update from `1.16.7` to `1.16.10` and other fixes.
+
 ## Version 1.0.334
 {: #cli-10334}
 
