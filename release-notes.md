@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-16"
 
 keywords: openshift
 
@@ -28,6 +28,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 Review the release notes for November 2021.
 {: shortdesc}
+
+
+
+### 16 November 2021
+{: #16nov2021}
+{: release-note}
+
+HPCS Router add-on
+:   Version 4.8.0_997 of the [HPCS Router add-on](/docs/containers?topic=openshift-hpcs-router-changelog) is released.
 
 ### 15 November 2021
 {: #15nov2021}

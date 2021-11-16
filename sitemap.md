@@ -184,6 +184,8 @@ subcollection: openshift
 
 * [November 2021](/docs/openshift?topic=openshift-iks-release#release-nov-2021)
 
+    * [16 November 2021](/docs/openshift?topic=openshift-iks-release#16nov2021)
+
     * [15 November 2021](/docs/openshift?topic=openshift-iks-release#15nov2021)
 
     * [12 November 2021](/docs/openshift?topic=openshift-iks-release#12nov2021)
