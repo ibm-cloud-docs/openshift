@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-16"
 
 keywords: openshift
 subcollection: openshift
@@ -3893,9 +3893,13 @@ subcollection: openshift
 
 * [Version 4.7.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0)
 
+    * [Version 4.7.0_985](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0985)
+
     * [Version 4.7.0_854](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0854)
 
 * [Version 4.6.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0)
+
+    * [Version 4.6.0_987](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0987)
 
     * [Version 4.6.0_860](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0860)
 
