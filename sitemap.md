@@ -3919,6 +3919,10 @@ subcollection: openshift
 
 [{{site.data.keyword.cloud_notm}} HPCS Router add-on changelog](/docs/openshift?topic=openshift-hpcs-router-changelog#hpcs-router-changelog)
 
+* [Version 4.8.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0)
+
+    * [Version 4.8.0_997](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0997)
+
 * [Version 4.7.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0)
 
     * [Version 4.7.0_985](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0985)

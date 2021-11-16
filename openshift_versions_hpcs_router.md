@@ -25,12 +25,20 @@ View information for version updates to the [{{site.data.keyword.cloud_notm}} HP
 
 | HPCS Router add-on version | Supported? | {{site.data.keyword.openshiftshort}} version support |
 | -------------------------- | -----------|----------------------------------------------------- |
+| 4.8 | Yes | 4.8 |
 | 4.7 | Yes | 4.7 |
 | 4.6 | Yes | 4.6 |
 | 4.5 | No | 4.5 |
 {: summary="The rows are read from left to right. The first column is the HPCS Router add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the add-on version is supported for."}
 {: caption="Supported HPCS Router add-on versions" caption-side="top"}
 
+## Version 4.8.0
+{: #4_8_0}
+
+### Version 4.8.0_997
+{: #4_8_0997}
+
+Version 4.8.0_997 of the CLI was released on 16 November 2021.
 
 ## Version 4.7.0
 {: #4_7_0}
