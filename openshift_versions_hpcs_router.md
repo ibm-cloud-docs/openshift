@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 keywords: openshift, route, router
 
@@ -25,15 +25,36 @@ View information for version updates to the [{{site.data.keyword.cloud_notm}} HP
 
 | HPCS Router add-on version | Supported? | {{site.data.keyword.openshiftshort}} version support |
 | -------------------------- | -----------|----------------------------------------------------- |
+| 4.8 | Yes | 4.8 |
 | 4.7 | Yes | 4.7 |
 | 4.6 | Yes | 4.6 |
 | 4.5 | No | 4.5 |
 {: summary="The rows are read from left to right. The first column is the HPCS Router add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the add-on version is supported for."}
 {: caption="Supported HPCS Router add-on versions" caption-side="top"}
 
+## Version 4.8.0
+{: #4_8_0}
+
+### Version 4.8.0_997
+{: #4_8_0997}
+
+Version 4.8.0_997 of the CLI was released on 16 November 2021.
 
 ## Version 4.7.0
 {: #4_7_0}
+
+### Version 4.7.0_985
+{: #4_7_0985}
+
+Version 4.7.0_985 of the CLI was released on 16 November 2021.
+
+Updates to address
+- [CVE-2021-22946](https://nvd.nist.gov/vuln/detail/CVE-2021-22946){: external}
+- [CVE-2021-22947](https://nvd.nist.gov/vuln/detail/CVE-2021-22947){: external}
+- [CVE-2021-33928](https://nvd.nist.gov/vuln/detail/CVE-2021-33928){: external}
+- [CVE-2021-33929](https://nvd.nist.gov/vuln/detail/CVE-2021-33929){: external}
+- [CVE-2021-33930](https://nvd.nist.gov/vuln/detail/CVE-2021-33930){: external}
+- [CVE-2021-33938](https://nvd.nist.gov/vuln/detail/CVE-2021-33938){: external}
 
 ### Version 4.7.0_854
 {: #4_7_0854}
@@ -46,6 +67,19 @@ Updates to address
 
 ## Version 4.6.0
 {: #4_6_0}
+
+### Version 4.6.0_987
+{: #4_6_0987}
+
+Version 4.6.0_987 of the CLI was released on 16 November 2021.
+
+Updates to address
+- [CVE-2021-22946](https://nvd.nist.gov/vuln/detail/CVE-2021-22946){: external}
+- [CVE-2021-22947](https://nvd.nist.gov/vuln/detail/CVE-2021-22947){: external}
+- [CVE-2021-33928](https://nvd.nist.gov/vuln/detail/CVE-2021-33928){: external}
+- [CVE-2021-33929](https://nvd.nist.gov/vuln/detail/CVE-2021-33929){: external}
+- [CVE-2021-33930](https://nvd.nist.gov/vuln/detail/CVE-2021-33930){: external}
+- [CVE-2021-33938](https://nvd.nist.gov/vuln/detail/CVE-2021-33938){: external}
 
 ### Version 4.6.0_860
 {: #4_6_0860}

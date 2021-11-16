@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-16"
 
 keywords: openshift
 subcollection: openshift
@@ -183,6 +183,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
 * [November 2021](/docs/openshift?topic=openshift-iks-release#release-nov-2021)
+
+    * [16 November 2021](/docs/openshift?topic=openshift-iks-release#16nov2021)
+
+    * [15 November 2021](/docs/openshift?topic=openshift-iks-release#15nov2021)
 
     * [12 November 2021](/docs/openshift?topic=openshift-iks-release#12nov2021)
 
@@ -1125,6 +1129,12 @@ subcollection: openshift
     * [Using a service ID to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_service_id)
 
 * [Accessing the cluster master via admission controllers and webhooks](/docs/openshift?topic=openshift-access_cluster#access_webhooks)
+
+    * [Can I create my own admission controllers?](/docs/openshift?topic=openshift-access_cluster#access_webhooks_create_controllers)
+
+    * [What other types of apps use admission controllers?](/docs/openshift?topic=openshift-access_cluster#access_webhooks-app-use-controllers)
+
+    * [I need help with a broken webhook. What can I do?](/docs/openshift?topic=openshift-access_cluster#access_webhooks-help)
 
 
 ## Managing the cluster and worker node lifecycle
@@ -2842,6 +2852,28 @@ subcollection: openshift
 
 [Storage class reference](/docs/openshift?topic=openshift-ocs-sc-ref#ocs-sc-ref)
 
+[Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-storage-driver-unmanaged)
+
+* [Prerequisites](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-prereq)
+
+    * [Labelling your worker nodes](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-label-um)
+
+    * [Retrieving IAM and VPC details](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-driver-get-details)
+
+* [Creating the image pull secret in your cluster](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-create-storage-secret)
+
+* [Creating the {{site.data.keyword.block_storage_is_short}} driver deployment](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-deploy-cm)
+
+* [Deploying a stateful set that uses {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-stateful-set-deploy)
+
+* [Removing the {{site.data.keyword.block_storage_is_short}} driver](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#removing-the-block-storage-for-vpc-driver)
+
+* [Config map reference](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-cm-ref)
+
+    * [RHEL or CentOS configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-rhel-cm)
+
+    * [Ubuntu configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
+
 [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities#utilities)
 
 * [Classic: Installing the IBM Cloud Block Storage Attacher plug-in (beta)](/docs/openshift?topic=openshift-utilities#block_storage_attacher)
@@ -3096,24 +3128,6 @@ subcollection: openshift
 
     * [Deprecated: `ibmcloud oc cluster user-subnet rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_user_subnet_rm)
 
-* [`dedicated` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_commands)
-
-    * [`ibmcloud oc dedicated host create`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_create)
-
-    * [`ibmcloud oc dedicated host get`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_get)
-
-    * [`ibmcloud oc dedicated host ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_ls)
-
-    * [`ibmcloud oc dedicated host rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_rm)
-
-    * [`ibmcloud oc dedicated pool create`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_pool_create)
-
-    * [`ibmcloud oc dedicated pool get`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_pool_get)
-
-    * [`ibmcloud oc dedicated pool ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicate_pool_ls)
-
-    * [`ibmcloud oc dedicated pool rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_pool_rm)
-
 * [`worker` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_node_commands)
 
     * [Deprecated: `ibmcloud oc worker add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_add)
@@ -3327,6 +3341,8 @@ subcollection: openshift
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version 1.0.344](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10344)
 
 * [Version 1.0.334](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10334)
 
@@ -3905,11 +3921,19 @@ subcollection: openshift
 
 [{{site.data.keyword.cloud_notm}} HPCS Router add-on changelog](/docs/openshift?topic=openshift-hpcs-router-changelog#hpcs-router-changelog)
 
+* [Version 4.8.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0)
+
+    * [Version 4.8.0_997](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0997)
+
 * [Version 4.7.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0)
+
+    * [Version 4.7.0_985](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0985)
 
     * [Version 4.7.0_854](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0854)
 
 * [Version 4.6.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0)
+
+    * [Version 4.6.0_987](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0987)
 
     * [Version 4.6.0_860](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0860)
 
@@ -3952,6 +3976,8 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0)
+
+* [Changelog for version 1.0.0_734, released 16 November 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0734)
 
 * [Changelog for version 1.0.0_690, released 6 October 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0690)
 

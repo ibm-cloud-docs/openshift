@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-16"
 
 keywords: openshift
 
@@ -36,6 +36,54 @@ Review the supported versions of {{site.data.keyword.openshiftlong_notm}} for ea
 
 Review the changes in version 1.0.0 of the {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on plug-in.
 {: shortdesc}
+
+## Changelog for version 1.0.0_734, released 16 November 2021
+{: #1_0_0734}
+
+Review the changes in version 1_0_0734 of the {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on plug-in.
+{: shortdesc}
+
+Updates to address
+- [CVE-2019-17594](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-17594){: external}
+- [CVE-2019-17595](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-17595){: external}
+- [CVE-2021-33574](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33574){: external}
+- [CVE-2021-35942](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-35942){: external}
+- [CVE-2021-23840](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23840){: external}
+- [CVE-2021-23841](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23841){: external}
+- [CVE-2021-20231](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20231){: external}
+- [CVE-2021-20232](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20232){: external}
+- [CVE-2021-3580](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3580){: external}
+- [CVE-2021-28153](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28153){: external}
+- [CVE-2021-3800](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3800){: external}
+- [CVE-2019-18218](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-18218){: external}
+- [CVE-2020-12762](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-12762){: external}
+- [CVE-2020-16135](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-16135){: external}
+- [CVE-2021-20266](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20266){: external}
+- [CVE-2021-33928](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33928){: external}
+- [CVE-2021-33929](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33929){: external}
+- [CVE-2021-33930](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33930){: external}
+- [CVE-2021-33938](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33938){: external}
+- [CVE-2021-3200](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3200){: external}
+- [CVE-2021-3445](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3445){: external}
+- [CVE-2021-22946](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22946){: external}
+- [CVE-2021-22947](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22947){: external}
+- [CVE-2021-22876](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22876){: external}
+- [CVE-2021-22898](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22898){: external}
+- [CVE-2021-22925](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22925){: external}
+- [CVE-2018-20673](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-20673){: external}
+- [CVE-2021-36084](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36084){: external}
+- [CVE-2021-36085](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36085){: external}
+- [CVE-2021-36086](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36086){: external}
+- [CVE-2021-36087](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36087){: external}
+- [CVE-2021-33560](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33560){: external}
+- [CVE-2019-13750](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-13750){: external}
+- [CVE-2019-13751](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-13751){: external}
+- [CVE-2019-19603](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19603){: external}
+- [CVE-2019-5827](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5827){: external}
+- [CVE-2020-13435](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-13435){: external}
+- [CVE-2020-24370](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-24370){: external}
+- [CVE-2019-20838](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-20838){: external}
+- [CVE-2020-14155](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14155){: external}
 
 ## Changelog for version 1.0.0_690, released 6 October 2021
 {: #1_0_0690}

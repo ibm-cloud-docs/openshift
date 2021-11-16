@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-16"
 
 keywords: openshift, clusters
 
@@ -930,37 +930,22 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     {: screen}
 
 2. Create a custom {{site.data.keyword.cloud_notm}} IAM policy for your cluster service ID that grants access to {{site.data.keyword.openshiftlong_notm}}.
+
     ```sh
     ibmcloud iam service-policy-create <cluster_service_ID> --service-name containers-kubernetes --roles <service_access_role> --service-instance <cluster_ID>
     ```
     {: pre}
+    
+    | Parameter | Description |
+    | -------------- | -------------- |
+    | `<cluster_service_ID>` | Required. Enter the service ID that you previously created for your {{site.data.keyword.openshiftshort}} cluster. |
+    | `--service-name containers-kubernetes` | Required. Enter `containers-kubernetes` so that the IAM policy is for {{site.data.keyword.openshiftlong_notm}} clusters. |
+    | `--roles <service_access_role>` | Required. Enter the access role that you want the service ID to have to your {{site.data.keyword.openshiftshort}} cluster. [Platform access roles](/docs/openshift?topic=openshift-access_reference#iam_platform) permit cluster management activities such as creating worker nodes. [Service access roles](/docs/openshift?topic=openshift-access_reference#service) correspond to RBAC roles that permit {{site.data.keyword.openshiftshort}} management activities within the cluster, such as for Kubernetes resources like pods and namespaces. For multiple roles, include a comma-separated list. Possible values are `Administrator`, `Operator`, `Editor`, and `Viewer` (platform access roles); and `Reader`, `Writer`, and `Manager` (service access roles). |
+    | `--service-instance <cluster_ID>` | To restrict the policy to a particular cluster, enter the cluster's ID. To get your cluster ID, run `ibmcloud oc clusters`. If you do not include the service instance, the access policy grants the service ID access to all your clusters, Kubernetes and {{site.data.keyword.openshiftshort}}. You can also scope the access policy to a region (`--region`) or resource group (`--resource-group-name`). |
+    {: caption="Table 1. Understanding this command's components" caption-side="bottom"}
+    
+3. Create an API key for the service ID. Name the API key similar to your service ID, and include the service ID that you previously created, `<cluster_name>-id`. Be sure to give the API key a description that helps you retrieve the key later. Save your API key in a secure location. You cannot retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the command. The second column describes the parameter.">
-    <caption>Understanding this command's components</caption>
-    <col width="25%">
-    <thead>
-    <th>Parameter</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code><em>&lt;cluster_service_ID&gt;</em></code></td>
-    <td>Required. Enter the service ID that you previously created for your {{site.data.keyword.openshiftshort}} cluster.</td>
-    </tr>
-    <tr>
-    <td><code>--service-name <em>containers-kubernetes</em></code></td>
-    <td>Required. Enter <code>containers-kubernetes</code> so that the IAM policy is for {{site.data.keyword.openshiftlong_notm}} clusters.</td>
-    </tr>
-    <tr>
-    <td><code>--roles <em>&lt;service_access_role&gt;</em></code></td>
-    <td>Required. Enter the access role that you want the service ID to have to your {{site.data.keyword.openshiftshort}} cluster. <a href="/docs/openshift?topic=openshift-access_reference#iam_platform">platform access roles</a> permit cluster management activities such as creating worker nodes. <a href="/docs/openshift?topic=openshift-access_reference#service">service access roles</a> correspond to RBAC roles that permit {{site.data.keyword.openshiftshort}} management activities within the cluster, such as for Kubernetes resources like pods and namespaces. For multiple roles, include a comma-separated list. Possible values are <code>Administrator</code>, <code>Operator</code>, <code>Editor</code>, and <code>Viewer</code> (platform access roles); and <code>Reader</code>, <code>Writer</code>, and <code>Manager</code> (service access roles).</td>
-    </tr>
-    <tr>
-        <td><code>--service-instance <em>&lt;cluster_ID&gt;</em></code></td>
-        <td>To restrict the policy to a particular cluster, enter the cluster's ID. To get your cluster ID, run <code>ibmcloud oc clusters</code>.<p class="note">If you do not include the service instance, the access policy grants the service ID access to all your clusters, Kubernetes and {{site.data.keyword.openshiftshort}}. You can also scope the access policy to a region (<code>--region</code>) or resource group (<code>--resource-group-name</code>).</td>
-    </tr>
-    </tbody></table>
-3. Create an API key for the service ID. Name the API key similar to your service ID, and include the service ID that you previously created, `<cluster_name>-id`. Be sure to give the API key a description that helps you retrieve the key later.<p class="important">Save your API key in a secure location. You cannot retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.</p>
     ```sh
     ibmcloud iam service-api-key-create <cluster_name>-key <service_ID> --description "API key for service ID <service_ID> in {{site.data.keyword.openshiftshort}} cluster <cluster_name>"
     ```
@@ -982,6 +967,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     {: screen}
 
 4. Configure your cluster to add the service ID user to your cluster RBAC policies and to set your session context to your cluster server.
+
     1. Log in to {{site.data.keyword.cloud_notm}} with the service ID's API key credentials.
         ```sh
         ibmcloud login --apikey <API_key>
@@ -989,12 +975,14 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
         {: pre}
 
     2. Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the last file in the `KUBECONFIG` environment variable. **Note**: If you enabled the private cloud service endpoint and want to use it for the cluster context, include the `--endpoint private` flag. To use the private cloud service endpoint to connect to your cluster, you must be in your {{site.data.keyword.cloud_notm}} private network or connected to the private network through a [VPC VPN connection](/docs/vpc?topic=vpc-vpn-onprem-example), or for classic infrastructure, a [classic VPN connection](/docs/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl).
+    
         ```sh
         ibmcloud oc cluster config -c <cluster_name_or_ID> [--endpoint private]
         ```
         {: pre}
 
 5. [Use the service ID's API key to log in to your {{site.data.keyword.openshiftshort}} cluster](#access_api_key). The username (`-u`) is `apikey` and the password (`-p`) is your API key value. To use the private cloud service endpoint, include the `--server=<private_service_endpoint>` flag.
+
     ```sh
     oc login -u apikey -p <API_key> [--server=<private_service_endpoint>]
     ```
@@ -1009,6 +997,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     {: pre}
 
     Example: If you assigned a `Manager` service access role, the service ID can list the users in your {{site.data.keyword.openshiftshort}} cluster. The ID of your IAM service ID is in the **Identities** output. Other individual users might be identified by their email address and IBMid.
+    
     ```sh
     oc get users
     ```
@@ -1024,14 +1013,13 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     {: screen}
 
 
-
 ## Accessing the cluster master via admission controllers and webhooks
 {: #access_webhooks}
 
 Admission controllers intercept authorized API requests from various Kubernetes resources before the requests reach the API server that runs in your {{site.data.keyword.openshiftlong_notm}} cluster master. Mutating admission webhooks might modify the request, and validating admission webhooks check the request. If either webhook rejects a request, the entire request fails. Advanced features, whether built-in or added on, often require admission controllers as a security precaution and to control what requests are sent to the API server. For more information, see [Using Admission Controllers](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/){: external} and [Dynamic Admission Control](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} in the Kubernetes documentation.
 
-
-**Can I create my own admission controllers?**
+### Can I create my own admission controllers?
+{: #access_webhooks_create_controllers}
 
 Yes, see the [Kubernetes](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} and [{{site.data.keyword.openshiftshort}}](https://docs.openshift.com/container-platform/4.7/architecture/admission-plug-ins.html){: external} documentation for more information. 
 
@@ -1040,29 +1028,26 @@ As noted in the Kubernetes documentation, you can use admission controllers for 
 
 Keep in mind the following considerations when you configure a webhook.
 
-* Create [replica pods](/docs/containers?topic=containers-app#replicaset) for the webhook so that if one pod goes down, the webhook can still process requests from your resources. Spread the replica pods across zones, if possible.
-* Set appropriate CPU and memory [resource requests and limits](/docs/containers?topic=containers-app#resourcereq) for your webhook.
-* Add [liveness and readiness probes](/docs/openshift?topic=openshift-openshift_apps#probe) to help make sure your webhook container is running and ready to serve requests.
-* Set pod [anti-affinity scheduling rules](/docs/openshift?topic=openshift-openshift_apps#affinity) to prefer that your webhook pods run on different worker nodes and zones when possible. In clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or later, you might use [pod topology](https://kubernetes.io/docs/concepts/workloads/pods/pod-topology-spread-constraints/){: external} instead. However, avoid [taints](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external} or forced affinity that might restrict where the webhook pods can be scheduled.
-* [Set pod priority](/docs/openshift?topic=openshift-pod_priority) to `system-cluster-critical` for the webhook pods so that other pods cannot take resources from your webhook pods.
-* Scope your webhook to the appropriate project. Avoid webhooks that process resources that run in system-critical projects that are set up in your cluster by default, such as `kube-system`, `ibm-system`, `ibm-operators`, `calico-system`, `tigera-operator` and `openshift-*` projects.
-* Make sure that the worker nodes in your cluster are [the right size for running your webhook applications](/docs/openshift?topic=openshift-strategy#sizing). For example, if your pods request more CPU or memory than the worker node can provide, the pods are not scheduled.
+- Create [replica pods](/docs/containers?topic=containers-app#replicaset) for the webhook so that if one pod goes down, the webhook can still process requests from your resources. Spread the replica pods across zones, if possible.
+- Set appropriate CPU and memory [resource requests and limits](/docs/containers?topic=containers-app#resourcereq) for your webhook.
+- Add [liveness and readiness probes](/docs/openshift?topic=openshift-openshift_apps#probe) to help make sure your webhook container is running and ready to serve requests.
+- Set pod [anti-affinity scheduling rules](/docs/openshift?topic=openshift-openshift_apps#affinity) to prefer that your webhook pods run on different worker nodes and zones when possible. In clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or later, you might use [pod topology](https://kubernetes.io/docs/concepts/workloads/pods/pod-topology-spread-constraints/){: external} instead. However, avoid [taints](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external} or forced affinity that might restrict where the webhook pods can be scheduled.
+- [Set pod priority](/docs/openshift?topic=openshift-pod_priority) to `system-cluster-critical` for the webhook pods so that other pods cannot take resources from your webhook pods.
+- Scope your webhook to the appropriate project. Avoid webhooks that process resources that run in system-critical projects that are set up in your cluster by default, such as `kube-system`, `ibm-system`, `ibm-operators`, `calico-system`, `tigera-operator` and `openshift-*` projects.
+- Make sure that the worker nodes in your cluster are [the right size for running your webhook applications](/docs/openshift?topic=openshift-strategy#sizing). For example, if your pods request more CPU or memory than the worker node can provide, the pods are not scheduled.
 
 
-**What other types of apps use admission controllers?**
+### What other types of apps use admission controllers?
+{: #access_webhooks-app-use-controllers}
 
 Many cluster add-ons, plug-ins, and other third-party extensions use admission controllers. Some common ones include:
-*   [Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec)
+- [Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec)
 
 
-**I need help with a broken webhook. What can I do?**
+### I need help with a broken webhook. What can I do?
+{: #access_webhooks-help}
 
 See [Cluster cannot update because of broken webhook](/docs/containers?topic=containers-webhooks_update).
-
-
- 
-
-
 
 
 
