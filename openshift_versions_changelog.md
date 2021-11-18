@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-17"
+lastupdated: "2021-11-18"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -109,8 +109,8 @@ The following table shows the changes that are included in the master fix pack `
 | Calico Operator | v1.17.8 | v1.20.1 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.20.1){: external}. Updated to use the `system-cluster-critical` priority class. |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} plug-in and driver | N/A | N/A | Updated to use the `system-cluster-critical` and `system-node-critical` priority classes respectively. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.20.11-1 | v1.21.5-1 | Updated to support the Kubernetes `1.21.5` release. |
-| {{site.data.keyword.openshiftshort}} (master) | 4.7.30 | 4.8.11 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-11){: external}. The update resolves [CVE-2021-3636](https://nvd.nist.gov/vuln/detail/CVE-2021-3636){: external}. For more information, see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6517086){: external}. |
-| {{site.data.keyword.openshiftshort}} (worker node) | 4.7.30 | 4.8.12 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-12){: external}. The update resolves [CVE-2021-3636](https://nvd.nist.gov/vuln/detail/CVE-2021-3636){: external}. For more information, see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6517086){: external}. |
+| {{site.data.keyword.openshiftshort}} (master) | 4.7.30 | 4.8.11 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-11){: external}. The update resolves [CVE-2021-3636](https://nvd.nist.gov/vuln/detail/CVE-2021-3636){: external} and [CVE-2021-25737](https://nvd.nist.gov/vuln/detail/CVE-2021-25737){: external}. For more infomration, see the [IBM security bulletin for CVE-2021-3636](https://www.ibm.com/support/pages/node/6517086){: external} and the [IBM security bulletin for CVE-2021-25737](https://www.ibm.com/support/pages/node/6517054){: external}. |
+| {{site.data.keyword.openshiftshort}} (worker node) | 4.7.30 | 4.8.12 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-12){: external}. The update resolves [CVE-2021-3636](https://nvd.nist.gov/vuln/detail/CVE-2021-3636){: external} and [CVE-2021-25737](https://nvd.nist.gov/vuln/detail/CVE-2021-25737){: external}. For more infomration, see the [IBM security bulletin for CVE-2021-3636](https://www.ibm.com/support/pages/node/6517086){: external} and the [IBM security bulletin for CVE-2021-25737](https://www.ibm.com/support/pages/node/6517054){: external}. |
 | {{site.data.keyword.openshiftshort}} configuration | N/A | N/A | Updated the [feature gate configuration](/docs/openshift?topic=openshift-service-settings#feature-gates). |
 | {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.7.0-20210917 | v4.8.0-20210917 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20210917){: external}. |
 | Pause container image | 3.2 | 3.5 | See the [pause container image release notes](https://github.com/kubernetes/kubernetes/blob/master/build/pause/CHANGELOG.md){: external}. |
