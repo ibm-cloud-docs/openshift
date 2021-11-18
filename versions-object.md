@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-18"
 
 keywords: object storage, plug-in, changelog
 
@@ -25,6 +25,7 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | Object Storage plug-in version | Supported? | {{site.data.keyword.openshiftshort}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.1.7 | Yes | Greater than or equal to 4.3 | x86 |
 | 2.1.6 | Yes | Greater than or equal to 4.3 | x86 |
 | 2.1.5 | Deprecated | Greater than or equal to 4.3  | x86 |
 | 2.1.4 | Deprecated | Greater than or equal to 4.3  | x86 |
@@ -41,11 +42,16 @@ Refer to the following tables for a summary of changes for each version of the [
 {: summary="The rows are read from left to right. The first column is the Object Storage plug-in version. The second column is the version's supported state. The third column is the version of your cluster that the Object Storage plug-in version is supported for."}
 
 
+## Changelog version 2.1.7, released 18 November 2021
+{: #0217_object_plugin}
+
+- Updates the UBI to version 8.5-204.
+- Updates Golang to version 1.16.10.
+- Resolves [CVE-2021-41772](https://nvd.nist.gov/vuln/detail/CVE-2021-41772){: external}, [CVE-2021-41771](https://nvd.nist.gov/vuln/detail/CVE-2021-41771){: external}, and [CVE-2021-22947](https://nvd.nist.gov/vuln/detail/CVE-2021-22947){: external}.
+
+
 ## Changelog for version 2.1.6, released 22 October 2021
 {: #0216_object_plugin}
-
-Review the changes in version 2.1.6 of the {{site.data.keyword.cos_full_notm}} plug-in.
-{: shortdesc}
 
 - Image tags: `1.8.36`
 - Updates s3fs fuse to version 1.90
@@ -54,9 +60,6 @@ Review the changes in version 2.1.6 of the {{site.data.keyword.cos_full_notm}} p
 
 ## Changelog for version 2.1.5, released 5 October 2021
 {: #0215_object_plugin}
-
-Review the changes in version 2.1.5 of the {{site.data.keyword.cos_full_notm}} plug-in.
-{: shortdesc}
 
 - Image tags: `1.8.34`
 - Resolves [CVE-2021-36221](https://nvd.nist.gov/vuln/detail/CVE-2021-36221){: external}, [CVE-2021-29923](https://nvd.nist.gov/vuln/detail/CVE-2021-29923){: external}, and [CVE-2021-33196](https://nvd.nist.gov/vuln/detail/CVE-2021-33196){: external}.
@@ -71,9 +74,6 @@ Review the changes in version 2.1.5 of the {{site.data.keyword.cos_full_notm}} p
 ## Changelog for version 2.1.4, released 1 September 2021
 {: #0214_object_plugin}
 
-Review the changes in version 2.1.4 of the {{site.data.keyword.cos_full_notm}} plug-in.
-{: shortdesc}
-
 - Image tags: `1.8.33`
 - Fixes a `timeoutSeconds` issue in the `livenessProbe` and `readinessProbe`.
 - Updates the Golang version to `v1.17`.
@@ -84,9 +84,6 @@ Review the changes in version 2.1.4 of the {{site.data.keyword.cos_full_notm}} p
 
 ## Changelog for version 2.1.3, released 25 August 2021
 {: #0213_object_plugin}
-
-Review the changes in version 2.1.3 of the {{site.data.keyword.cos_full_notm}} plug-in.
-{: shortdesc}
 
 - Image tags: `1.8.32`
 - Addresses the following CVEs: [CVE-2021-3520](https://nvd.nist.gov/vuln/detail/CVE-2021-3520){: external}, [CVE-2021-3516](https://nvd.nist.gov/vuln/detail/CVE-2021-3516){: external}, [CVE-2021-3517](https://nvd.nist.gov/vuln/detail/CVE-2021-3517){: external}, [CVE-2021-3518](https://nvd.nist.gov/vuln/detail/CVE-2021-3518){: external}, [CVE-2021-3537](https://nvd.nist.gov/vuln/detail/CVE-2021-3537){: external}, [CVE-2021-3541](https://nvd.nist.gov/vuln/detail/CVE-2021-3541){: external}, [CVE-2021-33195](https://nvd.nist.gov/vuln/detail/CVE-2021-33195){: external}, [CVE-2021-33196](https://nvd.nist.gov/vuln/detail/CVE-2021-33196){: external}, [CVE-2021-33198](https://nvd.nist.gov/vuln/detail/CVE-2021-33198){: external}, [CVE-2021-33197](https://nvd.nist.gov/vuln/detail/CVE-2021-33197){: external}, and [CVE-2021-34558](https://nvd.nist.gov/vuln/detail/CVE-2021-34558){: external}.  
@@ -106,9 +103,6 @@ Review the changes in version 2.1.3 of the {{site.data.keyword.cos_full_notm}} p
 ## Changelog for version 2.1.2, released 22 June 2021 
 {: #0212_object_plugin}
 
-Review the changes in version 2.1.2 of the {{site.data.keyword.cos_full_notm}} plug-in.
-{: shortdesc}
-
 - Image tags: `1.8.30`  
 - Updates in this version: Version `v2.0.5` of the `helm-ibmc` plug-in is available.  
 - Fixes [`CVE-2021-31525`](https://nvd.nist.gov/vuln/detail/CVE-2021-31525){: external},[`CVE-2021-33194`](https://nvd.nist.gov/vuln/detail/CVE-2021-33194){: external}, and [`CVE-2021-27219`](https://nvd.nist.gov/vuln/detail/CVE-2021-27219){: external}.  
@@ -116,9 +110,6 @@ Review the changes in version 2.1.2 of the {{site.data.keyword.cos_full_notm}} p
 
 ## Changelog for version 2.1.1, released 03 June 2021
 {: #0211_object_plugin}
-
-Review the changes in version 2.1.1 of the {{site.data.keyword.cos_full_notm}} plug-in.
-{: shortdesc}
 
 - Image tags: `1.8.29`  
 - Fixes an upgrade issue in version `2.1.0`.  
@@ -130,18 +121,12 @@ Review the changes in version 2.1.1 of the {{site.data.keyword.cos_full_notm}} p
 ## Changelog for version 2.1.0, released 26 May 2021
 {: #0210_object_plugin}
 
-Review the changes in version 2.1.0 of the {{site.data.keyword.cos_full_notm}} plug-in.
-{: shortdesc}
-
 - Image tags: `1.8.28`  
 - Updates the UBI to `8.4-200`.  
 
 
 ## Changelog for version 2.0.9, 10 May 2021
 {: #0209_object_plugin}
-
-Review the changes in version 2.0.9 of the {{site.data.keyword.cos_full_notm}} plug-in.
-{: shortdesc}
 
 - Image tags: `1.8.27`  
 - Updates the UBI to `8.3-298.1618432845`.  
@@ -156,9 +141,6 @@ Review the changes in version 2.0.9 of the {{site.data.keyword.cos_full_notm}} p
 ## Changelog for version 2.0.8, 19 April 2021
 {: #0208_object_plugin}
 
-Review the changes in version 2.0.8 of the {{site.data.keyword.cos_full_notm}} plug-in.
-{: shortdesc}
-
 - Image tags: `1.8.25`  
 - Updates the Go version to `1.15.9`.  
 - Updates the UBI from `ubi-minimal:8.3-291` to `ubi-minimal:8.3-298`.  
@@ -169,8 +151,6 @@ Review the changes in version 2.0.8 of the {{site.data.keyword.cos_full_notm}} p
 ## Changelog for version 2.0.7, 26 March 2021
 {: #0207_object_plugin}
 
-Review the changes in version 2.0.7 of the {{site.data.keyword.cos_full_notm}} plug-in.
-{: shortdesc}
 
 - Image tags: `1.8.24`  
 - Updates the Go version to `1.15.8`.  
@@ -181,8 +161,6 @@ Review the changes in version 2.0.7 of the {{site.data.keyword.cos_full_notm}} p
 ## Changelog for version 2.0.6, 18 December 2020
 {: #0206_object_plugin}
 
-Review the changes in version 2.0.6 of the {{site.data.keyword.cos_full_notm}} plug-in.
-{: shortdesc}
 
 - Image tags: `1.8.23`  
 - The `1.8.23` image is signed.  
@@ -196,9 +174,6 @@ Review the changes in version 2.0.6 of the {{site.data.keyword.cos_full_notm}} p
 
 ## Changelog for version 2.0.5, released 25 November 2020
 {: #0205_object_plugin}
-
-Review the changes that are included in version 2.0.5 of the Object Storage plug-in.
-{: shortdesc}
 
 - Fixes a `NilPointer` error.  
 - Resolves the following CVEs: `CVE-2018-20843`, `CVE-2019-13050`, `CVE-2019-13627`, `CVE-2019-14889`, `CVE-2019-1551`, `CVE-2019-15903`, `,CVE-2019-16168`, `CVE-2019-16935`, `CVE-2019-19221`, `CVE-2019-19906`, `CVE-2019-19956`, `CVE-2019-20218`, `CVE-2019-20386`, `CVE-2019-20387`, `CVE-2019-20388`, `CVE-2019-20454`, `CVE-2019-20907`, `CVE-2019-5018`, `CVE-2020-10029`, `CVE-2020-13630`, `CVE-2020-13631`, `CVE-2020-13632`, `CVE-2020-14422`, `CVE-2020-1730`, `CVE-2020-1751`, `CVE-2020-1752`, `CVE-2020-6405`, `CVE-2020-7595`, and `CVE-2020-8177`.   
