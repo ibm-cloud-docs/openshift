@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-18"
 
 keywords: openshift
 
@@ -124,6 +124,12 @@ If you are unable to use the `oc debug node` command, you can create an Alpine p
 
     ```sh
     kubectl exec -it debug-${NODE} -- sh
+    ```
+    {: pre}
+    
+    To get `/var/log/syslog`, `containerd.log`, `kubelet.log`, and `kern.log` on a worker node, use the `kubectl cp` command in the following format instead of the `kubectl exec` command:
+    ```sh
+    kubectl cp default/debug-${NODE}:/host/var/log/syslog ./syslog
     ```
     {: pre}
 

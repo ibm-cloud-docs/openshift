@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-18"
 
 keywords: openshift, route, router
 
@@ -82,32 +82,16 @@ By default, any router that is created in your cluster is configured to process 
         ```
         {: codeblock}
 
-3. In the `metadata.labels` section, add the `router: default` label.
+3. Save and close the file. Your changes are applied automatically.
 
-    ```yaml
-    kind: Route
-    apiVersion: route.openshift.io/v1
-    metadata:
-        name: router-default
-        namespace: openshift-ingress
-        labels:
-        ingresscontroller.operator.openshift.io/owning-ingresscontroller: default
-        router: default
-    spec:
-    ...
-    ```
-    {: codeblock}
-
-4. Save and close the file. Your changes are applied automatically.
-
-5. Edit the configuration for the `IngressController` that manages the default router.
+4. Edit the configuration for the `IngressController` that manages the default router.
 
     ```sh
     oc edit IngressController default -n openshift-ingress-operator
     ```
     {: pre}
 
-6. In the `spec` section, add a `routeSelector` section that includes the `router: default` selector.
+5. In the `spec` section, add a `routeSelector` section that includes the `router: default` selector.
 
     ```yaml
     apiVersion: operator.openshift.io/v1
@@ -263,8 +247,8 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to create a router
       routeSelector:
         matchLabels:
           router: hpcs
-    domain:
-      <domain>
+      domain:
+        <domain>
     ```
     {: codeblock}
 
@@ -282,29 +266,29 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to generate and si
     apiVersion: operator.roks.cloud.ibm.com/v1
     kind: Certificate
     metadata:
-        # A name for the CSR to be generated
-    name: <CSR_name>
-    # The project where you want to create routes for your apps
-    namespace: <project>
+      # A name for the CSR to be generated
+      name: <CSR_name>
+      # The project where you want to create routes for your apps
+      namespace: <project>
     spec:
       dnsNames:
       # The domain that you registered in step 7 of the previous section
       - <domain>
       # Optional: Any alternative DNS names for this domain
       - <alternative_domain_name>
-    isCA: false
-    privateKey:
-      algorithm: ECDSA
-      size: 256
-    # A name for the secret to be generated, containing the CSR and keys
-    secretName: <secret_name>
-    subject:
-      organizations:
-        # Optional: A list of organization names to be used on the certificate
-        - <organization_name>
-    usages:
-      - server auth
-      - client auth
+      isCA: false
+      privateKey:
+        algorithm: ECDSA
+        size: 256
+      # A name for the secret to be generated, containing the CSR and keys
+      secretName: <secret_name>
+      subject:
+        organizations:
+          # Optional: A list of organization names to be used on the certificate
+          - <organization_name>
+      usages:
+        - server auth
+        - client auth
     ```
     {: codeblock}
 
@@ -316,10 +300,10 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to generate and si
     {: pre}
 
     When this resource is created, the following processes occur:
-        * {{site.data.keyword.cloud_notm}} HPCS Router operator creates a CSR generator job and a `ConfigMap` resource.
-        * The CSR generator job uses the `ConfigMap` to process the data in the `Certificate` custom resource.
-        * The CSR generator job uses the data in the `Certificate` custom resource and the credentials in the `hpcs-credentials` secret to sign the CSR.
-        * A secret that contains the signed CSR, the `grep11` reference to the generated private key, and the generated public key is created in the project that you specified in the `Certificate` custom resource.
+      * {{site.data.keyword.cloud_notm}} HPCS Router operator creates a CSR generator job and a `ConfigMap` resource.
+      * The CSR generator job uses the `ConfigMap` to process the data in the `Certificate` custom resource.
+      * The CSR generator job uses the data in the `Certificate` custom resource and the credentials in the `hpcs-credentials` secret to sign the CSR.
+      * A secret that contains the signed CSR, the `grep11` reference to the generated private key, and the generated public key is created in the project that you specified in the `Certificate` custom resource.
 
 3. Get the signed CSR from the generated secret. Additionally, note the `grep11` reference to the generated private key, which is used in a later step.
 
@@ -342,12 +326,12 @@ After you obtain the certificate from your certificate authority, use the certif
     kind: Route
     apiVersion: route.openshift.io/v1
     metadata:    
-        # A name for the route to be generated
-    name: <route_name>
-    # The project where the CSR secret was generated
-    namespace: <project>
-    labels:
-      router: hpcs
+      # A name for the route to be generated
+      name: <route_name>
+      # The project where the CSR secret was generated
+      namespace: <project>
+      labels:
+        router: hpcs
     spec:
         host:
         # The router domain that you registered
