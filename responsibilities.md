@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-17"
+lastupdated: "2021-11-18"
 
 keywords: openshift, responsibilities, incident, operations, change, security, regulation, disaster recovery, management, RACI
 
@@ -122,7 +122,7 @@ IBM is responsible for the recovery of {{site.data.keyword.openshiftlong_notm}} 
 
 | Resource | IBM responsibilities | Your responsibilities |
 | -------- | -------------------- | --------------------- |
-| General | - Maintain service availability across [worldwide locations](/docs/containers?topic=containers-regions-and-zones) so that customers can deploy clusters across zones and regions for higher DR tolerance. \n - Provision clusters with three replicas of master components for high availability. \n - In multizone regions, automatically spread the master replicas across zones. \n - Continuously monitor to work to ensure the reliability and availability of the service environment by site reliability engineers. \n - Update and recover operational {{site.data.keyword.openshiftlong_notm}} and Kubernetes components within the cluster, such as the Ingress application load balancer and file storage plug-in. \n - Back up and recover data in etcd, such as your Kubernetes workload configuration files \n - Provide the ability to integrate with other {{site.data.keyword.cloud_notm}} services such as storage providers so that data can be backed up and restored. | - Set up and maintain disaster recovery capabilities for your apps and data. For example, to prepare your cluster for HA/DR scenarios, follow the guidance in [High availability for {{site.data.keyword.openshiftlong_notm}}(/docs/containers?topic=containers-ha). Note that persistent storage of data such as application logs and cluster metrics are not set up by default.  |
+| General | - Maintain service availability across [worldwide locations](/docs/containers?topic=containers-regions-and-zones) so that customers can deploy clusters across zones and regions for higher DR tolerance. \n - Provision clusters with three replicas of master components for high availability. \n - In multizone regions, automatically spread the master replicas across zones. \n - Continuously monitor to work to ensure the reliability and availability of the service environment by site reliability engineers. \n - Update and recover operational {{site.data.keyword.openshiftlong_notm}} and Kubernetes components within the cluster, such as the Ingress application load balancer and file storage plug-in. \n - Back up and recover data in etcd, such as your Kubernetes workload configuration files \n - Provide the ability to integrate with other {{site.data.keyword.cloud_notm}} services such as storage providers so that data can be backed up and restored. | - Set up and maintain disaster recovery capabilities for your apps and data. For example, to prepare your cluster for HA/DR scenarios, follow the guidance in [High availability for {{site.data.keyword.openshiftlong_notm}}](/docs/containers?topic=containers-ha). Note that persistent storage of data such as application logs and cluster metrics are not set up by default.  |
 {: caption="Table 6. Responsibilities for disaster recovery" caption-side="top"}
 
 ### Applications and data
