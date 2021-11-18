@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-18"
 
 keywords: openshift, audit
 
@@ -23,7 +23,7 @@ You can view, manage, and audit user-initiated activities in your {{site.data.ke
 {{site.data.keyword.openshiftlong_notm}} automatically generates cluster management events and forwards these event logs to {{site.data.keyword.at_full_notm}}. To access these logs, you must [provision an instance of {{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started).
 
 
-Currently, clusters running in Toronto (`ca-tor`) send logs to Washington D.C., and clusters running in Osaka (`jp-osa`) or Sydney (`au-syd`) send logs to Tokyo. On **18 November 2021**, all instances of Log Analysis and Activity Tracker that are used for clusters running in Osaka (`jp-osa`), Toronto (`ca-tor`), and Sydney (`au-syd`) begin sending logs to their respective regions. In order to continue receiving logs for clusters in these regions, you must create new instances of {{site.data.keyword.cloudaccesstraillong_notm}} and {{site.data.keyword.at_full_notm}} in the same region as your cluster.
+Previously, clusters running in Toronto (`ca-tor`) sent logs to Washington D.C., and clusters running in Osaka (`jp-osa`) or Sydney (`au-syd`) sent logs to Tokyo. As of **18 November 2021**, all instances of Log Analysis and Activity Tracker that are used for clusters running in Osaka (`jp-osa`), Toronto (`ca-tor`), and Sydney (`au-syd`) send logs to their respective regions. To continue receiving logs for clusters in these regions, you must create instances of {{site.data.keyword.cloudaccesstraillong_notm}} and {{site.data.keyword.at_full_notm}} in the same region as your cluster. If you already have instances in these regions, look for logs in those instances.
 {: important}
 
 ## Cluster events
@@ -323,17 +323,17 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 | Montreal (mon01) | Dallas |
 | San Jose (sjc03, sjc04) | Dallas |
 | São Paulo (sao01) | Dallas |
-| Toronto (tor01) | Washington, D.C.  \n Beginning **18 November 2021**, clusters in Toronto send logs to Toronto. To continue receiving logs for these clusters, create an instance of {{site.data.keyword.la_short}} in this region. |
+| Toronto (tor01) | Toronto |
 | Washington, D.C. (wdc04, wdc06, wdc07) | Washington, D.C. |
 | Amsterdam (ams03) | Frankfurt |
 | Frankfurt (fra02, fra04, fra05) | Frankfurt |
 | Milan (mil01) | Frankfurt |
 | Paris (par01) | Frankfurt |
 | London (lon02, lon04, lon05, lon06) | London |
-| Sydney (syd01, syd04, syd05) | Tokyo  \n Beginning **18 November 2021**, clusters in Sydney send logs to Sydney. To continue receiving logs for these clusters, create an instance of {{site.data.keyword.la_short}} in this region. |
+| Sydney (syd01, syd04, syd05) | Sydney |
 | Chennai (che01) | Chennai |
 | Seoul (seo01) | Seoul |
-| Osaka (osa21, osa22, osa23) | Tokyo  \n Beginning **18 November 2021**, clusters in Osaka send logs to Osaka. To continue receiving logs for these clusters, create an instance of {{site.data.keyword.la_short}} in this region.|
+| Osaka (osa21, osa22, osa23) | Osaka |
 | Hong Kong SAR of the PRC (hkg02) | Tokyo |
 | Singapore (sng01) | Tokyo |
 | Tokyo (tok02, tok04, tok05) | Tokyo |
@@ -346,10 +346,10 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 | Dallas (us-south-1, us-south-2, us-south-3) | Dallas |
 | São Paulo (br-sao-1, br-sao-2, br-sao-3) | Dallas |
 | Washington, D.C. (us-east-1, us-east-2, us-east-3) | Washington, D.C. |
-| Toronto (ca-tor-1, ca-tor-2, ca-tor-3) | Washington, D.C.  \n Beginning **18 November 2021**, clusters in Toronto send logs to Toronto. To continue receiving logs for these clusters, create an instance of {{site.data.keyword.la_short}} in this region. |
+| Toronto (ca-tor-1, ca-tor-2, ca-tor-3) | Toronto |
 | Frankfurt (eu-de-1, eu-de-2, eu-de-3) | Frankfurt |
 | London (eu-gb-1, eu-gb-2, eu-gb-3) | London |
-| Sydney (au-syd-1, au-syd-2, au-syd-3) | Sydney \n Beginning **18 November 2021**, clusters in Sydney send logs to Sydney. To continue receiving logs for these clusters, create an instance of {{site.data.keyword.la_short}} in this region.|
+| Sydney (au-syd-1, au-syd-2, au-syd-3) | Sydney |
 | Tokyo (jp-tok-1, jp-tok-2, jp-tok-3) | Tokyo |
 {: caption="Corresponding {{site.data.keyword.at_short}} instance and {{site.data.keyword.openshiftlong_notm}} cluster locations." caption-side="top"}
 
