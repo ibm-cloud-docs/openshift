@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-18"
+lastupdated: "2021-11-19"
 
 keywords: openshift
 
@@ -29,14 +29,47 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 Review the release notes for November 2021.
 {: shortdesc}
 
+### 19 November 2021
+{: #19nov2021}
+{: release-note}
 
 
+  
+HPCS Router add-on
+:   Versions 4.7.0_1013 and 4.6.0_1012 of the [HPCS Router add-on](/docs/containers?topic=openshift-hpcs-router-changelog) are released.
+
+
+
+Kubernetes Ingress image
+:   Versions 1.0.3_1730_iks and 0.49.3_1830_iks of the [Kubernetes Ingress image](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) are released.
+
+ALB OAuth Proxy add-on
+:   Versions 1.0.0_756 and 2.0.0_755 of the [ALB OAuth Proxy add-on](/docs/containers?topic=containers-alb-oauth-proxy-changelog) are released.
+
+Cloud Image Key Synchronizer add-on
+:   Version 1.0.0_744 of the [Cloud Image Key Synchronizer add-on](/docs/containers?topic=openshift-image-key-synchronizer-changelog) is released.
+
+### 18 November 2021
+{: #18nov2021}
+{: release-note}
+
+{{site.data.keyword.cloudaccesstraillong_notm}} and {{site.data.keyword.at_full_notm}}
+:   Previously, clusters running in Toronto (`ca-tor`) sent logs to Washington D.C., and clusters running in Osaka (`jp-osa`) or Sydney (`au-syd`) sent logs to Tokyo. Beginning 18 November 2021, all instances of Log Analysis and Activity Tracker that are used for clusters running in Osaka (`jp-osa`), Toronto (`ca-tor`), and Sydney (`au-syd`) send logs to their respective regions. To continue receiving logs for clusters in these regions, you must create instances of {{site.data.keyword.cloudaccesstraillong_notm}} and {{site.data.keyword.at_full_notm}} in the same region as your cluster. If you already have instances in these regions, look for logs in those instances.
+
+{{site.data.keyword.cos_full_notm}}
+:   Version 2.1.7 of the [{{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-cos_plugin_changelog) is released.
+
+
+  
 ### 16 November 2021
 {: #16nov2021}
 {: release-note}
 
 HPCS Router add-on
 :   Version 4.8.0_997 of the [HPCS Router add-on](/docs/containers?topic=openshift-hpcs-router-changelog) is released.
+
+
+
 
 ### 15 November 2021
 {: #15nov2021}

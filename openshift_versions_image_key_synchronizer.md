@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-16"
+lastupdated: "2021-11-19"
 
 keywords: openshift
 
@@ -37,13 +37,15 @@ Review the supported versions of {{site.data.keyword.openshiftlong_notm}} for ea
 Review the changes in version 1.0.0 of the {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on plug-in.
 {: shortdesc}
 
-## Changelog for version 1.0.0_734, released 16 November 2021
+## Changelog for version 1.0.0_744, released on 19 November 2021
+{: #1_0_0744}
+
+- [CVE-2021-41771](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-41771){: external}
+- [CVE-2021-41772](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-41772){: external}
+
+## Changelog for version 1.0.0_734, released on 16 November 2021
 {: #1_0_0734}
 
-Review the changes in version 1_0_0734 of the {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on plug-in.
-{: shortdesc}
-
-Updates to address
 - [CVE-2019-17594](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-17594){: external}
 - [CVE-2019-17595](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-17595){: external}
 - [CVE-2021-33574](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33574){: external}
@@ -85,7 +87,7 @@ Updates to address
 - [CVE-2019-20838](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-20838){: external}
 - [CVE-2020-14155](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14155){: external}
 
-## Changelog for version 1.0.0_690, released 6 October 2021
+## Changelog for version 1.0.0_690, released on 6 October 2021
 {: #1_0_0690}
 
 Review the changes in version 1.0.0_690 of the {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on plug-in.
@@ -98,7 +100,7 @@ Updates to address
 - [CVE-2021-36222](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36222){: external}
 - [CVE-2021-37750](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-37750){: external}
 
-## Changelog for version 1.0.0_627, released 23 August 2021
+## Changelog for version 1.0.0_627, released on 23 August 2021
 {: #1_0_0627}
 
 Review the changes in version 1.0.0_627 of the {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on plug-in.
@@ -107,7 +109,7 @@ Review the changes in version 1.0.0_627 of the {{site.data.keyword.cloud_notm}} 
 Updates to address
 - [CVE-2021-36221](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36221){: external}
 
-## Changelog for version 1.0.0_614, released 10 August 2021
+## Changelog for version 1.0.0_614, released on 10 August 2021
 {: #1_0_0614}
 
 Review the changes in version 1.0.0_614 of the {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on plug-in.
@@ -117,7 +119,7 @@ Updates to address
 - [CVE-2021-33910](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-33910){: external}
 - [CVE-2021-34558](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-34558){: external}
 
-## Changelog for version 1.0.0_575, released 23 July 2021
+## Changelog for version 1.0.0_575, released on 23 July 2021
 {: #1_0_0575}
 
 Review the changes in version 1.0.0_575 of the {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on plug-in.
@@ -132,7 +134,7 @@ Updates to address
 - [CVE-2021-3541](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3541){: external}
 - [CVE-2021-3520](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3520){: external}
 
-## Changelog for version 1.0.0_549, released 17 June 2021
+## Changelog for version 1.0.0_549, released on 17 June 2021
 {: #1_0_0549}
 
 Review the changes in version 1.0.0_549 of the {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on plug-in.
@@ -142,7 +144,7 @@ Updates to address
 - [CVE-2021-31525](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-31525){: external}
 - [CVE-2021-33194](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-33194){: external}
 
-## Changelog for version 1.0.0_529, released 2 June 2021
+## Changelog for version 1.0.0_529, released on 2 June 2021
 {: #1_0_0529}
 
 Review the changes in version 1.0.0_529 of the {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on plug-in.
@@ -188,7 +190,7 @@ Updates to address
 - [RHSA-2021:1679](https://access.redhat.com/errata/RHSA-2021:1679){: external}
 - [RHSA-2021:1702](https://access.redhat.com/errata/RHSA-2021:1702){: external}
 
-## Changelog for version 1.0.0_485, released 28 April 2021
+## Changelog for version 1.0.0_485, released on 28 April 2021
 {: #1_0_0485}
 
 Review the changes in version 1.0.0_485 of the {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on plug-in.
@@ -197,7 +199,7 @@ Review the changes in version 1.0.0_485 of the {{site.data.keyword.cloud_notm}} 
 Updates to address
 - [CVE-2021-20305](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20305){: external}
 
-## Changelog for version 1.0.0_473, released 19 April 2021
+## Changelog for version 1.0.0_473, released on 19 April 2021
 {: #1_0_0473}
 
 Review the changes in version 1.0.0_473 of the {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on plug-in.
@@ -208,7 +210,7 @@ Updates to address
 - [CVE-2021-28851](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-28851){: external}
 - [CVE-2021-28852](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-28852){: external}
 
-## Changelog for version 1.0.0_461, released 14 April 2021
+## Changelog for version 1.0.0_461, released on 14 April 2021
 {: #1_0_0461}
 
 Review the changes in version 1.0.0_461 of the {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on plug-in.
@@ -218,7 +220,7 @@ Updates to address
 - [CVE-2021-3449](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3449){: external}
 - [CVE-2021-3450](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3450){: external}
 
-## Changelog for version 1.0.0_438, released 30 March 2021
+## Changelog for version 1.0.0_438, released on 30 March 2021
 {: #1_0_0438}
 
 Review the changes in version 1.0.0_438 of the {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on plug-in.
