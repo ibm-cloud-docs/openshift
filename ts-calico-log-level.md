@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2021, 2021
-lastupdated: "2021-11-18"
+lastupdated: "2021-11-19"
 
 keywords: openshift
 
@@ -116,7 +116,7 @@ Complete the following steps to increase the log level for the `calico-node` com
     ```
     {: pre}    
     
-3. Save the change. After saving your changes, all the pods in the `calico-node` daemonset complete a rolling update which applies the changes. The `calico-cni` also applies any changes to logging levels in the `kube-system/calico-config` configmap.
+3. Save the change. After saving your changes, all the pods in the `calico-node` daemonset complete a rolling update that applies the changes. The `calico-cni` also applies any changes to logging levels in the `kube-system/calico-config` configmap.
 
 Complete the following steps to increase the log level for the `calico-kube-controllers` component.
 
