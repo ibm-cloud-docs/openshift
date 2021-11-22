@@ -35,7 +35,7 @@ Review the release notes for November 2021.
 {: release-note}
 
 Worker node fix pack update
-:   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.8.20_1536_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4820_1536),[`4.7.36_1540_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4737_1540), [`4.6.49_1564_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4649_1564), and [3.11.542_1612_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311542_1612).
+:   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.8.20_1536_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4820_1536), [`4.7.36_1540_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4737_1540), [`4.6.49_1564_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4649_1564), and [`3.11.542_1612_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311542_1612).
 
 {{site.data.keyword.block_storage_is_short}} add-on.
 :   [Version 4.0.2_788](/docs/containers?topic=containers-vpc_bs_changelog) is released.
