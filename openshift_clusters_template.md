@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-22"
 
 keywords: openshift, clusters
 
@@ -47,7 +47,7 @@ The following resources are provisioned by default, but you can customize some o
 *   1 {{site.data.keyword.cloudaccesstraillong_notm}} instance to enable audit logs from the cluster, such as when a user creates a call against the {{site.data.keyword.openshiftlong_notm}} API.
 *   1 {{site.data.keyword.monitoringlong_notm}} instance to enable metrics such as node usage from the cluster.
 *   1 {{site.data.keyword.keymanagementservicelong_notm}} instance and customer root key (CRK) to encrypt the cluster master, including Kubernetes secrets in the cluster.
-*   1 {{site.data.keyword.cos_full_notm}} instance and bucket to back up certain [cluster data](/docs/containers?topic=containers-service-arch#ibm-data). You cannot select your own instance.
+*   1 {{site.data.keyword.cos_full_notm}} instance and bucket to back up certain [cluster data](/docs/containers?topic=containers-service-arch#ibm-data). You can't select your own instance.
 
 
 ## Creating a secure cluster by using a template from the UI
@@ -68,7 +68,7 @@ With the secure cluster template, you can create a cluster from the UI with {{si
 
     - **VPC**: Review the subnet IP range for your location. 
 
-    - **Resource details**: Review the resource prefix that is automatically added to each {{site.data.keyword.cloud_notm}} resource that is created. You can also optionally provide your own {{site.data.keyword.cloud_notm}} IAM API key if you do not need a new API key generated for you.
+    - **Resource details**: Review the resource prefix that is automatically added to each {{site.data.keyword.cloud_notm}} resource that is created. You can also optionally provide your own {{site.data.keyword.cloud_notm}} IAM API key if you don't need a new API key generated for you.
     - **Integrations**: A new instance of each of the following {{site.data.keyword.cloud_notm}} services is created for you by default. You can edit the template to select an existing instance.
 4. In the **Summary** pane, click **Create**.
 

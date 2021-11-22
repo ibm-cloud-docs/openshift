@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -34,7 +34,7 @@ In {{site.data.keyword.cloud_notm}}, each resource must be in a resource group. 
 
 When the account owner gives you access to resources by assigning you an {{site.data.keyword.cloud_notm}} IAM platform access role, the access can be to a specific resource or to the resource group. When you are given access to a specific resource, you don't have access to the resource group. In this case, you don't need to target a resource group to work with the clusters you have access to. If you target a different resource group than the group that the cluster is in, actions against that cluster can fail. Conversely, when you are given access to a resource as part of your access to a resource group, you must target a resource group to work with a cluster in that group. If you don't target your CLI session to the resource group that the cluster is in, actions against that cluster can fail.
 
-If you cannot find or work with a cluster, you might be experiencing one of the following issues:
+If you can't find or work with a cluster, you might be experiencing one of the following issues:
 * You have access to the cluster and the resource group that the cluster is in, but your CLI session is not targeted to the resource group that the cluster is in.
 * You have access to the cluster, but not as part of the resource group that the cluster is in. Your CLI session is targeted to this or another resource group.
 * You don't have access to the cluster.
@@ -43,7 +43,7 @@ If you cannot find or work with a cluster, you might be experiencing one of the 
 To check your user access permissions:
 {: tsResolve}
 
-1. List all of your user permissions.
+1. List all your user permissions.
     ```sh
     ibmcloud iam user-policies <your_user_name>
     ```
@@ -77,7 +77,7 @@ To check your user access permissions:
         ```
         {: screen}
 
-    3. If you have both of these policies, skip to Step 4, first bullet. If you don't have the policy from Step 2a, but you do have the policy from Step 2b, skip to Step 4, second bullet. If you do not have either of these policies, continue to Step 3.
+    3. If you have both of these policies, skip to Step 4, first bullet. If you don't have the policy from Step 2a, but you do have the policy from Step 2b, skip to Step 4, second bullet. If you don't have either of these policies, continue to Step 3.
 
 3. Check if you have access to the cluster, but not as part of access to the resource group that the cluster is in.
     1. Look for a policy that has no values besides the **Policy ID** and **Roles** fields. If you have this policy, you have access to the cluster as part of access to the entire account. For example, this policy indicates that a user has access to all resources in the account:
@@ -106,7 +106,7 @@ To check your user access permissions:
         ```
         {: screen}
 
-    3. If you have either of these policies, skip to the second bullet point of step 4. If you do not have either of these policies, skip to the third bullet point of step 4.
+    3. If you have either of these policies, skip to the second bullet point of step 4. If you don't have either of these policies, skip to the third bullet point of step 4.
 
 4. Depending on your access policies, choose one of the following options. 
 
@@ -136,7 +136,7 @@ To check your user access permissions:
             ```
             {: pre}
 
-    - If you do not have access to the cluster:
+    - If you don't have access to the cluster:
         1. Ask your account owner to assign an [{{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) to you for that cluster.
         2. Do not target a resource group. If you already targeted a resource group, untarget it:
             ```sh

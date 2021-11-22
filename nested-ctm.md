@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift, help, network, dns, health check
 
@@ -27,7 +27,7 @@ When you try to include Ingress subdomains that have health checks enabled in yo
 {: tsSymptoms}
 
 
-Akamai Global Traffic Managment (GTM) configurations do not support nested subdomains.
+Akamai Global Traffic Managment (GTM) configurations don't support nested subdomains.
 {: tsCauses}
 
 Disable the default health check for the Ingress subdomain. For more information see the `nlb-dns monitor disable` [command reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-disable).

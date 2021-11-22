@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-02"
+lastupdated: "2021-11-22"
 
 keywords: openshift, noobaa, openshift container storage, openshift data foundation, storage classes
 
@@ -42,7 +42,7 @@ To add a backing store to your storage cluster by using the NooBaa CLI:
     ```
     {: pre}
 
-    **Example output**
+    Example output
     ```sh
     Create backing store
 

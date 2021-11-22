@@ -21,7 +21,7 @@ View information for patch updates to the cluster autoscaler add-on in your {{si
 {: shortdesc}
 
 Patch updates
-:   Patch updates are delivered automatically by IBM and do not contain any feature updates or changes in the supported add-on and cluster versions.
+:   Patch updates are delivered automatically by IBM and don't contain any feature updates or changes in the supported add-on and cluster versions.
 
 Release updates
 :   Release updates contain new features for the cluster autoscaler or changes in the supported add-on or cluster versions. You must manually apply release updates to your cluster autoscaler add-on. To update your cluster autoscaler add-on, see [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-ca#ca_addon_up).
@@ -130,7 +130,7 @@ Review the changes in version `1.0.3_352` of the cluster autoscaler add-on.
 ## Version 1.0.2
 {: #0102_ca_addon}
 
-Review the changes that are included in version 1.0.2 of the managed cluster autoscaler add-on.
+Review the changes that are in version 1.0.2 of the managed cluster autoscaler add-on.
 {: shortdesc}
 
 
@@ -180,7 +180,7 @@ Review the changes in version `1.0.2_224` of the cluster autoscaler add-on.
 ## Version 1.0.1
 {: #0101_ca_addon}
 
-Review the changes that are included in version 1.0.1 of the managed cluster autoscaler add-on.  
+Review the changes that are in version 1.0.1 of the managed cluster autoscaler add-on.  
 {: shortdesc}
 
 
@@ -268,7 +268,7 @@ Review the changes in version `1.0.1_114` of the cluster autoscaler add-on.
 - Image tags: `1.15.4-4`, `1.16.2-5`, `1.17.0-6`, and `1.18.1-5`.  
 - Supported cluster versions: 4.3 - 4.5  
 - Includes fixes for `CVE-5188` and `CVE-3180`.  
-- Unlike the previous Helm chart, you can modify all of the add-on configuration settings via a single configmap.  
+- Unlike the previous Helm chart, you can modify all the add-on configuration settings via a single configmap.  
 
 
 

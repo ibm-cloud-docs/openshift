@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -20,7 +20,7 @@ subcollection: openshift
 Set up a Load Balancer for VPC to expose your app on the public or private network.
 {: shortdesc}
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC load balancers can be created for VPC clusters only, and cannot be created for classic clusters. To load balance in classic clusters, see [Classic: About network load balancers (NLBs)](/docs/containers?topic=containers-loadbalancer-about).
+![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC load balancers can be created for VPC clusters only, and can't be created for classic clusters. To load balance in classic clusters, see [Classic: About network load balancers (NLBs)](/docs/containers?topic=containers-loadbalancer-about).
 
 ## About VPC load balancing in {{site.data.keyword.openshiftlong_notm}}
 {: #lbaas_about}
@@ -155,7 +155,7 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     </tr>
     <tr>
         <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type</code></td>
-    <td>Optional: Annotation to specify a service that accepts public requests. If you do not include this annotation, a public VPC NLB is created.</td>
+    <td>Optional: Annotation to specify a service that accepts public requests. If you don't include this annotation, a public VPC NLB is created.</td>
     </tr>
     <tr>
         <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector</code></td>
@@ -183,7 +183,7 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     <tr>
         <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-zone</code></td>
     <td>Optional: Annotation to specify a VPC zone that your cluster is attached to. The VPC NLB is deployed to the same subnet in that zone that your worker nodes are connected to. Because the VPC NLB is single-zone, only worker nodes in your cluster in this zone are configured to receive traffic.
-    <p>To see zones, run <code>ibmcloud oc zone ls --provider vpc-gen2</code>.If you later change this annotation to a different zone, the VPC NLB is not moved to the new zone.</br></br>Note that if you do not specify this annotation or the <code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets</code> annotation, the VPC NLB is deployed to the most optimal zone. For example, the VPC NLB is deployed only to zones in which worker nodes exist and are in the <code>Ready</code> state.</p></td>
+    <p>To see zones, run <code>ibmcloud oc zone ls --provider vpc-gen2</code>.If you later change this annotation to a different zone, the VPC NLB is not moved to the new zone.</br></br>Note that if you don't specify this annotation or the <code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets</code> annotation, the VPC NLB is deployed to the most optimal zone. For example, the VPC NLB is deployed only to zones in which worker nodes exist and are in the <code>Ready</code> state.</p></td>
     </tr>
     <tr>
         <td><code>selector</code></td>
@@ -294,12 +294,12 @@ Expose your app to private network traffic by setting up a Kubernetes `LoadBalan
 
 **To enable your app to receive private network requests:**
 
-1. Create a VPC subnet that is dedicated to your VPC NLB. This subnet must exist in the same VPC and location as your cluster, but cannot be attached to your cluster or any worker nodes.
+1. Create a VPC subnet that is dedicated to your VPC NLB. This subnet must exist in the same VPC and location as your cluster, but can't be attached to your cluster or any worker nodes.
     1. From the [VPC subnet dashboard](https://cloud.ibm.com/vpc/network/subnets){: external}, click **New subnet**.
     2. Enter a name for your subnet.
     3. Select the location where your cluster exists and the zone where you want to create the VPC NLB.
     4. Select the name of the VPC where your cluster exists.
-    5. Specify the number of IP addresses to create. Because this subnet is dedicated to the VPC NLB, you might choose a smaller size, such as 16. You cannot change the number of IPs that a VPC subnet has later. If you enter a specific IP range, do not use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
+    5. Specify the number of IP addresses to create. Because this subnet is dedicated to the VPC NLB, you might choose a smaller size, such as 16. You can't change the number of IPs that a VPC subnet has later. If you enter a specific IP range, don't use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
     6. Click **Create subnet**. After the subnet is provisioned, note its **ID**.
 
 2. If the client that must connect to your app through the VPC NLB exists outside of the VPC and zone that you created the dedicated VPC subnet in, you must create a custom ingress routing table. Private VPC NLBs might add rules to the custom routing table to ensure service availability for some failure conditions. For more information, see the table in the [known limitations](/docs/vpc?topic=vpc-nlb-limitations) and [About routing tables and routes](/docs/vpc?topic=vpc-about-custom-routes).
@@ -474,7 +474,7 @@ VPC NLBs provide static external IP addresses through which you can access your 
 
 For example, say that you have a multizone cluster, and run replicas of your app on worker nodes in each zone of your cluster. You [create one VPC NLB](#setup_vpc_nlb) per zone to expose the app replicas. Then, you can register the external IP addresses provided by each VPC NLB with one DNS entry.
 
-After you create a DNS subdomain for VPC NLBs, you cannot use `nlb-dns health-monitor` commands to create a custom health check. Instead, the default VPC health check is used. For more information, see the [VPC documentation](/docs/vpc?topic=vpc-nlb-health-checks).
+After you create a DNS subdomain for VPC NLBs, you can't use `nlb-dns health-monitor` commands to create a custom health check. Instead, the default VPC health check is used. For more information, see the [VPC documentation](/docs/vpc?topic=vpc-nlb-health-checks).
 {: note}
 
 **Before you begin:**
@@ -597,7 +597,7 @@ Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.op
     </tr>
     <tr>
         <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type</code></td>
-    <td>Annotation to specify a service that accepts public or private requests. If you do not include this annotation, a public <code>LoadBalancer</code> is created.</td>
+    <td>Annotation to specify a service that accepts public or private requests. If you don't include this annotation, a public <code>LoadBalancer</code> is created.</td>
     </tr>
     <tr>
         <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector</code></td>
@@ -629,7 +629,7 @@ Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.op
         <li>Only worker nodes in your cluster in this zone are configured to receive traffic from the VPC ALB.</li></ul>
         <p>To see zones, run <code>ibmcloud oc zone ls --provider vpc-gen2</code>.</p>    
         <p>To place the load balancer in a specific zone, you must specify this annotation when you create the load balancer. If you later change this annotation to a different zone, the load balancer itself is not moved to the new zone. However, the load balancer is reconfigured to send traffic to only worker nodes in the new zone.</p>
-        <p>If the <code>dedicated: edge</code> label is set on worker nodes and you specify this annotation, then only edge nodes in the specified zone are configured to receive traffic. Edge nodes in other zones and non-edge nodes in the specified zone do not receive traffic from the load balancer.</p>
+        <p>If the <code>dedicated: edge</code> label is set on worker nodes and you specify this annotation, then only edge nodes in the specified zone are configured to receive traffic. Edge nodes in other zones and non-edge nodes in the specified zone don't receive traffic from the load balancer.</p>
     </td>
     </tr>
     <tr>
@@ -656,7 +656,7 @@ Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.op
 
 4. Verify that the Kubernetes `LoadBalancer` service is created successfully in your cluster. When the service is created, the **LoadBalancer Ingress** field is populated with a hostname that is assigned by the VPC ALB.
 
-    **The VPC ALB takes a few minutes to provision in your VPC.** You cannot access your app by using the hostname of your Kubernetes `LoadBalancer` service until the VPC ALB is fully provisioned.
+    **The VPC ALB takes a few minutes to provision in your VPC.** You can't access your app by using the hostname of your Kubernetes `LoadBalancer` service until the VPC ALB is fully provisioned.
     {: note}
 
     ```sh
@@ -738,7 +738,7 @@ Do not delete the subnets that you attached to your cluster during cluster creat
 The Application Load Balancer for VPC (VPC ALB) provides a default HTTP hostname in the format `1234abcd-<region>.lb.appdomain.cloud` through which you can access your app. However, if you want a TLS certificate for your app domain to support HTTPS, you can create an IBM-provided subdomain or bring your own custom domain for both public and private VPC ALBs.
 {: shortdesc}
 
-After you create a DNS subdomain for a VPC ALB hostname, you cannot use `nlb-dns health-monitor` commands to create a custom health check. Instead, the default VPC load balancer health check that is provided for the default VPC ALB hostname is used. For more information, see the [VPC documentation](/docs/vpc?topic=vpc-alb-health-checks).
+After you create a DNS subdomain for a VPC ALB hostname, you can't use `nlb-dns health-monitor` commands to create a custom health check. Instead, the default VPC load balancer health check that is provided for the default VPC ALB hostname is used. For more information, see the [VPC documentation](/docs/vpc?topic=vpc-alb-health-checks).
 {: note}
 
 **Before you begin**:
@@ -800,14 +800,14 @@ Review the following default settings and limitations.
 {: shortdesc}
 
 * Review [known limitations for VPC ALBs](/docs/vpc?topic=vpc-lb-limitations) and [known limitations for VPC NLBs](/docs/vpc?topic=vpc-nlb-limitations).
-* Private VPC ALBs do not accept all traffic, only RFC 1918 traffic.
-* Private VPC NLBs must be created on a dedicated VPC subnet that must exist in the same VPC and location as your cluster, but the subnet cannot be attached to your cluster or any worker nodes.
-* All VPC load balancers do not currently support UDP.
+* Private VPC ALBs don't accept all traffic, only RFC 1918 traffic.
+* Private VPC NLBs must be created on a dedicated VPC subnet that must exist in the same VPC and location as your cluster, but the subnet can't be attached to your cluster or any worker nodes.
+* All VPC load balancers don't currently support UDP.
 * {{site.data.keyword.openshiftshort}} 4.6 or later: Although the Kubernetes [SCTP protocol](https://kubernetes.io/docs/concepts/services-networking/service/#sctp){: external} and [application protocol](https://kubernetes.io/docs/concepts/services-networking/service/#application-protocol){: external} features are generally available in the community release, creating load balancers that use these protocols is not supported in {{site.data.keyword.containerlong_notm}} clusters.
-* One VPC load balancer is created for each Kubernetes `LoadBalancer` service that you create, and it routes requests to that Kubernetes `LoadBalancer` service only. Across all of your VPC clusters in your VPC, a maximum of 50 VPC load balancers can be created. For more information, see the [VPC quotas documentation](/docs/vpc?topic=vpc-quotas#load-balancer-quotas).
+* One VPC load balancer is created for each Kubernetes `LoadBalancer` service that you create, and it routes requests to that Kubernetes `LoadBalancer` service only. Across all your VPC clusters in your VPC, a maximum of 50 VPC load balancers can be created. For more information, see the [VPC quotas documentation](/docs/vpc?topic=vpc-quotas#load-balancer-quotas).
 * The VPC load balancer can route requests to pods that are deployed on a maximum of 50 worker nodes in a cluster.
     * If your cluster has more than 50 worker nodes and you set `externalTrafficPolicy: Cluster` when you configured the Kubernetes `LoadBalancer` service, the VPC load balancer can only route to the first 50 worker nodes that are returned in the cluster's API call to the VPC load balancer.
-    * If your cluster has more than 50 worker nodes and you set `externalTrafficPolicy: Local` when you configured the Kubernetes `LoadBalancer` service, the VPC load balancer fails and cannot forward traffic to any worker nodes. Instead, create one load balancer per zone. In each Kubernetes `LoadBalancer` service that you create, include the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"` annotation. Each load balancer can forward requests to apps on the worker nodes in that zone only, and can forwards requests to a maximum of 50 worker nodes in that zone.
+    * If your cluster has more than 50 worker nodes and you set `externalTrafficPolicy: Local` when you configured the Kubernetes `LoadBalancer` service, the VPC load balancer fails and can't forward traffic to any worker nodes. Instead, create one load balancer per zone. In each Kubernetes `LoadBalancer` service that you create, include the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"` annotation. Each load balancer can forward requests to apps on the worker nodes in that zone only, and can forwards requests to a maximum of 50 worker nodes in that zone.
 * When you define the configuration YAML file for a Kubernetes `LoadBalancer` service, the following annotations and settings are not supported:
     * `service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan: "<vlan_id>"`
     * `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "ipvs"`

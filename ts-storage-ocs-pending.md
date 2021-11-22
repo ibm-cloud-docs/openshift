@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2021
-lastupdated: "2021-10-29"
+lastupdated: "2021-11-22"
 
 keywords: openshift, storage
 
@@ -48,7 +48,7 @@ This error indicates that that the classic or VPC cluster where your ODF storage
     ```
     {: pre}
 
-    **Example output**:
+    Example output:
     ```sh
     NAME             AGE
     ocscluster-vpc   71d

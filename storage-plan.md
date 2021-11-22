@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -40,13 +40,13 @@ Before you can decide what type of storage is the right solution for your {{site
 3. If your app does not have a limitation on the type of storage that you must use, determine the type of data that you want to store.
     - **Structured data:** Data that you can store in a relational database where you have a table with columns and rows. Data in tables can be connected by using keys and is usually easy to access due to the pre-defined data model. Examples are phone numbers, account numbers, Social Security numbers, or postal codes.
     - **Semi-structured data:** Data that does not fit into a relational database, but that comes with some organizational properties that you can use to read and analyze this data more easily. Examples are markup language files such as CSV, XML, or JSON.  
-    - **Unstructured data:** Data that does not follow an organizational pattern and that is so complex that you cannot store it in a relational database with pre-defined data models. To access this data, you need advanced tools and software. Examples are e-mail messages, videos, photos, audio files, presentations, social media data, or web pages.
+    - **Unstructured data:** Data that does not follow an organizational pattern and that is so complex that you can't store it in a relational database with pre-defined data models. To access this data, you need advanced tools and software. Examples are e-mail messages, videos, photos, audio files, presentations, social media data, or web pages.
 
     If you have structured and unstructured data, try to store each data type separately in a storage solution that is designed for this data type. Using an appropriate storage solution for your data type eases up access to your data and gives you the benefits of performance, scalability, durability, and consistency.
     {: tip}
 
 4. Analyze how you want to access your data. Storage solutions are usually designed and optimized to support read or write operations.  
-    - **Read-only:** You do not want to write or change your data. Your data is read-only.
+    - **Read-only:** You don't want to write or change your data. Your data is read-only.
     - **Read and write:** You want to read, write, and change your data. For data that is read and written, it is important to understand if the operations are read-heavy, write-heavy, or balanced.
 
 5. Determine the frequency that your data is accessed. Understanding the frequency of data access can help you understand the performance that you require for your storage. For example, data that is accessed frequently usually resides on fast storage.
@@ -55,12 +55,12 @@ Before you can decide what type of storage is the right solution for your {{site
     - **Cold data:** Data that is rarely accessed, if at all. Common use cases are archives, long-term backups, historical data.
     - **Frozen data:** Data that is not accessed and that you need to keep due to legal reasons.
 
-    If you cannot predict the frequency or the frequency does not follow a strict pattern, determine whether your workloads are read-heavy, write-heavy, or balanced. Then, look at the storage option that fits your workload and investigate what storage tier gives you the flexibility that you need. For example, {{site.data.keyword.cos_full_notm}} provides a `flex` storage class that considers how frequent data is accessed in a month and takes into account this measurement to optimize your monthly billing.
+    If you can't predict the frequency or the frequency does not follow a strict pattern, determine whether your workloads are read-heavy, write-heavy, or balanced. Then, look at the storage option that fits your workload and investigate what storage tier gives you the flexibility that you need. For example, {{site.data.keyword.cos_full_notm}} provides a `flex` storage class that considers how frequent data is accessed in a month and takes into account this measurement to optimize your monthly billing.
     {: tip}
 
 6. Investigate if your data must be shared across multiple app instances, zones, or regions.
     - **Access across pods:** When you use Kubernetes persistent volumes to access your storage, you can determine the number of pods that can mount the volume at the same time. Some storage solutions, such as block storage, can be accessed by one pod at a time only. With other storage solutions, you can share volume across multiple pods.
-    - **Access across zones and regions:** You might require your data to be accessible across zones or regions. Some storage solutions, such as file and block storage, are data center-specific and cannot be shared across zones in a multizone cluster setup.
+    - **Access across zones and regions:** You might require your data to be accessible across zones or regions. Some storage solutions, such as file and block storage, are data center-specific and can't be shared across zones in a multizone cluster setup.
 
     If you want to make your data accessible across zones or regions, make sure to consult your legal department to verify that your data can be stored in multiple zones or a different country.
     {: note}
@@ -128,7 +128,7 @@ The following image shows the options that you have in {{site.data.keyword.opens
 
 | Characteristics | Classic File Storage | Classic Block Storage / VPC Block Storage
 | --- | --- | --- |
-| Multizone-capable | No, as specific to a data center. Data cannot be shared across zones, unless you implement your own data replication. |No, as specific to a data center. Data cannot be shared across zones, unless you implement your own data replication. | 
+| Multizone-capable | No, as specific to a data center. Data can't be shared across zones, unless you implement your own data replication. |No, as specific to a data center. Data can't be shared across zones, unless you implement your own data replication. | 
 | Supported in VPC clusters | No | Yes |
 | Supported OpenShift versions | 3.11, 4.3 - 4.6 | 3.11, 4.3 - 4.6 |
 | Ideal data types | All | All | 
@@ -140,7 +140,7 @@ The following image shows the options that you have in {{site.data.keyword.opens
 | Durability | High | High | 
 | Resiliency| Medium as specific to a data center. File storage server is clustered by IBM with redundant networking.| Medium as specific to a data center. Block storage server is clustered by IBM with redundant networking. | 
 | Availability | Medium as specific to a data center. | Medium as specific to a data center. |
-| Scalability | Difficult to extend beyond the data center. You cannot change an existing storage tier. | Difficult to extend beyond the data center. You cannot change an existing storage tier. |
+| Scalability | Difficult to extend beyond the data center. You can't change an existing storage tier. | Difficult to extend beyond the data center. You can't change an existing storage tier. |
 | Encryption | At rest |   \n **Classic Block Storage**: Encryption at rest.   \n - **VPC Block Storage**: Encryption in transit with Key Protect.|
 | Backup and recovery | Set up periodic snapshots, replicate snapshots, duplicate storage, back up data to {{site.data.keyword.cos_full_notm}}, or copy data to and from pod and containers. |   \n **Classic Block Storage**: Set up periodic snapshots, replicate snapshots, duplicate storage, back up data to {{site.data.keyword.cos_full_notm}}, or copy data to and from pod and containers.  \n - **VPC Block Storage**: Kubernetes [`oc cp`](https://kubernetes.io/docs/reference/kubectl/overview/#cp) command. |
 | Common use cases | Mass or single file storage or file sharing across a single zone cluster. | Stateful sets, backing storage when you run your own database, or high-performance access for single pods. | 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift, lb2.0, nlb
 
@@ -17,7 +17,7 @@ subcollection: openshift
 # Classic: Setting up basic load balancing with an NLB 1.0
 {: #loadbalancer}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) Version 1.0 NLBs can be created in classic clusters only, and cannot be created in VPC clusters. To load balance in VPC clusters, see [Exposing apps with load balancers for VPC](/docs/containers?topic=containers-vpc-lbaas).
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) Version 1.0 NLBs can be created in classic clusters only, and can't be created in VPC clusters. To load balance in VPC clusters, see [Exposing apps with load balancers for VPC](/docs/containers?topic=containers-vpc-lbaas).
 {: note}
 
 Expose a port and use a portable IP address for a Layer 4 network load balancer (NLB) to expose a containerized app. For information about version 1.0 NLBs, see [Components and architecture of an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer-about#v1_planning).
@@ -28,7 +28,7 @@ Expose a port and use a portable IP address for a Layer 4 network load balancer 
 
 **Before you begin**:
 * To create public network load balancers (NLBs) in multiple zones, at least one public VLAN must have portable subnets available in each zone. To create private NLBs in multiple zones, at least one private VLAN must have portable subnets available in each zone. You can add subnets by following the steps in [Configuring subnets for clusters](/docs/containers?topic=containers-subnets).
-* Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the NLB 1.0 can route packets to various subnets in the account.
+* Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you can't or don't want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the NLB 1.0 can route packets to various subnets in the account.
 * Ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the `default` namespace.
 * Ensure you have the required number of worker nodes: If you restrict network traffic to edge worker nodes, ensure that at least two [edge worker nodes](/docs/openshift?topic=openshift-edge#edge) are enabled in each zone so that NLBs deploy uniformly.
 
@@ -61,7 +61,7 @@ To set up an NLB 1.0 service in a multizone cluster:
 
 
         `service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type`
-        :   Annotation to specify a `private` or `public` load balancer. If you do not specify this annotation and your worker nodes are connected to public VLANs, a public `LoadBalancer` service is created. If your worker nodes are connected to private VLANs only, a private `LoadBalancer` service is created.
+        :   Annotation to specify a `private` or `public` load balancer. If you don't specify this annotation and your worker nodes are connected to public VLANs, a public `LoadBalancer` service is created. If your worker nodes are connected to private VLANs only, a private `LoadBalancer` service is created.
         
         `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone`
         :   Annotation to specify the zone that the load balancer service deploys to. To see zones, run `ibmcloud oc zone ls`.
@@ -76,7 +76,7 @@ To set up an NLB 1.0 service in a multizone cluster:
         :   The port that the service listens on.
         
         `loadBalancerIP`
-        :   Optional: To create a private load balancer or to use a specific portable IP address for a public load balancer, specify the IP address that you want to use. The IP address must be on the VLAN and zone that you specify in the annotations. If you do not specify an IP address:
+        :   Optional: To create a private load balancer or to use a specific portable IP address for a public load balancer, specify the IP address that you want to use. The IP address must be on the VLAN and zone that you specify in the annotations. If you don't specify an IP address:
         :   If your cluster is on a public VLAN, a portable public IP address is used. Most clusters are on a public VLAN.
         :   If your cluster is on a private VLAN only, a portable private IP address is used.
 
@@ -169,7 +169,7 @@ Next, you can [register an NLB subdomain](/docs/containers?topic=containers-load
 
 To create an NLB 1.0 service in a single-zone cluster:
 
-1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file. This label is needed to identify all pods where your app runs so that they can be included in the load balancing.
+1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file. This label is needed to identify all pods where your app runs so that they are in the load balancing.
 2. Create a load balancer service for the app that you want to expose to the public internet or a private network.
     1. Create a service configuration file that is named, for example, `myloadbalancer.yaml`.
 
@@ -204,7 +204,7 @@ To create an NLB 1.0 service in a single-zone cluster:
         :   The port that the service listens on.
         
         `loadBalancerIP`
-        :   Optional: To create a private load balancer or to use a specific portable IP address for a public load balancer, specify the IP address that you want to use. The IP address must be on the VLAN that you specify in the annotations. If you do not specify an IP address:
+        :   Optional: To create a private load balancer or to use a specific portable IP address for a public load balancer, specify the IP address that you want to use. The IP address must be on the VLAN that you specify in the annotations. If you don't specify an IP address:
         :   If your cluster is on a public VLAN, a portable public IP address is used. Most clusters are on a public VLAN.
         :   If your cluster is on a private VLAN only, a portable private IP address is used.
 
@@ -308,7 +308,7 @@ To force your app to deploy to specific worker nodes where load balancer service
 ### Adding edge node affinity rules and tolerations
 {: #lb_edge_nodes}
 
-When you [label worker nodes as edge nodes](/docs/openshift?topic=openshift-edge#edge_nodes) and also [taint the edge nodes](/docs/openshift?topic=openshift-edge#edge_workloads), load balancer service pods deploy only to those edge nodes, and app pods cannot deploy to edge nodes. When source IP is enabled for the NLB service, the load balancer pods on the edge nodes cannot forward incoming requests to your app pods on other worker nodes.
+When you [label worker nodes as edge nodes](/docs/openshift?topic=openshift-edge#edge_nodes) and also [taint the edge nodes](/docs/openshift?topic=openshift-edge#edge_workloads), load balancer service pods deploy only to those edge nodes, and app pods can't deploy to edge nodes. When source IP is enabled for the NLB service, the load balancer pods on the edge nodes can't forward incoming requests to your app pods on other worker nodes.
 {: shortdesc}
 
 To force your app pods to deploy to edge nodes, add an edge node [affinity rule](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external} and [toleration](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external} to the app deployment.

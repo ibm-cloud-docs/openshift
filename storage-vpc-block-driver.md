@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift, vpc, block storage
 
@@ -192,7 +192,7 @@ Select the {{site.data.keyword.block_storage_is_short}} driver configmap that ma
     ```
     {: pre}
 
-    **Example output**:
+    Example output:
 
     ```sh
     NAME                   ATTACHREQUIRED   PODINFOONMOUNT   MODES        AGE
@@ -206,7 +206,7 @@ Select the {{site.data.keyword.block_storage_is_short}} driver configmap that ma
     ```
     {: pre}
 
-    **Example output**
+    Example output
     ```sh
     NAME                                    PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
     local-path (default)                    rancher.io/local-path   Delete          WaitForFirstConsumer   false                  8d
@@ -303,7 +303,7 @@ After you deploy the {{site.data.keyword.block_storage_is_short}} driver, you ca
     ```
     {: pre}
 
-    **Example output**
+    Example output
     ```sh
     NAME    READY   STATUS    RESTARTS   AGE
     web-0   1/1     Running   0          2m52s

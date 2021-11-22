@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: kubernetes, openshift
 
@@ -29,7 +29,7 @@ Review the following frequently asked questions about service binding.
 ### What types of services can I bind to my cluster?
 {: #svc-bind-types}
 
-When you add {{site.data.keyword.cloud_notm}} services to your cluster, you can choose between services that are enabled for {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) and services that are based on Cloud Foundry. IAM-enabled services offer more granular access control and can be managed in an {{site.data.keyword.cloud_notm}} resource group. Cloud Foundry services must be added to a Cloud Foundry organization and space, and cannot be added to a resource group. To control access to your Cloud Foundry service instance, you use Cloud Foundry roles. For more information about IAM-enabled services and Cloud Foundry services, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
+When you add {{site.data.keyword.cloud_notm}} services to your cluster, you can choose between services that are enabled for {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) and services that are based on Cloud Foundry. IAM-enabled services offer more granular access control and can be managed in an {{site.data.keyword.cloud_notm}} resource group. Cloud Foundry services must be added to a Cloud Foundry organization and space, and can't be added to a resource group. To control access to your Cloud Foundry service instance, you use Cloud Foundry roles. For more information about IAM-enabled services and Cloud Foundry services, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 
 To find a list of supported {{site.data.keyword.cloud_notm}} services, see the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog).
 
@@ -66,7 +66,7 @@ Your service might not yet support private cloud service endpoints.
 
 You can use service binding only for services that support service keys so that the service credentials can automatically be created and stored in a Kubernetes secret. To find a list of services that support service keys, see [Enabling external apps to use {{site.data.keyword.cloud_notm}} services](/docs/account?topic=account-externalapp#externalapp).
 
-Services that do not support service keys usually provide an API that you can use in your app. The service binding method does not automatically set up API access for your app. Make sure to review the API documentation of your service and implement the API interface in your app.
+Services that don't support service keys usually provide an API that you can use in your app. The service binding method does not automatically set up API access for your app. Make sure to review the API documentation of your service and implement the API interface in your app.
 
 ### Can I bind multiple {{site.data.keyword.cloud_notm}} services to multiple clusters at once?
 {: #svc-bind-trusted-profile}
@@ -135,7 +135,7 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
     ```
     {: pre}
 
-4. Bind the service to your cluster to create service credentials for your service that use the public cloud service endpoint and store the credentials in a Kubernetes secret. If you have existing service credentials, use the `--key` flag to specify the name of the credentials. For IAM-enabled services, the credentials are automatically created with the **Writer** service access role, but you can use the `--role` flag to specify a different service access role. If you use the `--key` flag, do not include the `--role` flag.
+4. Bind the service to your cluster to create service credentials for your service that use the public cloud service endpoint and store the credentials in a Kubernetes secret. If you have existing service credentials, use the `--key` flag to specify the name of the credentials. For IAM-enabled services, the credentials are automatically created with the **Writer** service access role, but you can use the `--role` flag to specify a different service access role. If you use the `--key` flag, don't include the `--role` flag.
 
     If your service supports private cloud service endpoints, you can manually create the service credentials with the private cloud service endpoint, and then use the `--key` flag to specify the name of your credentials.
     {: tip}
@@ -492,7 +492,7 @@ You can add the service credentials and other key value pairs from your Kubernet
 ## Removing a service from a cluster
 {: #unbind-service}
 
-If you do not want to use an {{site.data.keyword.cloud_notm}} service that you bound to your cluster, you can manually remove the Kubernetes secret and the pods that access the secret from your cluster.
+If you don't want to use an {{site.data.keyword.cloud_notm}} service that you bound to your cluster, you can manually remove the Kubernetes secret and the pods that access the secret from your cluster.
 {: shortdesc}
 
 1. List the services that are bound to your cluster and note the name of your service and the project that the service is bound to.

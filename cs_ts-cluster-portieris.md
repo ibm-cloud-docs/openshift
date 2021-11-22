@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -27,7 +27,7 @@ Portieris image security enforcement add-on does not install.  You see a master 
 {: tsSymptoms}
 
 ```
-Image security enforcement update cancelled. CAE008: Cannot enable Portieris image security enforcement because the cluster already has a conflicting image admission controller installed. For more information, see the troubleshooting docs: 'https://ibm.biz/portieris_enable'
+Image security enforcement update cancelled. CAE008: can't enable Portieris image security enforcement because the cluster already has a conflicting image admission controller installed. For more information, see the troubleshooting docs: 'https://ibm.biz/portieris_enable'
 ```
 {: screen}
 
@@ -46,7 +46,7 @@ Identify and remove the conflicting image admission controller.
 {: tsResolve}
 
 1. Check for existing image admission controllers.
-    *   Check if you have an existing container image security enforcement deployment in your cluster. If no output is returned, you do not have the deployment.
+    *   Check if you have an existing container image security enforcement deployment in your cluster. If no output is returned, you don't have the deployment.
         ```sh
         oc get deploy cise-ibmcloud-image-enforcement -n ibm-system
         ```
@@ -59,7 +59,7 @@ Identify and remove the conflicting image admission controller.
         ```
         {: pre}
 
-    *   Check if you have an existing Portieris deployment in your cluster. If no output is returned, you do not have the deployment.
+    *   Check if you have an existing Portieris deployment in your cluster. If no output is returned, you don't have the deployment.
         ```sh
         oc get deployment --all-namespaces -l app=portieries
         ```

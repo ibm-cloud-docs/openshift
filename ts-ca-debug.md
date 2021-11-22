@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -34,7 +34,7 @@ Check that your cluster runs the latest version of the cluster autoscaler Helm c
     ```
     {: pre}
 
-    **Example output**
+    Example output
     ```sh
     NAME                          REVISION    UPDATED                     STATUS  CHART                               APP VERSION    NAMESPACE  
     ibm-iks-cluster-autoscaler    1           Wed Aug 28 16:38:23 2019    DEPLOYEDibm-iks-cluster-autoscaler-1.0.8                   kube-system
@@ -57,7 +57,7 @@ Check that the cluster autoscaler is configured correctly.
 2. In the `data.workerPoolsConfig.json` field, check that the correct worker pools are enabled with the minimum and maximum size per worker pool.
 
     *  **`"name": "<worker_pool_name>"`**: The name of your worker pool in the configmap must be exactly the same as the name of the worker pool in your cluster. Multiple worker pools must be comma-separated. To check the name of your cluster worker pools, run `ibmcloud oc worker-pool ls -c <cluster_name_or_ID>`.
-    *  **`"minSize": 2`**: In general, the `minSize` must be `2` or greater. Remember that the`minSize` value cannot be `0`, and you can only have a `minSize` of 1 if you [disable the public ALBs](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure).
+    *  **`"minSize": 2`**: In general, the `minSize` must be `2` or greater. Remember that the`minSize` value can't be `0`, and you can only have a `minSize` of 1 if you [disable the public ALBs](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure).
     * **`"maxSize": 3`**: The `maxSize` must be equal to or greater than the `minSize`.
     * **`"enabled": true`**: Set the value to `true` to enable autoscaling the worker pool.
 
@@ -68,7 +68,7 @@ Check that the cluster autoscaler is configured correctly.
     ```
     {: screen}
 
-3. In the `metadata.annotations.workerPoolsConfigStatus` field, check for a **FAILED CODE** error message. Follow any recovery steps that are included in the error message. For example, you might get a message similar to the following, where you must have the correct permissions to the resource group that the cluster is in.
+3. In the `metadata.annotations.workerPoolsConfigStatus` field, check for a **FAILED CODE** error message. Follow any recovery steps that are in the error message. For example, you might get a message similar to the following, where you must have the correct permissions to the resource group that the cluster is in.
 
     ```yaml
     annotations:
@@ -80,7 +80,7 @@ Check that the cluster autoscaler is configured correctly.
         that your cluster and the other IBM Cloud resources that you are trying to use
         are in the same resource group. Verify that you have permissions to work with
         the resource group. If you think that the resource group is set up correctly
-        and you still cannot use it, contact IBM Cloud support.\"}"}'
+        and you still can't use it, contact IBM Cloud support.\"}"}'
     ```
     {: screen}
 
@@ -165,7 +165,7 @@ Check the health of the cluster autoscaler pod.
 
 Search the logs of the cluster autoscaler pod for relevant messages, such as failure messages like `lastScaleDownFailTime`, the `Final scale-up plan`, or [cluster autoscaler events](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#what-events-are-emitted-by-ca){: external}.
 
-If your cluster autoscaler pod is unhealthy and cannot stream logs, check your [{{site.data.keyword.la_full}} instance](https://cloud.ibm.com/observe/logging) for the pod logs. Note that if your cluster administrator did not [enable {{site.data.keyword.la_short}} for your cluster](/docs/containers?topic=containers-health), you might not have any logs to review.
+If your cluster autoscaler pod is unhealthy and can't stream logs, check your [{{site.data.keyword.la_full}} instance](https://cloud.ibm.com/observe/logging) for the pod logs. Note that if your cluster administrator did not [enable {{site.data.keyword.la_short}} for your cluster](/docs/containers?topic=containers-health), you might not have any logs to review.
 {: tip}
 
 ```sh
@@ -176,7 +176,7 @@ oc logs -n kube-system <pod_name> > logs.txt
 ## Step 5: Restart the pod
 {: #ca-debug-pod-restart}
 
-If you do not find any failures or error messages and you already enabled logging, restart the cluster autoscaler pod. The deployment re-creates the pod.
+If you don't find any failures or error messages and you already enabled logging, restart the cluster autoscaler pod. The deployment re-creates the pod.
 
 ```sh
 oc delete pod -n kube-system <pod_name>
@@ -194,7 +194,7 @@ Optional: If you completed the debugging steps and your cluster still does not s
     ```
     {: pre}
 
-    **Example output**:
+    Example output:
     ```yaml
     apiVersion: v1
     data:

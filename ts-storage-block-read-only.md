@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -29,7 +29,7 @@ You might see the following symptoms:
 - When you run a `oc describe pod` command, you see the following error in the **Events** section: `MountVolume.SetUp failed for volume ... read-only`.
 
 
-If a network error occurs while a pod writes to a volume, IBM Cloud infrastructure protects the data on the volume from getting corrupted by changing the volume to a read-only mode. Pods that use this volume cannot continue to write to the volume and fail.
+If a network error occurs while a pod writes to a volume, IBM Cloud infrastructure protects the data on the volume from getting corrupted by changing the volume to a read-only mode. Pods that use this volume can't continue to write to the volume and fail.
 {: tsCauses}
 
 Verify the plug-in version, re-create your app, and gracefully reload your worker node.
@@ -55,7 +55,7 @@ Verify the plug-in version, re-create your app, and gracefully reload your worke
         ```
         {: pre}
 
-        **Example output**:
+        Example output:
         ```sh
         Node:               10.75.XX.XXX/10.75.XX.XXX
         Node-Selectors:  <none>

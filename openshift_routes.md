@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-22"
 
 keywords: openshift, route, router
 
@@ -134,13 +134,13 @@ The following diagram shows how a router directs network traffic from private ne
 
 | Route type | Use case |
 | ---------- | -------- |
-| Simple | If you do not need TLS encryption, create a simple route to handle non-encrypted HTTP traffic. |
+| Simple | If you don't need TLS encryption, create a simple route to handle non-encrypted HTTP traffic. |
 | Passthrough | When you want TLS connections to pass uninterruptedly from the client to your app pod, create a passthrough route. The router is not involved in TLS termination for encrypted HTTPS traffic, so the app pod must terminate the TLS connection. This type can also be used for HTTP/2 and for non-HTTP TLS endpoints. |
 | Edge | When your app pod is exposed on a non-encrypted HTTP endpoint, but you must handle encrypted HTTPS traffic, create an edge route. The TLS connection between the client and the router service is terminated, and the connection between the router service and your app pod is unencrypted. For more information, see the [{{site.data.keyword.openshiftshort}} edge route documentation](https://docs.openshift.com/container-platform/4.7/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}. |
 | Re-encrypt | When your app pod is exposed on an encrypted HTTPS endpoint and you must handle HTTPS traffic, create a re-encrypt route. The TLS connection between the client and the router service is terminated, and a new TLS connection between the router service and your app pod is created. For more information, see the [{{site.data.keyword.openshiftshort}} re-encrypt route documentation](https://docs.openshift.com/container-platform/4.7/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}. |
 {: caption="Types of routes based on TLS termination"}
 
-If you do not need to use a custom domain, you can use an IBM-provided route hostname in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
+If you don't need to use a custom domain, you can use an IBM-provided route hostname in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
 
 
 ## Router health checks
@@ -160,7 +160,7 @@ From 07 to 31 July 2021, the DNS provider is changed from Cloudflare to Akamai f
 
 - Cluster subdomains that were health checked in Cloudflare are now registered in the Akamai DNS as CNAME records. These CNAME records point to an Akamai Global Traffic Management domain that health checks the subdomains. When a client runs a DNS query for a health checked subdomain, a CNAME record is returned to the client, as opposed to Cloudflare, in which an A record was returned. If your client expects an A record for a subdomain that was health checked in Cloudflare, update your logic to accept a CNAME record.
 
-- During the migration, an Akamai Global Traffic Management (GTM) health check was automatically created for any subdomains that had a Cloudflare health check. If you previously created a Cloudflare health check for a subdomain, and you create an Akamai health check for the subdomain after the migration, the two Akamai health checks might conflict. Note that Akamai GTM configurations do not support nested subdomains. In these cases, you can use the `ibmcloud oc nlb-dns monitor disable` command to disable the Akamai health check that the migration automatically configured for your subdomain.
+- During the migration, an Akamai Global Traffic Management (GTM) health check was automatically created for any subdomains that had a Cloudflare health check. If you previously created a Cloudflare health check for a subdomain, and you create an Akamai health check for the subdomain after the migration, the two Akamai health checks might conflict. Note that Akamai GTM configurations don't support nested subdomains. In these cases, you can use the `ibmcloud oc nlb-dns monitor disable` command to disable the Akamai health check that the migration automatically configured for your subdomain.
 
 **VPC**: If you set up [VPC security groups](/docs/openshift?topic=openshift-vpc-network-policy#security_groups) or [VPC access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-network-policy#acls) to secure your cluster network, ensure that you create the rules to allow the necessary traffic from the {{site.data.keyword.openshiftshort}} control plane IP addresses. Alternatively, to allow the inbound traffic for router healthchecks, you can create one rule to allow all incoming traffic on port 80.
 
@@ -186,7 +186,7 @@ If your cluster is created on ![Classic infrastructure provider icon.](images/ic
     ```
     {: pre}
 
-2. Choose a domain for your app. **Version 4.6 and later**: Note that route URLs must be 130 characters or fewer **IBM-provided domain**: If you do not need to use a custom domain, a route hostname is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`. **Custom domain**: To specify a custom domain, work with your DNS provider or [{{site.data.keyword.cis_full}}](https://cloud.ibm.com/catalog/services/internet-services).
+2. Choose a domain for your app. **Version 4.6 and later**: Note that route URLs must be 130 characters or fewer **IBM-provided domain**: If you don't need to use a custom domain, a route hostname is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`. **Custom domain**: To specify a custom domain, work with your DNS provider or [{{site.data.keyword.cis_full}}](https://cloud.ibm.com/catalog/services/internet-services).
 
     1. Get the public IP address for the public router service in each zone in the **EXTERNAL-IP** column. Note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in zones that you subsequently add to your cluster have names such as `router-dal12`.
         ```sh
@@ -200,7 +200,7 @@ If your cluster is created on ![Classic infrastructure provider icon.](images/ic
 
     3. Map your custom domain to the router's public IP address by adding the IP address as an A record.
 
-3. Set up a route that is based on the [type of TLS termination that your app requires](#route-types). If you do not have a custom domain, do not include the `--hostname` flag. A route hostname is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`. If you registered a wildcard subdomain, specify a unique subdomain in each route that you create. For example, you might specify `--hostname svc1.example.com` in this route, and `--hostname svc2.example.com` in another route.
+3. Set up a route that is based on the [type of TLS termination that your app requires](#route-types). If you don't have a custom domain, don't include the `--hostname` flag. A route hostname is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`. If you registered a wildcard subdomain, specify a unique subdomain in each route that you create. For example, you might specify `--hostname svc1.example.com` in this route, and `--hostname svc2.example.com` in another route.
     * Simple:
         ```sh
         oc expose service <app_service_name> [--hostname <subdomain>]
@@ -240,7 +240,7 @@ If your cluster is created on ![Classic infrastructure provider icon.](images/ic
 ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) If your cluster is created on VPC infrastructure and you enabled only the private cloud service endpoint during cluster creation, your cluster is created with only a private router by default. To publicly expose your apps, you must first create a public Ingress controller and configure the controller with a subdomain. The Ingress controller automatically creates and configures a new public router, which you can use to create public routes for your apps.
 {: shortdesc}
 
-Note that even though you create an Ingress controller in the following steps, the Ingress controller is only required to create and configure the necessary router for you. After the router is created, you use the router directly to create routes, and you do not use the Ingress controller.
+Note that even though you create an Ingress controller in the following steps, the Ingress controller is only required to create and configure the necessary router for you. After the router is created, you use the router directly to create routes, and you don't use the Ingress controller.
 
 1. Prepare the domain that you want to use for your router.
     * **Custom domain**: To register a custom domain, work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.
@@ -319,7 +319,7 @@ Note that even though you create an Ingress controller in the following steps, t
     ```
     {: pre}
 
-8. Set up a route that is based on the [type of TLS termination that your app requires](#route-types). If you do not include the `--hostname` flag, the route hostname is generated for you in the format `<app_service_name>-<app_project>.<router-subdomain>`.
+8. Set up a route that is based on the [type of TLS termination that your app requires](#route-types). If you don't include the `--hostname` flag, the route hostname is generated for you in the format `<app_service_name>-<app_project>.<router-subdomain>`.
     * Simple:
         ```sh
         oc expose service <app_service_name> [--hostname <subdomain>]
@@ -373,7 +373,7 @@ The method for setting up private routes varies depending on your cluster's infr
 If your cluster is created on ![Classic infrastructure provider icon.](images/icon-classic-2.svg) classic infrastructure, or if your cluster is created on ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC infrastructure and you enabled the public cloud service endpoint during cluster creation, your cluster is created with only a public router by default. To privately expose your apps, you must first create a private Ingress controller and configure the controller with a subdomain. The Ingress controller automatically creates and configures a new private router, which you can use to create private routes for your apps.
 {: shortdesc}
 
-Note that even though you create an Ingress controller in the following steps, the Ingress controller is only required to create and configure the necessary router for you. After the router is created, you use the router directly to create routes, and you do not use the Ingress controller.
+Note that even though you create an Ingress controller in the following steps, the Ingress controller is only required to create and configure the necessary router for you. After the router is created, you use the router directly to create routes, and you don't use the Ingress controller.
 
 1. Prepare the domain that you want to use for your router.
     * **Custom domain, classic or VPC clusters**: To register a custom domain, work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.
@@ -508,7 +508,7 @@ Note that even though you create an Ingress controller in the following steps, t
     {: pre}
 
 2. Choose a domain for your app.
-    * **IBM-provided domain**: If you do not need to use a custom domain, a route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-i000.<region>.containers.appdomain.cloud`.
+    * **IBM-provided domain**: If you don't need to use a custom domain, a route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-i000.<region>.containers.appdomain.cloud`.
     * **Custom domain**: To specify a custom domain, work with your DNS provider or [{{site.data.keyword.cis_full}}](https://cloud.ibm.com/catalog/services/internet-services).
         1. Get the external IP address for the private router service in each zone in the **EXTERNAL-IP** column. Note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in zones that you subsequently add to your cluster have names such as `router-dal12`.
             ```sh
@@ -522,7 +522,7 @@ Note that even though you create an Ingress controller in the following steps, t
 
         3. Map your custom domain to the router services' private IP address by adding the IP addresses as A records.
 
-3. Set up a route that is based on the [type of TLS termination that your app requires](#route-types). If you do not have a custom domain, do not include the `--hostname` flag. A route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`. If you registered a wildcard subdomain, specify a unique subdomain in each route that you create. For example, you might specify `--hostname svc1.example.com` in this route, and `--hostname svc2.example.com` in another route.
+3. Set up a route that is based on the [type of TLS termination that your app requires](#route-types). If you don't have a custom domain, don't include the `--hostname` flag. A route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`. If you registered a wildcard subdomain, specify a unique subdomain in each route that you create. For example, you might specify `--hostname svc1.example.com` in this route, and `--hostname svc2.example.com` in another route.
     * Simple:
         ```sh
         oc expose service <app_service_name> [--hostname <subdomain>]
@@ -561,7 +561,7 @@ Note that even though you create an Ingress controller in the following steps, t
 ## Moving router services across VLANs in classic clusters
 {: #migrate-router-vlan-classic}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) When you [change your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans), the worker nodes are connected to the new VLAN and assigned new public or private IP addresses. However, router services cannot automatically migrate to the new VLAN because they are assigned a stable, portable public or private IP address from a subnet that belongs to the old VLAN. When your worker nodes and routers are connected to different VLANs, the routers cannot forward incoming network traffic to app pods on your worker nodes. To move your router services to a different VLAN, you must create the router service on the new VLAN and delete the router service on the old VLAN.
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) When you [change your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans), the worker nodes are connected to the new VLAN and assigned new public or private IP addresses. However, router services can't automatically migrate to the new VLAN because they are assigned a stable, portable public or private IP address from a subnet that belongs to the old VLAN. When your worker nodes and routers are connected to different VLANs, the routers can't forward incoming network traffic to app pods on your worker nodes. To move your router services to a different VLAN, you must create the router service on the new VLAN and delete the router service on the old VLAN.
 {: shortdesc}
 
 1. Create a router service on the new VLAN.

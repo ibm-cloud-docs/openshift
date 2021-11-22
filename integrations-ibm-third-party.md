@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: kubernetes, openshift
 
@@ -34,7 +34,7 @@ All {{site.data.keyword.cloud_notm}} platform services that support service keys
 
 Service binding is a quick way to create service credentials for an {{site.data.keyword.cloud_notm}} service and store these credentials in a Kubernetes secret in your cluster. The Kubernetes secret is automatically encrypted in etcd to protect your data. Your apps can use the credentials in the secret to access your {{site.data.keyword.cloud_notm}} service instance.
 
-Services that do not support service keys usually provide an API that you can directly use in your app.
+Services that don't support service keys usually provide an API that you can directly use in your app.
 
 ### IBM Cloud classic infrastructure services
 {: #infrastructure-services}

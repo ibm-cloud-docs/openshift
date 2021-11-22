@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logging config, monitoring config
 
@@ -50,7 +50,7 @@ ibmcloud ob logging agent discover --cluster CLUSTER [--instance LOGGING_INSTANC
 :   The name or ID of the cluster where you manually created a {{site.data.keyword.la_short}} configuration without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.
 
 `--instance LOGGING_INSTANCE`
-:   The ID or name of the {{site.data.keyword.la_full_notm}} service instance that you use in your logging configuration. This value is optional. If you do not provide this value, the {{site.data.keyword.la_full_notm}} service instance is automatically retrieved.
+:   The ID or name of the {{site.data.keyword.la_full_notm}} service instance that you use in your logging configuration. This value is optional. If you don't provide this value, the {{site.data.keyword.la_full_notm}} service instance is automatically retrieved.
 
 
 
@@ -86,10 +86,10 @@ ibmcloud ob logging config create --cluster CLUSTER --instance LOGGING_INSTANCE 
 :   The ID or name of the {{site.data.keyword.la_full_notm}} service instance that you want to use to create the logging configuration. The service instance must be in the same {{site.data.keyword.cloud_notm}} account as your cluster, but can be in a different resource group or region than your cluster. To create a service instance, follow the steps in [Provision an instance](/docs/log-analysis?topic=log-analysis-provision). This value is required.
 
 `--logdna-ingestion-key INGESTION_KEY`
-:   The {{site.data.keyword.la_short}} ingestion key that you want to use for your configuration. This value is optional. If you do not specify this option, the latest ingestion key is automatically retrieved.   
+:   The {{site.data.keyword.la_short}} ingestion key that you want to use for your configuration. This value is optional. If you don't specify this option, the latest ingestion key is automatically retrieved.   
 
 `--private-endpoint
-:   When you add this option to your command, the private cloud service endpoint is used to connect to {{site.data.keyword.la_full_notm}}. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option. For more information, see worker communication to other services and networks in [clusters](/docs/openshift?topic=openshift-plan_clusters#worker-services-onprem). 
+:   When you add this option to your command, the private cloud service endpoint is used to connect to {{site.data.keyword.la_full_notm}}. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 don't support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option. For more information, see worker communication to other services and networks in [clusters](/docs/openshift?topic=openshift-plan_clusters#worker-services-onprem). 
 
 
 
@@ -180,7 +180,7 @@ ibmcloud ob logging config list --cluster CLUSTER
 Use the public or private cloud service endpoint to send data from your cluster to your {{site.data.keyword.la_short}} service instance.
 {: shortdesc}
 
-To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option.
+To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 don't support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option.
 {: important}
 
 ```sh
@@ -200,7 +200,7 @@ ibmcloud ob logging config enable public-endpoint|private-endpoint --cluster CLU
 
 
 `public-endpoint|private-endpoint`
-:   Enter `public-endpoint` to use the public cloud service endpoint of your {{site.data.keyword.la_full_notm}} service instance, or `private-endpoint` to use the private cloud service endpoint to send logs from your cluster. This value is required. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option.  
+:   Enter `public-endpoint` to use the public cloud service endpoint of your {{site.data.keyword.la_full_notm}} service instance, or `private-endpoint` to use the private cloud service endpoint to send logs from your cluster. This value is required. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 don't support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option.  
 
 `--cluster CLUSTER`
 :   The name or ID of the cluster for which you want to enable the private or public cloud service endpoint to connect to your {{site.data.keyword.la_short}} service instance. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.
@@ -245,10 +245,10 @@ ibmcloud ob logging config replace --cluster CLUSTER --instance LOGGING_INSTANCE
 :   The ID or name of the {{site.data.keyword.la_full_notm}} service instance for which you want to change the ingestion key, or the {{site.data.keyword.la_full_notm}} service instance that you want to replace. To retrieve the name, run `ibmcloud ob logging config list --cluster <cluster_name_or_ID>`. This value is required.
 
 `--new-instance LOGGING_INSTANCE_NEW`
-:   If you want to replace the {{site.data.keyword.la_full_notm}} service instance that you use in your {{site.data.keyword.la_short}} configuration, enter the ID or name of the new {{site.data.keyword.la_full_notm}} service instance that you want to use. This value is required if you want to replace the {{site.data.keyword.la_full_notm}} service instance. If you want to replace the ingestion key, do not include this command option.
+:   If you want to replace the {{site.data.keyword.la_full_notm}} service instance that you use in your {{site.data.keyword.la_short}} configuration, enter the ID or name of the new {{site.data.keyword.la_full_notm}} service instance that you want to use. This value is required if you want to replace the {{site.data.keyword.la_full_notm}} service instance. If you want to replace the ingestion key, don't include this command option.
 
 `--logdna-ingestion-key INGESTION_KEY`
-:   The {{site.data.keyword.la_short}} ingestion key that you want to use for your configuration. For information about how to retrieve the ingestion key, see [Get the ingestion key through the {{site.data.keyword.cloud_notm}} UI](/docs/log-analysis?topic=log-analysis-ingestion_key#ibm_cloud_ui). This value is required if you want to replace the ingestion key, and optional if you want to replace the {{site.data.keyword.la_full_notm}} service instance. If you do not provide the ingestion key when replacing the {{site.data.keyword.la_full_notm}} service instance, the ingestion key that was last added is retrieved automatically.
+:   The {{site.data.keyword.la_short}} ingestion key that you want to use for your configuration. For information about how to retrieve the ingestion key, see [Get the ingestion key through the {{site.data.keyword.cloud_notm}} UI](/docs/log-analysis?topic=log-analysis-ingestion_key#ibm_cloud_ui). This value is required if you want to replace the ingestion key, and optional if you want to replace the {{site.data.keyword.la_full_notm}} service instance. If you don't provide the ingestion key when replacing the {{site.data.keyword.la_full_notm}} service instance, the ingestion key that was last added is retrieved automatically.
 
 
 
@@ -312,7 +312,7 @@ ibmcloud ob monitoring agent discover --cluster CLUSTER [--instance MONITORING_I
 :   The name or ID of the cluster where you manually created a {{site.data.keyword.mon_short}} configuration without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.
 
 `--instance MONITORING_INSTANCE`
-:   The ID or name of the {{site.data.keyword.mon_full_notm}} service instance that you use in your monitoring configuration. This value is optional. If you do not provide this value, the {{site.data.keyword.mon_full_notm}} service instance is automatically retrieved
+:   The ID or name of the {{site.data.keyword.mon_full_notm}} service instance that you use in your monitoring configuration. This value is optional. If you don't provide this value, the {{site.data.keyword.mon_full_notm}} service instance is automatically retrieved
 
 
 
@@ -347,10 +347,10 @@ ibmcloud ob monitoring config create --cluster CLUSTER --instance MONITORING_INS
 :   The ID or name of the {{site.data.keyword.mon_full_notm}} service instance that you want to use to create the monitoring configuration. The service instance must be in the same {{site.data.keyword.cloud_notm}} account as your cluster, but can be in a different resource group or region than you cluster. To create a service instance, follow the steps in [Provision an instance](/docs/monitoring?topic=monitoring-provision). This value is required.
 
 `--sysdig-access-key ACCESS_KEY`
-:   The {{site.data.keyword.mon_short}} access key that you want to use for your configuration. This value is optional. If you do not specify this option, the latest access key is used for your configuration. 
+:   The {{site.data.keyword.mon_short}} access key that you want to use for your configuration. This value is optional. If you don't specify this option, the latest access key is used for your configuration. 
 
 `--private-endpoint
-:   When you add this option to your command, the private cloud service endpoint is used to connect to {{site.data.keyword.mon_full_notm}}. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option. 
+:   When you add this option to your command, the private cloud service endpoint is used to connect to {{site.data.keyword.mon_full_notm}}. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 don't support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option. 
 
 
 
@@ -440,7 +440,7 @@ ibmcloud ob monitoring config list --cluster CLUSTER
 Use the public or private cloud service endpoint to send metrics from your cluster to your {{site.data.keyword.mon_short}} service instance.
 {: shortdesc}
 
-To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option.
+To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 don't support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option.
 {: important}
 
 ```sh
@@ -460,7 +460,7 @@ ibmcloud ob monitoring config enable public-endpoint|private-endpoint --cluster 
 
 
 `public-endpoint|private-endpoint`
-:   Enter `public-endpoint` to use the public cloud service endpoint of your {{site.data.keyword.mon_full_notm}} service instance, or `private-endpoint` to use the private cloud service endpoint to send metrics from your cluster. This value is required. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 do not support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option.  
+:   Enter `public-endpoint` to use the public cloud service endpoint of your {{site.data.keyword.mon_full_notm}} service instance, or `private-endpoint` to use the private cloud service endpoint to send metrics from your cluster. This value is required. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 don't support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option.  
 
 `--cluster CLUSTER`
 :   The name or ID of the cluster for which you want to enable the private or public cloud service endpoint to connect to your {{site.data.keyword.mon_short}} service instance. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.
@@ -505,10 +505,10 @@ ibmcloud ob logging config replace --cluster CLUSTER --instance MONITORING_INSTA
 :   The ID or name of the {{site.data.keyword.mon_full_notm}} service instance for which you want to change the service access key, or the {{site.data.keyword.mon_full_notm}} service instance that you want to replace. To retrieve the name, run `ibmcloud ob monitoring config list --cluster <cluster_name_or_ID>`. This value is required.
 
 `--new-instance MONITORING_INSTANCE_NEW`
-:   If you want to replace the {{site.data.keyword.mon_full_notm}} service instance that you use in your {{site.data.keyword.mon_short}} configuration, enter the ID or name of the new {{site.data.keyword.mon_full_notm}} service instance that you want to use. This value is required if you want to replace the {{site.data.keyword.mon_full_notm}} service instance. If you want to replace the service access key, do not include this command option.
+:   If you want to replace the {{site.data.keyword.mon_full_notm}} service instance that you use in your {{site.data.keyword.mon_short}} configuration, enter the ID or name of the new {{site.data.keyword.mon_full_notm}} service instance that you want to use. This value is required if you want to replace the {{site.data.keyword.mon_full_notm}} service instance. If you want to replace the service access key, don't include this command option.
 
 `--sysdig-access-key ACCESS_KEY`
-:   The {{site.data.keyword.mon_short}} service access key that you want to use for your configuration. For information about how to retrieve the service access key, see [Getting the access key through the {{site.data.keyword.cloud_notm}} UI](/docs/monitoring?topic=monitoring-access_key#access_key_ibm_cloud_ui). This value is required if you want to replace the service access key, and optional if you want to replace the {{site.data.keyword.mon_full_notm}} service instance. If you do not provide the service access key when replacing the {{site.data.keyword.mon_full_notm}} service instance, the service access key that was last added is retrieved automatically.
+:   The {{site.data.keyword.mon_short}} service access key that you want to use for your configuration. For information about how to retrieve the service access key, see [Getting the access key through the {{site.data.keyword.cloud_notm}} UI](/docs/monitoring?topic=monitoring-access_key#access_key_ibm_cloud_ui). This value is required if you want to replace the service access key, and optional if you want to replace the {{site.data.keyword.mon_full_notm}} service instance. If you don't provide the service access key when replacing the {{site.data.keyword.mon_full_notm}} service instance, the service access key that was last added is retrieved automatically.
 
 
 

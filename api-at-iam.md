@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -311,7 +311,7 @@ Review the following API methods, their corresponding actions in {{site.data.key
 | API Method | Description | IAM action for the API | {{site.data.keyword.cloudaccesstrailshort}} event |
 | --- | --- | --- | --- |
 | `GET​/v2​/nlb-dns​/getSatLocationSubdomains` | List registered NLB subdomains in a Satellite location. | `containers-kubernetes.cluster.read` | - |
-| `POST​/v2​/nlb-dns​/registerMSCDomains` | Register NLB subdomains `c001`, `c002`, and `c003`, which each correspond to an IP address of a host that is assigned to the {{site.data.keyword.satelliteshort}} location control plane. The `c000` subdomain corresponds to all of the IP addresses for the cluster. Also, register one CNAME, `ce00`, for the specified {{site.data.keyword.satelliteshort}} location control plane. | `containers-kubernetes.cluster.operate` | - |
+| `POST​/v2​/nlb-dns​/registerMSCDomains` | Register NLB subdomains `c001`, `c002`, and `c003`, which each correspond to an IP address of a host that is assigned to the {{site.data.keyword.satelliteshort}} location control plane. The `c000` subdomain corresponds to all the IP addresses for the cluster. Also, register one CNAME, `ce00`, for the specified {{site.data.keyword.satelliteshort}} location control plane. | `containers-kubernetes.cluster.operate` | - |
 | `GET​/v2​/satellite​/getClusters` | List the {{site.data.keyword.cloud_notm}} Satellite clusters that you have access to. | `containers-kubernetes.cluster.read` | - |
 | `GET​/v2​/satellite​/getController` | Get the details for an {{site.data.keyword.cloud_notm}} Satellite location. | `containers-kubernetes.cluster.read` | - |
 | `GET​/v2​/satellite​/getControllers` | List the {{site.data.keyword.cloud_notm}} Satellite locations that you have access to. | `containers-kubernetes.cluster.read` | - |

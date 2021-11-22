@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -21,7 +21,7 @@ content-type: troubleshoot
 **Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 
-You deleted a worker node in your cluster and then added a worker node. When you deployed a pod or Kubernetes service, the resource cannot access the newly created worker node, and the connection times out.
+You deleted a worker node in your cluster and then added a worker node. When you deployed a pod or Kubernetes service, the resource can't access the newly created worker node, and the connection times out.
 {: tsSymptoms}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: red hat openshift, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters
 
@@ -46,7 +46,7 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
 4. If you see the **OCP entitlement** section: Leave the value set to **Purchase additional licenses for this worker pool** because you are not using an {{site.data.keyword.cloud_notm}} Pak for this getting started cluster.
 5. For the **Infrastructure**, select **Classic**.
 6. Configure the **Location** details for your cluster.
-    1. Select the **Resource group** that you want to create your cluster in. You cannot change the resource group later. If you do not select a resource group, your cluster is created in the default resource group.
+    1. Select the **Resource group** that you want to create your cluster in. You can't change the resource group later. If you don't select a resource group, your cluster is created in the default resource group.
     2. Select a **Geography** to create the cluster in, such as **North America**. The geography helps filter the **Availability** and **Data centers** values that you can select.
     3. Select the **Availability** that you want for your cluster, such as **Single zone**.
     4. Select the **Worker zone** to create your cluster in, such as **Dallas 10**.
@@ -86,7 +86,7 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
     4. From the **Virtual private cloud** drop-down menu, select the VPC that you created earlier.
     5. From the **Cloud Object Storage** drop-down menu, select a standard {{site.data.keyword.cos_full_notm}} instance to use for the internal {{site.data.keyword.openshiftshort}} container registry, or [create a standard {{site.data.keyword.cos_full_notm}} instance](/docs/cloud-object-storage/basics?topic=cloud-object-storage-provision#provision-instance) to use.
 4. Configure the **Location** details for your cluster.
-    1. Select the **Resource group** that you want to create your cluster in. You cannot change the resource group later. If you do not select a resource group, your cluster is created in the default resource group.
+    1. Select the **Resource group** that you want to create your cluster in. You can't change the resource group later. If you don't select a resource group, your cluster is created in the default resource group.
     2. Select the zones to create your cluster in. The zones are filtered based on the VPC that you selected, and include the subnets that you previously created.
 5. Configure your **Worker pool** setup.
     1. If you want a larger size for your worker nodes, click **Change flavor**. Otherwise, leave the default **4 vCPUs / 16 GB** flavor selected.

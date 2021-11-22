@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -38,10 +38,10 @@ You notice one or more of the following issues:
     {: screen}
 
 
-If you do not see either of the IP address-related messages that are listed in the symptoms, your containers might not start because the registry quota was reached.
+If you don't see either of the IP address-related messages that are listed in the symptoms, your containers might not start because the registry quota was reached.
 {: tsCauses}
 
-If you see either of the IP address-related messages that are listed in the symptoms, your containers might not start because the IP Address Manager (IPAM) for the Calico plug-in incorrectly detects that all pod IP addresses in the cluster are in use. Because the Calico IPAM detects no available IP addresses, it does not assign IP addresses to new pods in the cluster, and pods cannot start.
+If you see either of the IP address-related messages that are listed in the symptoms, your containers might not start because the IP Address Manager (IPAM) for the Calico plug-in incorrectly detects that all pod IP addresses in the cluster are in use. Because the Calico IPAM detects no available IP addresses, it does not assign IP addresses to new pods in the cluster, and pods can't start.
 
 
 ## Fixing registry quota issues
@@ -96,7 +96,7 @@ First, check for and release individual IP addresses that were not cleanly remov
     ```
     {: screen}
 
-4. Release IP addresses from the Calico IPAM that were previously assigned to a pod endpoint. Note that after you lock the data store in the following steps, existing pods continue to run, but any pods that are created remain in the `ContainerCreating` state and cannot start until you unlock the data store. This data store lock ensures that the IPAM records are not modified while you release IP addresses. For more information, see the [Calico open source documentation](https://docs.projectcalico.org/reference/calicoctl/ipam/check){: external}.
+4. Release IP addresses from the Calico IPAM that were previously assigned to a pod endpoint. Note that after you lock the data store in the following steps, existing pods continue to run, but any pods that are created remain in the `ContainerCreating` state and can't start until you unlock the data store. This data store lock ensures that the IPAM records are not modified while you release IP addresses. For more information, see the [Calico open source documentation](https://docs.projectcalico.org/reference/calicoctl/ipam/check){: external}.
 
     1. Lock the data store for the Calico IPAM records.
         ```sh
@@ -170,8 +170,8 @@ Ensuring that IP blocks are free is especially important for all classic cluster
 1. Follow the steps to [release individual IP addresses](#individual-ips).
 
 2. Choose whether to lock the data store for the Calico IPAM records.
-    - If you lock the data store, existing pods continue to run, but any pods that are created remain in the `ContainerCreating` state and cannot start until you unlock the data store. This data store lock ensures that pods cannot be created after you check for unused blocks, but before you release the blocks.
-    - If you do not lock the data store, you must immediately verify that no new pods used IP addresses from a released block that you deleted.
+    - If you lock the data store, existing pods continue to run, but any pods that are created remain in the `ContainerCreating` state and can't start until you unlock the data store. This data store lock ensures that pods can't be created after you check for unused blocks, but before you release the blocks.
+    - If you don't lock the data store, you must immediately verify that no new pods used IP addresses from a released block that you deleted.
     ```sh
     calicoctl datastore migrate lock
     ```

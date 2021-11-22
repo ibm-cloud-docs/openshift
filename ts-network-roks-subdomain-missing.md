@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -71,7 +71,7 @@ When the components fully provision, a public router subdomain is available for 
 
     *  If the router subdomain is not updated after two hours of creating the cluster, review the **Master Status** of the cluster again, and follow any troubleshooting steps to resolve the issue.
 
-If the troubleshooting steps do not resolve the issue, see [Getting help](/docs/openshift?topic=openshift-get-help).
+If the troubleshooting steps don't resolve the issue, see [Getting help](/docs/openshift?topic=openshift-get-help).
 
 
 

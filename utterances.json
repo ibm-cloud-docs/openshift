@@ -94,11 +94,11 @@
   "cs_cluster_access": [
     "unable to view or work with the Openshift cluster",
     "not seeing the openshift cluster listed",
-    "cannot see all my OpenShift clusters",
+    "can't see all my OpenShift clusters",
     "why can I not see all my OpenShift clusters",
     "can not view all the OpenShift clusters",
     "openshift cluster is not listed",
-    "cannot find a red hat openshift cluster",
+    "can't find a red hat openshift cluster",
     "unable to see openshift clusters",
     "can't view the openshift cluster"
   ],

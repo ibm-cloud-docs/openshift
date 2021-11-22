@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-11-22"
 
 keywords: openshift, storage
 
@@ -40,7 +40,7 @@ Remove all the catalog sources from your cluster.
     ```
     {: pre}
 
-2. Wait a few minutes and verify that the pods regenerate. If the pods regenerate, the ODF installation proceeds. If the pods do not regenerate, [contact ODF support by raising a case in the {{site.data.keyword.redhat_notm}} customer portal](/docs/openshift?topic=openshift-ocs-error-unresolved).
+2. Wait a few minutes and verify that the pods regenerate. If the pods regenerate, the ODF installation proceeds. If the pods don't regenerate, [contact ODF support by raising a case in the {{site.data.keyword.redhat_notm}} customer portal](/docs/openshift?topic=openshift-ocs-error-unresolved).
     ```sh
     oc get pods,catsrc -n openshift-marketplace
     ```

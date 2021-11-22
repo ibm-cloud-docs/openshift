@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-22"
 
 keywords: openshift, route, router
 
@@ -46,7 +46,7 @@ To create routes for your apps:
     {: pre}
 
 2. Set up a domain for your app.
-    * **IBM-provided domain**: If you do not need to use a custom domain, a route hostname is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.upi.containers.appdomain.cloud`. Continue to the next step.
+    * **IBM-provided domain**: If you don't need to use a custom domain, a route hostname is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.upi.containers.appdomain.cloud`. Continue to the next step.
     * **Custom domain**: Work with your DNS provider to create a custom domain. Note that if you previously set up a third-party load balancer in front of your router, work with your DNS provider to create a custom domain for the load balancer instead.
 3. Get the IP addresses for the router service in the **EXTERNAL-IP** column.
     ```sh
@@ -59,7 +59,7 @@ To create routes for your apps:
 
 5. Map your custom domain to the router's IP addresses by adding the IP addresses as A records.
 
-6. Set up a route that is based on the [type of TLS termination that your app requires](/docs/openshift?topic=openshift-openshift_routes#route-types). If you do not have a custom domain, do not include the `--hostname` flag so that a route hostname is generated for you. If you registered a wildcard subdomain, specify a unique subdomain in each route that you create. For example, you might specify `--hostname svc1.example.com` in this route, and `--hostname svc2.example.com` in another route.
+6. Set up a route that is based on the [type of TLS termination that your app requires](/docs/openshift?topic=openshift-openshift_routes#route-types). If you don't have a custom domain, don't include the `--hostname` flag so that a route hostname is generated for you. If you registered a wildcard subdomain, specify a unique subdomain in each route that you create. For example, you might specify `--hostname svc1.example.com` in this route, and `--hostname svc2.example.com` in another route.
     * Simple:
         ```sh
         oc expose service <app_service_name> [--hostname <subdomain>]
@@ -153,7 +153,7 @@ After you create a load balancer in front of your router, you can use the router
 ## Exposing apps with NodePorts
 {: #sat-expose-np}
 
-If you cannot use the {{site.data.keyword.openshiftshort}} router to expose an app, such as if you must expose a TCP or UDP app, you can create a [NodePort](/docs/openshift?topic=openshift-nodeport) for your app.
+If you can't use the {{site.data.keyword.openshiftshort}} router to expose an app, such as if you must expose a TCP or UDP app, you can create a [NodePort](/docs/openshift?topic=openshift-nodeport) for your app.
 {: shortdesc}
 
 1. Create a NodePort for your app. A NodePort in the range of 30000 - 32767 and an internal cluster IP address is assigned to your app.
@@ -176,7 +176,7 @@ If you cannot use the {{site.data.keyword.openshiftshort}} router to expose an a
 
 4. Access your app by using your cluster's subdomain and the NodePort in the format `<cluster_name>-<random_hash>-0000.upi.containers.appdomain.cloud:<nodeport>`. Note that if your hosts have private network connectivity only, you must be connected to the hosts' private network, such as through VPN access.
 
-5. Optional: If you do not want to access the NodePort directly, or if you must expose your apps on a specific port such as 443, you can set up your own third-party, layer 4 load balancer that is connected to your hosts' private network and forwards traffic to the NodePort. For example, you might deploy a load balancer from your hosts' cloud provider, or deploy an F5 load balancer to your on-premises network. The load balancer must be able to forward TCP and UDP traffic for ports 30000 - 32767.
+5. Optional: If you don't want to access the NodePort directly, or if you must expose your apps on a specific port such as 443, you can set up your own third-party, layer 4 load balancer that is connected to your hosts' private network and forwards traffic to the NodePort. For example, you might deploy a load balancer from your hosts' cloud provider, or deploy an F5 load balancer to your on-premises network. The load balancer must be able to forward TCP and UDP traffic for ports 30000 - 32767.
 
 
 

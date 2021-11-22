@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-22"
 
 keywords: openshift, scc, security context constraint, psp
 
@@ -25,7 +25,7 @@ As a cluster admin, you want to control what happens in your cluster, especially
 
 **Can I also add users or system groups to SCCs?**
 
-For user access to your cluster resources, do not use SCCs. Instead, see [Assigning cluster access](/docs/openshift?topic=openshift-users) to set {{site.data.keyword.cloud_notm}} IAM and infrastructure permissions.
+For user access to your cluster resources, don't use SCCs. Instead, see [Assigning cluster access](/docs/openshift?topic=openshift-users) to set {{site.data.keyword.cloud_notm}} IAM and infrastructure permissions.
 
 For system groups such as `system:authenticated`, these groups already are assigned to SCCs. You can see which groups are assigned to an SCC by describing the SCC. If you change the SCC that a system group is assigned to, default components that belong to the system group might experience errors due to the change in permissions.
 
@@ -35,7 +35,7 @@ By default, {{site.data.keyword.openshiftlong_notm}} clusters include a standard
 
 **What SCCs are applied to my resources by default?**
 
-If you do not specify a security context, the {{site.data.keyword.openshiftshort}} `restricted` security context constraint is applied by default. To check a pod's security context, describe the pod and look for the SCC annotation, such as in the following example.
+If you don't specify a security context, the {{site.data.keyword.openshiftshort}} `restricted` security context constraint is applied by default. To check a pod's security context, describe the pod and look for the SCC annotation, such as in the following example.
 
 ```sh
 oc describe pod <pod_name>

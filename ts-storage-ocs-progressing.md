@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift, storage
 
@@ -37,7 +37,7 @@ To determine why your storage cluster status is stuck, describe your storage clu
     ```
     {: pre}
 
-    **Example output**:
+    Example output:
     ```sh
     NAME             AGE
     ocscluster-vpc   71d

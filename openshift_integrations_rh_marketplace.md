@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-22"
 
 keywords: kubernetes, openshift
 
@@ -56,7 +56,7 @@ With [{{site.data.keyword.redhat_full}} Marketplace](https://marketplace.redhat.
     ```
     {: pre}
 
-3. To pick up the global configuration changes, reload all of the worker nodes in your cluster.
+3. To pick up the global configuration changes, reload all the worker nodes in your cluster.
     1. Note the **ID** of the worker nodes in your cluster.
         ```sh
         ibmcloud oc worker ls -c <cluster_name_or_ID>

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -207,7 +207,7 @@ Version 1.0.143 of the CLI was released on 6 August 2020.
 - Adds the [`ibmcloud oc quota ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_quota_ls) command to list all quota and limits for cluster-related resources in your {{site.data.keyword.cloud_notm}} account. 
 - Deprecates the `--json` flag. To print a command output in JSON format, use the `--output json` flag instead. 
 - Deprecates the `-s` flag. To not show the message of the day or update reminders in command output, use the `-q` flag instead. 
-- Updates `ibmcloud oc cluster ls` command so that if you include the `--ouput json` flag but do not include the `--provider` flag, only classic clusters are returned. 
+- Updates `ibmcloud oc cluster ls` command so that if you include the `--ouput json` flag but don't include the `--provider` flag, only classic clusters are returned. 
 - Corrects the example master update command that is displayed in the output of the `ibmcloud oc cluster get` command when a master update is available. 
 - Adds information about the effects of worker node replacement in the warning message for the `ibmcloud oc worker replace` command. 
 - Standardizes the help text for flags that have a list of supported values. 
@@ -251,9 +251,9 @@ Version 1.0.94 of the CLI was released on 9 June 2020.
 Version 1.0.84 of the CLI was released on 26 May 2020.
 
 - Fixes bugs for credentials in Kubernetes configuration contexts: 
-    - When you download the contexts for clusters that run Kubernetes version 1.17 or later, those contexts are merged into your `kubeconfig` file. The tokens from the version 1.17 or later contexts now do not overwrite tokens for any version 1.16 or later contexts. 
+    - When you download the contexts for clusters that run Kubernetes version 1.17 or later, those contexts are merged into your `kubeconfig` file. The tokens from the version 1.17 or later contexts now don't overwrite tokens for any version 1.16 or later contexts. 
     - Credentials are now correctly added to your `kubeconfig` file when you download the context for a cluster. 
-    - Fixes credential issues for CLI plug-in installations on macOS that do not use `cgo`. 
+    - Fixes credential issues for CLI plug-in installations on macOS that don't use `cgo`. 
 - Adds commands for creating and managing VPC clusters.
     - [`alb configure vpc-gen2`](/docs/containers?topic=containers-kubernetes-service-cli#cli_alb_configure_vpc_gen2)
     - [`alb create vpc-gen2`](/docs/containers?topic=containers-kubernetes-service-cli#cli_alb-create-vpc-gen2)
@@ -589,7 +589,7 @@ Version 0.3.28 of the CLI was released on 23 May 2019.
 
 Version 0.3.8 of the CLI was released on 30 April 2019.
 
-- Adds support for [global endpoint functionality](/docs/openshift?topic=openshift-regions-and-zones#endpoint) in version `0.3`. By default, you can now view and manage all of your {{site.data.keyword.containerlong_notm}} resources in all locations. You are not required to target a region to work with resources. 
+- Adds support for [global endpoint functionality](/docs/openshift?topic=openshift-regions-and-zones#endpoint) in version `0.3`. By default, you can now view and manage all your {{site.data.keyword.containerlong_notm}} resources in all locations. You are not required to target a region to work with resources. 
 - Adds the [`ibmcloud oc locations`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_supported-locations) command to list all locations that {{site.data.keyword.containerlong_notm}} supports. 
 - Adds the `--location` flag to the `cluster ls` and `zone ls` commands to filter resources by one or more locations. - Adds the `--region` flag to the `credential set/unset/get`, `api-key reset`, and `vlan spanning get` commands. To run these commands, you must specify a region in the `--region` flag.
 
@@ -676,7 +676,7 @@ Version 0.2.53 of the CLI was released on 19 February 2019.
 
 Version 0.2.44 of the CLI was released on 8 February 2019.
 
-- Adds `--skip-rbac` option to the `ibmcloud oc cluster config` command to skip adding user Kubernetes RBAC roles based on the {{site.data.keyword.cloud_notm}} IAM service access roles to the cluster configuration. Include this option only if you [manage your own Kubernetes RBAC roles](/docs/openshift?topic=openshift-users#rbac). If you use [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-access_reference#service) to manage all your RBAC users, do not include this option. - Updates the Go version to 1.11.5.
+- Adds `--skip-rbac` option to the `ibmcloud oc cluster config` command to skip adding user Kubernetes RBAC roles based on the {{site.data.keyword.cloud_notm}} IAM service access roles to the cluster configuration. Include this option only if you [manage your own Kubernetes RBAC roles](/docs/openshift?topic=openshift-users#rbac). If you use [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-access_reference#service) to manage all your RBAC users, don't include this option. - Updates the Go version to 1.11.5.
 
 #### Version 0.2.40
 {: #cli-0240}

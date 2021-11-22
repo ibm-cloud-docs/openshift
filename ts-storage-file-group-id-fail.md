@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -32,10 +32,10 @@ When you create a container from an image that does not specify a user and user 
 However, when you want to mount an NFS file share to your container, the user ID `0` inside the container is mapped to the user ID `nobody` on the NFS host system. Therefore, the volume mount path is owned by the user ID `nobody` and not by `root`. This security feature is also known as root squash. Root squash protects the data within NFS by mounting the container without granting the user ID root permissions on the actual NFS host file system.
 
 
-Use a Kubernetes [`DaemonSet`](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/){: external} to enable root permission to the storage mount path on all of your worker nodes for NFSv4 file shares.
+Use a Kubernetes [`DaemonSet`](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/){: external} to enable root permission to the storage mount path on all your worker nodes for NFSv4 file shares.
 {: tsResolve}
 
-To allow root permission on the volume mount path, you must set up a configmap on your worker node. The configmap maps the user ID `nobody` from the NFS host system to the root user ID `0` in your container. This process is also referred to as no root squash. An effective way of updating all of your worker nodes is to use a daemon set, which runs a specified pod on every worker node in your cluster. In this case, the pod that is controlled by the daemon set updates each of your worker nodes to enable root permission on the volume mount path.
+To allow root permission on the volume mount path, you must set up a configmap on your worker node. The configmap maps the user ID `nobody` from the NFS host system to the root user ID `0` in your container. This process is also referred to as no root squash. An effective way of updating all your worker nodes is to use a daemon set, which runs a specified pod on every worker node in your cluster. In this case, the pod that is controlled by the daemon set updates each of your worker nodes to enable root permission on the volume mount path.
 
 The deployment is configured to allow the daemon set pod to run in privileged mode, which is necessary to access the host file system. Running a pod in privileged mode does create a security risk, so use this option with caution.
 

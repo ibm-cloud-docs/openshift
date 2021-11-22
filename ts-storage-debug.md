@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -81,7 +81,7 @@ Review the options to debug persistent storage and find the root causes for fail
     ```
     {: pre}
 
-2. If the storage driver and plug-in pods do not show a **Running** status, get more details of the pod to find the root cause. Depending on the status of your pod, you might not be able to execute all of the following commands.
+2. If the storage driver and plug-in pods don't show a **Running** status, get more details of the pod to find the root cause. Depending on the status of your pod, you might not be able to execute all the following commands.
     1. Get the names of the containers that run in the driver pod.
         ```sh
         kubectl get pod <pod_name> -n kube-system -o jsonpath="{.spec['containers','initContainers'][*].name}" | tr -s '[[:space:]]' '\n'
@@ -137,8 +137,8 @@ Review the options to debug persistent storage and find the root causes for fail
     - [Object storage: PVC remains in a pending state](/docs/containers?topic=containers-cos_pvc_pending)
 
 4. Review common errors that can occur when you mount a PVC to your app.
-    - [File storage: App cannot access or write to PVC](/docs/containers?topic=containers-file_app_failures)
-    - [Classic Block storage: App cannot access or write to PVC](/docs/containers?topic=containers-block_app_failures)
+    - [File storage: App can't access or write to PVC](/docs/containers?topic=containers-file_app_failures)
+    - [Classic Block storage: App can't access or write to PVC](/docs/containers?topic=containers-block_app_failures)
     - [Object storage: Accessing files with a non-root user fails](/docs/containers?topic=containers-cos_nonroot_access)
 
 7. Verify that the `kubectl` CLI version that you run on your local machine matches the Kubernetes version that is installed in your cluster. If you use a `kubectl` CLI version that does not match at least the major.minor version of your cluster, you might experience unexpected results. For example, [Kubernetes does not support ![External link icon](../icons/launch-glyph.svg “External link icon”)](https://kubernetes.io/releases/version-skew-policy/) `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2).
@@ -156,7 +156,7 @@ Review the options to debug persistent storage and find the root causes for fail
         {: screen}
 
         The CLI versions match if you can see the same version in `GitVersion` for the client and the server. You can ignore the `+IKS` part of the version for the server.
-    2. If the `kubectl` CLI versions on your local machine and your cluster do not match, either [update your cluster](/docs/containers?topic=containers-update) or [install a different CLI version on your local machine](/docs/containers?topic=containers-cs_cli_install#kubectl).
+    2. If the `kubectl` CLI versions on your local machine and your cluster don't match, either [update your cluster](/docs/containers?topic=containers-update) or [install a different CLI version on your local machine](/docs/containers?topic=containers-cs_cli_install#kubectl).
 
 
 8. For {{site.data.keyword.block_storage_is_short}}, [verify that you have the latest version of the add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).
@@ -231,7 +231,7 @@ Describe your ODF resources and review the command outputs for any error message
     ```
     {: pre}
 
-    **Example output**:
+    Example output:
     ```sh
     NAME             AGE
     ocscluster-vpc   71d

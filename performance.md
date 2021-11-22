@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift, kernel
 
@@ -32,7 +32,7 @@ By default, your worker nodes have the operating system and compute hardware of 
 ### Customizing the operating system
 {: #worker-default-os}
 
-The following operating systems are available for worker nodes: **RHEL 7**. Your cluster cannot mix operating systems or use different operating systems.
+The following operating systems are available for worker nodes: **RHEL 7**. Your cluster can't mix operating systems or use different operating systems.
 {: shortdesc}
 
 To optimize your worker nodes, consider the following information.
@@ -384,7 +384,7 @@ The `portmap` plug-in for the Calico container network interface (CNI) enables y
 
 When you have a large number of services in your cluster, such as more than 500 services, or a large number of ports on services, such as more than 50 ports per service for 10 or more services, a large number of iptables rules are generated for the Calico and Kubernetes network policies for these services. A large number of iptables rules can lead to performance issues for the port map plug-in, and might prevent future updates of iptables rules or cause the `calico-node` container to restart when no lock is received to make iptables rules updates within a specified time. To prevent these performance issues, you can disable the port map plug-in by removing it from your cluster's Calico CNI configuration.
 
-If you must use `hostPorts`, do not disable the port map plug-in.
+If you must use `hostPorts`, don't disable the port map plug-in.
 {: note}
 
 

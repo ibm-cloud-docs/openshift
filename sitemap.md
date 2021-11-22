@@ -4509,7 +4509,7 @@ subcollection: openshift
 
 * [Firewall prevents running CLI commands](/docs/openshift?topic=openshift-ts_clis#ts_firewall_clis)
 
-* [`kubectl` or `oc` commands do not work](/docs/openshift?topic=openshift-ts_clis#kubectl_fails)
+* [`kubectl` or `oc` commands don't work](/docs/openshift?topic=openshift-ts_clis#kubectl_fails)
 
 * [Time out when trying to connect to a pod](/docs/openshift?topic=openshift-ts_clis#roks_timeout)
 
@@ -4612,7 +4612,7 @@ subcollection: openshift
 
 * [Hard reboot](/docs/openshift?topic=openshift-common_worker_nodes_issues#hard-reboot)
 
-* [Instance cannot be found](/docs/openshift?topic=openshift-common_worker_nodes_issues#instance-not-found)
+* [Instance can't be found](/docs/openshift?topic=openshift-common_worker_nodes_issues#instance-not-found)
 
 [Why can't I create or delete worker nodes?](/docs/openshift?topic=openshift-worker_infra_errors#worker_infra_errors)
 
@@ -4807,7 +4807,7 @@ subcollection: openshift
 
 [Ingress health checks fail on Akamai Global Load Balancer (GLB) configurations](/docs/openshift?topic=openshift-cs_ingress_health_check_ctm#cs_ingress_health_check_ctm)
 
-[Why does the DNS Operator show a `RouteHealthDegraded` or `cannot marshal DNS message` error?](/docs/openshift?topic=openshift-ingress_subdomain#ingress_subdomain)
+[Why does the DNS Operator show a `RouteHealthDegraded` or `can't marshal DNS message` error?](/docs/openshift?topic=openshift-ingress_subdomain#ingress_subdomain)
 
 
 ### File Storage

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -57,7 +57,7 @@ VPC clusters only, with public and private cloud service endpoints enabled: Chec
 ## Step 3: Check firewalls and network policies
 {: #oc-debug-firewall}
 
-Check any firewalls or network policies to verify that you do not block any ingress or egress traffic for the OperatorHub or other {{site.data.keyword.openshiftshort}} components.
+Check any firewalls or network policies to verify that you don't block any ingress or egress traffic for the OperatorHub or other {{site.data.keyword.openshiftshort}} components.
 
 * If you generated an {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) allowlist by specifying which IP addresses have access to your cluster, you must [add the CIDRs of the {{site.data.keyword.openshiftlong_notm}} control plane for the zones in the region where your cluster is located to the allowlist](/docs/openshift?topic=openshift-firewall#iam_allowlist).
 * Classic only: If you have a firewall, [open the required ports and IP addresses in your firewall](/docs/openshift?topic=openshift-firewall).
@@ -115,20 +115,20 @@ VPC only: If you enabled the private cloud service endpoint, you must be [connec
 ## Step 6: Check the component pods
 {: #oc-debug-pods}
 
-Check the health of the {{site.data.keyword.openshiftshort}} component pods that do not work.
+Check the health of the {{site.data.keyword.openshiftshort}} component pods that don't work.
 1. Check the status of the pod.
     ```sh
     oc get pods -n <project>
     ```
     {: pre}
 
-2. If a pod is not in a **Running** status, describe the pod and check for the events. For example, you might see an error that the pod cannot be scheduled because of a lack of CPU or memory resources, which is common if you have a cluster with less than 3 worker nodes. [Resize your worker pool](/docs/openshift?topic=openshift-add_workers) and try again.
+2. If a pod is not in a **Running** status, describe the pod and check for the events. For example, you might see an error that the pod can't be scheduled because of a lack of CPU or memory resources, which is common if you have a cluster with less than 3 worker nodes. [Resize your worker pool](/docs/openshift?topic=openshift-add_workers) and try again.
     ```sh
     oc describe pod -n <project> <pod>
     ```
     {: pre}
 
-3. If you do not see any helpful information in the events section, check the pod logs for any error messages or other troubleshooting information.
+3. If you don't see any helpful information in the events section, check the pod logs for any error messages or other troubleshooting information.
     ```sh
     oc logs pod -n <project> <pod>
     ```
@@ -145,7 +145,7 @@ Check the health of the {{site.data.keyword.openshiftshort}} component pods that
 
 If the pods are healthy, check if other system pods are experiencing issues. Oftentimes to function properly, one component depends on another component to be healthy.
 
-For example, the OperatorHub has a set of images that are stored in external registries such as `quay.io`. These images are pulled into the internal registry to use across the projects in your {{site.data.keyword.openshiftshort}} cluster. If any of the OperatorHub or internal registry components are not set up properly, such as due to lack of permissions or compute resources, the OperatorHub and catalog do not display.
+For example, the OperatorHub has a set of images that are stored in external registries such as `quay.io`. These images are pulled into the internal registry to use across the projects in your {{site.data.keyword.openshiftshort}} cluster. If any of the OperatorHub or internal registry components are not set up properly, such as due to lack of permissions or compute resources, the OperatorHub and catalog don't display.
 
 
 1. Check for pending pods.
@@ -163,8 +163,8 @@ For example, the OperatorHub has a set of images that are stored in external reg
     For example, some common messages that you might see from `openshift-image-registry` pods include:
     * A `Volume could not be created` error message because you created the cluster without the correct storage permission. {{site.data.keyword.openshiftlong_notm}} clusters come with a file storage device by default to store images for the system and other pods. Revise your [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra) and restart the pod.
     * An `order will exceed maximum number of storage volumes allowed` error message because you have exceeded the combined quota of file and block storage devices that are allowed per account. [Remove unused storage devices](/docs/containers?topic=containers-file_storage#storage_remove_file) or [increase your storage quota](/docs/BlockStorage?topic=BlockStorage-managingstoragelimits), and restart the pod.
-    * A message that images cannot be stored because the file storage device is full. [Resize the storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration) and restart the pod.
-    * A `Pull image still failed due to error: unauthorized: authentication required` error message because the internal registry cannot pull images from an external registry. Check that [the image pull secrets](/docs/openshift?topic=openshift-registry#cluster_registry_auth) are set for the project and restart the pod.
+    * A message that images can't be stored because the file storage device is full. [Resize the storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration) and restart the pod.
+    * A `Pull image still failed due to error: unauthorized: authentication required` error message because the internal registry can't pull images from an external registry. Check that [the image pull secrets](/docs/openshift?topic=openshift-registry#cluster_registry_auth) are set for the project and restart the pod.
 3. Check the **Node** that the failing pods run on. If all the pods run on the same worker node, the worker node might have a network connectivity issue. Reload the worker node.
     ```sh
     ibmcloud oc worker reload -c <cluster_name_or_ID> -w <worker_node_ID>

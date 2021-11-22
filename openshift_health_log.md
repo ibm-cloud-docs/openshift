@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-22"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -41,7 +41,7 @@ Built-in {{site.data.keyword.openshiftshort}} logging tools
 :   Built-in view of pod logs in the {{site.data.keyword.openshiftshort}} web console.
     - Built-in pod logs are not configured with persistent storage. You must integrate with a cloud database to back up the logging data and make it highly available, and manage the logs yourself.
   
-    <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 3.11**: You cannot run the Ansible playbook to deploy the [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana EFK stack](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html){: external} because you cannot modify the default configuration of the {{site.data.keyword.openshiftlong_notm}} cluster.
+    <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 3.11**: You can't run the Ansible playbook to deploy the [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana EFK stack](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html){: external} because you can't modify the default configuration of the {{site.data.keyword.openshiftlong_notm}} cluster.
     {: note}
   
     <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} 4**: To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana EFK stack](https://docs.openshift.com/container-platform/4.7/logging/cluster-logging.html){: external}, see [installing the cluster logging operator](#oc_logging_operator). Keep in mind that your worker nodes must have at least 4 cores and GB memory to run the cluster logging stack.
@@ -75,7 +75,7 @@ Use the {{site.data.keyword.openshiftlong_notm}} observability plug-in to create
 
 Considerations for using the {{site.data.keyword.openshiftlong_notm}} observability plug-in:
 * You can have only one logging configuration for {{site.data.keyword.la_full_notm}} in your cluster at a time. If you want to use a different {{site.data.keyword.la_full_notm}} service instance to send logs to, use the [`ibmcloud ob logging config replace`](/docs/containers?topic=containers-observability_cli#logging_config_replace) command.
-* {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}} cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI to enable logging for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy logging agents to your cluster to forward logs to {{site.data.keyword.la_short}}.
+* {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}} can't currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI to enable logging for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy logging agents to your cluster to forward logs to {{site.data.keyword.la_short}}.
 * If you created a {{site.data.keyword.la_short}} configuration in your cluster without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you can use the [`ibmcloud ob logging agent discover`](/docs/containers?topic=containers-observability_cli#logging_agent_discover) command to make the configuration visible to the plug-in. Then, you can use the observability plug-in commands and functionality in the {{site.data.keyword.cloud_notm}} console to manage the configuration.
 
 Before you begin
@@ -170,7 +170,7 @@ To deploy the OpenShift Container Platform cluster logging operator and stack on
 1. Prepare your worker pool to run the operator.
     1. Create a [VPC](/docs/openshift?topic=openshift-add_workers#vpc_pools) or [classic](/docs/openshift?topic=openshift-add_workers#classic_pools) worker pool with a flavor of **at least 4 cores and 32 GB memory** and 3 worker nodes.
     2. [Label the worker pool](/docs/openshift?topic=openshift-add_workers#worker_pool_labels).
-    3. [Taint the worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) so that other workloads cannot run on the worker pool.
+    3. [Taint the worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) so that other workloads can't run on the worker pool.
 2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 3. From the {{site.data.keyword.openshiftshort}} web console **Administrator** perspective, click **Operators > Installed Operators**.
 4. Click **Cluster Logging**.
