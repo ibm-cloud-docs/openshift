@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: block, add-on, changelog
 
@@ -53,6 +53,28 @@ Refer to the following tables for a summary of changes for each version of the {
 
 Review the changes in version `4.0` of the {{site.data.keyword.block_storage_is_short}} add-on.
 {: shortdesc}
+
+### Changelog for version 4.0.2_788, released 22 November 2021
+{: #0400788_is_block_relnote}
+
+Review the changes in version `4.0.2_788` of the {{site.data.keyword.block_storage_is_short}} add-on. 
+{: shortdesc}
+
+Image tags: v4.0.2
+- Resolves the following CVEs.
+    - [CVE-2021-41772](https://nvd.nist.gov/vuln/detail/CVE-2021-41772){: external}
+    - [CVE-2021-41771](https://nvd.nist.gov/vuln/detail/CVE-2021-41771){: external}
+    - [CVE-2021-22946](https://nvd.nist.gov/vuln/detail/CVE-2021-22946){: external}
+    - [CVE-2021-22947](https://nvd.nist.gov/vuln/detail/CVE-2021-22947){: external}
+    - [CVE-2021-33928](https://nvd.nist.gov/vuln/detail/CVE-2021-33928){: external}
+    - [CVE-2021-33929](https://nvd.nist.gov/vuln/detail/CVE-2021-33929){: external}
+    - [CVE-2021-33930](https://nvd.nist.gov/vuln/detail/CVE-2021-33930){: external}
+    - [CVE-2021-33938](https://nvd.nist.gov/vuln/detail/CVE-2021-33938){: external}
+    - [CVE-2021-3733](https://nvd.nist.gov/vuln/detail/CVE-2021-3733){: external}
+- Updates the `storage-secret-sidecar` image to `v1.1.3`.
+- Updates the default class policy from `Reconcile` to `EnsureExists` for  the `ibmc-vpc-block-10iops-tier` storage class.
+- Updates Golang to version `1.16.10`.
+- Updates the UBI image to version `8.4-205`.
 
 
 ### Changelog for version 4.0.1_780, released 06 October 2021
@@ -243,7 +265,4 @@ Review the changes in version 2.0.3_365 of the {{site.data.keyword.block_storage
 - Updates sidecar container images.  
 - Adds liveness probe.  
 - Enables parallel attachment and detachment of volumes to worker nodes. Previously, worker nodes were attached and detached sequentially.  
-
-
-
 

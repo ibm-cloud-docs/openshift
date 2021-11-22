@@ -3867,6 +3867,8 @@ subcollection: openshift
 
 * [Version 4.0](/docs/openshift?topic=openshift-vpc_bs_changelog#0400_is_block)
 
+    * [Changelog for version 4.0.2_788, released 22 November 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400788_is_block_relnote)
+
     * [Changelog for version 4.0.1_780, released 06 October 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400780_is_block_relnote)
 
     * [Changelog for version 4.0.0_769, released 16 September 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400769_is_block_relnote)
