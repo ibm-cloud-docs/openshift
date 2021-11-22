@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -150,7 +150,7 @@ As an account administrator, create a trusted profile in {{site.data.keyword.clo
     * **Specific resources**: A particular cluster. Click **Add another resource +** to select a cluster and fill out conditions such as the Kubernetes namespace or Kubernetes service account that can establish trust.
     * Click **Continue**.
 
-    The Kubernetes namespace and service account names that you enter do not have to exist already. Any future namespaces or service accounts with these names can establish trust. To list existing namespaces, log in to your cluster and run `oc get ns`. To list existing service accounts, log in to your cluster and run `oc get sa -n <namespace>`.
+    The Kubernetes namespace and service account names that you enter don't have to exist already. Any future namespaces or service accounts with these names can establish trust. To list existing namespaces, log in to your cluster and run `oc get ns`. To list existing service accounts, log in to your cluster and run `oc get sa -n <namespace>`.
     {: note}
 
 7. Grant the trusted profile any access policies to the **IAM services** and **Account management** that you want pod in your cluster to be able to access.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift, nginx, ingress controller
 
@@ -37,7 +37,7 @@ Before you get started with Ingress, review the following prerequisites.
 - To ensure high availability, at least two worker nodes per zone are recommended.
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC clusters: [Allow traffic requests that are routed by Ingress to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-network-policy#security_groups).
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC multizone clusters: If you created a cluster in the CLI and later manually added zones to your worker pools with the `ibmcloud oc zone add vpc-gen2` command, you must [update the VPC load balancer that exposes the router](/docs/openshift?topic=openshift-router-mzr-error) to include subnets for all zones in your cluster.
-* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic clusters: Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the Ingress controller can route packets to various subnets in the account.
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic clusters: Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you can't or don't want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the Ingress controller can route packets to various subnets in the account.
 
 
 
@@ -116,7 +116,7 @@ If your cluster is created on ![Classic infrastructure provider icon.](images/ic
 Start by deploying your apps and creating Kubernetes services to expose them.
 {: shortdesc}
 
-1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods can be included in the Ingress load balancing.
+1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods are in the Ingress load balancing.
 
 2. For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
 
@@ -247,7 +247,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     :   Replace `<domain>` with the IBM-provided Ingress subdomain or your custom domain. If your cluster has multiple projects where apps are exposed, one Ingress resource is required per project. You can use the same subdomain in each resource or different subdomains in each resource. For example, if you use a wildcard domain, you can append a wildcard subdomain to the beginning of the domain, such as `subdomain1.custom_domain.net` or `subdomain1.mycluster-<hash>-0000.us-south.containers.appdomain.cloud`. Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.
 
     `path`
-    :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and the router sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps do not listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and do not specify an individual path for your app. For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
+    :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and the router sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
 
     `serviceName`
     :   Replace `<app1_service>` and `<app2_service>`, and so on, with the name of the services you created to expose your apps. If your apps are exposed by services in different projects in the cluster, include only app services that are in the same project. You must create one Ingress resource for each project where you have apps that you want to expose.
@@ -323,7 +323,7 @@ Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingr
 Start by deploying your apps and creating Kubernetes services to expose them.
 {: shortdesc}
 
-1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods can be included in the Ingress load balancing.
+1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods are in the Ingress load balancing.
 
 2. For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
 
@@ -502,7 +502,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     :   Replace `<domain>` with your subdomain. If your cluster has multiple projects where apps are exposed, one Ingress resource is required per project. You can use the same subdomain in each resource or different subdomains in each resource. For example, if you use a wildcard domain, you can append a wildcard subdomain to the beginning of the domain, such as `subdomain1.custom_domain.net`. Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.
 
     `path`
-    :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and the router sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps do not listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and do not specify an individual path for your app. 
+    :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and the router sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. 
     :   Examples: For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
 
     `serviceName`
@@ -645,7 +645,7 @@ If your cluster is created on ![Classic infrastructure provider icon.](images/ic
 Start by deploying your apps and creating Kubernetes services to expose them.
 {: shortdesc}
 
-1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods can be included in the Ingress load balancing.
+1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods are in the Ingress load balancing.
 
 2. For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
 
@@ -835,7 +835,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     :   Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.
 
     `path`
-    :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and the router sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps do not listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and do not specify an individual path for your app. 
+    :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and the router sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. 
     :   Examples: For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
 
     `serviceName`
@@ -914,7 +914,7 @@ If your cluster is created on ![VPC infrastructure provider icon.](images/icon-v
 Start by deploying your apps and creating Kubernetes services to expose them.
 {: shortdesc}
 
-1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods can be included in the Ingress load balancing.
+1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods are in the Ingress load balancing.
 
 2. For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
 
@@ -1047,7 +1047,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     :   Replace `<domain>` with the IBM-provided Ingress subdomain or your custom domain.<ul><li>If your cluster has multiple projects where apps are exposed, one Ingress resource is required per project. You can use the same subdomain in each resource or different subdomains in each resource. For example, if you use a wildcard domain, you can append a wildcard subdomain to the beginning of the domain, such as `subdomain1.custom_domain.net` or `subdomain1.mycluster-<hash>-0000.us-south.containers.appdomain.cloud`.</li><li>Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.
 
     `path`
-    :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and the router sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps do not listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and do not specify an individual path for your app. 
+    :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and the router sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. 
     :   Examples: For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
 
     `serviceName`

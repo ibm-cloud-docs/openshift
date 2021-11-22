@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -30,16 +30,16 @@ content-type: troubleshoot
 
 
 
-When you create the PVC, the bucket in {{site.data.keyword.cos_full_notm}} cannot be accessed. You see an error message similar to the following:
+When you create the PVC, the bucket in {{site.data.keyword.cos_full_notm}} can't be accessed. You see an error message similar to the following:
 {: tsSymptoms}
 
 ```sh
-Failed to provision volume with StorageClass "ibmc-s3fs-standard-regional": pvc:1b2345678b69175abc98y873e2:cannot access bucket <bucket_name>: NotFound: Not Found
+Failed to provision volume with StorageClass "ibmc-s3fs-standard-regional": pvc:1b2345678b69175abc98y873e2:can't access bucket <bucket_name>: NotFound: Not Found
 ```
 {: screen}
 
 
-You might have used the wrong storage class to access your existing bucket, or you tried to access a bucket that you did not create. You cannot access a bucket that you did not create.
+You might have used the wrong storage class to access your existing bucket, or you tried to access a bucket that you did not create. You can't access a bucket that you did not create.
 {: tsCauses}
 
 

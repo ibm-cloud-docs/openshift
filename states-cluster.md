@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: kubernetes, worker nodes, state
 
@@ -34,7 +34,7 @@ You sent a delete request before the Kubernetes master deployment completed. Aft
 Review the following description of the `Critical` cluster state. To view the state of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 {: shortdesc}
 
-The Kubernetes master cannot be reached or all worker nodes in the cluster are down. If you enabled {{site.data.keyword.keymanagementservicelong_notm}} in your cluster, the {{site.data.keyword.keymanagementserviceshort}} container might fail to encrypt or decrypt your cluster secrets. If so, you can view an error with more information when you run `oc get secrets`.
+The Kubernetes master can't be reached or all worker nodes in the cluster are down. If you enabled {{site.data.keyword.keymanagementservicelong_notm}} in your cluster, the {{site.data.keyword.keymanagementserviceshort}} container might fail to encrypt or decrypt your cluster secrets. If so, you can view an error with more information when you run `oc get secrets`.
 
 ## Delete failed
 {: #cluster-state-delete-failed}
@@ -42,7 +42,7 @@ The Kubernetes master cannot be reached or all worker nodes in the cluster are d
 Review the following description of the `Delete failed` cluster state. To view the state of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 {: shortdesc}
 
-The Kubernetes master or at least one worker node cannot be deleted. List worker nodes by running `ibmcloud oc worker ls --cluster <cluster_name_or_ID>`. If worker nodes are listed, see [Unable to create or delete worker nodes](/docs/containers?topic=containers-worker_infra_errors). If no workers are listed, open an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).
+The Kubernetes master or at least one worker node can't be deleted. List worker nodes by running `ibmcloud oc worker ls --cluster <cluster_name_or_ID>`. If worker nodes are listed, see [Unable to create or delete worker nodes](/docs/containers?topic=containers-worker_infra_errors). If no workers are listed, open an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).
 
 ## Deleted
 {: #cluster-state-deleted}
@@ -58,7 +58,7 @@ The cluster is deleted but not yet removed from your dashboard. If your cluster 
 Review the following description of the `Deleting` cluster state. To view the state of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 {: shortdesc}
 
-The cluster is being deleted and cluster infrastructure is being dismantled. You cannot access the cluster.
+The cluster is being deleted and cluster infrastructure is being dismantled. You can't access the cluster.
 
 ## Deploy failed
 {: #cluster-state-deploy-failed}
@@ -66,7 +66,7 @@ The cluster is being deleted and cluster infrastructure is being dismantled. You
 Review the following description of the `Deploy failed` cluster state. To view the state of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 {: shortdesc}
 
-The deployment of the Kubernetes master cannot be completed. You cannot resolve this state. Contact {{site.data.keyword.cloud_notm}} support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).
+The deployment of the Kubernetes master can't be completed. You can't resolve this state. Contact {{site.data.keyword.cloud_notm}} support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).
 
 ## Deploying
 {: #cluster-state-deploying}
@@ -74,7 +74,7 @@ The deployment of the Kubernetes master cannot be completed. You cannot resolve 
 Review the following description of the `Deploying` cluster state. To view the state of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 {: shortdesc}
 
-The Kubernetes master is not fully deployed yet. You cannot access your cluster. Wait until your cluster is fully deployed to review the health of your cluster.
+The Kubernetes master is not fully deployed yet. You can't access your cluster. Wait until your cluster is fully deployed to review the health of your cluster.
 
 ## Normal
 {: #cluster-state-normal}
@@ -94,7 +94,7 @@ Although the worker nodes might be normal, other infrastructure resources, such 
 Review the following description of the `Pending` cluster state. To view the state of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 {: shortdesc}
 
-The Kubernetes master is deployed. The worker nodes are provisioning and aren't available in the cluster yet. You can access the cluster, but you cannot deploy apps to the cluster.
+The Kubernetes master is deployed. The worker nodes are provisioning and aren't available in the cluster yet. You can access the cluster, but you can't deploy apps to the cluster.
 
 ## Requested
 {: #cluster-state-requested}
@@ -110,7 +110,7 @@ A request to create the cluster and order the infrastructure for the Kubernetes 
 Review the following description of the `Updating` cluster state. To view the state of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 {: shortdesc}
 
-The Kubernetes API server that runs in your Kubernetes master is being updated to a new Kubernetes API version. During the update, you cannot access or change the cluster. Worker nodes, apps, and resources that the user deployed aren't modified and continue to run. Wait for the update to complete to review the health of your cluster.
+The Kubernetes API server that runs in your Kubernetes master is being updated to a new Kubernetes API version. During the update, you can't access or change the cluster. Worker nodes, apps, and resources that the user deployed aren't modified and continue to run. Wait for the update to complete to review the health of your cluster.
 
 ## Unsupported
 {: #cluster-state-unsupported}
@@ -118,7 +118,7 @@ The Kubernetes API server that runs in your Kubernetes master is being updated t
 Review the following description of the `Unsupported` cluster state. To view the state of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 {: shortdesc}
 
-The <a href="/docs/containers?topic=containers-cs_versions#cs_versions">Kubernetes version</a> that the cluster runs is no longer supported. Your cluster's health is no longer actively monitored or reported. Additionally, you cannot add or reload worker nodes. To continue receiving important security updates and support, you must update your cluster. Review the [version update preparation actions](/docs/containers?topic=containers-cs_versions#prep-up), then [update your cluster](/docs/containers?topic=containers-update#update) to a supported Kubernetes version.
+The <a href="/docs/containers?topic=containers-cs_versions#cs_versions">Kubernetes version</a> that the cluster runs is no longer supported. Your cluster's health is no longer actively monitored or reported. Additionally, you can't add or reload worker nodes. To continue receiving important security updates and support, you must update your cluster. Review the [version update preparation actions](/docs/containers?topic=containers-cs_versions#prep-up), then [update your cluster](/docs/containers?topic=containers-update#update) to a supported Kubernetes version.
 
 ## Warning
 {: #cluster-state-warning}

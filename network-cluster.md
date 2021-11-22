@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift, vlan
 
@@ -24,7 +24,7 @@ After you initially set up your network when you [create a cluster](/docs/contai
 {: note}
 
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> The content on this page is specific to **classic clusters that run {{site.data.keyword.openshiftshort}} 3.11 only**. In clusters that run {{site.data.keyword.openshiftshort}} 3.11, you must enable the public cloud service endpoint during cluster creation, and you cannot disable it later. You can later enable the private cloud service endpoint. In clusters that run version 4, you choose the public cloud service endpoint only or public and private cloud service endpoints during cluster creation, and you cannot later change the cloud service endpoints.
+<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> The content on this page is specific to **classic clusters that run {{site.data.keyword.openshiftshort}} 3.11 only**. In clusters that run {{site.data.keyword.openshiftshort}} 3.11, you must enable the public cloud service endpoint during cluster creation, and you can't disable it later. You can later enable the private cloud service endpoint. In clusters that run version 4, you choose the public cloud service endpoint only or public and private cloud service endpoints during cluster creation, and you can't later change the cloud service endpoints.
 {: important}
 
 
@@ -35,7 +35,7 @@ After you initially set up your network when you [create a cluster](/docs/contai
 Enable the private cloud service endpoint for your cluster.
 {: shortdesc}
 
-The private cloud service endpoint makes your Kubernetes master privately accessible. Your worker nodes and your authorized cluster users can communicate with the Kubernetes master over the private network. To determine whether you can enable the private cloud service endpoint, see [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_clusters#workeruser-master). Note that you cannot disable the private cloud service endpoint after you enable it.
+The private cloud service endpoint makes your Kubernetes master privately accessible. Your worker nodes and your authorized cluster users can communicate with the Kubernetes master over the private network. To determine whether you can enable the private cloud service endpoint, see [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_clusters#workeruser-master). Note that you can't disable the private cloud service endpoint after you enable it.
 
 1. Enable [VRF](/docs/account?topic=account-vrf-service-endpoint#vrf) in your IBM Cloud infrastructure account. To check whether a VRF is already enabled, use the `ibmcloud account show` command.
 2. [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint).
@@ -143,7 +143,7 @@ To change the VLANs that a worker pool uses to provision worker nodes.
         ```
         {: pre}
 
-    2. Check that the public and private VLANs in the zone are compatible. To be compatible, the **Router** must have the same pod ID. In this example output, the **Router** pod IDs match: `01a` and `01a`. If one pod ID was `01a` and the other was `02a`, you cannot set these public and private VLAN IDs for your worker pool.
+    2. Check that the public and private VLANs in the zone are compatible. To be compatible, the **Router** must have the same pod ID. In this example output, the **Router** pod IDs match: `01a` and `01a`. If one pod ID was `01a` and the other was `02a`, you can't set these public and private VLAN IDs for your worker pool.
         ```sh
         ID        Name   Number   Type      Router         Supports Virtual Workers
         229xxxx          1234     private   bcr01a.dal12   true
@@ -207,8 +207,8 @@ To change the VLANs that a worker pool uses to provision worker nodes.
 8. Optional: You can repeat steps 2 - 7 for each worker pool in your cluster. After you complete these steps, all worker nodes in your cluster are set up with the new VLANs.
 
 9. Move networking services to the new VLANs. The networking services in your cluster are still bound to the old VLAN because their IP addresses are from a subnet on that VLAN.
-    - Routers: Because routers cannot be moved across VLANs, you can instead [create router services on the new VLANs and delete router services on the old VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-classic).
-    - Ingress ALBs ({{site.data.keyword.openshiftshort}} version 3.11 only): Because ALBs cannot be moved across VLANs, you can instead [create ALBs on the new VLANs and disable ALBs on the old VLANs](/docs/containers?topic=containers-ingress-types#migrate-alb-vlan).
+    - Routers: Because routers can't be moved across VLANs, you can instead [create router services on the new VLANs and delete router services on the old VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-classic).
+    - Ingress ALBs ({{site.data.keyword.openshiftshort}} version 3.11 only): Because ALBs can't be moved across VLANs, you can instead [create ALBs on the new VLANs and disable ALBs on the old VLANs](/docs/containers?topic=containers-ingress-types#migrate-alb-vlan).
 
 10. Optional: If you no longer need the subnets on the old VLANs, you can [remove them](/docs/openshift?topic=openshift-subnets#remove-subnets).
 

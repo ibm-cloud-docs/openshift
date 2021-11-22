@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -32,7 +32,7 @@ oc -n kube-system get pods
 {: pre}
 
 
-When you delete all worker nodes in your cluster, no worker node exists for the `calico-kube-controllers` pod to run on. The Calico controller pod's data cannot be updated to remove the data of the deleted worker nodes. When the Calico controller pod begins to run again on the new worker nodes, its data is not updated for the new worker nodes, and it does not start the `calico-node` pods.
+When you delete all worker nodes in your cluster, no worker node exists for the `calico-kube-controllers` pod to run on. The Calico controller pod's data can't be updated to remove the data of the deleted worker nodes. When the Calico controller pod begins to run again on the new worker nodes, its data is not updated for the new worker nodes, and it does not start the `calico-node` pods.
 {: tsCauses}
 
 
@@ -53,7 +53,7 @@ Delete the existing `calico-node` worker node entries so that new pods can be cr
     ```
     {: pre}
 
-    In this example output, the `calico-node` pod cannot start on worker node `10.176.48.106`.
+    In this example output, the `calico-node` pod can't start on worker node `10.176.48.106`.
     ```sh
     NAME                                           READY   STATUS              RESTARTS   AGE     IP              NODE            NOMINATED NODE   READINESS GATES
     ...

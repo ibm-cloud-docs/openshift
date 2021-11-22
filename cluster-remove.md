@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift, clusters, delete, remove
 
@@ -20,7 +20,7 @@ subcollection: openshift
 Clusters that are created with a billable account must be removed manually when they are not needed anymore so that those clusters are no longer consuming resources.
 {: shortdesc}
 
-When you delete the cluster, all worker nodes, apps, and containers are permanently deleted. This action cannot be undone. Before you proceed, make sure to back up all required data and configuration files.
+When you delete the cluster, all worker nodes, apps, and containers are permanently deleted. This action can't be undone. Before you proceed, make sure to back up all required data and configuration files.
 {: important}
 
 No backups are created of your cluster or your data in your persistent storage. When you delete a cluster, you can choose to delete your persistent storage. Persistent storage that you provisioned by using a `delete` storage class is permanently deleted in IBM Cloud infrastructure if you choose to delete your persistent storage. If you provisioned your persistent storage by using a `retain` storage class and you choose to delete your storage, the cluster, the PV, and PVC are deleted, but the persistent storage instance in your IBM Cloud infrastructure account remains.

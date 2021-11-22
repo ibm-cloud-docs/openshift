@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-22"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
 
@@ -44,7 +44,7 @@ To install OpenShift Data Foundation on classic clusters, you must enable [VRF](
 ### Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance
 {: #odf-create-cos-classic}
 
-If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing store in your storage cluster, create an instance of {{site.data.keyword.cos_full_notm}}. Then, create a set of HMAC credentials and a Kubernetes secret that uses your {{site.data.keyword.cos_short}} HMAC credentials. If you don't specify {{site.data.keyword.cos_full_notm}} credentials during installation, then the default backing store in your storage cluster is created by using the PVs in your cluster. You can set up additional backing stores after deploying ODF, but you cannot change the default backing store.
+If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing store in your storage cluster, create an instance of {{site.data.keyword.cos_full_notm}}. Then, create a set of HMAC credentials and a Kubernetes secret that uses your {{site.data.keyword.cos_short}} HMAC credentials. If you don't specify {{site.data.keyword.cos_full_notm}} credentials during installation, then the default backing store in your storage cluster is created by using the PVs in your cluster. You can set up additional backing stores after deploying ODF, but you can't change the default backing store.
 
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -111,7 +111,7 @@ Before you install OpenShift Data Foundation in a classic cluster, review the fo
         ```
         {: pre}
 
-    - For each disk partition, clear the `xfs` file system that was created with the worker node. If you do not clear the file system, the OSD is not created.
+    - For each disk partition, clear the `xfs` file system that was created with the worker node. If you don't clear the file system, the OSD is not created.
         ```sh
         file -sL /dev/<partition>
         wipefs -a /dev/<partition>
@@ -248,7 +248,7 @@ Before you install ODF, get the details of the local disks on your worker nodes.
     ```
     {: pre}
 
-    **Example output**
+    Example output
     ```sh
     total 0
     lrwxrwxrwx. 1 root root  9 Feb  9 04:15 scsi-3600605b00d87b43027b3bbb603150cc6 -> ../../sda
@@ -516,7 +516,7 @@ Refer to the following OpenShift Data Foundation parameters when you use the add
 | `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the specified number. For example, if you enter `1`, ODF creates 3 OSDs. | `1` |
 | `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your OCS deployment. | `advanced` |
 | `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
-| `workerNodes` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Do not specify this parameter if you want to use all of the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
+| `workerNodes` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Do not specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
 | `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
 {: caption="Classic parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}

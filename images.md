@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -299,7 +299,7 @@ For the list of changes for each Image Key Synchronizer add-on version, see the 
 ## Referring to the image pull secret in your pod deployment
 {: #pod_imagePullSecret}
 
-If the cluster administrator did not [store the image pull secret in the Kubernetes service account](/docs/openshift?topic=openshift-registry#use_imagePullSecret), all deployments that do not specify a service account cannot use the image pull secret to deploy containers. Instead, you can define an image pull secret in your pod deployment. When you refer to the image pull secret in a pod deployment, the image pull secret is valid for this pod only and cannot be shared across pods in the {{site.data.keyword.openshiftshort}} project.
+If the cluster administrator did not [store the image pull secret in the Kubernetes service account](/docs/openshift?topic=openshift-registry#use_imagePullSecret), all deployments that don't specify a service account can't use the image pull secret to deploy containers. Instead, you can define an image pull secret in your pod deployment. When you refer to the image pull secret in a pod deployment, the image pull secret is valid for this pod only and can't be shared across pods in the {{site.data.keyword.openshiftshort}} project.
 {: shortdesc}
 
 Before you begin
@@ -400,7 +400,7 @@ You can build containers from trusted images that are signed and stored in {{sit
 ## Enabling image security enforcement in your cluster
 {: #portieris-image-sec}
 
-When you enable image security enforcement in your cluster, you install the open-source Portieris Kubernetes project. Then, you can create image policies to prevent pods that do not meet the policies, such as unsigned images, from running in your cluster.
+When you enable image security enforcement in your cluster, you install the open-source Portieris Kubernetes project. Then, you can create image policies to prevent pods that don't meet the policies, such as unsigned images, from running in your cluster.
 {: shortdesc}
 
 For more information, see the [Portieris documentation](https://github.com/IBM/portieris){: external}.
@@ -433,11 +433,11 @@ See the following commands.
 ### Default image policies
 {: #portieris-default-policies}
 
-When you enable image security enforcement, {{site.data.keyword.openshiftlong_notm}} automatically creates certain image policies in your cluster. When you disable the feature, the underlying `ClusterImagePolicy` CRD is removed, which removes all of the default image policies and any custom images policies that you created.
+When you enable image security enforcement, {{site.data.keyword.openshiftlong_notm}} automatically creates certain image policies in your cluster. When you disable the feature, the underlying `ClusterImagePolicy` CRD is removed, which removes all the default image policies and any custom images policies that you created.
 {: shortdesc}
 
 - Image policies with the name `ibm-signed-image-enforcement` restrict the images that are run in the project to {{site.data.keyword.openshiftlong_notm}} images only. Do not modify these image policies. Any changes that you make are overwritten within a few minutes.
-- Other image policies, such as `default` or `default-allow-all`, permit images that are not restricted by another image policy. You can modify these image policies and your changes are preserved, but do not rename the image policy. If you rename the policy, more policies with the default name and settings are created.
+- Other image policies, such as `default` or `default-allow-all`, permit images that are not restricted by another image policy. You can modify these image policies and your changes are preserved, but don't rename the image policy. If you rename the policy, more policies with the default name and settings are created.
 
 To review the image policies in your cluster,
 

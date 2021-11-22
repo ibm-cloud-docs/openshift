@@ -2,7 +2,7 @@
 
 copyright:
  years: 2014, 2021
-lastupdated: "2021-11-16"
+lastupdated: "2021-11-22"
 
 keywords: openshift, changelog, version, unsupported, supported, deprecated
 
@@ -34,7 +34,7 @@ Version 4.5 is unsupported. You can review the following archive of the 4.5 chan
 ### Changelog for worker node fix pack 4.5.41_1553_openshift, released 27 September 2021
 {: #4541_1553}
 
-The following table shows the changes that are included in the worker node fix pack patch update `4.5.41_1553_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack patch update `4.5.41_1553_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -46,7 +46,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.5.41_1552_openshift, released 28 September 2021
 {: #4541_1552}
 
-The following table shows the changes that are included in the master fix pack patch update `4.5.41_1552_openshift`. Master patch updates are applied automatically. 
+The following table shows the changes that are in the master fix pack patch update `4.5.41_1552_openshift`. Master patch updates are applied automatically. 
 {: shortdesc}
 
 
@@ -68,7 +68,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.5.41_1551_openshift, released 13 September 2021
 {: #4541_1551}
 
-The following table shows the changes that are included in the worker node fix pack patch update `4.5.41_1551_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack patch update `4.5.41_1551_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -79,7 +79,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.5.41_1549_openshift, released 25 August 2021
 {: #4541_1549}
 
-The following table shows the changes that are included in the master fix pack patch update `4.5.41_1549_openshift`. Master patch updates are applied automatically. 
+The following table shows the changes that are in the master fix pack patch update `4.5.41_1549_openshift`. Master patch updates are applied automatically. 
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -101,7 +101,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.5.41_1548_openshift, released 16 August 2021
 {: #4541_1548}
 
-The following table shows the changes that are included in the worker node fix pack patch update `4.5.41_1548_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack patch update `4.5.41_1548_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 
@@ -114,7 +114,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.5.41_1547_openshift, released 02 August 2021
 {: #4541_1547}
 
-The following table shows the changes that are included in the worker node fix pack patch update `4.5.41_1547_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack patch update `4.5.41_1547_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -129,7 +129,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for fix pack 4.5.41_1546_openshift, released 27 July 2021
 {: #4541_1546}
 
-The following table shows the changes that are included in the master fix pack patch update `4.5.41_1546_openshift`. Master patch updates are applied automatically. 
+The following table shows the changes that are in the master fix pack patch update `4.5.41_1546_openshift`. Master patch updates are applied automatically. 
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -151,7 +151,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.5.41_1545_openshift, released 19 July 2021
 {: #4541_1545}
 
-The following table shows the changes that are included in the worker node fix pack `4.5.41_1545_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.5.41_1545_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -163,7 +163,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.5.40_1544_openshift, released 6 July 2021
 {: #4540_1544}
 
-The following table shows the changes that are included in the worker node fix pack `4.5.40_1544_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.5.40_1544_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -174,7 +174,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.5.40_1543_openshift, released 28 June 2021
 {: #4540_1543}
 
-The following table shows the changes that are included in the master fix pack patch update `4.5.40_1543_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.5.40_1543_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -198,7 +198,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.5.40_1542_openshift, released 22 June 2021
 {: #4540_1542}
 
-The following table shows the changes that are included in the worker node fix pack `4.5.40_1542_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.5.40_1542_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -211,7 +211,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.5.40_1541_openshift, released 7 June 2021
 {: #4540_1541}
 
-The following table shows the changes that are included in the worker node fix pack `4.5.40_1541_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.5.40_1541_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -225,7 +225,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.5.39_1540_openshift, released 24 May 2021
 {: #4539_1540}
 
-The following table shows the changes that are included in the worker node fix pack `4.5.39_1540_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.5.39_1540_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -238,7 +238,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.5.39_1539_openshift, released 24 May 2021
 {: #4539_1539}
 
-The following table shows the changes that are included in the master fix pack patch update `4.5.39_1539_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.5.39_1539_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -263,7 +263,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.5.38_1538_openshift, released 10 May 2021
 {: #4538_1538}
 
-The following table shows the changes that are included in the worker node fix pack `4.5.38_1538_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.5.38_1538_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -275,7 +275,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.5.37_1536_openshift, released 27 April 2021
 {: #4537_1536}
 
-The following table shows the changes that are included in the master fix pack patch update `4.5.37_1536_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.5.37_1536_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -299,7 +299,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.5.37_1537_openshift, released 26 April 2021
 {: #4537_1537}
 
-The following table shows the changes that are included in the worker node fix pack `4.5.37_1537_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.5.37_1537_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -312,7 +312,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.5.35_1535_openshift, released 12 April 2021
 {: #4535_1535}
 
-The following table shows the changes that are included in the worker node fix pack `4.5.35_1535_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.5.35_1535_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -324,7 +324,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.5.35_1533_openshift, released 30 March 2021
 {: #4535_1533}
 
-The following table shows the changes that are included in the master fix pack patch update `4.5.35_1533_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.5.35_1533_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -345,7 +345,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.5.35_1534_openshift, released 29 March 2021
 {: #4535_1534}
 
-The following table shows the changes that are included in the worker node fix pack `4.5.35_1534_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.5.35_1534_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -357,7 +357,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.5.33_1532_openshift, released 12 March 2021
 {: #4533_1532}
 
-The following table shows the changes that are included in the worker node fix pack `4.5.33_1532_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.5.33_1532_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -369,7 +369,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.5.31_1531_openshift, released 1 March 2021
 {: #4531_1531}
 
-The following table shows the changes that are included in the worker node fix pack `4.5.31_1531_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.5.31_1531_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -382,7 +382,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.5.31_1531_openshift, released 27 February 2021
 {: #4531_1531_master}
 
-The following table shows the changes that are included in the master fix pack patch update `4.5.31_1531_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.5.31_1531_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -394,7 +394,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for master fix pack 4.5.31_1530_openshift, released 22 February 2021
 {: #4531_1530}
 
-The following table shows the changes that are included in the master fix pack patch update `4.5.31_1530_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.5.31_1530_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -415,7 +415,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.5.31_1529_openshift, released 15 February 2021
 {: #4531_1529}
 
-The following table shows the changes that are included in the worker node fix pack `4.5.31_1529_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.5.31_1529_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -427,7 +427,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.5.28_1528_openshift, released 1 February 2021
 {: #4528_1528}
 
-The following table shows the changes that are included in the worker node fix pack `4.5.28_1528_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.5.28_1528_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -439,7 +439,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.5.24_1527_openshift, released 19 January 2021
 {: #4524_1527}
 
-The following table shows the changes that are included in the master fix pack patch update `4.5.24_1527_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.5.24_1527_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -462,7 +462,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.5.24_1526_openshift, released 18 January 2021
 {: #4524_1526}
 
-The following table shows the changes that are included in the worker node fix pack `4.5.24_1526_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.5.24_1526_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -474,7 +474,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.5.24_1525_openshift, released 6 January 2021
 {: #4524_1525}
 
-The following table shows the changes that are included in the master fix pack patch update `4.5.24_1525_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.5.24_1525_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -493,7 +493,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.5.22_1524_openshift, released 21 December 2020
 {: #4522_1524}
 
-The following table shows the changes that are included in the worker node fix pack update `4.5.21_1524_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.5.21_1524_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -506,7 +506,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.5.18_1523_openshift, released 14 December 2020
 {: #4518_1523}
 
-The following table shows the changes that are included in the master fix pack patch update `4.5.18_1523_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.5.18_1523_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -532,7 +532,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.5.21_1522_openshift, released 7 December 2020
 {: #4521_1522}
 
-The following table shows the changes that are included in the worker node fix pack update `4.5.21_1522_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.5.21_1522_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -545,7 +545,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.5.19_1521_openshift, released 23 November 2020
 {: #4519_1521}
 
-The following table shows the changes that are included in the worker node fix pack update `4.5.19_1521_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.5.19_1521_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -558,7 +558,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.5.18_1521_openshift, released 16 November 2020
 {: #4518_1521}
 
-The following table shows the changes that are included in the master fix pack patch update `4.5.18_1521_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.5.18_1521_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -579,7 +579,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.5.17_1519_openshift, released 9 November 2020
 {: #4517_1519}
 
-The following table shows the changes that are included in the worker node fix pack update `4.5.17_1519_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.5.17_1519_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -591,7 +591,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.5.15_1518_openshift, released 26 October 2020
 {: #4515_1518_worker}
 
-The following table shows the changes that are included in the worker node fix pack update `4.5.15_1518_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.5.15_1518_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -603,7 +603,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.5.15_1518_openshift, released 26 October 2020
 {: #4515_1518}
 
-The following table shows the changes that are included in the master fix pack patch update `4.5.15_1518_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.5.15_1518_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -621,7 +621,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for 4.5.13_1515_openshift, released 13 October 2020
 {: #4513_1515}
 
-The following table shows the changes that are included in the `4.5.13_1515_openshift` version update.
+The following table shows the changes that are in the `4.5.13_1515_openshift` version update.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -653,7 +653,7 @@ Version 4.4 is unsupported. You can review the following archive of the 4.4 chan
 ### Changelog for worker node fix pack 4.4.33_1544_openshift, released 24 May 2021
 {: #4433_1544}
 
-The following table shows the changes that are included in the worker node fix pack `4.4.33_1544_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.4.33_1544_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -665,7 +665,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.4.33_1543_openshift, released 24 May 2021
 {: #4433_1543}
 
-The following table shows the changes that are included in the master fix pack patch update `4.4.33_1543_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.4.33_1543_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -685,7 +685,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.4.33_1541_openshift, released 10 May 2021
 {: #4433_1541}
 
-The following table shows the changes that are included in the worker node fix pack `4.4.33_1541_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.4.33_1541_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -696,7 +696,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.4.33_1539_openshift, released 27 April 2021
 {: #4433_1539}
 
-The following table shows the changes that are included in the master fix pack patch update `4.4.33_1539_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.4.33_1539_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -714,7 +714,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.4.33_1540_openshift, released 26 April 2021
 {: #4433_1540}
 
-The following table shows the changes that are included in the worker node fix pack `4.4.33_1540_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.4.33_1540_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -726,7 +726,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.4.33_1538_openshift, released 12 April 2021
 {: #4433_1538}
 
-The following table shows the changes that are included in the worker node fix pack `4.4.33_1538_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.4.33_1538_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -738,7 +738,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.4.33_1536_openshift, released 30 March 2021
 {: #4433_1536}
 
-The following table shows the changes that are included in the master fix pack patch update `4.4.33_1536_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.4.33_1536_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -755,7 +755,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.4.33_1537_openshift, released 29 March 2021
 {: #4433_1537}
 
-The following table shows the changes that are included in the worker node fix pack `4.4.33_1537_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.4.33_1537_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -766,7 +766,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.4.33_1535_openshift, released 12 March 2021
 {: #4433_1535}
 
-The following table shows the changes that are included in the worker node fix pack `4.4.33_1535_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.4.33_1535_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -777,7 +777,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.4.33_1534_openshift, released 1 March 2021
 {: #4433_1534_worker}
 
-The following table shows the changes that are included in the worker node fix pack `4.4.33_1534_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.4.33_1534_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -790,7 +790,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.4.33_1534_openshift, released 22 February 2021
 {: #4433_1534}
 
-The following table shows the changes that are included in the master fix pack patch update `4.4.33_1534_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.4.33_1534_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -811,7 +811,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.4.33_1533_openshift, released 15 February 2021
 {: #4433_1533}
 
-The following table shows the changes that are included in the worker node fix pack `4.4.33_1533_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.4.33_1533_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -823,7 +823,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.4.31_1532_openshift, released 1 February 2021
 {: #4431_1532}
 
-The following table shows the changes that are included in the worker node fix pack `4.4.31_1532_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.4.31_1532_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -834,7 +834,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.4.31_1531_openshift, released 19 January 2021
 {: #4431_1531}
 
-The following table shows the changes that are included in the master fix pack patch update `4.4.31_1531_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.4.31_1531_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -855,7 +855,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.4.31_1530_openshift, released 18 January 2021
 {: #4431_1530}
 
-The following table shows the changes that are included in the worker node fix pack `4.4.31_1530_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.4.31_1530_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -866,7 +866,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.4.31_1529_openshift, released 6 January 2021
 {: #4431_1529}
 
-The following table shows the changes that are included in the master fix pack patch update `4.4.31_1529_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.4.31_1529_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -885,7 +885,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.4.31_1528_openshift, released 21 December 2020
 {: #4431_1528}
 
-The following table shows the changes that are included in the worker node fix pack update `4.4.31_1528_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.4.31_1528_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -897,7 +897,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.4.29_1527_openshift, released 14 December 2020
 {: #4429_1527}
 
-The following table shows the changes that are included in the master fix pack patch update `4.4.29_1527_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.4.29_1527_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -921,7 +921,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.4.31_1526_openshift, released 7 December 2020
 {: #4431_1526}
 
-The following table shows the changes that are included in the worker node fix pack update `4.4.31_1526_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.4.31_1526_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -934,7 +934,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.4.30_1525_openshift, released 23 November 2020
 {: #4430_1525}
 
-The following table shows the changes that are included in the worker node fix pack update `4.4.30_1525_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.4.30_1525_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -947,7 +947,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.4.29_1525_openshift, released 16 November 2020
 {: #4429_1525}
 
-The following table shows the changes that are included in the master fix pack patch update `4.4.29_1525_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.4.29_1525_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -966,7 +966,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.4.29_1524_openshift, released 9 November 2020
 {: #4429_1524}
 
-The following table shows the changes that are included in the worker node fix pack update `4.4.29_1524_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.4.29_1524_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -978,7 +978,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.4.27_1523_openshift, released 26 October 2020
 {: #4427_1523_worker}
 
-The following table shows the changes that are included in the worker node fix pack update `4.4.27_1523_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.4.27_1523_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -990,7 +990,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.4.27_1523_openshift, released 26 October 2020
 {: #4427_1523}
 
-The following table shows the changes that are included in the master fix pack patch update `4.4.27_1523_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.4.27_1523_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1008,7 +1008,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.4.26_1521_openshift, released 12 October 2020
 {: #4426_1521}
 
-The following table shows the changes that are included in the worker node fix pack update `4.4.26_1521_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.4.26_1521_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1020,7 +1020,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.4.23_1520_openshift, released 30 September 2020
 {: #4423_1520}
 
-The following table shows the changes that are included in the worker node fix pack update `4.4.23_1520_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.4.23_1520_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1031,7 +1031,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.4.23_1519_openshift, released 28 September 2020
 {: #4423_1519}
 
-The following table shows the changes that are included in the worker node fix pack update `4.4.23_1519_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.4.23_1519_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1042,7 +1042,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.4.20_1518_openshift, released 21 September 2020
 {: #4420_1518}
 
-The following table shows the changes that are included in the master fix pack patch update `4.4.20_1518_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.4.20_1518_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1062,7 +1062,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.4.20_1517_openshift, released 14 September 2020
 {: #4420_1517}
 
-The following table shows the changes that are included in the worker node fix pack update `4.4.20_1517_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.4.20_1517_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1075,7 +1075,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.4.18_1516_openshift, released 31 August 2020
 {: #4418_1516}
 
-The following table shows the changes that are included in the worker node fix pack update `4.4.18_1516_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.4.18_1516_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1088,7 +1088,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.4.17_1515_openshift, released 21 August 2020
 {: #4417_1515}
 
-The following table shows the changes that are included in the master fix pack patch update `4.4.17_1515_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.4.17_1515_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1101,7 +1101,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for master fix pack 4.4.16_1513_openshift, released 18 August 2020
 {: #4416_1513_master}
 
-The following table shows the changes that are included in the master fix pack patch update `4.4.16_1513_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.4.16_1513_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1123,7 +1123,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.4.16_1513_openshift, released 17 August 2020
 {: #4416_1513}
 
-The following table shows the changes that are included in the worker node fix pack update `4.4.16_1513_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.4.16_1513_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1135,7 +1135,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.4.14_1512_openshift, released 3 August 2020
 {: #4414_1512}
 
-The following table shows the changes that are included in the worker node fix pack update `4.4.14_1512_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.4.14_1512_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1147,7 +1147,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for 4.4.11_1511_openshift, released 21 July 2020
 {: #4411_1511}
 
-The following table shows the changes that are included in the `4.4.11_1511_openshift` version update.
+The following table shows the changes that are in the `4.4.11_1511_openshift` version update.
 {: shortdesc}
 
 | Component | Location | Previous | Current | Description |
@@ -1170,7 +1170,7 @@ Version 4.3 is unsupported. You can review the following archive of the 4.3 chan
 ### Changelog for worker node fix pack 4.3.40_1555_openshift, released 1 March 2021
 {: #4340_1555_worker}
 
-The following table shows the changes that are included in the worker node fix pack `4.3.40_1555_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.3.40_1555_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1182,7 +1182,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.3.40_1555_openshift, released 22 February 2021
 {: #4340_1555}
 
-The following table shows the changes that are included in the master fix pack patch update `4.3.40_1555_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.3.40_1555_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1199,7 +1199,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.3.40_1554_openshift, released 15 February 2021
 {: #4340_1554}
 
-The following table shows the changes that are included in the worker node fix pack `4.3.40_1554_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.3.40_1554_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1210,7 +1210,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.3.40_1553_openshift, released 1 February 2021
 {: #4340_1553}
 
-The following table shows the changes that are included in the worker node fix pack `4.3.40_1553_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.3.40_1553_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1221,7 +1221,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.3.40_1552_openshift, released 19 January 2021
 {: #4340_1552}
 
-The following table shows the changes that are included in the master fix pack patch update `4.3.40_1552_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.3.40_1552_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1241,7 +1241,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.3.40_1551_openshift, released 18 January 2021
 {: #4340_1551}
 
-The following table shows the changes that are included in the worker node fix pack `4.3.40_1551_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack `4.3.40_1551_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1252,7 +1252,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.3.40_1550_openshift, released 6 January 2021
 {: #4340_1550}
 
-The following table shows the changes that are included in the master fix pack patch update `4.3.40_1550_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.3.40_1550_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1267,7 +1267,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.3.40_1549_openshift, released 21 December 2020
 {: #4340_1549}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.40_1549_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.3.40_1549_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1279,7 +1279,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.3.40_1548_openshift, released 14 December 2020
 {: #4340_1548}
 
-The following table shows the changes that are included in the master fix pack patch update `4.3.40_1548_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.3.40_1548_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1299,7 +1299,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.3.40_1547_openshift, released 7 December 2020
 {: #4340_1547}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.40_1547_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.3.40_1547_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1311,7 +1311,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.3.40_1546_openshift, released 23 November 2020
 {: #4340_1546_worker}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.40_1546_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.3.40_1546_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1323,7 +1323,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.3.40_1546_openshift, released 16 November 2020
 {: #4340_1546}
 
-The following table shows the changes that are included in the master fix pack patch update `4.3.40_1546_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.3.40_1546_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1341,7 +1341,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.3.40_1545_openshift, released 9 November 2020
 {: #4340_1545}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.40_1545_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.3.40_1545_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1352,7 +1352,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.3.40_1544_openshift, released 26 October 2020
 {: #4340_1544}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.40_1544_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.3.40_1544_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1364,7 +1364,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.3.38_1544_openshift, released 26 October 2020
 {: #4338_1544}
 
-The following table shows the changes that are included in the master fix pack patch update `4.3.38_1544_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.3.38_1544_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1382,7 +1382,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.3.38_1542_openshift, released 12 October 2020
 {: #4338_1542}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.38_1542_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.3.38_1542_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1393,7 +1393,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.3.38_1541_openshift, released 30 September 2020
 {: #4338_1541}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.38_1541_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.3.38_1541_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1404,7 +1404,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.3.38_1540_openshift, released 28 September 2020
 {: #4338_1540}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.38_1540_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.3.38_1540_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1415,7 +1415,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.3.35_1539_openshift, released 21 September 2020
 {: #4335_1539}
 
-The following table shows the changes that are included in the master fix pack patch update `4.3.35_1539_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.3.35_1539_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1434,7 +1434,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.3.35_1538_openshift, released 14 September 2020
 {: #4335_1538}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.35_1538_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.3.35_1538_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1446,7 +1446,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.3.33_1537_openshift, released 31 August 2020
 {: #4333_1537}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.33_1537_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.3.33_1537_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1459,7 +1459,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.3.31_1536_openshift, released 21 August 2020
 {: #4331_1536}
 
-The following table shows the changes that are included in the master fix pack patch update `4.3.31_1536_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.3.31_1536_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1471,7 +1471,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for master fix pack 4.3.31_1534_openshift, released 18 August 2020
 {: #4331_1534_master}
 
-The following table shows the changes that are included in the master fix pack patch update `4.3.31_1534_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack patch update `4.3.31_1534_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1492,7 +1492,7 @@ The following table shows the changes that are included in the master fix pack p
 ### Changelog for worker node fix pack 4.3.31_1534_openshift, released 17 August 2020
 {: #4331_1534}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.31_1534_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.3.31_1534_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1504,7 +1504,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.3.29_1533_openshift, released 3 August 2020
 {: #4329_1533}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.29_1533_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.3.29_1533_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1515,7 +1515,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.3.28_1532_openshift, released 20 July 2020
 {: #4328_1532}
 
-The following table shows the changes that are included in the master fix pack update `4.3.28_1532_openshift`. Master patch updates are applied automatically.
+The following table shows the changes that are in the master fix pack update `4.3.28_1532_openshift`. Master patch updates are applied automatically.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1532,7 +1532,7 @@ The following table shows the changes that are included in the master fix pack u
 ### Changelog for worker node fix pack 4.3.29_1532_openshift, released 20 July 2020
 {: #4329_1532}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.29_1532_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.3.29_1532_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1545,7 +1545,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.3.27_1528_openshift, released 6 July 2020
 {: #4327_1528}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.27_1528_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.3.27_1528_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1559,7 +1559,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.3.23_1527_openshift and worker node fix pack 4.3.25_1527_openshift, released 22 June 2020
 {: #4323_1527_master}
 
-The following table shows the changes that are included in the master fix pack update `4.3.23_1527_openshift` and in worker node fix pack update `4.3.25_1527_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
+The following table shows the changes that are in the master fix pack update `4.3.23_1527_openshift` and in worker node fix pack update `4.3.25_1527_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
 {: shortdesc}
 
 | Component | Location | Previous | Current | Description |
@@ -1578,7 +1578,7 @@ The following table shows the changes that are included in the master fix pack u
 ### Changelog for master fix pack 4.3.23_1525_openshift, released 16 June 2020
 {: #4323_1525}
 
-The following table shows the changes that are included in the master fix pack update `4.3.23_1525_openshift`. Master patch updates are applied automatically. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
+The following table shows the changes that are in the master fix pack update `4.3.23_1525_openshift`. Master patch updates are applied automatically. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1597,7 +1597,7 @@ The following table shows the changes that are included in the master fix pack u
 ### Changelog for worker node fix pack 4.3.23_1524_openshift, released 8 June 2020
 {: #4323_1524}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.23_1524_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.3.23_1524_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1609,7 +1609,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.3.21_1523_openshift, released 26 May 2020
 {: #4321_1523}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.21_1523_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.3.21_1523_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1621,7 +1621,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.3.19_1523_openshift, released 26 May 2020
 {: #4319_1523}
 
-The following table shows the changes that are included in the master fix pack update `4.3.19_1523_openshift`. Master patch updates are applied automatically. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
+The following table shows the changes that are in the master fix pack update `4.3.19_1523_openshift`. Master patch updates are applied automatically. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1639,12 +1639,12 @@ The following table shows the changes that are included in the master fix pack u
 ### Changelog for master fix pack 4.3.18_1522_openshift, released 12 May 2020
 {: #4318_1522}
 
-The following table shows the changes that are included in the master fix pack update `4.3.18_1522_openshift`. Master patch updates are applied automatically. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
+The following table shows the changes that are in the master fix pack update `4.3.18_1522_openshift`. Master patch updates are applied automatically. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
 {: shortdesc}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Cluster health image | v1.1.0 | v1.1.4 | When cluster add-ons do not support the current cluster version, a warning is now returned in the cluster health state. |
+| Cluster health image | v1.1.0 | v1.1.4 | When cluster add-ons don't support the current cluster version, a warning is now returned in the cluster health state. |
 | etcd | v3.4.3 | v3.4.7 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.4.7){: external}. |
 | Gateway-enabled cluster controller | 1045 | 1082 | Updated image for [CVE-2020-1967](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1967){: external}. |
 | IBM Calico extension | 320 | 349 | Updated image for [CVE-2020-1967](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1967){: external}. |
@@ -1660,7 +1660,7 @@ The following table shows the changes that are included in the master fix pack u
 ### Changelog for worker node fix pack 4.3.14_1522_openshift, released 11 May 2020
 {: #4314_1522}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.13_1522_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.3.13_1522_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1672,7 +1672,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020
 {: #4313_1521}
 
-The following table shows the changes that are included in the worker node fix pack update `4.3.13_1521_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack update `4.3.13_1521_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1686,7 +1686,7 @@ The following table shows the changes that are included in the worker node fix p
 ### Changelog for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020
 {: #4312_1520_master}
 
-The following table shows the changes that are included in the master fix pack update `4.3.12_1520_openshift` and in worker node fix pack update `4.3.10_1518_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
+The following table shows the changes that are in the master fix pack update `4.3.12_1520_openshift` and in worker node fix pack update `4.3.10_1518_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
 {: shortdesc}
 
 | Component | Location | Previous | Current | Description |
@@ -1697,7 +1697,7 @@ The following table shows the changes that are included in the master fix pack u
 | etcd | Master | v3.3.18 | v3.4.3 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.4.3){: external}. |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} driver and plug-in | Master | 1.15.4 | 1.16 | Updated to `Go` version 1.13.8 and to set container resource requests and limits. |
 | IBM Calico extension | Master | N/A | 320 | **New!:** Added a Calico node init container that creates Calico private host endpoints for worker nodes. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | Master | v1.15.10-252 | v1.17.4-3 | The {{site.data.keyword.cloud_notm}} Controller Manager component replaces the {{site.data.keyword.cloud_notm}} Provider component by moving the {{site.data.keyword.cloud_notm}} controllers from the Kubernetes [kube-controller-manager](https://kubernetes.io/docs/concepts/overview/components/#kube-controller-manager){: external} to the [cloud-controller-manager](https://kubernetes.io/docs/concepts/overview/components/#cloud-controller-manager){: external}) component. The {{site.data.keyword.cloud_notm}} Controller Manager is updated to support the Kubernetes 1.17.4 release, to use `distroless/static` base image version `c6d59815`, `Go` version 1.13.8, and `calicoctl` version 3.12.1. Finally, the {{site.data.keyword.cloud_notm}} Controller Manager updated version 1.0 and 2.0 network load balancers (NLBs) to prefer scheduling NLB pods on worker nodes that do not currently run any NLB pods. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | Master | v1.15.10-252 | v1.17.4-3 | The {{site.data.keyword.cloud_notm}} Controller Manager component replaces the {{site.data.keyword.cloud_notm}} Provider component by moving the {{site.data.keyword.cloud_notm}} controllers from the Kubernetes [kube-controller-manager](https://kubernetes.io/docs/concepts/overview/components/#kube-controller-manager){: external} to the [cloud-controller-manager](https://kubernetes.io/docs/concepts/overview/components/#cloud-controller-manager){: external}) component. The {{site.data.keyword.cloud_notm}} Controller Manager is updated to support the Kubernetes 1.17.4 release, to use `distroless/static` base image version `c6d59815`, `Go` version 1.13.8, and `calicoctl` version 3.12.1. Finally, the {{site.data.keyword.cloud_notm}} Controller Manager updated version 1.0 and 2.0 network load balancers (NLBs) to prefer scheduling NLB pods on worker nodes that don't currently run any NLB pods. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | Master | 169 | 177 | Version 2.0 network load balancers (NLBs) were updated to fix problems with long-lived network connections to endpoints that failed readiness probes. |
 | {{site.data.keyword.openshiftshort}} | Master | 3.11.170 | 4.3.12 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html){: external}. |
 | {{site.data.keyword.openshiftshort}} | Worker | 3.11.170 | 4.3.10 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html){: external}. |

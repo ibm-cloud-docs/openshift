@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -26,10 +26,10 @@ content-type: troubleshoot
 During a master operation such as updating your cluster version, the cluster had a broken webhook application.
 {: tsSymptoms}
 
-Now, master operations cannot complete. You see an error similar to the following:
+Now, master operations can't complete. You see an error similar to the following:
 
 ```sh
-Cannot complete cluster master operations because the cluster has a broken webhook application. For more information, see the troubleshooting docs: 'https://ibm.biz/master_webhook'
+can't complete cluster master operations because the cluster has a broken webhook application. For more information, see the troubleshooting docs: 'https://ibm.biz/master_webhook'
 ```
 {: screen}
 
@@ -102,7 +102,7 @@ Identify and restore the resource that causes the broken webhook.
     ```
     {: screen}
 
-4. **Optional**: Back up the webhooks, especially if you do not know how to reinstall the webhook.
+4. **Optional**: Back up the webhooks, especially if you don't know how to reinstall the webhook.
     ```sh
     oc get mutatingwebhookconfiguration <name> -o yaml > mutatingwebhook-backup.yaml
     ```

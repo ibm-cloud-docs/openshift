@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: file, debug, help
 
@@ -117,7 +117,7 @@ Follow the steps to check the status of your storage driver and plug-in pods and
     ```
     {: pre}
 
-1. If the storage driver and plug-in pods do not show a **Running** status, get more details of the pod to find the root cause. Depending on the status of your pod, the following commands might fail.
+1. If the storage driver and plug-in pods don't show a **Running** status, get more details of the pod to find the root cause. Depending on the status of your pod, the following commands might fail.
     
     1. Get the names of the containers that run in the driver pod.
 
@@ -141,7 +141,7 @@ Follow the steps to check the status of your storage driver and plug-in pods and
         {: pre}
         
 
-1. If the storage driver and plug-in pods do not show a **Running** status, get more details of the pod to find the root cause. Depending on the status of your pod, you might not be able to execute all of the following commands.
+1. If the storage driver and plug-in pods don't show a **Running** status, get more details of the pod to find the root cause. Depending on the status of your pod, you might not be able to execute all the following commands.
     1. Get the names of the containers that run in the driver pod.
         ```sh
         kubectl get pod ibm-vpc-block-csi-controller-0 -n kube-system -o jsonpath="{.spec['containers','initContainers'][*].name}" | tr -s '[[:space:]]' '\n'
@@ -230,7 +230,7 @@ If you use a `oc` CLI version that does not match at least the major.minor versi
     ```
     {: pre}
 
-    **Example output**:
+    Example output:
     ```sh
     Client Version: version.Info{Major:"1", Minor:"1.20", GitVersion:"v1.20.11", GitCommit:"641856db18352033a0d96dbc99153fa3b27298e5", GitTreeState:"clean", BuildDate:"2019-03-25T15:53:57Z", GoVersion:"go1.12.1", Compiler:"gc", Platform:"darwin/amd64"}
     Server Version: version.Info{Major:"1", Minor:"1.20", GitVersion:"v1.20.11+IKS", GitCommit:"e15454c2216a73b59e9a059fd2def4e6712a7cf0", GitTreeState:"clean", BuildDate:"2019-04-01T10:08:07Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
@@ -239,7 +239,7 @@ If you use a `oc` CLI version that does not match at least the major.minor versi
 
     The CLI versions match if you can see the same version in `GitVersion` for the client and the server. You can ignore the `+IKS` part of the version for the server.
 
-2. If the `oc` CLI versions on your local machine and your cluster do not match, either [update your cluster](/docs/openshift?topic=openshift-update) or [install a different CLI version on your local machine](/docs/openshift?topic=openshift-openshift-cli#cs_cli_upgrade).
+2. If the `oc` CLI versions on your local machine and your cluster don't match, either [update your cluster](/docs/openshift?topic=openshift-update) or [install a different CLI version on your local machine](/docs/openshift?topic=openshift-openshift-cli#cs_cli_upgrade).
 
 ## Checking and updating the {{site.data.keyword.blockstorageshort}} driver
 {: #debug_storage_block_driver}

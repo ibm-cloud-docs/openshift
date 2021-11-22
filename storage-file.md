@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -112,7 +112,7 @@ For more information, see the following links.
 
 Every storage class specifies the type of {{site.data.keyword.filestorage_short}} that you provision, including available size, IOPS, file system, and the retention policy.  
 
-After you provision a specific type of storage by using a storage class, you cannot change the type, or retention policy for the storage device. However, you can [change the size and the IOPS](#file_change_storage_configuration) if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must [create a new storage instance and copy the data](/docs/openshift?topic=openshift-kube_concepts#update_storageclass) from the old storage instance to your new one.
+After you provision a specific type of storage by using a storage class, you can't change the type, or retention policy for the storage device. However, you can [change the size and the IOPS](#file_change_storage_configuration) if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must [create a new storage instance and copy the data](/docs/openshift?topic=openshift-kube_concepts#update_storageclass) from the old storage instance to your new one.
 {: important}
 
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -148,7 +148,7 @@ To decide on a storage configuration:
     ```
     {: pre}
 
-    For more information about each storage class, see the [storage class reference](#file_storageclass_reference). If you do not find what you are looking for, consider creating your own customized storage class. To get started, check out the [customized storage class samples](#file_custom_storageclass).
+    For more information about each storage class, see the [storage class reference](#file_storageclass_reference). If you don't find what you are looking for, consider creating your own customized storage class. To get started, check out the [customized storage class samples](#file_custom_storageclass).
     {: tip}
     
 3. Choose the file storage [type](#file-types), [IOPS](#file-iops), [reclaim policy](#file-reclaim), and [billing](#file-billing) that you want to use.
@@ -288,13 +288,13 @@ To add {{site.data.keyword.filestorage_short}}:
     :   Enter the name of the PVC.
     
     `billingType`
-    :   Specify the frequency for which your storage bill is calculated, "monthly" or "hourly". If you do not specify a billing type, the storage is provisioned with an hourly billing type.
+    :   Specify the frequency for which your storage bill is calculated, "monthly" or "hourly". If you don't specify a billing type, the storage is provisioned with an hourly billing type.
     
     `region`
-    :   Optional: Specify the region where you want to provision your {{site.data.keyword.filestorage_short}}. To connect to your storage, create the storage in the same region that your cluster is in. If you specify the region, you must also specify a zone. If you do not specify a region, or the specified region is not found, the storage is created in the same region as your cluster. To get the region for your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>` and look for the region prefix in the **Master URL**, such as `eu-de` in `https://c2.eu-de.containers.cloud.ibm.com:11111`. Instead of specifying the region and zone in the PVC, you can also specify these values in a [customized storage class](#file_multizone_yaml). Then, use your storage class in the `metadata.annotations.volume.beta.kubernetes.io/storage-class` section of your PVC. If the region and zone are specified in the storage class and the PVC, the values in the PVC take precedence.
+    :   Optional: Specify the region where you want to provision your {{site.data.keyword.filestorage_short}}. To connect to your storage, create the storage in the same region that your cluster is in. If you specify the region, you must also specify a zone. If you don't specify a region, or the specified region is not found, the storage is created in the same region as your cluster. To get the region for your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>` and look for the region prefix in the **Master URL**, such as `eu-de` in `https://c2.eu-de.containers.cloud.ibm.com:11111`. Instead of specifying the region and zone in the PVC, you can also specify these values in a [customized storage class](#file_multizone_yaml). Then, use your storage class in the `metadata.annotations.volume.beta.kubernetes.io/storage-class` section of your PVC. If the region and zone are specified in the storage class and the PVC, the values in the PVC take precedence.
     
     `zone`
-    :   Optional: Specify the zone where you want to provision your {{site.data.keyword.filestorage_short}}. To use your storage in an app, create the storage in the same zone that your worker node is in. To view the zone of your worker node, run `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` and review the **Zone** column of your CLI output. If you specify the zone, you must also specify a region. If you do not specify a zone or the specified zone is not found in a multizone cluster, the zone is selected on a round-robin basis. Instead of specifying the region and zone in the PVC, you can also specify these values in a [customized storage class](#file_multizone_yaml). Then, use your storage class in the `metadata.annotations.volume.beta.kubernetes.io/storage-class` section of your PVC. If the region and zone are specified in the storage class and the PVC, the values in the PVC take precedence.
+    :   Optional: Specify the zone where you want to provision your {{site.data.keyword.filestorage_short}}. To use your storage in an app, create the storage in the same zone that your worker node is in. To view the zone of your worker node, run `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` and review the **Zone** column of your CLI output. If you specify the zone, you must also specify a region. If you don't specify a zone or the specified zone is not found in a multizone cluster, the zone is selected on a round-robin basis. Instead of specifying the region and zone in the PVC, you can also specify these values in a [customized storage class](#file_multizone_yaml). Then, use your storage class in the `metadata.annotations.volume.beta.kubernetes.io/storage-class` section of your PVC. If the region and zone are specified in the storage class and the PVC, the values in the PVC take precedence.
     
     `accessMode`
     :   Specify one of the following options.
@@ -303,13 +303,13 @@ To add {{site.data.keyword.filestorage_short}}:
         - `ReadWriteOnce`: The PVC can be mounted by one pod only. This pod can read from and write to the volume.
     
     `storage`
-    :   Enter the size of the {{site.data.keyword.filestorage_short}}, in gigabytes (Gi). After your storage is provisioned, you cannot change the size of your {{site.data.keyword.filestorage_short}}. Make sure to specify a size that matches the amount of data that you want to store.
+    :   Enter the size of the {{site.data.keyword.filestorage_short}}, in gigabytes (Gi). After your storage is provisioned, you can't change the size of your {{site.data.keyword.filestorage_short}}. Make sure to specify a size that matches the amount of data that you want to store.
     
     `iops``
     :   This option is available for the custom storage classes only (`ibmc-file-custom / ibmc-file-retain-custom`). Specify the total IOPS for the storage, selecting a multiple of 100 within the allowable range. If you choose an IOPS other than one that is listed, the IOPS is rounded up.
     
     `storageClassName`
-    :   The name of the storage class that you want to use to provision {{site.data.keyword.filestorage_short}}. You can choose to use one of the [IBM-provided storage classes](#file_storageclass_reference) or [create your own storage class](#file_custom_storageclass). If you do not specify a storage class, the PV is created with the default storage class `ibmc-file-bronze`. Want to set your own default? See [Changing the default storage class](/docs/openshift?topic=openshift-kube_concepts#default_storageclass).
+    :   The name of the storage class that you want to use to provision {{site.data.keyword.filestorage_short}}. You can choose to use one of the [IBM-provided storage classes](#file_storageclass_reference) or [create your own storage class](#file_custom_storageclass). If you don't specify a storage class, the PV is created with the default storage class `ibmc-file-bronze`. Want to set your own default? See [Changing the default storage class](/docs/openshift?topic=openshift-kube_concepts#default_storageclass).
 
 
     If you want to use a customized storage class, create your PVC with the corresponding storage class name, a valid IOPS and size.   
@@ -344,7 +344,7 @@ To add {{site.data.keyword.filestorage_short}}:
         FirstSeen    LastSeen    Count    From                                SubObjectPath    Type        Reason            Message
         ---------    --------    -----    ----                                -------------    --------    ------            -------
         3m        3m        1    {ibm.io/ibmc-file 31898035-3011-11e7-a6a4-7a08779efd33 }            Normal        Provisioning        External provisioner is provisioning volume for claim "default/my-persistent-volume-claim"
-        3m        1m        10    {persistentvolume-controller }                            Normal        ExternalProvisioning    cannot find provisioner "ibm.io/ibmc-file", expecting that a volume for the claim is provisioned either manually or via external software
+        3m        1m        10    {persistentvolume-controller }                            Normal        ExternalProvisioning    can't find provisioner "ibm.io/ibmc-file", expecting that a volume for the claim is provisioned either manually or via external software
         1m        1m        1    {ibm.io/ibmc-file 31898035-3011-11e7-a6a4-7a08779efd33 }            Normal        ProvisioningSucceeded    Successfully provisioned volume pvc-0d787071-3a67-11e7-aafc-eef80dd2dea2
 
     ```
@@ -572,7 +572,7 @@ If you want to use existing storage that you provisioned earlier, but never used
     ```
     {: pre}
 
-4. Create another configuration file to create your PVC. In order for the PVC to match the PV that you created earlier, you must choose the same value for `storage` and `accessMode`. The `storage-class` field must be an empty string. If any of these fields do not match the PV, then a new PV, and a new physical storage instance is [dynamically provisioned](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning).
+4. Create another configuration file to create your PVC. In order for the PVC to match the PV that you created earlier, you must choose the same value for `storage` and `accessMode`. The `storage-class` field must be an empty string. If any of these fields don't match the PV, then a new PV, and a new physical storage instance is [dynamically provisioned](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning).
 
     ```yaml
     kind: PersistentVolumeClaim
@@ -618,7 +618,7 @@ If you want to use existing storage that you provisioned earlier, but never used
         FirstSeen LastSeen Count From        SubObjectPath Type Reason Message
         --------- -------- ----- ----        ------------- -------- ------ -------
         3m 3m 1 {ibm.io/ibmc-file 31898035-3011-11e7-a6a4-7a08779efd33 } Normal Provisioning External provisioner is provisioning volume for claim "default/my-persistent-volume-claim"
-        3m 1m     10 {persistentvolume-controller } Normal ExternalProvisioning cannot find provisioner "ibm.io/ibmc-file", expecting that a volume for the claim is provisioned either manually or via external software
+        3m 1m     10 {persistentvolume-controller } Normal ExternalProvisioning can't find provisioner "ibm.io/ibmc-file", expecting that a volume for the claim is provisioned either manually or via external software
         1m 1m 1 {ibm.io/ibmc-file 31898035-3011-11e7-a6a4-7a08779efd33 } Normal ProvisioningSucceeded    Successfully provisioned volume pvc-0d787071-3a67-11e7-aafc-eef80dd2dea2
     ```
     {: screen}
@@ -639,7 +639,7 @@ If you have a stateful app such as a database, you can create stateful sets that
 
 To add storage to a stateful set, you specify your storage configuration in the `volumeClaimTemplates` section of your stateful set YAML. The `volumeClaimTemplates` is the basis for your PVC and can include the storage class and the size or IOPS of your {{site.data.keyword.filestorage_short}} that you want to provision. However, if you want to include labels in your `volumeClaimTemplates`, Kubernetes does not include these labels when creating the PVC. Instead, you must add the labels directly to your stateful set.
 
-You cannot deploy two stateful sets at the same time. If you try to create a stateful set before a different one is fully deployed, then the deployment of your stateful set might lead to unexpected results.
+You can't deploy two stateful sets at the same time. If you try to create a stateful set before a different one is fully deployed, then the deployment of your stateful set might lead to unexpected results.
 {: important}
 
 **How can I create my stateful set in a specific zone?**
@@ -662,7 +662,7 @@ Use this option if you want to automatically create the PVC when you create the 
 
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1. Verify that all existing stateful sets in your cluster are fully deployed. If a stateful set is still being deployed, you cannot start creating your stateful set. You must wait until all stateful sets in your cluster are fully deployed to avoid unexpected results. List existing stateful sets in your cluster.
+1. Verify that all existing stateful sets in your cluster are fully deployed. If a stateful set is still being deployed, you can't start creating your stateful set. You must wait until all stateful sets in your cluster are fully deployed to avoid unexpected results. List existing stateful sets in your cluster.
 
     ```sh
     oc get statefulset --all-namespaces
@@ -711,7 +711,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
 3. Create a configuration file for your stateful set and the service that you use to expose the stateful set.
 
-    Example stateful set that specifies a zone. The following example shows how to deploy NGINX as a stateful set with 3 replicas. For each replica, a 20 gigabyte {{site.data.keyword.filestorage_short}} device is provisioned based on the specifications in the `ibmc-file-retain-bronze` storage class. All storage devices are provisioned in the `dal10` zone. Because {{site.data.keyword.filestorage_short}} cannot be accessed from other zones, all replicas of the stateful set are also deployed onto worker nodes that are located in `dal10`.
+    Example stateful set that specifies a zone. The following example shows how to deploy NGINX as a stateful set with 3 replicas. For each replica, a 20 gigabyte {{site.data.keyword.filestorage_short}} device is provisioned based on the specifications in the `ibmc-file-retain-bronze` storage class. All storage devices are provisioned in the `dal10` zone. Because {{site.data.keyword.filestorage_short}} can't be accessed from other zones, all replicas of the stateful set are also deployed onto worker nodes that are located in `dal10`.
 
     ```yaml
     apiVersion: v1
@@ -881,8 +881,8 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     
     `matchLabels`
     :   In the spec selector section, enter all labels that you want to include in your stateful set and your PVC. Labels that you include in the `volumeClaimTemplates` of your stateful set are not recognized by Kubernetes. Review the following sample labels. 
-        - `region` and `zone`: If you want all your stateful set replicas and PVCs to be created in one specific zone, add both labels. You can also specify the zone and region in the storage class that you use. If you do not specify a zone and region and you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones.
-        - `billingType`: Enter the billing type that you want to use for your PVCs. Choose between `hourly` or `monthly`. If you do not specify this label, all PVCs are created with an hourly billing type.
+        - `region` and `zone`: If you want all your stateful set replicas and PVCs to be created in one specific zone, add both labels. You can also specify the zone and region in the storage class that you use. If you don't specify a zone and region and you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones.
+        - `billingType`: Enter the billing type that you want to use for your PVCs. Choose between `hourly` or `monthly`. If you don't specify this label, all PVCs are created with an hourly billing type.
     
     `labels`
     :   In the spec template metadata section, enter the same labels that you added to the `spec.selector.matchLabels` section.
@@ -900,7 +900,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     :   In the spec volume claim templates spec resources requests section, if you want to provision [performance storage](#file_predefined_storageclass), enter the number of IOPS. If you use an endurance storage class and specify a number of IOPS, the number of IOPS is ignored. Instead, the IOPS that is specified in your storage class is used.
     
     `storageClassName`
-    :   In the spec volume claim templates spec section, enter the storage class that you want to use. To list existing storage classes, run `oc get storageclasses | grep file`. If you do not specify a storage class, the PVC is created with the default storage class that is set in your cluster. Make sure that the default storage class uses the `ibm.io/ibmc-file` provisioner so that your stateful set is provisioned with {{site.data.keyword.filestorage_short}}.
+    :   In the spec volume claim templates spec section, enter the storage class that you want to use. To list existing storage classes, run `oc get storageclasses | grep file`. If you don't specify a storage class, the PVC is created with the default storage class that is set in your cluster. Make sure that the default storage class uses the `ibm.io/ibmc-file` provisioner so that your stateful set is provisioned with {{site.data.keyword.filestorage_short}}.
 
 4. Create your stateful set.
 
@@ -957,7 +957,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     `spec.replicas`
     :   Enter the number of replicas that you want to create for your stateful set. The number of replicas must equal the number of PVCs that you created earlier.
 
-    If your PVCs are in different zones, do not include a region or zone label in your stateful set.
+    If your PVCs are in different zones, don't include a region or zone label in your stateful set.
     {: note}
 
 3. Verify that the PVCs are used in your stateful set replica pods by listing the pods in your cluster and identifying the pods that belong to your stateful set.
@@ -1062,13 +1062,13 @@ For questions about billing and to find the steps for how to use the {{site.data
     :   Enter the ID of the volume that you retrieved earlier.  
     
     `new-size`  
-    :   Enter the new size in gigabytes (Gi) for your volume. For valid sizes, see [Deciding on the {{site.data.keyword.filestorage_short}} configuration](#file_predefined_storageclass). The size that you enter must be greater than or equal to the current size of your volume. If you do not specify a new size, the current size of the volume is used.  
+    :   Enter the new size in gigabytes (Gi) for your volume. For valid sizes, see [Deciding on the {{site.data.keyword.filestorage_short}} configuration](#file_predefined_storageclass). The size that you enter must be greater than or equal to the current size of your volume. If you don't specify a new size, the current size of the volume is used.  
     
     `new-iops`  
-    :   For performance storage only. Enter the new number of IOPS that you want. For valid IOPS, see [Deciding on the {{site.data.keyword.filestorage_short}} configuration](#file_predefined_storageclass). If you do not specify the IOPS, the current IOPS is used. If the original IOPS/GB ratio for the volume is less than 0.3, the new IOPS/GB ratio must be less than 0.3. If the original IOPS/GB ratio for the volume is greater than or equal to 0.3, the new IOPS/GB ratio for the volume must be greater than or equal to 0.3.  
+    :   For performance storage only. Enter the new number of IOPS that you want. For valid IOPS, see [Deciding on the {{site.data.keyword.filestorage_short}} configuration](#file_predefined_storageclass). If you don't specify the IOPS, the current IOPS is used. If the original IOPS/GB ratio for the volume is less than 0.3, the new IOPS/GB ratio must be less than 0.3. If the original IOPS/GB ratio for the volume is greater than or equal to 0.3, the new IOPS/GB ratio for the volume must be greater than or equal to 0.3.  
     
     `new-tier`  
-    :   For endurance storage only. Enter the new number of IOPS per GB that you want. For valid IOPS, see [Deciding on the {{site.data.keyword.filestorage_short}} configuration](#file_predefined_storageclass). If you do not specify the IOPS, the current IOPS is used. If the original IOPS/GB ratio for the volume is less than 0.25, the new IOPS/GB ratio must be less than 0.25. If the original IOPS/GB ratio for the volume is greater than or equal to 0.25, the new IOPS/GB ratio for the volume must be greater than or equal to 0.25.  
+    :   For endurance storage only. Enter the new number of IOPS per GB that you want. For valid IOPS, see [Deciding on the {{site.data.keyword.filestorage_short}} configuration](#file_predefined_storageclass). If you don't specify the IOPS, the current IOPS is used. If the original IOPS/GB ratio for the volume is less than 0.25, the new IOPS/GB ratio must be less than 0.25. If the original IOPS/GB ratio for the volume is greater than or equal to 0.25, the new IOPS/GB ratio for the volume must be greater than or equal to 0.25.  
 
     Example output
 
@@ -1120,7 +1120,7 @@ For questions about billing and to find the steps for how to use the {{site.data
     {: screen}
 
 
-Although the size and IOPS of your physical storage changed, these values are not reflected in your PV or PVC. If you describe your PV or PVC, the old size and IOPS continue to display. You have the option to manually update the size and IOPS in your PV by using the `oc patch pv` command. However, this command cannot be used to change the size or IOPS in the PVC. To prevent having different sizes and IOPS in your PVC and PV, leave both your PVC and PV as-is.
+Although the size and IOPS of your physical storage changed, these values are not reflected in your PV or PVC. If you describe your PV or PVC, the old size and IOPS continue to display. You have the option to manually update the size and IOPS in your PV by using the `oc patch pv` command. However, this command can't be used to change the size or IOPS in the PVC. To prevent having different sizes and IOPS in your PVC and PV, leave both your PVC and PV as-is.
 {: important}
 
 ## Changing the default NFS version
@@ -1131,7 +1131,7 @@ The version of the {{site.data.keyword.filestorage_short}} determines the protoc
 
 To change the default NFS version, you can either create a new storage class to dynamically provision {{site.data.keyword.filestorage_short}} in your cluster, or choose to change an existing PV that is mounted to your pod.
 
-To apply the latest security updates and for a better performance, use the default NFS version and do not change to an older NFS version.
+To apply the latest security updates and for a better performance, use the default NFS version and don't change to an older NFS version.
 {: important}
 
 **To create a customized storage class with a specific NFS version:**
@@ -1303,7 +1303,7 @@ Complete the following steps to create a snapshot for your volume.
 To protect your data from a zone failure, you can [replicate snapshots](/docs/FileStorage?topic=FileStorage-replication#replication) to a {{site.data.keyword.filestorage_short}} instance that is set up in another zone. 
 {: shortdesc}
 
-Data can be replicated from the primary storage to the backup storage only. You cannot mount a replicated {{site.data.keyword.filestorage_short}} instance to a cluster. When your primary storage fails, you can manually set your replicated backup storage to be the primary one. Then, you can mount it to your cluster. After your primary storage is restored, you can restore the data from the backup storage.
+Data can be replicated from the primary storage to the backup storage only. You can't mount a replicated {{site.data.keyword.filestorage_short}} instance to a cluster. When your primary storage fails, you can manually set your replicated backup storage to be the primary one. Then, you can mount it to your cluster. After your primary storage is restored, you can restore the data from the backup storage.
 
 ### Duplicating storage
 {: #file-dupe-storage}
@@ -1330,7 +1330,7 @@ To make your data even more highly available and protect your app from a zone fa
 You can use the `oc cp` [command](https://kubernetes.io/docs/reference/kubectl/overview/#cp){: external} to copy files and directories to and from pods or specific containers in your cluster.
 {: shortdesc}
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). If you do not specify a container with `-c`, the command uses the first available container in the pod.
+Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). If you don't specify a container with `-c`, the command uses the first available container in the pod.
 
 Copy data from your local machine to a pod in your cluster.
 
@@ -1361,7 +1361,7 @@ oc cp <local_filepath>/<filename> <namespace>/<pod>:<pod_filepath> -c <container
 ## Storage class reference
 {: #file_storageclass_reference}
 
-Storage classes that have `retain` in the title have a reclaim policy of **Retain**. Example: `ibmc-file-retain-bronze`. Storage classes that do not have `retain` in the title have a reclaim policy of **Delete**. Example: `ibmc-file-bronze`.
+Storage classes that have `retain` in the title have a reclaim policy of **Retain**. Example: `ibmc-file-retain-bronze`. Storage classes that don't have `retain` in the title have a reclaim policy of **Delete**. Example: `ibmc-file-bronze`.
 {: tip}
 
 | Characteristics | Setting|
@@ -1454,7 +1454,7 @@ To use {{site.data.keyword.filestorage_short}} in a multizone cluster, your pod 
 
 Creating the {{site.data.keyword.filestorage_short}} instance without knowing the constraints of the pod can lead to unwanted results. For example, your pod might not be able to be scheduled to the same worker node as your storage because the worker node has insufficient resources or the worker node is tainted and does not allow the pod to be scheduled. With topology-aware volume scheduling, the {{site.data.keyword.filestorage_short}} instance is delayed until the first pod that uses the storage is created.
 
-The following examples show how to create storage classes that delay the creation of the {{site.data.keyword.filestorage_short}} instance until the first pod that uses this storage is ready to be scheduled. To delay the creation, you must include the `volumeBindingMode: WaitForFirstConsumer` option. If you do not include this option, the `volumeBindingMode` is automatically set to `Immediate` and the {{site.data.keyword.filestorage_short}} instance is created when you create the PVC.
+The following examples show how to create storage classes that delay the creation of the {{site.data.keyword.filestorage_short}} instance until the first pod that uses this storage is ready to be scheduled. To delay the creation, you must include the `volumeBindingMode: WaitForFirstConsumer` option. If you don't include this option, the `volumeBindingMode` is automatically set to `Immediate` and the {{site.data.keyword.filestorage_short}} instance is created when you create the PVC.
 
 Example for Endurance {{site.data.keyword.filestorage_short}}.
 
@@ -1722,7 +1722,7 @@ To clean up persistent data:
     If your storage is charged monthly, you still get charged for the entire month, even if you remove the storage before the end of the billing cycle.
     {: important}
 
-3. Remove any pods that mount the PVC. List the pods that mount the PVC. If no pod is returned in your CLI output, you do not have a pod that uses the PVC.
+3. Remove any pods that mount the PVC. List the pods that mount the PVC. If no pod is returned in your CLI output, you don't have a pod that uses the PVC.
 
     ```sh
     oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"

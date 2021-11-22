@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-22"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -107,7 +107,7 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
     ```
     {: screen}
 
-    If you cannot perform operations that require Administrator permissions, such as listing all the worker nodes or pods in a cluster, download the TLS certificates and permission files for the cluster administrator by running the `ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin` command.
+    If you can't perform operations that require Administrator permissions, such as listing all the worker nodes or pods in a cluster, download the TLS certificates and permission files for the cluster administrator by running the `ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin` command.
     {: tip}
 
 

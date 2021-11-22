@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -33,9 +33,9 @@ Make sure that you have [set up proper user access](/docs/openshift?topic=opensh
 
 **How does priority scheduling and preemption work?** {: #priority_scheduling}
 
-In general, pending pods that have a higher priority are scheduled before lower prioritized pods. If you do not have enough resources left in your worker nodes, the {{site.data.keyword.openshiftshort}} controller can preempt (remove) pods to free up enough resources for the higher prioritized pods to be scheduled. Preemption is also affected by graceful termination periods, pod disruption budgets, and worker node affinity.
+In general, pending pods that have a higher priority are scheduled before lower prioritized pods. If you don't have enough resources left in your worker nodes, the {{site.data.keyword.openshiftshort}} controller can preempt (remove) pods to free up enough resources for the higher prioritized pods to be scheduled. Preemption is also affected by graceful termination periods, pod disruption budgets, and worker node affinity.
 
-If you do not specify a priority for your pod deployment, the default is set to the priority class that is set as the `globalDefault` . If you do not have a `globalDefault` priority class, the default priority for all pods is zero (`0`). By default, {{site.data.keyword.openshiftlong_notm}} does not set a `globalDefault`, so the pod default priority is zero.
+If you don't specify a priority for your pod deployment, the default is set to the priority class that is set as the `globalDefault` . If you don't have a `globalDefault` priority class, the default priority for all pods is zero (`0`). By default, {{site.data.keyword.openshiftlong_notm}} does not set a `globalDefault`, so the pod default priority is zero.
 
 To understand how pod priority and {{site.data.keyword.openshiftshort}} controller work together, consider the scenarios in the following figure. You must place prioritized pods on worker nodes with available resources. Otherwise, high priority pods in your cluster can remain in pending at the same time that existing pods are removed, such as in Scenario 3.
 
@@ -121,8 +121,8 @@ To use a priority class:
     | Components | Description | 
     |---|-------|
     | `name` | Required: The name of the priority class that you want to create. |
-    | `value` | Required: Enter an integer less than or equal to 1 billion (1000000000). The higher the value, the higher the priority. Values are relative to the values of other priority classes in the cluster. Reserve very high numbers for system critical pods that you do not want to be preempted (removed). \n \n For example, the [default cluster-critical priority classes](#default_priority_class) range in value from 900000000-2000001000, so enter a value less than these numbers for new priority classes so that nothing is prioritized higher than these pods. |
-    | `globalDefault` | Optional: Set the field to `true` to make this priority class the global default that is applied to every pod that is scheduled without a `priorityClassName` value. Only one priority class in your cluster can be set as the global default. If there is no global default, pods with no `priorityClassName` specified have a priority of zero (`0`). \n \n The [default priority classes](#default_priority_class) do not set a `globalDefault`. If you created other priority classes in your cluster, you can check to make sure that they do not set a `globalDefault` by running `oc describe priorityclass <name>`. |
+    | `value` | Required: Enter an integer less than or equal to 1 billion (1000000000). The higher the value, the higher the priority. Values are relative to the values of other priority classes in the cluster. Reserve very high numbers for system critical pods that you don't want to be preempted (removed). \n \n For example, the [default cluster-critical priority classes](#default_priority_class) range in value from 900000000-2000001000, so enter a value less than these numbers for new priority classes so that nothing is prioritized higher than these pods. |
+    | `globalDefault` | Optional: Set the field to `true` to make this priority class the global default that is applied to every pod that is scheduled without a `priorityClassName` value. Only one priority class in your cluster can be set as the global default. If there is no global default, pods with no `priorityClassName` specified have a priority of zero (`0`). \n \n The [default priority classes](#default_priority_class) don't set a `globalDefault`. If you created other priority classes in your cluster, you can check to make sure that they don't set a `globalDefault` by running `oc describe priorityclass <name>`. |
     | `description` | Optional: Tell users why to use this priority class. Enclose the string in quotations (`""`). |
     {: caption="Understanding the YAML file components" caption-side="top"}
 

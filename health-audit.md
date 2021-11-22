@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift, logmet, logs, metrics, audit, events
 
@@ -33,7 +33,7 @@ Before you set up a Kubernetes API audit configuration, review the following inf
 {: shortdesc}
 
 * To see how the audit webhook collects logs, check out the {{site.data.keyword.openshiftlong_notm}} [`openshift-audit` policy](https://github.com/IBM-Cloud/kube-samples/blob/master/kube-audit/openshift-audit-policy.yaml){: external}.
-    You cannot modify the default policy or apply your own custom policy.
+    You can't modify the default policy or apply your own custom policy.
     {: note}
 
 * For Kubernetes audit logs and verbosity, see the [Kubernetes documentation](https://kubernetes.io/docs/tasks/debug-application-cluster/audit/){: external}.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -36,7 +36,7 @@ When you create your PVC or deploy a pod that mounts the PVC, the creation or de
 Example error message for a PVC creation failure.
 
 ```sh
-cannot get credentials: cannot get secret tsecret-key: secrets "secret-key" not found
+can't get credentials: can't get secret tsecret-key: secrets "secret-key" not found
 ```
 {: screen}
 

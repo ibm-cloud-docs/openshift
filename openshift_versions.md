@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift, version, update, upgrade
 
@@ -35,7 +35,7 @@ For more information about the {{site.data.keyword.openshiftshort}} and Kubernet
 Your {{site.data.keyword.openshiftlong_notm}} cluster has three types of updates: major, minor, and patch. As updates become available, you are notified when you view information about the cluster master or worker nodes, such as with the `ibmcloud oc cluster ls`, `cluster get`, `worker ls`, or `worker get` commands.
 {: shortdesc}
 
-You must [update your cluster](/docs/openshift?topic=openshift-update) by using the {{site.data.keyword.openshiftlong_notm}} API, CLI, or console tools. You cannot update your cluster version from OpenShift Container Platform tools such as the {{site.data.keyword.openshiftshort}} web console.
+You must [update your cluster](/docs/openshift?topic=openshift-update) by using the {{site.data.keyword.openshiftlong_notm}} API, CLI, or console tools. You can't update your cluster version from OpenShift Container Platform tools such as the {{site.data.keyword.openshiftshort}} web console.
 {: note}
 
 |Update type|Examples of version labels|Updated by|Impact
@@ -48,7 +48,7 @@ You must [update your cluster](/docs/openshift?topic=openshift-update) by using 
 ### Major and minor updates (4.7)
 {: #major_minor_updates}
 
-First, [update your master node](/docs/openshift?topic=openshift-update#master) and then [update the worker nodes](/docs/openshift?topic=openshift-update#worker_node). Worker nodes cannot run an {{site.data.keyword.openshiftshort}} major or minor version that is greater than the masters. Additionally, your worker nodes can be only one version behind the master version (`n-1`).
+First, [update your master node](/docs/openshift?topic=openshift-update#master) and then [update the worker nodes](/docs/openshift?topic=openshift-update#worker_node). Worker nodes can't run an {{site.data.keyword.openshiftshort}} major or minor version that is greater than the masters. Additionally, your worker nodes can be only one version behind the master version (`n-1`).
 {: shortdesc}
 
 If you use an `oc` or `oc` CLI version that does match at least the `major.minor` version of your clusters, you might experience unexpected results. Make sure to keep your cluster and [CLI versions](/docs/openshift?topic=openshift-openshift-cli#cli_oc) up-to-date.
@@ -113,7 +113,7 @@ After the Red Hat OpenShift Container Platform community releases a version upda
 
 **Why is the deprecated version 3.11 supported longer than more recent versions like 4.3?**
 
-In general, the last minor version of a major version is supported longer than other minor versions. Because you cannot update a cluster from one major version to another (such as version 3 to 4), this longer support period gives you time to create clusters at a more recent version. Minor versions of a more recent major version might become unsupported before the last minor version of a deprecated major version because the more recent major version has subsequent minor releases that are supported. For example, version 4.3 becomes unsupported before the deprecated version 3.11 because version 4 has future minor releases, but 3.11 is the last minor version of version 3.
+In general, the last minor version of a major version is supported longer than other minor versions. Because you can't update a cluster from one major version to another (such as version 3 to 4), this longer support period gives you time to create clusters at a more recent version. Minor versions of a more recent major version might become unsupported before the last minor version of a deprecated major version because the more recent major version has subsequent minor releases that are supported. For example, version 4.3 becomes unsupported before the deprecated version 3.11 because version 4 has future minor releases, but 3.11 is the last minor version of version 3.
 
 **What is different for deprecated versions?**
 
@@ -155,7 +155,7 @@ The following table shows the actions that you must take before you [update the 
 | Type | Description |
 | ---- | ----------- |
 | **Unsupported:** Deprecated and removed OpenShift features | For more information, review [OpenShift version 4.8 deprecated and removed features](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-deprecated-removed-features){: external}. |
-| Container runtime default security context capabilities | The container runtime (i.e. CRI-O) default security context capabilities have been changed to match Red Hat OpenShift Container Platform (OCP). `NET_RAW` and `SYS_CHROOT` have been removed. This brings the security behavior of containers in line with OCP. If your app requires either of these capabilities and does not list them in the container or pod `securityContext`, then the app must be changed to include these capabilities. Applications developed for OCP should already have the necessary changes. |
+| Container runtime default security context capabilities | The container runtime (i.e. CRI-O) default security context capabilities have been changed to match Red Hat OpenShift Container Platform (OCP). `NET_RAW` and `SYS_CHROOT` have been removed. This brings the security behavior of containers in line with OCP. If your app requires either of these capabilities and does not list them in the container or pod `securityContext`, then the app must be changed to include these capabilities. If these changes are not made, your microservices might fail to start and you might see a `permission denied` error. Applications developed for OCP already have the necessary changes.  |
 
 ## {{site.data.keyword.openshiftshort}} 4.7
 {: #ocp47}

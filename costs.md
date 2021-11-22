@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -99,16 +99,16 @@ When you estimate the cost of a new cluster or worker node, the OCP licenses are
 **How can I migrate from the old to new OCP licenses?**
 {: #licenses-on-demand-migrate}
 
-You can follow the same procedure to [update flavors](/docs/openshift?topic=openshift-update#machine_type) by adding new worker pools and removing the old worker pools. If you use bare metal, make sure that you use the latest series 4 flavors. Many existing bare metal flavors do not support the new OCP licenses.
+You can follow the same procedure to [update flavors](/docs/openshift?topic=openshift-update#machine_type) by adding new worker pools and removing the old worker pools. If you use bare metal, make sure that you use the latest series 4 flavors. Many existing bare metal flavors don't support the new OCP licenses.
 
-You can check the new rates in the pricing estimate when you create a cluster or worker pool in the console. The OCP licenses are no longer a separate line item in the estimate, but instead are included in the cost of the worker nodes.
+You can check the new rates in the pricing estimate when you create a cluster or worker pool in the console. The OCP licenses are no longer a separate line item in the estimate, but instead are in the cost of the worker nodes.
 
 #### OCP licenses from Cloud Pak entitlements
 {: #licenses-cloud-pak}
 
 When you purchase products such as {{site.data.keyword.cloud_notm}} Paks, your purchase might include OCP licenses. When you create a cluster or worker pool, you can choose to apply your entitlement to cover the cost of the OCP licenses.
 
-Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.
+Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you can't use the same entitlement for other worker pools, cloud providers, or environments.
 {: important}
 
 
@@ -229,7 +229,7 @@ The following steps present a general process to manage costs for your {{site.da
 4. [Estimate your costs](/docs/billing-usage?topic=billing-usage-cost#cost) and review detailed pricing information for the service, see [{{site.data.keyword.openshiftlong_notm}} Pricing plans](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift#pricing){: external}.
 5. Manage the lifecycle of your cluster to control costs.
     * Consider [enabling the cluster autoscaler](/docs/containers?topic=containers-ca) to automatically add or remove worker nodes in response to your cluster workload resource requests.
-    * Manually [resize your worker pool](/docs/containers?topic=containers-add_workers) to remove worker nodes that you do not need. Keep in mind that you cannot scale a worker pool down to zero worker nodes.
+    * Manually [resize your worker pool](/docs/containers?topic=containers-add_workers) to remove worker nodes that you don't need. Keep in mind that you can't scale a worker pool down to zero worker nodes.
     * Use Kubernetes features such as [horizontal pod autoscaling](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/){: external}, [pod priority](/docs/containers?topic=containers-pod_priority), and [resource requests and limits](/docs/containers?topic=containers-app#resourcereq) to control how resources are used within your cluster.
     * Consider setting up a [monitoring tool](/docs/openshift?topic=openshift-health) such as {{site.data.keyword.mon_full_notm}} and creating alerts for your workloads when they need more resources.
 6. [View your usage](/docs/billing-usage?topic=billing-usage-viewingusage#viewingusage) to continuously refine how you consume {{site.data.keyword.cloud_notm}} services.

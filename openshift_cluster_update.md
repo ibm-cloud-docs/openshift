@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-22"
 
 keywords: openshift, version, upgrade, update
 
@@ -20,7 +20,7 @@ subcollection: openshift
 You can install updates to keep your {{site.data.keyword.openshiftlong}} clusters up-to-date.
 {: shortdesc}
 
-You must update your cluster by using the {{site.data.keyword.openshiftlong_notm}} API, CLI, or console tools. You cannot update your cluster version from OpenShift Container Platform tools such as the {{site.data.keyword.openshiftshort}} web console.
+You must update your cluster by using the {{site.data.keyword.openshiftlong_notm}} API, CLI, or console tools. You can't update your cluster version from OpenShift Container Platform tools such as the {{site.data.keyword.openshiftshort}} web console.
 {: note}
 
 ## Updating the master
@@ -38,7 +38,7 @@ You are notified in the {{site.data.keyword.cloud_notm}} console and CLI when up
 
 **Can my worker nodes run a later version than the master?**
 
-Your worker nodes cannot run a later `major.minor` Kubernetes version than the master. Additionally, your worker nodes can only be one version behind the master version (`n-1`). First, [update your master](#update_master) to the latest Kubernetes version. Then, [update the worker nodes](#worker_node) in your cluster.
+Your worker nodes can't run a later `major.minor` Kubernetes version than the master. Additionally, your worker nodes can only be one version behind the master version (`n-1`). First, [update your master](#update_master) to the latest Kubernetes version. Then, [update the worker nodes](#worker_node) in your cluster.
 
 Worker nodes can run later patch versions than the master, such as patch versions that are specific to worker nodes for security updates.
 
@@ -55,7 +55,7 @@ Your master is highly available with three replica master pods. The master pods 
 
 **Can I roll back the update?**
 
-No, you cannot roll back a cluster to a previous version after the update process takes place. Be sure to use a test cluster and follow the instructions to address potential issues before you update your production master.
+No, you can't roll back a cluster to a previous version after the update process takes place. Be sure to use a test cluster and follow the instructions to address potential issues before you update your production master.
 
 **What process can I follow to update the master?**
 
@@ -137,7 +137,7 @@ In addition, you can create a Kubernetes config map that specifies the maximum n
 
 **What if I choose not to define a config map?**
 
-When the config map is not defined, the default is used. By default, a maximum of 20% of all of your worker nodes in each cluster can be unavailable during the update process.
+When the config map is not defined, the default is used. By default, a maximum of 20% of all your worker nodes in each cluster can be unavailable during the update process.
 
 ### Prerequisites
 {: #worker-up-prereqs}
@@ -149,7 +149,7 @@ Updates to worker nodes can cause downtime for your apps and services. Your work
 {: important}
 
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-- [Update the master](#master). The worker node version cannot be higher than the API server version that runs in your Kubernetes master.
+- [Update the master](#master). The worker node version can't be higher than the API server version that runs in your Kubernetes master.
 - Make any changes that are marked with _Update after master_ in the [{{site.data.keyword.openshiftshort}} version preparation guide](/docs/openshift?topic=openshift-openshift_versions).
 - If you want to apply a patch update, review the [{{site.data.keyword.openshiftshort}} version changelog](/docs/openshift?topic=openshift-openshift_changelog).
 - Consider [adding more worker nodes](/docs/openshift?topic=openshift-add_workers) so that your cluster has enough capacity to rescheduling your workloads during the update.
@@ -199,7 +199,7 @@ Set up a configmap to perform a rolling update of your classic worker nodes.
     ```
     {: screen}
 
-4. Create a config map and define the unavailability rules for your worker nodes. The following example shows four checks, the `zonecheck.json`, `regioncheck.json`, `defaultcheck.json`, and a check template. You can use these example checks to define rules for worker nodes in a specific zone (`zonecheck.json`), region (`regioncheck.json`), or for all worker nodes that do not match any of the checks that you defined in the config map (`defaultcheck.json`). Use the check template to create your own check. For every check, to identify a worker node, you must choose one of the worker node labels that you retrieved in the previous step.  
+4. Create a config map and define the unavailability rules for your worker nodes. The following example shows four checks, the `zonecheck.json`, `regioncheck.json`, `defaultcheck.json`, and a check template. You can use these example checks to define rules for worker nodes in a specific zone (`zonecheck.json`), region (`regioncheck.json`), or for all worker nodes that don't match any of the checks that you defined in the config map (`defaultcheck.json`). Use the check template to create your own check. For every check, to identify a worker node, you must choose one of the worker node labels that you retrieved in the previous step.  
 
     For every check, you can set only one value for `NodeSelectorKey` and `NodeSelectorValue`. If you want to set rules for more than one region, zone, or other worker node labels, create a new check. Define up to 10 checks in a config map. If you add more checks, they are ignored.
     {: note}
@@ -245,7 +245,7 @@ Set up a configmap to perform a rolling update of your classic worker nodes.
     :   Two checks that define a rule for a set of worker nodes that you can identify with the specified `NodeSelectorKey` and `NodeSelectorValue`. The `zonecheck.json` identifies worker nodes based on their zone label, and the `regioncheck.json` uses the region label that is added to every worker node during provisioning. In the example, 30% of all worker nodes that have `dal13` as their zone label and 20% of all the worker nodes in `us-south` can be unavailable during the update.
 
     `defaultcheck.json`
-    :   If you do not create a config map or the map is configured incorrectly, the Kubernetes default is applied. By default, only 20% of the worker nodes in the cluster can be unavailable at a time. You can override the default value by adding the default check to your config map. In the example, every worker node that is not specified in the zone and region checks (`dal13` or `us-south`) can be unavailable during the update. 
+    :   If you don't create a config map or the map is configured incorrectly, the Kubernetes default is applied. By default, only 20% of the worker nodes in the cluster can be unavailable at a time. You can override the default value by adding the default check to your config map. In the example, every worker node that is not specified in the zone and region checks (`dal13` or `us-south`) can be unavailable during the update. 
 
     `MaxUnavailablePercentage`
     :   The maximum number of nodes that are allowed to be unavailable for a specified label key and value, which is specified as a percentage. A worker node is unavailable during the deploying, reloading, or provisioning process. The queued worker nodes are blocked from updating if it exceeds any defined maximum unavailable percentages. 
@@ -287,7 +287,7 @@ Set up a configmap to perform a rolling update of your classic worker nodes.
     ```
     {: pre}
 
-10. Verify that you do not have duplicate worker nodes. In some cases, older clusters might list duplicate worker nodes with a **`NotReady`** status after an update. To remove duplicates, see [troubleshooting](/docs/containers?topic=containers-cs_duplicate_nodes).
+10. Verify that you don't have duplicate worker nodes. In some cases, older clusters might list duplicate worker nodes with a **`NotReady`** status after an update. To remove duplicates, see [troubleshooting](/docs/containers?topic=containers-cs_duplicate_nodes).
 
 Next steps:
 - Repeat the update process with other worker pools.
@@ -354,7 +354,7 @@ Updates to worker nodes can cause downtime for your apps and services. Your work
 {: important}
 
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-- [Update the master](#master). The worker node version cannot be higher than the API server version that runs in your Kubernetes master.
+- [Update the master](#master). The worker node version can't be higher than the API server version that runs in your Kubernetes master.
 - Make any changes that are marked with _Update after master_ in the [{{site.data.keyword.openshiftshort}} version preparation guide](/docs/openshift?topic=openshift-openshift_versions).
 - If you want to apply a patch update, review the [Kubernetes clusters](/docs/openshift?topic=openshift-openshift_changelog) version changelog.
 - Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms).
@@ -380,7 +380,7 @@ Before you update your VPC worker nodes, review the prerequisite steps.
         ```
         {: pre}
 
-    *  To update the worker node to the latest patch version at the same `major.minor` version, do not include the `--update` flag.
+    *  To update the worker node to the latest patch version at the same `major.minor` version, don't include the `--update` flag.
         ```sh
         ibmcloud oc worker replace --cluster <cluster_name_or_ID> --worker <worker_node_ID>
         ```
@@ -546,7 +546,7 @@ You can optionally disable automatic updates for the following components:
 
 **Are there components that I can't update separately from the cluster?**
 
-Yes. Your cluster is deployed with the following managed components and associated resources that cannot be changed, except to scale pods or edit configmaps for certain performance benefits. If you try to change one of these deployment components, their original settings are restored on a regular interval when they are updated with the cluster master. However, note that resources that you create that are associated with these components, such as Calico network policies that you create to be implemented by the Calico deployment components, are not updated.
+Yes. Your cluster is deployed with the following managed components and associated resources that can't be changed, except to scale pods or edit configmaps for certain performance benefits. If you try to change one of these deployment components, their original settings are restored on a regular interval when they are updated with the cluster master. However, note that resources that you create that are associated with these components, such as Calico network policies that you create to be implemented by the Calico deployment components, are not updated.
 
 * `calico` components
 * `coredns` components
@@ -570,7 +570,7 @@ Yes. {{site.data.keyword.openshiftlong_notm}} provides other plugin-ins and add-
 When you create a logging configuration for a source in your cluster to forward to an external server, a Fluentd component is created in your cluster. In order to change your logging or filter configurations, the Fluentd component must be at the latest version. By default, automatic updates to the component are enabled.
 {: shortdesc}
 
-As of 14 November 2019, a Fluentd component is created for your cluster only if you [create a logging configuration to forward logs to a syslog server](/docs/containers?topic=containers-health#configuring). If no logging configurations for syslog exist in your cluster, the Fluentd component is removed automatically. If you do not forward logs to syslog and want to ensure that the Fluentd component is removed from your cluster, automatic updates to Fluentd must be enabled.
+As of 14 November 2019, a Fluentd component is created for your cluster only if you [create a logging configuration to forward logs to a syslog server](/docs/containers?topic=containers-health#configuring). If no logging configurations for syslog exist in your cluster, the Fluentd component is removed automatically. If you don't forward logs to syslog and want to ensure that the Fluentd component is removed from your cluster, automatic updates to Fluentd must be enabled.
 {: important}
 
 You can manage automatic updates of the Fluentd component in the following ways. **Note**: To run the following commands, you must have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster.

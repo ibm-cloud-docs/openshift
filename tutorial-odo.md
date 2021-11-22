@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift, red hat, red hat openshift, odo
 
@@ -75,7 +75,7 @@ After you complete the [prerequisites](#odo-prereqs) install the CLI and select 
 
 4. In your command line, create or change directories to the path where your Node.js app files are stored, or where you want to store the app files.
 
-    If you do not have an existing Node.js app and want to download a start kit in a later step, the directory must be empty.
+    If you don't have an existing Node.js app and want to download a start kit in a later step, the directory must be empty.
     {: note}
 
     ```sh
@@ -114,7 +114,7 @@ After you complete the [prerequisites](#odo-prereqs) install the CLI and select 
         ```
         {: screen}
 
-    4. Optional: If you do not have an existing Node.js app in your directory, you can download a starter kit, as shown in the following example. You can confirm the files are downloaded by running `ls` from the directory.
+    4. Optional: If you don't have an existing Node.js app in your directory, you can download a starter kit, as shown in the following example. You can confirm the files are downloaded by running `ls` from the directory.
         ```
         ? Do you want to download a starter project Yes
         ```

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-17"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -165,7 +165,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 
         If your worker node does not apply the latest patch version, you see an asterisk (`*`) in the **Version** column of your CLI output.
 
-    2. Review the [version changelog](/docs/containers?topic=containers-changelog) to find the changes that are included in the latest patch version.
+    2. Review the [version changelog](/docs/containers?topic=containers-changelog) to find the changes that are in the latest patch version.
 
     3. Apply the latest patch version by reloading your worker node. Follow the instructions in the [ibmcloud oc worker reload command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) to gracefully reschedule any running pods on your worker node before you reload your worker node. Note that during the reload, your worker node machine is updated with the latest image and data is deleted if not [stored outside the worker node](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 1. Review the changelog and verify support for your [cluster version and architecture](/docs/containers?topic=containers-cos_plugin_changelog).
@@ -1196,7 +1196,7 @@ To deploy a stateful set that uses object storage:
 :   Enter the number of replicas for your stateful set.
 
 `matchLabels`
-:   In the spec selector match labels section, enter all labels that you want to include in your stateful set and your PVC. Labels that you include in the `volumeClaimTemplates` of your stateful set are not recognized by Kubernetes. Instead, you must define these labels in the `spec.selector.matchLabels` and `spec.template.metadata.labels` section of your stateful set YAML. To make sure that all your stateful set replicas are included into the load balancing of your service, include the same label that you used in the `spec.selector` section of your service YAML.
+:   In the spec selector match labels section, enter all labels that you want to include in your stateful set and your PVC. Labels that you include in the `volumeClaimTemplates` of your stateful set are not recognized by Kubernetes. Instead, you must define these labels in the `spec.selector.matchLabels` and `spec.template.metadata.labels` section of your stateful set YAML. To make sure that all your stateful set replicas are into the load balancing of your service, include the same label that you used in the `spec.selector` section of your service YAML.
 
 `labels`
 :   In the spec metadata labels section, enter the same labels that you added to the `spec.selector.matchLabels` section of your stateful set YAML.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-22"
 
 keywords: kubernetes, openshift
 
@@ -123,7 +123,7 @@ spec:
 ### Container image
 {: #image}
 
-Specify the image that you want to use for your containers, the location of the image, and the image pull policy. If you do not specify an image tag, by default it pulls the image that is tagged `latest`.
+Specify the image that you want to use for your containers, the location of the image, and the image pull policy. If you don't specify an image tag, by default it pulls the image that is tagged `latest`.
 {: shortdesc}
 
 Avoid using the latest tag for production workloads. You might not have tested your workload with the latest image if you are using a public or shared repository, such as Docker Hub or {{site.data.keyword.registrylong_notm}}.
@@ -298,7 +298,7 @@ spec:
 ```
 {: codeblock}
 
-If you have a requirement to deploy `hostNetwork` pods to listen on specific ports or to use a `hostPort` to expose your app pods on a specific port on the worker node, use a port in the `11000-11200` range. {{site.data.keyword.openshiftlong_notm}} designates the `11000-11200` port range on worker nodes for this purpose to avoid conflicts with local ports and other ports that {{site.data.keyword.openshiftlong_notm}} uses. Because `hostNetwork` pods and `hostPorts` refer to a particular worker node IP address, the pods are limited to run only on that worker node. If something unanticipated happens, such as the worker node being removed or running out of resources, your pod cannot be rescheduled. If you want to expose a pod’s port on the worker node, consider using a [`NodePort` service](/docs/openshift?topic=openshift-nodeport) instead. For more information, see the [Kubernetes best practices documentation](https://kubernetes.io/docs/concepts/configuration/overview/#services){: external}.
+If you have a requirement to deploy `hostNetwork` pods to listen on specific ports or to use a `hostPort` to expose your app pods on a specific port on the worker node, use a port in the `11000-11200` range. {{site.data.keyword.openshiftlong_notm}} designates the `11000-11200` port range on worker nodes for this purpose to avoid conflicts with local ports and other ports that {{site.data.keyword.openshiftlong_notm}} uses. Because `hostNetwork` pods and `hostPorts` refer to a particular worker node IP address, the pods are limited to run only on that worker node. If something unanticipated happens, such as the worker node being removed or running out of resources, your pod can't be rescheduled. If you want to expose a pod’s port on the worker node, consider using a [`NodePort` service](/docs/openshift?topic=openshift-nodeport) instead. For more information, see the [Kubernetes best practices documentation](https://kubernetes.io/docs/concepts/configuration/overview/#services){: external}.
 {: important}
 
 ### Configmaps for container environment variables

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-22"
 
 keywords: kubernetes, openshift
 
@@ -258,7 +258,7 @@ To run a workload on a GPU machine,
     | `containers.image` | Provide the image that the container is a running instance of. In this example, the value is set to use the DockerHub CUDA image:`nvidia/cuda:9.1-base-ubuntu16.04`. |
     | `containers.command` | Specify a command to run in the container. In this example, the `[ "/usr/test/nvidia-smi" ]` command refers to a binary file that is on the GPU machine, so you must also set up a volume mount. |
     | `containers.imagePullPolicy` | To pull a new image only if the image is not currently on the worker node, specify `IfNotPresent`. |
-    | `resources.limits` | For GPU machines, you must specify the resource limit. The Kubernetes [Device Plug-in](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/){: external} sets the default resource request to match the limit. \n * You must specify the key as `nvidia.com/gpu`. \n * Enter the whole number of GPUs that you request, such as `2`. Note that container pods do not share GPUs and GPUs cannot be overcommitted. For example, if you have only 1 `mg1c.16x128` machine, then you have only 2 GPUs in that machine and can specify a maximum of `2`. |
+    | `resources.limits` | For GPU machines, you must specify the resource limit. The Kubernetes [Device Plug-in](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/){: external} sets the default resource request to match the limit. \n * You must specify the key as `nvidia.com/gpu`. \n * Enter the whole number of GPUs that you request, such as `2`. Note that container pods don't share GPUs and GPUs can't be overcommitted. For example, if you have only 1 `mg1c.16x128` machine, then you have only 2 GPUs in that machine and can specify a maximum of `2`. |
     | `volumeMounts` | Name the volume that is mounted onto the container, such as `nvidia0`. Specify the `mountPath` on the container for the volume. In this example, the path `/usr/test` matches the path that is used in the job container command. |
     | `volumes` | Name the job volume, such as `nvidia0`. In the GPU worker node's `hostPath`, specify the volume's `path` on the host, in this example, `/usr/bin`. The container `mountPath` is mapped to the host volume `path`, which gives this job access to the NVIDIA binaries on the GPU worker node for the container command to run. |
     {: caption="Table 1. Understanding your YAML components" caption-side="top"}

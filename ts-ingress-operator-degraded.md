@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -13,7 +13,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why does the DNS Operator show a `RouteHealthDegraded` or `cannot marshal DNS message` error?
+# Why does the DNS Operator show a `RouteHealthDegraded` or `can't marshal DNS message` error?
 {: #ingress_subdomain}
 
 **Infrastructure provider**:
@@ -26,7 +26,7 @@ You receive an error message similar to one of the following.
 
 **Example error message when installing {{site.data.keyword.icp4dfull_notm}} from the console**
 ```sh
-XXX.us-south.containers.appdomain.cloud: Get "http://image-registry-openshift-image-registry.ocp-data-privacy-prod-c-XXX.us-south.containers.appdomain.cloud/v2/": dial tcp: lookup image-registry-openshift-image-registry.ocp-data-privacy-prod-c-XXX.us-south.containers.appdomain.cloud on XXX.XX.X.XX:XX: cannot marshal DNS message
+XXX.us-south.containers.appdomain.cloud: Get "http://image-registry-openshift-image-registry.ocp-data-privacy-prod-c-XXX.us-south.containers.appdomain.cloud/v2/": dial tcp: lookup image-registry-openshift-image-registry.ocp-data-privacy-prod-c-XXX.us-south.containers.appdomain.cloud on XXX.XX.X.XX:XX: can't marshal DNS message
 ```
 {: screen}
 
@@ -45,7 +45,7 @@ Non-authoritative answer:
 {: screen}
 
 
-The fix for [bug 1953097](https://bugzilla.redhat.com/show_bug.cgi?id=1970140){: external} enabled CoreDNS `bufsize` plug-in responses of `1232` bytes. Some DNS resolvers can't receive responses greater than `512` bytes. Note that DNS resolvers that retry lookups using TCP, such as Dig, are not impacted. DNS clients that do not require UDP DNS messages to exceed 512 bytes are not impacted.
+The fix for [bug 1953097](https://bugzilla.redhat.com/show_bug.cgi?id=1970140){: external} enabled CoreDNS `bufsize` plug-in responses of `1232` bytes. Some DNS resolvers can't receive responses greater than `512` bytes. Note that DNS resolvers that retry lookups using TCP, such as Dig, are not impacted. DNS clients that don't require UDP DNS messages to exceed 512 bytes are not impacted.
 {: tsCauses}
 
 Update your cluster master and worker nodes.
@@ -77,7 +77,7 @@ Update your cluster master and worker nodes.
     ```
     {: pre}
 
-    **Example output**
+    Example output
     ```sh
     NAME READY STATUS RESTARTS AGE
     dns-operator-111aa1aaab-xxxx1 2/2 Running 0 5h49m

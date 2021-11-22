@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-22"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc
 
@@ -29,7 +29,7 @@ After you install the OpenShift Data Foundation add-on for your {{site.data.keyw
     ```
     {: pre}
 
-    **Example output**
+    Example output
     ```sh
     ocs-storagecluster-ceph-rbd                   openshift-storage.rbd.csi.ceph.com      Delete          Immediate              true                   14d
     ocs-storagecluster-ceph-rgw                   openshift-storage.ceph.rook.io/bucket   Delete          Immediate              false                  14d

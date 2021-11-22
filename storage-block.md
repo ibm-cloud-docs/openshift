@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -126,7 +126,7 @@ For more information, see the following links:
 
 Every storage class specifies the type of block storage that you provision, including available size, IOPS, file system, and the retention policy.  
 
-Make sure to choose your storage configuration carefully to have enough capacity to store your data. After you provision a specific type of storage by using a storage class, you cannot change the type or retention policy for the storage device. However, you can [change the size and the IOPS](#block_change_storage_configuration) if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must [create a new storage instance and copy the data](/docs/openshift?topic=openshift-kube_concepts#update_storageclass) from the old storage instance to your new one.
+Make sure to choose your storage configuration carefully to have enough capacity to store your data. After you provision a specific type of storage by using a storage class, you can't change the type or retention policy for the storage device. However, you can [change the size and the IOPS](#block_change_storage_configuration) if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must [create a new storage instance and copy the data](/docs/openshift?topic=openshift-kube_concepts#update_storageclass) from the old storage instance to your new one.
 {: important}
 
 1. List available storage classes in {{site.data.keyword.containerlong}}.
@@ -158,7 +158,7 @@ Make sure to choose your storage configuration carefully to have enough capacity
     ```
     {: pre}
 
-    For more information about each storage class, see the [storage class reference](#block_storageclass_reference). If you do not find what you are looking for, consider creating your own customized storage class. To get started, check out the [customized storage class samples](#block_custom_storageclass).
+    For more information about each storage class, see the [storage class reference](#block_storageclass_reference). If you don't find what you are looking for, consider creating your own customized storage class. To get started, check out the [customized storage class samples](#block_custom_storageclass).
     {: tip}
 
 3. Choose the type of block storage that you want to provision.
@@ -216,7 +216,7 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
 [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
 1. Make sure that you are assigned the Editor platform access role and the Writer service access role for {{site.data.keyword.keymanagementserviceshort}} so that you can create your own root key that you use to encrypt your {{site.data.keyword.blockstorageshort}} instance. You can review your IAM access roles in the [IAM console](https://cloud.ibm.com/iam){: external}. For more information about IAM roles, see [IAM access](/docs/account?topic=account-userroles).
-2. If you do not have a {{site.data.keyword.keymanagementserviceshort}} instance, [provision one](/docs/key-protect?topic=key-protect-provision).
+2. If you don't have a {{site.data.keyword.keymanagementserviceshort}} instance, [provision one](/docs/key-protect?topic=key-protect-provision).
 3. [Create a root key](/docs/key-protect?topic=key-protect-create-root-keys). By default, the root key is created without an expiration date.
 4. Create an IAM service ID. Replace `<service_ID_name>` with the name that you want to assign to your service ID. This service ID is used to access your {{site.data.keyword.keymanagementserviceshort}} instance from your {{site.data.keyword.blockstorageshort}} volume.
 
@@ -240,7 +240,7 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
     ```
     {: screen}
 
-5. Create an API key for your service ID. Replace `<api-key-name>` with a name for your API key and replace `<service_ID_name>` with the name of the service ID that you created. Be sure to save your API key as it cannot be retrieved later. This API key is stored in a Kubernetes secret in your cluster in a later step.
+5. Create an API key for your service ID. Replace `<api-key-name>` with a name for your API key and replace `<service_ID_name>` with the name of the service ID that you created. Be sure to save your API key as it can't be retrieved later. This API key is stored in a Kubernetes secret in your cluster in a later step.
 
     ```sh
     ibmcloud iam service-api-key-create <api_key_name> <service_ID_name>
@@ -410,7 +410,7 @@ You can provision encrypted {{site.data.keyword.blockstorageshort}} by creating 
 
 The following steps show how you can reference your {{site.data.keyword.keymanagementserviceshort}} credentials in your PVC to create an encrypted {{site.data.keyword.blockstorageshort}} instance. To create multiple encrypted volumes without specifying the {{site.data.keyword.keymanagementserviceshort}} credentials in each PVC, you can [create a custom, encrypted storage class](#encrypt_custom_sc).
 
-1. Review the provided [{{site.data.keyword.blockstorageshort}} storage classes](#block_storageclass_reference) to determine which storage class best meets your app requirements. If the provided storage classes do not meet your app requirements, you can create your own [customized storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass).
+1. Review the provided [{{site.data.keyword.blockstorageshort}} storage classes](#block_storageclass_reference) to determine which storage class best meets your app requirements. If the provided storage classes don't meet your app requirements, you can create your own [customized storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass).
 
 2. Create a PVC configuration file that is named `pvc.yaml` and that references the Kubernetes secret where you stored the {{site.data.keyword.keymanagementserviceshort}} service credentials. To create this secret, see [Setting up encryption for {{site.data.keyword.blockstorageshort}}](#block_encryption_setup).
 
@@ -574,19 +574,19 @@ To add block storage:
         :   In the metadata labels section, specify the frequency for which your storage bill is calculated, "monthly" or "hourly". The default is "hourly".
 
         `region`
-        :   In the metadata labels section, specify the region where you want to provision your block storage. If you specify the region, you must also specify a zone. If you do not specify a region, or the specified region is not found, the storage is created in the same region as your cluster. <p class="note">This option is supported only with the IBM Cloud Block Storage plug-in version 1.0.1 or higher. For older plug-in versions, if you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones. To specify the zone for your storage, you can create a [customized storage class](#block_multizone_yaml) first. Then, create a PVC with your customized storage class.
+        :   In the metadata labels section, specify the region where you want to provision your block storage. If you specify the region, you must also specify a zone. If you don't specify a region, or the specified region is not found, the storage is created in the same region as your cluster. <p class="note">This option is supported only with the IBM Cloud Block Storage plug-in version 1.0.1 or higher. For older plug-in versions, if you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones. To specify the zone for your storage, you can create a [customized storage class](#block_multizone_yaml) first. Then, create a PVC with your customized storage class.
 
         `zone`
-        :   In the metadata labels section, specify the zone where you want to provision your block storage. If you specify the zone, you must also specify a region. If you do not specify a zone or the specified zone is not found in a multizone cluster, the zone is selected on a round-robin basis. This option is supported only with the IBM Cloud Block Storage plug-in version 1.0.1 or higher. For older plug-in versions, if you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones. To specify the zone for your storage, you can create a [customized storage class](#block_multizone_yaml) first. Then, create a PVC with your customized storage class.
+        :   In the metadata labels section, specify the zone where you want to provision your block storage. If you specify the zone, you must also specify a region. If you don't specify a zone or the specified zone is not found in a multizone cluster, the zone is selected on a round-robin basis. This option is supported only with the IBM Cloud Block Storage plug-in version 1.0.1 or higher. For older plug-in versions, if you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones. To specify the zone for your storage, you can create a [customized storage class](#block_multizone_yaml) first. Then, create a PVC with your customized storage class.
 
         `storage`
-        :   In the spec resources requests section, enter the size of the block storage, in gigabytes (Gi). After your storage is provisioned, you cannot change the size of your block storage. Make sure to specify a size that matches the amount of data that you want to store. 
+        :   In the spec resources requests section, enter the size of the block storage, in gigabytes (Gi). After your storage is provisioned, you can't change the size of your block storage. Make sure to specify a size that matches the amount of data that you want to store. 
 
         `iops`
         :   This option is available for the custom storage classes only (`ibmc-block-custom / ibmc-block-retain-custom`). In the spec resources requests section, specify the total IOPS for the storage, selecting a multiple of 100 within the allowable range. If you choose an IOPS other than one that is listed, the IOPS is rounded up.
 
         `storageClassName`
-        :   In the spec section, enter the name of the storage class that you want to use to provision block storage. You can choose to use one of the [IBM-provided storage classes](#block_storageclass_reference) or [create your own storage class](#block_custom_storageclass). If you do not specify a storage class, the PV is created with the default storage class `ibmc-file-bronze`.
+        :   In the spec section, enter the name of the storage class that you want to use to provision block storage. You can choose to use one of the [IBM-provided storage classes](#block_storageclass_reference) or [create your own storage class](#block_custom_storageclass). If you don't specify a storage class, the PV is created with the default storage class `ibmc-file-bronze`.
 
     If you want to use a customized storage class, create your PVC with the corresponding storage class name, a valid IOPS, and size. Want to set your own default? See [Changing the default storage class](/docs/openshift?topic=openshift-kube_concepts#default_storageclass).  
     {: tip}
@@ -620,7 +620,7 @@ To add block storage:
         FirstSeen    LastSeen    Count    From                                SubObjectPath    Type        Reason            Message
         ---------    --------    -----    ----                                -------------    --------    ------            -------
         3m        3m        1    {ibm.io/ibmc-block 31898035-3011-11e7-a6a4-7a08779efd33 }            Normal        Provisioning        External provisioner is provisioning volume for claim "default/my-persistent-volume-claim"
-        3m        1m        10    {persistentvolume-controller }                            Normal        ExternalProvisioning    cannot find provisioner "ibm.io/ibmc-block", expecting that a volume for the claim is provisioned either manually or via external software
+        3m        1m        10    {persistentvolume-controller }                            Normal        ExternalProvisioning    can't find provisioner "ibm.io/ibmc-block", expecting that a volume for the claim is provisioned either manually or via external software
         1m        1m        1    {ibm.io/ibmc-block 31898035-3011-11e7-a6a4-7a08779efd33 }            Normal        ProvisioningSucceeded    Successfully provisioned volume pvc-0d787071-3a67-11e7-aafc-eef80dd2dea2
 
     ```
@@ -846,7 +846,7 @@ Before you can start to mount your existing storage to an app, you must retrieve
     :   In the spec capacity section, enter the storage size of the existing block storage that you retrieved in the previous step as `capacity-gb`. The storage size must be written in gigabytes, for example, 20Gi (20 GB) or 1000Gi (1 TB). To retrieve your volume details, run `ibmcloud sl block volume-list` to get the volume ID, then run `ibmcloud sl block volume-detail <volume_ID>` to get the details of your volume.
     
     `fsType`
-    :   In the spec flex volume section, enter the file system type that is configured for your existing block storage. Choose between `ext4` or `xfs`. If you do not specify this option, the PV defaults to `ext4`. When the wrong `fsType` is defined, then the PV creation succeeds, but the mounting of the PV to a pod fails. To retrieve your volume details, run `ibmcloud sl block volume-list` to get the volume ID, then run `ibmcloud sl block volume-detail <volume_ID>` to get the details of your volume.
+    :   In the spec flex volume section, enter the file system type that is configured for your existing block storage. Choose between `ext4` or `xfs`. If you don't specify this option, the PV defaults to `ext4`. When the wrong `fsType` is defined, then the PV creation succeeds, but the mounting of the PV to a pod fails. To retrieve your volume details, run `ibmcloud sl block volume-list` to get the volume ID, then run `ibmcloud sl block volume-detail <volume_ID>` to get the details of your volume.
     
     `Lun`
     :   In the spec flex volume options section, enter the lun ID for your block storage that you retrieved earlier as `lunId`. To retrieve your volume details, run `ibmcloud sl block volume-list` to get the volume ID, then run `ibmcloud sl block volume-detail <volume_ID>` to get the details of your volume.
@@ -874,7 +874,7 @@ Before you can start to mount your existing storage to an app, you must retrieve
     ```
     {: pre}
 
-7. Create another configuration file to create your PVC. In order for the PVC to match the PV that you created earlier, you must choose the same value for `storage` and `accessMode`. The `storage-class` field must be an empty string. If any of these fields do not match the PV, then a new PV is created automatically instead.
+7. Create another configuration file to create your PVC. In order for the PVC to match the PV that you created earlier, you must choose the same value for `storage` and `accessMode`. The `storage-class` field must be an empty string. If any of these fields don't match the PV, then a new PV is created automatically instead.
 
     ```yaml
     kind: PersistentVolumeClaim
@@ -927,7 +927,7 @@ If you have a stateful app such as a database, you can create stateful sets that
 
 To add storage to a stateful set, you specify your storage configuration in the `volumeClaimTemplates` section of your stateful set YAML. The `volumeClaimTemplates` is the basis for your PVC and can include the storage class and the size or IOPS of your block storage that you want to provision. However, if you want to include labels in your `volumeClaimTemplates`, Kubernetes does not include these labels when creating the PVC. Instead, you must add the labels directly to your stateful set.
 
-You cannot deploy two stateful sets at the same time. If you try to create a stateful set before a different one is fully deployed, then the deployment of your stateful set might lead to unexpected results.
+You can't deploy two stateful sets at the same time. If you try to create a stateful set before a different one is fully deployed, then the deployment of your stateful set might lead to unexpected results.
 {: important}
 
 
@@ -951,7 +951,7 @@ Use this option if you want to automatically create the PVC when you create the 
 
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1. Verify that all existing stateful sets in your cluster are fully deployed. If a stateful set is still being deployed, you cannot start creating your stateful set. You must wait until all stateful sets in your cluster are fully deployed to avoid unexpected results.
+1. Verify that all existing stateful sets in your cluster are fully deployed. If a stateful set is still being deployed, you can't start creating your stateful set. You must wait until all stateful sets in your cluster are fully deployed to avoid unexpected results.
 
     1. List existing stateful sets in your cluster.
 
@@ -1004,7 +1004,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
     - **Example stateful set that specifies a zone:**
 
-        The following example shows how to deploy NGINX as a stateful set with three replicas. For each replica, a 20 gigabyte block storage device is provisioned based on the specifications that are defined in the `ibmc-block-retain-bronze` storage class. All storage devices are provisioned in the `dal10` zone. Because block storage cannot be accessed from other zones, all replicas of the stateful set are also deployed onto worker nodes that are located in `dal10`.
+        The following example shows how to deploy NGINX as a stateful set with three replicas. For each replica, a 20 gigabyte block storage device is provisioned based on the specifications that are defined in the `ibmc-block-retain-bronze` storage class. All storage devices are provisioned in the `dal10` zone. Because block storage can't be accessed from other zones, all replicas of the stateful set are also deployed onto worker nodes that are located in `dal10`.
 
         ```yaml
         apiVersion: v1
@@ -1068,7 +1068,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 
     - **Example stateful set with anti-affinity rule and delayed block storage creation:**
 
-        The following example shows how to deploy NGINX as a stateful set with three replicas. The stateful set does not specify the region and zone where the block storage is created. Instead, the stateful set uses an anti-affinity rule to ensure that the pods are spread across worker nodes and zones. By defining `topologykey: failure-domain.beta.kubernetes.io/zone`, the Kubernetes scheduler cannot schedule a pod on a worker node if the worker node is in the same zone as a pod that has the `app: nginx` label. For each stateful set pod, two PVCs are created as defined in the `volumeClaimTemplates` section, but the creation of the block storage instances is delayed until a stateful set pod that uses the storage is scheduled. This setup is referred to as [topology-aware volume scheduling](https://kubernetes.io/blog/2018/10/11/topology-aware-volume-provisioning-in-kubernetes/).
+        The following example shows how to deploy NGINX as a stateful set with three replicas. The stateful set does not specify the region and zone where the block storage is created. Instead, the stateful set uses an anti-affinity rule to ensure that the pods are spread across worker nodes and zones. By defining `topologykey: failure-domain.beta.kubernetes.io/zone`, the Kubernetes scheduler can't schedule a pod on a worker node if the worker node is in the same zone as a pod that has the `app: nginx` label. For each stateful set pod, two PVCs are created as defined in the `volumeClaimTemplates` section, but the creation of the block storage instances is delayed until a stateful set pod that uses the storage is scheduled. This setup is referred to as [topology-aware volume scheduling](https://kubernetes.io/blog/2018/10/11/topology-aware-volume-provisioning-in-kubernetes/).
 
         ```yaml
         apiVersion: storage.k8s.io/v1
@@ -1177,8 +1177,8 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
         
         `matchLabels`
         :   In the spec selector section, enter all labels that you want to include in your stateful set and your PVC. Labels that you include in the `volumeClaimTemplates` of your stateful set are not recognized by Kubernetes. Sample labels that you might want to include are: 
-            - **region** and **zone**: If you want all your stateful set replicas and PVCs to be created in one specific zone, add both labels. You can also specify the zone and region in the storage class that you use. If you do not specify a zone and region and you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones.
-            - **billingType**: Enter the billing type that you want to use for your PVCs. Choose between `hourly` or `monthly`. If you do not specify this label, all PVCs are created with an hourly billing type.
+            - **region** and **zone**: If you want all your stateful set replicas and PVCs to be created in one specific zone, add both labels. You can also specify the zone and region in the storage class that you use. If you don't specify a zone and region and you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones.
+            - **billingType**: Enter the billing type that you want to use for your PVCs. Choose between `hourly` or `monthly`. If you don't specify this label, all PVCs are created with an hourly billing type.
         
         `labels`
         :   In the spec template metadata section, enter the same labels that you added to the `spec.selector.matchLabels` section. 
@@ -1196,7 +1196,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
         :   In the spec volume claim templates spec resources requests section, if you want to provision [performance storage](#block_predefined_storageclass), enter the number of IOPS. If you use an endurance storage class and specify a number of IOPS, the number of IOPS is ignored. Instead, the IOPS that is specified in your storage class is used.
         
         `storageClassName`
-        :   In the spec volume claim templates spec section, enter the storage class that you want to use. To list existing storage classes, run `oc get storageclasses | grep block`. If you do not specify a storage class, the PVC is created with the default storage class that is set in your cluster. Make sure that the default storage class uses the `ibm.io/ibmc-block` provisioner so that your stateful set is provisioned with block storage.
+        :   In the spec volume claim templates spec section, enter the storage class that you want to use. To list existing storage classes, run `oc get storageclasses | grep block`. If you don't specify a storage class, the PVC is created with the default storage class that is set in your cluster. Make sure that the default storage class uses the `ibm.io/ibmc-block` provisioner so that your stateful set is provisioned with block storage.
 
 3. Create your stateful set.
 
@@ -1250,7 +1250,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     `spec.replicas`
     :   Enter the number of replicas that you want to create for your stateful set. The number of replicas must equal the number of PVCs that you created earlier.
 
-    If your PVCs are in different zones, do not include a region or zone label in your stateful set.
+    If your PVCs are in different zones, don't include a region or zone label in your stateful set.
     {: note}
 
 3. Verify that the PVCs are used in your stateful set replica pods.
@@ -1322,7 +1322,7 @@ For questions about billing and to find the steps for how to use the {{site.data
     To change the IOPS from the CLI, you must also change the size of your block storage. If you want to change only the IOPS, but not the size, you must [request the IOPS change from the console](/docs/BlockStorage?topic=BlockStorage-adjustingIOPS).
     {: note}
 
-3. Edit the PVC and add the new size in the `spec.resources.requests.storage` section of your PVC. You can change to a greater size only up to the maximum capacity that is set by your storage class. You cannot downsize your existing storage. To see available sizes for your storage class, see [Deciding on the block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass).
+3. Edit the PVC and add the new size in the `spec.resources.requests.storage` section of your PVC. You can change to a greater size only up to the maximum capacity that is set by your storage class. You can't downsize your existing storage. To see available sizes for your storage class, see [Deciding on the block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass).
 
     ```sh
     oc edit pvc <pvc_name>
@@ -1458,7 +1458,7 @@ To store the snapshot, you must request snapshot space on your block storage. Sn
 To protect your data from a zone failure, you can [replicate snapshots](/docs/BlockStorage?topic=BlockStorage-replication#replication) to a block storage instance that is set up in another zone.
 {: shortdesc}
 
-Data can be replicated from the primary storage to the backup storage only. You cannot mount a replicated block storage instance to a cluster. When your primary storage fails, you can manually set your replicated backup storage to be the primary one. Then, you can mount it to your cluster. After your primary storage is restored, you can restore the data from the backup storage.
+Data can be replicated from the primary storage to the backup storage only. You can't mount a replicated block storage instance to a cluster. When your primary storage fails, you can manually set your replicated backup storage to be the primary one. Then, you can mount it to your cluster. After your primary storage is restored, you can restore the data from the backup storage.
 
 
 ### Duplicating storage
@@ -1492,7 +1492,7 @@ You can use the `oc cp` [command](https://kubernetes.io/docs/reference/kubectl/o
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). 
 
-When you run the `oc cp` command, if you do not specify a container with `-c`, the command uses the first available container in the pod.
+When you run the `oc cp` command, if you don't specify a container with `-c`, the command uses the first available container in the pod.
 
 Copy data from your local machine to a pod in your cluster.
 
@@ -1522,7 +1522,7 @@ oc cp <local_filepath>/<filename> <namespace>/<pod>:<pod_filepath> -c <container
 ## Storage class reference
 {: #block_storageclass_reference}
 
-Storage classes that have `retain` in the title have a reclaim policy of **Retain**. Example: `ibmc-file-retain-bronze`. Storage classes that do not have `retain` in the title have a reclaim policy of **Delete**. Example: `ibmc-file-bronze`.
+Storage classes that have `retain` in the title have a reclaim policy of **Retain**. Example: `ibmc-file-retain-bronze`. Storage classes that don't have `retain` in the title have a reclaim policy of **Delete**. Example: `ibmc-file-bronze`.
 {: tip}
 
 | Characteristics | Setting|
@@ -1615,7 +1615,7 @@ Creating the block storage instance without knowing the constraints of the pod c
 To use topology-aware volume scheduling, make sure that you installed the {{site.data.keyword.cloud_notm}} Block Storage plug-in version 1.2.0 or later.
 {: note}
 
-The following examples show how to create storage classes that delay the creation of the block storage instance until the first pod that uses this storage is ready to be scheduled. To delay the creation, you must include the `volumeBindingMode: WaitForFirstConsumer` option. If you do not include this option, the `volumeBindingMode` is automatically set to `Immediate` and the block storage instance is created when you create the PVC.
+The following examples show how to create storage classes that delay the creation of the block storage instance until the first pod that uses this storage is ready to be scheduled. To delay the creation, you must include the `volumeBindingMode: WaitForFirstConsumer` option. If you don't include this option, the `volumeBindingMode` is automatically set to `Immediate` and the block storage instance is created when you create the PVC.
 
 Example for Endurance block storage.
 
@@ -1883,7 +1883,7 @@ To clean up persistent data:
     If your storage is charged monthly, you still get charged for the entire month, even if you remove the storage before the end of the billing cycle.
     {: important}
 
-3. Remove any pods that mount the PVC. List the pods that mount the PVC. If no pod is returned in your CLI output, you do not have a pod that uses the PVC.
+3. Remove any pods that mount the PVC. List the pods that mount the PVC. If no pod is returned in your CLI output, you don't have a pod that uses the PVC.
 
     ```sh
     oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"

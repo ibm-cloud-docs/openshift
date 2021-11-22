@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-22"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc
 
@@ -75,7 +75,7 @@ To update the OpenShift Data Foundation in your cluster, disable the add-on and 
 You can remove ODF add-on from your cluster by using the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or the CLI.
 {: shortdesc}
 
-When you disable the OpenShift Data Foundation add-on, only the ODF operator is removed from your cluster. Your existing workloads remain, but you cannot create more ODF workloads. You also cannot delete your `OcsCluster` custom resource after the operator is removed. If you want to remove all of your ODF resources and data, see [Removing ODF from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-crd). If you removed the add-on and can't delete your `OcsCluster`, reinstall the add-on, then delete the `OcsCluster`.
+When you disable the OpenShift Data Foundation add-on, only the ODF operator is removed from your cluster. Your existing workloads remain, but you can't create more ODF workloads. You also can't delete your `OcsCluster` custom resource after the operator is removed. If you want to remove all your ODF resources and data, see [Removing ODF from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-crd). If you removed the add-on and can't delete your `OcsCluster`, reinstall the add-on, then delete the `OcsCluster`.
 {: note}
 
 ### Uninstalling the OpenShift Data Foundation add-on from the console
@@ -125,7 +125,7 @@ If you deployed ODF by using a CRD, you can update your ODF deployment by editin
     ```
     {: pre}
 
-    **Example output**
+    Example output
     ```sh
     NAME             AGE
     ocscluster-vpc   19d
@@ -265,7 +265,7 @@ When you delete the `OcsCluster` custom resource from your cluster, the followin
     ```
     {: pre}
 
-1. **Optional** If you do not want to reinstall ODF, you can [Remove the ODF add-on from your cluster](#ocs-rm-cleanup-resources).
+1. **Optional** If you don't want to reinstall ODF, you can [Remove the ODF add-on from your cluster](#ocs-rm-cleanup-resources).
 
 ## Cleaning up your ODF deployment
 {: #ocs-rm-cleanup-resources}
@@ -351,7 +351,7 @@ After you remove ODF from your apps, and remove your ODF storage cluster, you ca
         ```
         {: codeblock}
 
-        **Example output**:
+        Example output:
         ```sh
         removed '/var/lib/rook/openshift-storage/log/ocs-deviceset-0-data-0-6fgp6/ceph-volume.log'
         removed directory: '/var/lib/rook/openshift-storage/log/ocs-deviceset-0-data-0-6fgp6'
@@ -376,7 +376,7 @@ After you remove ODF from your apps, and remove your ODF storage cluster, you ca
     ```
     {: pre}
 
-    **Example output**:
+    Example output:
     ```sh
     local-pv-180cfc58   139Gi      RWO            Delete           Available           localfile               11m
     local-pv-67f21982   139Gi      RWO            Delete           Available           localfile               12m

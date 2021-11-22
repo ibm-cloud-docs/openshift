@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -39,7 +39,7 @@ Review the following diagram for an example scenario of how you might set up you
 
 **Clusters**: Each cluster is in the same multizone region as the reservation, but can be in a different resource group. Reserved worker nodes from different reservations can be used in different clusters. A cluster can have a mix of reserved and on-demand worker pools.
 
-**Worker pools**: You can create multiple worker pools in multiple clusters with your reserved worker nodes. Reserved worker nodes are used for the entire worker pool; you cannot mix and match between on-demand and reserved worker nodes in the same worker pool. Reserved worker nodes are used on a first-available basis, which means if you provision a worker pool that uses all of your reserved worker nodes, you have no more reserved worker nodes left for other worker pools. Therefore, you might create separate reservations for each team that owns a worker pool or cluster.
+**Worker pools**: You can create multiple worker pools in multiple clusters with your reserved worker nodes. Reserved worker nodes are used for the entire worker pool; you can't mix and match between on-demand and reserved worker nodes in the same worker pool. Reserved worker nodes are used on a first-available basis, which means if you provision a worker pool that uses all your reserved worker nodes, you have no more reserved worker nodes left for other worker pools. Therefore, you might create separate reservations for each team that owns a worker pool or cluster.
 
 **Zones**: Because the reservation is created in an {{site.data.keyword.cloud_notm}} multizone region, the reserved worker nodes can be used for clusters in any of the zones. For example, reservations in Washington, DC (US East region) can be used to create classic worker nodes in `wdc04`, `wdc06`, or `wdc07`.
 
@@ -50,7 +50,7 @@ Review the following diagram for an example scenario of how you might set up you
 
 **How can I use my reservation?**
 
-You can use your reservation to create worker pools in new or existing clusters. Your reservation is account-wide, so you can use the reserved worker nodes in different clusters, worker pools, and even resource groups. However, because prices vary by zone, you cannot use reserved worker nodes across different metros or multizone regions. You also cannot used reserved instances from other {{site.data.keyword.cloud_notm}} infrastructure services, such as virtual server instances, for your worker nodes, but must use the {{site.data.keyword.openshiftlong_notm}} reservations.
+You can use your reservation to create worker pools in new or existing clusters. Your reservation is account-wide, so you can use the reserved worker nodes in different clusters, worker pools, and even resource groups. However, because prices vary by zone, you can't use reserved worker nodes across different metros or multizone regions. You also can't used reserved instances from other {{site.data.keyword.cloud_notm}} infrastructure services, such as virtual server instances, for your worker nodes, but must use the {{site.data.keyword.openshiftlong_notm}} reservations.
 
 **Does a reservation guarantee computing capacity in a zone?**
 
@@ -104,7 +104,7 @@ Consider the following example. You create a contract on 15 December 2020 for 12
 
 **If I don't need reserved worker nodes anymore, can I modify my contract?**
 
-No, you cannot modify the terms of the contract, such as the duration, number of worker nodes, or flavor. You can remove any unneeded worker nodes from your clusters, but you cannot get a refund for unused capacity in your reservation.
+No, you can't modify the terms of the contract, such as the duration, number of worker nodes, or flavor. You can remove any unneeded worker nodes from your clusters, but you can't get a refund for unused capacity in your reservation.
 
 
 
@@ -119,17 +119,17 @@ Before you begin, make sure that you have the [**Administrator** platform access
 1. Log in to the [{{site.data.keyword.openshiftlong_notm}} reservations console](https://cloud.ibm.com/kubernetes/reservations){: external}.
 2. Click **Create reservation**.
 3. Select the **Infrastructure** provider to use for your worker nodes.
-4. Select the **Location** for your reservation. Keep in mind that you cannot change the location later.
+4. Select the **Location** for your reservation. Keep in mind that you can't change the location later.
     * **Geography**: The geographic area to filter locations by.
     * **Availability**: Choose single zone or multizone. For multizone areas, you select specific zones for your worker nodes when you create the worker pool.
     * **Metro**: The metro for the location.
 5. Configure the **Worker nodes** for your reservation.
-    * Click **Change flavor** to edit the CPU, memory, and other operating systems details of the worker nodes. Keep in mind that you cannot change the flavor for the reservation later.
+    * Click **Change flavor** to edit the CPU, memory, and other operating systems details of the worker nodes. Keep in mind that you can't change the flavor for the reservation later.
     * Enter the **Number of worker nodes** to create a contract for the initial reservation. You can add contracts for additional worker nodes later.
 6. Fill out the **Reservation details**. For more information about the discounts, see [Billing and discounts](#ri-about-billing).
     * **Contract length**: Choose between 1 or 3 years for the initial contract duration. You can add contracts for additional durations later.
-    * **Start date**: Choose the date that the contract and billing begin, at 00:00 UTC regardless of your time zone. The contract ends 1 or 3 years after the date that you select, such as 15 December 2020 - 15 December 2021. You can select a future date, but you cannot create worker nodes that use the reservation until that date begins.
-    * **Reservation name**: Give your reservation a name. This name is used to generate names for all of the associated contracts, which appear in your billing and usage reports. Consider including brief details on the location and flavor to help when selecting the reservation to create worker pools later.
+    * **Start date**: Choose the date that the contract and billing begin, at 00:00 UTC regardless of your time zone. The contract ends 1 or 3 years after the date that you select, such as 15 December 2020 - 15 December 2021. You can select a future date, but you can't create worker nodes that use the reservation until that date begins.
+    * **Reservation name**: Give your reservation a name. This name is used to generate names for all the associated contracts, which appear in your billing and usage reports. Consider including brief details on the location and flavor to help when selecting the reservation to create worker pools later.
 7. In the **Summary** pane, review the order summary and then click **Create**. Your reservation is created with the initial contract for worker nodes.
 8. **Optional**: To add more capacity to your reservation, you can create more contracts.
     1. From the [{{site.data.keyword.openshiftlong_notm}} reservations console](https://cloud.ibm.com/kubernetes/reservations){: external}, click your reservation.
@@ -147,7 +147,7 @@ Your reservation is created! Now, [use your reservation to provision worker node
 When you create a worker pool in a cluster, you can choose to use your reservation to provision the worker nodes. You can use the same reservation for multiple clusters and worker pools in the same location as the reservation.
 {: shortdesc}
 
-If you do not have enough capacity in your reservation to complete a worker pool action, such as creating, resizing, rebalancing, or adding a zone, the action is blocked. Instead, add a contract for more worker nodes to your reservation. Or, remove or scale down existing worker pools to add these worker nodes back to your reservation. You might also create the worker pool with on-demand worker nodes.
+If you don't have enough capacity in your reservation to complete a worker pool action, such as creating, resizing, rebalancing, or adding a zone, the action is blocked. Instead, add a contract for more worker nodes to your reservation. Or, remove or scale down existing worker pools to add these worker nodes back to your reservation. You might also create the worker pool with on-demand worker nodes.
 {: note}
 
 Before you begin:
@@ -163,7 +163,7 @@ To use the reservation:
     1. Enter the **Worker pool name**.
     2. Select the **Reservation** that you want to use. Keep in mind that the reservation affects the flavor and number of worker nodes that you can provision in this worker pool.
     3. Select the **Worker zones** and review the VLAN information.
-    4. For the **Worker nodes**, increase or decrease the number of worker nodes that you want to create per zone. You can review the percentage of your reservation that creating the worker pool uses. You cannot create a worker pool with more worker nodes than you have in your reservation. To use worker nodes from another reservation, create a different worker pool.
+    4. For the **Worker nodes**, increase or decrease the number of worker nodes that you want to create per zone. You can review the percentage of your reservation that creating the worker pool uses. You can't create a worker pool with more worker nodes than you have in your reservation. To use worker nodes from another reservation, create a different worker pool.
 6. In the **Summary** pane, notice that your estimated cost is zero, because your worker pool order uses the reservation. To complete the order, click **Create**.
 
 

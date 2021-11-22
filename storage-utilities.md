@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -26,7 +26,7 @@ Use the {{site.data.keyword.cloud_notm}} Block Storage Attacher plug-in to attac
 ![Classic infrastructure provider icon.](images/icon-classic-2.svg) The {{site.data.keyword.cloud_notm}} Block Storage Attacher plug-in is available for classic worker nodes only. If you want to attach raw, unformatted block storage to a VPC worker node, see [Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes](#vpc_api_attach).
 {: note}
 
-For example, you want to store your data with a software-defined storage solution (SDS), such as [Portworx](/docs/containers?topic=containers-portworx), but you do not want to use classic bare metal worker nodes that are optimized for SDS usage and that come with extra local disks. To add local disks to your classic non-SDS worker node, you must manually create your block storage devices in your {{site.data.keyword.cloud_notm}} infrastructure account and use the {{site.data.keyword.cloud_notm}} Block Volume Attacher to attach the storage to your non-SDS worker node.
+For example, you want to store your data with a software-defined storage solution (SDS), such as [Portworx](/docs/containers?topic=containers-portworx), but you don't want to use classic bare metal worker nodes that are optimized for SDS usage and that come with extra local disks. To add local disks to your classic non-SDS worker node, you must manually create your block storage devices in your {{site.data.keyword.cloud_notm}} infrastructure account and use the {{site.data.keyword.cloud_notm}} Block Volume Attacher to attach the storage to your non-SDS worker node.
 
 The {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in creates pods on every worker node in your cluster as part of a daemon set and sets up a Kubernetes storage class that you later use to attach the block storage device to your non-SDS worker node.
 
@@ -160,7 +160,7 @@ You can upgrade the existing {{site.data.keyword.cloud_notm}} Block Storage Atta
 ### Removing the IBM Cloud Block Volume Attacher plug-in
 {: #remove_block_attacher}
 
-If you do not want to provision and use the {{site.data.keyword.cloud_notm}} Block Storage Attacher plug-in in your cluster, you can uninstall the Helm chart.
+If you don't want to provision and use the {{site.data.keyword.cloud_notm}} Block Storage Attacher plug-in in your cluster, you can uninstall the Helm chart.
 {: shortdesc}
 
 1. Find the name of the Helm chart for the {{site.data.keyword.cloud_notm}} Block Storage Attacher plug-in.
@@ -240,7 +240,7 @@ Use this option if you want to add different block storage configurations, add b
     ```
     {: pre}
 
-4. Verify that the block storage device is created and note the `id` of the volume. **Note:** If you do not see your block storage device right away, wait a few minutes. Then, run this command again.
+4. Verify that the block storage device is created and note the `id` of the volume. **Note:** If you don't see your block storage device right away, wait a few minutes. Then, run this command again.
 
     ```sh
     ibmcloud sl block volume-list
@@ -580,7 +580,7 @@ Detaching storage from your VPC cluster does not remove your {{site.data.keyword
     ```
     {: pre}
 
-4. Describe the PV that uses the volume. If you do not know which PV uses the volume that you want to remove, you can run the `describe pv` command on each PV in your cluster. Note the PVC that uses the PV.
+4. Describe the PV that uses the volume. If you don't know which PV uses the volume that you want to remove, you can run the `describe pv` command on each PV in your cluster. Note the PVC that uses the PV.
 
     ```sh
     oc describe pv <pv_name>
@@ -783,7 +783,7 @@ You can remove storage from your worker node by using the `ibmcloud oc storage a
     ```
     {: pre}
 
-    **Example output**:
+    Example output:
     ```sh
     Listing volume attachments...
     OK
@@ -1028,7 +1028,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
         Errors 0
         -------------------------------------------------
 
-        [2019-04-18 16:01:54,357] [backup : 162] [INFO] Scheduling backup as per configurations, please do not stop this program or run this in background !!!
+        [2019-04-18 16:01:54,357] [backup : 162] [INFO] Scheduling backup as per configurations, please don't stop this program or run this in background !!!
         [2019-04-18 16:01:54,358] [backup : 166] [INFO] Schedule info is: ['daily']
         [2019-04-18 16:01:54,358] [backup : 172] [INFO] Scheduled for daily!!!
         ```
@@ -1150,11 +1150,11 @@ To back up or restore a PVC by editing the `values.yaml` file:
 Set up alerts in {{site.data.keyword.mon_full_notm}} for your workloads that are using storage volumes. For more information see, [Alerts](/docs/monitoring?topic=monitoring-monitoring#monitoring_alerts).
 {: shortdesc}
 
-When a storage volume is down, your app pods that are using storage have a low file system I/O, have network errors, or crash which causes the replica count to go down. You can set up alerts in {{site.data.keyword.mon_full_notm}} to get notified if the file system operations for your app drop below a specific threshold, if network errors occur, or if your app pods do not reach a `Ready` state.
+When a storage volume is down, your app pods that are using storage have a low file system I/O, have network errors, or crash which causes the replica count to go down. You can set up alerts in {{site.data.keyword.mon_full_notm}} to get notified if the file system operations for your app drop below a specific threshold, if network errors occur, or if your app pods don't reach a `Ready` state.
 
 1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to set up alerts for your storage volumes.
 
-2. In the **Monitoring** section, click **Connect** to connect an existing {{site.data.keyword.mon_full_notm}} instance to your cluster. If you do not have an instance, click **Create an instance** to create one. For more information about how to set up an {{site.data.keyword.mon_full_notm}} instance, see [Provisioning an instance](/docs/monitoring?topic=monitoring-provision).
+2. In the **Monitoring** section, click **Connect** to connect an existing {{site.data.keyword.mon_full_notm}} instance to your cluster. If you don't have an instance, click **Create an instance** to create one. For more information about how to set up an {{site.data.keyword.mon_full_notm}} instance, see [Provisioning an instance](/docs/monitoring?topic=monitoring-provision).
 
 3. Click the **Launch** button to open the {{site.data.keyword.mon_full_notm}} dashboard.
 
@@ -1166,7 +1166,7 @@ When a storage volume is down, your app pods that are using storage have a low f
     5. In the **File I/O Bandwidth by Pod** tile, create an alert by clicking the **Options** menu and then **Create alert**.
     6. Open the **Notification** section of the alert menu and create or select an alert notification channel.
     7. Save your alert.
-    8. Repeat these steps for all of the apps that are deployed in your cluster.
+    8. Repeat these steps for all the apps that are deployed in your cluster.
     9. Test the alert that you created by editing the threshold that you configured to manually trigger the alert. For example, if you set a file system utilization alert to trigger when the utilization is less than 300B/s for 5 minutes, increase the threshold to be greater than the current utilization of your app for 5 minutes and select the `at least once` option.
     10. Verify that the alert is triggered after 5 minutes. Once you have verified the alert, reset the values to the values you configured earlier.
 
@@ -1178,7 +1178,7 @@ When a storage volume is down, your app pods that are using storage have a low f
     5. In the **Network Request Count by Pod** tile, create an alert by clicking the **Options** menu and then **Create alert**. Set the alert parameters based on the threshold that you observed. For example, if the network utilization remains below the threshold for a certain amount of time, then the alert is triggered.
     6. Open the **Notification** section of the alert menu and create or select an alert notification channel.
     7. Save your alert.
-    8. Repeat these steps for all of the apps that are deployed in your cluster.
+    8. Repeat these steps for all the apps that are deployed in your cluster.
     9. Test the alert that you created by editing the threshold that you configured to manually trigger the alert. For example, if you set an alert for when the number of network requests by pod is less than 3/s for 5 minutes, edit your alert threshold to be less than the threshold that you observed for 5 minutes and select the `at least once` option.
     10. Verify that the alert is triggered after 5 minutes. Once you have verified the alert, reset the values to the values you configured earlier.
 
@@ -1191,7 +1191,7 @@ When a storage volume is down, your app pods that are using storage have a low f
     6. In the **Pod Availability** tile, create an alert by clicking the **Options** menu and then **Create alert**. Set the alert parameters based on the threshold that you observed and your requested app replicas.
     7. Open the **Notification** section of the alert menu and create or select an alert notification channel.
     8. Save your alert.
-    9. Repeat these steps for all of the apps that are deployed in your cluster.
+    9. Repeat these steps for all the apps that are deployed in your cluster.
     10. Test the alert that you created by editing the threshold that you configured to manually trigger the alert. For example, if you set a pod availability alert for when the number of available pods is less than 3 for 5 minutes, edit your alert threshold to be less than 4 pods for 5 minutes and select the `at least once` option.
     11. Verify that the alert is triggered after 5 minutes. Once you have verified the alert, reset the values to the values you configured earlier.
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: kubernetes, worker nodes, state
 
@@ -29,7 +29,7 @@ You can view the current worker node state by running the `ibmcloud oc worker ls
 
 A worker node can go into a `Critical` state for many reasons: 
 - You initiated a reboot for your worker node without cordoning and draining your worker node. Rebooting a worker node can cause data corruption in `containerd`, `kubelet`, `kube-proxy`, and `calico`.
-- The pods that are deployed to your worker node do not use proper resource limits for [memory](https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource){: external} and [CPU](https://kubernetes.io/docs/tasks/configure-pod-container/assign-cpu-resource){: external}. If you set none or excessive resource limits, pods can consume all available resources, leaving no resources for other pods to run on this worker node. This overcommitment of workload causes the worker node to fail.
+- The pods that are deployed to your worker node don't use proper resource limits for [memory](https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource){: external} and [CPU](https://kubernetes.io/docs/tasks/configure-pod-container/assign-cpu-resource){: external}. If you set none or excessive resource limits, pods can consume all available resources, leaving no resources for other pods to run on this worker node. This overcommitment of workload causes the worker node to fail.
     1. List the pods that run on your worker node and review the CPU and memory usage, requests and limits. 
         ```bash
         oc describe node <worker_private_IP>
@@ -72,7 +72,7 @@ A worker node can go into a `Critical` state for many reasons:
 You can view the current worker node state by running the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and locating the **State** and **Status** fields.
 {: shortdesc}
 
-A `Deleting` state means that you requested to delete the worker node, possibly as part of resizing a worker pool or autoscaling the cluster. Other operations cannot be issued against the worker node while the worker node deletes. You cannot reverse the deletion process. When the deletion process completes, you are no longer billed for the worker nodes.
+A `Deleting` state means that you requested to delete the worker node, possibly as part of resizing a worker pool or autoscaling the cluster. Other operations can't be issued against the worker node while the worker node deletes. You can't reverse the deletion process. When the deletion process completes, you are no longer billed for the worker nodes.
 
 ## Deleted
 {: #worker-node-deleted}
@@ -80,7 +80,7 @@ A `Deleting` state means that you requested to delete the worker node, possibly 
 You can view the current worker node state by running the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and locating the **State** and **Status** fields.
 {: shortdesc}
 
-A `Deleted` state means that your worker node is deleted, and no longer is listed in the cluster or billed. This state cannot be undone. Any data that was stored only on the worker node, such as container images, are also deleted.
+A `Deleted` state means that your worker node is deleted, and no longer is listed in the cluster or billed. This state can't be undone. Any data that was stored only on the worker node, such as container images, are also deleted.
 
 
 
@@ -196,7 +196,7 @@ You can view the current worker node state by running the `ibmcloud oc worker ls
 {: shortdesc}
 
 An `Unknown` state means that the Kubernetes master is not reachable for one of the following reasons:
-- You requested an update of your Kubernetes master. The state of the worker node cannot be retrieved during the update. If the worker node remains in this state for an extended period of time even after the Kubernetes master is successfully updated, try to [reload the worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
+- You requested an update of your Kubernetes master. The state of the worker node can't be retrieved during the update. If the worker node remains in this state for an extended period of time even after the Kubernetes master is successfully updated, try to [reload the worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
 - You might have another firewall that is protecting your worker nodes, or changed firewall settings recently. {{site.data.keyword.openshiftlong_notm}} requires certain IP addresses and ports to be opened to allow communication from the worker node to the Kubernetes master and vice versa. For more information, see [Firewall prevents worker nodes from connecting](/docs/openshift?topic=openshift-firewall#vyatta_firewall).
 - The Kubernetes master is down. Contact {{site.data.keyword.cloud_notm}} support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).
 

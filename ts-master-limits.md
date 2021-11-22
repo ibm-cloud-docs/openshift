@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift, roks, rhoks, rhos, limits
 
@@ -34,7 +34,7 @@ The master is approaching its allotted memory resource limit (93%).  Please cons
 Our managed customer masters have a resource cap that limits the amount of memory and CPU that they can consume.
 {: tsCauses}
 
-If your master status shows the previous message, then your master is consuming enough resources to approach its given limit.  At this point, this message is a warning. Your master control plane is still healthy and functioning as normal.  However, if you do not take action, your master can reach the limits, potentially causing performance and functional issues.
+If your master status shows the previous message, then your master is consuming enough resources to approach its given limit.  At this point, this message is a warning. Your master control plane is still healthy and functioning as normal.  However, if you don't take action, your master can reach the limits, potentially causing performance and functional issues.
 
 You have a few options when it comes to dealing with this.
 {: tsResolve}

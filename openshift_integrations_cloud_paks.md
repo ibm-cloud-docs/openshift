@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -113,7 +113,7 @@ To add a Cloud Pak from the {{site.data.keyword.cloud_notm}} catalog:
     *  **For new clusters**: [Create a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) with the `--entitlement cloud_pak` option. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use. After your cluster is created, you are not charged the {{site.data.keyword.openshiftshort}} license fee for the entitled worker nodes in the `default` worker pool. If you want to use a different worker pool for your Cloud Pak, follow the steps for existing clusters.
     * **For existing clusters or worker pools other than `default`**: Create a [worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create) with the `--entitlement cloud_pak` option. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use. After creation, your worker pool does not charge you the {{site.data.keyword.openshiftshort}} license fee for your entitled worker nodes.
 
-    Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.
+    Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you can't use the same entitlement for other worker pools, cloud providers, or environments.
     {: important}
 
 2. In the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog?search=label%3Acloud_pak#software){: external}, in the **Software** tab, under **Offering Type**, check **Cloud Paks**.
@@ -131,7 +131,7 @@ Now you can run your Cloud Pak on your {{site.data.keyword.openshiftshort}} clus
 To deploy a Cloud Pak to your {{site.data.keyword.openshiftlong_notm}} cluster, your entitlement to the Cloud Pak must be assigned to your {{site.data.keyword.cloud_notm}} account.
 {: shortdesc}
 
-1. Verify that your Cloud Pak entitlement is in your [**Container software library**](https://myibm.ibm.com/products-services/containerlibrary){: external}. If you do not see the entitlement, the entitlement might be owned by a different user. Verify the user, and if you still have issues, click **Contact IBM** from the container software library page.
+1. Verify that your Cloud Pak entitlement is in your [**Container software library**](https://myibm.ibm.com/products-services/containerlibrary){: external}. If you don't see the entitlement, the entitlement might be owned by a different user. Verify the user, and if you still have issues, click **Contact IBM** from the container software library page.
 2. Make sure that the {{site.data.keyword.cloud_notm}} account owner gives you permission to assign entitlements.
     1. From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external} menu bar, click **Manage > Access (IAM)**.
     2. From the **Users** tab, click the user that you want to assign permissions.
@@ -162,7 +162,7 @@ Yes, if your Cloud Pak includes an entitlement to run certain worker node flavor
 
 You can create the cluster or the worker pool within an existing cluster with the Cloud Pak entitlement by using the `--entitlement cloud_pak` option in the [`ibmcloud oc cluster create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) or [`ibmcloud oc worker-pool create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create) CLI commands. Make sure to specify the correct number and flavor of worker nodes that you are entitled to use.
 
-Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you cannot use the same entitlement for other worker pools, cloud providers, or environments.
+Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you can't use the same entitlement for other worker pools, cloud providers, or environments.
 {: important}
 
 

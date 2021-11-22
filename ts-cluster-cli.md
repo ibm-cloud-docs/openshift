@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -46,7 +46,7 @@ This task requires the [**Administrator** {{site.data.keyword.cloud_notm}} IAM p
 
 
 
-## `kubectl` or `oc` commands do not work
+## `kubectl` or `oc` commands don't work
 {: #kubectl_fails}
 
 
@@ -124,12 +124,12 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC Generation 2 compute
 
 
-You do not see all the projects that you have access to. When you try to run `oc` or `kubectl` commands, you see an error similar to the following.
+You don't see all the projects that you have access to. When you try to run `oc` or `kubectl` commands, you see an error similar to the following.
 {: tsSymptoms}
 
 ```
 No resources found.
-Error from server (Forbidden): <resource> is forbidden: User "IAM#user@email.com" cannot list <resources> at the cluster scope: no RBAC policy matched
+Error from server (Forbidden): <resource> is forbidden: User "IAM#user@email.com" can't list <resources> at the cluster scope: no RBAC policy matched
 ```
 {: screen}
 

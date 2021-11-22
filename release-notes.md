@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-19"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -28,6 +28,21 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 Review the release notes for November 2021.
 {: shortdesc}
+
+
+### 22 November 2021
+{: #22nov2021}
+{: release-note}
+
+Worker node fix pack update
+:   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.8.20_1536_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4820_1536),[`4.7.36_1540_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4737_1540), [`4.6.49_1564_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4649_1564), and [3.11.542_1612_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311542_1612).
+
+{{site.data.keyword.block_storage_is_short}} add-on.
+:   [Version 4.0.2_788](/docs/containers?topic=containers-vpc_bs_changelog) is released.
+
+Cluster autoscaler add-on.
+:   [Version 1.0.4_387](/docs/containers?topic=containers-ca_changelog) is released.
+
 
 ### 19 November 2021
 {: #19nov2021}
@@ -553,7 +568,7 @@ From 07 to 31 July 2021, the DNS provider is changed from Cloudflare to Akamai f
 
 - Cluster subdomains that were health checked in Cloudflare are now registered in the Akamai DNS as CNAME records. These CNAME records point to an Akamai Global Traffic Management domain that health checks the subdomains. When a client runs a DNS query for a health checked subdomain, a CNAME record is returned to the client, as opposed to Cloudflare, in which an A record was returned. If your client expects an A record for a subdomain that was health checked in Cloudflare, update your logic to accept a CNAME record.
 
-- During the migration, an Akamai Global Traffic Management (GTM) health check was automatically created for any subdomains that had a Cloudflare health check. If you previously created a Cloudflare health check for a subdomain, and you create an Akamai health check for the subdomain after the migration, the two Akamai health checks might conflict. Note that Akamai GTM configurations do not support nested subdomains. In these cases, you can use the `ibmcloud oc nlb-dns monitor disable` command to disable the Akamai health check that the migration automatically configured for your subdomain.
+- During the migration, an Akamai Global Traffic Management (GTM) health check was automatically created for any subdomains that had a Cloudflare health check. If you previously created a Cloudflare health check for a subdomain, and you create an Akamai health check for the subdomain after the migration, the two Akamai health checks might conflict. Note that Akamai GTM configurations don't support nested subdomains. In these cases, you can use the `ibmcloud oc nlb-dns monitor disable` command to disable the Akamai health check that the migration automatically configured for your subdomain.
 
 ### 28 June 2021
 {: #28june2021}
@@ -849,7 +864,7 @@ Worker node versions
 {: release-note}
 
 Deprecated data centers for classic clusters
-:   Houston (`hou02`) and Oslo (`osl01`) are deprecated and become unsupported later this year. To prevent any interruption of service, [redeploy all of your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your `osl01` or `hou02` clusters by **1 August 2021**. Before the unsupported date, you are blocked from adding new worker nodes and clusters starting on **1 July 2021**. For more information, see [Data center closures in 2021](/docs/get-support?topic=get-support-dc-closure).
+:   Houston (`hou02`) and Oslo (`osl01`) are deprecated and become unsupported later this year. To prevent any interruption of service, [redeploy all your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your `osl01` or `hou02` clusters by **1 August 2021**. Before the unsupported date, you are blocked from adding new worker nodes and clusters starting on **1 July 2021**. For more information, see [Data center closures in 2021](/docs/get-support?topic=get-support-dc-closure).
 
 ### 2 April 2021
 {: #02april2021}
@@ -1501,7 +1516,7 @@ Ingress secret expiration synchronization
 :   Added a troubleshooting topic for when [Ingress secret expiration dates are out of sync or are not updated](/docs/containers?topic=containers-sync_cert_dates).
 
 Internal {{site.data.keyword.openshiftshort}} container image registry
-:   Added a troubleshooting topic for when you [cannot push images to the internal registry from outside the VPC network](/docs/openshift?topic=openshift-ts-app-ocr-vpc-push).
+:   Added a troubleshooting topic for when you [can't push images to the internal registry from outside the VPC network](/docs/openshift?topic=openshift-ts-app-ocr-vpc-push).
 
 ### 1 October 2020
 {: #01oct2020}
@@ -1759,7 +1774,7 @@ Comparison between {{site.data.keyword.cloud_notm}} and OCP clusters
 :   Added a [table of differences between standard OCP installations and {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-cs_ov#compare_ocp).
 
 Global settings
-:   Added information about the [`config.openshift.io` global settings](/docs/openshift?topic=openshift-service-settings#global-settings) that you can or cannot configure.
+:   Added information about the [`config.openshift.io` global settings](/docs/openshift?topic=openshift-service-settings#global-settings) that you can or can't configure.
 
 Private-only VPC clusters
 :   Added diagrams for the [service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture_vpc), [flow of app requests with routers](/docs/openshift?topic=openshift-openshift_routes#route_vpc_private), and [flow of app requests with Ingress](/docs/openshift?topic=openshift-ingress-about-roks4#architecture-vpc_private) in VPC clusters that are created with the private cloud service endpoint only.
@@ -1952,7 +1967,7 @@ Gateway appliance firewalls
 :   Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#firewall_outbound) that you must open in a public gateway device firewall.
 
 Ingress troubleshooting in version 3.11 clusters
-:   Added a [troubleshooting topic](/docs/containers?topic=containers-alb-pod-affinity) for when ALB pods do not deploy correctly to worker nodes.
+:   Added a [troubleshooting topic](/docs/containers?topic=containers-alb-pod-affinity) for when ALB pods don't deploy correctly to worker nodes.
 
 ## April 2020
 {: #apr20}
@@ -2217,7 +2232,7 @@ Version changelogs
 
 
 New! {{site.data.keyword.openshiftshort}} 4.3
-:   {{site.data.keyword.openshiftshort}} 4.3 is now available as a beta. During the beta, the {{site.data.keyword.openshiftshort}} license fee is waived. Any 4.3 beta clusters that you create remain for only 30 days after the beta ends and version 4.3 becomes generally available. Also, you cannot update 3.11 clusters to 4.3 clusters. For more information, review the [version release topic](/docs/openshift?topic=openshift-openshift_versions#ocp43).
+:   {{site.data.keyword.openshiftshort}} 4.3 is now available as a beta. During the beta, the {{site.data.keyword.openshiftshort}} license fee is waived. Any 4.3 beta clusters that you create remain for only 30 days after the beta ends and version 4.3 becomes generally available. Also, you can't update 3.11 clusters to 4.3 clusters. For more information, review the [version release topic](/docs/openshift?topic=openshift-openshift_versions#ocp43).
 
 ### 6 February 2020
 {: #06feb2020}
@@ -2413,7 +2428,7 @@ Version changelog
 {: release-note}
 
 Fluentd component changes
-:   The Fluentd component is created for your cluster only if you [create a logging configuration to forward logs to a syslog server](/docs/containers?topic=containers-health#configuring). If no logging configurations for syslog exist in your cluster, the Fluentd component is removed automatically. If you do not forward logs to syslog and want to ensure that the Fluentd component is removed from your cluster, [automatic updates to Fluentd must be enabled](/docs/containers?topic=containers-update#logging-up).
+:   The Fluentd component is created for your cluster only if you [create a logging configuration to forward logs to a syslog server](/docs/containers?topic=containers-health#configuring). If no logging configurations for syslog exist in your cluster, the Fluentd component is removed automatically. If you don't forward logs to syslog and want to ensure that the Fluentd component is removed from your cluster, [automatic updates to Fluentd must be enabled](/docs/containers?topic=containers-update#logging-up).
 
 
 ### 15 November 2019
@@ -2599,7 +2614,7 @@ Ingress ALB changelog
 {: release-note}
 
 Sending custom Ingress certificates to legacy clients
-:   Added [steps](/docs/containers?topic=containers-comm-ingress-annotations) for ensuring that your custom certificate, instead of the default IBM-provided certificate, is sent by the Ingress ALB to legacy clients that do not support SNI.
+:   Added [steps](/docs/containers?topic=containers-comm-ingress-annotations) for ensuring that your custom certificate, instead of the default IBM-provided certificate, is sent by the Ingress ALB to legacy clients that don't support SNI.
 
 
 ### 17 September 2019
@@ -2878,7 +2893,7 @@ Ingress ALB changelog
 :   Updated the ALB `nginx-ingress` image to build 497.
 
 Troubleshooting clusters
-:   Added [troubleshooting steps](/docs/openshift?topic=openshift-worker_infra_errors#cs_totp) for when you cannot manage clusters and worker nodes because the time-based one-time passcode (TOTP) option is enabled for your account.
+:   Added [troubleshooting steps](/docs/openshift?topic=openshift-worker_infra_errors#cs_totp) for when you can't manage clusters and worker nodes because the time-based one-time passcode (TOTP) option is enabled for your account.
 
 ### 2 July 2019
 {: #02july2019}
@@ -2955,7 +2970,7 @@ Tutorials landing page
 :   Replaced the related links page with a new tutorials landing page for all tutorials that are specific to {{site.data.keyword.containershort_notm}}.
 
 Using existing subnets to create a cluster
-:   To [reuse subnets from an unneeded cluster when you create a new cluster](/docs/openshift?topic=openshift-subnets#subnets_custom), the subnets must be user-managed subnets that you manually added from an on-premises network. All subnets that were automatically ordered during cluster creation are immediately marked for deletion after you delete a cluster, and you cannot reuse these subnets to create a new cluster.
+:   To [reuse subnets from an unneeded cluster when you create a new cluster](/docs/openshift?topic=openshift-subnets#subnets_custom), the subnets must be user-managed subnets that you manually added from an on-premises network. All subnets that were automatically ordered during cluster creation are immediately marked for deletion after you delete a cluster, and you can't reuse these subnets to create a new cluster.
     
 
 ### 12 June 2019

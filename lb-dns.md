@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift, lb2.0, nlb
 
@@ -26,7 +26,7 @@ After you set up network load balancers (NLBs), you can create DNS entries for t
 Subdomain
 :   When you create a public NLB in a single-zone or multizone cluster, you can expose your app to the internet by creating a subdomain for the NLB IP address. Additionally, {{site.data.keyword.cloud_notm}} takes care of generating and maintaining the wildcard SSL certificate for the subdomain for you. In multizone clusters, you can create a subdomain and add the NLB IP address in each zone to that subdomain DNS entry. For example, if you deployed NLBs for your app in three zones in US-South, you can create the subdomain `mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud` for the three NLB IP addresses. When a user accesses your app subdomain, the client accesses one of these IPs at random, and the request is sent to that NLB.
 
-You currently cannot create subdomains for private NLBs.
+You currently can't create subdomains for private NLBs.
 {: note}
 
 Health check monitor
@@ -47,7 +47,7 @@ Expose your app to the public internet by creating a subdomain for the network l
 
 Before you begin:
 * Review the following limitations.
-    * You cannot create subdomains for private NLBs.
+    * You can't create subdomains for private NLBs.
     * You can register up to 128 subdomains. This limit can be lifted on request by opening a [support case](/docs/get-support?topic=get-support-using-avatar).
 * [Create an NLB for your app in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer#lb_config) or [create NLBs in each zone of a multizone cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config).
 
@@ -140,7 +140,7 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
     ```
     {: screen}
 
-2. Create a health check monitor for the subdomain. If you do not include a configuration parameter, the default value is used.
+2. Create a health check monitor for the subdomain. If you don't include a configuration parameter, the default value is used.
     ```sh
     ibmcloud oc nlb-dns monitor configure --cluster <cluster_name_or_id> --nlb-host <host_name> --enable --description <description> --type <type> --method <method> --path <path> --timeout <timeout> --retries <retries> --interval <interval> --port <port> --header <header> --expected-body <expected-body> --expected-codes <expected-codes> --follows-redirects <true> --allows-insecure <true>
     ```
@@ -186,7 +186,7 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
     :   The port number to connect to for the health check. When `type` is `TCP`, this parameter is required. When `type` is `HTTP` or `HTTPS`, define the port only if you use a port other than 80 for HTTP or 443 for HTTPS. Default for TCP: `0`. Default for HTTP: `80`. Default for HTTPS: `443`.
 
     `--header <header>`
-    :   When `type` is `HTTP` or `HTTPS`: The HTTP request headers to send in the health check, such as a Host header. The User-Agent header cannot be overridden. To add more than one header to the requests, specify this flag multiple times. This flag accepts values in the following format: `--header Header-Name=value`. When updating a monitor, the existing headers are replaced by the ones that you specify. To delete all existing headers, specify the flag with an empty value (`--header ""`).
+    :   When `type` is `HTTP` or `HTTPS`: The HTTP request headers to send in the health check, such as a Host header. The User-Agent header can't be overridden. To add more than one header to the requests, specify this flag multiple times. This flag accepts values in the following format: `--header Header-Name=value`. When updating a monitor, the existing headers are replaced by the ones that you specify. To delete all existing headers, specify the flag with an empty value (`--header ""`).
 
     `--expected-body <expected-body>`
     :   When `type` is `HTTP` or `HTTPS`: A case-insensitive substring that the health check looks for in the response body. If this string is not found, the IP is considered unhealthy.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift, red hat, red hat openshift, update, upgrade
 
@@ -26,7 +26,7 @@ Use Kubernetes-native and third-party tools to perform rolling updates and rollb
 To update your app, you can choose from various strategies such as the following. You might start with a rolling deployment or instantaneous switch before you progress to a more complicated canary deployment.
 
 Rolling deployment</dt>
-:   You can use Kubernetes-native functionality to create a `v2` deployment and to gradually replace your previous `v1` deployment. This approach requires that apps are backwards-compatible so that users who are served the `v2` app version do not experience any breaking changes. For more information, see [Managing rolling deployments to update your apps](/docs/openshift?topic=openshift-update_app#app_rolling).
+:   You can use Kubernetes-native functionality to create a `v2` deployment and to gradually replace your previous `v1` deployment. This approach requires that apps are backwards-compatible so that users who are served the `v2` app version don't experience any breaking changes. For more information, see [Managing rolling deployments to update your apps](/docs/openshift?topic=openshift-update_app#app_rolling).
 
 Instantaneous switch
 :   Also referred to as a blue-green deployment, an instantaneous switch requires double the compute resources to have two versions of an app running at once. With this approach, you can switch your users to the newer version in near real time. Make sure that you use service label selectors (such as `version: green` and `version: blue`) to make sure that requests are sent to the right app version. You can create the new `version: green` deployment, wait until it is ready, and then delete the `version: blue` deployment. Or you can perform a [rolling update](/docs/openshift?topic=openshift-update_app#app_rolling), but set the `maxUnavailable` parameter to `0%` and the `maxSurge` parameter to `100%`.
@@ -122,7 +122,7 @@ To manage rolling updates to your apps,
     :   By default, deployments wait until the pod is marked as `ready` to continue with the rollout. If you notice that the deployment continues to create pods even though your app in the most recent pod is not yet ready, use this field to slow down the deployment rollout. For example, if you specify `5`, the deployment waits for 5 seconds after the pod is `ready` before it creates the next pod.</td>
 
     `spec.progressDeadlineSeconds`
-    :   Set a timeout in seconds before a deployment is considered failed. For example, without a timeout, if your new app version has a bug and hangs immediately, the rollout cannot continue because the pod never reaches a `ready` state. If you set this timeout to `600` seconds, then if any phase of the rollout fails to progress for 10 minutes, the deployment is marked as failed and the rollout stops.</td>
+    :   Set a timeout in seconds before a deployment is considered failed. For example, without a timeout, if your new app version has a bug and hangs immediately, the rollout can't continue because the pod never reaches a `ready` state. If you set this timeout to `600` seconds, then if any phase of the rollout fails to progress for 10 minutes, the deployment is marked as failed and the rollout stops.</td>
 
     `spec.strategy.type``
     :   Specify the `RollingUpdate` strategy type.
@@ -259,7 +259,7 @@ Before you begin, you need two clusters and the **Manager** [service access role
 
 4. [Target](/docs/openshift?topic=openshift-access_cluster) the cluster that you want to copy the resources to, such as a production-ready standard cluster.
 5. Optional: If your  cluster used multiple projects, create the same projects in the standard cluster and [copy the image pull secret to each project](/docs/openshift?topic=openshift-registry#copy_imagePullSecret).
-6. Deploy the copied configuration files to your cluster. If a configuration file has specific information that cannot be applied, you might need to update the configuration file and reapply.
+6. Deploy the copied configuration files to your cluster. If a configuration file has specific information that can't be applied, you might need to update the configuration file and reapply.
     ```sh
     oc apply -f myconfigs.yaml
     ```

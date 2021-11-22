@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -21,7 +21,7 @@ View information for patch updates to the cluster autoscaler add-on in your {{si
 {: shortdesc}
 
 Patch updates
-:   Patch updates are delivered automatically by IBM and do not contain any feature updates or changes in the supported add-on and cluster versions.
+:   Patch updates are delivered automatically by IBM and don't contain any feature updates or changes in the supported add-on and cluster versions.
 
 Release updates
 :   Release updates contain new features for the cluster autoscaler or changes in the supported add-on or cluster versions. You must manually apply release updates to your cluster autoscaler add-on. To update your cluster autoscaler add-on, see [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-ca#ca_addon_up).
@@ -52,6 +52,15 @@ ibmcloud oc cluster addon versions --addon cluster-autoscaler
 
 Review the changes included in version 1.0.3 of the managed cluster autoscaler add-on.
 {: shortdesc}
+
+### Changelog for patch update 1.0.4_387, released 22 November 2021
+{: #10387_ca}
+
+Review the changes in version `1.0.4_387` of the cluster autoscaler add-on. 
+{: shortdesc}
+
+- Image tags: `1.19.1-7`, `1.20.0-7`, `1.21.0-3`, and `1.22.0-2`.
+- Updates the Golang version to `1.16.10` which includes fixes for [CVE-2021-41772](https://nvd.nist.gov/vuln/detail/CVE-2021-41772){: external} and [CVE-2021-41771](https://nvd.nist.gov/vuln/detail/CVE-2021-41771){: external}.
 
 ### Changelog for patch update 1.0.4_374, released 7 October 2021
 {: #104374_ca}
@@ -121,7 +130,7 @@ Review the changes in version `1.0.3_352` of the cluster autoscaler add-on.
 ## Version 1.0.2
 {: #0102_ca_addon}
 
-Review the changes that are included in version 1.0.2 of the managed cluster autoscaler add-on.
+Review the changes that are in version 1.0.2 of the managed cluster autoscaler add-on.
 {: shortdesc}
 
 
@@ -171,7 +180,7 @@ Review the changes in version `1.0.2_224` of the cluster autoscaler add-on.
 ## Version 1.0.1
 {: #0101_ca_addon}
 
-Review the changes that are included in version 1.0.1 of the managed cluster autoscaler add-on.  
+Review the changes that are in version 1.0.1 of the managed cluster autoscaler add-on.  
 {: shortdesc}
 
 
@@ -259,8 +268,7 @@ Review the changes in version `1.0.1_114` of the cluster autoscaler add-on.
 - Image tags: `1.15.4-4`, `1.16.2-5`, `1.17.0-6`, and `1.18.1-5`.  
 - Supported cluster versions: 4.3 - 4.5  
 - Includes fixes for `CVE-5188` and `CVE-3180`.  
-- Unlike the previous Helm chart, you can modify all of the add-on configuration settings via a single configmap.  
-
+- Unlike the previous Helm chart, you can modify all the add-on configuration settings via a single configmap.  
 
 
 

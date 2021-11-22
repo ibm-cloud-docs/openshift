@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift, lb2.0, nlb
 
@@ -17,7 +17,7 @@ subcollection: openshift
 # Classic: Setting up DSR load balancing with an NLB 2.0
 {: #loadbalancer-v2}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) Version 2.0 NLBs can be created in classic clusters only, and cannot be created in VPC clusters. To load balance in VPC clusters, see [Exposing apps with load balancers for VPC](/docs/containers?topic=containers-vpc-lbaas).
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) Version 2.0 NLBs can be created in classic clusters only, and can't be created in VPC clusters. To load balance in VPC clusters, see [Exposing apps with load balancers for VPC](/docs/containers?topic=containers-vpc-lbaas).
 {: note}
 
 Expose a port and use a portable IP address for a Layer 4 network load balancer (NLB) to expose a containerized app. For more information about version 2.0 NLBs, see [Components and architecture of an NLB 2.0](/docs/openshift?topic=openshift-loadbalancer-about#planning_ipvs).
@@ -26,7 +26,7 @@ Expose a port and use a portable IP address for a Layer 4 network load balancer 
 ## Prerequisites
 {: #ipvs_provision}
 
-You cannot update an existing version 1.0 NLB to 2.0. You must create a new NLB 2.0. Note that you can run version 1.0 and 2.0 NLBs simultaneously in a cluster. To use NLB 2.0, your cluster must run {{site.data.keyword.openshiftshort}} version 4.
+You can't update an existing version 1.0 NLB to 2.0. You must create a new NLB 2.0. Note that you can run version 1.0 and 2.0 NLBs simultaneously in a cluster. To use NLB 2.0, your cluster must run {{site.data.keyword.openshiftshort}} version 4.
 {: shortdesc}
 
 Before you create an NLB 2.0, you must complete the following prerequisite steps.
@@ -41,7 +41,7 @@ Before you create an NLB 2.0, you must complete the following prerequisite steps
     4. Add the following information to the description: "Please set up the network to allow capacity aggregation on the public and private VLANs associated with my account.". Note that if you want to allow capacity aggregation on specific VLANs, such as the public VLANs for one cluster only, you can specify those VLAN IDs in the description.
     5. Click **Submit**.
 
-2. Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you cannot or do not want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the NLB 2.0 can route packets to various subnets in the account.
+2. Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you can't or don't want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the NLB 2.0 can route packets to various subnets in the account.
 
 3. If you use [Calico pre-DNAT network policies](/docs/openshift?topic=openshift-network_policies#block_ingress) to manage traffic to an NLB 2.0, you must add the `applyOnForward: true` and `doNotTrack: true` fields to and remove the `preDNAT: true` from the `spec` section in the policies. `applyOnForward: true` ensures that the Calico policy is applied to the traffic as it is encapsulated and forwarded. `doNotTrack: true` ensures that the worker nodes can use DSR to return a response packet directly to the client without needing the connection to be tracked. For example, if you use a Calico policy to allow traffic from only specific IP addresses to your NLB IP address, the policy looks similar to the following:
     ```yaml
@@ -144,7 +144,7 @@ To set up an NLB 2.0 in a multizone cluster:
 
 
         `loadBalancerIP`
-        :   Optional: To create a private NLB or to use a specific portable IP address for a public NLB, specify the IP address that you want to use. The IP address must be in the zone and VLAN that you specify in the annotations. If you do not specify an IP address: If your cluster is on a public VLAN, a portable public IP address is used. Most clusters are on a public VLAN. If your cluster is on a private VLAN only, a portable private IP address is used.
+        :   Optional: To create a private NLB or to use a specific portable IP address for a public NLB, specify the IP address that you want to use. The IP address must be in the zone and VLAN that you specify in the annotations. If you don't specify an IP address: If your cluster is on a public VLAN, a portable public IP address is used. Most clusters are on a public VLAN. If your cluster is on a private VLAN only, a portable private IP address is used.
 
 
         `externalTrafficPolicy: Local`
@@ -242,7 +242,7 @@ Next, you can [register an NLB subdomain](/docs/containers?topic=containers-load
 
 To create an NLB 2.0 service in a single-zone cluster:
 
-1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file. This label is needed to identify all pods where your app runs so that they can be included in the load balancing.
+1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file. This label is needed to identify all pods where your app runs so that they are in the load balancing.
 2. Create a load balancer service for the app that you want to expose to the public internet or a private network.
     1. Create a service configuration file that is named, for example, `myloadbalancer.yaml`.
 
@@ -294,7 +294,7 @@ To create an NLB 2.0 service in a single-zone cluster:
 
 
         `loadBalancerIP`
-        :   Optional: To create a private NLB or to use a specific portable IP address for a public NLB, specify the IP address that you want to use. The IP address must be on the VLAN that you specify in the annotations. If you do not specify an IP address:<ul><li>If your cluster is on a public VLAN, a portable public IP address is used. Most clusters are on a public VLAN.</li><li>If your cluster is on a private VLAN only, a portable private IP address is used.</li></ul>
+        :   Optional: To create a private NLB or to use a specific portable IP address for a public NLB, specify the IP address that you want to use. The IP address must be on the VLAN that you specify in the annotations. If you don't specify an IP address:<ul><li>If your cluster is on a public VLAN, a portable public IP address is used. Most clusters are on a public VLAN.</li><li>If your cluster is on a private VLAN only, a portable private IP address is used.</li></ul>
 
 
         `externalTrafficPolicy: Local`
@@ -359,7 +359,7 @@ Next, you can [register an NLB subdomain](/docs/containers?topic=containers-load
 ## Scheduling algorithms
 {: #scheduling}
 
-Scheduling algorithms determine how an NLB 2.0 assigns network connections to your app pods. As client requests arrive to your cluster, the NLB routes the request packets to worker nodes based on the scheduling algorithm. To use a scheduling algorithm, specify its Keepalived short name in the scheduler annotation of your NLB service configuration file: `service.kubernetes.io/ibm-load-balancer-cloud-provider-ipvs-scheduler: "rr"`. Check the following lists to see which scheduling algorithms are supported in {{site.data.keyword.openshiftlong_notm}}. If you do not specify a scheduling algorithm, the Round Robin algorithm is used by default. For more information, see the [Keepalived documentation](https://www.keepalived.org/doc/scheduling_algorithms.html){: external}.
+Scheduling algorithms determine how an NLB 2.0 assigns network connections to your app pods. As client requests arrive to your cluster, the NLB routes the request packets to worker nodes based on the scheduling algorithm. To use a scheduling algorithm, specify its Keepalived short name in the scheduler annotation of your NLB service configuration file: `service.kubernetes.io/ibm-load-balancer-cloud-provider-ipvs-scheduler: "rr"`. Check the following lists to see which scheduling algorithms are supported in {{site.data.keyword.openshiftlong_notm}}. If you don't specify a scheduling algorithm, the Round Robin algorithm is used by default. For more information, see the [Keepalived documentation](https://www.keepalived.org/doc/scheduling_algorithms.html){: external}.
 {: shortdesc}
 
 ### Supported scheduling algorithms

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: back up, restore, changelog, openshift
 
@@ -32,7 +32,7 @@ Refer to the following tables for a summary of changes for each version of the [
 ## Changelog for 1.0.5, released 17 December 2020
 {: #0105_br_chart}
 
-The following table shows the changes that are included in version `1.0.5` of the `ibmcloud-backup-restore` Helm chart.
+The following table shows the changes that are in version `1.0.5` of the `ibmcloud-backup-restore` Helm chart.
 {: shortdesc}
 
 

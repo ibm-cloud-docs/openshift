@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-18"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -24,7 +24,7 @@ content-type: troubleshoot
 - ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 
-You cannot access your worker node by using an SSH connection.
+You can't access your worker node by using an SSH connection.
 {: tsSymptoms}
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift, nlb, lbaas
 
@@ -79,7 +79,7 @@ For more information, see:
     ```
     {: pre}
 
-2. Get the service's hostname that is listed in the **EXTERNAL-IP** column. The VPC load balancer that assigns the hostname takes a few minutes to provision in your VPC. You cannot access your app by using the hostname of your Kubernetes `LoadBalancer` service until the VPC load balancer is fully provisioned.
+2. Get the service's hostname that is listed in the **EXTERNAL-IP** column. The VPC load balancer that assigns the hostname takes a few minutes to provision in your VPC. You can't access your app by using the hostname of your Kubernetes `LoadBalancer` service until the VPC load balancer is fully provisioned.
     ```sh
     oc get svc my-lb-svc
     ```

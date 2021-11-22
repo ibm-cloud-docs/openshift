@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-11-19"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 subcollection: openshift
@@ -183,6 +183,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
 * [November 2021](/docs/openshift?topic=openshift-iks-release#release-nov-2021)
+
+    * [22 November 2021](/docs/openshift?topic=openshift-iks-release#22nov2021)
 
     * [19 November 2021](/docs/openshift?topic=openshift-iks-release#19nov2021)
 
@@ -3485,6 +3487,8 @@ subcollection: openshift
 
 * [Version 4.8 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-48)
 
+    * [Changelog for worker node fix pack 4.8.20_1536_openshift, released 22 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4820_1536)
+
     * [Changelog for worker node fix pack 4.8.18_1533_openshift, released 10 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4818_1533)
 
     * [Changelog for master fix pack 4.8.14_1531_openshift, released 29 October 2021](/docs/openshift?topic=openshift-openshift_changelog#4814_1531)
@@ -3496,6 +3500,8 @@ subcollection: openshift
     * [Change log for fix pack 4.8.11_1526_openshift (master) and 4.8.12_1527_openshift (worker node), released 29 Sept 2021](/docs/openshift?topic=openshift-openshift_changelog#4811_1526_and_4812_1527)
 
 * [Version 4.7 change log](/docs/openshift?topic=openshift-openshift_changelog#version-47)
+
+    * [Changelog for worker node fix pack 4.7.37_1540_openshift, released 22 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4737_1540)
 
     * [Changelog for worker node fix pack 4.7.36_1538_openshift, released 10 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4736_1538)
 
@@ -3534,6 +3540,8 @@ subcollection: openshift
     * [Changelog for master fix pack 4.7.12_1520_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4712_1520)
 
 * [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
+
+    * [Changelog for worker node fix pack 4.6.49_1564_openshift, released 22 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4649_1564)
 
     * [Changelog for worker node fix pack 4.6.49_1562_openshift, released 10 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4649_1562)
 
@@ -3598,6 +3606,8 @@ subcollection: openshift
     * [Changelog for 4.6.16_1530_openshift (master) and 4.6.16_1529_openshift (worker node), released 17 February 2020](/docs/openshift?topic=openshift-openshift_changelog#4616_1530)
 
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+
+    * [Changelog for worker node fix pack 3.11.542_1612_openshift, released 22 November 2021](/docs/openshift?topic=openshift-openshift_changelog#311542_1612_openshift)
 
     * [Changelog for worker node fix pack 3.11.542_1610_openshift, released 10 November 2021](/docs/openshift?topic=openshift-openshift_changelog#311542_1610)
 
@@ -3825,6 +3835,8 @@ subcollection: openshift
 
 * [Version 1.0.4](/docs/openshift?topic=openshift-ca_changelog#0104_ca_addon)
 
+    * [Changelog for patch update 1.0.4_387, released 22 November 2021](/docs/openshift?topic=openshift-ca_changelog#10387_ca)
+
     * [Changelog for patch update 1.0.4_374, released 7 October 2021](/docs/openshift?topic=openshift-ca_changelog#104374_ca)
 
 * [Version 1.0.3](/docs/openshift?topic=openshift-ca_changelog#0103_ca_addon)
@@ -3864,6 +3876,8 @@ subcollection: openshift
 [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog#vpc_bs_changelog)
 
 * [Version 4.0](/docs/openshift?topic=openshift-vpc_bs_changelog#0400_is_block)
+
+    * [Changelog for version 4.0.2_788, released 22 November 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400788_is_block_relnote)
 
     * [Changelog for version 4.0.1_780, released 06 October 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400780_is_block_relnote)
 
@@ -3983,29 +3997,29 @@ subcollection: openshift
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0)
 
-* [Changelog for version 1.0.0_744, released on 19 November 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0744)
+    * [Version 1.0.0_744, released on 19 November 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0744)
 
-* [Changelog for version 1.0.0_734, released on 16 November 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0734)
+    * [Version 1.0.0_734, released on 16 November 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0734)
 
-* [Changelog for version 1.0.0_690, released on 6 October 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0690)
+    * [Version 1.0.0_690, released on 6 October 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0690)
 
-* [Changelog for version 1.0.0_627, released on 23 August 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0627)
+    * [Version 1.0.0_627, released on 23 August 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0627)
 
-* [Changelog for version 1.0.0_614, released on 10 August 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0614)
+    * [Version 1.0.0_614, released on 10 August 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0614)
 
-* [Changelog for version 1.0.0_575, released on 23 July 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0575)
+    * [Version 1.0.0_575, released on 23 July 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0575)
 
-* [Changelog for version 1.0.0_549, released on 17 June 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0549)
+    * [Version 1.0.0_549, released on 17 June 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0549)
 
-* [Changelog for version 1.0.0_529, released on 2 June 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0529)
+    * [Version 1.0.0_529, released on 2 June 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0529)
 
-* [Changelog for version 1.0.0_485, released on 28 April 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0485)
+    * [Version 1.0.0_485, released on 28 April 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0485)
 
-* [Changelog for version 1.0.0_473, released on 19 April 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0473)
+    * [Version 1.0.0_473, released on 19 April 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0473)
 
-* [Changelog for version 1.0.0_461, released on 14 April 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0461)
+    * [Version 1.0.0_461, released on 14 April 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0461)
 
-* [Changelog for version 1.0.0_438, released on 30 March 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0438)
+    * [Version 1.0.0_438, released on 30 March 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0438)
 
 [Archived {{site.data.keyword.openshiftshort}} version changelogs](/docs/openshift?topic=openshift-changelog_archive#changelog_archive)
 
@@ -4495,7 +4509,7 @@ subcollection: openshift
 
 * [Firewall prevents running CLI commands](/docs/openshift?topic=openshift-ts_clis#ts_firewall_clis)
 
-* [`kubectl` or `oc` commands do not work](/docs/openshift?topic=openshift-ts_clis#kubectl_fails)
+* [`kubectl` or `oc` commands don't work](/docs/openshift?topic=openshift-ts_clis#kubectl_fails)
 
 * [Time out when trying to connect to a pod](/docs/openshift?topic=openshift-ts_clis#roks_timeout)
 
@@ -4598,7 +4612,7 @@ subcollection: openshift
 
 * [Hard reboot](/docs/openshift?topic=openshift-common_worker_nodes_issues#hard-reboot)
 
-* [Instance cannot be found](/docs/openshift?topic=openshift-common_worker_nodes_issues#instance-not-found)
+* [Instance can't be found](/docs/openshift?topic=openshift-common_worker_nodes_issues#instance-not-found)
 
 [Why can't I create or delete worker nodes?](/docs/openshift?topic=openshift-worker_infra_errors#worker_infra_errors)
 
@@ -4793,7 +4807,7 @@ subcollection: openshift
 
 [Ingress health checks fail on Akamai Global Load Balancer (GLB) configurations](/docs/openshift?topic=openshift-cs_ingress_health_check_ctm#cs_ingress_health_check_ctm)
 
-[Why does the DNS Operator show a `RouteHealthDegraded` or `cannot marshal DNS message` error?](/docs/openshift?topic=openshift-ingress_subdomain#ingress_subdomain)
+[Why does the DNS Operator show a `RouteHealthDegraded` or `can't marshal DNS message` error?](/docs/openshift?topic=openshift-ingress_subdomain#ingress_subdomain)
 
 
 ### File Storage

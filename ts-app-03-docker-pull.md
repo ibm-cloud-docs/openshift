@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -23,7 +23,7 @@ content-type: troubleshoot
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 
-You cannot push or pull Docker images from your local machine to the cluster's built-in Docker registry.
+You can't push or pull Docker images from your local machine to the cluster's built-in Docker registry.
 {: tsSymptoms}
 
 

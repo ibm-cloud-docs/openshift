@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-22"
 
 keywords: openshift, route, router
 
@@ -81,13 +81,13 @@ If you have a multizone cluster, one router is deployed to your cluster, and a r
 
 | Route type | Use case |
 | ---------- | -------- |
-| Simple | If you do not need TLS encryption, create a simple route to handle non-encrypted HTTP traffic. |
+| Simple | If you don't need TLS encryption, create a simple route to handle non-encrypted HTTP traffic. |
 | Passthrough | When you want TLS connections to pass uninterruptedly from the client to your app pod, create a passthrough route. The router is not involved in TLS termination for encrypted HTTPS traffic, so the app pod must terminate the TLS connection. This type can also be used for HTTP/2 and for non-HTTP TLS endpoints. |
 | Edge | When your app pod is exposed on a non-encrypted HTTP endpoint, but you must handle encrypted HTTPS traffic, create an edge route. The TLS connection between the client and the router service is terminated, and the connection between the router service and your app pod is unencrypted. For more information, see the [{{site.data.keyword.openshiftshort}} edge route documentation](https://docs.openshift.com/container-platform/4.7/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}. |
 | Re-encrypt | When your app pod is exposed on an encrypted HTTPS endpoint and you must handle HTTPS traffic, create a re-encrypt route. The TLS connection between the client and the router service is terminated, and a new TLS connection between the router service and your app pod is created. For more information, see the [{{site.data.keyword.openshiftshort}} re-encrypt route documentation](https://docs.openshift.com/container-platform/4.7/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}. |
 {: caption="Types of routes based on TLS termination"}
 
-If you do not need to use a custom domain, you can use an IBM-provided route hostname in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
+If you don't need to use a custom domain, you can use an IBM-provided route hostname in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
 
 
 ## Setting up public routes
@@ -102,7 +102,7 @@ To set up routes to publicly expose apps:
     ```
     {: pre}
 
-2. Choose a domain for your app. **IBM-provided domain**: If you do not need to use a custom domain, a route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`. **Custom domain**: To specify a custom domain, work with your DNS provider or [{{site.data.keyword.cis_full}}](https://cloud.ibm.com/catalog/services/internet-services).
+2. Choose a domain for your app. **IBM-provided domain**: If you don't need to use a custom domain, a route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`. **Custom domain**: To specify a custom domain, work with your DNS provider or [{{site.data.keyword.cis_full}}](https://cloud.ibm.com/catalog/services/internet-services).
     
     1. Get the public IP address for the default public router service in each zone in the **EXTERNAL-IP** column. Note that the router service in the first zone where you have workers nodes is always named `router`, and router services in zones that you subsequently add to your cluster have names such as `router-dal12`.
         
@@ -118,7 +118,7 @@ To set up routes to publicly expose apps:
 
     3. Map your custom domain to the router's public IP address by adding the IP address as an A record.
 
-3. Set up a route that is based on the [type of TLS termination that your app requires](#route-types). If you do not have a custom domain, do not include the `--hostname` flag. A route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`. If you registered a wildcard subdomain, specify a unique subdomain in each route that you create. For example, you might specify `--hostname svc1.example.com` in this route, and `--hostname svc2.example.com` in another route.
+3. Set up a route that is based on the [type of TLS termination that your app requires](#route-types). If you don't have a custom domain, don't include the `--hostname` flag. A route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`. If you registered a wildcard subdomain, specify a unique subdomain in each route that you create. For example, you might specify `--hostname svc1.example.com` in this route, and `--hostname svc2.example.com` in another route.
     * Simple:
     
         ```sh
@@ -280,7 +280,7 @@ When you create a private router, the private router uses host networking to lis
     ```
     {: pre}
 
-10. Set up a route. If you do not specify a **Hostname** value and you registered the router service with a private DNS entry in step 6, a route hostname is generated for you in the format `<app_service_name>-<project>.<custom_domain>`.
+10. Set up a route. If you don't specify a **Hostname** value and you registered the router service with a private DNS entry in step 6, a route hostname is generated for you in the format `<app_service_name>-<project>.<custom_domain>`.
     ```sh
     oc expose service <app_service_name>
     ```
@@ -299,7 +299,7 @@ When you create a private router, the private router uses host networking to lis
 ## Moving router services across VLANs
 {: #migrate-router-vlan}
 
-When you [change your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans), the worker nodes are connected to the new VLAN and assigned new public or private IP addresses. However, router services cannot automatically migrate to the new VLAN because they are assigned a stable, portable public or private IP address from a subnet that belongs to the old VLAN. When your worker nodes and routers are connected to different VLANs, the routers cannot forward incoming network traffic to app pods to your worker nodes. To move your router services to a different VLAN, you must create the router service on the new VLAN and delete the router service on the old VLAN.
+When you [change your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans), the worker nodes are connected to the new VLAN and assigned new public or private IP addresses. However, router services can't automatically migrate to the new VLAN because they are assigned a stable, portable public or private IP address from a subnet that belongs to the old VLAN. When your worker nodes and routers are connected to different VLANs, the routers can't forward incoming network traffic to app pods to your worker nodes. To move your router services to a different VLAN, you must create the router service on the new VLAN and delete the router service on the old VLAN.
 {: shortdesc}
 
 1. Create a router service on the new VLAN.

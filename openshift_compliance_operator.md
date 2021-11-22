@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -111,7 +111,7 @@ Before you begin, make sure that you have the **Manager** [service access role](
 ## What's next?
 {: #comp-op-next}
 
-Now, you set up the compliance operator to scan your worker nodes against the {{site.data.keyword.openshiftlong_notm}} tailored profile. You can leave the scan running to make sure that changes to your cluster do not introduce compliance risks. You might also add your own profiles to scan for other compliance items that are unique to your business requirements. To clean up the resources that you created, you can uninstall the operator delete the `openshift-compliance` namespace.
+Now, you set up the compliance operator to scan your worker nodes against the {{site.data.keyword.openshiftlong_notm}} tailored profile. You can leave the scan running to make sure that changes to your cluster don't introduce compliance risks. You might also add your own profiles to scan for other compliance items that are unique to your business requirements. To clean up the resources that you created, you can uninstall the operator delete the `openshift-compliance` namespace.
 {: external}
 
 For more ways to use the compliance operator, review the OpenShift Container Platform documentation, such as the following resources.

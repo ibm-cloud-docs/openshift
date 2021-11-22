@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-16"
+lastupdated: "2021-11-22"
 
 keywords: openshift, clusters
 
@@ -27,7 +27,7 @@ After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin
 
 1. [Install the required CLI tools](/docs/openshift?topic=openshift-openshift-cli), including the {{site.data.keyword.cloud_notm}} CLI, {{site.data.keyword.containershort_notm}} plug-in alias for {{site.data.keyword.openshiftshort}} (`ibmcloud oc`), and {{site.data.keyword.openshiftshort}} CLI (`oc`). For quick access to test features in your cluster, you can also use the [{{site.data.keyword.cloud-shell_notm}}](/docs/openshift?topic=openshift-openshift-cli#cloud-shell).
 2. [Create your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-clusters).
-3. If your network is protected by a company firewall, [allow access](/docs/openshift?topic=openshift-firewall#corporate) to the {{site.data.keyword.cloud_notm}} and {{site.data.keyword.openshiftlong_notm}} API endpoints and ports. For VPC clusters with only the private cloud service endpoint enabled, you cannot test the connection to your cluster until you [configure a VPC VPN with the cloud service endpoint subnet](#vpc_private_se).
+3. If your network is protected by a company firewall, [allow access](/docs/openshift?topic=openshift-firewall#corporate) to the {{site.data.keyword.cloud_notm}} and {{site.data.keyword.openshiftlong_notm}} API endpoints and ports. For VPC clusters with only the private cloud service endpoint enabled, you can't test the connection to your cluster until you [configure a VPC VPN with the cloud service endpoint subnet](#vpc_private_se).
 4. Check that your cluster is in a healthy state by running `ibmcloud oc cluster get -c <cluster_name_or_ID>`. If your cluster is not in a healthy state, review the [Debugging clusters](/docs/openshift?topic=openshift-debug_clusters) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall).
 5. Find your cluster's service endpoint.
     * **Classic or VPC clusters**: In the output of the cluster details from the previous step, check the **Public** or **Private Service Endpoint** URL of the cluster.
@@ -63,7 +63,7 @@ For security reasons, first log out of the {{site.data.keyword.cloud_notm}} cons
 ### Connecting to the cluster from the CLI
 {: #access_oc_cli}
 
-In most cases, you can use the {{site.data.keyword.openshiftshort}} web console to get the `oc login` token to access your cluster. If you cannot or do not want to open the {{site.data.keyword.openshiftshort}} console, choose among the following options to log in to your {{site.data.keyword.openshiftlong_notm}} cluster by using the CLI.
+In most cases, you can use the {{site.data.keyword.openshiftshort}} web console to get the `oc login` token to access your cluster. If you can't or don't want to open the {{site.data.keyword.openshiftshort}} console, choose among the following options to log in to your {{site.data.keyword.openshiftlong_notm}} cluster by using the CLI.
 {: shortdesc}
 
 Choose from the following options.
@@ -250,7 +250,7 @@ The {{site.data.keyword.openshiftshort}} master is accessible through the privat
         ```
         {: screen}
 
-5. On the client machines where you or your users run `oc` commands, add the NLB IP address and the private cloud service endpoint URL to the `/etc/hosts` file. Do not include any ports in the IP address and URL and do not include `https://` in the URL.
+5. On the client machines where you or your users run `oc` commands, add the NLB IP address and the private cloud service endpoint URL to the `/etc/hosts` file. Do not include any ports in the IP address and URL and don't include `https://` in the URL.
     * For macOS and Linux users:
         ```sh
         sudo nano /etc/hosts
@@ -395,7 +395,7 @@ You can quickly access your {{site.data.keyword.openshiftlong_notm}} cluster fro
 For security reasons, first log out of the {{site.data.keyword.cloud_notm}} console and then log out of the {{site.data.keyword.openshiftshort}} web console before you close your browser. You must complete both steps in the specified order to successfully log out of the {{site.data.keyword.openshiftshort}} web console.
 {: note} 
 
-If you cannot or do not want to open the {{site.data.keyword.openshiftshort}} console, choose among the following options to log in to your {{site.data.keyword.openshiftlong_notm}} cluster by using the CLI.
+If you can't or don't want to open the {{site.data.keyword.openshiftshort}} console, choose among the following options to log in to your {{site.data.keyword.openshiftlong_notm}} cluster by using the CLI.
 *   **Log in as admin**:
     1. Make sure that you have the [**Administrator** IAM platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
     2. Set your command line context for the cluster and download the TLS certificates and permission files for the administrator. For more information, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config).
@@ -812,7 +812,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
 {: shortdesc}
 
 1. Create an {{site.data.keyword.cloud_notm}} API key.
-Save your API key in a secure location. You cannot retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.
+Save your API key in a secure location. You can't retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.
 {: important}
 
     ```sh
@@ -941,10 +941,10 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     | `<cluster_service_ID>` | Required. Enter the service ID that you previously created for your {{site.data.keyword.openshiftshort}} cluster. |
     | `--service-name containers-kubernetes` | Required. Enter `containers-kubernetes` so that the IAM policy is for {{site.data.keyword.openshiftlong_notm}} clusters. |
     | `--roles <service_access_role>` | Required. Enter the access role that you want the service ID to have to your {{site.data.keyword.openshiftshort}} cluster. [Platform access roles](/docs/openshift?topic=openshift-access_reference#iam_platform) permit cluster management activities such as creating worker nodes. [Service access roles](/docs/openshift?topic=openshift-access_reference#service) correspond to RBAC roles that permit {{site.data.keyword.openshiftshort}} management activities within the cluster, such as for Kubernetes resources like pods and namespaces. For multiple roles, include a comma-separated list. Possible values are `Administrator`, `Operator`, `Editor`, and `Viewer` (platform access roles); and `Reader`, `Writer`, and `Manager` (service access roles). |
-    | `--service-instance <cluster_ID>` | To restrict the policy to a particular cluster, enter the cluster's ID. To get your cluster ID, run `ibmcloud oc clusters`. If you do not include the service instance, the access policy grants the service ID access to all your clusters, Kubernetes and {{site.data.keyword.openshiftshort}}. You can also scope the access policy to a region (`--region`) or resource group (`--resource-group-name`). |
+    | `--service-instance <cluster_ID>` | To restrict the policy to a particular cluster, enter the cluster's ID. To get your cluster ID, run `ibmcloud oc clusters`. If you don't include the service instance, the access policy grants the service ID access to all your clusters, Kubernetes and {{site.data.keyword.openshiftshort}}. You can also scope the access policy to a region (`--region`) or resource group (`--resource-group-name`). |
     {: caption="Table 1. Understanding this command's components" caption-side="bottom"}
     
-3. Create an API key for the service ID. Name the API key similar to your service ID, and include the service ID that you previously created, `<cluster_name>-id`. Be sure to give the API key a description that helps you retrieve the key later. Save your API key in a secure location. You cannot retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.
+3. Create an API key for the service ID. Name the API key similar to your service ID, and include the service ID that you previously created, `<cluster_name>-id`. Be sure to give the API key a description that helps you retrieve the key later. Save your API key in a secure location. You can't retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.
 
     ```sh
     ibmcloud iam service-api-key-create <cluster_name>-key <service_ID> --description "API key for service ID <service_ID> in {{site.data.keyword.openshiftshort}} cluster <cluster_name>"
@@ -954,7 +954,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     Example output
 
     ```sh
-    Please preserve the API key! It cannot be retrieved after it's created.
+    Please preserve the API key! It can't be retrieved after it's created.
 
     Name          <cluster_name>-key
     Description   API key for service ID <service_ID> in {{site.data.keyword.openshiftshort}} cluster <cluster_name>
@@ -1032,7 +1032,7 @@ Keep in mind the following considerations when you configure a webhook.
 - Set appropriate CPU and memory [resource requests and limits](/docs/containers?topic=containers-app#resourcereq) for your webhook.
 - Add [liveness and readiness probes](/docs/openshift?topic=openshift-openshift_apps#probe) to help make sure your webhook container is running and ready to serve requests.
 - Set pod [anti-affinity scheduling rules](/docs/openshift?topic=openshift-openshift_apps#affinity) to prefer that your webhook pods run on different worker nodes and zones when possible. In clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or later, you might use [pod topology](https://kubernetes.io/docs/concepts/workloads/pods/pod-topology-spread-constraints/){: external} instead. However, avoid [taints](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external} or forced affinity that might restrict where the webhook pods can be scheduled.
-- [Set pod priority](/docs/openshift?topic=openshift-pod_priority) to `system-cluster-critical` for the webhook pods so that other pods cannot take resources from your webhook pods.
+- [Set pod priority](/docs/openshift?topic=openshift-pod_priority) to `system-cluster-critical` for the webhook pods so that other pods can't take resources from your webhook pods.
 - Scope your webhook to the appropriate project. Avoid webhooks that process resources that run in system-critical projects that are set up in your cluster by default, such as `kube-system`, `ibm-system`, `ibm-operators`, `calico-system`, `tigera-operator` and `openshift-*` projects.
 - Make sure that the worker nodes in your cluster are [the right size for running your webhook applications](/docs/openshift?topic=openshift-strategy#sizing). For example, if your pods request more CPU or memory than the worker node can provide, the pods are not scheduled.
 
@@ -1047,7 +1047,7 @@ Many cluster add-ons, plug-ins, and other third-party extensions use admission c
 ### I need help with a broken webhook. What can I do?
 {: #access_webhooks-help}
 
-See [Cluster cannot update because of broken webhook](/docs/containers?topic=containers-webhooks_update).
+See [Cluster can't update because of broken webhook](/docs/containers?topic=containers-webhooks_update).
 
 
 

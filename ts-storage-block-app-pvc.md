@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 
@@ -31,7 +31,7 @@ When you mount a PVC to your pod, you might experience errors when accessing or 
     ```
     {: pre}
 
-2. Find the root cause for why your app cannot access or write to the PVC.
+2. Find the root cause for why your app can't access or write to the PVC.
     ```sh
     oc describe pod <pod_name>
     ```
