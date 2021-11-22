@@ -184,6 +184,8 @@ subcollection: openshift
 
 * [November 2021](/docs/openshift?topic=openshift-iks-release#release-nov-2021)
 
+    * [22 November 2021](/docs/openshift?topic=openshift-iks-release#22nov2021)
+
     * [19 November 2021](/docs/openshift?topic=openshift-iks-release#19nov2021)
 
     * [18 November 2021](/docs/openshift?topic=openshift-iks-release#18nov2021)
@@ -3485,6 +3487,8 @@ subcollection: openshift
 
 * [Version 4.8 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-48)
 
+    * [Changelog for worker node fix pack 4.8.20_1536_openshift, released 22 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4820_1536)
+
     * [Changelog for worker node fix pack 4.8.18_1533_openshift, released 10 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4818_1533)
 
     * [Changelog for master fix pack 4.8.14_1531_openshift, released 29 October 2021](/docs/openshift?topic=openshift-openshift_changelog#4814_1531)
@@ -3496,6 +3500,8 @@ subcollection: openshift
     * [Change log for fix pack 4.8.11_1526_openshift (master) and 4.8.12_1527_openshift (worker node), released 29 Sept 2021](/docs/openshift?topic=openshift-openshift_changelog#4811_1526_and_4812_1527)
 
 * [Version 4.7 change log](/docs/openshift?topic=openshift-openshift_changelog#version-47)
+
+    * [Changelog for worker node fix pack 4.7.37_1540_openshift, released 22 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4737_1540)
 
     * [Changelog for worker node fix pack 4.7.36_1538_openshift, released 10 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4736_1538)
 
@@ -3534,6 +3540,8 @@ subcollection: openshift
     * [Changelog for master fix pack 4.7.12_1520_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4712_1520)
 
 * [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
+
+    * [Changelog for worker node fix pack 4.6.49_1564_openshift, released 22 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4649_1564)
 
     * [Changelog for worker node fix pack 4.6.49_1562_openshift, released 10 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4649_1562)
 
@@ -3598,6 +3606,8 @@ subcollection: openshift
     * [Changelog for 4.6.16_1530_openshift (master) and 4.6.16_1529_openshift (worker node), released 17 February 2020](/docs/openshift?topic=openshift-openshift_changelog#4616_1530)
 
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+
+    * [Changelog for worker node fix pack 3.11.542_1612_openshift, released 22 November 2021](/docs/openshift?topic=openshift-openshift_changelog#311542_1612_openshift)
 
     * [Changelog for worker node fix pack 3.11.542_1610_openshift, released 10 November 2021](/docs/openshift?topic=openshift-openshift_changelog#311542_1610)
 
