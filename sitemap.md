@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-11-19"
+lastupdated: "2021-11-22"
 
 keywords: openshift
 subcollection: openshift
@@ -3824,6 +3824,8 @@ subcollection: openshift
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 
 * [Version 1.0.4](/docs/openshift?topic=openshift-ca_changelog#0104_ca_addon)
+
+    * [Changelog for patch update 1.0.4_387, released 22 November 2021](/docs/openshift?topic=openshift-ca_changelog#10387_ca)
 
     * [Changelog for patch update 1.0.4_374, released 7 October 2021](/docs/openshift?topic=openshift-ca_changelog#104374_ca)
 
