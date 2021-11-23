@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-11-23"
 
 keywords: openshift, clusters, worker nodes, worker pools, delete
 
@@ -637,23 +637,35 @@ Choose among the following options:
 *   [Create a cluster in the console](/docs/containers?topic=containers-clusters) with a tag. You can't create a cluster with a tag in the CLI.
 *   Add tags to an existing cluster in the console or CLI.
 
-| Adding tags to clusters with the console. |
-|:-----------------|
-| <p><ol><li>Log in to the <a href="https://cloud.ibm.com/kubernetes/clusters"><strong>{{site.data.keyword.cloud_notm}} clusters</strong> console</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</li><li>Select a cluster with existing tags.</li><li>Next to the cluster name and status, click the <strong>Edit tags</strong> pencil icon.<p class="note">If your cluster does not have any existing tags, you don't have an <strong>Edit tags</strong> pencil icon. Instead, use the <a href="/docs/account?topic=account-tag">resource list</a> or CLI.</p></li><li>Enter the tag that you want to add to your cluster. To assign a key-value pair, use a colon such as <code>costctr:1234</code>.</li></ol></p> |
-{: caption="Adding tags to clusters with the console." caption-side="top"}
-{: #tags-1}
-{: tab-title="Console"}
-{: tab-group="tags"}
-{: class="simple-tab-table"}
+### Adding tags to clusters with the console
+{: #add-tags-console}
 
-| Adding tags to clusters with the CLI. |
-|:-----------------|
-| <p><ol><li>Log in to the <a href="/docs/cli/reference/ibmcloud?topic=cli-ibmcloud_cli#ibmcloud_login">{{site.data.keyword.cloud_notm}} CLI</a>.<pre class="pre"><code>ibmcloud login [--sso]</code></pre></li><li><a href="/docs/cli/reference/ibmcloud?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_tag_attach">Tag your cluster</a>. Replace the <code>--resource-name</code> with the name of your cluster. To list available clusters, run <code>ibmcloud oc cluster ls</code>. If you want to check your existing tags so as not to duplicate any, run <code>ibmcloud resource tags</code>.<pre class="pre"><code>ibmcloud resource tag-attach --resource-name &lt;cluster_name&gt; --tag-names &lt;tag1,tag2&gt;</code></pre><p class="note">If you have more than one resource of the same name in your {{site.data.keyword.cloud_notm}} account, the error message lists the resource CRNs and details, and instructs you to try again with the <code>--resource-id</code> flag.</p></li></ol></p> |
-{: caption="Adding tags to clusters with the CLI." caption-side="top"}
-{: #tags-2}
-{: tab-title="CLI"}
-{: tab-group="tags"}
-{: class="simple-tab-table"}
+1. Log in to the [{{site.data.keyword.cloud_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters){: external}.
+2. Select a cluster with existing tags.
+3. Next to the cluster name and status, click the **Edit tags** pencil icon. If your cluster does not have any existing tags, you don't have an **Edit tags** pencil icon. Instead, use the [resource list](/docs/account?topic=account-tag) or CLI.
+
+3. Enter the tag that you want to add to your cluster. To assign a key-value pair, use a colon such as `costctr:1234`.
+
+
+### Adding tags to clusters with the CLI
+{: add-tags-cli}
+
+1. Log in to the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cli-ibmcloud_cli#ibmcloud_login){: external}.
+    ```sh
+    ibmcloud login [--sso]
+    ```
+    {: pre}
+
+2. [Tag your cluster](/docs/cli/reference/ibmcloud?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_tag_attach). Replace the `--resource-name` with the name of your cluster. To list available clusters, run `ibmcloud oc cluster ls`. If you want to check your existing tags so as not to duplicate any, run `ibmcloud resource tags`.
+
+    ```sh
+    ibmcloud resource tag-attach --resource-name <cluster_name> --tag-names <tag1,tag2>
+    ```
+    {: pre}
+    
+    If you have more than one resource of the same name in your {{site.data.keyword.cloud_notm}} account, the error message lists the resource CRNs and details, and instructs you to try again with the `--resource-id`flag.
+    {: note}
+
 
 
 

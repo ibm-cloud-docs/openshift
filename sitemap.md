@@ -1177,6 +1177,10 @@ subcollection: openshift
 
 * [Adding tags to existing clusters](/docs/openshift?topic=openshift-add_workers#cluster_tags)
 
+    * [Adding tags to clusters with the console](/docs/openshift?topic=openshift-add_workers#add-tags-console)
+
+    * [Adding tags to clusters with the CLI](/docs/openshift?topic=openshift-add_workers#adding-tags-to-clusters-with-the-cli)
+
 * [Adding labels to existing worker pools](/docs/openshift?topic=openshift-add_workers#worker_pool_labels)
 
 [Autoscaling clusters](/docs/openshift?topic=openshift-ca#ca)
@@ -4744,7 +4748,7 @@ subcollection: openshift
 {: #sitemap_load_balancers}
 
 
-[Classic clusters: Why can't my app connect via a network load balancer (NLB) service?](/docs/openshift?topic=openshift-cs_loadbalancer_fails#cs_loadbalancer_fails)
+[Why can't my app connect via a network load balancer (NLB) service?](/docs/openshift?topic=openshift-cs_loadbalancer_fails#cs_loadbalancer_fails)
 
 [Classic clusters: Why can't I deploy a load balancer?](/docs/openshift?topic=openshift-cs_subnet_limit_lb#cs_subnet_limit_lb)
 
