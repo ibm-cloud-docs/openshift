@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-11-23"
 
 keywords: openshift
 subcollection: openshift
@@ -3877,7 +3877,7 @@ subcollection: openshift
 
 * [Version 4.0](/docs/openshift?topic=openshift-vpc_bs_changelog#0400_is_block)
 
-    * [Changelog for version 4.0.2_788, released 22 November 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400788_is_block_relnote)
+    * [Changelog for version 4.0.3_793, released 22 November 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#403793_is_block_relnote)
 
     * [Changelog for version 4.0.1_780, released 06 October 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400780_is_block_relnote)
 

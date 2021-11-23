@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-11-23"
 
 keywords: block, add-on, changelog
 
@@ -25,9 +25,6 @@ Patch updates
 
 Release updates
 :   Release updates contain new features for the {{site.data.keyword.block_storage_is_short}} or changes in the supported add-on or cluster versions. You must manually apply release updates to your {{site.data.keyword.block_storage_is_short}} add-on. To update your {{site.data.keyword.block_storage_is_short}} add-on, see [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).
-
-As of 26 July 2021, version 2.0.3 of the Block Storage for VPC add-on is unsupported. Version 3.0.0 is deprecated and becomes unsupported on or after 26 August 2021. If you have a deprecated or unsupported version of the add-on installed in your cluster, update the add-on to version 3.0.1 or 4.0. To update the Block Storage for VPC add-on in your cluster, disable the add-on and then re-enable it. You might see a warning that resources or data might be deleted, however, note that existing volumes and data are not impacted. For more information, see [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).
-{: important}
 
 
 To view a list of add-ons and the supported cluster versions, run the following command.
@@ -54,13 +51,15 @@ Refer to the following tables for a summary of changes for each version of the {
 Review the changes in version `4.0` of the {{site.data.keyword.block_storage_is_short}} add-on.
 {: shortdesc}
 
-### Changelog for version 4.0.2_788, released 22 November 2021
-{: #0400788_is_block_relnote}
 
-Review the changes in version `4.0.2_788` of the {{site.data.keyword.block_storage_is_short}} add-on. 
+### Changelog for version 4.0.3_793, released 22 November 2021
+{: #403793_is_block_relnote}
+
+Review the changes in version `4.0.3_793` of the {{site.data.keyword.block_storage_is_short}} add-on. 
 {: shortdesc}
 
-Image tags: v4.0.2
+- Image tags: v4.0.3
+- Image tags: v4.0.2
 - Resolves the following CVEs.
     - [CVE-2021-41772](https://nvd.nist.gov/vuln/detail/CVE-2021-41772){: external}
     - [CVE-2021-41771](https://nvd.nist.gov/vuln/detail/CVE-2021-41771){: external}
@@ -75,6 +74,7 @@ Image tags: v4.0.2
 - Updates the default class policy from `Reconcile` to `EnsureExists` for  the `ibmc-vpc-block-10iops-tier` storage class.
 - Updates Golang to version `1.16.10`.
 - Updates the UBI image to version `8.4-205`.
+- Increases the timeout interval for receiving API keys.
 
 
 ### Changelog for version 4.0.1_780, released 06 October 2021
@@ -83,7 +83,7 @@ Image tags: v4.0.2
 Review the changes in version `4.0.1_780` of the {{site.data.keyword.block_storage_is_short}} add-on.
 {: shortdesc}
 
-Image tags: `v4.0.1`
+- Image tags: `v4.0.1`
 - Resolves the following CVEs.
     - [CVE-2021-22922](https://nvd.nist.gov/vuln/detail/CVE-2021-22922){: external}
     - [CVE-2021-22923](https://nvd.nist.gov/vuln/detail/CVE-2021-22923){: external}

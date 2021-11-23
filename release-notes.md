@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-11-23"
 
 keywords: openshift
 
@@ -38,7 +38,7 @@ Worker node fix pack update
 :   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.8.20_1536_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4820_1536), [`4.7.36_1540_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4737_1540), [`4.6.49_1564_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4649_1564), and [`3.11.542_1612_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311542_1612).
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.0.2_788](/docs/containers?topic=containers-vpc_bs_changelog) is released.
+:   [Version 4.0.3_793](/docs/containers?topic=containers-vpc_bs_changelog) is released.
 
 Cluster autoscaler add-on.
 :   [Version 1.0.4_387](/docs/containers?topic=containers-ca_changelog) is released.
@@ -53,16 +53,10 @@ Cluster autoscaler add-on.
 HPCS Router add-on
 :   Versions 4.7.0_1013 and 4.6.0_1012 of the [HPCS Router add-on](/docs/containers?topic=openshift-hpcs-router-changelog) are released.
 
-
-
-Kubernetes Ingress image
-:   Versions 1.0.3_1730_iks and 0.49.3_1830_iks of the [Kubernetes Ingress image](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) are released.
-
-ALB OAuth Proxy add-on
-:   Versions 1.0.0_756 and 2.0.0_755 of the [ALB OAuth Proxy add-on](/docs/containers?topic=containers-alb-oauth-proxy-changelog) are released.
-
 Cloud Image Key Synchronizer add-on
 :   Version 1.0.0_744 of the [Cloud Image Key Synchronizer add-on](/docs/containers?topic=openshift-image-key-synchronizer-changelog) is released.
+
+
 
 ### 18 November 2021
 {: #18nov2021}
