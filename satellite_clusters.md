@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-11-29"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -294,7 +294,7 @@ When you remove a worker pool, all the worker nodes in the cluster are removed. 
 Several options exist to securely expose apps to traffic requests from the public network, from resources that are connected to your hosts' private network, or from resources in {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
-Although these options include services that are available in standard {{site.data.keyword.openshiftshort}} clusters, the implementation of these services is different in {{site.data.keyword.openshiftshort}} clusters that were created on {{site.data.keyword.satelliteshort}}-provided infrastructure. For example, no load balancer services are created for the {{site.data.keyword.openshiftshort}} router in your cluster. For a list of app exposure options and steps to configure them, see [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps).
+Although these options include services that are available in standard {{site.data.keyword.openshiftshort}} clusters, the implementation of these services is different in {{site.data.keyword.openshiftshort}} clusters that were created on {{site.data.keyword.satelliteshort}}-provided infrastructure. For example, no load balancer services are created for the {{site.data.keyword.openshiftshort}} Ingress controller in your cluster. For a list of app exposure options and steps to configure them, see [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps).
 
 ## Storing application data in persistent storage
 {: #satcluster-storage}

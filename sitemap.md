@@ -2129,7 +2129,7 @@ subcollection: openshift
 
 * [Understanding options for exposing apps](/docs/openshift?topic=openshift-cs_network_planning#external)
 
-* [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress)
+* [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#load-balancing-comparison)
 
 * [Planning public external load balancing](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers)
 
@@ -2162,7 +2162,7 @@ subcollection: openshift
 
 * [Route types and TLS termination](/docs/openshift?topic=openshift-openshift_routes#route-types)
 
-* [Router health checks](/docs/openshift?topic=openshift-openshift_routes#health-checks)
+* [Ingress controller health checks](/docs/openshift?topic=openshift-openshift_routes#health-checks)
 
 * [Setting up public routes](/docs/openshift?topic=openshift-openshift_routes#routes-setup)
 
@@ -2176,7 +2176,7 @@ subcollection: openshift
 
     * [Setting up private routes in VPC clusters with a private cloud service endpoint only](/docs/openshift?topic=openshift-openshift_routes#routes-private-vpc-privse)
 
-* [Moving router services across VLANs in classic clusters](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-classic)
+* [Moving Ingress controller services across VLANs in classic clusters](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-classic)
 
 [Encrypting routes with keys stored in {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-hpcs-router#hpcs-router)
 
@@ -2308,11 +2308,11 @@ subcollection: openshift
 
 * [What are the components of Ingress?](/docs/openshift?topic=openshift-ingress-about-roks4#ingress_roks4_components)
 
+    * [Ingress operator](/docs/openshift?topic=openshift-ingress-about-roks4#ingress-operator)
+
     * [Ingress controller](/docs/openshift?topic=openshift-ingress-about-roks4#ingress-controller)
 
-    * [Router](/docs/openshift?topic=openshift-ingress-about-roks4#ingress-router)
-
-    * [Ingress resource](/docs/openshift?topic=openshift-ingress-about-roks4#ingress-resource-about)
+    * [Route resource](/docs/openshift?topic=openshift-ingress-about-roks4#route-resource-about)
 
 * [How does a request get to my app in a classic cluster?](/docs/openshift?topic=openshift-ingress-about-roks4#roks4-flow)
 
@@ -2400,7 +2400,7 @@ subcollection: openshift
 
 * [Exposing apps with {{site.data.keyword.openshiftshort}} routes](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-routes)
 
-* [Setting up a third-party load balancer in front of the {{site.data.keyword.openshiftshort}} router](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-byolb)
+* [Setting up a third-party load balancer in front of the {{site.data.keyword.openshiftshort}} Ingress controller](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-byolb)
 
 * [Exposing apps with NodePorts](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-np)
 
@@ -4787,9 +4787,9 @@ subcollection: openshift
 
 * [Step 2: Run Ingress tests in the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-ingress-debug-roks4#debug-tool-43)
 
-* [Step 3: Check the health of the Ingress controller's router](/docs/openshift?topic=openshift-ingress-debug-roks4#errors-43)
+* [Step 3: Check the health of the Ingress controller](/docs/openshift?topic=openshift-ingress-debug-roks4#errors-43)
 
-* [Step 4: Ping the Ingress subdomain and router public IP address](/docs/openshift?topic=openshift-ingress-debug-roks4#ping-43)
+* [Step 4: Ping the Ingress subdomain and Ingress controller public IP address](/docs/openshift?topic=openshift-ingress-debug-roks4#ping-43)
 
 [Classic clusters: Why can't my app connect via Ingress?](/docs/openshift?topic=openshift-cs_ingress_fails#cs_ingress_fails)
 
@@ -4803,13 +4803,13 @@ subcollection: openshift
 
 [Why isn't the Ingress secret expiration date updated?](/docs/openshift?topic=openshift-sync_cert_dates#sync_cert_dates)
 
-[VPC clusters: Why does the VPC load balancer for router only route to one zone?](/docs/openshift?topic=openshift-router-mzr-error#router-mzr-error)
+[VPC clusters: Why does the VPC load balancer for Ingress controller only route to one zone?](/docs/openshift?topic=openshift-router-mzr-error#router-mzr-error)
 
-[Classic clusters: Why doesn't the router for the Ingress controller deploy in a zone?](/docs/openshift?topic=openshift-cs_subnet_limit_43#cs_subnet_limit_43)
+[Classic clusters: Why doesn't the Ingress controller deploy in a zone?](/docs/openshift?topic=openshift-cs_subnet_limit_43#cs_subnet_limit_43)
 
 * [Resolving VLAN issues](/docs/openshift?topic=openshift-cs_subnet_limit_43#resolve_vlan)
 
-* [Resolving multizone router service deployment issues](/docs/openshift?topic=openshift-cs_subnet_limit_43#resolve_mzr_router)
+* [Resolving multizone Ingress controller service deployment issues](/docs/openshift?topic=openshift-cs_subnet_limit_43#resolve_mzr_router)
 
 [Ingress health checks fail on Akamai Global Load Balancer (GLB) configurations](/docs/openshift?topic=openshift-cs_ingress_health_check_ctm#cs_ingress_health_check_ctm)
 

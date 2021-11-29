@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-11-29"
 
 keywords: openshift
 
@@ -23,7 +23,7 @@ content-type: troubleshoot
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 
-You exposed your app by creating an Ingress resource for your app in your cluster. However, when you try to connect to your app through the Ingress subdomain or the IP address of the Ingress controller's router, the connection fails or times out.
+You exposed your app by creating an Ingress resource for your app in your cluster. However, when you try to connect to your app through the Ingress subdomain or the IP address of the Ingress controller, the connection fails or times out.
 {: tsSymptoms}
 
 
@@ -34,7 +34,7 @@ Before you begin, ensure you have the following [{{site.data.keyword.cloud_notm}
     - **Editor** or **Administrator** platform access role for the cluster
     - **Writer** or **Manager** service access role
 
-Seeing an **Application is not available** page when you try to access your app's subdomain? [Check your app deployment and Ingress resource configuration](#app-debug-ingress-43). Seeing a **Connection timeout** page? [Check the health of the Ingress controller's router pods](#errors-43).
+Seeing an **Application is not available** page when you try to access your app's subdomain? [Check your app deployment and Ingress resource configuration](#app-debug-ingress-43). Seeing a **Connection timeout** page? [Check the health of the Ingress controller pods](#errors-43).
 {: tip}
 
 ## Step 1: Check your app deployment and Ingress resource configuration
@@ -51,7 +51,7 @@ Start by checking for errors in your app deployment and the Ingress resource dep
     ```
     {: pre}
 
-    In the **Events** section of the output, you might see warning messages about invalid values in your Ingress resource or in certain annotations that you used. Check the [Ingress resource configuration documentation](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-3). For annotations, note that the {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in {{site.data.keyword.openshiftshort}} version 4. If you want to customize routing rules for apps in a cluster that runs {{site.data.keyword.openshiftshort}} version 4, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.7/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}, which are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.
+    In the **Events** section of the output, you might see warning messages about invalid values in your Ingress resource or in certain annotations that you used. Check the [Ingress resource configuration documentation](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-3). For annotations, note that the {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the Ingress controller or the Ingress resource in {{site.data.keyword.openshiftshort}} version 4. If you want to customize routing rules for apps in a cluster that runs {{site.data.keyword.openshiftshort}} version 4, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.7/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}, which are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.
 
     ```sh
     NAME:             myingress
@@ -119,10 +119,10 @@ Use the {{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool to r
     * If any test fails, click the information icon next to the test's name in the left-hand column for information about how to resolve the issue.
     * You can also use the results of tests that only gather information while you debug your Ingress service in the following sections.
 
-## Step 3: Check the health of the Ingress controller's router
+## Step 3: Check the health of the Ingress controller
 {: #errors-43}
 
-Verify that the Ingress operator and the Ingress controller's router are healthy. Ingress controllers are managed by the Ingress operator. The router forwards requests to the pods for that app only according to the rules defined in the Ingress resource and implemented by the Ingress controller.
+Verify that the Ingress operator and the Ingress controller are healthy. Ingress controllers are managed by the Ingress operator. The Ingress controller forwards requests to the pods for that app only according to the rules defined in the Ingress resource and implemented by the Ingress controller.
 {: shortdesc}
 
 1. Check the status of your Ingress operator pods.
@@ -140,20 +140,20 @@ Verify that the Ingress operator and the Ingress controller's router are healthy
         ```
         {: pre}
 
-    4. Get the logs for the Ingress controller and look for error messages in the logs.
+    4. Get the logs for the Ingress operator and look for error messages in the logs.
         ```sh
         oc logs deployments/ingress-operator -n openshift-ingress-operator -c ingress-operator
         ```
         {: pre}
 
-2. Check the status and logs of your Ingress controller's router pods.
-    1. Get the Ingress controller's router pods that are running in your cluster.
+2. Check the status and logs of your Ingress controller pods.
+    1. Get the Ingress controller pods that are running in your cluster.
         ```sh
         oc get pods -n openshift-ingress
         ```
         {: pre}
 
-    2. Make sure that all `router-default` pods and pods for routers in any other zone are running by checking the **STATUS** column. If you have a multizone cluster, note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`.
+    2. Make sure that all `router-default` pods and pods for Ingress controllers in any other zone are running by checking the **STATUS** column. If you have a multizone cluster, note that the Ingress controller service in the first zone where you have workers nodes is always named `router-default`, and Ingress controller services in the zones that you subsequently add to your cluster have names such as `router-dal12`.
 
     3. If a pod does not have a `Running` status, you can delete the pod to restart it.
         ```sh
@@ -167,7 +167,7 @@ Verify that the Ingress operator and the Ingress controller's router are healthy
         ```
         {: pre}
 
-3. Check for events and errors on each router service.
+3. Check for events and errors on each Ingress controller service.
     1. List the services in the `openshift-ingress` namespace.
         ```sh
         oc get svc -n openshift-ingress
@@ -183,7 +183,7 @@ Verify that the Ingress operator and the Ingress controller's router are healthy
         ```
         {: screen}
 
-    2. Describe each router service and check for messages in the `Events` section of the output.
+    2. Describe each Ingress controller service and check for messages in the `Events` section of the output.
         ```sh
         oc describe svc router-default -n openshift-ingress
         ```
@@ -191,10 +191,10 @@ Verify that the Ingress operator and the Ingress controller's router are healthy
 
         * For example, in VPC clusters, you might see an error message such as `The VPC load balancer that routes requests to this Kubernetes LoadBalancer service is offline`. For more information, see [VPC clusters: Why can't my app connect via load balancer?](/docs/openshift?topic=openshift-vpc_ts_lb).
 
-## Step 4: Ping the Ingress subdomain and router public IP address
+## Step 4: Ping the Ingress subdomain and Ingress controller public IP address
 {: #ping-43}
 
-Check the availability of the public IP addresses of the Ingress controller's routers and verify your subdomain mappings. Additionally, ensure that the {{site.data.keyword.openshiftshort}} control plane can access your routers to health check them.
+Check the availability of the public IP addresses of the Ingress controller and verify your subdomain mappings. Additionally, ensure that the {{site.data.keyword.openshiftshort}} control plane can access your Ingress controllers to health check them.
 {: shortdesc}
 
 From 07 to 31 July 2021, the DNS provider is changed from Cloudflare to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains for all clusters in {{site.data.keyword.openshiftlong_notm}}. Review the following actions that you must make to your Ingress setup.
@@ -209,13 +209,13 @@ From 07 to 31 July 2021, the DNS provider is changed from Cloudflare to Akamai f
 - During the migration, an Akamai Global Traffic Management (GTM) health check was automatically created for any subdomains that had a Cloudflare health check. If you previously created a Cloudflare health check for a subdomain, and you create an Akamai health check for the subdomain after the migration, the two Akamai health checks might conflict. Note that Akamai GTM configurations don't support nested subdomains. In these cases, you can use the `ibmcloud oc nlb-dns monitor disable` command to disable the Akamai health check that the migration automatically configured for your subdomain.
 
 
-1. Verify that your router services are reachable by the router health check.
-    * **Classic**: If you use Calico pre-DNAT network policies or another custom firewall to block incoming traffic to your cluster, you must allow inbound access on port 80 from the {{site.data.keyword.openshiftshort}} control plane and Akamai's IPv4 IP addresses to the IP addresses of your router services so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your routers. For example, if you use Calico policies, [create a Calico pre-DNAT policy](/docs/openshift?topic=openshift-network_policies#isolate_workers) to allow inbound access to your routers from [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} that are used to check the health of your routers on port 80 and the [control plane subnets for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. Continue to the next step to get the router service IP addresses.
+1. Verify that your Ingress controller services are reachable by the Ingress controller health check.
+    * **Classic**: If you use Calico pre-DNAT network policies or another custom firewall to block incoming traffic to your cluster, you must allow inbound access on port 80 from the {{site.data.keyword.openshiftshort}} control plane and Akamai's IPv4 IP addresses to the IP addresses of your Ingress controller services so that the {{site.data.keyword.openshiftshort}} control plane can check the health of your Ingress controllers. For example, if you use Calico policies, [create a Calico pre-DNAT policy](/docs/openshift?topic=openshift-network_policies#isolate_workers) to allow inbound access to your Ingress controllers from [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} that are used to check the health of your Ingress controllers on port 80 and the [control plane subnets for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. Continue to the next step to get the Ingress controller service IP addresses.
     
     
-    * **VPC**: If you set up [VPC security groups](/docs/openshift?topic=openshift-vpc-network-policy#security_groups) or [VPC access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-network-policy#acls) to secure your cluster network, ensure that you create the rules to allow the necessary traffic from the {{site.data.keyword.openshiftshort}} control plane IP addresses. Alternatively, to allow the inbound traffic for router healthchecks, you can create one rule to allow all incoming traffic on port 80.
+    * **VPC**: If you set up [VPC security groups](/docs/openshift?topic=openshift-vpc-network-policy#security_groups) or [VPC access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-network-policy#acls) to secure your cluster network, ensure that you create the rules to allow the necessary traffic from the {{site.data.keyword.openshiftshort}} control plane IP addresses. Alternatively, to allow the inbound traffic for Ingress controller healthchecks, you can create one rule to allow all incoming traffic on port 80.
 
-2. Get the external IP addresses that the router services are listening on. If you have a multizone cluster, note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`. In VPC clusters, the external IP addresses are behind a hostname that is assigned by the VPC load balancer, such as `aabb1122-us-south.lb.appdomain.cloud`.
+2. Get the external IP addresses that the Ingress controller services are listening on. If you have a multizone cluster, note that the Ingress controller service in the first zone where you have workers nodes is always named `router-default`, and Ingress controller services in the zones that you subsequently add to your cluster have names such as `router-dal12`. In VPC clusters, the external IP addresses are behind a hostname that is assigned by the VPC load balancer, such as `aabb1122-us-south.lb.appdomain.cloud`.
     ```sh
     oc get svc -n openshift-ingress
     ```
@@ -230,18 +230,18 @@ From 07 to 31 July 2021, the DNS provider is changed from Cloudflare to Akamai f
     ```
     {: screen}
 
-    If a router has no external IP address (classic) or hostname (VPC), see [Version 4: Why doesn't the router for the Ingress controller deploy in a zone?](/docs/openshift?topic=openshift-cs_subnet_limit_43).
+    If a Ingress controller has no external IP address (classic) or hostname (VPC), see [Version 4: Why doesn't the Ingress controller deploy in a zone?](/docs/openshift?topic=openshift-cs_subnet_limit_43).
     {: note}
 
-3. Check the health of your router pods (classic) or hostname (VPC).
-    - Classic clusters: [Check the status of your router pods](#errors-43).
+3. Check the health of your Ingress controller pods (classic) or hostname (VPC).
+    - Classic clusters: [Check the status of your Ingress controller pods](#errors-43).
     - VPC clusters: Router services in multizone clusters are created with a `/healthz` path so that you can check the health of each service IP address. The following HTTP cURL command uses the `/healthz` path, which returns the `ok` status for a healthy IP.
     ```sh
     curl -X GET http://<router_svc_IP_or_hostname>/healthz -H "Host:router-default.<ingress_subdomain>"
     ```
     {: pre}
 
-    If one or more of the IP addresses does not return `ok`, [check the status of your router pods](#errors-43).
+    If one or more of the IP addresses does not return `ok`, [check the status of your Ingress controller pods](#errors-43).
 
 4. Get the IBM-provided Ingress subdomain.
     ```sh
@@ -257,7 +257,7 @@ From 07 to 31 July 2021, the DNS provider is changed from Cloudflare to Akamai f
     ```
     {: screen}
 
-5. Ensure that the router IP address is registered with your cluster's IBM-provided Ingress subdomain. For example, in a multizone cluster, the public router IP in each zone where you have worker nodes must be registered under the same subdomain.
+5. Ensure that the Ingress controller IP address is registered with your cluster's IBM-provided Ingress subdomain. For example, in a multizone cluster, the public Ingress controller IP in each zone where you have worker nodes must be registered under the same subdomain.
     ```sh
     host <ingress_subdomain>
     ```
@@ -271,7 +271,7 @@ From 07 to 31 July 2021, the DNS provider is changed from Cloudflare to Akamai f
     ```
     {: screen}
 
-6. If you use a custom domain, verify that you used your DNS provider to map the custom domain to the IBM-provided subdomain or the router's public IP address.
+6. If you use a custom domain, verify that you used your DNS provider to map the custom domain to the IBM-provided subdomain or the Ingress controller's public IP address.
     * **IBM-provided subdomain CNAME**: Check that your custom domain is mapped to the cluster's IBM-provided subdomain in the Canonical Name record (CNAME).
         ```sh
         host www.my-domain.com
@@ -286,7 +286,7 @@ From 07 to 31 July 2021, the DNS provider is changed from Cloudflare to Akamai f
         ```
         {: screen}
 
-    * **Public IP address A record**: Check that your custom domain is mapped to the router's portable public IP address in the A record.
+    * **Public IP address A record**: Check that your custom domain is mapped to the Ingress controller's portable public IP address in the A record.
         ```sh
         host www.my-domain.com
         ```

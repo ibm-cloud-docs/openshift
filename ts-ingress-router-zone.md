@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-29"
 
 keywords: openshift
 
@@ -13,7 +13,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Classic clusters: Why doesn't the router for the Ingress controller deploy in a zone?
+# Classic clusters: Why doesn't the Ingress controller deploy in a zone?
 {: #cs_subnet_limit_43}
 
 **Infrastructure provider and version**:
@@ -21,7 +21,7 @@ content-type: troubleshoot
 * <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 4
 
 
-When you run `oc get svc -n openshift-ingress`, one or more zones has no public router.
+When you run `oc get svc -n openshift-ingress`, one or more zones has no public Ingress controller.
 {: tsSymptoms}
 
 * No `router-default` service is deployed, or the service might not have an external IP address assigned. For example, in a single-zone cluster, you might see the following:
@@ -32,7 +32,7 @@ When you run `oc get svc -n openshift-ingress`, one or more zones has no public 
     ```
     {: screen}
 
-* If you have a multizone cluster, one zone has no router service. For example, in a multizone cluster that has worker nodes in `dal10`, `dal12`, and `dal13`, you might see a `router-default` service for `dal10` and a `router-dal12` for `dal12`, but no `router-dal13` for `dal13`. Note that the router service in the first zone where you have workers nodes is always named `router-default`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`. You might also see that one zone has no router service, but another zone has two or more router services.
+* If you have a multizone cluster, one zone has no Ingress controller service. For example, in a multizone cluster that has worker nodes in `dal10`, `dal12`, and `dal13`, you might see a `router-default` service for `dal10` and a `router-dal12` for `dal12`, but no `router-dal13` for `dal13`. Note that the Ingress controller service in the first zone where you have workers nodes is always named `router-default`, and Ingress controller services in the zones that you subsequently add to your cluster have names such as `router-dal12`. You might also see that one zone has no Ingress controller service, but another zone has two or more Ingress controller services.
     ```sh
     NAME                                         TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)                      AGE
     router-default                               LoadBalancer   172.21.47.119   169.XX.XX.XX   80:32637/TCP,443:31719/TCP   26m
@@ -45,23 +45,23 @@ When you run `oc get svc -n openshift-ingress`, one or more zones has no public 
 Router services might not deploy for one of the following reasons:
 {: tsCauses}
 
-* **If no router services are deployed or router services are not assigned an external IP address**: In standard clusters, the first time that you create a cluster in a zone, a public VLAN and a private VLAN in that zone are automatically provisioned for you in your IBM Cloud infrastructure account. In that zone, 1 public portable subnet is requested on the public VLAN that you specify and 1 private portable subnet is requested on the private VLAN that you specify. For {{site.data.keyword.openshiftlong_notm}}, VLANs have a limit of 40 subnets. If the cluster's VLAN in a zone already reached that limit, the **Ingress Subdomain** fails to provision and the default public router for the Ingress controller fails to provision. To view how many subnets a VLAN has, from the [IBM Cloud infrastructure console](https://cloud.ibm.com/classic?), select **Network** > **IP Management** > **VLANs**. Click the **VLAN Number** of the VLAN that you used to create your cluster. Review the **Subnets** section to see whether 40 or more subnets exist.
+* **If no Ingress controller services are deployed or Ingress controller services are not assigned an external IP address**: In standard clusters, the first time that you create a cluster in a zone, a public VLAN and a private VLAN in that zone are automatically provisioned for you in your IBM Cloud infrastructure account. In that zone, 1 public portable subnet is requested on the public VLAN that you specify and 1 private portable subnet is requested on the private VLAN that you specify. For {{site.data.keyword.openshiftlong_notm}}, VLANs have a limit of 40 subnets. If the cluster's VLAN in a zone already reached that limit, the **Ingress Subdomain** fails to provision and the default public Ingress controller for the Ingress controller fails to provision. To view how many subnets a VLAN has, from the [IBM Cloud infrastructure console](https://cloud.ibm.com/classic?), select **Network** > **IP Management** > **VLANs**. Click the **VLAN Number** of the VLAN that you used to create your cluster. Review the **Subnets** section to see whether 40 or more subnets exist.
 
-* **If one zone has no router service**: When your router services are created, they are automatically spread across the zones in your cluster. If the network for the first zone that your cluster was created with is not ready when the router services are created, the router service for that zone might be placed in a different zone. Two router services might be created in one zone, and no router service is created in the initial zone.
+* **If one zone has no Ingress controller service**: When your Ingress controller services are created, they are automatically spread across the zones in your cluster. If the network for the first zone that your cluster was created with is not ready when the Ingress controller services are created, the Ingress controller service for that zone might be placed in a different zone. Two Ingress controller services might be created in one zone, and no Ingress controller service is created in the initial zone.
 
-Resolve VLAN issues for router services that have no IP address, or multizone router service issues for zones with no router services.
+Resolve VLAN issues for Ingress controller services that have no IP address, or multizone Ingress controller service issues for zones with no Ingress controller services.
 {: tsResolve}
 
 
 ## Resolving VLAN issues
 {: #resolve_vlan}
 
-To resolve VLAN issues for router services that have no IP address:
+To resolve VLAN issues for Ingress controller services that have no IP address:
 {: shortdesc}
 
 Option 1: If you need a new VLAN, order one by [contacting {{site.data.keyword.cloud_notm}} support](/docs/vlans?topic=vlans-ordering-premium-vlans#ordering-premium-vlans). Then, [create a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) that uses this new VLAN.
 
-Option 2: If you have another VLAN that is available, you can [set up VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning) in your existing cluster. To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get). Then, you can add new worker nodes to the cluster that use the other VLAN with available subnets. Create at least 2 worker nodes per zone. Now, IP addresses are available so that the routers can automatically deploy.
+Option 2: If you have another VLAN that is available, you can [set up VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning) in your existing cluster. To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get). Then, you can add new worker nodes to the cluster that use the other VLAN with available subnets. Create at least 2 worker nodes per zone. Now, IP addresses are available so that the Ingress controllers can automatically deploy.
 
 Option 3: If you are not using all the subnets in the VLAN, you can reuse subnets on the VLAN by adding them to your cluster.
 1. Check that the subnet that you want to use is available.
@@ -85,18 +85,18 @@ Option 3: If you are not using all the subnets in the VLAN, you can reuse subnet
     ```
     {: screen}
 
-4. Verify that the portable IP addresses from the subnet that you added are used for the router in your cluster. It might take several minutes for the services to use the portable IP addresses from the newly-added subnet.
+4. Verify that the portable IP addresses from the subnet that you added are used for the Ingress controller in your cluster. It might take several minutes for the services to use the portable IP addresses from the newly-added subnet.
     * **No Ingress subdomain**: Run `ibmcloud oc cluster get --cluster <cluster>` to verify that the **Ingress Subdomain** is populated.
-    * **A router does not deploy in a zone**: Run `oc get svc -n openshift-ingress` to verify that the missing router is deployed with an external IP address.
+    * **A Ingress controller does not deploy in a zone**: Run `oc get svc -n openshift-ingress` to verify that the missing Ingress controller is deployed with an external IP address.
 
 
-## Resolving multizone router service deployment issues
+## Resolving multizone Ingress controller service deployment issues
 {: #resolve_mzr_router}
 
-Create a router service in the zone where a router service did not deploy. If a duplicate router service was initially created in a different zone, do **not** delete that router service.
+Create a Ingress controller service in the zone where a Ingress controller service did not deploy. If a duplicate Ingress controller service was initially created in a different zone, do **not** delete that Ingress controller service.
 {: shortdesc}
 
-1. Create a YAML for a router service in the zone where a router service did not deploy. Name the router service `router-<zone>`.
+1. Create a YAML for a Ingress controller service in the zone where a Ingress controller service did not deploy. Name the Ingress controller service `router-<zone>`.
     ```yaml
      apiVersion: v1
      kind: Service
@@ -120,13 +120,13 @@ Create a router service in the zone where a router service did not deploy. If a 
     ```
     {: codeblock}
 
-2. Create the router service in your cluster.
+2. Create the Ingress controller service in your cluster.
     ```sh
     oc create -f router-<zone>.yaml
     ```
     {: pre}
 
-3. Verify that the router service is created in the correct zone. In the output, get the **EXTERNAL IP** address.
+3. Verify that the Ingress controller service is created in the correct zone. In the output, get the **EXTERNAL IP** address.
     ```sh
     oc get svc router-<zone> -n openshift-ingress
     ```
@@ -140,13 +140,13 @@ Create a router service in the zone where a router service did not deploy. If a 
     ```
     {: screen}
 
-4. Get the subdomain for your default router. In the output, look for the subdomain formatted like `<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
+4. Get the subdomain for your default Ingress controller. In the output, look for the subdomain formatted like `<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
     ```sh
     ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
     ```
     {: pre}
 
-5. Register the router service's IP address with your router's subdomain.
+5. Register the Ingress controller service's IP address with your Ingress controller's subdomain.
     ```sh
     ibmcloud oc nlb-dns add -c <cluster_name_or_ID> --ip <router_svc_ip> --nlb-host <router_subdomain>
     ```

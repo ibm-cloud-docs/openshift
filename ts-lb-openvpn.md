@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-11-29"
 
 keywords: openshift
 
@@ -30,7 +30,7 @@ CAE003: Unable to determine the ingress IP address for the network load balancer
 Additionally, when you run `ibmcloud oc nlb-dns create` to create a subdomain for a network load balancer (NLB), the command might fail with a message that the cluster is not found, the input parameters are incorrect, or you don't have the required roles.
 
 
-The OpenVPN server could not be configured because load balancer IP address that exposes the default router could not be found. The router's load balancer service might not have been assigned an IP address because your cluster does not have a subnet with available portable IP addresses, or the load balancer setup did not complete.
+The OpenVPN server could not be configured because load balancer IP address that exposes the default Ingress controller could not be found. The Ingress controller's load balancer service might not have been assigned an IP address because your cluster does not have a subnet with available portable IP addresses, or the load balancer setup did not complete.
 {: tsCauses}
 
 

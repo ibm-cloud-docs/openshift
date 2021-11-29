@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-11-29"
 
 keywords: openshift
 
@@ -32,8 +32,8 @@ Even if the cluster is in a `normal` state, the Ingress subdomain and secret mig
 
 1. When worker nodes are fully deployed and ready on the VLANs, a portable public and a portable private subnet for the VLANs are ordered.
 2. After the portable subnet orders are successfully fulfilled, the `ibm-cloud-provider-vlan-ip-config` config map is updated with the portable public and portable private IP addresses.
-3. When the `ibm-cloud-provider-vlan-ip-config` config map is updated, the router for the Ingress controller is triggered for creation.
-4. A load balancer service that exposes the ALB or router is created and assigned an IP address.
+3. When the `ibm-cloud-provider-vlan-ip-config` config map is updated, the Ingress controller is triggered for creation.
+4. A load balancer service that exposes the Ingress controller is created and assigned an IP address.
 5. The load balancer IP address is used to register the Ingress subdomain in Akamai. Akamai might have latency during the registration process.
 
 If you create a classic cluster that is connected to private VLANs only, or if you create a free cluster, no Ingress subdomain or secret are created.
@@ -42,8 +42,8 @@ If you create a classic cluster that is connected to private VLANs only, or if y
 ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) **VPC clusters**:
 
 1. When you create a VPC cluster, one public and one private VPC load balancer are automatically created outside of your cluster in your VPC.
-2. One public router per zone is triggered for creation.
-3. A load balancer service that exposes the router is created and assigned a hostname.
+2. One public Ingress controller per zone is triggered for creation.
+3. A load balancer service that exposes the Ingress controller is created and assigned a hostname.
 4. The load balancer hostname is used to register the Ingress subdomain in Akamai. Akamai might have latency during the registration process.
 
 Creating a cluster after deleting a cluster the same or similar name? See [No Ingress subdomain exists after you create clusters of the same or similar name](/docs/openshift?topic=openshift-cs_rate_limit) instead.
@@ -73,7 +73,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
     ```
     {: screen}
 
-3. Verify that the prerequisite steps for your ALB creation are completed.
+3. Verify that the prerequisite steps for your Ingress controller creation are completed.
     * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) **Classic clusters**: Get the details of the `ibm-cloud-provider-vlan-ip-config` config map.
     ```sh
     oc describe cm ibm-cloud-provider-vlan-ip-config -n kube-system
@@ -159,7 +159,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
     ```
     {: screen}
 
-    * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) **VPC clusters**: Verify that the VPC load balancer for your routers exists. In the output, look for the VPC load balancer **Name** that starts with `kube-<cluster_ID>`. If you did not install the `infrastructure-service` plug-in, install it by running `ibmcloud plugin install infrastructure-service`.
+    * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) **VPC clusters**: Verify that the VPC load balancer for your Ingress controllers exists. In the output, look for the VPC load balancer **Name** that starts with `kube-<cluster_ID>`. If you did not install the `infrastructure-service` plug-in, install it by running `ibmcloud plugin install infrastructure-service`.
     ```sh
     ibmcloud is load-balancers
     ```
@@ -167,10 +167,10 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 
     <p class="note">Even though the VPC load balancer is listed, its DNS entry might still be registering. When a VPC load balancer is created, the hostname is registered through a public DNS. In some cases, it can take several minutes for this DNS entry to be replicated to the specific DNS that your client is using.</p>
 
-4. Verify that the router for the Ingress controller is successfully created.
-    1. Check whether a router deployment exists for your cluster.
-        * If a router deployment is listed, continue to the next step.
-        * If no router deployment is created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
+4. Verify that the Ingress controller is successfully created.
+    1. Check whether a Ingress controller deployment exists for your cluster.
+        * If a Ingress controller deployment is listed, continue to the next step.
+        * If no Ingress controller deployment is created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
 
         ```sh
         oc get deployment -n openshift-ingress
@@ -184,7 +184,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
         ```
         {: screen}
 
-    2. Check whether the router's load balancer service exists and is assigned a public external IP address (classic clusters) or a hostname (VPC clusters).
+    2. Check whether the Ingress controller's load balancer service exists and is assigned a public external IP address (classic clusters) or a hostname (VPC clusters).
         * If a service that is named `router-default` is listed and is assigned an IP address (classic clusters) or a hostname (VPC clusters), continue to the next step.
         * If no `router-default` service is created after several minutes, [review ways to get help](/docs/openshift?topic=openshift-get-help).
 
