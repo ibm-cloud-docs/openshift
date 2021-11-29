@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-23"
+lastupdated: "2021-11-29"
 
 keywords: openshift
 
@@ -28,6 +28,17 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 Review the release notes for November 2021.
 {: shortdesc}
+
+
+
+### 29 November 2021
+{: #29nov2021}
+{: release-note}
+
+{{site.data.keyword.openshiftshort}} Data Foundation
+:   Updated the deployment parameters for {{site.data.keyword.openshiftshort}} Data Foundation on {{site.data.keyword.satelliteshort}} clusters. The `containerPrivateEndpoint` parameter is no longer required.
+
+
 
 
 ### 22 November 2021
