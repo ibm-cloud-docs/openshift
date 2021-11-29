@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-11-29"
 
 keywords: kubernetes, openshift
 
@@ -17,30 +17,27 @@ subcollection: openshift
 # Adding services by using managed add-ons
 {: #managed-addons}
 
-Quickly add extra capabilities and open-source technologies to your cluster with managed add-ons.
-{: shortdesc}
-
-**What are managed add-ons?**
-
 Managed {{site.data.keyword.openshiftlong_notm}} add-ons are an easy way to enhance your cluster with extra capabilities and open-source capabilities, such asthe Diagnostics and Debug Tool, {{site.data.keyword.block_storage_is_short}}, or the Cluster Autoscaler. The version of the driver, plug-in, or open-source tool that you add to your cluster is tested by IBM and approved to be used in {{site.data.keyword.openshiftlong_notm}}.
+{: shortdesc}
 
 The managed add-ons that you can install in your cluster depend on the type of cluster, the container platform, and the infrastructure provider that you choose.
 {: note}
 
-**How does the billing and support work for managed add-ons?**
+Support
+:    Managed add-ons are fully integrated into the {{site.data.keyword.cloud_notm}} support organization. If you have a question or an issue with using the managed add-ons, you can use one of the {{site.data.keyword.openshiftlong_notm}} support channels. For more information, see [Getting help and support](/docs/containers?topic=containers-get-help).
 
-Managed add-ons are fully integrated into the {{site.data.keyword.cloud_notm}} support organization. If you have a question or an issue with using the managed add-ons, you can use one of the {{site.data.keyword.openshiftlong_notm}} support channels. For more information, see [Getting help and support](/docs/containers?topic=containers-get-help).
+Billing
+:    If the tool that you add to your cluster incurs costs, these costs are automatically integrated and listed as part of your {{site.data.keyword.openshiftlong_notm}} billing. The billing cycle is determined by {{site.data.keyword.cloud_notm}} depending on when you enabled the add-on in your cluster.
 
-If the tool that you add to your cluster incurs costs, these costs are automatically integrated and listed as part of your {{site.data.keyword.openshiftlong_notm}} billing. The billing cycle is determined by {{site.data.keyword.cloud_notm}} depending on when you enabled the add-on in your cluster.
+Limitations
+:    If you installed an admission controller that blocks unsigned images, such as [Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec), you can't enable managed add-ons in your cluster.
 
-**What limitations do I need to account for?**
-
-If you installed an admission controller that blocks unsigned images, such as [Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec), you can't enable managed add-ons in your cluster.
+:    In general, no additional setup, such as opening ports or IP addresses is required. However, refer to the documentation of each managed add-on to find the prerequisites that your cluster must meet before you install the managed add-on.
 
 ## Adding managed add-ons
 {: #adding-managed-add-ons}
 
-To enable a managed add-on in your cluster from the CLI, use the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable). To enable a managed add-on in your cluster in the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, use the **Add-ons** pane of the cluster details page. When you enable the managed add-on, a supported version of the tool, including all Kubernetes resources are automatically installed in your cluster. Refer to the documentation of each managed add-on to find the prerequisites that your cluster must meet to install the managed add-on.
+To enable a managed add-on in your cluster from the CLI, use the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable). To enable a managed add-on in your cluster in the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, use the **Add-ons** pane of the cluster details page. When you enable the managed add-on, a supported version of the tool, including all Kubernetes resources are automatically installed in your cluster. Refer to the documentation of each managed add-on to find the prerequisites that your cluster must meet before you install the managed add-on.
 
 For more information about the prerequisites for each add-on, see:
 - [{{site.data.keyword.block_storage_is_short}}](/docs/containers?topic=containers-vpc-block)
@@ -58,10 +55,10 @@ The versions of each managed add-on are tested by {{site.data.keyword.cloud_notm
 {: shortdesc}
 
 1. Check for update instructions that are specific to your managed add-on. If you don't find update instructions, continue with the next step.
+    
 2. If your add-on does not have specific update instructions, select the cluster where you installed managed add-ons from your [cluster dashboard](https://cloud.ibm.com/kubernetes/clusters).
 3. Select the **Add-ons** tab.
 4. From the actions menu, select **Update** to start updating the managed add-on. When the update is installed, the latest version of the managed add-on is listed on the cluster add-on page.
-
 
 
 ## Reviewing add-on states and statuses
@@ -82,7 +79,7 @@ kube-terminal   1.0.0     normal         Addon Ready
 ```
 {: screen}
 
-The **Health State** reflects the lifecycle of the add-on components. The **Health Status** provides details of what add-on operation is in progress. Each state and status is described in the following tables.
+The **Health State** reflects the lifecycle of the add-on components. Each state is described in the following table.
 
 |Add-on health state|Description|
 |--- |--- |
@@ -92,10 +89,9 @@ The **Health State** reflects the lifecycle of the add-on components. The **Heal
 |`updating`|The add-on is updating and is not ready to be used. Check the **Health Status** field for the version that the add-on is updating to.|
 |`warning`|The add-on might not function properly due to cluster limitations. Check the **Health Status** field for more information.|
 {: caption="Add-on health states"}
-{: summary="Table rows read from left to right, with the add-on state in column one and a description in column two."}
 
 
-
+The **Health Status** provides details of what add-on operation is in progress. Each status is described in the following table.
 
 
 |Status code|Add-on health status|Description|
@@ -108,9 +104,6 @@ The **Health State** reflects the lifecycle of the add-on components. The **Heal
 |\-|`Enabling`|The add-on is currently deploying to the cluster. Note that the add-on might take up to 15 minutes to install.|
 |H1512|`Addon daemonset may not be available on all Ready nodes.`|For the static route add-on: The static route operator `DaemonSet` is not available on any worker nodes, which prevents you from applying static route resources. Your worker nodes can't run the static route operator `DaemonSet` for the following reasons:  \n - One or more worker nodes reached their [resource limits](/docs/containers?topic=containers-debug_worker_nodes).  \n - One or more worker nodes are running the [maximum number of pods per worker node](/docs/openshift?topic=openshift-openshift_limitations#classic_limits).|
 {: caption="Add-on health statuses"}
-{: summary="Table rows read from left to right, with the add-on status in column one and a description in column two."}
-
-
 
 
 
@@ -122,7 +115,8 @@ The **Health State** reflects the lifecycle of the add-on components. The **Heal
 Review which managed add-ons are available for {{site.data.keyword.openshiftshort}} clusters that are created in an {{site.data.keyword.satellitelong_notm}} location.
 {: shortdesc}
 
-Supported add-ons for clusters in {{site.data.keyword.satelliteshort}} locations:
+The following list of add-ons for clusters are supported in {{site.data.keyword.satelliteshort}} locations.
+
 - [Diagnostics and Debug Tool](/docs/containers?topic=containers-debug-tool)
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
@@ -130,14 +124,11 @@ Supported add-ons for clusters in {{site.data.keyword.satelliteshort}} locations
 - [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc) (However, you can also use [{{site.data.keyword.satelliteshort}} storage templates](/docs/satellite?topic=satellite-config-storage-ocs-local) to consistently deploy ODF across clusters in your location.)
 - [Static routes](/docs/containers?topic=containers-static-routes)
 
-Unsupported add-ons for clusters in {{site.data.keyword.satelliteshort}} locations:
+The following list of add-ons for clusters are unsupported in {{site.data.keyword.satelliteshort}} locations.
+
 - [ALB OAuth Proxy](/docs/containers?topic=containers-comm-ingress-annotations#app-id)
 - [Cluster Autoscaler](/docs/openshift?topic=openshift-ca)
 - [Istio](/docs/containers?topic=containers-istio)
 - [{{site.data.keyword.block_storage_is_short}}](/docs/containers?topic=containers-vpc-block)
-
-
-
-
 
 
