@@ -3354,6 +3354,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version 1.0.347](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10347)
+
 * [Version 1.0.344](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10344)
 
 * [Version 1.0.334](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10334)

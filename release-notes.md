@@ -35,6 +35,15 @@ Review the release notes for November 2021.
 {: #29nov2021}
 {: release-note}
 
+Container service CLI 
+:   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.347.
+
+
+
+
+{{site.data.keyword.openshiftshort}} Ingress controller
+:   Updated the {{site.data.keyword.openshiftshort}} 4.x Router documentation to use the Ingress controller.
+
 {{site.data.keyword.openshiftshort}} Data Foundation
 :   Updated the deployment parameters for {{site.data.keyword.openshiftshort}} Data Foundation on {{site.data.keyword.satelliteshort}} clusters. The `containerPrivateEndpoint` parameter is no longer required.
 
