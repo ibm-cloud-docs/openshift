@@ -94,6 +94,8 @@ Start by checking for errors in your app deployment and the Ingress resource dep
         oc edit ingress <myingressresource>
         ```
         {: pre}
+        
+4. Check to see if you reached the maximum number of VPC load balancers permitted per account. Check the [VPC quotas documentation](/docs/vpc?topic=vpc-quotas#load-balancer-quotas) for VPC resource quotas across all your VPC clusters in your VPC.
 
 ## Step 2: Run Ingress tests in the Diagnostics and Debug Tool
 {: #debug-tool-43}
