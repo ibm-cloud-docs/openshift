@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-29"
 
 keywords: openshift
 
@@ -13,14 +13,14 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# VPC clusters: Why does the VPC load balancer for router only route to one zone?
+# VPC clusters: Why does the VPC load balancer for Ingress controller only route to one zone?
 {: #router-mzr-error}
 
 **Supported infrastructure provider**:
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 
-You create a multizone VPC cluster. However, when you run `ibmcloud is load-balancers` to find the VPC load balancer that exposes the router, the VPC subnet for only one zone in your cluster is listed instead of the subnets for all zones in your cluster. In the output, look for the VPC load balancer **Name** that starts with `kube-crtmgr-<cluster_ID>`.
+You create a multizone VPC cluster. However, when you run `ibmcloud is load-balancers` to find the VPC load balancer that exposes the Ingress controller, the VPC subnet for only one zone in your cluster is listed instead of the subnets for all zones in your cluster. In the output, look for the VPC load balancer **Name** that starts with `kube-crtmgr-<cluster_ID>`.
 {: tsSymptoms}
 
 ```
@@ -36,7 +36,7 @@ When you create an {{site.data.keyword.openshiftshort}} cluster on VPC infrastru
 
 You then make the cluster multizone by manually adding zones to your worker pools with the `ibmcloud oc zone add vpc-gen2` command. Currently, when you add zones to your cluster, the Ingress controller is not updated with the VPC subnets for the new zones, and does not route requests to apps in the new zones.
 
-Restart the Ingress controller so that a new VPC load balancer is created, which registers the router behind a hostname and forwards traffic to the router. Then, update your Ingress subdomain to use the new VPC load balancer hostname.
+Restart the Ingress controller so that a new VPC load balancer is created, which registers the Ingress controller behind a hostname and forwards traffic to the Ingress controller. Then, update your Ingress subdomain to use the new VPC load balancer hostname.
 {: tsResolve}
 
 1. Delete the `default` Ingress controller. After, the Ingress controller is automatically re-created.
@@ -59,7 +59,7 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
     ```
     {: screen}
 
-3. Verify that the new VPC load balancer that exposes the router has **Provision status** of `active` and an **Operating status** of `online`. Also, verify that the **Subnets** list now includes subnets for each zone of your cluster.
+3. Verify that the new VPC load balancer that exposes the Ingress controller has **Provision status** of `active` and an **Operating status** of `online`. Also, verify that the **Subnets** list now includes subnets for each zone of your cluster.
     ```sh
     ibmcloud is load-balancers
     ```
@@ -106,7 +106,7 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
     ```
     {: pre}
 
-7. Verify that the ingress subdomain DNS registration is updated to include the new VPC load balancer hostname for your router.
+7. Verify that the ingress subdomain DNS registration is updated to include the new VPC load balancer hostname for your Ingress controller.
     ```sh
     ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
     ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-11-29"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -79,7 +79,7 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
     ```
     {: pre}
 
-3. List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and router components take about 10 more minutes to deploy and update the cluster domain that you use for the {{site.data.keyword.openshiftshort}} web console and other routes. Before you continue, wait until the cluster is ready by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.</p>
+3. List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and Ingress components take about 10 more minutes to deploy and update the cluster domain that you use for the {{site.data.keyword.openshiftshort}} web console and other routes. Before you continue, wait until the cluster is ready by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.</p>
     ```sh
     ibmcloud oc cluster get --cluster <cluster_name_or_ID>
     ```
@@ -152,7 +152,7 @@ Cluster Console
 {: #openshift_deploy_app}
 {: step}
 
-With {{site.data.keyword.openshiftlong_notm}}, you can create a new app and expose your app service via an {{site.data.keyword.openshiftshort}} router for external users to use.
+With {{site.data.keyword.openshiftlong_notm}}, you can create a new app and expose your app service via an {{site.data.keyword.openshiftshort}} Ingress controller for external users to use.
 {: shortdesc}
 
 If you took a break from the last lesson and started a new command line, make sure that you log back in to your cluster. Open your {{site.data.keyword.openshiftshort}} web console at `https://<master_URL>/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`. Then from the menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.
@@ -171,7 +171,7 @@ If you took a break from the last lesson and started a new command line, make su
     {: pre}
 
 3. Verify that the sample Hello World app components are created.
-    1. List the **hello-world** services and note the service name. Your app listens for traffic on these internal cluster IP addresses unless you create a route for the service so that the router can forward external traffic requests to the app.
+    1. List the **hello-world** services and note the service name. Your app listens for traffic on these internal cluster IP addresses unless you create a route for the service so that the Ingress controller can forward external traffic requests to the app.
         ```sh
         oc get svc -n hello-world
         ```

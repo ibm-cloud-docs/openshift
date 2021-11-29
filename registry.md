@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-11-29"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -26,7 +26,7 @@ subcollection: openshift
 
 
 
-<openshift-chunk>
+
 
 ## Choosing an image registry solution
 {: #openshift_registry_options}
@@ -610,7 +610,7 @@ By default, your {{site.data.keyword.openshiftlong_notm}} cluster is set up to p
 * [Adding the image pull secret](#use_imagePullSecret) to your deployment configuration or to the project service account.
 
 
-</openshift-chunk>
+
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-11-29"
 
 keywords: openshift, nginx, ingress controller
 
@@ -33,10 +33,10 @@ Before you get started with Ingress, review the following prerequisites.
 - Setting up Ingress requires the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-users):
     - **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
     - **Manager** service access role in all {{site.data.keyword.containerlong_notm}} namespaces ({{site.data.keyword.openshiftshort}} projects)
-- If a zone fails, you might see intermittent failures in requests to apps that are exposed by the Ingress controller and router in that zone.
+- If a zone fails, you might see intermittent failures in requests to apps that are exposed by the Ingress controller in that zone.
 - To ensure high availability, at least two worker nodes per zone are recommended.
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC clusters: [Allow traffic requests that are routed by Ingress to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-network-policy#security_groups).
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC multizone clusters: If you created a cluster in the CLI and later manually added zones to your worker pools with the `ibmcloud oc zone add vpc-gen2` command, you must [update the VPC load balancer that exposes the router](/docs/openshift?topic=openshift-router-mzr-error) to include subnets for all zones in your cluster.
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC multizone clusters: If you created a cluster in the CLI and later manually added zones to your worker pools with the `ibmcloud oc zone add vpc-gen2` command, you must [update the VPC load balancer that exposes the Ingress controller](/docs/openshift?topic=openshift-router-mzr-error) to include subnets for all zones in your cluster.
 * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic clusters: Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you can't or don't want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the Ingress controller can route packets to various subnets in the account.
 
 
@@ -85,7 +85,7 @@ To use different subdomains to manage traffic to these apps, you create the foll
 
 ![Within a project, use subdomains in one or multiple resources](images/cs_ingress_multi_ns.png)
 
-Now, both URLs resolve to the same domain. However, because the resource in the staging project is registered with the `stage` subdomain, the Ingress controller configures the router to correctly proxy requests from the `stage.domain.net/app3` URL to only `app3`.
+Now, both URLs resolve to the same domain. However, because the resource in the staging project is registered with the `stage` subdomain, the Ingress controller correctly proxies requests from the `stage.domain.net/app3` URL to only `app3`.
 
 ### Multiple domains within a project
 {: #multi-domains-project}
@@ -247,7 +247,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     :   Replace `<domain>` with the IBM-provided Ingress subdomain or your custom domain. If your cluster has multiple projects where apps are exposed, one Ingress resource is required per project. You can use the same subdomain in each resource or different subdomains in each resource. For example, if you use a wildcard domain, you can append a wildcard subdomain to the beginning of the domain, such as `subdomain1.custom_domain.net` or `subdomain1.mycluster-<hash>-0000.us-south.containers.appdomain.cloud`. Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.
 
     `path`
-    :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and the router sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
+    :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and the Ingress controller sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
 
     `serviceName`
     :   Replace `<app1_service>` and `<app2_service>`, and so on, with the name of the services you created to expose your apps. If your apps are exposed by services in different projects in the cluster, include only app services that are in the same project. You must create one Ingress resource for each project where you have apps that you want to expose.
@@ -431,7 +431,7 @@ After you get your domain and TLS certificate ready, you must create a public In
     ```
     {: codeblock}
 
-2. Create the Ingress controller in the `openshift-ingress-operator` project of your cluster. When you create the Ingress controller, a public router is automatically created and deployed in the `openshift-ingress` project based on the Ingress controller settings. Additionally, a router service is created to expose the router.
+2. Create the IngressController resource in the `openshift-ingress-operator` project of your cluster. When you create the IngressController, a public Ingress controller is automatically created and deployed in the `openshift-ingress` project based on the IngressController settings. Additionally, a Ingress controller service is created to expose the Ingress controller.
     ```sh
     oc create -f public-ingress-controller.yaml -n openshift-ingress-operator
     ```
@@ -502,7 +502,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     :   Replace `<domain>` with your subdomain. If your cluster has multiple projects where apps are exposed, one Ingress resource is required per project. You can use the same subdomain in each resource or different subdomains in each resource. For example, if you use a wildcard domain, you can append a wildcard subdomain to the beginning of the domain, such as `subdomain1.custom_domain.net`. Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.
 
     `path`
-    :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and the router sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. 
+    :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. 
     :   Examples: For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
 
     `serviceName`
@@ -757,7 +757,7 @@ After you get your domain and TLS certificate ready, you must create a private I
     ```
     {: codeblock}
 
-2. Create the Ingress controller in the `openshift-ingress-operator` project of your cluster. When you create the Ingress controller, a private router is automatically created and deployed in the `openshift-ingress` project based on the Ingress controller settings. Additionally, a router service is created to expose the router with an IP address (classic clusters) or a VPC hostname (VPC clusters).
+2. Create the IngressController resource in the `openshift-ingress-operator` project of your cluster. When you create the IngressController, a private Ingress controller is automatically created and deployed in the `openshift-ingress` project based on the IngressController settings. Additionally, a Ingress controller service is created to expose the Ingress controller with an IP address (classic clusters) or a VPC hostname (VPC clusters).
     ```sh
     oc create -f private-ingress-controller.yaml -n openshift-ingress-operator
     ```
@@ -835,7 +835,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     :   Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.
 
     `path`
-    :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and the router sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. 
+    :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. 
     :   Examples: For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
 
     `serviceName`
@@ -1047,7 +1047,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     :   Replace `<domain>` with the IBM-provided Ingress subdomain or your custom domain.<ul><li>If your cluster has multiple projects where apps are exposed, one Ingress resource is required per project. You can use the same subdomain in each resource or different subdomains in each resource. For example, if you use a wildcard domain, you can append a wildcard subdomain to the beginning of the domain, such as `subdomain1.custom_domain.net` or `subdomain1.mycluster-<hash>-0000.us-south.containers.appdomain.cloud`.</li><li>Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.
 
     `path`
-    :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and the router sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. 
+    :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. 
     :   Examples: For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
 
     `serviceName`
@@ -1201,7 +1201,7 @@ By storing custom TLS certificates in {{site.data.keyword.cloudcerts_long_notm}}
 
 If you want to customize routing rules for your app, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.7/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external} in the Ingress resources that you define.
 
-These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.{{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the router or the Ingress resource in {{site.data.keyword.openshiftshort}} version 4.
+These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.{{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the Ingress controller or the Ingress resource in {{site.data.keyword.openshiftshort}} version 4.
 {: important}
 
 

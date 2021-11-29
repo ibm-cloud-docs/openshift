@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-11-29"
 
 keywords: openshift
 
@@ -40,7 +40,7 @@ kube-terminal   1.0.0     normal         Addon Ready
 ```
 {: screen}
 
-The **Health State** reflects the lifecycle of the add-on components. The **Health Status** provides details of what add-on operation is in progress. Each state and status is described in the following tables.
+The **Health State** reflects the lifecycle of the add-on components. Each state is described in the following table.
 
 |Add-on health state|Description|
 |--- |--- |
@@ -50,10 +50,9 @@ The **Health State** reflects the lifecycle of the add-on components. The **Heal
 |`updating`|The add-on is updating and is not ready to be used. Check the **Health Status** field for the version that the add-on is updating to.|
 |`warning`|The add-on might not function properly due to cluster limitations. Check the **Health Status** field for more information.|
 {: caption="Add-on health states"}
-{: summary="Table rows read from left to right, with the add-on state in column one and a description in column two."}
 
 
-
+The **Health Status** provides details of what add-on operation is in progress. Each status is described in the following table.
 
 
 |Status code|Add-on health status|Description|
@@ -66,7 +65,6 @@ The **Health State** reflects the lifecycle of the add-on components. The **Heal
 |\-|`Enabling`|The add-on is currently deploying to the cluster. Note that the add-on might take up to 15 minutes to install.|
 |H1512|`Addon daemonset may not be available on all Ready nodes.`|For the static route add-on: The static route operator `DaemonSet` is not available on any worker nodes, which prevents you from applying static route resources. Your worker nodes can't run the static route operator `DaemonSet` for the following reasons:  \n - One or more worker nodes reached their [resource limits](/docs/containers?topic=containers-debug_worker_nodes).  \n - One or more worker nodes are running the [maximum number of pods per worker node](/docs/openshift?topic=openshift-openshift_limitations#classic_limits).|
 {: caption="Add-on health statuses"}
-{: summary="Table rows read from left to right, with the add-on status in column one and a description in column two."}
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-11-29"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, satellite
 
@@ -129,7 +129,6 @@ After you [create a link endpoint](/docs/satellite?topic=satellite-link-location
         type: Opaque
         stringData:
           iam_api_key: "<iam_api_key>" # Enter your IAM API key
-          containers_api_route_private: "<link_endpoint>" # Enter the satellite-containersApi link endpoint that you retrieved earlier.
         ```
         {: codeblock}
 
@@ -183,7 +182,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 1. Review the add-on options. Note that the default storage classes for `monStorageClassName` and `osdStorageClassName` are {{site.data.keyword.block_storage_is_short}} storage classes. For {{site.data.keyword.satelliteshort}}, you must override these values and specify a storage class that supports dynamic provisioning based on the block storage storage driver in your cluster. If you want to use local volumes on worker nodes instead of dynamically provisioned volumes, you must first [gather your local device information](#odf-sat-gather), then when you enable the add-on, specify `localfile` for `monStorageClassName` and `localblock` for `osdStorageClassName`.
 
     ```sh
-    ibmcloud oc cluster addon options --addon openshift-data-foundation --param "containerPrivateEndpoint=<container_private_endpoint>"
+    ibmcloud oc cluster addon options --addon openshift-data-foundation
     ```
     {: pre}
 
@@ -215,7 +214,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     Example command for deploying the ODF and creating a storage cluster while overriding the default parameter.
 
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "osdSize=500Gi" --param "monStorageClassName=<provider-storage-class>" --param "monStorageClassName=<provider-storage-class>" --param "containerPrivateEndpoint=<container_private_endpoint>"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "osdSize=500Gi" --param "monStorageClassName=<provider-storage-class>" --param "monStorageClassName=<provider-storage-class>"
     ```
     {: pre}
 
@@ -260,7 +259,6 @@ On satellite clusters, you can either dynamically provision storage volumes for 
     - `workerNodes`: Enter the worker nodes where you want to deploy ODF. You must have at least 3 worker nodes. The default setting is `all`. If you want to deploy ODF only on certain nodes, enter the IP addresses of the worker nodes in a comma-separated list without spaces, for example: `XX.XXX.X.X,XX.XXX.X.X,XX.XXX.X.X`.
     - `ocsUpgrade`: Enter `true` or `false` to upgrade the ODF operators. For initial deployment, leave this setting as `false`. The default setting is `false`.
     - `clusterEncryption`: Enter `true` or `false` to enable cluster encryption. The default setting is `false`.
-    - `containerPrivateEndpoint`: Enter the `satellite-containersApi` [link endpoint](#odf-sat-secret-create) that you retrieved earlier.
 
 1. After you enter the parameters that you want to use, click **Install**.
 
@@ -421,7 +419,6 @@ If you enabled the add-on from the CLI and set the `odfDeploy=false` parameter, 
       numOfOsd: 1
       billingType: advanced
       ocsUpgrade: false
-      containerPrivateEndpoint: # Enter the satellite-containersApi link endpoint that you retrieved earlier.
     ```
     {: codeblock}
 
@@ -440,7 +437,6 @@ If you enabled the add-on from the CLI and set the `odfDeploy=false` parameter, 
       numOfOsd: 1
       billingType: advanced
       ocsUpgrade: false
-      containerPrivateEndpoint: # Enter the satellite-containersApi link endpoint that you retrieved earlier.
       workerNodes: # Specify the private IP addresses of the worker nodes that you want to use.
         - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
         - <workerNodes>
@@ -464,7 +460,6 @@ If you enabled the add-on from the CLI and set the `odfDeploy=false` parameter, 
       numOfOsd: 1
       billingType: advanced
       ocsUpgrade: false
-      containerPrivateEndpoint: # Enter the satellite-containersApi link endpoint that you retrieved earlier.
       monDevicePaths:
         - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part1
         - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part1
@@ -492,7 +487,6 @@ If you enabled the add-on from the CLI and set the `odfDeploy=false` parameter, 
       numOfOsd: 1
       billingType: advanced
       ocsUpgrade: false
-      containerPrivateEndpoint: # Enter the satellite-containersApi link endpoint that you retrieved earlier. Example: https://a111aaaa1a1a11aaa11a1-1b11a1ccc1c111bf11a11111d1fa1111-c000.us-east.satellite.appdomain.cloud:32232
       monDevicePaths:
         - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part1
         - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part1
@@ -542,7 +536,6 @@ Refer to the following parameters when you use the add-on or operator in {{site.
 | `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
 | `workerNodes` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
 | `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
-| `containerPrivateEndpoint` | The `satellite-containersApi` link endpoint for your location. Example: `https://a111aaaa1a1a11aaa11a1-1b11a1ccc1c111bf11a11111d1fa1111-c000.us-east.satellite.appdomain.cloud:32232`. |
 {: caption="Parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
 

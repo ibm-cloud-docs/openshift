@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-11-29"
 
 keywords: openshift, route, router
 
@@ -21,9 +21,6 @@ Expose the services in your {{site.data.keyword.openshiftlong}} cluster on the r
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run {{site.data.keyword.openshiftshort}} version 3.11 only. To set up routes for {{site.data.keyword.openshiftshort}} version 4, see [Exposing apps with routes in {{site.data.keyword.openshiftshort}} version 4](/docs/openshift?topic=openshift-openshift_routes).
 {: important}
-
-Not sure whether to use {{site.data.keyword.openshiftshort}} routes or Ingress? Check out [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress).
-{: tip}
 
 ## Overview
 {: #routes-overview-311}

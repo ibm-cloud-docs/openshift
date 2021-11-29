@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-11-29"
 
 keywords: openshift
 
@@ -23,7 +23,7 @@ content-type: troubleshoot
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 
-When you expose an app through a router subdomain, you get a local subdomain instead of a public route, in the format: `<service_name>-<project_name>.router.default.svc.cluster.local`.
+When you expose an app through a Ingress controller subdomain, you get a local subdomain instead of a public route, in the format: `<service_name>-<project_name>.router.default.svc.cluster.local`.
 {: tsSymptoms}
 
 When you try to open the {{site.data.keyword.openshiftshort}} web console or another app route in your browser, you might see an error similar to the following.
@@ -35,12 +35,12 @@ The application is currently not serving requests on this endpoint.
 {: screen}
 
 
-After the cluster is created and enters a **normal** state, the router subdomain networking and load balancing components still take some time to deploy.
+After the cluster is created and enters a **normal** state, the Ingress controller subdomain networking and load balancing components still take some time to deploy.
 {: tsCauses}
 
-If you expose your app before the networking components fully provision, or if the components experience an error, your apps can only be exposed internally with the default router's `svc.cluster.local` domain.
+If you expose your app before the networking components fully provision, or if the components experience an error, your apps can only be exposed internally with the default Ingress controller's `svc.cluster.local` domain.
 
-When the components fully provision, a public router subdomain is available for your apps, in the format `<cluster-name>-<accountID-hashed>-<ssll>.<region>.containers.appdomain.cloud`.
+When the components fully provision, a public Ingress controller subdomain is available for your apps, in the format `<cluster-name>-<accountID-hashed>-<ssll>.<region>.containers.appdomain.cloud`.
 
 
 1. After you create a cluster, wait some time before you expose your apps, even after the cluster enters a **normal** state.
@@ -62,14 +62,14 @@ When the components fully provision, a public router subdomain is available for 
           ```
           {: pre}
 
-4. In the output of Step 2, check that the **Ingress Subdomain** is available. The Ingress components in your cluster must provision before the router components can be created. If the **Ingress Subdomain** and **Ingress Secret** are not available, see [Why does no Ingress subdomain exist after cluster creation?](/docs/openshift?topic=openshift-ingress_subdomain).
-5. Check that the **Hostname** of the router subdomain is in the format: `<cluster-name>-<accountID-hashed>-<ssll>.<region>.containers.appdomain.cloud`.
+4. In the output of Step 2, check that the **Ingress Subdomain** is available. The Ingress components in your cluster must provision before the Ingress controller components can be created. If the **Ingress Subdomain** and **Ingress Secret** are not available, see [Why does no Ingress subdomain exist after cluster creation?](/docs/openshift?topic=openshift-ingress_subdomain).
+5. Check that the **Hostname** of the Ingress controller subdomain is in the format: `<cluster-name>-<accountID-hashed>-<ssll>.<region>.containers.appdomain.cloud`.
     ```sh
     ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
     ```
     {: pre}
 
-    *  If the router subdomain is not updated after two hours of creating the cluster, review the **Master Status** of the cluster again, and follow any troubleshooting steps to resolve the issue.
+    *  If the Ingress controller subdomain is not updated after two hours of creating the cluster, review the **Master Status** of the cluster again, and follow any troubleshooting steps to resolve the issue.
 
 If the troubleshooting steps don't resolve the issue, see [Getting help](/docs/openshift?topic=openshift-get-help).
 
