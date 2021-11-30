@@ -40,8 +40,10 @@ Before you begin, complete the following {{site.data.keyword.hscrypto}} and {{si
 {: shortdesc}
 
 1. [Provision an {{site.data.keyword.hscrypto}} instance](/docs/hs-crypto?topic=hs-crypto-get-started).
-2. Make sure that you have the {{site.data.keyword.cloud_notm}} IAM [**Administrator** platform access role](/docs/openshift?topic=openshift-users) for {{site.data.keyword.containershort_notm}} for the cluster and the [**Manager** service access role](/docs/openshift?topic=openshift-users) {{site.data.keyword.containershort_notm}} for the cluster in all namespaces (projects).
-3. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that the {{site.data.keyword.cloud_notm}} HPCS Router is supported only for {{site.data.keyword.openshiftshort}} version 4.5 and later.
+2. [Initialize the {{site.data.keyword.hscrypto}} instance](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-initialize-hsm)
+3. [Create a Key in your {{site.data.keyword.hscrypto}} instance](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-create-root-keys) to be used by the HPCS Router
+4. Make sure that you have the {{site.data.keyword.cloud_notm}} IAM [**Administrator** platform access role](/docs/openshift?topic=openshift-users) for {{site.data.keyword.containershort_notm}} for the cluster and the [**Manager** service access role](/docs/openshift?topic=openshift-users) {{site.data.keyword.containershort_notm}} for the cluster in all namespaces (projects).
+5. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that the {{site.data.keyword.cloud_notm}} HPCS Router is supported only for {{site.data.keyword.openshiftshort}} version 4.5 and later.
 
 ## Step 1: Set up default router sharding
 {: #sharding}
