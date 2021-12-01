@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-29"
+lastupdated: "2021-12-01"
 
 keywords: openshift
 
@@ -23,12 +23,24 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: note}
 
+## December 2021
+{: #release-dec-2021}
+
+### 2 December 2021
+{: #2dec2021}
+{: release-note}
+
+
+
+{{site.data.keyword.openshiftlong_notm}} default version update.
+:   [4.8](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_versions) is now the default version.
+
+
 ## November 2021
 {: #release-nov-2021}
 
 Review the release notes for November 2021.
 {: shortdesc}
-
 
 
 ### 29 November 2021

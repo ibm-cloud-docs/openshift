@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-12-01"
 
 keywords: openshift, clusters
 
@@ -833,7 +833,7 @@ Save your API key in a secure location. You can't retrieve the API key again. If
         ```
         {: pre}
 
-3. Exchange your {{site.data.keyword.cloud_notm}} IAM API key credentials for an {{site.data.keyword.openshiftshort}} access token. You can log in from the CLI or API. For more information, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.7/authentication/configuring-internal-oauth.html){: external}.
+3. Exchange your {{site.data.keyword.cloud_notm}} IAM API key credentials for an {{site.data.keyword.openshiftshort}} access token. You can log in from the CLI or API. For more information, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.8/authentication/configuring-internal-oauth.html){: external}.
 
     **Log in by using the `oc` CLI**:
     Log in to your cluster with the `oc login` command. The username (`-u`) is `apikey` and the password (`-p`) is your {{site.data.keyword.cloud_notm}} IAM API key value. To use the private cloud service endpoint, include the `--server=<private_service_endpoint>` flag.
@@ -896,7 +896,7 @@ Save your API key in a secure location. You can't retrieve the API key again. If
         ```
         {: screen}
 
-    5. Use your cluster master URL and the access token to access the {{site.data.keyword.openshiftshort}} API, such as to list all the pods in your cluster. For more information, see the [{{site.data.keyword.openshiftshort}} API documentation](https://docs.openshift.com/container-platform/4.7/rest_api/index.html){: external}.
+    5. Use your cluster master URL and the access token to access the {{site.data.keyword.openshiftshort}} API, such as to list all the pods in your cluster. For more information, see the [{{site.data.keyword.openshiftshort}} API documentation](https://docs.openshift.com/container-platform/4.8/rest_api/index.html){: external}.
 
         Example curl request:
         ```sh
@@ -1021,7 +1021,7 @@ Admission controllers intercept authorized API requests from various Kubernetes 
 ### Can I create my own admission controllers?
 {: #access_webhooks_create_controllers}
 
-Yes, see the [Kubernetes](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} and [{{site.data.keyword.openshiftshort}}](https://docs.openshift.com/container-platform/4.7/architecture/admission-plug-ins.html){: external} documentation for more information. 
+Yes, see the [Kubernetes](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} and [{{site.data.keyword.openshiftshort}}](https://docs.openshift.com/container-platform/4.8/architecture/admission-plug-ins.html){: external} documentation for more information. 
 
 As noted in the Kubernetes documentation, you can use admission controllers for operations that are otherwise handled by the control plane. As such, take great caution when you configure a custom admission controller. You are responsible for any changes that happen in your cluster because of a custom admission controller.
 {: important}

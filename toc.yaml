@@ -233,7 +233,7 @@ toc:
                 href: https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json
             - link:
                 label: OpenShift Container Platform REST API
-                href: https://docs.openshift.com/container-platform/4.7/rest_api/index.html
+                href: https://docs.openshift.com/container-platform/4.8/rest_api/index.html
       - topicgroup:
           label: CLI plug-in reference
           topics:

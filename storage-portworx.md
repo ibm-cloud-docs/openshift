@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-12-01"
 
 keywords: portworx, openshift
 
@@ -136,18 +136,24 @@ Keep in mind that the networking of non-SDS worker nodes in classic clusters is 
 1. [Install the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in](/docs/openshift?topic=openshift-utilities#block_storage_attacher).
 2. [Manually add block storage](/docs/openshift?topic=openshift-utilities#manual_block) to your worker nodes. For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.
 3. If you want to use [journal devices](https://docs.portworx.com/install-with-other/operate-and-maintain/performance-and-tuning/tuning/){: external}, choose from the following options.
-    - Attach an additional disk to use for the journal. [Manually add](/docs/openshift?topic=openshift-utilities#manual_block) a 3 GB block storage device to a worker node in your cluster and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
+    - Attach an additional disk to at least 3 worker nodes to use for the journal. [Manually add](/docs/openshift?topic=openshift-utilities#manual_block) a 3 GB block storage device to a worker node in your cluster and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
     - Select one of the block storage devices that you added earlier to use for the journal and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
     - Let Portworx automatically create a journal partition during installation.
-4. [Attach the block storage](/docs/openshift?topic=openshift-utilities#attach_block) to your worker nodes.
-5. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](#portworx_database).
+4. If you want to use a specific device for the internal Portworx key value database (KVDB), choose from the following options.
+    - Attach an additional disk to at least 3 worker nodes to use for key value database (KVDB). [Manually add](/docs/openshift?topic=openshift-utilities#manual_block) a 3 GB block storage device to at least 3 worker nodes in your cluster and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
+    - Select one of the block storage devices that you added earlier and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
+5. [Attach the block storage](/docs/openshift?topic=openshift-utilities#attach_block) to your worker nodes.
+6. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](#portworx_database).
 
 ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) **VPC clusters:**
 1. Follow the [steps](/docs/openshift?topic=openshift-utilities#vpc_cli_attach) to create the {{site.data.keyword.block_storage_is_short}} instances and attach these to each worker node that you want to add to the Portworx storage layer. For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.
 2. If you want to use [journal devices](https://docs.portworx.com/install-with-other/operate-and-maintain/performance-and-tuning/tuning/){: external}, choose from the following options.
-    - [Attach](/docs/openshift?topic=openshift-utilities#vpc_cli_attach) an additional 3 GB disk to a worker node in your cluster and find the device path. To find the device path after you attach the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
+    - [Attach](/docs/openshift?topic=openshift-utilities#vpc_cli_attach) an additional 3 GB disk to at least 3 worker nodes in your cluster and find the device path. To find the device path after you attach the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
     - Select a device on a worker node where you want Portworx to create the journal.
-3. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](#portworx_database).
+3. If you want to use a specific device for the internal Portworx KVDB, choose from the following options.
+    - Attach an additional disk to at least 3 worker nodes use for the KVDB. [Manually add](/docs/openshift?topic=openshift-utilities#manual_block) a 3 GB block storage device to at least 3 worker nodes in your cluster and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
+    - Select one of the block storage devices that you added earlier to use for the KVDB and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
+4. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](#portworx_database).
 
 
 
@@ -192,7 +198,7 @@ Databases for etcd is a managed etcd service that securely stores and replicates
 1. Make sure that you have the [**Administrator** platform access role in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM)](/docs/account?topic=account-assign-access-resources#assign-new-access) for the Databases for etcd service.  
 
 2. Provision your Databases for etcd service instance.
-    1. Open the [Databases for etcd catalog page](https://cloud.ibm.com/databases/databases-for-etcd/create)
+    1. Open the [Databases for etcd catalog page](https://cloud.ibm.com/databases/databases-for-etcd/create){: external}
     2. Enter a name for your service instance, such as `px-etcd`.
     3. Select the region where you want to deploy your service instance. For optimal performance, choose the region that your cluster is in.
     4. Select the same resource group that your cluster is in.
@@ -387,7 +393,7 @@ Follow these steps to set up encryption for your Portworx volumes.
     ```
     {: pre}
 
-3. Create a Kubernetes secret that is named `px-ibm` in the `portworx` project of your cluster to store your {{site.data.keyword.keymanagementservicelong_notm}} information.
+3. Create a Kubernetes secret named `px-ibm` in the `portworx` project of your cluster to store your {{site.data.keyword.keymanagementservicelong_notm}} information.
     1. Create a configuration file for your Kubernetes secret with the following content.
         ```yaml
         apiVersion: v1
@@ -545,6 +551,8 @@ Before you begin:
 
 - If you attached a separate device for the Portworx journal, make sure that you retrieve the device path by running `lsblk` while logged into your worker node.
 
+- If you attached a separate devices for the Portworx KVDB, make sure that you retrieve the device path by running `lsblk` while logged into your worker node.
+
 - [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To install Portworx:
@@ -563,7 +571,7 @@ To install Portworx:
     
     6. Enter an {{site.data.keyword.cloud_notm}} API key to retrieve the list of clusters that you have access to. If you don't have an API key, see [Managing user API keys](/docs/account?topic=account-userapikey). After you enter the API key, the **Kubernetes or OpenShift cluster name** field appears at the bottom of the page.
     
-    7. Enter a unique name for the Portworx cluster that is created within your {{site.data.keyword.openshiftlong_notm}} cluster.
+    7. Enter a unique name for the Portworx cluster within your {{site.data.keyword.openshiftlong_notm}} cluster.
     8. From the **Portworx metadata key-value store** drop down, choose the type of key-value store that you want to use to store Portworx metadata. Select **Portworx KVDB** to automatically create a key-value store during the Portworx installation, or select **Databases for etcd** if you want to use an existing Databases for etcd instance. If you choose **Databases for etcd**, the **Etcd API endpoints** and **Etcd secret name** fields appear.
     9. **Required for Databases for etcd only**: Enter the information of your Databases for etcd service instance.
         1. [Retrieve the etcd endpoint, and the name of the Kubernetes secret](#databases_credentials) that you created for your Databases for etcd service instance.
@@ -573,13 +581,14 @@ To install Portworx:
     11. **Optional**: From the **Portworx secret store type** drop down list, choose the secret store type that you want to use to store the volume encryption key.
         - **Kubernetes Secret**: Choose this option if you want to store your own custom key to encrypt your volumes in a Kubernetes Secret in your cluster. The secret must not be present before you install Portworx. You can create the secret after you install Portworx. For more information, see the [Portworx documentation](https://docs.portworx.com/key-management/kubernetes-secrets/#configuring-kubernetes-secrets-with-portworx){: external}.
         - **{{site.data.keyword.keymanagementservicelong_notm}}**: Choose this option if you want to use root keys in {{site.data.keyword.keymanagementservicelong_notm}} to encrypt your volumes. Make sure that you follow the [instructions](#setup_encryption) to create your {{site.data.keyword.keymanagementservicelong_notm}} service instance, and to store the credentials for how to access your service instance in a Kubernetes secret in the `portworx` project before you install Portworx.
-    12. **Optional**: If you want to set up a journal device, enter the device details in the **Advanced Options** field. Choose from the following options for journal devices:
+    12. **Optional**: If you want to set up a journal device or KVDB devices, enter the device details in the **Advanced Options** field. Choose from the following options for journal devices:
         
         - Enter `j;auto` to allow Portworx to automatically create a 3 GB partition on one of your block storage devices to use for the journal.
         - Enter `j;</device/path>` to use a specific device for the journal. For example, enter `j;/dev/vde` to use the disk located at `/dev/vde`. To find the path of the device that you want to use for the journal, log in to a worker node and run `lsblk`.
+        - Enter `kvdb_dev;<device path>` to specify the device where you want to store internal KVDB data. For example, `kvdb_dev;/dev/vdd`. To find the path of the device that you want to use, log in to a worker node and run `lsblk`. To use a specific device for KVDB data, you must have an available storage device of 3GB or on at least 3 worker nodes. The devices must also and on the same path on each worker node. For example: `/dev/vdd`.
 
 1. Click **Create** to start the Portworx installation in your cluster. This process might take a few minutes to complete. The service details page opens with instructions for how to verify your Portworx installation, create a persistent volume claim (PVC), and mount the PVC to an app.
-1. From the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources), find the Portworx service that you created.
+1. From the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources){: external}, find the Portworx service that you created.
 1. Review the **Status** column to see if the installation succeeded or failed. The status might take a few minutes to update.
 1. If the **Status** changes to `Provision failure`, follow the [instructions](/docs/containers?topic=containers-debug-portworx) to start troubleshooting why your installation failed.
 1. If the **Status** changes to `Provisioned`, verify that your Portworx installation completed successfully and that all your local disks were recognized and added to the Portworx storage layer.
@@ -777,10 +786,10 @@ Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs
         :   Enter a name for your PVC, such as `mypvc`.
         
         `spec.accessModes`
-        :   Enter the [Kubernetes access mode](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes) that you want to use.
+        :   Enter the [Kubernetes access mode](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes){: external} that you want to use.
         
         `resources.requests.storage`
-        :   Enter the amount of storage in gigabytes that you want to assign from your Portworx cluster. For example, to assign 2 gigabytes from your Portworx cluster, enter `2Gi`. The amount of storage that you can specify is limited by the amount of storage that is available in your Portworx cluster. If you specified a replication factor in your storage class that is higher than 1, then the amount of storage that you specify in your PVC is reserved on multiple worker nodes.
+        :   Enter the amount of storage in gigabytes that you want to assign from your Portworx cluster. For example, to assign 2 gigabytes from your Portworx cluster, enter `2Gi`. The amount of storage that you can specify is limited by the amount of storage that is available in your Portworx cluster. If you specified a replication factor in your storage class higher than 1, then the amount of storage that you specify in your PVC is reserved on multiple worker nodes.
         
         `spec.storageClassName`
         :   Enter the name of the storage class that you chose or created earlier and that you want to use to provision your PV. The example YAML file uses the `portworx-shared-sc` storage class.
@@ -928,7 +937,7 @@ To access the storage from your app, you must mount the PVC to your app.
 ## VPC: Updating worker nodes with Portworx volumes
 {: #portworx_vpc_up}
 
-When you update a worker node in a VPC cluster, the worker node is removed from your cluster and replaced with a new worker node. If Portworx volumes are attached to the worker node that is replaced, you must attach the volumes to the new worker node.
+When you update a worker node in a VPC cluster, the worker node is removed from your cluster and replaced with a new worker node. If Portworx volumes are attached to the worker node that you replaced, you must attach the volumes to the new worker node.
 {: shortdesc}
 
 Update only one worker node at a time. When the worker node update is complete, attach your {{site.data.keyword.block_storage_is_short}} and restart the Portworx pod.

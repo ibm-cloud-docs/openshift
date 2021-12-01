@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-12-01"
 
 keywords: openshift, version, upgrade, update
 
@@ -319,6 +319,9 @@ You notice that an update is available for your worker nodes in a [VPC infrastru
 
 ![VPC infrastructure provider icon.](images/icon-vpc-2.svg)  Applies to only VPC clusters. Have a classic cluster? See [Updating classic worker nodes](#worker_node) instead.
 {: note}
+
+If you have Portworx deployed in your cluster, follow the steps to [update VPC worker nodes with Portworx volumes](/docs/containers?topic=containers-portworx#portworx_vpc_up).
+{: important}
 
 For the latest security patches and fixes, make sure to update your worker nodes to the latest patch as soon as possible after it is available. For more information about the latest updates, review the [Changelog](/docs/containers?topic=containers-changelog).
 {: tip}

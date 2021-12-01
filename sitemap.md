@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-11-29"
+lastupdated: "2021-12-01"
 
 keywords: openshift
 subcollection: openshift
@@ -181,6 +181,10 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
+
+* [December 2021](/docs/openshift?topic=openshift-iks-release#release-dec-2021)
+
+    * [2 December 2021](/docs/openshift?topic=openshift-iks-release#2dec2021)
 
 * [November 2021](/docs/openshift?topic=openshift-iks-release#release-nov-2021)
 
@@ -3063,7 +3067,7 @@ subcollection: openshift
 
 [IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}
 
-[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.7/rest_api/index.html){: external}
+[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.8/rest_api/index.html){: external}
 
 
 ## CLI plug-in reference
@@ -3463,9 +3467,9 @@ subcollection: openshift
 
 * [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types)
 
-    * [Major and minor updates (4.7)](/docs/openshift?topic=openshift-openshift_versions#major_minor_updates)
+    * [Major and minor updates (4.8)](/docs/openshift?topic=openshift-openshift_versions#major_minor_updates)
 
-    * [Patch updates (4.7.29_xxxx_openshift)](/docs/openshift?topic=openshift-openshift_versions#patch_updates_oc)
+    * [Patch updates (4.7.36_xxxx_openshift)](/docs/openshift?topic=openshift-openshift_versions#patch_updates_oc)
 
 * [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types)
 
