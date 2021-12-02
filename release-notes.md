@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-12-01"
+lastupdated: "2021-12-02"
 
 keywords: openshift
 
@@ -101,6 +101,13 @@ Cloud Image Key Synchronizer add-on
 :   Version 2.1.7 of the [{{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-cos_plugin_changelog) is released.
 
 
+  
+### 17 November 2021
+{: #17nov2021}
+{: release-note}
+
+Worker node fix pack update
+:   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.8.18_1535_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4820_1535), [`4.7.36_1539_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4736_1539), [`4.6.47_1563_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4647_1563), and [`3.11.542_1611_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311542_1611).
   
 ### 16 November 2021
 {: #16nov2021}
