@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-29"
+lastupdated: "2021-12-02"
 
 keywords: openshift
 
@@ -23,12 +23,24 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: note}
 
+## December 2021
+{: #release-dec-2021}
+
+### 2 December 2021
+{: #2dec2021}
+{: release-note}
+
+
+
+{{site.data.keyword.openshiftlong_notm}} default version update.
+:   [4.8](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_versions) is now the default version.
+
+
 ## November 2021
 {: #release-nov-2021}
 
 Review the release notes for November 2021.
 {: shortdesc}
-
 
 
 ### 29 November 2021
@@ -89,6 +101,13 @@ Cloud Image Key Synchronizer add-on
 :   Version 2.1.7 of the [{{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-cos_plugin_changelog) is released.
 
 
+  
+### 17 November 2021
+{: #17nov2021}
+{: release-note}
+
+Worker node fix pack update
+:   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.8.18_1535_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4820_1535), [`4.7.36_1539_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4736_1539), [`4.6.47_1563_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4647_1563), and [`3.11.542_1611_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311542_1611).
   
 ### 16 November 2021
 {: #16nov2021}
@@ -2599,7 +2618,7 @@ End of service of {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon
 {{site.data.keyword.openshiftshort}} options
 :   To help you decide whether to use built-in {{site.data.keyword.openshiftshort}} capabilities or integration with {{site.data.keyword.cloud_notm}} services, the following topics are added.
     - [Choosing an image registry solution](/docs/openshift?topic=openshift-registry#openshift_registry_options)
-    - [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress) like router or Ingress
+    - [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#load-balancing-comparison) like router or Ingress
     - [Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options)
 
 New! Single zone location for {{site.data.keyword.openshiftshort}} clusters

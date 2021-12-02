@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-12-02"
 
 keywords: openshift
 
@@ -76,11 +76,21 @@ Review the following default Calico host policies that are automatically applied
 To view, manage, and add Calico policies, install and configure the Calico CLI.
 {: shortdesc}
 
-1. Set the context for your cluster to run Calico commands. Include the `--network` option to download the keys to access your infrastructure portfolio and run Calico commands on your worker nodes.
-        ```sh
-        ibmcloud oc cluster config --cluster <cluster_name_or_ID> --network
-        ```
-        {: pre}
+1. Set the context for your cluster to run Calico commands.
+  
+    * {{site.data.keyword.openshiftshort}} version 4.6 and later:
+    
+        1. Download the `kubeconfig` configuration file for your cluster.
+            ```sh
+            ibmcloud oc cluster config --cluster <cluster_name_or_ID>
+            ```
+            {: pre}
+
+        2. Set the `DATASTORE_TYPE` environment variable to `kubernetes`.
+            ```sh
+            export DATASTORE_TYPE=kubernetes
+            ```
+            {: pre}
 
 2. If corporate network policies use proxies or firewalls to prevent access from your local system to public endpoints, [allow TCP access for Calico commands](/docs/openshift?topic=openshift-firewall#firewall).
 
@@ -100,26 +110,22 @@ To view, manage, and add Calico policies, install and configure the Calico CLI.
             ```
             {: pre}
 
-        4. Create the `/etc/calico` directory.
-            ```
-            sudo mkdir /etc/calico
-            ```
-            {: pre}
-
-        5. Move the Calico configuration file that you previously downloaded to the directory.
-            ```
-            sudo mv /Users/<user>/.bluemix/plugins/container-service/clusters/<cluster_name>-admin/calicoctl.cfg /etc/calico
-            ```
-            {: pre}
+        4. Ensure there is not an old Calico configuration file `calicoctl.cfg` in the `/etc/calico` directory. If the `/etc/calico/calicoctl.cfg` file exists, delete it.
 
     * Windows
         1. [Download the Calico CLI](https://github.com/projectcalico/calicoctl/releases){: external}. When you save the file, rename it to `calicoctl.exe` and save it in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later.
 
+        
+        
+        
+  
         2. Set the `KUBECONFIG` environment variable to the network configuration file that you found in step 1.
-                ```
-                export KUBECONFIG=./.bluemix/plugins/container-service/clusters/<cluster_name>-<hash>/calicoctl.cfg
-                ```
-                {: pre}
+              ```
+              export KUBECONFIG=./.bluemix/plugins/container-service/clusters/<cluster_name>-<hash>/calicoctl.cfg
+              ```
+              {: pre}
+  
+        
 
 4. Verify that the Calico configuration is working correctly.
     ```sh

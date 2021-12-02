@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-12-01"
 
 keywords: openshift
 
@@ -295,7 +295,7 @@ The following table shows the Kubernetes resource permissions that are granted b
     <td><ul>
         <li>Get basic information about projects that the user has access to.</li>
         <li>Create authorized resources in the projects that the user has access to.</li>
-        <li>For more information, see the <a href="https://docs.openshift.com/container-platform/4.7/authentication/using-rbac.html">{{site.data.keyword.openshiftshort}} docs</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</li></ul></td>
+        <li>For more information, see the <a href="https://docs.openshift.com/container-platform/4.8/authentication/using-rbac.html">{{site.data.keyword.openshiftshort}} docs</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</li></ul></td>
     </tr>
 </tbody>
 </table>
@@ -590,7 +590,7 @@ The following table shows the permissions that are granted by each RBAC role to 
 ## {{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users
 {: #iam_issuer_users}
 
-Users with a service access role to {{site.data.keyword.openshiftlong_notm}} in IAM are given [corresponding user roles in RBAC](#rbac_ref). The RBAC user details include a unique issuer ID, subject identifier claim, and {{site.data.keyword.openshiftshort}} username. These details vary with the {{site.data.keyword.openshiftshort}} version of the cluster. When you update a cluster from a previous version, the details are automatically updated. RBAC usernames are prefixed by `IAM#`, such as in the output of `oc get users`. For more information about how OpenID authentication works, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.7/authentication/identity_providers/configuring-oidc-identity-provider.html){: external}.
+Users with a service access role to {{site.data.keyword.openshiftlong_notm}} in IAM are given [corresponding user roles in RBAC](#rbac_ref). The RBAC user details include a unique issuer ID, subject identifier claim, and {{site.data.keyword.openshiftshort}} username. These details vary with the {{site.data.keyword.openshiftshort}} version of the cluster. When you update a cluster from a previous version, the details are automatically updated. RBAC usernames are prefixed by `IAM#`, such as in the output of `oc get users`. For more information about how OpenID authentication works, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.8/authentication/identity_providers/configuring-oidc-identity-provider.html){: external}.
 {: shortdesc}
 
 You might use this information if you build automation tooling within the cluster that relies on the user details to authenticate with the {{site.data.keyword.openshiftshort}} API server.
