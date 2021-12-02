@@ -889,7 +889,7 @@ subcollection: openshift
 ## OpenShift interactive learning portal
 {: #sitemap_openshift-interactive-learning-portal}
 
-[OpenShift interactive learning portal](https://learn.openshift.com/){: external}
+[OpenShift interactive learning portal](https://developers.redhat.com/learn){: external}
 
 
 ## Katacoda interactive OpenShift tutorials

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-12-01"
+lastupdated: "2021-12-02"
 
 keywords: openshift, networking
 
@@ -34,7 +34,7 @@ To securely expose your apps to external traffic, you can use choose from the fo
 
 :   A Route exposes a service as a hostname in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`. An Ingress controller is deployed by default to your cluster, which enable Routes to be used by external clients. The Ingress controller uses the service selector to find the service and the endpoints that back the service. You can configure the service selector to direct traffic through one Route to multiple services. You can also create either unsecured or secured Routes by using the TLS certificate that is assigned by the Ingress controller for your hostname. Note that the Ingress controller supports only the HTTP and HTTPS protocols.
 
-[{{site.data.keyword.openshiftshort}} Router](/docs/openshift?topic=openshift-openshift-routes-311)
+[{{site.data.keyword.openshiftshort}} Router](/docs/openshift?topic=openshift-routes-311)
 :   <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} version 3.11 clusters**: The {{site.data.keyword.openshiftshort}} Router in the {{site.data.keyword.openshiftshort}} version 3.11 clusters is the same functionality as the {{site.data.keyword.openshiftshort}} Ingress controller in the {{site.data.keyword.openshiftshort}} version 4 clusters. The Router is a HAProxy-based Kubernetes service that manages all incoming traffic for the apps in your cluster by implementing routing rules for the apps. The Router listens for incoming HTTP, or HTTPS service requests, and then forwards requests to the pods for that app only according to the rules defined in the Route resources.The Router processes the Route resources and exposes the services as configrued in those Route resources.
 
 [NodePort](/docs/openshift?topic=openshift-nodeport)

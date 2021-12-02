@@ -2618,7 +2618,7 @@ End of service of {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon
 {{site.data.keyword.openshiftshort}} options
 :   To help you decide whether to use built-in {{site.data.keyword.openshiftshort}} capabilities or integration with {{site.data.keyword.cloud_notm}} services, the following topics are added.
     - [Choosing an image registry solution](/docs/openshift?topic=openshift-registry#openshift_registry_options)
-    - [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#routes-vs-ingress) like router or Ingress
+    - [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#load-balancing-comparison) like router or Ingress
     - [Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options)
 
 New! Single zone location for {{site.data.keyword.openshiftshort}} clusters
