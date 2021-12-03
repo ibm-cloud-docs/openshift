@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-12-02"
+lastupdated: "2021-12-03"
 
 keywords: openshift
 subcollection: openshift
@@ -3503,7 +3503,7 @@ subcollection: openshift
 
     * [Changelog for worker node fix pack 4.8.20_1536_openshift, released 22 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4820_1536)
 
-    * [Changelog for worker node fix pack 4.8.18_1535_openshift, released 17 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4818_1535)
+    * [Changelog for master fix pack 4.8.18_1535_openshift, released 17 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4818_1535)
 
     * [Changelog for worker node fix pack 4.8.18_1533_openshift, released 10 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4818_1533)
 
@@ -3519,7 +3519,7 @@ subcollection: openshift
 
     * [Changelog for worker node fix pack 4.7.37_1540_openshift, released 22 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4737_1540)
 
-    * [Changelog for worker node fix pack 4.7.36_1539_openshift, released 17 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4736_1539)
+    * [Changelog for master fix pack 4.7.36_1539_openshift, released 17 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4736_1539)
 
     * [Changelog for worker node fix pack 4.7.36_1538_openshift, released 10 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4736_1538)
 
@@ -3561,7 +3561,7 @@ subcollection: openshift
 
     * [Changelog for worker node fix pack 4.6.49_1564_openshift, released 22 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4649_1564)
 
-    * [Changelog for worker node fix pack 4.6.47_1563_openshift, released 17 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4647_1563)
+    * [Changelog for master fix pack 4.6.47_1563_openshift, released 17 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4647_1563)
 
     * [Changelog for worker node fix pack 4.6.49_1562_openshift, released 10 November 2021](/docs/openshift?topic=openshift-openshift_changelog#4649_1562)
 
@@ -3629,7 +3629,7 @@ subcollection: openshift
 
     * [Changelog for worker node fix pack 3.11.542_1612_openshift, released 22 November 2021](/docs/openshift?topic=openshift-openshift_changelog#311542_1612_openshift)
 
-    * [Changelog for worker node fix pack 3.11.542_1611_openshift, released 17 November 2021](/docs/openshift?topic=openshift-openshift_changelog#311542_1611)
+    * [Changelog for master fix pack 3.11.542_1611_openshift, released 17 November 2021](/docs/openshift?topic=openshift-openshift_changelog#311542_1611)
 
     * [Changelog for worker node fix pack 3.11.542_1610_openshift, released 10 November 2021](/docs/openshift?topic=openshift-openshift_changelog#311542_1610)
 
