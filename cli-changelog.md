@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-12-03"
+lastupdated: "2021-12-06"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -31,9 +31,9 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
 ## Version 1.0.353
-{: #cli-10347}
+{: #cli-10353}
 
-Version 1.0.353 of the CLI was released on 15 November 2021.
+Version 1.0.353 of the CLI was released on 3 December 2021.
 
 :   Updates the help text in various languages.
 
