@@ -2,7 +2,7 @@
 
 copyright:
  years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-12-06"
 
 keywords: openshift, changelog, version, unsupported, supported, deprecated
 
@@ -399,7 +399,7 @@ The following table shows the changes that are in the master fix pack patch upda
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.16.5 | v3.16.6 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. |
+| Calico | v3.16.5 | v3.16.6 | See the [Calico release notes](https://projectcalico.docs.tigera.io/releases){: external}. |
 | Calico Operator | v1.10.9 | v1.10.10 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.10.10){: external}. |
 | Cluster health image | v1.2.6 | v1.2.8 | Updated to use `Go` version 1.15.7. Updated image to implement additional IBM security controls. |
 | Gateway-enabled cluster controller | 1195 | 1232 | Updated to use `Go` version 1.15.7. |
@@ -563,7 +563,7 @@ The following table shows the changes that are in the master fix pack patch upda
 
 | Component | Previous | Current | Description |
 | --------- | -------- | ------- | ----------- |
-| Calico | v3.16.1 | v3.16.5 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. |
+| Calico | v3.16.1 | v3.16.5 | See the [Calico release notes](https://projectcalico.docs.tigera.io/releases){: external}. |
 | Calico Operator | v1.10.3 | v1.10.9 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.10.9){: external}. In addition, Calico operator metrics are disabled. |
 | Cluster health image | v1.2.2 | v1.2.3 | Added status codes to add-on health messages. Set add-on health state to `critical` and status to `unknown` when cluster health is `critical`. When a cluster has a Kubernetes key management service (KMS) provider enabled and a disabled [Key Protect](/docs/openshift?topic=openshift-encryption#keyprotect) key, the cluster health state is now set to `critical`. Updated image for [DLA-2424-1](https://www.debian.org/lts/security/2020/dla-2424){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.18.10-1 | v1.18.12-1 | Updated to support the Kubernetes 1.18.12 release. Updated image for [DLA-2424-1](https://www.debian.org/lts/security/2020/dla-2424){: external}. |
@@ -626,7 +626,7 @@ The following table shows the changes that are in the `4.5.13_1515_openshift` ve
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.13.3 | v3.16.1 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. In addition, Calico pods in the `calico-system` namespace now set CPU and memory requests. |
+| Calico | v3.13.3 | v3.16.1 | See the [Calico release notes](https://projectcalico.docs.tigera.io/releases){: external}. In addition, Calico pods in the `calico-system` namespace now set CPU and memory requests. |
 | Calico Operator | v1.3.4 | v1.10.3 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.10.3){: external}. |
 | Cluster health image | v1.1.11 | v1.2.1 | When a cluster has a Kubernetes key management service (KMS) provider enabled and a disabled [{{site.data.keyword.keymanagementserviceshort}}](/docs/openshift?topic=openshift-encryption#keyprotect) key, a warning is now returned in the cluster health state. Fixed check to determine if an add-on is unsupported. In addition, updated to use `Go` version 1.15.2. |
 | Cluster master HA configuration | N/A | N/A | Updated configuration to improve availability during cluster master operations. |
@@ -795,7 +795,7 @@ The following table shows the changes that are in the master fix pack patch upda
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.13.3 | v3.13.5 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. |
+| Calico | v3.13.3 | v3.13.5 | See the [Calico release notes](https://projectcalico.docs.tigera.io/releases){: external}. |
 | Calico Operator | v1.3.4 | v1.3.6 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.3.6){: external}. |
 | Cluster health image | v1.1.16 | v1.1.18 | Updated to use `Go` version 1.15.7. Updated image to implement additional IBM security controls. |
 | Gateway-enabled cluster controller | 1195 | 1232 | Updated to use `Go` version 1.15.7. |
@@ -1626,7 +1626,7 @@ The following table shows the changes that are in the master fix pack update `4.
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.12.0 | v3.13.3 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. |
+| Calico | v3.12.0 | v3.13.3 | See the [Calico release notes](https://projectcalico.docs.tigera.io/releases){: external}. |
 | Calico Operator | v1.1.1 | v1.3.4 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.3.4){: external}. |
 | Cluster health image | v1.1.4 | v1.1.5 | Cluster health state now includes Ingress health. |
 | IBM Calico extension | 349 | 353 | Skips creating a Calico host endpoint when no endpoint is needed.|
@@ -1691,7 +1691,7 @@ The following table shows the changes that are in the master fix pack update `4.
 
 | Component | Location | Previous | Current | Description |
 | --------- | -------- | ------- | -------- | ----------- |
-| Calico | Master | v3.8.6 | v3.12.0 | See the [Calico release notes](https://docs.projectcalico.org/release-notes/){: external}. In addition, the Calico configuration was updated to use the [Kubernetes API datastore driver](https://docs.projectcalico.org/getting-started/kubernetes/hardway/the-calico-datastore){: external}. |
+| Calico | Master | v3.8.6 | v3.12.0 | See the [Calico release notes](https://projectcalico.docs.tigera.io/release-notes/){: external}. In addition, the Calico configuration was updated to use the [Kubernetes API datastore driver](https://docs.projectcalico.org/getting-started/kubernetes/hardway/the-calico-datastore){: external}. |
 | Calico operator | Master | N/A | v1.1.1 | **New!:** Added the Calico operator to manage the lifecycle of the Calico installation. See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.1.1){: external}. |
 | CRI-O | Worker | 1.11 | 1.16.4 | See the [CRI-O release notes](https://github.com/cri-o/cri-o/releases/tag/v1.16.4){: external}. |
 | etcd | Master | v3.3.18 | v3.4.3 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.4.3){: external}. |
