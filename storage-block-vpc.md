@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-12-06"
 
 keywords: openshift
 
@@ -642,7 +642,7 @@ Use {{site.data.keyword.keymanagementservicelong}} to create a private root key 
 ## Customizing the default storage settings
 {: #vpc-customize-default}
 
-You can change some of the default PVC settings by using a customized storage class or a Kubernetes secret to create {{site.data.keyword.block_storage_is_short}} with your customized settings.
+You can change some default PVC settings by using a customized storage class or a Kubernetes secret to create {{site.data.keyword.block_storage_is_short}} with your customized settings.
 {: shortdesc}
 
 **What is the benefit of using a secret and specifying my parameters in a customized storage class?**

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-12-02"
+lastupdated: "2021-12-06"
 
 keywords: openshift
 
@@ -194,7 +194,7 @@ Before you begin, [install and configure the Calico CLI, and set the context for
 ## Adding network policies
 {: #adding_network_policies}
 
-In most cases, the default policies don't need to be changed. Only advanced scenarios might require changes. If you find that you must make changes, you can create your own network policies.
+Usually, the default policies don't need to be changed. Only advanced scenarios might require changes. If you find that you must make changes, you can create your own network policies.
 {: shortdesc}
 
 To create Kubernetes network policies, see the [Kubernetes network policy documentation](https://kubernetes.io/docs/concepts/services-networking/network-policies/){: external}.

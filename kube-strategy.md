@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-12-06"
 
 keywords: openshift
 
@@ -272,7 +272,7 @@ To apply labels to worker nodes, [create your worker pool](/docs/openshift?topic
 ### How can I keep my cluster in a supported state?
 {: #updating_kube}
 
-Make sure that your cluster runs a [supported {{site.data.keyword.openshiftshort}} version](/docs/openshift?topic=openshift-openshift_versions) at all times. When a new {{site.data.keyword.openshiftshort}} minor version is released, an older version is shortly deprecated after and then becomes unsupported. For more information, see [Updating the master](/docs/containers?topic=containers-update#master) and [worker nodes](/docs/containers?topic=containers-update#worker_node).
+Make sure that your cluster always runs a [supported {{site.data.keyword.openshiftshort}} version](/docs/openshift?topic=openshift-openshift_versions). When a new {{site.data.keyword.openshiftshort}} minor version is released, an older version is shortly deprecated after and then becomes unsupported. For more information, see [Updating the master](/docs/containers?topic=containers-update#master) and [worker nodes](/docs/containers?topic=containers-update#worker_node).
 
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-12-06"
 
 keywords: openshift, logmet, logs, metrics, audit, events
 
@@ -64,7 +64,7 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
     ```
     {: pre}
 
-3. Create a configuration file that is named `ibmcloud-kube-audit.yaml`. This configuration file creates a log collection service and a deployment that pulls the `icr.io/ibm/ibmcloud-kube-audit-to-logdna` image to create a log collection container.
+3. Create a configuration file named `ibmcloud-kube-audit.yaml`. This configuration file creates a log collection service and a deployment that pulls the `icr.io/ibm/ibmcloud-kube-audit-to-logdna` image to create a log collection container.
     ```yaml
     apiVersion: v1
     kind: List
@@ -185,7 +185,7 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
 
     ```sh
     OK
-    Server:            http://172.21.xxx.xxx
+    Server:            http://172.21.xxx.xxx/api/v1/namespaces/default/services/ibmcloud-kube-audit-service/proxy/post
     ```
     {: screen}
 

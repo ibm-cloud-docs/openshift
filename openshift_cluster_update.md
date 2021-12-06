@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-12-01"
+lastupdated: "2021-12-06"
 
 keywords: openshift, version, upgrade, update
 
@@ -287,7 +287,7 @@ Set up a configmap to perform a rolling update of your classic worker nodes.
     ```
     {: pre}
 
-10. Verify that you don't have duplicate worker nodes. In some cases, older clusters might list duplicate worker nodes with a **`NotReady`** status after an update. To remove duplicates, see [troubleshooting](/docs/containers?topic=containers-cs_duplicate_nodes).
+10. Verify that you don't have duplicate worker nodes. Sometimes, older clusters might list duplicate worker nodes with a **`NotReady`** status after an update. To remove duplicates, see [troubleshooting](/docs/containers?topic=containers-cs_duplicate_nodes).
 
 Next steps:
 - Repeat the update process with other worker pools.
@@ -570,7 +570,7 @@ Yes. {{site.data.keyword.openshiftlong_notm}} provides other plugin-ins and add-
 ### Managing automatic updates for Fluentd
 {: #logging-up}
 
-When you create a logging configuration for a source in your cluster to forward to an external server, a Fluentd component is created in your cluster. In order to change your logging or filter configurations, the Fluentd component must be at the latest version. By default, automatic updates to the component are enabled.
+When you create a logging configuration for a source in your cluster to forward to an external server, a Fluentd component is created in your cluster. To change your logging or filter configurations, the Fluentd component must be at the latest version. By default, automatic updates to the component are enabled.
 {: shortdesc}
 
 As of 14 November 2019, a Fluentd component is created for your cluster only if you [create a logging configuration to forward logs to a syslog server](/docs/containers?topic=containers-health#configuring). If no logging configurations for syslog exist in your cluster, the Fluentd component is removed automatically. If you don't forward logs to syslog and want to ensure that the Fluentd component is removed from your cluster, automatic updates to Fluentd must be enabled.

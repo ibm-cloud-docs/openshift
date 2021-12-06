@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-12-01"
+lastupdated: "2021-12-06"
 
 keywords: openshift, clusters
 
@@ -63,7 +63,7 @@ For security reasons, first log out of the {{site.data.keyword.cloud_notm}} cons
 ### Connecting to the cluster from the CLI
 {: #access_oc_cli}
 
-In most cases, you can use the {{site.data.keyword.openshiftshort}} web console to get the `oc login` token to access your cluster. If you can't or don't want to open the {{site.data.keyword.openshiftshort}} console, choose among the following options to log in to your {{site.data.keyword.openshiftlong_notm}} cluster by using the CLI.
+Usually, you can use the {{site.data.keyword.openshiftshort}} web console to get the `oc login` token to access your cluster. If you can't or don't want to open the {{site.data.keyword.openshiftshort}} console, choose among the following options to log in to your {{site.data.keyword.openshiftlong_notm}} cluster by using the CLI.
 {: shortdesc}
 
 Choose from the following options.

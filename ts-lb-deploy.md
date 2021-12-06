@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-12-06"
 
 keywords: openshift
 
@@ -71,7 +71,7 @@ If you are not using all the subnets in the VLAN, you can reuse subnets on the V
     ```
     {: screen}
 
-4. Verify that the portable IP addresses from the subnet that you added are used for the load balancer's **EXTERNAL-IP**. It might take several minutes for the services to use the portable IP addresses from the newly-added subnet.
+4. Verify that the portable IP addresses from the subnet that you added are used for the load balancer's **EXTERNAL-IP**. It might take several minutes for the services to use the portable IP addresses from the new subnet.
     ```sh
     oc get svc -n kube-system
     ```

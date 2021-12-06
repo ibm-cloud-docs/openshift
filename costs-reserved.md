@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-12-06"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -17,7 +17,7 @@ subcollection: openshift
 # Using reservations to reduce classic worker node costs
 {: #reservations}
 
-When you have consistent computing needs over a time period of at least one year, create a reservation to reduce the costs of worker nodes in your {{site.data.keyword.openshiftlong}} clusters. With a reservation, you reserve virtual worker node instances in a contract for a fixed, predictable, and lower price than on-demand instances.
+When you have consistent computing needs over time of at least one year, create a reservation to reduce the costs of worker nodes in your {{site.data.keyword.openshiftlong}} clusters. With a reservation, you reserve virtual worker node instances in a contract for a fixed, predictable, and lower price than on-demand instances.
 {: shortdesc}
 
 ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Reservations are available for classic infrastructure worker nodes only.
@@ -43,7 +43,7 @@ Review the following diagram for an example scenario of how you might set up you
 
 **Zones**: Because the reservation is created in an {{site.data.keyword.cloud_notm}} multizone region, the reserved worker nodes can be used for clusters in any of the zones. For example, reservations in Washington, DC (US East region) can be used to create classic worker nodes in `wdc04`, `wdc06`, or `wdc07`.
 
-**Reserved worker nodes that are used in the worker pools**: In this scenario, the development and production environments share a reservation that has a mix of contracts that are used for a mix of worker pools and teams. The reservation still has one unused, 3-year term reserved worker node that can be used for other worker pools or to scale up the existing worker pools. If the production environment needs more than one more worker node, you might resize down some of the worker pools in development, create a worker pool that uses on-demand worker nodes, or add more contracts to the reservation. If you are concerned about a development environment using up your production environment resources, consider creating separate reservations for the different environments.
+**Reserved worker nodes that are used in the worker pools**: In this scenario, the development and production environments share a reservation that has a mix of contracts that are used for a mix of worker pools and teams. The reservation still has one unused, 3-year term reserved worker node that can be used for other worker pools or to scale up the existing worker pools. If the production environment needs more than one more worker node, you might resize down some worker pools in development, create a worker pool that uses on-demand worker nodes, or add more contracts to the reservation. If you are concerned about a development environment using up your production environment resources, consider creating separate reservations for the different environments.
 
 ### Reservation usage and lifecycle
 {: #ri-usage-lifecycle}

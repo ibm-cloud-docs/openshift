@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-12-03"
+lastupdated: "2021-12-06"
 
 keywords: openshift
 subcollection: openshift
@@ -995,7 +995,7 @@ subcollection: openshift
 
     * [Scenario: Run internet-facing app workloads in a VPC cluster](/docs/openshift?topic=openshift-plan_clusters#vpc-no-pgw)
 
-    * [Scenario: Extend your on-premises data center to a VPC cluster](/docs/openshift?topic=openshift-plan_clusters#vpc-vpn)
+    * [Extend your on-premises data center to a VPC cluster](/docs/openshift?topic=openshift-plan_clusters#vpc-vpn)
 
 * [Understanding network basics of classic clusters](/docs/openshift?topic=openshift-plan_clusters#plan_basics)
 
@@ -1009,9 +1009,9 @@ subcollection: openshift
 
 * [Example scenarios for classic cluster network setups](/docs/openshift?topic=openshift-plan_clusters#classic-scenarios)
 
-    * [Scenario: Run internet-facing app workloads in a classic cluster](/docs/openshift?topic=openshift-plan_clusters#internet-facing)
+    * [Running internet-facing app workloads in a classic cluster](/docs/openshift?topic=openshift-plan_clusters#internet-facing)
 
-    * [Scenario: Extend your on-premises data center to a classic cluster and add limited public access](/docs/openshift?topic=openshift-plan_clusters#limited-public)
+    * [Extending your on-premises data center to a classic cluster and add limited public access](/docs/openshift?topic=openshift-plan_clusters#limited-public)
 
 [Planning your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters#ha_clusters)
 

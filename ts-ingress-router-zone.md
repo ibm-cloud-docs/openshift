@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-29"
+lastupdated: "2021-12-06"
 
 keywords: openshift
 
@@ -85,7 +85,7 @@ Option 3: If you are not using all the subnets in the VLAN, you can reuse subnet
     ```
     {: screen}
 
-4. Verify that the portable IP addresses from the subnet that you added are used for the Ingress controller in your cluster. It might take several minutes for the services to use the portable IP addresses from the newly-added subnet.
+4. Verify that the portable IP addresses from the subnet that you added are used for the Ingress controller in your cluster. It might take several minutes for the services to use the portable IP addresses from the new subnet.
     * **No Ingress subdomain**: Run `ibmcloud oc cluster get --cluster <cluster>` to verify that the **Ingress Subdomain** is populated.
     * **A Ingress controller does not deploy in a zone**: Run `oc get svc -n openshift-ingress` to verify that the missing Ingress controller is deployed with an external IP address.
 

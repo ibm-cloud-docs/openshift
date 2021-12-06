@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-12-06"
 
 keywords: openshift
 
@@ -125,7 +125,7 @@ Update the Helm chart values to reflect the worker node changes.
     ```
     {: pre}
 
-6. In some cases, you might need to change your on-prem settings and your firewall settings to match the changes you made to the VPN configuration file.
+6. Sometimes, you might need to change your on-prem settings and your firewall settings to match the changes you made to the VPN configuration file.
 
 7. Start the VPN.
     * If the VPN connection is initiated by the cluster (`ipsec.auto` is set to `start`), start the VPN on the on-prem gateway, and then start the VPN on the cluster.
