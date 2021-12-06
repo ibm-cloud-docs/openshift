@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-12-01"
+lastupdated: "2021-12-06"
 
 keywords: openshift, version, update, upgrade
 
@@ -104,7 +104,7 @@ Kubernetes Version: v1.21.2
 ## Release history
 {: #openshift_release_history}
 
-The following table records {{site.data.keyword.openshiftlong_notm}} version release history. You can use this information for planning purposes, such as to estimate general time frames when a certain release might become unsupported.
+The following table records {{site.data.keyword.openshiftlong_notm}} version release history. You can use this information for planning purposes, such as to estimate general times when a certain release might become unsupported.
 {: shortdesc}
 
 **How soon after an OCP release is the version available in {{site.data.keyword.cloud_notm}}?**

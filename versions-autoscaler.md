@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-12-06"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -143,7 +143,7 @@ Review the changes in version `1.0.2_267` of the cluster autoscaler add-on.
 
 - Image tags: `1.17.4-3`, `1.18.3-3`, `1.19.1-3`, and `1.20.0-3`.  
 - Supported cluster versions: 4.3 - 4.6  
-- Includes a bux fix for the `worker replace` command on VPC clusters that caused worker creation to fail.  
+- Includes a bug fix for the `worker replace` command on VPC clusters that caused worker creation to fail.  
 
 ### Changelog for patch update 1.0.2_256, released 19 April 2021 
 {: #102256_ca}

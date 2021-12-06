@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-12-06"
 
 keywords: openshift
 
@@ -37,8 +37,8 @@ The benchmark covers recommendations for master components, etcd, control plane 
 The benchmark recommendations have scoring, levels, result status, and responsibilities as follows.
 
 * **Scoring**
-    * Scored: The overall benchmark score increases or decreases depending on whether or not the  recommendation is met.
-    * Not scored: The overall benchmark score is not impacted, whether or not the recommendation is met.
+    * Scored: The overall benchmark score increases or decreases depending on whether the  recommendation is met.
+    * Not scored: The overall benchmark score is not impacted, whether the recommendation is met.
 * **Levels**
     * Level 1: Practical security measures that can be configured without inhibiting the service.
     * Level 2: More in-depth security measures that might reduce the performance or functionality of a service.

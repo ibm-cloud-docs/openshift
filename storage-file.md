@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-12-06"
 
 keywords: openshift
 
@@ -1442,7 +1442,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 You can create a customized storage class and use the storage class in your PVC.
 {: shortdesc}
 
-{{site.data.keyword.openshiftlong_notm}} provides [pre-defined storage classes](#file_storageclass_reference) to provision {{site.data.keyword.filestorage_short}} with a particular tier and configuration. In some cases, you might want to provision storage with a different configuration that is not covered in the pre-defined storage classes. You can use the examples in this topic to find sample customized storage classes.
+{{site.data.keyword.openshiftlong_notm}} provides [pre-defined storage classes](#file_storageclass_reference) to provision {{site.data.keyword.filestorage_short}} with a particular tier and configuration. Sometimes, you might want to provision storage with a different configuration that is not covered in the pre-defined storage classes. You can use the examples in this topic to find sample customized storage classes.
 
 To create your customized storage class, see [Customizing a storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass). Then, [use your customized storage class in your PVC](#add_file).
 

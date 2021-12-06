@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-12-06"
 
 keywords: openshift
 
@@ -220,7 +220,7 @@ Optional: If you completed the debugging steps and your cluster still does not s
     ```
     {: pre}
 
-4. If your cluster still does not scale after disabling and reenabling the cluster autoscaler,you can edit the `minSize` or `maxSize` parameters in the `iks-ca-configmap`. In some cases,editing the `minSize` and `maxSize` worker parameters successfully restarts the cluster autoscaler.
+4. If your cluster still does not scale after disabling and reenabling the cluster autoscaler,you can edit the `minSize` or `maxSize` parameters in the `iks-ca-configmap`. Sometimes,editing the `minSize` and `maxSize` worker parameters successfully restarts the cluster autoscaler.
     ```sh
     oc edit cm iks-ca-configmap -n kube-system
     ```

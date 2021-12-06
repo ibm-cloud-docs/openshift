@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-12-06"
 
 keywords: openshift
 
@@ -172,7 +172,7 @@ Determine whether your account has access to the IBM Cloud infrastructure portfo
 
 **Does the classic or VPC infrastructure provider for my cluster affect what access I need to the portfolio?**
 
-Access to {{site.data.keyword.cloud_notm}} infrastructure works differently in classic and VPC clusters. Infrastructure resources for classic clusters are created in a separate {{site.data.keyword.cloud_notm}} infrastructure account. In most cases, your Pay-As-You-Go or Subscription account is linked to the {{site.data.keyword.cloud_notm}} infrastructure account so that account owners can access classic {{site.data.keyword.cloud_notm}} infrastructure automatically. To authorize other users to access classic compute, storage, and networking resources, you must assign [classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra).
+Access to {{site.data.keyword.cloud_notm}} infrastructure works differently in classic and VPC clusters. Infrastructure resources for classic clusters are created in a separate {{site.data.keyword.cloud_notm}} infrastructure account. Usually, your Pay-As-You-Go or Subscription account is linked to the {{site.data.keyword.cloud_notm}} infrastructure account so that account owners can access classic {{site.data.keyword.cloud_notm}} infrastructure automatically. To authorize other users to access classic compute, storage, and networking resources, you must assign [classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra).
 
 VPC infrastructure resources are integrated into IAM and as such, you must have the {{site.data.keyword.cloud_notm}} IAM **Administrator** platform access role to the [**VPC Infrastructure** service](/docs/vpc?topic=vpc-iam-getting-started) to create and list VPC resources.
 
@@ -373,9 +373,9 @@ To customize classic infrastructure permissions through the CLI:
     ```
     {: screen}
 
-    Example output if classic infrastructure access is based on manually-set credentials.
+    Example output if classic infrastructure access is based on manually set credentials.
     ```sh
-    ...with infrastructure access set up by manually-set IaaS credentials.
+    ...with infrastructure access set up by manually set IaaS credentials.
     ```
     {: screen}
 

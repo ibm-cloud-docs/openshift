@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-12-06"
 
 keywords: openshift
 
@@ -33,7 +33,7 @@ The expiration dates reported by Ingress secrets are out of sync across namespac
 
 When you run `ibmcloud oc ingress secret ls -c <cluster_name_or_ID>`, you notice that old expiration dates are listed for some certificates.
 
-In some cases, the expiration date that is reported by the secrets in some namespaces in your cluster can become out of sync with the expiration date of secrets for the same certificate in other namespaces. Even though your actual certificate is renewed, a secret in your cluster can show an older expiration date that is not updated to the most recent expiration date for the certificate.
+Sometimes, the expiration date that is reported by the secrets in some namespaces in your cluster can become out of sync with the expiration date of secrets for the same certificate in other namespaces. Even though your actual certificate is renewed, a secret in your cluster can show an older expiration date that is not updated to the most recent expiration date for the certificate.
 {: tsCauses}
 
 However, a secret for this certificate in another namespace might show the correct expiration date.

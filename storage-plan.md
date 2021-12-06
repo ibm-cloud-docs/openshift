@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-12-06"
 
 keywords: openshift
 
@@ -180,7 +180,7 @@ The following image shows the options that you have in {{site.data.keyword.opens
 | Performance | High for read operations. Predictable due to assigned IOPS and size when you use non-SDS machines. |Close to bare metal performance for sequential read and write operations when you use SDS machines. Provides [profiles](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/dynamic-provisioning/#using-dynamic-provisioning){: external} to run high-performance databases. Possibility to create a storage layer with different performance profiles that your app can choose from.| High if deployed to the same data center as your app. |
 | Consistency| Eventual | Strong | Depends on the DBaaS | 
 | Durability | Very high as data slices are dispersed across a cluster of storage
-nodes. Every node stores only a part of the data. | Very high as three copies of your data are maintained at all times. | High | 
+nodes. Every node stores only a part of the data. | Very high as three copies of your data are always maintained. | High | 
 | Resiliency | High as data slices are dispersed across three zones or regions. Medium, when set up in a single zone only. | High when set up with replication across three zones. Medium, when you store data in a single zone only. | Depends on the DBaaS and your setup. |
 | Availability | High due to the distribution across zones or regions. | High when you replicate data across three worker nodes in different zones. | High if you set up multiple instances. |
 | Scalability | Scales automatically | Increase volume capacity by resizing the volume. To increase overall storage layer capacity, you must add worker nodes or remote block storage. Both scenarios require monitoring of capacity by the user. | Scales automatically | 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-12-01"
+lastupdated: "2021-12-06"
 
 keywords: openshift, deploy
 
@@ -347,8 +347,8 @@ Consider the following options to increase availability of your app.
 
 Use deployments and replica sets to deploy your app and its dependencies
 :   A deployment is a Kubernetes resource that you can use to declare all the components of your app and its dependencies. With deployments, you don't have to write down all the steps and instead can focus on your app.
-    When you deploy more than one pod, a replica set is automatically created for your deployments that monitors the pods and assures that the specified number of pods is up and running at all times. When a pod goes down, the replica set replaces the unresponsive pod with a new one.
-    You can use a deployment to define update strategies for your app, including the number of pods that you want to add during a rolling update and the number of pods that can be unavailable at a time. When you perform a rolling update, the deployment checks whether or not the revision is working and stops the rollout when failures are detected.
+    When you deploy more than one pod, a replica set is automatically created for your deployments that monitors the pods and assures that the specified number of pods is up and running. When a pod goes down, the replica set replaces the unresponsive pod with a new one.
+    You can use a deployment to define update strategies for your app, including the number of pods that you want to add during a rolling update and the number of pods that can be unavailable at a time. When you perform a rolling update, the deployment checks whether the revision is working and stops the rollout when failures are detected.
     With deployments, you can concurrently deploy multiple revisions with different flags. For example, you can test a deployment first before you decide to push it to production.
     By using Deployments, you can track any deployed revisions. You can use this history to roll back to a previous version if you encounter that your updates are not working as expected.
 
@@ -483,7 +483,7 @@ You have different options that depend on your cluster type. For more informatio
 - **Cluster that is made private by using Calico**: You can expose your app by using a [NodePort, load balancer, or Ingress service](/docs/containers?topic=containers-cs_network_planning#private_both_vlans). You also must use a Calico preDNAT network policy to block the public node ports.
 - **Private VLAN-only standard cluster**: You can expose your app by using a [NodePort, load balancer, or Ingress service](/docs/containers?topic=containers-cs_network_planning#plan_private_vlan). You also must open the port for the service's private IP address in your firewall.
 
-As you plan how many `Service` objects you need in your cluster, keep in mind that Kubernetes uses `iptables` to handle networking and port forwarding rules. If you run a large number of services in your cluster, such as 5000, performance might be impacted.
+As you plan how many `Service` objects you need in your cluster, keep in mind that Kubernetes uses `iptables` to handle networking and port forwarding rules. If you run many services in your cluster, such as 5000, performance might be impacted.
 
 
 

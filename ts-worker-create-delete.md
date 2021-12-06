@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-12-06"
 
 keywords: openshift
 
@@ -136,8 +136,8 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
         For console and CLI commands to assign these permissions, see [Classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra).
         {: tip}
 
-    2. Make sure that the [infrastructure credentials owner for the API key or the manually-set account has the correct permissions](/docs/openshift?topic=openshift-access-creds#owner_permissions).
-    3. If necessary, you can change the [API key](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset) or [manually-set](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set) infrastructure credentials owner for the region and resource group.
+    2. Make sure that the [infrastructure credentials owner for the API key or the manually set account has the correct permissions](/docs/openshift?topic=openshift-access-creds#owner_permissions).
+    3. If necessary, you can change the [API key](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset) or [manually set](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set) infrastructure credentials owner for the region and resource group.
 3. Test that the changed permissions permit authorized users to perform infrastructure operations for the cluster.
     1. For example, you might try to a delete a worker node.
         ```sh

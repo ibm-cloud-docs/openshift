@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-12-01"
+lastupdated: "2021-12-06"
 
 keywords: openshift, clusters
 
@@ -35,7 +35,7 @@ When you create a cluster with the template, the following resources are created
 
 For more details, review the [workspace in {{site.data.keyword.bpfull_notm}}](https://cloud.ibm.com/schematics/workspaces){: external} if you created the cluster from the UI. Or, if you created the cluster from the CLI, review the [{{site.data.keyword.terraform-provider_full_notm}} template](https://github.com/terraform-ibm-modules/terraform-ibm-cluster/tree/master/examples/secure-roks-cluster){: external}.
 
-The following resources are provisioned by default, but you can customize some of the resources, for example worker node flavor.
+The following resources are provisioned by default, but you can customize some resources, for example worker node flavor.
 
 *   1 Virtual Private Cloud (VPC) instance with the following details:
     *   3 subnets, 1 per zone.
@@ -63,7 +63,7 @@ With the secure cluster template, you can create a cluster from the UI with {{si
     - **Location**: Review the resource group and {{site.data.keyword.cloud_notm}} multizone location where the cluster is created.
     - **Orchestration service**: Review the container platform, version, and entitlement details.
 
-        For the **OCP entitlement**, you can select an entitlement for a worker pool, if you have one. In most cases, leave the value set to **Purchase additional licenses for this worker pool**. If you have an {{site.data.keyword.cloud_notm}} Pak with an {{site.data.keyword.openshiftshort}} entitlement that you want to use, you can select **Apply my Cloud Pak OCP entitlement to this worker pool**. Later, when you configure the worker pool, make sure to select only the flavor and number of worker nodes that your entitlement permits.
+        For the **OCP entitlement**, you can select an entitlement for a worker pool, if you have one. Usually, leave the value set to **Purchase additional licenses for this worker pool**. If you have an {{site.data.keyword.cloud_notm}} Pak with an {{site.data.keyword.openshiftshort}} entitlement that you want to use, you can select **Apply my Cloud Pak OCP entitlement to this worker pool**. Later, when you configure the worker pool, make sure to select only the flavor and number of worker nodes that your entitlement permits.
         {: note}
 
     - **VPC**: Review the subnet IP range for your location. 

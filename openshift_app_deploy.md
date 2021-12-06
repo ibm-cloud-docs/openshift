@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-12-01"
+lastupdated: "2021-12-06"
 
 keywords: kubernetes, openshift
 
@@ -32,7 +32,7 @@ Seeing errors when you deploy your app? {{site.data.keyword.openshiftshort}} has
 ### Deploying apps through the console
 {: #deploy_apps_ui}
 
-You can create apps through various methods in the {{site.data.keyword.openshiftshort}} console by using the **Developer** perspective. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](http://docs.openshift.com/container-platform/4.8/applications/application_life_cycle_management/odc-creating-applications-using-developer-perspective.html){: external}.
+You can create apps through various methods in the {{site.data.keyword.openshiftshort}} console by using the **Developer** perspective. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.8/applications/creating_applications/){: external}.
 {: shortdesc}
 
 1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
@@ -60,7 +60,7 @@ The `new-app` command creates a build configuration and app image from the sourc
 ## Deploying apps to specific worker nodes by using labels
 {: #node_affinity}
 
-When you deploy an app, the app pods indiscriminately deploy to various worker nodes in your cluster. In some cases, you might want to restrict the worker nodes that the app pods to deploy to. For example, you might want app pods to deploy to only worker nodes in a certain worker pool because those worker nodes are on bare metal machines. To designate the worker nodes that app pods must deploy to, add an affinity rule to your app deployment.
+When you deploy an app, the app pods indiscriminately deploy to various worker nodes in your cluster. Sometimes, you might want to restrict the worker nodes that the app pods to deploy to. For example, you might want app pods to deploy to only worker nodes in a certain worker pool because those worker nodes are on bare metal machines. To designate the worker nodes that app pods must deploy to, add an affinity rule to your app deployment.
 {: shortdesc}
 
 Before you begin
@@ -360,7 +360,7 @@ You can deploy IBM Cloud Paks&trade;, licensed software, and other 3rd party int
 You can use the {{site.data.keyword.openshiftshort}} console to manage your apps, deploy apps from the catalog, and access built-in functionality to help you operate your cluster. The {{site.data.keyword.openshiftshort}} console is deployed to your cluster by default, instead of the Kubernetes dashboard as in community Kubernetes clusters.
 {: shortdesc}
 
-For more information about the console, see the [{{site.data.keyword.openshiftshort}} documentation](http://docs.openshift.com/container-platform/4.8/applications/application_life_cycle_management/odc-creating-applications-using-developer-perspective.html){: external}.
+For more information about the console, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.8/applications/creating_applications/){: external}.
 
 ### <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview
 {: #openshift_console4_overview}
