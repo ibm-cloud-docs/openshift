@@ -30,7 +30,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #7dec2021}
 {: release-note}
 
-Istio add-on change log
+Istio add-on
 :   [Version `1.12`](/docs/containers?topic=containers-istio-changelog#112) of the Istio managed add-on is released.
 
 ### 6 December 2021
