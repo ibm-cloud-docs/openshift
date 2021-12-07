@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-12-06"
+lastupdated: "2021-12-07"
 
 keywords: openshift
 
@@ -166,13 +166,13 @@ Before you begin, [install and configure the Calico CLI, and set the context for
 
 2. View all the Calico and Kubernetes network policies that were created for the cluster. This list includes policies that might not be applied to any pods or hosts yet. For a network policy to be enforced, a Kubernetes resource must be found that matches the selector that was defined in the Calico network policy.
 
-    [Network policies](https://docs.projectcalico.org/reference/resources/networkpolicy){: external} are scoped to specific namespaces:
+    [Network policies](https://projectcalico.docs.tigera.io/reference/resources/networkpolicy){: external} are scoped to specific namespaces:
     ```sh
     calicoctl get NetworkPolicy --all-namespaces -o wide
     ```
     {: pre}
 
-    [Global network policies](https://docs.projectcalico.org/reference/resources/globalnetworkpolicy){: external} are not scoped to specific namespaces:
+    [Global network policies](https://projectcalico.docs.tigera.io/reference/resources/globalnetworkpolicy){: external} are not scoped to specific namespaces:
     ```sh
     calicoctl get GlobalNetworkPolicy -o wide
     ```
@@ -201,7 +201,7 @@ To create Kubernetes network policies, see the [Kubernetes network policy docume
 
 To create Calico policies, use the following steps. Before you begin, [install and configure the Calico CLI, and set the context for your cluster to run Calico commands](#cli_install).
 
-1. Define your Calico [network policy](https://docs.projectcalico.org/reference/resources/networkpolicy){: external} or [global network policy](https://docs.projectcalico.org/reference/resources/globalnetworkpolicy){: external} by creating a configuration script (`.yaml`) with Calico v3 policy syntax. These configuration files include the selectors that describe what pods, namespaces, or hosts that these policies apply to. Refer to these [sample Calico policies](https://docs.projectcalico.org/security/tutorials/kubernetes-policy-advanced){: external} to help you create your own.
+1. Define your Calico [network policy](https://projectcalico.docs.tigera.io/reference/resources/networkpolicy){: external} or [global network policy](https://projectcalico.docs.tigera.io/reference/resources/globalnetworkpolicy){: external} by creating a configuration script (`.yaml`) with Calico v3 policy syntax. These configuration files include the selectors that describe what pods, namespaces, or hosts that these policies apply to. Refer to these [sample Calico policies](https://docs.projectcalico.org/security/tutorials/kubernetes-policy-advanced){: external} to help you create your own.
 
 2. Apply the policies to the cluster. If you use a Windows machine, include the `--config=<filepath>/calicoctl.cfg` flag.
     ```sh
@@ -231,7 +231,7 @@ To see how to allow or block source IP addresses, try the [Using Calico network 
 Before you begin, [install and configure the Calico CLI, and set the context for your cluster to run Calico commands](#cli_install).
 
 1. Define a Calico pre-DNAT network policy for ingress (inbound traffic) access to Kubernetes services.
-    * Use [Calico v3 policy syntax](https://docs.projectcalico.org/reference/resources/networkpolicy){: external}.
+    * Use [Calico v3 policy syntax](https://projectcalico.docs.tigera.io/reference/resources/networkpolicy){: external}.
 
         Example resource that blocks traffic to all public node ports
 
