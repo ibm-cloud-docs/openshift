@@ -102,10 +102,6 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
 After you [create a link endpoint](/docs/satellite?topic=satellite-link-location-cloud#link-about) and before you install ODF, create a Kubernetes secret with your link credentials.
 {: shortdesc}
 
-1. Get the details of your `satellite-containersApi` endpoint.
-    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} select the location where you want to deploy ODF.
-    2. Click **Link endpoints**, then click the `satellite-containersApi` endpoint.
-    3. On the endpoint details page, copy the endpoint.
 1. List the secrets in the `kube-system` namespace of your cluster and look for the `storage-secret-store`.
 
     ```sh
@@ -115,7 +111,7 @@ After you [create a link endpoint](/docs/satellite?topic=satellite-link-location
 
 1. If the `storage-secret-store` secret doesn't exist, create it.
 
-    1. Create a `secret.yaml` file that has your IAM API key and the link endpoint you retrieved earlier.
+    1. Create a `secret.yaml` file that has your IAM API key.
 
         ```yaml
         apiVersion: v1
@@ -154,7 +150,6 @@ After you [create a link endpoint](/docs/satellite?topic=satellite-link-location
         type: Opaque
         stringData:
           iam_api_key: "<iam_api_key>" # Enter your IAM API key
-          containers_api_route_private: "<link_endpoint>" # Enter the satellite-containersApi link endpoint that you retrieved earlier.
         ```
         {: codeblock}
 
