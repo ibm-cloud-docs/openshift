@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-12-01"
+lastupdated: "2021-12-07"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc
 
@@ -300,7 +300,7 @@ After you remove ODF from your apps, and remove your ODF storage cluster, you ca
         oc delete pods -n openshift-storage --all --force --grace-period=0
         sleep 20
         ```
-        {: pre}
+        {: codeblock}
 
     * **Classic clusters or {{site.data.keyword.satelliteshort}} clusters with local disks** Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
         ```sh
@@ -330,7 +330,7 @@ After you remove ODF from your apps, and remove your ODF storage cluster, you ca
         sleep 20
         oc delete pods -n local-storage --all --force --grace-period=0
         ```
-        {: pre}
+        {: codeblock}
 
 1. Run the `cleanup.sh` script.
     ```sh

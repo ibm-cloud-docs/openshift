@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-12-07"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
 
@@ -20,9 +20,6 @@ subcollection: openshift
 
 OpenShift Data Foundation is a highly available storage solution that you can use to manage persistent storage for your containerized workloads in {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
-
-Billing for OpenShift Data Foundation begins 15 October 2021. If you want to try the add-on, but avoid incurring costs, make sure to disable the add-on before 15 October 2021.
-{: important}
 
 Installing OpenShift Data Foundation from OperatorHub is not supported on {{site.data.keyword.Bluemix_notm}} clusters. To install ODF, complete the following steps to deploy the cluster add-on.
 {: important}
