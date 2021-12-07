@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-12-06"
+lastupdated: "2021-12-07"
 
 keywords: openshift
 
@@ -25,6 +25,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## December 2021
 {: #release-dec-2021}
+
+### 7 December 2021
+{: #7dec2021}
+{: release-note}
+
+Istio add-on change log
+:   [Version `1.12`](/docs/containers?topic=containers-istio-changelog#112) of the Istio managed add-on is released.
 
 ### 6 December 2021
 
