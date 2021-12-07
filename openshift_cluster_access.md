@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-12-06"
+lastupdated: "2021-12-07"
 
 keywords: openshift, clusters
 
@@ -745,7 +745,7 @@ Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}
         ...
         [Peer]
         PublicKey = <wireguard_client_public_key>
-        AllowedIPs = 192.180.1.160/32
+        AllowedIPs = 192.168.3.217/32
         ```
         {: codeblock}
 
@@ -760,7 +760,7 @@ Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}
 
         [Peer]
         PublicKey = <wireguard_client_public_key>
-        AllowedIPs = 192.180.1.160/32
+        AllowedIPs = 192.168.3.217/32
         ```
         {: codeblock}
 
@@ -789,7 +789,7 @@ Before you begin, make sure that you have an {{site.data.keyword.openshiftshort}
         listening port: 51820
 
         peer: a11aAaA+AaaaaaaaA1aAAaAA1/1AaAaAaaAA1AAA/aA=
-        allowed ips: 192.180.1.160/32
+        allowed ips: 192.168.3.217/32
         ```
         {: screen}
 
