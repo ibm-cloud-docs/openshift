@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-12-06"
+lastupdated: "2021-12-08"
 
 keywords: openshift, logmet, logs, metrics, audit, events
 
@@ -129,7 +129,7 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
     ```
     {: screen}
 
-6. Verify that the `ibmcloud-kube-audit-service` service is deployed in your cluster. In the output, note the **CLUSTER_IP**.
+6. Verify that the `ibmcloud-kube-audit-service` service is deployed in your cluster.
     ```sh
     kubectl get svc -l app=ibmcloud-kube-audit
     ```
@@ -184,8 +184,8 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
     Example output
 
     ```sh
-    OK
-    Server:            http://172.21.xxx.xxx/api/v1/namespaces/default/services/ibmcloud-kube-audit-service/proxy/post
+    Server:   https://127.0.0.1:2040/api/v1/namespaces/default/services/ibmcloud-kube-audit-service/proxy/post   
+    Policy:   default 
     ```
     {: screen}
 
