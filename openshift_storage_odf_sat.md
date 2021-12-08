@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-12-07"
+lastupdated: "2021-12-08"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, satellite
 
@@ -195,18 +195,10 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: screen}
 
-1. Enable the `openshift-data-foundation` add-on. If you want to override any of the default parameters, specify the `--param "key=value"` flag for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
+1. Enable the `openshift-data-foundation` add-on. Then, create your storage cluster by creating a CRD.
 
-    Example command for deploying the ODF add-on only.
     ```sh
     ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version 4.7.0 --param "odfDeploy=false"
-    ```
-    {: pre}
-
-    Example command for deploying the ODF and creating a storage cluster while overriding the default parameter.
-
-    ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "osdSize=500Gi" --param "monStorageClassName=<provider-storage-class>" --param "monStorageClassName=<provider-storage-class>"
     ```
     {: pre}
 
@@ -224,89 +216,8 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: pre}
 
-1. If you enabled the add-on and didn't create a storage cluster, follow the steps to [create an ODF custom resource](#odf-sat-deploy-crd).
+1. [Create an ODF custom resource](#odf-sat-deploy-crd).
 
-## Installing the OpenShift Data Foundation add-on from the console
-{: #install-odf-console-sat}
-
-To install ODF in your cluster, complete the following steps.
-{: shortdesc}
-
-On satellite clusters, you can either dynamically provision storage volumes for ODF using a block storage driver in your cluster, or you can statically provision storage devices for ODF by providing the disk IDs of the volumes on your worker nodes. To use static provisioning, you must first [gather your local block storage device details](#odf-sat-gather).
-{: important}
-
-1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version 4.7.0 of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must install the add-on from the CLI and specify the `--version` flag.
-1. [Review the parameter reference](#odf-sat-param-ref).
-1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to install the add-on.
-1. On the cluster **Overview** page, on the OpenShift Data Foundation card, click **Install**. The **Install ODF** panel opens.
-1. In the **Install ODF** panel, enter the configuration parameters that you want to use for your ODF deployment.
-    - `odfDeploy`: Enter `true` to enable the add-on and deploy the ODF resources to your cluster. Enter `false` to only enable the add-on. If you enter `false`, you must create a [CRD to deploy ODF](#odf-sat-deploy-crd) later.
-    - `monSize`: Enter the size of the {{site.data.keyword.block_storage_is_short}} devices that you want to provision for the ODF [monitor pods](/docs/openshift?topic=openshift-ocs-storage-prep). The default setting `20Gi`.
-    - `monStorageClassName`: **For dynamic provisioning**, enter the name of the storage class that you want to use. For {{site.data.keyword.satelliteshort}} clusters, enter the name of the block storage class that you want to use to dynamically provision volumes. The default storage class is `ibmc-vpc-block-metro-10iops-tier`. For **static provisioning** with local disks on your worker nodes, enter the storage class `localfile`.
-    - `monDevicePaths`: To dynamically provision disks by using a block storage driver in your cluster, leave this parameter as `invalid`. To use local devices on your worker nodes, enter a comma separated list of device IDs. To gather the device IDs for the disk on your worker nodes, see [Gathering your local block storage device details](#odf-sat-gather).
-    - `osdSize`: Enter the size of the {{site.data.keyword.block_storage_is_short}} devices that you want to provision for the [OSD pods](/docs/openshift?topic=openshift-ocs-storage-prep). The default size is `250Gi`.
-     `osdStorageClassName`:  For **dynamic provisioning**, enter the name of the storage class that you want to use. For {{site.data.keyword.satelliteshort}} clusters, enter the name of the block storage class that you want to use to dynamically provision volumes. The default storage class is `ibmc-vpc-block-metro-10iops-tier`. For **static provisioning** with local disks on your worker nodes, enter the storage class `localblock`.
-    - `osdDevicePaths`: To dynamically provision disks by using a block storage driver in your cluster, leave this parameter as `invalid`. To use local devices on your worker nodes, enter a comma separated list of device IDs. To gather the device IDs for the disk on your worker nodes, see [Gathering your local block storage device details](#odf-sat-gather).
-    - `numOfOsd`: Enter the number of block storage device sets that you want to provision for ODF. A `numOfOsd` value of 1 provisions 1 device set which includes 3 block storage devices. The devices are provisioned evenly across your worker nodes. For more information, see [Understanding ODF](/docs/openshift?topic=openshift-ocs-storage-prep).
-    - `workerNodes`: Enter the worker nodes where you want to deploy ODF. You must have at least 3 worker nodes. The default setting is `all`. If you want to deploy ODF only on certain nodes, enter the IP addresses of the worker nodes in a comma-separated list without spaces, for example: `XX.XXX.X.X,XX.XXX.X.X,XX.XXX.X.X`.
-    - `ocsUpgrade`: Enter `true` or `false` to upgrade the ODF operators. For initial deployment, leave this setting as `false`. The default setting is `false`.
-    - `clusterEncryption`: Enter `true` or `false` to enable cluster encryption. The default setting is `false`.
-
-1. After you enter the parameters that you want to use, click **Install**.
-
-1. Wait a few minutes for the add-on deployment to complete. When the deployment is complete, the add-on status is `Normal - Addon Ready`.
-
-1. Verify your installation. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-
-1. Run the following command to verify the ODF pods are running.
-
-    ```sh
-    oc get pods -n openshift-storage
-    ```
-    {: pre}
-
-    Example output
-
-    ```sh
-    NAME                                                              READY   STATUS      RESTARTS   AGE
-    csi-cephfsplugin-bl4rx                                            3/3     Running     0          172m
-    csi-cephfsplugin-lsd8z                                            3/3     Running     0          172m
-    csi-cephfsplugin-provisioner-5b9b669659-5ktts                     6/6     Running     0          172m
-    csi-cephfsplugin-provisioner-5b9b669659-65zbk                     6/6     Running     0          172m
-    csi-cephfsplugin-xlkc2                                            3/3     Running     0          172m
-    csi-rbdplugin-c7tbj                                               3/3     Running     0          172m
-    csi-rbdplugin-fj7q7                                               3/3     Running     0          172m
-    csi-rbdplugin-provisioner-6f87685d6b-fxrpk                        6/6     Running     0          172m
-    csi-rbdplugin-provisioner-6f87685d6b-vb47x                        6/6     Running     0          172m
-    csi-rbdplugin-tc8hp                                               3/3     Running     0          172m
-    noobaa-core-0                                                     1/1     Running     0          163m
-    noobaa-db-pg-0                                                    1/1     Running     0          163m
-    noobaa-default-backing-store-noobaa-pod-c83e2ade                  1/1     Running     0          161m
-    noobaa-endpoint-5b97994bf7-fxknh                                  1/1     Running     0          161m
-    noobaa-operator-556b5db575-f9zbf                                  1/1     Running     0          172m
-    ocs-metrics-exporter-574784d58b-4mbgr                             1/1     Running     0          172m
-    ocs-operator-789c6d7f95-l7682                                     1/1     Running     0          173m
-    rook-ceph-crashcollector-10.241.0.6-676f9548b7-k44tk              1/1     Running     0          170m
-    rook-ceph-crashcollector-10.241.128.5-55565c8679-hf8h4            1/1     Running     0          167m
-    rook-ceph-crashcollector-10.241.64.9-767bc5776d-42njb             1/1     Running     0          169m
-    rook-ceph-mds-ocs-storagecluster-cephfilesystem-a-85dc5665rfdrh   2/2     Running     0          162m
-    rook-ceph-mds-ocs-storagecluster-cephfilesystem-b-68c779dcfknbp   2/2     Running     0          162m
-    rook-ceph-mgr-a-bc7f4cb94-tzrxx                                   2/2     Running     0          165m
-    rook-ceph-mon-a-6f47c4dd55-7mzbp                                  2/2     Running     0          170m
-    rook-ceph-mon-b-cdf99bf6f-b2pg9                                   2/2     Running     0          169m
-    rook-ceph-mon-c-59994fdd9f-b6t5c                                  2/2     Running     0          167m
-    rook-ceph-operator-bdf98d48b-b5rm6                                1/1     Running     0          173m
-    rook-ceph-osd-0-7659d76ff7-fnftm                                  2/2     Running     0          163m
-    rook-ceph-osd-1-b4c7c9487-kngtr                                   2/2     Running     0          163m
-    rook-ceph-osd-2-6c79647d6c-b5kng                                  2/2     Running     0          163m
-    rook-ceph-osd-prepare-ocs-deviceset-0-data-0tjmb9-r5mkj           0/1     Completed   0          165m
-    rook-ceph-osd-prepare-ocs-deviceset-1-data-0kphrw-jgx86           0/1     Completed   0          165m
-    rook-ceph-osd-prepare-ocs-deviceset-2-data-05d74g-6gvpn           0/1     Completed   0          165m
-    rook-ceph-rgw-ocs-storagecluster-cephobjectstore-a-784c848c8qrp   2/2     Running     0          162m
-    ```
-    {: screen}
-
-1. [Deploy an app that uses ODF](/docs/openshift?topic=openshift-odf-deploy-app).
 
 
 ## Gathering your local block storage device details

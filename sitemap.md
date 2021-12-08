@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-12-07"
+lastupdated: "2021-12-08"
 
 keywords: openshift
 subcollection: openshift
@@ -2809,8 +2809,6 @@ subcollection: openshift
 * [Creating a Kubernetes secret that contains your {{site.data.keyword.satelliteshort}} link credentials](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-secret-create)
 
 * [Installing the add-on from the CLI](/docs/openshift?topic=openshift-deploy-odf-sat#install-odf-cli-sat)
-
-* [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-sat#install-odf-console-sat)
 
 * [Gathering your local block storage device details](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-gather)
 
