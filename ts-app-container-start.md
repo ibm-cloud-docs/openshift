@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-12-07"
 
 keywords: openshift
 
@@ -23,12 +23,17 @@ You notice one or more of the following issues:
 {: tsSymptoms}
 
 * Worker nodes are unable to create new pods. The pods deploy successfully to worker nodes, but the containers are stuck in the `ContainerCreating` state.
-* When you run `oc describe pod <pod>` for a pod in the `ContainerCreating` state, you see an event similar to the following.
+* When you run `oc describe pod <pod>` for a pod in the `ContainerCreating` state, you see an event similar to one of the following events.
 
     ```sh
     Failed to create pod sandbox: rpc error: code = Unknown desc = failed to setup network for sandbox "XXX": failed to request 1 IPv4 addresses. IPAM allocated only 0
     ```
     {: screen}
+    
+     ```sh
+    desc = failed to create pod network sandbox ... error adding container to network "k8s-pod-network": cannot allocate new block due to per host block limit
+    ```
+    {: screen}   
 
 * One or more of the `calico-node` pods fail to start on a worker node and are in the `CrashLoopBackOff` state. When you run `kubectl logs -n kube-system <calico-node_pod>`, the last lines of the logs contain the following message.
 

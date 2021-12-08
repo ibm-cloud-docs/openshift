@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-29"
+lastupdated: "2021-12-07"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, satellite
 
@@ -21,9 +21,6 @@ subcollection: openshift
 
 OpenShift Data Foundation is a highly available storage solution that you can use to manage persistent storage for your containerized workloads in {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
-
-Billing for OpenShift Data Foundation begins 15 October 2021. If you want to try the add-on, but avoid incurring costs, make sure to disable the add-on before 15 October 2021.
-{: important}
 
 Installing OpenShift Data Foundation from OperatorHub is not supported on {{site.data.keyword.satelliteshort}} clusters. To install ODF, complete the following steps to deploy the cluster add-on or the {{site.data.keyword.satelliteshort}} configuration template.
 {: important}
@@ -105,10 +102,6 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
 After you [create a link endpoint](/docs/satellite?topic=satellite-link-location-cloud#link-about) and before you install ODF, create a Kubernetes secret with your link credentials.
 {: shortdesc}
 
-1. Get the details of your `satellite-containersApi` endpoint.
-    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} select the location where you want to deploy ODF.
-    2. Click **Link endpoints**, then click the `satellite-containersApi` endpoint.
-    3. On the endpoint details page, copy the endpoint.
 1. List the secrets in the `kube-system` namespace of your cluster and look for the `storage-secret-store`.
 
     ```sh
@@ -118,7 +111,7 @@ After you [create a link endpoint](/docs/satellite?topic=satellite-link-location
 
 1. If the `storage-secret-store` secret doesn't exist, create it.
 
-    1. Create a `secret.yaml` file that has your IAM API key and the link endpoint you retrieved earlier.
+    1. Create a `secret.yaml` file that has your IAM API key.
 
         ```yaml
         apiVersion: v1
@@ -157,7 +150,6 @@ After you [create a link endpoint](/docs/satellite?topic=satellite-link-location
         type: Opaque
         stringData:
           iam_api_key: "<iam_api_key>" # Enter your IAM API key
-          containers_api_route_private: "<link_endpoint>" # Enter the satellite-containersApi link endpoint that you retrieved earlier.
         ```
         {: codeblock}
 
