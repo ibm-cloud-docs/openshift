@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-16"
+lastupdated: "2021-12-09"
 
 keywords: openshift, route, router
 
@@ -35,20 +35,23 @@ View information for version updates to the [{{site.data.keyword.cloud_notm}} HP
 ## Version 4.8.0
 {: #4_8_0}
 
-### Version 4.8.0_997
+### Version 4.8.0_997, released on 16 November 2021
 {: #4_8_0997}
 
-Version 4.8.0_997 of the CLI was released on 16 November 2021.
+Initial release of 4.8.0.
 
 ## Version 4.7.0
 {: #4_7_0}
 
-### Version 4.7.0_985
+### Version 4.7.0_1013, released on 19 November 2021
+{: #4_7_1013}
+
+- [CVE-2021-41771](https://nvd.nist.gov/vuln/detail/CVE-2021-41771){: external}
+- [CVE-2021-41772](https://nvd.nist.gov/vuln/detail/CVE-2021-41772){: external}
+
+### Version 4.7.0_985, released on 16 November 2021
 {: #4_7_0985}
 
-Version 4.7.0_985 of the CLI was released on 16 November 2021.
-
-Updates to address
 - [CVE-2021-22946](https://nvd.nist.gov/vuln/detail/CVE-2021-22946){: external}
 - [CVE-2021-22947](https://nvd.nist.gov/vuln/detail/CVE-2021-22947){: external}
 - [CVE-2021-33928](https://nvd.nist.gov/vuln/detail/CVE-2021-33928){: external}
@@ -56,24 +59,24 @@ Updates to address
 - [CVE-2021-33930](https://nvd.nist.gov/vuln/detail/CVE-2021-33930){: external}
 - [CVE-2021-33938](https://nvd.nist.gov/vuln/detail/CVE-2021-33938){: external}
 
-### Version 4.7.0_854
+### Version 4.7.0_854, released on 7 September 2021
 {: #4_7_0854}
 
-Version 4.7.0_854 of the CLI was released on 7 September 2021.
-
-Updates to address
 - [CVE-2021-3711](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3711){: external}
 - [CVE-2021-3712](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3712){: external}
 
 ## Version 4.6.0
 {: #4_6_0}
 
-### Version 4.6.0_987
+### Version 4.6.0_1012, released on 19 November 2021
+{: #4_7_1012}
+
+- [CVE-2021-41771](https://nvd.nist.gov/vuln/detail/CVE-2021-41771){: external}
+- [CVE-2021-41772](https://nvd.nist.gov/vuln/detail/CVE-2021-41772){: external}
+
+### Version 4.6.0_987, released on 16 November 2021
 {: #4_6_0987}
 
-Version 4.6.0_987 of the CLI was released on 16 November 2021.
-
-Updates to address
 - [CVE-2021-22946](https://nvd.nist.gov/vuln/detail/CVE-2021-22946){: external}
 - [CVE-2021-22947](https://nvd.nist.gov/vuln/detail/CVE-2021-22947){: external}
 - [CVE-2021-33928](https://nvd.nist.gov/vuln/detail/CVE-2021-33928){: external}
@@ -81,38 +84,26 @@ Updates to address
 - [CVE-2021-33930](https://nvd.nist.gov/vuln/detail/CVE-2021-33930){: external}
 - [CVE-2021-33938](https://nvd.nist.gov/vuln/detail/CVE-2021-33938){: external}
 
-### Version 4.6.0_860
+### Version 4.6.0_860, released on 21 September 2021
 {: #4_6_0860}
 
-Version 4.6.0_860 of the CLI was released on 21 September 2021.
-
-Updates to address
 - [CVE-2021-3711](https://nvd.nist.gov/vuln/detail/CVE-2021-3711){: external}
 - [CVE-2021-3712](https://nvd.nist.gov/vuln/detail/CVE-2021-3712){: external}
 
-### Version 4.6.0_838
+### Version 4.6.0_838, released on 23 August 2021
 {: #4_6_0838}
 
-Version 4.6.0_838 of the CLI was released on 23 August 2021.
-
-Updates to address
 - [CVE-2021-36221](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-36221){: external}
 - [CVE-2021-3121](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3121){: external}
 
-### Version 4.6.0_796
+### Version 4.6.0_796, released on 10 August 2021
 {: #4_6_0796}
 
-Version 4.6.0_796 of the CLI was released on 10 August 2021.
-
-Updates to address
 - [CVE-2021-33910](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-33910){: external}
 
-### Version 4.6.0_750
+### Version 4.6.0_750, released on 26 Jul 2021
 {: #4_6_0750}
 
-Version 4.6.0_750 of the CLI was released on 26 Jul 2021.
-
-Updates to address
 - [CVE-2021-27219](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-27219){: external}
 - [CVE-2021-31525](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-31525){: external}
 - [CVE-2021-3516](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3516){: external}
@@ -123,12 +114,9 @@ Updates to address
 - [CVE-2021-3541](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3541){: external}
 - [CVE-2021-3520](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3520){: external}
 
-### Version 4.6.0_696
+### Version 4.6.0_696, released on 02 Jun 2021
 {: #4_6_0696}
 
-Version 4.6.0_696 of the CLI was released on 02 Jun 2021.
-
-Updates to address
 - [CVE-2016-10228](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10228){: external}
 - [CVE-2019-13012](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-13012){: external}
 - [CVE-2019-18276](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-18276){: external}
@@ -172,79 +160,55 @@ Updates to address
 - [RHSA-2021:1679](https://access.redhat.com/errata/RHSA-2021:1679){: external}
 - [RHSA-2021:1702](https://access.redhat.com/errata/RHSA-2021:1702){: external}
 
-### Version 4.6.0_678
+### Version 4.6.0_678, released on 22 Apr 2021
 {: #4_6_0678}
 
-Version 4.6.0_678 of the CLI was released on 22 Apr 2021.
-
-Updates to address
 - `Nettle` vulnerabilities for [CVE-2021-20305](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20305){: external}
 
-### Version 4.6.0_663
+### Version 4.6.0_663, released on 19 Apr 2021
 {: #4_6_0663}
 
-Version 4.6.0_663 of the CLI was released on 19 Apr 2021.
-
-Updates to address
 - [CVE-2021-3121](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3121){: external}
 - [CVE-2021-28851](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-28851){: external}
 - [CVE-2021-28852](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-28852){: external}
 
-### Version 4.6.0_654
+### Version 4.6.0_654, released on 14 Apr 2021
 {: #4_6_0654}
 
-Version 4.6.0_654 of the CLI was released on 14 Apr 2021.
-
-Fixes OpenSSL vulnerabilities for
 - [CVE-2021-3449](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3449){: external}
 - [CVE-2021-3450](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3450){: external}
 
-### Version 4.6.0_646
+### Version 4.6.0_646, released on 30 Mar 2021
 {: #4_6_0646}
 
-Version 4.6.0_646 of the CLI was released on 30 Mar 2021.
-
-Updates the Go version to 1.15.10
 - [CVE-2021-3114](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3114){: external}
 - [CVE-2021-3115](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3115){: external}
 
 ## Version 4.5.0 (Unsupported)
 {: #4_5_0}
 
-Version 4.5.0 is deprecated.
+Version 4.5.0 is unsupported.
 
-### Version 4.5.0_861
+### Version 4.5.0_861, released on 21 September 2021
 {: #4_5_0861}
 
-Version 4.5.0_861 of the CLI was released on 21 September 2021
-
-Updates to address
 - [CVE-2021-3711](https://nvd.nist.gov/vuln/detail/CVE-2021-3711){: external}
 - [CVE-2021-3712](https://nvd.nist.gov/vuln/detail/CVE-2021-3712){: external}
 
-### Version 4.5.0_837
+### Version 4.5.0_837, released on 23 August 2021
 {: #4_5_0837}
 
-Version 4.5.0_837 of the CLI was released on 23 August 2021.
-
-Updates to address
 - [CVE-2021-36221](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-36221){: external}
 - [CVE-2021-3121](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3121){: external}
 
-### Version 4.5.0_790
+### Version 4.5.0_790, released on 10 August 2021
 {: #4_5_0790}
 
-Version 4.5.0_790 of the CLI was released on 10 August 2021.
-
-Updates to address
 - [CVE-2021-33910](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-33910){: external}
 
-### Version 4.5.0_749
+### Version 4.5.0_749, released on 26 Jul 2021
 {: #4_5_0749}
 
-Version 4.5.0_749 of the CLI was released on 26 Jul 2021.
-
-Updates to address
 - [CVE-2021-27219](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-27219){: external}
 - [CVE-2021-31525](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-31525){: external}
 - [CVE-2021-3516](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3516){: external}
@@ -255,12 +219,9 @@ Updates to address
 - [CVE-2021-3541](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3541){: external}
 - [CVE-2021-3520](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3520){: external}
 
-### Version 4.5.0_694
+### Version 4.5.0_694, released on 02 Jun 2021
 {: #4_5_0694}
 
-Version 4.5.0_694 of the CLI was released on 02 Jun 2021.
-
-Updates to address
 - [CVE-2016-10228](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10228){: external}
 - [CVE-2019-13012](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-13012){: external}
 - [CVE-2019-18276](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-18276){: external}
@@ -301,41 +262,27 @@ Updates to address
 - [RHSA-2021:1679](https://access.redhat.com/errata/RHSA-2021:1679){: external}
 - [RHSA-2021:1702](https://access.redhat.com/errata/RHSA-2021:1702){: external}
 
-### Version 4.5.0_679
+### Version 4.5.0_679, released on 22 Apr 2021
 {: #4_5_0679}
 
-Version 4.5.0_679 of the CLI was released on 22 Apr 2021.
-
-Updates to address
 - `Nettle` vulnerabilities for [CVE-2021-20305](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20305){: external}
 
-### Version 4.5.0_662
+### Version 4.5.0_662, released on 19 Apr 2021
 {: #4_5_0662}
 
-Version 4.5.0_662 of the CLI was released on 19 Apr 2021.
-
-Updates to address
 - [CVE-2021-23336](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-23336){: external}
 - [CVE-2021-22890](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-22890){: external}
 
-### Version 4.5.0_655
+### Version 4.5.0_655, released on 14 Apr 2021
 {: #4_5_0655}
 
-Version 4.5.0_655 of the CLI was released on 14 Apr 2021.
-
-Updates to address
 - [CVE-2021-3449](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3449){: external}
 - [CVE-2021-3450](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3450){: external}
 
-### Version 4.5.0_647
+### Version 4.5.0_647, released on 30 Mar 2021
 {: #4_5_0647}
 
-Version 4.5.0_647 of the CLI was released on 30 Mar 2021.
-
-Updates the Go version to 1.15.10
 - [CVE-2021-3114](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3114){: external}
 - [CVE-2021-3115](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3115){: external}
-
-
 
 

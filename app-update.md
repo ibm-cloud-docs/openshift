@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-12-09"
 
 keywords: openshift, red hat, red hat openshift, update, upgrade
 
