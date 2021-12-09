@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-12-01"
+lastupdated: "2021-12-09"
 
 keywords: openshift, route, Ingress controller
 
@@ -147,6 +147,10 @@ After you create a load balancer in front of your Ingress controller, you can us
     {: pre}
 
 7. Continue with the steps in [Exposing apps with {{site.data.keyword.openshiftshort}} routes](#sat-expose-routes) to create routes for your apps.
+
+If you configure an external loadbalancer or VIP to register with the subdomain rather than using the default registration, that loadbalancer 
+needs inbound access to the cluster hosts and the cluster hosts need outbound access to the loadbalancer. 
+{: note}
 
 
 
