@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-12-06"
+lastupdated: "2021-12-09"
 
 keywords: kubernetes, openshift
 
