@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-12-09"
+lastupdated: "2021-12-10"
 
 keywords: openshift, firewall, ips
 
@@ -40,32 +40,24 @@ If corporate network policies prevent access from your local system to public en
     {: pre}
 
 3. Allow access to `containers.cloud.ibm.com` on port 443 in your firewall.
-4. Verify your connection. If access is configured correctly, ships are displayed in the output.
+4. Verify your connection. If access is configured correctly, messages similar to the following are displayed in the output.
     ```sh
-    curl https://containers.cloud.ibm.com/v1/
+    curl https://containers.cloud.ibm.com/global/v1/versions 
+    ```
+    {: pre}
+    
+    Example output
+    ```sh
+    {"kubernetes":[{"major":1,"minor":19,"patch":16,"default":false,"end_of_service":""},{"major":1,"minor":20,"patch":13,"default":false,"end_of_service":""},{"major":1,"minor":21,"patch":7,"default":true,"end_of_service":""},{"major":1,"minor":22,"patch":4,"default":false,"end_of_service":""}],"openshift":[{"major":3,"minor":11,"patch":542,"default":false,"end_of_service":"2022-06-06T12:00:00+0000"},{"major":4,"minor":6,"patch":47,"default":false,"end_of_service":""},{"major":4,"minor":7,"patch":37,"default":false,"end_of_service":""},{"major":4,"minor":8,"patch":21,"default":true,"end_of_service":""}]}
     ```
     {: pre}
 
-    Example output
-
-    ```sh
-                                     )___(
-                              _______/__/_
-                     ___     /===========|   ___
-    ____       __   [\\\]___/____________|__[///]   __
-    \   \_____[\\]__/___________________________\__[//]___
-        \                                                    |
-        \                                                  /
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    ```
-    {: screen}
 
 5. Allow access to the [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) that you plan to use on port 443 in your firewall. The global registry stores IBM-provided public images, and regional registries store your own private or public images. If your firewall is IP-based, you can see which IP addresses are opened when you allow access to the {{site.data.keyword.registrylong_notm}} regional service endpoints by reviewing [this table](/docs/openshift?topic=openshift-firewall#firewall_registry).
 
-6. Verify your connection. The following is an example for the US East and US South regional registry. If access is configured correctly, a message of the day is returned in the output.
+6. Verify your connection. The following is an example for the US East and US South regional registry. If access is configured correctly, a message of the day is returned in the output. Note that if there are no messages, a `204` is returned.
     ```sh
-    curl https://us.icr.io/api/v1/messages
+    curl -i https://us.icr.io/api/v1/messages
     ```
     {: pre}
 
@@ -333,7 +325,6 @@ To permit egress to your cluster from another service, modify that service's fir
 
 2. Add the subnet CIDRs or individual worker node IP addresses to your service's firewall or your on-premises firewall for outbound traffic.
 3. Repeat these steps for each cluster that you want to allow traffic to or from.
-
 
 
 
