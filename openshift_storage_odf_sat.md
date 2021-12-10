@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-12-08"
+lastupdated: "2021-12-10"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, satellite
 
@@ -155,7 +155,7 @@ After you [create a link endpoint](/docs/satellite?topic=satellite-link-location
 
     1. Save and close the file to apply the secret to your cluster.
 
-1. Install OpenShift Data Foundation from the [console](#install-odf-console-sat) or the [CLI](#install-odf-cli-sat).
+1. Install OpenShift Data Foundation by using the [CLI](#install-odf-cli-sat).
 
 
 ## Installing the add-on from the CLI
@@ -292,7 +292,7 @@ Before you install ODF, get the details of the local disks on your worker nodes.
 
 7. Repeat the previous steps for each worker node that you want to use for your OpenShift Data Foundation deployment.
 
-**Next steps** Install ODF by [using the CLI](#install-odf-cli-sat) or the [console](#install-odf-console-sat).
+**Next steps** Install ODF by [using the CLI](#install-odf-cli-sat).
 
 ## Creating your storage cluster
 {: #odf-sat-deploy-crd}
