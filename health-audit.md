@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-12-09"
+lastupdated: "2021-12-13"
 
 keywords: openshift, logmet, logs, metrics, audit, events
 
@@ -252,13 +252,13 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
     ```sh
     NAME                          TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
     ...
-    kube-audit-remote-private-ip  ClusterIP   172.21.xxx.xxx   <none>        80/TCP           1m
+    kube-audit-remote-private-ip  ClusterIP   10.xxx.xx.xxx   <none>        80/TCP           1m
     ```
     {: screen}
 
 4. Create the audit webhook to collect Kubernetes API server event logs. Add the `http://` prefix to the `CLUSTER-IP` of the service that you previously retrieved.
     ```sh
-    ibmcloud oc cluster master audit-webhook set --cluster <cluster_name_or_ID> --remote-server http://172.21.xxx.xxx
+    ibmcloud oc cluster master audit-webhook set --cluster <cluster_name_or_ID> --remote-server http://10.xxx.xx.xxx
     ```
     {: pre}
 
@@ -272,7 +272,7 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
 
     ```sh
     OK
-    Server:            http://172.21.xxx.xxx
+    Server:            http://10.xxx.xx.xxx
     ```
     {: screen}
 
