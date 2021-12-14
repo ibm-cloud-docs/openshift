@@ -524,8 +524,6 @@ subcollection: openshift
 
     * [21 September 2020](/docs/openshift?topic=openshift-iks-release#21sept2020)
 
-    * [14 September 2020](/docs/openshift?topic=openshift-iks-release#14sept2020)
-
     * [3 September 2020](/docs/openshift?topic=openshift-iks-release#03sept2020)
 
 * [August 2020](/docs/openshift?topic=openshift-iks-release#aug20)

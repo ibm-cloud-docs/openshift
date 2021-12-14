@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-12-09"
+lastupdated: "2021-12-14"
 
 keywords: openshift
 
@@ -462,7 +462,7 @@ By default, {{site.data.keyword.openshiftlong_notm}} provides many features for 
 
 3. **Image Vulnerability Scanner**: By default, Vulnerability Advisor scans images that are stored in {{site.data.keyword.registrylong_notm}} to find potential security vulnerabilities. For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).
 
-4. **Network insights with Security Advisor (beta)**: With {{site.data.keyword.cloud_notm}} Security Advisor, you can centralize security insights from {{site.data.keyword.cloud_notm}} services such as Vulnerability Advisor and {{site.data.keyword.cloudcerts_short}}. When you enable Security Advisor in your cluster, you can view reports about suspicious incoming and outgoing network traffic. For more information, see [Network Analytics](/docs/security-advisor?topic=security-advisor-setup-network#setup-network). To install, see [Setting up monitoring of suspicious clients and server IP addresses for a Kubernetes cluster](/docs/security-advisor?topic=security-advisor-setup-network#setup-network).
+4. **Network Insights with Security Advisor (beta)**: With {{site.data.keyword.cloud_notm}} Security Advisor, you can centralize security insights from {{site.data.keyword.cloud_notm}} services such as Vulnerability Advisor and {{site.data.keyword.cloudcerts_short}}. When you enable Security Advisor in your cluster, you can view reports about suspicious incoming and outgoing network traffic. For more information, see [What is Security Insights?](/docs/security-compliance?topic=security-compliance-insights) and [Enabling Network Insights](/docs/security-compliance?topic=security-compliance-setup-network).
 
 5. **{{site.data.keyword.cloudcerts_long_notm}}**: If you want to [expose your app by using a custom domain with TLS](/docs/containers?topic=containers-ingress-types#alb-comm-create), you can store your TLS certificate in {{site.data.keyword.cloudcerts_short}}. Expired or about-to-expire certificates can also be reported in your {{site.data.keyword.security-advisor_short}} dashboard. For more information, see [Getting started with {{site.data.keyword.cloudcerts_short}}](/docs/certificate-manager?topic=certificate-manager-getting-started#getting-started).
 
@@ -503,7 +503,7 @@ Every deployment is based on an image that holds the instructions for how to spi
 
 **Should I use a public or a private registry to store my images?**
 
-Public registries, such as Docker Hub, can be used to get started with Docker images and Kubernetes to create your first containerized app in a cluster. But when it comes to enterprise applications, avoid registries that you don't know or don't trust to protect your cluster from malicious images. Keep your images in a private registry, like the one provided in {{site.data.keyword.registrylong_notm}} or the [internal registry](https://docs.openshift.com/container-platform/4.8/registry/architecture-component-imageregistry.html){: external} that is automatically set up in your {{site.data.keyword.openshiftshort}} cluster, and make sure to control access to the registry and the image content that can be pushed.
+Public registries, such as Docker Hub, can be used to get started with Docker images and Kubernetes to create your first containerized app in a cluster. But when it comes to enterprise applications, avoid registries that you don't know or don't trust to protect your cluster from malicious images. Keep your images in a private registry, like the one provided in {{site.data.keyword.registrylong_notm}} or the [internal registry](https://docs.openshift.com/container-platform/4.8/registry/index.html){: external} that is automatically set up in your {{site.data.keyword.openshiftshort}} cluster, and make sure to control access to the registry and the image content that can be pushed.
 
 **Why is it important to check images against vulnerabilities?**
 
