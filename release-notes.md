@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-12-09"
+lastupdated: "2021-12-14"
 
 keywords: openshift
 
@@ -25,6 +25,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## December 2021
 {: #release-dec-2021}
+
+### 14 December 2021
+{: #14dec2021}
+{: release-note}
+
+
 
 ### 7 December 2021
 {: #7dec2021}
@@ -55,7 +61,7 @@ Worker node fix pack update
 
 
 {{site.data.keyword.openshiftlong_notm}} default version update.
-:   [4.8](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_versions) is now the default version.
+:   [4.8](/docs/openshift?topic=openshift-openshift_versions) is now the default version.
 
 
 ## November 2021
@@ -1641,10 +1647,6 @@ Versions
 :   Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} [`4.4.20_1518_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4420_1518), [`4.3.35_1539_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4335_1539), and [`3.11.272_1567_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311272_1567).
 
 
-
-### 14 September 2020
-{: #14sept2020}
-{: release-note}
 
 Versions
 :   Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} [`4.4.20_1517_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4420_1517), [`4.3.35_1538_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4335_1538), and [`3.11.272_1566_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311272_1566).
