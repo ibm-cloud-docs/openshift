@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-11-29"
+lastupdated: "2021-12-15"
 
 keywords: openshift
 
@@ -39,25 +39,25 @@ You then make the cluster multizone by manually adding zones to your worker pool
 Restart the Ingress controller so that a new VPC load balancer is created, which registers the Ingress controller behind a hostname and forwards traffic to the Ingress controller. Then, update your Ingress subdomain to use the new VPC load balancer hostname.
 {: tsResolve}
 
-1. Delete the `default` Ingress controller. After, the Ingress controller is automatically re-created.
+1. Run the following command to find the VPC load balancer that exposes the Ingress controller. In the output, look for the VPC load balancer name that starts with `kube-crtmgr-<cluster_ID>`.
     ```sh
-    oc delete ingresscontroller default -n openshift-ingress-operator
+    ibmcloud is load-balancers
     ```
     {: pre}
-
-2. Verify that the `default` Ingress controller is re-created.
-    ```sh
-    oc get ingresscontroller -n openshift-ingress-operator
-    ```
-    {: pre}
-
+    
     Example output
-
-    ```sh
-    NAME      AGE
-    default   2m38s
+    
+    ```
+    ID                                          Name                                                         Family        Subnets               Is public   Provision status   Operating status   Resource group
+    r006-d044af9b-92bf-4047-8f77-a7b86efcb923   kube-bsaucubd07dhl66e4tgg-1f4f408ce6d2485499bcbdec0fa2d306   Application   mysubnet-us-south-3   true        active             online             default
     ```
     {: screen}
+
+2. Remove the load balancer and wait for it to be automatically re-created.
+    ```sh
+    ibmcloud is lbd kube-crtmgr-<cluster_ID>
+    ```
+    {: pre}
 
 3. Verify that the new VPC load balancer that exposes the Ingress controller has **Provision status** of `active` and an **Operating status** of `online`. Also, verify that the **Subnets** list now includes subnets for each zone of your cluster.
     ```sh
@@ -119,9 +119,6 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
     mycluster-d84d4d2137685d8446c88eacf59b5038-0000.us-south.containers.appdomain.cloud   1234abcd-us-south.lb.appdomain.cloud   created           cluster-d84d4d2137685d8446c88eacf59b5038-0000   openshift-ingress
     ```
     {: screen}
-
-
-
 
 
 
