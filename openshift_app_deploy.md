@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-12-14"
+lastupdated: "2021-12-16"
 
 keywords: kubernetes, openshift
 
@@ -45,7 +45,7 @@ You can create apps through various methods in the {{site.data.keyword.openshift
 ### Deploying apps through the CLI
 {: #deploy_apps_cli}
 
-To create an app in your {{site.data.keyword.openshiftlong_notm}} cluster, use the `oc new-app` [command](https://docs.openshift.com/container-platform/4.8/cli_reference/openshift_cli/developer-cli-commands.html#new-app){: external}. For example, you might refer to a public GitHub repo, a public GitLab repo with a URL that ends in `.git`, or another local or remote repo. For more information, [try out the tutorial](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app) and review the [{{site.data.keyword.openshiftshort}} documentation]((https://docs.openshift.com/container-platform/4.8/applications/creating_applications/odc-creating-applications-using-developer-perspective.html)){: external}.
+To create an app in your {{site.data.keyword.openshiftlong_notm}} cluster, use the `oc new-app` [command](https://docs.openshift.com/container-platform/4.8/cli_reference/openshift_cli/developer-cli-commands.html#new-app){: external}. For example, you might refer to a public GitHub repo, a public GitLab repo with a URL that ends in `.git`, or another local or remote repo. For more information, [try out the tutorial](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app) and review the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.8/applications/creating_applications/odc-creating-applications-using-developer-perspective.html){: external}.
 {: shortdesc}
 
 ```sh
@@ -55,7 +55,7 @@ oc new-app --name <app_name> https://github.com/<path_to_app_repo> [--context-di
 
 **What does the `new-app` command do?**
 
-The `new-app` command creates a build configuration and app image from the source code, a deployment configuration to deploy the container to pods in your cluster, and a service to expose the app within the cluster. For more information about the build process and other sources besides Git, see the [{{site.data.keyword.openshiftshort}} documentation](http://docs.openshift.com/container-platform/4.8/applications/application_life_cycle_management/creating-applications-using-cli.html){: external}.
+The `new-app` command creates a build configuration and app image from the source code, a deployment configuration to deploy the container to pods in your cluster, and a service to expose the app within the cluster. For more information about the build process and other sources besides Git, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.8/applications/creating_applications/odc-creating-applications-using-developer-perspective.html){: external}.
 
 ## Deploying apps to specific worker nodes by using labels
 {: #node_affinity}
@@ -360,7 +360,7 @@ You can deploy IBM Cloud Paks&trade;, licensed software, and other 3rd party int
 You can use the {{site.data.keyword.openshiftshort}} console to manage your apps, deploy apps from the catalog, and access built-in functionality to help you operate your cluster. The {{site.data.keyword.openshiftshort}} console is deployed to your cluster by default, instead of the Kubernetes dashboard as in community Kubernetes clusters.
 {: shortdesc}
 
-For more information about the console, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.8/applications/creating_applications/){: external}.
+For more information about the console, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.8/web_console/web-console.html){: external}.
 
 ### <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview
 {: #openshift_console4_overview}
