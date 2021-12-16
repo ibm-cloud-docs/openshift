@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-12-14"
+lastupdated: "2021-12-16"
 
 keywords: openshift
 subcollection: openshift
@@ -1913,7 +1913,7 @@ subcollection: openshift
 
 * [Choosing an image registry solution](/docs/openshift?topic=openshift-registry#openshift_registry_options)
 
-* [Storing images in the internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry)
+* [Storing images in the internal registrys](/docs/openshift?topic=openshift-registry#openshift_internal_registry)
 
     * [VPC: Backing up your {{site.data.keyword.openshiftshort}} internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry)
 
