@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-12-09"
+lastupdated: "2021-12-16"
 
 keywords: openshift
 
@@ -2879,7 +2879,7 @@ ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER --worker-pool WORKER_
 
 **Example**:
 ```sh
-ibmcloud oc zone add classic --zone dal10 --cluster my_cluster -w pool1 -w pool2 --private-vlan 2294021
+ibmcloud oc zone add classic --zone dal10 --cluster my_cluster -p pool1 -w pool2 --private-vlan 2294021
 ```
 {: pre}
 
@@ -2922,7 +2922,7 @@ ibmcloud oc zone add vpc-gen2 --zone ZONE --subnet-id VPC_SUBNET_ID --cluster CL
 
 **Example**:
 ```sh
-ibmcloud oc zone add vpc-gen2 --zone us-south-3 --cluster my_cluster -w pool1 -w pool2
+ibmcloud oc zone add vpc-gen2 --zone us-south-3 --cluster my_cluster -p pool1 -w pool2
 ```
 {: pre}
 
@@ -5924,7 +5924,7 @@ Create an {{site.data.keyword.satellitelong_notm}} cluster on your own infrastru
 Before you begin, create a {{site.data.keyword.satelliteshort}} and assign at least 3 hosts to the location for control plane operations. After you create a {{site.data.keyword.satelliteshort}} cluster, assign hosts for the worker nodes. For more information, see [Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli).
 
 ```sh
-ibmcloud oc cluster create satellite --location LOCATION --name NAME --pull-secret SECRET --version VERSION [--enable-admin-agent] [--host-label LABEL ...] [--pod-subnet SUBNET] [-q] [--service-subnet SUBNET] [--workers COUNT] [--zone ZONE]
+ibmcloud oc cluster create satellite --location LOCATION --name NAME --version VERSION [--enable-config-admin] [--host-label LABEL ...] [--pod-subnet SUBNET] [--pull-secret SECRET] [-q] [--service-subnet SUBNET] [--workers COUNT] [--zone ZONE]
 ```
 {: pre}
 
@@ -5938,14 +5938,10 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --pull-secr
 `--name NAME`
 :    Required. Enter a name for your cluster. The name must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer.
 
-`--pull-secret SECRET`
-:    Required. Specify an existing OCP entitlement for the worker nodes in this cluster by providing your [{{site.data.keyword.redhat_full}} account pull secret](https://console.redhat.com/openshift/install/pull-secret){: external}. The cluster also uses this pull secret to download {{site.data.keyword.openshiftshort}} images from your own {{site.data.keyword.redhat_notm}} account.
-     
-
 `--version VERSION`
 :    Required. Enter the {{site.data.keyword.openshiftlong_notm}} version that you want to run in your cluster. For a list of supported versions, run `ibmcloud oc versions`.
 
-`--enable-admin-agent`
+`--enable-admin-config`
 :    Optional. Grant the {{site.data.keyword.satelliteshort}} Config service accounts access to the cluster admin role to manage Kubernetes resources. If you don't grant {{site.data.keyword.satelliteshort}} Config access, you can't later use the {{site.data.keyword.satelliteshort}} Config functionality to view or deploy Kubernetes resources for your clusters. If you want to enable access later, you can [create custom RBAC roles for {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-access).
 
 `--host-label, -hl LABEL`
@@ -5960,6 +5956,10 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --pull-secr
      - `192.168.0.0 - 192.168.254.255`
      - `198.18.0.0 - 198.19.255.255`
      Note that the pod and service subnets can't overlap. The service subnet is in the 172.21.0.0/16 range by default.
+
+`--pull-secret SECRET`
+:    Optional. Specify an existing OCP entitlement for the worker nodes in this cluster by providing your [{{site.data.keyword.redhat_full}} account pull secret](https://console.redhat.com/openshift/install/pull-secret){: external}. The cluster also uses this pull secret to download {{site.data.keyword.openshiftshort}} images from your own {{site.data.keyword.redhat_notm}} account.
+     
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
@@ -6067,7 +6067,7 @@ ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER --worker-pool WORKER_
 
 **Example**:
 ```sh
-ibmcloud oc zone add satellite --zone myzone2 --cluster my_cluster -w pool1 -w pool2
+ibmcloud oc zone add satellite --zone myzone2 --cluster my_cluster -p pool1 -w pool2
 ```
 {: pre}
 
