@@ -236,11 +236,11 @@ To deploy containers that use encrypted images:
             kind: Secret
             type: kp-key
             metadata:
-            name: <secret_name>
-            namespace: image-key-synchronizer
+              name: <secret_name>
+              namespace: image-key-synchronizer
             stringData:
-            rootkeyid: "<root_key_ID>"
-            ciphertext: "<wrapped_private_key_cipertext>"
+              rootkeyid: "<root_key_ID>"
+              ciphertext: "<wrapped_private_key_cipertext>"
             ```
             {: pre}
 
