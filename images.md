@@ -202,7 +202,7 @@ To deploy containers that use encrypted images:
 3. Use `openssl` to generate a private and public RSA key pair.
 
     ```sh
-    openssl genrsa --out myprivatekey.pem
+    openssl genrsa -out myprivatekey.pem
     openssl rsa -in myprivatekey.pem -pubout -out mypubkey.pem
     ```
     {: pre}
