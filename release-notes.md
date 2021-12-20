@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-12-17"
+lastupdated: "2021-12-20"
 
 keywords: openshift
 
@@ -25,6 +25,20 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## December 2021
 {: #release-dec-2021}
+
+
+
+
+### 20 December 2021
+{: #20dec2021}
+{: release-note}
+
+Worker node fix pack update
+:   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.8.24_1539_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4824_1539_openshift), [`4.7.40_1544_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4740_1544_openshift), [`4.6.52_1567_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4652_1567_openshift), and [`3.11.570_1616_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311570_1616_openshift).
+
+
+
+
 
 
 

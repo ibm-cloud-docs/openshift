@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-12-16"
+lastupdated: "2021-12-20"
 
 keywords: openshift, version, update, upgrade
 
@@ -78,7 +78,7 @@ Worker nodes can also run patch versions that are greater than the masters. As u
 {{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.openshiftshort}}. The worker node operating system is Red Hat Enterprise Linux 7.
 
 **Supported versions**:
-* Latest: 4.8 (Kubernetes 1.23.0)
+* Latest: 4.8 (Kubernetes 1.22.4)
 * Default: 4.8 (Kubernetes 1.21)
 * 4.6 (Kubernetes 1.19)
 
