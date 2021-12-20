@@ -3507,7 +3507,7 @@ subcollection: openshift
 
 * [Version 4.8 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-48)
 
-    * [Changelog for worker node fix pack 4.8.24_1539_openshift, released 6 December 2021](/docs/openshift?topic=openshift-openshift_changelog#4824_1539_openshift)
+    * [Changelog for worker node fix pack 4.8.24_1539_openshift, released 20 December 2021](/docs/openshift?topic=openshift-openshift_changelog#4824_1539_openshift)
 
     * [Changelog for master fix pack 4.8.21_1537_openshift, released 7 December 2021](/docs/openshift?topic=openshift-openshift_changelog#4821_1537)
 
@@ -3529,7 +3529,7 @@ subcollection: openshift
 
 * [Version 4.7 change log](/docs/openshift?topic=openshift-openshift_changelog#version-47)
 
-    * [Changelog for worker node fix pack 4.7.40_1544_openshift, released 6 December 2021](/docs/openshift?topic=openshift-openshift_changelog#4740_1544_openshift)
+    * [Changelog for worker node fix pack 4.7.40_1544_openshift, released 20 December 2021](/docs/openshift?topic=openshift-openshift_changelog#4740_1544_openshift)
 
     * [Changelog for master fix pack 4.7.37_1542_openshift, released 7 December 2021](/docs/openshift?topic=openshift-openshift_changelog#4737_1542)
 
@@ -3577,7 +3577,7 @@ subcollection: openshift
 
 * [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
 
-    * [Changelog for worker node fix pack 4.6.52_1567_openshift, released 6 December 2021](/docs/openshift?topic=openshift-openshift_changelog#4652_1567_openshift)
+    * [Changelog for worker node fix pack 4.6.52_1567_openshift, released 20 December 2021](/docs/openshift?topic=openshift-openshift_changelog#4652_1567_openshift)
 
     * [Changelog for master fix pack 4.6.47_1565_openshift, released 7 December 2021](/docs/openshift?topic=openshift-openshift_changelog#4647_1565)
 
@@ -3651,7 +3651,7 @@ subcollection: openshift
 
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
 
-    * [Changelog for worker node fix pack 3.11.570_1616_openshift, released 6 December 2021](/docs/openshift?topic=openshift-openshift_changelog#311570_1616_openshift)
+    * [Changelog for worker node fix pack 3.11.570_1616_openshift, released 20 December 2021](/docs/openshift?topic=openshift-openshift_changelog#311570_1616_openshift)
 
     * [Changelog for master fix pack 3.11.542_1614_openshift, released 7 December 2021](/docs/openshift?topic=openshift-openshift_changelog#311542_1614)
 
