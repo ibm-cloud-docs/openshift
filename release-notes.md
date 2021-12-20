@@ -38,21 +38,9 @@ Worker node fix pack update
 
 
 
-
-
-
-
-### 14 December 2021
-{: #14dec2021}
-{: release-note}
-
-
-
 ### 7 December 2021
 {: #7dec2021}
 {: release-note}
-
-
 
  
 
