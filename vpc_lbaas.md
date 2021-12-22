@@ -149,21 +149,21 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector`
     :    Optional: Annotation to specify a worker node label selector. To identify the worker nodes that receive traffic, you can select one of the supported label selector keys. Note that you can include only one label selector in the annotation, and that the selector must be specified in the `"key=value"` format. If this annotation is not specified, all worker nodes in the same zone as the VPC NLB are configured to receive traffic from the VPC NLB. If specified, this annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation, and any `dedicated: edge` labels on worker nodes are ignored.
-    :    The following keys are permitted:
-             - `ibm-cloud.kubernetes.io/internal-ip`
-             - `ibm-cloud.kubernetes.io/machine-type`
-             - `ibm-cloud.kubernetes.io/os`
-             - `ibm-cloud.kubernetes.io/region`
-             - `ibm-cloud.kubernetes.io/subnet-id`
-             - `ibm-cloud.kubernetes.io/worker-pool-id`
-             - `ibm-cloud.kubernetes.io/worker-pool-name`
-             - `ibm-cloud.kubernetes.io/zone`
-             - `kubernetes.io/arch`
-             - `kubernetes.io/hostname`
-             - `kubernetes.io/os`
-             - `node.kubernetes.io/instance-type`
-             - `topology.kubernetes.io/region`
-             - `topology.kubernetes.io/zone`
+    :    The following keys are permitted.
+    :    - `ibm-cloud.kubernetes.io/internal-ip`
+         - `ibm-cloud.kubernetes.io/machine-type`
+         - `ibm-cloud.kubernetes.io/os`
+         - `ibm-cloud.kubernetes.io/region`
+         - `ibm-cloud.kubernetes.io/subnet-id`
+         - `ibm-cloud.kubernetes.io/worker-pool-id`
+         - `ibm-cloud.kubernetes.io/worker-pool-name`
+         - `ibm-cloud.kubernetes.io/zone`
+         - `kubernetes.io/arch`
+         - `kubernetes.io/hostname`
+         - `kubernetes.io/os`
+         - `node.kubernetes.io/instance-type`
+         - `topology.kubernetes.io/region`
+         - `topology.kubernetes.io/zone`
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets`
     :   Optional: Annotation to specify one or more subnets in one zone that the VPC NLB deploys to. Values can be specified as VPC subnet IDs, VPC subnet names, or VPC subnet CIDRs. If specified, this annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation. Note that you can specify a different subnet in the same VPC than the subnets that your cluster is attached to. In this case, even though the VPC NLB deploys to a different subnet in the same VPC, the VPC NLB can still route traffic to your worker nodes on the cluster subnets in the same zone. To see subnets in all resource groups, run `ibmcloud oc subnets --provider vpc-gen2 --vpc-id <vpc> --zone <zone>`.
@@ -336,20 +336,20 @@ To enable your app to receive private network requests,
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector`
     :   Optional: Annotation to specify a worker node label selector. Within the same zone as the dedicated subnet for the VPC NLB, you can configure specific worker nodes to receive traffic by selecting one of the supported label selector keys. Note that you can include only one label selector in the annotation, and that the selector must be specified in the `"key=value"` format. If this annotation is not specified, all worker nodes in the same zone as the VPC subnet that you specified in the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets` annotation are configured to receive traffic from the VPC NLB. If specified, any `dedicated: edge` labels on worker nodes are ignored.
     :   The following keys are permitted.
-            - `ibm-cloud.kubernetes.io/internal-ip`
-            - `ibm-cloud.kubernetes.io/machine-type`
-            - `ibm-cloud.kubernetes.io/os`
-            - `ibm-cloud.kubernetes.io/region`
-            - `ibm-cloud.kubernetes.io/subnet-id`
-            - `ibm-cloud.kubernetes.io/worker-pool-id`
-            - `ibm-cloud.kubernetes.io/worker-pool-name`
-            - `ibm-cloud.kubernetes.io/zone`
-            - `kubernetes.io/arch`
-            - `kubernetes.io/hostname`
-            - `kubernetes.io/os`
-            - `node.kubernetes.io/instance-type`
-            - `topology.kubernetes.io/region`
-            - `topology.kubernetes.io/zone`
+    :    - `ibm-cloud.kubernetes.io/internal-ip`
+         - `ibm-cloud.kubernetes.io/machine-type`
+         - `ibm-cloud.kubernetes.io/os`
+         - `ibm-cloud.kubernetes.io/region`
+         - `ibm-cloud.kubernetes.io/subnet-id`
+         - `ibm-cloud.kubernetes.io/worker-pool-id`
+         - `ibm-cloud.kubernetes.io/worker-pool-name`
+         - `ibm-cloud.kubernetes.io/zone`
+         - `kubernetes.io/arch`
+         - `kubernetes.io/hostname`
+         - `kubernetes.io/os`
+         - `node.kubernetes.io/instance-type`
+         - `topology.kubernetes.io/region`
+         - `topology.kubernetes.io/zone`
 
     `selector`
     :   The label key (`<selector_key>`) and value (`<selector_value>`) that you used in the `spec.template.metadata.labels` section of your app deployment YAML. This custom label identifies all pods where your app runs to include them in the load balancing.
@@ -561,7 +561,7 @@ To enable your app to receive public or private requests,
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector`
     :   {{site.data.keyword.openshiftshort}} version 4.5 or later: Annotation to specify a worker node label selector. To identify the worker nodes that receive traffic, you can select one of the supported label selector keys. Note that you can include only one label selector in the annotation, and that the selector must be specified in the `"key=value"` format. If this annotation is not specified, all worker nodes in your cluster are configured to receive traffic from the VPC ALB. If specified, this annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation, and any `dedicated: edge` labels on worker nodes are ignored.
     :   The following keys are permitted:
-        - `ibm-cloud.kubernetes.io/internal-ip`
+    :   - `ibm-cloud.kubernetes.io/internal-ip`
         - `ibm-cloud.kubernetes.io/machine-type`
         - `ibm-cloud.kubernetes.io/os`
         - `ibm-cloud.kubernetes.io/region`
