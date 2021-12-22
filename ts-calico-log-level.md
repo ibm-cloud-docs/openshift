@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2021, 2021
-lastupdated: "2021-12-09"
+lastupdated: "2021-12-22"
 
 keywords: openshift
 
@@ -35,8 +35,8 @@ You experience issues with Calico components such as pods that don't deploy or i
 Increase the logging level of Calico components to gather more information about the issue.
 {: tsResolve}
 
-## Increasing the log level for components.
-{: #calico-increase-logging}
+## Increasing the log level for the `calico-typha` components
+{: #calico-increase-logging-typha}
 
 Complete the following steps to increase the log level for the `calico-typha` component.
 
@@ -50,16 +50,19 @@ Complete the following steps to increase the log level for the `calico-typha` co
 
     
 2. Change the `TYPHA_LOGSEVERITYSCREEN` environment variable from `info` to `debug`.
-  ```sh
-        containers:
-      - env:
-        - name: TYPHA_LOGSEVERITYSCREEN
-          value: debug
-  ```
-  {: screen}
+    ```sh
+          containers:
+        - env:
+          - name: TYPHA_LOGSEVERITYSCREEN
+            value: debug
+    ```
+    {: screen}
 
     
 3. Save and close the file to apply the changes and restart the `calico-typha` deployment.
+
+## Increasing the log level for the `calico-cni` components
+{: #calico-increase-logging-cni}
 
 Complete the following steps to increase the log level for the `calico-cni` component.
 
@@ -71,34 +74,38 @@ Complete the following steps to increase the log level for the `calico-cni` comp
     {: pre}
     
 2. Change the `cni_network_config` > `plugins` > `log_level` environment variable to `debug`.
-  ```sh
-    cni_network_config: |-
-    {
-      "name": "k8s-pod-network",
-      "cniVersion": "0.3.1",
-      "plugins": [
-        {
-          "type": "calico",
-          "log_level": "debug",
-  ```
-  {: screen}
+    
+    ```sh
+      cni_network_config: |-
+      {
+        "name": "k8s-pod-network",
+        "cniVersion": "0.3.1",
+        "plugins": [
+          {
+            "type": "calico",
+            "log_level": "debug",
+    ```
+    {: screen}
   
 3. Save and close the file. The change won't take effect until the `calico-node` pods are restarted. 
 
 4. Restart the `calico-node` pods to apply the changes.
     
-      ```sh
-      oc rollout restart daemonset/calico-node -n kube-system
-      ```
-      {: pre}
+    ```sh
+    oc rollout restart daemonset/calico-node -n kube-system
+    ```
+    {: pre}
+      
+    Example output
+      
+    ```sh
+    daemonset.apps/calico-node restarted
+    ```
+    {: screen}
 
-      
-      Example output
-      ```sh
-      daemonset.apps/calico-node restarted
-      ```
-      {: screen}
-      
+## Increasing the log level for the `calico-node` components
+{: #calico-increase-logging-node}
+
 Complete the following steps to increase the log level for the `calico-node` component.
 
 1. Run the following command: 
@@ -109,7 +116,8 @@ Complete the following steps to increase the log level for the `calico-node` com
     {: pre}
     
 
-2. Under the `FELIX_USAGEREPORTINGENABLED` name and value pair (or after any of the `FELIX_*` environment variable name value pairs), add the following entry:
+2. Under the `FELIX_USAGEREPORTINGENABLED` name and value pair (or after any of the `FELIX_*` environment variable name value pairs), add the following entry.
+
     ```sh
     - name: FELIX_LOGSEVERITYSCREEN
       value: Debug
@@ -117,6 +125,9 @@ Complete the following steps to increase the log level for the `calico-node` com
     {: pre}    
     
 3. Save the change. After saving your changes, all the pods in the `calico-node` daemonset complete a rolling update that applies the changes. The `calico-cni` also applies any changes to logging levels in the `kube-system/calico-config` configmap.
+
+## Increasing the log level for the `calico-kube-controllers` components
+{: #calico-increase-logging-kube-controllers}
 
 Complete the following steps to increase the log level for the `calico-kube-controllers` component.
 
@@ -128,12 +139,14 @@ Complete the following steps to increase the log level for the `calico-kube-cont
     {: pre}
     
     
-2. Under the `DATASTORE_TYPE` name and value pair, add the following entry:
+2. Under the `DATASTORE_TYPE` name and value pair, add the following entry.
+
     ```sh
     - name: LOG_LEVEL
       value: debug
     ```
     {: pre}
+    
 3. Save the change. The `calico-kube-controllers` pod restarts and applies the changes.
 
 
@@ -142,17 +155,18 @@ Complete the following steps to increase the log level for the `calico-kube-cont
 
 1. List the pods and nodes in your cluster and make a node of the pod name, pod IP address, and worker note where the issue occured.
 2. Get the logs for the `calico-node` pod on the worker node where the problem occurred.
-  ```sh
-  oc logs calico-typha-aaa11111a-aaaaa -n kube-system
-  ```
-  {: pre}
+
+    ```sh
+    oc logs calico-typha-aaa11111a-aaaaa -n kube-system
+    ```
+    {: pre}
 
 3. Get logs for the `calico-kube-controllers` pod.
-  ```sh
-  oc logs calico-kube-controllers-11aaa11aa1-a1a1a -n kube-system
-  ```
-  {:  pre}
+
+    ```sh
+    oc logs calico-kube-controllers-11aaa11aa1-a1a1a -n kube-system
+    ```
+    {:  pre}
   
 4. Follow the instructions for [Debugging by using oc exec](/docs/openshift?topic=openshift-cs_ssh_worker#kubectl-exec) to get `/var/log/syslog`, `containerd.log`, `kubelet.log`, and `kern.log` from the worker node.
-
 

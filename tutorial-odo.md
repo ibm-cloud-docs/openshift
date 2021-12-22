@@ -2,13 +2,16 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-12-01"
+lastupdated: "2021-12-22"
 
 keywords: openshift, red hat, red hat openshift, odo
 
 subcollection: openshift
 
 content-type: tutorial
+services: containers, openshift
+account-plan: lite
+completion-time: 10m
 
 ---
 
@@ -54,13 +57,13 @@ After you complete the [prerequisites](#odo-prereqs) install the CLI and select 
 
 1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 2. Verify that the `odo` CLI is able to communicate with your cluster by listing the projects in your cluster. The projects represent Kubernetes namespaces where your apps and other microservice resources run.
-    ```
+    ```sh
     odo project list
     ```
     {: pre}
 
 3. Create a project for your Node.js application. An application, or _app_, is a program that is designed for your users. The app represents the overall experience, not an individual microservice. As such, the app might consist of many microservices, each microservice referred to as a _component_ in `odo`.
-    ```
+    ```sh
     odo project create nodejs-test
     ```
     {: pre}
@@ -84,13 +87,13 @@ After you complete the [prerequisites](#odo-prereqs) install the CLI and select 
     {: pre}
 
 5. Create the Node.js component in your project. The `odo` CLI prompts you to select the language, name, and project for your new component.
-    ```
+    ```sh
     odo create
     ```
     {: pre}
 
     1. Select the `nodejs` component, as shown in the following example. Example output
-        ```
+        ```sh
         ? Which devfile component type do you wish to create  [Use arrows to move, type to filter]
         java-openliberty
         java-quarkus
@@ -103,19 +106,19 @@ After you complete the [prerequisites](#odo-prereqs) install the CLI and select 
         {: screen}
 
     2. Enter `nodejs-test` for the component name, as shown in the following example.
-        ```
+        ```sh
         ? What do you wish to name the new devfile component nodejs-test
         ```
         {: screen}
 
     3. Use the **Enter** key or re-enter `nodejs-test` for the project that you previously created, as shown in the following example.
-        ```
+        ```sh
         ? What project do you want the devfile component to be created in nodejs-test
         ```
         {: screen}
 
     4. Optional: If you don't have an existing Node.js app in your directory, you can download a starter kit, as shown in the following example. You can confirm the files are downloaded by running `ls` from the directory.
-        ```
+        ```sh
         ? Do you want to download a starter project Yes
         ```
         {: screen}
@@ -130,7 +133,7 @@ Now that you have a Node.js component that is based on your local code, you can 
 You might wonder, how can the microservice be pushed to the cluster without a Dockerfile to describe the image, a YAML file to describe the Kubernetes resource, a Helm chart, or other similar configuration file? The `odo` command line uses the [{{site.data.keyword.openshiftshort}} `source-to-image`](https://github.com/openshift/source-to-image){: external} capability to generate all the configuration files that are needed to deploy the microservice to the Kubernetes cluster.
 
 1. Push the Node.js component to your cluster. The `odo` CLI validates the Node.js component and packages the component as a deployable container.
-    ```
+    ```sh
     odo push
     ```
     {: pre}
@@ -170,7 +173,7 @@ You might wonder, how can the microservice be pushed to the cluster without a Do
 3. In the output of the previous step, copy the route for your microservice that users can access from outside the cluster.
 
 4. In a web browser, open the URL of your Node.js app. You see your app, or if you used the starter kit, a message similar to the following.
-    ```
+    ```sh
     Hello from Node.js Starter Application!
     ```
     {: screen}
