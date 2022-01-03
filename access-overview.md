@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-12-09"
+lastupdated: "2021-12-22"
 
 keywords: openshift
 
@@ -209,11 +209,11 @@ Kubernetes namespace (projects in {{site.data.keyword.openshiftshort}})
 Resource group
 :   You can organize your account resources in customizable groupings so that you can quickly assign individual or groups of users access to more than one resource at a time. Resource groups can help operators and administrators filter resources to view their current usage, troubleshoot issues, and manage teams.
     
-    A cluster can be created in only one resource group that you can't change afterward. If you create a cluster in the wrong resource group, you must delete the cluster and re-create it in the correct resource group. Furthermore, if you need to use the `ibmcloud oc cluster service bind` command to [integrate with an {{site.data.keyword.cloud_notm}} service](/docs/openshift?topic=openshift-service-binding#bind-services), that service must be in the same resource group as the cluster. Services that don't use resource groups like {{site.data.keyword.registrylong_notm}} or that don't need service binding like {{site.data.keyword.la_full_notm}} work even if the cluster is in a different resource group.
+:   A cluster can be created in only one resource group that you can't change afterward. If you create a cluster in the wrong resource group, you must delete the cluster and re-create it in the correct resource group. Furthermore, if you need to use the `ibmcloud oc cluster service bind` command to [integrate with an {{site.data.keyword.cloud_notm}} service](/docs/openshift?topic=openshift-service-binding#bind-services), that service must be in the same resource group as the cluster. Services that don't use resource groups like {{site.data.keyword.registrylong_notm}} or that don't need service binding like {{site.data.keyword.la_full_notm}} work even if the cluster is in a different resource group.
     {: important}
     
-    - Consider giving clusters unique names across resource groups and regions in your account to avoid naming conflicts. You can't rename a cluster.
-    You can assign users an access role to a resource group to grant permissions as described in the following scenarios. Note that unlike resource instances, you can't grant access to an individual instance within a resource group.
+:   - Consider giving clusters unique names across resource groups and regions in your account to avoid naming conflicts. You can't rename a cluster.
+    - You can assign users an access role to a resource group to grant permissions as described in the following scenarios. Note that unlike resource instances, you can't grant access to an individual instance within a resource group.
     - All {{site.data.keyword.cloud_notm}} IAM services in the resource group, including all clusters in {{site.data.keyword.openshiftlong_notm}} and images in {{site.data.keyword.registrylong_notm}}.</li>
     - All instances within a service in the resource group, such as all the clusters in {{site.data.keyword.openshiftlong_notm}}.</li>
     - All instances within a region of a service in the resource group, such as all the clusters in the <strong>US South</strong> region of {{site.data.keyword.openshiftlong_notm}}.

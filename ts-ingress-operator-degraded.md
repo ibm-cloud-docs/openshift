@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2021
-lastupdated: "2021-11-22"
+  years: 2014, 2022
+lastupdated: "2022-01-03"
 
 keywords: openshift
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 # Why does the DNS Operator show a `RouteHealthDegraded` or `can't marshal DNS message` error?
-{: #ingress_subdomain}
+{: #ingress_subdomain_dns_marshal}
 
 **Infrastructure provider**:
 * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic

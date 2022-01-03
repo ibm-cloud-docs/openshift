@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2021
-lastupdated: "2021-12-09"
+lastupdated: "2021-12-22"
 
 keywords: openshift
 
@@ -58,7 +58,7 @@ When you create a Kubernetes `LoadBalancer` service for an app in your cluster a
 
 The following diagram illustrates how a user accesses an app from the internet through the VPC NLB.
 
-<img src="images/vpc_tutorial_lesson4_lb.png" alt="VPC load balancing for a cluster through the VPC NLB"/>
+![VPC load balancing for a cluster through the VPC NLB.](images/vpc_tutorial_lesson4_lb.png){: caption="Figure 1. VPC load balancing for a cluster through the VPC NLB" caption-side="bottom"}
 
 1. A request to your app uses the external IP address that is assigned to the Kubernetes `LoadBalancer` service by the VPC NLB.
 2. The request is automatically forwarded by the VPC NLB to one of the node ports on the worker node, and then to the private IP address of the app pod.
@@ -79,7 +79,7 @@ By default, when you create a Kubernetes `LoadBalancer` service for an app in yo
 
 The following diagram illustrates how a user accesses an app from the internet through the VPC ALB.
 
-<img src="images/vpc_alb.png" alt="VPC load balancing for a cluster through the VPC ALB"/>
+![VPC load balancing for a cluster through the VPC ALB.](images/vpc_alb.png){: caption="Figure 1. VPC load balancing for a cluster through the VPC ALB" caption-side="bottom"}
 
 1. A request to your app uses the hostname that is assigned to the Kubernetes `LoadBalancer` service by the VPC ALB, such as `1234abcd-<region>.lb.appdomain.cloud`.
 2. The request is automatically forwarded by the VPC ALB to one of the node ports on the worker node, and then to the private IP address of the app pod.
@@ -141,67 +141,50 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     ```
     {: codeblock}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the YAML file components</caption>
-    <col width="25%">
-    <thead>
-    <th>Parameter</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-        <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "nlb"</code></td>
-    <td>Required: Annotation to create a VPC NLB.</td>
-    </tr>
-    <tr>
-        <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type</code></td>
-    <td>Optional: Annotation to specify a service that accepts public requests. If you don't include this annotation, a public VPC NLB is created.</td>
-    </tr>
-    <tr>
-        <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector</code></td>
-    <td>Optional: Annotation to specify a worker node label selector. To identify the worker nodes that receive traffic, you can select one of the supported label selector keys. Note that you can include only one label selector in the annotation, and that the selector must be specified in the <code>"key=value"</code> format. If this annotation is not specified, all worker nodes in the same zone as the VPC NLB are configured to receive traffic from the VPC NLB. If specified, this annotation takes precedence over the <code>service.kubernetes.io/ibm-load-balancer-cloud-provider-zone</code> annotation, and any <code>dedicated: edge</code> labels on worker nodes are ignored.<br><br>The following keys are permitted:
-        <ul><li><code>ibm-cloud.kubernetes.io/internal-ip</code></li>
-        <li><code>ibm-cloud.kubernetes.io/machine-type</code></li>
-        <li><code>ibm-cloud.kubernetes.io/os</code></li>
-        <li><code>ibm-cloud.kubernetes.io/region</code></li>
-        <li><code>ibm-cloud.kubernetes.io/subnet-id</code></li>
-        <li><code>ibm-cloud.kubernetes.io/worker-pool-id</code></li>
-        <li><code>ibm-cloud.kubernetes.io/worker-pool-name</code></li>
-        <li><code>ibm-cloud.kubernetes.io/zone</code></li>
-        <li><code>kubernetes.io/arch</code></li>
-        <li><code>kubernetes.io/hostname</code></li>
-        <li><code>kubernetes.io/os</code></li>
-        <li><code>node.kubernetes.io/instance-type</code></li>
-        <li><code>topology.kubernetes.io/region</code></li>
-        <li><code>topology.kubernetes.io/zone</code></li></ul>
-        </td>
-    </tr>
-    <tr>
-        <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets</code></td>
-    <td>Optional: Annotation to specify one or more subnets in one zone that the VPC NLB deploys to. Values can be specified as VPC subnet IDs, VPC subnet names, or VPC subnet CIDRs. If specified, this annotation takes precedence over the <code>service.kubernetes.io/ibm-load-balancer-cloud-provider-zone</code> annotation. Note that you can specify a different subnet in the same VPC than the subnets that your cluster is attached to. In this case, even though the VPC NLB deploys to a different subnet in the same VPC, the VPC NLB can still route traffic to your worker nodes on the cluster subnets in the same zone. To see subnets in all resource groups, run <code>ibmcloud oc subnets --provider vpc-gen2 --vpc-id &lt;vpc&gt; --zone &lt;zone&gt;</code>.</td>
-    </tr>
-    <tr>
-        <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-zone</code></td>
-    <td>Optional: Annotation to specify a VPC zone that your cluster is attached to. The VPC NLB is deployed to the same subnet in that zone that your worker nodes are connected to. Because the VPC NLB is single-zone, only worker nodes in your cluster in this zone are configured to receive traffic.
-    <p>To see zones, run <code>ibmcloud oc zone ls --provider vpc-gen2</code>.If you later change this annotation to a different zone, the VPC NLB is not moved to the new zone.</br></br>Note that if you don't specify this annotation or the <code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets</code> annotation, the VPC NLB is deployed to the most optimal zone. For example, the VPC NLB is deployed only to zones in which worker nodes exist and are in the <code>Ready</code> state.</p></td>
-    </tr>
-    <tr>
-        <td><code>selector</code></td>
-    <td>The label key (&lt;selector_key&gt;) and value (&lt;selector_value&gt;) that you used in the <code>spec.template.metadata.labels</code> section of your app deployment YAML. This custom label identifies all pods where your app runs to include them in the load balancing.</td>
-    </tr>
-    <tr>
-        <td><code>port</code></td>
-    <td>The port that the service listens on.</td>
-    </tr>
-    <tr>
-        <td><code>targetPort</code></td>
-    <td>Optional: The port to which the service directs traffic.</td>
-    </tr>
-    <tr>
-        <td><code>externalTrafficPolicy: Local</code></td>
-    <td><ul><li>Set to <code>Local</code> to preserve the source IP address of client requests to your apps. You must ensure that an app pod exists on each worker node in the zone that the VPC NLB deploys to, such as by using a DaemonSet.</li><li>If <code>Cluster</code> is set, DSR is implemented only from the worker node that the VPC NLB initially forwards the incoming request to. Once the incoming request arrives, the request is forwarded to a worker node that contains the app pod. The response from the app pod is sent to the original worker node, and that worker node uses DSR to send the response directly back to the client, bypassing the VPC NLB.</li></ul></td>
-    </tr>
-    </tbody></table>
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "nlb"`
+    :    Required: Annotation to create a VPC NLB.
+    
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type`
+    :    Optional: Annotation to specify a service that accepts public requests. If you don't include this annotation, a public VPC NLB is created. 
+    
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector`
+    :    Optional: Annotation to specify a worker node label selector. To identify the worker nodes that receive traffic, you can select one of the supported label selector keys. Note that you can include only one label selector in the annotation, and that the selector must be specified in the `"key=value"` format. If this annotation is not specified, all worker nodes in the same zone as the VPC NLB are configured to receive traffic from the VPC NLB. If specified, this annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation, and any `dedicated: edge` labels on worker nodes are ignored.
+    :    The following keys are permitted.
+    :    - `ibm-cloud.kubernetes.io/internal-ip`
+         - `ibm-cloud.kubernetes.io/machine-type`
+         - `ibm-cloud.kubernetes.io/os`
+         - `ibm-cloud.kubernetes.io/region`
+         - `ibm-cloud.kubernetes.io/subnet-id`
+         - `ibm-cloud.kubernetes.io/worker-pool-id`
+         - `ibm-cloud.kubernetes.io/worker-pool-name`
+         - `ibm-cloud.kubernetes.io/zone`
+         - `kubernetes.io/arch`
+         - `kubernetes.io/hostname`
+         - `kubernetes.io/os`
+         - `node.kubernetes.io/instance-type`
+         - `topology.kubernetes.io/region`
+         - `topology.kubernetes.io/zone`
+
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets`
+    :   Optional: Annotation to specify one or more subnets in one zone that the VPC NLB deploys to. Values can be specified as VPC subnet IDs, VPC subnet names, or VPC subnet CIDRs. If specified, this annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation. Note that you can specify a different subnet in the same VPC than the subnets that your cluster is attached to. In this case, even though the VPC NLB deploys to a different subnet in the same VPC, the VPC NLB can still route traffic to your worker nodes on the cluster subnets in the same zone. To see subnets in all resource groups, run `ibmcloud oc subnets --provider vpc-gen2 --vpc-id <vpc> --zone <zone>`.
+
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone`
+    :   Optional: Annotation to specify a VPC zone that your cluster is attached to. The VPC NLB is deployed to the same subnet in that zone that your worker nodes are connected to. Because the VPC NLB is single-zone, only worker nodes in your cluster in this zone are configured to receive traffic.
+    :   To see zones, run `ibmcloud oc zone ls --provider vpc-gen2`. If you later change this annotation to a different zone, the VPC NLB is not moved to the new zone.
+    :   Note that if you don't specify this annotation or the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets` annotation, the VPC NLB is deployed to the most optimal zone. For example, the VPC NLB is deployed only to zones in which worker nodes exist and are in the `Ready` state.
+    
+    `selector`
+    :   The label key (<selector_key>) and value (<selector_value>) that you used in the `spec.template.metadata.labels` section of your app deployment YAML. This custom label identifies all pods where your app runs to include them in the load balancing.
+
+    `port`
+    :   The port that the service listens on.
+    
+    `targetPort`
+    :   Optional: The port to which the service directs traffic.
+    
+    `externalTrafficPolicy: Local`
+    :   Set to `Local` to preserve the source IP address of client requests to your apps. You must ensure that an app pod exists on each worker node in the zone that the VPC NLB deploys to, such as by using a DaemonSet.
+    :   If `Cluster` is set, DSR is implemented only from the worker node that the VPC NLB initially forwards the incoming request to. Once the incoming request arrives, the request is forwarded to a worker node that contains the app pod. The response from the app pod is sent to the original worker node, and that worker node uses DSR to send the response directly back to the client, bypassing the VPC NLB.
 
 3. Create the Kubernetes `LoadBalancer` service in your cluster.
     ```sh
@@ -260,7 +243,7 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     {: pre}
 
     In the following example CLI output, the VPC NLB that is named `kube-bh077ne10vqpekt0domg-046e0f754d624dca8b287a033d55f96e` is created for the Kubernetes `LoadBalancer` service:
-    ```
+    ```sh
     ID                                     Name                                                         Created          Host Name                                  Is Public   Listeners                               Operating Status   Pools                                   Private IPs              Provision Status   Public IPs                    Subnets                                Resource Group
     06496f64-a689-4693-ba23-320959b7b677   kube-bh077ne10vqpekt0domg-046e0f754d624dca8b287a033d55f96e   8 minutes ago    1234abcd-us-south.lb.appdomain.cloud       yes         95482dcf-6b9b-4c6a-be54-04d3c46cf017    online             717f2122-5431-403c-b21d-630a12fc3a5a    10.241.0.7               active             169.63.99.184                 c6540331-1c1c-40f4-9c35-aa42a98fe0d9   00809211b934565df546a95f86160f62
     ```
@@ -279,20 +262,19 @@ Do not delete the subnets that you attached to your cluster during cluster creat
 Expose your app to private network traffic by setting up a Kubernetes `LoadBalancer` service in each zone of your cluster. When you create the Kubernetes `LoadBalancer` service, a private Network Load Balancer for VPC (VPC NLB) that routes requests to your app is automatically created for you in your VPC outside of your cluster.
 {: shortdesc}
 
-**Before you begin**:
-* VPC NLBs can be created only in VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later.
-* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC NLB.
-* Connect to your VPC private network, such as through a [VPC VPN connection](/docs/containers?topic=containers-vpc-vpnaas).
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-* To view VPC NLBs, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
+Before you begin
+- VPC NLBs can be created only in VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later.
+- Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC NLB.
+- Connect to your VPC private network, such as through a [VPC VPN connection](/docs/containers?topic=containers-vpc-vpnaas).
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- To view VPC NLBs, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
     ```sh
     ibmcloud plugin install infrastructure-service
     ```
     {: pre}
 
-</br>
 
-**To enable your app to receive private network requests:**
+To enable your app to receive private network requests,
 
 1. Create a VPC subnet that is dedicated to your VPC NLB. This subnet must exist in the same VPC and location as your cluster, but can't be attached to your cluster or any worker nodes.
     1. From the [VPC subnet dashboard](https://cloud.ibm.com/vpc/network/subnets){: external}, click **New subnet**.
@@ -342,62 +324,45 @@ Expose your app to private network traffic by setting up a Kubernetes `LoadBalan
     ```
     {: codeblock}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the YAML file components</caption>
-    <col width="25%">
-    <thead>
-    <th>Parameter</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-        <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "nlb"</code></td>
-    <td>Required: Annotation to create a VPC NLB.</td>
-    </tr>
-    <tr>
-        <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: "private"</code></td>
-    <td>Required: Annotation to specify a service that accepts private requests.</td>
-    </tr>
-    <tr>
-        <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets</code></td>
-    <td>Required: Annotation to specify the dedicated subnet that the VPC NLB deploys to. The value can be specified as a VPC subnet ID, VPC subnet name, or VPC subnet CIDR. You must specify only one subnet. The subnet must exist in the same VPC as your cluster and in a zone where your cluster has worker nodes, but no worker nodes can be attached to this subnet. The worker nodes that exist in the same zone as this subnet are configured to receive traffic from the VPC NLB. To see subnets in all resource groups, run <code>ibmcloud oc subnets --provider vpc-gen2 --vpc-id &lt;vpc&gt; --zone &lt;zone&gt;</code>.</td>
-    </tr>
-    <tr>
-        <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector</code></td>
-    <td>Optional: Annotation to specify a worker node label selector. Within the same zone as the dedicated subnet for the VPC NLB, you can configure specific worker nodes to receive traffic by selecting one of the supported label selector keys. Note that you can include only one label selector in the annotation, and that the selector must be specified in the <code>"key=value"</code> format. If this annotation is not specified, all worker nodes in the same zone as the VPC subnet that you specified in the <code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets</code> annotation are configured to receive traffic from the VPC NLB. If specified, any <code>dedicated: edge</code> labels on worker nodes are ignored.<br><br>The following keys are permitted:
-        <ul><li><code>ibm-cloud.kubernetes.io/internal-ip</code></li>
-        <li><code>ibm-cloud.kubernetes.io/machine-type</code></li>
-        <li><code>ibm-cloud.kubernetes.io/os</code></li>
-        <li><code>ibm-cloud.kubernetes.io/region</code></li>
-        <li><code>ibm-cloud.kubernetes.io/subnet-id</code></li>
-        <li><code>ibm-cloud.kubernetes.io/worker-pool-id</code></li>
-        <li><code>ibm-cloud.kubernetes.io/worker-pool-name</code></li>
-        <li><code>ibm-cloud.kubernetes.io/zone</code></li>
-        <li><code>kubernetes.io/arch</code></li>
-        <li><code>kubernetes.io/hostname</code></li>
-        <li><code>kubernetes.io/os</code></li>
-        <li><code>node.kubernetes.io/instance-type</code></li>
-        <li><code>topology.kubernetes.io/region</code></li>
-        <li><code>topology.kubernetes.io/zone</code></li></ul>
-        </td>
-    </tr>
-    <tr>
-        <td><code>selector</code></td>
-    <td>The label key (&lt;selector_key&gt;) and value (&lt;selector_value&gt;) that you used in the <code>spec.template.metadata.labels</code> section of your app deployment YAML. This custom label identifies all pods where your app runs to include them in the load balancing.</td>
-    </tr>
-    <tr>
-        <td><code>port</code></td>
-    <td>The port that the service listens on.</td>
-    </tr>
-    <tr>
-        <td><code>targetPort</code></td>
-    <td>Optional: The port to which the service directs traffic.</td>
-    </tr>
-    <tr>
-        <td><code>externalTrafficPolicy: Local</code></td>
-    <td><ul><li>Set to <code>Local</code> to preserve the source IP address of client requests to your apps. You must ensure that an app pod exists on each worker node in the zone that the VPC NLB deploys to, such as by using a DaemonSet, and the source of requests to your apps must exist outside of the cluster.</li><li>If <code>Cluster</code> is set, DSR is implemented only from the worker node that the VPC NLB initially forwards the incoming request to. Once the incoming request arrives, the request is forwarded to a worker node that contains the app pod. The response from the app pod is sent to the original worker node, and that worker node uses DSR to send the response directly back to the client, bypassing the VPC NLB.</li></ul></td>
-    </tr>
-    </tbody></table>
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "nlb"`
+    :   Required: Annotation to create a VPC NLB.
+    
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: "private"`
+    :   Required: Annotation to specify a service that accepts private requests.
+    
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets`
+    :   Required: Annotation to specify the dedicated subnet that the VPC NLB deploys to. The value can be specified as a VPC subnet ID, VPC subnet name, or VPC subnet CIDR. You must specify only one subnet. The subnet must exist in the same VPC as your cluster and in a zone where your cluster has worker nodes, but no worker nodes can be attached to this subnet. The worker nodes that exist in the same zone as this subnet are configured to receive traffic from the VPC NLB. To see subnets in all resource groups, run `ibmcloud oc subnets --provider vpc-gen2 --vpc-id <vpc> --zone <zone>`.
+
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector`
+    :   Optional: Annotation to specify a worker node label selector. Within the same zone as the dedicated subnet for the VPC NLB, you can configure specific worker nodes to receive traffic by selecting one of the supported label selector keys. Note that you can include only one label selector in the annotation, and that the selector must be specified in the `"key=value"` format. If this annotation is not specified, all worker nodes in the same zone as the VPC subnet that you specified in the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets` annotation are configured to receive traffic from the VPC NLB. If specified, any `dedicated: edge` labels on worker nodes are ignored.
+    :   The following keys are permitted.
+    :    - `ibm-cloud.kubernetes.io/internal-ip`
+         - `ibm-cloud.kubernetes.io/machine-type`
+         - `ibm-cloud.kubernetes.io/os`
+         - `ibm-cloud.kubernetes.io/region`
+         - `ibm-cloud.kubernetes.io/subnet-id`
+         - `ibm-cloud.kubernetes.io/worker-pool-id`
+         - `ibm-cloud.kubernetes.io/worker-pool-name`
+         - `ibm-cloud.kubernetes.io/zone`
+         - `kubernetes.io/arch`
+         - `kubernetes.io/hostname`
+         - `kubernetes.io/os`
+         - `node.kubernetes.io/instance-type`
+         - `topology.kubernetes.io/region`
+         - `topology.kubernetes.io/zone`
+
+    `selector`
+    :   The label key (`<selector_key>`) and value (`<selector_value>`) that you used in the `spec.template.metadata.labels` section of your app deployment YAML. This custom label identifies all pods where your app runs to include them in the load balancing.
+    
+    `port`
+     :   The port that the service listens on.
+
+    `targetPort`
+    :   Optional: The port to which the service directs traffic.
+
+    `externalTrafficPolicy: Local`
+    :   Set to `Local` to preserve the source IP address of client requests to your apps. You must ensure that an app pod exists on each worker node in the zone that the VPC NLB deploys to, such as by using a DaemonSet, and the source of requests to your apps must exist outside of the cluster.
+    :   If `Cluster` is set, DSR is implemented only from the worker node that the VPC NLB initially forwards the incoming request to. Once the incoming request arrives, the request is forwarded to a worker node that contains the app pod. The response from the app pod is sent to the original worker node, and that worker node uses DSR to send the response directly back to the client, bypassing the VPC NLB.
 
 5. Create the Kubernetes `LoadBalancer` service in your cluster.
     ```sh
@@ -477,26 +442,27 @@ For example, say that you have a multizone cluster, and run replicas of your app
 After you create a DNS subdomain for VPC NLBs, you can't use `nlb-dns health-monitor` commands to create a custom health check. Instead, the default VPC health check is used. For more information, see the [VPC documentation](/docs/vpc?topic=vpc-nlb-health-checks).
 {: note}
 
-**Before you begin:**
-* [Create one VPC NLB](#setup_vpc_nlb) per zone for your app. Ensure that you define an HTTPS port in your Kubernetes `LoadBalancer` service that configures the VPC NLB.
-* To use the SSL certificate to access your app via HTTPS, your app must be able to terminate TLS connections.
+Before you begin
 
-**To register VPC NLB IP addresses with a DNS subdomain**:
+- [Create one VPC NLB](#setup_vpc_nlb) per zone for your app. Ensure that you define an HTTPS port in your Kubernetes `LoadBalancer` service that configures the VPC NLB.
+- To use the SSL certificate to access your app via HTTPS, your app must be able to terminate TLS connections.
+
+To register VPC NLB IP addresses with a DNS subdomain,
 
 1. Retrieve the external IP address of your load balancer.
 
-```sh
-oc get svc -o wide
-```
-{: pre}
+    ```sh
+    oc get svc -o wide
+    ```
+    {: pre}
 
-Example output
-```
-NAME                      TYPE           CLUSTER-IP       EXTERNAL-IP       PORT(S)            AGE      SELECTOR
-...
-myapp-vpc-nlb-jp-tok-3    LoadBalancer   172.21.xxx.xxx   169.xx.xxx.xx     8080:30532/TCP     1d       run=webserver
-```
-{: screen}
+    Example output
+    ```sh
+    NAME                      TYPE           CLUSTER-IP       EXTERNAL-IP       PORT(S)            AGE      SELECTOR
+    ...
+    myapp-vpc-nlb-jp-tok-3    LoadBalancer   172.21.xxx.xxx   169.xx.xxx.xx     8080:30532/TCP     1d       run=webserver
+    ```
+    {: screen}
 
 2. Create a custom or IBM-provided DNS subdomain for the IP address.
 
@@ -511,6 +477,7 @@ myapp-vpc-nlb-jp-tok-3    LoadBalancer   172.21.xxx.xxx   169.xx.xxx.xx     8080
             ibmcloud oc nlb-dns create vpc-gen2 --type public --cluster <cluster_name_or_id> --ip <vpc_nlb1_ip> --ip <vpc_nlb2_ip> --ip <vpc_nlb3_ip>
             ```
             {: pre}
+            
         2. Verify that the subdomain is created. For more information, see [Understanding the subdomain format](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_format).
             ```sh
             ibmcloud oc nlb-dns ls --cluster <cluster_name_or_id>
@@ -543,17 +510,19 @@ Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.op
 ### Setting up a public or private VPC ALB
 {: #setup_vpc_alb_pub_priv}
 
-**Before you begin**:
-* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC NLB.
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: [Allow traffic requests that are routed by the VPC ALB to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-network-policy#security_groups).
-* To view VPC ALBs, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
+Before you begin
+
+- Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC NLB.
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: [Allow traffic requests that are routed by the VPC ALB to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-network-policy#security_groups).
+- To view VPC ALBs, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
     ```sh
     ibmcloud plugin install infrastructure-service
     ```
     {: pre}
 
-</br>**To enable your app to receive public or private requests:**
+To enable your app to receive public or private requests,
+
 1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label in the metadata section of your deployment configuration file. This custom label identifies all pods where your app runs to include them in the load balancing.
 
 2. Create a configuration YAML file for your Kubernetes `LoadBalancer` service and name the file `myloadbalancer.yaml`.
@@ -583,70 +552,50 @@ Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.op
     ```
     {: codeblock}
 
-    <table summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter.">
-    <caption>Understanding the YAML file components</caption>
-    <col width="25%">
-    <thead>
-    <th>Parameter</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-        <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"</code></td>
-    <td>VPC and {{site.data.keyword.openshiftshort}} version 4.5 or later: Annotation to enable the PROXY protocol. The load balancer passes client connection information, including the client IP address, the proxy server IP address, and both port numbers, in request headers to your back-end app. Note that your back-end app must be configured to accept the PROXY protocol. For example, you can configure an NGINX app to accept the PROXY protocol by following <a href="https://docs.nginx.com/nginx/admin-guide/load-balancer/using-proxy-protocol/">these steps</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</td>
-    </tr>
-    <tr>
-        <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type</code></td>
-    <td>Annotation to specify a service that accepts public or private requests. If you don't include this annotation, a public <code>LoadBalancer</code> is created.</td>
-    </tr>
-    <tr>
-        <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector</code></td>
-    <td>{{site.data.keyword.openshiftshort}} version 4.5 or later: Annotation to specify a worker node label selector. To identify the worker nodes that receive traffic, you can select one of the supported label selector keys. Note that you can include only one label selector in the annotation, and that the selector must be specified in the <code>"key=value"</code> format. If this annotation is not specified, all worker nodes in your cluster are configured to receive traffic from the VPC ALB. If specified, this annotation takes precedence over the <code>service.kubernetes.io/ibm-load-balancer-cloud-provider-zone</code> annotation, and any <code>dedicated: edge</code> labels on worker nodes are ignored.<br><br>The following keys are permitted:
-        <ul><li><code>ibm-cloud.kubernetes.io/internal-ip</code></li>
-        <li><code>ibm-cloud.kubernetes.io/machine-type</code></li>
-        <li><code>ibm-cloud.kubernetes.io/os</code></li>
-        <li><code>ibm-cloud.kubernetes.io/region</code></li>
-        <li><code>ibm-cloud.kubernetes.io/subnet-id</code></li>
-        <li><code>ibm-cloud.kubernetes.io/worker-pool-id</code></li>
-        <li><code>ibm-cloud.kubernetes.io/worker-pool-name</code></li>
-        <li><code>ibm-cloud.kubernetes.io/zone</code></li>
-        <li>4.6 or later only: <code>kubernetes.io/arch</code></li>
-        <li>4.6 or later only: <code>kubernetes.io/hostname</code></li>
-        <li>4.6 or later only: <code>kubernetes.io/os</code></li>
-        <li><code>node.kubernetes.io/instance-type</code></li>
-        <li><code>topology.kubernetes.io/region</code></li>
-        <li><code>topology.kubernetes.io/zone</code></li></ul>
-        </td>
-    </tr>
-    <tr>
-        <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets</code></td>
-    <td>{{site.data.keyword.openshiftshort}} version 4.5 or later: Annotation to specify one or more subnets that the VPC ALB service deploys to. If specified, this annotation takes precedence over the <code>service.kubernetes.io/ibm-load-balancer-cloud-provider-zone</code> annotation. Note that you can specify a different subnet in the same VPC than the subnets that your cluster is attached to. In this case, even though the VPC ALB deploys to a different subnet in the same VPC, the VPC ALB can still route traffic to your worker nodes on the cluster subnets. To see subnets in all resource groups, run <code>ibmcloud oc subnets --provider vpc-gen2 --vpc-id &lt;vpc&gt; --zone &lt;zone&gt;</code>.</td>
-    </tr>
-    <tr>
-        <td><code>service.kubernetes.io/ibm-load-balancer-cloud-provider-zone</code></td>
-    <td>Annotation to specify a VPC zone that your cluster is attached to. When you specify a zone in this annotation, two processes occur:<ul>
-        <li>The VPC ALB is deployed to the same subnet in that zone that your worker nodes are connected to.</li>
-        <li>Only worker nodes in your cluster in this zone are configured to receive traffic from the VPC ALB.</li></ul>
-        <p>To see zones, run <code>ibmcloud oc zone ls --provider vpc-gen2</code>.</p>    
-        <p>To place the load balancer in a specific zone, you must specify this annotation when you create the load balancer. If you later change this annotation to a different zone, the load balancer itself is not moved to the new zone. However, the load balancer is reconfigured to send traffic to only worker nodes in the new zone.</p>
-        <p>If the <code>dedicated: edge</code> label is set on worker nodes and you specify this annotation, then only edge nodes in the specified zone are configured to receive traffic. Edge nodes in other zones and non-edge nodes in the specified zone don't receive traffic from the load balancer.</p>
-    </td>
-    </tr>
-    <tr>
-        <td><code>selector</code></td>
-    <td>The label key (&lt;selector_key&gt;) and value (&lt;selector_value&gt;) that you used in the <code>spec.template.metadata.labels</code> section of your app deployment YAML. This custom label identifies all pods where your app runs to include them in the load balancing.</td>
-    </tr>
-    <tr>
-        <td><code>port</code></td>
-    <td>The port that the service listens on.</td>
-    </tr>
-    <tr>
-        <td><code>targetPort</code></td>
-    <td>The port to which the service directs traffic.</td>
-    </tr>
-    </tbody></table>
-    
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"`
+    :   VPC and {{site.data.keyword.openshiftshort}} version 4.5 or later: Annotation to enable the PROXY protocol. The load balancer passes client connection information, including the client IP address, the proxy server IP address, and both port numbers, in request headers to your back-end app. Note that your back-end app must be configured to accept the PROXY protocol. For example, you can configure an NGINX app to accept the PROXY protocol by following [these steps](https://docs.nginx.com/nginx/admin-guide/load-balancer/using-proxy-protocol/){: external}.
 
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type`
+    :   Annotation to specify a service that accepts public or private requests. If you don't include this annotation, a public `LoadBalancer` is created.
+
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector`
+    :   {{site.data.keyword.openshiftshort}} version 4.5 or later: Annotation to specify a worker node label selector. To identify the worker nodes that receive traffic, you can select one of the supported label selector keys. Note that you can include only one label selector in the annotation, and that the selector must be specified in the `"key=value"` format. If this annotation is not specified, all worker nodes in your cluster are configured to receive traffic from the VPC ALB. If specified, this annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation, and any `dedicated: edge` labels on worker nodes are ignored.
+    :   The following keys are permitted:
+    :   - `ibm-cloud.kubernetes.io/internal-ip`
+        - `ibm-cloud.kubernetes.io/machine-type`
+        - `ibm-cloud.kubernetes.io/os`
+        - `ibm-cloud.kubernetes.io/region`
+        - `ibm-cloud.kubernetes.io/subnet-id`
+        - `ibm-cloud.kubernetes.io/worker-pool-id`
+        - `ibm-cloud.kubernetes.io/worker-pool-name`
+        - `ibm-cloud.kubernetes.io/zone`
+        - 4.6 or later only: `kubernetes.io/arch`
+        - 4.6 or later only: `kubernetes.io/hostname`
+        - 4.6 or later only: `kubernetes.io/os`
+        - `node.kubernetes.io/instance-type`
+        - `topology.kubernetes.io/region`
+        - `topology.kubernetes.io/zone`
+        
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets`
+    :   {{site.data.keyword.openshiftshort}} version 4.5 or later: Annotation to specify one or more subnets that the VPC ALB service deploys to. If specified, this annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation. Note that you can specify a different subnet in the same VPC than the subnets that your cluster is attached to. In this case, even though the VPC ALB deploys to a different subnet in the same VPC, the VPC ALB can still route traffic to your worker nodes on the cluster subnets. To see subnets in all resource groups, run `ibmcloud oc subnets --provider vpc-gen2 --vpc-id <vpc> --zone <zone>`.
+
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone`
+    :   Annotation to specify a VPC zone that your cluster is attached to. When you specify a zone in this annotation, two processes occur.
+        1. The VPC ALB is deployed to the same subnet in that zone that your worker nodes are connected to.
+        2. Only worker nodes in your cluster in this zone are configured to receive traffic from the VPC ALB.
+        
+     :  To see zones, run `ibmcloud oc zone ls --provider vpc-gen2`.
+     :   To place the load balancer in a specific zone, you must specify this annotation when you create the load balancer. If you later change this annotation to a different zone, the load balancer itself is not moved to the new zone. However, the load balancer is reconfigured to send traffic to only worker nodes in the new zone.
+     :   If the `dedicated: edge` label is set on worker nodes and you specify this annotation, then only edge nodes in the specified zone are configured to receive traffic. Edge nodes in other zones and non-edge nodes in the specified zone don't receive traffic from the load balancer.
+    
+    `selector`
+    :   The label key (<selector_key>) and value (<selector_value>) that you used in the `spec.template.metadata.labels` section of your app deployment YAML. This custom label identifies all pods where your app runs to include them in the load balancing.
+
+    `port`
+    :   The port that the service listens on.
+
+    `targetPort`
+    :   The port to which the service directs traffic.
 
 3. Create the Kubernetes `LoadBalancer` service in your cluster.
     ```sh
@@ -704,7 +653,7 @@ Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.op
     {: pre}
 
     In the following example CLI output, the VPC ALB that is named `kube-bsaucubd07dhl66e4tgg-1f4f408ce6d2485499bcbdec0fa2d306` is created for the Kubernetes `LoadBalancer` service:
-    ```
+    ```sh
     ID                                          Name                                                         Family        Subnets               Is public   Provision status   Operating status   Resource group
     r006-d044af9b-92bf-4047-8f77-a7b86efcb923   kube-bsaucubd07dhl66e4tgg-1f4f408ce6d2485499bcbdec0fa2d306   Application   mysubnet-us-south-3   true        active             online             default
     ```
@@ -741,11 +690,12 @@ The Application Load Balancer for VPC (VPC ALB) provides a default HTTP hostname
 After you create a DNS subdomain for a VPC ALB hostname, you can't use `nlb-dns health-monitor` commands to create a custom health check. Instead, the default VPC load balancer health check that is provided for the default VPC ALB hostname is used. For more information, see the [VPC documentation](/docs/vpc?topic=vpc-alb-health-checks).
 {: note}
 
-**Before you begin**:
-* [Set up a VPC ALB](#setup_vpc_ks_vpc_lb). Ensure that you define an HTTPS port in your Kubernetes `LoadBalancer` service that configures the VPC ALB.
-* To use the TLS certificate to access your app via HTTPS, your app must be able to terminate TLS connections.
+Before you begin
 
-**To register a VPC ALB hostname with a DNS subdomain:**
+- [Set up a VPC ALB](#setup_vpc_ks_vpc_lb). Ensure that you define an HTTPS port in your Kubernetes `LoadBalancer` service that configures the VPC ALB.
+- To use the TLS certificate to access your app via HTTPS, your app must be able to terminate TLS connections.
+
+To register a VPC ALB hostname with a DNS subdomain,
 
 1. Retrieve the hostname for your VPC ALB by running the `get svc` command. In the output, look for the hostname in the **EXTERNAL-IP** column.
     ```sh
@@ -773,6 +723,7 @@ After you create a DNS subdomain for a VPC ALB hostname, you can't use `nlb-dns 
             ibmcloud oc nlb-dns create vpc-gen2 --cluster <cluster_name_or_id> --lb-host <vpc_lb_hostname> --type (public|private)
             ```
             {: pre}
+            
         2. Verify that the subdomain is created. For more information, see [Understanding the subdomain format](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_format).
             ```sh
             ibmcloud oc nlb-dns ls --cluster <cluster_name_or_id>

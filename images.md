@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2021
-lastupdated: "2021-12-09"
+  years: 2014, 2022
+lastupdated: "2022-01-03"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -236,11 +236,11 @@ To deploy containers that use encrypted images:
             kind: Secret
             type: kp-key
             metadata:
-            name: <secret_name>
-            namespace: image-key-synchronizer
+              name: <secret_name>
+              namespace: image-key-synchronizer
             stringData:
-            rootkeyid: "<root_key_ID>"
-            ciphertext: "<wrapped_private_key_cipertext>"
+              rootkeyid: "<root_key_ID>"
+              ciphertext: "<wrapped_private_key_cipertext>"
             ```
             {: pre}
 
@@ -269,7 +269,7 @@ To deploy containers that use encrypted images:
     1. Generate a new private key.
     
         ```sh
-        openssl genrsa -out wrongkey.pem 1024
+        openssl genrsa --out wrongkey.pem 1024
         ```
         {: pre}
 
