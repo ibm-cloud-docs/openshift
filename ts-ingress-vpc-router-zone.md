@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2021
-lastupdated: "2021-12-15"
+  years: 2014, 2022
+lastupdated: "2022-01-03"
 
 keywords: openshift
 
@@ -47,15 +47,15 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
     
     Example output
     
-    ```
+    ```sh
     ID                                          Name                                                         Family        Subnets               Is public   Provision status   Operating status   Resource group
     r006-d044af9b-92bf-4047-8f77-a7b86efcb923   kube-bsaucubd07dhl66e4tgg-1f4f408ce6d2485499bcbdec0fa2d306   Application   mysubnet-us-south-3   true        active             online             default
     ```
     {: screen}
 
-2. Remove the load balancer and wait for it to be automatically re-created.
+2. Remove the `router-default` service and wait for it to be automatically re-created. 
     ```sh
-    ibmcloud is lbd kube-crtmgr-<cluster_ID>
+    oc delete svc router-default -n openshift-ingress
     ```
     {: pre}
 
@@ -66,7 +66,7 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
     {: pre}
 
     In the output, look for the VPC load balancer **Name** that starts with `kube-crtmgr-<cluster_ID>`.
-    ```
+    ```sh
     ID                                          Name                                                         Family        Subnets               Is public   Provision status   Operating status   Resource group
     r006-d044af9b-92bf-4047-8f77-a7b86efcb923   kube-bsaucubd07dhl66e4tgg-1f4f408ce6d2485499bcbdec0fa2d306   Application   mysubnet-us-south-1, mysubnet-us-south-2, mysubnet-us-south-3   true        active             online             default
     ```

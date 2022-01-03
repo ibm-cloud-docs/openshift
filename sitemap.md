@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-12-22"
+  years: 2017, 2022
+lastupdated: "2022-01-03"
 
 keywords: openshift
 subcollection: openshift
@@ -4861,7 +4861,7 @@ subcollection: openshift
 
 [Ingress health checks fail on Akamai Global Load Balancer (GLB) configurations](/docs/openshift?topic=openshift-cs_ingress_health_check_ctm#cs_ingress_health_check_ctm)
 
-[Why does the DNS Operator show a `RouteHealthDegraded` or `can't marshal DNS message` error?](/docs/openshift?topic=openshift-ingress_subdomain#ingress_subdomain)
+[Why does the DNS Operator show a `RouteHealthDegraded` or `can't marshal DNS message` error?](/docs/openshift?topic=openshift-ingress_subdomain_dns_marshal#ingress_subdomain_dns_marshal)
 
 
 ### File Storage
