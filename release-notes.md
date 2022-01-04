@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2021
-lastupdated: "2021-12-20"
+  years: 2014, 2022
+lastupdated: "2022-01-04"
 
 keywords: openshift
 
@@ -22,6 +22,16 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: note}
+
+## January 2022
+{: #release-jan-2022}}
+
+### 4 January 2022
+{: #10nov2021}
+{: release-note}
+
+Worker node fix pack update
+:   Changelog documentation is available for {{site.data.keyword.openshiftshort}} worker node versions [`4.8.24_1540_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4824_1540),[`4.7.40_1545_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4740_1545), [`4.6.52_1568_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4652_1568), and [3.11.570_1617_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311570_1617).
 
 ## December 2021
 {: #release-dec-2021}
