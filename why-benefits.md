@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2021
-lastupdated: "2021-12-09"
+  years: 2014, 2022
+lastupdated: "2022-01-04"
 
 keywords: openshift
 
@@ -144,7 +144,7 @@ Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many of t
 | Cluster health | You can also set up logging, monitoring, and metering tools by installing and configuring various operators. These solutions are cluster-specific and not highly available unless you back them up. | Your clusters feature one-click integrations with {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} for enterprise-grade, persistent monitoring and logging solutions across clusters. You can also install the logging and monitoring operators as with standard OCP, but you might have to adjust the configuration settings. For more information, see [Logging and monitoring cluster health](/docs/openshift?topic=openshift-health). |
 | Migrating clusters | You can use the cluster migrator operator to migrate clusters from one major version to another. Migration requires separate clusters; you can't update a cluster from one major version to another. Various open source tools might be used, but are not officially supported. | As with standard OpenShift Container Platform, you can't update a cluster from one major version to another. If you use a third-party open source tool such as the [cluster migrator operator](https://github.com/konveyor/mig-operator){: external}, the tool is not supported by IBM and might have limitations such as the migration UI being unavailable. |
 | Container-native virtualization | You can set up [container-native virtualization add-on](https://docs.openshift.com/container-platform/4.8/virt/about-virt.html){: external} on bare metal machines, but not on virtual machines.<p class="note">Container-native virtualization is not supported by IBM. If you experience issues, you are responsible for resolving the issues and any impact to your workloads.</p>|
-| Serverless workloads | You can set up [{{site.data.keyword.openshiftshort}} Serverless](https://docs.openshift.com/container-platform/4.8/serverless/serverless-getting-started.html){: external}. | You can also set up {{site.data.keyword.openshiftshort}} Serverless. |
+| Serverless workloads | You can set up [{{site.data.keyword.openshiftshort}} Serverless](https://cloud.redhat.com/learn/topics/serverless){: external}. | You can also set up {{site.data.keyword.openshiftshort}} Serverless. |
 | Service mesh | You can set up the [Red Hat {{site.data.keyword.openshiftshort}} Service Mesh](https://docs.openshift.com/container-platform/4.8/service_mesh/v1x/installing-ossm.html){: external}. | You can also set up the Red Hat {{site.data.keyword.openshiftshort}} Service Mesh, but you must [apply a network policy](https://gist.githubusercontent.com/kitch/39c504a2ed9e381c2aadea436d5b52e4/raw/d8efa69f41d41425b16bb363a881a98d40d3708c/mesh-policy.yaml){: external} for the service mesh ingress to work.|
 | API and CLI tools | OpenShift Container Platform clusters are set up with access to Kubernetes and {{site.data.keyword.openshiftshort}} API resources. You can also install command line tools such as `oc` and `odo`. | {{site.data.keyword.openshiftlong_notm}} clusters come with the same capabilities to use the Kubernetes and {{site.data.keyword.openshiftshort}} API and CLI tools. Additionally, you can use the {{site.data.keyword.cloud_notm}} [API](/docs/openshift?topic=openshift-cs_api_install) and [CLI](/docs/openshift?topic=openshift-openshift-cli) tools to manage your cluster infrastructure and integrate other cloud services with your cluster.|
 {: caption="Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP" caption-side="top"}
