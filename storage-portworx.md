@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-03"
+lastupdated: "2022-01-04"
 
 keywords: portworx, openshift
 
@@ -1493,7 +1493,7 @@ To stop billing for Portworx, you must remove the Portworx Helm installation fro
 ## Getting help and support
 {: #portworx_help_sup}
 
-If you run into an issue with using Portworx, you can open an issue in the [Portworx Service Portal](https://pure1.purestorage.com/support){: external}. You can also submit a request by sending an e-mail to `support@purestorage.com`. If you don't have an account on the Portworx Service Portal, send an e-mail to `support@purestorage.com` or see [requeset access](https://purestorage.force.com/customers/CustomerAccessRequest){: external}. You can also [gather logging information](#portworx_logs) before opening a support ticket.
+If you run into an issue with using Portworx, you can open an issue in the [Portworx Service Portal](https://pure1.purestorage.com/support){: external}. You can also submit a request by sending an e-mail to `support@purestorage.com`. If you don't have an account on the Portworx Service Portal, send an e-mail to `support@purestorage.com` or see [requeset access](https://purestorage.force.com/customers/CustomerAccessRequest){: external}. You can also [gather logging information](/docs/openshift?topic=openshift-portworx#portworx_logs) before opening a support ticket.
 
 ### Gathering logs
 {: #portworx_logs}

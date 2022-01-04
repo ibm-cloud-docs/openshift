@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-03"
+lastupdated: "2022-01-04"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -202,7 +202,7 @@ To deploy containers that use encrypted images:
 3. Use `openssl` to generate a private and public RSA key pair.
 
     ```sh
-    openssl genrsa --out myprivatekey.pem
+    openssl genrsa -out myprivatekey.pem
     openssl rsa -in myprivatekey.pem -pubout -out mypubkey.pem
     ```
     {: pre}
