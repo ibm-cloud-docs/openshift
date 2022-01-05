@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2021
-lastupdated: "2021-12-09"
+  years: 2014, 2022
+lastupdated: "2022-01-05"
 
 keywords: openshift
 
@@ -39,17 +39,17 @@ First time using {{site.data.keyword.filestorage_short}} in your cluster? Come b
     kind: PersistentVolumeClaim
     metadata:
         name: silver-pvc
-    labels:
-      billingType: hourly
-      region: # Example: us-south
-      zone: # Example: dal13
-     spec:
-      accessModes:
-        - ReadWriteMany
-        resources:
-          requests:
-            storage: 24Gi
-        storageClassName: ibmc-file-silver
+        labels:
+           billingType: hourly
+           region: # Example: us-south
+           zone: # Example: dal13
+    spec:
+     accessModes:
+       - ReadWriteMany
+       resources:
+         requests:
+           storage: 24Gi
+       storageClassName: ibmc-file-silver
     ```
     {: codeblock}
 
@@ -159,9 +159,11 @@ To decide on a storage configuration:
 Choose the [type of {{site.data.keyword.filestorage_short}}](/docs/FileStorage?topic=FileStorage-getting-started#prereqs) that you want to provision.
 {: shortdesc}
 
-**Bronze, silver, and gold storage classes:** These storage classes provision Endurance storage. Endurance storage lets you choose the size of the storage in gigabytes at predefined IOPS tiers.
+Bronze, silver, and gold storage classes
+:    These storage classes provision Endurance storage. Endurance storage lets you choose the size of the storage in gigabytes at predefined IOPS tiers.
 
-**Custom storage class:** This storage class provisions Performance storage. With performance storage, you have more control over the size of the storage and the IOPS.
+Custom storage class
+:    This storage class provisions Performance storage. With performance storage, you have more control over the size of the storage and the IOPS.
 
 ### IOPS
 {: #file-iops} 
@@ -169,33 +171,36 @@ Choose the [type of {{site.data.keyword.filestorage_short}}](/docs/FileStorage?t
 Choose the size and IOPS for your {{site.data.keyword.filestorage_short}}. The size and the number of IOPS define the total number of IOPS (input/ output operations per second) that serves as an indicator for how fast your storage is. The more total IOPS your storage has, the faster it processes read and write operations.
 {: shordesc}
 
-**Bronze, silver, and gold storage classes:** These storage classes come with a fixed number of IOPS per gigabyte and are provisioned on SSD hard disks. The total number of IOPS depends on the size of the storage that you choose. You can select any whole number of gigabyte within the allowed size range, such as 20 Gi, 256 Gi, or 11854 Gi. To determine the total number of IOPS, you must multiply the IOPS with the selected size. For example, if you select a 1000Gi {{site.data.keyword.filestorage_short}} size in the silver storage class that comes with 4 IOPS per GB, your storage has a total of 4000 IOPS.
+Bronze, silver, and gold storage classes
+:    These storage classes come with a fixed number of IOPS per gigabyte and are provisioned on SSD hard disks. The total number of IOPS depends on the size of the storage that you choose. You can select any whole number of gigabyte within the allowed size range, such as 20 Gi, 256 Gi, or 11854 Gi. To determine the total number of IOPS, you must multiply the IOPS with the selected size. For example, if you select a 1000Gi {{site.data.keyword.filestorage_short}} size in the silver storage class that comes with 4 IOPS per GB, your storage has a total of 4000 IOPS.
             
-| Storage class |IOPS per gigabyte | Size range in gigabytes |
-| --- | --- | --- |
-| Bronze | 2 IOPS/GB | 20-12000 Gi |
-| Silver | 4 IOPS/GB | 20-12000 Gi |
-| Gold | 10 IOPS/GB | 20-4000 Gi |
-{: caption="Table of storage class size ranges and IOPS per gigabyte"}
-{: summary="The columns are read from left to right. The first column has the storage class. The second column has the IOPS per gigabyte for the storage class. The third column has the size range in gigabytes for the storage class."}
+     | Storage class |IOPS per gigabyte | Size range in gigabytes |
+     | --- | --- | --- |
+     | Bronze | 2 IOPS/GB | 20-12000 Gi |
+     | Silver | 4 IOPS/GB | 20-12000 Gi |
+     | Gold | 10 IOPS/GB | 20-4000 Gi |
+     {: caption="Table of storage class size ranges and IOPS per gigabyte"}
+     {: summary="The columns are read from left to right. The first column has the storage class. The second column has the IOPS per gigabyte for the storage class. The third column has the size range in gigabytes for the storage class."}
 
-**Custom storage class:** When you choose this storage class, you have more control over the size and IOPS that you want. For the size, you can select any whole number of gigabyte within the allowed size range. The size that you choose determines the IOPS range that is available to you. You can choose an IOPS that is a multiple of 100 that is in the specified range. The IOPS that you choose is static and does not scale with the size of the storage. For example, if you choose 40Gi with 100 IOPS, your total IOPS remains 100. </br></br> The IOPS to gigabyte ratio also determines the type of hard disk that is provisioned for you. For example, if you have 500Gi at 100 IOPS, your IOPS to gigabyte ratio is 0.2. Storage with a ratio of less than or equal to 0.3 is provisioned on SATA hard disks. If your ratio is greater than 0.3, then your storage is provisioned on SSD hard disks.  
+Custom storage class
+:    When you choose this storage class, you have more control over the size and IOPS that you want. For the size, you can select any whole number of gigabyte within the allowed size range. The size that you choose determines the IOPS range that is available to you. You can choose an IOPS that is a multiple of 100 that is in the specified range. The IOPS that you choose is static and does not scale with the size of the storage. For example, if you choose 40Gi with 100 IOPS, your total IOPS remains 100.
+:    The IOPS to gigabyte ratio also determines the type of hard disk that is provisioned for you. For example, if you have 500Gi at 100 IOPS, your IOPS to gigabyte ratio is 0.2. Storage with a ratio of less than or equal to 0.3 is provisioned on SATA hard disks. If your ratio is greater than 0.3, then your storage is provisioned on SSD hard disks.  
             
-| Size range in gigabytes | IOPS range in multiples of 100 |
-| --- | --- |
-| 20-39 Gi | 100-1000 IOPS |
-| 40-79 Gi | 100-2000 IOPS |
-| 80-99 Gi | 100-4000 IOPS |
-| 100-499 Gi | 100-6000 IOPS |
-| 500-999 Gi | 100-10000 IOPS |
-| 1000-1999 Gi |100-20000 IOPS |
-| 2000-2999 Gi | 200-40000 IOPS |
-| 3000-3999 Gi | 200-48000 IOPS |
-| 4000-7999 Gi |300-48000 IOPS |
-| 8000-9999 Gi | 500-48000 IOPS |
-| 10000-12000 Gi | 1000-48000 IOPS |
-{: caption="Table of custom storage class size ranges and IOPS"}
-{: summary="The columns are read from left to right. The first column has the size range in gigabytes for the custom storage class. The second column has the IOPS range in multiples of 100 that are supported for the size range for the custom storage class."}
+     | Size range in gigabytes | IOPS range in multiples of 100 |
+     | --- | --- |
+     | 20-39 Gi | 100-1000 IOPS |
+     | 40-79 Gi | 100-2000 IOPS |
+     | 80-99 Gi | 100-4000 IOPS |
+     | 100-499 Gi | 100-6000 IOPS |
+     | 500-999 Gi | 100-10000 IOPS |
+     | 1000-1999 Gi |100-20000 IOPS |
+     | 2000-2999 Gi | 200-40000 IOPS |
+     | 3000-3999 Gi | 200-48000 IOPS |
+     | 4000-7999 Gi |300-48000 IOPS |
+     | 8000-9999 Gi | 500-48000 IOPS |
+     | 10000-12000 Gi | 1000-48000 IOPS |
+     {: caption="Table of custom storage class size ranges and IOPS"}
+     {: summary="The columns are read from left to right. The first column has the size range in gigabytes for the custom storage class. The second column has the IOPS range in multiples of 100 that are supported for the size range for the custom storage class."}
 
 
 ### Reclaim policy
