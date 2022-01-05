@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2021
-lastupdated: "2021-12-09"
+  years: 2014, 2022
+lastupdated: "2022-01-05"
 
 keywords: openshift
 
@@ -187,6 +187,9 @@ Role
         ```
         {: pre}
 
+Users must run the `ibmcloud ks cluster config` command for their role changes to take effect. 
+{: note}
+
 
 ### Assigning {{site.data.keyword.cloud_notm}} IAM _service_ roles from the CLI:**
 {: #add_users_cli_service}
@@ -274,6 +277,8 @@ You can't scope {{site.data.keyword.cloud_notm}} IAM service access roles to an 
 
 5. **Optional**: After a couple minutes, verify that the user is added to the corresponding [RBAC role binding or cluster role binding](#checking-rbac). 
 
+Users must run the `ibmcloud ks cluster config` command for their role changes to take effect. 
+{: note}
 
 
 ## Understanding RBAC permissions
