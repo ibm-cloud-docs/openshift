@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2021
-lastupdated: "2021-12-22"
+  years: 2014, 2022
+lastupdated: "2022-01-06"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -170,7 +170,7 @@ When you provision storage, you can choose the storage type and storage class th
 To choose the right storage solution, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning). For more information, see:
 * [NFS file storage pricing](https://www.ibm.com/cloud/file-storage/pricing){: external}
 * [Block storage pricing](https://www.ibm.com/cloud/block-storage/pricing){: external}
-* [Object storage plans](https://www.ibm.com/cloud/object-storage/pricing/#s3api){: external}
+* [Object storage plans](https://cloud.ibm.com/objectstorage/create#pricing){: external}
 * [Portworx Enterprise pricing](https://cloud.ibm.com/catalog/services/portworx-enterprise){: external}
 
 ### {{site.data.keyword.cloud_notm}} services
