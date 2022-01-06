@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-04"
+lastupdated: "2022-01-06"
 
 keywords: openshift
 
@@ -26,8 +26,24 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## January 2022
 {: #release-jan-2022}}
 
+
+### 06 January 2022
+{: #jan0622}
+{: release-note}
+
+
+{{site.data.keyword.block_storage_is_short}} add-on.
+:   [Version 4.1.0_807](/docs/containers?topic=containers-vpc_bs_changelog) is released.
+
+### 6 January 2022
+{: #6Jan2021}
+{: release-note}
+
+{{site.data.keyword.containershort}} 1.20 end of support date change
+:   The end of support date of {{site.data.keyword.containershort}} 1.20 is now March 2022. The [Kubernetes version information and update actions](/docs/containers?topic=containers-cs_versions#release-history) page has been updated with the new date. 
+
 ### 4 January 2022
-{: #10nov2021}
+{: #4jan2022}
 {: release-note}
 
 Worker node fix pack update
@@ -37,14 +53,14 @@ Worker node fix pack update
 {: #release-dec-2021}
 
 
-
-
 ### 20 December 2021
 {: #20dec2021}
 {: release-note}
 
+
 Worker node fix pack update
 :   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.8.24_1539_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4824_1539_openshift), [`4.7.40_1544_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4740_1544_openshift), [`4.6.52_1567_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4652_1567_openshift), and [`3.11.570_1616_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311570_1616_openshift).
+
 
 
 
@@ -327,6 +343,8 @@ Review the release notes for September 2021.
 ### 29 September 2021
 {: #29sep2021}
 {: release-note}
+
+
 
 New! OpenShift 4.8
 :   You can create or [update clusters to OpenShift version 4.8](/docs/openshift?topic=openshift-openshift_versions#ocp48). With OpenShift 4.8, you get the latest OpenShift features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}. For more information, [see the blog announcement](https://www.ibm.com/cloud/blog/announcements/openshift-version-48-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.

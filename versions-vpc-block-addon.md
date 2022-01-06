@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2021
-lastupdated: "2021-12-09"
+  years: 2014, 2022
+lastupdated: "2022-01-06"
 
 keywords: block, add-on, changelog
 
@@ -37,13 +37,29 @@ Refer to the following tables for a summary of changes for each version of the {
 
 | {{site.data.keyword.block_storage_is_short}} add-on version | {{site.data.keyword.openshiftlong_notm}} version support |
 | --- | --- |
+| 4.1 | All supported versions of {{site.data.keyword.openshiftlong_notm}} and unsupported versions that are version 4.3 or higher. |
 | 4.0 (default) | All supported versions of {{site.data.keyword.openshiftlong_notm}} and unsupported versions that are version 4.3 or higher. |
 | 3.0.1 | All supported versions of {{site.data.keyword.openshiftlong_notm}} and unsupported versions that are version 4.3 or higher. |
 | 3.0.0 | All supported versions of {{site.data.keyword.openshiftlong_notm}} and unsupported versions that are version 4.3 or higher. |
 | 2.0.3 | Unsupported as of Kubernetes version 1.20. |
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.block_storage_is_short}} add-on version. The second column is the version of your cluster that the {{site.data.keyword.block_storage_is_short}} version is supported for."}
 
+## Version 4.1
+{: #041_is_block}
 
+Review the changes in version `4.1` of the {{site.data.keyword.block_storage_is_short}} add-on.
+{: shortdesc}
+
+### Changelog for version 4.1.0_807, released 06 January 2022
+{: #41_is_block_relnote}
+
+Review the changes in version `4.1.0_807` of the {{site.data.keyword.block_storage_is_short}} add-on.
+{: shortdesc}
+
+- Image tags: v4.1
+- Updates the storage-secret-sidecar image to version 1.1.4.
+- Upgrades Kubernetes packages to version 1.21.
+- Updates how api-key rotation is handled so that restarting the driver is no longer required.
 
 ## Version 4.0
 {: #0400_is_block}

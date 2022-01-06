@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2021
-lastupdated: "2021-12-09"
+  years: 2014, 2022
+lastupdated: "2022-01-06"
 
 keywords: openshift
 
@@ -35,7 +35,7 @@ Follow these steps to create an {{site.data.keyword.cos_full_notm}} service inst
 
 1. Open the [{{site.data.keyword.cos_full_notm}} catalog page](https://cloud.ibm.com/objectstorage/create).
 2. Enter a name for your service instance, such as `cos-backup`, and select the same resource group that your cluster is in. To view the resource group of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.   
-3. Review the [plan options](https://www.ibm.com/cloud/object-storage/pricing/#s3api){: external} for pricing information and select a plan.
+3. Review the [plan options](https://cloud.ibm.com/objectstorage/create#pricing){: external} for pricing information and select a plan.
 4. Click **Create**. The service details page opens.
 5. To continue to set up {{site.data.keyword.cos_short}} to use with your cluster, see [Creating service credentials](#service_credentials).
 
@@ -547,7 +547,7 @@ To remove the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     ```
     {: screen}
 
-2. Choose a storage class that fits your data access requirements. The storage class determines the [pricing](https://www.ibm.com/cloud/object-storage/pricing/#s3api){: external} for storage capacity, read and write operations, and outbound bandwidth for a bucket. The option that is right for you is based on how frequently data is read and written to your service instance.
+2. Choose a storage class that fits your data access requirements. The storage class determines the [pricing](https://cloud.ibm.com/objectstorage/create#pricing){: external} for storage capacity, read and write operations, and outbound bandwidth for a bucket. The option that is right for you is based on how frequently data is read and written to your service instance.
     - **Standard**: This option is used for hot data that is accessed frequently. Common use cases are web or mobile apps.
     - **Vault**: This option is used for workloads or cool data that are accessed infrequently, such as once a month or less. Common use cases are archives, short-term data retention, digital asset preservation, tape replacement, and disaster recovery.
     - **Cold**: This option is used for cold data that is rarely accessed (every 90 days or less), or inactive data. Common use cases are archives, long-term backups, historical data that you keep for compliance, or workloads and apps that are rarely accessed.
@@ -892,7 +892,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     :   If you created your {{site.data.keyword.cos_full_notm}} service instance in a location that is different from your cluster, enter the private or public cloud service endpoint of your {{site.data.keyword.cos_full_notm}} service instance that you want to use. For more information and an overview of available service endpoints, see [Additional endpoint information](/docs/cloud-object-storage?topic=cloud-object-storage-advanced-endpoints). By default, the `ibmc` Helm plug-in automatically retrieves your cluster location and creates the storage classes by using the {{site.data.keyword.cos_full_notm}} private cloud service endpoint that matches your cluster location. If your classic cluster is in a multizone metro, such as `dal10`, the {{site.data.keyword.cos_full_notm}} private cloud service endpoint for the multizone metro, for example Dallas. To verify that the service endpoint in your storage classes matches the service endpoint of your service instance, run `oc describe storageclass < storageclassname>`. Make sure that you enter your service endpoint in the format `https://< s3fs_private_service_endpoint>` for private cloud service endpoints, or `http://< s3fs_public_service_endpoint>` for public cloud service endpoints. If the service endpoint in your storage class matches the service endpoint of your {{site.data.keyword.cos_full_notm}} service instance, don't include the `ibm.io/endpoint` option in your PVC YAML file. 
     
     `storage`
-    :   In the spec resources requests section, enter a fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the [pricing table](https://www.ibm.com/cloud/object-storage/pricing/#s3api){: external}.
+    :   In the spec resources requests section, enter a fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the [pricing table](https://cloud.ibm.com/objectstorage/create#pricing){: external}.
     
     `storageClassName`
     :   Choose between the following options.
@@ -1235,7 +1235,7 @@ To deploy a stateful set that uses object storage:
 :   In the spec volume claim templates spec section, enter the same storage class that you entered in the `spec.volumeClaimTemplates.metadata.annotations.volume.beta.kubernetes.io/storage-class` section of your stateful set YAML.
 
 `storage`
-:   In the spec volume claim templates spec resource requests section, enter a fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the [pricing table](https://www.ibm.com/cloud/object-storage/pricing/#s3api){: external}.
+:   In the spec volume claim templates spec resource requests section, enter a fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the [pricing table](https://cloud.ibm.com/objectstorage/create#pricing){: external}.
 
 
 
@@ -1356,7 +1356,7 @@ Billing
 :   Monthly
 
 Pricing
-:   Review the [pricing documentation](https://www.ibm.com/cloud/object-storage/pricing/#s3api){: external}.
+:   Review the [pricing documentation](https://cloud.ibm.com/objectstorage/create#pricing){: external}.
 
 
 ### Vault
@@ -1381,7 +1381,7 @@ Billing
 :   Monthly
 
 Pricing
-:   Review the [pricing documentation](https://www.ibm.com/cloud/object-storage/pricing/#s3api){: external}.
+:   Review the [pricing documentation](https://cloud.ibm.com/objectstorage/create#pricing){: external}.
 
 ### Cold
 {: #cold}
@@ -1406,7 +1406,7 @@ Billing
 :   Monthly
 
 Pricing
-:   Review the [pricing documentation](https://www.ibm.com/cloud/object-storage/pricing/#s3api){: external}.
+:   Review the [pricing documentation](https://cloud.ibm.com/objectstorage/create#pricing){: external}.
 
 ### Flex
 {: #flex}
@@ -1432,7 +1432,7 @@ Billing
 :   Monthly
 
 Pricing
-:  Review the [pricing documentation](https://www.ibm.com/cloud/object-storage/pricing/#s3api){: external}.
+:  Review the [pricing documentation](https://cloud.ibm.com/objectstorage/create#pricing){: external}.
 
 ## Limitations
 {: #cos_limitations}
