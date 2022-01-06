@@ -35,6 +35,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {{site.data.keyword.block_storage_is_short}} add-on.
 :   [Version 4.1.0_807](/docs/containers?topic=containers-vpc_bs_changelog) is released.
 
+### 6 January 2022
+{: #6Jan2021}
+{: release-note}
+
+{{site.data.keyword.containershort}} 1.20 end of support date change
+:   The end of support date of {{site.data.keyword.containershort}} 1.20 is now March 2022. The [Kubernetes version information and update actions](/docs/containers?topic=containers-cs_versions#release-history) page has been updated with the new date. 
 
 ### 4 January 2022
 {: #10nov2021}
