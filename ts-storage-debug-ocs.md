@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2014, 2021
-lastupdated: "2021-12-01"
+  years: 2014, 2022
+lastupdated: "2022-01-06"
 
 keywords: openshift, file, debug, help
 

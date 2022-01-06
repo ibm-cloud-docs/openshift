@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2021
-lastupdated: "2021-11-10"
+  years: 2014, 2022
+lastupdated: "2022-01-06"
 
 keywords: openshift, openshift data foundation, openshift container storage, vpc
 subcollection: openshift
