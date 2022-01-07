@@ -8,23 +8,22 @@ keywords: openshift
 
 subcollection: openshift
 
-
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
-# CLI Map
+# {{site.data.keyword.openshiftlong_notm}} CLI Map
 {: #icks_map}
 
-The page lists all ibmcloud oc commands as they are structured in the CLI.
+The page lists all `ibmcloud oc` commands as they are structured in the CLI. For more CLI command details, see the [{{site.data.keyword.openshiftlong_notm}} CLI reference](/docs/containers?topic=containers-kubernetes-service-cli).
 
 
 
-## Cluster management commands
-{: #icks_map_cluster_management}
-
-### [`cluster`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster): View and modify cluster and cluster service settings.
+## ibmcloud oc cluster
 {: #icks_map_cluster}
+
+[View and modify cluster and cluster service settings](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster).
+{: shortdesc}
 
 * **`cluster addon`**: View, enable, update, and disable cluster add-ons.
     * [`cluster addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable)
@@ -77,8 +76,11 @@ The page lists all ibmcloud oc commands as they are structured in the CLI.
     * [`cluster subnet create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_create)
     * [`cluster subnet detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_detach)
 
-### [`worker`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_node_commands): View and modify worker nodes for a cluster.
+## ibmcloud oc worker
 {: #icks_map_worker}
+
+[View and modify worker nodes for a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_node_commands).
+{: shortdesc}
 
 * [`worker add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_add) **Deprecated**
 * [`worker get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_get)
@@ -89,8 +91,11 @@ The page lists all ibmcloud oc commands as they are structured in the CLI.
 * [`worker rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_rm)
 * [`worker update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_update)
 
-### [`worker-pool`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool): View and modify worker pools for a cluster.
+## ibmcloud oc worker-pool
 {: #icks_map_worker-pool}
+
+[View and modify worker pools for a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool).
+{: shortdesc}
 
 * **`worker-pool create`**: Add a worker pool to a cluster. No worker nodes are created until zones are added to the worker pool.
     * [`worker-pool create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create)
@@ -108,8 +113,11 @@ The page lists all ibmcloud oc commands as they are structured in the CLI.
     * [`worker-pool taint set`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint_set)
 * [`worker-pool zones`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_zones)
 
-### [`zone`](/docs/openshift?topic=openshift-kubernetes-service-cli#zone): List availability zones and modify the zones attached to a worker pool.
+## ibmcloud oc zone
 {: #icks_map_zone}
+
+[List availability zones and modify the zones attached to a worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#zone).
+{: shortdesc}
 
 * **`zone add`**: Add a zone to one or more worker pools in a cluster.
     * [`zone add classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add)
@@ -118,11 +126,11 @@ The page lists all ibmcloud oc commands as they are structured in the CLI.
 * [`zone network-set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_network_set)
 * [`zone rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_rm)
 
-## Cluster component commands
-{: #icks_map_cluster-component}
-
-### [`ingress`](/docs/openshift?topic=openshift-kubernetes-service-cli#alb-commands): **Beta** View and modify Ingress services and settings
+## ibmcloud oc ingress
 {: #icks_map_ingress}
+
+**Beta** [View and modify Ingress services and settings](/docs/openshift?topic=openshift-kubernetes-service-cli#alb-commands).
+{: shortdesc}
 
 * **`ingress alb`**: View and configure an Ingress application load balancer (ALB).
     * **`ingress alb autoupdate`**: Manage automatic updates for the Ingress ALB add-on in a cluster.
@@ -157,8 +165,11 @@ The page lists all ibmcloud oc commands as they are structured in the CLI.
     * [`ingress secret update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_update)
 * [`ingress status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status)
 
-### [`logging`](/docs/containers?topic=containers-kubernetes-service-cli#logging_commands): Forward logs from your cluster.
+## ibmcloud oc logging
 {: #icks_map_logging}
+
+[Forward logs from your cluster.](/docs/containers?topic=containers-kubernetes-service-cli#logging_commands).
+{: shortdesc}
 
 * **`logging autoupdate`**: Manage automatic updates of the Fluentd add-on in a cluster.
     * [`logging autoupdate disable`](/docs/containers?topic=containers-kubernetes-service-cli#cs_log_autoupdate_disable)
@@ -178,8 +189,11 @@ The page lists all ibmcloud oc commands as they are structured in the CLI.
     * [`logging filter update`](/docs/containers?topic=containers-kubernetes-service-cli#cs_log_filter_update)
 * [`logging refresh`](/docs/containers?topic=containers-kubernetes-service-cli#cs_logging_refresh)
 
-### [`nlb-dns`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns): Create and manage host names for network load balancer (NLB) IP addresses in a cluster and health check monitors for host names.
-{: #icks_map_nlb-dns}
+## ibmcloud oc nlb-dns
+{: icks_map_nlb-dns}
+
+[Create and manage host names for network load balancer (NLB) IP addresses in a cluster and health check monitors for host names](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns).
+{: shortdesc}
 
 * [`nlb-dns add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-add)
 * **`nlb-dns create`**: Create a DNS host name.
@@ -200,32 +214,44 @@ The page lists all ibmcloud oc commands as they are structured in the CLI.
     * [`nlb-dns secret regenerate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-regenerate)
     * [`nlb-dns secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-rm)
 
-### [`webhook-create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_webhook_create): Register a webhook in a cluster.
+## ibmcloud oc webhook-create
 {: #icks_map_webhook-create}
 
-## Account management commands
-{: #icks_map_management}
+[Register a webhook in a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_webhook_create).
+{: shortdesc}
 
-### [`api-key`](/docs/openshift?topic=openshift-kubernetes-service-cli#api_key-commands): View information about the API key for a cluster or reset it to a new key.
+## ibmcloud oc api-key 
 {: #icks_map_api-key}
+
+[View information about the API key for a cluster or reset it to a new key](/docs/openshift?topic=openshift-kubernetes-service-cli#api_key-commands).
+{: shortdesc}
 
 * [`api-key info`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_info)
 * [`api-key reset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset)
 
-### [`credential`](/docs/openshift?topic=openshift-kubernetes-service-cli#credential): Set and unset credentials that allow you to access the IBM Cloud classic infrastructure portfolio through your IBM Cloud account.
+## ibmcloud oc credential
 {: #icks_map_credential}
+
+[Set and unset credentials that allow you to access the IBM Cloud classic infrastructure portfolio through your IBM Cloud account](/docs/openshift?topic=openshift-kubernetes-service-cli#credential).
+{: shortdesc}
 
 * [`credential get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credential_get)
 * [`credential set classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set)
 * [`credential unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_unset)
 
-### [`infra-permissions`](/docs/openshift?topic=openshift-kubernetes-service-cli#infra-commands): View information about infrastructure permissions that allow you to access the IBM Cloud classic infrastructure portfolio through your IBM Cloud account.
+## ibmcloud oc infra-permissions
 {: #icks_map_infra-permissions}
+
+[View information about infrastructure permissions that allow you to access the IBM Cloud classic infrastructure portfolio through your IBM Cloud account](/docs/openshift?topic=openshift-kubernetes-service-cli#infra-commands).
+{: shortdesc}
 
 * [`infra-permissions get`](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get)
 
-### [`kms`](/docs/openshift?topic=openshift-kubernetes-service-cli#ks_kms): View and configure Key Management Service integrations.
+## ibmcloud oc kms 
 {: #icks_map_kms}
+
+[View and configure Key Management Service integrations](/docs/openshift?topic=openshift-kubernetes-service-cli#ks_kms).
+{: shortdesc}
 
 * **`kms crk`**: List and configure the root keys for a Key Management Service instance.
     * [`kms crk ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#ks_kms_crk_ls)
@@ -233,53 +259,84 @@ The page lists all ibmcloud oc commands as they are structured in the CLI.
 * **`kms instance`**: View and configure available Key Management Service instances.
     * [`kms instance ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#ks_kms_instance_ls)
 
-### [`quota`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_quota): View the quota and limits for cluster-related resources in your IBM Cloud account.
+## ibmcloud oc quota 
 {: #icks_map_quota}
+
+[View the quota and limits for cluster-related resources in your IBM Cloud account](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_quota).
 
 * [`quota ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_quota_ls)
 
-### [`subnets`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_subnets): List available portable subnets in your IBM Cloud infrastructure account.
+## ibmcloud oc subnets 
 {: #icks_map_subnets}
 
-### [`vlan`](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan): List public and private VLANs for a zone and view the VLAN spanning status.
+[List available portable subnets in your IBM Cloud infrastructure account](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_subnets).
+{: shortdesc}
+
+### ibmcloud oc vlan 
 {: #icks_map_vlan}
+
+[List public and private VLANs for a zone and view the VLAN spanning status](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan).
+{: shortdesc}
 
 * [`vlan ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlans)
 * **`vlan spanning`**: View the VLAN spanning status for your IBM Cloud classic infrastructure account.
     * [`vlan spanning get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get)
     
-### [`vpcs`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vpcs): List all VPCs in the targeted resource group. If no resource group is targeted, then all VPCs in the account are listed.
+## ibmcloud oc vpcs 
 {: #icks_map_vpcs}
 
-## Informational commands
-{: #icks_map_informational}
+[List all VPCs in the targeted resource group. If no resource group is targeted, then all VPCs in the account are listed.](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vpcs).
+{: shortdesc}
 
-* [`flavors`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_machine_types): List available flavors for a zone. 
+## ibmcloud oc flavors
+{: #icks_map_flavors}
 
-* [`locations`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_supported-locations): List supported IBM Cloud Kubernetes Service locations.
+[List available flavors for a zone](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_machine_types).
+{: shortdesc}
 
-* [`messages`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_messages): View the current user messages.
+## ibmcloud oc locations
+{: #icks_map_locations}
 
-*  [`versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_versions_command): List all the container platform versions that are available for IBM Cloud Kubernetes Service clusters.
+[List supported IBM Cloud Kubernetes Service locations](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_supported-locations).
+{: shortdesc}
 
-## Configuration commands
-{: #icks_map_configuration}
+## ibmcloud oc messages
+{: #icks_map_messages}
 
-* [`api`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cli_api): **Deprecated** View or set the API endpoint and API version for the service.
+[View the current user messages](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_messages).
+{: shortdesc}
 
-* [`init`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_init): Initialize the Kubernetes Service plug-in and get authentication tokens.
+## ibmcloud oc versions
+{: #icks_map_versions}
 
+[List all the container platform versions that are available for IBM Cloud Kubernetes Service clusters](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_versions_command).
+{: shortdesc}
 
-## Other commands
-{: #icks_map_other}
+## ibmcloud oc api
+{: #icks_map_api}
 
-###  [`script`](/docs/openshift?topic=openshift-kubernetes-service-cli#script): Rewrite scripts that call IBM Cloud Kubernetes Service plug-in commands. 
+[**Deprecated** View or set the API endpoint and API version for the service](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cli_api).
+{: shortdesc}
+
+## ibmcloud oc init
+{: #icks_map_init}
+
+[Initialize the Kubernetes Service plug-in and get authentication tokens](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_init).
+{: shortdesc}
+
+## ibmcloud oc script  
 {: #icks_map_script}
+
+[Rewrite scripts that call IBM Cloud Kubernetes Service plug-in commands](/docs/openshift?topic=openshift-kubernetes-service-cli#script).
+{: shortdesc}
 
 * [`script update`](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update)
 
-### [`storage`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage): **Beta** View and modify storage resources.
+## ibmcloud oc storage 
 {: #icks_map_storage}
+
+[**Beta** View and modify storage resources](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage).
+{: shortdesc}
 
 * **`storage attachment`**: View and modify storage volume attachments of worker nodes in your cluster.
     * [`storage attachment create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_cr)
