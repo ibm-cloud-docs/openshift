@@ -33,10 +33,10 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: release-note}
   
 HPCS Router add-on
-:   Versions 4.8.0_1125, 4.7.0_1127, and 4.6.0_1126 of the [HPCS Router add-on](/docs/containers?topic=openshift-hpcs-router-changelog) are released.
+:   Versions 4.8.0_1125, 4.7.0_1127, and 4.6.0_1126 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
 
 Cloud Image Key Synchronizer add-on
-:   Version 1.0.0_804 of the [Cloud Image Key Synchronizer add-on](/docs/containers?topic=openshift-image-key-synchronizer-changelog) is released.
+:   Version 1.0.0_804 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
 
 
 
@@ -153,10 +153,10 @@ Cluster autoscaler add-on.
 
   
 HPCS Router add-on
-:   Versions 4.7.0_1013 and 4.6.0_1012 of the [HPCS Router add-on](/docs/containers?topic=openshift-hpcs-router-changelog) are released.
+:   Versions 4.7.0_1013 and 4.6.0_1012 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
 
 Cloud Image Key Synchronizer add-on
-:   Version 1.0.0_744 of the [Cloud Image Key Synchronizer add-on](/docs/containers?topic=openshift-image-key-synchronizer-changelog) is released.
+:   Version 1.0.0_744 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
 
 
 
