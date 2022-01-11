@@ -184,9 +184,9 @@ subcollection: openshift
 
 * [January 2022](/docs/openshift?topic=openshift-iks-release#release-jan-2022)
 
-    * [06 January 2022](/docs/openshift?topic=openshift-iks-release#jan0622)
+    * [11 January 2022](/docs/openshift?topic=openshift-iks-release#11jan2021)
 
-    * [6 January 2022](/docs/openshift?topic=openshift-iks-release#6Jan2021)
+    * [06 January 2022](/docs/openshift?topic=openshift-iks-release#jan0622)
 
     * [4 January 2022](/docs/openshift?topic=openshift-iks-release#4jan2022)
 
@@ -4076,6 +4076,8 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0)
+
+    * [Version 1.0.0_804, released on 11 January 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0804)
 
     * [Version 1.0.0_744, released on 19 November 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0744)
 
