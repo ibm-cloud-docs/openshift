@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2021
-lastupdated: "2021-12-20"
+  years: 2014, 2022
+lastupdated: "2022-01-11"
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
 
