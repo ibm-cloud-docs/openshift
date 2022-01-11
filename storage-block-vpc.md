@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2021
-lastupdated: "2021-12-09"
+  years: 2014, 2022
+lastupdated: "2022-01-11"
 
 keywords: openshift
 
@@ -980,8 +980,7 @@ You can only expand volumes that are mounted by an app pod.
     apiVersion: storage.k8s.io/v1
     kind: StorageClass
     metadata:
-        name: expansion-class
-      provisioner: vpc.block.csi.ibm.io
+      name: expansion-class
     parameters:
       profile: "<profile>"
       sizeRange: "<size_range>"
@@ -995,9 +994,10 @@ You can only expand volumes that are mounted by an app pod.
       generation: "gc"
       classVersion: "1"
       iops: "<iops>" # Only specify this parameter if you are using a "custom" profile.
-      reclaimPolicy: "<reclaim_policy>"
-      allowVolumeExpansion: true
-      volumeBindingMode: <volume_binding_mode>
+    reclaimPolicy: "<reclaim_policy>"
+    allowVolumeExpansion: true
+    volumeBindingMode: <volume_binding_mode>
+    provisioner: vpc.block.csi.ibm.io
     ```
     {: codeblock}
 
