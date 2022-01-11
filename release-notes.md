@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-06"
+lastupdated: "2022-01-11"
 
 keywords: openshift
 
@@ -27,6 +27,20 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #release-jan-2022}}
 
 
+
+### 11 January 2022
+{: #11jan2021}
+{: release-note}
+  
+HPCS Router add-on
+:   Versions 4.8.0_1125, 4.7.0_1127, and 4.6.0_1126 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
+
+Cloud Image Key Synchronizer add-on
+:   Version 1.0.0_804 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
+
+
+
+
 ### 06 January 2022
 {: #jan0622}
 {: release-note}
@@ -35,12 +49,10 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {{site.data.keyword.block_storage_is_short}} add-on.
 :   [Version 4.1.0_807](/docs/containers?topic=containers-vpc_bs_changelog) is released.
 
-### 6 January 2022
-{: #6Jan2021}
-{: release-note}
 
 {{site.data.keyword.containershort}} 1.20 end of support date change
 :   The end of support date of {{site.data.keyword.containershort}} 1.20 is now March 2022. The [Kubernetes version information and update actions](/docs/containers?topic=containers-cs_versions#release-history) page has been updated with the new date. 
+
 
 ### 4 January 2022
 {: #4jan2022}
@@ -141,10 +153,10 @@ Cluster autoscaler add-on.
 
   
 HPCS Router add-on
-:   Versions 4.7.0_1013 and 4.6.0_1012 of the [HPCS Router add-on](/docs/containers?topic=openshift-hpcs-router-changelog) are released.
+:   Versions 4.7.0_1013 and 4.6.0_1012 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
 
 Cloud Image Key Synchronizer add-on
-:   Version 1.0.0_744 of the [Cloud Image Key Synchronizer add-on](/docs/containers?topic=openshift-image-key-synchronizer-changelog) is released.
+:   Version 1.0.0_744 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
 
 
 

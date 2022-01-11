@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2021
-lastupdated: "2021-11-22"
+  years: 2014, 2022
+lastupdated: "2022-01-11"
 
 keywords: openshift
 
@@ -27,7 +27,7 @@ Review the supported versions of {{site.data.keyword.openshiftlong_notm}} for ea
 
 | Image Key Synchronizer add-on version | Supported? | {{site.data.keyword.openshiftshort}} version support |
 | -------------------------- | -----------|----------------------------------------------------- |
-| 1.0.0 | Yes | 4.6, 4.5, 4.4 |
+| 1.0.0 | Yes | 4.6, 4.7, 4.8 |
 {: summary="The rows are read from left to right. The first column is the Image Key Synchronizer add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the add-on version is supported for."}
 {: caption="Supported Image Key Synchronizer add-on versions" caption-side="top"}
 
@@ -36,6 +36,11 @@ Review the supported versions of {{site.data.keyword.openshiftlong_notm}} for ea
 
 Review the changes in version 1.0.0 of the {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on plug-in.
 {: shortdesc}
+
+### Version 1.0.0_804, released on 11 January 2022
+{: #1_0_0804}
+
+Resolves [CVE-2021-3712](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3712){: external}.
 
 ### Version 1.0.0_744, released on 19 November 2021
 {: #1_0_0744}

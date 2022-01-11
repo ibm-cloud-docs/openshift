@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-04"
+lastupdated: "2022-01-11"
 
 keywords: portworx, openshift
 

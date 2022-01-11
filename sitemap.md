@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-01-06"
+lastupdated: "2022-01-11"
 
 keywords: openshift
 subcollection: openshift
@@ -184,9 +184,9 @@ subcollection: openshift
 
 * [January 2022](/docs/openshift?topic=openshift-iks-release#release-jan-2022)
 
-    * [06 January 2022](/docs/openshift?topic=openshift-iks-release#jan0622)
+    * [11 January 2022](/docs/openshift?topic=openshift-iks-release#11jan2021)
 
-    * [6 January 2022](/docs/openshift?topic=openshift-iks-release#6Jan2021)
+    * [06 January 2022](/docs/openshift?topic=openshift-iks-release#jan0622)
 
     * [4 January 2022](/docs/openshift?topic=openshift-iks-release#4jan2022)
 
@@ -3086,7 +3086,59 @@ subcollection: openshift
 {: #sitemap_cli_plug-in_reference}
 
 
+[{{site.data.keyword.openshiftlong_notm}} CLI Map](/docs/openshift?topic=openshift-icks_map#icks_map)
+
+* [ibmcloud oc cluster](/docs/openshift?topic=openshift-icks_map#icks_map_cluster)
+
+* [ibmcloud oc worker](/docs/openshift?topic=openshift-icks_map#icks_map_worker)
+
+* [ibmcloud oc worker-pool](/docs/openshift?topic=openshift-icks_map#icks_map_worker-pool)
+
+* [ibmcloud oc zone](/docs/openshift?topic=openshift-icks_map#icks_map_zone)
+
+* [ibmcloud oc ingress](/docs/openshift?topic=openshift-icks_map#icks_map_ingress)
+
+* [ibmcloud oc logging](/docs/openshift?topic=openshift-icks_map#icks_map_logging)
+
+* [ibmcloud oc nlb-dns](/docs/openshift?topic=openshift-icks_map#ibmcloud-oc-nlb-dns)
+
+* [ibmcloud oc webhook-create](/docs/openshift?topic=openshift-icks_map#icks_map_webhook-create)
+
+* [ibmcloud oc api-key](/docs/openshift?topic=openshift-icks_map#icks_map_api-key)
+
+* [ibmcloud oc credential](/docs/openshift?topic=openshift-icks_map#icks_map_credential)
+
+* [ibmcloud oc infra-permissions](/docs/openshift?topic=openshift-icks_map#icks_map_infra-permissions)
+
+* [ibmcloud oc kms](/docs/openshift?topic=openshift-icks_map#icks_map_kms)
+
+* [ibmcloud oc quota](/docs/openshift?topic=openshift-icks_map#icks_map_quota)
+
+* [ibmcloud oc subnets](/docs/openshift?topic=openshift-icks_map#icks_map_subnets)
+
+* [ibmcloud oc vlan](/docs/openshift?topic=openshift-icks_map#icks_map_vlan)
+
+* [ibmcloud oc vpcs](/docs/openshift?topic=openshift-icks_map#icks_map_vpcs)
+
+* [ibmcloud oc flavors](/docs/openshift?topic=openshift-icks_map#icks_map_flavors)
+
+* [ibmcloud oc locations](/docs/openshift?topic=openshift-icks_map#icks_map_locations)
+
+* [ibmcloud oc messages](/docs/openshift?topic=openshift-icks_map#icks_map_messages)
+
+* [ibmcloud oc versions](/docs/openshift?topic=openshift-icks_map#icks_map_versions)
+
+* [ibmcloud oc api](/docs/openshift?topic=openshift-icks_map#icks_map_api)
+
+* [ibmcloud oc init](/docs/openshift?topic=openshift-icks_map#icks_map_init)
+
+* [ibmcloud oc script](/docs/openshift?topic=openshift-icks_map#icks_map_script)
+
+* [ibmcloud oc storage](/docs/openshift?topic=openshift-icks_map#icks_map_storage)
+
 [{{site.data.keyword.openshiftlong_notm}} CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#kubernetes-service-cli)
+
+* [{{site.data.keyword.openshiftlong_notm}} commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_commands)
 
 * [`cluster` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster)
 
@@ -4013,9 +4065,13 @@ subcollection: openshift
 
 * [Version 4.8.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0)
 
+    * [Version 4.8.0_1125, released on 11 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_1125)
+
     * [Version 4.8.0_997, released on 16 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0997)
 
 * [Version 4.7.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0)
+
+    * [Version 4.7.0_1127, released on 11 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_1127)
 
     * [Version 4.7.0_1013, released on 19 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_1013)
 
@@ -4025,7 +4081,9 @@ subcollection: openshift
 
 * [Version 4.6.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0)
 
-    * [Version 4.6.0_1012, released on 19 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_1012)
+    * [Version 4.6.0_1126, released on 11 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_1126)
+
+    * [Version 4.6.0_1012, released on 19 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_1012)
 
     * [Version 4.6.0_987, released on 16 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0987)
 
@@ -4070,6 +4128,8 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0)
+
+    * [Version 1.0.0_804, released on 11 January 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0804)
 
     * [Version 1.0.0_744, released on 19 November 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0744)
 

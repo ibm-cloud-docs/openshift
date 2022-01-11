@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2021
-lastupdated: "2021-11-15"
+  years: 2014, 2022
+lastupdated: "2022-01-11"
 
 keywords: openshift, storage
 

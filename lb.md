@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2021
-lastupdated: "2021-12-16"
+  years: 2014, 2022
+lastupdated: "2022-01-11"
 
 keywords: openshift, lb2.0, nlb
 
