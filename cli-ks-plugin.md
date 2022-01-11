@@ -29,11 +29,40 @@ In the command line, you are notified when updates to the `ibmcloud` CLI and plu
 Looking for `ibmcloud cr` commands? See the [{{site.data.keyword.registrylong_notm}} CLI reference](/docs/Registry?topic=container-registry-cli-plugin-containerregcli). Looking for `kubectl` commands? See the [Kubernetes documentation](https://kubectl.docs.kubernetes.io/){: external}.
 {: tip}
 
-The following image depicts the structure and grouping of the `ibmcloud oc` commands.
+## {{site.data.keyword.openshiftlong_notm}} commands
+{: #cli_commands}
+
+The tables below list the `ibmcloud oc` command groups. For a complete list of all `ibmcloud oc` commands as they are structured in the CLI, see the [{{site.data.keyword.openshiftlong_notm}} CLI map](/docs/containers?topic=containers-icks_map).
 {: shortdesc}
 
-![Image of the structure and groupings of commands in {{site.data.keyword.openshiftlong_notm}} plug-in.](images/cs_cli_ref_imagemap.svg "Image of the structure and groupings of commands in {{site.data.keyword.openshiftlong_notm}} plug-in"){: caption="Image of the structure and groupings of commands in {{site.data.keyword.openshiftlong_notm}} plug-in" caption-side="bottom"}
-
+| Command group | Description | 
+| --- | --- |
+| [Cluster commands](#cluster) | Create, view, and modify clusters and cluster settings, such as add-on, subnet, and master settings. |
+| [Worker commands](#worker_node_commands) | View and modify worker nodes for a cluster.  |
+| [Worker-pool commands](#worker-pool) | View and modify worker pools for a cluster. |
+| [Zone commands](#zone) | List availability zones and modify the zones attached to a worker pool. |
+| **Beta** [Ingress commands](#alb-commands) | View and modify Ingress services and settings. |
+| [Logging commands](#logging_commands) | Forward logs from your cluster. |
+| [Nlb-dns commands](#nlb-dns) | Create and manage host names for network load balancer (NLB) IP addresses in a cluster and health check monitors for host names. |
+| [Webhook-create commands](#cs_webhook_create) | Register a webhook in a cluster. |
+| [API-key commands](#api_key-commands) | View information about the API key for a cluster or reset it to a new key. |
+| [Credential commands](#credential) | Set and unset credentials that allow you to access the IBM Cloud classic infrastructure portfolio through your IBM Cloud account. |
+| [Infra-permissions commands](#infra-commands) | Check classic IBM Cloud infrastructure permissions that are used in IBM Cloud Kubernetes Service. |
+| [KMS commands](#ks_kms) | Enable a key management service (KMS) provider in your cluster to encrypt the etcd component and Kubernetes secrets with a root key that you control. |
+| [Quota commands](#cs_quota) | View the quota and limits for cluster-related resources in your IBM Cloud account. |
+| [Subnets commands](#cs_subnets) | List available subnets in your IBM Cloud infrastructure account. |
+| [VLAN commands](#vlan) | List public and private VLANs for a zone and view the VLAN spanning status.|
+| [VPCS commands](#cs_vpcs) | List all VPCs in the targeted resource group. If no resource group is targeted, then all VPCs in the account are listed.|
+| [Flavors commands](#cs_machine_types) | List available flavors for a zone. |
+| [Locations commands](#cs_supported-locations) | List the locations that are supported by IBM Cloud Kubernetes Service. |
+| [Messages commands](#cs_messages) | View the current user messages. |
+| [Versions commands](#cs_versions_command) | List the container platform versions that are available for IBM Cloud Kubernetes Service clusters. |
+| **Deprecated** [API commands](#cs_cli_api) | View or target the API endpoint and API version for the service. | 
+| **Deprecated** [Init commands](#cs_init) | Initialize the IBM Cloud Kubernetes Service plug-in or specify the region where you want to create or access Kubernetes clusters. | 
+| [Script commands](#script) | Rewrite scripts that call IBM Cloud Kubernetes Service plug-in commands. | 
+| **Beta** [Storage commands](#cs_storage) | View and modify storage resources. | 
+{: summary="The rows are read from left to right. The first column is the command group. The second column is a description of the command group."}
+{: caption="{{site.data.keyword.openshiftlong_notm}} CLI command groups" caption-side="top"}
 
 ## `cluster` commands
 {: #cluster}

@@ -237,6 +237,7 @@ toc:
       - topicgroup:
           label: CLI plug-in reference
           topics:
+            - cli-map.md
             - cli-ks-plugin.md
             - cli-changelog.md
             - observability-reference.md
