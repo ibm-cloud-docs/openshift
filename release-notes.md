@@ -1518,7 +1518,7 @@ Storage add-ons
 :   Cluster autoscaler add-on patch update `1.0.1_195` is released. For more information, see the [Cluster autoscaler add-on changelog](/docs/containers?topic=containers-ca_changelog). {{site.data.keyword.block_storage_is_short}} add-on patch update `2.0.3_464` is released. For more information, see the [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/containers?topic=containers-vpc_bs_changelog).
 
 strongSwan versions
-:   Added information about which [strongSwan Helm chart versions](/docs/containers?topic=containers-changelog_archive#11615_1554) are supported.
+:   Added information about which [strongSwan Helm chart versions](/docs/containers?topic=containers-116_changelog#11615_1554) are supported.
 
 
 
@@ -3003,7 +3003,7 @@ Refreshed {{site.data.keyword.openshiftlong_notm}} docs
 {: release-note}
 
 Version changelogs
-:   Worker node patch updates are available for Kubernetes [1.15.5_1521](/docs/containers?topic=containers-changelog_archive#1155_1521), [1.14.8_1537](/docs/containers?topic=containers-changelog_archive#1148_1537), [1.13.12_1540](/docs/containers?topic=containers-changelog_archive#11312_1540), [1.12.10_1570](/docs/containers?topic=containers-changelog_archive#11210_1570), and {{site.data.keyword.openshiftshort}} [3.11.153_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog#311153_1529).
+:   Worker node patch updates are available for Kubernetes [1.15.5_1521](/docs/containers?topic=containers-115_changelog#1155_1521), [1.14.8_1537](/docs/containers?topic=containers-114_changelog#1148_1537), [1.13.12_1540](/docs/containers?topic=containers-113_changelog#11312_1540), [1.12.10_1570](/docs/containers?topic=containers-112_changelog#11210_1570), and {{site.data.keyword.openshiftshort}} [3.11.153_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog#311153_1529).
 
 
 
@@ -3035,7 +3035,7 @@ Ingress annotations
 {: release-note}
 
 Version changelogs
-:   Master patch updates are available for Kubernetes [1.15.5_1520](/docs/containers?topic=containers-changelog_archive#1155_1520), [1.14.8_1536](/docs/containers?topic=containers-changelog_archive#1148_1536), [1.13.12_1539](/docs/containers?topic=containers-changelog_archive#11312_1539), and {{site.data.keyword.openshiftshort}} [3.11.146_1528_openshift](/docs/openshift?topic=openshift-openshift_changelog#311146_1528).
+:   Master patch updates are available for Kubernetes [1.15.5_1520](/docs/containers?topic=containers-115_changelog#1155_1520), [1.14.8_1536](/docs/containers?topic=containers-114_changelog#1148_1536), [1.13.12_1539](/docs/containers?topic=containers-113_changelog#11312_1539), and {{site.data.keyword.openshiftshort}} [3.11.146_1528_openshift](/docs/openshift?topic=openshift-openshift_changelog#311146_1528).
 
 
 
@@ -3060,7 +3060,7 @@ Let's Encrypt rate limits for Ingress
 :   Added troubleshooting steps for when no subdomain or secret is generated for the Ingress ALB when you create or delete clusters of the same name.
 
 Version changelogs
-:   Worker node patch updates are available for Kubernetes [1.15.4_1519](/docs/containers?topic=containers-changelog_archive#1154_1519_worker), [1.14.7_1535](/docs/containers?topic=containers-changelog_archive#1147_1535_worker), [1.13.11_1538](/docs/containers?topic=containers-changelog_archive#11311_1538_worker), [1.12.10_1569](/docs/containers?topic=containers-changelog_archive#11210_1569_worker), and {{site.data.keyword.openshiftshort}} [3.11.146_1527_openshift](/docs/openshift?topic=openshift-openshift_changelog#311146_1527).
+:   Worker node patch updates are available for Kubernetes [1.15.4_1519](/docs/containers?topic=containers-115_changelog#1154_1519_worker), [1.14.7_1535](/docs/containers?topic=containers-114_changelog#1147_1535_worker), [1.13.11_1538](/docs/containers?topic=containers-113_changelog#11311_1538_worker), [1.12.10_1569](/docs/containers?topic=containers-112_changelog#11210_1569_worker), and {{site.data.keyword.openshiftshort}} [3.11.146_1527_openshift](/docs/openshift?topic=openshift-openshift_changelog#311146_1527).
 
 
 
@@ -3254,7 +3254,7 @@ New! {{site.data.keyword.openshiftlong_notm}} plug-in version `0.4`
 :   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for multiple changes in the [release of version 0.4.1](/docs/containers?topic=containers-cs_cli_changelog).
 
 Version changelog
-:   Worker node patch updates are available for Kubernetes [1.15.3_1516](/docs/containers?topic=containers-changelog_archive#1153_1516_worker), [1.14.6_1532](/docs/containers?topic=containers-changelog_archive#1146_1532_worker), [1.13.10_1535](/docs/containers?topic=containers-changelog_archive#11310_1535_worker), [1.12.10_1566](/docs/containers?topic=containers-changelog_archive#11210_1566_worker), and {{site.data.keyword.openshiftshort}} [3.11.135_1523](/docs/openshift?topic=openshift-openshift_changelog#311135_1523_worker).
+:   Worker node patch updates are available for Kubernetes [1.15.3_1516](/docs/containers?topic=containers-115_changelog#1153_1516_worker), [1.14.6_1532](/docs/containers?topic=containers-114_changelog#1146_1532_worker), [1.13.10_1535](/docs/containers?topic=containers-113_changelog#11310_1535_worker), [1.12.10_1566](/docs/containers?topic=containers-112_changelog#11210_1566_worker), and {{site.data.keyword.openshiftshort}} [3.11.135_1523](/docs/openshift?topic=openshift-openshift_changelog#311135_1523_worker).
 
 ## August 2019
 {: #aug19}
