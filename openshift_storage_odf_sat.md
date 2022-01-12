@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-06"
+lastupdated: "2022-01-12"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, satellite
 
@@ -259,12 +259,12 @@ Before you install ODF, get the details of the local disks on your worker nodes.
     sda      8:0    0   931G  0 disk
     |-sda1   8:1    0   256M  0 part /boot
     |-sda2   8:2    0     1G  0 part
-    `-sda3   8:3    0 929.8G  0 part /
+     -sda3   8:3    0 929.8G  0 part /
     sdb      8:16   0 744.7G  0 disk
-    `-sdb1   8:17   0 744.7G  0 part /disk1
+     -sdb1   8:17   0 744.7G  0 part /disk1
     sdc      8:32   0 744.7G  0 disk
     |-sdc1   8:33   0  18.6G  0 part
-    `-sdc2   8:34   0 260.8G  0 part
+     -sdc2   8:34   0 260.8G  0 part
     ```
     {: screen}
 
