@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-12"
 
 keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logging config, monitoring config
 
@@ -29,7 +29,7 @@ Looking for `ibmcloud oc` commands? See the [{{site.data.keyword.openshiftlong_n
 ### `ibmcloud ob logging agent discover`
 {: #logging_agent_discover}
 
-Discover {{site.data.keyword.la_short}} agents that you manually installed in your cluster without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, and make this logging configuration visible to the plug-in so that you can use the observability plug-in commands and functionality in the {{site.data.keyword.cloud_notm}} console to manage this configuration.
+Discover {{site.data.keyword.la_short}} agents that you manually installed in your cluster without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, and make this logging configuration visible to the plug-in so that you can use the observability plug-in commands and functions in the {{site.data.keyword.cloud_notm}} console to manage this configuration.
 {: shortdesc}
 
 ```sh
@@ -88,7 +88,7 @@ ibmcloud ob logging config create --cluster CLUSTER --instance LOGGING_INSTANCE 
 `--logdna-ingestion-key INGESTION_KEY`
 :   The {{site.data.keyword.la_short}} ingestion key that you want to use for your configuration. This value is optional. If you don't specify this option, the latest ingestion key is automatically retrieved.   
 
-`--private-endpoint
+`--private-endpoint`
 :   When you add this option to your command, the private cloud service endpoint is used to connect to {{site.data.keyword.la_full_notm}}. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 don't support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option. For more information, see worker communication to other services and networks in [clusters](/docs/openshift?topic=openshift-plan_clusters#worker-services-onprem). 
 
 
@@ -349,7 +349,7 @@ ibmcloud ob monitoring config create --cluster CLUSTER --instance MONITORING_INS
 `--sysdig-access-key ACCESS_KEY`
 :   The {{site.data.keyword.mon_short}} access key that you want to use for your configuration. This value is optional. If you don't specify this option, the latest access key is used for your configuration. 
 
-`--private-endpoint
+`--private-endpoint`
 :   When you add this option to your command, the private cloud service endpoint is used to connect to {{site.data.keyword.mon_full_notm}}. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 don't support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option. 
 
 

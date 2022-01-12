@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-12"
 
 keywords: openshift
 subcollection: openshift
@@ -1616,7 +1616,7 @@ subcollection: openshift
 
 * [Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge#edge_workloads)
 
-[Classic: Controlling traffic with network policies](/docs/openshift?topic=openshift-network_policies#network_policies)
+[Controlling traffic with network policies on classic clusters](/docs/openshift?topic=openshift-network_policies#network_policies)
 
 * [Default Calico network policies](/docs/openshift?topic=openshift-network_policies#default_policy)
 
