@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-13"
 
 keywords: openshift
 
@@ -55,9 +55,9 @@ The page lists all `ibmcloud oc` commands as they are structured in the CLI. For
         * **[`ibmcloud oc cluster master private-service-endpoint allowlist`**: Manage the private service endpoint allowlist.
             * [`ibmcloud oc cluster master private-service-endpoint allowlist add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist_add)
             * [`ibmcloud oc cluster master private-service-endpoint allowlist disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist_disable)
-            * [`ibmcloud oc cluster master private-service-endpoint allowlist enable`](/docs/containers?topic=containers-kubernetes-service-cli#cs_master_pse_enable)
-            * [`ibmcloud oc cluster master private-service-endpoint allowlist get`](/docs/containers?topic=containers-kubernetes-service-cli#cs_master_pse_get)
-            * [`ibmcloud oc cluster master private-service-endpoint allowlist rm`](/docs/containers?topic=containers-kubernetes-service-cli#cs_master_pse_rm)
+            * [`ibmcloud oc cluster master private-service-endpoint allowlist enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist_enable)
+            * [`ibmcloud oc cluster master private-service-endpoint allowlist get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist_get)
+            * [`ibmcloud oc cluster master private-service-endpoint allowlist rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist_rm)
         * [`ibmcloud oc cluster master private-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_enable)
     * **`cluster master public-service-endpoint`**: Manage the public service endpoint of a cluster.
         * [`ibmcloud oc cluster master public-service-endpoint disable`](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_master_pub_se_disable)
