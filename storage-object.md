@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-14"
 
 keywords: openshift
 
@@ -401,12 +401,33 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
     ```
     {: pre}
 
-1. Install the most recent version of the `ibm-object-storage-plugin`.
+1. Install the most recent version of the `ibm-object-storage-plugin` for your operating system.
+
+  Example `helm ibmc install` command for OS X and Linux.
 
     ```sh
-    helm ibmc upgrade <release_name> ibm-helm/ibm-object-storage-plugin --force --set license=true -n ibm-object-s3fs
+    helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set license=true [--set bucketAccessPolicy=false]
     ```
     {: pre}
+
+  Example `helm install` command for Windows.
+
+    ```sh
+    helm install ibm-object-storage-plugin ./ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --region="${REGION} --set platform="${PLATFORM}" --set license=true [--set bucketAccessPolicy=false]
+    ```
+    {: pre}
+
+    `DC_NAME`
+    :   The cluster data center. To retrieve the data center, run `oc get cm cluster-info -n kube-system -o jsonpath="{.data.cluster-config\.json}{'\n'}"`. Store the data center value in an environment variable by running `SET DC_NAME=<datacenter>`. Optional: Set the environment variable in Windows PowerShell by running `$env:DC_NAME="<datacenter>"`.
+
+    `CLUSTER_PROVIDER`
+    :   The infrastructure provider. To retrieve this value, run `oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/iaas-provider}{'\n'}"`. If the output from the previous step contains `softlayer`, then set the `CLUSTER_PROVIDER` to `"IBMC"`. If the output contains `gc`, `ng`, or `g2`, then set the `CLUSTER_PROVIDER` to `"IBMC-VPC"`. Store the infrastructure provider in an environment variable. For example: `SET CLUSTER_PROVIDER="IBMC-VPC"`.
+
+    `WORKER_OS` and `PLATFORM`
+    :   The operating system of the worker nodes. To retrieve these values, run `oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/os}{'\n'}"`. Store the operating system of the worker nodes in an environment variable. For {{site.data.keyword.openshiftlong_notm}} clusters, run `SET WORKER_OS="redhat"` and `SET PLATFORM="openshift"`. 
+
+    `REGION`
+    :   The region of the worker nodes. To retrieve this value, run `oc get nodes -o yaml | grep 'ibm-cloud\.kubernetes\.io/region'`. Store the region of the worker nodes in an environment variable by running `SET REGION="< region>"`. |
 
 1. Verify that the `ibmcloud-object-storage-plugin` is successfully upgraded. The upgrade of the plug-in is successful when you see `deployment "ibmcloud-object-storage-plugin" successfully rolled out` in your CLI output.
 

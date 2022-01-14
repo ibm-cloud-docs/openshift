@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-13"
 
 keywords: openshift
 
@@ -641,7 +641,7 @@ Detaching storage from your VPC cluster does not remove your {{site.data.keyword
     :   The unique ID or name that is assigned to your cluster. You can retrieve this ID by running `ibmcloud oc cluster ls`.
     
     `worker_ID`
-    :   The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running `ibmcloud oc worker ls -c <cluster_name>.
+    :   The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running `ibmcloud oc worker ls -c <cluster_name>`.
     
     `volume_ID`
     :   The unique ID that is assigned to your {{site.data.keyword.blockstorageshort}} volume. You can retrieve a list of your {{site.data.keyword.blockstorageshort}} volumes by running `ibmcloud is volumes`.

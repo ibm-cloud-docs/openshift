@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-12"
+lastupdated: "2022-01-13"
 
 keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logging config, monitoring config
 
@@ -367,7 +367,7 @@ Delete a {{site.data.keyword.mon_short}} configuration from your cluster.
 {: shortdesc}
 
 
-To remove monitoring configurations that you manually set up without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you must first make this configuration available to the plug-in by using the ibmcloud ob monitoring agent discover` [command](#monitoring_agent_discover).
+To remove monitoring configurations that you manually set up without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you must first make this configuration available to the plug-in by using the ibmcloud ob monitoring agent discover [command](#monitoring_agent_discover).
 {: note}
 
 

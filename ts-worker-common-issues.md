@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-13"
 
 keywords: openshift
 
@@ -57,7 +57,7 @@ The zone that you selected might not have enough infrastructure capacity to prov
 To resolve, try one of the following options:
 * Infrastructure resource availability in zones can fluctuate often. Wait a few minutes and try again.
 * For a single zone cluster, create the cluster in a different zone. For a multizone cluster, add a zone to the cluster.
-* Specify a different pair of public and private VLANs for your worker nodes in your IBM Cloud infrastructure account. For worker nodes that are in a worker pool, you can use the `ibmcloud oc zone network-set` [command](<opens</li>
+* Specify a different pair of public and private VLANs for your worker nodes in your IBM Cloud infrastructure account. For worker nodes that are in a worker pool, you can use the `ibmcloud oc zone network-set` [command](</li>
 * Contact your IBM Cloud infrastructure account manager to verify that you don't exceed an account limit, such as a global quota.
 * Open an [IBM Cloud infrastructure support case](/docs/containers?topic=containers-get-help).
 

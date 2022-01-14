@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-13"
 
 keywords: openshift, red hat, red hat openshift, update, upgrade
 
@@ -124,7 +124,7 @@ To manage rolling updates to your apps,
     `spec.progressDeadlineSeconds`
     :   Set a timeout in seconds before a deployment is considered failed. For example, without a timeout, if your new app version has a bug and hangs immediately, the rollout can't continue because the pod never reaches a `ready` state. If you set this timeout to `600` seconds, then if any phase of the rollout fails to progress for 10 minutes, the deployment is marked as failed and the rollout stops.</td>
 
-    `spec.strategy.type``
+    `spec.strategy.type`
     :   Specify the `RollingUpdate` strategy type.
 
     `spec.strategy.rollingUpdate.maxUnavailable`

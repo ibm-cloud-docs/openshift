@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-13"
 
 keywords: block, add-on, changelog
 
@@ -151,7 +151,7 @@ Review the changes in version `4.0.0_764` of the {{site.data.keyword.block_stora
     - `csi-provisioner`: `icr.io/ext/sig-storage/csi-provisioner:v2.2.2`
     - `csi-resizer`: `icr.io/ext/sig-storage/csi-resizer:v1.2.0`
     - `csi-attacher`: `icr.io/ext/sig-storage/csi-attacher:v3.2.1`
-    - `liveness-probe`: `icr.io/ext/sig-storage/livenessprobe:v2.3.0
+    - `liveness-probe`: `icr.io/ext/sig-storage/livenessprobe:v2.3.0`
     - `csi-node-driver-registrar`: `icr.io/ext/sig-storage/csi-node-driver-registrar:v2.2.0`
 - Updates the Golang version from `1.15.12` to `1.16.7`
 - Increases the resources to the `csi-attacher`, `csi-resizer`, `csi-provisioner`, `ibm-vpc-block-csi-controller`, and `ibm-vpc-block-csi-node` plug-ins to fix containers crashing due to OOM issues.
