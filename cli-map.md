@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-14"
 
 keywords: openshift
 
@@ -52,7 +52,7 @@ The page lists all `ibmcloud oc` commands as they are structured in the CLI. For
         * [`ibmcloud oc cluster master audit-webhook set`](/docs/containers?topic=containers-kubernetes-service-cli#cs_apiserver_config_set) 
         * [`ibmcloud oc cluster master audit-webhook unset`](/docs/containers?topic=containers-kubernetes-service-cli#cs_apiserver_config_unset) 
     * **`cluster master private-service-endpoint`**: Manage the private service endpoint of a cluster.
-        * **[`ibmcloud oc cluster master private-service-endpoint allowlist`**: Manage the private service endpoint allowlist.
+        * **`ibmcloud oc cluster master private-service-endpoint allowlist`**: Manage the private service endpoint allowlist.
             * [`ibmcloud oc cluster master private-service-endpoint allowlist add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist_add)
             * [`ibmcloud oc cluster master private-service-endpoint allowlist disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist_disable)
             * [`ibmcloud oc cluster master private-service-endpoint allowlist enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist_enable)
@@ -82,7 +82,7 @@ The page lists all `ibmcloud oc` commands as they are structured in the CLI. For
 [View and modify worker nodes for a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_node_commands).
 {: shortdesc}
 
-* [`ibmcloud oc worker add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_add) **Deprecated**
+* **Deprecated** [`ibmcloud oc worker add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_add) 
 * [`ibmcloud oc worker get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_get)
 * [`ibmcloud oc worker ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_workers)
 * [`ibmcloud oc worker reboot`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot)
@@ -108,7 +108,7 @@ The page lists all `ibmcloud oc` commands as they are structured in the CLI. For
 * [`ibmcloud oc worker-pool rebalance`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance)
 * [`ibmcloud oc worker-pool resize`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize)
 * [`ibmcloud oc worker-pool rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_rm)
-* [`ibmcloud oc worker-pool taint`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint): Set and remove Kubernetes taints for all worker nodes in a worker pool.
+* **[`worker-pool taint`]**: Set and remove Kubernetes taints for all worker nodes in a worker pool.
     * [`ibmcloud oc worker-pool taint rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint_rm)
     * [`ibmcloud oc worker-pool taint set`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint_set)
 * [`ibmcloud oc worker-pool zones`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_zones)
@@ -138,8 +138,8 @@ The page lists all `ibmcloud oc` commands as they are structured in the CLI. For
         * [`ibmcloud oc ingress alb autoupdate enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_enable)
         * [`ibmcloud oc ingress alb autoupdate get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_get)
     * **`ingress alb create`**: Create an Ingress ALB in a cluster.
-            * [`ibmcloud oc ingress alb create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_create)
-            * [`ibmcloud oc ingress alb create vpc-gen2`](/docs/containers?topic=containers-kubernetes-service-cli#cli_alb-create-vpc-gen2)
+        * [`ibmcloud oc ingress alb create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_create)
+        * [`ibmcloud oc ingress alb create vpc-gen2`](/docs/containers?topic=containers-kubernetes-service-cli#cli_alb-create-vpc-gen2)
     * [`ibmcloud oc ingress alb disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_disable)
     * **`ingress alb enable`**: Enable an Ingress ALB in a cluster.
         * [`ibmcloud oc ingress alb enable classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure)
@@ -210,7 +210,7 @@ The page lists all `ibmcloud oc` commands as they are structured in the CLI. For
 * **`nlb-dns rm`**: Create and manage health check monitors for network load balancer (NLB) IP addresses and host names in a cluster.
     * [`ibmcloud oc nlb-dns rm classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm)
     * [`ibmcloud oc nlb-dns rm vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm-vpc-gen2)
-* **`nlb-dns secret`**: **Beta** Manage the secret for an NLB subdomain.
+* **Beta** **`nlb-dns secret`**:  Manage the secret for an NLB subdomain.
     * [`ibmcloud oc nlb-dns secret regenerate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-regenerate)
     * [`ibmcloud oc nlb-dns secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-rm)
 
@@ -315,7 +315,7 @@ The page lists all `ibmcloud oc` commands as they are structured in the CLI. For
 ## ibmcloud oc api
 {: #icks_map_api}
 
-[**Deprecated** View or set the API endpoint and API version for the service](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cli_api).
+**Deprecated** [View or set the API endpoint and API version for the service](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cli_api).
 {: shortdesc}
 
 ## ibmcloud oc init
@@ -335,7 +335,7 @@ The page lists all `ibmcloud oc` commands as they are structured in the CLI. For
 ## ibmcloud oc storage 
 {: #icks_map_storage}
 
-[**Beta** View and modify storage resources](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage).
+**Beta** [View and modify storage resources](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage).
 {: shortdesc}
 
 * **`storage attachment`**: View and modify storage volume attachments of worker nodes in your cluster.
