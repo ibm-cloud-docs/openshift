@@ -37,6 +37,9 @@ Review the release notes for January 2022.
 **New!** {{site.data.keyword.openshiftlong_notm}} CLI Map
 :    The [{{site.data.keyword.openshiftlong_notm}} CLI Map](/docs/containers?topic=containers-icks_map) lists all `ibmcloud oc` commands as they are structured in the CLI. Use this page as a visual reference for how ibmcloud oc commands are organized, or to quickly find a specific command. 
 
+{{site.data.keyword.containershort}} 1.19, 1.20, 1.21, and 1.22 unsupported date change
+:   The [Kubernetes version information and update actions](/docs/containers?topic=containers-cs_versions#release-history) page has been updated with the new unsupported dates. 
+
 Version changelog
 :   Worker node fix pack update.
 
