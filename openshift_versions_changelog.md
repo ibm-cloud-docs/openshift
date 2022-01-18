@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-04"
+lastupdated: "2022-01-18"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -32,6 +32,16 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.8 patch updates.
 {: shortdesc}
+
+### Changelog for worker node fix pack 4.8.26_1541_openshift, released 18 January 2022
+{: #4826_1541}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 7 Packages | 3.10.0-1160.49.1.el7 | 3.10.0-1160.53.1.el7 | Kernel and package updates for [CVE-2020-25704](https://nvd.nist.gov/vuln/detail/CVE-2020-25704){: external}, [CVE-2020-36322](https://nvd.nist.gov/vuln/detail/CVE-2020-36322){: external}, [CVE-2021-42739](https://nvd.nist.gov/vuln/detail/CVE-2021-42739){: external}, and [CVE-2021-3712](https://nvd.nist.gov/vuln/detail/CVE-2021-3712){: external}. |
+| {{site.data.keyword.openshiftshort}} | 4.8.24 | 4.8.26 | See  the [change logs](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-26){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.8.24_1540_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 4.8.24_1540_openshift, released 4 January 2022
 {: #4824_1540}
@@ -76,12 +86,12 @@ The following table shows the changes that are in the master fix pack patch upda
 | {{site.data.keyword.IBM_notm}} Cloud RBAC Operator | 4ca5637 | 3430e03 | Updated universal base image (UBI) to the latest `8.5` version to resolve CVEs. Updated to use `Go` version `1.16.10`. |
 | Key Management Service provider | v2.3.10 | v2.3.12 | Updated universal base image (UBI) to the latest `8.4` version to resolve CVEs. Updated to use `Go` version `1.16.10`. |
 | Load balancer and load balancer monitor for {{site.data.keyword.IBM_notm}} Cloud Provider | 1590 | 1659 | Updated Alpine base image to the latest `3.14` version to resolve CVEs. Updated to use `Go` version `1.16.10`. |
-| OpenShift | 4.8.18 | 4.8.21 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-21){: external}. |
-| OpenShift Control Plane Operator | v4.8.0-20211109 | v4.8.0-20211201 | See the [Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20211201){: external}. |
+|  {{site.data.keyword.openshiftshort}} | 4.8.18 | 4.8.21 | See the [ {{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-21){: external}. |
+|  {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.8.0-20211109 | v4.8.0-20211201 | See the [Red Hat  {{site.data.keyword.openshiftshort}} on {{site.data.keyword.IBM_notm}} Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20211201){: external}. |
 | OpenVPN Operator image | v1.3.8 | v1.3.9 | Updated ansible operator base image to version `v1.14.0` to resolve CVEs. |
 | Portieris admission controller | v0.12.0 | v0.12.1 | See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.12.1){: external}. |
-| Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud Metrics Server | v4.8.0-20211109 | v4.8.0-20211201 | See the [Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20211201){: external}. |
-| Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud toolkit | 4.8.0+20211109 | 4.8.0+20211201 | See the [Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20211201){: external}. |
+| Red Hat  {{site.data.keyword.openshiftshort}} on {{site.data.keyword.IBM_notm}} Cloud Metrics Server | v4.8.0-20211109 | v4.8.0-20211201 | See the [Red Hat  {{site.data.keyword.openshiftshort}} on {{site.data.keyword.IBM_notm}} Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20211201){: external}. |
+| Red Hat  {{site.data.keyword.openshiftshort}} on {{site.data.keyword.IBM_notm}} Cloud toolkit | 4.8.0+20211109 | 4.8.0+20211201 | See the [Red Hat  {{site.data.keyword.openshiftshort}} on {{site.data.keyword.IBM_notm}} Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20211201){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.8.18_1535_openshift" caption-side="top"}
 
@@ -233,6 +243,15 @@ The following table shows the changes that are in the master fix pack `4.8.11_15
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.7 patch updates.
 {: shortdesc}
 
+### Changelog for worker node fix pack 4.7.40_1546_openshift, released 18 January 2022
+{: #4740_1546}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 7 Packages | 3.10.0-1160.49.1.el7 | 3.10.0-1160.53.1.el7 | Kernel and package updates for [CVE-2020-25704](https://nvd.nist.gov/vuln/detail/CVE-2020-25704){: external}, [CVE-2020-36322](https://nvd.nist.gov/vuln/detail/CVE-2020-36322){: external}, [CVE-2021-42739](https://nvd.nist.gov/vuln/detail/CVE-2021-42739){: external}, and [CVE-2021-3712](https://nvd.nist.gov/vuln/detail/CVE-2021-3712){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.7.40_1545_openshift" caption-side="top"}
+
 ### Changelog for worker node fix pack 4.7.40_1545_openshift, released 4 January 2022
 {: #4740_1545}
 
@@ -274,11 +293,11 @@ The following table shows the changes that are in the master fix pack patch upda
 | {{site.data.keyword.IBM_notm}} Cloud RBAC Operator | 4ca5637 | 3430e03 | Updated universal base image (UBI) to the latest `8.5` version to resolve CVEs. Updated to use `Go` version `1.16.10`. |
 | Key Management Service provider | v2.3.10 | v2.3.12 | Updated universal base image (UBI) to the latest `8.4` version to resolve CVEs. Updated to use `Go` version `1.16.10`. |
 | Load balancer and load balancer monitor for {{site.data.keyword.IBM_notm}} Cloud Provider | 1590 | 1659 | Updated Alpine base image to the latest `3.14` version to resolve CVEs. Updated to use `Go` version `1.16.10`. |
-| OpenShift | 4.7.36 | 4.7.37 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-37){: external}. |
-| OpenShift Control Plane Operator | v4.7.0-20211109 | v4.7.0-20211201 | See the [Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20211201){: external}. |
+|  {{site.data.keyword.openshiftshort}} | 4.7.36 | 4.7.37 | See the [ {{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-37){: external}. |
+|  {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.7.0-20211109 | v4.7.0-20211201 | See the [Red Hat  {{site.data.keyword.openshiftshort}} on {{site.data.keyword.IBM_notm}} Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20211201){: external}. |
 | OpenVPN Operator image | v1.3.8 | v1.3.9 | Updated ansible operator base image to version `v1.14.0` to resolve CVEs. |
-| Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud Metrics Server | v4.7.0-20211109 | v4.7.0-20211201 | See the [Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20211201){: external}. |
-| Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud toolkit | 4.7.0+20211109 | 4.7.0+20211201 | See the [Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20211201){: external}. |
+| Red Hat  {{site.data.keyword.openshiftshort}} on {{site.data.keyword.IBM_notm}} Cloud Metrics Server | v4.7.0-20211109 | v4.7.0-20211201 | See the [Red Hat  {{site.data.keyword.openshiftshort}} on {{site.data.keyword.IBM_notm}} Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20211201){: external}. |
+| Red Hat  {{site.data.keyword.openshiftshort}} on {{site.data.keyword.IBM_notm}} Cloud toolkit | 4.7.0+20211109 | 4.7.0+20211201 | See the [Red Hat  {{site.data.keyword.openshiftshort}} on {{site.data.keyword.IBM_notm}} Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20211201){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.36_1539_openshift" caption-side="top"}
 
@@ -656,6 +675,16 @@ The following table shows the changes that are in the master fix pack patch upda
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.6 patch updates.
 {: shortdesc}
 
+### Changelog for worker node fix pack 4.6.53_1569_openshift, released 18 January 2022
+{: #4653_1569}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 7 Packages | 3.10.0-1160.49.1.el7 | 3.10.0-1160.53.1.el7 | Kernel and package updates for [CVE-2020-25704](https://nvd.nist.gov/vuln/detail/CVE-2020-25704){: external}, [CVE-2020-36322](https://nvd.nist.gov/vuln/detail/CVE-2020-36322){: external}, [CVE-2021-42739](https://nvd.nist.gov/vuln/detail/CVE-2021-42739){: external}, and [CVE-2021-3712](https://nvd.nist.gov/vuln/detail/CVE-2021-3712){: external}. |
+| {{site.data.keyword.openshiftshort}} | 4.6.52 | 4.6.53 | See the [change logs](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-53){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.6.52_1568_openshift" caption-side="top"}
+
 ### Changelog for worker node fix pack 4.6.52_1568_openshift, released 4 January 2022
 {: #4652_1568}
 
@@ -698,10 +727,10 @@ The following table shows the changes that are in the master fix pack patch upda
 | {{site.data.keyword.IBM_notm}} Cloud RBAC Operator | 4ca5637 | 3430e03 | Updated universal base image (UBI) to the latest `8.5` version to resolve CVEs. Updated to use `Go` version `1.16.10`. |
 | Key Management Service provider | v2.3.10 | v2.3.12 | Updated universal base image (UBI) to the latest `8.4` version to resolve CVEs. Updated to use `Go` version `1.16.10`. |
 | Load balancer and load balancer monitor for {{site.data.keyword.IBM_notm}} Cloud Provider | 1589 | 1660 | Updated Alpine base image to the latest `3.14` version to resolve CVEs. Updated to use `Go` version `1.16.10`. |
-| OpenShift Control Plane Operator | v4.6.0-20211109 | v4.6.0-20211201 | See the [Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20211201){: external}. |
+|  {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.6.0-20211109 | v4.6.0-20211201 | See the [Red Hat  {{site.data.keyword.openshiftshort}} on {{site.data.keyword.IBM_notm}} Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20211201){: external}. |
 | OpenVPN Operator image | v1.3.8 | v1.3.9 | Updated ansible operator base image to version `v1.14.0` to resolve CVEs. |
-| Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud Metrics Server | v4.6.0-20211109 | v4.6.0-20211201 | See the [Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20211201){: external}. |
-| Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud toolkit | 4.6.0+20211109 | 4.6.0+20211201 | See the [Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20211201){: external}. |
+| Red Hat  {{site.data.keyword.openshiftshort}} on {{site.data.keyword.IBM_notm}} Cloud Metrics Server | v4.6.0-20211109 | v4.6.0-20211201 | See the [Red Hat  {{site.data.keyword.openshiftshort}} on {{site.data.keyword.IBM_notm}} Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20211201){: external}. |
+| Red Hat  {{site.data.keyword.openshiftshort}} on {{site.data.keyword.IBM_notm}} Cloud toolkit | 4.6.0+20211109 | 4.6.0+20211201 | See the [Red Hat  {{site.data.keyword.openshiftshort}} on {{site.data.keyword.IBM_notm}} Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20211201){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.47_1563_openshift" caption-side="top"}
 
@@ -746,7 +775,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | {{site.data.keyword.cloud_notm}} RBAC Operator | e3cb629 | 4ca5637 | Updated universal base image (UBI) to the latest `8.4` version to resolve CVEs. |
 | Key Management Service provider | v2.3.8 | v2.3.10 | Updated `Go` module dependencies and to use `Go` version `1.16.9`.  Updated image for [CVE-2021-22946](https://nvd.nist.gov/vuln/detail/CVE-2021-22946). |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1550 | 1589 | Updated to use `Go` version `1.16.9`. |
-| {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.6.0-20210923 | v4.6.0-20211109 | See the [Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20211109). |
+| {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.6.0-20210923 | v4.6.0-20211109 | See the [Red Hat  {{site.data.keyword.openshiftshort}} on {{site.data.keyword.IBM_notm}} Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20211109). |
 | OpenVPN client | 2.4.6-r3-IKS-386 | 2.4.6-r3-IKS-463 | Updated image to implement additional {{site.data.keyword.IBM_notm}} security controls. |
 | OpenVPN server | 2.4.6-r3-IKS-385 | 2.4.6-r3-IKS-462 | Updated image to implement additional {{site.data.keyword.IBM_notm}} security controls. |
 | OpenVPN Operator image | v1.3.7 | v1.3.8 | Updated ansible operator base image to version `v1.13.1` to resolve CVEs. |
@@ -1287,6 +1316,16 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 3.11 
 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported on 6 June 2022 (date subject to change).
 {: deprecated}
+
+### Changelog for worker node fix pack 3.11.570_1618_openshift, released 18 January 2022
+{: #311570_1618}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 7 Packages | 3.10.0-1160.49.1.el7 | 3.10.0-1160.53.1.el7 | Kernel and package updates for [CVE-2020-25704](https://nvd.nist.gov/vuln/detail/CVE-2020-25704){: external}, [CVE-2020-36322](https://nvd.nist.gov/vuln/detail/CVE-2020-36322){: external}, [CVE-2021-42739](https://nvd.nist.gov/vuln/detail/CVE-2021-42739){: external}, [CVE-2021-3712](https://nvd.nist.gov/vuln/detail/CVE-2021-3712){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.570_1617_openshift" caption-side="top"}
+
 
 ### Changelog for worker node fix pack 3.11.570_1617_openshift, released 4 January 2022
 {: #311570_1617}

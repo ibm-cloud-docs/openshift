@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-18"
 
 keywords: openshift
 subcollection: openshift
@@ -183,6 +183,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
 * [January 2022](/docs/openshift?topic=openshift-iks-release#release-jan-2022)
+
+    * [18 January 2022](/docs/openshift?topic=openshift-iks-release#18jan2021)
+
+    * [17 January 2022](/docs/openshift?topic=openshift-iks-release#17jan2022)
 
     * [11 January 2022](/docs/openshift?topic=openshift-iks-release#11jan2021)
 
@@ -3140,7 +3144,7 @@ subcollection: openshift
 
 * [ibmcloud oc storage](/docs/openshift?topic=openshift-icks_map#icks_map_storage)
 
-[{{site.data.keyword.openshiftlong_notm}} CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#kubernetes-service-cli)
+[{{site.data.keyword.openshiftlong_notm}} CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#kubernetes-service-cli)
 
 * [{{site.data.keyword.openshiftlong_notm}} commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_commands)
 
@@ -3569,6 +3573,8 @@ subcollection: openshift
 
 * [Version 4.8 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-48)
 
+    * [Changelog for worker node fix pack 4.8.26_1541_openshift, released 18 January 2022](/docs/openshift?topic=openshift-openshift_changelog#4826_1541)
+
     * [Changelog for worker node fix pack 4.8.24_1540_openshift, released 4 January 2022](/docs/openshift?topic=openshift-openshift_changelog#4824_1540)
 
     * [Changelog for worker node fix pack 4.8.24_1539_openshift, released 20 December 2021](/docs/openshift?topic=openshift-openshift_changelog#4824_1539_openshift)
@@ -3592,6 +3598,8 @@ subcollection: openshift
     * [Change log for fix pack 4.8.11_1526_openshift (master) and 4.8.12_1527_openshift (worker node), released 29 Sept 2021](/docs/openshift?topic=openshift-openshift_changelog#4811_1526_and_4812_1527)
 
 * [Version 4.7 change log](/docs/openshift?topic=openshift-openshift_changelog#version-47)
+
+    * [Changelog for worker node fix pack 4.7.40_1546_openshift, released 18 January 2022](/docs/openshift?topic=openshift-openshift_changelog#4740_1546)
 
     * [Changelog for worker node fix pack 4.7.40_1545_openshift, released 4 January 2022](/docs/openshift?topic=openshift-openshift_changelog#4740_1545)
 
@@ -3642,6 +3650,8 @@ subcollection: openshift
     * [Changelog for master fix pack 4.7.12_1520_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4712_1520)
 
 * [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
+
+    * [Changelog for worker node fix pack 4.6.53_1569_openshift, released 18 January 2022](/docs/openshift?topic=openshift-openshift_changelog#4653_1569)
 
     * [Changelog for worker node fix pack 4.6.52_1568_openshift, released 4 January 2022](/docs/openshift?topic=openshift-openshift_changelog#4652_1568)
 
@@ -3718,6 +3728,8 @@ subcollection: openshift
     * [Changelog for 4.6.16_1530_openshift (master) and 4.6.16_1529_openshift (worker node), released 17 February 2020](/docs/openshift?topic=openshift-openshift_changelog#4616_1530)
 
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+
+    * [Changelog for worker node fix pack 3.11.570_1618_openshift, released 18 January 2022](/docs/openshift?topic=openshift-openshift_changelog#311570_1618)
 
     * [Changelog for worker node fix pack 3.11.570_1617_openshift, released 4 January 2022](/docs/openshift?topic=openshift-openshift_changelog#311570_1617)
 
@@ -4026,6 +4038,8 @@ subcollection: openshift
     * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [Object storage plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Changlog version 2.1.8, released 17 January 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0218_object_plugin)
 
 * [Changelog version 2.1.7, released 18 November 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0217_object_plugin)
 
