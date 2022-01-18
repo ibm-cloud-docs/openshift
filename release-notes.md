@@ -27,6 +27,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #release-jan-2022}}
 
 
+
+
 ### 18 January 2022
 {: #18jan2021}
 {: release-note}
@@ -46,6 +48,12 @@ Version changelog
 
 :   {{site.data.keyword.openshiftshort}} [4.8.26_1541_openshift](/docs/openshift?topic=openshift-openshift_changelog#4826_1541), [4.7.40_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog#4740_1546), [4.6.53_1569_openshift](/docs/openshift?topic=openshift-openshift_changelog#4653_1569), [3.11.570_1618_openshift](/docs/openshift?topic=openshift-openshift_changelog#311570_1618).
 
+### 17 January 2022
+{: #17jan2022}
+{: release-note}
+
+Object Storage plug-in
+:   Version `2.1.8` of the Object Storage plug-in is released. For more information, see the [Object Storage plug-in changelog](/docs/containers?topic=containers-cos_plugin_changelog).
 
 
 

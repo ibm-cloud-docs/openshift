@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-18"
 
 keywords: object storage, plug-in, changelog
 
@@ -25,6 +25,7 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | Object Storage plug-in version | Supported? | {{site.data.keyword.openshiftshort}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.1.8 | Yes | Greater than or equal to 4.3 | x86 |
 | 2.1.7 | Yes | Greater than or equal to 4.3 | x86 |
 | 2.1.6 | Yes | Greater than or equal to 4.3 | x86 |
 | 2.1.5 | Deprecated | Greater than or equal to 4.3  | x86 |
@@ -41,6 +42,13 @@ Refer to the following tables for a summary of changes for each version of the [
 {: caption="Object Storage plug-in versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the Object Storage plug-in version. The second column is the version's supported state. The third column is the version of your cluster that the Object Storage plug-in version is supported for."}
 
+
+## Changlog version 2.1.8, released 17 January 2022
+{: #0218_object_plugin}
+
+- Updates the UBI to version `8.5-218`.
+- Resolves [CVE-2021-3712](https://nvd.nist.gov/vuln/detail/CVE-2021-3712){: external}.
+- Fixes an issue that prevented masking keys in the PVC logs.
 
 ## Changelog version 2.1.7, released 18 November 2021
 {: #0217_object_plugin}
@@ -177,7 +185,4 @@ Refer to the following tables for a summary of changes for each version of the [
 
 - Fixes a `NilPointer` error.  
 - Resolves the following CVEs: `CVE-2018-20843`, `CVE-2019-13050`, `CVE-2019-13627`, `CVE-2019-14889`, `CVE-2019-1551`, `CVE-2019-15903`, `,CVE-2019-16168`, `CVE-2019-16935`, `CVE-2019-19221`, `CVE-2019-19906`, `CVE-2019-19956`, `CVE-2019-20218`, `CVE-2019-20386`, `CVE-2019-20387`, `CVE-2019-20388`, `CVE-2019-20454`, `CVE-2019-20907`, `CVE-2019-5018`, `CVE-2020-10029`, `CVE-2020-13630`, `CVE-2020-13631`, `CVE-2020-13632`, `CVE-2020-14422`, `CVE-2020-1730`, `CVE-2020-1751`, `CVE-2020-1752`, `CVE-2020-6405`, `CVE-2020-7595`, and `CVE-2020-8177`.   
-
-
-
 

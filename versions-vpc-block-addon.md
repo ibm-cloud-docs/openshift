@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-18"
 
 keywords: block, add-on, changelog
 
@@ -49,6 +49,8 @@ Refer to the following tables for a summary of changes for each version of the {
 
 Review the changes in version `4.1` of the {{site.data.keyword.block_storage_is_short}} add-on.
 {: shortdesc}
+
+
 
 ### Changelog for version 4.1.0_807, released 06 January 2022
 {: #41_is_block_relnote}

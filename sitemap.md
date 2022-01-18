@@ -186,6 +186,8 @@ subcollection: openshift
 
     * [18 January 2022](/docs/openshift?topic=openshift-iks-release#18jan2021)
 
+    * [17 January 2022](/docs/openshift?topic=openshift-iks-release#17jan2022)
+
     * [11 January 2022](/docs/openshift?topic=openshift-iks-release#11jan2021)
 
     * [06 January 2022](/docs/openshift?topic=openshift-iks-release#jan0622)
@@ -4036,6 +4038,8 @@ subcollection: openshift
     * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [Object storage plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Changlog version 2.1.8, released 17 January 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0218_object_plugin)
 
 * [Changelog version 2.1.7, released 18 November 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0217_object_plugin)
 

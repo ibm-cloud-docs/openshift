@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-18"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -52,6 +52,7 @@ ibmcloud oc cluster addon versions --addon cluster-autoscaler
 
 Review the changes included in version 1.0.3 of the managed cluster autoscaler add-on.
 {: shortdesc}
+
 
 ### Changelog for patch update 1.0.4_387, released 22 November 2021
 {: #10387_ca}
@@ -269,6 +270,5 @@ Review the changes in version `1.0.1_114` of the cluster autoscaler add-on.
 - Supported cluster versions: 4.3 - 4.5  
 - Includes fixes for `CVE-5188` and `CVE-3180`.  
 - Unlike the previous Helm chart, you can modify all the add-on configuration settings via a single configmap.  
-
 
 
