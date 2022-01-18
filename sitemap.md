@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-18"
 
 keywords: openshift
 subcollection: openshift
@@ -183,6 +183,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
 * [January 2022](/docs/openshift?topic=openshift-iks-release#release-jan-2022)
+
+    * [18 Jan 2022](/docs/openshift?topic=openshift-iks-release#18jan2022)
 
     * [11 January 2022](/docs/openshift?topic=openshift-iks-release#11jan2021)
 
@@ -3140,7 +3142,7 @@ subcollection: openshift
 
 * [ibmcloud oc storage](/docs/openshift?topic=openshift-icks_map#icks_map_storage)
 
-[{{site.data.keyword.openshiftlong_notm}} CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#kubernetes-service-cli)
+[{{site.data.keyword.openshiftlong_notm}} CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#kubernetes-service-cli)
 
 * [{{site.data.keyword.openshiftlong_notm}} commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_commands)
 
