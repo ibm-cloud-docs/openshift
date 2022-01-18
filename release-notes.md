@@ -26,15 +26,24 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## January 2022
 {: #release-jan-2022}}
 
+
+### 18 January 2022
+{: #18jan2021}
+{: release-note}
+
 Review the release notes for January 2022.
 {: shortdesc}
 
-### 18 Jan 2022
-{: #18jan2022}
-{: release-note}
-
 **New!** {{site.data.keyword.openshiftlong_notm}} CLI Map
 :    The [{{site.data.keyword.openshiftlong_notm}} CLI Map](/docs/containers?topic=containers-icks_map) lists all `ibmcloud oc` commands as they are structured in the CLI. Use this page as a visual reference for how ibmcloud oc commands are organized, or to quickly find a specific command. 
+
+Version changelog
+:   Worker node fix pack update.
+
+
+:   {{site.data.keyword.openshiftshort}} [4.8.26_1541_openshift](/docs/openshift?topic=openshift-openshift_changelog#4826_1541), [4.7.40_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog#4740_1546), [4.6.53_1569_openshift](/docs/openshift?topic=openshift-openshift_changelog#4653_1569), [3.11.570_1618_openshift](/docs/openshift?topic=openshift-openshift_changelog#311570_1618).
+
+
 
 
 
