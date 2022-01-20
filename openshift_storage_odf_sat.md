@@ -307,6 +307,42 @@ If you enabled the add-on from the CLI and set the `odfDeploy=false` parameter, 
 
 1. Create a custom resource called `OcsCluster`. Save one of the following custom resource definition files on your local machine and edit it to include the name of the custom storage class that you created earlier as the `monStorageClassName` and `osdStorageClassName` parameters. For more information about the `OcsCluster` parameters, see the [parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-param-ref).
 
+    Example custom resource definition for installing ODF on all worker nodes on a 4.8 cluster.
+    
+    ```yaml
+    apiVersion: ocs.ibm.io/v1
+    kind: OcsCluster
+    metadata:
+        name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+    spec:
+      osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+      osdSize: <osdSize> # The OSD size is the total storage capacity of your storage cluster
+      numOfOsd: 1
+      billingType: advanced
+      ocsUpgrade: false
+    ```
+    {: codeblock}
+    
+    Example custom resource definition for installing ODF only on specified worker nodes on a 4.8 cluster.
+    
+    ```yaml
+    apiVersion: ocs.ibm.io/v1
+    kind: OcsCluster
+    metadata:
+        name: ocscluster-sat
+    spec:
+      osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+      osdSize: <osdSize> # The OSD size is the total storage capacity of your storage cluster
+      numOfOsd: 1
+      billingType: advanced
+      ocsUpgrade: false
+      workerNodes: # Specify the private IP addresses of the worker nodes that you want to use.
+        - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
+        - <workerNodes>
+        - <workerNodes>
+    ```
+    {: codeblock}
+
     Example custom resource definition for installing ODF on all worker nodes.
     
     ```yaml
@@ -325,7 +361,7 @@ If you enabled the add-on from the CLI and set the `odfDeploy=false` parameter, 
     ```
     {: codeblock}
 
-    Example custom resource definition for installing ODF only on specified worker nodes.
+    Example custom resource definition for installing ODF only on specified worker nodes on a 4.7 cluster.
     
     ```yaml
     apiVersion: ocs.ibm.io/v1
@@ -348,7 +384,7 @@ If you enabled the add-on from the CLI and set the `odfDeploy=false` parameter, 
     {: codeblock}
 
 
-    Example custom resource for installing ODF on all worker nodes.
+    Example custom resource for installing ODF on all worker nodes on a 4.7 cluster.
     
     ```yaml
     apiVersion: ocs.ibm.io/v1
@@ -424,6 +460,28 @@ If you enabled the add-on from the CLI and set the `odfDeploy=false` parameter, 
 
 Refer to the following parameters when you use the add-on or operator in {{site.data.keyword.satelliteshort}} clusters.
 {: shortdesc}
+
+### Version 4.8 paramters
+{: #odf-sat-parameters-48}
+
+| Parameter | Description | Default value |
+| --- | --- | --- |
+| `name` | Note that Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.` | N/A |
+| `monStorageClassName` | Enter the name of the storage class that you want to use for the monitor pod storage devices. To use the local disks on your worker nodes, enter `localfile`. To dynamically provision disks, enter the name of the storage class that you want to use. For **Multizone clusters**, make sure that you specify a storage class that has the `waitForFirstConsumer` binding mode. For **Single zone clusters**, enter the name of the storage class that you want to use. | N/A |
+| `osdStorageClassName` | To use the local disks on your worker nodes, enter `localblock`. To dynamically provision volumes for your storage cluster, enter the name of the storage class that you want to use. For **Multizone clusters**, make sure that you specify a storage class that has the `waitForFirstConsumer` binding mode. For **Single zone clusters**, enter the name of the storage class that you want to use. | N/A |
+| `osdSize` | Enter a size for your OSD block storage devices. Example: `100Gi`. | N/A |
+| `osdDevicePath` | **Local disks only** If you want to use dynamically provisioned disks in your storage cluster, don't specify the device path parameter. Enter a comma separated list of the device paths for the devices that you want to use for the OSD devices. The devices that you specify are used as your application storage in your configuration. Each device must have at least `100GiB` of space and must not be formatted or mounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example device path value for a partitioned device: `/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2`,`/dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2`. |
+| `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the specified number. For example, if you enter `1`, ODF creates 3 OSDs. | `1` |
+| `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your OCS deployment. | `advanced` |
+| `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
+| `workerNodes` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
+| `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
+| `autoDiskDiscovery` | **Optional for local disk configurations**: Automatically discover the available disks on your worker nodes. Enter `true` or `false`. |
+{: caption="Parameter reference" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
+
+### Version 4.7 paramters
+{: #odf-sat-parameters-47}
 
 | Parameter | Description | Default value |
 | --- | --- | --- |

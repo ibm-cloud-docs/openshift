@@ -184,6 +184,8 @@ subcollection: openshift
 
 * [January 2022](/docs/openshift?topic=openshift-iks-release#release-jan-2022)
 
+    * [20 January 2022](/docs/openshift?topic=openshift-iks-release#20jan2022)
+
     * [18 January 2022](/docs/openshift?topic=openshift-iks-release#18jan2021)
 
     * [17 January 2022](/docs/openshift?topic=openshift-iks-release#17jan2022)
@@ -2816,6 +2818,10 @@ subcollection: openshift
 
 * [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-param-ref)
 
+    * [Version 4.8 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-47)
+
+    * [Version 4.7 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-47)
+
 [Deploying OpenShift Data Foundation on {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-deploy-odf-sat#deploy-odf-sat)
 
 * [Planning your setup](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-plan)
@@ -2831,6 +2837,10 @@ subcollection: openshift
 * [Creating your storage cluster](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-deploy-crd)
 
 * [{{site.data.keyword.satelliteshort}}: OpenShift Data Foundation parameter reference](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-param-ref)
+
+    * [Version 4.8 paramters](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-parameters-48)
+
+    * [Version 4.7 paramters](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-parameters-47)
 
 [Deploying OpenShift Data Foundation on Classic clusters](/docs/openshift?topic=openshift-deploy-odf-classic#deploy-odf-classic)
 
@@ -2849,6 +2859,10 @@ subcollection: openshift
 * [Creating your storage cluster](/docs/openshift?topic=openshift-deploy-odf-classic#ocs-classic-deploy-crd)
 
 * [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-param-ref)
+
+    * [Version 4.8 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-48)
+
+    * [Version 4.7 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-47)
 
 [Deploying an app on OpenShift Data Foundation](/docs/openshift?topic=openshift-odf-deploy-app#odf-deploy-app)
 
@@ -3969,6 +3983,8 @@ subcollection: openshift
 
 * [Version 1.0.4](/docs/openshift?topic=openshift-ca_changelog#0104_ca_addon)
 
+    * [Changelog for patch update 1.0.4_403, released 20 January 2022](/docs/openshift?topic=openshift-ca_changelog#10387_ca)
+
     * [Changelog for patch update 1.0.4_387, released 22 November 2021](/docs/openshift?topic=openshift-ca_changelog#10387_ca)
 
     * [Changelog for patch update 1.0.4_374, released 7 October 2021](/docs/openshift?topic=openshift-ca_changelog#104374_ca)
@@ -4010,6 +4026,8 @@ subcollection: openshift
 [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog#vpc_bs_changelog)
 
 * [Version 4.1](/docs/openshift?topic=openshift-vpc_bs_changelog#041_is_block)
+
+    * [Changelog for version 4.1.1_827, released 20 January 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#0411837_is_block_relnote)
 
     * [Changelog for version 4.1.0_807, released 06 January 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#41_is_block_relnote)
 

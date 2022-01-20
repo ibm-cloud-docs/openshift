@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-20"
 
 keywords: openshift
 
@@ -26,6 +26,21 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## January 2022
 {: #release-jan-2022}}
 
+
+### 20 January 2022
+{: #20jan2022}
+{: release-note}
+
+Cluster autoscaler add-on.
+:   [Version 1.0.4_403](/docs/containers?topic=containers-ca_changelog) is released.
+
+{{site.data.keyword.block_storage_is_short}} add-on.
+:   [Version 4.1.1_827](/docs/containers?topic=containers-vpc_bs_changelog) is released.
+
+OpenShift Data Foundation
+:   New and updated parameters for OpenShift Data Foundation.
+:   Automatic disk discovery is now available for Classic clusters version 4.8 and later. Enable this feature by setting the `autoDiscoverDevices` parameter to `true` parameter. For more information, see [ODF using local disks](/docs/openshift?topic=openshift-deploy-odf-classic).
+:   The `monDevicePaths` and `monSize` parameters are no longer required for add-on version 4.8 and later.
 
 
 

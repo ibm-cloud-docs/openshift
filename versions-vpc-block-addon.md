@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-20"
 
 keywords: block, add-on, changelog
 
@@ -49,6 +49,19 @@ Refer to the following tables for a summary of changes for each version of the {
 
 Review the changes in version `4.1` of the {{site.data.keyword.block_storage_is_short}} add-on.
 {: shortdesc}
+
+
+### Changelog for version 4.1.1_827, released 20 January 2022
+{: #0411837_is_block_relnote}
+
+Review the changes in version `4.1.1_827` of the {{site.data.keyword.block_storage_is_short}} add-on.
+{: shortdisc}
+
+- Resolves the following CVEs.
+    - [CVE-2021-44716](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44716{: external}
+    - [CVE-2021-44717](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44717{: external}
+- Updates Golang to version `1.16.13`.
+- Updates the UBI image to version `8.5-218`.
 
 
 

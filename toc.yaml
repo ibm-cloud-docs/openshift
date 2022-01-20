@@ -204,7 +204,7 @@ toc:
                   - openshift_storage_ocs_manage.md
                   - openshift_storage_noobaa.md
                   - openshift_storage_ocs_sc_ref.md
-                  - storage-vpc-block-driver.md
+            - storage-vpc-block-driver.md
             - storage-utilities.md
             - storage-br.md
       - topicgroup:
