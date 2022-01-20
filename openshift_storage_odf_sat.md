@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-12"
+lastupdated: "2022-01-20"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, satellite
 
@@ -34,7 +34,7 @@ Before you install ODF in your {{site.data.keyword.satelliteshort}} cluster, eac
 
 1. [Install](/docs/openshift?topic=openshift-openshift-cli#cli_oc) or [update the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cs_cli_upgrade).
 1. [Set up a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. [Attach at least 3 hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) that meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs). Additionally, each host must have a minimum of 16 CPUs and 64 GB RAM.
+1. [Attach at least 3 hosts](/docs/satellite?topic=satellite-attach-hosts) that meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs). Additionally, each host must have a minimum of 16 CPUs and 64 GB RAM.
 1. [Create a cluster](/docs/openshift?topic=openshift-clusters) with the hosts that you previously attached to the location.
 
 You can also deploy ODF to your {{site.data.keyword.satelliteshort}} cluster by using the {{site.data.keyword.satelliteshort}} storage templates. Templates allow you to automate your deployment across multiple {{site.data.keyword.satelliteshort}} clusters. For more information, see [ODF with remote disks](/docs/satellite?topic=satellite-config-storage-ocs-remote) or [ODF with local disks](/docs/satellite?topic=satellite-config-storage-ocs-local) depending on your cluster setup.
@@ -99,7 +99,7 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
 ## Creating a Kubernetes secret that contains your {{site.data.keyword.satelliteshort}} link credentials
 {: #odf-sat-secret-create}
 
-After you [create a link endpoint](/docs/satellite?topic=satellite-link-location-cloud#link-about) and before you install ODF, create a Kubernetes secret with your link credentials.
+After you [create a link endpoint](/docs/satellite?topic=satellite-link-cloud-create) and before you install ODF, create a Kubernetes secret with your link credentials.
 {: shortdesc}
 
 1. List the secrets in the `kube-system` namespace of your cluster and look for the `storage-secret-store`.

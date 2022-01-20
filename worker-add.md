@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-20"
 
 keywords: openshift, clusters, worker nodes, worker pools, delete
 
@@ -22,8 +22,9 @@ To increase the availability of your apps, you can add worker nodes to an existi
 
 When you create a cluster, the worker nodes are provisioned in a worker pool. After cluster creation, you can add more worker nodes to a pool by resizing it or by adding more worker pools. By default, the worker pool exists in one zone. Clusters that have a worker pool in only one zone are called single zone clusters. When you add more zones to the cluster, the worker pool exists across the zones. Clusters that have a worker pool that is spread across more than one zone are called multizone clusters.
 
-<p class="tip">If you have a multizone cluster, keep its worker node resources balanced. Make sure that all the worker pools are spread across the same zones, and add or remove workers by resizing the pools instead of adding individual nodes.</br></br>
-After you set up your worker pool, you can [set up the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca) to automatically add or remove worker nodes from your worker pools based on your workload resource requests.</p>
+If you have a multizone cluster, keep its worker node resources balanced. Make sure that all the worker pools are spread across the same zones, and add or remove workers by resizing the pools instead of adding individual nodes.</br></br>
+After you set up your worker pool, you can [set up the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca) to automatically add or remove worker nodes from your worker pools based on your workload resource requests.
+{: tip}
 
 
 ## Adding worker nodes by resizing an existing worker pool
@@ -416,14 +417,16 @@ Review the following differences from classic {{site.data.keyword.openshiftlong_
 ### Creating {{site.data.keyword.satelliteshort}} worker pools with host labels for autoassignment
 {: #sat-pool-create-labels}
 
-Create a worker pool in your {{site.data.keyword.satelliteshort}} cluster with host labels. Then, {{site.data.keyword.satelliteshort}} can automatically assign available hosts to the worker pool. For more information, see [Using host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-ov).
+Create a worker pool in your {{site.data.keyword.satelliteshort}} cluster with host labels. Then, {{site.data.keyword.satelliteshort}} can automatically assign available hosts to the worker pool. For more information, see [Using host autoassignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov).
 {: shortdesc}
 
-**Before you begin**:
-*   Make sure that you have the **Operator** platform access role to **Kubernetes Service** for the cluster in {{site.data.keyword.cloud_notm}} IAM.
-*   Optional: [Attach](/docs/satellite?topic=satellite-hosts#attach-hosts) or [list available](/docs/satellite?topic=satellite-satellite-cli-reference#host-ls) hosts to your {{site.data.keyword.satelliteshort}} location with host labels that match your worker pool. Then, after you create your worker pool, these available hosts can be automatically assigned to the worker pool.
+Before you begin
 
-**To create a worker pool in a {{site.data.keyword.satelliteshort}} cluster**:
+- Make sure that you have the **Operator** platform access role to **Kubernetes Service** for the cluster in {{site.data.keyword.cloud_notm}} IAM.
+- Optional: [Attach](/docs/satellite?topic=satellite-hosts#attach-hosts) or [list available](/docs/satellite?topic=satellite-satellite-cli-reference#host-ls) hosts to your {{site.data.keyword.satelliteshort}} location with host labels that match your worker pool. Then, after you create your worker pool, these available hosts can be automatically assigned to the worker pool.
+
+To create a worker pool in a {{site.data.keyword.satelliteshort}} cluster
+
 1. List the {{site.data.keyword.satelliteshort}} clusters in your account.
     ```sh
     ibmcloud oc cluster ls --provider satellite
@@ -451,7 +454,7 @@ Create a worker pool in your {{site.data.keyword.satelliteshort}} cluster with h
 
 Your worker pool is created!
 * If {{site.data.keyword.satelliteshort}} hosts with matching labels are available, the hosts are assigned to the worker pool as worker nodes. Keep in mind that hosts might also have a zone label and are assigned only to that zone.
-* If no hosts are available, you can [manually assign hosts](/docs/satellite?topic=satellite-hosts#host-assign-manual) to the worker pool. Keep in mind that if you manually assign hosts, host autoassignment is disabled for future actions until you rebalance the worker pool.
+* If no hosts are available, you can [manually assign hosts](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) to the worker pool. Keep in mind that if you manually assign hosts, host autoassignment is disabled for future actions until you rebalance the worker pool.
 
 When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host vCPU.
 {: note}
@@ -468,7 +471,7 @@ You can maintain your worker pools by using the same worker pool lifecycle opera
 Resize your worker pool to request more compute capacity in your cluster.
 {: shortdesc}
 
-* When host autoassignment is enabled, {{site.data.keyword.satelliteshort}} automatically assigns available hosts to the worker pool, as long as the host labels match the host labels of the worker pool. If no hosts are available, [attach more hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) with matching labels to the {{site.data.keyword.satelliteshort}} location.
+* When host autoassignment is enabled, {{site.data.keyword.satelliteshort}} automatically assigns available hosts to the worker pool, as long as the host labels match the host labels of the worker pool. If no hosts are available, [attach more hosts](/docs/satellite?topic=satellite-attach-hosts) with matching labels to the {{site.data.keyword.satelliteshort}} location.
 * If host autoassignment is disabled, resizing the worker pool enables autoassignment again.
 
 For more information, see [Adding worker nodes by resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool).
@@ -479,7 +482,7 @@ For more information, see [Adding worker nodes by resizing an existing worker po
 When you rebalance a worker pool, the worker pool is sized up or down depending on the most recently requested number of worker nodes per zone. You can check the requested number in the worker pool details, or set the requested number by resizing the worker pool.
 {: shortdesc}
 
-In {{site.data.keyword.satelliteshort}} worker pool, rebalancing also re-enables [host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-ov). You can rebalance the worker pool from the {{site.data.keyword.cloud_notm}} console or the `ibmcloud oc worker-pool rebalance` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance).
+In {{site.data.keyword.satelliteshort}} worker pool, rebalancing also re-enables [host autoassignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov). You can rebalance the worker pool from the {{site.data.keyword.cloud_notm}} console or the `ibmcloud oc worker-pool rebalance` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance).
 
 #### Updating worker nodes in a {{site.data.keyword.satelliteshort}} worker pool
 {: #sat-pool-maintenance-update}
@@ -493,7 +496,7 @@ Follow the same process as [Updating classic worker nodes](/docs/openshift?topic
 You can add zones to a worker pool. Available {{site.data.keyword.satelliteshort}} hosts with a zone label can be assigned only to that zone in the worker pool.
 {: shortdesc}
 
-* For more information about zones in {{site.data.keyword.satelliteshort}}, see [{{site.data.keyword.satelliteshort}} concepts](/docs/satellite?topic=satellite-infrastructure-plan).
+* For more information about zones in {{site.data.keyword.satelliteshort}}, see [Planning your infrastructure environment for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-infrastructure-plan).
 * To add a zone, see the [`ibmcloud oc zone add satellite` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat).
 
 #### Removing a {{site.data.keyword.satelliteshort}} worker pool
