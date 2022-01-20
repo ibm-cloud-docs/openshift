@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-20"
 
 keywords: openshift, route, Ingress controller
 
@@ -34,8 +34,12 @@ Quickly expose the services in your cluster on the {{site.data.keyword.openshift
 An [{{site.data.keyword.openshiftshort}} route](/docs/openshift?topic=openshift-openshift_routes) exposes a service as a hostname in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.upi.containers.appdomain.cloud`. A Ingress controller is deployed by default to your cluster, which enables routes to be used by external clients. The Ingress controller uses the service selector to find the service and the endpoints that back the service. You can configure the service selector to direct traffic through one route to multiple services. You can also create either unsecured or secured routes by using the TLS certificate that is assigned by the Ingress controller for your hostname. Note that the Ingress controller supports only the HTTP and HTTPS protocols.
 
 Before you begin with routes, review the following considerations.
-* **Host network connectivity**: If the hosts for your cluster have public network connectivity, your cluster is created with a public Ingress controller by default. You can use this Ingress controller to create public routes for your app. If the hosts for your cluster have private network connectivity only, your cluster is created with a private Ingress controller by default. You can use this Ingress controller to create private routes for your app that are accessible only from within your hosts' private network. To set up public routes in clusters that have private network connectivity only, first [set up your own third-party load balancer](#sat-expose-byolb) that has public network connectivity in front of your private Ingress controller before completing the following steps.
-* **Health checks**: DNS registration management is provided by default for your cluster's Ingress controller. For example, if you remove a host that was assigned to your cluster from your location and replace it with a different host, IBM updates the host IP addresses in your Ingress controller's DNS record for you. Note that while the DNS registration for routes are provided for you, no load balancer services are deployed in front of the Ingress controller in your cluster. To health check the IP addresses of the hosts that are registered in the Ingress controller's DNS records, you can [set up your own third-party load balancer](#sat-expose-byolb) in front of your Ingress controller before completing the following steps.
+
+Host network connectivity
+:    If the hosts for your cluster have public network connectivity, your cluster is created with a public Ingress controller by default. You can use this Ingress controller to create public routes for your app. If the hosts for your cluster have private network connectivity only, your cluster is created with a private Ingress controller by default. You can use this Ingress controller to create private routes for your app that are accessible only from within your hosts' private network. To set up public routes in clusters that have private network connectivity only, first [set up your own third-party load balancer](#sat-expose-byolb) that has public network connectivity in front of your private Ingress controller before completing the following steps.
+
+Health checks
+:    DNS registration management is provided by default for your cluster's Ingress controller. For example, if you remove a host that was assigned to your cluster from your location and replace it with a different host, IBM updates the host IP addresses in your Ingress controller's DNS record for you. Note that while the DNS registration for routes are provided for you, no load balancer services are deployed in front of the Ingress controller in your cluster. To health check the IP addresses of the hosts that are registered in the Ingress controller's DNS records, you can [set up your own third-party load balancer](#sat-expose-byolb) in front of your Ingress controller before completing the following steps.
 
 To create routes for your apps:
 
@@ -192,9 +196,9 @@ If you want to access an app in your {{site.data.keyword.satelliteshort}} cluste
 
 1. Follow the steps in [Exposing apps with {{site.data.keyword.openshiftshort}} routes](#sat-expose-routes) to create a private route for your app. This route is accessible only from within your hosts' private network.
 
-2. Follow the steps in [Creating `location` endpoints to connect to resources in a location](/docs/satellite?topic=satellite-link-location-cloud#link-location) to create a {{site.data.keyword.satelliteshort}} Link endpoint for your app's private route.
+2. Follow the steps in [Creating `location` endpoints to connect to resources in a location](/docs/satellite?topic=satellite-link-cloud-create#link-location) to create a {{site.data.keyword.satelliteshort}} Link endpoint for your app's private route.
 
-3. Optional: To allow access to the endpoint from only the specific resource in {{site.data.keyword.cloud_notm}}, [add the resource to your endpoint's source list](/docs/satellite?topic=satellite-link-location-cloud#link-sources).
+3. Optional: To allow access to the endpoint from only the specific resource in {{site.data.keyword.cloud_notm}}, [add the resource to your endpoint's source list](/docs/satellite?topic=satellite-link-cloud-create#link-sources).
 
 
 

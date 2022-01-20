@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-12"
+lastupdated: "2022-01-20"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
 
@@ -26,6 +26,7 @@ Installing OpenShift Data Foundation from OperatorHub is not supported on {{site
 
 ## Planning your setup
 {: #odf-classic-plan}
+
 Before you install ODF in your cluster, you must make sure that the following prerequisite conditions are met:
 
 To install OpenShift Data Foundation on classic clusters, you must enable [VRF](/docs/account?topic=account-vrf-service-endpoint#vrf) in your account.
@@ -96,10 +97,11 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
 ### Preparing your cluster for an OpenShift Data Foundation installation
 {: #odf-cluster-prepare-classic}
 
-Before you install OpenShift Data Foundation in a classic cluster, review the following steps to prepare your cluster for an ODF installation.
+Before you install OpenShift Data Foundation, prepare your cluster.
 {: shortdesc}
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
 
 1. Log in to each worker node in your cluster by using the `oc debug` command and complete the following steps.
     - Log in to the worker node. Replace `<worker_node_IP>` with the private IP address of your worker node. To get the private IP addresses of your worker nodes, run the `oc get nodes` command.
@@ -108,19 +110,40 @@ Before you install OpenShift Data Foundation in a classic cluster, review the fo
         ```
         {: pre}
 
-    - For each disk partition, clear the `xfs` file system that was created with the worker node. If you don't clear the file system, the OSD is not created.
+    - For each disk partition, clear the `xfs` file system on the worker node. If you don't clear the file system, the OSD is not created.
         ```sh
         file -sL /dev/<partition>
         wipefs -a /dev/<partition>
         ```
         {: pre}
+        
+    - **4.8 only**: Edit the `/etc/kubernetes/kubelet.conf` file and change the value of the `EnableControllerAttachDetach` parameter to `true`.
+        ```sh
+        nano /etc/kubernetes/kubelet.conf
+        ```
+        {: pre}
+    
+    - Save and exit by using `ctrl + X`.
+    
+    - Restart the kubelet.
+        ```sh
+        systemctl kubelet restart
+        ```
+        {: pre}
 
-    - Log out of the worker node
+    - Log out of the worker node.
         ```sh
         exit
         ```
 
-1. Repeat step 3 for each worker node that you want to use in your ODF deployment.
+1. Repeat the previous steps to wipe the file system for each worker node that you want to use in your ODF deployment.    
+    
+
+#### Updating the cluster role bindings
+{: #odf-classic-cr-binding-47}
+
+**Version 4.7 clusters only**. If you have a cluster version 4.7 or earlier, complete the following steps to update the cluster role bindings. If you have a cluster version 4.8 or later, see [Getting your device details](#odf-classic-get-devices).
+{: important}
 
 1. Update the `clusterRole` and `ClusterRoleBindings` for each worker node in your cluster. Edit the `system:node` cluster role to have `get, create, update, delete, list` access for the `volumeattachments.storage.k8s.io` resource.
     ```sh
@@ -370,8 +393,40 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 1. Create a custom resource called `OcsCluster`. Save and edit the following custom resource definition to include the device paths for the local disks [that you retrieved earlier](#odf-classic-get-devices). If you don't specify the optional `workerNodes` parameter, then all worker nodes in your cluster are used for the ODF deployment. Be sure to include the `/dev/disk/by-id/` path when you specify your storage devices. 
     - If your worker node has raw disks with partitions, you need one partition for the OSD and one partition for the MON per worker node. As a best practice, and to maximize storage capacity on partitioned disks, you can specify the smaller partition or disk for the MON, and the larger partition or disk for the OSD. Note that the initial storage capacity of your ODF configuration is equal to the size of the disk that you specify as the `osd-device-path` when you create your configuration. 
     - If you devices aren't partitioned, you  must specify one raw disk for the MON and one for the OSD for each worker node that you want to use.
+    
+    Example custom resource for installing ODF on all worker nodes in a version 4.8 cluster by using automatic disk discover.
+    ```yaml
+    apiVersion: ocs.ibm.io/v1
+    kind: OcsCluster
+    metadata:
+      name: ocscluster-classic
+    spec:
+      osdStorageClassName: localblock
+      osdSize: "1"
+      autoDiscoverDevices: true
+    ```
+    {: pre}
+    
+    Example custom resource for installing ODF on all worker nodes in a version 4.7 cluster with partitioned disks.
+    ```yaml
+    apiVersion: ocs.ibm.io/v1
+    kind: OcsCluster
+    metadata:
+        name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+      spec:
+        osdStorageClassName: localblock
+        osdSize: "1"
+        numOfOsd: 1
+        billingType: advanced
+        ocsUpgrade: false
+        osdDevicePaths:
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2
+          - <device-by-id> # Example: dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part2
+    ```
+    {: codeblock}
 
-    Example custom resource for installing ODF on all worker nodes in a classic cluster with partitioned disks.
+    Example custom resource for installing ODF on all worker nodes in a version 4.7 cluster with partitioned disks.
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
@@ -396,7 +451,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: codeblock}
 
-    Example custom resource for installing ODF only on certain worker nodes in a classic cluster with partitioned disks.
+    Example custom resource for installing ODF only on certain worker nodes in a version 4.7 cluster with partitioned disks.
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster 
@@ -425,7 +480,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: codeblock}
 
-    Example custom resource for installing ODF on all worker nodes in a classic cluster with non-partitioned disks.
+    Example custom resource for installing ODF on all worker nodes in a classic version 4.7 cluster with non-partitioned disks.
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
@@ -450,7 +505,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: codeblock}
 
-    Example custom resource for installing ODF only on certain worker nodes in a classic cluster with non-partitioned disks.
+    Example custom resource for installing ODF only on certain worker nodes in a classic version 4.7 cluster with non-partitioned disks.
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
@@ -500,12 +555,33 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 Refer to the following OpenShift Data Foundation parameters when you use the add-on or operator in classic clusters.
 {: shortdesc}
 
+### Version 4.8 parameters
+{: #odf-classic-params-48}
+
+| Parameter | Description | Default value |
+| --- | --- | --- |
+| `name` | Note that Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.` | N/A |
+| `osdStorageClassName` | Enter `localblock`. | N/A |
+| `osdSize` | Enter `1`. | N/A |
+| `osdDevicePath` | Enter a comma separated list of the device paths for the devices that you want to use for the OSD devices. The devices that you specify are used as your application storage in your configuration. Each device must have at least `100GiB` of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example device path value for a partitioned device: `/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2`,`/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2`. |
+| `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the specified number. For example, if you enter `1`, ODF creates 3 OSDs. | `1` |
+| `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your OCS deployment. | `advanced` |
+| `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
+| `workerNodes` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
+| `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
+| `autoDiskDiscovery` | **Optional**: Automatically discover the available disks on your worker nodes. Enter `true` or `false`. |
+{: caption="Classic parameter reference" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
+
+
+### Version 4.7 parameters
+{: #odf-classic-params-47}
 
 | Parameter | Description | Default value |
 | --- | --- | --- |
 | `name` | Note that Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.` | N/A |
 | `monStorageClassName` | Enter `localfile`. | N/A |
-| `monDevicePaths` | Enter a comma separated list of the disk-by-id paths for the storage devices that you want to use for the monitor (MON) pods. The devices that you specify must have at least `20GiB` of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example device path value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. | N/A |
+| `monDevicePaths` | Enter a comma separated list of the disk-by-id paths for the storage devices that you want to use for the monitor (MON) pods. The devices that you specify must have at least `20GiB` of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example device path value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. If you specify more than one device path, don't include spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. | N/A |
 | `monSize` | Enter a size for your monitoring storage devices. Example: `20Gi`. | N/A |
 | `osdStorageClassName` | Enter `localblock`. | N/A |
 | `osdSize` | Enter `1`. | N/A |
@@ -513,7 +589,7 @@ Refer to the following OpenShift Data Foundation parameters when you use the add
 | `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the specified number. For example, if you enter `1`, ODF creates 3 OSDs. | `1` |
 | `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your OCS deployment. | `advanced` |
 | `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
-| `workerNodes` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Do not specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
+| `workerNodes` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
 | `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
 {: caption="Classic parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}

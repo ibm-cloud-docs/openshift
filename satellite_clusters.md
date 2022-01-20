@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-20"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -25,8 +25,8 @@ You can create {{site.data.keyword.openshiftlong}} clusters in an {{site.data.ke
 Before you can create clusters on your own infrastructure, you must set up an {{site.data.keyword.satellitelong_notm}} location.
 {: shortdesc}
 
-1. [Create an {{site.data.keyword.satellitelong_notm}} location](/docs/satellite?topic=satellite-locations#location-create).
-2. In addition to the [host network requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network), make sure that you allow the following outbound access for your hosts.
+1. [Create an {{site.data.keyword.satellitelong_notm}} location](/docs/satellite?topic=satellite-locations).
+2. In addition to the [host network requirements](/docs/satellite?topic=satellite-reqs-host-network), make sure that you allow the following outbound access for your hosts.
     | Description | Source IP | Destination IP | Protocol and ports |
     | --- | --- | --- | --- |
     | Allow your hosts to access the LaunchDarkly service | All hosts | `app.launchdarkly.com` | . |
@@ -34,7 +34,7 @@ Before you can create clusters on your own infrastructure, you must set up an {{
     {: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
     
 3. [Set up the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
-4. [Attach at least 3 hosts to your location](/docs/satellite?topic=satellite-hosts#attach-hosts) to use as the worker nodes for your {{site.data.keyword.openshiftlong_notm}} cluster.
+4. [Attach at least 3 hosts to your location](/docs/satellite?topic=satellite-attach-hosts) to use as the worker nodes for your {{site.data.keyword.openshiftlong_notm}} cluster.
 
 
 
@@ -47,7 +47,7 @@ Use the {{site.data.keyword.cloud_notm}} console to create your {{site.data.keyw
 1. [Complete the prerequisite steps](#satcluster-prereqs).
 2. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Create**.
 3. In the **Infrastructure** section, select **{{site.data.keyword.satelliteshort}}**.
-4. In the **OCP entitlement** section, specify an existing OCP entitlement for the worker nodes in this cluster by providing your [{{site.data.keyword.redhat_full}} account pull secret ![External link icon](../icons/launch-glyph.svg "External link icon")](https://console.redhat.com/openshift/install/pull-secret) as a file or in raw JSON format. The cluster also uses this pull secret to download {{site.data.keyword.openshiftshort}} images from your own {{site.data.keyword.redhat_notm}} account.
+4. In the **OCP entitlement** section, specify an existing OCP entitlement for the worker nodes in this cluster by providing your [{{site.data.keyword.redhat_full}} account pull secret](https://console.redhat.com/openshift/install/pull-secret){: external} as a file or in raw JSON format. The cluster also uses this pull secret to download {{site.data.keyword.openshiftshort}} images from your own {{site.data.keyword.redhat_notm}} account.
 5. In the **Location** section, select the {{site.data.keyword.satelliteshort}} location where you want to create the cluster. Make sure that the location that you select is in a **Normal** state.
 6. In the **Worker pools** section, configure the details for your default worker pool.
     1. Select the **Satellite zones** that {{site.data.keyword.satelliteshort}} uses to evenly assign hosts across zones that represent zones in your underlying infrastructure provider. Generally, create your worker pool across 3 zones for high availability.
@@ -57,7 +57,7 @@ Use the {{site.data.keyword.cloud_notm}} console to create your {{site.data.keyw
 9. Click **Create**. When you create the cluster, the cluster master is automatically created in your {{site.data.keyword.satelliteshort}} location control plane, and your worker pool is automatically assigned available hosts that match your worker node request.
 10. Wait for the cluster to reach a **Normal** state.
 
-    If you don't have any available and matching hosts in your {{site.data.keyword.satelliteshort}} location, the cluster is still created but enters a **Warning** state. [Attach hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) to your {{site.data.keyword.satelliteshort}} location so that hosts can be assigned as worker nodes to the worker pool. If the hosts are not automatically assigned, you can also manually [assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-hosts#host-assign-manual). Ensure that hosts are assigned as worker nodes in each zone of your default worker pool.
+    If you don't have any available and matching hosts in your {{site.data.keyword.satelliteshort}} location, the cluster is still created but enters a **Warning** state. [Attach hosts](/docs/satellite?topic=satellite-attach-hosts) to your {{site.data.keyword.satelliteshort}} location so that hosts can be assigned as worker nodes to the worker pool. If the hosts are not automatically assigned, you can also manually [assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual). Ensure that hosts are assigned as worker nodes in each zone of your default worker pool.
     {: note}
 
 11. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, verify that your cluster reaches a **Normal** state.
@@ -134,8 +134,8 @@ To create the cluster in a {{site.data.keyword.satelliteshort}} location, you mu
     {: screen}
 
 5. Make sure that hosts are assigned as worker nodes to the cluster.
-    * **Autoassignment**: If you included `--host-labels` when you created the cluster and you have available hosts with matching labels in your {{site.data.keyword.satelliteshort}} location, the worker nodes are automatically assigned to the cluster. If you don't have any available and matching hosts, the cluster is still created but enters a **Warning** state. [Attach hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) to your {{site.data.keyword.satelliteshort}} location so that hosts can be assigned as worker nodes to the worker pool. If the hosts are not automatically assigned, you can also manually [assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-hosts#host-assign-manual).
-    * **Manual assignment**: [Assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-hosts#host-assign-cli). After the hosts successfully bootstrap, the hosts function as the worker nodes for your cluster to run {{site.data.keyword.openshiftshort}} workloads. Generally, assign at least 3 hosts as worker nodes in your cluster.
+    * **Autoassignment**: If you included `--host-labels` when you created the cluster and you have available hosts with matching labels in your {{site.data.keyword.satelliteshort}} location, the worker nodes are automatically assigned to the cluster. If you don't have any available and matching hosts, the cluster is still created but enters a **Warning** state. [Attach hosts](/docs/satellite?topic=satellite-attach-hosts) to your {{site.data.keyword.satelliteshort}} location so that hosts can be assigned as worker nodes to the worker pool. If the hosts are not automatically assigned, you can also manually [assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual).
+    * **Manual assignment**: [Assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual). After the hosts successfully bootstrap, the hosts function as the worker nodes for your cluster to run {{site.data.keyword.openshiftshort}} workloads. Generally, assign at least 3 hosts as worker nodes in your cluster.
 
 6. Verify that your cluster reaches a **normal** state.
     ```sh
@@ -200,14 +200,16 @@ Review the following differences from classic {{site.data.keyword.openshiftlong_
 ### Creating {{site.data.keyword.satelliteshort}} worker pools with host labels for autoassignment
 {: #sat-pool-create-labels}
 
-Create a worker pool in your {{site.data.keyword.satelliteshort}} cluster with host labels. Then, {{site.data.keyword.satelliteshort}} can automatically assign available hosts to the worker pool. For more information, see [Using host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-ov).
+Create a worker pool in your {{site.data.keyword.satelliteshort}} cluster with host labels. Then, {{site.data.keyword.satelliteshort}} can automatically assign available hosts to the worker pool. For more information, see [Using host autoassignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov).
 {: shortdesc}
 
-**Before you begin**:
-*   Make sure that you have the **Operator** platform access role to **Kubernetes Service** for the cluster in {{site.data.keyword.cloud_notm}} IAM.
-*   Optional: [Attach](/docs/satellite?topic=satellite-hosts#attach-hosts) or [list available](/docs/satellite?topic=satellite-satellite-cli-reference#host-ls) hosts to your {{site.data.keyword.satelliteshort}} location with host labels that match your worker pool. Then, after you create your worker pool, these available hosts can be automatically assigned to the worker pool.
+Before you begin
 
-**To create a worker pool in a {{site.data.keyword.satelliteshort}} cluster**:
+- Make sure that you have the **Operator** platform access role to **Kubernetes Service** for the cluster in {{site.data.keyword.cloud_notm}} IAM.
+- Optional: [Attach](/docs/satellite?topic=satellite-hosts#attach-hosts) or [list available](/docs/satellite?topic=satellite-satellite-cli-reference#host-ls) hosts to your {{site.data.keyword.satelliteshort}} location with host labels that match your worker pool. Then, after you create your worker pool, these available hosts can be automatically assigned to the worker pool.
+
+To create a worker pool in a {{site.data.keyword.satelliteshort}} cluster
+
 1. List the {{site.data.keyword.satelliteshort}} clusters in your account.
     ```sh
     ibmcloud oc cluster ls --provider satellite
@@ -235,7 +237,7 @@ Create a worker pool in your {{site.data.keyword.satelliteshort}} cluster with h
 
 Your worker pool is created!
 * If {{site.data.keyword.satelliteshort}} hosts with matching labels are available, the hosts are assigned to the worker pool as worker nodes. Keep in mind that hosts might also have a zone label and are assigned only to that zone.
-* If no hosts are available, you can [manually assign hosts](/docs/satellite?topic=satellite-hosts#host-assign-manual) to the worker pool. Keep in mind that if you manually assign hosts, host autoassignment is disabled for future actions until you rebalance the worker pool.
+* If no hosts are available, you can [manually assign hosts](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) to the worker pool. Keep in mind that if you manually assign hosts, host autoassignment is disabled for future actions until you rebalance the worker pool.
 
 When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host vCPU.
 {: note}
@@ -252,7 +254,7 @@ You can maintain your worker pools by using the same worker pool lifecycle opera
 Resize your worker pool to request more compute capacity in your cluster.
 {: shortdesc}
 
-* When host autoassignment is enabled, {{site.data.keyword.satelliteshort}} automatically assigns available hosts to the worker pool, as long as the host labels match the host labels of the worker pool. If no hosts are available, [attach more hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) with matching labels to the {{site.data.keyword.satelliteshort}} location.
+* When host autoassignment is enabled, {{site.data.keyword.satelliteshort}} automatically assigns available hosts to the worker pool, as long as the host labels match the host labels of the worker pool. If no hosts are available, [attach more hosts](/docs/satellite?topic=satellite-attach-hosts) with matching labels to the {{site.data.keyword.satelliteshort}} location.
 * If host autoassignment is disabled, resizing the worker pool enables autoassignment again.
 
 For more information, see [Adding worker nodes by resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool).
@@ -263,7 +265,7 @@ For more information, see [Adding worker nodes by resizing an existing worker po
 When you rebalance a worker pool, the worker pool is sized up or down depending on the most recently requested number of worker nodes per zone. You can check the requested number in the worker pool details, or set the requested number by resizing the worker pool.
 {: shortdesc}
 
-In {{site.data.keyword.satelliteshort}} worker pool, rebalancing also re-enables [host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-ov). You can rebalance the worker pool from the {{site.data.keyword.cloud_notm}} console or the `ibmcloud oc worker-pool rebalance` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance).
+In {{site.data.keyword.satelliteshort}} worker pool, rebalancing also re-enables [host autoassignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov). You can rebalance the worker pool from the {{site.data.keyword.cloud_notm}} console or the `ibmcloud oc worker-pool rebalance` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance).
 
 #### Updating worker nodes in a {{site.data.keyword.satelliteshort}} worker pool
 {: #sat-pool-maintenance-update}
@@ -277,7 +279,7 @@ Follow the same process as [Updating classic worker nodes](/docs/openshift?topic
 You can add zones to a worker pool. Available {{site.data.keyword.satelliteshort}} hosts with a zone label can be assigned only to that zone in the worker pool.
 {: shortdesc}
 
-* For more information about zones in {{site.data.keyword.satelliteshort}}, see [{{site.data.keyword.satelliteshort}} concepts](/docs/satellite?topic=satellite-infrastructure-plan).
+* For more information about zones in {{site.data.keyword.satelliteshort}}, see [Planning your infrastructure environment for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-infrastructure-plan).
 * To add a zone, see the [`ibmcloud oc zone add satellite` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat).
 
 #### Removing a {{site.data.keyword.satelliteshort}} worker pool
@@ -343,7 +345,7 @@ When you remove {{site.data.keyword.openshiftshort}} clusters or worker nodes in
     *  [Remove individual worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_rm) from the cluster.
     *  [Remove the cluster](/docs/openshift?topic=openshift-remove).
 4. For each worker node that you removed, decide what to do with the corresponding host in your {{site.data.keyword.satelliteshort}} location.
-    *  Reload the host operating system so that you can re-attach and re-assign the host to other {{site.data.keyword.satelliteshort}} resources such as the location control plane or other clusters. For more information, see the update process in [Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-location).
+    *  Reload the host operating system so that you can re-attach and re-assign the host to other {{site.data.keyword.satelliteshort}} resources such as the location control plane or other clusters. For more information, see the update process in [Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-update-location).
     *  Delete the hosts from your underlying infrastructure provider. For more information, refer to the infrastructure provider documentation.
 
    

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-06"
+lastupdated: "2022-01-20"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -280,7 +280,43 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 1. Create a custom resource definition (CRD) called `OcsCluster`. Save one of the following custom resource definition files on your local machine and edit it to include the name of the custom storage class that you created earlier as the `monStorageClassName` and `osdStorageClassName` parameters. For more information about the `OcsCluster` parameters, see the [parameter reference](#odf-vpc-param-ref).
 
-    Example custom resource definition (CRD) for installing ODF on all worker nodes.
+    Example custom resource definition (CRD) for installing ODF on all worker nodes on a 4.8 cluster.
+
+    ```yaml
+    apiVersion: ocs.ibm.io/v1
+    kind: OcsCluster
+    metadata:
+        name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+      spec:
+    osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+    osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
+    numOfOsd: 1
+    billingType: advanced
+    ocsUpgrade: false
+    ```
+    {: codeblock}
+
+    Example custom resource definition (CRD) for installing ODF only on specified worker nodes on a 4.8 cluster.
+
+    ```yaml
+    apiVersion: ocs.ibm.io/v1
+    kind: OcsCluster
+    metadata:
+        name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+      spec:
+    osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+    osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
+    numOfOsd: 1
+    billingType: advanced
+    ocsUpgrade: false
+    workerNodes: # Specify the private IP addresses of the worker nodes where you want to install OCS.
+      - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
+      - <workerNodes>
+      - <workerNodes>
+    ```
+    {: codeblock}
+
+    Example custom resource definition (CRD) for installing ODF on all worker nodes on a 4.7 cluster.
 
     ```yaml
     apiVersion: ocs.ibm.io/v1
@@ -298,7 +334,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: codeblock}
 
-    Example custom resource definition (CRD) for installing ODF only on specified worker nodes.
+    Example custom resource definition (CRD) for installing ODF only on specified worker nodes on a 4.7 cluster.
 
     ```yaml
     apiVersion: ocs.ibm.io/v1
@@ -486,6 +522,25 @@ Review the following limitations for deploying ODF.
 Refer to the following parameters when you use the add-on or operator in VPC clusters.
 {: shortdesc}
 
+### Version 4.8 clusters
+{: #odf-vpc-params-47}
+
+| Parameter | Description | Default value |
+| --- | --- | --- |
+| `name` | Note that Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.` | N/A |
+| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD devices. For **multizone clusters**, specify the metro storage class that you want to use. If you want to use a metro `retain` storage class, [create a custom `WaitForFirstConsumer` storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class) that's based off the tiered metro `retain` storage class that you want to use. Metro storage classes have the volume binding mode `WaitForFirstConsumer`, which is required for multizone ODF deployments. For **single zone clusters**, enter the name of the tiered storage class that you want to use. Example: `ibmc-vpc-block-10iops-tier`. For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference).| N/A |
+| `osdSize` | Enter a size for your storage devices. Example: `100Gi`. The total storage capacity of your ODF cluster is equivalent to the `osdSize` x 3 divided by the `numOfOsd`. | N/A |
+| `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the `numOfOsd` value. For example, if you enter `1`, ODF provisions 3 disks of the size and storage class that you specify in the `osdStorageClassName` field. | `1` |
+| `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your ODF deployment. | `advanced` |
+| `ocsUpgrade` | Enter `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
+| `workerNodes` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. | N/A |
+| `clusterEncryption` | Enter `true` or `false` to enable encryption. |
+{: caption="ODF parameter reference" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
+
+
+### Version 4.7 clusters
+{: #odf-vpc-params-47}
 
 | Parameter | Description | Default value |
 | --- | --- | --- |
