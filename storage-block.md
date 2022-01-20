@@ -50,18 +50,18 @@ First time using {{site.data.keyword.blockstorageshort}} in your cluster? Come b
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-        name: my-pvc
-    labels:
-      billingType: "hourly"
-      region: # Example: us-south
-      zone: # Example: dal13
+      name: mypvc
+      labels:
+        billingType: "hourly"
+        region: us-east
+        zone: wdc07
     spec:
       accessModes:
         - ReadWriteOnce
-        resources:
-          requests:
-            storage: 24Gi
-        storageClassName: ibmc-block-silver
+      resources:
+        requests:
+          storage: 45Gi
+      storageClassName: ibmc-block-silver
     ```
     {: codeblock}
 
