@@ -1417,13 +1417,25 @@ subcollection: openshift
 
 [Architecture and dependencies of the service](/docs/openshift?topic=openshift-service-arch#service-arch)
 
-* [Classic cluster service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture)
+* [Classic {{site.data.keyword.openshiftshort}} version 4 architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-4)
 
-    * [{{site.data.keyword.openshiftshort}} version 4 architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-4)
+    * [{{site.data.keyword.openshiftshort}} version 4 master components](/docs/openshift?topic=openshift-service-arch#service-architecture-4-master)
 
-    * [{{site.data.keyword.openshiftshort}} version 3 architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-3)
+    * [{{site.data.keyword.openshiftshort}} version 4 worker node components](/docs/openshift?topic=openshift-service-arch#service-architecture-4-workers)
+
+* [Classic {{site.data.keyword.openshiftshort}} version 3 architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-3)
+
+    * [Version 3 master components](/docs/openshift?topic=openshift-service-arch#version-3-master)
+
+    * [Classic version 3 worker node components](/docs/openshift?topic=openshift-service-arch#version-3-worker)
 
 * [VPC cluster service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture_vpc)
+
+    * [Cluster with public and private cloud service endpoints](/docs/openshift?topic=openshift-service-arch#vpc-service-arch-public-and-private)
+
+    * [Cluster with private cloud service endpoint only](/docs/openshift?topic=openshift-service-arch#vpc-service-arch-private-only)
+
+    * [VPC version 4 master and worker node components](/docs/openshift?topic=openshift-service-arch#service-arch-vpc-4)
 
 * [Overview of personal and sensitive data storage and removal options](/docs/openshift?topic=openshift-service-arch#ibm-data)
 

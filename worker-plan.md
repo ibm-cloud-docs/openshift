@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-21"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -126,7 +126,8 @@ With VMs, you get greater flexibility, quicker provisioning times, and more auto
 ### Planning considerations for VMs
 {: #vm-planning}
 
-**Do I want to use shared or dedicated hardware?**
+#### Do I want to use shared or dedicated hardware?
+{: #shared_or_dedicated_vms}
 
 When you create a standard classic cluster, you must choose whether you want the underlying hardware to be shared by multiple {{site.data.keyword.IBM_notm}} customers (multi tenancy) or to be dedicated to you only (single tenancy). VPC standard clusters can be provisioned on shared infrastructure (multi tenancy) only.
 
@@ -138,15 +139,22 @@ Shared nodes are usually less costly than dedicated nodes because the costs for 
 Some classic worker node flavors are available for only one type of tenancy setup. For example, `m3c` VMs can be provisioned in a shared tenancy setup only. Additionally, VPC clusters are available as only shared virtual machines.
 {: note}
 
-**How does storage work for VMs?**
+#### How does bandwidth allocation work for VPC Gen 2 worker nodes?
+{: #vm_bandwidth_allocation}
 
-Every VM comes with an attached disk for storage of information that the VM needs to run, such as OS file system, container runtime, and the `kubelet`.  Local storage on the worker node is for short-term processing only, and the storage disks are wiped when you delete, reload, replace, or update the worker node. For persistent storage solutions for your apps, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning).
+Note that {{site.data.keyword.openshiftlong_notm}} doesn't support adjusting the bandwidth profile that is associated with the underlying VPC instance profile.
 
-    Additionally, classic and VPC infrastructure differ in the disk setup.
+When you provision a worker node on a VPC Gen 2 cluster, you get the default bandwidth allocation for that instance profile. For more information, see [Bandwidth profiles](/docs/vpc?topic=vpc-bandwidth-allocation-profiles){: external}.
+
+#### How does storage work for VMs?
+{: #vm_storage_vpc}
+
+Every VM comes with an attached disk for storage of information that the VM needs to run, such as OS file system, container runtime, and the `kubelet`.  Local storage on the worker node is for short-term processing only, and the storage disks are wiped when you delete, reload, replace, or update the worker node. For persistent storage solutions for your apps, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning). Additionally, classic and VPC infrastructure differ in the disk setup.
 
 * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) **Classic VMs**: Classic VMs have two attached disks. The primary storage disk has 25 GB for the OS file system, and the secondary storage disk has 100 GB for data such as the container runtime and the `kubelet`. For reliability, the primary and secondary storage volumes are local disks instead of storage area networking (SAN). Reliability benefits include higher throughput when serializing bytes to the local disk and reduced file system degradation due to network failures. The secondary disk is encrypted by default.
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) **VPC compute VMs**: VPC VMs have one primary disk that is a block storage volume that is attached via the network. The storage layer is not separated from the other networking layers, and both network and storage traffic are routed on the same network. To account for network latency, the storage disks have a maximum of up to 3000 IOPS. The primary storage disk is used for storing data such as the OS file system, container runtime, and `kubelet`, and is [encrypted by default](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption).
 * To prevent default pod evictions, 10% of the Kubernetes data disk (secondary disk in classic, primary boot disk in VPC) is reserved for system components.
+
 
 ### Available flavors for VMs
 {: #vm-table}
