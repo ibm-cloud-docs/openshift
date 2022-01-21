@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-21"
 
 keywords: kubernetes, openshift
 
@@ -28,9 +28,6 @@ Support
 
 Billing
 :    If the tool that you add to your cluster incurs costs, these costs are automatically integrated and listed as part of your {{site.data.keyword.openshiftlong_notm}} billing. The billing cycle is determined by {{site.data.keyword.cloud_notm}} depending on when you enabled the add-on in your cluster.
-
-Limitations
-:    If you installed an admission controller that blocks unsigned images, such as [Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec), you can't enable managed add-ons in your cluster.
 
 :    In general, no additional setup, such as opening ports or IP addresses is required. However, refer to the documentation of each managed add-on to find the prerequisites that your cluster must meet before you install the managed add-on.
 
@@ -121,7 +118,7 @@ The following list of add-ons for clusters are supported in {{site.data.keyword.
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
 - **Deprecated**: [Kubernetes web terminal](/docs/containers?topic=containers-cs_cli_install#cli_web)
-- [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc) (However, you can also use [{{site.data.keyword.satelliteshort}} storage templates](/docs/satellite?topic=satellite-config-storage-ocs-local) to consistently deploy ODF across clusters in your location.)
+- [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc) (However, you can also use [{{site.data.keyword.satelliteshort}} storage templates](/docs/satellite?topic=satellite-config-storage-odf-local) to consistently deploy ODF across clusters in your location.)
 - [Static routes](/docs/containers?topic=containers-static-routes)
 
 The following list of add-ons for clusters are unsupported in {{site.data.keyword.satelliteshort}} locations.

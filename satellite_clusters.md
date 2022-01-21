@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-21"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -206,7 +206,7 @@ Create a worker pool in your {{site.data.keyword.satelliteshort}} cluster with h
 Before you begin
 
 - Make sure that you have the **Operator** platform access role to **Kubernetes Service** for the cluster in {{site.data.keyword.cloud_notm}} IAM.
-- Optional: [Attach](/docs/satellite?topic=satellite-hosts#attach-hosts) or [list available](/docs/satellite?topic=satellite-satellite-cli-reference#host-ls) hosts to your {{site.data.keyword.satelliteshort}} location with host labels that match your worker pool. Then, after you create your worker pool, these available hosts can be automatically assigned to the worker pool.
+- Optional: [Attach](/docs/satellite?topic=satellite-attach-hosts) or [list available](/docs/satellite?topic=satellite-satellite-cli-reference#host-ls) hosts to your {{site.data.keyword.satelliteshort}} location with host labels that match your worker pool. Then, after you create your worker pool, these available hosts can be automatically assigned to the worker pool.
 
 To create a worker pool in a {{site.data.keyword.satelliteshort}} cluster
 

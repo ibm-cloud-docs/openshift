@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-21"
 
 keywords: openshift
 subcollection: openshift
@@ -1415,31 +1415,43 @@ subcollection: openshift
 
 * [Kubernetes security bulletins](/docs/openshift?topic=openshift-security#security_bulletins)
 
-[Architecture and dependencies of the service](/docs/openshift?topic=openshift-service-arch#service-arch)
+[Architecture and dependencies of the service](/docs/openshift?topic=openshift-service-architecture#service-architecture)
 
-* [Classic cluster service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture)
+* [Classic {{site.data.keyword.openshiftshort}} version 4 architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture-4)
 
-    * [{{site.data.keyword.openshiftshort}} version 4 architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-4)
+    * [{{site.data.keyword.openshiftshort}} version 4 master components](/docs/openshift?topic=openshift-service-architecture#service-architecture-4-master)
 
-    * [{{site.data.keyword.openshiftshort}} version 3 architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-3)
+    * [{{site.data.keyword.openshiftshort}} version 4 worker node components](/docs/openshift?topic=openshift-service-architecture#service-architecture-4-workers)
 
-* [VPC cluster service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture_vpc)
+* [Classic {{site.data.keyword.openshiftshort}} version 3 architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture-3)
 
-* [Overview of personal and sensitive data storage and removal options](/docs/openshift?topic=openshift-service-arch#ibm-data)
+    * [Version 3 master components](/docs/openshift?topic=openshift-service-architecture#version-3-master)
 
-    * [What information is stored with IBM when using {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-service-arch#pi-info)
+    * [Classic version 3 worker node components](/docs/openshift?topic=openshift-service-architecture#version-3-worker)
 
-    * [How is my information stored and encrypted?](/docs/openshift?topic=openshift-service-arch#pi-storage)
+* [VPC cluster service architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture_vpc)
 
-    * [Where is my information stored?](/docs/openshift?topic=openshift-service-arch#pi-location)
+    * [Cluster with public and private cloud service endpoints](/docs/openshift?topic=openshift-service-architecture#vpc-service-arch-public-and-private)
 
-    * [How can I remove my information?](/docs/openshift?topic=openshift-service-arch#pi-removal)
+    * [Cluster with private cloud service endpoint only](/docs/openshift?topic=openshift-service-architecture#vpc-service-arch-private-only)
 
-    * [Does Red Hat collect information about my cluster?](/docs/openshift?topic=openshift-service-arch#pi-rh-telemetry)
+    * [VPC version 4 master and worker node components](/docs/openshift?topic=openshift-service-architecture#service-arch-vpc-4)
 
-* [Dependencies to other {{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-service-arch#dependencies-ibmcloud)
+* [Overview of personal and sensitive data storage and removal options](/docs/openshift?topic=openshift-service-architecture#ibm-data)
 
-* [Dependencies to 3rd party services](/docs/openshift?topic=openshift-service-arch#dependencies-3rd-party)
+    * [What information is stored with IBM when using {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-service-architecture#pi-info)
+
+    * [How is my information stored and encrypted?](/docs/openshift?topic=openshift-service-architecture#pi-storage)
+
+    * [Where is my information stored?](/docs/openshift?topic=openshift-service-architecture#pi-location)
+
+    * [How can I remove my information?](/docs/openshift?topic=openshift-service-architecture#pi-removal)
+
+    * [Does Red Hat collect information about my cluster?](/docs/openshift?topic=openshift-service-architecture#pi-rh-telemetry)
+
+* [Dependencies to other {{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-service-architecture#dependencies-ibmcloud)
+
+* [Dependencies to 3rd party services](/docs/openshift?topic=openshift-service-architecture#dependencies-3rd-party)
 
 
 ## Managing access control
@@ -2543,13 +2555,13 @@ subcollection: openshift
 
 * [Using existing block storage in your cluster](/docs/openshift?topic=openshift-block_storage#existing_block)
 
-    * [Step 1: Retrieving the information of your existing block storage](/docs/openshift?topic=openshift-block_storage#existing-block-1)
+    * [Retrieving the information of your existing block storage](/docs/openshift?topic=openshift-block_storage#existing-block-1)
 
-    * [Step 2: Creating a persistent volume (PV) and a matching persistent volume claim (PVC)](/docs/openshift?topic=openshift-block_storage#existing-block-2)
+    * [Creating a persistent volume (PV) and a matching persistent volume claim (PVC)](/docs/openshift?topic=openshift-block_storage#existing-block-2)
 
 * [Using block storage in a stateful set](/docs/openshift?topic=openshift-block_storage#block_statefulset)
 
-    * [Dynamic provisioning: Creating the PVC when you create a stateful set](/docs/openshift?topic=openshift-block_storage#block_dynamic_statefulset)
+    * [Creating the PVC by using dynamic provisioning when you create a stateful set](/docs/openshift?topic=openshift-block_storage#block_dynamic_statefulset)
 
     * [Static provisioning: Using existing PVCs with a stateful set](/docs/openshift?topic=openshift-block_storage#block_static_statefulset)
 
@@ -2568,6 +2580,14 @@ subcollection: openshift
     * [Copying data to and from pods and containers](/docs/openshift?topic=openshift-block_storage#block-cp)
 
 * [Storage class reference](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference)
+
+    * [Bronze](/docs/openshift?topic=openshift-block_storage#bronze-block)
+
+    * [Silver](/docs/openshift?topic=openshift-block_storage#silver-block)
+
+    * [Gold](/docs/openshift?topic=openshift-block_storage#gold-block)
+
+    * [Custom](/docs/openshift?topic=openshift-block_storage#custom-block)
 
 * [Sample customized storage classes](/docs/openshift?topic=openshift-block_storage#block_custom_storageclass)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-21"
 
 keywords: openshift
 
@@ -42,15 +42,15 @@ In this quickstart guide, you create a 24Gi silver tier {{site.data.keyword.bloc
 {: shortdesc}
 
 First time using {{site.data.keyword.blockstorageshort}} in your cluster? Come back here after your have [reviewed the storage configurations](#block_predefined_storageclass).
-{: tip}
+{: important}
 
-1. Create a file for your PVC and name it `pvc.yaml`.
+1. Save the following persistent volume claim (PVC) configuration to a file called `pvc.yaml`.
 
     ```yaml
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-      name: mypvc
+      name: block-storage-pvc
       labels:
         billingType: "hourly"
         region: us-east
@@ -65,14 +65,20 @@ First time using {{site.data.keyword.blockstorageshort}} in your cluster? Come b
     ```
     {: codeblock}
 
-2. Create the PVC in your cluster.
+1. Apply the configuration to your cluster to create the PVC.
 
     ```sh
     oc apply -f pvc.yaml
     ```
     {: pre}
+    
+1. Wait until your PVC is in the `Bound` status. You can check the status by running the following command.
+    ```sh
+    oc get pvc
+    ```
+    {: pre}
 
-3. After your PVC is bound, create an app deployment that uses your PVC. Create a file for your deployment and name it `deployment.yaml`.
+1. After your PVC is `Bound`, create an app deployment that uses your PVC. Save the following deployment configuration to a file called `deployment.yaml`.
 
     ```yaml
     apiVersion: apps/v1
@@ -80,7 +86,7 @@ First time using {{site.data.keyword.blockstorageshort}} in your cluster? Come b
     metadata:
       name: my-deployment
       labels:
-        app:
+        app: my-app
     spec:
       selector:
         matchLabels:
@@ -91,26 +97,71 @@ First time using {{site.data.keyword.blockstorageshort}} in your cluster? Come b
             app: my-app
         spec:
           containers:
-          - image: # Your contanerized app image.
+          - image: nginx # Use the nginx image, or your own containerized app image.
             name: my-container
+            command: ["/bin/sh"]
+            args: ["-c", "while true; do date \"+%Y-%m-%d %H:%M:%S\"; sleep 3600; done"] # This app prints the timestamp, then sleeps.
+            workingDir: /home
+            imagePullPolicy: Always
+            ports: 
+              - containerPort: 80
             volumeMounts:
             - name: my-volume
               mountPath: /mount-path
           volumes:
           - name: my-volume
             persistentVolumeClaim:
-              claimName: my-pvc
+              claimName: block-storage-pvc
     ```
     {: codeblock}
 
-4. Create the deployment in your cluster.
+1. Create the deployment in your cluster.
 
     ```sh
     oc apply -f deployment.yaml
     ```
     {: pre}
-
-For more information, see the following links:
+    
+1. Wait until the deployment is `Ready`. Check the status of the deployment by running the following command.
+    ```sh
+    oc get deployments
+    ```
+    {: pre}
+    
+    Example output.
+    ```sh
+    NAME            READY   UP-TO-DATE   AVAILABLE   AGE
+    my-deployment   1/1     1            1           3m19s
+    ```
+    {: screen}
+    
+1. List your pods and verify the `my-deployment` pod is running.
+    ```sh
+    oc get pods
+    ```
+    {: pre}
+    
+    Example output.
+    ```sh
+    NAME                            READY   STATUS    RESTARTS   AGE
+    my-deployment-ccdf87dfb-vzn95   1/1     Running   0          5m27s
+    ```
+    {: pre}
+    
+    
+1. Get the pods logs to verify the timestamp is written.
+    ```sh
+    oc logs
+    ```
+    {: pre}
+    
+    Example output.
+    ```sh
+    2022-01-21 14:18:59
+    ```
+    {: pre}
+    
+You've successfully created a deployment that uses {{site.data.keyword.blockstorageshort}}! For more information, see the following links.
 * [Adding {{site.data.keyword.blockstorageshort}} to apps](#add_block).
 * [Storage class reference](#block_storageclass_reference).
 * [Customizing storage classes](#block_custom_storageclass).
@@ -139,15 +190,14 @@ Make sure to choose your storage configuration carefully to have enough capacity
     Example output
 
     ```sh
-    NAME                         TYPE
-    ibmc-block-custom            ibm.io/ibmc-block
-    ibmc-block-bronze            ibm.io/ibmc-block
-    ibmc-block-gold              ibm.io/ibmc-block
-    ibmc-block-silver            ibm.io/ibmc-block
-    ibmc-block-retain-bronze     ibm.io/ibmc-block
-    ibmc-block-retain-silver     ibm.io/ibmc-block
-    ibmc-block-retain-gold       ibm.io/ibmc-block
-    ibmc-block-retain-custom     ibm.io/ibmc-block
+    ibmc-block-bronze                      ibm.io/ibmc-block   Delete          Immediate           true                   148m
+    ibmc-block-custom                      ibm.io/ibmc-block   Delete          Immediate           true                   148m
+    ibmc-block-gold                        ibm.io/ibmc-block   Delete          Immediate           true                   148m
+    ibmc-block-retain-bronze               ibm.io/ibmc-block   Retain          Immediate           true                   148m
+    ibmc-block-retain-custom               ibm.io/ibmc-block   Retain          Immediate           true                   148m
+    ibmc-block-retain-gold                 ibm.io/ibmc-block   Retain          Immediate           true                   148m
+    ibmc-block-retain-silver               ibm.io/ibmc-block   Retain          Immediate           true                   148m
+    ibmc-block-silver                      ibm.io/ibmc-block   Delete          Immediate           true                   148m
     ```
     {: screen}
 
@@ -176,7 +226,7 @@ Make sure to choose your storage configuration carefully to have enough capacity
         {: caption="Table of storage class size ranges and IOPS per gigabyte"}
         {: summary="The columns are read from left to right. The first column has the storage class. The second column has the IOPS per gigabyte that the storage class supports. The third column has the size range in gigabytes that the storage class supports"}
 
-    - **Custom storage class:** When you choose this storage class, you have more control over the size and IOPS that you want. For the size, you can select any whole number of gigabyte within the allowed size range. The size that you choose determines the IOPS range that is available to you. You can choose an IOPS that is a multiple of 100 that is in the specified range. The IOPS that you choose is static and does not scale with the size of the storage. For example, if you choose 40Gi with 100 IOPS, your total IOPS remains 100. </br></br>The IOPS to gigabyte ratio also determines the type of hard disk that is provisioned for you. For example, if you have 500Gi at 100 IOPS, your IOPS to gigabyte ratio is 0.2. Storage with a ratio of less than or equal to 0.3 is provisioned on SATA hard disks. If your ratio is greater than 0.3, then your storage is provisioned on SSD hard disks.
+    - **Custom storage class:** When you choose this storage class, you have more control over the size and IOPS that you want. For the size, you can select any whole number of gigabytes within the allowed size range. The size that you choose determines the IOPS range that is available to you. You can choose an IOPS that is a multiple of 100 within the specified range. The IOPS that you choose is static and does not scale with the size of the storage. For example, if you choose 40Gi with 100 IOPS, your total IOPS remains 100. The IOPS to gigabyte ratio also determines the type of hard disk that is provisioned for you. For example, if you are using 500Gi at 100 IOPS, your IOPS to gigabyte ratio is 0.2. Storage with a ratio of less than or equal to 0.3 is provisioned on SATA hard disks. If your ratio is greater than 0.3, then your storage is provisioned on SSD hard disks.
 
         | Size range in gigabytes | IOPS range in multiples of 100 | 
         | 20-39 Gi | 100-1000 IOPS | 
@@ -306,7 +356,7 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
     ```
     {: pre}
 
-14. Create a Kubernetes secret that is named `secret.yaml` and that includes the credentials to access your root key in your {{site.data.keyword.keymanagementserviceshort}} service instance.
+14. Create a Kubernetes secret named `secret.yaml` and that includes the credentials to access your root key in your {{site.data.keyword.keymanagementserviceshort}} service instance.
     1. Create a configuration file for the secret.
         ```yaml
         apiVersion: v1
@@ -385,9 +435,9 @@ The following steps explain how to create a custom, encrypted storage class that
       encrypted: "true" # Enter "true" to enable encryption.
       encryptionKeySecret: <secret_name> # # #nter the name of the secret that you created earlier.Example: my_secret 
       encryptionKeyNamespace: <namespace> # # #nter the namespace where you created your secret. Example: default
-      provisioner: ibm.io/ibmc-block
-      reclaimPolicy: Delete
-      allowVolumeExpansion: true
+    provisioner: ibm.io/ibmc-block
+    reclaimPolicy: Delete
+    volumeBindingMode: Immediate
     ```
     {: codeblock}
 
@@ -522,13 +572,13 @@ To add block storage:
 1. Create a configuration file to define your persistent volume claim (PVC) and save the configuration as a `.yaml` file.
 
     -  **Example for bronze, silver, gold storage classes**:
-        The following `.yaml` file creates a claim that is named `mypvc` of the `"ibmc-block-silver"` storage class, billed `"hourly"`, with a gigabyte size of `24Gi`.
+        The following `.yaml` file creates a claim that is named `block-storage-pvc` of the `"ibmc-block-silver"` storage class, billed hourly, with a gigabyte size of `24Gi`.
 
         ```yaml
         apiVersion: v1
         kind: PersistentVolumeClaim
         metadata:
-          name: mypvc
+          name: block-storage-pvc
           labels:
             billingType: "hourly"
             region: us-south
@@ -544,13 +594,13 @@ To add block storage:
         {: codeblock}
 
     -  **Example for using the custom storage class**:
-        The following `.yaml` file creates a claim that is named `mypvc` of the storage class `ibmc-block-retain-custom`, billed `"hourly"`, with a gigabyte size of `45Gi` and IOPS of `"300"`.
+        The following `.yaml` file creates a claim that is named `block-storage-pvc` of the storage class `ibmc-block-retain-custom`, billed hourly, with a gigabyte size of `45Gi` and IOPS of `"300"`.
 
         ```yaml
         apiVersion: v1
         kind: PersistentVolumeClaim
         metadata:
-          name: mypvc
+          name: block-storage-pvc
           labels:
             billingType: "hourly"
             region: us-south
@@ -574,7 +624,7 @@ To add block storage:
         :   In the metadata labels section, specify the frequency for which your storage bill is calculated, "monthly" or "hourly". The default is "hourly".
 
         `region`
-        :   In the metadata labels section, specify the region where you want to provision your block storage. If you specify the region, you must also specify a zone. If you don't specify a region, or the specified region is not found, the storage is created in the same region as your cluster. <p class="note">This option is supported only with the IBM Cloud Block Storage plug-in version 1.0.1 or higher. For older plug-in versions, if you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones. To specify the zone for your storage, you can create a [customized storage class](#block_multizone_yaml) first. Then, create a PVC with your customized storage class.
+        :   In the metadata labels section, specify the region where you want to provision your block storage. If you specify the region, you must also specify a zone. If you don't specify a region, or the specified region is not found, the storage is created in the same region as your cluster. This option is supported only with the IBM Cloud Block Storage plug-in version 1.0.1 or higher. For older plug-in versions, if you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones. To specify the zone for your storage, you can create a [customized storage class](#block_multizone_yaml) first. Then, create a PVC with your customized storage class.
 
         `zone`
         :   In the metadata labels section, specify the zone where you want to provision your block storage. If you specify the zone, you must also specify a region. If you don't specify a zone or the specified zone is not found in a multizone cluster, the zone is selected on a round-robin basis. This option is supported only with the IBM Cloud Block Storage plug-in version 1.0.1 or higher. For older plug-in versions, if you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones. To specify the zone for your storage, you can create a [customized storage class](#block_multizone_yaml) first. Then, create a PVC with your customized storage class.
@@ -594,35 +644,21 @@ To add block storage:
 2. Create the PVC.
 
     ```sh
-    oc apply -f mypvc.yaml
+    oc apply -f block-storage.yaml
     ```
     {: pre}
 
 3. Verify that your PVC is created and bound to the PV. This process can take a few minutes.
 
     ```sh
-    oc describe pvc mypvc
+    oc get pvc
     ```
     {: pre}
 
     Example output
-
-    ```yaml
-    Name:        mypvc
-    Namespace:    default
-    StorageClass:    ""
-    Status:        Bound
-    Volume:        pvc-0d787071-3a67-11e7-aafc-eef80dd2dea2
-    Labels:        <none>
-    Capacity:    20Gi
-    Access Modes:    RWO
-    Events:
-        FirstSeen    LastSeen    Count    From                                SubObjectPath    Type        Reason            Message
-        ---------    --------    -----    ----                                -------------    --------    ------            -------
-        3m        3m        1    {ibm.io/ibmc-block 31898035-3011-11e7-a6a4-7a08779efd33 }            Normal        Provisioning        External provisioner is provisioning volume for claim "default/my-persistent-volume-claim"
-        3m        1m        10    {persistentvolume-controller }                            Normal        ExternalProvisioning    can't find provisioner "ibm.io/ibmc-block", expecting that a volume for the claim is provisioned either manually or via external software
-        1m        1m        1    {ibm.io/ibmc-block 31898035-3011-11e7-a6a4-7a08779efd33 }            Normal        ProvisioningSucceeded    Successfully provisioned volume pvc-0d787071-3a67-11e7-aafc-eef80dd2dea2
-
+    ```sh
+    NAME                STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS        AGE
+    block-storage-pvc              Bound    pvc-1aa1aaaa-11a1-48d1-ab11-11b11111f3bc   45Gi       RWO            ibmc-block-silver   150m
     ```
     {: screen}
 
@@ -671,7 +707,7 @@ To add block storage:
     :   The name of the container that you want to deploy to your cluster.
     
     `mountPath`
-    :   In the container volume mounts section, enter the absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the root directory in your physical block storage instance. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps. 
+    :   In the container volume mounts section, enter the absolute path of the directory to where the volume is mounted inside the container. Data written to the mount path is stored under the root directory in your physical block storage instance. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps. 
     
     `name`
     :   In the container volume mounts section, enter the name of the volume to mount to your pod.
@@ -707,7 +743,7 @@ To add block storage:
     Volumes:
     myvol:
         Type:    PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
-        ClaimName:    mypvc
+        ClaimName:    block-storage-pvc
         ReadOnly:    false
     ```
     {: screen}
@@ -724,7 +760,7 @@ If you have an existing physical storage device that you want to use in your clu
 
 Before you can start to mount your existing storage to an app, you must retrieve all necessary information for your PV.  
 
-### Step 1: Retrieving the information of your existing block storage
+### Retrieving the information of your existing block storage
 {: #existing-block-1}
 
 1. Retrieve or generate an API key for your IBM Cloud infrastructure account.
@@ -754,8 +790,8 @@ Before you can start to mount your existing storage to an app, you must retrieve
     Example output
 
     ```sh
-    id         username            datacenter   storage_type              capacity_gb   bytes_used   ip_addr         lunId   active_transactions
-    38642141   IBM02SEL1543159-1   dal10        endurance_block_storage   20            -            169.xx.xxx.xxx   170     0
+    id          username              datacenter   storage_type                capacity_gb   bytes_used   lunId   
+    11111111    IBM01AAA1111111-1     wdc07        endurance_block_storage     45            -            2      
     ```
     {: screen}
 
@@ -769,24 +805,22 @@ Before you can start to mount your existing storage to an app, you must retrieve
     Example output
 
     ```sh
-    Name                       Value   
-    ID                         111111111   
-    User name                  IBM02SEL1111111-111   
+    ID                         11111111 
+    User name                  IBM01AAA1111111-1   
     Type                       endurance_block_storage   
-    Capacity (GB)              20   
-    LUN Id                     1   
-    Endurance Tier             10_IOPS_PER_GB   
-    Endurance Tier Per IOPS    10   
-    Datacenter                 wdc06   
-    Target IP                  161.XX.XX.XX
+    Capacity (GB)              45   
+    LUN Id                     2   
+    IOPs                       100   
+    Datacenter                 wdc07   
+    Target IP                  10.XXX.XX.XXX  
     # of Active Transactions   0   
-    Replicant Count            0
+    Replicant Count            0 
     ```
     {: screen}
 
-8. Note the `ID`, `Target IP`, `Capacity GB`, the `Datacenter`, `User Name`, and `LUN Id` of the block storage device that you want to mount to your cluster. **Note:** To mount existing storage to a cluster, you must have a worker node in the same zone as your storage. To verify the zone of your worker node, run `ibmcloud oc worker ls --cluster <cluster_name_or_ID>`.
+8. Make a note of the `ID`, `Capacity`, `LUN Id`, the `Datacenter`, and `Target IP` of the volume that you want to mount to your cluster. **Note:** To mount existing storage to a cluster, you must have a worker node in the same zone as your storage. To verify the zone of your worker node, run `ibmcloud oc worker ls --cluster <cluster_name_or_ID>`.
 
-### Step 2: Creating a persistent volume (PV) and a matching persistent volume claim (PVC)
+### Creating a persistent volume (PV) and a matching persistent volume claim (PVC)
 {: #existing-block-2}
 
 1. **Optional**: If you have storage that you provisioned with a `retain` storage class, when you remove the PVC, the PV and the physical storage device are not removed. To reuse the storage in your cluster, you must remove the PV first. List existing PVs and look for the PV that belongs to your persistent storage. The PV is in a `released` state.
@@ -803,67 +837,73 @@ Before you can start to mount your existing storage to an app, you must retrieve
     ```
     {: pre}
 
-3. Verify that the PV is removed.
+3. Verify the PV is removed.
 
     ```sh
     oc get pv
     ```
     {: pre}
 
-4. Create a configuration file for your PV. Include the block storage `id`, `ip_addr`, `capacity_gb`, the `datacenter`, `username`, and `lunIdID` that you retrieved earlier.
+4. Create a configuration file for your PV. Include the parameters you retrieved earlier.
 
     ```yaml
     apiVersion: v1
     kind: PersistentVolume
     metadata:
-      name: "<name>" # Enter a name for your PV
+      name: "block-storage-pv" # Enter a name for your PV. For example, my-static-pv.
       labels:
-         failure-domain.beta.kubernetes.io/region: <region>
-         failure-domain.beta.kubernetes.io/zone: <zone>
+         failure-domain.beta.kubernetes.io/region: "<region>" # Example us-east.
+         failure-domain.beta.kubernetes.io/zone: "<zone>" # Example: wdc04. See https://cloud.ibm.com/docs/containers?topic=containers-regions-and-zones#zones-sz
     spec:
       capacity:
-        storage: "<storage_size>"
+        storage: "<storage>"
       accessModes:
         - ReadWriteOnce
       flexVolume:
         driver: "ibm/ibmc-block"
-        fsType: "<fs_type>"
+        fsType: "<fs_type>" # Enter ext or xfs
         options:
-          "Lun": "<lun_ID>"
-          "TargetPortal": "<IP_address>"
-          "VolumeID": "<volume_ID>"
-          "volumeName": "<volume_username>"
+          "Lun": "<Lun_ID>"
+          "TargetPortal": "<TargetPortal>"
+          "VolumeID": "<VolumeID>"
+          "volumeName": "block-storage-pv" # Enter the same value as your PV name from metadata.name
     ```
     {: codeblock}
 
     `name`
-    :   Enter the name of the PV that you want to create.
+    :   Give your PV a name. For example, `block-storage-pv`. Note that you must also enter this value in `spec.FlexVolume.options` as the `volumeName`.
     
     `labels`
     :   Enter the region and the zone that you retrieved earlier. You must have at least one worker node in the same region and zone as your persistent storage to mount the storage in your cluster. To retrieve your volume details, run `ibmcloud sl block volume-list` to get the volume ID, then run `ibmcloud sl block volume-detail <volume_ID>` to get the details of your volume.
     
+    `region`
+    :   Enter the region where your block storage is located. Note that your cluster and block storage must be in the same region. To find your cluster location, run `ibmcloud oc cluster ls`. For more information about the available regions and zones, see [regions and zones](/docs/openshift?topic=openshift-regions-and-zones#zones-sz). For example, `us-east`.
+    
+    `zone`
+    :   Enter the zone where your storage volume is located. To retrieve your volume details, run `ibmcloud sl block volume-list` to get the volume ID, then run `ibmcloud sl block volume-detail <volume_ID>` to get the details of your volume. Note that to attach block storage to your cluster, you must have a worker node available in the same zone as the volume that you want to attach. To find the zones of your worker nodes, run `ibmcloud oc worker ls -c <cluster>`. For example, `wdc04`.
+    
     `storage`
-    :   In the spec capacity section, enter the storage size of the existing block storage that you retrieved in the previous step as `capacity-gb`. The storage size must be written in gigabytes, for example, 20Gi (20 GB) or 1000Gi (1 TB). To retrieve your volume details, run `ibmcloud sl block volume-list` to get the volume ID, then run `ibmcloud sl block volume-detail <volume_ID>` to get the details of your volume.
+    :   Enter the storage size of the existing block storage volume that you want to attach to your cluster. The storage size must be written in gigabytes, for example, 20Gi (20 GB) or 1000Gi (1 TB). To retrieve your volume details, run `ibmcloud sl block volume-list` to get the volume ID, and then run `ibmcloud sl block volume-detail <volume_ID>` to get the details of your volume.
     
     `fsType`
-    :   In the spec flex volume section, enter the file system type that is configured for your existing block storage. Choose between `ext4` or `xfs`. If you don't specify this option, the PV defaults to `ext4`. When the wrong `fsType` is defined, then the PV creation succeeds, but the mounting of the PV to a pod fails. To retrieve your volume details, run `ibmcloud sl block volume-list` to get the volume ID, then run `ibmcloud sl block volume-detail <volume_ID>` to get the details of your volume.
+    :   Enter the file system type that is configured for your existing block storage. Choose between `ext4` or `xfs`. If you don't specify this option, the PV defaults to `ext4`. When the wrong `fsType` is defined, then the PV creation succeeds, but the mounting of the PV to a pod fails. To retrieve your volume details, run `ibmcloud sl block volume-list` to get the volume ID, then run `ibmcloud sl block volume-detail <volume_ID>` to get the details of your volume.
     
     `Lun`
-    :   In the spec flex volume options section, enter the lun ID for your block storage that you retrieved earlier as `lunId`. To retrieve your volume details, run `ibmcloud sl block volume-list` to get the volume ID, then run `ibmcloud sl block volume-detail <volume_ID>` to get the details of your volume.
+    :   Enter the LUN ID of your block storage volume. To retrieve your volume details, run `ibmcloud sl block volume-list` to get the volume ID, then run `ibmcloud sl block volume-detail <volume_ID>` to get the details of your volume.
     
     `TargetPortal`
-    :   In the spec flex volume options section, enter the IP address of your block storage that you retrieved earlier as `ip_addr`. To retrieve your volume details, run `ibmcloud sl block volume-list` to get the volume ID, then run `ibmcloud sl block volume-detail <volume_ID>` to get the details of your volume.
+    :   Enter the IP address of your block storage. To retrieve the `TargetPortal` parameter, run `ibmcloud sl block volume-list` to get the volume ID, then run `ibmcloud sl block volume-detail <volume_ID>` and make a note of the `Target IP` in the output.
     
     `VolumeId`
-    :   In the spec flex volume options section, enter the ID of your block storage that you retrieved earlier as `id`. Example: "11111111". To retrieve your volume details, run `ibmcloud sl block volume-list` to get the volume ID, then run `ibmcloud sl block volume-detail <volume_ID>` to get the details of your volume.
+    :   Enter the ID of your block storage. To retrieve your volume details, run `ibmcloud sl block volume-list`.
     
     `volumeName`
-    :   In the spec flex volume options section, enter the `username` of your {{site.data.keyword.blockstorageshort}} volume. Example: "IBM02SEL1111111-111". To retrieve your volume details, run `ibmcloud sl block volume-list` to get the volume ID, then run `ibmcloud sl block volume-detail <volume_ID>` to get the details of your volume.
+    :   Enter the same value as your PV name. For example, `block-storage-pv`.
 
 5. Create the PV in your cluster.
 
     ```sh
-    oc apply -f mypv.yaml
+    oc apply -f pv.yaml
     ```
     {: pre}
 
@@ -880,42 +920,89 @@ Before you can start to mount your existing storage to an app, you must retrieve
     kind: PersistentVolumeClaim
     apiVersion: v1
     metadata:
-      name: mypvc
+      name: block-storage-pvc
     spec:
       accessModes:
       - ReadWriteOnce
-    resources:
-    requests:
-        storage: "<storage_size>"
-    storageClassName: ""
+      resources:
+        requests:
+          storage: "20Gi"
+      storageClassName: ""
     ```
     {: codeblock}
 
 8. Create your PVC.
 
     ```sh
-    oc apply -f mypvc.yaml
+    oc apply -f static-pvc.yaml
     ```
     {: pre}
 
 9. Verify that your PVC is created and bound to the PV that you created earlier. This process can take a few minutes.
 
     ```sh
-    oc describe pvc mypvc
+    oc describe pvc static-pvc
     ```
     {: pre}
 
     Example output
 
     ```sh
-    Name:          mypvc
+    Name:          static-pvc
     Namespace:     default
     StorageClass:  
     Status:        Bound
     ```
-    {: screen}
+    {: screen} 
 
-You successfully created a PV and bound it to a PVC. Cluster users can now [mount the PVC](#block_app_volume_mount) to their deployments and start reading from and writing to the PV.
+10. **Optional** Save the following example pod configuration as a file called `pod.yaml`.
+    ```yaml
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: block-storage
+      labels:
+        app: block-storage
+    spec:
+      containers:
+        - name: block-storage
+          image: nginx
+          command: ["/bin/sh"]
+          args: ["-c", "while true; do date \"+%Y-%m-%d %H:%M:%S\"; sleep 3600; done"]
+          workingDir: /home
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: block-storage-pv
+              mountPath: /home
+      volumes:
+        - name: block-storage-pv
+          persistentVolumeClaim:
+            claimName: block-storage-pvc
+    ```
+    {: pre}
+    
+11. Create the pod in your cluster.
+    ```sh
+    oc create -f pod.yaml
+    ```
+    {: pre}
+    
+12. After the pod is in `Running` status, get the logs.
+    ```sh
+    oc logs
+    ```
+    {: pre}
+    
+    Example output.
+    ```sh
+    2022-01-21 16:11:00
+    ```
+    {: pre}
+    
+You successfully created a PV and bound it to a PVC. Then, you deployed and app that uses block storage. Cluster users can now [mount the PVC](#block_app_volume_mount) to their deployments and start reading from and writing to the persistent volume.
+    
 
 ## Using block storage in a stateful set
 {: #block_statefulset}
@@ -943,7 +1030,7 @@ Yes, you can [create a custom storage class](#topology_yaml) for your PVC that i
 
 If you want to automatically create your PVC when you create the stateful set, use [dynamic provisioning](#block_dynamic_statefulset). You can also choose to [pre-provision your PVCs or use existing PVCs](#block_static_statefulset) with your stateful set.  
 
-### Dynamic provisioning: Creating the PVC when you create a stateful set
+### Creating the PVC by using dynamic provisioning when you create a stateful set
 {: #block_dynamic_statefulset}
 
 Use this option if you want to automatically create the PVC when you create the stateful set.
@@ -1033,7 +1120,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
           matchLabels:
           app: nginx
           billingType: "hourly"
-          region: "us-south"
+          region: "us-south" # Enter the region where your cluster is located.
           zone: "dal10"
         template:
             metadata:
@@ -1045,7 +1132,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
             spec:
             containers:
             - name: nginx
-                image: k8s.gcr.io/nginx-slim:0.8
+                image: nginx
                 ports:
                 - containerPort: 80
                 name: web
@@ -1421,7 +1508,7 @@ To store the snapshot, you must request snapshot space on your block storage. Sn
 6. Create the snapshot size for your existing volume with the parameters that you retrieved in the previous step.
 
     ```sh
-    ibmcloud sl block snapshot-order <volume_ID> --size <size> --tier <iops>`
+    ibmcloud sl block snapshot-order <volume_ID> --size <size> --tier <iops>
     ```
     {: pre}
     
@@ -1525,72 +1612,121 @@ oc cp <local_filepath>/<filename> <namespace>/<pod>:<pod_filepath> -c <container
 Storage classes that have `retain` in the title have a reclaim policy of **Retain**. Example: `ibmc-file-retain-bronze`. Storage classes that don't have `retain` in the title have a reclaim policy of **Delete**. Example: `ibmc-file-bronze`.
 {: tip}
 
-| Characteristics | Setting|
-|:-----------------|:-----------------|
-| Name | `ibmc-block-bronze`</br>`ibmc-block-retain-bronze` |
-| Type | Endurance storage |
-| File system | `ext4` |
-| IOPS per gigabyte | 2 |
-| Size range in gigabytes | 20-12000 Gi |
-| Hard disk | SSD |
-| Reclaim policy | `ibmc-block-bronze`: Delete</br>`ibmc-block-retain-bronze`: Retain |
-| Billing | The default billing type depends on the version of your {{site.data.keyword.cloud_notm}} Block Storage plug-in: <ul><li> Version 1.0.1 and higher: Hourly</li><li>Version 1.0.0 and lower: Monthly</li></ul> |
-| Pricing | [Pricing information ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/block-storage/pricing) |
-{: class="simple-tab-table"}
-{: caption="Block storage class: bronze" caption-side="top"}
-{: #block_bronze}
-{: tab-title="Bronze"}
-{: tab-group="Block storage class"}
+The default billing type depends on the version of your {{site.data.keyword.cloud_notm}}. Version 1.0.1 and higher: Hourly. Version 1.0.0 and lower: Monthly. For more information, see [Pricing information](https://www.ibm.com/cloud/block-storage/pricing){: external}.
+{: note}
 
-| Characteristics | Setting|
-|:-----------------|:-----------------|
-| Name | `ibmc-block-silver`</br>`ibmc-block-retain-silver` |
-| Type | Endurance storage |
-| File system | `ext4` |
-| IOPS per gigabyte | 4 |
-| Size range in gigabytes | 20-12000 Gi |
-| Hard disk | SSD |
-| Reclaim policy | `ibmc-block-silver`: Delete</br>`ibmc-block-retain-silver`: Retain |
-| Billing | The default billing type depends on the version of your {{site.data.keyword.cloud_notm}} Block Storage plug-in: <ul><li> Version 1.0.1 and higher: Hourly</li><li>Version 1.0.0 and lower: Monthly</li></ul> |
-| Pricing | [Pricing information ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/block-storage/pricing) |
-{: class="simple-tab-table"}
-{: caption="Block storage class: silver" caption-side="top"}
-{: #block_silver}
-{: tab-title="Silver"}
-{: tab-group="Block storage class"}
+### Bronze
+{: #bronze-block}
 
-| Characteristics | Setting|
-|:-----------------|:-----------------|
-| Name | `ibmc-block-gold`</br>`ibmc-block-retain-gold` |
-| Type | Endurance storage |
-| File system | `ext4` |
-| IOPS per gigabyte | 10 |
-| Size range in gigabytes | 20-4000 Gi |
-| Hard disk | SSD |
-| Reclaim policy | `ibmc-block-gold`: Delete</br>`ibmc-block-retain-gold`: Retain |
-| Billing | The default billing type depends on the version of your {{site.data.keyword.cloud_notm}} Block Storage plug-in: <ul><li> Version 1.0.1 and higher: Hourly</li><li>Version 1.0.0 and lower: Monthly</li></ul> |
-| Pricing | [Pricing information ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/block-storage/pricing) |
-{: class="simple-tab-table"}
-{: caption="Block storage class: gold" caption-side="top"}
-{: #block_gold}
-{: tab-title="Gold"}
-{: tab-group="Block storage class"}
+Name
+:   `ibmc-block-bronze`
+:   `ibmc-block-retain-bronze`
+Type
+:   Endurance storage
 
-| Characteristics | Setting|
-|:-----------------|:-----------------|
-| Name | `ibmc-block-custom`</br>`ibmc-block-retain-custom` |
-| Type | Performance |
-| File system | `ext4` |
-| IOPS and size | **Size range in gigabytes / IOPS range in multiples of 100**<ul><li>20-39 Gi / 100-1000 IOPS</li><li>40-79 Gi / 100-2000 IOPS</li><li>80-99 Gi / 100-4000 IOPS</li><li>100-499 Gi / 100-6000 IOPS</li><li>500-999 Gi / 100-10000 IOPS</li><li>1000-1999 Gi / 100-20000 IOPS</li><li>2000-2999 Gi / 200-40000 IOPS</li><li>3000-3999 Gi / 200-48000 IOPS</li><li>4000-7999 Gi / 300-48000 IOPS</li><li>8000-9999 Gi / 500-48000 IOPS</li><li>10000-12000 Gi / 1000-48000 IOPS</li></ul> |
-| Hard disk | The IOPS to gigabyte ratio determines the type of hard disk that is provisioned. To determine your IOPS to gigabyte ratio, you divide the IOPS by the size of your storage. </br></br>Example: </br>You chose 500Gi of storage with 100 IOPS. Your ratio is 0.2 (100 IOPS/500Gi). </br></br>**Overview of hard disk types per ratio:**<ul><li>Less than or equal to 0.3: SATA</li><li>Greater than 0.3: SSD</li></ul> |
-| Reclaim policy | `ibmc-block-custom`: Delete</br>`ibmc-block-retain-custom`: Retain |
-| Billing | The default billing type depends on the version of your {{site.data.keyword.cloud_notm}} Block Storage plug-in: <ul><li> Version 1.0.1 and higher: Hourly</li><li>Version 1.0.0 and lower: Monthly</li></ul> |
-| Pricing | [Pricing information ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/block-storage/pricing) |
-{: class="simple-tab-table"}
-{: caption="Block storage class: custom" caption-side="top"}
-{: #block_custom}
-{: tab-title="Custom"}
-{: tab-group="Block storage class"}
+File system
+:   `ext4`
+
+IOPS per gigabyte
+:   2
+
+Size range in gigabytes
+:   20-12000 Gi
+
+Hard disk
+:   SSD
+
+Reclaim policy
+:   `ibmc-block-bronze`: Delete
+:   `ibmc-block-retain-bronze`: Retain
+
+
+### Silver
+{: #silver-block}
+
+Name
+:   `ibmc-block-silver`
+:   `ibmc-block-retain-silver`
+
+Type
+:   Endurance storage
+
+File system
+:   `ext4`
+
+IOPS per gigabyte
+:   4
+
+Size range in gigabytes
+:   20-12000 Gi
+
+Hard disk
+:   SSD
+
+Reclaim policy
+:   `ibmc-block-silver`: Delete
+:   `ibmc-block-retain-silver`: Retain
+
+### Gold
+{: #gold-block}
+
+Name
+:   `ibmc-block-gold`
+:   `ibmc-block-retain-gold`
+Type
+:   Endurance storage
+File system
+:   `ext4`
+IOPS per gigabyte
+:   10
+Size range in gigabytes
+:   20-4000 Gi
+
+Hard disk
+:   SSD
+
+Reclaim policy
+:   `ibmc-block-gold`: Delete
+:   `ibmc-block-retain-gold`: Retain
+
+### Custom
+{: #custom-block}
+
+
+Name
+:   `ibmc-block-custom`
+:   `ibmc-block-retain-custom`
+
+Type
+:   Performance
+File system
+:   `ext4`
+
+IOPS and size
+:   **Size range in gigabytes / IOPS range in multiples of 100**
+    - 20-39 Gi / 100-1000 IOPS
+    - 40-79 Gi / 100-2000 IOPS
+    - 80-99 Gi / 100-4000 IOPS
+    - 100-499 Gi / 100-6000 IOPS
+    - 500-999 Gi / 100-10000 IOPS
+    - 1000-1999 Gi / 100-20000 IOPS
+    - 2000-2999 Gi / 200-40000 IOPS
+    - 3000-3999 Gi / 200-48000 IOPS
+    - 4000-7999 Gi / 300-48000 IOPS
+    - 8000-9999 Gi / 500-48000 IOPS
+    - 10000-12000 Gi / 1000-48000 IOPS
+
+Hard disk
+:   The IOPS to gigabyte ratio determines the type of hard disk that is provisioned. To determine your IOPS to gigabyte ratio, you divide the IOPS by the size of your storage.
+:   Example: You chose 500Gi of storage with 100 IOPS. Your ratio is 0.2 (100 IOPS/500Gi).
+:   **Overview of hard disk types per ratio:**
+    - Less than or equal to 0.3: SATA
+    - Greater than 0.3: SSD
+
+Reclaim policy
+:   `ibmc-block-custom`: Delete
+:   `ibmc-block-retain-custom`: Retain
+
 
 
 
@@ -1631,9 +1767,9 @@ metadata:
     iopsPerGB: "2"
     sizeRange: '[20-12000]Gi'
     type: Endurance
-    provisioner: ibm.io/ibmc-block
-    reclaimPolicy: Delete
-    volumeBindingMode: WaitForFirstConsumer
+  provisioner: ibm.io/ibmc-block
+  reclaimPolicy: Delete
+  volumeBindingMode: WaitForFirstConsumer
 ```
 {: codeblock}
 
@@ -1663,8 +1799,8 @@ metadata:
     "[8000-9999]Gi:[500-48000]"
     "[10000-12000]Gi:[1000-48000]"
     type: "Performance"
-    reclaimPolicy: Delete
-    volumeBindingMode: WaitForFirstConsumer
+  reclaimPolicy: Delete
+  volumeBindingMode: WaitForFirstConsumer
 ```
 {: codeblock}
 
@@ -1949,7 +2085,7 @@ To clean up persistent data:
     Example output
 
     ```sh
-    12345678   {"plugin":"ibmcloud-block-storage-plugin-689df949d6-4n9qg","region":"us-south","cluster":"aa1a11a1a11b2b2bb22b22222c3c3333","type":"Endurance","ns":"default","pvc":"mypvc","pv":"pvc-d979977d-d79d-77d9-9d7d-d7d97ddd99d7","storageclass":"ibmc-block-silver","reclaim":"Delete"}
+    12345678   {"plugin":"ibmcloud-block-storage-plugin-689df949d6-4n9qg","region":"us-south","cluster":"aa1a11a1a11b2b2bb22b22222c3c3333","type":"Endurance","ns":"default","pvc":"block-storage-pvc","pv":"pvc-d979977d-d79d-77d9-9d7d-d7d97ddd99d7","storageclass":"ibmc-block-silver","reclaim":"Delete"}
     ```
     {: screen}
 
@@ -1970,7 +2106,7 @@ To clean up persistent data:
     `"ns":"default"`
     :   The namespace that the storage instance is deployed to.
     
-    `"pvc":"mypvc"`
+    `"pvc":"block-storage-pvc"`
     :   The name of the PVC that is associated with the storage instance.
     
     `"pv":"pvc-d979977d-d79d-77d9-9d7d-d7d97ddd99d7"`
@@ -1995,5 +2131,4 @@ The deletion process might take up to 72 hours to complete.
 ibmcloud sl block volume-list
 ```
 {: pre}
-
 
