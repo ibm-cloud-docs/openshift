@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-21"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -62,7 +62,7 @@ Review the changes in version `1.0.4_403` of the cluster autoscaler add-on.
 
 - Image tags: `1.19.1-8`, `1.20.0-8`, `1.21.0-4`, and `1.22.0-2`.
 - Supported cluster versions: 4.3
-- Includes fixes for [CVE-2021-44716](https://nvd.nist.gov/vuln/detail/CCVE-2021-44716{: external} and [CVE-2021-44717](https://nvd.nist.gov/vuln/detail/CVE-2021-44717){: external}. 
+- Includes fixes for [CVE-2021-44716](https://nvd.nist.gov/vuln/detail/CVE-2021-44716{: external} and [CVE-2021-44717](https://nvd.nist.gov/vuln/detail/CVE-2021-44717){: external}. 
 
 
 ### Changelog for patch update 1.0.4_387, released 22 November 2021

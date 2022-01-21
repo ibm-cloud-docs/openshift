@@ -14,7 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 # Architecture and dependencies of the service
-{: #service-arch}
+{: #service-architecture}
 
 Review sample architectures, components, and dependencies for your {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
