@@ -2553,48 +2553,6 @@ subcollection: openshift
 
 * [Adding block storage to apps](/docs/openshift?topic=openshift-block_storage#add_block)
 
-* [Using existing block storage in your cluster](/docs/openshift?topic=openshift-block_storage#existing_block)
-
-    * [Step 1: Retrieving the information of your existing block storage](/docs/openshift?topic=openshift-block_storage#existing-block-1)
-
-    * [Step 2: Creating a persistent volume (PV) and a matching persistent volume claim (PVC)](/docs/openshift?topic=openshift-block_storage#existing-block-2)
-
-* [Using block storage in a stateful set](/docs/openshift?topic=openshift-block_storage#block_statefulset)
-
-    * [Dynamic provisioning: Creating the PVC when you create a stateful set](/docs/openshift?topic=openshift-block_storage#block_dynamic_statefulset)
-
-    * [Static provisioning: Using existing PVCs with a stateful set](/docs/openshift?topic=openshift-block_storage#block_static_statefulset)
-
-* [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-block_storage#block_change_storage_configuration)
-
-* [Backing up and restoring data](/docs/openshift?topic=openshift-block_storage#block_backup_restore)
-
-    * [Setting up periodic snapshots](/docs/openshift?topic=openshift-block_storage#block-snaps)
-
-    * [Replicating snapshots to another zone](/docs/openshift?topic=openshift-block_storage#block-replicate)
-
-    * [Duplicating storage](/docs/openshift?topic=openshift-block_storage#block-dupe)
-
-    * [Backing up data to {{site.data.keyword.cos_full}}](/docs/openshift?topic=openshift-block_storage#block-cos-backup)
-
-    * [Copying data to and from pods and containers](/docs/openshift?topic=openshift-block_storage#block-cp)
-
-* [Storage class reference](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference)
-
-* [Sample customized storage classes](/docs/openshift?topic=openshift-block_storage#block_custom_storageclass)
-
-    * [Creating topology-aware storage](/docs/openshift?topic=openshift-block_storage#topology_yaml)
-
-    * [Specifying the zone and region](/docs/openshift?topic=openshift-block_storage#block_multizone_yaml)
-
-    * [Mounting block storage with an `XFS` file system](/docs/openshift?topic=openshift-block_storage#xfs)
-
-* [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-block_storage#cleanup_block)
-
-    * [Understanding your storage removal options](/docs/openshift?topic=openshift-block_storage#storage_delete_options_block)
-
-    * [Cleaning up persistent storage](/docs/openshift?topic=openshift-block_storage#storage_remove_block)
-
 [Storing data on {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block)
 
 * [Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc_block_qs)
