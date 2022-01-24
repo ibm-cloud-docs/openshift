@@ -523,7 +523,7 @@ Refer to the following parameters when you use the add-on or operator in VPC clu
 {: shortdesc}
 
 ### Version 4.8 clusters
-{: #odf-vpc-params-47}
+{: #odf-vpc-params-48}
 
 | Parameter | Description | Default value |
 | --- | --- | --- |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-24"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -64,7 +64,7 @@ Complete the following prerequisite steps to set up permissions and the command-
 {: #openshift_create_cluster}
 {: step}
 
-Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what components are set up when you create a cluster, see the [Service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture). {{site.data.keyword.openshiftshort}} is available for only standard clusters. You can learn more about the price of standard clusters in the [frequently asked questions](/docs/openshift?topic=openshift-faqs#charges).
+Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what components are set up when you create a cluster, see the [Service architecture](/docs/openshift?topic=openshift-service-architecture). {{site.data.keyword.openshiftshort}} is available for only standard clusters. You can learn more about the price of standard clusters in the [frequently asked questions](/docs/openshift?topic=openshift-faqs#charges).
 {: shortdesc}
 
 1. Log in to the account and resource group where you want to create {{site.data.keyword.openshiftshort}} clusters. If you have a federated account, include the `--sso` flag.

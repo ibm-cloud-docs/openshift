@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-24"
 
 keywords: openshift
 
@@ -41,8 +41,8 @@ The tables below list the `ibmcloud oc` command groups. For a complete list of a
 | [Worker commands](#worker_node_commands) | View and modify worker nodes for a cluster.  |
 | [Worker-pool commands](#worker-pool) | View and modify worker pools for a cluster. |
 | [Zone commands](#zone) | List availability zones and modify the zones attached to a worker pool. |
-| **Beta** [Ingress commands](#alb-commands) | View and modify Ingress services and settings. |
-| [Logging commands](#logging_commands) | Forward logs from your cluster. |
+| **Beta** [Ingress commands](#alb-commands) | View and modify Ingress services and settings. | <container>
+| [Logging commands](#logging_commands) | Forward logs from your cluster. | </container>
 | [Nlb-dns commands](#nlb-dns) | Create and manage host names for network load balancer (NLB) IP addresses in a cluster and health check monitors for host names. |
 | [Webhook-create commands](#cs_webhook_create) | Register a webhook in a cluster. |
 | [API-key commands](#api_key-commands) | View information about the API key for a cluster or reset it to a new key. |

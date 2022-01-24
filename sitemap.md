@@ -188,7 +188,7 @@ subcollection: openshift
 
     * [20 January 2022](/docs/openshift?topic=openshift-iks-release#20jan2022)
 
-    * [18 January 2022](/docs/openshift?topic=openshift-iks-release#18jan2021)
+    * [18 January 2022](/docs/openshift?topic=openshift-iks-release#18jan2022)
 
     * [17 January 2022](/docs/openshift?topic=openshift-iks-release#17jan2022)
 
@@ -2840,7 +2840,7 @@ subcollection: openshift
 
 * [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-param-ref)
 
-    * [Version 4.8 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-47)
+    * [Version 4.8 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-48)
 
     * [Version 4.7 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-47)
 
@@ -4005,9 +4005,9 @@ subcollection: openshift
 
 * [Version 1.0.4](/docs/openshift?topic=openshift-ca_changelog#0104_ca_addon)
 
-    * [Changelog for patch update 1.0.4_403, released 20 January 2022](/docs/openshift?topic=openshift-ca_changelog#10387_ca)
+    * [Changelog for patch update 1.0.4_403, released 20 January 2022](/docs/openshift?topic=openshift-ca_changelog#104403_ca)
 
-    * [Changelog for patch update 1.0.4_387, released 22 November 2021](/docs/openshift?topic=openshift-ca_changelog#10387_ca)
+    * [Changelog for patch update 1.0.4_387, released 22 November 2021](/docs/openshift?topic=openshift-ca_changelog#104387_ca)
 
     * [Changelog for patch update 1.0.4_374, released 7 October 2021](/docs/openshift?topic=openshift-ca_changelog#104374_ca)
 

@@ -56,7 +56,7 @@ OpenShift Data Foundation
 
 
 ### 18 January 2022
-{: #18jan2021}
+{: #18jan2022}
 {: release-note}
 
 Review the release notes for January 2022.
@@ -2169,7 +2169,7 @@ Global settings
 :   Added information about the [`config.openshift.io` global settings](/docs/openshift?topic=openshift-service-settings#global-settings) that you can or can't configure.
 
 Private-only VPC clusters
-:   Added diagrams for the [service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture_vpc), [flow of app requests with routers](/docs/openshift?topic=openshift-openshift_routes#route_vpc_private), and [flow of app requests with Ingress](/docs/openshift?topic=openshift-ingress-about-roks4#architecture-vpc_private) in VPC clusters that are created with the private cloud service endpoint only.
+:   Added diagrams for the [service architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture_vpc), [flow of app requests with routers](/docs/openshift?topic=openshift-openshift_routes#route_vpc_private), and [flow of app requests with Ingress](/docs/openshift?topic=openshift-ingress-about-roks4#architecture-vpc_private) in VPC clusters that are created with the private cloud service endpoint only.
 
 
 

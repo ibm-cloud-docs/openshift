@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-24"
 
 keywords: openshift
 
@@ -282,7 +282,7 @@ To protect your network and limit the range of damage that a user can do when ac
 All containers are protected by [predefined Calico network policy settings](/docs/openshift?topic=openshift-network_policies#default_policy) that are configured on every worker node during cluster creation. By default, all outbound network traffic is allowed for all worker nodes. Inbound network traffic is blocked with the following exceptions:
 - **NodePort**: The [Kubernetes NodePort range](https://kubernetes.io/docs/concepts/services-networking/service/#nodeport){: external} is opened by default so that you can expose apps with [NodePort services](/docs/containers?topic=containers-nodeport). To block inbound network traffic on NodePorts in your cluster, see [Controlling inbound traffic to NLB or NodePort services](/docs/openshift?topic=openshift-network_policies#block_ingress).
 - **IBM monitoring ports**: By default, IBM opens a few ports on your cluster so that network traffic can be monitored by IBM and for IBM to automatically install security updates for the {{site.data.keyword.openshiftshort}} master.
-Access from the {{site.data.keyword.openshiftshort}} master to the worker node's kubelet is secured by an OpenVPN ({{site.data.keyword.openshiftshort}} version 4.7 or earlier) or Konnectivity ({{site.data.keyword.openshiftshort}} version 4.8 or later) tunnel. For more information, see the [{{site.data.keyword.openshiftlong_notm}} architecture](/docs/openshift?topic=openshift-service-arch).
+Access from the {{site.data.keyword.openshiftshort}} master to the worker node's kubelet is secured by an OpenVPN ({{site.data.keyword.openshiftshort}} version 4.7 or earlier) or Konnectivity ({{site.data.keyword.openshiftshort}} version 4.8 or later) tunnel. For more information, see the [{{site.data.keyword.openshiftlong_notm}} architecture](/docs/openshift?topic=openshift-service-architecture).
 
 **What is network segmentation and how can I set it up for a cluster?**
 
@@ -557,7 +557,7 @@ When you run multiple apps in your cluster, you want to make sure that your work
 
 {{site.data.keyword.openshiftshort}} projects are a way to virtually partition a cluster and provide isolation for your deployments and the groups of users that want to move their workload onto the cluster. With projects, you can organize resources across worker nodes and also across zones in multizone clusters.  
 
-Every cluster is set up with a set of default {{site.data.keyword.openshiftshort}} projects that include the deployments and services that are required for {{site.data.keyword.openshiftlong_notm}} to run properly and manage the cluster. For more information, see the [service architecture](/docs/openshift?topic=openshift-service-arch). Cluster administrators automatically have access to these projects and can set up additional projects in the cluster. In addition, cluster users who are granted access to the cluster can create their own project and, as the creator of the project, can manage the project with administrator permissions. However, cluster users don't have access to other projects by default, unless they are granted access by a cluster administrator. 
+Every cluster is set up with a set of default {{site.data.keyword.openshiftshort}} projects that include the deployments and services that are required for {{site.data.keyword.openshiftlong_notm}} to run properly and manage the cluster. For more information, see the [service architecture](/docs/openshift?topic=openshift-service-architecture). Cluster administrators automatically have access to these projects and can set up additional projects in the cluster. In addition, cluster users who are granted access to the cluster can create their own project and, as the creator of the project, can manage the project with administrator permissions. However, cluster users don't have access to other projects by default, unless they are granted access by a cluster administrator. 
 
 For every project that you have in the cluster, make sure to set up proper [RBAC policies](/docs/openshift?topic=openshift-users#rbac) to limit access to this project, control what gets deployed, and to set proper [resource quotas and limit ranges](https://docs.openshift.com/enterprise/3.2/dev_guide/compute_resources.html){: external}.
 {: important}

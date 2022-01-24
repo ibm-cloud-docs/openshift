@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-21"
+lastupdated: "2022-01-24"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -55,7 +55,7 @@ Review the changes included in version 1.0.3 of the managed cluster autoscaler a
 
 
 ### Changelog for patch update 1.0.4_403, released 20 January 2022
-{: #10387_ca}
+{: #104403_ca}
 
 Review the changes in version `1.0.4_403` of the cluster autoscaler add-on.
 {: shortdesc}
@@ -66,7 +66,7 @@ Review the changes in version `1.0.4_403` of the cluster autoscaler add-on.
 
 
 ### Changelog for patch update 1.0.4_387, released 22 November 2021
-{: #10387_ca}
+{: #104387_ca}
 
 Review the changes in version `1.0.4_387` of the cluster autoscaler add-on. 
 {: shortdesc}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-21"
+lastupdated: "2022-01-24"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -74,7 +74,7 @@ Want to be sure that you always have enough worker nodes to cover your workload?
 
 **Why do my worker nodes have the `master` role?**
 
-When you run `oc get nodes` or `oc describe node <worker_node>`, you might see that the worker nodes have `master,worker` roles. In OpenShift Container Platform clusters, operators use the master role as a `nodeSelector` so that OCP can deploy default components that are controlled by operators, such as the internal registry, in your cluster. No master node processes, such as the API server or Kubernetes scheduler, run on your worker nodes. For more information about master and worker node components, see [{{site.data.keyword.openshiftshort}} architecture](/docs/openshift?topic=openshift-service-arch#service-architecture-4).
+When you run `oc get nodes` or `oc describe node <worker_node>`, you might see that the worker nodes have `master,worker` roles. In OpenShift Container Platform clusters, operators use the master role as a `nodeSelector` so that OCP can deploy default components that are controlled by operators, such as the internal registry, in your cluster. No master node processes, such as the API server or Kubernetes scheduler, run on your worker nodes. For more information about master and worker node components, see [{{site.data.keyword.openshiftshort}} architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture-4).
 
 
 
