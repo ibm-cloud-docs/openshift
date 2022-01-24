@@ -332,17 +332,17 @@ If you enabled the add-on from the CLI and set the `odfDeploy=false` parameter, 
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
     metadata:
-        name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
-      spec:
-        osdStorageClassName: localblock
-        osdSize: "1"
-        numOfOsd: 1
-        billingType: advanced
-        ocsUpgrade: false
-        osdDevicePaths:
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2
-          - <device-by-id> # Example: dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part2
+      name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+    spec:
+      osdStorageClassName: localblock
+      osdSize: "1"
+      numOfOsd: 1
+      billingType: advanced
+      ocsUpgrade: false
+      osdDevicePaths:
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2
+        - <device-by-id> # Example: dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part2
     ```
     {: codeblock}
 
@@ -351,23 +351,23 @@ If you enabled the add-on from the CLI and set the `odfDeploy=false` parameter, 
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
     metadata:
-        name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
-      spec:
-        monStorageClassName: localfile
-        monSize: 20Gi
-        osdStorageClassName: localblock
-        osdSize: "1"
-        numOfOsd: 1
-        billingType: advanced
-        ocsUpgrade: false
-        monDevicePaths:
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part1
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part1
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part1
-        osdDevicePaths:
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2
-          - <device-by-id> # Example: dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part2
+      name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+    spec:
+      monStorageClassName: localfile
+      monSize: 20Gi
+      osdStorageClassName: localblock
+      osdSize: "1"
+      numOfOsd: 1
+      billingType: advanced
+      ocsUpgrade: false
+      monDevicePaths:
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part1
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part1
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part1
+      osdDevicePaths:
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2
+        - <device-by-id> # Example: dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part2
     ```
     {: codeblock}
 
@@ -376,27 +376,27 @@ If you enabled the add-on from the CLI and set the `odfDeploy=false` parameter, 
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster 
     metadata:
-        name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
-      spec:
-        monStorageClassName: localfile
-        monSize: 20Gi
-        osdStorageClassName: localblock
-        osdSize: "1"
-        numOfOsd: 1
-        billingType: advanced
-        ocsUpgrade: false
-        monDevicePaths:
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2
-        osdDevicePaths:
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-3333333a33a33a33333a3aa333a33a3a3
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-4444444a44a44a44444a4aa444a44a4a4
-          - <device-by-id> # Example: dev/disk/by-id/scsi-5555555a55a55a55555a5aa555a55a5a5
-        workerNodes: # Specify the private IP addresses of each worker node where you want to install OCS.
-          - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
-          - <workerNodes>
-          - <workerNodes>
+      name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+    spec:
+      monStorageClassName: localfile
+      monSize: 20Gi
+      osdStorageClassName: localblock
+      osdSize: "1"
+      numOfOsd: 1
+      billingType: advanced
+      ocsUpgrade: false
+      monDevicePaths:
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2
+      osdDevicePaths:
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-3333333a33a33a33333a3aa333a33a3a3
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-4444444a44a44a44444a4aa444a44a4a4
+        - <device-by-id> # Example: dev/disk/by-id/scsi-5555555a55a55a55555a5aa555a55a5a5
+      workerNodes: # Specify the private IP addresses of each worker node where you want to install OCS.
+        - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
+        - <workerNodes>
+        - <workerNodes>
     ```
     {: codeblock}
 
@@ -405,23 +405,23 @@ If you enabled the add-on from the CLI and set the `odfDeploy=false` parameter, 
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
     metadata:
-        name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
-      spec:
-        monStorageClassName: localfile
-        monSize: 20Gi
-        osdStorageClassName: localblock
-        osdSize: "1"
-        numOfOsd: 1
-        billingType: advanced
-        ocsUpgrade: false
-        monDevicePaths: 
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2
-        osdDevicePaths:
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-3333333a33a33a33333a3aa333a33a3a3
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-4444444a44a44a44444a4aa444a44a4a4
-          - <device-by-id> # Example: dev/disk/by-id/scsi-5555555a55a55a55555a5aa555a55a5a5
+      name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+    spec:
+      monStorageClassName: localfile
+      monSize: 20Gi
+      osdStorageClassName: localblock
+      osdSize: "1"
+      numOfOsd: 1
+      billingType: advanced
+      ocsUpgrade: false
+      monDevicePaths: 
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2
+      osdDevicePaths:         
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-3333333a33a33a33333a3aa333a33a3a3
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-4444444a44a44a44444a4aa444a44a4a4
+        - <device-by-id> # Example: dev/disk/by-id/scsi-5555555a55a55a55555a5aa555a55a5a5
     ```
     {: codeblock}
 
@@ -430,27 +430,27 @@ If you enabled the add-on from the CLI and set the `odfDeploy=false` parameter, 
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
     metadata:
-        name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
-      spec:
-        monStorageClassName: localfile
-        monSize: 20Gi
-        osdStorageClassName: localblock
-        osdSize: "1"
-        numOfOsd: 1
-        billingType: advanced
-        ocsUpgrade: false
-        monDevicePaths:
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part1
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part1
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part1
-        osdDevicePaths:
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2
-          - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2
-          - <device-by-id> # Example: dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part2
-        workerNodes: # Specify the private IP addresses of each worker node where you want to install OCS.
-          - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
-          - <workerNodes>
-          - <workerNodes>
+      name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+    spec:
+      monStorageClassName: localfile
+      monSize: 20Gi
+      osdStorageClassName: localblock
+      osdSize: "1"
+      numOfOsd: 1
+      billingType: advanced
+      ocsUpgrade: false
+      monDevicePaths:
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part1
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part1
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part1
+      osdDevicePaths:
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2
+        - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2
+        - <device-by-id> # Example: dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part2
+      workerNodes: # Specify the private IP addresses of each worker node where you want to install OCS.
+        - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
+        - <workerNodes>
+        - <workerNodes>
     ```
     {: codeblock}
     
@@ -460,13 +460,13 @@ If you enabled the add-on from the CLI and set the `odfDeploy=false` parameter, 
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
     metadata:
-        name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
-      spec:
-    osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
-    osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
-    numOfOsd: 1
-    billingType: advanced
-    ocsUpgrade: false
+      name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+    spec:
+      osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+      osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
+      numOfOsd: 1
+      billingType: advanced
+      ocsUpgrade: false
     ```
     {: codeblock}
 
@@ -476,17 +476,17 @@ If you enabled the add-on from the CLI and set the `odfDeploy=false` parameter, 
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
     metadata:
-        name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
-      spec:
-    osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
-    osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
-    numOfOsd: 1
-    billingType: advanced
-    ocsUpgrade: false
-    workerNodes: # Specify the private IP addresses of the worker nodes where you want to install OCS.
-      - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
-      - <workerNodes>
-      - <workerNodes>
+      name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+    spec:
+      osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+      osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
+      numOfOsd: 1
+      billingType: advanced
+      ocsUpgrade: false
+      workerNodes: # Specify the private IP addresses of the worker nodes where you want to install OCS.
+        - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
+        - <workerNodes>
+        - <workerNodes>
     ```
     {: codeblock}
 
@@ -496,15 +496,15 @@ If you enabled the add-on from the CLI and set the `odfDeploy=false` parameter, 
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
     metadata:
-        name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
-      spec:
-    monStorageClassName: <monStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
-    monSize: <monSize>
-    osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
-    osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
-    numOfOsd: 1
-    billingType: advanced
-    ocsUpgrade: false
+      name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+    spec:
+      monStorageClassName: <monStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+      monSize: <monSize>
+      osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+      osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
+      numOfOsd: 1
+      billingType: advanced
+      ocsUpgrade: false
     ```
     {: codeblock}
 
@@ -514,19 +514,19 @@ If you enabled the add-on from the CLI and set the `odfDeploy=false` parameter, 
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
     metadata:
-        name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
-      spec:
-    monStorageClassName: <monStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
-    monSize: <monSize>
-    osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
-    osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
-    numOfOsd: 1
-    billingType: advanced
-    ocsUpgrade: false
-    workerNodes: # Specify the private IP addresses of the worker nodes where you want to install OCS.
-      - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
-      - <workerNodes>
-      - <workerNodes>
+      name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+    spec:
+      monStorageClassName: <monStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+      monSize: <monSize>
+      osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+      osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
+      numOfOsd: 1
+      billingType: advanced
+      ocsUpgrade: false
+      workerNodes: # Specify the private IP addresses of the worker nodes where you want to install OCS.
+        - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
+        - <workerNodes>
+        - <workerNodes>
     ```
     {: codeblock}
 

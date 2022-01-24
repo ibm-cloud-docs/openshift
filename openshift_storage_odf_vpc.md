@@ -278,81 +278,81 @@ To create an ODF storage cluster in your VPC cluster by using dynamic provisioni
 If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](#odf-create-cos), and created the Kubernetes secret in your cluster. When you create the ODF CRD in your cluster, ODF looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store that uses your {{site.data.keyword.cos_short}} HMAC credentials.
 {: note}
 
-1. Create a custom resource definition (CRD) called `OcsCluster`. Save one of the following custom resource definition files on your local machine and edit it to include the name of the custom storage class that you created earlier as the `monStorageClassName` and `osdStorageClassName` parameters. For more information about the `OcsCluster` parameters, see the [parameter reference](#odf-vpc-param-ref).
+1. Create a custom resource definition called `OcsCluster`. Save one of the following custom resource definition files on your local machine and edit it to include the name of the custom storage class that you created earlier as the `monStorageClassName` and `osdStorageClassName` parameters. For more information about the `OcsCluster` parameters, see the [parameter reference](#odf-vpc-param-ref).
 
-    Example custom resource definition (CRD) for installing ODF on all worker nodes on a 4.8 cluster.
+    Example custom resource definition for installing ODF on all worker nodes on a 4.8 cluster.
 
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
     metadata:
-        name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
-      spec:
-    osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
-    osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
-    numOfOsd: 1
-    billingType: advanced
-    ocsUpgrade: false
+      name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+    spec:
+      osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+      osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
+      numOfOsd: 1
+      billingType: advanced
+      ocsUpgrade: false
     ```
     {: codeblock}
 
-    Example custom resource definition (CRD) for installing ODF only on specified worker nodes on a 4.8 cluster.
+    Example custom resource definition for installing ODF only on specified worker nodes on a 4.8 cluster.
 
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
     metadata:
-        name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
-      spec:
-    osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
-    osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
-    numOfOsd: 1
-    billingType: advanced
-    ocsUpgrade: false
-    workerNodes: # Specify the private IP addresses of the worker nodes where you want to install OCS.
-      - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
-      - <workerNodes>
-      - <workerNodes>
+      name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+    spec:
+      osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+      osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
+      numOfOsd: 1
+      billingType: advanced
+      ocsUpgrade: false
+      workerNodes: # Specify the private IP addresses of the worker nodes where you want to install OCS.
+        - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
+        - <workerNodes>
+        - <workerNodes>
     ```
     {: codeblock}
 
-    Example custom resource definition (CRD) for installing ODF on all worker nodes on a 4.7 cluster.
+    Example custom resource definition for installing ODF on all worker nodes on a 4.7 cluster.
 
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
     metadata:
-        name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
-      spec:
-    monStorageClassName: <monStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
-    monSize: <monSize>
-    osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
-    osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
-    numOfOsd: 1
-    billingType: advanced
-    ocsUpgrade: false
+      name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+    spec:
+      monStorageClassName: <monStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+      monSize: <monSize>
+      osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+      osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
+      numOfOsd: 1
+      billingType: advanced
+      ocsUpgrade: false
     ```
     {: codeblock}
 
-    Example custom resource definition (CRD) for installing ODF only on specified worker nodes on a 4.7 cluster.
+    Example custom resource definition for installing ODF only on specified worker nodes on a 4.7 cluster.
 
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
     metadata:
-        name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
-      spec:
-    monStorageClassName: <monStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
-    monSize: <monSize>
-    osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
-    osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
-    numOfOsd: 1
-    billingType: advanced
-    ocsUpgrade: false
-    workerNodes: # Specify the private IP addresses of the worker nodes where you want to install OCS.
-      - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
-      - <workerNodes>
-      - <workerNodes>
+      name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+    spec:
+      monStorageClassName: <monStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+      monSize: <monSize>
+      osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+      osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
+      numOfOsd: 1
+      billingType: advanced
+      ocsUpgrade: false
+      workerNodes: # Specify the private IP addresses of the worker nodes where you want to install OCS.
+        - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
+        - <workerNodes>
+        - <workerNodes>
     ```
     {: codeblock}
 
