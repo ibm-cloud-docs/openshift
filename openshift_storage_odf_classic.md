@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-24"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
 
@@ -219,6 +219,12 @@ Before you install OpenShift Data Foundation, prepare your cluster.
 ### Getting your device details
 {: #odf-classic-get-devices}
 
+**Required for add-on version 4.7**. You must specify the disk paths or disk IDs for the volumes that you want to use when you deploy the ODF add-on. Complete the following steps to retrieve your storage device details.
+{: important}
+
+**Optional for add-on version 4.8**. You can use automatic disk discoveryto find available devices for ODF. However, if you want to manually specify storage devices for ODF, complete the following steps to retrieve your storage device details.
+{: important}
+
 Before you install ODF, get the details of the local disks on your worker nodes.
 {: shortdesc}
 
@@ -301,10 +307,35 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.7.0` of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must specify the `--version` flag when you enable the add-on.
 
-1. Review the add-on options. Note that the default storage classes for `monStorageClassName` and `osdStorageClassName` are {{site.data.keyword.block_storage_is_short}} storage classes. For classic clusters, you must first [gather your local device information](#odf-classic-get-devices), and specify `localfile` for `monStorageClassName` and `localblock` for `osdStorageClassName` when you enable the add-on.
+1. Review the add-on options for the version of the add-on that you want to deploy. Note that the default storage classes for `monStorageClassName` and `osdStorageClassName` are {{site.data.keyword.block_storage_is_short}} storage classes.
+
+    Add-on options for version 4.8.0.
+    
+    ```sh
+    ibmcloud oc cluster addon options --addon openshift-data-foundation --version 4.8.0
+    ```
+    {: pre}
+    
+    ```sh
+    Add-on Options
+    Option                Default Value   
+    osdStorageClassName   ibmc-vpc-block-metro-10iops-tier   
+    ocsUpgrade            false   
+    clusterEncryption     false   
+    billingType           advanced   
+    autoDiscoverDevices   false   
+    odfDeploy             true   
+    osdSize               250Gi   
+    osdDevicePaths        <Please provide IDs of the disks to be used for OSD pods if using local disks or standard classic cluster>   
+    numOfOsd              1   
+    workerNodes           all
+    ```
+    {: screen}
+
+    Add-on options for version 4.7.0.
 
     ```sh
-    ibmcloud oc cluster addon options --addon openshift-data-foundation
+    ibmcloud oc cluster addon options --addon openshift-data-foundation --version 4.7.0
     ```
     {: pre}
 
@@ -325,17 +356,29 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: screen}
 
-1. Enable the `openshift-data-foundation` add-on. If you also want to deploy the ODF add-on only, you can specify the `"odfDeploy=false"` flag. If you want to override any of the default parameters, specify the `--param "key=value"` flag for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
+1. Enable the `openshift-data-foundation` add-on. If you want to deploy the ODF add-on only, you can specify the `"odfDeploy=false"` flag. If you want to override any of the default parameters, specify the `--param "key=value"` flag for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
 
-    Example command for deploying the ODF add-on only and not creating a storage cluster.
+    Example command for enabling add-on version 4.8.0 only and not creating a storage cluster.
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version 4.7.0 --param "odfDeploy=false"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version 4.8.0 --param "odfDeploy=false"
+    ```
+    {: pre}
+    
+    Example command for enabling add-on version 4.8.0 and deploying ODF by using automatic disk discovery.
+    ```sh
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster-name> --version 4.8.0 --param "odfDeploy=true"  --param "osdSize=1" --param "autoDiscoverDevices=true"
+    ```
+    {: pre}
+    
+    Example command for deploying add-on version 4.8.0 without automatic disk discovery and overriding the default parameters.
+    ```sh
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version 4.8.0 --param "odfDeploy=true" --param "osdSize=500Gi" --param "monStorageClassName=localfile" --param "osdSize=1" --param "osdDevicePaths=/dev/disk/by-id/<device>"
     ```
     {: pre}
 
-    Example command for deploying the ODF and creating a storage cluster while overriding the default parameter.
+    Example command for deploying add-on version 4.7.0 and deploying ODF while overriding the default parameters.
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "odfDeploy=true" --param "osdSize=500Gi" --param "monStorageClassName=localfile" --param "monStorageClassName=localblock" --param "osdSize=1"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version 4.7.0 --param "odfDeploy=true" --param "osdSize=500Gi" --param "monStorageClassName=localfile" --param "monStorageClassName=localblock" --param "osdSize=1" --param "monSize=20Gi" --param "monDevicePaths=/dev/disk/by-id/<device>" --param "osdDevicePaths=/dev/disk/by-id/<device>"
     ```
     {: pre}
 
@@ -394,7 +437,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     - If your worker node has raw disks with partitions, you need one partition for the OSD and one partition for the MON per worker node. As a best practice, and to maximize storage capacity on partitioned disks, you can specify the smaller partition or disk for the MON, and the larger partition or disk for the OSD. Note that the initial storage capacity of your ODF configuration is equal to the size of the disk that you specify as the `osd-device-path` when you create your configuration. 
     - If you devices aren't partitioned, you  must specify one raw disk for the MON and one for the OSD for each worker node that you want to use.
     
-    Example custom resource for installing ODF on all worker nodes in a version 4.8 cluster by using automatic disk discover.
+    Example custom resource for installing ODF on all worker nodes in a version 4.8 cluster by using automatic disk discovery.
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
@@ -407,7 +450,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: pre}
     
-    Example custom resource for installing ODF on all worker nodes in a version 4.7 cluster with partitioned disks.
+    Example custom resource for installing ODF on all worker nodes in a version 4.8 cluster with partitioned disks.
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
@@ -569,7 +612,7 @@ Refer to the following OpenShift Data Foundation parameters when you use the add
 | `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
 | `workerNodes` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
 | `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
-| `autoDiskDiscovery` | **Optional**: Automatically discover the available disks on your worker nodes. Enter `true` or `false`. |
+| `autoDiscoverDevices` | **Optional**: Automatically discover the available disks on your worker nodes. Enter `true` or `false`. |
 {: caption="Classic parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
 

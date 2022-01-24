@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-24"
 
 keywords: object storage, plug-in, changelog
 
@@ -14,17 +14,18 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Object storage plug-in 
+# {{site.data.keyword.cos_full_notm}} plug-in 
 {: #cos_plugin_changelog}
 
 View information for updates to the {{site.data.keyword.cos_full_notm}} plug-in in your {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
 
-Refer to the following tables for a summary of changes for each version of the [Object Storage plug-in](/docs/containers?topic=containers-object_storage).
+Refer to the following tables for a summary of changes for each version of the [{{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-object_storage).
 
-| Object Storage plug-in version | Supported? | {{site.data.keyword.openshiftshort}} version support | Supported architecture |
+| {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.openshiftshort}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.1.9 | Yes | Greater than or equal to 4.3 | x86 |
 | 2.1.8 | Yes | Greater than or equal to 4.3 | x86 |
 | 2.1.7 | Yes | Greater than or equal to 4.3 | x86 |
 | 2.1.6 | Deprecated | Greater than or equal to 4.3 | x86 |
@@ -39,8 +40,15 @@ Refer to the following tables for a summary of changes for each version of the [
 | 2.0.7 | Deprecated | 4.3 to 4.6 | x86 |
 | 2.0.6 | Deprecated | 4.3 - 4.6 | x86 | 
 | 2.0.5 | Deprecated | 4.3 to 4.6 | x86 |
-{: caption="Object Storage plug-in versions" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the Object Storage plug-in version. The second column is the version's supported state. The third column is the version of your cluster that the Object Storage plug-in version is supported for."}
+{: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the {{site.data.keyword.cos_full_notm}} plug-in version. The second column is the version's supported state. The third column is the version of your cluster that the {{site.data.keyword.cos_full_notm}} plug-in version is supported for."}
+
+## Changlog version 2.1.9, released 24 January 2022
+{: #0219_object_plugin}
+
+- [CVE-2021-44716](https://nvd.nist.gov/vuln/detail/CVE-2021-44716){: external}
+- [CVE-2021-44717](https://nvd.nist.gov/vuln/detail/CVE-2021-44717){: external}
+
 
 
 ## Changlog version 2.1.8, released 17 January 2022
@@ -174,8 +182,8 @@ Refer to the following tables for a summary of changes for each version of the [
 - The `1.8.23` image is signed.  
 - Updates the Go version to `1.15.5`.  
 - Fixes `CVE-2020-28362`, `CVE-2020-28367`, and `CVE-2020-28366`.  
-- Resources that are deployed by the Object Storage plug-in are now linked with the corresponding source code and build URLs.  
-- Updates the Object Storage plug-in to pull the universal base image (UBI) from the proxy image registry.  
+- Resources that are deployed by the {{site.data.keyword.cos_full_notm}} plug-in are now linked with the corresponding source code and build URLs.  
+- Updates the {{site.data.keyword.cos_full_notm}} plug-in to pull the universal base image (UBI) from the proxy image registry.  
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-24"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -209,7 +209,7 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
 1. Review the add-on options. Note that add-on options are only available for version `4.7.0` and later.
 
     ```sh
-    ibmcloud oc cluster addon options --addon openshift-data-foundation
+    ibmcloud oc cluster addon options --addon openshift-data-foundation --version 4.7.0
     ```
     {: pre}
 

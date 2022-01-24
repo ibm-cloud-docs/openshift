@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-24"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, satellite
 
@@ -37,7 +37,7 @@ Before you install ODF in your {{site.data.keyword.satelliteshort}} cluster, eac
 1. [Attach at least 3 hosts](/docs/satellite?topic=satellite-attach-hosts) that meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs). Additionally, each host must have a minimum of 16 CPUs and 64 GB RAM.
 1. [Create a cluster](/docs/openshift?topic=openshift-clusters) with the hosts that you previously attached to the location.
 
-You can also deploy ODF to your {{site.data.keyword.satelliteshort}} cluster by using the {{site.data.keyword.satelliteshort}} storage templates. Templates allow you to automate your deployment across multiple {{site.data.keyword.satelliteshort}} clusters. For more information, see [ODF with remote disks](/docs/satellite?topic=satellite-config-storage-ocs-remote) or [ODF with local disks](/docs/satellite?topic=satellite-config-storage-ocs-local) depending on your cluster setup.
+You can also deploy ODF to your {{site.data.keyword.satelliteshort}} cluster by using the {{site.data.keyword.satelliteshort}} storage templates. Templates allow you to automate your deployment across multiple {{site.data.keyword.satelliteshort}} clusters. For more information, see [ODF with remote disks](/docs/satellite?topic=satellite-config-storage-odf-remote) or [ODF with local disks](/docs/satellite?topic=satellite-config-storage-odf-local) depending on your cluster setup.
 {: tip}
 
 ### Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance
@@ -174,7 +174,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 1. Review the add-on options. Note that the default storage classes for `monStorageClassName` and `osdStorageClassName` are {{site.data.keyword.block_storage_is_short}} storage classes. For {{site.data.keyword.satelliteshort}}, you must override these values and specify a storage class that supports dynamic provisioning based on the block storage storage driver in your cluster. If you want to use local volumes on worker nodes instead of dynamically provisioned volumes, you must first [gather your local device information](#odf-sat-gather), then when you enable the add-on, specify `localfile` for `monStorageClassName` and `localblock` for `osdStorageClassName`.
 
     ```sh
-    ibmcloud oc cluster addon options --addon openshift-data-foundation
+    ibmcloud oc cluster addon options --addon openshift-data-foundation --version 4.7.0
     ```
     {: pre}
 
@@ -218,13 +218,17 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 1. [Create an ODF custom resource](#odf-sat-deploy-crd).
 
-
-
 ## Gathering your local block storage device details
 {: #odf-sat-gather}
 
 If you want to deploy ODF on a {{site.data.keyword.satelliteshort}} with local block storage devices, you must first gather the device paths to the disks on your worker nodes.
 {: shortdesc}
+
+**Required for using local disks with add-on version 4.7**. You must specify the disk paths or disk IDs for the volumes that you want to use when you deploy the ODF add-on. Complete the following steps to retrieve your storage device details.
+{: important}
+
+**Optional for using local disks with add-on version 4.8**. You can use automatic disk discoveryto find available devices for ODF. However, if you want to manually specify storage device for ODF, complete the following steps to retrieve your storage device details.
+{: important}
 
 Before you install ODF, get the details of the local disks on your worker nodes.
 {: shortdesc}
@@ -305,141 +309,238 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 If you enabled the add-on from the CLI and set the `odfDeploy=false` parameter, complete the following steps to create a storage cluster CRD to deploy ODF. If you enabled the add-on from the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or from the CLI and did not set `odfDeploy=false`, you don't need to create a CRD.
 
-1. Create a custom resource called `OcsCluster`. Save one of the following custom resource definition files on your local machine and edit it to include the name of the custom storage class that you created earlier as the `monStorageClassName` and `osdStorageClassName` parameters. For more information about the `OcsCluster` parameters, see the [parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-param-ref).
+1. Create a custom resource called `OcsCluster`. Save and edit the following custom resource definition to include the device paths for the local disks [that you retrieved earlier](#odf--get-devices). If you don't specify the optional `workerNodes` parameter, then all worker nodes in your cluster are used for the ODF deployment. Be sure to include the `/dev/disk/by-id/` path when you specify your storage devices.
 
-    Example custom resource definition for installing ODF on all worker nodes on a 4.8 cluster.
+    - If your worker node has raw disks with partitions, you need one partition for the OSD and one partition for the MON per worker node. As a best practice, and to maximize storage capacity on partitioned disks, you can specify the smaller partition or disk for the MON, and the larger partition or disk for the OSD. Note that the initial storage capacity of your ODF configuration is equal to the size of the disk that you specify as the `osd-device-path` when you create your configuration. 
+    - If you devices aren't partitioned, you  must specify one raw disk for the MON and one for the OSD for each worker node that you want to use.
     
+    **Local disks**: Example custom resource for installing ODF on all worker nodes in a version 4.8 cluster by using automatic disk discovery with local disks.
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
     metadata:
-        name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+      name: ocscluster
     spec:
-      osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
-      osdSize: <osdSize> # The OSD size is the total storage capacity of your storage cluster
-      numOfOsd: 1
-      billingType: advanced
-      ocsUpgrade: false
-    ```
-    {: codeblock}
-    
-    Example custom resource definition for installing ODF only on specified worker nodes on a 4.8 cluster.
-    
-    ```yaml
-    apiVersion: ocs.ibm.io/v1
-    kind: OcsCluster
-    metadata:
-        name: ocscluster-sat
-    spec:
-      osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
-      osdSize: <osdSize> # The OSD size is the total storage capacity of your storage cluster
-      numOfOsd: 1
-      billingType: advanced
-      ocsUpgrade: false
-      workerNodes: # Specify the private IP addresses of the worker nodes that you want to use.
-        - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
-        - <workerNodes>
-        - <workerNodes>
-    ```
-    {: codeblock}
-
-    Example custom resource definition for installing ODF on all worker nodes.
-    
-    ```yaml
-    apiVersion: ocs.ibm.io/v1
-    kind: OcsCluster
-    metadata:
-        name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
-    spec:
-      monStorageClassName: <monStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
-      monSize: <monSize>
-      osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
-      osdSize: <osdSize> # The OSD size is the total storage capacity of your storage cluster
-      numOfOsd: 1
-      billingType: advanced
-      ocsUpgrade: false
-    ```
-    {: codeblock}
-
-    Example custom resource definition for installing ODF only on specified worker nodes on a 4.7 cluster.
-    
-    ```yaml
-    apiVersion: ocs.ibm.io/v1
-    kind: OcsCluster
-    metadata:
-        name: ocscluster-sat
-    spec:
-      monStorageClassName: <monStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
-      monSize: <monSize>
-      osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
-      osdSize: <osdSize> # The OSD size is the total storage capacity of your storage cluster
-      numOfOsd: 1
-      billingType: advanced
-      ocsUpgrade: false
-      workerNodes: # Specify the private IP addresses of the worker nodes that you want to use.
-        - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
-        - <workerNodes>
-        - <workerNodes>
-    ```
-    {: codeblock}
-
-
-    Example custom resource for installing ODF on all worker nodes on a 4.7 cluster.
-    
-    ```yaml
-    apiVersion: ocs.ibm.io/v1
-    kind: OcsCluster
-    metadata:
-        name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
-    spec:
-      monStorageClassName: localfile
-      monSize: 20Gi
       osdStorageClassName: localblock
       osdSize: "1"
-      numOfOsd: 1
-      billingType: advanced
-      ocsUpgrade: false
-      monDevicePaths:
-        - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part1
-        - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part1
-        - <device-by-id> # Example: /dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part1
-      osdDevicePaths:
-        - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2
-        - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2
-        - <device-by-id> # Example: dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part2
+      autoDiscoverDevices: true
     ```
-    {: codeblock}
-
-    Example custom resource for installing ODF only on certain worker nodes.
+    {: pre}
     
-
+    **Local disks**: Example custom resource for installing ODF on all worker nodes in a version 4.8 cluster with partitioned disks.
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
     metadata:
         name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
-    spec:
-      monStorageClassName: localfile
-      monSize: 20Gi
-      osdStorageClassName: localblock
-      osdSize: "1"
-      numOfOsd: 1
-      billingType: advanced
-      ocsUpgrade: false
-      monDevicePaths:
-        - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part1
-        - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part1
-        - <device-by-id> # Example: /dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part1
-      osdDevicePaths:
-        - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2
-        - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2
-        - <device-by-id> # Example: dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part2
-      workerNodes: # Specify the private IP addresses of each worker node where you want to install OCS.
-        - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
-        - <workerNodes>
-        - <workerNodes>
+      spec:
+        osdStorageClassName: localblock
+        osdSize: "1"
+        numOfOsd: 1
+        billingType: advanced
+        ocsUpgrade: false
+        osdDevicePaths:
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2
+          - <device-by-id> # Example: dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part2
     ```
     {: codeblock}
+
+    **Local disks**: Example custom resource for installing ODF on all worker nodes in a version 4.7 cluster with partitioned disks.
+    ```yaml
+    apiVersion: ocs.ibm.io/v1
+    kind: OcsCluster
+    metadata:
+        name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+      spec:
+        monStorageClassName: localfile
+        monSize: 20Gi
+        osdStorageClassName: localblock
+        osdSize: "1"
+        numOfOsd: 1
+        billingType: advanced
+        ocsUpgrade: false
+        monDevicePaths:
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part1
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part1
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part1
+        osdDevicePaths:
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2
+          - <device-by-id> # Example: dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part2
+    ```
+    {: codeblock}
+
+    **Local disks**: Example custom resource for installing ODF only on certain worker nodes in a version 4.7 cluster with partitioned disks.
+    ```yaml
+    apiVersion: ocs.ibm.io/v1
+    kind: OcsCluster 
+    metadata:
+        name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+      spec:
+        monStorageClassName: localfile
+        monSize: 20Gi
+        osdStorageClassName: localblock
+        osdSize: "1"
+        numOfOsd: 1
+        billingType: advanced
+        ocsUpgrade: false
+        monDevicePaths:
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2
+        osdDevicePaths:
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-3333333a33a33a33333a3aa333a33a3a3
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-4444444a44a44a44444a4aa444a44a4a4
+          - <device-by-id> # Example: dev/disk/by-id/scsi-5555555a55a55a55555a5aa555a55a5a5
+        workerNodes: # Specify the private IP addresses of each worker node where you want to install OCS.
+          - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
+          - <workerNodes>
+          - <workerNodes>
+    ```
+    {: codeblock}
+
+    **Local disks**: Example custom resource for installing ODF on all worker nodes in a version 4.7 cluster with non-partitioned disks.
+    ```yaml
+    apiVersion: ocs.ibm.io/v1
+    kind: OcsCluster
+    metadata:
+        name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+      spec:
+        monStorageClassName: localfile
+        monSize: 20Gi
+        osdStorageClassName: localblock
+        osdSize: "1"
+        numOfOsd: 1
+        billingType: advanced
+        ocsUpgrade: false
+        monDevicePaths: 
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2
+        osdDevicePaths:
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-3333333a33a33a33333a3aa333a33a3a3
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-4444444a44a44a44444a4aa444a44a4a4
+          - <device-by-id> # Example: dev/disk/by-id/scsi-5555555a55a55a55555a5aa555a55a5a5
+    ```
+    {: codeblock}
+
+    **Local disks**:  Example custom resource for installing ODF only on certain worker nodes in a 4.7 cluster with non-partitioned disks.
+    ```yaml
+    apiVersion: ocs.ibm.io/v1
+    kind: OcsCluster
+    metadata:
+        name: ocscluster # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+      spec:
+        monStorageClassName: localfile
+        monSize: 20Gi
+        osdStorageClassName: localblock
+        osdSize: "1"
+        numOfOsd: 1
+        billingType: advanced
+        ocsUpgrade: false
+        monDevicePaths:
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part1
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part1
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part1
+        osdDevicePaths:
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2
+          - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2
+          - <device-by-id> # Example: dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part2
+        workerNodes: # Specify the private IP addresses of each worker node where you want to install OCS.
+          - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
+          - <workerNodes>
+          - <workerNodes>
+    ```
+    {: codeblock}
+    
+    **Dynamic provisioning**: Example custom resource definition (CRD) for installing ODF on all worker nodes on a 4.8 cluster.
+
+    ```yaml
+    apiVersion: ocs.ibm.io/v1
+    kind: OcsCluster
+    metadata:
+        name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+      spec:
+    osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+    osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
+    numOfOsd: 1
+    billingType: advanced
+    ocsUpgrade: false
+    ```
+    {: codeblock}
+
+    **Dynamic provisioning**: Example custom resource definition (CRD) for installing ODF only on specified worker nodes on a 4.8 cluster.
+
+    ```yaml
+    apiVersion: ocs.ibm.io/v1
+    kind: OcsCluster
+    metadata:
+        name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+      spec:
+    osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+    osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
+    numOfOsd: 1
+    billingType: advanced
+    ocsUpgrade: false
+    workerNodes: # Specify the private IP addresses of the worker nodes where you want to install OCS.
+      - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
+      - <workerNodes>
+      - <workerNodes>
+    ```
+    {: codeblock}
+
+    **Dynamic provisioning**: Example custom resource definition (CRD) for installing ODF on all worker nodes on a 4.7 cluster.
+
+    ```yaml
+    apiVersion: ocs.ibm.io/v1
+    kind: OcsCluster
+    metadata:
+        name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+      spec:
+    monStorageClassName: <monStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+    monSize: <monSize>
+    osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+    osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
+    numOfOsd: 1
+    billingType: advanced
+    ocsUpgrade: false
+    ```
+    {: codeblock}
+
+    **Dynamic provisioning**: Example custom resource definition (CRD) for installing ODF only on specified worker nodes on a 4.7 cluster.
+
+    ```yaml
+    apiVersion: ocs.ibm.io/v1
+    kind: OcsCluster
+    metadata:
+        name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
+      spec:
+    monStorageClassName: <monStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+    monSize: <monSize>
+    osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+    osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster
+    numOfOsd: 1
+    billingType: advanced
+    ocsUpgrade: false
+    workerNodes: # Specify the private IP addresses of the worker nodes where you want to install OCS.
+      - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
+      - <workerNodes>
+      - <workerNodes>
+    ```
+    {: codeblock}
+
+1. Save the file and create the `OcsCluster` custom resource to your cluster.
+    ```sh
+    oc create -f <ocs_cluster_filename>
+    ```
+    {: pre}
+
+1. Verify that your `OcsCluster` custom resource is running.
+    ```sh
+    oc describe OcsCluster ocscluster
+    ```
+    {: pre}
 
 1. Save the file and create the `OcsCluster` custom resource to your cluster.
 
@@ -461,7 +562,7 @@ If you enabled the add-on from the CLI and set the `odfDeploy=false` parameter, 
 Refer to the following parameters when you use the add-on or operator in {{site.data.keyword.satelliteshort}} clusters.
 {: shortdesc}
 
-### Version 4.8 paramters
+### Version 4.8 parameters
 {: #odf-sat-parameters-48}
 
 | Parameter | Description | Default value |
@@ -476,11 +577,11 @@ Refer to the following parameters when you use the add-on or operator in {{site.
 | `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
 | `workerNodes` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
 | `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
-| `autoDiskDiscovery` | **Optional for local disk configurations**: Automatically discover the available disks on your worker nodes. Enter `true` or `false`. |
+| `autoDiscoverDevices` | **Optional for local disk configurations**: Automatically discover the available disks on your worker nodes. Enter `true` or `false`. |
 {: caption="Parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
 
-### Version 4.7 paramters
+### Version 4.7 parameters
 {: #odf-sat-parameters-47}
 
 | Parameter | Description | Default value |
