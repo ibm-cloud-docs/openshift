@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-21"
+lastupdated: "2022-01-24"
 
 keywords: openshift
 
@@ -229,6 +229,7 @@ Make sure to choose your storage configuration carefully to have enough capacity
     - **Custom storage class:** When you choose this storage class, you have more control over the size and IOPS that you want. For the size, you can select any whole number of gigabytes within the allowed size range. The size that you choose determines the IOPS range that is available to you. You can choose an IOPS that is a multiple of 100 within the specified range. The IOPS that you choose is static and does not scale with the size of the storage. For example, if you choose 40Gi with 100 IOPS, your total IOPS remains 100. The IOPS to gigabyte ratio also determines the type of hard disk that is provisioned for you. For example, if you are using 500Gi at 100 IOPS, your IOPS to gigabyte ratio is 0.2. Storage with a ratio of less than or equal to 0.3 is provisioned on SATA hard disks. If your ratio is greater than 0.3, then your storage is provisioned on SSD hard disks.
 
         | Size range in gigabytes | IOPS range in multiples of 100 | 
+        | --- | --- |
         | 20-39 Gi | 100-1000 IOPS | 
         | 40-79 Gi | 100-2000 IOPS |
         | 80-99 Gi | 100-4000 IOPS | 
@@ -405,8 +406,9 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
 
 **Next steps**
 Choose between the following options to create a {{site.data.keyword.blockstorageshort}} instance that encrypts data with your root key:
-    * [Create a custom storage class that references your {{site.data.keyword.keymanagementserviceshort}} secret](#encrypt_custom_sc).
-    * [Define the secret in a PVC and use one of the provided storage classes](#pvc_encrypt_label).
+
+* [Create a custom storage class that references your {{site.data.keyword.keymanagementserviceshort}} secret](#encrypt_custom_sc).
+* [Define the secret in a PVC and use one of the provided storage classes](#pvc_encrypt_label).
 
 
 ### Encrypting volume data by using a custom storage class
@@ -1621,6 +1623,7 @@ The default billing type depends on the version of your {{site.data.keyword.clou
 Name
 :   `ibmc-block-bronze`
 :   `ibmc-block-retain-bronze`
+
 Type
 :   Endurance storage
 
@@ -1673,12 +1676,16 @@ Reclaim policy
 Name
 :   `ibmc-block-gold`
 :   `ibmc-block-retain-gold`
+
 Type
 :   Endurance storage
+
 File system
 :   `ext4`
+
 IOPS per gigabyte
 :   10
+
 Size range in gigabytes
 :   20-4000 Gi
 

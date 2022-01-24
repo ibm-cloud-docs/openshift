@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-24"
 
 keywords: block, add-on, changelog
 
@@ -49,6 +49,12 @@ Refer to the following tables for a summary of changes for each version of the {
 
 Review the changes in version `4.1` of the {{site.data.keyword.block_storage_is_short}} add-on.
 {: shortdesc}
+
+### Changelog for version 4.1.2_834, released 27 January 2022
+{: #412_834_is_block_relnote}
+
+- Fixes an issue where the persistent volume watcher was unable to handle non-{{site.data.keyword.cloud_notm}} VPC CSI driver PV updates which caused the controller pod to crash.
+
 
 
 ### Changelog for version 4.1.1_827, released 20 January 2022

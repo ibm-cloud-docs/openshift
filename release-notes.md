@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-24"
 
 keywords: openshift
 
@@ -24,7 +24,18 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: note}
 
 ## January 2022
-{: #release-jan-2022}}
+{: #release-jan-2022}
+
+
+
+### 24 January 2022
+{: #24jan2022}
+{: release-note}
+
+{{site.data.keyword.cos_full_notm}} plug-in
+:   Version `2.1.9` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in changelog](/docs/containers?topic=containers-cos_plugin_changelog).
+
+
 
 
 ### 20 January 2022
@@ -45,7 +56,7 @@ OpenShift Data Foundation
 
 
 ### 18 January 2022
-{: #18jan2021}
+{: #18jan2022}
 {: release-note}
 
 Review the release notes for January 2022.
@@ -67,8 +78,8 @@ Version changelog
 {: #17jan2022}
 {: release-note}
 
-Object Storage plug-in
-:   Version `2.1.8` of the Object Storage plug-in is released. For more information, see the [Object Storage plug-in changelog](/docs/containers?topic=containers-cos_plugin_changelog).
+{{site.data.keyword.cos_full_notm}} plug-in
+:   Version `2.1.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in changelog](/docs/containers?topic=containers-cos_plugin_changelog).
 
 
 
@@ -1521,8 +1532,8 @@ Worker node versions
 CLI changelog
 :   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.208](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
-Object Storage plug-in
-:   Version `2.0.6` of the Object Storage plug-in is released. For more information, see the [Object Storage plug-in changelog](/docs/containers?topic=containers-cos_plugin_changelog).
+{{site.data.keyword.cos_full_notm}} plug-in
+:   Version `2.0.6` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in changelog](/docs/containers?topic=containers-cos_plugin_changelog).
 
 ### 17 December 2020
 {: #17dec2020}
@@ -2158,7 +2169,7 @@ Global settings
 :   Added information about the [`config.openshift.io` global settings](/docs/openshift?topic=openshift-service-settings#global-settings) that you can or can't configure.
 
 Private-only VPC clusters
-:   Added diagrams for the [service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture_vpc), [flow of app requests with routers](/docs/openshift?topic=openshift-openshift_routes#route_vpc_private), and [flow of app requests with Ingress](/docs/openshift?topic=openshift-ingress-about-roks4#architecture-vpc_private) in VPC clusters that are created with the private cloud service endpoint only.
+:   Added diagrams for the [service architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture_vpc), [flow of app requests with routers](/docs/openshift?topic=openshift-openshift_routes#route_vpc_private), and [flow of app requests with Ingress](/docs/openshift?topic=openshift-ingress-about-roks4#architecture-vpc_private) in VPC clusters that are created with the private cloud service endpoint only.
 
 
 

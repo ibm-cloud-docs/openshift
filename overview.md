@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-24"
 
 keywords: openshift
 
@@ -59,7 +59,7 @@ For more information, see [Overview of Classic and VPC infrastructure providers]
 Review the following links to find out more about the benefits and responsibilities when you use {{site.data.keyword.openshiftlong_notm}}.
 
 - [Benefits of using {{site.data.keyword.openshiftlong_notm}}](/docs/containers?topic=containers-cs_ov)
-- [{{site.data.keyword.openshiftlong_notm}} service architecture](/docs/openshift?topic=openshift-service-arch#service-architecture)
+- [{{site.data.keyword.openshiftlong_notm}} service architecture](/docs/openshift?topic=openshift-service-architecture)
 - [Use cases](/docs/containers?topic=containers-cs_uc_intro)
 - [Your responsibilities by using {{site.data.keyword.openshiftlong_notm}}](/docs/containers?topic=containers-responsibilities_iks)
 - [Defining your Kubernetes strategy](/docs/containers?topic=containers-strategy)

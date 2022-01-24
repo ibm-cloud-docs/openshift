@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-24"
 
 keywords: openshift
 
@@ -16,7 +16,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Why does installing the Object storage plug-in fail?
+# Why does installing the {{site.data.keyword.cos_full_notm}} plug-in fail?
 {: #cos_plugin_fails}
 
 **Infrastructure provider**:

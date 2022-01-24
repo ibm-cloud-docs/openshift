@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-24"
 
 keywords: openshift
 
@@ -128,7 +128,7 @@ To create a secret for your {{site.data.keyword.cos_full_notm}} credentials:
 
 
 
-## Installing the IBM Cloud Object Storage plug-in
+## Installing the {{site.data.keyword.cos_full_notm}} plug-in
 {: #install_cos}
 
 Install the {{site.data.keyword.cos_full_notm}} plug-in with a Helm chart to set up pre-defined storage classes for {{site.data.keyword.cos_full_notm}}. You can use these storage classes to create a PVC to provision {{site.data.keyword.cos_full_notm}} for your apps.
@@ -360,10 +360,10 @@ Review the pod details to verify that the plug-in installation succeeded.
 
 1. Follow the instructions to [add object storage to your apps](#add_cos).
 
-If you're having trouble installing the {{site.data.keyword.cos_full_notm}} plug-in, see [Object storage: Installing the Object storage `ibmc` Helm plug-in fails](/docs/containers?topic=containers-cos_helm_fails) and [Object storage: Installing the Object storage plug-in fails](/docs/containers?topic=containers-cos_plugin_fails).
+If you're having trouble installing the {{site.data.keyword.cos_full_notm}} plug-in, see [Object storage: Installing the Object storage `ibmc` Helm plug-in fails](/docs/containers?topic=containers-cos_helm_fails) and [Object storage: Installing the {{site.data.keyword.cos_full_notm}} plug-in fails](/docs/containers?topic=containers-cos_plugin_fails).
 {: tip}
 
-### Updating the IBM Cloud Object Storage plug-in
+### Updating the {{site.data.keyword.cos_full_notm}} plug-in
 {: #update_cos_plugin}
 
 You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the most recent version.
@@ -450,10 +450,10 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
     ```
     {: pre}
 
-If you're having trouble updating the {{site.data.keyword.cos_full_notm}} plug-in, see [Object storage: Installing the Object storage `ibmc` Helm plug-in fails](/docs/containers?topic=containers-cos_helm_fails) and [Object storage: Installing the Object storage plug-in fails](/docs/containers?topic=containers-cos_plugin_fails).
+If you're having trouble updating the {{site.data.keyword.cos_full_notm}} plug-in, see [Object storage: Installing the Object storage `ibmc` Helm plug-in fails](/docs/containers?topic=containers-cos_helm_fails) and [Object storage: Installing the {{site.data.keyword.cos_full_notm}} plug-in fails](/docs/containers?topic=containers-cos_plugin_fails).
 {: tip}
 
-### Removing the IBM Cloud Object Storage plug-in
+### Removing the {{site.data.keyword.cos_full_notm}} plug-in
 {: #remove_cos_plugin}
 
 If you don't want to provision and use {{site.data.keyword.cos_full_notm}} in your cluster, you can uninstall the `ibm-object-storage-plugin` and the `ibmc` Helm plug-in.

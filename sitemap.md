@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-01-21"
+lastupdated: "2022-01-24"
 
 keywords: openshift
 subcollection: openshift
@@ -184,9 +184,11 @@ subcollection: openshift
 
 * [January 2022](/docs/openshift?topic=openshift-iks-release#release-jan-2022)
 
+    * [24 January 2022](/docs/openshift?topic=openshift-iks-release#24jan2022)
+
     * [20 January 2022](/docs/openshift?topic=openshift-iks-release#20jan2022)
 
-    * [18 January 2022](/docs/openshift?topic=openshift-iks-release#18jan2021)
+    * [18 January 2022](/docs/openshift?topic=openshift-iks-release#18jan2022)
 
     * [17 January 2022](/docs/openshift?topic=openshift-iks-release#17jan2022)
 
@@ -2657,13 +2659,13 @@ subcollection: openshift
 
 * [Creating a secret for the object storage service credentials](/docs/openshift?topic=openshift-object_storage#create_cos_secret)
 
-* [Installing the IBM Cloud Object Storage plug-in](/docs/openshift?topic=openshift-object_storage#install_cos)
+* [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#install_cos)
 
     * [Verifying your installation](/docs/openshift?topic=openshift-object_storage#cos-plugin)
 
-    * [Updating the IBM Cloud Object Storage plug-in](/docs/openshift?topic=openshift-object_storage#update_cos_plugin)
+    * [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#update_cos_plugin)
 
-    * [Removing the IBM Cloud Object Storage plug-in](/docs/openshift?topic=openshift-object_storage#remove_cos_plugin)
+    * [Removing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#remove_cos_plugin)
 
 * [Deciding on the object storage configuration](/docs/openshift?topic=openshift-object_storage#configure_cos)
 
@@ -2838,7 +2840,7 @@ subcollection: openshift
 
 * [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-param-ref)
 
-    * [Version 4.8 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-47)
+    * [Version 4.8 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-48)
 
     * [Version 4.7 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-47)
 
@@ -2858,9 +2860,9 @@ subcollection: openshift
 
 * [{{site.data.keyword.satelliteshort}}: OpenShift Data Foundation parameter reference](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-param-ref)
 
-    * [Version 4.8 paramters](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-parameters-48)
+    * [Version 4.8 parameters](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-parameters-48)
 
-    * [Version 4.7 paramters](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-parameters-47)
+    * [Version 4.7 parameters](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-parameters-47)
 
 [Deploying OpenShift Data Foundation on Classic clusters](/docs/openshift?topic=openshift-deploy-odf-classic#deploy-odf-classic)
 
@@ -4003,9 +4005,9 @@ subcollection: openshift
 
 * [Version 1.0.4](/docs/openshift?topic=openshift-ca_changelog#0104_ca_addon)
 
-    * [Changelog for patch update 1.0.4_403, released 20 January 2022](/docs/openshift?topic=openshift-ca_changelog#10387_ca)
+    * [Changelog for patch update 1.0.4_403, released 20 January 2022](/docs/openshift?topic=openshift-ca_changelog#104403_ca)
 
-    * [Changelog for patch update 1.0.4_387, released 22 November 2021](/docs/openshift?topic=openshift-ca_changelog#10387_ca)
+    * [Changelog for patch update 1.0.4_387, released 22 November 2021](/docs/openshift?topic=openshift-ca_changelog#104387_ca)
 
     * [Changelog for patch update 1.0.4_374, released 7 October 2021](/docs/openshift?topic=openshift-ca_changelog#104374_ca)
 
@@ -4047,6 +4049,8 @@ subcollection: openshift
 
 * [Version 4.1](/docs/openshift?topic=openshift-vpc_bs_changelog#041_is_block)
 
+    * [Changelog for version 4.1.2_834, released 27 January 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#412_834_is_block_relnote)
+
     * [Changelog for version 4.1.1_827, released 20 January 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#0411837_is_block_relnote)
 
     * [Changelog for version 4.1.0_807, released 06 January 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#41_is_block_relnote)
@@ -4075,7 +4079,9 @@ subcollection: openshift
 
     * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
-[Object storage plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+[{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Changlog version 2.1.9, released 24 January 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0219_object_plugin)
 
 * [Changlog version 2.1.8, released 17 January 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0218_object_plugin)
 
@@ -5110,7 +5116,7 @@ subcollection: openshift
 
 [Why can't the ownership of the mount path be changed?](/docs/openshift?topic=openshift-cos_mountpath_error#cos_mountpath_error)
 
-[Why does installing the Object storage plug-in fail?](/docs/openshift?topic=openshift-cos_plugin_fails#cos_plugin_fails)
+[Why does installing the {{site.data.keyword.cos_full_notm}} plug-in fail?](/docs/openshift?topic=openshift-cos_plugin_fails#cos_plugin_fails)
 
 [Why do I see wrong credentials or access denied messages when I create a PVC?](/docs/openshift?topic=openshift-cred_failure#cred_failure)
 
