@@ -2659,13 +2659,13 @@ subcollection: openshift
 
 * [Creating a secret for the object storage service credentials](/docs/openshift?topic=openshift-object_storage#create_cos_secret)
 
-* [Installing the IBM Cloud {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#install_cos)
+* [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#install_cos)
 
     * [Verifying your installation](/docs/openshift?topic=openshift-object_storage#cos-plugin)
 
-    * [Updating the IBM Cloud {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#update_cos_plugin)
+    * [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#update_cos_plugin)
 
-    * [Removing the IBM Cloud {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#remove_cos_plugin)
+    * [Removing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#remove_cos_plugin)
 
 * [Deciding on the object storage configuration](/docs/openshift?topic=openshift-object_storage#configure_cos)
 
