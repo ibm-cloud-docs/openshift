@@ -222,7 +222,7 @@ Before you install OpenShift Data Foundation, prepare your cluster.
 **Required for add-on version 4.7**. You must specify the disk paths or disk IDs for the volumes that you want to use when you deploy the ODF add-on. Complete the following steps to retrieve your storage device details.
 {: important}
 
-**Optional for add-on version 4.8**. You can use automatic disk discoveryto find available devices for ODF. However, if you want to manually specify storage devices for ODF, complete the following steps to retrieve your storage device details.
+**Optional for add-on version 4.8**. You can use automatic disk discovery to find available devices for ODF. However, if you want to manually specify storage devices for ODF, complete the following steps to retrieve your storage device details.
 {: important}
 
 Before you install ODF, get the details of the local disks on your worker nodes.

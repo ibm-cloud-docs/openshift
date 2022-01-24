@@ -227,7 +227,7 @@ If you want to deploy ODF on a {{site.data.keyword.satelliteshort}} with local b
 **Required for using local disks with add-on version 4.7**. You must specify the disk paths or disk IDs for the volumes that you want to use when you deploy the ODF add-on. Complete the following steps to retrieve your storage device details.
 {: important}
 
-**Optional for using local disks with add-on version 4.8**. You can use automatic disk discoveryto find available devices for ODF. However, if you want to manually specify storage device for ODF, complete the following steps to retrieve your storage device details.
+**Optional for using local disks with add-on version 4.8**. You can use automatic disk discovery to find available devices for ODF. However, if you want to manually specify storage device for ODF, complete the following steps to retrieve your storage device details.
 {: important}
 
 Before you install ODF, get the details of the local disks on your worker nodes.
