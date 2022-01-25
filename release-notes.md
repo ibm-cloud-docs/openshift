@@ -28,19 +28,10 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
-### 24 January 2022
-{: #24jan2022}
-{: release-note}
-
-{{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.9` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in changelog](/docs/containers?topic=containers-cos_plugin_changelog).
-
-
 
 ### 25 January 2022
 {: #25jan2022}
 {: release-note}
-
 
 
 
@@ -51,6 +42,13 @@ Cloud Image Key Synchronizer add-on
 :   Version 1.0.0_834 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
 
 
+
+### 24 January 2022
+{: #24jan2022}
+{: release-note}
+
+{{site.data.keyword.cos_full_notm}} plug-in
+:   Version `2.1.9` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in changelog](/docs/containers?topic=containers-cos_plugin_changelog).
 
 
 ### 20 January 2022
