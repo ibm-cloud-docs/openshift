@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-25"
 
 keywords: openshift, route, router
 
@@ -35,6 +35,12 @@ View information for version updates to the [{{site.data.keyword.cloud_notm}} HP
 ## Version 4.8.0
 {: #4_8_0}
 
+### Version 4.8.0_1232, released on 25 January 2022
+{: #4_8_1232}
+
+- [CVE-2021-44716](https://nvd.nist.gov/vuln/detail/CVE-2021-44716){: external}.
+- [CVE-2021-44717](https://nvd.nist.gov/vuln/detail/CVE-2021-44717){: external}.
+
 ### Version 4.8.0_1125, released on 11 January 2022
 {: #4_8_1125}
 
@@ -47,6 +53,12 @@ Initial release of 4.8.0.
 
 ## Version 4.7.0
 {: #4_7_0}
+
+### Version 4.7.0_1226, released on 25 January 2022
+{: #4_7_1226}
+
+- [CVE-2021-44716](https://nvd.nist.gov/vuln/detail/CVE-2021-44716){: external}.
+- [CVE-2021-44717](https://nvd.nist.gov/vuln/detail/CVE-2021-44717){: external}.
 
 ### Version 4.7.0_1127, released on 11 January 2022
 {: #4_7_1127}
@@ -78,10 +90,16 @@ Resolves [CVE-2021-3712](https://nvd.nist.gov/vuln/detail/CVE-2021-3712){: exter
 ## Version 4.6.0
 {: #4_6_0}
 
+### Version 4.6.0_1227, released on 25 January 2022
+{: #4_6_1227}
+
+- [CVE-2021-44716](https://nvd.nist.gov/vuln/detail/CVE-2021-44716){: external}.
+- [CVE-2021-44717](https://nvd.nist.gov/vuln/detail/CVE-2021-44717){: external}.
+
 ### Version 4.6.0_1126, released on 11 January 2022
 {: #4_6_1126}
 
-Resovles [CVE-2021-3712](https://nvd.nist.gov/vuln/detail/CVE-2021-3712){: external}.
+Resolves [CVE-2021-3712](https://nvd.nist.gov/vuln/detail/CVE-2021-3712){: external}.
 
 ### Version 4.6.0_1012, released on 19 November 2021
 {: #4_6_1012}
@@ -299,3 +317,4 @@ Version 4.5.0 is unsupported.
 
 - [CVE-2021-3114](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3114){: external}
 - [CVE-2021-3115](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3115){: external}
+
