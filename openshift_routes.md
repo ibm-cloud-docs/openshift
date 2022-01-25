@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-25"
 
 keywords: openshift, route, router
 
@@ -88,19 +88,21 @@ In your VPC infrastructure dashboard, the VPC load balancer reports as healthy o
 
 The following diagram shows how a Ingress controller directs network traffic from the internet to an app in a multizone, VPC cluster.
 
-<img src="images/roks_router_vpc.png" alt="Expose an app in a multizone VPC {{site.data.keyword.openshiftshort}} cluster by using an Ingress controller" width="700" style="width:850px; border-style: none"/>
+![Expose an app in a multizone VPC cluster by using an Ingress controller](images/roks_router_vpc.png "Expose an app in a multizone VPC cluster by using an Ingress controller"){: caption="Figure 1. Expose an app in a multizone VPC cluster by using an Ingress controller" caption-side="bottom"}
+
+
 
 1. A request to your app uses the route hostname that you set up for your app.
 
-2. A DNS service resolves the route subdomain to the VPC load balancer hostname that is assigned to the services for the Ingress controller. In VPC clusters, your Ingress controller services' external IP addresses are floating, and are kept behind a VPC-assigned hostname.
+1. A DNS service resolves the route subdomain to the VPC load balancer hostname that is assigned to the services for the Ingress controller. In VPC clusters, your Ingress controller services' external IP addresses are floating, and are kept behind a VPC-assigned hostname.
 
-3. The VPC load balancer resolves the VPC hostname to an available external IP address of a Ingress controller service that was reported as healthy. The VPC load balancer continuously checks the external IP addresses of the services that expose the Ingress controller in each zone in your cluster.
+1. The VPC load balancer resolves the VPC hostname to an available external IP address of a Ingress controller service that was reported as healthy. The VPC load balancer continuously checks the external IP addresses of the services that expose the Ingress controller in each zone in your cluster.
 
-4. Based on the resolved IP address, the VPC load balancer sends the request to a Ingress controller service.
+1. Based on the resolved IP address, the VPC load balancer sends the request to a Ingress controller service.
 
-5. The Ingress controller forwards the request to the private IP address of the app pod over the private network. The source IP address of the request packet is changed to the IP address of the worker node where the Ingress controller pod runs. Each Ingress controller sends requests to the app instances in its own zone and to app instances in other zones. Additionally, if multiple app instances are deployed in one zone, the Ingress controller alternates requests between app pods.
+1. The Ingress controller forwards the request to the private IP address of the app pod over the private network. The source IP address of the request packet is changed to the IP address of the worker node where the Ingress controller pod runs. Each Ingress controller sends requests to the app instances in its own zone and to app instances in other zones. Additionally, if multiple app instances are deployed in one zone, the Ingress controller alternates requests between app pods.
 
-6. When the app returns a response packet, it uses the IP address of the worker node where the Ingress controller that forwarded the client request exists. The Ingress controller then sends the response packet through the VPC load balancer to the client.
+1. When the app returns a response packet, it uses the IP address of the worker node where the Ingress controller that forwarded the client request exists. The Ingress controller then sends the response packet through the VPC load balancer to the client.
 
 ### Traffic flow in a multizone VPC cluster with a private cloud service endpoint only
 {: #route_vpc_private}
@@ -110,19 +112,19 @@ The following diagram shows how a Ingress controller directs network traffic fro
 
 The following diagram shows how a Ingress controller directs network traffic from private networks to an app in a multizone, VPC cluster.
 
-<img src="images/roks_router_vpc_private.png" alt="Expose an app in a private, multizone, VPC {{site.data.keyword.openshiftshort}} cluster by using a Ingress controller" width="700" style="width:850px; border-style: none"/>
+![Expose an app in a private, multizone, VPC cluster by using a Ingress controller](images/roks_router_vpc_private.png "Expose an app in a private, multizone, VPC cluster by using a Ingress controller"){: caption="Figure 2. Expose an app in a private, multizone, VPC cluster by using a Ingress controller" caption-side="bottom"}
 
 1. A client that is connected to your private VPC network sends a request to your app by using the app's private route. For example, you might use the Virtual Private Cloud VPN, {{site.data.keyword.tg_full_notm}}, or {{site.data.keyword.dl_full_notm}} to allow requests from an on-premises network, another VPC, or {{site.data.keyword.cloud_notm}} classic infrastructure to apps that run in your cluster.
 
-2. A DNS service resolves the route subdomain to the VPC load balancer hostname that is assigned to the services for the Ingress controller. In VPC clusters, your Ingress controller services' IP addresses are floating, and are kept behind a VPC-assigned hostname. Note that though the DNS record for the route subdomain is registered in the public DNS system, the DNS resolution servers are reachable from the VPC.
+1. A DNS service resolves the route subdomain to the VPC load balancer hostname that is assigned to the services for the Ingress controller. In VPC clusters, your Ingress controller services' IP addresses are floating, and are kept behind a VPC-assigned hostname. Note that though the DNS record for the route subdomain is registered in the public DNS system, the DNS resolution servers are reachable from the VPC.
 
-3. The private VPC load balancer resolves the VPC hostname to an available private IP address of a Ingress controller service that was reported as healthy. The VPC load balancer continuously checks the IP addresses of the services that expose the Ingress controller in each zone in your cluster.
+1. The private VPC load balancer resolves the VPC hostname to an available private IP address of a Ingress controller service that was reported as healthy. The VPC load balancer continuously checks the IP addresses of the services that expose the Ingress controller in each zone in your cluster.
 
-4. Based on the resolved IP address, the VPC load balancer sends the request to a Ingress controller service.
+1. Based on the resolved IP address, the VPC load balancer sends the request to a Ingress controller service.
 
-5. The Ingress controller forwards the request to the private IP address of the app pod over the private network. The source IP address of the request packet is changed to the IP address of the worker node where the Ingress controller pod runs. Each Ingress controller sends requests to the app instances in its own zone and to app instances in other zones. Additionally, if multiple app instances are deployed in one zone, the Ingress controller alternates requests between app pods.
+1. The Ingress controller forwards the request to the private IP address of the app pod over the private network. The source IP address of the request packet is changed to the IP address of the worker node where the Ingress controller pod runs. Each Ingress controller sends requests to the app instances in its own zone and to app instances in other zones. Additionally, if multiple app instances are deployed in one zone, the Ingress controller alternates requests between app pods.
 
-6. When the app returns a response packet, it uses the IP address of the worker node where the Ingress controller that forwarded the client request exists. The Ingress controller then sends the response packet through the VPC load balancer and through the {{site.data.keyword.vpc_short}} VPN, {{site.data.keyword.tg_short}}, or {{site.data.keyword.dl_short}} to the client.
+1. When the app returns a response packet, it uses the IP address of the worker node where the Ingress controller that forwarded the client request exists. The Ingress controller then sends the response packet through the VPC load balancer and through the {{site.data.keyword.vpc_short}} VPN, {{site.data.keyword.tg_short}}, or {{site.data.keyword.dl_short}} to the client.
 
 
 
@@ -186,7 +188,7 @@ If your cluster is created on ![Classic infrastructure provider icon.](images/ic
     ```
     {: pre}
 
-2. Choose a domain for your app. **Version 4.6 and later**: Note that route URLs must be 130 characters or fewer **IBM-provided domain**: If you don't need to use a custom domain, a route hostname is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`. **Custom domain**: To specify a custom domain, work with your DNS provider or [{{site.data.keyword.cis_full}}](https://cloud.ibm.com/catalog/services/internet-services).
+1. Choose a domain for your app. **Version 4.6 and later**: Note that route URLs must be 130 characters or fewer **IBM-provided domain**: If you don't need to use a custom domain, a route hostname is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`. **Custom domain**: To specify a custom domain, work with your DNS provider or [{{site.data.keyword.cis_full}}](https://cloud.ibm.com/catalog/services/internet-services).
 
     1. Get the public IP address for the public Ingress controller service in each zone in the **EXTERNAL-IP** column. Note that the Ingress controller service in the first zone where you have workers nodes is always named `router-default`, and Ingress controller services in zones that you subsequently add to your cluster have names such as `router-dal12`.
         ```sh
@@ -194,13 +196,13 @@ If your cluster is created on ![Classic infrastructure provider icon.](images/ic
         ```
         {: pre}
 
-    2. Create a custom domain with your DNS provider.
+    1. Create a custom domain with your DNS provider.
         If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.
         {: tip}
 
-    3. Map your custom domain to the Ingress controller's public IP address by adding the IP address as an A record.
+    1. Map your custom domain to the Ingress controller's public IP address by adding the IP address as an A record.
 
-3. Set up a route that is based on the [type of TLS termination that your app requires](#route-types). If you don't have a custom domain, don't include the `--hostname` flag. A route hostname is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`. If you registered a wildcard subdomain, specify a unique subdomain in each route that you create. For example, you might specify `--hostname svc1.example.com` in this route, and `--hostname svc2.example.com` in another route.
+1. Set up a route that is based on the [type of TLS termination that your app requires](#route-types). If you don't have a custom domain, don't include the `--hostname` flag. A route hostname is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`. If you registered a wildcard subdomain, specify a unique subdomain in each route that you create. For example, you might specify `--hostname svc1.example.com` in this route, and `--hostname svc2.example.com` in another route.
     * Simple:
         ```sh
         oc expose service <app_service_name> [--hostname <subdomain>]
@@ -213,7 +215,7 @@ If your cluster is created on ![Classic infrastructure provider icon.](images/ic
         ```
         {: pre}
 
-        <p class="tip">Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.</p>
+        Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.
     * Edge: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [{{site.data.keyword.openshiftshort}} edge route documentation](https://docs.openshift.com/container-platform/4.8/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
         ```sh
         oc create route edge --service <app_service_name> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
@@ -226,13 +228,13 @@ If your cluster is created on ![Classic infrastructure provider icon.](images/ic
         ```
         {: pre}
 
-4. Verify that the route for your app service is created.
+1. Verify that the route for your app service is created.
     ```sh
     oc get routes
     ```
     {: pre}
 
-5. Optional: Customize default routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.8/networking/routes/route-configuration.html){: external}. For example, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.8/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}.
+1. Optional: Customize default routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.8/networking/routes/route-configuration.html){: external}. For example, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.8/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}.
 
 ### Setting up public routes in VPC clusters with a private cloud service endpoint only
 {: #routes-public-vpc-privse}
@@ -260,9 +262,9 @@ Note that even though you create an IngressController resource in the following 
             ```
             {: screen}
 
-        2. In the subdomain that you copied, change the `i00<n>` value in the subdomain to `000<n+1>`. For example, the `mycluster-a1b2cdef345678g9hi012j3kl4567890-i002.us-south.containers.appdomain.cloud` subdomain is changed to `mycluster-a1b2cdef345678g9hi012j3kl4567890-0003.us-south.containers.appdomain.cloud`. The `0` value indicates a public subdomain, and the `n+1` value indicates the next consecutive subdomain that you create in this cluster. You register this subdomain  in later steps.
+        1. In the subdomain that you copied, change the `i00<n>` value in the subdomain to `000<n+1>`. For example, the `mycluster-a1b2cdef345678g9hi012j3kl4567890-i002.us-south.containers.appdomain.cloud` subdomain is changed to `mycluster-a1b2cdef345678g9hi012j3kl4567890-0003.us-south.containers.appdomain.cloud`. The `0` value indicates a public subdomain, and the `n+1` value indicates the next consecutive subdomain that you create in this cluster. You register this subdomain  in later steps.
 
-2. Create a YAML file that configures a public Ingress controller with the domain from step 1.
+1. Create a YAML file that configures a public Ingress controller with the domain from step 1.
     ```yaml
     apiVersion: operator.openshift.io/v1
     kind: IngressController
@@ -279,13 +281,13 @@ Note that even though you create an IngressController resource in the following 
     ```
     {: codeblock}
 
-3. Create the IngressController resource in the `openshift-ingress-operator` namespace of your cluster. When you create the IngressController, a public Ingress controller is automatically created and deployed in the `openshift-ingress` namespace based on the IngressController settings. Additionally, a Ingress controller service is created to expose the Ingress controller.
+1. Create the IngressController resource in the `openshift-ingress-operator` namespace of your cluster. When you create the IngressController, a public Ingress controller is automatically created and deployed in the `openshift-ingress` namespace based on the IngressController settings. Additionally, a Ingress controller service is created to expose the Ingress controller.
     ```sh
     oc create -f public.yaml -n openshift-ingress-operator
     ```
     {: pre}
 
-4. Get the VPC hostname in the **EXTERNAL IP** field of the `router-public` service. In VPC clusters, your router services' external IP addresses are floating, and are instead kept behind a VPC-assigned hostname.
+1. Get the VPC hostname in the **EXTERNAL IP** field of the `router-public` service. In VPC clusters, your router services' external IP addresses are floating, and are instead kept behind a VPC-assigned hostname.
     ```sh
     oc get svc router-public -n openshift-ingress
     ```
@@ -299,7 +301,7 @@ Note that even though you create an IngressController resource in the following 
     ```
     {: screen}
 
-5. Register the service's VPC hostname with the domain that you chose in step 1. This step ensures that your Ingress controller services' IP addresses, which are kept behind the VPC hostname, are registered with the domain that you chose for the Ingress controller.
+1. Register the service's VPC hostname with the domain that you chose in step 1. This step ensures that your Ingress controller services' IP addresses, which are kept behind the VPC hostname, are registered with the domain that you chose for the Ingress controller.
     * **Custom domain**: Work with your DNS provider to add the service's VPC hostname as a CNAME that maps to your custom domain.
     * **IBM-provided domain**: Create a DNS entry for the service's VPC hostname. When you run the following command, the subdomain that you specified in step 2 is automatically generated, and is registered with the Ingress controller service.
     ```sh
@@ -307,19 +309,45 @@ Note that even though you create an IngressController resource in the following 
     ```
     {: pre}
 
-6. Update the project where your app is deployed to use the public Ingress controller instead of the default private Ingress controller.
-    ```sh
-    oc label namespace <app_project> "router=router-public"
+1. **Optional**: If you want to use Ingress controller sharding so that specific routes are handled by a specific Ingress controller, for example private routes be admitted only to a private router, then you can use either route labels or namespace labels to specify the sharding method. To add the selector during creation time, include it in the `ingresscontroller` yaml under `spec`. For example, to allow an Ingress controller to only handle ingress/routes with label `type=sharded`, you can add a `routeSelector`. For more information, see [Ingress controller sharding](https://docs.openshift.com/container-platform/4.8/networking/ingress-operator.html#nw-ingress-sharding_configuring-ingress){: external}.
+    ```yaml
+      routeSelector:
+        matchLabels:
+          type: sharded
     ```
     {: pre}
+    
+    1. To add selectors to an existing Ingress controller, get a list of Ingress controllers.
+        ```sh
+        oc get ingresscontroller -n openshift-ingress-operator
+        ```
+        {: pre}
+        
+    1. Add the selectors to Ingress controllers where you want to use sharding.
+        
+        ```sh
+        oc patch  -n openshift-ingress-operator IngressController/<name>   --type='merge'   -p '{"spec":{"routeSelector":{"matchLabels":{"type":"sharded"}}}}'
+        ```
+        {: pre}
 
-7. Create a Kubernetes `ClusterIP` service for your app deployment. The service provides an internal IP address for the app that the Ingress controller can send traffic to.
+
+    1. Note that no selectors are added to the default IngressController, so all routes are still admitted to the default Ingress controller on the cluster. You can use the relevant route or a namespace label selectors to change this behavior. For example, to adjust default router to skip ingress/routes with label `type=sharded`, run the following patch command.
+        ```sh
+        oc patch -n openshift-ingress-operator IngressController/default --type='merge'   -p '{"spec":{"routeSelector":{"matchExpressions":[{"key":"type","operator":"NotIn","values":["sharded"]}]}}}'
+        ```
+        {: pre}
+
+        Several routes and Ingresses on the cluster depend on the default public ingress controller. Make sure the changes are desired before editing the default Ingress controller. For more information about, see [Ingress controller sharding](https://docs.openshift.com/container-platform/4.8/networking/ingress-operator.html#nw-ingress-sharding_configuring-ingress){: external}.
+        {: note}
+    
+
+1. Create a Kubernetes `ClusterIP` service for your app deployment. The service provides an internal IP address for the app that the Ingress controller can send traffic to.
     ```sh
     oc expose deploy <app_deployment_name> --name <app_service_name> -n <app_project>
     ```
     {: pre}
 
-8. Set up a route that is based on the [type of TLS termination that your app requires](#route-types). If you don't include the `--hostname` flag, the route hostname is generated for you in the format `<app_service_name>-<app_project>.<router-subdomain>`.
+1. Set up a route that is based on the [type of TLS termination that your app requires](#route-types). If you don't include the `--hostname` flag, the route hostname is generated for you in the format `<app_service_name>-<app_project>.<router-subdomain>`.
     * Simple:
         ```sh
         oc expose service <app_service_name> [--hostname <subdomain>]
@@ -332,7 +360,7 @@ Note that even though you create an IngressController resource in the following 
         ```
         {: pre}
 
-        <p class="tip">Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.</p>
+        Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.
     * Edge: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [{{site.data.keyword.openshiftshort}} edge route documentation](https://docs.openshift.com/container-platform/4.8/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
         ```sh
         oc create route edge --service <app_service_name> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
@@ -345,15 +373,15 @@ Note that even though you create an IngressController resource in the following 
         ```
         {: pre}
 
-9. Verify that the route for your app is created.
+1. Verify that the route for your app is created.
     ```sh
     oc get routes
     ```
     {: pre}
 
-10. Optional: Customize the public Ingress controller's routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.8/networking/routes/route-configuration.html){: external}. For example, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.8/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}.
+1. Optional: Customize the public Ingress controller's routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.8/networking/routes/route-configuration.html){: external}. For example, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.8/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}.
 
-11. To create routes for more apps by using the same subdomain, you can repeat steps 7 - 10 so that the route is generated by the same public Ingress controller. If you want to create routes for more apps by using a different subdomain, repeat all steps in this section to create a new public Ingress controller with a different domain.
+1. To create routes for more apps by using the same subdomain, you can repeat steps 7 - 10 so that the route is generated by the same public Ingress controller. If you want to create routes for more apps by using a different subdomain, repeat all steps in this section to create a new public Ingress controller with a different domain.
 
 
 
@@ -393,9 +421,9 @@ Note that even though you create an IngressController resource in the following 
             ```
             {: screen}
 
-        2. In the subdomain that you copied, change the `000<n>` value in the subdomain to `i00<n+1>`. For example, the `mycluster-a1b2cdef345678g9hi012j3kl4567890-0002.us-south.containers.appdomain.cloud` subdomain is changed to `mycluster-a1b2cdef345678g9hi012j3kl4567890-i003.us-south.containers.appdomain.cloud`. The `i` value indicates a private subdomain, and the `n+1` value indicates the next consecutive subdomain that you create in this cluster. You register this subdomain  in later steps.
+        1. In the subdomain that you copied, change the `000<n>` value in the subdomain to `i00<n+1>`. For example, the `mycluster-a1b2cdef345678g9hi012j3kl4567890-0002.us-south.containers.appdomain.cloud` subdomain is changed to `mycluster-a1b2cdef345678g9hi012j3kl4567890-i003.us-south.containers.appdomain.cloud`. The `i` value indicates a private subdomain, and the `n+1` value indicates the next consecutive subdomain that you create in this cluster. You register this subdomain  in later steps.
 
-2. Create a configuration file that configures a private Ingress controller with the domain from step 1.
+1. Create a configuration file that configures a private Ingress controller with the domain from step 1.
     ```yaml
     apiVersion: operator.openshift.io/v1
     kind: IngressController
@@ -412,13 +440,13 @@ Note that even though you create an IngressController resource in the following 
     ```
     {: codeblock}
 
-3. Create the IngressController resource in the `openshift-ingress-operator` namespace of your cluster. When you create the IngressController resource, a private Ingress controller is automatically created and deployed in the `openshift-ingress` namespace based on the IngressController settings. Additionally, a Ingress controller service is created to expose the Ingress controller with an IP address (classic clusters) or a VPC hostname (VPC clusters).
+1. Create the IngressController resource in the `openshift-ingress-operator` namespace of your cluster. When you create the IngressController resource, a private Ingress controller is automatically created and deployed in the `openshift-ingress` namespace based on the IngressController settings. Additionally, a Ingress controller service is created to expose the Ingress controller with an IP address (classic clusters) or a VPC hostname (VPC clusters).
     ```sh
     oc create -f private.yaml -n openshift-ingress-operator
     ```
     {: pre}
 
-4. Get the IP address or VPC hostname in the **EXTERNAL IP** field of the `router-private` service.
+1. Get the IP address or VPC hostname in the **EXTERNAL IP** field of the `router-private` service.
     ```sh
     oc get svc router-private -n openshift-ingress
     ```
@@ -438,7 +466,7 @@ Note that even though you create an IngressController resource in the following 
     ```
     {: screen}
 
-5. Register the service's external IP address or VPC hostname with the domain that you chose in step 1.
+1. Register the service's external IP address or VPC hostname with the domain that you chose in step 1.
     * **Custom domain, classic or VPC clusters**: Work with your DNS provider to add the service's external IP address as an A record (classic clusters) or VPC hostname as a CNAME (VPC clusters) that maps to your custom domain.
     * **IBM-provided domain, VPC clusters only**: Create a DNS entry for the service's VPC hostname. When you run the following command, the subdomain that you specified in step 2 is automatically generated, and is registered with the Ingress controller service.
     ```sh
@@ -446,19 +474,41 @@ Note that even though you create an IngressController resource in the following 
     ```
     {: pre}
 
-6. Update the project where your app is deployed to use the private Ingress controller instead of the default public Ingress controller.
-    ```sh
-    oc label namespace <app_project> "router=router-private"
+1. **Optional**: If you want to use Ingress controller sharding so that specific routes are handled by a specific Ingress controller, for example private routes be admitted only to a private router, then you can use either route labels or namespace labels to specify the sharding method. To add the selector during creation time, include it in the `ingresscontroller` yaml under `spec`. For example, to allow an Ingress controller to only handle ingress/routes with label `type=sharded`, you can add a `routeSelector`. For more information, see [Ingress controller sharding](https://docs.openshift.com/container-platform/4.8/networking/ingress-operator.html#nw-ingress-sharding_configuring-ingress){: external}.
+    ```yaml
+      routeSelector:
+        matchLabels:
+          type: sharded
     ```
     {: pre}
+    
+    1. To add selectors to an existing Ingress controller, get a list of Ingress controllers.
+        ```sh
+        oc get ingresscontroller -n openshift-ingress-operator
+        ```
+        {: pre}
+        
+    1. Add the selectors to Ingress controllers where you want to use sharding.
+        
+        ```sh
+        oc patch  -n openshift-ingress-operator IngressController/<name>   --type='merge'   -p '{"spec":{"routeSelector":{"matchLabels":{"type":"sharded"}}}}'
+        ```
+        {: pre}
 
-7. Create a Kubernetes `ClusterIP` service for your app deployment. The service provides an internal IP address for the app that the Ingress controller can send traffic to.
+
+    1. Note that no selectors are added to the default IngressController, so all routes are still admitted to the default Ingress controller on the cluster. You can use the relevant route or a namespace label selectors to change this behavior. For example, to adjust default router to skip ingress/routes with label `type=sharded`, run the following patch command.
+        ```sh
+        oc patch -n openshift-ingress-operator IngressController/default --type='merge'   -p '{"spec":{"routeSelector":{"matchExpressions":[{"key":"type","operator":"NotIn","values":["sharded"]}]}}}'
+        ```
+        {: pre}
+
+1. Create a Kubernetes `ClusterIP` service for your app deployment. The service provides an internal IP address for the app that the Ingress controller can send traffic to.
     ```sh
     oc expose deploy <app_deployment_name> --name <app_service_name> -n <app_project>
     ```
     {: pre}
 
-8. Set up a route that is based on the [type of TLS termination that your app requires](#route-types). Specify the hostname that you set up in step 5.
+1. Set up a route that is based on the [type of TLS termination that your app requires](#route-types). Specify the hostname that you set up in step 5.
     * Simple:
         ```sh
         oc expose service <app_service_name> --hostname <subdomain>
@@ -471,7 +521,7 @@ Note that even though you create an IngressController resource in the following 
         ```
         {: pre}
 
-        <p class="tip">Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.</p>
+        Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.
     * Edge: If you use a custom domain, include the `--cert` and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [{{site.data.keyword.openshiftshort}} edge route documentation](https://docs.openshift.com/container-platform/4.8/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
         ```sh
         oc create route edge --service <app_service_name> --hostname <subdomain> [--cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
@@ -484,15 +534,15 @@ Note that even though you create an IngressController resource in the following 
         ```
         {: pre}
 
-9. Verify that the route for your app is created.
+1. Verify that the route for your app is created.
     ```sh
     oc get routes
     ```
     {: pre}
 
-10. Optional: Customize the private Ingress controller's routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.8/networking/routes/route-configuration.html){: external}. For example, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.8/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}.
+1. Optional: Customize the private Ingress controller's routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.8/networking/routes/route-configuration.html){: external}. For example, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.8/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}.
 
-11. To create routes for more apps by using the same subdomain, you can repeat steps 7 - 10 so that the route is generated by the same private Ingress controller. If you want to create routes for more apps by using a different subdomain, repeat all steps in this section to create a new private Ingress controller.
+1. To create routes for more apps by using the same subdomain, you can repeat steps 7 - 10 so that the route is generated by the same private Ingress controller. If you want to create routes for more apps by using a different subdomain, repeat all steps in this section to create a new private Ingress controller.
 
 
 ### Setting up private routes in VPC clusters with a private cloud service endpoint only
@@ -507,8 +557,8 @@ Note that even though you create an IngressController resource in the following 
     ```
     {: pre}
 
-2. Choose a domain for your app.
-    * **IBM-provided domain**: If you don't need to use a custom domain, a route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-i000.<region>.containers.appdomain.cloud`.
+1. Choose a domain for your app.
+    * **IBM-provided domain**: If you don't need a custom domain, a route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-i000.<region>.containers.appdomain.cloud`.
     * **Custom domain**: To specify a custom domain, work with your DNS provider or [{{site.data.keyword.cis_full}}](https://cloud.ibm.com/catalog/services/internet-services).
         1. Get the external IP address for the private Ingress controller service in each zone in the **EXTERNAL-IP** column. Note that the Ingress controller service in the first zone where you have workers nodes is always named `router-default`, and Ingress controller services in zones that you subsequently add to your cluster have names such as `router-dal12`.
             ```sh
@@ -516,13 +566,13 @@ Note that even though you create an IngressController resource in the following 
             ```
             {: pre}
 
-        2. Create a custom domain with your DNS provider.
+        1. Create a custom domain with your DNS provider.
             If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.
             {: tip}
 
-        3. Map your custom domain to the Ingress controller services' private IP address by adding the IP addresses as A records.
+        1. Map your custom domain to the Ingress controller services' private IP address by adding the IP addresses as A records.
 
-3. Set up a route that is based on the [type of TLS termination that your app requires](#route-types). If you don't have a custom domain, don't include the `--hostname` flag. A route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`. If you registered a wildcard subdomain, specify a unique subdomain in each route that you create. For example, you might specify `--hostname svc1.example.com` in this route, and `--hostname svc2.example.com` in another route.
+1. Set up a route based on the [type of TLS termination that your app requires](#route-types). If you don't have a custom domain, don't include the `--hostname` flag. A route subdomain is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`. If you registered a wildcard subdomain, specify a unique subdomain in each route that you create. For example, you might specify `--hostname svc1.example.com` in this route, and `--hostname svc2.example.com` in another route.
     * Simple:
         ```sh
         oc expose service <app_service_name> [--hostname <subdomain>]
@@ -535,7 +585,8 @@ Note that even though you create an IngressController resource in the following 
         ```
         {: pre}
 
-        <p class="tip">Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.</p>
+        Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.
+        
     * Edge: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [{{site.data.keyword.openshiftshort}} edge route documentation](https://docs.openshift.com/container-platform/4.8/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
         ```sh
         oc create route edge --service <app_service_name> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
@@ -548,13 +599,13 @@ Note that even though you create an IngressController resource in the following 
         ```
         {: pre}
 
-4. Verify that the route for your app service is created.
+1. Verify that the route for your app service is created.
     ```sh
     oc get routes
     ```
     {: pre}
 
-5. Optional: Customize default routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.8/networking/routes/route-configuration.html){: external}. For example, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.8/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}.
+1. Optional: Customize default routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.8/networking/routes/route-configuration.html){: external}. For example, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.8/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}.
 
 
 
@@ -634,13 +685,13 @@ Note that even though you create an IngressController resource in the following 
           ```
           {: codeblock}
 
-    2. Create the new Ingress controller service.
+    1. Create the new Ingress controller service.
         ```sh
         oc apply -f router-new-<zone>.yaml -n openshift-ingress
         ```
         {: pre}
 
-    3. Get the **EXTERNAL-IP** address of the new Ingress controller service. This IP address is from a subnet on the new VLAN.
+    1. Get the **EXTERNAL-IP** address of the new Ingress controller service. This IP address is from a subnet on the new VLAN.
         ```sh
         oc get svc router-new -n openshift-ingress
         ```
@@ -653,9 +704,9 @@ Note that even though you create an IngressController resource in the following 
         ```
         {: screen}
 
-    4. **Multizone clusters**: If you changed the VLANs for worker nodes in multiple zones, repeat these steps to create a Ingress controller service on the new VLANs in each zone.
+    1. **Multizone clusters**: If you changed the VLANs for worker nodes in multiple zones, repeat these steps to create a Ingress controller service on the new VLANs in each zone.
 
-2. Note the **Hostname** of the Ingress controller. In the output, look for the hostname formatted like `<cluster_name>-<random_hash>-0001.<region>.containers.appdomain.cloud`.
+1. Note the **Hostname** of the Ingress controller. In the output, look for the hostname formatted like `<cluster_name>-<random_hash>-0001.<region>.containers.appdomain.cloud`.
     ```sh
     ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
     ```
@@ -670,7 +721,7 @@ Note that even though you create an IngressController resource in the following 
     ```
     {: screen}
 
-3. Add the IP address of the new Ingress controller service that you found in step 1 to the Ingress controller's hostname. If you created services for multiple zones in step 1, include each IP address separately in repeated `--ip` flags.
+1. Add the IP address of the new Ingress controller service that you found in step 1 to the Ingress controller's hostname. If you created services for multiple zones in step 1, include each IP address separately in repeated `--ip` flags.
     ```sh
     ibmcloud oc nlb-dns add -c <cluster_name_or_ID> --ip <new_IP> --nlb-host <subdomain>
     ```
@@ -678,7 +729,7 @@ Note that even though you create an IngressController resource in the following 
 
     Your Ingress controller service on the new VLAN is now registered with the domain for the default Ingress controller in your cluster, and can forward incoming requests to apps.
 
-4. Get the IP address of the old Ingress controller service on the old VLAN. **Multizone clusters**: If you changed the VLANs for worker nodes in multiple zones, get the IP address for the Ingress controller service in each zone where the VLANs changed. Note that the Ingress controller service in the first zone where you have workers nodes is always named `router-default`, and Ingress controller services in the zones that you subsequently add to your cluster have names such as `router-dal12`.
+1. Get the IP address of the old Ingress controller service on the old VLAN. **Multizone clusters**: If you changed the VLANs for worker nodes in multiple zones, get the IP address for the Ingress controller service in each zone where the VLANs changed. Note that the Ingress controller service in the first zone where you have workers nodes is always named `router-default`, and Ingress controller services in the zones that you subsequently add to your cluster have names such as `router-dal12`.
     ```sh
     oc get svc -n openshift-ingress
     ```
@@ -693,26 +744,25 @@ Note that even though you create an IngressController resource in the following 
     ```
     {: screen}
 
-5. Remove the IP address of the old Ingress controller service that you found in step 2 from the Ingress controller's hostname. **Multizone clusters**: Include each IP address separately in repeated `--ip` flags.
+1. Remove the IP address of the old Ingress controller service that you found in step 2 from the Ingress controller's hostname. **Multizone clusters**: Include each IP address separately in repeated `--ip` flags.
     ```sh
     ibmcloud oc nlb-dns rm classic -c <cluster_name_or_ID> --ip <old_IP> --nlb-host <hostname>
     ```
     {: pre}
 
-6. Verify that the hostname for your Ingress controller is now registered with the new IP address. After your Ingress controller hostname is updated with the IP address of the new service, no further changes to your Ingress controller or routes are required.
+1. Verify that the hostname for your Ingress controller is now registered with the new IP address. After your Ingress controller hostname is updated with the IP address of the new service, no further changes to your Ingress controller or routes are required.
     ```sh
     ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
     ```
     {: pre}
 
-7. Delete the Ingress controller service on the old VLAN.
+1. Delete the Ingress controller service on the old VLAN.
     ```sh
     oc delete svc <old_router_svc> -n openshift-ingress
     ```
     {: pre}
 
-8. Optional: If you no longer need the subnets on the old VLANs, you can [remove them](/docs/openshift?topic=openshift-subnets#remove-subnets).
-
+1. Optional: If you no longer need the subnets on the old VLANs, you can [remove them](/docs/openshift?topic=openshift-subnets#remove-subnets).
 
 
 

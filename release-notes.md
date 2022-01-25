@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-24"
+lastupdated: "2022-01-25"
 
 keywords: openshift
 
@@ -28,14 +28,27 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+
+### 25 January 2022
+{: #25jan2022}
+{: release-note}
+
+
+
+HPCS Router add-on
+:   Versions 4.8.0_1232, 4.7.0_1226, and 4.6.0_1227 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
+
+Cloud Image Key Synchronizer add-on
+:   Version 1.0.0_834 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
+
+
+
 ### 24 January 2022
 {: #24jan2022}
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in
 :   Version `2.1.9` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in changelog](/docs/containers?topic=containers-cos_plugin_changelog).
-
-
 
 
 ### 20 January 2022
@@ -3651,8 +3664,5 @@ CLI reference
 
 New! {{site.data.keyword.openshiftlong_notm}} clusters
 :   With the {{site.data.keyword.openshiftlong_notm}} beta, you can create {{site.data.keyword.containerlong_notm}} clusters with worker nodes that come installed with the {{site.data.keyword.openshiftshort}} container orchestration platform software. You get all the advantages of managed {{site.data.keyword.containerlong_notm}} for your cluster infrastructure environment, along with the [{{site.data.keyword.openshiftshort}} tooling and catalog](https://docs.openshift.com/container-platform/3.11/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments. To get started, see [Tutorial: Creating a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial).
-
-
-
 
 

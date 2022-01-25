@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-01-24"
+lastupdated: "2022-01-25"
 
 keywords: openshift
 subcollection: openshift
@@ -183,6 +183,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
 * [January 2022](/docs/openshift?topic=openshift-iks-release#release-jan-2022)
+
+    * [25 January 2022](/docs/openshift?topic=openshift-iks-release#25jan2022)
 
     * [24 January 2022](/docs/openshift?topic=openshift-iks-release#24jan2022)
 
@@ -2248,7 +2250,7 @@ subcollection: openshift
 
 * [Setting up public routes](/docs/openshift?topic=openshift-routes-311#routes-setup-311)
 
-* [Setting up private routes](/docs/openshift?topic=openshift-routes-311#private-routes)
+* [Setting up private routes](/docs/openshift?topic=openshift-routes-311#private-routes-311)
 
 * [Moving router services across VLANs](/docs/openshift?topic=openshift-routes-311#migrate-router-vlan)
 
@@ -4190,6 +4192,8 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0)
+
+    * [Version 1.0.0_834, released on 25 January 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0834)
 
     * [Version 1.0.0_804, released on 11 January 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0804)
 
