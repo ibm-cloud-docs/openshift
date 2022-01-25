@@ -2250,7 +2250,7 @@ subcollection: openshift
 
 * [Setting up public routes](/docs/openshift?topic=openshift-routes-311#routes-setup-311)
 
-* [Setting up private routes](/docs/openshift?topic=openshift-routes-311#private-routes)
+* [Setting up private routes](/docs/openshift?topic=openshift-routes-311#private-routes-311)
 
 * [Moving router services across VLANs](/docs/openshift?topic=openshift-routes-311#migrate-router-vlan)
 

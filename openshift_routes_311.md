@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-25"
 
 keywords: openshift, route, router
 
@@ -154,7 +154,7 @@ To set up routes to publicly expose apps:
 
 
 ## Setting up private routes
-{: #private-routes}
+{: #private-routes-311}
 
 To use routes to privately expose your apps, create a new router and change the service that exposes the router to a private load balancer. The router service is assigned an IP address through which private requests are forwarded to your app.
 {: shortdesc}
