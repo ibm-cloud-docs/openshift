@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-25"
+lastupdated: "2022-01-26"
 
 keywords: openshift
 
@@ -25,6 +25,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## January 2022
 {: #release-jan-2022}
+
 
 
 

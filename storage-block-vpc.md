@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-26"
 
 keywords: openshift
 
@@ -62,16 +62,16 @@ In this quickstart guide, you create a 10Gi 5IOPS tier {{site.data.keyword.block
     kind: Deployment
     metadata:
         name: my-deployment
-    labels:
-      app:
-    spec:
-    selector:
-      matchLabels:
-        app: my-app
-    template:
-      metadata:
         labels:
           app: my-app
+    spec:
+     selector:
+      matchLabels:
+        app: my-app
+      template:
+        metadata:
+          labels:
+            app: my-app
       spec:
         containers:
         - image: # Your containerized app image.
