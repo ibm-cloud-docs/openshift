@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-26"
+lastupdated: "2022-01-27"
 
 keywords: openshift
 
@@ -25,6 +25,18 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## January 2022
 {: #release-jan-2022}
+
+
+
+### 27 January 2022
+{: #27jan2022}
+{: release-note}
+
+{{site.data.keyword.block_storage_is_short}} add-on.
+:   [Version 4.1.2_834](/docs/containers?topic=containers-vpc_bs_changelog) is released.
+
+**New!** Gathering Ingress logs
+:   When troubleshooting Ingress, follow the steps in [gathering Ingress logs](/docs/openshift?topic=openshift-ingress-must-gather) to retrieve useful debugging information.
 
 
 
@@ -880,7 +892,7 @@ Expanded Troubleshooting
     - [{{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-debug_storage_block)
     - [{{site.data.keyword.cos_short}}](/docs/openshift?topic=openshift-debug_storage_cos)
     - [Portworx](/docs/openshift?topic=openshift-debug_storage_px)
-    - [OpenShift Container Storage](/docs/openshift?topic=openshift-debug_storage_ocs)
+    - [{{site.data.keyword.openshiftshort}} Container Storage](/docs/openshift?topic=openshift-debug_storage_ocs)
 
 ### 07 June 2021
 {: #07june2021}
@@ -1029,7 +1041,7 @@ CLI changelog
 
 
 
-OpenShift Container Storage
+{{site.data.keyword.openshiftshort}} Container Storage
 :   Adds a troubleshooting topic for [device set creation failure due to PVC names exceeding the Kubernetes character limit](/docs/openshift?topic=openshift-ts-ocs-roks-debug).
 
 
@@ -1086,7 +1098,7 @@ New fields and events for {{site.data.keyword.at_short}}
 
 
 
-New! OpenShift Container Storage add-on
+New! {{site.data.keyword.openshiftshort}} Container Storage add-on
 :   The managed add-on is now available as a technology preview. For more information, see [Preparing your cluster](/docs/openshift?topic=openshift-deploy-odf-vpc).
 
 Supported add-ons

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-01-26"
+lastupdated: "2022-01-27"
 
 keywords: openshift
 subcollection: openshift
@@ -183,6 +183,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
 * [January 2022](/docs/openshift?topic=openshift-iks-release#release-jan-2022)
+
+    * [27 January 2022](/docs/openshift?topic=openshift-iks-release#27jan2022)
 
     * [25 January 2022](/docs/openshift?topic=openshift-iks-release#25jan2022)
 
@@ -4990,6 +4992,8 @@ subcollection: openshift
 * [Step 3: Check the health of the Ingress controller](/docs/openshift?topic=openshift-ingress-debug-roks4#errors-43)
 
 * [Step 4: Ping the Ingress subdomain and Ingress controller public IP address](/docs/openshift?topic=openshift-ingress-debug-roks4#ping-43)
+
+[Gathering Ingress logs](/docs/openshift?topic=openshift-ingress-must-gather#ingress-must-gather)
 
 [Classic clusters: Why can't my app connect via Ingress?](/docs/openshift?topic=openshift-cs_ingress_fails#cs_ingress_fails)
 

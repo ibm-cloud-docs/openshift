@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-27"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -79,14 +79,14 @@ When you create VPC subnets for your clusters, keep in mind the following featur
 * VPC subnets are bound to a single zone and can't span multiple zones or regions.
 * After you create a subnet, you can't move it to a different zone, region, or VPC.
 * If you have worker nodes that are attached to an existing subnet in a zone, you can't change the subnet for that zone in the cluster.
-* The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
+* The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited if you are using Red Hat OpenShift 4.7 or earlier..
 
 
 
 ### Worker-to-master and user-to-master communication: Virtual private endpoints or cloud service endpoints
 {: #vpc-workeruser-master}
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.svg) {{site.data.keyword.openshiftlong_notm}} uses different types of service endpoints to establish a connection from authorized cluster users and worker nodes to the Kubernetes master.  Authorized cluster users communicate with the Kubernetes master through cloud service endpoints. Depending on your cluster version, worker nodes communicate with the Kubernetes master through cloud service endpoints or VPC virtual private endpoints.
+![VPC infrastructure provider icon.](images/icon-vpc-2.svg) {{site.data.keyword.openshiftlong_notm}} uses different types of service endpoints to establish a connection from authorized cluster users and worker nodes to the Kubernetes master. Authorized cluster users communicate with the Kubernetes master through cloud service endpoints. Depending on your cluster version, worker nodes communicate with the Kubernetes master through cloud service endpoints or VPC virtual private endpoints.
 {: shortdesc}
 
 Before you create a cluster, you must enable your account to use service endpoints. To enable service endpoints, run `ibmcloud account update --service-endpoint-enable true`.
