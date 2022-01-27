@@ -880,7 +880,7 @@ Expanded Troubleshooting
     - [{{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-debug_storage_block)
     - [{{site.data.keyword.cos_short}}](/docs/openshift?topic=openshift-debug_storage_cos)
     - [Portworx](/docs/openshift?topic=openshift-debug_storage_px)
-    - [OpenShift Container Storage](/docs/openshift?topic=openshift-debug_storage_ocs)
+    - [{{site.data.keyword.openshiftshort}} Container Storage](/docs/openshift?topic=openshift-debug_storage_ocs)
 
 ### 07 June 2021
 {: #07june2021}
@@ -1029,7 +1029,7 @@ CLI changelog
 
 
 
-OpenShift Container Storage
+{{site.data.keyword.openshiftshort}} Container Storage
 :   Adds a troubleshooting topic for [device set creation failure due to PVC names exceeding the Kubernetes character limit](/docs/openshift?topic=openshift-ts-ocs-roks-debug).
 
 
@@ -1086,7 +1086,7 @@ New fields and events for {{site.data.keyword.at_short}}
 
 
 
-New! OpenShift Container Storage add-on
+New! {{site.data.keyword.openshiftshort}} Container Storage add-on
 :   The managed add-on is now available as a technology preview. For more information, see [Preparing your cluster](/docs/openshift?topic=openshift-deploy-odf-vpc).
 
 Supported add-ons
