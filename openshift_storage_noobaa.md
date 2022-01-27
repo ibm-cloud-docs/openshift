@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-27"
 
 keywords: openshift, noobaa, openshift container storage, openshift data foundation, storage classes
 

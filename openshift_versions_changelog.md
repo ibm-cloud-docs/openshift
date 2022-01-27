@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-27"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 

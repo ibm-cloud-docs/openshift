@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-06"
+lastupdated: "2022-01-27"
 
 keywords: openshift, openshift data foundation, openshift container storage, vpc
 subcollection: openshift
@@ -97,8 +97,8 @@ Virtual Private Cloud (VPC) clusters
 {{site.data.keyword.satelliteshort}} clusters
 :   You can deploy ODF by using either dynamically provisioned disks or local disks on your worker nodes. If you want to deploy ODF to one cluster only, you can use the managed cluster add-on. If you want to deploy ODF to multiple {{site.data.keyword.satelliteshort}} clusters, you can use the {{site.data.keyword.satelliteshort}} storage template. For more information, see the following links.
     - [Deploying the OpenShift Data Foundation add-on on {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-deploy-odf-sat).
-    - [Deploying the OpenShift Data Foundation template for remote, dynamically provisioned disks](/docs/satellite?topic=satellite-config-storage-ocs-local).
-    - [Deploying the OpenShift Data Foundation template for local disks](/docs/satellite?topic=satellite-config-storage-ocs-remote).
+    - [Deploying the OpenShift Data Foundation template for remote, dynamically provisioned disks](/docs/satellite?topic=satellite-config-storage-odf-local).
+    - [Deploying the OpenShift Data Foundation template for local disks](/docs/satellite?topic=satellite-config-storage-odf-remote).
 
 Classic clusters
 :   You can deploy ODF by using local disks on your bare metal worker nodes. For more information, see [Deploying OpenShift Data Foundation on Classic clusters](/docs/openshift?topic=openshift-deploy-odf-classic).
