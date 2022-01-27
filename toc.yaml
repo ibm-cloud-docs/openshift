@@ -363,6 +363,7 @@ toc:
                   topics:
                     - ts-ingress-status.md
                     - ts-ingress-debug-roks4.md
+                    - ts-ingress-must-gather.md
                     - ts-ingress-app.md
                     - ts-ingress-vpc-app.md
                     - ts-ingress-roks-no-subdomain-create.md

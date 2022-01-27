@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-27"
 
 keywords: openshift
 
@@ -27,6 +27,9 @@ content-type: troubleshoot
 
 To check the overall health and status of your cluster's Ingress components:
 {: shortdesc}
+
+Review the [Gathering Ingress logs](/docs/openshift?topic=openshift-ingress-must-gather) topic for help gathering the required logs for debugging Ingress.
+{: tip}
 
 ```sh
 ibmcloud oc ingress status -c <cluster_name_or_ID>
