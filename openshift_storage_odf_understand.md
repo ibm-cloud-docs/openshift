@@ -85,6 +85,10 @@ The Multicloud Object Gateway consists of the open source tool [NooBaa](https://
 {: summary="The rows are read from left to right. The first column is the diagram number of the resource. The second column is a brief description of the resource."}
 
 
+
+
+
+
 ## Deploying OpenShift Data Foundation
 {: #odf-deploy-options}
 
