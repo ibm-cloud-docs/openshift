@@ -4589,6 +4589,126 @@ subcollection: openshift
 [IBM Developer - Red Hat OpenShift on IBM Cloud](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/){: external}
 
 
+## VPC Gen 2 flavors
+{: #sitemap_vpc_gen_2_flavors}
+
+
+[VPC Gen 2 flavors](/docs/openshift?topic=openshift-vpc-gen2-flavors#vpc-gen2-flavors)
+
+* [au-syd-1](/docs/openshift?topic=openshift-vpc-gen2-flavors#au-syd-1)
+
+* [au-syd-2](/docs/openshift?topic=openshift-vpc-gen2-flavors#au-syd-2)
+
+* [au-syd-3](/docs/openshift?topic=openshift-vpc-gen2-flavors#au-syd-3)
+
+* [eu-de-1](/docs/openshift?topic=openshift-vpc-gen2-flavors#eu-de-1)
+
+* [eu-de-2](/docs/openshift?topic=openshift-vpc-gen2-flavors#eu-de-2)
+
+* [eu-de-3](/docs/openshift?topic=openshift-vpc-gen2-flavors#eu-de-3)
+
+* [eu-gb-1](/docs/openshift?topic=openshift-vpc-gen2-flavors#eu-gb-1)
+
+* [eu-gb-2](/docs/openshift?topic=openshift-vpc-gen2-flavors#eu-gb-2)
+
+* [eu-gb-3](/docs/openshift?topic=openshift-vpc-gen2-flavors#eu-gb-3)
+
+* [jp-tok-1](/docs/openshift?topic=openshift-vpc-gen2-flavors#jp-tok-1)
+
+* [jp-tok-2](/docs/openshift?topic=openshift-vpc-gen2-flavors#jp-tok-2)
+
+* [jp-tok-3](/docs/openshift?topic=openshift-vpc-gen2-flavors#jp-tok-3)
+
+* [us-east-1](/docs/openshift?topic=openshift-vpc-gen2-flavors#us-east-1)
+
+* [us-east-2](/docs/openshift?topic=openshift-vpc-gen2-flavors#us-east-2)
+
+* [us-east-3](/docs/openshift?topic=openshift-vpc-gen2-flavors#us-east-3)
+
+* [us-south-1](/docs/openshift?topic=openshift-vpc-gen2-flavors#us-south-1)
+
+* [us-south-2](/docs/openshift?topic=openshift-vpc-gen2-flavors#us-south-2)
+
+* [us-south-3](/docs/openshift?topic=openshift-vpc-gen2-flavors#us-south-3)
+
+
+## Classic flavors
+{: #sitemap_classic_flavors}
+
+
+[Classic flavors](/docs/openshift?topic=openshift-classic-flavors#classic-flavors)
+
+* [ams03](/docs/openshift?topic=openshift-classic-flavors#ams03)
+
+* [che01](/docs/openshift?topic=openshift-classic-flavors#che01)
+
+* [dal10](/docs/openshift?topic=openshift-classic-flavors#dal10)
+
+* [dal12](/docs/openshift?topic=openshift-classic-flavors#dal12)
+
+* [dal13](/docs/openshift?topic=openshift-classic-flavors#dal13)
+
+* [fra02](/docs/openshift?topic=openshift-classic-flavors#fra02)
+
+* [fra04](/docs/openshift?topic=openshift-classic-flavors#fra04)
+
+* [fra05](/docs/openshift?topic=openshift-classic-flavors#fra05)
+
+* [hkg02](/docs/openshift?topic=openshift-classic-flavors#hkg02)
+
+* [lon02](/docs/openshift?topic=openshift-classic-flavors#lon02)
+
+* [lon04](/docs/openshift?topic=openshift-classic-flavors#lon04)
+
+* [lon05](/docs/openshift?topic=openshift-classic-flavors#lon05)
+
+* [lon06](/docs/openshift?topic=openshift-classic-flavors#lon06)
+
+* [mex01](/docs/openshift?topic=openshift-classic-flavors#mex01)
+
+* [mil01](/docs/openshift?topic=openshift-classic-flavors#mil01)
+
+* [mon01](/docs/openshift?topic=openshift-classic-flavors#mon01)
+
+* [osa21](/docs/openshift?topic=openshift-classic-flavors#osa21)
+
+* [osa22](/docs/openshift?topic=openshift-classic-flavors#osa22)
+
+* [osa23](/docs/openshift?topic=openshift-classic-flavors#osa23)
+
+* [par01](/docs/openshift?topic=openshift-classic-flavors#par01)
+
+* [sao01](/docs/openshift?topic=openshift-classic-flavors#sao01)
+
+* [seo01](/docs/openshift?topic=openshift-classic-flavors#seo01)
+
+* [sjc03](/docs/openshift?topic=openshift-classic-flavors#sjc03)
+
+* [sjc04](/docs/openshift?topic=openshift-classic-flavors#sjc04)
+
+* [sng01](/docs/openshift?topic=openshift-classic-flavors#sng01)
+
+* [syd01](/docs/openshift?topic=openshift-classic-flavors#syd01)
+
+* [syd04](/docs/openshift?topic=openshift-classic-flavors#syd04)
+
+* [syd05](/docs/openshift?topic=openshift-classic-flavors#syd05)
+
+* [tok02](/docs/openshift?topic=openshift-classic-flavors#tok02)
+
+* [tok04](/docs/openshift?topic=openshift-classic-flavors#tok04)
+
+* [tok05](/docs/openshift?topic=openshift-classic-flavors#tok05)
+
+* [tor01](/docs/openshift?topic=openshift-classic-flavors#tor01)
+
+* [wdc04](/docs/openshift?topic=openshift-classic-flavors#wdc04)
+
+* [wdc06](/docs/openshift?topic=openshift-classic-flavors#wdc06)
+
+* [wdc07](/docs/openshift?topic=openshift-classic-flavors#wdc07)
+
+
 ## FAQs
 {: #sitemap_faqs}
 
