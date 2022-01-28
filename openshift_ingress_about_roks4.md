@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-28"
 
 keywords: openshift, nginx, ingress controller, ingress operator, router
 
@@ -64,7 +64,7 @@ When you create a VPC cluster, one public and one private multizone VPC load bal
 
 The Ingress subdomain for your cluster is automatically linked to the VPC load balancer hostname for your public Ingress controller. Note that the Ingress subdomain for your cluster, which looks like `<cluster_name>.<hash>-0000.<region>.containers.appdomain.cloud`, is different than the VPC load balancer-assigned hostname for your public Ingress controller, which looks like `01ab23cd-<region>.lb.appdomain.cloud`. The Ingress subdomain is the public route through which users access your app from the internet, and can be configured to use TLS termination. The assigned hostname for your public Ingress controller is what the VPC load balancer uses to forward traffic to the Ingress controller service.
 
-You can find the hostname that is assigned to your public Ingress controller and the hostname that is assigned to your private Inrgess controller by running `oc get svc -n openshift-ingress` and looking for the **EXTERNAL IP** field.
+You can find the hostname that is assigned to your public Ingress controller and the hostname that is assigned to your private Ingress controller by running `oc get svc -n openshift-ingress` and looking for the **EXTERNAL IP** field.
 
 In your VPC infrastructure dashboard, the VPC load balancer reports as healthy only the two worker nodes that run the Ingress controller replica pods, because these worker nodes are configured as the listeners for the VPC load balancer. Even though only the listener worker nodes are reported as healthy, the listeners' backend pool of worker nodes is kept up-to-date by {{site.data.keyword.openshiftlong_notm}} so that all worker nodes in your cluster can still receive requests from the VPC load balancer.
 {: note}
@@ -78,7 +78,7 @@ To expose an app by using Route, you must create a Kubernetes service for your a
 The Route resource also specifies the path to your app services. The paths to your app services are appended to your cluster's Ingress subdomain to form a unique app URL such as `mycluster-a1b2cdef345678g9hi012j3kl4567890-0000.us-south.containers.appdomain.cloud/myapp1`.
 
 One Route resource is required for each project where you have apps that you want to expose.
-* If the apps in your cluster are all in the same project, you must create one Rotue resource to define the routing rules for the apps that you want to expose. Note that if you want to use different domains for the apps within the same project, you can create one resource per domain.
+* If the apps in your cluster are all in the same project, you must create one Route resource to define the routing rules for the apps that you want to expose. Note that if you want to use different domains for the apps within the same project, you can create one resource per domain.
 * If the apps in your cluster are in different projects, you must create one Route resource for each project to define the app's routing rules.
 
 For more information, see [Planning networking for single or multiple projects](/docs/openshift?topic=openshift-ingress-roks4#multiple_projects).
