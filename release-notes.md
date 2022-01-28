@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-27"
+lastupdated: "2022-01-28"
 
 keywords: openshift
 
@@ -25,6 +25,18 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## January 2022
 {: #release-jan-2022}
+
+
+
+
+
+### 28 January 2022
+{: #28jan2022}
+{: release-note}
+
+**New!** Troubleshooting the {{site.data.keyword.openshiftshort}} console.
+:   If you receive a 500 error when trying to log in to your {{site.data.keyword.openshiftshort}} cluster via `oc login` or the console, you can resolve this issue by running the `cluster config` command. For more information, see [500 error when trying to log in to an {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-ts_clis#500_error_oc_login).
+:   You must synchronize the IAM user information initially to fix this error. See [500 error when trying to log in to an {{site.data.keyword.openshiftshort}} cluster via `oc login`](/docs/openshift?topic=openshift-ts_clis#500_error_oc_login).
 
 
 

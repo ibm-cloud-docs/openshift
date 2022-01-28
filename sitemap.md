@@ -184,6 +184,8 @@ subcollection: openshift
 
 * [January 2022](/docs/openshift?topic=openshift-iks-release#release-jan-2022)
 
+    * [28 January 2022](/docs/openshift?topic=openshift-iks-release#28jan2022)
+
     * [27 January 2022](/docs/openshift?topic=openshift-iks-release#27jan2022)
 
     * [25 January 2022](/docs/openshift?topic=openshift-iks-release#25jan2022)
@@ -4720,6 +4722,8 @@ subcollection: openshift
 * [`kubectl` or `oc` commands don't work](/docs/openshift?topic=openshift-ts_clis#kubectl_fails)
 
 * [Time out when trying to connect to a pod](/docs/openshift?topic=openshift-ts_clis#roks_timeout)
+
+* [500 error when trying to log in to an {{site.data.keyword.openshiftshort}} cluster via `oc login`](/docs/openshift?topic=openshift-ts_clis#500_error_oc_login)
 
 * [Missing projects or `oc` and `kubectl` commands fail](/docs/openshift?topic=openshift-ts_clis#rhoks_ts_admin_config)
 
