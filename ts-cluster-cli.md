@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-28"
 
 keywords: openshift
 
@@ -113,6 +113,45 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     oc delete pod -n kube-system -l app=vpn
     ```
     {: pre}
+    
+## 500 error when trying to log in to an {{site.data.keyword.openshiftshort}} cluster via `oc login`
+{: #500_error_oc_login}
+
+
+When you try to log in to an {{site.data.keyword.openshiftshort}} cluster via `oc login` for the first time and you see an error message similar to the following.
+{: tsSymptoms}
+
+```
+$ oc login SERVER -u apikey -p <APIKEY>
+The server uses a certificate signed by an unknown authority.
+You can bypass the certificate check, but any data you send to the server could be intercepted by others.
+Use insecure connections? (y/n): y
+
+Error from server (InternalError): Internal error occurred: unexpected response: 500
+```
+{: screen}
+
+
+Some recent changes to the IAM user role have not yet been synchronized to the {{site.data.keyword.openshiftshort}} cluster.
+{: tsCauses}
+
+
+Synchronize the IAM user information to the {{site.data.keyword.openshiftshort}} cluster. After the initial user synchronization is performed, further RBAC synchronization should occur automatically.
+{: tsResolve}
+
+Before you begin: 
+
+[Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+To synchronize the IAM information for the user, you have 2 options:
+- Log in to your cluster from the {{site.data.keyword.openshiftshort}} [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
+- Set your command line context for the cluster by runnign the  `ibmcloud oc cluster config --cluster CLUSTER` command.
+
+If you use an API key for a functional ID or another user, make sure to log in as the correct user.
+{: note}
+
+After the impacted user completes the IAM synchronization, the cluster administrator can verify the user exists in the cluster by listing users with the `oc get users` command.
+{: tip}
 
 ## Missing projects or `oc` and `kubectl` commands fail
 {: #rhoks_ts_admin_config}
@@ -139,9 +178,5 @@ You need to download the `admin` configuration files for your cluster in order t
 
 Run `ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin` and try again.
 {: tsResolve}
-
-
-
-
 
 

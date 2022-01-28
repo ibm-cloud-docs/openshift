@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-03"
+lastupdated: "2022-01-28"
 
 keywords: openshift
 
@@ -23,7 +23,7 @@ content-type: troubleshoot
 You create a multizone VPC cluster. However, when you run `ibmcloud is load-balancers` to find the VPC load balancer that exposes the Ingress controller, the VPC subnet for only one zone in your cluster is listed instead of the subnets for all zones in your cluster. In the output, look for the VPC load balancer **Name** that starts with `kube-crtmgr-<cluster_ID>`.
 {: tsSymptoms}
 
-```
+```sh
 ID                                          Name                                                         Family        Subnets               Is public   Provision status   Operating status   Resource group
 r006-d044af9b-92bf-4047-8f77-a7b86efcb923   kube-bsaucubd07dhl66e4tgg-1f4f408ce6d2485499bcbdec0fa2d306   Application   mysubnet-us-south-3   true        active             online             default
 ```
@@ -58,6 +58,9 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
     oc delete svc router-default -n openshift-ingress
     ```
     {: pre}
+    
+    After running the `delete svc` command to delete the service, you might need to remove the finalizers to fully remove the service. Run the following command to delete the finalizers on the service. `oc get svc-n openshift-ingress router-default -o=json | jq '.metadata.finalizers = null' | kubectl apply -f -`
+    {: note}
 
 3. Verify that the new VPC load balancer that exposes the Ingress controller has **Provision status** of `active` and an **Operating status** of `online`. Also, verify that the **Subnets** list now includes subnets for each zone of your cluster.
     ```sh
