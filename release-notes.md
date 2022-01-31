@@ -23,10 +23,10 @@ Use the release notes to learn about the latest changes to the documentation tha
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: note}
 
+
+
 ## January 2022
 {: #release-jan-2022}
-
-
 
 ### 29 January 2022
 {: #29jan2022}
