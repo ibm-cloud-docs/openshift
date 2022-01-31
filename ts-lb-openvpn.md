@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-31"
 
 keywords: openshift
 
@@ -15,6 +15,7 @@ content-type: troubleshoot
 
 # Classic clusters: Why does the master status have an ingress IP address for NLB error?
 {: #rhoks_ts_openvpn_subnet}
+{: support}
 
 **Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 

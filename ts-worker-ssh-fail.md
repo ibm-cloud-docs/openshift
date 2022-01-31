@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-01-31"
 
 keywords: openshift
 
@@ -17,6 +17,8 @@ content-type: troubleshoot
 
 # Why can't I SSH into my worker node?
 {: #cs_ssh_worker}
+{: support}
+
 
 **Infrastructure provider**:
 

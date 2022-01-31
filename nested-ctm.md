@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-31"
 
 keywords: openshift, help, network, dns, health check
 
@@ -17,6 +17,7 @@ content-type: troubleshoot
 
 # Ingress health checks fail on Akamai Global Load Balancer (GLB) configurations
 {: #cs_ingress_health_check_ctm}
+{: support}
 
 **Supported infrastructure provider**:
 * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-01-31"
 
 keywords: openshift
 
@@ -15,6 +15,7 @@ content-type: troubleshoot
 
 # VPC clusters: Why does the VPC load balancer for Ingress controller only route to one zone?
 {: #router-mzr-error}
+{: support}
 
 **Supported infrastructure provider**:
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC

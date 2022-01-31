@@ -274,6 +274,8 @@ toc:
             - link:
                 label: IBM Developer - Red Hat OpenShift on IBM Cloud
                 href: https://developer.ibm.com/components/redhat-openshift-ibm-cloud/
+      - vpc-gen2-flavors.md
+      - classic-flavors.md
   - navgroup:
       id: help
       topics:

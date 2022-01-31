@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-31"
 
 keywords: openshift
 
@@ -16,6 +16,7 @@ content-type: troubleshoot
 # Why does pod not build with a permission denied error because of security context constraint (SCC)?
 {: #ts-app-scc}
 {: troubleshoot}
+{: support}
 
 **Infrastructure provider**:
 * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic

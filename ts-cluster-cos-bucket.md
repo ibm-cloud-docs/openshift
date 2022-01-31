@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-31"
 
 keywords: openshift
 
@@ -15,6 +15,7 @@ content-type: troubleshoot
 
 # Why do I get an error about a cloud object storage bucket when I create a cluster?
 {: #ts_cos_bucket_cluster_create}
+{: support}
 
 **Infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC 
 

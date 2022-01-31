@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-01-31"
 
 keywords: openshift
 subcollection: openshift
@@ -183,6 +183,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
 * [January 2022](/docs/openshift?topic=openshift-iks-release#release-jan-2022)
+
+    * [31 January 2022](/docs/openshift?topic=openshift-iks-release#31jan2022)
 
     * [28 January 2022](/docs/openshift?topic=openshift-iks-release#28jan2022)
 
@@ -3615,6 +3617,10 @@ subcollection: openshift
 
 * [Version 4.8 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-48)
 
+    * [Changelog for worker node fix pack 4.8.28_1543_openshift, released 31 January 2022](/docs/openshift?topic=openshift-openshift_changelog#4828_1543)
+
+    * [Changelog for master fix pack 4.8.26_1542_openshift, released 26 January 2022](/docs/openshift?topic=openshift-openshift_changelog#4826_1542)
+
     * [Changelog for worker node fix pack 4.8.26_1541_openshift, released 18 January 2022](/docs/openshift?topic=openshift-openshift_changelog#4826_1541)
 
     * [Changelog for worker node fix pack 4.8.24_1540_openshift, released 4 January 2022](/docs/openshift?topic=openshift-openshift_changelog#4824_1540)
@@ -3640,6 +3646,10 @@ subcollection: openshift
     * [Change log for fix pack 4.8.11_1526_openshift (master) and 4.8.12_1527_openshift (worker node), released 29 Sept 2021](/docs/openshift?topic=openshift-openshift_changelog#4811_1526_and_4812_1527)
 
 * [Version 4.7 change log](/docs/openshift?topic=openshift-openshift_changelog#version-47)
+
+    * [Changelog for worker node fix pack 4.7.41_1548_openshift, released 31 January 2022](/docs/openshift?topic=openshift-openshift_changelog#4741_1548)
+
+    * [Changelog for master fix pack 4.7.40_1547_openshift, released 26 January 2022](/docs/openshift?topic=openshift-openshift_changelog#4740_1547)
 
     * [Changelog for worker node fix pack 4.7.40_1546_openshift, released 18 January 2022](/docs/openshift?topic=openshift-openshift_changelog#4740_1546)
 
@@ -3692,6 +3702,10 @@ subcollection: openshift
     * [Changelog for master fix pack 4.7.12_1520_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4712_1520)
 
 * [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
+
+    * [Changelog for worker node fix pack 4.6.53_1571_openshift, released 31 January 2022](/docs/openshift?topic=openshift-openshift_changelog#4653_1571)
+
+    * [Changelog for master fix pack 4.6.48_1570_openshift, released 26 January 2022](/docs/openshift?topic=openshift-openshift_changelog#4648_1570)
 
     * [Changelog for worker node fix pack 4.6.53_1569_openshift, released 18 January 2022](/docs/openshift?topic=openshift-openshift_changelog#4653_1569)
 
@@ -3770,6 +3784,10 @@ subcollection: openshift
     * [Changelog for 4.6.16_1530_openshift (master) and 4.6.16_1529_openshift (worker node), released 17 February 2020](/docs/openshift?topic=openshift-openshift_changelog#4616_1530)
 
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+
+    * [Changelog for worker node fix pack 3.11.570_1620_openshift, released 31 January 2022](/docs/openshift?topic=openshift-openshift_changelog#311570_1620)
+
+    * [Changelog for master fix pack 3.11.570_1619_openshift, released 26 January 2022](/docs/openshift?topic=openshift-openshift_changelog#311570_1619)
 
     * [Changelog for worker node fix pack 3.11.570_1618_openshift, released 18 January 2022](/docs/openshift?topic=openshift-openshift_changelog#311570_1618)
 
@@ -4587,6 +4605,126 @@ subcollection: openshift
 [OpenShift Container Platform documentation](https://docs.openshift.com/){: external}
 
 [IBM Developer - Red Hat OpenShift on IBM Cloud](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/){: external}
+
+
+## VPC Gen 2 flavors
+{: #sitemap_vpc_gen_2_flavors}
+
+
+[VPC Gen 2 flavors](/docs/openshift?topic=openshift-vpc-gen2-flavors#vpc-gen2-flavors)
+
+* [au-syd-1](/docs/openshift?topic=openshift-vpc-gen2-flavors#au-syd-1)
+
+* [au-syd-2](/docs/openshift?topic=openshift-vpc-gen2-flavors#au-syd-2)
+
+* [au-syd-3](/docs/openshift?topic=openshift-vpc-gen2-flavors#au-syd-3)
+
+* [eu-de-1](/docs/openshift?topic=openshift-vpc-gen2-flavors#eu-de-1)
+
+* [eu-de-2](/docs/openshift?topic=openshift-vpc-gen2-flavors#eu-de-2)
+
+* [eu-de-3](/docs/openshift?topic=openshift-vpc-gen2-flavors#eu-de-3)
+
+* [eu-gb-1](/docs/openshift?topic=openshift-vpc-gen2-flavors#eu-gb-1)
+
+* [eu-gb-2](/docs/openshift?topic=openshift-vpc-gen2-flavors#eu-gb-2)
+
+* [eu-gb-3](/docs/openshift?topic=openshift-vpc-gen2-flavors#eu-gb-3)
+
+* [jp-tok-1](/docs/openshift?topic=openshift-vpc-gen2-flavors#jp-tok-1)
+
+* [jp-tok-2](/docs/openshift?topic=openshift-vpc-gen2-flavors#jp-tok-2)
+
+* [jp-tok-3](/docs/openshift?topic=openshift-vpc-gen2-flavors#jp-tok-3)
+
+* [us-east-1](/docs/openshift?topic=openshift-vpc-gen2-flavors#us-east-1)
+
+* [us-east-2](/docs/openshift?topic=openshift-vpc-gen2-flavors#us-east-2)
+
+* [us-east-3](/docs/openshift?topic=openshift-vpc-gen2-flavors#us-east-3)
+
+* [us-south-1](/docs/openshift?topic=openshift-vpc-gen2-flavors#us-south-1)
+
+* [us-south-2](/docs/openshift?topic=openshift-vpc-gen2-flavors#us-south-2)
+
+* [us-south-3](/docs/openshift?topic=openshift-vpc-gen2-flavors#us-south-3)
+
+
+## Classic flavors
+{: #sitemap_classic_flavors}
+
+
+[Classic flavors](/docs/openshift?topic=openshift-classic-flavors#classic-flavors)
+
+* [ams03](/docs/openshift?topic=openshift-classic-flavors#ams03)
+
+* [che01](/docs/openshift?topic=openshift-classic-flavors#che01)
+
+* [dal10](/docs/openshift?topic=openshift-classic-flavors#dal10)
+
+* [dal12](/docs/openshift?topic=openshift-classic-flavors#dal12)
+
+* [dal13](/docs/openshift?topic=openshift-classic-flavors#dal13)
+
+* [fra02](/docs/openshift?topic=openshift-classic-flavors#fra02)
+
+* [fra04](/docs/openshift?topic=openshift-classic-flavors#fra04)
+
+* [fra05](/docs/openshift?topic=openshift-classic-flavors#fra05)
+
+* [hkg02](/docs/openshift?topic=openshift-classic-flavors#hkg02)
+
+* [lon02](/docs/openshift?topic=openshift-classic-flavors#lon02)
+
+* [lon04](/docs/openshift?topic=openshift-classic-flavors#lon04)
+
+* [lon05](/docs/openshift?topic=openshift-classic-flavors#lon05)
+
+* [lon06](/docs/openshift?topic=openshift-classic-flavors#lon06)
+
+* [mex01](/docs/openshift?topic=openshift-classic-flavors#mex01)
+
+* [mil01](/docs/openshift?topic=openshift-classic-flavors#mil01)
+
+* [mon01](/docs/openshift?topic=openshift-classic-flavors#mon01)
+
+* [osa21](/docs/openshift?topic=openshift-classic-flavors#osa21)
+
+* [osa22](/docs/openshift?topic=openshift-classic-flavors#osa22)
+
+* [osa23](/docs/openshift?topic=openshift-classic-flavors#osa23)
+
+* [par01](/docs/openshift?topic=openshift-classic-flavors#par01)
+
+* [sao01](/docs/openshift?topic=openshift-classic-flavors#sao01)
+
+* [seo01](/docs/openshift?topic=openshift-classic-flavors#seo01)
+
+* [sjc03](/docs/openshift?topic=openshift-classic-flavors#sjc03)
+
+* [sjc04](/docs/openshift?topic=openshift-classic-flavors#sjc04)
+
+* [sng01](/docs/openshift?topic=openshift-classic-flavors#sng01)
+
+* [syd01](/docs/openshift?topic=openshift-classic-flavors#syd01)
+
+* [syd04](/docs/openshift?topic=openshift-classic-flavors#syd04)
+
+* [syd05](/docs/openshift?topic=openshift-classic-flavors#syd05)
+
+* [tok02](/docs/openshift?topic=openshift-classic-flavors#tok02)
+
+* [tok04](/docs/openshift?topic=openshift-classic-flavors#tok04)
+
+* [tok05](/docs/openshift?topic=openshift-classic-flavors#tok05)
+
+* [tor01](/docs/openshift?topic=openshift-classic-flavors#tor01)
+
+* [wdc04](/docs/openshift?topic=openshift-classic-flavors#wdc04)
+
+* [wdc06](/docs/openshift?topic=openshift-classic-flavors#wdc06)
+
+* [wdc07](/docs/openshift?topic=openshift-classic-flavors#wdc07)
 
 
 ## FAQs

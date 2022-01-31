@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-31"
 
 keywords: openshift
 
@@ -17,6 +17,8 @@ content-type: troubleshoot
 
 # Debugging worker nodes with Kubernetes API
 {: #debug-kube-nodes}
+{: support}
+
 
 If you have access to the cluster, you can debug the worker nodes by using the Kubernetes API on the `Node` resource.
 {: shortdesc}
