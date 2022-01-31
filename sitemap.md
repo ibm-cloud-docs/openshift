@@ -186,8 +186,6 @@ subcollection: openshift
 
     * [31 January 2022](/docs/openshift?topic=openshift-iks-release#31jan2022)
 
-    * [29 January 2022](/docs/openshift?topic=openshift-iks-release#29jan2022)
-
     * [28 January 2022](/docs/openshift?topic=openshift-iks-release#28jan2022)
 
     * [27 January 2022](/docs/openshift?topic=openshift-iks-release#27jan2022)
