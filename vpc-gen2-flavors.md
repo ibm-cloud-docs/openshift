@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-01-31"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -47,7 +47,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.4x32 | 32GB | 8Gbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
-{: caption="Table 1. Cluster flavors for au-syd-1" caption-side="bottom"}
+{: caption="Table 1. Worker node flavors for au-syd-1" caption-side="bottom"}
 
 
 ## au-syd-2
@@ -75,7 +75,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.4x32 | 32GB | 8Gbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
-{: caption="Table 2. Cluster flavors for au-syd-2" caption-side="bottom"}
+{: caption="Table 2. Worker node flavors for au-syd-2" caption-side="bottom"}
 
 
 ## au-syd-3
@@ -103,7 +103,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.4x32 | 32GB | 8Gbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
-{: caption="Table 3. Cluster flavors for au-syd-3" caption-side="bottom"}
+{: caption="Table 3. Worker node flavors for au-syd-3" caption-side="bottom"}
 
 
 ## eu-de-1
@@ -131,7 +131,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.4x32 | 32GB | 8Gbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
-{: caption="Table 4. Cluster flavors for eu-de-1" caption-side="bottom"}
+{: caption="Table 4. Worker node flavors for eu-de-1" caption-side="bottom"}
 
 
 ## eu-de-2
@@ -159,7 +159,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.4x32 | 32GB | 8Gbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
-{: caption="Table 5. Cluster flavors for eu-de-2" caption-side="bottom"}
+{: caption="Table 5. Worker node flavors for eu-de-2" caption-side="bottom"}
 
 
 ## eu-de-3
@@ -187,7 +187,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.4x32 | 32GB | 8Gbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
-{: caption="Table 6. Cluster flavors for eu-de-3" caption-side="bottom"}
+{: caption="Table 6. Worker node flavors for eu-de-3" caption-side="bottom"}
 
 
 ## eu-gb-1
@@ -215,7 +215,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.4x32 | 32GB | 8Gbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
-{: caption="Table 7. Cluster flavors for eu-gb-1" caption-side="bottom"}
+{: caption="Table 7. Worker node flavors for eu-gb-1" caption-side="bottom"}
 
 
 ## eu-gb-2
@@ -243,7 +243,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.4x32 | 32GB | 8Gbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
-{: caption="Table 8. Cluster flavors for eu-gb-2" caption-side="bottom"}
+{: caption="Table 8. Worker node flavors for eu-gb-2" caption-side="bottom"}
 
 
 ## eu-gb-3
@@ -271,7 +271,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.4x32 | 32GB | 8Gbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
-{: caption="Table 9. Cluster flavors for eu-gb-3" caption-side="bottom"}
+{: caption="Table 9. Worker node flavors for eu-gb-3" caption-side="bottom"}
 
 
 ## jp-tok-1
@@ -299,7 +299,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.4x32 | 32GB | 8Gbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
-{: caption="Table 10. Cluster flavors for jp-tok-1" caption-side="bottom"}
+{: caption="Table 10. Worker node flavors for jp-tok-1" caption-side="bottom"}
 
 
 ## jp-tok-2
@@ -327,7 +327,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.4x32 | 32GB | 8Gbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
-{: caption="Table 11. Cluster flavors for jp-tok-2" caption-side="bottom"}
+{: caption="Table 11. Worker node flavors for jp-tok-2" caption-side="bottom"}
 
 
 ## jp-tok-3
@@ -355,7 +355,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.4x32 | 32GB | 8Gbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
-{: caption="Table 12. Cluster flavors for jp-tok-3" caption-side="bottom"}
+{: caption="Table 12. Worker node flavors for jp-tok-3" caption-side="bottom"}
 
 
 ## us-east-1
@@ -383,7 +383,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.4x32 | 32GB | 8Gbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
-{: caption="Table 13. Cluster flavors for us-east-1" caption-side="bottom"}
+{: caption="Table 13. Worker node flavors for us-east-1" caption-side="bottom"}
 
 
 ## us-east-2
@@ -411,7 +411,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.4x32 | 32GB | 8Gbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
-{: caption="Table 14. Cluster flavors for us-east-2" caption-side="bottom"}
+{: caption="Table 14. Worker node flavors for us-east-2" caption-side="bottom"}
 
 
 ## us-east-3
@@ -439,7 +439,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.4x32 | 32GB | 8Gbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
-{: caption="Table 15. Cluster flavors for us-east-3" caption-side="bottom"}
+{: caption="Table 15. Worker node flavors for us-east-3" caption-side="bottom"}
 
 
 ## us-south-1
@@ -467,7 +467,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.4x32 | 32GB | 8Gbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
-{: caption="Table 16. Cluster flavors for us-south-1" caption-side="bottom"}
+{: caption="Table 16. Worker node flavors for us-south-1" caption-side="bottom"}
 
 
 ## us-south-2
@@ -495,7 +495,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.4x32 | 32GB | 8Gbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
-{: caption="Table 17. Cluster flavors for us-south-2" caption-side="bottom"}
+{: caption="Table 17. Worker node flavors for us-south-2" caption-side="bottom"}
 
 
 ## us-south-3
@@ -523,6 +523,6 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.4x32 | 32GB | 8Gbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
-{: caption="Table 18. Cluster flavors for us-south-3" caption-side="bottom"}
+{: caption="Table 18. Worker node flavors for us-south-3" caption-side="bottom"}
 
 

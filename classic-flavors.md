@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-01-31"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -50,7 +50,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 1. Cluster flavors for ams03" caption-side="bottom"}
+{: caption="Table 1. Worker node flavors for ams03" caption-side="bottom"}
 
 
 ## che01
@@ -81,7 +81,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 2. Cluster flavors for che01" caption-side="bottom"}
+{: caption="Table 2. Worker node flavors for che01" caption-side="bottom"}
 
 
 ## dal10
@@ -118,7 +118,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 3. Cluster flavors for dal10" caption-side="bottom"}
+{: caption="Table 3. Worker node flavors for dal10" caption-side="bottom"}
 
 
 ## dal12
@@ -155,7 +155,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 4. Cluster flavors for dal12" caption-side="bottom"}
+{: caption="Table 4. Worker node flavors for dal12" caption-side="bottom"}
 
 
 ## dal13
@@ -192,7 +192,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 5. Cluster flavors for dal13" caption-side="bottom"}
+{: caption="Table 5. Worker node flavors for dal13" caption-side="bottom"}
 
 
 ## fra02
@@ -226,7 +226,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 6. Cluster flavors for fra02" caption-side="bottom"}
+{: caption="Table 6. Worker node flavors for fra02" caption-side="bottom"}
 
 
 ## fra04
@@ -260,7 +260,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 7. Cluster flavors for fra04" caption-side="bottom"}
+{: caption="Table 7. Worker node flavors for fra04" caption-side="bottom"}
 
 
 ## fra05
@@ -294,7 +294,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 8. Cluster flavors for fra05" caption-side="bottom"}
+{: caption="Table 8. Worker node flavors for fra05" caption-side="bottom"}
 
 
 ## hkg02
@@ -324,7 +324,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 9. Cluster flavors for hkg02" caption-side="bottom"}
+{: caption="Table 9. Worker node flavors for hkg02" caption-side="bottom"}
 
 
 ## lon02
@@ -358,7 +358,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 10. Cluster flavors for lon02" caption-side="bottom"}
+{: caption="Table 10. Worker node flavors for lon02" caption-side="bottom"}
 
 
 ## lon04
@@ -392,7 +392,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 11. Cluster flavors for lon04" caption-side="bottom"}
+{: caption="Table 11. Worker node flavors for lon04" caption-side="bottom"}
 
 
 ## lon05
@@ -426,7 +426,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 12. Cluster flavors for lon05" caption-side="bottom"}
+{: caption="Table 12. Worker node flavors for lon05" caption-side="bottom"}
 
 
 ## lon06
@@ -460,7 +460,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 13. Cluster flavors for lon06" caption-side="bottom"}
+{: caption="Table 13. Worker node flavors for lon06" caption-side="bottom"}
 
 
 
@@ -493,7 +493,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 14. Cluster flavors for mex01" caption-side="bottom"}
+{: caption="Table 14. Worker node flavors for mex01" caption-side="bottom"}
 
 
 ## mil01
@@ -524,7 +524,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 15. Cluster flavors for mil01" caption-side="bottom"}
+{: caption="Table 15. Worker node flavors for mil01" caption-side="bottom"}
 
 
 ## mon01
@@ -555,7 +555,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 16. Cluster flavors for mon01" caption-side="bottom"}
+{: caption="Table 16. Worker node flavors for mon01" caption-side="bottom"}
 
 
 ## osa21
@@ -592,7 +592,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 17. Cluster flavors for osa21" caption-side="bottom"}
+{: caption="Table 17. Worker node flavors for osa21" caption-side="bottom"}
 
 
 ## osa22
@@ -629,7 +629,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 18. Cluster flavors for osa22" caption-side="bottom"}
+{: caption="Table 18. Worker node flavors for osa22" caption-side="bottom"}
 
 
 ## osa23
@@ -666,7 +666,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 19. Cluster flavors for osa23" caption-side="bottom"}
+{: caption="Table 19. Worker node flavors for osa23" caption-side="bottom"}
 
 
 
@@ -702,7 +702,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 20. Cluster flavors for par01" caption-side="bottom"}
+{: caption="Table 20. Worker node flavors for par01" caption-side="bottom"}
 
 
 ## sao01
@@ -718,7 +718,7 @@ Review the classic worker node flavors by zone.
 | b3c.8x32 | 32GB | 1000Mbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
 | m3c.4x32 | 32GB | 1000Mbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 21. Cluster flavors for sao01" caption-side="bottom"}
+{: caption="Table 21. Worker node flavors for sao01" caption-side="bottom"}
 
 
 ## seo01
@@ -749,7 +749,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 22. Cluster flavors for seo01" caption-side="bottom"}
+{: caption="Table 22. Worker node flavors for seo01" caption-side="bottom"}
 
 
 ## sjc03
@@ -769,7 +769,7 @@ Review the classic worker node flavors by zone.
 | c3c.32x64 | 64GB | 1000Mbps | 32 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
 | m3c.4x32 | 32GB | 1000Mbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 23. Cluster flavors for sjc03" caption-side="bottom"}
+{: caption="Table 23. Worker node flavors for sjc03" caption-side="bottom"}
 
 
 ## sjc04
@@ -800,7 +800,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 24. Cluster flavors for sjc04" caption-side="bottom"}
+{: caption="Table 24. Worker node flavors for sjc04" caption-side="bottom"}
 
 
 ## sng01
@@ -816,7 +816,7 @@ Review the classic worker node flavors by zone.
 | c3c.16x32 | 32GB | 1000Mbps | 16 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
 | m3c.4x32 | 32GB | 1000Mbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 25. Cluster flavors for sng01" caption-side="bottom"}
+{: caption="Table 25. Worker node flavors for sng01" caption-side="bottom"}
 
 
 ## syd01
@@ -850,7 +850,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 26. Cluster flavors for syd01" caption-side="bottom"}
+{: caption="Table 26. Worker node flavors for syd01" caption-side="bottom"}
 
 
 ## syd04
@@ -884,7 +884,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 27. Cluster flavors for syd04" caption-side="bottom"}
+{: caption="Table 27. Worker node flavors for syd04" caption-side="bottom"}
 
 
 ## syd05
@@ -918,7 +918,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 28. Cluster flavors for syd05" caption-side="bottom"}
+{: caption="Table 28. Worker node flavors for syd05" caption-side="bottom"}
 
 
 ## tok02
@@ -952,7 +952,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 29. Cluster flavors for tok02" caption-side="bottom"}
+{: caption="Table 29. Worker node flavors for tok02" caption-side="bottom"}
 
 
 ## tok04
@@ -986,7 +986,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 30. Cluster flavors for tok04" caption-side="bottom"}
+{: caption="Table 30. Worker node flavors for tok04" caption-side="bottom"}
 
 
 ## tok05
@@ -1020,7 +1020,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 31. Cluster flavors for tok05" caption-side="bottom"}
+{: caption="Table 31. Worker node flavors for tok05" caption-side="bottom"}
 
 
 ## tor01
@@ -1054,7 +1054,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 32. Cluster flavors for tor01" caption-side="bottom"}
+{: caption="Table 32. Worker node flavors for tor01" caption-side="bottom"}
 
 
 ## wdc04
@@ -1088,7 +1088,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 33. Cluster flavors for wdc04" caption-side="bottom"}
+{: caption="Table 33. Worker node flavors for wdc04" caption-side="bottom"}
 
 
 ## wdc06
@@ -1122,7 +1122,7 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 34. Cluster flavors for wdc06" caption-side="bottom"}
+{: caption="Table 34. Worker node flavors for wdc06" caption-side="bottom"}
 
 
 ## wdc07
@@ -1156,6 +1156,6 @@ Review the classic worker node flavors by zone.
 | me4c.4x32.1.9tb.ssd | 32GB | 10000Mbps | 4 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | UBUNTU_18_64 | physical |  Count: 1, Size: 2000, Device type: HDD, RAID configuration: none | Count: 1, Size: 2000, Device type: HDD, RAID configuration: none |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 25, Device type: SSD, RAID configuration: none |
-{: caption="Table 35. Cluster flavors for wdc07" caption-side="bottom"}
+{: caption="Table 35. Worker node flavors for wdc07" caption-side="bottom"}
 
 
