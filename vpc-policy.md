@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-31"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -52,6 +52,9 @@ VPC Load Balancer also supports security groups. For more information, see [Inte
 
 Although you can use either VPC ACLs or VPC security groups to control inbound traffic to and outbound traffic from your cluster, security groups are easier to implement. You can simplify your security setup by adding rules to only the default security group for your cluster, and leaving the default ACL for your VPC as-is.
 {: shortdesc}
+
+To simplify your VPC security setup, leave your default ACL for the VPC as-is. If you configure rules in both ACLs for your subnets and in the default security group for your worker nodes, you might inadvertently block the subnets and ports that are required for necessary traffic to reach your cluster.
+{: tip}
 
 Review the following advantages of security groups over ACLs:
 - As opposed to ACLs, security group rules are stateful. When you create a rule to allow traffic in one direction, reverse traffic in response to allowed traffic is automatically permitted without the need for another rule. Fewer rules are required to set up your security group than to set up an ACL.
@@ -108,7 +111,7 @@ Use the {{site.data.keyword.cloud_notm}} console to add inbound and outbound rul
     3. Click **Save**.
     4. If you require VPC VPN access or classic infrastructure access into this cluster, repeat these steps to add a rule that uses the **UDP** protocol, `30000` for the **Port min**, `32767` for the **Port max**, and the **Any** source type.
 4. To create new rules to control inbound traffic to your worker nodes, in the **Inbound rules** section, click **Create**. Keep in mind that in addition to any rules that you create, the rules in the following table are required to allow necessary inbound traffic to your cluster.
-    | Rule purpose | Protocol | Port or Value | Source type |
+    | Rule purpose | Protocol | Port or Value | Type |
     | --- | --- | --- | --- |
     | Allow all worker nodes in this cluster to communicate with each other. | ALL | - | Security group `<SG_name>` |
     | Allow incoming ICMP packets (pings). | ICMP | Type `8` | Any |
@@ -116,6 +119,7 @@ Use the {{site.data.keyword.cloud_notm}} console to add inbound and outbound rul
     | {{site.data.keyword.openshiftshort}} version < 4.5: If you require VPC VPN access or classic infrastructure access into this cluster, allow incoming traffic requests to apps that run on your worker nodes. | UDP | `30000` - `32767` | Any |
     | `*` For Classic clusters, allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. For VPC clusters, if you use your own security group to the LBaaS for Ingress, set port 80 to allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses. | TCP | `80` | Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. |
     {: caption="Table 2. Required inbound rules" caption-side="top"}
+    {: summary="The table shows required inbound connectivity rules for your VPC security group. Rows are read from the left to right, with the purpose of the rule in column one, the protocol in column two, the required ports or values for the protocol in column in three, and the source type and a brief description of the service in column two."}
 
     `*` Alternatively, to allow the inbound traffic for router health checks, you can create a single rule to allow all incoming traffic on port 80.
 5. To create new rules to control outbound traffic to your worker nodes, in the **Outbound rules** section, delete the default rule that allows all outbound traffic.
@@ -125,10 +129,11 @@ Use the {{site.data.keyword.cloud_notm}} console to add inbound and outbound rul
     | Allow worker nodes to be created in your cluster. | ALL | - | CIDR block `161.26.0.0/16` |
     | Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint. | ALL | - | CIDR block `166.8.0.0/14` |
     | Allow all worker nodes in this cluster to communicate with each other. | ALL | - | Security group `<SG_name>` |
+    | Allow outbound traffic to be sent to the Virtual private endpoint gateway which is used to talk to the Kubernetes master. | ALL | - | Virtual private endpoint gateway IP addresses. The Virtual private endpoint gateway is assigned an IP address from a VPC subnet in each of the zones where your cluster has a worker node. For example, if the cluster spans 3 zones, there will be up to 3 IP addresses assigned to each Virtual private endpoint gateway. To find the Virtual private endpoint gateway IPs:  \n 1. Go to the [Virtual private cloud dashboard](https://cloud.ibm.com/vpc-ext/network/vpcs){: external}.  \n 2. Click **Virtual private endpoint gateways**, then select the **Region** where you cluster is located.  \n 3. Find your cluster, then click the IP addresses in the **IP Address** column to copy them. |
     {: caption="Table 2. Required outbound rules" caption-side="top"}
+    {: summary="The table shows required outbound connectivity rules for your VPC security group. Rows are read from the left to right, with the purpose of the rule in column one, the protocol in column two, the required ports or values for the protocol in column in three, and the source type and a brief description of the service in column two."}
 
-To simplify your VPC security setup, leave your default ACL for the VPC as-is. If you configure rules in both ACLs for your subnets and in the default security group for your worker nodes, you might inadvertently block the subnets and ports that are required for necessary traffic to reach your cluster.
-{: tip}
+
 
 ### Creating security group rules with the CLI
 {: #security_groups_cli}
@@ -212,6 +217,7 @@ To create rules in your default security group:
     | {{site.data.keyword.openshiftshort}} version < 4.5: If you require VPC VPN access or classic infrastructure access into this cluster, allow incoming traffic requests to apps that run on your worker nodes. | UDP | `3000` - `32767` | Any |
     | `*` Allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. | TCP | `80` | Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. |
     {: caption="Table 3. Required inbound rules" caption-side="top"}
+    {: summary="The table shows required inbound connectivity rules for your VPC security group. Rows are read from the left to right, with the purpose of the rule in column one, the protocol in column two, the required ports or values for the protocol in column in three, and the source type and a brief description of the service in column two."}
     
     `*` Alternatively, to allow the inbound traffic for router health checks, you can create a single rule to allow all incoming traffic on port 80.
 
@@ -254,7 +260,9 @@ To create rules in your default security group:
     | Allow worker nodes to be created in your cluster. | ALL | - | CIDR block `161.26.0.0/16` |
     | Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint. | ALL | - | CIDR block `166.8.0.0/14` |
     | Allow all worker nodes in this cluster to communicate with each other. | ALL | - | Security group `kube-<cluster_ID>` |
-    {: caption="Table 3. Required outbound rules" caption-side="top"}
+    | Allow outbound traffic to be sent to the Virtual private endpoint gateway which is used to talk to the Kubernetes master. | ALL | - | Virtual private endpoint gateway IP addresses. The Virtual private endpoint gateway is assigned an IP address from a VPC subnet in each of the zones where your cluster has a worker node. For example, if the cluster spans 3 zones, there will be up to 3 IP addresses assigned to each Virtual private endpoint gateway. To find the Virtual private endpoint gateway IPs:  \n 1. Go to the [Virtual private cloud dashboard](https://cloud.ibm.com/vpc-ext/network/vpcs){: external}.  \n 2. Click **Virtual private endpoint gateways**, then select the **Region** where you cluster is located.  \n 3. Find your cluster, then click the IP addresses in the **IP Address** column to copy them. |
+    {: caption="Table 4. Required outbound rules" caption-side="top"}
+    {: summary="The table shows required outbound connectivity rules for your VPC security group. Rows are read from the left to right, with the purpose of the rule in column one, the protocol in column two, the required ports or values for the protocol in column in three, and the source type and a brief description of the service in column two."}
 
 9. Verify that your security group rules are created and that all required rules exist in your security group.
     ```sh
@@ -647,6 +655,5 @@ The `spec.podSelector.matchLabels` section lists the labels for the Srv1 back-en
 Traffic can now flow from finance microservices to the accounts Srv1 back end. The accounts Srv1 back end can respond to finance microservices, but can't establish a reverse traffic connection.
 
 In this example, all traffic from all microservices in the finance namespace is permitted. You can't allow traffic from specific app pods in another namespace because `podSelector` and `namespaceSelector` can't be combined.
-
 
 
