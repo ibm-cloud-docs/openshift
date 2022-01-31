@@ -33,8 +33,24 @@ Master patch updates are applied automatically. Worker node patch updates can be
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.8 patch updates.
 {: shortdesc}
 
-### Changelog for fix pack 4.8.26_1542_openshift, released 26 January 2022
+### Changelog for worker node fix pack 4.8.28_1543_openshift, released 31 January 2022
+{: #4828_1543}
+
+The following table shows the changes that are in the worker node fix pack `4.8.28_1543_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| RHEL 7 Packages | N/A | N/A | Updated worker node images with package updates for [CVE-2021-4034](https://nvd.nist.gov/vuln/detail/CVE-2021-4034){: external}. |
+| {{site.data.keyword.openshiftshort}} | 4.8.26 | 4.8.28 | See the {{site.data.keyword.openshiftshort}} [changelogs](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-28){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.8.26_1541_openshift" caption-side="top"}
+
+### Changelog for master fix pack 4.8.26_1542_openshift, released 26 January 2022
 {: #4826_1542}
+
+The following table shows the changes that are in the master fix pack patch update `4.8.26_1542_openshift`. Master patch updates are applied automatically. 
+{: shortdesc}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
@@ -60,6 +76,9 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.8 p
 
 ### Changelog for worker node fix pack 4.8.26_1541_openshift, released 18 January 2022
 {: #4826_1541}
+
+The following table shows the changes that are in the worker node fix pack `4.8.26_1541_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
@@ -268,8 +287,24 @@ The following table shows the changes that are in the master fix pack `4.8.11_15
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.7 patch updates.
 {: shortdesc}
 
-### Changelog for fix pack 4.7.40_1547_openshift, released 26 January 2022
+### Changelog for worker node fix pack 4.7.41_1548_openshift, released 31 January 2022
+{: #4741_1548}
+
+The following table shows the changes that are in the worker node fix pack `4.7.41_1548_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| RHEL 7 Packages | N/A | N/A | Updated worker node images with package updates for [CVE-2021-4034](https://nvd.nist.gov/vuln/detail/CVE-2021-4034){: external}. |
+| {{site.data.keyword.openshiftshort}} | 4.7.40 | 4.7.41 | See the {{site.data.keyword.openshiftshort}} [changelogs](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-41){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.7.40_1546_openshift" caption-side="top"}
+
+### Changelog for master fix pack 4.7.40_1547_openshift, released 26 January 2022
 {: #4740_1547}
+
+The following table shows the changes that are in the master fix pack patch update `4.7.40_1547_openshift`. Master patch updates are applied automatically.
+{: shortdesc}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
@@ -291,9 +326,11 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.7 p
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.37_1546_openshift" caption-side="top"}
 
-
 ### Changelog for worker node fix pack 4.7.40_1546_openshift, released 18 January 2022
 {: #4740_1546}
+
+The following table shows the changes that are in the worker node fix pack `4.7.40_1546_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
@@ -724,8 +761,23 @@ The following table shows the changes that are in the master fix pack patch upda
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.6 patch updates.
 {: shortdesc}
 
-### Changelog for fix pack 4.6.48_1570_openshift, released 26 January 2022
+### Changelog for worker node fix pack 4.6.53_1571_openshift, released 31 January 2022
+{: #4653_1571}
+
+The following table shows the changes that are in the worker node fix pack `4.6.53_1571_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| RHEL 7 Packages | N/A | N/A | Updated worker node images with package updates for [CVE-2021-4034](https://nvd.nist.gov/vuln/detail/CVE-2021-4034){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.6.53_1569_openshift" caption-side="top"}
+
+### Changelog for master fix pack 4.6.48_1570_openshift, released 26 January 2022
 {: #4648_1570}
+
+The following table shows the changes that are in the master fix pack patch update `4.6.48_1570_openshift`. Master patch updates are applied automatically. 
+{: shortdesc}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
@@ -750,6 +802,9 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.6 p
 
 ### Changelog for worker node fix pack 4.6.53_1569_openshift, released 18 January 2022
 {: #4653_1569}
+
+The following table shows the changes that are in the worker node fix pack `4.6.53_1569_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
@@ -1380,7 +1435,6 @@ The following table shows the changes that are in the version updates for the `4
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.5.24_1527_openshift (master) and 4.5.31_1529_openshift (worker node)" caption-side="top"}
 
-
 ## Deprecated: Version 3.11 changelog
 {: #version-311}
 
@@ -1390,8 +1444,23 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 3.11 
 <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported on 6 June 2022 (date subject to change).
 {: deprecated}
 
-### Changelog for fix pack 3.11.570_1619_openshift, released 26 January 2022
+### Changelog for worker node fix pack 3.11.570_1620_openshift, released 31 January 2022
+{: #311570_1620}
+
+The following table shows the changes that are in the worker node fix pack `3.11.570_1620_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| RHEL 7 Packages | N/A | N/A | Updated worker node images with package updates for [CVE-2021-4034](https://nvd.nist.gov/vuln/detail/CVE-2021-4034){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.570_1618_openshift" caption-side="top"}
+
+### Changelog for master fix pack 3.11.570_1619_openshift, released 26 January 2022
 {: #311570_1619}
+
+The following table shows the changes that are in the master fix pack patch update `3.11.570_1619_openshift`. Master patch updates are applied automatically. 
+{: shortdesc}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
@@ -1409,12 +1478,14 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 3.11 
 ### Changelog for worker node fix pack 3.11.570_1618_openshift, released 18 January 2022
 {: #311570_1618}
 
+The following table shows the changes that are in the worker node fix pack `3.11.570_1618_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | RHEL 7 Packages | 3.10.0-1160.49.1.el7 | 3.10.0-1160.53.1.el7 | Kernel and package updates for [CVE-2020-25704](https://nvd.nist.gov/vuln/detail/CVE-2020-25704){: external}, [CVE-2020-36322](https://nvd.nist.gov/vuln/detail/CVE-2020-36322){: external}, [CVE-2021-42739](https://nvd.nist.gov/vuln/detail/CVE-2021-42739){: external}, [CVE-2021-3712](https://nvd.nist.gov/vuln/detail/CVE-2021-3712){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.570_1617_openshift" caption-side="top"}
-
 
 ### Changelog for worker node fix pack 3.11.570_1617_openshift, released 4 January 2022
 {: #311570_1617}
@@ -1454,8 +1525,6 @@ The following table shows the changes that are in the master fix pack patch upda
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 401 | 402 | Updated universal base image (UBI) to the `8.5-204` version to resolve CVEs. Updated to use `Go` version `1.16.10`. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.542_1611_openshift" caption-side="top"}
-
-
 
 ### Changelog for worker node fix pack 3.11.542_1615_openshift, released 6 December 2021
 {: #311542_1615_openshift}

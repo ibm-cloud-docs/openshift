@@ -28,6 +28,21 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## January 2022
 {: #release-jan-2022}
 
+### 31 January 2022
+{: #31jan2022}
+{: release-note}
+
+Version changelog
+:   Fix pack update.
+
+
+:   {{site.data.keyword.openshiftshort}} [4.8.28_1543_openshift](/docs/openshift?topic=openshift-openshift_changelog#4828_1543), [4.7.41_1548_openshift](/docs/openshift?topic=openshift-openshift_changelog#4741_1548), [4.6.53_1571_openshift](/docs/openshift?topic=openshift-openshift_changelog#4653_1571), [3.11.570_1620_openshift](/docs/openshift?topic=openshift-openshift_changelog#311570_1620).
+
+**New!** Worker node flavor reference
+:   View a list of all available worker node flavors by zone. For more information, see [VPC Gen 2 flavors](/docs/containers?topic=containers-classic-flavors) or [Classic flavors](/docs/containers?topic=containers-vpc-gen2-flavors).
+
+
+
 ### 29 January 2022
 {: #29jan2022}
 {: release-note}
