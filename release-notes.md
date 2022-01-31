@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-01-31"
 
 keywords: openshift
 
@@ -27,6 +27,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #release-jan-2022}
 
 
+
+### 29 January 2022
+{: #29jan2022}
+{: release-note}
+
+Version changelog
+:   Fix pack update.
+
+
+:   {{site.data.keyword.openshiftshort}} [4.8.26_1542_openshift](/docs/openshift?topic=openshift-openshift_changelog#4826_1542), [4.7.40_1547_openshift](/docs/openshift?topic=openshift-openshift_changelog#4740_1547), [4.6.40_1570_openshift](/docs/openshift?topic=openshift-openshift_changelog#4648_1570), [3.11.570_1619_openshift](/docs/openshift?topic=openshift-openshift_changelog#311570_1610).
 
 
 
