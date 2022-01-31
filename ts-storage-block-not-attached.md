@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-31"
 
 keywords: block, debug, help
 
@@ -17,6 +17,7 @@ content-type: troubleshoot
 
 # Why do I get a `Volume not attached` error when trying to expand a {{site.data.keyword.block_storage_is_short}} volume?
 {: #block_not_attached_vpc}
+{: support}
 
 **Infrastructure provider**:
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC

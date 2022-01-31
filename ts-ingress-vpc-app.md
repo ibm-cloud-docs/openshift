@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-31"
 
 keywords: openshift
 
@@ -17,6 +17,7 @@ content-type: troubleshoot
 
 # VPC clusters: Why can't my app connect via Ingress?
 {: #vpc_ts_alb}
+{: support}
 
 **Infrastructure provider**:
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC

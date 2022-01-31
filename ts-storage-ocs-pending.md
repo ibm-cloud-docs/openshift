@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-01-27"
+lastupdated: "2022-01-31"
 
 keywords: openshift, storage
 
@@ -17,6 +17,7 @@ content-type: troubleshoot
 
 # Why are the ODF pods stuck at `Pending`?
 {: #ts-ocs-pods-pending-status}
+{: support}
 
 
 When you list pods in the `openshift-storage` namespace with the `oc get pods -n openshift-storage` command, the ODF pods are stuck at `Pending`.

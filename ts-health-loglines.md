@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-31"
 
 keywords: openshift
 
@@ -17,6 +17,7 @@ content-type: troubleshoot
 
 # Why are my log lines so long?
 {: #long_lines}
+{: support}
 
 **Infrastructure provider**:
 * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic

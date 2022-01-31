@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-27"
+lastupdated: "2022-01-31"
 
 keywords: openshift
 
@@ -17,6 +17,7 @@ content-type: troubleshoot
 
 # Gathering Ingress logs
 {: #ingress-must-gather}
+{: support}
 
 Run the following commands to gather the required logs for debugging Ingress.
 {: shortdesc}

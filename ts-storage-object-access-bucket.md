@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-31"
 
 keywords: openshift
 
@@ -18,6 +18,7 @@ content-type: troubleshoot
 
 # Why can't my PVC access an existing bucket?
 {: #cos_access_bucket_fails}
+{: support}
 
 **Infrastructure provider**:
 * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic

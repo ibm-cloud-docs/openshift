@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-31"
 
 keywords: openshift
 
@@ -17,6 +17,7 @@ content-type: troubleshoot
 
 # Debugging app deployments
 {: #debug_apps}
+{: support}
 
 Review the options that you have to debug your app deployments and find the root causes for failures.
 {: shortdesc}

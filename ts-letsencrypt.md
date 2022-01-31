@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-31"
 
 keywords: openshift
 
@@ -16,6 +16,7 @@ content-type: troubleshoot
 
 # Why do OpenSSL connections to Let's Encrypt fail after 30 September 2021?
 {: #ts-letsencrypt}
+{: support}
 
 You experience connectivity issues with OpenSSL versions prior to 1.1 against websites with the default Let's Encrypt configuration.
 {: shortdesc}

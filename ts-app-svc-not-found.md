@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-31"
 
 keywords: openshift
 
@@ -17,6 +17,7 @@ content-type: troubleshoot
 
 # Why does binding a service to a cluster results in service not found error?
 {: #ts-app-svc-bind-not-found}
+{: support}
 
 **Infrastructure provider**:
 * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic

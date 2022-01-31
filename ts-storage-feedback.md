@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-31"
 
 keywords: openshift
 
@@ -17,6 +17,7 @@ content-type: troubleshoot
 
 # Storage: Feedback, questions, and support
 {: #getting_help_storage}
+{: support}
 
 If you still experience issues with persistent storage in your cluster, review the following options to receive further support or ask questions.
 - For issues with {{site.data.keyword.cloud_notm}} File, Block, or Object Storage, see [Getting help](/docs/containers?topic=containers-get-help) to find information about how to contact the IBM team on Slack or open an {{site.data.keyword.cloud_notm}} support case.

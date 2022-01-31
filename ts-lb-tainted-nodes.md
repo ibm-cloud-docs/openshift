@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-31"
 
 keywords: openshift
 
@@ -17,6 +17,7 @@ content-type: troubleshoot
 
 # Classic clusters: Why does source IP preservation fail when using tainted nodes?
 {: #cs_source_ip_fails_lb}
+{: support}
 
 **Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 

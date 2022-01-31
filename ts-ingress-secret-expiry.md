@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-01-31"
 
 keywords: openshift
 
@@ -17,6 +17,7 @@ content-type: troubleshoot
 
 # Why isn't the Ingress secret expiration date updated?
 {: #sync_cert_dates}
+{: support}
 
 **Infrastructure provider**:
 * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic

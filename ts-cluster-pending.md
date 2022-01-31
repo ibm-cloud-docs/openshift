@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-31"
 
 keywords: openshift
 
@@ -17,6 +17,7 @@ content-type: troubleshoot
 
 # Why does my cluster stay in a pending state?
 {: #cs_cluster_pending}
+{: support}
 
 **Infrastructure provider**:
 * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic

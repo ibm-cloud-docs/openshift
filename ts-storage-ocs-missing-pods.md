@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-01-27"
+lastupdated: "2022-01-31"
 
 keywords: openshift, storage
 
@@ -17,6 +17,7 @@ content-type: troubleshoot
 
 # Why are no pods listed in the `openshift-storage` namespace?
 {: #ts-ocs-no-pods}
+{: support}
 
 
 There are no pods listed when you run the `oc get pods -n openshift-storage` command. When you view the `ibm-ocs-operator-controller-manager` logs with the `oc logs <ibm-ocs-operator-controller-manager-a1a1a1a> -n kube-system` command, you see the following error message:

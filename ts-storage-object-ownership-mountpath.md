@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-31"
 
 keywords: openshift
 
@@ -18,6 +18,7 @@ content-type: troubleshoot
 
 # Why can't the ownership of the mount path be changed?
 {: #cos_mountpath_error}
+{: support}
 
 **Infrastructure provider**:
 * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic

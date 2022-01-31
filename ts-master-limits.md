@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-31"
 
 keywords: openshift, roks, rhoks, rhos, limits
 
@@ -17,6 +17,7 @@ content-type: troubleshoot
 
 # Why does my cluster master status say it is approaching its resource limit?
 {: #master_resource_limit}
+{: support}
 
 **Infrastructure provider**:
 * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-31"
 
 keywords: openshift
 
@@ -16,6 +16,7 @@ content-type: troubleshoot
 # Why can't I push images to the internal registry from outside the VPC network?
 {: #ts-app-ocr-vpc-push}
 {: troubleshoot}
+{: support}
 
 **Infrastructure provider and applicable versions**:
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC

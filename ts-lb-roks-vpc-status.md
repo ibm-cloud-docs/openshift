@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-31"
 
 keywords: openshift
 
@@ -15,6 +15,7 @@ content-type: troubleshoot
 
 # VPC clusters: Why do I see VPC load balancer health status failures?
 {: #vpc_lb_healthcheck}
+{: support}
 
 **Supported infrastructure provider and versions**:
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
