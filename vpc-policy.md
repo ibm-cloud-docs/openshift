@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-02-01"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 

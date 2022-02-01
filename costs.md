@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-02-01"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-24"
+lastupdated: "2022-02-01"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
