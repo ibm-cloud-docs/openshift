@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-01"
+lastupdated: "2022-02-03"
 
 keywords: openshift, ips, vlans, networking, public gateway
 
@@ -153,7 +153,7 @@ When you create VPC subnets for your clusters, keep in mind the following featur
 - VPC subnets are bound to a single zone and can't span multiple zones or regions.
 - After you create a subnet, you can't move it to a different zone, region, or VPC.
 - If you have worker nodes that are attached to an existing subnet in a zone, you can't change the subnet for that zone in the cluster.
-- The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited, if you are running Red Hat OpenShift 4.7 or earlier.
+- The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
 - Within one VPC, you can create only one public gateway per zone, but that public gateway can be attached to multiple subnets within the zone.
 - The [classic access default address prefixes](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure#classic-access-default-address-prefixes) conflict with the subnets for the {{site.data.keyword.openshiftlong_notm}} control plane. You must [create the VPC without the automatic default address prefixes, and then create your own address prefixes and subnets within those ranges for you cluster](#classic_access_subnets).
 
