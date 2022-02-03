@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-01"
+lastupdated: "2022-02-03"
 
 keywords: openshift
 
@@ -742,6 +742,119 @@ To register a VPC ALB hostname with a DNS subdomain,
 To use the TLS certificate to access your app via HTTPS, ensure that you defined an HTTPS port in your [Kubernetes `LoadBalancer` service](#setup_vpc_ks_vpc_lb). You can verify that requests are correctly routing through the HTTPS port by running `curl -v --insecure https://<domain>`. A connection error indicates that no HTTPS port is open on the service. Also, ensure that TLS connections can be terminated by your app. You can verify that your app terminates TLS properly by running `curl -v https://<domain>`. A certificate error indicates that your app is not properly terminating TLS connections.
 {: tip}
 
+## Changing load balancer subnets or zones
+{: #lbaas_change_subnets}
+
+Once you have created a VPC NLB or VPC ALB, you cannot reconfigure its subnets or zones. If you want to change the subnets or zone for an exisiting VPC load balancer, you must delete, update, and reapply the corresponding Kubernetes `LoadBalancer` service.
+{: shortdesc}
+
+1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+
+1. List your Kubernetes services and find the name of the `LoadBalancer` service you want to change.
+
+    ```sh
+    oc get services
+    ```
+    {: pre}
+
+    Example output.
+
+    ```sh
+    NAME                     TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)                        AGE
+    my-load-balancer         LoadBalancer   172.21.77.198   52.118.150.107   8080:32767/TCP,443:30943/TCP   5d
+    ```
+    {: screen}
+
+1. Find the VPC load balancer that corresponds with the Kubernetes `LoadBalancer` service.
+
+    VPC load balancer names are in the format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud ks cluster get --cluster <cluster_name>`. To see the Kubernetes LoadBalancer service UID, run `oc get svc <load-balancer-name> -o yaml` and look for the metadata.uid field in the output. The dashes (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC load balancer name.
+    {: tip}
+
+    ```sh
+    ibmcloud is load-balancers
+    ```
+    {: pre}
+
+    Example output.
+
+    ```sh
+    ID                                          Name                                                         Family        Subnets                                       Is public   Provision status   Operating status   Resource group      
+    r000-5aaaa11f6-c111-111f-b2e0-1c11aaaaf0dc0   kube-c441c43d02mb8mg00r70-3e25d0b5bf11111111fe4ca3f11111cb   Network       subnet-1                                  true        active             online             default                                                    Application      
+    ```
+    {: pre}
+
+
+1. Get the Kubernetes `LoadBalancer` service definition and save the output as a yaml file called `my-lb.yaml`.
+
+    ```sh
+    oc describe service my-load-balancer -o yaml
+    ```
+    {: pre}
+
+1. Delete the Kubernetes `LoadBalancer` service. This also deletes the corresponding VPC load balancer. 
+
+    ```sh
+    oc delete service my-load-balancer
+    ```
+    {: pre}
+
+1. Update the Kubernetes `LoadBalancer` service definition file with the subnet or zone changes you want to implement. Do not change the name of the `LoadBalancer` service. For details on specifying subnets or zones for network load balancers, see [Setting up a Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb). For details on specifying subnets or zones for application load balancers, see [Setting up an Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb).
+
+1. Apply the new `LoadBalancer` definition file.
+
+    ```sh
+    oc apply -f my-lb.yaml
+    ```
+
+1. Verify that the Kubernetes `LoadBalancer` service is recreated successfully in your cluster. When the service is created, the **LoadBalancer Ingress** field is populated with either an external IP address for NLBs or a hostname for ALBs. Note that it takes a few minutes to provision the load balancer and you may see a `pending` status until it is fully provisioned.
+
+    ```sh
+    oc describe service my-load-balancer
+    ```
+    {: pre}
+
+    Example output.
+
+    ```sh
+    NAME:                     my-load-balancer
+    Namespace:                default
+    Labels:                   <none>
+    Annotations:              service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: nlb
+    Selector:                 app=echo-server
+    Type:                     LoadBalancer
+    IP:                       172.X.XXX.XX
+    LoadBalancer Ingress:     169.XXX.XXX.XXX
+    Port:                     tcp-80  80/TCP
+    TargetPort:               8080/TCP
+    NodePort:                 tcp-80  32022/TCP
+    Endpoints:                172.XX.XX.XXX:8080,172.XX.XX.XX:8080,172.XX.XX.XX:8080 + 3 more...
+    Session Affinity:         None
+    External Traffic Policy:  Local
+    HealthCheck NodePort:     30882
+    Events:
+        Type     Reason                           Age                  From                Message
+    ----     ------                           ----                 ----                -------
+    Normal   EnsuringLoadBalancer             9m27s (x7 over 15m)  service-controller  Ensuring load balancer
+    Normal   EnsuredLoadBalancer              9m20s                service-controller  Ensured load balancer
+    Normal   CloudVPCLoadBalancerNormalEvent  8m17s                ibm-cloud-provider  Event on cloud load balancer myvpcnlb for service default/my-load-balancer with UID 2d93b07d-ecf6-41d2-ad3f-9c2985122ec1: The VPC load balancer that routes requests to this Kubernetes LoadBalancer service is currently online/active.
+    ```
+    {: screen}
+
+
+1. Verify that the VPC load balancer is recreated and that the subnet or zone is updated. Note that it takes a few minutes to provision the VPC load balancer and you may see a `create_pending` status until it is fully provisioned.
+
+    ```sh
+    ibmcloud is load-balancers
+    ```
+    {: pre}
+
+    Example output.
+
+    ```sh
+    ID                                          Name                                                         Family        Subnets                                       Is public   Provision status   Operating status   Resource group     
+    r006-5ecc68f6-c751-409f-b2e0-1c69babf0dc0   kube-c441c43d02mb8mg00r70-3e25d0b5bf03445796fe4ca3f73885cb   Network       subnet-2                                  true        active             online             default  
+    ```
+    {: pre}
 
 
 ## Limitations
@@ -771,7 +884,6 @@ Review the following default settings and limitations.
 * You can register up to 128 subdomains for VPC load balancer hostnames. This limit can be lifted on request by opening a [support case](/docs/get-support?topic=get-support-using-avatar).
 * {{site.data.keyword.openshiftshort}} 4.6 or later: Subdomains that you register for VPC load balancers are limited to 130 characters or fewer.
 * VPC ALB listens on the same VPC subnets that the cluster worker nodes are allocated on unless the Kubernetes load balancer service is created with the annotation: `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets` or `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone`. If you add more zones to the cluster, the VPC ALB is not updated to listen for incoming traffic on the new zone(s). The subnets and zones of the VPC ALB can't be changed once the ALB is created. Incoming traffic can be routed to all backend worker nodes in the cluster across all zones, but the VPC subnets that the VPC ALB is listening on can not be updated. The VPC NLB is limited to the VPC subnets in a single zone. It can't be configured to listen on VPC subnets located in multiple zones.
-
 
 
 

@@ -2293,6 +2293,8 @@ subcollection: openshift
 
     * [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
 
+* [Changing load balancer subnets or zones](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_change_subnets)
+
 * [Limitations](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_limitations)
 
 [Classic: About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about#loadbalancer-about)
