@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-02-03"
 
 keywords: openshift
 
@@ -30,17 +30,17 @@ Review the feature gates that are applied to all master and worker node componen
 
 | {{site.data.keyword.openshiftshort}} version | Default feature gates |
 |---|---|
-| 4.8 | <ul><li><code>LegacyNodeRoleBehavior=false</code></li><li><code>DownwardAPIHugePages=true</code></li></ul>|
-| 4.7 | <ul><li><code>LegacyNodeRoleBehavior=false</code></li><li><code>RemoveSelfLink=false</code></li></ul>|
-| 4.6 | <ul><li><code>APIPriorityAndFairness=true</code></li><li><code>LegacyNodeRoleBehavior=false</code></li><li><code>SCTPSupport=false</code></li><li><code>ServiceAppProtocol=false</code></li></ul>|
-| 4.5 | <ul><li><code>ExperimentalCriticalPodAnnotation=true</code></li><li><code>LocalStorageCapacityIsolation=false</code></li></ul>|
-| 4.4 | <ul><li><code>ExperimentalCriticalPodAnnotation=true</code></li><li><code>LocalStorageCapacityIsolation=false</code></li></ul>|
-| 4.3 | <ul><li><code>ExperimentalCriticalPodAnnotation=true</code></li><li><code>LocalStorageCapacityIsolation=false</code></li></ul>|
-| 1.22 | <ul><li><code>ServiceLBNodePortControl=false</code></li><li><code>CustomCPUCFSQuotaPeriod=true</code></li><li><code>IPv6DualStack=false</code></li></ul>
-| 1.21 | <ul><li><code>CustomCPUCFSQuotaPeriod=true</code></li><li><code>IPv6DualStack=false</code></li></ul>|
-| 1.20 | <ul><li><code>AllowInsecureBackendProxy=false</code></li><li><code>CustomCPUCFSQuotaPeriod=true</code></li></ul>|
-| 1.19 | <ul><li><code>RuntimeClass=false</code></li><li><code>CustomCPUCFSQuotaPeriod=true</code></li><li><code>AllowInsecureBackendProxy=false</code></li><li><code>SCTPSupport=false</code></li><li><code>ServiceAppProtocol=false</code></li></ul>|
-| 1.18 | <ul><li><code>RuntimeClass=false</code></li><li><code>CustomCPUCFSQuotaPeriod=true</code></li><li><code>AllowInsecureBackendProxy=false</code></li></ul>|
+| 4.8 | - `ServiceLoadBalancerClass=true`  \n - `LegacyNodeRoleBehavior=false`  \n - `DownwardAPIHugePages=true`|
+| 4.7 | - `LegacyNodeRoleBehavior=false`  \n - `RemoveSelfLink=false`|
+| 4.6 | - `APIPriorityAndFairness=true`  \n - `LegacyNodeRoleBehavior=false`  \n - `SCTPSupport=false`  \n - `ServiceAppProtocol=false`|
+| 4.5 | - `ExperimentalCriticalPodAnnotation=true`  \n - `LocalStorageCapacityIsolation=false`|
+| 4.4 | - `ExperimentalCriticalPodAnnotation=true`  \n - `LocalStorageCapacityIsolation=false`|
+| 4.3 | - `ExperimentalCriticalPodAnnotation=true`  \n - `LocalStorageCapacityIsolation=false`|
+| 1.22 | - `ServiceLoadBalancerClass=true`  \n - ServiceLBNodePortControl=false`  \n - `CustomCPUCFSQuotaPeriod=true`  \n - `IPv6DualStack=false` |
+| 1.21 | - `CustomCPUCFSQuotaPeriod=true`  \n - `IPv6DualStack=false` |
+| 1.20 | - `AllowInsecureBackendProxy=false`  \n - `CustomCPUCFSQuotaPeriod=true`|
+| 1.19 | - `RuntimeClass=false`  \n - `CustomCPUCFSQuotaPeriod=true`  \n - `AllowInsecureBackendProxy=false`  \n - `SCTPSupport=false`  \n - `ServiceAppProtocol=false`|
+| 1.18 | - `RuntimeClass=false`  \n - `CustomCPUCFSQuotaPeriod=true`  \n - `AllowInsecureBackendProxy=false`|
 {: caption="Overview of feature gates" caption-side="top"}
 {: summary="The rows are read from left to right. The version is in the first column, with the default feature gates in the second column."}
 
@@ -51,7 +51,7 @@ Review the feature gates that are applied to all master and worker node componen
 ## Global settings
 {: #global-settings}
 
-Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many OpenShift Container Platform global settings are set up for you. You can configure somese global settings, but other global settings you can only review, and any changes are overwritten. For more information, see [Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP](/docs/openshift?topic=openshift-cs_ov#compare_ocp). You can also review the control plane components in the [{{site.data.keyword.openshiftlong_notm}} Toolkit](https://github.com/openshift/ibm-roks-toolkit){: external} project on GitHub.
+Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many OpenShift Container Platform global settings are set up for you. You can configure some global settings, but other global settings you can only review, and any changes are overwritten. For more information, see [Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP](/docs/openshift?topic=openshift-cs_ov#compare_ocp). You can also review the control plane components in the [{{site.data.keyword.openshiftlong_notm}} Toolkit](https://github.com/openshift/ibm-roks-toolkit){: external} project on GitHub.
 {: shortdesc}
 
 **Configurable global settings**:

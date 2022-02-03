@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-02-03"
 
 keywords: openshift
 subcollection: openshift
@@ -181,6 +181,8 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
+
+* [February 2022](/docs/openshift?topic=openshift-iks-release#release-feb-2022)
 
 * [January 2022](/docs/openshift?topic=openshift-iks-release#release-jan-2022)
 
@@ -2292,6 +2294,8 @@ subcollection: openshift
     * [Setting up a public or private VPC ALB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_alb_pub_priv)
 
     * [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
+
+* [Changing load balancer subnets or zones](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_change_subnets)
 
 * [Limitations](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_limitations)
 

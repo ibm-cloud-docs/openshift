@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-02-03"
 
 keywords: openshift
 
@@ -106,7 +106,7 @@ Range requirements
       - `172.21.0.0 - 172.31.255.255`
       - `192.168.0.0 - 192.168.254.255`
       - `198.18.0.0 - 198.19.255.255`
-    The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited, if you are running Red Hat OpenShift 4.7 or earlier.
+    The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
 
 #### Services
 {: #subnets_services}
@@ -123,7 +123,7 @@ Range requirements
       - `172.21.0.0 - 172.31.255.255`
       - `192.168.0.0 - 192.168.254.255`
       - `198.18.0.0 - 198.19.255.255`
-    The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited, if you are running Red Hat OpenShift 4.7 or earlier.
+    The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
 
 ### Network segmentation
 {: #basics_segmentation}
@@ -167,7 +167,7 @@ Before you begin
     ```
     {: pre}
 
-- The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` subnet ranges are prohibited, if you are running Red Hat OpenShift 4.7 or earlier.
+- The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` subnet ranges are prohibited.
 
 To create a cluster by using existing subnets:
 
