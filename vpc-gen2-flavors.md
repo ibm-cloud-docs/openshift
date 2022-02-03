@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-02-03"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -48,6 +48,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 {: caption="Table 1. Worker node flavors for au-syd-1" caption-side="bottom"}
+{: summary="Column 1 is the name of the zone. Column 2 is the memory size. Column 3 is the network speed. Column 4 is the cores. Column 5 is the operating system. Column 5 is the server type. Column 6 is the primary storage details. Column 7 is the secondary storage details."}
 
 
 ## au-syd-2
@@ -76,6 +77,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 {: caption="Table 2. Worker node flavors for au-syd-2" caption-side="bottom"}
+{: summary="Column 1 is the name of the zone. Column 2 is the memory size. Column 3 is the network speed. Column 4 is the cores. Column 5 is the operating system. Column 5 is the server type. Column 6 is the primary storage details. Column 7 is the secondary storage details."}
 
 
 ## au-syd-3
@@ -104,6 +106,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 {: caption="Table 3. Worker node flavors for au-syd-3" caption-side="bottom"}
+{: summary="Column 1 is the name of the zone. Column 2 is the memory size. Column 3 is the network speed. Column 4 is the cores. Column 5 is the operating system. Column 5 is the server type. Column 6 is the primary storage details. Column 7 is the secondary storage details."}
 
 
 ## eu-de-1
@@ -132,6 +135,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 {: caption="Table 4. Worker node flavors for eu-de-1" caption-side="bottom"}
+{: summary="Column 1 is the name of the zone. Column 2 is the memory size. Column 3 is the network speed. Column 4 is the cores. Column 5 is the operating system. Column 5 is the server type. Column 6 is the primary storage details. Column 7 is the secondary storage details."}
 
 
 ## eu-de-2
@@ -160,6 +164,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 {: caption="Table 5. Worker node flavors for eu-de-2" caption-side="bottom"}
+{: summary="Column 1 is the name of the zone. Column 2 is the memory size. Column 3 is the network speed. Column 4 is the cores. Column 5 is the operating system. Column 5 is the server type. Column 6 is the primary storage details. Column 7 is the secondary storage details."}
 
 
 ## eu-de-3
@@ -188,6 +193,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 {: caption="Table 6. Worker node flavors for eu-de-3" caption-side="bottom"}
+{: summary="Column 1 is the name of the zone. Column 2 is the memory size. Column 3 is the network speed. Column 4 is the cores. Column 5 is the operating system. Column 5 is the server type. Column 6 is the primary storage details. Column 7 is the secondary storage details."}
 
 
 ## eu-gb-1
@@ -216,6 +222,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 {: caption="Table 7. Worker node flavors for eu-gb-1" caption-side="bottom"}
+{: summary="Column 1 is the name of the zone. Column 2 is the memory size. Column 3 is the network speed. Column 4 is the cores. Column 5 is the operating system. Column 5 is the server type. Column 6 is the primary storage details. Column 7 is the secondary storage details."}
 
 
 ## eu-gb-2
@@ -244,6 +251,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 {: caption="Table 8. Worker node flavors for eu-gb-2" caption-side="bottom"}
+{: summary="Column 1 is the name of the zone. Column 2 is the memory size. Column 3 is the network speed. Column 4 is the cores. Column 5 is the operating system. Column 5 is the server type. Column 6 is the primary storage details. Column 7 is the secondary storage details."}
 
 
 ## eu-gb-3
@@ -272,6 +280,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 {: caption="Table 9. Worker node flavors for eu-gb-3" caption-side="bottom"}
+{: summary="Column 1 is the name of the zone. Column 2 is the memory size. Column 3 is the network speed. Column 4 is the cores. Column 5 is the operating system. Column 5 is the server type. Column 6 is the primary storage details. Column 7 is the secondary storage details."}
 
 
 ## jp-tok-1
@@ -300,6 +309,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 {: caption="Table 10. Worker node flavors for jp-tok-1" caption-side="bottom"}
+{: summary="Column 1 is the name of the zone. Column 2 is the memory size. Column 3 is the network speed. Column 4 is the cores. Column 5 is the operating system. Column 5 is the server type. Column 6 is the primary storage details. Column 7 is the secondary storage details."}
 
 
 ## jp-tok-2
@@ -328,6 +338,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 {: caption="Table 11. Worker node flavors for jp-tok-2" caption-side="bottom"}
+{: summary="Column 1 is the name of the zone. Column 2 is the memory size. Column 3 is the network speed. Column 4 is the cores. Column 5 is the operating system. Column 5 is the server type. Column 6 is the primary storage details. Column 7 is the secondary storage details."}
 
 
 ## jp-tok-3
@@ -356,6 +367,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 {: caption="Table 12. Worker node flavors for jp-tok-3" caption-side="bottom"}
+{: summary="Column 1 is the name of the zone. Column 2 is the memory size. Column 3 is the network speed. Column 4 is the cores. Column 5 is the operating system. Column 5 is the server type. Column 6 is the primary storage details. Column 7 is the secondary storage details."}
 
 
 ## us-east-1
@@ -384,6 +396,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 {: caption="Table 13. Worker node flavors for us-east-1" caption-side="bottom"}
+{: summary="Column 1 is the name of the zone. Column 2 is the memory size. Column 3 is the network speed. Column 4 is the cores. Column 5 is the operating system. Column 5 is the server type. Column 6 is the primary storage details. Column 7 is the secondary storage details."}
 
 
 ## us-east-2
@@ -412,6 +425,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 {: caption="Table 14. Worker node flavors for us-east-2" caption-side="bottom"}
+{: summary="Column 1 is the name of the zone. Column 2 is the memory size. Column 3 is the network speed. Column 4 is the cores. Column 5 is the operating system. Column 5 is the server type. Column 6 is the primary storage details. Column 7 is the secondary storage details."}
 
 
 ## us-east-3
@@ -440,6 +454,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 {: caption="Table 15. Worker node flavors for us-east-3" caption-side="bottom"}
+{: summary="Column 1 is the name of the zone. Column 2 is the memory size. Column 3 is the network speed. Column 4 is the cores. Column 5 is the operating system. Column 5 is the server type. Column 6 is the primary storage details. Column 7 is the secondary storage details."}
 
 
 ## us-south-1
@@ -468,6 +483,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 {: caption="Table 16. Worker node flavors for us-south-1" caption-side="bottom"}
+{: summary="Column 1 is the name of the zone. Column 2 is the memory size. Column 3 is the network speed. Column 4 is the cores. Column 5 is the operating system. Column 5 is the server type. Column 6 is the primary storage details. Column 7 is the secondary storage details."}
 
 
 ## us-south-2
@@ -496,6 +512,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 {: caption="Table 17. Worker node flavors for us-south-2" caption-side="bottom"}
+{: summary="Column 1 is the name of the zone. Column 2 is the memory size. Column 3 is the network speed. Column 4 is the cores. Column 5 is the operating system. Column 5 is the server type. Column 6 is the primary storage details. Column 7 is the secondary storage details."}
 
 
 ## us-south-3
@@ -524,5 +541,6 @@ Review the VPC Gen 2 worker node flavors by zone.
 | mx2.64x512 | 512GB | 16Gbps | 64 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.8x64 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 {: caption="Table 18. Worker node flavors for us-south-3" caption-side="bottom"}
+{: summary="Column 1 is the name of the zone. Column 2 is the memory size. Column 3 is the network speed. Column 4 is the cores. Column 5 is the operating system. Column 5 is the server type. Column 6 is the primary storage details. Column 7 is the secondary storage details."}
 
 
