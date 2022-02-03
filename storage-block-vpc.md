@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-01"
+lastupdated: "2022-02-03"
 
 keywords: openshift
 
@@ -330,6 +330,7 @@ You can attach a volume to one worker node only. Make sure that the volume is in
           iops: "<vpc_block_storage_iops>" # Example: "3000"
           volumeId: <vpc_block_storage_ID> # Example: a1a11a1a-a111-1111-1a11-1111a11a1a11
           zone: "<vpc_block_zone>" # Example: "eu-de-3"
+          region: "<vpc_block_region>"
         volumeHandle: <vpc_block_storage_ID>
       nodeAffinity:
         required:
@@ -359,7 +360,10 @@ You can attach a volume to one worker node only. Make sure that the volume is in
     :   In the spec CSI volume attributes section, enter the Max IOPS of the {{site.data.keyword.blockstorageshort}} volume that you retrieved earlier.
     
     `zone`
-    :   In the spec CSI volume attributes section, enter the VPC block zone that matches the location that you retrieved earlier. For example, if your location is `Washington DC-1`, then use `us-east-1` as your zone. To list available zones, run `ibmcloud is zones`. To find an overview of available VPC zones and locations, see [Creating a VPC in a different region](/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region).
+    :   In the spec CSI volume attributes section, enter the VPC block zone that matches the location that you retrieved earlier. For example, if your location is `Washington DC-1`, then use `us-east-1` as your zone. To list available zones, run `ibmcloud is zones`. To find an overview of available VPC zones and locations, see [Creating a VPC in a different region](/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region). Please mention "region" parameter when "zone" is specified.
+
+    `region`
+    :   The region of the worker node where you want to attach storage.
     
     `volumeId` and `spec.csi.volumeHandle`
     :   In the spec CSI volume attributes section, enter the ID of the {{site.data.keyword.blockstorageshort}} volume that you retrieved earlier.
@@ -689,6 +693,7 @@ To create your own storage class:
       encryptionKey: "<encryption_key>"
       resourceGroup: ""
       zone: "<zone>"
+      region: "<region>"
       tags: "<tags>"
       generation: "gc"
       classVersion: "1"
@@ -724,6 +729,9 @@ To create your own storage class:
 
     `zone`
     :   In the parameters, enter the VPC zone where you want to create the {{site.data.keyword.block_storage_is_short}} instance. Make sure that you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run `ibmcloud oc cluster get --cluster &lt;cluster_name_or_ID&gt;` and look at the **Worker Zones** field in your CLI output. If you don't specify a zone, one of the worker node zones is automatically selected for your {{site.data.keyword.block_storage_is_short}} instance.
+
+    `region`
+    :   The region of the worker node where you want to attach storage.
 
     `tags`
     :   In the parameters, enter a comma-separated list of tags to apply to your {{site.data.keyword.block_storage_is_short}} instance. Tags can help you find instances more easily or group your instances based on common characteristics, such as the app or the environment that it is used for. 
