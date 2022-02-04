@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-04"
 
 keywords: openshift, http2, quota
 
@@ -107,6 +107,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | -------- | ----------- |
 | Ingress ALBs |  \n - The Ingress application load balancer (ALB) can process 32,768 connections per second. If your Ingress traffic exceeds this number,  [scale up the number of ALB replicas](/docs/containers?topic=containers-ingress-types#scale_albs) in your cluster to handle the increased workload. \n - ALBs that run the [{{site.data.keyword.openshiftlong_notm}} custom Ingress image](/docs/containers?topic=containers-ingress-types) only: HTTP/2 is not supported. \n - ALBs that run the [{{site.data.keyword.openshiftlong_notm}} custom Ingress image] (/docs/containers?topic=containers-ingress-types) only: The names of the `ClusterIP` services that expose your apps must be unique across all namespaces in your cluster.  |
 | Network load balancers (NLB)| - You can't create version 2.0 network load balancers (NLB 2.0) to expose your apps. \n - You can't create subdomains for private NLBs. \n - You can register up to 128 subdomains. This limit can be lifted on request by opening a [support case](/docs/get-support?topic=get-support-using-avatar).  | 
+| {{site.data.keyword.openshiftshort}} web console | The web console cannot be exposed on the private network on clusters that have both public and private endpoints. If you want to expose the web console on the private network, you cluster cannot have a public endpoint enabled.  | 
 | Private VLANs only | Private network load balancers (NLBs) can't be registered with the domain name server (DNS), so the cluster can't be created with only a private network interface. Worker nodes must be connected to both public and private VLANs. You can still create a private service to expose your apps on only the private network. |
 | Service endpoints | When you create a cluster, you can enable the public and private cloud service endpoint or the public cloud service endpoint only, but you can't enable the private cloud service endpoint only. After cluster creation, you can't later change the service endpoints. | 
 | strongSwan VPN service | See [strongSwan VPN service considerations](/docs/openshift?topic=openshift-vpn#strongswan_limitations). |
@@ -206,7 +207,6 @@ Review the following limitations for [{{site.data.keyword.openshiftlong_notm}} c
 | Worker nodes | Worker nodes run on hosts in your own infrastructure environments. The hosts must meet [host](/docs/satellite?topic=satellite-host-reqs) and provider-specific requirements, such as for [AWS](/docs/satellite?topic=satellite-aws), [Azure](/docs/satellite?topic=satellite-azure), [GCP](/docs/satellite?topic=satellite-gcp), and [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) (testing and demonstration purposes only). You are responsible for [managing the infrastructure lifecycle of your hosts](/docs/satellite?topic=satellite-host-concept), including adding and updating worker nodes. As such, worker node operations like `ibmcloud oc worker add, update, replace, reload` commands are not supported. |
 | Worker pools | To use operations like `resize`, your worker pool uses [host labels](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) that must match available (unassigned) hosts in the {{site.data.keyword.satelliteshort}} location. |
 {: caption="{{site.data.keyword.satelliteshort}} cluster limitations"}
-
 
 
 
