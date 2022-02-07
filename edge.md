@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-07"
 
 keywords: openshift
 
@@ -14,15 +14,15 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Classic: Restricting network traffic to edge worker nodes
+# Restricting network traffic to edge worker nodes on classic infrastructure
 {: #edge}
 
-Edge worker nodes can improve the security of your {{site.data.keyword.openshiftlong}} cluster by allowing fewer worker nodes to be accessed externally and by isolating the networking workload.
+Edge worker nodes can improve the security of your {{site.data.keyword.openshiftlong}} cluster by allowing fewer worker nodes by isolating the networking workload.
 {: shortdesc}
 
-When these worker nodes are marked for networking only, other workloads can't consume the CPU or memory of the worker node and interfere with networking.
+When you mark these worker nodes for networking only, other workloads can't consume the CPU or memory of the worker node and interfere with networking.
 
-If you want to restrict network traffic to edge worker nodes in a multizone cluster, at least two edge worker nodes must be enabled per zone for high availability of load balancer or Ingress pods. Create an edge node worker pool that spans all the zones in your cluster, with at least two worker nodes per zone.
+If you want to restrict network traffic to edge worker nodes in a multizone cluster, you must have at least two edge worker nodes per zone for high availability of load balancer or Ingress pods. Create an edge node worker pool that spans all the zones in your cluster, with at least two worker nodes per zone.
 {: tip}
 
 ## Isolating networking workloads to edge nodes
@@ -79,7 +79,7 @@ To create an edge node worker pool,
     ```
     {: screen}
 
-4. Using the output from the previous step, run the following command for each NLB and ALB. This command redeploys the NLB or ALB to an edge worker node.
+4. Using the output from the previous step, run the following command for each NLB and ALB. This command redeploys the NLB or ALB to an edge worker node. 
 
     ```sh
     oc get service -n <namespace> <service_name> -o yaml | oc apply -f -

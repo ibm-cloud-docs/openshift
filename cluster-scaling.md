@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-07"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -22,6 +22,9 @@ With the `cluster-autoscaler` add-on, you can scale the worker pools in your {{s
 
 Want to autoscale your pods instead? Check out [Scaling apps](/docs/openshift?topic=openshift-update_app#app_scaling).
 {: tip}
+
+You can't enable the cluster autoscaler on worker pools that use reservations.
+{: important}
 
 ## Understanding scale-up and scale-down
 {: #ca_about}
