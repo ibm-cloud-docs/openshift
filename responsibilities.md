@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-07"
 
 keywords: openshift, responsibilities, incident, operations, change, security, regulation, disaster recovery, management, RACI
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-04"
+lastupdated: "2022-02-07"
 
 keywords: openshift
 subcollection: openshift
@@ -1168,7 +1168,7 @@ subcollection: openshift
 
     * [Accessing clusters from the public network](/docs/openshift?topic=openshift-access_cluster#sat_public_access)
 
-* [Accessing private clusters by using the Wireguard VPN](/docs/openshift?topic=openshift-access_cluster#access_vpn_openshift)
+* [Accessing private clusters by using the WireGuard VPN](/docs/openshift?topic=openshift-access_cluster#access_vpn_openshift)
 
 * [Accessing clusters from automation tools by using an API key](/docs/openshift?topic=openshift-access_cluster#access_automation)
 
@@ -1644,7 +1644,7 @@ subcollection: openshift
 
 * [Updating IAM firewalls for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-firewall#iam_allowlist)
 
-[Classic: Restricting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge#edge)
+[Restricting network traffic to edge worker nodes on classic infrastructure](/docs/openshift?topic=openshift-edge#edge)
 
 * [Isolating networking workloads to edge nodes](/docs/openshift?topic=openshift-edge#edge_nodes)
 

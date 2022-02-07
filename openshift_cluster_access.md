@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-02-07"
 
 keywords: openshift, clusters
 
@@ -106,7 +106,7 @@ Choose from the following options.
 Allow authorized cluster users to access your [VPC](#vpc_private_se) or [classic](#access_private_se) cluster through the private cloud service endpoint.
 {: shortdesc}
 
-Want to set up a VPN to connect to your cluster from your local machine? Check out [Accessing private clusters by using the Wireguard VPN](/docs/openshift?topic=openshift-access_cluster#access_vpn_openshift).
+Want to set up a VPN to connect to your cluster from your local machine? Check out [Accessing private clusters by using the WireGuard VPN](/docs/openshift?topic=openshift-access_cluster#access_vpn_openshift).
 {: tip}
 
 ### Accessing VPC clusters through the private cloud service endpoint
@@ -373,7 +373,7 @@ Your authorized users can now continue with [Accessing {{site.data.keyword.opens
 After you [create an {{site.data.keyword.openshiftshort}} cluster in your {{site.data.keyword.satelliteshort}} location](/docs/openshift?topic=openshift-satellite-clusters), you can begin working with your cluster by accessing the cluster.
 {: shortdesc}
 
-Want to set up a VPN to connect to your cluster from your local machine? Check out [Accessing private clusters by using the Wireguard VPN](/docs/openshift?topic=openshift-access_cluster#access_vpn_openshift).
+Want to set up a VPN to connect to your cluster from your local machine? Check out [Accessing private clusters by using the WireGuard VPN](/docs/openshift?topic=openshift-access_cluster#access_vpn_openshift).
 {: tip}
 
 ### Accessing clusters through the cluster service URL
@@ -425,7 +425,11 @@ If you are connected to the {{site.data.keyword.cloud_notm}} private network, yo
 If your hosts have public network connectivity, and you want to access your cluster from your local machine without being connected to your hosts' private network, you can optionally update your cluster's subdomain and location's DNS record to use the public IP addresses of your hosts.
 {: shortdesc}
 
-For most location setups, the private IP addresses of your hosts are registered for the location's DNS record so that you can access your cluster only if you are connected to your cloud provider's private network. For example, if you use Amazon Web Services, Google Cloud Platform, or Microsoft Azure hosts, or if your hosts' default network interface is private, your location's DNS record is accessible only on the private network. To run `kubectl` or `oc` commands against your cluster or access the {{site.data.keyword.openshiftshort}} web console, you must be connected to your hosts' private network, such as through VPN access. However, if you want to access your cluster from the public network, such as to test access to your cluster from your local machine, you can change the DNS records for your location and cluster subdomains to use your hosts' public IPs instead.
+For most location setups, the private IP addresses of your hosts are registered for the location's DNS record so that you can access your cluster only if you are connected to your cloud provider's private network. 
+
+For example, if you use Amazon Web Services, Google Cloud Platform, or Microsoft Azure hosts, or if your hosts' default network interface is private, your location's DNS record is accessible only on the private network. 
+
+To run `kubectl` or `oc` commands against your cluster or access the {{site.data.keyword.openshiftshort}} web console, you must be connected to your hosts' private network, such as through VPN access. However, if you want to access your cluster from the public network, such as to test access to your cluster from your local machine, you can change the DNS records for your location and cluster subdomains to use your hosts' public IPs instead.
 
 Making your location and cluster subdomains available outside of your hosts' private network to your authorized cluster users is not recommended for production-level workloads.
 {: important}
@@ -436,51 +440,90 @@ Making your location and cluster subdomains available outside of your hosts' pri
     ```
     {: pre}
 
-2. Retrieve the matching public IP addresses of your hosts
+1. Retrieve the matching public IP addresses of your hosts.
     ```sh
     ibmcloud sat host ls --location <location_name_or_ID>
     ```
     {: pre}
 
-3. Update the location subdomain DNS records with the public IP addresses of each host in the control plane.
+1. Update the location subdomain DNS record with the public IP addresses of each host in the control plane.
     ```sh
     ibmcloud sat location dns register --location <location_name_or_ID> --ip <host_IP> --ip <host_IP> --ip <host_IP>
     ```
     {: pre}
 
-4. Verify that the public IP addresses are registered with your location DNS records.
+1. Verify that the public IP addresses are registered with your location DNS record.
     ```sh
     ibmcloud sat location dns ls --location <location_name_or_ID>
     ```
     {: pre}
 
-5. Get the **Hostname** for your cluster in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.upi.containers.appdomain.cloud` and note the private **IP(s)** that were automatically registered.
+1. Get the **Hostname** for your cluster in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.upi.containers.appdomain.cloud` and note the private **IP(s)** that were automatically registered.
     ```sh
     ibmcloud oc nlb-dns ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
-6. Add the public IP addresses of the hosts that are assigned as worker nodes to this cluster to your cluster's subdomain. Repeat this command for each host's public IP address.
+1. Add the public IP addresses of the hosts that are assigned as worker nodes to this cluster to your cluster's subdomain. Repeat this command for each host's public IP address.
     ```sh
     ibmcloud oc nlb-dns add --ip <public_IP> --cluster <cluster_name_or_ID> --nlb-host <hostname>
     ```
     {: pre}
 
-7. Remove the private IP addresses from your cluster's subdomain. Repeat this command for all private IP addresses that you retrieved earlier.
+1. Remove the private IP addresses from your cluster's subdomain. Repeat this command for all private IP addresses that you retrieved earlier.
     ```sh
     ibmcloud oc nlb-dns rm classic --ip <private_IP> --cluster <cluster_name_or_ID> --nlb-host <hostname>
     ```
     {: pre}
 
-8. Verify that the public IP addresses are registered with your cluster subdomain.
+1. Verify that the public IP addresses are registered with your cluster subdomain.
     ```sh
     ibmcloud oc nlb-dns ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
+    
+
+1. Get the details of the `router-external-default` service and note the **EXTERNAL-IP** column. 
+    ```sh
+    oc get service router-external-default -n openshift-ingress
+    ```
+    {: pre}
+    
+    Example output
+    ```sh
+    NAME                      TYPE           CLUSTER-IP       EXTERNAL-IP                                    PORT(S)                      AGE
+    router-external-default   ClusterIP      172.21.170.65                                                   80/TCP,443/TCP,1936/TCP      45h
+    ```
+    {: screen}
+
+1. If no public IPs are listed for the service, edit the service configuration by using the `oc edit` command. 
+    ```sh
+    oc edit service router-external-default -n openshift-ingress
+    ``` 
+    {: pre}
+    
+1. Add the public IP addresses of your worker nodes that you retrieved earlier as `externalIPs` in the `spec` section of the service configuration.
+    ```yaml
+    ....
+      uid: a11100aa-1a11-1aa1-1a1a-aaa11a11111a
+    spec:
+      clusterIP: 172.XX.XXX.XXX
+      clusterIPs:
+      - 172.XX.XXX.XX
+      externalIPs: # Add the public IPs of your hosts
+      - 169.XX.XXX.XXX
+      - 169.XX.XXX.XXX
+      - 169.XX.XXX.XXX
+    ```
+    {: codeblock}
+    
+1. Finally, in your firewall settings, allow incoming TCP traffic on ports 443, 80, and 1936 for the public IPs of your worker nodes.
+
+You can now run `oc` or `kubectl` commands from your local machine or use the {{site.data.keyword.openshiftshort}} console.
 
 
 
-## Accessing private clusters by using the Wireguard VPN
+## Accessing private clusters by using the WireGuard VPN
 {: #access_vpn_openshift}
 
 You can use the WireGuard VPN to securely connect to {{site.data.keyword.openshiftshort}} clusters with only a private network connection. Your cluster might run in a private network in {{site.data.keyword.cloud_notm}} or an {{site.data.keyword.satellitelong_notm}} location in another cloud provider or your on-premises data center.
@@ -1048,7 +1091,6 @@ Many cluster add-ons, plug-ins, and other third-party extensions use admission c
 {: #access_webhooks-help}
 
 See [Cluster can't update because of broken webhook](/docs/containers?topic=containers-webhooks_update).
-
 
 
 

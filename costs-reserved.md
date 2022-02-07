@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-07"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -22,6 +22,9 @@ When you have consistent computing needs over time of at least one year, create 
 
 ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Reservations are available for classic infrastructure worker nodes only.
 {: note}
+
+You can't enable the cluster autoscaler on worker pools that use reservations.
+{: important}
 
 ## Understanding reservations
 {: #ri-about}
