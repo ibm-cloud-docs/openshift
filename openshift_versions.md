@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-02-07"
 
 keywords: openshift, version, update, upgrade
 
@@ -127,7 +127,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 | Supported | 4.8 / 1.21 | 29 Sep 2021 | Sep 2022`†` |
 | Supported | 4.7 / 1.20 | 09 Jun 2021 | Jul 2022`†` |
 | Supported | 4.6 / 1.19 | 17 Feb 2021 | May 2022 `†` |
-| Not supported | 4.5 / 1.18 | 13 Oct 2020 | Oct 10 2021 `†` |
+| Not supported | 4.5 / 1.18 | 13 Oct 2020 | Oct 10 2021 |
 | Not supported | 4.4 / 1.17 | 21 Jul 2020 | 31 May 2021 |
 | Not supported | 4.3 / 1.16 | 20 Apr 2020 | 7 Mar 2021 |
 | Deprecated | 3.11 / 1.11 | 01 Aug 2019 | 06 Jun 2022 `†` |

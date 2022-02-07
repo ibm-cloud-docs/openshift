@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-07"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
