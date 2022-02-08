@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-07"
+lastupdated: "2022-02-08"
 
 keywords: openshift
 subcollection: openshift
@@ -865,9 +865,9 @@ subcollection: openshift
 
 * [Navigate the {{site.data.keyword.openshiftshort}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
 
-    * [<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview](/docs/openshift?topic=openshift-openshift_tutorial#openshift_console4_overview_tutorial)
+    * [![Version 4 icon.](images/icon-version-43.png) {{site.data.keyword.openshiftshort}} console overview](/docs/openshift?topic=openshift-openshift_tutorial#openshift_console4_overview_tutorial)
 
-    * [<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview](/docs/openshift?topic=openshift-openshift_tutorial#openshift_console311_overview_tutorial)
+    * [![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.openshiftshort}} console overview](/docs/openshift?topic=openshift-openshift_tutorial#openshift_console311_overview_tutorial)
 
 * [Deploy an app to your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
 
@@ -2150,9 +2150,9 @@ subcollection: openshift
 
 * [Accessing the {{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-deploy_app#openshift_console)
 
-    * [<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview](/docs/openshift?topic=openshift-deploy_app#openshift_console4_overview)
+    * [![Version 4 icon.](images/icon-version-43.png) {{site.data.keyword.openshiftshort}} console overview](/docs/openshift?topic=openshift-deploy_app#openshift_console4_overview)
 
-    * [<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview](/docs/openshift?topic=openshift-deploy_app#openshift_console311_overview)
+    * [![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.openshiftshort}} console overview](/docs/openshift?topic=openshift-deploy_app#openshift_console311_overview)
 
 [Testing access to apps with NodePorts](/docs/openshift?topic=openshift-nodeport#nodeport)
 

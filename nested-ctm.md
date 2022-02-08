@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-07"
+lastupdated: "2022-02-08"
 
 keywords: openshift, help, network, dns, health check
 
@@ -21,7 +21,7 @@ content-type: troubleshoot
 
 **Supported infrastructure provider**:
 * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
-* <img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> Satellite
+* ![Satellite infrastructure provider icon.](images/icon-satellite.svg) Satellite
 
 
 When you try to include Ingress subdomains that have health checks enabled in your Akamai Global Traffic Managment (GTM) configuration, the health checks fail.

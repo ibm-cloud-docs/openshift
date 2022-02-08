@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-07"
+lastupdated: "2022-02-08"
 
 keywords: openshift
 
@@ -30,8 +30,8 @@ If you want to restrict network traffic to edge worker nodes in a multizone clus
 
 Add the `dedicated=edge` label to worker nodes on each public or private VLAN in your cluster.
 
-* <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> In version 4 clusters, the labels ensure that network load balancer (NLB) pods are deployed to those worker nodes only. For NLBs, ensure that two or more worker nodes per zone are edge nodes. Note that router pods for Ingress controllers and routes are not deployed to edge nodes and remain on non-edge worker nodes.
-* <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> In version 3.11 clusters, the labels ensure that network load balancers (NLBs) and Ingress application load balancers (ALBs) are deployed to those worker nodes only. For NLBs, ensure that two or more worker nodes per zone are edge nodes. For ALBs, ensure that three or more worker nodes per zone are edge nodes. Both public and private NLBs and ALBs can deploy to edge worker nodes. Note that router pods are not deployed to edge nodes and remain on non-edge worker nodes.
+* ![Version 4 icon.](images/icon-version-43.png) In version 4 clusters, the labels ensure that network load balancer (NLB) pods are deployed to those worker nodes only. For NLBs, ensure that two or more worker nodes per zone are edge nodes. Note that router pods for Ingress controllers and routes are not deployed to edge nodes and remain on non-edge worker nodes.
+* ![Version 3.11 icon.](images/icon-version-311.png) In version 3.11 clusters, the labels ensure that network load balancers (NLBs) and Ingress application load balancers (ALBs) are deployed to those worker nodes only. For NLBs, ensure that two or more worker nodes per zone are edge nodes. For ALBs, ensure that three or more worker nodes per zone are edge nodes. Both public and private NLBs and ALBs can deploy to edge worker nodes. Note that router pods are not deployed to edge nodes and remain on non-edge worker nodes.
 
 Before you begin
 

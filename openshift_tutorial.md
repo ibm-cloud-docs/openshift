@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-24"
+lastupdated: "2022-02-08"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -38,7 +38,7 @@ With {{site.data.keyword.openshiftlong}}, you can create highly available cluste
 In the tutorial lessons, you create a standard {{site.data.keyword.openshiftlong_notm}} cluster, open the {{site.data.keyword.openshiftshort}} console, access built-in {{site.data.keyword.openshiftshort}} components, deploy an app in an {{site.data.keyword.openshiftshort}} project, and expose the app on an {{site.data.keyword.openshiftshort}} route so that external users can access the service.
 {: shortdesc}
 
-<img src="/images/roks_tutorial.png" width="600" alt="{{site.data.keyword.openshiftshort}} tutorial diagram" style="width:600px; border-style: none"/>
+![OpenShift tutorial diagram.](images/roks_tutorial.png){: caption="Figure 1. OpenShift tutorial diagram" caption-side="bottom"}
 
 ## Audience
 {: #openshift_audience}
@@ -79,7 +79,11 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
     ```
     {: pre}
 
-3. List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and Ingress components take about 10 more minutes to deploy and update the cluster domain that you use for the {{site.data.keyword.openshiftshort}} web console and other routes. Before you continue, wait until the cluster is ready by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.</p>
+3. List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.
+
+    Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and Ingress components take about 10 more minutes to deploy and update the cluster domain that you use for the {{site.data.keyword.openshiftshort}} web console and other routes. Before you continue, wait until the cluster is ready by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.
+    {: note}
+    
     ```sh
     ibmcloud oc cluster get --cluster <cluster_name_or_ID>
     ```
@@ -92,7 +96,10 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
     {: pre}
 
 5. In your browser, navigate to the address of your **Master URL** and append `/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`.
-6. From the {{site.data.keyword.openshiftshort}} web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.<p class="tip">Save your cluster master URL to access the {{site.data.keyword.openshiftshort}} console later. In future sessions, you can skip the `cluster config` step and copy the login command from the console instead.</p>
+6. From the {{site.data.keyword.openshiftshort}} web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.
+    Save your cluster master URL to access the {{site.data.keyword.openshiftshort}} console later. In future sessions, you can skip the `cluster config` step and copy the login command from the console instead.
+    {: tip}
+    
 7. Verify that the `oc` commands run properly with your cluster by checking the version.
     ```sh
     oc version
@@ -110,8 +117,6 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
     If you can't perform operations that require Administrator permissions, such as listing all the worker nodes or pods in a cluster, download the TLS certificates and permission files for the cluster administrator by running the `ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin` command.
     {: tip}
 
-
-
 ## Navigate the {{site.data.keyword.openshiftshort}} console
 {: #openshift_oc_console}
 {: step}
@@ -119,7 +124,7 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
 {{site.data.keyword.openshiftlong_notm}} comes with built-in services that you can use to help operate your cluster, such as the {{site.data.keyword.openshiftshort}} console.
 {: shortdesc}
 
-### <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview
+### ![Version 4 icon.](images/icon-version-43.png) {{site.data.keyword.openshiftshort}} console overview
 {: #openshift_console4_overview_tutorial}
 
 1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your {{site.data.keyword.openshiftshort}} cluster, then click **OpenShift web console**.
@@ -134,7 +139,7 @@ Developer perspective
 :   The Developer perspective is available from the side navigation menu perspective switcher. From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](http://docs.openshift.com/container-platform/4.8/web_console/odc-about-developer-perspective.html){: external} in the {{site.data.keyword.openshiftshort}} documentation. 
 
 
-### <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview
+### ![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.openshiftshort}} console overview
 {: #openshift_console311_overview_tutorial}
 
 Service Catalog
@@ -240,7 +245,7 @@ If you took a break from the last lesson and started a new command line, make su
         {: pre}
 
         Example output
-        ```
+        ```sh
         pod/hello-world-1-dh2ff
         replicationcontroller/hello-world-1
         service/hello-world
@@ -269,9 +274,4 @@ If you took a break from the last lesson and started a new command line, make su
 For more information about working with your apps, see the [{{site.data.keyword.openshiftshort}} developer activities](https://docs.openshift.com/container-platform/4.8/welcome/index.html#developer-activities){: external} documentation.
 
 Install two popular {{site.data.keyword.openshiftlong_notm}} add-ons: [{{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging) and [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor).
-
-
-
-
-
 

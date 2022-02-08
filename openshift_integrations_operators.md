@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-02-08"
 
 keywords: kubernetes, openshift
 
@@ -70,7 +70,7 @@ To disable and mirror the OperatorHub source images:
 Try out the following tutorial.
 {: shortdesc}
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> The {{site.data.keyword.cloud_notm}} Operator and other Operators are experimental for version 3.11, and you are responsible for its maintenance and support. If you have a version 4 cluster, use the built-in [Operators and OperatorHub instead](#operators_4).
+![Version 3.11 icon.](images/icon-version-311.png) The {{site.data.keyword.cloud_notm}} Operator and other Operators are experimental for version 3.11, and you are responsible for its maintenance and support. If you have a version 4 cluster, use the built-in [Operators and OperatorHub instead](#operators_4).
 {: note}
 
 Use the Operator Lifecycle Manager (OLM) and the {{site.data.keyword.cloud_notm}} Operator to simplify your app lifecycle management approach for {{site.data.keyword.cloud_notm}} services, third-party apps, and your own custom-built, cloud-native apps in your {{site.data.keyword.openshiftshort}} cluster.
@@ -80,7 +80,7 @@ Use the Operator Lifecycle Manager (OLM) and the {{site.data.keyword.cloud_notm}
 ## Using the service catalog in 3.11 clusters
 {: #service_catalog}
 
-<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> The service catalog is not supported in clusters that run version 4. Use [Operators](#operators_4) instead. Do not use the OperatorHub to install the service catalog.
+![Version 4 icon.](images/icon-version-43.png) The service catalog is not supported in clusters that run version 4. Use [Operators](#operators_4) instead. Do not use the OperatorHub to install the service catalog.
 {: important}
 
 You can extend your app's capabilities by binding a service from the [{{site.data.keyword.openshiftshort}} service catalog](https://docs.openshift.com/container-platform/3.11/architecture/service_catalog/index.html){: external}. The service catalog is enabled in your 3.11 cluster by default. For an example of how to use the service catalog, see [Deploying an app with the {{site.data.keyword.openshiftshort}} service catalog](/docs/openshift?topic=openshift-getting-started#deploy-app).

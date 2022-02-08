@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-02-08"
 
 keywords: kubernetes, openshift
 
@@ -628,7 +628,7 @@ As part of a [twelve-factor](https://12factor.net/){: external}, cloud-native ap
 
 For example, you can set up a base `kustomization` YAML to declare Kubernetes objects such as deployments and PVCs that are shared in your development, testing, and production environments. Next, you can set up separate `kustomization` YAMLs that have customized configurations for each environment, such as more replicas in production than testing. These customized YAMLs can then overlay, or build on, the shared base YAML so that you can manage environments that are mostly identical except for a few overlay configuration differences that you source-control. For more information about Kustomize such as a glossary and FAQs, check out the [Kustomize docs](https://github.com/kubernetes-sigs/kustomize/tree/master/docs){: external}.
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Kustomize is not supported for {{site.data.keyword.openshiftshort}} clusters that run version 3.11.
+![Version 3.11 icon.](images/icon-version-311.png) Kustomize is not supported for {{site.data.keyword.openshiftshort}} clusters that run version 3.11.
 {: note}
 
 Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).

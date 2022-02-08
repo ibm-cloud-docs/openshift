@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-07"
+lastupdated: "2022-02-08"
 
 keywords: openshift, vlan
 
@@ -24,7 +24,7 @@ After you initially set up your network when you [create a cluster](/docs/contai
 {: note}
 
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> The content on this page is specific to **classic clusters that run {{site.data.keyword.openshiftshort}} 3.11 only**. In clusters that run {{site.data.keyword.openshiftshort}} 3.11, you must enable the public cloud service endpoint during cluster creation, and you can't disable it later. You can later enable the private cloud service endpoint. In clusters that run version 4, you choose the public cloud service endpoint only or public and private cloud service endpoints during cluster creation, and you can't later change the cloud service endpoints.
+![Version 3.11 icon.](images/icon-version-311.png) The content on this page is specific to **classic clusters that run {{site.data.keyword.openshiftshort}} 3.11 only**. In clusters that run {{site.data.keyword.openshiftshort}} 3.11, you must enable the public cloud service endpoint during cluster creation, and you can't disable it later. You can later enable the private cloud service endpoint. In clusters that run version 4, you choose the public cloud service endpoint only or public and private cloud service endpoints during cluster creation, and you can't later change the cloud service endpoints.
 {: important}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-04"
+lastupdated: "2022-02-08"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -1441,7 +1441,7 @@ The following table shows the changes that are in the version updates for the `4
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 3.11 patch updates.
 {: shortdesc}
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported on 6 June 2022 (date subject to change).
+![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported on 6 June 2022 (date subject to change).
 {: deprecated}
 
 ### Changelog for worker node fix pack 3.11.570_1620_openshift, released 31 January 2022

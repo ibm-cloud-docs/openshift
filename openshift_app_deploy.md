@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-02-08"
 
 keywords: kubernetes, openshift
 
@@ -200,7 +200,7 @@ If you have a [bare metal graphics processing unit (GPU) machine type](/docs/ope
 
 In the following steps, you learn how to deploy workloads that require the GPU. You can also deploy apps that don't need to process their workloads across both the GPU and CPU. After, you might find it useful to play around with mathematically intensive workloads such as the [TensorFlow](https://www.tensorflow.org/){: external} machine learning framework with [this Kubernetes demo](https://github.com/pachyderm/pachyderm/tree/master/examples/ml/tensorflow){: external}.
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> GPU machines are available only for clusters that run {{site.data.keyword.openshiftshort}} version 4 on classic infrastructure.
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) ![Version 4 icon.](images/icon-version-43.png) GPU machines are available only for clusters that run {{site.data.keyword.openshiftshort}} version 4 on classic infrastructure.
 {: note}
 
 Before you begin
@@ -362,7 +362,7 @@ You can use the {{site.data.keyword.openshiftshort}} console to manage your apps
 
 For more information about the console, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.8/web_console/web-console.html){: external}.
 
-### <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview
+### ![Version 4 icon.](images/icon-version-43.png) {{site.data.keyword.openshiftshort}} console overview
 {: #openshift_console4_overview}
 
 1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your {{site.data.keyword.openshiftshort}} cluster, then click **OpenShift web console**.
@@ -377,7 +377,7 @@ Developer perspective
 :   The Developer perspective is available from the side navigation menu perspective switcher. From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](http://docs.openshift.com/container-platform/4.8/web_console/odc-about-developer-perspective.html){: external} in the {{site.data.keyword.openshiftshort}} documentation. 
 
 
-### <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview
+### ![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.openshiftshort}} console overview
 {: #openshift_console311_overview}
 
 Service Catalog

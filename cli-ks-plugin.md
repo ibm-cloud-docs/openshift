@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-07"
+lastupdated: "2022-02-08"
 
 keywords: openshift
 
@@ -1280,7 +1280,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist rm --cluster myclu
 ### `ibmcloud oc cluster master private-service-endpoint disable`
 {: #cs_cluster_master_pse_disable}
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Version 3.11 only: Disable the [private cloud service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) to remove private accessibility to your cluster master. 
+![Version 3.11 icon.](images/icon-version-311.png) Version 3.11 only: Disable the [private cloud service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) to remove private accessibility to your cluster master. 
 {: shortdesc} 
 
 **Important**: Before you disable the private endpoint, you first must complete the following steps to enable the public cloud service endpoint:
@@ -1317,7 +1317,7 @@ ibmcloud oc cluster master private-service-endpoint disable --cluster my_cluster
 ### `ibmcloud oc cluster master private-service-endpoint enable`
 {: #cs_cluster_master_pse_enable}
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Version 3.11 only: Enable the [private cloud service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) to make your cluster master privately accessible.
+![Version 3.11 icon.](images/icon-version-311.png) Version 3.11 only: Enable the [private cloud service endpoint](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) to make your cluster master privately accessible.
 {: shortdesc}
 
 To run this command:

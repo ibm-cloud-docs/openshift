@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-02-08"
 
 keywords: openshift
 
@@ -20,7 +20,7 @@ subcollection: openshift
 With the compliance operator, you can check whether the worker nodes in your cluster meet the set of criteria in the profile that is tailored to {{site.data.keyword.openshiftlong}}. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.8/security/compliance_operator/compliance-operator-understanding.html){: external}.
 {: shortdesc}
 
-<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> The compliance operator is available for clusters that run {{site.data.keyword.openshiftlong_notm}} version 4.6 or later.
+![Version 4 icon.](images/icon-version-43.png) The compliance operator is available for clusters that run {{site.data.keyword.openshiftlong_notm}} version 4.6 or later.
 {: note}
 
 Looking for the CIS Kubernetes benchmark? See [Running the worker node CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-02-08"
 
 keywords: kubernetes, openshift
 
@@ -24,13 +24,13 @@ With [{{site.data.keyword.redhat_full}} Marketplace](https://marketplace.redhat.
 **Supported infrastructure providers**:
 * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
-* <img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> {{site.data.keyword.satelliteshort}}
+* ![Satellite infrastructure provider icon.](images/icon-satellite.svg) {{site.data.keyword.satelliteshort}}
 
 **Required permissions**:
 * The IAM **Operator** platform access role for the cluster in {{site.data.keyword.containershort_notm}}.
 * The IAM **Manager** service access role in all namespaces (`cluster-admin` RBAC) for the cluster in {{site.data.keyword.containershort_notm}}.
 
-<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.redhat_notm}} Marketplace is available for clusters that run {{site.data.keyword.openshiftshort}} version 4 only.
+![Version 4 icon.](images/icon-version-43.png) {{site.data.keyword.redhat_notm}} Marketplace is available for clusters that run {{site.data.keyword.openshiftshort}} version 4 only.
 {: note}
 
 **Before you begin**:

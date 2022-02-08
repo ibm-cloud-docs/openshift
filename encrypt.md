@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-07"
+lastupdated: "2022-02-08"
 
 keywords: openshift, red hat, red hat openshift, encrypt, security, kms, root key, crk
 
@@ -36,7 +36,7 @@ The following image and description outline default and optional data encryption
 4. **Worker node disks**: Attached disks are used to boot your worker node, host the container file system, and store locally pulled images. The encryption and number of disks varies by infrastructure provider.
     * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) **VPC**: See [VPC worker nodes](#worker-encryption-vpc).
     * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) **Classic**: See [Classic worker nodes](#worker-encryption-classic).
-    * <img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **{{site.data.keyword.satelliteshort}}**: See [{{site.data.keyword.satelliteshort}} worker nodes](#worker-encryption-satellite).
+    * ![Satellite infrastructure provider icon.](images/icon-satellite.svg) **{{site.data.keyword.satelliteshort}}**: See [{{site.data.keyword.satelliteshort}} worker nodes](#worker-encryption-satellite).
 5. **Cluster secrets**: When you deploy your app, don't store confidential information, such as credentials or keys, in the YAML configuration file, configmaps, or scripts. Instead, use [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/){: external}, which are base64 encoded by default. To manage encryption of the Kubernetes secrets in your cluster, you can enable a KMS provider in VPC or classic clusters. The secrets are encrypted by KMS-provided encryption until their information is used. For example, if you update a Kubernetes pod that mounts a secret, the pod requests the secret values from the master API server. The master API server asks the KMS provider to use the root key to unwrap the DEK and encode its values to base64. Then, the master API server uses the KMS provider DEK that is stored in etcd to read the secret, and sends the secret to the pod by using TLS.
 
     In clusters that run {{site.data.keyword.openshiftshort}} 4 or later, you can [deploy containers from an encrypted image](/docs/openshift?topic=openshift-images#encrypted-images).
@@ -394,7 +394,7 @@ The encryption for the disks of the worker nodes in your worker pool are now man
 ### {{site.data.keyword.satelliteshort}} worker nodes
 {: #worker-encryption-satellite}
 
-<img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **{{site.data.keyword.satelliteshort}}**: The primary mounted disk that contains the kernel images to boot your worker node is unecrypted. The secondary unmounted disk that hosts the container file system and locally pulled images is AES 256-bit encrypted with an IBM-managed LUKS encryption key that is unique to the worker node and stored as a secret in etcd. When you reload or update your worker nodes, the LUKS keys are rotated.
+![Satellite infrastructure provider icon.](images/icon-satellite.svg) **{{site.data.keyword.satelliteshort}}**: The primary mounted disk that contains the kernel images to boot your worker node is unecrypted. The secondary unmounted disk that hosts the container file system and locally pulled images is AES 256-bit encrypted with an IBM-managed LUKS encryption key that is unique to the worker node and stored as a secret in etcd. When you reload or update your worker nodes, the LUKS keys are rotated.
 {: shortdesc}
 
 You can't manage the encryption of the LUKS key with your own KMS provider because KMS provider integration is not supported.

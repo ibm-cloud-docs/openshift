@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-02-08"
 
 keywords: openshift
 
@@ -29,7 +29,7 @@ Commonly used components include the following. If these components fail, review
 * **OperatorHub** in the `openshift-marketplace` project
 * **Internal registry** in the `openshift-image-registry` project
 
-<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> Some components, such as the OperatorHub, are available only in clusters that run {{site.data.keyword.openshiftshort}} version 4, or run in different projects in version 3.11. You can still troubleshoot {{site.data.keyword.openshiftshort}} components in 3.11 clusters, but the project and resource names might vary.
+![Version 4 icon.](images/icon-version-43.png) Some components, such as the OperatorHub, are available only in clusters that run {{site.data.keyword.openshiftshort}} version 4, or run in different projects in version 3.11. You can still troubleshoot {{site.data.keyword.openshiftshort}} components in 3.11 clusters, but the project and resource names might vary.
 {: note}
 
 ## Step 1: Check your account setup
