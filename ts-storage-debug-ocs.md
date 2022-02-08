@@ -1,11 +1,11 @@
 ---
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-27"
+lastupdated: "2022-02-08"
 
 keywords: openshift, file, debug, help
 
-subcollection: containers
+subcollection: openshift
 content-type: troubleshoot
 
 ---
