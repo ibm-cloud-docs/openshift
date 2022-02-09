@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-07"
+lastupdated: "2022-02-09"
 
 keywords: portworx, openshift
 
@@ -724,7 +724,7 @@ Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs
         kind: StorageClass
         apiVersion: storage.k8s.io/v1
         metadata:
-        name: <storageclass_name>
+          name: <storageclass_name>
         provisioner: kubernetes.io/portworx-volume
         parameters:
           repl: "<replication_factor>"
@@ -771,7 +771,7 @@ Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs
         kind: PersistentVolumeClaim
         apiVersion: v1
         metadata:
-        name: mypvc
+          name: mypvc
         spec:
           accessModes:
             - <access_mode>
