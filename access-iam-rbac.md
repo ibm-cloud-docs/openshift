@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-07"
+lastupdated: "2022-02-09"
 
 keywords: openshift
 
@@ -307,7 +307,7 @@ If you want users to be able to interact with Kubernetes resources from within a
 
 To learn more about the actions permitted by each RBAC role, check out the [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-access_reference#service) reference topic. To see the permissions that are granted by each RBAC role to individual Kubernetes resources, check out [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-access_reference#rbac_ref).
 
-All users of an {{site.data.keyword.openshiftshort}} cluster are added to the following {{site.data.keyword.openshiftshort}} RBAC groups by cluster version. <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Version 3 clusters: `basic-users` and `self-provisioners`. <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> Version 4 clusters: `basic-users`.
+All users of an {{site.data.keyword.openshiftshort}} cluster are added to the following {{site.data.keyword.openshiftshort}} RBAC groups by cluster version. ![Version 3.11 icon.](images/icon-version-311.png) Version 3 clusters: `basic-users` and `self-provisioners`. ![Version 4 icon.](images/icon-version-43.png) Version 4 clusters: `basic-users`.
 {: note}
 
 **Can I create custom roles or cluster roles?**
@@ -572,7 +572,7 @@ Check your access policies that are assigned by IAM platform and service access 
 6. To review what the roles and allowed actions permit, see the following topics.
     * [IAM roles and actions](/docs/account?topic=account-iam-service-roles-actions)
     * [{{site.data.keyword.openshiftlong_notm}} user access permissions](/docs/containers?topic=containers-access_reference)
-    * <img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Satellite-only**: [{{site.data.keyword.satelliteshort}} IAM platform and service roles](/docs/satellite?topic=satellite-iam#iam-roles)
+    * ![Satellite infrastructure provider icon.](images/icon-satellite.svg) **Satellite-only**: [{{site.data.keyword.satelliteshort}} IAM platform and service roles](/docs/satellite?topic=satellite-iam#iam-roles)
 7. To change or assign new access policies, see [Assigning {{site.data.keyword.openshiftlong_notm}} roles](#add_users) or [Assigning {{site.data.keyword.satelliteshort}} access](/docs/satellite?topic=satellite-iam#iam-assign).
 
 
@@ -603,7 +603,7 @@ Check your access policies that are assigned by IAM platform and service access 
 4. To review what the roles and allowed actions permit, see the following topics.
     * [IAM roles and actions](/docs/account?topic=account-iam-service-roles-actions)
     * [{{site.data.keyword.openshiftlong_notm}} user access permissions](/docs/containers?topic=containers-access_reference)
-    * <img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Satellite-only**: [{{site.data.keyword.satelliteshort}} IAM platform and service roles](/docs/satellite?topic=satellite-iam#iam-roles)
+    * ![Satellite infrastructure provider icon.](images/icon-satellite.svg) **Satellite-only**: [{{site.data.keyword.satelliteshort}} IAM platform and service roles](/docs/satellite?topic=satellite-iam#iam-roles)
 5. To change or assign new access policies, see [Assigning {{site.data.keyword.openshiftlong_notm}} roles](#add_users_cli) or [Assigning {{site.data.keyword.satelliteshort}} access](/docs/satellite?topic=satellite-iam#iam-assign-cli).
 
 ### Checking RBAC roles
@@ -745,7 +745,7 @@ If you are an administrator for the region and resource group, you might want to
 ### Checking other cloud infrastructure provider roles
 {: #checking-infra-providers}
 
-<img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> **Satellite-only**: If your cluster runs in a {{site.data.keyword.satelliteshort}} location, you use infrastructure that comes from other on-prem or cloud providers. Consult their product documentation to make sure that you have the correct permissions to create infrastructure resources.
+![Satellite infrastructure provider icon.](images/icon-satellite.svg) **Satellite-only**: If your cluster runs in a {{site.data.keyword.satelliteshort}} location, you use infrastructure that comes from other on-prem or cloud providers. Consult their product documentation to make sure that you have the correct permissions to create infrastructure resources.
 {: shortdesc}
 
 Also, see the following related topics.

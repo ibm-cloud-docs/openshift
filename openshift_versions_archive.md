@@ -2,7 +2,7 @@
 
 copyright:
  years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-02-08"
 
 keywords: openshift, changelog, version, unsupported, supported, deprecated
 
@@ -256,7 +256,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | {{site.data.keyword.openshiftshort}}  Control Plane Operator | v4.5.0-20210329 | v4.5.0-20210512 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases){: external}. |
 | OpenVPN Operator image | v1.3.0 | v1.3.1 | Updated image for [CVE-2021-20305](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20305){: external}. |
 | Portieris admission controller | v0.10.1 | v0.10.2 | See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.10.2){: external}. |
-| {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.5.0-20210329 | v4.5.0-20210512 | See the [ {{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20210512 ){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.5.0-20210329 | v4.5.0-20210512 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20210512){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} toolkit | 4.5.0+20210329 | 4.5.0+20210512 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20210512){: external}). |
 {: caption="Changes since version 4.5.37_1536_openshift" caption-side="top"}
 
@@ -268,7 +268,7 @@ The following table shows the changes that are in the worker node fix pack `4.5.
 
 | Component | Previous | Current | Description |
 | --------- | -------- | ------- | ----------- |
-| {{site.data.keyword.openshiftshort}} | 4.5.37 | 4.5.38 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html#ocp-4-5-38){: external}.<br><br>Configured worker nodes to integrate with a newer version of the NVIDIA GPU operator. Now when you create an instance of the `ClusterPolicy` for the GPU operator, you must enter `450.80.02` for the **Driver Config** version.|
+| {{site.data.keyword.openshiftshort}} | 4.5.37 | 4.5.38 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html#ocp-4-5-38){: external}.  \n  \n Configured worker nodes to integrate with a newer version of the NVIDIA GPU operator. Now when you create an instance of the `ClusterPolicy` for the GPU operator, you must enter `450.80.02` for the **Driver Config** version.|
 | RHEL 7 Packages | 3.10.0-1160.24 | 3.10.0-1160.25 | To increase resiliency, `rsyslog` no longer keeps old file descriptors. Updated worker node images with kernel and package updates for [CVE-2021-25215](https://nvd.nist.gov/vuln/detail/CVE-2021-25215){: external}, [CVE-2020-25692](https://nvd.nist.gov/vuln/detail/CVE-2020-25692){: external}, and [CVE-2020-25648](https://nvd.nist.gov/vuln/detail/CVE-2020-25648){: external}.|
 {: caption="Changes since version 4.5.37_1537_openshift" caption-side="top"}
 
@@ -876,7 +876,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.17.15-1 | v1.17.16-1 | Updated to support the Kubernetes 1.17.16 release. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in | N/A | N/A | Updated to run with a privileged security context. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | c148a8a | f859228 | Updated image for [CVE-2020-1971](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1971){: external} and [CVE-2020-24659](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-24659){: external}. |
-| Key Management Service provider | v2.0.7 | v2.2.2 | Updated the key management service (KMS) provider support as follows.<ul><li>Updated to use <code>Go</code> version 1.15.2.</li><li>Added support for <a href="/docs/account?topic=account-serviceauth">service-to-service authentication</a>.</li><li>Updated to use the KMS provider secret to identify when a <a href="/docs/openshift?topic=openshift-encryption#keyprotect">Key Protect</a> key is enabled and disabled so that encryption and decryption requests are updated accordingly.</li></ul> |
+| Key Management Service provider | v2.0.7 | v2.2.2 | Updated the key management service (KMS) provider support as follows. \n - Updated to use `Go` version 1.15.2. \n - Added support for [service-to-service authentication](/docs/account?topic=account-serviceauth). \n - Updated to use the KMS provider secret to identify when a [Key Protect](/docs/openshift?topic=openshift-encryption#keyprotect) key is enabled and disabled so that encryption and decryption requests are updated accordingly. |
 | {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.4.0-20201207 | v4.4.0-20201210 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.4.0+20201210){: external}. |
 | {{site.data.keyword.openshiftshort}} | 4.4.29 | 4.4.31 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-31){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} toolkit | 4.4.0+20201207 | 4.4.0+20201210 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.4.0+20201210){: external}. |
@@ -1156,7 +1156,7 @@ The following table shows the changes that are in the `4.4.11_1511_openshift` ve
 | Master Proxy | Worker | 2.0.15-afe432 | 1.8.25-384f42 | See the [HAProxy changelogs](https://www.haproxy.org/download/1.8/src/CHANGELOG){: external}. Fixes a connection leak that happens when HAProxy is under high load. |
 | Key Management Service provider | Master | N/A | v1.0.0 | **New!**: {{site.data.keyword.openshiftlong_notm}} version 4.4 clusters now support [Key Management Service (KMS) providers](/docs/openshift?topic=openshift-encryption#kms). |
 | {{site.data.keyword.openshiftshort}} Control Plane Operator | Master | v4.3.0-20200615 | v4.4.0-20200615 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.4.0+20200615){: external}. |
-| {{site.data.keyword.openshiftshort}} | Both | Master 4.3.28<br>Worker 4.3.29 | 4.4.11 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-11){: external}. |
+| {{site.data.keyword.openshiftshort}} | Both | Master 4.3.28  \n Worker 4.3.29 | 4.4.11 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-11){: external}. |
 | RHEL 7 Packages | Worker | N/A | N/A | Updated worker node images with package updates for [CVE-2020-12049](https://nvd.nist.gov/vuln/detail/CVE-2020-12049){: external}.|
 | {{site.data.keyword.openshiftlong_notm}} toolkit | Master | 4.3.0+20200615 | 4.4.0+20200615 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.4.0+20200615){: external}. |
 {: caption="Changes since version 4.3.28_1532_openshift" caption-side="top"}

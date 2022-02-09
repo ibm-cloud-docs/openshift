@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-07"
+lastupdated: "2022-02-09"
 
-keywords: openshift, lb2.0, nlb
+keywords: openshift, lb2.0, nlb, app protocol, application protocol
 
 subcollection: openshift
 
@@ -59,6 +59,9 @@ As opposed to version 1.0 NLBs, version 2.0 NLBs don't use NAT when forwarding r
 The TCP/UDP network load balancer (NLB) 1.0 uses Iptables, a Linux kernel feature to load balance requests across an app's pods.
 {: shortdesc}
 
+Mixed protocol load balancer services are not supported in IBM Cloud Kubernetes Service. You cannot specify both TCP and UDP ports your in load balancer definition.
+{: note}
+
 ### Traffic flow in a single-zone cluster
 {: #v1_single}
 
@@ -95,6 +98,9 @@ The following diagram shows how a network load balancer (NLB) 1.0 directs commun
 {: #planning_ipvs}
 
 The NLB 2.0 is a Layer 4 load balancer that uses the Linux kernel's IP Virtual Server (IPVS). The NLB 2.0 supports TCP and UDP, runs in front of multiple worker nodes, and uses IP over IP (IPIP) tunneling to distribute traffic that arrives to a single NLB IP address across those worker nodes.
+
+Mixed protocol load balancer services are not supported in IBM Cloud Kubernetes Service. You cannot specify both TCP and UDP ports your in load balancer definition.
+{: note}
 
 ### Traffic flow in a single-zone cluster
 {: #ipvs_single}

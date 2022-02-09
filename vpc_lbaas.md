@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-07"
+lastupdated: "2022-02-09"
 
-keywords: openshift
+keywords: openshift, app protocol, application protocol
 
 subcollection: openshift
 
@@ -114,6 +114,10 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
 1. [Deploy your app to the cluster](/docs/containers?topic=containers-deploy_app#app_cli). Ensure that you add a label in the metadata section of your deployment configuration file. This custom label identifies all pods where your app runs to include them in the load balancing.
 
 2. Create a configuration YAML file for your Kubernetes `LoadBalancer` service. Consider naming the service in the format `<app_name>-vpc-nlb-<VPC_zone>`.
+
+    Mixed protocol load balancer services are not currently supported in IBM Cloud Kubernetes Service. Do not specify both TCP and UDP ports in your load balancer definition, as doing so causes an error that prevents the load balancer service from provisioning.
+    {: important}
+
     ```yaml
     apiVersion: v1
     kind: Service
@@ -298,6 +302,10 @@ To enable your app to receive private network requests,
 3. [Deploy your app to the cluster](/docs/containers?topic=containers-deploy_app#app_cli). Ensure that you add a label in the metadata section of your deployment configuration file. This custom label identifies all pods where your app runs to include them in the load balancing.
 
 4. Create a configuration YAML file for your Kubernetes `LoadBalancer` service. Consider naming the service in the format `<app_name>-vpc-nlb-<VPC_zone>`.
+
+    Mixed protocol load balancer services are not currently supported in IBM Cloud Kubernetes Service. Do not specify both TCP and UDP ports in your load balancer definition, as doing so causes an error that prevents the load balancer service from provisioning.
+    {: important}
+
     ```yaml
     apiVersion: v1
     kind: Service
@@ -526,6 +534,10 @@ To enable your app to receive public or private requests,
 1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label in the metadata section of your deployment configuration file. This custom label identifies all pods where your app runs to include them in the load balancing.
 
 2. Create a configuration YAML file for your Kubernetes `LoadBalancer` service and name the file `myloadbalancer.yaml`.
+
+    Mixed protocol load balancer services are not currently supported in IBM Cloud Kubernetes Service. Do not specify both TCP and UDP ports in your load balancer definition, as doing so causes an error that prevents the load balancer service from provisioning.
+    {: important}
+
     ```yaml
     apiVersion: v1
     kind: Service

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-09"
 
 keywords: openshift
 
@@ -28,22 +28,37 @@ Review the default settings for {{site.data.keyword.openshiftshort}} components 
 Review the feature gates that are applied to all master and worker node components by default in {{site.data.keyword.openshiftlong_notm}} clusters. These feature gates differ from the ones that are set up in community distributions. The {{site.data.keyword.cloud_notm}} provider version enables {{site.data.keyword.openshiftshort}} APIs and features that are at beta. {{site.data.keyword.openshiftshort}} alpha features, which are subject to change, are disabled.
 {: shortdesc}
 
-| {{site.data.keyword.openshiftshort}} version | Default feature gates |
-|---|---|
-| 4.8 | - `ServiceLoadBalancerClass=true`  \n - `LegacyNodeRoleBehavior=false`  \n - `DownwardAPIHugePages=true`|
-| 4.7 | - `LegacyNodeRoleBehavior=false`  \n - `RemoveSelfLink=false`|
-| 4.6 | - `APIPriorityAndFairness=true`  \n - `LegacyNodeRoleBehavior=false`  \n - `SCTPSupport=false`  \n - `ServiceAppProtocol=false`|
-| 4.5 | - `ExperimentalCriticalPodAnnotation=true`  \n - `LocalStorageCapacityIsolation=false`|
-| 4.4 | - `ExperimentalCriticalPodAnnotation=true`  \n - `LocalStorageCapacityIsolation=false`|
-| 4.3 | - `ExperimentalCriticalPodAnnotation=true`  \n - `LocalStorageCapacityIsolation=false`|
-| 1.22 | - `ServiceLoadBalancerClass=true`  \n - ServiceLBNodePortControl=false`  \n - `CustomCPUCFSQuotaPeriod=true`  \n - `IPv6DualStack=false` |
-| 1.21 | - `CustomCPUCFSQuotaPeriod=true`  \n - `IPv6DualStack=false` |
-| 1.20 | - `AllowInsecureBackendProxy=false`  \n - `CustomCPUCFSQuotaPeriod=true`|
-| 1.19 | - `RuntimeClass=false`  \n - `CustomCPUCFSQuotaPeriod=true`  \n - `AllowInsecureBackendProxy=false`  \n - `SCTPSupport=false`  \n - `ServiceAppProtocol=false`|
-| 1.18 | - `RuntimeClass=false`  \n - `CustomCPUCFSQuotaPeriod=true`  \n - `AllowInsecureBackendProxy=false`|
-{: caption="Overview of feature gates" caption-side="top"}
-{: summary="The rows are read from left to right. The version is in the first column, with the default feature gates in the second column."}
 
+  
+4.9
+:   `ServiceLBNodePortControl=false`
+
+4.8
+:   `ServiceLoadBalancerClass=true`
+:   `LegacyNodeRoleBehavior=false`
+:   `DownwardAPIHugePages=true`
+
+4.7
+:   `LegacyNodeRoleBehavior=false`
+:   `RemoveSelfLink=false`
+
+4.6
+:   `APIPriorityAndFairness=true`
+:   `LegacyNodeRoleBehavior=false`
+:   `SCTPSupport=false`
+:   `ServiceAppProtocol=false`
+
+4.5
+:   `ExperimentalCriticalPodAnnotation=true`
+:   `LocalStorageCapacityIsolation=false`
+
+4.4
+:   `ExperimentalCriticalPodAnnotation=true`
+:   `LocalStorageCapacityIsolation=false`
+
+4.3
+:   `ExperimentalCriticalPodAnnotation=true`
+:   `LocalStorageCapacityIsolation=false`
 
 
 
@@ -54,27 +69,26 @@ Review the feature gates that are applied to all master and worker node componen
 Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many OpenShift Container Platform global settings are set up for you. You can configure some global settings, but other global settings you can only review, and any changes are overwritten. For more information, see [Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP](/docs/openshift?topic=openshift-cs_ov#compare_ocp). You can also review the control plane components in the [{{site.data.keyword.openshiftlong_notm}} Toolkit](https://github.com/openshift/ibm-roks-toolkit){: external} project on GitHub.
 {: shortdesc}
 
-**Configurable global settings**:
-*   `Image.InternalRegistryHostname`
-*   `Image.AllowedRegistriesForImport` (for an example, see [Adding a private registry to the global pull secret](/docs/openshift?topic=openshift-registry#cluster_global_pull_secret))
-*   `Build.BuildControllerConfig`
-*   `Project.RequestMessage`
-*   `Project.RequestTemplateName`
+Configurable global settings:
+* `Image.InternalRegistryHostname`
+* `Image.AllowedRegistriesForImport` For an example, see [Adding a private registry to the global pull secret](/docs/openshift?topic=openshift-registry#cluster_global_pull_secret).
+* `Build.BuildControllerConfig`
+* `Project.RequestMessage`
+* `Project.RequestTemplateName`
 
-**Read-only custom resource definitions in the `config.openshift.io` resource group**:
-*   `APIServer`
-*   `Authentication`
-*   `ClusterVersion`
-*   `DNS`
-*   `FeatureGate`
-*   `Image`
-*   `Infrastructure`
-*   `Ingress`
-*   `Network`
-*   `OAuth`
-*   `Proxy`
-*   `Scheduler`
-
+Read-only custom resource definitions in the `config.openshift.io` resource group:
+* `APIServer`
+* `Authentication`
+* `ClusterVersion`
+* `DNS`
+* `FeatureGate`
+* `Image`
+* `Infrastructure`
+* `Ingress`
+* `Network`
+* `OAuth`
+* `Proxy`
+* `Scheduler`
 
 
 

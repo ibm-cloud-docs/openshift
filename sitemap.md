@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-07"
+lastupdated: "2022-02-09"
 
 keywords: openshift
 subcollection: openshift
@@ -183,6 +183,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
 * [February 2022](/docs/openshift?topic=openshift-iks-release#release-feb-2022)
+
+    * [9 February 2022](/docs/openshift?topic=openshift-iks-release#9feb2022)
 
 * [January 2022](/docs/openshift?topic=openshift-iks-release#release-jan-2022)
 
@@ -865,9 +867,9 @@ subcollection: openshift
 
 * [Navigate the {{site.data.keyword.openshiftshort}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
 
-    * [<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview](/docs/openshift?topic=openshift-openshift_tutorial#openshift_console4_overview_tutorial)
+    * [![Version 4 icon.](images/icon-version-43.png) {{site.data.keyword.openshiftshort}} console overview](/docs/openshift?topic=openshift-openshift_tutorial#openshift_console4_overview_tutorial)
 
-    * [<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview](/docs/openshift?topic=openshift-openshift_tutorial#openshift_console311_overview_tutorial)
+    * [![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.openshiftshort}} console overview](/docs/openshift?topic=openshift-openshift_tutorial#openshift_console311_overview_tutorial)
 
 * [Deploy an app to your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
 
@@ -2150,9 +2152,9 @@ subcollection: openshift
 
 * [Accessing the {{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-deploy_app#openshift_console)
 
-    * [<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview](/docs/openshift?topic=openshift-deploy_app#openshift_console4_overview)
+    * [![Version 4 icon.](images/icon-version-43.png) {{site.data.keyword.openshiftshort}} console overview](/docs/openshift?topic=openshift-deploy_app#openshift_console4_overview)
 
-    * [<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} console overview](/docs/openshift?topic=openshift-deploy_app#openshift_console311_overview)
+    * [![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.openshiftshort}} console overview](/docs/openshift?topic=openshift-deploy_app#openshift_console311_overview)
 
 [Testing access to apps with NodePorts](/docs/openshift?topic=openshift-nodeport#nodeport)
 
@@ -3597,6 +3599,10 @@ subcollection: openshift
 
 * [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history)
 
+* [{{site.data.keyword.openshiftshort}} 4.9](/docs/openshift?topic=openshift-openshift_versions#ocp49)
+
+    * [Update before master](/docs/openshift?topic=openshift-openshift_versions#49_before)
+
 * [{{site.data.keyword.openshiftshort}} 4.8](/docs/openshift?topic=openshift-openshift_versions#ocp48)
 
     * [Update before master](/docs/openshift?topic=openshift-openshift_versions#48_before)
@@ -3618,6 +3624,10 @@ subcollection: openshift
     * [{{site.data.keyword.openshiftshort}} 4.3 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#ocp43)
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog#openshift_changelog)
+
+* [Version 4.9 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-49)
+
+    * [Change log for master fix pack 4.9.17_1525_openshift and worker node fix pack 4.9.17_1523_openshift, released 9 Febuary 2022](/docs/openshift?topic=openshift-openshift_changelog#4917_1525)
 
 * [Version 4.8 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-48)
 

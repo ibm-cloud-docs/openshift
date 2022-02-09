@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-04"
+lastupdated: "2022-02-09"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -25,6 +25,37 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
+
+## Version 4.9 changelog
+{: #version-49}
+
+
+Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.9 patch updates.
+{: shortdesc}
+
+### Change log for master fix pack 4.9.17_1525_openshift and worker node fix pack 4.9.17_1523_openshift, released 9 Febuary 2022
+{: #4917_1525}
+
+The following table shows the changes that are in the master fix pack `4.9.17_1525_openshift` and worker node fix pack `4.9.17_1523_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Calico | v3.20.3 | v3.21.4 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. |
+| Calico Operator | v1.20.5 | v1.23.5 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.23.5){: external}. |
+| Cluster health image | v1.2.21 | v1.3.0 | Added new health check for cluster autoscaler add-on. |
+| etcd | N/A | N/A | Updated to support metrics collection for OpenShift. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.21.9-1 | v1.22.6-1 | Updated to support the Kubernetes `1.22.6` release and to use `Go` version `1.16.12`. In addition, the code for this component is now [open source](https://github.com/IBM-Cloud/cloud-provider-ibm){: external}. |
+| {{site.data.keyword.openshiftshort}} (master) | 4.8.26 | 4.9.17 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html#ocp-4-9-17){: external}. |
+| {{site.data.keyword.openshiftshort}} (worker node) | 4.8.28 | 4.9.17 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html#ocp-4-9-17){: external}. |
+| OpenShift Control Plane Operator | v4.8.0-20220107 | v4.9.0-20220201 | See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.9.0+20220201){: external}. |
+| {{site.data.keyword.openshiftshort}} configuration | N/A | N/A | Updated the [feature gate configuration](/docs/openshift?topic=openshift-service-settings#feature-gates). Added new `ibm-admin` flow schema to default [Kubernetes API priority and fairness configuration](/docs/openshift?topic=openshift-kubeapi-priority). |
+| Pause container image | 3.5 | 3.6 | See the [pause container image release notes](https://github.com/kubernetes/kubernetes/blob/master/build/pause/CHANGELOG.md){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.8.0-20220107 | v4.9.0-20220201 | See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.9.0+20220201){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} toolkit | 4.8.0+20220107 | 4.9.0+20220201 | See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.9.0+20220201){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.8.26_1542_openshift master and 4.8.28_1543_openshift worker node." caption-side="top"}
+
 
 ## Version 4.8 changelog
 {: #version-48}
@@ -1441,7 +1472,7 @@ The following table shows the changes that are in the version updates for the `4
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 3.11 patch updates.
 {: shortdesc}
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported on 6 June 2022 (date subject to change).
+![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported on 6 June 2022 (date subject to change).
 {: deprecated}
 
 ### Changelog for worker node fix pack 3.11.570_1620_openshift, released 31 January 2022

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-02-08"
 
 keywords: openshift
 
@@ -25,7 +25,7 @@ content-type: troubleshoot
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This troubleshooting topic applies only to {{site.data.keyword.openshiftshort}} clusters that run version 3.11.
+![Version 3.11 icon.](images/icon-version-311.png) This troubleshooting topic applies only to {{site.data.keyword.openshiftshort}} clusters that run version 3.11.
 {: note}
 
 

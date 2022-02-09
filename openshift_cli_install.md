@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-21"
+lastupdated: "2022-02-09"
 
 keywords: openshift, oc
 
@@ -114,24 +114,24 @@ Looking for a simple installation? You can try installing the plug-in with a pac
 
 1. Download the latest {{site.data.keyword.openshiftshort}} CLI (`oc`) for your local operating system and {{site.data.keyword.openshiftshort}} version. The current default {{site.data.keyword.openshiftshort}} version is 4.8. If you use Windows, install the `oc` CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later. You can get the download link for `oc` from the {{site.data.keyword.openshiftshort}} web console, or manually from the `mirror.openshift.com` website.
 
-    **<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> Version 4 clusters only: Download the `oc` CLI from your cluster.**
+    **![Version 4 icon.](images/icon-version-43.png) Version 4 clusters only: Download the `oc` CLI from your cluster.**
     1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
     2. Click **{{site.data.keyword.openshiftshort}} web console**.
     3. From the menu bar, click the information (question mark) icon.
     4. Click **Command Line Tools**.
     5. Click the download link for your operating system.
 
-    **<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> Version 3 or 4 clusters: Links to manually download the `oc` CLI from `mirror.openshift.com`.**
+    **![Version 3.11 icon.](images/icon-version-311.png) ![Version 4 icon.](images/icon-version-43.png) Version 3 or 4 clusters: Links to manually download the `oc` CLI from `mirror.openshift.com`.**
     * [OpenShift Container Platform version 3 `oc` download link](https://mirror.openshift.com/pub/openshift-v3/clients/){: external}
     * [OpenShift Container Platform version 4 `oc` download links](https://mirror.openshift.com/pub/openshift-v4/clients/ocp/){: external}.
 
-2. Download the Kubernetes CLI (`kubectl`) for your {{site.data.keyword.openshiftshort}} cluster. You might use different `kubectl` versions if you have community Kubernetes clusters that run other Kubernetes versions such as 1.22.4.
+2. Download the Kubernetes CLI (`kubectl`) for your {{site.data.keyword.openshiftshort}} cluster. You might use different `kubectl` versions if you have community Kubernetes clusters that run other Kubernetes versions such as 1.23.3.
 
-    * <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> For clusters that run {{site.data.keyword.openshiftshort}} 3.11: Download at least version 1.15. Because earlier `kubectl` versions are no longer supported, the `kubectl` version that you use for your {{site.data.keyword.openshiftshort}} 3.11, Kubernetes 1.11 cluster can't meet the `+/- 1` [skew policy](https://kubernetes.io/releases/version-skew-policy/){: external}. Instead, use at least `kubectl` version 1.15 to protect your cluster from Common Vulnerability and Exposures (CVEs) that might arise in unsupported versions.
+    * ![Version 3.11 icon.](images/icon-version-311.png) For clusters that run {{site.data.keyword.openshiftshort}} 3.11: Download at least version 1.15. Because earlier `kubectl` versions are no longer supported, the `kubectl` version that you use for your {{site.data.keyword.openshiftshort}} 3.11, Kubernetes 1.11 cluster can't meet the `+/- 1` [skew policy](https://kubernetes.io/releases/version-skew-policy/){: external}. Instead, use at least `kubectl` version 1.15 to protect your cluster from Common Vulnerability and Exposures (CVEs) that might arise in unsupported versions.
         - **OS X**: [https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/darwin/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/darwin/amd64/kubectl){: external}
         - **Linux**: [https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/linux/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/linux/amd64/kubectl){: external}
         - **Windows**: Install the Kubernetes CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later. [https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/windows/amd64/kubectl.exe](https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/windows/amd64/kubectl.exe){: external}
-    * <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> For clusters that run {{site.data.keyword.openshiftshort}} 4: Download the `kubectl` version that matches the Kubernetes version of your {{site.data.keyword.openshiftshort}} cluster. For supported versions, see [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types).
+    * ![Version 4 icon.](images/icon-version-43.png) For clusters that run {{site.data.keyword.openshiftshort}} 4: Download the `kubectl` version that matches the Kubernetes version of your {{site.data.keyword.openshiftshort}} cluster. For supported versions, see [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types).
         - **OS X**: [https://storage.googleapis.com/kubernetes-release/release/v1.21.6/bin/darwin/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.21.6/bin/darwin/amd64/kubectl){: external}
         - **Linux**: [https://storage.googleapis.com/kubernetes-release/release/v1.21.6/bin/linux/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.21.6/bin/linux/amd64/kubectl){: external}
         - **Windows**: Install the Kubernetes CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later. [https://storage.googleapis.com/kubernetes-release/release/v1.21.6/bin/windows/amd64/kubectl.exe](https://storage.googleapis.com/kubernetes-release/release/v1.21.6/bin/windows/amd64/kubectl.exe){: external}

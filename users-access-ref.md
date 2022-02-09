@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-07"
+lastupdated: "2022-02-09"
 
 keywords: openshift
 
@@ -291,7 +291,7 @@ The following table shows the Kubernetes resource permissions that are granted b
     </tr>
         <tr>
     <td>Any service access role</td>
-    <td>All users of an {{site.data.keyword.openshiftshort}} cluster are given the following roles that vary by cluster version.<ul><li><img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> Version 3 clusters: <code>basic-users</code> and <code>self-provisioners</code>.</li><li><img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> Version 4 clusters: <code>basic-users</code>.</li></ul></td>
+    <td>All users of an {{site.data.keyword.openshiftshort}} cluster are given the following roles that vary by cluster version.<ul><li>![Version 3.11 icon.](images/icon-version-311.png) Version 3 clusters: <code>basic-users</code> and <code>self-provisioners</code>.</li><li>![Version 4 icon.](images/icon-version-43.png) Version 4 clusters: <code>basic-users</code>.</li></ul></td>
     <td><ul>
         <li>Get basic information about projects that the user has access to.</li>
         <li>Create authorized resources in the projects that the user has access to.</li>

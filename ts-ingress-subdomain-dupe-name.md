@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-02-08"
 
 keywords: openshift
 
@@ -22,7 +22,7 @@ content-type: troubleshoot
 **Infrastructure provider**:
 * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
-* <img src="images/icon-satellite.svg" alt="{{site.data.keyword.satelliteshort}} infrastructure provider icon" width="15" style="width:15px; border-style: none"/> {{site.data.keyword.satelliteshort}}
+* ![Satellite infrastructure provider icon.](images/icon-satellite.svg) {{site.data.keyword.satelliteshort}}
 
 
 You create and delete a cluster multiple times, such as for automation purposes.

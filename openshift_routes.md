@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-25"
+lastupdated: "2022-02-08"
 
 keywords: openshift, route, router
 
@@ -21,7 +21,7 @@ subcollection: openshift
 Expose the services in your {{site.data.keyword.openshiftlong}} cluster on the router's external IP address by using a route.
 {: shortdesc}
 
-<img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run {{site.data.keyword.openshiftshort}} version 4. To set up routes for {{site.data.keyword.openshiftshort}} version 3.11, see [Exposing apps with routes in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-routes-311).
+![Version 4 icon.](images/icon-version-43.png) This information is for clusters that run {{site.data.keyword.openshiftshort}} version 4. To set up routes for {{site.data.keyword.openshiftshort}} version 3.11, see [Exposing apps with routes in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-routes-311).
 {: important}
 
 Not sure whether to use {{site.data.keyword.openshiftshort}} routes or Ingress? Check out [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning).

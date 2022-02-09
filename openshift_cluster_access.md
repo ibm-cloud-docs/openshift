@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-07"
+lastupdated: "2022-02-08"
 
 keywords: openshift, clusters
 
@@ -907,7 +907,7 @@ Save your API key in a secure location. You can't retrieve the API key again. If
         ```
         {: screen}
 
-    2. <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} version 4 only**: Get the token endpoint of the {{site.data.keyword.openshiftshort}} `oauth` server.
+    2. ![Version 4 icon.](images/icon-version-43.png) **{{site.data.keyword.openshiftshort}} version 4 only**: Get the token endpoint of the {{site.data.keyword.openshiftshort}} `oauth` server.
         ```sh
         curl <master_URL>/.well-known/oauth-authorization-server | jq -r .token_endpoint
         ```
@@ -918,8 +918,8 @@ Save your API key in a secure location. You can't retrieve the API key again. If
         <token_endpoint>/oauth/token
         ```
     3. Log in to the cluster with the endpoint that you previously retrieved.
-        * <img src="images/icon-version-43.png" alt="Version 4 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} version 4**: Replace `<URL>` with the `<token_endpoint>` of the `oauth` server.
-        * <img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> **{{site.data.keyword.openshiftshort}} version 3.11**: Replace `<URL>` with the master URL.
+        * ![Version 4 icon.](images/icon-version-43.png) **{{site.data.keyword.openshiftshort}} version 4**: Replace `<URL>` with the `<token_endpoint>` of the `oauth` server.
+        * ![Version 3.11 icon.](images/icon-version-311.png) **{{site.data.keyword.openshiftshort}} version 3.11**: Replace `<URL>` with the master URL.
 
         Example curl request:
         ```sh

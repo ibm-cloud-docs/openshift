@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-25"
+lastupdated: "2022-02-08"
 
 keywords: openshift, route, router
 
@@ -19,7 +19,7 @@ subcollection: openshift
 Expose the services in your {{site.data.keyword.openshiftlong}} cluster on the router's external IP address by using a route.
 {: shortdesc}
 
-<img src="images/icon-version-311.png" alt="Version 3.11 icon" width="30" style="width:30px; border-style: none"/> This information is for clusters that run {{site.data.keyword.openshiftshort}} version 3.11 only. To set up routes for {{site.data.keyword.openshiftshort}} version 4, see [Exposing apps with routes in {{site.data.keyword.openshiftshort}} version 4](/docs/openshift?topic=openshift-openshift_routes).
+![Version 3.11 icon.](images/icon-version-311.png) This information is for clusters that run {{site.data.keyword.openshiftshort}} version 3.11 only. To set up routes for {{site.data.keyword.openshiftshort}} version 4, see [Exposing apps with routes in {{site.data.keyword.openshiftshort}} version 4](/docs/openshift?topic=openshift-openshift_routes).
 {: important}
 
 ## Overview

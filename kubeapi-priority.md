@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-02-09"
 
 keywords: openshift
 
@@ -34,6 +34,7 @@ The Kubernetes API priority and feature gate is enabled in clusters that run {{s
 | ----------- | --------- | -------------- |
 | `apiserver-health` | Kubernetes API server health resources | [Custom priority level](#kube-api-prioritylevelconfig) for these resources. |
 | `calico-system-service-accounts` | Resources in the `calico-system` namespace that use a service account in the namespace | Same priority as `kube-system` namespace service accounts |
+| `ibm-admin` | Resources from IBM cluster administrators | Exempts requests by cluster administrators from priority restrictions. This schema is available for {{site.data.keyword.openshiftshort}} version 4.9 and later. |
 | `ibm-system-service-accounts` | Resources in the `ibm-system` namespace that use a service account in the namespace | Same priority as `kube-system` namespace service accounts |
 | `tigera-operator-service-accounts` | Resources in the `tigera-operator` namespace that use a service account in the namespace | Same priority as `kube-system` namespace service accounts |
 {: caption="Default flow schema and priority levels" caption-side="top"}
