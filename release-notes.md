@@ -33,11 +33,14 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+
+
 New! OpenShift 4.9
 :   You can create or [update clusters to OpenShift version 4.9](/docs/openshift?topic=openshift-openshift_versions#ocp49). With OpenShift 4.9, you get the latest OpenShift features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}.
 
 Master fix pack and worker node fix pack update
 :   Change log documentation is available for OpenShift version [`4.9.17_1525_openshift` and `4.9.17_1523_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4917_1525).
+
 
 
   
