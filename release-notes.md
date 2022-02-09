@@ -41,14 +41,7 @@ Master fix pack and worker node fix pack update
 
 
   
-### 3 February 2022
-{: #3feb2022}
-{: release-note}
 
-Istio add-on
-:   [Version `1.12.2`](/docs/containers?topic=containers-istio-changelog#1202)
-
-</containers>
 
 
 
