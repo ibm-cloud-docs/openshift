@@ -3623,6 +3623,10 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog#openshift_changelog)
 
+* [Version 4.9 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-49)
+
+    * [Change log for master fix pack 4.9.17_1525_openshift and worker node fix pack 4.9.17_1523_openshift, released 9 Febuary 2022](/docs/openshift?topic=openshift-openshift_changelog#4917_1525)
+
 * [Version 4.8 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-48)
 
     * [Changelog for worker node fix pack 4.8.28_1543_openshift, released 31 January 2022](/docs/openshift?topic=openshift-openshift_changelog#4828_1543)
