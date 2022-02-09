@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-08"
+lastupdated: "2022-02-09"
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
 
@@ -165,7 +165,7 @@ Keep in mind that some services such as Ingress might require multiple worker no
 {{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.openshiftshort}}. The worker node operating system is Red Hat Enterprise Linux 7.
 
 **Supported versions**:
-* Latest: 4.8 (Kubernetes 1.22.4)
+* Latest: 4.9 (Kubernetes 1.22.4)
 * Default: 4.8 (Kubernetes 1.21)
 
 **Deprecated and unsupported versions**:

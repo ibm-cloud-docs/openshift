@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-07"
+lastupdated: "2022-02-09"
 
 keywords: openshift, version, update, upgrade
 
@@ -23,6 +23,7 @@ Review information about the supported {{site.data.keyword.openshiftshort}} vers
 {: shortdesc}
 
 For more information about the {{site.data.keyword.openshiftshort}} and Kubernetes project versions, review the following information.
+* [{{site.data.keyword.openshiftshort}} 4.9 release notes overview](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html){: external}
 * [{{site.data.keyword.openshiftshort}} 4.8 release notes overview](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html){: external}
 * [{{site.data.keyword.openshiftshort}} 4.7 release notes overview](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html){: external}
 * [{{site.data.keyword.openshiftshort}} 4.6 release notes overview](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html){: external}
@@ -78,7 +79,7 @@ Worker nodes can also run patch versions that are greater than the masters. As u
 {{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.openshiftshort}}. The worker node operating system is Red Hat Enterprise Linux 7.
 
 **Supported versions**:
-* Latest: 4.8 (Kubernetes 1.22.4)
+* Latest: 4.9 (Kubernetes 1.22.4)
 * Default: 4.8 (Kubernetes 1.21)
 * 4.6 (Kubernetes 1.19)
 
@@ -124,15 +125,34 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 | Supported? | {{site.data.keyword.openshiftshort}} / Kubernetes version | Release date | Unsupported date |
 | --- | --- | --- | --- |
-| Supported | 4.8 / 1.21 | 29 Sep 2021 | Sep 2022`†` |
-| Supported | 4.7 / 1.20 | 09 Jun 2021 | Jul 2022`†` |
-| Supported | 4.6 / 1.19 | 17 Feb 2021 | May 2022 `†` |
+| Supported | 4.9 / 1.22 | 09 Feb 2022 | May 2023`†` |
+| Supported | 4.8 / 1.21 | 29 Sep 2021 | Feb 2023`†` |
+| Supported | 4.7 / 1.20 | 09 Jun 2021 | Dec 2022`†` |
+| Supported | 4.6 / 1.19 | 17 Feb 2021 | Oct 2022 `†` |
 | Not supported | 4.5 / 1.18 | 13 Oct 2020 | Oct 10 2021 |
 | Not supported | 4.4 / 1.17 | 21 Jul 2020 | 31 May 2021 |
 | Not supported | 4.3 / 1.16 | 20 Apr 2020 | 7 Mar 2021 |
 | Deprecated | 3.11 / 1.11 | 01 Aug 2019 | 06 Jun 2022 `†` |
 {: caption="Release history for {{site.data.keyword.openshiftlong_notm}}." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the supported status, the second column is OpenShift and Kubernetes version number. The third column is the release date. The fourth column is the unsupported date."}
+
+## {{site.data.keyword.openshiftshort}} 4.9
+{: #ocp49}
+
+Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.openshiftshort}} 4.8 to {{site.data.keyword.openshiftshort}} 4.9.
+{: shortdesc}
+
+### Update before master
+{: #49_before}
+
+The following table shows the actions that you must take before you [update the cluster master](/docs/openshift?topic=openshift-update#master).
+{: shortdesc}
+
+| Type | Description |
+| ---- | ----------- |
+| **Unsupported:** Deprecated and removed OpenShift features | For more information, review [OpenShift version 4.9 deprecated and removed features](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html#ocp-4-9-deprecated-removed-features){: external}. |
+| **Unsupported:**  Beta versions of numerous Kubernetes APIs | For more information, review [Preparing to upgrade to OpenShift Container Platform 4.9](https://access.redhat.com/articles/6329921){: external}, [Kubernetes API and Feature Removals In 1.22: Here’s What You Need To Know](https://kubernetes.io/blog/2021/07/14/upcoming-changes-in-kubernetes-1-22/){: external} and [Deprecated API Migration Guide](https://kubernetes.io/docs/reference/using-api/deprecation-guide/#v1-22){: external}. See [Deprecation Warnings](https://kubernetes.io/blog/2020/09/03/warnings/#deprecation-warnings){: external} for methods to identify use of deprecated APIs. Warnings for components provided by the Red Hat OpenShift on IBM Cloud cluster install can be ignored since they will be handled during the update. |
+{: caption="Changes to make before you update the master to {{site.data.keyword.openshiftshort}} 4.9" caption-side="top"}
 
 ## {{site.data.keyword.openshiftshort}} 4.8
 {: #ocp48}

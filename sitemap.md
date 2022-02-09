@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-08"
+lastupdated: "2022-02-09"
 
 keywords: openshift
 subcollection: openshift
@@ -3596,6 +3596,10 @@ subcollection: openshift
 * [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types)
 
 * [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history)
+
+* [{{site.data.keyword.openshiftshort}} 4.9](/docs/openshift?topic=openshift-openshift_versions#ocp49)
+
+    * [Update before master](/docs/openshift?topic=openshift-openshift_versions#49_before)
 
 * [{{site.data.keyword.openshiftshort}} 4.8](/docs/openshift?topic=openshift-openshift_versions#ocp48)
 

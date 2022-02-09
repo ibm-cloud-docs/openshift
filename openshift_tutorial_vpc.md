@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-08"
+lastupdated: "2022-02-09"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -114,11 +114,11 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
     {: pre}
 
 4. Create a cluster in your VPC in the same zone as the subnet.
-    * The following command creates a version 4.8 cluster in Dallas with the minimum configuration of 2 worker nodes that have at least 4 cores and 16 GB memory so that default {{site.data.keyword.openshiftshort}} components can deploy.
+    * The following command creates a version 4.9 cluster in Dallas with the minimum configuration of 2 worker nodes that have at least 4 cores and 16 GB memory so that default {{site.data.keyword.openshiftshort}} components can deploy.
     * By default, your cluster is created with a public and a private cloud service endpoint. You can use the public cloud service endpoint to access the Kubernetes master, such as to run `oc` commands, from your local machine. Your worker nodes communicate with the master on the private cloud service endpoint. For the purposes of this tutorial, do **not** specify the `--disable-public-service-endpoint` flag.
     * For more information about the command options, see the [`cluster create vpc-gen2` CLI reference docs](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2).
     ```sh
-    ibmcloud oc cluster create vpc-gen2 --name myvpc-cluster --zone us-south-1 --version 4.8_openshift --flavor bx2.4x16 --workers 2 --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --cos-instance <COS_CRN>
+    ibmcloud oc cluster create vpc-gen2 --name myvpc-cluster --zone us-south-1 --version 4.9_openshift --flavor bx2.4x16 --workers 2 --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --cos-instance <COS_CRN>
     ```
     {: pre}
 
@@ -159,7 +159,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
     Example output
 
     ```sh
-    Client Version: v4.8.0
+    Client Version: v4.9.0
     Kubernetes Version: v1.22.4.2
     ```
     {: screen}
