@@ -54,8 +54,6 @@ Master fix pack and worker node fix pack update
 ### 31 January 2022
 {: #31jan2022}
 
-{: release-note}
-
 Version changelog
 :   Fix pack update.
 
