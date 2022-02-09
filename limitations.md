@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-08"
+lastupdated: "2022-02-09"
 
-keywords: openshift, http2, quota
+keywords: openshift, http2, quota, app protocol, application protocol
 
 subcollection: openshift
 
