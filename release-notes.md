@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-07"
+lastupdated: "2022-02-09"
 
 keywords: openshift
 
@@ -27,7 +27,28 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## February 2022
 {: #release-feb-2022}
 
+### 9 February 2022
+{: #9feb2022}
+{: release-note}
 
+
+
+New! OpenShift 4.9
+:   You can create or [update clusters to OpenShift version 4.9](/docs/openshift?topic=openshift-openshift_versions#ocp49). With OpenShift 4.9, you get the latest OpenShift features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}.
+
+Master fix pack and worker node fix pack update
+:   Change log documentation is available for OpenShift version [`4.9.17_1525_openshift` and `4.9.17_1523_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4917_1525).
+
+
+  
+### 3 February 2022
+{: #3feb2022}
+{: release-note}
+
+Istio add-on
+:   [Version `1.12.2`](/docs/containers?topic=containers-istio-changelog#1202)
+
+</containers>
 
 
 
