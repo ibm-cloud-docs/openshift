@@ -50,37 +50,25 @@ If corporate network policies prevent access from your local system to public en
     {: pre}
 
 3. Allow access to `containers.cloud.ibm.com` on port 443 in your firewall.
-4. Verify your connection. If access is configured correctly, ships are displayed in the output.
+4. Verify your connection. If access is configured correctly, zones are displayed in the output.
 
     ```sh
-    curl https://containers.cloud.ibm.com/v1/
+    curl https://containers.cloud.ibm.com/v1/zones
     ```
     {: pre}
 
     Example output
 
     ```sh
-                                         )___(
-                                  _______/__/_
-                         ___     /===========|   ___
-        ____       __   [\\\]___/____________|__[///]   __
-        \   \_____[\\]__/___________________________\__[//]___
-        \                                                    |
-        \                                                  /
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+    [{"id":"mon01","metro":""},{"id":"tor01","metro":""},{"id":"wdc04","metro":"Washington D.C."},{"id":"wdc06","metro":"Washington D.C."},{"id":"wdc07","metro":"Washington D.C."}]
     ```
     {: screen}
 
 
 5. Allow access to the [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) that you plan to use on port 443 in your firewall. The global registry stores IBM-provided public images, and regional registries store your own private or public images.
 
-6. Verify your connection. The following is an example for the US East and US South regional registry. If access is configured correctly, a message of the day is returned in the output.
+6. Verify your connection by [listing your container registry namespaces](/apidocs/container-registry#list-namespaces){: external}.
 
-    ```sh
-    curl https://us.icr.io/api/v1/messages
-    ```
-    {: pre}
 
 
 
