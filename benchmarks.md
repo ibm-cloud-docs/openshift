@@ -408,35 +408,35 @@ Review how {{site.data.keyword.openshiftlong_notm}} complies with the version 1.
 | 1.2.1 | ROKS utilizes RBAC for cluster protection, but allows anonymous discovery, which is considered reasonable per [CIS Kubernetes Benchmark](https://www.cisecurity.org/benchmark/kubernetes/). |
 | 1.2.10 | ROKS does not enable the [*EventRateLimit*](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#eventratelimit) admission controller since it is a Kubernetes alpha feature. |
 | 1.2.12 | ROKS does not enable the [*AlwaysPullImages*](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) admission controller since it overrides a container's *imagePullPolicy* and may impact performance. |
-| 1.2.13 | ROKS supports [pod security context constraints](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_scc) which are similar to Kubernetes pod security policies. |
-| 1.2.16 | ROKS supports [pod security context constraints](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_scc) which are similar to Kubernetes pod security policies. |
-| 1.2.22 | ROKS can optionally [enable Kubernetes API server auditing](https://cloud.ibm.com/docs/openshift?topic=openshift-health-audit#api-server-config). |
-| 1.2.23 | ROKS can optionally [enable Kubernetes API server auditing](https://cloud.ibm.com/docs/openshift?topic=openshift-health-audit#api-server-config). |
-| 1.2.24 | ROKS can optionally [enable Kubernetes API server auditing](https://cloud.ibm.com/docs/openshift?topic=openshift-health-audit#api-server-config). |
-| 1.2.25 | ROKS can optionally [enable Kubernetes API server auditing](https://cloud.ibm.com/docs/openshift?topic=openshift-health-audit#api-server-config). |
-| 1.2.33 | ROKS can optionally [enable a Kubernetes Key Management Service (KMS) provider](https://cloud.ibm.com/docs/openshift?topic=openshift-encryption#kms). |
-| 1.2.34 | ROKS can optionally [enable a Kubernetes Key Management Service (KMS) provider](https://cloud.ibm.com/docs/openshift?topic=openshift-encryption#kms). |
-| 3.2.1 | ROKS can optionally [enable Kubernetes API server auditing](https://cloud.ibm.com/docs/openshift?topic=openshift-health-audit#api-server-config). |
-| 3.2.2 | ROKS can optionally [enable Kubernetes API server auditing](https://cloud.ibm.com/docs/openshift?topic=openshift-health-audit#api-server-config). |
+| 1.2.13 | ROKS supports [pod security context constraints](/docs/openshift?topic=openshift-openshift_scc) which are similar to Kubernetes pod security policies. |
+| 1.2.16 | ROKS supports [pod security context constraints](/docs/openshift?topic=openshift-openshift_scc) which are similar to Kubernetes pod security policies. |
+| 1.2.22 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
+| 1.2.23 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
+| 1.2.24 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
+| 1.2.25 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
+| 1.2.33 | ROKS can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
+| 1.2.34 | ROKS can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
+| 3.2.1 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
+| 3.2.2 | ROKS can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
 | 4.2.6 | ROKS does not protect kernel defaults in order to allow customers to tune kernel parameters. |
 | 4.2.8 | ROKS ensures that the hostname matches the name issued by the infrastructure. |
 | 5.1.2 | ROKS deploys some system components that could have their Kubernetes secret access further restricted. |
 | 5.1.3 | ROKS deploys some system components that could have their Kubernetes resource access further restricted. |
 | 5.1.5 | ROKS does not set [*automountServiceAccountToken: false*](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#use-the-default-service-account-to-access-the-api-server) for each default service account. |
 | 5.1.6 | ROKS deploys some system components that could set [*automountServiceAccountToken: false*](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#use-the-default-service-account-to-access-the-api-server). |
-| 5.2.1 | ROKS can optionally [configure security context constraints](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_scc). |
-| 5.2.2 | ROKS can optionally [configure security context constraints](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_scc). |
-| 5.2.3 | ROKS can optionally [configure security context constraints](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_scc). |
-| 5.2.4 | ROKS can optionally [configure security context constraints](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_scc). |
-| 5.2.5 | ROKS can optionally [configure security context constraints](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_scc). |
-| 5.2.6 | ROKS can optionally [configure security context constraints](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_scc). |
-| 5.2.7 | ROKS can optionally [configure security context constraints](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_scc). |
-| 5.2.8 | ROKS can optionally [configure security context constraints](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_scc). |
-| 5.2.9 | ROKS can optionally [configure security context constraints](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_scc). |
-| 5.3.2 | ROKS has a set of [default Calico network policies defined](https://cloud.ibm.com/docs/openshift?topic=openshift-network_policies#default_policy) and [additional network policies can optionally be added](https://cloud.ibm.com/docs/openshift?topic=openshift-network_policies#adding_network_policies). |
+| 5.2.1 | ROKS can optionally [configure security context constraints](/docs/openshift?topic=openshift-openshift_scc). |
+| 5.2.2 | ROKS can optionally [configure security context constraints](/docs/openshift?topic=openshift-openshift_scc). |
+| 5.2.3 | ROKS can optionally [configure security context constraints](/docs/openshift?topic=openshift-openshift_scc). |
+| 5.2.4 | ROKS can optionally [configure security context constraints](/docs/openshift?topic=openshift-openshift_scc). |
+| 5.2.5 | ROKS can optionally [configure security context constraints](/docs/openshift?topic=openshift-openshift_scc). |
+| 5.2.6 | ROKS can optionally [configure security context constraints](/docs/openshift?topic=openshift-openshift_scc). |
+| 5.2.7 | ROKS can optionally [configure security context constraints](/docs/openshift?topic=openshift-openshift_scc). |
+| 5.2.8 | ROKS can optionally [configure security context constraints](/docs/openshift?topic=openshift-openshift_scc). |
+| 5.2.9 | ROKS can optionally [configure security context constraints](/docs/openshift?topic=openshift-openshift_scc). |
+| 5.3.2 | ROKS has a set of [default Calico network policies defined](/docs/openshift?topic=openshift-network_policies#default_policy) and [additional network policies can optionally be added](/docs/openshift?topic=openshift-network_policies#adding_network_policies). |
 | 5.4.1 | ROKS deploys some system components that could prefer using secrets as files over secrets as environment variables. |
-| 5.4.2 | ROKS can optionally [enable a Kubernetes Key Management Service (KMS) provider](https://cloud.ibm.com/docs/openshift?topic=openshift-encryption#kms). |
-| 5.5.1 | ROKS can optionally [enable image security enforcement](https://cloud.ibm.com/docs/openshift?topic=openshift-images#portieris-image-sec). |
+| 5.4.2 | ROKS can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
+| 5.5.1 | ROKS can optionally [enable image security enforcement](/docs/openshift?topic=openshift-images#portieris-image-sec). |
 | 5.6.2 | ROKS does not annotate all pods with [seccomp profiles](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#seccomp). |
 | 5.6.3 | ROKS deploys some system components that do not set a [pod or container *securityContext*](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/). |
 {: summary="The rows are read from left to right. The first column is the section number for the benchmark recommendation. The second column is the benchmark recommendation. The third column is the scoring of the recommendation, either scored or not scored. The fourth column is the level of the recommendation, either 1 for basic or 2 for more advanced and performance-impacting. The fifth column contains the result of whether the service passes or fails the recommendation. The sixth column designates the responsibility of passing the recommendation, either {{site.data.keyword.IBM_notm}} or shared between {{site.data.keyword.IBM_notm}} and you."}
