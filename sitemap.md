@@ -4821,7 +4821,7 @@ subcollection: openshift
 
 * [Step 1: Check your account setup](/docs/openshift?topic=openshift-ocp-debug#oc-debug-acct)
 
-* [Step 2: VPC: Check the public gateway](/docs/openshift?topic=openshift-ocp-debug#oc-debug-pgw)
+* [Step 2: Check the public gateway](/docs/openshift?topic=openshift-ocp-debug#oc-debug-pgw)
 
 * [Step 3: Check firewalls and network policies](/docs/openshift?topic=openshift-ocp-debug#oc-debug-firewall)
 
