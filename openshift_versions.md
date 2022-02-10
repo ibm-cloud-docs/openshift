@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-10"
 
 keywords: openshift, version, update, upgrade
 
@@ -81,6 +81,7 @@ Worker nodes can also run patch versions that are greater than the masters. As u
 **Supported versions**:
 * Latest: 4.9 (Kubernetes 1.23.3)
 * Default: 4.8 (Kubernetes 1.21)
+* 4.7 (Kubernetes 1.20)
 * 4.6 (Kubernetes 1.19)
 
 **Deprecated and unsupported versions**:
@@ -255,7 +256,6 @@ As of 7 March 2021, {{site.data.keyword.openshiftlong_notm}} clusters that run [
 {: shortdesc}
 
 Unsupported clusters are not provided with security and patch updates and are not supported by {{site.data.keyword.cloud_notm}} Support. Although your cluster and apps might continue to run for a time, you can no longer create, reload, or take other corrective actions on your cluster master or worker nodes when an issue occurs. You can still delete the cluster or worker nodes. To continue running your apps in {{site.data.keyword.openshiftlong_notm}}, [make a new cluster](/docs/containers?topic=containers-clusters#clusters) and [deploy your apps](/docs/containers?topic=containers-app#app) to the new cluster.
-
 
 
 
