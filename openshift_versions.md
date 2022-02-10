@@ -185,7 +185,6 @@ The following table shows the actions that you must take before you [update the 
 | Container runtime default security context capabilities | The container runtime (i.e. CRI-O) default security context capabilities have been changed to match Red Hat OpenShift Container Platform (OCP). `NET_RAW` and `SYS_CHROOT` have been removed. This brings the security behavior of containers in line with OCP. If your app requires either of these capabilities and does not list them in the container or pod `securityContext`, then the app must be changed to include these capabilities. If these changes are not made, your microservices might fail to start and you might see a `permission denied` error. Applications developed for OCP already have the necessary changes.  |
 | Strongswan users | If you are using Strongswan in your cluster, then update at least version 2.7.11 of Strongswan before you update your cluster master to {{site.data.keyword.openshiftshort}} 4.8. In versions of Strongswan earlier than 2.7.11, certain [Strongswan configuration options](/docs/openshift?topic=openshift-vpn#vpn-setup) do not work with the {{site.data.keyword.openshiftshort}} 4.8 master. |
 {: caption="Changes to make before you update the master to {{site.data.keyword.openshiftshort}} 4.8" caption-side="top"}
-
 ## {{site.data.keyword.openshiftshort}} 4.7
 {: #ocp47}
 

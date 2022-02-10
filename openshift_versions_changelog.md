@@ -41,7 +41,7 @@ The following table shows the changes that are in the master fix pack `4.9.17_15
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.20.3 | v3.21.4 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. |
+| Calico | v3.20.3 | v3.21.4 | See the [Calico release notes](https://projectcalico.docs.tigera.io/releases){: external}. |
 | Calico Operator | v1.20.5 | v1.23.5 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.23.5){: external}. |
 | Cluster health image | v1.2.21 | v1.3.0 | Added new health check for cluster autoscaler add-on. |
 | etcd | N/A | N/A | Updated to support metrics collection for OpenShift. |
