@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-08"
+lastupdated: "2022-02-10"
 
 keywords: openshift
 
@@ -39,21 +39,42 @@ Check that your {{site.data.keyword.cloud_notm}} account is set up properly. Som
 * If your classic cluster has multiple zones, or if you have a VPC cluster, make sure that you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-subnets#basics_segmentation). To check if VRF is already enabled, run `ibmcloud account show`. To check if VLAN spanning is enabled, run `ibmcloud oc vlan spanning get`.
 * If some users in the account use a multifactor authentication (MFA) like [TOTP](/docs/account?topic=account-totp), make sure that you [enable MFA](/docs/account?topic=account-enablemfa) for all users in the {{site.data.keyword.cloud_notm}} account.
 
-## Step 2: VPC: Check the public gateway
+## Step 2: Check the public gateway
 {: #oc-debug-pgw}
 
-VPC clusters only, with public and private cloud service endpoints enabled: Check that a public gateway is enabled on each VPC subnet that your cluster is attached to. Public gateway are required for default components such as the web console and OperatorHub to use a secure, public connection to complete actions such as pulling images from remote, private registries.
+* **For VPC clusters with public and private cloud service endpoints enabled:**
 
-1. Use the {{site.data.keyword.cloud_notm}} console or CLI to [ensure that a public gateway is enabled on each subnet](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet) that your cluster is attached to.
-2. Restart the components for the **Developer catalog** in the web console.
-    1. Edit the configmap for the samples operator.
+    Check that a public gateway is enabled on each VPC subnet that your cluster is attached to. Public gateway are required for default components such as the web console and OperatorHub to use a secure, public connection to complete actions such as pulling images from remote, private registries.
+
+    1. Use the {{site.data.keyword.cloud_notm}} console or CLI to [ensure that a public gateway is enabled on each subnet](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet) that your cluster is attached to.
+    2. Restart the components for the **Developer catalog** in the web console.
+        1. Edit the configmap for the samples operator.
+            ```sh
+            oc edit configs.samples.operator.openshift.io/cluster
+            ```
+            {: pre}
+
+        2. Change the value of `managementState` from `Removed` to `Managed`.
+        3. Save and close the config map. Your changes are automatically applied.
+
+* **For Classic clusters with both public and private cloud service endpoints enabled:**
+
+    Check that your cluster has public connectivity so that the networking components can talk to the master as they deploy.
+
+    1. Check the **Master Status**. If the **Master Status** is not **Ready**, [review its status](/docs/openshift?topic=openshift-debug_master) and follow any troubleshooting information to resolve the issue.   
+
         ```sh
-        oc edit configs.samples.operator.openshift.io/cluster
+        ibmcloud oc cluster get -c <cluster_name_or_ID>
         ```
         {: pre}
 
-    2. Change the value of `managementState` from `Removed` to `Managed`.
-    3. Save and close the config map. Your changes are automatically applied.
+    1. In the **Master Status** output, check that your cluster has a **Public Service Endpoint URL**. If your cluster does not have a public cloud service endpoint, [enable it](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se).
+    1. Check that at least some worker nodes in your cluster have a **Public IP** address. If no worker node does, you must [set up public VLANs for at least one worker pool](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans).
+
+        ```sh
+        ibmcloud oc workers -c <cluster_name_or_ID>
+        ```
+        {: pre}
 
 ## Step 3: Check firewalls and network policies
 {: #oc-debug-firewall}

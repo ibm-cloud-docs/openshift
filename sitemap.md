@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-10"
 
 keywords: openshift
 subcollection: openshift
@@ -183,6 +183,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
 * [February 2022](/docs/openshift?topic=openshift-iks-release#release-feb-2022)
+
+    * [10 February 2022](/docs/openshift?topic=openshift-iks-release#10feb2022)
 
     * [9 February 2022](/docs/openshift?topic=openshift-iks-release#9feb2022)
 
@@ -4821,7 +4823,7 @@ subcollection: openshift
 
 * [Step 1: Check your account setup](/docs/openshift?topic=openshift-ocp-debug#oc-debug-acct)
 
-* [Step 2: VPC: Check the public gateway](/docs/openshift?topic=openshift-ocp-debug#oc-debug-pgw)
+* [Step 2: Check the public gateway](/docs/openshift?topic=openshift-ocp-debug#oc-debug-pgw)
 
 * [Step 3: Check firewalls and network policies](/docs/openshift?topic=openshift-ocp-debug#oc-debug-firewall)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-10"
 
 keywords: openshift, kernel
 
@@ -493,7 +493,3 @@ Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.da
         oc delete pods -n kube-system <pod1> <pod2> ...
         ```
         {: pre}
-
-
-
-

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-10"
 
 keywords: openshift
 
@@ -26,6 +26,18 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## February 2022
 {: #release-feb-2022}
+
+
+### 10 February 2022
+{: #10feb2022}
+{: release-note}
+
+
+Certified Kubernetes
+:   Version [4.9](/docs/openshift?topic=openshift-openshift_versions#ocp49) release is now certified.
+
+
+
 
 ### 9 February 2022
 {: #9feb2022}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-10"
 
 keywords: object storage, plug-in, changelog
 
@@ -27,7 +27,7 @@ Refer to the following tables for a summary of changes for each version of the [
 | --- | --- |--- | --- |
 | 2.1.9 | Yes | Greater than or equal to 4.3 | x86 |
 | 2.1.8 | Yes | Greater than or equal to 4.3 | x86 |
-| 2.1.7 | Yes | Greater than or equal to 4.3 | x86 |
+| 2.1.7 | Deprecated | Greater than or equal to 4.3 | x86 |
 | 2.1.6 | Deprecated | Greater than or equal to 4.3 | x86 |
 | 2.1.5 | Deprecated | Greater than or equal to 4.3  | x86 |
 | 2.1.4 | Deprecated | Greater than or equal to 4.3  | x86 |

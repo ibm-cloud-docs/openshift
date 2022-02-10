@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-10"
 
 keywords: openshift, version, update, upgrade
 
@@ -81,6 +81,7 @@ Worker nodes can also run patch versions that are greater than the masters. As u
 **Supported versions**:
 * Latest: 4.9 (Kubernetes 1.23.3)
 * Default: 4.8 (Kubernetes 1.21)
+* 4.7 (Kubernetes 1.20)
 * 4.6 (Kubernetes 1.19)
 
 **Deprecated and unsupported versions**:
@@ -142,6 +143,12 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.openshiftshort}} 4.8 to {{site.data.keyword.openshiftshort}} 4.9.
 {: shortdesc}
 
+
+
+![This badge indicates Kubernetes version 1.22 certification for {{site.data.keyword.containerlong_notm}}](images/certified_kubernetes_1x22.svg)
+{{site.data.keyword.containerlong_notm}} is a Certified Kubernetes product for version 1.22 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
+
+
 ### Update before master
 {: #49_before}
 
@@ -178,7 +185,6 @@ The following table shows the actions that you must take before you [update the 
 | Container runtime default security context capabilities | The container runtime (i.e. CRI-O) default security context capabilities have been changed to match Red Hat OpenShift Container Platform (OCP). `NET_RAW` and `SYS_CHROOT` have been removed. This brings the security behavior of containers in line with OCP. If your app requires either of these capabilities and does not list them in the container or pod `securityContext`, then the app must be changed to include these capabilities. If these changes are not made, your microservices might fail to start and you might see a `permission denied` error. Applications developed for OCP already have the necessary changes.  |
 | Strongswan users | If you are using Strongswan in your cluster, then update at least version 2.7.11 of Strongswan before you update your cluster master to {{site.data.keyword.openshiftshort}} 4.8. In versions of Strongswan earlier than 2.7.11, certain [Strongswan configuration options](/docs/openshift?topic=openshift-vpn#vpn-setup) do not work with the {{site.data.keyword.openshiftshort}} 4.8 master. |
 {: caption="Changes to make before you update the master to {{site.data.keyword.openshiftshort}} 4.8" caption-side="top"}
-
 ## {{site.data.keyword.openshiftshort}} 4.7
 {: #ocp47}
 
@@ -255,8 +261,6 @@ As of 7 March 2021, {{site.data.keyword.openshiftlong_notm}} clusters that run [
 {: shortdesc}
 
 Unsupported clusters are not provided with security and patch updates and are not supported by {{site.data.keyword.cloud_notm}} Support. Although your cluster and apps might continue to run for a time, you can no longer create, reload, or take other corrective actions on your cluster master or worker nodes when an issue occurs. You can still delete the cluster or worker nodes. To continue running your apps in {{site.data.keyword.openshiftlong_notm}}, [make a new cluster](/docs/containers?topic=containers-clusters#clusters) and [deploy your apps](/docs/containers?topic=containers-app#app) to the new cluster.
-
-
 
 
 

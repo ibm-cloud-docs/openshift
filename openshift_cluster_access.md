@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-08"
+lastupdated: "2022-02-10"
 
 keywords: openshift, clusters
 
@@ -496,10 +496,12 @@ Making your location and cluster subdomains available outside of your hosts' pri
     ```
     {: screen}
 
+
 1. If no public IPs are listed for the service, edit the service configuration by using the `oc edit` command. 
+
     ```sh
     oc edit service router-external-default -n openshift-ingress
-    ``` 
+    ```
     {: pre}
     
 1. Add the public IP addresses of your worker nodes that you retrieved earlier as `externalIPs` in the `spec` section of the service configuration.
