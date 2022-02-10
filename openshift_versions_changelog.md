@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-10"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -85,15 +85,17 @@ The following table shows the changes that are in the master fix pack patch upda
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
+| Calico | N/A | N/A | Changed to improve Calico availability during updates. |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} driver and plug-in | v2.1.3 | v2.1.6 | Updated to use `Go` version `1.16.13`. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 900 | 923 | Updated universal base image (UBI) to the `8.5-218` version to resolve CVEs. Updated to use `Go` version `1.16.13`. |
 | Cluster health image | v1.2.20 | v1.2.21 | Updated to use `Go` version `1.17.5`, updated Go dependencies and golangci-lint. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.21.7-3 | v1.21.9-1 | Updated to support the Kubernetes `1.21.9` release and to use `Go` version `1.16.12`. |
 | Key Management Service provider | v2.3.12 | v2.4.0 | Decrypted data encryption key is persisted in memory until the root key is changed, disabled, or rotated. Update multiple go dependencies. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1659 | 1747 | Updated the Alpine base image to the `3.15` version to resolve CVEs. Updated to use `Go` version `1.17.6`. |
+| {{site.data.keyword.openshiftshort}} configuration | N/A | N/A | Updated the [feature gate configuration](/docs/openshift?topic=openshift-service-settings#feature-gates). |
 | {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.8.0-20211201 | v4.8.0-20220107 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20220107). |
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.8.0-20211201 | v4.8.0-20220107 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20220107). |
-| {{site.data.keyword.openshiftshort}} | 4.8.21 | 4.8.26 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-26). |
+| {{site.data.keyword.openshiftshort}} | 4.8.21 | 4.8.26 | Changed the duration of worker node certificates from 3 years to 2 years. See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-26). |
 | {{site.data.keyword.openshiftlong_notm}} toolkit | 4.8.0+20211201 | 4.8.0+20220107 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20220107). |
 | OpenVPN client | 2.4.6-r3-IKS-463 | 2.5.4-r0-IKS-556 | Update base image to alpine `3.15` to address CVEs, no longer set the `--compress config` option, updated scripts. |
 | OpenVPN server | 2.4.6-r3-IKS-462 | 2.5.4-r0-IKS-555 | Update base image to alpine `3.15` to address CVEs, no longer set the `--compress config` option, updated scripts. |
@@ -339,6 +341,7 @@ The following table shows the changes that are in the master fix pack patch upda
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
+| Calico | N/A | N/A | Changed to improve Calico availability during updates. |
 | Cluster health image | v1.2.20 | v1.2.21 | Updated to use `Go` version `1.17.5`, updated Go dependencies and golangci-lint. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 900 | 923 | Updated universal base image (UBI) to the `8.5-218` version to resolve CVEs. Updated to use `Go` version `1.16.13`. |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} driver and plug-in | v2.1.3 | v2.1.6 | Updated to use `Go` version `1.16.13`. |
@@ -347,7 +350,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 3430e03 | 0fc9949 | Updated universal base image (UBI) to the `8.5-218` version to resolve CVEs. Updated to use `Go` version `1.16.13`. |
 | Key Management Service provider | v2.3.12 | v2.3.13 | Updated `Go` dependencies and golangci-lint. |
 | Load balancer and load balancer monitor for IBM Cloud Provider | 1659 | 1747 | Updated the Alpine base image to the `3.15` version to resolve CVEs. Updated to use `Go` version `1.17.6`. |
-| {{site.data.keyword.openshiftshort}} | 4.7.37 | 4.7.40 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-40). |
+| {{site.data.keyword.openshiftshort}} | 4.7.37 | 4.7.40 | Changed the duration of the Kubernetes API server certificate from 825 days to 365 days. Changed the duration of the cluster CA certificate from 30 years to 10 years. Changed the duration of worker node certificates from 3 years to 2 years. See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-40). |
 | {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.7.0-20211201 | v4.7.0-20220107 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0%2B20220107). |
 | OpenVPN client | 2.4.6-r3-IKS-463 | 2.5.4-r0-IKS-556 | Update base image to alpine `3.15` to address CVEs, no longer set the `--compress config` option, updated scripts. |
 | OpenVPN server | 2.4.6-r3-IKS-462 | 2.5.4-r0-IKS-555 | Update base image to alpine `3.15` to address CVEs, no longer set the `--compress config` option, updated scripts|
@@ -812,6 +815,7 @@ The following table shows the changes that are in the master fix pack patch upda
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
+| Calico | N/A | N/A | Changed to improve Calico availability during updates. |
 | Cluster health image | v1.2.20 | v1.2.21 | Updated to use `Go` version `1.17.5`, updated Go dependencies and golangci-lint. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 900 | 923 | Updated universal base image (UBI) to the `8.5-218` version to resolve CVEs. Updated to use `Go` version `1.16.13`. |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} driver and plug-in | v2.1.3 | v2.1.6 | Updated to use `Go` version `1.16.13`. |
@@ -820,7 +824,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 3430e03 | 0fc9949 | Updated universal base image (UBI) to the `8.5-218` version to resolve CVEs. Updated to use `Go` version `1.16.13`. |
 | Key Management Service provider | v2.3.12 | v2.3.13 | Updated `Go` dependencies and golangci-lint. |
 | Load balancer and load balancer monitor for IBM Cloud Provider | 1660 | 1748 | Updated the Alpine base image to the `3.15` version to resolve CVEs. Updated to use `Go` version `1.17.6`. |
-| {{site.data.keyword.openshiftshort}} | 4.6.47 | 4.6.48 | Updated to fix [CVE-2021-25735](https://www.ibm.com/support/pages/node/6549374){: external}. See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-48). |
+| {{site.data.keyword.openshiftshort}} | 4.6.47 | 4.6.48 | Changed the duration of the Kubernetes API server certificate from 825 days to 730 days. Changed the duration of the cluster CA certificate from 30 years to 10 years. Updated to fix [CVE-2021-25735](https://www.ibm.com/support/pages/node/6549374){: external}.  See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-48). |
 | {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.6.0-20211201 | v4.6.0-20220107 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0%2B20220107). |
 | OpenVPN client | 2.4.6-r3-IKS-463 | 2.5.4-r0-IKS-556 | Update base image to alpine `3.15` to address CVEs, no longer set the `--compress config` option, updated scripts. |
 | OpenVPN server | 2.4.6-r3-IKS-462 | 2.5.4-r0-IKS-555 | Update base image to alpine `3.15` to address CVEs, no longer set the `--compress config` option, updated scripts. |
@@ -1498,7 +1502,6 @@ The following table shows the changes that are in the master fix pack patch upda
 | Cluster health image | v1.1.29 | v1.1.30 | Updated to use `Go` version `1.17.5`, updated Go dependencies and golangci-lint |
 | Key Management Service provider | v1.0.21 | v1.0.22 | Updated `Go` dependencies and golangci-lint |
 | Load balancer and load balancer monitor for IBM Cloud Provider | 1660 | 1748 | Updated the Alpine base image to the `3.15` version to resolve CVEs. Updated to use `Go` version `1.17.6`. |
-| Pause container image | 3.11.542 | 3.11.570 | See the [pause container image release notes](https://github.com/kubernetes/kubernetes/blob/master/build/pause/CHANGELOG.md). |
 | {{site.data.keyword.openshiftshort}} Control Plane | 3.11.542 | 3.11.570 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-570) |
 | OpenVPN client | 2.4.6-r3-IKS-463 | 2.5.4-r0-IKS-556 | Update base image to alpine `3.15` to address CVEs, no longer set the `--compress config` option, updated scripts. |
 | OpenVPN server | 2.4.6-r3-IKS-462 | 2.5.4-r0-IKS-555 | Update base image to alpine `3.15` to address CVEs, no longer set the `--compress config` option, updated scripts. |

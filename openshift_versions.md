@@ -143,6 +143,12 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.openshiftshort}} 4.8 to {{site.data.keyword.openshiftshort}} 4.9.
 {: shortdesc}
 
+
+
+![This badge indicates Kubernetes version 1.22 certification for {{site.data.keyword.containerlong_notm}}](images/certified_kubernetes_1x22.svg)
+{{site.data.keyword.containerlong_notm}} is a Certified Kubernetes product for version 1.22 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
+
+
 ### Update before master
 {: #49_before}
 
@@ -256,7 +262,6 @@ As of 7 March 2021, {{site.data.keyword.openshiftlong_notm}} clusters that run [
 {: shortdesc}
 
 Unsupported clusters are not provided with security and patch updates and are not supported by {{site.data.keyword.cloud_notm}} Support. Although your cluster and apps might continue to run for a time, you can no longer create, reload, or take other corrective actions on your cluster master or worker nodes when an issue occurs. You can still delete the cluster or worker nodes. To continue running your apps in {{site.data.keyword.openshiftlong_notm}}, [make a new cluster](/docs/containers?topic=containers-clusters#clusters) and [deploy your apps](/docs/containers?topic=containers-app#app) to the new cluster.
-
 
 
 

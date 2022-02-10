@@ -28,6 +28,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #release-feb-2022}
 
 
+### 10 February 2022
+{: #10feb2022}
+{: release-note}
+
+
+Certified Kubernetes
+:   Version [4.9](/docs/openshift?topic=openshift-openshift_versions#ocp49) release is now certified.
+
+
+
 
 ### 9 February 2022
 {: #9feb2022}
