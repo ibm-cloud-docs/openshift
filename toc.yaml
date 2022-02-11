@@ -319,6 +319,7 @@ toc:
                     - ts-worker-invalid-vlan.md
                     - ts-worker-pod-timeout.md
                     - ts-worker-ssh-fail.md
+                    - ts-openshift-marketplace.md
               - ts-ca-debug.md
               - topicgroup:
                   label: Cluster network

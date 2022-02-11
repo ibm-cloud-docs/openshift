@@ -5016,6 +5016,8 @@ subcollection: openshift
 
     * [Cleaning up after debugging](/docs/openshift?topic=openshift-cs_ssh_worker#ssh-debug-cleanup)
 
+[Pods in the `openshift-markeplace` namespace are in `ImagePullBackOff`](/docs/openshift?topic=openshift-ts-openshift-marketplace#ts-openshift-marketplace)
+
 [Debugging the cluster autoscaler](/docs/openshift?topic=openshift-debug_cluster_autoscaler#debug_cluster_autoscaler)
 
 * [Step 1: Check the version](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-version)
