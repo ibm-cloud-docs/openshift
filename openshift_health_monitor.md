@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-11"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -39,7 +39,7 @@ Review the following details about {{site.data.keyword.mon_full_notm}}.
 - Free trial to try out the capabilities.
 - To get started, see [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](#openshift_monitoring).
 
-For more information, see [the {{site.data.keyword.openshiftshort}} documentation](http://docs.openshift.com/container-platform/4.8/monitoring/understanding-the-monitoring-stack.html){: external}.
+For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.8/monitoring/monitoring-overview.html){: external}.
 
 ### Built-in {{site.data.keyword.openshiftshort}} monitoring tools
 {: #built-in-mon-tools}
@@ -52,7 +52,7 @@ Review the following details about built-in monitoring tools for your cluster.
 - Monitoring is on a per-cluster basis.
 - The `openshift-monitoring` project stack is set up in a single zone only. No persistant storage is available to back up or view metric history.
 
-For more information, see [the {{site.data.keyword.openshiftshort}} documentation](http://docs.openshift.com/container-platform/4.8/monitoring/understanding-the-monitoring-stack.html){: external}.
+For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.8/monitoring/monitoring-overview.html){: external}.
 
 ## Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}
 {: #openshift_monitoring}
