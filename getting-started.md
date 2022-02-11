@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-02-11"
 
 keywords: red hat openshift, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters
 
@@ -54,7 +54,10 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
     1. If you want a larger size for your worker nodes, click **Change flavor**. Otherwise, leave the default **4 vCPUs / 16 GB** flavor selected.
     2. Set how many worker nodes to create per zone, such as the minimum value of **2**. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).
 8. Complete the **Resource details** to customize the cluster name and any tags that you want to use to organize your {{site.data.keyword.cloud_notm}} resources.
-9. In the **Summary** pane, review the order summary and then click **Create**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load balancing components take about 10 more minutes to deploy and update the cluster domain that you use for the {{site.data.keyword.openshiftshort}} web console and other routes. Before you continue, wait until the cluster is ready by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.</p>
+9. In the **Summary** pane, review the order summary and then click **Create**.
+    Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load balancing components take about 10 more minutes to deploy and update the cluster domain that you use for the {{site.data.keyword.openshiftshort}} web console and other routes. Before you continue, wait until the cluster is ready by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.
+    {: note}
+
 10. Verify that your cluster setup is finished before you continue to the next step by checking that the worker nodes on the **Worker Nodes** tab have a **Status** of normal.
 
 Now that your cluster is ready, [deploying your first app](#deploy-app)!
@@ -74,10 +77,10 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
 
 1. Create a Virtual Private Cloud (VPC) on generation 2 compute.
     1. Navigate to the [VPC create console](https://cloud.ibm.com/vpc/provision/vpc){: external}.
-    3. Give the VPC a name and select a resource group to deploy the VPC into.
-    4. Give the VPC subnet a name and select the location where you want to create the cluster.
-    5. Attach a public gateway to your subnet so that you can access public endpoints from your cluster. This public gateway is used later on to access default {{site.data.keyword.openshiftshort}} components like the web console, OperatorHub, and service catalog.
-    6. Click **Create virtual private cloud**.
+    2. Give the VPC a name and select a resource group to deploy the VPC into.
+    3. Give the VPC subnet a name and select the location where you want to create the cluster.
+    4. Attach a public gateway to your subnet so that you can access public endpoints from your cluster. This public gateway is used later on to access default {{site.data.keyword.openshiftshort}} components like the web console, OperatorHub, and service catalog.
+    5. Click **Create virtual private cloud**.
 2. From the [{{site.data.keyword.openshiftlong_notm}} dashboard](https://cloud.ibm.com/kubernetes/landing?platformType=openshift){: external}, click **Create cluster**.
 3. Configure your cluster's VPC environment.
     1. Review the platform version details, **{{site.data.keyword.openshiftshort}} 4.7.29**.
@@ -92,9 +95,9 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
     1. If you want a larger size for your worker nodes, click **Change flavor**. Otherwise, leave the default **4 vCPUs / 16 GB** flavor selected.
     2. Set how many worker nodes to create per zone, such as the minimum value of **2**. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).
 6. Complete the **Resource details** to customize the cluster name and any tags that you want to use to organize your {{site.data.keyword.cloud_notm}} resources.
-7. In the **Summary** pane, review the order summary and then click **Create**.<p class="note">Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load balancing components take about 10 more minutes to deploy and update the cluster domain that you use for the {{site.data.keyword.openshiftshort}} web console and other routes. Before you continue, wait until the cluster is ready by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.
-
-
+7. In the **Summary** pane, review the order summary and then click **Create**.
+    Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load balancing components take about 10 more minutes to deploy and update the cluster domain that you use for the {{site.data.keyword.openshiftshort}} web console and other routes. Before you continue, wait until the cluster is ready by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.
+    {: note}
 
 The worker node can take a few minutes to provision, but you can see the progress in the **Worker nodes** tab. When the status reaches `Ready`, you can start working with your cluster by [deploying your first app](#deploy-app)!
 
@@ -115,8 +118,8 @@ From the {{site.data.keyword.openshiftshort}} console, you can deploy one of the
 7. Click **Node.js**, and then click **Create Application**. Note that you might need to click **Clear All Filters** to display the **Node.js** option. After you select **Node.js**, the **Create Source-to-Image Application** pane opens.
 8. In the **Git** section, click **Try Sample**.
 9. Scroll to confirm that **Deployment** and **Create a route to the application** are selected, and then click **Create**.
-8. Wait a few minutes for the pods to deploy. To check the status of the pods, from the **Topology** pane, click your **`nodejs`** app and review its sidebar. You must see that the `nodejs` build is complete, and that the `nodejs` pod is in a **Running** state to continue.
-9. When the deployment is complete, click the route location URL, which has a format similar to the following.
+10. Wait a few minutes for the pods to deploy. To check the status of the pods, from the **Topology** pane, click your **`nodejs`** app and review its sidebar. You must see that the `nodejs` build is complete, and that the `nodejs` pod is in a **Running** state to continue.
+11. When the deployment is complete, click the route location URL, which has a format similar to the following.
 
     ```sh
     http://nodejs-<project>.<cluster_name>-<hash>.<region>.containers.appdomain.cloud
@@ -129,7 +132,7 @@ From the {{site.data.keyword.openshiftshort}} console, you can deploy one of the
     ```
     {: screen}
 
-10. **Optional**: To clean up the resources that you created, select **Administrator** from the perspective switcher, navigate to **Home > Projects**, click your project's action menu, and click **Delete Project**.
+12. **Optional**: To clean up the resources that you created, select **Administrator** from the perspective switcher, navigate to **Home > Projects**, click your project's action menu, and click **Delete Project**.
 
 
 ## What's next?
@@ -142,6 +145,7 @@ From the {{site.data.keyword.openshiftshort}} console, you can deploy one of the
 
 Looking for an overview of all your options in {{site.data.keyword.openshiftlong_notm}}? Check out the curated [learning path for administrators](/docs/openshift?topic=openshift-learning-path-admin) or [learning path for developers](/docs/openshift?topic=openshift-learning-path-dev).
 {: tip}
+
 
 
 

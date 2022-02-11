@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-11"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -681,7 +681,7 @@ If you use this method, make sure that you understand how [pod priority](/docs/c
 Because horizontal pod autoscaling is based on the average CPU usage of the pods, the CPU usage limit that you set is reached before the worker pool runs out of resources.
 {: shortdesc}
 
-More pods are requested, which then triggers the cluster autoscaler to scale up the worker pool.<br><br>For more information about setting up HPA, see the [Kubernetes docs](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/){: external}.
+More pods are requested, which then triggers the cluster autoscaler to scale up the worker pool.  For more information about setting up HPA, see the [Kubernetes docs](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/){: external}.
 
 ## Updating the cluster autoscaler add-on
 {: #ca_addon_up}
@@ -963,7 +963,7 @@ This table refers to the cluster autoscaler add-on parameters. For Helm chart va
 `ignoreDaemonSetsUtilization`
 :   When set to `true`, the cluster autoscaler ignores DaemonSet pods when it calculates resource utilization for scale-down. The default value is `false`.
 
-| `imagePullPolicy`
+`imagePullPolicy`
 :   Specify when to pull the Docker image. The default value is `Always`.
 :  `Always`: Pulls the image every time that the pod is started.
 :   `IfNotPresent`: Pulls the image only if the image is not already present locally.
@@ -1037,7 +1037,7 @@ This table refers to the cluster autoscaler add-on parameters. For Helm chart va
 :   `&lt;pool_name>`: The name or ID of the worker pool that you want to enable or disable for autoscaling. To list available worker pools, run `ibmcloud oc worker-pool ls --cluster &lt;cluster_name_or_ID>`.
 :   `maxSize: &lt;number_of_workers>`: Specify the maximum number of worker nodes per zone that the cluster autoscaler can scale up to. The value must be equal to or greater than the value that you set for the `minSize: &lt;number_of_workers>` size.
 :   `min=&lt;number_of_workers>`: Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be `2` or greater so that your ALB pods can be spread for high availability. If you [disabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public ALBs in each zone of your standard cluster, you can set the value to `1`. Keep in mind that setting a `min` size does not automatically trigger a scale-up. The `min` size is a threshold so that the cluster autoscaler does not scale below this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.
-:   `enabled=(true|false)`: Set the value to `true` to enable the cluster autoscaler to scale your worker pool. Set the value to `false` to stop the cluster autoscaler from scaling the worker pool. Later, if you want to [remove the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca_rm), you must first disable each worker pool in the configmap. If you enable a worker pool for autoscaling and then later add a zone to this worker pool, restart the cluster autoscaler pod so that it picks up this change: `oc delete pod -n kube-system &lt;cluster_autoscaler_pod>`. By default, the `default` worker pool is **not** enabled, with a `max` value of `2` and a `min` value of `1`.
+:   `enabled=(true|false)`: Set the value to `true` to enable the cluster autoscaler to scale your worker pool. Set the value to `false` to stop the cluster autoscaler from scaling the worker pool. Later, if you want to [remove the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca_rm), you must first disable each worker pool in the configmap. If you enable a worker pool for autoscaling and then later add a zone to this worker pool, restart the cluster autoscaler pod so that it picks up this change: `oc delete pod -n kube-system <cluster_autoscaler_pod>`. By default, the `default` worker pool is **not** enabled, with a `max` value of `2` and a `min` value of `1`.
 
 
 

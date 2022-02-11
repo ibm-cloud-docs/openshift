@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-11"
 
 keywords: openshift
 
@@ -777,7 +777,8 @@ ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FL
      - `172.21.0.0 - 172.31.255.255`
      - `192.168.0.0 - 192.168.254.255`
      - `198.18.0.0 - 198.19.255.255`
-     Note that the pod and service subnets can't overlap. The service subnet is in the 172.21.0.0/16 range by default.
+     
+:    Note that the pod and service subnets can't overlap. The service subnet is in the 172.21.0.0/16 range by default.
 
 `--service-subnet *SUBNET`{: #service-subnet}
 :    All services that are deployed to the cluster are assigned a private IP address in the 172.21.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.dl_full_notm}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your services.
@@ -786,7 +787,8 @@ ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FL
      - `172.21.0.0 - 172.31.255.255`
      - `192.168.0.0 - 192.168.254.255`
      - `198.18.0.0 - 198.19.255.255`
-     Note that the pod and service subnets can't overlap. The pod subnet is in the 172.30.0.0/16 range by default.
+     
+:    Note that the pod and service subnets can't overlap. The pod subnet is in the 172.30.0.0/16 range by default.
 
 `--skip-advance-permissions-check`
 :    Optional: Skip [the check for infrastructure permissions](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get) before creating the cluster. Note that if you don't have the correct infrastructure permissions, the cluster creation might only partially succeed, such as the master provisioning but the worker nodes unable to provision. You might skip the permissions check if you want to continue an otherwise blocked operation, such as when you use multiple infrastructure accounts and can handle the infrastructure resources separately from the master, if needed later.
@@ -898,7 +900,8 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
      - `172.21.0.0 - 172.31.255.255`
      - `192.168.0.0 - 192.168.254.255`
      - `198.18.0.0 - 198.19.255.255`
-     Note that the pod and service subnets can't overlap. If you use custom-range subnets for your worker nodes, you must [ensure that your worker node subnets don't overlap with your cluster's pod subnet](/docs/openshift?topic=openshift-vpc-subnets#vpc-ip-range).
+     
+:    Note that the pod and service subnets can't overlap. If you use custom-range subnets for your worker nodes, you must [ensure that your worker node subnets don't overlap with your cluster's pod subnet](/docs/openshift?topic=openshift-vpc-subnets#vpc-ip-range).
 
 `--service-subnet SUBNET`
 :    All services that are deployed to the cluster are assigned a private IP address in the 172.21.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.dl_full_notm}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your services.
@@ -907,7 +910,8 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
      - `172.21.0.0 - 172.31.255.255`
      - `192.168.0.0 - 192.168.254.255`
      - `198.18.0.0 - 198.19.255.255`
-     Note that the pod and service subnets can't overlap.
+     
+:    Note that the pod and service subnets can't overlap.
 
 `--entitlement cloud_pak`
 :    Include this flag only if you use this cluster with an [IBM Cloud Pak](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an {{site.data.keyword.openshiftshort}} entitlement. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After your cluster is created, you are not charged the {{site.data.keyword.openshiftshort}} license fee for the entitled worker nodes in the `default` worker pool.
@@ -2371,7 +2375,7 @@ ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flav
 :    Specifies that the disk is not encrypted. The default value is `false`.
 
 `-l, --label KEY1=VALUE1`
-:    Optional: Apply key-value labels to each worker node in the worker pool. To specify multiple labels, use multiple flags, such as `-l key1=value1 -l key2=value2`.</ul>
+:    Optional: Apply key-value labels to each worker node in the worker pool. To specify multiple labels, use multiple flags, such as `-l key1=value1 -l key2=value2`.
 
 `--entitlement cloud_pak`
 :    Include this flag only if you use this cluster with an [IBM Cloud Pak](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an {{site.data.keyword.openshiftshort}} entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After creation, your worker pool does not charge you the {{site.data.keyword.openshiftshort}} license fee for your entitled worker nodes.
@@ -5983,7 +5987,8 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
      - `172.21.0.0 - 172.31.255.255`
      - `192.168.0.0 - 192.168.254.255`
      - `198.18.0.0 - 198.19.255.255`
-     Note that the pod and service subnets can't overlap. The service subnet is in the 172.21.0.0/16 range by default.
+     
+:    Note that the pod and service subnets can't overlap. The service subnet is in the 172.21.0.0/16 range by default.
 
 `--pull-secret SECRET`
 :    Optional. Specify an existing OCP entitlement for the worker nodes in this cluster by providing your [{{site.data.keyword.redhat_full}} account pull secret](https://console.redhat.com/openshift/install/pull-secret){: external}. The cluster also uses this pull secret to download {{site.data.keyword.openshiftshort}} images from your own {{site.data.keyword.redhat_notm}} account.
@@ -5999,7 +6004,8 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
      - `172.21.0.0 - 172.31.255.255`
      - `192.168.0.0 - 192.168.254.255`
      - `198.18.0.0 - 198.19.255.255`
-     Note that the pod and service subnets can't overlap. The pod subnet is in the 172.30.0.0/16 range by default.
+     
+:    Note that the pod and service subnets can't overlap. The pod subnet is in the 172.30.0.0/16 range by default.
 
 `--workers COUNT`
 :    Required when `--host-label` is specified. The number of worker nodes per zone in the default worker pool.

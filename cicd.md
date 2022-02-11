@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-02-11"
 
 keywords: openshift
 
@@ -47,7 +47,7 @@ Helm
 
 
 Kustomize
-:   Use the Kubernetes project [Kustomize ](https://github.com/kubernetes-sigs/kustomize){: external} to package your apps by both standardizing and customizing your deployments across multiple environments. Kustomize helps you write, customize, and reuse your Kubernetes resource YAML configurations. To get started, see [Packaging apps for reuse in multiple environments with Kustomize](/docs/openshift?topic=openshift-openshift_apps#kustomize).
+:   Use the Kubernetes project [Kustomize](https://github.com/kubernetes-sigs/kustomize){: external} to package your apps by both standardizing and customizing your deployments across multiple environments. Kustomize helps you write, customize, and reuse your Kubernetes resource YAML configurations. To get started, see [Packaging apps for reuse in multiple environments with Kustomize](/docs/openshift?topic=openshift-openshift_apps#kustomize).
 :   Kustomize is not supported for {{site.data.keyword.openshiftshort}} clusters that run version 3.11.
     {: note}
     

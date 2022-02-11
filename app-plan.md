@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-11"
 
 keywords: openshift, deploy
 
@@ -100,7 +100,7 @@ For more, see the following tutorials.
 | Your app runs as root. You might see the pods fail with a `CrashLoopBackOff` status | The pod requires privileged access. See [Example steps for giving a deployment privileged access](#openshift_move_apps_example_scc). For more information, see the {{site.data.keyword.openshiftshort}} documentation for [Managing Security Context Constraints (SCC)](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html){: external}. |
 | Your apps are designed to run on Docker. These apps are often logging and monitoring tools that rely on the container runtime engine, call the container runtime API directly, and access container log directories. | In {{site.data.keyword.openshiftshort}}, your image must be compatible to run with the CRI-O container runtime. For more information, see [Using the CRI-O Container Engine](https://docs.openshift.com/container-platform/3.11/crio/crio_runtime.html){: external}. |
 | Your app uses persistent file storage with a non-root user ID that can't write to the mounted storage device. | [Adjust the security context](/docs/openshift?topic=openshift-debug_storage_file) for the app deployment so that `runAsUser` is set to `0`. |
-| Your service is exposed on port 80 or another port less than 1024. You might see a `Permission denied` error. | Ports less than 1024 are privileged ports that are reserved for start-up processes. You might choose one of the following solutions:<ul><li>Change the port to 8080 or a similar port greater than 1024, and update your containers to listen on this port.</li><li>Add your container deployment to a privileged service account, such as in the <a href="#openshift_move_apps_example_scc">example for giving a deployment privileged access</a>.</li><li>Set up your container to listen on any network port, then update the container runtime to map that port to port 80 on the host by using <a href="https://docs.openshift.com/container-platform/4.8/nodes/containers/nodes-containers-port-forwarding.html">port forwarding</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</li></ul> |
+| Your service is exposed on port 80 or another port less than 1024. You might see a `Permission denied` error. | Ports less than 1024 are privileged ports that are reserved for start-up processes. You might choose one of the following solutions: \n - Change the port to 8080 or a similar port greater than 1024, and update your containers to listen on this port. \n - Add your container deployment to a privileged service account, such as in the [example for giving a deployment privileged access](#openshift_move_apps_example_scc). \n - Set up your container to listen on any network port, then update the container runtime to map that port to port 80 on the host by using [port forwarding](https://docs.openshift.com/container-platform/4.8/nodes/containers/nodes-containers-port-forwarding.html){: external}. |
 | Other use cases and scenarios | Review the {{site.data.keyword.openshiftshort}} documentation for migrating databases, web framework apps, CI/CD, and other examples such as from [OCP version 3 to version 4](https://cloud.redhat.com/learn/topics/migration){: external}. |
 {: summary="The rows are read from left to right. The first column is the scenario that might require changes. The second column is the description of the steps that you can take to modify your app."}
 {: caption="Common scenarios that require app modifications" caption-side="top"}
@@ -472,6 +472,7 @@ For most services, add a selector to your service `.yaml` file so that it applie
 Sometimes, you don't want the service to use a label. For example, you might have an external database or want to point the service to another service in a different namespace within the cluster. When this happens, you have to manually add an endpoints object and link it to the service.
 
 
+
 ### How can I expose my services on the Internet?
 {: #services_expose_apps}
 
@@ -517,7 +518,7 @@ After you deploy your app, you can control who can access the app, and monitor t
 The account and cluster administrators can control access on many different levels: the cluster, {{site.data.keyword.openshiftshort}} project, pod, and container.
 {: shortdesc}
 
-With {{site.data.keyword.cloud_notm}} IAM, you can assign permissions to individual users, groups, or service accounts at the cluster-instance level.  You can scope cluster access down further by restricting users to particular namespaces within the cluster. For more information, see [Assigning cluster access](/docs/openshift?topic=openshift-users#users).
+With {{site.data.keyword.cloud_notm}} IAM, you can assign permissions to individual users, groups, or service accounts at the cluster-instance level. You can scope cluster access down further by restricting users to particular namespaces within the cluster. For more information, see [Assigning cluster access](/docs/openshift?topic=openshift-users#users).
 
 To control access at the pod level, you can configure [security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc#oc_sccs).
 

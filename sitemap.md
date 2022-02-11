@@ -1356,7 +1356,7 @@ subcollection: openshift
 
     * [Worker nodes](/docs/openshift?topic=openshift-costs#nodes)
 
-    * [Compute licenses](/docs/openshift?topic=openshift-costs#compute-licenses)
+    * [Compute licenses](/docs/openshift?topic=openshift-costs#licenses)
 
     * [Public bandwidth](/docs/openshift?topic=openshift-costs#bandwidth)
 
@@ -3160,7 +3160,7 @@ subcollection: openshift
 
 * [ibmcloud oc logging](/docs/openshift?topic=openshift-icks_map#icks_map_logging)
 
-* [ibmcloud oc nlb-dns](/docs/openshift?topic=openshift-icks_map#ibmcloud-oc-nlb-dns)
+* [ibmcloud oc nlb-dns](/docs/openshift?topic=openshift-icks_map#icks_map_nlb-dns)
 
 * [ibmcloud oc webhook-create](/docs/openshift?topic=openshift-icks_map#icks_map_webhook-create)
 
