@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-10"
+lastupdated: "2022-02-11"
 
 keywords: openshift
 subcollection: openshift
@@ -5015,6 +5015,8 @@ subcollection: openshift
     * [Public network classic clusters that are connected to a public VLAN only](/docs/openshift?topic=openshift-cs_ssh_worker#public-network-only-classic-debug)
 
     * [Cleaning up after debugging](/docs/openshift?topic=openshift-cs_ssh_worker#ssh-debug-cleanup)
+
+[Pods in the `openshift-markeplace` namespace are in `ImagePullBackOff`](/docs/openshift?topic=openshift-ts-openshift-marketplace#ts-openshift-marketplace)
 
 [Debugging the cluster autoscaler](/docs/openshift?topic=openshift-debug_cluster_autoscaler#debug_cluster_autoscaler)
 
