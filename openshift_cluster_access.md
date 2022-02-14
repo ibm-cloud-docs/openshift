@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-10"
+lastupdated: "2022-02-14"
 
 keywords: openshift, clusters
 
@@ -34,6 +34,8 @@ After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin
         *  Public Service Endpoint URL only: Continue with [Accessing clusters through the public cloud service endpoint](#access_public_se).
         *  Both service endpoint URLs: You can access your cluster either through the [public](#access_public_se) or the [private](#access_private_se) service endpoint.
     * **{{site.data.keyword.satellitelong_notm}} clusters**: Continue with [Accessing clusters on {{site.data.keyword.satelliteshort}}](#access_cluster_sat).
+6. If any users in your account use multifactor authentication (MFA) like TOTP, make sure that you [enabale it for all users at the account level](https://cloud.ibm.com/docs/account?topic=account-enablemfa). To use MFA, it must be enabled at the account level in order to avoid authentication errors. 
+
 
 
 

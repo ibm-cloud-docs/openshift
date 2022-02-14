@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-02-11"
 
 keywords: openshift
 
@@ -27,7 +27,7 @@ content-type: troubleshoot
 Portieris image security enforcement add-on does not install.  You see a master status similar to the following:
 {: tsSymptoms}
 
-```
+```sh
 Image security enforcement update cancelled. CAE008: can't enable Portieris image security enforcement because the cluster already has a conflicting image admission controller installed. For more information, see the troubleshooting docs: 'https://ibm.biz/portieris_enable'
 ```
 {: screen}

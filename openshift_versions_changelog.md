@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-10"
+lastupdated: "2022-02-14"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -33,7 +33,16 @@ Master patch updates are applied automatically. Worker node patch updates can be
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.9 patch updates.
 {: shortdesc}
 
-### Change log for master fix pack 4.9.17_1525_openshift and worker node fix pack 4.9.17_1523_openshift, released 9 Febuary 2022
+### Change log for worker node fix pack 4.9.19_1526_openshift, released 14 February 2022
+{: #4919_1526}
+
+| RHEL 7 Packages | N/A | N/A | N/A |
+|  {{site.data.keyword.openshiftshort}}  | N/A | 4.9.19 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html#ocp-4-9-19){: external}. |
+| Haproxy | d38fa1 | f6a2b3 | [CVE-2021-3521](https://nvd.nist.gov/vuln/detail/CVE-2021-3521){: external}   [CVE-2021-4122](https://nvd.nist.gov/vuln/detail/CVE-2021-4122){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.9.17_1523_openshift" caption-side="top"}
+
+### Change log for master fix pack 4.9.17_1525_openshift and worker node fix pack 4.9.17_1523_openshift, released 9 February 2022
 {: #4917_1525}
 
 The following table shows the changes that are in the master fix pack `4.9.17_1525_openshift` and worker node fix pack `4.9.17_1523_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -63,6 +72,17 @@ The following table shows the changes that are in the master fix pack `4.9.17_15
 
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.8 patch updates.
 {: shortdesc}
+
+### Change log for worker node fix pack 4.8.29_1544_openshift, released 14 February 2022
+{: #4829_1544}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| RHEL 7 Packages | N/A | N/A | N/A |
+|  {{site.data.keyword.openshiftshort}}  | 4.8.28 | 4.8.29 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-29){: external}. |
+| Haproxy | d38fa1 | f6a2b3 | [CVE-2021-3521](https://nvd.nist.gov/vuln/detail/CVE-2021-3521){: external}   [CVE-2021-4122](https://nvd.nist.gov/vuln/detail/CVE-2021-4122){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.8.28_1543_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 4.8.28_1543_openshift, released 31 January 2022
 {: #4828_1543}
@@ -319,6 +339,17 @@ The following table shows the changes that are in the master fix pack `4.8.11_15
 
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.7 patch updates.
 {: shortdesc}
+
+### Change log for worker node fix pack 4.7.42_1549_openshift, released 14 February 2022
+{: #4742_1549}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| 4.7.42_1549_openshift |
+| RHEL 7 Packages | N/A | N/A | N/A |
+|  {{site.data.keyword.openshiftshort}}  | 4.7.41 | 4.7.42 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-42){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.7.41_1548_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 4.7.41_1548_openshift, released 31 January 2022
 {: #4741_1548}
@@ -794,6 +825,17 @@ The following table shows the changes that are in the master fix pack patch upda
 
 Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 4.6 patch updates.
 {: shortdesc}
+
+### Change log for worker node fix pack 4.6.53_1572_openshift, released 14 February 2022
+{: #4653_1572}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| RHEL 7 Packages | N/A | N/A | N/A |
+|  {{site.data.keyword.openshiftshort}}  | N/A | N/A | N/A |
+| Haproxy | d38fa1 | f6a2b3 | [CVE-2021-3521](https://nvd.nist.gov/vuln/detail/CVE-2021-3521){: external}   [CVE-2021-4122](https://nvd.nist.gov/vuln/detail/CVE-2021-4122){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.6.53_1571_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 4.6.53_1571_openshift, released 31 January 2022
 {: #4653_1571}
@@ -1478,6 +1520,17 @@ Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 3.11 
 
 ![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.openshiftshort}} version 3.11 is deprecated, and becomes unsupported on 6 June 2022 (date subject to change).
 {: deprecated}
+
+### Change log for worker node fix pack 3.11.570_1621_openshift, released 14 February 2022
+{: #311570_1621}
+
+| Component | Previous | Current | Description |
+| --------- | -------- | ------- | ----------- |
+| RHEL 7 Packages | N/A | N/A  | N/A  |
+|  {{site.data.keyword.openshiftshort}} | N/A  | N/A  | N/A  |
+| Haproxy | d38fa1 | f6a2b3 | [CVE-2021-3521](https://nvd.nist.gov/vuln/detail/CVE-2021-3521){: external}   [CVE-2021-4122](https://nvd.nist.gov/vuln/detail/CVE-2021-4122){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.570_1620_openshift" caption-side="top"}
 
 ### Changelog for worker node fix pack 3.11.570_1620_openshift, released 31 January 2022
 {: #311570_1620}

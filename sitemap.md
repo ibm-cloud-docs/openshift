@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-11"
+lastupdated: "2022-02-14"
 
 keywords: openshift
 subcollection: openshift
@@ -183,6 +183,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
 * [February 2022](/docs/openshift?topic=openshift-iks-release#release-feb-2022)
+
+    * [14 February 2022](/docs/openshift?topic=openshift-iks-release#14feb2022)
 
     * [10 February 2022](/docs/openshift?topic=openshift-iks-release#10feb2022)
 
@@ -1356,7 +1358,7 @@ subcollection: openshift
 
     * [Worker nodes](/docs/openshift?topic=openshift-costs#nodes)
 
-    * [Compute licenses](/docs/openshift?topic=openshift-costs#compute-licenses)
+    * [Compute licenses](/docs/openshift?topic=openshift-costs#licenses)
 
     * [Public bandwidth](/docs/openshift?topic=openshift-costs#bandwidth)
 
@@ -2667,47 +2669,30 @@ subcollection: openshift
 
     * [Cleaning up persistent storage](/docs/openshift?topic=openshift-vpc-block#storage_remove_block_vpc)
 
-[Storing data on {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#object_storage)
 
-* [Creating your object storage service instance](/docs/openshift?topic=openshift-object_storage#create_cos_service)
+### Storing data on IBM Cloud Object Storage
+{: #sitemap_storing_data_on_ibm_cloud_object_storage}
 
-* [Creating {{site.data.keyword.cos_full_notm}} service credentials](/docs/openshift?topic=openshift-object_storage#service_credentials)
 
-* [Creating a secret for the object storage service credentials](/docs/openshift?topic=openshift-object_storage#create_cos_secret)
+[Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#storage_cos_install)
 
-* [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#install_cos)
+[VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip#storage_cos_vpc_ip)
 
-    * [Verifying your installation](/docs/openshift?topic=openshift-object_storage#cos-plugin)
+[Adding object storage to apps](/docs/openshift?topic=openshift-storage_cos_apps#storage_cos_apps)
 
-    * [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#update_cos_plugin)
+* [Creating a deployment](/docs/openshift?topic=openshift-storage_cos_apps#create-cos-deployment-steps)
 
-    * [Removing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#remove_cos_plugin)
+* [Using object storage in a stateful set](/docs/openshift?topic=openshift-storage_cos_apps#cos_statefulset)
 
-* [Deciding on the object storage configuration](/docs/openshift?topic=openshift-object_storage#configure_cos)
+[Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference#storage_cos_reference)
 
-* [VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#cos_auth_ip)
+* [Standard](/docs/openshift?topic=openshift-storage_cos_reference#standard)
 
-* [Adding object storage to apps](/docs/openshift?topic=openshift-object_storage#add_cos)
+* [Vault](/docs/openshift?topic=openshift-storage_cos_reference#Vault)
 
-    * [Creating a deployment](/docs/openshift?topic=openshift-object_storage#create-cos-deployment-steps)
+* [Cold](/docs/openshift?topic=openshift-storage_cos_reference#cold)
 
-* [Using object storage in a stateful set](/docs/openshift?topic=openshift-object_storage#cos_statefulset)
-
-* [Backing up and restoring data](/docs/openshift?topic=openshift-object_storage#cos_backup_restore)
-
-* [Adding your {{site.data.keyword.cos_full_notm}} credentials to the default storage classes](/docs/openshift?topic=openshift-object_storage#storage_class_custom)
-
-* [Storage class reference](/docs/openshift?topic=openshift-object_storage#cos_storageclass_reference)
-
-    * [Standard](/docs/openshift?topic=openshift-object_storage#standard)
-
-    * [Vault](/docs/openshift?topic=openshift-object_storage#Vault)
-
-    * [Cold](/docs/openshift?topic=openshift-object_storage#cold)
-
-    * [Flex](/docs/openshift?topic=openshift-object_storage#flex)
-
-* [Limitations](/docs/openshift?topic=openshift-object_storage#cos_limitations)
+* [Flex](/docs/openshift?topic=openshift-storage_cos_reference#flex)
 
 [Storing data on software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx#portworx)
 
@@ -3160,7 +3145,7 @@ subcollection: openshift
 
 * [ibmcloud oc logging](/docs/openshift?topic=openshift-icks_map#icks_map_logging)
 
-* [ibmcloud oc nlb-dns](/docs/openshift?topic=openshift-icks_map#ibmcloud-oc-nlb-dns)
+* [ibmcloud oc nlb-dns](/docs/openshift?topic=openshift-icks_map#icks_map_nlb-dns)
 
 * [ibmcloud oc webhook-create](/docs/openshift?topic=openshift-icks_map#icks_map_webhook-create)
 
@@ -3629,9 +3614,13 @@ subcollection: openshift
 
 * [Version 4.9 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-49)
 
-    * [Change log for master fix pack 4.9.17_1525_openshift and worker node fix pack 4.9.17_1523_openshift, released 9 Febuary 2022](/docs/openshift?topic=openshift-openshift_changelog#4917_1525)
+    * [Change log for worker node fix pack 4.9.19_1526_openshift, released 14 February 2022](/docs/openshift?topic=openshift-openshift_changelog#4919_1526)
+
+    * [Change log for master fix pack 4.9.17_1525_openshift and worker node fix pack 4.9.17_1523_openshift, released 9 February 2022](/docs/openshift?topic=openshift-openshift_changelog#4917_1525)
 
 * [Version 4.8 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-48)
+
+    * [Change log for worker node fix pack 4.8.29_1544_openshift, released 14 February 2022](/docs/openshift?topic=openshift-openshift_changelog#4829_1544)
 
     * [Changelog for worker node fix pack 4.8.28_1543_openshift, released 31 January 2022](/docs/openshift?topic=openshift-openshift_changelog#4828_1543)
 
@@ -3662,6 +3651,8 @@ subcollection: openshift
     * [Change log for fix pack 4.8.11_1526_openshift (master) and 4.8.12_1527_openshift (worker node), released 29 Sept 2021](/docs/openshift?topic=openshift-openshift_changelog#4811_1526_and_4812_1527)
 
 * [Version 4.7 change log](/docs/openshift?topic=openshift-openshift_changelog#version-47)
+
+    * [Change log for worker node fix pack 4.7.42_1549_openshift, released 14 February 2022](/docs/openshift?topic=openshift-openshift_changelog#4742_1549)
 
     * [Changelog for worker node fix pack 4.7.41_1548_openshift, released 31 January 2022](/docs/openshift?topic=openshift-openshift_changelog#4741_1548)
 
@@ -3718,6 +3709,8 @@ subcollection: openshift
     * [Changelog for master fix pack 4.7.12_1520_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4712_1520)
 
 * [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
+
+    * [Change log for worker node fix pack 4.6.53_1572_openshift, released 14 February 2022](/docs/openshift?topic=openshift-openshift_changelog#4653_1572)
 
     * [Changelog for worker node fix pack 4.6.53_1571_openshift, released 31 January 2022](/docs/openshift?topic=openshift-openshift_changelog#4653_1571)
 
@@ -3800,6 +3793,8 @@ subcollection: openshift
     * [Changelog for 4.6.16_1530_openshift (master) and 4.6.16_1529_openshift (worker node), released 17 February 2020](/docs/openshift?topic=openshift-openshift_changelog#4616_1530)
 
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+
+    * [Change log for worker node fix pack 3.11.570_1621_openshift, released 14 February 2022](/docs/openshift?topic=openshift-openshift_changelog#311570_1621)
 
     * [Changelog for worker node fix pack 3.11.570_1620_openshift, released 31 January 2022](/docs/openshift?topic=openshift-openshift_changelog#311570_1620)
 
@@ -4088,6 +4083,8 @@ subcollection: openshift
 [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog#vpc_bs_changelog)
 
 * [Version 4.1](/docs/openshift?topic=openshift-vpc_bs_changelog#041_is_block)
+
+    * [Change log for version 4.1.3_846, released 14 February 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#413_846_is_block_relnote)
 
     * [Changelog for version 4.1.2_834, released 27 January 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#412_834_is_block_relnote)
 

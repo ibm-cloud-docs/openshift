@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-14"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -44,6 +44,9 @@ ibmcloud oc cluster addon versions --addon cluster-autoscaler
 | 1.0.2 | Yes | 4.3 - 4.6 |
 | 1.0.1 | No | 4.3 - 4.6 |
 {: summary="The rows are read from left to right. The first column is the cluster autoscaler add-on version. The second column is the version's supported state. The third column is the cluster version of your cluster that the cluster autoscaler version is supported for."}
+
+The cluster autoscaler add-on is not yet supported on Kubernetes version 1.23. Do not update to version 1.23 if this add-on is installed on your cluster. 
+{: important}
 
 
 

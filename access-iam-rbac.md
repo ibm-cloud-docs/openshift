@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-11"
 
 keywords: openshift
 
@@ -616,14 +616,14 @@ Verify your custom RBAC or synchronized IAM service access to RBAC roles in your
 {: #checking-rbac-ui}
 
 1. Log in to the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
-2. Click the cluster with the RBAC roles that you want to check.
-5. Click the **{{site.data.keyword.openshiftshort}} web console**.
+1. Click the cluster with the RBAC roles that you want to check.
+1. Click the **{{site.data.keyword.openshiftshort}} web console**.
 
     If you have a private network only cluster, you might not be able to open the dashboard unless you are on a VPN. See [Accessing clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#access_private_se) or for {{site.data.keyword.satelliteshort}}, [Accessing {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
     {: note}
 
-6. From the **Administrator** perspective, click **User Management > Users**.
-7. Click the user that you want to check, then click **Role Bindings**.
+1. From the **Administrator** perspective, click **User Management > Users**.
+1. Click the user that you want to check, then click **Role Bindings**.
 
 #### Checking RBAC roles with the CLI
 {: #checking-rbac-cli}

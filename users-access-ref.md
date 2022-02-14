@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-14"
 
 keywords: openshift
 
@@ -26,39 +26,38 @@ When you [assign cluster permissions](/docs/openshift?topic=openshift-users#chec
 Review the minimum permissions in {{site.data.keyword.cloud_notm}} IAM that the account owner must set up so that users can create clusters in {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}
 
-**IAM Services**
-- **Administrator platform** access role for the **Kubernetes Service** in the console (`containers-kubernetes` in the API or CLI) in **All resource groups**.   
-- **Writer** or **Manager** service access role for **Kubernetes Service** in the console (**containers-kubernetes** in the API or CLI) in **All resource groups**.   
-- Administrator platform access role for **Container Registry** in the console (**container-registry** in the API or CLI) at the **Account** level. Do not limit policies for {{site.data.keyword.registrylong_notm}} to the resource group level.
-- **Administrator** platform access role for **Cloud Object Storage** in the console (**cos** in the API or CLI) for the standard instance that you want to use to back up the internal registry images in a VPC cluster.
-- If you plan to [expose apps with Ingress](/docs/containers?topic=containers-ingress-about), assign the user **Administrator** or **Editor** platform access role and the **Manager** service access role for **{{site.data.keyword.cloudcerts_short}}** in **All resource groups**.
-- **Viewer** platform access role for the resource group access.
-- If your account [restricts service ID creation](/docs/account?topic=account-restrict-service-id-create), the **Service ID creator** role to **IAM Identity Service** in the console (`iam-identity` in the API or CLI).
-- If your account [restricts API key creation](/docs/account?topic=account-allow-api-create), the **User API key creator** role to **IAM Identity Service** in the console (`iam-identity` in the API or CLI).
-- If you plan to [encrypt your cluster](/docs/openshift?topic=openshift-encryption#keyprotect):
-    - Assign the user the appropriate permission to the key management service (KMS) provider, such as the **Administrator** platform access role for {{site.data.keyword.keymanagementserviceshort}}.  
-    - For clusters that run {{site.data.keyword.openshiftshort}} `4.4.16_1513_openshift` or later: When you enable KMS encryption, an additional **Reader** [service-to-service authorization policy](/docs/account?topic=account-serviceauth) between {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.keymanagementserviceshort}} is automatically created for your cluster, if the policy doesn't already exist. Without this policy, your cluster can't use all the [{{site.data.keyword.keymanagementserviceshort}} features](/docs/openshift?topic=openshift-encryption#kms-keyprotect-features).
-- **Viewer** platform access role for the resource group access.  
+IAM Services
+:    - **Administrator platform** access role for the **Kubernetes Service** in the console (`containers-kubernetes` in the API or CLI) in **All resource groups**.   
+     - **Writer** or **Manager** service access role for **Kubernetes Service** in the console (**containers-kubernetes** in the API or CLI) in **All resource groups**.   
+     - Administrator platform access role for **Container Registry** in the console (**container-registry** in the API or CLI) at the **Account** level. Do not limit policies for {{site.data.keyword.registrylong_notm}} to the resource group level.
+     - **Administrator** platform access role for **Cloud Object Storage** in the console (**cos** in the API or CLI) for the standard instance that you want to use to back up the internal registry images in a VPC cluster.
+     - If you plan to [expose apps with Ingress](/docs/containers?topic=containers-ingress-about), assign the user **Administrator** or **Editor** platform access role and the **Manager** service access role for **{{site.data.keyword.cloudcerts_short}}** in **All resource groups**.
+     - **Viewer** platform access role for the resource group access.
+     - If your account [restricts service ID creation](/docs/account?topic=account-restrict-service-id-create), the **Service ID creator** role to **IAM Identity Service** in the console (`iam-identity` in the API or CLI).
+     - If your account [restricts API key creation](/docs/account?topic=account-allow-api-create), the **User API key creator** role to **IAM Identity Service** in the console (`iam-identity` in the API or CLI).
+     - If you plan to [encrypt your cluster](/docs/openshift?topic=openshift-encryption#keyprotect):
+         - Assign the user the appropriate permission to the key management service (KMS) provider, such as the **Administrator** platform access role for {{site.data.keyword.keymanagementserviceshort}}.  
+         - For clusters that run {{site.data.keyword.openshiftshort}} `4.4.16_1513_openshift` or later: When you enable KMS encryption, an additional **Reader** [service-to-service authorization policy](/docs/account?topic=account-serviceauth) between {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.keymanagementserviceshort}} is automatically created for your cluster, if the policy doesn't already exist. Without this policy, your cluster can't use all the [{{site.data.keyword.keymanagementserviceshort}} features](/docs/openshift?topic=openshift-encryption#kms-keyprotect-features).
+     - **Viewer** platform access role for the resource group access.  
+
+Infrastructure
+:    - Classic clusters only: **Super User** role or the [minimum required permissions](#infra) for classic infrastructure.
+     - VPC clusters only: **Administrator** platform access role for [VPC Infrastructure](/docs/vpc?topic=vpc-iam-getting-started).
+
+User that creates the cluster
+:    In addition to the API key, each individual user must have the following permissions to create a cluster.
+
+:    - **Administrator** platform access role for **Kubernetes Service** in the console (**containers-kubernetes** in the API or CLI). If your access is scoped to a resource group or region, you must also have the **Viewer** platform access role at the **Account** level to view the account's VLANs.
+     - **Administrator** platform access role for **Container Registry** in the console (**container-registry** in the API or CLI) at the **Account** level.
+     - **Administrator** platform access role for **Cloud Object Storage** in the console (**cos** in the API or CLI) for the standard instance that you want to use to back up the internal registry images in a VPC cluster.
+     - **Viewer** platform access role to **IAM Identity Service** for account management access.
+     - **Viewer** platform access role for the resource group access.
 
 
-**Infrastructure**
-- Classic clusters only: **Super User** role or the [minimum required permissions](#infra) for classic infrastructure.
-- VPC clusters only: **Administrator** platform access role for [VPC Infrastructure](/docs/vpc?topic=vpc-iam-getting-started).
-
-**User that creates the cluster**
-In addition to the API key, each individual user must have the following permissions to create a cluster.
-
-- **Administrator** platform access role for **Kubernetes Service** in the console (**containers-kubernetes** in the API or CLI). If your access is scoped to a resource group or region, you must also have the **Viewer** platform access role at the **Account** level to view the account's VLANs.
-- **Administrator** platform access role for **Container Registry** in the console (**container-registry** in the API or CLI) at the **Account** level.
-- **Administrator** platform access role for **Cloud Object Storage** in the console (**cos** in the API or CLI) for the standard instance that you want to use to back up the internal registry images in a VPC cluster.
-- **Viewer** platform access role to **IAM Identity Service** for account management access.
-- **Viewer** platform access role for the resource group access.
-
-
-**More information about assigning permissions**
-- To understand how access works and how to assign users roles in {{site.data.keyword.cloud_notm}} IAM, see [Setting up access to your cluster](/docs/openshift?topic=openshift-access-overview#access-checklist).  
-- To create clusters, see [Preparing to create clusters at the account level](/docs/openshift?topic=openshift-clusters#cluster_prepare).  
-- For permissions that you might set up for different types of users such as auditors, see [Example use cases and roles](/docs/openshift?topic=openshift-users#example-iam).  
+More information about assigning permissions
+:    - To understand how access works and how to assign users roles in {{site.data.keyword.cloud_notm}} IAM, see [Setting up access to your cluster](/docs/openshift?topic=openshift-access-overview#access-checklist).  
+     - To create clusters, see [Preparing to create clusters at the account level](/docs/openshift?topic=openshift-clusters#cluster_prepare).  
+     - For permissions that you might set up for different types of users such as auditors, see [Example use cases and roles](/docs/openshift?topic=openshift-users#example-iam).  
 
 ## {{site.data.keyword.cloud_notm}} IAM platform access roles
 {: #iam_platform}
@@ -66,13 +65,14 @@ In addition to the API key, each individual user must have the following permiss
 {{site.data.keyword.openshiftlong_notm}} is configured to use {{site.data.keyword.cloud_notm}} IAM Identity Service roles. {{site.data.keyword.cloud_notm}} IAM platform access roles determine the actions that users can perform on {{site.data.keyword.cloud_notm}} resources such as clusters, worker nodes, and Ingress application load balancers (ALBs). {{site.data.keyword.cloud_notm}} IAM platform access roles also automatically set basic infrastructure permissions for users. To assign platform access roles, see [Granting users access to your cluster through {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#checking-perms).
 {: shortdesc}
 
-<p class="tip">Do not assign {{site.data.keyword.cloud_notm}} IAM platform access roles at the same time as a service access role. You must assign platform and service access roles separately.</p>
+Do not assign {{site.data.keyword.cloud_notm}} IAM platform access roles at the same time as a service access role. You must assign platform and service access roles separately.
+{: tip}
 
-* **Actions requiring no permissions**: Any user in your account who runs the CLI command or makes the API call for the action sees the result, even if the user has no assigned permissions.
-* **Viewer actions**: The Viewer platform access role includes the actions that require no permissions, plus the permissions that are shown in the Viewer tab of following table. With the Viewer role, users such as auditors or billing can see cluster details but not modify the infrastructure.
-* **Editor actions**: The Editor platform access role includes the permissions that are granted by Viewer, plus the following. With the Editor role, users such as developers can bind services, work with Ingress resources, and set up log forwarding for their apps but can't modify the infrastructure. Tip: Use this role for app developers, and assign the <a href="#cloud-foundry">Cloud Foundry</a> Developer role.
-* **Operator actions**: The Operator platform access role includes the permissions that are granted by Viewer, plus the permissions that are shown in the Operator tab of the following table. With the Operator role, users such as site reliability engineers, DevOps engineers, or cluster administrators can add worker nodes and troubleshoot infrastructure such as by reloading a worker node, but can't create or delete the cluster, change the credentials, or set up cluster-wide features like service endpoints or managed add-ons.
-* **Administrator actions**: The Administrator platform access role includes all permissions that are granted by the Viewer, Editor, and Operator roles, plus the permissions that are show in the Administrator tab of the following table. With the Administrator role, users such as cluster or account administrators can create and delete clusters or set up cluster-wide features like service endpoints or managed add-ons. To create order such infrastructure resources such as worker node machines, VLANs, and subnets, Administrator users need the Super user <a href="#infra">infrastructure role</a> or the API key for the region must be set with the appropriate permissions.
+- **Actions requiring no permissions**: Any user in your account who runs the CLI command or makes the API call for the action sees the result, even if the user has no assigned permissions.
+- **Viewer actions**: The Viewer platform access role includes the actions that require no permissions, plus the permissions that are shown in the Viewer tab of following table. With the Viewer role, users such as auditors or billing can see cluster details but not modify the infrastructure.
+- **Editor actions**: The Editor platform access role includes the permissions that are granted by Viewer, plus the following. With the Editor role, users such as developers can bind services, work with Ingress resources, and set up log forwarding for their apps but can't modify the infrastructure.
+- **Operator actions**: The Operator platform access role includes the permissions that are granted by Viewer, plus the permissions that are shown in the Operator tab of the following table. With the Operator role, users such as site reliability engineers, DevOps engineers, or cluster administrators can add worker nodes and troubleshoot infrastructure such as by reloading a worker node, but can't create or delete the cluster, change the credentials, or set up cluster-wide features like service endpoints or managed add-ons.
+- **Administrator actions**: The Administrator platform access role includes all permissions that are granted by the Viewer, Editor, and Operator roles, plus the permissions that are show in the Administrator tab of the following table. With the Administrator role, users such as cluster or account administrators can create and delete clusters or set up cluster-wide features like service endpoints or managed add-ons. To create order such infrastructure resources such as worker node machines, VLANs, and subnets, Administrator users need the Super user [infrastructure role](#infra) or the API key for the region must be set with the appropriate permissions.
 
 The following table shows the permissions granted by each {{site.data.keyword.cloud_notm}} IAM platform access role. Each tab is organized alphabetically by CLI command name.
 
@@ -87,7 +87,7 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 | View current messages for the IBMid user. | [`ibmcloud oc messages`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_messages) | [`GET /v1/messages`](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetMessages) |
 | View a list of supported locations in {{site.data.keyword.openshiftlong_notm}}. | [`ibmcloud oc locations`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_supported-locations) | [`GET /v1/locations`](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/ListLocations) |
 | View a list of supported versions in {{site.data.keyword.openshiftlong_notm}}. | [`ibmcloud oc versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_versions_command) | - |
-| View a list of available zones that you can create a cluster in. | [`ibmcloud oc zone ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_datacenters) | <ul><li>Classic: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetZones"><code>GET /v1/zones</code></a></li><li>VPC: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/vpcGetZones"><code>GET ​/v2​/vpc​/getZones</code></a></li></ul> |
+| View a list of available zones that you can create a cluster in. | [`ibmcloud oc zone ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_datacenters) |  \n - Classic: [`GET /v1/zones`](https://containers.cloud.ibm.com/global/swagger-global-api/#/util/GetZones) - VPC: [`GET ​/v2​/vpc​/getZones`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/vpcGetZones) |
 {: class="simple-tab-table"}
 {: caption="Overview of permissions required for CLI commands and API calls in {{site.data.keyword.openshiftlong_notm}}." caption-side="top"}
 {: #accessreftabtablenone}
@@ -96,15 +96,15 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 
 | Action | CLI command | API call |
 |----|----|----|
-| View information for an Ingress ALB. | [`ibmcloud oc ingress alb get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_get) | <ul><li>Classic: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/alb/GetClusterALB"><code>GET /v1/albs/{albId}</code></a></li><li>VPC: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/V2GetClusterALB"><code>GET /v2​/alb​/getAlb</code></a></ul></li>|
+| View information for an Ingress ALB. | [`ibmcloud oc ingress alb get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_get) |  \n - Classic: [`GET /v1/albs/{albId}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/alb/GetClusterALB) - VPC: [`GET /v2​/alb​/getAlb`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/V2GetClusterALB) |
 | View the Ingress migration status for a cluster. | [`ibmcloud oc ingress alb migrate status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_migrate_status) | [`GET /v2/alb/getMigrationstatus`](https://containers.cloud.ibm.com/global/swagger-global-api/#/alb-beta/getMigrationstatus) |
-| List all Ingress ALBs in a cluster. | [`ibmcloud oc ingress alb ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_albs) | <ul><li>Classic: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/alb/GetClusterALBs"><code>GET /v1/clusters/{idOrName}</code></a></li><li>VPC: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/V2GetClusterALBs"><code>GET ​/v2​/alb​/getClusterAlbs</code></a></ul></li>|
+| List all Ingress ALBs in a cluster. | [`ibmcloud oc ingress alb ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_albs) |  \n - Classic: [`GET /v1/clusters/{idOrName}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/alb/GetClusterALBs) - VPC: [`GET ​/v2​/alb​/getClusterAlbs`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/V2GetClusterALBs) |
 | Get the configuration of load balancers that expose Ingress ALBs in your cluster. | [`ibmcloud oc ingress lb get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_get) | [`GET /ingress/v2/load-balancer/configuration`](https://containers.cloud.ibm.com/global/swagger-global-api/#/beta/GetLBConfig) |
 | View the name and email address for the owner of the {{site.data.keyword.cloud_notm}} IAM API key for a resource group and region. | [`ibmcloud oc api-key info`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_info) | [`GET /v1/logging/{idOrName}/clusterkeyowner`](https://containers.cloud.ibm.com/global/swagger-global-api/#/logging/GetClusterKeyOwner) |
 | Download Kubernetes configuration data and certificates to connect to your cluster and run `oc` commands. | [`ibmcloud oc cluster config`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config) | [`GET /v1/clusters/{idOrName}/config`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/GetClusterConfig) |
-| View information for a cluster. | [`ibmcloud oc cluster get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_get) | <ul><li>Provider-independent: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/getCluster"><code>GET /v2​/getCluster</code></a></li><li>Classic: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/GetCluster"><code>GET /v1/clusters/{idOrName}</code></a></li><li>VPC: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/vpcGetCluster"><code>GET /v2​/vpc/getCluster</code></a></li></ul> |
+| View information for a cluster. | [`ibmcloud oc cluster get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_get) |  \n - Provider-independent: [`GET /v2​/getCluster`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/getCluster) - Classic: [`GET /v1/clusters/{idOrName}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/GetCluster) - VPC: [`GET /v2​/vpc/getCluster`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/vpcGetCluster) |
 | List all services in all namespaces that are bound to a cluster. | [`ibmcloud oc cluster service ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_services) | [`GET /v1/clusters/{idOrName}/services`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/ListServicesForAllNamespaces) |
-| List all clusters. | [`ibmcloud oc cluster ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_clusters) | <ul><li>Classic: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/GetClusters"><code>GET /v1/clusters</code></a></li><li>VPC: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/vpcGetClusters"><code>GET ​/v2​/vpc​/getClusters</code></a></li></ul> |
+| List all clusters. | [`ibmcloud oc cluster ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_clusters) |  \n - Classic: [`GET /v1/clusters`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/GetClusters) - VPC: [`GET ​/v2​/vpc​/getClusters`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/vpcGetClusters) |
 | Get the infrastructure credentials that are set for the {{site.data.keyword.cloud_notm}} account to access a different classic infrastructure portfolio. | [`ibmcloud oc credential get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credential_get) | [`GET /v1/credentials`](https://containers.cloud.ibm.com/global/swagger-global-api/#/accounts/GetUserCredentials) |
 | Check whether the credentials that allow access to the classic IBM Cloud infrastructure portfolio for the targeted region and resource group are missing suggested or required infrastructure permissions. | [`ibmcloud oc infra-permissions get`](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get) | [`GET /v1/infra-permissions`](https://containers.cloud.ibm.com/global/swagger-global-api/#/accounts/GetInfraPermissions) |
 | View the status for automatic updates of the Fluentd add-on. | [`ibmcloud oc logging autoupdate get`](/docs/containers?topic=containers-kubernetes-service-cli#cs_log_autoupdate_get) | [`GET /v1/logging/{idOrName}/updatepolicy`](https://containers.cloud.ibm.com/global/swagger-global-api/#/logging/GetUpdatePolicy) |
@@ -115,15 +115,15 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 | List all services that are bound to a specific namespace. | - | [`GET /v1/clusters/{idOrName}/services/{namespace}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/ListServicesInNamespace) |
 | List all IBM Cloud infrastructure subnets that are bound to a cluster. | - | [`GET /v1/clusters/{idOrName}/subnets`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/GetClusterSubnets) |
 | List all user-managed subnets that are bound to a cluster. | - | [`GET /v1/clusters/{idOrName}/usersubnets`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/GetClusterUserSubnet) |
-| List available subnets in all resource groups. | [`ibmcloud oc subnets`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_subnets) | <ul><li>Classic: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/properties/ListSubnets"><code>GET /v1/subnets</code></a></li><li>VPC: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/getSubnets"><code>GET /v2/vpc/getSubnets</code></a></li></ul> |
+| List available subnets in all resource groups. | [`ibmcloud oc subnets`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_subnets) |  \n - Classic: [`GET /v1/subnets`](https://containers.cloud.ibm.com/global/swagger-global-api/#/properties/ListSubnets) - VPC: [`GET /v2/vpc/getSubnets`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/getSubnets) |
 | View the VLAN spanning status for the infrastructure account. | [`ibmcloud oc vlan spanning get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get) | [`GET /v1/subnets/vlan-spanning`](https://containers.cloud.ibm.com/global/swagger-global-api/#/accounts/GetVlanSpanning) |
 | When set for one cluster: List VLANs that the cluster is connected to in a zone.</br>When set for all clusters in the account: List all available VLANs in a zone. | [`ibmcloud oc vlan ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlans) | [`GET /v1/datacenters/{datacenter}/vlans`](https://containers.cloud.ibm.com/global/swagger-global-api/#/properties/GetDatacenterVLANs) |
 | List all VPCs in the targeted resource group. | [`ibmcloud oc vpcs`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vpcs) | [`GET /v2​/vpc​/getVPCs`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/getVPCs) |
 | List all webhooks for a cluster. | - | [`GET /v1/clusters/{idOrName}/webhooks`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/GetClusterWebhooks) |
-| View information for a worker node. | [`ibmcloud oc worker get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_get) | <ul><li>Provider-agnostic: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/getWorker"><code>GET /v2/getWorker</code></a></li><li>Classic: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/classicGetWorker"><code>GET /v2/classic/getWorker</code></a></li><li>VPC: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/vpcGetWorker"><code>GET /v2​/vpc​/getWorker</code></a></li></ul> |
-| View information for a worker pool. | [`ibmcloud oc worker-pool get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_get) | <ul><li>Classic: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/GetWorkerPool"><code>GET /v1/clusters/{idOrName}/workerpools/{poolidOrName}</code></a></li><li>VPC: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/getWorkerPool"><code>GET /v2/getWorkerPool</code></a></li></ul> |
-| List all worker pools in a cluster. | [`ibmcloud oc worker-pool ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pools) | <ul><li>Classic: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/GetWorkerPools"><code>GET /v1/clusters/{idOrName}/workerpools</code></a></li><li>VPC: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/getWorkerPools"><code>GET /v2/getWorkerPools</code></a></li></ul> |
-| List all worker nodes in a cluster. | [`ibmcloud oc worker ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_workers) | <ul><li>Provider-agnostic: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/getWorkers"><code>GET/v2/getWorkers</code></a></li><li>Classic: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/classicGetWorkers"><code>GET /v2/classic/getWorkers</code></a></li><li>VPC: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/vpcGetWorkers"><code>GET /v2/vpc/getWorkers</code></a></li></ul> |
+| View information for a worker node. | [`ibmcloud oc worker get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_get) |  \n - Provider-agnostic: [`GET /v2/getWorker`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/getWorker) - Classic: [`GET /v2/classic/getWorker`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/classicGetWorker) - VPC: [`GET /v2​/vpc​/getWorker`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/vpcGetWorker) |
+| View information for a worker pool. | [`ibmcloud oc worker-pool get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_get) |  \n - Classic: [`GET /v1/clusters/{idOrName}/workerpools/{poolidOrName}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/GetWorkerPool) - VPC: [`GET /v2/getWorkerPool`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/getWorkerPool) |
+| List all worker pools in a cluster. | [`ibmcloud oc worker-pool ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pools) |  \n - Classic: [`GET /v1/clusters/{idOrName}/workerpools`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/GetWorkerPools) - VPC: [`GET /v2/getWorkerPools`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/getWorkerPools) |
+| List all worker nodes in a cluster. | [`ibmcloud oc worker ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_workers) |  \n - Provider-agnostic: [`GET/v2/getWorkers`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/getWorkers) - Classic: [`GET /v2/classic/getWorkers`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/classicGetWorkers) - VPC: [`GET /v2/vpc/getWorkers`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/vpcGetWorkers) |
 {: class="simple-tab-table"}
 {: caption="Overview of permissions required for CLI commands and API calls in {{site.data.keyword.openshiftlong_notm}}." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the action that you can take with {{site.data.keyword.openshiftlong_notm}} service. The second column is the name of the action in the command line interface (CLI). The third column is the name of the action in the application programming interface (API)."}
@@ -160,7 +160,7 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 | List the health check monitor settings for each NLB subdomain in a cluster. | [`ibmcloud oc nlb-dns monitor ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-ls) | [`GET /v1/health/clusters/{idOrName}/list`](https://containers.cloud.ibm.com/global/swagger-global-api/#/nlb-health-monitor/ListNlbDNSHealthMonitors) |
 | Add one NLB IP address to an existing NLB subdomain. | [`ibmcloud oc nlb-dns add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-add) | [`PUT /v1/clusters/{idOrName}/add`](https://containers.cloud.ibm.com/global/swagger-global-api/#/nlb-dns/UpdateDNSWithIP) |
 | Create a DNS subdomain to register an NLB IP address. | [`ibmcloud oc nlb-dns create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-create) | [`POST /v1/clusters/{idOrName}/register`](https://containers.cloud.ibm.com/global/swagger-global-api/#/nlb-dns/RegisterDNSWithIP) |
-| List NLB subdomains and either the NLB IP addresses (classic clusters) or the load balancer hostnames (VPC clusters) that are registered with the DNS provider for each NLB subdomain. | [`ibmcloud oc nlb-dns ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-ls) | <ul><li>Classic: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/nlb-dns/ListNLBIPsForSubdomain"><code>GET /v1/clusters/{idOrName}/list</code></a></li><li>VPC: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/GetNlbDNSList"><code>GET /v2/nlb-dns/getNlbDNSList</code></a></li></ul> |
+| List NLB subdomains and either the NLB IP addresses (classic clusters) or the load balancer hostnames (VPC clusters) that are registered with the DNS provider for each NLB subdomain. | [`ibmcloud oc nlb-dns ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-ls) |  \n - Classic: [`GET /v1/clusters/{idOrName}/list`](https://containers.cloud.ibm.com/global/swagger-global-api/#/nlb-dns/ListNLBIPsForSubdomain) - VPC: [`GET /v2/nlb-dns/getNlbDNSList`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/GetNlbDNSList) |
 | Replace the VPC load balancer hostname for a subdomain. | [`ibmcloud oc nlb-dns replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-replace) | [`POST /v2/nlb-dns/vpc/replaceLBHostname`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/ReplaceLBHostname) |
 | Remove an NLB IP address from a subdomain. | [`ibmcloud oc nlb-dns rm classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm) | [`DELETE /v1/clusters/{idOrName}/host/{nlbHost}/ip/{nlbIP}/remove`](https://containers.cloud.ibm.com/global/swagger-global-api/#/nlb-dns/UnregisterDNSWithIP) |
 | Regenerate the certificate and secret for an NLB subdomain. | [`ibmcloud oc nlb-dns secret regenerate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-regenerate) | [`POST ​/v2​/nlb-dns​/regenerateCert`](https://containers.cloud.ibm.com/global/swagger-global-api/#/beta/RegenerateCert) |
@@ -186,12 +186,12 @@ The following table shows the permissions granted by each {{site.data.keyword.cl
 | Create a worker pool in a classic cluster. | [`ibmcloud oc worker-pool create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create) | [`POST /v1/clusters/{idOrName}/workerpools`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/CreateWorkerPool) |
 | Rebalance a worker pool. | [`ibmcloud oc worker-pool rebalance`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) | [`PATCH /v1/clusters/{idOrName}/workerpools/{poolidOrName}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/PatchWorkerPool) |
 | Resize a worker pool. | [`ibmcloud oc worker-pool resize`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) | [`PATCH /v1/clusters/{idOrName}/workerpools/{poolidOrName}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/PatchWorkerPool) |
-| Set labels on a worker pool. | [`ibmcloud oc worker-pool label set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_set) | <ul><li><strong>v1 API</strong>: </li>[`PATCH /v1/clusters/{idOrName}/workerpools/{poolidOrName}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/PatchWorkerPool)<li><strong>v2 API</strong>: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/v2SetWorkerPoolLabels"><code>POST /v2/setWorkerPoolLabels</code></a></li></ul>|
-| Remove labels from a worker pool. | [`ibmcloud oc worker-pool label rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_rm) | <ul><li><strong>v1 API</strong>: </li>[`PATCH /v1/clusters/{idOrName}/workerpools/{poolidOrName}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/PatchWorkerPool)<li><strong>v2 API</strong>: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/v2SetWorkerPoolLabels"><code>POST /v2/setWorkerPoolLabels</code></a></li></ul>|
+| Set labels on a worker pool. | [`ibmcloud oc worker-pool label set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_set) |  \n - **v1 API**: [`PATCH /v1/clusters/{idOrName}/workerpools/{poolidOrName}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/PatchWorkerPool)  \n - **v2 API**: [`POST /v2/setWorkerPoolLabels`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/v2SetWorkerPoolLabels) |
+| Remove labels from a worker pool. | [`ibmcloud oc worker-pool label rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_rm) |  \n - **v1 API**: [`PATCH /v1/clusters/{idOrName}/workerpools/{poolidOrName}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/PatchWorkerPool)  \n - **v2 API**: [`POST /v2/setWorkerPoolLabels`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/v2SetWorkerPoolLabels) |
 | Delete a worker pool. | [`ibmcloud oc worker-pool rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_rm) | [`DELETE /v1/clusters/{idOrName}/workerpools/{poolidOrName}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/RemoveWorkerPool) |
 | Reboot a worker node. | [`ibmcloud oc worker reboot`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot) | [`PUT /v1/clusters/{idOrName}/workers/{workerId}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/UpdateClusterWorker) |
 | Reload a worker node. | [`ibmcloud oc worker reload`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) | [`PUT /v1/clusters/{idOrName}/workers/{workerId}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/UpdateClusterWorker) |
-| Replace a worker node. | [`ibmcloud oc worker replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace) | <ul><li>Classic: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/replaceWorker"><code>POST /v2​/replaceWorker</code></a></li><li>VPC: <a href="https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/vpcReplaceWorker"><code>POST /v2​/vpc​/replaceWorker</code></a></li></ul> |
+| Replace a worker node. | [`ibmcloud oc worker replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace) |  \n - Classic: [`POST /v2​/replaceWorker`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/replaceWorker) - VPC: [`POST /v2​/vpc​/replaceWorker`](https://containers.cloud.ibm.com/global/swagger-global-api/#/v2/vpcReplaceWorker) |
 | Remove a worker node. | [`ibmcloud oc worker rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_rm) | [`DELETE /v1/clusters/{idOrName}/workers/{workerId}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/RemoveClusterWorker) |
 | Update a worker node. | [`ibmcloud oc worker update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_update) | [`PUT /v1/clusters/{idOrName}/workers/{workerId}`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/UpdateClusterWorker) |
 | Add a zone to a worker pool. | [`ibmcloud oc zone add classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add) | [`POST /v1/clusters/{idOrName}/workerpools/{poolidOrName}/zones`](https://containers.cloud.ibm.com/global/swagger-global-api/#/clusters/AddWorkerPoolZone) |
@@ -248,66 +248,19 @@ Looking for which Kubernetes actions each service access role grants through RBA
 
 The following table shows the Kubernetes resource permissions that are granted by each service access role and its corresponding RBAC role.
 
-<table summary="The columns are read from left to right. The first column has the service access role. The second column has the RBAC role, binding, and scope for the service access role. The third column describes the permissions that the service access role gives.">
-<caption>Kubernetes resource permissions by service and corresponding RBAC roles</caption>
-<col width="25%">
-<thead>
-    <th id="service-role">service access role</th>
-    <th id="rbac-role">Corresponding RBAC role, binding, and scope</th>
-    <th id="kube-perm">Kubernetes resource permissions</th>
-</thead>
-<tbody>
-    <tr>
-        <td id="service-role-reader" headers="service-role">Reader role</td>
-    <td headers="service-role-reader rbac-role">When scoped to one namespace: <strong><code>view</code></strong> cluster role applied by the <strong><code>ibm-view</code></strong> role binding in that namespace</br><br>When scoped to all namespaces: <strong><code>view</code></strong> cluster role applied by the <strong><code>ibm-view</code></strong> role binding in each namespace of the cluster. You can also view the cluster in the {{site.data.keyword.cloud_notm}} console and CLI.</td>
-    <td headers="service-role-reader kube-perm"><ul>
-        <li>Read access to resources in a namespace</li>
-        <li>No read access to roles and role bindings or to Kubernetes secrets</li>
-        <li>Access the {{site.data.keyword.openshiftshort}} dashboard to view resources in a namespace</li></ul>
-    </td>
-    </tr>
-    <tr>
-        <td id="service-role-writer" headers="service-role">Writer role</td>
-    <td headers="service-role-writer rbac-role">When scoped to one namespace: <strong><code>edit</code></strong> cluster role applied by the <strong><code>ibm-edit</code></strong> role binding in that namespace</br><br>When scoped to all namespaces: <strong><code>edit</code></strong> cluster role applied by the <strong><code>ibm-edit</code></strong> role binding in each namespace of the cluster</td>
-    <td headers="service-role-writer kube-perm"><ul><li>Read/write access to resources in a namespace</li>
-    <li>No read/write access to roles and role bindings</li>
-    <li>Access the Kubernetes dashboard to view resources in a namespace</li></ul>
-    </td>
-    </tr>
-    <tr>
-        <td id="service-role-manager" headers="service-role">Manager role</td>
-    <td headers="service-role-manager rbac-role">When scoped to one namespace: <strong><code>admin</code></strong> cluster role applied by the <strong><code>ibm-operate</code></strong> role binding in that namespace</br><br>When scoped to all namespaces: <strong><code>cluster-admin</code></strong> cluster role applied by the <strong><code>ibm-admin</code></strong> cluster role binding that applies to all namespaces</td>
-    <td headers="service-role-manager kube-perm">When scoped to one namespace:
-        <ul><li>Read/write access to all resources in a namespace but not to resource quota or the namespace itself</li>
-        <li>Create RBAC roles and role bindings in a namespace</li>
-        <li>Access the Kubernetes dashboard to view all resources in a namespace</li></ul>
-    </br>When scoped to all namespaces:
-        <ul><li>Read/write access to all resources in every namespace</li>
-        <li>Create RBAC roles and role bindings in a namespace or cluster roles and cluster role bindings in all namespaces</li>
-        <li>Access the Kubernetes dashboard</li>
-        <li>Create an Ingress resource that makes apps publicly available</li>
-        <li>Review cluster metrics such as with the <code>oc top pods</code>, <code>oc top nodes</code>, or <code>oc get nodes</code> commands</li></ul>
-    </td>
-    </tr>
-        <tr>
-    <td>Any service access role</td>
-    <td>All users of an {{site.data.keyword.openshiftshort}} cluster are given the following roles that vary by cluster version.<ul><li>![Version 3.11 icon.](images/icon-version-311.png) Version 3 clusters: <code>basic-users</code> and <code>self-provisioners</code>.</li><li>![Version 4 icon.](images/icon-version-43.png) Version 4 clusters: <code>basic-users</code>.</li></ul></td>
-    <td><ul>
-        <li>Get basic information about projects that the user has access to.</li>
-        <li>Create authorized resources in the projects that the user has access to.</li>
-        <li>For more information, see the <a href="https://docs.openshift.com/container-platform/4.8/authentication/using-rbac.html">{{site.data.keyword.openshiftshort}} docs</a> <img src="../icons/launch-glyph.svg" alt="External link icon">.</li></ul></td>
-    </tr>
-</tbody>
-</table>
 
-
+| Service access role| Corresponding RBAC role, binding, and scope | Kubernetes resource permissions |
+| -------- | -------------- | -------------- |
+| Reader role | When scoped to one namespace: **`view`** cluster role applied by the **`ibm-view`** role binding in that namespace. \n - When scoped to all namespaces: **`view`** cluster role applied by the **`ibm-view`** role binding in each namespace of the cluster. You can also view the cluster in the {{site.data.keyword.cloud_notm}} console and CLI. | - Read access to resources in a namespace \n - No read access to roles and role bindings or to Kubernetes secrets \n - Access the {{site.data.keyword.openshiftshort}} dashboard to view resources in a namespace. |
+| Writer role | When scoped to one namespace: **`edit`** cluster role applied by the **`ibm-edit`** role binding in that namespace. \n \n When scoped to all namespaces: **`edit`** cluster role applied by the **`ibm-edit`** role binding in each namespace of the cluster | - Read/write access to resources in a namespace \n - No read/write access to roles and role bindings< \n - Access the Kubernetes dashboard to view resources in a namespace. |
+| Manager role | When scoped to one namespace: **`admin`** cluster role applied by the **`ibm-operate`** role binding in that namespace \n  \n When scoped to all namespaces: **`cluster-admin`** cluster role applied by the **`ibm-admin`** cluster role binding that applies to all namespaces | When scoped to one namespace: \n - Read/write access to all resources in a namespace but not to resource quota or the namespace itself \n - Create RBAC roles and role bindings in a namespace  \n - Access the Kubernetes dashboard to view all resources in a namespace  \n When scoped to all namespaces: \n - Read/write access to all resources in every namespace \n - Create RBAC roles and role bindings in a namespace or cluster roles and cluster role bindings in all namespaces \n - Access the Kubernetes dashboard \n - Create an Ingress resource that makes apps publicly available \n - Review cluster metrics such as with the `oc top pods`, `oc top nodes`, or `oc get nodes` commands | 
+| Any service access role | All users of an {{site.data.keyword.openshiftshort}} cluster are given the following roles that vary by cluster version. \n - ![Version 3.11 icon.](images/icon-version-311.png) Version 3 clusters: `basic-users` and `self-provisioners`. \n - ![Version 4 icon.](images/icon-version-43.png) Version 4 clusters: `basic-users`. | |  - Get basic information about projects that the user has access to. \n - Create authorized resources in the projects that the user has access to. \n - For more information, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.8/authentication/using-rbac.html){: external} |
+{: caption="Table 1. Kubernetes resource permissions by service and corresponding RBAC roles" caption-side="bottom"}
 
 ## Kubernetes resource permissions per RBAC role
 {: #rbac_ref}
 
 Every user who is assigned an {{site.data.keyword.cloud_notm}} IAM service access role is also automatically assigned a corresponding, predefined Kubernetes role-based access control (RBAC) role. If you plan to manage your own custom Kubernetes RBAC roles, see [Creating custom RBAC permissions for users, groups, or service accounts](/docs/openshift?topic=openshift-users#rbac). For the username details, see [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](#iam_issuer_users).
-{: tip}
-
 {: shortdesc}
 
 Wondering if you have the correct permissions to run a certain `oc` command on a resource in a namespace? Try the [`oc auth can-i` command](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-can-i-em-){: external}.
@@ -315,276 +268,61 @@ Wondering if you have the correct permissions to run a certain `oc` command on a
 
 The following table shows the permissions that are granted by each RBAC role to individual Kubernetes resources. Permissions are shown as which verbs a user with that role can complete against the resource, such as "get", "list", "describe", "create", or "delete".
 
-<table summary="The columns are read from left to right. The first column has the Kubernetes resource that an RBAC role authorizes actions to. The second column describes the actions that the view role authorizes for the resource. The third column describes the actions that the edit role authorizes for the resource. The fourth column describes the actions that the admin and cluster admin roles authorize for the resource.">
-    <caption>Kubernetes resource permissions granted by each predefined RBAC role</caption>
-    <col width="25%">
-    <thead>
-    <th>Kubernetes resource</th>
-    <th><code>view</code></th>
-    <th><code>edit</code></th>
-    <th><code>admin</code> and <code>cluster-admin</code></th>
-    </thead>
-<tbody>
-<tr>
-    <td><code>bindings</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></br><strong>cluster-admin only:</strong> <code>create</code>, <code>delete</code>, <code>update</code></td>
-</tr><tr>
-    <td><code>configmaps</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>cronjobs.batch</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>daemonsets.apps </code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>daemonsets.extensions</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>deployments.apps</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>deployments.apps/rollback</code></td>
-    <td>-</td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>deployments.apps/scale</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>deployments.extensions</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>deployments.extensions/rollback</code></td>
-    <td>-</td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>deployments.extensions/scale</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>endpoints</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>events</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>horizontalpodautoscalers.autoscaling</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>ingresses.extensions</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>jobs.batch</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>limitranges</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>localsubjectaccessreviews</code></td>
-    <td>-</td>
-    <td>-</td>
-    <td><code>create</code></td>
-</tr><tr>
-    <td><code>namespaces</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></br><strong>cluster-admin only:</strong> <code>create</code>, <code>delete</code></td>
-</tr><tr>
-    <td><code>namespaces/status</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>networkpolicies</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>networkpolicies.extensions</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>node</code></td>
-    <td>None</td>
-    <td>None</td>
-    <td><code>admin</code> scoped to a namespace: None<br><br>
-    <code>cluster-admin</code> for all namespaces: All verbs</td>
-</tr><tr>
-    <td><code>persistentvolume</code></td>
-    <td>None</td>
-    <td>None</td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>persistentvolumeclaims</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>poddisruptionbudgets.policy</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>pods</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>top</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>pods/attach</code></td>
-    <td>-</td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>pods/exec</code></td>
-    <td>-</td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>pods/log</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>pods/portforward</code></td>
-    <td>-</td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>pods/proxy</code></td>
-    <td>-</td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>pods/status</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>replicasets.apps</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>replicasets.apps/scale</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>replicasets.extensions</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>replicasets.extensions/scale</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>replicationcontrollers</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>replicationcontrollers/scale</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>replicationcontrollers/status</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>replicationcontrollers.extensions/scale</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>resourcequotas</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>resourcequotas/status</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>rolebindings</code></td>
-    <td>-</td>
-    <td>-</td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>roles</code></td>
-    <td>-</td>
-    <td>-</td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>secrets</code></td>
-    <td>-</td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>serviceaccounts</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code>, <code>impersonate</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code>, <code>impersonate</code></td>
-</tr><tr>
-    <td><code>services</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>services/proxy</code></td>
-    <td>-</td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>statefulsets.apps</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr><tr>
-    <td><code>statefulsets.apps/scale</code></td>
-    <td><code>get</code>, <code>list</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-    <td><code>create</code>, <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code>, <code>patch</code>, <code>update</code>, <code>watch</code></td>
-</tr>
-</tbody>
-</table>
 
+| Kubernetes resource| `view`| `edit`| `admin` and `cluster-admin` |
+| -------------- | -------------- | -------------- | -------------- | 
+| `bindings` | `get`, `list`, `watch` | `get`, `list`, `watch` | `get`, `list`, `watch` \n **cluster-admin only:** `create`, `delete`, `update` |
+| `configmaps` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `cronjobs.batch` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `daemonsets.apps` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `daemonsets.extensions` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `deployments.apps` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `deployments.apps/rollback` | - | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `deployments.apps/scale` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `deployments.extensions` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `deployments.extensions/rollback` | - | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `deployments.extensions/scale` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `endpoints` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `events` | `get`, `list`, `watch` | `get`, `list`, `watch` | `get`, `list`, `watch` |
+| `horizontalpodautoscalers.autoscaling` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `ingresses.extensions` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `jobs.batch` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `limitranges` | `get`, `list`, `watch` | `get`, `list`, `watch` | `get`, `list`, `watch` |
+| `localsubjectaccessreviews` | - | - | `create` |
+| `namespaces` | `get`, `list`, `watch` | `get`, `list`, `watch` | `get`, `list`, `watch` \n **cluster-admin only:** `create`, `delete` |
+| `namespaces/status` | `get`, `list`, `watch` | `get`, `list`, `watch` | `get`, `list`, `watch` |
+| `networkpolicies` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `networkpolicies.extensions` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `node` | None | None | `admin` scoped to a namespace: None \n  \n  `cluster-admin` for all namespaces: All verbs |
+| `persistentvolume` | None | None | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `persistentvolumeclaims` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `poddisruptionbudgets.policy` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `pods` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `top`, `patch`, `update`, `watch` |
+| `pods/attach` | - | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `pods/exec` | - | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `pods/log` | `get`, `list`, `watch` | `get`, `list`, `watch` | `get`, `list`, `watch` |
+| `pods/portforward` | - | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `pods/proxy` | - | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `pods/status` | `get`, `list`, `watch` | `get`, `list`, `watch` | `get`, `list`, `watch` |
+| `replicasets.apps` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `replicasets.apps/scale` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `replicasets.extensions` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `replicasets.extensions/scale` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `replicationcontrollers` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `replicationcontrollers/scale` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `replicationcontrollers/status` | `get`, `list`, `watch` | `get`, `list`, `watch` | `get`, `list`, `watch` |
+| `replicationcontrollers.extensions/scale` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `resourcequotas` | `get`, `list`, `watch` | `get`, `list`, `watch` | `get`, `list`, `watch` |
+| `resourcequotas/status` | `get`, `list`, `watch` | `get`, `list`, `watch` | `get`, `list`, `watch` |
+| `rolebindings` | - | - | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `roles` | - | - | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `secrets` | - | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `serviceaccounts` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`, `impersonate` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`, `impersonate` |
+| `services` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `services/proxy` | - | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `statefulsets.apps` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+| `statefulsets.apps/scale` | `get`, `list`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` | `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` |
+{: caption="Table 1. Kubernetes resource permissions granted by each predefined RBAC role" caption-side="bottom"}
 
 
 ## {{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users
@@ -604,8 +342,6 @@ You might use this information if you build automation tooling within the cluste
 `*`: An example of lowercase is `user.name@company.com`. An example of camel case is `User.Name@company.com`.
 {: note}
 
-
-
 ## Cloud Foundry roles
 {: #cloud-foundry}
 
@@ -614,28 +350,12 @@ Cloud Foundry roles grant access to organizations and spaces within the account.
 
 The following table shows the Cloud Foundry roles that are required for cluster action permissions.
 
-<table summary="The columns are read from left to right. The first column has the Cloud Foundry role. The second column describes permissions for the role.">
-    <caption>Cluster management permissions by Cloud Foundry role</caption>
-    <col width="25%">
-    <thead>
-        <th>Cloud Foundry role</th>
-    <th>Cluster management permissions</th>
-    </thead>
-    <tbody>
-    <tr>
-        <td>Space role: Manager</td>
-    <td>Manage user access to an {{site.data.keyword.cloud_notm}} space</td>
-    </tr>
-    <tr>
-        <td>Space role: Developer</td>
-    <td>
-        <ul><li>Create {{site.data.keyword.cloud_notm}} service instances</li>
-        <li>Bind {{site.data.keyword.cloud_notm}} service instances to clusters</li>
-        <li>View logs from a cluster's log forwarding configuration at the space level</li></ul>
-    </td>
-    </tr>
-    </tbody>
-</table>
+| Cloud Foundry role | Cluster management permissions |
+| -------------- | -------------- |
+| Space role: Manager | Manage user access to an {{site.data.keyword.cloud_notm}} space |
+| Space role: Developer |  - Create {{site.data.keyword.cloud_notm}} service instances \n - Bind {{site.data.keyword.cloud_notm}} service instances to clusters \n - View logs from a cluster's log forwarding configuration at the space level |
+{: caption="Table 1. Cluster management permissions by Cloud Foundry role" caption-side="bottom"}
+
 
 ## Classic infrastructure roles
 {: #infra}
@@ -652,20 +372,24 @@ Need to check that the API key or manually set credentials have the required and
 {: tip}
 
 The following table shows the classic infrastructure permissions that the credentials for a region and resource group can have for creating clusters and other common use cases. The description includes how you can assign the permission in the {{site.data.keyword.cloud_notm}} IAM Classic infrastructure console or the `ibmcloud sl` command. For more information, see the instructions for the [console](/docs/openshift?topic=openshift-access-creds#infra_console) or [CLI](/docs/openshift?topic=openshift-access-creds#infra_cli).
-*   **Create clusters**: Classic infrastructure permissions that you must have to create a cluster. When you run `ibmcloud oc infra-permissions get`, these permissions are listed as **Required**. For other service permissions that you must have in {{site.data.keyword.cloud_notm}} IAM to create clusters, see [Permissions to create a cluster](#cluster_create_permissions).
-*   **Other common use cases**: Classic infrastructure permissions that you must have for other common scenarios. Even if you have permission to create a cluster, some limitations might apply. For example, you might not be able to create or work with a cluster with bare metal worker nodes or a public IP address. After cluster creation, further steps to add networking or storage resources might fail. When you run `ibmcloud oc infra-permissions get`, these permissions are listed as **Suggested**.
+
+Create clusters
+:    Classic infrastructure permissions that you must have to create a cluster. When you run `ibmcloud oc infra-permissions get`, these permissions are listed as **Required**. For other service permissions that you must have in {{site.data.keyword.cloud_notm}} IAM to create clusters, see [Permissions to create a cluster](#cluster_create_permissions).
+
+Other common use cases
+:    Classic infrastructure permissions that you must have for other common scenarios. Even if you have permission to create a cluster, some limitations might apply. For example, you might not be able to create or work with a cluster with bare metal worker nodes or a public IP address. After cluster creation, further steps to add networking or storage resources might fail. When you run `ibmcloud oc infra-permissions get`, these permissions are listed as **Suggested**.
 
 | Permission | Description | IAM Assign Policy Console | CLI |
 |:-----------------|:-----------------|:---------------|:----|
-| IPMI Remote Management | Manage worker nodes.|Classic infrastructure > Permissions > Devices|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission REMOTE_MANAGEMENT --enable true</code></pre> |
-| Add Server | Add worker nodes. <br><br> **Note**: For worker nodes that have public IP addresses, you also need the **Add Compute with Public Network Port** permission in the **Network** category. | Add Server: Classic infrastructure > Permissions > Account<br><br> Add Compute with Public Network Port: Classic infrastructure > Permissions > Network |Add Server: <pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission SERVER_ADD --enable true</code></pre>  Add Compute with Public Network Port: <pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission PUBLIC_NETWORK_COMPUTE --enable true</code></pre>|
-| Cancel Server | Delete worker nodes. | Classic infrastructure > Permissions > Account|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission SERVER_CANCEL --enable true</code></pre>  |
-| OS Reloads and Rescue Kernel | Update, reboot, and reload worker nodes. | Classic infrastructure > Permissions > Devices|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission SERVER_RELOAD --enable true</code></pre>  |
-| View Virtual Server Details | Required if the cluster has VM worker nodes. List and get details of VM worker nodes. | Classic infrastructure > Permissions > Devices|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission VIRTUAL_GUEST_VIEW --enable true</code></pre>  |
-| View Hardware Details | Required if the cluster has bare metal worker nodes. List and get details of bare metal worker nodes. | Classic infrastructure > Permissions > Devices|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission HARDWARE_VIEW --enable true</code></pre>  |
-| Add Support Case | As part of the cluster creation automation, support cases are opened to provision the cluster infrastructure. | - |<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission TICKET_ADD --enable true</code></pre>  |
-| Edit Support Case | As part of the cluster creation automation, support cases are updated to provision the cluster infrastructure. | - |<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission TICKET_EDIT --enable true</code></pre>  |
-| View Support Case | As part of the cluster creation automation, support cases are used to provision the cluster infrastructure. | - |<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission TICKET_VIEW --enable true</code></pre>  |
+| IPMI Remote Management | Manage worker nodes.|Classic infrastructure > Permissions > Devices| `ibmcloud sl user permission-edit <user_id> --permission REMOTE_MANAGEMENT --enable true` |
+| Add Server | Add worker nodes.   \n   \n  **Note**: For worker nodes that have public IP addresses, you also need the **Add Compute with Public Network Port** permission in the **Network** category. | Add Server: Classic infrastructure > Permissions > Account  \n  \n  Add Compute with Public Network Port: Classic infrastructure > Permissions > Network |Add Server:  `ibmcloud sl user permission-edit <user_id> --permission SERVER_ADD --enable true`  Add Compute with Public Network Port:  `ibmcloud sl user permission-edit <user_id> --permission PUBLIC_NETWORK_COMPUTE --enable true`|
+| Cancel Server | Delete worker nodes. | Classic infrastructure > Permissions > Account| `ibmcloud sl user permission-edit <user_id> --permission SERVER_CANCEL --enable true`  |
+| OS Reloads and Rescue Kernel | Update, reboot, and reload worker nodes. | Classic infrastructure > Permissions > Devices| `ibmcloud sl user permission-edit <user_id> --permission SERVER_RELOAD --enable true`  |
+| View Virtual Server Details | Required if the cluster has VM worker nodes. List and get details of VM worker nodes. | Classic infrastructure > Permissions > Devices| `ibmcloud sl user permission-edit <user_id> --permission VIRTUAL_GUEST_VIEW --enable true`  |
+| View Hardware Details | Required if the cluster has bare metal worker nodes. List and get details of bare metal worker nodes. | Classic infrastructure > Permissions > Devices| `ibmcloud sl user permission-edit <user_id> --permission HARDWARE_VIEW --enable true`  |
+| Add Support Case | As part of the cluster creation automation, support cases are opened to provision the cluster infrastructure. | - | `ibmcloud sl user permission-edit <user_id> --permission TICKET_ADD --enable true`  |
+| Edit Support Case | As part of the cluster creation automation, support cases are updated to provision the cluster infrastructure. | - | `ibmcloud sl user permission-edit <user_id> --permission TICKET_EDIT --enable true`  |
+| View Support Case | As part of the cluster creation automation, support cases are used to provision the cluster infrastructure. | - | `ibmcloud sl user permission-edit <user_id> --permission TICKET_VIEW --enable true`  |
 {: class="simple-tab-table"}
 {: caption="Required classic infrastructure permissions" caption-side="top"}
 {: #classic-permissions-required}
@@ -674,24 +398,20 @@ The following table shows the classic infrastructure permissions that the creden
 
 | Permission | Description | IAM Assign Policy Console | CLI |
 |:-----------------|:-----------------|:---------------|:----|
-| Access All Virtual | Designate access to all VM worker nodes. Without this permission, a user who creates one cluster might not be able to view the VM worker nodes of another cluster even if the user has IAM access to both clusters. | Classic infrastructure > Devices > Check All virtual servers and Auto virtual server access|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission ACCESS_ALL_GUEST --enable true</code></pre> |
-| Access All Hardware | Designate access to all bare metal worker nodes.  Without this permission, a user who creates one cluster might not be able to view the bare metal worker nodes of another cluster even if the user has IAM access to both clusters. | Classic infrastructure > Devices > Check All bare metal servers and Auto bare metal server access|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission ACCESS_ALL_HARDWARE --enable true</code></pre> |
-| Add Compute with Public Network Port | Let worker nodes have a port that can be accessible on the public network. | Classic infrastructure > Permissions > Network|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission PUBLIC_NETWORK_COMPUTE --enable true</code></pre> |
-| Manage DNS | Set up public load balancer or Ingress networking to expose apps. | Classic infrastructure > Permissions > Services|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission DNS_MANAGE --enable true</code></pre> |
-| Edit Hostname/Domain | Set up public load balancer or Ingress networking to expose apps. | Classic infrastructure > Permissions > Devices|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission HOSTNAME_EDIT --enable true</code></pre> |
-| Add IP Addresses | Add IP addresses to public or private subnets that are used for cluster load balancing. | Classic infrastructure > Permissions > Network|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission IP_ADD --enable true</code></pre> |
-| Manage Network Subnet Routes | Manage public and private VLANs and subnets that are used for cluster load balancing. | Classic infrastructure > Permissions > Network|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission NETWORK_ROUTE_MANAGE --enable true</code></pre> |
-| Manage Port Control | Manage ports that are used for app load balancing. | Classic infrastructure > Permissions > Devices|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission PORT_CONTROL --enable true</code></pre> |
-| Manage Certificates (SSL) | Set up certificates that are used for cluster load balancing. | Classic infrastructure > Permissions > Services|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission SECURITY_CERTIFICATE_MANAGE --enable true</code></pre>  |
-| View Certificates (SSL) | Set up certificates that are used for cluster load balancing. | Classic infrastructure > Permissions > Services|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission SECURITY_CERTIFICATE_VIEW --enable true</code></pre> |
-| Add/Upgrade Storage (Storage Layer) | Create {{site.data.keyword.cloud_notm}} File or Block storage instances to attach as volumes to your apps for persistent storage of data. | Classic infrastructure > Permissions > Account|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission ADD_SERVICE_STORAGE --enable true</code></pre>  |
-| Storage Manage | Manage {{site.data.keyword.cloud_notm}} File or Block storage instances that are attached as volumes to your apps for persistent storage of data. | Classic infrastructure > Permissions > Services|<pre class="pre"><code>ibmcloud sl user permission-edit &lt;user_id&gt; --permission NAS_MANAGE --enable true</code></pre> |
+| Access All Virtual | Designate access to all VM worker nodes. Without this permission, a user who creates one cluster might not be able to view the VM worker nodes of another cluster even if the user has IAM access to both clusters. | Classic infrastructure > Devices > Check All virtual servers and Auto virtual server access| `ibmcloud sl user permission-edit <user_id> --permission ACCESS_ALL_GUEST --enable true` |
+| Access All Hardware | Designate access to all bare metal worker nodes.  Without this permission, a user who creates one cluster might not be able to view the bare metal worker nodes of another cluster even if the user has IAM access to both clusters. | Classic infrastructure > Devices > Check All bare metal servers and Auto bare metal server access| `ibmcloud sl user permission-edit <user_id> --permission ACCESS_ALL_HARDWARE --enable true` |
+| Add Compute with Public Network Port | Let worker nodes have a port that can be accessible on the public network. | Classic infrastructure > Permissions > Network| `ibmcloud sl user permission-edit <user_id> --permission PUBLIC_NETWORK_COMPUTE --enable true` |
+| Manage DNS | Set up public load balancer or Ingress networking to expose apps. | Classic infrastructure > Permissions > Services| `ibmcloud sl user permission-edit <user_id> --permission DNS_MANAGE --enable true` |
+| Edit Hostname/Domain | Set up public load balancer or Ingress networking to expose apps. | Classic infrastructure > Permissions > Devices| `ibmcloud sl user permission-edit <user_id> --permission HOSTNAME_EDIT --enable true` |
+| Add IP Addresses | Add IP addresses to public or private subnets that are used for cluster load balancing. | Classic infrastructure > Permissions > Network| `ibmcloud sl user permission-edit <user_id> --permission IP_ADD --enable true` |
+| Manage Network Subnet Routes | Manage public and private VLANs and subnets that are used for cluster load balancing. | Classic infrastructure > Permissions > Network| `ibmcloud sl user permission-edit <user_id> --permission NETWORK_ROUTE_MANAGE --enable true` |
+| Manage Port Control | Manage ports that are used for app load balancing. | Classic infrastructure > Permissions > Devices| `ibmcloud sl user permission-edit <user_id> --permission PORT_CONTROL --enable true` |
+| Manage Certificates (SSL) | Set up certificates that are used for cluster load balancing. | Classic infrastructure > Permissions > Services| `ibmcloud sl user permission-edit <user_id> --permission SECURITY_CERTIFICATE_MANAGE --enable true`  |
+| View Certificates (SSL) | Set up certificates that are used for cluster load balancing. | Classic infrastructure > Permissions > Services| `ibmcloud sl user permission-edit <user_id> --permission SECURITY_CERTIFICATE_VIEW --enable true` |
+| Add/Upgrade Storage (Storage Layer) | Create {{site.data.keyword.cloud_notm}} File or Block storage instances to attach as volumes to your apps for persistent storage of data. | Classic infrastructure > Permissions > Account| `ibmcloud sl user permission-edit <user_id> --permission ADD_SERVICE_STORAGE --enable true`  |
+| Storage Manage | Manage {{site.data.keyword.cloud_notm}} File or Block storage instances that are attached as volumes to your apps for persistent storage of data. | Classic infrastructure > Permissions > Services| `ibmcloud sl user permission-edit <user_id> --permission NAS_MANAGE --enable true` |
 {: class="simple-tab-table"}
 {: caption="Suggested classic infrastructure permissions" caption-side="top"}
 {: #classic-permissions-suggested}
 {: tab-title="Other common use cases"}
 {: tab-group="Classic infrastructure permissions"}
-
-
-
-

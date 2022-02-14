@@ -190,7 +190,14 @@ toc:
             - storage-file.md
             - storage-block.md
             - storage-block-vpc.md
-            - storage-object.md
+            - topicgroup:
+                label: Storing data on IBM Cloud Object Storage
+                topics:
+                - storage_cos_understand.md
+                - storage-cos-install.md 
+                - storage-cos-vpc-ip.md
+                - storage-cos-apps.md
+                - storage-cos-reference.md
             - storage-portworx.md
             - storage-vpc-block-driver.md
             - topicgroup:
@@ -438,4 +445,3 @@ toc:
                   - ts-storage-ocs-unresolved.md
         - limitations.md
         - sitemap.md
-

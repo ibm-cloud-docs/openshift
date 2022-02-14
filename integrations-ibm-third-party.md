@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-11"
 
 keywords: kubernetes, openshift
 
@@ -88,6 +88,7 @@ For more information about {{site.data.keyword.openshiftlong_notm}} partners and
 
 ### Managed add-ons
 {: #cluster-add-ons}
+
 {{site.data.keyword.openshiftlong_notm}} integrates popular open source integrations by using [managed add-ons](/docs/containers?topic=containers-managed-addons). Managed add-ons are an easy way to install an open source tool in your cluster that is tested by IBM and approved to be used in {{site.data.keyword.openshiftlong_notm}}.
 
 Managed add-ons are fully integrated into the {{site.data.keyword.cloud_notm}} support organization. If you have a question or an issue with using the managed add-ons, you can use one of the {{site.data.keyword.openshiftlong_notm}} support channels. For more information, see [Getting help and support](/docs/containers?topic=containers-get-help).
