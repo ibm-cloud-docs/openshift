@@ -11,7 +11,7 @@
       {
         "title": "See what's new",
         "description": "Read about the latest changes to Red Hat Openshift on IBM Cloud. ",
-        "href": "/docs/openshift?topic=openshift-rel-notes"
+        "href": "/docs/openshift?topic=openshift-iks-release"
       },  
       {
         "title": "Understand Red Hat OpenShift on IBM Cloud",
