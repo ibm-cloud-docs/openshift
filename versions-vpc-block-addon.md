@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-14"
 
 keywords: block, add-on, changelog
 
@@ -49,6 +49,18 @@ Refer to the following tables for a summary of changes for each version of the {
 
 Review the changes in version `4.1` of the {{site.data.keyword.block_storage_is_short}} add-on.
 {: shortdesc}
+
+### Change log for version 4.1.3_846, released 14 February 2022
+{: #413_846_is_block_relnote}
+
+Review the changes in version `4.1.3_846` of the {{site.data.keyword.block_storage_is_short}} add-on.
+{: shortdesc}    
+
+- Resolves the following CVEs. 
+    - [CVE-2021-3538](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3538{: external}
+    - [CVE-2020-26160](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-26160{: external}
+
+    
 
 ### Changelog for version 4.1.2_834, released 27 January 2022
 {: #412_834_is_block_relnote}
@@ -303,4 +315,3 @@ Review the changes in version 2.0.3_365 of the {{site.data.keyword.block_storage
 - Updates sidecar container images.  
 - Adds liveness probe.  
 - Enables parallel attachment and detachment of volumes to worker nodes. Previously, worker nodes were attached and detached sequentially.  
-
