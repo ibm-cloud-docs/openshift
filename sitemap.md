@@ -2667,47 +2667,30 @@ subcollection: openshift
 
     * [Cleaning up persistent storage](/docs/openshift?topic=openshift-vpc-block#storage_remove_block_vpc)
 
-[Storing data on {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#object_storage)
 
-* [Creating your object storage service instance](/docs/openshift?topic=openshift-object_storage#create_cos_service)
+### Storing data on IBM Cloud Object Storage
+{: #sitemap_storing_data_on_ibm_cloud_object_storage}
 
-* [Creating {{site.data.keyword.cos_full_notm}} service credentials](/docs/openshift?topic=openshift-object_storage#service_credentials)
 
-* [Creating a secret for the object storage service credentials](/docs/openshift?topic=openshift-object_storage#create_cos_secret)
+[Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#storage_cos_install)
 
-* [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#install_cos)
+[VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip#storage_cos_vpc_ip)
 
-    * [Verifying your installation](/docs/openshift?topic=openshift-object_storage#cos-plugin)
+[Adding object storage to apps](/docs/openshift?topic=openshift-storage_cos_apps#storage_cos_apps)
 
-    * [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#update_cos_plugin)
+* [Creating a deployment](/docs/openshift?topic=openshift-storage_cos_apps#create-cos-deployment-steps)
 
-    * [Removing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-object_storage#remove_cos_plugin)
+* [Using object storage in a stateful set](/docs/openshift?topic=openshift-storage_cos_apps#cos_statefulset)
 
-* [Deciding on the object storage configuration](/docs/openshift?topic=openshift-object_storage#configure_cos)
+[Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference#storage_cos_reference)
 
-* [VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#cos_auth_ip)
+* [Standard](/docs/openshift?topic=openshift-storage_cos_reference#standard)
 
-* [Adding object storage to apps](/docs/openshift?topic=openshift-object_storage#add_cos)
+* [Vault](/docs/openshift?topic=openshift-storage_cos_reference#Vault)
 
-    * [Creating a deployment](/docs/openshift?topic=openshift-object_storage#create-cos-deployment-steps)
+* [Cold](/docs/openshift?topic=openshift-storage_cos_reference#cold)
 
-* [Using object storage in a stateful set](/docs/openshift?topic=openshift-object_storage#cos_statefulset)
-
-* [Backing up and restoring data](/docs/openshift?topic=openshift-object_storage#cos_backup_restore)
-
-* [Adding your {{site.data.keyword.cos_full_notm}} credentials to the default storage classes](/docs/openshift?topic=openshift-object_storage#storage_class_custom)
-
-* [Storage class reference](/docs/openshift?topic=openshift-object_storage#cos_storageclass_reference)
-
-    * [Standard](/docs/openshift?topic=openshift-object_storage#standard)
-
-    * [Vault](/docs/openshift?topic=openshift-object_storage#Vault)
-
-    * [Cold](/docs/openshift?topic=openshift-object_storage#cold)
-
-    * [Flex](/docs/openshift?topic=openshift-object_storage#flex)
-
-* [Limitations](/docs/openshift?topic=openshift-object_storage#cos_limitations)
+* [Flex](/docs/openshift?topic=openshift-storage_cos_reference#flex)
 
 [Storing data on software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx#portworx)
 
