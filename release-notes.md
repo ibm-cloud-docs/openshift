@@ -27,6 +27,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## February 2022
 {: #release-feb-2022}
 
+### 14 February 2022
+{: #14feb2022}
+{: release-note}
+
+Worker node fix pack
+
+
+:   {{site.data.keyword.openshiftshort}} [4.9.19_1526_openshift](/docs/openshift?topic=openshift-openshift_changelog#4919_1526), [4.8.29_1544_openshift](/docs/openshift?topic=openshift-openshift_changelog#4829_1544), [4.7.42_1549_openshift](/docs/openshift?topic=openshift-openshift_changelog#4742_1549), [4.6.53_1572_openshift](/docs/openshift?topic=openshift-openshift_changelog#4653_1572), and [3.11.570_1621_openshift](/docs/openshift?topic=openshift-openshift_changelog#311570_1621).
+
 
 ### 10 February 2022
 {: #10feb2022}
