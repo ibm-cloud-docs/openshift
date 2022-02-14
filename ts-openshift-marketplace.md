@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-02-11"
+lastupdated: "2022-02-14"
 
 keywords: openshift
 
@@ -43,5 +43,5 @@ redhat-operators-rjvsp                  0/1     ImagePullBackOff   0          4h
 {: screen}
 
 
-You can fix this issue by disabling and mirroring these public images. For more information, see [Disabling and mirroring OperatorHub catalog source images](docs/openshift?topic=openshift-operators#mirror-operatorhub).
+You can fix this issue by disabling and mirroring these public images. For more information, see [Disabling and mirroring OperatorHub catalog source images](/docs/openshift?topic=openshift-operators#mirror-operatorhub).
 {: tsResolve}
