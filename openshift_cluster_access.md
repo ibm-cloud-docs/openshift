@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-14"
+lastupdated: "2022-02-15"
 
 keywords: openshift, clusters
 
@@ -484,46 +484,6 @@ Making your location and cluster subdomains available outside of your hosts' pri
     ```
     {: pre}
     
-
-1. Get the details of the `router-external-default` service and note the **EXTERNAL-IP** column. 
-    ```sh
-    oc get service router-external-default -n openshift-ingress
-    ```
-    {: pre}
-    
-    Example output
-    ```sh
-    NAME                      TYPE           CLUSTER-IP       EXTERNAL-IP                                    PORT(S)                      AGE
-    router-external-default   ClusterIP      172.21.170.65                                                   80/TCP,443/TCP,1936/TCP      45h
-    ```
-    {: screen}
-
-
-1. If no public IPs are listed for the service, edit the service configuration by using the `oc edit` command. 
-
-    ```sh
-    oc edit service router-external-default -n openshift-ingress
-    ```
-    {: pre}
-    
-1. Add the public IP addresses of your worker nodes that you retrieved earlier as `externalIPs` in the `spec` section of the service configuration.
-    ```yaml
-    ....
-      uid: a11100aa-1a11-1aa1-1a1a-aaa11a11111a
-    spec:
-      clusterIP: 172.XX.XXX.XXX
-      clusterIPs:
-      - 172.XX.XXX.XX
-      externalIPs: # Add the public IPs of your hosts
-      - 169.XX.XXX.XXX
-      - 169.XX.XXX.XXX
-      - 169.XX.XXX.XXX
-    ```
-    {: codeblock}
-    
-1. Finally, in your firewall settings, allow incoming TCP traffic on ports 443, 80, and 1936 for the public IPs of your worker nodes.
-
-You can now run `oc` or `kubectl` commands from your local machine or use the {{site.data.keyword.openshiftshort}} console.
 
 
 
