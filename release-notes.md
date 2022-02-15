@@ -27,6 +27,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## February 2022
 {: #release-feb-2022}
 
+
+
 ### 14 February 2022
 {: #14feb2022}
 {: release-note}
