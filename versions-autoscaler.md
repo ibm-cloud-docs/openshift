@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-14"
+lastupdated: "2022-02-15"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -218,7 +218,7 @@ Review the changes in version `1.0.1_210` of the cluster autoscaler add-on.
 
 - Image tags: `1.16.2-9`, `1.17.0-10`, `1.18.1-9`, and `1.19.0-4`.  
 - Supported cluster versions: 4.3 - 4.6  
-- Update addresses [`DLA-2509-1`](https://security-tracker.debian.org/tracker/DLA-2509-1){: external}.  
+- Update addresses [`DLA-2509-1`](https://www.debian.org/lts/security/2020/dla-2509){: external}.  
 
 ### Changelog for patch update 1.0.1_205, released 15 December 2020
 {: #101205_ca}

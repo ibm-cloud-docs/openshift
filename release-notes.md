@@ -1904,7 +1904,7 @@ Gateway firewalls and Calico policies
 
 
 {{site.data.keyword.cos_short}}
-:   Added steps to help you [decide on the object storage configuration](/docs/containers?topic=containers-object_storage#configure_cos) and added troubleshooting steps for when [app pods fail because of an `Operation not permitted` error](/docs/containers?topic=containers-cos_operation_not_permitted).
+:   Added steps to help you [decide on the object storage configuration](/docs/openshift?topic=openshift-storage_cos_install#configure_cos) and added troubleshooting steps for when [app pods fail because of an `Operation not permitted` error](/docs/containers?topic=containers-cos_operation_not_permitted).
 
 ### 13 October 2020
 {: #13oct2020}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-14"
+lastupdated: "2022-02-15"
 
 keywords: block, add-on, changelog
 
@@ -179,7 +179,7 @@ Review the changes in version `4.0.0_764` of the {{site.data.keyword.block_stora
 
 - Image tags: `v4.0.0`
 - Resolves [CVE-2021-27218](https://nvd.nist.gov/vuln/detail/CVE-2021-27218).
-- Updates CSI sidecar images to fix [DLA-2542-1](https://www.debian.org/lts/security/2021/dla-2542), [DLA-2509-1](https://www.debian.org/lts/security/2020/dla-2509), and [DLA-2424-1](https://security-tracker.debian.org/tracker/DLA-2424-1).
+- Updates CSI sidecar images to fix [DLA-2542-1](https://www.debian.org/lts/security/2021/dla-2542), [DLA-2509-1](https://www.debian.org/lts/security/2020/dla-2509), and [DLA-2424-1](https://www.debian.org/lts/security/2020/dla-2424).
 - Updates the sidecar images to the following versions.      
     - `csi-provisioner`: `icr.io/ext/sig-storage/csi-provisioner:v2.2.2`
     - `csi-resizer`: `icr.io/ext/sig-storage/csi-resizer:v1.2.0`
