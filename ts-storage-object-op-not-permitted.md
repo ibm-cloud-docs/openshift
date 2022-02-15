@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-15"
 
 keywords: openshift
 
@@ -40,7 +40,7 @@ IAM has introduced a `refresh_token_expiration` key which causes an issue with t
 This issue is resolved in the [community repo](https://github.com/s3fs-fuse/s3fs-fuse/pull/1421) and in the {{site.data.keyword.cos_full_notm}} plug-in.
 
 
-Complete the steps to [update your {{site.data.keyword.cos_full_notm}} plug-in to the latest version](/docs/openshift?topic=openshift-object_storage#update_cos_plugin).
+Complete the steps to [update your {{site.data.keyword.cos_full_notm}} plug-in to the latest version](/docs/containers?topic=containers-storage_cos_understand#update_cos_plugin).
 {: tsResolve}
 
 

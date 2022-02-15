@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-14"
+lastupdated: "2022-02-15"
 
 keywords: openshift
 subcollection: openshift
@@ -2674,7 +2674,25 @@ subcollection: openshift
 {: #sitemap_storing_data_on_ibm_cloud_object_storage}
 
 
+[Storing data on {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-understand#storage-cos-understand)
+
+* [Creating your object storage service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service)
+
+* [Creating {{site.data.keyword.cos_full_notm}} service credentials](/docs/openshift?topic=openshift-storage-cos-understand#service_credentials)
+
+* [Creating a secret for the object storage service credentials](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret)
+
+* [Limitations](/docs/openshift?topic=openshift-storage-cos-understand#cos_limitations)
+
 [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#storage_cos_install)
+
+* [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#update_cos_plugin)
+
+* [Removing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#remove_cos_plugin)
+
+* [Deciding on the object storage configuration](/docs/openshift?topic=openshift-storage_cos_install#configure_cos)
+
+* [Verifying your installation](/docs/openshift?topic=openshift-storage_cos_install#cos-plugin)
 
 [VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip#storage_cos_vpc_ip)
 

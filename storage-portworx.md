@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-15"
 
 keywords: portworx, openshift
 
@@ -1090,8 +1090,8 @@ Create an {{site.data.keyword.cos_full_notm}} instance and bucket, and add them 
 
 Before you begin, [log in to the PX-Backup console](#px-backup-ui). Note that if you are the first user to access the console, you must login in with the username `admin` and the password `admin`. You are redirected to a registration page to set a unique username and password. Subsequent users must register a new account to access the console.
 
-1. [Create your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-object_storage#create_cos_service).
-2. [Create service credentials for your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-object_storage#service_credentials). Be sure to enable HMAC authentication by clicking **Advanced Options** in the **Create credential** dialog box and switching the **Include HMAC Credential** parameter to **On**.
+1. [Create your {{site.data.keyword.cos_full_notm}} service instance](/docs/containers?topic=containers-storage_cos_understand#create_cos_service).
+2. [Create service credentials for your {{site.data.keyword.cos_full_notm}} service instance](/docs/containers?topic=containers-object_storage#service_credentials). Be sure to enable HMAC authentication by clicking **Advanced Options** in the **Create credential** dialog box and switching the **Include HMAC Credential** parameter to **On**.
 3. Expand your credentials in the service credentials table. Note the **access_key_id** and the **secret_access_key** in the **cos_hmac_keys** section.
 4. [Create a storage bucket in your {{site.data.keyword.cos_full_notm}} instance](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
 5. Click on your bucket and note its location.

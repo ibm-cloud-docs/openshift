@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-15"
 
 keywords: openshift
 
@@ -65,6 +65,7 @@ In this quickstart guide, you create a 10Gi 5IOPS tier {{site.data.keyword.block
         labels:
           app: my-app
     spec:
+     replicas: 1
      selector:
       matchLabels:
         app: my-app
@@ -344,6 +345,10 @@ You can attach a volume to one worker node only. Make sure that the volume is in
               operator: In
               values:
               - <worker_node_region> # Example: eu-de
+            - key: failure-domain.beta.kubernetes.io/hostname
+              operator: In
+              values:
+              - <worker_node_primary_IP>
       persistentVolumeReclaimPolicy: Retain
       storageClassName: ""
       volumeMode: Filesystem
@@ -365,6 +370,9 @@ You can attach a volume to one worker node only. Make sure that the volume is in
     `region`
     :   The region of the worker node where you want to attach storage.
     
+    `worker_node_primary_IP`
+    :   The primary IP of the worker node where you want to attach storage. You can find the primary IP of your worker node by running `ibmcloud oc worker ls`.
+    
     `volumeId` and `spec.csi.volumeHandle`
     :   In the spec CSI volume attributes section, enter the ID of the {{site.data.keyword.blockstorageshort}} volume that you retrieved earlier.
     
@@ -376,8 +384,6 @@ You can attach a volume to one worker node only. Make sure that the volume is in
     
     `matchExpressions`
     :   In the spec node affinity section, enter the node selector terms to match the region. For the key, enter `failure-domain.beta.kubernetes.io/region`. For the value, enter the region of the worker node where you want to attach storage. 
-
-
 
 6. Create the PV in your cluster.
 
@@ -426,7 +432,37 @@ You can attach a volume to one worker node only. Make sure that the volume is in
 
 11. Create a deployment or a pod that uses your PVC.
 
-
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: <deployment_name>
+      labels:
+        app: <deployment_label>
+    spec:
+      selector:
+        matchLabels:
+          app: <app_name>
+      template:
+        metadata:
+          labels:
+            app: <app_name>
+        spec:
+          containers:
+          - image: <image_name>
+            name: <container_name>
+            volumeMounts:
+            - name: <volume_name>
+              mountPath: /<file_path>
+          volumes:
+          - name: <volume_name>
+            persistentVolumeClaim:
+              claimName: <pvc_name>
+          nodeSelector:
+            kubernetes.io/hostname: "<worker_node_primary_IP>"
+    ```
+    {: codeblock}
+    
 
 ## Updating the {{site.data.keyword.block_storage_is_short}} add-on
 {: #vpc-addon-update}

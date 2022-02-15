@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-14"
+lastupdated: "2022-02-15"
 
 keywords: openshift, http2, quota, app protocol, application protocol
 
@@ -47,7 +47,6 @@ To view quota limits on cluster-related resources in your {{site.data.keyword.cl
 | Kubernetes pod logs | To check the logs for individual app pods, you can use the command line to run `oc logs <pod name>`. Do not use the Kubernetes dashboard to stream logs for your pods, which might cause a disruption in your access to the Kubernetes dashboard. |
 | Logging | ![Version 3.11 icon.](images/icon-version-311.png) **{{site.data.keyword.openshiftshort}} 3.11 only**: You can't run the Ansible playbook to deploy the  [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html){: external} because you can't modify the default configuration of the {{site.data.keyword.openshiftlong_notm}} cluster. In addition, collecting and forwarding API audit logs to {{site.data.keyword.la_full_notm}} is not supported.  |
 | Monitoring |  - Because IBM manages your cluster master, event alerting for the master is disabled. IBM monitors your cluster master and fixes issues as they are detected. For this reason, in the Administrator perspective of the {{site.data.keyword.openshiftshort}}, you might see a `Not available` message for the control plane status. \n - The built-in Prometheus alert manager includes two rules that display as active alerts in a `FIRING` state: `KubeControllerManagerDown` and `KubeSchedulerDown`. These components are part of the IBM-managed cluster master, so you can ignore these alerts. |
-| OpenShift Data Foundation | OpenShift Data Foundation is not supported. |
 | Operating system | Worker nodes must run RHEL 7. You can't create a cluster with worker nodes that run different types of operating systems, such as {{site.data.keyword.openshiftshort}} on Red Hat Enterprise Linux and community Kubernetes on Ubuntu.|
 | OperatorHub catalog | To use the OperatorHub catalog in private clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later, see [Disabling and mirroring OperatorHub catalog source images](/docs/openshift?topic=openshift-operators#mirror-operatorhub). |
 | Pod instances | You can run 110 pods per worker node. If you have worker nodes with 11 CPU cores or more, you can support 10 pods per core, up to a limit of 250 pods per worker node. The number of pods includes `kube-system` and `ibm-system` pods that run on the worker node. For improved performance, consider limiting the number of pods that you run per compute core so that you don't overuse the worker node. For example, on a worker node with a `b3c.4x16` flavor, you might run 10 pods per core that use no more than 75% of the worker node total capacity. |
