@@ -52,7 +52,7 @@ Worker node fix pack
 
 
 {{site.data.keyword.cos_full_notm}} doc restructuring. 
-:   For more information, see [Storing data on {{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-storage-cos-understand), [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-storage-cos-install), [Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-storage-cos-vpc-ip), [Adding object storage to apps](/docs/containers?topic=containers-storage-cos-apps), and [Storage class reference](/docs/containers?topic=containers-storage-cos-reference).
+:   For more information, see [Storing data on {{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-storage_cos_understand), [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-storage_cos_install), [Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-storage_cos_vpc_ip), [Adding object storage to apps](/docs/containers?topic=containers-storage_cos_apps), and [Storage class reference](/docs/containers?topic=containers-storage_cos_reference).
 
 
 {{site.data.keyword.block_storage_is_short}} add-on.
@@ -1869,8 +1869,8 @@ Gateway firewalls and Calico policies
 
 Persistent storage
 :   Added the following topics.
-    - [Creating {{site.data.keyword.cos_full_notm}} service credentials](/docs/containers?topic=containers-object_storage#service_credentials)
-    - [Adding your {{site.data.keyword.cos_full_notm}} credentials to the default storage classes](/docs/containers?topic=containers-object_storage#storage_class_custom)
+    - [Creating {{site.data.keyword.cos_full_notm}} service credentials](docs/containers?topic=containers-storage_cos_understand#create_cos_secret)
+    - [Adding your {{site.data.keyword.cos_full_notm}} credentials to the default storage classes](/docs/containers?topic=containers-storage_cos_install#storage_class_custom)
     - [Backing up and restoring storage data](/docs/containers?topic=containers-storage_br)
     
 
@@ -1916,7 +1916,9 @@ Gateway firewalls and Calico policies
 
 
 {{site.data.keyword.cos_short}}
+
 :   Added steps to help you [decide on the object storage configuration](/docs/openshift?topic=openshift-storage_cos_install#configure_cos) and added troubleshooting steps for when [app pods fail because of an `Operation not permitted` error](/docs/containers?topic=containers-cos_operation_not_permitted).
+
 
 ### 13 October 2020
 {: #13oct2020}
@@ -1942,7 +1944,7 @@ VPC security groups
 :   Expanded the list of required rules based on the cluster version for default VPC security groups.
 
 {{site.data.keyword.cos_short}} in VPC Gen 2
-:   Added support for authorized IP addresses in {{site.data.keyword.cos_full_notm}} for VPC Gen 2. For more information, see [Allowing IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-object_storage#cos_auth_ip).
+:   Added support for authorized IP addresses in {{site.data.keyword.cos_full_notm}} for VPC Gen 2. For more information, see [Allowing IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-storage_cos_vpc_ip).
 
 ### 12 October 2020
 {: #12oct2020}

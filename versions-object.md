@@ -21,7 +21,7 @@ View information for updates to the {{site.data.keyword.cos_full_notm}} plug-in 
 {: shortdesc}
 
 
-Refer to the following tables for a summary of changes for each version of the [{{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-object_storage).
+Refer to the following tables for a summary of changes for each version of the [{{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-storage-cos-understand).
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.openshiftshort}} version support | Supported architecture |
 | --- | --- |--- | --- |
