@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-15"
 
 keywords: openshift
 
@@ -65,6 +65,7 @@ In this quickstart guide, you create a 10Gi 5IOPS tier {{site.data.keyword.block
         labels:
           app: my-app
     spec:
+     replicas: 1
      selector:
       matchLabels:
         app: my-app
