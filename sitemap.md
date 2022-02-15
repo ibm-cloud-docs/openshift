@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-14"
+lastupdated: "2022-02-15"
 
 keywords: openshift
 subcollection: openshift
@@ -2675,6 +2675,14 @@ subcollection: openshift
 
 
 [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#storage_cos_install)
+
+* [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#update_cos_plugin)
+
+* [Removing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#remove_cos_plugin)
+
+* [Deciding on the object storage configuration](/docs/openshift?topic=openshift-storage_cos_install#configure_cos)
+
+* [Verifying your installation](/docs/openshift?topic=openshift-storage_cos_install#cos-plugin)
 
 [VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip#storage_cos_vpc_ip)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-15"
 
 keywords: openshift
 
@@ -44,7 +44,7 @@ Persistent volume (PV)
 :    A PV is a virtual storage instance that is added as a volume to the cluster. The PV points to a physical storage device in your IBM Cloud infrastructure account and abstracts the API that is used to communicate with the storage device. To mount a PV to an app, you must have a matching PVC. Mounted PVs appear as a folder inside the container's file system.
 
 Physical storage
-:    A physical storage instance that you can use to persist your data. Examples of physical storage in {{site.data.keyword.cloud_notm}} include [File Storage](/docs/openshift?topic=openshift-file_storage#file_storage), [Block Storage](/docs/openshift?topic=openshift-block_storage#block_storage), [Object Storage](/docs/openshift?topic=openshift-object_storage#object_storage), and local worker node storage that you can use as SDS storage with [Portworx](/docs/openshift?topic=openshift-portworx#portworx). {{site.data.keyword.cloud_notm}} provides high availability for physical storage instances. However, data that is stored on a physical storage instance is not backed up automatically. Depending on the type of storage that you use, different methods exist to set up backup and restore solutions.
+:    A physical storage instance that you can use to persist your data. Examples of physical storage in {{site.data.keyword.cloud_notm}} include [File Storage](/docs/openshift?topic=openshift-file_storage#file_storage), [Block Storage](/docs/openshift?topic=openshift-block_storage#block_storage), [Object Storage](/docs/containers?topic=containers-object_storage#object_storage), and local worker node storage that you can use as SDS storage with [Portworx](/docs/openshift?topic=openshift-portworx#portworx). {{site.data.keyword.cloud_notm}} provides high availability for physical storage instances. However, data that is stored on a physical storage instance is not backed up automatically. Depending on the type of storage that you use, different methods exist to set up backup and restore solutions.
 
 For more information about how to create and use PVCs, PVs, and the physical storage device, see the following topics.
 - [Dynamic provisioning](#dynamic_provisioning)
@@ -85,7 +85,7 @@ Review the following common use cases for dynamic provisioning:
 For more information about how to dynamically provision persistent storage, see:
 - [Classic File Storage](/docs/openshift?topic=openshift-file_storage#add_file)
 - [Classic Block Storage](/docs/openshift?topic=openshift-block_storage#add_block)
-- [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#add_cos)
+- [{{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-storage_cos_apps)
 - [Portworx](/docs/openshift?topic=openshift-portworx#add_portworx_storage)
 
 
@@ -124,7 +124,7 @@ Review the following common use cases for static provisioning of persistent stor
 For more information about how to statically provision storage, see:
 - [Classic File Storage](/docs/openshift?topic=openshift-file_storage#existing_file)
 - [Classic Block Storage](/docs/openshift?topic=openshift-block_storage#existing_block)
-- [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#add_cos)
+- [{{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-storage_cos_apps)
 - [Portworx](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/using-preprovisioned-volumes/#using-the-portworx-volume){: external}
 
 
@@ -140,7 +140,7 @@ A [Kubernetes storage class](https://kubernetes.io/docs/concepts/storage/storage
 For the pre-defined storage class specifications, see the following topics.
 - [Classic File Storage](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference)
 - [Classic Block Storage](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference)
-- [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#cos_storageclass_reference)
+- [{{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-object_storage#cos_storageclass_reference)
 
 Not finding what you are looking for? You can also create your own customized storage class to provision the type of storage that you want.
 {: tip}
@@ -155,7 +155,7 @@ If you can't use one of the provided storage classes, you can create your own cu
     - Pre-defined storage classes:
         - [Classic File Storage](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference)
         - [Classic Block Storage](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference)
-        - [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#cos_storageclass_reference)
+        - [{{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-object_storage#cos_storageclass_reference)
     - Sample customized storage classes:
         - [Classic File Storage](/docs/openshift?topic=openshift-file_storage#file_custom_storageclass)
         - [Classic Block Storage](/docs/openshift?topic=openshift-block_storage#block_custom_storageclass)
@@ -175,7 +175,7 @@ If you can't use one of the provided storage classes, you can create your own cu
 4. Create a persistent volume claim (PVC) to dynamically provision storage with your customized storage class.
     - [Classic File Storage](/docs/openshift?topic=openshift-file_storage#add_file)
     - [Classic Block Storage](/docs/openshift?topic=openshift-block_storage#add_block)
-    - [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-object_storage#add_cos)
+    - [{{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-storage_cos_apps)
     - [Portworx](/docs/openshift?topic=openshift-portworx#add_portworx_storage)
 
 5. Verify that your PVC is created and bound to a persistent volume (PV). This process might take a few minutes to complete.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-14"
+lastupdated: "2022-02-15"
 
 keywords: openshift
 
@@ -188,4 +188,351 @@ helm install ibm-object-storage-plugin ./ibm-object-storage-plugin --set dcname=
 :   The operating system of the worker nodes. To retrieve these values, run `oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/os}{'\n'}"`. Store the operating system of the worker nodes in an environment variable. For {{site.data.keyword.openshiftlong_notm}} clusters, run `SET WORKER_OS="redhat"` and `SET PLATFORM="openshift"`. 
 
 `REGION`
-:   The region of the worker nodes. To retrieve this value, run `oc get nodes -o yaml | grep 'ibm-cloud\.kubernetes\.io/region'`. Store the region of the worker nodes in an environment variable by running `SET REGION="< region>"`. |
+:   The region of the worker nodes. To retrieve this value, run `oc get nodes -o yaml | grep 'ibm-cloud\.kubernetes\.io/region'`. Store the region of the worker nodes in an environment variable by running `SET REGION="< region>"`.
+
+## Updating the {{site.data.keyword.cos_full_notm}} plug-in
+{: #update_cos_plugin}
+
+You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the most recent version.
+{: shortdesc}
+
+
+1. Get the name of your {{site.data.keyword.cos_full_notm}} plug-in Helm release and the version of the plug-in in your cluster.
+
+    ```sh
+    helm ls -A | grep object
+    ```
+    {: pre}
+
+    Example output
+
+    ```sh
+    NAME              NAMESPACE      REVISION    UPDATED                                   STATUS      CHART                                  APP VERSION               
+    <release_name>  <namespace>     1           2020-02-13 16:05:58.599679 -0500 EST    deployed    ibm-object-storage-plugin-1.1.2        1.1.2
+    ```
+    {: screen}
+
+1. Follow the steps in [Installing the {{site.data.keyword.cos_full_notm}} plug-in](#install_cos) to install the latest version of the {{site.data.keyword.cos_full_notm}} plug-in.
+
+1. Update the {{site.data.keyword.cloud_notm}} Helm repo to retrieve the most recent version of all Helm charts in this repo.
+
+    ```sh
+    helm repo update
+    ```
+    {: pre}
+
+1. Update the {{site.data.keyword.cos_full_notm}} `ibmc` Helm plug-in to the most recent version.
+
+    ```sh
+    helm ibmc --update
+    ```
+    {: pre}
+
+1. Install the most recent version of the `ibm-object-storage-plugin` for your operating system.
+
+  Example `helm ibmc install` command for OS X and Linux.
+
+    ```sh
+    helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set license=true [--set bucketAccessPolicy=false]
+    ```
+    {: pre}
+
+  Example `helm install` command for Windows.
+
+    ```sh
+    helm install ibm-object-storage-plugin ./ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --region="${REGION} --set platform="${PLATFORM}" --set license=true [--set bucketAccessPolicy=false]
+    ```
+    {: pre}
+
+    `DC_NAME`
+    :   The cluster data center. To retrieve the data center, run `oc get cm cluster-info -n kube-system -o jsonpath="{.data.cluster-config\.json}{'\n'}"`. Store the data center value in an environment variable by running `SET DC_NAME=<datacenter>`. Optional: Set the environment variable in Windows PowerShell by running `$env:DC_NAME="<datacenter>"`.
+
+    `CLUSTER_PROVIDER`
+    :   The infrastructure provider. To retrieve this value, run `oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/iaas-provider}{'\n'}"`. If the output from the previous step contains `softlayer`, then set the `CLUSTER_PROVIDER` to `"IBMC"`. If the output contains `gc`, `ng`, or `g2`, then set the `CLUSTER_PROVIDER` to `"IBMC-VPC"`. Store the infrastructure provider in an environment variable. For example: `SET CLUSTER_PROVIDER="IBMC-VPC"`.
+
+    `WORKER_OS` and `PLATFORM`
+    :   The operating system of the worker nodes. To retrieve these values, run `oc get nodes -o jsonpath="{.items[*].metadata.labels.ibm-cloud\.kubernetes\.io\/os}{'\n'}"`. Store the operating system of the worker nodes in an environment variable. For {{site.data.keyword.openshiftlong_notm}} clusters, run `SET WORKER_OS="redhat"` and `SET PLATFORM="openshift"`. 
+
+    `REGION`
+    :   The region of the worker nodes. To retrieve this value, run `oc get nodes -o yaml | grep 'ibm-cloud\.kubernetes\.io/region'`. Store the region of the worker nodes in an environment variable by running `SET REGION="< region>"`. |
+
+1. Verify that the `ibmcloud-object-storage-plugin` is successfully upgraded. The upgrade of the plug-in is successful when you see `deployment "ibmcloud-object-storage-plugin" successfully rolled out` in your CLI output.
+
+    ```sh
+    oc rollout status deployment/ibmcloud-object-storage-plugin -n ibm-object-s3fs
+    ```
+    {: pre}
+
+1. Verify that the `ibmcloud-object-storage-driver` is successfully upgraded. The upgrade is successful when you see `daemon set "ibmcloud-object-storage-driver" successfully rolled out` in your CLI output.
+
+    ```sh
+    oc rollout status ds/ibmcloud-object-storage-driver -n ibm-object-s3fs
+    ```
+    {: pre}
+
+1. Verify that the {{site.data.keyword.cos_full_notm}} pods are in a `Running` state.
+
+    ```sh
+    oc get pods -n <namespace> -o wide | grep object-storage
+    ```
+    {: pre}
+
+If you're having trouble updating the {{site.data.keyword.cos_full_notm}} plug-in, see [Object storage: Installing the Object storage `ibmc` Helm plug-in fails](/docs/containers?topic=containers-cos_helm_fails) and [Object storage: Installing the {{site.data.keyword.cos_full_notm}} plug-in fails](/docs/containers?topic=containers-cos_plugin_fails).
+{: tip}
+
+## Removing the {{site.data.keyword.cos_full_notm}} plug-in
+{: #remove_cos_plugin}
+
+If you don't want to provision and use {{site.data.keyword.cos_full_notm}} in your cluster, you can uninstall the `ibm-object-storage-plugin` and the `ibmc` Helm plug-in.
+{: shortdesc}
+
+Removing the `ibmc` Helm plug-in or the `ibm-object-storage-plugin` doesn't remove existing PVCs, PVs, data. When you remove the `ibm-object-storage-plugin`, all the related pods and daemon sets are removed from your cluster. You can't provision new {{site.data.keyword.cos_full_notm}} for your cluster or use existing PVCs and PVs after you remove the plug-in, unless you configure your app to use the {{site.data.keyword.cos_full_notm}} API directly.
+{: important}
+
+Before you begin:
+
+- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- Make sure that you don't have any PVCs or PVs in your cluster that use {{site.data.keyword.cos_full_notm}}. To list all pods that mount a specific PVC, run `oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"`.
+
+To remove the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
+
+1. Get the name of your `ibm-object-storage-plugin` Helm installation.
+
+    ```sh
+    helm ls -A | grep ibm-object-storage-plugin
+    ```
+    {: pre}
+
+    Example output
+
+    ```sh
+    NAME                         NAMESPACE    REVISION    UPDATED                                 STATUS      CHART                                  APP VERSION               
+    ibm-object-storage-plugin    default      2           2020-04-01 08:46:01.403477 -0400 EDT    deployed    ibm-object-storage-plugin-1.1.4        1.1.4  
+    ```
+    {: screen}
+
+2. Uninstall the `ibm-object-storage-plugin`.
+
+    ```sh
+    helm uninstall <release_name>
+    ```
+    {: pre}
+
+    Example command for a release named `ibm-object-storage-plugin`.
+
+    ```sh
+    helm uninstall ibm-object-storage-plugin
+    ```
+    {: pre}
+
+3. Verify that the `ibm-object-storage-plugin` pods are removed.
+
+    ```sh
+    oc get pod -n <namespace> | grep object-storage
+    ```
+    {: pre}
+
+    The removal of the pods is successful if no pods are displayed in your CLI output. The removal of the storage classes is successful if no storage classes are displayed in your CLI output.
+
+4. Verify that the storage classes are removed.
+
+    ```sh
+    oc get storageclasses | grep s3
+    ```
+    {: pre}
+
+5. If you use OS X or a Linux distribution, remove the `ibmc` Helm plug-in. If you use Windows, this step is not required.
+
+    1. Remove the `ibmc` Helm plug-in.
+
+        ```sh
+        helm plugin uninstall ibmc
+        ```
+        {: pre}
+
+    2. Verify that the `ibmc` plug-in is removed. The `ibmc` plug-in is removed successfully if the `ibmc` plug-in is not listed in your CLI output.
+
+        ```sh
+        helm plugin list
+        ```
+        {: pre}
+
+        Example output
+
+        ```sh
+        NAME    VERSION    DESCRIPTION
+        ```
+        {: screen}
+
+## Deciding on the object storage configuration
+{: #configure_cos}
+
+{{site.data.keyword.openshiftlong_notm}} provides pre-defined storage classes that you can use to create buckets with a specific configuration.
+{: shortdesc}
+
+1. List available storage classes in {{site.data.keyword.openshiftlong_notm}}.
+
+    ```sh
+    oc get storageclasses | grep s3
+    ```
+    {: pre}
+
+    Example output
+
+    ```sh
+    ibmc-s3fs-cold-cross-region            ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-cold-regional                ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-flex-cross-region            ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-flex-perf-cross-region       ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-flex-perf-regional           ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-flex-regional                ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-standard-cross-region        ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-standard-perf-cross-region   ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-standard-perf-regional       ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-standard-regional            ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-vault-cross-region           ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-vault-regional               ibm.io/ibmc-s3fs   8m
+    ```
+    {: screen}
+
+2. Choose a storage class that fits your data access requirements. The storage class determines the [pricing](https://cloud.ibm.com/objectstorage/create#pricing){: external} for storage capacity, read and write operations, and outbound bandwidth for a bucket. The option that is right for you is based on how frequently data is read and written to your service instance.
+    - **Standard**: This option is used for hot data that is accessed frequently. Common use cases are web or mobile apps.
+    - **Vault**: This option is used for workloads or cool data that are accessed infrequently, such as once a month or less. Common use cases are archives, short-term data retention, digital asset preservation, tape replacement, and disaster recovery.
+    - **Cold**: This option is used for cold data that is rarely accessed (every 90 days or less), or inactive data. Common use cases are archives, long-term backups, historical data that you keep for compliance, or workloads and apps that are rarely accessed.
+    - **Flex**: This option is used for workloads and data that don't follow a specific usage pattern, or that are too huge to determine or predict a usage pattern. **Tip:** Check out this [blog](https://www.ibm.com/blogs/cloud-archive/2017/03/interconnect-2017-changing-rules-storage/){: external} to learn how the Flex storage class works compared to traditional storage tiers.   
+
+3. Decide on the level of resiliency for the data that is stored in your bucket.
+    - **Cross-region**: With this option, your data is stored across three regions within a geolocation for highest availability. If you have workloads that are distributed across regions, requests are routed to the nearest regional endpoint. The API endpoint for the geolocation is automatically set by the `ibmc` Helm plug-in that you installed earlier based on the location that your cluster is in. For example, if your cluster is in `US South`, then your storage classes are configured to use the `US GEO` API endpoint for your buckets. For more information, see [Regions and endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints).  
+    - **Regional**: With this option, your data is replicated across multiple zones within one region. If you have workloads that are located in the same region, you see lower latency and better performance than in a cross-regional setup. The regional endpoint is automatically set by the `ibm` Helm plug-in that you installed earlier based on the location that your cluster is in. For example, if your cluster is in `US South`, then your storage classes were configured to use `US South` as the regional endpoint for your buckets. For more information, see [Regions and endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints).
+
+4. Review the detailed {{site.data.keyword.cos_full_notm}} bucket configuration for a storage class.
+
+    ```sh
+    oc describe storageclass <storageclass_name>
+    ```
+    {: pre}
+
+    Example output
+
+    ```sh
+    Name:                  ibmc-s3fs-standard-cross-region
+    IsDefaultClass:        No
+    Annotations:           <none>
+    Provisioner:           ibm.io/ibmc-s3fs
+    Parameters:            ibm.io/chunk-size-mb=16,ibm.io/curl-debug=false,ibm.io/debug-level=warn,ibm.io/iam-endpoint=https://iam.bluemix.net,ibm.io/kernel-cache=true,ibm.io/multireq-max=20,ibm.io/object-store-endpoint=https://s3-api.dal-us-geo.objectstorage.service.networklayer.com,ibm.io/object-store-storage-class=us-standard,ibm.io/parallel-count=2,ibm.io/s3fs-fuse-retry-count=5,ibm.io/stat-cache-size=100000,ibm.io/tls-cipher-suite=AESGCM
+    AllowVolumeExpansion:  <unset>
+    MountOptions:          <none>
+    ReclaimPolicy:         Delete
+    VolumeBindingMode:     Immediate
+    Events:                <none>
+    ```
+    {: screen}
+
+
+    `ibm.io/chunk-size-mb`
+    :   The size of a data chunk that is read from or written to {{site.data.keyword.cos_full_notm}} in megabytes. Storage classes with `perf` in their name are set up with 52 megabytes. Storage classes without `perf` in their name use 16 megabyte chunks. For example, if you want to read a file that is `1GB`, the plug-in reads this file in multiple 16 or 52-megabyte chunks.
+    
+    `ibm.io/curl-debug`
+    :   Enable the logging of requests that are sent to the {{site.data.keyword.cos_full_notm}} service instance. If enabled, logs are sent to `syslog` and you can [forward the logs to an external logging server](/docs/containers?topic=containers-health#logging). By default, all storage classes are set to `false` to disable this logging feature.
+    
+    `ibm.io/debug-level`
+    :   The logging level that is set by the {{site.data.keyword.cos_full_notm}} plug-in. All storage classes are set up with the `WARN` logging level.
+    
+    `ibm.io/iam-endpoint`
+    :   The API endpoint for {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). 
+    
+    `ibm.io/kernel-cache`
+    :   Enable or disable the kernel buffer cache for the volume mount point. If enabled, data that is read from {{site.data.keyword.cos_full_notm}} is stored in the kernel cache to ensure fast read access to your data. If disabled, data is not cached and always read from {{site.data.keyword.cos_full_notm}}. Kernel cache is enabled for `standard` and `flex` storage classes, and disabled for `cold` and `vault` storage classes. 
+    
+    `ibm.io/multireq-max`
+    :   The maximum number of parallel requests that can be sent to the {{site.data.keyword.cos_full_notm}} service instance to list files in a single directory. All storage classes are set up with a maximum of 20 parallel requests.
+    
+    `ibm.io/object-store-endpoint`
+    :   The API endpoint to use to access the bucket in your {{site.data.keyword.cos_full_notm}} service instance. The endpoint is automatically set based on the region of your cluster. If you want to access an existing bucket that is located in a different region than the one where your cluster is in, you must [create a custom storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use the API endpoint for your bucket.
+    
+    `ibm.io/object-store-storage-class`
+    :   The name of the storage class.
+    
+    `ibm.io/parallel-count`
+    :   The maximum number of parallel requests that can be sent to the {{site.data.keyword.cos_full_notm}} service instance for a single read or write operation. Storage classes with `perf` in their name are set up with a maximum of 20 parallel requests. Storage classes without `perf` are set up with two parallel requests by default.
+    
+    `ibm.io/s3fs-fuse-retry-count`
+    :   The maximum number of retries for a read or write operation before the operation is considered unsuccessful. All storage classes are set up with a maximum of five retries.
+    
+    `ibm.io/stat-cache-size`
+    :   The maximum number of records that are kept in the {{site.data.keyword.cos_full_notm}} metadata cache. Every record can take up to 0.5 kilobytes. All storage classes set the maximum number of records to 100000 by default.
+    
+    `ibm.io/tls-cipher-suite`
+    :   The TLS cipher suite that must be used when a connection to {{site.data.keyword.cos_full_notm}} is established via the HTTPS endpoint. The value for the cipher suite must follow the [OpenSSL format](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html){: external}. If your worker nodes run an Ubuntu operating system, your storage classes are set up to use the `AESGCM`cipher suite by default. For worker nodes that run a Red Hat operating system, the `ecdhe_rsa_aes_128_gcm_sha_256` cipher suite is used by default.
+
+
+    For more information about each storage class, see the [storage class reference](#cos_storageclass_reference). If you want to change any of the pre-set values, create your own [customized storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass).
+    {: tip}
+
+5. Decide on a name for your bucket. The name of a bucket must be unique in {{site.data.keyword.cos_full_notm}}. You can also choose to automatically create a name for your bucket by the {{site.data.keyword.cos_full_notm}} plug-in. To organize data in a bucket, you can create subdirectories.
+
+    The storage class that you chose earlier determines the pricing for the entire bucket. You can't define different storage classes for subdirectories. If you want to store data with different access requirements, consider creating multiple buckets by using multiple PVCs.
+    {: note}
+
+6. Choose if you want to keep your data and the bucket after the cluster or the persistent volume claim (PVC) is deleted. When you delete the PVC, the PV is always deleted. You can choose if you want to also automatically delete the data and the bucket when you delete the PVC. Your {{site.data.keyword.cos_full_notm}} service instance is independent from the retention policy that you select for your data and is never removed when you delete a PVC.
+
+Now that you decided on the configuration that you want, you are ready to [create a PVC](#add_cos) to provision {{site.data.keyword.cos_full_notm}}.
+
+
+## Verifying your installation
+{: #cos-plugin verify}
+
+Review the pod details to verify that the plug-in installation succeeded.
+{: shortdesc}
+
+1. Verify the installation succeeded by listing the driver pods.
+
+    ```sh
+    oc get pod --all-namespaces -o wide | grep object
+    ```
+    {: pre}
+
+    Example output
+
+    ```sh
+    ibmcloud-object-storage-driver-9n8g8                              1/1       Running   0          2m
+    ibmcloud-object-storage-plugin-7c774d484b-pcnnx                   1/1       Running   0          2m
+    ```
+    {: screen}
+
+    The installation is successful when you see one `ibmcloud-object-storage-plugin` pod and one or more `ibmcloud-object-storage-driver` pods. The number of `ibmcloud-object-storage-driver` pods equals the number of worker nodes in your cluster. All pods must be in a `Running` state for the plug-in to function properly. If the pods fail, run `oc describe pod -n ibm-object-s3fs <pod_name>` to find the root cause for the failure.
+
+1. Verify that the storage classes are created successfully.
+
+    ```sh
+    oc get storageclass | grep s3
+    ```
+    {: pre}
+
+    Example output
+
+    ```sh
+    ibmc-s3fs-cold-cross-region            ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-cold-regional                ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-flex-cross-region            ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-flex-perf-cross-region       ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-flex-perf-regional           ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-flex-regional                ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-standard-cross-region        ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-standard-perf-cross-region   ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-standard-perf-regional       ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-standard-regional            ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-vault-cross-region           ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-vault-regional               ibm.io/ibmc-s3fs   8m
+    ```
+    {: screen}
+
+    If you want to set one of the {{site.data.keyword.cos_full_notm}} storage classes as your default storage class, run `oc patch storage class <storageclass> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'`. Replace `<storageclass>` with the name of the {{site.data.keyword.cos_full_notm}} storage class.
+    {: tip}
+
+1. Follow the instructions to [add object storage to your apps](#add_cos).
+
+If you're having trouble installing the {{site.data.keyword.cos_full_notm}} plug-in, see [Object storage: Installing the Object storage `ibmc` Helm plug-in fails](/docs/containers?topic=containers-cos_helm_fails) and [Object storage: Installing the {{site.data.keyword.cos_full_notm}} plug-in fails](/docs/containers?topic=containers-cos_plugin_fails).
+{: tip}
+
+
