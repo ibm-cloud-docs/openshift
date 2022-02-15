@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-25"
+lastupdated: "2022-02-15"
 
 keywords: openshift, route, router
 
@@ -25,12 +25,21 @@ View information for version updates to the [{{site.data.keyword.cloud_notm}} HP
 
 | HPCS Router add-on version | Supported? | {{site.data.keyword.openshiftshort}} version support |
 | -------------------------- | -----------|----------------------------------------------------- |
+| 4.9 | Yes | 4.9 |
 | 4.8 | Yes | 4.8 |
 | 4.7 | Yes | 4.7 |
 | 4.6 | Yes | 4.6 |
 | 4.5 | No | 4.5 |
 {: summary="The rows are read from left to right. The first column is the HPCS Router add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the add-on version is supported for."}
 {: caption="Supported HPCS Router add-on versions" caption-side="top"}
+
+## Version 4.9.0
+{: #4.9.0}
+
+### Version 4.9.0, released on 16 February 2022
+{: #4_8_1232}
+
+Initial release of 4.9.0.
 
 ## Version 4.8.0
 {: #4_8_0}

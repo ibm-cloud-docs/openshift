@@ -28,6 +28,18 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #release-feb-2022}
 
 
+### 16 February 2022
+{: #16feb2022}
+{: release-note}
+
+
+
+HPCS Router add-on
+:   Versions 4.9.0 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) is available.
+
+
+
+
 
 ### 14 February 2022
 {: #14feb2022}
