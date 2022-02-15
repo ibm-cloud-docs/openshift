@@ -193,7 +193,7 @@ toc:
             - topicgroup:
                 label: Storing data on IBM Cloud Object Storage
                 topics:
-                - storage_cos_understand.md
+                - storage-cos-understand.md
                 - storage-cos-install.md 
                 - storage-cos-vpc-ip.md
                 - storage-cos-apps.md
