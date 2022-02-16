@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-15"
+lastupdated: "2022-02-16"
 
 keywords: openshift
 subcollection: openshift
@@ -183,6 +183,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
 * [February 2022](/docs/openshift?topic=openshift-iks-release#release-feb-2022)
+
+    * [16 February 2022](/docs/openshift?topic=openshift-iks-release#16feb2022)
 
     * [14 February 2022](/docs/openshift?topic=openshift-iks-release#14feb2022)
 
@@ -4179,6 +4181,10 @@ subcollection: openshift
 * [Changelog for 1.0.5, released 17 December 2020](/docs/openshift?topic=openshift-backup_restore_changelog#0105_br_chart)
 
 [{{site.data.keyword.cloud_notm}} HPCS Router add-on changelog](/docs/openshift?topic=openshift-hpcs-router-changelog#hpcs-router-changelog)
+
+* [Version 4.9.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4.9.0)
+
+    * [Version 4.9.0, released on 16 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0)
 
 * [Version 4.8.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0)
 

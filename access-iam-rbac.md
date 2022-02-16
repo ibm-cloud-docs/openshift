@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-11"
+lastupdated: "2022-02-16"
 
 keywords: openshift
 
@@ -710,7 +710,7 @@ If you are an administrator for the region and resource group, you might want to
     2. **Devices**: Review the devices that the user has permissions to. A common issue is when a user has administrator permissions but the `Enable future access` was not checked so whenever a new device is ordered, the user can't administer the device.
     3. **VPN subnets**: The subnets permission is important if the user must administer the subnets for the cluster.
 6. To review what the roles and allowed actions permit, see the following topics.
-    * [Account classic infrastructure permissions](/docs/account?topic=account-infrapermission)
+    * [Account classic infrastructure permissions](/docs/account?topic=account-mngclassicinfra)
     * [{{site.data.keyword.openshiftlong_notm}} classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra)
 7. To change or assign new access policies, see [Customizing infrastructure permissions](/docs/openshift?topic=openshift-access-creds#infra_access).
 
@@ -736,7 +736,7 @@ If you are an administrator for the region and resource group, you might want to
     {: pre}
 
 4. To review what the roles and allowed actions permit, see the following topics.
-    * [Account classic infrastructure permissions](/docs/account?topic=account-infrapermission)
+    * [Account classic infrastructure permissions](/docs/account?topic=account-mngclassicinfra)
     * [{{site.data.keyword.openshiftlong_notm}} classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra)
 5. To change or assign new access policies, see [Customizing infrastructure permissions](/docs/openshift?topic=openshift-access-creds#infra_access).
 

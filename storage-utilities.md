@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-15"
+lastupdated: "2022-02-16"
 
 keywords: openshift
 
@@ -831,8 +831,8 @@ To back up or restore data to {{site.data.keyword.cos_full_notm}}, you must [set
 Create and configure an {{site.data.keyword.cos_full_notm}} service instance to serve as the repository for the data that you want to back up.
 {: shortdesc}
 
-1. Create an [{{site.data.keyword.cos_full_notm}} service instance](/docs/containers?topic=containers-storage_cos_understand#create_cos_service) that uses HMAC credentials.
-2. Store your [{{site.data.keyword.cos_full_notm}} credentials in a Kubernetes secret](https://cloud.ibm.com/docs/containers?topic=containers-storage_cos_understand#create_cos_secret).
+1. Create an [{{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service) that uses HMAC credentials.
+2. Store your [{{site.data.keyword.cos_full_notm}} credentials in a Kubernetes secret](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret).
 3. Create your first {{site.data.keyword.cos_full_notm}} bucket.
     1. In the navigation on the service details page, click **Buckets**.
     2. Click **Create bucket**. A dialog box is displayed.
