@@ -24,7 +24,7 @@ Depending on the settings that you choose in your PVC, you can provision {{site.
 
 Before you begin:
 - [Create and prepare your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service).
-- [Create a secret to store your {{site.data.keyword.cos_full_notm}} service credentials](docs/containers?topic=containers-storage-cos-understand#create_cos_secret)).
+- [Create a secret to store your {{site.data.keyword.cos_full_notm}} service credentials](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret)).
 - [Decide on the configuration for your {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_install#configure_cos).
 
 To add {{site.data.keyword.cos_full_notm}} to your cluster:

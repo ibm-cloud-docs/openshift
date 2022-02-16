@@ -63,7 +63,7 @@ This task requires [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} I
     ```
     {: pre}
 
-2. If your secret does not show `ibm/ibmc-s3fs` as the **Type**, [re-create your secret](https://cloud.ibm.com/docs/containers?topic=containers-storage-cos-understand#create_cos_secret).
+2. If your secret does not show `ibm/ibmc-s3fs` as the **Type**, [re-create your secret](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret).
 
 3. Check your YAML configuration file for your PVC and pod to verify that you used the correct secret.
 

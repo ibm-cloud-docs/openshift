@@ -832,7 +832,7 @@ Create and configure an {{site.data.keyword.cos_full_notm}} service instance to 
 {: shortdesc}
 
 1. Create an [{{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service) that uses HMAC credentials.
-2. Store your [{{site.data.keyword.cos_full_notm}} credentials in a Kubernetes secret](https://cloud.ibm.com/docs/containers?topic=containers-storage-cos-understand#create_cos_secret).
+2. Store your [{{site.data.keyword.cos_full_notm}} credentials in a Kubernetes secret](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret).
 3. Create your first {{site.data.keyword.cos_full_notm}} bucket.
     1. In the navigation on the service details page, click **Buckets**.
     2. Click **Create bucket**. A dialog box is displayed.
