@@ -2696,13 +2696,13 @@ subcollection: openshift
 
 * [Verifying your installation](/docs/openshift?topic=openshift-storage_cos_install#cos-plugin)
 
-[VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip#storage_cos_vpc_ip)
-
 [Adding object storage to apps](/docs/openshift?topic=openshift-storage_cos_apps#storage_cos_apps)
 
 * [Creating a deployment](/docs/openshift?topic=openshift-storage_cos_apps#create-cos-deployment-steps)
 
 * [Using object storage in a stateful set](/docs/openshift?topic=openshift-storage_cos_apps#cos_statefulset)
+
+[VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip#storage_cos_vpc_ip)
 
 [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference#storage_cos_reference)
 

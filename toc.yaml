@@ -195,8 +195,8 @@ toc:
                 topics:
                 - storage-cos-understand.md
                 - storage-cos-install.md 
-                - storage-cos-vpc-ip.md
                 - storage-cos-apps.md
+                - storage-cos-vpc-ip.md
                 - storage-cos-reference.md
             - storage-portworx.md
             - storage-vpc-block-driver.md
