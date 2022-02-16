@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-15"
+lastupdated: "2022-02-16"
 
 keywords: openshift, route, router
 
@@ -37,7 +37,7 @@ View information for version updates to the [{{site.data.keyword.cloud_notm}} HP
 {: #4.9.0}
 
 ### Version 4.9.0, released on 16 February 2022
-{: #4_8_1232}
+{: #4_9_0}
 
 Initial release of 4.9.0.
 

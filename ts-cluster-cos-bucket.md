@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-15"
+lastupdated: "2022-02-16"
 
 keywords: openshift
 
@@ -66,7 +66,7 @@ Manually set up your cluster to back up the internal registry to an {{site.data.
 1. Make sure that the API key for the region and resource group is set and that you have the [required permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions).
 2. If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, [allow access to the {{site.data.keyword.cos_full_notm}} subdomain](/docs/openshift?topic=openshift-vpc-firewall#openshift-registry).
 3. Identify the {{site.data.keyword.cos_full_notm}} instance to use. You can create an instance or use an existing one.
-    * [Create a standard {{site.data.keyword.cos_full_notm}} service, at least one bucket, and HMAC service credentials](/docs/openshift?topic=openshift-storage_cos_understand#create_cos_service).
+    * [Create a standard {{site.data.keyword.cos_full_notm}} service, at least one bucket, and HMAC service credentials](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service).
     * To use an existing instance, make sure that you and the API key that is set for the region have permissions to the instance.
 4. Create a cluster with your {{site.data.keyword.cos_full_notm}} instance ID. For more information, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2).
     ```sh

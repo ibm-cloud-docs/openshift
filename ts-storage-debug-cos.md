@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-15"
+lastupdated: "2022-02-16"
 
 keywords: file, debug, help
 
@@ -222,7 +222,7 @@ If you use a `oc` CLI version that does not match at least the major.minor versi
 ## Checking and updating the {{site.data.keyword.cos_short}} plug-in
 {: #debug_storage_cos_plugin}
 
-[Follow the steps to update the {{site.data.keyword.cos_short}} plug-in](/docs/openshift?topic=openshift-storage-cos-understand#update_cos_plugin).
+[Follow the steps to update the {{site.data.keyword.cos_short}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#update_cos_plugin).
 
 
 

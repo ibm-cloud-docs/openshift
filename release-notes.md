@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-15"
+lastupdated: "2022-02-16"
 
 keywords: openshift
 
@@ -52,7 +52,7 @@ Worker node fix pack
 
 
 {{site.data.keyword.cos_full_notm}} doc restructuring. 
-:   For more information, see [Storing data on {{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-storage_cos_understand), [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-storage_cos_install), [Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-storage_cos_vpc_ip), [Adding object storage to apps](/docs/containers?topic=containers-storage_cos_apps), and [Storage class reference](/docs/containers?topic=containers-storage_cos_reference).
+:   For more information, see [Storing data on {{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-storage-cos-understand), [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-storage_cos_install), [Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-storage_cos_vpc_ip), [Adding object storage to apps](/docs/containers?topic=containers-storage_cos_apps), and [Storage class reference](/docs/containers?topic=containers-storage_cos_reference).
 
 
 {{site.data.keyword.block_storage_is_short}} add-on.
@@ -1869,8 +1869,8 @@ Gateway firewalls and Calico policies
 
 Persistent storage
 :   Added the following topics.
-    - [Creating {{site.data.keyword.cos_full_notm}} service credentials](docs/containers?topic=containers-storage_cos_understand#create_cos_secret)
-    - [Adding your {{site.data.keyword.cos_full_notm}} credentials to the default storage classes](/docs/containers?topic=containers-storage_cos_install#storage_class_custom)
+    - [Creating {{site.data.keyword.cos_full_notm}} service credentials](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret)
+    - [Adding your {{site.data.keyword.cos_full_notm}} credentials to the default storage classes](/docs/openshift?topic=openshift-storage-cos-understand#service_credentials)
     - [Backing up and restoring storage data](/docs/containers?topic=containers-storage_br)
     
 

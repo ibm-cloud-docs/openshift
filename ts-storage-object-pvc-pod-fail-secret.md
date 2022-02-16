@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-15"
+lastupdated: "2022-02-16"
 
 keywords: openshift
 
@@ -63,7 +63,7 @@ This task requires [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} I
     ```
     {: pre}
 
-2. If your secret does not show `ibm/ibmc-s3fs` as the **Type**, [re-create your secret](https://cloud.ibm.com/docs/containers?topic=containers-storage_cos_understand#create_cos_secret).
+2. If your secret does not show `ibm/ibmc-s3fs` as the **Type**, [re-create your secret](https://cloud.ibm.com/docs/containers?topic=containers-storage-cos-understand#create_cos_secret).
 
 3. Check your YAML configuration file for your PVC and pod to verify that you used the correct secret.
 

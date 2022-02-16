@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-15"
+lastupdated: "2022-02-16"
 
 keywords: object storage, plug-in, changelog
 
@@ -129,7 +129,7 @@ Refer to the following tables for a summary of changes for each version of the [
 
 - Image tags: `1.8.29`  
 - Fixes an upgrade issue in version `2.1.0`.  
-- Includes a new version of the `helm ibmc` plug-in. For more information, see [Updating the {{site.data.keyword.cos_full_notm}} plug-in.](/docs/containers?topic=containers-storage_cos_understand#update_cos_plugin).  
+- Includes a new version of the `helm ibmc` plug-in. For more information, see [Updating the {{site.data.keyword.cos_full_notm}} plug-in.](/docs/containers?topic=containers-storage-cos-understand#update_cos_plugin).  
 - Users can now specify <code>default</code> in PVC configurations to use the default TLS cipher suite when a connection to {{site.data.keyword.cos_full_notm}} is established via the HTTPS endpoint. If your worker nodes run an Ubuntu operating system, your storage classes are set up to use the `AESGCM` cipher suite by default. For worker nodes that run a Red Hat operating system, the `ecdhe_rsa_aes_128_gcm_sha_256` cipher suite is used by default. For more information, see [Adding object storage to apps](/docs/containers?topic=containers-storage_cos_apps).  
 - Fixes [CVE-2020-28851](https://nvd.nist.gov/vuln/detail/CVE-2020-28851){: external}.  
 
