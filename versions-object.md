@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-16"
+lastupdated: "2022-02-17"
 
 keywords: object storage, plug-in, changelog
 
@@ -25,8 +25,9 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.openshiftshort}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.1.10 | Yes | Greater than or equal to 4.3 | x86 |
 | 2.1.9 | Yes | Greater than or equal to 4.3 | x86 |
-| 2.1.8 | Yes | Greater than or equal to 4.3 | x86 |
+| 2.1.8 | Deprecated | Greater than or equal to 4.3 | x86 |
 | 2.1.7 | Deprecated | Greater than or equal to 4.3 | x86 |
 | 2.1.6 | Deprecated | Greater than or equal to 4.3 | x86 |
 | 2.1.5 | Deprecated | Greater than or equal to 4.3  | x86 |
@@ -42,6 +43,17 @@ Refer to the following tables for a summary of changes for each version of the [
 | 2.0.5 | Deprecated | 4.3 to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.cos_full_notm}} plug-in version. The second column is the version's supported state. The third column is the version of your cluster that the {{site.data.keyword.cos_full_notm}} plug-in version is supported for."}
+
+
+## Changlog version 2.1.10, released 17 February 2022
+{: #0219_object_plugin}
+
+
+- Updates the univeral base image (UBI) to `ubi-minimal:8.5-230`.
+- Resolves the following CVEs: [CVE-2021-3538](https://nvd.nist.gov/vuln/detail/CVE-2021-3538){: external}, [CVE-2018-14632](https://nvd.nist.gov/vuln/detail/CVE-2018-14632){: external}, [CVE-2020-26160](https://nvd.nist.gov/vuln/detail/CVE-2020-26160){: external}.
+- Fixes a bug where the `kubernetes.io/secret/res-conf-apikey` was present in some logs.
+
+
 
 ## Changlog version 2.1.9, released 24 January 2022
 {: #0219_object_plugin}

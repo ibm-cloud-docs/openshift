@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-11"
+lastupdated: "2022-02-16"
 
 keywords: openshift, red hat, red hat openshift, encrypt, security, kms, root key, crk
 

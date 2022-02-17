@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-11"
+lastupdated: "2022-02-16"
 
 keywords: openshift, lb2.0, nlb, app protocol, application protocol
 

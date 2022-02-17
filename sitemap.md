@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-16"
+lastupdated: "2022-02-17"
 
 keywords: openshift
 subcollection: openshift
@@ -183,6 +183,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
 * [February 2022](/docs/openshift?topic=openshift-iks-release#release-feb-2022)
+
+    * [17 February 2022](/docs/openshift?topic=openshift-iks-release#17feb2022)
 
     * [16 February 2022](/docs/openshift?topic=openshift-iks-release#16feb2022)
 
@@ -4137,6 +4139,8 @@ subcollection: openshift
     * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Changlog version 2.1.10, released 17 February 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0219_object_plugin)
 
 * [Changlog version 2.1.9, released 24 January 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0219_object_plugin)
 
