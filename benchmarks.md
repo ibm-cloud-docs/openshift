@@ -139,12 +139,11 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 
 
 
-## Benchmark 1.5 results for {{site.data.keyword.openshiftshort}} versions 4.6 - 4.8
+## Benchmark 1.5 results for {{site.data.keyword.openshiftshort}} versions 4.6 - 4.9
 {: #cis-benchmark-15}
 
 Review how {{site.data.keyword.openshiftlong_notm}} complies with the version 1.5 CIS Kubernetes benchmark for clusters that run {{site.data.keyword.openshiftshort}} versions 4.6 - 4.9. For help understanding the benchmark, see [Using the benchmark](#cis-benchmark-use).
 {: shortdesc}
-
 
 
 

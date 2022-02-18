@@ -4026,7 +4026,7 @@ subcollection: openshift
 
 * [Running the worker node CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test)
 
-* [Benchmark 1.5 results for {{site.data.keyword.openshiftshort}} versions 4.6 - 4.8](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15)
+* [Benchmark 1.5 results for {{site.data.keyword.openshiftshort}} versions 4.6 - 4.9](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15)
 
     * [1.1 Master Node Configuration Files](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-1-1)
 
