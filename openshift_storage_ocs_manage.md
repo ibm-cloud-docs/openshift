@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-27"
+lastupdated: "2022-02-18"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc
 

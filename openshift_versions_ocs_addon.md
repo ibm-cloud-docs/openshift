@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-01-06"
+lastupdated: "2022-02-18"
 
 keywords: odf, openshift data foundation add-on, changelog
 
