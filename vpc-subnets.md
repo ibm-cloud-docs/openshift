@@ -198,7 +198,7 @@ Before you begin
     ```
     {: pre}
 
-2. [Create a VPC](/docs/vpc?topic=vpc-creating-a-vpc-using-cli#create-a-vpc-cli) in the same region where you want to create the cluster.
+2. [Create a VPC](/docs/vpc?topic=vpc-creating-vpc-resources-with-cli-and-api&interface=cli#create-a-vpc-cli) in the same region where you want to create the cluster.
 
 To create a VPC subnet, follow these steps.
 
@@ -208,7 +208,7 @@ To create a VPC subnet, follow these steps.
     ```
     {: pre}
 
-2. Create the subnet. For more information about the options in this command, see the [CLI reference](/docs/vpc?topic=vpc-creating-a-vpc-using-cli#create-a-subnet-cli).
+2. Create the subnet. For more information about the options in this command, see the [CLI reference](/docs/vpc?topic=vpc-creating-vpc-resources-with-cli-and-api&interface=cli#create-a-subnet-cli).
     ```sh
     ibmcloud is subnet-create <subnet_name> <vpc_id> --zone <vpc_zone> --ipv4-address-count <number_of_ip_address>
     ```
@@ -334,7 +334,7 @@ If you enable classic access when you create your VPC, [classic access default a
     ```
     {: pre}
 
-4. Create subnets in each zone that use your address prefixes. For more information about the options in this command, see the [CLI reference](/docs/vpc?topic=vpc-creating-a-vpc-using-cli#create-a-subnet-cli). VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You can't change the number of IPs that a VPC subnet has later.
+4. Create subnets in each zone that use your address prefixes. For more information about the options in this command, see the [CLI reference](/docs/vpc?topic=vpc-creating-vpc-resources-with-cli-and-api&interface=cli#create-a-subnet-cli). VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You can't change the number of IPs that a VPC subnet has later.
     ```sh
     ibmcloud is subnet-create <subnet_name> <vpc_id> --zone <vpc_zone> --ipv4-address-count <number_of_ip_address> --ipv4-cidr-block <prefix_range>
     ```

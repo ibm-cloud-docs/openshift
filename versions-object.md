@@ -46,7 +46,7 @@ Refer to the following tables for a summary of changes for each version of the [
 
 
 ## Changlog version 2.1.10, released 17 February 2022
-{: #0219_object_plugin}
+{: #02110_object_plugin}
 
 
 - Updates the univeral base image (UBI) to `ubi-minimal:8.5-230`.

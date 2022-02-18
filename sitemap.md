@@ -4148,7 +4148,7 @@ subcollection: openshift
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 
-* [Changlog version 2.1.10, released 17 February 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0219_object_plugin)
+* [Changlog version 2.1.10, released 17 February 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02110_object_plugin)
 
 * [Changlog version 2.1.9, released 24 January 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0219_object_plugin)
 
