@@ -168,7 +168,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | strongSwan VPN service | The strongSwan service is not supported. To connect your cluster to resources in an on-premises network or another VPC, see [Using VPN with your VPC](/docs/vpc?topic=vpc-vpn-onprem-example). |
 | Subnets |  \n - See [VPC networking limitations](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_limitations). \n - Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.  |
 | VPC load balancer | See [VPC load balancer limitations](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_limitations). |
-| VPC security groups | VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: You must [allow inbound traffic requests to node ports on your worker nodes](/docs/containers?topic=containers-vpc-network-policy#security_groups). |
+| VPC security groups | VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: You must [allow inbound traffic requests to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-security-group). |
 {: caption="VPC cluster networking limitations"}
 
 ### Storage

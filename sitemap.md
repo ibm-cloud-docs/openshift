@@ -1023,41 +1023,103 @@ subcollection: openshift
 
 [Planning your cluster network setup](/docs/openshift?topic=openshift-plan_clusters#plan_clusters)
 
-* [Understanding network basics of VPC clusters](/docs/openshift?topic=openshift-plan_clusters#plan_vpc_basics)
+[Understanding network basics of VPC clusters](/docs/openshift?topic=openshift-plan_vpc_basics#plan_vpc_basics)
 
-    * [Worker-to-worker communication: VPC subnets](/docs/openshift?topic=openshift-plan_clusters#vpc-worker-worker)
+* [Worker-to-worker communication using VPC subnets](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-worker)
 
-    * [Worker-to-master and user-to-master communication: Virtual private endpoints or cloud service endpoints](/docs/openshift?topic=openshift-plan_clusters#vpc-workeruser-master)
+* [Worker-to-master and user-to-master communication using Virtual private endpoints or cloud service endpoints](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-workeruser-master)
 
-    * [Worker-to-master communication](/docs/openshift?topic=openshift-plan_clusters#worker-to-master-comms)
+* [Worker-to-master communication in VPC clusters](/docs/openshift?topic=openshift-plan_vpc_basics#worker-to-master-comms)
 
-    * [User-to-master communication](/docs/openshift?topic=openshift-plan_clusters#user-to-master-comms)
+* [User-to-master communication in VPC clusters](/docs/openshift?topic=openshift-plan_vpc_basics#user-to-master-comms)
 
-    * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_clusters#vpc-worker-services-onprem)
+* [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem)
 
-    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_clusters#vpc-external-workers)
+* [Communication with other {{site.data.keyword.cloud_notm}} services over the private or public network](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-cloud-service)
 
-* [Example scenarios for VPC cluster network setups](/docs/openshift?topic=openshift-plan_clusters#vpc-scenarios)
+* [Communication with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-resources)
 
-    * [Scenario: Run internet-facing app workloads in a VPC cluster](/docs/openshift?topic=openshift-plan_clusters#vpc-no-pgw)
+    * [Communication with resources in other VPCs](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-other-vpcs)
 
-    * [Extend your on-premises data center to a VPC cluster](/docs/openshift?topic=openshift-plan_clusters#vpc-vpn)
+    * [Communication with {{site.data.keyword.cloud_notm}} classic resources](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-classic)
 
-* [Understanding network basics of classic clusters](/docs/openshift?topic=openshift-plan_clusters#plan_basics)
+* [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-external-workers)
 
-    * [Worker-to-worker communication: classic VLANs and subnets](/docs/openshift?topic=openshift-plan_clusters#worker-worker)
+* [Private traffic to cluster apps](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-apps-private)
 
-    * [Worker-to-master and user-to-master communication: Service endpoints](/docs/openshift?topic=openshift-plan_clusters#workeruser-master)
+* [Public traffic to cluster apps](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-apps-public)
 
-    * [Worker communication to other {{site.data.keyword.cloud_notm}} services or on-premises networks](/docs/openshift?topic=openshift-plan_clusters#worker-services-onprem)
+* [Example scenarios for VPC cluster network setups](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-scenarios)
 
-    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_clusters#external-workers)
+    * [Scenario: Run internet-facing app workloads in a VPC cluster](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw)
 
-* [Example scenarios for classic cluster network setups](/docs/openshift?topic=openshift-plan_clusters#classic-scenarios)
+    * [Worker-to-worker communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-worker)
 
-    * [Running internet-facing app workloads in a classic cluster](/docs/openshift?topic=openshift-plan_clusters#internet-facing)
+    * [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-master)
 
-    * [Extending your on-premises data center to a classic cluster and add limited public access](/docs/openshift?topic=openshift-plan_clusters#limited-public)
+    * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-services)
+
+    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-external)
+
+* [Extend your on-premises data center to a VPC cluster](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn)
+
+    * [Worker-to-worker communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-worker)
+
+    * [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-master)
+
+    * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-services)
+
+    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-external)
+
+[Understanding network basics of classic clusters](/docs/openshift?topic=openshift-plan_basics#plan_basics)
+
+* [Worker-to-worker communication: classic VLANs and subnets](/docs/openshift?topic=openshift-plan_basics#worker-worker)
+
+    * [VLAN connections for worker nodes](/docs/openshift?topic=openshift-plan_basics#worker-worker-nodes)
+
+    * [Worker node communication across subnets and VLANs](/docs/openshift?topic=openshift-plan_basics#worker-worker-subnets)
+
+* [Worker-to-master and user-to-master communication: Service endpoints](/docs/openshift?topic=openshift-plan_basics#workeruser-master)
+
+    * [Public service endpoint only](/docs/openshift?topic=openshift-plan_basics#workeruser-master-endpoint)
+
+    * [Public and private cloud service endpoints](/docs/openshift?topic=openshift-plan_basics#workeruser-master-pub-priv)
+
+    * [Worker communication to other {{site.data.keyword.cloud_notm}} services or on-premises networks](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem)
+
+    * [Communication with other {{site.data.keyword.cloud_notm}} services over the private or public network](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-pub-priv)
+
+    * [{{site.data.keyword.BluDirectLink}} for communication over the private network with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-direct-link)
+
+    * [strongSwan IPSec VPN connection for communication over the public network with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-strongswan)
+
+    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_basics#external-workers)
+
+    * [Private traffic to cluster apps](/docs/openshift?topic=openshift-plan_basics#external-workers-private)
+
+    * [Public traffic to cluster apps](/docs/openshift?topic=openshift-plan_basics#external-workers-public)
+
+* [Example scenarios for classic cluster network setups](/docs/openshift?topic=openshift-plan_basics#classic-scenarios)
+
+    * [Running internet-facing app workloads in a classic cluster](/docs/openshift?topic=openshift-plan_basics#internet-facing)
+
+    * [Worker-to-worker communication in classic clusters](/docs/openshift?topic=openshift-plan_basics#internet-facing-worker)
+
+    * [Worker-to-master and user-to-master communication in classic clusters](/docs/openshift?topic=openshift-plan_basics#internet-facing-master)
+
+    * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_basics#internet-facing-services)
+
+    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_basics#internet-facing-external)
+
+    * [Extending your on-premises data center to a classic cluster and add limited public access](/docs/openshift?topic=openshift-plan_basics#limited-public)
+
+    * [Using a gateway appliance](/docs/openshift?topic=openshift-plan_basics#vyatta-gateway)
+
+    * [Worker-to-worker communication, worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-worker)
+
+    * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-services)
+
+    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-external)
 
 [Planning your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters#ha_clusters)
 

@@ -70,6 +70,8 @@ toc:
           topics:
             - kube-strategy.md
             - cluster-plan-network.md
+            - cluster-plan-network-vpc.md
+            - cluster-plan-network-classic.md
             - cluster-plan-ha.md
             - worker-plan.md
       - topicgroup: 
