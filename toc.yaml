@@ -116,8 +116,13 @@ toc:
           topics:
           - firewall.md
           - edge.md
-          - network-policy.md
-          - vpc-policy.md
+          - topicgroup:
+            label: Controlling traffic with ACLs, security groups, and network policies
+            topics:
+            - vpc-network-policy.md
+            - vpc-security-group.md
+            - vpc-acls.md
+            - vpc-kube-policies.md
           - vpc-firewall.md
       - manage-scc.md
       - openshift_compliance_operator.md

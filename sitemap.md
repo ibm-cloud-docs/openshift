@@ -1662,55 +1662,44 @@ subcollection: openshift
 
 * [Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge#edge_workloads)
 
-[Controlling traffic with network policies on classic clusters](/docs/openshift?topic=openshift-network_policies#network_policies)
 
-* [Default Calico network policies](/docs/openshift?topic=openshift-network_policies#default_policy)
+### Controlling traffic with ACLs, security groups, and network policies
+{: #sitemap_controlling_traffic_with_acls,_security_groups,_and_network_policies}
 
-* [Installing and configuring the Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install)
 
-* [Viewing network policies](/docs/openshift?topic=openshift-network_policies#view_policies)
+[Overview of network security options](/docs/openshift?topic=openshift-vpc-network-policy#vpc-network-policy)
 
-* [Adding network policies](/docs/openshift?topic=openshift-network_policies#adding_network_policies)
+* [Comparison of network security options](/docs/openshift?topic=openshift-vpc-network-policy#comparison)
 
-* [Controlling inbound traffic to NLB or NodePort services](/docs/openshift?topic=openshift-network_policies#block_ingress)
+* [Access control lists (ACLs) or security groups?](/docs/openshift?topic=openshift-vpc-network-policy#acl-sg-compare)
 
-* [Isolating clusters on the public network](/docs/openshift?topic=openshift-network_policies#isolate_workers_public)
+[Controlling traffic with the default security group](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group)
 
-* [Isolating clusters on the private network](/docs/openshift?topic=openshift-network_policies#isolate_workers)
+* [Creating security group rules from the console](/docs/openshift?topic=openshift-vpc-security-group#security_groups_ui)
 
-* [Controlling traffic between pods](/docs/openshift?topic=openshift-network_policies#isolate_services)
+    * [Creating inbound rules in the console](/docs/openshift?topic=openshift-vpc-security-group#security-group-inbound-rules)
 
-    * [Isolate app services within a namespace](/docs/openshift?topic=openshift-network_policies#services_one_ns)
+    * [Creating security group rules with the CLI](/docs/openshift?topic=openshift-vpc-security-group#security_groups_cli)
 
-    * [Isolate app services between namespaces](/docs/openshift?topic=openshift-network_policies#services_across_ns)
+    * [Creating inbound rules by using the command line](/docs/openshift?topic=openshift-vpc-security-group#security-group-inbound-cli)
 
-* [Logging denied traffic](/docs/openshift?topic=openshift-network_policies#log_denied)
+    * [Creating outbound rules by using the command line](/docs/openshift?topic=openshift-vpc-security-group#security-group-cli-outbound)
 
-[VPC: Controlling traffic with ACLs, security groups, and network policies](/docs/openshift?topic=openshift-vpc-network-policy#vpc-network-policy)
+* [Required inbound rules](/docs/openshift?topic=openshift-vpc-security-group#security-group-inbound-rules)
 
-* [Overview](/docs/openshift?topic=openshift-vpc-network-policy#overview)
+* [Required outbound rules](/docs/openshift?topic=openshift-vpc-security-group#security-group-outbound-rules)
 
-    * [Comparison of network security options](/docs/openshift?topic=openshift-vpc-network-policy#comparison)
+[Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-acls#vpc-acls)
 
-    * [Do I use ACLs or security groups?](/docs/openshift?topic=openshift-vpc-network-policy#acl-sg-compare)
+* [Creating ACLs from the console](/docs/openshift?topic=openshift-vpc-acls#acls_ui)
 
-* [Controlling traffic with the default security group](/docs/openshift?topic=openshift-vpc-network-policy#security_groups)
+    * [Creating ACLs with the CLI](/docs/openshift?topic=openshift-vpc-acls#acls_cli)
 
-    * [Creating security group rules from the console](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_ui)
+[Controlling traffic between pods with Kubernetes policies](/docs/openshift?topic=openshift-vpc-kube-policies#vpc-kube-policies)
 
-    * [Creating security group rules with the CLI](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_cli)
+    * [Isolate app services within a namespace](/docs/openshift?topic=openshift-vpc-kube-policies#services_one_ns)
 
-* [Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-network-policy#acls)
-
-    * [Creating ACLs from the console](/docs/openshift?topic=openshift-vpc-network-policy#acls_ui)
-
-    * [Creating ACLs with the CLI](/docs/openshift?topic=openshift-vpc-network-policy#acls_cli)
-
-* [Controlling traffic between pods with Kubernetes policies](/docs/openshift?topic=openshift-vpc-network-policy#kubernetes_policies)
-
-    * [Isolate app services within a namespace](/docs/openshift?topic=openshift-vpc-network-policy#services_one_ns)
-
-    * [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-network-policy#services_across_ns)
+    * [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-kube-policies#services_across_ns)
 
 [VPC: Opening required ports and IP addresses in other network firewalls](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall)
 
