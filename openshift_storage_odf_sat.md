@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-21"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, satellite
 
@@ -99,7 +99,7 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
 ## Creating a Kubernetes secret that contains your {{site.data.keyword.satelliteshort}} link credentials
 {: #odf-sat-secret-create}
 
-After you [create a link endpoint](/docs/satellite?topic=satellite-link-cloud-create) and before you install ODF, create a Kubernetes secret with your link credentials.
+Before you install ODF, create a Kubernetes secret with your Link credentials.
 {: shortdesc}
 
 1. List the secrets in the `kube-system` namespace of your cluster and look for the `storage-secret-store`.
@@ -600,7 +600,6 @@ Refer to the following parameters when you use the add-on or operator in {{site.
 | `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
 {: caption="Parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
-
 
 
 
