@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-21"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -57,7 +57,9 @@ Review the changes included in version 1.0.3 of the managed cluster autoscaler a
 {: shortdesc}
 
 
-### Changelog for patch update 1.0.4_403, released 20 January 2022
+
+
+### Change log for patch update 1.0.4_403, released 20 January 2022
 {: #104403_ca}
 
 Review the changes in version `1.0.4_403` of the cluster autoscaler add-on.
@@ -68,7 +70,7 @@ Review the changes in version `1.0.4_403` of the cluster autoscaler add-on.
 - Includes fixes for [CVE-2021-44716](https://nvd.nist.gov/vuln/detail/CVE-2021-44716{: external} and [CVE-2021-44717](https://nvd.nist.gov/vuln/detail/CVE-2021-44717){: external}. 
 
 
-### Changelog for patch update 1.0.4_387, released 22 November 2021
+### Change log for patch update 1.0.4_387, released 22 November 2021
 {: #104387_ca}
 
 Review the changes in version `1.0.4_387` of the cluster autoscaler add-on. 
@@ -77,7 +79,7 @@ Review the changes in version `1.0.4_387` of the cluster autoscaler add-on.
 - Image tags: `1.19.1-7`, `1.20.0-7`, `1.21.0-3`, and `1.22.0-2`.
 - Updates the Golang version to `1.16.10` which includes fixes for [CVE-2021-41772](https://nvd.nist.gov/vuln/detail/CVE-2021-41772){: external} and [CVE-2021-41771](https://nvd.nist.gov/vuln/detail/CVE-2021-41771){: external}.
 
-### Changelog for patch update 1.0.4_374, released 7 October 2021
+### Change log for patch update 1.0.4_374, released 7 October 2021
 {: #104374_ca}
 
 Review the changes in version `1.0.4_374` of the cluster autoscaler add-on.
@@ -99,7 +101,7 @@ Review the changes included in version 1.0.3 of the managed cluster autoscaler a
 
 
 
-### Changelog for patch update 1.0.3_360, released 26 August 2021
+### Change log for patch update 1.0.3_360, released 26 August 2021
 {: #103360_ca}
 
 Review the changes in version `1.0.3_360` of the cluster autoscaler add-on.
@@ -130,7 +132,7 @@ Review the changes in version `1.0.3_360` of the cluster autoscaler add-on.
 
 
 
-### Changelog for patch update 1.0.3_352, released 23 June 2021
+### Change log for patch update 1.0.3_352, released 23 June 2021
 {: #103352_ca}
 
 Review the changes in version `1.0.3_352` of the cluster autoscaler add-on.
@@ -150,7 +152,7 @@ Review the changes that are in version 1.0.2 of the managed cluster autoscaler a
 
 
 
-### Changelog for patch update 1.0.2_267, released 10 May 2021
+### Change log for patch update 1.0.2_267, released 10 May 2021
 {: #102267_ca}
 
 Review the changes in version `1.0.2_267` of the cluster autoscaler add-on.
@@ -160,7 +162,7 @@ Review the changes in version `1.0.2_267` of the cluster autoscaler add-on.
 - Supported cluster versions: 4.3 - 4.6  
 - Includes a bug fix for the `worker replace` command on VPC clusters that caused worker creation to fail.  
 
-### Changelog for patch update 1.0.2_256, released 19 April 2021 
+### Change log for patch update 1.0.2_256, released 19 April 2021 
 {: #102256_ca}
 
 Review the changes in version `1.0.2_256` of the cluster autoscaler add-on.
@@ -170,7 +172,7 @@ Review the changes in version `1.0.2_256` of the cluster autoscaler add-on.
 - Supported cluster versions: 4.3 - 4.6  
 - Includes fixes for [CVE-2021-27919](https://nvd.nist.gov/vuln/detail/CVE-2021-27919){: external} and [CVE-2021-27918](https://nvd.nist.gov/vuln/detail/CVE-2021-27918){: external}.  
 
-### Changelog for patch update 1.0.2_249, released 01 April 2021
+### Change log for patch update 1.0.2_249, released 01 April 2021
 {: #102249_ca}
 
 Review the changes in version `1.0.2_249` of the cluster autoscaler add-on.
@@ -181,7 +183,7 @@ Review the changes in version `1.0.2_249` of the cluster autoscaler add-on.
 - Includes fixes for [CVE-2021-3114](https://nvd.nist.gov/vuln/detail/CVE-2021-3114) and [CVE-2021-3115](https://nvd.nist.gov/vuln/detail/CVE-2021-3114).  
 - Removes the `init` container. In previous versions, the cluster autoscaler pods would remain in the `initContainer` state if the API key was missing or malformed. This update removes the `init` container so that if the API key is missing or malformed, the cluster autoscaler pod fails.  
 
-### Changelog for patch update 1.0.2_224, released 09 March 2021
+### Change log for patch update 1.0.2_224, released 09 March 2021
 {: #10224_ca}
 
 Review the changes in version `1.0.2_224` of the cluster autoscaler add-on.
@@ -200,7 +202,7 @@ Review the changes that are in version 1.0.1 of the managed cluster autoscaler a
 
 
 
-### Changelog for patch update 1.0.1_219, released 16 February 2021
+### Change log for patch update 1.0.1_219, released 16 February 2021
 {: #101219_ca}
 
 Review the changes in version `1.0.1_219` of the cluster autoscaler add-on.
@@ -210,7 +212,7 @@ Review the changes in version `1.0.1_219` of the cluster autoscaler add-on.
 - Supported cluster versions: 4.3 - 4.6  
 - Updates the code base to synchronize with the community autoscaler. For more information, see the [Kubernetes autoscaler documentation](https://github.com/kubernetes/autoscaler/releases){: external}.  
 
-### Changelog for patch update 1.0.1_210, released 13 January 2021
+### Change log for patch update 1.0.1_210, released 13 January 2021
 {: #101210_ca}
 
 Review the changes in version `1.0.1_210` of the cluster autoscaler add-on.
@@ -220,7 +222,7 @@ Review the changes in version `1.0.1_210` of the cluster autoscaler add-on.
 - Supported cluster versions: 4.3 - 4.6  
 - Update addresses [`DLA-2509-1`](https://www.debian.org/lts/security/2020/dla-2509){: external}.  
 
-### Changelog for patch update 1.0.1_205, released 15 December 2020
+### Change log for patch update 1.0.1_205, released 15 December 2020
 {: #101205_ca}
 
 Review the changes in version `1.0.1_205` of the cluster autoscaler add-on.
@@ -230,7 +232,7 @@ Review the changes in version `1.0.1_205` of the cluster autoscaler add-on.
 - Supported cluster versions: 4.3 - 4.6  
 - Updates the `initContainer` to use the universal base image (UBI).  
 
-### Changelog for patch update 1.0.1_195, released 10 December 2020
+### Change log for patch update 1.0.1_195, released 10 December 2020
 {: #101195_ca}
 
 Review the changes in version `1.0.1_195` of the cluster autoscaler add-on.
@@ -242,7 +244,7 @@ Review the changes in version `1.0.1_195` of the cluster autoscaler add-on.
 - Resources that are deployed by the cluster autoscaler add-on are now linked with the corresponding source code and build URLs.  
 - Updates the Go version to `1.15.5`.  
 
-### Changelog for patch update 1.0.1_146, released 03 December 2020
+### Change log for patch update 1.0.1_146, released 03 December 2020
 {: #101146_ca}
 
 Review the changes in version `1.0.1_146` of the cluster autoscaler add-on.
@@ -253,7 +255,7 @@ Review the changes in version `1.0.1_146` of the cluster autoscaler add-on.
 - Updates the cluster autoscaler to run as non-root.  
 - Adds a feature to validate secrets before the autoscaler pods are initialized.  
 
-### Changelog for patch update 1.0.1_128, released 27 October 2020
+### Change log for patch update 1.0.1_128, released 27 October 2020
 {: #101128_ca}
 
 Review the changes in version `1.0.1_128` of the cluster autoscaler add-on.
@@ -263,7 +265,7 @@ Review the changes in version `1.0.1_128` of the cluster autoscaler add-on.
 - Supported cluster versions: 4.3 - 4.5  
 - Updates the Go version to `1.15.2`.  
 
-### Changelog for patch update 1.0.1_124, released 16 October 2020
+### Change log for patch update 1.0.1_124, released 16 October 2020
 {: #101124_ca}
 
 Review the changes in version `1.0.1_124` of the cluster autoscaler add-on.
@@ -274,7 +276,7 @@ Review the changes in version `1.0.1_124` of the cluster autoscaler add-on.
 - Exposes the `--new-pod-scale-up-delay` flag in the configmap.  
 - Adds support for Kubernetes 1.19.  
 
-### Changelog for patch update 1.0.1_114, released 10 September 2020
+### Change log for patch update 1.0.1_114, released 10 September 2020
 {: #101114_ca}
 
 Review the changes in version `1.0.1_114` of the cluster autoscaler add-on.

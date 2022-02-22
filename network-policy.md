@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-22"
 
 keywords: openshift
 
@@ -26,10 +26,10 @@ Every {{site.data.keyword.openshiftlong}} cluster comes with a network plug-in c
 You can use Calico and Kubernetes to create network policies for a cluster. With Kubernetes network policies, you can specify the network traffic that you want to allow or block to and from a pod within a cluster. To set more advanced network policies such as blocking inbound (ingress) traffic to network load balancer (NLB) services, use Calico network policies.
 
 Kubernetes network policies
-: [Kubernetes network policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/){: external} specify how pods can communicate with other pods and with external endpoints. Both incoming and outgoing network traffic is allowed or blocked based on protocol, port, and source or destination IP addresses. Traffic can also be filtered based on pod and namespace labels. You can apply Kubernetes network policies by using `oc` commands or the Kubernetes APIs. When you apply a Kubernetes network policy, it's automatically converted into a Calico network policy so that Calico can apply an `Iptables` rule. The Calico network policy name has the `knp.default` prefix. To update the policy in the future, update the Kubernetes policy, and the updates are automatically applied to the Calico network policy.
+:   [Kubernetes network policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/){: external} specify how pods can communicate with other pods and with external endpoints. Both incoming and outgoing network traffic is allowed or blocked based on protocol, port, and source or destination IP addresses. Traffic can also be filtered based on pod and namespace labels. You can apply Kubernetes network policies by using `oc` commands or the Kubernetes APIs. When you apply a Kubernetes network policy, it's automatically converted into a Calico network policy so that Calico can apply an `Iptables` rule. The Calico network policy name has the `knp.default` prefix. To update the policy in the future, update the Kubernetes policy, and the updates are automatically applied to the Calico network policy.
 
 Calico network policies
-: [Calico network policies](https://projectcalico.docs.tigera.io/security/protect-hosts){: external} are a set of the Kubernetes network policies. You can apply Calico policies by using the `calicoctl` command line. Calico policies add the following features.
+:   [Calico network policies](https://projectcalico.docs.tigera.io/security/protect-hosts){: external} are a set of the Kubernetes network policies. You can apply Calico policies by using the `calicoctl` command line. Calico policies add the following features.
     - Allow or block network traffic on specific network interfaces regardless of the Kubernetes pod source or destination IP address or CIDR.
     - Allow or block network traffic for pods across namespaces.
     - [Block inbound traffic to Kubernetes LoadBalancer or NodePort services](#block_ingress).
@@ -364,7 +364,7 @@ Before you begin, [install and configure the Calico CLI, and set the context for
 You can isolate your cluster from other systems on the private network by applying [Calico private network policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/private-network-isolation/calico-v3){: external}.
 {: shortdesc}
 
-This set of Calico policies and host endpoints can isolate the private network traffic of a cluster from other resources in the account's private network, while allowing communication on the private network that is necessary for the cluster to function. For example, when you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-plan_clusters#worker-worker) to allow worker nodes to communicate with each other on the private network, any instance that is connected to any of the private VLANs in the same {{site.data.keyword.cloud_notm}} account can communicate with your worker nodes.
+This set of Calico policies and host endpoints can isolate the private network traffic of a cluster from other resources in the account's private network, while allowing communication on the private network that is necessary for the cluster to function. For example, when you enable [VRF or VLAN spanning](/docs/containers?topic=containers-plan_clusters#worker-worker) to allow worker nodes to communicate with each other on the private network, any instance that is connected to any of the private VLANs in the same {{site.data.keyword.cloud_notm}} account can communicate with your worker nodes.
 
 To see a list of the ports that are opened by these policies and a list of the policies that are included, see the [README for the Calico private network policies](https://github.com/IBM-Cloud/kube-samples/blob/master/calico-policies/private-network-isolation/README.md){: external}.
 
@@ -449,114 +449,11 @@ Before you begin, [install and configure the Calico CLI, and set the context for
 ## Controlling traffic between pods
 {: #isolate_services}
 
-Kubernetes policies protect pods from internal network traffic. You can create simple Kubernetes network policies to isolate app microservices from each other within a namespace or across namespaces.
-{: shortdesc}
+Kubernetes policies protect pods from internal network traffic. You can create simple [Kubernetes network policies](/docs/containers?topic=containers-vpc-kube-policies) to isolate app microservices from each other within a namespace or across namespaces.
 
 By default, any pod has access to any other pod in the cluster. Additionally, any pod has access to any services that are exposed by the pod network, such as a metrics service, the cluster DNS, the API server, or any services that you manually create in your cluster.
 
-If most or all pods don't require access to specific pods or services, and you want to ensure that pods by default can't access those pods or services, you can create a Kubernetes network policy to block ingress traffic to those pods or services.
 
-For more information about how Kubernetes network policies control pod-to-pod traffic and for more example policies, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/network-policies/){: external}.
-{: tip}
-
-### Isolate app services within a namespace
-{: #services_one_ns}
-
-The following scenario demonstrates how to manage traffic between app microservices within one namespace.
-{: shortdesc}
-
-An Accounts team deploys multiple app services in one namespace, but they need isolation to permit only necessary communication between the microservices over the public network. For the app `Srv1`, the team has front end, back end, and database services. They label each service with the `app: Srv1` label and the `tier: frontend`, `tier: backend`, or `tier: db` label.
-
-![Use a network policy to manage cross-namespace traffic.](images/cs_network_policy_single_ns.png "Use a network policy to manage cross-namespace traffic"){: caption="Figure 1. Use a network policy to manage cross-namespace traffic" caption-side="bottom"}
-
-The Accounts team wants to allow traffic from the front end to the back end, and from the back end to the database. They use labels in their network policies to designate which traffic flows are permitted between microservices.
-
-First, they create a Kubernetes network policy that allows traffic from the front end to the back end:
-
-```yaml
-kind: NetworkPolicy
-apiVersion: networking.k8s.io/v1
-metadata:
-  name: backend-allow
-spec:
-  podSelector:
-    matchLabels:
-      app: Srv1
-      tier: backend
-  ingress:
-  - from:
-    - podSelector:
-        matchLabels:
-          app: Srv1
-          Tier: frontend
-```
-{: codeblock}
-
-The `spec.podSelector.matchLabels` section lists the labels for the Srv1 back-end service so that the policy applies only _to_ those pods. The `spec.ingress.from.podSelector.matchLabels` section lists the labels for the Srv1 front-end service so that ingress is permitted only _from_ those pods.
-
-Then, they create a similar Kubernetes network policy that allows traffic from the back end to the database:
-
-```yaml
-kind: NetworkPolicy
-apiVersion: networking.k8s.io/v1
-metadata:
-  name: db-allow
-spec:
-  podSelector:
-    matchLabels:
-      app: Srv1
-      tier: db
-  ingress:
-  - from:
-    - podSelector:
-        matchLabels:
-          app: Srv1
-          Tier: backend
-```
-{: codeblock}
-
-The `spec.podSelector.matchLabels` section lists the labels for the Srv1 database service so that the policy applies only _to_ those pods. The `spec.ingress.from.podSelector.matchLabels` section lists the labels for the Srv1 back-end service so that ingress is permitted only _from_ those pods.
-
-Traffic can now flow from the front end to the back end, and from the back end to the database. The database can respond to the back end, and the back end can respond to the front end, but no reverse traffic connections can be established.
-
-### Isolate app services between namespaces
-{: #services_across_ns}
-
-The following scenario demonstrates how to manage traffic between app microservices across multiple namespaces.
-{: shortdesc}
-
-Services that are owned by different subteams need to communicate, but the services are deployed in different namespaces within the same cluster. The Accounts team deploys front end, back end, and database services for the app Srv1 in the accounts namespace. The Finance team deploys front end, back end, and database services for the app Srv2 in the finance namespace. Both teams label each service with the `app: Srv1` or `app: Srv2` label and the `tier: frontend`, `tier: backend`, or `tier: db` label. They also label the namespaces with the `usage: accounts` or `usage: finance` label.
-
-![Use a network policy to manage cross-namepspace traffic.](images/cs_network_policy_multi_ns.png) "Use a network policy to manage cross-namespace traffic"){: caption="Figure 1. Use a network policy to manage cross-namespace traffic" caption-side="bottom"}
-
-The Finance team's Srv2 needs to call information from the Accounts team's Srv1 back end. So the Accounts team creates a Kubernetes network policy that uses labels to allow all traffic from the finance namespace to the Srv1 back end in the accounts namespace. The team also specifies the port 3111 to isolate access through that port only.
-
-```yaml
-kind: NetworkPolicy
-apiVersion: networking.k8s.io/v1
-metadata:
-  Namespace: accounts
-  name: accounts-allow
-spec:
-  podSelector:
-    matchLabels:
-      app: Srv1
-      Tier: backend
-  ingress:
-  - from:
-    - NamespaceSelector:
-        matchLabels:
-          usage: finance
-      ports:
-        port: 3111
-```
-{: codeblock}
-
-The `spec.podSelector.matchLabels` section lists the labels for the Srv1 back-end service so that the policy applies only _to_ those pods. The `spec.ingress.from.NamespaceSelector.matchLabels` section lists the label for the finance namespace so that ingress is permitted only _from_ services in that namespace.
-
-Traffic can now flow from finance microservices to the accounts Srv1 back end. The accounts Srv1 back end can respond to finance microservices, but can't establish a reverse traffic connection.
-
-In this example, all traffic from all microservices in the finance namespace is permitted. You can't allow traffic from specific app pods in another namespace because `podSelector` and `namespaceSelector` can't be combined.
 
 
 
@@ -645,14 +542,20 @@ Before you begin, [install and configure the Calico CLI, and set the context for
     ```
     {: codeblock}
 
-    | Component | Description |
-    |------|---------------------|
-    | `types` | This `Ingress` policy applies to all incoming traffic requests. The value `Ingress` is a general term for all incoming traffic, and does not refer to traffic only from the IBM Ingress ALB. |
-    | `ingress` | `action`: The `Log` action writes a log entry for any requests that match this policy to the `/var/log/syslog` path on the worker node. `destination`: No destination is specified because the `selector` applies this policy to all pods with a certain label. `source`: This policy applies to requests from any source. |
-    | `selector` | Replace `<selector>` with the same selector in the `spec.selector` field that you used in your policy from step 1. For example, by using the selector `selector: projectcalico.org/orchestrator == 'k8s' && run == 'nginx'`, this policy's rule is added to the same Iptables chain as the `access-nginx` sample Kubernetes network policy rule in step 1. This policy applies only to incoming network traffic to pods that use the same selector label. |
-    | `order` | Calico policies have orders that determine when they are applied to incoming request packets. Policies with lower orders, such as `1000`, are applied first. Policies with higher orders are applied after the lower-order policies. For example, a policy with a very high order, such as `3000`, is effectively applied last after all the lower-order policies have been applied.</br></br>Incoming request packets go through the Iptables rules chain and try to match rules from lower-order policies first. If a packet matches any rule, the packet is accepted. However, if a packet doesn't match any rule, it arrives at the last rule in the Iptables rules chain with the highest order. To make sure that this policy is the last policy in the chain, use a much higher order, such as `3000`, than the policy you created in step 1. | 
-    {: caption="Understanding the log policy YAML components"}
-    {: summary="The columns are read from left to right. The first column has the parameter of the YAML file. The second column describes the parameter."}
+
+    `types`
+    :   This `Ingress` policy applies to all incoming traffic requests. The value `Ingress` is a general term for all incoming traffic, and does not refer to traffic only from the IBM Ingress ALB. |
+    `ingress`
+    :   `action`: The `Log` action writes a log entry for any requests that match this policy to the `/var/log/syslog` path on the worker node. 
+    :   `destination`: No destination is specified because the `selector` applies this policy to all pods with a certain label.
+    :   `source`: This policy applies to requests from any source.
+    
+    `selector`
+    :   Replace `<selector>` with the same selector in the `spec.selector` field that you used in your policy from step 1. For example, by using the selector `selector: projectcalico.org/orchestrator == 'k8s' && run == 'nginx'`, this policy's rule is added to the same Iptables chain as the `access-nginx` sample Kubernetes network policy rule in step 1. This policy applies only to incoming network traffic to pods that use the same selector label.
+    
+    `order`
+    :   Calico policies have orders that determine when they are applied to incoming request packets. Policies with lower orders, such as `1000`, are applied first. Policies with higher orders are applied after the lower-order policies. For example, a policy with a very high order, such as `3000`, is effectively applied last after all the lower-order policies have been applied.</br></br>Incoming request packets go through the Iptables rules chain and try to match rules from lower-order policies first. If a packet matches any rule, the packet is accepted. However, if a packet doesn't match any rule, it arrives at the last rule in the Iptables rules chain with the highest order. To make sure that this policy is the last policy in the chain, use a much higher order, such as `3000`, than the policy you created in step 1. 
+
 
 3. Apply the policy. If you use a Windows machine, include the `--config=<filepath>/calicoctl.cfg` flag.
 

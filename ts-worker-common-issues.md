@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-21"
 
 keywords: openshift
 
@@ -32,7 +32,7 @@ Review common error messages and learn how to resolve them. Messages might begin
 
 **Message**:
 
-```
+```sh
 Your account is currently prohibited from ordering 'Computing Instances'.
 ```
 {: screen}
@@ -46,7 +46,7 @@ Your IBM Cloud infrastructure account might be restricted from ordering compute 
 
 **Message**:
 
-```
+```sh
 Could not place order.
 
 Could not place order. There are insufficient resources behind router 'router_name' to fulfill the request for the following guests: 'worker_id'.
@@ -68,7 +68,7 @@ To resolve, try one of the following options:
 
 **Message**:
 
-```
+```sh
 Could not obtain network VLAN with ID: <vlan-id>
 ```
 {: screen}
@@ -84,7 +84,7 @@ Your worker node could not be provisioned because the selected VLAN ID could not
 
 **Message**:
 
-```
+```sh
 The location provided for this order is invalid
 ```
 {: screen}
@@ -98,7 +98,7 @@ Your IBM Cloud infrastructure is not set up to order compute resources in the se
 
 **Message**:
 
-```
+```sh
 The user does not have the necessary {{site.data.keyword.cloud_notm}} classic infrastructure permissions to add servers
 
 'Item' must be ordered with permission.
@@ -118,7 +118,7 @@ You might not have the required permissions to perform the action in your IBM Cl
 
 **Message**:
 
-```
+```sh
 Worker unable to talk to {{site.data.keyword.containerlong_notm}} servers. Please verify your firewall setup is allowing traffic from this worker.
 ```
 {: screen}
@@ -134,7 +134,7 @@ If you have a firewall, [configure your firewall settings to allow outgoing traf
 
 **Message**:
 
-```
+```sh
 The worker did not respond to the soft reboot request. A hard reboot might be necessary.
 ```
 {: screen}
@@ -148,7 +148,7 @@ Although you issued a reboot on your worker node, the worker node is unresponsiv
 
 **Message**:
 
-```
+```sh
 can't create IMS portal token, as no IMS account is linked to the selected BSS account
 
 Provided user not found or active

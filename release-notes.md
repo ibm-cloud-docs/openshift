@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-22"
 
 keywords: openshift
 
@@ -26,6 +26,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## February 2022
 {: #release-feb-2022}
+
+
 
 ### 18 February 2022
 {: #18feb2022}
@@ -2415,7 +2417,7 @@ Version 3.11 is deprecated
 :   Clusters that run {{site.data.keyword.openshiftshort}} version 3.11 are deprecated and become unsupported June 2022 (date subject to change). For more information, see [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history).
 
 VPC ACLs
-:   Added required rules for using VPC load balancers to steps for [Creating access control lists (ACLs) to control traffic to and from your VPC cluster](/docs/openshift?topic=openshift-vpc-network-policy#acls).
+:   Added required rules for using VPC load balancers to steps for [Creating access control lists (ACLs) to control traffic to and from your VPC cluster](/docs/openshift?topic=openshift-vpc-acls).
 
 
 ## May 2020
@@ -2900,7 +2902,7 @@ Tags
 :   Added how to [add {{site.data.keyword.cloud_notm}} tags to existing clusters](/docs/openshift?topic=openshift-add_workers#cluster_tags).
 
 VPC security groups
-:   [Modify the security group rules](/docs/openshift?topic=openshift-vpc-network-policy#security_groups)for VPC Gen 2 clusters to allow traffic requests that are routed to node ports on your worker nodes.
+:   [Modify the security group rules](/docs/openshift?topic=openshift-vpc-security-group)for VPC Gen 2 clusters to allow traffic requests that are routed to node ports on your worker nodes.
 
 ### 3 February 2020
 {: #03feb2020}

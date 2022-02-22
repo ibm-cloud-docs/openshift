@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-21"
 
 keywords: openshift, file, debug, help
 
@@ -231,14 +231,38 @@ Describe your ODF resources and review the command outputs for any error message
     ```
     {: pre}
 
-1. [Review the ODF trouble shooting documentation for steps to solve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_openshift_data_foundation). 
+1. Describe the `ibm-storage-metrics-agent` pod and review the `Events` secetion in the oput for any error messages. 
+    ```sh
+    oc get pods -n kube-system -l name=ibm-storage-metrics-agent
+    ```
+    {:pre}
+
+    ```sh
+    NAME                                                  READY   STATUS    RESTARTS   AGE ibm-storage-metrics-agent-8685869cc6-79qzq   
+    ```
+    {: screen} 
+
+1. Review the logs from the `ibm-storage-metrics-agent`. 
+    ```sh
+    oc logs ibm-storage-metrics-agent-xxx -n kube-system
+    ```
+    {: pre}
+
+1. Describe the `ocscluster` and review the output for error messages.
+    ```sh
+    oc describe ocscluster <ocscluster-name> -n openshift-storage
+    ```
+    {: pre}
+
+1. Gather data about the cluster by using the `oc adm must-gather` command.
+    ```sh
+    oc adm must-gather --image=registry.redhat.io/ocs4/ocs-must-gather-rhel8:latest --dest-dir=ocs_mustgather
+    ```
+    {: pre}
+
+1. For classic clusters or {{site.data.keyword.satelliteshort}} clusters that use local volumes on the worker node, make sure that the `disk-by-id` for the volumes that you used for the `osd-device-path` and `mon-device-path` parameters exists on the worker nodes. For more information about how to retrieve these volume IDs, see [Gathering your device details](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-get-devices)
 
 
 
-
-
-
-
-
-
+1. [Review the troubleshooting documentation for steps to solve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_openshift_data_foundation). 
 

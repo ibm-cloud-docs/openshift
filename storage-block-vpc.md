@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-22"
 
 keywords: openshift
 
@@ -65,25 +65,25 @@ In this quickstart guide, you create a 10Gi 5IOPS tier {{site.data.keyword.block
         labels:
           app: my-app
     spec:
-     replicas: 1
-     selector:
-      matchLabels:
-        app: my-app
+      replicas: 1
+      selector:
+        matchLabels:
+          app: my-app
       template:
         metadata:
           labels:
             app: my-app
-      spec:
-        containers:
-        - image: # Your containerized app image.
-          name: my-container
-          volumeMounts:
+        spec:
+          containers:
+          - image: ngnix # Your containerized app image.
+            name: my-container
+            volumeMounts:
+            - name: my-volume
+              mountPath: /mount-path
+          volumes:
           - name: my-volume
-            mountPath: /mount-path
-        volumes:
-        - name: my-volume
-          persistentVolumeClaim:
-            claimName: my-pvc
+            persistentVolumeClaim:
+              claimName: my-pvc
     ```
     {: codeblock}
 
@@ -470,8 +470,11 @@ You can attach a volume to one worker node only. Make sure that the volume is in
 You can update the {{site.data.keyword.block_storage_is_short}} add-on by disabling and re-enabling the add-on in your cluster. When you disable the add-on, PVC creation and app deployment are not disrupted. Existing volumes and data are not impacted.
 {: shortdesc}
 
-As of 26 July 2021, version 2.0.3 of the Block Storage for VPC add-on is unsupported. Version 3.0.0 is deprecated and becomes unsupported on or after 26 August 2021. If you have a deprecated or unsupported version of the add-on installed in your cluster, update the add-on to version 3.0.1 or 4.0. To update the Block Storage for VPC add-on in your cluster, disable the add-on and then re-enable it. You might see a warning that resources or data might be deleted, however, note that existing volumes and data are not impacted. For more information, see [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).
+As of 24 February 2022, version 4.2 of the {{site.data.keyword.block_storage_is_short}} add-on is the default version. If you are using an earlier version of the add-on, update to the latest version. To update the add-on, disable the add-on and then re-enable it. You might see a warning that resources or data might be deleted, however, note that existing volumes and data are not impacted.
 {: important}
+
+Before updating the add-on review the [change log](/docs/containers?topic=containers-vpc_bs_changelog).
+{: tip}
 
 1. Check to see if an update is available. If an update is available, the plug-in version is flagged with an asterisk and the latest version is shown. Note the latest version as this value is used later.
 
@@ -488,7 +491,7 @@ As of 26 July 2021, version 2.0.3 of the Block Storage for VPC add-on is unsuppo
     ```
     {: screen}
 
-2. Disable the {{site.data.keyword.block_storage_is_short}} add-on.
+1. Disable the {{site.data.keyword.block_storage_is_short}} add-on.
 
     ```sh
     ibmcloud oc cluster addon disable vpc-block-csi-driver --cluster <cluster_name_or_ID> -f
@@ -503,14 +506,14 @@ As of 26 July 2021, version 2.0.3 of the Block Storage for VPC add-on is unsuppo
     ```
     {: screen}
 
-3. Verify that the add-on is disabled. If the add-on is disabled it does not appear in the list of add-ons in your cluster. The add-on might still display in your list of add-ons for a few minutes after running the `disable` command.
+1. Verify that the add-on is disabled. If the add-on is disabled it does not appear in the list of add-ons in your cluster. The add-on might still display in your list of add-ons for a few minutes after running the `disable` command.
 
     ```sh
     ibmcloud oc cluster addon ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
-4. Re-enable the add-on and specify the latest version that you retrieved earlier.
+1. Re-enable the add-on and specify the latest version that you retrieved earlier.
 
     ```sh
     ibmcloud oc cluster addon enable vpc-block-csi-driver --version <version> --cluster <cluster_name_or_ID>
@@ -525,7 +528,7 @@ As of 26 July 2021, version 2.0.3 of the Block Storage for VPC add-on is unsuppo
     ```
     {: screen}
 
-5. Verify that the add-on is in the `Addon Ready` state. The add-on might take a few minutes to become ready.
+1. Verify that the add-on is in the `Addon Ready` state. The add-on might take a few minutes to become ready.
 
     ```sh
     ibmcloud oc cluster addon ls --cluster <cluster_name_or_ID>
@@ -539,6 +542,8 @@ As of 26 July 2021, version 2.0.3 of the Block Storage for VPC add-on is unsuppo
     vpc-block-csi-driver   2.0.0     normal         Addon Ready
     ```
     {: screen}
+    
+
 
 ## Setting up encryption for {{site.data.keyword.block_storage_is_short}}
 {: #vpc-block-encryption}
@@ -583,7 +588,6 @@ Use {{site.data.keyword.keymanagementservicelong}} to create a private root key 
     provisioner: vpc.block.csi.ibm.io
     parameters:
       profile: "5iops-tier"
-      sizeRange: "[10-2000]GiB"
       csi.storage.k8s.io/fstype: "ext4"
       billingType: "hourly"
       encrypted: "true"
@@ -693,6 +697,8 @@ However, when multiple configurations are required and you don't want to create 
 
 When you want to set up encryption for your {{site.data.keyword.blockstorageshort}} instance, you can also use a Kubernetes secret if you want to encode the {{site.data.keyword.keymanagementserviceshort}} root key CRN to base64 instead of providing the key directly in the customized storage class.
 
+
+
 ### Creating a custom storage class
 {: #vpc-customize-storage-class}
 
@@ -703,7 +709,6 @@ You might create a custom storage class if you want to:
 * Set a custom IOPs value.
 * Set up {{site.data.keyword.block_storage_is_short}} with a file system type other than `ext4`.
 * Set up encryption.
-* Set a custom size range.
 
 To create your own storage class:
 
@@ -722,7 +727,6 @@ To create your own storage class:
     provisioner: vpc.block.csi.ibm.io
     parameters:
       profile: "<profile>"
-      sizeRange: "<size_range>"
       csi.storage.k8s.io/fstype: "<file_system_type>"
       billingType: "hourly"
       encrypted: "<encrypted_true_false>"
@@ -734,8 +738,8 @@ To create your own storage class:
       generation: "gc"
       classVersion: "1"
       iops: "<iops>" # Only specify this parameter if you are using a "custom" profile.
-      allowVolumeExpansion: (true|false) # Select true or false. Only supported on version 3.0.1 and later
-      volumeBindingMode: <volume_binding_mode>
+    allowVolumeExpansion: (true|false) # Select true or false. Only supported on version 3.0.1 and later
+    volumeBindingMode: <volume_binding_mode>
       # csi.storage.k8s.io/provisioner-secret-name: # Uncomment and add secret parameters to enforce encryption. 
       # csi.storage.k8s.io/provisioner-secret-namespace: 
     reclaimPolicy: "<reclaim_policy>"
@@ -747,11 +751,7 @@ To create your own storage class:
     
     
     `profile`
-    :   Enter the profile that you selected in the previous step, or enter `custom` to use a custom IOPs value.
-        
-    `sizeRange`
-    :   In the parameters, enter the size range for your storage in gigabytes (GiB), such as [`10-2000GiB`](/docs/vpc?topic=vpc-block-storage-profiles). The size range must match the {{site.data.keyword.block_storage_is_short}} profile that you specify in `parameters.profile`. To find supported storage sizes for a specific profile, see [Tiered IOPS profile. Any PVC that uses this storage class must specify a size value that is within this range.
-        
+    :   Enter the profile that you selected in the previous step, or enter `custom` to use a custom IOPs value. To find supported storage sizes for a specific profile, see [Tiered IOPS profile](/docs/vpc?topic=vpc-block-storage-profiles). Any PVC that uses this storage class must specify a size value that is within this range.
         
     `csi.storage.k8s.io/fstype`
         :   In the parameters, enter the file system for your {{site.data.keyword.blockstorageshort}} instance. Choose `xfs`, `ext3`, or `ext4`. The default value is `ext4` and is used if you don't specify a file system.
@@ -759,7 +759,6 @@ To create your own storage class:
     `encrypted`
     :   In the parameters, enter **true** to create a storage class that sets up encryption for your {{site.data.keyword.blockstorageshort}} volume. If you set this option to **true**, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in `parameterencryptionKey`. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).
 
-    
     `encryptionKey`
     :   If you entered **true** for `parameters.encrypted`, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volume. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).
 
@@ -1010,49 +1009,12 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
 To provision volumes that support expansion, you must first create a custom storage class and set `allowVolumeExpansion` to `true`. 
 {: shortdesc}
 
-Volume expansion is available in beta for allowlisted accounts and is only supported for version `3.0.1` of the add-on and later. Don't use this feature for production workloads. Currently only volume capacity can be expanded. IOPs can't be increased.
-{: beta}
-
 
 You can only expand volumes that are mounted by an app pod.
 {: note}
 
 [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 1. If you are not using version `3.0.1` or later of the add-on, [update the {{site.data.keyword.block_storage_is_short}} add-on in your cluster](#vpc-addon-update).
-1. [Create a custom storage class](#vpc-customize-storage-class) and set `allowVolumeExpansion` to `true`.
-    ```yaml
-    apiVersion: storage.k8s.io/v1
-    kind: StorageClass
-    metadata:
-      name: <storage_class_name>
-    provisioner: vpc.block.csi.ibm.io
-    parameters:
-      profile: "<profile>"
-      sizeRange: "<size_range>"
-      csi.storage.k8s.io/fstype: "<file_system_type>"
-      billingType: "hourly"
-      encrypted: "<encrypted_true_false>"
-      encryptionKey: "<encryption_key>"
-      resourceGroup: ""
-      zone: "<zone>"
-      tags: "<tags>"
-      generation: "gc"
-      classVersion: "1"
-      iops: "<iops>" # Only specify this parameter if you are using a "custom" profile.
-      # csi.storage.k8s.io/provisioner-secret-name: # Uncomment and add secret parameters to enforce encryption. 
-      # csi.storage.k8s.io/provisioner-secret-namespace: 
-    allowVolumeExpansion: (true|false) # Select true or false. Only supported on version 3.0.1 and later
-    volumeBindingMode: <volume_binding_mode>
-    reclaimPolicy: "<reclaim_policy>"
-    ```
-    {: codeblock}
-
-1. Create the storage class in your cluster.
-
-    ```sh
-    oc apply -f sc.yaml
-    ```
-    {: pre}
 
 1. [Create a PVC](#vpc_block_qs) that uses your custom storage class.
 
@@ -1090,9 +1052,6 @@ You can only expand volumes that are mounted by an app pod.
 
 Complete the following steps to expand your existing {{site.data.keyword.block_storage_is_short}} volumes.
 {: shortdesc}
-
-Volume expansion is available in beta for allowlisted accounts and is only supported for version `3.0.1` of the add-on and later Don't use this feature for production workloads.
-{: beta}
 
 You can only expand volumes that are mounted by an app pod.
 {: note}

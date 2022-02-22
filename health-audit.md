@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-21"
 
 keywords: openshift, logmet, logs, metrics, audit, events
 
@@ -156,7 +156,7 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
     ```
     {: pre}
 
-9. View your current config by running the `kubectl config view` command and review the output for the `client-certificate` and `client-key`.
+9. View your current config by running the `oc config view` command and review the output for the `client-certificate` and `client-key`.
     ```sh
     oc config view --minify
     ```

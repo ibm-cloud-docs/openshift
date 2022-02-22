@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-22"
 
 keywords: openshift
 subcollection: openshift
@@ -1023,41 +1023,103 @@ subcollection: openshift
 
 [Planning your cluster network setup](/docs/openshift?topic=openshift-plan_clusters#plan_clusters)
 
-* [Understanding network basics of VPC clusters](/docs/openshift?topic=openshift-plan_clusters#plan_vpc_basics)
+[Understanding network basics of VPC clusters](/docs/openshift?topic=openshift-plan_vpc_basics#plan_vpc_basics)
 
-    * [Worker-to-worker communication: VPC subnets](/docs/openshift?topic=openshift-plan_clusters#vpc-worker-worker)
+* [Worker-to-worker communication using VPC subnets](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-worker)
 
-    * [Worker-to-master and user-to-master communication: Virtual private endpoints or cloud service endpoints](/docs/openshift?topic=openshift-plan_clusters#vpc-workeruser-master)
+* [Worker-to-master and user-to-master communication using Virtual private endpoints or cloud service endpoints](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-workeruser-master)
 
-    * [Worker-to-master communication](/docs/openshift?topic=openshift-plan_clusters#worker-to-master-comms)
+* [Worker-to-master communication in VPC clusters](/docs/openshift?topic=openshift-plan_vpc_basics#worker-to-master-comms)
 
-    * [User-to-master communication](/docs/openshift?topic=openshift-plan_clusters#user-to-master-comms)
+* [User-to-master communication in VPC clusters](/docs/openshift?topic=openshift-plan_vpc_basics#user-to-master-comms)
 
-    * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_clusters#vpc-worker-services-onprem)
+* [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem)
 
-    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_clusters#vpc-external-workers)
+* [Communication with other {{site.data.keyword.cloud_notm}} services over the private or public network](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-cloud-service)
 
-* [Example scenarios for VPC cluster network setups](/docs/openshift?topic=openshift-plan_clusters#vpc-scenarios)
+* [Communication with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-resources)
 
-    * [Scenario: Run internet-facing app workloads in a VPC cluster](/docs/openshift?topic=openshift-plan_clusters#vpc-no-pgw)
+    * [Communication with resources in other VPCs](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-other-vpcs)
 
-    * [Extend your on-premises data center to a VPC cluster](/docs/openshift?topic=openshift-plan_clusters#vpc-vpn)
+    * [Communication with {{site.data.keyword.cloud_notm}} classic resources](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-classic)
 
-* [Understanding network basics of classic clusters](/docs/openshift?topic=openshift-plan_clusters#plan_basics)
+* [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-external-workers)
 
-    * [Worker-to-worker communication: classic VLANs and subnets](/docs/openshift?topic=openshift-plan_clusters#worker-worker)
+* [Private traffic to cluster apps](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-apps-private)
 
-    * [Worker-to-master and user-to-master communication: Service endpoints](/docs/openshift?topic=openshift-plan_clusters#workeruser-master)
+* [Public traffic to cluster apps](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-apps-public)
 
-    * [Worker communication to other {{site.data.keyword.cloud_notm}} services or on-premises networks](/docs/openshift?topic=openshift-plan_clusters#worker-services-onprem)
+* [Example scenarios for VPC cluster network setups](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-scenarios)
 
-    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_clusters#external-workers)
+    * [Scenario: Run internet-facing app workloads in a VPC cluster](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw)
 
-* [Example scenarios for classic cluster network setups](/docs/openshift?topic=openshift-plan_clusters#classic-scenarios)
+    * [Worker-to-worker communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-worker)
 
-    * [Running internet-facing app workloads in a classic cluster](/docs/openshift?topic=openshift-plan_clusters#internet-facing)
+    * [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-master)
 
-    * [Extending your on-premises data center to a classic cluster and add limited public access](/docs/openshift?topic=openshift-plan_clusters#limited-public)
+    * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-services)
+
+    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-external)
+
+* [Extend your on-premises data center to a VPC cluster](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn)
+
+    * [Worker-to-worker communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-worker)
+
+    * [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-master)
+
+    * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-services)
+
+    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-external)
+
+[Understanding network basics of classic clusters](/docs/openshift?topic=openshift-plan_basics#plan_basics)
+
+* [Worker-to-worker communication: classic VLANs and subnets](/docs/openshift?topic=openshift-plan_basics#worker-worker)
+
+    * [VLAN connections for worker nodes](/docs/openshift?topic=openshift-plan_basics#worker-worker-nodes)
+
+    * [Worker node communication across subnets and VLANs](/docs/openshift?topic=openshift-plan_basics#worker-worker-subnets)
+
+* [Worker-to-master and user-to-master communication: Service endpoints](/docs/openshift?topic=openshift-plan_basics#workeruser-master)
+
+    * [Public service endpoint only](/docs/openshift?topic=openshift-plan_basics#workeruser-master-endpoint)
+
+    * [Public and private cloud service endpoints](/docs/openshift?topic=openshift-plan_basics#workeruser-master-pub-priv)
+
+    * [Worker communication to other {{site.data.keyword.cloud_notm}} services or on-premises networks](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem)
+
+    * [Communication with other {{site.data.keyword.cloud_notm}} services over the private or public network](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-pub-priv)
+
+    * [{{site.data.keyword.BluDirectLink}} for communication over the private network with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-direct-link)
+
+    * [strongSwan IPSec VPN connection for communication over the public network with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-strongswan)
+
+    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_basics#external-workers)
+
+    * [Private traffic to cluster apps](/docs/openshift?topic=openshift-plan_basics#external-workers-private)
+
+    * [Public traffic to cluster apps](/docs/openshift?topic=openshift-plan_basics#external-workers-public)
+
+* [Example scenarios for classic cluster network setups](/docs/openshift?topic=openshift-plan_basics#classic-scenarios)
+
+    * [Running internet-facing app workloads in a classic cluster](/docs/openshift?topic=openshift-plan_basics#internet-facing)
+
+    * [Worker-to-worker communication in classic clusters](/docs/openshift?topic=openshift-plan_basics#internet-facing-worker)
+
+    * [Worker-to-master and user-to-master communication in classic clusters](/docs/openshift?topic=openshift-plan_basics#internet-facing-master)
+
+    * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_basics#internet-facing-services)
+
+    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_basics#internet-facing-external)
+
+    * [Extending your on-premises data center to a classic cluster and add limited public access](/docs/openshift?topic=openshift-plan_basics#limited-public)
+
+    * [Using a gateway appliance](/docs/openshift?topic=openshift-plan_basics#vyatta-gateway)
+
+    * [Worker-to-worker communication, worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-worker)
+
+    * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-services)
+
+    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-external)
 
 [Planning your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters#ha_clusters)
 
@@ -1662,55 +1724,44 @@ subcollection: openshift
 
 * [Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge#edge_workloads)
 
-[Controlling traffic with network policies on classic clusters](/docs/openshift?topic=openshift-network_policies#network_policies)
 
-* [Default Calico network policies](/docs/openshift?topic=openshift-network_policies#default_policy)
+### Controlling traffic with ACLs, security groups, and network policies
+{: #sitemap_controlling_traffic_with_acls,_security_groups,_and_network_policies}
 
-* [Installing and configuring the Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install)
 
-* [Viewing network policies](/docs/openshift?topic=openshift-network_policies#view_policies)
+[Overview of network security options](/docs/openshift?topic=openshift-vpc-network-policy#vpc-network-policy)
 
-* [Adding network policies](/docs/openshift?topic=openshift-network_policies#adding_network_policies)
+* [Comparison of network security options](/docs/openshift?topic=openshift-vpc-network-policy#comparison)
 
-* [Controlling inbound traffic to NLB or NodePort services](/docs/openshift?topic=openshift-network_policies#block_ingress)
+* [Access control lists (ACLs) or security groups?](/docs/openshift?topic=openshift-vpc-network-policy#acl-sg-compare)
 
-* [Isolating clusters on the public network](/docs/openshift?topic=openshift-network_policies#isolate_workers_public)
+[Controlling traffic with the default security group](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group)
 
-* [Isolating clusters on the private network](/docs/openshift?topic=openshift-network_policies#isolate_workers)
+* [Creating security group rules from the console](/docs/openshift?topic=openshift-vpc-security-group#security_groups_ui)
 
-* [Controlling traffic between pods](/docs/openshift?topic=openshift-network_policies#isolate_services)
+    * [Creating inbound rules in the console](/docs/openshift?topic=openshift-vpc-security-group#security-group-inbound-rules)
 
-    * [Isolate app services within a namespace](/docs/openshift?topic=openshift-network_policies#services_one_ns)
+    * [Creating security group rules with the CLI](/docs/openshift?topic=openshift-vpc-security-group#security_groups_cli)
 
-    * [Isolate app services between namespaces](/docs/openshift?topic=openshift-network_policies#services_across_ns)
+    * [Creating inbound rules by using the command line](/docs/openshift?topic=openshift-vpc-security-group#security-group-inbound-cli)
 
-* [Logging denied traffic](/docs/openshift?topic=openshift-network_policies#log_denied)
+    * [Creating outbound rules by using the command line](/docs/openshift?topic=openshift-vpc-security-group#security-group-cli-outbound)
 
-[VPC: Controlling traffic with ACLs, security groups, and network policies](/docs/openshift?topic=openshift-vpc-network-policy#vpc-network-policy)
+* [Required inbound rules](/docs/openshift?topic=openshift-vpc-security-group#security-group-inbound-rules)
 
-* [Overview](/docs/openshift?topic=openshift-vpc-network-policy#overview)
+* [Required outbound rules](/docs/openshift?topic=openshift-vpc-security-group#security-group-outbound-rules)
 
-    * [Comparison of network security options](/docs/openshift?topic=openshift-vpc-network-policy#comparison)
+[Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-acls#vpc-acls)
 
-    * [Do I use ACLs or security groups?](/docs/openshift?topic=openshift-vpc-network-policy#acl-sg-compare)
+* [Creating ACLs from the console](/docs/openshift?topic=openshift-vpc-acls#acls_ui)
 
-* [Controlling traffic with the default security group](/docs/openshift?topic=openshift-vpc-network-policy#security_groups)
+    * [Creating ACLs with the CLI](/docs/openshift?topic=openshift-vpc-acls#acls_cli)
 
-    * [Creating security group rules from the console](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_ui)
+[Controlling traffic between pods with Kubernetes policies](/docs/openshift?topic=openshift-vpc-kube-policies#vpc-kube-policies)
 
-    * [Creating security group rules with the CLI](/docs/openshift?topic=openshift-vpc-network-policy#security_groups_cli)
+    * [Isolate app services within a namespace](/docs/openshift?topic=openshift-vpc-kube-policies#services_one_ns)
 
-* [Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-network-policy#acls)
-
-    * [Creating ACLs from the console](/docs/openshift?topic=openshift-vpc-network-policy#acls_ui)
-
-    * [Creating ACLs with the CLI](/docs/openshift?topic=openshift-vpc-network-policy#acls_cli)
-
-* [Controlling traffic between pods with Kubernetes policies](/docs/openshift?topic=openshift-vpc-network-policy#kubernetes_policies)
-
-    * [Isolate app services within a namespace](/docs/openshift?topic=openshift-vpc-network-policy#services_one_ns)
-
-    * [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-network-policy#services_across_ns)
+    * [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-kube-policies#services_across_ns)
 
 [VPC: Opening required ports and IP addresses in other network firewalls](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall)
 
@@ -4070,45 +4121,45 @@ subcollection: openshift
 
 * [Version 1.0.4](/docs/openshift?topic=openshift-ca_changelog#0104_ca_addon)
 
-    * [Changelog for patch update 1.0.4_403, released 20 January 2022](/docs/openshift?topic=openshift-ca_changelog#104403_ca)
+    * [Change log for patch update 1.0.4_403, released 20 January 2022](/docs/openshift?topic=openshift-ca_changelog#104403_ca)
 
-    * [Changelog for patch update 1.0.4_387, released 22 November 2021](/docs/openshift?topic=openshift-ca_changelog#104387_ca)
+    * [Change log for patch update 1.0.4_387, released 22 November 2021](/docs/openshift?topic=openshift-ca_changelog#104387_ca)
 
-    * [Changelog for patch update 1.0.4_374, released 7 October 2021](/docs/openshift?topic=openshift-ca_changelog#104374_ca)
+    * [Change log for patch update 1.0.4_374, released 7 October 2021](/docs/openshift?topic=openshift-ca_changelog#104374_ca)
 
 * [Version 1.0.3](/docs/openshift?topic=openshift-ca_changelog#0103_ca_addon)
 
-    * [Changelog for patch update 1.0.3_360, released 26 August 2021](/docs/openshift?topic=openshift-ca_changelog#103360_ca)
+    * [Change log for patch update 1.0.3_360, released 26 August 2021](/docs/openshift?topic=openshift-ca_changelog#103360_ca)
 
-    * [Changelog for patch update 1.0.3_352, released 23 June 2021](/docs/openshift?topic=openshift-ca_changelog#103352_ca)
+    * [Change log for patch update 1.0.3_352, released 23 June 2021](/docs/openshift?topic=openshift-ca_changelog#103352_ca)
 
 * [Version 1.0.2](/docs/openshift?topic=openshift-ca_changelog#0102_ca_addon)
 
-    * [Changelog for patch update 1.0.2_267, released 10 May 2021](/docs/openshift?topic=openshift-ca_changelog#102267_ca)
+    * [Change log for patch update 1.0.2_267, released 10 May 2021](/docs/openshift?topic=openshift-ca_changelog#102267_ca)
 
-    * [Changelog for patch update 1.0.2_256, released 19 April 2021](/docs/openshift?topic=openshift-ca_changelog#102256_ca)
+    * [Change log for patch update 1.0.2_256, released 19 April 2021](/docs/openshift?topic=openshift-ca_changelog#102256_ca)
 
-    * [Changelog for patch update 1.0.2_249, released 01 April 2021](/docs/openshift?topic=openshift-ca_changelog#102249_ca)
+    * [Change log for patch update 1.0.2_249, released 01 April 2021](/docs/openshift?topic=openshift-ca_changelog#102249_ca)
 
-    * [Changelog for patch update 1.0.2_224, released 09 March 2021](/docs/openshift?topic=openshift-ca_changelog#10224_ca)
+    * [Change log for patch update 1.0.2_224, released 09 March 2021](/docs/openshift?topic=openshift-ca_changelog#10224_ca)
 
 * [Version 1.0.1](/docs/openshift?topic=openshift-ca_changelog#0101_ca_addon)
 
-    * [Changelog for patch update 1.0.1_219, released 16 February 2021](/docs/openshift?topic=openshift-ca_changelog#101219_ca)
+    * [Change log for patch update 1.0.1_219, released 16 February 2021](/docs/openshift?topic=openshift-ca_changelog#101219_ca)
 
-    * [Changelog for patch update 1.0.1_210, released 13 January 2021](/docs/openshift?topic=openshift-ca_changelog#101210_ca)
+    * [Change log for patch update 1.0.1_210, released 13 January 2021](/docs/openshift?topic=openshift-ca_changelog#101210_ca)
 
-    * [Changelog for patch update 1.0.1_205, released 15 December 2020](/docs/openshift?topic=openshift-ca_changelog#101205_ca)
+    * [Change log for patch update 1.0.1_205, released 15 December 2020](/docs/openshift?topic=openshift-ca_changelog#101205_ca)
 
-    * [Changelog for patch update 1.0.1_195, released 10 December 2020](/docs/openshift?topic=openshift-ca_changelog#101195_ca)
+    * [Change log for patch update 1.0.1_195, released 10 December 2020](/docs/openshift?topic=openshift-ca_changelog#101195_ca)
 
-    * [Changelog for patch update 1.0.1_146, released 03 December 2020](/docs/openshift?topic=openshift-ca_changelog#101146_ca)
+    * [Change log for patch update 1.0.1_146, released 03 December 2020](/docs/openshift?topic=openshift-ca_changelog#101146_ca)
 
-    * [Changelog for patch update 1.0.1_128, released 27 October 2020](/docs/openshift?topic=openshift-ca_changelog#101128_ca)
+    * [Change log for patch update 1.0.1_128, released 27 October 2020](/docs/openshift?topic=openshift-ca_changelog#101128_ca)
 
-    * [Changelog for patch update 1.0.1_124, released 16 October 2020](/docs/openshift?topic=openshift-ca_changelog#101124_ca)
+    * [Change log for patch update 1.0.1_124, released 16 October 2020](/docs/openshift?topic=openshift-ca_changelog#101124_ca)
 
-    * [Changelog for patch update 1.0.1_114, released 10 September 2020](/docs/openshift?topic=openshift-ca_changelog#101114_ca)
+    * [Change log for patch update 1.0.1_114, released 10 September 2020](/docs/openshift?topic=openshift-ca_changelog#101114_ca)
 
 [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog#vpc_bs_changelog)
 
