@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-22"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc
 
@@ -107,7 +107,7 @@ After you install the OpenShift Data Foundation add-on for your {{site.data.keyw
 1. Verify that the app can write data.
     1. Log in to your pod.
         ```sh
-        oc exec <app-pod-name> -it bash
+        oc exec <app-pod-name> -it -- bash
         ```
         {: pre}
 

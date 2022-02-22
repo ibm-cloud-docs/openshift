@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-21"
+lastupdated: "2022-02-22"
 
 keywords: openshift
 
@@ -171,7 +171,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
 9. Log in to your pod.
 
     ```sh
-    kubectl exec <pod_name> -it bash
+    kubectl exec <pod_name> -it -- bash
     ```
     {: pre}
 
