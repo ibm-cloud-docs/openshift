@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-21"
+lastupdated: "2022-02-22"
 
 keywords: openshift
 
@@ -91,34 +91,34 @@ If you are unable to use the `oc debug node` command, you can create an Alpine p
     apiVersion: v1
     kind: Pod
     metadata:
-        name: debug-${NODE}
-    namespace: default
-      spec:
-        containers:
-        - args: ["-c", "apk add tcpdump mtr curl; sleep 1d"]
-          command: ["/bin/sh"]
-          image: docker.io/library/alpine:latest
-          imagePullPolicy: IfNotPresent
-          name: debug
-          resources: {}
-          securityContext:
-            privileged: true
-            runAsUser: 0
-          volumeMounts:
-          - mountPath: /host
-            name: host-volume
-        volumes:
-        - name: host-volume
-          hostPath:
-            path: /
-        dnsPolicy: ClusterFirst
-        hostNetwork: true
-        hostPID: true
-        nodeSelector:
-          kubernetes.io/hostname: ${NODE}
-        restartPolicy: Never
-        securityContext: {}
-      EOF
+      name: debug-${NODE}
+      namespace: default
+    spec:
+      containers:
+      - args: ["-c", "apk add tcpdump mtr curl; sleep 1d"]
+        command: ["/bin/sh"]
+        image: icr.io/armada-master/alpine:latest
+        imagePullPolicy: IfNotPresent
+        name: debug
+        resources: {}
+        securityContext:
+          privileged: true
+          runAsUser: 0
+        volumeMounts:
+        - mountPath: /host
+          name: host-volume
+      volumes:
+      - name: host-volume
+        hostPath:
+          path: /
+      dnsPolicy: ClusterFirst
+      hostNetwork: true
+      hostPID: true
+      nodeSelector:
+        kubernetes.io/hostname: ${NODE}
+      restartPolicy: Never
+      securityContext: {}
+    EOF
     ```
     {: pre}
 
