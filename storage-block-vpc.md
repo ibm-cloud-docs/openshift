@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-21"
+lastupdated: "2022-02-22"
 
 keywords: openshift
 
@@ -728,7 +728,6 @@ To create your own storage class:
     provisioner: vpc.block.csi.ibm.io
     parameters:
       profile: "<profile>"
-      sizeRange: "<size_range>"
       csi.storage.k8s.io/fstype: "<file_system_type>"
       billingType: "hourly"
       encrypted: "<encrypted_true_false>"
