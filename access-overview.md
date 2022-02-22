@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-21"
+lastupdated: "2022-02-22"
 
 keywords: openshift
 
@@ -137,7 +137,7 @@ Use {{site.data.keyword.cloud_notm}} IAM
 : You can use IAM to automatically create and manage RBAC in your cluster, by assigning [service access roles](#service-roles-ov) to users. Every user who is assigned a service access role is automatically assigned a corresponding RBAC cluster role. This RBAC cluster role is applied either in a specific namespace or in all namespaces, depending on whether you scope the policy to a namespace. Change that you make to the user in IAM, such as updating or removing the service access policy, are automatically synchronized to the RBAC in your cluster. The synchronization of service roles to RBAC might take a couple minutes, depending on the number of users and namespaces in your cluster.
 
 Manage your own RBAC
-: See [Assigning RBAC permissions](/docs/openshift?topic=openshift-access-overview#role-binding).
+:   See [Assigning RBAC permissions](/docs/openshift?topic=openshift-access-overview#role-binding).
 
 #### Overview of classic infrastructure
 {: #api_key}
@@ -214,9 +214,9 @@ Resource group
     
 :   - Consider giving clusters unique names across resource groups and regions in your account to avoid naming conflicts. You can't rename a cluster.
     - You can assign users an access role to a resource group to grant permissions as described in the following scenarios. Note that unlike resource instances, you can't grant access to an individual instance within a resource group.
-    - All {{site.data.keyword.cloud_notm}} IAM services in the resource group, including all clusters in {{site.data.keyword.openshiftlong_notm}} and images in {{site.data.keyword.registrylong_notm}}.</li>
+    - All {{site.data.keyword.cloud_notm}} IAM services in the resource group, including all clusters in {{site.data.keyword.openshiftlong_notm}} and images in {{site.data.keyword.registrylong_notm}}.
     - All instances within a service in the resource group, such as all the clusters in {{site.data.keyword.openshiftlong_notm}}.
-    - All instances within a region of a service in the resource group, such as all the clusters in the <strong>US South</strong> region of {{site.data.keyword.openshiftlong_notm}}.
+    - All instances within a region of a service in the resource group, such as all the clusters in the **US South** region of {{site.data.keyword.openshiftlong_notm}}.
 
 
 

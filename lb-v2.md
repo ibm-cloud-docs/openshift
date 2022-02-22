@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-21"
+lastupdated: "2022-02-22"
 
 keywords: openshift, lb2.0, nlb
 
@@ -294,7 +294,9 @@ To create an NLB 2.0 service in a single-zone cluster:
 
 
         `loadBalancerIP`
-        :   Optional: To create a private NLB or to use a specific portable IP address for a public NLB, specify the IP address that you want to use. The IP address must be on the VLAN that you specify in the annotations. If you don't specify an IP address:<ul><li>If your cluster is on a public VLAN, a portable public IP address is used. Most clusters are on a public VLAN.</li><li>If your cluster is on a private VLAN only, a portable private IP address is used.</li></ul>
+        :   Optional: To create a private NLB or to use a specific portable IP address for a public NLB, specify the IP address that you want to use. The IP address must be on the VLAN that you specify in the annotations. If you don't specify an IP address:
+            - If your cluster is on a public VLAN, a portable public IP address is used. Most clusters are on a public VLAN.
+            - If your cluster is on a private VLAN only, a portable private IP address is used.
 
 
         `externalTrafficPolicy: Local`

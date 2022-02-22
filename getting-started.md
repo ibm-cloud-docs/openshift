@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-22"
 
 keywords: red hat openshift, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters
 
@@ -26,9 +26,6 @@ First, create a classic {{site.data.keyword.openshiftlong}} cluster or a cluster
 
 To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {{site.data.keyword.containerlong}} account](/docs/account?topic=account-upgrading-account) where you are the owner or have [full Administrator access](/docs/account?topic=account-assign-access-resources).
 {: note}
-
-
-
 
 
 ## Creating a classic {{site.data.keyword.openshiftshort}} cluster

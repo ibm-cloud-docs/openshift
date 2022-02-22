@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-21"
+lastupdated: "2022-02-22"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -192,6 +192,7 @@ Before you begin, make sure that you have the following roles in {{site.data.key
 3. From the **Services** table, find the **Kubernetes Service** row and click **View plans**.
 4. From the plans table, find the row for your reservation name and click **View details**.
 5. Review the details for the reserved worker nodes that are associated with the contracts of your reservation.
+
 
 
 

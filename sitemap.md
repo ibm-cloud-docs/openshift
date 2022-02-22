@@ -184,6 +184,8 @@ subcollection: openshift
 
 * [February 2022](/docs/openshift?topic=openshift-iks-release#release-feb-2022)
 
+    * [23 February 2022](/docs/openshift?topic=openshift-iks-release#23feb2022)
+
     * [18 February 2022](/docs/openshift?topic=openshift-iks-release#18feb2022)
 
     * [17 February 2022](/docs/openshift?topic=openshift-iks-release#17feb2022)
@@ -2404,7 +2406,7 @@ subcollection: openshift
 
     * [Unsupported scheduling algorithms](/docs/openshift?topic=openshift-loadbalancer-v2#scheduling_unsupported)
 
-[Classic: Registering a DNS subdomain for an NLB](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname)
+[Registering a DNS subdomain for an NLB](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname)
 
 * [Registering NLB IPs with a DNS subdomain](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_dns)
 
@@ -2572,13 +2574,13 @@ subcollection: openshift
 
 * [Using existing {{site.data.keyword.filestorage_short}} in your cluster](/docs/openshift?topic=openshift-file_storage#existing_file)
 
-    * [Step 1: Preparing your existing storage.](/docs/openshift?topic=openshift-file_storage#existing-file-1)
+    * [Step 1: Preparing your existing storage](/docs/openshift?topic=openshift-file_storage#existing-file-1)
 
     * [Step 2: Creating a persistent volume (PV) and a matching persistent volume claim (PVC)](/docs/openshift?topic=openshift-file_storage#existing-file-2)
 
 * [Using {{site.data.keyword.filestorage_short}} in a stateful set](/docs/openshift?topic=openshift-file_storage#file_statefulset)
 
-    * [Dynamic provisioning: Creating the PVC when you create a stateful set](/docs/openshift?topic=openshift-file_storage#file_dynamic_statefulset)
+    * [Creating the PVC when you create a stateful set by using dynamic provisioning](/docs/openshift?topic=openshift-file_storage#file_dynamic_statefulset)
 
     * [Static provisioning: Using an existing PVC with your stateful set](/docs/openshift?topic=openshift-file_storage#file_static_statefulset)
 

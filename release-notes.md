@@ -29,6 +29,18 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+
+### 23 February 2022
+{: #23feb2022}
+{: release-note}
+
+Cluster autoscaler
+:   Version [1.0.4_410](/docs/containers?topic=containers-ca_changelog) is available.
+
+
+
+
+
 ### 18 February 2022
 {: #18feb2022}
 {: release-note}

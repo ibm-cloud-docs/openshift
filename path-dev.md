@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-21"
+lastupdated: "2022-02-22"
 
 keywords: openshift, red hat, red hat openshift, dev
 
@@ -21,7 +21,6 @@ subcollection: openshift
 
 Following a curated learning path to deploy highly available containerized apps in {{site.data.keyword.openshiftshort}} clusters and use the powerful tools of {{site.data.keyword.openshiftlong_notm}} to automate, isolate, secure, manage, and monitor your app workloads across zones or regions.
 {: shortdesc}
-
 
 
 ## Access the cluster
