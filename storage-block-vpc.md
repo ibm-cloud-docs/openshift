@@ -709,7 +709,6 @@ You might create a custom storage class if you want to:
 * Set a custom IOPs value.
 * Set up {{site.data.keyword.block_storage_is_short}} with a file system type other than `ext4`.
 * Set up encryption.
-* Set a custom size range.
 
 To create your own storage class:
 
