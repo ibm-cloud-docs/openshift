@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-22"
 
 keywords: openshift
 
@@ -28,7 +28,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 
 | Area | Description |
 | ---- | ------------ |
-| Use cases | <ul><li>Run existing apps in traditional environments such as {{site.data.keyword.appserver_short}}.</li><li>Modernize existing apps to newer runtimes at your own pace.</li><li>Build new, cloud-native apps by using portable, open source software.</li></ul>  |
+| Use cases | - Run existing apps in traditional environments such as {{site.data.keyword.appserver_short}}.  \n - Modernize existing apps to newer runtimes at your own pace.  \n - Build new, cloud-native apps by using portable, open source software.  |
 | [Catalog entry](https://cloud.ibm.com/catalog?search=label%3Acloud_pak){: external} | For included components, required cluster size, and installation. |
 | [Documentation](https://www.ibm.com/docs/en/cloud-paks/cp-applications){: external} | For more information such as postinstallation tasks and pricing. |
 {: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
@@ -40,7 +40,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 
 | Area | Description |
 | ---- | ------------ |
-| Use cases | <ul><li>Set up an end-to-end platform to collect, organize, and analyze your data.</li><li>Create interactive data visualizations and analyze information for insights across data sets, without needing to code.</li><li>Operationalize your data with AI and a suite of governance tools to make sure that your data is curated, useful, trusted, and ready for analysis.</li></ul> |
+| Use cases | - Set up an end-to-end platform to collect, organize, and analyze your data.  \n - Create interactive data visualizations and analyze information for insights across data sets, without needing to code.  \n - Operationalize your data with AI and a suite of governance tools to make sure that your data is curated, useful, trusted, and ready for analysis. |
 | [Catalog entry](https://cloud.ibm.com/catalog?search=label%3Acloud_pak){: external} | For included components, required cluster size, and installation. |
 | [Documentation](https://www.ibm.com/docs/en/cloud-paks/cp-data){: external} | For more information such as postinstallation tasks and pricing. | |
 {: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
@@ -52,7 +52,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 
 | Area | Description |
 | ---- | ------------ |
-| Use cases | <ul><li>Integrate workflows, APIs, logging, and events across multiple cloud environments, all from a unified platform.</li><li>Rapidly and securely transfer data across hybrid cloud environments.</li><li>Set up a multichannel gateway to expand and control access to the full range of your mobile, web app, API, SOA, B2B, and other cloud workloads.</li></ul>  |
+| Use cases | - Integrate workflows, APIs, logging, and events across multiple cloud environments, all from a unified platform.  \n - Rapidly and securely transfer data across hybrid cloud environments.  \n - Set up a multichannel gateway to expand and control access to the full range of your mobile, web app, API, SOA, B2B, and other cloud workloads.  |
 | [Catalog entry](https://cloud.ibm.com/catalog/content/ibm-cp-integration#about){: external} | For included components, required cluster size, and installation. |
 | [Documentation](https://www.ibm.com/docs/en/cloud-paks/cp-integration){: external} | For more information such as postinstallation tasks and pricing. |
 {: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
@@ -64,7 +64,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 
 | Area | Description |
 | ---- | ------------ |
-| Use cases | <ul><li>Synchronize teamwork and playbooks to enhance security incident response.</li><li>Increase threat hunting speed with a smart query builder, intelligent threat prioritization, and federated search.</li><li>Real-time data security controls and audit visibility across hybrid cloud environments.</li></ul>  |
+| Use cases | - Synchronize teamwork and playbooks to enhance security incident response.  \n - Increase threat hunting speed with a smart query builder, intelligent threat prioritization, and federated search.  \n - Real-time data security controls and audit visibility across hybrid cloud environments.  |
 | [Catalog entry](https://cloud.ibm.com/catalog?search=label%3Acloud_pak#software){: external} | For included components, required cluster size, and installation. |
 | [Documentation](https://www.ibm.com/docs/en/cloud-paks/cp-security){: external} | For more information such as postinstallation tasks and pricing. |
 {: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
@@ -76,7 +76,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 
 | Area | Description |
 | ---- | ------------ |
-| Use cases | <ul><li>Consistently and securely manage your apps that are deployed in Kubernetes and {{site.data.keyword.openshiftshort}} clusters across multiple cloud providers.</li><li>Consolidate event monitoring information across clusters in off-prem and on-prem clouds.</li><li>Optimize workflows with automatic provisioning of virtual machines and other infrastructure resources across clouds providers.</li></ul> |
+| Use cases | - Consistently and securely manage your apps that are deployed in Kubernetes and {{site.data.keyword.openshiftshort}} clusters across multiple cloud providers.  \n - Consolidate event monitoring information across clusters in off-prem and on-prem clouds.  \n - Optimize workflows with automatic provisioning of virtual machines and other infrastructure resources across clouds providers. |
 | [Catalog entry](https://cloud.ibm.com/catalog?search=label%3Acloud_pak){: external} | For included components, required cluster size, and installation. |
 | [Documentation](https://www.ibm.com/docs/en/cloud-paks/cp-management){: external} | For more information such as postinstallation tasks and pricing. |
 {: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}

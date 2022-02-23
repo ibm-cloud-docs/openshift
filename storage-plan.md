@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-21"
+lastupdated: "2022-02-23"
 
 keywords: openshift
 
@@ -94,7 +94,6 @@ The following image shows available non-persistent data storage options in {{sit
 | --- | --- | --- |
 | Multizone capable | No | No | 
 | Supported in VPC clusters | Yes | No |
-| Supported OpenShift versions | 3.11, 4.3 - 4.6 | 3.11, 4.3 - 4.6 |
 | Data types | All | All |
 | Capacity| Limited to the worker node's available secondary disk. To limit the amount of secondary storage that is consumed by your pod, use resource requests and limits for [ephemeral storage](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#local-ephemeral-storage){: external}. | Limited to the worker node's available space on the primary (`hostPath`) or secondary disk (`emptyDir`). To limit the amount of secondary storage that is consumed by your pod, use resource requests and limits for [ephemeral storage](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#local-ephemeral-storage){: external}. | 
 | Data access pattern | Read and write operations of any frequency| Read and write operations of any frequency |

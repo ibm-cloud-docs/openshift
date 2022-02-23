@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-23"
 
 keywords: openshift, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
 
@@ -420,42 +420,6 @@ To remove that data that IBM stores, choose between the following options. Note 
 Yes. To improve the OpenShift Container Platform service, a telemetry component is installed in your cluster by default that collects anonymized health reports about your cluster. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.8/support/remote_health_monitoring/about-remote-health-monitoring.html){: external}.
 
 To remove the telemetry component, see [Disabling remote health reporting](/docs/openshift?topic=openshift-health-monitor#oc_disable_telemetry_reports).
-
-## Dependencies to other {{site.data.keyword.cloud_notm}} services
-{: #dependencies-ibmcloud}
-
-Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.openshiftlong_notm}} connects to over the public network. 
-{: shortdesc}
-
-
-| Service name | Description| 
-| -----------|-------------------------------| 
-| {{site.data.keyword.cloudaccesstraillong_notm}} | {{site.data.keyword.openshiftlong_notm}} integrates with {{site.data.keyword.at_full_notm}} to forward cluster audit events to the {{site.data.keyword.at_full_notm}} service instance that is set up and owned by the {{site.data.keyword.openshiftlong_notm}} user. For more information, see [{{site.data.keyword.cloudaccesstraillong_notm}} events](/docs/containers?topic=containers-at_events).|
-|{{site.data.keyword.cloudcerts_full_notm}}|This service is used to retrieve the TLS certificates for custom Ingress domains in {{site.data.keyword.openshiftlong_notm}} clusters.|
-|{{site.data.keyword.registrylong_notm}}|This service is used to store the container images that {{site.data.keyword.openshiftlong_notm}} uses to run the service.|
-| {{site.data.keyword.mon_full_notm}} | {{site.data.keyword.openshiftlong_notm}} sends service metrics to {{site.data.keyword.mon_full_notm}}. These metrics are monitored by the service team to identify capacity and performance issues of the service. You can also use {{site.data.keyword.mon_full_notm}} to gain operational visibility into the performance and health of your apps. For more information, see [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor).|
-|{{site.data.keyword.cloud_notm}} Platform | To authenticate requests to the service and authorize user actions, {{site.data.keyword.openshiftlong_notm}} implements platform and service access roles in Identity and Access Management (IAM). For more information about required IAM permissions to work with the service, see [Assigning cluster access](/docs/containers?topic=containers-users#checking-perms). |
-| {{site.data.keyword.keymanagementservicelong_notm}} | To protect your cluster resources and data, {{site.data.keyword.openshiftlong_notm}}. uses {{site.data.keyword.keymanagementservicelong_notm}} root keys to encrypt data in etcd, secrets, and on the worker node drive. For additional encryption, you can enable {{site.data.keyword.keymanagementserviceshort}} as a key management system provider in your cluster. For more information about how data is encrypted, see [Overview of cluster encryption](/docs/containers?topic=containers-encryption#encrypt_ov). | 
-| {{site.data.keyword.la_full_notm}} | {{site.data.keyword.openshiftlong_notm}} sends service logs to {{site.data.keyword.la_full_notm}}. These logs are monitored and analyzed by the service team to detect service issues and malicious activities. You can also use {{site.data.keyword.la_full_notm}} to manage your own pod container logs. To use {{site.data.keyword.la_full_notm}}, you must deploy a logging agent to every worker node in your cluster. This agent collects pod logs from all namespaces, including `kube-system`, and forwards the logs to {{site.data.keyword.la_full_notm}}. To get started, see [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging).  |
-|{{site.data.keyword.cos_short}} (COS)|This service is used to store customer logs for all cluster master operations, such as `deploy`, `patch`, `update`, or `delete`, and to back up cluster metrics. Access to this service instance is protected by IAM policies and available to the {{site.data.keyword.openshiftlong_notm}} service team only to detect malicious activity. All data is encrypted in transit and at rest.|
-| Virtual Private Cloud (VPC) | {{site.data.keyword.containerlong_notm}} uses the VPC API to provision, manage, and show information about VPC infrastructure resources of the cluster, such as worker nodes, subnets, or storage instances. |
-{: caption="{{site.data.keyword.openshiftlong_notm}} dependencies to {{site.data.keyword.cloud_notm}} services." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the service. The second column is a description of the service."}
-
-
-
-## Dependencies to 3rd party services
-{: #dependencies-3rd-party}
-
-Review the list of 3rd party services that {{site.data.keyword.openshiftlong_notm}} connects to over the public network. 
-{: shortdesc}
-
-| Service name | Description| 
-| -----------|-------------------------------| 
-| Akamai, Cloudflare | Akamai and Cloudflare are used as the primary providers for DNS, global load balancing, and web firewall capabilities in {{site.data.keyword.openshiftlong_notm}}. With global load balancing, these providers decrypt requests to the product API server, read the header packet of the request, and reencrypt the request before forwarding to the product API server. The header packet can include information such as the requested API method, time, or region. Note that this process applies only to requests to the product API server, and not to other requests, such as to apps in your cluster over the Ingress subdomain or custom domains. |
-| Let's Encrypt | This service is used as the Certificate authority to generate SSL certificates for customer owned public endpoints. All generated certificates are managed in {{site.data.keyword.cloudcerts_short}}.|
-{: caption="{{site.data.keyword.openshiftlong_notm}} dependencies to third-party services." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the service. The second column is a description of the service."}
 
 
 

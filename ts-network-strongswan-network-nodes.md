@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-22"
 
 keywords: openshift
 
@@ -62,57 +62,28 @@ Update the Helm chart values to reflect the worker node changes.
 3. Check the following settings and change the settings to reflect the deleted or added worker nodes as necessary.
 
     **If you added a worker node:**
-
-    <table summary="The columns are read from left to right. The first column has the worker node setting. The second column describes the setting.">
-    <caption>Worker node settings</caption>
-        <col width="25%">
-        <thead>
-        <th>Setting</th>
-        <th>Description</th>
-        </thead>
-        <tbody>
-        <tr>
-        <td><code>localSubnetNAT</code></td>
-        <td>The added worker might be deployed on a new, different private subnet than the other existing subnets that other worker nodes are on. If you use subnet NAT to remap your cluster's private local IP addresses and the worker was added on a new subnet, add the new subnet CIDR to this setting.</td>
-        </tr>
-        <tr>
-        <td><code>nodeSelector</code></td>
-        <td>If you previously limited VPN pod deployment to workers with a specific label, ensure the added worker node also has that label.</td>
-        </tr>
-        <tr>
-        <td><code>tolerations</code></td>
-        <td>If the added worker node is tainted, then change this setting to allow the VPN pod to run on all tainted workers with any taints or specific taints.</td>
-        </tr>
-        <tr>
-        <td><code>local.subnet</code></td>
-        <td>The added worker might be deployed on a new, different private subnet than the existing subnets that other workers are on. If your apps are exposed by NodePort or LoadBalancer services on the private network and the apps are on the added worker, add the new subnet CIDR to this setting. <strong>Note</strong>: If you add values to <code>local.subnet</code>, check the VPN settings for the on-premises subnet to see whether they also must be updated.</td>
-        </tr>
-        </tbody></table>
+    `localSubnetNAT`
+    :   The added worker might be deployed on a new, different private subnet than the other existing subnets that other worker nodes are on. If you use subnet NAT to remap your cluster's private local IP addresses and the worker was added on a new subnet, add the new subnet CIDR to this setting.
+    
+    `nodeSelector`
+    :   If you previously limited VPN pod deployment to workers with a specific label, ensure the added worker node also has that label.
+    
+    `tolerations`
+    :   If the added worker node is tainted, then change this setting to allow the VPN pod to run on all tainted workers with any taints or specific taints.
+    
+    `local.subnet`
+    :   The added worker might be deployed on a new, different private subnet than the existing subnets that other workers are on. If your apps are exposed by NodePort or LoadBalancer services on the private network and the apps are on the added worker, add the new subnet CIDR to this setting. If you add values to `local.subnet`, check the VPN settings for the on-premises subnet to see whether they also must be updated.
 
     **If you deleted a worker node:**
 
-    <table summary="The columns are read from left to right. The first column has the worker node setting. The second column describes the setting.">
-    <caption>Worker node settings</caption>
-        <col width="25%">
-        <thead>
-        <th>Setting</th>
-        <th>Description</th>
-        </thead>
-        <tbody>
-        <tr>
-        <td><code>localSubnetNAT</code></td>
-        <td>If you use subnet NAT to remap specific private local IP addresses, remove any IP addresses from this setting that are from the old worker. If you use subnet NAT to remap entire subnets and no workers remain on a subnet, remove that subnet CIDR from this setting.</td>
-        </tr>
-        <tr>
-        <td><code>nodeSelector</code></td>
-        <td>If you previously limited VPN pod deployment to a single worker and that worker was deleted, change this setting to allow the VPN pod to run on other workers.</td>
-        </tr>
-        <tr>
-        <td><code>tolerations</code></td>
-        <td>If the worker that you deleted was not tainted, but the only workers that remain are tainted, change this setting to allow the VPN pod to run on workers with any taints or specific taints.
-        </td>
-        </tr>
-        </tbody></table>
+    `localSubnetNAT`
+    :   If you use subnet NAT to remap specific private local IP addresses, remove any IP addresses from this setting that are from the old worker. If you use subnet NAT to remap entire subnets and no workers remain on a subnet, remove that subnet CIDR from this setting.
+    `nodeSelector`
+    :   If you previously limited VPN pod deployment to a single worker and that worker was deleted, change this setting to allow the VPN pod to run on other workers.
+    
+    `tolerations`
+    :   If the worker that you deleted was not tainted, but the only workers that remain are tainted, change this setting to allow the VPN pod to run on workers with any taints or specific taints.
+
 
 4. Install the new Helm chart with your updated values.
     ```sh

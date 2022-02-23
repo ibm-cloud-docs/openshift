@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-21"
+lastupdated: "2022-02-22"
 
 keywords: openshift
 
@@ -174,33 +174,33 @@ Choose the size and IOPS for your {{site.data.keyword.filestorage_short}}. The s
 Bronze, silver, and gold storage classes
 :    These storage classes come with a fixed number of IOPS per gigabyte and are provisioned on SSD hard disks. The total number of IOPS depends on the size of the storage that you choose. You can select any whole number of gigabyte within the allowed size range, such as 20 Gi, 256 Gi, or 11854 Gi. To determine the total number of IOPS, you must multiply the IOPS with the selected size. For example, if you select a 1000Gi {{site.data.keyword.filestorage_short}} size in the silver storage class that comes with 4 IOPS per GB, your storage has a total of 4000 IOPS.
             
-     | Storage class |IOPS per gigabyte | Size range in gigabytes |
-     | --- | --- | --- |
-     | Bronze | 2 IOPS/GB | 20-12000 Gi |
-     | Silver | 4 IOPS/GB | 20-12000 Gi |
-     | Gold | 10 IOPS/GB | 20-4000 Gi |
-     {: caption="Table of storage class size ranges and IOPS per gigabyte"}
-     {: summary="The columns are read from left to right. The first column has the storage class. The second column has the IOPS per gigabyte for the storage class. The third column has the size range in gigabytes for the storage class."}
+| Storage class |IOPS per gigabyte | Size range in gigabytes |
+| --- | --- | --- |
+| Bronze | 2 IOPS/GB | 20-12000 Gi |
+| Silver | 4 IOPS/GB | 20-12000 Gi |
+| Gold | 10 IOPS/GB | 20-4000 Gi |
+{: caption="Table of storage class size ranges and IOPS per gigabyte"}
+{: summary="The columns are read from left to right. The first column has the storage class. The second column has the IOPS per gigabyte for the storage class. The third column has the size range in gigabytes for the storage class."}
 
 Custom storage class
 :    When you choose this storage class, you have more control over the size and IOPS that you want. For the size, you can select any whole number of gigabyte within the allowed size range. The size that you choose determines the IOPS range that is available to you. You can choose an IOPS that is a multiple of 100 that is in the specified range. The IOPS that you choose is static and does not scale with the size of the storage. For example, if you choose 40Gi with 100 IOPS, your total IOPS remains 100.
 :    The IOPS to gigabyte ratio also determines the type of hard disk that is provisioned for you. For example, if you have 500Gi at 100 IOPS, your IOPS to gigabyte ratio is 0.2. Storage with a ratio of less than or equal to 0.3 is provisioned on SATA hard disks. If your ratio is greater than 0.3, then your storage is provisioned on SSD hard disks.  
             
-     | Size range in gigabytes | IOPS range in multiples of 100 |
-     | --- | --- |
-     | 20-39 Gi | 100-1000 IOPS |
-     | 40-79 Gi | 100-2000 IOPS |
-     | 80-99 Gi | 100-4000 IOPS |
-     | 100-499 Gi | 100-6000 IOPS |
-     | 500-999 Gi | 100-10000 IOPS |
-     | 1000-1999 Gi |100-20000 IOPS |
-     | 2000-2999 Gi | 200-40000 IOPS |
-     | 3000-3999 Gi | 200-48000 IOPS |
-     | 4000-7999 Gi |300-48000 IOPS |
-     | 8000-9999 Gi | 500-48000 IOPS |
-     | 10000-12000 Gi | 1000-48000 IOPS |
-     {: caption="Table of custom storage class size ranges and IOPS"}
-     {: summary="The columns are read from left to right. The first column has the size range in gigabytes for the custom storage class. The second column has the IOPS range in multiples of 100 that are supported for the size range for the custom storage class."}
+| Size range in gigabytes | IOPS range in multiples of 100 |
+| --- | --- |
+| 20-39 Gi | 100-1000 IOPS |
+| 40-79 Gi | 100-2000 IOPS |
+| 80-99 Gi | 100-4000 IOPS |
+| 100-499 Gi | 100-6000 IOPS |
+| 500-999 Gi | 100-10000 IOPS |
+| 1000-1999 Gi |100-20000 IOPS |
+| 2000-2999 Gi | 200-40000 IOPS |
+| 3000-3999 Gi | 200-48000 IOPS |
+| 4000-7999 Gi |300-48000 IOPS |
+| 8000-9999 Gi | 500-48000 IOPS |
+| 10000-12000 Gi | 1000-48000 IOPS |
+{: caption="Table of custom storage class size ranges and IOPS"}
+{: summary="The columns are read from left to right. The first column has the size range in gigabytes for the custom storage class. The second column has the IOPS range in multiples of 100 that are supported for the size range for the custom storage class."}
 
 
 ### Reclaim policy
@@ -458,7 +458,7 @@ Make sure that you have at least one worker node that exists in the same zone as
 
 [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-### Step 1: Preparing your existing storage.
+### Step 1: Preparing your existing storage
 {: #existing-file-1}
 
 Before you can start to mount your existing storage to an app, you must retrieve all necessary information for your PV and prepare the storage to be accessible in your cluster.  
@@ -659,7 +659,7 @@ Yes, you can [create a custom storage class](#file-topology) for your PVC that i
 
 If you want to automatically create your PVC when you create the stateful set, use [dynamic provisioning](#file_dynamic_statefulset). You can also choose to [pre-provision your PVCs or use existing PVCs](#file_static_statefulset) with your stateful set.  
 
-### Dynamic provisioning: Creating the PVC when you create a stateful set
+### Creating the PVC when you create a stateful set by using dynamic provisioning
 {: #file_dynamic_statefulset}
 
 Use this option if you want to automatically create the PVC when you create the stateful set.
@@ -708,7 +708,6 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     billingType=hourly
     region=us-south
     zone=dal10
-    ...
     ```
     {: screen}
 
@@ -951,7 +950,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     Looking to create a PVC and PV for an existing {{site.data.keyword.filestorage_short}} instance? Create your PVC and PV by using [static provisioning](#existing_file).
     {: tip}
 
-2. Follow the steps in [Dynamic provisioning: Creating the PVC when you create a stateful set](#file_dynamic_statefulset) to create your stateful set. The name of your PVC follows the format `<volume_name>-<statefulset_name>-<replica_number>`. Make sure to use the following values from your PVC name in the stateful set specification.
+1. Follow the steps in [Dynamic provisioning: Creating the PVC when you create a stateful set](#file_dynamic_statefulset) to create your stateful set. The name of your PVC follows the format `<volume_name>-<statefulset_name>-<replica_number>`. Make sure to use the following values from your PVC name in the stateful set specification.
 
     `spec.volumeClaimTemplates.metadata.name`
     :   Enter the `<volume_name>` of your PVC name.
@@ -965,14 +964,14 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     If your PVCs are in different zones, don't include a region or zone label in your stateful set.
     {: note}
 
-3. Verify that the PVCs are used in your stateful set replica pods by listing the pods in your cluster and identifying the pods that belong to your stateful set.
+1. Verify that the PVCs are used in your stateful set replica pods by listing the pods in your cluster and identifying the pods that belong to your stateful set.
 
     ```sh
     oc get pods
     ```
     {: pre}
 
-2. Verify that your existing PVC is mounted to your stateful set replica. Review the **`ClaimName`** in the **`Volumes`** section of your CLI output.
+1. Verify that your existing PVC is mounted to your stateful set replica. Review the **`ClaimName`** in the **`Volumes`** section of your CLI output.
 
     ```sh
     oc describe pod <pod_name>
@@ -1322,7 +1321,7 @@ A duplicate has the same data as the original storage instance at the point in t
 ### Backing up data to {{site.data.keyword.cos_full}}
 {: #file-backup-helm}
 
-You can use the [<code>ibm-backup-restore</code> Helm chart](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore) to spin up a backup and restore pod in your cluster.
+You can use the [`ibm-backup-restore` Helm chart](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore) to spin up a backup and restore pod in your cluster.
 {: shortdesc}
 
 This pod contains a script to run a one-time or periodic backup for any persistent volume claim (PVC) in your cluster. Data is stored in your {{site.data.keyword.cos_full}} instance that you set up in a zone.
@@ -1371,73 +1370,73 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 
 | Characteristics | Setting|
 |:-----------------|:-----------------|
-| Name | <code>ibmc-file-bronze</code></br><code>ibmc-file-retain-bronze</code></br><code>ibmc-file-bronze-gid</code> |
+| Name | `ibmc-file-bronze`  \n `ibmc-file-retain-bronze`  \n `ibmc-file-bronze-gid` |
 | Type | Endurance storage|
 | File system | NFS|
 | IOPS per gigabyte | 2|
 | Size range in gigabytes | 20-12000 Gi|
 | Hard disk | SSD|
-| Reclaim policy | <code>ibmc-file-bronze</code>: Delete</br><code>ibmc-file-retain-bronze</code>: Retain </br><code>ibmc-file-bronze-gid:</code> Delete|
-| Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the <code>ibmc-file-bronze-gid</code> storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/containers?topic=containers-cs_storage_nonroot).  |
+| Reclaim policy | `ibmc-file-bronze`: Delete  \n `ibmc-file-retain-bronze`: Retain   \n `ibmc-file-bronze-gid:` Delete|
+| Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the `ibmc-file-bronze-gid` storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/containers?topic=containers-cs_storage_nonroot).  |
 | Billing | Hourly|
 | Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}
-{: caption="{{site.data.keyword.filestorage_short}} class: bronze" caption-side="top"}
+{: caption="Bronze" caption-side="top"}
 {: #simpletabtable1}
 {: tab-title="Bronze"}
-{: tab-group="{{site.data.keyword.filestorage_short}} class"}
+{: tab-group="Class"}
 
 | Characteristics | Setting|
 |:-----------------|:-----------------|
-| Name | <code>ibmc-file-silver</code></br><code>ibmc-file-retain-silver</code></br><code>ibmc-file-silver-gid</code> |
+| Name | `ibmc-file-silver`  \n `ibmc-file-retain-silver`  \n `ibmc-file-silver-gid` |
 | Type | Endurance storage|
 | File system | NFS|
 | IOPS per gigabyte | 4|
 | Size range in gigabytes | 20-12000 Gi|
 | Hard disk | SSD|
-| Reclaim policy | <code>ibmc-file-silver</code>: Delete</br><code>ibmc-file-retain-silver</code>: Retain </br><code>ibmc-file-silver-gid:</code> Delete |
-| Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the <code>ibmc-file-bronze-gid</code> storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/containers?topic=containers-cs_storage_nonroot).  |
+| Reclaim policy | `ibmc-file-silver`: Delete  \n `ibmc-file-retain-silver`: Retain   \n `ibmc-file-silver-gid:` Delete |
+| Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the `ibmc-file-bronze-gid` storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/containers?topic=containers-cs_storage_nonroot).  |
 | Billing | Hourly|
 | Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}
-{: caption="{{site.data.keyword.filestorage_short}} class: silver" caption-side="top"}
+{: caption="Silver" caption-side="top"}
 {: #simpletabtable2}
 {: tab-title="Silver"}
-{: tab-group="{{site.data.keyword.filestorage_short}} class"}
+{: tab-group="Class"}
 
 | Characteristics | Setting|
 |:-----------------|:-----------------|
-| Name | <code>ibmc-file-gold</code></br><code>ibmc-file-retain-gold</code></br><code>ibmc-file-gold-gid</code>  |
+| Name | `ibmc-file-gold`  \n `ibmc-file-retain-gold`  \n `ibmc-file-gold-gid`  |
 | Type | Endurance storage|
 | File system | NFS|
 | IOPS per gigabyte | 10|
 | Size range in gigabytes | 20-4000 Gi|
 | Hard disk | SSD|
-| Reclaim policy | <code>ibmc-file-gold</code>: Delete</br><code>ibmc-file-retain-gold</code>: Retain </br><code>ibmc-file-gold-gid:</code> Delete |
-| Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the <code>ibmc-file-bronze-gid</code> storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/containers?topic=containers-cs_storage_nonroot).  |
+| Reclaim policy | `ibmc-file-gold`: Delete  \n `ibmc-file-retain-gold`: Retain   \n `ibmc-file-gold-gid:` Delete |
+| Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the `ibmc-file-bronze-gid` storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/containers?topic=containers-cs_storage_nonroot).  |
 | Billing | Hourly|
 | Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}
-{: caption="{{site.data.keyword.filestorage_short}} class: gold" caption-side="top"}
+{: caption="Gold" caption-side="top"}
 {: #simpletabtable3}
 {: tab-title="Gold"}
-{: tab-group="{{site.data.keyword.filestorage_short}} class"}
+{: tab-group="Class"}
 
 | Characteristics | Setting|
 |:-----------------|:-----------------|
-| Name | <code>ibmc-file-custom</code></br><code>ibmc-file-retain-custom</code> |
+| Name | `ibmc-file-custom`  \n `ibmc-file-retain-custom` |
 | Type | Performance|
 | File system | NFS|
-| IOPS and size | <p><strong>Size range in gigabytes / IOPS range in multiples of 100</strong></p><ul><li>20-39 Gi / 100-1000 IOPS</li><li>40-79 Gi / 100-2000 IOPS</li><li>80-99 Gi / 100-4000 IOPS</li><li>100-499 Gi / 100-6000 IOPS</li><li>500-999 Gi / 100-10000 IOPS</li><li>1000-1999 Gi / 100-20000 IOPS</li><li>2000-2999 Gi / 200-40000 IOPS</li><li>3000-3999 Gi / 200-48000 IOPS</li><li>4000-7999 Gi / 300-48000 IOPS</li><li>8000-9999 Gi / 500-48000 IOPS</li><li>10000-12000 Gi / 1000-48000 IOPS</li></ul>|
-| Hard disk | The IOPS to gigabyte ratio determines the type of hard disk that is provisioned. To determine your IOPS to gigabyte ratio, you divide the IOPS by the size of your storage. </br></br>Example: </br>You chose 500Gi of storage with 100 IOPS. Your ratio is 0.2 (100 IOPS/500Gi). </br></br><strong>Overview of hard disk types per ratio:</strong><ul><li>Less than or equal to 0.3: SATA</li><li>Greater than 0.3: SSD</li></ul>|
-| Reclaim policy | <code>ibmc-file-custom</code>: Delete</br><code>ibmc-file-retain-custom</code>: Retain |
+| IOPS and size | - 20-39 Gi / 100-1000 IOPS  \n - 40-79 Gi / 100-2000 IOPS  \n - 80-99 Gi / 100-4000 IOPS  \n - 100-499 Gi / 100-6000 IOPS  \n - 500-999 Gi / 100-10000 IOPS  \n - 1000-1999 Gi / 100-20000 IOPS  \n - 2000-2999 Gi / 200-40000 IOPS  \n - 3000-3999 Gi / 200-48000 IOPS  \n - 4000-7999 Gi / 300-48000 IOPS  \n - 8000-9999 Gi / 500-48000 IOPS  \n - 10000-12000 Gi / 1000-48000 IOPS|
+| Hard disk | The IOPS to gigabyte ratio determines the type of hard disk that is provisioned. To determine your IOPS to gigabyte ratio, you divide the IOPS by the size of your storage.   \n Example: You chose 500Gi of storage with 100 IOPS. Your ratio is 0.2 (100 IOPS/500Gi).   \n **Overview of hard disk types per ratio:** - Less than or equal to 0.3: SATA  \n - Greater than 0.3: SSD|
+| Reclaim policy | `ibmc-file-custom`: Delete  \n `ibmc-file-retain-custom`: Retain |
 | Billing | Hourly|
 | Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}
-{: caption="{{site.data.keyword.filestorage_short}} class: custom" caption-side="top"}
-{: #simpletabtable4}
 {: tab-title="Custom"}
-{: tab-group="{{site.data.keyword.filestorage_short}} class"}
+{: caption="Custom" caption-side="top"}
+{: #simpletabtable4}
+{: tab-group="Class"}
 
 
 
