@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-22"
+lastupdated: "2022-02-23"
 
 keywords: openshift
 
@@ -543,6 +543,11 @@ Before updating the add-on review the [change log](/docs/containers?topic=contai
     ```
     {: screen}
     
+    If you use a default storage class other than the `ibmc-vpc-block-10iops-tier` storage class you must change the default storage class settings in the `addon-vpc-block-csi-driver-configmap` configmap. For more information, see [Changing the default storage class](/docs/openshift?topic=openshift-vpc-block#vpc-block-default-edit).
+    {: important}
+    
+1. If you created custom storage classes based on the default {{site.data.keyword.block_storage_is_short}} storage classes, you must recreate those storage classes to update the parameters. For more information, see [Recreating custom storage classes after updating to version 4.2](#recreate-sc-42).
+    
 
 
 ## Setting up encryption for {{site.data.keyword.block_storage_is_short}}
@@ -697,6 +702,32 @@ However, when multiple configurations are required and you don't want to create 
 
 When you want to set up encryption for your {{site.data.keyword.blockstorageshort}} instance, you can also use a Kubernetes secret if you want to encode the {{site.data.keyword.keymanagementserviceshort}} root key CRN to base64 instead of providing the key directly in the customized storage class.
 
+
+
+### Changing the default storage class
+{: #vpc-block-default-edit}
+
+With version 4.2 the {{site.data.keyword.blockstorageshort}} add-on sets the default storage class to the `ibmc-vpc-block-10iops-tier` class. If you have a default storage class other than `ibmc-vpc-block-10iops-tier` and your PVCs use the default storage class, this can result in multiple default storage classes which can cause PVC creation failures. To use a default storage class other than `ibmc-vpc-block-10iops-tier`, you can update the `addon-vpc-block-csi-driver-configmap` to change the `IsStorageClassDefault` to false.
+{: important}
+
+The default storage class for the {{site.data.keyword.blockstorageshort}} add-on is the `ibmc-vpc-block-10iops-tier` storage class.
+
+1. Edit the `addon-vpc-block-csi-driver-configmap`
+    ```sh
+    oc edit cm addon-vpc-block-csi-driver-configmap -n kube-system
+    ```
+    {: pre}
+    
+2. Change the `IsStorageClassDefault` setting to `false`.
+
+3. Save and exit.
+
+4. Wait 15 minutes and verify the change by getting the details of the `ibmc-vpc-block-10iops-tier` storage class.
+    ```sh
+    oc get sc ibmc-vpc-block-10iops-tier -o yaml
+    ```
+    {: pre}
+    
 
 
 ### Creating a custom storage class
@@ -1006,7 +1037,7 @@ Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeB
 {: #vpc-block-volume-expand}
 
 
-To provision volumes that support expansion, you must first create a custom storage class and set `allowVolumeExpansion` to `true`. 
+To provision volumes that support expansion, you must use storage class that has `allowVolumeExpansion` set to `true`. 
 {: shortdesc}
 
 
@@ -1014,9 +1045,9 @@ You can only expand volumes that are mounted by an app pod.
 {: note}
 
 [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
-1. If you are not using version `3.0.1` or later of the add-on, [update the {{site.data.keyword.block_storage_is_short}} add-on in your cluster](#vpc-addon-update).
+1. If you are not using version `4.2` or later of the add-on, [update the {{site.data.keyword.block_storage_is_short}} add-on in your cluster](#vpc-addon-update).
 
-1. [Create a PVC](#vpc_block_qs) that uses your custom storage class.
+1. [Create a PVC](#vpc_block_qs) that uses a storage class that supports volume expansion.
 
 1. [Deploy an app](#vpc_block_qs) that uses your PVC. When you create your app, make a note of the `mountPath` that you specify.
 

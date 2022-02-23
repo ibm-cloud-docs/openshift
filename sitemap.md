@@ -184,6 +184,8 @@ subcollection: openshift
 
 * [February 2022](/docs/openshift?topic=openshift-iks-release#release-feb-2022)
 
+    * [24 February 2022](/docs/openshift?topic=openshift-iks-release#24feb2022)
+
     * [23 February 2022](/docs/openshift?topic=openshift-iks-release#23feb2022)
 
     * [18 February 2022](/docs/openshift?topic=openshift-iks-release#18feb2022)
@@ -2691,6 +2693,8 @@ subcollection: openshift
 * [Setting up encryption for {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-encryption)
 
 * [Customizing the default storage settings](/docs/openshift?topic=openshift-vpc-block#vpc-customize-default)
+
+    * [Changing the default storage class](/docs/openshift?topic=openshift-vpc-block#vpc-block-default-edit)
 
     * [Creating a custom storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class)
 

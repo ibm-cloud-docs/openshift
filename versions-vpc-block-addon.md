@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-22"
+lastupdated: "2022-02-23"
 
 keywords: block, add-on, changelog
 
@@ -61,8 +61,8 @@ Review the changes in version `4.1.3_846` of the {{site.data.keyword.block_stora
 {: shortdesc}    
 
 - Resolves the following CVEs. 
-    - [CVE-2021-3538](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3538{: external}
-    - [CVE-2020-26160](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-26160{: external}
+    - [CVE-2021-3538](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3538){: external}
+    - [CVE-2020-26160](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-26160){: external}
 
     
 
@@ -80,8 +80,8 @@ Review the changes in version `4.1.1_827` of the {{site.data.keyword.block_stora
 {: shortdisc}
 
 - Resolves the following CVEs.
-    - [CVE-2021-44716](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44716{: external}
-    - [CVE-2021-44717](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44717{: external}
+    - [CVE-2021-44716](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44716){: external}
+    - [CVE-2021-44717](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44717){: external}
 - Updates Golang to version `1.16.13`.
 - Updates the UBI image to version `8.5-218`.
 
