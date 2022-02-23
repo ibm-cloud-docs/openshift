@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-21"
+lastupdated: "2022-02-23"
 
 keywords: openshift
 
@@ -27,23 +27,23 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
 ## Step 1: Check the version
 {: #ca-debug-version}
 
-Check that your cluster runs the latest version of the cluster autoscaler Helm chart.
-1. Check the chart version. The **CHART** name has the version in the format`ibm-iks-cluster-autoscaler-1.1.2`.
-
+1. Verify that the cluster autoscaler addon is installed and ready.
     ```sh
-    helm ls
+    ibmcloud oc cluster addon ls --cluster <CLUSTER_NAME>
     ```
     {: pre}
 
     Example output
     ```sh
-    NAME                          REVISION    UPDATED                     STATUS  CHART                               APP VERSION    NAMESPACE  
-    ibm-iks-cluster-autoscaler    1           Wed Aug 28 16:38:23 2019    DEPLOYEDibm-iks-cluster-autoscaler-1.0.8                   kube-system
+    Name                 Version   Health State   Health Status   
+    cluster-autoscaler   1.0.4     normal         Addon Ready 
     ```
     {: screen}
 
-2. Compare the version that runs in your cluster against the [latest **CHART VERSION** of the`ibm-iks-cluster-autoscaler` Helm chart](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibm-iks-cluster-autoscaler) in the **Helm Catalog** console.
-3. If your version is outdated, [deploy the latest cluster autoscaler to your cluster](/docs/openshift?topic=openshift-ca#ca_helm).
+2. Compare the version that runs in your cluster against the latest version in Cluster autoscaler add-on [changelog](docs/containers?topic=containers-ca_changelog).
+3. If your version is outdated, deploy the latest cluster autoscaler version to your cluster.
+
+**Deprecated** You can install the cluster autoscaler Helm chart, but the helm chart is deprecated and becomes unsupported tentatively 15 September 2020. You can't install the add-on and the Helm chart in the same cluster at the same time. 
 
 ## Step 2: Check the configuration
 {: #ca-debug-config}

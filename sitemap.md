@@ -1537,10 +1537,6 @@ subcollection: openshift
 
     * [Does Red Hat collect information about my cluster?](/docs/openshift?topic=openshift-service-architecture#pi-rh-telemetry)
 
-* [Dependencies to other {{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-service-architecture#dependencies-ibmcloud)
-
-* [Dependencies to 3rd party services](/docs/openshift?topic=openshift-service-architecture#dependencies-3rd-party)
-
 
 ## Managing access control
 {: #sitemap_managing_access_control}
