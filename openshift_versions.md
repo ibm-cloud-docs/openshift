@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-23"
 
 keywords: openshift, version, update, upgrade
 
@@ -163,9 +163,6 @@ The following table shows the actions that you must take before you [update the 
 
 ## {{site.data.keyword.openshiftshort}} 4.8
 {: #ocp48}
-
-There is a [known issue](https://github.com/IBM/portieris/issues/350){: external} when updating a cluster from {{site.data.keyword.openshiftshort}} 4.7 to {{site.data.keyword.openshiftshort}} 4.8. Do not upgrade your cluster to from version 4.7 to version 4.8 if it has image security enforcement enabled. 
-{: important}
 
 ![This badge indicates Kubernetes version 1.21 certification for {{site.data.keyword.containerlong_notm}}](images/certified_kubernetes_1x21.svg)
 {{site.data.keyword.containerlong_notm}} is a Certified Kubernetes product for version 1.21 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
