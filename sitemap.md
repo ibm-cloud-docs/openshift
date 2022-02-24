@@ -1747,7 +1747,7 @@ subcollection: openshift
 
     * [Creating outbound rules by using the command line](/docs/openshift?topic=openshift-vpc-security-group#security-group-cli-outbound)
 
-* [Required inbound rules](/docs/openshift?topic=openshift-vpc-security-group#security-group-inbound-rules)
+* [Required inbound rules](/docs/openshift?topic=openshift-vpc-security-group#required-group-inbound-rules)
 
 * [Required outbound rules](/docs/openshift?topic=openshift-vpc-security-group#security-group-outbound-rules)
 
@@ -3547,6 +3547,8 @@ subcollection: openshift
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version 1.0.374](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10374)
 
 * [Version 1.0.372](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10372)
 
