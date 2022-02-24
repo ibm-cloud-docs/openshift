@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-23"
+lastupdated: "2022-02-24"
 
 keywords: openshift
 
@@ -40,7 +40,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     ```
     {: screen}
 
-2. Compare the version that runs in your cluster against the latest version in Cluster autoscaler add-on [changelog](docs/containers?topic=containers-ca_changelog).
+2. Compare the version that runs in your cluster against the latest version in Cluster autoscaler add-on [changelog](/docs/containers?topic=containers-ca_changelog).
 3. If your version is outdated, deploy the latest cluster autoscaler version to your cluster.
 
 **Deprecated** You can install the cluster autoscaler Helm chart, but the helm chart is deprecated and becomes unsupported tentatively 15 September 2020. You can't install the add-on and the Helm chart in the same cluster at the same time. 

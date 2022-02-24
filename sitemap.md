@@ -1747,7 +1747,7 @@ subcollection: openshift
 
     * [Creating outbound rules by using the command line](/docs/openshift?topic=openshift-vpc-security-group#security-group-cli-outbound)
 
-* [Required inbound rules](/docs/openshift?topic=openshift-vpc-security-group#security-group-inbound-rules)
+* [Required inbound rules](/docs/openshift?topic=openshift-vpc-security-group#required-group-inbound-rules)
 
 * [Required outbound rules](/docs/openshift?topic=openshift-vpc-security-group#security-group-outbound-rules)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-22"
+lastupdated: "2022-02-24"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -175,7 +175,7 @@ Keep in mind that in addition to any rules you create, you must also create the 
     
     
 ## Required inbound rules
-{: #security-group-inbound-rules}
+{: #required-group-inbound-rules}
 
 | Rule purpose | Protocol | Port or Value | Type |
 | --- | --- | --- | --- |
