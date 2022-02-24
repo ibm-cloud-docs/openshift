@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-21"
+lastupdated: "2022-02-23"
 
 keywords: kubernetes, openshift
 
@@ -72,7 +72,6 @@ Example output
 ```sh
 Name            Version   Health State   Health Status
 debug-tool      2.0.0     normal         Addon Ready
-kube-terminal   1.0.0     normal         Addon Ready
 ```
 {: screen}
 
