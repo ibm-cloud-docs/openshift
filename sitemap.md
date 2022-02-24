@@ -3548,6 +3548,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version 1.0.374](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10374)
+
 * [Version 1.0.372](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10372)
 
 * [Version 1.0.353](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10353)

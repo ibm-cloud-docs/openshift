@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-21"
+lastupdated: "2022-02-24"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -29,6 +29,12 @@ Refer to the following changelogs for a summary of changes for each version of t
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version 1.0.374
+{: #cli-10374}
+
+Version 1.0.372 of the CLI was released on 24 Feb 2022
+:   Removes the default zone in the `ibmcloud oc cluster create satellite` command.
 
 ## Version 1.0.372
 {: #cli-10372}
@@ -663,7 +669,7 @@ Version 0.2.95 of the CLI was released on 3 April 2019.
 
 Version 0.2.80 of the CLI was released on 19 March 2019.
 
-- Adds support for enabling [master-to-worker communication with service endpoints](/docs/openshift?topic=openshift-plan_clusters#workeruser-master) in standard clusters in [VRF-enabled accounts](/docs/account?topic=account-vrf-service-endpoint#vrf). 
+- Adds support for enabling [master-to-worker communication with service endpoints](/docs/containers?topic=containers-plan_clusters#workeruser-master) in standard clusters in [VRF-enabled accounts](/docs/account?topic=account-vrf-service-endpoint#vrf). 
 - Adds the `--private-service-endpoint` and `--public-service-endpoint` flags to the [`ibmcloud oc cluster-create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) command. 
 - Adds the **Public Service Endpoint URL** and **Private Service Endpoint URL** fields to the output of `ibmcloud oc cluster get`. 
 - Adds the [`ibmcloud oc cluster master private-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_enable) command. 

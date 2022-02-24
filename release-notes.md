@@ -36,6 +36,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {{site.data.keyword.block_storage_is_short}} add-on.
 :   [Version 4.2](/docs/containers?topic=containers-vpc_bs_changelog) is available.
 
+Container service CLI 
+:   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.374.
+
 
 
 
