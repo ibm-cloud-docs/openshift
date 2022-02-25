@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-21"
+lastupdated: "2022-02-25"
 
 keywords: openshift, vpn, on-prem, gateway, static
 
