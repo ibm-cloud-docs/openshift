@@ -1132,7 +1132,7 @@ Worker node versions
 {: release-note}
 
 Master versions
-:   Master fix pack update changelog documentation is available for version [1.20.5_1538](/docs/containers?topic=containers-changelog#1206_1538) and [1.19.10_1545](/docs/containers?topic=containers-changelog#11910_1545).
+:   Master fix pack update changelog documentation is available for version [1.20.5_1538](/docs/containers?topic=containers-changelog_120#1206_1538) and [1.19.10_1545](/docs/containers?topic=containers-changelog_119#11910_1545).
 
 ## April 2021
 {: #apr21}
