@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-21"
+lastupdated: "2022-02-25"
 
 keywords: openshift, vlan
 
@@ -35,7 +35,7 @@ After you initially set up your network when you [create a cluster](/docs/contai
 Enable the private cloud service endpoint for your cluster.
 {: shortdesc}
 
-The private cloud service endpoint makes your Kubernetes master privately accessible. Your worker nodes and your authorized cluster users can communicate with the Kubernetes master over the private network. To determine whether you can enable the private cloud service endpoint, see [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_clusters#workeruser-master). Note that you can't disable the private cloud service endpoint after you enable it.
+The private cloud service endpoint makes your Kubernetes master privately accessible. Your worker nodes and your authorized cluster users can communicate with the Kubernetes master over the private network. To determine whether you can enable the private cloud service endpoint, see [Worker-to-master and user-to-master communication](/docs/containers?topic=containers-plan_clusters#workeruser-master). Note that you can't disable the private cloud service endpoint after you enable it.
 
 1. Enable [VRF](/docs/account?topic=account-vrf-service-endpoint#vrf) in your IBM Cloud infrastructure account. To check whether a VRF is already enabled, use the `ibmcloud account show` command.
 2. [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint).
@@ -76,7 +76,7 @@ Enable the public cloud service endpoint for your cluster.
 Your cluster must have a public cloud service endpoint on classic infrastructure. For a cluster with only a private cloud service endpoint, create a VPC cluster instead.
 {: important}
 
-The public cloud service endpoint makes your Kubernetes master publicly accessible. Your worker nodes and your authorized cluster users can securely communicate with the Kubernetes master over the public network. For more information, see [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_clusters#internet-facing).
+The public cloud service endpoint makes your Kubernetes master publicly accessible. Your worker nodes and your authorized cluster users can securely communicate with the Kubernetes master over the public network. For more information, see [Worker-to-master and user-to-master communication](/docs/containers?topic=containers-plan_clusters#internet-facing).
 
 ### Steps to enable the public cloud service endpoint
 {: #steps-set-up-public}

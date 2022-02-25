@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-21"
+lastupdated: "2022-02-25"
 
 keywords: openshift
 
@@ -481,7 +481,7 @@ In classic clusters, if you have multiple VLANs for your cluster, multiple subne
 
 Review the following scenarios in which VLAN spanning is also required.
 
-The VLAN spanning option is disabled for clusters that are created in a VRF-enabled account. When VRF is enabled, all VLANs in the account can automatically communicate with each other over the private network. For more information, see [Planning your cluster network setup: Worker-to-worker communication](/docs/openshift?topic=openshift-plan_clusters#worker-worker).
+The VLAN spanning option is disabled for clusters that are created in a VRF-enabled account. When VRF is enabled, all VLANs in the account can automatically communicate with each other over the private network. For more information, see [Planning your cluster network setup: Worker-to-worker communication](/docs/containers?topic=containers-plan_clusters#worker-worker).
 {: note}
 
 ### Enabling routing between primary subnets on the same VLAN

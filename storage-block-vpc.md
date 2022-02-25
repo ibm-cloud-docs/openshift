@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-24"
+lastupdated: "2022-02-25"
 
 keywords: openshift
 
@@ -470,8 +470,8 @@ You can attach a volume to one worker node only. Make sure that the volume is in
 You can update the {{site.data.keyword.block_storage_is_short}} add-on by disabling and re-enabling the add-on in your cluster. When you disable the add-on, PVC creation and app deployment are not disrupted. Existing volumes and data are not impacted.
 {: shortdesc}
 
-As of 24 February 2022, version 4.2 of the {{site.data.keyword.block_storage_is_short}} add-on is the default version. If you are using an earlier version of the add-on, update to the latest version. To update the add-on, disable the add-on and then re-enable it. You might see a warning that resources or data might be deleted, however, note that existing volumes and data are not impacted.
-{: important}
+
+
 
 Before updating the add-on review the [change log](/docs/containers?topic=containers-vpc_bs_changelog).
 {: tip}
@@ -543,12 +543,7 @@ Before updating the add-on review the [change log](/docs/containers?topic=contai
     ```
     {: screen}
     
-    If you use a default storage class other than the `ibmc-vpc-block-10iops-tier` storage class you must change the default storage class settings in the `addon-vpc-block-csi-driver-configmap` configmap. For more information, see [Changing the default storage class](/docs/openshift?topic=openshift-vpc-block#vpc-block-default-edit).
-    {: important}
     
-1. If you created custom storage classes based on the default {{site.data.keyword.block_storage_is_short}} storage classes, you must recreate those storage classes to update the parameters. For more information, see [Recreating custom storage classes after updating to version 4.2](#recreate-sc-42).
-    
-
 
 ## Setting up encryption for {{site.data.keyword.block_storage_is_short}}
 {: #vpc-block-encryption}
@@ -1530,7 +1525,6 @@ To clean up persistent data:
     ```
     {: pre}
     
-
 
 
 
