@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-25"
+lastupdated: "2022-02-28"
 
 keywords: openshift
 subcollection: openshift
@@ -183,6 +183,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
 * [February 2022](/docs/openshift?topic=openshift-iks-release#release-feb-2022)
+
+    * [28 February 2022](/docs/openshift?topic=openshift-iks-release#28feb2022)
 
     * [24 February 2022](/docs/openshift?topic=openshift-iks-release#24feb2022)
 
@@ -2690,6 +2692,8 @@ subcollection: openshift
 
 * [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update)
 
+    * [Recreating custom storage classes after updating to version 4.2](/docs/openshift?topic=openshift-vpc-block#recreate-sc-42)
+
 * [Setting up encryption for {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-encryption)
 
 * [Customizing the default storage settings](/docs/openshift?topic=openshift-vpc-block#vpc-customize-default)
@@ -4123,7 +4127,13 @@ subcollection: openshift
 
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 
+* [Version 1.0.5](/docs/openshift?topic=openshift-ca_changelog#0105_ca_addon)
+
+    * [Change log for patch update 1.0.5_415, released 28 February 2022](/docs/openshift?topic=openshift-ca_changelog#104410_ca)
+
 * [Version 1.0.4](/docs/openshift?topic=openshift-ca_changelog#0104_ca_addon)
+
+    * [Change log for patch update 1.0.4_410, released 23 February 2022](/docs/openshift?topic=openshift-ca_changelog#104410_ca)
 
     * [Change log for patch update 1.0.4_403, released 20 January 2022](/docs/openshift?topic=openshift-ca_changelog#104403_ca)
 

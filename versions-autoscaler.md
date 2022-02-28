@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-25"
+lastupdated: "2022-02-28"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -39,22 +39,39 @@ ibmcloud oc cluster addon versions --addon cluster-autoscaler
 
 | Cluster autoscaler add-on version | Supported? | Cluster version support |
 | -------------------- | -----------|--------------------------- |
+| 1.0.5 | Yes | >=4.3 |
 | 1.0.4 | Yes | >=4.3 |
 | 1.0.3 | Yes | >=4.3 |
 | 1.0.2 | Yes | 4.3 - 4.6 |
 | 1.0.1 | No | 4.3 - 4.6 |
 {: summary="The rows are read from left to right. The first column is the cluster autoscaler add-on version. The second column is the version's supported state. The third column is the cluster version of your cluster that the cluster autoscaler version is supported for."}
 
-The cluster autoscaler add-on is not yet supported on Kubernetes version 1.23. Do not update to version 1.23 if this add-on is installed on your cluster. 
-{: important}
 
+## Version 1.0.5
+{: #0105_ca_addon}
+
+Review the changes included in version 1.0.5 of the managed cluster autoscaler add-on.
+{: shortdesc}
+
+### Change log for patch update 1.0.5_415, released 28 February 2022
+{: #104410_ca}
+
+Image tags: `1.19.1 9`, `1.20.0 9`, `1.21.0 5`, `1.22.0 3`
+Adds support for Kubernetes 1.23
 
 
 ## Version 1.0.4
 {: #0104_ca_addon}
 
-Review the changes included in version 1.0.3 of the managed cluster autoscaler add-on.
+Review the changes included in version 1.0.4 of the managed cluster autoscaler add-on.
 {: shortdesc}
+
+
+### Change log for patch update 1.0.4_410, released 23 February 2022
+{: #104410_ca}
+
+Image tags: `1.19.1 9`, `1.20.0 9`, `1.21.0 5`, `1.22.0 3`
+Resolves the following CVEs: [CVE-2022-23772](https://nvd.nist.gov/vuln/detail/CVE-2022-23772){: external}, [CVE-2022-23773](https://nvd.nist.gov/vuln/detail/CVE-2022-23773){: external}, and [CVE-2022-23806](https://nvd.nist.gov/vuln/detail/CVE-2022-23806){: external}.
 
 
 
