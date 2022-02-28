@@ -27,9 +27,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## February 2022
 {: #release-feb-2022}
 
-
-
-
 ### 28 February 2022
 {: #28feb2022}
 {: release-note}
@@ -37,16 +34,22 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {{site.data.keyword.block_storage_is_short}} add-on.
 :   [Version 4.2](/docs/containers?topic=containers-vpc_bs_changelog) is available.
 
+Cluster autoscaler
+:   Version [1.0.5_415](/docs/containers?topic=containers-ca_changelog) is available.
+
 
 
 HPCS Router add-on
 :   Versions 4.6.0_1308, 4.7.0_1309, 4.8.0_1310, and 4.9.0_1349 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
+
 Cloud Image Key Synchronizer add-on
 :   Version 1.0.0_883 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
 
 
 
+Worker node fix pack
 
+:   {{site.data.keyword.openshiftshort}} [4.9.22_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog#4922_1529), [4.8.32_1547_openshift](/docs/openshift?topic=openshift-openshift_changelog#4832_1547), [4.7.42_1553_openshift](/docs/openshift?topic=openshift-openshift_changelog#4742_1553), [4.6.53_1574_openshift](/docs/openshift?topic=openshift-openshift_changelog#4653_1572), and [3.11.570_1624_openshift](/docs/openshift?topic=openshift-openshift_changelog#311570_1621).
 
 
 ### 24 February 2022
