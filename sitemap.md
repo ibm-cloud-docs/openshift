@@ -4261,9 +4261,13 @@ subcollection: openshift
 
 * [Version 4.9.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4.9.0)
 
+    * [Version 4.9.0_1349, released on 28 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1349)
+
     * [Version 4.9.0, released on 16 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0)
 
 * [Version 4.8.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0)
+
+    * [Version 4.8.0_1310, released on 28 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_1310)
 
     * [Version 4.8.0_1232, released on 25 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_1232)
 
@@ -4272,6 +4276,8 @@ subcollection: openshift
     * [Version 4.8.0_997, released on 16 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0997)
 
 * [Version 4.7.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0)
+
+    * [Version 4.7.0_1309, released on 28 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_1309)
 
     * [Version 4.7.0_1226, released on 25 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_1226)
 
@@ -4284,6 +4290,8 @@ subcollection: openshift
     * [Version 4.7.0_854, released on 7 September 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0854)
 
 * [Version 4.6.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0)
+
+    * [Version 4.6.0_1308, released on 28 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_1308)
 
     * [Version 4.6.0_1227, released on 25 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_1227)
 
