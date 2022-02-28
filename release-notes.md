@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-25"
+lastupdated: "2022-02-28"
 
 keywords: openshift
 
@@ -27,9 +27,29 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## February 2022
 {: #release-feb-2022}
 
+### 28 February 2022
+{: #28feb2022}
+{: release-note}
+
+{{site.data.keyword.block_storage_is_short}} add-on.
+:   [Version 4.2](/docs/containers?topic=containers-vpc_bs_changelog) is available.
+
+Cluster autoscaler
+:   Version [1.0.5_415](/docs/containers?topic=containers-ca_changelog) is available.
 
 
 
+HPCS Router add-on
+:   Versions 4.6.0_1308, 4.7.0_1309, 4.8.0_1310, and 4.9.0_1349 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
+
+Cloud Image Key Synchronizer add-on
+:   Version 1.0.0_883 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
+
+
+
+Worker node fix pack
+
+:   {{site.data.keyword.openshiftshort}} [4.9.22_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog#4922_1529), [4.8.32_1547_openshift](/docs/openshift?topic=openshift-openshift_changelog#4832_1547), [4.7.42_1553_openshift](/docs/openshift?topic=openshift-openshift_changelog#4742_1553), [4.6.53_1574_openshift](/docs/openshift?topic=openshift-openshift_changelog#4653_1572), and [3.11.570_1624_openshift](/docs/openshift?topic=openshift-openshift_changelog#311570_1621).
 
 
 ### 24 February 2022
@@ -79,7 +99,7 @@ Container service CLI
 {: release-note}
 
 HPCS Router add-on
-:   Versions 4.9.0 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) is available.
+:   Version 4.9.0 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) is available.
 
 
 
@@ -1107,7 +1127,7 @@ Deprecated: Kubernetes web terminal.
 {: release-note}
 
 VPC cluster healthchecks
-:   If you set up [VPC security groups](/docs/openshift?topic=openshift-vpc-network-policy#security_groups) or [VPC access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-network-policy#acls) to secure your cluster network, you can now create the rules to allow the necessary traffic from the control plane IP addresses and Akamai IPv4 IP addresses to health check your routers. Previously, a quota on the number of rules per security group or ACL prevented the ability to create all necessary rules for health checks.
+:   If you set up [VPC security groups](/docs/openshift?topic=openshift-vpc-network-policy#security_groups) or [VPC access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-acls) to secure your cluster network, you can now create the rules to allow the necessary traffic from the control plane IP addresses and Akamai IPv4 IP addresses to health check your routers. Previously, a quota on the number of rules per security group or ACL prevented the ability to create all necessary rules for health checks.
 
 ### 10 May 2021
 {: #10may2021}
@@ -1132,7 +1152,7 @@ Worker node versions
 {: release-note}
 
 Master versions
-:   Master fix pack update changelog documentation is available for version [1.20.5_1538](/docs/containers?topic=containers-changelog#1206_1538) and [1.19.10_1545](/docs/containers?topic=containers-changelog#11910_1545).
+:   Master fix pack update changelog documentation is available for version [1.20.5_1538](/docs/containers?topic=containers-changelog_120#1206_1538) and [1.19.10_1545](/docs/containers?topic=containers-changelog_119#11910_1545).
 
 ## April 2021
 {: #apr21}
@@ -2737,8 +2757,6 @@ Ingress ALB changelog
 CLI changelog
 :   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.15](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
-Service dependencies
-:   Added information about [dependencies on other {{site.data.keyword.cloud_notm}} and 3rd party services](/docs/containers?topic=containers-service-arch#dependencies-ibmcloud).
 
 ### 18 March 2020
 {: #18mar2020}

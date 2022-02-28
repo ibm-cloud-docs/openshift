@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-25"
+lastupdated: "2022-02-28"
 
 keywords: openshift
 
@@ -472,6 +472,11 @@ You can update the {{site.data.keyword.block_storage_is_short}} add-on by disabl
 
 
 
+As of 28 February 2022, version 4.2 of the {{site.data.keyword.block_storage_is_short}} add-on is the default version. If you are using an earlier version of the add-on, update to the latest version. To update the add-on, disable the add-on and then re-enable it. You might see a warning that resources or data might be deleted, however, note that existing volumes and data are not impacted.
+{: important}
+
+
+
 
 Before updating the add-on review the [change log](/docs/containers?topic=containers-vpc_bs_changelog).
 {: tip}
@@ -544,6 +549,51 @@ Before updating the add-on review the [change log](/docs/containers?topic=contai
     {: screen}
     
     
+    
+    If you use a default storage class other than the `ibmc-vpc-block-10iops-tier` storage class you must change the default storage class settings in the `addon-vpc-block-csi-driver-configmap` configmap. For more information, see [Changing the default storage class](/docs/openshift?topic=openshift-vpc-block#vpc-block-default-edit).
+    {: important}
+    
+1. If you created custom storage classes based on the default {{site.data.keyword.block_storage_is_short}} storage classes, you must recreate those storage classes to update the parameters. For more information, see [Recreating custom storage classes after updating to version 4.2](#recreate-sc-42).
+    
+
+
+### Recreating custom storage classes after updating to version 4.2
+{: #recreate-sc-42}
+
+
+
+With version 4.2, the default parameters for storage classes has changed. The `sizeRange` or `iopsRange` parameters are no longer used. If you created any custom storage classes that use these parameters, you must edit your custom storage classes to remove these parameters. To change the parameters in custom storage classes, you must delete and recreate them. Previously, `sizeRange` and `iopsRange` were provided each storage class as reference information. With version 4.2, these references have been removed. Now, for information about block storage profiles, sizes, and IOPs, see the [block storage profiles](/docs/vpc?topic=vpc-block-storage-profiles&interface=ui) reference.
+{: important}
+
+
+1. To find the details of your custom storage classes, run the following command.
+
+    ```sh
+    oc describe sc STORAGECLASS
+    ```
+    {: pre}
+
+1. If the storage class uses the `sizeRange` or `iopsRange`, get the storage class YAML and save it to a file.
+    ```sh
+    oc get sc STORAGECLASS -o yaml
+    ```
+    {: pre}
+    
+1. In the file that you saved from the output of the previous command, remove the `sizeRange` or `iopsRange` parameters.
+
+1. Delete the storage class from your cluster.
+    ```sh
+    oc delete sc STORAGECLASS
+    ```
+    {: pre}
+    
+1. Recreate the storage class in your cluster by using the file you created earlier.
+    ```sh
+    oc apply -f custom-storage-class.yaml
+    ```
+    {: pre}
+        
+
 
 ## Setting up encryption for {{site.data.keyword.block_storage_is_short}}
 {: #vpc-block-encryption}

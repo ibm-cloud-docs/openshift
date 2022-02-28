@@ -116,6 +116,7 @@ toc:
       - topicgroup: 
           label: Securing the cluster network
           topics:
+          - network-policy.md
           - firewall.md
           - edge.md
           - topicgroup:

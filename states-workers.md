@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-25"
+lastupdated: "2022-02-28"
 
 keywords: kubernetes, worker nodes, state
 
@@ -58,7 +58,7 @@ A worker node can go into a `Critical` state for many reasons:
 - Current networking issues in {{site.data.keyword.containerlong_notm}} or IBM Cloud infrastructure that causes the communication between your worker node and the Kubernetes master to fail.
 - Your worker node ran out of capacity. Check the **Status** of the worker node to see whether it shows **Out of disk** or **Out of memory**. If your worker node is out of capacity, consider to either reduce the workload on your worker node or add a worker node to your cluster to help load balance the workload.
 - The device was powered off from the [{{site.data.keyword.cloud_notm}} console resource list](https://cloud.ibm.com/resources){: external}. Open the resource list and find your worker node ID in the **Devices** list. In the action menu, click **Power On**.
-- In many cases, [reloading](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) your worker node can solve the problem. When you reload your worker node, the latest [patch version](/docs/containers?topic=containers-cs_versions#version_types) is applied to your worker node. The major and minor version is not changed. Before you reload your worker node, make sure to cordon and drain your worker node to ensure that the existing pods are terminated gracefully and rescheduled onto remaining worker nodes. If reloading the worker node does not resolve the issue, go to the next step to continue troubleshooting your worker node.
+- In many cases, [reloading](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) your worker node can solve the problem. When you reload your worker node, the latest [patch version](/docs/containers?topic=containers-cs_versions#update_types) is applied to your worker node. The major and minor version is not changed. Before you reload your worker node, make sure to cordon and drain your worker node to ensure that the existing pods are terminated gracefully and rescheduled onto remaining worker nodes. If reloading the worker node does not resolve the issue, go to the next step to continue troubleshooting your worker node.
         
 
 

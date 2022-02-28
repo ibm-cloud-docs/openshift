@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-25"
+lastupdated: "2022-02-28"
 
 keywords: openshift
 subcollection: openshift
@@ -183,6 +183,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
 * [February 2022](/docs/openshift?topic=openshift-iks-release#release-feb-2022)
+
+    * [28 February 2022](/docs/openshift?topic=openshift-iks-release#28feb2022)
 
     * [24 February 2022](/docs/openshift?topic=openshift-iks-release#24feb2022)
 
@@ -1694,6 +1696,26 @@ subcollection: openshift
 {: #sitemap_securing_the_cluster_network}
 
 
+[Controlling traffic with network policies on classic clusters](/docs/openshift?topic=openshift-network_policies#network_policies)
+
+* [Default Calico network policies](/docs/openshift?topic=openshift-network_policies#default_policy)
+
+* [Installing and configuring the Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install)
+
+* [Viewing network policies](/docs/openshift?topic=openshift-network_policies#view_policies)
+
+* [Adding network policies](/docs/openshift?topic=openshift-network_policies#adding_network_policies)
+
+* [Controlling inbound traffic to NLB or NodePort services](/docs/openshift?topic=openshift-network_policies#block_ingress)
+
+* [Isolating clusters on the public network](/docs/openshift?topic=openshift-network_policies#isolate_workers_public)
+
+* [Isolating clusters on the private network](/docs/openshift?topic=openshift-network_policies#isolate_workers)
+
+* [Controlling traffic between pods](/docs/openshift?topic=openshift-network_policies#isolate_services)
+
+* [Logging denied traffic](/docs/openshift?topic=openshift-network_policies#log_denied)
+
 [Classic: Opening required ports and IP addresses in your firewall](/docs/openshift?topic=openshift-firewall#firewall)
 
 * [Opening ports in a corporate firewall](/docs/openshift?topic=openshift-firewall#corporate)
@@ -1759,9 +1781,9 @@ subcollection: openshift
 
 [Controlling traffic between pods with Kubernetes policies](/docs/openshift?topic=openshift-vpc-kube-policies#vpc-kube-policies)
 
-    * [Isolate app services within a namespace](/docs/openshift?topic=openshift-vpc-kube-policies#services_one_ns)
+* [Isolate app services within a namespace](/docs/openshift?topic=openshift-vpc-kube-policies#services_one_ns)
 
-    * [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-kube-policies#services_across_ns)
+* [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-kube-policies#services_across_ns)
 
 [VPC: Opening required ports and IP addresses in other network firewalls](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall)
 
@@ -2689,6 +2711,8 @@ subcollection: openshift
 * [Using an existing {{site.data.keyword.block_storage_is_short}} instance](/docs/openshift?topic=openshift-vpc-block#vpc-block-static)
 
 * [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update)
+
+    * [Recreating custom storage classes after updating to version 4.2](/docs/openshift?topic=openshift-vpc-block#recreate-sc-42)
 
 * [Setting up encryption for {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-encryption)
 
@@ -3699,11 +3723,15 @@ subcollection: openshift
 
 * [Version 4.9 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-49)
 
+    * [Change log for worker node fix pack 4.9.22_1529_openshift, released 28 February 2022](/docs/openshift?topic=openshift-openshift_changelog#4922_1529)
+
     * [Change log for worker node fix pack 4.9.19_1526_openshift, released 14 February 2022](/docs/openshift?topic=openshift-openshift_changelog#4919_1526)
 
     * [Change log for master fix pack 4.9.17_1525_openshift and worker node fix pack 4.9.17_1523_openshift, released 9 February 2022](/docs/openshift?topic=openshift-openshift_changelog#4917_1525)
 
 * [Version 4.8 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-48)
+
+    * [Change log for worker node fix pack 4.8.32_1547_openshift, released 28 February 2022](/docs/openshift?topic=openshift-openshift_changelog#4832_1547)
 
     * [Change log for worker node fix pack 4.8.29_1544_openshift, released 14 February 2022](/docs/openshift?topic=openshift-openshift_changelog#4829_1544)
 
@@ -3736,6 +3764,8 @@ subcollection: openshift
     * [Change log for fix pack 4.8.11_1526_openshift (master) and 4.8.12_1527_openshift (worker node), released 29 Sept 2021](/docs/openshift?topic=openshift-openshift_changelog#4811_1526_and_4812_1527)
 
 * [Version 4.7 change log](/docs/openshift?topic=openshift-openshift_changelog#version-47)
+
+    * [Change log for worker node fix pack 4.7.42_1553_openshift, released 28 February 2022](/docs/openshift?topic=openshift-openshift_changelog#4742_1553)
 
     * [Change log for worker node fix pack 4.7.42_1549_openshift, released 14 February 2022](/docs/openshift?topic=openshift-openshift_changelog#4742_1549)
 
@@ -3794,6 +3824,8 @@ subcollection: openshift
     * [Changelog for master fix pack 4.7.12_1520_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog#4712_1520)
 
 * [Version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-46)
+
+    * [Change log for worker node fix pack 4.6.53_1574_openshift, released 28 February 2022](/docs/openshift?topic=openshift-openshift_changelog#4653_1574)
 
     * [Change log for worker node fix pack 4.6.53_1572_openshift, released 14 February 2022](/docs/openshift?topic=openshift-openshift_changelog#4653_1572)
 
@@ -3878,6 +3910,8 @@ subcollection: openshift
     * [Changelog for 4.6.16_1530_openshift (master) and 4.6.16_1529_openshift (worker node), released 17 February 2020](/docs/openshift?topic=openshift-openshift_changelog#4616_1530)
 
 * [Deprecated: Version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-311)
+
+    * [Change log for worker node fix pack 3.11.570_1624_openshift, released 28 February 2022](/docs/openshift?topic=openshift-openshift_changelog#311570_1624)
 
     * [Change log for worker node fix pack 3.11.570_1621_openshift, released 14 February 2022](/docs/openshift?topic=openshift-openshift_changelog#311570_1621)
 
@@ -4123,7 +4157,13 @@ subcollection: openshift
 
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 
+* [Version 1.0.5](/docs/openshift?topic=openshift-ca_changelog#0105_ca_addon)
+
+    * [Change log for patch update 1.0.5_415, released 28 February 2022](/docs/openshift?topic=openshift-ca_changelog#104415_ca)
+
 * [Version 1.0.4](/docs/openshift?topic=openshift-ca_changelog#0104_ca_addon)
+
+    * [Change log for patch update 1.0.4_410, released 23 February 2022](/docs/openshift?topic=openshift-ca_changelog#104410_ca)
 
     * [Change log for patch update 1.0.4_403, released 20 January 2022](/docs/openshift?topic=openshift-ca_changelog#104403_ca)
 
@@ -4251,9 +4291,13 @@ subcollection: openshift
 
 * [Version 4.9.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4.9.0)
 
+    * [Version 4.9.0_1349, released on 28 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1349)
+
     * [Version 4.9.0, released on 16 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0)
 
 * [Version 4.8.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0)
+
+    * [Version 4.8.0_1310, released on 28 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_1310)
 
     * [Version 4.8.0_1232, released on 25 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_1232)
 
@@ -4262,6 +4306,8 @@ subcollection: openshift
     * [Version 4.8.0_997, released on 16 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0997)
 
 * [Version 4.7.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0)
+
+    * [Version 4.7.0_1309, released on 28 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_1309)
 
     * [Version 4.7.0_1226, released on 25 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_1226)
 
@@ -4274,6 +4320,8 @@ subcollection: openshift
     * [Version 4.7.0_854, released on 7 September 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0854)
 
 * [Version 4.6.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0)
+
+    * [Version 4.6.0_1308, released on 28 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_1308)
 
     * [Version 4.6.0_1227, released on 25 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_1227)
 
@@ -4324,6 +4372,8 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0)
+
+    * [Version 1.0.0_883, released on 28 February 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0883)
 
     * [Version 1.0.0_834, released on 25 January 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0834)
 

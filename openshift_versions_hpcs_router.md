@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-28"
 
 keywords: openshift, route, router
 
@@ -36,6 +36,13 @@ View information for version updates to the [{{site.data.keyword.cloud_notm}} HP
 ## Version 4.9.0
 {: #4.9.0}
 
+### Version 4.9.0_1349, released on 28 February 2022
+{: #4_9_0_1349}
+
+- [CVE-2022-23772](https://nvd.nist.gov/vuln/detail/CVE-2022-23772){: external}.
+- [CVE-2022-23773](https://nvd.nist.gov/vuln/detail/CVE-2022-23773){: external}.
+- [CVE-2022-23806](https://nvd.nist.gov/vuln/detail/CVE-2022-23806){: external}.
+
 ### Version 4.9.0, released on 16 February 2022
 {: #4_9_0}
 
@@ -43,6 +50,13 @@ Initial release of 4.9.0.
 
 ## Version 4.8.0
 {: #4_8_0}
+
+### Version 4.8.0_1310, released on 28 February 2022
+{: #4_8_0_1310}
+
+- [CVE-2022-23772](https://nvd.nist.gov/vuln/detail/CVE-2022-23772){: external}.
+- [CVE-2022-23773](https://nvd.nist.gov/vuln/detail/CVE-2022-23773){: external}.
+- [CVE-2022-23806](https://nvd.nist.gov/vuln/detail/CVE-2022-23806){: external}.
 
 ### Version 4.8.0_1232, released on 25 January 2022
 {: #4_8_1232}
@@ -62,6 +76,13 @@ Initial release of 4.8.0.
 
 ## Version 4.7.0
 {: #4_7_0}
+
+### Version 4.7.0_1309, released on 28 February 2022
+{: #4_7_0_1309}
+
+- [CVE-2022-23772](https://nvd.nist.gov/vuln/detail/CVE-2022-23772){: external}.
+- [CVE-2022-23773](https://nvd.nist.gov/vuln/detail/CVE-2022-23773){: external}.
+- [CVE-2022-23806](https://nvd.nist.gov/vuln/detail/CVE-2022-23806){: external}.
 
 ### Version 4.7.0_1226, released on 25 January 2022
 {: #4_7_1226}
@@ -98,6 +119,13 @@ Resolves [CVE-2021-3712](https://nvd.nist.gov/vuln/detail/CVE-2021-3712){: exter
 
 ## Version 4.6.0
 {: #4_6_0}
+
+### Version 4.6.0_1308, released on 28 February 2022
+{: #4_6_0_1308}
+
+- [CVE-2022-23772](https://nvd.nist.gov/vuln/detail/CVE-2022-23772){: external}.
+- [CVE-2022-23773](https://nvd.nist.gov/vuln/detail/CVE-2022-23773){: external}.
+- [CVE-2022-23806](https://nvd.nist.gov/vuln/detail/CVE-2022-23806){: external}.
 
 ### Version 4.6.0_1227, released on 25 January 2022
 {: #4_6_1227}
