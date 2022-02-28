@@ -4159,7 +4159,7 @@ subcollection: openshift
 
 * [Version 1.0.5](/docs/openshift?topic=openshift-ca_changelog#0105_ca_addon)
 
-    * [Change log for patch update 1.0.5_415, released 28 February 2022](/docs/openshift?topic=openshift-ca_changelog#104410_ca)
+    * [Change log for patch update 1.0.5_415, released 28 February 2022](/docs/openshift?topic=openshift-ca_changelog#104415_ca)
 
 * [Version 1.0.4](/docs/openshift?topic=openshift-ca_changelog#0104_ca_addon)
 

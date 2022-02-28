@@ -54,7 +54,7 @@ Review the changes included in version 1.0.5 of the managed cluster autoscaler a
 {: shortdesc}
 
 ### Change log for patch update 1.0.5_415, released 28 February 2022
-{: #104410_ca}
+{: #104415_ca}
 
 Image tags: `1.19.1 9`, `1.20.0 9`, `1.21.0 5`, `1.22.0 3`
 Adds support for Kubernetes 1.23

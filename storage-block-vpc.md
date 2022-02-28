@@ -562,7 +562,7 @@ Before updating the add-on review the [change log](/docs/containers?topic=contai
 
 
 
-With version 4.2, the default parameters for storage classes has changed. The `sizeRange` or `iopsRange` parameters are no longer used. If you created any custom storage classes that use these parameters, you must edit your custom storage classes to remove these parameters. To change the parameters in custom storage classes, you must delete and recreate them. Previously, `sizeRange` and `iopsRange` were provided each storage class as reference information. With version 4.2, these references have been removed. Now, for information about block storage profiles, sizes, and IOPs, see the [block storage profiles](/docs/vpc?topic=vpc-block-storage-profiles&interface=ui#tiers-beta) reference.
+With version 4.2, the default parameters for storage classes has changed. The `sizeRange` or `iopsRange` parameters are no longer used. If you created any custom storage classes that use these parameters, you must edit your custom storage classes to remove these parameters. To change the parameters in custom storage classes, you must delete and recreate them. Previously, `sizeRange` and `iopsRange` were provided each storage class as reference information. With version 4.2, these references have been removed. Now, for information about block storage profiles, sizes, and IOPs, see the [block storage profiles](/docs/vpc?topic=vpc-block-storage-profiles&interface=ui) reference.
 {: important}
 
 
