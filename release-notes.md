@@ -37,8 +37,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {{site.data.keyword.block_storage_is_short}} add-on.
 :   [Version 4.2](/docs/containers?topic=containers-vpc_bs_changelog) is available.
 
-Cluster autoscaler
-:   Version [1.0.5_415](/docs/containers?topic=containers-ca_changelog) is available.
+
+
+HPCS Router add-on
+:   Versions 4.6.0_1308, 4.7.0_1309, 4.8.0_1310, and 4.9.0_1349 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
+Cloud Image Key Synchronizer add-on
+:   Version 1.0.0_883 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
+
+
+
 
 
 
@@ -89,7 +96,7 @@ Container service CLI
 {: release-note}
 
 HPCS Router add-on
-:   Versions 4.9.0 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) is available.
+:   Version 4.9.0 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) is available.
 
 
 
