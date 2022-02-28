@@ -1696,6 +1696,26 @@ subcollection: openshift
 {: #sitemap_securing_the_cluster_network}
 
 
+[Controlling traffic with network policies on classic clusters](/docs/openshift?topic=openshift-network_policies#network_policies)
+
+* [Default Calico network policies](/docs/openshift?topic=openshift-network_policies#default_policy)
+
+* [Installing and configuring the Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install)
+
+* [Viewing network policies](/docs/openshift?topic=openshift-network_policies#view_policies)
+
+* [Adding network policies](/docs/openshift?topic=openshift-network_policies#adding_network_policies)
+
+* [Controlling inbound traffic to NLB or NodePort services](/docs/openshift?topic=openshift-network_policies#block_ingress)
+
+* [Isolating clusters on the public network](/docs/openshift?topic=openshift-network_policies#isolate_workers_public)
+
+* [Isolating clusters on the private network](/docs/openshift?topic=openshift-network_policies#isolate_workers)
+
+* [Controlling traffic between pods](/docs/openshift?topic=openshift-network_policies#isolate_services)
+
+* [Logging denied traffic](/docs/openshift?topic=openshift-network_policies#log_denied)
+
 [Classic: Opening required ports and IP addresses in your firewall](/docs/openshift?topic=openshift-firewall#firewall)
 
 * [Opening ports in a corporate firewall](/docs/openshift?topic=openshift-firewall#corporate)
