@@ -3118,7 +3118,7 @@ subcollection: openshift
 
     * [Other third-party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#kube-community-helm)
 
-    * [Extending {{site.data.keyword.openshiftshort}} API and software with CRDs and Operators](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#kube-crd-operators)
+    * [Extending {{site.data.keyword.redhat_openshift_notm}} API and software with CRDs and Operators](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#kube-crd-operators)
 
 [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks#openshift_cloud_paks)
 
@@ -4750,11 +4750,11 @@ subcollection: openshift
 [Supported IBM Cloud and third-party integrations](/docs/openshift?topic=openshift-supported_integrations#supported_integrations)
 
 
-## Default service settings for {{site.data.keyword.openshiftshort}} components
+## Default service settings for {{site.data.keyword.redhat_openshift_notm}} components
 {: #sitemap_default_service_settings_for__components}
 
 
-[Default service settings for {{site.data.keyword.openshiftshort}} components](/docs/openshift?topic=openshift-service-settings#service-settings)
+[Default service settings for {{site.data.keyword.redhat_openshift_notm}} components](/docs/openshift?topic=openshift-service-settings#service-settings)
 
 * [Feature gates](/docs/openshift?topic=openshift-service-settings#feature-gates)
 

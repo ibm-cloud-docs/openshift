@@ -115,7 +115,7 @@ Every storage class specifies the type of {{site.data.keyword.filestorage_short}
 After you provision a specific type of storage by using a storage class, you can't change the type, or retention policy for the storage device. However, you can [change the size and the IOPS](#file_change_storage_configuration) if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must [create a new storage instance and copy the data](/docs/openshift?topic=openshift-kube_concepts#update_storageclass) from the old storage instance to your new one.
 {: important}
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To decide on a storage configuration:
 
@@ -456,7 +456,7 @@ Before you begin:
 
 Make sure that you have at least one worker node that exists in the same zone as your existing {{site.data.keyword.filestorage_short}} instance.
 
-[Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+[Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 ### Step 1: Preparing your existing storage
 {: #existing-file-1}
@@ -665,7 +665,7 @@ If you want to automatically create your PVC when you create the stateful set, u
 Use this option if you want to automatically create the PVC when you create the stateful set.
 {: shortdesc}
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Verify that all existing stateful sets in your cluster are fully deployed. If a stateful set is still being deployed, you can't start creating your stateful set. You must wait until all stateful sets in your cluster are fully deployed to avoid unexpected results. List existing stateful sets in your cluster.
 
@@ -932,7 +932,7 @@ You can pre-provision your PVCs before creating your stateful set or use existin
 
 When you [dynamically provision your PVCs when creating the stateful set](#file_dynamic_statefulset), the name of the PVC is assigned based on the values that you used in the stateful set YAML file. In order for the stateful set to use existing PVCs, the name of your PVCs must match the name that would automatically be created when using dynamic provisioning.
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. If you want to pre-provision your PVC before you create the stateful set, follow steps 1-3 in [Adding {{site.data.keyword.filestorage_short}} to apps](#add_file) to create a PVC for each stateful set replica. Make sure that you create your PVC with a name that follows the following format: `<volume_name>-<statefulset_name>-<replica_number>`.
 
@@ -1246,7 +1246,7 @@ You can [set up periodic snapshots for your {{site.data.keyword.filestorage_shor
 
 Complete the following steps to create a snapshot for your volume.
 
-1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 2. Log in to the `ibmcloud sl` CLI. 
 
     ```sh
@@ -1334,7 +1334,7 @@ To make your data even more highly available and protect your app from a zone fa
 You can use the `oc cp` [command](https://kubernetes.io/docs/reference/kubectl/overview/#cp){: external} to copy files and directories to and from pods or specific containers in your cluster.
 {: shortdesc}
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). If you don't specify a container with `-c`, the command uses the first available container in the pod.
+Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster). If you don't specify a container with `-c`, the command uses the first available container in the pod.
 
 Copy data from your local machine to a pod in your cluster.
 
@@ -1693,7 +1693,7 @@ Remove the PVC, PV, and the storage instance from your {{site.data.keyword.cloud
 
 Before you begin:
 - Make sure that you backed up any data that you want to keep.
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To clean up persistent data:
 

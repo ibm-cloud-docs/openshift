@@ -19,7 +19,7 @@ subcollection: openshift
 # Learning path for developers
 {: #learning-path-dev}
 
-Following a curated learning path to deploy highly available containerized apps in {{site.data.keyword.openshiftshort}} clusters and use the powerful tools of {{site.data.keyword.openshiftlong_notm}} to automate, isolate, secure, manage, and monitor your app workloads across zones or regions.
+Following a curated learning path to deploy highly available containerized apps in {{site.data.keyword.redhat_openshift_notm}} clusters and use the powerful tools of {{site.data.keyword.openshiftlong_notm}} to automate, isolate, secure, manage, and monitor your app workloads across zones or regions.
 {: shortdesc}
 
 

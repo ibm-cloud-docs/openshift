@@ -17,7 +17,7 @@ subcollection: openshift
 # {{site.data.keyword.openshiftlong_notm}} partners
 {: #service-partners}
 
-IBM is dedicated to make {{site.data.keyword.openshiftlong}} the best {{site.data.keyword.openshiftshort}} service that helps you migrate, operate, and administer your containerized workloads. To provide you with all the capabilities that you need to run production workloads in the cloud, {{site.data.keyword.openshiftlong_notm}} partners with other third-party service providers to enhance your cluster with top-notch logging, monitoring, and storage tools.
+IBM is dedicated to make {{site.data.keyword.openshiftlong}} the best {{site.data.keyword.redhat_openshift_notm}} service that helps you migrate, operate, and administer your containerized workloads. To provide you with all the capabilities that you need to run production workloads in the cloud, {{site.data.keyword.openshiftlong_notm}} partners with other third-party service providers to enhance your cluster with top-notch logging, monitoring, and storage tools.
 {: shortdesc}
 
 Review our partners and the benefits of each solution that they provide. To find other proprietary {{site.data.keyword.cloud_notm}} and third-party open source services that you can use in your cluster, see [Understanding {{site.data.keyword.cloud_notm}} and 3rd party integrations](/docs/containers?topic=containers-ibm-3rd-party-integrations).

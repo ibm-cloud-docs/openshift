@@ -25,14 +25,14 @@ Set up a Load Balancer for VPC to expose your app on the public or private netwo
 ## About VPC load balancing in {{site.data.keyword.openshiftlong_notm}}
 {: #lbaas_about}
 
-To expose an app in a VPC cluster, you can create a layer 7 Application Load Balancer for VPC. In VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later, you can optionally create a layer 4 Network Load Balancer for VPC.
+To expose an app in a VPC cluster, you can create a layer 7 Application Load Balancer for VPC. In VPC clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later, you can optionally create a layer 4 Network Load Balancer for VPC.
 {: shortdesc}
 
 The following table describes the basic characteristics of each load balancing option.
 
 |Characteristic|Application Load Balancer for VPC|Network Load Balancer for VPC|
 |--------------|---------------------|-----------------------------|
-|Supported {{site.data.keyword.openshiftshort}} version|All versions|4.6 and later only|
+|Supported {{site.data.keyword.redhat_openshift_notm}} version|All versions|4.6 and later only|
 |Transport layer|Layer 7|Layer 4|
 |Supported protocols|TCP|TCP|
 |Application access|Hostname|Hostname and static IP address|
@@ -42,12 +42,12 @@ The following table describes the basic characteristics of each load balancing o
 |Types of load balancers|Public and private|Public and private|
 {: caption="Load balancing options for VPC clusters"}
 
-`*` To preserve the source IP address for an Application Load Balancer for VPC, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"` annotation must be specified when the VPC ALB is initially created. This annotation is supported for VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or later only.
+`*` To preserve the source IP address for an Application Load Balancer for VPC, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"` annotation must be specified when the VPC ALB is initially created. This annotation is supported for VPC clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5 or later only.
 
 ### Network Load Balancer for VPC
 {: #nlb_vpc}
 
-In VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later, set up a layer-4 [Network Load Balancer for VPC](/docs/vpc?topic=vpc-network-load-balancers) (VPC NLB) in each zone of your cluster to serve as the external entry point for incoming requests to an app.
+In VPC clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later, set up a layer-4 [Network Load Balancer for VPC](/docs/vpc?topic=vpc-network-load-balancers) (VPC NLB) in each zone of your cluster to serve as the external entry point for incoming requests to an app.
 {: shortdesc}
 
 VPC NLBs provide several advantages, such as providing higher throughput and better performance by utilizing direct server return (DSR). With DSR, the worker node can send app response packets directly to the client IP address and skip the VPC NLB, decreasing the amount of traffic that the VPC NLB must handle. Additionally, the VPC NLB supports source IP address preservation on all client requests by default.
@@ -100,9 +100,9 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
 {: shortdesc}
 
 **Before you begin**:
-* VPC NLBs can be created only in VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later.
+* VPC NLBs can be created only in VPC clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later.
 * Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC NLB.
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+* [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 * To view VPC NLBs, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
     ```sh
     ibmcloud plugin install infrastructure-service
@@ -238,7 +238,7 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     The VPC NLB name has a format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `oc get svc myloadbalancer -o yaml` and look for the **metadata.uid** field in the output. The dashes (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC NLB name.
     {: tip}
 
-    Do not rename any VPC NLBs that are created automatically for `LoadBalancer` services. If you rename a VPC NLB, {{site.data.keyword.openshiftshort}} automatically creates another VPC NLB for the `LoadBalancer` service.
+    Do not rename any VPC NLBs that are created automatically for `LoadBalancer` services. If you rename a VPC NLB, {{site.data.keyword.redhat_openshift_notm}} automatically creates another VPC NLB for the `LoadBalancer` service.
     {: important}
 
     ```sh
@@ -267,10 +267,10 @@ Expose your app to private network traffic by setting up a Kubernetes `LoadBalan
 {: shortdesc}
 
 Before you begin
-- VPC NLBs can be created only in VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later.
+- VPC NLBs can be created only in VPC clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later.
 - Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC NLB.
 - Connect to your VPC private network, such as through a [VPC VPN connection](/docs/containers?topic=containers-vpc-vpnaas).
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - To view VPC NLBs, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
     ```sh
     ibmcloud plugin install infrastructure-service
@@ -420,7 +420,7 @@ To enable your app to receive private network requests,
     The VPC NLB name has a format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `oc get svc myloadbalancer -o yaml` and look for the **metadata.uid** field in the output. The dashes (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC NLB name.
     {: tip}
 
-    Do not rename any VPC NLBs that are created automatically for `LoadBalancer` services. If you rename a VPC NLB, {{site.data.keyword.openshiftshort}} automatically creates another VPC NLB for the `LoadBalancer` service.
+    Do not rename any VPC NLBs that are created automatically for `LoadBalancer` services. If you rename a VPC NLB, {{site.data.keyword.redhat_openshift_notm}} automatically creates another VPC NLB for the `LoadBalancer` service.
     {: important}
 
     ```sh
@@ -521,8 +521,8 @@ Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.op
 Before you begin
 
 - Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC NLB.
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-- ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or earlier only: [Allow traffic requests that are routed by the VPC ALB to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-security-group).
+- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.4 or earlier only: [Allow traffic requests that are routed by the VPC ALB to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-security-group).
 - To view VPC ALBs, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
     ```sh
     ibmcloud plugin install infrastructure-service
@@ -565,13 +565,13 @@ To enable your app to receive public or private requests,
     {: codeblock}
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"`
-    :   VPC and {{site.data.keyword.openshiftshort}} version 4.5 or later: Annotation to enable the PROXY protocol. The load balancer passes client connection information, including the client IP address, the proxy server IP address, and both port numbers, in request headers to your back-end app. Note that your back-end app must be configured to accept the PROXY protocol. For example, you can configure an NGINX app to accept the PROXY protocol by following [these steps](https://docs.nginx.com/nginx/admin-guide/load-balancer/using-proxy-protocol/){: external}.
+    :   VPC and {{site.data.keyword.redhat_openshift_notm}} version 4.5 or later: Annotation to enable the PROXY protocol. The load balancer passes client connection information, including the client IP address, the proxy server IP address, and both port numbers, in request headers to your back-end app. Note that your back-end app must be configured to accept the PROXY protocol. For example, you can configure an NGINX app to accept the PROXY protocol by following [these steps](https://docs.nginx.com/nginx/admin-guide/load-balancer/using-proxy-protocol/){: external}.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type`
     :   Annotation to specify a service that accepts public or private requests. If you don't include this annotation, a public `LoadBalancer` is created.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector`
-    :   {{site.data.keyword.openshiftshort}} version 4.5 or later: Annotation to specify a worker node label selector. To identify the worker nodes that receive traffic, you can select one of the supported label selector keys. Note that you can include only one label selector in the annotation, and that the selector must be specified in the `"key=value"` format. If this annotation is not specified, all worker nodes in your cluster are configured to receive traffic from the VPC ALB. If specified, this annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation, and any `dedicated: edge` labels on worker nodes are ignored.
+    :   {{site.data.keyword.redhat_openshift_notm}} version 4.5 or later: Annotation to specify a worker node label selector. To identify the worker nodes that receive traffic, you can select one of the supported label selector keys. Note that you can include only one label selector in the annotation, and that the selector must be specified in the `"key=value"` format. If this annotation is not specified, all worker nodes in your cluster are configured to receive traffic from the VPC ALB. If specified, this annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation, and any `dedicated: edge` labels on worker nodes are ignored.
     :   The following keys are permitted:
         - `ibm-cloud.kubernetes.io/internal-ip`
         - `ibm-cloud.kubernetes.io/machine-type`
@@ -589,7 +589,7 @@ To enable your app to receive public or private requests,
         - `topology.kubernetes.io/zone`
         
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets`
-    :   {{site.data.keyword.openshiftshort}} version 4.5 or later: Annotation to specify one or more subnets that the VPC ALB service deploys to. If specified, this annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation. Note that you can specify a different subnet in the same VPC than the subnets that your cluster is attached to. In this case, even though the VPC ALB deploys to a different subnet in the same VPC, the VPC ALB can still route traffic to your worker nodes on the cluster subnets. To see subnets in all resource groups, run `ibmcloud oc subnets --provider vpc-gen2 --vpc-id <vpc> --zone <zone>`.
+    :   {{site.data.keyword.redhat_openshift_notm}} version 4.5 or later: Annotation to specify one or more subnets that the VPC ALB service deploys to. If specified, this annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation. Note that you can specify a different subnet in the same VPC than the subnets that your cluster is attached to. In this case, even though the VPC ALB deploys to a different subnet in the same VPC, the VPC ALB can still route traffic to your worker nodes on the cluster subnets. To see subnets in all resource groups, run `ibmcloud oc subnets --provider vpc-gen2 --vpc-id <vpc> --zone <zone>`.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone`
     :   Annotation to specify a VPC zone that your cluster is attached to. When you specify a zone in this annotation, two processes occur.
@@ -656,7 +656,7 @@ To enable your app to receive public or private requests,
     The VPC ALB name has a format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `oc get svc myloadbalancer -o yaml` and look for the **metadata.uid** field in the output. The dashes (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC ALB name.
     {: tip}
 
-    Do not rename any VPC ALBs that are created automatically for `LoadBalancer` services. If you rename a VPC ALB, {{site.data.keyword.openshiftshort}} automatically creates another VPC ALB for the `LoadBalancer` service.
+    Do not rename any VPC ALBs that are created automatically for `LoadBalancer` services. If you rename a VPC ALB, {{site.data.keyword.redhat_openshift_notm}} automatically creates another VPC ALB for the `LoadBalancer` service.
     {: important}
 
     ```sh
@@ -879,7 +879,7 @@ Review the following default settings and limitations.
 * Private VPC ALBs don't accept all traffic, only RFC 1918 traffic.
 * Private VPC NLBs must be created on a dedicated VPC subnet that must exist in the same VPC and location as your cluster, but the subnet can't be attached to your cluster or any worker nodes.
 * All VPC load balancers don't currently support UDP.
-* {{site.data.keyword.openshiftshort}} 4.6 or later: Although the Kubernetes [SCTP protocol](https://kubernetes.io/docs/concepts/services-networking/service/#sctp){: external} and [application protocol](https://kubernetes.io/docs/concepts/services-networking/service/#application-protocol){: external} features are generally available in the community release, creating load balancers that use these protocols is not supported in {{site.data.keyword.containerlong_notm}} clusters.
+* {{site.data.keyword.redhat_openshift_notm}} 4.6 or later: Although the Kubernetes [SCTP protocol](https://kubernetes.io/docs/concepts/services-networking/service/#sctp){: external} and [application protocol](https://kubernetes.io/docs/concepts/services-networking/service/#application-protocol){: external} features are generally available in the community release, creating load balancers that use these protocols is not supported in {{site.data.keyword.containerlong_notm}} clusters.
 * One VPC load balancer is created for each Kubernetes `LoadBalancer` service that you create, and it routes requests to that Kubernetes `LoadBalancer` service only. Across all your VPC clusters in your VPC, a maximum of 50 VPC load balancers can be created. For more information, see the [VPC quotas documentation](/docs/vpc?topic=vpc-quotas#load-balancer-quotas).
 * The VPC load balancer can route requests to pods that are deployed on a maximum of 50 worker nodes in a cluster.
     * If your cluster has more than 50 worker nodes and you set `externalTrafficPolicy: Cluster` when you configured the Kubernetes `LoadBalancer` service, the VPC load balancer can only route to the first 50 worker nodes that are returned in the cluster's API call to the VPC load balancer.
@@ -894,7 +894,7 @@ Review the following default settings and limitations.
     * VPC ALBs only: The `externalTrafficPolicy: Local` setting is supported, but the setting does not preserve the source IP of the request.
 * When you delete a VPC cluster, any VPC load balancers that were automatically created by {{site.data.keyword.openshiftlong_notm}} for the Kubernetes `LoadBalancer` services in that cluster are also automatically deleted. However, any VPC load balancers that you manually created in your VPC are not deleted.
 * You can register up to 128 subdomains for VPC load balancer hostnames. This limit can be lifted on request by opening a [support case](/docs/get-support?topic=get-support-using-avatar).
-* {{site.data.keyword.openshiftshort}} 4.6 or later: Subdomains that you register for VPC load balancers are limited to 130 characters or fewer.
+* {{site.data.keyword.redhat_openshift_notm}} 4.6 or later: Subdomains that you register for VPC load balancers are limited to 130 characters or fewer.
 * VPC ALB listens on the same VPC subnets that the cluster worker nodes are allocated on unless the Kubernetes load balancer service is created with the annotation: `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets` or `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone`. If you add more zones to the cluster, the VPC ALB is not updated to listen for incoming traffic on the new zone(s). The subnets and zones of the VPC ALB can't be changed once the ALB is created. Incoming traffic can be routed to all backend worker nodes in the cluster across all zones, but the VPC subnets that the VPC ALB is listening on can not be updated. The VPC NLB is limited to the VPC subnets in a single zone. It can't be configured to listen on VPC subnets located in multiple zones.
 
 

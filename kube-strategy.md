@@ -198,7 +198,7 @@ Now that you have a good estimate of your app size and the worker nodes that you
     4. Repeat the previous step for each pod in your cluster.
     5. Add up the resource requests and limits of the apps that you deployed by default.
 6. Subtract the sum of your workload resource limits that you estimated in Step 5 from the available compute resources of your worker nodes that you estimated in Step 2. The remaining amount is the extra compute resources that you have to run new workloads or to scale your existing workloads.
-7. For workloads that need to scale up and down in response to resource requests, set up the [horizontal pod autoscaler](/docs/openshift?topic=openshift-update_app#app_scaling) and [cluster worker pool autoscaler](/docs/openshift?topic=openshift-ca#ca).
+7. For workloads that need to scale up and down in response to resource requests, set up the [horizontal pod autoscaler](/docs/openshift?topic=openshift-update_app#app_scaling) and [cluster worker pool autoscaler](/docs/containers?topic=containers-ca#ca).
 8. [Set up monitoring tools](/docs/containers?topic=containers-health-monitor#view_metrics) to continue reviewing CPU and memory usage across worker nodes in your cluster.
 9. Run performance tests to continue refining the number of worker nodes you need in your cluster, with representative latency, scalability, data set, and workload requirements.
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift
 
@@ -25,7 +25,7 @@ If you have access to the cluster, you can debug the worker nodes by using the K
 
 Before you begin, make sure that you have the **Manager** service access role in all namespaces for the cluster, which corresponds to the `cluster-admin` RBAC role.
 
-1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 2. List the worker nodes in your cluster and note the **NAME** of the worker nodes that are not in a `Ready` **STATUS**. Note that the **NAME** is the private IP address of the worker node.
     ```sh
     oc get nodes

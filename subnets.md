@@ -160,7 +160,7 @@ All subnets that were automatically ordered during cluster creation are immediat
 {: note}
 
 Before you begin
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - To reuse user-managed private subnets from a cluster that you no longer need, delete the unneeded cluster.
     ```sh
     ibmcloud oc cluster rm --cluster <cluster_name_or_ID>
@@ -266,7 +266,7 @@ To list only portable public IP addresses that are available to create public NL
 
 Before you begin
 -  Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the `default` namespace.
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To list available portable public IP addresses,
 
@@ -325,7 +325,7 @@ You can free up a used portable IP address by deleting the network load balancer
 
 Before you begin
 - Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the `default` namespace.
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To delete an NLB or disable an ALB,
 
@@ -369,7 +369,7 @@ Portable public IP addresses are charged monthly. If you remove portable public 
 
 Before you begin
 - Ensure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster.
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To order a subnet,
 
@@ -414,7 +414,7 @@ You can get more portable IPs for NLB services by making an existing subnet in a
 
 Before you begin
 - Ensure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster.
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To make a subnet available to your cluster,
 

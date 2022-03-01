@@ -20,7 +20,7 @@ subcollection: openshift
 Give application pods that run in your {{site.data.keyword.openshiftlong}} cluster access to {{site.data.keyword.cloud_notm}} services by creating a trusted profile in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM).  
 {: shortdesc}
 
-Authorizing pods with IAM trusted profiles is available for clusters that run {{site.data.keyword.openshiftshort}} version 4.7 and later.
+Authorizing pods with IAM trusted profiles is available for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.7 and later.
 {: note}
 
 - Clusters that are running version 4.7 or later and were created after July 2021: Authorizing pods with IAM trusted profiles is enabled automatically.
@@ -51,7 +51,7 @@ Minimum required permissions
 
 Supported versions
 
-- The cluster must be [created](/docs/containers?topic=containers-clusters) at {{site.data.keyword.openshiftshort}} version 4.7 or later.
+- The cluster must be [created](/docs/containers?topic=containers-clusters) at {{site.data.keyword.redhat_openshift_notm}} version 4.7 or later.
 - For new clusters, authorizing pods with IAM trusted profiles is enabled automatically. You can enable IAM trusted profiles on existing clusters by running [`ibmcloud oc cluster master refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh).
 
 
@@ -65,7 +65,7 @@ As an account administrator, create a trusted profile in {{site.data.keyword.clo
 
 **Before you begin**: Verify that you meet the [prerequisites](#iam-identity-prereqs).
 
-[Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+[Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Create an [IAM trusted profile](/docs/account?topic=account-create-trusted-profile) in {{site.data.keyword.cloud_notm}} Identity and Access Management. Note the `uuid` (profile ID) in the output.
 
@@ -168,7 +168,7 @@ As a developer, you can configure your application pods to authenticate with {{s
 {: shortdesc}
 
 Before you begin:
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+* [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 * Make sure that your account administrator [created an IAM trusted profile for your cluster](#iam-identity-create-api).
 
 To configure your application pods to authenticate with {{site.data.keyword.cloud_notm}} services:

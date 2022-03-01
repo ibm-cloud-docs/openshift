@@ -735,6 +735,7 @@ ibmcloud oc cluster config --cluster my_cluster
 ```
 {: pre}
 
+
 ### `ibmcloud oc cluster create classic`
 {: #cs_cluster_create}
 

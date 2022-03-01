@@ -68,7 +68,7 @@ Kubernetes limits the maximum number of worker nodes that you can have in a clus
 
 {{site.data.keyword.openshiftlong_notm}} also sets compute resource reserves that limit available compute resources on each worker node. For more information, see [worker node resource reserves](#resource_limit_node).
 
-Want to be sure that you always have enough worker nodes to cover your workload? Try out [the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca).
+Want to be sure that you always have enough worker nodes to cover your workload? Try out [the cluster autoscaler](/docs/containers?topic=containers-ca#ca).
 {: tip}
 
 
