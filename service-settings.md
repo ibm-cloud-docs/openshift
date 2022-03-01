@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift
 
@@ -14,10 +14,10 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Default service settings for {{site.data.keyword.openshiftshort}} components
+# Default service settings for {{site.data.keyword.redhat_openshift_notm}} components
 {: #service-settings}
 
-Review the default settings for {{site.data.keyword.openshiftshort}} components in your {{site.data.keyword.openshiftlong}} clusters. 
+Review the default settings for {{site.data.keyword.redhat_openshift_notm}} components in your {{site.data.keyword.openshiftlong}} clusters. 
 {: shortdesc}
 
 
@@ -25,7 +25,7 @@ Review the default settings for {{site.data.keyword.openshiftshort}} components 
 ## Feature gates
 {: #feature-gates}
 
-Review the feature gates that are applied to all master and worker node components by default in {{site.data.keyword.openshiftlong_notm}} clusters. These feature gates differ from the ones that are set up in community distributions. The {{site.data.keyword.cloud_notm}} provider version enables {{site.data.keyword.openshiftshort}} APIs and features that are at beta. {{site.data.keyword.openshiftshort}} alpha features, which are subject to change, are disabled.
+Review the feature gates that are applied to all master and worker node components by default in {{site.data.keyword.openshiftlong_notm}} clusters. These feature gates differ from the ones that are set up in community distributions. The {{site.data.keyword.cloud_notm}} provider version enables {{site.data.keyword.redhat_openshift_notm}} APIs and features that are at beta. {{site.data.keyword.redhat_openshift_notm}} alpha features, which are subject to change, are disabled.
 {: shortdesc}
 
 

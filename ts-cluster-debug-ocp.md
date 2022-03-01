@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift
 
@@ -13,7 +13,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Debugging {{site.data.keyword.openshiftshort}} web console, OperatorHub, internal registry, and other components
+# Debugging {{site.data.keyword.redhat_openshift_notm}} web console, OperatorHub, internal registry, and other components
 {: #ocp-debug}
 {: support}
 
@@ -21,15 +21,15 @@ content-type: troubleshoot
 * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
-{{site.data.keyword.openshiftshort}} clusters have many built-in components that work together to simplify the developer experience. For example, you can use the {{site.data.keyword.openshiftshort}} web console to manage and deploy your cluster workloads, or enable 3rd-party operators from the OperatorHub to enhance your cluster with a service mesh and other capabilities.  
+{{site.data.keyword.redhat_openshift_notm}} clusters have many built-in components that work together to simplify the developer experience. For example, you can use the {{site.data.keyword.redhat_openshift_notm}} web console to manage and deploy your cluster workloads, or enable 3rd-party operators from the OperatorHub to enhance your cluster with a service mesh and other capabilities.  
 {: shortdesc}
 
 Commonly used components include the following. If these components fail, review the following debug steps.
-* **{{site.data.keyword.openshiftshort}} web console** in the `openshift-console` project
+* **{{site.data.keyword.redhat_openshift_notm}} web console** in the `openshift-console` project
 * **OperatorHub** in the `openshift-marketplace` project
 * **Internal registry** in the `openshift-image-registry` project
 
-![Version 4 icon.](images/icon-version-43.png) Some components, such as the OperatorHub, are available only in clusters that run {{site.data.keyword.openshiftshort}} version 4, or run in different projects in version 3.11. You can still troubleshoot {{site.data.keyword.openshiftshort}} components in 3.11 clusters, but the project and resource names might vary.
+![Version 4 icon.](images/icon-version-43.png) Some components, such as the OperatorHub, are available only in clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4, or run in different projects in version 3.11. You can still troubleshoot {{site.data.keyword.redhat_openshift_notm}} components in 3.11 clusters, but the project and resource names might vary.
 {: note}
 
 ## Step 1: Check your account setup
@@ -84,7 +84,7 @@ Enabling MFA at the user level is not supported. If MFA is enabled for some user
 ## Step 3: Check firewalls and network policies
 {: #oc-debug-firewall}
 
-Check any firewalls or network policies to verify that you don't block any ingress or egress traffic for the OperatorHub or other {{site.data.keyword.openshiftshort}} components.
+Check any firewalls or network policies to verify that you don't block any ingress or egress traffic for the OperatorHub or other {{site.data.keyword.redhat_openshift_notm}} components.
 
 * If you generated an {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) allowlist by specifying which IP addresses have access to your cluster, you must [add the CIDRs of the {{site.data.keyword.openshiftlong_notm}} control plane for the zones in the region where your cluster is located to the allowlist](/docs/openshift?topic=openshift-firewall#iam_allowlist).
 * Classic only: If you have a firewall, [open the required ports and IP addresses in your firewall](/docs/openshift?topic=openshift-firewall).
@@ -125,7 +125,7 @@ Check that your cluster is set up properly. If you just created your cluster, wa
 
 4. Check the cluster **State**. If the state is not **normal**, see [Debugging clusters(#debug_clusters).
 5. Check the **Master health**. If the state is not **normal**, see [Reviewing master health(#debug_master).
-6. Check the worker nodes that the {{site.data.keyword.openshiftshort}} components might run on. If the state is not **normal**, see [Debugging worker nodes](/docs/containers?topic=containers-debug_worker_nodes).
+6. Check the worker nodes that the {{site.data.keyword.redhat_openshift_notm}} components might run on. If the state is not **normal**, see [Debugging worker nodes](/docs/containers?topic=containers-debug_worker_nodes).
     ```sh
     ibmcloud oc worker ls -c <cluster_name_or_ID>
     ```
@@ -134,7 +134,7 @@ Check that your cluster is set up properly. If you just created your cluster, wa
 ## Step 5: Log in to your cluster
 {: #oc-debug-cluster-login}
 
-[Log in to your cluster](/docs/openshift?topic=openshift-access_cluster). Note that if the {{site.data.keyword.openshiftshort}} web console does not work for you to get the login token, you can [access the cluster from the CLI](/docs/openshift?topic=openshift-access_cluster#access_oc_cli).
+[Log in to your cluster](/docs/openshift?topic=openshift-access_cluster). Note that if the {{site.data.keyword.redhat_openshift_notm}} web console does not work for you to get the login token, you can [access the cluster from the CLI](/docs/openshift?topic=openshift-access_cluster#access_oc_cli).
 
 VPC only: If you enabled the private cloud service endpoint, you must be [connected to the private network through your VPC VPN connection](/docs/openshift?topic=openshift-access_cluster#vpc_private_se) to access the web console.
 {: note}
@@ -142,7 +142,7 @@ VPC only: If you enabled the private cloud service endpoint, you must be [connec
 ## Step 6: Check the component pods
 {: #oc-debug-pods}
 
-Check the health of the {{site.data.keyword.openshiftshort}} component pods that don't work.
+Check the health of the {{site.data.keyword.redhat_openshift_notm}} component pods that don't work.
 1. Check the status of the pod.
     ```sh
     oc get pods -n <project>
@@ -172,7 +172,7 @@ Check the health of the {{site.data.keyword.openshiftshort}} component pods that
 
 If the pods are healthy, check if other system pods are experiencing issues. Oftentimes to function properly, one component depends on another component to be healthy.
 
-For example, the OperatorHub has a set of images that are stored in external registries such as `quay.io`. These images are pulled into the internal registry to use across the projects in your {{site.data.keyword.openshiftshort}} cluster. If any of the OperatorHub or internal registry components are not set up properly, such as due to lack of permissions or compute resources, the OperatorHub and catalog don't display.
+For example, the OperatorHub has a set of images that are stored in external registries such as `quay.io`. These images are pulled into the internal registry to use across the projects in your {{site.data.keyword.redhat_openshift_notm}} cluster. If any of the OperatorHub or internal registry components are not set up properly, such as due to lack of permissions or compute resources, the OperatorHub and catalog don't display.
 
 
 1. Check for pending pods.
@@ -250,7 +250,7 @@ Check that the OpenVPN in the cluster is set up properly.
 ## Step 9: Refresh the cluster master
 {: #oc-debug-refresh-master}
 
-Refresh the cluster master to set up the default {{site.data.keyword.openshiftshort}} components. After you refresh the cluster, wait a few minutes to allow the operation to complete.
+Refresh the cluster master to set up the default {{site.data.keyword.redhat_openshift_notm}} components. After you refresh the cluster, wait a few minutes to allow the operation to complete.
 ```sh
 ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
 ```
@@ -260,7 +260,7 @@ ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
 ## Step 10: Retry
 {: #oc-debug-retry}
 
-Try to use the {{site.data.keyword.openshiftshort}} component again.
+Try to use the {{site.data.keyword.redhat_openshift_notm}} component again.
 
 If the error still exists, see [Feedback, questions, and support](/docs/openshift?topic=openshift-get-help).
 

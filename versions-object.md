@@ -23,10 +23,11 @@ View information for updates to the {{site.data.keyword.cos_full_notm}} plug-in 
 
 Refer to the following tables for a summary of changes for each version of the [{{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-storage-cos-understand).
 
-| {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.openshiftshort}} version support | Supported architecture |
+| {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.1.11 | Yes | Greater than or equal to 4.3 | x86 |
 | 2.1.10 | Yes | Greater than or equal to 4.3 | x86 |
-| 2.1.9 | Yes | Greater than or equal to 4.3 | x86 |
+| 2.1.9 | Deprecated | Greater than or equal to 4.3 | x86 |
 | 2.1.8 | Deprecated | Greater than or equal to 4.3 | x86 |
 | 2.1.7 | Deprecated | Greater than or equal to 4.3 | x86 |
 | 2.1.6 | Deprecated | Greater than or equal to 4.3 | x86 |
@@ -44,8 +45,15 @@ Refer to the following tables for a summary of changes for each version of the [
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.cos_full_notm}} plug-in version. The second column is the version's supported state. The third column is the version of your cluster that the {{site.data.keyword.cos_full_notm}} plug-in version is supported for."}
 
+## Change log for version 2.1.11, released 1 March 2022
+{: #02111_object_plugin}
 
-## Changlog version 2.1.10, released 17 February 2022
+- Update Go to version 1.16.14
+- Resolves [CVE-2022-23772](https://nvd.nist.gov/vuln/detail/CVE-2022-23772){: external}, [CVE-2022-23773](https://nvd.nist.gov/vuln/detail/CVE-2022-23773){: external}, [CVE-2022-23806](https://nvd.nist.gov/vuln/detail/CVE-2022-23806){: external}
+
+
+
+## Change log for version 2.1.10, released 17 February 2022
 {: #02110_object_plugin}
 
 
@@ -55,7 +63,7 @@ Refer to the following tables for a summary of changes for each version of the [
 
 
 
-## Changlog version 2.1.9, released 24 January 2022
+## Change log for version 2.1.9, released 24 January 2022
 {: #0219_object_plugin}
 
 - [CVE-2021-44716](https://nvd.nist.gov/vuln/detail/CVE-2021-44716){: external}
@@ -63,14 +71,14 @@ Refer to the following tables for a summary of changes for each version of the [
 
 
 
-## Changlog version 2.1.8, released 17 January 2022
+## Change log for version 2.1.8, released 17 January 2022
 {: #0218_object_plugin}
 
 - Updates the UBI to version `8.5-218`.
 - Resolves [CVE-2021-3712](https://nvd.nist.gov/vuln/detail/CVE-2021-3712){: external}.
 - Fixes an issue that prevented masking keys in the PVC logs.
 
-## Changelog version 2.1.7, released 18 November 2021
+## Change log for version 2.1.7, released 18 November 2021
 {: #0217_object_plugin}
 
 - Updates the UBI to version 8.5-204.
@@ -78,7 +86,7 @@ Refer to the following tables for a summary of changes for each version of the [
 - Resolves [CVE-2021-41772](https://nvd.nist.gov/vuln/detail/CVE-2021-41772){: external}, [CVE-2021-41771](https://nvd.nist.gov/vuln/detail/CVE-2021-41771){: external}, and [CVE-2021-22947](https://nvd.nist.gov/vuln/detail/CVE-2021-22947){: external}.
 
 
-## Changelog for version 2.1.6, released 22 October 2021
+## Change log for version 2.1.6, released 22 October 2021
 {: #0216_object_plugin}
 
 - Image tags: `1.8.36`
@@ -86,7 +94,7 @@ Refer to the following tables for a summary of changes for each version of the [
 - Updates dependencies
 
 
-## Changelog for version 2.1.5, released 5 October 2021
+## Change log for version 2.1.5, released 5 October 2021
 {: #0215_object_plugin}
 
 - Image tags: `1.8.34`
@@ -99,7 +107,7 @@ Refer to the following tables for a summary of changes for each version of the [
 - Allows deployments to the `kube-system` namespace when `bucketAccessPolicy` is enabled.
 - Supports dynamic provisioning for non-default regions in AWS s3 instance.
 
-## Changelog for version 2.1.4, released 1 September 2021
+## Change log for version 2.1.4, released 1 September 2021
 {: #0214_object_plugin}
 
 - Image tags: `1.8.33`
@@ -110,7 +118,7 @@ Refer to the following tables for a summary of changes for each version of the [
 - Resolves [CVE-2021-36221](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36221){: external}, [CVE-2021-29923](https://nvd.nist.gov/vuln/detail/CVE-2021-29923){: external}, and [CVE-2021-33196](https://nvd.nist.gov/vuln/detail/CVE-2021-33196){: external}.
 
 
-## Changelog for version 2.1.3, released 25 August 2021
+## Change log for version 2.1.3, released 25 August 2021
 {: #0213_object_plugin}
 
 - Image tags: `1.8.32`
@@ -128,7 +136,7 @@ Refer to the following tables for a summary of changes for each version of the [
 * If you want to install the Helm chart without using the `ibmc` plug-in, you must manually create the `ibm-object-s3fs` namespace before installing the plug-in.
 
 
-## Changelog for version 2.1.2, released 22 June 2021 
+## Change log for version 2.1.2, released 22 June 2021 
 {: #0212_object_plugin}
 
 - Image tags: `1.8.30`  
@@ -136,7 +144,7 @@ Refer to the following tables for a summary of changes for each version of the [
 - Fixes [`CVE-2021-31525`](https://nvd.nist.gov/vuln/detail/CVE-2021-31525){: external},[`CVE-2021-33194`](https://nvd.nist.gov/vuln/detail/CVE-2021-33194){: external}, and [`CVE-2021-27219`](https://nvd.nist.gov/vuln/detail/CVE-2021-27219){: external}.  
 
 
-## Changelog for version 2.1.1, released 03 June 2021
+## Change log for version 2.1.1, released 03 June 2021
 {: #0211_object_plugin}
 
 - Image tags: `1.8.29`  
@@ -146,14 +154,14 @@ Refer to the following tables for a summary of changes for each version of the [
 - Fixes [CVE-2020-28851](https://nvd.nist.gov/vuln/detail/CVE-2020-28851){: external}.  
 
 
-## Changelog for version 2.1.0, released 26 May 2021
+## Change log for version 2.1.0, released 26 May 2021
 {: #0210_object_plugin}
 
 - Image tags: `1.8.28`  
 - Updates the UBI to `8.4-200`.  
 
 
-## Changelog for version 2.0.9, 10 May 2021
+## Change log for version 2.0.9, 10 May 2021
 {: #0209_object_plugin}
 
 - Image tags: `1.8.27`  
@@ -166,7 +174,7 @@ Refer to the following tables for a summary of changes for each version of the [
 - Updates the `ResourceConfiguration` endpoint.  
 
 
-## Changelog for version 2.0.8, 19 April 2021
+## Change log for version 2.0.8, 19 April 2021
 {: #0208_object_plugin}
 
 - Image tags: `1.8.25`  
@@ -176,7 +184,7 @@ Refer to the following tables for a summary of changes for each version of the [
 
 
 
-## Changelog for version 2.0.7, 26 March 2021
+## Change log for version 2.0.7, 26 March 2021
 {: #0207_object_plugin}
 
 
@@ -186,7 +194,7 @@ Refer to the following tables for a summary of changes for each version of the [
 - Fixes for [CVE-2021-3114](https://nvd.nist.gov/vuln/detail/CVE-2021-3114){: external}, [CVE-2021-3115](https://nvd.nist.gov/vuln/detail/CVE-2021-3115){: external}, [CVE-2020-28852](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28852){: external}, and [CVE-2020-28851](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28851){: external}.  
 
 
-## Changelog for version 2.0.6, 18 December 2020
+## Change log for version 2.0.6, 18 December 2020
 {: #0206_object_plugin}
 
 
@@ -200,9 +208,8 @@ Refer to the following tables for a summary of changes for each version of the [
 
 
 
-## Changelog for version 2.0.5, released 25 November 2020
+## Change log for version 2.0.5, released 25 November 2020
 {: #0205_object_plugin}
 
 - Fixes a `NilPointer` error.  
 - Resolves the following CVEs: `CVE-2018-20843`, `CVE-2019-13050`, `CVE-2019-13627`, `CVE-2019-14889`, `CVE-2019-1551`, `CVE-2019-15903`, `,CVE-2019-16168`, `CVE-2019-16935`, `CVE-2019-19221`, `CVE-2019-19906`, `CVE-2019-19956`, `CVE-2019-20218`, `CVE-2019-20386`, `CVE-2019-20387`, `CVE-2019-20388`, `CVE-2019-20454`, `CVE-2019-20907`, `CVE-2019-5018`, `CVE-2020-10029`, `CVE-2020-13630`, `CVE-2020-13631`, `CVE-2020-13632`, `CVE-2020-14422`, `CVE-2020-1730`, `CVE-2020-1751`, `CVE-2020-1752`, `CVE-2020-6405`, `CVE-2020-7595`, and `CVE-2020-8177`.   
-

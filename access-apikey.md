@@ -218,7 +218,7 @@ Be sure that you want to reset the key and understand the impact to your app. Th
 **Before you begin**:
 - If the account owner does not set up the API key, [ensure that the user who sets the API key has the correct permissions](#owner_permissions).
 - Consider using a functional ID user for the API key owner instead of a personal user. In case the person leaves the team, the functional ID user remains the API key owner.
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To set up the API key to access the IBM Cloud infrastructure portfolio:
 
@@ -259,7 +259,7 @@ The IBM Cloud infrastructure credentials that are set by the `ibmcloud oc creden
 
 **Before you begin**:
 - If you are not using the account owner's credentials, [ensure that the user whose credentials you want to set for the API key has the correct permissions](#owner_permissions).
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To set infrastructure account credentials to access the IBM Cloud infrastructure portfolio:
 

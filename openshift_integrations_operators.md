@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: kubernetes, openshift
 
@@ -26,10 +26,10 @@ Operators are a convenient way to add services to your cluster from community, t
 ## Using Operators in version 4 clusters
 {: #operators_4}
 
-In {{site.data.keyword.openshiftshort}} clusters that run version 4, operators are available in your cluster by default. Use [Operators](https://docs.openshift.com/container-platform/4.8/operators/understanding/olm-what-operators-are.html){: external} to package, deploy, and update the apps in your {{site.data.keyword.openshiftlong_notm}} clusters.
+In {{site.data.keyword.redhat_openshift_notm}} clusters that run version 4, operators are available in your cluster by default. Use [Operators](https://docs.openshift.com/container-platform/4.8/operators/understanding/olm-what-operators-are.html){: external} to package, deploy, and update the apps in your {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
 
-1. To use operators, follow the {{site.data.keyword.openshiftshort}} documentation.
+1. To use operators, follow the {{site.data.keyword.redhat_openshift_notm}} documentation.
     - [Adding Operators to a cluster](https://docs.openshift.com/container-platform/4.8/operators/admin/olm-adding-operators-to-cluster.html){: external}
     - [Deleting Operators from a cluster](https://docs.openshift.com/container-platform/4.8/operators/admin/olm-deleting-operators-from-cluster.html){: external}
     - [Creating applications from installed Operators](https://docs.openshift.com/container-platform/4.8/operators/user/olm-creating-apps-from-installed-operators.html){: external}
@@ -49,7 +49,7 @@ You can disable and mirror the OperatorHub catalog source images by following th
 {: shortdesc}
 
 To understand why you might disable and mirror the catalog, consider the following scenarios.
-- For private clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later: The Red Hat-provided OperatorHub source images require access to the `registry.redhat.io` and `quay.io` registries. If your cluster runs on a restricted network, such as in a VPC without a public gateway or classic worker nodes on only a private VLAN, these images are not accessible
+- For private clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later: The Red Hat-provided OperatorHub source images require access to the `registry.redhat.io` and `quay.io` registries. If your cluster runs on a restricted network, such as in a VPC without a public gateway or classic worker nodes on only a private VLAN, these images are not accessible
 - You want to restrict the catalog content that is available to your cluster users in OperatorHub.
 
 Before you begin
@@ -73,7 +73,7 @@ Try out the following tutorial.
 ![Version 3.11 icon.](images/icon-version-311.png) The {{site.data.keyword.cloud_notm}} Operator and other Operators are experimental for version 3.11, and you are responsible for its maintenance and support. If you have a version 4 cluster, use the built-in [Operators and OperatorHub instead](#operators_4).
 {: note}
 
-Use the Operator Lifecycle Manager (OLM) and the {{site.data.keyword.cloud_notm}} Operator to simplify your app lifecycle management approach for {{site.data.keyword.cloud_notm}} services, third-party apps, and your own custom-built, cloud-native apps in your {{site.data.keyword.openshiftshort}} cluster.
+Use the Operator Lifecycle Manager (OLM) and the {{site.data.keyword.cloud_notm}} Operator to simplify your app lifecycle management approach for {{site.data.keyword.cloud_notm}} services, third-party apps, and your own custom-built, cloud-native apps in your {{site.data.keyword.redhat_openshift_notm}} cluster.
 
 ![App lifecycle management with {{site.data.keyword.cloud_notm}} Operator.](images/dev_guides_operators.png){: caption="Figure 1. IBM Cloud operator flowchart" caption-side="bottom"}
 
@@ -83,7 +83,7 @@ Use the Operator Lifecycle Manager (OLM) and the {{site.data.keyword.cloud_notm}
 ![Version 4 icon.](images/icon-version-43.png) The service catalog is not supported in clusters that run version 4. Use [Operators](#operators_4) instead. Do not use the OperatorHub to install the service catalog.
 {: important}
 
-You can extend your app's capabilities by binding a service from the [{{site.data.keyword.openshiftshort}} service catalog](https://docs.openshift.com/container-platform/3.11/architecture/service_catalog/index.html){: external}. The service catalog is enabled in your 3.11 cluster by default. For an example of how to use the service catalog, see [Deploying an app with the {{site.data.keyword.openshiftshort}} service catalog](/docs/openshift?topic=openshift-getting-started#deploy-app).
+You can extend your app's capabilities by binding a service from the [{{site.data.keyword.redhat_openshift_notm}} service catalog](https://docs.openshift.com/container-platform/3.11/architecture/service_catalog/index.html){: external}. The service catalog is enabled in your 3.11 cluster by default. For an example of how to use the service catalog, see [Deploying an app with the {{site.data.keyword.redhat_openshift_notm}} service catalog](/docs/openshift?topic=openshift-getting-started#deploy-app).
 {: shortdesc}
 
 The catalog services and related [templates](https://docs.openshift.com/container-platform/3.11/dev_guide/templates.html#dev-guide-templates){: external} are extensions that you choose to add to your cluster and are not maintained, updated, or supported by IBM. To review the images or maintenance guidelines, follow the `readme` files or other documentation of each service.

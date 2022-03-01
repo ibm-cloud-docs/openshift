@@ -63,7 +63,7 @@ Besides {{site.data.keyword.cloud_notm}} IAM access control policies that you se
 {: #access-checklist-other-kube}
 
 - Pod-to-pod network traffic control: Consider using [Kubernetes network policies and Calico](/docs/containers?topic=containers-network_policies).
-- {{site.data.keyword.openshiftshort}} resources for pod-level control: See [Configuring security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc#oc_sccs).
+- {{site.data.keyword.redhat_openshift_notm}} resources for pod-level control: See [Configuring security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc#oc_sccs).
 
 
 ## Understanding IAM access policies and roles
@@ -121,7 +121,7 @@ Service access roles are synchronized with corresponding Kubernetes RBAC policie
 
 You can scope the policy for service access roles by resource group, region, or cluster instance. Further, you can also scope service access roles to Kubernetes namespaces that are in all, individual, or region-wide clusters. When you scope a service access role to a namespace, you can't apply the policy to a resource group or assign a platform access role at the same time.
 
-If you assigned only service access roles to users, the users must be given the cluster master URL to open the {{site.data.keyword.openshiftshort}} web console from their browser at `https://<master_URL>/console` instead of the {{site.data.keyword.cloud_notm}} console. Otherwise, [give the users the platform **Viewer** role](/docs/openshift?topic=openshift-users#add_users_cli_platform).
+If you assigned only service access roles to users, the users must be given the cluster master URL to open the {{site.data.keyword.redhat_openshift_notm}} web console from their browser at `https://<master_URL>/console` instead of the {{site.data.keyword.cloud_notm}} console. Otherwise, [give the users the platform **Viewer** role](/docs/openshift?topic=openshift-users#add_users_cli_platform).
 
 #### Overview of RBAC
 {: #role-binding}
@@ -189,7 +189,7 @@ You must also specify whether users have access to one cluster in a resource gro
 ### Scope user access to cluster instances, namespaces, or resource groups
 {: #resource_groups}
 
-In {{site.data.keyword.cloud_notm}} IAM, you can assign user access roles to resource instances, Kubernetes namespaces (projects in {{site.data.keyword.openshiftshort}}), or resource groups.
+In {{site.data.keyword.cloud_notm}} IAM, you can assign user access roles to resource instances, Kubernetes namespaces (projects in {{site.data.keyword.redhat_openshift_notm}}), or resource groups.
 {: shortdesc}
 
 When you create your {{site.data.keyword.cloud_notm}} account, the default resource group is created automatically. If you don't specify a resource group when you create the resource, resource instances (clusters) automatically belong to the default resource group. In {{site.data.keyword.cloud_notm}} IAM, a Kubernetes namespace is a resource type of a resource instance (cluster). If you want to add a resource group in your account, see [Best practices for setting up your account](/docs/account?topic=account-account_setup) and [Setting up your resource groups](/docs/account?topic=account-rgs).
@@ -201,7 +201,7 @@ Resource instance
     - All instances within a region of a service, such as all the clusters in the **US South** region of {{site.data.keyword.openshiftlong_notm}}.
     - To an individual instance, such as one cluster.
   
-Kubernetes namespace (projects in {{site.data.keyword.openshiftshort}})
+Kubernetes namespace (projects in {{site.data.keyword.redhat_openshift_notm}})
 :   As part of cluster resource instances in {{site.data.keyword.cloud_notm}} IAM, you can assign users with service access roles to namespaces within your clusters.
     When you assign access to a namespace, the policy applies to all current and future instances of the namespace in all the clusters that you authorize. For example, say that you want a `dev` group of users to be able to deploy Kubernetes resources in a `test` namespace in all your clusters in AP North. If you assign the `dev` access group the **Writer** service access role for the Kubernetes namespace `test` in all clusters in the AP North region within the `default` resource group, the `dev` group can access the `test` namespace in any AP North cluster in the `default` resource group that currently has or eventually has a `test` namespace.
     If you scope a service access role to a namespace, you can't apply the policy to a resource group or assign a platform access role at the same time.

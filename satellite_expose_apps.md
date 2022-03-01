@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift, route, Ingress controller
 
@@ -20,18 +20,18 @@ Securely expose apps that run in your {{site.data.keyword.satelliteshort}} clust
 {: shortdesc}
 
 You have several options for exposing apps in {{site.data.keyword.satelliteshort}} clusters:
-* [{{site.data.keyword.openshiftshort}} routes](#sat-expose-routes): Quickly expose apps to requests from the public or a private network with a hostname. The {{site.data.keyword.openshiftshort}} Ingress controller provides DNS registration and optional certificates for your routes.
-* [Third-party load balancer and {{site.data.keyword.openshiftshort}} routes](#sat-expose-byolb): Expose apps with a hostname, and add health checking for the host IP addresses that are registered in the Ingress controller's DNS records.
+* [{{site.data.keyword.redhat_openshift_notm}} routes](#sat-expose-routes): Quickly expose apps to requests from the public or a private network with a hostname. The {{site.data.keyword.redhat_openshift_notm}} Ingress controller provides DNS registration and optional certificates for your routes.
+* [Third-party load balancer and {{site.data.keyword.redhat_openshift_notm}} routes](#sat-expose-byolb): Expose apps with a hostname, and add health checking for the host IP addresses that are registered in the Ingress controller's DNS records.
 * [NodePorts](#sat-expose-np): Expose non-HTTP(S) apps, such as UDP or TCP apps, with a NodePort in the 30000 - 32767 range.
-* [{{site.data.keyword.openshiftshort}} routes and {{site.data.keyword.satelliteshort}} Link endpoints](#sat-expose-cloud): Expose your app with a private route, and create a Link endpoint of type `location` for the route. Only a resource that is connected to the {{site.data.keyword.cloud_notm}} private network can access your app.
+* [{{site.data.keyword.redhat_openshift_notm}} routes and {{site.data.keyword.satelliteshort}} Link endpoints](#sat-expose-cloud): Expose your app with a private route, and create a Link endpoint of type `location` for the route. Only a resource that is connected to the {{site.data.keyword.cloud_notm}} private network can access your app.
 
-## Exposing apps with {{site.data.keyword.openshiftshort}} routes
+## Exposing apps with {{site.data.keyword.redhat_openshift_notm}} routes
 {: #sat-expose-routes}
 
-Quickly expose the services in your cluster on the {{site.data.keyword.openshiftshort}} Ingress controller's external IP address by using a route.
+Quickly expose the services in your cluster on the {{site.data.keyword.redhat_openshift_notm}} Ingress controller's external IP address by using a route.
 {: shortdesc}
 
-An [{{site.data.keyword.openshiftshort}} route](/docs/openshift?topic=openshift-openshift_routes) exposes a service as a hostname in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.upi.containers.appdomain.cloud`. A Ingress controller is deployed by default to your cluster, which enables routes to be used by external clients. The Ingress controller uses the service selector to find the service and the endpoints that back the service. You can configure the service selector to direct traffic through one route to multiple services. You can also create either unsecured or secured routes by using the TLS certificate that is assigned by the Ingress controller for your hostname. Note that the Ingress controller supports only the HTTP and HTTPS protocols.
+An [{{site.data.keyword.redhat_openshift_notm}} route](/docs/openshift?topic=openshift-openshift_routes) exposes a service as a hostname in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.upi.containers.appdomain.cloud`. A Ingress controller is deployed by default to your cluster, which enables routes to be used by external clients. The Ingress controller uses the service selector to find the service and the endpoints that back the service. You can configure the service selector to direct traffic through one route to multiple services. You can also create either unsecured or secured routes by using the TLS certificate that is assigned by the Ingress controller for your hostname. Note that the Ingress controller supports only the HTTP and HTTPS protocols.
 
 Before you begin with routes, review the following considerations.
 
@@ -79,13 +79,13 @@ To create routes for your apps:
         Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.
         {: tip}
         
-    * Edge: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [{{site.data.keyword.openshiftshort}} edge route documentation](https://docs.openshift.com/container-platform/4.8/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
+    * Edge: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} edge route documentation](https://docs.openshift.com/container-platform/4.8/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
         ```sh
         oc create route edge --service <app_service_name> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
         ```
         {: pre}
 
-    * Re-encrypt: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [{{site.data.keyword.openshiftshort}} re-encrypt route documentation](https://docs.openshift.com/container-platform/4.8/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
+    * Re-encrypt: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} re-encrypt route documentation](https://docs.openshift.com/container-platform/4.8/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
         ```sh
         oc create route reencrypt --service <app_service_name> --dest-ca-cert <destca.crt> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
         ```
@@ -101,7 +101,7 @@ To create routes for your apps:
 
 
 
-## Setting up a third-party load balancer in front of the {{site.data.keyword.openshiftshort}} Ingress controller
+## Setting up a third-party load balancer in front of the {{site.data.keyword.redhat_openshift_notm}} Ingress controller
 {: #sat-expose-byolb}
 
 To health check the IP addresses of the hosts that are registered in the Ingress controller's DNS records, you can set up your own third-party load balancer in front of the IP addresses for the hosts that are assigned as worker nodes to you cluster.
@@ -150,7 +150,7 @@ After you create a load balancer in front of your Ingress controller, you can us
     ```
     {: pre}
 
-7. Continue with the steps in [Exposing apps with {{site.data.keyword.openshiftshort}} routes](#sat-expose-routes) to create routes for your apps.
+7. Continue with the steps in [Exposing apps with {{site.data.keyword.redhat_openshift_notm}} routes](#sat-expose-routes) to create routes for your apps.
 
 If you configure an external loadbalancer or VIP to register with the subdomain rather than using the default registration, that loadbalancer 
 needs inbound access to the cluster hosts and the cluster hosts need outbound access to the loadbalancer. 
@@ -161,7 +161,7 @@ needs inbound access to the cluster hosts and the cluster hosts need outbound ac
 ## Exposing apps with NodePorts
 {: #sat-expose-np}
 
-If you can't use the {{site.data.keyword.openshiftshort}} Ingress controller to expose an app, such as if you must expose a TCP or UDP app, you can create a [NodePort](/docs/openshift?topic=openshift-nodeport) for your app.
+If you can't use the {{site.data.keyword.redhat_openshift_notm}} Ingress controller to expose an app, such as if you must expose a TCP or UDP app, you can create a [NodePort](/docs/openshift?topic=openshift-nodeport) for your app.
 {: shortdesc}
 
 1. Create a NodePort for your app. A NodePort in the range of 30000 - 32767 and an internal cluster IP address is assigned to your app.
@@ -194,7 +194,7 @@ If you can't use the {{site.data.keyword.openshiftshort}} Ingress controller to 
 If you want to access an app in your {{site.data.keyword.satelliteshort}} cluster from a resource in {{site.data.keyword.cloud_notm}} over the private network, you can use your private Ingress controller to create a private route for your app. Then, you can create a Link endpoint of type `location` for the route, which is accessible only from within the {{site.data.keyword.cloud_notm}} private network.
 {: shortdesc}
 
-1. Follow the steps in [Exposing apps with {{site.data.keyword.openshiftshort}} routes](#sat-expose-routes) to create a private route for your app. This route is accessible only from within your hosts' private network.
+1. Follow the steps in [Exposing apps with {{site.data.keyword.redhat_openshift_notm}} routes](#sat-expose-routes) to create a private route for your app. This route is accessible only from within your hosts' private network.
 
 2. Follow the steps in [Creating `location` endpoints to connect to resources in a location](/docs/satellite?topic=satellite-link-cloud-create#link-location) to create a {{site.data.keyword.satelliteshort}} Link endpoint for your app's private route.
 

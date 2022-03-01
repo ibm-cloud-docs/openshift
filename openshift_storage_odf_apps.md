@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-22"
+lastupdated: "2022-03-01"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc
 
@@ -21,7 +21,7 @@ After you install the OpenShift Data Foundation add-on for your {{site.data.keyw
 
 **Minimum required permissions**: **Editor** platform access role and the **Writer** service access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-[Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+[Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. List the ODF storage classes. For more information about ODF storage classes, see the [Storage class reference](/docs/openshift?topic=openshift-ocs-sc-ref#ocs-sc-ref).
     ```sh

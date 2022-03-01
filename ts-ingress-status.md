@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift
 
@@ -83,7 +83,7 @@ The Ingress Message provides details of what operation is in progress or informa
 |`Could not create a Certificate Manager instance. Ensure you have the correct IAM platform permissions.` | A default {{site.data.keyword.cloudcerts_long_notm}} instance for your cluster was not created to store the TLS certificate for the Ingress subdomain. The API key for the resource group and region that your cluster is in does not have the correct IAM permissions for {{site.data.keyword.cloudcerts_short}}. For troubleshooting steps, see [Why does no Ingress secret exist after cluster creation?](/docs/containers?topic=containers-ingress_secret).|
 |`Could not upload certificates to Certificate Manager instance. Ensure you have the correct IAM service permissions.` |The TLS certificate for your cluster's default Ingress subdomain is created, but can't be stored in the default {{site.data.keyword.cloudcerts_long_notm}} instance for your cluster. The API key for the resource group and region that your cluster is in does not have the correct IAM permissions for {{site.data.keyword.cloudcerts_short}}. For troubleshooting steps, see [Why does no Ingress secret exist after cluster creation?](/docs/containers?topic=containers-ingress_secret).|
 |`Deploying router for Ingress controller` |Version 4: The router and router service that expose your Ingress controller are currently deploying to the cluster. If this message continues to be displayed, a router pod might be unable to deploy because only 1 worker node exists in the zone. Two worker nodes are required per zone so that the 2 replicas of the router can be deployed and updated correctly. For more information, see [Adding worker nodes to clusters](/docs/openshift?topic=openshift-add_workers). |
-|`Ingress status is not supported for cluster type` |Ingress health reporting is currently not supported for {{site.data.keyword.openshiftshort}} clusters.|
+|`Ingress status is not supported for cluster type` |Ingress health reporting is currently not supported for {{site.data.keyword.redhat_openshift_notm}} clusters.|
 |`Load balancer service for ALB or router is not ready` |Version 4: The router and router service that expose your Ingress controller did not correctly deploy to your cluster. For troubleshooting information, see [Version 4: Why doesn't the router for Ingress controller deploy in a zone?](/docs/openshift?topic=openshift-cs_subnet_limit_43).|
 |`No workers found in this zone` | Router pods can't deploy to a zone because no worker nodes match the pod affinity requirements. To ensure that you have the minimum required worker nodes per zone, see [Why do ALB pods not deploy to worker nodes?](/docs/containers?topic=containers-alb-pod-affinity).|
 |`One or more ALBs are unhealthy` |Version 3.11: The external IP address for one or more of your ALBs was reported as unhealthy. For troubleshooting information, see [Ping the ALB subdomain and public IP addresses](/docs/containers?topic=containers-ingress-debug#ping).|

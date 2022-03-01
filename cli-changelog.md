@@ -17,7 +17,7 @@ subcollection: openshift
 # CLI changelog
 {: #cs_cli_changelog}
 
-In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
+In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
 {: shortdesc}
 
 
@@ -124,7 +124,7 @@ Version 1.0.295 of the CLI was released on 24 June 2021.
 Version 1.0.275 of the CLI was released on 26 May 2021.
   
 - The `--region` flag is now required for the `ibmcloud oc api-key reset`, `ibmcloud oc credential get`, and `ibmcloud oc credential set` commands. 
-- Adds the `ibmcloud oc cluster addon versions` command to list the {{site.data.keyword.openshiftshort}} versions that are supported for each add-on version, and deprecates the `ibmcloud oc addon-versions` command.
+- Adds the `ibmcloud oc cluster addon versions` command to list the {{site.data.keyword.redhat_openshift_notm}} versions that are supported for each add-on version, and deprecates the `ibmcloud oc addon-versions` command.
 - The `ibmcloud oc image-security disable` and `ibmcloud oc image-security enable` commands are now generally available. 
 - The IAM token that is used for your CLI session is now refreshed 5 minutes before expiration to keep the session active. 
 - Updates the help text in various languages.
@@ -164,7 +164,7 @@ Version 1.0.231 of the CLI was released on 25 February 2021.
 Version 1.0.223 of the CLI was released on 8 February 2021.
 
 - Adds the [`ibmcloud oc worker-pool label set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_set) and [`ibmcloud oc worker-pool label rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_rm) commands to set and remove custom Kubernetes labels for all worker nodes in a worker pool.
-- [Adds several commands and command changes for managing {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-satellite-cli-changelog).
+- [Adds several commands and command changes for managing {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 ## Version 1.0.208
 {: #cli-10208}
@@ -263,7 +263,7 @@ Version 1.0.118 of the CLI was released on 7 July 2020.
 Version 1.0.99 of the CLI was released on 15 June 2020.
 
 
-- Adds the `--cos-instance` flag to the `ibmcloud oc cluster create vpc-gen2` command to back up the images from your {{site.data.keyword.openshiftshort}} internal registry to a bucket in your {{site.data.keyword.cos_full_notm}} instance.
+- Adds the `--cos-instance` flag to the `ibmcloud oc cluster create vpc-gen2` command to back up the images from your {{site.data.keyword.redhat_openshift_notm}} internal registry to a bucket in your {{site.data.keyword.cos_full_notm}} instance.
 - Updates the help text in various places.
 
 ## Version 1.0.94
@@ -426,7 +426,7 @@ Version 0.4.66 of the CLI was released on 19 December 2019.
 Version 0.4.64 of the CLI was released on 11 December 2019.
 
 
-- Adds the `--entitlement` flag to the `ibmcloud oc cluster create` and `ibmcloud oc worker-pool create` commands. Include this flag only if you use this cluster with an [IBM Cloud Pak](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an {{site.data.keyword.openshiftshort}} entitlement.
+- Adds the `--entitlement` flag to the `ibmcloud oc cluster create` and `ibmcloud oc worker-pool create` commands. Include this flag only if you use this cluster with an [IBM Cloud Pak](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an {{site.data.keyword.redhat_openshift_notm}} entitlement.
 - Updates the Go version to 1.12.11. 
 - Updates the help text in various languages.
   
@@ -436,7 +436,7 @@ Version 0.4.64 of the CLI was released on 11 December 2019.
 Version 0.4.61 of the CLI was released on 26 November 2019.
 
 - Removes the `kube-audit` log source option from `ibmcloud oc logging config` commands.
-- Adds a column to the output of `ibmcloud oc addon-versions` for the minimum required {{site.data.keyword.openshiftshort}} version.
+- Adds a column to the output of `ibmcloud oc addon-versions` for the minimum required {{site.data.keyword.redhat_openshift_notm}} version.
 - Adds a check to verify that you are logged in to the {{site.data.keyword.cloud_notm}} CLI before a command request is issued. 
 - Updates the help text in various languages.
   
@@ -593,8 +593,8 @@ Version 0.3.47 of the CLI was released on 15 June 2019.
 Version 0.3.34 of the CLI was released on 31 May 2019.
 
 Adds support for creating {{site.data.keyword.openshiftlong_notm}} clusters:
-- Adds support for {{site.data.keyword.openshiftshort}} versions in the `--version` flag of the `cluster create classic` command. For example, to create a standard {{site.data.keyword.openshiftshort}} cluster, you can pass in `--version 3.11_openshift` in your `cluster create classic` command.
-- Adds the `versions` command to list all supported Kubernetes and {{site.data.keyword.openshiftshort}} versions. 
+- Adds support for {{site.data.keyword.redhat_openshift_notm}} versions in the `--version` flag of the `cluster create classic` command. For example, to create a standard {{site.data.keyword.redhat_openshift_notm}} cluster, you can pass in `--version 3.11_openshift` in your `cluster create classic` command.
+- Adds the `versions` command to list all supported Kubernetes and {{site.data.keyword.redhat_openshift_notm}} versions. 
 - Deprecates the `kube-versions` command.
 
 #### Version 0.3.33

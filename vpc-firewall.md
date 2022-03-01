@@ -192,15 +192,15 @@ Before you begin, allow access to run [`ibmcloud` commands](#vpc-firewall_bx) an
 
 3. Allow access for the Calico policies via the master URL IP address and the etcd port.
 
-### Allowing access to the {{site.data.keyword.openshiftshort}} image registry in a firewall
+### Allowing access to the {{site.data.keyword.redhat_openshift_notm}} image registry in a firewall
 {: #openshift-registry}
 
 If you [set up a secure external route for the internal image registry](/docs/openshift?topic=openshift-registry#route_internal_registry), or to [access an {{site.data.keyword.cos_full_notm}} bucket that backs up your internal image registry in a VPC cluster](/docs/openshift?topic=openshift-registry#cos_image_registry), you must allow access for the internal registry and {{site.data.keyword.cos_full_notm}} endpoints in your corporate firewall.
 {: shortdesc}
 
-1. If you create an external route for the internal {{site.data.keyword.openshiftshort}} image registry, allow access to the `*.containers.appdomain.cloud` domain so that you can access the `image-registry-openshift-image-registry.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud` route from your corporate network.
+1. If you create an external route for the internal {{site.data.keyword.redhat_openshift_notm}} image registry, allow access to the `*.containers.appdomain.cloud` domain so that you can access the `image-registry-openshift-image-registry.<cluster_name>-<ID_string>.<region>.containers.appdomain.cloud` route from your corporate network.
 
-2. VPC clusters: If you must access an {{site.data.keyword.cos_full_notm}} bucket that backs up the internal {{site.data.keyword.openshiftshort}} image registry, or if you must otherwise access {{site.data.keyword.cos_full_notm}} from your corporate network, allow access to the `*.cloud-object-storage.appdomain.cloud` domain.
+2. VPC clusters: If you must access an {{site.data.keyword.cos_full_notm}} bucket that backs up the internal {{site.data.keyword.redhat_openshift_notm}} image registry, or if you must otherwise access {{site.data.keyword.cos_full_notm}} from your corporate network, allow access to the `*.cloud-object-storage.appdomain.cloud` domain.
 
 
 
@@ -216,7 +216,7 @@ For example, you might have services that run inside or outside {{site.data.keyw
 If you want to permit egress from your firewall-protected services to your cluster, you must add your worker nodes' private IP addresses or your cluster's VPC subnet CIDRs in your service's firewall. Note that because worker nodes in VPC clusters have only private IP addresses, connections into the VPC cluster worker nodes can only originate from systems that are connected to your IBM Cloud private network.
 
 Before you begin
-1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 2. Install the `infrastructure-service` CLI plug-in. The prefix for running VPC infrastructure commands is `ibmcloud is`.
     ```sh
     ibmcloud plugin install infrastructure-service

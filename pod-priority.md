@@ -17,12 +17,12 @@ subcollection: openshift
 # Setting pod priority
 {: #pod_priority}
 
-With pod priority and preemption, you can configure priority classes to indicate the relative priority of the pods that make up your {{site.data.keyword.openshiftshort}} cluster's workload. The {{site.data.keyword.openshiftshort}} controller takes into consideration the priority of a pod and can even preempt (remove) pods with lower priority to make room on a worker node for higher priority pods. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.8/nodes/pods/nodes-pods-priority.html){: external}.
+With pod priority and preemption, you can configure priority classes to indicate the relative priority of the pods that make up your {{site.data.keyword.redhat_openshift_notm}} cluster's workload. The {{site.data.keyword.redhat_openshift_notm}} controller takes into consideration the priority of a pod and can even preempt (remove) pods with lower priority to make room on a worker node for higher priority pods. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.8/nodes/pods/nodes-pods-priority.html){: external}.
 {: shortdesc}
 
 **Why do I set pod priority?**
 
-As a cluster administrator, you want to control which pods are more critical to your cluster workload. Priority classes can help you control the {{site.data.keyword.openshiftshort}} controller decisions to favor higher priority pods over lower priority pods. The {{site.data.keyword.openshiftshort}} controller can even preempt (remove) lower priority pods that are running so that pending higher priority pods can be scheduled.
+As a cluster administrator, you want to control which pods are more critical to your cluster workload. Priority classes can help you control the {{site.data.keyword.redhat_openshift_notm}} controller decisions to favor higher priority pods over lower priority pods. The {{site.data.keyword.redhat_openshift_notm}} controller can even preempt (remove) lower priority pods that are running so that pending higher priority pods can be scheduled.
 
 By setting pod priority, you can help prevent lower priority workloads from impacting critical workloads in your cluster, especially in cases where the cluster starts to reach its resource capacity.
 
@@ -33,17 +33,17 @@ Make sure that you have [set up proper user access](/docs/openshift?topic=opensh
 
 **How does priority scheduling and preemption work?** {: #priority_scheduling}
 
-In general, pending pods that have a higher priority are scheduled before lower prioritized pods. If you don't have enough resources left in your worker nodes, the {{site.data.keyword.openshiftshort}} controller can preempt (remove) pods to free up enough resources for the higher prioritized pods to be scheduled. Preemption is also affected by graceful termination periods, pod disruption budgets, and worker node affinity.
+In general, pending pods that have a higher priority are scheduled before lower prioritized pods. If you don't have enough resources left in your worker nodes, the {{site.data.keyword.redhat_openshift_notm}} controller can preempt (remove) pods to free up enough resources for the higher prioritized pods to be scheduled. Preemption is also affected by graceful termination periods, pod disruption budgets, and worker node affinity.
 
 If you don't specify a priority for your pod deployment, the default is set to the priority class that is set as the `globalDefault` . If you don't have a `globalDefault` priority class, the default priority for all pods is zero (`0`). By default, {{site.data.keyword.openshiftlong_notm}} does not set a `globalDefault`, so the pod default priority is zero.
 
-To understand how pod priority and {{site.data.keyword.openshiftshort}} controller work together, consider the scenarios in the following figure. You must place prioritized pods on worker nodes with available resources. Otherwise, high priority pods in your cluster can remain in pending at the same time that existing pods are removed, such as in Scenario 3.
+To understand how pod priority and {{site.data.keyword.redhat_openshift_notm}} controller work together, consider the scenarios in the following figure. You must place prioritized pods on worker nodes with available resources. Otherwise, high priority pods in your cluster can remain in pending at the same time that existing pods are removed, such as in Scenario 3.
 
 ![Pod priority scenarios.](images/pod-priority.png "Pod priority scenarios"){: caption="Figure 1. Pod priority scenarios" caption-side="bottom"}
 
-1. Three pods with high, medium, and low priority are pending scheduling. The {{site.data.keyword.openshiftshort}} controller finds an available worker node with room for all three pods, and schedules them in order of priority, with the highest priority pod scheduled first.
-2. Three pods with high, medium, and low priority are pending scheduling. The {{site.data.keyword.openshiftshort}} controller finds an available worker node, but the worker node has only enough resources to support the high and medium priority pods. The low-priority pod is not scheduled and it remains in pending.
-3. Two pods with high and medium priority are pending scheduling. A third pod with low priority exists on an available worker node. However, the worker node does not have enough resources to schedule any of the pending pods. The {{site.data.keyword.openshiftshort}} controller preempts, or removes, the low-priority pod, which returns the pod to a pending state. Then, the {{site.data.keyword.openshiftshort}} controller tries to schedule the high priority pod. However, the worker node does not have enough resources to schedule the high priority pod, and instead, the {{site.data.keyword.openshiftshort}} controller schedules the medium priority pod.
+1. Three pods with high, medium, and low priority are pending scheduling. The {{site.data.keyword.redhat_openshift_notm}} controller finds an available worker node with room for all three pods, and schedules them in order of priority, with the highest priority pod scheduled first.
+2. Three pods with high, medium, and low priority are pending scheduling. The {{site.data.keyword.redhat_openshift_notm}} controller finds an available worker node, but the worker node has only enough resources to support the high and medium priority pods. The low-priority pod is not scheduled and it remains in pending.
+3. Two pods with high and medium priority are pending scheduling. A third pod with low priority exists on an available worker node. However, the worker node does not have enough resources to schedule any of the pending pods. The {{site.data.keyword.redhat_openshift_notm}} controller preempts, or removes, the low-priority pod, which returns the pod to a pending state. Then, the {{site.data.keyword.redhat_openshift_notm}} controller tries to schedule the high priority pod. However, the worker node does not have enough resources to schedule the high priority pod, and instead, the {{site.data.keyword.redhat_openshift_notm}} controller schedules the medium priority pod.
 
 For more information, see the Kubernetes documentation about [pod priority and preemption](https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/){: external}.
 
@@ -84,7 +84,7 @@ To set pod priority, you need to use a priority class.
 {: shortdesc}
 
 Before you begin:
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+* [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 * Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the `default` namespace.
 
 To use a priority class:
@@ -149,7 +149,7 @@ Assign a priority class to your pod spec to set the pod's priority within your {
 {: shortdesc}
 
 Before you begin:
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+* [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 * Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) in the namespace that you want to deploy the pods to.
 * [Understand how priority scheduling works](#priority_scheduling), as priority can preempt existing pods and affect how your cluster's resources are consumed.
 

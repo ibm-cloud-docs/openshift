@@ -45,7 +45,7 @@ While the daemon set is running, new worker nodes that are added to the cluster 
 Before you begin:
 
 * [Create persistent storage](/docs/openshift?topic=openshift-file_storage#add_file).
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+* [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 Steps:
 

@@ -48,9 +48,9 @@ Refer to the following tables for a summary of changes for each version of the {
 
 
 ## Version 4.2
-{: #041_is_block}
+{: #042_is_block}
 
-### Change log for version 4.2.0_890, released 24th February 2022
+### Change log for version 4.2.0_890, released 28 February 2022
 {: #420_890_is_block_relnote}
 
 Updates in this version:

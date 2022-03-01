@@ -17,7 +17,7 @@ subcollection: openshift
 # Understanding high availability and disaster recovery for {{site.data.keyword.openshiftlong_notm}}
 {: #ha}
 
-Use the built-in {{site.data.keyword.openshiftshort}}, Kubernetes, and {{site.data.keyword.cloud}} features to make your {{site.data.keyword.openshiftshort}} cluster more highly available and to protect your app from downtime when a component in your cluster fails.
+Use the built-in {{site.data.keyword.redhat_openshift_notm}}, Kubernetes, and {{site.data.keyword.cloud}} features to make your {{site.data.keyword.redhat_openshift_notm}} cluster more highly available and to protect your app from downtime when a component in your cluster fails.
 {: shortdesc}
 
 
@@ -82,9 +82,9 @@ Worker nodes in one zone are not guaranteed to be on separate physical compute h
 ### 3. Cluster availability
 {: #ha-cluster}
 
-The [{{site.data.keyword.openshiftshort}} master](/docs/openshift?topic=openshift-service-architecture) is the main component that keeps your cluster up and running. The master stores cluster resources and their configurations in the etcd database that serves as the single point of truth for your cluster. The {{site.data.keyword.openshiftshort}} API server is the main entry point for all cluster management requests from the worker nodes to the master, or when you want to interact with your cluster resources.
+The [{{site.data.keyword.redhat_openshift_notm}} master](/docs/openshift?topic=openshift-service-architecture) is the main component that keeps your cluster up and running. The master stores cluster resources and their configurations in the etcd database that serves as the single point of truth for your cluster. The {{site.data.keyword.redhat_openshift_notm}} API server is the main entry point for all cluster management requests from the worker nodes to the master, or when you want to interact with your cluster resources.
 
-If a master failure occurs, your workloads continue to run on the worker nodes, but you can't use `oc` commands to work with your cluster resources or view the cluster health until the {{site.data.keyword.openshiftshort}} API server in the master is back up. If a pod goes down during the master outage, the pod can't be rescheduled until the worker node can reach the {{site.data.keyword.openshiftshort}} API server again.
+If a master failure occurs, your workloads continue to run on the worker nodes, but you can't use `oc` commands to work with your cluster resources or view the cluster health until the {{site.data.keyword.redhat_openshift_notm}} API server in the master is back up. If a pod goes down during the master outage, the pod can't be rescheduled until the worker node can reach the {{site.data.keyword.redhat_openshift_notm}} API server again.
 
 During a master outage, you can still run `ibmcloud oc` commands against the {{site.data.keyword.containerlong_notm}} API to work with your infrastructure resources, such as worker nodes or VLANs. If you change the current cluster configuration by adding or removing worker nodes to the cluster, your changes don't happen until the master is back up.
 

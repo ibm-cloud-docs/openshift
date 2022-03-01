@@ -14,7 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Changing service endpoints or VLAN connections in {{site.data.keyword.openshiftshort}} 3.11
+# Changing service endpoints or VLAN connections in {{site.data.keyword.redhat_openshift_notm}} 3.11
 {: #cs_network_cluster}
 
 After you initially set up your network when you [create a cluster](/docs/containers?topic=containers-clusters), you can change the service endpoints that your cluster master is accessible through or change the VLAN connections for your worker nodes.
@@ -24,7 +24,7 @@ After you initially set up your network when you [create a cluster](/docs/contai
 {: note}
 
 
-![Version 3.11 icon.](images/icon-version-311.png) The content on this page is specific to **classic clusters that run {{site.data.keyword.openshiftshort}} 3.11 only**. In clusters that run {{site.data.keyword.openshiftshort}} 3.11, you must enable the public cloud service endpoint during cluster creation, and you can't disable it later. You can later enable the private cloud service endpoint. In clusters that run version 4, you choose the public cloud service endpoint only or public and private cloud service endpoints during cluster creation, and you can't later change the cloud service endpoints.
+![Version 3.11 icon.](images/icon-version-311.png) The content on this page is specific to **classic clusters that run {{site.data.keyword.redhat_openshift_notm}} 3.11 only**. In clusters that run {{site.data.keyword.redhat_openshift_notm}} 3.11, you must enable the public cloud service endpoint during cluster creation, and you can't disable it later. You can later enable the private cloud service endpoint. In clusters that run version 4, you choose the public cloud service endpoint only or public and private cloud service endpoints during cluster creation, and you can't later change the cloud service endpoints.
 {: important}
 
 
@@ -119,7 +119,7 @@ Trying to change the service endpoint for master-worker communication instead? C
 
 
 
-Before you begin [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To change the VLANs that a worker pool uses to provision worker nodes.
 
@@ -208,7 +208,7 @@ To change the VLANs that a worker pool uses to provision worker nodes.
 
 9. Move networking services to the new VLANs. The networking services in your cluster are still bound to the old VLAN because their IP addresses are from a subnet on that VLAN.
     - Routers: Because routers can't be moved across VLANs, you can instead [create router services on the new VLANs and delete router services on the old VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-classic).
-    - Ingress ALBs ({{site.data.keyword.openshiftshort}} version 3.11 only): Because ALBs can't be moved across VLANs, you can instead [create ALBs on the new VLANs and disable ALBs on the old VLANs](/docs/containers?topic=containers-ingress-types#migrate-alb-vlan).
+    - Ingress ALBs ({{site.data.keyword.redhat_openshift_notm}} version 3.11 only): Because ALBs can't be moved across VLANs, you can instead [create ALBs on the new VLANs and disable ALBs on the old VLANs](/docs/containers?topic=containers-ingress-types#migrate-alb-vlan).
 
 10. Optional: If you no longer need the subnets on the old VLANs, you can [remove them](/docs/openshift?topic=openshift-subnets#remove-subnets).
 

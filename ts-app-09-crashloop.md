@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift
 
@@ -27,7 +27,7 @@ Your pods are in a `CrashLoopBackOff` status.
 {: tsSymptoms}
 
 
-When you try to deploy an app that works on community Kubernetes platforms, you might see this status or a related error message because {{site.data.keyword.openshiftshort}} sets up stricter security settings by default than community Kubernetes.
+When you try to deploy an app that works on community Kubernetes platforms, you might see this status or a related error message because {{site.data.keyword.redhat_openshift_notm}} sets up stricter security settings by default than community Kubernetes.
 {: tsCauses}
 
 

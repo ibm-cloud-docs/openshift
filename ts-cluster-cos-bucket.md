@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift
 
@@ -76,7 +76,7 @@ Manually set up your cluster to back up the internal registry to an {{site.data.
 
 5. Verify that the internal registry images are backed up to {{site.data.keyword.cos_full_notm}}.
     1. [Build an image for your app](/docs/openshift?topic=openshift-images) and [push it to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-images#push-images).
-    2. [Import the image into your internal {{site.data.keyword.openshiftshort}} registry](/docs/openshift?topic=openshift-registry#imagestream_registry).
+    2. [Import the image into your internal {{site.data.keyword.redhat_openshift_notm}} registry](/docs/openshift?topic=openshift-registry#imagestream_registry).
     3. [Deploy an app](/docs/openshift?topic=openshift-images#pod_imagePullSecret) that references your image.
     4. From the [{{site.data.keyword.cloud_notm}} console resource list](https://cloud.ibm.com/resources), select your **Cloud Object Storage** instance.
     5. From the menu, click **Buckets**, then click the bucket that you used for your {{site.data.keyword.openshiftlong_notm}} cluster.

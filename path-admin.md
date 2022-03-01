@@ -17,7 +17,7 @@ subcollection: openshift
 # Learning path for administrators
 {: #learning-path-admin}
 
-Following a curated learning path through {{site.data.keyword.openshiftlong}} to create an {{site.data.keyword.openshiftshort}} cluster, manage the cluster's resources and lifecycle, and use the powerful tools of {{site.data.keyword.openshiftlong_notm}} to secure, manage, and monitor your cluster workloads.
+Following a curated learning path through {{site.data.keyword.openshiftlong}} to create an {{site.data.keyword.redhat_openshift_notm}} cluster, manage the cluster's resources and lifecycle, and use the powerful tools of {{site.data.keyword.openshiftlong_notm}} to secure, manage, and monitor your cluster workloads.
 {: shortdesc}
 
 
@@ -59,7 +59,7 @@ Create a cluster with infrastructure, network, and availability setups that are 
     1. Make sure that your authorized cluster users can now also access the cluster by planning your user access strategy.
     2. [Pick the right access policy and role for your users](/docs/openshift?topic=openshift-access-overview#access_roles).
     3. [Understand access roles for individual or groups of users in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-access-overview#iam_individuals_groups).
-    4. [Choose the scope of user access to cluster instances, {{site.data.keyword.openshiftshort}} project, or resource groups](/docs/openshift?topic=openshift-access-overview#resource_groups).
+    4. [Choose the scope of user access to cluster instances, {{site.data.keyword.redhat_openshift_notm}} project, or resource groups](/docs/openshift?topic=openshift-access-overview#resource_groups).
     5. Allow users to create apps or audit your cluster activity by [assigning cluster access](/docs/openshift?topic=openshift-users#checking-perms). To see specific permissions and actions that you can grant users, see the [user access permissions reference](/docs/containers?topic=containers-access_reference).
 
 
@@ -126,7 +126,7 @@ Set up an image registry and a continuous integration and delivery (CI/CD) pipel
 {: shortdesc}
 
 1. **Registry**: Choose and set up an [image registry](/docs/containers?topic=containers-registry) so that developers can pull images from the registry in their app deployment YAML files. Your cluster comes with the following default configurations that your developers can use.
-    - **Internal {{site.data.keyword.openshiftshort}} container registry**: The [internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry) is set up by default, with the images stored in an attached storage device. You can also choose to [pull an image from a private registry](/docs/openshift?topic=openshift-registry#imagestream_registry) like {{site.data.keyword.registrylong_notm}} into the image stream of the internal registry so that the image is available locally to all the projects in the cluster.
+    - **Internal {{site.data.keyword.redhat_openshift_notm}} container registry**: The [internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry) is set up by default, with the images stored in an attached storage device. You can also choose to [pull an image from a private registry](/docs/openshift?topic=openshift-registry#imagestream_registry) like {{site.data.keyword.registrylong_notm}} into the image stream of the internal registry so that the image is available locally to all the projects in the cluster.
     - **Private registry**: Your cluster is set up to pull images from [{{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#openshift_iccr) in the `default` project only. To pull images from a private registry in other projects, [create an image pull secret](/docs/openshift?topic=openshift-registry#other) in the other projects or [import an image from your private registry into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry).
 2. **CI/CD**:
     - Review available [options for automating app deployment](/docs/containers?topic=containers-cicd).

@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2022
 lastupdated: "2022-03-01"
 
-keywords: openshift
+keywords: openshift, autoscaler
 
 subcollection: openshift
 
@@ -22,7 +22,7 @@ content-type: troubleshoot
 Review the options that you have to debug your cluster autoscaler and find the root causes for failures.
 {: shortdesc}
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 ## Step 1: Check the version
 {: #ca-debug-version}
@@ -139,7 +139,7 @@ Check the health of the cluster autoscaler pod.
     ```
     {: pre}
 
-3. Review the **Command** section to check that the [custom cluster autoscaler configuration](/docs/openshift?topic=openshift-ca#ca_chart_values) matches what you expect, such as the`scale-down-delay-after-add` value.
+3. Review the **Command** section to check that the [custom cluster autoscaler configuration](/docs/openshift?topic=openshift-cluster-scaling-enable) matches what you expect, such as the`scale-down-delay-after-add` value.
     ```sh
     Command:
         ./cluster-autoscaler
@@ -233,8 +233,6 @@ Optional: If you completed the debugging steps and your cluster still does not s
 {: #ca-debug-more}
 
 Monitor the cluster autoscaler activities in your cluster to see if the issue is resolved. If you still experience issues, see [Feedback, questions, and support](/docs/containers?topic=containers-get-help).
-
-
 
 
 

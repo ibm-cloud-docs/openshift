@@ -106,10 +106,10 @@ Any costs that incur by using a third-party open source integration are not incl
 Installing third-party open source integrations or Helm charts from the Kubernetes community might change the default cluster configuration and can bring your cluster into an unsupported state. If you run into an issue with using any of these tools, consult the Kubernetes community or the service provider directly.
 {: important}
 
-### Extending {{site.data.keyword.openshiftshort}} API and software with CRDs and Operators
+### Extending {{site.data.keyword.redhat_openshift_notm}} API and software with CRDs and Operators
 {: #kube-crd-operators}
 
-You might use custom resource definitions (CRDs) to extend the {{site.data.keyword.openshiftshort}} API to create and orchestrate custom objects in your cluster. Operators combine custom resources and controllers to automate the lifecycle of app, such as installing and rolling out updates to a customized app from a catalog in your cluster.
+You might use custom resource definitions (CRDs) to extend the {{site.data.keyword.redhat_openshift_notm}} API to create and orchestrate custom objects in your cluster. Operators combine custom resources and controllers to automate the lifecycle of app, such as installing and rolling out updates to a customized app from a catalog in your cluster.
 {: shortdesc}
 
 

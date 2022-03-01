@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift, red hat, red hat openshift, odo
 
@@ -24,7 +24,7 @@ completion-time: 10m
 {: toc-services="containers, openshift"}
 {: toc-completion-time="10m"}
 
-Accelerate application development on any Kubernetes cluster with the {{site.data.keyword.openshiftshort}} Do (`odo`) command-line interface (CLI) tool.
+Accelerate application development on any Kubernetes cluster with the {{site.data.keyword.redhat_openshift_notm}} Do (`odo`) command-line interface (CLI) tool.
 {: shortdesc}
 
 Designed to improve the developer experience, the `odo` CLI has a simple syntax to help you get started with developing and deploying apps to a Kubernetes cluster. With version 2.0, `odo` supports any Kubernetes platform, not just OpenShift Container Platform. You can use `odo` for {{site.data.keyword.containerlong}} or {{site.data.keyword.openshiftlong}} clusters.
@@ -130,7 +130,7 @@ After you complete the [prerequisites](#odo-prereqs) install the CLI and select 
 Now that you have a Node.js component that is based on your local code, you can push the Node.js component to your cluster.
 {: shortdesc}
 
-You might wonder, how can the microservice be pushed to the cluster without a Dockerfile to describe the image, a YAML file to describe the Kubernetes resource, a Helm chart, or other similar configuration file? The `odo` command line uses the [{{site.data.keyword.openshiftshort}} `source-to-image`](https://github.com/openshift/source-to-image){: external} capability to generate all the configuration files that are needed to deploy the microservice to the Kubernetes cluster.
+You might wonder, how can the microservice be pushed to the cluster without a Dockerfile to describe the image, a YAML file to describe the Kubernetes resource, a Helm chart, or other similar configuration file? The `odo` command line uses the [{{site.data.keyword.redhat_openshift_notm}} `source-to-image`](https://github.com/openshift/source-to-image){: external} capability to generate all the configuration files that are needed to deploy the microservice to the Kubernetes cluster.
 
 1. Push the Node.js component to your cluster. The `odo` CLI validates the Node.js component and packages the component as a deployable container.
     ```sh
@@ -164,7 +164,7 @@ You might wonder, how can the microservice be pushed to the cluster without a Do
     ```
     {: screen}
 
-2. Verify that the component is running in your cluster. You can also view the component from your cluster's {{site.data.keyword.openshiftshort}} web console.
+2. Verify that the component is running in your cluster. You can also view the component from your cluster's {{site.data.keyword.redhat_openshift_notm}} web console.
     ```sh
     oc get all -n nodejs-test
     ```
@@ -190,7 +190,7 @@ Now that you have a microservice running in your cluster, you might wonder what 
     Don't want to remember to push each time? Try the `odo watch` command to monitor for local file changes and automatically push the saved updates to your cluster.
     {: tip}
 
-* **Learn more about OpenShift Do**: Learn more about the features of `odo` by visiting the [{{site.data.keyword.redhat_notm}} {{site.data.keyword.openshiftshort}} Do CLI Documentation](https://docs.openshift.com/container-platform/4.8/cli_reference/developer_cli_odo/understanding-odo.html){: external}.
+* **Learn more about OpenShift Do**: Learn more about the features of `odo` by visiting the [{{site.data.keyword.redhat_notm}} {{site.data.keyword.redhat_openshift_notm}} Do CLI Documentation](https://docs.openshift.com/container-platform/4.8/cli_reference/developer_cli_odo/understanding-odo.html){: external}.
 
 
 

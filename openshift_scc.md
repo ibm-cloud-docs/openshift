@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift, scc, security context constraint, psp
 
@@ -16,7 +16,7 @@ subcollection: openshift
 # Configuring security context constraints
 {: #openshift_scc}
 
-With security context constraints (SCCs), you can control the actions and access that pods within your {{site.data.keyword.openshiftlong}} cluster can perform. For more information about SCCs, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html){: external}.
+With security context constraints (SCCs), you can control the actions and access that pods within your {{site.data.keyword.openshiftlong}} cluster can perform. For more information about SCCs, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html){: external}.
 {: shortdesc}
 
 **Why do I set security context constraints?**
@@ -31,11 +31,11 @@ For system groups such as `system:authenticated`, these groups already are assig
 
 **Are any SCCs set by default?**
 
-By default, {{site.data.keyword.openshiftlong_notm}} clusters include a standard set of [{{site.data.keyword.openshiftshort}} SCCs](#oc_sccs). Additionally, clusters have [IBM SCCs](#ibm_sccs) that closely resemble the [Kubernetes pod security policies of community Kubernetes clusters in {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-psp#ibm_psp). These IBM SCCs are included for improved portability with {{site.data.keyword.cloud_notm}} Private packages such as Cloud Paks.
+By default, {{site.data.keyword.openshiftlong_notm}} clusters include a standard set of [{{site.data.keyword.redhat_openshift_notm}} SCCs](#oc_sccs). Additionally, clusters have [IBM SCCs](#ibm_sccs) that closely resemble the [Kubernetes pod security policies of community Kubernetes clusters in {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-psp#ibm_psp). These IBM SCCs are included for improved portability with {{site.data.keyword.cloud_notm}} Private packages such as Cloud Paks.
 
 **What SCCs are applied to my resources by default?**
 
-If you don't specify a security context, the {{site.data.keyword.openshiftshort}} `restricted` security context constraint is applied by default. To check a pod's security context, describe the pod and look for the SCC annotation, such as in the following example.
+If you don't specify a security context, the {{site.data.keyword.redhat_openshift_notm}} `restricted` security context constraint is applied by default. To check a pod's security context, describe the pod and look for the SCC annotation, such as in the following example.
 
 ```sh
 oc describe pod <pod_name>
@@ -54,28 +54,28 @@ Annotations:        openshift.io/...
 
 **Can I use Kubernetes pod security policies instead?**
 
-No. [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){: external} (PSPs) are originally based on {{site.data.keyword.openshiftshort}} SCCs. However, {{site.data.keyword.openshiftshort}} supports only SCCs, not PSPs.
+No. [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/policy/pod-security-policy/){: external} (PSPs) are originally based on {{site.data.keyword.redhat_openshift_notm}} SCCs. However, {{site.data.keyword.redhat_openshift_notm}} supports only SCCs, not PSPs.
 
-The default {{site.data.keyword.openshiftshort}} SCCs are stricter than the default PSPs in community Kubernetes clusters. As such, app deployments that run in community Kubernetes clusters might need to be modified to run in {{site.data.keyword.openshiftshort}}.
+The default {{site.data.keyword.redhat_openshift_notm}} SCCs are stricter than the default PSPs in community Kubernetes clusters. As such, app deployments that run in community Kubernetes clusters might need to be modified to run in {{site.data.keyword.redhat_openshift_notm}}.
 
 
 ## Customizing security context constraints
 {: #customize_sccs}
 
-To create, edit, list, delete, and otherwise manage security context constraints, see the [{{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html){: external}. You can also add users or groups to the default security context constraints.
+To create, edit, list, delete, and otherwise manage security context constraints, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html){: external}. You can also add users or groups to the default security context constraints.
 {: shortdesc}
 
-Make sure that you use the [`oc` CLI or `kubectl` version 1.12 CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc) to interact with these resources, such as `oc get scc`. The `kubectl` CLI version 1.11 CLI has a bug that yields an error when you run commands against {{site.data.keyword.openshiftshort}}-specific resources, such as `kubectl get scc`.
+Make sure that you use the [`oc` CLI or `kubectl` version 1.12 CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc) to interact with these resources, such as `oc get scc`. The `kubectl` CLI version 1.11 CLI has a bug that yields an error when you run commands against {{site.data.keyword.redhat_openshift_notm}}-specific resources, such as `kubectl get scc`.
 {: important}
 
 
-## Default {{site.data.keyword.openshiftshort}} security context constraints
+## Default {{site.data.keyword.redhat_openshift_notm}} security context constraints
 {: #oc_sccs}
 
 {{site.data.keyword.openshiftlong_notm}} clusters come with the following security context constraints by default.
 {: shortdesc}
 
-Do not edit existing {{site.data.keyword.openshiftshort}} or IBM SCCs settings, except for `priority`, `users`, or `groups` fields.
+Do not edit existing {{site.data.keyword.redhat_openshift_notm}} or IBM SCCs settings, except for `priority`, `users`, or `groups` fields.
 {: note}
 
 |SCC name | Description |
@@ -88,7 +88,7 @@ Do not edit existing {{site.data.keyword.openshiftshort}} or IBM SCCs settings, 
 | `nonroot`| Denies access similar to the `restricted` SCC, but allows users to run with any non-root UID. Either the user or the manifest of the container runtime must specify the UID.|
 | `privileged`| Allows access to all privileged and host features and the ability to run as any user, any group, any fsGroup, and with any SELinux context. \n  \n **Important**: Grant this SCC for only cluster administration that requires the most access possible. |
 | `restricted`| Denies access to all host features and requires that pods are run with a UID and SELinux context that are allocated to the namespace. This is the most restrictive SCC, and it is used by default for authenticated users.|
-{: caption="Default {{site.data.keyword.openshiftshort}} security context constraints" caption-side="top"}
+{: caption="Default {{site.data.keyword.redhat_openshift_notm}} security context constraints" caption-side="top"}
 
 
 ## Default IBM security context constraints
@@ -97,7 +97,7 @@ Do not edit existing {{site.data.keyword.openshiftshort}} or IBM SCCs settings, 
 {{site.data.keyword.openshiftlong_notm}} clusters come with the following IBM security context constraints by default.
 {: shortdesc}
 
-Do not edit existing {{site.data.keyword.openshiftshort}} or IBM SCCs settings, except for `priority`, `users`, or `groups` fields.
+Do not edit existing {{site.data.keyword.redhat_openshift_notm}} or IBM SCCs settings, except for `priority`, `users`, or `groups` fields.
 {: note}
 
 |SCC name | Description |

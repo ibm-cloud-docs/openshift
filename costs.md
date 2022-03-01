@@ -80,7 +80,7 @@ When you create worker nodes by adding a worker pool or cluster, {{site.data.key
 ##### New OCP licenses with reduced pricing, available 9 November 2020
 {: #licenses-on-demand-new}
 
-New OCP licenses include reduced pricing from Red Hat. An {{site.data.keyword.openshiftshort}} license is billed for every two virtual cores (or one physical cores) of the worker node flavor. Charges vary by the type of worker node that you have, for as long as you have the worker node. For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/cloud/blog/announcements/run-workloads-by-the-hour-with-red-hat-openshift-on-ibm-cloud){: external}.
+New OCP licenses include reduced pricing from Red Hat. An {{site.data.keyword.redhat_openshift_notm}} license is billed for every two virtual cores (or one physical cores) of the worker node flavor. Charges vary by the type of worker node that you have, for as long as you have the worker node. For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/cloud/blog/announcements/run-workloads-by-the-hour-with-red-hat-openshift-on-ibm-cloud){: external}.
 
 * **Virtual machines (VMs)**: The OCP licenses are billed hourly. For example, you create a worker pool with VMs, test an app for 3 days, and then delete the worker pool. You are billed for only the hours that your worker nodes were deployed.
 * **Physical machines (bare metal)**: The OCP licenses are prorated for the first month that you create the worker nodes in, and then billed monthly for the remaining lifecycle of the worker node. For example, you create a cluster with bare metal worker nodes on 15 August and delete the cluster on 14 September. You are charged a prorated monthly cost for the first month of August, but the full monthly cost for September.
@@ -90,9 +90,9 @@ When you estimate the cost of a new cluster or worker node, the OCP licenses are
 ##### Deprecated: Old OCP licenses for existing worker nodes before 9 November 2020 or deprecated bare metal flavors
 {: #licenses-on-demand-old}
 
-An {{site.data.keyword.openshiftshort}} license is billed for every four virtual cores (or two physical cores) of the worker node flavor. You are charged for the entire license for each month that you have worker nodes in a `deployed` state. The monthly charge applies to both virtual and physical worker nodes. For example, if you create the cluster on 15 August and delete the cluster on 14 September, you are still charged for the OCP licenses for two monthly periods: August and September.
+An {{site.data.keyword.redhat_openshift_notm}} license is billed for every four virtual cores (or two physical cores) of the worker node flavor. You are charged for the entire license for each month that you have worker nodes in a `deployed` state. The monthly charge applies to both virtual and physical worker nodes. For example, if you create the cluster on 15 August and delete the cluster on 14 September, you are still charged for the OCP licenses for two monthly periods: August and September.
 * If you delete your worker node before the end of the month, your monthly license is available for other worker nodes in the same cluster. If the other worker nodes are not the same CPU size, you need additional licenses.
-* If you delete the cluster before the end of the month, you are still charged the entire monthly price for the {{site.data.keyword.openshiftshort}} license.
+* If you delete the cluster before the end of the month, you are still charged the entire monthly price for the {{site.data.keyword.redhat_openshift_notm}} license.
 
 When you estimate the cost of a new cluster or worker node, the OCP licenses are included as a separate line item. The OCP licenses are also listed as separate plans in your {{site.data.keyword.cloud_notm}} bill.
 
@@ -195,7 +195,7 @@ Pricing for VPC infrastructure varies based on regional location and sustained u
 {: note}
 
 Regional uplift charges
-:    When you create a cluster on VPC infrastructure, the worker nodes might incur an uplift charge that varies by the [multizone location](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) that you create the cluster in. The uplift charge is a percentage (`%`) of the hourly rate (`r`), and is added to the hourly rate of the worker node. The total hourly rate cost for a worker node can be calculated as `r + (r × %)`. In the [{{site.data.keyword.openshiftshort}} cluster creation console](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift){: external}, this uplift is reflected in the pricing calculator as you configure your cluster details. The following table describes the pricing uplift by region.
+:    When you create a cluster on VPC infrastructure, the worker nodes might incur an uplift charge that varies by the [multizone location](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) that you create the cluster in. The uplift charge is a percentage (`%`) of the hourly rate (`r`), and is added to the hourly rate of the worker node. The total hourly rate cost for a worker node can be calculated as `r + (r × %)`. In the [{{site.data.keyword.redhat_openshift_notm}} cluster creation console](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift){: external}, this uplift is reflected in the pricing calculator as you configure your cluster details. The following table describes the pricing uplift by region.
 
 :    For a table that describes the pricing uplift by region, see [Regional pricing for VPC](https://www.ibm.com/cloud/vpc/pricing){: external}.
 

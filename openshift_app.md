@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: kubernetes, openshift
 
@@ -170,7 +170,7 @@ ports:
 ### Resource requests and limits
 {: #resourcereq}
 
-Cluster administrators make sure that teams that share a cluster don't take up more than their fair share of compute resources (memory and CPU) by creating a [`ResourceQuota` object](https://kubernetes.io/docs/concepts/policy/resource-quotas/){: external} for each {{site.data.keyword.openshiftshort}} project in the cluster. If the cluster admin sets a compute resource quota, then each container within the deployment template must specify resource requests and limits for memory and CPU, otherwise the pod creation fails.
+Cluster administrators make sure that teams that share a cluster don't take up more than their fair share of compute resources (memory and CPU) by creating a [`ResourceQuota` object](https://kubernetes.io/docs/concepts/policy/resource-quotas/){: external} for each {{site.data.keyword.redhat_openshift_notm}} project in the cluster. If the cluster admin sets a compute resource quota, then each container within the deployment template must specify resource requests and limits for memory and CPU, otherwise the pod creation fails.
 {: shortdesc}
 
 1. Check whether a resource quota is set for a namespace.
@@ -628,10 +628,10 @@ As part of a [twelve-factor](https://12factor.net/){: external}, cloud-native ap
 
 For example, you can set up a base `kustomization` YAML to declare Kubernetes objects such as deployments and PVCs that are shared in your development, testing, and production environments. Next, you can set up separate `kustomization` YAMLs that have customized configurations for each environment, such as more replicas in production than testing. These customized YAMLs can then overlay, or build on, the shared base YAML so that you can manage environments that are mostly identical except for a few overlay configuration differences that you source-control. For more information about Kustomize such as a glossary and FAQs, check out the [Kustomize docs](https://github.com/kubernetes-sigs/kustomize/tree/master/docs){: external}.
 
-![Version 3.11 icon.](images/icon-version-311.png) Kustomize is not supported for {{site.data.keyword.openshiftshort}} clusters that run version 3.11.
+![Version 3.11 icon.](images/icon-version-311.png) Kustomize is not supported for {{site.data.keyword.redhat_openshift_notm}} clusters that run version 3.11.
 {: note}
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To set up configuration files with Kustomize:
 1. [Install the `kustomize` tool](https://github.com/kubernetes-sigs/kustomize/blob/master/docs/INSTALL.md){: external}.

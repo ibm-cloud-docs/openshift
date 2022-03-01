@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-28"
+lastupdated: "2022-03-01"
 
 keywords: openshift, route, router
 
@@ -17,20 +17,20 @@ subcollection: openshift
 # {{site.data.keyword.cloud_notm}} HPCS Router add-on changelog
 {: #hpcs-router-changelog}
 
-View information for version updates to the [{{site.data.keyword.cloud_notm}} HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router) in clusters that run {{site.data.keyword.openshiftshort}} version 4.5 and later.
+View information for version updates to the [{{site.data.keyword.cloud_notm}} HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router) in clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5 and later.
 {: shortdesc}
 
 * **Patch updates**: {{site.data.keyword.cloud_notm}} keeps all your add-on components up-to-date by automatically rolling out patch updates to the most recent version of the HPCS Router that is offered by {{site.data.keyword.openshiftlong_notm}}.
-* **Minor version updates**: The minor version of the HPCS Router add-on matches the minor version of your {{site.data.keyword.openshiftshort}} cluster. In the CLI, you can run `ibmcloud oc cluster addon ls -c <cluster_name_or_ID>` to check the current version of your add-on, and `ibmcloud oc cluster get -c <cluster_name_or_ID>` to check the current version of your cluster.
+* **Minor version updates**: The minor version of the HPCS Router add-on matches the minor version of your {{site.data.keyword.redhat_openshift_notm}} cluster. In the CLI, you can run `ibmcloud oc cluster addon ls -c <cluster_name_or_ID>` to check the current version of your add-on, and `ibmcloud oc cluster get -c <cluster_name_or_ID>` to check the current version of your cluster.
 
-| HPCS Router add-on version | Supported? | {{site.data.keyword.openshiftshort}} version support |
+| HPCS Router add-on version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support |
 | -------------------------- | -----------|----------------------------------------------------- |
 | 4.9 | Yes | 4.9 |
 | 4.8 | Yes | 4.8 |
 | 4.7 | Yes | 4.7 |
 | 4.6 | Yes | 4.6 |
 | 4.5 | No | 4.5 |
-{: summary="The rows are read from left to right. The first column is the HPCS Router add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the add-on version is supported for."}
+{: summary="The rows are read from left to right. The first column is the HPCS Router add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.redhat_openshift_notm}} version of your cluster that the add-on version is supported for."}
 {: caption="Supported HPCS Router add-on versions" caption-side="top"}
 
 ## Version 4.9.0

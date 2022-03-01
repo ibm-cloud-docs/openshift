@@ -34,11 +34,11 @@ Billing
 ## Adding managed add-ons
 {: #adding-managed-add-ons}
 
-To enable a managed add-on in your cluster from the CLI, use the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable). To enable a managed add-on in your cluster in the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, use the **Add-ons** pane of the cluster details page. When you enable the managed add-on, a supported version of the tool, including all Kubernetes resources are automatically installed in your cluster. Refer to the documentation of each managed add-on to find the prerequisites that your cluster must meet before you install the managed add-on.
+To enable a managed add-on in your cluster from the CLI, use the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable). To enable a managed add-on in your cluster in the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, use the **Add-ons** pane of the cluster details page. When you enable the managed add-on, a supported version of the tool, including all Kubernetes resources are automatically installed in your cluster. Refer to the documentation of each managed add-on to find the prerequisites that your cluster must meet before you install the managed add-on.
 
 For more information about the prerequisites for each add-on, see:
 - [{{site.data.keyword.block_storage_is_short}}](/docs/containers?topic=containers-vpc-block)
-- [Cluster Autoscaler](/docs/openshift?topic=openshift-ca)
+- [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc)
 - [Diagnostics and Debug Tool](/docs/containers?topic=containers-debug-tool)
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
@@ -108,7 +108,7 @@ The **Health Status** provides details of what add-on operation is in progress. 
 ## Supported add-ons for clusters in {{site.data.keyword.satelliteshort}} locations
 {: #addons-satellite}
 
-Review which managed add-ons are available for {{site.data.keyword.openshiftshort}} clusters that are created in an {{site.data.keyword.satellitelong_notm}} location.
+Review which managed add-ons are available for {{site.data.keyword.redhat_openshift_notm}} clusters that are created in an {{site.data.keyword.satellitelong_notm}} location.
 {: shortdesc}
 
 The following list of add-ons for clusters are supported in {{site.data.keyword.satelliteshort}} locations.
@@ -123,7 +123,7 @@ The following list of add-ons for clusters are supported in {{site.data.keyword.
 The following list of add-ons for clusters are unsupported in {{site.data.keyword.satelliteshort}} locations.
 
 - [ALB OAuth Proxy](/docs/containers?topic=containers-comm-ingress-annotations#app-id)
-- [Cluster Autoscaler](/docs/openshift?topic=openshift-ca)
+- [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc)
 - [Istio](/docs/containers?topic=containers-istio)
 - [{{site.data.keyword.block_storage_is_short}}](/docs/containers?topic=containers-vpc-block)
 

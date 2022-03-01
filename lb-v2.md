@@ -26,7 +26,7 @@ Expose a port and use a portable IP address for a Layer 4 network load balancer 
 ## Prerequisites
 {: #ipvs_provision}
 
-You can't update an existing version 1.0 NLB to 2.0. You must create a new NLB 2.0. Note that you can run version 1.0 and 2.0 NLBs simultaneously in a cluster. To use NLB 2.0, your cluster must run {{site.data.keyword.openshiftshort}} version 4.
+You can't update an existing version 1.0 NLB to 2.0. You must create a new NLB 2.0. Note that you can run version 1.0 and 2.0 NLBs simultaneously in a cluster. To use NLB 2.0, your cluster must run {{site.data.keyword.redhat_openshift_notm}} version 4.
 {: shortdesc}
 
 Before you create an NLB 2.0, you must complete the following prerequisite steps.

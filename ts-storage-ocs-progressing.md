@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift, storage
 
@@ -24,7 +24,7 @@ When you run `oc describe noobaa` or `oc describe ocscluster <ocscluster_name>`,
 To determine why your storage cluster status is stuck, describe your storage cluster resources and review the `Status`.
 {: tsCauses}
 
-1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 2. Run the command to describe NooBaa. Note any error messages in the `Events` section of the output.
     ```sh 

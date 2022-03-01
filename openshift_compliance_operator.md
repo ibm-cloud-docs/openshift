@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift
 
@@ -17,7 +17,7 @@ subcollection: openshift
 # Using the compliance operator
 {: #compliance-operator}
 
-With the compliance operator, you can check whether the worker nodes in your cluster meet the set of criteria in the profile that is tailored to {{site.data.keyword.openshiftlong}}. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.9/security/compliance_operator/compliance-operator-understanding.html){: external}.
+With the compliance operator, you can check whether the worker nodes in your cluster meet the set of criteria in the profile that is tailored to {{site.data.keyword.openshiftlong}}. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.9/security/compliance_operator/compliance-operator-understanding.html){: external}.
 {: shortdesc}
 
 ![Version 4 icon.](images/icon-version-43.png) The compliance operator is available for clusters that run {{site.data.keyword.openshiftlong_notm}} version 4.6 or later.
@@ -34,13 +34,13 @@ Install the compliance operator with the tailored profile for worker nodes in yo
 
 Before you begin, make sure that you have the **Manager** [service access role](/docs/openshift?topic=openshift-access_reference#service) to the cluster.
 
-1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 2. Install the compliance operator.
 
-    The following substeps use the {{site.data.keyword.openshiftshort}} web console, but for other installation methods, see the [open source project documentation](https://github.com/openshift/compliance-operator/blob/master/doc/tutorials/workshop/content/exercises/02-installation.md){: external}. For example, you might have a private network-only cluster that does not permit access to the {{site.data.keyword.openshiftshort}} web console. Keep in mind that your worker nodes in a private cluster must have access to the `quay.io` registry to pull the compliance operator image.
+    The following substeps use the {{site.data.keyword.redhat_openshift_notm}} web console, but for other installation methods, see the [open source project documentation](https://github.com/openshift/compliance-operator/blob/master/doc/tutorials/workshop/content/exercises/02-installation.md){: external}. For example, you might have a private network-only cluster that does not permit access to the {{site.data.keyword.redhat_openshift_notm}} web console. Keep in mind that your worker nodes in a private cluster must have access to the `quay.io` registry to pull the compliance operator image.
     {: note}
 
-    1. From the {{site.data.keyword.openshiftshort}} web console **Administrator** perspective in the menu bar, click **Operators > OperatorHub**.
+    1. From the {{site.data.keyword.redhat_openshift_notm}} web console **Administrator** perspective in the menu bar, click **Operators > OperatorHub**.
     2. Filter for and click the `Compliance Operator`.
     3. Click **Install**.
     4. On the Operator Installation page, confirm the default configurations to install the operator with automatic updates for your cluster version and create an `openshift-compliance` namespace. Then, click **Install**.

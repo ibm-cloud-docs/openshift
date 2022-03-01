@@ -17,7 +17,7 @@ subcollection: openshift
 # Testing access to apps with NodePorts
 {: #nodeport}
 
-Make your containerized app available to internet access by using the public IP address of any worker node in a {{site.data.keyword.openshiftshort}} cluster and exposing a NodePort. Use this option for testing in {{site.data.keyword.openshiftlong}} and for short-term public access.
+Make your containerized app available to internet access by using the public IP address of any worker node in a {{site.data.keyword.redhat_openshift_notm}} cluster and exposing a NodePort. Use this option for testing in {{site.data.keyword.openshiftlong}} and for short-term public access.
 {: shortdesc}
 
 
@@ -58,7 +58,7 @@ If you don't already have an app ready, you can use a Kubernetes example app cal
 
 Before you begin
 
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+* [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC clusters: [Allow traffic requests that are routed to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-security-group).
 
 To use a NodePort,

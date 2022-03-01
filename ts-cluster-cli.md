@@ -73,7 +73,7 @@ error: No Auth Provider found for name "oidc"
 You have a different version of `kubectl` than your cluster version.
 {: tsCauses}
 
-[Kubernetes does not support](https://kubernetes.io/releases/version-skew-policy/){: external} `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2). If you use a community Kubernetes cluster, you might also have the {{site.data.keyword.openshiftshort}} version of `kubectl`, which does not work with community Kubernetes clusters.
+[Kubernetes does not support](https://kubernetes.io/releases/version-skew-policy/){: external} `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2). If you use a community Kubernetes cluster, you might also have the {{site.data.keyword.redhat_openshift_notm}} version of `kubectl`, which does not work with community Kubernetes clusters.
 
 To check your client `kubectl` version against the cluster server version, run `oc version --short`.
 
@@ -81,7 +81,7 @@ To check your client `kubectl` version against the cluster server version, run `
 [Install the version of `kubectl`](/docs/openshift?topic=openshift-openshift-cli#cli_oc) that matches the Kubernetes version of your cluster.
 {: tsResolve}
 
-If you have multiple clusters at different Kubernetes versions or different container platforms such as {{site.data.keyword.openshiftshort}}, download each `kubectl` version binary file to a separate directory. Then, you can set up an alias in your local command-line interface (CLI) profile to point to the `kubectl` binary file directory that matches the `kubectl` version of the cluster that you want to work with, or you might be able to use a tool such as `brew switch kubernetes-cli <major.minor>`.
+If you have multiple clusters at different Kubernetes versions or different container platforms such as {{site.data.keyword.redhat_openshift_notm}}, download each `kubectl` version binary file to a separate directory. Then, you can set up an alias in your local command-line interface (CLI) profile to point to the `kubectl` binary file directory that matches the `kubectl` version of the cluster that you want to work with, or you might be able to use a tool such as `brew switch kubernetes-cli <major.minor>`.
 
 
 
@@ -104,7 +104,7 @@ The OpenVPN server is experiencing configuration issues that prevent accessing t
 {: tsCauses}
 
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 {: tsResolve}
 
 1. Check if a cluster and worker node updates are available by viewing your cluster and worker node details in the console or a `cluster ls` or `worker ls` command. If so, [update your cluster and worker nodes to the latest version](/docs/openshift?topic=openshift-update).
@@ -114,11 +114,11 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     ```
     {: pre}
     
-## 500 error when trying to log in to an {{site.data.keyword.openshiftshort}} cluster via `oc login`
+## 500 error when trying to log in to an {{site.data.keyword.redhat_openshift_notm}} cluster via `oc login`
 {: #500_error_oc_login}
 
 
-When you try to log in to an {{site.data.keyword.openshiftshort}} cluster via `oc login` for the first time and you see an error message similar to the following.
+When you try to log in to an {{site.data.keyword.redhat_openshift_notm}} cluster via `oc login` for the first time and you see an error message similar to the following.
 {: tsSymptoms}
 
 ```
@@ -132,19 +132,19 @@ Error from server (InternalError): Internal error occurred: unexpected response:
 {: screen}
 
 
-Some recent changes to the IAM user role have not yet been synchronized to the {{site.data.keyword.openshiftshort}} cluster.
+Some recent changes to the IAM user role have not yet been synchronized to the {{site.data.keyword.redhat_openshift_notm}} cluster.
 {: tsCauses}
 
 
-Synchronize the IAM user information to the {{site.data.keyword.openshiftshort}} cluster. After the initial user synchronization is performed, further RBAC synchronization should occur automatically.
+Synchronize the IAM user information to the {{site.data.keyword.redhat_openshift_notm}} cluster. After the initial user synchronization is performed, further RBAC synchronization should occur automatically.
 {: tsResolve}
 
 Before you begin: 
 
-[Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+[Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To synchronize the IAM information for the user, you have 2 options:
-- Log in to your cluster from the {{site.data.keyword.openshiftshort}} [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
+- Log in to your cluster from the {{site.data.keyword.redhat_openshift_notm}} [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
 - Set your command line context for the cluster by runnign the  `ibmcloud oc cluster config --cluster CLUSTER` command.
 
 If you use an API key for a functional ID or another user, make sure to log in as the correct user.
