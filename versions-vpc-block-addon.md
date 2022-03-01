@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-28"
+lastupdated: "2022-03-01"
 
 keywords: block, add-on, changelog
 
@@ -45,6 +45,28 @@ Refer to the following tables for a summary of changes for each version of the {
 | 2.0.3 | Unsupported as of Kubernetes version 1.20. |
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.block_storage_is_short}} add-on version. The second column is the version of your cluster that the {{site.data.keyword.block_storage_is_short}} version is supported for."}
 
+
+
+## Version 4.2
+{: #041_is_block}
+
+### Change log for version 4.2.0_890, released 24th February 2022
+{: #420_890_is_block_relnote}
+
+Updates in this version:
+- Volume expansion support is now generally available.
+- Removes unused variables `sizeRange` and `sizeIOPSRange` from storage classes.
+- Makes `ibmc-vpc-block-10iops-tier` the default storage class via the new `addon-vpc-block-csi-driver-configmap` in the `kube-system` namespace.
+- Resolves the following CVEs: [CVE-2021-3712](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3712) and [CVE-2021-3521](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3521){: external}, [CVE-2022-23772](https://nvd.nist.gov/vuln/detail/CVE-2022-23772){: external}, [CVE-2022-23773](https://nvd.nist.gov/vuln/detail/CVE-2022-23773){: external}, and [CVE-2022-23806](https://nvd.nist.gov/vuln/detail/CVE-2022-23806){: external}.
+- Updates Golang to version 1.16.14.
+- All the storage classes that are installed with the add-on now have `allowVolumeExpansion=true`.
+
+After updating to version 4.2, you must complete the following steps.
+{: important}
+
+* [Delete and recreate](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update) any custom storage classes that are using the `sizeRange` or `iopsRange` parameters.
+* If you use a default storage class other than `ibmc-vpc-block-10iops-tier`, you must change the `isStorageClassDefault` setting to `false` in the `addon-vpc-block-csi-driver-configmap` configmap in the `kube-system` namespace. For more information, see [Changing the default storage class](/docs/openshift?topic=openshift-vpc-block#vpc-block-default-edit).
+    
 
 
 
