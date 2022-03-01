@@ -389,8 +389,8 @@ toc:
                 - ts-lb-vpc-app.md
                 - ts-lb-vpc-no-ips.md
             - topicgroup:
-              label: Ingress and routers
-              topics:
+                label: Ingress and routers
+                topics:
                 - ts-ingress-status.md
                 - ts-ingress-debug-roks4.md
                 - ts-ingress-must-gather.md
