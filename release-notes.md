@@ -24,6 +24,17 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: note}
 
 
+## March 2022
+{: #release-march-2022}
+
+### 1 March 2022
+{: #1mar2022}
+{: release-note}
+
+{{site.data.keyword.cos_full_notm}} plug-in
+:   Version `2.1.11` [is available](/docs/containers?topic=containers-cos_plugin_changelog).
+
+
 ## February 2022
 {: #release-feb-2022}
 

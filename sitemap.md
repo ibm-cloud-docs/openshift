@@ -182,6 +182,10 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
+* [March 2022](/docs/openshift?topic=openshift-iks-release#release-march-2022)
+
+    * [1 March 2022](/docs/openshift?topic=openshift-iks-release#1mar2022)
+
 * [February 2022](/docs/openshift?topic=openshift-iks-release#release-feb-2022)
 
     * [28 February 2022](/docs/openshift?topic=openshift-iks-release#28feb2022)
@@ -4247,37 +4251,39 @@ subcollection: openshift
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 
-* [Changlog version 2.1.10, released 17 February 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02110_object_plugin)
+* [Change log for version 2.1.11, released 1 March 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02111_object_plugin)
 
-* [Changlog version 2.1.9, released 24 January 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0219_object_plugin)
+* [Change log for version 2.1.10, released 17 February 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02110_object_plugin)
 
-* [Changlog version 2.1.8, released 17 January 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0218_object_plugin)
+* [Change log for version 2.1.9, released 24 January 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0219_object_plugin)
 
-* [Changelog version 2.1.7, released 18 November 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0217_object_plugin)
+* [Change log for version 2.1.8, released 17 January 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0218_object_plugin)
 
-* [Changelog for version 2.1.6, released 22 October 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0216_object_plugin)
+* [Change log for version 2.1.7, released 18 November 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0217_object_plugin)
 
-* [Changelog for version 2.1.5, released 5 October 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0215_object_plugin)
+* [Change log for version 2.1.6, released 22 October 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0216_object_plugin)
 
-* [Changelog for version 2.1.4, released 1 September 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0214_object_plugin)
+* [Change log for version 2.1.5, released 5 October 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0215_object_plugin)
 
-* [Changelog for version 2.1.3, released 25 August 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0213_object_plugin)
+* [Change log for version 2.1.4, released 1 September 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0214_object_plugin)
 
-* [Changelog for version 2.1.2, released 22 June 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0212_object_plugin)
+* [Change log for version 2.1.3, released 25 August 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0213_object_plugin)
 
-* [Changelog for version 2.1.1, released 03 June 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0211_object_plugin)
+* [Change log for version 2.1.2, released 22 June 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0212_object_plugin)
 
-* [Changelog for version 2.1.0, released 26 May 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0210_object_plugin)
+* [Change log for version 2.1.1, released 03 June 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0211_object_plugin)
 
-* [Changelog for version 2.0.9, 10 May 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0209_object_plugin)
+* [Change log for version 2.1.0, released 26 May 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0210_object_plugin)
 
-* [Changelog for version 2.0.8, 19 April 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0208_object_plugin)
+* [Change log for version 2.0.9, 10 May 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0209_object_plugin)
 
-* [Changelog for version 2.0.7, 26 March 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0207_object_plugin)
+* [Change log for version 2.0.8, 19 April 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0208_object_plugin)
 
-* [Changelog for version 2.0.6, 18 December 2020](/docs/openshift?topic=openshift-cos_plugin_changelog#0206_object_plugin)
+* [Change log for version 2.0.7, 26 March 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0207_object_plugin)
 
-* [Changelog for version 2.0.5, released 25 November 2020](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_object_plugin)
+* [Change log for version 2.0.6, 18 December 2020](/docs/openshift?topic=openshift-cos_plugin_changelog#0206_object_plugin)
+
+* [Change log for version 2.0.5, released 25 November 2020](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_object_plugin)
 
 [Static route add-on version changelog](/docs/openshift?topic=openshift-static-route-changelog#static-route-changelog)
 
