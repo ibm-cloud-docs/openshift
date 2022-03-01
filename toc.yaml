@@ -86,13 +86,13 @@ toc:
           topics:
           - worker-add.md
           - topicgroup: 
-            label: Autoscaling clusters
-            topics:
-            - cluster-scaling-classic-vpc.md
-            - cluster-scaling-install-addon.md
-            - cluster-scaling-enable.md
-            - cluster-scaling-deploy-apps.md
-            - cluster-scaling-helm.md
+              label: Autoscaling clusters
+              topics:
+              - cluster-scaling-classic-vpc.md
+              - cluster-scaling-install-addon.md
+              - cluster-scaling-enable.md
+              - cluster-scaling-deploy-apps.md
+              - cluster-scaling-helm.md
           - openshift_cluster_update.md
           - performance.md
           - cluster-remove.md
