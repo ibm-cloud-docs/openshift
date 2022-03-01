@@ -4212,7 +4212,7 @@ subcollection: openshift
 
 * [Version 4.2](/docs/openshift?topic=openshift-vpc_bs_changelog#041_is_block)
 
-    * [Change log for version 4.2.0_890, released 24th February 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#420_890_is_block_relnote)
+    * [Change log for version 4.2.0_890, released 28 February 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#420_890_is_block_relnote)
 
 * [Version 4.1](/docs/openshift?topic=openshift-vpc_bs_changelog#041_is_block)
 
