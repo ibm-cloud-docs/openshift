@@ -1138,7 +1138,7 @@ Deprecated: Kubernetes web terminal.
 {: release-note}
 
 VPC cluster healthchecks
-:   If you set up [VPC security groups](/docs/openshift?topic=openshift-vpc-network-policy#security_groups) or [VPC access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-acls) to secure your cluster network, you can now create the rules to allow the necessary traffic from the control plane IP addresses and Akamai IPv4 IP addresses to health check your routers. Previously, a quota on the number of rules per security group or ACL prevented the ability to create all necessary rules for health checks.
+:   If you set up [VPC security groups](/docs/openshift?topic=openshift-vpc-security-group) or [VPC access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-acls) to secure your cluster network, you can now create the rules to allow the necessary traffic from the control plane IP addresses and Akamai IPv4 IP addresses to health check your routers. Previously, a quota on the number of rules per security group or ACL prevented the ability to create all necessary rules for health checks.
 
 ### 10 May 2021
 {: #10may2021}

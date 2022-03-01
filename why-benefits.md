@@ -22,8 +22,7 @@ subcollection: openshift
 [{{site.data.keyword.openshiftlong}}](https://www.ibm.com/cloud/openshift){: external} is an {{site.data.keyword.cloud_notm}} service, where IBM sets up and helps you manage a cluster of worker nodes that come installed with the OpenShift Container Platform container orchestration software.
 {: shortdesc}
 
-Check out the following [videos and product tours](https://www.ibm.com/demos/collection/Red-Hat-OpenShift-on-IBM-Cloud/?lc=null){: external} to learn more about {{site.data.keyword.openshiftlong_notm}}.
-{: tip}
+
 
 
 ## Benefits of using the service

@@ -326,14 +326,14 @@ Review the architecture diagrams and then scroll through the following table for
 ### Cluster with public and private cloud service endpoints
 {: #vpc-service-arch-public-and-private}
 
-The following diagram shows the components of your cluster and how they interact when both the [public and private cloud service endpoints are enabled](/docs/openshift?topic=openshift-plan_clusters#vpc-workeruser-master). Because both service endpoints are enabled, your VPC creates a public load balancer for each service for inbound traffic.
+The following diagram shows the components of your cluster and how they interact when both the [public and private cloud service endpoints are enabled](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-workeruser-master). Because both service endpoints are enabled, your VPC creates a public load balancer for each service for inbound traffic.
 
 ![{{site.data.keyword.openshiftlong_notm}} on VPC cluster architecture with public and private cloud service endpoints](/images/arch_roks_vpc.svg)
 
 ### Cluster with private cloud service endpoint only
 {: #vpc-service-arch-private-only}
 
-The following diagram shows the components of your cluster and how they interact when only the [private cloud service endpoint is enabled](/docs/openshift?topic=openshift-plan_clusters#vpc-workeruser-master). Because only the private cloud service endpoint is enabled, your VPC creates a private load balancer for each service for inbound traffic.
+The following diagram shows the components of your cluster and how they interact when only the [private cloud service endpoint is enabled](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-workeruser-master). Because only the private cloud service endpoint is enabled, your VPC creates a private load balancer for each service for inbound traffic.
 
 ![{{site.data.keyword.openshiftlong_notm}} on VPC cluster architecture with the private cloud service endpoint only](images/arch_roks_vpc_private.svg)
 

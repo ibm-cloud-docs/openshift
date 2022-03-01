@@ -33,11 +33,11 @@ Review frequently asked questions and key technologies that {{site.data.keyword.
 
 **What is Kubernetes?**
 
-Kubernetes is an open source platform for managing containerized workloads and services across multiple hosts, and offers management tools for deploying, automating, monitoring, and scaling containerized apps with minimal to no manual intervention. For an overview of key Kubernetes concepts, see [Kubernetes clusters](#kubernetes_basics). To dive deeper into Kubernetes, see the [Kubernetes documentation](https://kubernetes.io/docs/home/?path=users&persona=app-developer&level=foundational).
+Kubernetes is an open source platform for managing containerized workloads and services across multiple hosts, and offers management tools for deploying, automating, monitoring, and scaling containerized apps with minimal to no manual intervention. For an overview of key Kubernetes concepts, see [Kubernetes clusters](#kubernetes_basics). To dive deeper into Kubernetes, see the [Kubernetes documentation](https://kubernetes.io/docs/home/?path=users&persona=app-developer&level=foundational){: external}.
 
 **What are containers?**
 
-Containers provide a standard way to package your application's code, configurations, and dependencies into a single unit that can run as a resource-isolated process on a compute server. To run your app in Kubernetes on {{site.data.keyword.openshiftlong_notm}}, you must first containerize your app by creating a container image that you store in a container registry. For an overview of key Docker concepts and benefits, see [Docker containers](#docker_containers). To dive deeper into Docker, see the [Docker documentation](https://docs.docker.com/).
+Containers provide a standard way to package your application's code, configurations, and dependencies into a single unit that can run as a resource-isolated process on a compute server. To run your app in Kubernetes on {{site.data.keyword.openshiftlong_notm}}, you must first containerize your app by creating a container image that you store in a container registry. For an overview of key Docker concepts and benefits, see [Docker containers](#docker_containers). To dive deeper into Docker, see the [Docker documentation](https://docs.docker.com/){: external}.
 
 **What is {{site.data.keyword.redhat_openshift_notm}}?**
 
@@ -64,8 +64,6 @@ Review the following links to find out more about the benefits and responsibilit
 - [Your responsibilities by using {{site.data.keyword.openshiftlong_notm}}](/docs/containers?topic=containers-responsibilities_iks)
 - [Defining your Kubernetes strategy](/docs/containers?topic=containers-strategy)
 - [Limitations](/docs/openshift?topic=openshift-openshift_limitations)
-- Learn how you can use {{site.data.keyword.openshiftlong_notm}} to modernize and run containerized apps in these <a href="https://www.ibm.com/demos/collection/Containers-(Kubernetes)-on-IBM-Cloud/?lc=null">videos</a>.
-
 
 
 
