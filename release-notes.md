@@ -24,17 +24,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: note}
 
 
-## March 2022
-{: #release-march-2022}
-
-### 1 March 2022
-{: #1mar2022}
-{: release-note}
-
-{{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.11` [is available](/docs/containers?topic=containers-cos_plugin_changelog).
-
-
 ## February 2022
 {: #release-feb-2022}
 
@@ -1805,7 +1794,7 @@ Worker node versions
 {: release-note}
 
 Cluster autoscaler add-on
-:   Patch update `1.0.1_146` is released. For more information, see the [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog).
+:   Patch update `1.0.1_146` is released. For more information, see the [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc_changelog).
 
 
 
@@ -3124,7 +3113,7 @@ Diagnostics and Debug Tool add-on for {{site.data.keyword.redhat_openshift_notm}
 :   The [Diagnostics and Debug Tool](/docs/containers?topic=containers-debug-tool) add-on is now available for {{site.data.keyword.redhat_openshift_notm}} clusters.
 
 Cluster autoscaling for VPC clusters
-:   You can [set up the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca_helm) on clusters that run on the first generation of compute for Virtual Private Cloud (VPC).
+:   You can [set up the cluster autoscaler](/docs/containers?topic=containers-ca#ca_helm) on clusters that run on the first generation of compute for Virtual Private Cloud (VPC).
 
 New! Reservations and limits for PIDs
 :   Worker nodes that run Kubernetes version 1.14 or later set [process ID (PID) reservations and limits that vary by flavor](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node), to help prevent malicious or runaway apps from consuming all available PIDs.
@@ -3301,7 +3290,7 @@ Cloud Paks
 :   By using the {{site.data.keyword.cloud_notm}} catalog, you can [add Cloud Paks to your {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-openshift_cloud_paks).
 
 Cluster autoscaler
-:   You can [install the cluster autoscaler](/docs/openshift?topic=openshift-ca) Helm chart on {{site.data.keyword.redhat_openshift_notm}} clusters with Helm Tiller version 2.12 or later.
+:   You can [install the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc) Helm chart on {{site.data.keyword.redhat_openshift_notm}} clusters with Helm Tiller version 2.12 or later.
 
 
 
@@ -3546,7 +3535,7 @@ Version changelog
 {: release-note}
 
 Cluster autoscaler
-:   With the latest version of the cluster autoscaler, you can [enable autoscaling for worker pools during the Helm chart installation](/docs/openshift?topic=openshift-ca#ca_helm) instead of modifying the config map after installation.
+:   With the latest version of the cluster autoscaler, you can [enable autoscaling for worker pools during the Helm chart installation](/docs/containers?topic=containers-ca#ca_helm) instead of modifying the config map after installation.
 
 Ingress ALB changelog
 :   Updated the ALB [`nginx-ingress` image to build 524 and `ingress-auth` image to build 337](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).

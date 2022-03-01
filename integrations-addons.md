@@ -38,7 +38,7 @@ To enable a managed add-on in your cluster from the CLI, use the [`ibmcloud oc c
 
 For more information about the prerequisites for each add-on, see:
 - [{{site.data.keyword.block_storage_is_short}}](/docs/containers?topic=containers-vpc-block)
-- [Cluster Autoscaler](/docs/openshift?topic=openshift-ca)
+- [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc)
 - [Diagnostics and Debug Tool](/docs/containers?topic=containers-debug-tool)
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
@@ -123,7 +123,7 @@ The following list of add-ons for clusters are supported in {{site.data.keyword.
 The following list of add-ons for clusters are unsupported in {{site.data.keyword.satelliteshort}} locations.
 
 - [ALB OAuth Proxy](/docs/containers?topic=containers-comm-ingress-annotations#app-id)
-- [Cluster Autoscaler](/docs/openshift?topic=openshift-ca)
+- [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc)
 - [Istio](/docs/containers?topic=containers-istio)
 - [{{site.data.keyword.block_storage_is_short}}](/docs/containers?topic=containers-vpc-block)
 

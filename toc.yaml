@@ -85,7 +85,14 @@ toc:
           label: Managing the cluster and worker node lifecycle
           topics:
             - worker-add.md
-            - cluster-scaling.md
+            - topicgroup: 
+              label: Autoscaling clusters
+              topics:
+                - cluster-scaling-classic-vpc.md
+                - cluster-scaling-install-addon.md
+                - cluster-scaling-enable.md
+                - cluster-scaling-deploy-apps.md
+                - cluster-scaling-helm.md
             - openshift_cluster_update.md
             - performance.md
             - cluster-remove.md
@@ -335,7 +342,12 @@ toc:
                     - ts-worker-pod-timeout.md
                     - ts-worker-ssh-fail.md
                     - ts-openshift-marketplace.md
-              - ts-ca-debug.md
+              - topicgroup:
+                  label: Cluster autoscaler
+                  topics:
+                    - ts-ca-debug.md
+                    - ts-ca-resize.md
+                    - ts-ca-unbalanced.md
               - topicgroup:
                   label: Cluster network
                   topics:

@@ -182,10 +182,6 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
-* [March 2022](/docs/openshift?topic=openshift-iks-release#release-march-2022)
-
-    * [1 March 2022](/docs/openshift?topic=openshift-iks-release#1mar2022)
-
 * [February 2022](/docs/openshift?topic=openshift-iks-release#release-feb-2022)
 
     * [28 February 2022](/docs/openshift?topic=openshift-iks-release#28feb2022)
@@ -1309,63 +1305,66 @@ subcollection: openshift
 
 * [Adding labels to existing worker pools](/docs/openshift?topic=openshift-add_workers#worker_pool_labels)
 
-[Autoscaling clusters](/docs/openshift?topic=openshift-ca#ca)
 
-* [Understanding scale-up and scale-down](/docs/openshift?topic=openshift-ca#ca_about)
+### Autoscaling clusters
+{: #sitemap_autoscaling_clusters}
 
-* [Following scalable deployment practices](/docs/openshift?topic=openshift-ca#scalable-practices)
 
-    * [Can I autoscale multiple worker pools at once?](/docs/openshift?topic=openshift-ca#scalable-practices-multiple)
+[Preparing to autoscale classic and VPC Gen 2 clusters](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#cluster-scaling-classic-vpc)
 
-    * [How can I make sure that the cluster autoscaler responds to what resources my app needs?](/docs/openshift?topic=openshift-ca#scalable-practices-resrequests)
+* [Understanding scale-up and scale-down](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#ca_about)
 
-    * [Can I scale down a worker pool to zero (0) nodes?](/docs/openshift?topic=openshift-ca#scalable-practices-zero)
+* [Following scalable deployment practices](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices)
 
-    * [Can I optimize my deployments for autoscaling?](/docs/openshift?topic=openshift-ca#scalable-practices-apps)
+    * [Can I autoscale multiple worker pools at once?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices-multiple)
 
-    * [Can I use taints and tolerations with autoscaled worker pools?](/docs/openshift?topic=openshift-ca#scalable-practices-taints)
+    * [How can I make sure that the cluster autoscaler responds to what resources my app needs?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices-resrequests)
 
-    * [Why are my autoscaled worker pools unbalanced?](/docs/openshift?topic=openshift-ca#scalable-practices-unbalanced)
+    * [Can I scale down a worker pool to zero (0) nodes?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices-zero)
 
-    * [Why can't I resize or rebalance my worker pool?](/docs/openshift?topic=openshift-ca#scalable-practices-resize)
+    * [Can I optimize my deployments for autoscaling?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices-apps)
 
-* [Preparing your cluster for autoscaling](/docs/openshift?topic=openshift-ca#ca_prepare_cluster)
+    * [Can I use taints and tolerations with autoscaled worker pools?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices-taints)
 
-* [Installing the cluster autoscaler add-on in your cluster](/docs/openshift?topic=openshift-ca#ca_addon)
+* [Rebalancing or resizing autoscaled worker pools](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#ca_update_worker_node_pool)
 
-* [Installing the cluster autoscaler Helm chart in your cluster](/docs/openshift?topic=openshift-ca#ca_helm)
+* [Preparing classic or VPC Gen 2 clusters for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#prepare-autoscale-classic-vpc)
 
-* [Updating the cluster autoscaler configmap to enable scaling](/docs/openshift?topic=openshift-ca#ca_cm)
+[Enabling the cluster autoscaler add-on in your cluster](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-install-addon)
 
-* [Customizing the cluster autoscaler configuration values](/docs/openshift?topic=openshift-ca#ca_customize)
+* [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-update-addon)
 
-    * [Customizing the cluster autoscaler add-on configmap](/docs/openshift?topic=openshift-ca#ca_addon_values)
+* [Removing the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon#ca-addon-rm)
 
-    * [Customizing the cluster autoscaler Helm chart values](/docs/openshift?topic=openshift-ca#ca_chart_values)
+* [Cluster autoscaler add-on parameter reference](/docs/openshift?topic=openshift-cluster-scaling-install-addon#ca_addon_ref)
 
-* [Deploying apps to your autoscaled worker pools](/docs/openshift?topic=openshift-ca#ca_limit_pool)
+[Enabling autoscaling](/docs/openshift?topic=openshift-cluster-scaling-enable#cluster-scaling-enable)
 
-* [Scaling up worker nodes before the worker pool has insufficient resources](/docs/openshift?topic=openshift-ca#ca_scaleup)
+* [Customizing the cluster autoscaler configuration values](/docs/openshift?topic=openshift-cluster-scaling-enable#ca_customize)
 
-    * [Pause pods](/docs/openshift?topic=openshift-ca#pause-pods-ca)
+[Customizing the cluster autoscaler add-on configmap](/docs/openshift?topic=openshift-cluster-scaling-enable#cluster-scaling-customize)
 
-    * [Horizontal pod autoscaling (HPA)](/docs/openshift?topic=openshift-ca#hpca)
+[Deploying apps to your autoscaled worker pools](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#cluster-scaling-deploy-apps)
 
-* [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-ca#ca_addon_up)
+* [Scaling up worker nodes before the worker pool has insufficient resources](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#ca_scaleup)
 
-* [Rebalancing or resizing autoscaled worker pools](/docs/openshift?topic=openshift-ca#ca_update_worker_node_pool)
+* [Pause pods](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#pause-pods-ca)
 
-* [Upgrading a cluster autoscaler Helm chart release](/docs/openshift?topic=openshift-ca#ca_helm_up)
+* [Horizontal pod autoscaling (HPA)](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#hpca)
 
-    * [Prerequisites](/docs/openshift?topic=openshift-ca#ca_helm_up_prereqs)
+[(Deprecated) Installing the cluster autoscaler Helm chart in your cluster](/docs/openshift?topic=openshift-cluster-scaling-helm#cluster-scaling-helm)
 
-    * [Upgrading the cluster autoscaler release version](/docs/openshift?topic=openshift-ca#ca_helm_up_general)
+* [Customizing the cluster autoscaler Helm chart values](/docs/openshift?topic=openshift-cluster-scaling-helm#ca_chart_values)
 
-* [Removing the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca_rm)
+* [Upgrading a cluster autoscaler Helm chart release](/docs/openshift?topic=openshift-cluster-scaling-helm#ca_helm_up)
 
-* [Cluster autoscaler add-on parameter reference](/docs/openshift?topic=openshift-ca#ca_addon_ref)
+    * [Prerequisites](/docs/openshift?topic=openshift-cluster-scaling-helm#ca_helm_up_prereqs)
 
-* [Cluster autoscaler Helm chart parameter reference](/docs/openshift?topic=openshift-ca#ca_helm_ref)
+    * [Upgrading the cluster autoscaler release version](/docs/openshift?topic=openshift-cluster-scaling-helm#ca_helm_up_general)
+
+* [Removing the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-helm#ca_rm)
+
+* [Cluster autoscaler Helm chart parameter reference](/docs/openshift?topic=openshift-cluster-scaling-helm#ca_helm_ref)
 
 [Updating clusters, worker nodes, and cluster components](/docs/openshift?topic=openshift-update#update)
 
@@ -5166,6 +5165,11 @@ subcollection: openshift
 
 [Pods in the `openshift-markeplace` namespace are in `ImagePullBackOff`](/docs/openshift?topic=openshift-ts-openshift-marketplace#ts-openshift-marketplace)
 
+
+### Cluster autoscaler
+{: #sitemap_cluster_autoscaler}
+
+
 [Debugging the cluster autoscaler](/docs/openshift?topic=openshift-debug_cluster_autoscaler#debug_cluster_autoscaler)
 
 * [Step 1: Check the version](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-version)
@@ -5183,6 +5187,10 @@ subcollection: openshift
 * [Step 6: Disable and reenable](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-disable)
 
 * [Step 8: Check if the issue is resolved](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-more)
+
+[Why can't I resize or rebalance my worker pool?](/docs/openshift?topic=openshift-ts-ca-resize#ts-ca-resize)
+
+[Why are my autoscaled worker pools unbalanced?](/docs/openshift?topic=openshift-ts-ca-unbalanced#ts-ca-unbalanced)
 
 
 ### Cluster network
