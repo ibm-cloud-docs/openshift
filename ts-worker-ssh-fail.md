@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-22"
+lastupdated: "2022-03-01"
 
 keywords: openshift
 
@@ -168,7 +168,7 @@ If you are unable to use the `oc debug node` command, you can create an Alpine p
 If you are unable to use the `oc debug node` or `kubectl exec` commands, such as if the VPN connection between the cluster master and worker nodes is down, you can create a pod that enables root SSH access and copies a public SSH key to the worker node for SSH access.
 {: shortdesc}
 
-Allowing root SSH access is a security risk. Only allow SSH access when it is required and no other option is available to troubleshoot worker node issues. When you finish troubleshooting, be sure to follow step 7 in this section to disable SSH access.
+Allowing root SSH access is a security risk. Only allow SSH access when it is required and no other option is available to troubleshoot worker node issues. When you finish troubleshooting, be sure to follow the steps in the [Cleaning up after debugging](#ssh-debug-cleanup) section to disable SSH access.
 {: important}
 
 1. Choose an existing or create a new public SSH key.
