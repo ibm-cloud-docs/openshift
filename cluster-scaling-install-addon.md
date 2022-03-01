@@ -118,7 +118,7 @@ Release updates
 ## Removing the cluster autoscaler add-on
 {: #ca-addon-rm}
 
-Before disabling the add-on, [edit the autoscaler configmap](docs/containers?topic=containers-cluster-scaling-enable) to stop scaling your working pools.
+Before disabling the add-on, [edit the autoscaler configmap](/docs/containers?topic=containers-cluster-scaling-enable) to stop scaling your working pools.
 {: important}
 
 You can enable the add-on from the console or the command the line.
@@ -149,7 +149,7 @@ You can enable the add-on from the console or the command the line.
 ## Cluster autoscaler add-on parameter reference
 {: #ca_addon_ref}
 
-This table refers to the cluster autoscaler add-on parameters. For Helm chart values, see [Cluster autoscaler Helm chart parameter reference](#ca_helm_ref)
+This table refers to the cluster autoscaler add-on parameters. For Helm chart values, see [Cluster autoscaler Helm chart parameter reference](/docs/openshift?topic=openshift-cluster-scaling-helm#ca_helm_ref)
 {: note}
 
 

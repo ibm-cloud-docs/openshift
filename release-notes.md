@@ -36,8 +36,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 Cluster autoscaler
 :   Version [1.0.5_415](/docs/containers?topic=containers-ca_changelog) is available.
-:   New pages for [Preparing your cluster for autoscaling](/docs/containers?topic=containers-cluster-scaling-classic-vpc), [Installing the cluster autoscaler add-on](/docs/containers?topic=containers-cluster-scaling-install-addon), and[Enabling autoscaling](/docs/containers?topic=containers-cluster-scaling-enable).
-:   New troubleshooting pages for [resizing worker pools](/docs/containers?topic=containers-ts-ca-resize) and updating [unbalanced worker pools](/docs/containers?topic=containers-ts-resize-unbalanced) in autoscaled clusters. 
+:   New pages for [Preparing your cluster for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc), [Installing the cluster autoscaler add-on](/docs/containers?topic=containers-cluster-scaling-install-addon), and[Enabling autoscaling](/docs/containers?topic=containers-cluster-scaling-enable).
+:   New troubleshooting pages for [resizing worker pools](/docs/containers?topic=containers-ts-ca-resize) and updating [unbalanced worker pools](/docs/containers?topic=containers-ts-ca-unbalanced) in autoscaled clusters. 
 
 
 
@@ -1796,7 +1796,7 @@ Worker node versions
 {: release-note}
 
 Cluster autoscaler add-on
-:   Patch update `1.0.1_146` is released. For more information, see the [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc_changelog).
+:   Patch update `1.0.1_146` is released. For more information, see the [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog).
 
 
 

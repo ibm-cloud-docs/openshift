@@ -122,7 +122,7 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
 When you modify a configmap parameter other than the worker pool `minSize`, `maxSize`, or if you enable or disable a worker pool, the cluster autoscaler pods are restarted.
 {: note}
 
-1. Review the [cluster autoscaler configmap](/docs/containers?topic=containers-cluster-scaling-install-addon-ca_addon_ref) parameters.
+1. Review the [cluster autoscaler configmap](/docs/openshift?topic=openshift-cluster-scaling-install-addon#ca_addon_ref) parameters.
 
 2. Download the cluster autoscaler add-on configmap and review the parameters.
 
